@@ -19,12 +19,12 @@ export template.
 Requirements
 ------------
 
-For compiling under Windows, Linux or OSX, the following is required:
+For compiling under Windows, Linux or macOS, the following is required:
 
--  Python 2.7+ (3.0 is untested as of now)
+-  Python 2.7+ or Python 3.5+
 -  SCons build system
 -  [Windows only] PyWin32 (optional, for parallel compilation)
--  Android SDK version 23.0.3 [Note: Please install all Tools and Extras of sdk manager]
+-  Android SDK version 23.0.3 [Note: Please install all tools and extras of the SDK Manager]
 -  Android build tools version 19.1
 -  Android NDK r13 or later
 -  Gradle (will be downloaded and installed automatically if missing)
@@ -44,11 +44,11 @@ To set those environment variables on Windows, press Windows+R, type
 pane, then click on **Environment variables** on the window that
 appears.
 
-To set those environment variables on Unix (e.g. Linux, Mac OSX), use
+To set those environment variables on Unix (e.g. Linux, macOS), use
 ``export ANDROID_HOME=/path/to/android-sdk`` and
 ``export ANDROID_NDK_ROOT=/path/to/android-ndk``.
-Where /path/to/android-sdk and /path/to/android-ndk is the path where Android Sdk
-and Android Ndk are placed on you PC.
+Where /path/to/android-sdk and /path/to/android-ndk is the path where Android SDK
+and Android NDK are placed on your PC.
 
 Toolchain
 ~~~~~~~~~
@@ -78,7 +78,7 @@ the following arguments:
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
 
-(on Linux/OSX, execute the `gradlew` script with `./gradlew build`)
+(on Linux or macOS, execute the `gradlew` script with `./gradlew build`)
 
 The resulting APK is in:
 
@@ -150,16 +150,12 @@ Installing the templates
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The newly-compiled templates (android_debug.apk and android_release.apk)
-must be copied to the current Godot version's templates folder with their
-respective names.
+must be copied to Godot's templates folder with their respective names.
 The templates folder can be located in:
 
--  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates\[versionstring]``
--  Linux: ``/home/[username]/.godot/templates/[versionstring]``
--  Mac OSX: ``/users/[username]/.godot/templates/[versionstring]``
-
-where the `versionstring` parameter is the version of the editor you have
-compiled the templates for - e.g. `3.0.alpha` for the alpha release of Godot 3.
+-  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates``
+-  Linux: ``/home/[username]/.godot/templates``
+-  macOS: ``/users/[username]/.godot/templates``
 
 .. TODO: Move these paths to a common reference page
 
@@ -167,7 +163,7 @@ However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your APKs as custom export templates
 here:
 
-.. image:: /img/andtemplates.png
+.. image:: img/andtemplates.png
 
 You don't even need to copy them, you can just reference the resulting
 file in the ``bin\`` directory of your Godot source folder, so that the
@@ -257,4 +253,3 @@ information.
 
 If all went well, and you entered the prlimit command while scons was
 running, then your compilation should continue without the error.
-

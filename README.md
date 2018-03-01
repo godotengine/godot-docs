@@ -6,11 +6,13 @@ They are meant to be parsed with the [Sphinx](http://sphinx-doc.org/) documentat
 
 ## Contributing changes
 
+**Pull Requests should use the `master` branch by default. Only make Pull Requests against other branches (e.g. `2.1` or `3.0`) if your changes only apply to that specific version of Godot.**
+
 Though arguably less convenient to edit than a wiki, this git repository is meant to receive pull requests to always improve the documentation, add new pages, etc. Having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation.
 
 ### Editing existing pages
 
-To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/`should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
+To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
 
 ### Adding new pages
 
@@ -26,14 +28,14 @@ Sphinx uses specific reST comments to do specific operations, like defining the 
 
 ### Adding images and attachments
 
-To add images, please put them in the `img/` folder with a meaningful name and include them in your page with:
+To add images, please put them in an `img/` folder next to the .rst file with a meaningful name and include them in your page with:
 ```rst
-.. image:: /img/image_name.png
+.. image:: img/image_name.png
 ```
 
-Similarly, you can include attachments (like assets as support material for a tutorial) by placing them in to the `files/` folder, and using this inline markup:
+Similarly, you can include attachments (like assets as support material for a tutorial) by placing them into a `files/` folder next to the .rst file, and using this inline markup:
 ```rst
-:download:`myfilename.zip </files/myfilename.zip>`
+:download:`myfilename.zip <files/myfilename.zip>`
 ```
 
 ## Building with Sphinx
@@ -53,6 +55,12 @@ You can then build the HTML documentation from the root folder of this repositor
 make html
 ```
 
+or:
+
+```sh
+make SPHINXBUILD=~/.local/bin/sphinx-build html
+```
+
 The compilation might take some time as the `classes/` folder contains many files to parse.  
 You can then test the changes live by opening `_build/html/index.html` in your favourite browser.
 
@@ -63,10 +71,20 @@ On Windows, you need to:
 * Install Python. Don't forget to check the "Add Python to PATH" box.
 * Use the above `pip` commands.
 
-Building is still done at the root folder of this repository, but with this command line instead:
+Building is still done at the root folder of this repository using the provided `make.bat`:
+```sh
+make.bat html
+```
+
+Alternatively, you can build with this command instead:
 ```sh
 sphinx-build -b html ./ _build
 ```
+
+Note that during the first build, various installation prompts may appear and ask to install LaTeX plugins.
+Make sure you don't miss them, especially if they open behind other windows, else the build may appear to hang until you confirm these prompts.
+
+You could also install a normal `make` toolchain (for example via MinGW) and build the docs using the normal `make html`.
 
 ### Building with Sphinx and virtualenv
 

@@ -11,19 +11,19 @@ creating a libre engine of exceptional quality.
 This means that to thrive, Godot needs as many users as possible to get
 involved by contributing to the engine. There are many ways to contribute to
 such a big project, making it possible for everybody to bring something
-positive to the engine, regardless of their skillset:
+positive to the engine, regardless of their skill set:
 
 -  **Be part of the community.** The best way to contribute to Godot and help
-   it become ever better is simply to use the engine and make its promotion by
-   word-of-mouth, in-game credits and splash screen, blog posts, tutorials,
+   it become ever better is simply to use the engine and promote it by
+   word-of-mouth, in the credits or splash screen of your games, blog posts, tutorials,
    videos, demos, gamedev or free software events, support on the Q&A, IRC,
-   forums, Discord, etc.
+   forums, Discord, etc. Participate!
    Being a user and advocate helps spread the word about our great engine,
    which has no marketing budget and can therefore only rely on its community
    to become more mainstream.
 
--  **Make games.** That's no secret, to convince new users and especially
-   industry players that Godot is a relevant market player, we need great games
+-  **Make games.** It's no secret that, to convince new users and especially the
+   industry at large that Godot is a relevant market player, we need great games
    made with Godot. We know that the engine has a lot of potential, both for 2D
    and 3D games, but given its young age we still lack big releases that will
    draw attention to Godot. So keep working on your awesome projects, each new
@@ -68,7 +68,7 @@ Contributing code changes upstream has two big advantages:
 -  Your own code will be reviewed and improved by other developers, and will be
    further maintained directly in the upstream project, so you won't have to
    reapply your own changes every time you move to a newer version. On the
-   other hand it comes with a responsability, as your changes have to be
+   other hand it comes with a responsibility, as your changes have to be
    generic enough to be beneficial to all users, and not just your project; so
    in some cases it might still be relevant to keep your changes only for your
    own project, if they are too specific.
@@ -78,8 +78,8 @@ Contributing code changes upstream has two big advantages:
    the time of this writing, more than 300 developers have contributed code
    changes to the engine!
 
-To ensure a good collaboration and overall quality, the Godot developers
-enforce some rules for code contribution, for example regarding the style to
+To ensure good collaboration and overall quality, the Godot developers
+enforce some rules for code contributions, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
 
 .. seealso:: Technical details about the PR workflow are outlined in a
@@ -93,8 +93,8 @@ Testing and reporting issues
 ----------------------------
 
 Another great way of contributing to the engine is to test development releases
-or the development branch and to report issues. It is also meaningful to report
-issues discovered in so-called stable releases, so that they can be fixed in
+or the development branch and to report issues. It is also helpful to report
+issues discovered in stable releases, so that they can be fixed in
 the development branch and in future maintenance releases.
 
 Testing development versions
@@ -114,7 +114,7 @@ To help with the testing, you have several possibilities:
    use official binaries or to compile yourself though, to be sure about the
    provenance of your binaries.
 
-As mentioned previously, it is also meaningful to keep your eyes peeled for
+As mentioned previously, it is also helpful to keep your eyes peeled for
 potential bugs that might still be present in the stable releases, especially
 when using some niche features of the engine which might get less testing by
 the developers.
@@ -133,7 +133,7 @@ expected, etc.). It's the role of the bug triaging team and the developers to
 then help make the diagnosis of the issue you met, so that the actual cause of
 the bug can be identified and addressed.
 
-You should therefore always ask yourself: what are the relevant information to
+You should therefore always ask yourself: what is relevant information to
 give so that other Godot contributors can understand the bug, identify it and
 hopefully fix it. Here are some of the most important infos that you should
 always provide:
@@ -143,6 +143,10 @@ always provide:
    bugs related to OS interfaces, such as file management, input, window
    management, audio, etc.
 
+-  **Hardware.** Sometimes bugs are hardware-specific, i.e. they happen
+   only on certain processors, graphic cards, etc. If you are able to,
+   it can be helpful to include information on your hardware.
+   
 -  **Godot version.** This is a must have. Some issues might be relevant in the
    current stable release, but fixed in the development branch, or the other
    way around. You might also be using an obsolete version of Godot and

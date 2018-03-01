@@ -3,7 +3,7 @@
 Pull request workflow
 =====================
 
-.. highlight:: shell
+.. highlight:: none
 
 The so-called "PR workflow" used by Godot is common to many projects using
 Git, and should be familiar to veteran free software contributors. The idea
@@ -30,12 +30,18 @@ The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
 `Git <https://git-scm.com>`_ code repository together with an embedded
 issue tracker and PR system.
 
+.. note:: If you are contributing to the documention, its repository can
+          be found `here <https://github.com/godotengine/godot-docs>`_. 
+
 The Git version control system is the tool used to keep track of successive
-edits to the source code - to contibute efficiently to Godot, learning the
+edits to the source code - to contribute efficiently to Godot, learning the
 basics of the Git command line is *highly* recommended. There exist some
 graphical interfaces for Git, but they usually encourage users to take bad
 habits regarding the Git and PR workflow, and we therefore recommend not to
-use them (especially GitHub's online editor).
+use them. In particular, we advise not to use Github's online editor for code 
+contributions (It's tolerated for documentation changes) as it enforces one 
+commit per file and per modification, which qucikly leads to PRs with an 
+unreadable Git history (especially after peer review).
 
 .. seealso:: The first sections of Git's "Book" are a good introduction to
              the tool's philosophy and the various commands you need to
@@ -67,15 +73,22 @@ repository on GitHub. To do so, you will need to have a GitHub account and to
 be logged in. In the top right corner of the repository's GitHub page, you
 should see the "Fork" button as shown below:
 
-.. image:: /img/github_fork_button.png
+.. image:: img/github_fork_button.png
 
 Click it, and after a while you should be redirected to your own fork of the
 Godot repo, with your GitHub username as namespace:
 
-.. image:: /img/github_fork_url.png
+.. image:: img/github_fork_url.png
 
 You can then *clone* your fork, i.e. create a local copy of the online
-repository (in Git speak, the *origin remote*):
+repository (in Git speak, the *origin remote*). If you haven't already,
+download Git from `its website <https://git-scm.com>`_ if you're using Windows or 
+Mac, if you're using Linux install it through your package manager. 
+
+.. note:: if you are on Windows open Git Bash to type commands. Mac and linux users
+          can use their respective terminals.
+
+To clone your fork from GitHub, use the following command:
 
 ::
 
@@ -86,8 +99,13 @@ repository (in Git speak, the *origin remote*):
           not be typed.
 
 After a little while, you should have a ``godot`` directory in your current
-working directory. Move into it (``cd godot``), and we will set up a useful
-reference:
+working directory. Move into it using the ``cd`` command:
+
+::
+    
+    $ cd godot 
+
+We will start by setting up a reference to the original repository that we forked:
 
 ::
 
@@ -129,6 +147,7 @@ a feature branch:
 
     // Create the branch based on the current branch (master)
     $ git branch better-project-manager
+
     // Change the current branch to the new one
     $ git checkout better-project-manager
 
@@ -231,21 +250,27 @@ Here's how the shell history could look like on our example:
 
     // It's nice to know where you're starting from
     $ git log
-    // Do changes to the project manager
+
+    // Do changes to the project manager with the nano text editor
     $ nano editor/project_manager.cpp
+
     // Find an unrelated bug in Control and fix it
     $ nano scene/gui/control.cpp
+
     // Review changes
     $ git status
     $ git diff
+
     // We'll do two commits for our unrelated changes,
     // starting by the Control changes necessary for the PM enhancements
     $ git add scene/gui/control.cpp
     $ git commit -m "Fix handling of margins in Control"
+
     // Check we did good
     $ git log
     $ git show
     $ git status
+
     // Make our second commit
     $ git add editor/project_manager.cpp
     $ git commit -m "Add a pretty banner to the project manager"
@@ -267,7 +292,7 @@ remote branch to share them with the world. The syntax for this is:
 
     $ git push <remote> <local branch>[:<remote branch>]
 
-The part about the remote branch can be ommitted if you want it to have the
+The part about the remote branch can be omitted if you want it to have the
 same name as the local branch, which is our case in this example, so we will
 do:
 
@@ -287,7 +312,7 @@ When you load your fork's branch on GitHub, you should see a line saying
 commits behind, if your *master* branch was out of sync with the upstream
 *master* branch.
 
-.. image:: /img/github_fork_make_pr.png
+.. image:: img/github_fork_make_pr.png
 
 On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the godotengine/godot upstream
@@ -315,6 +340,7 @@ branch, push it to your fork, and the PR will be updated automatically:
 
     // Check out your branch again if you had changed in the meantime
     $ git checkout better-project-manager
+
     // Fix a mistake
     $ nano editor/project_manager.cpp
     $ git add editor/project_manager.cpp
@@ -326,10 +352,10 @@ That should do the trick, but...
 Mastering the PR workflow: the rebase
 -------------------------------------
 
-On the situation outlined above, your fellow contributors with an OCD
-regarding the Git history might ask your to *rebase* your branch to *squash*
-or *meld* the last two commits together (i.e. the two related to the project
-manager), as the second commit basically fixes an issue in the first one.
+On the situation outlined above, your fellow contributors who are particularly
+pedantic regarding the Git history might ask your to *rebase* your branch to
+*squash* or *meld* the last two commits together (i.e. the two related to the
+project manager), as the second commit basically fixes an issue in the first one.
 
 Once the PR is merged, it is not relevant for a changelog reader that the PR
 author made mistakes; instead, we want to keep only commits that bring from
@@ -407,3 +433,26 @@ will have to *force* it:
 And tadaa! Git will happily *replace* your remote branch with what you had
 locally (so make sure that's what you wanted, using ``git log``). This will
 also update the PR accordingly.
+
+Deleting a Git Branch
+---------------------
+
+After your pull request gets merged there's one last thing you should do, delete your 
+Git branch for the PR. There wont be issues if you don't delete your branch, but it's 
+good practice to do so. You'll need to do this twice, once for the local branch and another 
+for the remote branch on GitHub.
+
+To delete our better project manager branch locally use this command:
+
+::
+
+    $ git branch -d better-project-manager 
+
+Alternatively, if the branch hadn't been merged yet and we wanted to delete it anyway, instead 
+of ``-d`` you would use ``-D``. 
+
+Next, to delete the remote branch on GitHub use this command:
+
+::
+
+    $ git push origin -d better-project-manager

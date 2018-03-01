@@ -13,7 +13,7 @@ Disclaimer
 ----------
 
 While it is possible to compile for iOS on a Linux environment, Apple is
-very restrictive about the tools to be used (specially hardware-wise),
+very restrictive about the tools to be used (especially hardware-wise),
 allowing pretty much only their products to be used for development. So
 this is **not official**. However, a `statement from Apple in 2010
 <http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-Store-Review-Guidelines.html>`__

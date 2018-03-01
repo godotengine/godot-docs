@@ -42,22 +42,42 @@ The main documentation for the site is organized into the following sections:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Learning
+   :caption: Getting started
    :name: sec-learn
 
-   learning/step_by_step/index
-   learning/editor/index
-   learning/features/index
-   learning/scripting/index
-   learning/workflow/index
+   getting_started/step_by_step/index
+   getting_started/editor/index
+   getting_started/scripting/index
+   getting_started/workflow/index
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials
+   :name: sec-tutorials
+
+   tutorials/2d/index
+   tutorials/3d/index
+   tutorials/audio/index
+   tutorials/physics/index
+   tutorials/math/index
+   tutorials/animation/index
+   tutorials/inputs/index
+   tutorials/gui/index
+   tutorials/viewports/index
+   tutorials/shading/index
+   tutorials/networking/index
+   tutorials/assetlib/index
+   tutorials/vr/index
+   tutorials/plugins/index
+   tutorials/platform/index
+   tutorials/misc/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Development
    :name: sec-devel
 
-   development/plugins/index
    development/compiling/index
    development/cpp/index
 
@@ -67,8 +87,7 @@ The main documentation for the site is organized into the following sections:
    :caption: Community
    :name: sec-community
 
-   community/contributing/index
-   community/tutorials/index
+   community/index
 
 
 .. toctree::
@@ -81,7 +100,7 @@ The main documentation for the site is organized into the following sections:
 
 .. Indices and tables
 .. ------------------
-.. 
+..
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`

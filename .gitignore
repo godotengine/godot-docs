@@ -5,3 +5,10 @@ __pycache__
 *.pyc
 *~
 .directory
+.vscode/
+
+# Finder (MacOS) makes these automatically.
+.DS_Store
+
+# And Windows keeps creating these.
+Thumbs.db

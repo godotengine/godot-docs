@@ -73,7 +73,7 @@ of the game, the programmer can configure the dynamic memory pool size.
 Allocating memory
 -----------------
 
-Godot has many tools for tracking memory usage in a game, specially
+Godot has many tools for tracking memory usage in a game, especially
 during debug. Because of this, the regular C and C++ library calls
 should not be used. Instead, a few other ones are provided.
 
@@ -192,7 +192,7 @@ StringName from a string results in a unique internal pointer for all
 equal strings. StringNames are really useful for using strings as
 identifier, as comparing them is basically comparing a pointer.
 
-Creation of a StringName (specially a new one) is slow, but comparison
+Creation of a StringName (especially a new one) is slow, but comparison
 is fast.
 
 References:

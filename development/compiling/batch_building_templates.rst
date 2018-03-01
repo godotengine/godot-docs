@@ -13,7 +13,7 @@ yourself, this might be of use.
 
 ::
 
-    #This script is intended to run on Linux or OSX. Cygwin might work.
+    #This script is intended to run on Linux or macOS. Cygwin might work.
 
     # if this flag is set, build is tagged as release in the version
     # echo $IS_RELEASE_BUILD
@@ -32,7 +32,7 @@ yourself, this might be of use.
 
     scons -j 4 p=windows target=release tools=no bits=32
     cp bin/godot.windows.opt.32.exe templates/windows_32_release.exe
-    upx templates/windows_32_release.exe 
+    upx templates/windows_32_release.exe
     scons -j 4 p=windows target=release_debug tools=no bits=32
     cp bin/godot.windows.opt.debug.32.exe templates/windows_32_debug.exe
     upx templates/windows_32_debug.exe
@@ -41,7 +41,7 @@ yourself, this might be of use.
 
     scons -j 4 p=windows target=release tools=no bits=64
     cp bin/godot.windows.opt.64.exe templates/windows_64_release.exe
-    x86_64-w64-mingw32-strip templates/windows_64_release.exe 
+    x86_64-w64-mingw32-strip templates/windows_64_release.exe
     scons -j 4 p=windows target=release_debug tools=no bits=64
     cp bin/godot.windows.opt.debug.64.exe templates/windows_64_debug.exe
     x86_64-w64-mingw32-strip templates/windows_64_debug.exe
@@ -83,7 +83,7 @@ yourself, this might be of use.
     mkdir -p platform/android/java/libs/armeabi
     mkdir -p platform/android/java/libs/x86
 
-    #Android Release 
+    #Android Release
 
     scons -j 4 p=android target=release
     cp bin/libgodot.android.opt.so platform/android/java/libs/armeabi/libgodot_android.so
@@ -100,15 +100,15 @@ yourself, this might be of use.
     # EMScripten
 
     scons -j 4 p=javascript target=release
-    cp bin/godot.javascript.opt.html godot.html 
-    cp bin/godot.javascript.opt.js godot.js 
+    cp bin/godot.javascript.opt.html godot.html
+    cp bin/godot.javascript.opt.js godot.js
     cp tools/html_fs/filesystem.js .
     zip javascript_release.zip godot.html godot.js filesystem.js
     mv javascript_release.zip templates/
 
     scons -j 4 p=javascript target=release_debug
     cp bin/godot.javascript.opt.debug.html godot.html
-    cp bin/godot.javascript.opt.debug.js godot.js 
+    cp bin/godot.javascript.opt.debug.js godot.js
     cp tools/html_fs/filesystem.js .
     zip javascript_debug.zip godot.html godot.js filesystem.js
     mv javascript_debug.zip templates/

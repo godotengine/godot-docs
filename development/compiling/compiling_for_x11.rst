@@ -11,74 +11,67 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC < 6 or Clang (**warning:** see note below regarding GCC 6).
--  Python 2.7+ (3.0 is untested as of now)
+-  GCC or Clang
+-  Python 2.7+ (Python 3 only supported as of SCons 3.0)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
--  X11, Xcursor, Xinerama and XRandR development libraries
+-  X11, Xcursor, Xinerama, Xi and XRandR development libraries
 -  MesaGL development libraries
 -  ALSA development libraries
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev-dev (optional, build with `udev=yes`)
-
-Known issues with GCC 6
-^^^^^^^^^^^^^^^^^^^^^^^
-
-There are known optimisation issues when using GCC 6 (both to compile for X11 and to cross-compile for Windows with MinGW). Until those issues are fixed in Godot's source, or the compiler is made more forgiving again, it is advised not to use GCC 6 to compile Godot as release builds will trigger crashes.
-
-If your distribution provides GCC 6 by default (e.g. Arch or Ubuntu 16.10), you may have to install an older version or Clang (both should be provided in the repositories). You can then force the use of another compiler version via the `CC` and `CXX` scons arguments (e.g. `scons p=x11 CC=gcc-5 CXX=g++-5` if your distribution provides those binaries in its PATH). You can also use `llvm=yes` instead to force the usage of Clang over GCC.
+-  libudev (optional, build with `udev=yes`)
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Arch**      | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
+|               |     pacman -S scons libxcursor libxinerama libxi libxrandr mesa glu alsa-lib pulseaudio freetype2          |
++---------------+------------------------------------------------------------------------------------------------------------+
+| **Debian** /  | ::                                                                                                         |
+| **Ubuntu**    |                                                                                                            |
+|               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
+|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
+|               |         libxi-dev libxrandr-dev                                                                            |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
-|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel \ |
-|               |         mesa-libGLU-devel                                                                                  |
+|               |         libXi-devel mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel \   |
+|               |         libudev-devel mesa-libGLU-devel                                                                    |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor libXrandr xineramaproto libglapi libGLU \  |
-|               |         freetype2 openssl                                                                                  |
+|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor libXrandr libXi xineramaproto libglapi \   |
+|               |         libGLU freetype2 openssl                                                                           |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Gentoo**    | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama media-libs/mesa \   |
-|               |         media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype                      |
+|               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama x11-libs/libXi \    |
+|               |         media-libs/mesa media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype      |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     urpmi scons pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" "pkgconfig(libpulse)" \|
 |               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
-|               |         "pkgconfig(xrandr)" "pkgconfig(zlib)"                                                              |
+|               |         "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)"                                              |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **OpenBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pkg_add python scons png llvm                                                                          |
+|               |     pkg_add python scons png llvm                                                                          | 
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **openSUSE**  | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
-|               |             Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel libudev-devel \        |
-|               |             libGLU1                                                                                        |
+|               |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel \          |
+|               |             libudev-devel libGLU1                                                                          |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxrandr-devel mesalib \  |
-|               |         libglu alsa-lib pulseaudio freetype2-devel                                                         |
-+---------------+------------------------------------------------------------------------------------------------------------+
-| **Ubuntu**    | ::                                                                                                         |
-|               |                                                                                                            |
-|               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
-|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
-|               |         libxrandr-dev                                                                                      |
+|               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \              |
+|               |         libxrandr-devel mesalib-devel libglu alsa-lib pulseaudio freetype2-devel pulseaudio-devel          |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
@@ -133,10 +126,7 @@ To create standard export templates, the resulting files must be copied to:
 
 ::
 
-    /home/youruser/.godot/templates/[versionstring]
-
-, where `versionstring` is the version of Godot you compiled the templates
-for - e.g. `3.0.alpha` for the alpha release of Godot 3,
+    /home/youruser/.godot/templates
 
 and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 
@@ -147,16 +137,11 @@ and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
     linux_x11_64_debug
     linux_x11_64_release
 
-.. note:: If using Godot version 3 or above, the templates must be put into the
-editor version subfolder. For instance, for version '3.0.alpha' of the editor
-the correct templates folder is:
--  Linux: ``/home/youruser/.godot/templates/3.0-alpha``
-
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates
 here:
 
-.. image:: /img/lintemplates.png
+.. image:: img/lintemplates.png
 
 You don't even need to copy them, you can just reference the resulting
 files in the bin/ directory of your Godot source folder, so the next

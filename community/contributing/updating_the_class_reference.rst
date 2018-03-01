@@ -25,7 +25,7 @@ There are 5 steps to update the class reference (full guide below):
 4. Commit your changes and push them to your fork
 5. Make a pull request on the Godot repository
 
-.. warning:: always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+.. warning:: Always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 
 Get started with GitHub
 -----------------------
@@ -119,13 +119,13 @@ When classes are modified in the source code, the documentation template might b
 
 ::
 
-    ./bin/godot.x11.tools.64 -doctool doc/base/classes.xml
+    ./bin/godot.x11.tools.64 --doctool .
 
-The doc/base/classes.xml should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
+The xml files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
 
 ::
 
-    git add doc/base/classes.xml
+    git add doc/classes/*.xml
     git commit -m "Sync classes reference template with current code base"
 
 You are now ready to edit this file to add stuff.
@@ -169,12 +169,11 @@ Our job is to add the missing text between these marks:
 -  <description></description>
 -  <brief_description></brief_description>
 -  <constant></constant>
+-  <method></method>
 -  <member></member>
 -  <signal></signal>
 
-Write in a clear and simple language. Always follow the :ref:`class_reference_styleguide` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
-
-.. warning:: In Godot 3.0, the <member> tags replace the old setters and getters. As soon as we moved all descriptions to the <member> tags, most methods starting with set\_ or get\_ will disappear. Skip them for now, and document all <member> tags.
+Write in a clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
 
 Here's how a class looks like in XML:
 
@@ -228,9 +227,17 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 +===========================+================================+===================================+============================================+
 | [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.              |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method methodname]       | Link to a method in this class | See [method set_pos].             | See :ref:`set_pos <class_node2d_set_pos>`. |
+| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method Class.methodname] | Link to another class's method | See [method Node2D.set_pos].      | See :ref:`set_pos <class_node2d_set_pos>`. |
+| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_scale>`.     |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_scale>`.     |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
 | [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                        |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+

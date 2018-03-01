@@ -11,7 +11,7 @@ needs_sphinx = '1.3'
 
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
-extensions = ['gdscript', 'sphinx_tabs.tabs']
+extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.imgmath']
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -23,7 +23,7 @@ master_doc = 'index'
 
 # General information about the project
 project = 'Godot Engine'
-copyright = '2014-2017, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
+copyright = '2014-2018, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
 author = 'Juan Linietsky, Ariel Manzur and the Godot community'
 
 # Version info for the project, acts as replacement for |version| and |release|

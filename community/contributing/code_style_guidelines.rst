@@ -15,7 +15,7 @@ C++ and Objective-C
 -------------------
 
 There are no written guidelines, but the code style agreed upon by the
-developers is enforced via the `clang-format <http://clang.llvm.org/docs/ClangFormat.html>`_
+developers is enforced via the `clang-format <http://clang.llvm.org/docs/ClangFormat.html>`__
 code beautifier, which takes care for you of all our conventions.
 To name a few:
 
@@ -25,7 +25,7 @@ To name a few:
   to the type name
 
 The rules used by clang-format are outlined in the
-`.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`_
+`.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`__
 file of the Godot repository.
 
 As long as you ensure that your style matches the surrounding code and that you
@@ -51,8 +51,9 @@ Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First of all, you will need to install clang-format. As of now, you need to use
-either clang-format 3.9.x or 4.x to be compatible with Godot's format. The
-upcoming 5.x branch changed the syntax for Obj-C and will error out.
+**clang-format 5.x** to be compatible with Godot's format. The upcoming 6.x
+branch has not been tested yet and my cause inconsistencies; the previous 3.x
+branch is incompatible with the style definitions and will error out.
 
 Installation
 ^^^^^^^^^^^^
@@ -60,9 +61,12 @@ Installation
 Here's how to install clang-format:
 
 - Linux: It will usually be available out-of-the-box with the clang toolchain
-  packaged by your distribution.
+  packaged by your distribution. If your distro version is not the required one,
+  you can download a pre-compiled version from the
+  `LLVM website <http://llvm.org/releases/download.html>`__, or if you are on
+  a Debian derivative, use the `upstream repos <http://apt.llvm.org/>`__.
 - macOS and Windows: You can download precompiled binaries from the
-  `LLVM website <http://llvm.org/releases/download.html>`_. You may need to add
+  `LLVM website <http://llvm.org/releases/download.html>`__. You may need to add
   the path to the binary's folder to your system's ``PATH`` environment
   variable to be able to call ``clang-format`` out of the box.
 
@@ -76,13 +80,10 @@ command:
 
 ::
 
-    clang-format -i -style=file <path/to/file(s)>
+    clang-format -i <path/to/file(s)>
 
 - ``-i`` means that the changes should be written directly to the file (by
   default clang-format would only output the fixed version to the terminal).
-- ``-style=file`` tells clang-format to use the ``.clang-format`` file of
-  Godot's repository as a style guide. Note that the ``file`` part is the
-  actual "file" word, not a path to a file.
 - The path can point to several files, either one after the other or using
   wildcards like in a typical Unix shell. Be careful when globbing so that
   you don't run clang-format on compiled objects (.o and .a files) that are
@@ -99,7 +100,7 @@ This "hook" is a script which can be found in ``misc/hooks``, refer to that
 folder's README.md for installation instructions.
 
 If your clang-format is not in the ``PATH``, you may have to edit the
-``pre-commit-clang-format`` to point to the correct binary for it work.
+``pre-commit-clang-format`` to point to the correct binary for it to work.
 The hook was tested on Linux and macOS, but should also work in the Git Shell
 on Windows.
 
@@ -111,9 +112,10 @@ clang-format automatically, for example each time you save a file.
 
 Here is a non-exhaustive list of beautifier plugins for some IDEs:
 
-- Qt Creator: `Beautifier plugin <http://doc.qt.io/qtcreator/creator-beautifier.html>`_
-- Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`_
-- vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`_
+- Qt Creator: `Beautifier plugin <http://doc.qt.io/qtcreator/creator-beautifier.html>`__
+- Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`__
+- Visual Studio: `ClangFormat <https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat>`__
+- vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`__
 
 (Pull requests welcome to extend this list with tested plugins.)
 
@@ -128,10 +130,10 @@ Once a style is decided upon, it could also be enforced via clang-format.
 Python
 ------
 
-Godot's SCons buildsystem is written in Python 2, and various scripts included
-in the source tree are either in Python 2 or Python 3.
+Godot's SCons buildsystem is written in Python, and various scripts included
+in the source tree are also using Python.
 
-For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`_,
+For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`__,
 this is however not as strongly enforced as for the C++ code. If you are so
-enclined, you can check and format your Python changes using
-`autopep8 <https://pypi.python.org/pypi/autopep8>`_.
+inclined, you can check and format your Python changes using
+`autopep8 <https://pypi.python.org/pypi/autopep8>`__.

@@ -11,7 +11,7 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  Python 2.7+ (3.0 is untested as of now)
+-  Python 2.7+ or Python 3.5+
 -  SCons build system
 -  Xcode (or the more lightweight Command Line Tools for Xcode)
 
@@ -30,17 +30,28 @@ runs without any dependencies. Executing it will bring up the project
 manager.
 
 To create an .app like in the official builds, you need to use the template
-located in ``misc/dist/osx_tools.app``. Typically, for a "fat" binary that
-supports both 32-bit and 64-bit architectures, and with an optimised binary
+located in ``misc/dist/osx_tools.app``. Typically, for a ".64" optimised binary 
 built with `scons p=osx target=release_debug`:
 
 ::
 
     user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
-    user@host:~/godot$ cp bin/godot.osx.opt.tools.fat Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ cp bin/godot.osx.opt.tools.64 Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
+    
+Compiling for 32 and 64-bit
+---------------------------
 
+All macOS versions after 10.6 are 64-bit exclusive, so the executable
+will be a ".64" file by default for most users. If you would like to 
+compile a ".fat" executable which contains both 32 and 64-bit code, 
+you can do so by specifying the bits in the scons command like so:
+
+::
+
+    user@host:~/godot$ scons platform=osx bits=fat
+    
 Cross-compiling
 ---------------
 
