@@ -12,5 +12,6 @@ Engine development
    object_class
    inheritance_class_tree
    custom_modules_in_cpp
+   custom_resource_format_loaders
    custom_audiostreams
    creating_android_modules
