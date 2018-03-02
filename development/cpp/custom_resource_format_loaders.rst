@@ -25,16 +25,16 @@ What for?
 ---------
 
 - Adding new support for many file formats
-- Audio format 
+- Audio formats
 - Video formats
-- ML Models
+- Machine learning models
 
 What not?
 ---------
 
-- Raster Images
+- Raster images
 
-Developers should use ImageFormatLoader instead
+ImageFormatLoader should be used to load images.
 
 References:
 ~~~~~~~~~~~
@@ -47,12 +47,12 @@ Creating a ResourceFormatLoader
 
 Each file format consist of a data container and a ``ResourceFormatLoader``. 
 
-ResourceFormatLoaders are usually simple classes which returns all the 
-necessary metadata for godot to understanding the new extension. The 
-class must the return format name and the extension string.
+ResourceFormatLoaders are usually simple classes which return all the 
+necessary metadata for supporting new extentions in Godot. The 
+class must the return the format name and the extension string.
 
 In addition, ResourceFormatLoaders must convert file paths into 
-resources with the function ``load``. To load a resource, the ``load`` must 
+resources with the ``load`` function. To load a resource, ``load`` must 
 read and handle data serialization. 
 
 
@@ -82,6 +82,7 @@ read and handle data serialization.
 
 	ResourceFormatLoaderMyJson::ResourceFormatLoaderMyJson() {
 	}
+
 	RES ResourceFormatLoaderMyJson::load(const String &p_path, const String &p_original_path, Error *r_error) {
 		MyJson *my = memnew(MyJson);
 		if (r_error)
@@ -91,9 +92,9 @@ read and handle data serialization.
 	}
 
 	void ResourceFormatLoaderMyJson::get_recognized_extensions(List<String> *p_extensions) const {
-
 		p_extensions->push_back("mjson");
 	}
+
 	String ResourceFormatLoaderMyJson::get_resource_type(const String &p_path) const {
 
 		if (p_path.get_extension().to_lower() == "mjson")
@@ -109,10 +110,11 @@ read and handle data serialization.
 Creating Custom Data Types
 --------------------------
 
+Godot may not have a proper substitute within its :ref:`doc_core_types`
+or managed resources. Godot needs a new registered data type to
+understand additional binary formats such as machine learning models.
 
-Sometimes, Godot do not have the necessary facilities to express every data format. 
-
-Here is an example of how to create create an custom datatype
+Here is an example of how to create a custom datatype
 
 .. code:: cpp
 
@@ -126,14 +128,15 @@ Here is an example of how to create create an custom datatype
 	#include "dictionary.h"
 
 	class MyJson : public Resource{
-	    GDCLASS(MyJson, Resource);
+		GDCLASS(MyJson, Resource);
 
 	protected:
-	    static void _bind_methods() {
+		static void _bind_methods() {
 			ClassDB::bind_method(D_METHOD("toString"), &MyJson::toString);
 		}
+
 	private:
-	    Dictionary dict;
+		Dictionary dict;
 	public:
 		Error set_file(const String &p_path){
 			Error error_file;
@@ -152,9 +155,11 @@ Here is an example of how to create create an custom datatype
 			file -> close();
 			return OK;
 		}
+
 		String toString() const {
 			return String(*this);
 		}
+
 		operator String() const {
 			JSON a; 
 			return a.print(dict);
@@ -168,11 +173,11 @@ Here is an example of how to create create an custom datatype
 Considerations
 ~~~~~~~~~~~~~~
 
-Some libraries uses interfaces such as ``std::istream`` for 
-deserializing custom data types.
+Some libraries may not define certain common routines such as i/o handling. 
+Therefore, Godot call translations are required.
 
-Here is the code for code for translating ``FileAccess`` calls 
-into ``std::istream``
+For example, here is the code for translating ``FileAccess`` 
+calls into ``std::istream``.
 
 .. code:: cpp
 
@@ -184,17 +189,17 @@ into ``std::istream``
 		GodotFileInStreamBuf(FileAccess * fa) {
 			_file = fa;
 		}
-		int underflow(){
-			if (_file->eof_reached()){
-			return EOF;
-		}else{
-			size_t pos = _file->get_position();
-			uint8_t ret = _file->get_8();
-			_file->seek(pos); //required since get_8() advances the read head
-			return ret;
+		int underflow() {
+			if (_file->eof_reached()) {
+				return EOF;
+			} else {
+				size_t pos = _file->get_position();
+				uint8_t ret = _file->get_8();
+				_file->seek(pos); //required since get_8() advances the read head
+				return ret;
 			}
 		}
-		int uflow(){
+		int uflow() {
 			return _file->eof_reached() ?  EOF : _file -> get_8();
 		}
 	private:
@@ -211,8 +216,9 @@ References:
 Registering the New File Format
 -------------------------------
 
-Godot registers ResourcesFormatLoader with a ResourceLoader 
-handler. The handler will select the proper loader automatically
+Godot registers ``ResourcesFormatLoader`` with a ``ResourceLoader``
+handler. The handler selects the proper loader automatically
+when ``load`` is called.
 
 .. code:: cpp
 
@@ -222,6 +228,7 @@ handler. The handler will select the proper loader automatically
 
 	#include "my_json_loader.h"
 	#include "my_json.h"
+
 	static ResourceFormatLoaderMyJson *my_json_loader = NULL;
 	void register_my_json_types() {
 		my_json_loader = memnew(ResourceFormatLoaderMyJson);
@@ -232,6 +239,10 @@ handler. The handler will select the proper loader automatically
 	void unregister_my_json_types() {
 		memdelete(my_json_loader);
 	}
+
+References:
+~~~~~~~~~~~
+- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L280>`__
 
 
 Loading it on GDScript
