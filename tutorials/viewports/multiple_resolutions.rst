@@ -88,3 +88,8 @@ Stretch aspect
    reported in the viewport, proportionally). This is usually the best
    option for 2D games that scroll horizontally (like runners or
    platformers).
+-  **Expand**: Keep aspect ratio when stretching the screen, but keep
+   neither width nor height. Depending on the screen aspect ratio, the
+   viewport will either report more horizontal resolution (if the screen
+   is wider than the original resolution) or more vertical resolution
+   (if the screen is taller than the original resolution).
