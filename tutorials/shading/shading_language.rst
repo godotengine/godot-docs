@@ -340,7 +340,7 @@ and does not run if no lights affect the object).
     shader_type spatial;
 
     void light() {
-        COLOR = vec3(0.0, 1.0, 0.0);
+        DIFFUSE_LIGHT = vec3(0.0, 1.0, 0.0);
     }
 
 

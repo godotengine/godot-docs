@@ -40,6 +40,17 @@ Export keyword
 
 Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
 
+Signal keyword
+--------------
+
+Use the ``[Signal]`` attribute instead of the GDScript ``signal`` keyword.
+This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
+
+.. code-block:: csharp
+
+    [Signal]
+    delegate void MySignal(string willSendsAString);
+
 Singletons
 ----------
 

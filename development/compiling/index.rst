@@ -5,6 +5,7 @@ Compiling
    :maxdepth: 1
    :name: toc-devel-compiling
 
+   getting_source
    introduction_to_the_buildsystem
    compiling_for_windows
    compiling_for_x11
