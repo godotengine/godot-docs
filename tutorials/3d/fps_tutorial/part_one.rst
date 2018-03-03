@@ -149,15 +149,12 @@ Add the following code to ``Player.gd``:
     var flashlight
 
     func _ready():
-        camera = get_node("Rotation_helper/Camera")
-        camera_holder = get_node("Rotation_helper")
-
-        set_physics_process(true)
-
+        camera = $Rotation_helper/Camera
+        camera_holder = $Rotation_helper
+        
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-        set_process_input(true)
-
-        flashlight = get_node("Rotation_helper/Flashlight")
+        
+        flashlight = $Rotation_helper/Flashlight
 
     func _physics_process(delta):
         var dir = Vector3()
@@ -255,7 +252,7 @@ _________
 Now lets look at the ``_ready`` function:
 
 First we get the ``camera`` and ``rotation_helper`` nodes and store them into their variables.
-After that we set ``_physics_process`` to ``true``. Then we need to set the mouse mode to captured.
+Then we need to set the mouse mode to captured.
 
 This will hide the mouse and keep it at the center of the screen. We do this for two reasons:
 The first reason being we do not want to the player to see their mouse cursor as they play.
@@ -266,7 +263,7 @@ would lose focus. To assure neither of these issues happen, we capture the mouse
 .. note:: see :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
 
-Finally, we call ``set_process_input(true)``. We need to use ``_input`` so we can rotate the player and
+We need to use ``_input`` so we can rotate the player and
 camera when there is mouse motion.
 
 _________
