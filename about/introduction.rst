@@ -10,7 +10,7 @@ Introduction
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
-powerful but user-friendly tool that you can use to develop any kind of game,
+powerful yet user-friendly tool that you can use to develop any kind of game,
 for any platform and with no usage restriction whatsoever.
 
 This page aims at giving a broad presentation of the engine and of the contents
@@ -87,9 +87,9 @@ relatively intuitive:
   adapted to be integrated in the official list of the :ref:`sec-tutorials`
   section.
 - Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
-  which is also available directly within the script editor. It is generated
-  automatically from a file in the main repository, and the generated files
-  of the documentation are therefore not meant to be modified. See
+  which is also available directly within the engine's script editor. It is
+  generated automatically from a file in the main source repository, therefore
+  the generated files of the documentation are not meant to be modified. See
   :ref:`doc_updating_the_class_reference` for details.
 
 Have fun reading and making games with Godot Engine!
