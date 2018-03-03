@@ -1,4 +1,4 @@
-.. _doc_external_editor
+.. _doc_external_editor:
 
 Using an external text editor
 ==============================
