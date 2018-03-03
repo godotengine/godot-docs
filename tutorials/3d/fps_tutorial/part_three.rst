@@ -160,7 +160,7 @@ Now we need to remove a bullet from the gun when we fire. To do that, we just ne
             var scene_root = get_tree().root.get_children()[0]
             scene_root.add_child(clone)
 
-            clone.global_transform = get_node("Rotation_helper/Gun_fire_points/Pistol_point").global_transform
+            clone.global_transform = $Rotation_helper/Gun_fire_points/Pistol_point.global_transform
             # The bullet is a little too small (by default), so let's make it bigger!
             clone.scale = Vector3(4, 4, 4)
 
@@ -168,7 +168,7 @@ Now we need to remove a bullet from the gun when we fire. To do that, we just ne
 
         # Rifle bullet handeling: Send a raycast!
         elif current_gun == "RIFLE":
-                var ray = get_node("Rotation_helper/Gun_fire_points/Rifle_point/RayCast")
+                var ray = $Rotation_helper/Gun_fire_points/Rifle_point/RayCast
                 ray.force_raycast_update()
 
                 if ray.is_colliding():
@@ -180,7 +180,7 @@ Now we need to remove a bullet from the gun when we fire. To do that, we just ne
 
         # Knife bullet(?) handeling: Use an area!
         elif current_gun == "KNIFE":
-            var area = get_node("Rotation_helper/Gun_fire_points/Knife_point/Area")
+            var area = $Rotation_helper/Gun_fire_points/Knife_point/Area
             var bodies = area.get_overlapping_bodies()
 
             for body in bodies:
@@ -411,7 +411,7 @@ and insert the following code:
     var audio_node = null
 
     func _ready():
-        audio_node = get_node("AudioStreamPlayer")
+        audio_node = $AudioStreamPlayer
         audio_node.connect("finished", self, "destroy_self")
         audio_node.stop()
 
@@ -541,7 +541,7 @@ when a bullet is fired. Go to ``fire_bullet`` and add the following:
             var scene_root = get_tree().root.get_children()[0]
             scene_root.add_child(clone)
 
-            clone.global_transform = get_node("Rotation_helper/Gun_fire_points/Pistol_point").global_transform
+            clone.global_transform = $Rotation_helper/Gun_fire_points/Pistol_point.global_transform
             # The bullet is a little too small (by default), so let's make it bigger!
             clone.scale = Vector3(4, 4, 4)
 
@@ -550,7 +550,7 @@ when a bullet is fired. Go to ``fire_bullet`` and add the following:
 
         # Rifle bullet handeling: Send a raycast!
         elif current_gun == "RIFLE":
-            var ray = get_node("Rotation_helper/Gun_fire_points/Rifle_point/RayCast")
+            var ray = Rotation_helper/Gun_fire_points/Rifle_point/RayCast
             ray.force_raycast_update()
 
             if ray.is_colliding():
@@ -563,7 +563,7 @@ when a bullet is fired. Go to ``fire_bullet`` and add the following:
 
         # Knife bullet(?) handeling: Use an area!
         elif current_gun == "KNIFE":
-            var area = get_node("Rotation_helper/Gun_fire_points/Knife_point/Area")
+            var area = $Rotation_helper/Gun_fire_points/Knife_point/Area
             var bodies = area.get_overlapping_bodies()
 
             for body in bodies:
