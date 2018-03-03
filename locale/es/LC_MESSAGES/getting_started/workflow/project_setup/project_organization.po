@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:4
+msgid "Project organization"
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:9
+msgid ""
+"This tutorial is aimed to propose a simple workflow on how to organize "
+"projects. Since Godot allows the programmer to use the file-system as "
+"they please, figuring out a way to organize the projects when starting to"
+" use the engine can be a little challenging. Because of this, a simple "
+"workflow will be described, which can be used or not, but should work as "
+"a starting point."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:16
+msgid ""
+"Additionally, using version control can be challenging so this "
+"proposition will include that too."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:20
+msgid "Organization"
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:22
+msgid ""
+"Godot is scene based in nature, and uses the filesystem as-is, without "
+"metadata or an asset database."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:25
+msgid ""
+"Unlike other engines, a lot of resource are contained within the scene "
+"itself, so the amount of files in the filesystem is considerably lower."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:28
+msgid ""
+"Considering that, the most common approach is to group assets close to "
+"scenes as, when a project grows, it makes it more maintainable."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:31
+msgid ""
+"As example, base sprite images, 3D model scenes or meshes, materials, "
+"etc. can usually be organized in a place, while a separate folder is used"
+" to store built levels that use them."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:52
+msgid "Importing"
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:54
+msgid ""
+"Godot version previous to 3.0 did the import process from files outside "
+"the project. While this can be useful in very large projects, it resulted"
+" in an organization hassle for most developers."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:58
+msgid ""
+"Because of this, assets are now imported from within the project folder "
+"transparently."
+msgstr ""
+
+#: ../../getting_started/workflow/project_setup/project_organization.rst:61
+msgid ""
+"If a folder shouldn't be imported into Godot an exception can be made "
+"with a .gdignore file."
+msgstr ""
+

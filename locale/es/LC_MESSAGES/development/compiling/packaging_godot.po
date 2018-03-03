@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/packaging_godot.rst:4
+msgid "Packaging Godot"
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:6
+msgid ""
+"Starting with 2.0, Godot has features to make it easier to package it for"
+" application repositories."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:9
+msgid "Default behaviour"
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:11
+msgid ""
+"Per default, Godot stores all settings and installed templates in a per-"
+"user directory. First Godot checks the ``APPDATA`` environment variable. "
+"If it exists, the per-user directory is the \"Godot\" subdirectory of "
+"``$APPDATA``. If ``APPDATA`` doesn't exist, Godot checks the ``HOME`` "
+"environment variable. The per-user directory is then the \".godot\" "
+"subdir of ``$HOME``."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:17
+msgid "This meets common operating system standards."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:20
+msgid "Global template path (Unix only)"
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:22
+msgid ""
+"The ``unix_global_settings_path`` build variable is meant for Unix/Linux "
+"distro packagers who want to package export templates together with "
+"godot. It allows to put the export templates on a hardcoded path."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:26
+msgid ""
+"To use it, pass the desired path via the scons "
+"``unix_global_settings_path`` build variable when building the editor. "
+"The export templates then live at the \"templates\" subdirectory of the "
+"path specified."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:30
+msgid ""
+"Templates installed at the per-user location still override the system "
+"wide templates."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:32
+msgid "This option is only available on unix based platforms."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:35
+msgid "Self contained mode"
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:37
+msgid ""
+"The self contained mode can be used to package godot for distribution "
+"systems where godot doesn't live at a fixed location. If the godot editor"
+" finds a ``._sc_`` file in the directory the executable is located, godot"
+" will continue in \"self contained mode\"."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:41
+msgid ""
+"In self contained mode, all config files are located next to the "
+"executable in a directory called ``editor_data``. Godot doesn't read or "
+"write to the per-user location anymore."
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:44
+msgid ""
+"The contents of the ``._sc_`` file (when not empty) are read with the "
+"ConfigFile api (same format as ``engine.cfg``, etc). So far it can "
+"contain a list of pre-loaded project in this format:"
+msgstr ""
+
+#: ../../development/compiling/packaging_godot.rst:53
+msgid ""
+"The paths are relative to the executable location, and will be added to "
+"the file ``editor_settings.xml`` when this is created for the first time."
+msgstr ""
+

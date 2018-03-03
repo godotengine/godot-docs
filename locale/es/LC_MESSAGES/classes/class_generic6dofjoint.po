@@ -1,0 +1,517 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_generic6dofjoint.rst:8
+msgid "Generic6DOFJoint"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:10
+msgid ""
+"**Inherits:** :ref:`Joint<class_joint>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:17
+msgid ""
+"The generic 6 degrees of freedom joint can implement a variety of joint-"
+"types by locking certain axes' rotation or translation."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:24
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/damping** - The amount of "
+"rotational damping across the x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:26
+msgid ""
+"The lower, the longer an impulse from one side takes to travel to the "
+"other side."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:30
+msgid ""
+":ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` "
+"rotation across the x-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:34
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/erp** - When rotating across "
+"x-axis, this error tolerance factor defines how much the correction gets "
+"slowed down. The lower, the slower."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:38
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum "
+"amount of force that can occur, when rotating around x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:42
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum "
+"rotation in negative direction to break loose and rotate around the "
+"x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:46
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/restitution** - The amount of"
+" rotational restitution across the x-axis. The lower, the more "
+"restitution occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:50
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/softness** - The speed of all"
+" rotations across the x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:54
+msgid ""
+":ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum "
+"rotation in positive direction to break loose and rotate around the "
+"x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:58
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/damping** - The amount of "
+"rotational damping across the y-axis. The lower, the more dampening "
+"occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:62
+msgid ""
+":ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` "
+"rotation across the y-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:66
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/erp** - When rotating across "
+"y-axis, this error tolerance factor defines how much the correction gets "
+"slowed down. The lower, the slower."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:70
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum "
+"amount of force that can occur, when rotating around y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:74
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum "
+"rotation in negative direction to break loose and rotate around the "
+"y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:78
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/restitution** - The amount of"
+" rotational restitution across the y-axis. The lower, the more "
+"restitution occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:82
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/softness** - The speed of all"
+" rotations across the y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:86
+msgid ""
+":ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum "
+"rotation in positive direction to break loose and rotate around the "
+"y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:90
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/damping** - The amount of "
+"rotational damping across the z-axis. The lower, the more dampening "
+"occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:94
+msgid ""
+":ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` "
+"rotation across the z-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:98
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/erp** - When rotating across "
+"z-axis, this error tolerance factor defines how much the correction gets "
+"slowed down. The lower, the slower."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:102
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum "
+"amount of force that can occur, when rotating around z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:106
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum "
+"rotation in negative direction to break loose and rotate around the "
+"z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:110
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/restitution** - The amount of"
+" rotational restitution across the z-axis. The lower, the more "
+"restitution occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:114
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/softness** - The speed of all"
+" rotations across the z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:118
+msgid ""
+":ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum "
+"rotation in positive direction to break loose and rotate around the "
+"z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:122
+msgid ""
+":ref:`bool<class_bool>` **angular_motor_x/enabled** - If ``true`` a "
+"rotating motor at the x-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:126
+msgid ""
+":ref:`float<class_float>` **angular_motor_x/force_limit** - Maximum "
+"acceleration for the motor at the x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:130
+msgid ""
+":ref:`float<class_float>` **angular_motor_x/target_velocity** - Target "
+"speed for the motor at the x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:134
+msgid ""
+":ref:`bool<class_bool>` **angular_motor_y/enabled** - If ``true`` a "
+"rotating motor at the y-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:138
+msgid ""
+":ref:`float<class_float>` **angular_motor_y/force_limit** - Maximum "
+"acceleration for the motor at the y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:142
+msgid ""
+":ref:`float<class_float>` **angular_motor_y/target_velocity** - Target "
+"speed for the motor at the y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:146
+msgid ""
+":ref:`bool<class_bool>` **angular_motor_z/enabled** - If ``true`` a "
+"rotating motor at the z-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:150
+msgid ""
+":ref:`float<class_float>` **angular_motor_z/force_limit** - Maximum "
+"acceleration for the motor at the z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:154
+msgid ""
+":ref:`float<class_float>` **angular_motor_z/target_velocity** - Target "
+"speed for the motor at the z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:158
+msgid ""
+":ref:`float<class_float>` **linear_limit_x/damping** - The amount of "
+"damping that happens at the x-motion."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:162
+msgid ""
+":ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the "
+"linear motion across the x-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:166
+msgid ""
+":ref:`float<class_float>` **linear_limit_x/lower_distance** - The minimum"
+" difference between the pivot points' x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:170
+msgid ""
+":ref:`float<class_float>` **linear_limit_x/restitution** - The amount of "
+"restitution on the x-axis movement The lower, the more momentum gets "
+"lost."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:174
+msgid ""
+":ref:`float<class_float>` **linear_limit_x/softness** - A factor applied "
+"to the movement across the x-axis The lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:178
+msgid ""
+":ref:`float<class_float>` **linear_limit_x/upper_distance** - The maximum"
+" difference between the pivot points' x-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:182
+msgid ""
+":ref:`float<class_float>` **linear_limit_y/damping** - The amount of "
+"damping that happens at the y-motion."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:186
+msgid ""
+":ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the "
+"linear motion across the y-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:190
+msgid ""
+":ref:`float<class_float>` **linear_limit_y/lower_distance** - The minimum"
+" difference between the pivot points' y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:194
+msgid ""
+":ref:`float<class_float>` **linear_limit_y/restitution** - The amount of "
+"restitution on the y-axis movement The lower, the more momentum gets "
+"lost."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:198
+msgid ""
+":ref:`float<class_float>` **linear_limit_y/softness** - A factor applied "
+"to the movement across the y-axis The lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:202
+msgid ""
+":ref:`float<class_float>` **linear_limit_y/upper_distance** - The maximum"
+" difference between the pivot points' y-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:206
+msgid ""
+":ref:`float<class_float>` **linear_limit_z/damping** - The amount of "
+"damping that happens at the z-motion."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:210
+msgid ""
+":ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the "
+"linear motion across the z-axis is enabled."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:214
+msgid ""
+":ref:`float<class_float>` **linear_limit_z/lower_distance** - The minimum"
+" difference between the pivot points' z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:218
+msgid ""
+":ref:`float<class_float>` **linear_limit_z/restitution** - The amount of "
+"restitution on the z-axis movement The lower, the more momentum gets "
+"lost."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:222
+msgid ""
+":ref:`float<class_float>` **linear_limit_z/softness** - A factor applied "
+"to the movement across the z-axis The lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:226
+msgid ""
+":ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum"
+" difference between the pivot points' z-axis."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:230
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:234
+msgid "enum **Flag**"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:236
+msgid ""
+"**FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear "
+"motion possible within the given limits."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:237
+msgid ""
+"**FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational "
+"motion possible."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:238
+msgid ""
+"**FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor "
+"across these axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:239
+msgid ""
+"**FLAG_MAX** = **3** --- End flag of FLAG\\_\\* constants, used "
+"internally."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:243
+msgid "enum **Param**"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:245
+msgid ""
+"**PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between "
+"the pivot points' axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:246
+msgid ""
+"**PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between "
+"the pivot points' axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:247
+msgid ""
+"**PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the "
+"movement across the axes The lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:248
+msgid ""
+"**PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the"
+" axes movement The lower, the more momentum gets lost."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:249
+msgid ""
+"**PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens "
+"at the linear motion across the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:250
+msgid ""
+"**PARAM_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in "
+"negative direction to break loose and rotate around the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:251
+msgid ""
+"**PARAM_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in "
+"positive direction to break loose and rotate around the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:252
+msgid ""
+"**PARAM_ANGULAR_LIMIT_SOFTNESS** = **7** --- The speed of all rotations "
+"across the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:253
+msgid ""
+"**PARAM_ANGULAR_DAMPING** = **8** --- The amount of rotational damping "
+"across the axes. The lower, the more dampening occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:254
+msgid ""
+"**PARAM_ANGULAR_RESTITUTION** = **9** --- The amount of rotational "
+"restitution across the axes. The lower, the more restitution occurs."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:255
+msgid ""
+"**PARAM_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force "
+"that can occur, when rotating around the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:256
+msgid ""
+"**PARAM_ANGULAR_ERP** = **11** --- When rotating across the axes, this "
+"error tolerance factor defines how much the correction gets slowed down. "
+"The lower, the slower."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:257
+msgid ""
+"**PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the"
+" motor at the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:258
+msgid ""
+"**PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for"
+" the motor at the axes."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:259
+msgid ""
+"**PARAM_MAX** = **14** --- End flag of PARAM\\_\\* constants, used "
+"internally."
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:263
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_generic6dofjoint.rst:265
+msgid ""
+"The first 3 dof axes are linear axes, which represent translation of "
+"Bodies, and the latter 3 dof axes represent the angular motion. Each axis"
+" can be either locked, or limited."
+msgstr ""
+

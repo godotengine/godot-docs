@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_arvrcontroller.rst:8
+msgid "ARVRController"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:10
+msgid ""
+"**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>`"
+" **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:17
+msgid "A spatial node representing a spatially tracked controller."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:23
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:23
+msgid ""
+":ref:`get_controller_name<class_ARVRController_get_controller_name>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:25
+#: ../../classes/class_arvrcontroller.rst:31
+#: ../../classes/class_arvrcontroller.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:25
+msgid ":ref:`get_hand<class_ARVRController_get_hand>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:27
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:27
+msgid ":ref:`get_is_active<class_ARVRController_get_is_active>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:29
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:29
+msgid ""
+":ref:`get_joystick_axis<class_ARVRController_get_joystick_axis>` **(** "
+":ref:`int<class_int>` axis **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:31
+msgid ""
+":ref:`get_joystick_id<class_ARVRController_get_joystick_id>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:33
+msgid ""
+":ref:`is_button_pressed<class_ARVRController_is_button_pressed>` **(** "
+":ref:`int<class_int>` button **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:37
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:41
+msgid "**button_pressed** **(** :ref:`int<class_int>` button **)**"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:43
+msgid "Emitted when a button on this controller is pressed."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:47
+msgid "**button_release** **(** :ref:`int<class_int>` button **)**"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:49
+msgid "Emitted when a button on this controller is released."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:53
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:57
+msgid ":ref:`int<class_int>` **controller_id** - The controller's id."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:59
+msgid ""
+"A controller id of 0 is unbound and will always result in an inactive "
+"node. Controller id 1 is reserved for the first controller that "
+"identifies itself as the left hand controller and id 2 is reserved for "
+"the first controller that identifies itself as the right hand controller."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:61
+msgid ""
+"For any other controller that the :ref:`ARVRServer<class_arvrserver>` "
+"detects we continue with controller id 3."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:63
+msgid ""
+"When a controller is turned off, its slot is freed. This ensures "
+"controllers will keep the same id even when controllers with lower ids "
+"are turned off."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:67
+msgid ""
+":ref:`float<class_float>` **rumble** - The degree to which the tracker "
+"rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If "
+"changed, updates "
+":ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_rumble>` "
+"accordingly."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:71
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:73
+msgid ""
+"This is a helper spatial node that is linked to the tracking of "
+"controllers. It also offers several handy pass throughs to the state of "
+"buttons and such on the controllers."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:75
+msgid ""
+"Controllers are linked by their id. You can create controller nodes "
+"before the controllers are available. Say your game always uses two "
+"controllers (one for each hand) you can predefine the controllers with id"
+" 1 and 2 and they will become active as soon as the controllers are "
+"identified. If you expect additional controllers to be used you should "
+"react to the signals and add ARVRController nodes to your scene."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:77
+msgid ""
+"The position of the controller node is automatically updated by the ARVR "
+"Server. This makes this node ideal to add child  nodes to visualise the "
+"controller."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:80
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:84
+msgid ":ref:`String<class_string>` **get_controller_name** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:86
+msgid ""
+"If active, returns the name of the associated controller if provided by "
+"the AR/VR SDK used."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:90
+msgid ":ref:`int<class_int>` **get_hand** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:92
+msgid ""
+"Returns the hand holding this controller, if known. See TRACKER\\_\\* "
+"constants in :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:96
+msgid ":ref:`bool<class_bool>` **get_is_active** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:98
+msgid ""
+"Returns ``true`` if the bound controller is active. ARVR systems attempt "
+"to track active controllers."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:102
+msgid ""
+":ref:`float<class_float>` **get_joystick_axis** **(** "
+":ref:`int<class_int>` axis **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:104
+msgid ""
+"Returns the value of the given axis for things like triggers, touchpads, "
+"etc. that are embedded into the controller."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:108
+msgid ":ref:`int<class_int>` **get_joystick_id** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:110
+msgid ""
+"Returns the ID of the joystick object bound to this. Every controller "
+"tracked by the ARVR Server that has buttons and axis will also be "
+"registered as a joystick within Godot. This means that all the normal "
+"joystick tracking and input mapping will work for buttons and axis found "
+"on the AR/VR controllers. This ID is purely offered as information so you"
+" can link up the controller with its joystick entry."
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:114
+msgid ""
+":ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` "
+"button **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrcontroller.rst:116
+msgid "Returns ``true`` if the button at index ``button`` is pressed."
+msgstr ""
+

@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_inputeventkey.rst:8
+msgid "InputEventKey"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:10
+msgid ""
+"**Inherits:** "
+":ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** "
+":ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>`"
+" **<** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:17
+msgid "Input event type for keyboard events."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:23
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:23
+msgid ""
+":ref:`get_scancode_with_modifiers<class_InputEventKey_get_scancode_with_modifiers>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:27
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:31
+msgid ""
+":ref:`bool<class_bool>` **echo** - If ``true`` the key was already "
+"pressed before this event. It means the user is holding the key down."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:35
+msgid ""
+":ref:`bool<class_bool>` **pressed** - If ``true`` the key's state is "
+"pressed. If ``false`` the key's state is released."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:39
+msgid ""
+":ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY_*`` "
+"constants in @global Scope."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:43
+msgid ":ref:`int<class_int>` **unicode** - Key unicode identifier when relevant."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:47
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:49
+msgid ""
+"Stores key presses on the keyboard. Supports key presses, key releases "
+"and :ref:`echo<class_InputEventKey_echo>` events."
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:52
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_inputeventkey.rst:56
+msgid ":ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const"
+msgstr ""
+

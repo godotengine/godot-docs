@@ -1,0 +1,1036 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_image.rst:8
+msgid "Image"
+msgstr ""
+
+#: ../../classes/class_image.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_image.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_image.rst:17
+msgid "Image datatype."
+msgstr ""
+
+#: ../../classes/class_image.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_image.rst:23 ../../classes/class_image.rst:25
+#: ../../classes/class_image.rst:27 ../../classes/class_image.rst:29
+#: ../../classes/class_image.rst:31 ../../classes/class_image.rst:35
+#: ../../classes/class_image.rst:37 ../../classes/class_image.rst:39
+#: ../../classes/class_image.rst:41 ../../classes/class_image.rst:43
+#: ../../classes/class_image.rst:49 ../../classes/class_image.rst:51
+#: ../../classes/class_image.rst:53 ../../classes/class_image.rst:55
+#: ../../classes/class_image.rst:57 ../../classes/class_image.rst:93
+#: ../../classes/class_image.rst:95 ../../classes/class_image.rst:97
+#: ../../classes/class_image.rst:99 ../../classes/class_image.rst:101
+#: ../../classes/class_image.rst:105 ../../classes/class_image.rst:107
+#: ../../classes/class_image.rst:109 ../../classes/class_image.rst:111
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_image.rst:23
+msgid ""
+":ref:`blend_rect<class_Image_blend_rect>` **(** :ref:`Image<class_image>`"
+" src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` "
+"dst **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:25
+msgid ""
+":ref:`blend_rect_mask<class_Image_blend_rect_mask>` **(** "
+":ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, "
+":ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:27
+msgid ""
+":ref:`blit_rect<class_Image_blit_rect>` **(** :ref:`Image<class_image>` "
+"src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` "
+"dst **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:29
+msgid ""
+":ref:`blit_rect_mask<class_Image_blit_rect_mask>` **(** "
+":ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, "
+":ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:31
+msgid ":ref:`clear_mipmaps<class_Image_clear_mipmaps>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:33 ../../classes/class_image.rst:45
+#: ../../classes/class_image.rst:47 ../../classes/class_image.rst:59
+#: ../../classes/class_image.rst:63 ../../classes/class_image.rst:65
+#: ../../classes/class_image.rst:67 ../../classes/class_image.rst:77
+#: ../../classes/class_image.rst:87 ../../classes/class_image.rst:89
+#: ../../classes/class_image.rst:91 ../../classes/class_image.rst:103
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:33
+msgid ""
+":ref:`compress<class_Image_compress>` **(** :ref:`int<class_int>` mode, "
+":ref:`int<class_int>` source, :ref:`float<class_float>` lossy_quality "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:35
+msgid ""
+":ref:`convert<class_Image_convert>` **(** :ref:`int<class_int>` format "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:37
+msgid ""
+":ref:`copy_from<class_Image_copy_from>` **(** :ref:`Image<class_image>` "
+"src **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:39
+msgid ""
+":ref:`create<class_Image_create>` **(** :ref:`int<class_int>` width, "
+":ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, "
+":ref:`int<class_int>` format **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:41
+msgid ""
+":ref:`create_from_data<class_Image_create_from_data>` **(** "
+":ref:`int<class_int>` width, :ref:`int<class_int>` height, "
+":ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format, "
+":ref:`PoolByteArray<class_poolbytearray>` data **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:43
+msgid ""
+":ref:`crop<class_Image_crop>` **(** :ref:`int<class_int>` width, "
+":ref:`int<class_int>` height **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:45
+msgid ":ref:`decompress<class_Image_decompress>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:47
+msgid ":ref:`detect_alpha<class_Image_detect_alpha>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:49
+msgid ":ref:`expand_x2_hq2x<class_Image_expand_x2_hq2x>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:51
+msgid ":ref:`fill<class_Image_fill>` **(** :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:53
+msgid ":ref:`fix_alpha_edges<class_Image_fix_alpha_edges>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:55
+msgid ":ref:`flip_x<class_Image_flip_x>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:57
+msgid ":ref:`flip_y<class_Image_flip_y>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:59
+msgid ":ref:`generate_mipmaps<class_Image_generate_mipmaps>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:61
+msgid ":ref:`PoolByteArray<class_poolbytearray>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:61
+msgid ":ref:`get_data<class_Image_get_data>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:63
+msgid ":ref:`get_format<class_Image_get_format>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:65
+msgid ":ref:`get_height<class_Image_get_height>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:67
+msgid ""
+":ref:`get_mipmap_offset<class_Image_get_mipmap_offset>` **(** "
+":ref:`int<class_int>` mipmap **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:69
+msgid ":ref:`Color<class_color>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:69
+msgid ""
+":ref:`get_pixel<class_Image_get_pixel>` **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:71
+msgid ":ref:`Image<class_image>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:71
+msgid ""
+":ref:`get_rect<class_Image_get_rect>` **(** :ref:`Rect2<class_rect2>` "
+"rect **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:73
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:73
+msgid ":ref:`get_size<class_Image_get_size>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:75
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:75
+msgid ":ref:`get_used_rect<class_Image_get_used_rect>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:77
+msgid ":ref:`get_width<class_Image_get_width>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:79 ../../classes/class_image.rst:81
+#: ../../classes/class_image.rst:83 ../../classes/class_image.rst:85
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_image.rst:79
+msgid ":ref:`has_mipmaps<class_Image_has_mipmaps>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:81
+msgid ":ref:`is_compressed<class_Image_is_compressed>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:83
+msgid ":ref:`is_empty<class_Image_is_empty>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:85
+msgid ":ref:`is_invisible<class_Image_is_invisible>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:87
+msgid ":ref:`load<class_Image_load>` **(** :ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:89
+msgid ""
+":ref:`load_jpg_from_buffer<class_Image_load_jpg_from_buffer>` **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:91
+msgid ""
+":ref:`load_png_from_buffer<class_Image_load_png_from_buffer>` **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:93
+msgid ":ref:`lock<class_Image_lock>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:95
+msgid ":ref:`normalmap_to_xy<class_Image_normalmap_to_xy>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:97
+msgid ":ref:`premultiply_alpha<class_Image_premultiply_alpha>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:99
+msgid ""
+":ref:`resize<class_Image_resize>` **(** :ref:`int<class_int>` width, "
+":ref:`int<class_int>` height, :ref:`int<class_int>` interpolation=1 **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:101
+msgid ""
+":ref:`resize_to_po2<class_Image_resize_to_po2>` **(** "
+":ref:`bool<class_bool>` square=false **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:103
+msgid ""
+":ref:`save_png<class_Image_save_png>` **(** :ref:`String<class_string>` "
+"path **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:105
+msgid ""
+":ref:`set_pixel<class_Image_set_pixel>` **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y, :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:107
+msgid ":ref:`shrink_x2<class_Image_shrink_x2>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:109
+msgid ":ref:`srgb_to_linear<class_Image_srgb_to_linear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:111
+msgid ":ref:`unlock<class_Image_unlock>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:115
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_image.rst:119
+msgid ""
+":ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's "
+"color data in a given format. See ``FORMAT_*`` constants."
+msgstr ""
+
+#: ../../classes/class_image.rst:123
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_image.rst:127
+msgid "enum **CompressMode**"
+msgstr ""
+
+#: ../../classes/class_image.rst:129
+msgid "**COMPRESS_S3TC** = **0**"
+msgstr ""
+
+#: ../../classes/class_image.rst:130
+msgid "**COMPRESS_PVRTC2** = **1**"
+msgstr ""
+
+#: ../../classes/class_image.rst:131
+msgid "**COMPRESS_PVRTC4** = **2**"
+msgstr ""
+
+#: ../../classes/class_image.rst:132
+msgid "**COMPRESS_ETC** = **3**"
+msgstr ""
+
+#: ../../classes/class_image.rst:133
+msgid "**COMPRESS_ETC2** = **4**"
+msgstr ""
+
+#: ../../classes/class_image.rst:137
+msgid "enum **Interpolation**"
+msgstr ""
+
+#: ../../classes/class_image.rst:139
+msgid "**INTERPOLATE_NEAREST** = **0**"
+msgstr ""
+
+#: ../../classes/class_image.rst:140
+msgid "**INTERPOLATE_BILINEAR** = **1**"
+msgstr ""
+
+#: ../../classes/class_image.rst:141
+msgid "**INTERPOLATE_CUBIC** = **2**"
+msgstr ""
+
+#: ../../classes/class_image.rst:145
+msgid "enum **AlphaMode**"
+msgstr ""
+
+#: ../../classes/class_image.rst:147
+msgid "**ALPHA_NONE** = **0**"
+msgstr ""
+
+#: ../../classes/class_image.rst:148
+msgid "**ALPHA_BIT** = **1**"
+msgstr ""
+
+#: ../../classes/class_image.rst:149
+msgid "**ALPHA_BLEND** = **2**"
+msgstr ""
+
+#: ../../classes/class_image.rst:153
+msgid "enum **CompressSource**"
+msgstr ""
+
+#: ../../classes/class_image.rst:155
+msgid "**COMPRESS_SOURCE_GENERIC** = **0**"
+msgstr ""
+
+#: ../../classes/class_image.rst:156
+msgid "**COMPRESS_SOURCE_SRGB** = **1**"
+msgstr ""
+
+#: ../../classes/class_image.rst:157
+msgid "**COMPRESS_SOURCE_NORMAL** = **2**"
+msgstr ""
+
+#: ../../classes/class_image.rst:161
+msgid "enum **Format**"
+msgstr ""
+
+#: ../../classes/class_image.rst:163
+msgid "**FORMAT_L8** = **0**"
+msgstr ""
+
+#: ../../classes/class_image.rst:164
+msgid "**FORMAT_LA8** = **1**"
+msgstr ""
+
+#: ../../classes/class_image.rst:165
+msgid "**FORMAT_R8** = **2**"
+msgstr ""
+
+#: ../../classes/class_image.rst:166
+msgid "**FORMAT_RG8** = **3**"
+msgstr ""
+
+#: ../../classes/class_image.rst:167
+msgid "**FORMAT_RGB8** = **4**"
+msgstr ""
+
+#: ../../classes/class_image.rst:168
+msgid "**FORMAT_RGBA8** = **5**"
+msgstr ""
+
+#: ../../classes/class_image.rst:169
+msgid "**FORMAT_RGBA4444** = **6**"
+msgstr ""
+
+#: ../../classes/class_image.rst:170
+msgid "**FORMAT_RGBA5551** = **7**"
+msgstr ""
+
+#: ../../classes/class_image.rst:171
+msgid "**FORMAT_RF** = **8**"
+msgstr ""
+
+#: ../../classes/class_image.rst:172
+msgid "**FORMAT_RGF** = **9**"
+msgstr ""
+
+#: ../../classes/class_image.rst:173
+msgid "**FORMAT_RGBF** = **10**"
+msgstr ""
+
+#: ../../classes/class_image.rst:174
+msgid "**FORMAT_RGBAF** = **11**"
+msgstr ""
+
+#: ../../classes/class_image.rst:175
+msgid "**FORMAT_RH** = **12**"
+msgstr ""
+
+#: ../../classes/class_image.rst:176
+msgid "**FORMAT_RGH** = **13**"
+msgstr ""
+
+#: ../../classes/class_image.rst:177
+msgid "**FORMAT_RGBH** = **14**"
+msgstr ""
+
+#: ../../classes/class_image.rst:178
+msgid "**FORMAT_RGBAH** = **15**"
+msgstr ""
+
+#: ../../classes/class_image.rst:179
+msgid "**FORMAT_RGBE9995** = **16**"
+msgstr ""
+
+#: ../../classes/class_image.rst:180
+msgid "**FORMAT_DXT1** = **17**"
+msgstr ""
+
+#: ../../classes/class_image.rst:181
+msgid "**FORMAT_DXT3** = **18**"
+msgstr ""
+
+#: ../../classes/class_image.rst:182
+msgid "**FORMAT_DXT5** = **19**"
+msgstr ""
+
+#: ../../classes/class_image.rst:183
+msgid "**FORMAT_RGTC_R** = **20**"
+msgstr ""
+
+#: ../../classes/class_image.rst:184
+msgid "**FORMAT_RGTC_RG** = **21**"
+msgstr ""
+
+#: ../../classes/class_image.rst:185
+msgid "**FORMAT_BPTC_RGBA** = **22**"
+msgstr ""
+
+#: ../../classes/class_image.rst:186
+msgid "**FORMAT_BPTC_RGBF** = **23**"
+msgstr ""
+
+#: ../../classes/class_image.rst:187
+msgid "**FORMAT_BPTC_RGBFU** = **24**"
+msgstr ""
+
+#: ../../classes/class_image.rst:188
+msgid "**FORMAT_PVRTC2** = **25**"
+msgstr ""
+
+#: ../../classes/class_image.rst:189
+msgid "**FORMAT_PVRTC2A** = **26**"
+msgstr ""
+
+#: ../../classes/class_image.rst:190
+msgid "**FORMAT_PVRTC4** = **27**"
+msgstr ""
+
+#: ../../classes/class_image.rst:191
+msgid "**FORMAT_PVRTC4A** = **28**"
+msgstr ""
+
+#: ../../classes/class_image.rst:192
+msgid "**FORMAT_ETC** = **29**"
+msgstr ""
+
+#: ../../classes/class_image.rst:193
+msgid "**FORMAT_ETC2_R11** = **30**"
+msgstr ""
+
+#: ../../classes/class_image.rst:194
+msgid "**FORMAT_ETC2_R11S** = **31**"
+msgstr ""
+
+#: ../../classes/class_image.rst:195
+msgid "**FORMAT_ETC2_RG11** = **32**"
+msgstr ""
+
+#: ../../classes/class_image.rst:196
+msgid "**FORMAT_ETC2_RG11S** = **33**"
+msgstr ""
+
+#: ../../classes/class_image.rst:197
+msgid "**FORMAT_ETC2_RGB8** = **34**"
+msgstr ""
+
+#: ../../classes/class_image.rst:198
+msgid "**FORMAT_ETC2_RGBA8** = **35**"
+msgstr ""
+
+#: ../../classes/class_image.rst:199
+msgid "**FORMAT_ETC2_RGB8A1** = **36**"
+msgstr ""
+
+#: ../../classes/class_image.rst:200
+msgid "**FORMAT_MAX** = **37**"
+msgstr ""
+
+#: ../../classes/class_image.rst:204
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_image.rst:206
+msgid ""
+"Native image datatype. Contains image data, which can be converted to a "
+":ref:`Texture<class_texture>`, and several functions to interact with it."
+" The maximum width and height for an ``Image`` is 16384 pixels."
+msgstr ""
+
+#: ../../classes/class_image.rst:209
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_image.rst:213
+msgid ""
+"void **blend_rect** **(** :ref:`Image<class_image>` src, "
+":ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:215
+msgid ""
+"Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates"
+" ``dest``."
+msgstr ""
+
+#: ../../classes/class_image.rst:219
+msgid ""
+"void **blend_rect_mask** **(** :ref:`Image<class_image>` src, "
+":ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, "
+":ref:`Vector2<class_vector2>` dst **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:221
+msgid ""
+"Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask``"
+" image at coordinates ``dst``. Alpha channels are required for both "
+"``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the"
+" corresponding mask pixel's alpha value is not 0. ``src`` image and "
+"``mask`` image **must** have the same size (width and height) but they "
+"can have different formats."
+msgstr ""
+
+#: ../../classes/class_image.rst:225
+msgid ""
+"void **blit_rect** **(** :ref:`Image<class_image>` src, "
+":ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:227
+msgid ""
+"Copies ``src_rect`` from ``src`` image to this image at coordinates "
+"``dst``."
+msgstr ""
+
+#: ../../classes/class_image.rst:231
+msgid ""
+"void **blit_rect_mask** **(** :ref:`Image<class_image>` src, "
+":ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, "
+":ref:`Vector2<class_vector2>` dst **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:233
+msgid ""
+"Blits ``src_rect`` area from ``src`` image to this image at the "
+"coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the"
+" corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and "
+"``mask`` image **must** have the same size (width and height) but they "
+"can have different formats."
+msgstr ""
+
+#: ../../classes/class_image.rst:237
+msgid "void **clear_mipmaps** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:239
+msgid "Removes the image's mipmaps."
+msgstr ""
+
+#: ../../classes/class_image.rst:243
+msgid ""
+":ref:`int<class_int>` **compress** **(** :ref:`int<class_int>` mode, "
+":ref:`int<class_int>` source, :ref:`float<class_float>` lossy_quality "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:245
+msgid ""
+"Compresses the image to use less memory. Can not directly access pixel "
+"data while the image is compressed. Returns error if the chosen "
+"compression mode is not available. See ``COMPRESS_*`` constants."
+msgstr ""
+
+#: ../../classes/class_image.rst:249
+msgid "void **convert** **(** :ref:`int<class_int>` format **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:251
+msgid "Converts the image's format. See ``FORMAT_*`` constants."
+msgstr ""
+
+#: ../../classes/class_image.rst:255
+msgid "void **copy_from** **(** :ref:`Image<class_image>` src **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:257
+msgid "Copies ``src`` image to this image."
+msgstr ""
+
+#: ../../classes/class_image.rst:261
+msgid ""
+"void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` "
+"height, :ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:263
+msgid ""
+"Creates an empty image of given size and format. See ``FORMAT_*`` "
+"constants. If ``use_mipmaps`` is true then generate mipmaps for this "
+"image. See the ``generate_mipmaps`` method."
+msgstr ""
+
+#: ../../classes/class_image.rst:267
+msgid ""
+"void **create_from_data** **(** :ref:`int<class_int>` width, "
+":ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, "
+":ref:`int<class_int>` format, :ref:`PoolByteArray<class_poolbytearray>` "
+"data **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:269
+msgid ""
+"Creates a new image of given size and format. See ``FORMAT_*`` constants."
+" Fills the image with the given raw data. If ``use_mipmaps`` is true then"
+" generate mipmaps for this image. See the ``generate_mipmaps`` method."
+msgstr ""
+
+#: ../../classes/class_image.rst:273
+msgid ""
+"void **crop** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` "
+"height **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:275
+msgid ""
+"Crops the image to the given ``width`` and ``height``. If the specified "
+"size is larger than the current size, the extra area is filled with black"
+" pixels."
+msgstr ""
+
+#: ../../classes/class_image.rst:279
+msgid ":ref:`int<class_int>` **decompress** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:281
+msgid ""
+"Decompresses the image if it is compressed. Returns an error if "
+"decompress function is not available."
+msgstr ""
+
+#: ../../classes/class_image.rst:285
+msgid ":ref:`int<class_int>` **detect_alpha** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:287
+msgid ""
+"Returns ALPHA_BLEND if the image has data for alpha values. Returns "
+"ALPHA_BIT if all the alpha values are below a certain threshold or the "
+"maximum value. Returns ALPHA_NONE if no data for alpha values is found."
+msgstr ""
+
+#: ../../classes/class_image.rst:291
+msgid "void **expand_x2_hq2x** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:293
+msgid ""
+"Stretches the image and enlarges it by a factor of 2. No interpolation is"
+" done."
+msgstr ""
+
+#: ../../classes/class_image.rst:297
+msgid "void **fill** **(** :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:299
+msgid "Fills the image with a given :ref:`Color<class_color>`."
+msgstr ""
+
+#: ../../classes/class_image.rst:303
+msgid "void **fix_alpha_edges** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:305
+msgid "Blends low-alpha pixels with nearby pixels."
+msgstr ""
+
+#: ../../classes/class_image.rst:309
+msgid "void **flip_x** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:311
+msgid "Flips the image horizontally."
+msgstr ""
+
+#: ../../classes/class_image.rst:315
+msgid "void **flip_y** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:317
+msgid "Flips the image vertically."
+msgstr ""
+
+#: ../../classes/class_image.rst:321
+msgid ":ref:`int<class_int>` **generate_mipmaps** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:323
+msgid ""
+"Generates mipmaps for the image. Mipmaps are pre-calculated and lower "
+"resolution copies of the image. Mipmaps are automatically used if the "
+"image needs to be scaled down when rendered. This improves image quality "
+"and the performance of the rendering. Returns an error if the image is "
+"compressed, in a custom format or if the image's width/height is 0."
+msgstr ""
+
+#: ../../classes/class_image.rst:327
+msgid ":ref:`PoolByteArray<class_poolbytearray>` **get_data** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:329
+msgid "Returns the image's raw data."
+msgstr ""
+
+#: ../../classes/class_image.rst:333
+msgid ":ref:`int<class_int>` **get_format** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:335
+msgid "Returns the image’s format. See ``FORMAT_*`` constants."
+msgstr ""
+
+#: ../../classes/class_image.rst:339
+msgid ":ref:`int<class_int>` **get_height** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:341
+msgid "Returns the image's height."
+msgstr ""
+
+#: ../../classes/class_image.rst:345
+msgid ""
+":ref:`int<class_int>` **get_mipmap_offset** **(** :ref:`int<class_int>` "
+"mipmap **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:347
+msgid ""
+"Returns the offset where the image's mipmap with index ``mipmap`` is "
+"stored in the ``data`` dictionary."
+msgstr ""
+
+#: ../../classes/class_image.rst:351
+msgid ""
+":ref:`Color<class_color>` **get_pixel** **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:353
+msgid ""
+"Returns the color of the pixel at ``(x, y)`` if the image is locked. If "
+"the image is unlocked it always returns a :ref:`Color<class_color>` with "
+"the value ``(0, 0, 0, 1.0)``."
+msgstr ""
+
+#: ../../classes/class_image.rst:357
+msgid ""
+":ref:`Image<class_image>` **get_rect** **(** :ref:`Rect2<class_rect2>` "
+"rect **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:359
+msgid ""
+"Returns a new image that is a copy of the image's area specified with "
+"``rect``."
+msgstr ""
+
+#: ../../classes/class_image.rst:363
+msgid ":ref:`Vector2<class_vector2>` **get_size** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:365
+msgid "Returns the image's size (width and height)."
+msgstr ""
+
+#: ../../classes/class_image.rst:369
+msgid ":ref:`Rect2<class_rect2>` **get_used_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:371
+msgid ""
+"Returns a :ref:`Rect2<class_rect2>` enclosing the visible portion of the "
+"image."
+msgstr ""
+
+#: ../../classes/class_image.rst:375
+msgid ":ref:`int<class_int>` **get_width** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:377
+msgid "Returns the image's width."
+msgstr ""
+
+#: ../../classes/class_image.rst:381
+msgid ":ref:`bool<class_bool>` **has_mipmaps** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:383
+msgid "Returns ``true`` if the image has generated mipmaps."
+msgstr ""
+
+#: ../../classes/class_image.rst:387
+msgid ":ref:`bool<class_bool>` **is_compressed** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:389
+msgid "Returns ``true`` if the image is compressed."
+msgstr ""
+
+#: ../../classes/class_image.rst:393
+msgid ":ref:`bool<class_bool>` **is_empty** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:395
+msgid "Returns ``true`` if the image has no data."
+msgstr ""
+
+#: ../../classes/class_image.rst:399
+msgid ":ref:`bool<class_bool>` **is_invisible** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:401
+msgid ""
+"Returns ``true`` if all the image's pixels have an alpha value of 0. "
+"Returns ``false`` if any pixel has an alpha value higher than 0."
+msgstr ""
+
+#: ../../classes/class_image.rst:405
+msgid ""
+":ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:407
+msgid "Loads an image from file ``path``."
+msgstr ""
+
+#: ../../classes/class_image.rst:411
+msgid ""
+":ref:`int<class_int>` **load_jpg_from_buffer** **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:415
+msgid ""
+":ref:`int<class_int>` **load_png_from_buffer** **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:419
+msgid "void **lock** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:421
+msgid "Locks the data for writing access."
+msgstr ""
+
+#: ../../classes/class_image.rst:425
+msgid "void **normalmap_to_xy** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:427
+msgid ""
+"Converts the image's data to represent coordinates on a 3D plane. This is"
+" used when the image represents a normalmap. A normalmap can add lots of "
+"detail to a 3D surface without increasing the polygon count."
+msgstr ""
+
+#: ../../classes/class_image.rst:431
+msgid "void **premultiply_alpha** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:433
+msgid ""
+"Multiplies color values with alpha values. Resulting color values for a "
+"pixel are ``(color * alpha)/256``."
+msgstr ""
+
+#: ../../classes/class_image.rst:437
+msgid ""
+"void **resize** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` "
+"height, :ref:`int<class_int>` interpolation=1 **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:439
+msgid ""
+"Resizes the image to the given ``width`` and ``height``. New pixels are "
+"calculated using ``interpolation``. See ``interpolation`` constants."
+msgstr ""
+
+#: ../../classes/class_image.rst:443
+msgid "void **resize_to_po2** **(** :ref:`bool<class_bool>` square=false **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:445
+msgid ""
+"Resizes the image to the nearest power of 2 for the width and height. If "
+"``square`` is ``true`` then set width and height to be the same."
+msgstr ""
+
+#: ../../classes/class_image.rst:449
+msgid ""
+":ref:`int<class_int>` **save_png** **(** :ref:`String<class_string>` path"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_image.rst:451
+msgid "Saves the image as a PNG file to ``path``."
+msgstr ""
+
+#: ../../classes/class_image.rst:455
+msgid ""
+"void **set_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` "
+"y, :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:457
+msgid ""
+"Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the "
+"image is locked. Example:"
+msgstr ""
+
+#: ../../classes/class_image.rst:470
+msgid "void **shrink_x2** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:472
+msgid "Shrinks the image by a factor of 2."
+msgstr ""
+
+#: ../../classes/class_image.rst:476
+msgid "void **srgb_to_linear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:478
+msgid "Converts the raw data from the sRGB colorspace to a linear scale."
+msgstr ""
+
+#: ../../classes/class_image.rst:482
+msgid "void **unlock** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_image.rst:484
+msgid "Unlocks the data and prevents changes."
+msgstr ""
+

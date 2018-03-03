@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/batch_building_templates.rst:4
+msgid "Batch building templates"
+msgstr ""
+
+#: ../../development/compiling/batch_building_templates.rst:6
+msgid "This page is outdated and needs to be updated or removed."
+msgstr ""
+
+#: ../../development/compiling/batch_building_templates.rst:8
+msgid ""
+"The following is almost the same script that we use to build all the "
+"export templates that go to the website. If you want to build or roll "
+"them yourself, this might be of use."
+msgstr ""
+
+#: ../../development/compiling/batch_building_templates.rst:12
+msgid "(note: Apple stuff is missing)"
+msgstr ""
+

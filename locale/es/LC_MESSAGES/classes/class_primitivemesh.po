@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_primitivemesh.rst:8
+msgid "PrimitiveMesh"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:10
+msgid ""
+"**Inherits:** :ref:`Mesh<class_mesh>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:12
+msgid ""
+"**Inherited By:** :ref:`PlaneMesh<class_planemesh>`, "
+":ref:`CubeMesh<class_cubemesh>`, :ref:`SphereMesh<class_spheremesh>`, "
+":ref:`CylinderMesh<class_cylindermesh>`, "
+":ref:`CapsuleMesh<class_capsulemesh>`, :ref:`QuadMesh<class_quadmesh>`, "
+":ref:`PrismMesh<class_prismmesh>`"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:19
+#: ../../classes/class_primitivemesh.rst:39
+msgid ""
+"Base class for all primitive meshes. Handles applying a "
+":ref:`Material<class_material>` to a primitive mesh."
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:25
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:25
+msgid ""
+":ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:29
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:33
+msgid ""
+":ref:`Material<class_material>` **material** - The current "
+":ref:`Material<class_material>` of the primitive mesh."
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:37
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:42
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_primitivemesh.rst:46
+msgid ":ref:`Array<class_array>` **get_mesh_arrays** **(** **)** const"
+msgstr ""
+

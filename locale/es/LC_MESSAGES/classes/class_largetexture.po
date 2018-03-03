@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_largetexture.rst:8
+msgid "LargeTexture"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:10
+msgid ""
+"**Inherits:** :ref:`Texture<class_texture>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:17
+#: ../../classes/class_largetexture.rst:43
+msgid "A Texture capable of storing many smaller Textures with offsets."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:23
+#: ../../classes/class_largetexture.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:23
+msgid ""
+":ref:`add_piece<class_LargeTexture_add_piece>` **(** "
+":ref:`Vector2<class_vector2>` ofs, :ref:`Texture<class_texture>` texture "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:25
+#: ../../classes/class_largetexture.rst:33
+#: ../../classes/class_largetexture.rst:35
+#: ../../classes/class_largetexture.rst:37
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:25
+msgid ":ref:`clear<class_LargeTexture_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:27
+msgid ""
+":ref:`get_piece_count<class_LargeTexture_get_piece_count>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:29
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:29
+msgid ""
+":ref:`get_piece_offset<class_LargeTexture_get_piece_offset>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:31
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:31
+msgid ""
+":ref:`get_piece_texture<class_LargeTexture_get_piece_texture>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:33
+msgid ""
+":ref:`set_piece_offset<class_LargeTexture_set_piece_offset>` **(** "
+":ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` ofs **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:35
+msgid ""
+":ref:`set_piece_texture<class_LargeTexture_set_piece_texture>` **(** "
+":ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:37
+msgid ""
+":ref:`set_size<class_LargeTexture_set_size>` **(** "
+":ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:41
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:45
+msgid ""
+"You can dynamically add pieces(:ref:`Texture<class_texture>`) to this "
+"``LargeTexture`` using different offsets."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:48
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:52
+msgid ""
+":ref:`int<class_int>` **add_piece** **(** :ref:`Vector2<class_vector2>` "
+"ofs, :ref:`Texture<class_texture>` texture **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:54
+msgid ""
+"Add another :ref:`Texture<class_texture>` to this ``LargeTexture``, "
+"starting on offset \"ofs\"."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:58
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:60
+msgid "Clears the ``LargeTexture``."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:64
+msgid ":ref:`int<class_int>` **get_piece_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:66
+msgid "Returns the number of pieces currently in this ``LargeTexture``."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:70
+msgid ""
+":ref:`Vector2<class_vector2>` **get_piece_offset** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:72
+msgid "Returns the offset of the piece with index \"idx\"."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:76
+msgid ""
+":ref:`Texture<class_texture>` **get_piece_texture** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:78
+msgid "Returns the :ref:`Texture<class_texture>` of the piece with index \"idx\"."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:82
+msgid ""
+"void **set_piece_offset** **(** :ref:`int<class_int>` idx, "
+":ref:`Vector2<class_vector2>` ofs **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:84
+msgid "Sets the offset of the piece with index \"idx\" to \"ofs\"."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:88
+msgid ""
+"void **set_piece_texture** **(** :ref:`int<class_int>` idx, "
+":ref:`Texture<class_texture>` texture **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:90
+msgid ""
+"Sets the :ref:`Texture<class_texture>` of the piece with index \"idx\" to"
+"  \"ofs\"."
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:94
+msgid "void **set_size** **(** :ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_largetexture.rst:96
+msgid "Sets the size of this ``LargeTexture``."
+msgstr ""
+

@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_arvrserver.rst:8
+msgid "ARVRServer"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:17
+msgid "This is our AR/VR Server."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:23 ../../classes/class_arvrserver.rst:39
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:23
+msgid ""
+":ref:`center_on_hmd<class_ARVRServer_center_on_hmd>` **(** "
+":ref:`int<class_int>` rotation_mode, :ref:`bool<class_bool>` keep_height "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:25 ../../classes/class_arvrserver.rst:27
+msgid ":ref:`ARVRInterface<class_arvrinterface>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:25
+msgid ""
+":ref:`find_interface<class_ARVRServer_find_interface>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:27
+msgid ""
+":ref:`get_interface<class_ARVRServer_get_interface>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:29 ../../classes/class_arvrserver.rst:37
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:29
+msgid ""
+":ref:`get_interface_count<class_ARVRServer_get_interface_count>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:31
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:31
+msgid ":ref:`get_interfaces<class_ARVRServer_get_interfaces>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:33
+msgid ":ref:`Transform<class_transform>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:33
+msgid ""
+":ref:`get_reference_frame<class_ARVRServer_get_reference_frame>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:35
+msgid ":ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:35
+msgid ""
+":ref:`get_tracker<class_ARVRServer_get_tracker>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:37
+msgid ""
+":ref:`get_tracker_count<class_ARVRServer_get_tracker_count>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:39
+msgid ""
+":ref:`set_primary_interface<class_ARVRServer_set_primary_interface>` "
+"**(** :ref:`ARVRInterface<class_arvrinterface>` interface **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:43
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:47
+msgid "**interface_added** **(** :ref:`String<class_string>` interface_name **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:49
+msgid "Signal send when a new interface has been added."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:53
+msgid ""
+"**interface_removed** **(** :ref:`String<class_string>` interface_name "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:55
+msgid "Signal send when an interface is removed."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:59
+msgid ""
+"**tracker_added** **(** :ref:`String<class_string>` tracker_name, "
+":ref:`int<class_int>` type, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:61
+msgid ""
+"Signal send when a new tracker has been added. If you don't use a fixed "
+"number of controllers or if you're using ARVRAnchors for an AR solution "
+"it is important to react to this signal and add the appropriate "
+"ARVRController or ARVRAnchor node related to this new tracker."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:65
+msgid ""
+"**tracker_removed** **(** :ref:`String<class_string>` tracker_name, "
+":ref:`int<class_int>` type, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:67
+msgid ""
+"Signal send when a tracker is removed, you should remove any "
+"ARVRController or ARVRAnchor points if applicable. This is not mandatory,"
+" the nodes simply become inactive and will be made active again when a "
+"new tracker becomes available (i.e. a new controller is switched on that "
+"takes the place of the previous one)."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:71
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:75
+msgid ""
+":ref:`float<class_float>` **world_scale** - Allows you to adjust the "
+"scale to your game's units. Most AR/VR platforms assume a scale of 1 game"
+" world unit = 1 meter in the real world."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:79
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:83
+msgid "enum **RotationMode**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:85
+msgid ""
+"**RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the "
+"HMD. Regardless of what direction the user is looking to in the real "
+"world. The user will look dead ahead in the virtual world."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:86
+msgid ""
+"**RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the "
+"tilt of the device. So if we're looking down, we keep looking down but "
+"heading will be reset."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:87
+msgid ""
+"**DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the"
+" HMD, only the position of the player gets centered."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:91
+msgid "enum **TrackerType**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:93
+msgid ""
+"**TRACKER_CONTROLLER** = **1** --- Our tracker tracks the location of a "
+"controller."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:94
+msgid ""
+"**TRACKER_BASESTATION** = **2** --- Our tracker tracks the location of a "
+"base station."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:95
+msgid ""
+"**TRACKER_ANCHOR** = **4** --- Our tracker tracks the location and size "
+"of an AR anchor."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:96
+msgid ""
+"**TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of"
+" any known type."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:97
+msgid ""
+"**TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the "
+"tracker type yet."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:98
+msgid "**TRACKER_ANY** = **255** --- Used internally to select all trackers."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:102
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:104
+msgid ""
+"The AR/VR Server is the heart of our AR/VR solution and handles all the "
+"processing."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:107
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:111
+msgid ""
+"void **center_on_hmd** **(** :ref:`int<class_int>` rotation_mode, "
+":ref:`bool<class_bool>` keep_height **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:113
+msgid ""
+"This is a really important function to understand correctly. AR and VR "
+"platforms all handle positioning slightly differently."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:115
+msgid ""
+"For platforms that do not offer spatial tracking our origin point (0,0,0)"
+" is the location of our HMD but you have little control over the "
+"direction the player is facing in the real world."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:117
+msgid ""
+"For platforms that do offer spatial tracking our origin point depends "
+"very much on the system. For OpenVR our origin point is usually the "
+"center of the tracking space, on the ground. For other platforms its "
+"often the location of the tracking camera."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:119
+msgid ""
+"This method allows you to center our tracker on the location of the HMD, "
+"it will take the current location of the HMD and use that to adjust all "
+"our tracking data in essence realigning the real world to your players "
+"current position in your game world."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:121
+msgid ""
+"For this method to produce usable results tracking information should be "
+"available and this often takes a few frames after starting your game."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:123
+msgid ""
+"You should call this method after a few seconds have passed, when the "
+"user requests a realignment of the display holding a designated button on"
+" a controller for a short period of time, and when implementing a "
+"teleport mechanism."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:127
+msgid ""
+":ref:`ARVRInterface<class_arvrinterface>` **find_interface** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:129
+msgid ""
+"Find an interface by its name. Say that you're making a game that uses "
+"specific capabilities of an AR/VR platform you can find the interface for"
+" that platform by name and initialize it."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:133
+msgid ""
+":ref:`ARVRInterface<class_arvrinterface>` **get_interface** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:135
+msgid "Get the interface registered at a given index in our list of interfaces."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:139
+msgid ":ref:`int<class_int>` **get_interface_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:141
+msgid ""
+"Get the number of interfaces currently registered with the AR/VR server. "
+"If you're game supports multiple AR/VR platforms you can look through the"
+" available interface and either present the user with a selection or "
+"simply try an initialize each interface and use the first one that "
+"returns true."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:145
+msgid ":ref:`Array<class_array>` **get_interfaces** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:147
+msgid ""
+"Returns a list of available interfaces with both id and name of the "
+"interface."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:151
+msgid ""
+":ref:`Transform<class_transform>` **get_reference_frame** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:153
+msgid ""
+"Gets our reference frame transform, mostly used internally and exposed "
+"for GDNative build interfaces."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:157
+msgid ""
+":ref:`ARVRPositionalTracker<class_arvrpositionaltracker>` **get_tracker**"
+" **(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:159
+msgid "Get the positional tracker at the given ID."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:163
+msgid ":ref:`int<class_int>` **get_tracker_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:165
+msgid "Get the number of trackers currently registered."
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:169
+msgid ""
+"void **set_primary_interface** **(** "
+":ref:`ARVRInterface<class_arvrinterface>` interface **)**"
+msgstr ""
+
+#: ../../classes/class_arvrserver.rst:171
+msgid ""
+"Changes the primary interface to the specified interface. Again mostly "
+"exposed for GDNative interfaces."
+msgstr ""
+

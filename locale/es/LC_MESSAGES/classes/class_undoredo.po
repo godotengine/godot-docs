@@ -1,0 +1,299 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_undoredo.rst:8
+msgid "UndoRedo"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:17
+msgid "Helper to manage UndoRedo in the editor or custom tools."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:23 ../../classes/class_undoredo.rst:29
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:23
+msgid ""
+":ref:`add_do_method<class_UndoRedo_add_do_method>` **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` method "
+"**)** vararg"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:25 ../../classes/class_undoredo.rst:27
+#: ../../classes/class_undoredo.rst:31 ../../classes/class_undoredo.rst:33
+#: ../../classes/class_undoredo.rst:35 ../../classes/class_undoredo.rst:37
+#: ../../classes/class_undoredo.rst:39 ../../classes/class_undoredo.rst:45
+#: ../../classes/class_undoredo.rst:47
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:25
+msgid ""
+":ref:`add_do_property<class_UndoRedo_add_do_property>` **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` property,"
+" :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:27
+msgid ""
+":ref:`add_do_reference<class_UndoRedo_add_do_reference>` **(** "
+":ref:`Object<class_object>` object **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:29
+msgid ""
+":ref:`add_undo_method<class_UndoRedo_add_undo_method>` **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` method "
+"**)** vararg"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:31
+msgid ""
+":ref:`add_undo_property<class_UndoRedo_add_undo_property>` **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` property,"
+" :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:33
+msgid ""
+":ref:`add_undo_reference<class_UndoRedo_add_undo_reference>` **(** "
+":ref:`Object<class_object>` object **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:35
+msgid ":ref:`clear_history<class_UndoRedo_clear_history>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:37
+msgid ":ref:`commit_action<class_UndoRedo_commit_action>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:39
+msgid ""
+":ref:`create_action<class_UndoRedo_create_action>` **(** "
+":ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0 "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:41
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:41
+msgid ""
+":ref:`get_current_action_name<class_UndoRedo_get_current_action_name>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:43
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:43
+msgid ":ref:`get_version<class_UndoRedo_get_version>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:45
+msgid ":ref:`redo<class_UndoRedo_redo>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:47
+msgid ":ref:`undo<class_UndoRedo_undo>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:51
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:55
+msgid "enum **MergeMode**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:57
+msgid "**MERGE_DISABLE** = **0**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:58
+msgid "**MERGE_ENDS** = **1**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:59
+msgid "**MERGE_ALL** = **2**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:63
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:65
+msgid ""
+"Helper to manage UndoRedo in the editor or custom tools. It works by "
+"storing calls to functions in both 'do' an 'undo' lists."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:67
+msgid ""
+"Common behavior is to create an action, then add do/undo calls to "
+"functions or property changes, then committing the action."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:70
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:74
+msgid ""
+":ref:`Variant<class_variant>` **add_do_method** **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` method "
+"**)** vararg"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:78
+msgid ""
+"void **add_do_property** **(** :ref:`Object<class_object>` object, "
+":ref:`String<class_string>` property, :ref:`Variant<class_variant>` value"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:80
+msgid "Set a property with a custom value."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:84
+msgid "void **add_do_reference** **(** :ref:`Object<class_object>` object **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:86
+msgid ""
+"Add a 'do' reference that will be erased if the 'do' history is lost. "
+"This is useful mostly for new nodes created for the 'do' call. Do not use"
+" for resources."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:90
+msgid ""
+":ref:`Variant<class_variant>` **add_undo_method** **(** "
+":ref:`Object<class_object>` object, :ref:`String<class_string>` method "
+"**)** vararg"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:94
+msgid ""
+"void **add_undo_property** **(** :ref:`Object<class_object>` object, "
+":ref:`String<class_string>` property, :ref:`Variant<class_variant>` value"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:96
+msgid "Undo setting of a property with a custom value."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:100
+msgid "void **add_undo_reference** **(** :ref:`Object<class_object>` object **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:102
+msgid ""
+"Add an 'undo' reference that will be erased if the 'undo' history is "
+"lost. This is useful mostly for nodes removed with the 'do' call (not the"
+" 'undo' call!)."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:106
+msgid "void **clear_history** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:108
+msgid "Clear the undo/redo history and associated references."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:112
+msgid "void **commit_action** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:114
+msgid ""
+"Commit the action. All 'do' methods/properties are called/set when this "
+"function is called."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:118
+msgid ""
+"void **create_action** **(** :ref:`String<class_string>` name, "
+":ref:`int<class_int>` merge_mode=0 **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:120
+msgid ""
+"Create a new action. After this is called, do all your calls to "
+":ref:`add_do_method<class_UndoRedo_add_do_method>`, "
+":ref:`add_undo_method<class_UndoRedo_add_undo_method>`, "
+":ref:`add_do_property<class_UndoRedo_add_do_property>` and "
+":ref:`add_undo_property<class_UndoRedo_add_undo_property>`."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:124
+msgid ":ref:`String<class_string>` **get_current_action_name** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:126
+msgid "Get the name of the current action."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:130
+msgid ":ref:`int<class_int>` **get_version** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:132
+msgid ""
+"Get the version, each time a new action is committed, the version number "
+"of the UndoRedo is increased automatically."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:134
+msgid "This is useful mostly to check if something changed from a saved version."
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:138
+msgid "void **redo** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_undoredo.rst:142
+msgid "void **undo** **(** **)**"
+msgstr ""
+

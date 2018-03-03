@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_rect2.rst:8
+msgid "Rect2"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:15
+msgid "2D Axis-aligned bounding box."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:21 ../../classes/class_rect2.rst:23
+#: ../../classes/class_rect2.rst:25 ../../classes/class_rect2.rst:27
+#: ../../classes/class_rect2.rst:31 ../../classes/class_rect2.rst:35
+#: ../../classes/class_rect2.rst:37 ../../classes/class_rect2.rst:39
+#: ../../classes/class_rect2.rst:47
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:21
+msgid ""
+":ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`Vector2<class_vector2>` "
+"position, :ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:23
+msgid ""
+":ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`float<class_float>` x, "
+":ref:`float<class_float>` y, :ref:`float<class_float>` width, "
+":ref:`float<class_float>` height **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:25
+msgid ":ref:`abs<class_Rect2_abs>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:27
+msgid ":ref:`clip<class_Rect2_clip>` **(** :ref:`Rect2<class_rect2>` b **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:29 ../../classes/class_rect2.rst:41
+#: ../../classes/class_rect2.rst:43 ../../classes/class_rect2.rst:45
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:29
+msgid ""
+":ref:`encloses<class_Rect2_encloses>` **(** :ref:`Rect2<class_rect2>` b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:31
+msgid ""
+":ref:`expand<class_Rect2_expand>` **(** :ref:`Vector2<class_vector2>` to "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:33
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:33
+msgid ":ref:`get_area<class_Rect2_get_area>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:35
+msgid ":ref:`grow<class_Rect2_grow>` **(** :ref:`float<class_float>` by **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:37
+msgid ""
+":ref:`grow_individual<class_Rect2_grow_individual>` **(** "
+":ref:`float<class_float>` left, :ref:`float<class_float>` top, "
+":ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:39
+msgid ""
+":ref:`grow_margin<class_Rect2_grow_margin>` **(** :ref:`int<class_int>` "
+"margin, :ref:`float<class_float>` by **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:41
+msgid ":ref:`has_no_area<class_Rect2_has_no_area>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:43
+msgid ""
+":ref:`has_point<class_Rect2_has_point>` **(** "
+":ref:`Vector2<class_vector2>` point **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:45
+msgid ""
+":ref:`intersects<class_Rect2_intersects>` **(** :ref:`Rect2<class_rect2>`"
+" b **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:47
+msgid ":ref:`merge<class_Rect2_merge>` **(** :ref:`Rect2<class_rect2>` b **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:51
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:55
+msgid ":ref:`Vector2<class_vector2>` **end** - Ending corner."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:59
+msgid ":ref:`Vector2<class_vector2>` **position** - Position (starting corner)."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:63
+msgid ":ref:`Vector2<class_vector2>` **size** - Size from position to end."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:67
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:69
+msgid ""
+"Rect2 consists of a position, a size, and several utility functions. It "
+"is typically used for fast overlap tests."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:72
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:76
+msgid ""
+":ref:`Rect2<class_rect2>` **Rect2** **(** :ref:`Vector2<class_vector2>` "
+"position, :ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:78
+msgid "Constructs a ``Rect2`` by position and size."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:82
+msgid ""
+":ref:`Rect2<class_rect2>` **Rect2** **(** :ref:`float<class_float>` x, "
+":ref:`float<class_float>` y, :ref:`float<class_float>` width, "
+":ref:`float<class_float>` height **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:84
+msgid "Constructs a ``Rect2`` by x, y, width, and height."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:88
+msgid ":ref:`Rect2<class_rect2>` **abs** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:92
+msgid ":ref:`Rect2<class_rect2>` **clip** **(** :ref:`Rect2<class_rect2>` b **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:94
+msgid "Returns the intersection of this ``Rect2`` and b."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:98
+msgid ""
+":ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2<class_rect2>` b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:100
+msgid "Returns ``true`` if this ``Rect2`` completely encloses another one."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:104
+msgid ""
+":ref:`Rect2<class_rect2>` **expand** **(** :ref:`Vector2<class_vector2>` "
+"to **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:106
+msgid "Returns this ``Rect2`` expanded to include a given point."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:110
+msgid ":ref:`float<class_float>` **get_area** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:112
+msgid "Returns the area of the ``Rect2``."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:116
+msgid ""
+":ref:`Rect2<class_rect2>` **grow** **(** :ref:`float<class_float>` by "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:118
+msgid ""
+"Returns a copy of the ``Rect2`` grown a given amount of units towards all"
+" the sides."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:122
+msgid ""
+":ref:`Rect2<class_rect2>` **grow_individual** **(** "
+":ref:`float<class_float>` left, :ref:`float<class_float>` top, "
+":ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:124
+msgid ""
+"Returns a copy of the ``Rect2`` grown a given amount of units towards "
+"each direction individually."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:128
+msgid ""
+":ref:`Rect2<class_rect2>` **grow_margin** **(** :ref:`int<class_int>` "
+"margin, :ref:`float<class_float>` by **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:130
+msgid ""
+"Returns a copy of the ``Rect2`` grown a given amount of units towards the"
+" Margin direction."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:134
+msgid ":ref:`bool<class_bool>` **has_no_area** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:136
+msgid "Returns ``true`` if the ``Rect2`` is flat or empty."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:140
+msgid ""
+":ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_vector2>`"
+" point **)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:142
+msgid "Returns ``true`` if the ``Rect2`` contains a point."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:146
+msgid ""
+":ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_rect2>` b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:148
+msgid "Returns ``true`` if the ``Rect2`` overlaps with another."
+msgstr ""
+
+#: ../../classes/class_rect2.rst:152
+msgid ""
+":ref:`Rect2<class_rect2>` **merge** **(** :ref:`Rect2<class_rect2>` b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_rect2.rst:154
+msgid "Returns a larger Rect2 that contains this Rect2 and ``with``."
+msgstr ""
+

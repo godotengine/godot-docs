@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_dynamicfont.rst:8
+msgid "DynamicFont"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:10
+msgid ""
+"**Inherits:** :ref:`Font<class_font>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:17
+msgid "DynamicFont renders vector font files at runtime."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:23
+#: ../../classes/class_dynamicfont.rst:29
+#: ../../classes/class_dynamicfont.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:23
+msgid ""
+":ref:`add_fallback<class_DynamicFont_add_fallback>` **(** "
+":ref:`DynamicFontData<class_dynamicfontdata>` data **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:25
+msgid ":ref:`DynamicFontData<class_dynamicfontdata>`"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:25
+msgid ""
+":ref:`get_fallback<class_DynamicFont_get_fallback>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:27
+msgid ""
+":ref:`get_fallback_count<class_DynamicFont_get_fallback_count>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:29
+msgid ""
+":ref:`remove_fallback<class_DynamicFont_remove_fallback>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:31
+msgid ""
+":ref:`set_fallback<class_DynamicFont_set_fallback>` **(** "
+":ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` "
+"data **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:35
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:39
+msgid ""
+":ref:`int<class_int>` **extra_spacing_bottom** - Extra spacing at the "
+"bottom in pixels."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:43
+msgid ""
+":ref:`int<class_int>` **extra_spacing_char** - Extra character spacing in"
+" pixels."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:47
+msgid ""
+":ref:`int<class_int>` **extra_spacing_space** - Extra space spacing in "
+"pixels."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:51
+msgid ""
+":ref:`int<class_int>` **extra_spacing_top** - Extra spacing at the top in"
+" pixels."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:55
+msgid ""
+":ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font "
+"data."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:59
+msgid ":ref:`int<class_int>` **size** - The font size."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:63
+msgid ":ref:`bool<class_bool>` **use_filter** - If ``true`` filtering is used."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:67
+msgid ":ref:`bool<class_bool>` **use_mipmaps** - If ``true`` mipmapping is used."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:71
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:75
+msgid "enum **SpacingType**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:77
+msgid "**SPACING_TOP** = **0** --- Spacing at the top."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:78
+msgid "**SPACING_BOTTOM** = **1** --- Spacing at the bottom."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:79
+msgid "**SPACING_CHAR** = **2** --- Character spacing."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:80
+msgid "**SPACING_SPACE** = **3** --- Space spacing."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:84
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:86
+msgid ""
+"DynamicFont renders vector font files (such as TTF or OTF) dynamically at"
+" runtime instead of using a prerendered texture atlas like "
+":ref:`BitmapFont<class_bitmapfont>`. This trades the faster loading time "
+"of :ref:`BitmapFont<class_bitmapfont>`\\ s for the ability to change font"
+" parameters like size and spacing during runtime. "
+":ref:`DynamicFontData<class_dynamicfontdata>` is used for referencing the"
+" font file paths."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:89
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:93
+msgid ""
+"void **add_fallback** **(** :ref:`DynamicFontData<class_dynamicfontdata>`"
+" data **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:95
+msgid "Adds a fallback font."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:99
+msgid ""
+":ref:`DynamicFontData<class_dynamicfontdata>` **get_fallback** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:101
+msgid "Returns the fallback font at index ``idx``."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:105
+msgid ":ref:`int<class_int>` **get_fallback_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:107
+msgid "Returns the number of fallback fonts."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:111
+msgid "void **remove_fallback** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:113
+msgid "Removes the fallback font at index ``idx``."
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:117
+msgid ""
+"void **set_fallback** **(** :ref:`int<class_int>` idx, "
+":ref:`DynamicFontData<class_dynamicfontdata>` data **)**"
+msgstr ""
+
+#: ../../classes/class_dynamicfont.rst:119
+msgid "Sets the fallback font at index ``idx``."
+msgstr ""
+

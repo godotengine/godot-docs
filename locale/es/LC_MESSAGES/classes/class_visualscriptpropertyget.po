@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_visualscriptpropertyget.rst:8
+msgid "VisualScriptPropertyGet"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:24
+msgid ":ref:`String<class_string>` **base_script**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:28
+msgid ":ref:`String<class_string>` **base_type**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:32
+msgid ":ref:`Type<enum_variant_type>` **basic_type**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:36
+msgid ":ref:`String<class_string>` **index**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:40
+msgid ":ref:`NodePath<class_nodepath>` **node_path**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:44
+msgid ":ref:`String<class_string>` **property**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:48
+msgid ":ref:`CallMode<enum_visualscriptpropertyget_callmode>` **set_mode**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:52
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:56
+msgid "enum **CallMode**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:58
+msgid "**CALL_MODE_SELF** = **0**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:59
+msgid "**CALL_MODE_NODE_PATH** = **1**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyget.rst:60
+msgid "**CALL_MODE_INSTANCE** = **2**"
+msgstr ""
+

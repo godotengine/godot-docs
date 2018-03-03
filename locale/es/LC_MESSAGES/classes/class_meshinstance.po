@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_meshinstance.rst:8
+msgid "MeshInstance"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:10
+msgid ""
+"**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** "
+":ref:`VisualInstance<class_visualinstance>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:17
+msgid "Node that instances meshes into a scenario."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:23
+#: ../../classes/class_meshinstance.rst:25
+#: ../../classes/class_meshinstance.rst:27
+#: ../../classes/class_meshinstance.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:23
+msgid ""
+":ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:25
+msgid ""
+":ref:`create_debug_tangents<class_MeshInstance_create_debug_tangents>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:27
+msgid ""
+":ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:29
+msgid ":ref:`Material<class_material>`"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:29
+msgid ""
+":ref:`get_surface_material<class_MeshInstance_get_surface_material>` "
+"**(** :ref:`int<class_int>` surface **)** const"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:31
+msgid ""
+":ref:`set_surface_material<class_MeshInstance_set_surface_material>` "
+"**(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` "
+"material **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:35
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:39
+msgid ""
+":ref:`Mesh<class_mesh>` **mesh** - The :ref:`Mesh<class_mesh>` resource "
+"for the instance."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:43
+msgid ""
+":ref:`NodePath<class_nodepath>` **skeleton** - "
+":ref:`NodePath<class_nodepath>` to the :ref:`Skeleton<class_skeleton>` "
+"associated with the instance."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:47
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:49
+msgid ""
+"MeshInstance is a node that takes a :ref:`Mesh<class_mesh>` resource and "
+"adds it to the current scenario by creating an instance of it. This is "
+"the class most often used to get 3D geometry rendered and can be used to "
+"instance a single :ref:`Mesh<class_mesh>` in many places. This allows to "
+"reuse geometry and save on resources. When a :ref:`Mesh<class_mesh>` has "
+"to be instanced more than thousands of times at close proximity, consider"
+" using a :ref:`MultiMesh<class_multimesh>` in a "
+":ref:`MultiMeshInstance<class_multimeshinstance>` instead."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:52
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:56
+msgid "void **create_convex_collision** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:58
+msgid ""
+"This helper creates a :ref:`StaticBody<class_staticbody>` child node with"
+" a :ref:`ConvexPolygonShape<class_convexpolygonshape>` collision shape "
+"calculated from the mesh geometry. It's mainly used for testing."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:62
+msgid "void **create_debug_tangents** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:64
+msgid ""
+"This helper creates a :ref:`MeshInstance<class_meshinstance>` child node "
+"with gizmos at every vertex calculated from the mesh geometry. It's "
+"mainly used for testing."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:68
+msgid "void **create_trimesh_collision** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:70
+msgid ""
+"This helper creates a :ref:`StaticBody<class_staticbody>` child node with"
+" a :ref:`ConcavePolygonShape<class_concavepolygonshape>` collision shape "
+"calculated from the mesh geometry. It's mainly used for testing."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:74
+msgid ""
+":ref:`Material<class_material>` **get_surface_material** **(** "
+":ref:`int<class_int>` surface **)** const"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:76
+msgid ""
+"Returns the :ref:`Material<class_material>` for a surface of the "
+":ref:`Mesh<class_mesh>` resource."
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:80
+msgid ""
+"void **set_surface_material** **(** :ref:`int<class_int>` surface, "
+":ref:`Material<class_material>` material **)**"
+msgstr ""
+
+#: ../../classes/class_meshinstance.rst:82
+msgid ""
+"Sets the :ref:`Material<class_material>` for a surface of the "
+":ref:`Mesh<class_mesh>` resource."
+msgstr ""
+

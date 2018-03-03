@@ -1,0 +1,2826 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_physicsserver.rst:8
+msgid "PhysicsServer"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:12
+msgid "**Inherited By:** :ref:`BulletPhysicsServer<class_bulletphysicsserver>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:19
+msgid "Server interface for low level physics access."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:25
+#: ../../classes/class_physicsserver.rst:27
+#: ../../classes/class_physicsserver.rst:29
+#: ../../classes/class_physicsserver.rst:51
+#: ../../classes/class_physicsserver.rst:53
+#: ../../classes/class_physicsserver.rst:55
+#: ../../classes/class_physicsserver.rst:57
+#: ../../classes/class_physicsserver.rst:59
+#: ../../classes/class_physicsserver.rst:61
+#: ../../classes/class_physicsserver.rst:63
+#: ../../classes/class_physicsserver.rst:65
+#: ../../classes/class_physicsserver.rst:67
+#: ../../classes/class_physicsserver.rst:69
+#: ../../classes/class_physicsserver.rst:71
+#: ../../classes/class_physicsserver.rst:73
+#: ../../classes/class_physicsserver.rst:75
+#: ../../classes/class_physicsserver.rst:77
+#: ../../classes/class_physicsserver.rst:79
+#: ../../classes/class_physicsserver.rst:81
+#: ../../classes/class_physicsserver.rst:83
+#: ../../classes/class_physicsserver.rst:121
+#: ../../classes/class_physicsserver.rst:123
+#: ../../classes/class_physicsserver.rst:125
+#: ../../classes/class_physicsserver.rst:127
+#: ../../classes/class_physicsserver.rst:129
+#: ../../classes/class_physicsserver.rst:131
+#: ../../classes/class_physicsserver.rst:133
+#: ../../classes/class_physicsserver.rst:135
+#: ../../classes/class_physicsserver.rst:137
+#: ../../classes/class_physicsserver.rst:139
+#: ../../classes/class_physicsserver.rst:141
+#: ../../classes/class_physicsserver.rst:143
+#: ../../classes/class_physicsserver.rst:145
+#: ../../classes/class_physicsserver.rst:147
+#: ../../classes/class_physicsserver.rst:149
+#: ../../classes/class_physicsserver.rst:151
+#: ../../classes/class_physicsserver.rst:153
+#: ../../classes/class_physicsserver.rst:155
+#: ../../classes/class_physicsserver.rst:159
+#: ../../classes/class_physicsserver.rst:161
+#: ../../classes/class_physicsserver.rst:167
+#: ../../classes/class_physicsserver.rst:169
+#: ../../classes/class_physicsserver.rst:177
+#: ../../classes/class_physicsserver.rst:179
+#: ../../classes/class_physicsserver.rst:195
+#: ../../classes/class_physicsserver.rst:203
+#: ../../classes/class_physicsserver.rst:205
+#: ../../classes/class_physicsserver.rst:207
+#: ../../classes/class_physicsserver.rst:209
+#: ../../classes/class_physicsserver.rst:217
+#: ../../classes/class_physicsserver.rst:221
+#: ../../classes/class_physicsserver.rst:231
+#: ../../classes/class_physicsserver.rst:233
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:25
+msgid ""
+":ref:`area_add_shape<class_PhysicsServer_area_add_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, "
+":ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, "
+"0, 0, 1, 0, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:27
+msgid ""
+":ref:`area_attach_object_instance_id<class_PhysicsServer_area_attach_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:29
+msgid ""
+":ref:`area_clear_shapes<class_PhysicsServer_area_clear_shapes>` **(** "
+":ref:`RID<class_rid>` area **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:31
+#: ../../classes/class_physicsserver.rst:37
+#: ../../classes/class_physicsserver.rst:43
+#: ../../classes/class_physicsserver.rst:85
+#: ../../classes/class_physicsserver.rst:103
+#: ../../classes/class_physicsserver.rst:109
+#: ../../classes/class_physicsserver.rst:181
+#: ../../classes/class_physicsserver.rst:183
+#: ../../classes/class_physicsserver.rst:185
+#: ../../classes/class_physicsserver.rst:187
+#: ../../classes/class_physicsserver.rst:189
+#: ../../classes/class_physicsserver.rst:211
+#: ../../classes/class_physicsserver.rst:223
+msgid ":ref:`RID<class_rid>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:31
+msgid ":ref:`area_create<class_PhysicsServer_area_create>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:33
+#: ../../classes/class_physicsserver.rst:39
+#: ../../classes/class_physicsserver.rst:45
+#: ../../classes/class_physicsserver.rst:87
+#: ../../classes/class_physicsserver.rst:89
+#: ../../classes/class_physicsserver.rst:95
+#: ../../classes/class_physicsserver.rst:97
+#: ../../classes/class_physicsserver.rst:99
+#: ../../classes/class_physicsserver.rst:105
+#: ../../classes/class_physicsserver.rst:171
+#: ../../classes/class_physicsserver.rst:191
+#: ../../classes/class_physicsserver.rst:193
+#: ../../classes/class_physicsserver.rst:215
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:33
+msgid ""
+":ref:`area_get_object_instance_id<class_PhysicsServer_area_get_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:35
+#: ../../classes/class_physicsserver.rst:111
+#: ../../classes/class_physicsserver.rst:213
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:35
+msgid ""
+":ref:`area_get_param<class_PhysicsServer_area_get_param>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:37
+msgid ""
+":ref:`area_get_shape<class_PhysicsServer_area_get_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:39
+msgid ""
+":ref:`area_get_shape_count<class_PhysicsServer_area_get_shape_count>` "
+"**(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:41
+#: ../../classes/class_physicsserver.rst:47
+#: ../../classes/class_physicsserver.rst:107
+msgid ":ref:`Transform<class_transform>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:41
+msgid ""
+":ref:`area_get_shape_transform<class_PhysicsServer_area_get_shape_transform>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:43
+msgid ""
+":ref:`area_get_space<class_PhysicsServer_area_get_space>` **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:45
+msgid ""
+":ref:`area_get_space_override_mode<class_PhysicsServer_area_get_space_override_mode>`"
+" **(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:47
+msgid ""
+":ref:`area_get_transform<class_PhysicsServer_area_get_transform>` **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:49
+#: ../../classes/class_physicsserver.rst:113
+#: ../../classes/class_physicsserver.rst:115
+#: ../../classes/class_physicsserver.rst:117
+#: ../../classes/class_physicsserver.rst:119
+#: ../../classes/class_physicsserver.rst:163
+#: ../../classes/class_physicsserver.rst:173
+#: ../../classes/class_physicsserver.rst:229
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:49
+msgid ""
+":ref:`area_is_ray_pickable<class_PhysicsServer_area_is_ray_pickable>` "
+"**(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:51
+msgid ""
+":ref:`area_remove_shape<class_PhysicsServer_area_remove_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:53
+msgid ""
+":ref:`area_set_collision_layer<class_PhysicsServer_area_set_collision_layer>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:55
+msgid ""
+":ref:`area_set_collision_mask<class_PhysicsServer_area_set_collision_mask>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:57
+msgid ""
+":ref:`area_set_monitor_callback<class_PhysicsServer_area_set_monitor_callback>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, "
+":ref:`String<class_string>` method **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:59
+msgid ""
+":ref:`area_set_param<class_PhysicsServer_area_set_param>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:61
+msgid ""
+":ref:`area_set_ray_pickable<class_PhysicsServer_area_set_ray_pickable>` "
+"**(** :ref:`RID<class_rid>` area, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:63
+msgid ""
+":ref:`area_set_shape<class_PhysicsServer_area_set_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, "
+":ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:65
+msgid ""
+":ref:`area_set_shape_transform<class_PhysicsServer_area_set_shape_transform>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, "
+":ref:`Transform<class_transform>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:67
+msgid ""
+":ref:`area_set_space<class_PhysicsServer_area_set_space>` **(** "
+":ref:`RID<class_rid>` area, :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:69
+msgid ""
+":ref:`area_set_space_override_mode<class_PhysicsServer_area_set_space_override_mode>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:71
+msgid ""
+":ref:`area_set_transform<class_PhysicsServer_area_set_transform>` **(** "
+":ref:`RID<class_rid>` area, :ref:`Transform<class_transform>` transform "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:73
+msgid ""
+":ref:`body_add_collision_exception<class_PhysicsServer_body_add_collision_exception>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:75
+msgid ""
+":ref:`body_add_shape<class_PhysicsServer_body_add_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, "
+":ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, "
+"0, 0, 1, 0, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:77
+msgid ""
+":ref:`body_apply_impulse<class_PhysicsServer_body_apply_impulse>` **(** "
+":ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` position, "
+":ref:`Vector3<class_vector3>` impulse **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:79
+msgid ""
+":ref:`body_apply_torque_impulse<class_PhysicsServer_body_apply_torque_impulse>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:81
+msgid ""
+":ref:`body_attach_object_instance_id<class_PhysicsServer_body_attach_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:83
+msgid ""
+":ref:`body_clear_shapes<class_PhysicsServer_body_clear_shapes>` **(** "
+":ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:85
+msgid ""
+":ref:`body_create<class_PhysicsServer_body_create>` **(** "
+":ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:87
+msgid ""
+":ref:`body_get_collision_layer<class_PhysicsServer_body_get_collision_layer>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:89
+msgid ""
+":ref:`body_get_collision_mask<class_PhysicsServer_body_get_collision_mask>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:91
+msgid ":ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:91
+msgid ""
+":ref:`body_get_direct_state<class_PhysicsServer_body_get_direct_state>` "
+"**(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:93
+#: ../../classes/class_physicsserver.rst:101
+#: ../../classes/class_physicsserver.rst:157
+#: ../../classes/class_physicsserver.rst:165
+#: ../../classes/class_physicsserver.rst:175
+#: ../../classes/class_physicsserver.rst:201
+#: ../../classes/class_physicsserver.rst:219
+#: ../../classes/class_physicsserver.rst:227
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:93
+msgid ""
+":ref:`body_get_kinematic_safe_margin<class_PhysicsServer_body_get_kinematic_safe_margin>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:95
+msgid ""
+":ref:`body_get_max_contacts_reported<class_PhysicsServer_body_get_max_contacts_reported>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:97
+msgid ""
+":ref:`body_get_mode<class_PhysicsServer_body_get_mode>` **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:99
+msgid ""
+":ref:`body_get_object_instance_id<class_PhysicsServer_body_get_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:101
+msgid ""
+":ref:`body_get_param<class_PhysicsServer_body_get_param>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:103
+msgid ""
+":ref:`body_get_shape<class_PhysicsServer_body_get_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:105
+msgid ""
+":ref:`body_get_shape_count<class_PhysicsServer_body_get_shape_count>` "
+"**(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:107
+msgid ""
+":ref:`body_get_shape_transform<class_PhysicsServer_body_get_shape_transform>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:109
+msgid ""
+":ref:`body_get_space<class_PhysicsServer_body_get_space>` **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:111
+msgid ""
+":ref:`body_get_state<class_PhysicsServer_body_get_state>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:113
+msgid ""
+":ref:`body_is_axis_locked<class_PhysicsServer_body_is_axis_locked>` **(**"
+" :ref:`RID<class_rid>` body, :ref:`int<class_int>` axis **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:115
+msgid ""
+":ref:`body_is_continuous_collision_detection_enabled<class_PhysicsServer_body_is_continuous_collision_detection_enabled>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:117
+msgid ""
+":ref:`body_is_omitting_force_integration<class_PhysicsServer_body_is_omitting_force_integration>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:119
+msgid ""
+":ref:`body_is_ray_pickable<class_PhysicsServer_body_is_ray_pickable>` "
+"**(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:121
+msgid ""
+":ref:`body_remove_collision_exception<class_PhysicsServer_body_remove_collision_exception>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:123
+msgid ""
+":ref:`body_remove_shape<class_PhysicsServer_body_remove_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:125
+msgid ""
+":ref:`body_set_axis_lock<class_PhysicsServer_body_set_axis_lock>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` axis, "
+":ref:`bool<class_bool>` lock **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:127
+msgid ""
+":ref:`body_set_axis_velocity<class_PhysicsServer_body_set_axis_velocity>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` "
+"axis_velocity **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:129
+msgid ""
+":ref:`body_set_collision_layer<class_PhysicsServer_body_set_collision_layer>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:131
+msgid ""
+":ref:`body_set_collision_mask<class_PhysicsServer_body_set_collision_mask>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:133
+msgid ""
+":ref:`body_set_enable_continuous_collision_detection<class_PhysicsServer_body_set_enable_continuous_collision_detection>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:135
+msgid ""
+":ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, "
+":ref:`String<class_string>` method, :ref:`Variant<class_variant>` "
+"userdata=null **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:137
+msgid ""
+":ref:`body_set_kinematic_safe_margin<class_PhysicsServer_body_set_kinematic_safe_margin>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` margin **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:139
+msgid ""
+":ref:`body_set_max_contacts_reported<class_PhysicsServer_body_set_max_contacts_reported>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:141
+msgid ""
+":ref:`body_set_mode<class_PhysicsServer_body_set_mode>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:143
+msgid ""
+":ref:`body_set_omit_force_integration<class_PhysicsServer_body_set_omit_force_integration>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:145
+msgid ""
+":ref:`body_set_param<class_PhysicsServer_body_set_param>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:147
+msgid ""
+":ref:`body_set_ray_pickable<class_PhysicsServer_body_set_ray_pickable>` "
+"**(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:149
+msgid ""
+":ref:`body_set_shape<class_PhysicsServer_body_set_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:151
+msgid ""
+":ref:`body_set_shape_transform<class_PhysicsServer_body_set_shape_transform>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`Transform<class_transform>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:153
+msgid ""
+":ref:`body_set_space<class_PhysicsServer_body_set_space>` **(** "
+":ref:`RID<class_rid>` body, :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:155
+msgid ""
+":ref:`body_set_state<class_PhysicsServer_body_set_state>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:157
+msgid ""
+":ref:`cone_twist_joint_get_param<class_PhysicsServer_cone_twist_joint_get_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:159
+msgid ""
+":ref:`cone_twist_joint_set_param<class_PhysicsServer_cone_twist_joint_set_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:161
+msgid ""
+":ref:`free_rid<class_PhysicsServer_free_rid>` **(** :ref:`RID<class_rid>`"
+" rid **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:163
+msgid ""
+":ref:`generic_6dof_joint_get_flag<class_PhysicsServer_generic_6dof_joint_get_flag>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` flag **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:165
+msgid ""
+":ref:`generic_6dof_joint_get_param<class_PhysicsServer_generic_6dof_joint_get_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` param **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:167
+msgid ""
+":ref:`generic_6dof_joint_set_flag<class_PhysicsServer_generic_6dof_joint_set_flag>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:169
+msgid ""
+":ref:`generic_6dof_joint_set_param<class_PhysicsServer_generic_6dof_joint_set_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:171
+msgid ""
+":ref:`get_process_info<class_PhysicsServer_get_process_info>` **(** "
+":ref:`int<class_int>` process_info **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:173
+msgid ""
+":ref:`hinge_joint_get_flag<class_PhysicsServer_hinge_joint_get_flag>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` flag **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:175
+msgid ""
+":ref:`hinge_joint_get_param<class_PhysicsServer_hinge_joint_get_param>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:177
+msgid ""
+":ref:`hinge_joint_set_flag<class_PhysicsServer_hinge_joint_set_flag>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` flag, "
+":ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:179
+msgid ""
+":ref:`hinge_joint_set_param<class_PhysicsServer_hinge_joint_set_param>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:181
+msgid ""
+":ref:`joint_create_cone_twist<class_PhysicsServer_joint_create_cone_twist>`"
+" **(** :ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` "
+"local_ref_A, :ref:`RID<class_rid>` body_B, "
+":ref:`Transform<class_transform>` local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:183
+msgid ""
+":ref:`joint_create_generic_6dof<class_PhysicsServer_joint_create_generic_6dof>`"
+" **(** :ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` "
+"local_ref_A, :ref:`RID<class_rid>` body_B, "
+":ref:`Transform<class_transform>` local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:185
+msgid ""
+":ref:`joint_create_hinge<class_PhysicsServer_joint_create_hinge>` **(** "
+":ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` hinge_A, "
+":ref:`RID<class_rid>` body_B, :ref:`Transform<class_transform>` hinge_B "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:187
+msgid ""
+":ref:`joint_create_pin<class_PhysicsServer_joint_create_pin>` **(** "
+":ref:`RID<class_rid>` body_A, :ref:`Vector3<class_vector3>` local_A, "
+":ref:`RID<class_rid>` body_B, :ref:`Vector3<class_vector3>` local_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:189
+msgid ""
+":ref:`joint_create_slider<class_PhysicsServer_joint_create_slider>` **(**"
+" :ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` "
+"local_ref_A, :ref:`RID<class_rid>` body_B, "
+":ref:`Transform<class_transform>` local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:191
+msgid ""
+":ref:`joint_get_solver_priority<class_PhysicsServer_joint_get_solver_priority>`"
+" **(** :ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:193
+msgid ""
+":ref:`joint_get_type<class_PhysicsServer_joint_get_type>` **(** "
+":ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:195
+msgid ""
+":ref:`joint_set_solver_priority<class_PhysicsServer_joint_set_solver_priority>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` priority **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:197
+#: ../../classes/class_physicsserver.rst:199
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:197
+msgid ""
+":ref:`pin_joint_get_local_a<class_PhysicsServer_pin_joint_get_local_a>` "
+"**(** :ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:199
+msgid ""
+":ref:`pin_joint_get_local_b<class_PhysicsServer_pin_joint_get_local_b>` "
+"**(** :ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:201
+msgid ""
+":ref:`pin_joint_get_param<class_PhysicsServer_pin_joint_get_param>` **(**"
+" :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:203
+msgid ""
+":ref:`pin_joint_set_local_a<class_PhysicsServer_pin_joint_set_local_a>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_A "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:205
+msgid ""
+":ref:`pin_joint_set_local_b<class_PhysicsServer_pin_joint_set_local_b>` "
+"**(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_B "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:207
+msgid ""
+":ref:`pin_joint_set_param<class_PhysicsServer_pin_joint_set_param>` **(**"
+" :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:209
+msgid ""
+":ref:`set_active<class_PhysicsServer_set_active>` **(** "
+":ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:211
+msgid ""
+":ref:`shape_create<class_PhysicsServer_shape_create>` **(** "
+":ref:`int<class_int>` type **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:213
+msgid ""
+":ref:`shape_get_data<class_PhysicsServer_shape_get_data>` **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:215
+msgid ""
+":ref:`shape_get_type<class_PhysicsServer_shape_get_type>` **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:217
+msgid ""
+":ref:`shape_set_data<class_PhysicsServer_shape_set_data>` **(** "
+":ref:`RID<class_rid>` shape, :ref:`Variant<class_variant>` data **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:219
+msgid ""
+":ref:`slider_joint_get_param<class_PhysicsServer_slider_joint_get_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:221
+msgid ""
+":ref:`slider_joint_set_param<class_PhysicsServer_slider_joint_set_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:223
+msgid ":ref:`space_create<class_PhysicsServer_space_create>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:225
+msgid ":ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:225
+msgid ""
+":ref:`space_get_direct_state<class_PhysicsServer_space_get_direct_state>`"
+" **(** :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:227
+msgid ""
+":ref:`space_get_param<class_PhysicsServer_space_get_param>` **(** "
+":ref:`RID<class_rid>` space, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:229
+msgid ""
+":ref:`space_is_active<class_PhysicsServer_space_is_active>` **(** "
+":ref:`RID<class_rid>` space **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:231
+msgid ""
+":ref:`space_set_active<class_PhysicsServer_space_set_active>` **(** "
+":ref:`RID<class_rid>` space, :ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:233
+msgid ""
+":ref:`space_set_param<class_PhysicsServer_space_set_param>` **(** "
+":ref:`RID<class_rid>` space, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:237
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:241
+msgid "enum **BodyState**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:243
+msgid ""
+"**BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current "
+"transform matrix of the body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:244
+msgid ""
+"**BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the "
+"current linear velocity of the body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:245
+msgid ""
+"**BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the "
+"current angular velocity of the body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:246
+msgid ""
+"**BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or "
+"to get whether it is sleeping."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:247
+msgid ""
+"**BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body"
+" can sleep."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:251
+msgid "enum **G6DOFJointAxisParam**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:253
+msgid ""
+"**G6DOF_JOINT_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference "
+"between the pivot points' axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:254
+msgid ""
+"**G6DOF_JOINT_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference "
+"between the pivot points' axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:255
+msgid ""
+"**G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor that gets "
+"applied to the movement across the axes. The lower, the slower the "
+"movement."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:256
+msgid ""
+"**G6DOF_JOINT_LINEAR_RESTITUTION** = **3** --- The amount of restitution "
+"on the axes movement. The lower, the more velocity-energy gets lost."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:257
+msgid ""
+"**G6DOF_JOINT_LINEAR_DAMPING** = **4** --- The amount of damping that "
+"happens at the linear motion across the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:258
+msgid ""
+"**G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in "
+"negative direction to break loose and rotate around the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:259
+msgid ""
+"**G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in "
+"positive direction to break loose and rotate around the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:260
+msgid ""
+"**G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **7** --- A factor that gets "
+"multiplied onto all rotations across the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:261
+msgid ""
+"**G6DOF_JOINT_ANGULAR_DAMPING** = **8** --- The amount of rotational "
+"damping across the axes. The lower, the more dampening occurs."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:262
+msgid ""
+"**G6DOF_JOINT_ANGULAR_RESTITUTION** = **9** --- The amount of rotational "
+"restitution across the axes. The lower, the more restitution occurs."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:263
+msgid ""
+"**G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of "
+"force that can occur, when rotating around the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:264
+msgid ""
+"**G6DOF_JOINT_ANGULAR_ERP** = **11** --- When correcting the crossing of "
+"limits in rotation across the axes, this error tolerance factor defines "
+"how much the correction gets slowed down. The lower, the slower."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:265
+msgid ""
+"**G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed "
+"for the motor at the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:266
+msgid ""
+"**G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum "
+"acceleration for the motor at the axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:270
+msgid "enum **ProcessInfo**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:272
+msgid ""
+"**INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects"
+" that are not sleeping."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:273
+msgid ""
+"**INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of "
+"possible collisions."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:274
+msgid ""
+"**INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space "
+"regions where a collision could occur."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:278
+msgid "enum **ShapeType**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:280
+msgid ""
+"**SHAPE_PLANE** = **0** --- The :ref:`Shape<class_shape>` is a "
+":ref:`PlaneShape<class_planeshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:281
+msgid ""
+"**SHAPE_RAY** = **1** --- The :ref:`Shape<class_shape>` is a "
+":ref:`RayShape<class_rayshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:282
+msgid ""
+"**SHAPE_SPHERE** = **2** --- The :ref:`Shape<class_shape>` is a "
+":ref:`SphereShape<class_sphereshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:283
+msgid ""
+"**SHAPE_BOX** = **3** --- The :ref:`Shape<class_shape>` is a "
+":ref:`BoxShape<class_boxshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:284
+msgid ""
+"**SHAPE_CAPSULE** = **4** --- The :ref:`Shape<class_shape>` is a "
+":ref:`CapsuleShape<class_capsuleshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:285
+msgid ""
+"**SHAPE_CONVEX_POLYGON** = **5** --- The :ref:`Shape<class_shape>` is a "
+":ref:`ConvexPolygonShape<class_convexpolygonshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:286
+msgid ""
+"**SHAPE_CONCAVE_POLYGON** = **6** --- The :ref:`Shape<class_shape>` is a "
+":ref:`ConcavePolygonShape<class_concavepolygonshape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:287
+msgid ""
+"**SHAPE_HEIGHTMAP** = **7** --- The :ref:`Shape<class_shape>` is a "
+"HeightMapShape."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:288
+msgid ""
+"**SHAPE_CUSTOM** = **8** --- This constant is used internally by the "
+"engine. Any attempt to create this kind of shape results in an error."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:292
+msgid "enum **HingeJointFlag**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:294
+msgid ""
+"**HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true`` the Hinge has a "
+"maximum and a minimum rotation."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:295
+msgid ""
+"**HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true`` a motor turns "
+"the Hinge"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:299
+msgid "enum **AreaParameter**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:301
+msgid ""
+"**AREA_PARAM_GRAVITY** = **0** --- Constant to set/get gravity strength "
+"in an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:302
+msgid ""
+"**AREA_PARAM_GRAVITY_VECTOR** = **1** --- Constant to set/get gravity "
+"vector/center in an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:303
+msgid ""
+"**AREA_PARAM_GRAVITY_IS_POINT** = **2** --- Constant to set/get whether "
+"the gravity vector of an area is a direction, or a center point."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:304
+msgid ""
+"**AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the"
+" falloff factor for point gravity of an area. The greater this value is, "
+"the faster the strength of gravity decreases with the square of distance."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:305
+msgid ""
+"**AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was "
+"used to set/get the falloff factor for point gravity. It has been "
+"superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:306
+msgid ""
+"**AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear "
+"dampening factor of an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:307
+msgid ""
+"**AREA_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get the angular "
+"dampening factor of an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:308
+msgid ""
+"**AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority "
+"(order of processing) of an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:312
+msgid "enum **PinJointParam**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:314
+msgid ""
+"**PIN_JOINT_BIAS** = **0** --- The strength with which the pinned objects"
+" try to stay in positional relation to each other."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:316
+msgid ""
+"The higher, the stronger. - **PIN_JOINT_DAMPING** = **1** --- The "
+"strength with which the pinned objects try to stay in velocity relation "
+"to each other."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:319
+msgid ""
+"The higher, the stronger. - **PIN_JOINT_IMPULSE_CLAMP** = **2** --- If "
+"above 0, this value is the maximum value for an impulse that this Joint "
+"puts on it's ends."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:324
+msgid "enum **BodyParameter**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:326
+msgid ""
+"**BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce "
+"factor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:327
+msgid "**BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:328
+msgid "**BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:329
+msgid ""
+"**BODY_PARAM_GRAVITY_SCALE** = **3** --- Constant to set/get a body's "
+"gravity multiplier."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:330
+msgid ""
+"**BODY_PARAM_LINEAR_DAMP** = **4** --- Constant to set/get a body's "
+"linear dampening factor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:331
+msgid ""
+"**BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's "
+"angular dampening factor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:332
+msgid ""
+"**BODY_PARAM_MAX** = **6** --- This is the last ID for body parameters. "
+"Any attempt to set this property is ignored. Any attempt to get it "
+"returns 0."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:336
+msgid "enum **BodyMode**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:338
+msgid "**BODY_MODE_STATIC** = **0** --- Constant for static bodies."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:339
+msgid "**BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:340
+msgid "**BODY_MODE_RIGID** = **2** --- Constant for rigid bodies."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:341
+msgid "**BODY_MODE_SOFT** = **3**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:342
+msgid ""
+"**BODY_MODE_CHARACTER** = **4** --- Constant for rigid bodies in "
+"character mode. In this mode, a body can not rotate, and only its linear "
+"velocity is affected by physics."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:346
+msgid "enum **SpaceParameter**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:348
+msgid ""
+"**SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get "
+"the maximum distance a pair of bodies has to move before their collision "
+"status has to be recalculated."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:349
+msgid ""
+"**SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get "
+"the maximum distance a shape can be from another before they are "
+"considered separated."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:350
+msgid ""
+"**SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to "
+"set/get the maximum distance a shape can penetrate another shape before "
+"it is considered a collision."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:351
+msgid ""
+"**SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant"
+" to set/get the threshold linear velocity of activity. A body marked as "
+"potentially inactive for both linear and angular velocity will be put to "
+"sleep after the time given."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:352
+msgid ""
+"**SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- "
+"Constant to set/get the threshold angular velocity of activity. A body "
+"marked as potentially inactive for both linear and angular velocity will "
+"be put to sleep after the time given."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:353
+msgid ""
+"**SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the "
+"maximum time of activity. A body marked as potentially inactive for both "
+"linear and angular velocity will be put to sleep after this time."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:354
+msgid "**SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:355
+msgid ""
+"**SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get "
+"the default solver bias for all physics constraints. A solver bias is a "
+"factor controlling how much two objects \"rebound\", after violating a "
+"constraint, to avoid leaving them in that state because of numerical "
+"imprecision."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:359
+msgid "enum **AreaBodyStatus**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:361
+msgid ""
+"**AREA_BODY_ADDED** = **0** --- The value of the first parameter and area"
+" callback function receives, when an object enters one of its shapes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:362
+msgid ""
+"**AREA_BODY_REMOVED** = **1** --- The value of the first parameter and "
+"area callback function receives, when an object exits one of its shapes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:366
+msgid "enum **BodyAxis**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:368
+msgid "**BODY_AXIS_LINEAR_X** = **1**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:369
+msgid "**BODY_AXIS_LINEAR_Y** = **2**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:370
+msgid "**BODY_AXIS_LINEAR_Z** = **4**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:371
+msgid "**BODY_AXIS_ANGULAR_X** = **8**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:372
+msgid "**BODY_AXIS_ANGULAR_Y** = **16**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:373
+msgid "**BODY_AXIS_ANGULAR_Z** = **32**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:377
+msgid "enum **JointType**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:379
+msgid ""
+"**JOINT_PIN** = **0** --- The :ref:`Joint<class_joint>` is a "
+":ref:`PinJoint<class_pinjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:380
+msgid ""
+"**JOINT_HINGE** = **1** --- The :ref:`Joint<class_joint>` is a "
+":ref:`HingeJoint<class_hingejoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:381
+msgid ""
+"**JOINT_SLIDER** = **2** --- The :ref:`Joint<class_joint>` is a "
+":ref:`SliderJoint<class_sliderjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:382
+msgid ""
+"**JOINT_CONE_TWIST** = **3** --- The :ref:`Joint<class_joint>` is a "
+":ref:`ConeTwistJoint<class_conetwistjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:383
+msgid ""
+"**JOINT_6DOF** = **4** --- The :ref:`Joint<class_joint>` is a "
+":ref:`Generic6DOFJoint<class_generic6dofjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:387
+msgid "enum **AreaSpaceOverrideMode**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:389
+msgid ""
+"**AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect "
+"gravity/damp. These are generally areas that exist only to detect "
+"collisions, and objects entering or exiting them."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:390
+msgid ""
+"**AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its "
+"gravity/damp values to whatever has been calculated so far. This way, "
+"many overlapping areas can combine their physics to make interesting "
+"effects."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:391
+msgid ""
+"**AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its "
+"gravity/damp values to whatever has been calculated so far. Then stops "
+"taking into account the rest of the areas, even the default one."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:392
+msgid ""
+"**AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any "
+"gravity/damp, even the default one, and stops taking into account the "
+"rest of the areas."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:393
+msgid ""
+"**AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces "
+"any gravity/damp calculated so far, but keeps calculating the rest of the"
+" areas, down to the default one."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:397
+msgid "enum **G6DOFJointAxisFlag**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:399
+msgid ""
+"**G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is "
+"linear motion possible within the given limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:400
+msgid ""
+"**G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is"
+" rotational motion possible."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:401
+msgid ""
+"**G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a "
+"rotational motor across these axes."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:405
+msgid "enum **SliderJointParam**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:407
+msgid ""
+"**SLIDER_JOINT_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference "
+"between the pivot points on their x-axis before damping happens."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:408
+msgid ""
+"**SLIDER_JOINT_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference "
+"between the pivot points on their x-axis before damping happens."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:409
+msgid ""
+"**SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to "
+"the movement across the slider axis once the limits get surpassed. The "
+"lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:410
+msgid ""
+"**SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = **3** --- The amount of "
+"restitution once the limits are surpassed. The lower, the more "
+"velocityenergy gets lost."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:411
+msgid ""
+"**SLIDER_JOINT_LINEAR_LIMIT_DAMPING** = **4** --- The amount of damping "
+"once the slider limits are surpassed."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:412
+msgid ""
+"**SLIDER_JOINT_LINEAR_MOTION_SOFTNESS** = **5** --- A factor applied to "
+"the movement across the slider axis as long as the slider is in the "
+"limits. The lower, the slower the movement."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:413
+msgid ""
+"**SLIDER_JOINT_LINEAR_MOTION_RESTITUTION** = **6** --- The amount of "
+"restitution inside the slider limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:414
+msgid ""
+"**SLIDER_JOINT_LINEAR_MOTION_DAMPING** = **7** --- The amount of damping "
+"inside the slider limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:415
+msgid ""
+"**SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS** = **8** --- A factor applied "
+"to the movement across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:416
+msgid ""
+"**SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION** = **9** --- The amount of "
+"restitution when movement is across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:417
+msgid ""
+"**SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING** = **10** --- The amount of "
+"damping when movement is across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:418
+msgid ""
+"**SLIDER_JOINT_ANGULAR_LIMIT_UPPER** = **11** --- The upper limit of "
+"rotation in the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:419
+msgid ""
+"**SLIDER_JOINT_ANGULAR_LIMIT_LOWER** = **12** --- The lower limit of "
+"rotation in the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:420
+msgid ""
+"**SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS** = **13** --- A factor applied to "
+"the all rotation once the limit is surpassed."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:421
+msgid ""
+"**SLIDER_JOINT_ANGULAR_LIMIT_RESTITUTION** = **14** --- The amount of "
+"restitution of the rotation when the limit is surpassed."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:422
+msgid ""
+"**SLIDER_JOINT_ANGULAR_LIMIT_DAMPING** = **15** --- The amount of damping"
+" of the rotation when the limit is surpassed."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:423
+msgid ""
+"**SLIDER_JOINT_ANGULAR_MOTION_SOFTNESS** = **16** --- A factor that gets "
+"applied to the all rotation in the limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:424
+msgid ""
+"**SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION** = **17** --- The amount of "
+"restitution of the rotation in the limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:425
+msgid ""
+"**SLIDER_JOINT_ANGULAR_MOTION_DAMPING** = **18** --- The amount of "
+"damping of the rotation in the limits."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:426
+msgid ""
+"**SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS** = **19** --- A factor that "
+"gets applied to the all rotation across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:427
+msgid ""
+"**SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION** = **20** --- The amount "
+"of restitution of the rotation across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:428
+msgid ""
+"**SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of "
+"damping of the rotation across axes orthogonal to the slider."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:429
+msgid ""
+"**SLIDER_JOINT_MAX** = **22** --- End flag of SLIDER_JOINT\\_\\* "
+"constants, used internally."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:433
+msgid "enum **ConeTwistJointParam**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:435
+msgid ""
+"**CONE_TWIST_JOINT_SWING_SPAN** = **0** --- Swing is rotation from side "
+"to side, around the axis perpendicular to the twist axis."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:437
+msgid ""
+"The swing span defines, how much rotation will not get corrected allong "
+"the swing axis."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:439
+msgid ""
+"Could be defined as looseness in the "
+":ref:`ConeTwistJoint<class_conetwistjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:441
+msgid ""
+"If below 0.05, this behaviour is locked. Default value: ``PI/4``. - "
+"**CONE_TWIST_JOINT_TWIST_SPAN** = **1** --- Twist is the rotation around "
+"the twist axis, this value defined how far the joint can twist."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:444
+msgid ""
+"Twist is locked if below 0.05. - **CONE_TWIST_JOINT_BIAS** = **2** --- "
+"The speed with which the swing or twist will take place."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:447
+msgid ""
+"The higher, the faster. - **CONE_TWIST_JOINT_SOFTNESS** = **3** --- The "
+"ease with which the Joint twists, if it's too low, it takes more force to"
+" twist the joint. - **CONE_TWIST_JOINT_RELAXATION** = **4** --- Defines, "
+"how fast the swing- and twist-speed-difference on both sides gets synced."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:453
+msgid "enum **HingeJointParam**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:455
+msgid ""
+"**HINGE_JOINT_BIAS** = **0** --- The speed with which the two bodies get "
+"pulled together when they move in different directions."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:456
+msgid ""
+"**HINGE_JOINT_LIMIT_UPPER** = **1** --- The maximum rotation across the "
+"Hinge."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:457
+msgid ""
+"**HINGE_JOINT_LIMIT_LOWER** = **2** --- The minimum rotation across the "
+"Hinge."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:458
+msgid ""
+"**HINGE_JOINT_LIMIT_BIAS** = **3** --- The speed with which the rotation "
+"across the axis perpendicular to the hinge gets corrected."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:459
+msgid "**HINGE_JOINT_LIMIT_SOFTNESS** = **4**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:460
+msgid ""
+"**HINGE_JOINT_LIMIT_RELAXATION** = **5** --- The lower this value, the "
+"more the rotation gets slowed down."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:461
+msgid ""
+"**HINGE_JOINT_MOTOR_TARGET_VELOCITY** = **6** --- Target speed for the "
+"motor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:462
+msgid ""
+"**HINGE_JOINT_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for "
+"the motor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:466
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:468
+msgid "Everything related to physics in 3D."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:471
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:475
+msgid ""
+"void **area_add_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` "
+"transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:477
+msgid ""
+"Adds a shape to the area, along with a transform matrix. Shapes are "
+"usually referenced by their index, so you should track which shape has a "
+"given index."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:481
+msgid ""
+"void **area_attach_object_instance_id** **(** :ref:`RID<class_rid>` area,"
+" :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:483
+#: ../../classes/class_physicsserver.rst:655
+msgid ""
+"Assigns the area to a descendant of :ref:`Object<class_object>`, so it "
+"can exist in the node tree."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:487
+msgid "void **area_clear_shapes** **(** :ref:`RID<class_rid>` area **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:489
+msgid ""
+"Removes all shapes from an area. It does not delete the shapes, so they "
+"can be reassigned later."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:493
+msgid ":ref:`RID<class_rid>` **area_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:495
+msgid "Creates an :ref:`Area<class_area>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:499
+msgid ""
+":ref:`int<class_int>` **area_get_object_instance_id** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:501
+#: ../../classes/class_physicsserver.rst:709
+msgid "Gets the instance ID of the object the area is assigned to."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:505
+msgid ""
+":ref:`Variant<class_variant>` **area_get_param** **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:507
+msgid ""
+"Returns an area parameter value. A list of available parameters is on the"
+" AREA_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:511
+msgid ""
+":ref:`RID<class_rid>` **area_get_shape** **(** :ref:`RID<class_rid>` "
+"area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:513
+msgid "Returns the :ref:`RID<class_rid>` of the nth shape of an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:517
+msgid ""
+":ref:`int<class_int>` **area_get_shape_count** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:519
+msgid "Returns the number of shapes assigned to an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:523
+msgid ""
+":ref:`Transform<class_transform>` **area_get_shape_transform** **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:525
+msgid "Returns the transform matrix of a shape within an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:529
+msgid ""
+":ref:`RID<class_rid>` **area_get_space** **(** :ref:`RID<class_rid>` area"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:531
+msgid "Returns the space assigned to the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:535
+msgid ""
+":ref:`int<class_int>` **area_get_space_override_mode** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:537
+msgid "Returns the space override mode for the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:541
+msgid ""
+":ref:`Transform<class_transform>` **area_get_transform** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:543
+msgid "Returns the transform matrix for an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:547
+msgid ""
+":ref:`bool<class_bool>` **area_is_ray_pickable** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:549
+msgid "If ``true`` area collides with rays."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:553
+msgid ""
+"void **area_remove_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:555
+msgid ""
+"Removes a shape from an area. It does not delete the shape, so it can be "
+"reassigned later."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:559
+msgid ""
+"void **area_set_collision_layer** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:561
+msgid "Assigns the area to one or many physics layers."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:565
+msgid ""
+"void **area_set_collision_mask** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:567
+msgid "Sets which physics layers the area will monitor."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:571
+msgid ""
+"void **area_set_monitor_callback** **(** :ref:`RID<class_rid>` area, "
+":ref:`Object<class_object>` receiver, :ref:`String<class_string>` method "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:573
+msgid ""
+"Sets the function to call when any body/area enters or exits the area. "
+"This callback will be called for any object interacting with the area, "
+"and takes five parameters:"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:575
+msgid ""
+"1: AREA_BODY_ADDED or AREA_BODY_REMOVED, depending on whether the object "
+"entered or exited the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:577
+msgid "2: :ref:`RID<class_rid>` of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:579
+msgid "3: Instance ID of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:581
+msgid "4: The shape index of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:583
+msgid "5: The shape index of the area where the object entered/exited."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:587
+msgid ""
+"void **area_set_param** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` param, :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:589
+msgid ""
+"Sets the value for an area parameter. A list of available parameters is "
+"on the AREA_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:593
+msgid ""
+"void **area_set_ray_pickable** **(** :ref:`RID<class_rid>` area, "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:595
+msgid "Sets object pickable with rays."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:599
+msgid ""
+"void **area_set_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:601
+msgid ""
+"Substitutes a given area shape by another. The old shape is selected by "
+"its index, the new one by its :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:605
+msgid ""
+"void **area_set_shape_transform** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:607
+msgid "Sets the transform matrix for an area shape."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:611
+msgid ""
+"void **area_set_space** **(** :ref:`RID<class_rid>` area, "
+":ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:613
+msgid "Assigns a space to the area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:617
+msgid ""
+"void **area_set_space_override_mode** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:619
+msgid ""
+"Sets the space override mode for the area. The modes are described in the"
+" constants AREA_SPACE_OVERRIDE\\_\\*."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:623
+msgid ""
+"void **area_set_transform** **(** :ref:`RID<class_rid>` area, "
+":ref:`Transform<class_transform>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:625
+msgid "Sets the transform matrix for an area."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:629
+msgid ""
+"void **body_add_collision_exception** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` excepted_body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:631
+msgid "Adds a body to the list of bodies exempt from collisions."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:635
+msgid ""
+"void **body_add_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` "
+"transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:637
+msgid ""
+"Adds a shape to the body, along with a transform matrix. Shapes are "
+"usually referenced by their index, so you should track which shape has a "
+"given index."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:641
+msgid ""
+"void **body_apply_impulse** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` "
+"impulse **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:643
+msgid ""
+"Gives the body a push at a ``position`` in the direction of the "
+"``impulse``."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:647
+msgid ""
+"void **body_apply_torque_impulse** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector3<class_vector3>` impulse **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:649
+msgid "Gives the body a push to rotate it."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:653
+msgid ""
+"void **body_attach_object_instance_id** **(** :ref:`RID<class_rid>` body,"
+" :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:659
+msgid "void **body_clear_shapes** **(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:661
+msgid "Removes all shapes from a body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:665
+msgid ""
+":ref:`RID<class_rid>` **body_create** **(** :ref:`int<class_int>` mode=2,"
+" :ref:`bool<class_bool>` init_sleeping=false **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:667
+msgid ""
+"Creates a physics body. The first parameter can be any value from "
+"constants BODY_MODE\\*, for the type of body created. Additionally, the "
+"body can be created in sleeping state to save processing time."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:671
+msgid ""
+":ref:`int<class_int>` **body_get_collision_layer** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:673
+msgid "Returns the physics layer or layers a body belongs to."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:677
+msgid ""
+":ref:`int<class_int>` **body_get_collision_mask** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:679
+msgid "Returns the physics layer or layers a body can collide with."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:685
+msgid ""
+":ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` "
+"**body_get_direct_state** **(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:687
+msgid ""
+"Returns the :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` "
+"of the body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:691
+msgid ""
+":ref:`float<class_float>` **body_get_kinematic_safe_margin** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:695
+msgid ""
+":ref:`int<class_int>` **body_get_max_contacts_reported** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:697
+msgid ""
+"Returns the maximum contacts that can be reported. See "
+":ref:`body_set_max_contacts_reported<class_PhysicsServer_body_set_max_contacts_reported>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:701
+msgid ""
+":ref:`int<class_int>` **body_get_mode** **(** :ref:`RID<class_rid>` body "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:703
+msgid "Returns the body mode."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:707
+msgid ""
+":ref:`int<class_int>` **body_get_object_instance_id** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:713
+msgid ""
+":ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_rid>` "
+"body, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:715
+msgid ""
+"Returns the value of a body parameter. A list of available parameters is "
+"on the BODY_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:719
+msgid ""
+":ref:`RID<class_rid>` **body_get_shape** **(** :ref:`RID<class_rid>` "
+"body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:721
+msgid "Returns the :ref:`RID<class_rid>` of the nth shape of a body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:725
+msgid ""
+":ref:`int<class_int>` **body_get_shape_count** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:727
+msgid "Returns the number of shapes assigned to a body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:731
+msgid ""
+":ref:`Transform<class_transform>` **body_get_shape_transform** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:733
+msgid "Returns the transform matrix of a body shape."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:737
+msgid ""
+":ref:`RID<class_rid>` **body_get_space** **(** :ref:`RID<class_rid>` body"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:739
+msgid "Returns the :ref:`RID<class_rid>` of the space assigned to a body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:743
+msgid ""
+":ref:`Variant<class_variant>` **body_get_state** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:745
+msgid "Returns a body state."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:749
+msgid ""
+":ref:`bool<class_bool>` **body_is_axis_locked** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` axis **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:753
+msgid ""
+":ref:`bool<class_bool>` "
+"**body_is_continuous_collision_detection_enabled** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:755
+#: ../../classes/class_physicsserver.rst:809
+msgid "If ``true`` the continuous collision detection mode is enabled."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:759
+msgid ""
+":ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:761
+msgid ""
+"Returns whether a body uses a callback function to calculate its own "
+"physics (see "
+":ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:765
+msgid ""
+":ref:`bool<class_bool>` **body_is_ray_pickable** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:767
+msgid "If ``true`` the body can be detected by rays"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:771
+msgid ""
+"void **body_remove_collision_exception** **(** :ref:`RID<class_rid>` "
+"body, :ref:`RID<class_rid>` excepted_body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:773
+msgid "Removes a body from the list of bodies exempt from collisions."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:775
+#: ../../classes/class_physicsserver.rst:811
+msgid ""
+"Continuous collision detection tries to predict where a moving body will "
+"collide, instead of moving it and correcting its movement if it collided."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:779
+msgid ""
+"void **body_remove_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:781
+msgid ""
+"Removes a shape from a body. The shape is not deleted, so it can be "
+"reused afterwards."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:785
+msgid ""
+"void **body_set_axis_lock** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` axis, :ref:`bool<class_bool>` lock **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:789
+msgid ""
+"void **body_set_axis_velocity** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector3<class_vector3>` axis_velocity **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:791
+msgid ""
+"Sets an axis velocity. The velocity in the given vector axis will be set "
+"as the given vector length. This is useful for jumping behavior."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:795
+msgid ""
+"void **body_set_collision_layer** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:797
+msgid "Sets the physics layer or layers a body belongs to."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:801
+msgid ""
+"void **body_set_collision_mask** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:803
+msgid "Sets the physics layer or layers a body can collide with."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:807
+msgid ""
+"void **body_set_enable_continuous_collision_detection** **(** "
+":ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:815
+msgid ""
+"void **body_set_force_integration_callback** **(** :ref:`RID<class_rid>` "
+"body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` "
+"method, :ref:`Variant<class_variant>` userdata=null **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:817
+msgid ""
+"Sets the function used to calculate physics for an object, if that object"
+" allows it (see :ref:`body_set_omit_force "
+"integration<class_PhysicsServer_body_set_omit_force integration>`)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:821
+msgid ""
+"void **body_set_kinematic_safe_margin** **(** :ref:`RID<class_rid>` body,"
+" :ref:`float<class_float>` margin **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:825
+msgid ""
+"void **body_set_max_contacts_reported** **(** :ref:`RID<class_rid>` body,"
+" :ref:`int<class_int>` amount **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:827
+msgid ""
+"Sets the maximum contacts to report. Bodies can keep a log of the "
+"contacts with other bodies, this is enabled by setting the maximum amount"
+" of contacts reported to a number greater than 0."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:831
+msgid ""
+"void **body_set_mode** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:833
+msgid "Sets the body mode, from one of the constants BODY_MODE\\*."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:837
+msgid ""
+"void **body_set_omit_force_integration** **(** :ref:`RID<class_rid>` "
+"body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:839
+msgid ""
+"Sets whether a body uses a callback function to calculate its own physics"
+" (see "
+":ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:843
+msgid ""
+"void **body_set_param** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:845
+msgid ""
+"Sets a body parameter. A list of available parameters is on the "
+"BODY_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:849
+msgid ""
+"void **body_set_ray_pickable** **(** :ref:`RID<class_rid>` body, "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:851
+msgid "Sets the body pickable with rays if ``enabled`` is set."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:855
+msgid ""
+"void **body_set_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:857
+msgid ""
+"Substitutes a given body shape by another. The old shape is selected by "
+"its index, the new one by its :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:861
+msgid ""
+"void **body_set_shape_transform** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:863
+msgid "Sets the transform matrix for a body shape."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:867
+msgid ""
+"void **body_set_space** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:869
+msgid ""
+"Assigns a space to the body (see "
+":ref:`create_space<class_PhysicsServer_create_space>`)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:873
+msgid ""
+"void **body_set_state** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` state, :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:875
+msgid "Sets a body state (see BODY_STATE\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:879
+msgid ""
+":ref:`float<class_float>` **cone_twist_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:881
+msgid "Gets a cone_twist_joint parameter (see CONE_TWIST_JOINT\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:885
+msgid ""
+"void **cone_twist_joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:887
+msgid "Sets a cone_twist_joint parameter (see CONE_TWIST_JOINT\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:891
+msgid "void **free_rid** **(** :ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:893
+msgid ""
+"Destroys any of the objects created by PhysicsServer. If the "
+":ref:`RID<class_rid>` passed is not one of the objects that can be "
+"created by PhysicsServer, an error will be sent to the console."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:897
+msgid ""
+":ref:`bool<class_bool>` **generic_6dof_joint_get_flag** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` flag **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:899
+msgid "Gets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:903
+msgid ""
+":ref:`float<class_float>` **generic_6dof_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` axis, "
+":ref:`int<class_int>` param **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:905
+msgid ""
+"Gets a generic_6_DOF_joint parameter (see G6DOF_JOINT\\* constants "
+"without the G6DOF_JOINT_FLAG\\*)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:909
+msgid ""
+"void **generic_6dof_joint_set_flag** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` axis, :ref:`int<class_int>` flag, "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:911
+msgid "Sets a generic_6_DOF_joint flag (see G6DOF_JOINT_FLAG\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:915
+msgid ""
+"void **generic_6dof_joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` axis, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:917
+msgid ""
+"Sets a generic_6_DOF_joint parameter (see G6DOF_JOINT\\* constants "
+"without the G6DOF_JOINT_FLAG\\*)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:921
+msgid ""
+":ref:`int<class_int>` **get_process_info** **(** :ref:`int<class_int>` "
+"process_info **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:923
+msgid "Returns an Info defined by the ProcessInfo input given."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:927
+msgid ""
+":ref:`bool<class_bool>` **hinge_joint_get_flag** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` flag **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:929
+msgid "Gets a hinge_joint flag (see HINGE_JOINT_FLAG\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:933
+msgid ""
+":ref:`float<class_float>` **hinge_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:935
+msgid ""
+"Gets a hinge_joint parameter (see HINGE_JOINT\\* constants without the "
+"HINGE_JOINT_FLAG\\*)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:939
+msgid ""
+"void **hinge_joint_set_flag** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:941
+msgid "Sets a hinge_joint flag (see HINGE_JOINT_FLAG\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:945
+msgid ""
+"void **hinge_joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:947
+msgid ""
+"Sets a hinge_joint parameter (see HINGE_JOINT\\* constants without the "
+"HINGE_JOINT_FLAG\\*)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:951
+msgid ""
+":ref:`RID<class_rid>` **joint_create_cone_twist** **(** "
+":ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` "
+"local_ref_A, :ref:`RID<class_rid>` body_B, "
+":ref:`Transform<class_transform>` local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:953
+msgid "Creates a :ref:`ConeTwistJoint<class_conetwistjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:957
+msgid ""
+":ref:`RID<class_rid>` **joint_create_generic_6dof** **(** "
+":ref:`RID<class_rid>` body_A, :ref:`Transform<class_transform>` "
+"local_ref_A, :ref:`RID<class_rid>` body_B, "
+":ref:`Transform<class_transform>` local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:959
+msgid "Creates a :ref:`Generic6DOFJoint<class_generic6dofjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:963
+msgid ""
+":ref:`RID<class_rid>` **joint_create_hinge** **(** :ref:`RID<class_rid>` "
+"body_A, :ref:`Transform<class_transform>` hinge_A, :ref:`RID<class_rid>` "
+"body_B, :ref:`Transform<class_transform>` hinge_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:965
+msgid "Creates a :ref:`HingeJoint<class_hingejoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:969
+msgid ""
+":ref:`RID<class_rid>` **joint_create_pin** **(** :ref:`RID<class_rid>` "
+"body_A, :ref:`Vector3<class_vector3>` local_A, :ref:`RID<class_rid>` "
+"body_B, :ref:`Vector3<class_vector3>` local_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:971
+msgid "Creates a :ref:`PinJoint<class_pinjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:975
+msgid ""
+":ref:`RID<class_rid>` **joint_create_slider** **(** :ref:`RID<class_rid>`"
+" body_A, :ref:`Transform<class_transform>` local_ref_A, "
+":ref:`RID<class_rid>` body_B, :ref:`Transform<class_transform>` "
+"local_ref_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:977
+msgid "Creates a :ref:`SliderJoint<class_sliderjoint>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:981
+msgid ""
+":ref:`int<class_int>` **joint_get_solver_priority** **(** "
+":ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:983
+msgid "Gets the priority value of the Joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:987
+msgid ""
+":ref:`int<class_int>` **joint_get_type** **(** :ref:`RID<class_rid>` "
+"joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:989
+msgid "Returns the type of the Joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:993
+msgid ""
+"void **joint_set_solver_priority** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` priority **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:995
+msgid "Sets the priority value of the Joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:999
+msgid ""
+":ref:`Vector3<class_vector3>` **pin_joint_get_local_a** **(** "
+":ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1001
+msgid "Returns position of the joint in the local space of body a of the joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1005
+msgid ""
+":ref:`Vector3<class_vector3>` **pin_joint_get_local_b** **(** "
+":ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1007
+msgid "Returns position of the joint in the local space of body b of the joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1011
+msgid ""
+":ref:`float<class_float>` **pin_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1013
+msgid "Gets a pin_joint parameter (see PIN_JOINT\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1017
+msgid ""
+"void **pin_joint_set_local_a** **(** :ref:`RID<class_rid>` joint, "
+":ref:`Vector3<class_vector3>` local_A **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1019
+msgid "Sets position of the joint in the local space of body a of the joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1023
+msgid ""
+"void **pin_joint_set_local_b** **(** :ref:`RID<class_rid>` joint, "
+":ref:`Vector3<class_vector3>` local_B **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1025
+msgid "Sets position of the joint in the local space of body b of the joint."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1029
+msgid ""
+"void **pin_joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1031
+msgid "Sets a pin_joint parameter (see PIN_JOINT\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1035
+msgid "void **set_active** **(** :ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1037
+msgid "Activates or deactivates the 3D physics engine."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1041
+msgid ""
+":ref:`RID<class_rid>` **shape_create** **(** :ref:`int<class_int>` type "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1043
+msgid ""
+"Creates a shape of type SHAPE\\_\\*. Does not assign it to a body or an "
+"area. To do so, you must use "
+":ref:`area_set_shape<class_PhysicsServer_area_set_shape>` or "
+":ref:`body_set_shape<class_PhysicsServer_body_set_shape>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1047
+msgid ""
+":ref:`Variant<class_variant>` **shape_get_data** **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1049
+msgid "Returns the shape data."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1053
+msgid ""
+":ref:`int<class_int>` **shape_get_type** **(** :ref:`RID<class_rid>` "
+"shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1055
+msgid "Returns the type of shape (see SHAPE\\_\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1059
+msgid ""
+"void **shape_set_data** **(** :ref:`RID<class_rid>` shape, "
+":ref:`Variant<class_variant>` data **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1061
+msgid ""
+"Sets the shape data that defines its shape and size. The data to be "
+"passed depends on the kind of shape created "
+":ref:`shape_get_type<class_PhysicsServer_shape_get_type>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1065
+msgid ""
+":ref:`float<class_float>` **slider_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1067
+#: ../../classes/class_physicsserver.rst:1073
+msgid "Gets a slider_joint parameter (see SLIDER_JOINT\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1071
+msgid ""
+"void **slider_joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1077
+msgid ":ref:`RID<class_rid>` **space_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1079
+msgid ""
+"Creates a space. A space is a collection of parameters for the physics "
+"engine that can be assigned to an area or a body. It can be assigned to "
+"an area with :ref:`area_set_space<class_PhysicsServer_area_set_space>`, "
+"or to a body with "
+":ref:`body_set_space<class_PhysicsServer_body_set_space>`."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1083
+msgid ""
+":ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` "
+"**space_get_direct_state** **(** :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1085
+msgid ""
+"Returns the state of a space, a "
+":ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`. This "
+"object can be used to make collision/intersection queries."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1089
+msgid ""
+":ref:`float<class_float>` **space_get_param** **(** :ref:`RID<class_rid>`"
+" space, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1091
+msgid "Returns the value of a space parameter."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1095
+msgid ""
+":ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_rid>` "
+"space **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1097
+msgid "Returns whether the space is active."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1101
+msgid ""
+"void **space_set_active** **(** :ref:`RID<class_rid>` space, "
+":ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1103
+msgid ""
+"Marks a space as active. It will not have an effect, unless it is "
+"assigned to an area or body."
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1107
+msgid ""
+"void **space_set_param** **(** :ref:`RID<class_rid>` space, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsserver.rst:1109
+msgid ""
+"Sets the value for a space parameter. A list of available parameters is "
+"on the SPACE_PARAM\\_\\* constants."
+msgstr ""
+

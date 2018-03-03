@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_inputmap.rst:8
+msgid "InputMap"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:17
+msgid "Singleton that manages :ref:`InputEventAction<class_inputeventaction>`."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:23 ../../classes/class_inputmap.rst:25
+#: ../../classes/class_inputmap.rst:29 ../../classes/class_inputmap.rst:31
+#: ../../classes/class_inputmap.rst:41
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:23
+msgid ""
+":ref:`action_add_event<class_InputMap_action_add_event>` **(** "
+":ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` "
+"event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:25
+msgid ""
+":ref:`action_erase_event<class_InputMap_action_erase_event>` **(** "
+":ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` "
+"event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:27 ../../classes/class_inputmap.rst:33
+#: ../../classes/class_inputmap.rst:39
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:27
+msgid ""
+":ref:`action_has_event<class_InputMap_action_has_event>` **(** "
+":ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` "
+"event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:29
+msgid ""
+":ref:`add_action<class_InputMap_add_action>` **(** "
+":ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:31
+msgid ""
+":ref:`erase_action<class_InputMap_erase_action>` **(** "
+":ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:33
+msgid ""
+":ref:`event_is_action<class_InputMap_event_is_action>` **(** "
+":ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` "
+"action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:35 ../../classes/class_inputmap.rst:37
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:35
+msgid ""
+":ref:`get_action_list<class_InputMap_get_action_list>` **(** "
+":ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:37
+msgid ":ref:`get_actions<class_InputMap_get_actions>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:39
+msgid ""
+":ref:`has_action<class_InputMap_has_action>` **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:41
+msgid ":ref:`load_from_globals<class_InputMap_load_from_globals>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:45
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:47
+msgid ""
+"Manages all :ref:`InputEventAction<class_inputeventaction>` which can be "
+"created/modified from the project settings menu ``Project > Project "
+"Settings > Input Map`` or in code with "
+":ref:`add_action<class_InputMap_add_action>` and "
+":ref:`action_add_event<class_InputMap_action_add_event>`. See "
+":ref:`Node._input<class_Node__input>`."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:50
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:54
+msgid ""
+"void **action_add_event** **(** :ref:`String<class_string>` action, "
+":ref:`InputEvent<class_inputevent>` event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:56
+msgid ""
+"Adds an :ref:`InputEvent<class_inputevent>` to an action. This "
+":ref:`InputEvent<class_inputevent>` will trigger the action."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:60
+msgid ""
+"void **action_erase_event** **(** :ref:`String<class_string>` action, "
+":ref:`InputEvent<class_inputevent>` event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:62
+msgid "Removes an :ref:`InputEvent<class_inputevent>` from an action."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:66
+msgid ""
+":ref:`bool<class_bool>` **action_has_event** **(** "
+":ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` "
+"event **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:68
+msgid ""
+"Returns true if an action has an :ref:`InputEvent<class_inputevent>` "
+"associated with it."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:72
+msgid "void **add_action** **(** :ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:74
+msgid ""
+"Adds an (empty) action to the ``InputMap``. An "
+":ref:`InputEvent<class_inputevent>` can then be added to this action with"
+" :ref:`action_add_event<class_InputMap_action_add_event>`."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:78
+msgid "void **erase_action** **(** :ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:80
+msgid "Removes an action from the ``InputMap``."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:84
+msgid ""
+":ref:`bool<class_bool>` **event_is_action** **(** "
+":ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` "
+"action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:86
+msgid ""
+"Returns true if the given event is part of an existing action. This "
+"method ignores keyboard modifiers if the given "
+":ref:`InputEvent<class_inputevent>` is not pressed (for proper release "
+"detection). See :ref:`action_has_event<class_InputMap_action_has_event>` "
+"if you don't want this behavior."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:90
+msgid ""
+":ref:`Array<class_array>` **get_action_list** **(** "
+":ref:`String<class_string>` action **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:92
+msgid ""
+"Returns an array of :ref:`InputEvent<class_inputevent>`\\ s associated "
+"with a given action."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:96
+msgid ":ref:`Array<class_array>` **get_actions** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:98
+msgid "Returns an array of all actions in the ``InputMap``."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:102
+msgid ""
+":ref:`bool<class_bool>` **has_action** **(** :ref:`String<class_string>` "
+"action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:104
+msgid ""
+"Returns ``true`` if the ``InputMap`` has a registered action with the "
+"given name."
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:108
+msgid "void **load_from_globals** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_inputmap.rst:110
+msgid ""
+"Clears all :ref:`InputEventAction<class_inputeventaction>` in the "
+"``InputMap`` and load it anew from "
+":ref:`ProjectSettings<class_projectsettings>`."
+msgstr ""
+

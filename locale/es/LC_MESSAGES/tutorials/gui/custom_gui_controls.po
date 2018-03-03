@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/gui/custom_gui_controls.rst:4
+msgid "Custom GUI controls"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:7
+msgid "So many controls..."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:9
+msgid ""
+"Yet there are never enough. Creating your own custom controls that act "
+"just the way you want them is an obsession of almost every GUI "
+"programmer. Godot provides plenty of them, but they may not work exactly "
+"the way you want. Before contacting the developers with a pull-request to"
+" support diagonal scrollbars, at least it will be good to know how to "
+"create these controls easily from script."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:17
+msgid "Drawing"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:19
+msgid ""
+"For drawing, it is recommended to check the "
+":ref:`doc_custom_drawing_in_2d` tutorial. The same applies. Some "
+"functions are worth mentioning due to their usefulness when drawing, so "
+"they will be detailed next:"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:24
+msgid "Checking control size"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:26
+msgid ""
+"Unlike 2D nodes, \"size\" is very important with controls, as it helps to"
+" organize them in proper layouts. For this, the :ref:`Control.rect_size "
+"<class_Control_rect_size>` member variable is provided. Checking it "
+"during _draw() is vital to ensure everything is kept in-bounds."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:33
+msgid "Checking focus"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:35
+msgid ""
+"Some controls (such as buttons or text editors) might provide input focus"
+" for keyboard or joypad input. Examples of this are entering text or "
+"pressing a button. This is controlled with the :ref:`Control.focus_mode "
+"<class_Control_focus_mode>` member variable. When drawing, and if the "
+"control supports input focus, it is always desired to show some sort of "
+"indicator (highight, box, etc) to indicate that this is the currently "
+"focused control. To check for this status, the :ref:`Control.has_focus() "
+"<class_Control_has_focus>` method exists. Example"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:54
+msgid "Sizing"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:56
+msgid ""
+"As mentioned before, size is very important to controls. This allows them"
+" to lay out properly, when set into grids, containers, or anchored. "
+"Controls most of the time provide a *minimum size* to help to properly "
+"lay them out. For example, if controls are placed vertically on top of "
+"each other using a :ref:`VBoxContainer <class_VBoxContainer>`, the "
+"minimum size will make sure your custom control is not squished by the "
+"other controls in the container."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:64
+msgid ""
+"To provide this callback, just override :ref:`Control.get_minimum_size() "
+"<class_Control_get_minimum_size>`, for example:"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:73
+msgid "Or alternatively, set it via function:"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:81
+msgid "Input"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:83
+msgid ""
+"Controls provide a few helpers to make managing input events much easier "
+"than regular nodes."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:87
+msgid "Input events"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:89
+msgid ""
+"There are a few tutorials about input before this one, but it's worth "
+"mentioning that controls have a special input method that only works "
+"when:"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:93
+msgid "The mouse pointer is over the control."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:94
+msgid ""
+"The button was pressed over this control (control always captures input "
+"until button is released)"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:96
+msgid ""
+"Control provides keyboard/joypad focus via :ref:`Control.focus_mode "
+"<class_Control_focus_mode>`."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:99
+msgid ""
+"This function is :ref:`Control._gui_input() <class_Control__gui_input>`. "
+"Simply override it in your control. No processing needs to be set."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:111
+msgid ""
+"For more information about events themselves, check the "
+":ref:`doc_inputevent` tutorial."
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:115
+msgid "Notifications"
+msgstr ""
+
+#: ../../tutorials/gui/custom_gui_controls.rst:117
+msgid ""
+"Controls also have many useful notifications for which no callback "
+"exists, but can be checked with the _notification callback:"
+msgstr ""
+

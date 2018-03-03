@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_hingejoint.rst:8
+msgid "HingeJoint"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:10
+msgid ""
+"**Inherits:** :ref:`Joint<class_joint>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:17
+msgid "A hinge between two 3D bodies."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:24
+msgid ""
+":ref:`float<class_float>` **angular_limit/bias** - The speed with which "
+"the rotation across the axis perpendicular to the hinge gets corrected."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:28
+msgid ""
+":ref:`bool<class_bool>` **angular_limit/enable** - If ``true`` the hinges"
+" maximum and minimum rotation, defined by "
+":ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and "
+":ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has "
+"effects."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:32
+msgid ""
+":ref:`float<class_float>` **angular_limit/lower** - The minimum rotation."
+" only active if "
+":ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:36
+msgid ""
+":ref:`float<class_float>` **angular_limit/relaxation** - The lower this "
+"value, the more the rotation gets slowed down."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:40
+msgid ":ref:`float<class_float>` **angular_limit/softness**"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:44
+msgid ""
+":ref:`float<class_float>` **angular_limit/upper** - The maximum rotation."
+" only active if "
+":ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:48
+msgid ""
+":ref:`bool<class_bool>` **motor/enable** - When activated, a motor turns "
+"the hinge."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:52
+msgid ""
+":ref:`float<class_float>` **motor/max_impulse** - Maximum acceleration "
+"for the motor."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:56
+msgid ""
+":ref:`float<class_float>` **motor/target_velocity** - Target speed for "
+"the motor."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:60
+msgid ""
+":ref:`float<class_float>` **params/bias** - The speed with which the two "
+"bodies get pulled together when they move in different directions."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:64
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:68
+msgid "enum **Flag**"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:70
+msgid ""
+"**FLAG_USE_LIMIT** = **0** --- If ``true`` the hinges maximum and minimum"
+" rotation, defined by "
+":ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and "
+":ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has "
+"effects."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:71
+msgid "**FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:72
+msgid ""
+"**FLAG_MAX** = **2** --- End flag of FLAG\\_\\* constants, used "
+"internally."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:76
+msgid "enum **Param**"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:78
+msgid ""
+"**PARAM_BIAS** = **0** --- The speed with which the two bodies get pulled"
+" together when they move in different directions."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:79
+msgid ""
+"**PARAM_LIMIT_UPPER** = **1** --- The maximum rotation. only active if "
+":ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:80
+msgid ""
+"**PARAM_LIMIT_LOWER** = **2** --- The minimum rotation. only active if "
+":ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:81
+msgid ""
+"**PARAM_LIMIT_BIAS** = **3** --- The speed with which the rotation across"
+" the axis perpendicular to the hinge gets corrected."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:82
+msgid "**PARAM_LIMIT_SOFTNESS** = **4**"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:83
+msgid ""
+"**PARAM_LIMIT_RELAXATION** = **5** --- The lower this value, the more the"
+" rotation gets slowed down."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:84
+msgid "**PARAM_MOTOR_TARGET_VELOCITY** = **6** --- Target speed for the motor."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:85
+msgid ""
+"**PARAM_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the "
+"motor."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:86
+msgid ""
+"**PARAM_MAX** = **8** --- End flag of PARAM\\_\\* constants, used "
+"internally."
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:90
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_hingejoint.rst:92
+msgid ""
+"Normally uses the z-axis of body A as the hinge axis, another axis can be"
+" specified when adding it manually though."
+msgstr ""
+

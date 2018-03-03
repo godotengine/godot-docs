@@ -1,0 +1,396 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/2d/particle_systems_2d.rst:4
+msgid "Particle Systems (2D)"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:7
+msgid "Intro"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:9
+msgid ""
+"A simple (but flexible enough for most uses) particle system is provided."
+" Particle systems are used to simulate complex physical effects such as "
+"sparks, fire, magic particles, smoke, mist, magic, etc."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:13
+msgid ""
+"The idea is that a \"particle\" is emitted at a fixed interval and with a"
+" fixed lifetime. During its lifetime, every particle will have the same "
+"base behavior. What makes every particle different and provides a more "
+"organic look is the \"randomness\" associated to each parameter. In "
+"essence, creating a particle system means setting base physics parameters"
+" and then adding randomness to them."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:21
+msgid "Particles2D"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:23
+msgid ""
+"Particle systems are added to the scene via the :ref:`Particles2D "
+"<class_Particles2D>` node. However, after creating that node you will "
+"notice that only a white dot was created, and that there is a warning "
+"icon next to your Particles2D node in the inspector. This is because the "
+"node needs a ParticlesMaterial to function."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:30
+msgid "ParticlesMaterial"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:32
+msgid ""
+"To add a process material to your particles node, go to Process Material "
+"in your inspector panel. Click on the box next to material, and from the "
+"dropdown menu select New Particles Material."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:38
+msgid "Your Particles2D node should now be emitting white points downward."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:44
+msgid "Texture"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:46
+msgid ""
+"A particle system uses a single texture (in the future this might be "
+"extended to animated textures via spritesheet). The texture is set via "
+"the relevant texture property:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:53
+msgid "Time Parameters"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:56
+msgid "Lifetime"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:58
+msgid ""
+"The time in seconds that every particle will stay alive. When lifetime "
+"ends, a new particle is created to replace it."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:61
+msgid "Lifetime: 0.5"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:65
+msgid "Lifetime: 4.0"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:70
+msgid "One Shot"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:72
+msgid ""
+"When enabled, a Particles2D node will emit all of its particles once and "
+"then never again."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:76
+msgid "Preprocess"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:78
+msgid ""
+"Particle systems begin with zero particles emitted, then start emitting. "
+"This can be an inconvenience when just loading a scene and systems like a"
+" torch, mist, etc. begin emitting the moment you enter. Preprocess is "
+"used to let the system process a given number of seconds before it is "
+"actually drawn the first time."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:85
+msgid "Speed Scale"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:87
+msgid ""
+"The speed scale has a default value of ``1``, and is used to adjust the "
+"speed of a particle system. Lowering the value will make the particles "
+"slower, increasing the value will make the particles much faster."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:92
+msgid "Explosiveness"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:94
+msgid ""
+"If lifetime is ``1`` and there are ten particles, it means a particle "
+"will be emitted every 0.1 seconds. The explosiveness parameter changes "
+"this, and forces particles to be emitted all together. Ranges are:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:98
+msgid "0: Emit particles at regular intervals (default value)."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:99
+msgid "1: Emit all particles simultaneously."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:101
+msgid ""
+"Values in the middle are also allowed. This feature is useful for "
+"creating explosions or sudden bursts of particles:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:107
+msgid "Randomness"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:109
+msgid ""
+"All physics parameters can be randomized. Random values range from ``0`` "
+"to ``1``. The formula to randomize a parameter is:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:117
+msgid "Fixed FPS"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:119
+msgid ""
+"This setting can be used to set the particle system to render at a fixed "
+"FPS. For instance, changing the value to ``2`` will make the particles "
+"render at 2 frames per second. Note this does not slow down the particle "
+"system itself."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:124
+msgid "Fract Delta"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:126
+msgid "This can be used to turn Fract Delta on or off."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:129
+msgid "Drawing Parameters"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:132
+msgid "Visability Rect"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:134
+msgid ""
+"The ``W`` and ``H`` values control width and height of the visibility "
+"rectangle. The ``X`` and ``Y`` values control the position of the upper-"
+"left corner of the visibility rectangle relative to the particle emitter."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:139
+msgid "Local Coords"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:141
+msgid ""
+"By default this option is on, and it means that the space that particles "
+"are emitted to is relative to the node. If the node is moved, all "
+"particles are moved with it:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:147
+msgid ""
+"If disabled, particles will emit to global space, meaning that if the "
+"node is moved, already emitted particles are not affected:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:153
+msgid "Draw Order"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:155
+msgid ""
+"This controls the order in which individual particles are drawn. "
+"``Index`` means particles are drawn according to their emission order "
+"(default). ``Lifetime`` means they are drawn in order of remaining "
+"lifetime."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:160
+msgid "ParticlesMaterial settings"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:163
+msgid "Direction"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:165
+msgid "This is the base angle at which particles emit. Default is ``0`` (down):"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:169
+msgid ""
+"Changing it will change the emissor direction, but gravity will still "
+"affect them:"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:174
+msgid ""
+"This parameter is useful because, by rotating the node, gravity will also"
+" be rotated. Changing direction allows them to be separated."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:178
+msgid "Spread"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:180
+msgid ""
+"This parameter is the angle in degrees which will be randomly added in "
+"either direction to the base ``Direction``. A spread of ``180`` will emit"
+" in all directions (+/- 180)."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:187
+msgid "Gravity"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:189
+msgid "The gravity applied to every particle."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:194
+msgid "Initial Velocity"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:196
+msgid ""
+"Linear velocity is the speed at which particles will be emitted (in "
+"pixels/sec). Speed might later be modified by gravity or other "
+"accelerations (as described further below)."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:203
+msgid "Angular Velocity"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:205
+msgid "Angular velocity is the inital angular velocity applied to particles."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:208
+msgid "Spin Velocity"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:210
+msgid ""
+"Spin velocity is the speed at which particles turn around their center "
+"(in degrees/sec)."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:216
+msgid "Orbit Velocity"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:218
+msgid "Orbit velocity is used to make particles turn around their center."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:223
+msgid "Linear Acceleration"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:225
+msgid "The linear acceleration applied to each particle."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:228
+msgid "Radial Acceleration"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:230
+msgid ""
+"If this acceleration is positive, particles are accelerated away from the"
+" center. If negative, they are absorbed towards it."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:236
+msgid "Tangential Acceleration"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:238
+msgid ""
+"This acceleration will use the tangent vector to the center. Combining "
+"with radial acceleration can do nice effects."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:244
+msgid "Damping"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:246
+msgid ""
+"Damping applies friction to the particles, forcing them to stop. It is "
+"especially useful for sparks or explosions, which usually begin with a "
+"high linear velocity and then stop as they fade."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:253
+msgid "Angle"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:255
+msgid ""
+"Determines the initial angle of the particle (in degress). This parameter"
+" is mostly useful randomized."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:261
+msgid "Scale"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:263
+msgid "Determines the initial scale of the particles."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:268
+msgid "Color"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:270
+msgid "Used to change the color of the particles being emitted."
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:273
+msgid "Hue variation"
+msgstr ""
+
+#: ../../tutorials/2d/particle_systems_2d.rst:275
+msgid ""
+"The variation value sets the inital hue variation applied to each "
+"particle. The Variation rand value controls the hue variation randomness "
+"ratio."
+msgstr ""
+

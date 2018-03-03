@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_navigationmesh.rst:8
+msgid "NavigationMesh"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:23
+#: ../../classes/class_navigationmesh.rst:25
+#: ../../classes/class_navigationmesh.rst:27
+#: ../../classes/class_navigationmesh.rst:35
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:23
+msgid ""
+":ref:`add_polygon<class_NavigationMesh_add_polygon>` **(** "
+":ref:`PoolIntArray<class_poolintarray>` polygon **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:25
+msgid ":ref:`clear_polygons<class_NavigationMesh_clear_polygons>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:27
+msgid ""
+":ref:`create_from_mesh<class_NavigationMesh_create_from_mesh>` **(** "
+":ref:`Mesh<class_mesh>` mesh **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:29
+msgid ":ref:`PoolIntArray<class_poolintarray>`"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:29
+msgid ""
+":ref:`get_polygon<class_NavigationMesh_get_polygon>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:31
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:31
+msgid ""
+":ref:`get_polygon_count<class_NavigationMesh_get_polygon_count>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:33
+msgid ":ref:`PoolVector3Array<class_poolvector3array>`"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:33
+msgid ":ref:`get_vertices<class_NavigationMesh_get_vertices>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:35
+msgid ""
+":ref:`set_vertices<class_NavigationMesh_set_vertices>` **(** "
+":ref:`PoolVector3Array<class_poolvector3array>` vertices **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:39
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:43
+msgid ":ref:`float<class_float>` **agent/height**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:47
+msgid ":ref:`float<class_float>` **agent/max_climb**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:51
+msgid ":ref:`float<class_float>` **agent/max_slope**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:55
+msgid ":ref:`float<class_float>` **agent/radius**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:59
+msgid ":ref:`float<class_float>` **cell/height**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:63
+msgid ":ref:`float<class_float>` **cell/size**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:67
+msgid ":ref:`float<class_float>` **detail/sample_distance**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:71
+msgid ":ref:`float<class_float>` **detail/sample_max_error**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:75
+msgid ":ref:`float<class_float>` **edge/max_error**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:79
+msgid ":ref:`float<class_float>` **edge/max_length**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:83
+msgid ":ref:`bool<class_bool>` **filter/filter_walkable_low_height_spans**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:87
+msgid ":ref:`bool<class_bool>` **filter/ledge_spans**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:91
+msgid ":ref:`bool<class_bool>` **filter/low_hanging_obstacles**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:95
+msgid ":ref:`float<class_float>` **polygon/verts_per_poly**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:99
+msgid ":ref:`float<class_float>` **region/merge_size**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:103
+msgid ":ref:`float<class_float>` **region/min_size**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:107
+msgid ":ref:`int<class_int>` **sample_partition_type/sample_partition_type**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:111
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:113
+msgid "**SAMPLE_PARTITION_WATERSHED** = **0**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:114
+msgid "**SAMPLE_PARTITION_MONOTONE** = **1**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:115
+msgid "**SAMPLE_PARTITION_LAYERS** = **2**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:118
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:122
+msgid ""
+"void **add_polygon** **(** :ref:`PoolIntArray<class_poolintarray>` "
+"polygon **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:126
+msgid "void **clear_polygons** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:130
+msgid "void **create_from_mesh** **(** :ref:`Mesh<class_mesh>` mesh **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:134
+msgid ""
+":ref:`PoolIntArray<class_poolintarray>` **get_polygon** **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:138
+msgid ":ref:`int<class_int>` **get_polygon_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:142
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **get_vertices** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_navigationmesh.rst:146
+msgid ""
+"void **set_vertices** **(** "
+":ref:`PoolVector3Array<class_poolvector3array>` vertices **)**"
+msgstr ""
+

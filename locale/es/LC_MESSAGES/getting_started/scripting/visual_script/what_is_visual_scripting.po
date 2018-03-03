@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:4
+msgid "What is Visual Scripting"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:6
+msgid ""
+"Visual Scripting is a tool designed to make the entry barrier to "
+"programming much lower. As code is more visual, it needs less abstract "
+"thinking to be understood. Any artist, animator, game designer, etc. can "
+"look at it and quickly grasp the flow of logic."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:11
+msgid ""
+"The reason it does not make existing programming obsolete is, simply, "
+"that it does not scale as well. It takes considerably more time to create"
+" code with it, and it's often more difficult to modify than just writing "
+"a few characters."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:15
+msgid ""
+"With the misunderstanding cleared up, the question that remains is what "
+"are the practical uses for Visual Scripting."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:18
+msgid "The most common use cases are are as follows:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:20
+msgid ""
+"Game development beginners who want to learn an engine but have no "
+"programming experience yet."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:21
+msgid ""
+"Artists and Game Designers who have no experience in programming and want"
+" to create quick prototypes or simple games."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:22
+msgid ""
+"Programmers working in a team that want to make part of the game logic "
+"available to Artists or Game Designers in order to offload some of their "
+"work."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/what_is_visual_scripting.rst:24
+msgid ""
+"These scenarios are far more common than one might think, so this is why "
+"Godot has added this feature."
+msgstr ""
+

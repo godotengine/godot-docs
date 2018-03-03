@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_particles2d.rst:8
+msgid "Particles2D"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:17
+msgid "2D particle emitter."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:23
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:23
+msgid ":ref:`capture_rect<class_Particles2D_capture_rect>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:25
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:25
+msgid ":ref:`restart<class_Particles2D_restart>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:29
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:33
+msgid ""
+":ref:`int<class_int>` **amount** - Number of particles emitted in one "
+"emission cycle."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:37
+msgid ""
+":ref:`DrawOrder<enum_particles2d_draworder>` **draw_order** - Particle "
+"draw order. Uses ``DRAW_ORDER_*`` values. Default value: "
+"``DRAW_ORDER_INDEX``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:41
+msgid ""
+":ref:`bool<class_bool>` **emitting** - If ``true`` particles are being "
+"emitted. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:45
+msgid ""
+":ref:`float<class_float>` **explosiveness** - How rapidly particles in an"
+" emission cycle are emitted. If greater than ``0``, there will be a gap "
+"in emissions before the next cycle begins. Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:49
+msgid ":ref:`int<class_int>` **fixed_fps**"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:53
+msgid ":ref:`bool<class_bool>` **fract_delta**"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:57
+msgid ""
+":ref:`int<class_int>` **h_frames** - Number of horizontal frames in "
+"``texture``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:61
+msgid ""
+":ref:`float<class_float>` **lifetime** - Amount of time each particle "
+"will exist. Default value: ``1``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:65
+msgid ""
+":ref:`bool<class_bool>` **local_coords** - If ``true`` particles use the "
+"parent node's coordinate space. If ``false`` they use global coordinates."
+" Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:69
+msgid ":ref:`Texture<class_texture>` **normal_map**"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:73
+msgid ""
+":ref:`bool<class_bool>` **one_shot** - If ``true`` only one emission "
+"cycle occurs. If set ``true`` during a cycle, emission will stop at the "
+"cycle's end. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:77
+msgid ""
+":ref:`float<class_float>` **preprocess** - Particle system starts as if "
+"it had already run for this many seconds."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:81
+msgid ""
+":ref:`Material<class_material>` **process_material** - "
+":ref:`Material<class_material>` for processing particles. Can be a "
+":ref:`ParticlesMaterial<class_particlesmaterial>` or a "
+":ref:`ShaderMaterial<class_shadermaterial>`."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:85
+msgid ""
+":ref:`float<class_float>` **randomness** - Emission lifetime randomness "
+"ratio. Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:89
+msgid ""
+":ref:`float<class_float>` **speed_scale** - Particle system's running "
+"speed scaling ratio. Default value: ``1``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:93
+msgid ""
+":ref:`Texture<class_texture>` **texture** - Particle texture. If ``null``"
+" particles will be squares."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:97
+msgid ""
+":ref:`int<class_int>` **v_frames** - Number of vertical frames in "
+"``texture``."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:101
+msgid ":ref:`Rect2<class_rect2>` **visibility_rect** - Editor visibility helper."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:105
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:109
+msgid "enum **DrawOrder**"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:111
+msgid "**DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:112
+msgid ""
+"**DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of "
+"remaining lifetime."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:116
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:118
+msgid ""
+"2D particle node used to create a variety of particle systems and "
+"effects. ``Particles2D`` features an emitter that generates some number "
+"of particles at a given rate."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:120
+msgid ""
+"Use the ``process_material`` property to add a "
+":ref:`ParticlesMaterial<class_particlesmaterial>` to configure particle "
+"appearance and behavior. Alternatively, you can add a "
+":ref:`ShaderMaterial<class_shadermaterial>` which will be applied to all "
+"particles."
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:123
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:127
+msgid ":ref:`Rect2<class_rect2>` **capture_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_particles2d.rst:131
+msgid "void **restart** **(** **)**"
+msgstr ""
+

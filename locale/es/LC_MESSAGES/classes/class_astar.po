@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_astar.rst:8
+msgid "AStar"
+msgstr ""
+
+#: ../../classes/class_astar.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_astar.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_astar.rst:17
+msgid "AStar class representation that uses vectors as edges."
+msgstr ""
+
+#: ../../classes/class_astar.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_astar.rst:23 ../../classes/class_astar.rst:25
+#: ../../classes/class_astar.rst:51
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:23
+msgid ""
+":ref:`_compute_cost<class_AStar__compute_cost>` **(** "
+":ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual"
+msgstr ""
+
+#: ../../classes/class_astar.rst:25
+msgid ""
+":ref:`_estimate_cost<class_AStar__estimate_cost>` **(** "
+":ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual"
+msgstr ""
+
+#: ../../classes/class_astar.rst:27 ../../classes/class_astar.rst:31
+#: ../../classes/class_astar.rst:33 ../../classes/class_astar.rst:35
+#: ../../classes/class_astar.rst:57 ../../classes/class_astar.rst:59
+#: ../../classes/class_astar.rst:61
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_astar.rst:27
+msgid ""
+":ref:`add_point<class_AStar_add_point>` **(** :ref:`int<class_int>` id, "
+":ref:`Vector3<class_vector3>` position, :ref:`float<class_float>` "
+"weight_scale=1.0 **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:29 ../../classes/class_astar.rst:55
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:29
+msgid ""
+":ref:`are_points_connected<class_AStar_are_points_connected>` **(** "
+":ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:31
+msgid ":ref:`clear<class_AStar_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:33
+msgid ""
+":ref:`connect_points<class_AStar_connect_points>` **(** "
+":ref:`int<class_int>` id, :ref:`int<class_int>` to_id, "
+":ref:`bool<class_bool>` bidirectional=true **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:35
+msgid ""
+":ref:`disconnect_points<class_AStar_disconnect_points>` **(** "
+":ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:37 ../../classes/class_astar.rst:39
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:37
+msgid ""
+":ref:`get_available_point_id<class_AStar_get_available_point_id>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:39
+msgid ""
+":ref:`get_closest_point<class_AStar_get_closest_point>` **(** "
+":ref:`Vector3<class_vector3>` to_position **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:41 ../../classes/class_astar.rst:49
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:41
+msgid ""
+":ref:`get_closest_position_in_segment<class_AStar_get_closest_position_in_segment>`"
+" **(** :ref:`Vector3<class_vector3>` to_position **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:43 ../../classes/class_astar.rst:45
+msgid ":ref:`PoolIntArray<class_poolintarray>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:43
+msgid ""
+":ref:`get_id_path<class_AStar_get_id_path>` **(** :ref:`int<class_int>` "
+"from_id, :ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:45
+msgid ""
+":ref:`get_point_connections<class_AStar_get_point_connections>` **(** "
+":ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:47
+msgid ":ref:`PoolVector3Array<class_poolvector3array>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:47
+msgid ""
+":ref:`get_point_path<class_AStar_get_point_path>` **(** "
+":ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:49
+msgid ""
+":ref:`get_point_position<class_AStar_get_point_position>` **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:51
+msgid ""
+":ref:`get_point_weight_scale<class_AStar_get_point_weight_scale>` **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:53
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_astar.rst:53
+msgid ":ref:`get_points<class_AStar_get_points>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:55
+msgid ""
+":ref:`has_point<class_AStar_has_point>` **(** :ref:`int<class_int>` id "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:57
+msgid ""
+":ref:`remove_point<class_AStar_remove_point>` **(** :ref:`int<class_int>`"
+" id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:59
+msgid ""
+":ref:`set_point_position<class_AStar_set_point_position>` **(** "
+":ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:61
+msgid ""
+":ref:`set_point_weight_scale<class_AStar_set_point_weight_scale>` **(** "
+":ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:65
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_astar.rst:67
+msgid ""
+"A\\* (A star) is a computer algorithm that is widely used in pathfinding "
+"and graph traversal, the process of plotting an efficiently directed path"
+" between multiple points. It enjoys widespread use due to its performance"
+" and accuracy. Godot's A\\* implementation make use of vectors as points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:69
+msgid ""
+"You must add points manually with "
+":ref:`AStar.add_point<class_AStar_add_point>` and create segments "
+"manually with :ref:`AStar.connect_points<class_AStar_connect_points>`. So"
+" you can test if there is a path between two points with the "
+":ref:`AStar.are_points_connected<class_AStar_are_points_connected>` "
+"function, get the list of existing ids in the found path with "
+":ref:`AStar.get_id_path<class_AStar_get_id_path>`, or the points list "
+"with :ref:`AStar.get_point_path<class_AStar_get_point_path>`."
+msgstr ""
+
+#: ../../classes/class_astar.rst:72
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_astar.rst:76
+msgid ""
+":ref:`float<class_float>` **_compute_cost** **(** :ref:`int<class_int>` "
+"from_id, :ref:`int<class_int>` to_id **)** virtual"
+msgstr ""
+
+#: ../../classes/class_astar.rst:78
+msgid "Called when computing the cost between two connected points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:82
+msgid ""
+":ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` "
+"from_id, :ref:`int<class_int>` to_id **)** virtual"
+msgstr ""
+
+#: ../../classes/class_astar.rst:84
+msgid ""
+"Called when estimating the cost between a point and the path's ending "
+"point."
+msgstr ""
+
+#: ../../classes/class_astar.rst:88
+msgid ""
+"void **add_point** **(** :ref:`int<class_int>` id, "
+":ref:`Vector3<class_vector3>` position, :ref:`float<class_float>` "
+"weight_scale=1.0 **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:90
+msgid ""
+"Adds a new point at the given position with the given identifier. The "
+"algorithm prefers points with lower ``weight_scale`` to form a path. The "
+"``id`` must be 0 or larger, and the ``weight_scale`` must be 1 or larger."
+msgstr ""
+
+#: ../../classes/class_astar.rst:98
+msgid ""
+"If there already exists a point for the given id, its position and weight"
+" scale are updated to the given values."
+msgstr ""
+
+#: ../../classes/class_astar.rst:102
+msgid ""
+":ref:`bool<class_bool>` **are_points_connected** **(** "
+":ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:104
+msgid "Returns whether there is a connection/segment between the given points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:108
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:110
+msgid "Clears all the points and segments."
+msgstr ""
+
+#: ../../classes/class_astar.rst:114
+msgid ""
+"void **connect_points** **(** :ref:`int<class_int>` id, "
+":ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:116
+msgid "Creates a segment between the given points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:130
+msgid ""
+"void **disconnect_points** **(** :ref:`int<class_int>` id, "
+":ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:132
+msgid "Deletes the segment between the given points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:136
+msgid ":ref:`int<class_int>` **get_available_point_id** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:138
+msgid "Returns the next available point id with no point associated to it."
+msgstr ""
+
+#: ../../classes/class_astar.rst:142
+msgid ""
+":ref:`int<class_int>` **get_closest_point** **(** "
+":ref:`Vector3<class_vector3>` to_position **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:144
+msgid ""
+"Returns the id of the closest point to ``to_position``. Returns -1 if "
+"there are no points in the points pool."
+msgstr ""
+
+#: ../../classes/class_astar.rst:148
+msgid ""
+":ref:`Vector3<class_vector3>` **get_closest_position_in_segment** **(** "
+":ref:`Vector3<class_vector3>` to_position **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:150
+msgid ""
+"Returns the closest position to ``to_position`` that resides inside a "
+"segment between two connected points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:163
+msgid ""
+"The result is in the segment that goes from ``y=0`` to ``y=5``. It's the "
+"closest position in the segment to the given point."
+msgstr ""
+
+#: ../../classes/class_astar.rst:167
+msgid ""
+":ref:`PoolIntArray<class_poolintarray>` **get_id_path** **(** "
+":ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:169
+msgid ""
+"Returns an array with the ids of the points that form the path found by "
+"AStar between the given points. The array is ordered from the starting "
+"point to the ending point of the path."
+msgstr ""
+
+#: ../../classes/class_astar.rst:188
+msgid ""
+"If you change the 2nd point's weight to 3, then the result will be ``[1, "
+"4, 3]`` instead, because now even though the distance is longer, it's "
+"\"easier\" to get through point 4 than through point 2."
+msgstr ""
+
+#: ../../classes/class_astar.rst:192
+msgid ""
+":ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** "
+":ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:194
+msgid ""
+"Returns an array with the ids of the points that form the connect with "
+"the given point."
+msgstr ""
+
+#: ../../classes/class_astar.rst:212
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **get_point_path** **(** "
+":ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:214
+msgid ""
+"Returns an array with the points that are in the path found by AStar "
+"between the given points. The array is ordered from the starting point to"
+" the ending point of the path."
+msgstr ""
+
+#: ../../classes/class_astar.rst:218
+msgid ""
+":ref:`Vector3<class_vector3>` **get_point_position** **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:220
+msgid "Returns the position of the point associated with the given id."
+msgstr ""
+
+#: ../../classes/class_astar.rst:224
+msgid ""
+":ref:`float<class_float>` **get_point_weight_scale** **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:226
+msgid "Returns the weight scale of the point associated with the given id."
+msgstr ""
+
+#: ../../classes/class_astar.rst:230
+msgid ":ref:`Array<class_array>` **get_points** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:232
+msgid "Returns an array of all points."
+msgstr ""
+
+#: ../../classes/class_astar.rst:236
+msgid ""
+":ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_astar.rst:238
+msgid "Returns whether a point associated with the given id exists."
+msgstr ""
+
+#: ../../classes/class_astar.rst:242
+msgid "void **remove_point** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:244
+msgid "Removes the point associated with the given id from the points pool."
+msgstr ""
+
+#: ../../classes/class_astar.rst:248
+msgid ""
+"void **set_point_position** **(** :ref:`int<class_int>` id, "
+":ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:250
+msgid "Sets the position for the point with the given id."
+msgstr ""
+
+#: ../../classes/class_astar.rst:254
+msgid ""
+"void **set_point_weight_scale** **(** :ref:`int<class_int>` id, "
+":ref:`float<class_float>` weight_scale **)**"
+msgstr ""
+
+#: ../../classes/class_astar.rst:256
+msgid "Sets the ``weight_scale`` for the point with the given id."
+msgstr ""
+

@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_navigation.rst:8
+msgid "Navigation"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:10
+msgid ""
+"**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>`"
+" **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:17
+msgid ""
+"A collection of ``NavigationMesh`` resources and methods used for "
+"pathfinding."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:23 ../../classes/class_navigation.rst:25
+#: ../../classes/class_navigation.rst:29
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:23
+msgid ""
+":ref:`get_closest_point<class_Navigation_get_closest_point>` **(** "
+":ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:25
+msgid ""
+":ref:`get_closest_point_normal<class_Navigation_get_closest_point_normal>`"
+" **(** :ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:27
+msgid ":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:27
+msgid ""
+":ref:`get_closest_point_owner<class_Navigation_get_closest_point_owner>` "
+"**(** :ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:29
+msgid ""
+":ref:`get_closest_point_to_segment<class_Navigation_get_closest_point_to_segment>`"
+" **(** :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>`"
+" end, :ref:`bool<class_bool>` use_collision=false **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:31
+msgid ":ref:`PoolVector3Array<class_poolvector3array>`"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:31
+msgid ""
+":ref:`get_simple_path<class_Navigation_get_simple_path>` **(** "
+":ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, "
+":ref:`bool<class_bool>` optimize=true **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:33
+msgid ""
+":ref:`navmesh_add<class_Navigation_navmesh_add>` **(** "
+":ref:`NavigationMesh<class_navigationmesh>` mesh, "
+":ref:`Transform<class_transform>` xform, :ref:`Object<class_object>` "
+"owner=null **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:35 ../../classes/class_navigation.rst:37
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:35
+msgid ""
+":ref:`navmesh_remove<class_Navigation_navmesh_remove>` **(** "
+":ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:37
+msgid ""
+":ref:`navmesh_set_transform<class_Navigation_navmesh_set_transform>` "
+"**(** :ref:`int<class_int>` id, :ref:`Transform<class_transform>` xform "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:41
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:45
+msgid ""
+":ref:`Vector3<class_vector3>` **up_vector** - Defines which direction is "
+"up. The default defines 0,1,0 as up which is the world up direction. To "
+"make this a ceiling use 0,-1,0 to define down as up."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:49
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:51
+msgid ""
+"The Navigation node is used for basic or advanced navigation. By default "
+"it will automatically collect all child ``NavigationMesh`` resources, but"
+" they can also be added on the fly through scripting. It can be used for "
+"generating a simple path between two points or it can be used to ensure "
+"that a navigation agent is angled perfectly to the terrain it is "
+"navigating."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:54
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:58
+msgid ""
+":ref:`Vector3<class_vector3>` **get_closest_point** **(** "
+":ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:60
+msgid "Returns the closest navigation point to the point passed."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:64
+msgid ""
+":ref:`Vector3<class_vector3>` **get_closest_point_normal** **(** "
+":ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:66
+msgid ""
+"Returns the surface normal of the navigation mesh at the point passed. "
+"For instance, if the point passed was at a 45 degree slope it would "
+"return something like (0.5,0.5,0). This is useful for rotating a "
+"navigation agent in accordance with the ``NavigationMesh``."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:70
+msgid ""
+":ref:`Object<class_object>` **get_closest_point_owner** **(** "
+":ref:`Vector3<class_vector3>` to_point **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:72
+msgid "Returns the nearest ``NavigationMeshInstance`` to the point passed."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:76
+msgid ""
+":ref:`Vector3<class_vector3>` **get_closest_point_to_segment** **(** "
+":ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, "
+":ref:`bool<class_bool>` use_collision=false **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:78
+msgid ""
+"Returns the nearest point to the line segment passed. The third optional "
+"parameter takes collisions into account."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:82
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **get_simple_path** **(**"
+" :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, "
+":ref:`bool<class_bool>` optimize=true **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:84
+msgid ""
+"Returns a path of points as a ``PoolVector3Array``. If ``optimize`` is "
+"false the ``NavigationMesh`` agent properties will be taken into account,"
+" otherwise it will return the nearest path and ignore agent radius, "
+"height, etc."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:88
+msgid ""
+":ref:`int<class_int>` **navmesh_add** **(** "
+":ref:`NavigationMesh<class_navigationmesh>` mesh, "
+":ref:`Transform<class_transform>` xform, :ref:`Object<class_object>` "
+"owner=null **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:90
+msgid ""
+"Adds a ``NavigationMesh`` to the list of NavigationMesh's in this node. "
+"Returns an id. Its position, rotation and scale are associated with the "
+"``Transform`` passed. The ``Node`` (or ``Object``) that owns this node is"
+" an optional parameter."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:94
+msgid "void **navmesh_remove** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:96
+msgid ""
+"Removes a ``NavigationMesh`` from the list of NavigationMesh's in this "
+"node."
+msgstr ""
+
+#: ../../classes/class_navigation.rst:100
+msgid ""
+"void **navmesh_set_transform** **(** :ref:`int<class_int>` id, "
+":ref:`Transform<class_transform>` xform **)**"
+msgstr ""
+
+#: ../../classes/class_navigation.rst:102
+msgid ""
+"Associates a ``NavigationMesh``'s id with a ``Transform``. Its position, "
+"rotation and scale are based on the ``Transform`` passed."
+msgstr ""
+

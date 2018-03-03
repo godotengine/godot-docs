@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_basis.rst:8
+msgid "Basis"
+msgstr ""
+
+#: ../../classes/class_basis.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_basis.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_basis.rst:15
+msgid "3x3 matrix datatype."
+msgstr ""
+
+#: ../../classes/class_basis.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_basis.rst:21 ../../classes/class_basis.rst:23
+#: ../../classes/class_basis.rst:25 ../../classes/class_basis.rst:27
+#: ../../classes/class_basis.rst:37 ../../classes/class_basis.rst:39
+#: ../../classes/class_basis.rst:41 ../../classes/class_basis.rst:43
+#: ../../classes/class_basis.rst:51
+msgid ":ref:`Basis<class_basis>`"
+msgstr ""
+
+#: ../../classes/class_basis.rst:21
+msgid ":ref:`Basis<class_Basis_Basis>` **(** :ref:`Quat<class_quat>` from **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:23
+msgid ""
+":ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:25
+msgid ""
+":ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` axis,"
+" :ref:`float<class_float>` phi **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:27
+msgid ""
+":ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` "
+"x_axis, :ref:`Vector3<class_vector3>` y_axis, "
+":ref:`Vector3<class_vector3>` z_axis **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:29 ../../classes/class_basis.rst:45
+#: ../../classes/class_basis.rst:47 ../../classes/class_basis.rst:49
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_basis.rst:29
+msgid ":ref:`determinant<class_Basis_determinant>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:31 ../../classes/class_basis.rst:35
+#: ../../classes/class_basis.rst:53 ../../classes/class_basis.rst:55
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_basis.rst:31
+msgid ":ref:`get_euler<class_Basis_get_euler>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_basis.rst:33
+msgid ":ref:`get_orthogonal_index<class_Basis_get_orthogonal_index>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:35
+msgid ":ref:`get_scale<class_Basis_get_scale>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:37
+msgid ":ref:`inverse<class_Basis_inverse>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:39
+msgid ":ref:`orthonormalized<class_Basis_orthonormalized>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:41
+msgid ""
+":ref:`rotated<class_Basis_rotated>` **(** :ref:`Vector3<class_vector3>` "
+"axis, :ref:`float<class_float>` phi **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:43
+msgid ""
+":ref:`scaled<class_Basis_scaled>` **(** :ref:`Vector3<class_vector3>` "
+"scale **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:45
+msgid ""
+":ref:`tdotx<class_Basis_tdotx>` **(** :ref:`Vector3<class_vector3>` with "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:47
+msgid ""
+":ref:`tdoty<class_Basis_tdoty>` **(** :ref:`Vector3<class_vector3>` with "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:49
+msgid ""
+":ref:`tdotz<class_Basis_tdotz>` **(** :ref:`Vector3<class_vector3>` with "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:51
+msgid ":ref:`transposed<class_Basis_transposed>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:53
+msgid ""
+":ref:`xform<class_Basis_xform>` **(** :ref:`Vector3<class_vector3>` v "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:55
+msgid ""
+":ref:`xform_inv<class_Basis_xform_inv>` **(** "
+":ref:`Vector3<class_vector3>` v **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:59
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_basis.rst:63
+msgid ":ref:`Vector3<class_vector3>` **x** - The basis matrix's x vector."
+msgstr ""
+
+#: ../../classes/class_basis.rst:67
+msgid ":ref:`Vector3<class_vector3>` **y** - The basis matrix's y vector."
+msgstr ""
+
+#: ../../classes/class_basis.rst:71
+msgid ":ref:`Vector3<class_vector3>` **z** - The basis matrix's z vector."
+msgstr ""
+
+#: ../../classes/class_basis.rst:75
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_basis.rst:77
+msgid ""
+"3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y "
+"and z as its columns, which can be interpreted as the local basis vectors"
+" of a transformation. Can also be accessed as array of 3D vectors. These "
+"vectors are orthogonal to each other, but are not necessarily normalized."
+" Almost always used as orthogonal basis for a "
+":ref:`Transform<class_transform>`."
+msgstr ""
+
+#: ../../classes/class_basis.rst:79
+msgid ""
+"For such use, it is composed of a scaling and a rotation matrix, in that "
+"order (M = R.S)."
+msgstr ""
+
+#: ../../classes/class_basis.rst:82
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_basis.rst:86
+msgid ""
+":ref:`Basis<class_basis>` **Basis** **(** :ref:`Quat<class_quat>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:88
+msgid "Create a rotation matrix from the given quaternion."
+msgstr ""
+
+#: ../../classes/class_basis.rst:92
+msgid ""
+":ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` "
+"from **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:94
+msgid ""
+"Create a rotation matrix (in the YXZ convention: first Z, then X, and Y "
+"last) from the specified Euler angles, given in the vector format as "
+"(X-angle, Y-angle, Z-angle)."
+msgstr ""
+
+#: ../../classes/class_basis.rst:98
+msgid ""
+":ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` "
+"axis, :ref:`float<class_float>` phi **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:100
+msgid ""
+"Create a rotation matrix which rotates around the given axis by the "
+"specified angle, in radians. The axis must be a normalized vector."
+msgstr ""
+
+#: ../../classes/class_basis.rst:104
+msgid ""
+":ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` "
+"x_axis, :ref:`Vector3<class_vector3>` y_axis, "
+":ref:`Vector3<class_vector3>` z_axis **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:106
+msgid "Create a matrix from 3 axis vectors."
+msgstr ""
+
+#: ../../classes/class_basis.rst:110
+msgid ":ref:`float<class_float>` **determinant** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:112
+msgid "Return the determinant of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:116
+msgid ":ref:`Vector3<class_vector3>` **get_euler** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:118
+msgid ""
+"Assuming that the matrix is a proper rotation matrix (orthonormal matrix "
+"with determinant +1), return Euler angles (in the YXZ convention: first "
+"Z, then X, and Y last). Returned vector contains the rotation angles in "
+"the format (X-angle, Y-angle, Z-angle)."
+msgstr ""
+
+#: ../../classes/class_basis.rst:122
+msgid ":ref:`int<class_int>` **get_orthogonal_index** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:124
+msgid ""
+"This function considers a discretization of rotations into 24 points on "
+"unit sphere, lying along the vectors (x,y,z) with each component being "
+"either -1,0 or 1, and returns the index of the point best representing "
+"the orientation of the object. It is mainly used by the grid map editor. "
+"For further details, refer to Godot source code."
+msgstr ""
+
+#: ../../classes/class_basis.rst:128
+msgid ":ref:`Vector3<class_vector3>` **get_scale** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:130
+msgid ""
+"Assuming that the matrix is the combination of a rotation and scaling, "
+"return the absolute value of scaling factors along each axis."
+msgstr ""
+
+#: ../../classes/class_basis.rst:134
+msgid ":ref:`Basis<class_basis>` **inverse** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:136
+msgid "Return the inverse of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:140
+msgid ":ref:`Basis<class_basis>` **orthonormalized** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:142
+msgid ""
+"Return the orthonormalized version of the matrix (useful to call from "
+"time to time to avoid rounding error for orthogonal matrices). This "
+"performs a Gram-Schmidt orthonormalization on the basis of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:146
+msgid ""
+":ref:`Basis<class_basis>` **rotated** **(** :ref:`Vector3<class_vector3>`"
+" axis, :ref:`float<class_float>` phi **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:148
+msgid ""
+"Introduce an additional rotation around the given axis by phi (radians). "
+"Only relevant when the matrix is being used as a part of "
+":ref:`Transform<class_transform>`. The axis must be a normalized vector."
+msgstr ""
+
+#: ../../classes/class_basis.rst:152
+msgid ""
+":ref:`Basis<class_basis>` **scaled** **(** :ref:`Vector3<class_vector3>` "
+"scale **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:154
+msgid ""
+"Introduce an additional scaling specified by the given 3D scaling factor."
+" Only relevant when the matrix is being used as a part of "
+":ref:`Transform<class_transform>`."
+msgstr ""
+
+#: ../../classes/class_basis.rst:158
+msgid ""
+":ref:`float<class_float>` **tdotx** **(** :ref:`Vector3<class_vector3>` "
+"with **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:160
+msgid "Transposed dot product with the x axis of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:164
+msgid ""
+":ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_vector3>` "
+"with **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:166
+msgid "Transposed dot product with the y axis of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:170
+msgid ""
+":ref:`float<class_float>` **tdotz** **(** :ref:`Vector3<class_vector3>` "
+"with **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:172
+msgid "Transposed dot product with the z axis of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:176
+msgid ":ref:`Basis<class_basis>` **transposed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:178
+msgid "Return the transposed version of the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:182
+msgid ""
+":ref:`Vector3<class_vector3>` **xform** **(** "
+":ref:`Vector3<class_vector3>` v **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:184
+msgid "Return a vector transformed (multiplied) by the matrix."
+msgstr ""
+
+#: ../../classes/class_basis.rst:188
+msgid ""
+":ref:`Vector3<class_vector3>` **xform_inv** **(** "
+":ref:`Vector3<class_vector3>` v **)**"
+msgstr ""
+
+#: ../../classes/class_basis.rst:190
+msgid ""
+"Return a vector transformed (multiplied) by the transposed matrix. Note "
+"that this results in a multiplication by the inverse of the matrix only "
+"if it represents a rotation-reflection."
+msgstr ""
+

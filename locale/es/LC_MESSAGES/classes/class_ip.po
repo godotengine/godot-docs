@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_ip.rst:8
+msgid "IP"
+msgstr ""
+
+#: ../../classes/class_ip.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_ip.rst:12
+msgid "**Inherited By:** :ref:`IP_Unix<class_ip_unix>`"
+msgstr ""
+
+#: ../../classes/class_ip.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_ip.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_ip.rst:19
+msgid "Internet protocol (IP) support functions like DNS resolution."
+msgstr ""
+
+#: ../../classes/class_ip.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_ip.rst:25 ../../classes/class_ip.rst:27
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_ip.rst:25
+msgid ""
+":ref:`clear_cache<class_IP_clear_cache>` **(** "
+":ref:`String<class_string>` hostname=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:27
+msgid ""
+":ref:`erase_resolve_item<class_IP_erase_resolve_item>` **(** "
+":ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:29
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_ip.rst:29
+msgid ":ref:`get_local_addresses<class_IP_get_local_addresses>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:31 ../../classes/class_ip.rst:35
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_ip.rst:31
+msgid ""
+":ref:`get_resolve_item_address<class_IP_get_resolve_item_address>` **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:33 ../../classes/class_ip.rst:37
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_ip.rst:33
+msgid ""
+":ref:`get_resolve_item_status<class_IP_get_resolve_item_status>` **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:35
+msgid ""
+":ref:`resolve_hostname<class_IP_resolve_hostname>` **(** "
+":ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=3 **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:37
+msgid ""
+":ref:`resolve_hostname_queue_item<class_IP_resolve_hostname_queue_item>` "
+"**(** :ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=3 "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:41
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_ip.rst:43
+msgid ""
+"**RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS "
+"resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if "
+"exceeded."
+msgstr ""
+
+#: ../../classes/class_ip.rst:44
+msgid ""
+"**RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if "
+"``RESOLVER_MAX_QUERIES`` is exceeded."
+msgstr ""
+
+#: ../../classes/class_ip.rst:47
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_ip.rst:51
+msgid "enum **ResolverStatus**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:53
+msgid ""
+"**RESOLVER_STATUS_NONE** = **0** --- DNS hostname resolver status: No "
+"status."
+msgstr ""
+
+#: ../../classes/class_ip.rst:54
+msgid ""
+"**RESOLVER_STATUS_WAITING** = **1** --- DNS hostname resolver status: "
+"Waiting."
+msgstr ""
+
+#: ../../classes/class_ip.rst:55
+msgid "**RESOLVER_STATUS_DONE** = **2** --- DNS hostname resolver status: Done."
+msgstr ""
+
+#: ../../classes/class_ip.rst:56
+msgid "**RESOLVER_STATUS_ERROR** = **3** --- DNS hostname resolver status: Error."
+msgstr ""
+
+#: ../../classes/class_ip.rst:60
+msgid "enum **Type**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:62
+msgid "**TYPE_NONE** = **0** --- Address type: None."
+msgstr ""
+
+#: ../../classes/class_ip.rst:63
+msgid ""
+"**TYPE_IPV4** = **1** --- Address type: Internet protocol version 4 "
+"(IPv4)."
+msgstr ""
+
+#: ../../classes/class_ip.rst:64
+msgid ""
+"**TYPE_IPV6** = **2** --- Address type: Internet protocol version 6 "
+"(IPv6)."
+msgstr ""
+
+#: ../../classes/class_ip.rst:65
+msgid "**TYPE_ANY** = **3** --- Address type: Any."
+msgstr ""
+
+#: ../../classes/class_ip.rst:69
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_ip.rst:71
+msgid ""
+"IP contains support functions for the Internet Protocol (IP). TCP/IP "
+"support is in different classes (see "
+":ref:`StreamPeerTCP<class_streampeertcp>` and "
+":ref:`TCP_Server<class_tcp_server>`). IP provides DNS hostname resolution"
+" support, both blocking and threaded."
+msgstr ""
+
+#: ../../classes/class_ip.rst:74
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_ip.rst:78
+msgid "void **clear_cache** **(** :ref:`String<class_string>` hostname=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:80
+msgid ""
+"Removes all of a \"hostname\"'s cached references. If no \"hostname\" is "
+"given then all cached IP addresses are removed."
+msgstr ""
+
+#: ../../classes/class_ip.rst:84
+msgid "void **erase_resolve_item** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:86
+msgid ""
+"Removes a given item \"id\" from the queue. This should be used to free a"
+" queue after it has completed to enable more queries to happen."
+msgstr ""
+
+#: ../../classes/class_ip.rst:90
+msgid ":ref:`Array<class_array>` **get_local_addresses** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:92
+msgid "Returns all of the user's current IPv4 and IPv6 addresses as an array."
+msgstr ""
+
+#: ../../classes/class_ip.rst:96
+msgid ""
+":ref:`String<class_string>` **get_resolve_item_address** **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:98
+msgid ""
+"Returns a queued hostname's IP address, given its queue \"id\". Returns "
+"an empty string on error or if resolution hasn't happened yet (see "
+":ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`)."
+msgstr ""
+
+#: ../../classes/class_ip.rst:102
+msgid ""
+":ref:`int<class_int>` **get_resolve_item_status** **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_ip.rst:104
+msgid ""
+"Returns a queued hostname's status as a RESOLVER_STATUS\\_\\* constant, "
+"given its queue \"id\"."
+msgstr ""
+
+#: ../../classes/class_ip.rst:108
+msgid ""
+":ref:`String<class_string>` **resolve_hostname** **(** "
+":ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=3 **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:110
+msgid ""
+"Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-"
+"type method). The address type returned depends on the TYPE\\_\\* "
+"constant given as \"ip_type\"."
+msgstr ""
+
+#: ../../classes/class_ip.rst:114
+msgid ""
+":ref:`int<class_int>` **resolve_hostname_queue_item** **(** "
+":ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=3 **)**"
+msgstr ""
+
+#: ../../classes/class_ip.rst:116
+msgid ""
+"Creates a queue item to resolve a hostname to an IPv4 or IPv6 address "
+"depending on the TYPE\\_\\* constant given as \"ip_type\". Returns the "
+"queue ID if successful, or RESOLVER_INVALID_ID on error."
+msgstr ""
+

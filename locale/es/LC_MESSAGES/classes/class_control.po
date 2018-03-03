@@ -1,0 +1,1819 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_control.rst:8
+msgid "Control"
+msgstr ""
+
+#: ../../classes/class_control.rst:10
+msgid ""
+"**Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** "
+":ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:12
+msgid ""
+"**Inherited By:** :ref:`TextureRect<class_texturerect>`, "
+":ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, "
+":ref:`Tabs<class_tabs>`, :ref:`GraphEdit<class_graphedit>`, "
+":ref:`VideoPlayer<class_videoplayer>`, "
+":ref:`NinePatchRect<class_ninepatchrect>`, "
+":ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, "
+":ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, "
+":ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, "
+":ref:`Separator<class_separator>`, "
+":ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, "
+":ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, "
+":ref:`RichTextLabel<class_richtextlabel>`, "
+":ref:`ItemList<class_itemlist>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_control.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_control.rst:19
+msgid ""
+"All User Interface nodes inherit from Control. Features anchors and "
+"margins to adapt its position and size to its parent."
+msgstr ""
+
+#: ../../classes/class_control.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_control.rst:25 ../../classes/class_control.rst:49
+#: ../../classes/class_control.rst:53 ../../classes/class_control.rst:61
+#: ../../classes/class_control.rst:71 ../../classes/class_control.rst:73
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:25
+msgid ""
+":ref:`_get_minimum_size<class_Control__get_minimum_size>` **(** **)** "
+"virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:27 ../../classes/class_control.rst:29
+#: ../../classes/class_control.rst:31 ../../classes/class_control.rst:33
+#: ../../classes/class_control.rst:35 ../../classes/class_control.rst:37
+#: ../../classes/class_control.rst:39 ../../classes/class_control.rst:41
+#: ../../classes/class_control.rst:45 ../../classes/class_control.rst:47
+#: ../../classes/class_control.rst:85 ../../classes/class_control.rst:87
+#: ../../classes/class_control.rst:115 ../../classes/class_control.rst:117
+#: ../../classes/class_control.rst:119 ../../classes/class_control.rst:121
+#: ../../classes/class_control.rst:123 ../../classes/class_control.rst:125
+#: ../../classes/class_control.rst:127 ../../classes/class_control.rst:129
+#: ../../classes/class_control.rst:131 ../../classes/class_control.rst:133
+#: ../../classes/class_control.rst:135 ../../classes/class_control.rst:137
+#: ../../classes/class_control.rst:139 ../../classes/class_control.rst:141
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_control.rst:27
+msgid ""
+":ref:`_gui_input<class_Control__gui_input>` **(** "
+":ref:`InputEvent<class_inputevent>` event **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:29
+msgid ":ref:`accept_event<class_Control_accept_event>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:31
+msgid ""
+":ref:`add_color_override<class_Control_add_color_override>` **(** "
+":ref:`String<class_string>` name, :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:33
+msgid ""
+":ref:`add_constant_override<class_Control_add_constant_override>` **(** "
+":ref:`String<class_string>` name, :ref:`int<class_int>` constant **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:35
+msgid ""
+":ref:`add_font_override<class_Control_add_font_override>` **(** "
+":ref:`String<class_string>` name, :ref:`Font<class_font>` font **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:37
+msgid ""
+":ref:`add_icon_override<class_Control_add_icon_override>` **(** "
+":ref:`String<class_string>` name, :ref:`Texture<class_texture>` texture "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:39
+msgid ""
+":ref:`add_shader_override<class_Control_add_shader_override>` **(** "
+":ref:`String<class_string>` name, :ref:`Shader<class_shader>` shader "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:41
+msgid ""
+":ref:`add_stylebox_override<class_Control_add_stylebox_override>` **(** "
+":ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` "
+"stylebox **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:43 ../../classes/class_control.rst:89
+#: ../../classes/class_control.rst:91 ../../classes/class_control.rst:93
+#: ../../classes/class_control.rst:95 ../../classes/class_control.rst:97
+#: ../../classes/class_control.rst:99 ../../classes/class_control.rst:101
+#: ../../classes/class_control.rst:103 ../../classes/class_control.rst:105
+#: ../../classes/class_control.rst:107 ../../classes/class_control.rst:109
+#: ../../classes/class_control.rst:111 ../../classes/class_control.rst:113
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:43
+msgid ""
+":ref:`can_drop_data<class_Control_can_drop_data>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` "
+"data **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:45
+msgid ""
+":ref:`drop_data<class_Control_drop_data>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` "
+"data **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:47
+msgid ""
+":ref:`force_drag<class_Control_force_drag>` **(** "
+":ref:`Variant<class_variant>` data, :ref:`Control<class_control>` preview"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:49
+msgid ":ref:`get_begin<class_Control_get_begin>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:51
+msgid ":ref:`Color<class_color>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:51
+msgid ""
+":ref:`get_color<class_Control_get_color>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:53
+msgid ""
+":ref:`get_combined_minimum_size<class_Control_get_combined_minimum_size>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:55 ../../classes/class_control.rst:57
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:55
+msgid ""
+":ref:`get_constant<class_Control_get_constant>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:57
+msgid ""
+":ref:`get_cursor_shape<class_Control_get_cursor_shape>` **(** "
+":ref:`Vector2<class_vector2>` position=Vector2( 0, 0 ) **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:59
+msgid ":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:59
+msgid ""
+":ref:`get_drag_data<class_Control_get_drag_data>` **(** "
+":ref:`Vector2<class_vector2>` position **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:61
+msgid ":ref:`get_end<class_Control_get_end>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:63 ../../classes/class_control.rst:75
+msgid ":ref:`Control<class_control>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:63
+msgid ":ref:`get_focus_owner<class_Control_get_focus_owner>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:65
+msgid ":ref:`Font<class_font>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:65
+msgid ""
+":ref:`get_font<class_Control_get_font>` **(** :ref:`String<class_string>`"
+" name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:67 ../../classes/class_control.rst:77
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:67
+msgid ":ref:`get_global_rect<class_Control_get_global_rect>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:69
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:69
+msgid ""
+":ref:`get_icon<class_Control_get_icon>` **(** :ref:`String<class_string>`"
+" name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:71
+msgid ":ref:`get_minimum_size<class_Control_get_minimum_size>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:73
+msgid ""
+":ref:`get_parent_area_size<class_Control_get_parent_area_size>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:75
+msgid ""
+":ref:`get_parent_control<class_Control_get_parent_control>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_control.rst:77
+msgid ":ref:`get_rect<class_Control_get_rect>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:79
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:79
+msgid ":ref:`get_rotation<class_Control_get_rotation>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:81
+msgid ":ref:`StyleBox<class_stylebox>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:81
+msgid ""
+":ref:`get_stylebox<class_Control_get_stylebox>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:83
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_control.rst:83
+msgid ""
+":ref:`get_tooltip<class_Control_get_tooltip>` **(** "
+":ref:`Vector2<class_vector2>` at_position=Vector2( 0, 0 ) **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:85
+msgid ":ref:`grab_click_focus<class_Control_grab_click_focus>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:87
+msgid ":ref:`grab_focus<class_Control_grab_focus>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:89
+msgid ""
+":ref:`has_color<class_Control_has_color>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:91
+msgid ""
+":ref:`has_color_override<class_Control_has_color_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:93
+msgid ""
+":ref:`has_constant<class_Control_has_constant>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:95
+msgid ""
+":ref:`has_constant_override<class_Control_has_constant_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:97
+msgid ":ref:`has_focus<class_Control_has_focus>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:99
+msgid ""
+":ref:`has_font<class_Control_has_font>` **(** :ref:`String<class_string>`"
+" name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:101
+msgid ""
+":ref:`has_font_override<class_Control_has_font_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:103
+msgid ""
+":ref:`has_icon<class_Control_has_icon>` **(** :ref:`String<class_string>`"
+" name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:105
+msgid ""
+":ref:`has_icon_override<class_Control_has_icon_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:107
+msgid ""
+":ref:`has_point<class_Control_has_point>` **(** "
+":ref:`Vector2<class_vector2>` point **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:109
+msgid ""
+":ref:`has_shader_override<class_Control_has_shader_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:111
+msgid ""
+":ref:`has_stylebox<class_Control_has_stylebox>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:113
+msgid ""
+":ref:`has_stylebox_override<class_Control_has_stylebox_override>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:115
+msgid ""
+":ref:`minimum_size_changed<class_Control_minimum_size_changed>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:117
+msgid ":ref:`release_focus<class_Control_release_focus>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:119
+msgid ""
+":ref:`set_anchor<class_Control_set_anchor>` **(** :ref:`int<class_int>` "
+"margin, :ref:`float<class_float>` anchor, :ref:`bool<class_bool>` "
+"keep_margin=false, :ref:`bool<class_bool>` push_opposite_anchor=true "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:121
+msgid ""
+":ref:`set_anchor_and_margin<class_Control_set_anchor_and_margin>` **(** "
+":ref:`int<class_int>` margin, :ref:`float<class_float>` anchor, "
+":ref:`float<class_float>` offset, :ref:`bool<class_bool>` "
+"push_opposite_anchor=false **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:123
+msgid ""
+":ref:`set_anchors_and_margins_preset<class_Control_set_anchors_and_margins_preset>`"
+" **(** :ref:`int<class_int>` preset, :ref:`int<class_int>` resize_mode=0,"
+" :ref:`int<class_int>` margin=0 **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:125
+msgid ""
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>` **(** "
+":ref:`int<class_int>` preset, :ref:`bool<class_bool>` keep_margin=false "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:127
+msgid ""
+":ref:`set_begin<class_Control_set_begin>` **(** "
+":ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:129
+msgid ""
+":ref:`set_drag_forwarding<class_Control_set_drag_forwarding>` **(** "
+":ref:`Control<class_control>` target **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:131
+msgid ""
+":ref:`set_drag_preview<class_Control_set_drag_preview>` **(** "
+":ref:`Control<class_control>` control **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:133
+msgid ""
+":ref:`set_end<class_Control_set_end>` **(** :ref:`Vector2<class_vector2>`"
+" position **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:135
+msgid ""
+":ref:`set_margins_preset<class_Control_set_margins_preset>` **(** "
+":ref:`int<class_int>` preset, :ref:`int<class_int>` resize_mode=0, "
+":ref:`int<class_int>` margin=0 **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:137
+msgid ""
+":ref:`set_rotation<class_Control_set_rotation>` **(** "
+":ref:`float<class_float>` radians **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:139
+msgid ""
+":ref:`show_modal<class_Control_show_modal>` **(** :ref:`bool<class_bool>`"
+" exclusive=false **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:141
+msgid ""
+":ref:`warp_mouse<class_Control_warp_mouse>` **(** "
+":ref:`Vector2<class_vector2>` to_position **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:145
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_control.rst:149
+msgid "**focus_entered** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:151
+msgid "Emitted when the node gains keyboard focus."
+msgstr ""
+
+#: ../../classes/class_control.rst:155
+msgid "**focus_exited** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:157
+msgid "Emitted when the node loses keyboard focus."
+msgstr ""
+
+#: ../../classes/class_control.rst:161
+msgid "**gui_input** **(** :ref:`Object<class_object>` ev **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:163
+msgid "Emitted when the node receives an :ref:`InputEvent<class_inputevent>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:167
+msgid "**minimum_size_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:169
+msgid "Emitted when the node's minimum size changes."
+msgstr ""
+
+#: ../../classes/class_control.rst:173
+msgid "**modal_closed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:175
+msgid ""
+"Emitted when a modal ``Control`` is closed. See "
+":ref:`show_modal<class_Control_show_modal>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:179
+msgid "**mouse_entered** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:181
+msgid ""
+"Emitted when the mouse enters the control's ``Rect`` area, provided its "
+":ref:`mouse_filter<class_Control_mouse_filter>` lets the event reach it."
+msgstr ""
+
+#: ../../classes/class_control.rst:185
+msgid "**mouse_exited** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:187
+msgid ""
+"Emitted when the mouse leaves the control's ``Rect`` area, provided its "
+":ref:`mouse_filter<class_Control_mouse_filter>` lets the event reach it."
+msgstr ""
+
+#: ../../classes/class_control.rst:191
+msgid "**resized** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:193
+msgid "Emitted when the control changes size."
+msgstr ""
+
+#: ../../classes/class_control.rst:197
+msgid "**size_flags_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:199
+msgid ""
+"Emitted when one of the size flags changes. See "
+":ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and "
+":ref:`size_flags_vertical<class_Control_size_flags_vertical>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:203
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_control.rst:207
+msgid ""
+":ref:`float<class_float>` **anchor_bottom** - Anchors the bottom edge of "
+"the node to the origin, the center, or the end of its parent container. "
+"It changes how the bottom margin updates when the node moves or changes "
+"size. Use one of the ``ANCHOR_*`` constants. Default value: "
+"``ANCHOR_BEGIN``."
+msgstr ""
+
+#: ../../classes/class_control.rst:211
+msgid ""
+":ref:`float<class_float>` **anchor_left** - Anchors the left edge of the "
+"node to the origin, the center or the end of its parent container. It "
+"changes how the left margin updates when the node moves or changes size. "
+"Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``."
+msgstr ""
+
+#: ../../classes/class_control.rst:215
+msgid ""
+":ref:`float<class_float>` **anchor_right** - Anchors the right edge of "
+"the node to the origin, the center or the end of its parent container. It"
+" changes how the right margin updates when the node moves or changes "
+"size. Use one of the ``ANCHOR_*`` constants. Default value: "
+"``ANCHOR_BEGIN``."
+msgstr ""
+
+#: ../../classes/class_control.rst:219
+msgid ""
+":ref:`float<class_float>` **anchor_top** - Anchors the top edge of the "
+"node to the origin, the center or the end of its parent container. It "
+"changes how the top margin updates when the node moves or changes size. "
+"Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``."
+msgstr ""
+
+#: ../../classes/class_control.rst:223
+msgid ""
+":ref:`FocusMode<enum_control_focusmode>` **focus_mode** - The focus "
+"access mode for the control (None, Click or All). Only one Control can be"
+" focused at the same time, and it will receive keyboard signals."
+msgstr ""
+
+#: ../../classes/class_control.rst:227
+msgid ""
+":ref:`NodePath<class_nodepath>` **focus_neighbour_bottom** - Tells Godot "
+"which node it should give keyboard focus to if the user presses Tab, the "
+"down arrow on the keyboard, or down on a gamepad. The node must be a "
+"``Control``. If this property is not set, Godot will give focus to the "
+"closest ``Control`` to the bottom of this one."
+msgstr ""
+
+#: ../../classes/class_control.rst:229
+msgid ""
+"If the user presses Tab, Godot will give focus to the closest node to the"
+" right first, then to the bottom. If the user presses Shift+Tab, Godot "
+"will look to the left of the node, then above it."
+msgstr ""
+
+#: ../../classes/class_control.rst:233
+msgid ""
+":ref:`NodePath<class_nodepath>` **focus_neighbour_left** - Tells Godot "
+"which node it should give keyboard focus to if the user presses "
+"Shift+Tab, the left arrow on the keyboard or left on a gamepad. The node "
+"must be a ``Control``. If this property is not set, Godot will give focus"
+" to the closest ``Control`` to the left of this one."
+msgstr ""
+
+#: ../../classes/class_control.rst:237
+msgid ""
+":ref:`NodePath<class_nodepath>` **focus_neighbour_right** - Tells Godot "
+"which node it should give keyboard focus to if the user presses Tab, the "
+"right arrow on the keyboard or right on a gamepad. The node must be a "
+"``Control``. If this property is not set, Godot will give focus to the "
+"closest ``Control`` to the bottom of this one."
+msgstr ""
+
+#: ../../classes/class_control.rst:241
+msgid ""
+":ref:`NodePath<class_nodepath>` **focus_neighbour_top** - Tells Godot "
+"which node it should give keyboard focus to if the user presses "
+"Shift+Tab, the top arrow on the keyboard or top on a gamepad. The node "
+"must be a ``Control``. If this property is not set, Godot will give focus"
+" to the closest ``Control`` to the bottom of this one."
+msgstr ""
+
+#: ../../classes/class_control.rst:245
+msgid ":ref:`NodePath<class_nodepath>` **focus_next**"
+msgstr ""
+
+#: ../../classes/class_control.rst:249
+msgid ":ref:`NodePath<class_nodepath>` **focus_previous**"
+msgstr ""
+
+#: ../../classes/class_control.rst:253
+msgid ":ref:`GrowDirection<enum_control_growdirection>` **grow_horizontal**"
+msgstr ""
+
+#: ../../classes/class_control.rst:257
+msgid ":ref:`GrowDirection<enum_control_growdirection>` **grow_vertical**"
+msgstr ""
+
+#: ../../classes/class_control.rst:261
+msgid ""
+":ref:`String<class_string>` **hint_tooltip** - Changes the tooltip text. "
+"The tooltip appears when the user's mouse cursor stays idle over this "
+"control for a few moments."
+msgstr ""
+
+#: ../../classes/class_control.rst:265
+msgid ""
+":ref:`float<class_float>` **margin_bottom** - Distance between the node's"
+" bottom edge and its parent container, based on "
+":ref:`anchor_bottom<class_Control_anchor_bottom>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:267
+msgid ""
+"Margins are often controlled by one or multiple parent "
+":ref:`Container<class_container>` nodes. Margins update automatically "
+"when you move or resize the node."
+msgstr ""
+
+#: ../../classes/class_control.rst:271
+msgid ""
+":ref:`float<class_float>` **margin_left** - Distance between the node's "
+"left edge and its parent container, based on "
+":ref:`anchor_left<class_Control_anchor_left>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:275
+msgid ""
+":ref:`float<class_float>` **margin_right** - Distance between the node's "
+"right edge and its parent container, based on "
+":ref:`anchor_right<class_Control_anchor_right>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:279
+msgid ""
+":ref:`float<class_float>` **margin_top** - Distance between the node's "
+"top edge and its parent container, based on "
+":ref:`anchor_top<class_Control_anchor_top>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:283
+msgid ""
+":ref:`CursorShape<enum_control_cursorshape>` "
+"**mouse_default_cursor_shape** - The default cursor shape for this "
+"control. Useful for Godot plugins and applications or games that use the "
+"system's mouse cursors."
+msgstr ""
+
+#: ../../classes/class_control.rst:287
+msgid ""
+":ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls "
+"whether the control will be able to receive mouse button input events "
+"through :ref:`_gui_input<class_Control__gui_input>` and how these events "
+"should be handled. Use one of the ``MOUSE_FILTER_*`` constants. See the "
+"constants to learn what each does."
+msgstr ""
+
+#: ../../classes/class_control.rst:291
+msgid ":ref:`bool<class_bool>` **rect_clip_content**"
+msgstr ""
+
+#: ../../classes/class_control.rst:295
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_global_position** - The node's "
+"global position, relative to the world (usually to the top-left corner of"
+" the window)."
+msgstr ""
+
+#: ../../classes/class_control.rst:299
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_min_size** - The minimum size of the"
+" node's bounding rectangle. If you set it to a value greater than (0, 0),"
+" the node's bounding rectangle will always have at least this size, even "
+"if its content is smaller. If it's set to (0, 0), the node sizes "
+"automatically to fit its content, be it a texture or child nodes."
+msgstr ""
+
+#: ../../classes/class_control.rst:303
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_pivot_offset** - By default, the "
+"node's pivot is its top-left corner. When you change its "
+":ref:`rect_scale<class_Control_rect_scale>`, it will scale around this "
+"pivot. Set this property to :ref:`rect_size<class_Control_rect_size>` / 2"
+" to center the pivot in the node's rectangle."
+msgstr ""
+
+#: ../../classes/class_control.rst:307
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_position** - The node's position, "
+"relative to its parent. It corresponds to the rectangle's top-left "
+"corner. The property is not affected by "
+":ref:`rect_pivot_offset<class_Control_rect_pivot_offset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:311
+msgid ""
+":ref:`float<class_float>` **rect_rotation** - The node's rotation around "
+"its pivot, in degrees. See "
+":ref:`rect_pivot_offset<class_Control_rect_pivot_offset>` to change the "
+"pivot's position."
+msgstr ""
+
+#: ../../classes/class_control.rst:315
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_scale** - The node's scale, relative"
+" to its :ref:`rect_size<class_Control_rect_size>`. Change this property "
+"to scale the node around its "
+":ref:`rect_pivot_offset<class_Control_rect_pivot_offset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:319
+msgid ""
+":ref:`Vector2<class_vector2>` **rect_size** - The size of the node's "
+"bounding rectangle, in pixels. :ref:`Container<class_container>` nodes "
+"update this property automatically."
+msgstr ""
+
+#: ../../classes/class_control.rst:323
+msgid ""
+":ref:`int<class_int>` **size_flags_horizontal** - Tells the parent "
+":ref:`Container<class_container>` nodes how they should resize and place "
+"the node on the X axis. Use one of the ``SIZE_*`` constants to change the"
+" flags. See the constants to learn what each does."
+msgstr ""
+
+#: ../../classes/class_control.rst:327
+msgid ""
+":ref:`float<class_float>` **size_flags_stretch_ratio** - If the node and "
+"at least one of its neighbours uses the ``SIZE_EXPAND`` size flag, the "
+"parent :ref:`Container<class_container>` will let it take more or less "
+"space depending on this property. If this node has a stretch ratio of 2 "
+"and its neighbour a ratio of 1, this node will take two thirds of the "
+"available space."
+msgstr ""
+
+#: ../../classes/class_control.rst:331
+msgid ""
+":ref:`int<class_int>` **size_flags_vertical** - Tells the parent "
+":ref:`Container<class_container>` nodes how they should resize and place "
+"the node on the Y axis. Use one of the ``SIZE_*`` constants to change the"
+" flags. See the constants to learn what each does."
+msgstr ""
+
+#: ../../classes/class_control.rst:335
+msgid ""
+":ref:`Theme<class_theme>` **theme** - Changing this property replaces the"
+" current :ref:`Theme<class_theme>` resource this node and all its "
+"``Control`` children use."
+msgstr ""
+
+#: ../../classes/class_control.rst:339
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_control.rst:341
+msgid ""
+"**NOTIFICATION_RESIZED** = **40** --- Sent when the node changes size. "
+"Use :ref:`rect_size<class_Control_rect_size>` to get the new size."
+msgstr ""
+
+#: ../../classes/class_control.rst:342
+msgid ""
+"**NOTIFICATION_MOUSE_ENTER** = **41** --- Sent when the mouse pointer "
+"enters the node's ``Rect`` area."
+msgstr ""
+
+#: ../../classes/class_control.rst:343
+msgid ""
+"**NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer "
+"exits the node's ``Rect`` area."
+msgstr ""
+
+#: ../../classes/class_control.rst:344
+msgid "**NOTIFICATION_FOCUS_ENTER** = **43** --- Sent when the node grabs focus."
+msgstr ""
+
+#: ../../classes/class_control.rst:345
+msgid "**NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus."
+msgstr ""
+
+#: ../../classes/class_control.rst:346
+msgid ""
+"**NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's "
+":ref:`theme<class_Control_theme>` changes, right before Godot redraws the"
+" ``Control``. Happens when you call one of the ``add_*_override``"
+msgstr ""
+
+#: ../../classes/class_control.rst:347
+msgid ""
+"**NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog "
+"closes. See :ref:`show_modal<class_Control_show_modal>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:350
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_control.rst:354
+msgid "enum **SizeFlags**"
+msgstr ""
+
+#: ../../classes/class_control.rst:356
+msgid ""
+"**SIZE_FILL** = **1** --- Tells the parent "
+":ref:`Container<class_container>` to expand the bounds of this node to "
+"fill all the available space without pushing any other node. Use with "
+":ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and "
+":ref:`size_flags_vertical<class_Control_size_flags_vertical>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:357
+msgid ""
+"**SIZE_EXPAND** = **2** --- Tells the parent "
+":ref:`Container<class_container>` to let this node take all the available"
+" space on the axis you flag. If multiple neighboring nodes are set to "
+"expand, they'll share the space based on their stretch ratio. See "
+":ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. "
+"Use with "
+":ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and "
+":ref:`size_flags_vertical<class_Control_size_flags_vertical>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:358
+msgid ""
+"**SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill "
+"and expand. See the 2 constants above for more information."
+msgstr ""
+
+#: ../../classes/class_control.rst:359
+msgid ""
+"**SIZE_SHRINK_CENTER** = **4** --- Tells the parent "
+":ref:`Container<class_container>` to center the node in itself. It "
+"centers the ``Control`` based on its bounding box, so it doesn't work "
+"with the fill or expand size flags. Use with "
+":ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and "
+":ref:`size_flags_vertical<class_Control_size_flags_vertical>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:360
+msgid ""
+"**SIZE_SHRINK_END** = **8** --- Tells the parent "
+":ref:`Container<class_container>` to align the node with its end, either "
+"the bottom or the right edge. It doesn't work with the fill or expand "
+"size flags. Use with "
+":ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and "
+":ref:`size_flags_vertical<class_Control_size_flags_vertical>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:364
+msgid "enum **CursorShape**"
+msgstr ""
+
+#: ../../classes/class_control.rst:366
+msgid ""
+"**CURSOR_ARROW** = **0** --- Show the system's arrow mouse cursor when "
+"the user hovers the node. Use with "
+":ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:367
+msgid ""
+"**CURSOR_IBEAM** = **1** --- Show the system's I-beam mouse cursor when "
+"the user hovers the node. The I-beam pointer has a shape similar to "
+"\"I\". It tells the user they can highlight or insert text."
+msgstr ""
+
+#: ../../classes/class_control.rst:368
+msgid ""
+"**CURSOR_POINTING_HAND** = **2** --- Show the system's pointing hand "
+"mouse cursor when the user hovers the node."
+msgstr ""
+
+#: ../../classes/class_control.rst:369
+msgid ""
+"**CURSOR_CROSS** = **3** --- Show the system's cross mouse cursor when "
+"the user hovers the node."
+msgstr ""
+
+#: ../../classes/class_control.rst:370
+msgid ""
+"**CURSOR_WAIT** = **4** --- Show the system's wait mouse cursor, often an"
+" hourglass, when the user hovers the node."
+msgstr ""
+
+#: ../../classes/class_control.rst:371
+msgid ""
+"**CURSOR_BUSY** = **5** --- Show the system's busy mouse cursor when the "
+"user hovers the node. Often an hourglass."
+msgstr ""
+
+#: ../../classes/class_control.rst:372
+msgid ""
+"**CURSOR_DRAG** = **6** --- Show the system's drag mouse cursor, often a "
+"closed fist or a cross symbol, when the user hovers the node. It tells "
+"the user they're currently dragging an item, like a node in the Scene "
+"dock."
+msgstr ""
+
+#: ../../classes/class_control.rst:373
+msgid ""
+"**CURSOR_CAN_DROP** = **7** --- Show the system's drop mouse cursor when "
+"the user hovers the node. It can be an open hand. It tells the user they "
+"can drop an item they're currently grabbing, like a node in the Scene "
+"dock."
+msgstr ""
+
+#: ../../classes/class_control.rst:374
+msgid ""
+"**CURSOR_FORBIDDEN** = **8** --- Show the system's forbidden mouse cursor"
+" when the user hovers the node. Often a crossed circle."
+msgstr ""
+
+#: ../../classes/class_control.rst:375
+msgid ""
+"**CURSOR_VSIZE** = **9** --- Show the system's vertical resize mouse "
+"cursor when the user hovers the node. A double headed vertical arrow. It "
+"tells the user they can resize the window or the panel vertically."
+msgstr ""
+
+#: ../../classes/class_control.rst:376
+msgid ""
+"**CURSOR_HSIZE** = **10** --- Show the system's horizontal resize mouse "
+"cursor when the user hovers the node. A double headed horizontal arrow. "
+"It tells the user they can resize the window or the panel horizontally."
+msgstr ""
+
+#: ../../classes/class_control.rst:377
+msgid ""
+"**CURSOR_BDIAGSIZE** = **11** --- Show the system's window resize mouse "
+"cursor when the user hovers the node. The cursor is a double headed arrow"
+" that goes from the bottom left to the top right. It tells the user they "
+"can resize the window or the panel both horizontally and vertically."
+msgstr ""
+
+#: ../../classes/class_control.rst:378
+msgid ""
+"**CURSOR_FDIAGSIZE** = **12** --- Show the system's window resize mouse "
+"cursor when the user hovers the node. The cursor is a double headed arrow"
+" that goes from the top left to the bottom right, the opposite of "
+"``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the"
+" panel both horizontally and vertically."
+msgstr ""
+
+#: ../../classes/class_control.rst:379
+msgid ""
+"**CURSOR_MOVE** = **13** --- Show the system's move mouse cursor when the"
+" user hovers the node. It shows 2 double-headed arrows at a 90 degree "
+"angle. It tells the user they can move a UI element freely."
+msgstr ""
+
+#: ../../classes/class_control.rst:380
+msgid ""
+"**CURSOR_VSPLIT** = **14** --- Show the system's vertical split mouse "
+"cursor when the user hovers the node. On Windows, it's the same as "
+"``CURSOR_VSIZE``."
+msgstr ""
+
+#: ../../classes/class_control.rst:381
+msgid ""
+"**CURSOR_HSPLIT** = **15** --- Show the system's horizontal split mouse "
+"cursor when the user hovers the node. On Windows, it's the same as "
+"``CURSOR_HSIZE``."
+msgstr ""
+
+#: ../../classes/class_control.rst:382
+msgid ""
+"**CURSOR_HELP** = **16** --- Show the system's help mouse cursor when the"
+" user hovers the node, a question mark."
+msgstr ""
+
+#: ../../classes/class_control.rst:386
+msgid "enum **FocusMode**"
+msgstr ""
+
+#: ../../classes/class_control.rst:388
+msgid ""
+"**FOCUS_NONE** = **0** --- The node cannot grab focus. Use with "
+":ref:`set_focus_mode<class_Control_set_focus_mode>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:389
+msgid ""
+"**FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks."
+" Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:390
+msgid ""
+"**FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using"
+" the arrows and the Tab keys on the keyboard. Use with "
+":ref:`set_focus_mode<class_Control_set_focus_mode>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:394
+msgid "enum **GrowDirection**"
+msgstr ""
+
+#: ../../classes/class_control.rst:396
+msgid "**GROW_DIRECTION_BEGIN** = **0**"
+msgstr ""
+
+#: ../../classes/class_control.rst:397
+msgid "**GROW_DIRECTION_END** = **1**"
+msgstr ""
+
+#: ../../classes/class_control.rst:401
+msgid "enum **LayoutPresetMode**"
+msgstr ""
+
+#: ../../classes/class_control.rst:403
+msgid "**PRESET_MODE_MINSIZE** = **0**"
+msgstr ""
+
+#: ../../classes/class_control.rst:404
+msgid "**PRESET_MODE_KEEP_WIDTH** = **1**"
+msgstr ""
+
+#: ../../classes/class_control.rst:405
+msgid "**PRESET_MODE_KEEP_HEIGHT** = **2**"
+msgstr ""
+
+#: ../../classes/class_control.rst:406
+msgid "**PRESET_MODE_KEEP_SIZE** = **3**"
+msgstr ""
+
+#: ../../classes/class_control.rst:410
+msgid "enum **LayoutPreset**"
+msgstr ""
+
+#: ../../classes/class_control.rst:412
+msgid ""
+"**PRESET_TOP_LEFT** = **0** --- Snap all 4 anchors to the top-left of the"
+" parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:413
+msgid ""
+"**PRESET_TOP_RIGHT** = **1** --- Snap all 4 anchors to the top-right of "
+"the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:414
+msgid ""
+"**PRESET_BOTTOM_LEFT** = **2** --- Snap all 4 anchors to the bottom-left "
+"of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:415
+msgid ""
+"**PRESET_BOTTOM_RIGHT** = **3** --- Snap all 4 anchors to the bottom-"
+"right of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:416
+msgid ""
+"**PRESET_CENTER_LEFT** = **4** --- Snap all 4 anchors to the center of "
+"the left edge of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:417
+msgid ""
+"**PRESET_CENTER_TOP** = **5** --- Snap all 4 anchors to the center of the"
+" top edge of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:418
+msgid ""
+"**PRESET_CENTER_RIGHT** = **6** --- Snap all 4 anchors to the center of "
+"the right edge of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:419
+msgid ""
+"**PRESET_CENTER_BOTTOM** = **7** --- Snap all 4 anchors to the center of "
+"the bottom edge of the parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:420
+msgid ""
+"**PRESET_CENTER** = **8** --- Snap all 4 anchors to the center of the "
+"parent container's bounds. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:421
+msgid ""
+"**PRESET_LEFT_WIDE** = **9** --- Snap all 4 anchors to the left edge of "
+"the parent container. The left margin becomes relative to the left edge "
+"and the top margin relative to the top left corner of the node's parent. "
+"Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:422
+msgid ""
+"**PRESET_TOP_WIDE** = **10** --- Snap all 4 anchors to the top edge of "
+"the parent container. The left margin becomes relative to the top left "
+"corner, the top margin relative to the top edge, and the right margin "
+"relative to the top right corner of the node's parent. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:423
+msgid ""
+"**PRESET_RIGHT_WIDE** = **11** --- Snap all 4 anchors to the right edge "
+"of the parent container. The right margin becomes relative to the right "
+"edge and the top margin relative to the top right corner of the node's "
+"parent. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:424
+msgid ""
+"**PRESET_BOTTOM_WIDE** = **12** --- Snap all 4 anchors to the bottom edge"
+" of the parent container. The left margin becomes relative to the bottom "
+"left corner, the bottom margin relative to the bottom edge, and the right"
+" margin relative to the bottom right corner of the node's parent. Use "
+"with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:425
+msgid ""
+"**PRESET_VCENTER_WIDE** = **13** --- Snap all 4 anchors to a vertical "
+"line that cuts the parent container in half. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:426
+msgid ""
+"**PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal "
+"line that cuts the parent container in half. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:427
+msgid ""
+"**PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners"
+" of the parent container. Set all 4 margins to 0 after you applied this "
+"preset and the ``Control`` will fit its parent container. Use with "
+":ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:431
+msgid "enum **MouseFilter**"
+msgstr ""
+
+#: ../../classes/class_control.rst:433
+msgid ""
+"**MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button "
+"input events through :ref:`_gui_input<class_Control__gui_input>` if "
+"clicked on. These events are automatically marked as handled and they "
+"will not propagate further to other controls."
+msgstr ""
+
+#: ../../classes/class_control.rst:434
+msgid ""
+"**MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button "
+"input events through :ref:`_gui_input<class_Control__gui_input>` if "
+"clicked on. If this control does not handle the event, the parent control"
+" (if any) will be considered for a mouse click, and so on until there is "
+"no more parent control to potentially handle it. Even if no control "
+"handled it at all, the event will still be handled automatically."
+msgstr ""
+
+#: ../../classes/class_control.rst:435
+msgid ""
+"**MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse "
+"button input events through :ref:`_gui_input<class_Control__gui_input>` "
+"and will not block other controls from receiving these events. These "
+"events will also not be handled automatically."
+msgstr ""
+
+#: ../../classes/class_control.rst:439
+msgid "enum **Anchor**"
+msgstr ""
+
+#: ../../classes/class_control.rst:441
+msgid ""
+"**ANCHOR_BEGIN** = **0** --- Snaps one of the 4 anchor's sides to the "
+"origin of the node's ``Rect``, in the top left. Use it with one of the "
+"``anchor_*`` member variables, like "
+":ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at"
+" once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:442
+msgid ""
+"**ANCHOR_END** = **1** --- Snaps one of the 4 anchor's sides to the end "
+"of the node's ``Rect``, in the bottom right. Use it with one of the "
+"``anchor_*`` member variables, like "
+":ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at"
+" once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:446
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_control.rst:448
+msgid ""
+"Base class for all User Interface or *UI* related nodes. ``Control`` "
+"features a bounding rectangle that defines its extents, an anchor "
+"position relative to its parent and margins that represent an offset to "
+"the anchor. The margins update automatically when the node, any of its "
+"parents, or the screen size change."
+msgstr ""
+
+#: ../../classes/class_control.rst:450
+msgid ""
+"For more information on Godot's UI system, anchors, margins, and "
+"containers, see the related tutorials in the manual. To build flexible "
+"UIs, you'll need a mix of UI elements that inherit from ``Control`` and "
+":ref:`Container<class_container>` nodes."
+msgstr ""
+
+#: ../../classes/class_control.rst:452
+msgid "**User Interface nodes and input**"
+msgstr ""
+
+#: ../../classes/class_control.rst:454
+msgid ""
+"Godot sends input events to the scene's root node first, by calling "
+":ref:`Node._input<class_Node__input>`. "
+":ref:`Node._input<class_Node__input>` forwards the event down the node "
+"tree to the nodes under the mouse cursor, or on keyboard focus. To do so,"
+" it calls :ref:`MainLoop._input_event<class_MainLoop__input_event>`. Call"
+" :ref:`accept_event<class_Control_accept_event>` so no other node "
+"receives the event. Once you accepted an input, it becomes handled so "
+":ref:`Node._unhandled_input<class_Node__unhandled_input>` will not "
+"process it."
+msgstr ""
+
+#: ../../classes/class_control.rst:456
+msgid ""
+"Only one ``Control`` node can be in keyboard focus. Only the node in "
+"focus will receive keyboard events. To get the focus, call "
+":ref:`grab_focus<class_Control_grab_focus>`. ``Control`` nodes lose focus"
+" when another node grabs it, or if you hide the node in focus."
+msgstr ""
+
+#: ../../classes/class_control.rst:458
+msgid ""
+"Set :ref:`mouse_filter<class_Control_mouse_filter>` to "
+"MOUSE_FILTER_IGNORE to tell a ``Control`` node to ignore mouse or touch "
+"events. You'll need it if you place an icon on top of a button."
+msgstr ""
+
+#: ../../classes/class_control.rst:460
+msgid ""
+":ref:`Theme<class_theme>` resources change the Control's appearance. If "
+"you change the :ref:`Theme<class_theme>` on a ``Control`` node, it "
+"affects all of its children. To override some of the theme's parameters, "
+"call one of the ``add_*_override`` methods, like "
+":ref:`add_font_override<class_Control_add_font_override>`. You can "
+"override the theme with the inspector."
+msgstr ""
+
+#: ../../classes/class_control.rst:463
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_control.rst:467
+msgid ":ref:`Vector2<class_vector2>` **_get_minimum_size** **(** **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:469
+msgid ""
+"Returns the minimum size this Control can shrink to. The node can never "
+"be smaller than this minimum size."
+msgstr ""
+
+#: ../../classes/class_control.rst:473
+msgid ""
+"void **_gui_input** **(** :ref:`InputEvent<class_inputevent>` event **)**"
+" virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:475
+msgid ""
+"The node's parent forwards input events to this method. Use it to process"
+" and accept inputs on UI elements. See "
+":ref:`accept_event<class_Control_accept_event>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:477
+msgid "Replaces Godot 2's ``_input_event``."
+msgstr ""
+
+#: ../../classes/class_control.rst:481
+msgid "void **accept_event** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:483
+msgid ""
+"Marks an input event as handled. Once you accept an input event, it stops"
+" propagating, even to nodes listening to "
+":ref:`Node._unhandled_input<class_Node__unhandled_input>` or "
+":ref:`Node._unhandled_key_input<class_Node__unhandled_key_input>`."
+msgstr ""
+
+#: ../../classes/class_control.rst:487
+msgid ""
+"void **add_color_override** **(** :ref:`String<class_string>` name, "
+":ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:489
+msgid "Overrides the color in the theme resource the node uses."
+msgstr ""
+
+#: ../../classes/class_control.rst:493
+msgid ""
+"void **add_constant_override** **(** :ref:`String<class_string>` name, "
+":ref:`int<class_int>` constant **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:495
+msgid ""
+"Overrides an integer constant in the :ref:`Theme<class_theme>` resource "
+"the node uses. If the ``constant`` is invalid, Godot clears the override."
+" See :ref:`Theme.INVALID_CONSTANT<class_Theme_INVALID_CONSTANT>` for more"
+" information."
+msgstr ""
+
+#: ../../classes/class_control.rst:499
+msgid ""
+"void **add_font_override** **(** :ref:`String<class_string>` name, "
+":ref:`Font<class_font>` font **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:501
+msgid ""
+"Overrides the ``name`` font in the theme resource the node uses. If "
+"``font`` is empty, Godot clears the override."
+msgstr ""
+
+#: ../../classes/class_control.rst:505
+msgid ""
+"void **add_icon_override** **(** :ref:`String<class_string>` name, "
+":ref:`Texture<class_texture>` texture **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:507
+msgid ""
+"Overrides the ``name`` icon in the theme resource the node uses. If "
+"``icon`` is empty, Godot clears the override."
+msgstr ""
+
+#: ../../classes/class_control.rst:511
+msgid ""
+"void **add_shader_override** **(** :ref:`String<class_string>` name, "
+":ref:`Shader<class_shader>` shader **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:513
+msgid ""
+"Overrides the ``name`` shader in the theme resource the node uses. If "
+"``shader`` is empty, Godot clears the override."
+msgstr ""
+
+#: ../../classes/class_control.rst:517
+msgid ""
+"void **add_stylebox_override** **(** :ref:`String<class_string>` name, "
+":ref:`StyleBox<class_stylebox>` stylebox **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:519
+msgid ""
+"Overrides the ``name`` Stylebox in the theme resource the node uses. If "
+"``stylebox`` is empty, Godot clears the override."
+msgstr ""
+
+#: ../../classes/class_control.rst:523
+msgid ""
+":ref:`bool<class_bool>` **can_drop_data** **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` "
+"data **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:527
+msgid ""
+"void **drop_data** **(** :ref:`Vector2<class_vector2>` position, "
+":ref:`Variant<class_variant>` data **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:531
+msgid ""
+"void **force_drag** **(** :ref:`Variant<class_variant>` data, "
+":ref:`Control<class_control>` preview **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:535
+msgid ":ref:`Vector2<class_vector2>` **get_begin** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:539
+msgid ""
+":ref:`Color<class_color>` **get_color** **(** :ref:`String<class_string>`"
+" name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:543
+msgid ""
+":ref:`Vector2<class_vector2>` **get_combined_minimum_size** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_control.rst:547
+msgid ""
+":ref:`int<class_int>` **get_constant** **(** :ref:`String<class_string>` "
+"name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:551
+msgid ""
+":ref:`int<class_int>` **get_cursor_shape** **(** "
+":ref:`Vector2<class_vector2>` position=Vector2( 0, 0 ) **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:553
+msgid ""
+"Returns the mouse cursor shape the control displays on mouse hover, one "
+"of the ``CURSOR_*`` constants."
+msgstr ""
+
+#: ../../classes/class_control.rst:557
+msgid ""
+":ref:`Object<class_object>` **get_drag_data** **(** "
+":ref:`Vector2<class_vector2>` position **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:561
+msgid ":ref:`Vector2<class_vector2>` **get_end** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:563
+msgid ""
+"Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper "
+"(see :ref:`set_margin<class_Control_set_margin>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:567
+msgid ":ref:`Control<class_control>` **get_focus_owner** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:569
+msgid "Return which control is owning the keyboard focus, or null if no one."
+msgstr ""
+
+#: ../../classes/class_control.rst:573
+msgid ""
+":ref:`Font<class_font>` **get_font** **(** :ref:`String<class_string>` "
+"name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:577
+msgid ":ref:`Rect2<class_rect2>` **get_global_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:579
+msgid ""
+"Return position and size of the Control, relative to the top-left corner "
+"of the *window* Control. This is a helper (see "
+":ref:`get_global_position<class_Control_get_global_position>`, "
+":ref:`get_size<class_Control_get_size>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:583
+msgid ""
+":ref:`Texture<class_texture>` **get_icon** **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:587
+msgid ":ref:`Vector2<class_vector2>` **get_minimum_size** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:589
+msgid ""
+"Return the minimum size this Control can shrink to. A control will never "
+"be displayed or resized smaller than its minimum size."
+msgstr ""
+
+#: ../../classes/class_control.rst:593
+msgid ":ref:`Vector2<class_vector2>` **get_parent_area_size** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:597
+msgid ":ref:`Control<class_control>` **get_parent_control** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:601
+msgid ":ref:`Rect2<class_rect2>` **get_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:603
+msgid ""
+"Return position and size of the Control, relative to the top-left corner "
+"of the parent Control. This is a helper (see "
+":ref:`get_position<class_Control_get_position>`, "
+":ref:`get_size<class_Control_get_size>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:607
+msgid ":ref:`float<class_float>` **get_rotation** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:609
+msgid "Return the rotation (in radians)"
+msgstr ""
+
+#: ../../classes/class_control.rst:613
+msgid ""
+":ref:`StyleBox<class_stylebox>` **get_stylebox** **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:617
+msgid ""
+":ref:`String<class_string>` **get_tooltip** **(** "
+":ref:`Vector2<class_vector2>` at_position=Vector2( 0, 0 ) **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:619
+msgid ""
+"Return the tooltip, which will appear when the cursor is resting over "
+"this control."
+msgstr ""
+
+#: ../../classes/class_control.rst:623
+msgid "void **grab_click_focus** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:627
+msgid "void **grab_focus** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:629
+msgid ""
+"Steal the focus from another control and become the focused control (see "
+":ref:`set_focus_mode<class_Control_set_focus_mode>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:633
+msgid ""
+":ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_string>` "
+"name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:637
+msgid ""
+":ref:`bool<class_bool>` **has_color_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:641
+msgid ""
+":ref:`bool<class_bool>` **has_constant** **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:645
+msgid ""
+":ref:`bool<class_bool>` **has_constant_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:649
+msgid ":ref:`bool<class_bool>` **has_focus** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:651
+msgid ""
+"Return whether the Control is the current focused control (see "
+":ref:`set_focus_mode<class_Control_set_focus_mode>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:655
+msgid ""
+":ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_string>` "
+"name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:659
+msgid ""
+":ref:`bool<class_bool>` **has_font_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:663
+msgid ""
+":ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_string>` "
+"name, :ref:`String<class_string>` type=\"\" **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:667
+msgid ""
+":ref:`bool<class_bool>` **has_icon_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:671
+msgid ""
+":ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_vector2>`"
+" point **)** virtual"
+msgstr ""
+
+#: ../../classes/class_control.rst:675
+msgid ""
+":ref:`bool<class_bool>` **has_shader_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:679
+msgid ""
+":ref:`bool<class_bool>` **has_stylebox** **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` type=\"\" "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:683
+msgid ""
+":ref:`bool<class_bool>` **has_stylebox_override** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_control.rst:687
+msgid "void **minimum_size_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:691
+msgid "void **release_focus** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:693
+msgid ""
+"Give up the focus, no other control will be able to receive keyboard "
+"input."
+msgstr ""
+
+#: ../../classes/class_control.rst:697
+msgid ""
+"void **set_anchor** **(** :ref:`int<class_int>` margin, "
+":ref:`float<class_float>` anchor, :ref:`bool<class_bool>` "
+"keep_margin=false, :ref:`bool<class_bool>` push_opposite_anchor=true "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:701
+msgid ""
+"void **set_anchor_and_margin** **(** :ref:`int<class_int>` margin, "
+":ref:`float<class_float>` anchor, :ref:`float<class_float>` offset, "
+":ref:`bool<class_bool>` push_opposite_anchor=false **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:705
+msgid ""
+"void **set_anchors_and_margins_preset** **(** :ref:`int<class_int>` "
+"preset, :ref:`int<class_int>` resize_mode=0, :ref:`int<class_int>` "
+"margin=0 **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:709
+msgid ""
+"void **set_anchors_preset** **(** :ref:`int<class_int>` preset, "
+":ref:`bool<class_bool>` keep_margin=false **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:713
+msgid "void **set_begin** **(** :ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:715
+msgid ""
+"Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see "
+":ref:`set_margin<class_Control_set_margin>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:719
+msgid ""
+"void **set_drag_forwarding** **(** :ref:`Control<class_control>` target "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:723
+msgid ""
+"void **set_drag_preview** **(** :ref:`Control<class_control>` control "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:727
+msgid "void **set_end** **(** :ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:729
+msgid ""
+"Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper "
+"(see :ref:`set_margin<class_Control_set_margin>`)."
+msgstr ""
+
+#: ../../classes/class_control.rst:733
+msgid ""
+"void **set_margins_preset** **(** :ref:`int<class_int>` preset, "
+":ref:`int<class_int>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:737
+msgid "void **set_rotation** **(** :ref:`float<class_float>` radians **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:739
+msgid "Set the rotation (in radians)."
+msgstr ""
+
+#: ../../classes/class_control.rst:743
+msgid "void **show_modal** **(** :ref:`bool<class_bool>` exclusive=false **)**"
+msgstr ""
+
+#: ../../classes/class_control.rst:745
+msgid ""
+"Display a Control as modal. Control must be a subwindow. Modal controls "
+"capture the input signals until closed or the area outside them is "
+"accessed. When a modal control loses focus, or the ESC key is pressed, "
+"they automatically hide. Modal controls are used extensively for popup "
+"dialogs and menus."
+msgstr ""
+
+#: ../../classes/class_control.rst:749
+msgid "void **warp_mouse** **(** :ref:`Vector2<class_vector2>` to_position **)**"
+msgstr ""
+

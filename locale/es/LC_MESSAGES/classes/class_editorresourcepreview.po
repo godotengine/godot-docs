@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_editorresourcepreview.rst:8
+msgid "EditorResourcePreview"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:10
+msgid "**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:17
+msgid "Helper to generate previews of resources or files."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:23
+#: ../../classes/class_editorresourcepreview.rst:25
+#: ../../classes/class_editorresourcepreview.rst:27
+#: ../../classes/class_editorresourcepreview.rst:29
+#: ../../classes/class_editorresourcepreview.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:23
+msgid ""
+":ref:`add_preview_generator<class_EditorResourcePreview_add_preview_generator>`"
+" **(** "
+":ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>`"
+" generator **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:25
+msgid ""
+":ref:`check_for_invalidation<class_EditorResourcePreview_check_for_invalidation>`"
+" **(** :ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:27
+msgid ""
+":ref:`queue_edited_resource_preview<class_EditorResourcePreview_queue_edited_resource_preview>`"
+" **(** :ref:`Resource<class_resource>` resource, "
+":ref:`Object<class_object>` receiver, :ref:`String<class_string>` "
+"receiver_func, :ref:`Variant<class_variant>` userdata **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:29
+msgid ""
+":ref:`queue_resource_preview<class_EditorResourcePreview_queue_resource_preview>`"
+" **(** :ref:`String<class_string>` path, :ref:`Object<class_object>` "
+"receiver, :ref:`String<class_string>` receiver_func, "
+":ref:`Variant<class_variant>` userdata **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:31
+msgid ""
+":ref:`remove_preview_generator<class_EditorResourcePreview_remove_preview_generator>`"
+" **(** "
+":ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>`"
+" generator **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:35
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:39
+msgid "**preview_invalidated** **(** :ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:41
+msgid ""
+"If a preview was invalidated (changed) this signal will emit (using the "
+"path of the preview)"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:45
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:47
+msgid "This object is used to generate previews for resources of files."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:50
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:54
+msgid ""
+"void **add_preview_generator** **(** "
+":ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>`"
+" generator **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:56
+msgid "Create an own, custom preview generator."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:60
+msgid ""
+"void **check_for_invalidation** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:62
+msgid ""
+"Check if the resource changed, if so it will be invalidated and the "
+"corresponding signal emitted."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:66
+msgid ""
+"void **queue_edited_resource_preview** **(** "
+":ref:`Resource<class_resource>` resource, :ref:`Object<class_object>` "
+"receiver, :ref:`String<class_string>` receiver_func, "
+":ref:`Variant<class_variant>` userdata **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:68
+msgid ""
+"Queue a resource being edited for preview (using an instance). Once the "
+"preview is ready, your receiver.receiver_func will be called either "
+"containing the preview texture or an empty texture (if no preview was "
+"possible). Callback must have the format: (path,texture,userdata). "
+"Userdata can be anything."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:72
+msgid ""
+"void **queue_resource_preview** **(** :ref:`String<class_string>` path, "
+":ref:`Object<class_object>` receiver, :ref:`String<class_string>` "
+"receiver_func, :ref:`Variant<class_variant>` userdata **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:74
+msgid ""
+"Queue a resource file for preview (using a path). Once the preview is "
+"ready, your receiver.receiver_func will be called either containing the "
+"preview texture or an empty texture (if no preview was possible). "
+"Callback must have the format: (path,texture,userdata). Userdata can be "
+"anything."
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:78
+msgid ""
+"void **remove_preview_generator** **(** "
+":ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>`"
+" generator **)**"
+msgstr ""
+
+#: ../../classes/class_editorresourcepreview.rst:80
+msgid "Remove a custom preview generator."
+msgstr ""
+

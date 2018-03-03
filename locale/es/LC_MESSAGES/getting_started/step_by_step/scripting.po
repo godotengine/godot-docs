@@ -1,0 +1,491 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/step_by_step/scripting.rst:4
+msgid "Scripting"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:9
+msgid ""
+"Before Godot 3.0, the only choice for scripting a game was to use "
+":ref:`doc_gdscript`. Nowadays, Godot has four (yes, four!) official "
+"languages and the ability to add extra scripting languages dynamically!"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:13
+msgid ""
+"This is great, mostly due the large amount of flexibility provided, but "
+"it also makes our work supporting languages more difficult."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:16
+msgid ""
+"The \"Main\" languages in Godot, though, are GDScript and VisualScript. "
+"The main reason to choose them is their level of integration with Godot, "
+"as this makes the experience smoother; both have very slick editor "
+"integration, while C# and C++ need to be edited in a separate IDE. If you"
+" are a big fan of statically typed languages, go with C# and C++ instead."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:22
+msgid "GDScript"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:24
+msgid ""
+":ref:`doc_gdscript` is, as mentioned above, the main language used in "
+"Godot. Using it has some positive points compared to other languages due "
+"to its high integration with Godot:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:28
+msgid ""
+"It's simple, elegant, and designed to be familiar for users of other "
+"languages such as Lua, Python, Squirrel, etc."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:29
+msgid "Loads and compiles blazingly fast."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:30
+msgid ""
+"The editor integration is a pleasure to work with, with code completion "
+"for nodes, signals, and many other items pertaining to the scene being "
+"edited."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:31
+msgid ""
+"Has vector types built-in (such as Vectors, transforms, etc.), making it "
+"efficient for heavy use of linear algebra."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:32
+msgid ""
+"Supports multiple threads as efficiently as statically typed languages - "
+"one of the limitations that made us avoid VMs such as Lua, Squirrel, etc."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:33
+msgid ""
+"Uses no garbage collector, so it trades a small bit of automation (most "
+"objects are reference counted anyway), by determinism."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:34
+msgid ""
+"Its dynamic nature makes it easy to optimize sections of code in C++ (via"
+" GDNative) if more performance is required, all without recompiling the "
+"engine."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:36
+msgid ""
+"If you're undecided and have experience with programming, especially "
+"dynamically typed languages, go for GDScript!"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:40
+msgid "VisualScript"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:42
+msgid ""
+"Beginning with 3.0, Godot offers :ref:`Visual "
+"Scripting<doc_what_is_visual_script>`. This is a typical implementation "
+"of a \"blocks and connections\" language, but adapted to how Godot works."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:46
+msgid ""
+"Visual scripting is a great tool for non-programmers, or even for "
+"experienced developers who want to make parts of the code more accessible"
+" to others, like game designers or artists."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:50
+msgid ""
+"It can also be used by programmers to build state machines or custom "
+"visual node workflows - for example, a dialogue system."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:55
+msgid ".NET / C#"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:57
+msgid ""
+"As Microsoft's C# is a favorite amongst game developers, we have added "
+"official support for it. C# is a mature language with tons of code "
+"written for it, and support was added thanks to a generous donation from "
+"Microsoft."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:62
+msgid ""
+"It has an excellent tradeoff between performance and ease of use, "
+"although one must be aware of its garbage collector."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:65
+msgid ""
+"C# is usually the best choice for companies. The large amount of "
+"programmers familiar with it means less time can be spent learning Godot "
+"and more time can be spent programming with it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:69
+msgid ""
+"Since Godot uses the `Mono <https://mono-project.com>`_ .NET runtime, in "
+"theory any third-party .NET library or framework can be used for "
+"scripting in Godot, as well as any Common Language Infrastructure-"
+"compliant programming language, such as F#, Boo or ClojureCLR. In "
+"practice however, C# is the only officially supported .NET option."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:75
+msgid "GDNative / C++"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:77
+msgid ""
+"Finally, one of our brightest additions for the 3.0 release: GDNative "
+"allows scripting in C++ without needing to recompile (or even restart) "
+"Godot."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:81
+msgid ""
+"Any C++ version can be used, and mixing compiler brands and versions for "
+"the generated shared libraries works perfectly, thanks to our use of an "
+"internal C API Bridge."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:85
+msgid ""
+"This language is the best choice for performance and does not need to be "
+"used throughout an entire game, as other parts can be written in GDScript"
+" or Visual Script. However the API is clear and easy to use as it "
+"resembles, mostly, Godot's actual C++ API."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:90
+msgid ""
+"More languages can be made available through the GDNative interface, but "
+"keep in mind we don't have official support for them."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:94
+msgid "Scripting a scene"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:96
+msgid ""
+"For the rest of this tutorial we'll set up a GUI scene consisting of a "
+"button and a label, where pressing the button will update the label. This"
+" will demonstrate:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:100
+msgid "Writing a script and attaching it to a node."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:101
+msgid "Hooking up UI elements via signals."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:102
+msgid "Writing a script that can access other nodes in the scene."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:104
+msgid ""
+"Before continuing, please make sure to read the :ref:`doc_gdscript` "
+"reference. It's a language designed to be simple, and the reference is "
+"short, so it will not take more than a few minutes to get an overview of "
+"the concepts."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:109
+msgid "Scene setup"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:111
+msgid ""
+"Use the \"Add Child Node\" dialogue accessed from the Scene tab (or by "
+"pressing ``Ctrl+A``) to create a hierarchy with the following nodes:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:114
+msgid "Panel"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:116
+msgid "Label"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:117
+msgid "Button"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:119
+msgid "The scene tree should look like this:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:123
+msgid ""
+"Use the 2D editor to position and resize the Button and Label so that "
+"they look like the image below. You can set the text from the Inspector "
+"tab."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:128
+msgid "Finally, save the scene with a name such as ``sayhello.tscn``."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:133
+msgid "Adding a script"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:135
+msgid ""
+"Right click on the Panel node, then select \"Attach Script\" from the "
+"context menu:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:140
+msgid ""
+"The script creation dialog will pop up. This dialog allows you to set the"
+" script's language, class name, and other relevant options."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:143
+msgid ""
+"In GDScript the file itself represents the class, so the class name field"
+" will not editable."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:146
+msgid ""
+"The node we're attaching the script to is a panel, so the Inherits field "
+"will automatically be filled in with \"Panel\". This is what we want, as "
+"the script's goal is to extend the functionality of our panel node."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:150
+msgid "Finally, enter a path name for the script and select Create:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:154
+msgid ""
+"The script will then be created and added to the node. You can see this "
+"as an \"Open script\" icon next to the node in the Scene tab, as well as "
+"in the script property under Inspector:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:160
+msgid ""
+"To edit the script, select either of these buttons, both of which are "
+"highlighted in the above image. This will bring you to the script editor "
+"where a default template will be included:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:165
+msgid ""
+"There's not much there. The ``_ready()`` function is called when the "
+"node, and all its children, enters the active scene. **Note:** "
+"``_ready()`` is not the constructor; the constructor is instead "
+"``_init()``."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:170
+msgid "The role of the script"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:172
+msgid ""
+"A script adds behavior to a node. It is used to control how the node "
+"functions as well as how it interacts with other nodes: children, parent,"
+" siblings, and so on. The local scope of the script is the node. In other"
+" words, the script inherits the functions provided by that node."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:180
+msgid "Handling a signal"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:182
+msgid ""
+"Signals are \"emitted\" when some specific kind of action happens, and "
+"they can be connected to any function of any script instance. Signals are"
+" used mostly in GUI nodes, although other nodes have them too, and you "
+"can even define custom signals in your own scripts."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:187
+msgid ""
+"In this step, we'll connect the \"pressed\" signal to a custom function. "
+"Forming connections is the first part and defining the custom function is"
+" the second part. For the first part, Godot provides two ways to create "
+"connections: through a visual interface the editor provides or through "
+"code."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:192
+msgid ""
+"While we will use the code method for the remainder of this tutorial "
+"series, let's cover how the editor interface works just for future "
+"reference."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:195
+msgid ""
+"Select the Button node in the scene tree and then select the \"Node\" "
+"tab. Next, make sure that you have \"Signals\" selected."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:200
+msgid ""
+"If you then select \"pressed()\" under \"BaseButton\" and click the "
+"\"Connect...\" button in the bottom right, you'll open up the connection "
+"creation dialogue."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:205
+msgid ""
+"In the bottom-left are the key things you need to create a connection: a "
+"node which implements the method you want to trigger (represented here as"
+" a NodePath) and the name of the method to trigger."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:209
+msgid ""
+"The top-left section displays a list of your scene's nodes with the "
+"emitting node's name highlighted in red. Select the \"Panel\" node here. "
+"When you select a node, the NodePath at the bottom will automatically "
+"update to point a relative path from the emitting node to the selected "
+"node."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:216
+msgid ""
+"Be aware that connections nodes with scripts can connect with signals "
+"since the function must exist in order to make the connection. Without a "
+"script, the method cannot be defined."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:220
+msgid ""
+"To be sure the node has a script and can define the function, make sure "
+"that the \"Make Function\" check button shows up in the bottom right."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:223
+msgid ""
+"By default, the method name will contain the emitting node's name "
+"(\"Button\" in this case), resulting in "
+"\"_on_[EmitterNode]_[signal_name]\". If you do have the \"Make Function\""
+" check button checked, then the editor will generate the function for you"
+" before setting up the connection."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:228
+msgid ""
+"And that concludes the guide on how to use the visual interface. However,"
+" this is a scripting tutorial, so for the sake of learning, let's dive in"
+" to the manual process!"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:232
+msgid ""
+"To accomplish this, we will introduce a function that is probably the "
+"most used by Godot programmers: :ref:`Node.get_node() "
+"<class_Node_get_node>`. This function uses paths to fetch nodes anywhere "
+"in the scene, relative to the node that owns the script."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:237
+msgid ""
+"For the sake of convenience, delete everything underneath ``extends "
+"Panel``. You will fill out the rest of the script manually."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:240
+msgid ""
+"Because the Button and Label are siblings under the Panel where the "
+"script is attached, you can fetch the Button by typing the following "
+"underneath the ``_ready()`` function:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:257
+msgid "Next, write a function which will be called when the button is pressed:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:273
+msgid ""
+"Finally, connect the button's \"pressed\" signal to ``_ready()`` by using"
+" :ref:`Object.connect() <class_Object_connect>`."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:289
+msgid "The final script should look like this:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:323
+msgid "Run the scene and press the button. You should get the following result:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:327
+msgid "Why, hello there! Congratulations on scripting your first scene."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:331
+msgid ""
+"A common misunderstanding regarding this tutorial is how "
+"``get_node(path)`` works. For a given node, ``get_node(path)`` searches "
+"its immediate children. In the above code, this means that Button must be"
+" a child of Panel. If Button were instead a child of Label, the code to "
+"obtain it would be:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:349
+msgid "Also, remember that nodes are referenced by name, not by type."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:353
+msgid ""
+"The right-hand panel of the connect dialogue is for binding specific "
+"values to the connected function's parameters. You can add and remove "
+"values of different types."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting.rst:357
+msgid ""
+"The code approach also enables this with a 4th ``Array`` parameter that "
+"is empty be default. Feel free to read up on the ``Object.connect`` "
+"method for more information."
+msgstr ""
+

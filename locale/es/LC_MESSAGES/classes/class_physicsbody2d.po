@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_physicsbody2d.rst:8
+msgid "PhysicsBody2D"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:10
+msgid ""
+"**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** "
+":ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` "
+"**<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:12
+msgid ""
+"**Inherited By:** :ref:`RigidBody2D<class_rigidbody2d>`, "
+":ref:`StaticBody2D<class_staticbody2d>`, "
+":ref:`KinematicBody2D<class_kinematicbody2d>`"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:19
+msgid "Base class for all objects affected by physics in 2D space."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:25
+#: ../../classes/class_physicsbody2d.rst:31
+#: ../../classes/class_physicsbody2d.rst:33
+#: ../../classes/class_physicsbody2d.rst:35
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:25
+msgid ""
+":ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>`"
+" **(** :ref:`Node<class_node>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:27
+#: ../../classes/class_physicsbody2d.rst:29
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:27
+msgid ""
+":ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>`"
+" **(** :ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:29
+msgid ""
+":ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>`"
+" **(** :ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:31
+msgid ""
+":ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>`"
+" **(** :ref:`Node<class_node>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:33
+msgid ""
+":ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>`"
+" **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:35
+msgid ""
+":ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>`"
+" **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:39
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:43
+msgid ""
+":ref:`int<class_int>` **collision_layer** - The physics layers this area "
+"is in."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:45
+msgid ""
+"Collidable objects can exist in any of 32 different layers. These layers "
+"work like a tagging system, and are not visual. A collidable can use "
+"these layers to select with which objects it can collide, using the "
+"collision_mask property."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:47
+msgid ""
+"A contact is detected if object A is in any of the layers that object B "
+"scans, or object B is in any layer scanned by object A."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:51
+msgid ""
+":ref:`int<class_int>` **collision_mask** - The physics layers this area "
+"can scan for collisions."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:55
+msgid ""
+":ref:`int<class_int>` **layers** - Both collision_layer and "
+"collision_mask. Returns collision_layer when accessed. Updates "
+"collision_layers and collision_mask when modified."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:59
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:61
+msgid ""
+"PhysicsBody2D is an abstract base class for implementing a physics body. "
+"All \\*Body2D types inherit from it."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:64
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:68
+msgid ""
+"void **add_collision_exception_with** **(** :ref:`Node<class_node>` body "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:70
+msgid "Adds a body to the list of bodies that this body can't collide with."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:74
+msgid ""
+":ref:`bool<class_bool>` **get_collision_layer_bit** **(** "
+":ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:76
+#: ../../classes/class_physicsbody2d.rst:82
+msgid "Return an individual bit on the collision mask."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:80
+msgid ""
+":ref:`bool<class_bool>` **get_collision_mask_bit** **(** "
+":ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:86
+msgid ""
+"void **remove_collision_exception_with** **(** :ref:`Node<class_node>` "
+"body **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:88
+msgid "Removes a body from the list of bodies that this body can't collide with."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:92
+msgid ""
+"void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, "
+":ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:94
+msgid ""
+"Set/clear individual bits on the layer mask. This makes getting a body "
+"in/out of only one layer easier."
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:98
+msgid ""
+"void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, "
+":ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physicsbody2d.rst:100
+msgid ""
+"Set/clear individual bits on the collision mask. This makes selecting the"
+" areas scanned easier."
+msgstr ""
+

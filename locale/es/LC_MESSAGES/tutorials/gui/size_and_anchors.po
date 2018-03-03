@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/gui/size_and_anchors.rst:4
+msgid "Size and anchors"
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:6
+msgid ""
+"If a game was always going to be run on the same device and at the same "
+"resolution, positioning controls would be a simple matter of setting the "
+"position and size of each one of them. Unfortunately, that is rarely the "
+"case."
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:11
+msgid ""
+"Only TVs nowadays have a standard resolution and aspect ratio. Everything"
+" else, from computer monitors to tablets, portable consoles and mobile "
+"phones have different resolutions and aspect ratios."
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:15
+msgid ""
+"There are several ways to handle this, but for now let's just imagine "
+"that the screen resolution has changed and the controls need to be re-"
+"positioned. Some will need to follow the bottom of the screen, others the"
+" top of the screen, or maybe the right or left margins."
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:22
+msgid ""
+"This is done by editing the *margin* properties of controls. Each control"
+" has four margins: left, right, bottom and top. By default all of them "
+"represent a distance in pixels relative to the top-left corner of the "
+"parent control or (in case there is no parent control) the viewport."
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:29
+msgid ""
+"When horizontal (left,right) and/or vertical (top,bottom) anchors are "
+"changed to END, the margin values become relative to the bottom-right "
+"corner of the parent control or viewport."
+msgstr ""
+
+#: ../../tutorials/gui/size_and_anchors.rst:35
+msgid ""
+"Here the control is set to expand its bottom-right corner with that of "
+"the parent, so when re-sizing the parent, the control will always cover "
+"it, leaving a 20 pixel margin:"
+msgstr ""
+

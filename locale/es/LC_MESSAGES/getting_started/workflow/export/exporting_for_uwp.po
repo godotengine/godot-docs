@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:4
+msgid "Exporting for Universal Windows Platform"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:6
+msgid ""
+"There's no extra requirement to export an ``.appx`` package that can be "
+"installed as a Windows App or submited to the Windows Store. Exporting "
+"packages also works from any platform, not only on Windows."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:10
+msgid ""
+"However, if you want to install and run the app, you need to sign it with"
+" a trusted signature. Currently, Godot supports no signing of packages "
+"and you need to use externals to tools to do so."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:14
+msgid ""
+"Also, make sure the Publisher name you set when export the package "
+"matches the name on the certificate."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:18
+msgid "Limitations on Xbox One"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:20
+msgid ""
+"As described in `UWP documentation <https://msdn.microsoft.com/en-"
+"us/windows/uwp/xbox-apps/system-resource-allocation>`__:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:25
+msgid "Submitted as an \"App\""
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:23
+msgid "available memory is 1GB"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:24
+msgid "share of 2-4 CPU cores"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:25
+msgid "shared access of GPU power (45%)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:30
+msgid ""
+"Submitted as a \"Game\" (through `Xbox Live Creators Program "
+"<https://www.xbox.com/en-US/developers/creators-program>`__)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:28
+msgid "available memory is 5GB"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:29
+msgid "4 exclusive CPU cores and 2 shared CPU cores"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:30
+msgid "exclusive access to GPU power (100%)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:32
+msgid ""
+"Exceeding these memory limitations will cause allocation failures and the"
+" application will crash."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:35
+msgid "Creating a signing certificate"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:37
+msgid ""
+"This requires the tools ``MakeCert.exe`` and ``Pvk2Pfx.exe`` which comes "
+"with the Windows SDK. If you use Visual Studio, open one of its Developer"
+" Prompts since they come with those tools available and in the path."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:41
+msgid ""
+"You can get more detailed instructions from `Microsoft documentation "
+"<https://msdn.microsoft.com/en-"
+"us/library/windows/desktop/jj835832(v=vs.85).aspx>`__."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:44
+msgid "First, run ``MakeCert`` to create a private key::"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:48
+msgid ""
+"Where ``publisherName`` matches the Publisher Name of your package and "
+"``expirationDate`` is in the ``mm/dd/yyyy`` format."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:51
+msgid ""
+"Next, create a Personal Information Exchange (.pfx) file using "
+"``Pvk2Pfx.exe``::"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:55
+msgid ""
+"If you don't specify a password with ``/po`` argument, the PFX will have "
+"the same password as the private key."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:58
+msgid ""
+"You also need to trust this certificate to be able to actually install "
+"the apps. Open the Command Prompt as Administrator and run the following "
+"command::"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:64
+msgid "Signing the package"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:66
+msgid "Using the ``SignTool.exe`` this requires a single command::"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:71
+msgid "Installing the package"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:73
+msgid ""
+"After Windows 10 Anniversary Update you can install packages by just "
+"double clicking the ``.appx`` file from the Windows Explorer."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:76
+msgid ""
+"It's also possible to install using the ``Add-AppxPackage`` PowerShell "
+"cmdlet."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_for_uwp.rst:78
+msgid ""
+"Note that if you don't update the version number, you'll have to "
+"uninstall the previous installed package before reinstalling it."
+msgstr ""
+

@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_light2d.rst:8
+msgid "Light2D"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:17
+msgid "Casts light in a 2D environment."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:24
+msgid ""
+":ref:`Color<class_color>` **color** - The Light2D's "
+":ref:`Color<class_color>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:28
+msgid ""
+":ref:`bool<class_bool>` **editor_only** - If ``true`` Light2D will only "
+"appear when editing the scene. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:32
+msgid ""
+":ref:`bool<class_bool>` **enabled** - If ``true`` Light2D will emit "
+"light. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:36
+msgid ""
+":ref:`float<class_float>` **energy** - The Light2D's energy value. The "
+"larger the value, the stronger the light."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:40
+msgid ""
+":ref:`Mode<enum_light2d_mode>` **mode** - The Light2D's mode. See "
+"MODE\\_\\* constants for values."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:44
+msgid ""
+":ref:`Vector2<class_vector2>` **offset** - The offset of the Light2D's "
+"``texture``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:48
+msgid ""
+":ref:`float<class_float>` **range_height** - The height of the Light2D. "
+"Used with 2D normal mapping."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:52
+msgid ""
+":ref:`int<class_int>` **range_item_cull_mask** - The layer mask. Only "
+"objects with a matching mask will be affected by the Light2D."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:56
+msgid ""
+":ref:`int<class_int>` **range_layer_max** - Maximum layer value of "
+"objects that are affected by the Light2D. Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:60
+msgid ""
+":ref:`int<class_int>` **range_layer_min** - Minimum layer value of "
+"objects that are affected by the Light2D. Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:64
+msgid ""
+":ref:`int<class_int>` **range_z_max** - Maximum ``Z`` value of objects "
+"that are affected by the Light2D. Default value: ``1024``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:68
+msgid ""
+":ref:`int<class_int>` **range_z_min** - Minimum ``z`` value of objects "
+"that are affected by the Light2D. Default value: ``-1024``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:72
+msgid ""
+":ref:`int<class_int>` **shadow_buffer_size** - Shadow buffer size. "
+"Default value: ``2048``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:76
+msgid ""
+":ref:`Color<class_color>` **shadow_color** - :ref:`Color<class_color>` of"
+" shadows cast by the Light2D."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:80
+msgid ""
+":ref:`bool<class_bool>` **shadow_enabled** - If ``true`` the Light2D will"
+" cast shadows. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:84
+msgid ""
+":ref:`ShadowFilter<enum_light2d_shadowfilter>` **shadow_filter** - Shadow"
+" filter type. Use SHADOW_FILTER\\_\\* constants to set ``shadow_filter``."
+" Default value: ``None``."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:88
+msgid ""
+":ref:`float<class_float>` **shadow_filter_smooth** - Smoothing value for "
+"shadows."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:92
+msgid ""
+":ref:`float<class_float>` **shadow_gradient_length** - Smooth shadow "
+"gradient length."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:96
+msgid ""
+":ref:`int<class_int>` **shadow_item_cull_mask** - The shadow mask. Used "
+"with :ref:`LightOccluder2D<class_lightoccluder2d>` to cast shadows. Only "
+"occluders with a matching shadow mask will cast shadows."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:100
+msgid ""
+":ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>`"
+" used for the Light2D's appearance."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:104
+msgid ""
+":ref:`float<class_float>` **texture_scale** - The ``texture``'s scale "
+"factor."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:108
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:112
+msgid "enum **Mode**"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:114
+msgid ""
+"**MODE_ADD** = **0** --- Adds the value of pixels corresponding to the "
+"Light2D to the values of pixels under it. This is the common behaviour of"
+" a light."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:115
+msgid ""
+"**MODE_SUB** = **1** --- Subtracts the value of pixels corresponding to "
+"the Light2D to the values of pixels under it, resulting in inversed light"
+" effect."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:116
+msgid ""
+"**MODE_MIX** = **2** --- Mix the value of pixels corresponding to the "
+"Light2D to the values of pixels under it by linear interpolation."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:117
+msgid ""
+"**MODE_MASK** = **3** --- The light texture of the Light2D is used as a "
+"mask, hiding or revealing parts of the screen underneath depending on the"
+" value of each pixel of the light (mask) texture."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:121
+msgid "enum **ShadowFilter**"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:123
+msgid ""
+"**SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. "
+"See :ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:124
+msgid ""
+"**SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 "
+"samples) applies to the shadow map. See "
+":ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:125
+msgid ""
+"**SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 "
+"samples) applies to the shadow map. See "
+":ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:126
+msgid ""
+"**SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 "
+"samples) applies to the shadow map. See "
+":ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:127
+msgid ""
+"**SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 "
+"samples) applies to the shadow map. See "
+":ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:128
+msgid ""
+"**SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 "
+"samples) applies to the shadow map. See "
+":ref:`shadow_filter<class_Light2D_shadow_filter>`."
+msgstr ""
+
+#: ../../classes/class_light2d.rst:132
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_light2d.rst:134
+msgid ""
+"Casts light in a 2D environment. Light is defined by a (usually "
+"grayscale) texture, a color, an energy value, a mode (see constants), and"
+" various other parameters (range and shadows-related). Note that Light2D "
+"can be used as a mask."
+msgstr ""
+

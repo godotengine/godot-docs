@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_projectsettings.rst:8
+msgid "ProjectSettings"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:17
+msgid "Contains global variables accessible from everywhere."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:23
+#: ../../classes/class_projectsettings.rst:25
+#: ../../classes/class_projectsettings.rst:47
+#: ../../classes/class_projectsettings.rst:49
+#: ../../classes/class_projectsettings.rst:51
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:23
+msgid ""
+":ref:`add_property_info<class_ProjectSettings_add_property_info>` **(** "
+":ref:`Dictionary<class_dictionary>` hint **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:25
+msgid ""
+":ref:`clear<class_ProjectSettings_clear>` **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:27
+#: ../../classes/class_projectsettings.rst:43
+#: ../../classes/class_projectsettings.rst:45
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:27
+msgid ""
+":ref:`get_order<class_ProjectSettings_get_order>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:29
+#: ../../classes/class_projectsettings.rst:41
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:29
+msgid ""
+":ref:`get_setting<class_ProjectSettings_get_setting>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:31
+#: ../../classes/class_projectsettings.rst:37
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:31
+msgid ""
+":ref:`globalize_path<class_ProjectSettings_globalize_path>` **(** "
+":ref:`String<class_string>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:33
+#: ../../classes/class_projectsettings.rst:35
+#: ../../classes/class_projectsettings.rst:39
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:33
+msgid ""
+":ref:`has_setting<class_ProjectSettings_has_setting>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:35
+msgid ""
+":ref:`load_resource_pack<class_ProjectSettings_load_resource_pack>` **(**"
+" :ref:`String<class_string>` pack **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:37
+msgid ""
+":ref:`localize_path<class_ProjectSettings_localize_path>` **(** "
+":ref:`String<class_string>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:39
+msgid ""
+":ref:`property_can_revert<class_ProjectSettings_property_can_revert>` "
+"**(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:41
+msgid ""
+":ref:`property_get_revert<class_ProjectSettings_property_get_revert>` "
+"**(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:43
+msgid ":ref:`save<class_ProjectSettings_save>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:45
+msgid ""
+":ref:`save_custom<class_ProjectSettings_save_custom>` **(** "
+":ref:`String<class_string>` file **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:47
+msgid ""
+":ref:`set_initial_value<class_ProjectSettings_set_initial_value>` **(** "
+":ref:`String<class_string>` name, :ref:`Variant<class_variant>` value "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:49
+msgid ""
+":ref:`set_order<class_ProjectSettings_set_order>` **(** "
+":ref:`String<class_string>` name, :ref:`int<class_int>` position **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:51
+msgid ""
+":ref:`set_setting<class_ProjectSettings_set_setting>` **(** "
+":ref:`String<class_string>` name, :ref:`Variant<class_variant>` value "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:55
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:57
+msgid ""
+"Contains global variables accessible from everywhere. Use "
+"\"ProjectSettings.get_setting(variable)\", "
+"\"ProjectSettings.set_setting(variable,value)\" or "
+"\"ProjectSettings.has_setting(variable)\" to access them. Variables "
+"stored in project.godot are also loaded into ProjectSettings, making this"
+" object very useful for reading custom game configuration options."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:60
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:64
+msgid ""
+"void **add_property_info** **(** :ref:`Dictionary<class_dictionary>` hint"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:66
+msgid ""
+"Add a custom property info to a property. The dictionary must contain: "
+"name::ref:`String<class_string>`(the name of the property) and "
+"type::ref:`int<class_int>`(see TYPE\\_\\* in "
+":ref:`@GlobalScope<class_@globalscope>`), and optionally "
+"hint::ref:`int<class_int>`(see PROPERTY_HINT\\_\\* in "
+":ref:`@GlobalScope<class_@globalscope>`), "
+"hint_string::ref:`String<class_string>`."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:68
+msgid "Example:"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:85
+msgid "void **clear** **(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:87
+msgid "Clear the whole configuration (not recommended, may break things)."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:91
+msgid ""
+":ref:`int<class_int>` **get_order** **(** :ref:`String<class_string>` "
+"name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:93
+msgid ""
+"Return the order of a configuration value (influences when saved to the "
+"config file)."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:97
+msgid ""
+":ref:`Variant<class_variant>` **get_setting** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:101
+msgid ""
+":ref:`String<class_string>` **globalize_path** **(** "
+":ref:`String<class_string>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:103
+msgid "Convert a localized path (res://) to a full native OS path."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:107
+msgid ""
+":ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_string>`"
+" name **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:109
+msgid "Return true if a configuration value is present."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:113
+msgid ""
+":ref:`bool<class_bool>` **load_resource_pack** **(** "
+":ref:`String<class_string>` pack **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:117
+msgid ""
+":ref:`String<class_string>` **localize_path** **(** "
+":ref:`String<class_string>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:119
+msgid "Convert a path to a localized path (res:// path)."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:123
+msgid ""
+":ref:`bool<class_bool>` **property_can_revert** **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:127
+msgid ""
+":ref:`Variant<class_variant>` **property_get_revert** **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:131
+msgid ":ref:`int<class_int>` **save** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:135
+msgid ""
+":ref:`int<class_int>` **save_custom** **(** :ref:`String<class_string>` "
+"file **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:139
+msgid ""
+"void **set_initial_value** **(** :ref:`String<class_string>` name, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:143
+msgid ""
+"void **set_order** **(** :ref:`String<class_string>` name, "
+":ref:`int<class_int>` position **)**"
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:145
+msgid ""
+"Set the order of a configuration value (influences when saved to the "
+"config file)."
+msgstr ""
+
+#: ../../classes/class_projectsettings.rst:149
+msgid ""
+"void **set_setting** **(** :ref:`String<class_string>` name, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+

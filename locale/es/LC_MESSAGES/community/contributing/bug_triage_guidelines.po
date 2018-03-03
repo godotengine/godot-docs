@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../community/contributing/bug_triage_guidelines.rst:4
+msgid "Bug triage guidelines"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:6
+msgid ""
+"This page describes the typical workflow of the bug triage team aka "
+"bugsquad when handling issues and pull requests on Godot's `GitHub "
+"<https://github.com/godotengine/godot>`_ repository. It is bound to "
+"evolve together with the bugsquad, so do not hesitate to propose "
+"modifications to the following guidelines."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:12
+msgid "Issues management"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:14
+msgid "GitHub proposes various features to manage issues:"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:16
+msgid "Set one or several labels from a predefined list"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:17
+msgid "Set one milestone from a predefined list"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:18
+msgid "Keep track of the issue in the project dashboard"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:19
+msgid ""
+"Define one contributor as \"assignee\" among the Godot engine "
+"organization members"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:22
+msgid ""
+"As the Godot engine organization on GitHub currently has a restricted "
+"number of contributors, we do not use assignees extensively for now. All "
+"contributors are welcome to take on any issue, if relevant after "
+"mentioning it on the issue ticket and/or discussing the best way to "
+"resolve it with other developers."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:28
+msgid "For the time being we do not use the project dashboard feature either."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:30
+msgid ""
+"As far as possible, we try to assign labels (and milestones, when "
+"relevant) to both issues and pull requests."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:34
+msgid "Labels"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:36
+msgid "The following labels are currently defined in the Godot repository:"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:38
+msgid "**Categories:**"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:40
+msgid ""
+"*Archived*: either a duplicate of another issue, or invalid. Such an "
+"issue would also be closed."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:42
+msgid "*Bug*: describes something that is not working properly."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:43
+msgid ""
+"*Confirmed*: has been confirmed by at least one other contributor than "
+"the bug reporter (typically for *Bug* reports). The purpose of this label"
+" is to let developers know which issues are still reproducible when they "
+"want to select what to work on. It is therefore a good practice to add in"
+" a comment on what platform and what version or commit of Godot the issue"
+" could be reproduced; if a developer looks at the issue one year later, "
+"the *Confirmed* label may not be relevant anymore."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:51
+msgid ""
+"*Discussion*: the issue is not consensual and needs further discussion to"
+" define what exactly should be done to address the topic."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:54
+msgid ""
+"*Documentation*: issue related to the documentation. Mainly to request "
+"enhancements in the API documentation. Issues related to the ReadTheDocs "
+"documentation should be filed on the `godot-docs "
+"<https://github.com/godotengine/godot-docs>`_ repository."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:58
+msgid ""
+"*Enhancement*: describes a proposed enhancement to an existing "
+"functionality."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:60
+msgid "*Feature proposal*: describes a wish for a new feature to be implemented."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:62
+msgid ""
+"*Junior job*: the issue is *assumed* to be an easy one to fix, which "
+"makes it a great fit for junior contributors who need to become familiar "
+"with the code base."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:65
+msgid "*Needs rebase*: the issue need a git rebase to be merged."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:66
+msgid ""
+"*Needs testing*: the issue/pull request could not be completely tested "
+"and thus need further testing. This can mean that it needs to be tested "
+"on different hardware/software configurations or even that the steps to "
+"reproduce are not certain."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:70
+msgid ""
+"*PR welcome / hero wanted!*: Contributions for issues with these labels "
+"are especially welcome. Note that this **doesn't** mean you can't work on"
+" issues without these labels."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:73
+msgid ""
+"*Tracker*: issue used to track other issues (like all issues related to "
+"the plugin system)."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:75
+msgid "*Usability*: issues that directly impact user usability."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:77
+msgid ""
+"The categories are used for general triage of the issues. They can be "
+"combined in some way when relevant, e.g. an issue can be labelled "
+"*Enhancement* and *Usability* at the same time if it's an issue to "
+"improve usability. Or *Feature proposal* and *Discussion* if it's a non-"
+"consensual feature request, or one that is not precise enough to be "
+"worked on."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:83
+msgid "**Topics:**"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:85
+msgid "*Assetlib*: relates to issues with the asset library."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:86
+msgid "*Audio*: relates to the audio features (low and high level)."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:87
+msgid ""
+"*Buildsystem*: relates to building issues, either linked to the SCons "
+"buildsystem or to compiler peculiarities."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:89
+msgid ""
+"*Core*: anything related to the core engine. It might be further split "
+"later on as it's a pretty big topic."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:91
+msgid "*Drivers*: relates to issues with the drivers used by the engine."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:92
+msgid "*Editor*: relates to issues in the editor (mainly UI)."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:93
+msgid "*GDNative*: relates to the GDNative module."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:94
+msgid "*GDScript*: relates to GDScript."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:95
+msgid "*Mono*: relates to the C# / Mono bindings."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:96
+msgid "*Network*: relates to networking."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:97
+msgid "*Physics*: relates to the physics engine (2D/3D)."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:98
+msgid "*Plugin*: relates to problems encountered while writing plugins."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:99
+msgid "*Porting*: relates to some specific platforms."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:100
+msgid "*Rendering*: relates to the 2D and 3D rendering engines."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:101
+msgid "*VisualScript*: relates to issues with the visual scripting language."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:103
+msgid ""
+"Issues would typically correspond to only one topic, though it's not "
+"unthinkable to see issues that fit two bills. The general idea is that "
+"there will be specialized contributors teams behind all topics, so they "
+"can focus on the issues labelled with their team's topic."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:108
+msgid "**Platforms:**"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:110
+msgid "*Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *UWP*"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:112
+msgid ""
+"By default, it is assumed that a given issue applies to all platforms. If"
+" one of the platform labels is used, it is then exclusive and the "
+"previous assumption doesn't stand anymore (so if it's a bug on e.g. "
+"Android and Linux exclusively, select those two platforms)."
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:118
+msgid "Milestones"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:120
+msgid ""
+"`Milestones <https://github.com/godotengine/godot/milestones>`_ "
+"correspond to planned future versions of Godot for which there is an "
+"existing roadmap. Issues that fit in the said roadmap should be filed "
+"under the corresponding milestone; if they don't correspond to any "
+"current roadmap, they should be left without milestone. As a rule of "
+"thumb, an issue corresponds to a given milestone if it concerns a feature"
+" that is new in the milestone, or a critical bug that can't be accepted "
+"in any future stable release, or anything that Juan wants to work on "
+"right now :)"
+msgstr ""
+
+#: ../../community/contributing/bug_triage_guidelines.rst:129
+msgid ""
+"Contributors are free to pick issues regardless of their assigned "
+"milestone; if a fix is proposed for a bug that was not deemed urgent and "
+"thus without milestone, it would likely still be very welcome."
+msgstr ""
+

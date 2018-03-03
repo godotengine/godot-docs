@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_shader.rst:8
+msgid "Shader"
+msgstr ""
+
+#: ../../classes/class_shader.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_shader.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_shader.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_shader.rst:17 ../../classes/class_shader.rst:55
+msgid "To be changed, ignore."
+msgstr ""
+
+#: ../../classes/class_shader.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_shader.rst:23
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_shader.rst:23
+msgid ""
+":ref:`get_default_texture_param<class_Shader_get_default_texture_param>` "
+"**(** :ref:`String<class_string>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:25
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_shader.rst:25
+msgid ":ref:`get_mode<class_Shader_get_mode>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:27
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_shader.rst:27
+msgid ""
+":ref:`has_param<class_Shader_has_param>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:29
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_shader.rst:29
+msgid ""
+":ref:`set_default_texture_param<class_Shader_set_default_texture_param>` "
+"**(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` "
+"texture **)**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:33
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_shader.rst:37
+msgid ":ref:`String<class_string>` **code**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:41
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_shader.rst:45
+msgid "enum **Mode**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:47
+msgid "**MODE_SPATIAL** = **0**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:48
+msgid "**MODE_CANVAS_ITEM** = **1**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:49
+msgid "**MODE_PARTICLES** = **2**"
+msgstr ""
+
+#: ../../classes/class_shader.rst:53
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_shader.rst:58
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_shader.rst:62
+msgid ""
+":ref:`Texture<class_texture>` **get_default_texture_param** **(** "
+":ref:`String<class_string>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:66
+msgid ":ref:`int<class_int>` **get_mode** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:70
+msgid ""
+":ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_string>` "
+"name **)** const"
+msgstr ""
+
+#: ../../classes/class_shader.rst:74
+msgid ""
+"void **set_default_texture_param** **(** :ref:`String<class_string>` "
+"param, :ref:`Texture<class_texture>` texture **)**"
+msgstr ""
+

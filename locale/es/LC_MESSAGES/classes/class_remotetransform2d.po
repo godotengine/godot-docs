@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_remotetransform2d.rst:8
+msgid "RemoteTransform2D"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:17
+msgid ""
+"RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of "
+"another :ref:`CanvasItem<class_canvasitem>` derived Node in the scene."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:24
+msgid ""
+":ref:`NodePath<class_nodepath>` **remote_path** - The "
+":ref:`NodePath<class_nodepath>` to the remote node, relative to the "
+"RemoteTransform2D's position in the scene."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:28
+msgid ""
+":ref:`bool<class_bool>` **update_position** - If ``true`` the remote "
+"node's position is tracked. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:32
+msgid ""
+":ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote "
+"node's rotation is tracked. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:36
+msgid ""
+":ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's "
+"scale is tracked. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:40
+msgid ""
+":ref:`bool<class_bool>` **use_global_coordinates** - If ``true`` global "
+"coordinates are used. If ``false`` local coordinates are used. Default "
+"value: ``true``."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:44
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:46
+msgid ""
+"RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of "
+"another :ref:`CanvasItem<class_canvasitem>` derived Node (called the "
+"remote node) in the scene."
+msgstr ""
+
+#: ../../classes/class_remotetransform2d.rst:48
+msgid ""
+"It can be set to track another Node's position, rotation and/or scale. It"
+" can update using either global or local coordinates."
+msgstr ""
+

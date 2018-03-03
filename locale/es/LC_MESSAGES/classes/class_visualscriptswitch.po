@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_visualscriptswitch.rst:8
+msgid "VisualScriptSwitch"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:17
+msgid "Branches program flow based on a given input's value."
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:20
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:22
+msgid ""
+"Branches the flow based on an input's value. Use \"Case Count\" in the "
+"Inspector to set the number of branches and each comparison's optional "
+"type."
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:24
+msgid "**Input Ports:**"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:26
+msgid "Sequence: ``'input' is``"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:28
+msgid "Data (variant): ``=``"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:30
+msgid "Data (variant): ``=`` (optional)"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:32
+msgid "Data (variant): ``input``"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:34
+msgid "**Output Ports:**"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:36
+msgid "Sequence"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:38
+msgid "Sequence (optional)"
+msgstr ""
+
+#: ../../classes/class_visualscriptswitch.rst:40
+msgid "Sequence: ``done``"
+msgstr ""
+

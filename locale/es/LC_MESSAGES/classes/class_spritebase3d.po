@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_spritebase3d.rst:8
+msgid "SpriteBase3D"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:10
+msgid ""
+"**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** "
+":ref:`VisualInstance<class_visualinstance>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:12
+msgid ""
+"**Inherited By:** :ref:`AnimatedSprite3D<class_animatedsprite3d>`, "
+":ref:`Sprite3D<class_sprite3d>`"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:19
+msgid "2D Sprite node in 3D environment."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:25
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:25
+msgid ":ref:`get_item_rect<class_SpriteBase3D_get_item_rect>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:29
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:33
+msgid ":ref:`AlphaCutMode<enum_spritebase3d_alphacutmode>` **alpha_cut**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:37
+msgid ""
+":ref:`Axis<enum_vector3_axis>` **axis** - The direction in which the "
+"front of the texture faces."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:41
+msgid ""
+":ref:`bool<class_bool>` **centered** - If ``true`` texture will be "
+"centered. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:45
+msgid ""
+":ref:`bool<class_bool>` **double_sided** - If ``true`` texture can be "
+"seen from the back as well, if ``false``, it is invisible when looking at"
+" it from behind. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:49
+msgid ""
+":ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped "
+"horizontally. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:53
+msgid ""
+":ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped "
+"vertically. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:57
+msgid ""
+":ref:`Color<class_color>` **modulate** - A color value that gets "
+"multiplied on, could be used for mood-coloring or to simulate the color "
+"of light."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:61
+msgid ":ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:65
+msgid ""
+":ref:`float<class_float>` **opacity** - The objects visibility on a scale"
+" from ``0`` fully invisible to ``1`` fully visible."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:69
+msgid ""
+":ref:`float<class_float>` **pixel_size** - The size of one pixel's width "
+"on the Sprite to scale it in 3D."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:73
+msgid ""
+":ref:`bool<class_bool>` **shaded** - If ``true`` the "
+":ref:`Light<class_light>` in the :ref:`Environment<class_environment>` "
+"has effects on the Sprite. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:77
+msgid ""
+":ref:`bool<class_bool>` **transparent** - If ``true`` the texture's "
+"transparency and the opacity are used to make those parts of the Sprite "
+"invisible. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:81
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:85
+msgid "enum **AlphaCutMode**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:87
+msgid "**ALPHA_CUT_DISABLED** = **0**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:88
+msgid "**ALPHA_CUT_DISCARD** = **1**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:89
+msgid "**ALPHA_CUT_OPAQUE_PREPASS** = **2**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:93
+msgid "enum **DrawFlags**"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:95
+msgid ""
+"**FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and "
+"the opacity are used to make those parts of the Sprite invisible."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:96
+msgid ""
+"**FLAG_SHADED** = **1** --- If set, the Light in the Environment has "
+"effects on the Sprite."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:97
+msgid ""
+"**FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the "
+"back as well, if not, it is invisible when looking at it from behind."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:98
+msgid ""
+"**FLAG_MAX** = **3** --- Used internally to mark the end of the Flags "
+"section."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:102
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:104
+msgid "A node that displays 2D texture information in a 3D environment."
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:107
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_spritebase3d.rst:111
+msgid ":ref:`Rect2<class_rect2>` **get_item_rect** **(** **)** const"
+msgstr ""
+

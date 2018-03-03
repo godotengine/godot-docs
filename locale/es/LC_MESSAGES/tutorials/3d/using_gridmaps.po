@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/3d/using_gridmaps.rst:4
+msgid "Using gridmaps"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:9
+msgid ""
+":ref:`Gridmaps <class_GridMap>` are a simple and fast way to create 3D "
+"game levels. Think of it as a 3D version of the "
+":ref:`TileMap<doc_using_tilemaps>` node. Similarly, you start with a "
+"predefined library of 3D meshes that can be put on a grid, just like if "
+"you were building a level with an unlimited amount of Lego blocks."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:15
+msgid ""
+"Collisions can also be added to the meshes, just like you would do with "
+"the tiles of a tilemap."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:19
+msgid "Creating a MeshLibrary"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:21
+msgid ""
+"To begin, you need a :ref:`class_MeshLibrary`, which is a collection of "
+"meshes that can be used in the gridmap. Here are some meshes you can use "
+"to set it up."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:27
+msgid ""
+"Open a new scene and create a root node (this is important, as without "
+"the root node, it will not be able to generate the MeshLibrary!). Then, "
+"create a :ref:`class_MeshInstance` node:"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:33
+msgid ""
+"If you don't need to apply physics to the building blocks, that's all you"
+" need to do. In most cases though, you will need your block to generate "
+"collisions, so let's see how to add them."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:38
+msgid "Collisions"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:40
+msgid ""
+"To assign a :ref:`class_CollisionShape` and :ref:`class_PhysicsBody` to "
+"the meshes, the simplest way is to do it while creating the MeshLibrary. "
+"Alternatively, you can also edit an existing MeshLibrary from within the "
+"GridMap inspector, but only CollisionShapes can be defined there and not "
+"PhysicsBody."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:46
+msgid ""
+"To give the meshes a CollisionShape, you simply add children nodes to the"
+" MeshInstance node. You would typically add the desired PhysicsBody and "
+"CollisionShape in this order:"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:52
+msgid "You can adjust the order according to your needs."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:55
+msgid "Exporting the MeshLibrary"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:57
+msgid ""
+"To export, go to ``Scene > Convert To.. > MeshLibrary..``, and save it as"
+" a resource."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:62
+msgid "You are now ready to use the GridMap node."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:65
+msgid "Using the MeshLibrary in a GridMap"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:67
+msgid ""
+"Create a new scene using any node as root, then add a Gridmap node. Then,"
+" load the MeshLibrary that you just exported."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:72
+msgid ""
+"Now, you can build your own level as you see best fit. Use left click to "
+"add tiles and right click to remove them. You can adjust the floor level "
+"when you need to put meshes at specific heights."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:78
+msgid ""
+"As mentioned above, you can also define new CollisionShapes at this stage"
+" by doing the following steps:"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:83
+msgid "There you are!"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:86
+msgid "Reminder"
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:88
+msgid "Be cautious before scaling meshes if you are not using uniform meshes."
+msgstr ""
+
+#: ../../tutorials/3d/using_gridmaps.rst:90
+msgid "There are many ways to make use of gridmaps, be creative!"
+msgstr ""
+

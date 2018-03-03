@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:4
+msgid "GDScript format strings"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:6
+msgid ""
+"GDScript offers a feature called *format strings* which allows reusing "
+"text templates to succinctly create different but similar strings."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:9
+msgid ""
+"Format strings are just like normal strings, except they contain certain "
+"placeholder character-sequences. These placeholders can then easily be "
+"replaced by parameters handed to the format string."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:13
+#, python-format
+msgid ""
+"As an example, with ``%s`` as a placeholder, the format string ``\"Hello "
+"%s, how are you?`` can easily be changed to ``\"Hello World, how are "
+"you?\"``. Notice the placeholder is in the middle of the string; "
+"modifying it without format strings could be cumbersome."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:20
+msgid "Usage in GDScript"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:22
+msgid "Examine this concrete GDScript example::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:33
+msgid ""
+"Placeholders always start with a ``%``, but the next character or "
+"characters, the *format specifier*, determines how the given value is "
+"converted to a string."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:37
+#, python-format
+msgid ""
+"The ``%s`` seen in the example above is the simplest placeholder and "
+"works for most use cases: it converts the value by the same method by "
+"which an implicit String conversion or ``str()`` would convert it. "
+"Strings remain unchanged, Booleans turn into either ``\"True\"`` or "
+"``\"False\"``, an integral or real number becomes a decimal, other types "
+"usually return their data in a human-readable string."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:44
+msgid "There are other `format specifiers`_."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:48
+msgid "Multiple placeholders"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:50
+msgid ""
+"Format strings may contain multiple placeholders. In such a case, the "
+"values are handed in the form of an array, one value per placeholder "
+"(unless using a format specifier with ``*``, see `dynamic padding`_)::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:60
+msgid ""
+"Note the values are inserted in order. Remember all placeholders must be "
+"replaced at once, so there must be an appropriate number of values."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:65
+msgid "Format specifiers"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:67
+msgid ""
+"There are format specifiers other than ``s`` that can be used in "
+"placeholders. They consist of one or more characters. Some of them work "
+"by themselves like ``s``, some appear before other characters, some only "
+"work with certain values or characters."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:74
+msgid "Placeholder types"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:76
+msgid ""
+"One and only one of these must always appear as the last character in a "
+"format specifier. Apart from ``s``, these require certain types of "
+"parameters."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:80
+msgid "``s``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:80
+msgid ""
+"**Simple** conversion to String by the same method as implicit String "
+"conversion."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:83
+msgid "``c``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:83
+msgid ""
+"A single **Unicode character**. Expects an unsigned 8-bit integer (0-255)"
+" for a code point or a single-character string."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:86
+msgid "``d``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:86
+msgid ""
+"A **decimal integral** number. Expects an integral or real number (will "
+"be floored)."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:89
+msgid "``o``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:89
+msgid ""
+"An **octal integral** number. Expects an integral or real number (will be"
+" floored)."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:92
+msgid "``x``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:92
+msgid ""
+"A **hexadecimal integral** number with **lower-case** letters. Expects an"
+" integral or real number (will be floored)."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:95
+msgid "``X``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:95
+msgid ""
+"A **hexadecimal integral** number with **upper-case** letters. Expects an"
+" integral or real number (will be floored)."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:98
+msgid "``f``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:98
+msgid "A **decimal real** number. Expects an integral or real number."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:103
+msgid "Placeholder modifiers"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:105
+msgid ""
+"These characters appear before the above. Some of them work only under "
+"certain conditions."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:109
+msgid "``+``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:109
+msgid "In number specifiers, **show + sign** if positive."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:111
+msgid "Integer"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:111
+msgid ""
+"Set **padding**. Padded with spaces or with zeroes if integer starts with"
+" ``0`` in an integer placeholder. When used after ``.``, see ``.``."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:115
+msgid "``.``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:115
+msgid ""
+"Before ``f``, set **precision** to 0 decimal places. Can be followed up "
+"with numbers to change. Padded with zeroes."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:118
+msgid "``-``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:118
+msgid "**Pad to the right** rather than the left."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:120
+msgid "``*``"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:120
+msgid ""
+"**Dynamic padding**, expect additional integral parameter to set padding "
+"or precision after ``.``, see `dynamic padding`_."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:126
+msgid "Padding"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:128
+msgid ""
+"The ``.`` (*dot*), ``*`` (*asterisk*), ``-`` (*minus sign*) and digit "
+"(``0``-``9``) characters are used for padding. This allows printing "
+"several values aligned vertically as if in a column, provided a fixed-"
+"width font is used."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:133
+msgid "To pad a string to a minimum length, add an integer to the specifier::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:139
+msgid ""
+"If the integer starts with ``0``, integral values are padded with zeroes "
+"instead of white space::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:145
+msgid ""
+"Precision can be specified for real numbers by adding a ``.`` (*dot*) "
+"with an integer following it. With no integer after ``.``, a precision of"
+" 0 is used, rounding to integral value. The integer to use for padding "
+"must appear before the dot."
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:157
+msgid ""
+"The ``-`` character will cause padding to the right rather than the left,"
+" useful for right text alignment::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:166
+msgid "Dynamic padding"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:168
+msgid ""
+"By using the ``*`` (*asterisk*) character, the padding or precision can "
+"be set without modifying the format string. It is used in place of an "
+"integer in the format specifier. The values for padding and precision are"
+" then passed when formatting::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:179
+msgid ""
+"It is still possible to pad with zeroes in integer placeholders by adding"
+" ``0`` before ``*``::"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:187
+msgid "Escape sequence"
+msgstr ""
+
+#: ../../getting_started/scripting/gdscript/gdscript_format_string.rst:189
+msgid ""
+"To insert a literal ``%`` character into a format string, it must be "
+"escaped to avoid reading it as a placeholder. This is done by doubling "
+"the character::"
+msgstr ""
+

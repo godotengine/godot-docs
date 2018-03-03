@@ -1,0 +1,587 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_tilemap.rst:8
+msgid "TileMap"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:17
+msgid "Node for 2D tile-based maps."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:23 ../../classes/class_tilemap.rst:47
+#: ../../classes/class_tilemap.rst:49 ../../classes/class_tilemap.rst:51
+#: ../../classes/class_tilemap.rst:53 ../../classes/class_tilemap.rst:55
+#: ../../classes/class_tilemap.rst:57
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:23
+msgid ":ref:`clear<class_TileMap_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:25 ../../classes/class_tilemap.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:25
+msgid ""
+":ref:`get_cell<class_TileMap_get_cell>` **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:27
+msgid ""
+":ref:`get_cellv<class_TileMap_get_cellv>` **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:29 ../../classes/class_tilemap.rst:31
+#: ../../classes/class_tilemap.rst:39 ../../classes/class_tilemap.rst:41
+#: ../../classes/class_tilemap.rst:43
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:29
+msgid ""
+":ref:`get_collision_layer_bit<class_TileMap_get_collision_layer_bit>` "
+"**(** :ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:31
+msgid ""
+":ref:`get_collision_mask_bit<class_TileMap_get_collision_mask_bit>` **(**"
+" :ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:33 ../../classes/class_tilemap.rst:35
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:33
+msgid ":ref:`get_used_cells<class_TileMap_get_used_cells>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:35
+msgid ""
+":ref:`get_used_cells_by_id<class_TileMap_get_used_cells_by_id>` **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:37
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:37
+msgid ":ref:`get_used_rect<class_TileMap_get_used_rect>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:39
+msgid ""
+":ref:`is_cell_transposed<class_TileMap_is_cell_transposed>` **(** "
+":ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:41
+msgid ""
+":ref:`is_cell_x_flipped<class_TileMap_is_cell_x_flipped>` **(** "
+":ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:43
+msgid ""
+":ref:`is_cell_y_flipped<class_TileMap_is_cell_y_flipped>` **(** "
+":ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:45 ../../classes/class_tilemap.rst:59
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:45
+msgid ""
+":ref:`map_to_world<class_TileMap_map_to_world>` **(** "
+":ref:`Vector2<class_vector2>` map_position, :ref:`bool<class_bool>` "
+"ignore_half_ofs=false **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:47
+msgid ""
+":ref:`set_cell<class_TileMap_set_cell>` **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y, :ref:`int<class_int>` tile, "
+":ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` "
+"flip_y=false, :ref:`bool<class_bool>` transpose=false, "
+":ref:`Vector2<class_vector2>` autotile_coord=Vector2( 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:49
+msgid ""
+":ref:`set_cellv<class_TileMap_set_cellv>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`int<class_int>` tile, "
+":ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` "
+"flip_y=false, :ref:`bool<class_bool>` transpose=false **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:51
+msgid ""
+":ref:`set_collision_layer_bit<class_TileMap_set_collision_layer_bit>` "
+"**(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:53
+msgid ""
+":ref:`set_collision_mask_bit<class_TileMap_set_collision_mask_bit>` **(**"
+" :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:55
+msgid ""
+":ref:`update_bitmask_area<class_TileMap_update_bitmask_area>` **(** "
+":ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:57
+msgid ""
+":ref:`update_bitmask_region<class_TileMap_update_bitmask_region>` **(** "
+":ref:`Vector2<class_vector2>` start=Vector2( 0, 0 ), "
+":ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:59
+msgid ""
+":ref:`world_to_map<class_TileMap_world_to_map>` **(** "
+":ref:`Vector2<class_vector2>` world_position **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:63
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:67
+msgid "**settings_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:69
+msgid "Emitted when a tilemap setting has changed."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:73
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:77
+msgid ":ref:`bool<class_bool>` **cell_clip_uv**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:81
+msgid ""
+":ref:`Transform2D<class_transform2d>` **cell_custom_transform** - The "
+"custom :ref:`Transform2D<class_transform2d>` to be applied to the "
+"TileMap's cells."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:85
+msgid ""
+":ref:`HalfOffset<enum_tilemap_halfoffset>` **cell_half_offset** - Amount "
+"to offset alternating tiles. Uses HALF_OFFSET\\_\\* constants. Default "
+"value: HALF_OFFSET_DISABLED."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:89
+msgid ""
+":ref:`int<class_int>` **cell_quadrant_size** - The TileMap's quadrant "
+"size.  Optimizes drawing by batching, using chunks of this size. Default "
+"value: 16."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:93
+msgid ":ref:`Vector2<class_vector2>` **cell_size** - The TileMap's cell size."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:97
+msgid ""
+":ref:`TileOrigin<enum_tilemap_tileorigin>` **cell_tile_origin** - "
+"Position for tile origin. Uses TILE_ORIGIN\\_\\* constants. Default "
+"value: TILE_ORIGIN_TOP_LEFT."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:101
+msgid ""
+":ref:`bool<class_bool>` **cell_y_sort** - If ``true`` the TileMap's "
+"children will be drawn in order of their Y coordinate. Default value: "
+"``false``."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:105
+msgid ""
+":ref:`float<class_float>` **collision_bounce** - Bounce value for static "
+"body collisions (see ``collision_use_kinematic``). Default value: 0."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:109
+msgid ""
+":ref:`float<class_float>` **collision_friction** - Friction value for "
+"static body collisions (see ``collision_use_kinematic``). Default value: "
+"1."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:113
+msgid ""
+":ref:`int<class_int>` **collision_layer** - The collision layer(s) for "
+"all colliders in the TileMap."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:117
+msgid ""
+":ref:`int<class_int>` **collision_mask** - The collision mask(s) for all "
+"colliders in the TileMap."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:121
+msgid ""
+":ref:`bool<class_bool>` **collision_use_kinematic** - If ``true`` TileMap"
+" collisions will be handled as a kinematic body. If ``false`` collisions "
+"will be handled as static body. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:125
+msgid ""
+":ref:`Mode<enum_tilemap_mode>` **mode** - The TileMap orientation mode. "
+"Uses MODE\\_\\* constants. Default value: MODE_SQUARE."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:129
+msgid ""
+":ref:`int<class_int>` **occluder_light_mask** - The light mask assigned "
+"to all light occluders in the TileMap.  The TileSet's light occluders "
+"will cast shadows only from Light2D(s) that have the same light mask(s)."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:133
+msgid ""
+":ref:`TileSet<class_tileset>` **tile_set** - The assigned "
+":ref:`TileSet<class_tileset>`."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:137
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:139
+msgid "**INVALID_CELL** = **-1** --- Returned when a cell doesn't exist."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:142
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:146
+msgid "enum **HalfOffset**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:148
+msgid "**HALF_OFFSET_X** = **0** --- Half offset on the X coordinate."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:149
+msgid "**HALF_OFFSET_Y** = **1** --- Half offset on the Y coordinate."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:150
+msgid "**HALF_OFFSET_DISABLED** = **2** --- Half offset disabled."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:154
+msgid "enum **TileOrigin**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:156
+msgid "**TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:157
+msgid "**TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:158
+msgid "**TILE_ORIGIN_BOTTOM_LEFT** = **2**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:162
+msgid "enum **Mode**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:164
+msgid "**MODE_SQUARE** = **0** --- Orthogonal orientation mode."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:165
+msgid "**MODE_ISOMETRIC** = **1** --- Isometric orientation mode."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:166
+msgid "**MODE_CUSTOM** = **2** --- Custom orientation mode."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:170
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:172
+msgid ""
+"Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_tileset>`"
+" which contain a list of tiles (textures plus optional collision, "
+"navigation, and/or occluder shapes) which are used to create grid-based "
+"maps."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:175
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:179
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:181
+msgid "Clear all cells."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:185
+msgid ""
+":ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, "
+":ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:187
+msgid "Return the tile index of the referenced cell."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:191
+msgid ""
+":ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_vector2>` "
+"position **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:193
+msgid "Return the tile index of the cell referenced by a Vector2."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:197
+msgid ""
+":ref:`bool<class_bool>` **get_collision_layer_bit** **(** "
+":ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:201
+msgid ""
+":ref:`bool<class_bool>` **get_collision_mask_bit** **(** "
+":ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:205
+msgid ":ref:`Array<class_array>` **get_used_cells** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:207
+msgid ""
+"Return an array of all cells containing a tile from the tileset (i.e. a "
+"tile index different from -1)."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:211
+msgid ""
+":ref:`Array<class_array>` **get_used_cells_by_id** **(** "
+":ref:`int<class_int>` id **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:215
+msgid ":ref:`Rect2<class_rect2>` **get_used_rect** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:219
+msgid ""
+":ref:`bool<class_bool>` **is_cell_transposed** **(** "
+":ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:221
+msgid ""
+"Return whether the referenced cell is transposed, i.e. the X and Y axes "
+"are swapped (mirroring with regard to the (1,1) vector)."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:225
+msgid ""
+":ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>`"
+" x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:227
+msgid "Return whether the referenced cell is flipped over the X axis."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:231
+msgid ""
+":ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>`"
+" x, :ref:`int<class_int>` y **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:233
+msgid "Return whether the referenced cell is flipped over the Y axis."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:237
+msgid ""
+":ref:`Vector2<class_vector2>` **map_to_world** **(** "
+":ref:`Vector2<class_vector2>` map_position, :ref:`bool<class_bool>` "
+"ignore_half_ofs=false **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:239
+msgid ""
+"Return the absolute world position corresponding to the tilemap (grid-"
+"based) coordinates given as an argument."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:241
+msgid "Optionally, the tilemap's potential half offset can be ignored."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:245
+msgid ""
+"void **set_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y,"
+" :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, "
+":ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` "
+"transpose=false, :ref:`Vector2<class_vector2>` autotile_coord=Vector2( 0,"
+" 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:247
+msgid ""
+"Set the tile index for the cell referenced by its grid-based X and Y "
+"coordinates."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:249 ../../classes/class_tilemap.rst:259
+msgid "A tile index of -1 clears the cell."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:251
+msgid ""
+"Optionally, the tile can also be flipped over the X and Y coordinates, "
+"transposed, or be given autotile coordinates."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:255
+msgid ""
+"void **set_cellv** **(** :ref:`Vector2<class_vector2>` position, "
+":ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, "
+":ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` "
+"transpose=false **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:257
+msgid ""
+"Set the tile index for the cell referenced by a Vector2 of grid-based "
+"coordinates."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:261
+msgid ""
+"Optionally, the tile can also be flipped over the X and Y axes or "
+"transposed."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:265
+msgid ""
+"void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, "
+":ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:269
+msgid ""
+"void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, "
+":ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:273
+msgid ""
+"void **update_bitmask_area** **(** :ref:`Vector2<class_vector2>` position"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:275
+msgid ""
+"Applies autotiling rules to the cell (and its adjacent cells) referenced "
+"by its grid-based X and Y coordinates."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:279
+msgid ""
+"void **update_bitmask_region** **(** :ref:`Vector2<class_vector2>` "
+"start=Vector2( 0, 0 ), :ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:281
+msgid ""
+"Applies autotiling rules to the cells in the given region (specified by "
+"grid-based X and Y coordinates)."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:283
+msgid ""
+"Calling with invalid (or missing) parameters applies autotiling rules for"
+" the entire TileMap."
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:287
+msgid ""
+":ref:`Vector2<class_vector2>` **world_to_map** **(** "
+":ref:`Vector2<class_vector2>` world_position **)** const"
+msgstr ""
+
+#: ../../classes/class_tilemap.rst:289
+msgid ""
+"Return the tilemap (grid-based) coordinates corresponding to the absolute"
+" world position given as an argument."
+msgstr ""
+

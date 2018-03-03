@@ -1,0 +1,455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_directory.rst:8
+msgid "Directory"
+msgstr ""
+
+#: ../../classes/class_directory.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_directory.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_directory.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_directory.rst:17
+msgid "Type used to handle the filesystem."
+msgstr ""
+
+#: ../../classes/class_directory.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_directory.rst:23 ../../classes/class_directory.rst:25
+#: ../../classes/class_directory.rst:35 ../../classes/class_directory.rst:39
+#: ../../classes/class_directory.rst:43 ../../classes/class_directory.rst:45
+#: ../../classes/class_directory.rst:49 ../../classes/class_directory.rst:51
+#: ../../classes/class_directory.rst:53 ../../classes/class_directory.rst:55
+#: ../../classes/class_directory.rst:57
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_directory.rst:23
+msgid ""
+":ref:`change_dir<class_Directory_change_dir>` **(** "
+":ref:`String<class_string>` todir **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:25
+msgid ""
+":ref:`copy<class_Directory_copy>` **(** :ref:`String<class_string>` from,"
+" :ref:`String<class_string>` to **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:27 ../../classes/class_directory.rst:29
+#: ../../classes/class_directory.rst:31
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_directory.rst:27
+msgid ":ref:`current_is_dir<class_Directory_current_is_dir>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_directory.rst:29
+msgid ""
+":ref:`dir_exists<class_Directory_dir_exists>` **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:31
+msgid ""
+":ref:`file_exists<class_Directory_file_exists>` **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:33 ../../classes/class_directory.rst:37
+#: ../../classes/class_directory.rst:41
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_directory.rst:33
+msgid ":ref:`get_current_dir<class_Directory_get_current_dir>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:35
+msgid ":ref:`get_current_drive<class_Directory_get_current_drive>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:37
+msgid ""
+":ref:`get_drive<class_Directory_get_drive>` **(** :ref:`int<class_int>` "
+"idx **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:39
+msgid ":ref:`get_drive_count<class_Directory_get_drive_count>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:41
+msgid ":ref:`get_next<class_Directory_get_next>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:43
+msgid ":ref:`get_space_left<class_Directory_get_space_left>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:45
+msgid ""
+":ref:`list_dir_begin<class_Directory_list_dir_begin>` **(** "
+":ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` "
+"skip_hidden=false **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:47
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_directory.rst:47
+msgid ":ref:`list_dir_end<class_Directory_list_dir_end>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:49
+msgid ""
+":ref:`make_dir<class_Directory_make_dir>` **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:51
+msgid ""
+":ref:`make_dir_recursive<class_Directory_make_dir_recursive>` **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:53
+msgid ""
+":ref:`open<class_Directory_open>` **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:55
+msgid ""
+":ref:`remove<class_Directory_remove>` **(** :ref:`String<class_string>` "
+"path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:57
+msgid ""
+":ref:`rename<class_Directory_rename>` **(** :ref:`String<class_string>` "
+"from, :ref:`String<class_string>` to **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:61
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_directory.rst:63
+msgid ""
+"Directory type. It is used to manage directories and their content (not "
+"restricted to the project folder)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:65
+msgid "Here is an example on how to iterate through the files of a directory:"
+msgstr ""
+
+#: ../../classes/class_directory.rst:84
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_directory.rst:88
+msgid ""
+":ref:`int<class_int>` **change_dir** **(** :ref:`String<class_string>` "
+"todir **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:90
+msgid ""
+"Change the currently opened directory to the one passed as an argument. "
+"The argument can be relative to the current directory (e.g. ``newdir`` or"
+" ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or "
+"``res://somedir/newdir``)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:92 ../../classes/class_directory.rst:196
+msgid ""
+"The method returns one of the error code constants defined in "
+":ref:`@GlobalScope<class_@globalscope>` (OK or ERR\\_\\*)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:96
+msgid ""
+":ref:`int<class_int>` **copy** **(** :ref:`String<class_string>` from, "
+":ref:`String<class_string>` to **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:98
+msgid ""
+"Copy the *from* file to the *to* destination. Both arguments should be "
+"paths to files, either relative or absolute. If the destination file "
+"exists and is not access-protected, it will be overwritten."
+msgstr ""
+
+#: ../../classes/class_directory.rst:100
+msgid ""
+"Returns one of the error code constants defined in "
+":ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\\_\\*)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:104
+msgid ":ref:`bool<class_bool>` **current_is_dir** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_directory.rst:106
+msgid ""
+"Return whether the current item processed with the last "
+":ref:`get_next<class_Directory_get_next>` call is a directory (``.`` and "
+"``..`` are considered directories)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:110
+msgid ""
+":ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_string>` "
+"path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:112
+msgid ""
+"Return whether the target directory exists. The argument can be relative "
+"to the current directory, or an absolute path."
+msgstr ""
+
+#: ../../classes/class_directory.rst:116
+msgid ""
+":ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_string>`"
+" path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:118
+msgid ""
+"Return whether the target file exists. The argument can be relative to "
+"the current directory, or an absolute path."
+msgstr ""
+
+#: ../../classes/class_directory.rst:122
+msgid ":ref:`String<class_string>` **get_current_dir** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:124
+msgid ""
+"Return the absolute path to the currently opened directory (e.g. "
+"``res://folder`` or ``C:\\tmp\\folder``)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:128
+msgid ":ref:`int<class_int>` **get_current_drive** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:130
+msgid ""
+"Returns the currently opened directory's drive index. See "
+":ref:`get_drive<class_Directory_get_drive>` to convert returned index to "
+"the name of the drive."
+msgstr ""
+
+#: ../../classes/class_directory.rst:134
+msgid ""
+":ref:`String<class_string>` **get_drive** **(** :ref:`int<class_int>` idx"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:136
+msgid ""
+"On Windows, return the name of the drive (partition) passed as an "
+"argument (e.g. ``C:``). On other platforms, or if the requested drive "
+"does not existed, the method returns an empty String."
+msgstr ""
+
+#: ../../classes/class_directory.rst:140
+msgid ":ref:`int<class_int>` **get_drive_count** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:142
+msgid ""
+"On Windows, return the number of drives (partitions) mounted on the "
+"current filesystem. On other platforms, the method returns 0."
+msgstr ""
+
+#: ../../classes/class_directory.rst:146
+msgid ":ref:`String<class_string>` **get_next** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:148
+msgid ""
+"Return the next element (file or directory) in the current directory "
+"(including ``.`` and ``..``, unless ``skip_navigational`` was given to "
+":ref:`list_dir_begin<class_Directory_list_dir_begin>`)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:150
+msgid ""
+"The name of the file or directory is returned (and not its full path). "
+"Once the stream has been fully processed, the method returns an empty "
+"String and closes the stream automatically (i.e. "
+":ref:`list_dir_end<class_Directory_list_dir_end>` would not be mandatory "
+"in such a case)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:154
+msgid ":ref:`int<class_int>` **get_space_left** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:156
+msgid ""
+"On Unix desktop systems, return the available space on the current "
+"directory's disk. On other platforms, this information is not available "
+"and the method returns 0 or -1."
+msgstr ""
+
+#: ../../classes/class_directory.rst:160
+msgid ""
+":ref:`int<class_int>` **list_dir_begin** **(** :ref:`bool<class_bool>` "
+"skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:162
+msgid ""
+"Initialise the stream used to list all files and directories using the "
+":ref:`get_next<class_Directory_get_next>` function, closing the current "
+"opened stream if needed. Once the stream has been processed, it should "
+"typically be closed with "
+":ref:`list_dir_end<class_Directory_list_dir_end>`."
+msgstr ""
+
+#: ../../classes/class_directory.rst:164
+msgid ""
+"If you pass ``skip_navigational``, then ``.`` and ``..`` would be "
+"filtered out."
+msgstr ""
+
+#: ../../classes/class_directory.rst:166
+msgid "If you pass ``skip_hidden``, then hidden files would be filtered out."
+msgstr ""
+
+#: ../../classes/class_directory.rst:170
+msgid "void **list_dir_end** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:172
+msgid ""
+"Close the current stream opened with "
+":ref:`list_dir_begin<class_Directory_list_dir_begin>` (whether it has "
+"been fully processed with :ref:`get_next<class_Directory_get_next>` or "
+"not does not matter)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:176
+msgid ""
+":ref:`int<class_int>` **make_dir** **(** :ref:`String<class_string>` path"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:178
+msgid ""
+"Create a directory. The argument can be relative to the current "
+"directory, or an absolute path. The target directory should be placed in "
+"an already existing directory (to create the full path recursively, see "
+":ref:`make_dir_recursive<class_Directory_make_dir_recursive>`)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:180
+msgid ""
+"The method returns one of the error code constants defined in "
+":ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\\_\\*)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:184
+msgid ""
+":ref:`int<class_int>` **make_dir_recursive** **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:186
+msgid ""
+"Create a target directory and all necessary intermediate directories in "
+"its path, by calling :ref:`make_dir<class_Directory_make_dir>` "
+"recursively. The argument can be relative to the current directory, or an"
+" absolute path."
+msgstr ""
+
+#: ../../classes/class_directory.rst:188
+msgid ""
+"Return one of the error code constants defined in "
+":ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\\_\\*)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:192
+msgid ""
+":ref:`int<class_int>` **open** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:194
+msgid ""
+"Open an existing directory of the filesystem. The *path* argument can be "
+"within the project tree (``res://folder``), the user directory "
+"(``user://folder``) or an absolute path of the user filesystem (e.g. "
+"``/tmp/folder`` or ``C:\\tmp\\folder``)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:200
+msgid ""
+":ref:`int<class_int>` **remove** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:202
+msgid ""
+"Delete the target file or an empty directory. The argument can be "
+"relative to the current directory, or an absolute path. If the target "
+"directory is not empty, the operation will fail."
+msgstr ""
+
+#: ../../classes/class_directory.rst:204 ../../classes/class_directory.rst:212
+msgid ""
+"Return one of the error code constants defined in "
+":ref:`@GlobalScope<class_@globalscope>` (OK or FAILED)."
+msgstr ""
+
+#: ../../classes/class_directory.rst:208
+msgid ""
+":ref:`int<class_int>` **rename** **(** :ref:`String<class_string>` from, "
+":ref:`String<class_string>` to **)**"
+msgstr ""
+
+#: ../../classes/class_directory.rst:210
+msgid ""
+"Rename (move) the *from* file to the *to* destination. Both arguments "
+"should be paths to files, either relative or absolute. If the destination"
+" file exists and is not access-protected, it will be overwritten."
+msgstr ""
+

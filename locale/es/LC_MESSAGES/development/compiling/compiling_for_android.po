@@ -1,0 +1,374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/compiling_for_android.rst:4
+msgid "Compiling for Android"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:9
+msgid "Note"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:11
+msgid ""
+"For most cases, using the built-in deployer and export templates is good "
+"enough. Compiling the Android APK manually is mostly useful for custom "
+"builds or custom packages for the deployer."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:15
+msgid ""
+"Also, you still need to do all the steps mentioned in the "
+":ref:`doc_exporting_for_android` tutorial before attempting your custom "
+"export template."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:20
+msgid "Requirements"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:22
+msgid "For compiling under Windows, Linux or macOS, the following is required:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:24
+msgid "Python 2.7+ or Python 3.5+"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:25
+msgid "SCons build system"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:26
+msgid "[Windows only] PyWin32 (optional, for parallel compilation)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:27
+msgid ""
+"Android SDK version 23.0.3 [Note: Please install all tools and extras of "
+"the SDK Manager]"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:28
+msgid "Android build tools version 19.1"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:29
+msgid "Android NDK r13 or later"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:30
+msgid "Gradle (will be downloaded and installed automatically if missing)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:31
+msgid ""
+"JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 is untested as of "
+"now"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:34
+msgid "Setting up the buildsystem"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:36
+msgid "Set the environment variable ANDROID_HOME to point to the Android SDK."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:39
+msgid "Set the environment variable ANDROID_NDK_ROOT to point to the Android NDK."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:42
+msgid ""
+"To set those environment variables on Windows, press Windows+R, type "
+"\"control system\", then click on **Advanced system settings** in the "
+"left pane, then click on **Environment variables** on the window that "
+"appears."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:47
+msgid ""
+"To set those environment variables on Unix (e.g. Linux, macOS), use "
+"``export ANDROID_HOME=/path/to/android-sdk`` and ``export "
+"ANDROID_NDK_ROOT=/path/to/android-ndk``. Where /path/to/android-sdk and "
+"/path/to/android-ndk is the path where Android SDK and Android NDK are "
+"placed on your PC."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:54
+msgid "Toolchain"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:56
+msgid ""
+"We usually try to keep the Godot Android build code up to date, but "
+"Google changes their toolchain versions very often, so if compilation "
+"fails due to wrong toolchain version, go to your NDK directory and check "
+"the current number, then set the following environment variable:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:66
+msgid "Building the export templates"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:68
+msgid ""
+"Godot needs two export templates for Android: the optimized \"release\" "
+"template (`android_release.apk`) and the debug version "
+"(`android_debug.apk`). Compiling the standard export templates is done by"
+" calling scons with the following arguments:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:73
+msgid "Release template (used when exporting with \"Debugging Enabled\" OFF)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:81
+msgid "(on Linux or macOS, execute the `gradlew` script with `./gradlew build`)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:83
+#: ../../development/compiling/compiling_for_android.rst:97
+msgid "The resulting APK is in:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:89
+msgid "Debug template (used when exporting with \"Debugging Enabled\" ON)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:104
+msgid "Faster compilation"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:106
+msgid ""
+"If you are on Unix or installed PyWin32 on Windows and have multiple CPU "
+"cores available, you can speed up the compilation by adding the ``-jX`` "
+"argument to the SCons command, where ``X`` is the number of cores that "
+"you want to allocate to the compilation, e.g. ``scons -j4``."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:113
+msgid "Adding support for x86 devices"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:115
+msgid ""
+"If you also want to include support for x86 devices, run the scons "
+"command a second time with the ``android_arch=x86`` argument before "
+"building the APK with Gradle. For example for the release template:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:127
+msgid ""
+"This will create a fat binary that works in both platforms, but will add "
+"about 6 megabytes to the APK."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:131
+#: ../../development/compiling/compiling_for_android.rst:174
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:133
+msgid ""
+"It might be necessary to clean the build cache between two APK "
+"compilations, as some users have reported issues when building the two "
+"export templates one after the other."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:138
+msgid "Using the export templates"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:140
+msgid ""
+"As export templates for Android, Godot needs release and debug APKs that "
+"were compiled against the same version/commit as the editor. If you are "
+"using official binaries for the editor, make sure to install the matching"
+" export templates, or to build your own from the same version."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:145
+msgid ""
+"When exporting your game, Godot opens the APK, changes a few things "
+"inside, adds your file and spits it back. It's really handy! (and "
+"required some reverse engineering of the format)."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:150
+msgid "Installing the templates"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:152
+msgid ""
+"The newly-compiled templates (android_debug.apk and android_release.apk) "
+"must be copied to Godot's templates folder with their respective names. "
+"The templates folder can be located in:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:156
+msgid "Windows: ``C:\\Users\\[username]\\AppData\\Roaming\\Godot\\templates``"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:157
+msgid "Linux: ``/home/[username]/.godot/templates``"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:158
+msgid "macOS: ``/users/[username]/.godot/templates``"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:162
+msgid ""
+"However, if you are writing your custom modules or custom C++ code, you "
+"might instead want to configure your APKs as custom export templates "
+"here:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:168
+msgid ""
+"You don't even need to copy them, you can just reference the resulting "
+"file in the ``bin\\`` directory of your Godot source folder, so that the "
+"next time you build you will automatically have the custom templates "
+"referenced."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:177
+msgid "Application not installed"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:179
+msgid ""
+"Android might complain the application is not correctly installed. If so,"
+" check the following:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:182
+msgid "Check that the debug keystore is properly generated."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:183
+msgid "Check that jarsigner is from JDK 6, 7 or 8."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:185
+msgid "If it still fails, open a command line and run logcat:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:191
+msgid ""
+"And check the output while the application is installed. Reason for "
+"failure should be presented there."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:194
+msgid "Seek assistance if you can't figure it out."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:197
+msgid "Application exits immediately"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:199
+msgid ""
+"If the application runs but exits immediately, there might be one of the "
+"following reasons:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:202
+msgid ""
+"Make sure to use export templates that match your editor version; if you "
+"use a new Godot version, you *have* to update the templates too."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:204
+msgid "libgodot_android.so is not in ``lib/armeabi-v7a`` or ``lib/armeabi``"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:205
+msgid "Device does not support armv7 (try compiling yourself for armv6)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:206
+msgid "Device is Intel, and apk is compiled for ARM."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:208
+msgid "In any case, ``adb logcat`` should also show the cause of the error."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:211
+msgid "Compilation fails"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:213
+msgid ""
+"On Linux systems with Kernel version 4.3 or newer, compilation may fail "
+"with the error \"pthread_create failed: Resource temporarily "
+"unavailable.\""
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:216
+msgid ""
+"This is because of a change in the way Linux limits thread creation. But "
+"you can change those limits through the command line. Please read this "
+"section thoroughly before beginning."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:220
+msgid ""
+"First open a terminal, then begin compilation as usual (it may be a good "
+"idea to run a --clean first). While compiling enter the following in your"
+" terminal:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:228
+msgid ""
+"The output should list a scons process, with its PID as the first number "
+"in the output. For example the PID 1077 in the output shown below:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:236
+msgid ""
+"Now you can use another command to increase the number of processes that "
+"scons is allowed to spawn. You can check its current limits with:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:243
+msgid "You can increase those limits with the command:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:249
+msgid ""
+"Obviously you should substitute the scons PID output by top and a limits "
+"that you think suitable. These are in the form --nproc=soft:hard where "
+"soft must be lesser than or equal to hard. See the man page for more "
+"information."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_android.rst:254
+msgid ""
+"If all went well, and you entered the prlimit command while scons was "
+"running, then your compilation should continue without the error."
+msgstr ""
+

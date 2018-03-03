@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_visibilityenabler2d.rst:8
+msgid "VisibilityEnabler2D"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:10
+msgid ""
+"**Inherits:** :ref:`VisibilityNotifier2D<class_visibilitynotifier2d>` "
+"**<** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:17
+msgid "Enable certain nodes only when visible."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:24
+msgid ":ref:`bool<class_bool>` **freeze_bodies**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:28
+msgid ":ref:`bool<class_bool>` **pause_animated_sprites**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:32
+msgid ":ref:`bool<class_bool>` **pause_animations**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:36
+msgid ":ref:`bool<class_bool>` **pause_particles**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:40
+msgid ":ref:`bool<class_bool>` **physics_process_parent**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:44
+msgid ":ref:`bool<class_bool>` **process_parent**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:48
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:52
+msgid "enum **Enabler**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:54
+msgid ""
+"**ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause "
+":ref:`AnimationPlayer<class_animationplayer>` nodes."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:55
+msgid ""
+"**ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze "
+":ref:`RigidBody2D<class_rigidbody2d>` nodes."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:56
+msgid ""
+"**ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop "
+":ref:`Particles2D<class_particles2d>` nodes."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:57
+msgid ""
+"**ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the "
+"parent's _process function."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:58
+msgid ""
+"**ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the"
+" parent's _physics_process function."
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:59
+msgid "**ENABLER_PAUSE_ANIMATED_SPRITES** = **5**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:60
+msgid "**ENABLER_MAX** = **6**"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:64
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_visibilityenabler2d.rst:66
+msgid ""
+"The VisibilityEnabler2D will disable "
+":ref:`RigidBody2D<class_rigidbody2d>`, "
+":ref:`AnimationPlayer<class_animationplayer>`, and other nodes when they "
+"are not visible. It will only affect other nodes within the same scene as"
+" the VisibilityEnabler2D itself."
+msgstr ""
+

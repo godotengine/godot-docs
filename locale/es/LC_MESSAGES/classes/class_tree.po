@@ -1,0 +1,666 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_tree.rst:8
+msgid "Tree"
+msgstr ""
+
+#: ../../classes/class_tree.rst:10
+msgid ""
+"**Inherits:** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_tree.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_tree.rst:17
+msgid "Control to show a tree of items."
+msgstr ""
+
+#: ../../classes/class_tree.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_tree.rst:23
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:23
+msgid ""
+":ref:`are_column_titles_visible<class_Tree_are_column_titles_visible>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:25 ../../classes/class_tree.rst:29
+#: ../../classes/class_tree.rst:61 ../../classes/class_tree.rst:63
+#: ../../classes/class_tree.rst:65 ../../classes/class_tree.rst:67
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_tree.rst:25
+msgid ":ref:`clear<class_Tree_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:27
+msgid ":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:27
+msgid ""
+":ref:`create_item<class_Tree_create_item>` **(** "
+":ref:`Object<class_object>` parent=null, :ref:`int<class_int>` idx=-1 "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:29
+msgid ""
+":ref:`ensure_cursor_is_visible<class_Tree_ensure_cursor_is_visible>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:31 ../../classes/class_tree.rst:35
+#: ../../classes/class_tree.rst:39 ../../classes/class_tree.rst:43
+#: ../../classes/class_tree.rst:51 ../../classes/class_tree.rst:59
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:31
+msgid ""
+":ref:`get_column_at_position<class_Tree_get_column_at_position>` **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:33
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:33
+msgid ""
+":ref:`get_column_title<class_Tree_get_column_title>` **(** "
+":ref:`int<class_int>` column **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:35
+msgid ""
+":ref:`get_column_width<class_Tree_get_column_width>` **(** "
+":ref:`int<class_int>` column **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:37 ../../classes/class_tree.rst:45
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:37
+msgid ""
+":ref:`get_custom_popup_rect<class_Tree_get_custom_popup_rect>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:39
+msgid ""
+":ref:`get_drop_section_at_position<class_Tree_get_drop_section_at_position>`"
+" **(** :ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:41 ../../classes/class_tree.rst:47
+#: ../../classes/class_tree.rst:49 ../../classes/class_tree.rst:53
+#: ../../classes/class_tree.rst:57
+msgid ":ref:`TreeItem<class_treeitem>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:41
+msgid ":ref:`get_edited<class_Tree_get_edited>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:43
+msgid ":ref:`get_edited_column<class_Tree_get_edited_column>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:45
+msgid ""
+":ref:`get_item_area_rect<class_Tree_get_item_area_rect>` **(** "
+":ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1 **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:47
+msgid ""
+":ref:`get_item_at_position<class_Tree_get_item_at_position>` **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:49
+msgid ""
+":ref:`get_next_selected<class_Tree_get_next_selected>` **(** "
+":ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:51
+msgid ":ref:`get_pressed_button<class_Tree_get_pressed_button>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:53
+msgid ":ref:`get_root<class_Tree_get_root>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:55
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_tree.rst:55
+msgid ":ref:`get_scroll<class_Tree_get_scroll>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:57
+msgid ":ref:`get_selected<class_Tree_get_selected>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:59
+msgid ""
+":ref:`get_selected_column<class_Tree_get_selected_column>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:61
+msgid ""
+":ref:`set_column_expand<class_Tree_set_column_expand>` **(** "
+":ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:63
+msgid ""
+":ref:`set_column_min_width<class_Tree_set_column_min_width>` **(** "
+":ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:65
+msgid ""
+":ref:`set_column_title<class_Tree_set_column_title>` **(** "
+":ref:`int<class_int>` column, :ref:`String<class_string>` title **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:67
+msgid ""
+":ref:`set_column_titles_visible<class_Tree_set_column_titles_visible>` "
+"**(** :ref:`bool<class_bool>` visible **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:71
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_tree.rst:75
+msgid ""
+"**button_pressed** **(** :ref:`Object<class_object>` item, "
+":ref:`int<class_int>` column, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:77
+msgid ""
+"Emitted when a button on the tree was pressed (see "
+":ref:`TreeItem.add_button<class_TreeItem_add_button>`)."
+msgstr ""
+
+#: ../../classes/class_tree.rst:81
+msgid "**cell_selected** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:83
+msgid "Emitted when a cell is selected."
+msgstr ""
+
+#: ../../classes/class_tree.rst:87
+msgid "**column_title_pressed** **(** :ref:`int<class_int>` column **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:89
+msgid "Emitted when a column's title is pressed."
+msgstr ""
+
+#: ../../classes/class_tree.rst:93
+msgid "**custom_popup_edited** **(** :ref:`bool<class_bool>` arrow_clicked **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:95
+msgid "Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited."
+msgstr ""
+
+#: ../../classes/class_tree.rst:99
+msgid ""
+"**empty_tree_rmb_selected** **(** :ref:`Vector2<class_vector2>` position "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:101
+msgid ""
+"Emitted when the right mouse button is pressed if RMB selection is active"
+" and the tree is empty."
+msgstr ""
+
+#: ../../classes/class_tree.rst:105
+msgid "**item_activated** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:107
+msgid "Emitted when an item is activated (double-clicked)."
+msgstr ""
+
+#: ../../classes/class_tree.rst:111
+msgid "**item_collapsed** **(** :ref:`Object<class_object>` item **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:113
+msgid "Emitted when an item is collapsed by a click on the folding arrow."
+msgstr ""
+
+#: ../../classes/class_tree.rst:117
+msgid "**item_custom_button_pressed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:121
+msgid "**item_double_clicked** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:123
+msgid "Emitted when an item is double clicked."
+msgstr ""
+
+#: ../../classes/class_tree.rst:127
+msgid "**item_edited** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:129
+msgid "Emitted when an item is edited."
+msgstr ""
+
+#: ../../classes/class_tree.rst:133
+msgid "**item_rmb_edited** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:135
+msgid "Emitted when an item is edited using the right mouse button."
+msgstr ""
+
+#: ../../classes/class_tree.rst:139
+msgid "**item_rmb_selected** **(** :ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:141 ../../classes/class_tree.rst:147
+msgid "Emitted when an item is selected with right mouse button."
+msgstr ""
+
+#: ../../classes/class_tree.rst:145
+msgid "**item_selected** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:151
+msgid ""
+"**multi_selected** **(** :ref:`Object<class_object>` item, "
+":ref:`int<class_int>` column, :ref:`bool<class_bool>` selected **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:153
+msgid ""
+"Emitted instead of ``item_selected`` when ``select_mode`` is "
+"``SELECT_MULTI``."
+msgstr ""
+
+#: ../../classes/class_tree.rst:157
+msgid "**nothing_selected** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:161
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_tree.rst:165
+msgid ""
+":ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently "
+"selected cell may be selected again."
+msgstr ""
+
+#: ../../classes/class_tree.rst:169
+msgid ""
+":ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse "
+"button click can select items."
+msgstr ""
+
+#: ../../classes/class_tree.rst:173
+msgid ":ref:`int<class_int>` **columns** - The amount of columns."
+msgstr ""
+
+#: ../../classes/class_tree.rst:177
+msgid ""
+":ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR "
+"combination of flags. See ``DROP_MODE_*`` constants."
+msgstr ""
+
+#: ../../classes/class_tree.rst:181
+msgid ""
+":ref:`bool<class_bool>` **hide_folding** - If ``true`` the folding arrow "
+"is hidden."
+msgstr ""
+
+#: ../../classes/class_tree.rst:185
+msgid ""
+":ref:`bool<class_bool>` **hide_root** - If ``true`` the tree's root is "
+"hidden."
+msgstr ""
+
+#: ../../classes/class_tree.rst:189
+msgid ""
+":ref:`SelectMode<enum_tree_selectmode>` **select_mode** - Allow single or"
+" multiple selection. See the ``SELECT_*`` constants."
+msgstr ""
+
+#: ../../classes/class_tree.rst:193
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_tree.rst:197
+msgid "enum **DropModeFlags**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:199
+msgid "**DROP_MODE_DISABLED** = **0**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:200
+msgid "**DROP_MODE_ON_ITEM** = **1**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:201
+msgid "**DROP_MODE_INBETWEEN** = **2**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:205
+msgid "enum **SelectMode**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:207
+msgid "**SELECT_SINGLE** = **0** --- Allow selection of a single item at a time."
+msgstr ""
+
+#: ../../classes/class_tree.rst:208
+msgid "**SELECT_ROW** = **1**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:209
+msgid ""
+"**SELECT_MULTI** = **2** --- Allow selection of multiple items at the "
+"same time."
+msgstr ""
+
+#: ../../classes/class_tree.rst:213
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_tree.rst:215
+msgid ""
+"This shows a tree of items that can be selected, expanded and collapsed. "
+"The tree can have multiple columns with custom controls like text "
+"editing, buttons and popups. It can be useful for structured displays and"
+" interactions."
+msgstr ""
+
+#: ../../classes/class_tree.rst:217
+msgid ""
+"Trees are built via code, using :ref:`TreeItem<class_treeitem>` objects "
+"to create the structure. They have a single root but multiple roots can "
+"be simulated if a dummy hidden root is added."
+msgstr ""
+
+#: ../../classes/class_tree.rst:231
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_tree.rst:235
+msgid ":ref:`bool<class_bool>` **are_column_titles_visible** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:237
+msgid "Returns ``true`` if the column titles are being shown."
+msgstr ""
+
+#: ../../classes/class_tree.rst:241
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:243
+msgid "Clears the tree. This removes all items."
+msgstr ""
+
+#: ../../classes/class_tree.rst:247
+msgid ""
+":ref:`Object<class_object>` **create_item** **(** "
+":ref:`Object<class_object>` parent=null, :ref:`int<class_int>` idx=-1 "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:249
+msgid ""
+"Create an item in the tree and add it as the last child of ``parent``. If"
+" parent is not given, it will be added as the root's last child, or it'll"
+" the be the root itself if the tree is empty."
+msgstr ""
+
+#: ../../classes/class_tree.rst:253
+msgid "void **ensure_cursor_is_visible** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:255
+msgid ""
+"Makes the currently selected item visible. This will scroll the tree to "
+"make sure the selected item is visible."
+msgstr ""
+
+#: ../../classes/class_tree.rst:259
+msgid ""
+":ref:`int<class_int>` **get_column_at_position** **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:261
+msgid "Returns the column index under the given point."
+msgstr ""
+
+#: ../../classes/class_tree.rst:265
+msgid ""
+":ref:`String<class_string>` **get_column_title** **(** "
+":ref:`int<class_int>` column **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:267
+msgid "Returns the column's title."
+msgstr ""
+
+#: ../../classes/class_tree.rst:271
+msgid ""
+":ref:`int<class_int>` **get_column_width** **(** :ref:`int<class_int>` "
+"column **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:273
+msgid "Returns the column's width in pixels."
+msgstr ""
+
+#: ../../classes/class_tree.rst:277
+msgid ":ref:`Rect2<class_rect2>` **get_custom_popup_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:279
+msgid ""
+"Returns the rectangle for custom popups. Helper to create custom cell "
+"controls that display a popup. See "
+":ref:`TreeItem.set_cell_mode<class_TreeItem_set_cell_mode>`."
+msgstr ""
+
+#: ../../classes/class_tree.rst:283
+msgid ""
+":ref:`int<class_int>` **get_drop_section_at_position** **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:287
+msgid ":ref:`TreeItem<class_treeitem>` **get_edited** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:289
+msgid ""
+"Returns the currently edited item. This is only available for custom cell"
+" mode."
+msgstr ""
+
+#: ../../classes/class_tree.rst:293
+msgid ":ref:`int<class_int>` **get_edited_column** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:295
+msgid ""
+"Returns the column for the currently edited item. This is only available "
+"for custom cell mode."
+msgstr ""
+
+#: ../../classes/class_tree.rst:299
+msgid ""
+":ref:`Rect2<class_rect2>` **get_item_area_rect** **(** "
+":ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1 **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:301
+msgid ""
+"Returns the rectangle area for the specified item. If column is "
+"specified, only get the position and size of that column, otherwise get "
+"the rectangle containing all columns."
+msgstr ""
+
+#: ../../classes/class_tree.rst:305
+msgid ""
+":ref:`TreeItem<class_treeitem>` **get_item_at_position** **(** "
+":ref:`Vector2<class_vector2>` position **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:307
+msgid ""
+"Returns the tree item at the specified position (relative to the tree "
+"origin position)."
+msgstr ""
+
+#: ../../classes/class_tree.rst:311
+msgid ""
+":ref:`TreeItem<class_treeitem>` **get_next_selected** **(** "
+":ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:313
+msgid "Returns the next selected item after the given one."
+msgstr ""
+
+#: ../../classes/class_tree.rst:317
+msgid ":ref:`int<class_int>` **get_pressed_button** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:319
+msgid "Returns the last pressed button's index."
+msgstr ""
+
+#: ../../classes/class_tree.rst:323
+msgid ":ref:`TreeItem<class_treeitem>` **get_root** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:325
+msgid "Returns the tree's root item."
+msgstr ""
+
+#: ../../classes/class_tree.rst:329
+msgid ":ref:`Vector2<class_vector2>` **get_scroll** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:331
+msgid "Returns the current scrolling position."
+msgstr ""
+
+#: ../../classes/class_tree.rst:335
+msgid ":ref:`TreeItem<class_treeitem>` **get_selected** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:337
+msgid "Returns the currently selected item."
+msgstr ""
+
+#: ../../classes/class_tree.rst:341
+msgid ":ref:`int<class_int>` **get_selected_column** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tree.rst:343
+msgid "Returns the current selection's column."
+msgstr ""
+
+#: ../../classes/class_tree.rst:347
+msgid ""
+"void **set_column_expand** **(** :ref:`int<class_int>` column, "
+":ref:`bool<class_bool>` expand **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:349
+msgid ""
+"If ``true`` the column will have the \"Expand\" flag of "
+":ref:`Control<class_control>`."
+msgstr ""
+
+#: ../../classes/class_tree.rst:353
+msgid ""
+"void **set_column_min_width** **(** :ref:`int<class_int>` column, "
+":ref:`int<class_int>` min_width **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:355
+msgid "Set the minimum width of a column."
+msgstr ""
+
+#: ../../classes/class_tree.rst:359
+msgid ""
+"void **set_column_title** **(** :ref:`int<class_int>` column, "
+":ref:`String<class_string>` title **)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:361
+msgid "Set the title of a column."
+msgstr ""
+
+#: ../../classes/class_tree.rst:365
+msgid ""
+"void **set_column_titles_visible** **(** :ref:`bool<class_bool>` visible "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_tree.rst:367
+msgid "If ``true`` column titles are visible."
+msgstr ""
+

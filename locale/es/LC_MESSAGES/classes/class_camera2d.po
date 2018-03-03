@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_camera2d.rst:8
+msgid "Camera2D"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:17
+msgid "Camera node for 2D scenes."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:23 ../../classes/class_camera2d.rst:25
+#: ../../classes/class_camera2d.rst:27 ../../classes/class_camera2d.rst:33
+#: ../../classes/class_camera2d.rst:35
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:23
+msgid ":ref:`align<class_Camera2D_align>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:25
+msgid ":ref:`clear_current<class_Camera2D_clear_current>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:27
+msgid ":ref:`force_update_scroll<class_Camera2D_force_update_scroll>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:29 ../../classes/class_camera2d.rst:31
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:29
+msgid ""
+":ref:`get_camera_position<class_Camera2D_get_camera_position>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:31
+msgid ""
+":ref:`get_camera_screen_center<class_Camera2D_get_camera_screen_center>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:33
+msgid ":ref:`make_current<class_Camera2D_make_current>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:35
+msgid ":ref:`reset_smoothing<class_Camera2D_reset_smoothing>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:39
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:43
+msgid ""
+":ref:`AnchorMode<enum_camera2d_anchormode>` **anchor_mode** - The "
+"Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:47
+msgid ""
+":ref:`bool<class_bool>` **current** - If ``true`` the camera is the "
+"active camera for the current scene. Only one camera can be current, so "
+"setting a different camera ``current`` will disable this one."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:51
+msgid ""
+":ref:`Node<class_node>` **custom_viewport** - The custom "
+":ref:`Viewport<class_viewport>` node attached to the ``Camera2D``. If "
+"null or not a :ref:`Viewport<class_viewport>`, uses the default viewport "
+"instead."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:55
+msgid ""
+":ref:`float<class_float>` **drag_margin_bottom** - Bottom margin needed "
+"to drag the camera. A value of ``1`` makes the camera move only when "
+"reaching the edge of the screen."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:59
+msgid ""
+":ref:`bool<class_bool>` **drag_margin_h_enabled** - If ``true`` the "
+"camera only moves when reaching the horizontal drag margins. If ``false``"
+" the camera moves horizontally regardless of margins. Default value: "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:63
+msgid ""
+":ref:`float<class_float>` **drag_margin_left** - Left margin needed to "
+"drag the camera. A value of ``1`` makes the camera move only when "
+"reaching the edge of the screen."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:67
+msgid ""
+":ref:`float<class_float>` **drag_margin_right** - Right margin needed to "
+"drag the camera. A value of ``1`` makes the camera move only when "
+"reaching the edge of the screen."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:71
+msgid ""
+":ref:`float<class_float>` **drag_margin_top** - Top margin needed to drag"
+" the camera. A value of ``1`` makes the camera move only when reaching "
+"the edge of the screen."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:75
+msgid ""
+":ref:`bool<class_bool>` **drag_margin_v_enabled** - If ``true`` the "
+"camera only moves when reaching the vertical drag margins. If ``false`` "
+"the camera moves vertically regardless of margins. Default value: "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:79
+msgid ""
+":ref:`bool<class_bool>` **editor_draw_drag_margin** - If ``true`` draws "
+"the camera's drag margin rectangle in the editor. Default value: "
+"``false``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:83
+msgid ""
+":ref:`bool<class_bool>` **editor_draw_limits** - If ``true`` draws the "
+"camera's limits rectangle in the editor. Default value: ``true``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:87
+msgid ""
+":ref:`bool<class_bool>` **editor_draw_screen** - If ``true`` draws the "
+"camera's screen rectangle in the editor. Default value: ``false``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:91
+msgid ""
+":ref:`int<class_int>` **limit_bottom** - Bottom scroll limit in pixels. "
+"The camera stops moving when reaching this value."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:95
+msgid ""
+":ref:`int<class_int>` **limit_left** - Left scroll limit in pixels. The "
+"camera stops moving when reaching this value."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:99
+msgid ""
+":ref:`int<class_int>` **limit_right** - Right scroll limit in pixels. The"
+" camera stops moving when reaching this value."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:103
+msgid ""
+":ref:`bool<class_bool>` **limit_smoothed** - If ``true`` the camera "
+"smoothly stops when reaches its limits. Default value: ``false``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:107
+msgid ""
+":ref:`int<class_int>` **limit_top** - Top scroll limit in pixels. The "
+"camera stops moving when reaching this value."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:111
+msgid ""
+":ref:`Vector2<class_vector2>` **offset** - The camera's offset, useful "
+"for looking around or camera shake animations."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:115
+msgid ""
+":ref:`float<class_float>` **offset_h** - The horizontal offset of the "
+"camera, relative to the drag margins. Default value: ``0``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:119
+msgid ""
+":ref:`float<class_float>` **offset_v** - The vertical offset of the "
+"camera, relative to the drag margins. Default value: ``0``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:123
+msgid ""
+":ref:`bool<class_bool>` **rotating** - If ``true`` the camera rotates "
+"with the target. Default value: ``false``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:127
+msgid ""
+":ref:`bool<class_bool>` **smoothing_enabled** - If ``true`` the camera "
+"smoothly moves towards the target at "
+":ref:`smoothing_speed<class_Camera2D_smoothing_speed>`. Default value: "
+"``false``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:131
+msgid ""
+":ref:`float<class_float>` **smoothing_speed** - Speed in pixels per "
+"second of the camera's smoothing effect when "
+":ref:`smoothing_enabled<class_Camera2D_smoothing_enabled>` is ``true``"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:135
+msgid ""
+":ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to "
+"the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller "
+"values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom "
+"in, and ``Vector2(4, 4)`` for a 4x zoom out."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:139
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:143
+msgid "enum **AnchorMode**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:145
+msgid ""
+"**ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed"
+" so that the top-left corner is always at the origin."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:146
+msgid ""
+"**ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into "
+"account vertical/horizontal offsets and the screen size."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:150
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:152
+msgid ""
+"Camera node for 2D scenes. It forces the screen (current layer) to scroll"
+" following this node. This makes it easier (and faster) to program "
+"scrollable scenes than manually changing the position of "
+":ref:`CanvasItem<class_canvasitem>` based nodes."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:154
+msgid ""
+"This node is intended to be a simple helper to get things going quickly "
+"and it may happen often that more functionality is desired to change how "
+"the camera works. To make your own custom camera node, simply inherit "
+"from :ref:`Node2D<class_node2d>` and change the transform of the canvas "
+"by calling get_viewport().set_canvas_transform(m) in "
+":ref:`Viewport<class_viewport>`."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:157
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:161
+msgid "void **align** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:163
+msgid "Align the camera to the tracked node"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:167
+msgid "void **clear_current** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:169
+msgid ""
+"Removes any ``Camera2D`` from the ancestor "
+":ref:`Viewport<class_viewport>`'s internal currently-assigned camera."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:173
+msgid "void **force_update_scroll** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:175
+msgid "Force the camera to update scroll immediately."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:179
+msgid ":ref:`Vector2<class_vector2>` **get_camera_position** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:181
+msgid "Return the camera position."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:185
+msgid ""
+":ref:`Vector2<class_vector2>` **get_camera_screen_center** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:187
+msgid ""
+"Returns the location of the ``Camera2D``'s screen-center, relative to the"
+" origin."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:191
+msgid "void **make_current** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:193
+msgid ""
+"Make this the current 2D camera for the scene (viewport and layer), in "
+"case there's many cameras in the scene."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:197
+msgid "void **reset_smoothing** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:199
+msgid ""
+"Set the camera's position immediately to its current smoothing "
+"destination."
+msgstr ""
+
+#: ../../classes/class_camera2d.rst:201
+msgid "This has no effect if smoothing is disabled."
+msgstr ""
+

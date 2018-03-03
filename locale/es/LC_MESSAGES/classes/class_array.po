@@ -1,0 +1,575 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_array.rst:8
+msgid "Array"
+msgstr ""
+
+#: ../../classes/class_array.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_array.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_array.rst:15
+msgid "Generic array datatype."
+msgstr ""
+
+#: ../../classes/class_array.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_array.rst:21 ../../classes/class_array.rst:23
+#: ../../classes/class_array.rst:25 ../../classes/class_array.rst:27
+#: ../../classes/class_array.rst:29 ../../classes/class_array.rst:31
+#: ../../classes/class_array.rst:33 ../../classes/class_array.rst:47
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_array.rst:21
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolColorArray<class_poolcolorarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:23
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolVector3Array<class_poolvector3array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:25
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:27
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolStringArray<class_poolstringarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:29
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolRealArray<class_poolrealarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:31
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolIntArray<class_poolintarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:33
+msgid ""
+":ref:`Array<class_Array_Array>` **(** "
+":ref:`PoolByteArray<class_poolbytearray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:35 ../../classes/class_array.rst:43
+#: ../../classes/class_array.rst:51 ../../classes/class_array.rst:63
+#: ../../classes/class_array.rst:65 ../../classes/class_array.rst:71
+#: ../../classes/class_array.rst:73 ../../classes/class_array.rst:75
+#: ../../classes/class_array.rst:77 ../../classes/class_array.rst:83
+#: ../../classes/class_array.rst:85
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_array.rst:35
+msgid ":ref:`append<class_Array_append>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:37 ../../classes/class_array.rst:57
+#: ../../classes/class_array.rst:67 ../../classes/class_array.rst:69
+msgid "var"
+msgstr ""
+
+#: ../../classes/class_array.rst:37
+msgid ":ref:`back<class_Array_back>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:39 ../../classes/class_array.rst:41
+#: ../../classes/class_array.rst:45 ../../classes/class_array.rst:53
+#: ../../classes/class_array.rst:55 ../../classes/class_array.rst:61
+#: ../../classes/class_array.rst:79 ../../classes/class_array.rst:81
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_array.rst:39
+msgid ""
+":ref:`bsearch<class_Array_bsearch>` **(** var value, "
+":ref:`bool<class_bool>` before=True **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:41
+msgid ""
+":ref:`bsearch_custom<class_Array_bsearch_custom>` **(** var value, "
+":ref:`Object<class_object>` obj, :ref:`String<class_string>` func, "
+":ref:`bool<class_bool>` before=True **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:43
+msgid ":ref:`clear<class_Array_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:45
+msgid ":ref:`count<class_Array_count>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:47
+msgid ":ref:`duplicate<class_Array_duplicate>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:49 ../../classes/class_array.rst:59
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_array.rst:49
+msgid ":ref:`empty<class_Array_empty>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:51
+msgid ":ref:`erase<class_Array_erase>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:53
+msgid ""
+":ref:`find<class_Array_find>` **(** var what, :ref:`int<class_int>` "
+"from=0 **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:55
+msgid ":ref:`find_last<class_Array_find_last>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:57
+msgid ":ref:`front<class_Array_front>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:59
+msgid ":ref:`has<class_Array_has>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:61
+msgid ":ref:`hash<class_Array_hash>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:63
+msgid ""
+":ref:`insert<class_Array_insert>` **(** :ref:`int<class_int>` position, "
+"var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:65
+msgid ":ref:`invert<class_Array_invert>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:67
+msgid ":ref:`pop_back<class_Array_pop_back>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:69
+msgid ":ref:`pop_front<class_Array_pop_front>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:71
+msgid ":ref:`push_back<class_Array_push_back>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:73
+msgid ":ref:`push_front<class_Array_push_front>` **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:75
+msgid ""
+":ref:`remove<class_Array_remove>` **(** :ref:`int<class_int>` position "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:77
+msgid ":ref:`resize<class_Array_resize>` **(** :ref:`int<class_int>` size **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:79
+msgid ""
+":ref:`rfind<class_Array_rfind>` **(** var what, :ref:`int<class_int>` "
+"from=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:81
+msgid ":ref:`size<class_Array_size>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:83
+msgid ":ref:`sort<class_Array_sort>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:85
+msgid ""
+":ref:`sort_custom<class_Array_sort_custom>` **(** "
+":ref:`Object<class_object>` obj, :ref:`String<class_string>` func **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:89
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_array.rst:91
+msgid ""
+"Generic array, contains several elements of any type, accessible by "
+"numerical index starting at 0. Negative indices can be used to count from"
+" the right, like in Python. Arrays are always passed by reference."
+msgstr ""
+
+#: ../../classes/class_array.rst:94
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_array.rst:98
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolColorArray<class_poolcolorarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:100
+msgid "Construct an array from a :ref:`PoolColorArray<class_poolcolorarray>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:104
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolVector3Array<class_poolvector3array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:106
+msgid "Construct an array from a :ref:`PoolVector3Array<class_poolvector3array>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:110
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:112
+msgid "Construct an array from a :ref:`PoolVector2Array<class_poolvector2array>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:116
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolStringArray<class_poolstringarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:118
+msgid "Construct an array from a :ref:`PoolStringArray<class_poolstringarray>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:122
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolRealArray<class_poolrealarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:124
+msgid "Construct an array from a :ref:`PoolRealArray<class_poolrealarray>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:128
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolIntArray<class_poolintarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:130
+msgid "Construct an array from a :ref:`PoolIntArray<class_poolintarray>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:134
+msgid ""
+":ref:`Array<class_array>` **Array** **(** "
+":ref:`PoolByteArray<class_poolbytearray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:136
+msgid "Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`."
+msgstr ""
+
+#: ../../classes/class_array.rst:140
+msgid "void **append** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:142
+msgid ""
+"Append an element at the end of the array (alias of "
+":ref:`push_back<class_Array_push_back>`)."
+msgstr ""
+
+#: ../../classes/class_array.rst:146
+msgid "var **back** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:148
+msgid "Returns the last element of the array if the array is not empty (size>0)."
+msgstr ""
+
+#: ../../classes/class_array.rst:152
+msgid ""
+":ref:`int<class_int>` **bsearch** **(** var value, "
+":ref:`bool<class_bool>` before=True **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:154
+msgid ""
+"Finds the index of an existing value (or the insertion index that "
+"maintains sorting order, if the value is not yet present in the array) "
+"using binary search. Optionally, a before specifier can be passed. If "
+"false, the returned index comes after all existing entries of the value "
+"in the array. Note that calling bsearch on an unsorted array results in "
+"unexpected behavior."
+msgstr ""
+
+#: ../../classes/class_array.rst:158
+msgid ""
+":ref:`int<class_int>` **bsearch_custom** **(** var value, "
+":ref:`Object<class_object>` obj, :ref:`String<class_string>` func, "
+":ref:`bool<class_bool>` before=True **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:160
+msgid ""
+"Finds the index of an existing value (or the insertion index that "
+"maintains sorting order, if the value is not yet present in the array) "
+"using binary search and a custom comparison method. Optionally, a before "
+"specifier can be passed. If false, the returned index comes after all "
+"existing entries of the value in the array.  The custom method receives "
+"two arguments (an element from the array and the value searched for) and "
+"must return true if the first argument is less than the second, and "
+"return false otherwise. Note that calling bsearch on an unsorted array "
+"results in unexpected behavior."
+msgstr ""
+
+#: ../../classes/class_array.rst:164
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:166
+msgid "Clear the array (resize to 0)."
+msgstr ""
+
+#: ../../classes/class_array.rst:170
+msgid ":ref:`int<class_int>` **count** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:172
+msgid "Return the amount of times an element is in the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:176
+msgid ":ref:`Array<class_array>` **duplicate** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:178
+msgid "Returns a copy of this ``Array``."
+msgstr ""
+
+#: ../../classes/class_array.rst:182
+msgid ":ref:`bool<class_bool>` **empty** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:184
+msgid "Return true if the array is empty (size==0)."
+msgstr ""
+
+#: ../../classes/class_array.rst:188
+msgid "void **erase** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:190
+msgid "Remove the first occurrence of a value from the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:194
+msgid ""
+":ref:`int<class_int>` **find** **(** var what, :ref:`int<class_int>` "
+"from=0 **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:196
+msgid ""
+"Searches the array for a value and returns its index or -1 if not found. "
+"Optionally, the initial search index can be passed."
+msgstr ""
+
+#: ../../classes/class_array.rst:200
+msgid ":ref:`int<class_int>` **find_last** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:202
+msgid ""
+"Searches the array in reverse order for a value and returns its index or "
+"-1 if not found."
+msgstr ""
+
+#: ../../classes/class_array.rst:206
+msgid "var **front** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:208
+msgid "Returns the first element of the array if the array is not empty (size>0)."
+msgstr ""
+
+#: ../../classes/class_array.rst:212
+msgid ":ref:`bool<class_bool>` **has** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:214
+msgid "Return true if the array contains given value."
+msgstr ""
+
+#: ../../classes/class_array.rst:225
+msgid ":ref:`int<class_int>` **hash** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:227
+msgid "Return a hashed integer value representing the array contents."
+msgstr ""
+
+#: ../../classes/class_array.rst:231
+msgid "void **insert** **(** :ref:`int<class_int>` position, var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:233
+msgid ""
+"Insert a new element at a given position in the array. The position must "
+"be valid, or at the end of the array (pos==size())."
+msgstr ""
+
+#: ../../classes/class_array.rst:237
+msgid "void **invert** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:239
+msgid ""
+"Reverse the order of the elements in the array (so first element will now"
+" be the last) and return reference to the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:243
+msgid "var **pop_back** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:245
+msgid "Remove the last element of the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:249
+msgid "var **pop_front** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:251
+msgid "Remove the first element of the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:255
+msgid "void **push_back** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:257
+msgid "Append an element at the end of the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:261
+msgid "void **push_front** **(** var value **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:263
+msgid "Add an element at the beginning of the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:267
+msgid "void **remove** **(** :ref:`int<class_int>` position **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:269
+msgid "Remove an element from the array by index."
+msgstr ""
+
+#: ../../classes/class_array.rst:273
+msgid "void **resize** **(** :ref:`int<class_int>` size **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:275
+msgid ""
+"Resize the array to contain a different number of elements. If the array "
+"size is smaller, elements are cleared, if bigger, new elements are Null."
+msgstr ""
+
+#: ../../classes/class_array.rst:279
+msgid ""
+":ref:`int<class_int>` **rfind** **(** var what, :ref:`int<class_int>` "
+"from=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:281
+msgid ""
+"Searches the array in reverse order. Optionally, a start search index can"
+" be passed. If negative, the start index is considered relative to the "
+"end of the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:285
+msgid ":ref:`int<class_int>` **size** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:287
+msgid "Return the amount of elements in the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:291
+msgid "void **sort** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:293
+msgid "Sort the array using natural order and return reference to the array."
+msgstr ""
+
+#: ../../classes/class_array.rst:297
+msgid ""
+"void **sort_custom** **(** :ref:`Object<class_object>` obj, "
+":ref:`String<class_string>` func **)**"
+msgstr ""
+
+#: ../../classes/class_array.rst:299
+msgid ""
+"Sort the array using a custom method and return reference to the array. "
+"The arguments are an object that holds the method and the name of such "
+"method. The custom method receives two arguments (a pair of elements from"
+" the array) and must return true if the first argument is less than the "
+"second, and return false otherwise. Note: you cannot randomize the return"
+" value as the heapsort algorithm expects a deterministic result. Doing so"
+" will result in unexpected behavior."
+msgstr ""
+

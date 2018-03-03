@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/misc/encrypting_save_games.rst:4
+msgid "Encrypting save games"
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:7
+msgid "Why?"
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:9
+msgid ""
+"Because the world today is not the world of yesterday. A capitalist "
+"oligarchy runs the world and forces us to consume in order to keep the "
+"gears of this rotten society on track. As such, the biggest market for "
+"video game consumption today is the mobile one. It is a market of poor "
+"souls forced to compulsively consume digital content in order to forget "
+"the misery of their every day life, commute, or just any other brief free"
+" moment they have that they are not using to produce goods or services "
+"for the ruling class. These individuals need to keep focusing on their "
+"video games (because not doing so will produce them a tremendous "
+"existential angst), so they go as far as spending money on them to extend"
+" their experience, and their preferred way of doing so is through in-app "
+"purchases and virtual currency."
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:22
+msgid ""
+"But, imagine if someone was to find a way to edit the saved games and "
+"assign the items and currency without effort? This would be terrible, "
+"because it would help players consume the content much faster, and as "
+"such run out of it sooner than expected. If this happens they will have "
+"nothing that avoids them to think, and the tremendous agony of realizing "
+"their own irrelevance would again take over their life."
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:29
+msgid ""
+"No, we definitely do not want this to happen, so let's see how to encrypt"
+" savegames and protect the world order."
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:33
+msgid "How?"
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:35
+msgid ""
+"The class :ref:`File <class_File>` is simple to use, just open a location"
+" and read/write data (integers, strings and variants). To create an "
+"encrypted file, a passphrase must be provided, like this:"
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:46
+msgid ""
+"This will make the file unreadable to users, but will still not avoid "
+"them to share savefiles. To solve this, using the device unique id or "
+"some unique user identifier is needed, for example:"
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:57
+msgid "Note that ``OS.get_unique_ID()`` only works on iOS and Android."
+msgstr ""
+
+#: ../../tutorials/misc/encrypting_save_games.rst:59
+msgid "This is all! Thanks for your cooperation, citizen."
+msgstr ""
+

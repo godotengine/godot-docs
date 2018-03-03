@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_audioeffect.rst:8
+msgid "AudioEffect"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:12
+msgid ""
+"**Inherited By:** "
+":ref:`AudioEffectCompressor<class_audioeffectcompressor>`, "
+":ref:`AudioEffectLimiter<class_audioeffectlimiter>`, "
+":ref:`AudioEffectAmplify<class_audioeffectamplify>`, "
+":ref:`AudioEffectFilter<class_audioeffectfilter>`, "
+":ref:`AudioEffectDistortion<class_audioeffectdistortion>`, "
+":ref:`AudioEffectDelay<class_audioeffectdelay>`, "
+":ref:`AudioEffectStereoEnhance<class_audioeffectstereoenhance>`, "
+":ref:`AudioEffectReverb<class_audioeffectreverb>`, "
+":ref:`AudioEffectPanner<class_audioeffectpanner>`, "
+":ref:`AudioEffectEQ<class_audioeffecteq>`, "
+":ref:`AudioEffectPitchShift<class_audioeffectpitchshift>`, "
+":ref:`AudioEffectChorus<class_audioeffectchorus>`, "
+":ref:`AudioEffectPhaser<class_audioeffectphaser>`"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:19
+msgid "Audio Effect For Audio."
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:22
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_audioeffect.rst:24
+msgid ""
+"Base resource for audio bus. Applies an audio effect on the bus that the "
+"resource is applied on."
+msgstr ""
+

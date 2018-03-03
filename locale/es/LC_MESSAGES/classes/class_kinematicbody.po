@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_kinematicbody.rst:8
+msgid "KinematicBody"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:10
+msgid ""
+"**Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** "
+":ref:`CollisionObject<class_collisionobject>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:17
+msgid "Kinematic body 3D node."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:23
+#: ../../classes/class_kinematicbody.rst:37
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:23
+msgid ""
+":ref:`get_floor_velocity<class_KinematicBody_get_floor_velocity>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:25
+#: ../../classes/class_kinematicbody.rst:35
+msgid ":ref:`KinematicCollision<class_kinematiccollision>`"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:25
+msgid ""
+":ref:`get_slide_collision<class_KinematicBody_get_slide_collision>` **(**"
+" :ref:`int<class_int>` slide_idx **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:27
+msgid ""
+":ref:`get_slide_count<class_KinematicBody_get_slide_count>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:29
+#: ../../classes/class_kinematicbody.rst:31
+#: ../../classes/class_kinematicbody.rst:33
+#: ../../classes/class_kinematicbody.rst:39
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:29
+msgid ":ref:`is_on_ceiling<class_KinematicBody_is_on_ceiling>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:31
+msgid ":ref:`is_on_floor<class_KinematicBody_is_on_floor>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:33
+msgid ":ref:`is_on_wall<class_KinematicBody_is_on_wall>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:35
+msgid ""
+":ref:`move_and_collide<class_KinematicBody_move_and_collide>` **(** "
+":ref:`Vector3<class_vector3>` rel_vec **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:37
+msgid ""
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>` **(** "
+":ref:`Vector3<class_vector3>` linear_velocity, "
+":ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), "
+":ref:`float<class_float>` slope_stop_min_velocity=0.05, "
+":ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` "
+"floor_max_angle=0.785398 **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:39
+msgid ""
+":ref:`test_move<class_KinematicBody_test_move>` **(** "
+":ref:`Transform<class_transform>` from, :ref:`Vector3<class_vector3>` "
+"rel_vec **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:43
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:47
+msgid ":ref:`bool<class_bool>` **axis_lock_angular_x**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:51
+msgid ":ref:`bool<class_bool>` **axis_lock_angular_y**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:55
+msgid ":ref:`bool<class_bool>` **axis_lock_angular_z**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:59
+msgid ":ref:`bool<class_bool>` **axis_lock_linear_x**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:63
+msgid ":ref:`bool<class_bool>` **axis_lock_linear_y**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:67
+msgid ":ref:`bool<class_bool>` **axis_lock_linear_z**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:71
+msgid ""
+":ref:`float<class_float>` **collision/safe_margin** - If the body is at "
+"least this close to another body, this body will consider them to be "
+"colliding."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:75
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:77
+msgid ""
+"Kinematic bodies are special types of bodies that are meant to be user-"
+"controlled. They are not affected by physics at all (to other types of "
+"bodies, such a character or a rigid body, these are the same as a static "
+"body). They have however, two main uses:"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:79
+msgid ""
+"Simulated Motion: When these bodies are moved manually, either from code "
+"or from an AnimationPlayer (with process mode set to fixed), the physics "
+"will automatically compute an estimate of their linear and angular "
+"velocity. This makes them very useful for moving platforms or other "
+"AnimationPlayer-controlled objects (like a door, a bridge that opens, "
+"etc)."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:81
+msgid ""
+"Kinematic Characters: KinematicBody also has an API for moving objects "
+"(the :ref:`move_and_collide<class_KinematicBody_move_and_collide>` and "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>` methods) while "
+"performing collision tests. This makes them really useful to implement "
+"characters that collide against a world, but that don't require advanced "
+"physics."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:84
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:88
+msgid ":ref:`Vector3<class_vector3>` **get_floor_velocity** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:90
+msgid ""
+"Returns the velocity of the floor. Only updates when calling "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:94
+msgid ""
+":ref:`KinematicCollision<class_kinematiccollision>` "
+"**get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:96
+msgid ""
+"Returns a :ref:`KinematicCollision<class_kinematiccollision>`, which "
+"contains information about a collision that occurred during the last "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>` call. Since the"
+" body can collide several times in a single call to "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>`, you must "
+"specify the index of the collision in the range 0 to "
+"(:ref:`get_slide_count<class_KinematicBody_get_slide_count>` - 1)."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:100
+msgid ":ref:`int<class_int>` **get_slide_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:102
+msgid ""
+"Returns the number of times the body collided and changed direction "
+"during the last call to "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:106
+msgid ":ref:`bool<class_bool>` **is_on_ceiling** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:108
+msgid ""
+"Returns ``true`` if the body is on the ceiling. Only updates when calling"
+" :ref:`move_and_slide<class_KinematicBody_move_and_slide>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:112
+msgid ":ref:`bool<class_bool>` **is_on_floor** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:114
+msgid ""
+"Returns ``true`` if the body is on the floor. Only updates when calling "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:118
+msgid ":ref:`bool<class_bool>` **is_on_wall** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:120
+msgid ""
+"Returns ``true`` if the body is on a wall. Only updates when calling "
+":ref:`move_and_slide<class_KinematicBody_move_and_slide>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:124
+msgid ""
+":ref:`KinematicCollision<class_kinematiccollision>` **move_and_collide** "
+"**(** :ref:`Vector3<class_vector3>` rel_vec **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:126
+msgid ""
+"Moves the body along the vector ``rel_vec``. The body will stop if it "
+"collides. Returns a :ref:`KinematicCollision<class_kinematiccollision>`, "
+"which contains information about the collision."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:130
+msgid ""
+":ref:`Vector3<class_vector3>` **move_and_slide** **(** "
+":ref:`Vector3<class_vector3>` linear_velocity, "
+":ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), "
+":ref:`float<class_float>` slope_stop_min_velocity=0.05, "
+":ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` "
+"floor_max_angle=0.785398 **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:132
+msgid ""
+"Moves the body along a vector. If the body collides with another, it will"
+" slide along the other body rather than stop immediately. If the other "
+"body is a ``KinematicBody`` or :ref:`RigidBody<class_rigidbody>`, it will"
+" also be affected by the motion of the other body. You can use this to "
+"make moving or rotating platforms, or to make nodes push other nodes."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:134
+msgid ""
+"``linear_velocity`` is a value in pixels per second. Unlike in for "
+"example :ref:`move_and_collide<class_KinematicBody_move_and_collide>`, "
+"you should *not* multiply it with ``delta`` — this is done by the method."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:136
+msgid ""
+"``floor_normal`` is the up direction, used to determine what is a wall "
+"and what is a floor or a ceiling. If set to the default value of "
+"``Vector3(0, 0, 0)``, everything is considered a wall. This is useful for"
+" topdown games."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:138
+msgid ""
+"If the body is standing on a slope and the horizontal speed (relative to "
+"the floor's speed) goes below ``slope_stop_min_velocity``, the body will "
+"stop completely. This prevents the body from sliding down slopes when you"
+" include gravity in ``linear_velocity``. When set to lower values, the "
+"body will not be able to stand still on steep slopes."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:140
+msgid ""
+"If the body collides, it will change direction a maximum of "
+"``max_slides`` times before it stops."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:142
+msgid ""
+"``floor_max_angle`` is the maximum angle (in radians) where a slope is "
+"still considered a floor (or a ceiling), rather than a wall. The default "
+"value equals 45 degrees."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:144
+msgid ""
+"Returns the movement that remained when the body stopped. To get more "
+"detailed information about collisions that occurred, use "
+":ref:`get_slide_collision<class_KinematicBody_get_slide_collision>`."
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:148
+msgid ""
+":ref:`bool<class_bool>` **test_move** **(** "
+":ref:`Transform<class_transform>` from, :ref:`Vector3<class_vector3>` "
+"rel_vec **)**"
+msgstr ""
+
+#: ../../classes/class_kinematicbody.rst:150
+msgid ""
+"Checks for collisions without moving the body. Virtually sets the node's "
+"position, scale and rotation to that of the given "
+":ref:`Transform<class_transform>`, then tries to move the body along the "
+"vector ``rel_vec``. Returns ``true`` if a collision would occur."
+msgstr ""
+

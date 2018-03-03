@@ -1,0 +1,257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_configfile.rst:8
+msgid "ConfigFile"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:17
+msgid "Helper class to handle INI-style files."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:23 ../../classes/class_configfile.rst:39
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:23
+msgid ""
+":ref:`erase_section<class_ConfigFile_erase_section>` **(** "
+":ref:`String<class_string>` section **)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:25 ../../classes/class_configfile.rst:27
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:25
+msgid ""
+":ref:`get_section_keys<class_ConfigFile_get_section_keys>` **(** "
+":ref:`String<class_string>` section **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:27
+msgid ":ref:`get_sections<class_ConfigFile_get_sections>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:29
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:29
+msgid ""
+":ref:`get_value<class_ConfigFile_get_value>` **(** "
+":ref:`String<class_string>` section, :ref:`String<class_string>` key, "
+":ref:`Variant<class_variant>` default=null **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:31 ../../classes/class_configfile.rst:33
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:31
+msgid ""
+":ref:`has_section<class_ConfigFile_has_section>` **(** "
+":ref:`String<class_string>` section **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:33
+msgid ""
+":ref:`has_section_key<class_ConfigFile_has_section_key>` **(** "
+":ref:`String<class_string>` section, :ref:`String<class_string>` key "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:35 ../../classes/class_configfile.rst:37
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:35
+msgid ""
+":ref:`load<class_ConfigFile_load>` **(** :ref:`String<class_string>` path"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:37
+msgid ""
+":ref:`save<class_ConfigFile_save>` **(** :ref:`String<class_string>` path"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:39
+msgid ""
+":ref:`set_value<class_ConfigFile_set_value>` **(** "
+":ref:`String<class_string>` section, :ref:`String<class_string>` key, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:43
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:45
+msgid ""
+"This helper class can be used to store :ref:`Variant<class_variant>` "
+"values on the filesystem using INI-style formatting. The stored values "
+"are indentified by a section and a key:"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:54
+msgid ""
+"The stored data can be saved to or parsed from a file, though ConfigFile "
+"objects can also be used directly without accessing the filesystem."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:56
+msgid ""
+"The following example shows how to parse an INI-style file from the "
+"system, read its contents and store new values in it:"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:72
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:76
+msgid "void **erase_section** **(** :ref:`String<class_string>` section **)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:78
+msgid "Deletes the specified section along with all the key-value pairs inside."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:82
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **get_section_keys** **(** "
+":ref:`String<class_string>` section **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:84
+msgid "Returns an array of all defined key identifiers in the specified section."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:88
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **get_sections** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:90
+msgid "Returns an array of all defined section identifiers."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:94
+msgid ""
+":ref:`Variant<class_variant>` **get_value** **(** "
+":ref:`String<class_string>` section, :ref:`String<class_string>` key, "
+":ref:`Variant<class_variant>` default=null **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:96
+msgid ""
+"Returns the current value for the specified section and key. If the "
+"section and/or the key do not exist, the method returns the value of the "
+"optional ``default`` argument, or ``null`` if it is omitted."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:100
+msgid ""
+":ref:`bool<class_bool>` **has_section** **(** :ref:`String<class_string>`"
+" section **)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:102
+msgid "Returns ``true`` if the specified section exists."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:106
+msgid ""
+":ref:`bool<class_bool>` **has_section_key** **(** "
+":ref:`String<class_string>` section, :ref:`String<class_string>` key "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:108
+msgid "Returns ``true`` if the specified section-key pair exists."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:112
+msgid ""
+":ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:114
+msgid ""
+"Loads the config file specified as a parameter. The file's contents are "
+"parsed and loaded in the ConfigFile object which the method was called "
+"on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed "
+"in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, "
+"the return value is ``OK``."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:118
+msgid ""
+":ref:`int<class_int>` **save** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:120
+msgid ""
+"Saves the contents of the ConfigFile object to the file specified as a "
+"parameter. The output file uses an INI-style structure. Returns one of "
+"the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in "
+":ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the "
+"return value is ``OK``."
+msgstr ""
+
+#: ../../classes/class_configfile.rst:124
+msgid ""
+"void **set_value** **(** :ref:`String<class_string>` section, "
+":ref:`String<class_string>` key, :ref:`Variant<class_variant>` value "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_configfile.rst:126
+msgid ""
+"Assigns a value to the specified key of the the specified section. If the"
+" section and/or the key do not exist, they are created. Passing a "
+"``null`` value deletes the specified key if it exists, and deletes the "
+"section if it ends up empty once the key has been removed."
+msgstr ""
+

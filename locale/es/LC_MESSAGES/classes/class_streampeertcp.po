@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_streampeertcp.rst:8
+msgid "StreamPeerTCP"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:10
+msgid ""
+"**Inherits:** :ref:`StreamPeer<class_streampeer>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:17
+msgid "TCP Stream peer."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:23
+#: ../../classes/class_streampeertcp.rst:29
+#: ../../classes/class_streampeertcp.rst:31
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:23
+msgid ""
+":ref:`connect_to_host<class_StreamPeerTCP_connect_to_host>` **(** "
+":ref:`String<class_string>` host, :ref:`int<class_int>` port **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:25
+#: ../../classes/class_streampeertcp.rst:35
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:25
+msgid ""
+":ref:`disconnect_from_host<class_StreamPeerTCP_disconnect_from_host>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:27
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:27
+msgid ""
+":ref:`get_connected_host<class_StreamPeerTCP_get_connected_host>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:29
+msgid ""
+":ref:`get_connected_port<class_StreamPeerTCP_get_connected_port>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:31
+msgid ":ref:`get_status<class_StreamPeerTCP_get_status>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:33
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:33
+msgid ""
+":ref:`is_connected_to_host<class_StreamPeerTCP_is_connected_to_host>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:35
+msgid ""
+":ref:`set_no_delay<class_StreamPeerTCP_set_no_delay>` **(** "
+":ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:39
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:43
+msgid "enum **Status**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:45
+msgid ""
+"**STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``, "
+"also the status after a disconnect."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:46
+msgid ""
+"**STATUS_CONNECTING** = **1** --- A status representing a "
+"``StreamPeerTCP`` that is connecting to a host."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:47
+msgid ""
+"**STATUS_CONNECTED** = **2** --- A status representing a "
+"``StreamPeerTCP`` that is connected to a host."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:48
+msgid ""
+"**STATUS_ERROR** = **3** --- A staus representing a ``StreamPeerTCP`` in "
+"error state."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:52
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:54
+msgid ""
+"TCP Stream peer. This object can be used to connect to TCP servers, or "
+"also is returned by a tcp server."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:57
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:61
+msgid ""
+":ref:`int<class_int>` **connect_to_host** **(** "
+":ref:`String<class_string>` host, :ref:`int<class_int>` port **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:63
+msgid ""
+"Connect to the specified host:port pair. A hostname will be resolved if "
+"valid. Returns OK on success or FAILED on failure."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:67
+msgid "void **disconnect_from_host** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:69
+msgid "Disconnect from host."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:73
+msgid ":ref:`String<class_string>` **get_connected_host** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:75
+msgid "Return the IP of this peer."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:79
+msgid ":ref:`int<class_int>` **get_connected_port** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:81
+msgid "Return the port of this peer."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:85
+msgid ":ref:`int<class_int>` **get_status** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:87
+msgid "Return the status of the connection, one of STATUS\\_\\* enum."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:91
+msgid ":ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:95
+msgid "void **set_no_delay** **(** :ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:97
+msgid "Disable Nagle algorithm to improve latency for small packets."
+msgstr ""
+
+#: ../../classes/class_streampeertcp.rst:99
+msgid ""
+"Note that for applications that send large packets, or need to transfer a"
+" lot of data, this can reduce total bandwidth."
+msgstr ""
+

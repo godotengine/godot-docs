@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_packetpeer.rst:8
+msgid "PacketPeer"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:12
+msgid ""
+"**Inherited By:** :ref:`PacketPeerStream<class_packetpeerstream>`, "
+":ref:`PacketPeerUDP<class_packetpeerudp>`, "
+":ref:`WebSocketPeer<class_websocketpeer>`, "
+":ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>`"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:19
+msgid "Abstraction and base class for packet-based protocols."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:25 ../../classes/class_packetpeer.rst:29
+#: ../../classes/class_packetpeer.rst:33 ../../classes/class_packetpeer.rst:35
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:25
+msgid ""
+":ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:27
+msgid ":ref:`PoolByteArray<class_poolbytearray>`"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:27
+msgid ":ref:`get_packet<class_PacketPeer_get_packet>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:29
+msgid ""
+":ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:31
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:31
+msgid ":ref:`get_var<class_PacketPeer_get_var>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:33
+msgid ""
+":ref:`put_packet<class_PacketPeer_put_packet>` **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:35
+msgid ""
+":ref:`put_var<class_PacketPeer_put_var>` **(** "
+":ref:`Variant<class_variant>` var **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:39
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:43
+msgid ":ref:`bool<class_bool>` **allow_object_decoding**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:47
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:49
+msgid ""
+"PacketPeer is an abstraction and base class for packet-based protocols "
+"(such as UDP). It provides an API for sending and receiving packets both "
+"as raw data or variables. This makes it easy to transfer data over a "
+"protocol, without having to encode data as low level bytes or having to "
+"worry about network ordering."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:52
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:56
+msgid ":ref:`int<class_int>` **get_available_packet_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:58
+msgid "Return the number of packets currently available in the ring-buffer."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:62
+msgid ":ref:`PoolByteArray<class_poolbytearray>` **get_packet** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:64
+msgid "Get a raw packet."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:68
+msgid ":ref:`int<class_int>` **get_packet_error** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:70
+msgid ""
+"Return the error state of the last packet received (via "
+":ref:`get_packet<class_PacketPeer_get_packet>` and "
+":ref:`get_var<class_PacketPeer_get_var>`)."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:74
+msgid ":ref:`Variant<class_variant>` **get_var** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:76
+msgid "Get a Variant."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:80
+msgid ""
+":ref:`int<class_int>` **put_packet** **(** "
+":ref:`PoolByteArray<class_poolbytearray>` buffer **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:82
+msgid "Send a raw packet."
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:86
+msgid ""
+":ref:`int<class_int>` **put_var** **(** :ref:`Variant<class_variant>` var"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_packetpeer.rst:88
+msgid "Send a Variant as a packet."
+msgstr ""
+

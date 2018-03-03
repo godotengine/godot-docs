@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/math/vectors_advanced.rst:4
+msgid "Advanced Vector Math"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:7
+msgid "Planes"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:9
+msgid ""
+"The dot product has another interesting property with unit vectors. "
+"Imagine that perpendicular to that vector (and through the origin) passes"
+" a plane. Planes divide the entire space into positive (over the plane) "
+"and negative (under the plane), and (contrary to popular belief) you can "
+"also use their math in 2D:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:17
+msgid ""
+"Unit vectors that are perpendicular to a surface (so, they describe the "
+"orientation of the surface) are called **unit normal vectors**. Though, "
+"usually they are just abbreviated as \\*normals. Normals appear in "
+"planes, 3D geometry (to determine where each face or vertex is siding), "
+"etc. A **normal** *is* a **unit vector**, but it's called *normal* "
+"because of its usage. (Just like we call Origin to (0,0)!)."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:24
+msgid ""
+"It's as simple as it looks. The plane passes by the origin and the "
+"surface of it is perpendicular to the unit vector (or *normal*). The side"
+" towards the vector points to is the positive half-space, while the other"
+" side is the negative half-space. In 3D this is exactly the same, except "
+"that the plane is an infinite surface (imagine an infinite, flat sheet of"
+" paper that you can orient and is pinned to the origin) instead of a "
+"line."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:33
+msgid "Distance to plane"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:35
+msgid ""
+"Now that it's clear what a plane is, let's go back to the dot product. "
+"The dot product between a **unit vector** and any **point in space** "
+"(yes, this time we do dot product between vector and position), returns "
+"the **distance from the point to the plane**:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:44
+msgid ""
+"But not just the absolute distance, if the point is in the negative half "
+"space the distance will be negative, too:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:49
+msgid "This allows us to tell which side of the plane a point is."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:52
+msgid "Away from the origin"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:54
+msgid ""
+"I know what you are thinking! So far this is nice, but *real* planes are "
+"everywhere in space, not only passing through the origin. You want real "
+"*plane* action and you want it *now*."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:58
+msgid ""
+"Remember that planes not only split space in two, but they also have "
+"*polarity*. This means that it is possible to have perfectly overlapping "
+"planes, but their negative and positive half-spaces are swapped."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:62
+msgid ""
+"With this in mind, let's describe a full plane as a **normal** *N* and a "
+"**distance from the origin** scalar *D*. Thus, our plane is represented "
+"by N and D. For example:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:68
+msgid ""
+"For 3D math, Godot provides a :ref:`Plane <class_Plane>` built-in type "
+"that handles this."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:71
+msgid ""
+"Basically, N and D can represent any plane in space, be it for 2D or 3D "
+"(depending on the amount of dimensions of N) and the math is the same for"
+" both. It's the same as before, but D is the distance from the origin to "
+"the plane, travelling in N direction. As an example, imagine you want to "
+"reach a point in the plane, you will just do:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:81
+msgid ""
+"This will stretch (resize) the normal vector and make it touch the plane."
+" This math might seem confusing, but it's actually much simpler than it "
+"seems. If we want to tell, again, the distance from the point to the "
+"plane, we do the same but adjusting for distance:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:90
+msgid "The same thing, using a built-in function:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:96
+msgid "This will, again, return either a positive or negative distance."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:98
+msgid ""
+"Flipping the polarity of the plane is also very simple, just negate both "
+"N and D. This will result in a plane in the same position, but with "
+"inverted negative and positive half spaces:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:107
+msgid ""
+"Of course, Godot also implements this operator in :ref:`Plane "
+"<class_Plane>`, so doing:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:114
+msgid "Will work as expected."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:116
+msgid ""
+"So, remember, a plane is just that and its main practical use is "
+"calculating the distance to it. So, why is it useful to calculate the "
+"distance from a point to a plane? It's extremely useful! Let's see some "
+"simple examples.."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:122
+msgid "Constructing a plane in 2D"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:124
+msgid ""
+"Planes clearly don't come out of nowhere, so they must be built. "
+"Constructing them in 2D is easy, this can be done from either a normal "
+"(unit vector) and a point, or from two points in space."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:128
+msgid ""
+"In the case of a normal and a point, most of the work is done, as the "
+"normal is already computed, so just calculate D from the dot product of "
+"the normal and the point."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:137
+msgid ""
+"For two points in space, there are actually two planes that pass through "
+"them, sharing the same space but with normal pointing to the opposite "
+"directions. To compute the normal from the two points, the direction "
+"vector must be obtained first, and then it needs to be rotated 90° "
+"degrees to either side:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:153
+msgid ""
+"The rest is the same as the previous example, either point_a or point_b "
+"will work since they are in the same plane:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:163
+msgid ""
+"Doing the same in 3D is a little more complex and will be explained "
+"further down."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:167
+msgid "Some examples of planes"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:169
+msgid ""
+"Here is a simple example of what planes are useful for. Imagine you have "
+"a `convex <http://www.mathsisfun.com/definitions/convex.html>`__ polygon."
+" For example, a rectangle, a trapezoid, a triangle, or just any polygon "
+"where no faces bend inwards."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:174
+msgid ""
+"For every segment of the polygon, we compute the plane that passes by "
+"that segment. Once we have the list of planes, we can do neat things, for"
+" example checking if a point is inside the polygon."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:178
+msgid ""
+"We go through all planes, if we can find a plane where the distance to "
+"the point is positive, then the point is outside the polygon. If we "
+"can't, then the point is inside."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:184
+#: ../../tutorials/math/vectors_advanced.rst:209
+msgid "Code should be something like this:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:195
+msgid ""
+"Pretty cool, huh? But this gets much better! With a little more effort, "
+"similar logic will let us know when two convex polygons are overlapping "
+"too. This is called the Separating Axis Theorem (or SAT) and most physics"
+" engines use this to detect collision."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:200
+msgid ""
+"The idea is really simple! With a point, just checking if a plane returns"
+" a positive distance is enough to tell if the point is outside. With "
+"another polygon, we must find a plane where *all* *the* ***other*** "
+"*polygon* *points* return a positive distance to it. This check is "
+"performed with the planes of A against the points of B, and then with the"
+" planes of B against the points of A:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:245
+msgid ""
+"As you can see, planes are quite useful, and this is the tip of the "
+"iceberg. You might be wondering what happens with non convex polygons. "
+"This is usually just handled by splitting the concave polygon into "
+"smaller convex polygons, or using a technique such as BSP (which is not "
+"used much nowadays)."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:252
+msgid "Collision detection in 3D"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:254
+msgid ""
+"This is another bonus bit, a reward for being patient and keeping up with"
+" this long tutorial. Here is another piece of wisdom. This might not be "
+"something with a direct use case (Godot already does collision detection "
+"pretty well) but It's a really cool algorithm to understand anyway, "
+"because it's used by almost all physics engines and collision detection "
+"libraries :)"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:261
+msgid ""
+"Remember that converting a convex shape in 2D to an array of 2D planes "
+"was useful for collision detection? You could detect if a point was "
+"inside any convex shape, or if two 2D convex shapes were overlapping."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:265
+msgid ""
+"Well, this works in 3D too, if two 3D polyhedral shapes are colliding, "
+"you won't be able to find a separating plane. If a separating plane is "
+"found, then the shapes are definitely not colliding."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:269
+msgid ""
+"To refresh a bit a separating plane means that all vertices of polygon A "
+"are in one side of the plane, and all vertices of polygon B are in the "
+"other side. This plane is always one of the face-planes of either polygon"
+" A or polygon B."
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:274
+msgid ""
+"In 3D though, there is a problem to this approach, because it is possible"
+" that, in some cases a separating plane can't be found. This is an "
+"example of such situation:"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:280
+msgid ""
+"To avoid it, some extra planes need to be tested as separators, these "
+"planes are the cross product between the edges of polygon A and the edges"
+" of polygon B"
+msgstr ""
+
+#: ../../tutorials/math/vectors_advanced.rst:286
+msgid "So the final algorithm is something like:"
+msgstr ""
+

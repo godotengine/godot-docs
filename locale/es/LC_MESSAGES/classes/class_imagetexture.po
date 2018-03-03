@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_imagetexture.rst:8
+msgid "ImageTexture"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:10
+msgid ""
+"**Inherits:** :ref:`Texture<class_texture>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:17
+msgid "A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:23
+#: ../../classes/class_imagetexture.rst:25
+#: ../../classes/class_imagetexture.rst:29
+#: ../../classes/class_imagetexture.rst:31
+#: ../../classes/class_imagetexture.rst:33
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:23
+msgid ""
+":ref:`create<class_ImageTexture_create>` **(** :ref:`int<class_int>` "
+"width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, "
+":ref:`int<class_int>` flags=7 **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:25
+msgid ""
+":ref:`create_from_image<class_ImageTexture_create_from_image>` **(** "
+":ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7 **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:27
+msgid ":ref:`get_format<class_ImageTexture_get_format>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:29
+msgid ""
+":ref:`load<class_ImageTexture_load>` **(** :ref:`String<class_string>` "
+"path **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:31
+msgid ""
+":ref:`set_data<class_ImageTexture_set_data>` **(** "
+":ref:`Image<class_image>` image **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:33
+msgid ""
+":ref:`set_size_override<class_ImageTexture_set_size_override>` **(** "
+":ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:37
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:41
+msgid ""
+":ref:`float<class_float>` **lossy_quality** - The storage quality for "
+"``ImageTexture``.STORAGE_COMPRESS_LOSSY."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:45
+msgid ""
+":ref:`Storage<enum_imagetexture_storage>` **storage** - The storage type "
+"(raw, lossy, or compressed)."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:49
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:53
+msgid "enum **Storage**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:55
+msgid ""
+"**STORAGE_RAW** = **0** --- :ref:`Image<class_image>` data is stored raw "
+"and unaltered."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:56
+msgid ""
+"**STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_image>` data is "
+"compressed with a lossy algorithm. You can set the storage quality with "
+":ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:57
+msgid ""
+"**STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_image>` data "
+"is compressed with a lossless algorithm."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:61
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:63
+msgid ""
+"A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`. "
+"Can be created from an :ref:`Image<class_image>` with "
+":ref:`create_from_image<class_ImageTexture_create_from_image>`."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:66
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:70
+msgid ""
+"void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` "
+"height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7 **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:72
+msgid "Create a new ``ImageTexture`` with \"width\" and \"height\"."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:74
+msgid "\"format\" one of :ref:`Image<class_image>`.FORMAT\\_\\*."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:76
+msgid "\"flags\" one or more of :ref:`Texture<class_texture>`.FLAG\\_\\*."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:80
+msgid ""
+"void **create_from_image** **(** :ref:`Image<class_image>` image, "
+":ref:`int<class_int>` flags=7 **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:82
+msgid ""
+"Create a new ``ImageTexture`` from an :ref:`Image<class_image>` with "
+"\"flags\" from :ref:`Texture<class_texture>`.FLAG\\_\\*."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:86
+msgid ":ref:`int<class_int>` **get_format** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:88
+msgid ""
+"Return the format of the ``ImageTexture``, one of "
+":ref:`Image<class_image>`.FORMAT\\_\\*."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:92
+msgid "void **load** **(** :ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:94
+msgid "Load an ``ImageTexture``."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:98
+msgid "void **set_data** **(** :ref:`Image<class_image>` image **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:100
+msgid "Set the :ref:`Image<class_image>` of this ``ImageTexture``."
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:104
+msgid "void **set_size_override** **(** :ref:`Vector2<class_vector2>` size **)**"
+msgstr ""
+
+#: ../../classes/class_imagetexture.rst:106
+msgid "Resizes the ``ImageTexture`` to the specified dimensions."
+msgstr ""
+

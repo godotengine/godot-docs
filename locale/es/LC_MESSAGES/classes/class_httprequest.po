@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_httprequest.rst:8
+msgid "HTTPRequest"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:10
+msgid "**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:17
+msgid "A node with the ability to send HTTP requests."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:23
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:23
+msgid ":ref:`cancel_request<class_HTTPRequest_cancel_request>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:25
+#: ../../classes/class_httprequest.rst:27
+#: ../../classes/class_httprequest.rst:29
+#: ../../classes/class_httprequest.rst:31
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:25
+msgid ":ref:`get_body_size<class_HTTPRequest_get_body_size>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:27
+msgid ""
+":ref:`get_downloaded_bytes<class_HTTPRequest_get_downloaded_bytes>` **(**"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:29
+msgid ""
+":ref:`get_http_client_status<class_HTTPRequest_get_http_client_status>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:31
+msgid ""
+":ref:`request<class_HTTPRequest_request>` **(** "
+":ref:`String<class_string>` url, "
+":ref:`PoolStringArray<class_poolstringarray>` "
+"custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` "
+"ssl_validate_domain=true, :ref:`int<class_int>` method=0, "
+":ref:`String<class_string>` request_data=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:35
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:39
+msgid ""
+"**request_completed** **(** :ref:`int<class_int>` result, "
+":ref:`int<class_int>` response_code, "
+":ref:`PoolStringArray<class_poolstringarray>` headers, "
+":ref:`PoolByteArray<class_poolbytearray>` body **)**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:41
+msgid "This signal is emitted upon request completion."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:45
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:49
+msgid ""
+":ref:`int<class_int>` **body_size_limit** - Maximum allowed size for "
+"response bodies."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:53
+msgid ""
+":ref:`String<class_string>` **download_file** - The file to download "
+"into. Will output any received file into it."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:57
+msgid ""
+":ref:`int<class_int>` **max_redirects** - Maximum number of allowed "
+"redirects."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:61
+msgid ""
+":ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is "
+"used to improve performance."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:65
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:69
+msgid "enum **Result**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:71
+msgid "**RESULT_SUCCESS** = **0** --- Request successful."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:72
+msgid "**RESULT_CHUNKED_BODY_SIZE_MISMATCH** = **1**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:73
+msgid "**RESULT_CANT_CONNECT** = **2** --- Request failed while connecting."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:74
+msgid "**RESULT_CANT_RESOLVE** = **3** --- Request failed while resolving."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:75
+msgid ""
+"**RESULT_CONNECTION_ERROR** = **4** --- Request failed due to "
+"connection(read/write) error."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:76
+msgid ""
+"**RESULT_SSL_HANDSHAKE_ERROR** = **5** --- Request failed on SSL "
+"handshake."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:77
+msgid "**RESULT_NO_RESPONSE** = **6** --- Request does not have a response(yet)."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:78
+msgid ""
+"**RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its "
+"maximum size limit, see "
+":ref:`set_body_size_limit<class_HTTPRequest_set_body_size_limit>`."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:79
+msgid "**RESULT_REQUEST_FAILED** = **8** --- Request failed. (Unused)"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:80
+msgid ""
+"**RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open "
+"the download file."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:81
+msgid ""
+"**RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't "
+"write to the download file."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:82
+msgid ""
+"**RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its "
+"maximum redirect limit, see "
+":ref:`set_max_redirects<class_HTTPRequest_set_max_redirects>`."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:86
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:88
+msgid ""
+"A node with the ability to send HTTP requests. Uses "
+":ref:`HTTPClient<class_httpclient>` internally."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:90
+msgid ""
+"Can be used to make HTTP requests, i.e. download or upload files or web "
+"content via HTTP."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:93
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:97
+msgid "void **cancel_request** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:99
+msgid "Cancels the current request."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:103
+msgid ":ref:`int<class_int>` **get_body_size** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:105
+msgid "Returns the response body length."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:109
+msgid ":ref:`int<class_int>` **get_downloaded_bytes** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:111
+msgid "Returns the amount of bytes this HTTPRequest downloaded."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:115
+msgid ":ref:`int<class_int>` **get_http_client_status** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:117
+msgid ""
+"Returns the current status of the underlying "
+":ref:`HTTPClient<class_httpclient>`. See ``STATUS_*`` enum on "
+":ref:`HTTPClient<class_httpclient>`."
+msgstr ""
+
+#: ../../classes/class_httprequest.rst:121
+msgid ""
+":ref:`int<class_int>` **request** **(** :ref:`String<class_string>` url, "
+":ref:`PoolStringArray<class_poolstringarray>` "
+"custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` "
+"ssl_validate_domain=true, :ref:`int<class_int>` method=0, "
+":ref:`String<class_string>` request_data=\"\" **)**"
+msgstr ""
+

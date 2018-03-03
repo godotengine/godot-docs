@@ -1,0 +1,1073 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_canvasitem.rst:8
+msgid "CanvasItem"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:10
+msgid "**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:12
+msgid ""
+"**Inherited By:** :ref:`Node2D<class_node2d>`, "
+":ref:`Control<class_control>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:19
+msgid "Base class of anything 2D."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:25 ../../classes/class_canvasitem.rst:29
+#: ../../classes/class_canvasitem.rst:31 ../../classes/class_canvasitem.rst:33
+#: ../../classes/class_canvasitem.rst:35 ../../classes/class_canvasitem.rst:37
+#: ../../classes/class_canvasitem.rst:39 ../../classes/class_canvasitem.rst:41
+#: ../../classes/class_canvasitem.rst:43 ../../classes/class_canvasitem.rst:45
+#: ../../classes/class_canvasitem.rst:47 ../../classes/class_canvasitem.rst:49
+#: ../../classes/class_canvasitem.rst:51 ../../classes/class_canvasitem.rst:53
+#: ../../classes/class_canvasitem.rst:55 ../../classes/class_canvasitem.rst:57
+#: ../../classes/class_canvasitem.rst:59 ../../classes/class_canvasitem.rst:61
+#: ../../classes/class_canvasitem.rst:85 ../../classes/class_canvasitem.rst:99
+#: ../../classes/class_canvasitem.rst:101
+#: ../../classes/class_canvasitem.rst:103
+#: ../../classes/class_canvasitem.rst:105
+#: ../../classes/class_canvasitem.rst:107
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:25
+msgid ":ref:`_draw<class_CanvasItem__draw>` **(** **)** virtual"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:27
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:27
+msgid ""
+":ref:`draw_char<class_CanvasItem_draw_char>` **(** "
+":ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, "
+":ref:`String<class_string>` char, :ref:`String<class_string>` next, "
+":ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ) **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:29
+msgid ""
+":ref:`draw_circle<class_CanvasItem_draw_circle>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` radius,"
+" :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:31
+msgid ""
+":ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ),"
+" :ref:`Texture<class_texture>` texture=null, "
+":ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:33
+msgid ""
+":ref:`draw_line<class_CanvasItem_draw_line>` **(** "
+":ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, "
+":ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, "
+":ref:`bool<class_bool>` antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:35
+msgid ""
+":ref:`draw_multiline<class_CanvasItem_draw_multiline>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, "
+":ref:`bool<class_bool>` antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:37
+msgid ""
+":ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` "
+"**(** :ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:39
+msgid ""
+":ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ),"
+" :ref:`Texture<class_texture>` texture=null, "
+":ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:41
+msgid ""
+":ref:`draw_polyline<class_CanvasItem_draw_polyline>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, "
+":ref:`bool<class_bool>` antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:43
+msgid ""
+":ref:`draw_polyline_colors<class_CanvasItem_draw_polyline_colors>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:45
+msgid ""
+":ref:`draw_primitive<class_CanvasItem_draw_primitive>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs, "
+":ref:`Texture<class_texture>` texture=null, :ref:`float<class_float>` "
+"width=1.0, :ref:`Texture<class_texture>` normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:47
+msgid ""
+":ref:`draw_rect<class_CanvasItem_draw_rect>` **(** "
+":ref:`Rect2<class_rect2>` rect, :ref:`Color<class_color>` color, "
+":ref:`bool<class_bool>` filled=true **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:49
+msgid ""
+":ref:`draw_set_transform<class_CanvasItem_draw_set_transform>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` "
+"rotation, :ref:`Vector2<class_vector2>` scale **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:51
+msgid ""
+":ref:`draw_set_transform_matrix<class_CanvasItem_draw_set_transform_matrix>`"
+" **(** :ref:`Transform2D<class_transform2d>` xform **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:53
+msgid ""
+":ref:`draw_string<class_CanvasItem_draw_string>` **(** "
+":ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, "
+":ref:`String<class_string>` text, :ref:`Color<class_color>` "
+"modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:55
+msgid ""
+":ref:`draw_style_box<class_CanvasItem_draw_style_box>` **(** "
+":ref:`StyleBox<class_stylebox>` style_box, :ref:`Rect2<class_rect2>` rect"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:57
+msgid ""
+":ref:`draw_texture<class_CanvasItem_draw_texture>` **(** "
+":ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` "
+"position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), "
+":ref:`Texture<class_texture>` normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:59
+msgid ""
+":ref:`draw_texture_rect<class_CanvasItem_draw_texture_rect>` **(** "
+":ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, "
+":ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( "
+"1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, "
+":ref:`Texture<class_texture>` normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:61
+msgid ""
+":ref:`draw_texture_rect_region<class_CanvasItem_draw_texture_rect_region>`"
+" **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` "
+"rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` "
+"modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, "
+":ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` "
+"clip_uv=true **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:63 ../../classes/class_canvasitem.rst:65
+msgid ":ref:`RID<class_rid>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:63
+msgid ":ref:`get_canvas<class_CanvasItem_get_canvas>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:65
+msgid ":ref:`get_canvas_item<class_CanvasItem_get_canvas_item>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:67 ../../classes/class_canvasitem.rst:71
+#: ../../classes/class_canvasitem.rst:73 ../../classes/class_canvasitem.rst:77
+#: ../../classes/class_canvasitem.rst:81
+msgid ":ref:`Transform2D<class_transform2d>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:67
+msgid ""
+":ref:`get_canvas_transform<class_CanvasItem_get_canvas_transform>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:69 ../../classes/class_canvasitem.rst:75
+#: ../../classes/class_canvasitem.rst:95
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:69
+msgid ""
+":ref:`get_global_mouse_position<class_CanvasItem_get_global_mouse_position>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:71
+msgid ""
+":ref:`get_global_transform<class_CanvasItem_get_global_transform>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:73
+msgid ""
+":ref:`get_global_transform_with_canvas<class_CanvasItem_get_global_transform_with_canvas>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:75
+msgid ""
+":ref:`get_local_mouse_position<class_CanvasItem_get_local_mouse_position>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:77
+msgid ":ref:`get_transform<class_CanvasItem_get_transform>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:79
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:79
+msgid ""
+":ref:`get_viewport_rect<class_CanvasItem_get_viewport_rect>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:81
+msgid ""
+":ref:`get_viewport_transform<class_CanvasItem_get_viewport_transform>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:83
+msgid ":ref:`World2D<class_world2d>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:83
+msgid ":ref:`get_world_2d<class_CanvasItem_get_world_2d>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:85
+msgid ":ref:`hide<class_CanvasItem_hide>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:87 ../../classes/class_canvasitem.rst:89
+#: ../../classes/class_canvasitem.rst:91 ../../classes/class_canvasitem.rst:93
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:87
+msgid ""
+":ref:`is_local_transform_notification_enabled<class_CanvasItem_is_local_transform_notification_enabled>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:89
+msgid ""
+":ref:`is_set_as_toplevel<class_CanvasItem_is_set_as_toplevel>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:91
+msgid ""
+":ref:`is_transform_notification_enabled<class_CanvasItem_is_transform_notification_enabled>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:93
+msgid ""
+":ref:`is_visible_in_tree<class_CanvasItem_is_visible_in_tree>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:95
+msgid ""
+":ref:`make_canvas_position_local<class_CanvasItem_make_canvas_position_local>`"
+" **(** :ref:`Vector2<class_vector2>` screen_point **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:97
+msgid ":ref:`InputEvent<class_inputevent>`"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:97
+msgid ""
+":ref:`make_input_local<class_CanvasItem_make_input_local>` **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:99
+msgid ""
+":ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>` **(** "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:101
+msgid ""
+":ref:`set_notify_local_transform<class_CanvasItem_set_notify_local_transform>`"
+" **(** :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:103
+msgid ""
+":ref:`set_notify_transform<class_CanvasItem_set_notify_transform>` **(** "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:105
+msgid ":ref:`show<class_CanvasItem_show>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:107
+msgid ":ref:`update<class_CanvasItem_update>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:111
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:115
+msgid "**draw** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:117
+msgid ""
+"Emitted when the CanvasItem must redraw. This can only be connected "
+"realtime, as deferred will not allow drawing."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:121
+msgid "**hide** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:123
+msgid "Emitted when becoming hidden."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:127
+msgid "**item_rect_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:129
+msgid "Emitted when the item rect has changed."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:133
+msgid "**visibility_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:135
+msgid "Emitted when the visibility (hidden/visible) changes."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:139
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:143
+msgid ""
+":ref:`int<class_int>` **light_mask** - The rendering layers in which this"
+" ``CanvasItem`` responds to :ref:`Light2D<class_light2d>` nodes. Default "
+"value: ``1``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:147
+msgid ""
+":ref:`Material<class_material>` **material** - The material applied to "
+"textures on this ``CanvasItem``. Default value: ``null``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:151
+msgid ""
+":ref:`Color<class_color>` **modulate** - The color applied to textures on"
+" this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "
+"\"white\")."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:155
+msgid ""
+":ref:`Color<class_color>` **self_modulate** - The color applied to "
+"textures on this ``CanvasItem``. This is not inherited by children "
+"``CanvasItem``\\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "
+"\"white\").."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:159
+msgid ""
+":ref:`bool<class_bool>` **show_behind_parent** - If ``true`` the object "
+"draws behind its parent. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:163
+msgid ""
+":ref:`bool<class_bool>` **show_on_top** - If ``true`` the object draws on"
+" top of its parent. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:167
+msgid ""
+":ref:`bool<class_bool>` **use_parent_material** - If ``true`` the parent "
+"``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is "
+"used as this one's material. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:171
+msgid ""
+":ref:`bool<class_bool>` **visible** - If ``true`` this ``CanvasItem`` is "
+"drawn. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:175
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:177
+msgid ""
+"**NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has"
+" changed. Only received if requested."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:178
+msgid "**NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:179
+msgid ""
+"**NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility "
+"has changed."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:180
+msgid ""
+"**NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the "
+"canvas."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:181
+msgid ""
+"**NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the "
+"canvas."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:184
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:188
+msgid "enum **BlendMode**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:190
+msgid ""
+"**BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to "
+"be independent of the alpha (opacity) value."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:191
+msgid "**BLEND_MODE_ADD** = **1** --- Additive blending mode."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:192
+msgid "**BLEND_MODE_SUB** = **2** --- Subtractive blending mode."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:193
+msgid "**BLEND_MODE_MUL** = **3** --- Multiplicative blending mode."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:194
+msgid ""
+"**BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are "
+"assumed to be premultiplied by the alpha (opacity) value."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:198
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:200
+msgid ""
+"Base class of anything 2D. Canvas items are laid out in a tree and "
+"children inherit and extend the transform of their parent. CanvasItem is "
+"extended by :ref:`Control<class_control>`, for anything GUI related, and "
+"by :ref:`Node2D<class_node2d>` for anything 2D engine related."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:202
+msgid ""
+"Any CanvasItem can draw. For this, the \"update\" function must be "
+"called, then NOTIFICATION_DRAW will be received on idle time to request "
+"redraw. Because of this, canvas items don't need to be redraw on every "
+"frame, improving the performance significantly. Several functions for "
+"drawing on the CanvasItem are provided (see draw\\_\\* functions). They "
+"can only be used inside the notification, signal or _draw() overrides "
+"function, though."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:204
+msgid ""
+"Canvas items are draw in tree order. By default, children are on top of "
+"their parents so a root CanvasItem will be drawn behind everything (this "
+"can be changed per item though)."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:206
+msgid ""
+"Canvas items can also be hidden (hiding also their subtree). They provide"
+" many means for changing standard parameters such as opacity (for it and "
+"the subtree) and self opacity, blend mode."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:208
+msgid ""
+"Ultimately, a transform notification can be requested, which will notify "
+"the node that its global position changed in case the parent tree "
+"changed."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:211
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:215
+msgid "void **_draw** **(** **)** virtual"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:217
+msgid "Called (if exists) to draw the canvas item."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:221
+msgid ""
+":ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_font>` "
+"font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>`"
+" char, :ref:`String<class_string>` next, :ref:`Color<class_color>` "
+"modulate=Color( 1, 1, 1, 1 ) **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:223
+msgid ""
+"Draws a string character using a custom font. Returns the advance, "
+"depending on the char width and kerning with an optional next char."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:227
+msgid ""
+"void **draw_circle** **(** :ref:`Vector2<class_vector2>` position, "
+":ref:`float<class_float>` radius, :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:229
+msgid "Draws a colored circle."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:233
+msgid ""
+"void **draw_colored_polygon** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ),"
+" :ref:`Texture<class_texture>` texture=null, "
+":ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:235
+msgid "Draws a colored polygon of any amount of points, convex or concave."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:239
+msgid ""
+"void **draw_line** **(** :ref:`Vector2<class_vector2>` from, "
+":ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, "
+":ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:241
+msgid ""
+"Draws a line from a 2D point to another, with a given color and width. It"
+" can be optionally antialiased."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:245
+msgid ""
+"void **draw_multiline** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, "
+":ref:`bool<class_bool>` antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:247
+msgid ""
+"Draws multiple, parallel lines with a uniform ``color`` and ``width`` and"
+" optional antialiasing."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:251
+msgid ""
+"void **draw_multiline_colors** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:253
+msgid ""
+"Draws multiple, parallel lines with a uniform ``width``, segment-by-"
+"segment coloring, and optional antialiasing. Colors assigned to line "
+"segments match by index between ``points`` and ``colors``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:257
+msgid ""
+"void **draw_polygon** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ),"
+" :ref:`Texture<class_texture>` texture=null, "
+":ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:259
+msgid "Draws a polygon of any amount of points, convex or concave."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:263
+msgid ""
+"void **draw_polyline** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, "
+":ref:`bool<class_bool>` antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:265
+msgid ""
+"Draws interconnected line segments with a uniform ``color`` and ``width``"
+" and optional antialiasing."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:269
+msgid ""
+"void **draw_polyline_colors** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` "
+"antialiased=false **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:271
+msgid ""
+"Draws interconnected line segments with a uniform ``width``, segment-by-"
+"segment coloring, and optional antialiasing. Colors assigned to line "
+"segments match by index between ``points`` and ``colors``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:275
+msgid ""
+"void **draw_primitive** **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` points, "
+":ref:`PoolColorArray<class_poolcolorarray>` colors, "
+":ref:`PoolVector2Array<class_poolvector2array>` uvs, "
+":ref:`Texture<class_texture>` texture=null, :ref:`float<class_float>` "
+"width=1.0, :ref:`Texture<class_texture>` normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:277
+msgid ""
+"Draws a custom primitive, 1 point for a point, 2 points for a line, 3 "
+"points for a triangle and 4 points for a quad."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:281
+msgid ""
+"void **draw_rect** **(** :ref:`Rect2<class_rect2>` rect, "
+":ref:`Color<class_color>` color, :ref:`bool<class_bool>` filled=true "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:283
+msgid "Draws a colored rectangle."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:287
+msgid ""
+"void **draw_set_transform** **(** :ref:`Vector2<class_vector2>` position,"
+" :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` scale "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:289
+msgid ""
+"Sets a custom transform for drawing via components. Anything drawn "
+"afterwards will be transformed by this."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:293
+msgid ""
+"void **draw_set_transform_matrix** **(** "
+":ref:`Transform2D<class_transform2d>` xform **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:295
+msgid ""
+"Sets a custom transform for drawing via matrix. Anything drawn afterwards"
+" will be transformed by this."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:299
+msgid ""
+"void **draw_string** **(** :ref:`Font<class_font>` font, "
+":ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` text,"
+" :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), "
+":ref:`int<class_int>` clip_w=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:301
+msgid "Draws a string using a custom font."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:305
+msgid ""
+"void **draw_style_box** **(** :ref:`StyleBox<class_stylebox>` style_box, "
+":ref:`Rect2<class_rect2>` rect **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:307
+msgid "Draws a styled rectangle."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:311
+msgid ""
+"void **draw_texture** **(** :ref:`Texture<class_texture>` texture, "
+":ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` "
+"modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_texture>` "
+"normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:313
+msgid "Draws a texture at a given position."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:317
+msgid ""
+"void **draw_texture_rect** **(** :ref:`Texture<class_texture>` texture, "
+":ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, "
+":ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), "
+":ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` "
+"normal_map=null **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:319
+msgid ""
+"Draws a textured rectangle at a given position, optionally modulated by a"
+" color. Transpose swaps the x and y coordinates when reading the texture."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:323
+msgid ""
+"void **draw_texture_rect_region** **(** :ref:`Texture<class_texture>` "
+"texture, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` "
+"src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), "
+":ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` "
+"normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:325
+msgid ""
+"Draws a textured rectangle region at a given position, optionally "
+"modulated by a color. Transpose swaps the x and y coordinates when "
+"reading the texture."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:329
+msgid ":ref:`RID<class_rid>` **get_canvas** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:331
+msgid ""
+"Return the :ref:`RID<class_rid>` of the :ref:`World2D<class_world2d>` "
+"canvas where this item is in."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:335
+msgid ":ref:`RID<class_rid>` **get_canvas_item** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:337
+msgid ""
+"Return the canvas item RID used by "
+":ref:`VisualServer<class_visualserver>` for this item."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:341
+msgid ""
+":ref:`Transform2D<class_transform2d>` **get_canvas_transform** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:343
+msgid "Get the transform matrix of this item's canvas."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:347
+msgid ""
+":ref:`Vector2<class_vector2>` **get_global_mouse_position** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:349
+msgid "Get the global position of the mouse."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:353
+msgid ""
+":ref:`Transform2D<class_transform2d>` **get_global_transform** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:355
+msgid "Get the global transform matrix of this item."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:359
+msgid ""
+":ref:`Transform2D<class_transform2d>` "
+"**get_global_transform_with_canvas** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:361
+msgid "Get the global transform matrix of this item in relation to the canvas."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:365
+msgid ""
+":ref:`Vector2<class_vector2>` **get_local_mouse_position** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:367
+msgid "Get the mouse position relative to this item's position."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:371
+msgid ":ref:`Transform2D<class_transform2d>` **get_transform** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:373
+msgid "Get the transform matrix of this item."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:377
+msgid ":ref:`Rect2<class_rect2>` **get_viewport_rect** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:379
+msgid "Get the viewport's boundaries as a :ref:`Rect2<class_rect2>`."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:383
+msgid ""
+":ref:`Transform2D<class_transform2d>` **get_viewport_transform** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:385
+msgid "Get this item's transform in relation to the viewport."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:389
+msgid ":ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:391
+msgid "Get the :ref:`World2D<class_world2d>` where this item is in."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:395
+msgid "void **hide** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:397
+msgid "Hide the CanvasItem currently visible."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:401
+msgid ""
+":ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(**"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:403
+msgid ""
+"Returns ``true`` if local transform notifications are communicated to "
+"children."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:407
+msgid ":ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:409
+msgid ""
+"Return if set as toplevel. See "
+":ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>`."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:413
+msgid ""
+":ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)**"
+" const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:415
+msgid ""
+"Returns ``true`` if global transform notifications are communicated to "
+"children."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:419
+msgid ":ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:421
+msgid ""
+"Returns ``true`` if the node is present in the "
+":ref:`SceneTree<class_scenetree>`, its "
+":ref:`visible<class_CanvasItem_visible>` property is ``true`` and its "
+"inherited visibility is also ``true``."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:425
+msgid ""
+":ref:`Vector2<class_vector2>` **make_canvas_position_local** **(** "
+":ref:`Vector2<class_vector2>` screen_point **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:427
+msgid "Assigns ``screen_point`` as this node's new local transform."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:431
+msgid ""
+":ref:`InputEvent<class_inputevent>` **make_input_local** **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:433
+msgid ""
+"Transformations issued by ``event``'s inputs are applied in local space "
+"instead of global space."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:437
+msgid "void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:439
+msgid ""
+"Sets as top level. This means that it will not inherit transform from "
+"parent canvas items."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:443
+msgid ""
+"void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:445
+msgid ""
+"If ``enable`` is ``true``, children will be updated with local transform "
+"data."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:449
+msgid "void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:451
+msgid ""
+"If ``enable`` is ``true``, children will be updated with global transform"
+" data."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:455
+msgid "void **show** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:457
+msgid "Show the CanvasItem currently hidden."
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:461
+msgid "void **update** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_canvasitem.rst:463
+msgid ""
+"Queue the CanvasItem for update. ``NOTIFICATION_DRAW`` will be called on "
+"idle time to request redraw."
+msgstr ""
+

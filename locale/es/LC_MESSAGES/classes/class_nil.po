@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_nil.rst:8
+msgid "Nil"
+msgstr ""
+
+#: ../../classes/class_nil.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_nil.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_nil.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_nil.rst:21 ../../classes/class_nil.rst:23
+#: ../../classes/class_nil.rst:25 ../../classes/class_nil.rst:27
+#: ../../classes/class_nil.rst:29 ../../classes/class_nil.rst:31
+#: ../../classes/class_nil.rst:33 ../../classes/class_nil.rst:35
+#: ../../classes/class_nil.rst:37 ../../classes/class_nil.rst:39
+#: ../../classes/class_nil.rst:41 ../../classes/class_nil.rst:43
+#: ../../classes/class_nil.rst:45 ../../classes/class_nil.rst:47
+#: ../../classes/class_nil.rst:49 ../../classes/class_nil.rst:51
+#: ../../classes/class_nil.rst:53 ../../classes/class_nil.rst:55
+#: ../../classes/class_nil.rst:57 ../../classes/class_nil.rst:59
+#: ../../classes/class_nil.rst:61 ../../classes/class_nil.rst:63
+#: ../../classes/class_nil.rst:65 ../../classes/class_nil.rst:67
+#: ../../classes/class_nil.rst:69 ../../classes/class_nil.rst:71
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_nil.rst:21
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** "
+":ref:`PoolColorArray<class_poolcolorarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:23
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** "
+":ref:`PoolVector3Array<class_poolvector3array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:25
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** "
+":ref:`PoolVector2Array<class_poolvector2array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:27
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** "
+":ref:`PoolStringArray<class_poolstringarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:29
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`PoolRealArray<class_poolrealarray>`"
+" from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:31
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`PoolIntArray<class_poolintarray>` "
+"from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:33
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`PoolByteArray<class_poolbytearray>`"
+" from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:35
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:37
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`Dictionary<class_dictionary>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:39
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:41
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`RID<class_rid>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:43
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`NodePath<class_nodepath>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:45
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Color<class_color>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:47
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`Transform<class_transform>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:49
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Basis<class_basis>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:51
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`AABB<class_aabb>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:53
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Quat<class_quat>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:55
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Plane<class_plane>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:57
+msgid ""
+":ref:`Nil<class_Nil_Nil>` **(** :ref:`Transform2D<class_transform2d>` "
+"from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:59
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Vector3<class_vector3>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:61
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Rect2<class_rect2>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:63
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`Vector2<class_vector2>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:65
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`String<class_string>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:67
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`float<class_float>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:69
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`int<class_int>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:71
+msgid ":ref:`Nil<class_Nil_Nil>` **(** :ref:`bool<class_bool>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:75
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_nil.rst:79
+msgid "void **Nil** **(** :ref:`PoolColorArray<class_poolcolorarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:83
+msgid ""
+"void **Nil** **(** :ref:`PoolVector3Array<class_poolvector3array>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:87
+msgid ""
+"void **Nil** **(** :ref:`PoolVector2Array<class_poolvector2array>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:91
+msgid ""
+"void **Nil** **(** :ref:`PoolStringArray<class_poolstringarray>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:95
+msgid "void **Nil** **(** :ref:`PoolRealArray<class_poolrealarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:99
+msgid "void **Nil** **(** :ref:`PoolIntArray<class_poolintarray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:103
+msgid "void **Nil** **(** :ref:`PoolByteArray<class_poolbytearray>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:107
+msgid "void **Nil** **(** :ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:111
+msgid "void **Nil** **(** :ref:`Dictionary<class_dictionary>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:115
+msgid "void **Nil** **(** :ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:119
+msgid "void **Nil** **(** :ref:`RID<class_rid>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:123
+msgid "void **Nil** **(** :ref:`NodePath<class_nodepath>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:127
+msgid "void **Nil** **(** :ref:`Color<class_color>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:131
+msgid "void **Nil** **(** :ref:`Transform<class_transform>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:135
+msgid "void **Nil** **(** :ref:`Basis<class_basis>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:139
+msgid "void **Nil** **(** :ref:`AABB<class_aabb>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:143
+msgid "void **Nil** **(** :ref:`Quat<class_quat>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:147
+msgid "void **Nil** **(** :ref:`Plane<class_plane>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:151
+msgid "void **Nil** **(** :ref:`Transform2D<class_transform2d>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:155
+msgid "void **Nil** **(** :ref:`Vector3<class_vector3>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:159
+msgid "void **Nil** **(** :ref:`Rect2<class_rect2>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:163
+msgid "void **Nil** **(** :ref:`Vector2<class_vector2>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:167
+msgid "void **Nil** **(** :ref:`String<class_string>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:171
+msgid "void **Nil** **(** :ref:`float<class_float>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:175
+msgid "void **Nil** **(** :ref:`int<class_int>` from **)**"
+msgstr ""
+
+#: ../../classes/class_nil.rst:179
+msgid "void **Nil** **(** :ref:`bool<class_bool>` from **)**"
+msgstr ""
+

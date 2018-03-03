@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_spriteframes.rst:8
+msgid "SpriteFrames"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:17
+msgid "Sprite frame library for AnimatedSprite."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:23
+#: ../../classes/class_spriteframes.rst:25
+#: ../../classes/class_spriteframes.rst:27
+#: ../../classes/class_spriteframes.rst:29
+#: ../../classes/class_spriteframes.rst:41
+#: ../../classes/class_spriteframes.rst:43
+#: ../../classes/class_spriteframes.rst:45
+#: ../../classes/class_spriteframes.rst:47
+#: ../../classes/class_spriteframes.rst:49
+#: ../../classes/class_spriteframes.rst:51
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:23
+msgid ""
+":ref:`add_animation<class_SpriteFrames_add_animation>` **(** "
+":ref:`String<class_string>` anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:25
+msgid ""
+":ref:`add_frame<class_SpriteFrames_add_frame>` **(** "
+":ref:`String<class_string>` anim, :ref:`Texture<class_texture>` frame, "
+":ref:`int<class_int>` at_position=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:27
+msgid ""
+":ref:`clear<class_SpriteFrames_clear>` **(** :ref:`String<class_string>` "
+"anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:29
+msgid ":ref:`clear_all<class_SpriteFrames_clear_all>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:31
+#: ../../classes/class_spriteframes.rst:39
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:31
+msgid ""
+":ref:`get_animation_loop<class_SpriteFrames_get_animation_loop>` **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:33
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:33
+msgid ""
+":ref:`get_animation_speed<class_SpriteFrames_get_animation_speed>` **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:35
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:35
+msgid ""
+":ref:`get_frame<class_SpriteFrames_get_frame>` **(** "
+":ref:`String<class_string>` anim, :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:37
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:37
+msgid ""
+":ref:`get_frame_count<class_SpriteFrames_get_frame_count>` **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:39
+msgid ""
+":ref:`has_animation<class_SpriteFrames_has_animation>` **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:41
+msgid ""
+":ref:`remove_animation<class_SpriteFrames_remove_animation>` **(** "
+":ref:`String<class_string>` anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:43
+msgid ""
+":ref:`remove_frame<class_SpriteFrames_remove_frame>` **(** "
+":ref:`String<class_string>` anim, :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:45
+msgid ""
+":ref:`rename_animation<class_SpriteFrames_rename_animation>` **(** "
+":ref:`String<class_string>` anim, :ref:`String<class_string>` newname "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:47
+msgid ""
+":ref:`set_animation_loop<class_SpriteFrames_set_animation_loop>` **(** "
+":ref:`String<class_string>` anim, :ref:`bool<class_bool>` loop **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:49
+msgid ""
+":ref:`set_animation_speed<class_SpriteFrames_set_animation_speed>` **(** "
+":ref:`String<class_string>` anim, :ref:`float<class_float>` speed **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:51
+msgid ""
+":ref:`set_frame<class_SpriteFrames_set_frame>` **(** "
+":ref:`String<class_string>` anim, :ref:`int<class_int>` idx, "
+":ref:`Texture<class_texture>` txt **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:55
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:59
+msgid ":ref:`Array<class_array>` **frames**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:63
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:65
+msgid ""
+"Sprite frame library for :ref:`AnimatedSprite<class_animatedsprite>`. "
+"Contains frames and animation data for playback."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:68
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:72
+msgid "void **add_animation** **(** :ref:`String<class_string>` anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:74
+msgid "Adds a new animation to the the library."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:78
+msgid ""
+"void **add_frame** **(** :ref:`String<class_string>` anim, "
+":ref:`Texture<class_texture>` frame, :ref:`int<class_int>` at_position=-1"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:80
+msgid "Adds a frame to the given animation."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:84
+msgid "void **clear** **(** :ref:`String<class_string>` anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:86
+msgid "Removes all frames from the given animation."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:90
+msgid "void **clear_all** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:92
+msgid "Removes all animations. A \"default\" animation will be created."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:96
+msgid ""
+":ref:`bool<class_bool>` **get_animation_loop** **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:98
+msgid "If ``true`` the given animation will loop."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:102
+msgid ""
+":ref:`float<class_float>` **get_animation_speed** **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:104
+#: ../../classes/class_spriteframes.rst:152
+msgid "The animation's speed in frames per second."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:108
+msgid ""
+":ref:`Texture<class_texture>` **get_frame** **(** "
+":ref:`String<class_string>` anim, :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:110
+msgid "Returns the animation's selected frame."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:114
+msgid ""
+":ref:`int<class_int>` **get_frame_count** **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:116
+msgid "Returns the number of frames in the animation."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:120
+msgid ""
+":ref:`bool<class_bool>` **has_animation** **(** "
+":ref:`String<class_string>` anim **)** const"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:122
+msgid "If ``true`` the named animation exists."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:126
+msgid "void **remove_animation** **(** :ref:`String<class_string>` anim **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:128
+msgid "Removes the given animation."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:132
+msgid ""
+"void **remove_frame** **(** :ref:`String<class_string>` anim, "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:134
+msgid "Removes the animation's selected frame."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:138
+msgid ""
+"void **rename_animation** **(** :ref:`String<class_string>` anim, "
+":ref:`String<class_string>` newname **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:140
+msgid "Changes the animation's name to ``newname``."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:144
+msgid ""
+"void **set_animation_loop** **(** :ref:`String<class_string>` anim, "
+":ref:`bool<class_bool>` loop **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:146
+msgid "If ``true`` the animation will loop."
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:150
+msgid ""
+"void **set_animation_speed** **(** :ref:`String<class_string>` anim, "
+":ref:`float<class_float>` speed **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:156
+msgid ""
+"void **set_frame** **(** :ref:`String<class_string>` anim, "
+":ref:`int<class_int>` idx, :ref:`Texture<class_texture>` txt **)**"
+msgstr ""
+
+#: ../../classes/class_spriteframes.rst:158
+msgid "Sets the texture of the given frame."
+msgstr ""
+

@@ -1,0 +1,2217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_physics2dserver.rst:8
+msgid "Physics2DServer"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:12
+msgid "**Inherited By:** :ref:`Physics2DServerSW<class_physics2dserversw>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:19
+msgid "Physics 2D Server."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:25
+#: ../../classes/class_physics2dserver.rst:27
+#: ../../classes/class_physics2dserver.rst:29
+#: ../../classes/class_physics2dserver.rst:49
+#: ../../classes/class_physics2dserver.rst:51
+#: ../../classes/class_physics2dserver.rst:53
+#: ../../classes/class_physics2dserver.rst:55
+#: ../../classes/class_physics2dserver.rst:57
+#: ../../classes/class_physics2dserver.rst:59
+#: ../../classes/class_physics2dserver.rst:61
+#: ../../classes/class_physics2dserver.rst:63
+#: ../../classes/class_physics2dserver.rst:65
+#: ../../classes/class_physics2dserver.rst:67
+#: ../../classes/class_physics2dserver.rst:69
+#: ../../classes/class_physics2dserver.rst:71
+#: ../../classes/class_physics2dserver.rst:73
+#: ../../classes/class_physics2dserver.rst:75
+#: ../../classes/class_physics2dserver.rst:77
+#: ../../classes/class_physics2dserver.rst:79
+#: ../../classes/class_physics2dserver.rst:81
+#: ../../classes/class_physics2dserver.rst:115
+#: ../../classes/class_physics2dserver.rst:117
+#: ../../classes/class_physics2dserver.rst:119
+#: ../../classes/class_physics2dserver.rst:121
+#: ../../classes/class_physics2dserver.rst:123
+#: ../../classes/class_physics2dserver.rst:125
+#: ../../classes/class_physics2dserver.rst:127
+#: ../../classes/class_physics2dserver.rst:129
+#: ../../classes/class_physics2dserver.rst:131
+#: ../../classes/class_physics2dserver.rst:133
+#: ../../classes/class_physics2dserver.rst:135
+#: ../../classes/class_physics2dserver.rst:137
+#: ../../classes/class_physics2dserver.rst:139
+#: ../../classes/class_physics2dserver.rst:141
+#: ../../classes/class_physics2dserver.rst:143
+#: ../../classes/class_physics2dserver.rst:145
+#: ../../classes/class_physics2dserver.rst:147
+#: ../../classes/class_physics2dserver.rst:149
+#: ../../classes/class_physics2dserver.rst:165
+#: ../../classes/class_physics2dserver.rst:167
+#: ../../classes/class_physics2dserver.rst:177
+#: ../../classes/class_physics2dserver.rst:189
+#: ../../classes/class_physics2dserver.rst:195
+#: ../../classes/class_physics2dserver.rst:205
+#: ../../classes/class_physics2dserver.rst:207
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:25
+msgid ""
+":ref:`area_add_shape<class_Physics2DServer_area_add_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, "
+":ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, "
+"0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:27
+msgid ""
+":ref:`area_attach_object_instance_id<class_Physics2DServer_area_attach_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:29
+msgid ""
+":ref:`area_clear_shapes<class_Physics2DServer_area_clear_shapes>` **(** "
+":ref:`RID<class_rid>` area **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:31
+#: ../../classes/class_physics2dserver.rst:37
+#: ../../classes/class_physics2dserver.rst:43
+#: ../../classes/class_physics2dserver.rst:83
+#: ../../classes/class_physics2dserver.rst:101
+#: ../../classes/class_physics2dserver.rst:109
+#: ../../classes/class_physics2dserver.rst:153
+#: ../../classes/class_physics2dserver.rst:155
+#: ../../classes/class_physics2dserver.rst:157
+#: ../../classes/class_physics2dserver.rst:159
+#: ../../classes/class_physics2dserver.rst:161
+#: ../../classes/class_physics2dserver.rst:171
+#: ../../classes/class_physics2dserver.rst:179
+#: ../../classes/class_physics2dserver.rst:181
+#: ../../classes/class_physics2dserver.rst:183
+#: ../../classes/class_physics2dserver.rst:185
+#: ../../classes/class_physics2dserver.rst:187
+#: ../../classes/class_physics2dserver.rst:197
+msgid ":ref:`RID<class_rid>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:31
+msgid ":ref:`area_create<class_Physics2DServer_area_create>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:33
+#: ../../classes/class_physics2dserver.rst:39
+#: ../../classes/class_physics2dserver.rst:45
+#: ../../classes/class_physics2dserver.rst:85
+#: ../../classes/class_physics2dserver.rst:87
+#: ../../classes/class_physics2dserver.rst:89
+#: ../../classes/class_physics2dserver.rst:93
+#: ../../classes/class_physics2dserver.rst:95
+#: ../../classes/class_physics2dserver.rst:97
+#: ../../classes/class_physics2dserver.rst:103
+#: ../../classes/class_physics2dserver.rst:169
+#: ../../classes/class_physics2dserver.rst:175
+#: ../../classes/class_physics2dserver.rst:193
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:33
+msgid ""
+":ref:`area_get_object_instance_id<class_Physics2DServer_area_get_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:35
+#: ../../classes/class_physics2dserver.rst:105
+#: ../../classes/class_physics2dserver.rst:111
+#: ../../classes/class_physics2dserver.rst:191
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:35
+msgid ""
+":ref:`area_get_param<class_Physics2DServer_area_get_param>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:37
+msgid ""
+":ref:`area_get_shape<class_Physics2DServer_area_get_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:39
+msgid ""
+":ref:`area_get_shape_count<class_Physics2DServer_area_get_shape_count>` "
+"**(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:41
+#: ../../classes/class_physics2dserver.rst:47
+#: ../../classes/class_physics2dserver.rst:107
+msgid ":ref:`Transform2D<class_transform2d>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:41
+msgid ""
+":ref:`area_get_shape_transform<class_Physics2DServer_area_get_shape_transform>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:43
+msgid ""
+":ref:`area_get_space<class_Physics2DServer_area_get_space>` **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:45
+msgid ""
+":ref:`area_get_space_override_mode<class_Physics2DServer_area_get_space_override_mode>`"
+" **(** :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:47
+msgid ""
+":ref:`area_get_transform<class_Physics2DServer_area_get_transform>` **(**"
+" :ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:49
+msgid ""
+":ref:`area_remove_shape<class_Physics2DServer_area_remove_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:51
+msgid ""
+":ref:`area_set_collision_layer<class_Physics2DServer_area_set_collision_layer>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:53
+msgid ""
+":ref:`area_set_collision_mask<class_Physics2DServer_area_set_collision_mask>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:55
+msgid ""
+":ref:`area_set_monitor_callback<class_Physics2DServer_area_set_monitor_callback>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, "
+":ref:`String<class_string>` method **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:57
+msgid ""
+":ref:`area_set_param<class_Physics2DServer_area_set_param>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:59
+msgid ""
+":ref:`area_set_shape<class_Physics2DServer_area_set_shape>` **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, "
+":ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:61
+msgid ""
+":ref:`area_set_shape_disabled<class_Physics2DServer_area_set_shape_disabled>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, "
+":ref:`bool<class_bool>` disable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:63
+msgid ""
+":ref:`area_set_shape_transform<class_Physics2DServer_area_set_shape_transform>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, "
+":ref:`Transform2D<class_transform2d>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:65
+msgid ""
+":ref:`area_set_space<class_Physics2DServer_area_set_space>` **(** "
+":ref:`RID<class_rid>` area, :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:67
+msgid ""
+":ref:`area_set_space_override_mode<class_Physics2DServer_area_set_space_override_mode>`"
+" **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:69
+msgid ""
+":ref:`area_set_transform<class_Physics2DServer_area_set_transform>` **(**"
+" :ref:`RID<class_rid>` area, :ref:`Transform2D<class_transform2d>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:71
+msgid ""
+":ref:`body_add_collision_exception<class_Physics2DServer_body_add_collision_exception>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:73
+msgid ""
+":ref:`body_add_force<class_Physics2DServer_body_add_force>` **(** "
+":ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` offset, "
+":ref:`Vector2<class_vector2>` force **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:75
+msgid ""
+":ref:`body_add_shape<class_Physics2DServer_body_add_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, "
+":ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, "
+"0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:77
+msgid ""
+":ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>` **(**"
+" :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` position, "
+":ref:`Vector2<class_vector2>` impulse **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:79
+msgid ""
+":ref:`body_attach_object_instance_id<class_Physics2DServer_body_attach_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:81
+msgid ""
+":ref:`body_clear_shapes<class_Physics2DServer_body_clear_shapes>` **(** "
+":ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:83
+msgid ":ref:`body_create<class_Physics2DServer_body_create>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:85
+msgid ""
+":ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:87
+msgid ""
+":ref:`body_get_collision_mask<class_Physics2DServer_body_get_collision_mask>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:89
+msgid ""
+":ref:`body_get_continuous_collision_detection_mode<class_Physics2DServer_body_get_continuous_collision_detection_mode>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:91
+msgid ":ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:91
+msgid ""
+":ref:`body_get_direct_state<class_Physics2DServer_body_get_direct_state>`"
+" **(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:93
+msgid ""
+":ref:`body_get_max_contacts_reported<class_Physics2DServer_body_get_max_contacts_reported>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:95
+msgid ""
+":ref:`body_get_mode<class_Physics2DServer_body_get_mode>` **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:97
+msgid ""
+":ref:`body_get_object_instance_id<class_Physics2DServer_body_get_object_instance_id>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:99
+#: ../../classes/class_physics2dserver.rst:163
+#: ../../classes/class_physics2dserver.rst:173
+#: ../../classes/class_physics2dserver.rst:201
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:99
+msgid ""
+":ref:`body_get_param<class_Physics2DServer_body_get_param>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:101
+msgid ""
+":ref:`body_get_shape<class_Physics2DServer_body_get_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:103
+msgid ""
+":ref:`body_get_shape_count<class_Physics2DServer_body_get_shape_count>` "
+"**(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:105
+msgid ""
+":ref:`body_get_shape_metadata<class_Physics2DServer_body_get_shape_metadata>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:107
+msgid ""
+":ref:`body_get_shape_transform<class_Physics2DServer_body_get_shape_transform>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:109
+msgid ""
+":ref:`body_get_space<class_Physics2DServer_body_get_space>` **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:111
+msgid ""
+":ref:`body_get_state<class_Physics2DServer_body_get_state>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:113
+#: ../../classes/class_physics2dserver.rst:151
+#: ../../classes/class_physics2dserver.rst:203
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:113
+msgid ""
+":ref:`body_is_omitting_force_integration<class_Physics2DServer_body_is_omitting_force_integration>`"
+" **(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:115
+msgid ""
+":ref:`body_remove_collision_exception<class_Physics2DServer_body_remove_collision_exception>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:117
+msgid ""
+":ref:`body_remove_shape<class_Physics2DServer_body_remove_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:119
+msgid ""
+":ref:`body_set_axis_velocity<class_Physics2DServer_body_set_axis_velocity>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` "
+"axis_velocity **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:121
+msgid ""
+":ref:`body_set_collision_layer<class_Physics2DServer_body_set_collision_layer>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:123
+msgid ""
+":ref:`body_set_collision_mask<class_Physics2DServer_body_set_collision_mask>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:125
+msgid ""
+":ref:`body_set_continuous_collision_detection_mode<class_Physics2DServer_body_set_continuous_collision_detection_mode>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:127
+msgid ""
+":ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, "
+":ref:`String<class_string>` method, :ref:`Variant<class_variant>` "
+"userdata=null **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:129
+msgid ""
+":ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:131
+msgid ""
+":ref:`body_set_mode<class_Physics2DServer_body_set_mode>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:133
+msgid ""
+":ref:`body_set_omit_force_integration<class_Physics2DServer_body_set_omit_force_integration>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:135
+msgid ""
+":ref:`body_set_param<class_Physics2DServer_body_set_param>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:137
+msgid ""
+":ref:`body_set_shape<class_Physics2DServer_body_set_shape>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:139
+msgid ""
+":ref:`body_set_shape_as_one_way_collision<class_Physics2DServer_body_set_shape_as_one_way_collision>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:141
+msgid ""
+":ref:`body_set_shape_disabled<class_Physics2DServer_body_set_shape_disabled>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`bool<class_bool>` disable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:143
+msgid ""
+":ref:`body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`Variant<class_variant>` metadata **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:145
+msgid ""
+":ref:`body_set_shape_transform<class_Physics2DServer_body_set_shape_transform>`"
+" **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, "
+":ref:`Transform2D<class_transform2d>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:147
+msgid ""
+":ref:`body_set_space<class_Physics2DServer_body_set_space>` **(** "
+":ref:`RID<class_rid>` body, :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:149
+msgid ""
+":ref:`body_set_state<class_Physics2DServer_body_set_state>` **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:151
+msgid ""
+":ref:`body_test_motion<class_Physics2DServer_body_test_motion>` **(** "
+":ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, "
+":ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` "
+"margin=0.08, "
+":ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` "
+"result=null **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:153
+msgid ""
+":ref:`capsule_shape_create<class_Physics2DServer_capsule_shape_create>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:155
+msgid ""
+":ref:`circle_shape_create<class_Physics2DServer_circle_shape_create>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:157
+msgid ""
+":ref:`concave_polygon_shape_create<class_Physics2DServer_concave_polygon_shape_create>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:159
+msgid ""
+":ref:`convex_polygon_shape_create<class_Physics2DServer_convex_polygon_shape_create>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:161
+msgid ""
+":ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`"
+" **(** :ref:`Vector2<class_vector2>` anchor_a, "
+":ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, "
+":ref:`RID<class_rid>` body_b **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:163
+msgid ""
+":ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:165
+msgid ""
+":ref:`damped_string_joint_set_param<class_Physics2DServer_damped_string_joint_set_param>`"
+" **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:167
+msgid ""
+":ref:`free_rid<class_Physics2DServer_free_rid>` **(** "
+":ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:169
+msgid ""
+":ref:`get_process_info<class_Physics2DServer_get_process_info>` **(** "
+":ref:`int<class_int>` process_info **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:171
+msgid ""
+":ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>` "
+"**(** :ref:`Vector2<class_vector2>` groove1_a, "
+":ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` "
+"anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:173
+msgid ""
+":ref:`joint_get_param<class_Physics2DServer_joint_get_param>` **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:175
+msgid ""
+":ref:`joint_get_type<class_Physics2DServer_joint_get_type>` **(** "
+":ref:`RID<class_rid>` joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:177
+msgid ""
+":ref:`joint_set_param<class_Physics2DServer_joint_set_param>` **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:179
+msgid ""
+":ref:`line_shape_create<class_Physics2DServer_line_shape_create>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:181
+msgid ""
+":ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>` **(** "
+":ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, "
+":ref:`RID<class_rid>` body_b **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:183
+msgid ""
+":ref:`ray_shape_create<class_Physics2DServer_ray_shape_create>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:185
+msgid ""
+":ref:`rectangle_shape_create<class_Physics2DServer_rectangle_shape_create>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:187
+msgid ""
+":ref:`segment_shape_create<class_Physics2DServer_segment_shape_create>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:189
+msgid ""
+":ref:`set_active<class_Physics2DServer_set_active>` **(** "
+":ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:191
+msgid ""
+":ref:`shape_get_data<class_Physics2DServer_shape_get_data>` **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:193
+msgid ""
+":ref:`shape_get_type<class_Physics2DServer_shape_get_type>` **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:195
+msgid ""
+":ref:`shape_set_data<class_Physics2DServer_shape_set_data>` **(** "
+":ref:`RID<class_rid>` shape, :ref:`Variant<class_variant>` data **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:197
+msgid ":ref:`space_create<class_Physics2DServer_space_create>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:199
+msgid ":ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:199
+msgid ""
+":ref:`space_get_direct_state<class_Physics2DServer_space_get_direct_state>`"
+" **(** :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:201
+msgid ""
+":ref:`space_get_param<class_Physics2DServer_space_get_param>` **(** "
+":ref:`RID<class_rid>` space, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:203
+msgid ""
+":ref:`space_is_active<class_Physics2DServer_space_is_active>` **(** "
+":ref:`RID<class_rid>` space **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:205
+msgid ""
+":ref:`space_set_active<class_Physics2DServer_space_set_active>` **(** "
+":ref:`RID<class_rid>` space, :ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:207
+msgid ""
+":ref:`space_set_param<class_Physics2DServer_space_set_param>` **(** "
+":ref:`RID<class_rid>` space, :ref:`int<class_int>` param, "
+":ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:211
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:215
+msgid "enum **CCDMode**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:217
+msgid ""
+"**CCD_MODE_DISABLED** = **0** --- Disables continuous collision "
+"detection. This is the fastest way to detect body collisions, but can "
+"miss small, fast-moving objects."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:218
+msgid ""
+"**CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection "
+"by raycasting. It is faster than shapecasting, but less precise."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:219
+msgid ""
+"**CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision "
+"detection by shapecasting. It is the slowest CCD method, and the most "
+"precise."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:223
+msgid "enum **BodyState**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:225
+msgid ""
+"**BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current "
+"transform matrix of the body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:226
+msgid ""
+"**BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the "
+"current linear velocity of the body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:227
+msgid ""
+"**BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the "
+"current angular velocity of the body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:228
+msgid ""
+"**BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or "
+"to get whether it is sleeping."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:229
+msgid ""
+"**BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body"
+" can sleep."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:233
+msgid "enum **ProcessInfo**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:235
+msgid ""
+"**INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects"
+" that are not sleeping."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:236
+msgid ""
+"**INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of "
+"possible collisions."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:237
+msgid ""
+"**INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space "
+"regions where a collision could occur."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:241
+msgid "enum **JointParam**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:243
+msgid "**JOINT_PARAM_BIAS** = **0**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:244
+msgid "**JOINT_PARAM_MAX_BIAS** = **1**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:245
+msgid "**JOINT_PARAM_MAX_FORCE** = **2**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:249
+msgid "enum **ShapeType**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:251
+msgid ""
+"**SHAPE_LINE** = **0** --- This is the constant for creating line shapes."
+" A line shape is an infinite line with an origin point, and a normal. "
+"Thus, it can be used for front/behind checks."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:252
+msgid "**SHAPE_RAY** = **1**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:253
+msgid ""
+"**SHAPE_SEGMENT** = **2** --- This is the constant for creating segment "
+"shapes. A segment shape is a line from a point A to a point B. It can be "
+"checked for intersections."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:254
+msgid ""
+"**SHAPE_CIRCLE** = **3** --- This is the constant for creating circle "
+"shapes. A circle shape only has a radius. It can be used for "
+"intersections and inside/outside checks."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:255
+msgid ""
+"**SHAPE_RECTANGLE** = **4** --- This is the constant for creating "
+"rectangle shapes. A rectangle shape is defined by a width and a height. "
+"It can be used for intersections and inside/outside checks."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:256
+msgid ""
+"**SHAPE_CAPSULE** = **5** --- This is the constant for creating capsule "
+"shapes. A capsule shape is defined by a radius and a length. It can be "
+"used for intersections and inside/outside checks."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:257
+msgid ""
+"**SHAPE_CONVEX_POLYGON** = **6** --- This is the constant for creating "
+"convex polygon shapes. A polygon is defined by a list of points. It can "
+"be used for intersections and inside/outside checks. Unlike the method "
+":ref:`CollisionPolygon2D.set_polygon<class_CollisionPolygon2D_set_polygon>`,"
+" polygons modified with "
+":ref:`shape_set_data<class_Physics2DServer_shape_set_data>` do not verify"
+" that the points supplied form is a convex polygon."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:258
+msgid ""
+"**SHAPE_CONCAVE_POLYGON** = **7** --- This is the constant for creating "
+"concave polygon shapes. A polygon is defined by a list of points. It can "
+"be used for intersections checks, but not for inside/outside checks."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:259
+msgid ""
+"**SHAPE_CUSTOM** = **8** --- This constant is used internally by the "
+"engine. Any attempt to create this kind of shape results in an error."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:263
+msgid "enum **AreaParameter**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:265
+msgid ""
+"**AREA_PARAM_GRAVITY** = **0** --- Constant to set/get gravity strength "
+"in an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:266
+msgid ""
+"**AREA_PARAM_GRAVITY_VECTOR** = **1** --- Constant to set/get gravity "
+"vector/center in an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:267
+msgid ""
+"**AREA_PARAM_GRAVITY_IS_POINT** = **2** --- Constant to set/get whether "
+"the gravity vector of an area is a direction, or a center point."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:268
+msgid ""
+"**AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the"
+" falloff factor for point gravity of an area. The greater this value is, "
+"the faster the strength of gravity decreases with the square of distance."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:269
+msgid ""
+"**AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was "
+"used to set/get the falloff factor for point gravity. It has been "
+"superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:270
+msgid ""
+"**AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear "
+"dampening factor of an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:271
+msgid ""
+"**AREA_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get the angular "
+"dampening factor of an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:272
+msgid ""
+"**AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority "
+"(order of processing) of an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:276
+msgid "enum **AreaBodyStatus**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:278
+msgid ""
+"**AREA_BODY_ADDED** = **0** --- The value of the first parameter and area"
+" callback function receives, when an object enters one of its shapes."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:279
+msgid ""
+"**AREA_BODY_REMOVED** = **1** --- The value of the first parameter and "
+"area callback function receives, when an object exits one of its shapes."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:283
+msgid "enum **BodyParameter**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:285
+msgid ""
+"**BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce "
+"factor."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:286
+msgid "**BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:287
+msgid "**BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:288
+msgid "**BODY_PARAM_INERTIA** = **3** --- Constant to set/get a body's inertia."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:289
+msgid ""
+"**BODY_PARAM_GRAVITY_SCALE** = **4** --- Constant to set/get a body's "
+"gravity multiplier."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:290
+msgid ""
+"**BODY_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get a body's "
+"linear dampening factor."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:291
+msgid ""
+"**BODY_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get a body's "
+"angular dampening factor."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:292
+msgid ""
+"**BODY_PARAM_MAX** = **7** --- This is the last ID for body parameters. "
+"Any attempt to set this property is ignored. Any attempt to get it "
+"returns 0."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:296
+msgid "enum **BodyMode**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:298
+msgid "**BODY_MODE_STATIC** = **0** --- Constant for static bodies."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:299
+msgid "**BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:300
+msgid "**BODY_MODE_RIGID** = **2** --- Constant for rigid bodies."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:301
+msgid ""
+"**BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in "
+"character mode. In this mode, a body can not rotate, and only its linear "
+"velocity is affected by physics."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:305
+msgid "enum **DampedStringParam**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:307
+msgid ""
+"**DAMPED_STRING_REST_LENGTH** = **0** --- Set the resting length of the "
+"spring joint. The joint will always try to go to back this length when "
+"pulled apart."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:308
+msgid ""
+"**DAMPED_STRING_STIFFNESS** = **1** --- Set the stiffness of the spring "
+"joint. The joint applies a force equal to the stiffness times the "
+"distance from its resting length."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:309
+msgid ""
+"**DAMPED_STRING_DAMPING** = **2** --- Set the damping ratio of the spring"
+" joint. A value of 0 indicates an undamped spring, while 1 causes the "
+"system to reach equilibrium as fast as possible (critical damping)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:313
+msgid "enum **SpaceParameter**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:315
+msgid ""
+"**SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get "
+"the maximum distance a pair of bodies has to move before their collision "
+"status has to be recalculated."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:316
+msgid ""
+"**SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get "
+"the maximum distance a shape can be from another before they are "
+"considered separated."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:317
+msgid ""
+"**SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to "
+"set/get the maximum distance a shape can penetrate another shape before "
+"it is considered a collision."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:318
+msgid ""
+"**SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant"
+" to set/get the threshold linear velocity of activity. A body marked as "
+"potentially inactive for both linear and angular velocity will be put to "
+"sleep after the time given."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:319
+msgid ""
+"**SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- "
+"Constant to set/get the threshold angular velocity of activity. A body "
+"marked as potentially inactive for both linear and angular velocity will "
+"be put to sleep after the time given."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:320
+msgid ""
+"**SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the "
+"maximum time of activity. A body marked as potentially inactive for both "
+"linear and angular velocity will be put to sleep after this time."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:321
+msgid ""
+"**SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get "
+"the default solver bias for all physics constraints. A solver bias is a "
+"factor controlling how much two objects \"rebound\", after violating a "
+"constraint, to avoid leaving them in that state because of numerical "
+"imprecision."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:325
+msgid "enum **AreaSpaceOverrideMode**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:327
+msgid ""
+"**AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect "
+"gravity/damp. These are generally areas that exist only to detect "
+"collisions, and objects entering or exiting them."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:328
+msgid ""
+"**AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its "
+"gravity/damp values to whatever has been calculated so far. This way, "
+"many overlapping areas can combine their physics to make interesting "
+"effects."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:329
+msgid ""
+"**AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its "
+"gravity/damp values to whatever has been calculated so far. Then stops "
+"taking into account the rest of the areas, even the default one."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:330
+msgid ""
+"**AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any "
+"gravity/damp, even the default one, and stops taking into account the "
+"rest of the areas."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:331
+msgid ""
+"**AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces "
+"any gravity/damp calculated so far, but keeps calculating the rest of the"
+" areas, down to the default one."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:335
+msgid "enum **JointType**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:337
+msgid "**JOINT_PIN** = **0** --- Constant to create pin joints."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:338
+msgid "**JOINT_GROOVE** = **1** --- Constant to create groove joints."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:339
+msgid ""
+"**JOINT_DAMPED_SPRING** = **2** --- Constant to create damped spring "
+"joints."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:343
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:345
+msgid ""
+"Physics 2D Server is the server responsible for all 2D physics. It can "
+"create many kinds of physics objects, but does not insert them on the "
+"node tree."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:348
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:352
+msgid ""
+"void **area_add_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` "
+"transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:354
+msgid ""
+"Adds a shape to the area, along with a transform matrix. Shapes are "
+"usually referenced by their index, so you should track which shape has a "
+"given index."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:358
+msgid ""
+"void **area_attach_object_instance_id** **(** :ref:`RID<class_rid>` area,"
+" :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:360
+#: ../../classes/class_physics2dserver.rst:526
+msgid ""
+"Assigns the area to a descendant of :ref:`Object<class_object>`, so it "
+"can exist in the node tree."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:364
+msgid "void **area_clear_shapes** **(** :ref:`RID<class_rid>` area **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:366
+msgid ""
+"Removes all shapes from an area. It does not delete the shapes, so they "
+"can be reassigned later."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:370
+msgid ":ref:`RID<class_rid>` **area_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:372
+msgid "Creates an :ref:`Area2D<class_area2d>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:376
+msgid ""
+":ref:`int<class_int>` **area_get_object_instance_id** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:378
+#: ../../classes/class_physics2dserver.rst:580
+msgid "Gets the instance ID of the object the area is assigned to."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:382
+msgid ""
+":ref:`Variant<class_variant>` **area_get_param** **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:384
+msgid ""
+"Returns an area parameter value. A list of available parameters is on the"
+" AREA_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:388
+msgid ""
+":ref:`RID<class_rid>` **area_get_shape** **(** :ref:`RID<class_rid>` "
+"area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:390
+msgid "Returns the :ref:`RID<class_rid>` of the nth shape of an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:394
+msgid ""
+":ref:`int<class_int>` **area_get_shape_count** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:396
+msgid "Returns the number of shapes assigned to an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:400
+msgid ""
+":ref:`Transform2D<class_transform2d>` **area_get_shape_transform** **(** "
+":ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:402
+msgid "Returns the transform matrix of a shape within an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:406
+msgid ""
+":ref:`RID<class_rid>` **area_get_space** **(** :ref:`RID<class_rid>` area"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:408
+msgid "Returns the space assigned to the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:412
+msgid ""
+":ref:`int<class_int>` **area_get_space_override_mode** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:414
+msgid "Returns the space override mode for the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:418
+msgid ""
+":ref:`Transform2D<class_transform2d>` **area_get_transform** **(** "
+":ref:`RID<class_rid>` area **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:420
+msgid "Returns the transform matrix for an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:424
+msgid ""
+"void **area_remove_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:426
+msgid ""
+"Removes a shape from an area. It does not delete the shape, so it can be "
+"reassigned later."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:430
+msgid ""
+"void **area_set_collision_layer** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:432
+msgid "Assigns the area to one or many physics layers."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:436
+msgid ""
+"void **area_set_collision_mask** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:438
+msgid "Sets which physics layers the area will monitor."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:442
+msgid ""
+"void **area_set_monitor_callback** **(** :ref:`RID<class_rid>` area, "
+":ref:`Object<class_object>` receiver, :ref:`String<class_string>` method "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:444
+msgid ""
+"Sets the function to call when any body/area enters or exits the area. "
+"This callback will be called for any object interacting with the area, "
+"and takes five parameters:"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:446
+msgid ""
+"1: AREA_BODY_ADDED or AREA_BODY_REMOVED, depending on whether the object "
+"entered or exited the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:448
+msgid "2: :ref:`RID<class_rid>` of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:450
+msgid "3: Instance ID of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:452
+msgid "4: The shape index of the object that entered/exited the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:454
+msgid "5: The shape index of the area where the object entered/exited."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:458
+msgid ""
+"void **area_set_param** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` param, :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:460
+msgid ""
+"Sets the value for an area parameter. A list of available parameters is "
+"on the AREA_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:464
+msgid ""
+"void **area_set_shape** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:466
+msgid ""
+"Substitutes a given area shape by another. The old shape is selected by "
+"its index, the new one by its :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:470
+msgid ""
+"void **area_set_shape_disabled** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:472
+msgid "Disables a given shape in an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:476
+msgid ""
+"void **area_set_shape_transform** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:478
+msgid "Sets the transform matrix for an area shape."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:482
+msgid ""
+"void **area_set_space** **(** :ref:`RID<class_rid>` area, "
+":ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:484
+msgid "Assigns a space to the area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:488
+msgid ""
+"void **area_set_space_override_mode** **(** :ref:`RID<class_rid>` area, "
+":ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:490
+msgid ""
+"Sets the space override mode for the area. The modes are described in the"
+" constants AREA_SPACE_OVERRIDE\\_\\*."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:494
+msgid ""
+"void **area_set_transform** **(** :ref:`RID<class_rid>` area, "
+":ref:`Transform2D<class_transform2d>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:496
+msgid "Sets the transform matrix for an area."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:500
+msgid ""
+"void **body_add_collision_exception** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` excepted_body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:502
+msgid "Adds a body to the list of bodies exempt from collisions."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:506
+msgid ""
+"void **body_add_force** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:508
+msgid ""
+"Adds a positioned force to the applied force and torque. As with "
+":ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>`, both"
+" the force and the offset from the body origin are in global coordinates."
+" A force differs from an impulse in that, while the two are forces, the "
+"impulse clears itself after being applied."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:512
+msgid ""
+"void **body_add_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` "
+"transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:514
+msgid ""
+"Adds a shape to the body, along with a transform matrix. Shapes are "
+"usually referenced by their index, so you should track which shape has a "
+"given index."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:518
+msgid ""
+"void **body_apply_impulse** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector2<class_vector2>` position, :ref:`Vector2<class_vector2>` "
+"impulse **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:520
+msgid ""
+"Adds a positioned impulse to the applied force and torque. Both the force"
+" and the offset from the body origin are in global coordinates."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:524
+msgid ""
+"void **body_attach_object_instance_id** **(** :ref:`RID<class_rid>` body,"
+" :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:530
+msgid "void **body_clear_shapes** **(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:532
+msgid "Removes all shapes from a body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:536
+msgid ":ref:`RID<class_rid>` **body_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:538
+msgid ""
+"Creates a physics body. The first parameter can be any value from "
+"constants BODY_MODE\\*, for the type of body created. Additionally, the "
+"body can be created in sleeping state to save processing time."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:542
+msgid ""
+":ref:`int<class_int>` **body_get_collision_layer** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:544
+msgid "Returns the physics layer or layers a body belongs to."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:548
+msgid ""
+":ref:`int<class_int>` **body_get_collision_mask** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:550
+msgid "Returns the physics layer or layers a body can collide with."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:554
+msgid ""
+":ref:`int<class_int>` **body_get_continuous_collision_detection_mode** "
+"**(** :ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:556
+msgid "Returns the continuous collision detection mode."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:560
+msgid ""
+":ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` "
+"**body_get_direct_state** **(** :ref:`RID<class_rid>` body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:562
+msgid ""
+"Returns the "
+":ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` of the "
+"body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:566
+msgid ""
+":ref:`int<class_int>` **body_get_max_contacts_reported** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:568
+msgid ""
+"Returns the maximum contacts that can be reported. See "
+":ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:572
+msgid ""
+":ref:`int<class_int>` **body_get_mode** **(** :ref:`RID<class_rid>` body "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:574
+msgid "Returns the body mode."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:578
+msgid ""
+":ref:`int<class_int>` **body_get_object_instance_id** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:584
+msgid ""
+":ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_rid>` "
+"body, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:586
+msgid ""
+"Returns the value of a body parameter. A list of available parameters is "
+"on the BODY_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:590
+msgid ""
+":ref:`RID<class_rid>` **body_get_shape** **(** :ref:`RID<class_rid>` "
+"body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:592
+msgid "Returns the :ref:`RID<class_rid>` of the nth shape of a body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:596
+msgid ""
+":ref:`int<class_int>` **body_get_shape_count** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:598
+msgid "Returns the number of shapes assigned to a body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:602
+msgid ""
+":ref:`Variant<class_variant>` **body_get_shape_metadata** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:604
+msgid "Returns the metadata of a shape of a body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:608
+msgid ""
+":ref:`Transform2D<class_transform2d>` **body_get_shape_transform** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:610
+msgid "Returns the transform matrix of a body shape."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:614
+msgid ""
+":ref:`RID<class_rid>` **body_get_space** **(** :ref:`RID<class_rid>` body"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:616
+msgid "Returns the :ref:`RID<class_rid>` of the space assigned to a body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:620
+msgid ""
+":ref:`Variant<class_variant>` **body_get_state** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` state **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:622
+msgid "Returns a body state."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:626
+msgid ""
+":ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** "
+":ref:`RID<class_rid>` body **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:628
+msgid ""
+"Returns whether a body uses a callback function to calculate its own "
+"physics (see "
+":ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:632
+msgid ""
+"void **body_remove_collision_exception** **(** :ref:`RID<class_rid>` "
+"body, :ref:`RID<class_rid>` excepted_body **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:634
+msgid "Removes a body from the list of bodies exempt from collisions."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:638
+msgid ""
+"void **body_remove_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:640
+msgid ""
+"Removes a shape from a body. The shape is not deleted, so it can be "
+"reused afterwards."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:644
+msgid ""
+"void **body_set_axis_velocity** **(** :ref:`RID<class_rid>` body, "
+":ref:`Vector2<class_vector2>` axis_velocity **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:646
+msgid ""
+"Sets an axis velocity. The velocity in the given vector axis will be set "
+"as the given vector length. This is useful for jumping behavior."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:650
+msgid ""
+"void **body_set_collision_layer** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` layer **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:652
+msgid "Sets the physics layer or layers a body belongs to."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:656
+msgid ""
+"void **body_set_collision_mask** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` mask **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:658
+msgid "Sets the physics layer or layers a body can collide with."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:662
+msgid ""
+"void **body_set_continuous_collision_detection_mode** **(** "
+":ref:`RID<class_rid>` body, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:664
+msgid ""
+"Sets the continuous collision detection mode from any of the "
+"CCD_MODE\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:666
+msgid ""
+"Continuous collision detection tries to predict where a moving body will "
+"collide, instead of moving it and correcting its movement if it collided."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:670
+msgid ""
+"void **body_set_force_integration_callback** **(** :ref:`RID<class_rid>` "
+"body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` "
+"method, :ref:`Variant<class_variant>` userdata=null **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:672
+msgid ""
+"Sets the function used to calculate physics for an object, if that object"
+" allows it (see :ref:`body_set_omit_force "
+"integration<class_Physics2DServer_body_set_omit_force integration>`)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:676
+msgid ""
+"void **body_set_max_contacts_reported** **(** :ref:`RID<class_rid>` body,"
+" :ref:`int<class_int>` amount **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:678
+msgid ""
+"Sets the maximum contacts to report. Bodies can keep a log of the "
+"contacts with other bodies, this is enabled by setting the maximum amount"
+" of contacts reported to a number greater than 0."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:682
+msgid ""
+"void **body_set_mode** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:684
+msgid "Sets the body mode, from one of the constants BODY_MODE\\*."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:688
+msgid ""
+"void **body_set_omit_force_integration** **(** :ref:`RID<class_rid>` "
+"body, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:690
+msgid ""
+"Sets whether a body uses a callback function to calculate its own physics"
+" (see "
+":ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:694
+msgid ""
+"void **body_set_param** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:696
+msgid ""
+"Sets a body parameter. A list of available parameters is on the "
+"BODY_PARAM\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:700
+msgid ""
+"void **body_set_shape** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:702
+msgid ""
+"Substitutes a given body shape by another. The old shape is selected by "
+"its index, the new one by its :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:706
+msgid ""
+"void **body_set_shape_as_one_way_collision** **(** :ref:`RID<class_rid>` "
+"body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:708
+msgid "Enables one way collision on body if ``enable`` is ``true``."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:712
+msgid ""
+"void **body_set_shape_disabled** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:714
+msgid "Disables shape in body if ``disable`` is ``true``."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:718
+msgid ""
+"void **body_set_shape_metadata** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`Variant<class_variant>` metadata "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:720
+msgid ""
+"Sets metadata of a shape within a body. This metadata is different from "
+":ref:`Object.set_meta<class_Object_set_meta>`, and can be retrieved on "
+"shape queries."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:724
+msgid ""
+"void **body_set_shape_transform** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:726
+msgid "Sets the transform matrix for a body shape."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:730
+msgid ""
+"void **body_set_space** **(** :ref:`RID<class_rid>` body, "
+":ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:732
+msgid ""
+"Assigns a space to the body (see "
+":ref:`create_space<class_Physics2DServer_create_space>`)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:736
+msgid ""
+"void **body_set_state** **(** :ref:`RID<class_rid>` body, "
+":ref:`int<class_int>` state, :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:738
+msgid "Sets a body state (see BODY_STATE\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:742
+msgid ""
+":ref:`bool<class_bool>` **body_test_motion** **(** :ref:`RID<class_rid>` "
+"body, :ref:`Transform2D<class_transform2d>` from, "
+":ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` "
+"margin=0.08, "
+":ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` "
+"result=null **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:744
+msgid ""
+"Returns whether a body can move from a given point in a given direction. "
+"Apart from the boolean return value, a "
+":ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` can be "
+"passed to return additional information in."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:748
+msgid ":ref:`RID<class_rid>` **capsule_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:752
+msgid ":ref:`RID<class_rid>` **circle_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:756
+msgid ":ref:`RID<class_rid>` **concave_polygon_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:760
+msgid ":ref:`RID<class_rid>` **convex_polygon_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:764
+msgid ""
+":ref:`RID<class_rid>` **damped_spring_joint_create** **(** "
+":ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` "
+"anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:766
+msgid ""
+"Creates a damped spring joint between two bodies. If not specified, the "
+"second body is assumed to be the joint itself."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:770
+msgid ""
+":ref:`float<class_float>` **damped_string_joint_get_param** **(** "
+":ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:772
+msgid "Returns the value of a damped spring joint parameter."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:776
+msgid ""
+"void **damped_string_joint_set_param** **(** :ref:`RID<class_rid>` joint,"
+" :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:778
+msgid ""
+"Sets a damped spring joint parameter. Parameters are explained in the "
+"DAMPED_STRING\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:782
+msgid "void **free_rid** **(** :ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:784
+msgid ""
+"Destroys any of the objects created by Physics2DServer. If the "
+":ref:`RID<class_rid>` passed is not one of the objects that can be "
+"created by Physics2DServer, an error will be sent to the console."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:788
+msgid ""
+":ref:`int<class_int>` **get_process_info** **(** :ref:`int<class_int>` "
+"process_info **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:790
+msgid ""
+"Returns information about the current state of the 2D physics engine. The"
+" states are listed under the INFO\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:794
+msgid ""
+":ref:`RID<class_rid>` **groove_joint_create** **(** "
+":ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` "
+"groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` "
+"body_a, :ref:`RID<class_rid>` body_b **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:796
+msgid ""
+"Creates a groove joint between two bodies. If not specified, the bodyies "
+"are assumed to be the joint itself."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:800
+msgid ""
+":ref:`float<class_float>` **joint_get_param** **(** :ref:`RID<class_rid>`"
+" joint, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:802
+msgid "Returns the value of a joint parameter."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:806
+msgid ""
+":ref:`int<class_int>` **joint_get_type** **(** :ref:`RID<class_rid>` "
+"joint **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:808
+msgid "Returns the type of a joint (see JOINT\\_\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:812
+msgid ""
+"void **joint_set_param** **(** :ref:`RID<class_rid>` joint, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:814
+msgid ""
+"Sets a joint parameter. Parameters are explained in the JOINT_PARAM\\* "
+"constants."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:818
+msgid ":ref:`RID<class_rid>` **line_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:822
+msgid ""
+":ref:`RID<class_rid>` **pin_joint_create** **(** "
+":ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, "
+":ref:`RID<class_rid>` body_b **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:824
+msgid ""
+"Creates a pin joint between two bodies. If not specified, the second body"
+" is assumed to be the joint itself."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:828
+msgid ":ref:`RID<class_rid>` **ray_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:832
+msgid ":ref:`RID<class_rid>` **rectangle_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:836
+msgid ":ref:`RID<class_rid>` **segment_shape_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:840
+msgid "void **set_active** **(** :ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:842
+msgid "Activates or deactivates the 2D physics engine."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:846
+msgid ""
+":ref:`Variant<class_variant>` **shape_get_data** **(** "
+":ref:`RID<class_rid>` shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:848
+msgid "Returns the shape data."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:852
+msgid ""
+":ref:`int<class_int>` **shape_get_type** **(** :ref:`RID<class_rid>` "
+"shape **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:854
+msgid "Returns the type of shape (see SHAPE\\_\\* constants)."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:858
+msgid ""
+"void **shape_set_data** **(** :ref:`RID<class_rid>` shape, "
+":ref:`Variant<class_variant>` data **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:860
+msgid ""
+"Sets the shape data that defines its shape and size. The data to be "
+"passed depends on the kind of shape created "
+":ref:`shape_get_type<class_Physics2DServer_shape_get_type>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:864
+msgid ":ref:`RID<class_rid>` **space_create** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:866
+msgid ""
+"Creates a space. A space is a collection of parameters for the physics "
+"engine that can be assigned to an area or a body. It can be assigned to "
+"an area with :ref:`area_set_space<class_Physics2DServer_area_set_space>`,"
+" or to a body with "
+":ref:`body_set_space<class_Physics2DServer_body_set_space>`."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:870
+msgid ""
+":ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>` "
+"**space_get_direct_state** **(** :ref:`RID<class_rid>` space **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:872
+msgid ""
+"Returns the state of a space, a "
+":ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`. This "
+"object can be used to make collision/intersection queries."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:876
+msgid ""
+":ref:`float<class_float>` **space_get_param** **(** :ref:`RID<class_rid>`"
+" space, :ref:`int<class_int>` param **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:878
+msgid "Returns the value of a space parameter."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:882
+msgid ""
+":ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_rid>` "
+"space **)** const"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:884
+msgid "Returns whether the space is active."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:888
+msgid ""
+"void **space_set_active** **(** :ref:`RID<class_rid>` space, "
+":ref:`bool<class_bool>` active **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:890
+msgid ""
+"Marks a space as active. It will not have an effect, unless it is "
+"assigned to an area or body."
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:894
+msgid ""
+"void **space_set_param** **(** :ref:`RID<class_rid>` space, "
+":ref:`int<class_int>` param, :ref:`float<class_float>` value **)**"
+msgstr ""
+
+#: ../../classes/class_physics2dserver.rst:896
+msgid ""
+"Sets the value for a space parameter. A list of available parameters is "
+"on the SPACE_PARAM\\_\\* constants."
+msgstr ""
+

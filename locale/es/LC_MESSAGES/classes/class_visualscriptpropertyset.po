@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_visualscriptpropertyset.rst:8
+msgid "VisualScriptPropertySet"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:24
+msgid ":ref:`AssignOp<enum_visualscriptpropertyset_assignop>` **assign_op**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:28
+msgid ":ref:`String<class_string>` **base_script**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:32
+msgid ":ref:`String<class_string>` **base_type**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:36
+msgid ":ref:`Type<enum_variant_type>` **basic_type**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:40
+msgid ":ref:`String<class_string>` **index**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:44
+msgid ":ref:`NodePath<class_nodepath>` **node_path**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:48
+msgid ":ref:`String<class_string>` **property**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:52
+msgid ":ref:`CallMode<enum_visualscriptpropertyset_callmode>` **set_mode**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:56
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:60
+msgid "enum **CallMode**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:62
+msgid "**CALL_MODE_SELF** = **0**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:63
+msgid "**CALL_MODE_NODE_PATH** = **1**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:64
+msgid "**CALL_MODE_INSTANCE** = **2**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:65
+msgid "**CALL_MODE_BASIC_TYPE** = **3**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:69
+msgid "enum **AssignOp**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:71
+msgid "**ASSIGN_OP_NONE** = **0**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:72
+msgid "**ASSIGN_OP_ADD** = **1**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:73
+msgid "**ASSIGN_OP_SUB** = **2**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:74
+msgid "**ASSIGN_OP_MUL** = **3**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:75
+msgid "**ASSIGN_OP_DIV** = **4**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:76
+msgid "**ASSIGN_OP_MOD** = **5**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:77
+msgid "**ASSIGN_OP_SHIFT_LEFT** = **6**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:78
+msgid "**ASSIGN_OP_SHIFT_RIGHT** = **7**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:79
+msgid "**ASSIGN_OP_BIT_AND** = **8**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:80
+msgid "**ASSIGN_OP_BIT_OR** = **9**"
+msgstr ""
+
+#: ../../classes/class_visualscriptpropertyset.rst:81
+msgid "**ASSIGN_OP_BIT_XOR** = **10**"
+msgstr ""
+

@@ -1,0 +1,345 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_tabs.rst:8
+msgid "Tabs"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:10
+msgid ""
+"**Inherits:** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:17
+msgid "Tabs Control."
+msgstr ""
+
+#: ../../classes/class_tabs.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:23 ../../classes/class_tabs.rst:25
+#: ../../classes/class_tabs.rst:41 ../../classes/class_tabs.rst:43
+#: ../../classes/class_tabs.rst:45 ../../classes/class_tabs.rst:47
+#: ../../classes/class_tabs.rst:49
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:23
+msgid ""
+":ref:`add_tab<class_Tabs_add_tab>` **(** :ref:`String<class_string>` "
+"title=\"\", :ref:`Texture<class_texture>` icon=null **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:25
+msgid ""
+":ref:`ensure_tab_visible<class_Tabs_ensure_tab_visible>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:27 ../../classes/class_tabs.rst:31
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:27
+msgid ""
+":ref:`get_offset_buttons_visible<class_Tabs_get_offset_buttons_visible>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:29 ../../classes/class_tabs.rst:35
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:29
+msgid ":ref:`get_tab_count<class_Tabs_get_tab_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:31
+msgid ""
+":ref:`get_tab_disabled<class_Tabs_get_tab_disabled>` **(** "
+":ref:`int<class_int>` tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:33
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:33
+msgid ""
+":ref:`get_tab_icon<class_Tabs_get_tab_icon>` **(** :ref:`int<class_int>` "
+"tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:35
+msgid ":ref:`get_tab_offset<class_Tabs_get_tab_offset>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:37
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:37
+msgid ""
+":ref:`get_tab_rect<class_Tabs_get_tab_rect>` **(** :ref:`int<class_int>` "
+"tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:39
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:39
+msgid ""
+":ref:`get_tab_title<class_Tabs_get_tab_title>` **(** "
+":ref:`int<class_int>` tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:41
+msgid ""
+":ref:`move_tab<class_Tabs_move_tab>` **(** :ref:`int<class_int>` from, "
+":ref:`int<class_int>` to **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:43
+msgid ""
+":ref:`remove_tab<class_Tabs_remove_tab>` **(** :ref:`int<class_int>` "
+"tab_idx **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:45
+msgid ""
+":ref:`set_tab_disabled<class_Tabs_set_tab_disabled>` **(** "
+":ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:47
+msgid ""
+":ref:`set_tab_icon<class_Tabs_set_tab_icon>` **(** :ref:`int<class_int>` "
+"tab_idx, :ref:`Texture<class_texture>` icon **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:49
+msgid ""
+":ref:`set_tab_title<class_Tabs_set_tab_title>` **(** "
+":ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:53
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:57
+msgid "**reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:61
+msgid "**right_button_pressed** **(** :ref:`int<class_int>` tab **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:65
+msgid "**tab_changed** **(** :ref:`int<class_int>` tab **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:69
+msgid "**tab_clicked** **(** :ref:`int<class_int>` tab **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:73
+msgid "**tab_close** **(** :ref:`int<class_int>` tab **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:77
+msgid "**tab_hover** **(** :ref:`int<class_int>` tab **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:81
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:85
+msgid ":ref:`int<class_int>` **current_tab**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:89
+msgid ":ref:`bool<class_bool>` **scrolling_enabled**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:93
+msgid ":ref:`TabAlign<enum_tabs_tabalign>` **tab_align**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:97
+msgid ""
+":ref:`CloseButtonDisplayPolicy<enum_tabs_closebuttondisplaypolicy>` "
+"**tab_close_display_policy**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:101
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:105
+msgid "enum **CloseButtonDisplayPolicy**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:107
+msgid "**CLOSE_BUTTON_SHOW_NEVER** = **0**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:108
+msgid "**CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:109
+msgid "**CLOSE_BUTTON_SHOW_ALWAYS** = **2**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:110
+msgid "**CLOSE_BUTTON_MAX** = **3**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:114
+msgid "enum **TabAlign**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:116
+msgid "**ALIGN_LEFT** = **0**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:117
+msgid "**ALIGN_CENTER** = **1**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:118
+msgid "**ALIGN_RIGHT** = **2**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:119
+msgid "**ALIGN_MAX** = **3**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:123
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:125
+msgid ""
+"Simple tabs control, similar to :ref:`TabContainer<class_tabcontainer>` "
+"but is only in charge of drawing tabs, not interact with children."
+msgstr ""
+
+#: ../../classes/class_tabs.rst:128
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:132
+msgid ""
+"void **add_tab** **(** :ref:`String<class_string>` title=\"\", "
+":ref:`Texture<class_texture>` icon=null **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:136
+msgid "void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:140
+msgid ":ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:144
+msgid ":ref:`int<class_int>` **get_tab_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:148
+msgid ""
+":ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` "
+"tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:152
+msgid ""
+":ref:`Texture<class_texture>` **get_tab_icon** **(** "
+":ref:`int<class_int>` tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:156
+msgid ":ref:`int<class_int>` **get_tab_offset** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:160
+msgid ""
+":ref:`Rect2<class_rect2>` **get_tab_rect** **(** :ref:`int<class_int>` "
+"tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:162
+msgid "Returns tab :ref:`Rect2<class_rect2>` with local position and size."
+msgstr ""
+
+#: ../../classes/class_tabs.rst:166
+msgid ""
+":ref:`String<class_string>` **get_tab_title** **(** :ref:`int<class_int>`"
+" tab_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:170
+msgid ""
+"void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>`"
+" to **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:172
+msgid "Rearrange tab."
+msgstr ""
+
+#: ../../classes/class_tabs.rst:176
+msgid "void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:180
+msgid ""
+"void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, "
+":ref:`bool<class_bool>` disabled **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:184
+msgid ""
+"void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, "
+":ref:`Texture<class_texture>` icon **)**"
+msgstr ""
+
+#: ../../classes/class_tabs.rst:188
+msgid ""
+"void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, "
+":ref:`String<class_string>` title **)**"
+msgstr ""
+

@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_sky.rst:8
+msgid "Sky"
+msgstr ""
+
+#: ../../classes/class_sky.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_sky.rst:12
+msgid ""
+"**Inherited By:** :ref:`PanoramaSky<class_panoramasky>`, "
+":ref:`ProceduralSky<class_proceduralsky>`"
+msgstr ""
+
+#: ../../classes/class_sky.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_sky.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_sky.rst:19 ../../classes/class_sky.rst:53
+msgid ""
+"The base class for :ref:`PanoramaSky<class_panoramasky>` and "
+":ref:`ProceduralSky<class_proceduralsky>`."
+msgstr ""
+
+#: ../../classes/class_sky.rst:22
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_sky.rst:26
+msgid ""
+":ref:`RadianceSize<enum_sky_radiancesize>` **radiance_size** - The Sky's "
+"radiance map size."
+msgstr ""
+
+#: ../../classes/class_sky.rst:28
+msgid ""
+"The higher the radiance map size, the more detailed the lighting from the"
+" Sky will be."
+msgstr ""
+
+#: ../../classes/class_sky.rst:30
+msgid ""
+"See RADIANCE_SIZE\\_\\* constants for values. Default size is "
+"RADIANCE_SIZE_512."
+msgstr ""
+
+#: ../../classes/class_sky.rst:34
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_sky.rst:38
+msgid "enum **RadianceSize**"
+msgstr ""
+
+#: ../../classes/class_sky.rst:40
+msgid "**RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:41
+msgid "**RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:42
+msgid "**RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128x128 pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:43
+msgid "**RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256x256 pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:44
+msgid "**RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512x512 pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:45
+msgid ""
+"**RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 "
+"pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:46
+msgid ""
+"**RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 "
+"pixels."
+msgstr ""
+
+#: ../../classes/class_sky.rst:47
+msgid ""
+"**RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest "
+"size it can be."
+msgstr ""
+
+#: ../../classes/class_sky.rst:51
+msgid "Description"
+msgstr ""
+

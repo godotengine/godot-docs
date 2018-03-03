@@ -1,0 +1,745 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_itemlist.rst:8
+msgid "ItemList"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:10
+msgid ""
+"**Inherits:** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:17
+msgid ""
+"Control that provides a list of selectable items (and/or icons) in a "
+"single column, or optionally in multiple columns."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:23 ../../classes/class_itemlist.rst:25
+#: ../../classes/class_itemlist.rst:27 ../../classes/class_itemlist.rst:29
+#: ../../classes/class_itemlist.rst:59 ../../classes/class_itemlist.rst:61
+#: ../../classes/class_itemlist.rst:63 ../../classes/class_itemlist.rst:65
+#: ../../classes/class_itemlist.rst:67 ../../classes/class_itemlist.rst:69
+#: ../../classes/class_itemlist.rst:71 ../../classes/class_itemlist.rst:73
+#: ../../classes/class_itemlist.rst:75 ../../classes/class_itemlist.rst:77
+#: ../../classes/class_itemlist.rst:79 ../../classes/class_itemlist.rst:81
+#: ../../classes/class_itemlist.rst:83
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:23
+msgid ""
+":ref:`add_icon_item<class_ItemList_add_icon_item>` **(** "
+":ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` "
+"selectable=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:25
+msgid ""
+":ref:`add_item<class_ItemList_add_item>` **(** "
+":ref:`String<class_string>` text, :ref:`Texture<class_texture>` "
+"icon=null, :ref:`bool<class_bool>` selectable=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:27
+msgid ":ref:`clear<class_ItemList_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:29
+msgid ""
+":ref:`ensure_current_is_visible<class_ItemList_ensure_current_is_visible>`"
+" **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:31 ../../classes/class_itemlist.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:31
+msgid ""
+":ref:`get_item_at_position<class_ItemList_get_item_at_position>` **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` "
+"exact=false **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:33
+msgid ":ref:`get_item_count<class_ItemList_get_item_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:35
+msgid ":ref:`Color<class_color>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:35
+msgid ""
+":ref:`get_item_custom_bg_color<class_ItemList_get_item_custom_bg_color>` "
+"**(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:37
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:37
+msgid ""
+":ref:`get_item_icon<class_ItemList_get_item_icon>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:39
+msgid ":ref:`Rect2<class_rect2>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:39
+msgid ""
+":ref:`get_item_icon_region<class_ItemList_get_item_icon_region>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:41
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:41
+msgid ""
+":ref:`get_item_metadata<class_ItemList_get_item_metadata>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:43 ../../classes/class_itemlist.rst:45
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:43
+msgid ""
+":ref:`get_item_text<class_ItemList_get_item_text>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:45
+msgid ""
+":ref:`get_item_tooltip<class_ItemList_get_item_tooltip>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:47
+msgid ":ref:`PoolIntArray<class_poolintarray>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:47
+msgid ":ref:`get_selected_items<class_ItemList_get_selected_items>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:49
+msgid ":ref:`VScrollBar<class_vscrollbar>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:49
+msgid ":ref:`get_v_scroll<class_ItemList_get_v_scroll>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:51 ../../classes/class_itemlist.rst:53
+#: ../../classes/class_itemlist.rst:55 ../../classes/class_itemlist.rst:57
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:51
+msgid ""
+":ref:`is_item_disabled<class_ItemList_is_item_disabled>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:53
+msgid ""
+":ref:`is_item_selectable<class_ItemList_is_item_selectable>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:55
+msgid ""
+":ref:`is_item_tooltip_enabled<class_ItemList_is_item_tooltip_enabled>` "
+"**(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:57
+msgid ""
+":ref:`is_selected<class_ItemList_is_selected>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:59
+msgid ""
+":ref:`remove_item<class_ItemList_remove_item>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:61
+msgid ""
+":ref:`select<class_ItemList_select>` **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` single=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:63
+msgid ""
+":ref:`set_item_custom_bg_color<class_ItemList_set_item_custom_bg_color>` "
+"**(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` "
+"custom_bg_color **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:65
+msgid ""
+":ref:`set_item_disabled<class_ItemList_set_item_disabled>` **(** "
+":ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:67
+msgid ""
+":ref:`set_item_icon<class_ItemList_set_item_icon>` **(** "
+":ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:69
+msgid ""
+":ref:`set_item_icon_region<class_ItemList_set_item_icon_region>` **(** "
+":ref:`int<class_int>` idx, :ref:`Rect2<class_rect2>` rect **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:71
+msgid ""
+":ref:`set_item_metadata<class_ItemList_set_item_metadata>` **(** "
+":ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:73
+msgid ""
+":ref:`set_item_selectable<class_ItemList_set_item_selectable>` **(** "
+":ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:75
+msgid ""
+":ref:`set_item_text<class_ItemList_set_item_text>` **(** "
+":ref:`int<class_int>` idx, :ref:`String<class_string>` text **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:77
+msgid ""
+":ref:`set_item_tooltip<class_ItemList_set_item_tooltip>` **(** "
+":ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:79
+msgid ""
+":ref:`set_item_tooltip_enabled<class_ItemList_set_item_tooltip_enabled>` "
+"**(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:81
+msgid ":ref:`sort_items_by_text<class_ItemList_sort_items_by_text>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:83
+msgid ""
+":ref:`unselect<class_ItemList_unselect>` **(** :ref:`int<class_int>` idx "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:87
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:91
+msgid "**item_activated** **(** :ref:`int<class_int>` index **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:93
+msgid "Fired when specified list item is activated via double click or Enter."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:97
+msgid ""
+"**item_rmb_selected** **(** :ref:`int<class_int>` index, "
+":ref:`Vector2<class_vector2>` at_position **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:99
+msgid "Fired when specified list item has been selected via right mouse clicking."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:101
+msgid ""
+"The click position is also provided to allow appropriate popup of context"
+" menus"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:103
+msgid "at the correct location."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:107
+msgid "**item_selected** **(** :ref:`int<class_int>` index **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:109
+msgid "Fired when specified item has been selected."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:113
+msgid ""
+"**multi_selected** **(** :ref:`int<class_int>` index, "
+":ref:`bool<class_bool>` selected **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:115
+msgid ""
+"Fired when a multiple selection is altered on a list allowing multiple "
+"selection."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:119
+msgid "**nothing_selected** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:123
+msgid "**rmb_clicked** **(** :ref:`Vector2<class_vector2>` at_position **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:127
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:131
+msgid ""
+":ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently "
+"selected item may be selected again."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:135
+msgid ""
+":ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse "
+"button click can select items."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:139
+msgid ":ref:`bool<class_bool>` **auto_height**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:143
+msgid ":ref:`int<class_int>` **fixed_column_width**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:147
+msgid ":ref:`Vector2<class_vector2>` **fixed_icon_size**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:151
+msgid ":ref:`IconMode<enum_itemlist_iconmode>` **icon_mode**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:155
+msgid ":ref:`float<class_float>` **icon_scale**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:159
+msgid ":ref:`int<class_int>` **max_columns**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:163
+msgid ":ref:`int<class_int>` **max_text_lines**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:167
+msgid ":ref:`bool<class_bool>` **same_column_width**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:171
+msgid ""
+":ref:`SelectMode<enum_itemlist_selectmode>` **select_mode** - Allow "
+"single or multiple selection. See the ``SELECT_*`` constants."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:175
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:179
+msgid "enum **IconMode**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:181
+msgid "**ICON_MODE_TOP** = **0**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:182
+msgid "**ICON_MODE_LEFT** = **1**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:186
+msgid "enum **SelectMode**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:188
+msgid "**SELECT_SINGLE** = **0**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:189
+msgid "**SELECT_MULTI** = **1**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:193
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:195
+msgid ""
+"This control provides a selectable list of items that may be in a single "
+"(or multiple columns) with option of text, icons,"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:197
+msgid ""
+"or both text and icon.  Tooltips are supported and may be different for "
+"every item in the list.  Selectable items in the list"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:199
+msgid ""
+"may be selected or deselected and multiple selection may be enabled.  "
+"Selection with right mouse button may also be enabled"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:201
+msgid ""
+"to allow use of popup context menus.  Items may also be 'activated' with "
+"a double click (or Enter key)."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:204
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:208
+msgid ""
+"void **add_icon_item** **(** :ref:`Texture<class_texture>` icon, "
+":ref:`bool<class_bool>` selectable=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:210
+msgid "Adds an item to the item list with no text, only an icon."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:214
+msgid ""
+"void **add_item** **(** :ref:`String<class_string>` text, "
+":ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` "
+"selectable=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:216
+msgid ""
+"Adds an item to the item list with specified text.  Specify an icon of "
+"null for a list item with no icon."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:218
+msgid "If selectable is true the list item will be selectable."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:222
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:224
+msgid "Remove all items from the list."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:228
+msgid "void **ensure_current_is_visible** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:230
+msgid "Ensure selection is visible, adjusting the scroll position as necessary."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:234
+msgid ""
+":ref:`int<class_int>` **get_item_at_position** **(** "
+":ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` "
+"exact=false **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:236
+msgid ""
+"Given a position within the control return the item (if any) at that "
+"point."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:240
+msgid ":ref:`int<class_int>` **get_item_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:242
+msgid "Return count of items currently in the item list."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:246
+msgid ""
+":ref:`Color<class_color>` **get_item_custom_bg_color** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:250
+msgid ""
+":ref:`Texture<class_texture>` **get_item_icon** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:254
+msgid ""
+":ref:`Rect2<class_rect2>` **get_item_icon_region** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:258
+msgid ""
+":ref:`Variant<class_variant>` **get_item_metadata** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:262
+msgid ""
+":ref:`String<class_string>` **get_item_text** **(** :ref:`int<class_int>`"
+" idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:264
+msgid "Return the text for specified item index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:268
+msgid ""
+":ref:`String<class_string>` **get_item_tooltip** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:270
+msgid "Return tooltip hint for specified item index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:274
+msgid ":ref:`PoolIntArray<class_poolintarray>` **get_selected_items** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:276
+msgid "Returns the list of selected indexes."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:280
+msgid ":ref:`VScrollBar<class_vscrollbar>` **get_v_scroll** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:282
+msgid "Returns the current vertical scroll bar for the List."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:286
+msgid ""
+":ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` "
+"idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:288
+msgid "Returns whether or not the item at the specified index is disabled"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:292
+msgid ""
+":ref:`bool<class_bool>` **is_item_selectable** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:294
+msgid "Returns whether or not the item at the specified index is selectable."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:298
+msgid ""
+":ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:300
+msgid "Returns whether the tooltip is enabled for specified item index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:304
+msgid ""
+":ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:306
+msgid "Returns whether or not item at the specified index is currently selected."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:310
+msgid "void **remove_item** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:312
+msgid "Remove item at specified index from the list."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:316
+msgid ""
+"void **select** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` "
+"single=true **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:318
+msgid "Select the item at the specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:320
+msgid "Note:  This method does not trigger the item selection signal."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:324
+msgid ""
+"void **set_item_custom_bg_color** **(** :ref:`int<class_int>` idx, "
+":ref:`Color<class_color>` custom_bg_color **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:328
+msgid ""
+"void **set_item_disabled** **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` disabled **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:330
+msgid "Disable (or enable) item at specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:332
+msgid ""
+"Disabled items are not be selectable and do not fire activation (Enter or"
+" double-click) signals."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:336
+msgid ""
+"void **set_item_icon** **(** :ref:`int<class_int>` idx, "
+":ref:`Texture<class_texture>` icon **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:338
+msgid "Set (or replace) icon of the item at the specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:342
+msgid ""
+"void **set_item_icon_region** **(** :ref:`int<class_int>` idx, "
+":ref:`Rect2<class_rect2>` rect **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:346
+msgid ""
+"void **set_item_metadata** **(** :ref:`int<class_int>` idx, "
+":ref:`Variant<class_variant>` metadata **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:348
+msgid ""
+"Sets a value (of any type) to be stored with the item at the specified "
+"index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:352
+msgid ""
+"void **set_item_selectable** **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` selectable **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:354
+msgid "Allow or disallow selection of the item at the specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:358
+msgid ""
+"void **set_item_text** **(** :ref:`int<class_int>` idx, "
+":ref:`String<class_string>` text **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:360
+msgid "Sets text of item at specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:364
+msgid ""
+"void **set_item_tooltip** **(** :ref:`int<class_int>` idx, "
+":ref:`String<class_string>` tooltip **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:366
+msgid "Sets tooltip hint for item at specified index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:370
+msgid ""
+"void **set_item_tooltip_enabled** **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` enable **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:372
+msgid "Sets whether the tooltip is enabled for specified item index."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:376
+msgid "void **sort_items_by_text** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:378
+msgid "Sorts items in the list by their text."
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:382
+msgid "void **unselect** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_itemlist.rst:384
+msgid "Ensure item at specified index is not selected."
+msgstr ""
+

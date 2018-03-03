@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_poolbytearray.rst:8
+msgid "PoolByteArray"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:15
+msgid "Raw byte array."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:21
+#: ../../classes/class_poolbytearray.rst:27
+#: ../../classes/class_poolbytearray.rst:29
+#: ../../classes/class_poolbytearray.rst:49
+msgid ":ref:`PoolByteArray<class_poolbytearray>`"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:21
+msgid ""
+":ref:`PoolByteArray<class_PoolByteArray_PoolByteArray>` **(** "
+":ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:23
+#: ../../classes/class_poolbytearray.rst:25
+#: ../../classes/class_poolbytearray.rst:37
+#: ../../classes/class_poolbytearray.rst:39
+#: ../../classes/class_poolbytearray.rst:41
+#: ../../classes/class_poolbytearray.rst:43
+#: ../../classes/class_poolbytearray.rst:45
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:23
+msgid ""
+":ref:`append<class_PoolByteArray_append>` **(** :ref:`int<class_int>` "
+"byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:25
+msgid ""
+":ref:`append_array<class_PoolByteArray_append_array>` **(** "
+":ref:`PoolByteArray<class_poolbytearray>` array **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:27
+msgid ""
+":ref:`compress<class_PoolByteArray_compress>` **(** :ref:`int<class_int>`"
+" compression_mode=0 **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:29
+msgid ""
+":ref:`decompress<class_PoolByteArray_decompress>` **(** "
+":ref:`int<class_int>` buffer_size, :ref:`int<class_int>` "
+"compression_mode=0 **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:31
+#: ../../classes/class_poolbytearray.rst:33
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:31
+msgid ""
+":ref:`get_string_from_ascii<class_PoolByteArray_get_string_from_ascii>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:33
+msgid ""
+":ref:`get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:35
+#: ../../classes/class_poolbytearray.rst:47
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:35
+msgid ""
+":ref:`insert<class_PoolByteArray_insert>` **(** :ref:`int<class_int>` "
+"idx, :ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:37
+msgid ":ref:`invert<class_PoolByteArray_invert>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:39
+msgid ""
+":ref:`push_back<class_PoolByteArray_push_back>` **(** "
+":ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:41
+msgid ""
+":ref:`remove<class_PoolByteArray_remove>` **(** :ref:`int<class_int>` idx"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:43
+msgid ""
+":ref:`resize<class_PoolByteArray_resize>` **(** :ref:`int<class_int>` idx"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:45
+msgid ""
+":ref:`set<class_PoolByteArray_set>` **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:47
+msgid ":ref:`size<class_PoolByteArray_size>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:49
+msgid ""
+":ref:`subarray<class_PoolByteArray_subarray>` **(** :ref:`int<class_int>`"
+" from, :ref:`int<class_int>` to **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:53
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:55
+msgid ""
+"Raw byte array. Contains bytes. Optimized for memory usage, can't "
+"fragment the memory."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:58
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:62
+msgid ""
+":ref:`PoolByteArray<class_poolbytearray>` **PoolByteArray** **(** "
+":ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:64
+msgid "Create from a generic array."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:68
+msgid "void **append** **(** :ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:70
+msgid ""
+"Append an element at the end of the array (alias of "
+":ref:`push_back<class_PoolByteArray_push_back>`)."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:74
+msgid ""
+"void **append_array** **(** :ref:`PoolByteArray<class_poolbytearray>` "
+"array **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:76
+msgid "Append a ``PoolByteArray`` at the end of this array."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:80
+msgid ""
+":ref:`PoolByteArray<class_poolbytearray>` **compress** **(** "
+":ref:`int<class_int>` compression_mode=0 **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:82
+msgid ""
+"Returns a new ``PoolByteArray`` with the data compressed. Set the "
+"compression mode using one of :ref:`File<class_file>`'s COMPRESS\\_\\* "
+"constants."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:86
+msgid ""
+":ref:`PoolByteArray<class_poolbytearray>` **decompress** **(** "
+":ref:`int<class_int>` buffer_size, :ref:`int<class_int>` "
+"compression_mode=0 **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:88
+msgid ""
+"Returns a new ``PoolByteArray`` with the data decompressed. Set "
+"buffer_size to the size of the uncompressed data. Set the compression "
+"mode using one of :ref:`File<class_file>`'s COMPRESS\\_\\* constants."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:92
+msgid ":ref:`String<class_string>` **get_string_from_ascii** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:94
+msgid ""
+"Returns a copy of the array's contents as :ref:`String<class_string>`. "
+"Fast alternative to "
+":ref:`PoolByteArray.get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>`"
+" if the content is ASCII-only. Unlike the UTF-8 function this function "
+"maps every byte to a character in the array. Multibyte sequences will not"
+" be interpreted correctly. For parsing user input always use "
+":ref:`PoolByteArray.get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>`."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:98
+msgid ":ref:`String<class_string>` **get_string_from_utf8** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:100
+msgid ""
+"Returns a copy of the array's contents as :ref:`String<class_string>`. "
+"Slower than "
+":ref:`PoolByteArray.get_string_from_ascii<class_PoolByteArray_get_string_from_ascii>`"
+" but supports UTF-8 encoded data. Use this function if you are unsure "
+"about the source of the data. For user input this function should always "
+"be preferred."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:104
+msgid ""
+":ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:106
+msgid ""
+"Insert a new element at a given position in the array. The position must "
+"be valid, or at the end of the array (pos==size())."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:110
+msgid "void **invert** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:112
+msgid ""
+"Reverse the order of the elements in the array (so first element will now"
+" be the last)."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:116
+msgid "void **push_back** **(** :ref:`int<class_int>` byte **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:118
+msgid "Append an element at the end of the array."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:122
+msgid "void **remove** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:124
+msgid "Remove an element from the array by index."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:128
+msgid "void **resize** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:130
+msgid ""
+"Set the size of the array. If the array is grown reserve elements at the "
+"end of the array. If the array is shrunk truncate the array to the new "
+"size."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:134
+msgid ""
+"void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:136
+msgid "Change the byte at the given index."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:140
+msgid ":ref:`int<class_int>` **size** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:142
+msgid "Return the size of the array."
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:146
+msgid ""
+":ref:`PoolByteArray<class_poolbytearray>` **subarray** **(** "
+":ref:`int<class_int>` from, :ref:`int<class_int>` to **)**"
+msgstr ""
+
+#: ../../classes/class_poolbytearray.rst:148
+msgid ""
+"Returns the slice of the ``PoolByteArray`` between indices (inclusive) as"
+" a new ``PoolByteArray``.  Any negative index is considered to be from "
+"the end of the array."
+msgstr ""
+

@@ -1,0 +1,413 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/math/vector_math.rst:4
+msgid "Vector math"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:9
+msgid ""
+"This tutorial is a short and practical introduction to linear algebra as "
+"it applies to game development. Linear algebra is the study of vectors "
+"and their uses. Vectors have many applications in both 2D and 3D "
+"development and Godot uses them extensively. Developing a good "
+"understanding of vector math is essential to becoming a strong game "
+"developer."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:15
+msgid ""
+"This tutorial is **not** a formal textbook on linear algebra. We will "
+"only be looking at how it is applied to game development. For a broader "
+"look at the mathematics, see https://www.khanacademy.org/math/linear-"
+"algebra"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:21
+msgid "Coordinate systems (2D)"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:23
+msgid ""
+"In 2D space, coordinates are defined using a horizontal axis (``x``) and "
+"a vertical axis (``y``). A particular position in 2D space is written as "
+"a pair of values such as ``(4, 3)``."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:29
+msgid ""
+"If you're new to computer graphics, it might seem odd that the positive "
+"``y`` axis points **downwards** instead of upwards, as you probably "
+"learned in math class. However, this is common in most computer graphics "
+"applications."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:34
+msgid ""
+"Any position in the 2D plane can be identified by a pair of numbers in "
+"this way. However, we can also think of the position ``(4, 3)`` as an "
+"**offset** from the ``(0, 0)`` point, or **origin**. Draw an arrow "
+"pointing from the origin to the point:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:41
+msgid ""
+"This is a **vector**. A vector represents a lot of useful information. As"
+" well as telling us that the point is at ``(4, 3)``, we can also think of"
+" it as an angle ``θ`` and a length (or magnitude) ``m``. In this case, "
+"the arrow is a **position vector** - it denotes a position in space, "
+"relative to the origin."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:47
+msgid ""
+"A very important point to consider about vectors is that they only "
+"represent **relative** direction and magnitude. There is no concept of a "
+"vector's position. The following two vectors are identical:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:53
+msgid ""
+"Both vectors represent a point 4 units to the right and 3 units below "
+"some starting point. It does not matter where on the plane you draw the "
+"vector, it always represents a relative direction and magnitude."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:58
+msgid "Vector Operations"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:60
+msgid ""
+"You can use either method (x and y coordinates or angle and magnitude) to"
+" refer to a vector, but for convenience programmers typically use the "
+"coordinate notation. For example, in Godot the origin is the top-left "
+"corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels "
+"to the right and 300 pixels down, use the following code:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:70
+msgid ""
+"Godot supports both :ref:`Vector2 <class_Vector2>` and :ref:`Vector3 "
+"<class_Vector3>` for 2D and 3D usage respectively. The same mathematical "
+"rules discussed in this article apply for both types."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:74
+msgid "Member access"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:76
+msgid "The individual components of the vector can be accessed directly by name."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:87
+msgid "Adding vectors"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:89
+msgid ""
+"When adding or subtracting two vectors, the corresponding components are "
+"added:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:95
+msgid ""
+"We can also see this visually by adding the second vector at the end of "
+"the first:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:100
+msgid "Note that adding ``a + b`` gives the same result as ``b + a``."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:102
+msgid "Scalar multiplication"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:104
+msgid ""
+"Vectors represent both direction and magnitude. A value representing only"
+" magnitude is called a **scalar**."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:107
+msgid "A vector can be multiplied by a **scalar**:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:116
+msgid ""
+"Multiplying a vector by a scalar does not change its direction, only its "
+"magnitude. This is how you **scale** a vector."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:120
+msgid "Practical applications"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:122
+msgid "Let's look at two common uses for vector addition and subtraction."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:124
+msgid "Movement"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:126
+msgid ""
+"A vector can represent **any** quantity with a magnitude and direction. "
+"Typical examples are: position, velocity, acceleration, and force. In "
+"this image, the spaceship at step 1 has a position vector of ``(1,3)`` "
+"and a velocity vector of ``(2,1)``. The velocity vector represents how "
+"far the ship moves each step. We can find the position for step 2 by "
+"adding the velocity to the current position."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:134
+msgid ""
+"Velocity measures the **change** in position per unit of time. The new "
+"position is found by adding velocity to the previous position."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:137
+msgid "Pointing toward a target"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:139
+msgid ""
+"In this scenario, you have a tank that wishes to point its turret at a "
+"robot. Subtracting the tank's position from the robot's position gives "
+"the vector pointing from the tank to the robot."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:145
+msgid "To find a vector pointing from ``A`` to ``B`` use ``B - A``."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:148
+msgid "Unit vectors"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:150
+msgid ""
+"A vector with **magnitude** of ``1`` is called a **unit vector**. They "
+"are also sometimes referred to as **direction vectors** or **normals**. "
+"Unit vectors are helpful when you need to keep track of a direction."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:155
+msgid "Normalization"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:157
+msgid ""
+"**Normalizing** a vector means reducing its length to ``1`` while "
+"preserving its direction. This is done by dividing each of its components"
+" by its magnitude:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:168
+msgid ""
+"Because this is such a common operation, ``Vector2`` and ``Vector3`` "
+"provide a method for normalizing:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:175
+msgid ""
+"Because normalization involves dividing by the vector's length, you "
+"cannot normalize a vector of length ``0``. Attempting to do so will "
+"result in an error."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:180
+msgid "Reflection"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:182
+msgid ""
+"A common use of unit vectors is to indicate **normals**. Normal vectors "
+"are unit vectors aligned perpendicularly to a surface, defining its "
+"direction. They are commonly used for lighting, collisions, and other "
+"operations involving surfaces."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:187
+msgid ""
+"For example, imagine we have a moving ball that we want to bounce off a "
+"wall or other object:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:192
+msgid ""
+"The surface normal has a value of ``(0, -1)`` because this is a "
+"horizontal surface. When the ball collides, we take its remaining motion "
+"(the amount left over when it hits the surface) and reflect it using the "
+"normal. In Godot, the :ref:`Vector2 <class_Vector2>` class has a "
+"``bounce()`` method to handle this. Here is a GDScript example of the "
+"diagram above using a :ref:`KinematicBody2D <class_KinematicBody2D>`:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:208
+msgid "Dot product"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:210
+msgid ""
+"The **dot product** is one of the most important concepts in vector math,"
+" but is often misunderstood. Dot product is an operation on two vectors "
+"that returns a **scalar**. Unlike a vector, which contains both magnitude"
+" and direction, a scalar value has only magnitude."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:215
+msgid "The formula for dot product takes two common forms:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:221
+msgid "and"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:227
+msgid ""
+"However, in most cases it is easiest to use the built-in method. Note "
+"that the order of the two vectors does not matter:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:235
+msgid ""
+"The dot product is most useful when used with unit vectors, making the "
+"first formula reduce to just ``cosθ``. This means we can use the dot "
+"product to tell us something about the angle between two vectors:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:241
+msgid ""
+"When using unit vectors, the result will always be between ``-1`` (180°) "
+"and ``1`` (0°)."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:245
+msgid "Facing"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:247
+msgid ""
+"We can use this fact to detect whether an object is facing toward another"
+" object. In the diagram below, the player ``P`` is trying to avoid the "
+"zombies ``A`` and ``B``. Assuming a zombie's field of view is **180°**, "
+"can they see the player?"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:253
+msgid ""
+"The green arrows ``fA`` and ``fB`` are **unit vectors** representing the "
+"zombies' facing directions and the blue semicircle represents its field "
+"of view. For zombie ``A``, we find the direction vector ``AP`` pointing "
+"to the player using ``P - A`` and normalize it. If the angle between this"
+" vector and the facing vector is less than 90°, then the zombie can see "
+"the player."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:260
+msgid "In GDScript it would look like this:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:269
+msgid "Cross product"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:271
+msgid ""
+"Like the dot product, the **cross product** is an operation on two "
+"vectors. However, the result of the cross product is a vector with a "
+"direction that is perpendicular to both. Its magnitude depends on their "
+"relative angle. If two vectors are parallel, the result of their cross "
+"product will be null vector."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:282
+msgid "The cross product is calculated like this:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:291
+msgid "In GDScript, you can use the built-in method:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:297
+msgid ""
+"In the cross product, order matters. ``a.cross(b)`` does not give the "
+"same result as ``b.cross(a)``. The resulting vectors point in "
+"**opposite** directions."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:302
+msgid "Calculating Normals"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:304
+msgid ""
+"One common use of cross products is to find the surface normal of a plane"
+" or surface in 3D space. If we have the triangle ``ABC`` we can use "
+"vector subtraction to find two edges ``AB`` and ``AC``. Using the cross "
+"product, ``AB x AC`` produces a vector perpendicular to both: the surface"
+" normal."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:309
+msgid "Here is a function to calculate a triangle's normal in GDScript:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:321
+msgid "Pointing to a Target"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:323
+msgid ""
+"In the dot product section above, we saw how it could be used to find the"
+" angle between two vectors. However, in 3D this is not enough "
+"information. We also need to know what axis to rotate around. We can find"
+" that by calculating the cross product of the current facing direction "
+"and the target direction. The resulting perpendicular vector is the axis "
+"of rotation."
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:332
+msgid "More Information"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:334
+msgid ""
+"For more information on using vector math in Godot, see the following "
+"articles:"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:336
+msgid ":ref:`doc_vectors_advanced`"
+msgstr ""
+
+#: ../../tutorials/math/vector_math.rst:337
+msgid ":ref:`doc_matrices_and_transforms`"
+msgstr ""
+

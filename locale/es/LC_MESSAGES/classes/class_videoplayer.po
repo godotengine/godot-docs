@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_videoplayer.rst:8
+msgid "VideoPlayer"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:10
+msgid ""
+"**Inherits:** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:17
+msgid "Control to play video files."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:23
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:23
+msgid ""
+":ref:`get_stream_name<class_VideoPlayer_get_stream_name>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:25
+msgid ":ref:`Texture<class_texture>`"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:25
+msgid ":ref:`get_video_texture<class_VideoPlayer_get_video_texture>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:27
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:27
+msgid ":ref:`is_playing<class_VideoPlayer_is_playing>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:29
+#: ../../classes/class_videoplayer.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:29
+msgid ":ref:`play<class_VideoPlayer_play>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:31
+msgid ":ref:`stop<class_VideoPlayer_stop>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:35
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:39
+msgid ":ref:`int<class_int>` **audio_track**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:43
+msgid ":ref:`bool<class_bool>` **autoplay**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:47
+msgid ""
+":ref:`int<class_int>` **buffering_msec** - The amount of milliseconds to "
+"store in buffer while playing."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:51
+msgid ":ref:`String<class_string>` **bus**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:55
+msgid ":ref:`bool<class_bool>` **expand**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:59
+msgid ":ref:`bool<class_bool>` **paused**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:63
+msgid ":ref:`VideoStream<class_videostream>` **stream**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:67
+msgid ""
+":ref:`float<class_float>` **stream_position** - The current position of "
+"the stream, in seconds."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:71
+msgid ""
+":ref:`float<class_float>` **volume** - The volume of the audio track as a"
+" linear value."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:75
+msgid ":ref:`float<class_float>` **volume_db**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:79
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:81
+msgid ""
+"This control has the ability to play video streams. The only format "
+"accepted is the OGV Theora, so any other format must be converted before "
+"using in a project."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:84
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:88
+msgid ":ref:`String<class_string>` **get_stream_name** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:90
+msgid "Get the name of the video stream."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:94
+msgid ":ref:`Texture<class_texture>` **get_video_texture** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:96
+msgid "Get the current frame of the video as a :ref:`Texture<class_texture>`."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:100
+msgid ":ref:`bool<class_bool>` **is_playing** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:102
+msgid "Get whether or not the video is playing."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:106
+msgid "void **play** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:108
+msgid "Start the video playback."
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:112
+msgid "void **stop** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_videoplayer.rst:114
+msgid "Stop the video playback."
+msgstr ""
+

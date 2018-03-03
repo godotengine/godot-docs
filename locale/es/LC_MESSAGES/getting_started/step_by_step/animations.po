@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/step_by_step/animations.rst:4
+msgid "Animations"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:9
+msgid "Godot's animation system is extremely powerful and flexible."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:11
+msgid ""
+"To begin, let's use the scene from the previous tutorial "
+"(:ref:`doc_splash_screen`). The goal is to add a \"fade-in\" animation to"
+" the splash image. Here's a copy just in case: :download:`robisplash.zip "
+"<files/robisplash.zip>`."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:16
+msgid "Add an animation player"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:18
+msgid ""
+"First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>` node "
+"to the scene as a child of \"background\" (the root node):"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:23
+msgid ""
+"When a node of this type is selected, the animation editor panel will "
+"appear:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:28
+msgid "The animation editor panel stays visible until manually hidden."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:31
+msgid "Creating the animation"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:33
+msgid ""
+"It's time to create a new animation! Press the new animation button and "
+"name the animation \"intro\" when the dialog appears."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:38
+msgid ""
+"Now that we have an animation the property editor enters \"animation "
+"editing\" mode. In this mode, a key icon appears next to every property "
+"of the property editor. In Godot any property of an object can be "
+"animated:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:46
+msgid "Editing the animation"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:48
+msgid "The logo will appear from the top of the screen."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:50
+msgid ""
+"With the animation editor panel open, select the \"logo\" node and set "
+"the \"Rect / Position\" property to ``(118, -400)`` and press the key "
+"button next to the property:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:56
+msgid "When the dialog appears, confirm that you are creating a new track."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:58
+msgid "The keyframe will be added in the animation player editor:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:62
+msgid "Move the editor cursor to the end, by clicking here:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:66
+msgid ""
+"Change the logo position to ``(118, 0)`` and add a keyframe again. With "
+"two keyframes, the animation happens."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:71
+msgid ""
+"Pressing \"Play selected animation from start. (Shift-D)\" on the "
+"animation panel will make the logo descend."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:76
+msgid ""
+"Click the \"Autoplay on Load\" button to set the animation to start "
+"automatically when the scene starts."
+msgstr ""
+
+#: ../../getting_started/step_by_step/animations.rst:81
+msgid "And finally, when running the scene, the animation should look like this:"
+msgstr ""
+

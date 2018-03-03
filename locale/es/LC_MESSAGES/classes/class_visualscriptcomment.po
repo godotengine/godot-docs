@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_visualscriptcomment.rst:8
+msgid "VisualScriptComment"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:17
+msgid "A Visual Script node used to annotate the script."
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:24
+msgid ""
+":ref:`String<class_string>` **description** - The text inside the comment"
+" node."
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:28
+msgid ""
+":ref:`Vector2<class_vector2>` **size** - The comment node's size (in "
+"pixels)."
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:32
+msgid ":ref:`String<class_string>` **title** - The comment node's title."
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:36
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:38
+msgid ""
+"A Visual Script node used to display annotations in the script, so that "
+"code may be documented."
+msgstr ""
+
+#: ../../classes/class_visualscriptcomment.rst:40
+msgid "Comment nodes can be resized so they encompass a group of nodes."
+msgstr ""
+

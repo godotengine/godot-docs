@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_funcref.rst:8
+msgid "FuncRef"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:17
+msgid "Reference to a function in an object."
+msgstr ""
+
+#: ../../classes/class_funcref.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:23
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:23
+msgid ":ref:`call_func<class_FuncRef_call_func>` **(** **)** vararg"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:25 ../../classes/class_funcref.rst:27
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:25
+msgid ""
+":ref:`set_function<class_FuncRef_set_function>` **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:27
+msgid ""
+":ref:`set_instance<class_FuncRef_set_instance>` **(** "
+":ref:`Object<class_object>` instance **)**"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:33
+msgid ""
+"In GDScript, functions are not *first-class objects*. This means it is "
+"impossible to store them directly as variables, return them from another "
+"function, or pass them as arguments."
+msgstr ""
+
+#: ../../classes/class_funcref.rst:35
+msgid ""
+"However, by creating a ``FuncRef`` using the "
+":ref:`@GDScript.funcref<class_@GDScript_funcref>` function, a reference "
+"to a function in a given object can be created, passed around and called."
+msgstr ""
+
+#: ../../classes/class_funcref.rst:38
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:42
+msgid ":ref:`Variant<class_variant>` **call_func** **(** **)** vararg"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:44
+msgid ""
+"Calls the referenced function previously set by "
+":ref:`set_function<class_FuncRef_set_function>` or "
+":ref:`@GDScript.funcref<class_@GDScript_funcref>`."
+msgstr ""
+
+#: ../../classes/class_funcref.rst:48
+msgid "void **set_function** **(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:50
+msgid ""
+"The name of the referenced function to call on the object, without "
+"parentheses or any parameters."
+msgstr ""
+
+#: ../../classes/class_funcref.rst:54
+msgid "void **set_instance** **(** :ref:`Object<class_object>` instance **)**"
+msgstr ""
+
+#: ../../classes/class_funcref.rst:56
+msgid ""
+"The object containing the referenced function. This object must be of a "
+"type actually inheriting from :ref:`Object<class_object>`, not a built-in"
+" type such as :ref:`int<class_int>`, :ref:`Vector2<class_vector2>` or "
+":ref:`Dictionary<class_dictionary>`."
+msgstr ""
+

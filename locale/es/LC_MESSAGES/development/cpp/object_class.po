@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/cpp/object_class.rst:4
+msgid "Object class"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:7
+msgid "General definition"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:9
+msgid ""
+":ref:`Object <class_object>` is the base class for almost everything. "
+"Most classes in Godot inherit directly or indirectly from it. Objects "
+"provide reflection and editable properties, and declaring them is a "
+"matter of using a single macro like this."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:21
+msgid "This makes Objects gain a lot of functionality, like for example"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:31
+#: ../../development/cpp/object_class.rst:89
+#: ../../development/cpp/object_class.rst:251
+#: ../../development/cpp/object_class.rst:267
+#: ../../development/cpp/object_class.rst:288
+#: ../../development/cpp/object_class.rst:307
+msgid "References:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:33
+msgid ""
+"`core/object.h "
+"<https://github.com/godotengine/godot/blob/master/core/object.h>`__"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:36
+msgid "Registering an Object"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:38
+msgid ""
+"ClassDB is a static class that holds the entire list of registered "
+"classes that inherit from Object, as well as dynamic bindings to all "
+"their methods properties and integer constants."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:42
+msgid "Classes are registered by calling:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:48
+msgid ""
+"Registering it will allow the class to be instanced by scripts, code, or "
+"creating them again when deserializing."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:51
+msgid "Registering as virtual is the same but it can't be instanced."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:57
+msgid ""
+"Object-derived classes can override the static function ``static void "
+"_bind_methods()``. When one class is registered, this static function is "
+"called to register all the object methods, properties, constants, etc. "
+"It's only called once. If an Object derived class is instanced but has "
+"not been registered, it will be registered as virtual automatically."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:64
+msgid ""
+"Inside ``_bind_methods``, there are a couple of things that can be done. "
+"Registering functions is one:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:71
+msgid "Default values for arguments can be passed in reverse order:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:77
+msgid ""
+"``D_METHOD`` is a macro that converts \"methodname\" to a StringName for "
+"more efficiency. Argument names are used for introspection, but when "
+"compiling on release, the macro ignores them, so the strings are unused "
+"and optimized away."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:82
+msgid "Check ``_bind_methods`` of Control or Object for more examples."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:84
+msgid ""
+"If just adding modules and functionality that is not expected to be "
+"documented as thoroughly, the ``D_METHOD()`` macro can safely be ignored "
+"and a string passing the name can be passed for brevity."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:91
+msgid ""
+"`core/class_db.h "
+"<https://github.com/godotengine/godot/blob/master/core/class_db.h>`__"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:94
+msgid "Constants"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:96
+msgid "Classes often have enums such as:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:105
+msgid ""
+"For these to work when binding to methods, the enum must be declared "
+"convertible to int, for this a macro is provided:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:112
+msgid "The constants can also be bound inside ``_bind_methods``, by using:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:120
+msgid "Properties (set/get)"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:122
+msgid "Objects export properties, properties are useful for the following:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:124
+msgid "Serializing and deserializing the object."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:125
+msgid "Creating a list of editable values for the Object derived class."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:127
+msgid ""
+"Properties are usually defined by the PropertyInfo() class. Usually "
+"constructed as:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:134
+msgid "For example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:140
+msgid ""
+"This is an integer property, named \"amount\", hint is a range, range "
+"goes from 0 to 49 in steps of 1 (integers). It is only usable for the "
+"editor (edit value visually) but won't be serialized."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:144
+msgid "Another example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:150
+msgid ""
+"This is a string property, can take any string but the editor will only "
+"allow the defined hint ones. Since no usage flags were specified, the "
+"default ones are PROPERTY_USAGE_STORAGE and PROPERTY_USAGE_EDITOR."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:154
+msgid ""
+"There are plenty of hints and usage flags available in object.h, give "
+"them a check."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:157
+msgid ""
+"Properties can also work like C# properties and be accessed from script "
+"using indexing, but this usage is generally discouraged, as using "
+"functions is preferred for legibility. Many properties are also bound "
+"with categories, such as \"animation/frame\" which also make indexing "
+"impossible unless using operator []."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:163
+msgid ""
+"From ``_bind_methods()``, properties can be created and bound as long as "
+"set/get functions exist. Example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:170
+msgid "This creates the property using the setter and the getter."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:173
+msgid "Binding properties using ``_set``/``_get``/``_get_property_list``"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:175
+msgid ""
+"An additional method of creating properties exists when more flexibility "
+"is desired (i.e. adding or removing properties on context)."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:178
+msgid ""
+"The following functions can be overridden in an Object derived class, "
+"they are NOT virtual, DO NOT make them virtual, they are called for every"
+" override and the previous ones are not invalidated (multilevel call)."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:189
+msgid ""
+"This is also a little less efficient since ``p_property`` must be "
+"compared against the desired names in serial order."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:193
+msgid "Dynamic casting"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:195
+msgid ""
+"Godot provides dynamic casting between Object-derived classes, for "
+"example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:205
+msgid ""
+"If cast fails, NULL is returned. This system uses RTTI, but it also works"
+" fine (although a bit slower) when RTTI is disabled. This is useful on "
+"platforms where a very small binary size is ideal, such as HTML5 or "
+"consoles (with low memory footprint)."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:211
+msgid "Signals"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:213
+msgid ""
+"Objects can have a set of signals defined (similar to Delegates in other "
+"languages). Connecting to them is rather easy:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:222
+msgid ""
+"The method ``_node_entered_tree`` must be registered to the class using "
+"``ClassDB::register_method`` (explained before)."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:225
+msgid ""
+"Adding signals to a class is done in ``_bind_methods``, using the "
+"``ADD_SIGNAL`` macro, for example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:233
+msgid "References"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:235
+msgid ""
+":ref:`Reference <class_reference>` inherits from Object and holds a "
+"reference count. It is the base for reference counted object types. "
+"Declaring them must be done using Ref<> template. For example:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:247
+msgid ""
+"``myref`` is reference counted. It will be freed when no more Ref<> "
+"templates point to it."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:253
+msgid ""
+"`core/reference.h "
+"<https://github.com/godotengine/godot/blob/master/core/reference.h>`__"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:256
+msgid "Resources:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:258
+msgid ""
+":ref:`Resource <class_resource>` inherits from Reference, so all "
+"resources are reference counted. Resources can optionally contain a path,"
+" which reference a file on disk. This can be set with "
+"``resource.set_path(path)``. This is normally done by the resource loader"
+" though. No two different resources can have the same path, attempt to do"
+" so will result in an error."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:264
+msgid "Resources without a path are fine too."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:269
+msgid ""
+"`core/resource.h "
+"<https://github.com/godotengine/godot/blob/master/core/resource.h>`__"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:272
+msgid "Resource loading"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:274
+msgid "Resources can be loaded with the ResourceLoader API, like this:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:280
+msgid ""
+"If a reference to that resource has been loaded previously and is in "
+"memory, the resource loader will return that reference. This means that "
+"there can be only one resource loaded from a file referenced on disk at "
+"the same time."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:285
+msgid "resourceinteractiveloader (TODO)"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:290
+msgid ""
+"`core/io/resource_loader.h "
+"<https://github.com/godotengine/godot/blob/master/core/io/resource_loader.h>`__"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:293
+msgid "Resource saving"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:295
+msgid "Saving a resource can be done with the resource saver API:"
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:301
+msgid ""
+"Instance will be saved. Sub resources that have a path to a file will be "
+"saved as a reference to that resource. Sub resources without a path will "
+"be bundled with the saved resource and assigned sub-IDs, like "
+"\"res://someresource.res::1\". This also helps to cache them when loaded."
+msgstr ""
+
+#: ../../development/cpp/object_class.rst:309
+msgid ""
+"`core/io/resource_saver.h "
+"<https://github.com/godotengine/godot/blob/master/core/io/resource_saver.h>`__"
+msgstr ""
+

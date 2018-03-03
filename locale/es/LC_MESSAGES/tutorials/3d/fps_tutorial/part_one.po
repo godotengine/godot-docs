@@ -1,0 +1,796 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:4
+msgid "Part 1"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:7
+msgid "Tutorial introduction"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:11
+msgid "This tutorial series will show you how to make a single player FPS game."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:13
+msgid "Throughout the course of these tutorials, we will cover how:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:15
+msgid "To make a first person character, with sprinting and a flash light."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:16
+msgid ""
+"To make a simple animation state machine for handling animation "
+"transitions."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:17
+msgid "To add a pistol, rifle, and knife to the first person character."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:18
+msgid "To add ammo and reloading to weapons that consume ammo."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:19
+msgid "To add sounds that play when the guns fire."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:21
+msgid ""
+"While this tutorial can be completed by beginners, it is highly advised "
+"to complete :ref:`doc_your_first_game`, if you are new to Godot and/or "
+"game development **before** going through this tutorial series."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:26
+msgid ""
+"Remember: Making 3D games is much harder than making 2D games. If you do "
+"not know how to make 2D games you will likely struggle making 3D games."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:29
+msgid ""
+"This tutorial assumes you know have experience working with the Godot "
+"editor, have basic programming experience in GDScript, and have basic "
+"experience in game development."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:32
+msgid ""
+"You can find the start assets for this parts 1 through 3 here: "
+":download:`Godot_FPS_Starter.zip <files/Godot_FPS_Starter.zip>`"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:34
+msgid "A video version of this tutorial series is coming soon!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:36
+msgid ""
+"The provided starter assets contain a animated 3D model, a bunch of 3D "
+"models for making levels, and a few scenes already configured for this "
+"tutorial."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:39
+msgid ""
+"All assets provided are created by me (TwistedTwigleg) unless otherwise "
+"noted, and are released under the ``MIT`` license."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:42
+msgid ""
+"The skybox is created by **StumpyStrust** on OpenGameArt. The skybox used"
+" is licensed under ``CC0``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:45
+msgid ""
+"The font used is **Titillium-Regular**, and is licensed under the ``SIL "
+"Open Font License, Version 1.1``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:47
+msgid ""
+"You can find the finished project for parts 1 through 3 at the bottom of "
+":ref:`doc_fps_tutorial_part_three`."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:51
+msgid "Part Overview"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:53
+msgid ""
+"In this part we will be making a first person player that can move around"
+" the environment."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:58
+msgid ""
+"By the end of this part you will have a working first person character "
+"with a mouse based camera that can walk, jump, and sprint around the game"
+" environment in any direction"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:63
+msgid "Getting everything setup"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:64
+msgid "Launch Godot and open up the project included in the starter assets."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:66
+msgid ""
+"While these assets are not necessarily required to use the scripts "
+"provided in this tutorial, they will make the tutorial much easier to "
+"follow as there are several pre-setup scenes we will be using throughout "
+"the tutorial series."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:70
+msgid ""
+"First, go open the project settings and go to the \"Input Map\" tab. "
+"You'll find several actions have already been defined. We will be using "
+"these actions for our player. Feel free to change the keys bound to these"
+" actions if you want."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:74
+msgid ""
+"While we still have the project settings open, quickly go check if MSAA "
+"(MultiSample Anti-Aliasing) is turned off. We want to make sure MSAA is "
+"off because otherwise we will get strange red lines between the tiles in "
+"our level later."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:78
+msgid ""
+"The reason we get those red lines is because we are using lowpoly models "
+"with low resolution textures. MSAA tries to reduce jagged edges between "
+"models and because we are using lowpoly and low resolution textures in "
+"this project, we need to turn it off to avoid texture bleeding."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:83
+msgid "A bonus with turning off MSAA is we get a more 'retro' looking result."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:87
+msgid "Lets take a second to see what we have in the starter assets."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:89
+msgid ""
+"Included in the starter assets are five scenes: ``BulletScene.tscn``, "
+"``Player.tscn``, ``SimpleAudioPlayer.tscn``, ``TestingArea.tscn``, and "
+"``TestLevel.tscn``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:92
+msgid ""
+"We will visit all of these scenes later, but for now open up "
+"``Player.tscn``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:94
+msgid ""
+"There are a bunch of scenes and a few textures in the ``Assets`` folder. "
+"You can look at these if you want, but we will not be directly using them"
+" in this tutorial."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:98
+msgid "Making the FPS movement logic"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:100
+msgid ""
+"Once you have ``Player.tscn`` open, let's take a quick look at how it is "
+"setup"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:104
+msgid ""
+"First, notice how the player's collision shapes are setup. Using a "
+"vertical pointing capsule as the collision shape for the player is fairly"
+" common in most first person games."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:107
+msgid ""
+"We are adding a small square to the 'feet' of the player so the player "
+"does not feel like they are balancing on a single point."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:110
+msgid ""
+"Many times player will notice how the collision shape being circular when"
+" they walk to an edge and slide off. We are adding the small square at "
+"the bottom of the capsule to reduce sliding on, and around, edges."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:114
+msgid ""
+"Another thing to notice is how many nodes are children of "
+"``Rotation_helper``. This is because ``Rotation_helper`` contains all of "
+"the nodes we want to rotate on the ``X`` axis (up and down). The reason "
+"behind this is so we rotate ``Player`` on the ``Y`` axis, and "
+"``Rotation_helper`` on the ``X`` axis."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:119
+msgid ""
+"If we did not use ``Rotation_helper`` then we'd likely have cases where "
+"we are rotating both the ``X`` and ``Y`` axes at the same time. This can "
+"lead to undesirable results, as we then could rotate on all three axes in"
+" some cases."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:125
+msgid "Attach a new script to the ``Player`` node and call it ``Player.gd``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:127
+msgid ""
+"Lets programming our player by adding the ability to move around, look "
+"around with the mouse, and jump. Add the following code to ``Player.gd``:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:224
+msgid "This is a lot of code, so let's break it down from top to bottom:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:228
+msgid ""
+"First, we define some global variables to dictate how our player will "
+"move about the world."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:230
+msgid ""
+"Throughout this tutorial, *variables defined outside functions will be "
+"referred to as \"global variables\"*. This is because we can access any "
+"of these variables from any place in the script. We can \"globally\" "
+"access them, hence the name."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:235
+msgid "Lets go through each of the global variables:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:237
+msgid "``norm_grav``: How strong gravity pulls us down while we are walking."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:238
+msgid "``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:239
+msgid ""
+"``MAX_SPEED``: The fastest speed we can reach. Once we hit this speed, we"
+" will not go any faster."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:240
+msgid "``JUMP_SPEED``: How high we can jump."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:241
+msgid ""
+"``ACCEL``: How fast we accelerate. The higher the value, the faster we "
+"get to max speed."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:242
+msgid ""
+"``DEACCEL``: How fast we are going to decelerate. The higher the value, "
+"the faster we will come to a complete stop."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:243
+msgid "``MAX_SLOPE_ANGLE``: The steepest angle we can climb."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:244
+msgid "``camera``: The :ref:`Camera <class_Camera>` node."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:245
+msgid ""
+"``rotation_helper``: A :ref:`Spatial <class_Spatial>` node holding "
+"everything we want to rotate on the X axis (up and down)."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:246
+msgid ""
+"``MOUSE_SENSITIVITY``: How sensitive the mouse is. I find a value of "
+"``0.05`` works well for my mouse, but you may need to change it based on "
+"how sensitive your mouse is."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:247
+msgid ""
+"``flashlight``: A :ref:`Spotlight <class_Spotlight>` node that will act "
+"as our player's flashlight."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:249
+msgid ""
+"You can tweak many of these variables to get different results. For "
+"example, by lowering ``normal_gravity`` and/or increasing ``JUMP_SPEED`` "
+"you can get a more 'floaty' feeling character. Feel free to experiment!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:255
+msgid "Now lets look at the ``_ready`` function:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:257
+msgid ""
+"First we get the ``camera`` and ``rotation_helper`` nodes and store them "
+"into their variables. After that we set ``_physics_process`` to ``true``."
+" Then we need to set the mouse mode to captured."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:260
+msgid ""
+"This will hide the mouse and keep it at the center of the screen. We do "
+"this for two reasons: The first reason being we do not want to the player"
+" to see their mouse cursor as they play. The second reason is because we "
+"do not want the cursor to leave the game window. If the cursor leaves the"
+" game window there could be instances where the player clicks outside the"
+" window, and then the game would lose focus. To assure neither of these "
+"issues happen, we capture the mouse cursor."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:266
+msgid ""
+"see :ref:`Input documentation <class_Input>` for the various mouse modes."
+" We will only be using ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE``"
+" in this tutorial series."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:269
+msgid ""
+"Finally, we call ``set_process_input(true)``. We need to use ``_input`` "
+"so we can rotate the player and camera when there is mouse motion."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:274
+msgid "Next is ``_physics_process``:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:276
+msgid ""
+"We define a directional vector (``dir``) for storing the direction the "
+"player intends to move."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:278
+msgid ""
+"Next we get the camera's global transform and store it as well, into the "
+"``cam_xform`` variable."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:280
+msgid ""
+"Now we check for directional input. If we find that the player is moving,"
+" we get the ``camera``'s directional vector in the direction we are "
+"wanting to move towards and add (or subtract) it to ``dir``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:283
+msgid ""
+"Many have found directional vectors confusing, so lets take a second to "
+"explain how they work:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:287
+msgid ""
+"World space can be defined as: The space in which all objects are placed "
+"in, relative to a constant origin point. Every object, no matter if it is"
+" 2D or 3D, has a position in world space."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:290
+msgid ""
+"To put it another way: world space is the space in a universe where every"
+" object's position, rotation, and scale can be measured by a known, fixed"
+" point called the origin."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:293
+msgid ""
+"In Godot, the origin is at position ``(0, 0, 0)`` with a rotation of "
+"``(0, 0, 0)`` and a scale of ``(1, 1, 1)``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:295
+msgid ""
+"When you open up the Godot editor and select a :ref:`Spatial "
+"<class_Spatial>` based node, a gizmo pops up. Each of the arrows points "
+"using world space directions by default."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:298
+msgid ""
+"If you want to move using the world space directional vectors, you'd do "
+"something like this:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:311
+msgid ""
+"Notice how we do not need to do any calculations to get world space "
+"directional vectors. We can just define a few :ref:`Vector3 "
+"<class_Vector3>` variables and input the values pointing in each "
+"direction."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:314
+msgid "Here is what world space looks like in 2D:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:316
+msgid ""
+"The following images are just examples. Each arrow/rectangle represents a"
+" directional vector"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:320
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:363
+msgid "And here is what it looks like for 3D:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:324
+msgid ""
+"Notice how in both examples, the rotation of the node does not change the"
+" directional arrows. This is because world space is a constant. No matter"
+" how you translate, rotate, or scale an object, world space will *always "
+"point in the same direction*."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:328
+msgid ""
+"Local space is different, because it takes the rotation of the object "
+"into account."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:330
+msgid ""
+"Local space can be defined as follows: The space in which a object's "
+"position is the origin of the universe. Because the position of the "
+"origin can be at ``N`` many locations, the values derived from local "
+"space change with the position of the origin."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:335
+msgid ""
+"This stack overflow question has a much better explanation of world space"
+" and local space."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:337
+msgid ""
+"https://gamedev.stackexchange.com/questions/65783/what-are-world-space-"
+"and-eye-space-in-game-development (Local space and eye space are "
+"essentially the same thing in this context)"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:340
+msgid ""
+"To get a :ref:`Spatial <class_Spatial>` node's local space, we need to "
+"get its :ref:`Transform <class_Transform>`, so then we can get the "
+":ref:`Basis <class_Basis>` from the :ref:`Transform <class_Transform>`."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:343
+msgid ""
+"Each :ref:`Basis <class_Basis>` has three vectors: ``X``, ``Y``, and "
+"``Z``. Each of those vectors point towards each of the local space "
+"vectors coming from that object."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:346
+msgid ""
+"To use the a :ref:`Spatial <class_Spatial>` node's local directional "
+"vectors, we use this code:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:359
+msgid "Here is what local space looks like in 2D:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:367
+msgid ""
+"Here is what the :ref:`Spatial <class_Spatial>` gizmo shows when you are "
+"using local space mode. Notice how the arrows follow the rotation of the "
+"object on the left, which looks exactly the same as the 3D example for "
+"local space."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:371
+msgid ""
+"You can change between local and world space modes by pressing the little"
+" cube button when you have a :ref:`Spatial <class_Spatial>` based node "
+"selected."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:376
+msgid ""
+"Local vectors are confusing even for more experienced game developers, so"
+" do not worry if this all doesn't make a lot of sense. The key thing to "
+"remember about local vectors is that we are using local coordinates to "
+"get direction from the object's point of view, as opposed to using world "
+"vectors which give direction from the world's point of view."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:382
+msgid "Back to ``_physics_process``:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:384
+msgid ""
+"When the player pressed any of the directional movement actions, we get "
+"the local vector pointing in that direction and add it to ``dir``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:387
+msgid ""
+"Because the camera is rotated by ``-180`` degrees, we have to flip the "
+"directional vectors. Normally forward would be the positive Z axis, so "
+"using ``basis.z.normalized()`` would work, but we are using "
+"``-basis.z.normalized()`` because our camera's Z axis faces backwards in "
+"relation to the rest of the player."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:392
+msgid ""
+"Next we check if the player is on the floor using :ref:`KinematicBody "
+"<class_KinematicBody>`'s ``is_on_floor`` function. If it is, then we "
+"check to see if the \"movement_jump\" action has just been pressed. If it"
+" has, then we set our ``Y`` velocity to ``JUMP_SPEED``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:396
+msgid ""
+"Next we check if the flash light action was just pressed. If it was, we "
+"then check if the flash light is visible, or hidden. If it is visible, we"
+" hide it. If it is hidden, we make it visible."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:399
+msgid ""
+"Next we assure that our movement vector does not have any movement on the"
+" ``Y`` axis, and then we normalize it. We set a variable to our normal "
+"gravity and apply that gravity to our velocity."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:402
+msgid ""
+"After that we assign our velocity to a new variable (called ``hvel``) and"
+" remove any movement on the ``Y`` axis. Next we set a new variable "
+"(``target``) to our direction vector. Then we multiply that by our max "
+"speed so we know how far we will can move in the direction provided by "
+"``dir``."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:406
+msgid ""
+"After that we make a new variable for our acceleration, named ``accel``. "
+"We then take the dot product of ``hvel`` to see if we are moving "
+"according to ``hvel``. Remember, ``hvel`` does not have any ``Y`` "
+"velocity, meaning we are only checking if we are moving forwards, "
+"backwards, left, or right. If we are moving, then we set ``accel`` to our"
+" ``ACCEL`` constant so we accelerate, otherwise we set ``accel` to our "
+"``DEACCEL`` constant so we decelerate."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:412
+msgid ""
+"Finally, we interpolate our horizontal velocity, set our ``X`` and ``Z`` "
+"velocity to the interpolated horizontal velocity, and then call "
+"``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` "
+"handle moving through the physics world."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:415
+msgid ""
+"All of the code in ``_physics_process`` is almost exactly the same as the"
+" movement code from the Kinematic Character demo! The only thing that is "
+"different is how we use the directional vectors, and the flash light!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:418
+msgid ""
+"You can optionally add some code to capture and free the mouse cursor "
+"when \"ui_cancel\" is pressed. While entirely optional, it is highly "
+"recommended for debugging purposes."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:423
+msgid ""
+"The final function we have is the ``_input`` function, and thankfully "
+"it's fairly short:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:425
+msgid ""
+"First we make sure that the event we are dealing with is a "
+":ref:`InputEventMouseMotion <class_InputEventMouseMotion>` event. We also"
+" want to check if the cursor is captured, as we do not want to rotate if "
+"it is not."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:428
+msgid ""
+"See :ref:`Mouse and input coordinates <doc_mouse_and_input_coordinates>` "
+"for a list of possible input events."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:431
+msgid ""
+"If the event is indeed a mouse motion event and the cursor is captured, "
+"we rotate based on the mouse motion provided by "
+":ref:`InputEventMouseMotion <class_InputEventMouseMotion>`."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:434
+msgid ""
+"First we rotate the ``rotation_helper`` node on the ``X`` axis, using the"
+" relative mouse motion's ``Y`` value, provided by "
+":ref:`InputEventMouseMotion <class_InputEventMouseMotion>`."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:437
+msgid ""
+"Then we rotate the entire :ref:`KinematicBody <class_KinematicBody>` on "
+"the ``Y`` axis by the relative mouse motion's ``X`` value."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:439
+msgid ""
+"Godot converts relative mouse motion into a :ref:`Vector2 "
+"<class_Vector2>` where mouse movement going up and down is ``1`` and "
+"``-1`` respectively. Right and Left movement is ``1`` and ``-1`` "
+"respectively."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:443
+msgid ""
+"Because of how we are rotating the player, we multiply the relative mouse"
+" motion's ``X`` value by ``-1`` so mouse motion going left and right "
+"rotates the player left and right in the same direction."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:447
+msgid ""
+"Finally, we clamp the ``rotation_helper``'s ``X`` rotation to be between "
+"``-70`` and ``70`` degrees so we cannot rotate ourselves upside down."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:452
+msgid ""
+"To test the code open up the scene named ``Testing_Area.tscn`` if it's "
+"not already opened up. We will be using this scene as we go through the "
+"tutorial, so be sure to keep it open in one of your scene tabs."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:455
+msgid ""
+"Go ahead and test your code either by pressing ``F4`` with "
+"``Testing_Area.tscn`` as the open tab, by pressing the play button in the"
+" top right corner, or by pressing ``F6``. You should now be able to walk "
+"around, jump in the air, and look around using the mouse."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:460
+msgid "Giving the player the option to sprint"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:462
+msgid ""
+"Before we get to making the weapons work, there is one more thing we "
+"should add. Many FPS games have an option to sprint, and we can easily "
+"add sprinting to our player, so let's do that!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:466
+msgid "First we need a few more global variables in our player script:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:474
+msgid ""
+"All of these variables work exactly the same as the non sprinting "
+"variables with similar names. The only that's different is "
+"``is_sprinting``, which is a boolean to track whether the player is "
+"currently sprinting."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:478
+msgid ""
+"Now we just need to change some of the code in our ``_physics_process`` "
+"function so we can add the ability to sprint."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:481
+msgid ""
+"The first thing we need to do is add the following code, preferably by "
+"the other input related code:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:491
+msgid ""
+"This will set ``is_sprinting`` to true when we are holding down the "
+"``movement_sprint`` action, and false when the ``movement_sprint`` action"
+" is released."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:494
+msgid ""
+"Next we need to set our max speed to the higher speed if we are "
+"sprinting, and we also need to change our acceleration to the new "
+"acceleration:"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:517
+msgid ""
+"Now you should be able to sprint if you press the shift button! Go give "
+"it a whirl! You can change the sprint related global variables to make "
+"the player faster when sprinting!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:520
+msgid ""
+"Phew! That was a lot of work. Now you have a fully working first person "
+"character!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:522
+msgid ""
+"In :ref:`doc_fps_tutorial_part_two` we will add some guns to our player "
+"character."
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:524
+msgid "At this point we've recreated the Kinematic character demo with sprinting!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:526
+msgid ""
+"Currently the player script would be at an ideal state for making all "
+"sorts of first person games. For example: Horror games, platformer games,"
+" adventure games, and more!"
+msgstr ""
+
+#: ../../tutorials/3d/fps_tutorial/part_one.rst:529
+msgid ""
+"If you ever get lost, be sure to read over the code again! You can also "
+"download the finished project at the bottom of "
+":ref:`doc_fps_tutorial_part_three`."
+msgstr ""
+

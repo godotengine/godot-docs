@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_json.rst:8
+msgid "JSON"
+msgstr ""
+
+#: ../../classes/class_json.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_json.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_json.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_json.rst:17
+msgid "Helper class for parsing JSON data."
+msgstr ""
+
+#: ../../classes/class_json.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_json.rst:23
+msgid ":ref:`JSONParseResult<class_jsonparseresult>`"
+msgstr ""
+
+#: ../../classes/class_json.rst:23
+msgid ""
+":ref:`parse<class_JSON_parse>` **(** :ref:`String<class_string>` json "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_json.rst:25
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_json.rst:25
+msgid ""
+":ref:`print<class_JSON_print>` **(** :ref:`Variant<class_variant>` value,"
+" :ref:`String<class_string>` indent=\"\", :ref:`bool<class_bool>` "
+"sort_keys=false **)**"
+msgstr ""
+
+#: ../../classes/class_json.rst:29
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_json.rst:31
+msgid ""
+"Helper class for parsing JSON data. For usage example and other important"
+" hints, see :ref:`JSONParseResult<class_jsonparseresult>`."
+msgstr ""
+
+#: ../../classes/class_json.rst:34
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_json.rst:38
+msgid ""
+":ref:`JSONParseResult<class_jsonparseresult>` **parse** **(** "
+":ref:`String<class_string>` json **)**"
+msgstr ""
+
+#: ../../classes/class_json.rst:40
+msgid ""
+"Parses a JSON encoded string and returns a "
+":ref:`JSONParseResult<class_jsonparseresult>` containing the result."
+msgstr ""
+
+#: ../../classes/class_json.rst:44
+msgid ""
+":ref:`String<class_string>` **print** **(** :ref:`Variant<class_variant>`"
+" value, :ref:`String<class_string>` indent=\"\", :ref:`bool<class_bool>` "
+"sort_keys=false **)**"
+msgstr ""
+
+#: ../../classes/class_json.rst:46
+msgid ""
+"Converts a Variant var to JSON text and returns the result. Useful for "
+"serializing data to store or send over the network."
+msgstr ""
+

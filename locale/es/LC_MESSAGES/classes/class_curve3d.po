@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_curve3d.rst:8
+msgid "Curve3D"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:17
+msgid "Describes a Bezier curve in 3D space."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:23 ../../classes/class_curve3d.rst:25
+#: ../../classes/class_curve3d.rst:49 ../../classes/class_curve3d.rst:51
+#: ../../classes/class_curve3d.rst:53 ../../classes/class_curve3d.rst:55
+#: ../../classes/class_curve3d.rst:57
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:23
+msgid ""
+":ref:`add_point<class_Curve3D_add_point>` **(** "
+":ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` "
+"in=Vector3( 0, 0, 0 ), :ref:`Vector3<class_vector3>` out=Vector3( 0, 0, 0"
+" ), :ref:`int<class_int>` at_position=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:25
+msgid ":ref:`clear_points<class_Curve3D_clear_points>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:27 ../../classes/class_curve3d.rst:41
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:27
+msgid ":ref:`get_baked_length<class_Curve3D_get_baked_length>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:29 ../../classes/class_curve3d.rst:59
+msgid ":ref:`PoolVector3Array<class_poolvector3array>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:29
+msgid ":ref:`get_baked_points<class_Curve3D_get_baked_points>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:31
+msgid ":ref:`PoolRealArray<class_poolrealarray>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:31
+msgid ":ref:`get_baked_tilts<class_Curve3D_get_baked_tilts>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:33
+msgid ":ref:`get_point_count<class_Curve3D_get_point_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:35 ../../classes/class_curve3d.rst:37
+#: ../../classes/class_curve3d.rst:39 ../../classes/class_curve3d.rst:43
+#: ../../classes/class_curve3d.rst:45 ../../classes/class_curve3d.rst:47
+msgid ":ref:`Vector3<class_vector3>`"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:35
+msgid ""
+":ref:`get_point_in<class_Curve3D_get_point_in>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:37
+msgid ""
+":ref:`get_point_out<class_Curve3D_get_point_out>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:39
+msgid ""
+":ref:`get_point_position<class_Curve3D_get_point_position>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:41
+msgid ""
+":ref:`get_point_tilt<class_Curve3D_get_point_tilt>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:43
+msgid ""
+":ref:`interpolate<class_Curve3D_interpolate>` **(** :ref:`int<class_int>`"
+" idx, :ref:`float<class_float>` t **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:45
+msgid ""
+":ref:`interpolate_baked<class_Curve3D_interpolate_baked>` **(** "
+":ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:47
+msgid ""
+":ref:`interpolatef<class_Curve3D_interpolatef>` **(** "
+":ref:`float<class_float>` fofs **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:49
+msgid ""
+":ref:`remove_point<class_Curve3D_remove_point>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:51
+msgid ""
+":ref:`set_point_in<class_Curve3D_set_point_in>` **(** "
+":ref:`int<class_int>` idx, :ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:53
+msgid ""
+":ref:`set_point_out<class_Curve3D_set_point_out>` **(** "
+":ref:`int<class_int>` idx, :ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:55
+msgid ""
+":ref:`set_point_position<class_Curve3D_set_point_position>` **(** "
+":ref:`int<class_int>` idx, :ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:57
+msgid ""
+":ref:`set_point_tilt<class_Curve3D_set_point_tilt>` **(** "
+":ref:`int<class_int>` idx, :ref:`float<class_float>` tilt **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:59
+msgid ""
+":ref:`tessellate<class_Curve3D_tessellate>` **(** :ref:`int<class_int>` "
+"max_stages=5, :ref:`float<class_float>` tolerance_degrees=4 **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:63
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:67
+msgid ""
+":ref:`float<class_float>` **bake_interval** - The distance in meters "
+"between two adjacent cached points. Changing it forces the cache to be "
+"recomputed the next time the "
+":ref:`get_baked_points<class_Curve3D_get_baked_points>` or "
+":ref:`get_baked_length<class_Curve3D_get_baked_length>` function is "
+"called. The smaller the distance, the more points in the cache and the "
+"more memory it will consume, so use with care."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:71
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:73
+msgid ""
+"This class describes a Bezier curve in 3D space. It is mainly used to "
+"give a shape to a :ref:`Path<class_path>`, but can be manually sampled "
+"for other purposes."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:75
+msgid ""
+"It keeps a cache of precalculated points along the curve, to speed "
+"further calculations up."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:78
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:82
+msgid ""
+"void **add_point** **(** :ref:`Vector3<class_vector3>` position, "
+":ref:`Vector3<class_vector3>` in=Vector3( 0, 0, 0 ), "
+":ref:`Vector3<class_vector3>` out=Vector3( 0, 0, 0 ), "
+":ref:`int<class_int>` at_position=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:84
+msgid ""
+"Adds a point to a curve, at \"position\", with control points \"in\" and "
+"\"out\"."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:86
+msgid ""
+"If \"at_position\" is given, the point is inserted before the point "
+"number \"at_position\", moving that point (and every point after) after "
+"the inserted point. If \"at_position\" is not given, or is an illegal "
+"value (at_position <0 or at_position >= "
+":ref:`get_point_count<class_Curve3D_get_point_count>`), the point will be"
+" appended at the end of the point list."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:90
+msgid "void **clear_points** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:92
+msgid "Removes all points from the curve."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:96
+msgid ":ref:`float<class_float>` **get_baked_length** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:98
+msgid ""
+"Returns the total length of the curve, based on the cached points. Given "
+"enough density (see "
+":ref:`set_bake_interval<class_Curve3D_set_bake_interval>`), it should be "
+"approximate enough."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:102
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **get_baked_points** "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:104
+msgid ""
+"Returns the cache of points as a "
+":ref:`PoolVector3Array<class_poolvector3array>`."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:108
+msgid ""
+":ref:`PoolRealArray<class_poolrealarray>` **get_baked_tilts** **(** **)**"
+" const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:110
+msgid "Returns the cache of tilts as a RealArray."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:114
+msgid ":ref:`int<class_int>` **get_point_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:116
+msgid "Returns the number of points describing the curve."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:120
+msgid ""
+":ref:`Vector3<class_vector3>` **get_point_in** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:122
+msgid ""
+"Returns the position of the control point leading to the vertex \"idx\". "
+"If the index is out of bounds, the function sends an error to the "
+"console, and returns (0, 0, 0)."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:126
+msgid ""
+":ref:`Vector3<class_vector3>` **get_point_out** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:128
+msgid ""
+"Returns the position of the control point leading out of the vertex "
+"\"idx\". If the index is out of bounds, the function sends an error to "
+"the console, and returns (0, 0, 0)."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:132
+msgid ""
+":ref:`Vector3<class_vector3>` **get_point_position** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:134
+msgid ""
+"Returns the position of the vertex \"idx\". If the index is out of "
+"bounds, the function sends an error to the console, and returns (0, 0, "
+"0)."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:138
+msgid ""
+":ref:`float<class_float>` **get_point_tilt** **(** :ref:`int<class_int>` "
+"idx **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:140
+msgid ""
+"Returns the tilt angle in radians for the point \"idx\". If the index is "
+"out of bounds, the function sends an error to the console, and returns 0."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:144
+msgid ""
+":ref:`Vector3<class_vector3>` **interpolate** **(** :ref:`int<class_int>`"
+" idx, :ref:`float<class_float>` t **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:146
+msgid ""
+"Returns the position between the vertex \"idx\" and the vertex \"idx\"+1,"
+" where \"t\" controls if the point is the first vertex (t = 0.0), the "
+"last vertex (t = 1.0), or in between. Values of \"t\" outside the range "
+"(0.0 >= t  <=1) give strange, but predictable results."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:148
+msgid ""
+"If \"idx\" is out of bounds it is truncated to the first or last vertex, "
+"and \"t\" is ignored. If the curve has no points, the function sends an "
+"error to the console, and returns (0, 0, 0)."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:152
+msgid ""
+":ref:`Vector3<class_vector3>` **interpolate_baked** **(** "
+":ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:154
+msgid ""
+"Returns a point within the curve at position \"offset\", where \"offset\""
+" is measured as a distance in 3D units along the curve."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:156
+msgid ""
+"To do that, it finds the two cached points where the \"offset\" lies "
+"between, then interpolates the values. This interpolation is cubic if "
+"\"cubic\" is set to true, or linear if set to false."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:158
+msgid ""
+"Cubic interpolation tends to follow the curves better, but linear is "
+"faster (and often, precise enough)."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:162
+msgid ""
+":ref:`Vector3<class_vector3>` **interpolatef** **(** "
+":ref:`float<class_float>` fofs **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:164
+msgid ""
+"Returns the position at the vertex \"fofs\". It calls "
+":ref:`interpolate<class_Curve3D_interpolate>` using the integer part of "
+"fofs as \"idx\", and its fractional part as \"t\"."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:168
+msgid "void **remove_point** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:170
+msgid ""
+"Deletes the point \"idx\" from the curve. Sends an error to the console "
+"if \"idx\" is out of bounds."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:174
+msgid ""
+"void **set_point_in** **(** :ref:`int<class_int>` idx, "
+":ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:176
+msgid ""
+"Sets the position of the control point leading to the vertex \"idx\". If "
+"the index is out of bounds, the function sends an error to the console."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:180
+msgid ""
+"void **set_point_out** **(** :ref:`int<class_int>` idx, "
+":ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:182
+msgid ""
+"Sets the position of the control point leading out of the vertex \"idx\"."
+" If the index is out of bounds, the function sends an error to the "
+"console."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:186
+msgid ""
+"void **set_point_position** **(** :ref:`int<class_int>` idx, "
+":ref:`Vector3<class_vector3>` position **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:188
+msgid ""
+"Sets the position for the vertex \"idx\". If the index is out of bounds, "
+"the function sends an error to the console."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:192
+msgid ""
+"void **set_point_tilt** **(** :ref:`int<class_int>` idx, "
+":ref:`float<class_float>` tilt **)**"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:194
+msgid ""
+"Sets the tilt angle in radians for the point \"idx\". If the index is out"
+" of bounds, the function sends an error to the console."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:196
+msgid ""
+"The tilt controls the rotation along the look-at axis an object traveling"
+" the path would have. In the case of a curve controlling a "
+":ref:`PathFollow<class_pathfollow>`, this tilt is an offset over the "
+"natural tilt the PathFollow calculates."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:200
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **tessellate** **(** "
+":ref:`int<class_int>` max_stages=5, :ref:`float<class_float>` "
+"tolerance_degrees=4 **)** const"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:202
+msgid ""
+"Returns a list of points along the curve, with a curvature controlled "
+"point density. That is, the curvier parts will have more points than the "
+"straighter parts."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:204
+msgid ""
+"This approximation makes straight segments between each point, then "
+"subdivides those segments until the resulting shape is similar enough."
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:206
+msgid ""
+"\"max_stages\" controls how many subdivisions a curve segment may face "
+"before it is considered approximate enough. Each subdivision splits the "
+"segment in half, so the default 5 stages may mean up to 32 subdivisions "
+"per curve segment. Increase with care!"
+msgstr ""
+
+#: ../../classes/class_curve3d.rst:208
+msgid ""
+"\"tolerance_degrees\" controls how many degrees the midpoint of a segment"
+" may deviate from the real curve, before the segment has to be "
+"subdivided."
+msgstr ""
+

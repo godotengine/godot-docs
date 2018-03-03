@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:8
+msgid "NetworkedMultiplayerPeer"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:10
+msgid ""
+"**Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:12
+msgid ""
+"**Inherited By:** "
+":ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`, "
+":ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>`"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:19
+msgid "A high-level network interface to simplify multiplayer interactions."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:25
+#: ../../classes/class_networkedmultiplayerpeer.rst:27
+#: ../../classes/class_networkedmultiplayerpeer.rst:29
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:25
+msgid ""
+":ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:27
+msgid ""
+":ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:29
+msgid ""
+":ref:`get_unique_id<class_NetworkedMultiplayerPeer_get_unique_id>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:31
+#: ../../classes/class_networkedmultiplayerpeer.rst:33
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:31
+msgid ":ref:`poll<class_NetworkedMultiplayerPeer_poll>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:33
+msgid ""
+":ref:`set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>` "
+"**(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:37
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:41
+msgid "**connection_failed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:43
+msgid "Emitted when a connection attempt fails."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:47
+msgid "**connection_succeeded** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:49
+msgid "Emitted when a connection attempt succeeds."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:53
+msgid "**peer_connected** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:55
+msgid "Emitted by the server when a client connects."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:59
+msgid "**peer_disconnected** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:61
+msgid "Emitted by the server when a client disconnects."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:65
+msgid "**server_disconnected** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:67
+msgid "Emitted by clients when the server disconnects."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:71
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:75
+msgid ""
+":ref:`bool<class_bool>` **refuse_new_connections** - If ``true`` this "
+"``NetworkedMultiplayerPeer`` refuses new connections. Default value: "
+"``false``."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:79
+msgid ""
+":ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` "
+"**transfer_mode** - The manner in which to send packets to the "
+"``target_peer``. See enum TransferMode."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:83
+msgid "Numeric Constants"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:85
+msgid ""
+"**TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and "
+"then redistributed to other peers."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:86
+msgid "**TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:89
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:93
+msgid "enum **TransferMode**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:95
+msgid ""
+"**TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are sent via unordered "
+"UDP packets."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:96
+msgid ""
+"**TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via "
+"ordered UDP packets."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:97
+msgid "**TRANSFER_MODE_RELIABLE** = **2** --- Packets are sent via TCP packets."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:101
+msgid "enum **ConnectionStatus**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:103
+msgid ""
+"**CONNECTION_DISCONNECTED** = **0** --- The ongoing connection "
+"disconnected."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:104
+msgid "**CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:105
+msgid "**CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:109
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:111
+msgid ""
+"Manages the connection to network peers. Assigns unique IDs to each "
+"client connected to the server."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:114
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:118
+msgid ":ref:`int<class_int>` **get_connection_status** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:120
+msgid "Returns the current state of the connection. See enum ConnectionStatus."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:124
+msgid ":ref:`int<class_int>` **get_packet_peer** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:126
+msgid ""
+"Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most "
+"recent packet."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:130
+msgid ":ref:`int<class_int>` **get_unique_id** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:132
+msgid "Returns the ID of this ``NetworkedMultiplayerPeer``."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:136
+msgid "void **poll** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:138
+msgid "Waits up to 1 second to receive a new network event."
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:142
+msgid "void **set_target_peer** **(** :ref:`int<class_int>` id **)**"
+msgstr ""
+
+#: ../../classes/class_networkedmultiplayerpeer.rst:144
+msgid "The peer to which packets will be sent. Default value: ``0``."
+msgstr ""
+

@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:4
+msgid "Features"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:6
+msgid ""
+"This page provied an overview over the commonly used features of both C# "
+"and Godot and how they are used together."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:10
+msgid "Type Conversion and Casting"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:12
+msgid "C# is a statically typed language. Therefore you can't do the following:"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:19
+msgid ""
+"The method ``GetNode()`` returns a ``Node`` instance. You must explicitly"
+" convert it to the desired derived type, ``Sprite`` in this case."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:22
+msgid "For this, you have various options in C#."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:24
+msgid "**Casting and Type Checking**"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:26
+msgid ""
+"Throws ``InvalidCastException`` if the returned node cannot be casted to "
+"Sprite. You would use it instead of the ``as`` operator if you are pretty"
+" sure it won't fail."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:34
+msgid "**Using the AS operator**"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:36
+msgid ""
+"The ``as`` operator returns null if the node cannot be casted to Sprite, "
+"and for this reason it cannot be used with value types."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:45
+msgid "**Type checking using the IS operator**"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:47
+msgid ""
+"To check if the node can be casted to Sprite, you can use the ``is`` "
+"operator. The ``is`` operator returns false if the node cannot be casted "
+"to Sprite, otherwise it returns true."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:58
+msgid ""
+"For more advanced type checking, you can look into `Pattern Matching "
+"<https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:61
+msgid "Signals"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:63
+msgid ""
+"For a complete C# example, see the **Handling a signal** section in the "
+"step by step :ref:`doc_scripting` tutorial."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:65
+msgid ""
+"You can use ``Connect(\"SomeSignal\", someObject, \"SomeMethod\")`` to "
+"connect to signals. ``AddUserSignal(\"SignalName\")`` is used to define "
+"custom signals. Emitting signals is done with "
+"``EmitSignal(\"SignalName\")``. Params can be given, like "
+"``EmitSignal(\"SignalName\", arg1, arg2, ...)``."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:69
+msgid "**Custom signals**"
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:88
+msgid ""
+"Above in line 5, ``AddUserSignal()`` is used to define the new custom "
+"signal ``YourSignal``. In line 10 ``EmitSignal()`` is used to emit that "
+"custom signal on every frame in ``_Process()``."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:91
+msgid ""
+"Make sure that ``AddUserSignal()`` is always executed before any calls "
+"using that signal (``EmitSignal()`` and ``Connect()``). If you are using "
+"both ``AddUserSignal()`` and ``Connect()`` or ``EmitSignal()`` in "
+"``_Ready()``, this is especially important as load order of your node may"
+" change, and thus the order in which your various ``_Ready()`` functions "
+"are called."
+msgstr ""
+

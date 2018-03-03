@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_joint.rst:8
+msgid "Joint"
+msgstr ""
+
+#: ../../classes/class_joint.rst:10
+msgid ""
+"**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>`"
+" **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_joint.rst:12
+msgid ""
+"**Inherited By:** :ref:`ConeTwistJoint<class_conetwistjoint>`, "
+":ref:`Generic6DOFJoint<class_generic6dofjoint>`, "
+":ref:`SliderJoint<class_sliderjoint>`, "
+":ref:`HingeJoint<class_hingejoint>`, :ref:`PinJoint<class_pinjoint>`"
+msgstr ""
+
+#: ../../classes/class_joint.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_joint.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_joint.rst:19
+msgid "Base class for all 3D joints"
+msgstr ""
+
+#: ../../classes/class_joint.rst:22
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_joint.rst:26
+msgid ""
+":ref:`bool<class_bool>` **collision/exclude_nodes** - If ``true`` the two"
+" bodies of the nodes are not able to collide with each other."
+msgstr ""
+
+#: ../../classes/class_joint.rst:30
+msgid ""
+":ref:`NodePath<class_nodepath>` **nodes/node_a** - The "
+":ref:`Node<class_node>`, the first side of the Joint attaches to."
+msgstr ""
+
+#: ../../classes/class_joint.rst:34
+msgid ""
+":ref:`NodePath<class_nodepath>` **nodes/node_b** - The "
+":ref:`Node<class_node>`, the second side of the Joint attaches to."
+msgstr ""
+
+#: ../../classes/class_joint.rst:38
+msgid ""
+":ref:`int<class_int>` **solver/priority** - The order in which the solver"
+" is executed compared to the other Joints, the lower, the earlier."
+msgstr ""
+
+#: ../../classes/class_joint.rst:42
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_joint.rst:44
+msgid ""
+"All 3D joints link two nodes, has a priority, and can decide if the two "
+"bodies of the nodes should be able to collide with each other"
+msgstr ""
+

@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_filedialog.rst:8
+msgid "FileDialog"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:10
+msgid ""
+"**Inherits:** :ref:`ConfirmationDialog<class_confirmationdialog>` **<** "
+":ref:`AcceptDialog<class_acceptdialog>` **<** "
+":ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` "
+"**<** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:17
+msgid "Dialog for selecting files or directories in the filesystem."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:23 ../../classes/class_filedialog.rst:25
+#: ../../classes/class_filedialog.rst:27 ../../classes/class_filedialog.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:23
+msgid ""
+":ref:`add_filter<class_FileDialog_add_filter>` **(** "
+":ref:`String<class_string>` filter **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:25
+msgid ":ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:27
+msgid ":ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:29
+msgid ":ref:`VBoxContainer<class_vboxcontainer>`"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:29
+msgid ":ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:31
+msgid ":ref:`invalidate<class_FileDialog_invalidate>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:35
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:39
+msgid "**dir_selected** **(** :ref:`String<class_string>` dir **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:41
+msgid "Event emitted when the user selects a directory."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:45
+msgid "**file_selected** **(** :ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:47
+msgid ""
+"Event emitted when the user selects a file (double clicks it or presses "
+"the OK button)."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:51
+msgid ""
+"**files_selected** **(** :ref:`PoolStringArray<class_poolstringarray>` "
+"paths **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:53
+msgid "Event emitted when the user selects multiple files."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:57
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:61
+msgid ":ref:`Access<enum_filedialog_access>` **access**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:65
+msgid ""
+":ref:`String<class_string>` **current_dir** - The current working "
+"directory of the file dialog."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:69
+msgid ""
+":ref:`String<class_string>` **current_file** - The currently selected "
+"file of the file dialog."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:73
+msgid ""
+":ref:`String<class_string>` **current_path** - The currently selected "
+"file path of the file dialog."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:77
+msgid ":ref:`PoolStringArray<class_poolstringarray>` **filters**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:81
+msgid ":ref:`Mode<enum_filedialog_mode>` **mode**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:85
+msgid ""
+":ref:`bool<class_bool>` **mode_overrides_title** - If ``true``, changing "
+"the ``mode`` property will set the window title accordingly (e. g. "
+"setting mode to ``MODE_OPEN_FILE`` will change the window title to \"Open"
+" a File\")."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:89
+msgid ":ref:`bool<class_bool>` **show_hidden_files**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:93
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:97
+msgid "enum **Access**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:99
+msgid ""
+"**ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file "
+"and directory."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:100
+msgid ""
+"**ACCESS_USERDATA** = **1** --- The dialog allows access files under "
+":ref:`Resource<class_resource>` path(res://) ."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:101
+msgid ""
+"**ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole"
+" file system."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:105
+msgid "enum **Mode**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:107
+msgid ""
+"**MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, "
+"and only one file."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:108
+msgid ""
+"**MODE_OPEN_FILES** = **1** --- The dialog allows the selection of "
+"multiple files."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:109
+msgid ""
+"**MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, "
+"disallowing the selection of any file."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:110
+msgid ""
+"**MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file "
+"or a directory."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:111
+msgid "**MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:115
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:117
+msgid ""
+"FileDialog is a preset dialog used to choose files and directories in the"
+" filesystem. It supports filter masks."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:120
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:124
+msgid "void **add_filter** **(** :ref:`String<class_string>` filter **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:126
+msgid ""
+"Add a custom filter. Filter format is: \"mask ; description\", example "
+"(C++): dialog->add_filter(\"\\*.png ; PNG Images\");"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:130
+msgid "void **clear_filters** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:132
+msgid "Clear all the added filters in the dialog."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:136
+msgid "void **deselect_items** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:140
+msgid ":ref:`VBoxContainer<class_vboxcontainer>` **get_vbox** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:142
+msgid ""
+"Return the vertical box container of the dialog, custom controls can be "
+"added to it."
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:146
+msgid "void **invalidate** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_filedialog.rst:148
+msgid "Invalidate and update the current dialog content list."
+msgstr ""
+

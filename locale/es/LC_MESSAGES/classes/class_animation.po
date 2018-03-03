@@ -1,0 +1,833 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_animation.rst:8
+msgid "Animation"
+msgstr ""
+
+#: ../../classes/class_animation.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_animation.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_animation.rst:17
+msgid "Contains data used to animate everything in the engine."
+msgstr ""
+
+#: ../../classes/class_animation.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_animation.rst:23 ../../classes/class_animation.rst:29
+#: ../../classes/class_animation.rst:31 ../../classes/class_animation.rst:41
+#: ../../classes/class_animation.rst:45 ../../classes/class_animation.rst:47
+#: ../../classes/class_animation.rst:57 ../../classes/class_animation.rst:87
+#: ../../classes/class_animation.rst:93
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:23
+msgid ""
+":ref:`add_track<class_Animation_add_track>` **(** :ref:`int<class_int>` "
+"type, :ref:`int<class_int>` at_position=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:25 ../../classes/class_animation.rst:27
+#: ../../classes/class_animation.rst:39 ../../classes/class_animation.rst:59
+#: ../../classes/class_animation.rst:65 ../../classes/class_animation.rst:67
+#: ../../classes/class_animation.rst:69 ../../classes/class_animation.rst:71
+#: ../../classes/class_animation.rst:73 ../../classes/class_animation.rst:75
+#: ../../classes/class_animation.rst:77 ../../classes/class_animation.rst:79
+#: ../../classes/class_animation.rst:81 ../../classes/class_animation.rst:83
+#: ../../classes/class_animation.rst:85 ../../classes/class_animation.rst:95
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_animation.rst:25
+msgid ":ref:`clear<class_Animation_clear>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:27
+msgid ""
+":ref:`copy_track<class_Animation_copy_track>` **(** :ref:`int<class_int>`"
+" track, :ref:`Animation<class_animation>` to_animation **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:29
+msgid ""
+":ref:`find_track<class_Animation_find_track>` **(** "
+":ref:`NodePath<class_nodepath>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:31
+msgid ":ref:`get_track_count<class_Animation_get_track_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:33 ../../classes/class_animation.rst:91
+msgid ":ref:`PoolIntArray<class_poolintarray>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:33
+msgid ""
+":ref:`method_track_get_key_indices<class_Animation_method_track_get_key_indices>`"
+" **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, "
+":ref:`float<class_float>` delta **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:35
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:35
+msgid ""
+":ref:`method_track_get_name<class_Animation_method_track_get_name>` **(**"
+" :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:37 ../../classes/class_animation.rst:89
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:37
+msgid ""
+":ref:`method_track_get_params<class_Animation_method_track_get_params>` "
+"**(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:39
+msgid ""
+":ref:`remove_track<class_Animation_remove_track>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:41
+msgid ""
+":ref:`track_find_key<class_Animation_track_find_key>` **(** "
+":ref:`int<class_int>` idx, :ref:`float<class_float>` time, "
+":ref:`bool<class_bool>` exact=false **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:43 ../../classes/class_animation.rst:61
+#: ../../classes/class_animation.rst:63
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:43
+msgid ""
+":ref:`track_get_interpolation_loop_wrap<class_Animation_track_get_interpolation_loop_wrap>`"
+" **(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:45
+msgid ""
+":ref:`track_get_interpolation_type<class_Animation_track_get_interpolation_type>`"
+" **(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:47
+msgid ""
+":ref:`track_get_key_count<class_Animation_track_get_key_count>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:49 ../../classes/class_animation.rst:51
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:49
+msgid ""
+":ref:`track_get_key_time<class_Animation_track_get_key_time>` **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:51
+msgid ""
+":ref:`track_get_key_transition<class_Animation_track_get_key_transition>`"
+" **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:53
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:53
+msgid ""
+":ref:`track_get_key_value<class_Animation_track_get_key_value>` **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:55
+msgid ":ref:`NodePath<class_nodepath>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:55
+msgid ""
+":ref:`track_get_path<class_Animation_track_get_path>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:57
+msgid ""
+":ref:`track_get_type<class_Animation_track_get_type>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:59
+msgid ""
+":ref:`track_insert_key<class_Animation_track_insert_key>` **(** "
+":ref:`int<class_int>` idx, :ref:`float<class_float>` time, "
+":ref:`Variant<class_variant>` key, :ref:`float<class_float>` transition=1"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:61
+msgid ""
+":ref:`track_is_enabled<class_Animation_track_is_enabled>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:63
+msgid ""
+":ref:`track_is_imported<class_Animation_track_is_imported>` **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:65
+msgid ""
+":ref:`track_move_down<class_Animation_track_move_down>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:67
+msgid ""
+":ref:`track_move_up<class_Animation_track_move_up>` **(** "
+":ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:69
+msgid ""
+":ref:`track_remove_key<class_Animation_track_remove_key>` **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:71
+msgid ""
+":ref:`track_remove_key_at_position<class_Animation_track_remove_key_at_position>`"
+" **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` position "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:73
+msgid ""
+":ref:`track_set_enabled<class_Animation_track_set_enabled>` **(** "
+":ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:75
+msgid ""
+":ref:`track_set_imported<class_Animation_track_set_imported>` **(** "
+":ref:`int<class_int>` idx, :ref:`bool<class_bool>` imported **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:77
+msgid ""
+":ref:`track_set_interpolation_loop_wrap<class_Animation_track_set_interpolation_loop_wrap>`"
+" **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` interpolation "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:79
+msgid ""
+":ref:`track_set_interpolation_type<class_Animation_track_set_interpolation_type>`"
+" **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` interpolation "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:81
+msgid ""
+":ref:`track_set_key_transition<class_Animation_track_set_key_transition>`"
+" **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, "
+":ref:`float<class_float>` transition **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:83
+msgid ""
+":ref:`track_set_key_value<class_Animation_track_set_key_value>` **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key, "
+":ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:85
+msgid ""
+":ref:`track_set_path<class_Animation_track_set_path>` **(** "
+":ref:`int<class_int>` idx, :ref:`NodePath<class_nodepath>` path **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:87
+msgid ""
+":ref:`transform_track_insert_key<class_Animation_transform_track_insert_key>`"
+" **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, "
+":ref:`Vector3<class_vector3>` location, :ref:`Quat<class_quat>` rotation,"
+" :ref:`Vector3<class_vector3>` scale **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:89
+msgid ""
+":ref:`transform_track_interpolate<class_Animation_transform_track_interpolate>`"
+" **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:91
+msgid ""
+":ref:`value_track_get_key_indices<class_Animation_value_track_get_key_indices>`"
+" **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, "
+":ref:`float<class_float>` delta **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:93
+msgid ""
+":ref:`value_track_get_update_mode<class_Animation_value_track_get_update_mode>`"
+" **(** :ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:95
+msgid ""
+":ref:`value_track_set_update_mode<class_Animation_value_track_set_update_mode>`"
+" **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:99
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_animation.rst:103
+msgid ""
+":ref:`float<class_float>` **length** - The total length of the animation "
+"(in seconds). Note that length is not delimited by the last key, as this "
+"one may be before or after the end to ensure correct interpolation and "
+"looping."
+msgstr ""
+
+#: ../../classes/class_animation.rst:107
+msgid ""
+":ref:`bool<class_bool>` **loop** - A flag indicating that the animation "
+"must loop. This is uses for correct interpolation of animation cycles, "
+"and for hinting the player that it must restart the animation."
+msgstr ""
+
+#: ../../classes/class_animation.rst:111
+msgid ":ref:`float<class_float>` **step** - The animation step value."
+msgstr ""
+
+#: ../../classes/class_animation.rst:115
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_animation.rst:119
+msgid "enum **UpdateMode**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:121
+msgid "**UPDATE_CONTINUOUS** = **0** --- Update between keyframes."
+msgstr ""
+
+#: ../../classes/class_animation.rst:122
+msgid ""
+"**UPDATE_DISCRETE** = **1** --- Update at the keyframes and hold the "
+"value."
+msgstr ""
+
+#: ../../classes/class_animation.rst:123
+msgid "**UPDATE_TRIGGER** = **2** --- Update at the keyframes."
+msgstr ""
+
+#: ../../classes/class_animation.rst:127
+msgid "enum **InterpolationType**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:129
+msgid "**INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value)."
+msgstr ""
+
+#: ../../classes/class_animation.rst:130
+msgid "**INTERPOLATION_LINEAR** = **1** --- Linear interpolation."
+msgstr ""
+
+#: ../../classes/class_animation.rst:131
+msgid "**INTERPOLATION_CUBIC** = **2** --- Cubic interpolation."
+msgstr ""
+
+#: ../../classes/class_animation.rst:135
+msgid "enum **TrackType**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:137
+msgid ""
+"**TYPE_VALUE** = **0** --- Value tracks set values in node properties, "
+"but only those which can be Interpolated."
+msgstr ""
+
+#: ../../classes/class_animation.rst:138
+msgid ""
+"**TYPE_TRANSFORM** = **1** --- Transform tracks are used to change node "
+"local transforms or skeleton pose bones. Transitions are Interpolated."
+msgstr ""
+
+#: ../../classes/class_animation.rst:139
+msgid ""
+"**TYPE_METHOD** = **2** --- Method tracks call functions with given "
+"arguments per key."
+msgstr ""
+
+#: ../../classes/class_animation.rst:143
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_animation.rst:145
+msgid ""
+"An Animation resource contains data used to animate everything in the "
+"engine. Animations are divided into tracks, and each track must be linked"
+" to a node. The state of that node can be changed through time, by adding"
+" timed keys (events) to the track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:147
+msgid ""
+"Animations are just data containers, and must be added to odes such as an"
+" :ref:`AnimationPlayer<class_animationplayer>` or "
+":ref:`AnimationTreePlayer<class_animationtreeplayer>` to be played back."
+msgstr ""
+
+#: ../../classes/class_animation.rst:150
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_animation.rst:154
+msgid ""
+":ref:`int<class_int>` **add_track** **(** :ref:`int<class_int>` type, "
+":ref:`int<class_int>` at_position=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:156
+msgid ""
+"Add a track to the Animation. The track type must be specified as any of "
+"the values in the TYPE\\_\\* enumeration."
+msgstr ""
+
+#: ../../classes/class_animation.rst:160
+msgid "void **clear** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:162
+msgid "Clear the animation (clear all tracks and reset all)."
+msgstr ""
+
+#: ../../classes/class_animation.rst:166
+msgid ""
+"void **copy_track** **(** :ref:`int<class_int>` track, "
+":ref:`Animation<class_animation>` to_animation **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:168
+msgid "Adds a new track that is a copy of the given track from ``to_animation``."
+msgstr ""
+
+#: ../../classes/class_animation.rst:172
+msgid ""
+":ref:`int<class_int>` **find_track** **(** "
+":ref:`NodePath<class_nodepath>` path **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:174
+msgid ""
+"Return the index of the specified track. If the track is not found, "
+"return -1."
+msgstr ""
+
+#: ../../classes/class_animation.rst:178
+msgid ":ref:`int<class_int>` **get_track_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:180
+msgid "Return the amount of tracks in the animation."
+msgstr ""
+
+#: ../../classes/class_animation.rst:184
+msgid ""
+":ref:`PoolIntArray<class_poolintarray>` **method_track_get_key_indices** "
+"**(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, "
+":ref:`float<class_float>` delta **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:186
+msgid ""
+"Return all the key indices of a method track, given a position and delta "
+"time."
+msgstr ""
+
+#: ../../classes/class_animation.rst:190
+msgid ""
+":ref:`String<class_string>` **method_track_get_name** **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:192
+msgid "Return the method name of a method track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:196
+msgid ""
+":ref:`Array<class_array>` **method_track_get_params** **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:198
+msgid ""
+"Return the arguments values to be called on a method track for a given "
+"key in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:202
+msgid "void **remove_track** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:204
+msgid "Remove a track by specifying the track index."
+msgstr ""
+
+#: ../../classes/class_animation.rst:208
+msgid ""
+":ref:`int<class_int>` **track_find_key** **(** :ref:`int<class_int>` idx,"
+" :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:210
+msgid ""
+"Find the key index by time in a given track. Optionally, only find it if "
+"the exact time is given."
+msgstr ""
+
+#: ../../classes/class_animation.rst:214
+msgid ""
+":ref:`bool<class_bool>` **track_get_interpolation_loop_wrap** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:216
+msgid ""
+"Returns ``true`` if the track at ``idx`` wraps the interpolation loop. "
+"Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_animation.rst:220
+msgid ""
+":ref:`int<class_int>` **track_get_interpolation_type** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:222
+msgid ""
+"Return the interpolation type of a given track, from the "
+"INTERPOLATION\\_\\* enum."
+msgstr ""
+
+#: ../../classes/class_animation.rst:226
+msgid ""
+":ref:`int<class_int>` **track_get_key_count** **(** :ref:`int<class_int>`"
+" idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:228
+msgid "Return the amount of keys in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:232
+msgid ""
+":ref:`float<class_float>` **track_get_key_time** **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:234
+msgid "Return the time at which the key is located."
+msgstr ""
+
+#: ../../classes/class_animation.rst:238
+msgid ""
+":ref:`float<class_float>` **track_get_key_transition** **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:240
+msgid ""
+"Return the transition curve (easing) for a specific key (see built-in "
+"math function \"ease\")."
+msgstr ""
+
+#: ../../classes/class_animation.rst:244
+msgid ""
+":ref:`Variant<class_variant>` **track_get_key_value** **(** "
+":ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:246
+msgid "Return the value of a given key in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:250
+msgid ""
+":ref:`NodePath<class_nodepath>` **track_get_path** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:252
+msgid ""
+"Get the path of a track. for more information on the path format, see "
+":ref:`track_set_path<class_Animation_track_set_path>`"
+msgstr ""
+
+#: ../../classes/class_animation.rst:256
+msgid ""
+":ref:`int<class_int>` **track_get_type** **(** :ref:`int<class_int>` idx "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:258
+msgid "Get the type of a track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:262
+msgid ""
+"void **track_insert_key** **(** :ref:`int<class_int>` idx, "
+":ref:`float<class_float>` time, :ref:`Variant<class_variant>` key, "
+":ref:`float<class_float>` transition=1 **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:264
+msgid "Insert a generic key in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:268
+msgid ""
+":ref:`bool<class_bool>` **track_is_enabled** **(** :ref:`int<class_int>` "
+"idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:270
+msgid "Returns ``true`` if the track at index ``idx`` is enabled."
+msgstr ""
+
+#: ../../classes/class_animation.rst:274
+msgid ""
+":ref:`bool<class_bool>` **track_is_imported** **(** :ref:`int<class_int>`"
+" idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:276
+msgid "Return true if the given track is imported. Else, return false."
+msgstr ""
+
+#: ../../classes/class_animation.rst:280
+msgid "void **track_move_down** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:282
+msgid "Move a track down."
+msgstr ""
+
+#: ../../classes/class_animation.rst:286
+msgid "void **track_move_up** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:288
+msgid "Move a track up."
+msgstr ""
+
+#: ../../classes/class_animation.rst:292
+msgid ""
+"void **track_remove_key** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` key_idx **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:294
+msgid "Remove a key by index in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:298
+msgid ""
+"void **track_remove_key_at_position** **(** :ref:`int<class_int>` idx, "
+":ref:`float<class_float>` position **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:300
+msgid "Remove a key by position (seconds) in a given track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:304
+msgid ""
+"void **track_set_enabled** **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:306
+msgid "Enables/disables the given track. Tracks are enabled by default."
+msgstr ""
+
+#: ../../classes/class_animation.rst:310
+msgid ""
+"void **track_set_imported** **(** :ref:`int<class_int>` idx, "
+":ref:`bool<class_bool>` imported **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:312
+msgid "Set the given track as imported or not."
+msgstr ""
+
+#: ../../classes/class_animation.rst:316
+msgid ""
+"void **track_set_interpolation_loop_wrap** **(** :ref:`int<class_int>` "
+"idx, :ref:`bool<class_bool>` interpolation **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:318
+msgid "If ``true`` the track at ``idx`` wraps the interpolation loop."
+msgstr ""
+
+#: ../../classes/class_animation.rst:322
+msgid ""
+"void **track_set_interpolation_type** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` interpolation **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:324
+msgid ""
+"Set the interpolation type of a given track, from the INTERPOLATION\\_\\*"
+" enum."
+msgstr ""
+
+#: ../../classes/class_animation.rst:328
+msgid ""
+"void **track_set_key_transition** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` key_idx, :ref:`float<class_float>` transition **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:330
+msgid ""
+"Set the transition curve (easing) for a specific key (see built-in math "
+"function \"ease\")."
+msgstr ""
+
+#: ../../classes/class_animation.rst:334
+msgid ""
+"void **track_set_key_value** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` key, :ref:`Variant<class_variant>` value **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:336
+msgid "Set the value of an existing key."
+msgstr ""
+
+#: ../../classes/class_animation.rst:340
+msgid ""
+"void **track_set_path** **(** :ref:`int<class_int>` idx, "
+":ref:`NodePath<class_nodepath>` path **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:342
+msgid ""
+"Set the path of a track. Paths must be valid scene-tree paths to a node, "
+"and must be specified starting from the parent node of the node that will"
+" reproduce the animation. Tracks that control properties or bones must "
+"append their name after the path, separated by \":\". Example: "
+"\"character/skeleton:ankle\" or \"character/mesh:transform/local\""
+msgstr ""
+
+#: ../../classes/class_animation.rst:346
+msgid ""
+":ref:`int<class_int>` **transform_track_insert_key** **(** "
+":ref:`int<class_int>` idx, :ref:`float<class_float>` time, "
+":ref:`Vector3<class_vector3>` location, :ref:`Quat<class_quat>` rotation,"
+" :ref:`Vector3<class_vector3>` scale **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:348
+msgid "Insert a transform key for a transform track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:352
+msgid ""
+":ref:`Array<class_array>` **transform_track_interpolate** **(** "
+":ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:354
+msgid ""
+"Return the interpolated value of a transform track at a given time (in "
+"seconds). An array consisting of 3 elements: position "
+"(:ref:`Vector3<class_vector3>`), rotation (:ref:`Quat<class_quat>`) and "
+"scale (:ref:`Vector3<class_vector3>`)."
+msgstr ""
+
+#: ../../classes/class_animation.rst:358
+msgid ""
+":ref:`PoolIntArray<class_poolintarray>` **value_track_get_key_indices** "
+"**(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, "
+":ref:`float<class_float>` delta **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:360
+msgid ""
+"Return all the key indices of a value track, given a position and delta "
+"time."
+msgstr ""
+
+#: ../../classes/class_animation.rst:364
+msgid ""
+":ref:`int<class_int>` **value_track_get_update_mode** **(** "
+":ref:`int<class_int>` idx **)** const"
+msgstr ""
+
+#: ../../classes/class_animation.rst:366
+msgid "Return the update mode of a value track."
+msgstr ""
+
+#: ../../classes/class_animation.rst:370
+msgid ""
+"void **value_track_set_update_mode** **(** :ref:`int<class_int>` idx, "
+":ref:`int<class_int>` mode **)**"
+msgstr ""
+
+#: ../../classes/class_animation.rst:372
+msgid "Set the update mode (UPDATE\\_\\*) of a value track."
+msgstr ""
+

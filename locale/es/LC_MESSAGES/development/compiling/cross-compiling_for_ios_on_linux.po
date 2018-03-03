@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:4
+msgid "Cross-compiling for iOS on Linux"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:8
+msgid ""
+"The procedure for this is somewhat complex and requires a lot of steps, "
+"but once you have the environment properly configured it will be easy to "
+"compile Godot for iOS anytime you want."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:13
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:15
+msgid ""
+"While it is possible to compile for iOS on a Linux environment, Apple is "
+"very restrictive about the tools to be used (especially hardware-wise), "
+"allowing pretty much only their products to be used for development. So "
+"this is **not official**. However, a `statement from Apple in 2010 "
+"<http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-"
+"Store-Review-Guidelines.html>`__ says they relaxed some of the `App Store"
+" review guidelines <https://developer.apple.com/app-"
+"store/review/guidelines/>`__ to allow any tool to be used, as long as the"
+" resulting binary does not download any code, which means it should be OK"
+" to use the procedure described here and cross-compiling the binary."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:27
+msgid "Requirements"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:29
+msgid ""
+"`XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__ "
+"(a dmg image)"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:31
+msgid ""
+"`Clang >= 3.5 <http://clang.llvm.org>`__ for your development machine "
+"installed and in the ``PATH``. It has to be version >= 3.5 to target "
+"``arm64`` architecture."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:34
+msgid ""
+"`Fuse <http://fuse.sourceforge.net>`__ for mounting and umounting the dmg"
+" image."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:36
+msgid ""
+"`darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which needs "
+"to be built from source. The procedure for that is explained below."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:40
+msgid ""
+"For building darling-dmg, you'll need the development packages of the "
+"following libraries: fuse, icu, openssl, zlib, bzip2."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:43
+msgid ""
+"`cctools-port <https://github.com/tpoechtrager/cctools-port>`__ for the "
+"needed build tools. The procedure for building is quite peculiar and is "
+"described below."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:47
+msgid "This also has some extra dependencies: automake, autogen, libtool."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:50
+msgid "Configuring the environment"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:53
+msgid "darling-dmg"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:55
+msgid "Clone the repository on your machine:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:61
+msgid "Build it:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:73
+msgid "Preparing the SDK"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:75
+msgid "Mount the XCode image:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:84
+msgid "Extract the iOS SDK:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:93
+msgid "Pack the SDK:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:101
+msgid "Toolchain"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:103
+msgid "Build cctools:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:111
+msgid ""
+"Copy the tools to a nicer place. Note that the SCons scripts for building"
+" will look under ``usr/bin`` inside the directory you provide for the "
+"toolchain binaries, so you must copy to such subdirectory, akin to the "
+"following commands:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:121
+msgid ""
+"Now you should have the iOS toolchain binaries in "
+"``/home/user/iostoolchain/usr/bin``."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:125
+msgid "Compiling Godot for iPhone"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:127
+msgid ""
+"Once you've done the above steps, you should keep two things in your "
+"environment: the built toolchain and the iPhoneOS SDK directory. Those "
+"can stay anywhere you want since you have to provide their paths to the "
+"SCons build command."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:132
+msgid ""
+"For the iPhone platform to be detected, you need the ``OSXCROSS_IOS`` "
+"environment variable defined to anything."
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:139
+msgid ""
+"Now you can compile for iPhone using SCons like the standard Godot way, "
+"with some additional arguments to provide the correct paths:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:148
+msgid "Producing fat binaries"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:150
+msgid ""
+"Apple requires a fat binary with both architectures (``armv7`` and "
+"``arm64``) in a single file. To do this, use the ``arm-apple-"
+"darwin11-lipo`` executable. The following example assumes you are in the "
+"root Godot source directory:"
+msgstr ""
+
+#: ../../development/compiling/cross-compiling_for_ios_on_linux.rst:159
+msgid ""
+"Then you will have an iOS fat binary in "
+"``bin/godot.iphone.opt.debug.fat``."
+msgstr ""
+

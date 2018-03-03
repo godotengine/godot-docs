@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_arvrorigin.rst:8
+msgid "ARVROrigin"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:10
+msgid ""
+"**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>`"
+" **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:17
+msgid "Our origin point in AR/VR."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:24
+msgid ""
+":ref:`float<class_float>` **world_scale** - Allows you to adjust the "
+"scale to your game's units. Most AR/VR platforms assume a scale of 1 game"
+" world unit = 1 meter in the real world."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:26
+msgid ""
+"Note that this method is a passthrough to the "
+":ref:`ARVRServer<class_arvrserver>` itself."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:30
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:32
+msgid ""
+"This is a special node within the AR/VR system that maps the physical "
+"location of the center of our tracking space to the virtual location "
+"within our game world."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:34
+msgid ""
+"There should be only one of these nodes in your scene and you must have "
+"one. All the ARVRCamera, ARVRController and ARVRAnchor nodes should be "
+"direct children of this node for spatial tracking to work correctly."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:36
+msgid ""
+"It is the position of this node that you update when you're character "
+"needs to move through your game world while we're not moving in the real "
+"world. Movement in the real world is always in relation to this origin "
+"point."
+msgstr ""
+
+#: ../../classes/class_arvrorigin.rst:38
+msgid ""
+"So say that your character is driving a car, the ARVROrigin node should "
+"be a child node of this car. If you implement a teleport system to move "
+"your character, you change the position of this node. Etc."
+msgstr ""
+

@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_sprite.rst:8
+msgid "Sprite"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:17
+msgid "General purpose Sprite node."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:20
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:24
+msgid "**frame_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:26
+msgid "Emitted when the :ref:`frame<class_Sprite_frame>` changes."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:30
+msgid "**texture_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:32
+msgid "Emitted when the :ref:`texture<class_Sprite_texture>` changes."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:36
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:40
+msgid ""
+":ref:`bool<class_bool>` **centered** - If ``true`` texture is centered. "
+"Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:44
+msgid ""
+":ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped "
+"horizontally. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:48
+msgid ""
+":ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped "
+"vertically. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:52
+msgid ""
+":ref:`int<class_int>` **frame** - Current frame to display from sprite "
+"sheet. :ref:`vframes<class_Sprite_vframes>` or "
+":ref:`hframes<class_Sprite_hframes>` must be greater than 1."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:56
+msgid ""
+":ref:`int<class_int>` **hframes** - The number of collumns in the sprite "
+"sheet."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:60
+msgid ""
+":ref:`Texture<class_texture>` **normal_map** - The normal map gives depth"
+" to the Sprite."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:64
+msgid ":ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:68
+msgid ""
+":ref:`bool<class_bool>` **region_enabled** - If ``true`` texture is cut "
+"from a larger atlas texture. See ``region_rect``. Default value: "
+"``false``."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:72
+msgid ""
+":ref:`bool<class_bool>` **region_filter_clip** - If ``true`` the "
+"outermost pixels get blurred out."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:76
+msgid ""
+":ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas "
+"texture to display. :ref:`region_enabled<class_Sprite_region_enabled>` "
+"must be ``true``."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:80
+msgid ""
+":ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>`"
+" object to draw."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:84
+msgid ""
+":ref:`int<class_int>` **vframes** - The number of rows in the sprite "
+"sheet."
+msgstr ""
+
+#: ../../classes/class_sprite.rst:88
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_sprite.rst:90
+msgid ""
+"A node that displays a 2D texture. The texture displayed can be a region "
+"from a larger atlas texture, or a frame from a sprite sheet animation."
+msgstr ""
+

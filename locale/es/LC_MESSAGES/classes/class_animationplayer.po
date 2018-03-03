@@ -1,0 +1,564 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_animationplayer.rst:8
+msgid "AnimationPlayer"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:10
+msgid "**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:17
+msgid "Container and player of :ref:`Animation<class_animation>` resources."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:23
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:23
+msgid ""
+":ref:`add_animation<class_AnimationPlayer_add_animation>` **(** "
+":ref:`String<class_string>` name, :ref:`Animation<class_animation>` "
+"animation **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:25
+#: ../../classes/class_animationplayer.rst:29
+#: ../../classes/class_animationplayer.rst:31
+#: ../../classes/class_animationplayer.rst:33
+#: ../../classes/class_animationplayer.rst:47
+#: ../../classes/class_animationplayer.rst:49
+#: ../../classes/class_animationplayer.rst:51
+#: ../../classes/class_animationplayer.rst:53
+#: ../../classes/class_animationplayer.rst:55
+#: ../../classes/class_animationplayer.rst:57
+#: ../../classes/class_animationplayer.rst:59
+#: ../../classes/class_animationplayer.rst:61
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:25
+msgid ""
+":ref:`advance<class_AnimationPlayer_advance>` **(** "
+":ref:`float<class_float>` delta **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:27
+#: ../../classes/class_animationplayer.rst:35
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:27
+msgid ""
+":ref:`animation_get_next<class_AnimationPlayer_animation_get_next>` **(**"
+" :ref:`String<class_string>` anim_from **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:29
+msgid ""
+":ref:`animation_set_next<class_AnimationPlayer_animation_set_next>` **(**"
+" :ref:`String<class_string>` anim_from, :ref:`String<class_string>` "
+"anim_to **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:31
+msgid ":ref:`clear_caches<class_AnimationPlayer_clear_caches>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:33
+msgid ":ref:`clear_queue<class_AnimationPlayer_clear_queue>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:35
+msgid ""
+":ref:`find_animation<class_AnimationPlayer_find_animation>` **(** "
+":ref:`Animation<class_animation>` animation **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:37
+msgid ":ref:`Animation<class_animation>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:37
+msgid ""
+":ref:`get_animation<class_AnimationPlayer_get_animation>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:39
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:39
+msgid ""
+":ref:`get_animation_list<class_AnimationPlayer_get_animation_list>` **(**"
+" **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:41
+msgid ":ref:`float<class_float>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:41
+msgid ""
+":ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** "
+":ref:`String<class_string>` anim_from, :ref:`String<class_string>` "
+"anim_to **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:43
+#: ../../classes/class_animationplayer.rst:45
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:43
+msgid ""
+":ref:`has_animation<class_AnimationPlayer_has_animation>` **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:45
+msgid ":ref:`is_playing<class_AnimationPlayer_is_playing>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:47
+msgid ""
+":ref:`play<class_AnimationPlayer_play>` **(** :ref:`String<class_string>`"
+" name=\"\", :ref:`float<class_float>` custom_blend=-1, "
+":ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` "
+"from_end=false **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:49
+msgid ""
+":ref:`play_backwards<class_AnimationPlayer_play_backwards>` **(** "
+":ref:`String<class_string>` name=\"\", :ref:`float<class_float>` "
+"custom_blend=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:51
+msgid ""
+":ref:`queue<class_AnimationPlayer_queue>` **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:53
+msgid ""
+":ref:`remove_animation<class_AnimationPlayer_remove_animation>` **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:55
+msgid ""
+":ref:`rename_animation<class_AnimationPlayer_rename_animation>` **(** "
+":ref:`String<class_string>` name, :ref:`String<class_string>` newname "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:57
+msgid ""
+":ref:`seek<class_AnimationPlayer_seek>` **(** :ref:`float<class_float>` "
+"seconds, :ref:`bool<class_bool>` update=false **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:59
+msgid ""
+":ref:`set_blend_time<class_AnimationPlayer_set_blend_time>` **(** "
+":ref:`String<class_string>` anim_from, :ref:`String<class_string>` "
+"anim_to, :ref:`float<class_float>` sec **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:61
+msgid ""
+":ref:`stop<class_AnimationPlayer_stop>` **(** :ref:`bool<class_bool>` "
+"reset=true **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:65
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:69
+msgid ""
+"**animation_changed** **(** :ref:`String<class_string>` old_name, "
+":ref:`String<class_string>` new_name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:71
+msgid ""
+"If the currently being played animation changes, this signal will notify "
+"of such change."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:75
+msgid "**animation_finished** **(** :ref:`String<class_string>` anim_name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:77
+msgid "Notifies when an animation finished playing."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:81
+msgid "**animation_started** **(** :ref:`String<class_string>` anim_name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:83
+msgid "Notifies when an animation starts playing."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:87
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:91
+msgid ""
+":ref:`String<class_string>` **assigned_animation** - If playing, the "
+"current animation; otherwise, the animation last played. When set, would "
+"change the animation, but would not play it unless currently playing. See"
+" also :ref:`current_animation<class_AnimationPlayer_current_animation>`."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:95
+msgid ""
+":ref:`String<class_string>` **autoplay** - The name of the animation to "
+"play when the scene loads. Default value: ``\"\"``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:99
+msgid ""
+":ref:`String<class_string>` **current_animation** - The name of the "
+"current animation, \"\" if not playing anything. When being set, does not"
+" restart the animation. See also :ref:`play<class_AnimationPlayer_play>`."
+" Default value: ``\"\"``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:103
+msgid ""
+":ref:`float<class_float>` **current_animation_length** - The length (in "
+"seconds) of the currently being played animation."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:107
+msgid ""
+":ref:`float<class_float>` **current_animation_position** - The position "
+"(in seconds) of the currently playing animation."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:111
+msgid ""
+":ref:`bool<class_bool>` **playback_active** - If ``true``, updates "
+"animations in response to process-related notifications. Default value: "
+"``true``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:115
+msgid ""
+":ref:`float<class_float>` **playback_default_blend_time** - The default "
+"time in which to blend animations. Ranges from 0 to 4096 with 0.01 "
+"precision. Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:119
+msgid ""
+":ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` "
+"**playback_process_mode** - The process notification in which to update "
+"animations. Default value: enum ANIMATION_PROCESS_IDLE."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:123
+msgid ""
+":ref:`float<class_float>` **playback_speed** - The speed scaling ratio. "
+"For instance, if this value is 1 then the animation plays at normal "
+"speed. If it's 0.5 then it plays at half speed. If it's 2 then it plays "
+"at double speed. Default value: ``1``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:127
+msgid ""
+":ref:`NodePath<class_nodepath>` **root_node** - The node from which node "
+"path references will travel. Default value: ``\"..\"``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:131
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:135
+msgid "enum **AnimationProcessMode**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:137
+msgid ""
+"**ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the "
+"physics process. This is especially useful when animating physics bodies."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:138
+msgid ""
+"**ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle "
+"process."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:142
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:144
+msgid ""
+"An animation player is used for general purpose playback of "
+":ref:`Animation<class_animation>` resources. It contains a dictionary of "
+"animations (referenced by name) and custom blend times between their "
+"transitions. Additionally, animations can be played and blended in "
+"different channels."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:147
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:151
+msgid ""
+":ref:`int<class_int>` **add_animation** **(** :ref:`String<class_string>`"
+" name, :ref:`Animation<class_animation>` animation **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:153
+msgid "Adds ``animation`` to the player accessible with the key ``name``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:157
+msgid "void **advance** **(** :ref:`float<class_float>` delta **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:159
+msgid ""
+"Shifts position in the animation timeline. Delta is the time in seconds "
+"to shift."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:163
+msgid ""
+":ref:`String<class_string>` **animation_get_next** **(** "
+":ref:`String<class_string>` anim_from **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:165
+msgid "Returns the name of the next animation in the queue."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:169
+msgid ""
+"void **animation_set_next** **(** :ref:`String<class_string>` anim_from, "
+":ref:`String<class_string>` anim_to **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:171
+msgid ""
+"Triggers the ``anim_to`` animation when the ``anim_from`` animation "
+"completes."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:175
+msgid "void **clear_caches** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:177
+msgid ""
+"``AnimationPlayer`` caches animated nodes. It may not notice if a node "
+"disappears, so clear_caches forces it to update the cache again."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:181
+msgid "void **clear_queue** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:183
+msgid "Clears all queued, unplayed animations."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:187
+msgid ""
+":ref:`String<class_string>` **find_animation** **(** "
+":ref:`Animation<class_animation>` animation **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:189
+msgid "Returns the name of ``animation`` or empty string if not found."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:193
+msgid ""
+":ref:`Animation<class_animation>` **get_animation** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:195
+msgid ""
+"Returns the :ref:`Animation<class_animation>` with key ``name`` or "
+"``null`` if not found."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:199
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **get_animation_list** "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:201
+msgid "Returns the list of stored animation names."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:205
+msgid ""
+":ref:`float<class_float>` **get_blend_time** **(** "
+":ref:`String<class_string>` anim_from, :ref:`String<class_string>` "
+"anim_to **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:207
+msgid ""
+"Get the blend time (in seconds) between two animations, referenced by "
+"their names."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:211
+msgid ""
+":ref:`bool<class_bool>` **has_animation** **(** "
+":ref:`String<class_string>` name **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:213
+msgid ""
+"Returns ``true`` if the ``AnimationPlayer`` stores an "
+":ref:`Animation<class_animation>` with key ``name``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:217
+msgid ":ref:`bool<class_bool>` **is_playing** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:219
+msgid "Returns ``true`` if playing an animation."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:223
+msgid ""
+"void **play** **(** :ref:`String<class_string>` name=\"\", "
+":ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` "
+"custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:225
+msgid ""
+"Play the animation with key ``name``. Custom speed and blend times can be"
+" set. If custom speed is negative (-1), 'from_end' being true can play "
+"the"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:227
+msgid "animation backwards."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:231
+msgid ""
+"void **play_backwards** **(** :ref:`String<class_string>` name=\"\", "
+":ref:`float<class_float>` custom_blend=-1 **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:233
+msgid "Play the animation with key ``name`` in reverse."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:237
+msgid "void **queue** **(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:239
+msgid "Queue an animation for playback once the current one is done."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:243
+msgid "void **remove_animation** **(** :ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:245
+msgid "Remove the animation with key ``name``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:249
+msgid ""
+"void **rename_animation** **(** :ref:`String<class_string>` name, "
+":ref:`String<class_string>` newname **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:251
+msgid "Rename an existing animation with key ``name`` to ``newname``."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:255
+msgid ""
+"void **seek** **(** :ref:`float<class_float>` seconds, "
+":ref:`bool<class_bool>` update=false **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:257
+msgid ""
+"Seek the animation to the ``seconds`` point in time (in seconds). If "
+"``update`` is ``true``, the animation updates too, otherwise it updates "
+"at process time."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:261
+msgid ""
+"void **set_blend_time** **(** :ref:`String<class_string>` anim_from, "
+":ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:263
+msgid ""
+"Specify a blend time (in seconds) between two animations, referenced by "
+"their names."
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:267
+msgid "void **stop** **(** :ref:`bool<class_bool>` reset=true **)**"
+msgstr ""
+
+#: ../../classes/class_animationplayer.rst:269
+msgid ""
+"Stop the currently playing animation. If ``reset`` is ``true``, the anim "
+"position is reset to ``0``."
+msgstr ""
+

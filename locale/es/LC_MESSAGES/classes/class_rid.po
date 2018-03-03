@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_rid.rst:8
+msgid "RID"
+msgstr ""
+
+#: ../../classes/class_rid.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_rid.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_rid.rst:15
+msgid "Handle for a :ref:`Resource<class_resource>`'s unique ID."
+msgstr ""
+
+#: ../../classes/class_rid.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_rid.rst:21
+msgid ":ref:`RID<class_rid>`"
+msgstr ""
+
+#: ../../classes/class_rid.rst:21
+msgid ":ref:`RID<class_RID_RID>` **(** :ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_rid.rst:23
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_rid.rst:23
+msgid ":ref:`get_id<class_RID_get_id>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rid.rst:27
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_rid.rst:29
+msgid ""
+"The RID type is used to access the unique integer ID of a resource.  They"
+" are opaque, so they do not grant access to the associated resource by "
+"themselves. They are used by and with the low-level Server classes such "
+"as :ref:`VisualServer<class_visualserver>`."
+msgstr ""
+
+#: ../../classes/class_rid.rst:32
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_rid.rst:36
+msgid ":ref:`RID<class_rid>` **RID** **(** :ref:`Object<class_object>` from **)**"
+msgstr ""
+
+#: ../../classes/class_rid.rst:38
+msgid ""
+"Create a new RID instance with the ID of a given resource. When not "
+"handed a valid resource, silently stores the unused ID 0."
+msgstr ""
+
+#: ../../classes/class_rid.rst:42
+msgid ":ref:`int<class_int>` **get_id** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_rid.rst:44
+msgid "Retrieve the ID of the referenced resource."
+msgstr ""
+

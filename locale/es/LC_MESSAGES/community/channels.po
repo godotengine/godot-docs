@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../community/channels.rst:4
+msgid "Channels"
+msgstr ""
+
+#: ../../community/channels.rst:6
+msgid ""
+"So, where is the Godot community and where can you ask questions and get "
+"help?"
+msgstr ""
+
+#: ../../community/channels.rst:8
+msgid ""
+"Note that some of these channels are run and moderated by members of the "
+"Godot community or third parties."
+msgstr ""
+
+#: ../../community/channels.rst:10
+msgid ""
+"A brief overview over these channels is also available on the `website "
+"<https://godotengine.org/community>`_."
+msgstr ""
+
+#: ../../community/channels.rst:13
+msgid "Q & A"
+msgstr ""
+
+#: ../../community/channels.rst:15
+msgid "`Official Godot Questions & Answers <https://godotengine.org/qa/>`_"
+msgstr ""
+
+#: ../../community/channels.rst:18
+msgid "IRC on Freenode"
+msgstr ""
+
+#: ../../community/channels.rst:20
+msgid ""
+"`General: #godotengine "
+"<http://webchat.freenode.net/?channels=#godotengine>`_"
+msgstr ""
+
+#: ../../community/channels.rst:21
+msgid ""
+"`Engine development: #godotengine-devel "
+"<http://webchat.freenode.net/?channels=#godotengine-devel>`_"
+msgstr ""
+
+#: ../../community/channels.rst:22
+msgid ""
+"`Documentation: #godotengine-doc <http://webchat.freenode.net/?channels"
+"=#godotengine-doc>`_"
+msgstr ""
+
+#: ../../community/channels.rst:23
+msgid ""
+"`GDNative: #godotengine-gdnative <http://webchat.freenode.net/?channels"
+"=#godotengine-gdnative>`_"
+msgstr ""
+
+#: ../../community/channels.rst:24
+msgid ""
+"`Webseite/PR: #godotengine-atelier <http://webchat.freenode.net/?channels"
+"=#godotengine-atelier>`_"
+msgstr ""
+
+#: ../../community/channels.rst:25
+msgid "`IRC logs <https://godot.eska.me/irc-logs/>`_"
+msgstr ""
+
+#: ../../community/channels.rst:28
+msgid "Other chats"
+msgstr ""
+
+#: ../../community/channels.rst:30
+msgid "`Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_"
+msgstr ""
+
+#: ../../community/channels.rst:31
+msgid "`Discord <https://discord.gg/zH7NUgz>`_"
+msgstr ""
+
+#: ../../community/channels.rst:34
+msgid "Social networks"
+msgstr ""
+
+#: ../../community/channels.rst:36
+msgid "`GitHub <https://github.com/godotengine/>`_"
+msgstr ""
+
+#: ../../community/channels.rst:37
+msgid "`Facebook group <https://www.facebook.com/groups/godotengine/>`_"
+msgstr ""
+
+#: ../../community/channels.rst:38
+msgid "`Twitter (also, #godotengine) <https://twitter.com/godotengine>`_"
+msgstr ""
+
+#: ../../community/channels.rst:39
+msgid "`Reddit <https://www.reddit.com/r/godot>`_"
+msgstr ""
+
+#: ../../community/channels.rst:40
+msgid "`Youtube <https://www.youtube.com/c/GodotEngineOfficial>`_"
+msgstr ""
+
+#: ../../community/channels.rst:41
+msgid "`Steam <https://steamcommunity.com/app/404790>`_"
+msgstr ""
+
+#: ../../community/channels.rst:44
+msgid "Forum"
+msgstr ""
+
+#: ../../community/channels.rst:46
+msgid "`Forum (godotdevelopers.org) <http://godotdevelopers.org/>`_"
+msgstr ""
+

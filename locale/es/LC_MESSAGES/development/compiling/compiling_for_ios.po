@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/compiling_for_ios.rst:4
+msgid "Compiling for iOS"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:9
+msgid "Requirements"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:11
+msgid ""
+"SCons (you can get it from macports, you should be able to run ``scons`` "
+"in a terminal when installed)"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:13
+msgid "Xcode with the iOS SDK and the command line tools."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:16
+msgid "Compiling"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:18
+msgid "Open a Terminal, go to the root dir of the engine source code and type:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:24
+msgid "for a debug build, or:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:30
+msgid ""
+"for a release build (check ``platform/iphone/detect.py`` for the compiler"
+" flags used for each configuration)."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:33
+msgid "Alternatively, you can run"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:39
+msgid "for a Simulator executable."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:41
+msgid ""
+"Additionally since some time Apple requires 64 bit version of application"
+" binary when you are uploading to iStore. The best way to provide these "
+"is to create a bundle in which there are both 32bit and 64 binaries, so "
+"every device will be able to run the game. It can be done in three steps,"
+" first compile 32 bit version, then compile 64 bit version and then use "
+"``lipo`` to bundle them into one fat binary, all those steps can be "
+"performed with following commands:"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:53
+msgid "Run"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:55
+msgid ""
+"To run on a device or simulator, follow these instructions: "
+":ref:`doc_exporting_for_ios`."
+msgstr ""
+
+#: ../../development/compiling/compiling_for_ios.rst:58
+msgid ""
+"Replace or add your executable to the Xcode project, and change the "
+"\"executable name\" property on Info.plist accordingly if you use an "
+"alternative build."
+msgstr ""
+

@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_physics2ddirectspacestate.rst:8
+msgid "Physics2DDirectSpaceState"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:17
+msgid ""
+"Direct access object to a space in the "
+":ref:`Physics2DServer<class_physics2dserver>`."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:23
+#: ../../classes/class_physics2ddirectspacestate.rst:25
+#: ../../classes/class_physics2ddirectspacestate.rst:29
+#: ../../classes/class_physics2ddirectspacestate.rst:33
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:23
+msgid ""
+":ref:`cast_motion<class_Physics2DDirectSpaceState_cast_motion>` **(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:25
+msgid ""
+":ref:`collide_shape<class_Physics2DDirectSpaceState_collide_shape>` **(**"
+" "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape, :ref:`int<class_int>` max_results=32 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:27
+#: ../../classes/class_physics2ddirectspacestate.rst:31
+msgid ":ref:`Dictionary<class_dictionary>`"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:27
+msgid ""
+":ref:`get_rest_info<class_Physics2DDirectSpaceState_get_rest_info>` **(**"
+" "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:29
+msgid ""
+":ref:`intersect_point<class_Physics2DDirectSpaceState_intersect_point>` "
+"**(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` "
+"max_results=32, :ref:`Array<class_array>` exclude=[  ], "
+":ref:`int<class_int>` collision_layer=2147483647 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:31
+msgid ""
+":ref:`intersect_ray<class_Physics2DDirectSpaceState_intersect_ray>` **(**"
+" :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, "
+":ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` "
+"collision_layer=2147483647 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:33
+msgid ""
+":ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>` "
+"**(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape, :ref:`int<class_int>` max_results=32 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:37
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:39
+msgid ""
+"Direct access object to a space in the "
+":ref:`Physics2DServer<class_physics2dserver>`. It's used mainly to do "
+"queries against objects and areas residing in a given space."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:42
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:46
+msgid ""
+":ref:`Array<class_array>` **cast_motion** **(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:48
+msgid ""
+"Checks how far the shape can travel toward a point. Note that both the "
+"shape and the motion are supplied through a "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" object. The method will return an array with two floats between 0 and 1,"
+" both representing a fraction of ``motion``. The first is how far the "
+"shape can move without triggering a collision, and the second is the "
+"point at which a collision will occur. If no collision is detected, the "
+"returned array will be 1, 1."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:50
+msgid ""
+"If the shape can not move, the array will be empty "
+"(``dir.empty()==true``)."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:54
+msgid ""
+":ref:`Array<class_array>` **collide_shape** **(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape, :ref:`int<class_int>` max_results=32 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:56
+msgid ""
+"Checks the intersections of a shape, given through a "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" object, against the space. The resulting array contains a list of points"
+" where the shape intersects another. Like with "
+":ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>`, "
+"the number of returned results can be limited to save processing time."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:60
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_rest_info** **(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:62
+msgid ""
+"Checks the intersections of a shape, given through a "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" object, against the space. If it collides with more than one shape, the "
+"nearest one is selected. Note that this method does not take into account"
+" the ``motion`` property of the object. The returned object is a "
+"dictionary containing the following fields:"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:64
+#: ../../classes/class_physics2ddirectspacestate.rst:88
+#: ../../classes/class_physics2ddirectspacestate.rst:106
+#: ../../classes/class_physics2ddirectspacestate.rst:130
+msgid "``collider_id``: The colliding object's ID."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:66
+msgid ""
+"``linear_velocity``: The colliding object's velocity "
+":ref:`Vector2<class_vector2>`. If the object is an "
+":ref:`Area2D<class_area2d>`, the result is ``(0, 0)``."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:68
+#: ../../classes/class_physics2ddirectspacestate.rst:90
+#: ../../classes/class_physics2ddirectspacestate.rst:108
+#: ../../classes/class_physics2ddirectspacestate.rst:132
+msgid ""
+"``metadata``: The intersecting shape's metadata. This metadata is "
+"different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set "
+"with "
+":ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:70
+#: ../../classes/class_physics2ddirectspacestate.rst:110
+msgid "``normal``: The object's surface normal at the intersection point."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:72
+msgid "``point``: The intersection point."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:74
+#: ../../classes/class_physics2ddirectspacestate.rst:92
+#: ../../classes/class_physics2ddirectspacestate.rst:114
+#: ../../classes/class_physics2ddirectspacestate.rst:134
+msgid "``rid``: The intersecting object's :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:76
+#: ../../classes/class_physics2ddirectspacestate.rst:94
+#: ../../classes/class_physics2ddirectspacestate.rst:116
+#: ../../classes/class_physics2ddirectspacestate.rst:136
+msgid "``shape``: The shape index of the colliding shape."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:78
+msgid ""
+"If the shape did not intersect anything, then an empty dictionary "
+"(``dir.empty()==true``) is returned instead."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:82
+msgid ""
+":ref:`Array<class_array>` **intersect_point** **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` "
+"max_results=32, :ref:`Array<class_array>` exclude=[  ], "
+":ref:`int<class_int>` collision_layer=2147483647 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:84
+msgid ""
+"Checks whether a point is inside any shape. The shapes the point is "
+"inside of are returned in an array containing dictionaries with the "
+"following fields:"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:86
+#: ../../classes/class_physics2ddirectspacestate.rst:104
+#: ../../classes/class_physics2ddirectspacestate.rst:128
+msgid "``collider``: The colliding object."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:96
+#: ../../classes/class_physics2ddirectspacestate.rst:120
+msgid ""
+"Additionally, the method can take an array of objects or "
+":ref:`RID<class_rid>`\\ s that are to be excluded from collisions, or a "
+"bitmask representing the physics layers to check in."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:100
+msgid ""
+":ref:`Dictionary<class_dictionary>` **intersect_ray** **(** "
+":ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, "
+":ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` "
+"collision_layer=2147483647 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:102
+msgid ""
+"Intersects a ray in a given space. The returned object is a dictionary "
+"with the following fields:"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:112
+msgid "``position``: The intersection point."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:118
+msgid ""
+"If the ray did not intersect anything, then an empty dictionary "
+"(``dir.empty()==true``) is returned instead."
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:124
+msgid ""
+":ref:`Array<class_array>` **intersect_shape** **(** "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" shape, :ref:`int<class_int>` max_results=32 **)**"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:126
+msgid ""
+"Checks the intersections of a shape, given through a "
+":ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`"
+" object, against the space. Note that this method does not take into "
+"account the ``motion`` property of the object. The intersected shapes are"
+" returned in an array containing dictionaries with the following fields:"
+msgstr ""
+
+#: ../../classes/class_physics2ddirectspacestate.rst:138
+msgid ""
+"The number of intersections can be limited with the second parameter, to "
+"reduce the processing time."
+msgstr ""
+

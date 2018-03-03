@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_mesh.rst:8
+msgid "Mesh"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:12
+msgid ""
+"**Inherited By:** :ref:`ArrayMesh<class_arraymesh>`, "
+":ref:`PrimitiveMesh<class_primitivemesh>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:19
+msgid ""
+"A :ref:`Resource<class_resource>` that contains vertex-array based "
+"geometry."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:25 ../../classes/class_mesh.rst:29
+msgid ":ref:`Shape<class_shape>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:25
+msgid ""
+":ref:`create_convex_shape<class_Mesh_create_convex_shape>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:27
+msgid ":ref:`Mesh<class_mesh>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:27
+msgid ""
+":ref:`create_outline<class_Mesh_create_outline>` **(** "
+":ref:`float<class_float>` margin **)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:29
+msgid ""
+":ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:31
+msgid ":ref:`TriangleMesh<class_trianglemesh>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:31
+msgid ""
+":ref:`generate_triangle_mesh<class_Mesh_generate_triangle_mesh>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:33
+msgid ":ref:`PoolVector3Array<class_poolvector3array>`"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:33
+msgid ":ref:`get_faces<class_Mesh_get_faces>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:37
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:41
+msgid ":ref:`Vector2<class_vector2>` **lightmap_size_hint**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:45
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:49
+msgid "enum **BlendShapeMode**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:51
+msgid "**BLEND_SHAPE_MODE_NORMALIZED** = **0**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:52
+msgid "**BLEND_SHAPE_MODE_RELATIVE** = **1**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:56
+msgid "enum **ArrayType**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:58
+msgid "**ARRAY_VERTEX** = **0**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:59
+msgid "**ARRAY_NORMAL** = **1**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:60
+msgid "**ARRAY_TANGENT** = **2**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:61
+msgid "**ARRAY_COLOR** = **3**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:62
+msgid "**ARRAY_TEX_UV** = **4**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:63
+msgid "**ARRAY_TEX_UV2** = **5**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:64
+msgid "**ARRAY_BONES** = **6**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:65
+msgid "**ARRAY_WEIGHTS** = **7**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:66
+msgid "**ARRAY_INDEX** = **8**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:67
+msgid "**ARRAY_MAX** = **9**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:71
+msgid "enum **ArrayFormat**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:73
+msgid "**ARRAY_FORMAT_VERTEX** = **1**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:74
+msgid "**ARRAY_FORMAT_NORMAL** = **2**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:75
+msgid "**ARRAY_FORMAT_TANGENT** = **4**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:76
+msgid "**ARRAY_FORMAT_COLOR** = **8**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:77
+msgid "**ARRAY_FORMAT_TEX_UV** = **16**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:78
+msgid "**ARRAY_FORMAT_TEX_UV2** = **32**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:79
+msgid "**ARRAY_FORMAT_BONES** = **64**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:80
+msgid "**ARRAY_FORMAT_WEIGHTS** = **128**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:81
+msgid "**ARRAY_FORMAT_INDEX** = **256**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:82
+msgid "**ARRAY_COMPRESS_BASE** = **9**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:83
+msgid "**ARRAY_COMPRESS_VERTEX** = **512**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:84
+msgid "**ARRAY_COMPRESS_NORMAL** = **1024**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:85
+msgid "**ARRAY_COMPRESS_TANGENT** = **2048**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:86
+msgid "**ARRAY_COMPRESS_COLOR** = **4096**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:87
+msgid "**ARRAY_COMPRESS_TEX_UV** = **8192**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:88
+msgid "**ARRAY_COMPRESS_TEX_UV2** = **16384**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:89
+msgid "**ARRAY_COMPRESS_BONES** = **32768**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:90
+msgid "**ARRAY_COMPRESS_WEIGHTS** = **65536**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:91
+msgid "**ARRAY_COMPRESS_INDEX** = **131072**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:92
+msgid "**ARRAY_FLAG_USE_2D_VERTICES** = **262144**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:93
+msgid "**ARRAY_FLAG_USE_16_BIT_BONES** = **524288**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:94
+msgid "**ARRAY_COMPRESS_DEFAULT** = **97792**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:98
+msgid "enum **PrimitiveType**"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:100
+msgid ""
+"**PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex "
+"equals one point)."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:101
+msgid ""
+"**PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices"
+" a line is created)."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:102
+msgid "**PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:103
+msgid ""
+"**PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line "
+"strip, but closed)."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:104
+msgid ""
+"**PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every "
+"three vertices a triangle is created)."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:105
+msgid "**PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:106
+msgid "**PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:110
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:112
+msgid ""
+"Mesh is a type of :ref:`Resource<class_resource>` that contains vertex-"
+"array based geometry, divided in *surfaces*. Each surface contains a "
+"completely separate array and a material used to draw it. Design wise, a "
+"mesh with multiple surfaces is preferred to a single surface, because "
+"objects created in 3D editing software commonly contain multiple "
+"materials."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:115
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:119
+msgid ":ref:`Shape<class_shape>` **create_convex_shape** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:121
+msgid ""
+"Calculate a :ref:`ConvexPolygonShape<class_convexpolygonshape>` from the "
+"mesh."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:125
+msgid ""
+":ref:`Mesh<class_mesh>` **create_outline** **(** "
+":ref:`float<class_float>` margin **)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:127
+msgid ""
+"Calculate an outline mesh at a defined offset (margin) from the original "
+"mesh. Note: Typically returns the vertices in reverse order (e.g. "
+"clockwise to anti-clockwise)."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:131
+msgid ":ref:`Shape<class_shape>` **create_trimesh_shape** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:133
+msgid ""
+"Calculate a :ref:`ConcavePolygonShape<class_concavepolygonshape>` from "
+"the mesh."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:137
+msgid ""
+":ref:`TriangleMesh<class_trianglemesh>` **generate_triangle_mesh** **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:139
+msgid "Generate a :ref:`TriangleMesh<class_trianglemesh>` from the mesh."
+msgstr ""
+
+#: ../../classes/class_mesh.rst:143
+msgid ""
+":ref:`PoolVector3Array<class_poolvector3array>` **get_faces** **(** **)**"
+" const"
+msgstr ""
+
+#: ../../classes/class_mesh.rst:145
+msgid ""
+"Returns all the vertices that make up the faces of the mesh. Each three "
+"vertices represent one triangle."
+msgstr ""
+

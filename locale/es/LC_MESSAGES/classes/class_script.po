@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_script.rst:8
+msgid "Script"
+msgstr ""
+
+#: ../../classes/class_script.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:12
+msgid ""
+"**Inherited By:** :ref:`VisualScript<class_visualscript>`, "
+":ref:`GDScript<class_gdscript>`, :ref:`CSharpScript<class_csharpscript>`,"
+" :ref:`NativeScript<class_nativescript>`, "
+":ref:`PluginScript<class_pluginscript>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_script.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_script.rst:19
+msgid "A class stored as a resource."
+msgstr ""
+
+#: ../../classes/class_script.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_script.rst:25 ../../classes/class_script.rst:31
+#: ../../classes/class_script.rst:33 ../../classes/class_script.rst:35
+#: ../../classes/class_script.rst:37
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:25
+msgid ":ref:`can_instance<class_Script_can_instance>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:27
+msgid ":ref:`Script<class_script>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:27
+msgid ":ref:`get_base_script<class_Script_get_base_script>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:29
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:29
+msgid ""
+":ref:`get_instance_base_type<class_Script_get_instance_base_type>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:31
+msgid ""
+":ref:`has_script_signal<class_Script_has_script_signal>` **(** "
+":ref:`String<class_string>` signal_name **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:33
+msgid ":ref:`has_source_code<class_Script_has_source_code>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:35
+msgid ""
+":ref:`instance_has<class_Script_instance_has>` **(** "
+":ref:`Object<class_object>` base_object **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:37
+msgid ":ref:`is_tool<class_Script_is_tool>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:39
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_script.rst:39
+msgid ""
+":ref:`reload<class_Script_reload>` **(** :ref:`bool<class_bool>` "
+"keep_state=false **)**"
+msgstr ""
+
+#: ../../classes/class_script.rst:43
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_script.rst:47
+msgid ""
+":ref:`String<class_string>` **source_code** - The script source code, or "
+"an empty string if source code is not available. When set, does not "
+"reload the class implementation automatically."
+msgstr ""
+
+#: ../../classes/class_script.rst:51
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_script.rst:53
+msgid ""
+"A class stored as a resource. The script exends the functionality of all "
+"objects that instance it."
+msgstr ""
+
+#: ../../classes/class_script.rst:55
+msgid ""
+"The 'new' method of a script subclass creates a new instance. "
+":ref:`Object.set_script<class_Object_set_script>` extends an existing "
+"object, if that object's class matches one of the script's base classes."
+msgstr ""
+
+#: ../../classes/class_script.rst:58
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_script.rst:62
+msgid ":ref:`bool<class_bool>` **can_instance** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:64
+msgid "Returns true if the script can be instanced."
+msgstr ""
+
+#: ../../classes/class_script.rst:68
+msgid ":ref:`Script<class_script>` **get_base_script** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:72
+msgid ":ref:`String<class_string>` **get_instance_base_type** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:76
+msgid ""
+":ref:`bool<class_bool>` **has_script_signal** **(** "
+":ref:`String<class_string>` signal_name **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:78
+msgid ""
+"Returns true if the script, or a base class, defines a signal with the "
+"given name."
+msgstr ""
+
+#: ../../classes/class_script.rst:82
+msgid ":ref:`bool<class_bool>` **has_source_code** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:84
+msgid "Returns true if the script contains non-empty source code."
+msgstr ""
+
+#: ../../classes/class_script.rst:88
+msgid ""
+":ref:`bool<class_bool>` **instance_has** **(** "
+":ref:`Object<class_object>` base_object **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:90
+msgid "Returns true if 'base_object' is an instance of this script."
+msgstr ""
+
+#: ../../classes/class_script.rst:94
+msgid ":ref:`bool<class_bool>` **is_tool** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_script.rst:96
+msgid ""
+"Returns true if the script is a tool script. A tool script can run in the"
+" editor."
+msgstr ""
+
+#: ../../classes/class_script.rst:100
+msgid ""
+":ref:`int<class_int>` **reload** **(** :ref:`bool<class_bool>` "
+"keep_state=false **)**"
+msgstr ""
+
+#: ../../classes/class_script.rst:102
+msgid "Reloads the script's class implementation. Returns an error code."
+msgstr ""
+

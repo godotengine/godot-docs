@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_cubemap.rst:8
+msgid "CubeMap"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:17
+msgid "A CubeMap is a 6 sided 3D texture."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:23 ../../classes/class_cubemap.rst:27
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:23
+msgid ":ref:`get_height<class_CubeMap_get_height>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:25
+msgid ":ref:`Image<class_image>`"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:25
+msgid ""
+":ref:`get_side<class_CubeMap_get_side>` **(** :ref:`int<class_int>` side "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:27
+msgid ":ref:`get_width<class_CubeMap_get_width>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:29
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:29
+msgid ""
+":ref:`set_side<class_CubeMap_set_side>` **(** :ref:`int<class_int>` side,"
+" :ref:`Image<class_image>` image **)**"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:33
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:37
+msgid ""
+":ref:`int<class_int>` **flags** - The render flags for the ``CubeMap``. "
+"See the ``FLAG_*`` constants for details."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:41
+msgid ""
+":ref:`float<class_float>` **lossy_storage_quality** - The lossy storage "
+"quality of the ``CubeMap`` if the storage mode is set to "
+"STORAGE_COMPRESS_LOSSY."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:45
+msgid ""
+":ref:`Storage<enum_cubemap_storage>` **storage_mode** - The ``CubeMap``'s"
+" storage mode. See ``STORAGE_*`` constants."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:49
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:53
+msgid "enum **Flags**"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:55
+msgid ""
+"**FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming "
+"out of the texture."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:56
+msgid "**FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge)."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:57
+msgid ""
+"**FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth "
+"zooming in of the texture."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:58
+msgid ""
+"**FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, "
+"and filter are enabled."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:62
+msgid "enum **Storage**"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:64
+msgid "**STORAGE_RAW** = **0** --- Store the ``CubeMap`` without any compression."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:65
+msgid ""
+"**STORAGE_COMPRESS_LOSSY** = **1** --- Store the ``CubeMap`` with strong "
+"compression that reduces image quality."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:66
+msgid ""
+"**STORAGE_COMPRESS_LOSSLESS** = **2** --- Store the ``CubeMap`` with "
+"moderate compression that doesn't reduce image quality."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:70
+msgid "enum **Side**"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:72
+msgid "**SIDE_LEFT** = **0** --- Identifier for the left face of the ``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:73
+msgid ""
+"**SIDE_RIGHT** = **1** --- Identifier for the right face of the "
+"``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:74
+msgid ""
+"**SIDE_BOTTOM** = **2** --- Identifier for the bottom face of the "
+"``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:75
+msgid "**SIDE_TOP** = **3** --- Identifier for the top face of the ``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:76
+msgid ""
+"**SIDE_FRONT** = **4** --- Identifier for the front face of the "
+"``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:77
+msgid "**SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:81
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:83
+msgid ""
+"A 6-sided 3D texture typically used for faking reflections. It can be "
+"used to make an object look as if it's reflecting its surroundings. This "
+"usually delivers much better performance than other reflection methods."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:86
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:90
+msgid ":ref:`int<class_int>` **get_height** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:92
+msgid "Returns the ``CubeMap``'s height."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:96
+msgid ""
+":ref:`Image<class_image>` **get_side** **(** :ref:`int<class_int>` side "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:98
+msgid ""
+"Returns an :ref:`Image<class_image>` for a side of the ``CubeMap`` using "
+"one of the ``SIDE_*`` constants or an integer 0-5."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:102
+msgid ":ref:`int<class_int>` **get_width** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:104
+msgid "Returns the ``CubeMap``'s width."
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:108
+msgid ""
+"void **set_side** **(** :ref:`int<class_int>` side, "
+":ref:`Image<class_image>` image **)**"
+msgstr ""
+
+#: ../../classes/class_cubemap.rst:110
+msgid ""
+"Sets an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one"
+" of the ``SIDE_*`` constants or an integer 0-5."
+msgstr ""
+

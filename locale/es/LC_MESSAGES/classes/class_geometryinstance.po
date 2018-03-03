@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_geometryinstance.rst:8
+msgid "GeometryInstance"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:12
+msgid ""
+"**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, "
+":ref:`MeshInstance<class_meshinstance>`, "
+":ref:`Particles<class_particles>`, "
+":ref:`SpriteBase3D<class_spritebase3d>`, "
+":ref:`ImmediateGeometry<class_immediategeometry>`"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:19
+msgid "Base node for geometry based visual instances."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:22
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:26
+msgid ""
+":ref:`ShadowCastingSetting<enum_geometryinstance_shadowcastingsetting>` "
+"**cast_shadow** - The selected shadow casting flag. See "
+"SHADOW_CASTING_SETTING\\_\\* constants for values."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:30
+msgid ""
+":ref:`float<class_float>` **extra_cull_margin** - The extra distance "
+"added to the GeometryInstance's bounding box (:ref:`AABB<class_aabb>`) to"
+" increase its cull box."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:34
+msgid ""
+":ref:`float<class_float>` **lod_max_distance** - The GeometryInstance's "
+"max LOD distance."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:38
+msgid ""
+":ref:`float<class_float>` **lod_max_hysteresis** - The GeometryInstance's"
+" max LOD margin."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:42
+msgid ""
+":ref:`float<class_float>` **lod_min_distance** - The GeometryInstance's "
+"min LOD distance."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:46
+msgid ""
+":ref:`float<class_float>` **lod_min_hysteresis** - The GeometryInstance's"
+" min LOD margin."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:50
+msgid ""
+":ref:`Material<class_material>` **material_override** - The material "
+"override for the whole geometry."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:52
+msgid ""
+"If there is a material in material_override, it will be used instead of "
+"any material set in any material slot of the mesh."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:56
+msgid ""
+":ref:`bool<class_bool>` **use_in_baked_light** - If ``true`` this "
+"GeometryInstance will be used when baking lights using a "
+":ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:60
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:64
+msgid "enum **Flags**"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:66
+msgid ""
+"**FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to "
+"be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or "
+"any other form of baked lighting."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:68
+msgid ""
+"Added documentation for GeometryInstance and VisualInstance - "
+"**FLAG_MAX** = **1**"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:73
+msgid "enum **ShadowCastingSetting**"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:75
+msgid "**SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:76
+msgid ""
+"**SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all "
+"visible faces in the GeometryInstance."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:78
+msgid ""
+"Will take culling into account, so faces not being rendered will not be "
+"taken into account when shadow casting. - "
+"**SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2** --- Will cast shadows "
+"from all visible faces in the GeometryInstance."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:81
+msgid ""
+"Will not take culling into account, so all faces will be taken into "
+"account when shadow casting. - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = "
+"**3** --- Will only show the shadows casted from this object."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:84
+msgid ""
+"In other words: The actual mesh will not be visible, only the shadows "
+"casted from the mesh."
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:88
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_geometryinstance.rst:90
+msgid ""
+"Base node for geometry based visual instances. Shares some common "
+"functionality like visibility and custom materials."
+msgstr ""
+

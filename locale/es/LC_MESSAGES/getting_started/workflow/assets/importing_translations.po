@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:4
+msgid "Importing translations"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:7
+msgid "Games and internationalization"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:9
+msgid ""
+"The world is full of different markets and cultures and, to maximize "
+"profits™, nowadays games are released in several languages. To solve "
+"this, internationalized text must be supported in any modern game engine."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:14
+msgid ""
+"In regular desktop or mobile applications, internationalized text is "
+"usually located in resource files (or .po files for GNU stuff). Games, "
+"however, can use several orders of magnitude more text than applications,"
+" so they must support efficient methods for dealing with loads of "
+"multilingual text."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:20
+msgid ""
+"There are two approaches to generate multilingual language games and "
+"applications. Both are based on a key:value system. The first is to use "
+"one of the languages as the key (usually English), the second is to use a"
+" specific identifier. The first approach is probably easier for "
+"development if a game is released first in English, later in other "
+"languages, but a complete nightmare if working with many languages at the"
+" same time."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:28
+msgid ""
+"In general, games use the second approach and a unique ID is used for "
+"each string. This allows you to revise the text while it is being "
+"translated to other languages. The unique ID can be a number, a string, "
+"or a string with a number (it's just a unique string anyway)."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:33
+msgid "Translators also usually prefer to work with spreadsheets."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:36
+msgid "Translation format"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:38
+msgid ""
+"To complete the picture and allow efficient support for translations, "
+"Godot has a special importer that can read CSV files. All spreadsheet "
+"editors (be it Libreoffice, Microsoft Office, Google Docs, etc.) can "
+"export to this format, so the only requirement is that the files have a "
+"special arrangement. The CSV files must be saved in UTF-8 encoding and be"
+" formatted as follows:"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:46
+msgid "<lang1>"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:46
+msgid "<lang2>"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:46
+msgid "<langN>"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:48
+msgid "KEY1"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:48
+#: ../../getting_started/workflow/assets/importing_translations.rst:50
+#: ../../getting_started/workflow/assets/importing_translations.rst:52
+msgid "string"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:50
+msgid "KEY2"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:52
+msgid "KEYN"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:55
+msgid ""
+"The \"lang\" tags must represent a language, which must be one of the "
+":ref:`valid locales <doc_locales>` supported by the engine. The \"KEY\" "
+"tags must be unique and represent a string universally (they are usually "
+"in uppercase, to differentiate from other strings). Here's an example:"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:61
+msgid "id"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:61
+msgid "en"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:61
+msgid "es"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:61
+msgid "ja"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:63
+msgid "GREET"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:63
+msgid "Hello, friend!"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:63
+msgid "Hola, Amigo!"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:63
+msgid "こんにちは"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:65
+msgid "ASK"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:65
+msgid "How are you?"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:65
+msgid "Cómo está?"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:65
+msgid "元気ですか"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:67
+msgid "BYE"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:67
+msgid "Good Bye"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:67
+msgid "Adiós"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:67
+msgid "さようなら"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:71
+msgid "CSV Importer"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:73
+msgid ""
+"Godot will treat CSV files as translations by default. It will import "
+"them and generate one or more compressed translation resource files next "
+"to it."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_translations.rst:76
+msgid ""
+"Importing will also add the translation to the list of translations to "
+"load when the game runs, specified in project.godot (or the project "
+"settings). Godot allows loading and removing translations at runtime as "
+"well."
+msgstr ""
+

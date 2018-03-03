@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_collisionpolygon.rst:8
+msgid "CollisionPolygon"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:10
+msgid ""
+"**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>`"
+" **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:17
+msgid "Editor-only class for defining a collision polygon in 3D space."
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:24
+msgid ""
+":ref:`float<class_float>` **depth** - Length that the resulting collision"
+" extends in either direction perpendicular to its polygon."
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:28
+msgid ""
+":ref:`bool<class_bool>` **disabled** - If true, no collision will be "
+"produced."
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:32
+msgid ""
+":ref:`PoolVector2Array<class_poolvector2array>` **polygon** - Array of "
+"vertices which define the polygon."
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:36
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_collisionpolygon.rst:38
+msgid ""
+"Allows editing a collision polygon's vertices on a selected plane. Can "
+"also set a depth perpendicular to that plane. This class is only "
+"available in the editor. It will not appear in the scene tree at runtime."
+" Creates a :ref:`Shape<class_shape>` for gameplay. Properties modified "
+"during gameplay will have no effect."
+msgstr ""
+

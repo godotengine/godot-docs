@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:4
+msgid "Importing audio samples"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:7
+msgid "Why importing?"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:9
+msgid ""
+"Raw audio data in general is large and undesired. Godot provides two main"
+" options to import your audio data: WAV and OGG Vorbis."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:12
+msgid ""
+"Each has different advantages. * Wav files use raw data or light "
+"compression, requre small amount of CPU to play back (hundreds of "
+"simultaneous voices in this format are fine), but take up significant "
+"space. * Ogg Vorbis files use a stronger compression that results in much"
+" smaller file size, but uses significantly more processor to play back."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:19
+msgid "Here is a comparative chart."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:22
+msgid "Format"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:22
+msgid "1 Second of Audio"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:24
+msgid "WAV 24 bits, 96 kHz, Stereo"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:24
+msgid "576kb"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:26
+msgid "WAV 16 bits, 44 kHz, Mono"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:26
+msgid "88kb"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:28
+msgid "WAV 16 bits, IMA-ADPCM, Mono"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:28
+msgid "22kb"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:30
+msgid "OGG 128kbps, Stereo"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:30
+msgid "16kb"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:32
+msgid "OGG Vorbis 96kbps, Stereo"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:32
+msgid "12kb"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:35
+msgid ""
+"In general, what is recommended, is to use WAV for most sound effects, "
+"especially those that are short and repetitive, and OGG for music, voice "
+"and long sound effects."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:38
+msgid "Best Practices"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:40
+msgid ""
+"Godot 3+ has an amazing bus system with built in effects. This saves SFX "
+"artists the need to add reverb to the sound effects, reducing their size "
+"greatly and ensuring correct trimming. Say no to SFX with baked reverb!"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:47
+msgid "As you can see above, sound effects become huge with reverb added."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:50
+msgid "Trimming"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:52
+msgid ""
+"One issue that happens often is that the waveform are exported with long "
+"silences at the beginning and at the end. These are inserted by DAWs when"
+" saving to a waveform, increase their size unnecessarily and add latency "
+"to the moment they are played back."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:57
+msgid "Importing as WAV with the Trimming option enabled solves this."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:61
+msgid "Looping"
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:63
+msgid ""
+"Godot supports looping in the samples (Tools such as Sound Forge or "
+"Audition can add loop points to wav files). This is useful for sound "
+"effects such as engines, machine guns, etc. Ping-pong looping is also "
+"supported."
+msgstr ""
+
+#: ../../getting_started/workflow/assets/importing_audio_samples.rst:68
+msgid ""
+"As an alternative, the import screen has a \"loop\" option that enables "
+"looping for the entire sample when importing."
+msgstr ""
+

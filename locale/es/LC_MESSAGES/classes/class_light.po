@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_light.rst:8
+msgid "Light"
+msgstr ""
+
+#: ../../classes/class_light.rst:10
+msgid ""
+"**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** "
+":ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_light.rst:12
+msgid ""
+"**Inherited By:** :ref:`SpotLight<class_spotlight>`, "
+":ref:`OmniLight<class_omnilight>`, "
+":ref:`DirectionalLight<class_directionallight>`"
+msgstr ""
+
+#: ../../classes/class_light.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_light.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_light.rst:19
+msgid "Provides a base class for different kinds of light nodes."
+msgstr ""
+
+#: ../../classes/class_light.rst:22
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_light.rst:26
+msgid ":ref:`bool<class_bool>` **editor_only**"
+msgstr ""
+
+#: ../../classes/class_light.rst:30
+msgid ":ref:`BakeMode<enum_light_bakemode>` **light_bake_mode**"
+msgstr ""
+
+#: ../../classes/class_light.rst:34
+msgid ":ref:`Color<class_color>` **light_color**"
+msgstr ""
+
+#: ../../classes/class_light.rst:38
+msgid ":ref:`int<class_int>` **light_cull_mask**"
+msgstr ""
+
+#: ../../classes/class_light.rst:42
+msgid ":ref:`float<class_float>` **light_energy**"
+msgstr ""
+
+#: ../../classes/class_light.rst:46
+msgid ":ref:`float<class_float>` **light_indirect_energy**"
+msgstr ""
+
+#: ../../classes/class_light.rst:50
+msgid ":ref:`bool<class_bool>` **light_negative**"
+msgstr ""
+
+#: ../../classes/class_light.rst:54
+msgid ":ref:`float<class_float>` **light_specular**"
+msgstr ""
+
+#: ../../classes/class_light.rst:58
+msgid ":ref:`float<class_float>` **shadow_bias**"
+msgstr ""
+
+#: ../../classes/class_light.rst:62
+msgid ":ref:`Color<class_color>` **shadow_color**"
+msgstr ""
+
+#: ../../classes/class_light.rst:66
+msgid ":ref:`float<class_float>` **shadow_contact**"
+msgstr ""
+
+#: ../../classes/class_light.rst:70
+msgid ":ref:`bool<class_bool>` **shadow_enabled**"
+msgstr ""
+
+#: ../../classes/class_light.rst:74
+msgid ":ref:`bool<class_bool>` **shadow_reverse_cull_face**"
+msgstr ""
+
+#: ../../classes/class_light.rst:78
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_light.rst:82
+msgid "enum **BakeMode**"
+msgstr ""
+
+#: ../../classes/class_light.rst:84
+msgid "**BAKE_DISABLED** = **0**"
+msgstr ""
+
+#: ../../classes/class_light.rst:85
+msgid "**BAKE_INDIRECT** = **1**"
+msgstr ""
+
+#: ../../classes/class_light.rst:86
+msgid "**BAKE_ALL** = **2**"
+msgstr ""
+
+#: ../../classes/class_light.rst:90
+msgid "enum **Param**"
+msgstr ""
+
+#: ../../classes/class_light.rst:92
+msgid "**PARAM_ENERGY** = **0**"
+msgstr ""
+
+#: ../../classes/class_light.rst:93
+msgid "**PARAM_INDIRECT_ENERGY** = **1**"
+msgstr ""
+
+#: ../../classes/class_light.rst:94
+msgid "**PARAM_SPECULAR** = **2**"
+msgstr ""
+
+#: ../../classes/class_light.rst:95
+msgid "**PARAM_RANGE** = **3**"
+msgstr ""
+
+#: ../../classes/class_light.rst:96
+msgid "**PARAM_ATTENUATION** = **4**"
+msgstr ""
+
+#: ../../classes/class_light.rst:97
+msgid "**PARAM_SPOT_ANGLE** = **5**"
+msgstr ""
+
+#: ../../classes/class_light.rst:98
+msgid "**PARAM_SPOT_ATTENUATION** = **6**"
+msgstr ""
+
+#: ../../classes/class_light.rst:99
+msgid "**PARAM_CONTACT_SHADOW_SIZE** = **7**"
+msgstr ""
+
+#: ../../classes/class_light.rst:100
+msgid "**PARAM_SHADOW_MAX_DISTANCE** = **8**"
+msgstr ""
+
+#: ../../classes/class_light.rst:101
+msgid "**PARAM_SHADOW_SPLIT_1_OFFSET** = **9**"
+msgstr ""
+
+#: ../../classes/class_light.rst:102
+msgid "**PARAM_SHADOW_SPLIT_2_OFFSET** = **10**"
+msgstr ""
+
+#: ../../classes/class_light.rst:103
+msgid "**PARAM_SHADOW_SPLIT_3_OFFSET** = **11**"
+msgstr ""
+
+#: ../../classes/class_light.rst:104
+msgid "**PARAM_SHADOW_NORMAL_BIAS** = **12**"
+msgstr ""
+
+#: ../../classes/class_light.rst:105
+msgid "**PARAM_SHADOW_BIAS** = **13**"
+msgstr ""
+
+#: ../../classes/class_light.rst:106
+msgid "**PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**"
+msgstr ""
+
+#: ../../classes/class_light.rst:107
+msgid "**PARAM_MAX** = **15**"
+msgstr ""
+
+#: ../../classes/class_light.rst:111
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_light.rst:113
+msgid ""
+"Light is the abstract base class for light nodes, so it shouldn't be used"
+" directly (It can't be instanced). Other types of light nodes inherit "
+"from it. Light contains the common variables and parameters used for "
+"lighting."
+msgstr ""
+

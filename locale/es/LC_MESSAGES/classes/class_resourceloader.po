@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_resourceloader.rst:8
+msgid "ResourceLoader"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:17
+msgid "Resource Loader."
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:23
+#: ../../classes/class_resourceloader.rst:25
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:23
+msgid ""
+":ref:`get_dependencies<class_ResourceLoader_get_dependencies>` **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:25
+msgid ""
+":ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`"
+" **(** :ref:`String<class_string>` type **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:27
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:27
+msgid ""
+":ref:`has<class_ResourceLoader_has>` **(** :ref:`String<class_string>` "
+"path **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:29
+msgid ":ref:`Resource<class_resource>`"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:29
+msgid ""
+":ref:`load<class_ResourceLoader_load>` **(** :ref:`String<class_string>` "
+"path, :ref:`String<class_string>` type_hint=\"\", :ref:`bool<class_bool>`"
+" p_no_cache=false **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:31
+msgid ":ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:31
+msgid ""
+":ref:`load_interactive<class_ResourceLoader_load_interactive>` **(** "
+":ref:`String<class_string>` path, :ref:`String<class_string>` "
+"type_hint=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:33
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:33
+msgid ""
+":ref:`set_abort_on_missing_resources<class_ResourceLoader_set_abort_on_missing_resources>`"
+" **(** :ref:`bool<class_bool>` abort **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:37
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:39
+msgid ""
+"Resource Loader. This is a static object accessible as "
+"``ResourceLoader``. GDScript has a simplified load() function, though."
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:42
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:46
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **get_dependencies** **(** "
+":ref:`String<class_string>` path **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:50
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` "
+"**get_recognized_extensions_for_type** **(** :ref:`String<class_string>` "
+"type **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:52
+msgid "Return the list of recognized extensions for a resource type."
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:56
+msgid ""
+":ref:`bool<class_bool>` **has** **(** :ref:`String<class_string>` path "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:60
+msgid ""
+":ref:`Resource<class_resource>` **load** **(** "
+":ref:`String<class_string>` path, :ref:`String<class_string>` "
+"type_hint=\"\", :ref:`bool<class_bool>` p_no_cache=false **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:64
+msgid ""
+":ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>` "
+"**load_interactive** **(** :ref:`String<class_string>` path, "
+":ref:`String<class_string>` type_hint=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:66
+msgid ""
+"Load a resource interactively, the returned object allows to load with "
+"high granularity."
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:70
+msgid ""
+"void **set_abort_on_missing_resources** **(** :ref:`bool<class_bool>` "
+"abort **)**"
+msgstr ""
+
+#: ../../classes/class_resourceloader.rst:72
+msgid "Change the behavior on missing sub-resources. Default is to abort load."
+msgstr ""
+

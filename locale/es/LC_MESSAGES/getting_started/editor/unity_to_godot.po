@@ -1,0 +1,587 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/editor/unity_to_godot.rst:8
+msgid "From Unity3D to Godot Engine"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:10
+msgid ""
+"This guide provides an overview of Godot Engine from the viewpoint of a "
+"Unity user, and aims to help you migrate your existing Unity experience "
+"into the world of Godot."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:13
+msgid "Differences"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:16
+msgid "Unity"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:16
+msgid "Godot"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:18
+msgid "License"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:18
+msgid "Proprietary, closed, free license with revenue caps and usage restrictions"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:18
+msgid "MIT license, free and fully open source without any restriction"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:20
+msgid "OS (editor)"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:20
+msgid "Windows, macOS, Linux (unofficial and unsupported)"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:20
+msgid "Windows, X11 (Linux, \\*BSD), Haiku, macOS"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:22
+msgid "OS (export)"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Desktop: Windows, Linux/SteamOS, macOS"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Mobile: Android, iOS, Windows Phone, Tizen,"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Web: WebAssembly or asm.js"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Consoles: PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid ""
+"VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, "
+"HoloLens"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "TV: Android TV, Samsung SMART TV, tvOS"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Desktop: Windows, X11, macOS"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Mobile: Android, iOS,"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Web: WebAssembly"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:29
+msgid "Scene system"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Component/Scene (GameObject > Component)"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Prefabs"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:29
+msgid ""
+"Scene tree and nodes, allowing scenes to be nested and/or inherit other "
+"scenes"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:32
+msgid "Third-party tools"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:32
+msgid "Visual Studio or SharpEditor"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Android SDK for Android export"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "External editors are possible"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:35
+msgid "Killer features"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Huge community"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Large assets store"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Scene System"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Animation Pipeline"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Easy to write Shaders"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst
+msgid "Debug on Device"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:45
+msgid "The editor"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:47
+msgid ""
+"Godot Engine provides a rich-featured editor that allows you to build "
+"your games. The pictures below display both editors with colored blocks "
+"to indicate common functionalities."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:53
+msgid ""
+"Note that Godot editor allows you to dock each panel at the side of the "
+"scene editor you wish."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:55
+msgid ""
+"While both editors may seem similar, there are many differences below the"
+" surface. Both let you organize the project using the filesystem, but "
+"Godot approach is simpler, with a single configuration file, minimalist "
+"text format, and no metadata. All this contributes to Godot being much "
+"friendlier to VCS systems such as Git, Subversion or Mercurial."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:57
+msgid ""
+"Godot's Scene panel is similar to Unity's Hierarchy panel but, as each "
+"node has a specific function, the approach used by Godot is more visually"
+" descriptive. In other words, it's easier to understand what a specific "
+"scene does at a glance."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:59
+msgid ""
+"The Inspector in Godot is more minimalist and designed to only show "
+"properties. Thanks to this, objects can export a much larger amount of "
+"useful parameters to the user, without having to hide functionality in "
+"language APIs. As a plus, Godot allows animating any of those properties "
+"visually, so changing colors, textures, enumerations or even links to "
+"resources in real-time is possible without involving code."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:61
+msgid ""
+"Finally, the Toolbar at the top of the screen is similar in the sense "
+"that it allows controlling the project playback, but projects in Godot "
+"run in a separate window, as they don't execute inside the editor (but "
+"the tree and objects can still be explored in the debugger window)."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:63
+msgid ""
+"This approach has the disadvantage that the running game can't be "
+"explored from different angles (though this may be supported in the "
+"future, and displaying collision gizmos in the running game is already "
+"possible), but in exchange has several advantages:"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:65
+msgid ""
+"Running the project and closing it is very fast (Unity has to save, run "
+"the project, close the project and then reload the previous state)."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:66
+msgid ""
+"Live editing is a lot more useful, because changes done to the editor "
+"take effect immediately in the game, and are not lost (nor have to be "
+"synced) when the game is closed. This allows fantastic workflows, like "
+"creating levels while you play them."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:67
+msgid "The editor is more stable, because the game runs in a separate process."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:69
+msgid ""
+"Finally, the top toolbar includes a menu for remote debugging. These "
+"options make it simple to deploy to a device (connected phone, tablet or "
+"browser via HTML5), and debug/live edit on it after the game was "
+"exported."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:72
+msgid "The scene system"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:74
+msgid ""
+"This is the most important difference between Unity and Godot, and "
+"actually the favourite feature of most Godot users."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:76
+msgid ""
+"Unity's scene system consist in embedding all the required assets in a "
+"scene, and link them together by setting components and scripts to them."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:78
+msgid ""
+"Godot's scene system is different: it actually consists in a tree made of"
+" nodes. Each node serves a purpose: Sprite, Mesh, Light... Basically, "
+"this is similar to Unity scene system. However, each node can have "
+"multiple children, which make each a subscene of the main scene. This "
+"means you can compose a whole scene with different scenes, stored in "
+"different files."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:80
+msgid ""
+"For example, think of a platformer level. You would compose it with "
+"multiple elements:"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:82
+msgid "Bricks"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:83
+msgid "Coins"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:84
+msgid "The player"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:85
+msgid "The enemies"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:88
+msgid ""
+"In Unity, you would put all the GameObjects in the scene: the player, "
+"multiple instances of enemies, bricks everywhere to form the ground of "
+"the level, and multiple instances of coins all over the level. You would "
+"then add various components to each element to link them and add logic in"
+" the level: for example, you'd add a BoxCollider2D to all the elements of"
+" the scene so that they can collide. This principle is different in "
+"Godot."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:90
+msgid ""
+"In Godot, you would split your whole scene into 3 separate, smaller "
+"scenes, which you would then instance in the main scene."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:92
+msgid "First, a scene for the Player alone."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:94
+msgid ""
+"Consider the player as a reusable element in other levels. It is composed"
+" of one node in particular: an AnimatedSprite node, which contains the "
+"sprite textures to form various animations (for example, walking "
+"animation)"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:96
+msgid "Second, a scene for the Enemy."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:98
+msgid ""
+"There again, an enemy is a reusable element in other levels. It is almost"
+" the same as the Player node - the only differences are the script (that "
+"manages AI, mostly) and sprite textures used by the AnimatedSprite."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:100
+msgid "Lastly, the Level scene."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:102
+msgid ""
+"It is composed of Bricks (for platforms), Coins (for the player to grab) "
+"and a certain number of instances of the previous Enemy scene. These will"
+" be different, separate enemies, whose behaviour and appearance will be "
+"the same as defined in the Enemy scene. Each instance is then considered "
+"as a node in the Level scene tree. Of course, you can set different "
+"properties for each enemy node (to change its color for example)."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:104
+msgid ""
+"Finally, the main scene would then be composed of one root node with 2 "
+"children: a Player instance node, and a Level instance node. The root "
+"node can be anything, generally a \"root\" type such as \"Node\" which is"
+" the most global type, or \"Node2D\" (root type of all 2D-related nodes),"
+" \"Spatial\" (root type of all 3D-related nodes) or \"Control\" (root "
+"type of all GUI-related nodes)."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:108
+msgid ""
+"As you can see, every scene is organized as a tree. The same goes for "
+"nodes' properties: you don't *add* a collision component to a node to "
+"make it collidable like Unity does. Instead, you make this node a *child*"
+" of a new specific node that has collision properties. Godot features "
+"various collision types nodes, depending of the use (see the "
+":ref:`Physics introduction <doc_physics_introduction>`)."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:110
+msgid ""
+"Question: What are the advantages of this system? Wouldn't this system "
+"potentially increase the depth of the scene tree? Besides, Unity allows "
+"organizing GameObjects by putting them in empty GameObjects."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:112
+msgid ""
+"First, this system is closer to the well-known Object-Oriented paradigm: "
+"Godot provides a number of nodes which are not clearly \"Game Objects\", "
+"but they provide their children with their own capabilities: this is "
+"inheritance."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:113
+msgid ""
+"Second, it allows the extraction a subtree of scene to make it a scene of"
+" its own, which answers to the second and third questions: even if a "
+"scene tree gets too deep, it can be split into smaller subtrees. This "
+"also allows a better solution for reusability, as you can include any "
+"subtree as a child of any node. Putting multiple nodes in an empty "
+"GameObject in Unity does not provide the same possibility, apart from a "
+"visual organization."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:116
+msgid ""
+"These are the most important concepts you need to remember: \"node\", "
+"\"parent node\" and \"child node\"."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:120
+msgid "Project organization"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:124
+msgid ""
+"We previously observed that there is no perfect solution to set a project"
+" architecture. Any solution will work for Unity and Godot, so this point "
+"has a lesser importance."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:126
+msgid ""
+"However, we often observe a common architecture for Unity projects, which"
+" consists in having one Assets folder in the root directory, that "
+"contains various folders, one per type of asset: Audio, Graphics, Models,"
+" Materials, Scripts, Scenes, etc."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:128
+msgid ""
+"As described before, Godot scene system allows splitting scenes in "
+"smaller scenes. Since each scene and subscene is actually one scene file "
+"in the project, we recommend organizing your project a bit differently. "
+"This wiki provides a page for this: :ref:`doc_project_organization`."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:132
+msgid "Where are my prefabs?"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:134
+msgid ""
+"The concept of prefabs as provided by Unity is a 'template' element of "
+"the scene. It is reusable, and each instance of the prefab that exists in"
+" the scene has an existence of its own, but all of them have the same "
+"properties as defined by the prefab."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:136
+msgid ""
+"Godot does not provide prefabs as such, but this functionality is here "
+"again filled thanks to its scene system: as we saw the scene system is "
+"organized as a tree. Godot allows you to save a subtree of a scene as its"
+" own scene, thus saved in its own file. This new scene can then be "
+"instanced as many times as you want. Any change you make to this new, "
+"separate scene will be applied to its instances. However, any change you "
+"make to the instance will not have any impact on the 'template' scene."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:140
+msgid ""
+"To be precise, you can modify the parameters of the instance in the "
+"Inspector panel. However, the nodes that compose this instance are locked"
+" and you can unlock them if you need to by right clicking the instance in"
+" the Scene tree, and selecting \"Editable children\" in the menu. You "
+"don't need to do this to add new children nodes to this node, but "
+"remember that these new children will belong to the instance, not the "
+"'template' scene. If you want to add new children to all the instances of"
+" your 'template' scene, then you need to add it once in the 'template' "
+"scene."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:145
+msgid "Glossary correspondence"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:147
+msgid ""
+"GameObject -> Node Add a component -> Inheriting Prefab -> Externalized "
+"branch"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:153
+msgid "Scripting: GDScript, C# and Visual Script"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:156
+msgid "Design"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:158
+msgid ""
+"As you may know already, Unity supports C#. C# benefits from its "
+"integration with Visual Studio and other features, such as static typing."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:160
+msgid ""
+"Godot provides its own scripting language, :ref:`GDScript "
+"<doc_scripting>` as well as support for :ref:`Visual Script <toc-learn-"
+"scripting-visual_script>` and :ref:`doc_c_sharp`. GDScript borrows its "
+"syntax from Python, but is not related to it. If you wonder about the "
+"reasoning for a custom scripting language, please read :ref:`GDScript "
+"<doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to "
+"the Godot API, but it is really easy to learn: between one evening for an"
+" experienced programmer and a week for a complete beginner."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:162
+msgid ""
+"Unity allows you to attach as many scripts as you want to a GameObject. "
+"Each script adds a behaviour to the GameObject: for example, you can "
+"attach a script so that it reacts to the player's controls, and another "
+"that controls its specific game logic."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:164
+msgid ""
+"In Godot, you can only attach one script per node. You can use either an "
+"external GDScript file, or include it directly in the node. If you need "
+"to attach more scripts to one node, then you may consider two solutions, "
+"depending on your scene and on what you want to achieve:"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:166
+msgid ""
+"either add a new node between your target node and its current parent, "
+"then add a script to this new node."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:167
+msgid ""
+"or, your can split your target node into multiple children and attach one"
+" script to each of them."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:169
+msgid ""
+"As you can see, it can be easy to turn a scene tree to a mess. This is "
+"why it is important to have a real reflection, and consider splitting a "
+"complicated scene into multiple, smaller branches."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:172
+msgid "Connections : groups and signals"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:174
+msgid ""
+"You can control nodes by accessing them using a script, and call "
+"functions (built-in or user-defined) on them. But there's more: you can "
+"also place them in a group and call a function on all nodes contained in "
+"this group! This is explained in :ref:`this page "
+"<doc_scripting_continued>`."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:176
+msgid ""
+"But there's more! Certain nodes throw signals when certain actions "
+"happen. You can connect these signals to call a specific function when "
+"they happen. Note that you can define your own signals and send them "
+"whenever you want. This feature is documented `here "
+"<gdscript.html#signals>`_."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:180
+msgid "Using Godot in C++"
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:182
+msgid ""
+"Just for your information, Godot also allows you to develop your project "
+"directly in C++ by using its API, which is not possible with Unity at the"
+" moment. As an example, you can consider Godot Engine's editor as a "
+"\"game\" written in C++ using Godot API."
+msgstr ""
+
+#: ../../getting_started/editor/unity_to_godot.rst:184
+msgid ""
+"If you are interested in using Godot in C++, you may want to start "
+"reading the :ref:`Developing in C++ "
+"<doc_introduction_to_godot_development>` page."
+msgstr ""
+

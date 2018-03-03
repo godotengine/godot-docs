@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_audioeffectcompressor.rst:8
+msgid "AudioEffectCompressor"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:10
+msgid ""
+"**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:17
+msgid "Adds a Compressor audio effect to an Audio bus."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:19
+msgid ""
+"Reduces sounds that exceed a certain threshold level, smooths out the "
+"dynamics and increases the overall volume."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:22
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:26
+msgid ""
+":ref:`float<class_float>` **attack_us** - Compressor's reaction time when"
+" the signal exceeds the threshold. Value can range from 20 to 2000. "
+"Default value: ``20ms``."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:30
+msgid ":ref:`float<class_float>` **gain** - Gain applied to the output signal."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:34
+msgid ""
+":ref:`float<class_float>` **mix** - Balance between original signal and "
+"effect signal. Value can range from 0 (totally dry) to 1 (totally wet). "
+"Default value: ``1``."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:38
+msgid ""
+":ref:`float<class_float>` **ratio** - Amount of compression applied to "
+"the audio once it passes the threshold level. The higher the ratio the "
+"more the loud parts of the audio will be compressed. Value can range from"
+" 1 to 48. Default value: ``4``."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:42
+msgid ""
+":ref:`float<class_float>` **release_ms** - Compressor's delay time to "
+"stop reducing the signal after the signal level falls below the "
+"threshold. Value can range from 20 to 2000. Default value: ``250ms``."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:46
+msgid ""
+":ref:`String<class_string>` **sidechain** - Reduce the sound level using "
+"another audio bus for threshold detection."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:50
+msgid ""
+":ref:`float<class_float>` **threshold** - The level above which "
+"compression is applied to the audio. Value can range from -60 to 0. "
+"Default value: ``0``."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:54
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:56
+msgid ""
+"Dynamic range compressor reduces the level of the sound when the "
+"amplitude goes over a certain threshold in Decibels. One of the main uses"
+" of a compressor is to increase the dynamic range by clipping as little "
+"as possible (when sound goes over 0dB)."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:58
+msgid "Compressor has many uses in the mix:"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:60
+msgid ""
+"In the Master bus to compress the whole output (Although a "
+":ref:`AudioEffectLimiter<class_audioeffectlimiter>` is probably better)"
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:62
+msgid "In voice channels to ensure they sound as balanced as possible."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:64
+msgid ""
+"Sidechained. Sidechained, which can reduce the sound level sidechained "
+"with another audio bus for threshold detection.. This technique is very "
+"common in video game mixing to download the level of Music/SFX while "
+"voices are being heard."
+msgstr ""
+
+#: ../../classes/class_audioeffectcompressor.rst:66
+msgid ""
+"Accentuates transients by using a wider attack, making effects sound more"
+" punchy."
+msgstr ""
+

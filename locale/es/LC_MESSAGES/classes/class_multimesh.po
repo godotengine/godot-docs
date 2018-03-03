@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_multimesh.rst:8
+msgid "MultiMesh"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:17
+msgid "Provides high performance mesh instancing."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:23
+msgid ":ref:`AABB<class_aabb>`"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:23
+msgid ":ref:`get_aabb<class_MultiMesh_get_aabb>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:25
+msgid ":ref:`Color<class_color>`"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:25
+msgid ""
+":ref:`get_instance_color<class_MultiMesh_get_instance_color>` **(** "
+":ref:`int<class_int>` instance **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:27
+msgid ":ref:`Transform<class_transform>`"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:27
+msgid ""
+":ref:`get_instance_transform<class_MultiMesh_get_instance_transform>` "
+"**(** :ref:`int<class_int>` instance **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:29 ../../classes/class_multimesh.rst:31
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:29
+msgid ""
+":ref:`set_instance_color<class_MultiMesh_set_instance_color>` **(** "
+":ref:`int<class_int>` instance, :ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:31
+msgid ""
+":ref:`set_instance_transform<class_MultiMesh_set_instance_transform>` "
+"**(** :ref:`int<class_int>` instance, :ref:`Transform<class_transform>` "
+"transform **)**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:35
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:39
+msgid ":ref:`ColorFormat<enum_multimesh_colorformat>` **color_format**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:43
+msgid ":ref:`int<class_int>` **instance_count**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:47
+msgid ":ref:`Mesh<class_mesh>` **mesh**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:51
+msgid ""
+":ref:`TransformFormat<enum_multimesh_transformformat>` "
+"**transform_format**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:55
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:59
+msgid "enum **TransformFormat**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:61
+msgid "**TRANSFORM_2D** = **0**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:62
+msgid "**TRANSFORM_3D** = **1**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:66
+msgid "enum **ColorFormat**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:68
+msgid "**COLOR_NONE** = **0**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:69
+msgid "**COLOR_8BIT** = **1**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:70
+msgid "**COLOR_FLOAT** = **2**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:74
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:76
+msgid ""
+"MultiMesh provides low level mesh instancing. If the amount of "
+":ref:`Mesh<class_mesh>` instances needed goes from hundreds to thousands "
+"(and most need to be visible at close proximity) creating such a large "
+"amount of :ref:`MeshInstance<class_meshinstance>` nodes may affect "
+"performance by using too much CPU or video memory."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:78
+msgid ""
+"For this case a MultiMesh becomes very useful, as it can draw thousands "
+"of instances with little API overhead."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:80
+msgid ""
+"As a drawback, if the instances are too far away of each other, "
+"performance may be reduced as every single instance will always rendered "
+"(they are spatially indexed as one, for the whole object)."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:82
+msgid ""
+"Since instances may have any behavior, the AABB used for visibility must "
+"be provided by the user."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:85
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:89
+msgid ":ref:`AABB<class_aabb>` **get_aabb** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:91
+msgid "Return the visibility AABB."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:95
+msgid ""
+":ref:`Color<class_color>` **get_instance_color** **(** "
+":ref:`int<class_int>` instance **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:97
+msgid "Get the color of a specific instance."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:101
+msgid ""
+":ref:`Transform<class_transform>` **get_instance_transform** **(** "
+":ref:`int<class_int>` instance **)** const"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:103
+msgid "Return the transform of a specific instance."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:107
+msgid ""
+"void **set_instance_color** **(** :ref:`int<class_int>` instance, "
+":ref:`Color<class_color>` color **)**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:109
+msgid "Set the color of a specific instance."
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:113
+msgid ""
+"void **set_instance_transform** **(** :ref:`int<class_int>` instance, "
+":ref:`Transform<class_transform>` transform **)**"
+msgstr ""
+
+#: ../../classes/class_multimesh.rst:115
+msgid "Set the transform for a specific instance."
+msgstr ""
+

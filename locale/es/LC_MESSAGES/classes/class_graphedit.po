@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_graphedit.rst:8
+msgid "GraphEdit"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:10
+msgid ""
+"**Inherits:** :ref:`Control<class_control>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:17
+msgid ""
+"GraphEdit is an area capable of showing various GraphNodes. It manages "
+"connection events between them."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:23 ../../classes/class_graphedit.rst:25
+#: ../../classes/class_graphedit.rst:27 ../../classes/class_graphedit.rst:29
+#: ../../classes/class_graphedit.rst:33 ../../classes/class_graphedit.rst:41
+#: ../../classes/class_graphedit.rst:43 ../../classes/class_graphedit.rst:45
+#: ../../classes/class_graphedit.rst:47
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:23
+msgid ""
+":ref:`add_valid_connection_type<class_GraphEdit_add_valid_connection_type>`"
+" **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:25
+msgid ""
+":ref:`add_valid_left_disconnect_type<class_GraphEdit_add_valid_left_disconnect_type>`"
+" **(** :ref:`int<class_int>` type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:27
+msgid ""
+":ref:`add_valid_right_disconnect_type<class_GraphEdit_add_valid_right_disconnect_type>`"
+" **(** :ref:`int<class_int>` type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:29
+msgid ":ref:`clear_connections<class_GraphEdit_clear_connections>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:31
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:31
+msgid ""
+":ref:`connect_node<class_GraphEdit_connect_node>` **(** "
+":ref:`String<class_string>` from, :ref:`int<class_int>` from_port, "
+":ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:33
+msgid ""
+":ref:`disconnect_node<class_GraphEdit_disconnect_node>` **(** "
+":ref:`String<class_string>` from, :ref:`int<class_int>` from_port, "
+":ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:35
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:35
+msgid ""
+":ref:`get_connection_list<class_GraphEdit_get_connection_list>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:37 ../../classes/class_graphedit.rst:39
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:37
+msgid ""
+":ref:`is_node_connected<class_GraphEdit_is_node_connected>` **(** "
+":ref:`String<class_string>` from, :ref:`int<class_int>` from_port, "
+":ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:39
+msgid ""
+":ref:`is_valid_connection_type<class_GraphEdit_is_valid_connection_type>`"
+" **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:41
+msgid ""
+":ref:`remove_valid_connection_type<class_GraphEdit_remove_valid_connection_type>`"
+" **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:43
+msgid ""
+":ref:`remove_valid_left_disconnect_type<class_GraphEdit_remove_valid_left_disconnect_type>`"
+" **(** :ref:`int<class_int>` type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:45
+msgid ""
+":ref:`remove_valid_right_disconnect_type<class_GraphEdit_remove_valid_right_disconnect_type>`"
+" **(** :ref:`int<class_int>` type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:47
+msgid ""
+":ref:`set_selected<class_GraphEdit_set_selected>` **(** "
+":ref:`Node<class_node>` node **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:51
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:55
+msgid "**_begin_node_move** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:57
+msgid "Signal sent at the beginning of a GraphNode movement."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:61
+msgid "**_end_node_move** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:63
+msgid "Signal sent at the end of a GraphNode movement."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:67
+msgid ""
+"**connection_request** **(** :ref:`String<class_string>` from, "
+":ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, "
+":ref:`int<class_int>` to_slot **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:69
+msgid ""
+"Signal sent to the GraphEdit when the connection between 'from_slot' slot"
+" of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to"
+" be created."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:73
+msgid ""
+"**connection_to_empty** **(** :ref:`String<class_string>` from, "
+":ref:`int<class_int>` from_slot, :ref:`Vector2<class_vector2>` "
+"release_position **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:77
+msgid "**delete_nodes_request** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:79
+msgid ""
+"Signal sent when a GraphNode is attempted to be removed from the "
+"GraphEdit."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:83
+msgid ""
+"**disconnection_request** **(** :ref:`String<class_string>` from, "
+":ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, "
+":ref:`int<class_int>` to_slot **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:85
+msgid ""
+"Signal sent to the GraphEdit when the connection between 'from_slot' slot"
+" of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to"
+" be removed."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:89
+msgid "**duplicate_nodes_request** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:91
+msgid ""
+"Signal sent when a GraphNode is attempted to be duplicated in the "
+"GraphEdit."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:95
+msgid "**node_selected** **(** :ref:`Object<class_object>` node **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:99
+msgid "**popup_request** **(** :ref:`Vector2<class_vector2>` p_position **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:101
+msgid ""
+"Signal sent when a popup is requested. Happens on right-clicking in the "
+"GraphEdit. 'p_position' is the position of the mouse pointer when the "
+"signal is sent."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:105
+msgid "**scroll_offset_changed** **(** :ref:`Vector2<class_vector2>` ofs **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:109
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:113
+msgid ""
+":ref:`bool<class_bool>` **right_disconnects** - If ``true``, enables "
+"disconnection of existing connections in the GraphEdit by dragging the "
+"right end."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:117
+msgid ":ref:`Vector2<class_vector2>` **scroll_offset** - The scroll offset."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:121
+msgid ":ref:`int<class_int>` **snap_distance** - The snapping distance in pixels."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:125
+msgid ":ref:`bool<class_bool>` **use_snap** - If ``true``, enables snapping."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:129
+msgid ":ref:`float<class_float>` **zoom** - The current zoom value."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:133
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:135
+msgid ""
+"GraphEdit manages the showing of GraphNodes it contains, as well as "
+"connections and disconnections between them. Signals are sent for each of"
+" these two events. Disconnection between GraphNodes slots is disabled by "
+"default."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:137
+msgid ""
+"It is greatly advised to enable low processor usage mode (see "
+":ref:`OS.set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`)"
+" when using GraphEdits."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:140
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:144
+msgid ""
+"void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type,"
+" :ref:`int<class_int>` to_type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:146
+msgid ""
+"Makes possible the connection between two different slot types. The type "
+"is defined with the :ref:`GraphNode.set_slot<class_GraphNode_set_slot>` "
+"method."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:150
+msgid ""
+"void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:152
+msgid ""
+"Makes possible to disconnect nodes when dragging from the slot at the "
+"left if it has the specified type."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:156
+msgid ""
+"void **add_valid_right_disconnect_type** **(** :ref:`int<class_int>` type"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:158
+msgid ""
+"Makes possible to disconnect nodes when dragging from the slot at the "
+"right if it has the specified type."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:162
+msgid "void **clear_connections** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:164
+msgid "Remove all connections between nodes."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:168
+msgid ""
+":ref:`int<class_int>` **connect_node** **(** :ref:`String<class_string>` "
+"from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, "
+":ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:170
+msgid ""
+"Create a connection between 'from_port' slot of 'from' GraphNode and "
+"'to_port' slot of 'to' GraphNode. If the connection already exists, no "
+"connection is created."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:174
+msgid ""
+"void **disconnect_node** **(** :ref:`String<class_string>` from, "
+":ref:`int<class_int>` from_port, :ref:`String<class_string>` to, "
+":ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:176
+msgid ""
+"Remove the connection between 'from_port' slot of 'from' GraphNode and "
+"'to_port' slot of 'to' GraphNode, if connection exists."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:180
+msgid ":ref:`Array<class_array>` **get_connection_list** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:182
+msgid ""
+"Return an Array containing the list of connections. A connection consists"
+" in a structure of the form {from_slot: 0, from: \"GraphNode name 0\", "
+"to_slot: 1, to: \"GraphNode name 1\" }"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:186
+msgid ""
+":ref:`bool<class_bool>` **is_node_connected** **(** "
+":ref:`String<class_string>` from, :ref:`int<class_int>` from_port, "
+":ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:188
+msgid ""
+"Return true if the 'from_port' slot of 'from' GraphNode is connected to "
+"the 'to_port' slot of 'to' GraphNode."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:192
+msgid ""
+":ref:`bool<class_bool>` **is_valid_connection_type** **(** "
+":ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:194
+msgid "Returns whether it's possible to connect slots of the specified types."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:198
+msgid ""
+"void **remove_valid_connection_type** **(** :ref:`int<class_int>` "
+"from_type, :ref:`int<class_int>` to_type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:200
+msgid ""
+"Makes it not possible to connect between two different slot types. The "
+"type is defined with the "
+":ref:`GraphNode.set_slot<class_GraphNode_set_slot>` method."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:204
+msgid ""
+"void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` "
+"type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:206
+msgid ""
+"Removes the possibility to disconnect nodes when dragging from the slot "
+"at the left if it has the specified type."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:210
+msgid ""
+"void **remove_valid_right_disconnect_type** **(** :ref:`int<class_int>` "
+"type **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:212
+msgid ""
+"Removes the possibility to disconnect nodes when dragging from the slot "
+"at the right if it has the specified type."
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:216
+msgid "void **set_selected** **(** :ref:`Node<class_node>` node **)**"
+msgstr ""
+
+#: ../../classes/class_graphedit.rst:218
+msgid "Sets the specified ``node`` as the one selected."
+msgstr ""
+

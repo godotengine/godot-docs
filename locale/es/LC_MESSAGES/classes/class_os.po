@@ -1,0 +1,1573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_os.rst:8
+msgid "OS"
+msgstr ""
+
+#: ../../classes/class_os.rst:10
+msgid "**Inherits:** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_os.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_os.rst:17
+msgid "Operating System functions."
+msgstr ""
+
+#: ../../classes/class_os.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_os.rst:23 ../../classes/class_os.rst:29
+#: ../../classes/class_os.rst:31 ../../classes/class_os.rst:33
+#: ../../classes/class_os.rst:35 ../../classes/class_os.rst:37
+#: ../../classes/class_os.rst:121 ../../classes/class_os.rst:139
+#: ../../classes/class_os.rst:143 ../../classes/class_os.rst:145
+#: ../../classes/class_os.rst:147 ../../classes/class_os.rst:149
+#: ../../classes/class_os.rst:151 ../../classes/class_os.rst:153
+#: ../../classes/class_os.rst:155 ../../classes/class_os.rst:157
+#: ../../classes/class_os.rst:159 ../../classes/class_os.rst:163
+#: ../../classes/class_os.rst:165 ../../classes/class_os.rst:167
+#: ../../classes/class_os.rst:171
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_os.rst:23
+msgid ""
+":ref:`alert<class_OS_alert>` **(** :ref:`String<class_string>` text, "
+":ref:`String<class_string>` title=\"Alert!\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:25 ../../classes/class_os.rst:27
+#: ../../classes/class_os.rst:113 ../../classes/class_os.rst:115
+#: ../../classes/class_os.rst:117 ../../classes/class_os.rst:119
+#: ../../classes/class_os.rst:123 ../../classes/class_os.rst:125
+#: ../../classes/class_os.rst:127 ../../classes/class_os.rst:129
+#: ../../classes/class_os.rst:131 ../../classes/class_os.rst:133
+#: ../../classes/class_os.rst:137
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:25
+msgid ":ref:`can_draw<class_OS_can_draw>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:27
+msgid ":ref:`can_use_threads<class_OS_can_use_threads>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:29
+msgid ":ref:`center_window<class_OS_center_window>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:31
+msgid ""
+":ref:`delay_msec<class_OS_delay_msec>` **(** :ref:`int<class_int>` msec "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:33
+msgid ""
+":ref:`delay_usec<class_OS_delay_usec>` **(** :ref:`int<class_int>` usec "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:35
+msgid ""
+":ref:`dump_memory_to_file<class_OS_dump_memory_to_file>` **(** "
+":ref:`String<class_string>` file **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:37
+msgid ""
+":ref:`dump_resources_to_file<class_OS_dump_resources_to_file>` **(** "
+":ref:`String<class_string>` file **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:39 ../../classes/class_os.rst:41
+#: ../../classes/class_os.rst:51 ../../classes/class_os.rst:65
+#: ../../classes/class_os.rst:67 ../../classes/class_os.rst:69
+#: ../../classes/class_os.rst:71 ../../classes/class_os.rst:73
+#: ../../classes/class_os.rst:79 ../../classes/class_os.rst:81
+#: ../../classes/class_os.rst:87 ../../classes/class_os.rst:89
+#: ../../classes/class_os.rst:91 ../../classes/class_os.rst:95
+#: ../../classes/class_os.rst:97 ../../classes/class_os.rst:105
+#: ../../classes/class_os.rst:107 ../../classes/class_os.rst:111
+#: ../../classes/class_os.rst:135 ../../classes/class_os.rst:141
+#: ../../classes/class_os.rst:161 ../../classes/class_os.rst:169
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:39
+msgid ""
+":ref:`execute<class_OS_execute>` **(** :ref:`String<class_string>` path, "
+":ref:`PoolStringArray<class_poolstringarray>` arguments, "
+":ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ] "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:41
+msgid ""
+":ref:`find_scancode_from_string<class_OS_find_scancode_from_string>` "
+"**(** :ref:`String<class_string>` string **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:43
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:43
+msgid ":ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:45 ../../classes/class_os.rst:47
+#: ../../classes/class_os.rst:49 ../../classes/class_os.rst:99
+#: ../../classes/class_os.rst:101
+msgid ":ref:`Dictionary<class_dictionary>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:45
+msgid ""
+":ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` "
+"utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:47
+msgid ""
+":ref:`get_datetime<class_OS_get_datetime>` **(** :ref:`bool<class_bool>` "
+"utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:49
+msgid ""
+":ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>` "
+"**(** :ref:`int<class_int>` unix_time_val **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:51
+msgid ""
+":ref:`get_dynamic_memory_usage<class_OS_get_dynamic_memory_usage>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:53 ../../classes/class_os.rst:55
+#: ../../classes/class_os.rst:57 ../../classes/class_os.rst:59
+#: ../../classes/class_os.rst:61 ../../classes/class_os.rst:63
+#: ../../classes/class_os.rst:77 ../../classes/class_os.rst:93
+#: ../../classes/class_os.rst:103 ../../classes/class_os.rst:109
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:53
+msgid ""
+":ref:`get_environment<class_OS_get_environment>` **(** "
+":ref:`String<class_string>` environment **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:55
+msgid ":ref:`get_executable_path<class_OS_get_executable_path>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:57
+msgid ""
+":ref:`get_latin_keyboard_variant<class_OS_get_latin_keyboard_variant>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:59
+msgid ":ref:`get_locale<class_OS_get_locale>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:61
+msgid ":ref:`get_model_name<class_OS_get_model_name>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:63
+msgid ":ref:`get_name<class_OS_get_name>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:65
+msgid ":ref:`get_power_percent_left<class_OS_get_power_percent_left>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:67
+msgid ":ref:`get_power_seconds_left<class_OS_get_power_seconds_left>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:69
+msgid ":ref:`get_power_state<class_OS_get_power_state>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:71
+msgid ":ref:`get_process_id<class_OS_get_process_id>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:73
+msgid ":ref:`get_processor_count<class_OS_get_processor_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:75 ../../classes/class_os.rst:83
+#: ../../classes/class_os.rst:85
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_os.rst:75
+msgid ""
+":ref:`get_real_window_size<class_OS_get_real_window_size>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:77
+msgid ""
+":ref:`get_scancode_string<class_OS_get_scancode_string>` **(** "
+":ref:`int<class_int>` code **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:79
+msgid ":ref:`get_screen_count<class_OS_get_screen_count>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:81
+msgid ""
+":ref:`get_screen_dpi<class_OS_get_screen_dpi>` **(** "
+":ref:`int<class_int>` screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:83
+msgid ""
+":ref:`get_screen_position<class_OS_get_screen_position>` **(** "
+":ref:`int<class_int>` screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:85
+msgid ""
+":ref:`get_screen_size<class_OS_get_screen_size>` **(** "
+":ref:`int<class_int>` screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:87
+msgid ""
+":ref:`get_splash_tick_msec<class_OS_get_splash_tick_msec>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:89
+msgid ""
+":ref:`get_static_memory_peak_usage<class_OS_get_static_memory_peak_usage>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:91
+msgid ""
+":ref:`get_static_memory_usage<class_OS_get_static_memory_usage>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:93
+msgid ""
+":ref:`get_system_dir<class_OS_get_system_dir>` **(** "
+":ref:`int<class_int>` dir **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:95
+msgid ""
+":ref:`get_system_time_secs<class_OS_get_system_time_secs>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:97
+msgid ":ref:`get_ticks_msec<class_OS_get_ticks_msec>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:99
+msgid ""
+":ref:`get_time<class_OS_get_time>` **(** :ref:`bool<class_bool>` "
+"utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:101
+msgid ":ref:`get_time_zone_info<class_OS_get_time_zone_info>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:103
+msgid ":ref:`get_unique_id<class_OS_get_unique_id>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:105
+msgid ":ref:`get_unix_time<class_OS_get_unix_time>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:107
+msgid ""
+":ref:`get_unix_time_from_datetime<class_OS_get_unix_time_from_datetime>` "
+"**(** :ref:`Dictionary<class_dictionary>` datetime **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:109
+msgid ":ref:`get_user_data_dir<class_OS_get_user_data_dir>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:111
+msgid ""
+":ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:113
+msgid ""
+":ref:`has_environment<class_OS_has_environment>` **(** "
+":ref:`String<class_string>` environment **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:115
+msgid ""
+":ref:`has_feature<class_OS_has_feature>` **(** "
+":ref:`String<class_string>` tag_name **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:117
+msgid ""
+":ref:`has_touchscreen_ui_hint<class_OS_has_touchscreen_ui_hint>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:119
+msgid ""
+":ref:`has_virtual_keyboard<class_OS_has_virtual_keyboard>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:121
+msgid ":ref:`hide_virtual_keyboard<class_OS_hide_virtual_keyboard>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:123
+msgid ":ref:`is_debug_build<class_OS_is_debug_build>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:125
+msgid ""
+":ref:`is_ok_left_and_cancel_right<class_OS_is_ok_left_and_cancel_right>` "
+"**(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:127
+msgid ""
+":ref:`is_scancode_unicode<class_OS_is_scancode_unicode>` **(** "
+":ref:`int<class_int>` code **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:129
+msgid ":ref:`is_stdout_verbose<class_OS_is_stdout_verbose>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:131
+msgid ""
+":ref:`is_userfs_persistent<class_OS_is_userfs_persistent>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:133
+msgid ""
+":ref:`is_window_always_on_top<class_OS_is_window_always_on_top>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:135
+msgid ":ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:137
+msgid ""
+":ref:`native_video_is_playing<class_OS_native_video_is_playing>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:139
+msgid ":ref:`native_video_pause<class_OS_native_video_pause>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:141
+msgid ""
+":ref:`native_video_play<class_OS_native_video_play>` **(** "
+":ref:`String<class_string>` path, :ref:`float<class_float>` volume, "
+":ref:`String<class_string>` audio_track, :ref:`String<class_string>` "
+"subtitle_track **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:143
+msgid ":ref:`native_video_stop<class_OS_native_video_stop>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:145
+msgid ":ref:`native_video_unpause<class_OS_native_video_unpause>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:147
+msgid ""
+":ref:`print_all_resources<class_OS_print_all_resources>` **(** "
+":ref:`String<class_string>` tofile=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:149
+msgid ""
+":ref:`print_all_textures_by_size<class_OS_print_all_textures_by_size>` "
+"**(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:151
+msgid ""
+":ref:`print_resources_by_type<class_OS_print_resources_by_type>` **(** "
+":ref:`PoolStringArray<class_poolstringarray>` types **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:153
+msgid ""
+":ref:`print_resources_in_use<class_OS_print_resources_in_use>` **(** "
+":ref:`bool<class_bool>` short=false **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:155
+msgid ":ref:`request_attention<class_OS_request_attention>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:157
+msgid ""
+":ref:`set_icon<class_OS_set_icon>` **(** :ref:`Image<class_image>` icon "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:159
+msgid ""
+":ref:`set_ime_position<class_OS_set_ime_position>` **(** "
+":ref:`Vector2<class_vector2>` position **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:161
+msgid ""
+":ref:`set_thread_name<class_OS_set_thread_name>` **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:163
+msgid ""
+":ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>`"
+" **(** :ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:165
+msgid ""
+":ref:`set_window_always_on_top<class_OS_set_window_always_on_top>` **(** "
+":ref:`bool<class_bool>` enabled **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:167
+msgid ""
+":ref:`set_window_title<class_OS_set_window_title>` **(** "
+":ref:`String<class_string>` title **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:169
+msgid ""
+":ref:`shell_open<class_OS_shell_open>` **(** :ref:`String<class_string>` "
+"uri **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:171
+msgid ""
+":ref:`show_virtual_keyboard<class_OS_show_virtual_keyboard>` **(** "
+":ref:`String<class_string>` existing_text=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:175
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_os.rst:179
+msgid ""
+":ref:`String<class_string>` **clipboard** - The clipboard from the host "
+"OS. Might be unavailable on some platforms."
+msgstr ""
+
+#: ../../classes/class_os.rst:183
+msgid ""
+":ref:`int<class_int>` **current_screen** - The current screen index "
+"(starting from 0)."
+msgstr ""
+
+#: ../../classes/class_os.rst:187
+msgid ":ref:`int<class_int>` **exit_code**"
+msgstr ""
+
+#: ../../classes/class_os.rst:191
+msgid ":ref:`bool<class_bool>` **keep_screen_on**"
+msgstr ""
+
+#: ../../classes/class_os.rst:195
+msgid ":ref:`bool<class_bool>` **low_processor_usage_mode**"
+msgstr ""
+
+#: ../../classes/class_os.rst:199
+msgid ""
+"_OS.ScreenOrientation **screen_orientation** - The current screen "
+"orientation."
+msgstr ""
+
+#: ../../classes/class_os.rst:203
+msgid ":ref:`bool<class_bool>` **vsync_enabled**"
+msgstr ""
+
+#: ../../classes/class_os.rst:207
+msgid ""
+":ref:`bool<class_bool>` **window_borderless** - If ``true``, removes the "
+"window frame."
+msgstr ""
+
+#: ../../classes/class_os.rst:211
+msgid ""
+":ref:`bool<class_bool>` **window_fullscreen** - If ``true``, the window "
+"is fullscreen."
+msgstr ""
+
+#: ../../classes/class_os.rst:215
+msgid ""
+":ref:`bool<class_bool>` **window_maximized** - If ``true``, the window is"
+" maximized."
+msgstr ""
+
+#: ../../classes/class_os.rst:219
+msgid ""
+":ref:`bool<class_bool>` **window_minimized** - If ``true``, the window is"
+" minimized."
+msgstr ""
+
+#: ../../classes/class_os.rst:223
+msgid ""
+":ref:`Vector2<class_vector2>` **window_position** - The window position "
+"relative to the screen, the origin is the top left corner, +Y axis goes "
+"to the bottom and +X axis goes to the right."
+msgstr ""
+
+#: ../../classes/class_os.rst:227
+msgid ""
+":ref:`bool<class_bool>` **window_resizable** - If ``true``, the window is"
+" resizable by the user."
+msgstr ""
+
+#: ../../classes/class_os.rst:231
+msgid ""
+":ref:`Vector2<class_vector2>` **window_size** - The size of the window "
+"(without counting window manager decorations)."
+msgstr ""
+
+#: ../../classes/class_os.rst:235
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_os.rst:239
+msgid "enum **SystemDir**"
+msgstr ""
+
+#: ../../classes/class_os.rst:241
+msgid "**SYSTEM_DIR_DESKTOP** = **0**"
+msgstr ""
+
+#: ../../classes/class_os.rst:242
+msgid "**SYSTEM_DIR_DCIM** = **1**"
+msgstr ""
+
+#: ../../classes/class_os.rst:243
+msgid "**SYSTEM_DIR_DOCUMENTS** = **2**"
+msgstr ""
+
+#: ../../classes/class_os.rst:244
+msgid "**SYSTEM_DIR_DOWNLOADS** = **3**"
+msgstr ""
+
+#: ../../classes/class_os.rst:245
+msgid "**SYSTEM_DIR_MOVIES** = **4**"
+msgstr ""
+
+#: ../../classes/class_os.rst:246
+msgid "**SYSTEM_DIR_MUSIC** = **5**"
+msgstr ""
+
+#: ../../classes/class_os.rst:247
+msgid "**SYSTEM_DIR_PICTURES** = **6**"
+msgstr ""
+
+#: ../../classes/class_os.rst:248
+msgid "**SYSTEM_DIR_RINGTONES** = **7**"
+msgstr ""
+
+#: ../../classes/class_os.rst:252
+msgid "enum **ScreenOrientation**"
+msgstr ""
+
+#: ../../classes/class_os.rst:254
+msgid "**SCREEN_ORIENTATION_LANDSCAPE** = **0**"
+msgstr ""
+
+#: ../../classes/class_os.rst:255
+msgid "**SCREEN_ORIENTATION_PORTRAIT** = **1**"
+msgstr ""
+
+#: ../../classes/class_os.rst:256
+msgid "**SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**"
+msgstr ""
+
+#: ../../classes/class_os.rst:257
+msgid "**SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3**"
+msgstr ""
+
+#: ../../classes/class_os.rst:258
+msgid "**SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4**"
+msgstr ""
+
+#: ../../classes/class_os.rst:259
+msgid "**SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5**"
+msgstr ""
+
+#: ../../classes/class_os.rst:260
+msgid "**SCREEN_ORIENTATION_SENSOR** = **6**"
+msgstr ""
+
+#: ../../classes/class_os.rst:264
+msgid "enum **PowerState**"
+msgstr ""
+
+#: ../../classes/class_os.rst:266
+msgid "**POWERSTATE_UNKNOWN** = **0**"
+msgstr ""
+
+#: ../../classes/class_os.rst:267
+msgid "**POWERSTATE_ON_BATTERY** = **1**"
+msgstr ""
+
+#: ../../classes/class_os.rst:268
+msgid "**POWERSTATE_NO_BATTERY** = **2**"
+msgstr ""
+
+#: ../../classes/class_os.rst:269
+msgid "**POWERSTATE_CHARGING** = **3**"
+msgstr ""
+
+#: ../../classes/class_os.rst:270
+msgid "**POWERSTATE_CHARGED** = **4**"
+msgstr ""
+
+#: ../../classes/class_os.rst:274
+msgid "enum **Weekday**"
+msgstr ""
+
+#: ../../classes/class_os.rst:276
+msgid "**DAY_SUNDAY** = **0**"
+msgstr ""
+
+#: ../../classes/class_os.rst:277
+msgid "**DAY_MONDAY** = **1**"
+msgstr ""
+
+#: ../../classes/class_os.rst:278
+msgid "**DAY_TUESDAY** = **2**"
+msgstr ""
+
+#: ../../classes/class_os.rst:279
+msgid "**DAY_WEDNESDAY** = **3**"
+msgstr ""
+
+#: ../../classes/class_os.rst:280
+msgid "**DAY_THURSDAY** = **4**"
+msgstr ""
+
+#: ../../classes/class_os.rst:281
+msgid "**DAY_FRIDAY** = **5**"
+msgstr ""
+
+#: ../../classes/class_os.rst:282
+msgid "**DAY_SATURDAY** = **6**"
+msgstr ""
+
+#: ../../classes/class_os.rst:286
+msgid "enum **Month**"
+msgstr ""
+
+#: ../../classes/class_os.rst:288
+msgid "**MONTH_JANUARY** = **1**"
+msgstr ""
+
+#: ../../classes/class_os.rst:289
+msgid "**MONTH_FEBRUARY** = **2**"
+msgstr ""
+
+#: ../../classes/class_os.rst:290
+msgid "**MONTH_MARCH** = **3**"
+msgstr ""
+
+#: ../../classes/class_os.rst:291
+msgid "**MONTH_APRIL** = **4**"
+msgstr ""
+
+#: ../../classes/class_os.rst:292
+msgid "**MONTH_MAY** = **5**"
+msgstr ""
+
+#: ../../classes/class_os.rst:293
+msgid "**MONTH_JUNE** = **6**"
+msgstr ""
+
+#: ../../classes/class_os.rst:294
+msgid "**MONTH_JULY** = **7**"
+msgstr ""
+
+#: ../../classes/class_os.rst:295
+msgid "**MONTH_AUGUST** = **8**"
+msgstr ""
+
+#: ../../classes/class_os.rst:296
+msgid "**MONTH_SEPTEMBER** = **9**"
+msgstr ""
+
+#: ../../classes/class_os.rst:297
+msgid "**MONTH_OCTOBER** = **10**"
+msgstr ""
+
+#: ../../classes/class_os.rst:298
+msgid "**MONTH_NOVEMBER** = **11**"
+msgstr ""
+
+#: ../../classes/class_os.rst:299
+msgid "**MONTH_DECEMBER** = **12**"
+msgstr ""
+
+#: ../../classes/class_os.rst:303
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_os.rst:305
+msgid ""
+"Operating System functions. OS Wraps the most common functionality to "
+"communicate with the host Operating System, such as: mouse grabbing, "
+"mouse cursors, clipboard, video mode, date and time, timers, environment "
+"variables, execution of binaries, command line, etc."
+msgstr ""
+
+#: ../../classes/class_os.rst:308
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_os.rst:312
+msgid ""
+"void **alert** **(** :ref:`String<class_string>` text, "
+":ref:`String<class_string>` title=\"Alert!\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:314
+msgid "Displays a modal dialog box utilizing the host OS."
+msgstr ""
+
+#: ../../classes/class_os.rst:318
+msgid ":ref:`bool<class_bool>` **can_draw** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:320
+msgid "Returns ``true`` if the host OS allows drawing."
+msgstr ""
+
+#: ../../classes/class_os.rst:324
+msgid ":ref:`bool<class_bool>` **can_use_threads** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:326
+msgid "Returns ``true`` if the current host platform is using multiple threads."
+msgstr ""
+
+#: ../../classes/class_os.rst:330
+msgid "void **center_window** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:334
+msgid "void **delay_msec** **(** :ref:`int<class_int>` msec **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:336
+msgid "Delay executing of the current thread by given milliseconds."
+msgstr ""
+
+#: ../../classes/class_os.rst:340
+msgid "void **delay_usec** **(** :ref:`int<class_int>` usec **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:342
+msgid "Delay executing of the current thread by given microseconds."
+msgstr ""
+
+#: ../../classes/class_os.rst:346
+msgid "void **dump_memory_to_file** **(** :ref:`String<class_string>` file **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:348
+msgid "Dumps the memory allocation ringlist to a file (only works in debug)."
+msgstr ""
+
+#: ../../classes/class_os.rst:350
+msgid "Entry format per line: \"Address - Size - Description\""
+msgstr ""
+
+#: ../../classes/class_os.rst:354
+msgid ""
+"void **dump_resources_to_file** **(** :ref:`String<class_string>` file "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:356
+msgid "Dumps all used resources to file (only works in debug)."
+msgstr ""
+
+#: ../../classes/class_os.rst:358
+msgid "Entry format per line: \"Resource Type : Resource Location\""
+msgstr ""
+
+#: ../../classes/class_os.rst:360
+msgid "At the end of the file is a statistic of all used Resource Types."
+msgstr ""
+
+#: ../../classes/class_os.rst:364
+msgid ""
+":ref:`int<class_int>` **execute** **(** :ref:`String<class_string>` path,"
+" :ref:`PoolStringArray<class_poolstringarray>` arguments, "
+":ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ] "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:366
+msgid "Execute the file at the given path, optionally blocking until it returns."
+msgstr ""
+
+#: ../../classes/class_os.rst:368
+msgid ""
+"Platform path resolution will take place.  The resolved file must exist "
+"and be executable."
+msgstr ""
+
+#: ../../classes/class_os.rst:370
+msgid "Returns a process id."
+msgstr ""
+
+#: ../../classes/class_os.rst:372
+msgid "For example:"
+msgstr ""
+
+#: ../../classes/class_os.rst:379
+msgid ""
+"If you wish to access a shell built-in or perform a composite command, a "
+"platform specific shell can be invoked.  For example:"
+msgstr ""
+
+#: ../../classes/class_os.rst:387
+msgid ""
+":ref:`int<class_int>` **find_scancode_from_string** **(** "
+":ref:`String<class_string>` string **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:389
+msgid "Returns the scancode of the given string (e.g. \"Escape\")"
+msgstr ""
+
+#: ../../classes/class_os.rst:393
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **get_cmdline_args** **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:395
+msgid "Returns the command line arguments passed to the engine."
+msgstr ""
+
+#: ../../classes/class_os.rst:399
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_date** **(** "
+":ref:`bool<class_bool>` utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:401
+msgid ""
+"Returns current date as a dictionary of keys: year, month, day, weekday, "
+"dst (daylight savings time)."
+msgstr ""
+
+#: ../../classes/class_os.rst:405
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_datetime** **(** "
+":ref:`bool<class_bool>` utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:407
+msgid ""
+"Returns current datetime as a dictionary of keys: year, month, day, "
+"weekday, dst (daylight savings time), hour, minute, second."
+msgstr ""
+
+#: ../../classes/class_os.rst:411
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_datetime_from_unix_time** **(**"
+" :ref:`int<class_int>` unix_time_val **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:413
+msgid "Get a dictionary of time values when given epoch time."
+msgstr ""
+
+#: ../../classes/class_os.rst:415
+msgid ""
+"Dictionary Time values will be a union of values from "
+":ref:`get_time<class_OS_get_time>` and :ref:`get_date<class_OS_get_date>`"
+" dictionaries (with the exception of dst = day light standard time, as it"
+" cannot be determined from epoch)."
+msgstr ""
+
+#: ../../classes/class_os.rst:419
+msgid ":ref:`int<class_int>` **get_dynamic_memory_usage** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:421
+msgid "Returns the total amount of dynamic memory used (only works in debug)."
+msgstr ""
+
+#: ../../classes/class_os.rst:425
+msgid ""
+":ref:`String<class_string>` **get_environment** **(** "
+":ref:`String<class_string>` environment **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:427
+msgid "Returns an environment variable."
+msgstr ""
+
+#: ../../classes/class_os.rst:431
+msgid ":ref:`String<class_string>` **get_executable_path** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:433
+msgid "Returns the path to the current engine executable."
+msgstr ""
+
+#: ../../classes/class_os.rst:437
+msgid ""
+":ref:`String<class_string>` **get_latin_keyboard_variant** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:439
+msgid "Returns the current latin keyboard variant as a String."
+msgstr ""
+
+#: ../../classes/class_os.rst:441
+msgid ""
+"Possible return values are: \"QWERTY\", \"AZERTY\", \"QZERTY\", "
+"\"DVORAK\", \"NEO\", \"COLEMAK\" or \"ERROR\"."
+msgstr ""
+
+#: ../../classes/class_os.rst:445
+msgid ":ref:`String<class_string>` **get_locale** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:447
+msgid "Returns the host OS locale."
+msgstr ""
+
+#: ../../classes/class_os.rst:451
+msgid ":ref:`String<class_string>` **get_model_name** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:453
+msgid "Returns the model name of the current device."
+msgstr ""
+
+#: ../../classes/class_os.rst:457
+msgid ":ref:`String<class_string>` **get_name** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:459
+msgid ""
+"Returns the name of the host OS. Possible values are: \"Android\", "
+"\"Haiku\", \"iOS\", \"HTML5\", \"OSX\", \"Server\", \"Windows\", \"UWP\","
+" \"X11\"."
+msgstr ""
+
+#: ../../classes/class_os.rst:463
+msgid ":ref:`int<class_int>` **get_power_percent_left** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:465
+msgid "Returns the amount of battery left in the device as a percentage."
+msgstr ""
+
+#: ../../classes/class_os.rst:469
+msgid ":ref:`int<class_int>` **get_power_seconds_left** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:471
+msgid "Returns the time in seconds before the device runs out of battery."
+msgstr ""
+
+#: ../../classes/class_os.rst:475
+msgid ":ref:`int<class_int>` **get_power_state** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:477
+msgid ""
+"Returns the current state of the device regarding battery and power. See "
+"``POWERSTATE_*`` constants."
+msgstr ""
+
+#: ../../classes/class_os.rst:481
+msgid ":ref:`int<class_int>` **get_process_id** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:483
+msgid "Returns the game process ID"
+msgstr ""
+
+#: ../../classes/class_os.rst:487
+msgid ":ref:`int<class_int>` **get_processor_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:489
+msgid "Returns the number of cores available in the host machine."
+msgstr ""
+
+#: ../../classes/class_os.rst:493
+msgid ":ref:`Vector2<class_vector2>` **get_real_window_size** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:497
+msgid ""
+":ref:`String<class_string>` **get_scancode_string** **(** "
+":ref:`int<class_int>` code **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:499
+msgid ""
+"Returns the given scancode as a string (e.g. Return values: \"Escape\", "
+"\"Shift+Escape\")."
+msgstr ""
+
+#: ../../classes/class_os.rst:503
+msgid ":ref:`int<class_int>` **get_screen_count** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:505
+msgid "Returns the number of displays attached to the host machine."
+msgstr ""
+
+#: ../../classes/class_os.rst:509
+msgid ""
+":ref:`int<class_int>` **get_screen_dpi** **(** :ref:`int<class_int>` "
+"screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:511
+msgid "Returns the dots per inch density of the specified screen."
+msgstr ""
+
+#: ../../classes/class_os.rst:515
+msgid ""
+"On Android Devices, the actual screen densities are grouped into six "
+"generalized densities:"
+msgstr ""
+
+#: ../../classes/class_os.rst:517
+msgid "ldpi    - 120 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:519
+msgid "mdpi    - 160 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:521
+msgid "hdpi    - 240 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:523
+msgid "xhdpi   - 320 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:525
+msgid "xxhdpi  - 480 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:527
+msgid "xxxhdpi - 640 dpi"
+msgstr ""
+
+#: ../../classes/class_os.rst:531
+msgid ""
+":ref:`Vector2<class_vector2>` **get_screen_position** **(** "
+":ref:`int<class_int>` screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:533
+msgid ""
+"Returns the position of the specified screen by index. If no screen index"
+" is provided, the current screen will be used."
+msgstr ""
+
+#: ../../classes/class_os.rst:537
+msgid ""
+":ref:`Vector2<class_vector2>` **get_screen_size** **(** "
+":ref:`int<class_int>` screen=-1 **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:539
+msgid "Returns the dimensions in pixels of the specified screen."
+msgstr ""
+
+#: ../../classes/class_os.rst:543
+msgid ":ref:`int<class_int>` **get_splash_tick_msec** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:547
+msgid ":ref:`int<class_int>` **get_static_memory_peak_usage** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:549
+msgid "Returns the max amount of static memory used (only works in debug)."
+msgstr ""
+
+#: ../../classes/class_os.rst:553
+msgid ":ref:`int<class_int>` **get_static_memory_usage** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:555
+msgid "Returns the amount of static memory being used by the program in bytes."
+msgstr ""
+
+#: ../../classes/class_os.rst:559
+msgid ""
+":ref:`String<class_string>` **get_system_dir** **(** "
+":ref:`int<class_int>` dir **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:561
+msgid ""
+"Returns the actual path to commonly used folders across different "
+"platforms. Available locations are specified in OS.SystemDir."
+msgstr ""
+
+#: ../../classes/class_os.rst:565
+msgid ":ref:`int<class_int>` **get_system_time_secs** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:567
+msgid "Returns the epoch time of the operating system in seconds."
+msgstr ""
+
+#: ../../classes/class_os.rst:571
+msgid ":ref:`int<class_int>` **get_ticks_msec** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:573
+msgid ""
+"Returns the amount of time passed in milliseconds since the engine "
+"started."
+msgstr ""
+
+#: ../../classes/class_os.rst:577
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_time** **(** "
+":ref:`bool<class_bool>` utc=false **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:579
+msgid "Returns current time as a dictionary of keys: hour, minute, second."
+msgstr ""
+
+#: ../../classes/class_os.rst:583
+msgid ""
+":ref:`Dictionary<class_dictionary>` **get_time_zone_info** **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_os.rst:585
+msgid ""
+"Returns the current time zone as a dictionary with the keys: bias and "
+"name."
+msgstr ""
+
+#: ../../classes/class_os.rst:589
+msgid ":ref:`String<class_string>` **get_unique_id** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:591
+msgid "Returns a string that is unique to the device."
+msgstr ""
+
+#: ../../classes/class_os.rst:593
+msgid "Returns empty string on HTML5 and UWP which are not supported yet."
+msgstr ""
+
+#: ../../classes/class_os.rst:597
+msgid ":ref:`int<class_int>` **get_unix_time** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:599
+msgid "Return  the current unix timestamp."
+msgstr ""
+
+#: ../../classes/class_os.rst:603
+msgid ""
+":ref:`int<class_int>` **get_unix_time_from_datetime** **(** "
+":ref:`Dictionary<class_dictionary>` datetime **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:605
+msgid "Get an epoch time value from a dictionary of time values."
+msgstr ""
+
+#: ../../classes/class_os.rst:607
+msgid ""
+"``datetime`` must be populated with the following keys: year, month, day,"
+" hour, minute, second."
+msgstr ""
+
+#: ../../classes/class_os.rst:609
+msgid ""
+"You can pass the output from "
+":ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>` "
+"directly into this function. Daylight savings time (dst), if present, is "
+"ignored."
+msgstr ""
+
+#: ../../classes/class_os.rst:613
+msgid ":ref:`String<class_string>` **get_user_data_dir** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:615
+msgid ""
+"Returns the absolute directory path where user data is written "
+"(``user://``)."
+msgstr ""
+
+#: ../../classes/class_os.rst:619
+msgid ":ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:623
+msgid ""
+":ref:`bool<class_bool>` **has_environment** **(** "
+":ref:`String<class_string>` environment **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:625
+msgid "Returns ``true`` if an environment variable exists."
+msgstr ""
+
+#: ../../classes/class_os.rst:629
+msgid ""
+":ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_string>`"
+" tag_name **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:633
+msgid ":ref:`bool<class_bool>` **has_touchscreen_ui_hint** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:635
+msgid "Returns ``true`` if the device has a touchscreen or emulates one."
+msgstr ""
+
+#: ../../classes/class_os.rst:639
+msgid ":ref:`bool<class_bool>` **has_virtual_keyboard** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:641
+msgid ""
+"Returns ``true`` if the platform has a virtual keyboard, ``false`` "
+"otherwise."
+msgstr ""
+
+#: ../../classes/class_os.rst:645
+msgid "void **hide_virtual_keyboard** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:647
+msgid "Hides the virtual keyboard if it is shown, does nothing otherwise."
+msgstr ""
+
+#: ../../classes/class_os.rst:651
+msgid ":ref:`bool<class_bool>` **is_debug_build** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:653
+msgid "Returns ``true`` if the build is a debug build."
+msgstr ""
+
+#: ../../classes/class_os.rst:655
+msgid "Returns ``true`` when running in the editor."
+msgstr ""
+
+#: ../../classes/class_os.rst:657
+msgid "Returns ``false`` if the build is a release build."
+msgstr ""
+
+#: ../../classes/class_os.rst:661
+msgid ":ref:`bool<class_bool>` **is_ok_left_and_cancel_right** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:663
+msgid ""
+"Returns ``true`` if the \"Okay\" button should appear on the left and "
+"\"Cancel\" on the right."
+msgstr ""
+
+#: ../../classes/class_os.rst:667
+msgid ""
+":ref:`bool<class_bool>` **is_scancode_unicode** **(** "
+":ref:`int<class_int>` code **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:669
+msgid "Returns ``true`` if the input code has a unicode character."
+msgstr ""
+
+#: ../../classes/class_os.rst:673
+msgid ":ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:675
+msgid "Returns ``true`` if the engine was executed with -v (verbose stdout)."
+msgstr ""
+
+#: ../../classes/class_os.rst:679
+msgid ":ref:`bool<class_bool>` **is_userfs_persistent** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:681
+msgid ""
+"If ``true``, the ``user://`` file system is persistent, so that its state"
+" is the same after a player quits and starts the game again. Relevant to "
+"the HTML5 platform, where this persistence may be unavailable."
+msgstr ""
+
+#: ../../classes/class_os.rst:685
+msgid ":ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_os.rst:689
+msgid ":ref:`int<class_int>` **kill** **(** :ref:`int<class_int>` pid **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:691
+msgid ""
+"Kill a process ID (this method can be used to kill processes that were "
+"not spawned by the game)."
+msgstr ""
+
+#: ../../classes/class_os.rst:695
+msgid ":ref:`bool<class_bool>` **native_video_is_playing** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:697
+msgid "Returns ``true`` if native video is playing."
+msgstr ""
+
+#: ../../classes/class_os.rst:701
+msgid "void **native_video_pause** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:703
+msgid "Pauses native video playback."
+msgstr ""
+
+#: ../../classes/class_os.rst:707
+msgid ""
+":ref:`int<class_int>` **native_video_play** **(** "
+":ref:`String<class_string>` path, :ref:`float<class_float>` volume, "
+":ref:`String<class_string>` audio_track, :ref:`String<class_string>` "
+"subtitle_track **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:709
+msgid ""
+"Plays native video from the specified path, at the given volume and with "
+"audio and subtitle tracks."
+msgstr ""
+
+#: ../../classes/class_os.rst:713
+msgid "void **native_video_stop** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:715
+msgid "Stops native video playback."
+msgstr ""
+
+#: ../../classes/class_os.rst:719
+msgid "void **native_video_unpause** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:721
+msgid "Resumes native video playback."
+msgstr ""
+
+#: ../../classes/class_os.rst:725
+msgid ""
+"void **print_all_resources** **(** :ref:`String<class_string>` "
+"tofile=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:727
+msgid ""
+"Shows all resources in the game. Optionally the list can be written to a "
+"file."
+msgstr ""
+
+#: ../../classes/class_os.rst:731
+msgid "void **print_all_textures_by_size** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:733
+msgid "Shows the list of loaded textures sorted by size in memory."
+msgstr ""
+
+#: ../../classes/class_os.rst:737
+msgid ""
+"void **print_resources_by_type** **(** "
+":ref:`PoolStringArray<class_poolstringarray>` types **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:739
+msgid "Shows the number of resources loaded by the game of the given types."
+msgstr ""
+
+#: ../../classes/class_os.rst:743
+msgid ""
+"void **print_resources_in_use** **(** :ref:`bool<class_bool>` short=false"
+" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:745
+msgid "Shows all resources currently used by the game."
+msgstr ""
+
+#: ../../classes/class_os.rst:749
+msgid "void **request_attention** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:751
+msgid ""
+"Request the user attention to the window. It'll flash the taskbar button "
+"on Windows or bounce the dock icon on OSX."
+msgstr ""
+
+#: ../../classes/class_os.rst:755
+msgid "void **set_icon** **(** :ref:`Image<class_image>` icon **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:757
+msgid "Sets the game's icon."
+msgstr ""
+
+#: ../../classes/class_os.rst:761
+msgid ""
+"void **set_ime_position** **(** :ref:`Vector2<class_vector2>` position "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:765
+msgid ""
+":ref:`int<class_int>` **set_thread_name** **(** "
+":ref:`String<class_string>` name **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:767
+msgid "Sets the name of the current thread."
+msgstr ""
+
+#: ../../classes/class_os.rst:771
+msgid ""
+"void **set_use_file_access_save_and_swap** **(** :ref:`bool<class_bool>` "
+"enabled **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:773
+msgid "Enables backup saves if ``enabled`` is ``true``."
+msgstr ""
+
+#: ../../classes/class_os.rst:777
+msgid ""
+"void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:781
+msgid "void **set_window_title** **(** :ref:`String<class_string>` title **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:783
+msgid "Sets the window title to the specified string."
+msgstr ""
+
+#: ../../classes/class_os.rst:787
+msgid ""
+":ref:`int<class_int>` **shell_open** **(** :ref:`String<class_string>` "
+"uri **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:789
+msgid ""
+"Requests the OS to open a resource with the most appropriate program. For"
+" example."
+msgstr ""
+
+#: ../../classes/class_os.rst:791
+msgid ""
+"``OS.shell_open(\"C:\\\\Users\\name\\Downloads\")`` on Windows opens the "
+"file explorer at the downloads folders of the user."
+msgstr ""
+
+#: ../../classes/class_os.rst:793
+msgid ""
+"``OS.shell_open(\"http://godotengine.org\")`` opens the default web "
+"browser on the official Godot website."
+msgstr ""
+
+#: ../../classes/class_os.rst:797
+msgid ""
+"void **show_virtual_keyboard** **(** :ref:`String<class_string>` "
+"existing_text=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_os.rst:799
+msgid ""
+"Shows the virtual keyboard if the platform has one. The *existing_text* "
+"parameter is useful for implementing your own LineEdit, as it tells the "
+"virtual keyboard what text has already been typed (the virtual keyboard "
+"uses it for auto-correct and predictions)."
+msgstr ""
+

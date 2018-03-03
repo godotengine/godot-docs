@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_inputevent.rst:8
+msgid "InputEvent"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:12
+msgid ""
+"**Inherited By:** "
+":ref:`InputEventScreenTouch<class_inputeventscreentouch>`, "
+":ref:`InputEventWithModifiers<class_inputeventwithmodifiers>`, "
+":ref:`InputEventScreenDrag<class_inputeventscreendrag>`, "
+":ref:`InputEventJoypadMotion<class_inputeventjoypadmotion>`, "
+":ref:`InputEventJoypadButton<class_inputeventjoypadbutton>`, "
+":ref:`InputEventAction<class_inputeventaction>`"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:19
+msgid "Generic input event"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:25 ../../classes/class_inputevent.rst:29
+#: ../../classes/class_inputevent.rst:31 ../../classes/class_inputevent.rst:33
+#: ../../classes/class_inputevent.rst:35 ../../classes/class_inputevent.rst:37
+#: ../../classes/class_inputevent.rst:39 ../../classes/class_inputevent.rst:41
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:25
+msgid ""
+":ref:`action_match<class_InputEvent_action_match>` **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:27
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:27
+msgid ":ref:`as_text<class_InputEvent_as_text>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:29
+msgid ""
+":ref:`is_action<class_InputEvent_is_action>` **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:31
+msgid ""
+":ref:`is_action_pressed<class_InputEvent_is_action_pressed>` **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:33
+msgid ""
+":ref:`is_action_released<class_InputEvent_is_action_released>` **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:35
+msgid ":ref:`is_action_type<class_InputEvent_is_action_type>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:37
+msgid ":ref:`is_echo<class_InputEvent_is_echo>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:39
+msgid ":ref:`is_pressed<class_InputEvent_is_pressed>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:41
+msgid ""
+":ref:`shortcut_match<class_InputEvent_shortcut_match>` **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:43
+msgid ":ref:`InputEvent<class_inputevent>`"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:43
+msgid ""
+":ref:`xformed_by<class_InputEvent_xformed_by>` **(** "
+":ref:`Transform2D<class_transform2d>` xform, "
+":ref:`Vector2<class_vector2>` local_ofs=Vector2( 0, 0 ) **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:47
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:51
+msgid ":ref:`int<class_int>` **device** - The event's device ID."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:55
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:57
+msgid ""
+"Base class of all sort of input event. See "
+":ref:`Node._input<class_Node__input>`."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:60
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:64
+msgid ""
+":ref:`bool<class_bool>` **action_match** **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:66
+msgid "Returns ``true`` if this event matches ``event``."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:70
+msgid ":ref:`String<class_string>` **as_text** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:72
+msgid "Returns a :ref:`String<class_string>` representation of the event."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:76
+msgid ""
+":ref:`bool<class_bool>` **is_action** **(** :ref:`String<class_string>` "
+"action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:78
+msgid ""
+"Returns ``true`` if this input event matches a pre-defined action of any "
+"type."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:82
+msgid ""
+":ref:`bool<class_bool>` **is_action_pressed** **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:84
+msgid ""
+"Returns ``true`` if the given action is being pressed (and is not an echo"
+" event for KEY events). Not relevant for the event types "
+"``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:88
+msgid ""
+":ref:`bool<class_bool>` **is_action_released** **(** "
+":ref:`String<class_string>` action **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:90
+msgid ""
+"Returns ``true`` if the given action is released (i.e. not pressed). Not "
+"relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or "
+"``NONE``."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:94
+msgid ":ref:`bool<class_bool>` **is_action_type** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:96
+msgid ""
+"Returns ``true`` if this input event's type is one of the ``InputEvent`` "
+"constants."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:100
+msgid ":ref:`bool<class_bool>` **is_echo** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:102
+msgid ""
+"Returns ``true`` if this input event is an echo event (only for events of"
+" type KEY)."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:106
+msgid ":ref:`bool<class_bool>` **is_pressed** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:108
+msgid ""
+"Returns ``true`` if this input event is pressed. Not relevant for the "
+"event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``."
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:112
+msgid ""
+":ref:`bool<class_bool>` **shortcut_match** **(** "
+":ref:`InputEvent<class_inputevent>` event **)** const"
+msgstr ""
+
+#: ../../classes/class_inputevent.rst:116
+msgid ""
+":ref:`InputEvent<class_inputevent>` **xformed_by** **(** "
+":ref:`Transform2D<class_transform2d>` xform, "
+":ref:`Vector2<class_vector2>` local_ofs=Vector2( 0, 0 ) **)** const"
+msgstr ""
+

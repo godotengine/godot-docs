@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/math/matrices_and_transforms.rst:4
+msgid "Matrices and transforms"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:9
+msgid ""
+"Before reading this tutorial, it is advised to read the previous one "
+"about :ref:`doc_vector_math` as this one is a direct continuation."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:12
+msgid ""
+"This tutorial will be about *transformations* and will cover a little "
+"about matrices (but not in-depth)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:15
+msgid ""
+"Transformations are most of the time applied as translation, rotation and"
+" scale so they will be considered as priority here."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:19
+msgid "Oriented coordinate system (OCS)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:21
+msgid ""
+"Imagine we have a spaceship somewhere in space. In Godot this is easy, "
+"just move the ship somewhere and rotate it:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:26
+msgid ""
+"Ok, so in 2D this looks simple, a position and an angle for a rotation. "
+"But remember, we are grown ups here and don't use angles (plus, angles "
+"are not really even that useful when working in 3D)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:30
+msgid ""
+"We should realize that at some point, someone *designed* this spaceship. "
+"Be it for 2D in a drawing such as Paint.net, Gimp, Photoshop, etc. or in "
+"3D through a 3D DCC tool such as Blender, Max, Maya, etc."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:35
+msgid ""
+"When it was designed, it was not rotated. It was designed in its own "
+"*coordinate system*."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:40
+msgid ""
+"This means that the tip of the ship has a coordinate, the fin has "
+"another, etc. Be it in pixels (2D) or vertices (3D)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:43
+msgid "So, let's recall again that the ship was somewhere in space:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:47
+msgid ""
+"How did it get there? What moved it and rotated it from the place it was "
+"designed to its current position? The answer is... a **transform**, the "
+"ship was *transformed* from their original position to the new one. This "
+"allows the ship to be displayed where it is."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:52
+msgid ""
+"But transform is too generic of a term to describe this process. To solve"
+" this puzzle, we will superimpose the ship's original design position at "
+"their current position:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:58
+msgid ""
+"So, we can see that the \"design space\" has been transformed too. How "
+"can we best represent this transformation? Let's use 3 vectors for this "
+"(in 2D), a unit vector pointing towards X positive, a unit vector "
+"pointing towards Y positive and a translation."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:65
+msgid ""
+"Let's call the 3 vectors \"X\", \"Y\" and \"Origin\", and let's also "
+"superimpose them over the ship so it makes more sense:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:70
+msgid ""
+"Ok, this is nicer, but it still does not make sense. What do X,Y and "
+"Origin have to do with how the ship got there?"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:73
+msgid "Well, let's take the point from top tip of the ship as reference:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:77
+msgid ""
+"And let's apply the following operation to it (and to all the points in "
+"the ship too, but we'll track the top tip as our reference point):"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:84
+msgid "Doing this to the selected point will move it back to the center:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:88
+msgid ""
+"This was expected, but then let's do something more interesting. Use the "
+"dot product of X and the point, and add it to the dot product of Y and "
+"the point:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:96
+msgid ""
+"Then what we have is.. wait a minute, it's the ship in its design "
+"position!"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:101
+msgid ""
+"How did this black magic happen? The ship was lost in space, and now it's"
+" back home!"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:104
+msgid ""
+"It might seem strange, but it does have plenty of logic. Remember, as we "
+"have seen in the :ref:`doc_vector_math`, what happened is that the "
+"distance to X axis, and the distance to Y axis were computed. Calculating"
+" distance in a direction or plane was one of the uses for the dot "
+"product. This was enough to obtain back the design coordinates for every "
+"point in the ship."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:111
+msgid ""
+"So, what we have been working with so far (with X, Y and Origin) is an "
+"*Oriented Coordinate System*. X an Y are the **Basis**, and *Origin* is "
+"the offset."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:116
+#: ../../tutorials/math/matrices_and_transforms.rst:439
+msgid "Basis"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:118
+msgid ""
+"We know what the Origin is. It's where the 0,0 (origin) of the design "
+"coordinate system ended up after being transformed to a new position. "
+"This is why it's called *Origin*, But in practice, it's just an offset to"
+" the new position."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:123
+msgid ""
+"The Basis is more interesting. The basis is the direction of X and Y in "
+"the OCS from the new, transformed location. It tells what has changed, in"
+" either 2D or 3D. The Origin (offset) and Basis (direction) communicate "
+"\"Hey, the original X and Y axes of your design are *right here*, "
+"pointing towards *these directions*.\""
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:129
+msgid ""
+"So, let's change the representation of the basis. Instead of 2 vectors, "
+"let's use a *matrix*."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:134
+msgid ""
+"The vectors are up there in the matrix, horizontally. The next problem "
+"now is that.. what is this matrix thing? Well, we'll assume you've never "
+"heard of a matrix."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:139
+msgid "Transforms in Godot"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:141
+msgid ""
+"This tutorial will not explain matrix math (and their operations) in "
+"depth, only its practical use. There is plenty of material for that, "
+"which should be a lot simpler to understand after completing this "
+"tutorial. We'll just explain how to use transforms."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:147
+msgid "Transform2D"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:149
+msgid ""
+":ref:`class_Transform2D` is a 3x2 matrix. It has 3 Vector2 elements and "
+"it's used for 2D. The \"X\" axis is the element 0, \"Y\" axis is the "
+"element 1 and \"Origin\" is element 2. It's not divided in basis/origin "
+"for convenience, due to its simplicity."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:162
+msgid ""
+"Most operations will be explained with this datatype (Transform2D), but "
+"the same logic applies to 3D."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:166
+msgid "Identity"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:168
+msgid "By default, Transform2D is created as an \"identity\" matrix. This means:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:170
+msgid "'X' Points right: Vector2(1,0)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:171
+msgid "'Y' Points up (or down in pixels): Vector2(0,1)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:172
+msgid "'Origin' is the origin Vector2(0,0)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:176
+msgid ""
+"It's easy to guess that an *identity* matrix is just a matrix that aligns"
+" the transform to its parent coordinate system. It's an *OCS* that hasn't"
+" been translated, rotated or scaled. All transform types in Godot are "
+"created with *identity*."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:182
+msgid "Operations"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:185
+msgid "Rotation"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:187
+msgid "Rotating Transform2D is done by using the \"rotated\" function:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:197
+msgid "Translation"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:199
+msgid ""
+"There are two ways to translate a Transform2D, the first one is just "
+"moving the origin:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:211
+msgid "This will always work in global coordinates."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:213
+msgid ""
+"If instead, translation is desired in *local* coordinates of the matrix "
+"(towards where the *basis* is oriented), there is the "
+":ref:`Transform2D.translated() <class_Transform2D_translated>` method:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:228
+msgid "Scale"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:230
+msgid ""
+"A matrix can be scaled too. Scaling will multiply the basis vectors by a "
+"vector (X vector by x component of the scale, Y vector by y component of "
+"the scale). It will leave the origin alone:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:242
+msgid ""
+"These kind of operations in matrices are accumulative. It means every one"
+" starts relative to the previous one. For those who have been living on "
+"this planet long enough, a good reference of how transform works is this:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:249
+msgid ""
+"A matrix is used similarly to a turtle. The turtle most likely had a "
+"matrix inside (and you are likely learning this many years *after* "
+"discovering Santa is not real)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:254
+#: ../../tutorials/math/matrices_and_transforms.rst:482
+msgid "Transform"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:256
+msgid ""
+"Transform is the act of switching between coordinate systems. To convert "
+"a position (either 2D or 3D) from \"designer\" coordinate system to the "
+"OCS, the \"xform\" method is used."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:264
+msgid "And only for basis (no translation):"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:270
+msgid "Post - multiplying is also valid:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:277
+msgid "Inverse transform"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:279
+msgid ""
+"To do the opposite operation (what we did up there with the rocket), the "
+"\"xform_inv\" method is used:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:286
+msgid "Only for Basis:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:292
+msgid "Or pre-multiplication:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:299
+msgid "Orthonormal matrices"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:301
+msgid ""
+"However, if the matrix has been scaled (vectors are not unit length), or "
+"the basis vectors are not orthogonal (90°), the inverse transform will "
+"not work."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:305
+msgid ""
+"In other words, inverse transform is only valid in *orthonormal* "
+"matrices. For this, these cases an affine inverse must be computed."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:308
+msgid ""
+"The transform, or inverse transform of an identity matrix will return the"
+" position unchanged:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:317
+msgid "Affine inverse"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:319
+msgid ""
+"The affine inverse is a matrix that does the inverse operation of another"
+" matrix, no matter if the matrix has scale or the axis vectors are not "
+"orthogonal. The affine inverse is calculated with the affine_inverse() "
+"method:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:331
+msgid "If the matrix is orthonormal, then:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:341
+msgid "Matrix multiplication"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:343
+msgid ""
+"Matrices can be multiplied. Multiplication of two matrices \"chains\" "
+"(concatenates) their transforms."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:346
+msgid "However, as per convention, multiplication takes place in reverse order."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:349
+msgid "Example:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:355
+msgid "To make it a little clearer, this:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:362
+msgid "Is the same as:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:369
+msgid "However, this is not the same:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:376
+msgid "Because in matrix math, A * B is not the same as B * A."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:379
+msgid "Multiplication by inverse"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:381
+msgid "Multiplying a matrix by its inverse, results in identity:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:389
+msgid "Multiplication by identity"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:391
+msgid "Multiplying a matrix by identity, will result in the unchanged matrix:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:399
+msgid "Matrix tips"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:401
+msgid ""
+"When using a transform hierarchy, remember that matrix multiplication is "
+"reversed! To obtain the global transform for a hierarchy, do:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:408
+msgid "For 3 levels:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:414
+msgid ""
+"To make a matrix relative to the parent, use the affine inverse (or "
+"regular inverse for orthonormal matrices)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:422
+msgid "Revert it just like the example above:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:429
+msgid ""
+"OK, hopefully this should be enough! Let's complete the tutorial by "
+"moving to 3D matrices."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:433
+msgid "Matrices & transforms in 3D"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:435
+msgid ""
+"As mentioned before, for 3D, we deal with 3 :ref:`Vector3 "
+"<class_Vector3>` vectors for the rotation matrix, and an extra one for "
+"the origin."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:441
+msgid ""
+"Godot has a special type for a 3x3 matrix, named :ref:`Basis "
+"<class_basis>`. It can be used to represent a 3D rotation and scale. Sub "
+"vectors can be accessed as:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:452
+msgid "Or, alternatively as:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:461
+msgid "Basis is also initialized to Identity by default:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:466
+msgid "Rotation in 3D"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:468
+msgid ""
+"Rotation in 3D is more complex than in 2D (translation and scale are the "
+"same), because rotation is an implicit 2D operation. To rotate in 3D, an "
+"*axis*, must be picked. Rotation, then, happens around this axis."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:472
+msgid ""
+"The axis for the rotation must be a *normal vector*. As in, a vector that"
+" can point to any direction, but length must be one (1.0)."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:484
+msgid ""
+"To add the final component to the mix, Godot provides the :ref:`Transform"
+" <class_Transform>` type. Transform has two members:"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:487
+msgid "*basis* (of type :ref:`Basis <class_Basis>`)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:488
+msgid "*origin* (of type :ref:`Vector3 <class_Vector3>`)"
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:490
+msgid ""
+"Any 3D transform can be represented with Transform, and the separation of"
+" basis and origin makes it easier to work translation and rotation "
+"separately."
+msgstr ""
+
+#: ../../tutorials/math/matrices_and_transforms.rst:494
+msgid "An example:"
+msgstr ""
+

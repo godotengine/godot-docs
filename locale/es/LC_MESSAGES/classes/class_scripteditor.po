@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_scripteditor.rst:8
+msgid "ScriptEditor"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:10
+msgid ""
+"**Inherits:** :ref:`PanelContainer<class_panelcontainer>` **<** "
+":ref:`Container<class_container>` **<** :ref:`Control<class_control>` "
+"**<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:23
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:23
+msgid ""
+":ref:`can_drop_data_fw<class_ScriptEditor_can_drop_data_fw>` **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, "
+":ref:`Control<class_control>` from **)** const"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:25
+#: ../../classes/class_scripteditor.rst:33
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:25
+msgid ""
+":ref:`drop_data_fw<class_ScriptEditor_drop_data_fw>` **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, "
+":ref:`Control<class_control>` from **)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:27
+msgid ":ref:`Script<class_script>`"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:27
+msgid ""
+":ref:`get_current_script<class_ScriptEditor_get_current_script>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:29
+msgid ":ref:`Variant<class_variant>`"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:29
+msgid ""
+":ref:`get_drag_data_fw<class_ScriptEditor_get_drag_data_fw>` **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`Control<class_control>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:31
+msgid ":ref:`Array<class_array>`"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:31
+msgid ""
+":ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>` **(** **)** "
+"const"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:33
+msgid ""
+":ref:`open_script_create_dialog<class_ScriptEditor_open_script_create_dialog>`"
+" **(** :ref:`String<class_string>` base_name, :ref:`String<class_string>`"
+" base_path **)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:37
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:41
+msgid "**editor_script_changed** **(** :ref:`Object<class_object>` script **)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:43
+msgid ""
+"Emitted when user changed active script. Argument is a freshly activated "
+":ref:`Script<class_script>`."
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:47
+msgid "**script_close** **(** :ref:`Object<class_object>` script **)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:49
+msgid ""
+"Emitted when editor is about to close the active script. Argument is a "
+":ref:`Script<class_script>` that is going to be closed."
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:53
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:57
+msgid ""
+":ref:`bool<class_bool>` **can_drop_data_fw** **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, "
+":ref:`Control<class_control>` from **)** const"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:61
+msgid ""
+"void **drop_data_fw** **(** :ref:`Vector2<class_vector2>` point, "
+":ref:`Variant<class_variant>` data, :ref:`Control<class_control>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:65
+msgid ":ref:`Script<class_script>` **get_current_script** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:67
+msgid "Returns a :ref:`Script<class_script>` that is currently active in editor."
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:71
+msgid ""
+":ref:`Variant<class_variant>` **get_drag_data_fw** **(** "
+":ref:`Vector2<class_vector2>` point, :ref:`Control<class_control>` from "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:75
+msgid ":ref:`Array<class_array>` **get_open_scripts** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:77
+msgid ""
+"Returns an array with all :ref:`Script<class_script>` objects which are "
+"currently open in editor."
+msgstr ""
+
+#: ../../classes/class_scripteditor.rst:81
+msgid ""
+"void **open_script_create_dialog** **(** :ref:`String<class_string>` "
+"base_name, :ref:`String<class_string>` base_path **)**"
+msgstr ""
+

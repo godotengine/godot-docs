@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_int.rst:8
+msgid "int"
+msgstr ""
+
+#: ../../classes/class_int.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_int.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_int.rst:15 ../../classes/class_int.rst:31
+msgid "Integer built-in type."
+msgstr ""
+
+#: ../../classes/class_int.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_int.rst:21 ../../classes/class_int.rst:23
+#: ../../classes/class_int.rst:25
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_int.rst:21
+msgid ":ref:`int<class_int_int>` **(** :ref:`bool<class_bool>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:23
+msgid ":ref:`int<class_int_int>` **(** :ref:`float<class_float>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:25
+msgid ":ref:`int<class_int_int>` **(** :ref:`String<class_string>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:29
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_int.rst:34
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_int.rst:38
+msgid ":ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:40
+msgid ""
+"Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` "
+"will be equals to 1 and ``int(false)`` will be equals to 0."
+msgstr ""
+
+#: ../../classes/class_int.rst:44
+msgid ":ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:46
+msgid ""
+"Cast a float value to an integer value, this method simply removes the "
+"number fractions, so for example ``int(2.7)`` will be equals to 2, "
+"``int(.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2."
+msgstr ""
+
+#: ../../classes/class_int.rst:50
+msgid ":ref:`int<class_int>` **int** **(** :ref:`String<class_string>` from **)**"
+msgstr ""
+
+#: ../../classes/class_int.rst:52
+msgid ""
+"Cast a :ref:`String<class_string>` value to an integer value, this method"
+" is an integer parser from a string, so calling this method with an "
+"invalid integer string will return 0, a valid string will be something "
+"like ``'1.7'``. This method will ignore all non-number characters, so "
+"calling ``int('1e3')`` will return 13."
+msgstr ""
+

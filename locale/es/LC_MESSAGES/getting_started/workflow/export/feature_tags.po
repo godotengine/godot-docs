@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/export/feature_tags.rst:4
+msgid "Feature Tags"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:9
+msgid ""
+"Godot has a special system to tag availability of features. Each "
+"*feature* is represented as a string, and it can refer to many of the "
+"following:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:12
+msgid "Platform name."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:13
+msgid "Platform bits (64/32)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:14
+msgid "Platform type (desktop/mobile)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:15
+msgid "Supported texture compression in platform."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:16
+msgid "Whether a build is debug or release."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:17
+msgid "Many more things."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:19
+msgid "Features can be queried in run-time to the singleton API by calling:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:27
+msgid "Default features"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:29
+msgid ""
+"Here is a list of most feature tags in Godot. Keep in mind they are *case"
+" sensitive*:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:32
+msgid "**Feature Tag**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:32
+msgid "**Description**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:34
+msgid "**Android**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:34
+msgid "Running on Android"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:36
+msgid "**JavaScript**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:36
+msgid "Running on JavaScript (HTML5)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:38
+msgid "**OSX**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:38
+msgid "Running on macOS"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:40
+msgid "**iOS**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:40
+msgid "Running on iOS"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:42
+msgid "**UWP**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:42
+msgid "Running on UWB"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:44
+msgid "**Windows**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:44
+msgid "Running on Windows"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:46
+msgid "**X11**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:46
+msgid "Running on X11"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:48
+msgid "**debug**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:48
+msgid "Running on debug build"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:50
+msgid "**release**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:50
+msgid "Running on release build"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:52
+msgid "**32**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:52
+msgid "Running on 32-bit build"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:54
+msgid "**64**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:54
+msgid "Running on 64-bit build"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:56
+msgid "**mobile**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:56
+msgid "Host OS is a mobile platform"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:58
+msgid "**pc**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:58
+msgid "Host OS is a PC platform (desktop/laptop)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:60
+msgid "**web**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:60
+msgid "Host OS is a Web browser"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:62
+msgid "**etc**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:62
+msgid "Textures using ETC1 compression are supported"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:64
+msgid "**etc2**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:64
+msgid "Textures using ETC2 compression are supported"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:66
+msgid "**s3tc**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:66
+msgid "Textures using S3TC (DXT/BC) compression are supported"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:68
+msgid "**pvrtc**"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:68
+msgid "Textures using PVRTC compression are supported"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:72
+msgid "Custom features"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:74
+msgid ""
+"It is possible to add custom features to a build, just use the relevant "
+"field in the *export preset* used to generate it:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:80
+msgid "Overriding project settings"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:82
+msgid ""
+"Features can be used to override specific configuration values in the "
+"*Project Settings*. This allows to better customize any configuration "
+"when doing a build."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:85
+msgid ""
+"In the following example, a different icon is added for the demo build of"
+" the game (which was customized in a special export preset which, in "
+"turn, includes only demo levels)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:90
+msgid "After overriding, a new field is added for this specific configuration:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:95
+msgid "Default overrides"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:97
+msgid ""
+"There are already a lot of settings that come with overrides by default, "
+"they can be found in many sections of the project settings."
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:103
+msgid "Customizing Build"
+msgstr ""
+
+#: ../../getting_started/workflow/export/feature_tags.rst:105
+msgid ""
+"Feature tags can be used to customize a build process too, by writing a "
+"custom **ExportPlugin**. They also are used to specify which shared "
+"library is loaded and exported in **GDNative**."
+msgstr ""
+

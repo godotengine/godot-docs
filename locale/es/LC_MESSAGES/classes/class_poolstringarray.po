@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_poolstringarray.rst:8
+msgid "PoolStringArray"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:10
+msgid "**Category:** Built-In Types"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:13
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:15
+msgid "String Array."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:18
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:21
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:21
+msgid ""
+":ref:`PoolStringArray<class_PoolStringArray_PoolStringArray>` **(** "
+":ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:23
+#: ../../classes/class_poolstringarray.rst:25
+#: ../../classes/class_poolstringarray.rst:29
+#: ../../classes/class_poolstringarray.rst:33
+#: ../../classes/class_poolstringarray.rst:35
+#: ../../classes/class_poolstringarray.rst:37
+#: ../../classes/class_poolstringarray.rst:39
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:23
+msgid ""
+":ref:`append<class_PoolStringArray_append>` **(** "
+":ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:25
+msgid ""
+":ref:`append_array<class_PoolStringArray_append_array>` **(** "
+":ref:`PoolStringArray<class_poolstringarray>` array **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:27
+#: ../../classes/class_poolstringarray.rst:41
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:27
+msgid ""
+":ref:`insert<class_PoolStringArray_insert>` **(** :ref:`int<class_int>` "
+"idx, :ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:29
+msgid ":ref:`invert<class_PoolStringArray_invert>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:31
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:31
+msgid ""
+":ref:`join<class_PoolStringArray_join>` **(** :ref:`String<class_string>`"
+" delimiter **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:33
+msgid ""
+":ref:`push_back<class_PoolStringArray_push_back>` **(** "
+":ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:35
+msgid ""
+":ref:`remove<class_PoolStringArray_remove>` **(** :ref:`int<class_int>` "
+"idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:37
+msgid ""
+":ref:`resize<class_PoolStringArray_resize>` **(** :ref:`int<class_int>` "
+"idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:39
+msgid ""
+":ref:`set<class_PoolStringArray_set>` **(** :ref:`int<class_int>` idx, "
+":ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:41
+msgid ":ref:`size<class_PoolStringArray_size>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:45
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:47
+msgid ""
+"String Array. Array of strings. Can only contain strings. Optimized for "
+"memory usage, can't fragment the memory."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:50
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:54
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` **PoolStringArray** **(** "
+":ref:`Array<class_array>` from **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:56
+msgid "Create from a generic array."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:60
+msgid "void **append** **(** :ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:62
+msgid ""
+"Append an element at the end of the array (alias of "
+":ref:`push_back<class_PoolStringArray_push_back>`)."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:66
+msgid ""
+"void **append_array** **(** :ref:`PoolStringArray<class_poolstringarray>`"
+" array **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:68
+msgid "Append an StringArray at the end of this array."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:72
+msgid ""
+":ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, "
+":ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:74
+msgid ""
+"Insert a new element at a given position in the array. The position must "
+"be valid, or at the end of the array (pos==size())."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:78
+msgid "void **invert** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:80
+msgid ""
+"Reverse the order of the elements in the array (so first element will now"
+" be the last)."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:84
+msgid ""
+":ref:`String<class_string>` **join** **(** :ref:`String<class_string>` "
+"delimiter **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:86
+msgid ""
+"Returns a :ref:`String<class_string>` with each element of the array "
+"joined with the delimiter."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:90
+msgid "void **push_back** **(** :ref:`String<class_string>` string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:92
+msgid "Append a string element at end of the array."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:96
+msgid "void **remove** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:98
+msgid "Remove an element from the array by index."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:102
+msgid "void **resize** **(** :ref:`int<class_int>` idx **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:104
+msgid ""
+"Set the size of the array. If the array is grown reserve elements at the "
+"end of the array. If the array is shrunk truncate the array to the new "
+"size."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:108
+msgid ""
+"void **set** **(** :ref:`int<class_int>` idx, :ref:`String<class_string>`"
+" string **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:110
+msgid "Change the :ref:`String<class_string>` at the given index."
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:114
+msgid ":ref:`int<class_int>` **size** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_poolstringarray.rst:116
+msgid "Return the size of the array."
+msgstr ""
+

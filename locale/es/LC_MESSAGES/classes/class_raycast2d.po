@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_raycast2d.rst:8
+msgid "RayCast2D"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:17
+msgid "Query the closest object intersecting a ray."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:23 ../../classes/class_raycast2d.rst:25
+#: ../../classes/class_raycast2d.rst:27 ../../classes/class_raycast2d.rst:29
+#: ../../classes/class_raycast2d.rst:43 ../../classes/class_raycast2d.rst:45
+#: ../../classes/class_raycast2d.rst:47
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:23
+msgid ""
+":ref:`add_exception<class_RayCast2D_add_exception>` **(** "
+":ref:`Object<class_object>` node **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:25
+msgid ""
+":ref:`add_exception_rid<class_RayCast2D_add_exception_rid>` **(** "
+":ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:27
+msgid ":ref:`clear_exceptions<class_RayCast2D_clear_exceptions>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:29
+msgid ""
+":ref:`force_raycast_update<class_RayCast2D_force_raycast_update>` **(** "
+"**)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:31
+msgid ":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:31
+msgid ":ref:`get_collider<class_RayCast2D_get_collider>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:33
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:33
+msgid ""
+":ref:`get_collider_shape<class_RayCast2D_get_collider_shape>` **(** **)**"
+" const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:35 ../../classes/class_raycast2d.rst:41
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:35
+msgid ""
+":ref:`get_collision_mask_bit<class_RayCast2D_get_collision_mask_bit>` "
+"**(** :ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:37 ../../classes/class_raycast2d.rst:39
+msgid ":ref:`Vector2<class_vector2>`"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:37
+msgid ""
+":ref:`get_collision_normal<class_RayCast2D_get_collision_normal>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:39
+msgid ""
+":ref:`get_collision_point<class_RayCast2D_get_collision_point>` **(** "
+"**)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:41
+msgid ":ref:`is_colliding<class_RayCast2D_is_colliding>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:43
+msgid ""
+":ref:`remove_exception<class_RayCast2D_remove_exception>` **(** "
+":ref:`Object<class_object>` node **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:45
+msgid ""
+":ref:`remove_exception_rid<class_RayCast2D_remove_exception_rid>` **(** "
+":ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:47
+msgid ""
+":ref:`set_collision_mask_bit<class_RayCast2D_set_collision_mask_bit>` "
+"**(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:51
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:55
+msgid ""
+":ref:`Vector2<class_vector2>` **cast_to** - The ray's destination point, "
+"relative to the RayCast's ``position``."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:59
+msgid ""
+":ref:`int<class_int>` **collision_mask** - The ray's collision mask. Only"
+" objects in at least one collision layer enabled in the mask will be "
+"detected."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:63
+msgid ""
+":ref:`bool<class_bool>` **enabled** - If ``true``, collisions will be "
+"reported. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:67
+msgid ""
+":ref:`bool<class_bool>` **exclude_parent** - If ``true``, the parent node"
+" will be excluded from collision detection. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:71
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:73
+msgid ""
+"A RayCast represents a line from its origin to its destination position, "
+"``cast_to``. It is used to query the 2D space in order to find the "
+"closest object along the path of the ray."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:75
+msgid ""
+"RayCast2D can ignore some objects by adding them to the exception list "
+"via ``add_exception``, by setting proper filtering with collision layers,"
+" or by filtering object types with type masks."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:77
+msgid ""
+"Only enabled raycasts will be able to query the space and report "
+"collisions."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:79
+msgid ""
+"RayCast2D calculates intersection every physics frame (see "
+":ref:`Node<class_node>`), and the result is cached so it can be used "
+"later until the next frame. If multiple queries are required between "
+"physics frames (or during the same frame) use "
+":ref:`force_raycast_update<class_RayCast2D_force_raycast_update>` after "
+"adjusting the raycast."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:82
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:86
+msgid "void **add_exception** **(** :ref:`Object<class_object>` node **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:88
+msgid ""
+"Adds a collision exception so the ray does not report collisions with the"
+" specified node."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:92
+msgid "void **add_exception_rid** **(** :ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:94
+msgid ""
+"Adds a collision exception so the ray does not report collisions with the"
+" specified :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:98
+msgid "void **clear_exceptions** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:100
+msgid "Removes all collision exceptions for this ray."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:104
+msgid "void **force_raycast_update** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:106
+msgid ""
+"Updates the collision information for the ray.  Use this method to update"
+" the collision information immediately instead of waiting for the next "
+"``_physics_process`` call, for example if the ray or its parent has "
+"changed state. Note: ``enabled == true`` is not required for this to "
+"work."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:110
+msgid ":ref:`Object<class_object>` **get_collider** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:112
+msgid ""
+"Returns the closest object the ray is pointing to. Note that this does "
+"not consider the length of the ray, so you must also use "
+":ref:`is_colliding<class_RayCast2D_is_colliding>` to check if the object "
+"returned is actually colliding with the ray."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:114 ../../classes/class_raycast2d.rst:127
+msgid "Example:"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:123
+msgid ":ref:`int<class_int>` **get_collider_shape** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:125
+msgid ""
+"Returns the collision shape of the closest object the ray is pointing to."
+"  Note that this does not consider the length of the ray, so you must "
+"also use :ref:`is_colliding<class_RayCast2D_is_colliding>` to check if "
+"the object returned is actually colliding with the ray."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:136
+msgid ""
+":ref:`bool<class_bool>` **get_collision_mask_bit** **(** "
+":ref:`int<class_int>` bit **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:138
+msgid "Return an individual bit on the collision mask."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:142
+msgid ":ref:`Vector2<class_vector2>` **get_collision_normal** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:144
+msgid ""
+"Returns the normal of the intersecting object's shape at the collision "
+"point."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:148
+msgid ":ref:`Vector2<class_vector2>` **get_collision_point** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:150
+msgid ""
+"Returns the collision point at which the ray intersects the closest "
+"object. Note: this point is in the **global** coordinate system."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:154
+msgid ":ref:`bool<class_bool>` **is_colliding** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:156
+msgid ""
+"Return whether the closest object the ray is pointing to is colliding "
+"with the vector (considering the vector length)."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:160
+msgid "void **remove_exception** **(** :ref:`Object<class_object>` node **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:162
+msgid ""
+"Removes a collision exception so the ray does report collisions with the "
+"specified node."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:166
+msgid "void **remove_exception_rid** **(** :ref:`RID<class_rid>` rid **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:168
+msgid ""
+"Removes a collision exception so the ray does report collisions with the "
+"specified :ref:`RID<class_rid>`."
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:172
+msgid ""
+"void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, "
+":ref:`bool<class_bool>` value **)**"
+msgstr ""
+
+#: ../../classes/class_raycast2d.rst:174
+msgid ""
+"Set/clear individual bits on the collision mask. This makes selecting the"
+" areas scanned easier."
+msgstr ""
+

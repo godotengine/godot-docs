@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_animatedsprite.rst:8
+msgid "AnimatedSprite"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:10
+msgid ""
+"**Inherits:** :ref:`Node2D<class_node2d>` **<** "
+":ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:17
+msgid "Sprite node that can use multiple textures for animation."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:23
+msgid ":ref:`bool<class_bool>`"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:23
+msgid ":ref:`is_playing<class_AnimatedSprite_is_playing>` **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:25
+#: ../../classes/class_animatedsprite.rst:27
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:25
+msgid ""
+":ref:`play<class_AnimatedSprite_play>` **(** :ref:`String<class_string>` "
+"anim=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:27
+msgid ":ref:`stop<class_AnimatedSprite_stop>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:31
+msgid "Signals"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:35
+msgid "**animation_finished** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:37
+msgid ""
+"Emitted when the animation is finished (when it plays the last frame). If"
+" the animation is looping, this signal is emitted every time the last "
+"frame is drawn."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:41
+msgid "**frame_changed** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:43
+msgid "Emitted when :ref:`frame<class_AnimatedSprite_frame>` changed."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:47
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:51
+msgid ""
+":ref:`String<class_string>` **animation** - The current animation from "
+"the ``frames`` resource. If this value changes, the ``frame`` counter is "
+"reset."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:55
+msgid ""
+":ref:`bool<class_bool>` **centered** - If ``true`` texture will be "
+"centered. Default value: ``true``."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:59
+msgid ""
+":ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped "
+"horizontally. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:63
+msgid ""
+":ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped "
+"vertically. Default value: ``false``."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:67
+msgid ":ref:`int<class_int>` **frame** - The displayed animation frame's index."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:71
+msgid ""
+":ref:`SpriteFrames<class_spriteframes>` **frames** - The "
+":ref:`SpriteFrames<class_spriteframes>` resource containing the "
+"animation(s)."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:75
+msgid ":ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:79
+msgid ""
+":ref:`bool<class_bool>` **playing** - If ``true`` the "
+":ref:`animation<class_AnimatedSprite_animation>` is currently playing."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:83
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:85
+msgid ""
+"Animations are created using a :ref:`SpriteFrames<class_spriteframes>` "
+"resource, which can be configured in the editor via the SpriteFrames "
+"panel."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:88
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:92
+msgid ":ref:`bool<class_bool>` **is_playing** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:94
+msgid "Return true if an animation if currently being played."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:98
+msgid "void **play** **(** :ref:`String<class_string>` anim=\"\" **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:100
+msgid ""
+"Play the animation set in parameter. If no parameter is provided, the "
+"current animation is played."
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:104
+msgid "void **stop** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_animatedsprite.rst:106
+msgid "Stop the current animation (does not reset the frame counter)."
+msgstr ""
+

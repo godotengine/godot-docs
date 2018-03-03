@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:4
+msgid "One-click deploy"
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:7
+msgid "Sounds good, what is it?"
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:9
+msgid ""
+"This feature will pop up automatically once a platform is properly "
+"configured and a supported device is connected to the computer. Since "
+"things can go wrong at many levels (platform may not be configured "
+"correctly, SDK may be incorrectly installed, device may be improperly "
+"configured, kitty ate the USB cable, etc.), it's good to let the user "
+"know that it exists."
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:16
+msgid ""
+"Some platforms (at the time of this writing, only Android and Blackberry "
+"10) can detect when a USB device is connected to the computer, and offer "
+"the user to automatically export, install and run the project (in debug "
+"mode) on the device. This feature is called, in industry buzz-words, "
+"\"One Click Deploy\" (though, it's technically two clicks...)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:23
+msgid "Steps for one-click deploy"
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:25
+msgid "Configure target platform."
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:26
+msgid ""
+"Configure device (make sure it's in developer mode, likes the computer, "
+"usb is recognized, usb cable is plugged, etc.)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:28
+msgid "Connect the device.."
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:29
+msgid "And voila!"
+msgstr ""
+
+#: ../../getting_started/workflow/export/one-click_deploy.rst:33
+msgid "Click once.. and deploy!"
+msgstr ""
+

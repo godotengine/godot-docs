@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_gdnativelibrary.rst:8
+msgid "GDNativeLibrary"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:10
+msgid ""
+"**Inherits:** :ref:`Resource<class_resource>` **<** "
+":ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:23
+msgid ":ref:`ConfigFile<class_configfile>`"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:23
+msgid ":ref:`get_config_file<class_GDNativeLibrary_get_config_file>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:25
+msgid ":ref:`PoolStringArray<class_poolstringarray>`"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:25
+msgid ""
+":ref:`get_current_dependencies<class_GDNativeLibrary_get_current_dependencies>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:27
+msgid ":ref:`String<class_string>`"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:27
+msgid ""
+":ref:`get_current_library_path<class_GDNativeLibrary_get_current_library_path>`"
+" **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:31
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:35
+msgid ":ref:`bool<class_bool>` **load_once**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:39
+msgid ":ref:`bool<class_bool>` **reloadable**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:43
+msgid ":ref:`bool<class_bool>` **singleton**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:47
+msgid ":ref:`String<class_string>` **symbol_prefix**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:51
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:55
+msgid ":ref:`ConfigFile<class_configfile>` **get_config_file** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:59
+msgid ""
+":ref:`PoolStringArray<class_poolstringarray>` "
+"**get_current_dependencies** **(** **)** const"
+msgstr ""
+
+#: ../../classes/class_gdnativelibrary.rst:63
+msgid ":ref:`String<class_string>` **get_current_library_path** **(** **)** const"
+msgstr ""
+

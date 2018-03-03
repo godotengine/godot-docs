@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_boxcontainer.rst:8
+msgid "BoxContainer"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:10
+msgid ""
+"**Inherits:** :ref:`Container<class_container>` **<** "
+":ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` "
+"**<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:12
+msgid ""
+"**Inherited By:** :ref:`VBoxContainer<class_vboxcontainer>`, "
+":ref:`HBoxContainer<class_hboxcontainer>`, "
+":ref:`ColorPicker<class_colorpicker>`"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:14
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:17
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:19
+msgid "Base class for box containers."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:22
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:25
+msgid "void"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:25
+msgid ""
+":ref:`add_spacer<class_BoxContainer_add_spacer>` **(** "
+":ref:`bool<class_bool>` begin **)**"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:29
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:33
+msgid ""
+":ref:`AlignMode<enum_boxcontainer_alignmode>` **alignment** - The "
+"alignment of the container's children (must be one of ALIGN_BEGIN, "
+"ALIGN_CENTER, or ALIGN_END)."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:37
+msgid "Enums"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:41
+msgid "enum **AlignMode**"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:43
+msgid ""
+"**ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the "
+"container."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:44
+msgid ""
+"**ALIGN_CENTER** = **1** --- Aligns children with the center of the "
+"container."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:45
+msgid "**ALIGN_END** = **2** --- Aligns children with the end of the container."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:49
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:51
+msgid ""
+"Arranges child controls vertically or horizontally, and rearranges the "
+"controls automatically when their minimum size changes."
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:54
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:58
+msgid "void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**"
+msgstr ""
+
+#: ../../classes/class_boxcontainer.rst:60
+msgid ""
+"Adds a control to the box as a spacer. If ``true``, *begin* will insert "
+"the spacer control in front of other children."
+msgstr ""
+

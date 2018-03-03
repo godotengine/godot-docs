@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_semaphore.rst:8
+msgid "Semaphore"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:10
+msgid ""
+"**Inherits:** :ref:`Reference<class_reference>` **<** "
+":ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:17
+msgid "A synchronization Semaphore."
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:20
+msgid "Member Functions"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:23 ../../classes/class_semaphore.rst:25
+msgid ":ref:`int<class_int>`"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:23
+msgid ":ref:`post<class_Semaphore_post>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:25
+msgid ":ref:`wait<class_Semaphore_wait>` **(** **)**"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:29
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:31
+msgid ""
+"A synchronization Semaphore. Element used to synchronize multiple "
+":ref:`Thread<class_thread>`\\ s. Initialized to zero on creation. Be "
+"careful to avoid deadlocks. For a binary version, see "
+":ref:`Mutex<class_mutex>`."
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:34
+msgid "Member Function Description"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:38
+msgid ":ref:`int<class_int>` **post** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:40
+msgid ""
+"Lowers the ``Semaphore``, allowing one more thread in. Returns OK on "
+"success, ERR_BUSY otherwise."
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:44
+msgid ":ref:`int<class_int>` **wait** **(** **)**"
+msgstr ""
+
+#: ../../classes/class_semaphore.rst:46
+msgid ""
+"Tries to wait for the ``Semaphore``, if its value is zero, blocks until "
+"non-zero. Returns OK on success, ERR_BUSY otherwise."
+msgstr ""
+

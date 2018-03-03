@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../classes/class_atlastexture.rst:8
+msgid "AtlasTexture"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:10
+msgid ""
+"**Inherits:** :ref:`Texture<class_texture>` **<** "
+":ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` "
+"**<** :ref:`Object<class_object>`"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:12
+msgid "**Category:** Core"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:15
+msgid "Brief Description"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:17
+msgid ""
+"Packs multiple small textures in a single, bigger one. Helps to optimize "
+"video memory costs and render calls."
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:20
+msgid "Member Variables"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:24
+msgid ""
+":ref:`Texture<class_texture>` **atlas** - The texture that contains the "
+"atlas. Can be any :ref:`Texture<class_texture>` subtype."
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:28
+msgid ""
+":ref:`bool<class_bool>` **filter_clip** - If ``true`` clips the area "
+"outside of the region to avoid bleeding of the surrounding texture "
+"pixels."
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:32
+msgid ""
+":ref:`Rect2<class_rect2>` **margin** - The margin around the region. The "
+":ref:`Rect2<class_rect2>`'s 'size' parameter ('w' and 'h' in the editor) "
+"resizes the texture so it fits within the margin."
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:36
+msgid ":ref:`Rect2<class_rect2>` **region** - The AtlasTexture's used region."
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:40
+msgid "Description"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:42
+msgid ""
+":ref:`Texture<class_texture>` resource aimed at managing big textures "
+"files that pack multiple smaller textures. Consists of a "
+":ref:`Texture<class_texture>`, a margin that defines the border width,"
+msgstr ""
+
+#: ../../classes/class_atlastexture.rst:44
+msgid "and a region that defines the actual area of the AtlasTexture."
+msgstr ""
+
