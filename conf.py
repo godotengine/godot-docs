@@ -94,3 +94,10 @@ latex_documents = [
   (master_doc, 'GodotEngine.tex', 'Godot Engine Documentation',
    'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
 ]
+
+# -- I18n settings --------------------------------------------------------
+locale_dirs = ['locale/']
+gettext_compact = False
+# Exclude class reference when marked with tag i18n.
+if tags.has('i18n'):
+    exclude_patterns = ['classes']
