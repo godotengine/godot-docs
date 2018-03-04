@@ -6,7 +6,7 @@ Making HTTP requests
 The :ref:`HTTPRequest <class_HTTPRequest>` node is the easiest way to make HTTP requests in Godot.
 It is backed by the more low-level :ref:`HTTPClient <class_HTTPClient>`, for which a tutorial is available :ref:`here <doc_http_client_class>`.
 
-For the sake of example, we will create a simple UI with a button, that when pressed will start the HTTP request to the specified URL.
+For the sake of this example, we will create a simple UI with a button, that when pressed will start the HTTP request to the specified URL.
 
 Preparing scene
 ---------------
