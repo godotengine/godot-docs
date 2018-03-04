@@ -3,8 +3,9 @@
 Exporting for iOS
 =================
 
-These are the steps to load your game in an Xcode project, where you can deploy to a device,
-publish, etc.
+These are the steps to load a Godot project in Xcode. This allows you to 
+build and deploy to an iOS device, build a release for the App Store, and 
+do everything else you can normally do with Xcode.
 
 Requirements
 ------------
@@ -13,8 +14,8 @@ Requirements
 -  Download the Godot export templates. Use the Godot menu: Editor > Manage Export Templates
 
 
-Exporting your project
-----------------------
+Export a Godot project to Xcode
+-------------------------------
 
 In the Godot editor, open the **Export** window from the **Project** menu. When the 
 Export window opens, click **Add..** and select **iOS**. 
@@ -30,47 +31,51 @@ exporter to throw an error:
 
 After you click **Export Project**, there are still two important options left:
 
-  * **Path** should be an empty folder that will contain your exported Xcode project files. 
-  * **File** will be the name of your Xcode project and several project specific files and directories.  
+  * **Path** is an empty folder that will contain the exported Xcode project files. 
+  * **File** will be the name of the Xcode project and several project specific files and directories.  
 
 .. image:: img/ios_export_file.png
 
-When the export completes, the options I used will create a directory that looks like this:
+.. note:: I chose the name **exported_xcode_project_name**, for this tutorial, 
+          but you will use your project's name. When you see **exported_xcode_project_name** 
+          in the following steps, replace it with the name you used instead. 
+
+When the export completes, my folder looks like this:
 
 .. image:: img/ios_export_output.png
 
-I can now open **exported_xcode_project_name.xcodeproj** to build and deploy my game
+Opening **exported_xcode_project_name.xcodeproj** lets me build and deploy my game
 like any other iOS app. 
 
 
 Active development considerations
 ---------------------------------
 
-The above method creates an exported project that you can build for release, but you
-have to re-export every time you make a change in Godot. 
+The above method creates an exported project that I can build for release, but I
+have to re-export every time I make a change in Godot. 
 
-While developing your game, you can speed this process up by building your Godot project
-files directly into your app. 
+While developing, I can speed this process up by linking my Godot project
+files directly into my app. 
 
 In the following example:
 
   * **exported_xcode_project_name** is the name of the exported iOS application (as above). 
   * **godot_project_to_export** is the name of the Godot project I exported it from. 
 
-Steps to use your Godot project directory in Xcode
+Steps to link an Godot project folder to Xcode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Start from an exported iOS project like I created above.
-2. In Finder, drag your Godot project folder into the Xcode file browser. 
+2. In Finder, drag the Godot project folder into the Xcode file browser. 
 
 .. image:: img/ios_export_add_dir.png
 
 3. In the dialog, make sure **Create folder references** is selected. This means
-that you can continue to edit your Godot project in its current location.
+I can continue to edit my Godot project in its current location.
 
 .. image:: img/ios_export_file_ref.png
 
-4. You now see the **godot_project_to_export** directory in the Xcode file browser. 
+4. See the **godot_project_to_export** folder in the Xcode file browser. 
 5. Delete **exported_xcode_project_name.pck** from the Xcode project.
 
 .. image:: img/ios_export_delete_pck.png
@@ -81,9 +86,8 @@ that you can continue to edit your Godot project in its current location.
 
 .. image:: img/ios_export_set_path.png
 
-That's it! Continue to edit your project in the Godot editor and build it in Xcode when you 
+That's it! I can now edit my project in the Godot editor and build it in Xcode when I 
 want to run it on a device. 
-
 
 Services for iOS
 ----------------
