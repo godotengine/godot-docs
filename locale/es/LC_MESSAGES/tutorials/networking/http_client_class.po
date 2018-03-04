@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"POT-Creation-Date: 2018-03-04 15:48-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,19 @@ msgstr ""
 
 #: ../../tutorials/networking/http_client_class.rst:6
 msgid ""
+":ref:`HTTPClient <class_HTTPClient>` provides low-level access to HTTP "
+"communication. For a more higher-level interface, you may want to take a "
+"look at :ref:`HTTPRequest <class_HTTPRequest>` first, which has a "
+"tutorial available :ref:`here <doc_http_request_class>`."
+msgstr ""
+
+#: ../../tutorials/networking/http_client_class.rst:10
+msgid ""
 "Here's an example of using the :ref:`HTTPClient <class_HTTPClient>` "
 "class. It's just a script, so it can be run by executing:"
 msgstr ""
 
-#: ../../tutorials/networking/http_client_class.rst:13
+#: ../../tutorials/networking/http_client_class.rst:17
 msgid "It will connect and fetch a website."
 msgstr ""
 

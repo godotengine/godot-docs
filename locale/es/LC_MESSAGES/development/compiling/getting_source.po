@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-04 15:48-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/compiling/getting_source.rst:4
+msgid "Getting the source"
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:7
+msgid "Downloading the Godot source code"
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:9
+msgid ""
+"Before :ref:`getting into the SCons build system "
+"<doc_introduction_to_the_buildsystem>` and compiling Godot, you need to "
+"actually download the Godot source code."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:12
+msgid ""
+"The source code is available on `GitHub "
+"<https://github.com/godotengine/godot>`__ and while you can manually "
+"download it via the website, in general you want to do it via the ``git``"
+" version control system."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:16
+msgid ""
+"If you don't know much about ``git`` yet, there are a great number of "
+"`tutorials <https://git-scm.com/book>`__ available on various websites."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:19
+msgid ""
+"In general, you need to install ``git`` and/or one of the various GUI "
+"clients."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:21
+msgid ""
+"Afterwards, to get the latest development version of the Godot source "
+"code (the unstable ``master`` branch), you can use ``git clone``."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:24
+msgid ""
+"If you are using the ``git`` command line client, this is done by "
+"entering the following in a terminal:"
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:31
+msgid ""
+"For any stable release, visit the `release page "
+"<https://github.com/godotengine/godot/releases>`__ and click on the link "
+"for the release you want. You can then download and extract the source "
+"from the download link on the page."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:35
+msgid ""
+"There are also generally branches besides ``master`` for each major "
+"version."
+msgstr ""
+
+#: ../../development/compiling/getting_source.rst:37
+msgid ""
+"After downloading the Godot source code, you can :ref:`continue to "
+"compiling Godot <doc_introduction_to_the_buildsystem>`."
+msgstr ""
+

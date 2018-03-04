@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"POT-Creation-Date: 2018-03-04 15:48-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,31 +97,66 @@ msgstr ""
 
 #: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:65
 msgid ""
-"You can use ``Connect(\"SomeSignal\", someObject, \"SomeMethod\")`` to "
-"connect to signals. ``AddUserSignal(\"SignalName\")`` is used to define "
-"custom signals. Emitting signals is done with "
-"``EmitSignal(\"SignalName\")``. Params can be given, like "
-"``EmitSignal(\"SignalName\", arg1, arg2, ...)``."
+"Declaring a signal in C# is done with the ``[Signal]`` attribute on a "
+"delegate."
 msgstr ""
 
-#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:69
-msgid "**Custom signals**"
-msgstr ""
-
-#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:88
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:75
 msgid ""
-"Above in line 5, ``AddUserSignal()`` is used to define the new custom "
-"signal ``YourSignal``. In line 10 ``EmitSignal()`` is used to emit that "
-"custom signal on every frame in ``_Process()``."
+"These signals can then be connected either in the editor or from code "
+"with ``Connect``."
 msgstr ""
 
-#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:91
-msgid ""
-"Make sure that ``AddUserSignal()`` is always executed before any calls "
-"using that signal (``EmitSignal()`` and ``Connect()``). If you are using "
-"both ``AddUserSignal()`` and ``Connect()`` or ``EmitSignal()`` in "
-"``_Ready()``, this is especially important as load order of your node may"
-" change, and thus the order in which your various ``_Ready()`` functions "
-"are called."
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:95
+msgid "Emitting signals is done with the ``EmitSignal`` method."
 msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:105
+msgid ""
+"Notice that you can always reference a signal name with the ``nameof`` "
+"keyword (applied on the delegate itself)."
+msgstr ""
+
+#: ../../getting_started/scripting/c_sharp/c_sharp_features.rst:107
+msgid ""
+"Finally, signals can be created by calling ``AddUserSignal``, but be "
+"aware that it should be executed before any use of said signals (with "
+"``Connect`` or ``EmitSignal``)."
+msgstr ""
+
+#~ msgid ""
+#~ "You can use ``Connect(\"SomeSignal\", "
+#~ "someObject, \"SomeMethod\")`` to connect to"
+#~ " signals. ``AddUserSignal(\"SignalName\")`` is "
+#~ "used to define custom signals. Emitting"
+#~ " signals is done with "
+#~ "``EmitSignal(\"SignalName\")``. Params can be "
+#~ "given, like ``EmitSignal(\"SignalName\", arg1, "
+#~ "arg2, ...)``."
+#~ msgstr ""
+
+#~ msgid "**Custom signals**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Above in line 5, ``AddUserSignal()`` is"
+#~ " used to define the new custom "
+#~ "signal ``YourSignal``. In line 10 "
+#~ "``EmitSignal()`` is used to emit that"
+#~ " custom signal on every frame in "
+#~ "``_Process()``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Make sure that ``AddUserSignal()`` is "
+#~ "always executed before any calls using"
+#~ " that signal (``EmitSignal()`` and "
+#~ "``Connect()``). If you are using both"
+#~ " ``AddUserSignal()`` and ``Connect()`` or "
+#~ "``EmitSignal()`` in ``_Ready()``, this is "
+#~ "especially important as load order of"
+#~ " your node may change, and thus "
+#~ "the order in which your various "
+#~ "``_Ready()`` functions are called."
+#~ msgstr ""
 

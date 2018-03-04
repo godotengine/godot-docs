@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"POT-Creation-Date: 2018-03-04 16:40-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,7 +117,7 @@ msgid "**UWP**"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:42
-msgid "Running on UWB"
+msgid "Running on UWP"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:44
@@ -141,7 +141,7 @@ msgid "**debug**"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:48
-msgid "Running on debug build"
+msgid "Running on a debug build"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:50
@@ -149,7 +149,7 @@ msgid "**release**"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:50
-msgid "Running on release build"
+msgid "Running on a release build"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:52
@@ -157,7 +157,7 @@ msgid "**32**"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:52
-msgid "Running on 32-bit build"
+msgid "Running on a 32-bit build"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:54
@@ -165,7 +165,7 @@ msgid "**64**"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:54
-msgid "Running on 64-bit build"
+msgid "Running on a 64-bit build"
 msgstr ""
 
 #: ../../getting_started/workflow/export/feature_tags.rst:56
@@ -276,4 +276,19 @@ msgid ""
 "custom **ExportPlugin**. They also are used to specify which shared "
 "library is loaded and exported in **GDNative**."
 msgstr ""
+
+#~ msgid "Running on UWB"
+#~ msgstr ""
+
+#~ msgid "Running on debug build"
+#~ msgstr ""
+
+#~ msgid "Running on release build"
+#~ msgstr ""
+
+#~ msgid "Running on 32-bit build"
+#~ msgstr ""
+
+#~ msgid "Running on 64-bit build"
+#~ msgstr ""
 

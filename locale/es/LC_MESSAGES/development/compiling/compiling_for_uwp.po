@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"POT-Creation-Date: 2018-03-04 15:48-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,16 +124,18 @@ msgstr ""
 
 #: ../../development/compiling/compiling_for_uwp.rst:74
 msgid ""
-"Move those templates to the ``templates`` folder in Godot settings path. "
-"If you don't want to replacet the templates, you can set the \"Custom "
-"Package\" property in the export window."
-msgstr ""
-
-#: ../../development/compiling/compiling_for_uwp.rst:79
-msgid "Running UWP apps with Visual Studio"
+"Move those templates to the ``[versionstring]\\templates`` folder in "
+"Godot settings path, where `versionstring` is the version of Godot you "
+"have compiled the export templates for - e.g. `3.0.alpha` for the alpha "
+"version of Godot 3. If you don't want to replace the templates, you can "
+"set the \"Custom Package\" property in the export window."
 msgstr ""
 
 #: ../../development/compiling/compiling_for_uwp.rst:81
+msgid "Running UWP apps with Visual Studio"
+msgstr ""
+
+#: ../../development/compiling/compiling_for_uwp.rst:83
 msgid ""
 "If you want to debug the UWP port or simply run your apps without "
 "packaging and signing, you can deploy and launch them using Visual "
@@ -141,14 +143,14 @@ msgid ""
 "as a Windows Phone or an Xbox One."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:86
+#: ../../development/compiling/compiling_for_uwp.rst:88
 msgid ""
 "Within the ANGLE source folder, open ``templates`` and double-click the "
 "``install.bat`` script file. This will install the Visual Studio project "
 "templates for ANGLE apps."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:90
+#: ../../development/compiling/compiling_for_uwp.rst:92
 msgid ""
 "If you have not built Godot yet, open the ``winrt/10/src/angle.sln`` "
 "solution from the ANGLE source and build it to Release/Win32 target. You "
@@ -156,14 +158,14 @@ msgid ""
 " also use MSBuild if you're comfortable with the command line."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:95
+#: ../../development/compiling/compiling_for_uwp.rst:97
 msgid ""
 "Create a new Windows App project using the \"App for OpenGL ES (Windows "
 "Unversal)\" project template, which can be found under the ``Visual "
 "C++/Windows/Universal`` category."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:99
+#: ../../development/compiling/compiling_for_uwp.rst:101
 msgid ""
 "This is a base project with the ANGLE dependencies already set up. "
 "However, by default it picks the debug version of the DLLs which usually "
@@ -173,14 +175,14 @@ msgid ""
 "``Release_ARM`` for devices)."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:105
+#: ../../development/compiling/compiling_for_uwp.rst:107
 msgid ""
 "In the same \"Binaries\" filter, select \"Add > Existing Item\" and point"
 " to the Godot executable for UWP you have. In the \"Properties\" window, "
 "set \"Content\" to ``True`` so it's included in the project."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:109
+#: ../../development/compiling/compiling_for_uwp.rst:111
 msgid ""
 "Right-click the ``Package.appxmanifest`` file and select \"Open With... >"
 " XML (Text) Editor\". In the ``Package/Applications/Application`` "
@@ -191,7 +193,7 @@ msgid ""
 " called when the app starts."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:116
+#: ../../development/compiling/compiling_for_uwp.rst:118
 msgid ""
 "Create a folder (*not* a filter) called ``game`` in your Visual Studio "
 "project folder and there you can put either a ``data.pck`` file or your "
@@ -200,7 +202,7 @@ msgid ""
 "``True`` so they're copied to the app."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:122
+#: ../../development/compiling/compiling_for_uwp.rst:124
 msgid ""
 "To ease the workflow, you can open the \"Solution Properties\" and in the"
 " \"Configuration\" section untick the \"Build\" option for the app. You "
@@ -209,10 +211,19 @@ msgid ""
 "\"Solution Explorer\" and selecting \"Build\"."
 msgstr ""
 
-#: ../../development/compiling/compiling_for_uwp.rst:128
+#: ../../development/compiling/compiling_for_uwp.rst:130
 msgid ""
 "Now you can just run the project and your app should open. You can use "
 "also the \"Start Without Debugging\" from the \"Debug\" menu (Ctrl+F5) to"
 " make it launch faster."
 msgstr ""
+
+#~ msgid ""
+#~ "Move those templates to the "
+#~ "``templates`` folder in Godot settings "
+#~ "path. If you don't want to "
+#~ "replacet the templates, you can set "
+#~ "the \"Custom Package\" property in the"
+#~ " export window."
+#~ msgstr ""
 

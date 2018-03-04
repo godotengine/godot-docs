@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-04 16:40-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/networking/http_request_class.rst:4
+msgid "Making HTTP requests"
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:6
+msgid ""
+"The :ref:`HTTPRequest <class_HTTPRequest>` node is the easiest way to "
+"make HTTP requests in Godot. It is backed by the more low-level "
+":ref:`HTTPClient <class_HTTPClient>`, for which a tutorial is available "
+":ref:`here <doc_http_client_class>`."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:9
+msgid ""
+"For the sake of this example, we will create a simple UI with a button, "
+"that when pressed will start the HTTP request to the specified URL."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:12
+msgid "Preparing scene"
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:14
+msgid ""
+"Create a new empty scene, add a CanvasLayer as the root node and add an "
+"script to it. Then add two child nodes to it: a Button and an HTTPRequest"
+" node. You will need to connect the following signals to the CanvasLayer "
+"script:"
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:16
+msgid "Button.pressed: When the button is pressed, we will start the request."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:17
+msgid ""
+"HTTPRequest.request_completed: When the request is completed, we will get"
+" the requested data as an argument."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:22
+msgid "Scripting"
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:24
+msgid ""
+"Below is all the code we need to make it work. The URL points to an "
+"online API mocker; it returns a pre-defined JSON string, which we will "
+"then parse to get access to the data."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:40
+msgid ""
+"With this, you should see ``(hello:world)`` printed on the console; hello"
+" being a key, and world being a value, both of them strings."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:42
+msgid ""
+"For more information on parsing JSON, see the class references for "
+":ref:`JSON <class_JSON>` and :ref:`JSONParseResult "
+"<class_JSONParseResult>`."
+msgstr ""
+
+#: ../../tutorials/networking/http_request_class.rst:44
+msgid ""
+"Note that you may want to check whether the ``result`` equals "
+"``RESULT_SUCCESS`` and whether a JSON parsing error occurred, see the "
+"JSON class reference and :ref:`HTTPRequest <class_HTTPRequest>` for more."
+msgstr ""
+
+#~ msgid ""
+#~ "For the sake of example, we will"
+#~ " create a simple UI with a "
+#~ "button, that when pressed will start "
+#~ "the HTTP request to the specified "
+#~ "URL."
+#~ msgstr ""
+
