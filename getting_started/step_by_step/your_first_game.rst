@@ -515,6 +515,7 @@ function to set everything up for a new game:
 ::
 
     func game_over():
+        $StartTimer.stop()
         $ScoreTimer.stop()
         $MobTimer.stop()
 
