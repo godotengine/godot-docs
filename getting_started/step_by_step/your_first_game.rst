@@ -503,7 +503,7 @@ instance.
         randomize()
 
 Drag the ``Mob.tscn`` from the "FileSystem" panel and drop it in the
-``Mob`` property.
+``Mob`` property under the Script Variables of the ``Main```node.
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
