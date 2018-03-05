@@ -109,6 +109,10 @@ Here's a blank C# script with some comments to demonstrate how it works.
 As you can see, the things normally in global scope in GDScript like Godot's ``print`` function are available in the ``GD`` namespace.
 For a list of those, see the class reference pages for :ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
 
+.. note::
+    Keep in mind that the class you wish to attach to your node should be named as the ``.cs`` file.
+    If not, you will get the following error and won't be able to run the scene: ``Cannot find class XXX for script res://XXX.cs``.
+
 General differences between C# and GDScript
 -------------------------------------------
 
