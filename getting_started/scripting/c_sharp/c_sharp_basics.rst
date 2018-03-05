@@ -125,7 +125,6 @@ As C# support is quite new to Godot, there are some growing pains and things tha
 Below is a list of the most important issues you should be aware of when diving into C# in Godot, but if in doubt also take a look over the official `issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
-- Signals can only be added with ``add_user_signal()`` and don't show up in UI (`#11956 <https://github.com/godotengine/godot/issues/11956>`_)
 - Debug output like stack traces, file path and line numbers is missing on Windows (`#14589 <https://github.com/godotengine/godot/issues/14589>`_)
 - Writing editor plugins and tool scripts in C# is not yet supported
 - Exporting a project may not yet work
