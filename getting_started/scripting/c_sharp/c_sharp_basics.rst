@@ -109,6 +109,10 @@ Here's a blank C# script with some comments to demonstrate how it works.
 As you can see, the things normally in global scope in GDScript like Godot's ``print`` function are available in the ``GD`` namespace.
 For a list of those, see the class reference pages for :ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
 
+.. note::
+    Keep in mind that the class you wish to attach to your node should be named as the ``.cs`` file.
+    If not, you will get the following error and won't be able to run the scene: ``Cannot find class XXX for script res://XXX.cs``.
+
 General differences between C# and GDScript
 -------------------------------------------
 
@@ -125,7 +129,6 @@ As C# support is quite new to Godot, there are some growing pains and things tha
 Below is a list of the most important issues you should be aware of when diving into C# in Godot, but if in doubt also take a look over the official `issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
-- Signals can only be added with ``add_user_signal()`` and don't show up in UI (`#11956 <https://github.com/godotengine/godot/issues/11956>`_)
 - Debug output like stack traces, file path and line numbers is missing on Windows (`#14589 <https://github.com/godotengine/godot/issues/14589>`_)
 - Writing editor plugins and tool scripts in C# is not yet supported
 - Exporting a project may not yet work
