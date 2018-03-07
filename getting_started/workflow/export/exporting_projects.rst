@@ -132,3 +132,31 @@ creates the package. There are 3 different modes for exporting:
    *really* useful for games distributed on optical media.
 
 .. image:: img/expselected.png
+
+
+
+Export from Command Line
+------------------------
+
+In production it is useful to automate builds, and Godot supports this
+with the ``--export`` and ``--export-debug`` command line parameters.
+Exporting from command line still requires an export template to define
+the export parameters. A basic invocation of the export would be
+``godot --export "Windows Desktop" some_name``
+
+Which, assuming there is a preset called "Windows Desktop" and the 
+template can be found, will export to ``some_name.exe``. The output
+path is relative to the project path or absolute. It does not respect
+the directory the command was invoked from.
+
+You can also configure it to export just the .pck or .zip file (allowing 
+a single export to be used with multiple Godot executables). This
+takes place if:
+
+ - The export preset is not marked as runnable
+ - The target name ends with `.pck` or with `.zip`
+
+It is often useful to combine the ``--export`` flag with the ``--path``
+flag, and to create a dedicated export template for automated export:
+``godot --path path/to/project --export "pck" game_name.pck``
+
