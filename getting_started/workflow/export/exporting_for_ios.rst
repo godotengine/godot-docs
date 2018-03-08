@@ -40,7 +40,7 @@ After you click **Export Project**, there are still two important options left:
           project's name. When you see **exported_xcode_project_name** 
           in the following steps, replace it with the name you used instead. 
 
-When the export completes, the output folder looks like this:
+When the export completes, he output folder should look like this:
 
 .. image:: img/ios_export_output.png
 
