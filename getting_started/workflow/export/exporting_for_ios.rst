@@ -10,7 +10,7 @@ do everything else you can normally do with Xcode.
 Requirements
 ------------
 
--  You must export for iOS from a comupter running macOS with Xcode installed.
+-  You must export for iOS from a computer running macOS with Xcode installed.
 -  Download the Godot export templates. Use the Godot menu: Editor > Manage Export Templates
 
 
@@ -36,42 +36,42 @@ After you click **Export Project**, there are still two important options left:
 
 .. image:: img/ios_export_file.png
 
-.. note:: I chose the name **exported_xcode_project_name**, for this tutorial, 
-          but you will use your project's name. When you see **exported_xcode_project_name** 
+.. note:: This tutorial uses **exported_xcode_project_name**, but you will use your
+          project's name. When you see **exported_xcode_project_name** 
           in the following steps, replace it with the name you used instead. 
 
-When the export completes, my folder looks like this:
+When the export completes, the output folder looks like this:
 
 .. image:: img/ios_export_output.png
 
-Opening **exported_xcode_project_name.xcodeproj** lets me build and deploy my game
+Opening **exported_xcode_project_name.xcodeproj** lets you build and deploy 
 like any other iOS app. 
 
 
 Active development considerations
 ---------------------------------
 
-The above method creates an exported project that I can build for release, but I
-have to re-export every time I make a change in Godot. 
+The above method creates an exported project that you can build for
+release, but you have to re-export every time you make a change in Godot. 
 
-While developing, I can speed this process up by linking my Godot project
-files directly into my app. 
+While developing, you can speed this process up by linking your
+Godot project files directly into your app. 
 
 In the following example:
 
   * **exported_xcode_project_name** is the name of the exported iOS application (as above). 
-  * **godot_project_to_export** is the name of the Godot project I exported it from. 
+  * **godot_project_to_export** is the name of the Godot project. 
 
 Steps to link an Godot project folder to Xcode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Start from an exported iOS project like I created above.
+1. Start from an exported iOS project (follow the steps above).
 2. In Finder, drag the Godot project folder into the Xcode file browser. 
 
 .. image:: img/ios_export_add_dir.png
 
 3. In the dialog, make sure **Create folder references** is selected. This means
-I can continue to edit my Godot project in its current location.
+you will be able to continue to edit your Godot project in its current location.
 
 .. image:: img/ios_export_file_ref.png
 
@@ -86,8 +86,8 @@ I can continue to edit my Godot project in its current location.
 
 .. image:: img/ios_export_set_path.png
 
-That's it! I can now edit my project in the Godot editor and build it in Xcode when I 
-want to run it on a device. 
+That's it! You can now edit your project in the Godot editor and build it
+in Xcode when you want to run it on a device. 
 
 Services for iOS
 ----------------
