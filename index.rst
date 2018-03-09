@@ -80,6 +80,7 @@ The main documentation for the site is organized into the following sections:
 
    development/compiling/index
    development/cpp/index
+   development/file_formats/index
 
 
 .. toctree::
