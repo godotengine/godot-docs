@@ -254,7 +254,7 @@ Combining both the ``String.format`` method and the ``%`` operator could be usef
 ``String.format`` does not have a way to manipulate the representation of numbers.
 
 +-----------------------------------------------------------------------+-------------------+
-| **Example **                                                          | **Result**        |
+| **Example**                                                           | **Result**        |
 +-----------------------------------------------------------------------+-------------------+
 | "Hi, {0} v{version}".format({0:"Godette", "version":"%0.2f" % 3.114}) | Hi, Godette v3.11 |
 +-----------------------------------------------------------------------+-------------------+
