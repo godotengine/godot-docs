@@ -26,7 +26,7 @@ Examine this concrete GDScript example::
     
     # Using the '%' operator, the placeholder is replaced with the desired value
     var actual_string = format_string % "Godot"
-    
+
     print(actual_string)
     # output: "We're waiting for Godot."
 
@@ -41,7 +41,26 @@ Booleans turn into either ``"True"`` or ``"False"``, an integral or real number
 becomes a decimal, other types usually return their data in a human-readable
 string.
 
-There are other `format specifiers`_.
+There is also another way to format text in GDScript, namely the ``String.format()``
+method. It replaces all occurrences of a key in the string with the corresponding
+value. The method can handle arrays or dictionaries for the key/value pairs.
+
+Arrays can be used as key, index, or mixed style (see below examples). Order only
+matters when the index or mixed style of Array is used.
+
+A quick example in GDScript::
+
+    # Define a format string
+    var format_string = "We're waiting for {str}"
+
+    # Using the 'format' method, replace the 'str' placeholder
+    var actual_string = format_string.format({"str":"Godot"})
+
+    print(actual_string)
+    # output: "We're waiting for Godot"
+
+There are other `format specifiers`_, but they are only applicable when using
+the ``%`` operator.
 
 
 Multiple placeholders
@@ -192,3 +211,50 @@ avoid reading it as a placeholder. This is done by doubling the character::
     var health = 56
     print("Remaining health: %d%%" % health)
     # output: "Remaining health: 56%"
+
+
+Format method examples
+----------------------
+
+The following are some examples of how to use the various invocations of the
+``String.format``  method.
+
+
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| **Type**   | **Style** | **Example**                                                              | **Result**        |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Dictionary | key       | "Hi, {name} v{version}!".format({"name":"Godette", "version":"3.0"})     | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Dictionary | index     | "Hi, {0} v{1}!".format({"0":"Godette", "1":"3.0"})                       | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Dictionary | mix       | "Hi, {0} v{version}!".format({"0":"Godette", "version":"3.0"})           | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Array      | key       | "Hi, {name} v{version}!".format([["version":"3.0"], ["name":"Godette"])  | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Array      | index     | "Hi, {0} v{1}!".format(["Godette","3.0"])                                | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+| Array      | mix       | "Hi, {name} v{0}!".format([3.0, ["name":"Godette"]])                     | Hi, Godette v3.0! |
++------------+-----------+--------------------------------------------------------------------------+-------------------+
+
+Placeholders can also be customized when using ``String.format``, here's some
+examples of that functionality.
+
+
++-----------------+--------------------------------------------------+------------------+
+| **Type**        | **Example**                                      | **Result**       |
++-----------------+--------------------------------------------------+------------------+
+| Infix (default) | "Hi, {0} v{1}".format(["Godette", "3.0"], "{_}") | Hi, Godette v3.0 |
++-----------------+--------------------------------------------------+------------------+
+| Postfix         | "Hi, 0% v1%".format(["Godette", "3.0"], "_%")    | Hi, Godette v3.0 |
++-----------------+--------------------------------------------------+------------------+
+| Prefix          | "Hi, %0 v%1".format(["Godette", "3.0"], "%_")    | Hi, Godette v3.0 |
++-----------------+--------------------------------------------------+------------------+
+
+Combining both the ``String.format`` method and the ``%`` operator could be useful as
+``String.format`` does not have a way to manipulate the representation of numbers.
+
++-----------------------------------------------------------------------+-------------------+
+| **Example **                                                          | **Result**        |
++-----------------------------------------------------------------------+-------------------+
+| "Hi, {0} v{version}".format({0:"Godette", "version":"%0.2f" % 3.114}) | Hi, Godette v3.11 |
++-----------------------------------------------------------------------+-------------------+
