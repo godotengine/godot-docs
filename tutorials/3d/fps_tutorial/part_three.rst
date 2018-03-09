@@ -15,7 +15,7 @@ guns fire.
 By the end of this part, the player will have limited ammo, the ability to reload,
 and sounds will play when the player fires and changes weapons.
 
-.. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_two` before moving on to this part of the tutorial.
+.. note:: You are assumed to have finished :ref:`part two <doc_fps_tutorial_part_two>` before moving on to this part of the tutorial.
 
 Let's get started!
 
@@ -701,13 +701,4 @@ While no sounds are provided, you can find many game ready sounds at https://gam
 
 __________
 
-In future parts we will be adding the following:
-
-- Adding a spawning system
-- Adding grenades
-- Adding turrets and targets
-- Adding a sound manager
-- Adding ammo and health pickups
-- Refining and cleaning up the code
-
-.. warning:: All plans are subject to change without warning!
+In :ref:`part four <doc_fps_tutorial_part_four>` we will be refactoring/rewriting ``Player.gd`` to a more modular format, as well as adding joypad support!
