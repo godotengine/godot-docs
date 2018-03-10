@@ -128,7 +128,7 @@ Members
 Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. Alternatively, using "r", "g", "b" and "a" also works and is equivalent.
 Use whatever fits best for your use case.
 
-For matrices, use m[column][row] indexing syntax to access each scalar, or m[idx] for access a vector by column index. For example, for accessing y position of object in mat4 you must use m[3][1] syntax.
+For matrices, use m[row][column] indexing syntax to access each scalar, or m[idx] for access a vector by row index. For example, for accessing y position of object in mat4 you must use m[3][1] syntax.
 
 Constructing
 ~~~~~~~~~~~~
@@ -477,31 +477,31 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **degrees** ( vec_type )                                       | Convert radians to degrees                  |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **sin** ( float )                                                 | Sine                                        |
+| float **sin** ( vec_type )                                              | Sine                                        |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **cos** ( float )                                                 | Cosine                                      |
+| float **cos** ( vec_type )                                              | Cosine                                      |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **tan** ( float )                                                 | Tangent                                     |
+| float **tan** ( vec_type )                                              | Tangent                                     |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **asin** ( float )                                                | arc-Sine                                    |
+| float **asin** ( vec_type )                                             | arc-Sine                                    |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **acos** ( float )                                                | arc-Cosine                                  |
+| float **acos** ( vec_type )                                             | arc-Cosine                                  |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **atan** ( float )                                                | arc-Tangent                                 |
+| float **atan** ( vec_type )                                             | arc-Tangent                                 |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **asinh** ( float )                                               | arc-Hyperbolic-Sine                         |
+| float **atan** ( vec_type x, vec_type y )                               | arc-Tangent to convert vector to angle      |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **acosh** ( float )                                               | arc-Hyperbolic-Cosine                       |
+| float **asinh** ( vec_type )                                            | arc-Hyperbolic-Sine                         |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **atanh** ( float )                                               | arc-Hyperbolic-Tangent                      |
+| float **acosh** ( vec_type )                                            | arc-Hyperbolic-Cosine                       |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **atan2** ( float x, float y )                                    | arc-Tangent to convert vector to angle      |
+| float **atanh** ( vec_type )                                            | arc-Hyperbolic-Tangent                      |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **sinh** ( float )                                                | Hyperbolic-Sine                             |
+| float **sinh** ( vec_type )                                             | Hyperbolic-Sine                             |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **cosh** ( float )                                                | Hyperbolic-Cosine                           |
+| float **cosh** ( vec_type )                                             | Hyperbolic-Cosine                           |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| float **tanh** ( float )                                                | Hyperbolic-Tangent                          |
+| float **tanh** ( vec_type )                                             | Hyperbolic-Tangent                          |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **pow** ( float x, float y )                                   | Power, x elevated to y                      |
 +-------------------------------------------------------------------------+---------------------------------------------+
@@ -529,7 +529,7 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **roundEven** ( vec_type )                                     | Round nearest even                          |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| vec_type **trunc** ( vec_type )                                         | Trunc                                       |
+| vec_type **trunc** ( vec_type )                                         | Truncation                                  |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **ceil** ( vec_type )                                          | Ceiling                                     |
 +-------------------------------------------------------------------------+---------------------------------------------+
@@ -545,13 +545,19 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **clamp** ( vec_type value, vec_type min, vec_type max )       | Clamp to Min-Max                            |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| vec_type **mix** ( vec_type a, vec_type b, float c )                    | Linear Interpolate                          |
+| vec_type **mix** ( vec_type a, vec_type b, float c )                    | Linear Interpolate (Scalar Coef.)           |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **mix** ( vec_type a, vec_type b, vec_type c )                 | Linear Interpolate (Vector Coef.)           |
++-------------------------------------------------------------------------+---------------------------------------------+
+| vec_type **mix** ( vec_type a, vec_type b, bool c )                     | Linear Interpolate (Bool Selection)         |
++-------------------------------------------------------------------------+---------------------------------------------+
+| vec_type **mix** ( vec_type a, vec_type b, vec_bool_type c )            | Linear Interpolate (Bool-Vector Selection)  |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **step** ( vec_type a, vec_type b )                            | \` a[i] < b[i] ? 0.0 : 1.0 \`               |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **smoothstep** ( vec_type a, vec_type b, vec_type c )          | Hermite Interpolate                         |
++-------------------------------------------------------------------------+---------------------------------------------+
+| vec_type **smoothstep** ( float a, float b, vec_type c )                | Hermite Interpolate                         |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_bool_type **isnan** ( vec_type )                                    | scalar, or vector component being nan       |
 +-------------------------------------------------------------------------+---------------------------------------------+
@@ -559,7 +565,7 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_int_type **floatBitsToInt** ( vec_type )                            | Float->Int bit copying, no conversion       |
 +-------------------------------------------------------------------------+---------------------------------------------+
-| vec_uint_type **floatBitsToUInt** ( vec_type )                          | Float->UInt bit copying, no conversion      |
+| vec_uint_type **floatBitsToUint** ( vec_type )                          | Float->UInt bit copying, no conversion      |
 +-------------------------------------------------------------------------+---------------------------------------------+
 | vec_type **intBitsToFloat** ( vec_int_type )                            | Int->Float bit copying, no conversion       |
 +-------------------------------------------------------------------------+---------------------------------------------+
@@ -750,7 +756,7 @@ Vertex Built-Ins
 | out float **ROUGHNESS**            | Roughness for vertex lighting.                        |
 +------------------------------------+-------------------------------------------------------+
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing.
+Values marked as "in" are read-only. Values marked as "out" are for optional writing. Samplers are not subjects of writing and they are not marked.
 
 Vertex data (VERTEX, NORMAL, TANGENT, BITANGENT) is presented in local model space. If not
 written to, these values will not be modified and be passed through as they came.
@@ -859,9 +865,9 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**            | Emission color (can go over 1,1,1 for HDR).                                                      |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| out sampler2D **SCREEN_TEXTURE** | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
+| sampler2D **SCREEN_TEXTURE**     | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| out sampler2D **DEPTH_TEXTURE**  | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
+| sampler2D **DEPTH_TEXTURE**      | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec2 **SCREEN_UV**           | Screen UV coordinate for current pixel.                                                          |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1019,9 +1025,9 @@ Fragment Built-Ins
 +----------------------------------+----------------------------------------------------------------+
 | out vec4 **COLOR**               | Color from vertex function.                                    |
 +----------------------------------+----------------------------------------------------------------+
-| in sampler2D **TEXTURE**         | Default 2D texture.                                            |
+| sampler2D **TEXTURE**            | Default 2D texture.                                            |
 +----------------------------------+----------------------------------------------------------------+
-| in sampler2D **NORMAL_TEXTURE**  | Default 2D normal texture.                                     |
+| sampler2D **NORMAL_TEXTURE**     | Default 2D normal texture.                                     |
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**   | Default 2D texture pixel size.                                 |
 +----------------------------------+----------------------------------------------------------------+
@@ -1035,7 +1041,7 @@ Fragment Built-Ins
 +----------------------------------+----------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**        | True if this is a light pass (for multi-pass light rendering). |
 +----------------------------------+----------------------------------------------------------------+
-| in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions.     |
+| sampler2D **SCREEN_TEXTURE**     | Screen texture, mipmaps contain gaussian blurred versions.     |
 +----------------------------------+----------------------------------------------------------------+
 
 Light Built-Ins
@@ -1044,7 +1050,7 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-In                            | Description                                                                   |
 +=====================================+===============================================================================+
-| in vec2 **FRAGCOORD**               | Fragment coordinate, pixel adjusted.                                          |
+| in vec2 **POSITION**                | Fragment coordinate, pixel adjusted.                                          |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec3 **NORMAL**                  | Input Normal. Although this value is passed in,                               |
 |                                     | **normal calculation still happens outside of this function**.                |
@@ -1054,7 +1060,7 @@ Light Built-Ins
 | in vec4 **COLOR**                   | Input Color.                                                                  |
 |                                     | This is the output of the fragment function with final modulation applied.    |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in sampler2D **TEXTURE**            | Current texture in use for CanvasItem.                                        |
+| sampler2D **TEXTURE**               | Current texture in use for CanvasItem.                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**      | Pixel size for current 2D texture.                                            |
 +-------------------------------------+-------------------------------------------------------------------------------+
@@ -1064,17 +1070,17 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec2 **LIGHT_VEC**            | Vector from light to fragment, can be modified to alter shadow computation.   |
+| out vec2 **LIGHT_VEC**              | Vector from light to fragment, can be modified to alter shadow computation.   |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout float **LIGHT_HEIGHT**        | Height of Light.                                                              |
+| out float **LIGHT_HEIGHT**          | Height of Light.                                                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec4 **LIGHT_COLOR**          | Color of Light.                                                               |
+| out vec4 **LIGHT_COLOR**            | Color of Light.                                                               |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **LIGHT_UV**                | UV for Light texture.                                                         |
+| out vec2 **LIGHT_UV**               | UV for Light texture.                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec4 **SHADOW_COLOR**         | Shadow Color of Light                                                         |
+| out vec4 **SHADOW_COLOR**           | Shadow Color of Light. **(not yet implemented)**                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| inout vec4 **LIGHT**                | Value from the Light texture. **(shader is ignored if this is not used).**    |
+| out vec4 **LIGHT**                  | Value from the Light texture. **(shader is ignored if this is not used).**    |
 |                                     | Can be modified.                                                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1090,8 +1096,6 @@ Render Modes
 +---------------------------------+----------------------------------------------------------------------+
 | Render Mode                     | Description                                                          |
 +=================================+======================================================================+
-| **billboard**                   | Particle will be shown as a billboard.                               |
-+---------------------------------+----------------------------------------------------------------------+
 | **keep_data**                   | Do not clear previous data on restart.                               |
 +---------------------------------+----------------------------------------------------------------------+
 | **disable_force**               | Disable force.                                                       |
