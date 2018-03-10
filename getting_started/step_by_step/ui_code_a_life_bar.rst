@@ -201,7 +201,7 @@ The first section lists custom signals defined in ``player.GD``:
 
 .. figure:: img/lifebar_tutorial_health_changed_signal.png
 
-   We're connecting to the took\_damage signal
+   We're connecting to the health\_changed signal
 
 Select ``health_changed`` and click on the Connect button in the bottom
 right corner to open the Connect Signal window. On the left side you can
@@ -254,7 +254,7 @@ its current ``health`` alongside it. Your code should look like:
 
 .. figure:: img/lifebar_tutorial_player_gd_emits_health_changed_code.png
 
-   In Player.gd, when the Player emits the took\_damage signal, it also
+   In Player.gd, when the Player emits the health\_changed signal, it also
    sends its health value
 
 Inside ``_on_Player_health_changed`` let's call a second function called
