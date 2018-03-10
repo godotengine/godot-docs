@@ -34,10 +34,10 @@ Compress Mode
 ~~~~~~~~~~~~~
 
 * VRAM Compression: This is the most common copression mode for 3D assets. File on disk is reduced and
-  video memory usage is also reduced considerably. For 3D, it may present unwanted arctifacts, though.
+  video memory usage is also reduced considerably. For 3D, it may present unwanted artifacts, though.
 * Lossless Compression: This is the most common compression for 2D assets. It shows assets without any
-  kind of arctifacting, and disk compression is decent. It will use considerably more amount of video memory than VRAM, though.
-* Lossy Compression: For games with lots of large 2D assets, lossy compression can be a great choice. It has some arctifacting,
+  kind of artifacting, and disk compression is decent. It will use considerably more amount of video memory than VRAM, though.
+* Lossy Compression: For games with lots of large 2D assets, lossy compression can be a great choice. It has some artifacting,
   but less than VRAM and the file size is almost a tenth of Lossless.
 * Uncompressed: Only useful for formats that can't be compressed (like, raw float).
 
@@ -77,7 +77,7 @@ If you want Godot to ensure full compatibility in for kind of textures, enable t
 Normal Map
 ~~~~~~~~~~
 
-When using a texture as normal map, only the red and green channels are required. Given regular texture compression algorithms produce arctifacts that don't
+When using a texture as normal map, only the red and green channels are required. Given regular texture compression algorithms produce artifacts that don't
 look that nice in normal maps, the RGTC compression format is the best fit for this data. Forcing this option to "Enabled" will make Godot import the
 image as RGTC compressed. By default, it's set to "Detect" which means that if the texture is ever used as a normal map, it will be changed to "Enabled" and
 reimported automatically.
