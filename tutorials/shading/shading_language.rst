@@ -1044,13 +1044,15 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-In                            | Description                                                                   |
 +=====================================+===============================================================================+
-| in vec2 **POSITION**                | Screen Position.                                                              |
+| in vec2 **FRAGCOORD**               | Fragment coordinate, pixel adjusted.                                          |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in vec3 **NORMAL**                  | Input Normal.                                                                 |
+| in vec3 **NORMAL**                  | Input Normal. Although this value is passed in,                               |
+|                                     | **normal calculation still happens outside of this function**.                |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **UV**                      | UV.                                                                           |
+| in vec2 **UV**                      | UV from vertex function, equivalent to the UV in the fragment function.       |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec4 **COLOR**                   | Input Color.                                                                  |
+|                                     | This is the output of the fragment function with final modulation applied.    |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in sampler2D **TEXTURE**            | Current texture in use for CanvasItem.                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
@@ -1060,21 +1062,20 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | Current UV for Point Sprite.                                                  |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in float **TIME**                   | Time (in seconds).                                                            |
+| in float **TIME**                   | Global time in seconds.                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec2 **LIGHT_VEC**              | Vector from light to fragment, can be modified to alter shadow computation.   |
+| inout vec2 **LIGHT_VEC**            | Vector from light to fragment, can be modified to alter shadow computation.   |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out float **LIGHT_HEIGHT**          | Height of Light.                                                              |
+| inout float **LIGHT_HEIGHT**        | Height of Light.                                                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **LIGHT_COLOR**            | Color of Light.                                                               |
+| inout vec4 **LIGHT_COLOR**          | Color of Light.                                                               |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **LIGHT_SHADOW**           | Color of Light shadow.                                                        |
+| in vec2 **LIGHT_UV**                | UV for Light texture.                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec2 **LIGHT_UV**               | UV for light image.                                                           |
+| inout vec4 **SHADOW_COLOR**         | Shadow Color of Light                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **SHADOW**                 | Light shadow color override.                                                  |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 **LIGHT**                  | Light Output (shader is ignored if this is not used).                         |
+| inout vec4 **LIGHT**                | Value from the Light texture. **(shader is ignored if this is not used).**    |
+|                                     | Can be modified.                                                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
 
 
