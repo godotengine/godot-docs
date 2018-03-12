@@ -67,12 +67,6 @@ platform and depending on your build options).
 
 That's it! Now you should be good to go :)
 
-
-Eclipse
--------
-
-TODO.
-
 QtCreator
 ---------
 
@@ -189,9 +183,3 @@ Test it:
 
 - Set a breakpoint in platform/osx/godot_main_osx.mm
 - It should break at the point!
-
-
-Other editors (vim, emacs, Atom...)
------------------------------------
-
-TODO.
