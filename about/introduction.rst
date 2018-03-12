@@ -82,14 +82,16 @@ relatively intuitive:
   developing C++ modules or editor plugins.
 - The :ref:`sec-community` gives information related to contributing to the
   engine development and the life of its community, e.g. how to report bugs,
-  help with the documentation, etc. It's also the place for tutorials
-  contributed by community members before they are properly reviewed and
-  adapted to be integrated in the official list of the :ref:`sec-tutorials`
-  section.
+  help with the documentation, etc. It also points to various community channels
+  like IRC and Discord and contains a list of recommended third-party tutorials
+  outside of this documentation.
 - Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
   which is also available directly within the engine's script editor. It is
   generated automatically from a file in the main source repository, therefore
   the generated files of the documentation are not meant to be modified. See
   :ref:`doc_updating_the_class_reference` for details.
+
+In addition to this documentation you may also want to take a look at the
+various `Godot demo projects <https://github.com/godotengine/godot-demo-projects>`_.
 
 Have fun reading and making games with Godot Engine!
