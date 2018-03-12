@@ -7,3 +7,4 @@ Inputs
 
    inputevent
    mouse_and_input_coordinates
+   custom_mouse_cursor

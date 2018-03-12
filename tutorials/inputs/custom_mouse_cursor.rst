@@ -1,0 +1,58 @@
+.. _doc_custom_mouse_cursor:
+
+Customizing mouse cursor
+=================================
+
+You might want to change the appearance of the mouse cursor in your game in order to suit the overall design of your game. To customize the mouse cursor, there are two ways. 
+
+1. Using project settings
+2. Using GDScript
+
+Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involve scripting. 
+
+Using project settings
+----------------------------
+
+Open project settings, go to Display>Mouse Cursor. You will see Custom Image and Custom Image Hotspot.
+
+.. image:: img/cursor_project_settings.png
+
+Custom Image is the desire image that you would like to set as the mouse cursor.
+Custom Hotspot is the point in the image that you would like to use as the cursor's detection point.
+
+.. note:: The custom image should be a png file and the size must be 32x32.
+
+Using GDScript
+----------------------
+
+Create a Node and attach the following script.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    #Load the custom images for customizing the mouse cursor
+    var arrow = load("res://arrow.png")
+    var beam = load("res://beam.png")
+    
+    func _ready():
+    #This changes only the arrow case of the cursor
+    #This is same as setting it in the project settings
+    Input.set_custom_mouse_cursor(arrow)
+    
+    #Change the appearance of the cursor in different cases
+    #This changes the Ibeam case
+    Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
+
+ .. code-tab:: csharp
+
+.. note::
+    Check :ref:`Input.set_custom_mouse_cursor() <class_Input_set_custom_mouse_cursor>`
+
+
+Demo project
+----------------------
+
+Find out more by studying this demo project.
+https://github.com/guilhermefelipecgs/custom_hardware_cursor
