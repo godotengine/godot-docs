@@ -10,7 +10,7 @@ Git, and should be familiar to veteran free software contributors. The idea
 is that only a small number (if any) commit directly to the *master* branch.
 Instead, contributors *fork* the project (i.e. create a copy of it, which
 they can modify as they wish), and then use the GitHub interface to request
-a *pull* from one of their fork's branch to one branch of the original
+a *pull* from one of their fork's branches to one branch of the original
 (often named *upstream*) repository.
 
 The resulting *pull request* (PR) can then be reviewed by other contributors,
@@ -39,9 +39,9 @@ basics of the Git command line is *highly* recommended. There exist some
 graphical interfaces for Git, but they usually encourage users to take bad
 habits regarding the Git and PR workflow, and we therefore recommend not to
 use them. In particular, we advise not to use Github's online editor for code 
-contributions (It's tolerated for documentation changes) as it enforces one 
-commit per file and per modification, which qucikly leads to PRs with an 
-unreadable Git history (especially after peer review).
+contributions (although it's tolerated for small fixes or documentation changes)
+as it enforces one commit per file and per modification,
+which qucikly leads to PRs with an unreadable Git history (especially after peer review).
 
 .. seealso:: The first sections of Git's "Book" are a good introduction to
              the tool's philosophy and the various commands you need to
@@ -51,12 +51,12 @@ unreadable Git history (especially after peer review).
 The branches on the Git repository are organized as follows:
 
 -  The *master* branch is where the development of the next major version
-   (3.0, 3.1, 4.0, etc.) occurs. As a development branch, it can be unstable
+   occurs. As a development branch, it can be unstable
    and is not meant for use in production. This is where PRs should be done
    in priority.
--  The stable branches are named after their version, e.g. *2.0* and *2.1*.
+-  The stable branches are named after their version, e.g. *3.0* and *2.1*.
    They are used to backport bugfixes and enhancements from the *master*
-   branch to the currently maintained stable release (e.g. 2.0.1 or 2.1.3).
+   branch to the currently maintained stable release (e.g. 3.0.2 or 2.1.5).
    As a rule of thumb, the last stable branch is maintained until the next
    major version (e.g. the *2.0* branch was maintained until the release of
    Godot 2.1).
