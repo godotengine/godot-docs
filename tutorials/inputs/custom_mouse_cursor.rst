@@ -45,8 +45,6 @@ Create a Node and attach the following script.
     # This changes the Ibeam case
     Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
 
- .. code-tab:: csharp
-
 .. note::
     Check :ref:`Input.set_custom_mouse_cursor() <class_Input_set_custom_mouse_cursor>`.
 
