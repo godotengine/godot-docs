@@ -3,12 +3,12 @@
 Customizing mouse cursor
 =================================
 
-You might want to change the appearance of the mouse cursor in your game in order to suit the overall design of your game. To customize the mouse cursor, there are two ways. 
+You might want to change the appearance of the mouse cursor in your game in order to suit the overall design of your game. There are two ways to customize the mouse cursor:
 
 1. Using project settings
 2. Using GDScript
 
-Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involve scripting. 
+Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involves scripting. 
 
 Using project settings
 ----------------------------
@@ -17,7 +17,7 @@ Open project settings, go to Display>Mouse Cursor. You will see Custom Image and
 
 .. image:: img/cursor_project_settings.png
 
-Custom Image is the desire image that you would like to set as the mouse cursor.
+Custom Image is the desired image that you would like to set as the mouse cursor.
 Custom Hotspot is the point in the image that you would like to use as the cursor's detection point.
 
 .. note:: The custom image should be a png file and the size must be 32x32.
