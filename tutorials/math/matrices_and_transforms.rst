@@ -224,6 +224,22 @@ method:
 
 .. image:: img/tutomat14.png
 
+You could also transform the global coordinates to local coordinates manually:
+
+::
+
+    var local_pos = this_transform.xform_inv(point)
+
+But even better, there are helper functions for this as you can read in the next sections.
+
+Local to global coordinates and vice versa
+------------------------------------------
+
+There are helper methods for converting between local and global coordinates.
+
+There are :ref:`Node2D.to_local() <class_Node2D_to_local>` and :ref:`Node2D.to_global() <class_Node2D_to_global>` for 2D
+as well as :ref:`Spatial.to_local() <class_Spatial_to_local>` and :ref:`Spatial.to_global() <class_Spatial_to_global>` for 3D.
+
 Scale
 -----
 
