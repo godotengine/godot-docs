@@ -15,7 +15,7 @@ http://developer.android.com/sdk/index.html
 Install OpenJDK or Oracle JDK
 -----------------------------
 
-Download and install OpenJDK or Oracle JDK. Version 6 and 8 are known to
+[Download](http://openjdk.java.net/) and install OpenJDK or Oracle JDK. Version 6 and 8 are known to
 work, some users have reported issues with the jarsigner (used to sign the
 APKs) in JDK 7.
 
