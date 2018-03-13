@@ -3,7 +3,7 @@
 Changing applciation icon for windows
 ==========================================
 
-By default, the exported game icon will be the godot icon, most likely you will like to change the icon for your game. There are two types of icon that can be changed, the file icon and the taskbar icon.
+By default, the exported game icon will be the Godot icon, most likely you will like to change the icon for your game. There are two types of icons that can be changed, the file icon and the taskbar icon.
 
 
 Changing the taskbar icon
@@ -28,7 +28,7 @@ Before selecting it in the export options, you will need to install an extra too
 You can download it here:
 https://github.com/electron/rcedit/releases
 
-After downloading, you need to tell godot the path of rcedit on your computer. Go to Editor>Editor Settings>Export>Windows. Select the rcedit exectuable by clicking the folder icon in the rcedit entry.
+After downloading, you need to tell Godot the path of rcedit on your computer. Go to Editor>Editor Settings>Export>Windows. Select the rcedit exectuable by clicking the folder icon in the rcedit entry.
 
 .. note:: For linux users, you will also need to install wine in order to use rcedit. For more information, check https://www.winehq.org/
 
@@ -36,8 +36,9 @@ After downloading, you need to tell godot the path of rcedit on your computer. G
 
 Now you have everything ready for changing the file icon. To change the file icon, you will need to specify the icon when exporting. Go to Project>Export. Asumming you have a windows deskop preset ready, in the options, under Application, you will find Icon, select your desired image in ICO format as your file icon.
 
-.. note::
-Check the documentation for more info about exporting
+.. note:: To export an ICO image, you can use gimp. For more details, please refer to this tutorial: http://skyboygames.com/easily-create-a-windows-app-icon-with-gimp/
+
+.. seealso:: Check the documentation for more info about exporting
 
 .. image:: img/icon_export_settings.png
 
