@@ -19,7 +19,11 @@ read :doc:`ui_game_user_interface`
 
    The GUI you're going to create
 
-Download the project files: :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>` and extract the archive. Import the `start/` project in Godot to follow this tutorial. The `end/` folder contains the final result.
+Download the project files: :download:`ui_main_menu_design.zip
+<files/ui_main_menu_design.zip>` and extract the archive. Import the ``start/``
+project in Godot to follow this tutorial. The ``end/`` folder contains the
+final result. You'll find all the sprites in the ``start/assets/main_menu```
+folder.
 
 .. note:
 
@@ -68,10 +72,6 @@ We will use the first approach, because the first version of your UI may
 not work as well as you’d like. You’re likely to throw parts away and
 redesign components as you go. When you're sure everything works, it's
 easy to make some parts reusable, as you'll see below.
-
-Please download :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>`. It
-contains all the files you'll need to follow along. You'll find all the
-sprites in the ``start/assets/main_menu`` folder.
 
 .. figure:: img/ui_main_menu_placeholder_assets.png
 
@@ -138,7 +138,7 @@ define the margins' size. Scroll down the ``Control`` class, to the
 -  Margin Bottom: *80*
 
 We want the container to fit the window. In the Viewport, open the
-Layout menu and select the last option, ``Full Rect``.
+``Layout`` menu and select the last option, ``Full Rect``.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~
