@@ -170,11 +170,11 @@ the ``Title`` and ``Number``, and drag and drop them onto
    By using the Background node as the two textures' parent, we take
    control away from the Count MarginContainer
 
-Select the ``Title`` and in the Inspector, change its ``Stretch Mode``
-property to ``Keep Centered``. Resize it in the viewport with the
-``Select Mode`` tool so it only takes the left half of the background.
-Next, select the ``Number`` node. In the viewport, click the ``Layout``
-menu and click ``Full Rect``. The node will resize to fit
+Select the ``Title`` and in the Inspector, change its ``Stretch Mode`` property
+to ``Keep Centered``. Next find the ``Rect`` category in the Inspector and
+change the ``Size`` property to (50, 40) so it only takes the left half of
+the background.  Next, select the ``Number`` node. In the viewport, click the
+``Layout`` menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
 property to ``Right``, and the ``VAlign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
