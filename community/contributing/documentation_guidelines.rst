@@ -31,7 +31,7 @@ reference documentation about the reStructuredText markup language.
              should edit the ``doc/classes/*`` XML files of Godot's
              main repository. These files are then later used to generate the
              in-editor documentation as well as the API reference of the
-             online docs.
+             online docs. Read more here: :ref:`doc_updating_the_class_reference`.
 
 What makes good documentation?
 ------------------------------
