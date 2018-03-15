@@ -337,8 +337,8 @@ float or an integer. We can use ``interpolate_property`` to animate a
 number, but not to animate text directly. We're going to use it to
 animate a new ``GUI`` variable named ``animated_health``.
 
-At the top of the script, define a new variable and name it
-``animated_health``. Navigate back to the ``update_health`` method and
+At the top of the script, define a new variable, name it
+``animated_health``, and set its value to 0. Navigate back to the ``update_health`` method and
 clear its content. Let's animate the ``animated_health`` value. Call the
 ``Tween`` node's ``interpolate_property`` method:
 

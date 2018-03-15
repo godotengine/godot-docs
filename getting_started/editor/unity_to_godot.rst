@@ -157,7 +157,7 @@ Design
 
 As you may know already, Unity supports C#. C# benefits from its integration with Visual Studio and other features, such as static typing.
 
-Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`doc_c_sharp`. GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language, please read :ref:`GDScript <doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to the Godot API, but it is really easy to learn: between one evening for an experienced programmer and a week for a complete beginner.
+Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`C# <doc_c_sharp>`. GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language, please read :ref:`GDScript <doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to the Godot API, but it is really easy to learn: between one evening for an experienced programmer and a week for a complete beginner.
 
 Unity allows you to attach as many scripts as you want to a GameObject. Each script adds a behaviour to the GameObject: for example, you can attach a script so that it reacts to the player's controls, and another that controls its specific game logic.
 
