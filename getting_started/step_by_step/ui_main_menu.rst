@@ -216,10 +216,12 @@ We're left with two problems to solve:
 1. The characters on the right aren't centered
 2. There's no space between the logo and the other UI elements
 
-To center the characters on the right, we'll use a ``CenterContainer``.
-Add a ``CenterContainer`` node inside the ``VBoxContainer``, then drag
-and drop the Characters into it. The Characters element will center
-automatically.
+To center the characters on the right, we'll use a ``CenterContainer``.  Add a
+``CenterContainer`` node as a child of the ``HBoxContainer``. Then in the
+Inspector, scroll down to the ``Size Flags`` category and click on the field to
+the right of the ``Vertical`` property, and check ``Expand``. Do the same for
+the ``Horizontal`` property. Finally drag and drop the Characters into the
+``CenterContainer``. The Characters element will center automatically.
 
 .. figure:: img/ui_main_menu_containers_step_3.png
 
