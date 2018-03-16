@@ -104,17 +104,17 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
-    user@host:~/newgame$ godot -export "Linux X11" /var/builds/project
-    user@host:~/newgame$ godot -export Android /var/builds/project.apk
+    user@host:~/newgame$ godot --export "Linux X11" /var/builds/project
+    user@host:~/newgame$ godot --export Android /var/builds/project.apk
 
-The platform names recognized by the ``-export`` switch are the same as
+The platform names recognized by the ``--export`` switch are the same as
 displayed in the export wizard of the editor. To get a list of supported
 platforms from the command line, just try exporting to a non-recognized
 platform and the full listing of platforms your configuration supports
 will be shown.
 
-To export a debug version of the game, use the ``-export_debug`` switch
-instead of ``-export``. Their parameters and usage are the same.
+To export a debug version of the game, use the ``--export_debug`` switch
+instead of ``--export``. Their parameters and usage are the same.
 
 Running a script
 ----------------
