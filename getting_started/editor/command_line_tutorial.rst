@@ -19,6 +19,32 @@ variable, so it can be executed easily from any place by typing
 ``godot``. You can do so on Linux by placing the Godot binary in
 ``/usr/local/bin`` and making sure it is called ``godot``.
 
+Setting the project path
+------------------------
+
+Depending on where your Godot binary is located and what your current
+working directory is, you may need to set the path to your project
+for any of the following commands to work correctly.
+
+This can be done by giving the path to the ``project.godot`` file
+of your project as either the first argument, like this:
+
+::
+
+    user@host:~$ godot path_to_your_project/project.godot [other] [commands] [and] [args]
+
+Or by using the ``--path`` argument:
+
+::
+
+    user@host:~$ godot --path path_to_your_project [other] [commands] [and] [args]
+
+For example, the full command for exporting your game (as explained below) might look like this:
+
+::
+
+    user@host:~$ godot --path path_to_your_project --export my_export_preset_name game.exe
+
 Creating a project
 ------------------
 
@@ -143,5 +169,5 @@ And how to run it:
     user@host:~/newgame$ godot -s sayhello.gd
     Hello!
 
-If no engine.cfg exists at the path, current path is assumed to be the
+If no project.godot exists at the path, current path is assumed to be the
 current working directory (unless ``-path`` is specified).
