@@ -1,6 +1,6 @@
 .. _doc_using_multi_mesh_instance:
 
-Using multiMeshInstance
+Using MultiMeshInstance
 -----------------------
 
 Introduction
