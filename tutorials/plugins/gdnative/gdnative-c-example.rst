@@ -205,7 +205,8 @@ The variant we return is destroyed automatically by Godot.
         godot_variant ret;
         user_data_struct * user_data = (user_data_struct *) p_user_data;
 
-        api->godot_string_new_data(&data, user_data->data, strlen(user_data->data));
+        api->godot_string_new(&data);
+        api->godot_string_parse_utf8(&data, user_data->data);
         api->godot_variant_new_string(&ret, &data);
         api->godot_string_destroy(&data);
 
