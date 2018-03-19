@@ -152,7 +152,6 @@ Start by declaring the member variables this object will need:
     extends Area2D
 
     export (int) var SPEED  # how fast the player will move (pixels/sec)
-    var velocity = Vector2()  # the player's movement vector
     var screensize  # size of the game window
 
 Using the ``export`` keyword on the first variable ``SPEED`` allows us to
@@ -192,7 +191,7 @@ or ``false`` if it isn't.
 ::
 
     func _process(delta):
-        velocity = Vector2()
+        var velocity = Vector2() # the player's movement vector
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
         if Input.is_action_pressed("ui_left"):
