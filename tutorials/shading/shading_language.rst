@@ -987,7 +987,7 @@ happen later, though) with the following code, so it can be done manually:
 
 .. code-block:: glsl
 
-    shader_type spatial;
+    shader_type canvas_item;
     render_mode skip_vertex_transform;
 
     void vertex() {
