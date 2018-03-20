@@ -72,6 +72,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/plugins/index
    tutorials/platform/index
    tutorials/misc/index
+   tutorials/debug/index
 
 .. toctree::
    :maxdepth: 1
