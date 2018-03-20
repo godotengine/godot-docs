@@ -91,7 +91,7 @@ supplied:
 
 ::
 
-   c:\MyGame> godot -lang fr
+   c:\MyGame> godot -l fr
 
 Translating the project name
 ----------------------------
