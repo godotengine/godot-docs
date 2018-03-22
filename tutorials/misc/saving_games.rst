@@ -51,24 +51,24 @@ like this:
 
     func save():
         var save_dict = {
-            filename = get_filename(),
-            parent = get_parent().get_path(),
-            pos_x = get_pos().x, # Vector2 is not supported by JSON
-            pos_y = get_pos().y,
-            attack = attack,
-            defense = defense,
-            current_health = current_health,
-            max_health = max_health,
-            damage = damage,
-            regen = regen,
-            experience = experience,
-            tnl = tnl,
-            level = level,
-            attack_growth = attack_growth,
-            defense_growth = defense_growth,
-            health_growth = health_growth,
-            is_alive = is_alive,
-            last_attack = last_attack
+            "filename" : get_filename(),
+            "parent" : get_parent().get_path(),
+            "pos_x" : position.x, # Vector2 is not supported by JSON
+            "pos_y" : position.y,
+            "attack" : attack,
+            "defense" : defense,
+            "current_health" : current_health,
+            "max_health" : max_health,
+            "damage" : damage,
+            "regen" : regen,
+            "experience" : experience,
+            "tnl" : tnl,
+            "level" : level,
+            "attack_growth" : attack_growth,
+            "defense_growth" : defense_growth,
+            "health_growth" : health_growth,
+            "is_alive" : is_alive,
+            "last_attack" : last_attack
         }
         return save_dict
 
@@ -126,7 +126,7 @@ load function:
             # First we need to create the object and add it to the tree and set its position.
             var new_object = load(current_line["filename"]).instance()
             get_node(current_line["parent"]).add_child(new_object)
-            new_object.set_position(Vector2(current_line["pos_x"],current_line["pos_y"]))
+            new_object.position = Vector2(current_line["pos_x"], current_line["pos_y"]))
             # Now we set the remaining variables.
             for i in current_line.keys():
                 if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
