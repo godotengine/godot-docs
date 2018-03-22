@@ -259,7 +259,7 @@ Next, write a function which will be called when the button is pressed:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_button_pressed():  
+    func _on_Button_pressed():  
         get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
@@ -293,7 +293,7 @@ The final script should look like this:
 
     extends Panel
 
-    func _on_button_pressed():
+    func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
 
     func _ready():
