@@ -45,7 +45,7 @@ In this table, each of the four options are described together with their
 advantages and disadvantages ( |good| = Best, |bad| =Worst ):
 
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-|                | Uncompressed           | Compress Lossless (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
+|                | Uncompressed           | Compress Lossy (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
 +================+========================+===========================+=========================+======================================================+
 | Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC,PVRTC/ETC, depending on platform   |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
@@ -55,7 +55,7 @@ advantages and disadvantages ( |good| = Best, |bad| =Worst ):
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 | Performance    | |regular| Normal       | |regular| Normal          | |regular| Normal        | |good| Fast                                          |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Quality Loss   | |good| None            | |good| None               | |regular| Slight        | |bad| Moderate                                       |
+| Quality Loss   | |good| None            | |regular| Slight          | |regular| Slight        | |bad| Moderate                                       |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 | Load Time      | |regular| Normal       | |bad| Slow                | |bad| Slow              | |good| Fast                                          |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
