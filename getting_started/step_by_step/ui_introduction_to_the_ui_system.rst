@@ -262,7 +262,7 @@ edges of its parent, or until it's blocked by another UI node.
 
 .. figure:: img/textureframe_in_box_container_expand.png
 
-   The same example as bove, but the left node has the "Expand" size
+   The same example as above, but the center node has the "Expand" size
    flag
 
 You'll need some practice to understand the size tags, as their effect
