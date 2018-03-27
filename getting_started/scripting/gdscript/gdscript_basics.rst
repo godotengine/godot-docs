@@ -1018,7 +1018,7 @@ special export syntax is provided.
     export(int, -10, 20) var j
     # Allow floats from -10 to 20, with a step of 0.2
     export(float, -10, 20, 0.2) var k
-    # Allow values y = exp(x) where y varies betwee 100 and 1000
+    # Allow values y = exp(x) where y varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
     # slider for easily editing the value.
     export(float, EXP, 100, 1000, 20) var l
