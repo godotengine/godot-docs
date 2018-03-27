@@ -128,16 +128,17 @@ should be the outermost container or element. In this case it's a
 most interfaces, as you often need padding around the UI. Press
 ``Meta+S`` to save the scene to the disk. Name it *MainMenu*.
 
-Select the ``MarginContainer`` again. We want the container to fit the 
-window. In the Viewport, open the ``Layout`` menu and select the last 
-option, ``Full Rect``. Head to the inspector to define the margins' size.
-Scroll down the ``Control`` class, to the ``Custom Constants`` section. 
-Unfold it. Set the margins as such:
+Select the ``MarginContainer`` again, and head to the inspector to
+define the margins' size. Scroll down the ``Control`` class, to the
+``Custom Constants`` section. Unfold it. Set the margins as such:
 
--  Margin Right: *-120*
+-  Margin Right: *120*
 -  Margin Top: *80*
 -  Margin Left: *120*
--  Margin Bottom: *-80*
+-  Margin Bottom: *80*
+
+We want the container to fit the window. In the Viewport, open the
+``Layout`` menu and select the last option, ``Full Rect``.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~
