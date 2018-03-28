@@ -100,7 +100,7 @@ scene:
 
 .. figure:: img/lifebar_tutorial_Player_with_editable_children_on.png
 
-       lifebar_tutorial_Player_with_editable_children_on.png
+       The scene tree, with the Player scene set to display its children
 
 Set up the Lifebar with the Player's max\_health
 ------------------------------------------------
