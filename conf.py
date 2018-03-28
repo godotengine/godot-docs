@@ -96,7 +96,8 @@ latex_documents = [
 ]
 
 # -- I18n settings --------------------------------------------------------
-locale_dirs = ['locale/']
+
+locale_dirs = ['../sphinx/po/']
 gettext_compact = False
 # Exclude class reference when marked with tag i18n.
 if tags.has('i18n'):
