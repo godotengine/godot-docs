@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../community/contributing/documentation_guidelines.rst:4
+msgid "Documentation guidelines"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:6
+msgid ""
+"This page describes the rules to follow if you want to contribute to "
+"Godot Engine by writing or reviewing documentation, or by translating "
+"existing documentation."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:11
+msgid "How to contribute"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:13
+msgid ""
+"Creating or modifying documentation pages is mainly done via the `godot-"
+"docs GitHub repository <https://github.com/godotengine/godot-docs>`_. The"
+" HTML (or PDF and EPUB) documentation is generated from the .rst files "
+"(reStructuredText markup language) in that repository. Modifying those "
+"pages in a pull request and getting it merged will trigger a rebuild of "
+"the online documentation."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:20
+msgid ""
+"For details on Git usage and the pull request workflow, please refer to "
+"the :ref:`doc_pr_workflow` page. Most of what it describes regarding the "
+"main godotengine/godot repository is also valid for the docs repository."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:25
+msgid ""
+"The README.md file contains all the information you need to get you "
+"started, please read it. In particular, it contains some tips and tricks "
+"and links to reference documentation about the reStructuredText markup "
+"language."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:29
+msgid ""
+"If you want to edit the **API reference**, please note that it should "
+"*not* be done in the godot-docs repository. Instead, you should edit the "
+"``doc/classes/*`` XML files of Godot's main repository. These files are "
+"then later used to generate the in-editor documentation as well as the "
+"API reference of the online docs."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:37
+msgid "What makes good documentation?"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:39
+msgid ""
+"Documentation should be well written in plain English, using well-formed "
+"sentences and various levels of sections and subsections. It should be "
+"clear and objective."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:43
+msgid ""
+"We differentiate tutorial pages from other documentation pages by these "
+"definitions:"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:46
+msgid ""
+"Tutorial: a page aiming at explaining how to use one or more concepts in "
+"the editor or scripts in order to achieve a specific goal with a learning"
+" purpose (e.g. \"Making a simple 2d Pong game\", \"Applying forces to an "
+"object\")."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:50
+msgid ""
+"Documentation: a page describing precisely one and only one concept at a "
+"time, if possible exhaustively (e.g. the list of methods of the Sprite "
+"class, or an overview of the input management in Godot)."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:54
+msgid ""
+"You are free to write the kind of documentation you wish, as long as you "
+"respect the following rules (and the ones on the repo). In particular, "
+"you can contribute tutorials in the \"Community\" section of the docs, "
+"where they could be merged relatively easily, improved by other "
+"contributors and eventually moved to an \"official\" section if relevant."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:61
+msgid "Titles"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:63
+msgid "Always begin pages with their title and a Sphinx reference name:"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:72
+msgid ""
+"The reference allows to link to this page using the ``:ref:`` format, "
+"e.g. ``:ref:`doc_insert_your_title_here``` would link to the above "
+"example page (note the lack of leading underscore in the reference)."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:76
+msgid ""
+"Also, avoid American CamelCase titles: title's first word should begin "
+"with a capitalized letter, and every following word should not. Thus, "
+"this is a good example:"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:80
+msgid "Insert your title here"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:82
+msgid "And this is a bad example:"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:84
+msgid "Insert Your Title Here"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:86
+msgid ""
+"Only project, people and node class names should have capitalized first "
+"letter."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:90
+msgid "Translating existing pages"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:92
+msgid ""
+"For the moment, only English documentation is provided. We want to "
+"propose localized documentation in the future, but this is not a priority"
+" for now. Indeed, since the English documentation is still evolving a lot"
+" as the community improves it and make it more professional, we prefer "
+"that translators do not spend too much time on it, as their translated "
+"documentation might quickly grow out of sync with the original."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:99
+msgid ""
+"When the English documentation is ready for translations, we will provide"
+" tools to simplify the work of translators by tracking changes to the "
+"English docs that they should translate on their end."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:104
+msgid "License"
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:106
+msgid ""
+"This documentation and every page it contains is published under the "
+"terms of the Creative Commons Attribution 3.0 license (CC-BY-3.0), with "
+"attribution to \"Juan Linietsky, Ariel Manzur and the Godot community\"."
+msgstr ""
+
+#: ../../community/contributing/documentation_guidelines.rst:110
+msgid ""
+"By contributing to the documentation on the GitHub repository, you agree "
+"that your changes are distributed under this license."
+msgstr ""
+

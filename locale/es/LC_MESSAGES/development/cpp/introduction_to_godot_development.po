@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/cpp/introduction_to_godot_development.rst:4
+msgid "Introduction to Godot development"
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:6
+msgid ""
+"This page is meant to introduce the global organization of Godot Engine's"
+" source code, and give useful tips for extending/fixing the engine on the"
+" C++ side."
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:11
+msgid "Architecture diagram"
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:13
+msgid ""
+"The following diagram describes the architecture used by Godot, from the "
+"core components down to the abstracted drivers, via the scene structure "
+"and the servers."
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:20
+msgid "Debugging the editor with gdb"
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:22
+msgid ""
+"If you are writing or correcting bugs affecting Godot Engine's editor, "
+"remember that the binary will by default run the project manager first, "
+"and then only run the editor in another process once you've selected a "
+"project. To launch a project directly, you need to run the editor by "
+"passing the ``-e`` argument to Godot Engine's binary from within your "
+"project's folder. Typically:"
+msgstr ""
+
+#: ../../development/cpp/introduction_to_godot_development.rst:35
+msgid "Or:"
+msgstr ""
+

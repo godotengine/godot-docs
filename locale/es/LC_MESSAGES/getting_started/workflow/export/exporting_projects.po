@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:4
+msgid "Exporting projects"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:7
+msgid "Why exporting?"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:9
+msgid ""
+"Originally, Godot did not have any means to export projects. The "
+"developers would compile the proper binaries and build the packages for "
+"each platform manually."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:13
+msgid ""
+"When more developers (and even non-programmers) started using it, and "
+"when our company started taking more projects at the same time, it became"
+" evident that this was a bottleneck."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:18
+msgid "On PC"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:20
+msgid ""
+"Distributing a game project on PC with Godot is rather easy. Just drop "
+"the godot.exe (or godot) binary together in the same place as the "
+"engine.cfg file, zip it and you are done. This can be taken advantage of "
+"to make custom installers."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:25
+msgid ""
+"It sounds simple, but there are probably a few reasons why the developer "
+"may not want to do this. The first one is that it may not be desirable to"
+" distribute loads of files. Some developers may not like curious users "
+"peeking at how the game was made, others may just find it inelegant, etc."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:31
+msgid ""
+"Another reason is that, for distribution, the developer might prefer a "
+"specially compiled binary, which is smaller in size, more optimized and "
+"does not include tools inside (like the editor, debugger, etc.)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:35
+msgid ""
+"Finally, Godot has a simple but efficient system for creating DLCs as "
+"extra package files."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:39
+msgid "On mobile"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:41
+msgid ""
+"The same scenario in mobile is a little worse. To distribute a project in"
+" those devices, a binary for each of those platforms is built, then added"
+" to a native project together with the game data."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:45
+msgid ""
+"This can be troublesome because it means that the developer must be "
+"familiarized with the SDK of each platform before even being able to "
+"export. While learning each SDK is always encouraged, it can be "
+"frustrating to be forced to do it at an undesired time."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:50
+msgid ""
+"There is also another problem with this approach. Different devices "
+"prefer some data in different formats to run. The main example of this is"
+" texture compression. All PC hardware uses S3TC (BC) compression and that"
+" has been standardized for more than a decade, but mobile devices use "
+"different formats for texture compression, such as PVRCT (iOS) or ETC "
+"(Android)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:58
+msgid "Export menu"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:60
+msgid ""
+"After many attempts at different export workflows, the current one has "
+"proven to work the best. At the time of this writing, not all platforms "
+"are supported yet, but the supported platforms continue to grow."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:64
+msgid "To open the export menu, just click the \"Export\" button:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:68
+msgid "The export menu will open, however it will be completely empty."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:72
+msgid ""
+"That is because we need to add an export preset. To do that click the "
+"`Add..` button at the top of the export menu. This will open a drop down "
+"list of platforms to choose from for an export preset."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:78
+msgid ""
+"The default options are often enough to export, so tweaking them is not "
+"necessary, but provide extra control. However, many platforms require "
+"additional tools (SDKs) to be installed to be able to export. "
+"Additionally, Godot needs export templates installed to create packages. "
+"The export menu will complain when something is missing and will not "
+"allow the user to export for that platform until they resolve it:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:87
+msgid ""
+"At that time, the user is expected to come back to the documentation and "
+"follow instructions on how to properly set up that platform."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:91
+msgid "Export templates"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:93
+msgid ""
+"Apart from setting up the platform, the export templates must be "
+"installed to be able to export projects. They can be obtained as a .tpz "
+"(a renamed .zip) file from the `download page of the website "
+"<https://www.godotengine.org/download>`_."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:98
+msgid ""
+"Once downloaded, they can be installed using the \"Install Export "
+"Templates\" option in the editor:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:104
+msgid "Export mode"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:106
+msgid ""
+"When exporting, Godot makes a list of all the files to export and then "
+"creates the package. There are 3 different modes for exporting:"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:109
+msgid "Export every single file in the project"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:110
+msgid "Export only resources (+custom filter), this is default."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:111
+msgid "Export only selected resources (+custom filter)"
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:115
+msgid ""
+"**Export every single file** - This mode exports every single file in the"
+" project. This is good to test if something is being forgotten, but "
+"developers often have a lot of unrelated stuff around in the dev "
+"directory, which makes it a bad idea."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:120
+msgid ""
+"**Export only resources** - Only resources are exported. For most "
+"projects, this is enough. However many developers like to use custom "
+"datafiles in their games. To compensate for this, filters can be added "
+"for extra extensions (like, *.txt,*.csv, etc.)."
+msgstr ""
+
+#: ../../getting_started/workflow/export/exporting_projects.rst:125
+msgid ""
+"**Export only selected resources** - Only select resources from a list "
+"are exported. This is probably overkill for most projects, but in some "
+"cases it is justified (usually huge projects). This mode offers total "
+"control of what is exported. Individual resources can be selected and "
+"dependency detection is performed to ensure that everything needed is "
+"added. As a plus, this mode allows to \"Bundle\" scenes and dependencies "
+"into a single file, which is *really* useful for games distributed on "
+"optical media."
+msgstr ""
+

@@ -1,0 +1,764 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:4
+msgid "Nodes and Terminology"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:6
+msgid ""
+"Before continuing, it must be noted that the *Node* terminology needs to "
+"be used with care. When referring to *Visual Script Nodes* (or generally "
+"*Nodes*) this text will refer to the little boxes you connect with lines,"
+" which are part of a graph. When referring to *Scene Nodes*, it is "
+"implied that the elements that make up a Scene are being referred, which "
+"are part of a tree. Their naming is similar but their function is "
+"different. When referring to *Node* here, it will be implied that a "
+"*Visual Script Node* is referred to unless indicated otherwise."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:15
+msgid "Node Properties"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:17
+msgid ""
+"Like in most visual scripting implementations, each node has editable "
+"properties. In Godot, though, we try to avoid bloating the nodes with "
+"editable controls for the sake of readability."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:20
+msgid ""
+"Nodes still display the required information as text, but editing is done"
+" via the *Inspector*. To edit them, just select any node and edit its "
+"properties in the *Inspector*."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:25
+msgid "Ports and Connections"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:27
+msgid ""
+"Programming in Godot Visual Scripting is done via *Nodes* and *Port "
+"Connections* inside each function."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:31
+msgid "Ports"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:33
+msgid ""
+"Nodes in Godot Visual Scripting have *Ports*. These are endpoints that "
+"appear to the left and right of nodes and which can be used to make "
+"*Connnections*: There are two types of *Ports*: *Sequence* and *Data*."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:40
+msgid ""
+"*Sequence Ports* indicate the order in which operations are executed. "
+"Typically when a *Node* is done processing, it will go to the next node "
+"from one of the ports at the right. If nothing is connected the function "
+"may end, or another output *Sequence Port* might be tried (this depends "
+"on the node). Thanks to this, it's easy to understand the logic within a "
+"function by just following the white lines. Not every *Node* has "
+"*Sequence Ports*. In fact, most do not."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:46
+msgid ""
+"*Data Ports* ports contain typed values. Types can be any regular Godot "
+"types, such as a boolean, an integer, a string, a Vector3, an array, any "
+"Object or Scene Node, etc. A *Data Port* on the right side of a node is "
+"considered an output, while, a port on the left side is an input. "
+"Connecting them allows information to flow to the next node."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:51
+msgid ""
+"Not all *Data Port* types are compatible and will allow connections, "
+"though. Pay special attention to colors and icons, as each type has a "
+"different representation:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:58
+msgid "Connections"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:60
+msgid ""
+"Connecting is a relatively simple process. Just drag an *Output Port* "
+"towards an *Input Port*."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:65
+msgid ""
+"Disconnecting takes a bit more practice. Disconnecting in *Data Ports* "
+"happens by dragging the *Input* away, while for *Sequence Ports*, this "
+"happens by dragging the *Output* away."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:71
+msgid ""
+"This may seem strange at the beginning, but it happens because *Data "
+"Ports* are 1:N (A single output port can connect to many inputs), while "
+"*Sequence Ports* are N:1 (Many sequence outputs can be connected to a "
+"single input)."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:75
+msgid ""
+"Connecting to empty space (drag to connect but unpress over empty space) "
+"is also context sensitive, it will supply a list of most common "
+"operations. For sequences, it will be conditional nodes:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:81
+msgid "While, for data, a contextual set/get/call menu will open:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:87
+msgid "Adding Nodes"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:89
+msgid ""
+"Finally! We got to the fun part! But, before explaining in more detail "
+"what each type of node does, let's take a short look at how nodes are "
+"most commonly added and dealt with."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:94
+msgid "Accessing Scene Nodes"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:96
+msgid ""
+"One of the most common tasks is accessing Scene Tree Nodes (again, not to"
+" mistake with *Visual Script Nodes*). Dragging from the Scene Tree and "
+"dropping into the canvas will ask you to *call a method* (sometimes "
+"referred to as *member function*) on this node."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:102
+msgid ""
+"While accessing properties is desired in most cases (more on that below),"
+" sometimes *calling methods* can be useful too. Methods execute specific "
+"actions on objects. In the above case, the mouse pointer can be warped to"
+" a position in local coordinates to the control. Another common use case "
+"is queueing a node for deletion, which is done with the *queue_free* "
+"method."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:109
+msgid ""
+"Care must be taken that this only works if the scene being edited "
+"contains your *Visual Script* in one of the nodes! Otherwise, a warning "
+"will be shown."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:113
+msgid "Accessing Scene Node Properties"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:115
+msgid ""
+"This is the most common way to edit *Scene Nodes* in Visual Scripting. "
+"Select a *Scene Node* from the *Scene Tree*, go to the Inspector, find "
+"*the Name* of the property you want to edit (hint, *not* the value!) and "
+"drag it to the canvas:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:120
+msgid ""
+"The result is that this value can be changed from your script by writing "
+"to a *Data Port*."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:122
+msgid ""
+"If instead reading this value is desired, just drag the node again but "
+"hold the *Control* key (or Command on Mac). This will create a getter:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:127
+msgid "In this case, the value can be read from a *Data Port*."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:131
+msgid "Variables"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:133
+msgid ""
+"Variables are memory containers local to the script which can hold a "
+"value. This value can be read from any of the functions of the script or "
+"from other scripts via the method described in the previous step."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:135
+msgid ""
+"To add a Variable, push the \"+\" button on the *Variables* section of "
+"the Members panel. Double-click the new variable to rename it:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:140
+msgid "Right-clicking the variable allows you to configure its properties:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:147
+msgid ""
+"As it can be seen above, the type and initial value of the variable can "
+"be changed, as well as some property hints (@TODO, document this). "
+"Ticking the \"Export\" options makes the variable visible in the "
+"Inspector when selecting the node. This also makes it available to other "
+"scripts via the method described in the previous step."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:153
+msgid ""
+"To use the variable in the script, simply drag it to the canvas to create"
+" a getter:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:158
+msgid "Likewise, hold *Control* (*Command* on Mac) to drop a setter:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:164
+msgid "Signals"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:166
+msgid ""
+"It is also possible to create your own signals in a script and use them. "
+"For this, do the same steps you did for variables in the previous step, "
+"except for *Signals*:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:171
+msgid ""
+"A signal can also be edited via right-click menu to customize its "
+"arguments:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:176
+msgid ""
+"The signal you have just created will appear in the Inspector along with "
+"the built-in node signals. This allows you to connect it from another "
+"script from another *Scene Node*:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:181
+msgid "Finally, to emit the signal, simply drag it to the canvas:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:186
+msgid ""
+"Remember that emitting a signal is a sequenced operation, so it must come"
+" from a Sequence port."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:190
+msgid "Adding More Nodes"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:192
+msgid ""
+"Now that the basics are covered, let's discuss the large amount of "
+"utility nodes available for your canvas! Below the member panel, exists "
+"the list of all available node types:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:198
+msgid "Ctrl-F (Command-F on Mac) allows you to search the list."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:200
+msgid ""
+"Any of them can be dragged to the scene. Unlike nodes (e.g. dragging a "
+"property from the Inspector sets the context to the node being edited "
+"automatically), these are added without any \"contextual\" information, "
+"so this has to be done manually."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:206
+msgid ""
+"Remember that you can check the class reference for what each node does, "
+"as they are documented there. That mentioned, a brief overview of node "
+"types follows:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:211
+msgid "Constants"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:213
+msgid ""
+"Constant nodes are nodes that provide values that, while not changing "
+"over time, can be useful as reference values. Most of the time they are "
+"integer or float."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:219
+msgid ""
+"The first one is \"Constant\" which allows you to select any value of any"
+" type as constant, from an integer (42) to a String (\"Hello!\"). In "
+"general this node is not used that often because of default input values "
+"in *Data Ports*, but it's good to know it exists."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:221
+msgid ""
+"The second is the GlobalConstant node, which contains a long list of "
+"constants for global types in Godot. In there you can find some useful "
+"constants to refer to key names, joystick or mouse buttons, etc."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:224
+msgid ""
+"The third one is MathConstant, which provides typical mathematical "
+"constants such as PI, E, etc."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:228
+msgid "Data"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:230
+msgid ""
+"Data nodes deal with all sorts of access to information. Any information "
+"in Godot is accessed via these nodes, so they are some of the most "
+"important ones to use and pretty diverse."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:236
+msgid ""
+"There are many types of nodes of interest here, so a short attempt to "
+"describe them will follow:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:240
+msgid "Action"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:242
+msgid ""
+"Action nodes are vital when dealing with input from a device. You can "
+"read more about actions in the (@TODO ACTION TUTE LINK). In the following"
+" example below, the control is moved to the right when the \"move_right\""
+" action is pressed."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:249
+msgid "Engine Singleton"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:251
+msgid ""
+"Engine singletons are global interfaces (meaning they can be accessed "
+"without a reference, unlike Scene Nodes, they are always available). They"
+" have several purposes, but in general they are useful for low level "
+"access or OS-related access."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:257
+msgid ""
+"Remember that dragging a connection to empty space will help you call "
+"functions or set/get properties on these:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:263
+msgid "Local Variables"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:265
+msgid ""
+"These are nodes you can use as temporary storage for your graphs. Just "
+"make sure they all have the same name and type when using them and they "
+"will reference the same piece of memory."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:270
+msgid ""
+"As it can be seen above, there are two nodes available: A simple getter, "
+"and a sequenced getter (setting requires a sequence port)."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:274
+msgid "Scene Node"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:276
+msgid ""
+"This is just a reference to a node in the tree, but it's easier to use "
+"this node by just dragging the actual node from the scene tree to the "
+"canvas (this will create it and configure it)."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:281
+msgid "Self"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:283
+msgid ""
+"In some rare occasions, it may be desired to pass this Scene Node as "
+"argument. It can be used to call functions and set/get properties, or "
+"just drag nodes (or event the node itself that has the script) from the "
+"Scene Tree to the canvas for this."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:288
+msgid "SceneTree"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:290
+msgid ""
+"This node is similar to the Singleton node because it references the "
+"SceneTree, which contains the active scene. SceneTree, however, only "
+"works when the node is sitting in the scene and active, otherwise "
+"accessing it will return as an error."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:294
+msgid ""
+"SceneTree allows for many low level things, like setting stretch options,"
+" calling groups, make timers, or even load another scene. It's a good "
+"class to get familiar with."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:299
+msgid "Preload"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:301
+msgid ""
+"This does the same function as preload() in GDScript. It maintains this "
+"resource loaded and ready to use. Rather than instancing the node, it's "
+"simpler to just drag the desired resource from the filesystem dock to the"
+" canvas."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:306
+msgid "Resource Path"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:308
+msgid ""
+"This node is a simple helper to get a string with a path to a resource "
+"you can pick. It's useful in functions that load things from disk."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:313
+msgid "Comment"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:315
+msgid ""
+"A Comment node works as a node you can resize to put around other nodes. "
+"It will not try to get focus or be brought to top when selecting it. It "
+"can also be used to write text on it."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:322
+msgid "Flow Control"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:324
+msgid ""
+"Flow control nodes allow the execution to take different branches, "
+"usually depending on a given condition."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:331
+msgid "Condition"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:333
+msgid ""
+"This is a simple node that checks a bool port. If true, it will go via "
+"the \"true\" sequence port. If false, the second. After going for either "
+"of them, it goes via the \"done\" port. Leaving sequence ports "
+"disconnected is fine if not all of them are used."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:339
+msgid "Iterator"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:341
+msgid ""
+"Some data types in Godot (ie, arrays, dictionaries) are iterable. This "
+"means that a bit of code can run for each element that it has."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:344
+msgid ""
+"The Iterator node goes through all elements and, for each of them, it "
+"goes via the \"each\" sequence port, making the element available in the "
+"\"elem\" data port."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:347
+msgid "When done, it goes via the \"exit\" sequence port."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:351
+msgid "Return"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:353
+msgid ""
+"Some functions can return values. In general for virtual ones, Godot will"
+" add the Return node for you. A return node forces the function to end."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:358
+msgid "Sequence"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:360
+msgid ""
+"This node is useful mostly for organizing your graph. It calls its "
+"sequence ports in order."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:364
+msgid "TypeCast"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:366
+msgid ""
+"This is a very useful and commonly used node. You can use it to cast "
+"arguments or other objects to the type you desire. Afterwards, you can "
+"even drag the object output to get full completion."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:372
+msgid ""
+"It is also possible to cast to a script, which will allow complete script"
+" properties and functions:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:378
+msgid "Switch"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:380
+msgid ""
+"The Switch node is similar to the Condition node, but it matches many "
+"values at the same time."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:384
+msgid "While"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:386
+msgid ""
+"This is a more primitive form of iteration. \"repeat\" sequence output "
+"will be called as long as the condition in the \"cond\" data port is met."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:391
+msgid "Functions"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:393
+msgid ""
+"Functions are simple helpers, most of the time deterministic. They take "
+"some arguments as input and return an output. They are almost never "
+"sequenced."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:398
+msgid "Built-In"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:400
+msgid ""
+"There is a list of built in helpers. The list is almost identical to the "
+"one from GDScript (@TODO, link to gdscript methods?). Most of them are "
+"mathematical functions, but others can be very useful helpers. Just make "
+"sure to take a look at the list at some point."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:406
+msgid "By Type"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:408
+msgid ""
+"Those are the methods available to basic types. For example, if you want "
+"a dot-product, you can search for \"dot\" instead of the Vector3 "
+"category. In most cases just search the list of nodes, it should be "
+"faster."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:413
+msgid "Call"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:415
+msgid ""
+"This is the generic calling node. It is rarely used directly but by "
+"dragging to empty space on an already configured node."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:419
+msgid "Constructors"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:421
+msgid ""
+"These are all the functions needed to create Godot basic datatypes. For "
+"example, If you need to create a Vector3 out of 3 floats, a constructor "
+"must be used."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:427
+msgid "Destructor"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:429
+msgid ""
+"This is the opposite to Constructor, it allows to separate any basic type"
+" (ie, Vector3) into its sub-elements."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:435
+msgid "Emit Signal"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:437
+msgid ""
+"Emits signals from any object. In general it's not very useful, as "
+"dragging a signal to the canvas works better."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:441
+msgid "Get/Set"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:443
+msgid ""
+"Generic Getter/Setter node. Dragging properties from the Inspector works "
+"better, as they appear properly configured on drop."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:447
+msgid "Wait"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:449
+msgid ""
+"The Wait nodes will suspend execution of the function until something "
+"happens (many frames can pass until resuming, in fact). Default nodes "
+"allow you to wait for a frame to pass, a fixed frame or a given amount of"
+" time until execution is resumed."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:454
+msgid "Yield"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:456
+msgid ""
+"This node completely suspends the execution of the script, and it will "
+"make the function return a value that can be used to resume execution."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:460
+msgid "Yield Signal"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:462
+msgid "Same as Yield, but will wait until a given signal is emitted."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:466
+msgid "Index"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:468
+msgid ""
+"Generic indexing operator, not often used but it's good that it exists "
+"just in case."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:472
+msgid "Operators"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:474
+msgid ""
+"These are mostly generic operators such as addition, multiplication, "
+"comparison, etc. By default, these mostly accept any datatype (and will "
+"error in run-time if the types feeded do not match for the operator). It "
+"is always recommended to set the right type for operators to catch errors"
+" faster and make the graph easier to read."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:483
+msgid "Expression Node"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:485
+msgid ""
+"Among the operators, the *Expression* node is the most powerful. If well "
+"used, it allows you to enormously simplify visual scripts that are math "
+"or logic heavy. Just type any expression on it and it will be executed in"
+" real-time."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:488
+msgid "Expression nodes can:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:490
+msgid ""
+"Perform math and logic expressions based on custom inputs (eg: \"a*5+b\","
+" where a and b are custom inputs):"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:495
+msgid "Access local variables or properties:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:500
+msgid ""
+"Use most of the existing built-in functions that are available to "
+"GDScript, such as sin(),cos(),print(), as well as constructors, such as "
+"Vector3(x,y,z),Rect2(..), etc.:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:505
+msgid "Call API functions:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/nodes_purposes.rst:510
+msgid ""
+"Use sequenced mode, which makes more sense in case of respecting the "
+"processing order:"
+msgstr ""
+

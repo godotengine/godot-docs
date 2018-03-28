@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:4
+msgid "Screen-reading shaders"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:9
+msgid ""
+"Very often it is desired to make a shader that reads from the same screen"
+" it's writing to. 3D APIs such as OpenGL or DirectX make this very "
+"difficult because of internal hardware limitations. GPUs are extremely "
+"parallel, so reading and writing causes all sort of cache and coherency "
+"problems. As a result, not even the most modern hardware supports this "
+"properly."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:16
+msgid ""
+"The workaround is to make a copy of the screen, or a part of the screen, "
+"to a back-buffer and then read from it while drawing. Godot provides a "
+"few tools that makes this process easy!"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:21
+msgid "SCREEN_TEXTURE built-in texture."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:23
+msgid ""
+"Godot :ref:`doc_shading_language` has a special texture, "
+"\"SCREEN_TEXTURE\" (and \"DEPTH_TEXTURE\" for depth, in case of 3D). It "
+"takes as parameter the UV of the screen and returns a vec3 RGB with the "
+"color. A special built-in varying: SCREEN_UV can be used to obtain the UV"
+" for the current fragment. As a result, this simple 2D fragment shader:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:32
+msgid "results in an invisible object, because it just shows what lies behind."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:34
+msgid ""
+"The reason why textureLod must be used is because, when Godot copies back"
+" a chunk of the screen, it also does an efficient separatable gaussian "
+"blur to it's mipmaps."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:37
+msgid ""
+"This allows for not only reading from the screen, but reading from it "
+"with different amounts of blur at no cost."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:41
+msgid "SCREEN_TEXTURE example"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:43
+msgid ""
+"SCREEN_TEXTURE can be used for a lot of things. There is a special demo "
+"for *Screen Space Shaders*, that you can download to see and learn. One "
+"example is a simple shader to adjust brightness, contrast and saturation:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:65
+msgid "Behind the scenes"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:67
+msgid ""
+"While this seems magical, it's not. The SCREEN_TEXTURE built-in, when "
+"first found in a node that is about to be drawn, does a full-screen copy "
+"to a back-buffer. Subsequent nodes that use it in shaders will not have "
+"the screen copied for them, because this ends up being very inefficient."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:73
+msgid ""
+"As a result, if shaders that use SCREEN_TEXTURE overlap, the second one "
+"will not use the result of the first one, resulting in unexpected "
+"visuals:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:79
+msgid ""
+"In the above image, the second sphere (top right) is using the same "
+"source for SCREEN_TEXTURE as the first one below, so the first one "
+"\"disappears\", or is not visible."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:83
+msgid ""
+"In 3D, this is unavoidable because copying happens when opaque rendering "
+"completes."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:86
+msgid ""
+"In 2D this can be corrected via the :ref:`BackBufferCopy "
+"<class_BackBufferCopy>` node, which can be instantiated between both "
+"spheres. BackBufferCopy can work by either specifying a screen region or "
+"the whole screen:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:92
+msgid "With correct back-buffer copying, the two spheres blend correctly:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:97
+msgid "Back-buffer logic"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:99
+msgid ""
+"So, to make it clearer, here's how the backbuffer copying logic works in "
+"Godot:"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:102
+msgid ""
+"If a node uses the SCREEN_TEXTURE, the entire screen is copied to the "
+"back buffer before drawing that node. This only happens the first time, "
+"subsequent nodes do not trigger this."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:105
+msgid ""
+"If a BackBufferCopy node was processed before the situation in the point "
+"above (even if SCREEN_TEXTURE was not used), this behavior described in "
+"the point above does not happen. In other words, automatic copying of the"
+" entire screen only happens if SCREEN_TEXTURE is used in a node for the "
+"first time and no BackBufferCopy node (not disabled) was found before in "
+"tree-order."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:111
+msgid ""
+"BackBufferCopy can copy either the entire screen or a region. If set to "
+"only a region (not the whole screen) and your shader uses pixels not in "
+"the region copied, the result of that read is undefined (most likely "
+"garbage from previous frames). In other words, it's possible to use "
+"BackBufferCopy to copy back a region of the screen and then use "
+"SCREEN_TEXTURE on a different region. Avoid this behavior!"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:120
+msgid "DEPTH_TEXTURE"
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:122
+msgid ""
+"For 3D Shaders, it's also possible to access the screen depth buffer. For"
+" this, the DEPTH_TEXTURE built-in is used. This texture is not linear, it"
+" must be converted via the inverse projection matrix."
+msgstr ""
+
+#: ../../tutorials/shading/screen-reading_shaders.rst:126
+msgid "The following code retrieves the 3D position below the pixel being drawn:"
+msgstr ""
+

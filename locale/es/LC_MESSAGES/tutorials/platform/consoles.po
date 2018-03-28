@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/platform/consoles.rst:4
+msgid "Console Support in Godot"
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:7
+msgid "Official Support"
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:9
+msgid ""
+"Godot does not officially support consoles (save for XBox One via UWP), "
+"and this situation will most likely never change."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:12
+msgid "The reasons for this are:"
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:14
+msgid ""
+"To develop for consoles, one must be licensed as a company. Godot, as an "
+"open source project, does not have such legal figure."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:15
+msgid ""
+"Console SDKs are secret, and protected by non-disclosure agreements. Even"
+" if we could get access to them, we could not publish the code as open-"
+"source."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:16
+msgid ""
+"Consoles require specialized hardware to develop for, so regular "
+"individuals can't create games for them anyway."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:18
+msgid ""
+"This, however, does not mean you can't port your games to console. It's "
+"quite the contrary."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:22
+msgid "Third-Party Support"
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:24
+msgid ""
+"Console ports of Godot are offered via third party companies (which have "
+"ported Godot on their own) and offer porting and publishing services of "
+"your games to consoles."
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:28
+msgid "Following is the list of providers:"
+msgstr ""
+
+#: ../../tutorials/platform/consoles.rst:30
+msgid ""
+"`Lone Wolf Technology <http://www.lonewolftechnology.com/>`_ offers "
+"Switch, PS4 and XBox One porting and publishing of Godot games."
+msgstr ""
+

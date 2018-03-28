@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/shading/shader_materials.rst:4
+msgid "Shader materials"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:9
+msgid ""
+"For the most common cases, Godot provides ready to use materials for most"
+" types of shaders, such as SpatialMaterial, CanvasItemMaterial and "
+"ParticlesMaterial (@TODO link to tutorials/classes). They are flexible "
+"implementations that cover most use cases."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:14
+msgid ""
+"Shader materials allow writing a custom shader directly, for maximum "
+"flexibility. Examples of this are:"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:17
+msgid "Create procedural textures."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:18
+msgid "Create complex texture blendings."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:19
+msgid "Create animated materials, or materials that change with time."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:20
+msgid "Create refractive effects or other advanced effects."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:21
+msgid "Create special lighting shaders for more exotic materials."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:22
+msgid "Animate vertices, like tree leaves or grass."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:23
+msgid ""
+"Create custom particle code, that responds to baked animations or force "
+"fields."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:24
+msgid "And much more!"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:26
+msgid ""
+"Traditionally, most engines will ask you to learn GLSL, HLSL or CG, which"
+" are pretty complex for the skillset of most artists. Godot uses a "
+"simplified version of a shader language that will detect errors as you "
+"type, so you can see your edited shaders in real-time. Additionally, it "
+"is possible to edit shaders using a visual, node-based graph editor."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:33
+msgid "Creating a ShaderMaterial"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:35
+msgid ""
+"Create a new ShaderMaterial in some object of your choice. Go to the "
+"\"Material\" property and create a ShaderMaterial."
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:40
+msgid "Edit the newly created shader, and the shader editor will open:"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:45
+msgid "Converting to ShaderMaterial"
+msgstr ""
+
+#: ../../tutorials/shading/shader_materials.rst:47
+msgid ""
+"It is possible to convert from SpatialMaterial, CanvasItemMaterial and "
+"ParticlesMaterial to ShaderMaterial. Just go to the material properties "
+"and enable the convert option."
+msgstr ""
+

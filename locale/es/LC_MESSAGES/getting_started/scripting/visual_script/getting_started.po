@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:4
+msgid "Getting started with Visual Scripting"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:6
+msgid ""
+"As with everything in Godot, we prioritize a good experience over copying"
+" or integrating third party solutions which might not fit nicely in the "
+"current workflow. This led us to write our own version of how we believe "
+"this feature would work best with the engine."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:10
+msgid ""
+"In Godot, a Visual Script fits smoothly together with regular scripts in "
+"the Editor tab"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:15
+msgid ""
+"In fact, Visual Scripting integrates so well to Godot that it's hard to "
+"believe it was added only in version 3.0. This is because, when editing, "
+"the rest of Godot panels and docks act like a palette from where you can "
+"drag and drop all sorts of information to the script canvas:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:23
+msgid "Creating a Script"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:25
+msgid ""
+"Creating scripts works the same as with other scripting languages: Just "
+"select any node in the scene and push the \"New Script\" button at the "
+"top right corner of the Scene Tree dock:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:31
+msgid ""
+"Once it opens, the script type \"Visual Script\" must be selected from "
+"the drop down list. The script extension must be \".vs\" (for Visual "
+"Script!)."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:37
+msgid ""
+"Finally, the Script Editor will open, allowing to start the editing of "
+"the visual script:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:43
+msgid "Adding a Function"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:45
+msgid ""
+"Unlike other visual scripting implementations, Visual Scripting in Godot "
+"is heavily based on functions. This happens because it uses the same "
+"interface to communicate with the engine as other scripting engines. In "
+"Godot, the scripting interface is universal and all implementations "
+"conform to it."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:49
+msgid "A function is an individual canvas with nodes connected."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:51
+msgid ""
+"A single script can contain many functions, each of which will have a "
+"canvas of its own, allowing for more organization."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:53
+msgid "There are three main ways to add functions in a script:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:56
+msgid "Overriding a Virtual Function"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:58
+msgid ""
+"Most types of nodes and other types of objects in Godot contain virtual "
+"functions. These are functions that will be called (run your code) when "
+"something happens and can be looked up in the reference. Virtual "
+"functions are listed when pressing the \"Override\" icon in the member "
+"panel:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:65
+msgid ""
+"In the following example, a function will be executed when the node is "
+"loaded and added to the running scene. For this, the _ready() virtual "
+"method will be overridden:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:71
+msgid "Finally, a canvas appears for this function, showing the override:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:76
+msgid ""
+"As some functions expect you to return a value, they will also add a "
+"return node where such value is supposed to be provided:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:83
+msgid "Connecting a Signal to a Function"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:85
+msgid ""
+"Nodes in a tree emit signals when something happens. Godot uses signals "
+"for all sorts of things. A typical example would be a button that emits a"
+" \"pressed\" signal when actually pressed."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:88
+msgid ""
+"For this, a node must be selected and the Node tab opened. This will "
+"allow inspecting the signals. Once they are displayed, connect the "
+"\"pressed\" signal:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:94
+msgid ""
+"This will open the connection dialog. In this dialog, you must select the"
+" node where the signal will be connected to, and the function that will "
+"receive the signal:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:100
+msgid ""
+"If this is done right, a new function will be created in our script and a"
+" signal will automatically be connected to it:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:107
+msgid "Creating a Function Manually"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:109
+msgid ""
+"The last way to create functions is to do it manually. In general this is"
+" not as common unless you really need it. Custom functions work when "
+"another (or the same) script calls them manually. The main use case for "
+"this is to separate a function into more, or reusing your visual code."
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:113
+msgid ""
+"To create a function manually, push the big \"Plus\" button, and a new "
+"function will be added with a default name:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:119
+msgid ""
+"This will add a new function, which can be renamed by simply double "
+"clicking its name:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:125
+msgid ""
+"To edit the \"arguments\" this function can get (the values you pass to "
+"it when you call this function), simply click the Function node and check"
+" the inspector:"
+msgstr ""
+
+#: ../../getting_started/scripting/visual_script/getting_started.rst:131
+msgid "More on that will be explained later in this document."
+msgstr ""
+

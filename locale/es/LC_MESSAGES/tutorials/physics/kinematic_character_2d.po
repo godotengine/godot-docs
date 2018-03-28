@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:4
+msgid "Kinematic Character (2D)"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:9
+msgid ""
+"Yes, the name sounds strange. \"Kinematic Character\". What is that? The "
+"reason is that when physics engines came out, they were called "
+"\"Dynamics\" engines (because they dealt mainly with collision "
+"responses). Many attempts were made to create a character controller "
+"using the dynamics engines but it wasn't as easy as it seems. Godot has "
+"one of the best implementations of dynamic character controller you can "
+"find (as it can be seen in the 2d/platformer demo), but using it "
+"requieres a considerable level of skill and understanding of physics "
+"engines (or a lot of patience with trial and error)."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:19
+msgid ""
+"Some physics engines such as Havok seem to swear by dynamic character "
+"controllers as the best alternative, while others (PhysX) would rather "
+"promote the Kinematic one."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:23
+msgid "So, what is really the difference?:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:25
+msgid ""
+"A **dynamic character controller** uses a rigid body with infinite "
+"inertial tensor. Basically, it's a rigid body that can't rotate. Physics "
+"engines always let objects collide, then solve their collisions all "
+"together. This makes dynamic character controllers able to interact with "
+"other physics objects seamlessly (as seen in the platformer demo), "
+"however these interactions are not always predictable. Collisions also "
+"can take more than one frame to be solved, so a few collisions may seem "
+"to displace a tiny bit. Those problems can be fixed, but require a "
+"certain amount of skill."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:34
+msgid ""
+"A **kinematic character controller** is assumed to always begin in a non-"
+"colliding state, and will always move to a non colliding state. If it "
+"starts in a colliding state, it will try to free itself (like rigid "
+"bodies do) but this is the exception, not the rule. This makes their "
+"control and motion a lot more predictable and easier to program. However,"
+" as a downside, they can't directly interact with other physics objects "
+"(unless done by hand in code)."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:42
+msgid ""
+"This short tutorial will focus on the kinematic character controller. "
+"Basically, the oldschool way of handling collisions (which is not "
+"necessarily simpler under the hood, but well hidden and presented as a "
+"nice and simple API)."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:48
+msgid "Physics process"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:50
+msgid ""
+"To manage the logic of a kinematic body or character, it is always "
+"advised to use physics process, because it's called before physics step "
+"and its execution is in sync with physics server, also it is called the "
+"same amount of times per second, always. This makes physics and motion "
+"calculation work in a more predictable way than using regular process, "
+"which might have spikes or lose precision if the frame rate is too high "
+"or too low."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:80
+msgid "Scene setup"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:82
+msgid ""
+"To have something to test, here's the scene (from the tilemap tutorial): "
+":download:`kbscene.zip <files/kbscene.zip>`. We'll be creating a new "
+"scene for the character. Use the robot sprite and create a scene like "
+"this:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:88
+msgid ""
+"You'll notice that there's a warning icon next to our CollisionShape2D "
+"node, that's because we haven't defined a shape for it. Create a new "
+"CircleShape2D in the shape property of CollisionShape2D. Click on "
+"<CircleShape2D> to go to the options for it, and set the radius to 30:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:95
+msgid ""
+"**Note: As mentioned before in the physics tutorial, the physics engine "
+"can't handle scale on most types of shapes (only collision polygons, "
+"planes and segments work), so always change the parameters (such as "
+"radius) of the shape instead of scaling it. The same is also true for the"
+" kinematic/rigid/static bodies themselves, as their scale affect the "
+"shape scale.**"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:102
+msgid ""
+"Now create a script for the character, the one used as an example above "
+"should work as a base."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:105
+msgid ""
+"Finally, instance that character scene in the tilemap, and make the map "
+"scene the main one, so it runs when pressing play."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:111
+msgid "Moving the Kinematic character"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:113
+msgid ""
+"Go back to the character scene, and open the script, the magic begins "
+"now! Kinematic body will do nothing by default, but it has a really "
+"useful function called :ref:`KinematicBody2D.move_and_collide() "
+"<class_KinematicBody2D_move_and_collide>`. This function takes a "
+":ref:`Vector2 <class_Vector2>` as an argument, and tries to apply that "
+"motion to the kinematic body. If a collision happens, it stops right at "
+"the moment of the collision."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:121
+msgid "So, let's move our sprite downwards until it hits the floor:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:146
+msgid ""
+"The result is that the character will move, but stop right when hitting "
+"the floor. Pretty cool, huh?"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:149
+msgid ""
+"The next step will be adding gravity to the mix, this way it behaves a "
+"little more like an actual game character:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:185
+msgid ""
+"Now the character falls smoothly. Let's make it walk to the sides, left "
+"and right when touching the directional keys. Remember that the values "
+"being used (for speed at least) is pixels/second."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:189
+msgid "This adds simple walking support by pressing left and right:"
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:254
+msgid "And give it a try."
+msgstr ""
+
+#: ../../tutorials/physics/kinematic_character_2d.rst:256
+msgid ""
+"This is a good starting point for a platformer. A more complete demo can "
+"be found in the demo zip distributed with the engine, or in the "
+"https://github.com/godotengine/godot-demo-"
+"projects/tree/master/2d/kinematic_character."
+msgstr ""
+

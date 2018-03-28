@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/2d/2d_transforms.rst:4
+msgid "Viewport and canvas transforms"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:9
+msgid ""
+"This tutorial is created after a topic that is a little dark for most "
+"users, and explains all the 2D transforms going on for nodes from the "
+"moment they draw their content locally to the time they are drawn into "
+"the screen."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:15
+msgid "Canvas transform"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:17
+msgid ""
+"As mentioned in the previous tutorial, :ref:`doc_canvas_layers`, every "
+"CanvasItem node (remember that Node2D and Control based nodes use "
+"CanvasItem as their common root) will reside in a *Canvas Layer*. Every "
+"canvas layer has a transform (translation, rotation, scale, etc.) that "
+"can be accessed as a :ref:`Transform2D <class_Transform2D>`."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:23
+msgid ""
+"Also covered in the previous tutorial, nodes are drawn by default in "
+"Layer 0, in the built-in canvas. To put nodes in a different layer, a "
+":ref:`CanvasLayer <class_CanvasLayer>` node can be used."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:28
+msgid "Global canvas transform"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:30
+msgid ""
+"Viewports also have a Global Canvas transform (also a :ref:`Transform2D "
+"<class_Transform2D>`). This is the master transform and affects all "
+"individual *Canvas Layer* transforms. Generally this transform is not of "
+"much use, but is used in the CanvasItem Editor in Godot's editor."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:37
+msgid "Stretch transform"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:39
+msgid ""
+"Finally, viewports have a *Stretch Transform*, which is used when "
+"resizing or stretching the screen. This transform is used internally (as "
+"described in :ref:`doc_multiple_resolutions`), but can also be manually "
+"set on each viewport."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:44
+msgid ""
+"Input events received in the :ref:`MainLoop._input_event() "
+"<class_MainLoop__input_event>` callback are multiplied by this transform,"
+" but lack the ones above. To convert InputEvent coordinates to local "
+"CanvasItem coordinates, the :ref:`CanvasItem.make_input_local() "
+"<class_CanvasItem_make_input_local>` function was added for convenience."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:51
+msgid "Transform order"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:53
+msgid ""
+"For a coordinate in CanvasItem local properties to become an actual "
+"screen coordinate, the following chain of transforms must be applied:"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:59
+msgid "Transform functions"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:61
+msgid "Obtaining each transform can be achieved with the following functions:"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:64
+msgid "Type"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:64
+msgid "Transform"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:66
+msgid "CanvasItem"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:66
+msgid ""
+":ref:`CanvasItem.get_global_transform() "
+"<class_CanvasItem_get_global_transform>`"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:68
+msgid "CanvasLayer"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:68
+msgid ""
+":ref:`CanvasItem.get_canvas_transform() "
+"<class_CanvasItem_get_canvas_transform>`"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:70
+msgid "CanvasLayer+GlobalCanvas+Stretch"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:70
+msgid ""
+":ref:`CanvasItem.get_viewport_transform() "
+"<class_CanvasItem_get_viewport_transform>`"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:73
+msgid ""
+"Finally then, to convert a CanvasItem local coordinates to screen "
+"coordinates, just multiply in the following order:"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:80
+msgid ""
+"Keep in mind, however, that it is generally not desired to work with "
+"screen coordinates. The recommended approach is to simply work in Canvas "
+"coordinates (``CanvasItem.get_global_transform()``), to allow automatic "
+"screen resolution resizing to work properly."
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:86
+msgid "Feeding custom input events"
+msgstr ""
+
+#: ../../tutorials/2d/2d_transforms.rst:88
+msgid ""
+"It is often desired to feed custom input events to the scene tree. With "
+"the above knowledge, to correctly do this, it must be done the following "
+"way:"
+msgstr ""
+

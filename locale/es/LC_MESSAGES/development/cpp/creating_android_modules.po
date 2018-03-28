@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/cpp/creating_android_modules.rst:4
+msgid "Creating Android modules"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:9
+msgid ""
+"Making video games portable is all fine and dandy, until mobile gaming "
+"monetization shows up."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:12
+msgid ""
+"This area is complex, usually a mobile game that monetizes needs special "
+"connections to a server for stuff such as:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:15
+msgid "Analytics"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:16
+msgid "In-app purchases"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:17
+msgid "Receipt validation"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:18
+msgid "Install tracking"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:19
+msgid "Ads"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:20
+msgid "Video ads"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:21
+msgid "Cross-promotion"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:22
+msgid "In-game soft & hard currencies"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:23
+msgid "Promo codes"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:24
+msgid "A/B testing"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:25
+msgid "Login"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:26
+msgid "Cloud saves"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:27
+msgid "Leaderboards and scores"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:28
+msgid "User support & feedback"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:29
+msgid "Posting to Facebook, Twitter, etc."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:30
+msgid "Push notifications"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:32
+msgid ""
+"Oh yeah, developing for mobile is a lot of work. On iOS, you can just "
+"write a C++ module and take advantage of the C++/ObjC intercommunication,"
+" so this is rather easy."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:36
+msgid ""
+"For C++ developers Java is a pain, the build system is severely bloated "
+"and interfacing it with C++ through JNI (Java Native Interface) is more "
+"pain that you don't want even for your worst enemy."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:41
+msgid "Maybe REST?"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:43
+msgid ""
+"Most of these APIs allow communication via REST+JSON APIs. Godot has "
+"great support for HTTP, HTTPS and JSON, so consider this as an option "
+"that works in every platform. Only write the code once and you are set to"
+" go."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:48
+msgid ""
+"Popular engines that have half the share of apps published on mobile get "
+"special plugins written just for them. Godot does not have that luxury "
+"yet. So, if you write a REST implementation of a SDK for Godot, please "
+"share it with the community."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:54
+msgid "Android module"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:56
+msgid ""
+"Writing an Android module is similar to :ref:`doc_custom_modules_in_c++`,"
+" but needs a few more steps."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:59
+msgid ""
+"Make sure you are familiar with building your own :ref:`Android export "
+"templates <doc_compiling_for_android>`, as well as creating "
+":ref:`doc_custom_modules_in_c++`."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:63
+msgid "config.py"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:65
+msgid ""
+"In the config.py for the module, some extra functions are provided for "
+"convenience. First, it's often wise to detect if android is being built "
+"and only enable building in this case:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:74
+msgid ""
+"If more than one platform can be built (typical if implementing the "
+"module also for iOS), check manually for Android in the configure "
+"functions:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:88
+msgid "Java singleton"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:90
+msgid ""
+"An android module will usually have a singleton class that will load it, "
+"this class inherits from ``Godot.SingletonBase``. Resource identifiers "
+"for any additional resources you have provided for the module will be in "
+"the ``com.godot.game.R`` class, so you'll likely want to import it."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:95
+msgid "A singleton object template follows:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:143
+msgid ""
+"Calling back to Godot from Java is a little more difficult. The instance "
+"ID of the script must be known first, this is obtained by calling "
+"``get_instance_ID()`` on the script. This returns an integer that can be "
+"passed to Java."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:148
+msgid ""
+"From Java, use the ``calldeferred`` function to communicate back with "
+"Godot. Java will most likely run in a separate thread, so calls are "
+"deferred:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:155
+msgid ""
+"Add this singleton to the build of the project by adding the following to"
+" config.py:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:158
+#: ../../development/cpp/creating_android_modules.rst:196
+#: ../../development/cpp/creating_android_modules.rst:247
+#: ../../development/cpp/creating_android_modules.rst:295
+msgid "(Before Version 2.0)"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:172
+#: ../../development/cpp/creating_android_modules.rst:209
+#: ../../development/cpp/creating_android_modules.rst:262
+#: ../../development/cpp/creating_android_modules.rst:309
+msgid "(After Version 2.0)"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:187
+msgid "AndroidManifest"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:189
+msgid ""
+"Some SDKs need custom values in AndroidManifest.xml. Permissions can be "
+"edited from the godot exporter so there is no need to add those, but "
+"maybe other functionalities are needed."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:193
+msgid ""
+"Create the custom chunk of android manifest and put it inside the module,"
+" add it like this:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:225
+msgid "Resources"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:227
+msgid ""
+"In order to provide additional resources with your module you have to add"
+" something like this:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:237
+msgid ""
+"Now you can refer to those resources by their id (``R.string.my_string``,"
+" and the like) by importing the ``com.godot.game.R`` class in your Java "
+"code."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:241
+msgid "SDK library"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:243
+msgid ""
+"So, finally it's time to add the SDK library. The library can come in two"
+" flavors, a JAR file or an Android project for ant. JAR is the easiest to"
+" integrate, just put it in the module directory and add it:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:280
+msgid "SDK project"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:282
+msgid ""
+"When this is an Android project, things usually get more complex. Copy "
+"the project folder inside the module directory and configure it:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:289
+msgid ""
+"As of this writing, Godot uses minsdk 10 and target sdk 15. If this ever "
+"changes, it should be reflected in the manifest template: "
+"`AndroidManifest.xml.template "
+"<https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:293
+msgid "Then, add the module folder to the project:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:313
+msgid "Building"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:315
+msgid ""
+"As you probably modify the contents of the module, and modify your .java "
+"inside the module, you need the module to be built with the rest of "
+"Godot, so compile android normally."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:323
+msgid ""
+"This will cause your module to be included, the .jar will be copied to "
+"the java folder, the .java will be copied to the sources folder, etc. "
+"Each time you modify the .java, scons must be called."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:327
+msgid ""
+"Afterwards, just continue the steps for compiling android  "
+":ref:`doc_compiling_for_android`."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:330
+msgid "Using the module"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:332
+msgid ""
+"To use the module from GDScript, first enable the singleton by adding the"
+" following line to engine.cfg (Godot Engine 2.0 and greater):"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:341
+msgid "For Godot Engine 1.1 is"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:349
+msgid "More than one singleton module can be enabled by separating with commas:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:357
+msgid "Then just request the singleton Java object from Globals like this:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:370
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:372
+msgid "(This section is a work in progress, report your problems here!)"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:375
+msgid "Godot crashes upon load"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:377
+msgid "Check ``adb logcat`` for possible problems, then:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:379
+msgid "Make sure libgodot_android.so is in the ``libs/armeabi`` folder"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:380
+msgid ""
+"Check that the methods used in the Java singleton only use simple Java "
+"datatypes, more complex ones are not supported."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:384
+msgid "Future"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:386
+msgid ""
+"Godot has an experimental Java API Wrapper that allows to use the entire "
+"Java API from GDScript."
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:389
+msgid "It's simple to use and it's used like this:"
+msgstr ""
+
+#: ../../development/cpp/creating_android_modules.rst:395
+msgid ""
+"This is most likely not functional yet, if you want to test it and help "
+"us make it work, contact us through the `developer mailing list "
+"<https://groups.google.com/forum/#!forum/godot-engine>`__."
+msgstr ""
+

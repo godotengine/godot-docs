@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/gui/gui_skinning.rst:4
+msgid "GUI skinning"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:7
+msgid "Oh beautiful GUI!"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:9
+msgid ""
+"This tutorial is about advanced skinning of an user interface. Most games"
+" generally don't need this, as they end up just relying on :ref:`Label "
+"<class_Label>`, :ref:`TextureRect <class_TextureRect>`, "
+":ref:`TextureButton <class_TextureButton>` and :ref:`TextureProgress "
+"<class_TextureProgress>`."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:15
+msgid ""
+"However, many types of games often need complex user interfaces, like "
+"MMOs, traditional RPGs, Simulators, Strategy, etc. These kind of "
+"interfaces are also common in some games that include editors to create "
+"content, or interfaces for network connectivity."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:20
+msgid ""
+"Godot user interface uses these kind of controls with the default theme, "
+"but they can be skinned to resemble pretty much any kind of user "
+"interface."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:25
+msgid "Theme"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:27
+msgid ""
+"The GUI is skinned through the :ref:`Theme <class_Theme>` resource. Theme"
+" contains all the information required to change the entire visual "
+"styling of all controls. Theme options are named, so it's not obvious "
+"which name changes what (specialy from code), but several tools are "
+"provided. The ultimate place to look at what each theme option is for "
+"each control, which will always be more up to date than any documentation"
+" is the file `scene/resources/default_theme/default_theme.cpp "
+"<https://github.com/godotengine/godot/blob/master/scene/resources/default_theme/default_theme.cpp>`__."
+" The rest of this document will explain the different tools used to "
+"customize the theme."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:38
+msgid ""
+"A Theme can be applied to any control in the scene. As a result, all "
+"children and grand-children controls will use that same theme too (unless"
+" another theme is specified further down the tree). If a value is not "
+"found in a theme, it will be searched in themes higher up in the "
+"hierarchy towards the root. If nothing was found, the default theme is "
+"used. This system allows for flexible overriding of themes in complex "
+"user interfaces."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:47
+msgid "Theme options"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:49
+msgid "Each kind of option in a theme can be:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:51
+msgid ""
+"**An integer constant**: A single numerical constant. Generally used to "
+"define spacing between compoments or alignment."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:53
+msgid ""
+"**A Color**: A single color, with or without transparency. Colors are "
+"usually applied to fonts and icons."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:55
+msgid ""
+"**A Texture**: A single image. Textures are not often used, but when they"
+" are they represent handles to pick or icons in a complex control (such "
+"as file dialog)."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:58
+msgid ""
+"**A Font**: Every control that uses text can be assigned the fonts used "
+"to draw strings."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:60
+msgid ""
+"**A StyleBox**: Stylebox is a resource that defines how to draw a panel "
+"in varying sizes (more information on them later)."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:63
+msgid "Every option is associated to:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:65
+msgid "A name (the name of the option)"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:66
+msgid "A Control (the name of the control)"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:68
+msgid "An example usage:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:78
+msgid ""
+"In the example above, a new theme is created. The \"font_color\" option "
+"is changed and then applied to a label. As a result, the label (and all "
+"children and grand children labels) will use that color."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:82
+msgid ""
+"It is possible to override those options without using the theme directly"
+" and only for a specific control by using the override API in "
+":ref:`Control.add_color_override() <class_Control_add_color_override>`:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:91
+msgid ""
+"In the inline help of Godot (in the script tab) you can check which theme"
+" options are overrideable, or check the :ref:`Control <class_Control>` "
+"class reference."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:95
+msgid "Customizing a control"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:97
+msgid ""
+"If only a few controls need to be skinned, it is often not necessary to "
+"create a new theme. Controls offer their theme options as special kinds "
+"of properties. If checked, overriding will take place:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:103
+msgid ""
+"As can be see in the image above, theme options have little check-boxes. "
+"If checked, they can be used to override the value of the theme just for "
+"that control."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:108
+msgid "Creating a theme"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:110
+msgid ""
+"The simplest way to create a theme is to edit a theme resource. Create a "
+"Theme from the resource menu, the editor will appear immediately. "
+"Following to this, save it (to, as example, mytheme.thm):"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:116
+msgid ""
+"This will create an empty theme that can later be loaded and assigned to "
+"controls."
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:120
+msgid "Example: theming a button"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:122
+msgid ""
+"Take some assets (:download:`skin_assets.zip <files/skin_assets.zip>`), "
+"go to the \"theme\" menu and select \"Add Class Item\":"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:127
+msgid ""
+"A menu will appear promting the type of control to create. Select "
+"\"Button\":"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:132
+msgid ""
+"Immediately, all button theme options will appear in the property editor,"
+" where they can be edited:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:137
+msgid ""
+"Select the \"normal\" stylebox and create a new \"StyleBoxTexture\", then"
+" edit it. A texture stylebox basically contains a texture and the size of"
+" the margins that will not stretch when the texture is stretched. This is"
+" called \"3x3\" stretching:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:144
+msgid ""
+"Repeat the steps and add the other assets. There is no hover or disabled "
+"image in the example files, so use the same stylebox as in normal. Set "
+"the supplied font as the button font and change the font color to black. "
+"Soon, your button will look different and retro:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:151
+msgid ""
+"Save this theme to the .thm file. Go to the 2D editor and create a few "
+"buttons:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:156
+msgid ""
+"Now, go to the root node of the scene and locate the \"theme\" property, "
+"replace it by the theme that was just created. It should look like this:"
+msgstr ""
+
+#: ../../tutorials/gui/gui_skinning.rst:161
+msgid "Congratulations! You have created a reusable GUI Theme!"
+msgstr ""
+

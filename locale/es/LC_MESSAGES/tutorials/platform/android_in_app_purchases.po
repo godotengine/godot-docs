@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:4
+msgid "Android in-app purchases"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:8
+msgid ""
+"Godot engine has integrated GooglePaymentsV3 module with which we can "
+"implement in-app purchases in our game."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:10
+msgid ""
+"The Godot engine demo project repository has an android-iap example "
+"project. It includes a gdscript interface for android IAP."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:12
+msgid ""
+"Check the repository here https://github.com/godotengine/godot-demo-"
+"projects"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:14
+msgid "Find the iap.gd script in"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:21
+msgid ""
+"Add it to the Autoload list and name it as IAP so that we can reference "
+"it anywhere in the game."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:24
+msgid "Getting the product details"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:26
+msgid ""
+"When starting our game, we will need to get the item details from Google "
+"such as the product price, description and localized price string etc."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:42
+msgid ""
+"We can use the IAP details to display the title, price and/or description"
+" on our shop scene."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:45
+msgid "Check if user purchased an item"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:47
+msgid ""
+"When starting our game, we can check if the user has purchased any "
+"product. YOU SHOULD DO THIS ONLY AFTER 2/3 SECONDS AFTER YOUR GAME IS "
+"LOADED. If we do this as the first thing when the game is launched, IAP "
+"might not be initialized and our game will crash on start."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:60
+msgid ""
+"Google IAP policy says the game should restore the user's purchases if "
+"the user replaces their phone or reinstalls the same app. We can use the "
+"above code to check what products the user has purchased and we can make "
+"our game respond accordingly."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:63
+msgid "Simple Purchase"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:65
+msgid "We can put this purchase logic on a product's buy button."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:80
+msgid ""
+"We can also implement other signals for the purchase flow and improve the"
+" user experience as you needed."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:82
+msgid "``purchase_fail`` - When the purchase is failed due to any reason"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:84
+msgid "``purchase_cancel`` - When the user cancels the purchase"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:86
+msgid "``purchase_owned`` - When the user already bought the product earlier"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:90
+msgid "Consumables and Non-Consumables"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:92
+msgid ""
+"There are two types of products - consumables and non-consumables. "
+"**Consumables** are purchased and used, for eg: healing potions which can"
+" be purchased again and again. **Non-consumables** are one time "
+"purchases, for eg: Level packs."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:96
+msgid ""
+"Google doesn't have this separation in their dashboard. If our product is"
+" a consumable, and if a user has purchased it, it will not be available "
+"for purchase until it is consumed. So we should call the consume method "
+"for our consumables and don't call consume for your non-consumables."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:106
+msgid ""
+"If our game has only consumables, we don't have to do this. We can set it"
+" to consume the item automatically after a purchase."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:112
+msgid "If our game has only non-consumables, we can"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:118
+msgid "We should set the auto consume value only once when the game starts."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:121
+msgid "Testing"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:123
+msgid ""
+"If we add a gmail id as a tester in Google dashboard, that tester can "
+"purchase items and they will not be charged. Another way to test IAP is "
+"using redeem codes generated by us for our game because the purchase flow"
+" is the same."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:125
+msgid ""
+"Third way of testing is in development side. If we put the product ids as"
+" shown below, we will get a static fixed response according to the "
+"product id. This is a quick way of testing things before going to the "
+"dashboard."
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:127
+msgid "android.test.purchased"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:128
+msgid "android.test.canceled"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:129
+msgid "android.test.refunded"
+msgstr ""
+
+#: ../../tutorials/platform/android_in_app_purchases.rst:130
+msgid "android.test.item_unavailable"
+msgstr ""
+

@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/networking/ssl_certificates.rst:4
+msgid "SSL certificates"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:9
+msgid ""
+"It is often desired to use SSL connections for communications to avoid "
+"\"man in the middle\" attacks. Godot has a connection wrapper, "
+":ref:`StreamPeerSSL <class_StreamPeerSSL>`, which can take a regular "
+"connection and add security around it. The :ref:`HTTPClient "
+"<class_HTTPClient>` class also supports HTTPS by using this same wrapper."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:16
+msgid ""
+"For SSL to work, certificates need to be provided. A .crt file must be "
+"specified in the project settings:"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:21
+msgid ""
+"This file should contain any number of public certificates in "
+"http://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail format."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:24
+msgid ""
+"Of course, remember to add .crt as filter so the exporter recognizes this"
+" when exporting your project."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:29
+msgid "There are two ways to obtain certificates:"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:32
+msgid "Approach 1: self signed cert"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:34
+msgid ""
+"The first approach is the simplest, just generate a private and public "
+"key pair, and put the public pair in the .crt file (again, in PEM "
+"format). The private key should go to your server."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:38
+msgid ""
+"OpenSSL has `some documentation "
+"<https://www.openssl.org/docs/HOWTO/keys.txt>`__ about this. This "
+"approach also **does not require domain validation** nor requires you to "
+"spend a considerable amount of money in purchasing certificates from a "
+"CA."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:45
+msgid "Approach 2: CA cert"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:47
+msgid ""
+"The second approach consists of using a certificate authority (CA) such "
+"as Verisign, Geotrust, etc. This is a more cumbersome process, but it's "
+"more \"official\" and ensures your identity is clearly represented."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:52
+msgid ""
+"Unless you are working with large companies or corporations, or need to "
+"connect to someone else's servers (i.e., connecting to Google or some "
+"other REST API provider via HTTPS) this method is not as useful."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:56
+msgid ""
+"Also, when using a CA issued cert, **you must enable domain validation**,"
+" to ensure the domain you are connecting to is the one intended, "
+"otherwise any website can issue any certificate in the same CA and it "
+"will work."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:61
+msgid ""
+"If you are using Linux, you can use the supplied certs file, generally "
+"located in:"
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:68
+msgid ""
+"This file allows HTTPS connections to virtually any website (i.e., "
+"Google, Microsoft, etc.)."
+msgstr ""
+
+#: ../../tutorials/networking/ssl_certificates.rst:71
+msgid ""
+"Or just pick any of the more specific certificates there if you are "
+"connecting to a specific one."
+msgstr ""
+

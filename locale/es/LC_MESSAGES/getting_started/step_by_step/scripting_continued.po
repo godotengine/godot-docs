@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:4
+msgid "Scripting (continued)"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:7
+msgid "Processing"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:9
+msgid ""
+"Several actions in Godot are triggered by callbacks or virtual functions,"
+" so there is no need to write code that runs all the time."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:12
+msgid ""
+"However, it is still common to need a script to be processed on every "
+"frame. There are two types of processing: idle processing and physics "
+"processing."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:16
+msgid ""
+"Idle processing is activated when the method :ref:`Node._process() "
+"<class_Node__process>` is found in a script. It can be turned off and on "
+"with the :ref:`Node.set_process() <class_Node_set_process>` function."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:20
+msgid ""
+"This method will be called every time a frame is drawn, so it's fully "
+"dependent on how many frames per second (FPS) the application is running "
+"at:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:37
+msgid ""
+"The delta parameter contains the time elapsed in seconds, as a floating "
+"point, since the previous call to ``_process()``."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:40
+msgid ""
+"This parameter can be used to make sure things always take the same "
+"amount of time, regardless of the game's FPS."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:43
+msgid ""
+"For example, movement is often multiplied with a time delta to make "
+"movement speed both constant and independent from the frame rate."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:46
+msgid ""
+"Physics processing with ``_physics_process()`` is similar, but it should "
+"be used for processes that must happen before each physics step, such as "
+"controlling a character. It always runs before a physics step and it is "
+"called at fixed time intervals: 60 times per second by default. You can "
+"change the interval from the Project Settings, under Physics -> Common ->"
+" Physics Fps."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:52
+msgid ""
+"The function ``_process()``, however, is not synced with physics. Its "
+"frame rate is not constant and is dependent on hardware and game "
+"optimization. Its execution is done after the physics step on single-"
+"threaded games."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:55
+msgid ""
+"A simple way to test this is to create a scene with a single Label node, "
+"with the following script:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:82
+msgid "Which will show a counter increasing each frame."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:85
+msgid "Groups"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:87
+msgid ""
+"Nodes can be added to groups, as many as desired per node, and is a "
+"useful feature for organizing large scenes. There are two ways to do "
+"this. The first is from the UI, from the Groups button under the Node "
+"panel:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:92
+msgid ""
+"And the second way is from code. One example would be to tag scenes which"
+" are enemies:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:110
+msgid ""
+"This way, if the player is discovered sneaking into a secret base, all "
+"enemies can be notified about its alarm sounding by using "
+":ref:`SceneTree.call_group() <class_SceneTree_call_group>`:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:127
+msgid ""
+"The above code calls the function ``player_was_discovered`` on every "
+"member of the group ``enemies``."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:130
+msgid ""
+"It is also possible to get the full list of ``enemies`` nodes by calling "
+":ref:`SceneTree.get_nodes_in_group() "
+"<class_SceneTree_get_nodes_in_group>`:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:143
+msgid ""
+"The :ref:`SceneTree <class_SceneTree>` documentation is currently "
+"incomplete, though more will be added later."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:147
+msgid "Notifications"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:149
+msgid ""
+"Godot has a system of notifications. These are usually not needed for "
+"scripting, as it's too low-level and virtual functions are provided for "
+"most of them. It's just good to know they exist. For example, you may add"
+" an :ref:`Object._notification() <class_Object__notification>` function "
+"in your script:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:184
+msgid ""
+"The documentation of each class in the :ref:`Class Reference <toc-class-"
+"ref>` shows the notifications it can receive. However, in most cases "
+"GDScript provides simpler overrideable functions."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:189
+msgid "Overrideable functions"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:191
+msgid ""
+"Such overrideable functions, which are described as follows, can be "
+"applied to nodes:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:263
+msgid ""
+"As mentioned before, it's better to use these functions instead of the "
+"notification system."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:267
+msgid "Creating nodes"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:269
+msgid ""
+"To create a node from code, call the ``.new()`` method, just like for any"
+" other class-based datatype. For example:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:293
+msgid ""
+"To delete a node, be it inside or outside the scene, ``free()`` must be "
+"used:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:309
+msgid ""
+"When a node is freed, it also frees all its children nodes. Because of "
+"this, manually deleting nodes is much simpler than it appears. Just free "
+"the base node and everything else in the subtree goes away with it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:313
+msgid ""
+"A situation might occur where we want to delete a node that is currently "
+"\"blocked\", because it is emitting a signal or calling a function. This "
+"will crash the game. Running Godot with the debugger will often catch "
+"this case and warn you about it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:318
+msgid ""
+"The safest way to delete a node is by using :ref:`Node.queue_free() "
+"<class_Node_queue_free>`. This erases the node safely during idle."
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:336
+msgid "Instancing scenes"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:338
+msgid ""
+"Instancing a scene from code is done in two steps. The first one is to "
+"load the scene from your hard drive:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:351
+msgid "Preloading it can be more convenient, as it happens at parse time:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:358
+msgid ""
+"But ``scene`` is not yet a node. It's packed in a special resource called"
+" :ref:`PackedScene <class_PackedScene>`. To create the actual node, the "
+"function :ref:`PackedScene.instance() <class_PackedScene_instance>` must "
+"be called. This will return the tree of nodes that can be added to the "
+"active scene:"
+msgstr ""
+
+#: ../../getting_started/step_by_step/scripting_continued.rst:376
+msgid ""
+"The advantage of this two-step process is that a packed scene may be kept"
+" loaded and ready to use so that you can create as many instances as "
+"desired. This is especially useful to quickly instance several enemies, "
+"bullets, and other entities in the active scene."
+msgstr ""
+

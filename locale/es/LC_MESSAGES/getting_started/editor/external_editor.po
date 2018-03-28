@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-04 15:48-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/editor/external_editor.rst:4
+msgid "Using an external text editor"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:6
+msgid ""
+"While godot has an inbuilt text editor, some developers have a tendency "
+"to want to use a text editor they are familiar with. Godot provides this "
+"option via the options under ``Editor -> Editor Settings -> Text Editor "
+"-> External``"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:13
+msgid ""
+"There are two fields: the executable path and command line flags. The "
+"flags allow you to better integrate the editor with godot. Godot will "
+"replace the following inside the flags parameter:"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:18
+msgid "Field in Exec Flags"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:18
+msgid "Is replaced with"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:20
+msgid "{project}"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:20
+msgid "The absolute path to the project directory"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:22
+msgid "{file}"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:22
+msgid "The absolute path to the file"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:24
+msgid "{col}"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:24
+msgid "The column number of the error"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:26
+msgid "{line}"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:26
+msgid "The line number of the error"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:29
+msgid "Some example Exec Flags for various editors include:"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:32
+msgid "Editor"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:32
+msgid "Exec Flags"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:34
+msgid "geany/kate"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:34
+msgid "{file} --line {line} --column {col}"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:36
+msgid "atom/sublime text"
+msgstr ""
+
+#: ../../getting_started/editor/external_editor.rst:36
+msgid "{file}:{line}"
+msgstr ""
+

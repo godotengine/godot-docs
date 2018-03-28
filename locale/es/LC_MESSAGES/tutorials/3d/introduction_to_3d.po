@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/3d/introduction_to_3d.rst:4
+msgid "Introduction to 3D"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:6
+msgid ""
+"Creating a 3D game can be challenging. That extra Z coordinate makes many"
+" of the common techniques that helped to make 2D games simple no longer "
+"work. To aid in this transition, it is worth mentioning that Godot uses "
+"very similar APIs for 2D and 3D. Most nodes are the same and are present "
+"in both 2D and 3D versions. In fact, it is worth checking the 3D "
+"platformer tutorial, or the 3D kinematic character tutorials, which are "
+"almost identical to their 2D counterparts."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:14
+msgid ""
+"In 3D, math is a little more complex than in 2D, so also checking the "
+":ref:`doc_vector_math` in the wiki (which were especially created for "
+"game developers, not mathematicians or engineers) will help pave the way "
+"into efficiently developing 3D games."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:20
+msgid "Spatial node"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:22
+msgid ""
+":ref:`Node2D <class_Node2D>` is the base node for 2D. :ref:`Control "
+"<class_Control>` is the base node for everything GUI. Following this "
+"reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>` node for"
+" everything 3D."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:29
+msgid ""
+"Spatial nodes have a local transform, which is relative to the parent "
+"node (as long as the parent node is also **or inherits** of type "
+"Spatial). This transform can be accessed as a 4x3 :ref:`Transform "
+"<class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>` members "
+"representing location, Euler rotation (x,y and z angles) and scale."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:39
+msgid "3D content"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:41
+msgid ""
+"Unlike 2D, where loading image content and drawing is straightforward, 3D"
+" is a little more difficult. The content needs to be created with special"
+" 3D tool (usually referred to as DCCs) and exported to an exchange file "
+"format in order to be imported in Godot (3D formats are not as "
+"standardized as images)."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:48
+msgid "DCC-created models"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:50
+msgid ""
+"There are two pipelines to import 3D models in Godot. The first and most "
+"common one is through the :ref:`doc_importing_3d_scenes` importer, which "
+"allows to import entire scenes (just as they look in the DCC), including "
+"animation, skeletal rigs, blend shapes, etc."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:55
+msgid ""
+"The second pipeline is through the :ref:`doc_importing_3d_meshes` "
+"importer. This second method allows importing simple .OBJ files as mesh "
+"resources, which can be then put inside a :ref:`MeshInstance "
+"<class_MeshInstance>` node for display."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:61
+msgid "Generated geometry"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:63
+msgid ""
+"It is possible to create custom geometry by using the :ref:`Mesh "
+"<class_Mesh>` resource directly, simply create your arrays and use the "
+":ref:`Mesh.add_surface() <class_Mesh_add_surface>` function. A helper "
+"class is also available, :ref:`SurfaceTool <class_SurfaceTool>`, which "
+"provides a more straightforward API and helpers for indexing, generating "
+"normals, tangents, etc."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:70
+msgid ""
+"In any case, this method is meant for generating static geometry (models "
+"that will not be updated often), as creating vertex arrays and submitting"
+" them to the 3D API has a significant performance cost."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:75
+msgid "Immediate geometry"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:77
+msgid ""
+"If, instead, there is a requirement to generate simple geometry that will"
+" be updated often, Godot provides a special node, :ref:`ImmediateGeometry"
+" <class_ImmediateGeometry>` which provides an OpenGL 1.x style immediate-"
+"mode API to create points, lines, triangles, etc."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:84
+msgid "2D in 3D"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:86
+msgid ""
+"While Godot packs a powerful 2D engine, many types of games use 2D in a "
+"3D environment. By using a fixed camera (either orthogonal or "
+"perspective) that does not rotate, nodes such as :ref:`Sprite3D "
+"<class_Sprite3D>` and :ref:`AnimatedSprite3D <class_AnimatedSprite3D>` "
+"can be used to create 2D games that take advantage of mixing with 3D "
+"backgrounds, more realistic parallax, lighting/shadow effects, etc."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:94
+msgid ""
+"The disadvantage is, of course, that added complexity and reduced "
+"performance in comparison to plain 2D, as well as the lack of reference "
+"of working in pixels."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:99
+msgid "Environment"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:101
+msgid ""
+"Besides editing a scene, it is often common to edit the environment. "
+"Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>` node "
+"that allows changing the background color, mode (as in, put a skybox), "
+"and applying several types of built-in post-processing effects. "
+"Environments can also be overridden in the Camera."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:108
+msgid "3D viewport"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:110
+msgid ""
+"Editing 3D scenes is done in the 3D tab. This tab can be selected "
+"manually, but it will be automatically enabled when a Spatial node is "
+"selected."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:116
+msgid ""
+"Default 3D scene navigation controls are similar to Blender (aiming to "
+"have some sort of consistency in the free software pipeline..), but "
+"options are included to customize mouse buttons and behavior to be "
+"similar to other tools in Editor Settings:"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:124
+msgid "Coordinate system"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:126
+msgid ""
+"Godot uses the `metric <http://en.wikipedia.org/wiki/Metric_system>`__ "
+"system for everything. 3D Physics and other areas are tuned for this, so "
+"attempting to use a different scale is usually a bad idea (unless you "
+"know what you are doing)."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:131
+msgid ""
+"When working with 3D assets, it's always best to work in the correct "
+"scale (set your DCC to metric). Godot allows scaling post-import and, "
+"while this works in most cases, in rare situations it may introduce "
+"floating point precision issues (and thus, glitches or artifacts) in "
+"delicate areas such as rendering or physics. So, make sure your artists "
+"always work in the right scale!"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:138
+msgid ""
+"The Y coordinate is used for \"up\", though for most objects that need "
+"alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z "
+"axis is used as a \"pointing towards\" direction. This convention roughly"
+" means that:"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:143
+msgid "**X** is sides"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:144
+msgid "**Y** is up/down"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:145
+msgid "**Z** is front/back"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:148
+msgid "Space and manipulation gizmos"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:150
+msgid ""
+"Moving objects in the 3D view is done through the manipulator gizmos. "
+"Each axis is represented by a color: Red, Green, Blue represent X,Y,Z "
+"respectively. This convention applies to the grid and other gizmos too "
+"(and also to the shader language, ordering of components for "
+"Vector3,Color,etc.)."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:158
+msgid "Some useful keybindings:"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:160
+msgid ""
+"To snap motion or rotation, press the \"s\" key while moving, scaling or "
+"rotating."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:162
+msgid "To center the view on the selected object, press the \"f\" key."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:165
+msgid "View menu"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:167
+msgid ""
+"The view options are controlled by the \"[ view ]\" menu. Pay attention "
+"to this little menu inside the window because it is often overlooked!"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:173
+msgid "Default environment"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:175
+msgid ""
+"When created from the Project Manager, the 3D environment has a default "
+"sky."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:179
+msgid ""
+"Given how physically based rendering works, it is advised to always try "
+"to work with a default environment in order to provide indirect and "
+"reflected light to your objects."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:184
+msgid "Cameras"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:186
+msgid ""
+"No matter how many objects are placed in 3D space, nothing will be "
+"displayed unless a :ref:`Camera <class_Camera>` is also added to the "
+"scene. Cameras can either work in orthogonal or perspective projections:"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:193
+msgid ""
+"Cameras are associated and only display to a parent or grand-parent "
+"viewport. Since the root of the scene tree is a viewport, cameras will "
+"display on it by default, but if sub-viewports (either as render target "
+"or picture-in-picture) are desired, they need their own children cameras "
+"to display."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:201
+msgid ""
+"When dealing with multiple cameras, the following rules are followed for "
+"each viewport:"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:204
+msgid ""
+"If no cameras are present in the scene tree, the first one that enters it"
+" will become the active camera. Further cameras entering the scene will "
+"be ignored (unless they are set as *current*)."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:207
+msgid ""
+"If a camera has the \"*current*\" property set, it will be used "
+"regardless of any other camera in the scene. If the property is set, it "
+"will become active, replacing the previous camera."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:210
+msgid ""
+"If an active camera leaves the scene tree, the first camera in tree-order"
+" will take its place."
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:214
+msgid "Lights"
+msgstr ""
+
+#: ../../tutorials/3d/introduction_to_3d.rst:216
+msgid ""
+"There is no limitation on the number of lights nor of types of lights in "
+"Godot. As many as desired can be added (as long as performance allows)."
+msgstr ""
+

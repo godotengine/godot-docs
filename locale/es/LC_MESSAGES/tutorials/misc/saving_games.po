@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/misc/saving_games.rst:4
+msgid "Saving games"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:9
+msgid ""
+"Save games can be complicated. It can be desired to store more "
+"information than the current level or number of stars earned on a level. "
+"More advanced save games may need to store additional information about "
+"an arbitrary number of objects. This will allow the save function to "
+"scale as the game grows more complex."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:16
+msgid "Identify persistent objects"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:18
+msgid ""
+"First we should identify what objects we want to keep between game "
+"sessions and what information we want to keep from those objects. For "
+"this tutorial, we will use groups to mark and handle objects to be saved "
+"but other methods are certainly possible."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:23
+msgid ""
+"We will start by adding objects we wish to save to the \"Persist\" group."
+" As in the :ref:`doc_scripting_continued` tutorial, we can do this "
+"through the GUI or through script. Let's add the relevant nodes using the"
+" GUI:"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:29
+msgid ""
+"Once this is done when we need to save the game we can get all objects to"
+" save them and then tell them all to save with this script:"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:39
+msgid "Serializing"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:41
+msgid ""
+"The next step is to serialize the data. This makes it much easier to read"
+" and store to disk. In this case, we're assuming each member of group "
+"Persist is an instanced node and thus has a path. GDScript has helper "
+"functions for this, such as :ref:`to_json() <class_@GDScript_to_json>` "
+"and :ref:`parse_json() <class_@GDScript_parse_json>`, so we will use a "
+"dictionary. Our node needs to contain a save function that returns this "
+"data. The save function will look like this:"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:75
+msgid ""
+"This gives us a dictionary with the style ``{ "
+"\"variable_name\":that_variables_value }`` which will be useful when "
+"loading."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:80
+msgid "Saving and reading data"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:82
+msgid ""
+"As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a "
+"file and write to it and then later read from it. Now that we have a way "
+"to call our groups and get their relevant data, let's use to_json() to "
+"convert it into an easily stored string and store them in a file. Doing "
+"it this way ensures that each line is its own object so we have an easy "
+"way to pull the data out of the file as well."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:102
+msgid ""
+"Game saved! Loading is fairly simple as well. For that we'll read each "
+"line, use parse_json() to read it back to a dict, and then iterate over "
+"the dict to read our values. But we'll need to first create the object "
+"and we can use the filename and parent values to achieve that. Here is "
+"our load function:"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:137
+msgid ""
+"And now we can save and load an arbitrary number of objects laid out "
+"almost anywhere across the scene tree! Each object can store different "
+"data depending on what it needs to save."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:142
+msgid "Some notes"
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:144
+msgid ""
+"We may have glossed over a step, but setting the game state to one fit to"
+" start loading data can be very complicated. This step will need to be "
+"heavily customized based on the needs of an individual project."
+msgstr ""
+
+#: ../../tutorials/misc/saving_games.rst:148
+msgid ""
+"This implementation assumes no Persist objects are children of other "
+"Persist objects. Doing so would create invalid paths. If this is one of "
+"the needs of a project this needs to be considered. Saving objects in "
+"stages (parent objects first) so they are available when child objects "
+"are loaded will make sure they're available for the add_child() call. "
+"There will also need to be some way to link children to parents as the "
+"NodePath will likely be invalid."
+msgstr ""
+

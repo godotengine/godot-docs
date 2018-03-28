@@ -1,0 +1,594 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../community/contributing/updating_the_class_reference.rst:4
+msgid "Contribute to the Class Reference"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:6
+msgid ""
+"Godot ships with many nodes and singletons to help you develop your games"
+" in GDscript. Each is a class, documented in the :ref:`class reference "
+"<toc-class-ref>`. This reference is essential for anyone learning the "
+"engine: it is available both online and in the engine."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:8
+msgid ""
+"But it's incomplete. Many methods, variables and signals lack "
+"descriptions. Others changed with recent releases and need updates. The "
+"developers can't write the entire reference on their own. Godot needs "
+"you, all of us, to contribute."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:10
+msgid ""
+"**Important:** we use `a collaborative document "
+"<https://hackmd.io/s/H1es51Oeqb>`_ to track who's working on what class. "
+"Always notify other writers about what you are working on. You'll find "
+"the instructions in the doc."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:12
+msgid ""
+"This guide is available as a `Youtube video "
+"<https://www.youtube.com/watch?v=mKKjOulm5XI>`_."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:16
+msgid "How to contribute"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:18
+msgid ""
+"The class reference lies in the following XML files, in Godot's GitHub "
+"repository: `doc/classes/ "
+"<https://github.com/godotengine/godot/tree/master/doc/classes>`_."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:20
+msgid "There are 5 steps to update the class reference (full guide below):"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:22
+msgid "Fork `Godot's repository <https://github.com/godotengine/godot>`_"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:23
+msgid "Clone your fork on your computer"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:24
+msgid "Edit the class file in ``doc/classes/`` to write documentation"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:25
+msgid "Commit your changes and push them to your fork"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:26
+msgid "Make a pull request on the Godot repository"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:28
+msgid ""
+"Always use these XML files to edit the API reference. Do not edit the "
+"generated .rST files :ref:`in the online documentation <toc-class-ref>`, "
+"hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ "
+"repository."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:31
+msgid "Get started with GitHub"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:33
+msgid ""
+"If you're new to git and GitHub, this guide will help you get started. "
+"You'll learn to:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:35
+msgid "Fork and clone Godot's repository"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:36
+msgid "Keep your fork up to date with other contributors"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:37
+msgid "Create a pull request so your improvements end in the official docs"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:39
+msgid ""
+"If you're new to git, the version-control system Godot uses, go through "
+"`GitHub's interactive guide "
+"<https://try.github.io/levels/1/challenges/1>`_. You'll learn some "
+"essential vocabulary and get a sense for the tool."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:42
+msgid "Fork Godot"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:44
+msgid "Fork the Godot Engine into a GitHub repository of your own."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:46
+msgid "Clone the repository on your computer:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:52
+msgid ""
+"Create a new branch to make your changes. It makes it a lot easier to "
+"sync your improvements with other docs writers, and it's easier to "
+"cleanup your repository clean if you have any issues with git."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:58
+msgid ""
+"The new branch is the same as your master branch, until you start to "
+"write API docs. In the ``doc/`` folder, you'll find the class reference."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:61
+msgid "How to keep your local clone up-to-date"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:63
+msgid ""
+"Other writers contribute to Godot's documentation. Your local repository "
+"will fall behind it, and you'll have to synchronize it. Especially if "
+"other contributors update the class reference while you work on it."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:65
+msgid ""
+"First add an ``upstream`` git *remote* to work with. Remotes are links to"
+" online repositories you can download new files from."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:71
+msgid "You can check the list of all remote servers with:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:77
+msgid ""
+"You should have 2: ``origin``, your fork on github, that git adds by "
+"default, and ``upstream``, that you just added:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:87
+msgid ""
+"Each time you want to sync your branch to the state of the upstream "
+"repository, enter:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:93
+msgid ""
+"This command will first ``fetch``, or download the latest version of the "
+"Godot repository. Then, it will reapply your local changes on top."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:95
+msgid ""
+"If you made changes you don't want to keep in your local branch, use the "
+"following commands instead:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:102
+msgid ""
+"**Warning:** The above command will reset your branch to the state of the"
+" ``upstream master`` branch. It will discard all local changes. Make sure"
+" to only run this *before* you make important changes."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:104
+msgid ""
+"Another option is to delete the branch you're working on, synchronize the"
+" master branch with the Godot repository, and create a brand new branch:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:113
+msgid ""
+"If you're feeling lost by now, come to our `IRC channels "
+"<http://webchat.freenode.net/?channels=#godotengine>`_ and ask for help. "
+"Experienced git users will give you a hand."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:116
+msgid "Updating the documentation template"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:118
+msgid ""
+"When classes are modified in the source code, the documentation template "
+"might become outdated. To make sure that you are editing an up-to-date "
+"version, you first need to compile Godot (you can follow the "
+":ref:`doc_introduction_to_the_buildsystem` page), and then run the "
+"following command (assuming 64-bit Linux):"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:124
+msgid ""
+"The xml files in doc/classes should then be up-to-date with current Godot"
+" Engine features. You can then check what changed using the ``git diff`` "
+"command. If there are changes to other classes than the one you are "
+"planning to document, please commit those changes first before starting "
+"to edit the template:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:131
+msgid "You are now ready to edit this file to add stuff."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:133
+msgid ""
+"**Note:** If this has been done recently by another contributor, you "
+"don't forcefully need to go through these steps (unless you know that the"
+" class you plan to edit *has* been modified recently)."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:136
+msgid "Push and request a pull of your changes"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:138
+msgid ""
+"Once your modifications are finished, push your changes on your GitHub "
+"repository:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:147
+msgid ""
+"When it's done, you can ask for a Pull Request via the GitHub UI of your "
+"Godot fork."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:151
+msgid ""
+"Although you can edit files on GitHub, it's not recommended. As hundreds "
+"of contributors work on Godot, the git history must stay clean. Each "
+"commit should bundle all related improvements you make to the class "
+"reference, a new feature, bug fixes... When you edit from GitHub, it will"
+" create a new branch and a Pull Request every time you want to save it. "
+"If a few days pass before your changes get a review, you won't be able to"
+" update to the latest version of the repository cleanly. Also, it's "
+"harder to keep clean indents from GitHub. And they're very important in "
+"the docs."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:153
+msgid ""
+"TL;DR: If you don't know what you're doing exactly, do not edit files "
+"from GitHub."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:156
+msgid "How to edit class XML"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:158
+msgid ""
+"Edit the file for your chosen class in ``doc/classes/`` to update the "
+"class reference. The folder contains an XML file for each class. The XML "
+"lists the constants and methods you'll find in the class reference. Godot"
+" generates and updates the XML automatically."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:160
+msgid ""
+"Edit it using your favourite text editor. If you use a code editor, make "
+"sure that it doesn't change the indent style: tabs for the XML, and 4 "
+"spaces inside BBcode-style blocks. More on that below."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:163
+msgid "How to write the class reference"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:165
+msgid ""
+"Each class has a brief and a long description. The brief description is "
+"always at the top of the page, while the full description lies below the "
+"list of methods, variables and constants. Methods, member variables, "
+"constants and signals are in separate categories or XML nodes. For each, "
+"learn how they work in Godot's source code, and fill their <description>."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:167
+msgid "Our job is to add the missing text between these marks:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:169
+msgid "<description></description>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:170
+msgid "<brief_description></brief_description>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:171
+msgid "<constant></constant>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:172
+msgid "<method></method>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:173
+msgid "<member></member>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:174
+msgid "<signal></signal>"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:176
+msgid ""
+"Write in a clear and simple language. Always follow the :ref:`writing "
+"guidelines <doc_docs_writing_guidelines>` to keep your descriptions short"
+" and easy to read. **Do not leave empty lines** in the descriptions: each"
+" line in the XML file will result in a new paragraph."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:178
+msgid "Here's how a class looks like in XML:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:217
+msgid ""
+"Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to "
+"edit the file quickly. Use the search function to find classes fast."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:221
+msgid "Improve formatting with BBcode style tags"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:223
+msgid ""
+"Godot's class reference supports BBcode-like tags. They add nice "
+"formatting to the text. Here's the list of available tags:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:226
+msgid "Tag"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:226
+msgid "Effect"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:226
+msgid "Usage"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:226
+msgid "Result"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:228
+msgid "[Class]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:228
+msgid "Link a class"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:228
+msgid "Move the [Sprite]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:228
+msgid "Move the :ref:`class_sprite`."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:230
+msgid "[method methodname]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:230
+msgid "Link to a method in this class"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:230
+msgid "Call [method hide]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:230
+#: ../../community/contributing/updating_the_class_reference.rst:232
+msgid "See :ref:`hide <class_spatial_hide>`."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:232
+msgid "[method Class.methodname]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:232
+msgid "Link to another class's method"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:232
+msgid "Call [method Spatial.hide]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:234
+msgid "[member membername]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:234
+msgid "Link to a member in this class"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:234
+msgid "Get [member scale]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:234
+#: ../../community/contributing/updating_the_class_reference.rst:236
+msgid "Get :ref:`scale <class_node2d_scale>`."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:236
+msgid "[member Class.membername]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:236
+msgid "Link to another class's member"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:236
+msgid "Get [member Node2D.scale]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:238
+msgid "[signal signalname]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:238
+msgid "Link to a signal in this class"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:238
+msgid "Emit [signal renamed]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:238
+#: ../../community/contributing/updating_the_class_reference.rst:240
+msgid "Emit :ref:`renamed <class_node_renamed>`."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:240
+msgid "[signal Class.signalname]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:240
+msgid "Link to another class's signal"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:240
+msgid "Emit [signal Node.renamed]."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:242
+msgid "[b] [/b]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:242
+msgid "Bold"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:242
+msgid "Some [b]bold[/b] text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:242
+msgid "Some **bold** text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:244
+msgid "[i] [/i]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:244
+msgid "Italic"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:244
+msgid "Some [i]italic[/i] text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:244
+msgid "Some *italic* text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:246
+msgid "[code] [/code]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:246
+msgid "Monospace"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:246
+msgid "Some [code]monospace[/code] text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:246
+msgid "Some ``monospace`` text."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:248
+msgid "[codeblock] [/codeblock]"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:248
+msgid "Multiline preformatted block"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:248
+msgid "*See below.*"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:251
+msgid ""
+"Use ``[codeblock]`` for pre-formatted code blocks. Inside "
+"``[codeblock]``, always use spaces for indentation (the parser will "
+"delete tabs). Example:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:261
+msgid "Will display as:"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:271
+msgid "I don't know what this method does!"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:273
+msgid ""
+"No problem. Leave it behind, and list the methods you skipped when you "
+"request a pull of your changes. Another writer will take care of it."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:275
+msgid ""
+"You can still have a look at the methods' implementation in Godot's "
+"source code on GitHub. Also, if you have doubts, feel free to ask on the "
+"`Q&A website <https://godotengine.org/qa/>`__ and on IRC (freenode, "
+"#godotengine)."
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:279
+msgid "Localization"
+msgstr ""
+
+#: ../../community/contributing/updating_the_class_reference.rst:281
+#, python-format
+msgid ""
+"Before we translate the documentation, we need to complete and proof-read"
+" it in English. We'll work on localization when we get past 90% "
+"completion."
+msgstr ""
+

@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/misc/handling_quit_requests.rst:4
+msgid "Handling quit requests"
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:7
+msgid "Quitting"
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:9
+msgid ""
+"Most platforms have the option to request the application to quit. On "
+"desktops, this is usually done with the \"x\" icon on the window "
+"titlebar. On Android, the back button is used to quit when on the main "
+"screen (and to go back otherwise)."
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:15
+msgid "Handling the notification"
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:17
+msgid ""
+"The :ref:`MainLoop <class_MainLoop>` has a special notification that is "
+"sent to all nodes when quit is requested: MainLoop.NOTIFICATION_WM_QUIT."
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:21
+msgid "Handling it is done as follows (on any node):"
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:29
+msgid ""
+"When developing mobile apps, quitting is not desired unless the user is "
+"on the main screen, so the behavior can be changed."
+msgstr ""
+
+#: ../../tutorials/misc/handling_quit_requests.rst:32
+msgid ""
+"It is important to note that by default, Godot apps have the built-in "
+"behavior to quit when quit is requested, this can be changed:"
+msgstr ""
+

@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../development/cpp/variant_class.rst:4
+msgid "Variant class"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:7
+msgid "About"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:9
+msgid ""
+"Variant is the most important datatype of Godot, it's the most important "
+"class in the engine. A Variant takes up only 20 bytes and can store "
+"almost any engine datatype inside of it. Variants are rarely used to hold"
+" information for long periods of time, instead they are used mainly for "
+"communication, editing, serialization and generally moving data around."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:16
+msgid "A Variant can:"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:18
+msgid "Store almost any datatype"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:19
+msgid ""
+"Perform operations between many variants (GDScript uses Variant as its "
+"atomic/native datatype)."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:21
+msgid "Be hashed, so it can be compared quickly to other variants"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:22
+msgid "Be used to convert safely between datatypes"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:23
+msgid ""
+"Be used to abstract calling methods and their arguments (Godot exports "
+"all its functions through variants)"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:25
+msgid "Be used to defer calls or move data between threads."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:26
+msgid "Be serialized as binary and stored to disk, or transferred via network."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:28
+msgid ""
+"Be serialized to text and use it for printing values and editable "
+"settings."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:30
+msgid "Work as an exported property, so the editor can edit it universally."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:31
+msgid "Be used for dictionaries, arrays, parsers, etc."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:33
+msgid ""
+"Basically, thanks to the Variant class, writing Godot itself was a much, "
+"much easier task, as it allows for highly dynamic constructs not common "
+"of C++ with little effort. Become a friend of Variant today."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:38
+#: ../../development/cpp/variant_class.rst:57
+msgid "References:"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:40
+msgid ""
+"`core/variant.h "
+"<https://github.com/godotengine/godot/blob/master/core/variant.h>`__"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:43
+msgid "Containers: Dictionary and Array"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:45
+msgid ""
+"Both are implemented using variants. A Dictionary can match any datatype "
+"used as key to any other datatype. An Array just holds an array of "
+"Variants. Of course, a Variant can also hold a Dictionary and an Array "
+"inside, making it even more flexible."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:50
+msgid ""
+"Modifications to a container will modify all references to it. A Mutex "
+"should be created to lock it if multi threaded access is desired."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:54
+msgid ""
+"Copy-on-write (COW) mode support for containers was dropped with Godot "
+"3.0."
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:59
+msgid ""
+"`core/dictionary.h "
+"<https://github.com/godotengine/godot/blob/master/core/dictionary.h>`__"
+msgstr ""
+
+#: ../../development/cpp/variant_class.rst:60
+msgid ""
+"`core/array.h "
+"<https://github.com/godotengine/godot/blob/master/core/array.h>`__"
+msgstr ""
+

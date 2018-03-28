@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../tutorials/misc/pausing_games.rst:4
+msgid "Pausing games"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:7
+msgid "Pause?"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:9
+msgid ""
+"In most games it is desirable to, at some point, interrupt the game to do"
+" something else, such as taking a break or changing options. However this"
+" is not as simple as it seems. The game might be stopped, but it might be"
+" desirable that some menus and animations continue working."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:15
+msgid ""
+"Implementing a fine-grained control for what can be paused (and what can "
+"not) is a lot of work, so a simple framework for pausing is provided in "
+"Godot."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:20
+msgid "How pausing works"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:22
+msgid ""
+"To set pause mode, the pause state must be set. This is done by assigning"
+" \"true\" to the :ref:`SceneTree.paused <class_SceneTree_paused>` member "
+"variable:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:30
+msgid "Doing so will have the following behavior:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:32
+msgid "2D and 3D physics will be stopped."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:33
+msgid "_process and _physics_process will not be called anymore in nodes."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:34
+msgid "_input and _input_event will not be called anymore either."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:36
+msgid ""
+"This effectively stops the whole game. Calling this function from a "
+"script, by default, will result in an unrecoverable state (nothing will "
+"work anymore!)."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:41
+msgid "White-listing nodes"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:43
+msgid ""
+"Before enabling pause, make sure that nodes that must keep working during"
+" pause are white-listed. This is done by editing the \"Pause Mode\" "
+"property in a node:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:49
+msgid ""
+"By default all nodes have this property in the \"Inherit\" state. This "
+"means, that they will only process (or not) depending on what this same "
+"property is set on the parent node. If the parent is set to \"Inherit\" ,"
+" then the grandparent will be checked and so on. Ultimately, if a state "
+"can't be found in any of the grandparents, the pause state in SceneTree "
+"is used. This means that, by default, when the game is paused every node "
+"will be paused."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:57
+msgid "So the three possible states for a node are:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:59
+msgid ""
+"**Inherit**: Process depending on the state of the parent, grandparent, "
+"etc. The first parent that has a non-Inherit state."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:61
+msgid ""
+"**Stop**: Stop the node no matter what (and children in Inherit mode). "
+"When paused this node will not process."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:63
+msgid ""
+"**Process**: Process the node no matter what (and children in Inherit "
+"mode). Paused or not this node will process."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:67
+msgid "Example"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:69
+msgid ""
+"An example of this is creating a popup or panel with controls inside, and"
+" set its pause mode to \"Process\" then just hide it:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:74
+msgid ""
+"Just by setting the root of the pause popup to \"Process\", all children "
+"and grandchildren will inherit that state. This way, this branch of the "
+"scene tree will continue working when paused."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:78
+msgid ""
+"Finally, make it so when a pause button is pressed (any button will do), "
+"enable the pause and show the pause screen."
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:87
+msgid "To remove the pause, just do the opposite when the pause screen is closed:"
+msgstr ""
+
+#: ../../tutorials/misc/pausing_games.rst:96
+msgid "And that should be all!"
+msgstr ""
+

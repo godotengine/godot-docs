@@ -1,0 +1,519 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../community/contributing/docs_writing_guidelines.rst:4
+msgid "Docs writing guidelines"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:6
+msgid ""
+"The Godot community is rich and international. Users come from all around"
+" the world. Some of them are young, and many aren't native English "
+"speakers. That's why we must all write using a clear and a common "
+"language. For the class reference, the goal is to make it easy to read "
+"for everyone and precise."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:12
+msgid "In summary, always try to:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:14
+#: ../../community/contributing/docs_writing_guidelines.rst:40
+msgid "Use the direct voice"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:15
+#: ../../community/contributing/docs_writing_guidelines.rst:76
+msgid "Use precise action verbs"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:16
+#: ../../community/contributing/docs_writing_guidelines.rst:98
+msgid "Avoid verbs that end in -ing"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:17
+msgid "Remove unnecessary adverbs and adjectives."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:18
+msgid ""
+"Ban these 8 words: obvious, simple, basic, easy, actual, just, clear, and"
+" however"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:19
+#: ../../community/contributing/docs_writing_guidelines.rst:212
+msgid "Use explicit references"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:20
+#: ../../community/contributing/docs_writing_guidelines.rst:233
+msgid "Use 's to show possession"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:21
+msgid "Use the Oxford comma"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:23
+msgid "There are 3 rules to describe classes:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:25
+#: ../../community/contributing/docs_writing_guidelines.rst:280
+msgid "Give an overview of the node in the brief description"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:26
+#: ../../community/contributing/docs_writing_guidelines.rst:309
+msgid "Mention what methods return if it's useful"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:27
+#: ../../community/contributing/docs_writing_guidelines.rst:334
+msgid "Use \"if true\" to describe booleans"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:31
+msgid ""
+"A technical writer's job is to pack as much information as possible into "
+"the smallest and clearest sentences possible. These guidelines will help "
+"you work towards that goal."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:36
+msgid "7 rules for a clear english"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:42
+msgid ""
+"Use the direct voice when possible. Take the classes, methods, and "
+"constants you describe as the subject. It's natural to write using the "
+"passive voice, but it's harder to read and produces longer sentences."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:48
+msgid "Passive:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:54
+msgid "Active:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:61
+#: ../../community/contributing/docs_writing_guidelines.rst:315
+msgid "**Don't** use the passive voice:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:68
+msgid "**Do** use the node's name as a noun:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:78
+msgid ""
+"Favor precise yet common verbs over generic ones like ``make``, ``set``, "
+"and any expression you can replace with a single word."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:81
+msgid ""
+"**Don't** repeat the method's name. It already states it sets the pivot "
+"value to a new one:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:89
+msgid ""
+"**Do** explain what's the consequence of this \"set\": use precise verbs "
+"like ``place``, ``position``, ``rotate``, ``fade``, etc."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:100
+msgid ""
+"The progressive forms describe continuous actions. E.g. \"is calling\", "
+"\"is moving\"."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:103
+msgid "**Don't** use the progressive form for instant changes."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:110
+msgid "**Do** use simple present, preterit or future."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:117
+msgid ""
+"You may use the progressive tense to describe actions that are continuous"
+" in time. Anything like animation or coroutines."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:122
+msgid ""
+"Verbs can turn into adjectival nouns with -ing. This is not a "
+"conjugation, so you may use them: ``the remaining movement``, ``the "
+"missing file``, etc."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:127
+msgid "Remove unnecessary adverbs and adjectives"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:129
+msgid ""
+"Write as few adjectives and adverbs as possible. Only use them if they "
+"add key information to the description."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:132
+msgid ""
+"**Don't** use redundant or meaningless adverbs. Words that lengthen the "
+"documentation but don't add any information:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:139
+msgid "**Do** write short sentences in a simple, descriptive language:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:146
+msgid "Ban these 8 words"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:148
+msgid "**Don't** ever use these 8 banned words:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:150
+msgid "obvious"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:151
+msgid "simple"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:152
+msgid "basic"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:153
+msgid "easy"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:154
+msgid "actual"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:155
+msgid "just"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:156
+msgid "clear"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:157
+msgid "however (some uses)"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:159
+msgid ""
+"Game creation and programming aren't simple, and nothing's easy to "
+"someone learning to use the API for the first time. Other words in the "
+"list, like ``just`` or ``actual`` won't add any info to the sentence. "
+"Don't use corresponding adverbs either: obviously, simply, basically, "
+"easily, actually, clearly."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:165
+msgid ""
+"**Don't** example. The banned words lengthen the description and take "
+"attention away from the most important info:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:173
+msgid "**Do** remove them:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:180
+msgid ""
+"\"Simple\" never helps. Remember, for other users, anything could be "
+"complex or frustrate them. There's nothing like a good old *it's simple* "
+"to make you cringe. Here's the old brief description, the first sentence "
+"on the Timer node's page:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:190
+msgid "**Do** explain what the node does instead:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:197
+msgid "**Don't** use \"basic\", it is too vague:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:204
+msgid "**Do** use the brief description to offer an overview of the node:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:214
+msgid "Favor explicit references over implicit ones."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:216
+msgid ""
+"**Don't** use words like \"the former\", \"the latter\", etc. They're not"
+" the most common in English, and they require you to check the reference."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:223
+msgid "**Do** repeat words. They remove all ambiguity:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:229
+msgid ""
+"If you need to repeat the same variable name 3 or 4 times, you probably "
+"need to rephrase your description."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:235
+msgid ""
+"Avoid \"The milk **of** the cow\". It feels unnatural in English. Write "
+"\"The cow's milk\" instead."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:238
+msgid "**Don't** write \"of the X\":"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:244
+msgid ""
+"**Do** use ``'s``. It lets you put the main subject at the start of the "
+"sentence, and keep it short:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:252
+msgid "Use the Oxford comma to enumerate anything"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:254
+msgid "From the Oxford dictionary:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:256
+msgid ""
+"The 'Oxford comma' is an optional comma before the word 'and' at the end "
+"of a list: *We sell books, videos, and magazines.*"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:259
+msgid ""
+"[...] Not all writers and publishers use it, but it can clarify the "
+"meaning of a sentence when the items in a list are not single words: "
+"*These items are available in black and white, red and yellow, and blue "
+"and green.*"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:262
+msgid "**Don't** leave the last element of a list without a comma:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:268
+msgid ""
+"**Do** add a comma before `and` or `or`, for the last element of a list "
+"with more than two elements."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:277
+msgid "How to write methods and classes"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:282
+msgid ""
+"The brief description is the reference's most important sentence. It's "
+"the user's first contact with a node:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:285
+msgid "It's the only description in the \"Create New Node\" dialog."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:286
+msgid "It's at the top of every page in the reference"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:288
+msgid ""
+"The brief description should explain the node's role and its "
+"functionality, in up to 200 characters."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:291
+msgid "**Don't** write tiny and vague summaries:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:298
+msgid "**Do** give an overview of the node's functionality:"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:305
+msgid ""
+"Use the node's full description to provide more information, and a code "
+"example, if possible."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:311
+msgid ""
+"Some methods return important values. Describe them at the end of the "
+"description, ideally on a new line. No need to mention the return values "
+"for any method whose name starts with ``set`` or ``get``."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:322
+msgid "**Do** always use \"Returns\"."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:329
+msgid ""
+"Notice the exception to the \"direct voice\" rule: with the move method, "
+"an external collider can influence the method and the body that calls "
+"``move``. In this case, you can use the passive voice."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:336
+msgid ""
+"For boolean member variables, always use ``if true`` and/or ``if false``,"
+" to stay explicit. ``Controls whether or not`` may be ambiguous and won't"
+" work for every member variable."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:340
+msgid ""
+"Also surround boolean values, variable names and methods with "
+"[code][/code]."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:342
+msgid "**Do** start with \"if true\":"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:351
+msgid "Use [code] around arguments"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:353
+msgid ""
+"In the class reference, always surround arguments with [code][/code]. In "
+"the documentation and in Godot, it will display like ``this``. When you "
+"edit XML files in the Godot repository, replace existing arguments "
+"written like 'this' or \\`this\\` with [code]this[/code]."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:357
+msgid "Common vocabulary to use in godot's docs"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:359
+msgid ""
+"The developers chose some specific words to refer to areas of the "
+"interface. They're used in the sources, in the documentation, and you "
+"should always use them instead of synonyms, so the users know what you're"
+" talking about."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:367
+msgid "Overview of the interface and common vocabulary"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:369
+msgid ""
+"In the top left corner of the editor lie the ``main menus``. In the "
+"center, the buttons change the ``workspace``. And together the buttons in"
+" the top right are the ``playtest buttons``. The area in the center, that"
+" displays the 2D or the 3D space, is the ``viewport``. At its top, you "
+"find a list of ``tools`` inside the ``toolbar``."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:375
+msgid ""
+"The tabs or dockable panels on either side of the viewport are ``docks``."
+" You have the ``FileSystem dock``, the ``Scene dock`` that contains your "
+"scene tree, the ``Import dock``, the ``Node dock``, and the ``Inspector``"
+" or ``Inspector dock``. With the default layout you may call the tabbed "
+"docks ``tabs``: the ``Scene tab``, the ``Node tab``..."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:381
+msgid ""
+"The Animation, Debugger, etc. at the bottom of the viewport are "
+"``panels``. Together they make up the ``bottom panels``."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:384
+msgid ""
+"Foldable areas of the Inspector are ``sections``. The node's parent class"
+" names, which you can't fold, are ``Classes`` e.g. the ``KinematicBody2D "
+"class``. And individual lines with key-value pairs are ``properties``. "
+"E.g. ``position`` or ``modulate color`` are both ``properties``."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:391
+msgid "Image Contribution guidelines"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:393
+msgid ""
+"A significant part of the documentation is images, and there are several "
+"important guidelines to follow."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:396
+msgid ""
+"First, you should always be using the default editor theme and text when "
+"taking screenshots."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:398
+msgid ""
+"For 3D screenshots use 4xMSAA, enable anisotropic filtering on the "
+"projects textures, and set the anisotropic filter quality to 16x in "
+"Project Settings"
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:401
+msgid "Screenshot size should not exceed 1920x1080."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:403
+msgid ""
+"When you need to highlight an area of the editor to show something, like "
+"a button or option, use a 2 pixel thick outline without a bevel."
+msgstr ""
+
+#: ../../community/contributing/docs_writing_guidelines.rst:406
+msgid ""
+"Before you add or replace any images in the documentation, they should be"
+" run through a png compressor to save size. The built in lossless "
+"compressor in programs like Krita or Photoshop should be done. However "
+"you should also use a lossy one, such as `pngquant "
+"<https://pngquant.org/>`_ where almost no image quality is lost during "
+"compression."
+msgstr ""
+

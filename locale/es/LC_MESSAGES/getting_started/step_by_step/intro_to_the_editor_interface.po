@@ -1,0 +1,281 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014-2018, Juan Linietsky, Ariel Manzur and the Godot
+# community (CC-BY 3.0)
+# This file is distributed under the same license as the Godot Engine
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot Engine latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 16:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:4
+msgid "Introduction to Godot’s editor"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:6
+msgid ""
+"This tutorial will run you through Godot’s interface. We’re going to look"
+" at the **Project Manager, docks, workspaces** and everything you need to"
+" know to get started with the engine."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:11
+msgid "Project manager"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:13
+msgid ""
+"When you launch Godot, the first window you’ll see is the Project "
+"Manager. It lets you create, remove, import or play game projects."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:16
+msgid "|image0|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:18
+msgid ""
+"In the top-right corner you’ll find a drop-down menu to change the "
+"editor’s language."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:21
+msgid "|image1|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:23
+msgid ""
+"From the **Templates** tab you can download open source project templates"
+" and demos to help you get started faster."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:26
+msgid "|image2|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:29
+msgid "Create or import a project"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:31
+msgid ""
+"To create a new project, click the ``New Project`` button on the right. "
+"Give it a name and choose an empty folder on your computer to save it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:34
+msgid "|image3|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:36
+msgid ""
+"Click the Browse button to open Godot’s file browser and pick a location "
+"or type the folder’s path in the Project Path field."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:39
+msgid "|image4|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:41
+msgid ""
+"When you see the green tick on the right, it means the engine detects an "
+"empty folder and you may click ``Create``. Godot will create the project "
+"for you and open it in the editor."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:45
+msgid ""
+"The next time you’ll open Godot, you’ll see your new project in the list."
+" Double click on it to open it in the editor."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:48
+msgid "|image5|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:50
+msgid ""
+"You can import existing projects in a similar way, using the Import "
+"button. Locate the folder that contains the project or the "
+"``project.godot`` file to import and edit it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:54
+msgid "|image7|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:56
+msgid "When the folder path is correct you'll see a green checkmark."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:58
+msgid "|image8|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:61
+msgid "Your first look at Godot’s editor"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:63
+msgid ""
+"Welcome to Godot! With your project open you should see the editor’s "
+"interface with the 3d viewport active. You can change the current "
+"workspace at the top of the interface. Click on 2d to switch to the 2d "
+"workspace."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:68
+msgid "|image9|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:70
+msgid "Now you should see this interface, with empty docks on the right side."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:72
+msgid "|image10|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:74
+msgid ""
+"At the top, from left to right, you can see the **main menus**, the "
+"**workspaces**, and the **playtest buttons**."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:77
+msgid ""
+"On the left side you have the **FileSystem dock**, where you’ll manage "
+"your project files and assets."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:80
+msgid "|image11|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:82
+msgid ""
+"On the right side you’ll find the **Scene dock** that lists the active "
+"scene’s content and the **Inspector** in the bottom right corner."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:85
+msgid "|image12|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:87
+msgid ""
+"In the center you have the **Toolbar** at the top, where you’ll find "
+"tools to move, scale or lock your scene’s objects. It changes as you jump"
+" to different workspaces."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:91
+msgid "|image13|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:93
+msgid ""
+"The **Bottom Panel** is the host for the debug console, the animation "
+"editor, the audio mixer… They are wide and can take precious space. "
+"That’s why they’re folded by default."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:97
+msgid "|image14|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:100
+msgid "The workspaces"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:102
+msgid ""
+"You can see four workspace buttons at the top: 2D, 3D, Script and "
+"AssetLib."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:105
+msgid ""
+"You’ll use the **2D workspace** for all types of games. On top of 2D "
+"games that is where you’ll build your interfaces. Press F1 to access it. "
+"|image15|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:109
+msgid ""
+"In the **3D workspace**, you can work with meshes, lights, and design "
+"levels for 3D games. Press F2 to access it."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:112
+msgid "|image16|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:114
+msgid ""
+"The **Script** workspace is a complete code editor with a debugger, rich "
+"auto-completion, and built-in code reference. Press F3 to access it, and "
+"F4 to search the reference."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:118
+msgid "|image17|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:120
+msgid ""
+"Finally the **AssetLib** is a library of Free add-ons, scripts and assets"
+" to use in your projects."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:124
+msgid "Modify the interface"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:126
+msgid ""
+"Godot’s interface lives in a single window. You cannot split it across "
+"multiple screens although you can work with an external code editor like "
+"Atom or Visual Studio for instance."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:131
+msgid "Move and resize docks"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:133
+msgid ""
+"Click and drag on the edge of any dock or panel to resize it horizontally"
+" or vertically."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:136
+msgid "|image18|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:138
+msgid "Click the three-dotted icon at the top of any dock to change its location."
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:141
+msgid "|image19|"
+msgstr ""
+
+#: ../../getting_started/step_by_step/intro_to_the_editor_interface.rst:143
+msgid ""
+"Go to the ``Editor`` menu and ``Editor Settings`` to fine-tune the look "
+"and feel of the editor."
+msgstr ""
+
