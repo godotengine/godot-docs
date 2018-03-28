@@ -614,6 +614,14 @@ You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_get_date
 
 Returns the absolute directory path where user data is written (``user://``).
 
+On Linux, this is ``~/.local/share/godot/app_userdata/[project_name]``, or ``~/.local/share/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDATA%/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+If the project name is empty, ``user://`` falls back to ``res://``.
+
 .. _class_OS_get_virtual_keyboard_height:
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**

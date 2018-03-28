@@ -26,6 +26,8 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`apply_impulse<class_RigidBody_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`apply_torque_impulse<class_RigidBody_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                               |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody_get_colliding_bodies>` **(** **)** const                                                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>` **(** :ref:`Vector3<class_vector3>` axis_velocity **)**                               |
@@ -181,13 +183,11 @@ Description
 
 This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
 
-This node can use custom force integration, for writing complex physics motion behavior per node.
+A RigidBody has 4 behavior :ref:`mode<class_RigidBody_mode>`\ s: Rigid, Static, Character, and Kinematic.
 
-This node can shift state between regular Rigid body, Kinematic, Character or Static.
+**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody__integrate_forces>`, which allows you to directly access the physics state.
 
-Character mode forbids this node from being rotated.
-
-As a warning, don't change RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior.
+If you need to override the default physics behavior, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody_custom_integrator>`.
 
 Member Function Description
 ---------------------------
@@ -203,6 +203,12 @@ Called during physics processing, allowing you to read and safely modify the sim
 - void **apply_impulse** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**
 
 Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
+
+.. _class_RigidBody_apply_torque_impulse:
+
+- void **apply_torque_impulse** **(** :ref:`Vector3<class_vector3>` impulse **)**
+
+Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
 
 .. _class_RigidBody_get_colliding_bodies:
 

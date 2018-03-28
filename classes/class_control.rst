@@ -522,13 +522,42 @@ Overrides the ``name`` Stylebox in the theme resource the node uses. If ``styleb
 
 - :ref:`bool<class_bool>` **can_drop_data** **(** :ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` data **)** virtual
 
+Godot calls this method to test if ``data`` from a control's :ref:`get_drag_data<class_Control_get_drag_data>` can be dropped at ``position``. ``position`` is local to this control.
+
+This method should only be used to test the data. Process the data in :ref:`drop_data<class_Control_drop_data>`.
+
+::
+
+    extends Control
+    
+    func can_drop_data(position, data):
+        # check position if it is relevant to you
+        # otherwise just check data
+        return typeof(data) == TYPE_DICTIONARY and data.has('expected')
+
 .. _class_Control_drop_data:
 
 - void **drop_data** **(** :ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` data **)** virtual
 
+Godot calls this method to pass you the ``data`` from a control's :ref:`get_drag_data<class_Control_get_drag_data>` result. Godot first calls :ref:`can_drop_data<class_Control_can_drop_data>` to test if ``data`` is allowed to drop at ``position`` where ``position`` is local to this control.
+
+::
+
+    extends ColorRect
+    
+    func can_drop_data(position, data):
+        return typeof(data) == TYPE_DICTIONARY and data.has('color')
+    
+    func drop_data(position, data):
+        color = data['color']
+
 .. _class_Control_force_drag:
 
 - void **force_drag** **(** :ref:`Variant<class_variant>` data, :ref:`Control<class_control>` preview **)**
+
+Forces drag and bypasses :ref:`get_drag_data<class_Control_get_drag_data>` and :ref:`set_drag_preview<class_Control_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
+
+The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>` must be implemented on controls that want to recieve drop data.
 
 .. _class_Control_get_begin:
 
@@ -555,6 +584,19 @@ Returns the mouse cursor shape the control displays on mouse hover, one of the `
 .. _class_Control_get_drag_data:
 
 - :ref:`Object<class_object>` **get_drag_data** **(** :ref:`Vector2<class_vector2>` position **)** virtual
+
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to recieve drop data should implement :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_force_drag>`.
+
+A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_set_drag_preview>`. A good time to set the preview is in this method.
+
+::
+
+    extends Control
+    
+    func get_drag_data(position):
+        var mydata = make_data()
+        set_drag_preview(make_preview(mydata))
+        return mydata
 
 .. _class_Control_get_end:
 
@@ -718,9 +760,38 @@ Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`se
 
 - void **set_drag_forwarding** **(** :ref:`Control<class_control>` target **)**
 
+Forwards the handling of this control's drag and drop to ``target`` control.
+
+Forwarding can be implemented in the target control similar to the methods :ref:`get_drag_data<class_Control_get_drag_data>`, :ref:`can_drop_data<class_Control_can_drop_data>`, and :ref:`drop_data<class_Control_drop_data>` but with two differences:
+
+1. The function name must be suffixed with **_fw**
+
+2. The function must take an extra argument that is the control doing the forwarding
+
+::
+
+    # ThisControl.gd
+    extends Control
+    func _ready():
+        set_drag_forwarding(target_control)
+    
+    # TargetControl.gd
+    extends Control
+    func can_drop_data_fw(position, data, from_control):
+        return true
+    
+    func drop_data_fw(position, data, from_control):
+        my_handle_data(data)
+    
+    func get_drag_data_fw(position, from_control):
+        set_drag_preview(my_preview)
+        return my_data()
+
 .. _class_Control_set_drag_preview:
 
 - void **set_drag_preview** **(** :ref:`Control<class_control>` control **)**
+
+Shows the given control at the mouse pointer. A good time to call this method is in :ref:`get_drag_data<class_Control_get_drag_data>`.
 
 .. _class_Control_set_end:
 

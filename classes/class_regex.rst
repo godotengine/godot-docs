@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-Regular Expression (or regex) is a compact programming language that can be used to recognise strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For instance, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explainations on the Internet.
+Regular Expression (or regex) is a compact programming language that can be used to recognise strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For instance, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
 
 To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile<class_RegEx_compile>` before it can be used.
 
@@ -53,7 +53,7 @@ To begin, the RegEx object needs to be compiled with the search pattern using :r
 
 The search pattern must be escaped first for gdscript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``
 
-Using :ref:`search<class_RegEx_search>` you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_regexmatch>` is returned and you can retrieve details of the results using fuctions such as :ref:`RegExMatch.get_string<class_RegExMatch_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_get_start>`.
+Using :ref:`search<class_RegEx_search>` you can find the pattern within the given text. If a pattern is found, :ref:`RegExMatch<class_regexmatch>` is returned and you can retrieve details of the results using functions such as :ref:`RegExMatch.get_string<class_RegExMatch_get_string>` and :ref:`RegExMatch.get_start<class_RegExMatch_get_start>`.
 
 ::
 

@@ -28,6 +28,8 @@ Description
 
 Group of :ref:`Button<class_button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
 
+:ref:`BaseButton.toggle_mode<class_BaseButton_toggle_mode>` should be ``true``.
+
 Member Function Description
 ---------------------------
 

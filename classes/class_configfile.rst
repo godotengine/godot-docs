@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-This helper class can be used to store :ref:`Variant<class_variant>` values on the filesystem using INI-style formatting. The stored values are indentified by a section and a key:
+This helper class can be used to store :ref:`Variant<class_variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
 
 ::
 

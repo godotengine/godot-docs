@@ -34,7 +34,7 @@ Member Variables
 
   .. _class_NetworkedMultiplayerENet_compression_mode:
 
-- :ref:`CompressionMode<enum_networkedmultiplayerenet_compressionmode>` **compression_mode**
+- :ref:`CompressionMode<enum_networkedmultiplayerenet_compressionmode>` **compression_mode** - The compression method used for network packets. Default is no compression. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
 
 Enums
@@ -44,17 +44,17 @@ Enums
 
 enum **CompressionMode**
 
-- **COMPRESS_NONE** = **0**
-- **COMPRESS_RANGE_CODER** = **1**
-- **COMPRESS_FASTLZ** = **2**
-- **COMPRESS_ZLIB** = **3**
-- **COMPRESS_ZSTD** = **4**
+- **COMPRESS_NONE** = **0** --- No compression.
+- **COMPRESS_RANGE_CODER** = **1** --- ENet's buildin range encoding.
+- **COMPRESS_FASTLZ** = **2** --- FastLZ compression.
+- **COMPRESS_ZLIB** = **3** --- zlib compression.
+- **COMPRESS_ZSTD** = **4** --- ZStandard compression.
 
 
 Description
 -----------
 
-A connection (or a listening server) that should be passed to :ref:`SceneTree.set_network_peer<class_SceneTree_set_network_peer>`. Socket events can be handled by connecting to :ref:`SceneTree<class_scenetree>` signals.
+A PacketPeer implementation that should be passed to :ref:`SceneTree.set_network_peer<class_SceneTree_set_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_scenetree>` signals.
 
 Member Function Description
 ---------------------------
@@ -63,20 +63,24 @@ Member Function Description
 
 - void **close_connection** **(** **)**
 
+Closes the connection. Ignored if no connection is currently established. If this is a server it tries to notify all clients before forcibly disconnecting them. If this is a client it simply closes the connection to the server.
+
 .. _class_NetworkedMultiplayerENet_create_client:
 
 - :ref:`int<class_int>` **create_client** **(** :ref:`String<class_string>` ip, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create client that connects to a server at address ``ip`` using specified ``port``.
+Create client that connects to a server at address ``ip`` using specified ``port``. The given IP needs to be in IPv4 or IPv6 address format, for example: ``192.168.1.1``. The ``port`` is the port the server is listening on. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns ``OK`` if a client was created, ``ERR_ALREADY_IN_USE`` if this NetworkedMultiplayerEnet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_close_connection>` first) or ``ERR_CANT_CREATE`` if the client could not be created.
 
 .. _class_NetworkedMultiplayerENet_create_server:
 
 - :ref:`int<class_int>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create server that listens to connections via ``port``.
+Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_set_bind_ip>`. The default IP is the wildcard ``*``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4096 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_create_client>`. Returns ``OK`` if a server was created, ``ERR_ALREADY_IN_USE`` if this NetworkedMultiplayerEnet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_close_connection>` first) or ``ERR_CANT_CREATE`` if the server could not be created.
 
 .. _class_NetworkedMultiplayerENet_set_bind_ip:
 
 - void **set_bind_ip** **(** :ref:`String<class_string>` ip **)**
+
+The IP used when creating a server. This is set to the wildcard ``*`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``192.168.1.1``.
 
 

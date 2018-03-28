@@ -78,6 +78,8 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`rfind<class_Array_rfind>` **(** var what, :ref:`int<class_int>` from=-1 **)**                                                                                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`shuffle<class_Array_shuffle>` **(** **)**                                                                                                                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`size<class_Array_size>` **(** **)**                                                                                                                                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`sort<class_Array_sort>` **(** **)**                                                                                                                                       |
@@ -279,6 +281,12 @@ Resize the array to contain a different number of elements. If the array size is
 - :ref:`int<class_int>` **rfind** **(** var what, :ref:`int<class_int>` from=-1 **)**
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+.. _class_Array_shuffle:
+
+- void **shuffle** **(** **)**
+
+Shuffle the array such that the items will have a random order.
 
 .. _class_Array_size:
 

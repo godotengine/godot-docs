@@ -142,6 +142,6 @@ Remove the point at index ``i`` from the line.
 
 - void **set_point_position** **(** :ref:`int<class_int>` i, :ref:`Vector2<class_vector2>` position **)**
 
-Overwites the position in point ``i`` with the supplied ``position``.
+Overwrites the position in point ``i`` with the supplied ``position``.
 
 

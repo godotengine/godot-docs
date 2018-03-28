@@ -74,19 +74,19 @@ Emitted when a :ref:`PhysicsBody<class_physicsbody>` object enters.
 
 - **body_exited** **(** :ref:`Object<class_object>` body **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits.
+Emitted when a :ref:`PhysicsBody<class_physicsbody>` object exits.
 
 .. _class_Area_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters, reporting which shapes overlapped.
+Emitted when a :ref:`PhysicsBody<class_physicsbody>` object enters, reporting which shapes overlapped.
 
 .. _class_Area_body_shape_exited:
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting which shapes were overlapping.
+Emitted when a :ref:`PhysicsBody<class_physicsbody>` object exits, reporting which shapes were overlapping.
 
 
 Member Variables

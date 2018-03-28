@@ -359,7 +359,7 @@ Get the enabled status of the size override set with :ref:`set_size_override<cla
 
 - :ref:`bool<class_bool>` **is_size_override_stretch_enabled** **(** **)** const
 
-Get the enabled status of the size strech override set with :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
+Get the enabled status of the size stretch override set with :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
 
 .. _class_Viewport_set_attach_to_screen_rect:
 

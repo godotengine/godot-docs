@@ -14,7 +14,7 @@ Navigation2D
 Brief Description
 -----------------
 
-
+Class to assist with character navigation and pathfinding.
 
 Member Functions
 ----------------

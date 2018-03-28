@@ -56,6 +56,10 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_pascal_string<class_File_get_pascal_string>` **(** **)**                                                                                                                    |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_path<class_File_get_path>` **(** **)**                                                                                                                                      |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_path_absolute<class_File_get_path_absolute>` **(** **)**                                                                                                                    |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_position<class_File_get_position>` **(** **)** const                                                                                                                        |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_real<class_File_get_real>` **(** **)** const                                                                                                                                |
@@ -110,7 +114,7 @@ Member Variables
 
 - :ref:`bool<class_bool>` **endian_swap** - If ``true`` the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
 
-Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
+Note that this is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
 
 
 Enums
@@ -267,6 +271,18 @@ Returns the last time the ``file`` was modified in unix timestamp format or retu
 - :ref:`String<class_string>` **get_pascal_string** **(** **)**
 
 Returns a :ref:`String<class_string>` saved in Pascal format from the file.
+
+.. _class_File_get_path:
+
+- :ref:`String<class_string>` **get_path** **(** **)**
+
+Returns the path as a :ref:`String<class_string>` for the current open file.
+
+.. _class_File_get_path_absolute:
+
+- :ref:`String<class_string>` **get_path_absolute** **(** **)**
+
+Returns the absolute path as a :ref:`String<class_string>` for the current open file.
 
 .. _class_File_get_position:
 
