@@ -86,7 +86,7 @@ Member Variables
 
   .. _class_StyleBoxTexture_normal_map:
 
-- :ref:`Texture<class_texture>` **normal_map**
+- :ref:`Resource<class_resource>` **normal_map**
 
   .. _class_StyleBoxTexture_region_rect:
 
@@ -94,7 +94,7 @@ Member Variables
 
   .. _class_StyleBoxTexture_texture:
 
-- :ref:`Texture<class_texture>` **texture**
+- :ref:`Resource<class_resource>` **texture**
 
 
 Enums

@@ -19,19 +19,19 @@ A body that is controlled by the 2D physics engine.
 Member Functions
 ----------------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state **)** virtual                                                                                                                 |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_force<class_RigidBody2D_add_force>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                                                                                                                                     |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**                                                                                                                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody2D_get_colliding_bodies>` **(** **)** const                                                                                                                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis_velocity<class_RigidBody2D_set_axis_velocity>` **(** :ref:`Vector2<class_vector2>` axis_velocity **)**                                                                                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`test_motion<class_RigidBody2D_test_motion>` **(** :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state **)** virtual                                                                  |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_force<class_RigidBody2D_add_force>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                                                                                      |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**                                                                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody2D_get_colliding_bodies>` **(** **)** const                                                                                                                                    |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis_velocity<class_RigidBody2D_set_axis_velocity>` **(** :ref:`Vector2<class_vector2>` axis_velocity **)**                                                                                                    |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`test_motion<class_RigidBody2D_test_motion>` **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -216,7 +216,7 @@ Sets the body's velocity on the given axis. The velocity in the given vector axi
 
 .. _class_RigidBody2D_test_motion:
 
-- :ref:`bool<class_bool>` **test_motion** **(** :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)**
+- :ref:`bool<class_bool>` **test_motion** **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)**
 
 Returns ``true`` if a collision would result from moving in the given vector. ``margin`` increases the size of the shapes involved in the collision detection, and ``result`` is an object of type :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>`, which contains additional information about the collision (should there be one).
 

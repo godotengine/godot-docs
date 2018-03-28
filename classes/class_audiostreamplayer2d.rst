@@ -62,10 +62,6 @@ Member Variables
 
 - :ref:`float<class_float>` **max_distance** - Maximum distance from which audio is still hearable.
 
-  .. _class_AudioStreamPlayer2D_pitch_scale:
-
-- :ref:`float<class_float>` **pitch_scale**
-
   .. _class_AudioStreamPlayer2D_playing:
 
 - :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.

@@ -151,12 +151,12 @@ Translates the transform by the specified offset.
 
 - var **xform** **(** var v **)**
 
-Transforms the given :ref:`Vector3<class_vector3>`, :ref:`Plane<class_plane>`, or :ref:`AABB<class_aabb>` by this transform.
+Transforms the given vector "v" by this transform.
 
 .. _class_Transform_xform_inv:
 
 - var **xform_inv** **(** var v **)**
 
-Inverse-transforms the given :ref:`Vector3<class_vector3>`, :ref:`Plane<class_plane>`, or :ref:`AABB<class_aabb>` by this transform.
+Inverse-transforms the given vector "v" by this transform.
 
 

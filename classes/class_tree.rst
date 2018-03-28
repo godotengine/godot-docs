@@ -104,7 +104,7 @@ Emitted when the right mouse button is pressed if RMB selection is active and th
 
 - **item_activated** **(** **)**
 
-Emitted when an item's label is double-clicked.
+Emitted when an item is activated (double-clicked).
 
 .. _class_Tree_item_collapsed:
 
@@ -120,7 +120,7 @@ Emitted when an item is collapsed by a click on the folding arrow.
 
 - **item_double_clicked** **(** **)**
 
-Emitted when an item's icon is double-clicked.
+Emitted when an item is double clicked.
 
 .. _class_Tree_item_edited:
 
