@@ -306,7 +306,7 @@ In practice, it's a smaller specular blob added on top of the existing material.
 Anisotropy
 ~~~~~~~~~~
 
-Changes the shape of the specular blow and aligns it to tangent space. Anisotropy is commonly used with hair, or to make materials such as brushed alluminium more realistic.
+Changes the shape of the specular blow and aligns it to tangent space. Anisotropy is commonly used with hair, or to make materials such as brushed aluminium more realistic.
 It works especially well when combined with flowmaps.
 
 .. image:: img/spatial_material18.png
@@ -367,7 +367,7 @@ Godot supports 2 UV channels per material. Secondary UV is often useful for AO o
 Triplanar Mapping
 ~~~~~~~~~~~~~~~~~
 
-Trilpanar mapping is supported for both UV1 and UV2. This is an alternative way to obtain texture coordinates, often called "Autotexture". Textures are sampled in X,Y and Z and blended by the normal.
+Triplanar mapping is supported for both UV1 and UV2. This is an alternative way to obtain texture coordinates, often called "Autotexture". Textures are sampled in X,Y and Z and blended by the normal.
 Triplanar can be either worldspace or object space.
 
 In the image below, you can see how all primitives share the same material with world triplanar, so bricks continue smoothly between them.
@@ -378,7 +378,7 @@ Proximity and Distance Fade
 ----------------------------
 
 Godot allows materials to fade by proximity to another, as well as depending on the distance to the viewer.
-Proximity fade is very useful for effecs such as soft particles, or a mass of water with a smooth blending to the shores.
+Proximity fade is very useful for effects such as soft particles, or a mass of water with a smooth blending to the shores.
 Distance fade is useful for light shafts or indicators that are only present after a given distance.
 
 Keep in mind enabling these enables alpha blending, so abusing them for a whole scene is not generally a good idea.
