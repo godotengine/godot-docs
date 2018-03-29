@@ -377,7 +377,7 @@ because they generally bounce around the world before exploding.
 
           - Halo (Rocket launchers, fragment grenades, sniper rifles, brute shot, and more)
           - Destiny (Rocket launchers, grenades, fusion rifles, sniper rifles, super moves, and more)
-          - Call of Duty (Rocket launchers, grenades, ballistic knifes, crossbows, and more)
+          - Call of Duty (Rocket launchers, grenades, ballistic knives, crossbows, and more)
           - Battlefield (Rocket launchers, grenades, claymores, mortars, and more)
 
 Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with however many clients are connected

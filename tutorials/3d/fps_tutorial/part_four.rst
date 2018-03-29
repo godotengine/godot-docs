@@ -972,7 +972,7 @@ and we set ``changing_weapon_name`` to a empty string.
 Adding ``process_reloading``
 ____________________________
 
-Let's finish up our new modular weapon system and add ``process_reloading``. Make a new funciton called ``process_reloading`` and add the following:
+Let's finish up our new modular weapon system and add ``process_reloading``. Make a new function called ``process_reloading`` and add the following:
 
 ::
     

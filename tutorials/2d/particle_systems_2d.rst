@@ -128,7 +128,7 @@ This can be used to turn Fract Delta on or off.
 Drawing Parameters 
 ------------------
 
-Visability Rect
+Visibility Rect
 ~~~~~~~~~~~~~~~
  
 The ``W`` and ``H`` values control width and height of the visibility
@@ -202,7 +202,7 @@ accelerations (as described further below).
 Angular Velocity
 ~~~~~~~~~~~~~~~~
 
-Angular velocity is the inital angular velocity applied to particles.
+Angular velocity is the initial angular velocity applied to particles.
 
 Spin Velocity
 ~~~~~~~~~~~~~
@@ -272,6 +272,6 @@ Used to change the color of the particles being emitted.
 Hue variation
 ~~~~~~~~~~~~~
 
-The variation value sets the inital hue variation applied to each 
+The variation value sets the initial hue variation applied to each 
 particle. The Variation rand value controls the hue variation
 randomness ratio.

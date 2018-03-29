@@ -47,7 +47,7 @@ Now you have everything ready for changing the file icon. To do that, you will n
 Testing the result
 ------------------
 
-You can now export the game and see whether you have change the icons sucessfully or not.
+You can now export the game and see whether you have change the icons successfully or not.
 If everything works fine, you will see this.
 
 .. image:: img/icon_result.png
@@ -60,7 +60,7 @@ Regardless of which program you use to create your ICO file, there are some requ
 This is a bit tricky, as can be seen in the following StackOverflow threads: `one <https://stackoverflow.com/questions/3236115/which-icon-sizes-should-my-windows-applications-icon-include>`__, `two <https://stackoverflow.com/questions/40749785/windows-10-all-icon-resolutions-on-all-dpi-settings-format-pixel-art-as-icon>`__.
 
 Your ICO file should at least contain icons in the following resolutions: 16x16, 48x48 and 256x256.
-They should also be uncompressed. The 256x256 icon *can* be compressed, but this breaks backwards compability with Windows XP.
+They should also be uncompressed. The 256x256 icon *can* be compressed, but this breaks backwards compatibility with Windows XP.
 
 If you want to fully support high-DPI screens, this is the full list of supported icon sizes on Windows 10:
 16, 20, 24, 28, 30, 31, 32, 40, 42, 47, 48, 56, 60, 63, 84 and one larger than 255px. (I.e. 256 or 512 or 1024)
