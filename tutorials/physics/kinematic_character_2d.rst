@@ -208,7 +208,7 @@ This adds simple walking support by pressing left and right:
         else:
             velocity.x = 0
         
-        # We don't need to multiply velocity by delta becuase MoveAndSlide already takes delta time into account.
+        # We don't need to multiply velocity by delta because MoveAndSlide already takes delta time into account.
 
         # The second parameter of move_and_slide is the normal pointing up.
         # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
