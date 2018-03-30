@@ -113,6 +113,17 @@ enum **ArrayType**
 - **ARRAY_INDEX** = **8** --- Array of integers, used as indices referencing vertices. No index can be beyond the vertex array size.
 - **ARRAY_MAX** = **9**
 
+All arrays must have the same length as the vertex array or be empty,
+except for ARRAY_INDEX if it is used. In other words, in index
+mode, the index selects the *i*'th vertex, normal, tangent, color, UV,
+etc. This means if you want to have different normals or colors along
+an edge, you have to duplicate the vertices. (Same length means same
+*number of elements* here; their lengths in bytes will differ.)
+
+For triangles, the index array is interpreted as triples, referring to
+the vertices of each triangle. For lines, the index array is in pairs,
+the start and end of each line.
+
 
 Member Function Description
 ---------------------------
@@ -125,9 +136,23 @@ Member Function Description
 
 - void **add_surface_from_arrays** **(** :ref:`int<class_int>` primitive, :ref:`Array<class_array>` arrays, :ref:`Array<class_array>` blend_shapes=[  ], :ref:`int<class_int>` compress_flags=97792 **)**
 
-Create a new surface (:ref:`get_surface_count<class_ArrayMesh_get_surface_count>` that will become surf_idx for this.
+Create a new surface.
 
-Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. (As a note, when using indices, it is recommended to only use just points, lines or triangles).
+Surfaces are created to be rendered using a "primitive", which may be
+PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP,
+PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP,
+PRIMITIVE_TRIANGLE_FAN. (As a note, when using indices, it is
+recommended to only use just points, lines or triangles).
+
+The "arrays" arg is an array of arrays. See **ArrayType** above for
+the arrays that make up the elements of this array. For example,
+arrays[0] is the array of vertices. That first vertex sub-array is
+always required; the others are optional. Adding an index array puts
+this function into "index mode" where the vertex and other arrays just become
+the sources of data, and the index array defines the order of the vertices.
+
+:ref:`get_surface_count<class_ArrayMesh_get_surface_count>` will
+become the surf_idx for this new surface.
 
 .. _class_ArrayMesh_center_geometry:
 
