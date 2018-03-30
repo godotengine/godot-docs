@@ -37,9 +37,6 @@ for example:
        # Print the size of the viewport
        print("Viewport Resolution is: ", get_viewport_rect().size)
 
-    func _ready():
-        set_process_input(true)
-
 Alternatively it's possible to ask the viewport for the mouse position:
 
 ::
