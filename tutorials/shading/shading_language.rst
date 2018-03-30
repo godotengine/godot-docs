@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Godot uses a shading language very similar to GLSL ES 3.0. Most datatypes and functions are supported,
-and the remaining will likely be added over time.
+and the few remaining ones will likely be added over time.
 
 Unlike the shader language in Godot 2.x, this implementation is much closer to the original.
 
@@ -15,7 +15,7 @@ Shader Types
 ------------
 
 Instead of supplying a general purpose configuration, Godot Shading Language must
-specify what shader is intended for. Depending on the type, different render
+specify what a shader is intended for. Depending on the type, different render
 modes, built-in variables and processing functions are supported.
 
 Any shader needs a first line specifying this type, in the following format:
@@ -30,7 +30,6 @@ Valid types are:
 * "canvas_item": For 2D rendering.
 * "particles": For particle systems.
 
-
 Render Modes
 ------------
 
@@ -42,10 +41,10 @@ be after the *shader_type*. Example syntax is:
     shader_type spatial;
     render_mode unshaded, cull_disabled;
 
-Data types:
------------
+Data types
+----------
 
-Most GLSL ES 3.0 datatypes are supported. Following is the list:
+Most GLSL ES 3.0 datatypes are supported:
 
 +-----------------+---------------------------------------------------------------------------+
 | Type            | Description                                                               |
@@ -99,11 +98,10 @@ Most GLSL ES 3.0 datatypes are supported. Following is the list:
 | **samplerCube** | Sampler type for binding Cubemaps, which are read as floats.              |
 +-----------------+---------------------------------------------------------------------------+
 
-
 Casting
 ~~~~~~~
 
-Just like GLSL ES 3.0, implicit casting is not allowed between scalars and vectors of the same size but different type.
+Just like GLSL ES 3.0, implicit casting between scalars and vectors of the same size but different type is not allowed.
 Casting of types of different size is also not allowed. Conversion must be done explicitly via constructors.
 
 Example:
@@ -235,7 +233,7 @@ Godot Shading language supports the most common types of flow control:
     }
 
     // for loops
-    for     (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) {
 
     }
 
@@ -261,7 +259,6 @@ It's possible to define any function in a Godot shader. They take the following 
 .. code-block:: glsl
 
     ret_type func_name(args) {
-
         return ret_type; // if returning a value
     }
 
@@ -288,8 +285,6 @@ Example below:
         result = a + b;
     }
 
-
-
 Processor Functions
 -------------------
 
@@ -313,7 +308,6 @@ vertex functions are not that commonly used.
     void vertex() {
         VERTEX.x += sin(TIME); // offset vertex x by sine function on time elapsed
     }
-
 
 Fragment Processor
 ~~~~~~~~~~~~~~~~~~
@@ -343,14 +337,12 @@ and does not run if no lights affect the object).
         DIFFUSE_LIGHT = vec3(0.0, 1.0, 0.0);
     }
 
-
 Varyings
 ~~~~~~~~
 
 To send data from vertex to fragment shader, *varyings* are used. They are set for every primitive vertex
 in the *vertex processor*, and the value is interpolated (and perspective corrected) when reaching every
 pixel in the fragment processor.
-
 
 .. code-block:: glsl
 
@@ -411,10 +403,8 @@ Uniforms can't be written from within the shader.
 
     uniform float some_value;
 
-
 Any type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
 to make the compiler understand what the uniform is used for.
-
 
 .. code-block:: glsl
 
@@ -451,9 +441,7 @@ As Godot 3D engine renders in linear color space, it's important to understand t
 that are supplied as color (ie, albedo) need to be specified as such for proper SRGB->linear
 conversion.
 
-
 Uniforms can also be assigned default values:
-
 
 .. code-block:: glsl
 
@@ -462,14 +450,11 @@ Uniforms can also be assigned default values:
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : hint_color = vec4(1.0);
 
-
-
 Built-in Functions
 ------------------
 
 A large number of built-in functions are supported, conforming mostly to GLSL ES 3.0.
 When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature is used, it can be scalar or vector.
-
 
 +-----------------------------------------------------------------------------------------------+------------------------------------------------+
 | Function                                                                                      | Description                                    |
@@ -788,7 +773,6 @@ happen later, though) with the following code, so it can be done manually:
         // same as above for binormal and tangent, if normal mapping is used
     }
 
-
 Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
@@ -800,7 +784,6 @@ is usually:
 
 This allows to easily adjust the shader to a particle system using default particles material. When writing a custom particles
 shader, this value can be used as desired.
-
 
 Fragment Built-Ins
 ^^^^^^^^^^^^^^^^^^
@@ -930,7 +913,6 @@ performance or force a specific pipeline.
 To write a light shader, simply make sure to assign something to DIFFUSE_LIGHT or SPECULAR_LIGHT.
 Assigning nothing means no light is processed.
 
-
 Canvas Item
 ~~~~~~~~~~~~
 
@@ -986,7 +968,6 @@ Vertex Built-Ins
 | out float **POINT_SIZE**       | Point size for point drawing.                                  |
 +--------------------------------+----------------------------------------------------------------+
 
-
 Vertex data (VERTEX) is presented in local space.
 If not written to, these values will not be modified and be passed through as they came.
 
@@ -1002,7 +983,6 @@ happen later, though) with the following code, so it can be done manually:
 
         VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
-
 
 Other built-ins such as UV and COLOR are also passed through to the fragment function if not modified.
 
@@ -1093,7 +1073,6 @@ Light Built-Ins
 |                                     | Can be modified.                                                              |
 +-------------------------------------+-------------------------------------------------------------------------------+
 
-
 Particles
 ~~~~~~~~~
 
@@ -1147,5 +1126,4 @@ Vertex Built-Ins
 | in uint **RANDOM_SEED**         | Random seed used as base for random.                      |
 +---------------------------------+-----------------------------------------------------------+
 
-Particle shades only support vertex processing. They are drawn with any regular material for CanvasItem or Spatial, depending on
-whether they are 2D or 3D.
+Particle shades only support vertex processing. They are drawn with any regular material for CanvasItem or Spatial, depending on whether they are 2D or 3D.
