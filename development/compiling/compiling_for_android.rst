@@ -154,7 +154,7 @@ must be copied to Godot's templates folder with their respective names.
 The templates folder can be located in:
 
 -  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates``
--  Linux: ``/home/[username]/.godot/templates``
+-  Linux: ``/home/[username]/.local/share/godot/templates/[gd-version]/``
 -  macOS: ``/users/[username]/.godot/templates``
 
 .. TODO: Move these paths to a common reference page
