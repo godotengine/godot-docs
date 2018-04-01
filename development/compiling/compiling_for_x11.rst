@@ -126,7 +126,7 @@ To create standard export templates, the resulting files must be copied to:
 
 ::
 
-    /home/youruser/.godot/templates
+    /home/[username]/.local/share/godot/templates/[gd-version]/
 
 and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 
