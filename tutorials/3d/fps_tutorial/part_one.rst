@@ -494,7 +494,7 @@ to change our acceleration to the new acceleration:
 ::
 
     var target = dir
-    # NEW CPDE. Replaces "target *= MAX_SPEED"
+    # NEW CODE. Replaces "target *= MAX_SPEED"
     if is_sprinting:
         target *= MAX_SPRINT_SPEED
     else:
