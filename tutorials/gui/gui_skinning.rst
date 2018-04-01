@@ -67,13 +67,22 @@ Every option is associated to:
 
 An example usage:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var t = Theme.new()
     t.set_color("font_color", "Label", Color(1.0, 1.0, 1.0))
 
     var l = Label.new()
     l.set_theme(t)
+
+ .. code-tab:: csharp
+
+    var t = new Theme();
+    t.SetColor("fontColor", "Label", new Color(1.0f, 1.0f, 1.0f));
+    
+    var l = new Label();
+    l.SetTheme(t);
 
 In the example above, a new theme is created. The "font_color" option
 is changed and then applied to a label. As a result, the label (and all
@@ -83,10 +92,16 @@ It is possible to override those options without using the theme
 directly and only for a specific control by using the override API in
 :ref:`Control.add_color_override() <class_Control_add_color_override>`:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var l = Label.new()
     l.add_color_override("font_color", Color(1.0, 1.0, 1.0))
+
+ .. code-tab:: csharp
+
+    var l = new Label();
+    l.AddColorOverride("fontColor", new Color(1.0f, 1.0f, 1.0f));
 
 In the inline help of Godot (in the script tab) you can check which theme options
 are overrideable, or check the :ref:`Control <class_Control>` class reference.
