@@ -17,11 +17,20 @@ You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>`
 
 To enable an interface you execute the following code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript 
 
     var arvr_interface = ARVRServer.find_interface("Native mobile")
     if arvr_interface and arvr_interface.initialize():
         get_viewport().arvr = true
+
+ .. code-tab:: csharp
+
+    var arvrInterface = ARVRServer.FindInterface("Native mobile");
+    if (arvrInterface != null && arvrInterface.Initialize())
+    {
+        GetViewport().Arvr = true;
+    }
 
 This code finds the interface we wish to use, initializes it and if that is successful binds the main viewport to the interface. This last step gives some control over the viewport to the interface which automatically enables things like stereo scopic rendering on the viewport.
 
