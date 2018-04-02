@@ -6,85 +6,99 @@ Using gridmaps
 Introduction
 ------------
 
-:ref:`Gridmaps <class_GridMap>` are a simple and fast way to create 3D
-game levels. Think of it as a 3D version of the :ref:`TileMap<doc_using_tilemaps>`
-node. Similarly, you start with a predefined library of 3D meshes that
-can be put on a grid, just like if you were building a level with an
-unlimited amount of Lego blocks.
+:ref:`Gridmaps <class_GridMap>` are a tool for creating 3D
+game levels, similar to the way :ref:`TileMap <doc_using_tilemaps>`
+works in 2D. You start with a predefined collection of 3D meshes (a 
+:ref:`class_MeshLibrary`) that can be placed on a grid,
+as if you were building a level with an unlimited amount of Lego blocks.
 
-Collisions can also be added to the meshes, just like you would do with
-the tiles of a tilemap.
+Collisions and navigation can also be added to the meshes, just like you
+would do with the tiles of a tilemap.
+
+Example Project
+---------------
+
+To learn how GridMaps work, start by downloading the sample project:
+:download:`gridmap_demo.zip <files/gridmap_demo.zip>`.
+
+Unzip this project and add it to the Project Manager using the "Import"
+button.
 
 Creating a MeshLibrary
 ----------------------
 
 To begin, you need a :ref:`class_MeshLibrary`, which is a collection
-of meshes that can be used in the gridmap. Here are some meshes you can
-use to set it up.
+of individual meshes that can be used in the gridmap. Open the "MeshLibrary_Source.tscn"
+scene to see an example of how to set up the mesh library.
 
-.. image:: img/meshes.png
+.. image:: img/gridmap_meshlibrary1.png
 
-Open a new scene and create a root node (this is important, as without
-the root node, it will not be able to generate the MeshLibrary!). Then,
-create a :ref:`class_MeshInstance` node:
+As you can see, this scene has a :ref:`class_Spatial` node as its root, and
+a number of :ref:`class_MeshInstance` node children. 
 
-.. image:: img/mesh_meshlib.png
-
-If you don't need to apply physics to the building blocks, that's all
-you need to do. In most cases though, you will need your block to
-generate collisions, so let's see how to add them.
+If you don't need any physics in your scene, then you're done. However, in most
+cases you'll want to assign collision bodies to the meshes.
 
 Collisions
 ----------
 
-To assign a :ref:`class_CollisionShape` and :ref:`class_PhysicsBody`
-to the meshes, the simplest way is to do it while creating the
-MeshLibrary. Alternatively, you can also edit an existing MeshLibrary
-from within the GridMap inspector, but only CollisionShapes can be
-defined there and not PhysicsBody.
+You can manually assign a :ref:`class_StaticBody` and 
+:ref:`class_CollisionShape` to each mesh. Alternatively, you can use the "Mesh" menu
+to automatically create the collision body based on the mesh data.
 
-To give the meshes a CollisionShape, you simply add children nodes to
-the MeshInstance node. You would typically add the desired PhysicsBody
-and CollisionShape in this order:
+.. image:: img/gridmap_create_body.png
 
-.. image:: img/collide_mesh_meshlib.png
+Note that a "Convex" collision body will work better for simple meshes. For more
+complex shapes, select "Create Trimesh Static Body". Once each mesh has
+a physics body and collision shape assigned, your mesh library is ready to
+be used.
 
-You can adjust the order according to your needs.
+.. image:: img/gridmap_mesh_scene.png
+
 
 Exporting the MeshLibrary
 -------------------------
 
-To export, go to ``Scene > Convert To.. > MeshLibrary..``, and save it
+To export the library, click on Scene -> Convert To.. -> MeshLibrary.., and save it
 as a resource.
 
-.. image:: img/export_meshlib.png
+.. image:: img/gridmap_export.png
 
-You are now ready to use the GridMap node.
+You can find an already exported MeshLibrary in the project named "MeshLibrary.tscn".
 
-Using the MeshLibrary in a GridMap
-----------------------------------
+Using GridMap
+-------------
 
-Create a new scene using any node as root, then add a Gridmap node.
-Then, load the MeshLibrary that you just exported.
+Create a new scene and add a GridMap node. Add the mesh library by dragging
+the resource file from the FileSystem dock and dropping it in the "Theme" property
+in the Inspector.
 
-.. image:: img/load_meshlib.png
+.. image:: img/gridmap_main.png
 
-Now, you can build your own level as you see best fit. Use left click
-to add tiles and right click to remove them. You can adjust the floor
-level when you need to put meshes at specific heights.
+The "Cell/Size" property should be set to the size of your meshes. You can leave
+it at the default value for the demo. Set the "Center Y" property to "Off".
 
-.. image:: img/gridmap.png
+Now you can start designing the level by choosing a tile from the palette and
+placing it with Left-Click in the editor window. To remove a tile, use
+Shift+Right-click.
 
-As mentioned above, you can also define new CollisionShapes at this
-stage by doing the following steps:
+Click on the "GridMap" menu to see options and shortcuts. For example, pressing
+"S" rotates a tile around the y-axis.
 
-.. image:: img/load_collisionshape.png
+.. image:: img/gridmap_menu.png
 
-There you are!
+Holding <Shift> and dragging with the left mouse button will draw a selection
+box. You can duplicate or clear the selected area using the respective menu
+options.
 
-Reminder
---------
+.. image:: img/gridmap_select.png
 
--  Be cautious before scaling meshes if you are not using uniform
-   meshes.
--  There are many ways to make use of gridmaps, be creative!
+In the menu, you can also change the axis you're drawing on as well as shift
+the drawing plane higher or lower on its axis.
+
+.. image:: img/gridmap_shift_axis.png
+
+Using gridmap in code
+---------------------
+
+See :ref:`class_GridMap` for details on the node's methods and member variables.
