@@ -25,7 +25,7 @@ Breaking down the UI
 --------------------
 
 Let's break down the final UI and plan the containers we'll use. As in
-the `main menu tutorial <#>`__, it starts with a ``MarginContainer``.
+the :doc:`ui_main_menu`, it starts with a ``MarginContainer``.
 Then, we can see up to three columns:
 
 1. The life and energy counters on the left

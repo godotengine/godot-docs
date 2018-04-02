@@ -23,22 +23,6 @@ Member Variables
 
 - :ref:`String<class_string>` **font_path** - The path to the vector font file.
 
-  .. _class_DynamicFontData_hinting:
-
-- :ref:`Hinting<enum_dynamicfontdata_hinting>` **hinting** - The font hinting mode used by FreeType.
-
-
-Enums
------
-
-  .. _enum_DynamicFontData_Hinting:
-
-enum **Hinting**
-
-- **HINTING_NONE** = **0** --- Disable font hinting (smoother but less crisp).
-- **HINTING_LIGHT** = **1** --- Use the light font hinting mode.
-- **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
-
 
 Description
 -----------

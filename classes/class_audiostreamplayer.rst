@@ -54,10 +54,6 @@ Member Variables
 
 - :ref:`MixTarget<enum_audiostreamplayer_mixtarget>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
 
-  .. _class_AudioStreamPlayer_pitch_scale:
-
-- :ref:`float<class_float>` **pitch_scale**
-
   .. _class_AudioStreamPlayer_playing:
 
 - :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.

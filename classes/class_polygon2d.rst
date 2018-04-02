@@ -43,10 +43,6 @@ Member Variables
 
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
 
-  .. _class_Polygon2D_splits:
-
-- :ref:`PoolIntArray<class_poolintarray>` **splits**
-
   .. _class_Polygon2D_texture:
 
 - :ref:`Texture<class_texture>` **texture** - The polygon's fill texture. Use ``uv`` to set texture coordinates.
