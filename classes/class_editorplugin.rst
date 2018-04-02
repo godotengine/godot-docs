@@ -20,8 +20,6 @@ Member Functions
 ----------------
 
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_autoload_singleton<class_EditorPlugin_add_autoload_singleton>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` path **)**                                                           |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ToolButton<class_toolbutton>`                  | :ref:`add_control_to_bottom_panel<class_EditorPlugin_add_control_to_bottom_panel>` **(** :ref:`Control<class_control>` control, :ref:`String<class_string>` title **)**                                           |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>` **(** :ref:`int<class_int>` container, :ref:`Control<class_control>` control **)**                                                   |
@@ -79,8 +77,6 @@ Member Functions
 | void                                                 | :ref:`make_visible<class_EditorPlugin_make_visible>` **(** :ref:`bool<class_bool>` visible **)** virtual                                                                                                          |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`queue_save_layout<class_EditorPlugin_queue_save_layout>` **(** **)** const                                                                                                                                  |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_autoload_singleton<class_EditorPlugin_remove_autoload_singleton>` **(** :ref:`String<class_string>` name **)**                                                                                       |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>` **(** :ref:`Control<class_control>` control **)**                                                                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -169,12 +165,6 @@ Plugins are used by the editor to extend functionality. The most common types of
 
 Member Function Description
 ---------------------------
-
-.. _class_EditorPlugin_add_autoload_singleton:
-
-- void **add_autoload_singleton** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` path **)**
-
-Add a script at ``path`` to the Autoload list as ``name``.
 
 .. _class_EditorPlugin_add_control_to_bottom_panel:
 
@@ -345,12 +335,6 @@ Remember that you have to manage the visibility of all your editor controls manu
 - void **queue_save_layout** **(** **)** const
 
 Queue save the project's editor layout.
-
-.. _class_EditorPlugin_remove_autoload_singleton:
-
-- void **remove_autoload_singleton** **(** :ref:`String<class_string>` name **)**
-
-Remove an Autoload ``name`` from the list.
 
 .. _class_EditorPlugin_remove_control_from_bottom_panel:
 

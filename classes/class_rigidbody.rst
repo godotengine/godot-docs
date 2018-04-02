@@ -26,8 +26,6 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`apply_impulse<class_RigidBody_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_torque_impulse<class_RigidBody_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody_get_colliding_bodies>` **(** **)** const                                                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>` **(** :ref:`Vector3<class_vector3>` axis_velocity **)**                               |
@@ -203,12 +201,6 @@ Called during physics processing, allowing you to read and safely modify the sim
 - void **apply_impulse** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**
 
 Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
-
-.. _class_RigidBody_apply_torque_impulse:
-
-- void **apply_torque_impulse** **(** :ref:`Vector3<class_vector3>` impulse **)**
-
-Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
 
 .. _class_RigidBody_get_colliding_bodies:
 

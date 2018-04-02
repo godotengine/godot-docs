@@ -34,8 +34,6 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>` **(** :ref:`float<class_float>` length **)**                                                                                                                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`cross<class_Vector2_cross>` **(** :ref:`Vector2<class_vector2>` b **)**                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>` **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`distance_squared_to<class_Vector2_distance_squared_to>` **(** :ref:`Vector2<class_vector2>` to **)**                                                                                                    |
@@ -136,12 +134,6 @@ Bounce returns the vector "bounced off" from the given plane, specified by its n
 - :ref:`Vector2<class_vector2>` **clamped** **(** :ref:`float<class_float>` length **)**
 
 Returns the vector with a maximum length.
-
-.. _class_Vector2_cross:
-
-- :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_vector2>` b **)**
-
-Returns the 2-dimensional analog of the cross product with ``b``.
 
 .. _class_Vector2_cubic_interpolate:
 
