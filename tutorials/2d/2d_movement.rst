@@ -8,7 +8,7 @@ Introduction
 
 Every beginner has been there: "How do I move my character?" Depending on the
 style of game you're making, you may have special requirements, but in general
-the movement in most 2D games is based on a small number of 
+the movement in most 2D games is based on a small number of designs.
 
 We'll use :ref:`KinematicBody2D <class_KinematicBody2D>` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
@@ -18,7 +18,7 @@ Setup
 
 Each example below uses the same scene setup. Start with a ``KinematicBody2D`` with two
 children: ``Sprite`` and ``CollisionShape2D``. You can use the Godot icon ("icon.png")
-for the Sprite's texture or use any other 2D image you have available.
+for the Sprite's texture or use any other 2D image you have.
 
 Open ``Project -> Project Settings`` and select the "Input Map" tab. Add the following
 input actions (see :ref:`InputEvent <doc_inputevent>` for details):
@@ -30,7 +30,7 @@ input actions (see :ref:`InputEvent <doc_inputevent>` for details):
 
 In this scenario, you want the user to press the four directional keys (up/left/down/right
 or W/A/S/D) and move in the selected direction. The name "8-way movement" comes from the
-fact that diagonal movement can be chosen by pressing two keys at once.
+fact that the player can move diagonally by pressing two keys at the same time.
 
 .. image:: img/movement_8way.gif
 
@@ -89,18 +89,18 @@ while up/down moves it forward or backward in whatever direction it's facing.
     extends KinematicBody2D
 
     export (int) var speed = 200
-    export (float) var rot_speed = 1.5
+    export (float) var rotation_speed = 1.5
 
     var velocity = Vector2()
-    var rot_dir = 0
+    var rotation_dir = 0
 
     func get_input():
-        rot_dir = 0
+        rotation_dir = 0
         velocity = Vector2()
         if Input.is_action_pressed('right'):
-            rot_dir += 1
+            rotation_dir += 1
         if Input.is_action_pressed('left'):
-            rot_dir -= 1
+            rotation_dir -= 1
         if Input.is_action_pressed('down'):
             velocity = Vector2(-speed, 0).rotated(rotation)
         if Input.is_action_pressed('up'):
@@ -108,7 +108,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     func _physics_process(delta):
         get_input()
-        rotation += rot_dir * rot_speed * delta
+        rotation += rotation_dir * rotation_speed * delta
         move_and_slide(velocity)
         
 Here we've added two new variables to track our rotation direction and speed.
@@ -149,9 +149,9 @@ is set by the mouse position instead of the keyboard. The character will always
         get_input()
         move_and_slide(velocity)
 
-Note that the :ref:`Node2D <class_Node2D>` ``look_at()`` method exists just
-for this purpose. Without this function, you could get the same effect by
-setting the angle like this:
+Here we're using the :ref:`Node2D <class_Node2D>` ``look_at()`` method to
+point the player towards a given position. Without this function, you
+could get the same effect by setting the angle like this:
 
 ::
     
