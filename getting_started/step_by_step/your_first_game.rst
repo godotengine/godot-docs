@@ -254,7 +254,7 @@ or ``false`` if it isn't.
             velocity.y -= 1;
         }
     
-        var animatedSprite = GetNode("AnimatedSprite") as AnimatedSprite;
+        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
         if (velocity.Length() > 0) {
             velocity = velocity.Normalized() * Speed;
             animatedSprite.Play();
@@ -418,11 +418,8 @@ Add this code to the function:
         
         // for the sake of this example, but it's better to create a class var
         // then assign the variable inside _Ready()
-        var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
-        if (collisionShape2D != null)
-        {
-            collisionShape2D.Disabled = true;
-        }
+        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        collisionShape2D.Disabled = true;
     }
 
 .. Note:: Disabling the area's collision shape means
@@ -448,11 +445,8 @@ the player when starting a new game.
         Position = pos;
         Show();
         
-        var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
-        if (collisionShape2D != null)
-        {
-            collisionShape2D.Disabled = false;
-        }
+        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        collisionShape2D.Disabled = false;
     }
 
 Enemy Scene
@@ -551,7 +545,7 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        var animatedSprite = GetNode("AnimatedSprite") as AnimatedSprite;
+        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
     
         // C# doesn't implement gdscript's random methods, so we use Random
         // as an alternative.
@@ -713,8 +707,8 @@ function to set everything up for a new game:
     public void GameOver()
     {
         //timers
-        var mobTimer = GetNode("MobTimer") as Timer;
-        var scoreTimer = GetNode("ScoreTimer") as Timer;
+        var mobTimer = (Timer) GetNode("MobTimer");
+        var scoreTimer = (Timer) GetNode("ScoreTimer");
     
         scoreTimer.Stop();
         mobTimer.Stop();
@@ -724,9 +718,9 @@ function to set everything up for a new game:
     {
         Score = 0;
     
-        var player = GetNode("Player") as Player;
-        var startTimer = GetNode("StartTimer") as Timer;
-        var startPosition = GetNode("StartPosition") as Position2D;
+        var player = (Player) GetNode("Player");
+        var startTimer = (Timer) GetNode("StartTimer");
+        var startPosition = (Position2D) GetNode("StartPosition");
         
         player.Start(startPosition.Position);
         startTimer.Start();
@@ -751,8 +745,8 @@ increment the score by 1.
     public void OnStartTimerTimeout()
     {
         //timers
-        var mobTimer = GetNode("MobTimer") as Timer;
-        var scoreTimer = GetNode("ScoreTimer") as Timer;
+        var mobTimer = (Timer) GetNode("MobTimer");
+        var scoreTimer = (Timer) GetNode("ScoreTimer");
     
         mobTimer.Start();
         scoreTimer.Start();
@@ -796,7 +790,7 @@ Note that a new instance must be added to the scene using
     public void OnMobTimerTimeout()
     {
         //choose random location on path2d
-        var mobSpawnLocation = GetNode("MobPath/MobSpawnLocation") as PathFollow2D;
+        var mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
         mobSpawnLocation.SetOffset(rand.Next());
     
         //set direction
@@ -804,7 +798,7 @@ Note that a new instance must be added to the scene using
         direction += RandRand(-Mathf.PI/4, Mathf.PI/4);
     
         //create mob instance and add it to scene
-        var mobInstance = Mob.Instance() as RigidBody2D;
+        var mobInstance = (RigidBody2D) Mob.Instance();
         mobInstance.Position = mobSpawnLocation.Position;
         mobInstance.Rotation = direction;
         mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
@@ -948,8 +942,8 @@ has been pressed.
 
     public void ShowMessage(string text)
     {
-        var messageTimer = GetNode("MessageTimer") as Timer;
-        var messageLabel = GetNode("MessageLabel") as Label;
+        var messageTimer = (Timer) GetNode("MessageTimer");
+        var messageLabel = (Label) GetNode("MessageLabel");
     
         messageLabel.Text = text;
         messageLabel.Show();
@@ -976,9 +970,9 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
     {
         ShowMessage("Game Over");
     
-        var startButton = GetNode("StartButton") as Button;
-        var messageTimer = GetNode("MessageTimer") as Timer;
-        var messageLabel = GetNode("MessageLabel") as Label;
+        var startButton = (Button) GetNode("StartButton");
+        var messageTimer = (Timer) GetNode("MessageTimer");
+        var messageLabel = (Label) GetNode("MessageLabel");
 
         //work around for gdscript's yield
         await Task.Delay((int) messageTimer.WaitTime * 1000);
@@ -1001,7 +995,7 @@ Over" for 2 seconds, then return to the title screen and show the
 
     public void UpdateScore(int score)
     {
-        var scoreLabel = GetNode("ScoreLabel") as Label;
+        var scoreLabel = (Label) GetNode("ScoreLabel");
         scoreLabel.Text = score.ToString();
     }
 
@@ -1024,7 +1018,7 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     public void OnStartButtonPressed()
     {
-        var startButton = GetNode("StartButton") as Button;
+        var startButton = (Button) GetNode("StartButton");
         startButton.Hide();
     
         EmitSignal("StartGame");
@@ -1032,7 +1026,7 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     public void OnMessageTimerTimeout()
     {
-        var messageLabel = GetNode("MessageLabel") as Label;
+        var messageLabel = (Label) GetNode("MessageLabel");
         messageLabel.Hide();
     }
 
@@ -1063,7 +1057,7 @@ message:
 
  .. code-tab:: csharp
 
-        var hud = GetNode("HUD") as HUD;
+        var hud = (HUD) GetNode("HUD");
         hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");
 
@@ -1076,7 +1070,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
  .. code-tab:: csharp
 
-        var hud = GetNode("HUD") as HUD;
+        var hud = (HUD) GetNode("HUD");
         hud.ShowGameOver();
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in
@@ -1089,7 +1083,7 @@ sync with the changing score:
 
  .. code-tab:: csharp
 
-        var hud = GetNode("HUD") as HUD;
+        var hud = (HUD) GetNode("HUD");
         hud.UpdateScore(Score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
