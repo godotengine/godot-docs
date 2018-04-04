@@ -60,7 +60,7 @@ written for it, and support was added thanks to
 a generous donation from Microsoft.
 
 It has an excellent tradeoff between performance and ease of use,
-although one must of its garbage collector.
+although one must be aware of its garbage collector.
 
 C# is usually the best choice for companies. The large amount of
 programmers familiar with it means less time can be spent learning
