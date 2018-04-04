@@ -412,6 +412,51 @@ while() loops are the same everywhere:
         print(strings[i])
         i += 1
 
+Custom iterators
+----------------
+You can create custom iterators in case the default ones don't quite meet your
+needs by overriding the Variant class's ``_iter_init``, ``_iter_next``, and ``_iter_get``
+functions in your script. An example implementation of a forward iterator follows:
+
+::
+
+    class FwdIterator:
+      var start, curr, end, increment
+
+      func _init(start, stop, inc):
+        self.start = start
+        self.curr = start
+        self.end = stop
+        self.increment = inc
+
+      func is_done():
+        return (curr < end)
+
+      func do_step():
+        curr += increment
+        return is_done()
+
+      func _iter_init(arg):
+        curr = start
+        return is_done()
+
+      func _iter_next(arg):
+        return do_step()
+
+      func _iter_get(arg):
+        return curr
+
+And it can be used like any other iterator:
+
+::
+
+    var itr = FwdIterator.new(0, 6, 2)
+    for i in itr:
+      print(i)    # Will print 0, 2, and 4
+
+Make sure to reset the state of the iterator in ``_iter_init``, otherwise nested
+for-loops that use custom iterators will not work as expected.
+
 Duck typing
 -----------
 
