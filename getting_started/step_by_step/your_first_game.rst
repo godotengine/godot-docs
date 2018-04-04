@@ -24,9 +24,6 @@ final result:
 **Why 2D?** 3D games are much more complex than 2D ones. You should stick to 2D
 until you have a good understanding of the game development process.
 
-.. warning:: Language examples follow the naming scheme of gdscript to avoid
-              confusion. It's recommended to use your languages coding conventions 
-
 Project Setup
 -------------
 
