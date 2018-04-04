@@ -242,7 +242,7 @@ Example of looking around, FPS style:
 As you can see, in such cases it's even simpler to keep the rotation outside, then use the transform as the *final* orientation.
 
 Transforms are your friend
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Once you get used to transforms, you will appreciate their simplicity and power. Of course, for most starting with 3D games, getting used to them can take a while and it can be a bit tricky.
 Don't hesitate to ask for help in this topic in many of our online communities and, once you become confident enough, please help others!
