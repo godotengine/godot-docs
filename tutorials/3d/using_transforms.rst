@@ -115,7 +115,7 @@ A simple way to visualize a transform is to just look at an object transform giz
 
 .. image:: img/transforms_gizmo.png
 
-For more information on the mathematics of vectors and transforms, please read the :ref:`vector_math` tutorials.
+For more information on the mathematics of vectors and transforms, please read the :ref:`doc_vector_math` tutorials.
 
 Manipulating Transforms
 =======================
