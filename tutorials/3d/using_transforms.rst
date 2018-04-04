@@ -13,7 +13,7 @@ At first this seems easy and, for simple games, this way of thinking may even be
 
 Angles in three dimensions are most commonly refered to as "Euler Angles".
 
-.. image:: img/transforms_euler_angles.png
+.. image:: img/transforms_euler.png
 
 Euler Angles were introduced by mathematician Leonhard Euler in the early 1700s.
 
@@ -45,7 +45,7 @@ Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from
 
 You may be wondering how this might affect you, though. Let's go to a practical example, then.
 
-Imagine you are working on first person controls (FPS game). Moving the mouse left and right (2D screen X axis) controls your view angle based on the ground, while moving it up and down
+Imagine you are working on a first person controller (FPS game). Moving the mouse left and right (2D screen X axis) controls your view angle based on the ground, while moving it up and down
 makes the player head look actually up and down. 
 
 In this case, to achieve the desired effect, rotation should be applied first in *Y* axis (Up in our case, as Godot uses Y-Up), and then in *X* axis.
@@ -76,7 +76,7 @@ The camera actually rotated the opposite direction!
 
 There are reasons for this to have happened:
 
-* Rotations dont linearly map to orientation, so interpolating them does not always result in the closes path (ie, to go from 270 to 0 degrees is no the same as going from 270 to 360, even though angles are equivalent).
+* Rotations dont linearly map to orientation, so interpolating them does not always result in the closest path (ie, to go from 270 to 0 degrees is no the same as going from 270 to 360, even though angles are equivalent).
 * Gimbal lock is at play (first and last rotated axis align, so a degree of freedom is lost).
 
 Say no to Euler Angles
@@ -93,13 +93,25 @@ Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`clas
 
 It is also possible to access the world coordinate transform (via *global_transform* property). 
 
-A transform has a :ref:`class_Basis` (transform.basis sub-property), which consists of 3 :ref:`class_Vector3` vectors (transform.basis.x to transform.basis.z). Each points to the direction where each actual axis is rotated to, so they effectively contain a roatation. The scale (as long as it's uniform) can be also be inferred from the length of the axes. A *Basis* can also be interpreted as a 3x3 matrix (used as transform.basis[x][y]).
+A transform has a :ref:`class_Basis` (transform.basis sub-property), which consists of 3 :ref:`class_Vector3` vectors (transform.basis.x to transform.basis.z). Each points to the direction where each actual axis is rotated to, so they effectively contain a rotation. The scale (as long as it's uniform) can be also be inferred from the length of the axes. A *Basis* can also be interpreted as a 3x3 matrix (used as transform.basis[x][y]).
 
-A default basis (unmodified) is Matrix3( x=Vector3(1,0,0), y=Vector3(0,1,0), z=Vector3(0,0,1) ). Each axis is pointing to their respective axis (with a vector length of 1.0, hence unscaled). This is also analog to an 3x3 identity matrix.
+A default basis (unmodified) is akin to:
 
-Together with the *Basis*, a transform also has an *origin*. This is a *Vector3* specifying how far away from the actual origin (0,0,0 in xyz) this transform is. Together with the *basis*, a *Transform* efficiently represents a unique position and orientation in space.
+.. code-block:: python
 
-A simple way to visualize a transform is to just look at an object transform gizmo (in local mode). It will show the X, Y and Z axes of the basis as the arrows, while the origin is just the position of the object.
+    var basis = Basis()
+    # Has these default values built-in (Below is redundant, but just to make it clear)
+    basis.x = Vector3(1, 0, 0) # Vector pointing to X axis
+    basis.y = Vector3(0, 1, 0) # Vector pointing to Y axis
+    basis.z = Vector3(0, 0, 1) # Vector pointing to Z axis
+
+This is also analog to an 3x3 identity matrix.
+
+In Godot (following OpenGL convention), X is the *Right* axis, Y is the *Up* axis and Z is the *Forward* axis.
+
+Together with the *Basis*, a transform also has an *origin*. This is a *Vector3* specifying how far away from the actual origin (0,0,0 in xyz) this transform is. Together with the *basis*, a *Transform* efficiently represents a unique translation, rotation and scale in space.
+
+A simple way to visualize a transform is to just look at an object transform gizmo (in local mode). It will show the X, Y and Z axes (as red, green and blue respectively) of the basis as the arrows, while the origin is just the center of the gizmo (where arrows emerge) in space.
 
 .. image:: img/transforms_gizmo.png
 
@@ -108,17 +120,17 @@ For more information on the mathematics of vectors and transforms, please read t
 Manipulating Transforms
 =======================
 
-Of course, transforms are not nearly as easy to manipulate as angles and have problems of their own.
+Of course, transforms are not nearly as straightforward to manipulate as angles and have problems of their own.
 
-It is possible to rotate a transform, as it has rotation methods.
+It is possible to rotate a transform, by either multiplying it's basis by another (this is called accumulation), or just using the rotation methods.
 
 
 .. code-block:: python
 
     # Rotate the transform in X axis
-    transform = Basis( Vector3(1,0,0), PI ) * transform
+    transform.basis = Basis( Vector3(1,0,0), PI ) * transform.basis
     # Simplified
-    transform = transform.rotated( Vector3(1,0,0), PI )
+    transform.basis = transform.basis.rotated( Vector3(1,0,0), PI )
 
 A method in Spatial simplifies this:
 
@@ -133,6 +145,7 @@ This will rotate the node relative to the parent node space.
 To rotate relative to object space (node's own transform) the following must be done.
 
 .. code-block:: python
+
     # Rotate locally, notice multiplication order is inverted
     transform = transform * Basis( Vector3(1,0,0), PI )
     # or, shortened
@@ -148,6 +161,7 @@ If a transform is rotated every frame, it will eventually start deforming slight
 There are however, two different ways to handle this. The first is to orthonormalize the transform after a while (maybe once per frame if you modify it every frame):
 
 .. code-block:: python
+
     transform = transform.orthonormalized()
 
 This will make all axes have 1.0 length again and be 90 degrees from each other. If the transform had scale, it will be lost, though. 
@@ -155,6 +169,7 @@ This will make all axes have 1.0 length again and be 90 degrees from each other.
 It is recommended you don't scale nodes that are going to be manipulated, scale their children nodes instead (like MeshInstance). If you absolutely must have scale, then re-apply it in the end:
 
 .. code-block:: python
+
     transform = transform.orthonormalized()
     transform = transform.scaled( scale )
 
@@ -162,25 +177,39 @@ It is recommended you don't scale nodes that are going to be manipulated, scale 
 Obtaining Information
 =====================
 
-Many are probably thinking at this point: **"Ok, but how do I get angles from a transform?"**. Answer is again, you don't. You must do your best to stop thinking in angles. 
+You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. Answer is again, you don't. You must do your best to stop thinking in angles. 
 
 Imagine you need to shoot a bullet in the direction your player is looking towards to. Just use the forward axis (commonly Z or -Z for this).
 
 .. code-block:: python
+
     bullet.transform = transform
     bullet.speed = transform.basis.z * BULLET_SPEED
 
-So, is the enemy looking at my player? you can use dot product for this (as explained in the tutorial before)
+So, is the enemy looking at my player? you can use dot product for this (dot product is explained in the vector math tutorial linked before):
 
 .. code-block:: python
+
     if (enemy.transform.origin - player.transform.origin). dot( enemy.transform.basis.z ) > 0 ):
 	enemy.im_watching_you(player)
 
-Let's strafe left if key is pressed!
+Let's strafe left!
 
 .. code-block:: python
+
+    # Remember that X is Right
     if (Input.is_key_pressed("strafe_left")):
-	translate( -transform.basis.x )
+	translate_object_local( -transform.basis.x )
+
+Time to jump..
+
+.. code-block:: python
+
+    # Keep in mind Y is up-axis
+    if (Input.is_key_just_pressed("jump")):
+        velocity.y = JUMP_SPEED
+
+    velocity = move_and_slide( velocity )
 
 All common behaviors and logic can be done with just vectors.
 
@@ -188,13 +217,14 @@ Setting Information
 ===================
 
 There are, of course, cases where you want to set information to a transform. Imagine a first person controller or orbiting camera. Those are definitely done using angles, because you *do want*
-the transforms to happen on a specific order.
+the transforms to happen in a specific order.
 
 For such cases, just keep the angles and rotations *outside* the transform and set them every frame. Don't try retrieve them and re-use them because the transform is not meant to be used this way.
 
 Example of looking around, FPS style:
 
 .. code-block:: python
+
     # accumulators
     var rot_x = 0
     var rot_y = 0
@@ -209,10 +239,10 @@ Example of looking around, FPS style:
             rotate_object_local( Vector3(0,1,0), rot_x ) # first rotate in Y
             rotate_object_local( Vector3(1,0,0), rot_y ) # then rotate in X
 
-As you can see, in such cases it's even simpler to keep the rotation outside and use the transform as the *final* orientation.
+As you can see, in such cases it's even simpler to keep the rotation outside, then use the transform as the *final* orientation.
 
-Transforms are your friend!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transforms are your friend
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you get used to transforms, you will appreciate their simplicity and power. Of course, for most starting with 3D games, getting used to them can take a while and it can be a bit tricky.
 Don't hesitate to ask for help in this topic in many of our online communities and, once you become confident enough, please help others!
