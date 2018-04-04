@@ -19,8 +19,9 @@ Euler Angles were introduced by mathematician Leonhard Euler in the early 1700s.
 
 .. image:: img/transforms_euler_himself.png
 
-This way of representing a 3D rotation has several shortcomings when used in game development (which is to be expected from a guy with a funny hat), and
-the idea of this document is to explain why, as well as outlining best practices for dealing with transforms when programming 3D games.
+This way of representing 3D rotations was groundbreaking at the time, but it has several shortcomings when used in game development (which is to be expected from a guy with a funny
+hat).
+The idea of this document is to explain why, as well as outlining best practices for dealing with transforms when programming 3D games.
 
 
 Problems of Euler Angles
