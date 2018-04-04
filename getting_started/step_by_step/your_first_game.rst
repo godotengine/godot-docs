@@ -162,8 +162,10 @@ Start by declaring the member variables this object will need:
 
     public class Player : Area2D
     {
-        [Export] public int SPEED = 0;
-        private Vector2 screensize;
+        [Export] 
+        public int Speed = 0;
+        
+        private Vector2 _screenSize;
     }
 
 
@@ -190,8 +192,8 @@ which is a good time to find the size of the game window:
 
     public override void _Ready()
     {
-        screensize = GetViewport().GetSize();
-    }
+        _screenSize = GetViewport().GetSize();
+    }   
 
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
@@ -236,30 +238,30 @@ or ``false`` if it isn't.
     public override void _Process(float delta)
     {
         var velocity = new Vector2();
-        if(Input.IsActionPressed("ui_right")) {
+        if (Input.IsActionPressed("ui_right")) {
             velocity.x += 1;
         }
-
-        if(Input.IsActionPressed("ui_left")) {
+    
+        if (Input.IsActionPressed("ui_left")) {
             velocity.x -= 1;
         }
-        
-        if(Input.IsActionPressed("ui_down")) {
+    
+        if (Input.IsActionPressed("ui_down")) {
             velocity.y += 1;
         }
-
-        if(Input.IsActionPressed("ui_up")) {
+    
+        if (Input.IsActionPressed("ui_up")) {
             velocity.y -= 1;
         }
-
-        var animated_sprite = GetNode("AnimatedSprite") as AnimatedSprite;
-        if(velocity.Length() > 0) {
-            velocity = velocity.Normalized() * SPEED;
-            animated_sprite.Play();
+    
+        var animatedSprite = GetNode("AnimatedSprite") as AnimatedSprite;
+        if (velocity.Length() > 0) {
+            velocity = velocity.Normalized() * Speed;
+            animatedSprite.Play();
         } else {
-            animated_sprite.Stop();
+            animatedSprite.Stop();
         }
-    }
+    }   
 
 We check each input and add/subtract from the ``velocity`` to obtain a
 total direction. For example, if you hold ``right`` and ``down`` at
@@ -297,10 +299,10 @@ to the bottom of the ``_process`` function:
 
  .. code-tab:: csharp
 
-        this.Position += velocity * delta;
-        this.Position = new Vector2(
-            Mathf.Clamp(this.Position.x, 0, screensize.x),
-            Mathf.Clamp(this.Position.y, 0, screensize.y)
+        Position += velocity * delta;
+        Position = new Vector2(
+            Mathf.Clamp(Position.x, 0, _screenSize.x),
+            Mathf.Clamp(Position.y, 0, _screenSize.y)
         );
 
 
@@ -336,13 +338,13 @@ Let's place this code at the end of our ``_process()`` function:
  
  .. code-tab:: csharp
 
-        if(velocity.x != 0) {
-            animated_sprite.Animation = "right";
-            animated_sprite.FlipH = velocity.x < 0;
-            animated_sprite.FlipV = false;
+        if (velocity.x != 0) {
+            animatedSprite.Animation = "right";
+            animatedSprite.FlipH = velocity.x < 0;
+            animatedSprite.FlipV = false;
         } else if(velocity.y != 0) {
-            animated_sprite.Animation = "up";
-            animated_sprite.FlipV = velocity.y > 0;
+            animatedSprite.Animation = "up";
+            animatedSprite.FlipV = velocity.y > 0;
         }
 
 Play the scene again and check that the animations are correct in each
@@ -357,7 +359,7 @@ starts:
 
  .. code-tab:: csharp
 
-    this.Hide();
+    Hide();
 
 Preparing for Collisions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -375,7 +377,8 @@ Add the following at the top of the script, after ``extends Area2d``:
 
  .. code-tab:: csharp
 
-    [Signal] public delegate void Hit();
+    [Signal] 
+    public delegate void Hit();
 
 This defines a custom signal called "hit" that we will have our player
 emit (send out) when it collides with an enemy. We will use ``Area2D`` to
@@ -408,15 +411,18 @@ Add this code to the function:
 
  .. code-tab:: csharp
 
-    public void _on_Player_body_entered(Godot.Object body)
+    public void OnPlayerBodyEntered(Godot.Object body)
     {
-       this.Hide();
-       EmitSignal("Hit");
-       
-       // for the sake of this example, but it's better to create a class var
-       // then assign the variable inside _Ready()
-       var collision_shape = GetNode("CollisionShape2D") as CollisionShape2D;
-       collision_shape.Disabled = true;
+        Hide();
+        EmitSignal("Hit");
+        
+        // for the sake of this example, but it's better to create a class var
+        // then assign the variable inside _Ready()
+        var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
+        if(collisionShape2D != null)
+        {
+            collisionShape2D.Disabled = true;
+        }
     }
 
 .. Note:: Disabling the area's collision shape means
@@ -437,13 +443,16 @@ the player when starting a new game.
 
  .. code-tab:: csharp
 
-    public void start(Vector2 pos) 
+    public void Start(Vector2 pos)
     {
-       this.Position = pos;
-       this.Show();
-       
-       var collision_shape = GetNode("CollisionShape2D") as CollisionShape2D;
-       collision_shape.Disabled = false;
+        Position = pos;
+        Show();
+        
+        var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
+        if(collisionShape2D != null)
+        {
+            collisionShape2D.Disabled = false;
+        }
     }
 
 Enemy Scene
@@ -514,10 +523,13 @@ Add a script to the ``Mob`` and add the following member variables:
 
     public class Mob : RigidBody2D
     {
-        [Export] public int MIN_SPEED = 150;
-        [Export] public int MAX_SPEED = 250;
-        
-        private String[] mob_types = {"walk", "swim", "fly"};
+        [Export] 
+        public int MinSpeed = 150;
+
+        [Export] 
+        public int MaxSpeed = 250;
+
+        private String[] _mobTypes = {"walk", "swim", "fly"};
     }
 
 We'll pick a random value between ``MIN_SPEED`` and ``MAX_SPEED`` for
@@ -539,15 +551,15 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        var animated_sprite = GetNode("AnimatedSprite") as AnimatedSprite;
-        
+        var animatedSprite = GetNode("AnimatedSprite") as AnimatedSprite;
+    
         // C# doesn't implement gdscript's random methods, so we use Random
-        // as an alternative. 
+        // as an alternative.
         //
-        // Note: Never define random multiple times in real projects. Create a 
+        // Note: Never define random multiple times in real projects. Create a
         // class memory and reuse it to get true random numbers.
-        var random_mob = new Random();
-        animated_sprite.Animation = mob_types[random_mob.Next(0, mob_types.Length)];
+        var randomMob = new Random();
+        animatedSprite.Animation = _mobTypes[randomMob.Next(0, _mobTypes.Length)];
     }
 
 .. note:: You must use ``randomize()`` if you want
@@ -568,9 +580,9 @@ node and add this code:
 
  .. code-tab:: csharp
 
-    public void _on_Visibility_screen_exited()
+    public void onVisibilityScreenExited()
     {
-        this.QueueFree();
+        QueueFree();
     }
 
 This completes the `Mob` scene.
@@ -655,11 +667,12 @@ instance.
 
     public class Main : Node
     {
-        [Export] public PackedScene Mob;
+        [Export] 
+        public PackedScene Mob;
 
-        public int score = 0;
+        public int Score = 0;
 
-        // note: we're going to use this many times, so instantiating it 
+        // note: we're going to use this many times, so instantiating it
         // allows our numbers to consistently be random
         private Random rand = new Random();
 
@@ -668,7 +681,7 @@ instance.
         }
 
         // we'll use this later because c# doesn't support gdscript's randi()
-        private float rand_rand(float min, float max) 
+        private float RandRand(float min, float max)
         {
             return (float) (rand.NextDouble() * (max - min) + min);
         }
@@ -697,28 +710,25 @@ function to set everything up for a new game:
 
  .. code-tab:: csharp
 
-    public void game_over()
+    public void GameOver()
     {
         //timers
         var mobTimer = GetNode("MobTimer") as Timer;
         var scoreTimer = GetNode("ScoreTimer") as Timer;
-
+    
         scoreTimer.Stop();
         mobTimer.Stop();
     }
 
-    public void new_game()
+    public void NewGame()
     {
-        score = 0;
-
-        //player object
+        Score = 0;
+    
         var player = GetNode("Player") as Player;
-
-        //timers
         var startTimer = GetNode("StartTimer") as Timer;
-
         var startPosition = GetNode("StartPosition") as Position2D;
-        player.start(startPosition.Position);
+        
+        player.Start(startPosition.Position);
         startTimer.Start();
     }
 
@@ -738,19 +748,19 @@ increment the score by 1.
 
  .. code-tab:: csharp
 
-    public void _on_StartTimer_timeout()
+    public void OnStartTimerTimeout()
     {
         //timers
         var mobTimer = GetNode("MobTimer") as Timer;
         var scoreTimer = GetNode("ScoreTimer") as Timer;
-        
+    
         mobTimer.Start();
         scoreTimer.Start();
     }
 
-    public void _on_ScoreTimer_timeout()
+    public void OnScoreTimerTimeout()
     {
-        score += 1;
+        Score += 1;
     }
 
 In ``_on_MobTimer_timeout()`` we will create a mob instance, pick a
@@ -783,23 +793,23 @@ Note that a new instance must be added to the scene using
 
  .. code-tab:: csharp
 
-    public void _on_MobTimer_timeout()
+    public void OnMobTimerTimeout()
     {
         //choose random location on path2d
         var mobSpawnLocation = GetNode("MobPath/MobSpawnLocation") as PathFollow2D;
         mobSpawnLocation.SetOffset(rand.Next());
-
+    
         //set direction
         var direction = mobSpawnLocation.Rotation + Mathf.PI/2;
-        direction += rand_rand(-Mathf.PI/4, Mathf.PI/4);
-
+        direction += RandRand(-Mathf.PI/4, Mathf.PI/4);
+    
         //create mob instance and add it to scene
-        var mob_instance = Mob.Instance() as RigidBody2D;
-        mob_instance.Position = mobSpawnLocation.Position;
-        mob_instance.Rotation = direction;
-        mob_instance.SetLinearVelocity(new Vector2(rand_rand(150f, 250f), 0).Rotated(direction));
-
-        AddChild(mob_instance);
+        var mobInstance = Mob.Instance() as RigidBody2D;
+        mobInstance.Position = mobSpawnLocation.Position;
+        mobInstance.Rotation = direction;
+        mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
+    
+        AddChild(mobInstance);
     }
 
 .. important:: In functions requiring angles, GDScript uses *radians*,
@@ -919,8 +929,9 @@ Now add this script to ``HUD``:
 
     public class HUD : CanvasLayer
     {
-        [Signal] public delegate void StartGame();
-    }   
+        [Signal] 
+        public delegate void StartGame();
+    }
 
 The ``start_game`` signal tells the ``Main`` node that the button
 has been pressed.
@@ -935,11 +946,11 @@ has been pressed.
 
  .. code-tab:: csharp
 
-    public void show_message(string text)
+    public void ShowMessage(string text)
     {
-        var messageTimer = GetNode("MessageTimer") as Timer;   
-        var messageLabel = GetNode("MessageLabel") as Label;   
-        
+        var messageTimer = GetNode("MessageTimer") as Timer;
+        var messageLabel = GetNode("MessageLabel") as Label;
+    
         messageLabel.Text = text;
         messageLabel.Show();
         messageTimer.Start();
@@ -961,19 +972,19 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
  .. code-tab:: csharp
 
-    public void show_game_over()
-    {   
-        show_message("Game Over");
-
+    async public void ShowGameOver()
+    {
+        ShowMessage("Game Over");
+    
         var startButton = GetNode("StartButton") as Button;
-        startButton.Show();
+        var messageTimer = GetNode("MessageTimer") as Timer;
+        var messageLabel = GetNode("MessageLabel") as Label;
 
-        // note: c# doesn't have gdscript's yield function, but a workaround
-        // you can try is creating a new timer and then set the wait for a second
-        // and in the body of the timers timeout method add "Dodge the\n Creeps"
-        // then stop the timer inside the new timer's timeout method. After that
-        // just start the timer at the end of this method and you'll mimic gd's 
-        // yeild function. ;)
+        //work around for gdscript's yield
+        await Task.Delay((int) messageTimer.WaitTime * 1000);
+        messageLabel.Text = "Dodge the\nCreeps!";
+        messageLabel.Show();
+        startButton.Show();
     }
 
 This function is called when the player loses. It will show "Game
@@ -988,7 +999,7 @@ Over" for 2 seconds, then return to the title screen and show the
 
  .. code-tab:: csharp
 
-    public void update_score(int score)
+    public void UpdateScore(int score)
     {
         var scoreLabel = GetNode("ScoreLabel") as Label;
         scoreLabel.Text = score.ToString();
@@ -1011,17 +1022,17 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
  .. code-tab:: csharp
 
-    public void _on_StartButton_pressed()
+    public void OnStartButtonPressed()
     {
         var startButton = GetNode("StartButton") as Button;
         startButton.Hide();
-        
+    
         EmitSignal("StartGame");
     }
 
-    public void _on_MessageTimer_timeout()
-    {  
-        var messageLabel = GetNode("MessageLabel") as Label; 
+    public void OnMessageTimerTimeout()
+    {
+        var messageLabel = GetNode("MessageLabel") as Label;
         messageLabel.Hide();
     }
 
@@ -1053,8 +1064,8 @@ message:
  .. code-tab:: csharp
 
         var hud = GetNode("HUD") as HUD;
-        hud.update_score(score);
-        hud.show_message("Get Ready!");
+        hud.UpdateScore(Score);
+        hud.ShowMessage("Get Ready!");
 
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
@@ -1066,7 +1077,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
  .. code-tab:: csharp
 
         var hud = GetNode("HUD") as HUD;
-        hud.show_game_over();
+        hud.ShowGameOver();
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in
 sync with the changing score:
@@ -1079,7 +1090,7 @@ sync with the changing score:
  .. code-tab:: csharp
 
         var hud = GetNode("HUD") as HUD;
-        hud.update_score(score);
+        hud.UpdateScore(Score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
