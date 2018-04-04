@@ -7,8 +7,8 @@ Introduction
 ------------
 
 Tilemaps are a simple and quick way to make 2D game levels. Basically,
-you start with bunch of reference tiles (or pieces) that can be put in a
-grid, as many times each as desired:
+you start with bunch of reference tiles (or pieces) that can be put on a
+grid, as many times each as desired - think of it like a map editor:
 
 .. image:: img/tilemap.png
 
@@ -19,14 +19,16 @@ Making a tileset
 ----------------
 
 To begin, a tileset needs to be made. Here are some tiles for it.
-They are all in the same image because artists will often prefer this.
+They are all in the same image for optimization reasons.
+There are so-called *texture packers* that will generate these spritesheets
+out of your separate texture files.
 Having them as separate images also works.
 
 .. image:: img/tileset.png
 
-Create a new project and move the above png image into the directory. Next 
-go into the image settings and turn off ``Filter``, keeping it on will cause 
-issues later. 
+Create a new project and move the above PNG image into the directory. Next 
+go into the image's import settings and turn off ``Filter``, keeping it on will cause 
+issues later. ``Mipmaps`` should already be disabled, if not, disable this too.
 
 We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
@@ -42,9 +44,10 @@ it from a specially-crafted scene!
 TileSet scene
 -------------
 
-Create a new scene with a regular node or node2d as root. For each tile,
-add a sprite as a child. Since tiles here are 50x50, you should turn on the grid
-(``G`` key) and enable snap. Moving tiles with the mouse might still be a innacurate
+Create a new scene with a regular Node or Node2D as root. For each tile you want to define,
+add a sprite node as a child. Since tiles here are 50x50, you should turn on the grid
+(``View -> Show Grid`` or ``G`` key) and enable snap (``Use Snap`` icon or ``S`` key).
+Moving tiles with the mouse might still be a innacurate
 so use your arrow keys as well.
 
 If more than one tile is present in the source image, make sure to use
@@ -171,11 +174,10 @@ works. So, to avoid this situation, there are a few workarounds. Try the
 one that looks better for you:
 
 
--  Disable filtering for either the tileset texture or the entire image
-   loader (see the :ref:`doc_import_images` asset pipeline tutorial).
--  Enable pixel snap (set: "Scene > Project Settings >
-   Display/use_2d_pixel_snap" to true).
+-  Disable filtering and mipmaps for either the tileset texture or all tile textures if using separate images (see the :ref:`doc_import_images` asset pipeline tutorial).
+-  Enable pixel snap (Set ``Project > Project Settings >
+   Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also just search for ``Pixel Snap``).
 -  Viewport Scaling can often help with shrinking the map (see the
-   :ref:`doc_viewports` tutorial).
--  Use a single image for each tile. This will remove all artifacts, but
-   can be more cumbersome to implement.
+   :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with it's ``Zoom`` may be a good starting point.
+-  You can use a single, separate image for each tile. This will remove all artifacts, but
+   can be more cumbersome to implement and is less optimized.
