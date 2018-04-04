@@ -1,4 +1,4 @@
-.. _doc_rigid_body
+.. _doc_rigid_body:
 
 Rigid Body
 ==========
