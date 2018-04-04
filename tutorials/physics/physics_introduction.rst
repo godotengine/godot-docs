@@ -45,7 +45,7 @@ The other three bodies extend from :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 - :ref:`RigidBody2D <class_RigidBody2D>`
     This is the node that implements simulated 2D physics. You do not control a
     ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
-    etc.) and the physics engine calculates the resulting movement.
+    etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <_doc_rigid_body>`
 
 - :ref:`KinematicBody2D <class_KinematicBody2D>`
     A body that provides collision detection, but no physics. All movement and
