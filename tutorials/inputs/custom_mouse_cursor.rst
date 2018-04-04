@@ -6,7 +6,7 @@ Customizing mouse cursor
 You might want to change the appearance of the mouse cursor in your game in order to suit the overall design. There are two ways to customize the mouse cursor:
 
 1. Using project settings
-2. Using GDScript
+2. Using a script
 
 Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involves scripting. 
 
@@ -22,7 +22,7 @@ Custom Hotspot is the point in the image that you would like to use as the curso
 
 .. note:: The custom image should be a PNG file and the size **must** be 32x32.
 
-Using GDScript
+Using a script
 --------------
 
 Create a Node and attach the following script.
@@ -37,13 +37,28 @@ Create a Node and attach the following script.
     var beam = load("res://beam.png")
     
     func _ready():
-    # This changes only the arrow case of the cursor
-    # This is same as setting it in the project settings
-    Input.set_custom_mouse_cursor(arrow)
+        # Changes only the arrow shape of the cursor
+        # This is similar to changing it in the project settings
+        Input.set_custom_mouse_cursor(arrow)
     
-    # Change the appearance of the cursor in different cases
-    # This changes the Ibeam case
-    Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
+        # Changes a specific shape of the cursor (here the IBeam shape)
+        Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        // Load the custom images for the mouse cursor
+        var arrow = ResourceLoader.Load("res://arrow.png");
+        var beam = ResourceLoader.Load("res://beam.png");
+
+        // Changes only the arrow shape of the cursor
+        // This is similar to changing it in the project settings
+        Input.SetCustomMouseCursor(arrow);
+
+        // Changes a specific shape of the cursor (here the IBeam shape)
+        Input.SetCustomMouseCursor(beam, Input.CursorShape.Ibeam);
+    }
 
 .. note::
     Check :ref:`Input.set_custom_mouse_cursor() <class_Input_set_custom_mouse_cursor>`.
