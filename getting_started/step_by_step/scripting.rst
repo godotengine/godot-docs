@@ -60,7 +60,7 @@ written for it, and support was added thanks to
 a generous donation from Microsoft.
 
 It has an excellent tradeoff between performance and ease of use,
-although one must be aware of its garbage collector.
+although one must of its garbage collector.
 
 C# is usually the best choice for companies. The large amount of
 programmers familiar with it means less time can be spent learning
@@ -210,15 +210,6 @@ The top-left section displays a list of your scene's nodes with the emitting
 node's name highlighted in red. Select the "Panel" node here. When you select
 a node, the NodePath at the bottom will automatically update to point a
 relative path from the emitting node to the selected node.
-
-.. note::
-
-    Be aware that connections nodes with scripts can connect with signals since
-    the function must exist in order to make the connection. Without a script,
-    the method cannot be defined.
-    
-    To be sure the node has a script and can define the function, make sure
-    that the "Make Function" check button shows up in the bottom right.
 
 By default, the method name will contain the emitting node's name ("Button" in
 this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
