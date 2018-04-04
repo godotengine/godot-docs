@@ -419,7 +419,7 @@ Add this code to the function:
         // for the sake of this example, but it's better to create a class var
         // then assign the variable inside _Ready()
         var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
-        if(collisionShape2D != null)
+        if (collisionShape2D != null)
         {
             collisionShape2D.Disabled = true;
         }
@@ -449,7 +449,7 @@ the player when starting a new game.
         Show();
         
         var collisionShape2D = GetNode("CollisionShape2D") as CollisionShape2D;
-        if(collisionShape2D != null)
+        if (collisionShape2D != null)
         {
             collisionShape2D.Disabled = false;
         }
