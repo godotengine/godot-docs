@@ -77,7 +77,7 @@ It seems similar to the Sprite node but it offers multiple scaling modes.
 Set the Stretch Mode property to change its behaviour:
 
 - ``Scale On Expand (compat)`` scales the texture to fit the node’s bounding rectangle, only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode. Default mode for backwards compatibility.
-- ``Sacle`` scales the texture to fit the node’s bounding rectangle
+- ``Scale`` scales the texture to fit the node’s bounding rectangle
 - ``Tile`` makes the texture repeat, but it won't scale
 -  ``Keep`` and ``Keep Centered`` force the texture to remain at its
    original size, in the top left corner or the center of the frame
