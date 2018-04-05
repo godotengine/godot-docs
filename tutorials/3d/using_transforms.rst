@@ -32,7 +32,7 @@ While it may seem very intuitive that each axis has a rotation, the truth is tha
 Axis Order
 ==========
 
-The main reason for this is that there isn't a *unique* way to construct an orientation from the angles. There isn't a standard mathematical function that 
+The main reason for this is that there isn't a *unique* way to construct an orientation from the angles. There isn't a standard mathematical function that
 takes all the angles togehter and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
 by angle, in an *arbitrary order*.
 
@@ -46,7 +46,7 @@ Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from
 
 You may be wondering how this affects you. Let's look at a practical example:
 
-Imagine you are working on a first person controller (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
+Imagine you are working on a first-person controller (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
 
 In this case to achieve the desired effect, rotation must be applied first in the *Y* axis ("up" in this case, since Godot uses a "Y-Up" orientation), followed by rotation in the *X* axis.
 
@@ -70,7 +70,7 @@ But this does not always have the expected effect when using angles:
 
 .. image:: img/transforms_interpolate2.gif
 
-The camera actually rotated the opposite direction! 
+The camera actually rotated the opposite direction!
 
 There are a few reasons this may happen:
 
@@ -142,7 +142,7 @@ A method in Spatial simplifies this:
 
     # Rotate the transform in X axis
     rotate(Vector3(1, 0, 0), PI)
-    # shortened 
+    # shortened
     rotate_x(PI)
 
 This rotates the node relative to the parent node.
@@ -159,7 +159,7 @@ To rotate relative to object space (the node's own transform) use the following:
 Precision Errors
 ================
 
-Doing successive operations on transforms will result in a loss of precision due to floating point error. This means the scale of each axis may no longer be exactly ``1.0``, and they may not be exactly ``90`` degrees from each other.
+Doing successive operations on transforms will result in a loss of precision due to floating-point error. This means the scale of each axis may no longer be exactly ``1.0``, and they may not be exactly ``90`` degrees from each other.
 
 If a transform is rotated every frame, it will eventually start deforming over time. This is unavoidable.
 
@@ -191,7 +191,7 @@ Imagine you need to shoot a bullet in the direction your player is facing. Just 
     bullet.transform = transform
     bullet.speed = transform.basis.z * BULLET_SPEED
 
-Is the enemy looking at the player? Use the dot product for this (see the vector math tutorial for an explanation of dot product):
+Is the enemy looking at the player? Use the dot product for this (see the :ref:`doc_vector_math` tutorial for an explanation of the dot product):
 
 .. code-block:: python
 
@@ -234,9 +234,9 @@ Example of looking around, FPS style:
     # accumulators
     var rot_x = 0
     var rot_y = 0
-    
+
     func _input(event):
-    	
+
         if event is InputEventMouseMotion and ev.button_mask & 1:
             # modify accumulated mouse rotation
             rot_x += ev.relative.x * LOOKAROUND_SPEED
@@ -250,7 +250,7 @@ As you can see, in such cases it's even simpler to keep the rotation outside, th
 Interpolating with Quaternions
 ==============================
 
-Interpolating between two transforms can efficiently be done with quaternions. More information about how quaternions work can be found in other places around the internet. For practical use, it's enough to understand that pretty much their main use is doing a closest path interpolation. As in, if you have two rotations, quaternion will smoothly allow interpolation between them using the closest axis.
+Interpolating between two transforms can efficiently be done with quaternions. More information about how quaternions work can be found in other places around the Internet. For practical use, it's enough to understand that pretty much their main use is doing a closest path interpolation. As in, if you have two rotations, a quaternion will smoothly allow interpolation between them using the closest axis.
 
 Converting a rotation to quaternion is straightforward.
 
