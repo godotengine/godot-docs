@@ -46,6 +46,27 @@ Here is a custom ``look_at()`` function that will work reliably with rigid bodie
 	var target_position = $"my_target_spatial_node".get_global_transform().origin
 	look_follow(state, get_global_transform(), target_position)
 
+ .. code-tab:: csharp
+
+    class Body : RigidBody
+    {
+        private void lookFollow(PhysicsDirectBodyState state, Transform currentTransform, Vector3 targetPosition)
+        {
+            var upDir = new Vector3(0, 1, 0);
+            var curDir = currentTransform.basis.Xform(new Vector3(0, 0, 1));
+            var targetDir = (targetPosition - currentTransform.origin).Normalized();
+            var rotationAngle = Mathf.Acos(curDir.x) - Mathf.Acos(targetDir.x);
+
+            state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));
+        }
+
+        public override void _IntegrateForces(PhysicsDirectBodyState state)
+        {
+            var targetPosition = (GetNode("my_target_spatial_node") as Spatial).GetGlobalTransform().origin;
+            lookFollow(state, GetGlobalTransform(), targetPosition);
+        }
+    }
+
 
 This function uses the rigid body's ``set_angular_velocity()`` method to rotate the body. It first calculates the difference between the current and desired angle and then adds the velocity needed to rotate by that amount in one frame's time.
 
