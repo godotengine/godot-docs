@@ -11,7 +11,7 @@ Coming from 2D, the natural way of thinking is along the lines of *"Oh, it's jus
 
 At first this seems easy and for simple games, this way of thinking may even be enough. Unfortunately, it's very often incorrect.
 
-Angles in three dimensions are most commonly refered to as "Euler Angles".
+Angles in three dimensions are most commonly referred to as "Euler Angles".
 
 .. image:: img/transforms_euler.png
 
@@ -46,7 +46,7 @@ Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from
 
 You may be wondering how this affects you. Let's look at a practical example:
 
-Imagine you are working on a first person controller (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down. 
+Imagine you are working on a first person controller (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
 
 In this case to achieve the desired effect, rotation must be applied first in the *Y* axis ("up" in this case, since Godot uses a "Y-Up" orientation), followed by rotation in the *X* axis.
 
@@ -80,7 +80,7 @@ There are a few reasons this may happen:
 Say no to Euler Angles
 ======================
 
-The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for very simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it. 
+The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for very simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
 
 Instead, there is a better way to solve your rotation problems.
 
@@ -89,7 +89,7 @@ Introducing Transforms
 
 Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`class_Spatial` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Spatial-derived type.
 
-It is also possible to access the world coordinate transform via the ``global_transform`` property. 
+It is also possible to access the world coordinate transform via the ``global_transform`` property.
 
 A transform has a :ref:`class_Basis` (transform.basis sub-property), which consists of three :ref:`class_Vector3` vectors. These are accessed via the ``transform.basis`` property and can be accessed directly by ``transform.basis.x``, ``transform.basis.y``, and ``transform.basis.z``. Each vector points in the direction its axis has been rotated, so they effectively describe the node's total rotation. The scale (as long as it's uniform) can be also be inferred from the length of the axes. A *basis* can also be interpreted as a 3x3 matrix and used as ``transform.basis[x][y]``.
 
@@ -103,7 +103,7 @@ A default basis (unmodified) is akin to:
     basis.y = Vector3(0, 1, 0) # Vector pointing along the Y axis
     basis.z = Vector3(0, 0, 1) # Vector pointing along the Z axis
 
-This is also an analog to an 3x3 identity matrix.
+This is also an analog to a 3x3 identity matrix.
 
 Following the OpenGL convention, ``X`` is the *Right* axis, ``Y`` is the *Up* axis and ``Z`` is the *Forward* axis.
 
@@ -111,7 +111,7 @@ Together with the *basis*, a transform also has an *origin*. This is a *Vector3*
 .. image:: img/transforms_camera.png
 
 
-One way to visualize a transform is to look at an object's 3D gizmo while in "local space" mode. 
+One way to visualize a transform is to look at an object's 3D gizmo while in "local space" mode.
 
 .. image:: img/transforms_local_space.png
 
@@ -145,7 +145,7 @@ A method in Spatial simplifies this:
     # shortened 
     rotate_x(PI)
 
-This rotates the node relative to the parent node. 
+This rotates the node relative to the parent node.
 
 To rotate relative to object space (the node's own transform) use the following:
 
@@ -161,7 +161,7 @@ Precision Errors
 
 Doing successive operations on transforms will result in a loss of precision due to floating point error. This means the scale of each axis may no longer be exactly ``1.0``, and they may not be exactly ``90`` degrees from each other.
 
-If a transform is rotated every frame, it will eventually start deforming over time. This is unavoidable. 
+If a transform is rotated every frame, it will eventually start deforming over time. This is unavoidable.
 
 There are two different ways to handle this. The first is to *orthonormalize* the transform after some time (maybe once per frame if you modify it every frame):
 
@@ -169,7 +169,7 @@ There are two different ways to handle this. The first is to *orthonormalize* th
 
     transform = transform.orthonormalized()
 
-This will make all axes have ``1.0`` length again and be ``90`` degrees from each other. However, any scale applied to the transform will be lost. 
+This will make all axes have ``1.0`` length again and be ``90`` degrees from each other. However, any scale applied to the transform will be lost.
 
 It is recommended you don't scale nodes that are going to be manipulated. Scale their children nodes instead (such as MeshInstance). If you absolutely must scale the node, then re-apply it at the end:
 
@@ -182,7 +182,7 @@ It is recommended you don't scale nodes that are going to be manipulated. Scale 
 Obtaining Information
 =====================
 
-You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. The answer again is: you don't. You must do your best to stop thinking in angles. 
+You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. The answer again is: you don't. You must do your best to stop thinking in angles.
 
 Imagine you need to shoot a bullet in the direction your player is facing. Just use the forward axis (commonly ``Z`` or ``-Z``).
 
@@ -264,13 +264,13 @@ Converting a rotation to quaternion is straightforward.
     # Apply back
     transform.basis = Basis(c)
 
-The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precission errors.
+The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precision errors.
 
 Quaternions are very useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
 
 Transforms are your friend
 --------------------------
 
-For most beginners, getting used to working with transforms can take some time. However, once you get used to them, you will appreciate their simplicity and power. 
+For most beginners, getting used to working with transforms can take some time. However, once you get used to them, you will appreciate their simplicity and power.
 
 Don't hesitate to ask for help on this topic in any of Godot's `online communities <https://godotengine.org/community>`_ and, once you become confident enough, please help others!
