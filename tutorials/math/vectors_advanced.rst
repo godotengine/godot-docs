@@ -247,7 +247,7 @@ Code should be something like this:
     var inside = true
     for p in planes:
         # check if distance to plane is positive
-        if (N.dot(point) - D > 0):
+        if (p.distance_to(point) > 0):
             inside = false
             break # with one that fails, it's enough
 
@@ -462,20 +462,16 @@ So the final algorithm is something like:
 
                 for v in points_of_A:
                     var d = n.dot(v)
-                    if (d > max_A):
-                        max_A = d
-                    if (d < min_A):
-                        min_A = d
+                    max_A = max(max_A, d)
+                    min_A = min(min_A, d)
 
                 var max_B = -1e20 # tiny number
                 var min_B = 1e20 # huge number
 
                 for v in points_of_B:
                     var d = n.dot(v)
-                    if (d > max_B):
-                        max_B = d
-                    if (d < min_B):
-                        min_B = d
+                    max_B = max(max_B, d)
+                    min_B = min(min_B, d)
 
                 if (min_A > max_B or min_B > max_A):
                     # not overlapping!
