@@ -36,8 +36,7 @@ The main reason for this is that there isn't a *unique* way to construct an orie
 takes all the angles togehter and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
 by angle, in an *arbitrary order*.
 
-This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything really works,
-but depending on the order, the final orientation of the object will *not necesarily be the same*. Indeed, this means that there are several ways to construct an orientation
+This could be done by first rotating in *X*, then *Y* and then in *Z* (what Godot does by default in the *rotation* property). Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything really works, but depending on the order, the final orientation of the object will *not necesarily be the same*. Indeed, this means that there are several ways to construct an orientation
 from 3 different angles, depending on *the order the rotations happen*.
 
 Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from Wikipedia). As it can be appreciated, the orientation of each axis depends on the rotation of the previous one:
@@ -108,7 +107,10 @@ A default basis (unmodified) is akin to:
 
 This is also analog to an 3x3 identity matrix.
 
-In Godot (following OpenGL convention), X is the *Right* axis, Y is the *Up* axis and Z is the *Forward* axis.
+In Godot (following OpenGL convention), X is the *Right* axis, Y is the *Up* axis and Z is the *Forward* axis. This convention applies when looking at your screen by default (meaning, when camera transform is identity, this is the default looking direction):
+
+.. image:: img/transforms_camera.png
+
 
 Together with the *Basis*, a transform also has an *origin*. This is a *Vector3* specifying how far away from the actual origin (0,0,0 in xyz) this transform is. Together with the *basis*, a *Transform* efficiently represents a unique translation, rotation and scale in space.
 
@@ -241,6 +243,27 @@ Example of looking around, FPS style:
             rotate_object_local( Vector3(1,0,0), rot_y ) # then rotate in X
 
 As you can see, in such cases it's even simpler to keep the rotation outside, then use the transform as the *final* orientation.
+
+Interpolating with Quaternions
+==============================
+
+Interpolating between two transforms can efficiently be done with quaternions. More information about how quaternions work can be found in other places around the internet. For practical use, it's enough to understand that pretty much their main use is doing a closest path interpolation. As in, if you have two rotations, quaternion will smoothly allow interpolation between them using the closest axis.
+
+Converting a rotation to quaternion is straightforward.
+
+.. code-block:: python
+
+    # Convert basis to quaternion, keep in mind scale is lost
+    var a = Quat(transform.basis)
+    var b = Quat(transform2.basis)
+    # Interpolate using spherical-linear interpolation (SLERP).
+    var c = a.slerp(b,0.5) # find halfway point between a and b
+    # Apply back
+    transform.basis = Basis(c)
+
+The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precission errors.
+
+Quaternions are very useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
 
 Transforms are your friend
 --------------------------
