@@ -124,7 +124,7 @@ _________
 
 Attach a new script to the ``Player`` node and call it ``Player.gd``.
 
-Lets programming our player by adding the ability to move around, look around with the mouse, and jump.
+Lets program our player by adding the ability to move around, look around with the mouse, and jump.
 Add the following code to ``Player.gd``:
 
 ::
