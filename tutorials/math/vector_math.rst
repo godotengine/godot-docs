@@ -318,7 +318,7 @@ the player using ``P - A`` and normalize it. If the angle between this
 vector and the facing vector is less than 90°, then the zombie can see
 the player.
 
-In GDScript it would look like this:
+In code it would look like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -368,7 +368,7 @@ The cross product is calculated like this:
 
 
 
-In GDScript, you can use the built-in method:
+With Godot, you can use the built-in method:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -391,7 +391,7 @@ or surface in 3D space. If we have the triangle ``ABC`` we can use vector
 subtraction to find two edges ``AB`` and ``AC``. Using the cross product,
 ``AB x AC`` produces a vector perpendicular to both: the surface normal.
 
-Here is a function to calculate a triangle's normal in GDScript:
+Here is a function to calculate a triangle's normal:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
