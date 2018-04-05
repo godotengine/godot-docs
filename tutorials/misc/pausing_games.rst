@@ -23,9 +23,14 @@ To set pause mode, the pause state must be set. This is done by assigning
 "true" to the :ref:`SceneTree.paused <class_SceneTree_paused>` member
 variable:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     get_tree().paused = true
+
+ .. code-tab:: csharp
+
+    GetTree().Paused = true;
 
 Doing so will have the following behavior:
 
@@ -78,19 +83,37 @@ scene tree will continue working when paused.
 Finally, make it so when a pause button is pressed (any button will do),
 enable the pause and show the pause screen.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_pause_button_pressed():
         get_tree().paused = true
         $pause_popup.show()
 
+ .. code-tab:: csharp
+
+    public void _on_pause_button_pressed()
+    {
+        GetTree().Paused = true;
+        ((Control)GetNode("pause_popup")).Show();
+    }
+
 To remove the pause, just do the opposite when the pause screen is
 closed:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_pause_popup_close_pressed():
         $pause_popup.hide()
         get_tree().paused = false
+
+ .. code-tab:: csharp
+
+    public void _on_pause_popup_close_pressed()
+    {
+        ((Control)GetNode("pause_popup")).Hide();
+        GetTree().Paused = false;
+    }
 
 And that should be all!
