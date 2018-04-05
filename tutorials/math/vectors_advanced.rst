@@ -16,10 +16,10 @@ popular belief) you can also use their math in 2D:
 
 Unit vectors that are perpendicular to a surface (so, they describe the
 orientation of the surface) are called **unit normal vectors**. Though,
-usually they are just abbreviated as \*normals. Normals appear in
+usually they are just abbreviated as *normals*. Normals appear in
 planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
-because of its usage. (Just like we call Origin to (0,0)!).
+because of its usage. (Just like we call (0,0) the Origin!).
 
 It's as simple as it looks. The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
@@ -37,9 +37,14 @@ The dot product between a **unit vector** and any **point in space**
 (yes, this time we do dot product between vector and position), returns
 the **distance from the point to the plane**:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var distance = normal.dot(point)
+
+ .. code-tab:: csharp
+
+    var distance = normal.Dot(point);
 
 But not just the absolute distance, if the point is in the negative half
 space the distance will be negative, too:
@@ -74,24 +79,39 @@ for both. It's the same as before, but D is the distance from the origin
 to the plane, travelling in N direction. As an example, imagine you want
 to reach a point in the plane, you will just do:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var point_in_plane = N*D
+
+ .. code-tab:: csharp
+
+    var point_in_plane = N * D;
 
 This will stretch (resize) the normal vector and make it touch the
 plane. This math might seem confusing, but it's actually much simpler
 than it seems. If we want to tell, again, the distance from the point to
 the plane, we do the same but adjusting for distance:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var distance = N.dot(point) - D
 
+ .. code-tab:: csharp
+
+    var distance = N.Dot(point) - D;
+
 The same thing, using a built-in function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var distance = plane.distance_to(point)
+
+ .. code-tab:: csharp
+
+    var distance = plane.DistanceTo(point);
 
 This will, again, return either a positive or negative distance.
 
@@ -99,17 +119,28 @@ Flipping the polarity of the plane is also very simple, just negate both
 N and D. This will result in a plane in the same position, but with
 inverted negative and positive half spaces:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     N = -N
     D = -D
 
+ .. code-tab:: csharp
+
+    N = -N;
+    D = -D;
+
 Of course, Godot also implements this operator in :ref:`Plane <class_Plane>`,
 so doing:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var inverted_plane = -plane
+
+ .. code-tab:: csharp
+
+    var inverted_plane = -plane;
 
 Will work as expected.
 
@@ -129,10 +160,16 @@ In the case of a normal and a point, most of the work is done, as the
 normal is already computed, so just calculate D from the dot product of
 the normal and the point.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var N = normal
     var D = normal.dot(point)
+
+ .. code-tab:: csharp
+
+    var N = normal;
+    var D = normal.Dot(point);
 
 For two points in space, there are actually two planes that pass through
 them, sharing the same space but with normal pointing to the opposite
@@ -140,7 +177,8 @@ directions. To compute the normal from the two points, the direction
 vector must be obtained first, and then it needs to be rotated 90°
 degrees to either side:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # calculate vector from a to b
     var dvec = (point_b - point_a).normalized()
@@ -150,15 +188,35 @@ degrees to either side:
     # var normal = Vector2(-dvec.y, dvec.x)
     # depending the desired side of the normal
 
+ .. code-tab:: csharp
+
+    // calculate vector from a to b
+    var dvec = (point_b - point_a).Normalized();
+    // rotate 90 degrees
+    var normal = new Vector2(dvec.y, -dvec.x);
+    // or alternatively
+    // var normal = new Vector2(-dvec.y, dvec.x);
+    // depending the desired side of the normal
+
+
 The rest is the same as the previous example, either point_a or
 point_b will work since they are in the same plane:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var N = normal
     var D = normal.dot(point_a)
     # this works the same
     # var D = normal.dot(point_b)
+
+ .. code-tab:: csharp
+
+    var N = normal;
+    var D = normal.Dot(point_a);
+    // this works the same
+    // var D = normal.Dot(point_b);
+
 
 Doing the same in 3D is a little more complex and will be explained
 further down.
@@ -183,15 +241,29 @@ can't, then the point is inside.
 
 Code should be something like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var inside = true
     for p in planes:
         # check if distance to plane is positive
-        if (N.dot(point) - D > 0):
+        if (p.distance_to(point) > 0):
             inside = false
             break # with one that fails, it's enough
 
+ .. code-tab:: csharp
+
+    var inside = true;
+    foreach (var p in planes)
+    {
+        // check if distance to plane is positive
+        if (p.DistanceTo(point) > 0)
+        {
+            inside = false;
+            break; // with one that fails, it's enough
+        }
+    }
+ 
 Pretty cool, huh? But this gets much better! With a little more effort,
 similar logic will let us know when two convex polygons are overlapping
 too. This is called the Separating Axis Theorem (or SAT) and most
@@ -199,7 +271,7 @@ physics engines use this to detect collision.
 
 The idea is really simple! With a point, just checking if a plane
 returns a positive distance is enough to tell if the point is outside.
-With another polygon, we must find a plane where *all* *the* ***other***
+With another polygon, we must find a plane where *all* *the* *other*
 *polygon* *points* return a positive distance to it. This check is
 performed with the planes of A against the points of B, and then with
 the planes of B against the points of A:
@@ -208,7 +280,8 @@ the planes of B against the points of A:
 
 Code should be something like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var overlapping = true
 
@@ -241,6 +314,61 @@ Code should be something like this:
 
     if (overlapping):
         print("Polygons Collided!")
+
+ .. code-tab:: csharp
+
+        var overlapping = true;
+
+        foreach (Plane p in planes_of_A)
+        {
+            var all_out = true;
+            foreach (Vector3 v in points_of_B)
+            {
+                if (p.DistanceTo(v) < 0)
+                {
+                    all_out = false;
+                    break;
+                }
+            }
+            
+            if (all_out)
+            {
+                // a separating plane was found
+                // do not continue testing
+                overlapping = false;
+                break;
+            }
+        }
+
+        if (overlapping)
+        {
+            // only do this check if no separating plane
+            // was found in planes of A
+            foreach (Plane p in planes_of_B)
+            {
+                var all_out = true;
+                foreach (Vector3 v in points_of_A)
+                {
+                    if (p.DistanceTo(v) < 0)
+                    {
+                        all_out = false;
+                        break;
+                    }
+                }
+                
+                if (all_out)
+                {
+                    overlapping = false;
+                    break;
+                }
+            }
+        }
+
+        if (overlapping)
+        {
+            GD.Print("Polygons Collided!");
+        }
+
 
 As you can see, planes are quite useful, and this is the tip of the
 iceberg. You might be wondering what happens with non convex polygons.
@@ -285,7 +413,8 @@ edges of polygon B
 
 So the final algorithm is something like:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var overlapping = true
 
@@ -333,20 +462,16 @@ So the final algorithm is something like:
 
                 for v in points_of_A:
                     var d = n.dot(v)
-                    if (d > max_A):
-                        max_A = d
-                    if (d < min_A):
-                        min_A = d
+                    max_A = max(max_A, d)
+                    min_A = min(min_A, d)
 
                 var max_B = -1e20 # tiny number
                 var min_B = 1e20 # huge number
 
                 for v in points_of_B:
                     var d = n.dot(v)
-                    if (d > max_B):
-                        max_B = d
-                    if (d < min_B):
-                        min_B = d
+                    max_B = max(max_B, d)
+                    min_B = min(min_B, d)
 
                 if (min_A > max_B or min_B > max_A):
                     # not overlapping!
@@ -358,3 +483,110 @@ So the final algorithm is something like:
 
     if (overlapping):
        print("Polygons collided!")
+
+ .. code-tab:: csharp
+ 
+    var overlapping = true;
+
+    foreach (Plane p in planes_of_A)
+    {
+        var all_out = true;
+        foreach (Vector3 v in points_of_B)
+        {
+            if (p.DistanceTo(v) < 0)
+            {
+                all_out = false;
+                break;
+            }
+        }
+
+        if (all_out)
+        {
+            // a separating plane was found
+            // do not continue testing
+            overlapping = false;
+            break;
+        }
+    }
+
+    if (overlapping)
+    {
+        // only do this check if no separating plane
+        // was found in planes of A
+        foreach (Plane p in planes_of_B)
+        {
+            var all_out = true;
+            foreach (Vector3 v in points_of_A)
+            {
+                if (p.DistanceTo(v) < 0)
+                {
+                    all_out = false;
+                    break;
+                }
+            }
+            
+            if (all_out)
+            {
+                overlapping = false;
+                break;
+            }
+        }
+    }
+
+    if (overlapping)
+    {
+        foreach (Vector3 ea in edges_of_A)
+        {
+            foreach (Vector3 eb in edges_of_B)
+            {
+                var n = ea.Cross(eb);
+                if (n.Length() == 0)
+                {
+                    continue;
+                }
+
+                var max_A = float.MinValue; // tiny number
+                var min_A = float.MaxValue; // huge number
+
+                // we are using the dot product directly
+                // so we can map a maximum and minimum range
+                // for each polygon, then check if they
+                // overlap.
+
+                foreach (Vector3 v in points_of_A)
+                {
+                    var d = n.Dot(v);
+                    max_A = Mathf.Max(max_A, d);
+                    min_A = Mathf.Min(min_A, d);
+                }
+
+                var max_B = float.MinValue; // tiny number
+                var min_B = float.MaxValue; // huge number
+
+                foreach (Vector3 v in points_of_B)
+                {
+                    var d = n.Dot(v);
+                    max_B = Mathf.Max(max_B, d);
+                    min_B = Mathf.Min(min_B, d);
+                }
+
+                if (min_A > max_B || min_B > max_A)
+                {
+                    // not overlapping!
+                    overlapping = false;
+                    break;
+                }
+            }
+
+            if (!overlapping)
+            {
+                break;
+            }
+
+        }
+    }
+
+    if (overlapping)
+    {
+        GD.Print("Polygons Collided!");
+    }
