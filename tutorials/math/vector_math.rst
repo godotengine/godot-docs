@@ -63,9 +63,15 @@ coordinate notation. For example, in Godot the origin is the top-left
 corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the right and
 300 pixels down, use the following code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     $Node2D.position = Vector2(400, 300)
+
+ .. code-tab:: csharp
+
+    var node2D = (Node2D) GetNode("Node2D");
+    node2D.Position = new Vector2(400, 300);
 
 Godot supports both :ref:`Vector2 <class_Vector2>` and
 :ref:`Vector3 <class_Vector3>` for 2D and 3D usage respectively. The same
@@ -75,7 +81,8 @@ mathematical rules discussed in this article apply for both types.
 
 The individual components of the vector can be accessed directly by name.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # create a vector with coordinates (2, 5)
     var a = Vector2(2, 5)
@@ -84,13 +91,27 @@ The individual components of the vector can be accessed directly by name.
     b.x = 3
     b.y = 1
 
+ .. code-tab:: csharp
+
+    // create a vector with coordinates (2, 5)
+    var a = new Vector2(2, 5);
+    // create a vector and assign x and y manually
+    var b = new Vector2();
+    b.x = 3;
+    b.y = 1;
+
 - Adding vectors
 
 When adding or subtracting two vectors, the corresponding components are added:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var c = a + b  # (2, 5) + (3, 1) = (5, 6)
+
+ .. code-tab:: csharp
+
+    var c = a + b;  // (2, 5) + (3, 1) = (5, 6)
 
 We can also see this visually by adding the second vector at the end of
 the first:
@@ -106,10 +127,16 @@ Note that adding ``a + b`` gives the same result as ``b + a``.
 
 A vector can be multiplied by a **scalar**:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var c = a * 2  # (2, 5) * 2 = (4, 10)
     var d = b / 3  # (3, 6) / 3 = (1, 2)
+
+ .. code-tab:: csharp
+
+    var c = a * 2;  // (2, 5) * 2 = (4, 10)
+    var d = b / 3;  // (3, 6) / 3 = (1, 2)
 
 .. image:: img/vector_mult1.png
 
@@ -158,19 +185,33 @@ Normalization
 preserving its direction. This is done by dividing each of its components
 by its magnitude:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var a = Vector2(2, 4)
     var m = sqrt(a.x*a.x + a.y*a.y)  # get magnitude "m" using the Pythagorean theorem 
     a.x /= m
     a.y /= m
 
+ .. code-tab:: csharp
+
+    var a = new Vector2(2, 4);
+    var m = Mathf.Sqrt(a.x*a.x + a.y*a.y);  // get magnitude "m" using the Pythagorean theorem 
+    a.x /= m;
+    a.y /= m;
+
 Because this is such a common operation, ``Vector2`` and ``Vector3`` provide
 a method for normalizing:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     a = a.normalized()
+
+ .. code-tab:: csharp
+
+    a = a.Normalized();
+
 
 .. warning:: Because normalization involves dividing by the vector's length,
              you cannot normalize a vector of length ``0``. Attempting to
@@ -196,14 +237,28 @@ Godot, the :ref:`Vector2 <class_Vector2>` class has a ``bounce()`` method
 to handle this. Here is a GDScript example of the diagram above using a
 :ref:`KinematicBody2D <class_KinematicBody2D>`:
 
-::
 
-    var collision = move_and_collide(velocity * delta)  # object "collision" contains information about the collision
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # object "collision" contains information about the collision
+    var collision = move_and_collide(velocity * delta)
     if collision:
         var reflect = collision.remainder.bounce(collision.normal)
         velocity = velocity.bounce(collision.normal)
         move_and_collide(reflect)
-        
+
+ .. code-tab:: csharp
+    
+    // KinematicCollision2D contains information about the collision
+    KinematicCollision2D collision = MoveAndCollide(_velocity * delta);
+    if (collision != null)
+    {
+        var reflect = collision.Remainder.Bounce(collision.Normal);
+        _velocity = _velocity.Bounce(collision.Normal);
+        MoveAndCollide(reflect);
+    }
+
 Dot product
 ~~~~~~~~~~~
 
@@ -227,10 +282,16 @@ and
 However, in most cases it is easiest to use the built-in method. Note that
 the order of the two vectors does not matter:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var c = a.dot(b)
     var d = b.dot(a)  # these are equivalent
+
+ .. code-tab:: csharp
+
+    float c = a.Dot(b);
+    float d = b.Dot(a);  // these are equivalent
 
 The dot product is most useful when used with unit vectors, making the
 first formula reduce to just ``cosθ``. This means we can use the dot
@@ -259,12 +320,21 @@ the player.
 
 In GDScript it would look like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var AP = (P - A).normalized()
     if AP.dot(fA) > 0:
         print("A sees P!")
-        
+
+ .. code-tab:: csharp
+
+    var AP = (P - A).Normalized();
+    if (AP.Dot(fA) > 0)
+    {
+        GD.Print("A sees P!");
+    }
+
 Cross product
 ~~~~~~~~~~~~~
 
@@ -281,18 +351,33 @@ If two vectors are parallel, the result of their cross product will be null vect
 
 The cross product is calculated like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var c = Vector3()
     c.x = (a.y * b.z) - (a.z * b.y)
     c.y = (a.z * b.x) - (a.x * b.z)
     c.z = (a.x * b.y) - (a.y * b.x)
 
+ .. code-tab:: csharp
+
+    var c = new Vector3();
+    c.x = (a.y * b.z) - (a.z * b.y);
+    c.y = (a.z * b.x) - (a.x * b.z);
+    c.z = (a.x * b.y) - (a.y * b.x);
+
+
+
 In GDScript, you can use the built-in method:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var c = a.cross(b)
+
+ .. code-tab:: csharp
+
+    var c = a.Cross(b);
 
 .. note:: In the cross product, order matters. ``a.cross(b)`` does not
           give the same result as ``b.cross(a)``. The resulting vectors
@@ -308,7 +393,8 @@ subtraction to find two edges ``AB`` and ``AC``. Using the cross product,
 
 Here is a function to calculate a triangle's normal in GDScript:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func get_triangle_normal(a, b, c):
         # find the surface normal given 3 vertices
@@ -316,6 +402,17 @@ Here is a function to calculate a triangle's normal in GDScript:
         var side2 = c - a
         var normal = side1.cross(side2)
         return normal
+
+ .. code-tab:: csharp
+
+    Vector3 GetTriangleNormal(Vector3 a, Vector3 b, Vector3 c)
+    {
+        // find the surface normal given 3 vertices
+        var side1 = b - a;
+        var side2 = c - a;
+        var normal = side1.Cross(side2);
+        return normal;
+    }
 
 Pointing to a Target
 --------------------
