@@ -16,10 +16,10 @@ popular belief) you can also use their math in 2D:
 
 Unit vectors that are perpendicular to a surface (so, they describe the
 orientation of the surface) are called **unit normal vectors**. Though,
-usually they are just abbreviated as \*normals. Normals appear in
+usually they are just abbreviated as *normals*. Normals appear in
 planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
-because of its usage. (Just like we call Origin to (0,0)!).
+because of its usage. (Just like we call (0,0) the Origin!).
 
 It's as simple as it looks. The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
@@ -271,7 +271,7 @@ physics engines use this to detect collision.
 
 The idea is really simple! With a point, just checking if a plane
 returns a positive distance is enough to tell if the point is outside.
-With another polygon, we must find a plane where *all* *the* ***other***
+With another polygon, we must find a plane where *all* *the* *other*
 *polygon* *points* return a positive distance to it. This check is
 performed with the planes of A against the points of B, and then with
 the planes of B against the points of A:
