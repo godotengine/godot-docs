@@ -19,8 +19,9 @@ Euler angles were introduced by mathematician Leonhard Euler in the early 1700s.
 
 .. image:: img/transforms_euler_himself.png
 
-This way of representing a 3D rotation has several shortcomings when used in game development (which is to be expected from a guy with a funny hat), and
-the idea of this document is to explain why, as well as outlining best practices for dealing with transforms when programming 3D games.
+This way of representing 3D rotations was groundbreaking at the time, but it has several shortcomings when used in game development (which is to be expected from a guy with a funny
+hat).
+The idea of this document is to explain why, as well as outlining best practices for dealing with transforms when programming 3D games.
 
 
 Problems of Euler Angles
@@ -107,6 +108,8 @@ This is also an analog to an 3x3 identity matrix.
 Following the OpenGL convention, ``X`` is the *Right* axis, ``Y`` is the *Up* axis and ``Z`` is the *Forward* axis.
 
 Together with the *basis*, a transform also has an *origin*. This is a *Vector3* specifying how far away from the actual origin ``(0, 0, 0)`` this transform is. Combining the *basis* with the *origin*, a *transform* efficiently represents a unique translation, rotation, and scale in space.
+.. image:: img/transforms_camera.png
+
 
 One way to visualize a transform is to look at an object's 3D gizmo while in "local space" mode. 
 
@@ -243,6 +246,27 @@ Example of looking around, FPS style:
             rotate_object_local(Vector3(1, 0, 0), rot_y) # then rotate in X
 
 As you can see, in such cases it's even simpler to keep the rotation outside, then use the transform as the *final* orientation.
+
+Interpolating with Quaternions
+==============================
+
+Interpolating between two transforms can efficiently be done with quaternions. More information about how quaternions work can be found in other places around the internet. For practical use, it's enough to understand that pretty much their main use is doing a closest path interpolation. As in, if you have two rotations, quaternion will smoothly allow interpolation between them using the closest axis.
+
+Converting a rotation to quaternion is straightforward.
+
+.. code-block:: python
+
+    # Convert basis to quaternion, keep in mind scale is lost
+    var a = Quat(transform.basis)
+    var b = Quat(transform2.basis)
+    # Interpolate using spherical-linear interpolation (SLERP).
+    var c = a.slerp(b,0.5) # find halfway point between a and b
+    # Apply back
+    transform.basis = Basis(c)
+
+The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precission errors.
+
+Quaternions are very useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
 
 Transforms are your friend
 --------------------------
