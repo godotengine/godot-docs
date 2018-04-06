@@ -7,7 +7,7 @@ What is a rigid body?
 ---------------------
 
 A rigid body is one that is directly controlled by the physics engine in order to simulate the behavior of physical objects.
-In order to define the shape of the body, it must have one or more :ref:Shape <class_Shape>objects assigned. Note that setting the position of these shapes will affect the body's center of mass.
+In order to define the shape of the body, it must have one or more :ref:`Shape <class_Shape>` objects assigned. Note that setting the position of these shapes will affect the body's center of mass.
 
 How to control rigid body
 -------------------------
