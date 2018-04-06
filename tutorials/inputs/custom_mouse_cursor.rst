@@ -20,7 +20,7 @@ Open project settings, go to Display>Mouse Cursor. You will see Custom Image and
 Custom Image is the desired image that you would like to set as the mouse cursor.
 Custom Hotspot is the point in the image that you would like to use as the cursor's detection point.
 
-.. note:: The custom image **must** be less than 256x256.
+.. note:: The custom image should be a PNG file and the size **must** be 32x32.
 
 Using GDScript
 --------------
