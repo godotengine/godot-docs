@@ -12,7 +12,7 @@ scenes step-by-step using the engine's UI system:
 You will learn how to design game UI efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
 from the editor. To learn how to code a life bar,
-read :doc:`ui_game_user_interface`
+read :doc:`ui_code_a_life_bar`
 
 
 .. figure:: img/ui_main_menu_design_final_result.png
