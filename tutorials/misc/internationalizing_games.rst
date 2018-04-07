@@ -21,6 +21,9 @@ spreadsheets. The process of creating the spreadsheets and importing
 them is already covered in the :ref:`doc_importing_translations` tutorial, so this
 one could be seen more like a follow up to that one.
 
+
+.. note:: We would be using the offical demo as an example, you can download it in the AssetLib: https://godotengine.org/asset-library/asset/134 or find it in the demo_projects/gui/translation 
+
 Configuring the imported translation
 ------------------------------------
 
@@ -51,10 +54,7 @@ Some controls such as :ref:`Button <class_Button>`, :ref:`Label <class_Label>`,
 etc. will automatically fetch a translation each time they are set a key
 instead of a text. For example, if a label is assigned
 "MAIN_SCREEN_GREETING1" and a key to different languages exists in the
-translations, this will be automatically converted. This process is done
-upon load though, so if the project in question has a dialog that allows
-changing the language in the settings, the scenes (or at least the
-settings scene) will have to be re-loaded for new text to have effect.
+translations, this will be automatically converted.
 
 For code, the :ref:`Object.tr() <class_Object_tr>`
 function can be used. This will just look-up the text into the
