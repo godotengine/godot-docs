@@ -141,7 +141,7 @@ The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
 In GDScript the file itself represents the class, so
-the class name field will not editable.
+the class name field will not be editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
 will automatically be filled in with "Panel". This is what we want, as the
