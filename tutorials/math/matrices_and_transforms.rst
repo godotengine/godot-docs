@@ -182,7 +182,7 @@ same logic applies to 3D.
 Identity
 --------
 
-By default, Transform2D is created as an "identity" matrix. This means:
+An important transform is the "identity" matrix. This means:
 
 -  'X' Points right: Vector2(1,0)
 -  'Y' Points up (or down in pixels): Vector2(0,1)
@@ -192,8 +192,29 @@ By default, Transform2D is created as an "identity" matrix. This means:
 
 It's easy to guess that an *identity* matrix is just a matrix that
 aligns the transform to its parent coordinate system. It's an *OCS*
-that hasn't been translated, rotated or scaled. All transform types in
-Godot are created with *identity*.
+that hasn't been translated, rotated or scaled.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # The Transform2D constructor will default to Identity
+    var m = Transform2D()
+    print(m)
+    # prints: ((1, 0), (0, 1), (0, 0))
+    
+
+ .. code-tab:: csharp
+
+    // Due to technical limitations on structs in C# the default
+    // constructor will contain zero values for all fields.
+    var defaultTransform = new Transform2D();
+    GD.Print(defaultTransform);
+    // prints: ((0, 0), (0, 0), (0, 0))
+
+    // Instead we can use the Identity property.
+    var identityTransform = Transform2D.Identity;
+    GD.Print(identityTransform);
+    // prints: ((1, 0), (0, 1), (0, 0))
 
 Operations
 ----------
@@ -211,7 +232,7 @@ Rotating Transform2D is done by using the "rotated" function:
 
  .. code-tab:: csharp
 
-    var m = new Transform2D();
+    var m = Transform2D.Identity;
     m = m.Rotated(Mathf.PI / 2); // rotate 90°
 
 .. image:: img/tutomat12.png
@@ -233,7 +254,7 @@ the origin:
  .. code-tab:: csharp
 
     // Move 2 units to the right
-    var m = new Transform2D();
+    var m = Transform2D.Identity;
     m = m.Rotated(Mathf.PI / 2); // rotate 90°
     m[2] += new Vector2(2, 0);
 
@@ -257,7 +278,7 @@ method:
  .. code-tab:: csharp
 
     // Move 2 units towards where the basis is oriented
-    var m = new Transform2D();
+    var m = Transform2D.Identity;
     m = m.Rotated(Mathf.PI / 2); // rotate 90°
     m = m.Translated(new Vector2(2, 0));
 
@@ -301,7 +322,7 @@ the scale). It will leave the origin alone:
  .. code-tab:: csharp
 
     // Make the basis twice its size.
-    var m = new Transform2D();
+    var m = Transform2D.Identity;
     m = m.Scaled(new Vector2(2, 2));
 
 .. image:: img/tutomat15.png
@@ -392,7 +413,7 @@ the position unchanged:
  .. code-tab:: csharp
 
     // Does nothing, position is unchanged
-    position = new Transform2D().Xform(position);
+    position = Transform2D.Identity.Xform(position);
 
 Affine inverse
 --------------
@@ -525,7 +546,7 @@ Multiplying a matrix by identity, will result in the unchanged matrix:
  .. code-tab:: csharp
 
     // B will be equal to A
-    var B = A * new Transform2D();
+    var B = A * Transform2D.Identity;
 
 Matrix tips
 -----------
@@ -628,9 +649,34 @@ Or, alternatively as:
     Vector3 y = m.y;
     Vector3 z = m.z;
 
-Basis is also initialized to Identity by default:
+The Identity Basis has the following values:
 
 .. image:: img/tutomat17.png
+
+And can be accessed like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # The Basis constructor will default to Identity
+    var m = Basis()
+    print(m)
+    # prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+
+ .. code-tab:: csharp
+
+    // Due to technical limitations on structs in C# the default
+    // constructor will contain zero values for all fields.
+    var defaultBasis = new Basis();
+    GD.Print(defaultBasis);
+    // prints: ((0, 0, 0), (0, 0, 0), (0, 0, 0))
+
+    // Instead we can use the Identity property.
+    var identityBasis = Basis.Identity;
+    GD.Print(identityBasis);;
+    // prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+
+
 
 Rotation in 3D
 --------------
@@ -652,7 +698,7 @@ that can point to any direction, but length must be one (1.0).
  .. code-tab:: csharp
 
     // rotate in Y axis
-    var m3 = new Basis();
+    var m3 = Basis.Identity;
     m3 = m3.Rotated(new Vector3(0, 1, 0), Mathf.PI / 2);
 
 Transform
@@ -680,7 +726,7 @@ An example:
 
  .. code-tab:: csharp
 
-    var t = new Transform();
+    var t = new Transform(Basis.Identity, Vector3.Zero);
     position = t.Xform(position); // transform 3D position
     position = t.basis.Xform(position); // (only rotate)
     position = t.origin + position; // (only translate)
