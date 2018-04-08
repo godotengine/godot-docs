@@ -86,7 +86,7 @@ to reach a point in the plane, you will just do:
 
  .. code-tab:: csharp
 
-    var point_in_plane = N * D;
+    var pointInPlane = N * D;
 
 This will stretch (resize) the normal vector and make it touch the
 plane. This math might seem confusing, but it's actually much simpler
@@ -140,7 +140,7 @@ so doing:
 
  .. code-tab:: csharp
 
-    var inverted_plane = -plane;
+    var invertedPlane = -plane;
 
 Will work as expected.
 
@@ -191,13 +191,12 @@ degrees to either side:
  .. code-tab:: csharp
 
     // calculate vector from a to b
-    var dvec = (point_b - point_a).Normalized();
+    var dvec = (pointB - pointA).Normalized();
     // rotate 90 degrees
     var normal = new Vector2(dvec.y, -dvec.x);
     // or alternatively
     // var normal = new Vector2(-dvec.y, dvec.x);
     // depending the desired side of the normal
-
 
 The rest is the same as the previous example, either point_a or
 point_b will work since they are in the same plane:
@@ -213,10 +212,9 @@ point_b will work since they are in the same plane:
  .. code-tab:: csharp
 
     var N = normal;
-    var D = normal.Dot(point_a);
+    var D = normal.Dot(pointA);
     // this works the same
-    // var D = normal.Dot(point_b);
-
+    // var D = normal.Dot(pointB);
 
 Doing the same in 3D is a little more complex and will be explained
 further down.
@@ -319,19 +317,19 @@ Code should be something like this:
 
         var overlapping = true;
 
-        foreach (Plane p in planes_of_A)
+        foreach (Plane plane in planesOfA)
         {
-            var all_out = true;
-            foreach (Vector3 v in points_of_B)
+            var allOut = true;
+            foreach (Vector3 point in pointsOfB)
             {
-                if (p.DistanceTo(v) < 0)
+                if (plane.DistanceTo(point) < 0)
                 {
-                    all_out = false;
+                    allOut = false;
                     break;
                 }
             }
             
-            if (all_out)
+            if (allOut)
             {
                 // a separating plane was found
                 // do not continue testing
@@ -344,19 +342,19 @@ Code should be something like this:
         {
             // only do this check if no separating plane
             // was found in planes of A
-            foreach (Plane p in planes_of_B)
+            foreach (Plane plane in planesOfB)
             {
-                var all_out = true;
-                foreach (Vector3 v in points_of_A)
+                var allOut = true;
+                foreach (Vector3 point in pointsOfA)
                 {
-                    if (p.DistanceTo(v) < 0)
+                    if (plane.DistanceTo(point) < 0)
                     {
-                        all_out = false;
+                        allOut = false;
                         break;
                     }
                 }
                 
-                if (all_out)
+                if (allOut)
                 {
                     overlapping = false;
                     break;
@@ -368,7 +366,6 @@ Code should be something like this:
         {
             GD.Print("Polygons Collided!");
         }
-
 
 As you can see, planes are quite useful, and this is the tip of the
 iceberg. You might be wondering what happens with non convex polygons.
@@ -488,19 +485,19 @@ So the final algorithm is something like:
  
     var overlapping = true;
 
-    foreach (Plane p in planes_of_A)
+    foreach (Plane plane in planesOfA)
     {
-        var all_out = true;
-        foreach (Vector3 v in points_of_B)
+        var allOut = true;
+        foreach (Vector3 point in pointsOfB)
         {
-            if (p.DistanceTo(v) < 0)
+            if (plane.DistanceTo(point) < 0)
             {
-                all_out = false;
+                allOut = false;
                 break;
             }
         }
 
-        if (all_out)
+        if (allOut)
         {
             // a separating plane was found
             // do not continue testing
@@ -513,19 +510,19 @@ So the final algorithm is something like:
     {
         // only do this check if no separating plane
         // was found in planes of A
-        foreach (Plane p in planes_of_B)
+        foreach (Plane plane in planesOfB)
         {
-            var all_out = true;
-            foreach (Vector3 v in points_of_A)
+            var allOut = true;
+            foreach (Vector3 point in pointsOfA)
             {
-                if (p.DistanceTo(v) < 0)
+                if (plane.DistanceTo(point) < 0)
                 {
-                    all_out = false;
+                    allOut = false;
                     break;
                 }
             }
             
-            if (all_out)
+            if (allOut)
             {
                 overlapping = false;
                 break;
@@ -535,42 +532,42 @@ So the final algorithm is something like:
 
     if (overlapping)
     {
-        foreach (Vector3 ea in edges_of_A)
+        foreach (Vector3 edgeA in edgesOfA)
         {
-            foreach (Vector3 eb in edges_of_B)
+            foreach (Vector3 edgeB in edgesOfB)
             {
-                var n = ea.Cross(eb);
-                if (n.Length() == 0)
+                var normal = edgeA.Cross(edgeB);
+                if (normal.Length() == 0)
                 {
                     continue;
                 }
 
-                var max_A = float.MinValue; // tiny number
-                var min_A = float.MaxValue; // huge number
+                var maxA = float.MinValue; // tiny number
+                var minA = float.MaxValue; // huge number
 
                 // we are using the dot product directly
                 // so we can map a maximum and minimum range
                 // for each polygon, then check if they
                 // overlap.
 
-                foreach (Vector3 v in points_of_A)
+                foreach (Vector3 point in pointsOfA)
                 {
-                    var d = n.Dot(v);
-                    max_A = Mathf.Max(max_A, d);
-                    min_A = Mathf.Min(min_A, d);
+                    var distance = normal.Dot(point);
+                    maxA = Mathf.Max(maxA, distance);
+                    minA = Mathf.Min(minA, distance);
                 }
 
-                var max_B = float.MinValue; // tiny number
-                var min_B = float.MaxValue; // huge number
+                var maxB = float.MinValue; // tiny number
+                var minB = float.MaxValue; // huge number
 
-                foreach (Vector3 v in points_of_B)
+                foreach (Vector3 point in pointsOfB)
                 {
-                    var d = n.Dot(v);
-                    max_B = Mathf.Max(max_B, d);
-                    min_B = Mathf.Min(min_B, d);
+                    var distance = normal.Dot(point);
+                    maxB = Mathf.Max(maxB, distance);
+                    minB = Mathf.Min(minB, distance);
                 }
 
-                if (min_A > max_B || min_B > max_A)
+                if (minA > maxB || minB > maxA)
                 {
                     // not overlapping!
                     overlapping = false;
