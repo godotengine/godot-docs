@@ -139,7 +139,7 @@ platforms from the command line, just try exporting to a non-recognized
 platform and the full listing of platforms your configuration supports
 will be shown.
 
-To export a debug version of the game, use the ``--export_debug`` switch
+To export a debug version of the game, use the ``--export-debug`` switch
 instead of ``--export``. Their parameters and usage are the same.
 
 Running a script
