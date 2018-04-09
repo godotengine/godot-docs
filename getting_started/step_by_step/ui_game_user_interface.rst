@@ -548,8 +548,8 @@ onto the ``Bars`` container in the scene tree. Do the same for the
 
    The LifeBar and the EnergyBar align automatically
 
-Now, drag and drop the BombCounter and RupeeCounter scenes onto the
-Counters node. They'll resize automatically.
+Now, drag and drop the ``BombCounter.tscn`` and ``RupeeCounter.tscn`` scenes onto the
+``Counters`` node. They'll resize automatically.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
 
