@@ -33,7 +33,10 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +=================+========================================================+
 | **Android**     | Running on Android                                     |
 +-----------------+--------------------------------------------------------+
-| **JavaScript**  | Running on JavaScript (HTML5)                          |
+| **HTML5**       | Running on HTML5                                       |
++-----------------+--------------------------------------------------------+
+| **JavaScript**  | :ref:`JavaScript singleton <doc_javascript_eval>` is   |
+|                 | available                                              |
 +-----------------+--------------------------------------------------------+
 | **OSX**         | Running on macOS                                       |
 +-----------------+--------------------------------------------------------+
