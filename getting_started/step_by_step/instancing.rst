@@ -9,8 +9,8 @@ Introduction
 Creating a single scene and adding nodes into it might work for small
 projects, but as a project grows in size and complexity, the number of nodes
 can quickly become unmanageable. To address this, Godot allows a project
-to be separated into any number scenes. This provides you with a powerful
-tool to organize the different components of your game.
+to be separated into any number of scenes. This provides you with a powerful
+tool that helps you organize the different components of your game.
 
 In :ref:`doc_scenes_and_nodes` you learned that a scene is a collection of
 nodes organized in a tree structure, with a single node as the tree root.
