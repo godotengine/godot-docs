@@ -140,8 +140,12 @@ calling
     
     var enemies = GetTree().GetNodesInGroup("enemies");
 
-The :ref:`SceneTree <class_SceneTree>` documentation is currently incomplete,
-though more will be added later.
+The :ref:`SceneTree <class_SceneTree>` class provides many useful methods,
+like interacting with scenes, their node hierarchy and groups of nodes.
+It allows you to easily switch scenes or reload them,
+to quit the game or pause and unpause it.
+It even comes with interesting signals.
+So check it out if you got some time!
 
 Notifications
 -------------
