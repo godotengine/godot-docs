@@ -170,7 +170,7 @@ Why don't we directly get the ``Player`` node in the ``_process``
 function and look at the health value? Accessing nodes this way creates
 tight coupling between them. If you did it sparingly it may work. As
 your game grows bigger, you may have many more connections. If you get
-nodes from a bad it's becomes very complex very soon. Not only that: you
+nodes this way it gets very complex quickly. Not only that: you
 need to listen to the state change constantly in the ``_process``
 function. This check happens 60 times a second and you'll likely break
 the game because of the order in which the code runs.
