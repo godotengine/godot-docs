@@ -220,7 +220,7 @@ less convenient than doing it from the code.
     You can optionally connect nodes from the code. But doing it from the editor has two advantages:
 
     1. Godot can write new callback functions for you in the connected script
-    1. An emitter icon appears next to the node that emits the signal in the Scene dock
+    2. An emitter icon appears next to the node that emits the signal in the Scene dock
 
 At the bottom of the window you will find the path to the node you
 selected. We're interested in the second row called "Method in Node".
