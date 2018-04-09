@@ -171,12 +171,12 @@ function and look at the health value? Accessing nodes this way creates
 tight coupling between them. If you did it sparingly it may work. As
 your game grows bigger, you may have many more connections. If you get
 nodes from a bad it's becomes very complex very soon. Not only that: you
-need to listen to the changes state constantly in the ``_process``
-function. The check happens 60 times a second and you'll likely break
+need to listen to the state change constantly in the ``_process``
+function. This check happens 60 times a second and you'll likely break
 the game because of the order in which the code runs.
 
 On a given frame you may look at another node's property *before* it was
-updated: you get a value that from the last frame. This leads to obscure
+updated: you get a value from the last frame. This leads to obscure
 bugs that are hard to fix. On the other hand, a signal is emitted right
 after a change happened. It **guarantees** you're getting a fresh piece
 of information. And you will update the state of your connected node
