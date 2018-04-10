@@ -16,8 +16,24 @@ Brief Description
 
 A helper node for displaying scrollable elements (e.g. lists).
 
+Signals
+-------
+
+.. _class_ScrollContainer_scroll_ended:
+
+- **scroll_ended** **(** **)**
+
+.. _class_ScrollContainer_scroll_started:
+
+- **scroll_started** **(** **)**
+
+
 Member Variables
 ----------------
+
+  .. _class_ScrollContainer_scroll_deadzone:
+
+- :ref:`int<class_int>` **scroll_deadzone**
 
   .. _class_ScrollContainer_scroll_horizontal:
 

@@ -34,7 +34,7 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>` **(** :ref:`float<class_float>` length **)**                                                                                                                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`cross<class_Vector2_cross>` **(** :ref:`Vector2<class_vector2>` b **)**                                                                                                                                 |
+| :ref:`float<class_float>`      | :ref:`cross<class_Vector2_cross>` **(** :ref:`Vector2<class_vector2>` with **)**                                                                                                                              |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>` **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,7 +139,7 @@ Returns the vector with a maximum length.
 
 .. _class_Vector2_cross:
 
-- :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_vector2>` b **)**
+- :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_vector2>` with **)**
 
 Returns the 2-dimensional analog of the cross product with ``b``.
 

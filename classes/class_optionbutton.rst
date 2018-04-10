@@ -64,6 +64,10 @@ Member Functions
 Signals
 -------
 
+.. _class_OptionButton_item_focused:
+
+- **item_focused** **(** :ref:`int<class_int>` ID **)**
+
 .. _class_OptionButton_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` ID **)**

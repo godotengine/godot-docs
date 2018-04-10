@@ -98,7 +98,7 @@ Signals
 
 .. _class_Input_joy_connection_changed:
 
-- **joy_connection_changed** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` connected **)**
+- **joy_connection_changed** **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected **)**
 
 Emitted when a joypad device has been connected or disconnected.
 

@@ -120,6 +120,8 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`print_tree<class_Node_print_tree>` **(** **)**                                                                                                                                         |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`print_tree_pretty<class_Node_print_tree_pretty>` **(** **)**                                                                                                                           |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`propagate_call<class_Node_propagate_call>` **(** :ref:`String<class_string>` method, :ref:`Array<class_array>` args=[  ], :ref:`bool<class_bool>` parent_first=false **)**             |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`propagate_notification<class_Node_propagate_notification>` **(** :ref:`int<class_int>` what **)**                                                                                      |
@@ -210,9 +212,17 @@ Emitted when the node is still active but about to exit the tree. This is the ri
 Member Variables
 ----------------
 
+  .. _class_Node_custom_multiplayer_api:
+
+- :ref:`MultiplayerAPI<class_multiplayerapi>` **custom_multiplayer_api**
+
   .. _class_Node_filename:
 
 - :ref:`String<class_string>` **filename** - When a scene is instanced from a file, its topmost node contains the filename from which it was loaded.
+
+  .. _class_Node_multiplayer_api:
+
+- :ref:`MultiplayerAPI<class_multiplayerapi>` **multiplayer_api**
 
   .. _class_Node_name:
 
@@ -220,7 +230,7 @@ Member Variables
 
   .. _class_Node_owner:
 
-- :ref:`Node<class_node>` **owner** - The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using SceneSaver) all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_scenetree>`\ s, with instancing and subinstancing.
+- :ref:`Node<class_node>` **owner** - The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_packedscene>`) all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_scenetree>`\ s, with instancing and subinstancing.
 
   .. _class_Node_pause_mode:
 
@@ -659,7 +669,31 @@ Prints all stray nodes (nodes outside the :ref:`SceneTree<class_scenetree>`). Us
 
 - void **print_tree** **(** **)**
 
-Prints the scene hierarchy of this node and all it's children to stdout. Used mainly for debugging purposes.
+Prints the tree to stdout. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_get_node>` function. Example output:
+
+::
+
+    TheGame
+    TheGame/Menu
+    TheGame/Menu/Label
+    TheGame/Menu/Camera2D
+    TheGame/SplashScreen
+    TheGame/SplashScreen/Camera2D
+
+.. _class_Node_print_tree_pretty:
+
+- void **print_tree_pretty** **(** **)**
+
+Similar to :ref:`print_tree<class_Node_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees. Example output:
+
+::
+
+     ┖╴TheGame
+        ┠╴Menu
+        ┃  ┠╴Label
+        ┃  ┖╴Camera2D
+        ┖-SplashScreen
+           ┖╴Camera2D
 
 .. _class_Node_propagate_call:
 

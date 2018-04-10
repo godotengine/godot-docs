@@ -45,6 +45,14 @@ Signals
 - **data_received** **(** **)**
 
 
+Member Variables
+----------------
+
+  .. _class_WebSocketClient_verify_ssl:
+
+- :ref:`bool<class_bool>` **verify_ssl**
+
+
 Member Function Description
 ---------------------------
 

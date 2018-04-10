@@ -14,7 +14,7 @@ ARVRAnchor
 Brief Description
 -----------------
 
-Anchor point in AR Space
+Anchor point in AR Space.
 
 Member Functions
 ----------------

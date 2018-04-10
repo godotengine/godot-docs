@@ -28,6 +28,8 @@ Member Functions
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`blit_rect_mask<class_Image_blit_rect_mask>` **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**                                             |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`bumpmap_to_normalmap<class_Image_bumpmap_to_normalmap>` **(** :ref:`float<class_float>` bump_scale=1.0 **)**                                                                                                                             |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_mipmaps<class_Image_clear_mipmaps>` **(** **)**                                                                                                                                                                                    |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`compress<class_Image_compress>` **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` source, :ref:`float<class_float>` lossy_quality **)**                                                                                            |
@@ -231,6 +233,10 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
 - void **blit_rect_mask** **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
 
 Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
+
+.. _class_Image_bumpmap_to_normalmap:
+
+- void **bumpmap_to_normalmap** **(** :ref:`float<class_float>` bump_scale=1.0 **)**
 
 .. _class_Image_clear_mipmaps:
 

@@ -71,6 +71,18 @@ The ``value`` property comes from :ref:`Range<class_range>`. See :ref:`Range.val
 
 - :ref:`Texture<class_texture>` **texture_under** - :ref:`Texture<class_texture>` that draws under the progress bar. The bar's background.
 
+  .. _class_TextureProgress_tint_over:
+
+- :ref:`Color<class_color>` **tint_over**
+
+  .. _class_TextureProgress_tint_progress:
+
+- :ref:`Color<class_color>` **tint_progress**
+
+  .. _class_TextureProgress_tint_under:
+
+- :ref:`Color<class_color>` **tint_under**
+
 
 Enums
 -----

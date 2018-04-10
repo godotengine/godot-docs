@@ -259,6 +259,14 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
     String queryString = httpClient.query_string_from_dict(fields)
     returns:= "username=user&password=pass"
 
+Furthermore, if a key has a null value, only the key itself is added, without equal sign and value. If the value is an array, for each value in it a pair with the same key is added.
+
+::
+
+    var fields = {"single": 123, "not_valued": null, "multiple": [22, 33, 44]}
+    String queryString = httpClient.query_string_from_dict(fields)
+    returns:= "single=123&not_valued&multiple=22&multiple=33&multiple=44"
+
 .. _class_HTTPClient_read_response_body_chunk:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **read_response_body_chunk** **(** **)**
