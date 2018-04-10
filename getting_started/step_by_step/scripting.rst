@@ -346,5 +346,5 @@ Also, remember that nodes are referenced by name, not by type.
     values of different types.
 
     The code approach also enables this with a 4th ``Array`` parameter that
-    is empty be default. Feel free to read up on the ``Object.connect`` 
+    is empty by default. Feel free to read up on the ``Object.connect`` 
     method for more information.
