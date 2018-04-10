@@ -20,6 +20,8 @@ Member Functions
 ----------------
 
 +------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`ConfigFile<class_configfile>`            | :ref:`get_config_file<class_GDNativeLibrary_get_config_file>` **(** **)**                         |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_current_dependencies<class_GDNativeLibrary_get_current_dependencies>` **(** **)** const |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_current_library_path<class_GDNativeLibrary_get_current_library_path>` **(** **)** const |
@@ -27,10 +29,6 @@ Member Functions
 
 Member Variables
 ----------------
-
-  .. _class_GDNativeLibrary_config_file:
-
-- :ref:`ConfigFile<class_configfile>` **config_file**
 
   .. _class_GDNativeLibrary_load_once:
 
@@ -51,6 +49,10 @@ Member Variables
 
 Member Function Description
 ---------------------------
+
+.. _class_GDNativeLibrary_get_config_file:
+
+- :ref:`ConfigFile<class_configfile>` **get_config_file** **(** **)**
 
 .. _class_GDNativeLibrary_get_current_dependencies:
 

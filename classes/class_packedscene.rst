@@ -56,16 +56,7 @@ Description
 
 A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
 
-Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_node>`). Note that the node doesn't need to own itself.
-
-Example of saving a node:
-
-::
-
-    var scene = PackedScene.new()
-    var result = scene.pack(child)
-    if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) // or user://...
+TODO: explain ownership, and that node does not need to own itself
 
 Member Function Description
 ---------------------------

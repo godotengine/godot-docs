@@ -31,14 +31,6 @@ Member Functions
 | void                           | :ref:`stop<class_VideoPlayer_stop>` **(** **)**                             |
 +--------------------------------+-----------------------------------------------------------------------------+
 
-Signals
--------
-
-.. _class_VideoPlayer_finished:
-
-- **finished** **(** **)**
-
-
 Member Variables
 ----------------
 

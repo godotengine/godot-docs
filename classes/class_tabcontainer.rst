@@ -36,8 +36,6 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_tab_title<class_TabContainer_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tabs_rearrange_group<class_TabContainer_get_tabs_rearrange_group>` **(** **)** const                                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_popup<class_TabContainer_set_popup>` **(** :ref:`Node<class_node>` popup **)**                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_disabled<class_TabContainer_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
@@ -45,8 +43,6 @@ Member Functions
 | void                           | :ref:`set_tab_icon<class_TabContainer_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon **)**       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_title<class_TabContainer_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tabs_rearrange_group<class_TabContainer_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -77,10 +73,6 @@ Member Variables
   .. _class_TabContainer_current_tab:
 
 - :ref:`int<class_int>` **current_tab** - The current tab index. When set, this index's :ref:`Control<class_control>` node's ``visible`` property is set to ``true`` and all others are set to ``false``.
-
-  .. _class_TabContainer_drag_to_rearrange_enabled:
-
-- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
   .. _class_TabContainer_tab_align:
 
@@ -165,10 +157,6 @@ Returns the :ref:`Texture<class_texture>` for the tab at index ``tab_idx`` or nu
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_set_tab_title>`.
 
-.. _class_TabContainer_get_tabs_rearrange_group:
-
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
-
 .. _class_TabContainer_set_popup:
 
 - void **set_popup** **(** :ref:`Node<class_node>` popup **)**
@@ -192,9 +180,5 @@ Sets an icon for the tab at index ``tab_idx``.
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**
 
 Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_set_tab_title>`.
-
-.. _class_TabContainer_set_tabs_rearrange_group:
-
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
 
 

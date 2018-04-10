@@ -14,7 +14,7 @@ Navigation
 Brief Description
 -----------------
 
-Mesh-based navigation and pathfinding node.
+A collection of ``NavigationMesh`` resources and methods used for pathfinding.
 
 Member Functions
 ----------------
@@ -42,13 +42,13 @@ Member Variables
 
   .. _class_Navigation_up_vector:
 
-- :ref:`Vector3<class_vector3>` **up_vector** - Defines which direction is up. By default this is ``(0, 1, 0)``, which is the world up direction.
+- :ref:`Vector3<class_vector3>` **up_vector** - Defines which direction is up. The default defines 0,1,0 as up which is the world up direction. To make this a ceiling use 0,-1,0 to define down as up.
 
 
 Description
 -----------
 
-Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_navigationmesh>`\ es. By default these will be automatically collected from child :ref:`NavigationMeshInstance<class_navigationmeshinstance>` nodes, but they can also be added on the fly with :ref:`navmesh_add<class_Navigation_navmesh_add>`. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
+The Navigation node is used for basic or advanced navigation. By default it will automatically collect all child ``NavigationMesh`` resources, but they can also be added on the fly through scripting. It can be used for generating a simple path between two points or it can be used to ensure that a navigation agent is angled perfectly to the terrain it is navigating.
 
 Member Function Description
 ---------------------------
@@ -57,48 +57,48 @@ Member Function Description
 
 - :ref:`Vector3<class_vector3>` **get_closest_point** **(** :ref:`Vector3<class_vector3>` to_point **)**
 
-Returns the navigation point closest to the point given. Points are in local coordinate space.
+Returns the closest navigation point to the point passed.
 
 .. _class_Navigation_get_closest_point_normal:
 
 - :ref:`Vector3<class_vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_vector3>` to_point **)**
 
-Returns the surface normal at the navigation point closest to the point given. Useful for rotating a navigation agent according to the navigation mesh it moves on.
+Returns the surface normal of the navigation mesh at the point passed. For instance, if the point passed was at a 45 degree slope it would return something like (0.5,0.5,0). This is useful for rotating a navigation agent in accordance with the ``NavigationMesh``.
 
 .. _class_Navigation_get_closest_point_owner:
 
 - :ref:`Object<class_object>` **get_closest_point_owner** **(** :ref:`Vector3<class_vector3>` to_point **)**
 
-Returns the owner of the :ref:`NavigationMesh<class_navigationmesh>` which contains the navigation point closest to the point given. This is usually a NavigtionMeshInstance. For meshes added via :ref:`navmesh_add<class_Navigation_navmesh_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
+Returns the nearest ``NavigationMeshInstance`` to the point passed.
 
 .. _class_Navigation_get_closest_point_to_segment:
 
 - :ref:`Vector3<class_vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, :ref:`bool<class_bool>` use_collision=false **)**
 
-Returns the navigation point closest to the given line segment. When enabling ``use_collision``, only considers intersection points between segment and navigation meshes. If multiple intersection points are found, the one closest to the segment start point is returned.
+Returns the nearest point to the line segment passed. The third optional parameter takes collisions into account.
 
 .. _class_Navigation_get_simple_path:
 
 - :ref:`PoolVector3Array<class_poolvector3array>` **get_simple_path** **(** :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, :ref:`bool<class_bool>` optimize=true **)**
 
-Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_navigationmesh>` (raidus, height, etc.) are considered in the path calculation, otherwise they are ignored.
+Returns a path of points as a ``PoolVector3Array``. If ``optimize`` is false the ``NavigationMesh`` agent properties will be taken into account, otherwise it will return the nearest path and ignore agent radius, height, etc.
 
 .. _class_Navigation_navmesh_add:
 
 - :ref:`int<class_int>` **navmesh_add** **(** :ref:`NavigationMesh<class_navigationmesh>` mesh, :ref:`Transform<class_transform>` xform, :ref:`Object<class_object>` owner=null **)**
 
-Adds a :ref:`NavigationMesh<class_navigationmesh>`. Returns an ID for use with :ref:`navmesh_remove<class_Navigation_navmesh_remove>` or :ref:`navmesh_set_transform<class_Navigation_navmesh_set_transform>`. If given, a :ref:`Transform2D<class_transform2d>` is applied to the polygon. The optional ``owner`` is used as return value for :ref:`get_closest_point_owner<class_Navigation_get_closest_point_owner>`.
+Adds a ``NavigationMesh`` to the list of NavigationMesh's in this node. Returns an id. Its position, rotation and scale are associated with the ``Transform`` passed. The ``Node`` (or ``Object``) that owns this node is an optional parameter.
 
 .. _class_Navigation_navmesh_remove:
 
 - void **navmesh_remove** **(** :ref:`int<class_int>` id **)**
 
-Removes the :ref:`NavigationMesh<class_navigationmesh>` with the given ID.
+Removes a ``NavigationMesh`` from the list of NavigationMesh's in this node.
 
 .. _class_Navigation_navmesh_set_transform:
 
 - void **navmesh_set_transform** **(** :ref:`int<class_int>` id, :ref:`Transform<class_transform>` xform **)**
 
-Sets the transform applied to the :ref:`NavigationMesh<class_navigationmesh>` with the given ID.
+Associates a ``NavigationMesh``'s id with a ``Transform``. Its position, rotation and scale are based on the ``Transform`` passed.
 
 

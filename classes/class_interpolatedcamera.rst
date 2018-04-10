@@ -14,7 +14,7 @@ InterpolatedCamera
 Brief Description
 -----------------
 
-Camera which moves toward another node.
+
 
 Member Functions
 ----------------
@@ -28,23 +28,16 @@ Member Variables
 
   .. _class_InterpolatedCamera_enabled:
 
-- :ref:`bool<class_bool>` **enabled** - If ``true`` and a target is set, the camera will move automatically.
+- :ref:`bool<class_bool>` **enabled**
 
   .. _class_InterpolatedCamera_speed:
 
-- :ref:`float<class_float>` **speed** - How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
+- :ref:`float<class_float>` **speed**
 
   .. _class_InterpolatedCamera_target:
 
-- :ref:`NodePath<class_nodepath>` **target** - The target's :ref:`NodePath<class_nodepath>`.
+- :ref:`NodePath<class_nodepath>` **target**
 
-
-Description
------------
-
-InterpolatedCamera is a :ref:`Camera<class_camera>` which smoothly moves to match a target node's position and rotation.
-
-If it is not :ref:`enabled<class_InterpolatedCamera_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
 
 Member Function Description
 ---------------------------
@@ -52,7 +45,5 @@ Member Function Description
 .. _class_InterpolatedCamera_set_target:
 
 - void **set_target** **(** :ref:`Object<class_object>` target **)**
-
-Sets the node to move toward and orient with.
 
 

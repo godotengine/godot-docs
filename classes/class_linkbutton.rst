@@ -14,7 +14,7 @@ LinkButton
 Brief Description
 -----------------
 
-Simple button used to represent a link to some resource.
+Simple button used to represent a link to some resource
 
 Member Variables
 ----------------

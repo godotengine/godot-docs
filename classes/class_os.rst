@@ -40,10 +40,6 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>` **(** :ref:`String<class_string>` string **)** const                                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_audio_driver_count<class_OS_get_audio_driver_count>` **(** **)** const                                                                                                                                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_audio_driver_name<class_OS_get_audio_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
@@ -112,10 +108,6 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_user_data_dir<class_OS_get_user_data_dir>` **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_video_driver_count<class_OS_get_video_driver_count>` **(** **)** const                                                                                                                                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_video_driver_name<class_OS_get_video_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_environment<class_OS_has_environment>` **(** :ref:`String<class_string>` environment **)** const                                                                                                               |
@@ -137,8 +129,6 @@ Member Functions
 | :ref:`bool<class_bool>`                        | :ref:`is_stdout_verbose<class_OS_is_stdout_verbose>` **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_userfs_persistent<class_OS_is_userfs_persistent>` **(** **)** const                                                                                                                                             |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_window_always_on_top<class_OS_is_window_always_on_top>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -169,8 +159,6 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_window_always_on_top<class_OS_set_window_always_on_top>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_window_title<class_OS_set_window_title>` **(** :ref:`String<class_string>` title **)**                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -396,14 +384,6 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
 Returns the scancode of the given string (e.g. "Escape")
 
-.. _class_OS_get_audio_driver_count:
-
-- :ref:`int<class_int>` **get_audio_driver_count** **(** **)** const
-
-.. _class_OS_get_audio_driver_name:
-
-- :ref:`String<class_string>` **get_audio_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
-
 .. _class_OS_get_cmdline_args:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_cmdline_args** **(** **)**
@@ -604,9 +584,7 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 - :ref:`String<class_string>` **get_unique_id** **(** **)** const
 
-Returns a string that is unique to the device.
-
-Returns empty string on HTML5 and UWP which are not supported yet.
+Returns a string that is unique to the device. Currently only works on Android and iOS. Returns empty string on other platforms.
 
 .. _class_OS_get_unix_time:
 
@@ -637,14 +615,6 @@ On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_na
 On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDATA%/[custom_name]`` if ``use_custom_user_dir`` is set.
 
 If the project name is empty, ``user://`` falls back to ``res://``.
-
-.. _class_OS_get_video_driver_count:
-
-- :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
-
-.. _class_OS_get_video_driver_name:
-
-- :ref:`String<class_string>` **get_video_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
 
 .. _class_OS_get_virtual_keyboard_height:
 
@@ -711,10 +681,6 @@ Returns ``true`` if the engine was executed with -v (verbose stdout).
 - :ref:`bool<class_bool>` **is_userfs_persistent** **(** **)** const
 
 If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the HTML5 platform, where this persistence may be unavailable.
-
-.. _class_OS_is_window_always_on_top:
-
-- :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
 
 .. _class_OS_kill:
 
@@ -803,10 +769,6 @@ Sets the name of the current thread.
 - void **set_use_file_access_save_and_swap** **(** :ref:`bool<class_bool>` enabled **)**
 
 Enables backup saves if ``enabled`` is ``true``.
-
-.. _class_OS_set_window_always_on_top:
-
-- void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
 .. _class_OS_set_window_title:
 

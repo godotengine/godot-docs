@@ -24,21 +24,11 @@ Member Functions
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`find_interface<class_ARVRServer_find_interface>` **(** :ref:`String<class_string>` name **)** const                                 |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`                          | :ref:`get_hmd_transform<class_ARVRServer_get_hmd_transform>` **(** **)**                                                                  |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`get_interface<class_ARVRServer_get_interface>` **(** :ref:`int<class_int>` idx **)** const                                          |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_interface_count<class_ARVRServer_get_interface_count>` **(** **)** const                                                        |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                                  | :ref:`get_interfaces<class_ARVRServer_get_interfaces>` **(** **)** const                                                                  |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_commit_usec<class_ARVRServer_get_last_commit_usec>` **(** **)**                                                            |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_frame_usec<class_ARVRServer_get_last_frame_usec>` **(** **)**                                                              |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_last_process_usec<class_ARVRServer_get_last_process_usec>` **(** **)**                                                          |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`get_primary_interface<class_ARVRServer_get_primary_interface>` **(** **)** const                                                    |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`                          | :ref:`get_reference_frame<class_ARVRServer_get_reference_frame>` **(** **)** const                                                        |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,10 +128,6 @@ You should call this method after a few seconds have passed, when the user reque
 
 Find an interface by its name. Say that you're making a game that uses specific capabilities of an AR/VR platform you can find the interface for that platform by name and initialize it.
 
-.. _class_ARVRServer_get_hmd_transform:
-
-- :ref:`Transform<class_transform>` **get_hmd_transform** **(** **)**
-
 .. _class_ARVRServer_get_interface:
 
 - :ref:`ARVRInterface<class_arvrinterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
@@ -159,22 +145,6 @@ Get the number of interfaces currently registered with the AR/VR server. If you'
 - :ref:`Array<class_array>` **get_interfaces** **(** **)** const
 
 Returns a list of available interfaces with both id and name of the interface.
-
-.. _class_ARVRServer_get_last_commit_usec:
-
-- :ref:`int<class_int>` **get_last_commit_usec** **(** **)**
-
-.. _class_ARVRServer_get_last_frame_usec:
-
-- :ref:`int<class_int>` **get_last_frame_usec** **(** **)**
-
-.. _class_ARVRServer_get_last_process_usec:
-
-- :ref:`int<class_int>` **get_last_process_usec** **(** **)**
-
-.. _class_ARVRServer_get_primary_interface:
-
-- :ref:`ARVRInterface<class_arvrinterface>` **get_primary_interface** **(** **)** const
 
 .. _class_ARVRServer_get_reference_frame:
 

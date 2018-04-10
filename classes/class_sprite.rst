@@ -16,13 +16,6 @@ Brief Description
 
 General purpose Sprite node.
 
-Member Functions
-----------------
-
-+----------------------------+----------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`get_rect<class_Sprite_get_rect>` **(** **)** const |
-+----------------------------+----------------------------------------------------------+
-
 Signals
 -------
 
@@ -95,14 +88,4 @@ Description
 -----------
 
 A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
-
-Member Function Description
----------------------------
-
-.. _class_Sprite_get_rect:
-
-- :ref:`Rect2<class_rect2>` **get_rect** **(** **)** const
-
-Returns a Rect2 representing the Sprite's boundary relative to its local coordinates.
-
 

@@ -27,7 +27,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_x/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` rotation across the x-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` rotation across the x-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_limit_x/erp:
 
@@ -59,7 +59,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_y/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` rotation across the y-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` rotation across the y-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_limit_y/erp:
 
@@ -91,7 +91,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_z/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` rotation across the z-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` rotation across the z-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_limit_z/erp:
 
@@ -159,7 +159,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_linear_limit_x/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the linear motion across the x-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the linear motion across the x-axis is enabled.
 
   .. _class_Generic6DOFJoint_linear_limit_x/lower_distance:
 
@@ -183,7 +183,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_linear_limit_y/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the linear motion across the y-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the linear motion across the y-axis is enabled.
 
   .. _class_Generic6DOFJoint_linear_limit_y/lower_distance:
 
@@ -207,7 +207,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_linear_limit_z/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the linear motion across the z-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the linear motion across the z-axis is enabled.
 
   .. _class_Generic6DOFJoint_linear_limit_z/lower_distance:
 
@@ -262,5 +262,5 @@ enum **Param**
 Description
 -----------
 
-The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
+The first 3 dof axes are linear axes, which represent translation of Bodies, and the latter 3 dof axes represent the angular motion. Each axis can be either locked, or limited.
 

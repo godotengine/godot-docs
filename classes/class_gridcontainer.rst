@@ -14,7 +14,7 @@ GridContainer
 Brief Description
 -----------------
 
-Grid container used to arrange elements in a grid like layout.
+Grid container used to arrange elements in a grid like layout
 
 Member Variables
 ----------------

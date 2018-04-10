@@ -34,10 +34,6 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_item<class_PopupMenu_add_item>` **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**                                                                                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_radio_check_item<class_PopupMenu_add_radio_check_item>` **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**                                                            |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_radio_check_shortcut<class_PopupMenu_add_radio_check_shortcut>` **(** :ref:`ShortCut<class_shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                      |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_separator<class_PopupMenu_add_separator>` **(** **)**                                                                                                                                                                        |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_shortcut<class_PopupMenu_add_shortcut>` **(** :ref:`ShortCut<class_shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                                              |
@@ -72,8 +68,6 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_disabled<class_PopupMenu_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_item_radio_checkable<class_PopupMenu_is_item_radio_checkable>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_separator<class_PopupMenu_is_item_separator>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`remove_item<class_PopupMenu_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                  |
@@ -81,8 +75,6 @@ Member Functions
 | void                             | :ref:`set_item_accelerator<class_PopupMenu_set_item_accelerator>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` accel **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_as_checkable<class_PopupMenu_set_item_as_checkable>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**                                                                                              |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_item_as_radio_checkable<class_PopupMenu_set_item_as_radio_checkable>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_as_separator<class_PopupMenu_set_item_as_separator>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**                                                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,10 +105,6 @@ Member Functions
 
 Signals
 -------
-
-.. _class_PopupMenu_id_focused:
-
-- **id_focused** **(** :ref:`int<class_int>` ID **)**
 
 .. _class_PopupMenu_id_pressed:
 
@@ -192,16 +180,6 @@ Add a new item with text "label" and icon "texture". An id can optionally be pro
 - void **add_item** **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
 
 Add a new item with text "label". An id can optionally be provided, as well as an accelerator keybinding. If no id is provided, one will be created from the index.
-
-.. _class_PopupMenu_add_radio_check_item:
-
-- void **add_radio_check_item** **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0 **)**
-
-The same as :ref:`add_check_item<class_PopupMenu_add_check_item>` but the inserted item will look as a radio button. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
-
-.. _class_PopupMenu_add_radio_check_shortcut:
-
-- void **add_radio_check_shortcut** **(** :ref:`ShortCut<class_shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**
 
 .. _class_PopupMenu_add_separator:
 
@@ -285,25 +263,19 @@ Return the text of the item at index "idx".
 
 - :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" is checkable in some way, i.e., whether has a checkbox or radio button. Note that checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Return whether the item at index "idx" has a checkbox. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_is_item_checked:
 
 - :ref:`bool<class_bool>` **is_item_checked** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item at index "idx" is checked.
+Return the checkstate status of the item at index "idx".
 
 .. _class_PopupMenu_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
 Return whether the item at index "idx" is disabled. When it is disabled it can't be selected, or its action invoked.
-
-.. _class_PopupMenu_is_item_radio_checkable:
-
-- :ref:`bool<class_bool>` **is_item_radio_checkable** **(** :ref:`int<class_int>` idx **)** const
-
-Return whether the item at index "idx" has radio-button-style checkability. Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
 
 .. _class_PopupMenu_is_item_separator:
 
@@ -328,14 +300,6 @@ Set the accelerator of the item at index "idx". Accelerators are special combina
 - void **set_item_as_checkable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
 Set whether the item at index "idx" has a checkbox. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
-
-.. _class_PopupMenu_set_item_as_radio_checkable:
-
-- void **set_item_as_radio_checkable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
-
-The same as :ref:`set_item_as_checkable<class_PopupMenu_set_item_as_checkable>` but placing a radio button in case of enabling. If used for disabling, it's the same.
-
-Remember this is just cosmetic and you have to add the logic for checking/unchecking items in radio groups.
 
 .. _class_PopupMenu_set_item_as_separator:
 

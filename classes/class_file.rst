@@ -56,10 +56,6 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_pascal_string<class_File_get_pascal_string>` **(** **)**                                                                                                                    |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_path<class_File_get_path>` **(** **)** const                                                                                                                                |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_path_absolute<class_File_get_path_absolute>` **(** **)** const                                                                                                              |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_position<class_File_get_position>` **(** **)** const                                                                                                                        |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_real<class_File_get_real>` **(** **)** const                                                                                                                                |
@@ -271,18 +267,6 @@ Returns the last time the ``file`` was modified in unix timestamp format or retu
 - :ref:`String<class_string>` **get_pascal_string** **(** **)**
 
 Returns a :ref:`String<class_string>` saved in Pascal format from the file.
-
-.. _class_File_get_path:
-
-- :ref:`String<class_string>` **get_path** **(** **)** const
-
-Returns the path as a :ref:`String<class_string>` for the current open file.
-
-.. _class_File_get_path_absolute:
-
-- :ref:`String<class_string>` **get_path_absolute** **(** **)** const
-
-Returns the absolute path as a :ref:`String<class_string>` for the current open file.
 
 .. _class_File_get_position:
 

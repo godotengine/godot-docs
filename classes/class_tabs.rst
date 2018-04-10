@@ -38,8 +38,6 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_tab_title<class_Tabs_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tabs_rearrange_group<class_Tabs_get_tabs_rearrange_group>` **(** **)** const                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`move_tab<class_Tabs_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_tab<class_Tabs_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                               |
@@ -49,8 +47,6 @@ Member Functions
 | void                           | :ref:`set_tab_icon<class_Tabs_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon **)**       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_title<class_Tabs_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**      |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tabs_rearrange_group<class_Tabs_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -87,10 +83,6 @@ Member Variables
   .. _class_Tabs_current_tab:
 
 - :ref:`int<class_int>` **current_tab**
-
-  .. _class_Tabs_drag_to_rearrange_enabled:
-
-- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
   .. _class_Tabs_scrolling_enabled:
 
@@ -173,10 +165,6 @@ Returns tab :ref:`Rect2<class_rect2>` with local position and size.
 
 - :ref:`String<class_string>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
-.. _class_Tabs_get_tabs_rearrange_group:
-
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
-
 .. _class_Tabs_move_tab:
 
 - void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
@@ -198,9 +186,5 @@ Rearrange tab.
 .. _class_Tabs_set_tab_title:
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**
-
-.. _class_Tabs_set_tabs_rearrange_group:
-
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
 
 

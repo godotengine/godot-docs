@@ -345,8 +345,6 @@ Numeric Constants
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
 - **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the ``Control``. Happens when you call one of the ``add_*_override``
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
-- **NOTIFICATION_SCROLL_BEGIN** = **47**
-- **NOTIFICATION_SCROLL_END** = **48**
 
 Enums
 -----
@@ -397,7 +395,6 @@ enum **GrowDirection**
 
 - **GROW_DIRECTION_BEGIN** = **0**
 - **GROW_DIRECTION_END** = **1**
-- **GROW_DIRECTION_BOTH** = **2**
 
   .. _enum_Control_LayoutPresetMode:
 
@@ -560,7 +557,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`get_drag
 
 Forces drag and bypasses :ref:`get_drag_data<class_Control_get_drag_data>` and :ref:`set_drag_preview<class_Control_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
 
-The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>` must be implemented on controls that want to receive drop data.
+The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>` must be implemented on controls that want to recieve drop data.
 
 .. _class_Control_get_begin:
 
@@ -588,7 +585,7 @@ Returns the mouse cursor shape the control displays on mouse hover, one of the `
 
 - :ref:`Object<class_object>` **get_drag_data** **(** :ref:`Vector2<class_vector2>` position **)** virtual
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to recieve drop data should implement :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_set_drag_preview>`. A good time to set the preview is in this method.
 

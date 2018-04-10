@@ -40,8 +40,6 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const                                                               |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                      | :ref:`get_playing_speed<class_AnimationPlayer_get_playing_speed>` **(** **)** const                                                                                                                                    |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_animation<class_AnimationPlayer_has_animation>` **(** :ref:`String<class_string>` name **)** const                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_playing<class_AnimationPlayer_is_playing>` **(** **)** const                                                                                                                                                  |
@@ -207,12 +205,6 @@ Returns the list of stored animation names.
 - :ref:`float<class_float>` **get_blend_time** **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const
 
 Get the blend time (in seconds) between two animations, referenced by their names.
-
-.. _class_AnimationPlayer_get_playing_speed:
-
-- :ref:`float<class_float>` **get_playing_speed** **(** **)** const
-
-Get the actual playing speed of current animation or 0 if not playing. This speed is the ``playback_speed`` property multiplied by ``custom_speed`` argument specified when calling the ``play`` method.
 
 .. _class_AnimationPlayer_has_animation:
 
