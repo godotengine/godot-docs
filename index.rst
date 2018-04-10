@@ -28,7 +28,8 @@ in the top left corner.
 
           Submit an issue or pull request on the `GitHub repository
           <https://github.com/godotengine/godot-docs/issues>`_, or discuss with
-          us on the #godotengine-doc IRC channel on freenode!
+          us on the ``#documentation`` channel on `Discord
+          <https://godotengine.org/community>`_!
 
 The main documentation for the site is organized into the following sections:
 
