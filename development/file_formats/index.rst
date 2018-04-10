@@ -1,4 +1,4 @@
-Godot File Formats
+Godot file formats
 ==================
 
 .. toctree::

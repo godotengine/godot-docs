@@ -250,7 +250,7 @@ Every control node has Size Flags. They tell containers how the UI
 elements should scale. If you add the "Fill" flag to the Horizontal or
 Vertical property, the node's bounding box will take all the space it
 can, but it'll respect its siblings and retain its size. If there are 3
-TextureFrame nodes in an HBoxContainer, with the "Fill" flags on both
+TextureRect nodes in an HBoxContainer, with the "Fill" flags on both
 axes, they'll each take up to a third of the available space, but no
 more. The container will take over the node and resize it automatically.
 

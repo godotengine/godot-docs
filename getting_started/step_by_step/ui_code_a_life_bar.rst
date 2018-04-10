@@ -170,13 +170,13 @@ Why don't we directly get the ``Player`` node in the ``_process``
 function and look at the health value? Accessing nodes this way creates
 tight coupling between them. If you did it sparingly it may work. As
 your game grows bigger, you may have many more connections. If you get
-nodes from a bad it's becomes very complex very soon. Not only that: you
-need to listen to the changes state constantly in the ``_process``
-function. The check happens 60 times a second and you'll likely break
+nodes this way it gets very complex quickly. Not only that: you
+need to listen to the state change constantly in the ``_process``
+function. This check happens 60 times a second and you'll likely break
 the game because of the order in which the code runs.
 
 On a given frame you may look at another node's property *before* it was
-updated: you get a value that from the last frame. This leads to obscure
+updated: you get a value from the last frame. This leads to obscure
 bugs that are hard to fix. On the other hand, a signal is emitted right
 after a change happened. It **guarantees** you're getting a fresh piece
 of information. And you will update the state of your connected node
@@ -220,7 +220,7 @@ less convenient than doing it from the code.
     You can optionally connect nodes from the code. But doing it from the editor has two advantages:
 
     1. Godot can write new callback functions for you in the connected script
-    1. An emitter icon appears next to the node that emits the signal in the Scene dock
+    2. An emitter icon appears next to the node that emits the signal in the Scene dock
 
 At the bottom of the window you will find the path to the node you
 selected. We're interested in the second row called "Method in Node".

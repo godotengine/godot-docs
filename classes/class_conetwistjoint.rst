@@ -14,7 +14,7 @@ ConeTwistJoint
 Brief Description
 -----------------
 
-A twist joint between two 3D bodies
+A twist joint between two 3D bodies.
 
 Member Variables
 ----------------

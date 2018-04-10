@@ -45,7 +45,7 @@ The other three bodies extend from :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 - :ref:`RigidBody2D <class_RigidBody2D>`
     This is the node that implements simulated 2D physics. You do not control a
     ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
-    etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <_doc_rigid_body>`
+    etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <doc_rigid_body>`
 
 - :ref:`KinematicBody2D <class_KinematicBody2D>`
     A body that provides collision detection, but no physics. All movement and
@@ -215,8 +215,9 @@ the physics engine.
 
 For example, here is the code for an "Asteroids" style spaceship:
 
-::
-    
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
     extends RigidBody2D
 
     var thrust = Vector2(0, 250)
@@ -233,6 +234,29 @@ For example, here is the code for an "Asteroids" style spaceship:
         if Input.is_action_pressed("ui_left"):
             rotation_dir -= 1
         set_applied_torque(rotation_dir * torque)
+
+ .. code-tab:: csharp
+
+    class Spaceship : RigidBody2D
+    {
+        private Vector2 thrust = new Vector2(0, 250);
+        private float torque = 20000;
+
+        public override void _IntegrateForces(Physics2DDirectBodyState state)
+        {
+            if (Input.IsActionPressed("ui_up"))
+                SetAppliedForce(thrust.Rotated(Rotation));
+            else
+                SetAppliedForce(new Vector2());
+
+            var rotationDir = 0;
+            if (Input.IsActionPressed("ui_right"))
+                rotationDir += 1;
+            if (Input.IsActionPressed("ui_left"))
+                rotationDir -= 1;
+            SetAppliedTorque(rotationDir * torque);
+        }
+    }
 
 Note that we are not setting the ``linear_velocity`` or ``angular_velocity``
 properties directly, but rather applying forces (``thrust`` and ``torque``) to
@@ -290,7 +314,8 @@ information to determine the response.
 For example, if you want to find the point in space where the collision
 occurred:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
     
@@ -301,18 +326,49 @@ occurred:
         if collision_info:
             var collision_point = collision_info.position
 
+ .. code-tab:: csharp
+
+    class Body : KinematicBody2D
+    {
+        private Vector2 velocity = new Vector2(250, 250);
+
+        public override void _PhysicsProcess(float delta)
+        {
+            var collisionInfo = MoveAndCollide(velocity * delta);
+            if (collisionInfo != null)
+            {
+                var collisionPoint = collisionInfo.GetPosition();
+            }
+        }
+    }
+
 Or to bounce off of the colliding object:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
     
     var velocity = Vector2(250, 250)
     
     func _physics_process(delta):
-        var collide = move_and_collide(velocity * delta)
-        if collide:
-            velocity = velocity.bounce(collide.normal)
+        var collision_info = move_and_collide(velocity * delta)
+        if collision_info:
+            velocity = velocity.bounce(collision_info.normal)
+
+ .. code-tab:: csharp
+
+    class Body : KinematicBody2D
+    {
+        private Vector2 velocity = new Vector2(250, 250);
+
+        public override void _PhysicsProcess(float delta)
+        {
+            var collisionInfo = MoveAndCollide(velocity * delta);
+            if (collisionInfo != null)
+                velocity = velocity.Bounce(collisionInfo.Normal);
+        }
+    }
 
 :ref:`move_and_slide <class_KinematicBody2D_move_and_slide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -330,7 +386,8 @@ without writing very much code.
 For example, use the following code to make a character that can walk along
 the ground (including slopes) and jump when standing on the ground:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
 
@@ -357,6 +414,39 @@ the ground (including slopes) and jump when standing on the ground:
     	velocity.y += gravity * delta
     	get_input()
     	velocity = move_and_slide(velocity, Vector2(0, -1))
+
+ .. code-tab:: csharp
+
+    class Body : KinematicBody2D
+    {
+        private float runSpeed = 350;
+        private float jumpSpeed = -1000;
+        private float gravity = 2500;
+
+        private Vector2 velocity = new Vector2();
+
+        private void getInput()
+        {
+            velocity.x = 0;
+
+            var right = Input.IsActionPressed("ui_right");
+            var left = Input.IsActionPressed("ui_left");
+            var jump = Input.IsActionPressed("ui_select");
+
+            if (IsOnFloor() && jump)
+                velocity.y = jumpSpeed;
+            if (right)
+                velocity.x += runSpeed;
+            if (left)
+                velocity.x -= runSpeed;
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            velocity.y += gravity * delta;
+        }
+    }
+
 
 See :ref:`doc_kinematic_character_2d` for more details on using ``move_and_slide()``,
 including a demo project with detailed code.

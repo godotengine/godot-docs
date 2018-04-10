@@ -14,7 +14,7 @@ CheckBox
 Brief Description
 -----------------
 
-Binary choice user interface widget
+Binary choice user interface widget.
 
 Description
 -----------

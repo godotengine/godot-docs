@@ -141,7 +141,7 @@ The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
 In GDScript the file itself represents the class, so
-the class name field will not editable.
+the class name field is not editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
 will automatically be filled in with "Panel". This is what we want, as the
@@ -346,5 +346,5 @@ Also, remember that nodes are referenced by name, not by type.
     values of different types.
 
     The code approach also enables this with a 4th ``Array`` parameter that
-    is empty be default. Feel free to read up on the ``Object.connect`` 
+    is empty by default. Feel free to read up on the ``Object.connect`` 
     method for more information.

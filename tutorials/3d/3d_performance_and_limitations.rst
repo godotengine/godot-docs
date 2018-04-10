@@ -16,7 +16,7 @@ usability and flexibility. Some practical examples of this are:
    makes rendering less efficient, but at the same time less objects are
    rendered, so efficiency overall improves.
 -  Configuring the properties of every material for every object that
-   needs to be renderer is also slow. To solve this, objects are sorted
+   needs to be rendered is also slow. To solve this, objects are sorted
    by material to reduce the costs, but at the same time sorting has a
    cost.
 -  In 3D physics a similar situation happens. The best algorithms to
@@ -47,7 +47,7 @@ so this section will have a list of tips.
 Reuse shaders and materials
 ---------------------------
 
-Godot renderer is a little different to what is out there. It's designed
+The Godot renderer is a little different to what is out there. It's designed
 to minimize GPU state changes as much as possible.
 :ref:`class_SpatialMaterial`
 does a good job at reusing materials that need similar shaders but, if
@@ -70,11 +70,11 @@ fast.
 Pixels cost vs vertex cost
 --------------------------
 
-It is a common thought that the lower the polygons in a model, the
+It is a common thought that the lower the number of polygons in a model, the
 faster it will be rendered. This is *really* relative and depends on
 many factors.
 
-On a modern PC and consoles, vertex cost is low. Very low. GPUs
+On a modern PC and console, vertex cost is low. Very low. GPUs
 originally only rendered triangles, so all the vertices:
 
 1. Had to be transformed by the CPU (including clipping).
@@ -162,7 +162,7 @@ Level of detail (LOD)
 ---------------------
 
 As also mentioned before, using objects with less vertices can improve
-performance in some cases. Godot has a very simple system to use level
+performance in some cases. Godot has a very simple system to change level
 of detail,
 :ref:`GeometryInstance <class_GeometryInstance>`
 based objects have a visibility range that can be defined. Having
@@ -173,7 +173,7 @@ Use instancing (MultiMesh)
 
 If several identical objects have to be drawn in the same place or
 nearby, try using :ref:`MultiMesh <class_MultiMesh>`
-instead. MultiMesh allows drawing of dozens of thousands of objects at
+instead. MultiMesh allows the drawing of dozens of thousands of objects at
 very little performance cost, making it ideal for flocks, grass,
 particles, etc.
 

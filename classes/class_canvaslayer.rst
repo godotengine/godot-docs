@@ -21,9 +21,9 @@ Canvas drawing layer.
 Member Functions
 ----------------
 
-+--------------------------------+-----------------------------------------------------------------------+
-| :ref:`World2D<class_world2d>`  | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>` **(** **)** const |
-+--------------------------------+-----------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------+
+| :ref:`RID<class_rid>`  | :ref:`get_canvas<class_CanvasLayer_get_canvas>` **(** **)** const |
++------------------------+-------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -65,10 +65,10 @@ Canvas drawing layer. :ref:`CanvasItem<class_canvasitem>` nodes that are direct 
 Member Function Description
 ---------------------------
 
-.. _class_CanvasLayer_get_world_2d:
+.. _class_CanvasLayer_get_canvas:
 
-- :ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const
+- :ref:`RID<class_rid>` **get_canvas** **(** **)** const
 
-Return the :ref:`World2D<class_world2d>` used by this layer.
+Returns the RID of the canvas used by this layer.
 
 

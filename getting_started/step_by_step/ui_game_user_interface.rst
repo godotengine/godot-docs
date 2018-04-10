@@ -483,7 +483,7 @@ Now, select the ``TextureProgress`` node. Drag the ``energy_bar_bg.png``
 file onto the ``Under`` slot and do the same for ``energy_bar_fill.png``
 and drop it onto the ``Progress`` texture slot.
 
-you can resize the node vertically so that its bounding rectangle fits
+You can resize the node vertically so that its bounding rectangle fits
 the gauge. Do the same with the ``Count`` node until its size aligns
 with that of the bar. Because the minimal size of ``TextureProgress`` is
 set based on its textures, you won't be able to downsize the ``Count``
@@ -548,8 +548,8 @@ onto the ``Bars`` container in the scene tree. Do the same for the
 
    The LifeBar and the EnergyBar align automatically
 
-Now, drag and drop the BombCounter and RupeeCounter scenes onto the
-Counters node. They'll resize automatically.
+Now, drag and drop the ``BombCounter.tscn`` and ``RupeeCounter.tscn`` scenes onto the
+``Counters`` node. They'll resize automatically.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
 

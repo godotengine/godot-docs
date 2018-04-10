@@ -44,6 +44,10 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_bus_volume_db<class_AudioServer_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                         |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                  | :ref:`get_device<class_AudioServer_get_device>` **(** **)**                                                                                                                           |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                    | :ref:`get_device_list<class_AudioServer_get_device_list>` **(** **)**                                                                                                                 |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_mix_rate<class_AudioServer_get_mix_rate>` **(** **)** const                                                                                                                 |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_speaker_mode<class_AudioServer_get_speaker_mode>` **(** **)** const                                                                                                         |
@@ -81,6 +85,8 @@ Member Functions
 | void                                         | :ref:`set_bus_solo<class_AudioServer_set_bus_solo>` **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**                                                         |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_bus_volume_db<class_AudioServer_set_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**                                          |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_device<class_AudioServer_set_device>` **(** :ref:`String<class_string>` arg0 **)**                                                                                          |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`swap_bus_effects<class_AudioServer_swap_bus_effects>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**          |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -188,6 +194,14 @@ Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 - :ref:`float<class_float>` **get_bus_volume_db** **(** :ref:`int<class_int>` bus_idx **)** const
 
 Returns the volume of the bus at index ``bus_idx`` in dB.
+
+.. _class_AudioServer_get_device:
+
+- :ref:`String<class_string>` **get_device** **(** **)**
+
+.. _class_AudioServer_get_device_list:
+
+- :ref:`Array<class_array>` **get_device_list** **(** **)**
 
 .. _class_AudioServer_get_mix_rate:
 
@@ -302,6 +316,10 @@ If ``true`` the bus at index ``bus_idx`` is in solo mode.
 - void **set_bus_volume_db** **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**
 
 Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
+
+.. _class_AudioServer_set_device:
+
+- void **set_device** **(** :ref:`String<class_string>` arg0 **)**
 
 .. _class_AudioServer_swap_bus_effects:
 

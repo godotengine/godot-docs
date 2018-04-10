@@ -40,6 +40,10 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>` **(** :ref:`String<class_string>` string **)** const                                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_audio_driver_count<class_OS_get_audio_driver_count>` **(** **)** const                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_audio_driver_name<class_OS_get_audio_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
@@ -107,6 +111,10 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`get_unix_time_from_datetime<class_OS_get_unix_time_from_datetime>` **(** :ref:`Dictionary<class_dictionary>` datetime **)** const                                                                                  |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_user_data_dir<class_OS_get_user_data_dir>` **(** **)** const                                                                                                                                                   |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_video_driver_count<class_OS_get_video_driver_count>` **(** **)** const                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_video_driver_name<class_OS_get_video_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -388,6 +396,14 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
 Returns the scancode of the given string (e.g. "Escape")
 
+.. _class_OS_get_audio_driver_count:
+
+- :ref:`int<class_int>` **get_audio_driver_count** **(** **)** const
+
+.. _class_OS_get_audio_driver_name:
+
+- :ref:`String<class_string>` **get_audio_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
+
 .. _class_OS_get_cmdline_args:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_cmdline_args** **(** **)**
@@ -621,6 +637,14 @@ On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_na
 On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDATA%/[custom_name]`` if ``use_custom_user_dir`` is set.
 
 If the project name is empty, ``user://`` falls back to ``res://``.
+
+.. _class_OS_get_video_driver_count:
+
+- :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
+
+.. _class_OS_get_video_driver_name:
+
+- :ref:`String<class_string>` **get_video_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
 
 .. _class_OS_get_virtual_keyboard_height:
 

@@ -44,7 +44,7 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`count<class_Array_count>` **(** var value **)**                                                                                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`duplicate<class_Array_duplicate>` **(** **)**                                                                                                                             |
+| :ref:`Array<class_array>`  | :ref:`duplicate<class_Array_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                                                                          |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`empty<class_Array_empty>` **(** **)**                                                                                                                                     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -175,9 +175,11 @@ Return the amount of times an element is in the array.
 
 .. _class_Array_duplicate:
 
-- :ref:`Array<class_array>` **duplicate** **(** **)**
+- :ref:`Array<class_array>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
 
-Returns a copy of this ``Array``.
+Returns a copy of the array.
+
+If ``deep`` is ``true``, a deep copy is be performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.
 
 .. _class_Array_empty:
 
