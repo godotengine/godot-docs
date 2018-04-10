@@ -173,7 +173,7 @@ Connections : groups and signals
 
 You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained in this group! This is explained in :ref:`this page <doc_scripting_continued>`.
 
-But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <gdscript.html#signals>`_.
+But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <../scripting/gdscript/gdscript_basics.html#signals>`_.
 
 
 Using Godot in C++
