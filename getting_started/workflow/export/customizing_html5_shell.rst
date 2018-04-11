@@ -5,11 +5,19 @@ Customizing the Web export HTML page
 
 Rather than the default HTML page that comes with the export templates, it is
 also possible to use a custom HTML page. This allows drastic customization of
-the final web presentation and behavior. The path to custom HTML page is
+the final web presentation and behavior. The path to the custom HTML page is
 specified in the export options as ``Html/Custom Html Shell``.
 
 The default HTML page is available in the Godot Engine repository at
 `/mist/dist/html/default.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/default.html>`_.
+Some simple use-cases where customizing the default page is useful include:
+
+ - Loading files from a different directory
+ - Loading a ``.zip`` file instead of a ``.pck`` file as main pack
+ - Loading engine files from a different directory than the main pack file
+ - Loading some extra files before the engine starts, so they are available in
+   the file system later
+ - Passing custom "command line" arguments, e.g. ``-s`` to start a MainLoop script
 
 Placeholder substitution
 ------------------------
@@ -65,6 +73,12 @@ Returns a promise that resolves once the engine is loaded.
 Unloads the module to free memory. This is called automatically once the
 module is instantiated unless explicitly disabled.
 
+``Engine.isWebGLAvailable(majorVersion = 1)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns ``true`` if the given major version of WebGL is available,
+``false`` otherwise. Defaults to ``1`` for WebGL 1.0.
+
 Starting an ``Engine`` instance
 -------------------------------
 
@@ -89,15 +103,19 @@ must be passed from which the engine will be loaded.
 Returns a promise that resolves once the engine is loaded and initialized.
 It can then be started with ``engine.startGame()``
 
-``engine.preloadFile(file, fileName)``
+``engine.preloadFile(file, path)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This loads a file so it is available in the file system once the instance
 is started. This must be called **before** starting the instance.
 
-If ``file`` is a string, the file will be loaded from that URL and the file
-name will be retained. If ``file`` is an ``ArrayBuffer`` or a view on one,
-the buffer will available as a file under the name given by ``fileName``.
+If ``file`` is a string, the file will be loaded from that URL. If ``file`` is
+an ``ArrayBuffer`` or a view on one, the buffer will used as content of the
+file.
+
+If ``path`` is a string, it specifies the path by which the file will be
+available. This is mandatory if ``file`` is not a string.
+Otherwise, the path is derived from the URL of the loaded file.
 
 Returns a promise that resolves once the file is preloaded.
 
@@ -209,7 +227,7 @@ argument specifying the string to print.
 These methods should usually only be used in debug pages. The
 ``$GODOT_DEBUG_ENABLED`` placeholder can be used to check for this.
 
-By default, ``console.log()`` and ``console.warn()`` are used respecively.
+By default, ``console.log()`` and ``console.warn()`` are used respectively.
 
 Accessing the Emscripten ``Module``
 -----------------------------------
