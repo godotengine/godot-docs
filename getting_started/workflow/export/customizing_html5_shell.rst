@@ -104,7 +104,7 @@ Returns a promise that resolves once the engine is loaded and initialized.
 It can then be started with ``engine.startGame()``
 
 ``engine.preloadFile(file, path)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This loads a file so it is available in the file system once the instance
 is started. This must be called **before** starting the instance.
@@ -120,7 +120,7 @@ Otherwise, the path is derived from the URL of the loaded file.
 Returns a promise that resolves once the file is preloaded.
 
 ``engine.start(arg1, arg2, …)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Starts the instance of the engine, handing the passed strings as arguments
 to the ``main()`` function. This allows great control over how the engine
