@@ -10,11 +10,15 @@ In this part we will be giving our player weapons to play with.
 
 .. image:: img/PartTwoFinished.png
 
+.. error:: TODO: redo this image!
+
 By the end of this part, you will have a player that can fire a pistol,
 rifle, and attack using a knife. The player will also now have animations with transitions,
-and the weapons can interact with objects in the environment.
+and the weapons will interact with objects in the environment.
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_one` before moving on to this part of the tutorial.
+          
+          The finished project from :ref:`doc_fps_tutorial_part_one` will be the starting project for part 2
 
 Let's get started!
 
@@ -34,45 +38,45 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
     
     # Structure -> Animation name :[Connecting Animation states]
     var states = {
-    "Idle_unarmed":["Knife_equip", "Pistol_equip", "Rifle_equip", "Idle_unarmed"],
-
-    "Pistol_equip":["Pistol_idle"],
-    "Pistol_fire":["Pistol_idle"],
-    "Pistol_idle":["Pistol_fire", "Pistol_reload", "Pistol_unequip", "Pistol_idle"],
-    "Pistol_reload":["Pistol_idle"],
-    "Pistol_unequip":["Idle_unarmed"],
-
-    "Rifle_equip":["Rifle_idle"],
-    "Rifle_fire":["Rifle_idle"],
-    "Rifle_idle":["Rifle_fire", "Rifle_reload", "Rifle_unequip", "Rifle_idle"],
-    "Rifle_reload":["Rifle_idle"],
-    "Rifle_unequip":["Idle_unarmed"],
-
-    "Knife_equip":["Knife_idle"],
-    "Knife_fire":["Knife_idle"],
-    "Knife_idle":["Knife_fire", "Knife_unequip", "Knife_idle"],
-    "Knife_unequip":["Idle_unarmed"],
+        "Idle_unarmed":["Knife_equip", "Pistol_equip", "Rifle_equip", "Idle_unarmed"],
+        
+        "Pistol_equip":["Pistol_idle"],
+        "Pistol_fire":["Pistol_idle"],
+        "Pistol_idle":["Pistol_fire", "Pistol_reload", "Pistol_unequip", "Pistol_idle"],
+        "Pistol_reload":["Pistol_idle"],
+        "Pistol_unequip":["Idle_unarmed"],
+        
+        "Rifle_equip":["Rifle_idle"],
+        "Rifle_fire":["Rifle_idle"],
+        "Rifle_idle":["Rifle_fire", "Rifle_reload", "Rifle_unequip", "Rifle_idle"],
+        "Rifle_reload":["Rifle_idle"],
+        "Rifle_unequip":["Idle_unarmed"],
+        
+        "Knife_equip":["Knife_idle"],
+        "Knife_fire":["Knife_idle"],
+        "Knife_idle":["Knife_fire", "Knife_unequip", "Knife_idle"],
+        "Knife_unequip":["Idle_unarmed"],
     }
 
     var animation_speeds = {
-    "Idle_unarmed":1,
-
-    "Pistol_equip":1.4,
-    "Pistol_fire":1.8,
-    "Pistol_idle":1,
-    "Pistol_reload":1,
-    "Pistol_unequip":1.4,
-
-    "Rifle_equip":2,
-    "Rifle_fire":6,
-    "Rifle_idle":1,
-    "Rifle_reload":1.45,
-    "Rifle_unequip":2,
-
-    "Knife_equip":1,
-    "Knife_fire":1.35,
-    "Knife_idle":1,
-    "Knife_unequip":1,
+        "Idle_unarmed":1,
+        
+        "Pistol_equip":1.4,
+        "Pistol_fire":1.8,
+        "Pistol_idle":1,
+        "Pistol_reload":1,
+        "Pistol_unequip":1.4,
+        
+        "Rifle_equip":2,
+        "Rifle_fire":6,
+        "Rifle_idle":1,
+        "Rifle_reload":1.45,
+        "Rifle_unequip":2,
+        
+        "Knife_equip":1,
+        "Knife_fire":1.35,
+        "Knife_idle":1,
+        "Knife_unequip":1,
     }
 
     var current_state = null
@@ -82,13 +86,12 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         set_animation("Idle_unarmed")
         connect("animation_finished", self, "animation_ended")
 
-
-
     func set_animation(animation_name):
         if animation_name == current_state:
             print ("AnimationPlayer_Manager.gd -- WARNING: animation is already ", animation_name)
             return true
-
+        
+        
         if has_animation(animation_name) == true:
             if current_state != null:
                 var possible_animations = states[current_state]
@@ -107,6 +110,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
 
 
     func animation_ended(anim_name):
+        
         # UNARMED transitions
         if current_state == "Idle_unarmed":
             pass
@@ -134,14 +138,14 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         elif current_state == "Rifle_equip":
             set_animation("Rifle_idle")
         elif current_state == "Rifle_idle":
-            pass
+            pass;
         elif current_state == "Rifle_fire":
             set_animation("Rifle_idle")
         elif current_state == "Rifle_unequip":
             set_animation("Idle_unarmed")
         elif current_state == "Rifle_reload":
             set_animation("Rifle_idle")
-
+        
     func animation_callback():
         if callback_function == null:
             print ("AnimationPlayer_Manager.gd -- WARNING: No callback function for the animation to call!")
@@ -168,7 +172,7 @@ state ``Idle_unarmed``, we can only transition to ``Knife_equip``, ``Pistol_equi
 ``Idle_unarmed``.
 
 If we try to transition to a state that is not included in our possible transitions states,
-then we get a warning message and the animation does not change. We will also automatically
+then we get a warning message and the animation does not change. We can also automatically
 transition from some states into others, as will be explained further below in ``animation_ended``
 
 .. note:: For the sake of keeping this tutorial simple we are not using a 'proper'
@@ -182,10 +186,9 @@ transition from some states into others, as will be explained further below in `
           In a future part of this tutorial series we may revise this script to include a proper state machine.
 
 ``animation_speeds`` is how fast each animation will play. Some of the animations are a little slow
-and in an effort to make everything smooth, we need to play them at faster speeds than some
-of the others.
+and in an effort to make everything look smooth, we need to play them at faster speeds.
 
--- note:: Notice that all of the firing animations are faster than their normal speed. Remember this for later!
+.. note:: Notice that all of the firing animations are faster than their normal speed. Remember this for later!
 
 ``current_state`` will hold the name of the animation state we are currently in.
 
@@ -195,9 +198,13 @@ effectively allowing us to call a function from another script, which is how we 
 
 _________
 
-Now lets look at ``_ready``. First we are setting our animation to ``Idle_unarmed``, using the ``set_animation`` function,
-so we for sure start in that animation. Next we connect the ``animation_finished`` signal to this script and assign
-it to call ``animation_ended``.
+Now lets look at ``_ready``.
+
+First we are setting our animation to ``Idle_unarmed`` using the ``set_animation`` function,
+so we for sure start in that animation.
+
+Next we connect the ``animation_finished`` signal to this script and assign it to call ``animation_ended``.
+This means whenever an animation is finished, ``animation_ended`` will be called.
 
 _________
 
@@ -207,8 +214,8 @@ Lets look at ``set_animation`` next.
 animation state *if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 
-First we check if the passed in animation is the same as the animation state we are currently in.
-If it is, then we write a warning to the console and return ``true``.
+To start we check if the passed in animation is the same as the animation state we are currently in.
+If they are the same, then we write a warning to the console and return ``true``.
 
 Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the passed in animation using ``has_animation``. If it does not, we return ``false``.
 
@@ -217,9 +224,9 @@ set ``current_state`` to the passed in animation and tell :ref:`AnimationPlayer 
 a blend time of ``-1`` and at the speed set in ``animation_speeds`` and then we return ``true``.
 
 If we have a state in ``current_state``, then we get all of the possible states we can transition to.
-If the animation name is in the array of possible transitions, then we set ``current_state`` to the passed
+If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
 in animation, tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in ``animation_speeds``
-and then we return ``true``.
+and return ``true``.
 
 _________
 
@@ -233,7 +240,7 @@ check for every possible animation state. If we need to, we transition into anot
 
 .. warning:: If you are using your own animated models, make sure that none of the animations are set
              to loop. Looping animations do not send the ``animation_finished`` signal when they reach
-             the end of the animation and are about to loop.
+             the end of the animation and are about to loop again.
 
 .. note:: the transitions in ``animation_ended`` ideally would be part of the data in ``states``, but in
           an effort to make the tutorial easier to understand, we'll just hard code each state transition
@@ -255,7 +262,7 @@ Now that we have a working animation manager, we need to call it from our player
 Before that though, we need to set some animation callback tracks in our firing animations.
 
 Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`AnimationPlayer <class_AnimationPlayer>` node
-(``Player`` -> ``Rotation_helper`` -> ``Model`` -> ``AnimationPlayer``).
+(``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
 
 We need to attach a function track to three of our animations: The firing animation for the pistol, rifle, and knife.
 Let's start with the pistol. Click the animation drop down list and select "Pistol_fire".
@@ -442,10 +449,9 @@ Here's the script that will control our bullet:
 
 ::
 
-    extends Spatial
 
-    const BULLET_SPEED = 80
-    const BULLET_DAMAGE = 15
+    var BULLET_SPEED = 70
+    var BULLET_DAMAGE = 15
 
     const KILL_TIMER = 4
     var timer = 0
@@ -453,15 +459,14 @@ Here's the script that will control our bullet:
     var hit_something = false
 
     func _ready():
-        get_node("Area").connect("body_entered", self, "collided")
-        set_physics_process(true)
-
+        $Area.connect("body_entered", self, "collided")
+        
 
     func _physics_process(delta):
         var forward_dir = global_transform.basis.z.normalized()
         global_translate(forward_dir * BULLET_SPEED * delta)
-
-        timer += delta;
+        
+        timer += delta
         if timer >= KILL_TIMER:
             queue_free()
 
@@ -470,7 +475,7 @@ Here's the script that will control our bullet:
         if hit_something == false:
             if body.has_method("bullet_hit"):
                 body.bullet_hit(BULLET_DAMAGE, self.global_transform.origin)
-
+        
         hit_something = true
         queue_free()
 
@@ -491,13 +496,18 @@ With the exception of ``timer`` and ``hit_something``, all of these variables
 change how the bullet interacts with the world.
 
 .. note:: The reason we are using a kill timer is so we do not have a case where we
-          get a bullet traveling forever. By using a kill timer, we can assure that
+          get a bullet travelling forever. By using a kill timer, we can assure that
           no bullets will just travel forever and consume resources.
+
+.. note:: As in part 1, we have a couple all uppercase global variables. The reason behind this is the same
+          as the reason given in part 1: We want to treat these variables like constants, but we want to be
+          able to change them. In this case we will later need to change the damage and speed of these bullets,
+          so we need them to be variables and not constants.
 
 _________
 
 In ``_ready`` we set the area's ``body_entered`` signal to ourself so that it calls
-the ``collided`` function. Then we set ``_physics_process`` to ``true``.
+the ``collided`` function when a body enters the area.
 
 _________
 
@@ -513,16 +523,15 @@ _________
 
 In ``collided`` we check if we've hit something yet or not.
 
-Remember that ``collided`` is
-only called when a body has entered the :ref:`Area <class_Area>` node. If we have not already collided with
-something, we then proceed to check if the body we've collided with has a function/method
-called ``bullet_hit``. If it does, we call it and pass in our damage and our position.
+Remember that ``collided`` is only called when a body has entered the :ref:`Area <class_Area>` node.
+If we have not already collided with something, we then proceed to check if the body we've collided
+with has a function/method called ``bullet_hit``. If it does, we call it and pass in our damage and our position.
 
 .. note:: in ``collided``, the passed in body can be a :ref:`StaticBody <class_StaticBody>`,
           :ref:`RigidBody <class_RigidBody>`, or :ref:`KinematicBody <class_KinematicBody>`
 
-Then we set ``hit_something`` to ``true`` because regardless of whether or not the body
-the bullet collided with has the ``bullet_hit`` function/method, it has hit something.
+We set ``hit_something`` to ``true`` because regardless of whether or not the body
+the bullet collided with has the ``bullet_hit`` function/method, it has hit something and so we need to not hit anything else.
 
 Then we free the bullet using ``queue_free``.
 
@@ -540,8 +549,8 @@ _________
 Before we start programming the player again, let's take a quick look at ``Player.tscn``.
 Open up ``Player.tscn`` again.
 
-Expand ``Rotation_helper`` and notice how it has two nodes: ``Gun_fire_points`` and
-``Gun_aim_point``.
+Expand ``Rotation_Helper`` and notice how it has two nodes: ``Gun_Fire_Points`` and
+``Gun_Aim_Point``.
 
 ``Gun_aim_point`` is the point that the bullets will be aiming at. Notice how it
 is lined up with the center of the screen and pulled a distance forward on the Z
@@ -551,11 +560,11 @@ with as it goes along.
 .. note:: There is a invisible mesh instance for debugging purposes. The mesh is
           a small sphere that visually shows where the bullets will be aiming at.
 
-Open up ``Gun_fire_points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
+Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
 weapon.
 
-Open up ``Rifle_point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
-we will be sending the raycasts for our rilfe's bullets.
+Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
+we will be sending the raycasts for our rifle's bullets.
 The length of the raycast will dictate how far our the bullets will travel.
 
 We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet because
@@ -568,12 +577,12 @@ we could run into performance issues on older machines.
           and scrubbing through the timeline. The point for each weapon should mostly line
           up with the end of each weapon.
 
-Open up ``Knife_point`` and you'll find a :ref:`Area <class_Area>` node. We are using a :ref:`Area <class_Area>` for the knife
+Open up ``Knife_Point`` and you'll find a :ref:`Area <class_Area>` node. We are using a :ref:`Area <class_Area>` for the knife
 because we only care for all of the bodies close to us, and because our knife does
 not fire into space. If we were making a throwing knife, we would likely spawn a bullet
 object that looks like a knife.
 
-Finally, we have ``Pistol point``. This is the point where we will be creating/instancing
+Finally, we have ``Pistol_Point``. This is the point where we will be creating/instancing
 our bullet objects. We do not need any additional nodes here, as the bullet handles all
 of its own collision detection.
 
@@ -584,9 +593,12 @@ let's start working on making them work.
          than using a single :ref:`Label <class_Label>`, we will not be touching any of those nodes.
          Check :ref:`doc_design_interfaces_with_the_control_nodes` for a tutorial on using GUI nodes.
 
-         The GUI provided in this tutorial is *very* basic. Maybe in a later part we will
-         revise the GUI, but for now we are going to just use this GUI as it will serve our needs for now.
+         
+Creating the weapons
+--------------------
 
+.. error:: TODO: add this!
+         
 Making the weapons work
 -----------------------
 
@@ -597,29 +609,29 @@ First lets start by adding some global variables we'll need for the weapons:
 ::
 
     # Place before _ready
-    var animation_manager;
-
-    var current_gun = "UNARMED"
-    var changing_gun = false
-
-    var bullet_scene = preload("Bullet_Scene.tscn")
+    var animation_manager
+    
+    var current_weapon_name = "UNARMED"
+    var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null}
+    const WEAPON_NUMBER_TO_NAME = {0:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE"}
+    const WEAPON_NAME_TO_NUMBER = {"UNARMED":0, "KNIFE":1, "PISTOL":2, "RIFLE":3}
+    var changing_weapon = false
+    var changing_weapon_name = "UNARMED"
 
     var health = 100
-
-    const RIFLE_DAMAGE = 4
-    const KNIFE_DAMAGE = 40
-
+    
     var UI_status_label
 
 Let's go over what these new variables will do:
 
 - ``animation_manager``: This will hold the :ref:`AnimationPlayer <class_AnimationPlayer>` node and its script, which we wrote previously.
-- ``current_gun``: This is the name of the gun we are currently using. It has four possible values: ``UNARMED``, ``KNIFE``, ``PISTOL``, and ``RIFLE``.
-- ``changing_gun``: A boolean to track whether or not we are changing guns/weapons.
-- ``bullet_scene``: The bullet scene we worked on earlier, ``Bullet_Scene.tscn``. We need to load it here so we can create/spawn it when the pistol fires
+- ``current_weapon_name``: The name of the weapon we are currently using. It has four possible values: ``UNARMED``, ``KNIFE``, ``PISTOL``, and ``RIFLE``.
+- ``weapons``: A dictionary that will hold all of the weapon nodes.
+- ``WEAPON_NUMBER_TO_NAME``: A dictionary allowing us to convert from a weapon's number to its name. We'll use this for changing weapons.
+- ``WEAPON_NAME_TO_NUMBER``: A dictionary allowing us to convert from a weapon's name to its number. We'll use this for changing weapons.
+- ``changing_weapon``: A boolean to track whether or not we are changing guns/weapons.
+- ``changing_weapon_name``: The name of the weapon we want to change to.
 - ``health``: How much health our player has. In this part of the tutorial we will not really be using it.
-- ``RIFLE_DAMAGE``: How much damage a single rifle bullet causes.
-- ``KNIFE_DAMAGE``: How much damage a single knife stab/swipe causes.
 - ``UI_status_label``: A label to show how much health we have, and how much ammo we have both in our gun and in reserves.
 
 _________
@@ -629,31 +641,32 @@ Next we need to add a few things in ``_ready``. Here's the new ``_ready`` functi
 ::
 
     func _ready():
-        camera = get_node("Rotation_helper/Camera")
-        camera_holder = get_node("Rotation_helper")
-
-        animation_manager = get_node("Rotation_helper/Model/AnimationPlayer")
+        camera = $Rotation_Helper/Camera
+        rotation_helper = $Rotation_Helper
+        
+        animation_manager = $Rotation_Helper/Model/Animation_Player
         animation_manager.callback_function = funcref(self, "fire_bullet")
-
-        set_physics_process(true)
-
+        
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-        set_process_input(true)
-
-        # Make sure the bullet spawn point, the raycast, and the knife area are all aiming at the center of the screen
-        var gun_aim_point_pos = get_node("Rotation_helper/Gun_aim_point").global_transform.origin
-        get_node("Rotation_helper/Gun_fire_points/Pistol_point").look_at(gun_aim_point_pos, Vector3(0, 1, 0))
-        get_node("Rotation_helper/Gun_fire_points/Rifle_point").look_at(gun_aim_point_pos, Vector3(0, 1, 0))
-        get_node("Rotation_helper/Gun_fire_points/Knife_point").look_at(gun_aim_point_pos, Vector3(0, 1, 0))
-
-        # Because we have the camera rotated by 180 degrees, we need to rotate the points around by 180
-        # degrees on their local Y axis because otherwise the bullets will fire backwards
-        get_node("Rotation_helper/Gun_fire_points/Pistol_point").rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
-        get_node("Rotation_helper/Gun_fire_points/Rifle_point").rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
-        get_node("Rotation_helper/Gun_fire_points/Knife_point").rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
-
-        UI_status_label = get_node("HUD/Panel/Gun_label")
-        flashlight = get_node("Rotation_helper/Flashlight")
+        
+        weapons["KNIFE"] = $Rotation_Helper/Gun_Fire_Points/Knife_Point
+        weapons["PISTOL"] = $Rotation_Helper/Gun_Fire_Points/Pistol_Point
+        weapons["RIFLE"] = $Rotation_Helper/Gun_Fire_Points/Rifle_Point
+        
+        var gun_aim_point_pos = $Rotation_Helper/Gun_Aim_Point.global_transform.origin
+        
+        for weapon in weapons:
+            var weapon_node = weapons[weapon]
+            if weapon_node != null:
+                weapon_node.player_node = self
+                weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
+                weapon_node.rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
+        
+        current_weapon_name = "UNARMED"
+        changing_weapon_name = "UNARMED"
+        
+        UI_status_label = $HUD/Panel/Gun_label
+        flashlight = $Rotation_Helper/Flashlight
 
 Let's go over what's changed.
 
@@ -661,188 +674,111 @@ First we get the :ref:`AnimationPlayer <class_AnimationPlayer>` node and assign 
 to a :ref:`FuncRef <class_FuncRef>` that will call the player's ``fire_bullet`` function. Right now we haven't written our fire_bullet function,
 but we'll get there soon.
 
-Then we get all of the weapon points and call each of their ``look_at``.
-This will make sure they all are facing the gun aim point, which is in the center of our camera at a certain distance back.
+Next we get all of the weapon nodes and assign them to ``weapons``. This will allow us to access the weapon nodes only with their name
+(``KNIFE``, ``PISTOL``, or ``RIFLE``).
 
-Next we rotate all of those weapon points by ``180`` degrees on their ``Y`` axis. This is because our camera is pointing backwards.
-If we did not rotate all of these weapon points by ``180`` degrees, all of the weapons would fire backwards at ourselves.
+We then get ``Gun_Aim_Point``'s global position so we can rotate our weapons to aim at it.
+
+Then we go through each weapon in ``weapons``.
+
+We first get the weapon node. If the weapon node is not ``null``, we then set it's ``player_node`` variable to ourself.
+Then we have it look at ``gun_aim_point_pos``, and then rotate it by ``180`` degrees on the ``Y`` axis.
+
+.. note:: We rotate all of those weapon points by ``180`` degrees on their ``Y`` axis because our camera is pointing backwards.
+          If we did not rotate all of these weapon points by ``180`` degrees, all of the weapons would fire backwards.
+
+Then we set ``current_weapon_name`` and ``changing_weapon_name`` to ``UNARMED``.
 
 Finally, we get the UI :ref:`Label <class_Label>` from our HUD.
 
 _________
 
-Lets add a few things to ``_physics_process`` so we can fire our weapons. Here's the new code:
+Lets add a new function call to ``_physics_process`` so we can change weapons. Here's the new code:
 
 ::
 
     func _physics_process(delta):
-        var dir = Vector3()
-        var cam_xform = camera.get_global_transform()
-    
-    
-        if Input.is_action_pressed("movement_forward"):
-            dir += -cam_xform.basis.z.normalized()
-        if Input.is_action_pressed("movement_backward"):
-            dir += cam_xform.basis.z.normalized()
-        if Input.is_action_pressed("movement_left"):
-            dir += -cam_xform.basis.x.normalized()
-        if Input.is_action_pressed("movement_right"):
-            dir += cam_xform.basis.x.normalized()
-    
-    
-        if is_on_floor():
-            if Input.is_action_just_pressed("movement_jump"):
-                vel.y = JUMP_SPEED
-    
-        if Input.is_action_just_pressed("flashlight"):
-            if flashlight.is_visible_in_tree():
-                flashlight.hide()
-            else:
-                flashlight.show()
-    
-        if Input.is_action_pressed("movement_sprint"):
-            is_sprinting = true;
-        else:
-            is_sprinting = false;
-    
-        dir.y = 0
-        dir = dir.normalized()
-    
-        var grav = norm_grav
-    
-        vel.y += delta*grav
-    
-        var hvel = vel
-        hvel.y = 0
-    
-        var target = dir
-        if is_sprinting:
-            target *= MAX_SPRINT_SPEED
-        else:
-            target *= MAX_SPEED
-    
-        var accel
-        if dir.dot(hvel) > 0:
-            if is_sprinting:
-                accel = SPRINT_ACCEL
-            else:
-                accel = ACCEL
-        else:
-            accel = DEACCEL
-    
-        hvel = hvel.linear_interpolate(target, accel*delta)
-        vel.x = hvel.x
-        vel.z = hvel.z
-        vel = move_and_slide(vel,Vector3(0,1,0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-    
-    
-        if Input.is_action_just_pressed("ui_cancel"):
-            if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-                Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-            else:
-                Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-    
-        # NEW CODE
-        if changing_gun == false:
-            if Input.is_key_pressed(KEY_1):
-                current_gun = "UNARMED"
-                changing_gun = true
-            elif Input.is_key_pressed(KEY_2):
-                current_gun = "KNIFE"
-                changing_gun = true
-            elif Input.is_key_pressed(KEY_3):
-                current_gun = "PISTOL"
-                changing_gun = true
-            elif Input.is_key_pressed(KEY_4):
-                current_gun = "RIFLE"
-                changing_gun = true
-    
-        if changing_gun == true:
-            if current_gun != "PISTOL":
-                if animation_manager.current_state == "Pistol_idle":
-                    animation_manager.set_animation("Pistol_unequip")
-            if current_gun != "RIFLE":
-                if animation_manager.current_state == "Rifle_idle":
-                    animation_manager.set_animation("Rifle_unequip")
-            if current_gun != "KNIFE":
-                if animation_manager.current_state == "Knife_idle":
-                    animation_manager.set_animation("Knife_unequip")
-    
-            if current_gun == "UNARMED":
-                if animation_manager.current_state == "Idle_unarmed":
-                    changing_gun = false
-    
-        elif current_gun == "KNIFE":
-            if animation_manager.current_state == "Knife_idle":
-                changing_gun = false
-            if animation_manager.current_state == "Idle_unarmed":
-                animation_manager.set_animation("Knife_equip")
-    
-        elif current_gun == "PISTOL":
-            if animation_manager.current_state == "Pistol_idle":
-                changing_gun = false
-            if animation_manager.current_state == "Idle_unarmed":
-                animation_manager.set_animation("Pistol_equip")
-    
-        elif current_gun == "RIFLE":
-            if animation_manager.current_state == "Rifle_idle":
-                changing_gun = false
-            if animation_manager.current_state == "Idle_unarmed":
-                animation_manager.set_animation("Rifle_equip")
-    
-    
-        # Firing the weapons
-        if Input.is_action_pressed("fire"):
-            if current_gun == "PISTOL":
-                if animation_manager.current_state == "Pistol_idle":
-                    animation_manager.set_animation("Pistol_fire")
-            
-            elif current_gun == "RIFLE":
-                if animation_manager.current_state == "Rifle_idle":
-                    animation_manager.set_animation("Rifle_fire")
-            
-            elif current_gun == "KNIFE":
-                if animation_manager.current_state == "Knife_idle":
-                    animation_manager.set_animation("Knife_fire")
-    
-        # HUD (UI)
-        UI_status_label.text = "HEALTH: " + str(health)
+        process_input(delta)
+        process_movement(delta)
+        process_changing_weapons(delta)
 
 
-Lets go over it one chunk at a time:
+Now we will call ``process_changing_weapons``.
 
 _________
 
-First we have an if check to see if ``changing_gun`` is equal to ``false``. If it is, we
-then check to see if the number keys ``1`` through ``4`` are pressed. If one of the keys
-are pressed, we set current gun to the name of each weapon assigned to each key and set
-``changing_gun`` to ``true``.
+Now let's add all of the player input code for the weapons in ``process_input``. Add the following code:
 
-Then we check if ``changing_gun`` is ``true``. If it is ``true``, we then go through a series of checks.
-The first set of checks is checking if we are in a idle animation that is not the weapon/gun we are trying
-to change to, as then we'd be stuck in a loop.
+::
+    
+    # ----------------------------------
+    # Changing weapons.
+    var weapon_change_number = WEAPON_NAME_TO_NUMBER[current_weapon_name]
 
-Then we check if we are in an unarmed state. If we are and the newly selected 'weapon'
-is ``UNARMED``, then we set ``changing_gun`` to ``false``.
+    if Input.is_key_pressed(KEY_1):
+        weapon_change_number = 0
+    if Input.is_key_pressed(KEY_2):
+        weapon_change_number = 1
+    if Input.is_key_pressed(KEY_3):
+        weapon_change_number = 2
+    if Input.is_key_pressed(KEY_4):
+        weapon_change_number = 3
 
-If we are trying to change to any of the other weapons, we first check if we are in the
-desired weapon's idle state. If we are, then we've successfully changed weapons and set
-``changing_gun`` to false.
+    if Input.is_action_just_pressed("shift_weapon_positive"):
+        weapon_change_number += 1
+    if Input.is_action_just_pressed("shift_weapon_negative"):
+        weapon_change_number -= 1
 
-If we are not in the desired weapon's idle state, we then check if we are in the idle unarmed state.
-This is because all unequip animations transition to idle unarmed, and because we can transition to
-any equip animation from idle unarmed.
+    weapon_change_number = clamp(weapon_change_number, 0, WEAPON_NUMBER_TO_NAME.size()-1)
 
-If we are in the idle unarmed state, we set the animation to the equip animation for the
-desired weapon. Once the equip animation is finished, it will change to the idle state for that
-weapon, which will pass the ``if`` check above.
+    if changing_weapon == false:
+        if WEAPON_NUMBER_TO_NAME[weapon_change_number] != current_weapon_name:
+            changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
+            changing_weapon = true
+    # ----------------------------------
+    
+    # ----------------------------------
+    # Firing the weapons
+    if Input.is_action_pressed("fire"):
+        if changing_weapon == false:
+            var current_weapon = weapons[current_weapon_name]
+            if current_weapon != null:
+                if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
+                    animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
+	# ----------------------------------
+
+Let's go over the additions, starting with how we're changing weapons.
+
+First we get the current weapon's number and assign it to ``weapon_change_number``.
+
+Then we check to see if any of the number keys (keys 1-4) are pressed. If they are, we set
+``weapon_change_number`` to the value mapped at that key.
+
+.. note:: The reason key 1 is mapped to ``0`` is because the first element in a list is mapped to zero, not one. Most list/array accessors
+          in most programming languages start at ``0`` instead of ``1``. See https://en.wikipedia.org/wiki/Zero-based_numbering for more information.
+
+Next we check to see if ``shift_weapon_positive`` or ``shift_weapon_negative`` is pressed. If one of them are, we add/subtract ``1`` from
+``weapon_change_number``.
+
+Because we may have shifted ``weapon_change_number`` outside of the number of weapons we have, we clamp it so it cannot exceed the maximum number of weapons we have
+and has to be ``0`` or more.
+
+Then we check to make sure we are not already changing weapons. If we are not, we then check to see if the weapon we want to change to
+is a new weapon and not the one we are currently using. If the weapon we're wanting to change to is a new weapon, we then set ``changing_weapon_name`` to
+the weapon at ``weapon_change_number`` and set ``changing_weapon`` to true.
+
+For firing the weapon we first check to see if the ``fire`` action is pressed.
+Then we check to make sure we are not changing weapons.
+Next we get the weapon node for the current weapon.
+
+If the current weapon node does not equal null, and we are in it's ``IDLE_ANIM_NAME`` state, we set our animation
+to the current weapon's ``FIRE_ANIM_NAME``.
 
 _________
 
-For firing the weapons we first check if the ``fire`` action is pressed or not.
-If the fire action is pressed, we then check which weapon we are using.
+Lets add ``process_changing_weapons`` next.
 
-If we are in a weapon's idle state, we then call set the animation to the weapon's fire animation.
+.. error:: TODO: add this!
 
 _________
 
@@ -854,42 +790,13 @@ points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` func
 ::
 
     func fire_bullet():
-        if changing_gun == true:
+        if changing_weapon == true:
             return
-
-        # Pistol bullet handling: Spawn a bullet object!
-        if current_gun == "PISTOL":
-            var clone = bullet_scene.instance()
-            var scene_root = get_tree().root.get_children()[0]
-            scene_root.add_child(clone)
-
-            clone.global_transform = get_node("Rotation_helper/Gun_fire_points/Pistol_point").global_transform
-            # The bullet is a little too small (by default), so let's make it bigger!
-            clone.scale = Vector3(4, 4, 4)
-
-        # Rifle bullet handeling: Send a raycast!
-        elif current_gun == "RIFLE":
-            var ray = get_node("Rotation_helper/Gun_fire_points/Rifle_point/RayCast")
-            ray.force_raycast_update()
-
-            if ray.is_colliding():
-                var body = ray.get_collider()
-                if body.has_method("bullet_hit"):
-                    body.bullet_hit(RIFLE_DAMAGE, ray.get_collision_point())
-
-        # Knife bullet(?) handeling: Use an area!
-        elif current_gun == "KNIFE":
-            var area = get_node("Rotation_helper/Gun_fire_points/Knife_point/Area")
-            var bodies = area.get_overlapping_bodies()
-
-            for body in bodies:
-                if body.has_method("bullet_hit"):
-                    body.bullet_hit(KNIFE_DAMAGE, area.global_transform.origin)
+        
+        weapons[current_weapon_name].fire_weapon()
 
 
 Lets go over what this function is doing:
-
-_________
 
 First we check if we are changing weapons or not. If we are changing weapons, we do not want shoot so we just ``return``.
 
@@ -897,7 +804,11 @@ First we check if we are changing weapons or not. If we are changing weapons, we
          because we are only interested in not running the rest of the code, and because we are not looking for a returned
          variable either when we call this function.
 
-Next we check which weapon we are using.
+Then we just tell the current weapon we are using to fire by calling its ``fire_weapon`` function.
+
+_______
+
+.. error:: Remove the section below, after salvaging any useful material
 
 If we are using a pistol, we first create a ``Bullet_Scene.tscn`` instance and assign it to
 a variable named ``clone``. Then we get the root node in the :ref:`SceneTree <class_SceneTree>`, which happens to be a :ref:`Viewport <class_Viewport>`.
@@ -913,7 +824,6 @@ talked about earlier.
 
 Finally, we set the scale a little bigger because the bullet normally is too small to see.
 
-_______
 
 For the rifle, we first get the :ref:`Raycast <class_Raycast>` node and assign it to a variable called ``ray``.
 Then we call :ref:`Raycast <class_Raycast>`'s ``force_raycast_update`` function.
@@ -930,7 +840,6 @@ in ``RIFLE_DAMAGE`` and the position where the :ref:`Raycast <class_Raycast>` co
          the other animations? By changing the firing animation speeds, you can change how
          fast the weapon fires bullets!
 
-_______
 
 For the knife we first get the :ref:`Area <class_Area>` node and assign it to a variable named ``area``.
 Then we get all of the collision bodies inside the :ref:`Area <class_Area>`. We loop through each one
@@ -962,10 +871,10 @@ Now we just need to add this code:
         pass
 
     func bullet_hit(damage, bullet_hit_pos):
-        var direction_vect = self.global_transform.origin - bullet_hit_pos
+        var direction_vect = global_transform.origin - bullet_hit_pos
         direction_vect = direction_vect.normalized()
 
-        self.apply_impulse(bullet_hit_pos, direction_vect * damage)
+        apply_impulse(bullet_hit_pos, direction_vect * damage)
 
 
 Lets go over how ``bullet_hit`` works:
@@ -1000,3 +909,9 @@ With that done, go give your guns a whirl! You should now be able to fire as man
 they will move in response to the bullets colliding into them.
 
 In :ref:`doc_fps_tutorial_part_three`, we will add ammo to the guns, as well as some sounds!
+
+.. warning:: If you ever get lost, be sure to read over the code again!
+
+             You can download the finished project for this part **here**
+             
+             TODO: Add the finished project for part 2!
