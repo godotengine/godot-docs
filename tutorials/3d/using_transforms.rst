@@ -33,7 +33,7 @@ Axis Order
 ==========
 
 The main reason for this is that there isn't a *unique* way to construct an orientation from the angles. There isn't a standard mathematical function that
-takes all the angles togehter and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
+takes all the angles together and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
 by angle, in an *arbitrary order*.
 
 This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything really works,
