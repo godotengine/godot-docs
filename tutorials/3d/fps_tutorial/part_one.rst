@@ -22,21 +22,21 @@ Throughout the course of this tutorial series, we will cover how:
 - - Move either with the keyboard and mouse, or with a joypad
 - To make a simple animation state machine for handling animation transitions.
 - To add three weapons to the first person character, each using a different way to handle bullet collisions:
-- - A knife (using a :ref:`Area <class_Area>` node)
+- - A knife (using an :ref:`Area <class_Area>`)
 - - A pistol (Bullet scenes)
-- - A rifle (using a :ref:`Raycast <class_Raycast>` node)
+- - A rifle (using a :ref:`Raycast <class_Raycast>`)
 - To add two different types of grenades to the first person character:
 - - A normal grenade
 - - A sticky grenade
 - To add ammo and reloading for all weapons that consume ammo.
 - To add ammo and health pick ups
 - - In two sizes: big and small
-- To add a automatic turret
+- To add an automatic turret
 - - That can fire using bullet objects or a :ref:`Raycast <class_Raycast>`
 - To add targets that break when they've taken enough damage
 - To add sounds that play when the guns fire.
 - To add a simple main menu:
-- - With a options menu for changing how the game runs
+- - With an options menu for changing how the game runs
 - - With a level select screen
 - To add a universal pause menu we can access anywhere
 
@@ -251,12 +251,13 @@ Add the following code to ``Player.gd``:
 
 This is a lot of code, so let's break it down function by function:
 
-.. tip:: While copy and pasting code is ill advised as you can learn a lot from manually typing the code in, you can
-         copy and paste the code from this page into the script editor.
+.. tip:: While copy and pasting code is ill advised, as you can learn a lot from manually typing the code in, you can
+         copy and paste the code from this page directly into the script editor.
          
          If you do this, all of the code copied will be using spaces instead of tabs.
-         To convert it to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
-         This will convert all of the spaces into tabs. You can select "Convert Indent To Spaces" to convert it back into spaces.
+         
+         To convert the spaces to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
+         This will convert all of the spaces into tabs. You can select "Convert Indent To Spaces" to convert t back into spaces.
 
 _________
 
@@ -634,7 +635,10 @@ You should now be able to sprint if you press the ``shift`` button, and can togg
 
 Go give it a whirl! You can change the sprint related global variables to make the player faster or slower when sprinting!
 
-.. error:: TODO: the picture used in the part overview here!
+Final notes
+-----------
+
+.. image:: img/PartOneFinished.png
 
 Phew! That was a lot of work. Now you have a fully working first person character!
 
