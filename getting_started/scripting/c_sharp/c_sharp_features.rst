@@ -57,8 +57,10 @@ otherwise it returns true.
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
-Signals
--------
+.. _c_sharp_signals:
+
+C# Signals
+----------
 
 For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
 
@@ -103,6 +105,38 @@ Emitting signals is done with the ``EmitSignal`` method.
     }
 
 Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
+
+It is possible to bind values when establishing a connection by passing an object array.
+
+.. code-block:: csharp
+
+    public int Value { get; private set; } = 0;
+
+    private void ModifyValue(int modifier)
+    {
+        Value += modifier;
+    }
+
+    public void SomeFunction()
+    {
+        var plusButton = (Button)GetNode("PlusButton");
+        var minusButton = (Button)GetNode("MunusButton");
+        
+        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 })
+        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 })
+    }
+
+Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
+Consequently any ``Node`` or ``Reference`` will be compatible automatically but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
+
+.. code-block:: csharp
+
+    public class DataObject : Godot.Object
+    {
+        public string Field1 { get; set; }
+        public string Field2 { get; set; }
+    }
+
 
 Finally, signals can be created by calling ``AddUserSignal``, but be aware that it should be executed before any use of said signals (with ``Connect`` or ``EmitSignal``).
 
