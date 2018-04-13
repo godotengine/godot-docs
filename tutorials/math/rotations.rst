@@ -315,9 +315,9 @@ and each "half" goes to one of the :math:`U` s on each side of the modified/gene
 
 .. math::
 
-	\frac{(R \boldsymbol v) \cdot \boldsymbol \sigma + I |\boldsymbol v|}{2} = U \left(\frac{\boldsymbol v \cdot \boldsymbol \sigma + I |\boldsymbol v|}{2}\right) U^\dagger
+	r = |\psi'\rangle \langle \psi'| = \frac{(R \boldsymbol v) \cdot \boldsymbol \sigma + I |\boldsymbol v|}{2} = r U |\psi\rangle \langle \psi| U^\dagger = U \left(\frac{\boldsymbol v \cdot \boldsymbol \sigma + I |\boldsymbol v|}{2}\right) U^\dagger
 
-so everything is compatible, and :math:`U |\psi(\boldsymbol v)\rangle = |\psi(R \boldsymbol v)\rangle` is satisfied. This parametrization of an SU(2) vector is typically done in spherical coordinates :math:`\theta,\phi` (for :math:`r=1`, because state vectors are normalized in quantum mechanics), and the sphere is called `Bloch sphere <https://en.wikipedia.org/wiki/Bloch_sphere>`_).
+so everything is compatible, and :math:`|\psi'\rangle = U |\psi(\boldsymbol v)\rangle = |\psi(R \boldsymbol v)\rangle` is satisfied. This parametrization of an SU(2) vector is typically done in spherical coordinates :math:`\theta,\phi` (for :math:`r=1`, because state vectors are normalized in quantum mechanics), and the sphere is called `Bloch sphere <https://en.wikipedia.org/wiki/Bloch_sphere>`_).
 
 Parametrization of rotations
 ----------------------------
@@ -391,8 +391,20 @@ Because it means that you a smooth walk (flight?) inside the sphere doesn't alwa
 Axis-angle parametrization has singularities in the poles (the azimuthal angle is-ill defined) but that's fine because that's exactly how SO(3) is, after all, axis-angle is how Lie groups are parametrized. Euler angle parametrization also has singularities corresponding to points when two gimbals are aligned, but those singularities are different from SO(3)'s poles.
 
 
+The root of the problem isn't just the fact that Euler angle parametrization has singularties, just as axis-angle does which is fine on its own, but that those singularities don't match with SO(3)'s singularities.
+
 
 This is the mathematical description of the gimbal-lock problem.
+
+Here's an example of gimbal lock in Euler angle parametrization. Suppose that one of the rotations is :math:`\pi/2`, let's say the middle one. By inserting an identity operator :math:`X(-\pi/2) X(\pi/2)` to the right side and rearranging terms, we can show that
+
+.. math::
+
+    R = Y(\varphi_y) X(\pi/2) Z (\varphi_z) = Y(\varphi_y) [X(\pi/2) Z (\varphi_z) X(-\pi/2)] X(\pi/2) = Y(\varphi_y) Y(-\varphi_z) X(\pi/2) = Y(\varphi_y-\varphi_z) X(\pi/2),
+
+(see the section about active transformation below about how a rotation matrix itself transforms, which also explains why and how a Z rotation turns into a Y rotation when surrounded by :math:`\pi/2` and :math:`-\pi/2` X rotations) which means we lost a degree of freedom: :math:`\varphi_y-\varphi_z` effectively became a single parameter determining the Y rotation and we completely lost the first Z rotation. You can follow similar steps to show that when *any* of the YXZ Euler angles become :math:`\pm \pi/2`, you get a gimbal lock.
+
+This happens for :math:`\pm \pi/2` simply because in the YXZ convention, neighboring axes are related to each other by a :math:`\pm \pi/2` rotation around the axis given by the other neighbor. For XZX convention, the gimbal lock would happen at :math:`\varphi_z = \pm \pi` for example.
 
 
 Summary: representation versus parametrization
@@ -428,7 +440,7 @@ Formally, we'd like to interpolate between an initial rotation :math:`R_1 = e^{\
 
 	R(\lambda) = e^{\lambda \varphi \boldsymbol n \cdot \boldsymbol J } R_1.
 
-This form makes sense because for :math:`\lambda=0`, there is no rotation and :math:`R(\lambda)` automatically becomes :math:`R_1`. But why not pick a different form for the exponent as a function of :math:`\lambda` which evaluates to 0 when :math:`\lambda=0`? That's simply because we'd don't want to have a jerky motion, meaning :math:`|| \dot R(\lambda)|| = \dot R(\lambda) \dot R^T(\lambda)` has to be a constant, which can only happen if the time derivative of the exponent is linear in time (which is the case here as :math:`\dot R(\lambda) = (\varphi \boldsymbol n \cdot \boldsymbol J) R(\lambda)` and :math:`\dot R(\lambda) \dot R^T(\lambda) = [(\varphi \boldsymbol n \cdot \boldsymbol J) R(\lambda)] [(\varphi \boldsymbol n \cdot \boldsymbol J) R(\lambda)]^T = (\varphi \boldsymbol n \cdot \boldsymbol J) [ R(\lambda) R^T(\lambda) ] (\varphi \boldsymbol n \cdot \boldsymbol J)^T  = -\varphi^2 (\boldsymbol n \cdot \boldsymbol J)^2` which is a constant independent of :math:`\lambda`, where we used :math:`J_i^T = -J_i`). Or alternatively, you can simply observe that a rotation around a fixed axis (fixed because otherwise if you tilt the rotation axis in time, you'll again get a "jerky motion" due to `Euler force <https://en.wikipedia.org/wiki/Euler_force>`_) with constant angular speed is :math:`e^{\boldsymbol \omega t \cdot \boldsymbol J }` where :math:`\boldsymbol \omega` the angular velocity vector, and the exponent is linear in time.
+This form makes sense because for :math:`\lambda=0`, the interpolation hasn't started and :math:`R(\lambda)` automatically becomes :math:`R_1`. But why not pick a different form for the exponent as a function of :math:`\lambda` which evaluates to 0 when :math:`\lambda=0`? That's simply because we don't want to have a jerky motion, meaning :math:`\boldsymbol \omega \cdot \boldsymbol J =  R^T(\lambda) \dot R(\lambda)`, where :math:`\boldsymbol \omega` is the angular velocity vector, has to be a constant, which can only happen if the time derivative of the exponent is linear in time (in which case we obtain :math:`\boldsymbol \omega = \varphi \boldsymbol n`). Or equivalently, you can simply observe that a rotation around a fixed axis (fixed because otherwise if you tilt the rotation axis in time, you'll again get a "jerky motion" due to `Euler force <https://en.wikipedia.org/wiki/Euler_force>`_) with constant angular speed is :math:`e^{\boldsymbol \omega t \cdot \boldsymbol J }` where the exponent is linear in time.
 
 
 But how do we choose :math:`\boldsymbol n` and :math:`\varphi`? Well, we simply enforce that :math:`R(\lambda)`  has to becomes :math:`R_2` at the end, when :math:`\lambda=1`. Although this looks like a very difficult problem, it's actually not. We first make a rearrangement:
@@ -521,4 +533,16 @@ Note how things fit nicely, for example, when you consider how a rotated vector 
 The left hand side is rotation of the vector :math:`(R_0 \boldsymbol v_0)` and the right hand side is the rotation of the vector :math:`v_0` and the matrix :math:`R_0` that acts on it, which of course agree.
 
 
+The rotation operator itself rotates in a very expected way (you can use Rodrigues' formula along with the equation above, if you prefer):
 
+.. math::
+
+    R_n(\varphi) (e^{\varphi_0 \boldsymbol n_0 \cdot \boldsymbol J}) R_n(\varphi)^T = e^{\varphi_0 [R_n(\varphi)\boldsymbol n_0] \cdot \boldsymbol J}
+
+For example, if we have a rotation around the :math:`z`-axis by :math:`\varphi_0 = \varphi_z` and we would like to rotate it around the :math:`x`-axis by :math:`\varphi = \pi/2`, we'd have
+
+.. math::
+
+    R_x(\pi/2) (e^{\varphi_z \boldsymbol n_z \cdot \boldsymbol J}) R_x(\pi/2)^T = e^{\varphi_z [R_x(\pi/2)\boldsymbol e_z] \cdot \boldsymbol J} = e^{\varphi_z [-\boldsymbol e_y] \cdot \boldsymbol J},
+
+that is, the original rotation axis :math:`\boldsymbol n_0 = \boldsymbol e_z` gets rotated around the :math:`x`-axis by :math:`\varphi = \pi/2` and becomes a rotation around the :math:`y`-axis by :math:`-\varphi_z`.
