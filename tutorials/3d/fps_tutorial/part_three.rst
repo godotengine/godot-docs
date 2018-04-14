@@ -377,10 +377,10 @@ The first thing we need to change is in the code for changing weapons. We need t
     
     if changing_weapon == false:
         # New line of code here!
-		if reloading_weapon == false:
-			if WEAPON_NUMBER_TO_NAME[weapon_change_number] != current_weapon_name:
-				changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
-				changing_weapon = true
+        if reloading_weapon == false:
+            if WEAPON_NUMBER_TO_NAME[weapon_change_number] != current_weapon_name:
+                changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
+                changing_weapon = true
 
 This makes it where we cannot change weapons if we are reloading.
 
@@ -389,23 +389,23 @@ Now we need to add the code to trigger a reload when the player pushes the ``rel
 ::
     
     # ----------------------------------
-	# Reloading
-	if reloading_weapon == false:
-		if changing_weapon == false:
-			if Input.is_action_just_pressed("reload"):
-				var current_weapon = weapons[current_weapon_name]
-				if current_weapon != null:
-					if current_weapon.CAN_RELOAD == true:
-						var current_anim_state = animation_manager.current_state
-						var is_reloading = false
-						for weapon in weapons:
-							var weapon_node = weapons[weapon]
-							if weapon_node != null:
-								if current_anim_state == weapon_node.RELOADING_ANIM_NAME:
-									is_reloading = true
-						if is_reloading == false:
-							reloading_weapon = true
-	# ----------------------------------
+    # Reloading
+    if reloading_weapon == false:
+        if changing_weapon == false:
+            if Input.is_action_just_pressed("reload"):
+                var current_weapon = weapons[current_weapon_name]
+                if current_weapon != null:
+                    if current_weapon.CAN_RELOAD == true:
+                        var current_anim_state = animation_manager.current_state
+                        var is_reloading = false
+                        for weapon in weapons:
+                            var weapon_node = weapons[weapon]
+                            if weapon_node != null:
+                                if current_anim_state == weapon_node.RELOADING_ANIM_NAME:
+                                    is_reloading = true
+                        if is_reloading == false:
+                            reloading_weapon = true
+    # ----------------------------------
 
 Let's go over what's happening here.
 
@@ -431,18 +431,18 @@ Let's change our firing code in ``process_input`` so it reloads when trying to f
 ::
     
     # ----------------------------------
-	# Firing the weapons
-	if Input.is_action_pressed("fire"):
-		if reloading_weapon == false:
+    # Firing the weapons
+    if Input.is_action_pressed("fire"):
+        if reloading_weapon == false:
             if changing_weapon == false:
-				var current_weapon = weapons[current_weapon_name]
-				if current_weapon != null:
-					if current_weapon.ammo_in_weapon > 0:
-						if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
-							animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
-					else:
-						reloading_weapon = true
-	# ----------------------------------
+                var current_weapon = weapons[current_weapon_name]
+                if current_weapon != null:
+                    if current_weapon.ammo_in_weapon > 0:
+                        if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
+                            animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
+                    else:
+                        reloading_weapon = true
+    # ----------------------------------
 
 Now we check to make sure we're not reloading before we fire out weapon.
 
@@ -466,18 +466,17 @@ are firing them.
 
          The video tutorial will briefly show how to edit the audio files for use in the tutorial.
 
-Open up ``SimpleAudioPlayer.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' as it's child.
+Open up ``SimpleAudioPlayer.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as it's child.
 
 .. note:: The reason this is called a 'simple' audio player is because we are not taking performance into account
-          and because the code is designed to provide sound in the simplest way possible. This will likely change
-          in a future part.
+          and because the code is designed to provide sound in the simplest way possible.
 
 If you want to use 3D audio, so it sounds like it's coming from a location in 3D space, right click
-the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' and select "Change type".
+the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and select "Change type".
 
-This will open the node browser. Navigate to :ref:'AudioStreamPlayer3D <class_AudioStreamPlayer3D>' and select "change".
-In the source for this tutorial, we will be using :ref:'AudioStreamPlayer <class_AudioStreamPlayer>', but you can optionally
-use :ref:'AudioStreamPlayer3D <class_AudioStreamPlayer3D>' if you desire, and the code provided below will work regardless of which
+This will open the node browser. Navigate to :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` and select "change".
+In the source for this tutorial, we will be using :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`, but you can optionally
+use :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` if you desire, and the code provided below will work regardless of which
 one you chose.
 
 Create a new script and call it "SimpleAudioPlayer.gd". Attach it to the :ref:`Spatial <class_Spatial>` in ``SimpleAudioPlayer.tscn``
@@ -532,9 +531,9 @@ Let's go over what's happening here:
 
 _________
 
-In ``_ready`` we get the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' and connect it's ``finished`` signal to ourselves.
-It doesn't matter if it's :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' or :ref:'AudioStreamPlayer3D <class_AudioStreamPlayer3D>' node,
-as they both have the finished signal. To make sure it is not playing any sounds, we call ``stop`` on the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>'.
+In ``_ready`` we get the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and connect it's ``finished`` signal to ourselves.
+It doesn't matter if it's :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` or :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` node,
+as they both have the finished signal. To make sure it is not playing any sounds, we call ``stop`` on the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`.
 
 .. warning:: Make sure your sound files are **not** set to loop! If it is set to loop
              the sounds will continue to play infinitely and the script will not work!
@@ -545,13 +544,13 @@ to the correct sound.
 
 If it is an unknown sound, we print an error message to the console and free ourselves.
 
-If you are using a :ref:'AudioStreamPlayer3D <class_AudioStreamPlayer3D>', remove the ``#`` to set the position of
+If you are using a :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>`, remove the ``#`` to set the position of
 the audio player node so it plays at the correct position.
 
-Finally, we tell the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' to play.
+Finally, we tell the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` to play.
 
-When the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' is finished playing the sound, it will call ``destroy_self`` because
-we connected the ``finished`` signal in ``_ready``. We stop the :ref:'AudioStreamPlayer <class_AudioStreamPlayer>' and free ourself
+When the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` is finished playing the sound, it will call ``destroy_self`` because
+we connected the ``finished`` signal in ``_ready``. We stop the :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and free ourself
 to save on resources.
 
 .. note:: This system is extremely simple and has some major flaws:
