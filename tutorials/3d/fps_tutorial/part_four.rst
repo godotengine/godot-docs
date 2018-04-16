@@ -6,12 +6,11 @@ Part 4
 Part Overview
 -------------
 
-In this part we will be adding health pickups, ammo pickups, targets we can destoy, add support for joypads, and add the ability to change weapons with the scroll wheel.
+In this part we will be adding health pick ups, ammo pick ups, targets we can destroy, add support for joypads, and add the ability to change weapons with the scroll wheel.
 
 .. image:: img/FinishedTutorialPicture.png
 
-While this part may not be the most interesting, it is very important. Having a clean and modular code base allows us to build
-more complex behaviour in the future.
+.. error:: TODO: Update this image
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_three` before moving on to this part of the tutorial.
           
@@ -278,7 +277,7 @@ Expand ``Holder`` if it's not already expanded. Notice how we have two Spatial n
 This is because we're actually going to be making two sizes of health pick ups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` just
 have a single :ref:`MeshInstance <class_MeshInstance>` as their children.
 
-Next expand ``Health_Pickup_Trigger``. This is an :ref:``Area <class_Area>` node we're going to use to check if the player has walked close enough to pickup
+Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node we're going to use to check if the player has walked close enough to pick up
 the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
 health pick up, so the smaller health pick up has a trigger collision shape closer to it's size.
 
@@ -721,10 +720,8 @@ Final notes
 
 Now you can use a joypad, change weapons with the mouse's scroll wheel, replenish your health and ammo, and break targets with your weapons.
 
-In the last part, :ref:`doc_fps_tutorial_part_five`, we're going to add grenades to our player, give our player the ability to grab and throw objects,
-add a main menu and pause menu, add respawn system for the player, change/move the sound system, and turrets!
-
-.. error: May need to break part 5 into two parts. Not sure, will need to write it all first...
+In the next part, :ref:`doc_fps_tutorial_part_five`, we're going to add grenades to our player, give our player the ability to grab and throw objects, and
+add turrets!
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 

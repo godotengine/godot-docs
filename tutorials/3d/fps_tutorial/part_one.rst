@@ -14,12 +14,7 @@ This tutorial series will show you how to make a single player FPS game.
 
 Throughout the course of this tutorial series, we will cover how:
 
-- To make a first person character that can:
-- - Move around the environment
-- - That can jump into the air and sprint around
-- - That has a flash light we can turn on and off
-- - That can pick up and throw :ref:`RigidBody <class_RigidBody>` nodes
-- - Move either with the keyboard and mouse, or with a joypad
+- To make a first person character that can move, sprint, and jump.
 - To make a simple animation state machine for handling animation transitions.
 - To add three weapons to the first person character, each using a different way to handle bullet collisions:
 - - A knife (using an :ref:`Area <class_Area>`)
@@ -28,6 +23,8 @@ Throughout the course of this tutorial series, we will cover how:
 - To add two different types of grenades to the first person character:
 - - A normal grenade
 - - A sticky grenade
+- To add the ability to grab and throw :ref:`RigidBody <class_RigidBody>` nodes
+- To add joypad input for the player
 - To add ammo and reloading for all weapons that consume ammo.
 - To add ammo and health pick ups
 - - In two sizes: big and small
@@ -55,19 +52,20 @@ You can find the start assets for this parts 1 through 3 here: :download:`Godot_
 
 .. error:: TODO: update this zip file!
 
-The provided starter assets contain a animated 3D model, a bunch of 3D models for making levels,
+The provided starter assets contain an animated 3D model, a bunch of 3D models for making levels,
 and a few scenes already configured for this tutorial.
 
-All assets provided (unless otherwise noted) where originally created by TwistedTwigleg, with changes by the Godot community.
+All assets provided (unless otherwise noted) were originally created by TwistedTwigleg, with changes/additions by the Godot community.
 All original assets provided for this tutorial are released under the ``MIT`` license.
-(Feel free to use these assets however you want!)
+
+Feel free to use these assets however you want! They belong to the Godot community!
 
 .. note:: The skybox is created by **StumpyStrust** on OpenGameArt. The skybox used is
           licensed under ``CC0``.
 
           The font used is **Titillium-Regular**, and is licensed under the ``SIL Open Font License, Version 1.1``.
 
-.. note:: You can find the finished project for each part at the bottom of each part's page
+.. tip:: You can find the finished project for each part at the bottom of each part's page
 
 Part Overview
 -------------
@@ -96,12 +94,12 @@ Feel free to change the keys bound to these actions if you want.
 
 _________
 
-Lets take a second to see what we have in the starter assets.
+Let's take a second to see what we have in the starter assets.
 
 Included in the starter assets are several scenes. For example, in `res://` we have 14 scenes, most of which we will be visiting as
 we go through this tutorial series.
 
-For now lets open up ``Player.tscn``.
+For now let's open up ``Player.tscn``.
 
 .. note:: There are a bunch of scenes and a few textures in the ``Assets`` folder. You can look at these if you want,
           but we will not be exploring through ``Assets`` in this tutorial series. ``Assets`` contains all of the models used
@@ -144,7 +142,7 @@ _________
 
 Attach a new script to the ``Player`` node and call it ``Player.gd``.
 
-Lets program our player by adding the ability to move around, look around with the mouse, and jump.
+Let's program our player by adding the ability to move around, look around with the mouse, and jump.
 Add the following code to ``Player.gd``:
 
 ::
@@ -268,7 +266,7 @@ First, we define some global variables to dictate how our player will move about
           variables from any place in the script. We can "globally" access them, hence the
           name.
 
-Lets go through each of the global variables:
+Let's go through each of the global variables:
 
 - ``GRAV``: How strong gravity pulls us down.
 - ``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity.
@@ -292,7 +290,7 @@ Feel free to experiment!
 
 _________
 
-Now lets look at the ``_ready`` function:
+Now let's look at the ``_ready`` function:
 
 First we get the ``camera`` and ``rotation_helper`` nodes and store them into their variables.
 
@@ -310,7 +308,7 @@ would lose focus. To assure neither of these issues happen, we capture the mouse
 
 _________
 
-Next lets take a look at ``_physics_process``:
+Next let's take a look at ``_physics_process``:
 
 All we're doing in ``_physics_process`` is calling two functions: ``process_input`` and ``process_movement``.
 
@@ -322,7 +320,7 @@ so it can move through the game world.
 
 _________
 
-Lets look is ``process_movement`` next:
+Let's look is ``process_movement`` next:
 
 First we set ``dir`` to an empty :ref:`Vector3 <class_Vector3>`.
 
@@ -332,7 +330,7 @@ want the player's previous input to effect the player beyond a single ``process_
 Next we get the camera's global transform and store it as well, into the ``cam_xform`` variable.
 
 The reason we need the camera's global transform is so we can use it's directional vectors.
-Many have found directional vectors confusing, so lets take a second to explain how they work:
+Many have found directional vectors confusing, so let's take a second to explain how they work:
 
 _________
 
@@ -594,7 +592,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
             flashlight.show()
     # ----------------------------------
 
-Lets go over the additions:
+Let's go over the additions:
 
 We set ``is_sprinting`` to true when we are holding down the ``movement_sprint`` action, and false
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when

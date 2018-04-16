@@ -10,3 +10,4 @@ FPS tutorial
    part_three
    part_four
    part_five
+   part_six
