@@ -287,6 +287,12 @@ its current ``health`` alongside it. Your code should look like:
     {
     }
 
+.. note::
+    
+    The engine does not convert PascalCase to snake_case, for C# examples we'll be using
+    PascalCase for method names & camelCase for method parameters which follows the official `C#
+    naming conventions. <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_ 
+
 
 .. figure:: img/lifebar_tutorial_player_gd_emits_health_changed_code.png
 
