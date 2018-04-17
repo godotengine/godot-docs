@@ -54,3 +54,18 @@ Please note that for SSL/TLS encryption and thus HTTPS URLs to work you may need
 
 Also, when calling APIs using authorization, be aware that someone might analyse and decompile your released application and thus may gain access to any embedded authorization information like tokens, usernames or passwords.
 That means it is usually not a good idea to embed things such as database access credentials inside your game. Avoid providing information useful to an attacker whenever possible.
+
+Sending data to server
+----------------------
+
+Until now we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
+
+::
+
+    func _make_post_request(url, data_to_send, use_ssl):
+        # Convert data to json string:
+        var query = JSON.print(data_to_send)
+        # Add 'Content-Type' header:
+        var headers = ["Content-Type: application/json"]
+        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)        
+
