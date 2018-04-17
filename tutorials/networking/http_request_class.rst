@@ -42,3 +42,18 @@ With this, you should see ``(hello:world)`` printed on the console; hello being 
 For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>` and :ref:`JSONParseResult <class_JSONParseResult>`.
 
 Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS`` and whether a JSON parsing error occurred, see the JSON class reference and :ref:`HTTPRequest <class_HTTPRequest>` for more.
+
+Sending data to server
+----------------------
+
+Until now we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
+
+::
+
+    func _make_post_request(url, data_to_send, use_ssl):
+        # Convert data to json string:
+        var query = JSON.print(data_to_send)
+        # Add 'Content-Type' header:
+        var headers = ["Content-Type: application/json"]
+        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)        
+
