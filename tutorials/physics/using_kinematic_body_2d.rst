@@ -116,7 +116,14 @@ the same collision response:
 
  .. code-tab:: csharp
 
-    Coming soon
+    // using MoveAndCollide
+    var collision = MoveAndCollide(velocity * delta);
+    if (collision != null)
+    {
+        velocity = velocity.Slide(collision.Normal);
+    }
+    // using MoveAndSlide
+    velocity = MoveAndSlide(velocity);
 
 Anything you do with ``move_and_slide()`` can also be done with ``move_and_collide()``,
 it just might take a little more code. However, as we'll see in the examples below,
@@ -170,7 +177,42 @@ Attach a script to the KinematicBody2D and add the following code:
 
  .. code-tab:: csharp
 
-    Coming soon
+    using Godot;
+    using System;
+
+    public class KBExample : KinematicBody2D
+    { 
+        public int Speed = 250;
+        private Vector2 _velocity = new Vector2();
+
+        public void getInput()
+        {
+            // Detect up/down/left/right keystate and only move when pressed
+            _velocity = new Vector2();
+            if (Input.IsActionPressed("ui_right"))
+            {
+                _velocity.x += 1;
+            }
+            if (Input.IsActionPressed("ui_left"))
+            {
+                _velocity.x -= 1;
+            }
+            if (Input.IsActionPressed("ui_down"))
+            {
+                _velocity.y += 1;
+            }
+            if (Input.IsActionPressed("ui_up"))
+            {
+                _velocity.y -= 1;
+            }
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            getInput();
+            MoveAndCollide(velocity * delta);
+        }
+    }
 
 
 Run this scene and you'll see that ``move_and_collide()`` works as expected, moving
@@ -242,7 +284,53 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
  .. code-tab:: csharp
 
-    Coming soon
+    using Godot;
+    using System;
+
+    public class KBExample : KinematicBody2D
+    { 
+        private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
+        public int Speed = 200;
+        private Vector2 _velocity = new Vector2();
+
+        public void getInput()
+        {
+            // add these actions in Project Settings -> Input Map
+            _velocity = new Vector2();
+            if (Input.IsActionPressed("backward"))
+            {
+                _velocity = new Vector2(-speed/3, 0).Rotated(Rotation);
+            }
+            if (Input.IsActionPressed("forward"))
+            {
+                _velocity = new Vector2(speed, 0).Rotated(Rotation);
+            }
+            if (Input.IsActionPressed("mouse_click"))
+            {
+                Shoot();
+            }
+        }
+
+        public void Shoot()
+        {
+            // "Muzzle" is a Position2D placed at the barrel of the gun
+            var b = (Bullet)_bullet.Instance();
+            b.Start(((Node2D)GetNode("Muzzle")).GlobalPosition, Rotation);
+            GetParent().AddChild(b);
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            getInput();
+            var dir = GetGlobalMousePosition() - GlobalPosition;
+            // Don't move if too close to the mouse pointer
+            if (dir.Length() > 5)
+            {
+                Rotation = dir.Angle();
+                _velocity = MoveAndSlide(_velocity);
+            }
+        }
+    }
 
 
 And the code for the Bullet:
@@ -272,7 +360,39 @@ And the code for the Bullet:
 
  .. code-tab:: csharp
 
-    Coming soon
+    using Godot;
+    using System;
+
+    public class Bullet : KinematicBody2D
+    { 
+        public int Speed = 750;
+        private Vector2 _velocity = new Vector2();
+
+        public void Start(Vector2 pos, float dir)
+        {
+            Rotation = dir;
+            Position = pos;
+            _velocity = new Vector2(speed, 0).Rotated(Rotation);
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            var collsion = MoveAndCollide(_velocity * delta);
+            if (collsion != null)
+            {
+                _velocity = _velocity.Bounce(collsion.Normal);
+                if (collsion.Collider.HasMethod("Hit"))
+                {
+                    collsion.Collider.Hit();
+                }
+            }
+        }
+
+        public void OnVisibilityNotifier2DScreenExited()
+        {
+            QueueFree();
+        }
+    }
 
 
 The action happens in ``_physics_process()``. After using ``move_and_collide()`` if a
@@ -337,7 +457,51 @@ Here's the code for the player body:
 
  .. code-tab:: csharp
 
-    Coming soon
+    using Godot;
+    using System;
+
+    public class KBExample : KinematicBody2D
+    { 
+        [Export] public int RunSpeed = 100;
+        [Export] public int JumpSpeed = -400;
+        [Export] public int Gravity = 1200;
+
+        Vector2 velocity = new Vector2();
+        bool jumping = false;
+
+        public void getInput()
+        {
+            velocity.x = 0;
+            bool right = Input.IsActionPressed("ui_right");
+            bool left = Input.IsActionPressed("ui_left");
+            bool jump = Input.IsActionPressed("ui_select");
+
+            if (jump && IsOnFloor())
+            {
+                jumping = true;
+                velocity.y = JumpSpeed;
+            }
+            if (right)
+            {
+                velocity.x += RunSpeed;
+            }
+            if (left)
+            {
+                velocity.x -= RunSpeed;
+            }
+        }
+
+        public override void _PhysicsProcess(float delta)
+        {
+            getInput();
+            velocity.y += Gravity * delta;
+            if (jumping && IsOnFloor())
+            {
+                jumping = false;
+            }
+            velocity = MoveAndSlide(velocity, new Vector2(0, -1));
+        }
+    }
 
 .. image:: img/k2d_platform.gif
 
