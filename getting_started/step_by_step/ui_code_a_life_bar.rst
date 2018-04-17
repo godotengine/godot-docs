@@ -78,11 +78,29 @@ The GUI scene encapsulates all of the Game User Interface. It comes with
 a barebones script where we get the path to nodes that exist inside the
 scene:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     onready var number_label = $Bars/LifeBar/Count/Background/Number
     onready var bar = $Bars/LifeBar/TextureProgress
     onready var tween = $Tween
+
+ .. code-tab:: csharp
+
+    public class Gui : MarginContainer
+    {
+        private Tween _tween;
+        private Label _numberLabel;
+        private TextureProgress _bar;
+
+        public override void _Ready()
+        {
+            // C# doesn't have an onready feature, this works just the same
+            _bar = (TextureProgress) GetNode("Bars/LifeBar/TextureProgress");
+            _tween = (Tween) GetNode("Tween");
+            _numberLabel = (Label) GetNode("Bars/LifeBar/Count/Background/Number");
+        }
+    }
 
 -  ``number_label`` displays a life count as a number. It's a ``Label``
    node
@@ -127,11 +145,21 @@ open its script. In the ``_ready`` function, we're going to store the
 ``Player``'s ``max_health`` in a new variable and use it to set the
 ``bar``'s ``max_value``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         var player_max_health = $"../Characters/Player".max_health
         bar.max_value = player_max_health
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        // add this below _bar, _tween, and _numberLabel
+        var player = (Player) GetNode("../Characters/Player");
+        _bar.MaxValue = player.MaxHealth;
+    }
 
 Let's break it down. ``$"../Characters/Player"`` is a shorthand that
 goes one node up in the scene tree, and retrieves the
@@ -247,10 +275,24 @@ Inside the parens after the function name, add a ``player_health``
 argument. When the player emits the ``health_changed`` signal it will send
 its current ``health`` alongside it. Your code should look like:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Player_health_changed(player_health):
         pass
+
+ .. code-tab:: csharp
+
+    public void OnPlayerHealthChanged(int playerHealth)
+    {
+    }
+
+.. note::
+    
+    The engine does not convert PascalCase to snake_case, for C# examples we'll be using
+    PascalCase for method names & camelCase for method parameters which follows the official `C#
+    naming conventions. <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_ 
+
 
 .. figure:: img/lifebar_tutorial_player_gd_emits_health_changed_code.png
 
@@ -270,9 +312,16 @@ Inside ``_on_Player_health_changed`` let's call a second function called
 Create a new ``update_health`` method below ``_on_Player_health_changed``.
 It takes a new\_value as its only argument:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
+
+ .. code-tab:: csharp
+
+    public void UpdateHealth(int health)
+    {
+    }
 
 This method needs to:
 
@@ -280,11 +329,20 @@ This method needs to:
    string
 -  set the ``TextureProgress``'s ``value`` to ``new_value``
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
         number_label.text = str(new_value)
         bar.value = new_value
+
+ .. code-tab:: csharp
+
+    public void UpdateHealth(int health)
+    {
+        _numberLabel.Text = health.ToString();
+        _bar.Value = health;
+    }
 
 .. tip::
 
@@ -342,10 +400,22 @@ At the top of the script, define a new variable, name it
 clear its content. Let's animate the ``animated_health`` value. Call the
 ``Tween`` node's ``interpolate_property`` method:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
         tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+ .. code-tab:: csharp
+
+    // add this to the top of your class
+    private int _animatedHealth = 0;
+
+    public void UpdateHealth(int health)
+    {
+        _tween.InterpolateProperty(this, "_animatedHealth", _animatedHealth, health, 0.6f, Tween.TransitionType.Linear,
+            Tween.EaseType.In);
+    }
 
 Let's break down the call:
 
@@ -380,10 +450,18 @@ The animation will not play until we activated the ``Tween`` node with
 ``tween.start()``. We only have to do this once if the node is not
 active. Add this code after the last line:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         if not tween.is_active():
             tween.start()
+
+ .. code-tab:: csharp
+
+        if (!_tween.IsActive())
+        {
+            _tween.Start();
+        }
 
 .. note::
 
@@ -397,23 +475,47 @@ actual ``Bar`` and ``Number`` nodes anymore. Let's fix this.
 
 So far, the update\_health method looks like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
         tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
         if not tween.is_active():
             tween.start()
 
+ .. code-tab:: csharp
+
+    public void UpdateHealth(int health)
+    {
+        _tween.InterpolateProperty(this, "_animatedHealth", _animatedHealth, health, 0.6f, Tween.TransitionType.Linear,
+            Tween.EaseType.In);
+
+        if(!_tween.IsActive())
+        {
+            _tween.Start();
+        }
+    }
+
+
 In this specific case, because ``number_label`` takes text, we need to
 use the ``_process`` method to animate it. Let's now update the
 ``Number`` and ``TextureProgress`` nodes like before, inside of
 ``_process``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _process(delta):
         number_label.text = str(animated_health)
         bar.value = animated_health
+
+ .. code-tab:: csharp
+
+    public override void _Process(float delta)
+    {
+        _numberLabel.Text = _animatedHealth.ToString();
+        _bar.Value = _animatedHealth;
+    }
 
 .. note::
 
@@ -432,12 +534,22 @@ local variable named ``round_value`` to store the rounded
 ``animated_health``. Then assign it to ``number_label.text`` and
 ``bar.value``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _process(delta):
         var round_value = round(animated_health)
         number_label.text = str(round_value)
         bar.value = round_value
+
+ .. code-tab:: csharp
+
+    public override void _Process(float delta)
+    {
+        var roundValue = Mathf.Round(_animatedHealth);
+        _numberLabel.Text = roundValue.ToString();
+        _bar.Value = roundValue;
+    }
 
 Try the game again to see a nice blocky animation.
 
@@ -506,11 +618,20 @@ the top of the ``_on_Player_died`` method and name them ``start_color``
 and ``end_color``. Use the ``Color()`` constructor to build two
 ``Color`` values.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Player_died():
         var start_color = Color(1.0, 1.0, 1.0, 1.0)
         var end_color = Color(1.0, 1.0, 1.0, 0.0)
+
+ .. code-tab:: csharp
+
+    public void OnPlayerDied()
+    {
+        var startColor = new Color(1.0f, 1.0f, 1.0f);
+        var endColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    }
 
 ``Color(1.0, 1.0, 1.0)`` corresponds to white. The fourth argument,
 respectively ``1.0`` and ``0.0`` in ``start_color`` and ``end_color``,
@@ -519,9 +640,15 @@ is the alpha channel.
 We then have to call the ``interpolate_property`` method of the
 ``Tween`` node again:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+ .. code-tab:: csharp
+
+    _tween.InterpolateProperty(this, "modulate", startColor, endColor, 1.0f, Tween.TransitionType.Linear,
+      Tween.EaseType.In);
 
 This time we change the ``modulate`` property and have it animate from
 ``start_color`` to the ``end_color``. The duration is of one second,
@@ -529,12 +656,24 @@ with a linear transition. Here again, because the transition is linear,
 the easing does not matter. Here's the complete ``_on_Player_died``
 method:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Player_died():
         var start_color = Color(1.0, 1.0, 1.0, 1.0)
         var end_color = Color(1.0, 1.0, 1.0, 0.0)
         tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+ .. code-tab:: csharp
+
+    public void OnPlayerDied()
+    {
+        var startColor = new Color(1.0f, 1.0f, 1.0f);
+        var endColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        
+        _tween.InterpolateProperty(this, "modulate", startColor, endColor, 1.0f, Tween.TransitionType.Linear,
+            Tween.EaseType.In);
+    }
 
 And that is it. You may now play the game to see the final result!
 
