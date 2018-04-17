@@ -388,4 +388,4 @@ Keep in mind enabling these enables alpha blending, so abusing them for a whole 
 Render Priority
 ---------------
 
-Rendering order can be changed for objects, although this is mostly useful for transparent ojects (or opaque objects that do depth draw but no color draw, useful for cracks on the floor).
+Rendering order can be changed for objects, although this is mostly useful for transparent objects (or opaque objects that do depth draw but no color draw, useful for cracks on the floor).
