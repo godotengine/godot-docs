@@ -8,7 +8,7 @@ Introduction
 
 Godot offers a number of collision objects to provide both collision detection
 and response. Trying to decide which one to use for your project can be confusing.
-You can avoid problems and simplify development if you understand how each each
+You can avoid problems and simplify development if you understand how each of them
 works and what their pros and cons are. In this tutorial, we'll look at the
 :ref:`KinematicBody2D <class_KinematicBody2D>` node and show some examples
 of how it can be used.

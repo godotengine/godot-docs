@@ -450,7 +450,7 @@ But how do we choose :math:`\boldsymbol n` and :math:`\varphi`? Well, we simply 
 
 	R(\lambda) = e^{\lambda \varphi \boldsymbol n \cdot \boldsymbol J } R_1 = (e^{\varphi \varphi \boldsymbol n \cdot \boldsymbol J })^\lambda R_1.
 
-From this expression, it becomes evident evident that the solution is :math:`e^{\varphi \boldsymbol n \cdot \boldsymbol J } = R_2 R_1^T`.
+From this expression, it becomes evident that the solution is :math:`e^{\varphi \boldsymbol n \cdot \boldsymbol J } = R_2 R_1^T`.
 
 We can also do the same thing in SU(2) and obtain:
 

@@ -47,7 +47,7 @@ TileSet scene
 Create a new scene with a regular Node or Node2D as root. For each tile you want to define,
 add a sprite node as a child. Since tiles here are 50x50, you should turn on the grid
 (``View -> Show Grid`` or ``G`` key) and enable snap (``Use Snap`` icon or ``S`` key).
-Moving tiles with the mouse might still be a innacurate
+Moving tiles with the mouse might still be a inaccurate
 so use your arrow keys as well.
 
 If more than one tile is present in the source image, make sure to use

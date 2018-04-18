@@ -149,7 +149,7 @@ Screen-Space Reflections (SSR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While Godot supports three sources of reflection data (Sky, ReflectionProbe and GIProbe), they may not provide enough detail for all situations. Scenarios
-where Screen Space Refletions make the most sense are when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
+where Screen Space Reflections make the most sense are when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
 
 .. image:: img/environment_ssr.png
 
@@ -246,7 +246,7 @@ Both will cause the light to start bleeding out of the brighter areas.
 Once glow is visible, it can be controlled with a few extra parameters:
 
 - **Intensity** is an overall scale for the effect, it can be made stronger or weaker (0.0 removes it).
-- **Strength** is how strong the gaussian filter kernel is processed. Greater values make the filter saturate and expand outwards. In general changing this is not needed, as the size can be more efficienly adjusted with the **Levels**.
+- **Strength** is how strong the gaussian filter kernel is processed. Greater values make the filter saturate and expand outwards. In general changing this is not needed, as the size can be more efficiently adjusted with the **Levels**.
 
 The **Blend Mode** of the effect can also be changed:
 
