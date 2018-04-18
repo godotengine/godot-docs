@@ -267,7 +267,7 @@ One of the major things we ideally want to change is how the weapon code is hand
 from how much ammo a weapon carries, to firing bullets. While this has the advantage of having all of your code in one place, it would be much
 nicer if we make a weapon interface so we can create/change weapons easily without having to scroll through ``Player.gd`` to look for the bit of code we want to add/change.
 
-Open up ``Player.tscn`` and navigate to the ``Gun_fire_points`` node. Lets make the pistol first. Select ``Pistol_point`` and attach a node node and call it
+Open up ``Player.tscn`` and navigate to the ``Gun_fire_points`` node. Lets make the pistol first. Select ``Pistol_point`` and attach a node and call it
 ``Weapon_Pistol.gd``.
 
 Our weapon scripts are going to do four things: They're going to handle *firing*, *reloading*, *equipping*, and *unequipping*.
@@ -1171,7 +1171,7 @@ We then check to see if we have a joypad connected. If we do, we then assign ``j
 
 We then account for the joypad's dead zone, just like in ``process_input``.
 
-Regardless of whehter or not there is a joypad connected, we rotate ``rotation_helper`` and ourselves using ``joypad_vec``. If we do not have a joypad connected,
+Regardless of whether or not there is a joypad connected, we rotate ``rotation_helper`` and ourselves using ``joypad_vec``. If we do not have a joypad connected,
 ``joypad_vec`` will be equal to zero, which will do nothing.
 
 Notice how the code that handles rotating ourselves and ``rotation_helper`` is exactly the same as the
@@ -1202,7 +1202,7 @@ Open up ``Player.gd`` and add the following global variables:
     var mouse_scroll_value = 0
     const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
-Lets go over what each of these new varibles will be doing:
+Lets go over what each of these new variables will be doing:
 
 * ``mouse_scroll_value``: The value of the mouse scroll wheel.
 * ``MOUSE_SENSITIVITY_SCROLL_WHEEL``: How much a single scroll action increases mouse_scroll_value

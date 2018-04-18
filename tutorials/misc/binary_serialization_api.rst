@@ -430,7 +430,7 @@ For each String:
 | X+4      | X     | Bytes     | UTF-8 Encoded String   |
 +----------+-------+-----------+------------------------+
 
-Every string is is padded to 4 bytes.
+Every string is padded to 4 bytes.
 
 24: :ref:`PoolVector2Array<class_poolvector2array>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

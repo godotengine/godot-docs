@@ -31,7 +31,7 @@ Ports
 ~~~~~
 
 Nodes in Godot Visual Scripting have *Ports*. These are endpoints that appear to the 
-left and right of nodes and which can be used to make *Connnections*:
+left and right of nodes and which can be used to make *Connections*:
 There are two types of *Ports*: *Sequence* and *Data*.
 
 .. image:: img/visual_script17.png

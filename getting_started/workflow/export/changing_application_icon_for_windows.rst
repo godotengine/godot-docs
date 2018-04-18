@@ -29,13 +29,13 @@ Before selecting it in the export options, you will need to install an extra too
 You can download it here:
 https://github.com/electron/rcedit/releases
 
-After downloading, you need to tell Godot the path to the **rcedit** executable on your computer. Go to Editor>Editor Settings>Export>Windows. Click on the folder icon for the **rcedit** entry. Navigate to and select the **rcedit** exectuable.
+After downloading, you need to tell Godot the path to the **rcedit** executable on your computer. Go to Editor>Editor Settings>Export>Windows. Click on the folder icon for the **rcedit** entry. Navigate to and select the **rcedit** executable.
 
 .. note:: For Linux users, you will also need to install wine in order to use rcedit. For more information, check https://www.winehq.org/
 
 .. image:: img/icon_rcedit.png
 
-Now you have everything ready for changing the file icon. To do that, you will need to specify the icon when exporting. Go to Project>Export. Assuming you have a windows deskop preset ready, in the options, under Application, you will find Icon, select your desired image in ICO format as your file icon.
+Now you have everything ready for changing the file icon. To do that, you will need to specify the icon when exporting. Go to Project>Export. Assuming you have a windows desktop preset ready, in the options, under Application, you will find Icon, select your desired image in ICO format as your file icon.
 
 .. note:: To export an ICO image, you can use GIMP. For more details, please refer to this tutorial: http://skyboygames.com/easily-create-a-windows-app-icon-with-gimp/
 

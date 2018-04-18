@@ -33,7 +33,7 @@ Godot offers several compression methods, depending on the use case.
 Compress Mode
 ~~~~~~~~~~~~~
 
-* VRAM Compression: This is the most common copression mode for 3D assets. File on disk is reduced and
+* VRAM Compression: This is the most common compression mode for 3D assets. File on disk is reduced and
   video memory usage is also reduced considerably. For 3D, it may present unwanted artifacts, though.
 * Lossless Compression: This is the most common compression for 2D assets. It shows assets without any
   kind of artifacting, and disk compression is decent. It will use considerably more amount of video memory than VRAM, though.

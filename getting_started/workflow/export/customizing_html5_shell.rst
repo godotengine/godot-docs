@@ -160,7 +160,7 @@ Defaults to ``true``.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, the first canvas element on the page is used for rendering.
-By calling this method, another canvas can be specifed.
+By calling this method, another canvas can be specified.
 
 ``engine.setCanvasResizedOnStart(enabled)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,7 +193,7 @@ The following methods are used to implement the presentation:
 
 This method is used to display download progress. The passed callback
 function is called with two number arguments, the first argument specifies
-bytes loaded so far, the second argument specifices the total number of bytes
+bytes loaded so far, the second argument specifies the total number of bytes
 to load.
 
 .. code-block:: js

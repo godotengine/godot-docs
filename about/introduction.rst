@@ -72,7 +72,7 @@ relatively intuitive:
 - The :ref:`sec-general` section contains this introduction as well as
   information about the engine, its history, its licensing, authors, etc. It
   also contains the :ref:`doc_faq`.
-- The :ref:`sec-learn` section is the the main *raison d'être* of this
+- The :ref:`sec-learn` section is the main *raison d'être* of this
   documentation, as it contains all the necessary information on using the
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all

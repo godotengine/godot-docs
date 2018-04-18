@@ -49,7 +49,7 @@ Theme options
 Each kind of option in a theme can be:
 
 -  **An integer constant**: A single numerical constant. Generally used
-   to define spacing between compoments or alignment.
+   to define spacing between components or alignment.
 -  **A Color**: A single color, with or without transparency. Colors are
    usually applied to fonts and icons.
 -  **A Texture**: A single image. Textures are not often used, but when
@@ -139,7 +139,7 @@ go to the "theme" menu and select "Add Class Item":
 
 .. image:: img/themeci.png
 
-A menu will appear promting the type of control to create. Select
+A menu will appear prompting the type of control to create. Select
 "Button":
 
 .. image:: img/themeci2.png

@@ -97,7 +97,7 @@ Google doesn't have this separation in their dashboard. If our product is a cons
 
 ::
 
-    IAP.connnect("consume_success",self,"on_consume_success")
+    IAP.connect("consume_success",self,"on_consume_success")
     IAP.consume("pid")
 
     func on_consume_success(item):

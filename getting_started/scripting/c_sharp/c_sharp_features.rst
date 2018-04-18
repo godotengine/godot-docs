@@ -3,7 +3,7 @@
 Features
 ============
 
-This page provied an overview over the commonly used features of both C# and Godot
+This page provides an overview over the commonly used features of both C# and Godot
 and how they are used together.
 
 Type Conversion and Casting
