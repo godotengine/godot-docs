@@ -41,7 +41,7 @@ habits regarding the Git and PR workflow, and we therefore recommend not to
 use them. In particular, we advise not to use Github's online editor for code 
 contributions (although it's tolerated for small fixes or documentation changes)
 as it enforces one commit per file and per modification,
-which qucikly leads to PRs with an unreadable Git history (especially after peer review).
+which quickly leads to PRs with an unreadable Git history (especially after peer review).
 
 .. seealso:: The first sections of Git's "Book" are a good introduction to
              the tool's philosophy and the various commands you need to

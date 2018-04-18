@@ -62,7 +62,7 @@ Depending on the type of game or effect desired, the order in which you want axi
 Interpolation
 =============
 
-Another problem with using Euler angles is interpolation. Imagine you want to transition between two different camera or enemy positions (including rotations). One logical way to approach this is to interpolate the angles from one position to to the next. One would expect it to look like this:
+Another problem with using Euler angles is interpolation. Imagine you want to transition between two different camera or enemy positions (including rotations). One logical way to approach this is to interpolate the angles from one position to the next. One would expect it to look like this:
 
 .. image:: img/transforms_interpolate1.gif
 

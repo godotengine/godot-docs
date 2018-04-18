@@ -15,7 +15,7 @@ to modify than just writing a few characters.
 With the misunderstanding cleared up, the question that remains is what are the practical
 uses for Visual Scripting.
 
-The most common use cases are are as follows:
+The most common use cases are as follows:
 
 * Game development beginners who want to learn an engine but have no programming experience yet.
 * Artists and Game Designers who have no experience in programming and want to create quick prototypes or simple games.

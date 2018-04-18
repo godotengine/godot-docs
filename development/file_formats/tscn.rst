@@ -34,7 +34,7 @@ theory) be the number of resources within the file, though in practice it's
 value seems not to matter.
 
 These sections should appear in order, but it can be hard to distinguish 
-them. The only difference between them is the the first element in the heading
+them. The only difference between them is the first element in the heading
 for all of the items in the section.
 For example, the heading of all external resources should start with
 :code:`[ext_resource .....]`

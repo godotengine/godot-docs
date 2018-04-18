@@ -37,7 +37,7 @@ focus for keyboard or joypad input. Examples of this are entering text
 or pressing a button. This is controlled with the
 :ref:`Control.focus_mode <class_Control_focus_mode>`
 member variable. When drawing, and if the control supports input focus, it is
-always desired to show some sort of indicator (highight, box, etc) to
+always desired to show some sort of indicator (highlight, box, etc) to
 indicate that this is the currently focused control. To check for this
 status, the :ref:`Control.has_focus() <class_Control_has_focus>` method
 exists. Example

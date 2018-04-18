@@ -252,7 +252,7 @@ Some of these shortcuts (namely the 64-bit compilers) seem to not be
 available in the Express edition of Visual Studio or Visual C++. Before
 recreating the commands, make sure that ``cl.exe`` executables are present
 in one of these locations, they are the actual compilers for the
-arhitecture you want to build from the command prompt.
+architecture you want to build from the command prompt.
 
 ::
 
