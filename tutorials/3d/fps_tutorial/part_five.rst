@@ -568,6 +568,24 @@ If we are holding an object, we set it's global position to the camera's positio
 
 ______
 
+Before we test this, we need to change something in ``_physics_process``. While we're holding an object, we really don't
+want to be able to change weapons or reload, so change ``_physics_process`` to the following:
+
+::
+    
+    process_input(delta)
+    process_view_input(delta)
+    process_movement(delta)
+	
+	if (grabbed_object == null):
+		process_changing_weapons(delta)
+		process_reloading(delta)
+	
+	# Process the UI
+	process_UI(delta)
+
+Now we cannot change weapons or reload while holding an object.
+    
 Now you can grab and throw RigidBody nodes while in a ``UNARMED`` state! Go give it a try!
 
 Adding a turret
