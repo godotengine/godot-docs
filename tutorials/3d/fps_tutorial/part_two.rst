@@ -10,8 +10,6 @@ In this part we will be giving our player weapons to play with.
 
 .. image:: img/PartTwoFinished.png
 
-.. error:: TODO: redo this image!
-
 By the end of this part, you will have a player that can fire a pistol,
 rifle, and attack using a knife. The player will also now have animations with transitions,
 and the weapons will interact with objects in the environment.
@@ -26,7 +24,7 @@ Making a system to handle animations
 ------------------------------------
 
 First we need a way to handle changing animations. Open up ``Player.tscn`` and select the :ref:`AnimationPlayer <class_AnimationPlayer>`
-Node (``Player`` -> ``Rotation_helper`` -> ``Model`` -> ``AnimationPlayer``).
+Node (``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
 
 Create a new script called ``AnimationPlayer_Manager.gd`` and attach that to the :ref:`AnimationPlayer <class_AnimationPlayer>`.
 
@@ -310,7 +308,7 @@ button on the far right corner of the animation window. It looks like a pencil w
 
 Once you've click that, a new window will open on the right side. Now click the green point on the ``AnimationPlayer``
 track. This will bring up the information associated with that point in the timeline. In the empty name field, enter
-"animation_callback" and press ``enter``.
+``animation_callback`` and press ``enter``.
 
 Now when we are playing this animation the callback function will be triggered at that specific point of the animation.
 
@@ -447,7 +445,8 @@ Here's the script that will control our bullet:
 
 ::
 
-
+    extends Spatial
+    
     var BULLET_SPEED = 70
     var BULLET_DAMAGE = 15
 
@@ -497,10 +496,10 @@ change how the bullet interacts with the world.
           get a bullet travelling forever. By using a kill timer, we can assure that
           no bullets will just travel forever and consume resources.
 
-.. tip:: As in part 1, we have a couple all uppercase global variables. The reason behind this is the same
-          as the reason given in part 1: We want to treat these variables like constants, but we want to be
-          able to change them. In this case we will later need to change the damage and speed of these bullets,
-          so we need them to be variables and not constants.
+.. tip:: As in :ref:`doc_fps_tutorial_part_one`, we have a couple all uppercase global variables. The reason behind this is the same
+         as the reason given in :ref:`doc_fps_tutorial_part_one`: We want to treat these variables like constants, but we want to be
+         able to change them. In this case we will later need to change the damage and speed of these bullets,
+         so we need them to be variables and not constants.
 
 _________
 
@@ -1175,7 +1174,7 @@ Creating some test subjects
 ---------------------------
 
 Create a new script by going to the scripting window, clicking "file", and selecting new.
-Name this script "RigidBody_hit_test" and make sure it extends :ref:`RigidBody <class_RigidBody>`.
+Name this script ``RigidBody_hit_test`` and make sure it extends :ref:`RigidBody <class_RigidBody>`.
 
 Now we just need to add this code:
 
@@ -1235,6 +1234,4 @@ In :ref:`doc_fps_tutorial_part_three`, we will add ammo to the weapons, as well 
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for this part **here**
-             
-             TODO: Add the finished project for part 2!
+             You can download the finished project for this part here: :download:`Godot_FPS_Part_2.zip <files/Godot_FPS_Part_2.zip>`

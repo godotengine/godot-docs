@@ -38,8 +38,9 @@ Feel free to use whatever button layout you want. Make sure that the device sele
 * flashlight: ``Device 0, Button 12 (D-Pad Up)``
 * shift_weapon_positive: ``Device 0, Button 15 (D-Pad Right)``
 * shift_weapon_negative: ``Device 0, Button 14 (D-Pad Right)``
+* fire_grenade: ``Device 0, Button 1 (PS Circle, XBox B, Nintendo A).``
 
-.. error:: Add joypad input for all inputs, need to double check to make sure everything is listed here
+.. note:: These are already set up for you if you downloaded the starter assets
 
 Once you are happy with the input, close the project settings and save.
 
@@ -52,7 +53,7 @@ First, we need to define a few new global variables. Add the following global va
 ::
     
     # You may need to adjust depending on the sensitivity of your joypad
-    const JOYPAD_SENSITIVITY = 2
+    var JOYPAD_SENSITIVITY = 2
     const JOYPAD_DEADZONE = 0.15
 
 Lets go over what each of these do:
@@ -62,6 +63,8 @@ Lets go over what each of these do:
 
 .. note::  Many joypads jitter around a certain point. To counter this, we ignore any movement in a
            with a radius of JOYPAD_DEADZONE. If we did not ignore said movement, the camera will jitter.
+           
+           Also, we are defining ``JOYPAD_SENSITIVITY`` as a variable instead of a constant because we'll later be changing it.
 
 Now we are ready to start handling joypad input!           
 

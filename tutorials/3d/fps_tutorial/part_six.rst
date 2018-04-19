@@ -989,6 +989,15 @@ At this point you have a good base to build more complicated FPS games.
              
              TODO: Add the finished project for part 6!
 
+.. note:: The finished project source files contain the same exact code, just written in a different order.
+          This is because the finished project source files are what the tutorial is based on.
+
+          The finished project code was written in the order that features were created, not necessarily
+          in a order that is ideal for learning.
+
+          Other than that, the source is exactly the same, just with helpful comments explaining what
+          each part does.
+             
 .. tip:: The finished project source is hosted on Github as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
          
          **Please note that the code in Github may or may not be in sync with the tutorial on the documentation**.
@@ -1000,19 +1009,10 @@ You can download all of the ``.blend`` files used in this tutorial here: :downlo
 
 .. error:: TODO: update the blender files!
 
-.. note:: The finished project source files contain the same exact code, just written in a different order.
-          This is because the finished project source files are what the tutorial is based on.
-
-          The finished project code was written in the order that features were created, not necessarily
-          in a order that is ideal for learning.
-
-          Other than that, the source is exactly the same, just with helpful comments explaining what
-          each part does.
-
 All assets provided in the started assets (unless otherwise noted) were **originally created by TwistedTwigleg, with changes/additions by the Godot community.**
 All original assets provided for this tutorial are released under the ``MIT`` license.
 
-Feel free to use these assets however you want! They belong to the Godot community!
+Feel free to use these assets however you want! All original assets belong to the Godot community, with the other assets belonging to those listed below:
           
 The skybox is created by **StumpyStrust** and can be found at OpenGameArt.org. https://opengameart.org/content/space-skyboxes-0
 . The skybox is licensed under the ``CC0`` license.

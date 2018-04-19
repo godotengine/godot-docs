@@ -12,8 +12,6 @@ weapons fire.
 
 .. image:: img/PartThreeFinished.png
 
-.. error:: Redo this image!
-
 By the end of this part, the player will have limited ammo, the ability to reload,
 and sounds will play when the player fires and changes weapons.
 
@@ -144,15 +142,15 @@ All we need to change how we're firing our weapons in ``process_input``. Change 
 ::
     
     # ----------------------------------
-	# Firing the weapons
-	if Input.is_action_pressed("fire"):
+    # Firing the weapons
+    if Input.is_action_pressed("fire"):
         if changing_weapon == false:
             var current_weapon = weapons[current_weapon_name]
             if current_weapon != null:
                 if current_weapon.ammo_in_weapon > 0:
                     if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
                         animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
-	# ----------------------------------
+    # ----------------------------------
     
 Now our weapons have a limited amount of ammo, and will stop firing when we run out.
 
@@ -160,18 +158,19 @@ _______
 
 Ideally we'd like to be able to see how much ammo we have left. Let's make a new function called ``process_ui``.
 
-First, add ``process_ui(delta)`` to ``_physics_process``.
+First, add ``process_UI(delta)`` to ``_physics_process``.
 
 Now add the following to ``Player.gd``:
 
 ::
     
-    if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
-		UI_status_label.text = "HEALTH: " + str(health)
-	else:
-		var current_weapon = weapons[current_weapon_name]
-		UI_status_label.text = "HEALTH: " + str(health) + \
-		"\nAMMO:" + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo)
+    func process_UI(delta):
+        if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
+            UI_status_label.text = "HEALTH: " + str(health)
+        else:
+            var current_weapon = weapons[current_weapon_name]
+            UI_status_label.text = "HEALTH: " + str(health) + \
+            "\nAMMO:" + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo)
 
 Let's go over what's happening:
 
@@ -495,12 +494,18 @@ and insert the following code:
     var audio_node = null
 
     func _ready():
-        audio_node = $AudioStreamPlayer
+        audio_node = $Audio_Stream_Player
         audio_node.connect("finished", self, "destroy_self")
         audio_node.stop()
 
 
     func play_sound(sound_name, position=null):
+    
+        if audio_pistol_shot == null or audio_rifle_shot == null or audio_gun_cock == null:
+            print ("Audio not set!")
+            queue_free()
+            return
+    
         if sound_name == "Pistol_shot":
             audio_node.stream = audio_pistol_shot
         elif sound_name == "Rifle_shot":
@@ -525,7 +530,7 @@ and insert the following code:
 
 
 .. tip:: By setting ``position`` to ``null`` by default in ``play_sound``, we are making it an optional argument,
-         meaning position doesn't necessarily have to be passed in to call the ``play_sound``.
+         meaning ``position`` doesn't necessarily have to be passed in to call the ``play_sound``.
 
 Let's go over what's happening here:
 
@@ -539,7 +544,7 @@ as they both have the finished signal. To make sure it is not playing any sounds
              the sounds will continue to play infinitely and the script will not work!
 
 The ``play_sound`` function is what we will be calling from ``Player.gd``. We check if the sound
-is one of the three possible sounds, and if it is we set the audio stream for our :ref:'AudioStreamPlayer <class_AudioStreamPlayer>'
+is one of the three possible sounds, and if it is we set the audio stream for our :ref:`AudioStreamPlayer <class_AudioStreamPlayer>`
 to the correct sound.
 
 If it is an unknown sound, we print an error message to the console and free ourselves.
@@ -554,6 +559,7 @@ we connected the ``finished`` signal in ``_ready``. We stop the :ref:`AudioStrea
 to save on resources.
 
 .. note:: This system is extremely simple and has some major flaws:
+
           One flaw is we have to pass in a string value to play a sound. While it is relatively simple
           to remember the names of the three sounds, it can be increasingly complex when you have more sounds.
           Ideally we'd place these sounds in some sort of container with exposed variables so we do not have
@@ -561,7 +567,7 @@ to save on resources.
 
           Another flaw is we cannot play looping sounds effects, nor background music easily with this system.
           Because we cannot play looping sounds, certain effects like footstep sounds are harder to accomplish
-          because we then have to keep track of whether or not there is a sound effect *and* whether or not we
+          because we then have to keep track of whether or not there is a sound effect and whether or not we
           need to continue playing it.
 
 _________
@@ -571,7 +577,7 @@ First we need to load the ``SimpleAudioPlayer.tscn``. Place the following code i
 
 ::
 
-    var simple_audio_player = preload("res://SimpleAudioPlayer.tscn")
+    var simple_audio_player = preload("res://Simple_Audio_Player.tscn")
 
 Now we just need to instance the simple audio player when we need it, and then call it's
 ``play_sound`` function and pass the name of the sound we want to play. To make the process simpler,
@@ -589,7 +595,7 @@ Lets walk through what this function does:
 
 _________
 
-The first line instances the ``simple_audio_player.tscn`` scene and assigns it to a variable,
+The first line instances the ``Simple_Audio_Player.tscn`` scene and assigns it to a variable,
 named ``audio_clone``.
 
 The second line gets the scene root, using one large assumption. We first get this node's :ref:`SceneTree <class_SceneTree>`,
@@ -656,14 +662,12 @@ Now when we reload we'll play the ``gun_cock`` sound.
 Final notes
 -----------
 
-.. image:: img/FinishedTutorialPicture.png
-
-.. error:: TODO: replace this image!
+.. image:: img/PartThreeFinished.png
 
 Now you have weapons with limited ammo that play sounds when you fire them!
 
 At this point we have all of the basics of a FPS working.
-There's still a few things that would be nice to add, and we're going to add them in the next two parts!
+There's still a few things that would be nice to add, and we're going to add them in the next three parts!
 
 For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't really
 have anything to shoot at outside of the :ref:`RigidBody <class_RigidBody>` nodes.
@@ -673,7 +677,5 @@ We're also going to add joypad support, so we can play with wired Xbox 360 contr
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for this part **here**
-             
-             TODO: Add the finished project for part 3!
+             You can download the finished project for this part here: :download:`Godot_FPS_Part_3.zip <files/Godot_FPS_Part_3.zip>`
 

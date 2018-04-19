@@ -48,9 +48,7 @@ Throughout the course of this tutorial series, we will cover how:
           This tutorial assumes you know have experience working with the Godot editor,
           have basic programming experience in GDScript, and have basic experience in game development.
 
-You can find the start assets for this parts 1 through 3 here: :download:`Godot_FPS_Starter.zip <files/Godot_FPS_Starter.zip>`
-
-.. error:: TODO: update this zip file!
+You can find the start assets for this tutorial here: :download:`Godot_FPS_Starter.zip <files/Godot_FPS_Starter.zip>`
 
 The provided starter assets contain an animated 3D model, a bunch of 3D models for making levels,
 and a few scenes already configured for this tutorial.
@@ -58,7 +56,7 @@ and a few scenes already configured for this tutorial.
 All assets provided (unless otherwise noted) were originally created by TwistedTwigleg, with changes/additions by the Godot community.
 All original assets provided for this tutorial are released under the ``MIT`` license.
 
-Feel free to use these assets however you want! They belong to the Godot community!
+Feel free to use these assets however you want! All original assets belong to the Godot community, with the other assets belonging to those listed below:
 
 .. note:: The skybox is created by **StumpyStrust** on OpenGameArt. The skybox used is
           licensed under ``CC0``.
@@ -74,8 +72,6 @@ In this part we will be making a first person player that can move around
 the environment.
 
 .. image:: img/PartOneFinished.png
-
-.. error:: TODO: redo this image!
 
 By the end of this part you will have a working first person character who can move around the game environment,
 look around with a mouse based first person camera, that can jump into the air, turn on and off a flash light, and sprint.
@@ -108,13 +104,11 @@ For now let's open up ``Player.tscn``.
 Making the FPS movement logic
 -----------------------------
 
-Once you have ``Player.tscn`` open, let's take a quick look at how it is setup
+Once you have ``Player.tscn`` open, let's take a quick look at how it is set up
 
 .. image:: img/PlayerSceneTree.png
 
-.. error:: TODO: redo this image (if needed)!
-
-First, notice how the player's collision shapes are setup. Using a vertical pointing
+First, notice how the player's collision shapes are set up. Using a vertical pointing
 capsule as the collision shape for the player is fairly common in most first person games.
 
 We are adding a small square to the 'feet' of the player so the player does not
@@ -608,9 +602,9 @@ Now we just need to change a couple things in ``process_movement``. First, repla
 ::
     
     if is_spriting:
-		target *= MAX_SPRINT_SPEED
-	else:
-		target *= MAX_SPEED
+        target *= MAX_SPRINT_SPEED
+    else:
+        target *= MAX_SPEED
 
 Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if we are sprinting or not.
 If we are sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``. 
@@ -642,13 +636,11 @@ Phew! That was a lot of work. Now you have a fully working first person characte
 
 In :ref:`doc_fps_tutorial_part_two` we will add some guns to our player character.
 
-.. note:: At this point we've recreated the Kinematic character demo with sprinting and a flashlight!
+.. note:: At this point we've recreated the Kinematic character demo from first person perspective with sprinting and a flash light!
 
 .. tip:: Currently the player script would be at an ideal state for making all sorts of
          first person games. For example: Horror games, platformer games, adventure games, and more!
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for this part **here**
-             
-             TODO: Add the finished project for part 1!
+             You can download the finished project for this part here: :download:`Godot_FPS_Part_1.zip <files/Godot_FPS_Part_1.zip>`
