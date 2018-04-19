@@ -8,9 +8,7 @@ Part Overview
 
 In this part we will be adding health pick ups, ammo pick ups, targets we can destroy, add support for joypads, and add the ability to change weapons with the scroll wheel.
 
-.. image:: img/FinishedTutorialPicture.png
-
-.. error:: TODO: Update this image
+.. image:: img/PartFourFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_three` before moving on to this part of the tutorial.
           
@@ -44,7 +42,7 @@ Feel free to use whatever button layout you want. Make sure that the device sele
 
 Once you are happy with the input, close the project settings and save.
 
-______
+______ 
 
 Now let's open up ``Player.gd`` and add joypad input.
 
@@ -75,21 +73,23 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 ::
     
     # Add joypad input, if there is a joypad
-	if Input.get_connected_joypads().size() > 0:
-		
+    if Input.get_connected_joypads().size() > 0:
+        
+        var joypad_vec = Vector2(0, 0)
+        
         if OS.get_name() == "Windows":
-            joypad_vec = Vector2(Input.get_joy_axis(0, 0), Input.get_joy_axis(0, 1))
+            joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
         elif OS.get_name() == "X11":
             joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
         elif OS.get_name() == "OSX":
             joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
-		
-		if joypad_vec.length() < JOYPAD_DEADZONE:
-			joypad_vec = Vector2(0, 0)
-		else:
-			joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
-		
-		input_movement_vector += joypad_vec
+
+        if joypad_vec.length() < JOYPAD_DEADZONE:
+            joypad_vec = Vector2(0, 0)
+        else:
+            joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
+
+        input_movement_vector += joypad_vec
 
 Lets go over what we're doing.
 
@@ -100,8 +100,8 @@ Because a wired Xbox 360 controller has different joystick axis mapping based on
 the OS.
 
 .. warning:: This tutorial assumes you are using a XBox 360 wired controller.
-             Also, I do not (currently) has access to a Mac computer, so the joystick axes may need changing. If they do,
-             please open a GitHub issue on the Godot documentation repository!
+             Also, I do not (currently) have access to a Mac computer, so the joystick axes may need changing.
+             If they do, please open a GitHub issue on the Godot documentation repository!
 
 Next we check to see if the joypad vector length is within the ``JOYPAD_DEADZONE`` radius.
 If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scaled Radial Dead zone for precise dead zone calculating.
@@ -109,8 +109,8 @@ If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scal
 .. note:: You can find a great article explaining all about how to handle joypad/controller dead zones here:
           https://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
             
-          We're using a translated version of the scaled radial dead zone code provided in that article. The article is a great read, and I highly suggest you give
-          it a read.
+          We're using a translated version of the scaled radial dead zone code provided in that article.
+          The article is a great read, and I highly suggest giving it a look!
 
 Finally, we add ``joypad_vec`` to ``input_movement_vector``.
 
@@ -119,43 +119,44 @@ Finally, we add ``joypad_vec`` to ``input_movement_vector``.
          
 ______
 
-Remember that commented out function in ``_physics_process``? Lets add it! Remove the ``#`` in ``_physics_process`` and make a new function called ``process_view_input``.
-Add the following to ``process_view_input``:
+Make a new function called ``process_view_input`` and add the following:
 
 ::
     
-    if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-        return
+    func process_view_input(delta):
+        
+        if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+            return
 
-    # NOTE: Until some bugs relating to captured mouses are fixed, we cannot put the mouse view
-    # rotation code here. Once the bug(s) are fixed, code for mouse view rotation code will go here!
+        # NOTE: Until some bugs relating to captured mouses are fixed, we cannot put the mouse view
+        # rotation code here. Once the bug(s) are fixed, code for mouse view rotation code will go here!
 
-    # ----------------------------------
-    # Joypad rotation
+        # ----------------------------------
+        # Joypad rotation
 
-    var joypad_vec = Vector2()
-    if Input.get_connected_joypads().size() > 0:
+        var joypad_vec = Vector2()
+        if Input.get_connected_joypads().size() > 0:
 
-        if OS.get_name() == "Windows":
-            joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
-        elif OS.get_name() == "X11":
-            joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
-        elif OS.get_name() == "OSX":
-            joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
+            if OS.get_name() == "Windows":
+                joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
+            elif OS.get_name() == "X11":
+                joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
+            elif OS.get_name() == "OSX":
+                joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
 
-        if joypad_vec.length() < JOYPAD_DEADZONE:
-            joypad_vec = Vector2(0, 0)
-        else:
-            joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
+            if joypad_vec.length() < JOYPAD_DEADZONE:
+                joypad_vec = Vector2(0, 0)
+            else:
+                joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
 
-        rotation_helper.rotate_x(deg2rad(joypad_vec.y * JOYPAD_SENSITIVITY))
+            rotation_helper.rotate_x(deg2rad(joypad_vec.y * JOYPAD_SENSITIVITY))
 
-        rotate_y(deg2rad(joypad_vec.x * JOYPAD_SENSITIVITY * -1))
+            rotate_y(deg2rad(joypad_vec.x * JOYPAD_SENSITIVITY * -1))
 
-        var camera_rot = rotation_helper.rotation_degrees
-        camera_rot.x = clamp(camera_rot.x, -70, 70)
-        rotation_helper.rotation_degrees = camera_rot
-    # ----------------------------------
+            var camera_rot = rotation_helper.rotation_degrees
+            camera_rot.x = clamp(camera_rot.x, -70, 70)
+            rotation_helper.rotation_degrees = camera_rot
+        # ----------------------------------
      
      
 Let's go over what's happening:
@@ -182,7 +183,9 @@ Finally, we clamp the camera's rotation so we cannot look upside down.
 
 ______
 
-If everything is setup correctly, you can now play around using a joypad!
+The last thing you need to do is add ``process_view_input`` to ``_physics_process``.
+
+Once ``process_view_input`` is added to ``_physics_process``, you should be able to play using a joypad!
 
 .. note:: I decided not to use the joypad triggers for firing because we'd then have to do some more axis managing, and because I prefer to use a shoulder button to fire.
           
@@ -192,7 +195,7 @@ If everything is setup correctly, you can now play around using a joypad!
 Adding mouse scroll wheel input
 -------------------------------
 
-Let's add one input related feature before we start working on the pickups and target. Let's add the ability to change weapons using the scroll wheel on the mouse.
+Let's add one input related feature before we start working on the pick ups and target. Let's add the ability to change weapons using the scroll wheel on the mouse.
 
 Open up ``Player.gd`` and add the following global variables:
 
@@ -213,21 +216,21 @@ Now lets add the following to ``_input``:
 ::
     
     if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event.button_index == BUTTON_WHEEL_UP or event.button_index == BUTTON_WHEEL_DOWN:
-			if event.button_index == BUTTON_WHEEL_UP:
-				mouse_scroll_value += MOUSE_SENSITIVITY_SCROLL_WHEEL
-			elif event.button_index == BUTTON_WHEEL_DOWN:
-				mouse_scroll_value -= MOUSE_SENSITIVITY_SCROLL_WHEEL
-			
-			mouse_scroll_value = clamp(mouse_scroll_value, 0, WEAPON_NUMBER_TO_NAME.size()-1)
-			
-			if changing_weapon == false:
-				if reloading_weapon == false:
-					var round_mouse_scroll_value = int(round(mouse_scroll_value))
-					if WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value] != current_weapon_name:
-						changing_weapon_name = WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value]
-						changing_weapon = true
-						mouse_scroll_value = round_mouse_scroll_value
+        if event.button_index == BUTTON_WHEEL_UP or event.button_index == BUTTON_WHEEL_DOWN:
+            if event.button_index == BUTTON_WHEEL_UP:
+                mouse_scroll_value += MOUSE_SENSITIVITY_SCROLL_WHEEL
+            elif event.button_index == BUTTON_WHEEL_DOWN:
+                mouse_scroll_value -= MOUSE_SENSITIVITY_SCROLL_WHEEL
+            
+            mouse_scroll_value = clamp(mouse_scroll_value, 0, WEAPON_NUMBER_TO_NAME.size()-1)
+            
+            if changing_weapon == false:
+                if reloading_weapon == false:
+                    var round_mouse_scroll_value = int(round(mouse_scroll_value))
+                    if WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value] != current_weapon_name:
+                        changing_weapon_name = WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value]
+                        changing_weapon = true
+                        mouse_scroll_value = round_mouse_scroll_value
 
                         
 Let's go over what's happening here:
@@ -477,10 +480,9 @@ Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the f
         
         is_ready = true
         
-        # Hide all of the possible kit sizes
         kit_size_change_values(0, false)
         kit_size_change_values(1, false)
-        # Then make only the proper one visible
+        
         kit_size_change_values(kit_size, true)
 
 
@@ -488,17 +490,15 @@ Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the f
         if respawn_timer > 0:
             respawn_timer -= delta
             
-            # If the timer is 0 or less, then we've successfully waited long enough and can make ourselves visible again
             if respawn_timer <= 0:
                 kit_size_change_values(kit_size, true)
 
 
     func kit_size_change(value):
         if is_ready:
-            # Make the current kit invisible and disable its collision shape
             kit_size_change_values(kit_size, false)
             kit_size = value
-            # Make the newly assigned kit visible and enable its collision shape
+            
             kit_size_change_values(kit_size, true)
         else:
             kit_size = value
@@ -711,15 +711,16 @@ Then we disable the non-broken target's collision shape, and set our visibility 
 
 ______
 
+.. warning:: Make sure to set the exported ``destroyed_target`` value for ``Target.tscn`` in the editor! Otherwise the targets will not be destroyed
+             and you will get an error!
+
 With that done, go place some ``Target.tscn`` instances around in one/both/all of the levels. You should find they explode into five pieces after they've taken enough
 damage. After a little while, they'll respawn into a whole target again.
 
 Final notes
 -----------
 
-.. image:: img/FinishedTutorialPicture.png
-
-.. error:: TODO: replace this image!
+.. image:: img/PartFourFinished.png
 
 Now you can use a joypad, change weapons with the mouse's scroll wheel, replenish your health and ammo, and break targets with your weapons.
 
@@ -728,7 +729,5 @@ add turrets!
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for this part **here**
-             
-             TODO: Add the finished project for part 4!
+             You can download the finished project for this part here: :download:`Godot_FPS_Part_4.zip <files/Godot_FPS_Part_4.zip>`
 

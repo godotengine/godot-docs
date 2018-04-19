@@ -8,8 +8,6 @@ Tutorial introduction
 
 .. image:: img/FinishedTutorialPicture.png
 
-.. error:: TODO: redo this image!
-
 This tutorial series will show you how to make a single player FPS game.
 
 Throughout the course of this tutorial series, we will cover how:

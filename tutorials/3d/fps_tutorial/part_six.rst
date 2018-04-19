@@ -206,7 +206,6 @@ Add the following to ``Globals.gd``.
         pass
 
     func load_new_scene(new_scene_path):
-        # Change scenes
         get_tree().change_scene(new_scene_path)
 
 As you can see, it's really quite small and simple. As this part progresses we will
@@ -224,10 +223,10 @@ That's all of the code needed for ``Globals.gd`` right now! Before we can test t
 
 Open up the project settings and click the ``AutoLoad`` tab.
 
-.. Error:: add picture here!
+.. image:: img/AutoloadAddSingleton.png
 
 Then select the path to ``Globals.gd`` in the ``Path`` field by clicking the button beside it. Make sure the name in the ``Node Name`` field is ``Globals``. If you
-have everything like the picture below, then press ``Add``!
+have everything like the picture above, then press ``Add``!
 
 This will make ``Globals.gd`` a singleton/autoload script, which will allow us to access it from anywhere in any scene.
 
@@ -488,7 +487,7 @@ Open up ``Player.gd`` and in ``process_input``, change the code for capturing/fr
 ::
     
     if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 Now instead of capturing/freeing the mouse, we check to see if the current mouse mode is ``MOUSE_MODE_VISIBLE``. If it is, we set it back to
 ``MOUSE_MODE_CAPTURED``.
@@ -529,7 +528,7 @@ We now need to add a couple lines to ``_ready``, so we can use ``Globals.gd``. A
 ::
     
     globals = get_node("/root/Globals")
-	global_transform.origin = globals.get_respawn_position()
+    global_transform.origin = globals.get_respawn_position()
     
 
 Now we're getting the ``Globals.gd`` singleton and assigning it to ``globals``. We also set our global position
@@ -670,7 +669,7 @@ Before we leave ``Player.gd``, we need to add one quick thing to ``_input``. Add
 ::
     
     if is_dead:
-		return
+        return
 
 Now when we're dead we cannot look around with the mouse.
 
@@ -731,8 +730,8 @@ Now let's add ``get_respawn_position`` to ``Globals.gd``:
         if respawn_points == null:
             return Vector3(0, 0, 0)
         else:
-            var respawn_point = rand_range(0, respawn_points.size()-1);
-            return respawn_points[respawn_point].global_transform.origin;
+            var respawn_point = rand_range(0, respawn_points.size()-1)
+            return respawn_points[respawn_point].global_transform.origin
 
 Let's go over what this function does.
 
@@ -939,7 +938,6 @@ Add the following to ``load_new_scene``:
 
 ::
     
-    # Delete all of the sounds
     for sound in created_audio:
         if (sound != null):
             sound.queue_free()
@@ -977,17 +975,13 @@ Final notes
 
 .. image:: img/FinishedTutorialPicture.png
 
-.. error:: TODO: replace this image!
-
 Now you have a fully working single player FPS!
 
 At this point you have a good base to build more complicated FPS games.
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for the entire tutorial **here**
-             
-             TODO: Add the finished project for part 6!
+             You can download the finished project for the entire tutorial here: :download:`Godot_FPS_Part_5.zip <files/Godot_FPS_Finished.zip>`
 
 .. note:: The finished project source files contain the same exact code, just written in a different order.
           This is because the finished project source files are what the tutorial is based on.
@@ -1006,8 +1000,6 @@ At this point you have a good base to build more complicated FPS games.
          If you are unsure on which to use, use the project(s) provided in the documentation as they are maintained by the Godot community.
 
 You can download all of the ``.blend`` files used in this tutorial here: :download:`Godot_FPS_BlenderFiles.zip <files/Godot_FPS_BlenderFiles.zip>`
-
-.. error:: TODO: update the blender files!
 
 All assets provided in the started assets (unless otherwise noted) were **originally created by TwistedTwigleg, with changes/additions by the Godot community.**
 All original assets provided for this tutorial are released under the ``MIT`` license.

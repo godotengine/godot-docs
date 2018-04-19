@@ -8,9 +8,7 @@ Part Overview
 
 In this part we're going to add grenades to our player, give our player the ability to grab and throw objects, and add turrets!
 
-.. image:: img/FinishedTutorialPicture.png
-
-.. error:: TODO: replace this image
+.. image:: img/PartFiveFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_four` before moving on to this part of the tutorial.
           
@@ -276,8 +274,8 @@ If we are not attached, we then set ``attached`` to true so we know we've attach
 We then make a new :ref:`Spatial <class_Spatial>` node, and make it a child of the body we collided with. We then set the :ref:`Spatial <class_Spatial>`'s position
 to our current position.
 
-..note:: Because we've added the :ref:`Spatial <class_Spatial>` as a child of the body we've collided with, it will follow along with said body. We can then use this
-         :ref:`Spatial <class_Spatial>` to set our position, so we're always at the same position relative to the body we collided with.
+.. note:: Because we've added the :ref:`Spatial <class_Spatial>` as a child of the body we've collided with, it will follow along with said body. We can then use this
+          :ref:`Spatial <class_Spatial>` to set our position, so we're always at the same position relative to the body we collided with.
 
 We then disable ``rigid_shape`` so we're not constantly moving whatever body we've collided with. Finally, we set our mode to ``MODE_STATIC`` so the grenade does not move.
 
@@ -288,8 +286,8 @@ Finally, lets go over the few changes in ``_process``.
 Now we're checking to see if we are attached right at the top of ``_process``.
 
 If we are attached, we then make sure the attached point is not equal to ``null``.
-If the attached point is not equal to ``null``, we set our global position (using our global `:ref:Transform <class_Tranform>`'s origin) to the global position of
-the :ref:`Spatial <class_Spatial>` assigned to ``attach_point`` (using its global `:ref:Transform <class_Tranform>`'s origin).
+If the attached point is not equal to ``null``, we set our global position (using our global :ref:`Transform <class_Transform>`'s origin) to the global position of
+the :ref:`Spatial <class_Spatial>` assigned to ``attach_point`` (using its global :ref:`Transform <class_Transform>`'s origin).
 
 The only other change is now before we free/destroy the grenade, we check to see if we have an attached point. If we do, we also call ``queue_free`` on it, so it's
 also freed/destroyed.
@@ -323,8 +321,8 @@ Okay, now lets start making the grenades work with our player. Add the following
          
 Most of these variables are very similar to how we have out weapons set up.
 
-..tip:: While it's possible to make a more modular grenade system, I found it was not worth the additional complexity for just two grenades.
-        If you were going to make a more complex FPS with more grenades, you'd likely want to make a system for grenades similar to how we have the weapons set up.
+.. tip:: While it's possible to make a more modular grenade system, I found it was not worth the additional complexity for just two grenades.
+         If you were going to make a more complex FPS with more grenades, you'd likely want to make a system for grenades similar to how we have the weapons set up.
 
 ______
 
@@ -333,30 +331,30 @@ Now we need to add some code in ``_process_input`` Add the following to ``_proce
 ::
     
     # ----------------------------------
-	# Changing and throwing grenades
-	
-	if Input.is_action_just_pressed("change_grenade"):
-		if current_grenade == "Grenade":
-			current_grenade = "Sticky Grenade"
-		elif current_grenade == "Sticky Grenade":
-			current_grenade = "Grenade"
-	
-	if Input.is_action_just_pressed("fire_grenade"):
-		if grenade_amounts[current_grenade] > 0:
-			grenade_amounts[current_grenade] -= 1
-			
-			var grenade_clone
-			if (current_grenade == "Grenade"):
-				grenade_clone = grenade_scene.instance()
-			elif (current_grenade == "Sticky Grenade"):
-				grenade_clone = sticky_grenade_scene.instance()
-				# Sticky grenades will stick to the player if we do not pass ourselves
-				grenade_clone.player_body = self
-			
-			get_tree().root.add_child(grenade_clone)
-			grenade_clone.global_transform = $Rotation_Helper/Grenade_Toss_Pos.global_transform
-			grenade_clone.apply_impulse(Vector3(0,0,0), grenade_clone.global_transform.basis.z * GRENADE_THROW_FORCE)
-	# ----------------------------------
+    # Changing and throwing grenades
+
+    if Input.is_action_just_pressed("change_grenade"):
+        if current_grenade == "Grenade":
+            current_grenade = "Sticky Grenade"
+        elif current_grenade == "Sticky Grenade":
+            current_grenade = "Grenade"
+
+    if Input.is_action_just_pressed("fire_grenade"):
+        if grenade_amounts[current_grenade] > 0:
+            grenade_amounts[current_grenade] -= 1
+            
+            var grenade_clone
+            if (current_grenade == "Grenade"):
+                grenade_clone = grenade_scene.instance()
+            elif (current_grenade == "Sticky Grenade"):
+                grenade_clone = sticky_grenade_scene.instance()
+                # Sticky grenades will stick to the player if we do not pass ourselves
+                grenade_clone.player_body = self
+            
+            get_tree().root.add_child(grenade_clone)
+            grenade_clone.global_transform = $Rotation_Helper/Grenade_Toss_Pos.global_transform
+            grenade_clone.apply_impulse(Vector3(0,0,0), grenade_clone.global_transform.basis.z * GRENADE_THROW_FORCE)
+    # ----------------------------------
          
 Let's go over what's happening here.
 
@@ -384,7 +382,6 @@ First, let's change some of the code in ``Player.gd`` so we can see how many gre
 ::
     
     func process_UI(delta):
-    
         if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
             # First line: Health, second line: Grenades
             UI_status_label.text = "HEALTH: " + str(health) + \
@@ -473,38 +470,38 @@ With that done, all we need to do is add some code to ``process_input``:
 ::
     
     # ----------------------------------
-	# Grabbing and throwing objects
-	
-	if Input.is_action_just_pressed("fire") and current_weapon_name == "UNARMED":
-		if grabbed_object == null:
-			var state = get_world().direct_space_state
-			
+    # Grabbing and throwing objects
+
+    if Input.is_action_just_pressed("fire") and current_weapon_name == "UNARMED":
+        if grabbed_object == null:
+            var state = get_world().direct_space_state
+            
             var center_position = get_viewport().size/2
-			var ray_from = camera.project_ray_origin(center_position)
-			var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
-			
+            var ray_from = camera.project_ray_origin(center_position)
+            var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
+            
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
-			if ray_result:
-				if ray_result["collider"] is RigidBody:
-					grabbed_object = ray_result["collider"]
-					grabbed_object.mode = RigidBody.MODE_STATIC
-					
+            if ray_result:
+                if ray_result["collider"] is RigidBody:
+                    grabbed_object = ray_result["collider"]
+                    grabbed_object.mode = RigidBody.MODE_STATIC
+                    
                     grabbed_object.collision_layer = 0
-					grabbed_object.collision_mask = 0
-		
+                    grabbed_object.collision_mask = 0
+        
         else:
-			grabbed_object.mode = RigidBody.MODE_RIGID
-			
+            grabbed_object.mode = RigidBody.MODE_RIGID
+            
             grabbed_object.apply_impulse(Vector3(0,0,0), -camera.global_transform.basis.z.normalized() * OBJECT_THROW_FORCE)
-			
+            
             grabbed_object.collision_layer = 1
-			grabbed_object.collision_mask = 1
-			
+            grabbed_object.collision_mask = 1
+            
             grabbed_object = null
-	
-	if grabbed_object != null:
-		grabbed_object.global_transform.origin = camera.global_transform.origin + (-camera.global_transform.basis.z.normalized() * OBJECT_GRAB_DISTANCE)
-	# ----------------------------------
+
+    if grabbed_object != null:
+        grabbed_object.global_transform.origin = camera.global_transform.origin + (-camera.global_transform.basis.z.normalized() * OBJECT_GRAB_DISTANCE)
+    # ----------------------------------
 
 Let's go over what's happening.
 
@@ -573,13 +570,14 @@ want to be able to change weapons or reload, so change ``_physics_process`` to t
 
 ::
     
-    process_input(delta)
-    process_view_input(delta)
-    process_movement(delta)
-	
-	if (grabbed_object == null):
-		process_changing_weapons(delta)
-		process_reloading(delta)
+    func _physics_process(delta):
+        process_input(delta)
+        process_view_input(delta)
+        process_movement(delta)
+        
+        if grabbed_object == null:
+            process_changing_weapons(delta)
+            process_reloading(delta)
 	
 	# Process the UI
 	process_UI(delta)
@@ -934,14 +932,21 @@ attached, assign the :ref:`NodePath <class_NodePath>` to the ``Turret`` node.
 
 ______
 
+The last thing we need to do is add a way for the player to be hurt. Since all of our bullets use the ``bullet_hit`` function, we just need to add that to our player.
+
+Open ``Player.gd`` and add the following:
+
+::
+    
+    func bullet_hit(damage, bullet_hit_pos):
+        health -= damage
+
 With all that done, you should have fully operational turrets! Go place a few in one/both/all of the scenes and give them a try!
 
 Final notes
 -----------
 
-.. image:: img/FinishedTutorialPicture.png
-
-.. error:: TODO: replace this image!
+.. image:: img/PartFiveFinished.png
 
 Now you the player can pick up :ref:`RigidBody <class_RigidBody>` nodes and throw grenades. We now also have turrets to fire at our player.
 
@@ -950,6 +955,4 @@ add a respawn system for the player, and change/move the sound system so we can 
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for this part **here**
-             
-             TODO: Add the finished project for part 5!
+             You can download the finished project for this part here: :download:`Godot_FPS_Part_5.zip <files/Godot_FPS_Part_5.zip>`
