@@ -54,7 +54,7 @@ First, we need to define a few new global variables. Add the following global va
     var JOYPAD_SENSITIVITY = 2
     const JOYPAD_DEADZONE = 0.15
 
-Lets go over what each of these do:
+Let's go over what each of these do:
 
 * ``JOYPAD_SENSITIVITY``: This is how fast our joypad joysticks will move our camera.
 * ``JOYPAD_DEADZONE``: The dead zone for the joypad. You may need to adjust depending on your joypad.
@@ -91,11 +91,11 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
         input_movement_vector += joypad_vec
 
-Lets go over what we're doing.
+Let's go over what we're doing.
 
 First we check to see if there is a connected joypad.
 
-If there is a joypad connected, we then get it's left stick axes for right/left and up/down.
+If there is a joypad connected, we then get its left stick axes for right/left and up/down.
 Because a wired Xbox 360 controller has different joystick axis mapping based on OS, we use different axes based on
 the OS.
 
@@ -163,8 +163,8 @@ Let's go over what's happening:
 
 First we check the mouse mode. If the mouse mode is not ``MOUSE_MODE_CAPTURED``, we want to return, which will skip the code below.
 
-Next we define a new :ref:`Vector2 <class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set it's values so
-it's mapped to the proper axes for the right joystick.
+Next we define a new :ref:`Vector2 <class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set its values so
+it is mapped to the proper axes for the right joystick.
 
 .. warning:: As stated above, I do not (currently) has access to a Mac computer, so the joystick axes may need changing. If they do,
              please open a GitHub issue on the Godot documentation repository!
@@ -204,14 +204,14 @@ Open up ``Player.gd`` and add the following global variables:
     var mouse_scroll_value = 0
     const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
-Lets go over what each of these new variables will be doing:
+Let's go over what each of these new variables will be doing:
 
 * ``mouse_scroll_value``: The value of the mouse scroll wheel.
 * ``MOUSE_SENSITIVITY_SCROLL_WHEEL``: How much a single scroll action increases mouse_scroll_value
 
 ______
 
-Now lets add the following to ``_input``:
+Now let's add the following to ``_input``:
 
 ::
     
@@ -348,7 +348,7 @@ Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add t
             respawn_timer = RESPAWN_TIME
             kit_size_change_values(kit_size, false)
 
-Let's go over what this script is doing, starting with it's global variables:
+Let's go over what this script is doing, starting with its global variables:
 
 * ``kit_size``: The size of the health pick up. Notice how we're using a ``setget`` function to tell if it's changed.
 * ``HEALTH_AMMOUNTS``: The amount of health each pick up in each size contains.
@@ -404,7 +404,7 @@ We get the collision shape for the node corresponding to ``size`` and disable it
           :ref:`CollisionShape <class_CollisionShape>` uses disabled instead of enabled, we need to flip it. By flipping it, we can enable the collision shape
           and make the mesh visible when ``true`` is passed in.
   
-We then get the correct :ref:`Spatial <class_Spatial>` node holding the mesh and set it's visibility to ``enable``.
+We then get the correct :ref:`Spatial <class_Spatial>` node holding the mesh and set its visibility to ``enable``.
 
 This function may be a little confusing, try to think of it like this: We're enabling/disabling the proper nodes for ``size`` using ``enabled``. This is so we cannot pick up
 health for a size that is not visible, and so only the mesh for the proper size will be visible.
@@ -657,7 +657,10 @@ ______
 Let's look at ``_ready``.
 
 The first thing we do is get the broken target holder and assign it to ``broken_target_holder``. Notice how we're using ``get_parent().get_node()`` here, instead
-of ``$``. The reason behind this is because (as of when this was written) there is no way to get a node from another node without using ``get_node``.
+of ``$``. If you want to use ``$``, then you'd need to change ``get_parent().get_node()`` to ``$"../Broken_Target_Holder"``.
+
+.. note:: At the time of when this was written, I did not realize you can use ``$"../NodeName"`` to get the parent nodes using ``$``, which is why ``get_parent().get_node()``
+          is used instead.
 
 Next we get the collision shape and assign it to ``target_collision_shape``. The reason we need to collision shape is because even when the mesh is invisible, the
 collision shape will still exist in the physics world. This makes it where the player can interact with a non-broken target even though it's invisible, which is

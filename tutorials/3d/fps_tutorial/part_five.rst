@@ -367,8 +367,8 @@ current grenade we have selected.
 If we have more than ``0`` grenades, we then remove one from the grenade amounts for the current grenade.
 Then, based on the grenade we're currently using we instance the proper grenade scene and assign it to ``grenade_clone``.
 
-Next we add ``grenade_clone`` as a child of the node at the root, and set it's global :ref:`Transform <class_Transform>` to
-``Grenade_Toss_Pos``'s global :ref:`Transform <class_Transform>`. Finally, we apply an impulse to the grenade so that it's launched forward, relative
+Next we add ``grenade_clone`` as a child of the node at the root, and set its global :ref:`Transform <class_Transform>` to
+``Grenade_Toss_Pos``'s global :ref:`Transform <class_Transform>`. Finally, we apply an impulse to the grenade so that it is launched forward, relative
 to the ``Z`` directional vector of ``grenade_clone``'s.
 
 ______
@@ -528,10 +528,10 @@ ourselves or the knife's collision area.
 
 Then we check to see if we got a result back. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
-If the ray did collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
+If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
 the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it's not moved.
 
-Finally, we set it's collision layer and collision mask to ``0``. This will make it have no collision layer or mask, which will means it will not be able to collide with anything.
+Finally, we set its collision layer and collision mask to ``0``. This will make it have no collision layer or mask, which will means it will not be able to collide with anything.
 
 ______
 
@@ -561,7 +561,7 @@ The last thing we do is check to see whether or not ``grabbed_object`` is equal 
 .. note:: While technically not input related, it's easy enough to place the code moving the grabbed object here
 	      because it's only two lines, and then all of the grabbing/throwing code is in one place
 
-If we are holding an object, we set it's global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
+If we are holding an object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
 
 ______
 
@@ -792,7 +792,7 @@ This is quite a bit of code, so let's break it down function by function. Let's 
 * ``ammo_reload_timer``: A variable for tracking how long the turret has been reloading.
 * ``current_target``: The turret's current target.
 * ``is_active``: A variable for tracking whether the turret is able to fire at the target.
-* ``PLAYER_HEIGHT``: The amount of height we're adding to the target so we're not shooting at it's feet.
+* ``PLAYER_HEIGHT``: The amount of height we're adding to the target so we're not shooting at its feet.
 * ``smoke_particles``: A variable to hold the smoke particles node.
 * ``turret_health``: The amount of health the turret currently has.
 * ``MAX_TURRET_HEALTH``: The amount of health a fully healed turret has.
