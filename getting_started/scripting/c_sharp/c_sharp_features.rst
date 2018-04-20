@@ -40,7 +40,7 @@ and for this reason it cannot be used with value types.
 
     Sprite mySprite = GetNode("MySprite") as Sprite;
     // Only call SetFrame() is mySprite is not null
-    mySprite?.SetFrame(0);;
+    mySprite?.SetFrame(0);
 
 **Type checking using the IS operator**
 
@@ -120,10 +120,10 @@ It is possible to bind values when establishing a connection by passing an objec
     public void SomeFunction()
     {
         var plusButton = (Button)GetNode("PlusButton");
-        var minusButton = (Button)GetNode("MunusButton");
+        var minusButton = (Button)GetNode("MinusButton");
         
-        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 })
-        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 })
+        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
+        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
     }
 
 Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
