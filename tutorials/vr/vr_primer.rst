@@ -57,7 +57,7 @@ When you move through the virtual world, either through controller input or when
 
 :ref:`ARVRCamera <class_ARVRCamera>` is the second node that must always be a part of your scene and it must always be a child node of your origin node. It is a subclass of Godots normal camera however its position is automatically updated each frame based on the physical orientation and position of the HMD. Also due to the precision required for rendering to an HMD or rendering an AR overlay over a real world camera most of the standard camera properties are ignored. The only properties of the camera that are used are the near and far plane settings. The FOV, aspect ratio and projection mode are all ignored.
 
-Note that for our native mobile VR implementation there is no positional tracking, only the orientation of the phone and by extension the HMD is tracked. This implementation articifically places the camera at a height (Y) of 1.85.
+Note that for our native mobile VR implementation there is no positional tracking, only the orientation of the phone and by extension the HMD is tracked. This implementation artificially places the camera at a height (Y) of 1.85.
 
 Conclusion, your minimum setup in your scene to make AR or VR work should look like this:
 

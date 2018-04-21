@@ -33,7 +33,7 @@ Axis Order
 ==========
 
 The main reason for this is that there isn't a *unique* way to construct an orientation from the angles. There isn't a standard mathematical function that
-takes all the angles togehter and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
+takes all the angles together and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
 by angle, in an *arbitrary order*.
 
 This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything really works,
@@ -62,7 +62,7 @@ Depending on the type of game or effect desired, the order in which you want axi
 Interpolation
 =============
 
-Another problem with using Euler angles is interpolation. Imagine you want to transition between two different camera or enemy positions (including rotations). One logical way to approach this is to interpolate the angles from one position to to the next. One would expect it to look like this:
+Another problem with using Euler angles is interpolation. Imagine you want to transition between two different camera or enemy positions (including rotations). One logical way to approach this is to interpolate the angles from one position to the next. One would expect it to look like this:
 
 .. image:: img/transforms_interpolate1.gif
 
@@ -108,6 +108,7 @@ This is also an analog to a 3x3 identity matrix.
 Following the OpenGL convention, ``X`` is the *Right* axis, ``Y`` is the *Up* axis and ``Z`` is the *Forward* axis.
 
 Together with the *basis*, a transform also has an *origin*. This is a *Vector3* specifying how far away from the actual origin ``(0, 0, 0)`` this transform is. Combining the *basis* with the *origin*, a *transform* efficiently represents a unique translation, rotation, and scale in space.
+
 .. image:: img/transforms_camera.png
 
 

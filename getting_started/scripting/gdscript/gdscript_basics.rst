@@ -102,6 +102,11 @@ here's a simple example of how GDScript looks.
         var local_var2 = param1+3
         return local_var2
 
+    # functions override functions with the same name on the base/parent class
+    # if you still want to call them, use '.' (like 'super' in other languages)
+
+    func something(p1, p2):
+        .something(p1, p2)
 
     # inner class
 
@@ -139,6 +144,11 @@ Keywords
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
+Operators (like ``in``, ``not``, ``and`` or ``or``) and names of built-in types
+as listed in the following sections are also reserved.
+
+Keywords are defined in the `GDScript tokenizer <https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript_tokenizer.cpp>`_
+in case you want to take a look under the hood.
 
 +------------+---------------------------------------------------------------------------------------------------------------+
 |  Keyword   | Description                                                                                                   |
@@ -175,6 +185,8 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| self       | Refers to current class instance.                                                                             |
++------------+---------------------------------------------------------------------------------------------------------------+
 | tool       | Executes the script in the editor.                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | signal     | Defines a signal.                                                                                             |
@@ -197,12 +209,33 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | breakpoint | Editor helper for debugger breakpoints.                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| preload    | Preloads a class or variable. See `Classes as resources`_.                                                    |
++------------+---------------------------------------------------------------------------------------------------------------+
+| yield      | Coroutine support. See `Coroutines`_.                                                                         |
++------------+---------------------------------------------------------------------------------------------------------------+
+| assert     | Asserts a condition, logs error on failure. Ignored in non-debug builds. See `Assert keyword`_.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| remote     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| master     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| slave      | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| sync       | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| PI         | PI constant.                                                                                                  |
++------------+---------------------------------------------------------------------------------------------------------------+
+| TAU        | TAU constant.                                                                                                 |
++------------+---------------------------------------------------------------------------------------------------------------+
+| INF        | Infinity constant. Used for comparisons.                                                                      |
++------------+---------------------------------------------------------------------------------------------------------------+
+| NAN        | NAN (not a number) constant. Used for comparisons.                                                            |
++------------+---------------------------------------------------------------------------------------------------------------+
 
 Operators
 ~~~~~~~~~
 
-The following is the list of supported operators and their precedence
-(TODO, change since this was made to reflect python operators)
+The following is the list of supported operators and their precedence.
 
 +---------------------------------------------------------------+-----------------------------------------+
 | **Operator**                                                  | **Description**                         |
@@ -567,13 +600,6 @@ A function can ``return`` at any point. The default return value is ``null``.
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
-prepend ``.`` to the function name:
-
-::
-
-    .basefunc(args)
-
 Contrary to Python, functions are *not* first class objects in GDScript. This
 means they cannot be stored in variables, passed as an argument to another
 function or be returned from other functions. This is for performance reasons.
@@ -890,6 +916,22 @@ the ``is`` keyword can be used:
     # use 'is' to check inheritance
     if (entity is enemy_class):
         entity.apply_damage()
+
+To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
+prepend ``.`` to the function name:
+
+::
+
+    .basefunc(args)
+
+This is especially useful because functions in extending classes replace
+functions with the same name in their base classes. So if you still want
+to call them, you can use ``.`` like the ``super`` keyword in other languages:
+
+::
+
+    func some_func(x):
+        .some_func(x) # calls same function on the parent class
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
@@ -1343,3 +1385,14 @@ can replace the above code with a single line:
 ::
 
     onready var mylabel = get_node("MyLabel")
+
+Assert keyword
+~~~~~~~~~~~~~~
+
+The ``assert`` keyword can be used to check conditions in debug builds.
+These assertions are ignored in non-debug builds.
+
+::
+
+    # Check that i is 0
+    assert(i == 0)

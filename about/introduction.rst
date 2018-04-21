@@ -54,7 +54,9 @@ open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
 
 .. note:: You can contribute to Godot's documentation by opening issue tickets
           or sending patches via pull requests on its GitHub
-          `source repository <https://github.com/godotengine/godot-docs>`_.
+          `source repository <https://github.com/godotengine/godot-docs>`_, or
+          translating it into your language on `Hosted Weblate
+          <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`_.
 
 All the contents are under the permissive Creative Commons Attribution 3.0
 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with
@@ -70,7 +72,7 @@ relatively intuitive:
 - The :ref:`sec-general` section contains this introduction as well as
   information about the engine, its history, its licensing, authors, etc. It
   also contains the :ref:`doc_faq`.
-- The :ref:`sec-learn` section is the the main *raison d'être* of this
+- The :ref:`sec-learn` section is the main *raison d'être* of this
   documentation, as it contains all the necessary information on using the
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all

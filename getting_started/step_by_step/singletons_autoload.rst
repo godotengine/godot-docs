@@ -46,16 +46,28 @@ are loaded.
 
 This means that any node can access a singleton named "playervariables" with:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    var player_vars = get_node("/root/playervariables")
    player_vars.health
 
+ .. code-tab:: csharp
+ 
+    var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
+    playerVariables.Health -= 10; // instance field
+
 Or even simpler using the name directly:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    playervariables.health
+
+ .. code-tab:: csharp
+
+    // Static members can be accessed by using the class name
+    PlayerVariables.Health -= 10;
 
 Custom scene switcher
 ---------------------
@@ -104,7 +116,8 @@ last child of root is always the loaded scene.
 Note: Make sure that global.gd extends Node, otherwise it won't be
 loaded!
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -114,10 +127,27 @@ loaded!
             var root = get_tree().get_root()
             current_scene = root.get_child( root.get_child_count() -1 )
 
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    public class Global : Godot.Node
+    {
+        public Node CurrentScene { get; set; }
+
+        public override void _Ready()
+        {
+            Viewport root = GetTree().GetRoot();
+            CurrentScene = root.GetChild(root.GetChildCount() - 1);
+        }
+    }
+
 Next up is the function for changing the scene. This function frees the
 current scene and replaces it with the requested one.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func goto_scene(path):
 
@@ -151,6 +181,40 @@ current scene and replaces it with the requested one.
         # optional, to make it compatible with the SceneTree.change_scene() API
         get_tree().set_current_scene( current_scene )
 
+ .. code-tab:: csharp
+
+    public void GotoScene(string path)
+    {
+        // This function will usually be called from a signal callback,
+        // or some other function from the running scene.
+        // Deleting the current scene at this point might be
+        // a bad idea, because it may be inside of a callback or function of it.
+        // The worst case will be a crash or unexpected behavior.
+
+        // The way around this is deferring the load to a later time, when
+        // it is ensured that no code from the current scene is running:
+
+        CallDeferred(nameof(DeferredGotoScene), path);
+    }
+
+    public void DeferredGotoScene(string path)
+    {
+        // Immediately free the current scene, there is no risk here.
+        CurrentScene.Free();
+
+        // Load a new scene
+        var nextScene = (PackedScene)GD.Load(path);
+
+        // Instance the new scene
+        CurrentScene = nextScene.Instance();
+
+        // Add it to the active scene, as child of root
+        GetTree().GetRoot().AddChild(CurrentScene);
+
+        // optional, to make it compatible with the SceneTree.change_scene() API
+        GetTree().SetCurrentScene(CurrentScene);
+    }
+
 As mentioned in the comments above, we really want to avoid the
 situation of having the current scene being deleted while being used
 (code from functions of it being run), so using
@@ -162,21 +226,43 @@ the current scene is running.
 Finally, all that is left is to fill the empty functions in scene_a.gd
 and scene_b.gd:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     #add to scene_a.gd
 
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_b.tscn")
 
+ .. code-tab:: csharp
+
+    // add to SceneA.cs
+
+    public void OnGotoScenePressed()
+    {
+        var global = (Global)GetNode("/root/Global");
+        global.GotoScene("res://scene_b.tscn");
+    }
+
 and
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     #add to scene_b.gd
 
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_a.tscn")
+
+ .. code-tab:: csharp
+
+    // add to SceneB.cs
+
+    public void OnGotoScenePressed()
+    {
+        var global = (Global)GetNode("/root/Global");
+        global.GotoScene("res://scene_a.tscn");
+    }
 
 Now if you run the project, you can switch between both scenes by pressing
 the button!

@@ -42,3 +42,30 @@ With this, you should see ``(hello:world)`` printed on the console; hello being 
 For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>` and :ref:`JSONParseResult <class_JSONParseResult>`.
 
 Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS`` and whether a JSON parsing error occurred, see the JSON class reference and :ref:`HTTPRequest <class_HTTPRequest>` for more.
+
+Of course, you can also set custom HTTP headers. These are given as a string array, with each string containing a header in the format ``"header: value"``.
+For example, to set a custom user agent (the HTTP ``user-agent`` header) you could use the following:
+
+::
+
+    $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", ["user-agent: YourCustomUserAgent"])
+
+Please note that for SSL/TLS encryption and thus HTTPS URLs to work you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
+
+Also, when calling APIs using authorization, be aware that someone might analyse and decompile your released application and thus may gain access to any embedded authorization information like tokens, usernames or passwords.
+That means it is usually not a good idea to embed things such as database access credentials inside your game. Avoid providing information useful to an attacker whenever possible.
+
+Sending data to server
+----------------------
+
+Until now we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
+
+::
+
+    func _make_post_request(url, data_to_send, use_ssl):
+        # Convert data to json string:
+        var query = JSON.print(data_to_send)
+        # Add 'Content-Type' header:
+        var headers = ["Content-Type: application/json"]
+        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)        
+

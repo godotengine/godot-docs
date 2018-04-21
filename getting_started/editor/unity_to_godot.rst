@@ -12,33 +12,33 @@ This guide provides an overview of Godot Engine from the viewpoint of a Unity us
 Differences
 -----------
 
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-|                   | Unity                                                                             | Godot                                                                                                          |
-+===================+===================================================================================+================================================================================================================+
-| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT license, free and fully open source without any restriction                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, macOS, Linux (unofficial and unsupported)                                | Windows, X11 (Linux, \*BSD), Haiku, macOS                                                                      |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (export)       | | Desktop: Windows, Linux/SteamOS, macOS                                          | | Desktop: Windows, X11, macOS                                                                                 |
-|                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS,                                                                                        |
-|                   | | Web: WebAssembly or asm.js                                                      | | Web: WebAssembly                                                                                             |
-|                   | | Consoles: PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS                 |                                                                                                                |
-|                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens   |                                                                                                                |
-|                   | | TV: Android TV, Samsung SMART TV, tvOS                                          |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
-|                   | | Prefabs                                                                         |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Third-party tools | Visual Studio or SharpEditor                                                      | | Android SDK for Android export                                                                               |
-|                   |                                                                                   | | External editors are possible                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Killer features   | | Huge community                                                                  | | Scene System                                                                                                 |
-|                   | | Large assets store                                                              | | Animation Pipeline                                                                                           |
-|                   |                                                                                   | | Easy to write Shaders                                                                                        |
-|                   |                                                                                   | | Debug on Device                                                                                              |
-|                   |                                                                                   |                                                                                                                |
-|                   |                                                                                   |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+|                   | Unity                                                                              | Godot                                                                                                          |
++===================+====================================================================================+================================================================================================================+
+| License           | Proprietary, closed, free license with revenue caps and usage restrictions         | MIT license, free and fully open source without any restriction                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| OS (editor)       | Windows, macOS, Linux (unofficial and unsupported)                                 | Windows, macOS, X11 (Linux, \*BSD)                                                                             |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| OS (export)       | * **Desktop:** Windows, macOS, Linux                                               | * **Desktop:** Windows, macOS, X11                                                                             |
+|                   | * **Mobile:** Android, iOS, Windows Phone, Tizen                                   | * **Mobile:** Android, iOS                                                                                     |
+|                   | * **Web:** WebAssembly or asm.js                                                   | * **Web:** WebAssembly                                                                                         |
+|                   | * **Consoles:** PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS              | * **Console:** See :ref:`doc_consoles`                                                                         |
+|                   | * **VR:** Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens| * **VR:** Oculus Rift, SteamVR                                                                                 |
+|                   | * **TV:** Android TV, Samsung SMART TV, tvOS                                       |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Scene system      | * Component/Scene (GameObject > Component)                                         | :ref:`Scene tree and nodes <doc_scenes_and_nodes>`, allowing scenes to be nested and/or inherit other scenes   |
+|                   | * Prefabs                                                                          |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Third-party tools | Visual Studio or VS Code                                                           | * :ref:`External editors are possible <doc_external_editor>`                                                   |
+|                   |                                                                                    | * :ref:`Android SDK for Android export <doc_exporting_for_android>`                                            |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Killer features   | * Huge community                                                                   | * Scene System                                                                                                 |
+|                   | * Large assets store                                                               | * :ref:`Animation Pipeline <doc_animations>`                                                                   |
+|                   |                                                                                    | * :ref:`Easy to write Shaders <doc_shading_language>`                                                          |
+|                   |                                                                                    | * Debug on Device                                                                                              |
+|                   |                                                                                    |                                                                                                                |
+|                   |                                                                                    |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
 The editor
@@ -89,15 +89,15 @@ In Unity, you would put all the GameObjects in the scene: the player, multiple i
 
 In Godot, you would split your whole scene into 3 separate, smaller scenes, which you would then instance in the main scene.
 
-1. First, a scene for the Player alone.
+1. **First, a scene for the Player alone.**
 
 Consider the player as a reusable element in other levels. It is composed of one node in particular: an AnimatedSprite node, which contains the sprite textures to form various animations (for example, walking animation)
 
-2. Second, a scene for the Enemy.
+2. **Second, a scene for the Enemy.**
 
 There again, an enemy is a reusable element in other levels. It is almost the same as the Player node - the only differences are the script (that manages AI, mostly) and sprite textures used by the AnimatedSprite.
 
-3. Lastly, the Level scene.
+3. **Lastly, the Level scene.**
 
 It is composed of Bricks (for platforms), Coins (for the player to grab) and a certain number of instances of the previous Enemy scene. These will be different, separate enemies, whose behaviour and appearance will be the same as defined in the Enemy scene. Each instance is then considered as a node in the Level scene tree. Of course, you can set different properties for each enemy node (to change its color for example).
 
@@ -173,7 +173,7 @@ Connections : groups and signals
 
 You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained in this group! This is explained in :ref:`this page <doc_scripting_continued>`.
 
-But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <gdscript.html#signals>`_.
+But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <../scripting/gdscript/gdscript_basics.html#signals>`_.
 
 
 Using Godot in C++

@@ -135,7 +135,7 @@ get it back by using:
     var capture = viewport.get_screen_capture()
 
 If the returned image is empty, capture still didn't happen, wait a
-little more, as this API is asyncronous.
+little more, as this API is asynchronous.
 
 Sub-viewport
 ------------

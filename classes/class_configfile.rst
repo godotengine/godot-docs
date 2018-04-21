@@ -123,6 +123,6 @@ Saves the contents of the ConfigFile object to the file specified as a parameter
 
 - void **set_value** **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value **)**
 
-Assigns a value to the specified key of the the specified section. If the section and/or the key do not exist, they are created. Passing a ``null`` value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.
+Assigns a value to the specified key of the specified section. If the section and/or the key do not exist, they are created. Passing a ``null`` value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.
 
 

@@ -54,9 +54,9 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     urpmi scons pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" "pkgconfig(libpulse)" \|
-|               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
-|               |         "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)"                                              |
+|               |     urpmi scons task-c++-devel pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" \       |
+|               |         "pkgconfig(libpulse)" "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)"\|
+|               |         "pkgconfig(xinerama)" "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)"                        |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **OpenBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
