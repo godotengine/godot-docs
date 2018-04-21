@@ -211,7 +211,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| yield      | Coroutine support. See `Coroutines`_.                                                                         |
+| yield      | Coroutine support. See `Coroutines with yield`_.                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | assert     | Asserts a condition, logs error on failure. Ignored in non-debug builds. See `Assert keyword`_.               |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -328,6 +328,12 @@ considered a comment.
 
 Built-in types
 --------------
+
+Built-in types are stack-allocated. They are passed as values.
+This means a copy is created on each assignment or when passing them as arguments to functions.
+The only exceptions are ``Array``s and ``Dictionaries``, which are passed by reference so they are shared.
+(Not ``PoolArray``s like ``PoolByteArray`` though, those are passed as values too,
+so consider this when deciding which to use!)
 
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
@@ -1287,8 +1293,8 @@ Object.emit_signal method:
         emit_signal("your_signal_name_with_args", 55, 128)
         someinstance.emit_signal("somesignal")
 
-Coroutines
-~~~~~~~~~~
+Coroutines with yield
+~~~~~~~~~~~~~~~~~~~~~
 
 GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 via the ``yield`` built-in function. Calling ``yield()`` will
