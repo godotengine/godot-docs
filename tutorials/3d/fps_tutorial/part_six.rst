@@ -13,8 +13,6 @@ This is the last part of the FPS tutorial, by the end of this you will have a so
 
 .. image:: img/FinishedTutorialPicture.png
 
-.. error:: TODO: replace this image
-
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_five` before moving on to this part of the tutorial.
           
           The finished project from :ref:`doc_fps_tutorial_part_four` will be the starting project for part 6
@@ -981,7 +979,7 @@ At this point you have a good base to build more complicated FPS games.
 
 .. warning:: If you ever get lost, be sure to read over the code again!
 
-             You can download the finished project for the entire tutorial here: :download:`Godot_FPS_Part_5.zip <files/Godot_FPS_Finished.zip>`
+             You can download the finished project for the entire tutorial here: :download:`Godot_FPS_Part_6.zip <files/Godot_FPS_Finished.zip>`
 
 .. note:: The finished project source files contain the same exact code, just written in a different order.
           This is because the finished project source files are what the tutorial is based on.
