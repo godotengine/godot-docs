@@ -9,3 +9,5 @@ FPS tutorial
    part_two
    part_three
    part_four
+   part_five
+   part_six
