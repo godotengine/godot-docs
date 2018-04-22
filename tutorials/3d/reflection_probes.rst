@@ -58,7 +58,7 @@ Interior vs Exterior
 If you are using reflection probes in an interior setting, it is recommended that the **Interior** property is enabled. This makes
 the probe not render the sky, and also allows custom ambient lighting settings.
 
-.. image:: img/refprobe_cullmask.png
+.. image:: img/refprobe_ambient.png
 
 When probes are set to **Interior**, custom constant ambient lighting can be specified per probe. Just choose a color and an energy.
 
