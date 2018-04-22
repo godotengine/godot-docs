@@ -183,7 +183,7 @@ Add the following code to ``Player.gd``:
         if Input.is_action_pressed("movement_left"):
             input_movement_vector.x -= 1
         if Input.is_action_pressed("movement_right"):
-            input_movement_vector.x = 1
+            input_movement_vector.x += 1
         
         input_movement_vector = input_movement_vector.normalized()
         
