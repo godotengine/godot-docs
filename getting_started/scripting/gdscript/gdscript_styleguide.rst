@@ -30,14 +30,14 @@ Indent size: 4 *(editor default)*
 
 Each indent level should be one greater than the block containing it.
 
-**Good**
+**Good**:
 
 ::
 
     for i in range(10):
         print("hello")
 
-**Bad**
+**Bad**:
 
 ::
     
@@ -50,7 +50,7 @@ Each indent level should be one greater than the block containing it.
 Use 2 indent levels to distinguish continuation lines from
 regular code blocks.
 
-**Good**
+**Good**:
 
 ::
 
@@ -58,7 +58,7 @@ regular code blocks.
                 sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
                 Tween.TRANS_QUAD, Tween.EASE_OUT)
 
-**Bad**
+**Bad**:
 
 ::
 
@@ -80,7 +80,7 @@ Never combine multiple statements on a single line. No, C programmers,
 not with a single line conditional statement (except with the ternary
 operator)!
 
-**Good**
+**Good**:
 
 ::
 
@@ -90,7 +90,7 @@ operator)!
     if flag:
         print("flagged")
 
-**Bad**
+**Bad**:
 
 ::
 
@@ -104,14 +104,14 @@ Avoid Unnecessary Parentheses
 Avoid parentheses in expressions and conditional statements. Unless
 necessary for order of operations, they only reduce readability.
 
-**Good**
+**Good**:
 
 ::
 
     if is_colliding():
         queue_free()
 
-**Bad**
+**Bad**:
 
 ::
 
@@ -124,7 +124,7 @@ Whitespace
 Always use one space around operators and after commas. Avoid extra
 spaces in dictionary references and function calls, or to create "columns."
 
-**Good**
+**Good**:
 
 ::
 
@@ -134,7 +134,7 @@ spaces in dictionary references and function calls, or to create "columns."
     myarray = [4, 5, 6]
     print('foo')
 
-**Bad**
+**Bad**:
 
 ::
 
@@ -144,7 +144,7 @@ spaces in dictionary references and function calls, or to create "columns."
     myarray = [4,5,6]
     print ('foo')
 
-**Never!**
+**NEVER**:
 
 ::
 
