@@ -53,30 +53,30 @@ here's a simple example of how GDScript looks.
 
 ::
 
-    # a file is a class!
+    # A file is a class!
 
-    # inheritance
+    # Inheritance
 
     extends BaseClass
 
-    # member variables
+    # Member variables
 
     var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
     var dict = {"key": "value", 2:3}
 
-    # constants
+    # Constants
 
-    const answer = 42
-    const thename = "Charly"
+    const ANSWER = 42
+    const THE_NAME = "Charly"
 
-    # enums
+    # Enums
 
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
 
-    # built-in vector types
+    # Built-in vector types
 
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
@@ -91,7 +91,7 @@ here's a simple example of how GDScript looks.
         elif param2 > 5:
             print(param2)
         else:
-            print("fail!")
+            print("Fail!")
 
         for i in range(20):
             print(i)
@@ -99,24 +99,24 @@ here's a simple example of how GDScript looks.
         while param2 != 0:
             param2 -= 1
 
-        var local_var2 = param1+3
+        var local_var2 = param1 + 3
         return local_var2
 
-    # functions override functions with the same name on the base/parent class
-    # if you still want to call them, use '.' (like 'super' in other languages)
+    # Functions override functions with the same name on the base/parent class.
+    # If you still want to call them, use '.' (like 'super' in other languages)
 
     func something(p1, p2):
         .something(p1, p2)
 
-    # inner class
+    # Inner class
 
     class Something:
         var a = 10
 
-    # constructor
+    # Constructor
 
     func _init():
-        print("constructed!")
+        print("Constructed!")
         var lv = Something.new()
         print(lv.a)
 
@@ -300,7 +300,7 @@ Literals
 +--------------------------+--------------------------------+
 | ``"Hello"``, ``"Hi"``    | Strings                        |
 +--------------------------+--------------------------------+
-| ``"""Hello, Dude"""``    | Multiline string               |
+| ``"""Hello"""``          | Multiline string               |
 +--------------------------+--------------------------------+
 | ``@"Node/Label"``        | NodePath or StringName         |
 +--------------------------+--------------------------------+
@@ -315,10 +315,10 @@ considered a comment.
 
     # This is a comment
 
-..  Uncomment me if/when https://github.com/godotengine/godot/issues/1320 gets fixed
 
-    Multi-line comments can be created using """ (three quotes in a row) at
-    the beginning and end of a block of text.
+Multi-line comments can be created using """ (three quotes in a row) at
+the beginning and end of a block of text. Note that this creates a string,
+therefore, it will not be stripped away when the script is compiled.
 
     ::
 
@@ -467,11 +467,11 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
     var arr = []
     arr = [1, 2, 3]
-    var b = arr[1] # this is 2
-    var c = arr[arr.size() - 1] # this is 3
-    var d = arr[-1] # same as the previous line, but shorter
-    arr[0] = "Hi!" # replacing value 1 with "Hi"
-    arr.append(4) # array is now ["Hi", 2, 3, 4]
+    var b = arr[1] # This is 2
+    var c = arr[arr.size() - 1] # This is 3
+    var d = arr[-1] # Same as the previous line, but shorter
+    arr[0] = "Hi!" # Replacing value 1 with "Hi"
+    arr.append(4) # Array is now ["Hi", 2, 3, 4]
 
 GDScript arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
@@ -495,13 +495,13 @@ Associative container which contains values referenced by unique keys.
 
 ::
 
-    var d = {4: 5, "a key": "a value", 28: [1, 2, 3]}
+    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
     d["Hi!"] = 0
     d = {
-        22: "Value",
-        "somekey": 2,
-        "otherkey": [2, 3, 4],
-        "morekey": "Hello"
+        22: "value",
+        "some_key": 2,
+        "other_key": [2, 3, 4],
+        "more_key": "Hello"
     }
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
@@ -512,19 +512,19 @@ start with a digit.
 ::
 
     var d = {
-        test22 = "Value",
-        somekey = 2,
-        otherkey = [2, 3, 4],
-        morekey = "Hello"
+        test22 = "value",
+        some_key = 2,
+        other_key = [2, 3, 4],
+        more_key = "Hello"
     }
 
 To add a key to an existing dictionary, access it like an existing key and
 assign to it::
 
-    var d = {} # create an empty Dictionary
-    d.waiting = 14 # add String "Waiting" as a key and assign the value 14 to it
-    d[4] = "hello" # add integer `4` as a key and assign the String "hello" as its value
-    d["Godot"] = 3.01 # add String "Godot" as a key and assign the value 3.01 to it
+    var d = {} # Create an empty Dictionary
+    d.waiting = 14 # Add String "Waiting" as a key and assign the value 14 to it
+    d[4] = "hello" # Add integer `4` as a key and assign the String "hello" as its value
+    d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it
 
 Data
 ----
@@ -538,10 +538,10 @@ value upon initialization.
 
 ::
 
-    var a # data type is null by default
+    var a # Data type is null by default
     var b = 5
     var c = 3.8
-    var d = b + c # variables are always initialized in order
+    var d = b + c # Variables are always initialized in order
 
 Constants
 ~~~~~~~~~
@@ -551,13 +551,13 @@ expressions and must be assigned on initialization.
 
 ::
 
-    const a = 5
-    const b = Vector2(20, 20)
-    const c = 10 + 20 # constant expression
-    const d = Vector2(20, 30).x # constant expression: 20
-    const e = [1, 2, 3, 4][0] # constant expression: 1
-    const f = sin(20) # sin() can be used in constant expressions
-    const g = x + 20 # invalid; this is not a constant expression!
+    const A = 5
+    const B = Vector2(20, 20)
+    const C = 10 + 20 # Constant expression
+    const D = Vector2(20, 30).x # Constant expression: 20
+    const E = [1, 2, 3, 4][0] # Constant expression: 1
+    const F = sin(20) # sin() can be used in constant expressions
+    const G = x + 20 # Invalid; this is not a constant expression!
 
 Enums
 ^^^^^
@@ -596,10 +596,10 @@ argument, unlike Python).
 
 ::
 
-    func myfunction(a, b):
+    func my_function(a, b):
         print(a)
         print(b)
-        return a + b  # return is optional; without it null is returned
+        return a + b  # Return is optional; without it null is returned
 
 A function can ``return`` at any point. The default return value is ``null``.
 
@@ -615,12 +615,12 @@ pass it to another function as an argument) one must use the ``call`` or
 ``funcref`` helpers::
 
     # Call a function by name in one step
-    mynode.call("myfunction", args)
+    my_node.call("my_function", args)
 
     # Store a function reference
-    var myfunc = funcref(mynode, "myfunction")
+    var my_func = funcref(my_node, "my_function")
     # Call stored function reference
-    myfunc.call_func(args)
+    my_func.call_func(args)
 
 
 Remember that default functions like  ``_init``, and most
@@ -677,7 +677,7 @@ Short statements can be written on the same line as the condition::
 Sometimes you might want to assign a different initial value based on a
 boolean expression. In this case ternary-if expressions come in handy::
 
-    var x = [true-value] if [expression] else [false-value]
+    var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
 
 while
@@ -702,23 +702,23 @@ in the loop variable.
 ::
 
     for x in [5, 7, 11]:
-        statement # loop iterates 3 times with x as 5, then 7 and finally 11
+        statement # Loop iterates 3 times with x as 5, then 7 and finally 11
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
         print(dict[i])
 
     for i in range(3):
-        statement # similar to [0, 1, 2] but does not allocate an array
+        statement # Similar to [0, 1, 2] but does not allocate an array
 
     for i in range(1,3):
-        statement # similar to [1, 2] but does not allocate an array
+        statement # Similar to [1, 2] but does not allocate an array
 
     for i in range(2,8,2):
-        statement # similar to [2, 4, 6] but does not allocate an array
+        statement # Similar to [2, 4, 6] but does not allocate an array
 
     for c in "Hello":
-        print(c) # iterate through all characters in a String, print every letter on new line
+        print(c) # Iterate through all characters in a String, print every letter on new line
 
 match
 ^^^^^
@@ -786,11 +786,11 @@ There are 6 pattern types:
 
         match x:
             1:
-                print("it's one!")
+                print("It's one!")
             2:
-                print("it's one times two!")
+                print("It's one times two!")
             _:
-                print("it's not 1 or 2. I don't care tbh.")
+                print("It's not 1 or 2. I don't care tbh.")
 
 
 - binding pattern
@@ -799,11 +799,11 @@ There are 6 pattern types:
 
         match x:
             1:
-                print("it's one!")
+                print("It's one!")
             2:
-                print("it's one times two!")
+                print("It's one times two!")
             var new_var:
-                print("it's not 1 or 2, it's ", new_var)
+                print("It's not 1 or 2, it's ", new_var)
 
 
 - array pattern
@@ -817,13 +817,13 @@ There are 6 pattern types:
 
         match x:
             []:
-                print("empty array")
+                print("Empty array")
             [1, 3, "test", null]:
-                print("very specific array")
+                print("Very specific array")
             [var start, _, "test"]:
-                print("first element is ", start, ", and the last is \"test\"")
+                print("First element is ", start, ", and the last is \"test\"")
             [42, ..]:
-                print("open ended array")
+                print("Open ended array")
 
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
@@ -840,13 +840,13 @@ There are 6 pattern types:
 
         match x:
             {}:
-                print("empty dict")
-            {"name": "dennis"}:
-                print("the name is dennis")
-            {"name": "dennis", "age": var age}:
-                print("dennis is ", age, " years old.")
+                print("Empty dict")
+            {"name": "Dennis"}:
+                print("The name is Dennis")
+            {"name": "Dennis", "age": var age}:
+                print("Dennis is ", age, " years old.")
             {"name", "age"}:
-                print("has a name and an age, but it's not dennis :(")
+                print("Has a name and an age, but it's not Dennis :(")
             {"key": "godotisawesome", ..}:
                 print("I only checked for one entry and ignored the rest")
 
@@ -855,9 +855,9 @@ Multipatterns:
 
         match x:
             1, 2, 3:
-                print("it's 1 - 3")
-            "sword", "splashpotion", "fist":
-                print("yep, you've taken damage")
+                print("It's 1 - 3")
+            "Sword", "Splash potion", "Fist":
+                print("Yep, you've taken damage")
 
 
 
@@ -877,7 +877,7 @@ Below is an example of a class file.
 
 ::
 
-    # saved as a file named myclass.gd
+    # Saved as a file named myclass.gd
 
     var a = 5
 
@@ -915,12 +915,12 @@ the ``is`` keyword can be used:
 ::
 
     # Cache the enemy class
-    const enemy_class = preload("enemy.gd")
+    const Enemy = preload("enemy.gd")
 
     # [...]
 
-    # use 'is' to check inheritance
-    if (entity is enemy_class):
+    # Use 'is' to check inheritance
+    if (entity is Enemy):
         entity.apply_damage()
 
 To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
@@ -937,7 +937,7 @@ to call them, you can use ``.`` like the ``super`` keyword in other languages:
 ::
 
     func some_func(x):
-        .some_func(x) # calls same function on the parent class
+        .some_func(x) # Calls same function on the parent class
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
@@ -984,14 +984,14 @@ either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
 
     # Load the class resource when calling load()
-    var MyClass = load("myclass.gd")
+    var my_class = load("myclass.gd")
 
     # Preload the class only once at compile time
-    var MyClass2 = preload("myclass.gd")
+    const MyClass = preload("myclass.gd")
 
     func _init():
         var a = MyClass.new()
-        a.somefunction()
+        a.some_function()
 
 Exports
 ~~~~~~~
@@ -1003,7 +1003,7 @@ is done by using the ``export`` keyword::
 
     extends Button
 
-    export var number = 5 # value will be saved and visible in the property editor
+    export var number = 5 # Value will be saved and visible in the property editor
 
 An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
@@ -1170,22 +1170,22 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
 
 ::
 
-    var myvar setget myvar_set,myvar_get
+    var myvar setget my_var_set, my_var_get
 
-    func myvar_set(newvalue):
-        myvar=newvalue
+    func my_var_set(new_value):
+        my_var = new_value
 
-    func myvar_get():
-        return myvar # getter must return a value
+    func my_var_get():
+        return my_var # Getter must return a value
 
 Either of the *setter* or *getter* functions can be omitted:
 
 ::
 
     # Only a setter
-    var myvar = 5 setget myvar_set
+    var my_var = 5 setget myvar_set
     # Only a getter (note the comma)
-    var myvar = 5 setget ,myvar_get
+    var my_var = 5 setget ,myvar_get
 
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
@@ -1197,12 +1197,12 @@ illustration of this:
 
     func _init():
         # Does not trigger setter/getter
-        myinteger = 5
-        print(myinteger)
+        my_integer = 5
+        print(my_integer)
 
         # Does trigger setter/getter
-        self.myinteger = 5
-        print(self.myinteger)
+        self.my_integer = 5
+        print(self.my_integer)
 
 Tool mode
 ~~~~~~~~~
@@ -1245,7 +1245,7 @@ Declaring a signal in GDScript is easy using the `signal` keyword.
     # No arguments
     signal your_signal_name
     # With arguments
-    signal your_signal_name_with_args(a,b)
+    signal your_signal_name_with_args(a, b)
 
 These signals, just like regular signals, can be connected in the editor
 or from code. Just take the instance of a class where the signal was
@@ -1291,7 +1291,7 @@ Object.emit_signal method:
     func _at_some_func():
         emit_signal("your_signal_name")
         emit_signal("your_signal_name_with_args", 55, 128)
-        someinstance.emit_signal("somesignal")
+        some_instance.emit_signal("some_signal")
 
 Coroutines with yield
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1306,13 +1306,13 @@ an example:
 
 ::
 
-    func myfunc():
-       print("hello")
+    func my_func():
+       print("Hello")
        yield()
        print("world")
 
     func _ready():
-        var y = myfunc()
+        var y = my_func()
         # Function state saved in 'y'
         print("my dear")
         y.resume()
@@ -1322,7 +1322,7 @@ Will print:
 
 ::
 
-    hello
+    Hello
     my dear
     world
 
@@ -1331,13 +1331,13 @@ example:
 
 ::
 
-    func myfunc():
-       print("hello")
+    func my_func():
+       print("Hello")
        print(yield())
        return "cheers!"
 
     func _ready():
-        var y = myfunc()
+        var y = my_func()
         # Function state saved in 'y'
         print(y.resume("world"))
         # 'y' resumed and is now an invalid state
@@ -1346,7 +1346,7 @@ Will print:
 
 ::
 
-    hello
+    Hello
     world
     cheers!
 
@@ -1378,10 +1378,10 @@ be obtained when a call to Node._ready() is made.
 
 ::
 
-    var mylabel
+    var my_label
 
     func _ready():
-        mylabel = get_node("MyLabel")
+        my_label = get_node("MyLabel")
 
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``onready`` keyword, that
@@ -1390,7 +1390,7 @@ can replace the above code with a single line:
 
 ::
 
-    onready var mylabel = get_node("MyLabel")
+    onready var my_label = get_node("MyLabel")
 
 Assert keyword
 ~~~~~~~~~~~~~~

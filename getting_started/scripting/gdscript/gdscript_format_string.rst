@@ -19,7 +19,9 @@ strings could be cumbersome.
 Usage in GDScript
 -----------------
 
-Examine this concrete GDScript example::
+Examine this concrete GDScript example:
+
+::
 
     # Define a format string with placeholder '%s'
     var format_string = "We're waiting for %s."
@@ -28,7 +30,7 @@ Examine this concrete GDScript example::
     var actual_string = format_string % "Godot"
 
     print(actual_string)
-    # output: "We're waiting for Godot."
+    # Output: "We're waiting for Godot."
 
 Placeholders always start with a ``%``, but the next character or characters,
 the *format specifier*, determines how the given value is converted to a
@@ -48,16 +50,18 @@ value. The method can handle arrays or dictionaries for the key/value pairs.
 Arrays can be used as key, index, or mixed style (see below examples). Order only
 matters when the index or mixed style of Array is used.
 
-A quick example in GDScript::
+A quick example in GDScript:
+
+::
 
     # Define a format string
     var format_string = "We're waiting for {str}"
 
     # Using the 'format' method, replace the 'str' placeholder
-    var actual_string = format_string.format({"str":"Godot"})
+    var actual_string = format_string.format({"str": "Godot"})
 
     print(actual_string)
-    # output: "We're waiting for Godot"
+    # Output: "We're waiting for Godot"
 
 There are other `format specifiers`_, but they are only applicable when using
 the ``%`` operator.
@@ -68,13 +72,15 @@ Multiple placeholders
 
 Format strings may contain multiple placeholders. In such a case, the values
 are handed in the form of an array, one value per placeholder (unless using a
-format specifier with ``*``, see `dynamic padding`_)::
+format specifier with ``*``, see `dynamic padding`_):
+
+::
 
     var format_string = "%s was reluctant to learn %s, but now he enjoys it."
     var actual_string = format_string % ["Estragon", "GDScript"]
     
     print(actual_string)
-    # output: "Estragon was reluctant to learn GDScript, but now he enjoys it."
+    # Output: "Estragon was reluctant to learn GDScript, but now he enjoys it."
 
 Note the values are inserted in order. Remember all placeholders must be
 replaced at once, so there must be an appropriate number of values.
@@ -149,14 +155,18 @@ The ``.`` (*dot*), ``*`` (*asterisk*), ``-`` (*minus sign*) and digit
 values aligned vertically as if in a column, provided a fixed-width font is
 used.
 
-To pad a string to a minimum length, add an integer to the specifier::
+To pad a string to a minimum length, add an integer to the specifier:
+
+::
 
     print("%10d" % 12345)
     # output: "     12345"
     # 5 leading spaces for a total length of 10
 
 If the integer starts with ``0``, integral values are padded with zeroes
-instead of white space::
+instead of white space:
+
+::
 
     print("%010d" % 12345)
     # output: "0000012345"
@@ -168,16 +178,18 @@ the dot.
 
 ::
 
-    # pad to minimum length of 10, round to 3 decimal places
+    # Pad to minimum length of 10, round to 3 decimal places
     print("%10.3f" % 10000.5555)
-    # output: " 10000.556"
+    # Output: " 10000.556"
     # 1 leading space
 
 The ``-`` character will cause padding to the right rather than the left,
-useful for right text alignment::
+useful for right text alignment:
+
+::
 
     print("%-10d" % 12345678)
-    # output: "12345678  "
+    # Output: "12345678  "
     # 2 trailing spaces
 
 
@@ -187,16 +199,20 @@ Dynamic padding
 By using the ``*`` (*asterisk*) character, the padding or precision can be set
 without modifying the format string. It is used in place of an integer in the
 format specifier. The values for padding and precision are then passed when
-formatting::
+formatting:
+
+::
 
     var format_string = "%*.*f"
-    # pad to length of 7, round to 3 decimal places:
+    # Pad to length of 7, round to 3 decimal places:
     print(format_string % [7, 3, 8.8888])
-    # output: "  8.889"
+    # Output: "  8.889"
     # 2 leading spaces
 
 It is still possible to pad with zeroes in integer placeholders by adding ``0``
-before ``*``::
+before ``*``:
+
+::
 
     print("%0*d" % [2, 3])
     #output: "03"
@@ -206,11 +222,13 @@ Escape sequence
 ---------------
 
 To insert a literal ``%`` character into a format string, it must be escaped to
-avoid reading it as a placeholder. This is done by doubling the character::
+avoid reading it as a placeholder. This is done by doubling the character:
+
+::
 
     var health = 56
     print("Remaining health: %d%%" % health)
-    # output: "Remaining health: 56%"
+    # Output: "Remaining health: 56%"
 
 
 Format method examples
