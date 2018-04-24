@@ -70,11 +70,11 @@ with the following script:
     
     public class CustomLabel : Label
     {
-        private int _accum;
+        private float _accum;
 
         public override void _Process(float delta)
         {
-            _accum++;
+            _accum += delta;
             Text = _accum.ToString();
         }
     }
