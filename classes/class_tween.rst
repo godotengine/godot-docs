@@ -149,7 +149,7 @@ Because it is easy to get it wrong, here is a quick usage example:
 ::
 
     var tween = get_node("Tween")
-    tween.interpolate_property(get_node("Node2D_to_move"), "transform/origin", Vector2(0,0), Vector2(100,100), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+    tween.interpolate_property(get_node("Node2D_to_move"), "transform_origin", Vector2(0,0), Vector2(100,100), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     tween.start()
 
 Some of the methods of this class require a property name. You can get the property name by hovering over the property in the inspector of the editor.
