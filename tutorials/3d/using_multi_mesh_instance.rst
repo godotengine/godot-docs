@@ -13,17 +13,17 @@ MultiMeshInstance, as the name suggests, creates multiple copies of a MeshInstan
 Setting up the nodes
 ~~~~~~~~~~~~~~~~~~~~
 
-The basic setup requires three nodes. Firstly, the multiMeshInstance node. Then, two MeshInstance nodes. 
+The basic setup requires three nodes. Firstly, the MultiMeshInstance node. Then, two MeshInstance nodes. 
 
 One node is used as the target, the mesh that you want to place multiple meshes on. In the tree example, this would be the landscape.
 
-Another node is used as the source, the mesh that you want to have duplicate. In the tree case, this would be the tree.
+Another node is used as the source, the mesh that you want to have duplicated. In the tree case, this would be the tree.
 
 In our example, we would use a :ref:`Node <class_Node>` as the root node of the scene. Your scene tree would look like this:
 
 .. image:: img/multimesh_scene_tree.png
 
-.. note:: For simplification purpose, this tutorial would use built-in primitives. 
+.. note:: For simplification purposes, this tutorial uses built-in primitives. 
 
 Now you have everything ready. Select the MultiMeshInstance node and look at the toolbar, you should see an extra button called ``MultiMesh`` next to ``View``. Click it and select *Populate surface* in the dropdown menu. A new window titled *Populate MultiMesh* will pop up.
 
