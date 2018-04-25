@@ -32,13 +32,13 @@ What for?
 - Adding a custom asynchronous threads
 - Adding Input support
 - Adding writing threads
-- Adding custom VOIP protocol.
+- Adding custom VOIP protocol
 - etc.
 
 Creating a Godot Server
 -----------------------
 
-At minimum, Godot must to have: a static instance, sleep timer, thread loop, 
+At minimum, a server must to have: a static instance, sleep timer, thread loop, 
 initialize state, and cleanup. 
 
 .. code:: cpp
@@ -244,8 +244,8 @@ initialize state, and cleanup.
 Custom Managed Resource Data
 ----------------------------
 
-Godot servers implements a mediator pattern. All data types inherits ``RID_Data`` 
-and ``RID_Owner<MyRID_Data>`` the object when created. Only during debug mode, 
+Godot servers implement a mediator pattern. All data types inherit ``RID_Data``. 
+`RID_Owner<MyRID_Data>`` owns the object when ``make_rid`` is called. Only during debug mode, 
 RID_Owner maintains a list of RID. In practice, RID is similar to writing 
 object oriented C code.
 
