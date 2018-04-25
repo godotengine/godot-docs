@@ -161,6 +161,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 		virtual void mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
 		virtual float get_length() const; //if supported, otherwise return 0
 		AudioStreamPlaybackMyTone();
+		~AudioStreamPlaybackMyTone();
 
 	};
 
@@ -179,6 +180,12 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 		pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
 		zeromem(pcm_buffer, PCM_BUFFER_SIZE);
 		AudioServer::get_singleton()->unlock();
+	}
+	AudioStreamPlaybackMyTone::~AudioStreamPlaybackMyTone() {
+		if(pcm_buffer) {
+			AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+			pcm_buffer = NULL;
+		}
 	}
 	void AudioStreamPlaybackMyTone::stop(){
 		active = false;
@@ -271,6 +278,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 		virtual float get_length() const; //if supported, otherwise return 0
 		virtual float get_stream_sampling_rate();
 		AudioStreamPlaybackResampledMyTone();
+		~AudioStreamPlaybackResampledMyTone();
 
 	};
 
@@ -288,6 +296,12 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 		pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
 		zeromem(pcm_buffer, PCM_BUFFER_SIZE);
 		AudioServer::get_singleton()->unlock();
+	}
+	AudioStreamPlaybackResampledMyTone::~AudioStreamPlaybackResampledMyTone() {
+		if (pcm_buffer) {
+			AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+			pcm_buffer = NULL;
+		}
 	}
 	void AudioStreamPlaybackResampledMyTone::stop(){
 		active = false;
