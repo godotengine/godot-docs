@@ -25,7 +25,7 @@ This guide will get you started with UI design. You will learn:
 -  The five most common containers
 
 To learn how to control the interface and connect it to other scripts,
-read `Build your first game UI in Godot <#>`__.
+read :ref:`Build your first game UI in Godot <doc_ui_game_user_interface>`.
 
 Only use Control nodes when you design your interfaces. They have unique
 properties that allow them to work with one another. Other nodes like
@@ -51,8 +51,7 @@ The 5 most common UI elements
 -----------------------------
 
 Godot ships with dozens of Control nodes. A lot of them are here to help
-you build editor plugins and applications. To learn more about them,
-check the guide about `Advanced UI nodes and Themes <img/#>`__.
+you build editor plugins and applications.
 
 For most games, you'll only need five types of UI elements, and a few
 Containers. These five Control nodes are:
@@ -349,5 +348,4 @@ between the rows and columns respectively.
    A GridContainer with 2 columns. It sizes each column automatically.
 
 Godot's UI system is complex, and has a lot more to offer. To learn how
-to design more advanced interface, read `Design advanced UI with other
-Control nodes <img/#>`__.
+to design more advanced interface, head to the :ref:`GUI section <toc-learn-features-gui>` of the docs.
