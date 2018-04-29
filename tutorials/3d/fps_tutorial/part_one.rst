@@ -543,7 +543,7 @@ First we need a few more global variables in our player script:
 
     const MAX_SPRINT_SPEED = 30
     const SPRINT_ACCEL = 18
-    var is_spriting = false
+    var is_sprinting = false
     
     var flashlight
 
@@ -570,9 +570,9 @@ Now we need to change some of the code in ``process_input``. Add the following s
     # ----------------------------------
     # Sprinting
     if Input.is_action_pressed("movement_sprint"):
-        is_spriting = true
+        is_sprinting = true
     else:
-        is_spriting = false
+        is_sprinting = false
     # ----------------------------------
     
     # ----------------------------------
@@ -599,7 +599,7 @@ Now we just need to change a couple things in ``process_movement``. First, repla
 
 ::
     
-    if is_spriting:
+    if is_sprinting:
         target *= MAX_SPRINT_SPEED
     else:
         target *= MAX_SPEED
@@ -611,7 +611,7 @@ Now all that's left is changing the accleration when sprinting. Change ``accel =
 
 ::
     
-    if is_spriting:
+    if is_sprinting:
         accel = SPRINT_ACCEL
     else:
         accel = ACCEL
