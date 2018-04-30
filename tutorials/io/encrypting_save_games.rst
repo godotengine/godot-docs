@@ -59,7 +59,7 @@ some unique user identifier is needed, for example:
  .. code-tab:: gdscript GDScript
 
     var f = File.new()
-    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, OS.get_unique_ID())
+    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, OS.get_unique_id())
     f.store_var(game_state)
     f.close()
 
@@ -70,6 +70,6 @@ some unique user identifier is needed, for example:
     f.StoreVar(gameState);
     f.Close();
 
-Note that ``OS.get_unique_ID()`` only works on iOS and Android.
+Note that ``OS.get_unique_id()`` only works on iOS and Android.
 
 This is all! Thanks for your cooperation, citizen.
