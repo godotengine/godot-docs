@@ -124,15 +124,26 @@ following API:
 
 ::
 
-    # queues a screen capture, will not happen immediately
-    viewport.queue_screen_capture() 
+   # Retrieve the captured Image using get_data()
+   var img = get_viewport().get_texture().get_data()
+   # Also remember to flip the texture (because it's flipped)
+   img.flip_y()
+   # Convert Image to ImageTexture
+   var tex = ImageTexture.new()
+   tex.create_from_image(img)
+   # Set Sprite Texture
+   $sprite.texture = tex
 
-After a frame or two (check _process()), the capture will be ready,
-get it back by using:
+But if you use this in _ready() or from the very first frame of the viewport's initialization
+you will get an empty texture cause there is nothing to get as texture. You can deal with
+it using (for example):
 
 ::
 
-    var capture = viewport.get_screen_capture()
+   # Let two frames pass to make sure the screen can be captured
+   yield(get_tree(), "idle_frame")
+   yield(get_tree(), "idle_frame")
+   # You can get the image after this
 
 If the returned image is empty, capture still didn't happen, wait a
 little more, as this API is asynchronous.
@@ -140,14 +151,16 @@ little more, as this API is asynchronous.
 Sub-viewport
 ------------
 
-If the viewport is a child of a control, it will become active and
+If the viewport is a child of a :ref:`ViewportContainer <class_viewportcontainer>`, it will become active and
 display anything it has inside. The layout is something like this:
 
--  Control
-
+-  ViewportContainer
+   
    -  Viewport
 
-The viewport will cover the area of its parent control completely.
+The viewport will cover the area of its parent control completely, if stretch is set to true in Viewport Container.
+But you will have to setup the Viewport Size to get the the appropriate part of the Viewport.
+And Viewport Container can not be smaller than the size of the Viewport.
 
 .. image:: img/subviewport.png
 
@@ -156,28 +169,21 @@ Render target
 
 To set as a render target, just toggle the "render target" property of
 the viewport to enabled. Note that whatever is inside will not be
-visible in the scene editor. To display the contents, the render target
-texture must be used. This can be requested via code using (for
-example):
+visible in the scene editor. To display the contents, the method remains the same.
+This can be requested via code using (for example):
 
 ::
 
-    var rtt = viewport.get_render_target_texture() 
-    sprite.set_texture(rtt)
+    #This gets us the render_target texture
+    var rtt = viewport.get_texture()
+    sprite.texture = rtt
 
 By default, re-rendering of the render target happens when the render
 target texture has been drawn in a frame. If visible, it will be
 rendered, otherwise it will not. This behavior can be changed to manual
 rendering (once), or always render, no matter if visible or not.
 
-A few classes are created to make this easier in most common cases
-inside the editor:
-
--  :ref:`ViewportSprite <class_ViewportSprite>` (for 2D).
--  ViewportQuad (for 3D).
--  ViewportFrame (for GUI).
-
-*TODO: Review the doc, ViewportQuad and ViewportFrame don't exist in 2.0.*
+``TODO: Review the doc, change outdated and add more images.``
 
 Make sure to check the viewport demos! Viewport folder in the demos
 archive available to download, or
