@@ -1,4 +1,4 @@
-.. _custom_audiostreams:
+.. _doc_custom_audiostreams:
 
 Custom AudioStreams
 ===================
