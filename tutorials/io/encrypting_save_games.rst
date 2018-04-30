@@ -59,7 +59,7 @@ some unique user identifier is needed, for example:
  .. code-tab:: gdscript GDScript
 
     var f = File.new()
-    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, OS.get_unique_ID())
+    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, OS.get_unique_id())
     f.store_var(game_state)
     f.close()
 
