@@ -185,6 +185,16 @@ else.
 This flag appends ".32" or ".64" suffixes to resulting binaries when
 relevant.
 
+Other build options
+-------------------
+
+There are several other build options that you can use to configure the
+way Godot should be built (compiler, debug options, etc.) as well as the
+features to include/disable.
+
+Check the output of ``scons --help`` for details about each option for
+the version you are willing to compile.
+
 Export templates
 ----------------
 
