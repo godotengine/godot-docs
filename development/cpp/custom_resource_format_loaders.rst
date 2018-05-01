@@ -1,4 +1,4 @@
-.. _custom_resource_format_loaders:
+.. _doc_custom_resource_format_loaders:
 
 Custom Resource Format Loaders
 ==============================
