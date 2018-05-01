@@ -1,4 +1,4 @@
-.. _custom_godot_servers:
+.. _doc_custom_godot_servers:
 
 Custom Godot Servers
 ====================
