@@ -15,7 +15,7 @@ rifle, and attack using a knife. The player will also now have animations with t
 and the weapons will interact with objects in the environment.
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_one` before moving on to this part of the tutorial.
-          
+
           The finished project from :ref:`doc_fps_tutorial_part_one` will be the starting project for part 2
 
 Let's get started!
@@ -33,23 +33,23 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
 ::
 
     extends AnimationPlayer
-    
+
     # Structure -> Animation name :[Connecting Animation states]
     var states = {
         "Idle_unarmed":["Knife_equip", "Pistol_equip", "Rifle_equip", "Idle_unarmed"],
-        
+
         "Pistol_equip":["Pistol_idle"],
         "Pistol_fire":["Pistol_idle"],
         "Pistol_idle":["Pistol_fire", "Pistol_reload", "Pistol_unequip", "Pistol_idle"],
         "Pistol_reload":["Pistol_idle"],
         "Pistol_unequip":["Idle_unarmed"],
-        
+
         "Rifle_equip":["Rifle_idle"],
         "Rifle_fire":["Rifle_idle"],
         "Rifle_idle":["Rifle_fire", "Rifle_reload", "Rifle_unequip", "Rifle_idle"],
         "Rifle_reload":["Rifle_idle"],
         "Rifle_unequip":["Idle_unarmed"],
-        
+
         "Knife_equip":["Knife_idle"],
         "Knife_fire":["Knife_idle"],
         "Knife_idle":["Knife_fire", "Knife_unequip", "Knife_idle"],
@@ -58,19 +58,19 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
 
     var animation_speeds = {
         "Idle_unarmed":1,
-        
+
         "Pistol_equip":1.4,
         "Pistol_fire":1.8,
         "Pistol_idle":1,
         "Pistol_reload":1,
         "Pistol_unequip":1.4,
-        
+
         "Rifle_equip":2,
         "Rifle_fire":6,
         "Rifle_idle":1,
         "Rifle_reload":1.45,
         "Rifle_unequip":2,
-        
+
         "Knife_equip":1,
         "Knife_fire":1.35,
         "Knife_idle":1,
@@ -88,8 +88,8 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         if animation_name == current_state:
             print ("AnimationPlayer_Manager.gd -- WARNING: animation is already ", animation_name)
             return true
-        
-        
+
+
         if has_animation(animation_name) == true:
             if current_state != null:
                 var possible_animations = states[current_state]
@@ -108,7 +108,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
 
 
     func animation_ended(anim_name):
-        
+
         # UNARMED transitions
         if current_state == "Idle_unarmed":
             pass
@@ -143,7 +143,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
             set_animation("Idle_unarmed")
         elif current_state == "Rifle_reload":
             set_animation("Rifle_idle")
-        
+
     func animation_callback():
         if callback_function == null:
             print ("AnimationPlayer_Manager.gd -- WARNING: No callback function for the animation to call!")
@@ -206,23 +206,35 @@ _________
 
 Lets look at ``set_animation`` next.
 
-``set_animation`` sets the animation to the that of the passed in
-animation state *if* we can transition to it. In other words, if the animation state we are currently in
+``set_animation`` changes the animation to the the animation named ``animation_name``
+*if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 
-To start we check if the passed in animation is the same as the animation state we are currently in.
+To start we check if the passed in animation name is the same as name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
-Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the passed in animation using ``has_animation``. If it does not, we return ``false``.
+Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the a animation with the name ``animation_name`` using ``has_animation``.
+If it does not, we return ``false``.
 
 Then we check if ``current_state`` is set or not. If ``current_state`` is *not* currently set, we
-set ``current_state`` to the passed in animation and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
-a blend time of ``-1`` and at the speed set in ``animation_speeds`` and then we return ``true``.
+set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
+a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we return ``true``.
+
+.. note:: Blend time is how long to blend/mix the two animations together.
+
+          By putting in a value of ``-1``, the new animation instantly plays, overriding whatever animation is already playing.
+
+          If you put in a value of ``1``, for one second the new animation will play with increasing strength, blending the two animations together for one second
+          before playing only the new animation. This leads to a smooth transition between animations, which is looks great when you are changing from
+          a walking animation to a running animation.
+
+          We set the blend time to ``-1`` because we want to instantly change animations.
 
 If we have a state in ``current_state``, then we get all of the possible states we can transition to.
+
 If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
-in animation, tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in ``animation_speeds``
-and return ``true``.
+in animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
+``animation_speeds`` and return ``true``.
 
 _________
 
@@ -446,7 +458,7 @@ Here's the script that will control our bullet:
 ::
 
     extends Spatial
-    
+
     var BULLET_SPEED = 70
     var BULLET_DAMAGE = 15
 
@@ -457,12 +469,12 @@ Here's the script that will control our bullet:
 
     func _ready():
         $Area.connect("body_entered", self, "collided")
-        
+
 
     func _physics_process(delta):
         var forward_dir = global_transform.basis.z.normalized()
         global_translate(forward_dir * BULLET_SPEED * delta)
-        
+
         timer += delta
         if timer >= KILL_TIMER:
             queue_free()
@@ -472,7 +484,7 @@ Here's the script that will control our bullet:
         if hit_something == false:
             if body.has_method("bullet_hit"):
                 body.bullet_hit(BULLET_DAMAGE, self.global_transform.origin)
-        
+
         hit_something = true
         queue_free()
 
@@ -590,7 +602,7 @@ let's start working on making them work.
          than using a single :ref:`Label <class_Label>`, we will not be touching any of those nodes.
          Check :ref:`doc_design_interfaces_with_the_control_nodes` for a tutorial on using GUI nodes.
 
-         
+
 Creating the first weapon
 -------------------------
 
@@ -601,7 +613,7 @@ Select ``Pistol_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points`
 Add the following code to ``Weapon_Pistol.gd``:
 
 ::
-    
+
     extends Spatial
 
     const DAMAGE = 15
@@ -622,7 +634,7 @@ Add the following code to ``Weapon_Pistol.gd``:
         var clone = bullet_scene.instance()
         var scene_root = get_tree().root.get_children()[0]
         scene_root.add_child(clone)
-        
+
         clone.global_transform = self.global_transform
         clone.scale = Vector3(4, 4, 4)
         clone.BULLET_DAMAGE = DAMAGE
@@ -631,17 +643,17 @@ Add the following code to ``Weapon_Pistol.gd``:
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             is_weapon_enabled = true
             return true
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             player_node.animation_manager.set_animation("Pistol_equip")
-        
+
         return false
 
     func unequip_weapon():
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             if player_node.animation_manager.current_state != "Pistol_unequip":
                 player_node.animation_manager.set_animation("Pistol_unequip")
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             is_weapon_enabled = false
             return true
@@ -755,16 +767,16 @@ Select ``Rifle_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points``
 then add the following:
 
 ::
-    
+
     extends Spatial
 
     const DAMAGE = 4
 
     const IDLE_ANIM_NAME = "Rifle_idle"
     const FIRE_ANIM_NAME = "Rifle_fire"
-    
+
     var is_weapon_enabled = false
-    
+
     var player_node = null
 
     func _ready():
@@ -773,10 +785,10 @@ then add the following:
     func fire_weapon():
         var ray = $Ray_Cast
         ray.force_raycast_update()
-        
+
         if ray.is_colliding():
             var body = ray.get_collider()
-            
+
             if body == player_node:
                 pass
             elif body.has_method("bullet_hit"):
@@ -786,22 +798,22 @@ then add the following:
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             is_weapon_enabled = true
             return true
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             player_node.animation_manager.set_animation("Rifle_equip")
-        
+
         return false
 
     func unequip_weapon():
-        
+
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             if player_node.animation_manager.current_state != "Rifle_unequip":
                 player_node.animation_manager.set_animation("Rifle_unequip")
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             is_weapon_enabled = false
             return true
-        
+
         return false
 
 Most of this is exactly the same as ``Weapon_Pistol.gd``, so we're only going to look at what's changed: ``fire_weapon``.
@@ -829,7 +841,7 @@ Select ``Knife_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points``
 then add the following:
 
 ::
-    
+
     extends Spatial
 
     const DAMAGE = 40
@@ -847,11 +859,11 @@ then add the following:
     func fire_weapon():
         var area = $Area
         var bodies = area.get_overlapping_bodies()
-        
+
         for body in bodies:
             if body == player_node:
                 continue
-            
+
             if body.has_method("bullet_hit"):
                 body.bullet_hit(DAMAGE, area.global_transform.origin)
 
@@ -859,21 +871,21 @@ then add the following:
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             is_weapon_enabled = true
             return true
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             player_node.animation_manager.set_animation("Knife_equip")
-        
+
         return false
 
     func unequip_weapon():
-        
+
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             player_node.animation_manager.set_animation("Knife_unequip")
-        
+
         if player_node.animation_manager.current_state == "Idle_unarmed":
             is_weapon_enabled = false
             return true
-        
+
         return false
 
 As with ``Weapon_Rifle.gd``, the only differences are in ``fire_weapon``, so let's look at that:
@@ -906,7 +918,7 @@ First lets start by adding some global variables we'll need for the weapons:
 
     # Place before _ready
     var animation_manager
-    
+
     var current_weapon_name = "UNARMED"
     var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null}
     const WEAPON_NUMBER_TO_NAME = {0:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE"}
@@ -915,7 +927,7 @@ First lets start by adding some global variables we'll need for the weapons:
     var changing_weapon_name = "UNARMED"
 
     var health = 100
-    
+
     var UI_status_label
 
 Lets go over what these new variables will do:
@@ -939,28 +951,28 @@ Next we need to add a few things in ``_ready``. Here's the new ``_ready`` functi
     func _ready():
         camera = $Rotation_Helper/Camera
         rotation_helper = $Rotation_Helper
-        
+
         animation_manager = $Rotation_Helper/Model/Animation_Player
         animation_manager.callback_function = funcref(self, "fire_bullet")
-        
+
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-        
+
         weapons["KNIFE"] = $Rotation_Helper/Gun_Fire_Points/Knife_Point
         weapons["PISTOL"] = $Rotation_Helper/Gun_Fire_Points/Pistol_Point
         weapons["RIFLE"] = $Rotation_Helper/Gun_Fire_Points/Rifle_Point
-        
+
         var gun_aim_point_pos = $Rotation_Helper/Gun_Aim_Point.global_transform.origin
-        
+
         for weapon in weapons:
             var weapon_node = weapons[weapon]
             if weapon_node != null:
                 weapon_node.player_node = self
                 weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
                 weapon_node.rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
-        
+
         current_weapon_name = "UNARMED"
         changing_weapon_name = "UNARMED"
-        
+
         UI_status_label = $HUD/Panel/Gun_label
         flashlight = $Rotation_Helper/Flashlight
 
@@ -1006,7 +1018,7 @@ _________
 Now lets add all of the player input code for the weapons in ``process_input``. Add the following code:
 
 ::
-    
+
     # ----------------------------------
     # Changing weapons.
     var weapon_change_number = WEAPON_NAME_TO_NUMBER[current_weapon_name]
@@ -1032,7 +1044,7 @@ Now lets add all of the player input code for the weapons in ``process_input``. 
             changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
             changing_weapon = true
     # ----------------------------------
-    
+
     # ----------------------------------
     # Firing the weapons
     if Input.is_action_pressed("fire"):
@@ -1077,13 +1089,13 @@ Lets add ``process_changing_weapons`` next.
 Add the following code:
 
 ::
-    
+
     func process_changing_weapons(delta):
         if changing_weapon == true:
-            
+
             var weapon_unequipped = false
             var current_weapon = weapons[current_weapon_name]
-            
+
             if current_weapon == null:
                 weapon_unequipped = true
             else:
@@ -1091,12 +1103,12 @@ Add the following code:
                     weapon_unequipped = current_weapon.unequip_weapon()
                 else:
                     weapon_unequipped = true
-            
+
             if weapon_unequipped == true:
-                
+
                 var weapon_equiped = false
                 var weapon_to_equip = weapons[changing_weapon_name]
-                
+
                 if weapon_to_equip == null:
                     weapon_equiped = true
                 else:
@@ -1104,7 +1116,7 @@ Add the following code:
                         weapon_equiped = weapon_to_equip.equip_weapon()
                     else:
                         weapon_equiped = true
-                
+
                 if weapon_equiped == true:
                     changing_weapon = false
                     current_weapon_name = changing_weapon_name
@@ -1148,7 +1160,7 @@ points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` func
     func fire_bullet():
         if changing_weapon == true:
             return
-        
+
         weapons[current_weapon_name].fire_weapon()
 
 
