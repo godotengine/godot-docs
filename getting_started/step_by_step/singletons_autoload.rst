@@ -167,7 +167,7 @@ and scene_b.gd:
     #add to scene_a.gd
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_b.tscn")
+            get_node("/root/global").goto_scene("res://scene_b.tscn") # WARNING: Scene files provided are .scn NOT .tscn
 
 and
 
@@ -176,7 +176,7 @@ and
     #add to scene_b.gd
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_a.tscn")
+            get_node("/root/global").goto_scene("res://scene_a.tscn") # WARNING: Scene files provided are .scn NOT .tscn
 
 Now if you run the project, you can switch between both scenes by pressing
 the button!
