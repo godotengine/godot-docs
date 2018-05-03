@@ -13,7 +13,7 @@ Afterwards, you may want to look at :ref:`how to use specific features <doc_c_sh
 read about the :ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`
 and (re)visit the :ref:`Scripting section <doc_scripting>` of the step-by-step tutorial.
 
-C# is a high-level programming language developed by Microsoft. In Godot it is implemented with the Mono 5.2 .NET framework including full support for C# 7.0.
+C# is a high-level programming language developed by Microsoft. In Godot it is implemented with the Mono 5.x .NET framework including full support for C# 7.0.
 Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 A good starting point for checking its capabilities is the `Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_ page in the Mono documentation.
 
@@ -24,8 +24,8 @@ A good starting point for checking its capabilities is the `Compatibility <http:
 Setup C# for Godot
 ------------------
 
-To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed (at least version 5.2), as well 
-as MSBuild (at least version 15.0) which should come with the Mono installation. 
+To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed. Godot 3.0.2 requires Mono 5.4, 3.0.3 requires Mono 5.10 on Linux and Windows,
+and 5.8 on MacOS. You also need MSBuild (at least version 15.0) which should come with the Mono installation. 
 
 Additionally, your Godot version must have Mono support enabled, so take care to download the **Mono version** of Godot.
 If you are building Godot from source, make sure to follow the steps to include Mono support in your build outlined on the  :ref:`doc_compiling_with_mono` page.
