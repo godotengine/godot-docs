@@ -872,19 +872,6 @@ ScoreLabel
 MessageLabel
 ~~~~~~~~~~~~
 
--  ``Layout``: "Center Bottom"
--  ``Margin``:
-
-   -  Left: ``-100``
-   -  Top: ``-200``
-   -  Right: ``100``
-   -  Bottom: ``-100``
-
--  Text: ``Dodge the Creeps!``
-
-StartButton
-~~~~~~~~~~~
-
 -  ``Layout``: "Center"
 -  ``Margin``:
 
@@ -892,6 +879,19 @@ StartButton
    -  Top: ``70``
    -  Right: ``60``
    -  Bottom: ``150``
+
+-  Text: ``Dodge the Creeps!``
+
+StartButton
+~~~~~~~~~~~
+
+-  ``Layout``: "Center Bottom"
+-  ``Margin``:
+
+   -  Left: ``-100``
+   -  Top: ``-200``
+   -  Right: ``100``
+   -  Bottom: ``-100``
 
 -  Text: ``Start``
 
