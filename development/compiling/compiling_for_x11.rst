@@ -21,7 +21,8 @@ required:
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev (optional, build with `udev=yes`)
+-  *Optional* - libudev (build with ``udev=yes``)
+-  *Optional* - yasm (for WebM SIMD optimizations)
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
