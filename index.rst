@@ -27,9 +27,13 @@ in the top left corner.
           by letting us know!
 
           Submit an issue or pull request on the `GitHub repository
-          <https://github.com/godotengine/godot-docs/issues>`_, help us `translating present documentation <https://hosted.weblate.org/engage/godot-engine/>` into your language, or discuss with
-          us on the ``#documentation`` channel on `Discord
-          <https://godotengine.org/community>`_!
+          <https://github.com/godotengine/godot-docs/issues>`_,
+          help us `translating present documentation
+          <https://hosted.weblate.org/engage/godot-engine/>`_ into your
+          language, or discuss with us on either the ``#documentation``
+          channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
+          ``#godotengine-doc`` channel on `irc.freenode.net
+          <http://webchat.freenode.net/?channels=#godotengine-doc/>`_!
 
 .. image:: https://hosted.weblate.org/widgets/godot-engine/-/godot-docs/287x66-white.png
     :alt: Translation state
