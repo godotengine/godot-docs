@@ -1037,6 +1037,12 @@ special export syntax is provided.
     # Editor will enumerate with string names
     export(String, "Rebecca", "Mary", "Leah") var character_name
 
+    # Named enum values
+    
+    # Editor will enumerate as THING_1, THING_2, ANOTHER_THING
+    enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
+    export (NamedEnum) var x
+
     # Strings as paths
 
     # String is a path to a file
