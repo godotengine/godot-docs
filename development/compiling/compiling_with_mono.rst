@@ -8,7 +8,7 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 5.2.0+ (mono-complete)
+- Mono (the required version is listed here: :ref:`doc_c_sharp`)
 - MSBuild
 - pkg-config
 
