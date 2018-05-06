@@ -26,7 +26,7 @@ folder may be opened from the following path: ``res://sometexture.png``.
 Userdata path (persistent data)
 -------------------------------
 
-While the project is running, it is a very common scenario that the
+While the project is running, it is a common scenario that the
 resource path will be read-only, due to it being inside a package,
 self contained executable, or system wide install location.
 

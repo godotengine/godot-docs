@@ -72,7 +72,7 @@ Example
 -------
 
 An example of this is creating a popup or panel with controls inside,
-and set its pause mode to "Process" then just hide it:
+and set its pause mode to "Process" then hide it:
 
 .. image:: img/pause_popup.png
 
@@ -98,7 +98,7 @@ enable the pause and show the pause screen.
         ((Control)GetNode("pause_popup")).Show();
     }
 
-To remove the pause, just do the opposite when the pause screen is
+To remove the pause, do the opposite when the pause screen is
 closed:
 
 .. tabs::

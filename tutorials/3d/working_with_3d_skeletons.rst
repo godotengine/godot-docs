@@ -20,7 +20,6 @@ structures called "bones". Each "bone" is represented as a Transform, which is
 applied to a group of vertices within a mesh. You can directly control a group
 of vertices from Godot. For that please reference the :ref:`class_MeshDataTool`
 class and its method :ref:`set_vertex_bones <class_MeshDataTool_set_vertex_bones>`.
-This class is very powerful.
 
 The "bones" are organized hierarchically, every bone, except for root
 bone(s) have a parent. Every bone has an associated name you can use to

@@ -17,7 +17,7 @@ Node Properties
 Like in most visual scripting implementations, each node has editable properties. In Godot, though, we try to avoid
 bloating the nodes with editable controls for the sake of readability. 
 
-Nodes still display the required information as text, but editing is done via the *Inspector*. To edit them, just
+Nodes still display the required information as text, but editing is done via the *Inspector*. To edit them,
 select any node and edit its properties in the *Inspector*.
 
 
@@ -40,7 +40,7 @@ There are two types of *Ports*: *Sequence* and *Data*.
 *Sequence Ports* indicate the order in which operations are executed. 
 Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right. 
 If nothing is connected the function may end, or another output *Sequence Port* might be tried (this depends on the node). 
-Thanks to this, it's easy to understand the logic within a function by just following the white lines.
+Thanks to this, you can follow the logic flow within a function by following the white lines.
 Not every *Node* has *Sequence Ports*. In fact, most do not.
 
 *Data Ports* ports contain typed values. Types can be any regular Godot types, 
@@ -57,7 +57,7 @@ Pay special attention to colors and icons, as each type has a different represen
 Connections
 ~~~~~~~~~~~
 
-Connecting is a relatively simple process. Just drag an *Output Port* towards an *Input Port*. 
+Connecting is a relatively simple process. Drag an *Output Port* towards an *Input Port*. 
 
 .. image:: img/visual_script_connect.gif
 
@@ -119,7 +119,7 @@ This is the most common way to edit *Scene Nodes* in Visual Scripting. Select a 
 
 The result is that this value can be changed from your script by writing to a *Data Port*.
 
-If instead reading this value is desired, just drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
+If instead reading this value is desired, drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
 
 .. image:: img/visual_script22.png
 
@@ -173,7 +173,7 @@ A signal can also be edited via right-click menu to customize its arguments:
 .. image:: img/visual_script30.png
 
 
-The signal you have just created will appear in the Inspector along with the built-in node signals. This allows you to connect it from another script from another *Scene Node*:
+The signal you have created will appear in the Inspector along with the built-in node signals. This allows you to connect it from another script from another *Scene Node*:
 
 .. image:: img/visual_script31.png
 
@@ -262,7 +262,7 @@ Remember that dragging a connection to empty space will help you call functions 
 Local Variables
 ^^^^^^^^^^^^^^^
 
-These are nodes you can use as temporary storage for your graphs. Just make sure they all have the same name and type when using them and they will reference the same piece of memory.
+These are nodes you can use as temporary storage for your graphs. Make sure they all have the same name and type when using them and they will reference the same piece of memory.
 
 .. image:: img/visual_script41.png
 
@@ -273,7 +273,7 @@ As it can be seen above, there are two nodes available: A simple getter, and a s
 Scene Node
 ^^^^^^^^^^
 
-This is just a reference to a node in the tree, but it's easier to use this node by just dragging the actual node 
+This is just a reference to a node in the tree, but it's easier to use this node by dragging the actual node 
 from the scene tree to the canvas (this will create it and configure it).
 
 
@@ -281,7 +281,7 @@ Self
 ^^^^
 
 In some rare occasions, it may be desired to pass this Scene Node as argument. 
-It can be used to call functions and set/get properties, or just drag nodes (or event the node itself that has the script) from the Scene Tree to the canvas for this.
+It can be used to call functions and set/get properties, or drag nodes (or event the node itself that has the script) from the Scene Tree to the canvas for this.
 
 
 SceneTree
@@ -299,7 +299,7 @@ Preload
 ^^^^^^^
 
 This does the same function as preload() in GDScript. It maintains this resource loaded and ready to use. Rather than
-instancing the node, it's simpler to just drag the desired resource from the filesystem dock to the canvas.
+instancing the node, it's simpler to drag the desired resource from the filesystem dock to the canvas.
 
 
 Resource Path
@@ -363,7 +363,7 @@ This node is useful mostly for organizing your graph. It calls its sequence port
 TypeCast
 ^^^^^^^^
 
-This is a very useful and commonly used node. You can use it to cast arguments or other objects
+This is a useful and commonly used node. You can use it to cast arguments or other objects
 to the type you desire. Afterwards, you can even drag the object output to get full completion.
 
 .. image:: img/visual_script55.png
@@ -398,7 +398,7 @@ Built-In
 ^^^^^^^^
 
 There is a list of built in helpers. The list is almost identical to the one from GDScript (@TODO, link to gdscript methods?).
-Most of them are mathematical functions, but others can be very useful helpers. Just make sure to take a look at the list
+Most of them are mathematical functions, but others can be useful helpers. Make sure to take a look at the list
 at some point.
 
 
@@ -434,7 +434,7 @@ This is the opposite to Constructor, it allows to separate any basic type (ie, V
 Emit Signal
 ^^^^^^^^^^^
 
-Emits signals from any object. In general it's not very useful, as dragging a signal to the canvas works better.
+Emits signals from any object. In general it's not that useful, as dragging a signal to the canvas works better.
 
 
 Get/Set
@@ -483,7 +483,7 @@ Expression Node
 ^^^^^^^^^^^^^^^
 
 Among the operators, the *Expression* node is the most powerful. If well used, it allows you to enormously simplify
-visual scripts that are math or logic heavy. Just type any expression on it and it will be executed in real-time.
+visual scripts that are math or logic heavy. Type any expression on it and it will be executed in real-time.
 
 Expression nodes can:
 

@@ -105,7 +105,7 @@ Internal Resources
 
 A TSCN file can contain meshes, materials and other data, and these are 
 contained in the internal resources section of the file. The heading
-for an internal resource looks very similar to those of external resources, but
+for an internal resource looks similar to those of external resources, but
 does not have a path. Internal resources also have :code:`key=value` pairs 
 under each heading. For example, a capsule collision shape looks like:
 
@@ -155,7 +155,7 @@ root's name. If it is a direct child of the scene root, it should be
     [node name="Finger" parent="Arm/Hand" type="Spatial"]
     
 Similar to the internal resource, the content for each node is currently 
-undocumented. Fortunately it is very easy to find out because you can simply 
+undocumented. Fortunately it is easy to find out because you can simply 
 save a file with that node in it. Some example nodes are:
 
 ::

@@ -258,7 +258,7 @@ Note that the ``get_import_options`` method receives the preset number, so you
 can configure the options for each different preset (especially the default
 value). In this example we use the ``match`` statement, but if you have lots of
 options and the presets only change the value you may want to create the array
-of options first and then just change it based on the preset.
+of options first and then change it based on the preset.
 
 .. warning:: The ``get_import_options`` method is called even if you don't
              define presets (by making ``get_preset_count`` return zero). You
@@ -396,7 +396,7 @@ in a different file:
 Trying the plugin
 -----------------
 
-This has been very theoretical, but now that the import plugin is done, let's
+This has been theoretical, but now that the import plugin is done, let's
 test it. Make sure you created the sample file (with the contents described in
 the introduction section) and save it as ``test.mtxt``. Then activate the plugin
 in the Project Settings.

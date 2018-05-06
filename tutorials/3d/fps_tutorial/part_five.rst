@@ -126,7 +126,7 @@ Now let's look at ``_process``.
 First we check to see if the ``grenade_timer`` is less than ``GRENADE_TIMER``. If it is, we add ``delta`` and return. This is so we have to wait ``GRENADE_TIME`` seconds,
 allowing our :ref:`RigidBody <class_RigidBody>` to move around.
 
-If ``grenade_timer`` is at ``GRENADE_TIMER`` or higher, we then need to check if we just waited long enough and need to explode. We do this by checking to see
+If ``grenade_timer`` is at ``GRENADE_TIMER`` or higher, we then need to check if we waited long enough and need to explode. We do this by checking to see
 if ``explosion_wait_timer`` is equal to ``0`` or less. Since we will be adding ``delta`` to ``explosion_wait_timer`` right after, whatever code under the check
 will only be called once, right when we've waited long enough and need to explode.
 
@@ -140,7 +140,7 @@ the grenade's position.
 
 We then check to see if ``explosion_wait_timer`` is less than ``EXPLOSION_WAIT_TIME``. If it is, we add ``delta`` to ``explosion_wait_time``.
 
-Next we check to see if ``explosion_wait_timer`` is more than or equal to ``EXPLOSTION_WAIT_TIME``. Because we just added ``delta``, this will only be called once.
+Next we check to see if ``explosion_wait_timer`` is more than or equal to ``EXPLOSTION_WAIT_TIME``. Because we added ``delta``, this will only be called once.
 If ``explosion_wait_timer`` is more or equal to ``EXPLOSION_WAIT_TIME``, we've waited long enough to let the :ref:`Particles <class_Particles>` play and can free/destroy ourselves.
 
 ______
@@ -241,7 +241,7 @@ Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Ad
                         attach_point.queue_free()
                     queue_free()
                 
-The code above is almost identical to the code for ``Grenade.gd``, so let's just go over what's changed.
+The code above is almost identical to the code for ``Grenade.gd``, so let's go over what's changed.
 
 First, we have a few more global variables:
 
@@ -262,10 +262,10 @@ ______
 Next let's take a look at ``collided_with_body``.
 
 First we make sure we're not colliding with ourself. Because our :ref:`Area <class_Area>` does not know it's attached to the grenade's :ref:`RigidBody <class_RigidBody>`,
-we need to make sure we're not going to stick to ourself. If we have collided with ourself, we just ignore it by returning.
+we need to make sure we're not going to stick to ourself. If we have collided with ourself, we ignore it by returning.
 
 We then check to see if we have something assigned to ``player_body``, and if the body we collided with is the player that threw this grenade.
-If the body we've collided with is indeed ``player_body``, we just ignore it by returning.
+If the body we've collided with is indeed ``player_body``, we ignore it by returning.
 
 Next we check if we are attached already or not.
 
@@ -319,7 +319,7 @@ Okay, now lets start making the grenades work with our player. Add the following
 * ``sticky_grenade_scene``: The sticky grenade scene we worked on earlier.
 * ``GRENADE_THROW_FORCE``: The force at which we throw the grenade at.
          
-Most of these variables are very similar to how we have out weapons set up.
+Most of these variables are similar to how we have out weapons set up.
 
 .. tip:: While it's possible to make a more modular grenade system, I found it was not worth the additional complexity for just two grenades.
          If you were going to make a more complex FPS with more grenades, you'd likely want to make a system for grenades similar to how we have the weapons set up.
@@ -405,10 +405,10 @@ While we're still in ``Player.gd``, let's add a function to add grenades. Add th
 
 Now we can add a grenade using ``add_grenade``, and it will automatically be clamped to a maximum of ``4`` grenades.
 
-.. tip:: You can change the ``4`` to a constant if you want. You'd just need to make a new global constant, something like ``MAX_GRENADES``, and
+.. tip:: You can change the ``4`` to a constant if you want. You'd need to make a new global constant, something like ``MAX_GRENADES``, and
          then change the clamp from ``clamp(grenade_amounts[current_grenade], 0, 4)`` to ``clamp(grenade_amounts[current_grenade], 0, MAX_GRENADES)``
          
-         If you do not want to limit how many grenades you can carry, just remove the line that clamps the grenades altogether!
+         If you do not want to limit how many grenades you can carry, remove the line that clamps the grenades altogether!
 
 Now we have a function to add grenades, let's open up ``AmmoPickup.gd`` and use it!
 
@@ -427,7 +427,7 @@ Open up ``AmmoPickup.gd`` and go to the ``trigger_body_entered`` function. Chang
             respawn_timer = RESPAWN_TIME
             kit_size_change_values(kit_size, false)
 
-Now we're also checking to see if the body has the ``add_grenade`` function. If it does, we call it just like we call ``add_ammo``.
+Now we're also checking to see if the body has the ``add_grenade`` function. If it does, we call it like we call ``add_ammo``.
 
 You may have noticed we're using a new constant we haven't defined yet, ``GRENADE_AMOUNTS``. Let's add it! Add the following global variable
 to ``AmmoPickup.gd`` with the other global variables:
@@ -506,7 +506,7 @@ With that done, all we need to do is add some code to ``process_input``:
 Let's go over what's happening.
 
 First we check to see if the action pressed is the ``fire`` action, and that we are using the ``UNARMED`` weapon.
-This is because we only want to be able to pick up and throw objects when we're not using any weapons. This is just a design choice,
+This is because we only want to be able to pick up and throw objects when we're not using any weapons. This is a design choice,
 but I feel it gives ``UNARMED`` a use.
 
 Next we check to see whether or not ``grabbed_object`` is ``null``.
@@ -565,7 +565,7 @@ If we are holding an object, we set its global position to the camera's position
 
 ______
 
-Before we test this, we need to change something in ``_physics_process``. While we're holding an object, we really don't
+Before we test this, we need to change something in ``_physics_process``. While we're holding an object, we don't
 want to be able to change weapons or reload, so change ``_physics_process`` to the following:
 
 ::
@@ -595,7 +595,7 @@ Open up ``Turret.tscn``. Expand ``Turret`` if it's not already expanded.
 
 Notice how our turret is broken up into several parts. We have a ``Base``, ``Head``, ``Vision_Area``, and a ``Smoke`` :ref:`Particles <class_Particles>`.
 
-Open up ``Base`` and you'll find it's just a :ref:`StaticBody <class_StaticBody>` and a mesh. Open up ``Head`` and you'll find there's several meshes,
+Open up ``Base`` and you'll find it's a :ref:`StaticBody <class_StaticBody>` and a mesh. Open up ``Head`` and you'll find there's several meshes,
 a :ref:`StaticBody <class_StaticBody>` and a :ref:`Raycast <class_Raycast>` node.
 
 One thing to note with the ``Head`` is that the raycast will be where our bullets will fire from if we are using raycasting. We also have two meshes called
@@ -842,7 +842,7 @@ we subtract ``delta`` from ``ammo_reload_timer``. If ``ammo_reload_timer`` is eq
 we've waited long enough to refill the turret.
 
 Next we check to see if the turret's health is less than or equal to ``0``, outside of whether we're active or not. If the turret's health is zero or less, we then
-check to see if ``destroyed_timer`` is more than zero. If destroyed timer is more than zero, we just subtract ``delta`` from ``destroyed_timer``.
+check to see if ``destroyed_timer`` is more than zero. If destroyed timer is more than zero, we subtract ``delta`` from ``destroyed_timer``.
 
 If ``destyored_timer`` is less than or equal to zero, we set ``turret_health`` to ``MAX_TURRET_HEALTH`` and stop emitting smoke particles by setting ``smoke_particles.emitting`` to
 ``false``.
@@ -932,7 +932,7 @@ attached, assign the :ref:`NodePath <class_NodePath>` to the ``Turret`` node.
 
 ______
 
-The last thing we need to do is add a way for the player to be hurt. Since all of our bullets use the ``bullet_hit`` function, we just need to add that to our player.
+The last thing we need to do is add a way for the player to be hurt. Since all of our bullets use the ``bullet_hit`` function, we need to add that to our player.
 
 Open ``Player.gd`` and add the following:
 

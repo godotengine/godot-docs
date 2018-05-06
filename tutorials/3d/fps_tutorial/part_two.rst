@@ -239,7 +239,7 @@ check for every possible animation state. If we need to, we transition into anot
              the end of the animation and are about to loop again.
 
 .. note:: the transitions in ``animation_ended`` ideally would be part of the data in ``states``, but in
-          an effort to make the tutorial easier to understand, we'll just hard code each state transition
+          an effort to make the tutorial easier to understand, we'll hard code each state transition
           in ``animation_ended``.
 
 _________
@@ -248,7 +248,7 @@ Finally we have ``animation_callback``. This function will be called by a functi
 If we have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
 have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
 
-.. tip:: Try running ``Testing_Area.tscn`` just to make sure there is no runtime issues. If the game runs but nothing
+.. tip:: Try running ``Testing_Area.tscn`` to make sure there is no runtime issues. If the game runs but nothing
          seems to have changed, then everything is working correctly.
 
 Getting the animations ready
@@ -263,7 +263,7 @@ Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`Anim
 We need to attach a function track to three of our animations: The firing animation for the pistol, rifle, and knife.
 Let's start with the pistol. Click the animation drop down list and select "Pistol_fire".
 
-Now scroll down to the very bottom of the list of animation tracks. The final item in the list should read
+Now scroll down to the bottom of the list of animation tracks. The final item in the list should read
 ``Armature/Skeleton:Left_UpperPointer``. Now at the bottom of the list, click the plus icon on the bottom
 bar of animation window, right next to the loop button and the up arrow.
 
@@ -277,7 +277,7 @@ option that reads "Add Call Func Track". This will open a window showing the ent
 
 Now at the bottom of list of animation tracks you will have a green track that reads "AnimationPlayer".
 Now we need to add the point where we want to call our callback function. Scrub the timeline until you
-reach the point where the muzzle just starts to flash.
+reach the point where the muzzle starts to flash.
 
 .. note:: The timeline is the window where all of the points in our animation are stored. Each of the little
           points represents a point of animation data.
@@ -323,7 +323,7 @@ Let's repeat the process for the rifle and knife firing animations!
           Follow the steps in the above if you get lost! It is exactly the same, just on a different animation.
 
 Go to the "Rifle_fire" animation from the animation drop down. Add the function callback track once you reach the bottom of the
-animation track list by clicking the little plus icon at the bottom of the screen. Find the point where the muzzle just starts
+animation track list by clicking the little plus icon at the bottom of the screen. Find the point where the muzzle starts
 to flash and click the little green plus symbol to add a function callback point at that position on the track.
 
 Next, click the "enable editing of individual keys" button.
@@ -331,12 +331,12 @@ Select the newly created function callback point, put "animation_callback" into 
 Click the "enable editing of individual keys" button again to turn off individual key editing.
 so we cannot change one of the transform tracks by accident.
 
-Now we just need to apply the callback function track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
+Now we need to apply the callback function track to the knife animation. Select the "Knife_fire" animation and scroll to the bottom of the
 animation tracks. Click the plus symbol at the bottom of the animation window and add a function callback track.
 Next find a point around the first third of the animation to place the animation callback function point at.
 
-.. note:: We will not actually be firing the knife, and the animation really is a stabbing animation rather than a firing one.
-         For this tutorial we are just reusing the gun firing logic for our knife, so the animation has been named in a style that
+.. note:: We will not actually be firing the knife, and the animation is a stabbing animation rather than a firing one.
+         For this tutorial we are reusing the gun firing logic for our knife, so the animation has been named in a style that
          is consistent with the other animations.
 
 From there click the little green plus to add a function callback point at the current position. Then click the "enable editing of individual keys"
@@ -347,7 +347,7 @@ so we cannot change one of the transform tracks by accident.
 
 .. tip:: Be sure to save your work!
 
-With that done, we are almost ready to start adding the ability to fire to our player script! We just need to setup one last scene:
+With that done, we are almost ready to start adding the ability to fire to our player script! We need to setup one last scene:
 The scene for our bullet object.
 
 Creating the bullet scene
@@ -366,15 +366,15 @@ There are several advantages to this method. The first being we do not have to s
 and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
-controlling script slowly push the bullet towards the ground. Using a object also makes the bullet take time to reach its target, it doesn't just instantly
-hit whatever its pointed at. This feels more realistic because nothing in real life really moves instantly from one point to another.
+controlling script slowly push the bullet towards the ground. Using a object also makes the bullet take time to reach its target, it doesn't instantly
+hit whatever its pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
 
 One of the huge disadvantages performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
 it comes at the cost of performance. With this method we are calculating every bullet's movement every step, and while this may not be a problem for a few dozen
 bullets, it can become a huge problem when you potentially have several hundred bullets.
 
 Despite the performance hit, many first person shooters include some form of object bullets. Rocket launchers are a prime example because in many
-first person shooters, Rockets do not just instantly explode at their target position. You can also find bullets as object many times with grenades
+first person shooters, rockets do not just instantly explode at their target position. You can also find bullets as object many times with grenades
 because they generally bounce around the world before exploding.
 
 .. note:: While I cannot say for sure this is the case, these games *probably* use bullet objects in some form or another:
@@ -408,19 +408,19 @@ We set the raycast's origin to the starting position of the bullet, and based on
           - Call of Duty (Assault rifles, light machine guns, sub machine guns, pistols, and more)
           - Battlefield (Assault rifles, SMGs, carbines, pistols, and more)
 
-One huge advantage for this method is it's really light on performance.
+One huge advantage for this method is it's light on performance.
 Sending a couple hundred rays through space is *way* easier for the computer to calculate than sending a couple hundred
 bullet objects.
 
 Another advantage is we can instantly know if we've hit something or not exactly when we call for it. For networking this is important because we do not need
-to sync the bullet movements over the Internet, we just need to send whether or not the raycast hit.
+to sync the bullet movements over the Internet, we only need to send whether or not the raycast hit.
 
 Raycasting does have some disadvantages though. One major disadvantage is we cannot easily cast a ray in anything but a linear line.
 This means we can only fire in a straight line for however long our ray length is. You can create the illusion of bullet movement by casting
 multiple rays at different positions, but not only is this hard to implement in code, it is also is heavier on performance.
 
 Another disadvantage is we cannot see the bullet. With bullet objects we can actually see the bullet travel through space if we attach a mesh
-to it, but because raycasts happen instantly, we do not really have a decent way of showing the bullets. You could draw a line from the origin of the
+to it, but because raycasts happen instantly, we do not have a decent way of showing the bullets. You could draw a line from the origin of the
 raycast to the point where the raycast collided, and that is one popular way of showing raycasts. Another way is simply not drawing the raycast
 at all, because theoretically the bullets move so fast our eyes could not see it anyway.
 
@@ -494,7 +494,7 @@ change how the bullet interacts with the world.
 
 .. note:: The reason we are using a kill timer is so we do not have a case where we
           get a bullet travelling forever. By using a kill timer, we can assure that
-          no bullets will just travel forever and consume resources.
+          no bullets will travel forever and consume resources.
 
 .. tip:: As in :ref:`doc_fps_tutorial_part_one`, we have a couple all uppercase global variables. The reason behind this is the same
          as the reason given in :ref:`doc_fps_tutorial_part_one`: We want to treat these variables like constants, but we want to be
@@ -674,14 +674,14 @@ By using a modular design with a consistent interface, we can keep ``Player.gd``
 
 _________
 
-In ``_ready`` we simply just pass over it.
+In ``_ready`` we simply pass over it.
 
 There is one thing of note though, an assumption we're assuming we'll fill in ``Player.gd``.
 
 We are going to assume that ``Player.gd`` will pass themselves in before calling any of the functions in ``Weapon_Pistol.gd``.
 
 While this can lead to situations where the player does not pass themselves in (because we forget), we would have to have a long string
-of ``get_parent`` calls to traverse up the scene tree to retrieve the player. This does not look very pretty (``get_parent().get_parent().get_parent()`` and so on)
+of ``get_parent`` calls to traverse up the scene tree to retrieve the player. This does not look pretty (``get_parent().get_parent().get_parent()`` and so on)
 and it is relatively safe to assume we will remember to pass ourselves to each weapon in ``Player.gd``.
 
 _________
@@ -732,7 +732,7 @@ _________
 
 Finally, let's look at ``unequip_weapon``:
 
-``unequip_weapon`` is very similar to ``equip_weapon``, but instead we're checking things in reverse.
+``unequip_weapon`` is similar to ``equip_weapon``, but instead we're checking things in reverse.
 
 First we check to see if we are in our idle animation. Then check to make sure we are not in the ``Pistol_unequip`` animation.
 If we are not in the ``Pistol_unequip`` animation, we want to play ``pistol_unequip``.
@@ -893,7 +893,7 @@ we call it, passing in the amount of damage a single knife swipe does (``DAMAGE`
 
 .. note:: While we could attempt to calculate a rough location for where the knife hit, we
           do not bother because using the area's position works well enough and the extra time
-          needed to calculate a rough position for each body is not really worth the effort.
+          needed to calculate a rough position for each body is not worth the effort.
 
 Making the weapons work
 -----------------------
@@ -927,7 +927,7 @@ Lets go over what these new variables will do:
 - ``WEAPON_NAME_TO_NUMBER``: A dictionary allowing us to convert from a weapon's name to its number. We'll use this for changing weapons.
 - ``changing_weapon``: A boolean to track whether or not we are changing guns/weapons.
 - ``changing_weapon_name``: The name of the weapon we want to change to.
-- ``health``: How much health our player has. In this part of the tutorial we will not really be using it.
+- ``health``: How much health our player has. In this part of the tutorial we will not be using it.
 - ``UI_status_label``: A label to show how much health we have, and how much ammo we have both in our gun and in reserves.
 
 _________
@@ -1138,9 +1138,9 @@ We also set ``current_weapon_name`` to ``changing_weapon_name``, since the curre
 
 _________
 
-Now, we just need to add one more function to the player, and then the player is ready to start the weapons!
+Now, we need to add one more function to the player, and then the player is ready to start the weapons!
 
-We just need to add ``fire_bullet``, which will be called when by the :ref:`AnimationPlayer <class_AnimationPlayer>` at those
+We need to add ``fire_bullet``, which will be called when by the :ref:`AnimationPlayer <class_AnimationPlayer>` at those
 points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` function track:
 
 ::
@@ -1154,13 +1154,13 @@ points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` func
 
 Lets go over what this function is doing:
 
-First we check if we are changing weapons or not. If we are changing weapons, we do not want shoot so we just ``return``.
+First we check if we are changing weapons or not. If we are changing weapons, we do not want shoot so we ``return``.
 
 .. tip:: Calling ``return`` stops the rest of the function from being called. In this case, we are not returning a variable
          because we are only interested in not running the rest of the code, and because we are not looking for a returned
          variable either when we call this function.
 
-Then we just tell the current weapon we are using to fire by calling its ``fire_weapon`` function.
+Then we tell the current weapon we are using to fire by calling its ``fire_weapon`` function.
 
 .. tip:: Remember how we mentioned the speed of the animations for firing was faster than
          the other animations? By changing the firing animation speeds, you can change how
@@ -1168,7 +1168,7 @@ Then we just tell the current weapon we are using to fire by calling its ``fire_
 
 _______
 
-Before we are ready to test our new weapons, we still have just a little bit of work to do.
+Before we are ready to test our new weapons, we still have a little bit of work to do.
 
 Creating some test subjects
 ---------------------------
@@ -1176,7 +1176,7 @@ Creating some test subjects
 Create a new script by going to the scripting window, clicking "file", and selecting new.
 Name this script ``RigidBody_hit_test`` and make sure it extends :ref:`RigidBody <class_RigidBody>`.
 
-Now we just need to add this code:
+Now we need to add this code:
 
 ::
 
@@ -1210,7 +1210,7 @@ the :ref:`RigidBody <class_RigidBody>` seem to move in response to the bullet co
 
 _______
 
-Now we just need to attach this script to all of the :ref:`RigidBody <class_RigidBody>` nodes we want to effect.
+Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody>` nodes we want to effect.
 
 Open up ``Testing_Area.tscn`` and select all of the cubes parented to the ``Cubes`` node.
 

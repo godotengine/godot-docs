@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This is where things start getting abstract, but don't panic. There's 
-not really much more depth than this.
+not much more depth than this.
 
 In previous tutorials, everything revolved around the concept of
 nodes. Scenes are simply a collection of nodes. They become active once 
@@ -34,9 +34,8 @@ see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
 methods, for initialization, idle (frame-synchronized callback), fixed
-(physics-synchronized callback), and input. Again, this is really low
-level and when making games in Godot, writing your own MainLoop does not
-even make sense.
+(physics-synchronized callback), and input. Again, this is low
+level and when making games in Godot, writing your own MainLoop seldom makes sense.
 
 SceneTree
 ---------

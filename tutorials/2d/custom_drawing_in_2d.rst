@@ -192,11 +192,11 @@ Remember the number of points our shape has to be decomposed into? We fixed this
 
 The next step consists of computing the actual positions of these 32 points that compose an arc. This is done in the first for-loop: we iterate over the number of points for which we want to compute the positions, plus one to include the last point. We first determine the angle of each point, between the starting and ending angles. 
 
-The reason why each angle is reduced by 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosine and sine stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So, we just reduce each angle by 90° in order to start counting from 0 o'clock.
+The reason why each angle is reduced by 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosine and sine stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So we reduce each angle by 90° in order to start counting from 0 o'clock.
 
 The actual position of a point located on a circle at angle 'angle' (in radians) is given by Vector2(cos(angle), sin(angle)). Since cos() and sin() return values between -1 and 1, the position is located on a circle of radius 1. To have this position on our support circle, which has a radius of 'radius', we simply need to multiply the position by 'radius'. Finally, we need to position our support circle at the 'center' position, which is performed by adding it to our Vector2 value. Finally, we insert the point in the PoolVector2Array which was previously defined.
 
-Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and drew it one by one. But this is too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is very big, the length of each line between a pair of points will never be long enough to see them. If this happens, we simply would need to increase the number of points.
+Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and drew it one by one. But this is too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is big, the length of each line between a pair of points will never be long enough to see them. If this happens, we simply would need to increase the number of points.
 
 Draw the arc on screen
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -273,7 +273,7 @@ We can take this a step further and not only write a function that draws the pla
 
 Dynamic custom drawing
 ^^^^^^^^^^^^^^^^^^^^^^
-Alright, we are now able to draw custom stuff on screen. However, it is very static: let's make this shape turn around the center. The solution to do this is simply to change the angle_from and angle_to values over time. For our example, we will simply increment them by 50. This increment value has to remain constant, else the rotation speed will change accordingly.
+Alright, we are now able to draw custom stuff on screen. However, it is static: let's make this shape turn around the center. The solution to do this is simply to change the angle_from and angle_to values over time. For our example, we will simply increment them by 50. This increment value has to remain constant, else the rotation speed will change accordingly.
 
 First, we have to make both angle_from and angle_to variables global at the top of our script. Also note that you can store them in other nodes and access them using get_node().
 
@@ -413,5 +413,5 @@ Drawing your own nodes might also be desired while running them in the
 editor, to use as preview or visualization of some feature or
 behavior.
 
-Remember, to just use the "tool" keyword at the top of the script
+Remember to use the "tool" keyword at the top of the script
 (check the :ref:`doc_gdscript` reference if you forgot what this does).

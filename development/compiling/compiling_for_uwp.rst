@@ -99,7 +99,7 @@ Create a new Windows App project using the "App for OpenGL ES
 ``Visual C++/Windows/Universal`` category.
 
 This is a base project with the ANGLE dependencies already set up. However, by
-default it picks the debug version of the DLLs which usually have a very poor
+default it picks the debug version of the DLLs which usually have poor
 performance. So in the "Binaries" filter, click in each of the DLLs there
 and in the "Properties" window and change the relative path from
 ``Debug_Win32`` to ``Release_Win32`` (or ``Release_ARM`` for devices).

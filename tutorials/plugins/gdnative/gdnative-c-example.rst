@@ -36,7 +36,7 @@ Before we start you'll need a few things.
 2) A C compiler
 3) A copy of this repository: https://github.com/GodotNativeTools/godot_headers
 
-The first two pretty much speak for themselves. On Linux, you'll likely have a C compiler, on macOS, it's easiest to just install Xcode from the Mac App Store and, on Windows, we've tested this with both MSVC 2015 and 2017.
+The first two pretty much speak for themselves. On Linux, you'll likely have a C compiler, on macOS, it's easiest to install Xcode from the Mac App Store and, on Windows, we've tested this with both MSVC 2015 and 2017.
 
 For number 3, we suggest that you create a folder somewhere that you use to store your code, open up a terminal and CD into that folder. Then execute:
 
@@ -70,7 +70,7 @@ Let's start by writing our main code. Ideally, we want to end up with a file str
 
 Open up Godot and create a new project called simple. This will create the simple folder and project.godot file. Then manually create a bin and src subfolder in this folder.
 
-We're going to start by having a look at what our simple.c file contains. Now, for our example here we're making a single C source file without a header just to keep things simple. Once you start writing bigger projects it is advisable you break your project up into multiple files. That however falls outside of the scope of this tutorial.
+We're going to start by having a look at what our simple.c file contains. Now, for our example here we're making a single C source file without a header to keep things simple. Once you start writing bigger projects it is advisable you break your project up into multiple files. That however falls outside of the scope of this tutorial.
 
 We'll be looking at the source code bit by bit so all the parts below should all be put together into one big file. I'll explain each section as we add it.
 

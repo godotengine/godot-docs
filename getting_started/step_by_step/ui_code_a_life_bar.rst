@@ -198,7 +198,7 @@ Why don't we directly get the ``Player`` node in the ``_process``
 function and look at the health value? Accessing nodes this way creates
 tight coupling between them. If you did it sparingly it may work. As
 your game grows bigger, you may have many more connections. If you get
-nodes this way it gets very complex quickly. Not only that: you
+nodes this way it gets complex quickly. Not only that: you
 need to listen to the state change constantly in the ``_process``
 function. This check happens 60 times a second and you'll likely break
 the game because of the order in which the code runs.
@@ -223,7 +223,7 @@ to listen the one you selected.
 
 The first section lists custom signals defined in ``player.GD``:
 
--  ``died`` is emitted when the character just died. We will use it in a
+-  ``died`` is emitted when the character died. We will use it in a
    moment to hide the UI.
 -  ``health_changed`` is emitted when the character got hit.
 
@@ -306,7 +306,7 @@ Inside ``_on_Player_health_changed`` let's call a second function called
 
     We could directly update the health value on `LifeBar` and `Number`. There are two reasons to use this method instead:
 
-    1. The name makes it very clear for our future selves and teammates that when the player took damage, we update the health count on the GUI
+    1. The name makes it clear for our future selves and teammates that when the player took damage, we update the health count on the GUI
     2. We will reuse this method a bit later
 
 Create a new ``update_health`` method below ``_on_Player_health_changed``.
@@ -465,7 +465,7 @@ active. Add this code after the last line:
 
 .. note::
 
-    Although we could animate the `health` property on the `Player`, we really shouldn't. Characters should lose life instantly when they get hit. It makes it a lot easier to manage their state, like to know when one died. You always want to store animations in a separate data container or node. The `tween` node is perfect for code-controlled animations. For hand-made animations, check out `AnimationPlayer`.
+    Although we could animate the `health` property on the `Player`, we shouldn't. Characters should lose life instantly when they get hit. It makes it a lot easier to manage their state, like to know when one died. You always want to store animations in a separate data container or node. The `tween` node is perfect for code-controlled animations. For hand-made animations, check out `AnimationPlayer`.
 
 Assign the animated\_health to the LifeBar
 ------------------------------------------
@@ -563,7 +563,7 @@ Try the game again to see a nice blocky animation.
     ``_on_Player_health_changed``, which in turn calls ``update_health``. This
     updates the animation and the ``number_label`` and ``bar`` follow in
     ``_process``. The animated life bar that shows the health going down gradually
-    is just a trick. It makes the GUI feel alive. If the ``Player`` takes 3 damage,
+    is a trick. It makes the GUI feel alive. If the ``Player`` takes 3 damage,
     it happens in an instant.
 
 Fade the bar when the Player dies
@@ -575,7 +575,7 @@ bar as well when the character died. We will reuse the same ``Tween``
 node as it manages multiple animations in parallel for us.
 
 First, the ``GUI`` needs to connect to the ``Player``'s ``died`` signal
-to know when it just died. Press :kbd:`F1` to jump back to the 2D
+to know when it died. Press :kbd:`F1` to jump back to the 2D
 Workspace. Select the ``Player`` node in the Scene dock and click on the
 Node tab next to the Inspector.
 

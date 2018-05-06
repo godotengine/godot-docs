@@ -20,7 +20,7 @@ Land
 Pirates <http://en.wikipedia.org/wiki/Jake_and_the_Never_Land_Pirates>`__
 .
 
-In video games, this technique also become very popular. Examples of
+In video games, this technique has also become popular. Examples of
 this are `Paper
 Mario <http://en.wikipedia.org/wiki/Super_Paper_Mario>`__ or `Rayman
 Origins <http://en.wikipedia.org/wiki/Rayman_Origins>`__ .
@@ -37,7 +37,7 @@ unlike other tools meant for this, Godot has the following advantages:
    such as textures, sprite sizes, pivots, opacity, color modulation,
    etc. Everything can be animated and blended.
 -  **Mix with Traditional**: AnimatedSprite allows traditional animation
-   to be mixed, very useful for complex objects, such as shape of hands
+   to be mixed, useful for complex objects, such as shape of hands
    and foot, changing facial expression, etc.
 -  **Custom Shaped Elements**: Can be created with
    :ref:`Polygon2D <class_Polygon2D>`
@@ -82,7 +82,7 @@ create a child sprite and load the torso, later accommodate it properly:
 
 This looks good. Let's see if our hierarchy works as a skeleton by
 rotating the torso. We can do this be pressing ``E`` to enter rotate mode, 
-and dragging with the left mouse button. To exit rotate mode just hit ``ESC``.
+and dragging with the left mouse button. To exit rotate mode hit ``ESC``.
 
 .. image:: img/tutovec_torso1.gif
 
@@ -121,11 +121,7 @@ simple! Or maybe not:
 
 .. image:: img/tuto_cutout7.png
 
-Right. Remember your tutorials, Luke. In 2D, parent nodes appear below
-children nodes. Well, this sucks. It seems Godot does not support cutout
-rigs after all. Come back next year, maybe for 3.0.. no wait. Just
-Kidding! It works just fine.
-
+Right. In 2D, parent nodes appear below children nodes. Well, this sucks. 
 But how can this problem be solved? We want the left arm to appear behind
 the hip and the torso. For this, we can move the nodes behind the hip
 (note that you can bypass this by setting the Node2D Z property, but then you
@@ -346,7 +342,7 @@ This makes the task of animating extremities much simpler.
 Moving sprites above and behind others.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-RemoteTransform2D works in most cases, but sometimes it is really
+RemoteTransform2D works in most cases, but sometimes it is
 necessary to have a node above and below others during an animation. To
 aid on this the "Behind Parent" property exists on any Node2D:
 
@@ -355,7 +351,7 @@ aid on this the "Behind Parent" property exists on any Node2D:
 Batch setting transition curves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When creating really complex animations and inserting lots of keyframes,
+When creating complex animations and inserting many keyframes,
 editing the individual keyframe curves for each can become an endless
 task. For this, the Animation Editor has a small menu where changing
 animation curves is easy. First select the appropriate keys. Next click on the 

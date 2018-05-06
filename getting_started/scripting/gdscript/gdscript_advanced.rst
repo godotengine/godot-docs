@@ -22,7 +22,7 @@ Pros & cons of dynamic typing
 GDScript is a Dynamically Typed language. As such, its main advantages
 are that:
 
--  The language is very simple to learn.
+-  The language is simple and easy to learn.
 -  Most code can be written and changed quickly and without hassle.
 -  Less code written means less errors & mistakes to fix.
 -  Easier to read the code (less clutter).
@@ -41,7 +41,7 @@ While the main disadvantages are:
    known at run-time).
 
 This, translated to reality, means that Godot+GDScript are a combination
-designed to create games very quickly and efficiently. For games that are very
+designed to create games quickly and efficiently. For games that are very
 computationally intensive and can't benefit from the engine built-in
 tools (such as the Vector types, Physics Engine, Math library, etc), the
 possibility of using C++ is present too. This allows to still create the
@@ -230,7 +230,7 @@ Or unordered sets:
 Dictionaries
 ------------
 
-Dictionaries are a very powerful tool in dynamically typed languages.
+Dictionaries are a powerful tool in dynamically typed languages.
 Most programmers that come from statically typed languages (such as C++
 or C#) ignore their existence and make their life unnecessarily more
 difficult. This datatype is generally not present in such languages (or
@@ -238,7 +238,7 @@ only on limited form).
 
 Dictionaries can map any value to any other value with complete
 disregard for the datatype used as either key or value. Contrary to
-popular belief, they are very efficient because they can be implemented
+popular belief, they are efficient because they can be implemented
 with hash tables. They are, in fact, so efficient that some languages
 will go as far as implementing arrays as dictionaries.
 
@@ -293,7 +293,7 @@ easily with dictionaries. Here's a simple battleship game example:
 
 Dictionaries can also be used as data markup or quick structures. While
 GDScript dictionaries resemble python dictionaries, it also supports Lua
-style syntax and indexing, which makes it very useful for writing initial
+style syntax and indexing, which makes it useful for writing initial
 states and quick structs:
 
 ::

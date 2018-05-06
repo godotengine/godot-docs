@@ -6,10 +6,10 @@ Using 3D transforms in Godot
 Introduction
 ------------
 
-If you have never made 3D games before, working with rotations in three dimensions can be very confusing at first.
+If you have never made 3D games before, working with rotations in three dimensions can be confusing at first.
 Coming from 2D, the natural way of thinking is along the lines of *"Oh, it's just like rotating in 2D, except now rotations happen in X, Y and Z"*.
 
-At first this seems easy and for simple games, this way of thinking may even be enough. Unfortunately, it's very often incorrect.
+At first this seems easy and for simple games, this way of thinking may even be enough. Unfortunately, it's often incorrect.
 
 Angles in three dimensions are most commonly referred to as "Euler Angles".
 
@@ -27,7 +27,7 @@ The idea of this document is to explain why, as well as outlining best practices
 Problems of Euler Angles
 ------------------------
 
-While it may seem very intuitive that each axis has a rotation, the truth is that it's just not practical.
+While it may seem intuitive that each axis has a rotation, the truth is that it's just not practical.
 
 Axis Order
 ==========
@@ -36,7 +36,7 @@ The main reason for this is that there isn't a *unique* way to construct an orie
 takes all the angles togehter and produces an actual 3D rotation. The only way an orientation can be produced from angles is to rotate the object angle
 by angle, in an *arbitrary order*.
 
-This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything really works,
+This could be done by first rotating in *X*, then *Y* and then in *Z*. Alternatively, you could first rotate in *Y*, then in *Z* and finally in *X*. Anything works,
 but depending on the order, the final orientation of the object will *not necessarily be the same*. Indeed, this means that there are several ways to construct an orientation
 from 3 different angles, depending on *the order of the rotations*.
 
@@ -80,7 +80,7 @@ There are a few reasons this may happen:
 Say no to Euler Angles
 ======================
 
-The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for very simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
+The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
 
 Instead, there is a better way to solve your rotation problems.
 
@@ -385,7 +385,7 @@ Converting a rotation to quaternion is straightforward.
 
 The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precision errors.
 
-Quaternions are very useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
+Quaternions are useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
 
 Transforms are your friend
 --------------------------

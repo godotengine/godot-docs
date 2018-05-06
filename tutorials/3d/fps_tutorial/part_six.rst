@@ -28,9 +28,9 @@ The main menu is broken up into three different panels, each representing a diff
 'screen' of our main menu.
 
 .. note:: The ``Background_Animation`` node is just so the background of the menu is a bit more interesting than a solid color.
-          It's just a camera looking around the skybox, nothing fancy.
+          It's a camera looking around the skybox, nothing fancy.
 
-Feel free to expand all of the nodes and see how their set up. Just remember to keep only ``Start_Menu`` visible
+Feel free to expand all of the nodes and see how their set up. Remember to keep only ``Start_Menu`` visible
 when you're done, as that's the screen we want to show first when we enter the main menu.
 
 Select ``Main_Menu`` (the root node) and create a new script called ``Main_Menu.gd``. Add the following:
@@ -120,7 +120,7 @@ Select ``Main_Menu`` (the root node) and create a new script called ``Main_Menu.
         globals.joypad_sensitivity = $Options_Menu/HSlider_Joypad_Sensitivity.value
 
 
-Most of the code here relates to making UIs, which is really outside of the purpose of this tutorial series.
+Most of the code here relates to making UIs, which is outside of the purpose of this tutorial series.
 **We're only going to look at the UI related code briefly.**
 
 .. tip:: See :ref:`doc_ui_main_menu` and the tutorials following for better ways to make GUIs and UIs!
@@ -189,7 +189,7 @@ We then set the ``mouse_sensitivity`` and ``joypad_sensitvity`` variables to the
 Making the ``Globals`` singleton
 --------------------------------
 
-Now, for this all to work we really need to make the ``Globals`` singleton. Make a new script in the ``Script`` tab and call it ``Globals.gd``.
+Now, for this all to work we need to create the ``Globals`` singleton. Make a new script in the ``Script`` tab and call it ``Globals.gd``.
 
 Add the following to ``Globals.gd``.
 
@@ -206,8 +206,8 @@ Add the following to ``Globals.gd``.
     func load_new_scene(new_scene_path):
         get_tree().change_scene(new_scene_path)
 
-As you can see, it's really quite small and simple. As this part progresses we will
-keeping adding complexities to ``Global.gd``, but for now all it really is doing is holding two variables for us, and abstracting how we change scenes.
+As you can see, it's quite small and simple. As this part progresses we will
+keeping adding complexities to ``Global.gd``, but for now all it is doing is holding two variables for us, and abstracting how we change scenes.
 
 * ``mouse_sensitivity``: The current sensitivity for our mouse, so we can load it in ``Player.gd``.
 * ``joypad_sensitivity``: The current sensitivity for our joypad, so we can load it in ``Player.gd``.
@@ -333,7 +333,7 @@ instancing/spawning lots of nodes and are not freeing them.
 
 ______
         
-Now we just need to add ``set_debug_display`` to ``Globals.gd``:
+Now we need to add ``set_debug_display`` to ``Globals.gd``:
 
 ::
     
@@ -456,7 +456,7 @@ Add the following to ``Globals.gd``:
             
 ``popup_closed`` will resume the game and destroy the pop up if there is one.
     
-``popup_quit`` is very similar, but we're also making sure the mouse is visible and changing scenes to the title screen.
+``popup_quit`` is similar, but we're also making sure the mouse is visible and changing scenes to the title screen.
 
 Add the following to ``Globals.gd``:
 
@@ -886,7 +886,7 @@ Lets go over these global variables.
 * ``SIMPLE_AUDIO_PLAYER_SCENE``: The simple audio player scene.
 * ``created_audio``: A list to hold all of the simple audio players we create
 
-.. note:: If you want to add additional audio, you just need to add it to ``audio_clips``. No audio files are provided in this tutorial,
+.. note:: If you want to add additional audio, you need to add it to ``audio_clips``. No audio files are provided in this tutorial,
           so you will have to provide your own.
           
           One site I'd recommend is **GameSounds.xyz**.

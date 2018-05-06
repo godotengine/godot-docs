@@ -126,7 +126,7 @@ the same collision response:
     velocity = MoveAndSlide(velocity);
 
 Anything you do with ``move_and_slide()`` can also be done with ``move_and_collide()``,
-it just might take a little more code. However, as we'll see in the examples below,
+but it might take a little more code. However, as we'll see in the examples below,
 there are cases where ``move_and_slide()`` doesn't provide the response you want.
 
 Examples
@@ -219,13 +219,13 @@ Run this scene and you'll see that ``move_and_collide()`` works as expected, mov
 the body along the velocity vector. Now let's see what happens when you add
 some obstacles. Add a :ref:`StaticBody2D <class_StaticBody2D>` with a
 rectangular collision shape. For visibility, you can use a sprite, a
-Polygon2D, or just turn on "Visible Collision Shapes" from the "Debug" menu.
+Polygon2D, or turn on "Visible Collision Shapes" from the "Debug" menu.
 
 Run the scene again and try moving into the obstacle. You'll see that the ``KinematicBody2D``
 can't penetrate the obstacle. However, try moving into the obstacle at an angle and
 you'll find that the obstacle acts like glue - it feels like the body gets stuck.
 
-This happens because there is no *collision response*. ``move_and_collide()`` just stops
+This happens because there is no *collision response*. ``move_and_collide()`` stops
 the body's movement when a collision occurs. We need to code whatever response we
 want from the collision.
 

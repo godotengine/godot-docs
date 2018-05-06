@@ -23,7 +23,7 @@ extension.
 
 .. image:: img/instancingpre.png
 
-Once a scene has been saved, it can be instanced into another scene just as
+Once a scene has been saved, it can be instanced into another scene as
 if it were any other node.
 
 .. image:: img/instancing.png
@@ -111,5 +111,5 @@ value in the saved scene.
 Conclusion
 ----------
 
-Instancing can be very useful when you want to create many copies of the
+Instancing can be useful when you want to create many copies of the
 same object.

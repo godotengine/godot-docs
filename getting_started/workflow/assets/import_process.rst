@@ -24,11 +24,11 @@ Changing import parameters
 
 Changing the import parameters of an asset in Godot (again, keep in mind
 import parameters are only present in non-native Godot resource types) is
-easy. Just select in the filesystem dock the relevant resource:
+easy. Select the relevant resource in the filesystem dock:
 
 .. image:: img/asset_workflow1.png
 
-And, after adjusting the parameters, just press "Reimport". The parameters
+Then, after adjusting the parameters, press "Reimport". The parameters
 used will be only for this asset and will be used on future reimports.
 
 Changing import parameters of several assets at the same time is also
@@ -64,7 +64,7 @@ Changing import resource type
 -----------------------------
 
 Some source assets can be imported as different types of resources.
-For this, just select the relevant type of resource desired and
+For this, select the relevant type of resource desired and
 press "Reimport":
 
 .. image:: img/asset_workflow2.png

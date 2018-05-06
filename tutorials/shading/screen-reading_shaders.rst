@@ -72,7 +72,7 @@ While this seems magical, it's not. The SCREEN_TEXTURE built-in, when
 first found in a node that is about to be drawn, does a full-screen
 copy to a back-buffer. Subsequent nodes that use it in
 shaders will not have the screen copied for them, because this ends up
-being very inefficient.
+being inefficient.
 
 As a result, if shaders that use SCREEN_TEXTURE overlap, the second one
 will not use the result of the first one, resulting in unexpected

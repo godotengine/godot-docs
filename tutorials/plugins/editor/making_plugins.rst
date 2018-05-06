@@ -187,14 +187,14 @@ Don't forget to add a text to your button.
 
 Save this scene as ``my_dock.tscn``.
 
-Now you need to grab that scene you just created and add it as a dock in the
+Now you need to grab that scene you created and add it as a dock in the
 editor. For this you can rely on the function
 :ref:`add_control_to_dock() <class_EditorPlugin_add_control_to_dock>` from the
 :ref:`EditorPlugin <class_EditorPlugin>` class.
 
-The code is very straightforward, you just need to select a dock position to
+The code is straightforward, you need to select a dock position to
 add it and have a control to add (which is the scene you just created). It is
-also very important that you remember to **remove the dock** when the plugin is
+also important that you remember to **remove the dock** when the plugin is
 deactivated. The code can be like this::
 
     tool
@@ -230,10 +230,10 @@ corner.
 
 .. image:: img/making_plugins-project_settings.png
 
-At the *Status* column, you can see that the plugin is inactive. So you just
+At the *Status* column, you can see that the plugin is inactive. So you
 need to click on the status to select *Active*. The dock should be immediately
-visible, even before you close the settings window. And now, lo and behold, you
-have a custom dock! In just a bit of coding and a simple scene.
+visible, even before you close the settings window. You should
+have a custom dock:
 
 .. image:: img/making_plugins-custom_dock.png
 

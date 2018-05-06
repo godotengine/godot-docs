@@ -351,7 +351,7 @@ If you want to move using the world space directional vectors, you'd do somethin
         node.translate(Vector3(-1, 0, 0))
 
 .. note:: Notice how we do not need to do any calculations to get world space directional vectors.
-          We can just define a few :ref:`Vector3 <class_Vector3>` variables and input the values pointing in each direction.
+          We can define a few :ref:`Vector3 <class_Vector3>` variables and input the values pointing in each direction.
 
 Here is what world space looks like in 2D:
 
@@ -553,7 +553,7 @@ similar names.
 ``is_sprinting`` is a boolean to track whether the player is currently sprinting, and ``flashlight`` is a variable
 we will be using to hold our flash light node.
 
-Now we just need to add a few lines of code, starting in ``_ready``. Add the following to ``_ready``:
+Now we need to add a few lines of code, starting in ``_ready``. Add the following to ``_ready``:
 
 ::
     
@@ -588,14 +588,14 @@ Let's go over the additions:
 
 We set ``is_sprinting`` to true when we are holding down the ``movement_sprint`` action, and false
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when
-they sprint. Here in ``process_input`` we're just going to change the ``is_sprinting`` variable.
+they sprint. Here in ``process_input`` we're going to change the ``is_sprinting`` variable.
 
 We do something similar freeing/capturing the cursor for handling the flash light. We first check to see if the ``flashlight`` action
 was just pressed. If it was, we then check to see if ``flashlight`` is visible in the scene tree. If it is, then we hide it, and if it's not we show it.
 
 _________
 
-Now we just need to change a couple things in ``process_movement``. First, replace ``target *= MAX_SPEED`` with the following:
+Now we need to change a couple things in ``process_movement``. First, replace ``target *= MAX_SPEED`` with the following:
 
 ::
     

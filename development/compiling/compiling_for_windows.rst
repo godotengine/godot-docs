@@ -334,7 +334,7 @@ make sure that you have installed Pywin32 so that parallel (-j) builds
 work properly.
 
 If you need to edit the compilation commands, they are located in
-"Godot" project settings, NMAKE sheet. SCons is called at the very end of
+"Godot" project settings, NMAKE sheet. SCons is called at the end of
 the commands. If you make a mistake, copy the command from one of the
 other build configurations (debug, release_debug, release) or
 architectures (Win32/x64). They are equivalent.

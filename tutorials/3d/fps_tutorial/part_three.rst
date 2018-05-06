@@ -188,7 +188,7 @@ Now we can see how much ammo we have through the HUD.
 Adding reloading to the weapons
 -------------------------------
 
-Now that we can run our weapons out of ammo, we really need a way to fill them back up. Let's add reloading next!
+Now that we can run our weapons out of ammo, we need a way to fill them back up. Let's add reloading next!
 
 For reloading we need to add a few more variables and a function to every weapon.
 
@@ -267,7 +267,7 @@ Now we need to add reloading to the rifle. Open up ``Weapon_Rifle.gd`` and add t
     
 These variables are exactly the same as the pistol, just with ``RELOADING_ANIM_NAME`` changed to the rifle's reloading animation.
 
-Now we just need to add ``reload_weapon`` to ``Weapon_Rifle.gd``:
+Now we need to add ``reload_weapon`` to ``Weapon_Rifle.gd``:
 
 ::
     
@@ -312,19 +312,19 @@ The last bit we need to do for the weapons is add 'reloading' to the knife. Add 
 Since we both cannot reload or refill a knife, we set both constants to ``false``. We also define ``RELOADING_ANIM_NAME`` as an empty string, since the knife
 has no reloading animation.
 
-Now we just need to add ``reloading_weapon``, and thankfully it's really simple:
+Now we need to add ``reloading_weapon``:
 
 ::
     
     func reload_weapon():
         return false
 
-Since we cannot reload a knife, we just always return ``false``.
+Since we cannot reload a knife, we always return ``false``.
 
 Adding reloading to the player
 ------------------------------
 
-Now we just need to add a few things to ``Player.gd``. First we need to define a new global variable:
+Now we need to add a few things to ``Player.gd``. First we need to define a new global variable:
 
 ::
     
@@ -584,7 +584,7 @@ First we need to load the ``SimpleAudioPlayer.tscn``. Place the following code i
 
     var simple_audio_player = preload("res://Simple_Audio_Player.tscn")
 
-Now we just need to instance the simple audio player when we need it, and then call its
+Now we need to instance the simple audio player when we need it, and then call its
 ``play_sound`` function and pass the name of the sound we want to play. To make the process simpler,
 let's create a ``create_sound`` function:
 
@@ -611,7 +611,7 @@ is the root node that our player is under, which could not always be the case.
 
 If this doesn't make sense to you, don't worry too much about it. The second line of code only doesn't work
 reliably if you have multiple scenes loaded as children to the root node at a time, which will rarely happen for most projects.
-This is really only potentially a issue depending on how you handle scene loading.
+This is only potentially a issue depending on how you handle scene loading.
 
 The third line adds our newly created ``SimpleAudioPlayer`` scene to be a child of the scene root. This
 works exactly the same as when we are spawning bullets.
@@ -633,7 +633,7 @@ Now, we want to make a noise when we fire the pistol, so add the following to th
 
 Now when we fire our pistol, we'll play the ``pistol_shot`` sound.
 
-To make a sound when we reload, we just need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
+To make a sound when we reload, we need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
 ``reload_weapon`` function:
 
 ::
@@ -655,7 +655,7 @@ To play sounds when the rifle is fired, add the following to the end of the ``fi
 
 Now when we fire our rifle, we'll play the ``rifle_shot`` sound.
 
-To make a sound when we reload, we just need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
+To make a sound when we reload, we need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
 ``reload_weapon`` function:
 
 ::
@@ -674,7 +674,7 @@ Now you have weapons with limited ammo that play sounds when you fire them!
 At this point we have all of the basics of a FPS working.
 There's still a few things that would be nice to add, and we're going to add them in the next three parts!
 
-For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't really
+For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't
 have anything to shoot at outside of the :ref:`RigidBody <class_RigidBody>` nodes.
 
 In In :ref:`doc_fps_tutorial_part_four` we'll add some targets to shoot at, along with some health and ammo pick ups!

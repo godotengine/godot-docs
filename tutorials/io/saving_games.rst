@@ -247,7 +247,7 @@ Some notes
 ----------
 
 We may have glossed over a step, but setting the game state to one fit
-to start loading data can be very complicated. This step will need to be
+to start loading data can be complicated. This step will need to be
 heavily customized based on the needs of an individual project.
 
 This implementation assumes no Persist objects are children of other

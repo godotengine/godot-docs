@@ -6,7 +6,7 @@ Shading language
 Introduction
 ------------
 
-Godot uses a shading language very similar to GLSL ES 3.0. Most datatypes and functions are supported,
+Godot uses a shading language similar to GLSL ES 3.0. Most datatypes and functions are supported,
 and the few remaining ones will likely be added over time.
 
 Unlike the shader language in Godot 2.x, this implementation is much closer to the original.
@@ -182,8 +182,8 @@ Using lower precision for some operations can speed up the math involved (at the
 This is rarely needed in the vertex shader (where full precision is needed most of the time), but often needed in the fragment one.
 
 Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted (conversion between precisions has a cost).
-Please read the relevant documentation on the target architecture to find out more. In all honesty though, mobile drivers are really buggy
-so just stay out of trouble and make simple shaders without specifying precision unless you *really* need to.
+Please read the relevant documentation on the target architecture to find out more. In all honesty though, mobile drivers are buggy
+so to stay out of trouble make simple shaders without specifying precision unless you *really* need to.
 
 Operators:
 ----------

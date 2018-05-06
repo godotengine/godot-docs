@@ -3,7 +3,7 @@
 Rotations
 =========
 
-In the context of 3D transforms, rotations are the nontrivial and complicated part. While it is possible to describe 3D rotations using geometrical drawings and derive the rotation matrices, which is what most people would be more familiar with, it offers a very limited picture, and fails to give any insight on related practical things such quaternions and SLERP. For this reason, this document takes a different approach, a very general (although a little abstract at first) approach which was popularized by its extensive use in local gauge theories in physics.
+In the context of 3D transforms, rotations are the nontrivial and complicated part. While it is possible to describe 3D rotations using geometrical drawings and derive the rotation matrices, which is what most people would be more familiar with, it offers a limited picture, and fails to give any insight on related practical things such quaternions and SLERP. For this reason, this document takes a different approach, a general (although a little abstract at first) approach which was popularized by its extensive use in local gauge theories in physics.
 That being said, the aim of this text is to provide a minimal background to understand 2D and 3D rotations in a general way and shed light on practical things such as gimbal lock, quaternions and SLERP using an accessible language for programmers, and not completeness or mathematical rigor.
 
 
@@ -11,13 +11,13 @@ That being said, the aim of this text is to provide a minimal background to unde
 A crash course in Lie groups and algebras for programmers
 ---------------------------------------------------------
 
-Lie groups is a branch of mathematics which deals with rotations in a systematic way. While it is a very extensive subject and most programmers haven't even heard of it, it is very relevant in game development, because it provides a coherent and unified view of 3D rotations.
+Lie groups is a branch of mathematics which deals with rotations in a systematic way. While it is a extensive subject and most programmers haven't even heard of it, it is relevant in game development, because it provides a coherent and unified view of 3D rotations.
 
 .. image:: img/small-rotation.svg
 	:width: 400px
 	:align: center
 
-So let's start with small steps. Suppose that you want to make a really tiny rotation around some axis. For, concreteness let's say around  :math:`z`-axis by an infinitesimal angle :math:`\delta\theta`. For small angles, as illustrated in the figure, the rotation operator can be written as :math:`R_z(\delta\theta) = I + \delta \theta \boldsymbol e_z \times` (neglecting higher order terms :math:`\mathcal O(\delta\theta^2)` ) where :math:`I` is identity operator and :math:`\boldsymbol e_z` is a unit vector along the :math:`z`-axis, such that a vector :math:`\boldsymbol v` becomes
+So let's start with small steps. Suppose that you want to make a tiny rotation around some axis. For, concreteness let's say around  :math:`z`-axis by an infinitesimal angle :math:`\delta\theta`. For small angles, as illustrated in the figure, the rotation operator can be written as :math:`R_z(\delta\theta) = I + \delta \theta \boldsymbol e_z \times` (neglecting higher order terms :math:`\mathcal O(\delta\theta^2)` ) where :math:`I` is identity operator and :math:`\boldsymbol e_z` is a unit vector along the :math:`z`-axis, such that a vector :math:`\boldsymbol v` becomes
 
 .. math::
 
@@ -50,7 +50,7 @@ So, how about finite rotations? We simply can apply this infinitesimal rotation 
 
 	R_z(\theta) = \lim_{N \to \infty} R_z^N(\delta\theta) = \left( I + \frac{\theta}{N} J_z \right)^N = e^{\theta J_z}.
 
-(If you're confused about seeing a matrix as an exponent: the meaning of an operator :math:`A` in `exponential map <https://en.wikipedia.org/wiki/Exponential_map_(Lie_theory)>`_ is given by its series expansion as :math:`e^A = 1 + A + A^2/2! + \ldots` ). This is arguably the most important relation in this write up, and lies at the heart of Lie groups, whose significance will be clarified in a moment. But first, let's take step back and observe the significance of this result: using a very simple picture of an infinitesimal rotation, we derived a general expression for arbitrary rotations around the :math:`z`-axis. In fact, this gets even better. If we repeated the same analysis for rotations around :math:`x`- and :math:`y`-axes, we would have obtained similar results :math:`e^{\theta J_x}` and :math:`e^{\theta J_y}` respectively, where
+(If you're confused about seeing a matrix as an exponent: the meaning of an operator :math:`A` in `exponential map <https://en.wikipedia.org/wiki/Exponential_map_(Lie_theory)>`_ is given by its series expansion as :math:`e^A = 1 + A + A^2/2! + \ldots` ). This is arguably the most important relation in this write up, and lies at the heart of Lie groups, whose significance will be clarified in a moment. But first, let's take step back and observe the significance of this result: using a simple picture of an infinitesimal rotation, we derived a general expression for arbitrary rotations around the :math:`z`-axis. In fact, this gets even better. If we repeated the same analysis for rotations around :math:`x`- and :math:`y`-axes, we would have obtained similar results :math:`e^{\theta J_x}` and :math:`e^{\theta J_y}` respectively, where
 
 .. math::
 
@@ -195,7 +195,7 @@ Let's first review how 3D rotations work using familiar vectors and matrices.
 In 2D, we considered vectors lying in the :math:`xy` plane, and the only axis we could can rotate them was the :math:`z`-axis. In 3D, we can perform a rotation around any axis. And this doesn't just mean around :math:`x, y, z` axes, the rotation can also be around an axis which is a linear combination of those, where :math:`\boldsymbol n` is the unit vector (meaning :math:`\boldsymbol n \cdot \boldsymbol n = 1` ) aligned with the axis we want to perform the rotation.
 
 
-Just like the 2D rotation matrix, the 3D rotation matrix can also be derived with some effort by drawing lots of arrows and angles and some linear algebra, but this would be very opaque and won't give us much insight to what's really going on. A less straightforward, but more rewarding way of deriving this matrix is to understand the rotation group SO(3).
+Just like the 2D rotation matrix, the 3D rotation matrix can also be derived with some effort by drawing lots of arrows and angles and some linear algebra, but this would be opaque and won't give us much insight to what's going on. A less straightforward, but more rewarding way of deriving this matrix is to understand the rotation group SO(3).
 
 SO(3) is the group of rotations in Euclidean 3D space (for which the `signature <https://en.wikipedia.org/wiki/Metric_signature>`_ is :math:`(+1,+1,+1)`), which preserve the magnitude and handedness of the vectors it acts on. The most typical way to represent its elements is to use :math:`3 \times 3` real orthogonal matrices with determinant :math:`+1`. This :math:`\text{Mat}(3, \mathbb R)` representation is called the fundamental representation of SO(3).
 
@@ -241,7 +241,7 @@ If you want, you can plug-in the matrix representations for :math:`J_i` and deri
 
 (Hint: you can use the relation :math:`(\boldsymbol n \cdot \boldsymbol J)^2 = \boldsymbol n \otimes \boldsymbol n-I` to quickly evaluate the last term in the Rodrigues' formula, where :math:`\otimes` is the `Kronecker product <https://en.wikipedia.org/wiki/Kronecker_product>`_ which is also called `outer product <https://en.wikipedia.org/wiki/Outer_product>`_ for vectors. Using the `half-angle formulae <https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Half-angle_formulae>`_ to rewrite :math:`\sin\varphi = 2 \cos\frac{\varphi}{2} \sin\frac{\varphi}{2}`  and :math:`1-\cos\varphi = 2 \sin^2\frac{\varphi}{2}` in Rodrigues' formula, you can use cosine and sine terms as a visual aid when comparing to the matrix form.)
 
-However, we don't really *have to* use matrices to represent SO(3) generators :math:`J_i`. Remember how we used :math:`\imath`, the imaginary unit to emulate :math:`J_z` rather than using a :math:`2 \times 2` matrix? As it turns out we can do something similar here.
+However, we don't *have to* use matrices to represent SO(3) generators :math:`J_i`. Remember how we used :math:`\imath`, the imaginary unit to emulate :math:`J_z` rather than using a :math:`2 \times 2` matrix? As it turns out we can do something similar here.
 
 `Hamilton <https://en.wikipedia.org/wiki/William_Rowan_Hamilton>`_ is mostly commonly known for the omnipresent `Hamiltonian <https://en.wikipedia.org/wiki/Hamiltonian_mechanics>`_ in physics. One of his less known contributions is essentially an alternative way of representing 3D cross product, which eventually gave in to popularity of usual vector `cross products <https://en.wikipedia.org/wiki/Cross_product#History>`_. He essentially realized that there are three different non-commuting rotations in 3D, and gave a name to the generator for each. He identified the operators :math:`\{\boldsymbol e_x \times, \boldsymbol e_y \times, \boldsymbol e_z \times\}` as the elements of an algebra, naming them as :math:`\{i,j,k\}`.
 
@@ -281,7 +281,7 @@ So, the take aways of this section are:
 
 3. Using matrices, you can practically do everything you do with quaternions, vice versa. The real differences, as highlighted, are in computation trade-offs, not mathematics.
 
-3. The relationship between quaternions and 3D rotation matrices is the roughly the same as the relation between the complex number :math:`e^{\imath\theta}` and a 2D rotation matrix. Just as the complex number :math:`\imath \cong J_z` rotates by :math:`\pi/2` (which is, as we saw, what a *generator* does), :math:`i,j,k` (which are :math:`\cong J_x, J_y, J_z`) rotate by :math:`\pi/2` around :math:`x, y, z` axes; they don't commute with each other because in 3D, the order of rotations is important. Owing to this isomorphism between their generators, an SO(3) rotation :math:`e^{\varphi \boldsymbol n \cdot \boldsymbol J}` corresponds to the SU(2) rotation :math:`e^{\varphi \boldsymbol n \cdot (i,j,k)/2}`. This is a very helpful picture to gain an intuition on quaternions. While the SO(3) is familiar to many people,  the "Rodrigues' formula" for the SU(2) one is much preferable graphics programming due to it's simplicity, and hence you see quaternions in game engines.
+3. The relationship between quaternions and 3D rotation matrices is the roughly the same as the relation between the complex number :math:`e^{\imath\theta}` and a 2D rotation matrix. Just as the complex number :math:`\imath \cong J_z` rotates by :math:`\pi/2` (which is, as we saw, what a *generator* does), :math:`i,j,k` (which are :math:`\cong J_x, J_y, J_z`) rotate by :math:`\pi/2` around :math:`x, y, z` axes; they don't commute with each other because in 3D, the order of rotations is important. Owing to this isomorphism between their generators, an SO(3) rotation :math:`e^{\varphi \boldsymbol n \cdot \boldsymbol J}` corresponds to the SU(2) rotation :math:`e^{\varphi \boldsymbol n \cdot (i,j,k)/2}`. This is a helpful picture to gain an intuition on quaternions. While the SO(3) is familiar to many people,  the "Rodrigues' formula" for the SU(2) one is much preferable graphics programming due to it's simplicity, and hence you see quaternions in game engines.
 
 4. This doesn't mean quaternions are a generalization of complex numbers in our construction when considering rotations in a strict sense; they're rather the 3D generalization of the 2D rotation generator in some loose sense (loose, because SO(3) and SU(2) are different groups). There *is* a construction which generalizes real numbers to complex numbers to quaternions, called `Cayley-Dickson construction <https://en.wikipedia.org/wiki/Cayley%E2%80%93Dickson_construction>`_, but it's next steps give off topic objects octonions and sedenions (setting exceptional Lie groups aside for octonions).
 
@@ -337,7 +337,7 @@ For (embedded) 2D rotations in the :math:`xy`-plane, the rotation axis is taken 
 In 3D, the rotation axis can be pointing toward any direction (since the axis is a unit vector, you can think of it as a point on the unit sphere, if you like).
 This way of parametrizing rotations is called axis-angle parametrization, and is the easiest to picture intuitively.
 
-Another advantage of the axis angle parametrization is, it is very easy to interpolate between two different rotations (let's call their parameters :math:`\boldsymbol n_1, \varphi_1` and :math:`\boldsymbol n_2, \varphi_2`), which is useful when you're changing the orientation of an object, starting from a given initial orientation and going toward a final one. A nice way of doing this is described in a later section where we describe SLERP. It results in a smooth motion, rather than a "jerky" motion which may start fast, go slow in the middle and go fast again etc. It turns out that if a mass is transported this way, it experiences the least amount of torque (compared to other possible trajectories). This way of linearly interpolating rotations in the axis-angle parametrization is called Spherical Linear Interpolation or SLERP, and is almost ubiquitously used in games.
+Another advantage of the axis angle parametrization is, it is easy to interpolate between two different rotations (let's call their parameters :math:`\boldsymbol n_1, \varphi_1` and :math:`\boldsymbol n_2, \varphi_2`), which is useful when you're changing the orientation of an object, starting from a given initial orientation and going toward a final one. A nice way of doing this is described in a later section where we describe SLERP. It results in a smooth motion, rather than a "jerky" motion which may start fast, go slow in the middle and go fast again etc. It turns out that if a mass is transported this way, it experiences the least amount of torque (compared to other possible trajectories). This way of linearly interpolating rotations in the axis-angle parametrization is called Spherical Linear Interpolation or SLERP, and is almost ubiquitously used in games.
 
 
 
@@ -360,7 +360,7 @@ Thus, while it's OK to use Euler angles to represent a fixed rotation, they're n
 
 All in all, despite being an ill-defined parametrization for rotations, Euler angles enjoyed a popularity due to gimbals.
 
-While Euler angles may not be too useful when calculating the rotation operator (be it a matrix or a quaternion) in body dynamics, people still find them useful to think about and describe the *orientation* of 3D objects starting from the initial default *"unrotated"* state (it's very difficult to calculate the 3 Euler angles for driving an object from a non-trivial initial orientation to a non-trivial final orientation ---it can't be calculated intuitively in general, it is a task for computers). For this reason, Godot's property editor uses Euler angles (in extrinsic YXZ convention; if the node has a parent node, the YXZ axes refer to the local axes of the parent) for the rotation property of a Transform --this is pretty much the only place Euler angles are used in Godot.
+While Euler angles may not be too useful when calculating the rotation operator (be it a matrix or a quaternion) in body dynamics, people still find them useful to think about and describe the *orientation* of 3D objects starting from the initial default *"unrotated"* state (it's difficult to calculate the 3 Euler angles for driving an object from a non-trivial initial orientation to a non-trivial final orientation ---it can't be calculated intuitively in general, it is a task for computers). For this reason, Godot's property editor uses Euler angles (in extrinsic YXZ convention; if the node has a parent node, the YXZ axes refer to the local axes of the parent) for the rotation property of a Transform --this is pretty much the only place Euler angles are used in Godot.
 
 So the answer to the question "should I use Euler angles or axis-angle parametrization in my game" is: unless you're trying to *statically* orient an object in a particular way starting from an *unrotated, default orientation* (for which you can still use axis-angle parametrization in your script, if you prefer), you shouldn't be using Euler angles. Major reasons are:
 
@@ -444,7 +444,7 @@ Formally, we'd like to interpolate between an initial rotation :math:`R_1 = e^{\
 This form makes sense because for :math:`\lambda=0`, the interpolation hasn't started and :math:`R(\lambda)` automatically becomes :math:`R_1`. But why not pick a different form for the exponent as a function of :math:`\lambda` which evaluates to 0 when :math:`\lambda=0`? That's simply because we don't want to have a jerky motion, meaning :math:`\boldsymbol \omega \cdot \boldsymbol J =  R^T(\lambda) \dot R(\lambda)`, where :math:`\boldsymbol \omega` is the angular velocity vector, has to be a constant, which can only happen if the time derivative of the exponent is linear in time (in which case we obtain :math:`\boldsymbol \omega = \varphi \boldsymbol n`). Or equivalently, you can simply observe that a rotation around a fixed axis (fixed because otherwise if you tilt the rotation axis in time, you'll again get a "jerky motion" due to `Euler force <https://en.wikipedia.org/wiki/Euler_force>`_) with constant angular speed is :math:`e^{\boldsymbol \omega t \cdot \boldsymbol J }` where the exponent is linear in time.
 
 
-But how do we choose :math:`\boldsymbol n` and :math:`\varphi`? Well, we simply enforce that :math:`R(\lambda)`  has to becomes :math:`R_2` at the end, when :math:`\lambda=1`. Although this looks like a very difficult problem, it's actually not. We first make a rearrangement:
+But how do we choose :math:`\boldsymbol n` and :math:`\varphi`? Well, we simply enforce that :math:`R(\lambda)`  has to becomes :math:`R_2` at the end, when :math:`\lambda=1`. Although this looks like a difficult problem, it's actually not. We first make a rearrangement:
 
 .. math::
 
@@ -474,7 +474,7 @@ After some tedious algebra (which involves using :math:`\text{tr}(\sigma_i \sigm
 
 	q(\lambda) = \frac{\sin([1-\lambda]\Omega)q_1 + \sin(\Omega \lambda) q_2}{\sin\Omega}
 
-when :math:`q_1 \neq \pm q_2`, where we introduced :math:`\cos\Omega \equiv \cos\frac{\varphi_1}{2}\cos\frac{\varphi_2}{2} + \sin\frac{\varphi_1}{2}\sin\frac{\varphi_2}{2} \boldsymbol n_1 \cdot \boldsymbol n_2` (or equivalently, in terms of an artificial vector which contains the coefficients of the quaternions, as we discussed above, :math:`\boldsymbol q_1 \cdot \boldsymbol q_2`). This result has a very simple geometric interpretation when a (unit) quaternion is taken to be a point on the 3-sphere and when one introduces an inner product of the 4D Euclidean space, but we'll skip that because it's a bit off topic in our treatment. We'll however note that this is where the name *Spherical* Linear intERpolation comes from, which refers to the 4D sphere.
+when :math:`q_1 \neq \pm q_2`, where we introduced :math:`\cos\Omega \equiv \cos\frac{\varphi_1}{2}\cos\frac{\varphi_2}{2} + \sin\frac{\varphi_1}{2}\sin\frac{\varphi_2}{2} \boldsymbol n_1 \cdot \boldsymbol n_2` (or equivalently, in terms of an artificial vector which contains the coefficients of the quaternions, as we discussed above, :math:`\boldsymbol q_1 \cdot \boldsymbol q_2`). This result has a simple geometric interpretation when a (unit) quaternion is taken to be a point on the 3-sphere and when one introduces an inner product of the 4D Euclidean space, but we'll skip that because it's a bit off topic in our treatment. We'll however note that this is where the name *Spherical* Linear intERpolation comes from, which refers to the 4D sphere.
 
 
 
@@ -536,7 +536,7 @@ Note how things fit nicely, for example, when you consider how a rotated vector 
 The left hand side is rotation of the vector :math:`(R_0 \boldsymbol v_0)` and the right hand side is the rotation of the vector :math:`v_0` and the matrix :math:`R_0` that acts on it, which of course agree.
 
 
-The rotation operator itself rotates in a very expected way (you can use Rodrigues' formula along with the equation above, if you prefer):
+The rotation operator itself rotates in a expected way (you can use Rodrigues' formula along with the equation above, if you prefer):
 
 .. math::
 

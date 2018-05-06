@@ -90,7 +90,7 @@ Collision Layers and Masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One of the most powerful but frequently misunderstood collision features
-is the collision layer system. This system allows you to build up very complex
+is the collision layer system. This system allows you to build up complex
 interactions between a variety of objects. The key concepts are **layers**
 and **masks**. Each ``CollisionObject2D`` has 20 different physics layers
 it can interact with.
@@ -373,11 +373,11 @@ Or to bounce off of the colliding object:
 :ref:`move_and_slide <class_KinematicBody2D_move_and_slide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sliding is a very common collision response; imagine a player moving along walls
+Sliding is a common collision response; imagine a player moving along walls
 in a top-down game or running up and down slopes in a platformer. While it's
 possible to code this response yourself after using ``move_and_collide()``,
 ``move_and_slide()`` provides a convenient way to implement sliding movement
-without writing very much code.
+without writing much code.
 
 .. warning:: ``move_and_slide()`` automatically includes the timestep in its
              calculation, so you should **not** multiply the velocity vector

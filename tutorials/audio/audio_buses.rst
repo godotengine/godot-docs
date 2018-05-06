@@ -18,7 +18,7 @@ entirely from the ground up, without relying on any existing audio libraries.
 
 Even the effect processors were written exclusively for Godot (save for
 the pitch shifting library), with games in mind. This allows
-a very efficient tradeoff between performance and sound quality.
+a efficient tradeoff between performance and sound quality.
 
 Decibel Scale
 -------------
@@ -109,19 +109,19 @@ There is a lot of bibliography written about compressors, and Godot implementati
 Delay
 ~~~~~
 
-Adds an "Echo" effect with a feedback loop. It can be used, together with Reverb, to simulate very wide rooms, canyons, etc. where sound bounces are far apart.
+Adds an "Echo" effect with a feedback loop. It can be used, together with Reverb, to simulate wide rooms, canyons, etc. where sound bounces are far apart.
 
 Distortion
 ~~~~~~~~~~
 
 Adds classical effects to modify the sound and make it dirty. Godot supports effects like overdrive, tan, or bit crushing.
-For games, it can simulate sound coming from some saturated device or speaker very efficiently.
+For games, it can simulate sound coming from some saturated device or speaker efficiently.
 
 EQ6, EQ10, EQ21
 ~~~~~~~~~~~~~~~
 
-Godot provides three model of equalizers with different band counts. Equalizers are very useful on the Master Bus to completely master a mix and give it character. They are
-also very useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
+Godot provides three model of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
+also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
 HighPassFilter, HighShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

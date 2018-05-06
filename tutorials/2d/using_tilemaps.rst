@@ -176,7 +176,7 @@ one that looks better for you:
 
 -  Disable filtering and mipmaps for either the tileset texture or all tile textures if using separate images (see the :ref:`doc_import_images` asset pipeline tutorial).
 -  Enable pixel snap (Set ``Project > Project Settings >
-   Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also just search for ``Pixel Snap``).
+   Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also search for ``Pixel Snap``).
 -  Viewport Scaling can often help with shrinking the map (see the
    :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with it's ``Zoom`` may be a good starting point.
 -  You can use a single, separate image for each tile. This will remove all artifacts, but

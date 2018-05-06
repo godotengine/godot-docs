@@ -126,7 +126,7 @@ Godot uses `GitHub's issue tracker <https://github.com/godotengine/godot/issues>
 for bug reports and enhancement suggestions. You will need a GitHub account to
 be able to open a new issue there, and click on the "New issue" button.
 
-When you report a bug, you should keep in mind that the process is very similar
+When you report a bug, you should keep in mind that the process is similar
 to an appointment with your doctor. You noticed *symptoms* that make you think
 that something might be wrong (the engine crashes, some features don't work as
 expected, etc.). It's the role of the bug triaging team and the developers to

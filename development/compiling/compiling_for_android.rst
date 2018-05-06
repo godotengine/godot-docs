@@ -54,7 +54,7 @@ Toolchain
 ~~~~~~~~~
 
 We usually try to keep the Godot Android build code up to date, but
-Google changes their toolchain versions very often, so if compilation
+Google changes their toolchain versions often, so if compilation
 fails due to wrong toolchain version, go to your NDK directory and check
 the current number, then set the following environment variable:
 
@@ -142,9 +142,8 @@ were compiled against the same version/commit as the editor. If you are
 using official binaries for the editor, make sure to install the matching
 export templates, or to build your own from the same version.
 
-When exporting your game, Godot opens the APK, changes a few things inside,
-adds your file and spits it back. It's really handy! (and required some
-reverse engineering of the format).
+When exporting your game, Godot opens the APK, changes a few things inside and
+adds your files.
 
 Installing the templates
 ~~~~~~~~~~~~~~~~~~~~~~~~
