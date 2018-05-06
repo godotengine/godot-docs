@@ -8,7 +8,7 @@ Introduction
 
 Sería excelente que el mundo hablara solo un idioma. Unfortunately for
 us developers, that is not the case. While not generally a big
-requirement when developing indie or niche games, it is also very common
+requirement when developing indie or niche games, it is also common
 that games going into a more massive market require localization.
 
 Godot offers many tools to make this process more straightforward, so
@@ -71,7 +71,7 @@ Making controls resizable
 The same text in different languages can vary greatly in length. For
 this, make sure to read the tutorial on :ref:`doc_size_and_anchors`, as having
 dynamically adjusted control sizes may help.
-:ref:`Container <class_Container>` can be very useful, as well as the multiple options in
+:ref:`Container <class_Container>` can be useful, as well as the multiple options in
 :ref:`Label <class_Label>` for text wrapping.
 
 TranslationServer

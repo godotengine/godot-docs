@@ -202,7 +202,7 @@ SDK library
 
 So, finally it's time to add the SDK library. The library can come in
 two flavors, a JAR file or an Android project for ant. JAR is the
-easiest to integrate, just put it in the module directory and add it:
+easiest to integrate, put it in the module directory and add it:
 
 .. code:: python
 
@@ -263,7 +263,7 @@ This will cause your module to be included, the .jar will be copied to
 the java folder, the .java will be copied to the sources folder, etc.
 Each time you modify the .java, scons must be called.
 
-Afterwards, just continue the steps for compiling android  :ref:`doc_compiling_for_android`.
+Afterwards, continue the steps for compiling android  :ref:`doc_compiling_for_android`.
 
 Using the module
 ~~~~~~~~~~~~~~~~
@@ -285,7 +285,7 @@ More than one singleton module can be enabled by separating with commas:
 
     modules="org/godotengine/godot/MySingleton,corg/godotengine/godot/MyOtherSingleton"
 
-Then just request the singleton Java object from Globals like this:
+Then request the singleton Java object from Globals like this:
 
 ::
 

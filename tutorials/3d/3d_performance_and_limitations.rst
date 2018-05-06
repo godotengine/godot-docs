@@ -20,7 +20,7 @@ usability and flexibility. Some practical examples of this are:
    by material to reduce the costs, but at the same time sorting has a
    cost.
 -  In 3D physics a similar situation happens. The best algorithms to
-   handle large amounts of physics objects (such as SAP) are very slow
+   handle large amounts of physics objects (such as SAP) are slow
    at insertion/removal of objects and ray-casting. Algorithms that
    allow faster insertion and removal, as well as ray-casting will not
    be able to handle as many active objects.
@@ -63,7 +63,7 @@ Godot's priorities will be like this:
    configuration).
 
 If a scene has, for example, 20.000 objects with 20.000 different
-materials each, rendering will be really slow. If the same scene has
+materials each, rendering will be slow. If the same scene has
 20.000 objects, but only uses 100 materials, rendering will be blazing
 fast.
 
@@ -74,7 +74,7 @@ It is a common thought that the lower the number of polygons in a model, the
 faster it will be rendered. This is *really* relative and depends on
 many factors.
 
-On a modern PC and console, vertex cost is low. Very low. GPUs
+On a modern PC and console, vertex cost is low. GPUs
 originally only rendered triangles, so all the vertices:
 
 1. Had to be transformed by the CPU (including clipping).
@@ -96,7 +96,7 @@ to be a lot more power efficient.
 To be more efficient, mobile GPUs attempt to avoid *overdraw*. This
 means, the same pixel on the screen being rendered (as in, with lighting
 calculation, etc.) more than once. Imagine a town with several buildings,
-GPUs don't really know what is visible and what is hidden until they
+GPUs don't know what is visible and what is hidden until they
 draw it. A house might be drawn and then another house in front of it
 (rendering happened twice for the same pixel!). PC GPUs normally don't
 care much about this and just throw more pixel processors to the
@@ -162,7 +162,7 @@ Level of detail (LOD)
 ---------------------
 
 As also mentioned before, using objects with less vertices can improve
-performance in some cases. Godot has a very simple system to change level
+performance in some cases. Godot has a simple system to change level
 of detail,
 :ref:`GeometryInstance <class_GeometryInstance>`
 based objects have a visibility range that can be defined. Having

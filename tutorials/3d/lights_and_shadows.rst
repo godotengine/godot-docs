@@ -137,8 +137,8 @@ radius .
 
 .. image:: img/light_omni.png
 
-In real life, light attenuation is an inverse function, which means omni lights don't really have a radius.
-This is a problem, because it means computing several omni lights would become really demanding.
+In real life, light attenuation is an inverse function, which means omni lights don't have a radius.
+This is a problem, because it means computing several omni lights would become demanding.
 
 To solve this, a *Range* is introduced, together with an attenuation function. 
 
@@ -152,10 +152,10 @@ These two parameters allow tweaking how this works visually, in order to find ae
 Omni Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Omni light shadow mapping is relatively straightforward, as it just works. The main issue that needs to be
+Omni light shadow mapping is relatively straightforward. The main issue that needs to be
 considered is the algorithm used to render it. 
 
-Omni Shadows can be rendered as either **"Dual Paraboloid" or "Cube Mapped"**. The former renders very quickly but can cause deformations,
+Omni Shadows can be rendered as either **"Dual Paraboloid" or "Cube Mapped"**. The former renders quickly but can cause deformations,
 while the later is more correct but more costly. 
 
 .. image:: img/shadow_omni_dp_cm.png
@@ -183,7 +183,7 @@ Spot lights share the same **Range** and **Attenuation** as **OmniLight**, and a
 Spot Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Spots don't need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees of aperture, shadows
+Spots don't need any parameters for shadow mapping. Keep in mind that, at more than 89 degrees of aperture, shadows
 stop functioning for spots, and you should consider using an Omni light.
 
 Shadow Atlas

@@ -109,7 +109,7 @@ due to the two directions being added together.
 We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed.
 
-.. tip:: If you've never used vector math before, or just need a refresher,
+.. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
 
 
@@ -202,7 +202,7 @@ Again, pressing both keys at once will cancel out and result in no rotation.
 The rotation is applied directly to the body's ``rotation`` property.
 
 To set the velocity, we use the ``Vector2.rotated()`` method so that it points
-in the same direction as the body. ``rotated()`` is a very useful vector function
+in the same direction as the body. ``rotated()`` is a useful vector function
 that you can use in many circumstances where you would otherwise need to apply
 trigonometric functions.
 

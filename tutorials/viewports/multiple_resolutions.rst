@@ -60,8 +60,8 @@ Stretch mode
    is set as a render target, and still renders precisely to the
    resolution specified in the ``display/`` section of the project
    settings. Finally, this viewport is copied and scaled to fit the
-   screen. This mode is useful when working with pixel-precise games, or
-   just for the sake of rendering to a lower resolution for improving
+   screen. This mode is useful when working with pixel-precise games,
+   or for the sake of rendering to a lower resolution for improving
    performance.
 
 .. image:: img/stretch.png

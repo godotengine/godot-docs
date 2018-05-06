@@ -270,7 +270,7 @@ the notification system.
 Creating nodes
 --------------
 
-To create a node from code, call the ``.new()`` method, just like for any 
+To create a node from code, call the ``.new()`` method, like for any 
 other class-based datatype. For example:
 
 
@@ -311,7 +311,7 @@ used:
     }
 
 When a node is freed, it also frees all its children nodes. Because of
-this, manually deleting nodes is much simpler than it appears. Just free
+this, manually deleting nodes is much simpler than it appears. Free
 the base node and everything else in the subtree goes away with it.
 
 A situation might occur where we want to delete a node that

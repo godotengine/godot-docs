@@ -76,7 +76,7 @@ Preprocess
 ~~~~~~~~~~
 
 Particle systems begin with zero particles emitted, then start emitting.
-This can be an inconvenience when just loading a scene and systems like
+This can be an inconvenience when loading a scene and systems like
 a torch, mist, etc. begin emitting the moment you enter. Preprocess is
 used to let the system process a given number of seconds before it is
 actually drawn the first time.

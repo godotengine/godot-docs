@@ -23,7 +23,7 @@ usefulness when drawing, so they will be detailed next:
 Checking control size
 ~~~~~~~~~~~~~~~~~~~~~
 
-Unlike 2D nodes, "size" is very important with controls, as it helps to
+Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
 :ref:`Control.rect_size <class_Control_rect_size>`
 member variable is provided. Checking it during _draw() is vital to ensure
@@ -68,7 +68,7 @@ exists. Example
 Sizing
 ------
 
-As mentioned before, size is very important to controls. This allows
+As mentioned before, size is important to controls. This allows
 them to lay out properly, when set into grids, containers, or anchored.
 Controls most of the time provide a *minimum size* to help to properly
 lay them out. For example, if controls are placed vertically on top of

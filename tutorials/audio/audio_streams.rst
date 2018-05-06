@@ -21,7 +21,7 @@ inside an AudioStreamPlayer.
 
 When using these kind of files, you should choose which one is best for your specific use case:
 
-* Audio files of type *.wav* are considerably big, but use very little amount of your CPU to play. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects, as the importer will trim them and convert them to IMA-ADPCM.
+* Audio files of type *.wav* are considerably big, but use little amount of your CPU to play. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects, as the importer will trim them and convert them to IMA-ADPCM.
 * Audio files of type *.ogg* are much smaller, but use considerably more amount of CPU power to play back, so only a few can be played back (especially on mobile!). This format is usually best for music or long sound effect sequences. It also works well for voice at relatively low bitrates.
 
 Keep in mind both .wav and .ogg generally don't contain looping information, so this information must be set on the import options of each:
@@ -61,7 +61,7 @@ Unlike for 2D, the 3D version of AudioStreamPlayer has a few more advanced optio
 Reverb Buses
 ~~~~~~~~~~~~
 
-Godot allows 3D Audio Streams that enter a specific *Area* to send dry and wet audio to separate buses. This is really useful when you have several reverb configurations for different types of rooms.
+Godot allows 3D Audio Streams that enter a specific *Area* to send dry and wet audio to separate buses. This is useful when you have several reverb configurations for different types of rooms.
 This is done by enabling this type of reverb in the *Reverb Bus* section of *Area* properties:
 
 .. image:: img/audio_stream_reverb_bus.png

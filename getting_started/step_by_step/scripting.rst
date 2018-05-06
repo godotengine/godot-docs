@@ -15,7 +15,7 @@ it also makes our work supporting languages more difficult.
 
 The "Main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is their level of integration with Godot, as this
-makes the experience smoother; both have very slick editor integration, while
+makes the experience smoother; both have slick editor integration, while
 C# and C++ need to be edited in a separate IDE. If you are a big fan of statically typed languages, go with C# and C++ instead.
 
 GDScript
@@ -190,7 +190,7 @@ For the first part, Godot provides two ways to create connections: through a
 visual interface the editor provides or through code.
 
 While we will use the code method for the remainder of this tutorial series, let's
-cover how the editor interface works just for future reference.
+cover how the editor interface works for future reference.
 
 Select the Button node in the scene tree and then select the "Node" tab. Next,
 make sure that you have "Signals" selected.

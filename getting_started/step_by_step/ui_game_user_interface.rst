@@ -61,7 +61,7 @@ separate scenes and put them together, or prototype everything in a
 single scene and break it down later. I recommend working with a single
 scene as you can play with your UI's placement and proportions faster
 this way. Once it looks good, you can save entire sections of the node
-tree as reusable sub-scenes. We'll do just that in a moment.
+tree as reusable sub-scenes. We'll do that in a moment.
 
 For now, let's start with a few containers.
 
@@ -217,7 +217,7 @@ again and tweak the ``Bottom`` property until the text aligns with the
 
    With a Bottom value of 2 pixels, the Number aligns with the Title
 
-With this, we just finished the hardest part of the GUI.
+With this, we finished the hardest part of the GUI.
 Congratulations! Let's move on to the simpler nodes.
 
 Add the progress bar

@@ -25,7 +25,7 @@ just move the ship somewhere and rotate it:
 
 Ok, so in 2D this looks simple, a position and an angle for a rotation.
 But remember, we are grown ups here and don't use angles (plus, angles
-are not really even that useful when working in 3D).
+are not even that useful when working in 3D).
 
 We should realize that at some point, someone *designed* this
 spaceship. Be it for 2D in a drawing such as Paint.net, Gimp,
@@ -240,7 +240,7 @@ Rotating Transform2D is done by using the "rotated" function:
 Translation
 -----------
 
-There are two ways to translate a Transform2D, the first one is just moving
+There are two ways to translate a Transform2D, the first one is moving
 the origin:
 
 .. tabs::

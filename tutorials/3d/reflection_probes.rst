@@ -12,7 +12,7 @@ Reflection Probes are used as a source of reflected and ambient light for object
 A probe of this type captures the surroundings (as a sort of 360 degrees image), and stores versions
 of it with increasing levels of *blur*. This is used to simulate roughness in materials, as well as ambient lighting.
 
-While these probes are a very efficient way of storing reflections, they have a few shortcomings:
+While these probes are a efficient way of storing reflections, they have a few shortcomings:
 
 * They are efficient to render, but expensive to compute. This leads to a default behavior where they only capture on scene load.
 * They work best for rectangular shaped rooms or places, otherwise the reflections shown are not as faithful (especially when roughness is 0).
@@ -20,7 +20,7 @@ While these probes are a very efficient way of storing reflections, they have a 
 Setting Up
 ----------
 
-Setting up reflection probes is really easy! Just create a ReflectionProbe node, and wrap it around the area where you want to have reflections:
+Create a ReflectionProbe node, and wrap it around the area where you want to have reflections:
 
 .. image:: img/refprobe_setup.png
 
@@ -43,7 +43,7 @@ can be displaced to an empty place by moving the handles in the center:
 .. image:: img/refprobe_center_gizmo.png
 
 By default, shadow mapping is disabled when rendering probes (only in the rendered image inside the probe, not the actual scene). This is
-a simple way to save on performance and memory. If you really want shadows in the probe, they can be toggled on/off with the *Enable Shadow* setting:
+a simple way to save on performance and memory. If you want shadows in the probe, they can be toggled on/off with the *Enable Shadow* setting:
 
 .. image:: img/refprobe_shadows.png
 
@@ -76,7 +76,7 @@ As you can see, this blending is never perfect (after all, these are box reflect
 are only visible when using perfectly mirrored reflections. Normally, scenes have normal mapping and varying levels of roughness which
 can hide this. 
 
-Alternatively, Reflection Probes work very well blended together with Screen Space Reflections to solve these problems. Combining them makes local reflections appear
+Alternatively, Reflection Probes work well blended together with Screen Space Reflections to solve these problems. Combining them makes local reflections appear
 more faithful, while probes only used as fallback when no screen-space information is found:
 
 .. image:: img/refprobe_ssr.png

@@ -156,7 +156,7 @@ NinePatchRect
 
 **NinePatchRect** takes a texture split in 3 rows and 3 columns. The
 center and the sides tile when you scale the texture, but it never
-scales the corners. It is very useful to build panels, dialogue boxes
+scales the corners. It is useful to build panels, dialogue boxes
 and scalable backgrounds for your UI.
 
 .. figure:: img/five_common_nodes_ninepatchrect.png

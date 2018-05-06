@@ -170,7 +170,7 @@ Start by declaring the member variables this object will need:
 
 
 Using the ``export`` keyword on the first variable ``SPEED`` allows us to
-set its value in the Inspector. This can be very handy for values that you
+set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
@@ -273,7 +273,7 @@ We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed. This means no
 more fast diagonal movement.
 
-.. tip:: If you've never used vector math before, or just need a refresher,
+.. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
          It's good to know but won't be necessary for the rest of this tutorial.
 
@@ -281,7 +281,7 @@ We also check whether the player is moving so we can start or stop the
 AnimatedSprite animation.
 
 .. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
-         Since AnimatedSprite is a child of the current node, we can just use ``$AnimatedSprite``.
+         Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
          
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
@@ -895,7 +895,7 @@ StartButton
 
 -  Text: ``Start``
 
-The default font for ``Control`` nodes is very small and doesn't scale
+The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
 the three ``Control`` nodes:
@@ -904,7 +904,7 @@ the three ``Control`` nodes:
 
 .. image:: img/custom_font1.png
 
-2. Click on the "DynamicFont" you just added, and under "Font Data",
+2. Click on the "DynamicFont" you added, and under "Font Data",
    choose "Load" and select the "Xolonium-Regular.ttf" file. You must
    also set the font's ``Size``. A setting of ``64`` works well.
 
@@ -1134,7 +1134,7 @@ For one last bit of visual appeal, let's add a trail effect to the
 player's movement. Choose your ``Player`` scene and add a
 :ref:`Particles2D <class_Particles2D>` node named ``Trail``.
 
-There are a very large number of properties to choose from when
+There are a large number of properties to choose from when
 configuring particles. Feel free to experiment and create different
 effects. For the effect in this example, use the following settings:
 

@@ -6,10 +6,10 @@ Singletons (AutoLoad)
 Introduction
 ------------
 
-Scene singletons are very useful, catering to a common use case where you need
+Scene singletons are useful, catering to a common use case where you need
 to store persistent information between scenes.
 
-Albeit very powerful, the scene system by itself has a few drawbacks:
+Albeit powerful, the scene system by itself has a few drawbacks:
 
 -  There is no common place to store information (e.g. a player's items etc.)
    required by more than one scene.
@@ -215,7 +215,7 @@ current scene and replaces it with the requested one.
         GetTree().SetCurrentScene(CurrentScene);
     }
 
-As mentioned in the comments above, we really want to avoid the
+As mentioned in the comments above, we want to avoid the
 situation of having the current scene being deleted while being used
 (code from functions of it being run), so using
 :ref:`Object.call_deferred() <class_Object_call_deferred>`

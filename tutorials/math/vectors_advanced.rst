@@ -115,7 +115,7 @@ The same thing, using a built-in function:
 
 This will, again, return either a positive or negative distance.
 
-Flipping the polarity of the plane is also very simple, just negate both
+Flipping the polarity of the plane can be done by negating both
 N and D. This will result in a plane in the same position, but with
 inverted negative and positive half spaces:
 
@@ -267,7 +267,7 @@ similar logic will let us know when two convex polygons are overlapping
 too. This is called the Separating Axis Theorem (or SAT) and most
 physics engines use this to detect collision.
 
-The idea is really simple! With a point, just checking if a plane
+With a point, just checking if a plane
 returns a positive distance is enough to tell if the point is outside.
 With another polygon, we must find a plane where *all* *the* *other*
 *polygon* *points* return a positive distance to it. This check is
@@ -379,8 +379,7 @@ Collision detection in 3D
 This is another bonus bit, a reward for being patient and keeping up
 with this long tutorial. Here is another piece of wisdom. This might
 not be something with a direct use case (Godot already does collision
-detection pretty well) but It's a really cool algorithm to understand
-anyway, because it's used by almost all physics engines and collision
+detection pretty well) but it's used by almost all physics engines and collision
 detection libraries :)
 
 Remember that converting a convex shape in 2D to an array of 2D planes

@@ -20,7 +20,7 @@ Some physics engines such as Havok seem to swear by dynamic character
 controllers as the best alternative, while others (PhysX) would rather
 promote the Kinematic one.
 
-So, what is really the difference?:
+So, what is the difference?:
 
 -  A **dynamic character controller** uses a rigid body with infinite
    inertial tensor. Basically, it's a rigid body that can't rotate.
@@ -111,7 +111,7 @@ Moving the Kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go back to the character scene, and open the script, the magic begins
-now! Kinematic body will do nothing by default, but it has a really
+now! Kinematic body will do nothing by default, but it has a
 useful function called
 :ref:`KinematicBody2D.move_and_collide() <class_KinematicBody2D_move_and_collide>`.
 This function takes a :ref:`Vector2 <class_Vector2>` as

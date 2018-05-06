@@ -35,7 +35,7 @@ considered a resource.
 
 When a resource is loaded from disk, **it is always loaded once**. That
 means, if there is a copy of that resource already loaded in memory,
-trying to load the resource again will just return the same copy again
+trying to load the resource again will return the same copy again
 and again. This corresponds with the fact that resources are just data
 containers, so there is no need to have them duplicated.
 

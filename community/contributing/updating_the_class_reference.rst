@@ -75,7 +75,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have 2: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
 
 
 ::

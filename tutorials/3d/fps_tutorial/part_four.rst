@@ -169,7 +169,7 @@ it is mapped to the proper axes for the right joystick.
 .. warning:: As stated above, I do not (currently) has access to a Mac computer, so the joystick axes may need changing. If they do,
              please open a GitHub issue on the Godot documentation repository!
 
-We then account for the joypad's dead zone, just like in ``process_input``.
+We then account for the joypad's dead zone, exactly like in ``process_input``.
 
 Then we rotate ``rotation_helper`` and our KinematicBody using ``joypad_vec``.
 
@@ -190,7 +190,7 @@ Once ``process_view_input`` is added to ``_physics_process``, you should be able
 .. note:: I decided not to use the joypad triggers for firing because we'd then have to do some more axis managing, and because I prefer to use a shoulder button to fire.
           
           If you want to use the triggers for firing, you will need to change how firing works in ``process_input``. You need to get the proper axis value for the trigger,
-          and check if it's over a certain value, say ``0.8`` for example. If it is, you just add the same code as when the ``fire`` action was pressed.
+          and check if it's over a certain value, say ``0.8`` for example. If it is, you add the same code as when the ``fire`` action was pressed.
          
 Adding mouse scroll wheel input
 -------------------------------
@@ -280,7 +280,7 @@ Open up ``Health_Pickup.tscn``.
 
 Expand ``Holder`` if it's not already expanded. Notice how we have two Spatial nodes, one called ``Health_Kit`` and another called ``Health_Kit_Small``.
 
-This is because we're actually going to be making two sizes of health pick ups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` just
+This is because we're actually going to be making two sizes of health pick ups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` only
 have a single :ref:`MeshInstance <class_MeshInstance>` as their children.
 
 Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node we're going to use to check if the player has walked close enough to pick up
@@ -452,10 +452,10 @@ when a ``Health_Pickup`` instanced scene is selected, from a convenient drop dow
 Adding the ammo pick ups
 ------------------------
 
-While adding health is good and all, we can't really reap the rewards from it since nothing can (currently) damage us.
+While adding health is good and all, we can't reap the rewards from it since nothing can (currently) damage us.
 Let's add some ammo pick ups next!
 
-Open up ``Ammo_Pickup.tscn``. Notice how it's structured exactly the same as ``Health_Pickup.tscn``, just with the meshes and trigger collision shapes changed slightly to adjust
+Open up ``Ammo_Pickup.tscn``. Notice how it's structured exactly the same as ``Health_Pickup.tscn``, but with the meshes and trigger collision shapes changed slightly to adjust
 for the difference in mesh sizes.
 
 Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the following:
@@ -523,7 +523,7 @@ You may have noticed this code looks almost exactly the same as the health pick 
 have been changed, and that's what we're going to go over.
 
 First, notice how we have ``AMMO_AMOUNTS`` instead of ``HEALTH_AMMOUNTS``. ``AMMO_AMOUNTS`` will be how many ammo clips/magazines we add to the current weapon.
-(Unlike ``HEALTH_AMMOUNTS`` which was how many health points, we instead just add an entire clip for the current weapon, instead of the raw ammo amount)
+(Unlike ``HEALTH_AMMOUNTS`` which was how many health points, we instead add an entire clip for the current weapon, instead of the raw ammo amount)
 
 The only other thing to notice is in ``trigger_body_entered`` we're checking and calling a function called ``add_ammo``, not ``add_health``.
 
@@ -552,7 +552,7 @@ _______
 
 With that done, you should now be able to get additional ammo! Go place some ammo pick ups in one/both/all of the scenes and give it a try!
 
-.. note:: Notice how we're not limiting the amount of ammo you can carry. To limit the amount of ammo each weapon can carry, you just need to add a additional variable to
+.. note:: Notice how we're not limiting the amount of ammo you can carry. To limit the amount of ammo each weapon can carry, you need to add a additional variable to
           each weapon's script, and then clamp the weapon's ``spare_ammo`` variable after adding ammo in ``add_ammo``.
 
 Adding breakable targets

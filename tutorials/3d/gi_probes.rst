@@ -20,7 +20,7 @@ The main downside of GIProbes are:
 
 - A small amount of light leaking can occur if the level is not carefully designed. this must be artist-tweaked.
 - Performance requirements are higher than for lightmaps, so it may not run properly in low end integrated GPUs (may need to reduce resolution).
-- Reflections are voxelized, so they don't look as sharp as with ReflectionProbe, but in exchange they are volumetric so any room size or shape works for them. Mixing them with Screen Space Reflection also works very well.
+- Reflections are voxelized, so they don't look as sharp as with ReflectionProbe, but in exchange they are volumetric so any room size or shape works for them. Mixing them with Screen Space Reflection also works well.
 - They consume considerably more video memory than Reflection Probes, so they must be used by care in the right subdivision sizes.
 
 Setting Up
@@ -79,7 +79,7 @@ The difference becomes clear in the image below, where light from the sky goes f
 
 .. image:: img/giprobe_interior.png
 
-As complex buildings may mix interiors with exteriors, combining GIProbes for both parts works very well.
+As complex buildings may mix interiors with exteriors, combining GIProbes for both parts works well.
 
 
 Tweaking

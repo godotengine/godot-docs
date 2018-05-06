@@ -48,7 +48,7 @@ built-in language has proven to be a huge advantage.
 Example of GDScript
 ~~~~~~~~~~~~~~~~~~~
 
-Some people can learn better by just taking a look at the syntax, so
+Some people can learn better by taking a look at the syntax, so
 here's a simple example of how GDScript looks.
 
 ::
@@ -473,12 +473,12 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
     arr[0] = "Hi!" # Replacing value 1 with "Hi"
     arr.append(4) # Array is now ["Hi", 2, 3, 4]
 
-GDScript arrays are allocated linearly in memory for speed. Very
-large arrays (more than tens of thousands of elements) may however cause
+GDScript arrays are allocated linearly in memory for speed.
+Large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern special types of
 arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
-arrays. They are therefore only recommended to use for very large data sets:
+arrays. They are therefore only recommended to use for large data sets:
 
 - :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
@@ -866,7 +866,7 @@ Classes
 
 By default, the body of a script file is an unnamed class and it can
 only be referenced externally as a resource or file. Class syntax is
-meant to be very compact and can only contain member variables or
+meant to be compact and can only contain member variables or
 functions. Static functions are allowed, but not static members (this is
 in the spirit of thread safety, since scripts can be initialized in
 separate threads without the user knowing). In the same way, member
@@ -1111,7 +1111,7 @@ can be set from the editor:
     export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
 
 Restricting the flags to a certain number of named flags is also
-possible. The syntax is very similar to the enumeration syntax:
+possible. The syntax is similar to the enumeration syntax:
 
 ::
 
@@ -1231,7 +1231,7 @@ Memory management
 ~~~~~~~~~~~~~~~~~
 
 If a class inherits from :ref:`class_Reference`, then instances will be
-freed when no longer in use. No garbage collector exists, just simple
+freed when no longer in use. No garbage collector exists, just 
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
 must inherit :ref:`class_Object` manually and must call instance.free(). To
@@ -1253,8 +1253,8 @@ Declaring a signal in GDScript is easy using the `signal` keyword.
     # With arguments
     signal your_signal_name_with_args(a, b)
 
-These signals, just like regular signals, can be connected in the editor
-or from code. Just take the instance of a class where the signal was
+These signals can be connected in the editor or from code like regular signals.
+Take the instance of a class where the signal was
 declared and connect it to the method of another instance:
 
 ::
@@ -1277,7 +1277,7 @@ your custom values:
     func _at_some_func():
         instance.connect("your_signal_name", self, "_callback_args", [22, "hello"])
 
-This is very useful when a signal from many objects is connected to a
+This is useful when a signal from many objects is connected to a
 single callback and the sender must be identified:
 
 ::
@@ -1377,7 +1377,7 @@ signal is received, execution will recommence. Here are some examples:
 Onready keyword
 ~~~~~~~~~~~~~~~
 
-When using nodes, it's very common to desire to keep references to parts
+When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
 configured when entering the active scene tree, the sub-nodes can only
 be obtained when a call to Node._ready() is made.

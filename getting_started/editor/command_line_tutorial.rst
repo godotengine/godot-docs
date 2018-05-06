@@ -48,9 +48,7 @@ For example, the full command for exporting your game (as explained below) might
 Creating a project
 ------------------
 
-Creating a project from the command line is simple, just navigate the
-shell to the desired place and just make project.godot file exist, even
-if empty.
+To create a project from the command line, navigate the to the desired place and create an empty project.godot file.
 
 ::
 
@@ -58,7 +56,7 @@ if empty.
     user@host:~$ cd newgame
     user@host:~/newgame$ touch project.godot
 
-That alone makes for an empty Godot project.
+The project can now be opened with Godot.
 
 Running the editor
 ------------------
@@ -135,7 +133,7 @@ that is headless (server build, no video) is ideal for this.
 
 The platform names recognized by the ``--export`` switch are the same as
 displayed in the export wizard of the editor. To get a list of supported
-platforms from the command line, just try exporting to a non-recognized
+platforms from the command line, try exporting to a non-recognized
 platform and the full listing of platforms your configuration supports
 will be shown.
 
@@ -146,7 +144,7 @@ Running a script
 ----------------
 
 It is possible to run a simple .gd script from the command line. This
-feature is especially useful in very large projects, for batch
+feature is especially useful in large projects, for batch
 conversion of assets or custom import/export.
 
 The script must inherit from SceneTree or MainLoop.

@@ -74,7 +74,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 Custom features
 ---------------
 
-It is possible to add custom features to a build, just use the relevant
+It is possible to add custom features to a build, use the relevant
 field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.png

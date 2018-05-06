@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`doc_gi_probes` approach,
-baked lightmaps work fine on very low end PCs and mobile as they consume almost no resources in run-time.
+baked lightmaps work fine on low end PCs and mobile devices as they consume almost no resources in run-time.
 
 Unlike GIProbes, Baked Lightmaps are completely static, once baked they can't be modified at all. They also don't provide the scene with
 reflections, so using :ref:`doc_reflection_probes` together with it on interiors (or using a Sky on exteriors) is a requirement to
@@ -40,7 +40,7 @@ Unwrap from your 3D DCC
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 One option is to do it from your favorite 3D app. This approach is generally not recommended but it's explained first so you know it exists.
-The main advantage is that, on very complex objects that you may want to re-import a lot, the texture generation process can be quite costly within Godot,
+The main advantage is that, on complex objects that you may want to re-import a lot, the texture generation process can be quite costly within Godot,
 so having it unwrapped before import can be faster.
 
 Simply do an unwrap on the second UV2 layer.
@@ -52,7 +52,7 @@ And import normally. Remember you will need to set the texture size on the mesh 
 .. image:: img/baked_light_lmsize.png
 
 If you use external meshes on import, the size will be kept.
-Be wary that most unwrappers in 3D DCCs are not very quality oriented, as they are meant to work quick. You will mostly need to use seams or other techniques to create better unwrapping.
+Be wary that most unwrappers in 3D DCCs are not quality oriented, as they are meant to work quick. You will mostly need to use seams or other techniques to create better unwrapping.
 
 Unwrap from within Godot
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ final size of the lightmap texture (and, in consequence, the UV padding in the m
 The effect of setting this option is that all meshes within the scene will have their UV2 maps properly generated.
 
 As a word of warning: When reusing a mesh within a scene, keep in mind that UVs will be generated for the first instance found. If the mesh is re-used with different scales (and the scales
-are wildly different, more than half or twice), this will result in inefficient lightmaps. Just don't reuse a source mesh at very different scales if you are planning to use lightmapping.
+are wildly different, more than half or twice), this will result in inefficient lightmaps. Just don't reuse a source mesh at different scales if you are planning to use lightmapping.
 
 Checking UV2
 ~~~~~~~~~~~~
@@ -144,7 +144,7 @@ Besides the capture size, quality can be modified by setting the **Bake Mode**. 
 
 .. image:: img/baked_light_mode.png
 
-- **Voxel Cone**: Trace: Is the default one, it's less precise but very fast. Look similar (but slightly better) to GIProbe.
+- **Voxel Cone**: Trace: Is the default one, it's less precise but fast. Look similar (but slightly better) to GIProbe.
 - **Ray Tracing**: This method is more precise, but can take considerably longer to bake. If used in low or medium quality, some scenes may produce grain.
 
 
@@ -162,7 +162,7 @@ Configuring Bake
 
 Several more options are present for baking:
 
-- **Bake Subdiv**: Godot lightmapper uses a grid to transfer light information around. The default value is fine and should work for most cases. Increase it in case you want better lighting on very small details or your scene is very large. 
+- **Bake Subdiv**: Godot lightmapper uses a grid to transfer light information around. The default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large. 
 - **Capture Subdiv**: This is the grid used for real-time capture information (lighting dynamic objects). Default value is generally OK, it's usually smaller than Bake Subdiv and can't be larger than it.
 - **Bake Quality**: Three bake quality modes are provided, Low, Medium and High. Each takes less and more time.
 - **Bake Mode**: The baker can use two different techniques: *Voxel Cone Tracing* (fast but approximate), or *RayTracing* (slow, but accurate).

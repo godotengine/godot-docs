@@ -6,7 +6,7 @@ Viewports
 Introduction
 ------------
 
-Godot has a small but very useful feature called viewports. Viewports
+Godot has a small but useful feature called viewports. Viewports
 are, as the name implies, rectangles where the world is drawn. They
 have three main uses, but can flexibly adapted to a lot more. All this
 is done via the :ref:`Viewport <class_Viewport>` node.
@@ -74,7 +74,7 @@ Scale & stretching
 ------------------
 
 Viewports have a "rect" property. X and Y are often not used (only the
-root viewport really uses them), while WIDTH AND HEIGHT represent the
+root viewport uses them), while WIDTH AND HEIGHT represent the
 size of the viewport in pixels. For Sub-Viewports, these values are
 overridden by the ones from the parent control, but for render targets
 this sets their resolution.
@@ -108,7 +108,7 @@ the game (like in Starcraft).
 
 As a helper for situations where you want to create viewports that
 display single objects and don't want to create a world, viewport has
-the option to use its own World. This is very useful when you want to
+the option to use its own World. This is useful when you want to
 instance 3D characters or objects in the 2D world.
 
 For 2D, each Viewport always contains its own :ref:`World2D <class_World2D>`.
@@ -134,7 +134,7 @@ following API:
    # Set Sprite Texture
    $sprite.texture = tex
 
-But if you use this in _ready() or from the very first frame of the viewport's initialization
+But if you use this in _ready() or from the first frame of the viewport's initialization
 you will get an empty texture cause there is nothing to get as texture. You can deal with
 it using (for example):
 
@@ -167,7 +167,7 @@ And Viewport Container can not be smaller than the size of the Viewport.
 Render target
 -------------
 
-To set as a render target, just toggle the "render target" property of
+To set as a render target, toggle the "render target" property of
 the viewport to enabled. Note that whatever is inside will not be
 visible in the scene editor. To display the contents, the method remains the same.
 This can be requested via code using (for example):

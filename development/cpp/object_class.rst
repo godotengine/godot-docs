@@ -204,7 +204,7 @@ example:
 
 If cast fails, NULL is returned. This system uses RTTI, but it also
 works fine (although a bit slower) when RTTI is disabled. This is useful
-on platforms where a very small binary size is ideal, such as HTML5 or
+on platforms where a small binary size is ideal, such as HTML5 or
 consoles (with low memory footprint).
 
 Signals

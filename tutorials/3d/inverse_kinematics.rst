@@ -16,7 +16,7 @@ Initial problem
 Talking in Godot terminology, the task we want to solve here is to position
 our 2 angles we talked about above so, that the tip of the lowerarm bone is
 as close to the target point (which is set by the target Vector3()) as possible
-using only rotations. This task is very calculation-intensive and never
+using only rotations. This task is calculation-intensive and never
 resolved by analytical equation solving. So, it is an underconstrained
 problem, which means there is an unlimited number of solutions to the
 equation.
@@ -63,7 +63,7 @@ IK bone and calculate using that.
 Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will just use an exported variable for the bone length to make it easy.
+We will use an exported variable for the bone length to make it easy.
 
 ::
 
@@ -110,7 +110,7 @@ And for the ``_process()`` function:
     func _process(delta):
         pass_chain(delta)
 
-Executing this script will just pass through the bone chain, printing bone
+Executing this script will pass through the bone chain, printing bone
 transforms.
 
 ::

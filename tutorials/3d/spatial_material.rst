@@ -60,7 +60,7 @@ by running the lighting shader on every pixel.
 As these calculations are costly, performance can be brought down considerably in some corner cases such as drawing
 several layers of transparency (common in particle systems). Switching to per vertex lighting may help these cases.
 
-Additionally, on very low end devices such as mobile, switching to vertex lighting can considerably increase rendering performance.
+Additionally, on low end or mobile devices, switching to vertex lighting can considerably increase rendering performance.
 
 
 .. image:: img/spatial_material2.png
@@ -131,7 +131,7 @@ default one is Burley. Other modes are also available:
 * **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
-* **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works really well for clay-like materials and some types of cloth.
+* **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
 
 .. image:: img/spatial_material6.png
@@ -233,8 +233,8 @@ This renders the object via the opaque pipeline, which is faster and allows it t
 Material colors, maps and channels
 ----------------------------------
 
-Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a very extensive list
-of them (arguably far more than any of the other prominent game engines). They will be described in detail below:
+Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a extensive list
+of them. They will be described in detail below:
 
 Albedo
 ~~~~~~
@@ -300,7 +300,7 @@ then the albedo of the material is used. Using intermediate values generally wor
 Clearcoat
 ~~~~~~~~~
 
-The *clearcoat* parameter is used mostly to add a *secondary* pass of transparent coat to the material. This is very common in car paint and toys.
+The *clearcoat* parameter is used mostly to add a *secondary* pass of transparent coat to the material. This is common in car paint and toys.
 In practice, it's a smaller specular blob added on top of the existing material.
 
 Anisotropy
@@ -331,7 +331,7 @@ It may not work for complex objets, but it produces a realistic depth effect for
 Subsurface Scattering
 ~~~~~~~~~~~~~~~~~~~~~
 
-This effect emulates light that goes beneath an object's surface, is scattered, and then comes out. It's very useful to make realistic skin, marble, colored liquids, etc.
+This effect emulates light that goes beneath an object's surface, is scattered, and then comes out. It's useful to make realistic skin, marble, colored liquids, etc.
 
 .. image:: img/spatial_material21.png
 
@@ -339,7 +339,7 @@ This effect emulates light that goes beneath an object's surface, is scattered, 
 Transmission
 ~~~~~~~~~~~~
 
-Controls how much light from the lit side (visible to light) is transferred to the dark side (opposite side to light). This works very well for thin objects such as tree/plant leaves,
+Controls how much light from the lit side (visible to light) is transferred to the dark side (opposite side to light). This works well for thin objects such as tree/plant leaves,
 grass, human ears, etc.
 
 .. image:: img/spatial_material22.png
@@ -348,7 +348,7 @@ Refraction
 ~~~~~~~~~~~
 
 When refraction is enabled, it supersedes alpha blending and Godot attempts to fetch information from behind the object being rendered instead. This allows distorting the transparency
-in a way very similar to refraction.
+in a way similar to refraction.
 
 .. image:: img/spatial_material23.png
 
@@ -378,7 +378,7 @@ Proximity and Distance Fade
 ----------------------------
 
 Godot allows materials to fade by proximity to another, as well as depending on the distance to the viewer.
-Proximity fade is very useful for effects such as soft particles, or a mass of water with a smooth blending to the shores.
+Proximity fade is useful for effects such as soft particles, or a mass of water with a smooth blending to the shores.
 Distance fade is useful for light shafts or indicators that are only present after a given distance.
 
 Keep in mind enabling these enables alpha blending, so abusing them for a whole scene is not generally a good idea.

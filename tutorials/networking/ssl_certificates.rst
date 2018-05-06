@@ -31,7 +31,7 @@ There are two ways to obtain certificates:
 Approach 1: self signed cert
 ----------------------------
 
-The first approach is the simplest, just generate a private and public
+The first approach is the simplest: generate a private and public
 key pair, and put the public pair in the .crt file (again, in PEM
 format). The private key should go to your server.
 
@@ -68,5 +68,5 @@ located in:
 This file allows HTTPS connections to virtually any website (i.e.,
 Google, Microsoft, etc.).
 
-Or just pick any of the more specific certificates there if you are
+Or pick any of the more specific certificates there if you are
 connecting to a specific one.

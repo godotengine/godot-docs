@@ -157,7 +157,7 @@ this module:
     # SCsub
     Import('env')
 
-    env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
+    env.add_source_files(env.modules_sources,"*.cpp") # Add all cpp files to the build
 
 With multiple sources, you can also add each file individually to a Python
 string list:
@@ -227,8 +227,7 @@ your module will be included.
 Using the module
 ----------------
 
-Using your newly created module is very easy, from any script you can
-now do:
+You can now use your newly created moedule from any script:
 
 ::
 
@@ -406,15 +405,14 @@ one of the ``ClassName.xml`` files and recompile the engine from now on.
 Summing up
 ----------
 
-As you see, it's really easy to develop Godot in C++. Just write your
-stuff normally and remember to:
+Remember to:
 
 -  use ``GDCLASS`` macro for inheritance, so Godot can wrap it
 -  use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
 
 But this is not all, depending what you do, you will be greeted with
-some surprises.
+some (hopefully positive) surprises.
 
 -  If you inherit from :ref:`class_Node` (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance

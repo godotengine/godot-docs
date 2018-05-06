@@ -40,7 +40,7 @@ functions. However, any given node always has the following attributes:
 
 .. image:: img/tree.png
 
-The last one is very important. Nodes can have other nodes as
+The last one is important. Nodes can have other nodes as
 children. When arranged in this way, the nodes become a **tree**.
 
 In Godot, the ability to arrange nodes in this way creates a powerful
