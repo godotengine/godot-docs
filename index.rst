@@ -34,7 +34,7 @@ in the top left corner.
           language, or discuss with us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
           ``#godotengine-doc`` channel on `irc.freenode.net
-          <http://webchat.freenode.net/?channels=#godotengine-doc/>`_!
+          <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
 
 .. image:: https://hosted.weblate.org/widgets/godot-engine/-/godot-docs/287x66-white.png
     :alt: Translation state
