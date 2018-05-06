@@ -20,15 +20,15 @@ documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
 .. note:: Godot Engine is an open source project developed by a community of
-          volunteers. It means that the documentation team can always use your
+          volunteers. The documentation team can always use your
           feedback and help to improve the tutorials and class reference. If
-          you do not manage to understand something, or cannot find what you
+          you don't understand something, or cannot find what you
           are looking for in the docs, help us make the documentation better
           by letting us know!
 
           Submit an issue or pull request on the `GitHub repository
           <https://github.com/godotengine/godot-docs/issues>`_,
-          help us `translating present documentation
+          help us `translate the documentation
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
           language, or discuss with us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
