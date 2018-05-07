@@ -3,9 +3,6 @@
 Encrypting save games
 =====================
 
-Why?
-----
-
 The class :ref:`File <class_File>` can open a file at a
 location and read/write data (integers, strings and variants). 
 It also supports encryption.
