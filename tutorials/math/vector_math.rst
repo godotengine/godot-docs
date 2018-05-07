@@ -44,7 +44,7 @@ it as an angle ``θ`` and a length (or magnitude) ``m``. In this case, the
 arrow is a **position vector** - it denotes a position in space, relative
 to the origin.
 
-A important point to consider about vectors is that they only
+A very important point to consider about vectors is that they only
 represent **relative** direction and magnitude. There is no concept of
 a vector's position. The following two vectors are identical:
 
