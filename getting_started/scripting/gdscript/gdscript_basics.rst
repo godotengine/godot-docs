@@ -1238,6 +1238,9 @@ must inherit :ref:`class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
+Alternatively, when not using references, the
+``is_instance_valid(instance)`` can be used to check if an object has been
+freed.
 
 Signals
 ~~~~~~~
