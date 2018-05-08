@@ -331,8 +331,8 @@ Built-in types
 
 Built-in types are stack-allocated. They are passed as values.
 This means a copy is created on each assignment or when passing them as arguments to functions.
-The only exceptions are ``Array``s and ``Dictionaries``, which are passed by reference so they are shared.
-(Not ``PoolArray``s like ``PoolByteArray`` though, those are passed as values too,
+The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by reference so they are shared.
+(Not ``PoolArray``\ s like ``PoolByteArray`` though, those are passed as values too,
 so consider this when deciding which to use!)
 
 Basic built-in types
