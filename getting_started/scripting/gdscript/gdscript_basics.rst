@@ -1140,7 +1140,18 @@ initializers, but they must be constant expressions.
     # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
-    export var a=[1,2,3]
+    export var a = [1, 2, 3]
+
+    # Exported arrays can specify type (using the same hints as before)
+
+    export(Array, int) var ints = [1,2,3]
+    export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
+    export(Array, Array, float) var two_dimensional = [[1, 2], [3, 4]]
+
+    # You can omit the default value, but then it would be null if not assigned
+
+    export(Array) var b
+    export(Array, PackedScene) var scenes
 
     # Typed arrays also work, only initialized empty:
 
@@ -1151,7 +1162,7 @@ initializers, but they must be constant expressions.
     # Default value can include run-time values, but can't
     # be exported.
 
-    var b = [a,2,3]
+    var c = [a, 2, 3]
 
 
 Setters/getters
