@@ -274,7 +274,7 @@ actions automatically:
 Remove nodes (-noimp)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Node names that have this suffix will be removed at import time, mo
+Node names that have this suffix will be removed at import time, no
 matter what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -colonly, -convcolonly)
