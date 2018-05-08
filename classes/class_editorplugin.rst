@@ -234,6 +234,8 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_tool_menu_item** **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` handler, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` ud=null **)**
 
+Adds a custom menu to 'Project > Tools' as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
+
 .. _class_EditorPlugin_add_tool_submenu_item:
 
 - void **add_tool_submenu_item** **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` submenu **)**
@@ -399,6 +401,8 @@ Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlu
 .. _class_EditorPlugin_remove_tool_menu_item:
 
 - void **remove_tool_menu_item** **(** :ref:`String<class_string>` name **)**
+
+Removes a menu ``name`` from 'Project > Tools'.
 
 .. _class_EditorPlugin_save_external_data:
 

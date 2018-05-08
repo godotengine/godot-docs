@@ -225,6 +225,42 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
 - :ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum difference between the pivot points' z-axis.
 
+  .. _class_Generic6DOFJoint_linear_motor_x/enabled:
+
+- :ref:`bool<class_bool>` **linear_motor_x/enabled** - If ``true`` then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
+
+  .. _class_Generic6DOFJoint_linear_motor_x/force_limit:
+
+- :ref:`float<class_float>` **linear_motor_x/force_limit** - The maximum force the linear motor can apply on the x-axis while trying to reach the target velocity.
+
+  .. _class_Generic6DOFJoint_linear_motor_x/target_velocity:
+
+- :ref:`float<class_float>` **linear_motor_x/target_velocity** - The speed that the linear motor will attempt to reach on the x-axis.
+
+  .. _class_Generic6DOFJoint_linear_motor_y/enabled:
+
+- :ref:`bool<class_bool>` **linear_motor_y/enabled** - If ``true`` then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
+
+  .. _class_Generic6DOFJoint_linear_motor_y/force_limit:
+
+- :ref:`float<class_float>` **linear_motor_y/force_limit** - The maximum force the linear motor can apply on the y-axis while trying to reach the target velocity.
+
+  .. _class_Generic6DOFJoint_linear_motor_y/target_velocity:
+
+- :ref:`float<class_float>` **linear_motor_y/target_velocity** - The speed that the linear motor will attempt to reach on the y-axis.
+
+  .. _class_Generic6DOFJoint_linear_motor_z/enabled:
+
+- :ref:`bool<class_bool>` **linear_motor_z/enabled** - If ``true`` then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
+
+  .. _class_Generic6DOFJoint_linear_motor_z/force_limit:
+
+- :ref:`float<class_float>` **linear_motor_z/force_limit** - The maximum force the linear motor can apply on the z-axis while trying to reach the target velocity.
+
+  .. _class_Generic6DOFJoint_linear_motor_z/target_velocity:
+
+- :ref:`float<class_float>` **linear_motor_z/target_velocity** - The speed that the linear motor will attempt to reach on the z-axis.
+
 
 Enums
 -----
@@ -236,7 +272,8 @@ enum **Flag**
 - **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
 - **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
 - **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
-- **FLAG_MAX** = **3** --- End flag of FLAG\_\* constants, used internally.
+- **FLAG_ENABLE_LINEAR_MOTOR** = **3**
+- **FLAG_MAX** = **4** --- End flag of FLAG\_\* constants, used internally.
 
   .. _enum_Generic6DOFJoint_Param:
 
@@ -247,16 +284,18 @@ enum **Param**
 - **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
 - **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
 - **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
-- **PARAM_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate around the axes.
-- **PARAM_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate around the axes.
-- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **7** --- The speed of all rotations across the axes.
-- **PARAM_ANGULAR_DAMPING** = **8** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
-- **PARAM_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
-- **PARAM_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating around the axes.
-- **PARAM_ANGULAR_ERP** = **11** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
-- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
-- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
-- **PARAM_MAX** = **14** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_LINEAR_MOTOR_TARGET_VELOCITY** = **5** --- The velocity the linear motor will try to reach.
+- **PARAM_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force the linear motor will apply while trying to reach the velocity target.
+- **PARAM_ANGULAR_LOWER_LIMIT** = **7** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_UPPER_LIMIT** = **8** --- The minimum rotation in positive direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **9** --- The speed of all rotations across the axes.
+- **PARAM_ANGULAR_DAMPING** = **10** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **PARAM_ANGULAR_RESTITUTION** = **11** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **PARAM_ANGULAR_FORCE_LIMIT** = **12** --- The maximum amount of force that can occur, when rotating around the axes.
+- **PARAM_ANGULAR_ERP** = **13** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **14** --- Target speed for the motor at the axes.
+- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
+- **PARAM_MAX** = **16** --- End flag of PARAM\_\* constants, used internally.
 
 
 Description

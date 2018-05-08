@@ -42,7 +42,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_audio_driver_count<class_OS_get_audio_driver_count>` **(** **)** const                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_audio_driver_name<class_OS_get_audio_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
+| :ref:`String<class_string>`                    | :ref:`get_audio_driver_name<class_OS_get_audio_driver_name>` **(** :ref:`int<class_int>` driver **)** const                                                                                                              |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -114,7 +114,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_video_driver_count<class_OS_get_video_driver_count>` **(** **)** const                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_video_driver_name<class_OS_get_video_driver_name>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                |
+| :ref:`String<class_string>`                    | :ref:`get_video_driver_name<class_OS_get_video_driver_name>` **(** :ref:`int<class_int>` driver **)** const                                                                                                              |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -192,39 +192,39 @@ Member Variables
 
   .. _class_OS_exit_code:
 
-- :ref:`int<class_int>` **exit_code**
+- :ref:`int<class_int>` **exit_code** - The exit code passed to the OS when the main loop exits.
 
   .. _class_OS_keep_screen_on:
 
-- :ref:`bool<class_bool>` **keep_screen_on**
+- :ref:`bool<class_bool>` **keep_screen_on** - If ``true`` the engine tries to keep the screen on while the game is running. Useful on mobile.
 
   .. _class_OS_low_processor_usage_mode:
 
-- :ref:`bool<class_bool>` **low_processor_usage_mode**
+- :ref:`bool<class_bool>` **low_processor_usage_mode** - If ``true`` the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
 
   .. _class_OS_screen_orientation:
 
-- _OS.ScreenOrientation **screen_orientation** - The current screen orientation.
+- :ref:`ScreenOrientation<enum_os_screenorientation>` **screen_orientation** - The current screen orientation.
 
   .. _class_OS_vsync_enabled:
 
-- :ref:`bool<class_bool>` **vsync_enabled**
+- :ref:`bool<class_bool>` **vsync_enabled** - If ``true`` vertical synchronization (Vsync) is enabled.
 
   .. _class_OS_window_borderless:
 
-- :ref:`bool<class_bool>` **window_borderless** - If ``true``, removes the window frame.
+- :ref:`bool<class_bool>` **window_borderless** - If ``true`` removes the window frame.
 
   .. _class_OS_window_fullscreen:
 
-- :ref:`bool<class_bool>` **window_fullscreen** - If ``true``, the window is fullscreen.
+- :ref:`bool<class_bool>` **window_fullscreen** - If ``true`` the window is fullscreen.
 
   .. _class_OS_window_maximized:
 
-- :ref:`bool<class_bool>` **window_maximized** - If ``true``, the window is maximized.
+- :ref:`bool<class_bool>` **window_maximized** - If ``true`` the window is maximized.
 
   .. _class_OS_window_minimized:
 
-- :ref:`bool<class_bool>` **window_minimized** - If ``true``, the window is minimized.
+- :ref:`bool<class_bool>` **window_minimized** - If ``true`` the window is minimized.
 
   .. _class_OS_window_position:
 
@@ -246,65 +246,65 @@ Enums
 
 enum **SystemDir**
 
-- **SYSTEM_DIR_DESKTOP** = **0**
-- **SYSTEM_DIR_DCIM** = **1**
-- **SYSTEM_DIR_DOCUMENTS** = **2**
-- **SYSTEM_DIR_DOWNLOADS** = **3**
-- **SYSTEM_DIR_MOVIES** = **4**
-- **SYSTEM_DIR_MUSIC** = **5**
-- **SYSTEM_DIR_PICTURES** = **6**
-- **SYSTEM_DIR_RINGTONES** = **7**
+- **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
+- **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
+- **SYSTEM_DIR_DOCUMENTS** = **2** --- Documents directory path.
+- **SYSTEM_DIR_DOWNLOADS** = **3** --- Downloads directory path.
+- **SYSTEM_DIR_MOVIES** = **4** --- Movies directory path.
+- **SYSTEM_DIR_MUSIC** = **5** --- Music directory path.
+- **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
+- **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
 
   .. _enum_OS_ScreenOrientation:
 
 enum **ScreenOrientation**
 
-- **SCREEN_ORIENTATION_LANDSCAPE** = **0**
-- **SCREEN_ORIENTATION_PORTRAIT** = **1**
-- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**
-- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3**
-- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4**
-- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5**
-- **SCREEN_ORIENTATION_SENSOR** = **6**
+- **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
+- **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
+- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2** --- Reverse landscape screen orientation.
+- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3** --- Reverse portrait screen orientation.
+- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4** --- Uses landscape or reverse landscape based on the hardware sensor.
+- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
+- **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
 
   .. _enum_OS_PowerState:
 
 enum **PowerState**
 
-- **POWERSTATE_UNKNOWN** = **0**
-- **POWERSTATE_ON_BATTERY** = **1**
-- **POWERSTATE_NO_BATTERY** = **2**
-- **POWERSTATE_CHARGING** = **3**
-- **POWERSTATE_CHARGED** = **4**
+- **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
+- **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
+- **POWERSTATE_NO_BATTERY** = **2** --- Plugged in, no battery available.
+- **POWERSTATE_CHARGING** = **3** --- Plugged in, battery charging.
+- **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
 
   .. _enum_OS_Weekday:
 
 enum **Weekday**
 
-- **DAY_SUNDAY** = **0**
-- **DAY_MONDAY** = **1**
-- **DAY_TUESDAY** = **2**
-- **DAY_WEDNESDAY** = **3**
-- **DAY_THURSDAY** = **4**
-- **DAY_FRIDAY** = **5**
-- **DAY_SATURDAY** = **6**
+- **DAY_SUNDAY** = **0** --- Sunday.
+- **DAY_MONDAY** = **1** --- Monday.
+- **DAY_TUESDAY** = **2** --- Tuesday.
+- **DAY_WEDNESDAY** = **3** --- Wednesday.
+- **DAY_THURSDAY** = **4** --- Thursday.
+- **DAY_FRIDAY** = **5** --- Friday.
+- **DAY_SATURDAY** = **6** --- Saturday.
 
   .. _enum_OS_Month:
 
 enum **Month**
 
-- **MONTH_JANUARY** = **1**
-- **MONTH_FEBRUARY** = **2**
-- **MONTH_MARCH** = **3**
-- **MONTH_APRIL** = **4**
-- **MONTH_MAY** = **5**
-- **MONTH_JUNE** = **6**
-- **MONTH_JULY** = **7**
-- **MONTH_AUGUST** = **8**
-- **MONTH_SEPTEMBER** = **9**
-- **MONTH_OCTOBER** = **10**
-- **MONTH_NOVEMBER** = **11**
-- **MONTH_DECEMBER** = **12**
+- **MONTH_JANUARY** = **1** --- January.
+- **MONTH_FEBRUARY** = **2** --- February.
+- **MONTH_MARCH** = **3** --- March.
+- **MONTH_APRIL** = **4** --- April.
+- **MONTH_MAY** = **5** --- May.
+- **MONTH_JUNE** = **6** --- June.
+- **MONTH_JULY** = **7** --- July.
+- **MONTH_AUGUST** = **8** --- August.
+- **MONTH_SEPTEMBER** = **9** --- September.
+- **MONTH_OCTOBER** = **10** --- October.
+- **MONTH_NOVEMBER** = **11** --- November.
+- **MONTH_DECEMBER** = **12** --- December.
 
 
 Description
@@ -337,17 +337,19 @@ Returns ``true`` if the current host platform is using multiple threads.
 
 - void **center_window** **(** **)**
 
+Centers the window on the screen if in windowed mode.
+
 .. _class_OS_delay_msec:
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** const
 
-Delay executing of the current thread by given milliseconds.
+Delay execution of the current thread by given milliseconds.
 
 .. _class_OS_delay_usec:
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** const
 
-Delay executing of the current thread by given microseconds.
+Delay execution of the current thread by given microseconds.
 
 .. _class_OS_dump_memory_to_file:
 
@@ -355,7 +357,7 @@ Delay executing of the current thread by given microseconds.
 
 Dumps the memory allocation ringlist to a file (only works in debug).
 
-Entry format per line: "Address - Size - Description"
+Entry format per line: "Address - Size - Description".
 
 .. _class_OS_dump_resources_to_file:
 
@@ -363,7 +365,7 @@ Entry format per line: "Address - Size - Description"
 
 Dumps all used resources to file (only works in debug).
 
-Entry format per line: "Resource Type : Resource Location"
+Entry format per line: "Resource Type : Resource Location".
 
 At the end of the file is a statistic of all used Resource Types.
 
@@ -400,9 +402,13 @@ Returns the scancode of the given string (e.g. "Escape")
 
 - :ref:`int<class_int>` **get_audio_driver_count** **(** **)** const
 
+Returns the total number of available audio drivers.
+
 .. _class_OS_get_audio_driver_name:
 
-- :ref:`String<class_string>` **get_audio_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
+- :ref:`String<class_string>` **get_audio_driver_name** **(** :ref:`int<class_int>` driver **)** const
+
+Returns the audio driver name for the given index.
 
 .. _class_OS_get_cmdline_args:
 
@@ -508,6 +514,8 @@ Returns the number of cores available in the host machine.
 
 - :ref:`Vector2<class_vector2>` **get_real_window_size** **(** **)** const
 
+Returns the window size including decorations like window borders.
+
 .. _class_OS_get_scancode_string:
 
 - :ref:`String<class_string>` **get_scancode_string** **(** :ref:`int<class_int>` code **)** const
@@ -612,7 +620,7 @@ Returns empty string on HTML5 and UWP which are not supported yet.
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** const
 
-Return	the current unix timestamp.
+Returns the current unix epoch timestamp.
 
 .. _class_OS_get_unix_time_from_datetime:
 
@@ -644,11 +652,13 @@ If the project name is empty, ``user://`` falls back to ``res://``.
 
 .. _class_OS_get_video_driver_name:
 
-- :ref:`String<class_string>` **get_video_driver_name** **(** :ref:`int<class_int>` arg0 **)** const
+- :ref:`String<class_string>` **get_video_driver_name** **(** :ref:`int<class_int>` driver **)** const
 
 .. _class_OS_get_virtual_keyboard_height:
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**
+
+Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
 
 .. _class_OS_has_environment:
 
@@ -659,6 +669,8 @@ Returns ``true`` if an environment variable exists.
 .. _class_OS_has_feature:
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_string>` tag_name **)** const
+
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. See feature tags documentation.
 
 .. _class_OS_has_touchscreen_ui_hint:
 
@@ -715,6 +727,8 @@ If ``true``, the ``user://`` file system is persistent, so that its state is the
 .. _class_OS_is_window_always_on_top:
 
 - :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
+
+Returns ``true`` if the window should always be on top of other windows.
 
 .. _class_OS_kill:
 
@@ -807,6 +821,8 @@ Enables backup saves if ``enabled`` is ``true``.
 .. _class_OS_set_window_always_on_top:
 
 - void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
+
+Sets whether the window should always be on top.
 
 .. _class_OS_set_window_title:
 

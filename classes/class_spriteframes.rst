@@ -71,7 +71,7 @@ Member Function Description
 
 - void **add_animation** **(** :ref:`String<class_string>` anim **)**
 
-Adds a new animation to the library.
+Adds a new animation to the the library.
 
 .. _class_SpriteFrames_add_frame:
 

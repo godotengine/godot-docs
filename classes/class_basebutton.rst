@@ -66,6 +66,12 @@ Member Variables
 
 - :ref:`ActionMode<enum_basebutton_actionmode>` **action_mode** - Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
 
+  .. _class_BaseButton_button_mask:
+
+- :ref:`int<class_int>` **button_mask** - Binary mask to choose which mouse buttons this button will respond to.
+
+To allow both left-click and right-click, set this to 3, because it's BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT.
+
   .. _class_BaseButton_disabled:
 
 - :ref:`bool<class_bool>` **disabled** - If ``true`` the button is in disabled state and can't be clicked or toggled.
@@ -123,13 +129,13 @@ Member Function Description
 
 - void **_pressed** **(** **)** virtual
 
-Called when button is pressed.
+Called when the button is pressed.
 
 .. _class_BaseButton__toggled:
 
 - void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
-Called when button is toggled (only if toggle_mode is active).
+Called when the button is toggled (only if toggle_mode is active).
 
 .. _class_BaseButton_get_draw_mode:
 
@@ -141,6 +147,6 @@ Return the visual state used to draw the button. This is useful mainly when impl
 
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** const
 
-Return true if mouse entered the button before it exit.
+Return true if the mouse has entered the button and has not left it yet.
 
 

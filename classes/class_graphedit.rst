@@ -94,6 +94,8 @@ Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
 
 - **node_selected** **(** :ref:`Object<class_object>` node **)**
 
+Emitted when a GraphNode is selected.
+
 .. _class_GraphEdit_popup_request:
 
 - **popup_request** **(** :ref:`Vector2<class_vector2>` p_position **)**

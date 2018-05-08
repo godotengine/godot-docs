@@ -19,13 +19,13 @@ A countdown timer.
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_stopped<class_Timer_is_stopped>` **(** **)** const |
-+--------------------------+-------------------------------------------------------------+
-| void                     | :ref:`start<class_Timer_start>` **(** **)**                 |
-+--------------------------+-------------------------------------------------------------+
-| void                     | :ref:`stop<class_Timer_stop>` **(** **)**                   |
-+--------------------------+-------------------------------------------------------------+
++--------------------------+-----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_stopped<class_Timer_is_stopped>` **(** **)** const                       |
++--------------------------+-----------------------------------------------------------------------------------+
+| void                     | :ref:`start<class_Timer_start>` **(** :ref:`float<class_float>` time_sec=-1 **)** |
++--------------------------+-----------------------------------------------------------------------------------+
+| void                     | :ref:`stop<class_Timer_stop>` **(** **)**                                         |
++--------------------------+-----------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -92,9 +92,9 @@ Returns ``true`` if the timer is stopped.
 
 .. _class_Timer_start:
 
-- void **start** **(** **)**
+- void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
 
-Starts the timer. This also resets the remaining time to ``wait_time``.
+Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec`` > 0. This also resets the remaining time to ``wait_time``.
 
 Note: this method will not resume a paused timer. See :ref:`set_paused<class_Timer_set_paused>`.
 

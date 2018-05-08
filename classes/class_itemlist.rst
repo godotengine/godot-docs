@@ -60,7 +60,7 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selected<class_ItemList_is_selected>` **(** :ref:`int<class_int>` idx **)** const                                                                              |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`move_item<class_ItemList_move_item>` **(** :ref:`int<class_int>` p_from_idx, :ref:`int<class_int>` p_to_idx **)**                                                 |
+| void                                     | :ref:`move_item<class_ItemList_move_item>` **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**                                                     |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`remove_item<class_ItemList_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -301,6 +301,8 @@ Returns the current vertical scroll bar for the List.
 
 - :ref:`bool<class_bool>` **is_anything_selected** **(** **)**
 
+Returns ``true`` if one or more items are selected.
+
 .. _class_ItemList_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
@@ -327,7 +329,9 @@ Returns whether or not item at the specified index is currently selected.
 
 .. _class_ItemList_move_item:
 
-- void **move_item** **(** :ref:`int<class_int>` p_from_idx, :ref:`int<class_int>` p_to_idx **)**
+- void **move_item** **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**
+
+Moves item at index ``from_idx`` to ``to_idx``.
 
 .. _class_ItemList_remove_item:
 
@@ -416,5 +420,7 @@ Ensure item at specified index is not selected.
 .. _class_ItemList_unselect_all:
 
 - void **unselect_all** **(** **)**
+
+Ensure there are no items selected.
 
 

@@ -25,6 +25,8 @@ Signals
 
 - **scrolling** **(** **)**
 
+Emitted whenever the scrollbar is being scrolled.
+
 
 Member Variables
 ----------------

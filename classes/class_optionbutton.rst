@@ -68,6 +68,8 @@ Signals
 
 - **item_focused** **(** :ref:`int<class_int>` ID **)**
 
+This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
+
 .. _class_OptionButton_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` ID **)**

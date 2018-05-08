@@ -230,9 +230,7 @@ Returns ``true`` if playing an animation.
 
 - void **play** **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
-Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the
-
-animation backwards.
+Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the animation backwards.
 
 .. _class_AnimationPlayer_play_backwards:
 

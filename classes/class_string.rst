@@ -132,6 +132,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`length<class_String_length>` **(** **)**                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`lstrip<class_String_lstrip>` **(** :ref:`String<class_string>` chars **)**                                                                             |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`match<class_String_match>` **(** :ref:`String<class_string>` expr **)**                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`matchn<class_String_matchn>` **(** :ref:`String<class_string>` expr **)**                                                                              |
@@ -164,6 +166,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`right<class_String_right>` **(** :ref:`int<class_int>` position **)**                                                                                  |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`rstrip<class_String_rstrip>` **(** :ref:`String<class_string>` chars **)**                                                                             |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`sha256_buffer<class_String_sha256_buffer>` **(** **)**                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`sha256_text<class_String_sha256_text>` **(** **)**                                                                                                     |
@@ -189,6 +193,10 @@ Member Functions
 | :ref:`String<class_string>`                    | :ref:`to_upper<class_String_to_upper>` **(** **)**                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`to_utf8<class_String_to_utf8>` **(** **)**                                                                                                             |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`trim_prefix<class_String_trim_prefix>` **(** :ref:`String<class_string>` prefix **)**                                                                  |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`trim_suffix<class_String_trim_suffix>` **(** :ref:`String<class_string>` suffix **)**                                                                  |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`xml_escape<class_String_xml_escape>` **(** **)**                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -545,6 +553,12 @@ Returns a number of characters from the left of the string.
 
 Returns the string's amount of characters.
 
+.. _class_String_lstrip:
+
+- :ref:`String<class_string>` **lstrip** **(** :ref:`String<class_string>` chars **)**
+
+Returns a copy of the string with characters removed from the left.
+
 .. _class_String_match:
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_string>` expr **)**
@@ -641,6 +655,12 @@ Performs a search for a substring, but starts from the end of the string instead
 
 Returns the right side of the string from a given position.
 
+.. _class_String_rstrip:
+
+- :ref:`String<class_string>` **rstrip** **(** :ref:`String<class_string>` chars **)**
+
+Returns a copy of the string with characters removed from the right.
+
 .. _class_String_sha256_buffer:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **sha256_buffer** **(** **)**
@@ -718,6 +738,18 @@ Returns the string converted to uppercase.
 - :ref:`PoolByteArray<class_poolbytearray>` **to_utf8** **(** **)**
 
 Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_poolbytearray>` (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
+
+.. _class_String_trim_prefix:
+
+- :ref:`String<class_string>` **trim_prefix** **(** :ref:`String<class_string>` prefix **)**
+
+Removes a given string from the start if it starts with it or leaves the string unchanged.
+
+.. _class_String_trim_suffix:
+
+- :ref:`String<class_string>` **trim_suffix** **(** :ref:`String<class_string>` suffix **)**
+
+Removes a given string from the end if it ends with it or leaves the string unchanged.
 
 .. _class_String_xml_escape:
 

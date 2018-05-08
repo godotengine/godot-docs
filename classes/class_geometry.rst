@@ -58,6 +58,8 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                    | :ref:`segment_intersects_segment_2d<class_Geometry_segment_intersects_segment_2d>` **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` to_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` to_b **)**                   |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                    | :ref:`line_intersects_line_2d<class_Geometry_line_intersects_line_2d>` **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**                             |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`segment_intersects_sphere<class_Geometry_segment_intersects_sphere>` **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to, :ref:`Vector3<class_vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**                 |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                    | :ref:`segment_intersects_triangle<class_Geometry_segment_intersects_triangle>` **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to, :ref:`Vector3<class_vector3>` a, :ref:`Vector3<class_vector3>` b, :ref:`Vector3<class_vector3>` c **)**  |
@@ -179,6 +181,12 @@ Checks if the segment (``from``, ``to``) intersects the cylinder with height ``h
 - :ref:`Variant<class_variant>` **segment_intersects_segment_2d** **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` to_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` to_b **)**
 
 Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_variant>`.
+
+.. _class_Geometry_line_intersects_line_2d:
+
+- :ref:`Variant<class_variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**
+
+Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_variant>`. Note that the lines are specified using direction vectors, not end points.
 
 .. _class_Geometry_segment_intersects_sphere:
 

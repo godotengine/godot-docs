@@ -44,7 +44,7 @@ Member Functions
 Description
 -----------
 
-String Array. Array of strings. Can only contain strings. Optimized for memory usage, can't fragment the memory.
+String Array. Array of strings. Can only contain strings. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
 Member Function Description
 ---------------------------

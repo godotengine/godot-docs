@@ -116,6 +116,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **hdr** - If ``true`` the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
 
+  .. _class_Viewport_keep_3d_linear:
+
+- :ref:`bool<class_bool>` **keep_3d_linear** - If ``true`` the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
+
   .. _class_Viewport_msaa:
 
 - :ref:`MSAA<enum_viewport_msaa>` **msaa** - The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.

@@ -23,9 +23,13 @@ Signals
 
 - **scroll_ended** **(** **)**
 
+Emitted whenever scrolling stops.
+
 .. _class_ScrollContainer_scroll_started:
 
 - **scroll_started** **(** **)**
+
+Emitted whenever scrolling is started.
 
 
 Member Variables

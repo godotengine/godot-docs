@@ -36,6 +36,8 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_visible_line_count<class_RichTextLabel_get_visible_line_count>` **(** **)** const                                                                                       |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`get_content_height<class_RichTextLabel_get_content_height>` **(** **)**                                                                                                     |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`newline<class_RichTextLabel_newline>` **(** **)**                                                                                                                           |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`parse_bbcode<class_RichTextLabel_parse_bbcode>` **(** :ref:`String<class_string>` bbcode **)**                                                                              |
@@ -234,6 +236,12 @@ Returns the vertical scrollbar.
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
 Returns the number of visible lines.
+
+.. _class_RichTextLabel_get_content_height:
+
+- :ref:`int<class_int>` **get_content_height** **(** **)**
+
+Returns the height of the content.
 
 .. _class_RichTextLabel_newline:
 

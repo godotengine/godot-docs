@@ -96,7 +96,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer3D_pitch_scale:
 
-- :ref:`float<class_float>` **pitch_scale**
+- :ref:`float<class_float>` **pitch_scale** - Changes the pitch and the tempo of the audio.
 
   .. _class_AudioStreamPlayer3D_playing:
 

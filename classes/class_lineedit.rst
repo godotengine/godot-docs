@@ -100,7 +100,11 @@ Member Variables
 
   .. _class_LineEdit_secret:
 
-- :ref:`bool<class_bool>` **secret** - If ``true`` every character is shown as "\*".
+- :ref:`bool<class_bool>` **secret** - If ``true``, every character is replaced with the secret character (see :ref:`secret_character<class_LineEdit_secret_character>`).
+
+  .. _class_LineEdit_secret_character:
+
+- string **secret_character** - The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
 
   .. _class_LineEdit_text:
 

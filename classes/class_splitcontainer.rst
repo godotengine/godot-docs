@@ -37,7 +37,7 @@ Member Variables
 
   .. _class_SplitContainer_dragger_visibility:
 
-- :ref:`DraggerVisibility<enum_splitcontainer_draggervisibility>` **dragger_visibility**
+- :ref:`DraggerVisibility<enum_splitcontainer_draggervisibility>` **dragger_visibility** - Determines whether the dragger is visible.
 
   .. _class_SplitContainer_split_offset:
 

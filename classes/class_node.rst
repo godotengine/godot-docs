@@ -184,6 +184,12 @@ Member Functions
 Signals
 -------
 
+.. _class_Node_ready:
+
+- **ready** **(** **)**
+
+Emitted when the node is ready.
+
 .. _class_Node_renamed:
 
 - **renamed** **(** **)**

@@ -141,7 +141,7 @@ Returns the vector with a maximum length.
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_vector2>` with **)**
 
-Returns the 2-dimensional analog of the cross product with ``b``.
+Returns the 2-dimensional analog of the cross product with the given Vector2.
 
 .. _class_Vector2_cubic_interpolate:
 

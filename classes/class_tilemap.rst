@@ -157,7 +157,7 @@ enum **TileOrigin**
 
 - **TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner.
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
-- **TILE_ORIGIN_BOTTOM_LEFT** = **2**
+- **TILE_ORIGIN_BOTTOM_LEFT** = **2** --- Tile origin at its bottom-left corner.
 
   .. _enum_TileMap_Mode:
 
@@ -271,6 +271,8 @@ Optionally, the tile can also be flipped over the X and Y axes or transposed.
 .. _class_TileMap_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+Set any collision layer to be ``true`` or ``false``.
 
 .. _class_TileMap_set_collision_mask_bit:
 

@@ -38,15 +38,11 @@ Member Functions
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_last_process_usec<class_ARVRServer_get_last_process_usec>` **(** **)**                                                          |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`get_primary_interface<class_ARVRServer_get_primary_interface>` **(** **)** const                                                    |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`                          | :ref:`get_reference_frame<class_ARVRServer_get_reference_frame>` **(** **)** const                                                        |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`  | :ref:`get_tracker<class_ARVRServer_get_tracker>` **(** :ref:`int<class_int>` idx **)** const                                              |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`get_tracker_count<class_ARVRServer_get_tracker_count>` **(** **)** const                                                            |
-+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`set_primary_interface<class_ARVRServer_set_primary_interface>` **(** :ref:`ARVRInterface<class_arvrinterface>` interface **)**      |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -79,6 +75,10 @@ Signal send when a tracker is removed, you should remove any ARVRController or A
 
 Member Variables
 ----------------
+
+  .. _class_ARVRServer_primary_interface:
+
+- :ref:`ARVRInterface<class_arvrinterface>` **primary_interface**
 
   .. _class_ARVRServer_world_scale:
 
@@ -142,6 +142,8 @@ Find an interface by its name. Say that you're making a game that uses specific 
 
 - :ref:`Transform<class_transform>` **get_hmd_transform** **(** **)**
 
+Returns the primary interface's transformation.
+
 .. _class_ARVRServer_get_interface:
 
 - :ref:`ARVRInterface<class_arvrinterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** const
@@ -172,10 +174,6 @@ Returns a list of available interfaces with both id and name of the interface.
 
 - :ref:`int<class_int>` **get_last_process_usec** **(** **)**
 
-.. _class_ARVRServer_get_primary_interface:
-
-- :ref:`ARVRInterface<class_arvrinterface>` **get_primary_interface** **(** **)** const
-
 .. _class_ARVRServer_get_reference_frame:
 
 - :ref:`Transform<class_transform>` **get_reference_frame** **(** **)** const
@@ -193,11 +191,5 @@ Get the positional tracker at the given ID.
 - :ref:`int<class_int>` **get_tracker_count** **(** **)** const
 
 Get the number of trackers currently registered.
-
-.. _class_ARVRServer_set_primary_interface:
-
-- void **set_primary_interface** **(** :ref:`ARVRInterface<class_arvrinterface>` interface **)**
-
-Changes the primary interface to the specified interface. Again mostly exposed for GDNative interfaces.
 
 

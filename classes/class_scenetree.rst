@@ -206,10 +206,10 @@ Enums
 
 enum **GroupCallFlags**
 
-- **GROUP_CALL_DEFAULT** = **0**
-- **GROUP_CALL_REVERSE** = **1**
-- **GROUP_CALL_REALTIME** = **2**
-- **GROUP_CALL_UNIQUE** = **4**
+- **GROUP_CALL_DEFAULT** = **0** --- Call a group with no flags (default).
+- **GROUP_CALL_REVERSE** = **1** --- Call a group in reverse scene order.
+- **GROUP_CALL_REALTIME** = **2** --- Call a group immediately (calls are normally made on idle).
+- **GROUP_CALL_UNIQUE** = **4** --- Call a group only once even if the call is executed many times.
 
   .. _enum_SceneTree_StretchMode:
 

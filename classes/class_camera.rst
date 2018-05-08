@@ -135,7 +135,7 @@ Member Function Description
 
 - void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
-If this is the current Camera, remove it from being current. If it is inside the node tree and ``enabled_next`` is ``true[/true], request to make the next Camera current, if any.
+If this is the current Camera, remove it from being current. If ``enable_next`` is true, request to make the next Camera current, if any.
 
 .. _class_Camera_get_camera_transform:
 
