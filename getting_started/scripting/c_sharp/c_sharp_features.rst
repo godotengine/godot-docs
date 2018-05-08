@@ -39,7 +39,7 @@ and for this reason it cannot be used with value types.
 .. code-block:: csharp
 
     Sprite mySprite = GetNode("MySprite") as Sprite;
-    // Only call SetFrame() is mySprite is not null
+    // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
 **Type checking using the IS operator**
