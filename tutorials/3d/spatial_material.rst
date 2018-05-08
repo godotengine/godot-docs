@@ -96,6 +96,11 @@ Fixed Size
 Makes the object rendered at the same size no matter the distance. This is, again, useful mostly for indicators (no depth test and high render priority)
 and some types of billboards.
 
+Do Not Receive Shadows
+~~~~~~~~~~~~~~~~~~~~~~
+
+Makes the object not receive any kind of shadow that would otherwise be cast onto it.
+
 Vertex Color
 ------------
 
