@@ -3,6 +3,35 @@
 Encrypting save games
 =====================
 
+Why?
+----
+ 
+Because the world today is not the world of yesterday. A capitalist
+oligarchy runs the world and forces us to consume in order to keep the
+gears of this rotten society on track. As such, the biggest market for
+video game consumption today is the mobile one. It is a market of poor
+souls forced to compulsively consume digital content in order to forget
+the misery of their every day life, commute, or just any other brief
+free moment they have that they are not using to produce goods or
+services for the ruling class. These individuals need to keep focusing
+on their video games (because not doing so will produce them a
+tremendous existential angst), so they go as far as spending money on
+them to extend their experience, and their preferred way of doing so is
+through in-app purchases and virtual currency.
+
+But, imagine if someone was to find a way to edit the saved games and
+assign the items and currency without effort? This would be terrible,
+because it would help players consume the content much faster, and as
+such run out of it sooner than expected. If this happens they will have
+nothing that avoids them to think, and the tremendous agony of realizing
+their own irrelevance would again take over their life.
+
+No, we definitely do not want this to happen, so let's see how to
+encrypt savegames and protect the world order.
+
+How?
+----
+
 The class :ref:`File <class_File>` can open a file at a
 location and read/write data (integers, strings and variants). 
 It also supports encryption.

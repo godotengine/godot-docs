@@ -227,7 +227,7 @@ your module will be included.
 Using the module
 ----------------
 
-You can now use your newly created moedule from any script:
+You can now use your newly created module from any script:
 
 ::
 
