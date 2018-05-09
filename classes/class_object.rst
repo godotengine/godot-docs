@@ -112,6 +112,8 @@ Signals
 
 - **script_changed** **(** **)**
 
+Emitted whenever the script of the Object is changed.
+
 
 Numeric Constants
 -----------------

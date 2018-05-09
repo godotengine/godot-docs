@@ -57,6 +57,8 @@ Clear the dictionary, removing all key/value pairs.
 
 - :ref:`Dictionary<class_dictionary>` **duplicate** **(** **)**
 
+Creates a copy of the dictionary, and returns it.
+
 .. _class_Dictionary_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**

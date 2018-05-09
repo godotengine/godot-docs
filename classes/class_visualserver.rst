@@ -1260,7 +1260,7 @@ Adds a rectangle to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 Adds a :ref:`Transform2D<class_transform2d>` command to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
-This sets the extra_matrix uniform when executed. This affects the later command's of the canvas item.
+This sets the extra_matrix uniform when executed. This affects the later commands of the canvas item.
 
 .. _class_VisualServer_canvas_item_add_texture_rect:
 

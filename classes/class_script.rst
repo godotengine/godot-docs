@@ -67,6 +67,8 @@ Returns true if the script can be instanced.
 
 - :ref:`Script<class_script>` **get_base_script** **(** **)** const
 
+Returns the script directly inherited by this script.
+
 .. _class_Script_get_instance_base_type:
 
 - :ref:`String<class_string>` **get_instance_base_type** **(** **)** const

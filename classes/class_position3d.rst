@@ -14,7 +14,7 @@ Position3D
 Brief Description
 -----------------
 
-Generic 3D Position hint for editing
+Generic 3D Position hint for editing.
 
 Description
 -----------

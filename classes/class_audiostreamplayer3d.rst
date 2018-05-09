@@ -14,7 +14,7 @@ AudioStreamPlayer3D
 Brief Description
 -----------------
 
-Plays 3D sound in 3D space
+Plays 3D sound in 3D space.
 
 Member Functions
 ----------------

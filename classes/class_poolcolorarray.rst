@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-Array of Color, Contains colors. Optimized for memory usage, can't fragment the memory.
+Array of Color, Contains colors. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
 Member Function Description
 ---------------------------

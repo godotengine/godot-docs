@@ -100,7 +100,7 @@ Signals
 
 - **joy_connection_changed** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` connected **)**
 
-Emitted when a joypad device has been connected or disconnected
+Emitted when a joypad device has been connected or disconnected.
 
 
 Enums
@@ -113,29 +113,29 @@ enum **MouseMode**
 - **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
-- **MOUSE_MODE_CONFINED** = **3**
+- **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 
   .. _enum_Input_CursorShape:
 
 enum **CursorShape**
 
-- **CURSOR_ARROW** = **0**
-- **CURSOR_IBEAM** = **1**
-- **CURSOR_POINTING_HAND** = **2**
-- **CURSOR_CROSS** = **3**
-- **CURSOR_WAIT** = **4**
-- **CURSOR_BUSY** = **5**
-- **CURSOR_DRAG** = **6**
-- **CURSOR_CAN_DROP** = **7**
-- **CURSOR_FORBIDDEN** = **8**
-- **CURSOR_VSIZE** = **9**
-- **CURSOR_HSIZE** = **10**
-- **CURSOR_BDIAGSIZE** = **11**
-- **CURSOR_FDIAGSIZE** = **12**
-- **CURSOR_MOVE** = **13**
-- **CURSOR_VSPLIT** = **14**
-- **CURSOR_HSPLIT** = **15**
-- **CURSOR_HELP** = **16**
+- **CURSOR_ARROW** = **0** --- Arrow cursor. Standard, default pointing cursor.
+- **CURSOR_IBEAM** = **1** --- I-beam cursor. Usually used to show where the text cursor will appear when the mouse is clicked.
+- **CURSOR_POINTING_HAND** = **2** --- Pointing hand cursor. Usually used to indicate the pointer is over a link or other interactable item.
+- **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performance or for selections.
+- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation.
+- **CURSOR_BUSY** = **5** --- Busy cursor. See ``CURSOR_WAIT``.
+- **CURSOR_DRAG** = **6** --- Drag cursor. Usually displayed when dragging something.
+- **CURSOR_CAN_DROP** = **7** --- Can drop cursor. Usually displayed when dragging something to indicate that it can be dropped at the current position.
+- **CURSOR_FORBIDDEN** = **8** --- Forbidden cursor. Indicates that the current action is forbidden (for example, when dragging something) or that the control at a position is disabled.
+- **CURSOR_VSIZE** = **9** --- Vertical resize mouse cursor. A double headed vertical arrow. It tells the user they can resize the window or the panel vertically.
+- **CURSOR_HSIZE** = **10** --- Horizontal resize mouse cursor. A double headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
+- **CURSOR_BDIAGSIZE** = **11** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_FDIAGSIZE** = **12** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the top left to the bottom right, the opposite of ``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the panel both horizontally and vertically.
+- **CURSOR_MOVE** = **13** --- Move cursor. Indicates that something can be moved.
+- **CURSOR_VSPLIT** = **14** --- Vertical split mouse cursor. On Windows, it's the same as ``CURSOR_VSIZE``.
+- **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as ``CURSOR_HSIZE``.
+- **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
 
 
 Description
@@ -168,7 +168,7 @@ Add a new mapping entry (in SDL2 format) to the mapping database. Optionally upd
 
 - :ref:`Vector3<class_vector3>` **get_accelerometer** **(** **)** const
 
-If the device has an accelerometer, this will return the movement.
+If the device has an accelerometer, this will return the acceleration. Otherwise, it returns an empty :ref:`Vector3<class_vector3>`.
 
 .. _class_Input_get_connected_joypads:
 
@@ -180,11 +180,13 @@ Returns an :ref:`Array<class_array>` containing the device IDs of all currently 
 
 - :ref:`Vector3<class_vector3>` **get_gravity** **(** **)** const
 
+If the device has an accelerometer, this will return the gravity. Otherwise, it returns an empty :ref:`Vector3<class_vector3>`.
+
 .. _class_Input_get_gyroscope:
 
 - :ref:`Vector3<class_vector3>` **get_gyroscope** **(** **)** const
 
-If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's x, y, and z axis.
+If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's x, y, and z axis. Otherwise, it returns an empty :ref:`Vector3<class_vector3>`.
 
 .. _class_Input_get_joy_axis:
 
@@ -260,13 +262,15 @@ Return the mouse mode. See the constants for more information.
 
 - :ref:`bool<class_bool>` **is_action_just_pressed** **(** :ref:`String<class_string>` action **)** const
 
-Returns ``true`` when you start pressing the action event.
+Returns ``true`` when the user starts pressing the action event, meaning it's true only on the frame that the user pressed down the button.
+
+This is useful for code that needs to run only once when an action is pressed, instead of every frame while it's pressed.
 
 .. _class_Input_is_action_just_released:
 
 - :ref:`bool<class_bool>` **is_action_just_released** **(** :ref:`String<class_string>` action **)** const
 
-Returns ``true`` when you stop pressing the action event.
+Returns ``true`` when the user stops pressing the action event, meaning it's true only on the frame that the user released the button.
 
 .. _class_Input_is_action_pressed:
 
@@ -305,6 +309,8 @@ Returns ``true`` if you are pressing the mouse button. You can pass ``BUTTON_*``
 .. _class_Input_parse_input_event:
 
 - void **parse_input_event** **(** :ref:`InputEvent<class_inputevent>` event **)**
+
+Feeds an :ref:`InputEvent<class_inputevent>` to the game. Can be used to artificially trigger input events from code.
 
 .. _class_Input_remove_joy_mapping:
 

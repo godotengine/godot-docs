@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-An Array specifically designed to hold Vector3.
+An Array specifically designed to hold Vector3. Note that this type is passed by value and not by reference.
 
 Member Function Description
 ---------------------------

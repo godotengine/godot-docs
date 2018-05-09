@@ -14,7 +14,7 @@ ColorPickerButton
 Brief Description
 -----------------
 
-Button that pops out a :ref:`ColorPicker<class_colorpicker>`
+Button that pops out a :ref:`ColorPicker<class_colorpicker>`.
 
 Member Functions
 ----------------

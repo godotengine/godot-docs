@@ -557,7 +557,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`get_drag
 
 Forces drag and bypasses :ref:`get_drag_data<class_Control_get_drag_data>` and :ref:`set_drag_preview<class_Control_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
 
-The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>` must be implemented on controls that want to recieve drop data.
+The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>` must be implemented on controls that want to receive drop data.
 
 .. _class_Control_get_begin:
 
@@ -585,7 +585,7 @@ Returns the mouse cursor shape the control displays on mouse hover, one of the `
 
 - :ref:`Object<class_object>` **get_drag_data** **(** :ref:`Vector2<class_vector2>` position **)** virtual
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to recieve drop data should implement :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Return null if there is no data to drag. Controls that want to receive drop data should implement :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_data<class_Control_drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_set_drag_preview>`. A good time to set the preview is in this method.
 

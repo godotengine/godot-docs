@@ -185,7 +185,7 @@ Member Variables
 
   .. _class_ParticlesMaterial_radial_accel:
 
-- :ref:`float<class_float>` **radial_accel** - Linear acceleration applied to each particle.
+- :ref:`float<class_float>` **radial_accel** - Radial acceleration applied to each particle.
 
   .. _class_ParticlesMaterial_radial_accel_curve:
 

@@ -444,7 +444,9 @@ Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-i
 
 - :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` s **)**
 
-Raises the Euler's constant **e** to the power of ``s`` and returns it. **e** has an approximate value of 2.71828.
+The natural exponential function. It raises the mathematical constant **e** to the power of ``s`` and returns it.
+
+**e** has an approximate value of 2.71828.
 
 ::
 
