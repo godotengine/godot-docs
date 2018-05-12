@@ -27,7 +27,7 @@ Math
 
 Math functions like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2`` are
 located under ``Mathf`` instead of in global scope.
-``PI`` is ``Mathf.PI``
+``PI`` is ``Mathf.Pi``
 
 Random
 ------
@@ -223,11 +223,10 @@ Other differences:
 GDScript          C#
 ================  ==================================================================
 Color8            Color.Color8
-is_inf            float.IsInfinity
-is_nan            float.IsNaN
 dict2inst         ? TODO
 inst2dict         ? TODO
 load              GD.load which is the same as ResourceLoader.load
+yield on signal   await ToSignal(object, signal)
 ================  ==================================================================
 
 
