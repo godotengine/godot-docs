@@ -113,7 +113,7 @@ changed:
             $AnimatedSprite.animation = "up"
             $AnimatedSprite.flip_v = velocity.y > 0
 
-    func _on_player_body_entered(body):
+    func _on_Player_body_entered( body ):
         $Collision.disabled = true
         hide()
         emit_signal("hit")
