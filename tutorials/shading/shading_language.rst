@@ -1022,7 +1022,7 @@ Fragment Built-Ins
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **SCREEN_UV**            | Screen UV for use with SCREEN_TEXTURE.                         |
 +----------------------------------+----------------------------------------------------------------+
-| in vec2 **SCREEN_PIXEL_SIZE**    | Screen pixel size.                                             |
+| in vec2 **SCREEN_PIXEL_SIZE**    | Size of individual pixels. Equal to inverse of resolution.     |
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | Coordinate for drawing points.                                 |
 +----------------------------------+----------------------------------------------------------------+
