@@ -12,7 +12,7 @@ Step by step
    scripting
    scripting_continued
    your_first_game
-   exporting
+   exporting_dtc
    godot_design_philosophy
    ui_introduction_to_the_ui_system
    ui_main_menu
