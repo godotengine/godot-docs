@@ -25,7 +25,10 @@ Setup C# for Godot
 ------------------
 
 To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed. Godot 3.0.2 requires Mono 5.4, 3.0.3 requires Mono 5.10 on Linux and Windows,
-and 5.8 on MacOS. You also need MSBuild (at least version 15.0) which should come with the Mono installation. 
+and 5.8 on MacOS. You also need MSBuild (at least version 15.0) which should come with the Mono installation.
+
+.. note:: For instructions on installing older versions of Mono on Linux see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
+        Older versions of Mono for MacOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
 
 Additionally, your Godot version must have Mono support enabled, so take care to download the **Mono version** of Godot.
 If you are building Godot from source, make sure to follow the steps to include Mono support in your build outlined on the  :ref:`doc_compiling_with_mono` page.
