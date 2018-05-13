@@ -1,4 +1,4 @@
-.. _doc_exporting_dtc:
+.. _doc_exporting:
 
 Exporting
 =========
@@ -55,7 +55,7 @@ changed:
     export (int) var SPEED
     var velocity = Vector2()
     var screensize
-    # Add this variable to hold the clicked position
+    # Add this variable to hold the clicked position.
     var target = Vector2()
 
     func _ready():
@@ -64,23 +64,24 @@ changed:
 
     func start(pos):
         position = pos
-        # Initial target is the start position
+        # Initial target is the start position.
         target = pos
         show()
         $Collision.disabled = false
 
-    # Change the target whenever a touch event happens
+    # Change the target whenever a touch event happens.
     func _input(event):
         if event is InputEventScreenTouch and event.pressed:
             target = event.position
 
     func _process(delta):
-        # Move towards the target and stop when close
+        # Move towards the target and stop when close.
         if position.distance_to(target) > 10:
             velocity = (target - position).normalized() * SPEED
         else:
             velocity = Vector2()
-    # Remove keyboard controls
+
+    # Remove keyboard controls.
     #   if Input.is_action_pressed("ui_right"):
     #       velocity.x += 1
     #	if Input.is_action_pressed("ui_left"):
@@ -100,7 +101,7 @@ changed:
 
     	position += velocity * delta
         # We don't need to clamp the player's position
-        # because you can't click outside the screen
+        # because you can't click outside the screen.
         # position.x = clamp(position.x, 0, screensize.x)
         # position.y = clamp(position.y, 0, screensize.y)
 
@@ -112,7 +113,7 @@ changed:
             $AnimatedSprite.animation = "up"
             $AnimatedSprite.flip_v = velocity.y > 0
 
-    func _on_Player_body_entered( body ):
+    func _on_player_body_entered(body):
         $Collision.disabled = true
         hide()
         emit_signal("hit")
