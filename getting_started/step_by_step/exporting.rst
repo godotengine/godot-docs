@@ -1,4 +1,4 @@
-.. _exporting:
+.. _doc_exporting_dtc:
 
 Exporting
 =========
@@ -121,7 +121,7 @@ Export Templates
 ----------------
 
 In order to export, you need to download the *export templates* from the
-http://godotengine.org/download. These templates are versions of the engine
+http://godotengine.org/download. These templates are optimized versions of the engine
 without the editor pre-compiled for each platform . You can also
 download them in Godot by clicking on *Editor -> Manage Export Templates*:
 
@@ -133,7 +133,7 @@ version that matches your version of Godot.
 .. image:: img/export_template_manager.png
 
 .. note:: If you upgrade Godot, you must download templates that match the new version
-            or your exported projects may not work correctly.
+          or your exported projects may not work correctly.
 
 Export Presets
 --------------
@@ -175,6 +175,10 @@ Click "Save" and the engine will build the export files.
           end up with a `.dmg` file, while using Linux or Windows
           produces a `.zip`. In either case, the compressed file contains
           a MacOS `.app` that you can double-click and run.
+
+.. note:: On Windows, if you want your exported executable to have a different
+          icon than the default one, you need to change it manually. See:
+          :ref:`doc_changing_application_icon_for_windows`.
 
 Android
 ~~~~~~~
