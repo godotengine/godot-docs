@@ -20,6 +20,9 @@ You'll also learn to:
 
 Download the project files: :download:`ui_gui_design.zip <files/ui_gui_design.zip>` and extract the archive. Import the `start/` project in Godot to follow this tutorial. The `end/` folder contains the final result.
 
+.. note::
+
+    You can watch this tutorial as a `video on Youtube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
 
 Breaking down the UI
 --------------------
