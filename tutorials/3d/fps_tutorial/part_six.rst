@@ -272,7 +272,7 @@ Then we set the ``Engine_Label``'s text to the version info provided by ``Engine
 of useful information about the version Godot is currently running with. We only care for the string version for the purposes of this display, so we get the string
 and assign that as the ``text`` in ``Engine_Label``. See :ref:`Engine <class_Engine>` for more information on the values ``get_version_info`` returns.
 
-In ``_process`` we set the text of the ``FPS_Label`` to ``Engine.get_frames_per_second``, but because ``get_frames_per_second`` returns a int, we have to cast
+In ``_process`` we set the text of the ``FPS_Label`` to ``Engine.get_frames_per_second``, but because ``get_frames_per_second`` returns a integer, we have to cast
 it to a string using ``str`` before we can add it to our label.
 
 ______
