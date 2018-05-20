@@ -380,7 +380,7 @@ Select ``Pause_Popup`` and scroll down all the way till you get to the ``Pause``
 which we need in order to interact with the UI elements.
 
 Now that we've looked at how ``Pause_Popup.tscn`` is set up, lets write the code to make it work. Normally we'd attach a script to the root node of
-the scene, ``Pause_Popup`` in this case, but since we'll be needed to receive a couple signals in ``Globals.gd``, we'll write all of the code for
+the scene, ``Pause_Popup`` in this case, but since we'll need to receive a couple of signals in ``Globals.gd``, we'll write all of the code for
 the pop up there.
 
 Open up ``Globals.gd`` and add the following global variables:
