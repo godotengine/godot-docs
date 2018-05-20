@@ -769,7 +769,7 @@ Now all we need is a way to set the respawn points. Open up ``Ruins_Level.tscn``
         globals.respawn_points = get_children()
         
 Now when a node with ``Respawn_Point_Setter.gd`` has it's ``_ready`` function called, all of the children
-nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, we be added
+nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, will be added
 to ``respawn_points`` in ``Globals.gd``.
 
 .. warning:: Any node with ``Respawn_Point_Setter.gd`` has to be above the player in the :ref:`SceneTree <class_SceneTree>` so the respawn points are set
