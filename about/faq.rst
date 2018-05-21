@@ -50,7 +50,7 @@ Which platforms are supported by Godot?
 
 Both 32 and 64 bit binaries are supported where it makes sense, with 64 being the default.
 
-Some users also report building and using Godot successfully on ARM-based system with Linux, like the Raspberry Pi.
+Some users also report building and using Godot successfully on ARM-based systems with Linux, like the Raspberry Pi.
 There is also some unofficial thirdparty work being done on building for some consoles.
 None of this is included in the default build scripts or export templates, however.
 
