@@ -272,7 +272,7 @@ Then we set the ``Engine_Label``'s text to the version info provided by ``Engine
 of useful information about the version Godot is currently running with. We only care for the string version for the purposes of this display, so we get the string
 and assign that as the ``text`` in ``Engine_Label``. See :ref:`Engine <class_Engine>` for more information on the values ``get_version_info`` returns.
 
-In ``_process`` we set the text of the ``FPS_Label`` to ``Engine.get_frames_per_second``, but because ``get_frames_per_second`` returns a int, we have to cast
+In ``_process`` we set the text of the ``FPS_Label`` to ``Engine.get_frames_per_second``, but because ``get_frames_per_second`` returns a integer, we have to cast
 it to a string using ``str`` before we can add it to our label.
 
 ______
@@ -380,7 +380,7 @@ Select ``Pause_Popup`` and scroll down all the way till you get to the ``Pause``
 which we need in order to interact with the UI elements.
 
 Now that we've looked at how ``Pause_Popup.tscn`` is set up, lets write the code to make it work. Normally we'd attach a script to the root node of
-the scene, ``Pause_Popup`` in this case, but since we'll be needed to receive a couple signals in ``Globals.gd``, we'll write all of the code for
+the scene, ``Pause_Popup`` in this case, but since we'll need to receive a couple of signals in ``Globals.gd``, we'll write all of the code for
 the pop up there.
 
 Open up ``Globals.gd`` and add the following global variables:
@@ -769,7 +769,7 @@ Now all we need is a way to set the respawn points. Open up ``Ruins_Level.tscn``
         globals.respawn_points = get_children()
         
 Now when a node with ``Respawn_Point_Setter.gd`` has it's ``_ready`` function called, all of the children
-nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, we be added
+nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, will be added
 to ``respawn_points`` in ``Globals.gd``.
 
 .. warning:: Any node with ``Respawn_Point_Setter.gd`` has to be above the player in the :ref:`SceneTree <class_SceneTree>` so the respawn points are set
