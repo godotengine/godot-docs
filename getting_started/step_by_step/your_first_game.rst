@@ -872,26 +872,26 @@ ScoreLabel
 MessageLabel
 ~~~~~~~~~~~~
 
--  ``Layout``: "Center Bottom"
+-  ``Layout``: "Center"
 -  ``Margin``:
 
-   -  Left: ``-100``
-   -  Top: ``-200``
-   -  Right: ``100``
-   -  Bottom: ``-100``
+   -  Left: ``-174``
+   -  Top: ``-103``
+   -  Right: ``174``
+   -  Bottom: ``103``
 
 -  Text: ``Dodge the Creeps!``
 
 StartButton
 ~~~~~~~~~~~
 
--  ``Layout``: "Center"
+-  ``Layout``: "Center Bottom"
 -  ``Margin``:
 
-   -  Left: ``-60``
-   -  Top: ``70``
-   -  Right: ``60``
-   -  Bottom: ``150``
+   -  Left: ``-90``
+   -  Top: ``-84``
+   -  Right: ``90``
+   -  Bottom: ``0``
 
 -  Text: ``Start``
 
@@ -906,7 +906,7 @@ the three ``Control`` nodes:
 
 2. Click on the "DynamicFont" you added, and under "Font Data",
    choose "Load" and select the "Xolonium-Regular.ttf" file. You must
-   also set the font's ``Size``. A setting of ``64`` works well.
+   also set the font's ``Size`` under ``Settings``. A setting of ``64`` works well.
 
 .. image:: img/custom_font2.png
 
