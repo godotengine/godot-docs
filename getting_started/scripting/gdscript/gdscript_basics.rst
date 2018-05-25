@@ -1373,6 +1373,21 @@ signal is received, execution will recommence. Here are some examples:
 
     # Wait 5 seconds, then resume execution
     yield(get_tree().create_timer(5.0), "timeout")
+    
+Coroutines themselves use the ``completed`` signal when they transition
+into an invalid state, for example:
+
+::
+
+    func func():
+	    yield(button_func(), "completed")
+	    print("All buttons were pressed, hurray!")
+
+    func button_func():
+        yield($Button0, "pressed")
+	    yield($Button1, "pressed")
+
+``func`` will only continue execution once both the buttons are pressed.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
