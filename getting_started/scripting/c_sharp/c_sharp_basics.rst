@@ -40,7 +40,7 @@ While Godot does have its own scripting editor, its support for C# is kept
 minimal, and it's recommended that you use an external IDE or editor, such as
 Microsoft Visual Studio Code, or MonoDevelop, which provide auto-completion,
 debugging and other features useful when working with C#.
-To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll 
+To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll
 down to the bottom, to the ``Mono`` settings. Under Mono click on ``Editor``,
 and on that page choose your external editor of choice.
 
@@ -82,7 +82,7 @@ Simply remove that line and your project should now again build fine. Same for r
 Example
 -------
 
-Here's a blank C# script with some comments to demonstrate how it works. 
+Here's a blank C# script with some comments to demonstrate how it works.
 
 .. code-block:: csharp
 
@@ -142,3 +142,22 @@ Performance of C# in Godot
 According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_, performance of C# in Godot - while generally in the same order of magnitude - is roughly **~4x** that of GDScript in some naive cases.
 For full performance, C++ is still a little faster; the specifics are going to vary according to your use case. GDScript is likely fast enough for most general scripting workloads.
 C# is faster, but requires some expensive marshalling when talking to Godot.
+
+Using Nuget Packages in Godot
+-----------------------------
+
+`Nuget <https://www.nuget.org/>`_ Packages can be installed and used with Godot,
+as with any project. Many IDEs (such as vs code) can add packages directly. They
+can also be added manually by adding the package reference in the .csproj file
+located in the project root:
+
+      <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+      </ItemGroup>
+      ...
+    </Project>
+
+
+Then using the dotnet command line to restore package, in the project root:
+
+    $ dotnet restore
