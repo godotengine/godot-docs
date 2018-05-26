@@ -1393,7 +1393,7 @@ into an invalid state, for example:
 
 ::
 
-    func func():
+    func my_func():
 	    yield(button_func(), "completed")
 	    print("All buttons were pressed, hurray!")
 
@@ -1401,7 +1401,7 @@ into an invalid state, for example:
         yield($Button0, "pressed")
 	    yield($Button1, "pressed")
 
-``func`` will only continue execution once both the buttons are pressed.
+``my_func`` will only continue execution once both the buttons are pressed.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
