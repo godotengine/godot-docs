@@ -161,6 +161,10 @@ located in the project root:
     </Project>
 
 
-Then using the dotnet command line to restore package, in the project root::
+Debugging Failing Godot Builds
+------------------------------
 
-    $ dotnet restore
+If you find that your mono project is failing to build, you can debug more closely
+by running the following on the command line, in the root of your project.
+
+    $ msbuild
