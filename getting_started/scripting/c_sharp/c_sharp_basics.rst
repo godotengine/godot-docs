@@ -98,7 +98,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
         public override void _Ready()
         {
             // Called every time the node is added to the scene.
-            // Initialization here
+            // Initialization here.
             GD.Print("Hello from C# to Godot :)");
         }
 
@@ -151,13 +151,16 @@ as with any project. Many IDEs (such as vs code) can add packages directly. They
 can also be added manually by adding the package reference in the .csproj file
 located in the project root:
 
-      <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
-      </ItemGroup>
+.. code-block:: xml
+   :emphasize-lines: 2
+
+        <ItemGroup>
+            <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+        </ItemGroup>
       ...
     </Project>
 
 
-Then using the dotnet command line to restore package, in the project root:
+Then using the dotnet command line to restore package, in the project root::
 
     $ dotnet restore

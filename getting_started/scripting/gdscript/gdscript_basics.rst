@@ -59,7 +59,7 @@ here's a simple example of how GDScript looks.
 
     extends BaseClass
 
-    # Member variables
+    # Member Variables
 
     var a = 5
     var s = "Hello"
@@ -76,12 +76,12 @@ here's a simple example of how GDScript looks.
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
 
-    # Built-in vector types
+    # Built-in Vector Types
 
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
 
-    # function
+    # Function
 
     func some_function(param1, param2):
         var local_var = 5
@@ -103,12 +103,12 @@ here's a simple example of how GDScript looks.
         return local_var2
 
     # Functions override functions with the same name on the base/parent class.
-    # If you still want to call them, use '.' (like 'super' in other languages)
+    # If you still want to call them, use '.' (like 'super' in other languages).
 
     func something(p1, p2):
         .something(p1, p2)
 
-    # Inner class
+    # Inner Class
 
     class Something:
         var a = 10
@@ -313,7 +313,7 @@ considered a comment.
 
 ::
 
-    # This is a comment
+    # This is a comment.
 
 
 Multi-line comments can be created using """ (three quotes in a row) at
@@ -324,7 +324,7 @@ therefore, it will not be stripped away when the script is compiled.
 
         """ Everything on these
         lines is considered
-        a comment """
+        a comment. """
 
 Built-in types
 --------------
@@ -467,11 +467,11 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
     var arr = []
     arr = [1, 2, 3]
-    var b = arr[1] # This is 2
-    var c = arr[arr.size() - 1] # This is 3
-    var d = arr[-1] # Same as the previous line, but shorter
-    arr[0] = "Hi!" # Replacing value 1 with "Hi"
-    arr.append(4) # Array is now ["Hi", 2, 3, 4]
+    var b = arr[1] # This is 2.
+    var c = arr[arr.size() - 1] # This is 3.
+    var d = arr[-1] # Same as the previous line, but shorter.
+    arr[0] = "Hi!" # Replacing value 1 with "Hi".
+    arr.append(4) # Array is now ["Hi", 2, 3, 4].
 
 GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
@@ -521,10 +521,10 @@ start with a digit.
 To add a key to an existing dictionary, access it like an existing key and
 assign to it::
 
-    var d = {} # Create an empty Dictionary
-    d.waiting = 14 # Add String "Waiting" as a key and assign the value 14 to it
-    d[4] = "hello" # Add integer `4` as a key and assign the String "hello" as its value
-    d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it
+    var d = {} # Create an empty Dictionary.
+    d.waiting = 14 # Add String "Waiting" as a key and assign the value 14 to it.
+    d[4] = "hello" # Add integer 4 as a key and assign the String "hello" as its value.
+    d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it.
 
 Data
 ----
@@ -538,10 +538,10 @@ value upon initialization.
 
 ::
 
-    var a # Data type is null by default
+    var a # Data type is 'null' by default.
     var b = 5
     var c = 3.8
-    var d = b + c # Variables are always initialized in order
+    var d = b + c # Variables are always initialized in order.
 
 Constants
 ~~~~~~~~~
@@ -553,10 +553,10 @@ expressions and must be assigned on initialization.
 
     const A = 5
     const B = Vector2(20, 20)
-    const C = 10 + 20 # Constant expression
+    const C = 10 + 20 # Constant expression.
     const D = Vector2(20, 30).x # Constant expression: 20
     const E = [1, 2, 3, 4][0] # Constant expression: 1
-    const F = sin(20) # sin() can be used in constant expressions
+    const F = sin(20) # sin() can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
 
 Enums
@@ -599,7 +599,7 @@ argument, unlike Python).
     func my_function(a, b):
         print(a)
         print(b)
-        return a + b  # Return is optional; without it null is returned
+        return a + b  # Return is optional; without it 'null' is returned.
 
 A function can ``return`` at any point. The default return value is ``null``.
 
@@ -614,12 +614,12 @@ To reference a function by name at runtime, (e.g. to store it in a variable, or
 pass it to another function as an argument) one must use the ``call`` or
 ``funcref`` helpers::
 
-    # Call a function by name in one step
+    # Call a function by name in one step.
     my_node.call("my_function", args)
 
-    # Store a function reference
+    # Store a function reference.
     var my_func = funcref(my_node, "my_function")
-    # Call stored function reference
+    # Call stored function reference.
     my_func.call_func(args)
 
 
@@ -702,23 +702,23 @@ in the loop variable.
 ::
 
     for x in [5, 7, 11]:
-        statement # Loop iterates 3 times with x as 5, then 7 and finally 11
+        statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
         print(dict[i])
 
     for i in range(3):
-        statement # Similar to [0, 1, 2] but does not allocate an array
+        statement # Similar to [0, 1, 2] but does not allocate an array.
 
     for i in range(1,3):
-        statement # Similar to [1, 2] but does not allocate an array
+        statement # Similar to [1, 2] but does not allocate an array.
 
     for i in range(2,8,2):
-        statement # Similar to [2, 4, 6] but does not allocate an array
+        statement # Similar to [2, 4, 6] but does not allocate an array.
 
     for c in "Hello":
-        print(c) # Iterate through all characters in a String, print every letter on new line
+        print(c) # Iterate through all characters in a String, print every letter on new line.
 
 match
 ^^^^^
@@ -877,7 +877,7 @@ Below is an example of a class file.
 
 ::
 
-    # Saved as a file named myclass.gd
+    # Saved as a file named 'myclass.gd'.
 
     var a = 5
 
@@ -899,13 +899,13 @@ Inheritance uses the ``extends`` keyword:
 
 ::
 
-    # Inherit/extend a globally available class
+    # Inherit/extend a globally available class.
     extends SomeClass
 
-    # Inherit/extend a named class file
+    # Inherit/extend a named class file.
     extends "somefile.gd"
 
-    # Inherit/extend an inner class in another file
+    # Inherit/extend an inner class in another file.
     extends "somefile.gd".SomeInnerClass
 
 
@@ -914,12 +914,12 @@ the ``is`` keyword can be used:
 
 ::
 
-    # Cache the enemy class
+    # Cache the enemy class.
     const Enemy = preload("enemy.gd")
 
     # [...]
 
-    # Use 'is' to check inheritance
+    # Use 'is' to check inheritance.
     if (entity is Enemy):
         entity.apply_damage()
 
@@ -937,7 +937,7 @@ to call them, you can use ``.`` like the ``super`` keyword in other languages:
 ::
 
     func some_func(x):
-        .some_func(x) # Calls same function on the parent class
+        .some_func(x) # Calls same function on the parent class.
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
@@ -962,15 +962,15 @@ function.
 
 ::
 
-    # Inside a class file
+    # Inside a class file.
 
-    # An inner class in this class file
+    # An inner class in this class file.
     class SomeInnerClass:
         var a = 5
         func print_value_of_a():
             print(a)
 
-    # This is the constructor of the class file's main class
+    # This is the constructor of the class file's main class.
     func _init():
         var c = SomeInnerClass.new()
         c.print_value_of_a()
@@ -983,10 +983,10 @@ must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
 
-    # Load the class resource when calling load()
+    # Load the class resource when calling load().
     var my_class = load("myclass.gd")
 
-    # Preload the class only once at compile time
+    # Preload the class only once at compile time.
     const MyClass = preload("myclass.gd")
 
     func _init():
@@ -1003,7 +1003,7 @@ is done by using the ``export`` keyword::
 
     extends Button
 
-    export var number = 5 # Value will be saved and visible in the property editor
+    export var number = 5 # Value will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
@@ -1016,81 +1016,81 @@ special export syntax is provided.
 ::
 
     # If the exported value assigns a constant or constant expression,
-    # the type will be inferred and used in the editor
+    # the type will be inferred and used in the editor.
 
     export var number = 5
 
     # Export can take a basic data type as an argument which will be
-    # used in the editor
+    # used in the editor.
 
     export(int) var number
 
-    # Export can also take a resource type to use as a hint
+    # Export can also take a resource type to use as a hint.
 
     export(Texture) var character_face
     export(PackedScene) var scene_file
 
-    # Integers and strings hint enumerated values
+    # Integers and strings hint enumerated values.
 
-    # Editor will enumerate as 0, 1 and 2
+    # Editor will enumerate as 0, 1 and 2.
     export(int, "Warrior", "Magician", "Thief") var character_class
-    # Editor will enumerate with string names
+    # Editor will enumerate with string names.
     export(String, "Rebecca", "Mary", "Leah") var character_name
 
-    # Named enum values
+    # Named Enum Values
     
-    # Editor will enumerate as THING_1, THING_2, ANOTHER_THING
+    # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
     export (NamedEnum) var x
 
-    # Strings as paths
+    # Strings as Paths
 
-    # String is a path to a file
+    # String is a path to a file.
     export(String, FILE) var f
-    # String is a path to a directory
+    # String is a path to a directory.
     export(String, DIR) var f
-    # String is a path to a file, custom filter provided as hint
+    # String is a path to a file, custom filter provided as hint.
     export(String, FILE, "*.txt") var f
 
     # Using paths in the global filesystem is also possible,
-    # but only in tool scripts (see further below)
+    # but only in tool scripts (see further below).
 
-    # String is a path to a PNG file in the global filesystem
+    # String is a path to a PNG file in the global filesystem.
     export(String, FILE, GLOBAL, "*.png") var tool_image
-    # String is a path to a directory in the global filesystem
+    # String is a path to a directory in the global filesystem.
     export(String, DIR, GLOBAL) var tool_dir
 
     # The MULTILINE setting tells the editor to show a large input
-    # field for editing over multiple lines
+    # field for editing over multiple lines.
     export(String, MULTILINE) var text
 
     # Limiting editor input ranges
 
-    # Allow integer values from 0 to 20
+    # Allow integer values from 0 to 20.
     export(int, 20) var i
-    # Allow integer values from -10 to 20
+    # Allow integer values from -10 to 20.
     export(int, -10, 20) var j
-    # Allow floats from -10 to 20, with a step of 0.2
+    # Allow floats from -10 to 20, with a step of 0.2.
     export(float, -10, 20, 0.2) var k
     # Allow values y = exp(x) where y varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
     # slider for easily editing the value.
     export(float, EXP, 100, 1000, 20) var l
 
-    # Floats with easing hint
+    # Floats with Easing Hint
 
     # Display a visual representation of the ease() function
-    # when editing
+    # when editing.
     export(float, EASE) var transition_speed
 
     # Colors
 
     # Color given as Red-Green-Blue value
-    export(Color, RGB) var col # Color is RGB
+    export(Color, RGB) var col # Color is RGB.
     # Color given as Red-Green-Blue-Alpha value
-    export(Color, RGBA) var col # Color is RGBA
+    export(Color, RGBA) var col # Color is RGBA.
 
-    # Another node in the scene can be exported too
+    # Another node in the scene can be exported too.
 
     export(NodePath) var node
 
@@ -1107,7 +1107,7 @@ can be set from the editor:
 
 ::
 
-    # Individually edit the bits of an integer
+    # Individually edit the bits of an integer.
     export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
 
 Restricting the flags to a certain number of named flags is also
@@ -1115,7 +1115,7 @@ possible. The syntax is similar to the enumeration syntax:
 
 ::
 
-    # Set any of the given flags from the editor
+    # Set any of the given flags from the editor.
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
@@ -1142,13 +1142,13 @@ initializers, but they must be constant expressions.
 
     export var a = [1, 2, 3]
 
-    # Exported arrays can specify type (using the same hints as before)
+    # Exported arrays can specify type (using the same hints as before).
 
     export(Array, int) var ints = [1,2,3]
     export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
     export(Array, Array, float) var two_dimensional = [[1, 2], [3, 4]]
 
-    # You can omit the default value, but then it would be null if not assigned
+    # You can omit the default value, but then it would be null if not assigned.
 
     export(Array) var b
     export(Array, PackedScene) var scenes
@@ -1193,15 +1193,15 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
         my_var = new_value
 
     func my_var_get():
-        return my_var # Getter must return a value
+        return my_var # Getter must return a value.
 
 Either of the *setter* or *getter* functions can be omitted:
 
 ::
 
-    # Only a setter
+    # Only a setter.
     var my_var = 5 setget myvar_set
-    # Only a getter (note the comma)
+    # Only a getter (note the comma).
     var my_var = 5 setget ,myvar_get
 
 Get/Setters are especially useful when exporting variables to editor in tool
@@ -1213,11 +1213,11 @@ illustration of this:
 ::
 
     func _init():
-        # Does not trigger setter/getter
+        # Does not trigger setter/getter.
         my_integer = 5
         print(my_integer)
 
-        # Does trigger setter/getter
+        # Does trigger setter/getter.
         self.my_integer = 5
         print(self.my_integer)
 
@@ -1262,9 +1262,9 @@ Declaring a signal in GDScript is easy using the `signal` keyword.
 
 ::
 
-    # No arguments
+    # No arguments.
     signal your_signal_name
-    # With arguments
+    # With arguments.
     signal your_signal_name_with_args(a, b)
 
 These signals can be connected in the editor or from code like regular signals.
@@ -1333,10 +1333,10 @@ an example:
 
     func _ready():
         var y = my_func()
-        # Function state saved in 'y'
+        # Function state saved in 'y'.
         print("my dear")
         y.resume()
-        # 'y' resumed and is now an invalid state
+        # 'y' resumed and is now an invalid state.
 
 Will print:
 
@@ -1358,9 +1358,9 @@ example:
 
     func _ready():
         var y = my_func()
-        # Function state saved in 'y'
+        # Function state saved in 'y'.
         print(y.resume("world"))
-        # 'y' resumed and is now an invalid state
+        # 'y' resumed and is now an invalid state.
 
 Will print:
 
@@ -1379,13 +1379,13 @@ signal is received, execution will recommence. Here are some examples:
 
 ::
 
-    # Resume execution the next frame
+    # Resume execution the next frame.
     yield(get_tree(), "idle_frame")
 
-    # Resume execution when animation is done playing:
+    # Resume execution when animation is done playing.
     yield(get_node("AnimationPlayer"), "finished")
 
-    # Wait 5 seconds, then resume execution
+    # Wait 5 seconds, then resume execution.
     yield(get_tree().create_timer(5.0), "timeout")
 
 Coroutines themselves use the ``completed`` signal when they transition
@@ -1435,5 +1435,5 @@ These assertions are ignored in non-debug builds.
 
 ::
 
-    # Check that i is 0
+    # Check that 'i' is 0.
     assert(i == 0)
