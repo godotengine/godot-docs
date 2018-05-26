@@ -70,7 +70,7 @@ Example: If you created a script (e.g. ``Test.cs``) and delete it in Godot, comp
 You can for now simply open up the ``.csproj`` and look for the ``ItemGroup``, there should be a line included like the following:
 
 .. code-block:: xml
-   :emphasize-lines: 2
+    :emphasize-lines: 2
 
     <ItemGroup>
         <Compile Include="Test.cs" />``
@@ -152,12 +152,12 @@ can also be added manually by adding the package reference in the .csproj file
 located in the project root:
 
 .. code-block:: xml
-   :emphasize-lines: 2
+    :emphasize-lines: 2
 
         <ItemGroup>
             <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
         </ItemGroup>
-      ...
+        ...
     </Project>
 
 
