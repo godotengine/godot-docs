@@ -165,6 +165,6 @@ Debugging Failing Godot Builds
 ------------------------------
 
 If you find that your mono project is failing to build, you can debug more closely
-by running the following on the command line, in the root of your project.
+by running the following on the command line, in the root of your project::
 
     $ msbuild
