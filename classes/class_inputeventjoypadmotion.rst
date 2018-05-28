@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_InputEventJoypadMotion_axis:
 
-- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in @global Scope.
+- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@globalscope>`.
 
   .. _class_InputEventJoypadMotion_axis_value:
 

@@ -81,7 +81,7 @@ Member Function Description
 
 - :ref:`Plane<class_plane>` **Plane** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)**
 
-Creates a plane from the three parameters "a", "b", "c" and "d".
+Creates a plane from the four parameters "a", "b", "c" and "d".
 
 .. _class_Plane_Plane:
 

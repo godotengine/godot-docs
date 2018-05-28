@@ -46,6 +46,14 @@ This signal is emitted when value changes.
 Member Variables
 ----------------
 
+  .. _class_Range_allow_greater:
+
+- :ref:`bool<class_bool>` **allow_greater**
+
+  .. _class_Range_allow_lesser:
+
+- :ref:`bool<class_bool>` **allow_lesser**
+
   .. _class_Range_exp_edit:
 
 - :ref:`bool<class_bool>` **exp_edit** - If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.

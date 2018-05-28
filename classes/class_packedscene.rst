@@ -19,15 +19,15 @@ An abstraction of a serialized scene.
 Member Functions
 ----------------
 
-+--------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>` **(** **)** const                            |
-+--------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>` **(** **)**                                        |
-+--------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>` **(** :ref:`int<class_int>` edit_state=0 **)** const |
-+--------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>` **(** :ref:`Node<class_node>` path **)**                     |
-+--------------------------------------+--------------------------------------------------------------------------------------------------+
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`can_instance<class_PackedScene_can_instance>` **(** **)** const                                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_scenestate>`    | :ref:`get_state<class_PackedScene_get_state>` **(** **)**                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`                | :ref:`instance<class_PackedScene_instance>` **(** :ref:`GenEditState<enum_packedscene_geneditstate>` edit_state=0 **)** const |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`pack<class_PackedScene_pack>` **(** :ref:`Node<class_node>` path **)**                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -84,13 +84,13 @@ Returns the ``SceneState`` representing the scene file contents.
 
 .. _class_PackedScene_instance:
 
-- :ref:`Node<class_node>` **instance** **(** :ref:`int<class_int>` edit_state=0 **)** const
+- :ref:`Node<class_node>` **instance** **(** :ref:`GenEditState<enum_packedscene_geneditstate>` edit_state=0 **)** const
 
-Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the enum Object.NOTIFICATION_INSTANCED notification on the root node.
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the :ref:`NOTIFICATION_INSTANCED<enum_object_notification_instanced>` notification on the root node.
 
 .. _class_PackedScene_pack:
 
-- :ref:`int<class_int>` **pack** **(** :ref:`Node<class_node>` path **)**
+- :ref:`Error<enum_@globalscope_error>` **pack** **(** :ref:`Node<class_node>` path **)**
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
 

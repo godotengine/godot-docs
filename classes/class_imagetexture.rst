@@ -19,19 +19,19 @@ A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`.
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`create<class_ImageTexture_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7 **)** |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`create_from_image<class_ImageTexture_create_from_image>` **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7 **)**                                   |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_format<class_ImageTexture_get_format>` **(** **)** const                                                                                                          |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`load<class_ImageTexture_load>` **(** :ref:`String<class_string>` path **)**                                                                                           |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_data<class_ImageTexture_set_data>` **(** :ref:`Image<class_image>` image **)**                                                                                    |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_size_override<class_ImageTexture_set_size_override>` **(** :ref:`Vector2<class_vector2>` size **)**                                                               |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`create<class_ImageTexture_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_image_format>` format, :ref:`int<class_int>` flags=7 **)** |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`create_from_image<class_ImageTexture_create_from_image>` **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7 **)**                                              |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Format<enum_image_format>`       | :ref:`get_format<class_ImageTexture_get_format>` **(** **)** const                                                                                                                     |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`load<class_ImageTexture_load>` **(** :ref:`String<class_string>` path **)**                                                                                                      |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_data<class_ImageTexture_set_data>` **(** :ref:`Image<class_image>` image **)**                                                                                               |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_size_override<class_ImageTexture_set_size_override>` **(** :ref:`Vector2<class_vector2>` size **)**                                                                          |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -67,7 +67,7 @@ Member Function Description
 
 .. _class_ImageTexture_create:
 
-- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7 **)**
+- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_image_format>` format, :ref:`int<class_int>` flags=7 **)**
 
 Create a new ``ImageTexture`` with "width" and "height".
 
@@ -83,15 +83,15 @@ Create a new ``ImageTexture`` from an :ref:`Image<class_image>` with "flags" fro
 
 .. _class_ImageTexture_get_format:
 
-- :ref:`int<class_int>` **get_format** **(** **)** const
+- :ref:`Format<enum_image_format>` **get_format** **(** **)** const
 
 Return the format of the ``ImageTexture``, one of :ref:`Image<class_image>`.FORMAT\_\*.
 
 .. _class_ImageTexture_load:
 
-- void **load** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@globalscope_error>` **load** **(** :ref:`String<class_string>` path **)**
 
-Load an ``ImageTexture``.
+Load an ``ImageTexture`` from a file path.
 
 .. _class_ImageTexture_set_data:
 

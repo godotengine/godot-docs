@@ -20,7 +20,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**                                                                    |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`advance<class_AnimationPlayer_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,7 +118,7 @@ Member Variables
 
   .. _class_AnimationPlayer_playback_process_mode:
 
-- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
+- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@globalscope_animation_process_idle>`.
 
   .. _class_AnimationPlayer_playback_speed:
 
@@ -150,7 +150,7 @@ Member Function Description
 
 .. _class_AnimationPlayer_add_animation:
 
-- :ref:`int<class_int>` **add_animation** **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**
+- :ref:`Error<enum_@globalscope_error>` **add_animation** **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**
 
 Adds ``animation`` to the player accessible with the key ``name``.
 

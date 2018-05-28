@@ -52,7 +52,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`reload_scene_from_path<class_EditorInterface_reload_scene_from_path>` **(** :ref:`String<class_string>` scene_filepath **)**                      |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`save_scene<class_EditorInterface_save_scene>` **(** **)**                                                                                         |
+| :ref:`Error<enum_@globalscope_error>`                      | :ref:`save_scene<class_EditorInterface_save_scene>` **(** **)**                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -64,7 +64,7 @@ Member Functions
 Description
 -----------
 
-Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects and provides access to :ref:`EditorSettings<class_editorsettings>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`\ er, :ref:`ScriptEditor<class_scripteditor>`, the editor viewport, as well as information about scenes. Also see :ref:`EditorPlugin<class_editorplugin>` and :ref:`EditorScript<class_editorscript>`.
+Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects and provides access to :ref:`EditorSettings<class_editorsettings>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`ScriptEditor<class_scripteditor>`, the editor viewport, as well as information about scenes. Also see :ref:`EditorPlugin<class_editorplugin>` and :ref:`EditorScript<class_editorscript>`.
 
 Member Function Description
 ---------------------------
@@ -165,7 +165,7 @@ Reloads the scene at the given path.
 
 .. _class_EditorInterface_save_scene:
 
-- :ref:`int<class_int>` **save_scene** **(** **)**
+- :ref:`Error<enum_@globalscope_error>` **save_scene** **(** **)**
 
 Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@globalscope>` constants.
 

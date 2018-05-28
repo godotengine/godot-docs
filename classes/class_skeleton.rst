@@ -48,6 +48,14 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_bone_rest_disabled<class_Skeleton_is_bone_rest_disabled>` **(** :ref:`int<class_int>` bone_idx **)** const                                        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`physical_bones_add_collision_exception<class_Skeleton_physical_bones_add_collision_exception>` **(** :ref:`RID<class_rid>` exception **)**           |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`physical_bones_remove_collision_exception<class_Skeleton_physical_bones_remove_collision_exception>` **(** :ref:`RID<class_rid>` exception **)**     |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`physical_bones_start_simulation<class_Skeleton_physical_bones_start_simulation>` **(** :ref:`Array<class_array>` bones=[  ] **)**                    |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`physical_bones_stop_simulation<class_Skeleton_physical_bones_stop_simulation>` **(** **)**                                                           |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_bone_custom_pose<class_Skeleton_set_bone_custom_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_transform>` custom_pose **)** |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_bone_disable_rest<class_Skeleton_set_bone_disable_rest>` **(** :ref:`int<class_int>` bone_idx, :ref:`bool<class_bool>` disable **)**             |
@@ -153,6 +161,22 @@ Deprecated soon.
 .. _class_Skeleton_is_bone_rest_disabled:
 
 - :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** const
+
+.. _class_Skeleton_physical_bones_add_collision_exception:
+
+- void **physical_bones_add_collision_exception** **(** :ref:`RID<class_rid>` exception **)**
+
+.. _class_Skeleton_physical_bones_remove_collision_exception:
+
+- void **physical_bones_remove_collision_exception** **(** :ref:`RID<class_rid>` exception **)**
+
+.. _class_Skeleton_physical_bones_start_simulation:
+
+- void **physical_bones_start_simulation** **(** :ref:`Array<class_array>` bones=[  ] **)**
+
+.. _class_Skeleton_physical_bones_stop_simulation:
+
+- void **physical_bones_stop_simulation** **(** **)**
 
 .. _class_Skeleton_set_bone_custom_pose:
 

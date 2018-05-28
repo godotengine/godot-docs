@@ -9,6 +9,8 @@ ScrollContainer
 
 **Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`EditorInspector<class_editorinspector>`
+
 **Category:** Core
 
 Brief Description
@@ -49,7 +51,7 @@ Member Variables
 
   .. _class_ScrollContainer_scroll_vertical:
 
-- :ref:`int<class_int>` **scroll_vertical** - The current horizontal scroll value.
+- :ref:`int<class_int>` **scroll_vertical** - The current vertical scroll value.
 
   .. _class_ScrollContainer_scroll_vertical_enabled:
 

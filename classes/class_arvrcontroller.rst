@@ -19,19 +19,19 @@ A spatial node representing a spatially tracked controller.
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_controller_name<class_ARVRController_get_controller_name>` **(** **)** const                          |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_hand<class_ARVRController_get_hand>` **(** **)** const                                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_is_active<class_ARVRController_get_is_active>` **(** **)** const                                      |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_joystick_axis<class_ARVRController_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** const   |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_joystick_id<class_ARVRController_get_joystick_id>` **(** **)** const                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`is_button_pressed<class_ARVRController_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                 | :ref:`get_controller_name<class_ARVRController_get_controller_name>` **(** **)** const                          |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`TrackerHand<enum_arvrpositionaltracker_trackerhand>`  | :ref:`get_hand<class_ARVRController_get_hand>` **(** **)** const                                                |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                     | :ref:`get_is_active<class_ARVRController_get_is_active>` **(** **)** const                                      |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                   | :ref:`get_joystick_axis<class_ARVRController_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** const   |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                       | :ref:`get_joystick_id<class_ARVRController_get_joystick_id>` **(** **)** const                                  |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                       | :ref:`is_button_pressed<class_ARVRController_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -87,7 +87,7 @@ If active, returns the name of the associated controller if provided by the AR/V
 
 .. _class_ARVRController_get_hand:
 
-- :ref:`int<class_int>` **get_hand** **(** **)** const
+- :ref:`TrackerHand<enum_arvrpositionaltracker_trackerhand>` **get_hand** **(** **)** const
 
 Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`.
 

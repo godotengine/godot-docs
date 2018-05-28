@@ -22,9 +22,9 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                        | :ref:`build_box_planes<class_Geometry_build_box_planes>` **(** :ref:`Vector3<class_vector3>` extents **)**                                                                                                                                                          |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                        | :ref:`build_capsule_planes<class_Geometry_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=2 **)**                              |
+| :ref:`Array<class_array>`                        | :ref:`build_capsule_planes<class_Geometry_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`Axis<enum_vector3_axis>` axis=2 **)**                     |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                        | :ref:`build_cylinder_planes<class_Geometry_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2 **)**                                                        |
+| :ref:`Array<class_array>`                        | :ref:`build_cylinder_planes<class_Geometry_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`Axis<enum_vector3_axis>` axis=2 **)**                                               |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`clip_polygon<class_Geometry_clip_polygon>` **(** :ref:`PoolVector3Array<class_poolvector3array>` points, :ref:`Plane<class_plane>` plane **)**                                                                                                                |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,6 +44,8 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_uv84_normal_bit<class_Geometry_get_uv84_normal_bit>` **(** :ref:`Vector3<class_vector3>` normal **)**                                                                                                                                                     |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                    | :ref:`line_intersects_line_2d<class_Geometry_line_intersects_line_2d>` **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**                             |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`              | :ref:`make_atlas<class_Geometry_make_atlas>` **(** :ref:`PoolVector2Array<class_poolvector2array>` sizes **)**                                                                                                                                                      |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`point_is_inside_triangle<class_Geometry_point_is_inside_triangle>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` a, :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` c **)** const                                   |
@@ -57,8 +59,6 @@ Member Functions
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`segment_intersects_cylinder<class_Geometry_segment_intersects_cylinder>` **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**                                 |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                    | :ref:`segment_intersects_segment_2d<class_Geometry_segment_intersects_segment_2d>` **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` to_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` to_b **)**                   |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                    | :ref:`line_intersects_line_2d<class_Geometry_line_intersects_line_2d>` **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**                             |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`segment_intersects_sphere<class_Geometry_segment_intersects_sphere>` **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to, :ref:`Vector3<class_vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**                 |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,13 +78,13 @@ Returns an array with 6 :ref:`Plane<class_plane>`\ s that describe the sides of 
 
 .. _class_Geometry_build_capsule_planes:
 
-- :ref:`Array<class_array>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=2 **)**
+- :ref:`Array<class_array>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`Axis<enum_vector3_axis>` axis=2 **)**
 
 Returns an array of :ref:`Plane<class_plane>`\ s closely bounding a faceted capsule centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the side part of the capsule, whereas ``lats`` gives the number of latitudinal steps at the bottom and top of the capsule. The parameter ``axis`` describes the axis along which the capsule is oriented (0 for X, 1 for Y, 2 for Z).
 
 .. _class_Geometry_build_cylinder_planes:
 
-- :ref:`Array<class_array>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2 **)**
+- :ref:`Array<class_array>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`Axis<enum_vector3_axis>` axis=2 **)**
 
 Returns an array of :ref:`Plane<class_plane>`\ s closely bounding a faceted cylinder centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the round part of the cylinder. The parameter ``axis`` describes the axis along which the cylinder is oriented (0 for X, 1 for Y, 2 for Z).
 
@@ -140,6 +140,12 @@ Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`int<class_int>` **get_uv84_normal_bit** **(** :ref:`Vector3<class_vector3>` normal **)**
 
+.. _class_Geometry_line_intersects_line_2d:
+
+- :ref:`Variant<class_variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**
+
+Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_variant>`. Note that the lines are specified using direction vectors, not end points.
+
 .. _class_Geometry_make_atlas:
 
 - :ref:`Dictionary<class_dictionary>` **make_atlas** **(** :ref:`PoolVector2Array<class_poolvector2array>` sizes **)**
@@ -181,12 +187,6 @@ Checks if the segment (``from``, ``to``) intersects the cylinder with height ``h
 - :ref:`Variant<class_variant>` **segment_intersects_segment_2d** **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` to_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` to_b **)**
 
 Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_variant>`.
-
-.. _class_Geometry_line_intersects_line_2d:
-
-- :ref:`Variant<class_variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_vector2>` from_a, :ref:`Vector2<class_vector2>` dir_a, :ref:`Vector2<class_vector2>` from_b, :ref:`Vector2<class_vector2>` dir_b **)**
-
-Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_variant>`. Note that the lines are specified using direction vectors, not end points.
 
 .. _class_Geometry_segment_intersects_sphere:
 

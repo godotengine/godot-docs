@@ -19,11 +19,11 @@ Button that pops out a :ref:`ColorPicker<class_colorpicker>`.
 Member Functions
 ----------------
 
-+----------------------------------------+-------------------------------------------------------------------------+
-| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** const |
-+----------------------------------------+-------------------------------------------------------------------------+
-| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)** const   |
-+----------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------+-----------------------------------------------------------------------+
+| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)**     |
++----------------------------------------+-----------------------------------------------------------------------+
+| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)** const |
++----------------------------------------+-----------------------------------------------------------------------+
 
 Signals
 -------
@@ -33,6 +33,10 @@ Signals
 - **color_changed** **(** :ref:`Color<class_color>` color **)**
 
 Emitted when the color changes.
+
+.. _class_ColorPickerButton_popup_closed:
+
+- **popup_closed** **(** **)**
 
 
 Member Variables
@@ -57,7 +61,7 @@ Member Function Description
 
 .. _class_ColorPickerButton_get_picker:
 
-- :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)** const
+- :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)**
 
 Returns the ``ColorPicker`` that this ``ColorPickerButton`` toggles.
 

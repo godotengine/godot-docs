@@ -19,13 +19,15 @@ Placeholder for the root :ref:`Node<class_node>` of a :ref:`PackedScene<class_pa
 Member Functions
 ----------------
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>` **(** **)** const                                                       |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                    |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>` **(** :ref:`PackedScene<class_packedscene>` custom_scene=null **)** |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`              | :ref:`create_instance<class_InstancePlaceholder_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_packedscene>` custom_scene=null **)** |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>` **(** **)** const                                                                                      |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>` **(** :ref:`PackedScene<class_packedscene>` custom_scene=null **)**                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,6 +38,10 @@ The InstancePlaceholder does not have a transform. This causes any child nodes t
 
 Member Function Description
 ---------------------------
+
+.. _class_InstancePlaceholder_create_instance:
+
+- :ref:`Node<class_node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_packedscene>` custom_scene=null **)**
 
 .. _class_InstancePlaceholder_get_instance_path:
 

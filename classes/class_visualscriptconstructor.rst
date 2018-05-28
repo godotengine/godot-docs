@@ -19,15 +19,15 @@ A Visual Script node which calls a base type constructor.
 Member Functions
 ----------------
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_constructor<class_VisualScriptConstructor_get_constructor>` **(** **)** const                                           |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_constructor_type<class_VisualScriptConstructor_get_constructor_type>` **(** **)** const                                 |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_constructor<class_VisualScriptConstructor_set_constructor>` **(** :ref:`Dictionary<class_dictionary>` constructor **)** |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_constructor_type<class_VisualScriptConstructor_set_constructor_type>` **(** :ref:`int<class_int>` type **)**            |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`                  | :ref:`get_constructor<class_VisualScriptConstructor_get_constructor>` **(** **)** const                                                              |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@globalscope_variant.type>`  | :ref:`get_constructor_type<class_VisualScriptConstructor_get_constructor_type>` **(** **)** const                                                    |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`set_constructor<class_VisualScriptConstructor_set_constructor>` **(** :ref:`Dictionary<class_dictionary>` constructor **)**                    |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`set_constructor_type<class_VisualScriptConstructor_set_constructor_type>` **(** :ref:`Variant.Type<enum_@globalscope_variant.type>` type **)** |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -43,7 +43,7 @@ Member Function Description
 
 .. _class_VisualScriptConstructor_get_constructor_type:
 
-- :ref:`int<class_int>` **get_constructor_type** **(** **)** const
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **get_constructor_type** **(** **)** const
 
 .. _class_VisualScriptConstructor_set_constructor:
 
@@ -51,6 +51,6 @@ Member Function Description
 
 .. _class_VisualScriptConstructor_set_constructor_type:
 
-- void **set_constructor_type** **(** :ref:`int<class_int>` type **)**
+- void **set_constructor_type** **(** :ref:`Variant.Type<enum_@globalscope_variant.type>` type **)**
 
 

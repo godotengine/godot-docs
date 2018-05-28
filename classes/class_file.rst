@@ -42,7 +42,7 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_double<class_File_get_double>` **(** **)** const                                                                                                                            |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_error<class_File_get_error>` **(** **)** const                                                                                                                              |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`get_error<class_File_get_error>` **(** **)** const                                                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_float<class_File_get_float>` **(** **)** const                                                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,13 +70,13 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_open<class_File_is_open>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open<class_File_open>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**                                                                                |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open<class_File_open>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**                                                                                |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_compressed<class_File_open_compressed>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**           |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_compressed<class_File_open_compressed>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**           |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_encrypted<class_File_open_encrypted>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**        |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_encrypted<class_File_open_encrypted>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**        |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)** |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`seek<class_File_seek>` **(** :ref:`int<class_int>` position **)**                                                                                                               |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,7 +232,7 @@ Returns the next 64 bits from the file as a floating point number.
 
 .. _class_File_get_error:
 
-- :ref:`int<class_int>` **get_error** **(** **)** const
+- :ref:`Error<enum_@globalscope_error>` **get_error** **(** **)** const
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`@GlobalScope<class_@globalscope>`.
 
@@ -316,25 +316,25 @@ Returns ``true`` if the file is currently opened.
 
 .. _class_File_open:
 
-- :ref:`int<class_int>` **open** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**
+- :ref:`Error<enum_@globalscope_error>` **open** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**
 
 Opens the file for writing or reading, depending on the flags.
 
 .. _class_File_open_compressed:
 
-- :ref:`int<class_int>` **open_compressed** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**
+- :ref:`Error<enum_@globalscope_error>` **open_compressed** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**
 
 Opens a compressed file for reading or writing. Use COMPRESSION\_\* constants to set ``compression_mode``.
 
 .. _class_File_open_encrypted:
 
-- :ref:`int<class_int>` **open_encrypted** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**
+- :ref:`Error<enum_@globalscope_error>` **open_encrypted** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
 .. _class_File_open_encrypted_with_pass:
 
-- :ref:`int<class_int>` **open_encrypted_with_pass** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)**
+- :ref:`Error<enum_@globalscope_error>` **open_encrypted_with_pass** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)**
 
 Opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 

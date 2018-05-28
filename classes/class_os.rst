@@ -70,7 +70,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_power_seconds_left<class_OS_get_power_seconds_left>` **(** **)**                                                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_power_state<class_OS_get_power_state>` **(** **)**                                                                                                                                                             |
+| :ref:`PowerState<enum_os_powerstate>`          | :ref:`get_power_state<class_OS_get_power_state>` **(** **)**                                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_process_id<class_OS_get_process_id>` **(** **)** const                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +94,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_static_memory_usage<class_OS_get_static_memory_usage>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_system_dir<class_OS_get_system_dir>` **(** :ref:`int<class_int>` dir **)** const                                                                                                                               |
+| :ref:`String<class_string>`                    | :ref:`get_system_dir<class_OS_get_system_dir>` **(** :ref:`SystemDir<enum_os_systemdir>` dir **)** const                                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_system_time_secs<class_OS_get_system_time_secs>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,6 +118,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`                      | :ref:`get_window_safe_area<class_OS_get_window_safe_area>` **(** **)** const                                                                                                                                             |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_environment<class_OS_has_environment>` **(** :ref:`String<class_string>` environment **)** const                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_feature<class_OS_has_feature>` **(** :ref:`String<class_string>` tag_name **)** const                                                                                                                          |
@@ -140,13 +142,13 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_window_always_on_top<class_OS_is_window_always_on_top>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`native_video_is_playing<class_OS_native_video_is_playing>` **(** **)**                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`native_video_pause<class_OS_native_video_pause>` **(** **)**                                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`native_video_play<class_OS_native_video_play>` **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)** |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`native_video_play<class_OS_native_video_play>` **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)** |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`native_video_stop<class_OS_native_video_stop>` **(** **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,7 +168,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_ime_position<class_OS_set_ime_position>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,7 +176,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_window_title<class_OS_set_window_title>` **(** :ref:`String<class_string>` title **)**                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`shell_open<class_OS_shell_open>` **(** :ref:`String<class_string>` uri **)**                                                                                                                                       |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`shell_open<class_OS_shell_open>` **(** :ref:`String<class_string>` uri **)**                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`show_virtual_keyboard<class_OS_show_virtual_keyboard>` **(** :ref:`String<class_string>` existing_text="" **)**                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,7 +206,7 @@ Member Variables
 
   .. _class_OS_screen_orientation:
 
-- :ref:`ScreenOrientation<enum_os_screenorientation>` **screen_orientation** - The current screen orientation.
+- _OS.ScreenOrientation **screen_orientation** - The current screen orientation.
 
   .. _class_OS_vsync_enabled:
 
@@ -225,6 +227,10 @@ Member Variables
   .. _class_OS_window_minimized:
 
 - :ref:`bool<class_bool>` **window_minimized** - If ``true`` the window is minimized.
+
+  .. _class_OS_window_per_pixel_transparency_enabled:
+
+- :ref:`bool<class_bool>` **window_per_pixel_transparency_enabled**
 
   .. _class_OS_window_position:
 
@@ -494,7 +500,7 @@ Returns the time in seconds before the device runs out of battery.
 
 .. _class_OS_get_power_state:
 
-- :ref:`int<class_int>` **get_power_state** **(** **)**
+- :ref:`PowerState<enum_os_powerstate>` **get_power_state** **(** **)**
 
 Returns the current state of the device regarding battery and power. See ``POWERSTATE_*`` constants.
 
@@ -580,7 +586,7 @@ Returns the amount of static memory being used by the program in bytes.
 
 .. _class_OS_get_system_dir:
 
-- :ref:`String<class_string>` **get_system_dir** **(** :ref:`int<class_int>` dir **)** const
+- :ref:`String<class_string>` **get_system_dir** **(** :ref:`SystemDir<enum_os_systemdir>` dir **)** const
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in OS.SystemDir.
 
@@ -660,6 +666,10 @@ If the project name is empty, ``user://`` falls back to ``res://``.
 
 Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
 
+.. _class_OS_get_window_safe_area:
+
+- :ref:`Rect2<class_rect2>` **get_window_safe_area** **(** **)** const
+
 .. _class_OS_has_environment:
 
 - :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_string>` environment **)** const
@@ -732,7 +742,7 @@ Returns ``true`` if the window should always be on top of other windows.
 
 .. _class_OS_kill:
 
-- :ref:`int<class_int>` **kill** **(** :ref:`int<class_int>` pid **)**
+- :ref:`Error<enum_@globalscope_error>` **kill** **(** :ref:`int<class_int>` pid **)**
 
 Kill a process ID (this method can be used to kill processes that were not spawned by the game).
 
@@ -750,7 +760,7 @@ Pauses native video playback.
 
 .. _class_OS_native_video_play:
 
-- :ref:`int<class_int>` **native_video_play** **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)**
+- :ref:`Error<enum_@globalscope_error>` **native_video_play** **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)**
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
@@ -808,7 +818,7 @@ Sets the game's icon.
 
 .. _class_OS_set_thread_name:
 
-- :ref:`int<class_int>` **set_thread_name** **(** :ref:`String<class_string>` name **)**
+- :ref:`Error<enum_@globalscope_error>` **set_thread_name** **(** :ref:`String<class_string>` name **)**
 
 Sets the name of the current thread.
 
@@ -832,7 +842,7 @@ Sets the window title to the specified string.
 
 .. _class_OS_shell_open:
 
-- :ref:`int<class_int>` **shell_open** **(** :ref:`String<class_string>` uri **)**
+- :ref:`Error<enum_@globalscope_error>` **shell_open** **(** :ref:`String<class_string>` uri **)**
 
 Requests the OS to open a resource with the most appropriate program. For example.
 

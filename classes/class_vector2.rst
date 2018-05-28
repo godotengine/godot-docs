@@ -12,7 +12,7 @@ Vector2
 Brief Description
 -----------------
 
-Vector used for 2D Math.
+Vector used for 2D math.
 
 Member Functions
 ----------------
@@ -31,6 +31,8 @@ Member Functions
 | :ref:`float<class_float>`      | :ref:`aspect<class_Vector2_aspect>` **(** **)**                                                                                                                                                               |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`bounce<class_Vector2_bounce>` **(** :ref:`Vector2<class_vector2>` n **)**                                                                                                                               |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`ceil<class_Vector2_ceil>` **(** **)**                                                                                                                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>` **(** :ref:`float<class_float>` length **)**                                                                                                                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,6 +62,10 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`rotated<class_Vector2_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`round<class_Vector2_round>` **(** **)**                                                                                                                                                                 |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`slerp<class_Vector2_slerp>` **(** :ref:`Vector2<class_vector2>` b, :ref:`float<class_float>` t **)**                                                                                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`slide<class_Vector2_slide>` **(** :ref:`Vector2<class_vector2>` n **)**                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`snapped<class_Vector2_snapped>` **(** :ref:`Vector2<class_vector2>` by **)**                                                                                                                            |
@@ -72,17 +78,17 @@ Member Variables
 
   .. _class_Vector2_x:
 
-- :ref:`float<class_float>` **x** - X component of the vector.
+- :ref:`float<class_float>` **x** - The vector's x component.
 
   .. _class_Vector2_y:
 
-- :ref:`float<class_float>` **y** - Y component of the vector.
+- :ref:`float<class_float>` **y** - The vector's y component.
 
 
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2d-space, or any other pair of numeric values.
+2-element structure that can be used to represent positions in 2d space or any other pair of numeric values.
 
 Member Function Description
 ---------------------------
@@ -103,9 +109,9 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle** **(** **)**
 
-Returns the result of atan2 when called with the Vector's x and y as parameters (Math::atan2(x,y)).
+Returns the vector's angle in radians with respect to the x-axis, or ``(1, 0)`` vector.
 
-Be aware that it therefore returns an angle oriented clockwise with regard to the (0, 1) unit vector, and not an angle oriented counter-clockwise with regard to the (1, 0) unit vector (which would be the typical trigonometric representation of the angle when calling Math::atan2(y,x)).
+Equivalent to the result of atan2 when called with the vector's x and y as parameters: ``atan2(x, y)``.
 
 .. _class_Vector2_angle_to:
 
@@ -123,13 +129,17 @@ Returns the angle in radians between the line connecting the two points and the 
 
 - :ref:`float<class_float>` **aspect** **(** **)**
 
-Returns the ratio of X to Y.
+Returns the ratio of x to y.
 
 .. _class_Vector2_bounce:
 
 - :ref:`Vector2<class_vector2>` **bounce** **(** :ref:`Vector2<class_vector2>` n **)**
 
-Bounce returns the vector "bounced off" from the given plane, specified by its normal vector.
+Returns the vector "bounced off" from a plane defined by the given normal.
+
+.. _class_Vector2_ceil:
+
+- :ref:`Vector2<class_vector2>` **ceil** **(** **)**
 
 .. _class_Vector2_clamped:
 
@@ -141,31 +151,31 @@ Returns the vector with a maximum length.
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_vector2>` with **)**
 
-Returns the 2-dimensional analog of the cross product with the given Vector2.
+Returns the 2 dimensional analog of the cross product with the given vector.
 
 .. _class_Vector2_cubic_interpolate:
 
 - :ref:`Vector2<class_vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t **)**
 
-Cubicly interpolates between this Vector and "b", using "pre_a" and "post_b" as handles, and returning the result at position "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
+Cubicly interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, or a percentage of how far along the interpolation is.
 
 .. _class_Vector2_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector2<class_vector2>` to **)**
 
-Returns the squared distance to vector "b". Prefer this function over "distance_to" if you need to sort vectors or need the squared distance for some formula.
+Returns the squared distance to vector ``b``. Prefer this function over :ref:`distance_to<class_Vector2_distance_to>` if you need to sort vectors or need the squared distance for some formula.
 
 .. _class_Vector2_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector2<class_vector2>` to **)**
 
-Returns the distance to vector "b".
+Returns the distance to vector ``b``.
 
 .. _class_Vector2_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector2<class_vector2>` with **)**
 
-Returns the dot product with vector "b".
+Returns the dot product with vector ``b``.
 
 .. _class_Vector2_floor:
 
@@ -177,55 +187,67 @@ Remove the fractional part of x and y.
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
-Returns whether the vector is normalized or not.
+Returns ``true`` if the vector is normalized.
 
 .. _class_Vector2_length:
 
 - :ref:`float<class_float>` **length** **(** **)**
 
-Returns the length of the vector.
+Returns the vector's length.
 
 .. _class_Vector2_length_squared:
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Returns the squared length of the vector. Prefer this function over "length" if you need to sort vectors or need the squared length for some formula.
+Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector2_length>` if you need to sort vectors or need the squared length for some formula.
 
 .. _class_Vector2_linear_interpolate:
 
 - :ref:`Vector2<class_vector2>` **linear_interpolate** **(** :ref:`Vector2<class_vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of the linear interpolation between this vector and "b", by amount "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
+Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, a percentage of how far along the interpolation is.
 
 .. _class_Vector2_normalized:
 
 - :ref:`Vector2<class_vector2>` **normalized** **(** **)**
 
-Returns a normalized vector to unit length.
+Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 .. _class_Vector2_reflect:
 
 - :ref:`Vector2<class_vector2>` **reflect** **(** :ref:`Vector2<class_vector2>` n **)**
 
-Reflects the vector along the given plane, specified by its normal vector.
+Returns the vector reflected from a plane defined by the given normal.
 
 .. _class_Vector2_rotated:
 
 - :ref:`Vector2<class_vector2>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
-Rotates the vector by "phi" radians.
+Returns the vector rotated by ``phi`` radians.
+
+.. _class_Vector2_round:
+
+- :ref:`Vector2<class_vector2>` **round** **(** **)**
+
+.. _class_Vector2_slerp:
+
+- :ref:`Vector2<class_vector2>` **slerp** **(** :ref:`Vector2<class_vector2>` b, :ref:`float<class_float>` t **)**
+
+Returns the result of SLERP between this vector and "b", by amount "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
+
+Both vectors need to be normalized.
 
 .. _class_Vector2_slide:
 
 - :ref:`Vector2<class_vector2>` **slide** **(** :ref:`Vector2<class_vector2>` n **)**
 
-Slide returns the component of the vector along the given plane, specified by its normal vector.
+Returns the component of the vector along a plane defined by the given normal.
 
 .. _class_Vector2_snapped:
 
 - :ref:`Vector2<class_vector2>` **snapped** **(** :ref:`Vector2<class_vector2>` by **)**
 
-Snaps the vector to a grid with the given size.
+Returns the vector snapped to a grid with the given size.
 
 .. _class_Vector2_tangent:
 

@@ -78,6 +78,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **playing** - If ``true`` the :ref:`animation<class_AnimatedSprite_animation>` is currently playing.
 
+  .. _class_AnimatedSprite_speed_scale:
+
+- :ref:`float<class_float>` **speed_scale**
+
 
 Description
 -----------

@@ -33,7 +33,7 @@ Member Variables
 
   .. _class_VisualScriptPropertySet_basic_type:
 
-- :ref:`Type<enum_variant_type>` **basic_type**
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **basic_type**
 
   .. _class_VisualScriptPropertySet_index:
 

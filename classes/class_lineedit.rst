@@ -104,7 +104,7 @@ Member Variables
 
   .. _class_LineEdit_secret_character:
 
-- string **secret_character** - The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
+- :ref:`String<class_string>` **secret_character** - The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
 
   .. _class_LineEdit_text:
 

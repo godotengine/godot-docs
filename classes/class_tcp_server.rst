@@ -22,7 +22,7 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_connection_available<class_TCP_Server_is_connection_available>` **(** **)** const                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`listen<class_TCP_Server_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)** |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`listen<class_TCP_Server_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)** |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`stop<class_TCP_Server_stop>` **(** **)**                                                                              |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Return true if a connection is available for taking.
 
 .. _class_TCP_Server_listen:
 
-- :ref:`int<class_int>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)**
+- :ref:`Error<enum_@globalscope_error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)**
 
 Listen on the "port" binding to "bind_address".
 

@@ -22,9 +22,9 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear<class_MeshDataTool_clear>` **(** **)**                                                                                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`commit_to_surface<class_MeshDataTool_commit_to_surface>` **(** :ref:`ArrayMesh<class_arraymesh>` mesh **)**                                         |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`commit_to_surface<class_MeshDataTool_commit_to_surface>` **(** :ref:`ArrayMesh<class_arraymesh>` mesh **)**                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`create_from_surface<class_MeshDataTool_create_from_surface>` **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface **)**      |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`create_from_surface<class_MeshDataTool_create_from_surface>` **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface **)**      |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_edge_count<class_MeshDataTool_get_edge_count>` **(** **)** const                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -106,11 +106,11 @@ Member Function Description
 
 .. _class_MeshDataTool_commit_to_surface:
 
-- :ref:`int<class_int>` **commit_to_surface** **(** :ref:`ArrayMesh<class_arraymesh>` mesh **)**
+- :ref:`Error<enum_@globalscope_error>` **commit_to_surface** **(** :ref:`ArrayMesh<class_arraymesh>` mesh **)**
 
 .. _class_MeshDataTool_create_from_surface:
 
-- :ref:`int<class_int>` **create_from_surface** **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface **)**
+- :ref:`Error<enum_@globalscope_error>` **create_from_surface** **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface **)**
 
 .. _class_MeshDataTool_get_edge_count:
 

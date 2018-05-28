@@ -16,6 +16,14 @@ Brief Description
 
 Container for a :ref:`Curve3D<class_curve3d>`.
 
+Signals
+-------
+
+.. _class_Path_curve_changed:
+
+- **curve_changed** **(** **)**
+
+
 Member Variables
 ----------------
 

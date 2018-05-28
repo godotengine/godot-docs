@@ -199,11 +199,11 @@ Returns a new color resulting from making this color darker by the specified per
 
 - :ref:`Color<class_color>` **from_hsv** **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` a=1 **)**
 
-Constructs a color from an HSV profile. ``h`` is a value between 0 and 360. ``s`` and ``v`` are values between 0 and 1.
+Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values between 0 and 1.
 
 ::
 
-    var c = Color.from_hsv(210, 0.5, 0.79, 0.8) # equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
+    var c = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
 
 .. _class_Color_gray:
 

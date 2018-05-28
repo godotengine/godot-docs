@@ -46,7 +46,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`class_has_signal<class_ClassDB_class_has_signal>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal **)** const                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`class_set_property<class_ClassDB_class_set_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const   |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`class_set_property<class_ClassDB_class_set_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_class_list<class_ClassDB_get_class_list>` **(** **)** const                                                                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,7 +127,7 @@ Returns the 'signal' data of 'class' or its ancestry. The returned value is a :r
 
 - :ref:`Array<class_array>` **class_get_signal_list** **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
-Returns an array with all the signals of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_dictionary>` as described in class_get_signal.
+Returns an array with all the signals of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_dictionary>` as described in :ref:`class_get_signal<class_ClassDB_class_get_signal>`.
 
 .. _class_ClassDB_class_has_integer_constant:
 
@@ -149,7 +149,7 @@ Return whether 'class' or its ancestry has a signal called 'signal' or not.
 
 .. _class_ClassDB_class_set_property:
 
-- :ref:`int<class_int>` **class_set_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const
+- :ref:`Error<enum_@globalscope_error>` **class_set_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const
 
 Sets 'property' value of 'class' to 'value'.
 

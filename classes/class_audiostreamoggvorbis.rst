@@ -19,6 +19,10 @@ OGG Vorbis audio stream driver.
 Member Variables
 ----------------
 
+  .. _class_AudioStreamOGGVorbis_data:
+
+- :ref:`PoolByteArray<class_poolbytearray>` **data** - Contains the audio data in bytes.
+
   .. _class_AudioStreamOGGVorbis_loop:
 
 - :ref:`bool<class_bool>` **loop**

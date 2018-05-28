@@ -30,7 +30,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                  | :ref:`get_mouse_position<class_Viewport_get_mouse_position>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>` **(** :ref:`int<class_int>` info **)**                                                                                                                     |
+| :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>` **(** :ref:`RenderInfo<enum_viewport_renderinfo>` info **)**                                                                                               |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                  | :ref:`get_size_override<class_Viewport_get_size_override>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -309,7 +309,7 @@ Get the mouse position, relative to the viewport.
 
 .. _class_Viewport_get_render_info:
 
-- :ref:`int<class_int>` **get_render_info** **(** :ref:`int<class_int>` info **)**
+- :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_viewport_renderinfo>` info **)**
 
 Get the specific information about the viewport from rendering pipeline.
 

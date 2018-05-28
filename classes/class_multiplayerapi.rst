@@ -14,38 +14,30 @@ MultiplayerAPI
 Brief Description
 -----------------
 
-
+High Level Multiplayer API.
 
 Member Functions
 ----------------
 
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_peer<class_MultiplayerAPI_add_peer>` **(** :ref:`int<class_int>` id **)**                    |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`clear<class_MultiplayerAPI_clear>` **(** **)**                                                   |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`connected_to_server<class_MultiplayerAPI_connected_to_server>` **(** **)**                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`connection_failed<class_MultiplayerAPI_connection_failed>` **(** **)**                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`del_peer<class_MultiplayerAPI_del_peer>` **(** :ref:`int<class_int>` id **)**                    |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`  | :ref:`get_network_connected_peers<class_MultiplayerAPI_get_network_connected_peers>` **(** **)** const |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_network_unique_id<class_MultiplayerAPI_get_network_unique_id>` **(** **)** const             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_rpc_sender_id<class_MultiplayerAPI_get_rpc_sender_id>` **(** **)** const                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`has_network_peer<class_MultiplayerAPI_has_network_peer>` **(** **)** const                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_network_server<class_MultiplayerAPI_is_network_server>` **(** **)** const                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`poll<class_MultiplayerAPI_poll>` **(** **)**                                                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`server_disconnected<class_MultiplayerAPI_server_disconnected>` **(** **)**                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_root_node<class_MultiplayerAPI_set_root_node>` **(** :ref:`Node<class_node>` node **)**      |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------+
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`clear<class_MultiplayerAPI_clear>` **(** **)**                                                                                       |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_poolintarray>`  | :ref:`get_network_connected_peers<class_MultiplayerAPI_get_network_connected_peers>` **(** **)** const                                     |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_network_unique_id<class_MultiplayerAPI_get_network_unique_id>` **(** **)** const                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_rpc_sender_id<class_MultiplayerAPI_get_rpc_sender_id>` **(** **)** const                                                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`has_network_peer<class_MultiplayerAPI_has_network_peer>` **(** **)** const                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_network_server<class_MultiplayerAPI_is_network_server>` **(** **)** const                                                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`poll<class_MultiplayerAPI_poll>` **(** **)**                                                                                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`    | :ref:`send_bytes<class_MultiplayerAPI_send_bytes>` **(** :ref:`PoolByteArray<class_poolbytearray>` bytes, :ref:`int<class_int>` id=0 **)** |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_root_node<class_MultiplayerAPI_set_root_node>` **(** :ref:`Node<class_node>` node **)**                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -54,21 +46,37 @@ Signals
 
 - **connected_to_server** **(** **)**
 
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` successfully connected to a server. Only emitted on clients.
+
 .. _class_MultiplayerAPI_connection_failed:
 
 - **connection_failed** **(** **)**
+
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` fails to establish a connection to a server. Only emitted on clients.
 
 .. _class_MultiplayerAPI_network_peer_connected:
 
 - **network_peer_connected** **(** :ref:`int<class_int>` id **)**
 
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
+
 .. _class_MultiplayerAPI_network_peer_disconnected:
 
 - **network_peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
+
+.. _class_MultiplayerAPI_network_peer_packet:
+
+- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_poolbytearray>` packet **)**
+
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_send_bytes>`). ID is the peer ID of the peer that sent the packet.
+
 .. _class_MultiplayerAPI_server_disconnected:
 
 - **server_disconnected** **(** **)**
+
+Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` disconnects from server. Only emitted on clients.
 
 
 Member Variables
@@ -76,66 +84,85 @@ Member Variables
 
   .. _class_MultiplayerAPI_network_peer:
 
-- :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer**
+- :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
   .. _class_MultiplayerAPI_refuse_new_network_connections:
 
-- :ref:`bool<class_bool>` **refuse_new_network_connections**
+- :ref:`bool<class_bool>` **refuse_new_network_connections** - If ``true`` the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` refuses new incoming connections.
 
+
+Description
+-----------
+
+This class implements most of the logic behind the high level multiplayer API.
+
+By default, :ref:`SceneTree<class_scenetree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
+
+It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
 Member Function Description
 ---------------------------
-
-.. _class_MultiplayerAPI_add_peer:
-
-- void **add_peer** **(** :ref:`int<class_int>` id **)**
 
 .. _class_MultiplayerAPI_clear:
 
 - void **clear** **(** **)**
 
-.. _class_MultiplayerAPI_connected_to_server:
-
-- void **connected_to_server** **(** **)**
-
-.. _class_MultiplayerAPI_connection_failed:
-
-- void **connection_failed** **(** **)**
-
-.. _class_MultiplayerAPI_del_peer:
-
-- void **del_peer** **(** :ref:`int<class_int>` id **)**
+Clears the current MultiplayerAPI network state (you shouldn't call this unless you know what you are doing).
 
 .. _class_MultiplayerAPI_get_network_connected_peers:
 
 - :ref:`PoolIntArray<class_poolintarray>` **get_network_connected_peers** **(** **)** const
 
+Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>`.
+
 .. _class_MultiplayerAPI_get_network_unique_id:
 
 - :ref:`int<class_int>` **get_network_unique_id** **(** **)** const
+
+Returns the unique peer ID of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>`.
 
 .. _class_MultiplayerAPI_get_rpc_sender_id:
 
 - :ref:`int<class_int>` **get_rpc_sender_id** **(** **)** const
 
+Returns the sender's peer ID for the RPC currently being executed.
+
+NOTE: If not inside an RPC this method will return 0.
+
 .. _class_MultiplayerAPI_has_network_peer:
 
 - :ref:`bool<class_bool>` **has_network_peer** **(** **)** const
+
+Returns ``true`` if there is a :ref:`network_peer<class_MultiplayerAPI_network_peer>` set.
 
 .. _class_MultiplayerAPI_is_network_server:
 
 - :ref:`bool<class_bool>` **is_network_server** **(** **)** const
 
+Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` is in server mode (listening for connections).
+
 .. _class_MultiplayerAPI_poll:
 
 - void **poll** **(** **)**
 
-.. _class_MultiplayerAPI_server_disconnected:
+Method used for polling the MultiplayerAPI.
 
-- void **server_disconnected** **(** **)**
+You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` override.
+
+SceneTree will poll the default MultiplayerAPI for you.
+
+.. _class_MultiplayerAPI_send_bytes:
+
+- :ref:`Error<enum_@globalscope_error>` **send_bytes** **(** :ref:`PoolByteArray<class_poolbytearray>` bytes, :ref:`int<class_int>` id=0 **)**
+
+Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
 
 .. _class_MultiplayerAPI_set_root_node:
 
 - void **set_root_node** **(** :ref:`Node<class_node>` node **)**
+
+Sets the base root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
+
+This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
 

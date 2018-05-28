@@ -19,9 +19,9 @@ Exposes performance related data.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`int<class_int>` monitor **)** const |
-+----------------------------+---------------------------------------------------------------------------------------------------+
++----------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`Monitor<enum_performance_monitor>` monitor **)** const |
++----------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Enums
 -----
@@ -72,7 +72,7 @@ Member Function Description
 
 .. _class_Performance_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`int<class_int>` monitor **)** const
+- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_performance_monitor>` monitor **)** const
 
 Returns the value of one of the available monitors. You should provide one of this class's constants as the argument, like this:
 

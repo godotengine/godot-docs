@@ -30,6 +30,12 @@ Member Functions
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolRealArray<class_poolrealarray>`        | :ref:`get_baked_tilts<class_Curve3D_get_baked_tilts>` **(** **)** const                                                                                                                                                                       |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_baked_up_vectors<class_Curve3D_get_baked_up_vectors>` **(** **)** const                                                                                                                                                             |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_closest_offset<class_Curve3D_get_closest_offset>` **(** :ref:`Vector3<class_vector3>` to_point **)** const                                                                                                                          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                    | :ref:`get_closest_point<class_Curve3D_get_closest_point>` **(** :ref:`Vector3<class_vector3>` to_point **)** const                                                                                                                            |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_point_count<class_Curve3D_get_point_count>` **(** **)** const                                                                                                                                                                       |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`get_point_in<class_Curve3D_get_point_in>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                   |
@@ -43,6 +49,8 @@ Member Functions
 | :ref:`Vector3<class_vector3>`                    | :ref:`interpolate<class_Curve3D_interpolate>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const                                                                                                                        |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`interpolate_baked<class_Curve3D_interpolate_baked>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const                                                                                             |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                    | :ref:`interpolate_baked_up_vector<class_Curve3D_interpolate_baked_up_vector>` **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** const                                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`interpolatef<class_Curve3D_interpolatef>` **(** :ref:`float<class_float>` fofs **)** const                                                                                                                                              |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +73,10 @@ Member Variables
   .. _class_Curve3D_bake_interval:
 
 - :ref:`float<class_float>` **bake_interval** - The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve3D_get_baked_points>` or :ref:`get_baked_length<class_Curve3D_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
+
+  .. _class_Curve3D_up_vector_enabled:
+
+- :ref:`bool<class_bool>` **up_vector_enabled** - If ``true``, the curve will bake up vectors used for orientation. See :ref:`OrientedPathFollow<class_orientedpathfollow>`. Changing it forces the cache to be recomputed.
 
 
 Description
@@ -108,6 +120,30 @@ Returns the cache of points as a :ref:`PoolVector3Array<class_poolvector3array>`
 - :ref:`PoolRealArray<class_poolrealarray>` **get_baked_tilts** **(** **)** const
 
 Returns the cache of tilts as a RealArray.
+
+.. _class_Curve3D_get_baked_up_vectors:
+
+- :ref:`PoolVector3Array<class_poolvector3array>` **get_baked_up_vectors** **(** **)** const
+
+Returns the cache of up vectors as a :ref:`PoolVector3Array<class_poolvector3array>`.
+
+If :ref:`up_vector_enabled<class_Curve3D_up_vector_enabled>` is ``false``, the cache will be empty.
+
+.. _class_Curve3D_get_closest_offset:
+
+- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector3<class_vector3>` to_point **)** const
+
+Returns the closest offset to ``to_point``. This offset is meant to be used in one of the interpolate_baked\* methods.
+
+``to_point`` must be in this curve's local space.
+
+.. _class_Curve3D_get_closest_point:
+
+- :ref:`Vector3<class_vector3>` **get_closest_point** **(** :ref:`Vector3<class_vector3>` to_point **)** const
+
+Returns the closest point (in curve's local space) to ``to_point``.
+
+``to_point`` must be in this curve's local space.
 
 .. _class_Curve3D_get_point_count:
 
@@ -157,6 +193,16 @@ To do that, it finds the two cached points where the "offset" lies between, then
 
 Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).
 
+.. _class_Curve3D_interpolate_baked_up_vector:
+
+- :ref:`Vector3<class_vector3>` **interpolate_baked_up_vector** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** const
+
+Returns an up vector within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
+
+To do that, it finds the two cached up vectors where the ``offset`` lies between, then interpolates the values. If ``apply_tilt`` is ``true``, an interpolated tilt is applied to the interpolated up vector.
+
+If the curve has no up vectors, the function sends an error to the console, and returns (0, 1, 0).
+
 .. _class_Curve3D_interpolatef:
 
 - :ref:`Vector3<class_vector3>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** const
@@ -193,7 +239,7 @@ Sets the position for the vertex "idx". If the index is out of bounds, the funct
 
 Sets the tilt angle in radians for the point "idx". If the index is out of bounds, the function sends an error to the console.
 
-The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_pathfollow>`, this tilt is an offset over the natural tilt the PathFollow calculates.
+The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_pathfollow>` or :ref:`OrientedPathFollow<class_orientedpathfollow>`, this tilt is an offset over the natural tilt the :ref:`PathFollow<class_pathfollow>` or :ref:`OrientedPathFollow<class_orientedpathfollow>` calculates.
 
 .. _class_Curve3D_tessellate:
 

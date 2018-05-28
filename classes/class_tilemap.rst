@@ -180,122 +180,132 @@ Member Function Description
 
 - void **clear** **(** **)**
 
-Clear all cells.
+Clears all cells.
 
 .. _class_TileMap_fix_invalid_tiles:
 
 - void **fix_invalid_tiles** **(** **)**
 
-Clear cells that does not exist in the tileset.
+Clears cells that do not exist in the tileset.
 
 .. _class_TileMap_get_cell:
 
 - :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Return the tile index of the referenced cell.
+Returns the tile index of the given cell.
 
 .. _class_TileMap_get_cellv:
 
 - :ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_vector2>` position **)** const
 
-Return the tile index of the cell referenced by a Vector2.
+Returns the tile index of the cell given by a Vector2.
 
 .. _class_TileMap_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
+Returns ``true`` if the given collision layer bit is set.
+
 .. _class_TileMap_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
+Returns ``true`` if the given collision mask bit is set.
 
 .. _class_TileMap_get_used_cells:
 
 - :ref:`Array<class_array>` **get_used_cells** **(** **)** const
 
-Return an array of all cells containing a tile from the tileset (i.e. a tile index different from -1).
+Returns an array of all cells containing a tile from the tileset (i.e. a tile index different from ``-1``).
 
 .. _class_TileMap_get_used_cells_by_id:
 
 - :ref:`Array<class_array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** const
 
+Returns an array of all cells with the given tile id.
+
 .. _class_TileMap_get_used_rect:
 
 - :ref:`Rect2<class_rect2>` **get_used_rect** **(** **)**
+
+Returns a rectangle enclosing the used (non-empty) tiles of the map.
 
 .. _class_TileMap_is_cell_transposed:
 
 - :ref:`bool<class_bool>` **is_cell_transposed** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Return whether the referenced cell is transposed, i.e. the X and Y axes are swapped (mirroring with regard to the (1,1) vector).
+Returns ``true`` if the given cell is transposed, i.e. the x and y axes are swapped.
 
 .. _class_TileMap_is_cell_x_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Return whether the referenced cell is flipped over the X axis.
+Returns ``true`` if the given cell is flipped in the x axis.
 
 .. _class_TileMap_is_cell_y_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Return whether the referenced cell is flipped over the Y axis.
+Returns ``true`` if the given cell is flipped in the y axis.
 
 .. _class_TileMap_map_to_world:
 
 - :ref:`Vector2<class_vector2>` **map_to_world** **(** :ref:`Vector2<class_vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** const
 
-Return the absolute world position corresponding to the tilemap (grid-based) coordinates given as an argument.
+Returns the global position corresponding to the given tilemap (grid-based) coordinates.
 
-Optionally, the tilemap's potential half offset can be ignored.
+Optionally, the tilemap's half offset can be ignored.
 
 .. _class_TileMap_set_cell:
 
 - void **set_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false, :ref:`Vector2<class_vector2>` autotile_coord=Vector2( 0, 0 ) **)**
 
-Set the tile index for the cell referenced by its grid-based X and Y coordinates.
+Sets the tile index for the cell given by a Vector2.
 
-A tile index of -1 clears the cell.
+An index of ``-1`` clears the cell.
 
-Optionally, the tile can also be flipped over the X and Y coordinates, transposed, or be given autotile coordinates.
+Optionally, the tile can also be flipped, transposed, or given autotile coordinates.
 
 .. _class_TileMap_set_cellv:
 
 - void **set_cellv** **(** :ref:`Vector2<class_vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**
 
-Set the tile index for the cell referenced by a Vector2 of grid-based coordinates.
+Sets the tile index for the given cell.
 
-A tile index of -1 clears the cell.
+An index of ``-1`` clears the cell.
 
-Optionally, the tile can also be flipped over the X and Y axes or transposed.
+Optionally, the tile can also be flipped or transposed.
 
 .. _class_TileMap_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set any collision layer to be ``true`` or ``false``.
+Sets the given collision layer bit.
 
 .. _class_TileMap_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
+Sets the given collision mask bit.
+
 .. _class_TileMap_update_bitmask_area:
 
 - void **update_bitmask_area** **(** :ref:`Vector2<class_vector2>` position **)**
 
-Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based X and Y coordinates.
+Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based x and y coordinates.
 
 .. _class_TileMap_update_bitmask_region:
 
 - void **update_bitmask_region** **(** :ref:`Vector2<class_vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) **)**
 
-Applies autotiling rules to the cells in the given region (specified by grid-based X and Y coordinates).
+Applies autotiling rules to the cells in the given region (specified by grid-based x and y coordinates).
 
-Calling with invalid (or missing) parameters applies autotiling rules for the entire TileMap.
+Calling with invalid (or missing) parameters applies autotiling rules for the entire tilemap.
 
 .. _class_TileMap_world_to_map:
 
 - :ref:`Vector2<class_vector2>` **world_to_map** **(** :ref:`Vector2<class_vector2>` world_position **)** const
 
-Return the tilemap (grid-based) coordinates corresponding to the absolute world position given as an argument.
+Returns the tilemap (grid-based) coordinatescorresponding to the given global position.
 
 

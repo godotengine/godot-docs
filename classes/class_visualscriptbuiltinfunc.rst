@@ -82,7 +82,7 @@ enum **BuiltinFunc**
 - **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_weakref>` from the input.
 - **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_funcref>` from the input.
 - **TYPE_CONVERT** = **50** --- Convert between types.
-- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check enum Variant.Type for the integers that might be returned.
+- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@globalscope_variant.type>` for the integers that might be returned.
 - **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
 - **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
 - **TEXT_STR** = **54** --- Convert the input to a string.

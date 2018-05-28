@@ -300,13 +300,13 @@ Return the amount of elements in the array.
 
 - void **sort** **(** **)**
 
-Sort the array using natural order and return reference to the array.
+Sort the array using natural order.
 
 .. _class_Array_sort_custom:
 
 - void **sort_custom** **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func **)**
 
-Sort the array using a custom method and return reference to the array. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise. Note: you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
+Sort the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise. Note: you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 ::
 

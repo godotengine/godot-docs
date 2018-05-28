@@ -54,6 +54,14 @@ Member Variables
 
 - :ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font data.
 
+  .. _class_DynamicFont_outline_color:
+
+- :ref:`Color<class_color>` **outline_color**
+
+  .. _class_DynamicFont_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
   .. _class_DynamicFont_size:
 
 - :ref:`int<class_int>` **size** - The font size.

@@ -19,6 +19,10 @@ Plays audio.
 Member Variables
 ----------------
 
+  .. _class_AudioStreamSample_data:
+
+- :ref:`PoolByteArray<class_poolbytearray>` **data** - Contains the audio data in bytes.
+
   .. _class_AudioStreamSample_format:
 
 - :ref:`Format<enum_audiostreamsample_format>` **format** - Audio format. See FORMAT\_\* constants for values.

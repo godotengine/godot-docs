@@ -21,15 +21,15 @@ Base class for different kinds of buttons.
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                        |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                                |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                                      |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                        |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`DrawMode<enum_basebutton_drawmode>`  | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                                |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                                      |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -139,7 +139,7 @@ Called when the button is toggled (only if toggle_mode is active).
 
 .. _class_BaseButton_get_draw_mode:
 
-- :ref:`int<class_int>` **get_draw_mode** **(** **)** const
+- :ref:`DrawMode<enum_basebutton_drawmode>` **get_draw_mode** **(** **)** const
 
 Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 

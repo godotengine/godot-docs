@@ -16,7 +16,7 @@ WebSocketMultiplayerPeer
 Brief Description
 -----------------
 
-
+Base class for WebSocket server and client.
 
 Member Functions
 ----------------
@@ -32,6 +32,13 @@ Signals
 
 - **peer_packet** **(** :ref:`int<class_int>` peer_source **)**
 
+Emitted when a packet is received from a peer. Note: this signal is only emitted when the client or server is configured to use Godot multiplayer API.
+
+
+Description
+-----------
+
+Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_multiplayerapi>`.
 
 Member Function Description
 ---------------------------
@@ -39,5 +46,7 @@ Member Function Description
 .. _class_WebSocketMultiplayerPeer_get_peer:
 
 - :ref:`WebSocketPeer<class_websocketpeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
+
+Returns the :ref:`WebSocketPeer<class_websocketpeer>` associated to the given ``peer_id``.
 
 

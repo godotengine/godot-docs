@@ -26,13 +26,13 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>` **(** **)**                                                  |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** const                                |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** const                                |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>` **(** **)**                                                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`put_packet<class_PacketPeer_put_packet>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)** |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`put_packet<class_PacketPeer_put_packet>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)** |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`put_var<class_PacketPeer_put_var>` **(** :ref:`Variant<class_variant>` var **)**                      |
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`put_var<class_PacketPeer_put_var>` **(** :ref:`Variant<class_variant>` var **)**                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -65,7 +65,7 @@ Get a raw packet.
 
 .. _class_PacketPeer_get_packet_error:
 
-- :ref:`int<class_int>` **get_packet_error** **(** **)** const
+- :ref:`Error<enum_@globalscope_error>` **get_packet_error** **(** **)** const
 
 Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_get_packet>` and :ref:`get_var<class_PacketPeer_get_var>`).
 
@@ -77,13 +77,13 @@ Get a Variant.
 
 .. _class_PacketPeer_put_packet:
 
-- :ref:`int<class_int>` **put_packet** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@globalscope_error>` **put_packet** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
 
 Send a raw packet.
 
 .. _class_PacketPeer_put_var:
 
-- :ref:`int<class_int>` **put_var** **(** :ref:`Variant<class_variant>` var **)**
+- :ref:`Error<enum_@globalscope_error>` **put_var** **(** :ref:`Variant<class_variant>` var **)**
 
 Send a Variant as a packet.
 

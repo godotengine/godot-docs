@@ -18,15 +18,19 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                  |
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Basis<class_basis>` from **)**                                                                                                      |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_vector3>` euler **)**                                                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Basis<class_basis>` from **)**                                                                                                      |
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`cubic_slerp<class_Quat_cubic_slerp>` **(** :ref:`Quat<class_quat>` b, :ref:`Quat<class_quat>` pre_a, :ref:`Quat<class_quat>` post_b, :ref:`float<class_float>` t **)** |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`dot<class_Quat_dot>` **(** :ref:`Quat<class_quat>` b **)**                                                                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_euler<class_Quat_get_euler>` **(** **)**                                                                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`inverse<class_Quat_inverse>` **(** **)**                                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,6 +41,10 @@ Member Functions
 | :ref:`float<class_float>`      | :ref:`length_squared<class_Quat_length_squared>` **(** **)**                                                                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`normalized<class_Quat_normalized>` **(** **)**                                                                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_axis_angle<class_Quat_set_axis_angle>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_euler<class_Quat_set_euler>` **(** :ref:`Vector3<class_vector3>` euler **)**                                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`slerp<class_Quat_slerp>` **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**                                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,22 +76,28 @@ Member Variables
 Description
 -----------
 
-A 4-dimensional vector representing a rotation.
+A unit quaternion used for representing 3D rotations.
 
-The vector represents a 4 dimensional complex number where multiplication of the basis elements is not commutative (multiplying i with j gives a different result than multiplying j with i).
+It is similar to :ref:`Basis<class_basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating point errors.
 
-Multiplying quaternions reproduces rotation sequences. However quaternions need to be often renormalized, or else they suffer from precision issues.
 
-It can be used to perform SLERP (spherical-linear interpolation) between two rotations.
+
+Quaternions need to be (re)normalized.
 
 Member Function Description
 ---------------------------
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
+- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Basis<class_basis>` from **)**
 
-Returns a quaternion defined by these values.
+Returns the rotation matrix corresponding to the given quaternion.
+
+.. _class_Quat_Quat:
+
+- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Vector3<class_vector3>` euler **)**
+
+Returns a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_Quat:
 
@@ -93,9 +107,9 @@ Returns a quaternion that will rotate around the given axis by the specified ang
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Basis<class_basis>` from **)**
+- :ref:`Quat<class_quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
-Returns the rotation matrix corresponding to the given quaternion.
+Returns a quaternion defined by these values.
 
 .. _class_Quat_cubic_slerp:
 
@@ -108,6 +122,12 @@ Performs a cubic spherical-linear interpolation with another quaternion.
 - :ref:`float<class_float>` **dot** **(** :ref:`Quat<class_quat>` b **)**
 
 Returns the dot product of two quaternions.
+
+.. _class_Quat_get_euler:
+
+- :ref:`Vector3<class_vector3>` **get_euler** **(** **)**
+
+Return Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_inverse:
 
@@ -138,6 +158,18 @@ Returns the length of the quaternion, squared.
 - :ref:`Quat<class_quat>` **normalized** **(** **)**
 
 Returns a copy of the quaternion, normalized to unit length.
+
+.. _class_Quat_set_axis_angle:
+
+- void **set_axis_angle** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+
+Set the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
+
+.. _class_Quat_set_euler:
+
+- void **set_euler** **(** :ref:`Vector3<class_vector3>` euler **)**
+
+Set the quaternion to a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_slerp:
 

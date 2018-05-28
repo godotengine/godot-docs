@@ -142,7 +142,7 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`      | :ref:`rpc<class_Node_rpc>` **(** :ref:`String<class_string>` method **)** vararg                                                                                                             |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`rpc_config<class_Node_rpc_config>` **(** :ref:`String<class_string>` method, :ref:`int<class_int>` mode **)**                                                                          |
+| void                               | :ref:`rpc_config<class_Node_rpc_config>` **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_node_rpcmode>` mode **)**                                                              |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`      | :ref:`rpc_id<class_Node_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` method **)** vararg                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset<class_Node_rset>` **(** :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                                                           |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`rset_config<class_Node_rset_config>` **(** :ref:`String<class_string>` property, :ref:`int<class_int>` mode **)**                                                                      |
+| void                               | :ref:`rset_config<class_Node_rset_config>` **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_node_rpcmode>` mode **)**                                                          |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset_id<class_Node_rset_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                      |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -218,17 +218,17 @@ Emitted when the node is still active but about to exit the tree. This is the ri
 Member Variables
 ----------------
 
-  .. _class_Node_custom_multiplayer_api:
+  .. _class_Node_custom_multiplayer:
 
-- :ref:`MultiplayerAPI<class_multiplayerapi>` **custom_multiplayer_api**
+- :ref:`MultiplayerAPI<class_multiplayerapi>` **custom_multiplayer** - The override to the default :ref:`MultiplayerAPI<class_multiplayerapi>`. Set to null to use the default SceneTree one.
 
   .. _class_Node_filename:
 
 - :ref:`String<class_string>` **filename** - When a scene is instanced from a file, its topmost node contains the filename from which it was loaded.
 
-  .. _class_Node_multiplayer_api:
+  .. _class_Node_multiplayer:
 
-- :ref:`MultiplayerAPI<class_multiplayerapi>` **multiplayer_api**
+- :ref:`MultiplayerAPI<class_multiplayerapi>` **multiplayer** - The :ref:`MultiplayerAPI<class_multiplayerapi>` instance associated with this node. Either the :ref:`custom_multiplayer<class_Node_custom_multiplayer>`, or the default SceneTree one (if inside tree).
 
   .. _class_Node_name:
 
@@ -763,15 +763,15 @@ Sends a remote procedure call request for the given ``method`` to peers on the n
 
 .. _class_Node_rpc_config:
 
-- void **rpc_config** **(** :ref:`String<class_string>` method, :ref:`int<class_int>` mode **)**
+- void **rpc_config** **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_node_rpcmode>` mode **)**
 
-Changes the RPC mode for the given ``method`` to the given ``mode``. See enum RPCMode. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
+Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_@globalscope_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
 
 .. _class_Node_rpc_id:
 
 - :ref:`Variant<class_variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` method **)** vararg
 
-Sends a :ref:`rpc<class_Node_rpc>` to a specific peer identified by ``peer_id``. Returns an empty :ref:`Variant<class_variant>`.
+Sends a :ref:`rpc<class_Node_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`). Returns an empty :ref:`Variant<class_variant>`.
 
 .. _class_Node_rpc_unreliable:
 
@@ -783,7 +783,7 @@ Sends a :ref:`rpc<class_Node_rpc>` using an unreliable protocol. Returns an empt
 
 - :ref:`Variant<class_variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` method **)** vararg
 
-Sends a :ref:`rpc<class_Node_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol. Returns an empty :ref:`Variant<class_variant>`.
+Sends a :ref:`rpc<class_Node_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`). Returns an empty :ref:`Variant<class_variant>`.
 
 .. _class_Node_rset:
 
@@ -793,15 +793,15 @@ Remotely changes a property's value on other peers (and locally). Behaviour depe
 
 .. _class_Node_rset_config:
 
-- void **rset_config** **(** :ref:`String<class_string>` property, :ref:`int<class_int>` mode **)**
+- void **rset_config** **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_node_rpcmode>` mode **)**
 
-Changes the RPC mode for the given ``property`` to the given ``mode``. See enum RPCMode. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
+Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_@globalscope_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
 
 .. _class_Node_rset_id:
 
 - void **rset_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
 
-Remotely changes the property's value on a specific peer identified by ``peer_id``.
+Remotely changes the property's value on a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`).
 
 .. _class_Node_rset_unreliable:
 
@@ -813,7 +813,7 @@ Remotely changes the property's value on other peers (and locally) using an unre
 
 - void **rset_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
 
-Remotely changes property's value on a specific peer identified by ``peer_id`` using an unreliable protocol.
+Remotely changes property's value on a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`).
 
 .. _class_Node_set_display_folded:
 
@@ -837,7 +837,7 @@ Enables or disables physics (i.e. fixed framerate) processing. When a node is be
 
 - void **set_physics_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`method<class_Node_method>`_physics_process`` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
+Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal :ref:`_physics_process<class_Node__physics_process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (:ref:`set_physics_process<class_Node_set_physics_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
 
 .. _class_Node_set_process:
 
@@ -855,7 +855,7 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 
 - void **set_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`method<class_Node_method>`_process`` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_set_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
+Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_set_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
 
 .. _class_Node_set_process_unhandled_input:
 

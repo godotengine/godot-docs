@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptBasicTypeConstant_basic_type:
 
-- :ref:`Type<enum_variant_type>` **basic_type** - The type to get the constant from.
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **basic_type** - The type to get the constant from.
 
   .. _class_VisualScriptBasicTypeConstant_constant:
 
