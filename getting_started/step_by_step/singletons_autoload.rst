@@ -55,7 +55,7 @@ This means that any node can access a singleton named "playervariables" with:
  .. code-tab:: csharp
  
     var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
-    playerVariables.Health -= 10; // instance field
+    playerVariables.Health -= 10; // Instance field.
 
 Or even simpler using the name directly:
 
@@ -66,7 +66,7 @@ Or even simpler using the name directly:
 
  .. code-tab:: csharp
 
-    // Static members can be accessed by using the class name
+    // Static members can be accessed by using the class name.
     PlayerVariables.Health -= 10;
 
 Custom scene switcher
@@ -125,7 +125,7 @@ loaded!
 
     func _ready():
             var root = get_tree().get_root()
-            current_scene = root.get_child( root.get_child_count() -1 )
+            current_scene = root.get_child(root.get_child_count() -1)
 
  .. code-tab:: csharp
 
@@ -150,7 +150,6 @@ current scene and replaces it with the requested one.
  .. code-tab:: gdscript GDScript
 
     func goto_scene(path):
-
         # This function will usually be called from a signal callback,
         # or some other function from the running scene.
         # Deleting the current scene at this point might be
@@ -160,26 +159,25 @@ current scene and replaces it with the requested one.
         # The way around this is deferring the load to a later time, when
         # it is ensured that no code from the current scene is running:
 
-        call_deferred("_deferred_goto_scene",path)
+        call_deferred("_deferred_goto_scene", path)
 
 
     func _deferred_goto_scene(path):
-
         # Immediately free the current scene,
         # there is no risk here.    
         current_scene.free()
 
-        # Load new scene
+        # Load new scene.
         var s = ResourceLoader.load(path)
 
-        # Instance the new scene
+        # Instance the new scene.
         current_scene = s.instance()
 
-        # Add it to the active scene, as child of root
+        # Add it to the active scene, as child of root.
         get_tree().get_root().add_child(current_scene)
 
-        # optional, to make it compatible with the SceneTree.change_scene() API
-        get_tree().set_current_scene( current_scene )
+        # Optional, to make it compatible with the SceneTree.change_scene() API.
+        get_tree().set_current_scene(current_scene)
 
  .. code-tab:: csharp
 
@@ -202,16 +200,16 @@ current scene and replaces it with the requested one.
         // Immediately free the current scene, there is no risk here.
         CurrentScene.Free();
 
-        // Load a new scene
+        // Load a new scene.
         var nextScene = (PackedScene)GD.Load(path);
 
-        // Instance the new scene
+        // Instance the new scene.
         CurrentScene = nextScene.Instance();
 
-        // Add it to the active scene, as child of root
+        // Add it to the active scene, as child of root.
         GetTree().GetRoot().AddChild(CurrentScene);
 
-        // optional, to make it compatible with the SceneTree.change_scene() API
+        // Optional, to make it compatible with the SceneTree.change_scene() API.
         GetTree().SetCurrentScene(CurrentScene);
     }
 
@@ -229,14 +227,14 @@ and scene_b.gd:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    #add to scene_a.gd
+    # Add to 'scene_a.gd'.
 
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_b.tscn")
 
  .. code-tab:: csharp
 
-    // add to SceneA.cs
+    // Add to 'SceneA.cs'.
 
     public void OnGotoScenePressed()
     {
@@ -249,14 +247,14 @@ and
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    #add to scene_b.gd
+    # Add to 'scene_b.gd'.
 
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_a.tscn")
 
  .. code-tab:: csharp
 
-    // add to SceneB.cs
+    // Add to 'SceneB.cs'.
 
     public void OnGotoScenePressed()
     {
