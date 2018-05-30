@@ -107,7 +107,7 @@ Next we check to see if the joypad vector length is within the ``JOYPAD_DEADZONE
 If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scaled Radial Dead zone for precise dead zone calculating.
 
 .. note:: You can find a great article explaining all about how to handle joypad/controller dead zones here:
-          https://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
+          http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
             
           We're using a translated version of the scaled radial dead zone code provided in that article.
           The article is a great read, and I highly suggest giving it a look!

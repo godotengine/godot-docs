@@ -10,7 +10,8 @@ Download the Android SDK
 ------------------------
 
 Download and install the Android SDK from
-http://developer.android.com/sdk/index.html
+https://developer.android.com/studio/
+
 
 Install OpenJDK or Oracle JDK
 -----------------------------

@@ -10,7 +10,7 @@ Overview
 ~~~~~~~~
 
 As mentioned before, you can access the web frontend of the AssetLib
-on `Godot's official website <https://godotengine.org/asset-library>`_, and this
+on `Godot's official website <https://godotengine.org/asset-library/asset>`_, and this
 is what it looks like when you first visit it:
 
 |image0|

@@ -223,7 +223,7 @@ Some examples of planes
 -----------------------
 
 Here is a simple example of what planes are useful for. Imagine you have
-a `convex <http://www.mathsisfun.com/definitions/convex.html>`__
+a `convex <https://www.mathsisfun.com/definitions/convex.html>`__
 polygon. For example, a rectangle, a trapezoid, a triangle, or just any
 polygon where no faces bend inwards.
 
