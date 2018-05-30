@@ -162,8 +162,8 @@ located in the project root:
 
 
 Whenever packages are added or modified, run nuget restore in the root of the
-project directory, to ensure that the nuget packages will be available for msbuild
-(the tool used by godot to build mono projects) to use, run::
+project directory, to ensure that the nuget packages will be available for
+msbuild to use, run::
 
   $ msbuild /t:restore
 
