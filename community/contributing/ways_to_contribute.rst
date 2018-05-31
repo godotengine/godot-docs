@@ -47,7 +47,7 @@ positive to the engine, regardless of their skill set:
    can work full-time on the engine. Even with a low
    monthly wage, we need a steady donation income to continue doing this, which
    has been very beneficial to the project so far. So if you want to donate
-   some money to the project, check `our website <http://godotengine.org/donate>`_
+   some money to the project, check `our website <https://godotengine.org/donate>`_
    for details.
 
 Contributing code

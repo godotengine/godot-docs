@@ -151,8 +151,8 @@ the Godot modules as well as the `unofficial Python support <https://github.com/
 Why is FBX not supported for import?
 ------------------------------------
 
-FBX SDK has a `restrictive license <http://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
-that is incompatible with the `open license <http://opensource.org/licenses/MIT>`_
+FBX SDK has a `restrictive license <https://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
+that is incompatible with the `open license <https://opensource.org/licenses/MIT>`_
 provided by Godot.
 
 That said, Godot's Collada support is good, please use the

@@ -95,6 +95,13 @@ latex_documents = [
    'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
 ]
 
+# -- Options for linkcheck builder ----------------------------------------
+
+# disable checking urls with about.html#this_part_of_page anchors
+linkcheck_anchors = False
+
+linkcheck_timeout = 10
+
 # -- I18n settings --------------------------------------------------------
 
 locale_dirs = ['../sphinx/po/']

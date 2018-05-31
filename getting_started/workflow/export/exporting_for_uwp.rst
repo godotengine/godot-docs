@@ -17,7 +17,7 @@ the name used on the certificate.
 Limitations on Xbox One
 -----------------------
 
-As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
+As described in `UWP documentation <https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
 
 - Submitted as an "App"
     - available memory is 1GB

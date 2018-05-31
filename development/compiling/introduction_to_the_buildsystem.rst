@@ -8,7 +8,7 @@ Introduction to the buildsystem
 SCons
 -----
 
-Godot uses `SCons <http://www.scons.org>`__ to build. We love it, we are
+Godot uses `SCons <https://www.scons.org/>`__ to build. We love it, we are
 not changing it for anything else. We are not even sure other build
 systems are up to the task of building Godot. We constantly get requests
 to move the build system to CMake, or Visual Studio, but this is not
