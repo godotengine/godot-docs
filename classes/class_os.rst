@@ -379,24 +379,36 @@ At the end of the file is a statistic of all used Resource Types.
 
 - :ref:`int<class_int>` **execute** **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ] **)**
 
-Execute the file at the given path, optionally blocking until it returns.
+Execute the file at the given path with the arguments passed as an array of strings. Platform path resolution will take place. The resolved file must exist and be executable.
 
-Platform path resolution will take place.  The resolved file must exist and be executable.
+The arguments are used in the given order and separated by a space, so ``OS.execute('ping', ['-c', '3', 'godotengine.org'])`` will resolve to ``ping -c 3 godotengine.org`` in the system's shell.
 
-Returns a process id.
+This method has slightly different behaviour based on whether the ``blocking`` mode is enabled.
 
-For example:
+When ``blocking`` is enabled, the Godot thread will pause its execution while waiting for the process to terminate. The shell output of the process will be written to the ``output`` array as a single string. When the process terminates, the Godot thread will resume execution.
+
+When ``blocking`` is disabled, the Godot thread will continue while the new process runs. It is not possible to retrieve the shell output in non-blocking mode, so ``output`` will be empty.
+
+The return value also depends on the blocking mode. When blocking, the method will return -2 (no process ID information is available in blocking mode). When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return -1.
+
+Example of blocking mode and retrieving the shell output:
 
 ::
 
     var output = []
-    var pid = OS.execute('ls', [], true, output)
+    OS.execute('ls', ['-l', '/tmp'], true, output)
 
-If you wish to access a shell built-in or perform a composite command, a platform specific shell can be invoked.  For example:
+Example of non-blocking mode, running another instance of the project and storing its process ID:
 
 ::
 
-    var pid = OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
+    var pid = OS.execute(OS.get_executable_path(), [], false)
+
+If you wish to access a shell built-in or perform a composite command, a platform-specific shell can be invoked. For example:
+
+::
+
+    OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
 
 .. _class_OS_find_scancode_from_string:
 
@@ -744,7 +756,9 @@ Returns ``true`` if the window should always be on top of other windows.
 
 - :ref:`Error<enum_@globalscope_error>` **kill** **(** :ref:`int<class_int>` pid **)**
 
-Kill a process ID (this method can be used to kill processes that were not spawned by the game).
+Kill (terminate) the process identified by the given process ID (``pid``), e.g. the one returned by :ref:`execute<class_OS_execute>` in non-blocking mode.
+
+Note that this method can also be used to kill processes that were not spawned by the game.
 
 .. _class_OS_native_video_is_playing:
 

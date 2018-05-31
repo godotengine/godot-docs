@@ -26,7 +26,7 @@ Member Functions
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_string>` label, :ref:`PoolStringArray<class_poolstringarray>` properties, :ref:`Control<class_control>` editor **)**              |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`can_handle<class_EditorInspectorPlugin_can_handle>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                                                                       |
+| :ref:`bool<class_bool>`  | :ref:`can_handle<class_EditorInspectorPlugin_can_handle>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                                                                       |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`parse_begin<class_EditorInspectorPlugin_parse_begin>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                                                                     |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,7 +54,7 @@ Member Function Description
 
 .. _class_EditorInspectorPlugin_can_handle:
 
-- void **can_handle** **(** :ref:`Object<class_object>` object **)** virtual
+- :ref:`bool<class_bool>` **can_handle** **(** :ref:`Object<class_object>` object **)** virtual
 
 .. _class_EditorInspectorPlugin_parse_begin:
 

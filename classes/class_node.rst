@@ -142,7 +142,7 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`      | :ref:`rpc<class_Node_rpc>` **(** :ref:`String<class_string>` method **)** vararg                                                                                                             |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`rpc_config<class_Node_rpc_config>` **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_node_rpcmode>` mode **)**                                                              |
+| void                               | :ref:`rpc_config<class_Node_rpc_config>` **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_multiplayerapi_rpcmode>` mode **)**                                                    |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`      | :ref:`rpc_id<class_Node_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` method **)** vararg                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset<class_Node_rset>` **(** :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                                                           |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`rset_config<class_Node_rset_config>` **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_node_rpcmode>` mode **)**                                                          |
+| void                               | :ref:`rset_config<class_Node_rset_config>` **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_multiplayerapi_rpcmode>` mode **)**                                                |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset_id<class_Node_rset_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                      |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -274,16 +274,6 @@ enum **PauseMode**
 - **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from the node's parent. For the root node, it is equivalent to PAUSE_MODE_STOP. Default.
 - **PAUSE_MODE_STOP** = **1** --- Stop processing when the :ref:`SceneTree<class_scenetree>` is paused.
 - **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of the :ref:`SceneTree<class_scenetree>` pause state.
-
-  .. _enum_Node_RPCMode:
-
-enum **RPCMode**
-
-- **RPC_MODE_DISABLED** = **0** --- Used with :ref:`rpc_config<class_Node_rpc_config>` or :ref:`rset_config<class_Node_rset_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
-- **RPC_MODE_REMOTE** = **1** --- Used with :ref:`rpc_config<class_Node_rpc_config>` or :ref:`rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword.
-- **RPC_MODE_SYNC** = **2** --- Used with :ref:`rpc_config<class_Node_rpc_config>` or :ref:`rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed both on the remote end and locally. Analogous to the ``sync`` keyword.
-- **RPC_MODE_MASTER** = **3** --- Used with :ref:`rpc_config<class_Node_rpc_config>` or :ref:`rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. See :ref:`set_network_master<class_Node_set_network_master>`.
-- **RPC_MODE_SLAVE** = **4** --- Used with :ref:`rpc_config<class_Node_rpc_config>` or :ref:`rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on slaves for this node. Analogous to the ``slave`` keyword. See :ref:`set_network_master<class_Node_set_network_master>`.
 
   .. _enum_Node_DuplicateFlags:
 
@@ -763,9 +753,9 @@ Sends a remote procedure call request for the given ``method`` to peers on the n
 
 .. _class_Node_rpc_config:
 
-- void **rpc_config** **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_node_rpcmode>` mode **)**
+- void **rpc_config** **(** :ref:`String<class_string>` method, :ref:`RPCMode<enum_multiplayerapi_rpcmode>` mode **)**
 
-Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_@globalscope_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
+Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_multiplayerapi_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
 
 .. _class_Node_rpc_id:
 
@@ -793,9 +783,9 @@ Remotely changes a property's value on other peers (and locally). Behaviour depe
 
 .. _class_Node_rset_config:
 
-- void **rset_config** **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_node_rpcmode>` mode **)**
+- void **rset_config** **(** :ref:`String<class_string>` property, :ref:`RPCMode<enum_multiplayerapi_rpcmode>` mode **)**
 
-Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_@globalscope_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
+Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_multiplayerapi_rpcmode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
 
 .. _class_Node_rset_id:
 
