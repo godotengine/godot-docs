@@ -19,7 +19,7 @@ specified in the project settings:
 .. image:: img/ssl_certs.png
 
 This file should contain any number of public certificates in
-http://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail format.
+https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail format.
 
 Of course, remember to add .crt as filter so the exporter recognizes
 this when exporting your project.
@@ -36,7 +36,7 @@ key pair, and put the public pair in the .crt file (again, in PEM
 format). The private key should go to your server.
 
 OpenSSL has `some
-documentation <https://www.openssl.org/docs/HOWTO/keys.txt>`__ about
+documentation <https://raw.githubusercontent.com/openssl/openssl/master/doc/HOWTO/keys.txt>`__ about
 this. This approach also **does not require domain validation** nor
 requires you to spend a considerable amount of money in purchasing
 certificates from a CA.

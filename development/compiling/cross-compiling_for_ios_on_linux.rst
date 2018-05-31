@@ -31,7 +31,7 @@ Requirements
 -  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
    machine installed and in the ``PATH``. It has to be version >= 3.5
    to target ``arm64`` architecture.
--  `Fuse <http://fuse.sourceforge.net>`__ for mounting and umounting
+-  `Fuse <https://github.com/libfuse/libfuse>`__ for mounting and umounting
    the dmg image.
 -  `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
    needs to be built from source. The procedure for that is explained

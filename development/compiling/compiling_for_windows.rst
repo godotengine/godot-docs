@@ -11,14 +11,14 @@ Requirements
 For compiling under Windows, the following is required:
 
 -  Visual C++, `Visual
-   Studio Community <https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx>`__
+   Studio Community <https://www.visualstudio.com/vs/community/>`__
    (recommended), version 2013 (12.0) or later.
    **Make sure you read Installing Visual Studio caveats below or you
    will have to run/download the installer again.**
 -  `Python 2.7+ or Python 3.5+ <https://www.python.org/downloads/>`__.
 -  `Pywin32 Python Extension <https://github.com/mhammond/pywin32>`__
    for parallel builds (which increase the build speed by a great factor).
--  `SCons <http://www.scons.org>`__ build system.
+-  `SCons <https://www.scons.org>`__ build system.
 
 Setting up SCons
 ----------------
@@ -342,7 +342,7 @@ architectures (Win32/x64). They are equivalent.
 Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
-If you are a Linux or macOS user, you need to install `MinGW-w64 <https://mingw-w64.org>`_,
+If you are a Linux or macOS user, you need to install `MinGW-w64 <https://mingw-w64.org/doku.php>`_,
 which typically comes in 32-bit and 64-bit variants. The package names
 may differ based on your distro, here are some known ones:
 

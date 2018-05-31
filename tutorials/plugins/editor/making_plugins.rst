@@ -51,7 +51,7 @@ This is a simple ``ini`` file with metadata about your plugin. You need to set
 up the name and description so users can understand what it does. Add your
 own name so you can be properly credited. A version number is useful so users can see if
 they have an outdated version (if you are unsure on how to come up with
-the version number, check `SemVer <http://semver.org/>`_). And finally a main
+the version number, check `SemVer <https://semver.org/>`_). And finally a main
 script file to load when your plugin is active.
 
 The script file

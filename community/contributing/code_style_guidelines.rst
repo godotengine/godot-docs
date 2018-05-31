@@ -63,10 +63,10 @@ Here's how to install clang-format:
 - Linux: It will usually be available out-of-the-box with the clang toolchain
   packaged by your distribution. If your distro version is not the required one,
   you can download a pre-compiled version from the
-  `LLVM website <http://llvm.org/releases/download.html>`__, or if you are on
+  `LLVM website <http://releases.llvm.org/download.html>`__, or if you are on
   a Debian derivative, use the `upstream repos <http://apt.llvm.org/>`__.
 - macOS and Windows: You can download precompiled binaries from the
-  `LLVM website <http://llvm.org/releases/download.html>`__. You may need to add
+  `LLVM website <http://releases.llvm.org/download.html>`__. You may need to add
   the path to the binary's folder to your system's ``PATH`` environment
   variable to be able to call ``clang-format`` out of the box.
 
@@ -136,4 +136,4 @@ in the source tree are also using Python.
 For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`__,
 this is however not as strongly enforced as for the C++ code. If you are so
 inclined, you can check and format your Python changes using
-`autopep8 <https://pypi.python.org/pypi/autopep8>`__.
+`autopep8 <https://pypi.org/project/autopep8/>`__.

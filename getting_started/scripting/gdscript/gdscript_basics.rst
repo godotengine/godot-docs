@@ -20,7 +20,7 @@ In the early days, the engine used the `Lua <http://www.lua.org>`__
 scripting language. Lua is fast, but creating bindings to an object
 oriented system (by using fallbacks) was complex and slow and took an
 enormous amount of code. After some experiments with
-`Python <http://www.python.org>`__, it also proved difficult to embed.
+`Python <https://www.python.org>`__, it also proved difficult to embed.
 
 The last third party scripting language that was used for shipped games
 was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.

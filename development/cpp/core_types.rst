@@ -209,7 +209,7 @@ directory.
 References:
 ~~~~~~~~~~~
 
--  `core/math <https://github.com/godotengine/godot/blob/master/core/math>`__
+-  `core/math <https://github.com/godotengine/godot/tree/master/core/math>`__
 
 NodePath
 --------
@@ -220,7 +220,7 @@ referencing them fast.
 References:
 ~~~~~~~~~~~
 
--  `core/path_db.h <https://github.com/godotengine/godot/blob/master/core/path_db.h>`__
+-  `core/node_path.h <https://github.com/godotengine/godot/blob/master/core/node_path.h>`__
 
 RID
 ---

@@ -5,7 +5,7 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for the recent technologies `WebAssembly
-<http://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
 in the user's browser. **Firefox** and **Chromium** (Chrome, Opera) are
 the most popular supported browsers, **Safari** and **Edge** do not work yet.
 On **iOS**, all browsers must be based on WebKit (i.e. Safari), so they will also
