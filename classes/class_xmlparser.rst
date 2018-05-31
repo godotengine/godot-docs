@@ -149,7 +149,7 @@ Check whether or not the current element has a certain attribute.
 
 - :ref:`bool<class_bool>` **is_empty** **(** **)** const
 
-Check whether the current element is empty (this only works for completely empty tags, e.g. <element \>).
+Check whether the current element is empty (this only works for completely empty tags, e.g. <element \\>).
 
 .. _class_XMLParser_open:
 

@@ -128,7 +128,7 @@ Member Variables
 
   .. _class_RichTextLabel_tab_size:
 
-- :ref:`int<class_int>` **tab_size** - The number of spaces associated with a single tab length. Does not affect "\t" in text tags, only indent tags.
+- :ref:`int<class_int>` **tab_size** - The number of spaces associated with a single tab length. Does not affect "\\t" in text tags, only indent tags.
 
   .. _class_RichTextLabel_text:
 
