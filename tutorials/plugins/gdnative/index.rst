@@ -6,3 +6,4 @@ GDNative
    :name: toc-tutorials-gdnative
 
    gdnative-c-example
+   gdnative-cpp-example
