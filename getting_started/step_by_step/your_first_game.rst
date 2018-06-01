@@ -968,14 +968,12 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
     async public void ShowGameOver()
     {
-        ShowMessage("Game Over");
-    
         var startButton = (Button) GetNode("StartButton");
         var messageTimer = (Timer) GetNode("MessageTimer");
         var messageLabel = (Label) GetNode("MessageLabel");
 
-        //work around for gdscript's yield
-        await Task.Delay((int) messageTimer.WaitTime * 1000);
+        ShowMessage("Game Over");
+        await ToSignal(messageTimer, "timeout");
         messageLabel.Text = "Dodge the\nCreeps!";
         messageLabel.Show();
         startButton.Show();
