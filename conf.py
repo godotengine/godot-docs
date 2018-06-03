@@ -11,7 +11,14 @@ needs_sphinx = '1.3'
 
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
-extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.mathjax']
+extensions = [
+    'sphinx.ext.extlinks',
+    'sphinx.ext.mathjax',
+
+    'gdscript',
+    'sphinx_tabs.tabs'
+]
+
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -109,3 +116,10 @@ gettext_compact = False
 # Exclude class reference when marked with tag i18n.
 if tags.has('i18n'):
     exclude_patterns = ['classes']
+
+# -- Extension interface -------------------------------------------------------
+
+extlinks = {
+            'issue': ('https://github.com/godotengine/godot/issues/%s','#'),
+            'godothome': ('https://godotengine.org''%s',None)
+}

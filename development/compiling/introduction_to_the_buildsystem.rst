@@ -92,7 +92,7 @@ Example for using 4 cores:
 
     user@host:~/godot$ scons platform=x11 -j 4
 
-Note that there are currently `issues <https://github.com/godotengine/godot/issues/5182>`__ with parallel builds for at least some users, so if you are running into errors, try building without the ``-j`` parameter.
+Note that there are currently issues (:issue:`5182`) with parallel builds for at least some users, so if you are running into errors, try building without the ``-j`` parameter.
 
 Resulting binary
 ----------------
@@ -125,7 +125,7 @@ Just copy that binary to wherever you like, as it contains the
 project manager, editor and all means to execute the game. However, it
 lacks the data to export it to the different platforms. For that the
 export templates are needed (which can be either downloaded from
-`godotengine.org <https://godotengine.org/>`__, or you can build them yourself).
+:godothome:`/`, or you can build them yourself).
 
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
@@ -199,9 +199,9 @@ Export templates
 ----------------
 
 Official export templates are downloaded from the Godot Engine site:
-`godotengine.org <https://godotengine.org/>`__. However, you might want
-to build them yourself (in case you want newer ones, you are using custom
-modules, or simply don't trust your own shadow).
+:godothome:`/`. However, you might want to build them yourself (in case you 
+want newer ones, you are using custom modules, or simply don't trust
+your own shadow).
 
 If you download the official export templates package and unzip it, you
 will notice that most are just optimized binaries or packages for each
