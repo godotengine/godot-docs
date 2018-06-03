@@ -272,9 +272,9 @@ easily with dictionaries. Here's a simple battleship game example:
     var board = {}
 
     func initialize():
-        board[Vector(1, 1)] = SHIP
-        board[Vector(1, 2)] = SHIP
-        board[Vector(1, 3)] = SHIP
+        board[Vector2(1, 1)] = SHIP
+        board[Vector2(1, 2)] = SHIP
+        board[Vector2(1, 3)] = SHIP
 
     func missile(pos):
         if pos in board: # Something at that pos
