@@ -105,7 +105,7 @@ Checking whether the tree is initialized as a server or client:
 
 ::
 
-    get_tree().is_networking_server()
+    get_tree().is_network_server()
 
 Terminating the networking feature:
 
