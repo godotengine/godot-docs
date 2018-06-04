@@ -290,6 +290,9 @@ The final script should look like this:
     func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
 
+    func _on_button_pressed():
+        get_node("Label").text = "HELLO!"
+
  .. code-tab:: csharp
 
     using Godot;
@@ -298,15 +301,15 @@ The final script should look like this:
     // this is case sensitive!
     public class sayhello : Panel
     {
+        public override void _Ready()
+        {
+            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
+        }
+
         public void _OnButtonPressed()
         {
             var label = (Label)GetNode("Label");
             label.Text = "HELLO!";
-        }
-
-        public override void _Ready()
-        {
-            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
         }
     }
 
