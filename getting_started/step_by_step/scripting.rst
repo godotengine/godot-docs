@@ -284,11 +284,11 @@ The final script should look like this:
 
     extends Panel
 
-    func _on_button_pressed():
-        get_node("Label").text = "HELLO!"
-
     func _ready():
         get_node("Button").connect("pressed", self, "_on_button_pressed")
+
+    func _on_button_pressed():
+        get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
 
@@ -298,15 +298,15 @@ The final script should look like this:
     // this is case sensitive!
     public class sayhello : Panel
     {
+        public override void _Ready()
+        {
+            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
+        }
+
         public void _OnButtonPressed()
         {
             var label = (Label)GetNode("Label");
             label.Text = "HELLO!";
-        }
-
-        public override void _Ready()
-        {
-            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
         }
     }
 
