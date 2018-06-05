@@ -297,7 +297,7 @@ This code is exactly the same as the pistol.
 
 _______
 
-The last bit we need to do for the weapons is add 'reloading' to the knife. Add the following global variables to ``Weapon_Knife.gd``:
+The last bit we need to do for the weapons is add 'reloading' to the knife. Add the following class variables to ``Weapon_Knife.gd``:
 
 ::
     
