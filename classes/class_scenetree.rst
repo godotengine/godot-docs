@@ -178,6 +178,12 @@ Member Variables
 
 - :ref:`MultiplayerAPI<class_multiplayerapi>` **multiplayer** - The default :ref:`MultiplayerAPI<class_multiplayerapi>` instance for this SceneTree.
 
+  .. _class_SceneTree_multiplayer_poll:
+
+- :ref:`bool<class_bool>` **multiplayer_poll** - If ``true`` (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_multiplayerapi>` for this SceneTree during :ref:`idle_frame<class_SceneTree_idle_frame>`.
+
+When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_poll>` for processing network packets and delivering RPCs/RSETs. This allows to run RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_mutex>` protecion when accessing the :ref:`MultiplayerAPI<class_multiplayerapi>` from threads.
+
   .. _class_SceneTree_network_peer:
 
 - :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.

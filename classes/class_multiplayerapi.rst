@@ -100,10 +100,10 @@ enum **RPCMode**
 
 - **RPC_MODE_DISABLED** = **0** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
 - **RPC_MODE_REMOTE** = **1** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword. Calls and property changes are accepted from all remote peers, no matter if they are node's master or slaves.
-- **RPC_MODE_SYNC** = **2** --- Behave like constant RPC_MODE_REMOTE but also make the call or property change locally. Analogous to the ``sync`` keyword.
+- **RPC_MODE_SYNC** = **2** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Analogous to the ``sync`` keyword.
 - **RPC_MODE_MASTER** = **3** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. Only accepts calls or property changes from the node's network slaves, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
 - **RPC_MODE_SLAVE** = **4** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on slaves for this node. Analogous to the ``slave`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
-- **RPC_MODE_REMOTESYNC** = **5** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Same as constant RPC_MODE_SYNC which is only kept for compatibility. Analogous to the ``remotesync`` keyword.
+- **RPC_MODE_REMOTESYNC** = **5** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Same as ``RPC_MODE_SYNC`` which is only kept for compatibility. Analogous to the ``remotesync`` keyword.
 - **RPC_MODE_MASTERSYNC** = **6** --- Behave like ``RPC_MODE_MASTER`` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
 - **RPC_MODE_SLAVESYNC** = **7** --- Behave like ``RPC_MODE_SLAVE`` but also make the call or property change locally. Analogous to the ``slavesync`` keyword.
 
@@ -162,11 +162,9 @@ Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAP
 
 - void **poll** **(** **)**
 
-Method used for polling the MultiplayerAPI.
+Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_multiplayer_poll>` to ``false``. By default :ref:`SceneTree<class_scenetree>` will poll its MultiplayerAPI for you.
 
-You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` override.
-
-SceneTree will poll the default MultiplayerAPI for you.
+NOTE: This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_thread>`).
 
 .. _class_MultiplayerAPI_send_bytes:
 
