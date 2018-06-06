@@ -10,4 +10,5 @@ Assets workflow
    importing_audio_samples
    importing_translations
    importing_scenes
-   scene_from_other_software
+   dae_exporter
+   escn_exporter

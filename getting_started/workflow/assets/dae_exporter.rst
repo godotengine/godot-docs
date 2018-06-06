@@ -1,7 +1,7 @@
-.. _doc_scene_from_other_software:
+.. _doc_dae_exporter:
 
-3D Scene From Other Software
-=============================
+DAE Exporters
+==============
 
 Exporting DAE files from Maya and 3DS Max
 -----------------------------------------
@@ -22,13 +22,3 @@ should not be used.
 Godot provides a `Python
 Plugin <https://github.com/godotengine/collada-exporter>`__
 that will do a much better job of exporting the scenes.
-
-Exporting ESCN files from Blender
----------------------------------
-
-The .escn files shares the same format with .tscn (Godot scene file), but
-it will be compressed to binary once it is imported to Godot.
-
-Blender plugin `godot
--blender-exporter <https://github.com/godotengine/godot-blender-exporter>`__
-is in experimental use.
