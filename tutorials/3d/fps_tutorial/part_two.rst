@@ -483,7 +483,7 @@ Here's the script that will control our bullet:
     func collided(body):
         if hit_something == false:
             if body.has_method("bullet_hit"):
-                body.bullet_hit(BULLET_DAMAGE, self.global_transform)
+                body.bullet_hit(BULLET_DAMAGE, global_transform)
 
         hit_something = true
         queue_free()
@@ -866,7 +866,7 @@ then add the following:
                 continue
 
             if body.has_method("bullet_hit"):
-                body.bullet_hit(DAMAGE, area.global_transform.origin)
+                body.bullet_hit(DAMAGE, area.global_transform)
 
     func equip_weapon():
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
