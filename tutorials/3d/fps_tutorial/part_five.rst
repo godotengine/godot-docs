@@ -6,7 +6,7 @@ Part 5
 Part Overview
 -------------
 
-In this part we're going to add grenades to our player, give our player the ability to grab and throw objects, and add turrets!
+In this part we're going to add grenades to the player, give the player the ability to grab and throw objects, and add turrets!
 
 .. image:: img/PartFiveFinished.png
 
@@ -19,20 +19,20 @@ Let's get started!
 Adding grenades
 ---------------
 
-First, let's give our player some grenades to play with. Open up ``Grenade.tscn``.
+First, let's give the player some grenades to play with. Open up ``Grenade.tscn``.
 
-There's a few things to note here, the first and foremost being that our grenades are going to use :ref:`RigidBody <class_RigidBody>` nodes.
-We're going to use :ref:`RigidBody <class_RigidBody>` nodes for our grenades so they bounce around the world in a somewhat realistic manner.
+There's a few things to note here, the first and foremost being that the grenades are going to use :ref:`RigidBody <class_RigidBody>` nodes.
+We're going to use :ref:`RigidBody <class_RigidBody>` nodes for our grenades so they bounce around the world in a (somewhat) realistic manner.
 
-The second thing to note is ``Blast_Area``. This is a :ref:`Area <class_Area>` node that will represent the blast radius of our grenade.
+The second thing to note is ``Blast_Area``. This is a :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
 
 Finally, the last thing to note is ``Explosion``. This is the :ref:`Particles <class_Particles>` node that will emit an explosion effect when
-the grenades explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of our particles at once. We're also emitting in world
+the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitting using world
 coordinates instead of local coordinates, so we have ``Local Coords`` unchecked as well.
 
-.. note:: If you want you can see how the particles are set up by looking through it's ``Process Material`` and ``Draw Passes``.
+.. note:: If you want, you can see how the particles are set up by looking through the particle's ``Process Material`` and ``Draw Passes``.
 
-Let's write the code needed for our grenade. Select ``Grenade`` and make a new script called ``Grenade.gd``. Add the following:
+Let's write the code needed for the grenade. Select ``Grenade`` and make a new script called ``Grenade.gd``. Add the following:
 
 ::
     
@@ -77,7 +77,7 @@ Let's write the code needed for our grenade. Select ``Grenade`` and make a new s
                 var bodies = blast_area.get_overlapping_bodies()
                 for body in bodies:
                     if body.has_method("bullet_hit"):
-                        body.bullet_hit(GRENADE_DAMAGE, global_transform.origin)
+                        body.bullet_hit(GRENADE_DAMAGE, body.global_transform.looking_at(global_transform.origin, Vector3(0,1,0)) )
                 
                 # This would be the perfect place to play a sound!
                 
@@ -88,7 +88,7 @@ Let's write the code needed for our grenade. Select ``Grenade`` and make a new s
                 if explosion_wait_timer >= EXPLOSION_WAIT_TIME:
                     queue_free()
 
-Let's go over what's happening, starting with the global variables:
+Let's go over what's happening, starting with the class variables:
 
 * ``GRENADE_DAMAGE``: The amount of damage the grenade causes when it explodes.
 * ``GRENADE_TIME``: The amount of time the grenade takes (in seconds) to explode once it's created/thrown.
@@ -100,56 +100,57 @@ Let's go over what's happening, starting with the global variables:
 * ``blast_area``: The blast :ref:`Area <class_Area>` used to damage things when the grenade explodes.
 * ``explosion_particles``: The :ref:`Particles <class_Particles>` that play when the grenade explodes.
 
-Notice how ``EXPLOSION_WAIT_TIME`` is a rather strange number (``0.48``). This is because we want ``EXPLOSION_WAIT_TIME`` to be the length of time
-the particles are emitting, so when the particles are done we destroy/free the grenade. We calculate ``EXPLOSION_WAIT_TIME`` by taking the particle's life time
+Notice how ``EXPLOSION_WAIT_TIME`` is a rather strange number (``0.48``). This is because we want ``EXPLOSION_WAIT_TIME`` to be equal to the length of time
+the explosion particles are emitting, so when the particles are done we destroy/free the grenade. We calculate ``EXPLOSION_WAIT_TIME`` by taking the particle's life time
 and dividing it by the particle's speed scale. This gets us the exact time the explosion particles will last.
 
 ______
 
 Now let's turn our attention to ``_ready``.
 
-First we get all of the nodes we'll need and assign them to the proper global variables.
+First we get all of the nodes we'll need and assign them to the proper class variables.
 
 We need to get the :ref:`CollisionShape <class_CollisionShape>` and :ref:`MeshInstance <class_MeshInstance>` because similarly to the target in :ref:`doc_fps_tutorial_part_four`,
 we will be hiding the grenade's mesh and disabling the collision shape when the grenade explodes.
 
-The reason we need to get the blast :ref:`Area <class_Area>` is so we can damage everything inside it when it explodes. We'll be using code similar to the knife
-weapon in our player. We need the :ref:`Particles <class_Particles>` so we can emit them when we explode.
+The reason we need to get the blast :ref:`Area <class_Area>` is so we can damage everything inside it when the grenade explodes. We'll be using code similar to the knife
+code in the player. We need the :ref:`Particles <class_Particles>` so we can emit particles when the grenade explodes.
 
-After we get all of the nodes and assign them to their global variables, we then make sure the explosion particles are not emitting, and that they are set to
-emit in one shot.
+After we get all of the nodes and assign them to their class variables, we then make sure the explosion particles are not emitting, and that they are set to
+emit in one shot. This is to be extra sure the particles will behave the way we expect them to.
 
 ______
 
 Now let's look at ``_process``.
 
-First we check to see if the ``grenade_timer`` is less than ``GRENADE_TIMER``. If it is, we add ``delta`` and return. This is so we have to wait ``GRENADE_TIME`` seconds,
-allowing our :ref:`RigidBody <class_RigidBody>` to move around.
+First we check to see if the ``grenade_timer`` is less than ``GRENADE_TIMER``. If it is, we add ``delta`` and return. This is so the grenade has to wait ``GRENADE_TIME`` seconds,
+before exploding, allowing the :ref:`RigidBody <class_RigidBody>` to move around.
 
-If ``grenade_timer`` is at ``GRENADE_TIMER`` or higher, we then need to check if we waited long enough and need to explode. We do this by checking to see
+If ``grenade_timer`` is at ``GRENADE_TIMER`` or higher, we then need to check if the grenade has waited long enough and needs to explode. We do this by checking to see
 if ``explosion_wait_timer`` is equal to ``0`` or less. Since we will be adding ``delta`` to ``explosion_wait_timer`` right after, whatever code under the check
-will only be called once, right when we've waited long enough and need to explode.
+will only be called once, right when the grenade has waited long enough and needs to explode.
 
-If we've waited long enough to explode, we first tell the ``explosion_particles`` to emit. Then we make ``grenade_mesh`` invisible, and disable ``rigid_shape``, effectively
-hiding our grenade.
+If the grenade has waited long enough to explode, we first tell the ``explosion_particles`` to emit. Then we make ``grenade_mesh`` invisible, and disable ``rigid_shape``, effectively
+hiding the grenade.
 
 We then set the :ref:`RigidBody <class_RigidBody>`'s mode to ``MODE_STATIC`` so the grenade does not move.
 
 Then we get all of the bodies in ``blast_area``, check to see if they have the ``bullet_hit`` method/function, and if they do we call it and pass in ``GRENADE_DAMAGE`` and
-the grenade's position.
+the transform from the body looking at the grenade. This makes it where the bodies exploded by the grenade will explode outwards from the grenade's position.
 
 We then check to see if ``explosion_wait_timer`` is less than ``EXPLOSION_WAIT_TIME``. If it is, we add ``delta`` to ``explosion_wait_time``.
 
 Next we check to see if ``explosion_wait_timer`` is more than or equal to ``EXPLOSTION_WAIT_TIME``. Because we added ``delta``, this will only be called once.
-If ``explosion_wait_timer`` is more or equal to ``EXPLOSION_WAIT_TIME``, we've waited long enough to let the :ref:`Particles <class_Particles>` play and can free/destroy ourselves.
+If ``explosion_wait_timer`` is more or equal to ``EXPLOSION_WAIT_TIME``, the grenade has waited long enough to let the :ref:`Particles <class_Particles>` play
+and we can free/destroy the grenade as we no longer need it.
 
 ______
 
 Let's quickly get the sticky grenade set up too. Open up ``Sticky_Grenade.tscn``.
 
 ``Sticky_Grenade.tscn`` is almost identical to ``Grenade.tscn``, with one small addition. We now have a second
-:ref:`Area <class_Area>`, called ``Sticky_Area``. We'll be using ``Stick_Area`` to detect when we've collided with
-the environment and need to stick to something.
+:ref:`Area <class_Area>`, called ``Sticky_Area``. We will be using ``Stick_Area`` to detect when the sticky grenade has collided with
+the environment and needs to stick to something.
 
 Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Add the following:
 
@@ -228,7 +229,7 @@ Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Ad
                 var bodies = blast_area.get_overlapping_bodies()
                 for body in bodies:
                     if body.has_method("bullet_hit"):
-                        body.bullet_hit(GRENADE_DAMAGE, global_transform.origin)
+                        body.bullet_hit(GRENADE_DAMAGE, body.global_transform.looking_at(global_transform.origin, Vector3(0,1,0)) )
                 
                 # This would be the perfect place to play a sound!
             
@@ -241,16 +242,16 @@ Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Ad
                         attach_point.queue_free()
                     queue_free()
                 
-The code above is almost identical to the code for ``Grenade.gd``, so let's go over what's changed.
+The code above is almost identical to the code for ``Grenade.gd``, so let's just go over what's changed.
 
-First, we have a few more global variables:
+First, we have a few more class variables:
 
-* ``attached``: A variable for tracking whether or not we've attached to a :ref:`PhysicsBody <class_PhysicsBody>`.
-* ``attach_point``: A variable to hold a :ref:`Spatial <class_Spatial>` that will be at the position we collided at.
+* ``attached``: A variable for tracking whether or not the sticky grenade has attached to a :ref:`PhysicsBody <class_PhysicsBody>`.
+* ``attach_point``: A variable to hold a :ref:`Spatial <class_Spatial>` that will be at the position the sticky grenade collided at.
 * ``player_body``: The player's :ref:`KinematicBody <class_KinematicBody>`.
 
-These additions are so we can stick to any :ref:`PhysicsBody <class_PhysicsBody>` we happen to hit. We also now
-need the player's :ref:`KinematicBody <class_KinematicBody>` so we don't stick to the player that threw this grenade.
+These additions are so the sticky grenade can stick to any :ref:`PhysicsBody <class_PhysicsBody>` it happens to hit. We also now
+need the player's :ref:`KinematicBody <class_KinematicBody>` so the sticky grenade does not stick to the player when the player throws it.
 
 ______
 
@@ -261,41 +262,44 @@ ______
 
 Next let's take a look at ``collided_with_body``.
 
-First we make sure we're not colliding with ourself. Because our :ref:`Area <class_Area>` does not know it's attached to the grenade's :ref:`RigidBody <class_RigidBody>`,
-we need to make sure we're not going to stick to ourself. If we have collided with ourself, we ignore it by returning.
+First we make sure the sticky grenade is not colliding with itself.
+Because the sticky :ref:`Area <class_Area>` does not know it's attached to the grenade's :ref:`RigidBody <class_RigidBody>`,
+we need to make sure it's not going to stick to itself by checking to make sure the body it has collided with is not itself.
+If we have collided with ourself, we ignore it by returning.
 
-We then check to see if we have something assigned to ``player_body``, and if the body we collided with is the player that threw this grenade.
-If the body we've collided with is indeed ``player_body``, we ignore it by returning.
+We then check to see if we have something assigned to ``player_body``, and if the body the sticky grenade has collided with is the player that threw it.
+If the body the sticky grenade has collided with is indeed ``player_body``, we ignore it by returning.
 
-Next we check if we are attached already or not.
+Next we check if the sticky grenade has attached to something already or not.
 
-If we are not attached, we then set ``attached`` to true so we know we've attached to something.
+If the sticky grenade is not attached, we then set ``attached`` to true so we know the sticky grenade has attached to something.
 
-We then make a new :ref:`Spatial <class_Spatial>` node, and make it a child of the body we collided with. We then set the :ref:`Spatial <class_Spatial>`'s position
-to our current position.
+We then make a new :ref:`Spatial <class_Spatial>` node, and make it a child of the body the sticky grenade collided with. We then set the :ref:`Spatial <class_Spatial>`'s position
+to the sticky grenade's current global position.
 
-.. note:: Because we've added the :ref:`Spatial <class_Spatial>` as a child of the body we've collided with, it will follow along with said body. We can then use this
-          :ref:`Spatial <class_Spatial>` to set our position, so we're always at the same position relative to the body we collided with.
+.. note:: Because we've added the :ref:`Spatial <class_Spatial>` as a child of the body the sticky grenade has collided with, it will follow along with said body.
+          We can then use this :ref:`Spatial <class_Spatial>` to set the sticky grenade's position, so it is always at the same position relative to the body it collided with.
 
-We then disable ``rigid_shape`` so we're not constantly moving whatever body we've collided with. Finally, we set our mode to ``MODE_STATIC`` so the grenade does not move.
+We then disable ``rigid_shape`` so the sticky grenade is not constantly moving whatever body it has collided with.
+Finally, we set our mode to ``MODE_STATIC`` so the grenade does not move.
 
 ______
 
 Finally, lets go over the few changes in ``_process``.
 
-Now we're checking to see if we are attached right at the top of ``_process``.
+Now we're checking to see if the sticky grenade is attached right at the top of ``_process``.
 
-If we are attached, we then make sure the attached point is not equal to ``null``.
-If the attached point is not equal to ``null``, we set our global position (using our global :ref:`Transform <class_Transform>`'s origin) to the global position of
+If the sticky grenade is attached, we then make sure the attached point is not equal to ``null``.
+If the attached point is not equal to ``null``, we set the sticky grenade's global position (using its global :ref:`Transform <class_Transform>`'s origin) to the global position of
 the :ref:`Spatial <class_Spatial>` assigned to ``attach_point`` (using its global :ref:`Transform <class_Transform>`'s origin).
 
-The only other change is now before we free/destroy the grenade, we check to see if we have an attached point. If we do, we also call ``queue_free`` on it, so it's
-also freed/destroyed.
+The only other change is now before we free/destroy the sticky grenade is to check to see if the sticky grenade has a attached point.
+If it does, we also call ``queue_free`` on the attach point, so it's also freed/destroyed.
 
 Adding grenades to the player
 -----------------------------
 
-Now we need to add some code to ``Player.gd`` so we can use our grenades.
+Now we need to add some code to ``Player.gd`` so we can use the grenades.
 
 First, open up ``Player.tscn`` and expand the node tree until you get to ``Rotation_Helper``. Notice how in
 ``Rotation_Helper`` we have a node called ``Grenade_Toss_Pos``. This is where we will be spawning the grenades.
@@ -303,7 +307,7 @@ First, open up ``Player.tscn`` and expand the node tree until you get to ``Rotat
 Also notice how it's slightly rotated on the ``X`` axis, so it's not pointing straight, but rather slightly up. By changing
 the rotation of ``Grenade_Toss_Pos``, you can change the angle the grenades are tossed at.
 
-Okay, now lets start making the grenades work with our player. Add the following global variables to ``Player.gd``:
+Okay, now let's start making the grenades work with the player. Add the following class variables to ``Player.gd``:
 
 ::
     
@@ -313,11 +317,11 @@ Okay, now lets start making the grenades work with our player. Add the following
     var sticky_grenade_scene = preload("res://Sticky_Grenade.tscn")
     const GRENADE_THROW_FORCE = 50
 
-* ``grenade_amounts``: The amount of grenades we are currently carrying for each type of grenade.
-* ``current_grenade``: The name of the grenade type we're currently using.
+* ``grenade_amounts``: The amount of grenades the player is currently carrying (for each type of grenade).
+* ``current_grenade``: The name of the grenade the player is currently using.
 * ``grenade_scene``: The grenade scene we worked on earlier.
 * ``sticky_grenade_scene``: The sticky grenade scene we worked on earlier.
-* ``GRENADE_THROW_FORCE``: The force at which we throw the grenade at.
+* ``GRENADE_THROW_FORCE``: The force at which the player will throw the grenades at.
          
 Most of these variables are similar to how we have out weapons set up.
 
@@ -358,26 +362,26 @@ Now we need to add some code in ``_process_input`` Add the following to ``_proce
          
 Let's go over what's happening here.
 
-First, we check to see if the ``change_grenade`` action has just been pressed. If it has, we then check to see which grenade we
-are currently using. Based on the name of the grenade we're currently using, we change ``current_grenade`` to the opposite grenade name.
+First, we check to see if the ``change_grenade`` action has just been pressed. If it has, we then check to see which grenade the player is
+currently using. Based on the name of the grenade the player is currently using, we change ``current_grenade`` to the opposite grenade name.
 
-Next we check to see if the ``fire_grenade`` action has just been pressed. If it has, we then check to see if we have more than ``0`` grenades for the
-current grenade we have selected.
+Next we check to see if the ``fire_grenade`` action has just been pressed. If it has, we then check to see if the player has more than ``0`` grenades for the
+current grenade type selected.
 
-If we have more than ``0`` grenades, we then remove one from the grenade amounts for the current grenade.
-Then, based on the grenade we're currently using we instance the proper grenade scene and assign it to ``grenade_clone``.
+If the player has more than ``0`` grenades, we then remove one from the grenade amounts for the current grenade.
+Then, based on the grenade the player is currently using, we instance the proper grenade scene and assign it to ``grenade_clone``.
 
-Next we add ``grenade_clone`` as a child of the node at the root, and set its global :ref:`Transform <class_Transform>` to
+Next we add ``grenade_clone`` as a child of the node at the root and set its global :ref:`Transform <class_Transform>` to
 ``Grenade_Toss_Pos``'s global :ref:`Transform <class_Transform>`. Finally, we apply an impulse to the grenade so that it is launched forward, relative
 to the ``Z`` directional vector of ``grenade_clone``'s.
 
 ______
 
-Now we can use both types of grenades, but there's a few things we should probably add before we move on to adding the other things.
+Now the player can use both types of grenades, but there is still a few things we should probably add before we move on to adding the other things.
 
-We still need a way to see how many grenades we have left, and we should probably have a way to get more grenades when we pick up ammo.
+We still need a way to show the player how many grenades are left, and we should probably add a way to get more grenades when the player picks up ammo.
 
-First, let's change some of the code in ``Player.gd`` so we can see how many grenades we have left. Change ``process_UI`` to the following:
+First, let's change some of the code in ``Player.gd`` to show how many grenades are left. Change ``process_UI`` to the following:
 
 ::
     
@@ -393,9 +397,9 @@ First, let's change some of the code in ``Player.gd`` so we can see how many gre
             "\nAMMO:" + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
             "\n" + current_grenade + ":" + str(grenade_amounts[current_grenade])
 
-Now we'll show how many grenades we have left in our UI.
+Now we'll show how many grenades the player has left in the UI.
 
-While we're still in ``Player.gd``, let's add a function to add grenades. Add the following function to ``Player.gd``:
+While we're still in ``Player.gd``, let's add a function to add grenades to the player. Add the following function to ``Player.gd``:
 
 ::
     
@@ -408,7 +412,7 @@ Now we can add a grenade using ``add_grenade``, and it will automatically be cla
 .. tip:: You can change the ``4`` to a constant if you want. You'd need to make a new global constant, something like ``MAX_GRENADES``, and
          then change the clamp from ``clamp(grenade_amounts[current_grenade], 0, 4)`` to ``clamp(grenade_amounts[current_grenade], 0, MAX_GRENADES)``
          
-         If you do not want to limit how many grenades you can carry, remove the line that clamps the grenades altogether!
+         If you do not want to limit how many grenades the player can carry, remove the line that clamps the grenades altogether!
 
 Now we have a function to add grenades, let's open up ``AmmoPickup.gd`` and use it!
 
@@ -427,18 +431,18 @@ Open up ``AmmoPickup.gd`` and go to the ``trigger_body_entered`` function. Chang
             respawn_timer = RESPAWN_TIME
             kit_size_change_values(kit_size, false)
 
-Now we're also checking to see if the body has the ``add_grenade`` function. If it does, we call it like we call ``add_ammo``.
+Now we are also checking to see if the body has the ``add_grenade`` function. If it does, we call it like we call ``add_ammo``.
 
-You may have noticed we're using a new constant we haven't defined yet, ``GRENADE_AMOUNTS``. Let's add it! Add the following global variable
-to ``AmmoPickup.gd`` with the other global variables:
+You may have noticed we are using a new constant we have not defined yet, ``GRENADE_AMOUNTS``. Let's add it! Add the following class variable
+to ``AmmoPickup.gd`` with the other class variables:
 
 ::
     
     const GRENADE_AMOUNTS = [2, 0]
     
-* ``GRENADE_AMOUNTS``: The amount of grenades each pick up in each size contains.
+* ``GRENADE_AMOUNTS``: The amount of grenades each pick up contains.
 
-Notice how the second element in ``GRENADE_AMOUNTS`` is ``0``. This is so the small ammo pick up does not give our player
+Notice how the second element in ``GRENADE_AMOUNTS`` is ``0``. This is so the small ammo pick up does not give the player
 any additional grenades.
 
 ______
@@ -449,9 +453,9 @@ Now you should be able to throw grenades now! Go give it a try!
 Adding the ability to grab and throw RigidBody nodes to the player
 ------------------------------------------------------------------
 
-Next let's give our player the ability to pick up and throw :ref:`RigidBody <class_RigidBody>` nodes.
+Next let's give the player the ability to pick up and throw :ref:`RigidBody <class_RigidBody>` nodes.
 
-Open up ``Player.gd`` and add the following global variables:
+Open up ``Player.gd`` and add the following class variables:
 
 ::
     
@@ -461,9 +465,9 @@ Open up ``Player.gd`` and add the following global variables:
     const OBJECT_GRAB_RAY_DISTANCE = 10
 
 * ``grabbed_object``: A variable to hold the grabbed :ref:`RigidBody <class_RigidBody>` node.
-* ``OBJECT_THROW_FORCE``: The force we throw the grabbed object at.
-* ``OBJECT_GRAB_DISTANCE``: The distance away from the camera we hold the grabbed object at.
-* ``OBJECT_GRAB_RAY_DISTANCE``: The distance the :ref:`Raycast <class_Raycast>` goes. This is our grab distance.
+* ``OBJECT_THROW_FORCE``: The force the player throws the grabbed object at.
+* ``OBJECT_GRAB_DISTANCE``: The distance away from the camera the player holds the grabbed object at.
+* ``OBJECT_GRAB_RAY_DISTANCE``: The distance the :ref:`Raycast <class_Raycast>` goes. This is the player's grab distance.
 
 With that done, all we need to do is add some code to ``process_input``:
 
@@ -505,8 +509,8 @@ With that done, all we need to do is add some code to ``process_input``:
 
 Let's go over what's happening.
 
-First we check to see if the action pressed is the ``fire`` action, and that we are using the ``UNARMED`` weapon.
-This is because we only want to be able to pick up and throw objects when we're not using any weapons. This is a design choice,
+First we check to see if the action pressed is the ``fire`` action, and that the player is using the ``UNARMED`` 'weapon'.
+This is because we only want the player to be able to pick up and throw objects when the player is not using any weapons. This is a design choice,
 but I feel it gives ``UNARMED`` a use.
 
 Next we check to see whether or not ``grabbed_object`` is ``null``.
@@ -523,19 +527,20 @@ use a :ref:`Raycast <class_Raycast>` node.
 Then we get the center of the screen by dividing the current :ref:`Viewport <class_Viewport>` size in half. We then get the ray's origin point and end point using
 ``project_ray_origin`` and ``project_ray_normal`` from the camera. If you want to know more about how these functions work, see :ref:`Ray-casting <doc_ray-casting>`.
 
-Next we send our ray into the space state and see if we get a result. We add ourselves and the knife's :ref:`Area <class_Area>` as two exceptions so we cannot carry
-ourselves or the knife's collision area.
+Next we send the ray into the space state and see if it gets a result. We add the player and the knife's :ref:`Area <class_Area>` as two exceptions so the player cannot carry
+themselves or the knife's collision :ref:`Area <class_Area>`.
 
-Then we check to see if we got a result back. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
+Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
-the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it's not moved.
+the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it does not move.
 
-Finally, we set its collision layer and collision mask to ``0``. This will make it have no collision layer or mask, which will means it will not be able to collide with anything.
+Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
+This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which will means it will not be able to collide with anything.
 
 ______
 
-If ``grabbed_object`` is not ``null``, then we need to throw the :ref:`RigidBody <class_RigidBody>` we're holding.
+If ``grabbed_object`` is not ``null``, then we need to throw the :ref:`RigidBody <class_RigidBody>` the player is holding.
 
 We first set the :ref:`RigidBody <class_RigidBody>` we holding mode to ``MODE_RIGID``.
 
@@ -543,7 +548,7 @@ We first set the :ref:`RigidBody <class_RigidBody>` we holding mode to ``MODE_RI
           that may not be the case in other projects.
           
           If you have :ref:`RigidBody <class_RigidBody>`'s with different modes, you may need to store the mode of the :ref:`RigidBody <class_RigidBody>` you
-          have picked up into a global variable so you can change it back to the mode it was in before you picked it up.
+          have picked up into a class variable so you can change it back to the mode it was in before you picked it up.
   
 Then we apply an impulse to send it flying forward. We send it flying in the direction the camera is facing, at ``OBJECT_THROW_FORCE`` force.
 
@@ -552,21 +557,21 @@ We then set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and
 .. note:: This is, once again, making a rather large assumption that all rigid bodies will be only on collision layer ``1``, and all collision masks will be on layer ``1``.
           If you are using this script in other projects, you may need to store the collision layer/mask of the :ref:`RigidBody <class_RigidBody>` before you change them to ``0``.
 
-Finally, we set ``grabbed_object`` to ``null`` since we have successfully thrown the held object.
+Finally, we set ``grabbed_object`` to ``null`` since the player has successfully thrown the held object.
 
 ______
 
-The last thing we do is check to see whether or not ``grabbed_object`` is equal to ``null``, outside of the grabbing/throwing code.
+The last thing we do is check to see whether or not ``grabbed_object`` is equal to ``null``, outside all of the grabbing/throwing related code.
 
 .. note:: While technically not input related, it's easy enough to place the code moving the grabbed object here
 	      because it's only two lines, and then all of the grabbing/throwing code is in one place
 
-If we are holding an object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
+If the player is holding a object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
 
 ______
 
-Before we test this, we need to change something in ``_physics_process``. While we're holding an object, we don't
-want to be able to change weapons or reload, so change ``_physics_process`` to the following:
+Before we test this, we need to change something in ``_physics_process``. While the player is holding an object, we do not
+want the player to be able to change weapons or reload, so change ``_physics_process`` to the following:
 
 ::
     
@@ -582,23 +587,23 @@ want to be able to change weapons or reload, so change ``_physics_process`` to t
 	# Process the UI
 	process_UI(delta)
 
-Now we cannot change weapons or reload while holding an object.
+Now the player cannot change weapons or reload while holding an object.
     
 Now you can grab and throw RigidBody nodes while in a ``UNARMED`` state! Go give it a try!
 
 Adding a turret
 ---------------
 
-Next, let's make a turret to shoot our player!
+Next, let's make a turret to shoot the player!
 
 Open up ``Turret.tscn``. Expand ``Turret`` if it's not already expanded.
 
-Notice how our turret is broken up into several parts. We have a ``Base``, ``Head``, ``Vision_Area``, and a ``Smoke`` :ref:`Particles <class_Particles>`.
+Notice how the turret is broken up into several parts. We have a ``Base``, ``Head``, ``Vision_Area``, and a ``Smoke`` :ref:`Particles <class_Particles>`.
 
 Open up ``Base`` and you'll find it's a :ref:`StaticBody <class_StaticBody>` and a mesh. Open up ``Head`` and you'll find there's several meshes,
 a :ref:`StaticBody <class_StaticBody>` and a :ref:`Raycast <class_Raycast>` node.
 
-One thing to note with the ``Head`` is that the raycast will be where our bullets will fire from if we are using raycasting. We also have two meshes called
+One thing to note with the ``Head`` is that the raycast will be where the turret's bullets will fire from if we are using raycasting. We also have two meshes called
 ``Flash`` and ``Flash_2``. These will be the muzzle flash that briefly shows when the turret fires.
 
 ``Vision_Area`` is a :ref:`Area <class_Area>` we'll use as the turret's ability to see. When something enters ``Vision_Area``, we'll assume the turret can see it.
@@ -607,7 +612,7 @@ One thing to note with the ``Head`` is that the raycast will be where our bullet
 
 ______
 
-Now that we've looked at how the scene is set up, lets start writting the code for the turret. Select ``Turret`` and create a new script called ``Turret.gd``.
+Now that we've looked at how the scene is set up, lets start writing the code for the turret. Select ``Turret`` and create a new script called ``Turret.gd``.
 Add the following to ``Turret.gd``:
 
 ::
@@ -726,14 +731,14 @@ Add the following to ``Turret.gd``:
             ammo_in_turret -= 1
         
         else:
-            node_raycast.look_at(current_target.global_transform.origin + PLAYER_HEIGHT, Vector3(0,1,0))
+            node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
             
             node_raycast.force_raycast_update()
             
             if node_raycast.is_colliding():
                 var body = node_raycast.get_collider()
                 if body.has_method("bullet_hit"):
-                    body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.get_collision_point())
+                    body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.global_transform)
             
             ammo_in_turret -= 1
         
@@ -773,7 +778,7 @@ Add the following to ``Turret.gd``:
             smoke_particles.emitting = true
             destroyed_timer = DESTROYED_TIME
 
-This is quite a bit of code, so let's break it down function by function. Let's first look at the global variables:
+This is quite a bit of code, so let's break it down function by function. Let's first look at the class variables:
 
 * ``use_raycast``: A exported boolean so we can change whether the turret uses objects or raycasting for bullets.
 * ``TURRET_DAMAGE_BULLET``: The amount of damage a single bullet scene does.
@@ -800,7 +805,7 @@ This is quite a bit of code, so let's break it down function by function. Let's 
 * ``destroyed_timer``: A variable for tracking the amount of time a turret has been destroyed.
 * ``bullet_scene``: The bullet scene the turret fires (same scene as the player's pistol)
 
-Phew, that's quite a few global variables!
+Phew, that's quite a few class variables!
 
 ______
 
@@ -812,9 +817,9 @@ We then get all of the nodes and assign them to their respective variables.
 
 Next add some exceptions to the :ref:`Raycast <class_Raycast>` so the turret cannot hurt itself.
 
-Then we make both flash meshes invisible to start, since we're not going to be firing during ``_ready``.
+Then we make both flash meshes invisible to start, since we are not going to be firing during ``_ready``.
 
-We then get the smoke particles node and assign it to the ``smoke_particles`` node. We also set ``emitting`` to ``false`` to assure it's
+We then get the smoke particles node and assign it to the ``smoke_particles`` node. We also set ``emitting`` to ``false`` to assure the particles are
 not emitting until the turret is broken.
 
 Finally, we set the turret's health to ``MAX_TURRET_HEALTH`` so it starts at full health.
@@ -829,19 +834,19 @@ Next we check to see if ``flash_timer`` is more than zero, meaning the flash mes
 delta from ``flash_timer``. If ``flash_timer`` gets to zero or less after we've subtracted ``delta``, we want to hide
 both of the flash meshes.
 
-Next we check to see if we have a target or not. If we have a target, we make the turret head look at it, adding ``PLAYER_HEIGHT`` so we're not
+Next we check to see if the turret has a target or not. If the turret has a target, we make the turret head look at it, adding ``PLAYER_HEIGHT`` so it is not
 aiming at the player's feet.
 
 We then check to see if the turret's health is more than zero. If it is, we then check to see if there is ammo in the turret.
 
-If there is ammo in the turret, we then check to see if ``fire_timer`` is more than zero. If ``fire_timer`` is more than zero, we cannot fire and need to
-remove ``delta`` from ``fire_timer``. If ``fire_timer`` is equal to or less than zero, we want to fire a bullet, so we call the ``fire_bullet`` function.
+If there is ammo in the turret, we then check to see if ``fire_timer`` is more than zero. If ``fire_timer`` is more than zero, the turret cannot fire and we need to
+remove ``delta`` from ``fire_timer``. If ``fire_timer`` is equal to or less than zero, the turret can fire a bullet, so we call the ``fire_bullet`` function.
 
 If there is not any ammo in the turret, we check to see if ``ammo_reload_timer`` is more than zero. If ``ammo_reload_timer`` is more than zero,
 we subtract ``delta`` from ``ammo_reload_timer``. If ``ammo_reload_timer`` is equal to or less than zero, we set ``ammo_in_turret`` to ``AMMO_IN_FULL_TURRET`` because
-we've waited long enough to refill the turret.
+the turret has waited long enough to refill its ammo.
 
-Next we check to see if the turret's health is less than or equal to ``0``, outside of whether we're active or not. If the turret's health is zero or less, we then
+Next we check to see if the turret's health is less than or equal to ``0``, outside of whether it is active or not. If the turret's health is zero or less, we then
 check to see if ``destroyed_timer`` is more than zero. If destroyed timer is more than zero, we subtract ``delta`` from ``destroyed_timer``.
 
 If ``destyored_timer`` is less than or equal to zero, we set ``turret_health`` to ``MAX_TURRET_HEALTH`` and stop emitting smoke particles by setting ``smoke_particles.emitting`` to
@@ -851,35 +856,35 @@ ______
 
 Next let's go through ``fire_bullet``.
 
-First we check to see whether we're using a raycast or not.
+First we check to see whether the turret is using a raycast or not.
 
 The code for the using a raycast is almost entirely the same as the code in the rifle from :ref:`doc_fps_tutorial_part_two`, so
 I'm only going to go over it briefly.
 
-We first make the raycast look at the target, assuring we'll hit the target. We then force the raycast to update so we get a frame
+We first make the raycast look at the target, assuring the raycast will hit the target if nothing is in the way. We then force the raycast to update so we get a frame
 perfect collision check. We then check if the raycast collided with anything. If the raycast has collided with something, we then check
-to see if the collided body has the ``bullet_hit`` function. If it does, we call it and pass in the damage a single raycast bullet does. We then remove
-``1`` from ``ammo_in_turret``.
+to see if the collided body has the ``bullet_hit`` function. If it does, we call it and pass in the damage a single raycast bullet does along with the raycast's transform.
+We then remove ``1`` from ``ammo_in_turret``.
 
-If we are not using a raycast, we spawn a bullet object instead. This code is almost entirely the same as the code in the pistol from :ref:`doc_fps_tutorial_part_two`, so
+If the turret is not using a raycast, we spawn a bullet object instead. This code is almost entirely the same as the code in the pistol from :ref:`doc_fps_tutorial_part_two`, so
 like with the raycast code, I'm only going to go over it briefly.
 
-We first make a bullet clone and assign it to ``clone``. We then add that as a child of the root node. We set it's global transform to
-the barrel end, scale it up since it's too small, and set it's damage and speed using the turret's constant global variables. We then remove ``1`` from
+We first make a bullet clone and assign it to ``clone``. We then add that as a child of the root node. We set the bullet's global transform to
+the barrel end, scale it up since it's too small, and set it's damage and speed using the turret's constant class variables. We then remove ``1`` from
 ``ammo_in_turret``.
 
 Then, regardless of which bullet method we used, we make both of the muzzle flash meshes visible. We set ``flash_timer`` and ``fire_timer`` to
-to ``FLASH_TIME`` and ``FIRE_TIME`` respectively. We then check to see if we used the last bullet in the turret. If we have used the last bullet,
-we set ``ammo_reload_timer`` to ``AMMO_RELOAD_TIME``.
+to ``FLASH_TIME`` and ``FIRE_TIME`` respectively. We then check to see if the turret used the last bullet in its ammo. If the turret has used the last bullet,
+we set ``ammo_reload_timer`` to ``AMMO_RELOAD_TIME`` so the turret reloads.
 
 ______
 
-Let's look at ``body_entered_vision`` next, and thankfully it's rather short.
+Let's look at ``body_entered_vision`` next, and thankfully it is rather short.
 
-We first check to see if we currently have a target by checking to see if ``current_target`` is equal to ``null``.
-If we do not have a target, we then check to see if the body that just entered the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`
+We first check to see if the turret currently has a target by checking to see if ``current_target`` is equal to ``null``.
+If the turret does not have a target, we then check to see if the body that just entered the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`
 
-..note:: We're assuming the turret only should fire at :ref:`KinematicBody <class_KinematicBody>` nodes, since that's what our player(s) are using.
+..note:: We're assuming the turret should only should fire at :ref:`KinematicBody <class_KinematicBody>` nodes, since that is what the player is using.
 
 If the body that just the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`, we set ``current_target`` to the body, and set ``is_active`` to
 ``true``.
@@ -888,25 +893,25 @@ ______
 
 Now let's look at ``body_exited_vision``.
 
-First we check to see if we have a target. If we have a target, we then check to see if the body that has just left our vision area
-is our target.
+First we check to see if the turret has a target. If the turret has a target, we then check to see if the body that has just left the turret's vision area
+is the turret's target.
 
-If the body that just left the area is the current target, we set ``current_target`` to ``null``, set ``is_active`` to ``false``, and reset
-all of the variables related to firing the turret, since we no longer have a target to fire at.
+If the body that just left the area is the turret's current target, we set ``current_target`` to ``null``, set ``is_active`` to ``false``, and reset
+all of the variables related to firing the turret, since the turret no longer has a target to fire at.
 
 ______
 
 Finally, let's look at ``bullet_hit``.
 
-We first remove however much damage we have received from the turret's health.
+We first remove however much damage the bullet causes from the turret's health.
 
-Then we check to see if we've been destroyed. If we have, we start the smoke particles emitting and set ``destroyed_timer`` to ``DESTROYED_TIME`` so we
-have to wait to repair the turret.
+Then we check to see if the turret has been destroyed (health being zero or less).
+If the turret is destroyed, we start the smoke particles emitting and set ``destroyed_timer`` to ``DESTROYED_TIME`` so the turret has to wait before being repaired.
 
 ______
 
-Phew, with all of that done and coded we only have one last thing to do before our turrets are ready for use. Open up ``Turret.tscn`` if it's not already open and
-select one of the :ref:`StaticBody <class_StaticBody>` nodes from either ``Body`` or ``Head``. Create a new script called ``TurretBodies.gd`` and attach it to whichever
+Phew, with all of that done and coded we only have one last thing to do before the turret is ready for use. Open up ``Turret.tscn`` if it's not already open and
+select one of the :ref:`StaticBody <class_StaticBody>` nodes from either ``Base`` or ``Head``. Create a new script called ``TurretBodies.gd`` and attach it to whichever
 :ref:`StaticBody <class_StaticBody>` you have selected.
 
 Add the following code to ``TurretBodies.gd``:
@@ -932,7 +937,7 @@ attached, assign the :ref:`NodePath <class_NodePath>` to the ``Turret`` node.
 
 ______
 
-The last thing we need to do is add a way for the player to be hurt. Since all of our bullets use the ``bullet_hit`` function, we need to add that to our player.
+The last thing we need to do is add a way for the player to be hurt. Since all of the bullets use the ``bullet_hit`` function, we need to add that function to the player.
 
 Open ``Player.gd`` and add the following:
 
@@ -948,7 +953,7 @@ Final notes
 
 .. image:: img/PartFiveFinished.png
 
-Now you the player can pick up :ref:`RigidBody <class_RigidBody>` nodes and throw grenades. We now also have turrets to fire at our player.
+Now you the player can pick up :ref:`RigidBody <class_RigidBody>` nodes and throw grenades. We now also have turrets to fire at the player.
 
 In :ref:`doc_fps_tutorial_part_six`, we're going to add a main menu and pause menu,
 add a respawn system for the player, and change/move the sound system so we can use it from any script.

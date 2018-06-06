@@ -90,7 +90,7 @@ _________
 
 Let's take a second to see what we have in the starter assets.
 
-Included in the starter assets are several scenes. For example, in `res://` we have 14 scenes, most of which we will be visiting as
+Included in the starter assets are several scenes. For example, in ``res://`` we have 14 scenes, most of which we will be visiting as
 we go through this tutorial series.
 
 For now let's open up ``Player.tscn``.
@@ -251,14 +251,13 @@ This is a lot of code, so let's break it down function by function:
 
 _________
 
-First, we define some global variables to dictate how our player will move about the world.
+First, we define some class variables to dictate how our player will move about the world.
 
 .. note:: Throughout this tutorial, **variables defined outside functions will be
-          referred to as "global variables"**. This is because we can access any of these
-          variables from any place in the script. We can "globally" access them, hence the
-          name.
+          referred to as "class variables"**. This is because we can access any of these
+          variables from any place in the script.
 
-Let's go through each of the global variables:
+Let's go through each of the class variables:
 
 - ``GRAV``: How strong gravity pulls us down.
 - ``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity.
@@ -330,7 +329,7 @@ World space can be defined as: The space in which all objects are placed in, rel
 Every object, no matter if it is 2D or 3D, has a position in world space.
 
 To put it another way: world space is the space in a universe where every object's position, rotation, and scale
-can be measured by a known, fixed point called the origin.
+can be measured by a single, known, fixed point called the origin.
 
 In Godot, the origin is at position ``(0, 0, 0)`` with a rotation of ``(0, 0, 0)`` and a scale of ``(1, 1, 1)``.
 
@@ -433,8 +432,8 @@ Based on which directional movement action is pressed, we add or remove from ``i
 After we've checked each of the directional movement actions, we normalize ``input_movement_vector``. This makes it where ``input_movement_vector``'s values
 are within a ``1`` radius unit circle.
 
-Next we add the camera's local ``Z`` vector times ``input_movement_vector.y`` to ``dir``. This where when we pressed forward or backwards we add the camera's
-local ``Z`` axis, so we move forward in relation to the camera.
+Next we add the camera's local ``Z`` vector times ``input_movement_vector.y`` to ``dir``. This is so when the player presses forward or backwards, we add the camera's
+local ``Z`` axis so the player moves forward or backwards in relation to the camera.
 
 .. note:: Because the camera is rotated by ``-180`` degrees, we have to flip the ``Z`` directional vector.
           Normally forward would be the positive Z axis, so using ``basis.z.normalized()`` would work,
@@ -442,19 +441,19 @@ local ``Z`` axis, so we move forward in relation to the camera.
           to the rest of the player.
 
 We do the same thing for the camera's local ``X`` vector, and instead of using ``input_movement_vector.y`` we instead use ``input_movement_vector.x``.
-This makes it where when we press left or right, we move left/right in relation to the camera.
+This makes it where the player moves left/right in relation to the camera when the player presses left/right.
 
 Next we check if the player is on the floor using :ref:`KinematicBody <class_KinematicBody>`'s ``is_on_floor`` function. If it is, then we
-check to see if the "movement_jump" action has just been pressed. If it has, then we set our ``Y`` velocity to
+check to see if the "movement_jump" action has just been pressed. If it has, then we set the player's ``Y`` velocity to
 ``JUMP_SPEED``.
 
-Because we're setting the Y velocity, we will jump into the air.
+Because we're setting the Y velocity, the player will jump into the air.
 
 Then we check for the ``ui_cancel`` action. This is so we can free/capture the mouse cursor when the ``escape`` button
 is pressed. We do this because otherwise we'd have no way to free the cursor, meaning it would be stuck until you terminate the
 runtime.
 
-To free/capture the cursor, we check to see if the mouse is visible (freed) or not. If it is, then we capture it, and if it's not we make it visible (free it).
+To free/capture the cursor, we check to see if the mouse is visible (freed) or not. If it is, we capture it, and if it's not we make it visible (free it).
 
 That's all we're doing right now for ``process_input``. We'll come back several times to this function as we add more complexities to our player.
 
@@ -465,26 +464,26 @@ Now let's look at ``process_movement``:
 First we assure that ``dir`` does not have any movement on the ``Y`` axis by setting it's ``Y`` value to zero.
 
 Next we normalize ``dir`` to assure we're within a ``1`` radius unit circle. This makes it where we're moving at a constant speed regardless
-of whether we've moving straight, or moving diagonal. If we did not normalize, we would move faster on the diagonal than when we're going straight.
+of whether the player is moving straight, or moving diagonally. If we did not normalize, the player would move faster on the diagonal than when going straight.
 
-Next we add gravity to our player by adding ``GRAVITY * delta`` to our ``Y`` velocity.
+Next we add gravity to the player by adding ``GRAVITY * delta`` to the player's ``Y`` velocity.
 
-After that we assign our velocity to a new variable (called ``hvel``) and remove any movement on the ``Y`` axis.
+After that we assign the player's velocity to a new variable (called ``hvel``) and remove any movement on the ``Y`` axis.
 
-Next we set a new variable (``target``) to our direction vector.
-Then we multiply that by our max speed so we know how far we will can move in the direction provided by ``dir``.
+Next we set a new variable (``target``) to the player's direction vector.
+Then we multiply that by the player's max speed so we know how far the player will move in the direction provided by ``dir``.
 
-After that we make a new variable for our acceleration, named ``accel``.
+After that we make a new variable for acceleration, named ``accel``.
 
-We then take the dot product of ``hvel`` to see if we are moving according to ``hvel``. Remember, ``hvel`` does not have any
-``Y`` velocity, meaning we are only checking if we are moving forwards, backwards, left, or right.
+We then take the dot product of ``hvel`` to see if the player is moving according to ``hvel``. Remember, ``hvel`` does not have any
+``Y`` velocity, meaning we are only checking if the player is moving forwards, backwards, left, or right.
 
 
-If we are moving according to ``hvel``, then we set ``accel`` to our ``ACCEL`` constant so we accelerate, otherwise we set ``accel` to
-our ``DEACCEL`` constant so we decelerate.
+If the player is moving according to ``hvel``, then we set ``accel`` to the ``ACCEL`` constant so the player will accelerate, otherwise we set ``accel` to
+our ``DEACCEL`` constant so the player will decelerate.
 
-Then we interpolate our horizontal velocity, set our ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
-and call ``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` handle moving through the physics world.
+Then we interpolate the horizontal velocity, set the player's ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
+and call ``move_and_slide`` to let the :ref:`KinematicBody <class_KinematicBody>` handle moving the player through the physics world.
 
 .. tip:: All of the code in ``process_movement`` is exactly the same as the movement code from the Kinematic Character demo!
 
@@ -515,14 +514,14 @@ Then we rotate the entire :ref:`KinematicBody <class_KinematicBody>` on the ``Y`
          in the same direction.
 
 Finally, we clamp the ``rotation_helper``'s ``X`` rotation to be between ``-70`` and ``70``
-degrees so we cannot rotate ourselves upside down.
+degrees so the player cannot rotate themselves upside down.
 
 .. tip:: see :ref:`using transforms <doc_using_transforms>` for more information on rotating transforms.
 
 _________
 
 To test the code open up the scene named ``Testing_Area.tscn``, if it's not already opened up. We will be using
-this scene as we go through the tutorial, so be sure to keep it open in one of your scene tabs.
+this scene as we go through the next few tutorial parts, so be sure to keep it open in one of your scene tabs.
 
 Go ahead and test your code either by pressing ``F4`` with ``Testing_Area.tscn`` as the open tab, by pressing the
 play button in the top right corner, or by pressing ``F6``.
@@ -534,10 +533,10 @@ Giving the player a flash light and the option to sprint
 
 Before we get to making the weapons work, there is a couple more things we should add.
 
-Many FPS games have an option to sprint and a flash light. We can easily add these to our player,
+Many FPS games have an option to sprint and a flashlight. We can easily add these to our player,
 so let's do that!
 
-First we need a few more global variables in our player script:
+First we need a few more class variables in our player script:
 
 ::
 
@@ -551,7 +550,7 @@ All of the sprinting variables work exactly the same as the non sprinting variab
 similar names.
 
 ``is_sprinting`` is a boolean to track whether the player is currently sprinting, and ``flashlight`` is a variable
-we will be using to hold our flash light node.
+we will be using to hold the player's flash light node.
 
 Now we need to add a few lines of code, starting in ``_ready``. Add the following to ``_ready``:
 
@@ -559,7 +558,7 @@ Now we need to add a few lines of code, starting in ``_ready``. Add the followin
     
     flashlight = $Rotation_Helper/Flashlight
 
-This gets our flash light node and assigns it to the ``flashlight`` variable.
+This gets the flash light node and assigns it to the ``flashlight`` variable.
 
 _________
 
@@ -586,11 +585,11 @@ Now we need to change some of the code in ``process_input``. Add the following s
 
 Let's go over the additions:
 
-We set ``is_sprinting`` to true when we are holding down the ``movement_sprint`` action, and false
+We set ``is_sprinting`` to true when the player is holding down the ``movement_sprint`` action, and false
 when the ``movement_sprint`` action is released. In ``process_movement`` we'll add the code that makes the player faster when
-they sprint. Here in ``process_input`` we're going to change the ``is_sprinting`` variable.
+they sprint. Here in ``process_input`` we are just going to change the ``is_sprinting`` variable.
 
-We do something similar freeing/capturing the cursor for handling the flash light. We first check to see if the ``flashlight`` action
+We do something similar to freeing/capturing the cursor for handling the flashlight. We first check to see if the ``flashlight`` action
 was just pressed. If it was, we then check to see if ``flashlight`` is visible in the scene tree. If it is, then we hide it, and if it's not we show it.
 
 _________
@@ -604,10 +603,10 @@ Now we need to change a couple things in ``process_movement``. First, replace ``
     else:
         target *= MAX_SPEED
 
-Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if we are sprinting or not.
-If we are sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``. 
+Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if the player is sprinting or not.
+If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``. 
 
-Now all that's left is changing the accleration when sprinting. Change ``accel = ACCEL`` to the following:
+Now all that's left is changing the acceleration when sprinting. Change ``accel = ACCEL`` to the following:
 
 ::
     
@@ -617,13 +616,13 @@ Now all that's left is changing the accleration when sprinting. Change ``accel =
         accel = ACCEL
 
 
-Now when we are sprinting we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate us faster.        
+Now when the player is sprinting we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.        
 
 _________
 
 You should now be able to sprint if you press the ``shift`` button, and can toggle the flash light on and off by pressing the ``F`` button!
 
-Go give it a whirl! You can change the sprint related global variables to make the player faster or slower when sprinting!
+Go give it a whirl! You can change the sprint related class variables to make the player faster or slower when sprinting!
 
 Final notes
 -----------
