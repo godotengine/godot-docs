@@ -6,6 +6,5 @@ build:
 # Possible options: htmlzip, pdf, epub
 # Disable (single) htmlzip as it's way too big to be useful,
 # and leads to excessive memory usage on build
-# Disable epub for now to speed up builds
-formats:
-  - pdf
+# Disable epub and pdf for now to speed up builds
+formats: []
