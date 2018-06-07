@@ -166,15 +166,3 @@ project directory, to ensure that the nuget packages will be available for
 msbuild to use, run::
 
   $ msbuild /t:restore
-
-
-Debugging Failing Godot Builds
-------------------------------
-
-If you find that your mono project is failing to build, you can debug more closely
-by running the following on the command line, in the root of your project::
-
-  $ msbuild
-
-This prints detailed output on why the build failed. Note that as mentioned
-in the above section, you need to run msbuild /t:restore separately.
