@@ -161,6 +161,8 @@ located in the project root:
     </Project>
 
 
-Then using the dotnet command line to restore package, in the project root::
+Whenever packages are added or modified, run nuget restore in the root of the
+project directory, to ensure that the nuget packages will be available for
+msbuild to use, run::
 
-    $ dotnet restore
+  $ msbuild /t:restore
