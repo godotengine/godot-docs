@@ -77,7 +77,7 @@ Creating a simple plugin
 ------------------------
 Now it's time to build an actual plugin.
 
-To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "Demo" inside of our GDNative modules folder structure.
+To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "demo" inside of our GDNative modules folder structure.
 
 Inside our demo we'll create a scene with a single Node of type Node called "Main" and we'll save this as main.tscn. We'll come back to that later.
 
