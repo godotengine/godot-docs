@@ -77,7 +77,7 @@ Creating a simple plugin
 ------------------------
 Now it's time to build an actual plugin.
 
-To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "Demo" inside of our GDNative modules folder structure.
+To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "demo" inside of our GDNative modules folder structure.
 
 Inside our demo we'll create a scene with a single Node of type Node called "Main" and we'll save this as main.tscn. We'll come back to that later.
 
@@ -202,15 +202,23 @@ This is the part I can't really make pretty. Just use the ``SConstruct`` file be
     import os, subprocess
     
     # Local dependency paths, adapt them to your setup
-    godot_headers_path = ARGUMENTS.get("headers", "godot_headers/")
-    cpp_bindings_path = ARGUMENTS.get("cpp_bindings_path", "godot-cpp/")
+    godot_headers_path = ARGUMENTS.get("headers", "godot_headers")
+    cpp_bindings_path = ARGUMENTS.get("cpp_bindings_path", "godot-cpp")
     cpp_bindings_library_path = ARGUMENTS.get("cpp_bindings_library", "godot-cpp/bin/godot-cpp")
+    project_path = ARGUMENTS.get("project", ".")
+    final_lib_path = ARGUMENTS.get("lib", project_path + "/bin/")
+    sources_path = ARGUMENTS.get("src", project_path + "/src/")
+
+    # strip any given extensions from the cpp_bindings_library_path
+    ext = 'z'
+    while ext != '':
+        cpp_bindings_library_path, ext = os.path.splitext(cpp_bindings_library_path)
     
+    # components of final library file name
+    lib_name = ARGUMENTS.get("name", "libgdexample")
     target = ARGUMENTS.get("target", "debug")
     platform = ARGUMENTS.get("platform", "windows")
     bits = ARGUMENTS.get("bits", 64)
-    
-    final_lib_path = 'demo/bin/'
     
     # This makes sure to keep the session environment variables on windows, 
     # that way you can run scons in a vs 2017 prompt and it will find all the required tools
@@ -245,13 +253,13 @@ This is the part I can't really make pretty. Just use the ``SConstruct`` file be
     
         final_lib_path = final_lib_path + 'win' + str(bits) + '/'
     
-    env.Append(CPPPATH=['.', 'src/', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/'])
+    env.Append(CPPPATH=[project_path, sources_path, godot_headers_path, cpp_bindings_path + '/include/', cpp_bindings_path + '/include/core/'])
     env.Append(LIBS=[cpp_bindings_library_path + "." + platform + "." + str(bits)])
     
     sources = []
-    add_sources(sources, "src")
+    add_sources(sources, sources_path)
     
-    library = env.SharedLibrary(target=final_lib_path + 'libgdexample', source=sources)
+    library = env.SharedLibrary(target=final_lib_path + lib_name, source=sources)
     Default(library)
 
 The above file will probably grow as time goes by to support other platforms. For the most part this file can be used for any module you build.
@@ -259,7 +267,7 @@ You will want to adjust the starting value of ``final_lib_path`` if you want you
 
 .. code-block:: none
 
-    scons platform=windows/linux/osx
+    scons platform=windows/linux/osx project=demo
 
 And our module should compile. You should now be able to find your module in ``demo/bin/<platform>``
 
