@@ -359,7 +359,7 @@ And only for basis (no translation):
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var new_pos = m.basis_xform(pos)
+    var new_pos = m.basis.xform(pos)
 
  .. code-tab:: csharp
 
@@ -385,7 +385,7 @@ Only for Basis:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var new_pos = m.basis_xform_inv(pos)
+    var new_pos = m.basis.xform_inv(pos)
 
  .. code-tab:: csharp
 
