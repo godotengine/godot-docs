@@ -7,3 +7,4 @@ GDNative
 
    gdnative-c-example
    gdnative-cpp-example
+   gdnative-cpp-scons

@@ -1,0 +1,347 @@
+#!python
+
+import os, sys, re
+
+### utility method definitions ###
+
+def add_sources(p_sources, p_path, p_extensions = ['.c', '.cpp']):
+    if not os.path.isdir(p_path):
+        for a_ext in p_extensions:
+            if p_path.endswith(a_ext):
+                p_sources.append(p_path)
+    else:
+        for file in os.listdir(p_path):
+            for a_ext in p_extensions:
+                if p_path.endswith(a_ext):
+                    p_sources.append(p_path + file)
+
+def parse_paths(p_param, p_dirs = True):
+    paths = list(set(map(lambda x: x.replace("\\", "/"), re.split(';|\n', p_param))))
+    if p_dirs:
+        paths = list(map(lambda x: x if x[-1:] == "/" else x + "/", paths))
+    return paths
+
+### define input variables ###
+
+# Try to detect the host platform automatically
+# This is used if no `platform` argument is passed
+if sys.platform.startswith('linux'):
+    host_platform = 'linux'
+elif sys.platform == 'darwin':
+    host_platform = 'osx'
+elif sys.platform == 'win32':
+    host_platform = 'windows'
+else:
+    raise ValueError('Could not detect platform automatically, please specify with platform=<platform>')
+
+# Initiate option handling
+opts = Variables([], ARGUMENTS)
+
+# build options, must be the same setting as used for cpp_bindings
+opts.Add(EnumVariable('platform', 'Target platform', host_platform,
+                    allowed_values=('linux', 'osx', 'windows'),
+                    ignorecase=2))
+opts.Add(EnumVariable('bits', 'Target platform bits', 'default', ('default', '32', '64')))
+opts.Add(EnumVariable('target', 'Compilation target', 'debug',
+                    allowed_values=('debug', 'release'),
+                    ignorecase=2))
+
+# compiler options
+opts.Add(BoolVariable('use_llvm', 'Use the LLVM compiler - only effective when targeting Linux', False))
+opts.Add(BoolVariable('use_mingw', 'Use the MinGW compiler - only effective on Windows', False))
+opts.Add('std', 'The version of C++ to use. Defaults to \'c++14\'', 'c++14')
+
+# output options
+opts.Add('name', 'The name of the library to generate: lib<name>.extensions.', 'default')
+opts.Add(PathVariable('buildpath', 'Path to the directory where builds will go. Defaults to \'bin\'.', 'bin', PathVariable.PathIsDir))
+
+# bindings dependency options
+opts.Add(PathVariable('godot_cpp', 'Path to the godot-cpp bindings directory.', 'godot-cpp', PathVariable.PathIsDir))
+opts.Add(PathVariable('godot_headers', 'Path to the godot_headers bindings directory.', 'godot-cpp/godot_headers', PathVariable.PathIsDir))
+
+# content options
+opts.Add('includes', 'Path to the directories containing header files, delimited by semi-colons, e.g. \'dir1;path1/dir2\'', '.;include;includes;headers')
+opts.Add('sources', 'Path to the directories containing source files, delimited by semi-colons, e.g. \'dir1;path1/dir2\'', '.;sources;source;src')
+opts.Add('libpath', 'Path to the directories containing libraries, delimited by semi-colons. Defaults to \'.;lib\'', '.;lib')
+opts.Add('libs', 'File names of libraries to link, delimited by semi-colons, e.g. \'liblinux.so;libosx.dylib;libwindows.dll;\'', '')
+
+# visual studio options
+opts.Add(BoolVariable('vsproj', 'Generate a Visual Studio solution file.', False))
+opts.Add('num_jobs', 'How many threads should be used for \'vsproj\'?', 1)
+
+# stop if given unrecognized options
+unknown = opts.UnknownVariables()
+if unknown:
+    print("Unknown variables:" + unknown.keys())
+    Exit(1)
+
+### define compiler and linker program + flags ###
+
+# This makes sure to keep the session environment variables on Windows
+# This way, you can run SCons in a Visual Studio 2017 prompt and it will find all the required tools
+env = Environment()
+opts.Update(env)
+if env['platform'] == 'windows':
+    env = Environment(ENV = os.environ)
+    opts.Update(env)
+    if env['bits'] == '64':
+        env['TARGET_ARCH'] = 'amd64'
+    elif env['bits'] == '32':
+        env['TARGET_ARCH'] = 'x86'
+    else:
+        print("Warning: bits argument not specified, target arch is=" + env['TARGET_ARCH'])
+
+# Regardless, bind options to a virtual environment.
+Help(opts.GenerateHelpText(env))
+
+# determine our 'bits' based on the given parameters and architecture
+is64 = False
+if (env['TARGET_ARCH'] == 'amd64' or env['TARGET_ARCH'] == 'emt64' or env['TARGET_ARCH'] == 'x86_64'):
+    is64 = True
+if env['bits'] == 'default':
+    env['bits'] = '64' if is64 else '32'
+
+std = '-std={}'.format(env['std'])
+dl_suffix = ''
+
+# handle OS-specific options/flags
+if env['platform'] == 'linux':
+    if env['use_llvm']:
+        env['CXX'] = 'clang++'
+
+    env.Append(CCFLAGS=['-fPIC', '-g', std, '-Wwrite-strings'])
+    env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
+
+    if env['target'] == 'debug':
+        env.Append(CCFLAGS=['-Og'])
+    elif env['target'] == 'release':
+        env.Append(CCFLAGS=['-O3'])
+
+    if env['bits'] == '64':
+        env.Append(CCFLAGS=['-m64'])
+        env.Append(LINKFLAGS=['-m64'])
+    elif env['bits'] == '32':
+        env.Append(CCFLAGS=['-m32'])
+        env.Append(LINKFLAGS=['-m32'])
+    
+    dl_suffix = 'so'
+
+elif env['platform'] == 'osx':
+    if env['bits'] == '32':
+        raise ValueError('Only 64-bit builds are supported for the macOS target.')
+
+    env.Append(CCFLAGS=['-g', std, '-arch', 'x86_64'])
+    env.Append(LINKFLAGS=['-arch', 'x86_64', '-framework', 'Cocoa', '-Wl,-undefined,dynamic_lookup'])
+
+    if env['target'] == 'debug':
+        env.Append(CCFLAGS=['-Og'])
+    elif env['target'] == 'release':
+        env.Append(CCFLAGS=['-O3'])
+
+    dl_suffix = 'dylib'
+
+elif env['platform'] == 'windows':
+    if host_platform == 'windows' and not env['use_mingw']:
+        # MSVC
+        env.Append(LINKFLAGS=['/WX'])
+        if env['target'] == 'debug':
+            env.Append(CCFLAGS=['/EHsc', '/D_DEBUG', '/MDd'])
+        elif env['target'] == 'release':
+            env.Append(CCFLAGS=['/O2', '/EHsc', '/DNDEBUG', '/MD'])
+    else:
+        # MinGW
+        if env['bits'] == '64':
+            env['CXX'] = 'x86_64-w64-mingw32-g++'
+        elif env['bits'] == '32':
+            env['CXX'] = 'i686-w64-mingw32-g++'
+
+        env.Append(CCFLAGS=['-g', '-O3', std, '-Wwrite-strings'])
+        env.Append(LINKFLAGS=['--static', '-Wl,--no-undefined', '-static-libgcc', '-static-libstdc++'])
+    
+    dl_suffix = 'dll'
+
+### prep sources, includes, and libraries ###
+
+# source to compile
+sources = []
+libs = parse_paths(env['libs'], False)
+src_paths = parse_paths(env['sources'])
+include_paths = parse_paths(env['includes'])
+lib_paths = parse_paths(env['libpath'])
+
+for a_path in src_paths:
+    add_sources(sources, a_path)
+
+# If we can find the godot-cpp repository, automatically add
+# its headers to the include paths. Also, add the bindings
+# library path to the lib_paths. User will need to define the name.
+headers_handled = False
+godot_cpp_handled = False
+godot_cpp = env['godot_cpp']
+if os.path.isdir(godot_cpp):
+    godot_cpp_handled = True
+    if not godot_cpp.endswith('/'):
+        godot_cpp += '/'
+
+    godot_headers = env['godot_headers']
+    if godot_headers and os.path.isdir(godot_headers):
+        headers_handled = True
+        if not godot_headers.endswith('/'):
+            godot_headers += '/'
+
+    header_dirs = [
+        godot_headers,
+        godot_cpp + 'include',
+        godot_cpp + 'include/core',
+        godot_cpp + 'include/gen'
+    ]
+
+    include_paths += header_dirs
+    lib_paths += ['godot-cpp/bin']
+
+# If we have not yet imported the godot_headers from the godot-cpp
+# repository, then the user will need to specify where we can find them.
+# Import them into the include paths.
+godot_headers = env['godot_headers']
+if not headers_handled and godot_headers and os.path.isdir(godot_headers):
+    include_paths += [godot_headers]
+elif godot_cpp_handled:
+    raise ValueError('Could not detect Godot header files in godot-cpp, please specify with godot_headers=<path>.')
+else:
+    raise ValueError('Could not detect Godot header files, please specify with godot_headers=<path> or godot_cpp=<path>.')
+
+# Intergate the include paths into C++ build path.
+# This is what enables your source code to find header files.
+env.Append(CPPPATH=include_paths)
+
+### Build the library ###
+
+# allow the user to provide a slash or not in their buildpath, i.e. 'bin' or 'bin/', etc.
+build_path = env['buildpath']
+if not build_path.endswith('/'):
+    build_path += '/'
+
+# put together the full output file path
+target = '{}lib{}.{}.{}.{}'.format(build_path, env['name'], env['platform'], env['target'], env['bits'])
+
+# Tell scons that we will be building a dynamic library.
+# 'target' is the location in which to build it. It must be in the current directory or a subdirectory.
+# 'source' is the list of source code files (.cpp, .c).
+# 'LIBS' is the list of library files to link.
+# 'LIBPATH' is the directories in which we can find said libraries.
+library = env.SharedLibrary(
+    target = target,
+    source = sources,
+    LIBS = libs,
+    LIBPATH = lib_paths
+)
+
+# By default, scons will build every target that is defined, i.e. scons
+# could build multiple libraries and a final executable, as it does with Godot.
+# The Default command specifies that, unless otherwise specified, only one build
+# command should be processed.
+Default(library)
+
+### Visual Studio project generation ###
+
+vsproj = env['vsproj']
+num_jobs = env['num_jobs']
+
+if vsproj == "yes":
+    env.vs_incs = []
+    env.vs_srcs = []
+
+    def AddToVSProject(sources):
+        for x in sources:
+            if type(x) == type(""):
+                fname = env.File(x).path
+            else:
+                fname = env.File(x)[0].path
+            pieces = fname.split(".")
+            if len(pieces) > 0:
+                basename = pieces[0]
+                basename = basename.replace('\\\\', '/')
+                if os.path.isfile(basename + ".h"):
+                    env.vs_incs = env.vs_incs + [basename + ".h"]
+                elif os.path.isfile(basename + ".hpp"):
+                    env.vs_incs = env.vs_incs + [basename + ".hpp"]
+                if os.path.isfile(basename + ".c"):
+                    env.vs_srcs = env.vs_srcs + [basename + ".c"]
+                elif os.path.isfile(basename + ".cpp"):
+                    env.vs_srcs = env.vs_srcs + [basename + ".cpp"]
+
+    def build_commandline(commands):
+        common_build_prefix = ['cmd /V /C set "plat=$(PlatformTarget)"',
+                                '(if "$(PlatformTarget)"=="x64" (set "plat=x86_amd64"))',
+                                'call "' + batch_file + '" !plat!']
+
+        result = " ^& ".join(common_build_prefix + [commands])
+        # print("Building commandline: ", result)
+        return result
+
+    def find_visual_c_batch_file(env):
+        from  SCons.Tool.MSCommon.vc import get_default_version, get_host_target, find_batch_file
+
+        version = get_default_version(env)
+        (host_platform, target_platform, req_target_platform) = get_host_target(env)
+        return find_batch_file(env, version, host_platform, target_platform)[0]
+
+    env.AddToVSProject = AddToVSProject
+    env.build_commandline = build_commandline
+
+    env['CPPPATH'] = [Dir(path) for path in env['CPPPATH']]
+
+    batch_file = find_visual_c_batch_file(env)
+    if batch_file:
+        print("found batch_file: {}".format(batch_file))
+        env.AddToVSProject(sources)
+        includes = []
+        for a_path in include_paths:
+            add_sources(includes, a_path, ['.h', '.hpp'])
+        env.AddToVSProject(includes)
+
+        # windows allows us to have spaces in paths, so we need
+        # to double quote off the directory. However, the path ends
+        # in a backslash, so we need to remove this, lest it escape the
+        # last double quote off, confusing MSBuild
+        env['MSVSBUILDCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" platform=windows target=$(Configuration) -j' + str(num_jobs))
+        env['MSVSREBUILDCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" platform=windows target=$(Configuration) vsproj=yes -j' + str(num_jobs))
+        env['MSVSCLEANCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" --clean platform=windows target=$(Configuration) -j' + str(num_jobs))
+
+        # This version information (Win32, x64, Debug, Release, Release_Debug seems to be
+        # required for Visual Studio to understand that it needs to generate an NMAKE
+        # project. Do not modify without knowing what you are doing.
+        debug_variants = ['debug|Win32'] + ['debug|x64']
+        release_variants = ['release|Win32'] + ['release|x64']
+        release_debug_variants = ['release_debug|Win32'] + ['release_debug|x64']
+        variants = debug_variants + release_variants + release_debug_variants
+
+        # Sets up output executable names for each variant. The ordering of the final 'targets' array should match that of the final 'variants' array.
+
+        target_name = 'bin\\' + env['name'] + '.windows.'
+
+        debug_targets = [target_name + 'tools.32.' + dl_suffix] + [target_name + 'tools.64.' + dl_suffix]
+        release_targets = [target_name + 'opt.32.' + dl_suffix] + [target_name + 'opt.64.' + dl_suffix]
+        release_debug_targets = [target_name + 'opt.tools.32.' + dl_suffix] + [target_name + 'opt.tools.64.' + dl_suffix]
+        targets = debug_targets + release_targets + release_debug_targets
+
+        msvproj = env.MSVSProject(target=['#' + env['name'] + env['MSVSPROJECTSUFFIX']],
+                                    incs=env.vs_incs,
+                                    srcs=env.vs_srcs,
+                                    runfile=targets,
+                                    buildtarget=library, #recall that 'library' is the result of our 'env.SharedLibrary()' method call
+                                    auto_build_solution=1,
+                                    variant=variants)
+
+    # handle cpp hint file
+    filename = "hint_file.cpp"
+    if os.path.isfile(filename):
+        # Don't overwrite an existing hint file since the user may have customized it.
+        pass
+    else:
+        try:
+            fd = open(filename, "w")
+            fd.write("#define GODOT_CLASS(m_class, m_inherits)\n")
+            fd.write("#define GODOT_SUBCLASS(m_class, m_inherits)\n")
+        except IOError:
+            print("Could not write cpp.hint file.")

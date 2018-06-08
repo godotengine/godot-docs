@@ -1,0 +1,209 @@
+#!python
+import os
+
+### utility method definitions ###
+
+def add_sources(sources, directory):
+    for file in os.listdir(directory):
+        if file.endswith('.cpp') or file.endswith('.c'):
+            sources.append(directory + '/' + file)
+
+def add_headers(headers, directory):
+    for file in os.listdir(directory):
+        if file.endswith('.hpp') or file.endswith('.h'):
+            headers.append(directory + '/' + file)
+
+### output lib preparation ###
+
+target = ARGUMENTS.get("target", "debug")
+platform = ARGUMENTS.get("platform", "windows")
+bits = ARGUMENTS.get("bits", 64)
+lib_name = ARGUMENTS.get("name", "libdefault")
+
+library_file = lib_name + "." + platform + "." + str(bits)
+
+lib_path = ARGUMENTS.get("lib", "bin/")
+
+lib_path = lib_path.split("\\").join("/")
+if lib_path[-1:] != "/":
+    lib_path += "/"
+
+### library dependencies ###
+
+cpp_bindings_library_path = ARGUMENTS.get("cpp_bindings_library", "godot-cpp/bin/godot-cpp")
+
+ext = "z"
+while ext != "":
+    cpp_bindings_library_path, ext = os.path.splitext(cpp_bindings_library_path)
+
+cpp_bindings_library = cpp_bindings_library_path + "." + platform + "." + str(bits)
+
+other_libs = ARGUMENTS.get("other_libs", "")
+other_libs = other_libs.split(",")
+
+libs = [cpp_bindings_library] + other_libs
+
+### source dependencies ###
+
+godot_headers_path = ARGUMENTS.get("headers", "godot_headers/")
+cpp_bindings_path = ARGUMENTS.get("cpp_bindings_path", "godot-cpp/")
+sources = ARGUMENTS.get("sources", "")
+
+source_files = []
+header_files = []
+
+source_dirs = sources.split(",")
+
+for path in source_dirs:
+    if os.path.isdir(path):
+        add_sources(source_files, path)
+        add_headers(header_files, path)
+
+source_dirs.append(godot_headers_path)
+source_dirs.append(cpp_bindings_path + "include/")
+source_dirs.append(cpp_bindings_path + "include/core/")
+
+### OS-specific logic for flags and the output lib directory ###
+
+platform_dir = ""
+dl_suffix = ""
+
+if platform == "osx":
+    env.Append(CCFLAGS = ['-g','-O3', '-arch', 'x86_64'])
+    env.Append(LINKFLAGS = ['-arch', 'x86_64'])
+
+    platform_dir = "osx"
+    dl_suffix = "dylib"
+
+elif platform == "linux":
+    env.Append(CCFLAGS = ['-fPIC', '-g','-O3', '-std=c++14'])
+
+    platform_dir = "x11"
+    dl_suffix = "so"
+
+elif platform == "windows":
+
+    # Set exception handling model to avoid warnings caused by Windows system headers.
+    env.Append(CCFLAGS=['-EHsc'])
+
+    if target == "debug":
+        env.Append(CCFLAGS = ['-D_DEBUG', '-MDd'])
+    else:
+        env.Append(CCFLAGS = ['-O2', '-DNDEBUG', '-MD'])
+
+    platform_dir = "win"
+    dl_suffix = "dll"
+
+else:
+    # do nothing if we don't recognize the platform
+    print 'unrecognized platform provided. Please enter a valid platform.'
+    return
+
+final_lib_path = lib_path + platform_dir + str(bits) + "/" + lib_name
+
+env.Append(LIBS=libs)
+env.Append(CPPPATH=source_dirs)
+
+if ARGUMENTS.get("use_llvm", "no") == "yes":
+    env["CXX"] = "clang++"
+
+library = env.SharedLibrary(target=final_lib_path, source=source_files)
+Default(library)
+
+### VS Project Generation ###
+
+vsproj = ARGUMENTS.get("vsproj", "no")
+num_jobs = ARGUMENTS.get("num_jobs", 1)
+
+if vsproj == "yes":
+    env.vs_incs = []
+    env.vs_srcs = []
+
+    def AddToVSProject(sources):
+        for x in sources:
+            if type(x) == type(""):
+                fname = env.File(x).path
+            else:
+                fname = env.File(x)[0].path
+            pieces = fname.split(".")
+            if len(pieces) > 0:
+                basename = pieces[0]
+                basename = basename.replace('\\\\', '/')
+                if os.path.isfile(basename + ".h"):
+                    env.vs_incs = env.vs_incs + [basename + ".h"]
+                elif os.path.isfile(basename + ".hpp"):
+                    env.vs_incs = env.vs_incs + [basename + ".hpp"]
+                if os.path.isfile(basename + ".c"):
+                    env.vs_srcs = env.vs_srcs + [basename + ".c"]
+                elif os.path.isfile(basename + ".cpp"):
+                    env.vs_srcs = env.vs_srcs + [basename + ".cpp"]
+
+    def build_commandline(commands):
+        common_build_prefix = ['cmd /V /C set "plat=$(PlatformTarget)"',
+                                '(if "$(PlatformTarget)"=="x64" (set "plat=x86_amd64"))',
+                                'call "' + batch_file + '" !plat!']
+
+        result = " ^& ".join(common_build_prefix + [commands])
+        # print("Building commandline: ", result)
+        return result
+
+    def find_visual_c_batch_file(env):
+        from  SCons.Tool.MSCommon.vc import get_default_version, get_host_target, find_batch_file
+
+        version = get_default_version(env)
+        (host_platform, target_platform, req_target_platform) = get_host_target(env)
+        return find_batch_file(env, version, host_platform, target_platform)[0]
+
+    env.AddToVSProject = AddToVSProject
+    env.build_commandline = build_commandline
+
+    env['CPPPATH'] = [Dir(path) for path in env['CPPPATH']]
+
+    batch_file = find_visual_c_batch_file(env)
+    if batch_file:
+        env.AddToVSProject(source_files)
+        env.AddToVSProject(header_files)
+
+        # windows allows us to have spaces in paths, so we need
+        # to double quote off the directory. However, the path ends
+        # in a backslash, so we need to remove this, lest it escape the
+        # last double quote off, confusing MSBuild
+        env['MSVSBUILDCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" platform=windows target=$(Configuration) -j' + str(num_jobs))
+        env['MSVSREBUILDCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" platform=windows target=$(Configuration) vsproj=yes -j' + str(num_jobs))
+        env['MSVSCLEANCOM'] = build_commandline('scons --directory="$(ProjectDir.TrimEnd(\'\\\'))" --clean platform=windows target=$(Configuration) -j' + str(num_jobs))
+
+        # This version information (Win32, x64, Debug, Release, Release_Debug seems to be
+        # required for Visual Studio to understand that it needs to generate an NMAKE
+        # project. Do not modify without knowing what you are doing.
+        debug_variants = ['debug|Win32'] + ['debug|x64']
+        release_variants = ['release|Win32'] + ['release|x64']
+        release_debug_variants = ['release_debug|Win32'] + ['release_debug|x64']
+        variants = debug_variants + release_variants + release_debug_variants
+
+        # Sets up output executable names for each variant. The ordering of the final 'targets' array should match that of the final 'variants' array.
+
+        target_name = 'bin\\' + lib_name + '.windows.'
+
+        debug_targets = [target_name + 'tools.32.' + dl_suffix] + [target_name + 'tools.64.' + dl_suffix]
+        release_targets = [target_name + 'opt.32.' + dl_suffix] + [target_name + 'opt.64.' + dl_suffix]
+        release_debug_targets = [target_name + 'opt.tools.32.' + dl_suffix] + [target_name + 'opt.tools.64.' + dl_suffix]
+        targets = debug_targets + release_targets + release_debug_targets
+
+        msvproj = env.MSVSProject(target=['#' + lib_name + env['MSVSPROJECTSUFFIX']],
+                                    incs=env.vs_incs,
+                                    srcs=env.vs_srcs,
+                                    runfile=targets,
+                                    buildtarget=library, #recall that 'library' is the result of our 'env.SharedLibrary()' method call
+                                    auto_build_solution=1,
+                                    variant=variants)
+
+    # handle cpp hint file
+    if os.path.isfile(filename):
+        # Don't overwrite an existing hint file since the user may have customized it.
+        pass
+    else:
+        try:
+            fd = open(filename, "w")
+            fd.write("#define GDCLASS(m_class, m_inherits)\n")
+        except IOError:
+            print("Could not write cpp.hint file.")
