@@ -28,7 +28,7 @@ Configuring the imported translation
 ------------------------------------
 
 The translations can get updated and re-imported when they change, but
-they still have to be added to the project. This is done in Scene
+they still have to be added to the project. This is done in Project
 > Project Settings > Localization:
 
 .. image:: img/localization_dialog.png
