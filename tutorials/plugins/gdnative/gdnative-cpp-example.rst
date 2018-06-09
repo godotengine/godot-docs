@@ -45,9 +45,7 @@ If you downloaded or cloned my example from the link specified in the introducti
     git submodule init
     git submodule update
 
-This will trigger downloading these two repositories into your project folder.
-
-**note** godot-cpp submodules godot_header but there is currently a permissions issue. Once that is resolved you can use that instead of having your own headers submodule. 
+This will trigger downloading these two repositories into your project folder. 
 
 Building the C++ bindings
 -------------------------
@@ -77,7 +75,7 @@ Creating a simple plugin
 ------------------------
 Now it's time to build an actual plugin.
 
-To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "Demo" inside of our GDNative modules folder structure.
+To start we want to create an empty Godot project in which we'll be able to place a few files so open up Godot and create a new project. I like to place an demo project in my repository that shows how my GDNative module works so for our example we'll create a project in a folder called "demo" inside of our GDNative modules folder structure.
 
 Inside our demo we'll create a scene with a single Node of type Node called "Main" and we'll save this as main.tscn. We'll come back to that later.
 
@@ -119,10 +117,10 @@ We're including ``Godot.hpp`` which contains all our basic definitions. After th
 
 We're using the namespace ``godot``, everything in GDNative is defined within this namespace.
 
-After that we declare a single member variables called ``time_passed``.
-
 Then we have our class definition and we see that we're inheriting from our Sprite but through a container class. We'll see a few side effects from this later on. This is also the main bit that is going to improve in nativescript 1.1.
 The GODOT_CLASS macro sets up a few internal things for us.
+
+After that we declare a single member variables called ``time_passed``.
 
 In the next block we're defining our methods, we obviously have our constructor and destructor defined but there are two other functions that will likely look familiar to some.
 
@@ -164,7 +162,7 @@ The other method of note is our ``_process`` function where I'm simply keeping t
 What does stand out is calling ``owner->set_position`` to call one of the build in methods of our Sprite. This is because our class is a container class and owner points to the actual sprite node our script relates to.
 Once we can use nativescript 1.1 we'll be able to call ``set_position`` directly on our class.
 
-Now there is one more C++ file we need that we call '''gdlibrary.cpp'''. Our GDNative plugin can contain multiple native_scripts each one with their own header and source file like we've implemented ``gdexample`` up above. What we now need is a small bit of code that tells Godot about all the native_scripts in our GDNative plugin.
+Now there is one more C++ file we need that we call ``gdlibrary.cpp``. Our GDNative plugin can contain multiple native_scripts each one with their own header and source file like we've implemented ``gdexample`` up above. What we now need is a small bit of code that tells Godot about all the native_scripts in our GDNative plugin.
 
 .. code:: C++
 
