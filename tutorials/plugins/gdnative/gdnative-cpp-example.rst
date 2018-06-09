@@ -79,9 +79,11 @@ To start we want to create an empty Godot project in which we'll be able to plac
 
 Inside our demo we'll create a scene with a single Node of type Node called "Main" and we'll save this as main.tscn. We'll come back to that later.
 
-We're also going to create a subfolder called ``src`` into which we'll place our source files.
+Back in the top-level gdnative module folder, we're also going to create a subfolder called ``src`` into which we'll place our source files.
 
-We'll start with creating our header file for the GDNative node we'll be creating, this we'll call ``gdexample.h`` and place in our ``src`` folder:
+You should now have ``demo``, ``godot-cpp``, ``godot_headers``, and ``src`` directories in your gdnative module.
+
+In the ``src`` folder, we'll start with creating our header file for the GDNative node we'll be creating. This we'll call ``gdexample.h``:
 
 .. code:: C++
 
@@ -192,68 +194,9 @@ After that we call the function ``register_class`` for each of our classes in ou
 Compiling our plugin
 --------------------
 
-This is the part I can't really make pretty. Just use the ``SConstruct`` file below as your basis:
+We can't really make pretty the ``SConstruct`` files used for building in scons. For the purpose of this example, just use this hardcoded build file we've prepared. We'll cover a more customizable, detailed example on how to use these build files in a subsequent tutorial: :download:`SConstruct <files/cpp_example/SConstruct>`
 
-.. code-block:: python
-
-    #!python
-    import os, subprocess
-    
-    # Local dependency paths, adapt them to your setup
-    godot_headers_path = ARGUMENTS.get("headers", "godot_headers/")
-    cpp_bindings_path = ARGUMENTS.get("cpp_bindings_path", "godot-cpp/")
-    cpp_bindings_library_path = ARGUMENTS.get("cpp_bindings_library", "godot-cpp/bin/godot-cpp")
-    
-    target = ARGUMENTS.get("target", "debug")
-    platform = ARGUMENTS.get("platform", "windows")
-    bits = ARGUMENTS.get("bits", 64)
-    
-    final_lib_path = 'demo/bin/'
-    
-    # This makes sure to keep the session environment variables on windows, 
-    # that way you can run scons in a vs 2017 prompt and it will find all the required tools
-    env = Environment()
-    if platform == "windows":
-        env = Environment(ENV = os.environ)
-    
-    if ARGUMENTS.get("use_llvm", "no") == "yes":
-        env["CXX"] = "clang++"
-    
-    def add_sources(sources, directory):
-        for file in os.listdir(directory):
-            if file.endswith('.cpp'):
-                sources.append(directory + '/' + file)
-    
-    if platform == "osx":
-        env.Append(CCFLAGS = ['-g','-O3', '-arch', 'x86_64'])
-        env.Append(LINKFLAGS = ['-arch', 'x86_64'])
-    
-        final_lib_path = final_lib_path + 'osx/'
-    
-    elif platform == "linux":
-        env.Append(CCFLAGS = ['-fPIC', '-g','-O3', '-std=c++14'])
-    
-        final_lib_path = final_lib_path + 'x11/'
-    
-    elif platform == "windows":
-        if target == "debug":
-            env.Append(CCFLAGS = ['-EHsc', '-D_DEBUG', '-MDd'])
-        else:
-            env.Append(CCFLAGS = ['-O2', '-EHsc', '-DNDEBUG', '-MD'])
-    
-        final_lib_path = final_lib_path + 'win' + str(bits) + '/'
-    
-    env.Append(CPPPATH=['.', 'src/', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/'])
-    env.Append(LIBS=[cpp_bindings_library_path + "." + platform + "." + str(bits)])
-    
-    sources = []
-    add_sources(sources, "src")
-    
-    library = env.SharedLibrary(target=final_lib_path + 'libgdexample', source=sources)
-    Default(library)
-
-The above file will probably grow as time goes by to support other platforms. For the most part this file can be used for any module you build.
-You will want to adjust the starting value of ``final_lib_path`` if you want your dynamic library to end up somewhere else and you will want to rename ``libgdexample`` at the end to the name of your module. Other then that just run:
+Once you've downloaded the ``SConstruct`` file, place it in your gdnative module folder, beside ``godot-cpp``, ``godot_headers``, and ``demo``. Next just run:
 
 .. code-block:: none
 
