@@ -36,7 +36,7 @@ transform. Examples of this are:
 
 -  **Parallax Backgrounds**: Backgrounds that move slower than the rest
    of the stage.
--  **HUD**: Head's up display, or user interface. If the world moves,
+-  **HUD**: Heads-up display, or user interface. If the world moves,
    the life counter, score, etc. must stay static.
 -  **Transitions**: Effects used for transitions (fades, blends) may
    also want it to remain at a fixed location.
@@ -51,8 +51,8 @@ which is a node that adds a separate 2D rendering layer for all its
 children and grand-children. Viewport children will draw by default at
 layer "0", while a CanvasLayer will draw at any numeric layer. Layers
 with a greater number will be drawn above those with a smaller number.
-CanvasLayers also have their own transform, and do not depend on the
-transform of other layers. This allows the UI to be fixed in-place,
+CanvasLayers also have their own transform and do not depend on the
+transform of other layers. This allows the UI to be fixed in-place
 while the world moves.
 
 An example of this is creating a parallax background. This can be done

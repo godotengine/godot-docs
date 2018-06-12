@@ -26,8 +26,8 @@ Having them as separate images also works.
 
 .. image:: img/tileset.png
 
-Create a new project and move the above PNG image into the directory. Next 
-go into the image's import settings and turn off ``Filter``, keeping it on will cause 
+Create a new project and move the above PNG image into the directory. Next
+go into the image's import settings and turn off ``Filter``, keeping it on will cause
 issues later. ``Mipmaps`` should already be disabled, if not, disable this too.
 
 We will be creating a :ref:`TileSet <class_TileSet>`
@@ -80,11 +80,11 @@ recommended because it is easier to edit.
 
 .. image:: img/tile_example3.png
 
-Finally, edit the polygon, this will give the tile a collision, and fix 
-the warning icon next to the CollisionPolygon node. **Remember to use snap!** 
-Using snap will make sure collision polygons are aligned properly, allowing 
-a character to walk seamlessly from tile to tile. Also **do not scale or move** 
-the collision and/or collision polygon nodes. Leave them at offset 0,0, with 
+Finally, edit the polygon, this will give the tile a collision and fix
+the warning icon next to the CollisionPolygon node. **Remember to use snap!**
+Using snap will make sure collision polygons are aligned properly, allowing
+a character to walk seamlessly from tile to tile. Also **do not scale or move**
+the collision and/or collision polygon nodes. Leave them at offset 0,0, with
 scale 1,1 and rotation 0 with respect to the parent sprite.
 
 .. image:: img/tile_example4.png
@@ -148,8 +148,8 @@ using the lock button:
 
 .. image:: img/tile_lock.png
 
-If you accidentally place a tile somewhere you don't want it to be, you 
-can delete it with ``RMB`` while in the tilemap editor. 
+If you accidentally place a tile somewhere you don't want it to be, you
+can delete it with ``RMB`` while in the tilemap editor.
 
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
@@ -179,5 +179,5 @@ one that looks better for you:
    Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also search for ``Pixel Snap``).
 -  Viewport Scaling can often help with shrinking the map (see the
    :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with it's ``Zoom`` may be a good starting point.
--  You can use a single, separate image for each tile. This will remove all artifacts, but
+-  You can use a single, separate image for each tile. This will remove all artifacts but
    can be more cumbersome to implement and is less optimized.
