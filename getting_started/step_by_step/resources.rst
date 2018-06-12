@@ -7,7 +7,7 @@ Nodes and resources
 -------------------
 
 So far, :ref:`Nodes <class_Node>`
-have been the most important datatype in Godot, as most of the behaviors
+have been the most important datatype in Godot as most of the behaviors
 and features of the engine are implemented through them. There is
 another datatype that is equally important:
 :ref:`Resource <class_Resource>`.
@@ -40,7 +40,7 @@ and again. This corresponds with the fact that resources are just data
 containers, so there is no need to have them duplicated.
 
 Typically, every object in Godot (Node, Resource, or anything else) can
-export properties, properties can be of many types (like a string,
+export properties. Properties can be of many types (like a string,
 integer, Vector2, etc) and one of those types can be a resource. This
 means that both nodes and resources can contain resources as properties.
 To make it a little more visual:
@@ -58,7 +58,7 @@ in a :ref:`Sprite <class_Sprite>` node:
 
 .. image:: img/spriteprop.png
 
-Pressing the ">" button on the right side of the preview allows to
+Pressing the ">" button on the right side of the preview allows us to
 view and edit the resources properties. One of the properties (path)
 shows where it comes from. In this case, it comes from a png image.
 
@@ -89,7 +89,7 @@ first is to use load(), like this:
             get_node("sprite").texture = res
 
 The second way is more optimal, but only works with a string constant
-parameter, because it loads the resource at compile-time.
+parameter because it loads the resource at compile-time.
 
 ::
 
@@ -99,8 +99,8 @@ parameter, because it loads the resource at compile-time.
 
 Loading scenes
 --------------
-Scenes are also resources, but there is a catch. Scenes saved to disk 
-are resources of type :ref:`PackedScene <class_PackedScene>`. This means that 
+Scenes are also resources, but there is a catch. Scenes saved to disk
+are resources of type :ref:`PackedScene <class_PackedScene>`. This means that
 the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
@@ -111,10 +111,10 @@ must be used.
 
     func _on_shoot():
             var bullet = preload("res://bullet.tscn").instance()
-            add_child(bullet)                  
+            add_child(bullet)
 
-This method creates the nodes in the scene's hierarchy, configures 
-them (sets all the properties) and returns the root node of the scene, 
+This method creates the nodes in the scene's hierarchy, configures
+them (sets all the properties) and returns the root node of the scene,
 which can be added to any other node.
 
 The approach has several advantages. As the

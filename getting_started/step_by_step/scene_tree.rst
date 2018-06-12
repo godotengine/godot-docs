@@ -6,17 +6,17 @@ SceneTree
 Introduction
 ------------
 
-This is where things start getting abstract, but don't panic. There's 
+This is where things start getting abstract but don't panic. There's
 not really much more depth than this.
 
 In previous tutorials, everything revolved around the concept of
-nodes. Scenes are simply a collection of nodes. They become active once 
+nodes. Scenes are simply a collection of nodes. They become active once
 they enter the *scene tree*.
 
 This concept deserves going into a little more detail. In fact, the
-scene system is not even a core component of Godot, as it is possible to
+scene system is not even a core component of Godot as it is possible to
 skip it and write a script (or C++ code) that talks directly to the
-servers. But making a game that way would be a lot of work.
+servers, but making a game that way would be a lot of work.
 
 MainLoop
 --------
@@ -33,7 +33,7 @@ main/main.cpp file in the source code if you are ever interested to
 see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
-methods, for initialization, idle (frame-synchronized callback), fixed
+methods for initialization, idle (frame-synchronized callback), fixed
 (physics-synchronized callback), and input. Again, this is really low
 level and when making games in Godot, writing your own MainLoop does not
 even make sense.
@@ -41,7 +41,7 @@ even make sense.
 SceneTree
 ---------
 
-One of the ways to explain how Godot works, is that it's a high level
+One of the ways to explain how Godot works is that it's a high level
 game engine over a low level middleware.
 
 The scene system is the game engine, while the :ref:`OS <class_OS>`
@@ -56,12 +56,12 @@ It's important to know that this class exists because it has a few
 important uses:
 
 -  It contains the root :ref:`Viewport <class_Viewport>`, to which a
-   scene is added as a child when it's first opened, to become
+   scene is added as a child when it's first opened to become
    part of the *Scene Tree* (more on that next)
--  It contains information about the groups, and has means to call all
-   nodes in a group, or get a list of them.
+-  It contains information about the groups and has the means to call all
+   nodes in a group or get a list of them.
 -  It contains some global state functionality, such as setting pause
-   mode, or quitting the process.
+   mode or quitting the process.
 
 When a node is part of the Scene Tree, the
 :ref:`SceneTree <class_SceneTree>`
@@ -80,10 +80,10 @@ two different ways:
         get_tree().get_root() # access via scenemainloop
         get_node("/root") # access via absolute path
 
-This node contains the main viewport, anything that is a child of a
+This node contains the main viewport. Anything that is a child of a
 :ref:`Viewport <class_Viewport>`
 is drawn inside of it by default, so it makes sense that the top of all
-nodes is always a node of this type, otherwise nothing would be seen!
+nodes is always a node of this type otherwise nothing would be seen!
 
 While other viewports can be created in the scene (for split-screen
 effects and such), this one is the only one that is never created by the
@@ -95,7 +95,7 @@ Scene tree
 When a node is connected, directly or indirectly, to the root
 viewport, it becomes part of the *scene tree*.
 
-This means that, as explained in previous tutorials, it will get the
+This means that as explained in previous tutorials, it will get the
 _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 
 .. image:: img/activescene.png
@@ -108,7 +108,7 @@ notifications, play sound, groups, etc. When they are removed from the
 Tree order
 ----------
 
-Most node operations in Godot, such as drawing 2D, processing or getting
+Most node operations in Godot, such as drawing 2D, processing, or getting
 notifications are done in tree order. This means that parents and
 siblings with a smaller rank in the tree order will get notified before
 the current node.
@@ -121,7 +121,7 @@ the current node.
 #. A scene is loaded from disk or created by scripting.
 #. The root node of that scene (only one root, remember?) is added as
    either a child of the "root" Viewport (from SceneTree), or to any
-   child or grand-child of it.
+   child or grandchild of it.
 #. Every node of the newly added scene, will receive the "enter_tree"
    notification ( _enter_tree() callback in GDScript) in top-to-bottom
    order.
@@ -145,7 +145,7 @@ function:
     func _my_level_was_completed():
         get_tree().change_scene("res://levels/level2.tscn")
 
-This is a quick and useful way to switch scenes, but has the drawback
+This is a quick and useful way to switch scenes but has the drawback
 that the game will stall until the new scene is loaded and running. At
 some point in your game, it may be desired to create proper loading
 screens with progress bar, animated indicators or thread (background)
