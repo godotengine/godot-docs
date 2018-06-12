@@ -14,7 +14,7 @@ suitable for this workflow.
 Path
 ----
 
-It is recommended that your godot binary is in your PATH environment
+It is recommended that your Godot binary is in your PATH environment
 variable, so it can be executed easily from any place by typing
 ``godot``. You can do so on Linux by placing the Godot binary in
 ``/usr/local/bin`` and making sure it is called ``godot``.
@@ -23,8 +23,7 @@ Creating a project
 ------------------
 
 Creating a project from the command line is simple, just navigate the
-shell to the desired place and just make project.godot file exist, even
-if empty.
+shell to the desired place and just make a project.godot file.
 
 ::
 
@@ -32,13 +31,13 @@ if empty.
     user@host:~$ cd newgame
     user@host:~/newgame$ touch project.godot
 
-That alone makes for an empty Godot project.
+That alone makes an empty Godot project.
 
 Running the editor
 ------------------
 
 Running the editor is done by executing godot with the ``-e`` flag. This
-must be done from within the project directory, or a subdirectory,
+must be done from within the project directory or a subdirectory,
 otherwise the command is ignored and the project manager appears.
 
 ::
@@ -55,9 +54,9 @@ the same code with that scene as argument.
 Erasing a scene
 ---------------
 
-Godot is friends with your filesystem, and will not create extra
-metadata files, simply use ``rm`` to erase a file. Make sure nothing
-references that scene, or else an error will be thrown upon opening.
+Godot is friends with your filesystem and will not create extra
+metadata files. Simply use ``rm`` to erase a scene file. Make sure nothing
+references that scene or else an error will be thrown upon opening.
 
 ::
 
