@@ -10,5 +10,4 @@ Assets workflow
    importing_audio_samples
    importing_translations
    importing_scenes
-   dae_exporter
-   escn_exporter
+   escn_exporter/index
