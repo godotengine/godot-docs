@@ -70,11 +70,11 @@ with the following script:
     
     public class CustomLabel : Label
     {
-        private int _accum;
+        private float _accum;
 
         public override void _Process(float delta)
         {
-            _accum++;
+            _accum += delta;
             Text = _accum.ToString();
         }
     }
@@ -140,8 +140,12 @@ calling
     
     var enemies = GetTree().GetNodesInGroup("enemies");
 
-The :ref:`SceneTree <class_SceneTree>` documentation is currently incomplete,
-though more will be added later.
+The :ref:`SceneTree <class_SceneTree>` class provides many useful methods,
+like interacting with scenes, their node hierarchy and groups of nodes.
+It allows you to easily switch scenes or reload them,
+to quit the game or pause and unpause it.
+It even comes with interesting signals.
+So check it out if you got some time!
 
 Notifications
 -------------
@@ -266,7 +270,7 @@ the notification system.
 Creating nodes
 --------------
 
-To create a node from code, call the ``.new()`` method, just like for any 
+To create a node from code, call the ``.new()`` method, like for any 
 other class-based datatype. For example:
 
 
@@ -307,7 +311,7 @@ used:
     }
 
 When a node is freed, it also frees all its children nodes. Because of
-this, manually deleting nodes is much simpler than it appears. Just free
+this, manually deleting nodes is much simpler than it appears. Free
 the base node and everything else in the subtree goes away with it.
 
 A situation might occur where we want to delete a node that

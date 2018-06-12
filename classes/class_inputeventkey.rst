@@ -36,7 +36,7 @@ Member Variables
 
   .. _class_InputEventKey_scancode:
 
-- :ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY_*`` constants in @global Scope.
+- :ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@globalscope>`.
 
   .. _class_InputEventKey_unicode:
 

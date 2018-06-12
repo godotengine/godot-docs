@@ -26,7 +26,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_center_size<class_StyleBox_get_center_size>` **(** **)** const                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_margin<class_StyleBox_get_margin>` **(** :ref:`int<class_int>` margin **)** const                                      |
+| :ref:`float<class_float>`      | :ref:`get_margin<class_StyleBox_get_margin>` **(** :ref:`Margin<enum_@globalscope_margin>` margin **)** const                    |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_minimum_size<class_StyleBox_get_minimum_size>` **(** **)** const                                                       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ Member Function Description
 
 .. _class_StyleBox_get_margin:
 
-- :ref:`float<class_float>` **get_margin** **(** :ref:`int<class_int>` margin **)** const
+- :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@globalscope_margin>` margin **)** const
 
 Return the offset of margin "margin" (see MARGIN\_\* enum).
 

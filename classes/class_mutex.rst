@@ -19,13 +19,13 @@ A synchronization Mutex.
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------+
-| void                   | :ref:`lock<class_Mutex_lock>` **(** **)**         |
-+------------------------+---------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`try_lock<class_Mutex_try_lock>` **(** **)** |
-+------------------------+---------------------------------------------------+
-| void                   | :ref:`unlock<class_Mutex_unlock>` **(** **)**     |
-+------------------------+---------------------------------------------------+
++----------------------------------------+---------------------------------------------------+
+| void                                   | :ref:`lock<class_Mutex_lock>` **(** **)**         |
++----------------------------------------+---------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`try_lock<class_Mutex_try_lock>` **(** **)** |
++----------------------------------------+---------------------------------------------------+
+| void                                   | :ref:`unlock<class_Mutex_unlock>` **(** **)**     |
++----------------------------------------+---------------------------------------------------+
 
 Description
 -----------
@@ -43,7 +43,7 @@ Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
 .. _class_Mutex_try_lock:
 
-- :ref:`int<class_int>` **try_lock** **(** **)**
+- :ref:`Error<enum_@globalscope_error>` **try_lock** **(** **)**
 
 Try locking this ``Mutex``, does not block. Returns OK on success, ERR_BUSY otherwise.
 

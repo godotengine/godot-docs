@@ -13,7 +13,7 @@ Requirements
    :ref:`doc_compiling_for_windows` about the caveats of installing it
    and the various prompts.
 -  Windows 10 SDK (can be selected in Visual Studio installation).
--  `ANGLE source <https://github.com/Microsoft/angle>`__. Use the 
+-  `ANGLE source <https://github.com/Microsoft/angle>`__. Use the
    ``ms_master`` (default) branch. Keep it in a path without spaces to
    avoid problems.
 
@@ -71,8 +71,10 @@ Zip according to the target/architecture of the template::
     uwp_arm_debug.zip
     uwp_arm_release.zip
 
-Move those templates to the ``templates`` folder in Godot settings path. If
-you don't want to replacet the templates, you can set the "Custom Package"
+Move those templates to the ``[versionstring]\templates`` folder in Godot
+settings path, where `versionstring` is the version of Godot you have compiled
+the export templates for - e.g. `3.0.alpha` for the alpha version of Godot 3.
+If you don't want to replace the templates, you can set the "Custom Package"
 property in the export window.
 
 Running UWP apps with Visual Studio
@@ -96,8 +98,8 @@ Create a new Windows App project using the "App for OpenGL ES
 (Windows Unversal)" project template, which can be found under the
 ``Visual C++/Windows/Universal`` category.
 
-This is a base project with the ANGLE dependencies already set up. However, by 
-default it picks the debug version of the DLLs which usually have a very poor
+This is a base project with the ANGLE dependencies already set up. However, by
+default it picks the debug version of the DLLs which usually have poor
 performance. So in the "Binaries" filter, click in each of the DLLs there
 and in the "Properties" window and change the relative path from
 ``Debug_Win32`` to ``Release_Win32`` (or ``Release_ARM`` for devices).

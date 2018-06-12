@@ -28,6 +28,10 @@ Member Functions
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_baked_points<class_Curve2D_get_baked_points>` **(** **)** const                                                                                                                                                               |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_closest_offset<class_Curve2D_get_closest_offset>` **(** :ref:`Vector2<class_vector2>` to_point **)** const                                                                                                                    |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`                    | :ref:`get_closest_point<class_Curve2D_get_closest_point>` **(** :ref:`Vector2<class_vector2>` to_point **)** const                                                                                                                      |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_point_count<class_Curve2D_get_point_count>` **(** **)** const                                                                                                                                                                 |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                    | :ref:`get_point_in<class_Curve2D_get_point_in>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                             |
@@ -96,6 +100,22 @@ Returns the total length of the curve, based on the cached points. Given enough 
 - :ref:`PoolVector2Array<class_poolvector2array>` **get_baked_points** **(** **)** const
 
 Returns the cache of points as a :ref:`PoolVector2Array<class_poolvector2array>`.
+
+.. _class_Curve2D_get_closest_offset:
+
+- :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector2<class_vector2>` to_point **)** const
+
+Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`interpolate_baked<class_Curve2D_interpolate_baked>`.
+
+``to_point`` must be in this curve's local space.
+
+.. _class_Curve2D_get_closest_point:
+
+- :ref:`Vector2<class_vector2>` **get_closest_point** **(** :ref:`Vector2<class_vector2>` to_point **)** const
+
+Returns the closest point (in curve's local space) to ``to_point``.
+
+``to_point`` must be in this curve's local space.
 
 .. _class_Curve2D_get_point_count:
 

@@ -19,15 +19,15 @@ A CubeMap is a 6 sided 3D texture.
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_height<class_CubeMap_get_height>` **(** **)** const                                                   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_image>`  | :ref:`get_side<class_CubeMap_get_side>` **(** :ref:`int<class_int>` side **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_width<class_CubeMap_get_width>` **(** **)** const                                                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_side<class_CubeMap_set_side>` **(** :ref:`int<class_int>` side, :ref:`Image<class_image>` image **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_height<class_CubeMap_get_height>` **(** **)** const                                                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`  | :ref:`get_side<class_CubeMap_get_side>` **(** :ref:`Side<enum_cubemap_side>` side **)** const                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_width<class_CubeMap_get_width>` **(** **)** const                                                              |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_side<class_CubeMap_set_side>` **(** :ref:`Side<enum_cubemap_side>` side, :ref:`Image<class_image>` image **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -93,7 +93,7 @@ Returns the ``CubeMap``'s height.
 
 .. _class_CubeMap_get_side:
 
-- :ref:`Image<class_image>` **get_side** **(** :ref:`int<class_int>` side **)** const
+- :ref:`Image<class_image>` **get_side** **(** :ref:`Side<enum_cubemap_side>` side **)** const
 
 Returns an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 
@@ -105,7 +105,7 @@ Returns the ``CubeMap``'s width.
 
 .. _class_CubeMap_set_side:
 
-- void **set_side** **(** :ref:`int<class_int>` side, :ref:`Image<class_image>` image **)**
+- void **set_side** **(** :ref:`Side<enum_cubemap_side>` side, :ref:`Image<class_image>` image **)**
 
 Sets an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 

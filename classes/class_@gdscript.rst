@@ -82,11 +82,13 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`is_inf<class_@GDScript_is_inf>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`is_instance_valid<class_@GDScript_is_instance_valid>` **(** :ref:`Object<class_object>` instance **)**                                                                                                                    |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`is_nan<class_@GDScript_is_nan>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`len<class_@GDScript_len>` **(** :ref:`Variant<class_variant>` var **)**                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`lerp<class_@GDScript_lerp>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**                                                                                    |
+| :ref:`float<class_float>`                                  | :ref:`lerp<class_@GDScript_lerp>` **(** :ref:`Variant<class_variant>` from, :ref:`Variant<class_variant>` to, :ref:`float<class_float>` weight **)**                                                                            |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`linear2db<class_@GDScript_linear2db>` **(** :ref:`float<class_float>` nrg **)**                                                                                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -444,7 +446,9 @@ Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-i
 
 - :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` s **)**
 
-Raises the Euler's constant **e** to the power of ``s`` and returns it. **e** has an approximate value of 2.71828.
+The natural exponential function. It raises the mathematical constant **e** to the power of ``s`` and returns it.
+
+**e** has an approximate value of 2.71828.
 
 ::
 
@@ -577,6 +581,10 @@ Returns a normalized value considering the given range.
 
 Returns True/False whether ``s`` is an infinity value (either positive infinity or negative infinity).
 
+.. _class_@GDScript_is_instance_valid:
+
+- :ref:`bool<class_bool>` **is_instance_valid** **(** :ref:`Object<class_object>` instance **)**
+
 .. _class_@GDScript_is_nan:
 
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` s **)**
@@ -596,7 +604,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 .. _class_@GDScript_lerp:
 
-- :ref:`float<class_float>` **lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
+- :ref:`float<class_float>` **lerp** **(** :ref:`Variant<class_variant>` from, :ref:`Variant<class_variant>` to, :ref:`float<class_float>` weight **)**
 
 Linearly interpolates between two values by a normalized value.
 

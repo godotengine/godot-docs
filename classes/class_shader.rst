@@ -14,7 +14,7 @@ Shader
 Brief Description
 -----------------
 
-To be changed, ignore.
+A custom shader program.
 
 Member Functions
 ----------------
@@ -22,7 +22,7 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>` **(** :ref:`String<class_string>` param **)** const                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mode<class_Shader_get_mode>` **(** **)** const                                                                                                      |
+| :ref:`Mode<enum_shader_mode>`  | :ref:`get_mode<class_Shader_get_mode>` **(** **)** const                                                                                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>` **(** :ref:`String<class_string>` name **)** const                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ enum **Mode**
 Description
 -----------
 
-To be changed, ignore.
+This class allows you to define a custom shader program that can be used for various materials to render objects.
 
 Member Function Description
 ---------------------------
@@ -63,7 +63,9 @@ Member Function Description
 
 .. _class_Shader_get_mode:
 
-- :ref:`int<class_int>` **get_mode** **(** **)** const
+- :ref:`Mode<enum_shader_mode>` **get_mode** **(** **)** const
+
+Returns the shader mode for the shader, eiter ``MODE_CANVAS_ITEM``, ``MODE_SPATIAL`` or ``MODE_PARTICLES``
 
 .. _class_Shader_has_param:
 

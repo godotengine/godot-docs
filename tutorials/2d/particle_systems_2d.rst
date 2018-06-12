@@ -76,7 +76,7 @@ Preprocess
 ~~~~~~~~~~
 
 Particle systems begin with zero particles emitted, then start emitting.
-This can be an inconvenience when just loading a scene and systems like
+This can be an inconvenience when loading a scene and systems like
 a torch, mist, etc. begin emitting the moment you enter. Preprocess is
 used to let the system process a given number of seconds before it is
 actually drawn the first time.
@@ -128,7 +128,7 @@ This can be used to turn Fract Delta on or off.
 Drawing Parameters 
 ------------------
 
-Visability Rect
+Visibility Rect
 ~~~~~~~~~~~~~~~
  
 The ``W`` and ``H`` values control width and height of the visibility
@@ -159,20 +159,24 @@ means particles are drawn according to their emission order (default).
 ParticlesMaterial settings
 --------------------------
 
-Direction
-~~~~~~~~~
+..
 
-This is the base angle at which particles emit. Default is ``0`` (down):
+    Commented out as not implemented in 3.x for now.
 
-.. image:: img/paranim1.gif
+    Direction
+    ~~~~~~~~~
 
-Changing it will change the emissor direction, but gravity will still
-affect them:
+    This is the base angle at which particles emit. Default is ``0`` (down):
 
-.. image:: img/paranim2.gif
+    .. image:: img/paranim1.gif
 
-This parameter is useful because, by rotating the node, gravity will
-also be rotated. Changing direction allows them to be separated.
+    Changing it will change the emissor direction, but gravity will still
+    affect them:
+
+    .. image:: img/paranim2.gif
+
+    This parameter is useful because, by rotating the node, gravity will
+    also be rotated. Changing direction allows them to be separated.
 
 Spread
 ~~~~~~
@@ -202,7 +206,7 @@ accelerations (as described further below).
 Angular Velocity
 ~~~~~~~~~~~~~~~~
 
-Angular velocity is the inital angular velocity applied to particles.
+Angular velocity is the initial angular velocity applied to particles.
 
 Spin Velocity
 ~~~~~~~~~~~~~
@@ -272,6 +276,6 @@ Used to change the color of the particles being emitted.
 Hue variation
 ~~~~~~~~~~~~~
 
-The variation value sets the inital hue variation applied to each 
+The variation value sets the initial hue variation applied to each 
 particle. The Variation rand value controls the hue variation
 randomness ratio.

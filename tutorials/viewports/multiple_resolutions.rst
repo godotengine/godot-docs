@@ -60,8 +60,8 @@ Stretch mode
    is set as a render target, and still renders precisely to the
    resolution specified in the ``display/`` section of the project
    settings. Finally, this viewport is copied and scaled to fit the
-   screen. This mode is useful when working with pixel-precise games, or
-   just for the sake of rendering to a lower resolution for improving
+   screen. This mode is useful when working with pixel-precise games,
+   or for the sake of rendering to a lower resolution for improving
    performance.
 
 .. image:: img/stretch.png
@@ -88,3 +88,8 @@ Stretch aspect
    reported in the viewport, proportionally). This is usually the best
    option for 2D games that scroll horizontally (like runners or
    platformers).
+-  **Expand**: Keep aspect ratio when stretching the screen, but keep
+   neither width nor height. Depending on the screen aspect ratio, the
+   viewport will either report more horizontal resolution (if the screen
+   is wider than the original resolution) or more vertical resolution
+   (if the screen is taller than the original resolution).

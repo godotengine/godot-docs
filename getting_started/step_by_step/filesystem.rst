@@ -89,7 +89,7 @@ Host file system
 
 Alternatively host file system paths can also be used, but this is not recommended
 for a released product as these paths are not guaranteed to work on all platforms.
-However, using host file system paths can be very useful when writing development
+However, using host file system paths can be useful when writing development
 tools in Godot!
 
 Drawbacks
@@ -107,7 +107,7 @@ go the hard route?).
 
 The second is that under Windows and macOS file and path names are case insensitive.
 If a developer working in a case insensitive host file system saves an asset as "myfile.PNG",
-but then references it as "myfile.png", it will work just fine on their platorm, but not
+but then references it as "myfile.png", it will work fine on their platorm, but not
 on other platforms, such as Linux, Android, etc. This may also apply to exported binaries,
 which use a compressed package to store all files.
 

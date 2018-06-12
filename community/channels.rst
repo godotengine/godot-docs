@@ -28,7 +28,7 @@ Other chats
 -----------
 
 - `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
-- `Discord <https://discord.gg/zH7NUgz>`_
+- `Discord <https://discordapp.com/invite/zH7NUgz>`_
 
 Social networks
 ---------------
@@ -43,4 +43,4 @@ Social networks
 Forum
 -----
 
-- `Forum (godotdevelopers.org) <http://godotdevelopers.org/>`_
+- `Forum (godotdevelopers.org) <https://godotdevelopers.org/forum>`_

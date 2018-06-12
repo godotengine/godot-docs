@@ -22,7 +22,7 @@ Member Functions
 ----------------
 
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`clear_current<class_Camera_clear_current>` **(** **)**                                                                                                      |
+| void                               | :ref:`clear_current<class_Camera_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                             |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`get_camera_transform<class_Camera_get_camera_transform>` **(** **)** const                                                                                  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,7 +62,7 @@ Member Variables
 
   .. _class_Camera_environment:
 
-- :ref:`Environment<class_environment>` **environment** - Set the :ref:`Environment<class_environment>` to use for this Camera.
+- :ref:`Environment<class_environment>` **environment** - The :ref:`Environment<class_environment>` to use for this Camera.
 
   .. _class_Camera_far:
 
@@ -74,11 +74,11 @@ Member Variables
 
   .. _class_Camera_h_offset:
 
-- :ref:`float<class_float>` **h_offset** - The horizontal (X) offset of the Camear viewport.
+- :ref:`float<class_float>` **h_offset** - The horizontal (X) offset of the Camera viewport.
 
   .. _class_Camera_keep_aspect:
 
-- :ref:`KeepAspect<enum_camera_keepaspect>` **keep_aspect** - The axis to lock during :ref:`fov<class_Camera_fov>`/:ref:`size<class_Camera_size>` adjustments.
+- :ref:`KeepAspect<enum_camera_keepaspect>` **keep_aspect** - The axis to lock during :ref:`fov<class_Camera_fov>`/:ref:`size<class_Camera_size>` adjustments. Can be either ``KEEP_WIDTH`` or ``KEEP_HEIGHT``.
 
   .. _class_Camera_near:
 
@@ -94,7 +94,7 @@ Member Variables
 
   .. _class_Camera_v_offset:
 
-- :ref:`float<class_float>` **v_offset** - The horizontal (Y) offset of the Camear viewport.
+- :ref:`float<class_float>` **v_offset** - The vertical (Y) offset of the Camera viewport.
 
 
 Enums
@@ -133,27 +133,27 @@ Member Function Description
 
 .. _class_Camera_clear_current:
 
-- void **clear_current** **(** **)**
+- void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
-If this is the current Camera, remove it from being current. If it is inside the node tree, request to make the next Camera current, if any.
+If this is the current Camera, remove it from being current. If ``enable_next`` is true, request to make the next Camera current, if any.
 
 .. _class_Camera_get_camera_transform:
 
 - :ref:`Transform<class_transform>` **get_camera_transform** **(** **)** const
 
-Get the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_node>` transform.
+Gets the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_node>` transform.
 
 .. _class_Camera_is_position_behind:
 
 - :ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_vector3>` world_point **)** const
 
-Returns ``true`` if the given position is behind the Camera.
+Returns ``true`` if the given position is behind the Camera. Note that a position which returns ``false`` may still be outside the Camera's field of view.
 
 .. _class_Camera_make_current:
 
 - void **make_current** **(** **)**
 
-Make this camera the current Camera for the :ref:`Viewport<class_viewport>` (see class description). If the Camera Node is outside the scene tree, it will attempt to become current once it's added.
+Makes this camera the current Camera for the :ref:`Viewport<class_viewport>` (see class description). If the Camera Node is outside the scene tree, it will attempt to become current once it's added.
 
 .. _class_Camera_project_local_ray_normal:
 
@@ -165,7 +165,7 @@ Returns a normal vector from the screen point location directed along the camera
 
 - :ref:`Vector3<class_vector3>` **project_position** **(** :ref:`Vector2<class_vector2>` screen_point **)** const
 
-Returns how a 2D coordinate in the Viewport rectangle maps to a 3D point in worldspace.
+Returns the 3D point in worldspace that maps to the given 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
 
 .. _class_Camera_project_ray_normal:
 
@@ -183,18 +183,18 @@ Returns a 3D position in worldspace, that is the result of projecting a point on
 
 - void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Set the camera projection to orthogonal mode, by specifying a width and the *near* and *far* clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
+Sets the camera projection to orthogonal mode, by specifying a width and the *near* and *far* clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
 
 .. _class_Camera_set_perspective:
 
 - void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Set the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
+Sets the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
 
 .. _class_Camera_unproject_position:
 
 - :ref:`Vector2<class_vector2>` **unproject_position** **(** :ref:`Vector3<class_vector3>` world_point **)** const
 
-Returns how a 3D point in worldspace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
+Returns the 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle that maps to the given 3D point in worldspace.
 
 

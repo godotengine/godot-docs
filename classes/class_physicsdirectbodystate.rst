@@ -22,11 +22,15 @@ Member Functions
 ----------------
 
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`add_central_force<class_PhysicsDirectBodyState_add_central_force>` **(** :ref:`Vector3<class_vector3>` force **)**                                                     |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`add_force<class_PhysicsDirectBodyState_add_force>` **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**                             |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`add_torque<class_PhysicsDirectBodyState_add_torque>` **(** :ref:`Vector3<class_vector3>` torque **)**                                                                  |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`apply_impulse<class_PhysicsDirectBodyState_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` j **)**                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`apply_torqe_impulse<class_PhysicsDirectBodyState_apply_torqe_impulse>` **(** :ref:`Vector3<class_vector3>` j **)**                                                     |
+| void                                                           | :ref:`apply_torque_impulse<class_PhysicsDirectBodyState_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` j **)**                                                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`get_contact_collider<class_PhysicsDirectBodyState_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** const                                           |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,17 +112,25 @@ Member Variables
 Member Function Description
 ---------------------------
 
+.. _class_PhysicsDirectBodyState_add_central_force:
+
+- void **add_central_force** **(** :ref:`Vector3<class_vector3>` force **)**
+
 .. _class_PhysicsDirectBodyState_add_force:
 
 - void **add_force** **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**
+
+.. _class_PhysicsDirectBodyState_add_torque:
+
+- void **add_torque** **(** :ref:`Vector3<class_vector3>` torque **)**
 
 .. _class_PhysicsDirectBodyState_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` j **)**
 
-.. _class_PhysicsDirectBodyState_apply_torqe_impulse:
+.. _class_PhysicsDirectBodyState_apply_torque_impulse:
 
-- void **apply_torqe_impulse** **(** :ref:`Vector3<class_vector3>` j **)**
+- void **apply_torque_impulse** **(** :ref:`Vector3<class_vector3>` j **)**
 
 .. _class_PhysicsDirectBodyState_get_contact_collider:
 

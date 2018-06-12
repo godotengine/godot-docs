@@ -52,7 +52,7 @@ Member Variables
 
   .. _class_Popup_popup_exclusive:
 
-- :ref:`bool<class_bool>` **popup_exclusive**
+- :ref:`bool<class_bool>` **popup_exclusive** - If ``true`` the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 
 
 Numeric Constants

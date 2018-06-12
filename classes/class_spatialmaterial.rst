@@ -163,6 +163,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **flags_albedo_tex_force_srgb**
 
+  .. _class_SpatialMaterial_flags_do_not_receive_shadows:
+
+- :ref:`bool<class_bool>` **flags_do_not_receive_shadows**
+
   .. _class_SpatialMaterial_flags_fixed_size:
 
 - :ref:`bool<class_bool>` **flags_fixed_size**
@@ -491,7 +495,8 @@ enum **Flags**
 - **FLAG_USE_ALPHA_SCISSOR** = **12**
 - **FLAG_TRIPLANAR_USE_WORLD** = **9**
 - **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **13**
-- **FLAG_MAX** = **14**
+- **FLAG_DONT_RECEIVE_SHADOWS** = **14**
+- **FLAG_MAX** = **15**
 
   .. _enum_SpatialMaterial_BlendMode:
 

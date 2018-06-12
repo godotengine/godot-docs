@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptSelect_type:
 
-- :ref:`Type<enum_variant_type>` **type** - The input variables' type.
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type** - The input variables' type.
 
 
 Description

@@ -111,6 +111,10 @@ levels for 3D games. Press F2 to access it.
 
 |image16|
 
+Notice the text [perspective] under the toolbar, it is a button that opens a list of options related to the 3D viewport.
+
+|image20|
+
 The **Script** workspace is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference. Press F3 to access it, and
 F4 to search the reference.
@@ -162,3 +166,4 @@ and feel of the editor.
 .. |image17| image:: ./img/editor_ui_intro_editor_06_script_workspace_expanded.png
 .. |image18| image:: ./img/editor_ui_intro_editor_07.png
 .. |image19| image:: ./img/editor_ui_intro_editor_08.png
+.. |image20| image:: ./img/editor_ui_intro_editor_06_3d_workspace.png

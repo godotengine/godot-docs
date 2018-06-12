@@ -21,15 +21,15 @@ Base class for different kinds of buttons.
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                        |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                                |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                                      |
-+--------------------------+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                        |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`DrawMode<enum_basebutton_drawmode>`  | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                                |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                                      |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -65,6 +65,12 @@ Member Variables
   .. _class_BaseButton_action_mode:
 
 - :ref:`ActionMode<enum_basebutton_actionmode>` **action_mode** - Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
+
+  .. _class_BaseButton_button_mask:
+
+- :ref:`int<class_int>` **button_mask** - Binary mask to choose which mouse buttons this button will respond to.
+
+To allow both left-click and right-click, set this to 3, because it's BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT.
 
   .. _class_BaseButton_disabled:
 
@@ -123,17 +129,17 @@ Member Function Description
 
 - void **_pressed** **(** **)** virtual
 
-Called when button is pressed.
+Called when the button is pressed.
 
 .. _class_BaseButton__toggled:
 
 - void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
-Called when button is toggled (only if toggle_mode is active).
+Called when the button is toggled (only if toggle_mode is active).
 
 .. _class_BaseButton_get_draw_mode:
 
-- :ref:`int<class_int>` **get_draw_mode** **(** **)** const
+- :ref:`DrawMode<enum_basebutton_drawmode>` **get_draw_mode** **(** **)** const
 
 Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 
@@ -141,6 +147,6 @@ Return the visual state used to draw the button. This is useful mainly when impl
 
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** const
 
-Return true if mouse entered the button before it exit.
+Return true if the mouse has entered the button and has not left it yet.
 
 

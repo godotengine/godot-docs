@@ -5,9 +5,11 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for the recent technologies `WebAssembly
-<http://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
 in the user's browser. **Firefox** and **Chromium** (Chrome, Opera) are
 the most popular supported browsers, **Safari** and **Edge** do not work yet.
+On **iOS**, all browsers must be based on WebKit (i.e. Safari), so they will also
+not work.
 
 Limitations
 -----------
@@ -54,6 +56,7 @@ restrictions:
 
  -  Accessing or changing the ``StreamPeer`` is not possible
  -  Blocking mode is not available
+ -  Cannot progress more than once per frame, so polling in a loop will freeze
  -  No chunked responses
  -  Host verification cannot be disabled
  -  Subject to `same-origin policy <https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy>`_
@@ -75,8 +78,9 @@ to communicate your interest.
 Starting exported games from the local file system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many browsers will not load exported projects when **opened locally**
-per ``file://`` protocol. To get around this, use a local server.
+Many browsers, Chromium-based browsers specifically, will not load exported
+projects when **opened locally** per ``file://`` protocol. To get around this,
+use a local server.
 
 Python offers an easy method for this, using ``python -m SimpleHTTPServer``
 with Python 2 or ``python -m http.server`` with Python 3 will serve the current
@@ -135,6 +139,8 @@ when using the default HTML page, displaying JavaScript and engine errors.
 You can also use the browser-integrated developer console, usually opened with
 the F12 key, which often shows more information, including WebGL errors.
 
+.. _doc_javascript_eval:
+
 Calling JavaScript from script
 ------------------------------
 
@@ -166,14 +172,22 @@ returned by ``eval()`` under certain circumstances:
 
 Any other JavaScript value is returned as ``null``.
 
-Calling ``JavaScript.eval`` on platforms other than HTML5 will also return
-``null``.
+HTML5 export templates may be built without support for the singleton. With such
+templates, and on platforms other than HTML5, calling ``JavaScript.eval`` will
+also return ``null``.  The availability of the singleton can be checked with the
+``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
+
+    func my_func3():
+        if OS.has_feature('JavaScript'):
+            JavaScript.eval("console.log('The JavaScript singleton is available')")
+        else:
+            print("The JavaScript singleton is NOT available")
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,
 defaulting to ``false`` to prevent polluting the global namespace::
 
-    func my_func3():
+    func my_func4():
         # execute in global execution context,
         # thus adding a new JavaScript global variable `MyGlobal`
         JavaScript.eval("var SomeGlobal = {};", true)

@@ -12,13 +12,13 @@ Though arguably less convenient to edit than a wiki, this git repository is mean
 
 ### Editing existing pages
 
-To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
+To edit an existing page, locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
 
 ### Adding new pages
 
 To add a new page, create a .rst file with a meaningful name in the section you want to add a file to, e.g. `tutorials/3d/light_baking.rst`. Write its content like you would do for any other file, and make sure to define a reference name for Sphinx at the beginning of the file (check other files for the syntax), based on the file name with a "doc_" prefix (e.g. `.. _doc_light_baking:`).
 
-You should then add your page to the relevant "toctree" (table of contents). By convention, the files used to define the various levels of toctree are prefixed with an underscore, so in the above example the file should be referenced in `tutorials/3d/_3d_graphics.rst`. Just add your new filename to the list on a new line, using a relative path and no extension, e.g. here `light_baking`.
+You should then add your page to the relevant "toctree" (table of contents). By convention, the files used to define the various levels of toctree are prefixed with an underscore, so in the above example the file should be referenced in `tutorials/3d/_3d_graphics.rst`. Add your new filename to the list on a new line, using a relative path and no extension, e.g. here `light_baking`.
 
 ### Sphinx and reStructuredText syntax
 

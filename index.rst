@@ -20,15 +20,25 @@ documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
 .. note:: Godot Engine is an open source project developed by a community of
-          volunteers. It means that the documentation team can always use your
+          volunteers. The documentation team can always use your
           feedback and help to improve the tutorials and class reference. If
-          you do not manage to understand something, or cannot find what you
+          you don't understand something, or cannot find what you
           are looking for in the docs, help us make the documentation better
           by letting us know!
 
           Submit an issue or pull request on the `GitHub repository
-          <https://github.com/godotengine/godot-docs/issues>`_, or discuss with
-          us on the #godotengine-devel IRC channel!
+          <https://github.com/godotengine/godot-docs/issues>`_,
+          help us `translate the documentation
+          <https://hosted.weblate.org/engage/godot-engine/>`_ into your
+          language, or discuss with us on either the ``#documentation``
+          channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
+          ``#godotengine-doc`` channel on `irc.freenode.net
+          <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
+
+.. image:: https://hosted.weblate.org/widgets/godot-engine/-/godot-docs/287x66-white.png
+    :alt: Translation state
+    :align: center
+    :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
 
 The main documentation for the site is organized into the following sections:
 
@@ -63,6 +73,8 @@ The main documentation for the site is organized into the following sections:
    tutorials/math/index
    tutorials/animation/index
    tutorials/inputs/index
+   tutorials/io/index
+   tutorials/i18n/index
    tutorials/gui/index
    tutorials/viewports/index
    tutorials/shading/index
@@ -72,6 +84,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/plugins/index
    tutorials/platform/index
    tutorials/misc/index
+   tutorials/debug/index
 
 .. toctree::
    :maxdepth: 1
@@ -80,6 +93,7 @@ The main documentation for the site is organized into the following sections:
 
    development/compiling/index
    development/cpp/index
+   development/file_formats/index
 
 
 .. toctree::

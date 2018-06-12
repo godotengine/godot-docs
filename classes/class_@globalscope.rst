@@ -532,7 +532,7 @@ enum **KeyList**
 - **KEY_Y** = **89** --- Y Key
 - **KEY_Z** = **90** --- Z Key
 - **KEY_BRACKETLEFT** = **91** --- [ key
-- **KEY_BACKSLASH** = **92** --- \ key
+- **KEY_BACKSLASH** = **92** --- \\ key
 - **KEY_BRACKETRIGHT** = **93** --- ] key
 - **KEY_ASCIICIRCUM** = **94** --- ^ key
 - **KEY_UNDERSCORE** = **95** --- \_ key

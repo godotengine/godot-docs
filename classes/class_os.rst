@@ -40,6 +40,10 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>` **(** :ref:`String<class_string>` string **)** const                                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_audio_driver_count<class_OS_get_audio_driver_count>` **(** **)** const                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_audio_driver_name<class_OS_get_audio_driver_name>` **(** :ref:`int<class_int>` driver **)** const                                                                                                              |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
@@ -66,7 +70,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_power_seconds_left<class_OS_get_power_seconds_left>` **(** **)**                                                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_power_state<class_OS_get_power_state>` **(** **)**                                                                                                                                                             |
+| :ref:`PowerState<enum_os_powerstate>`          | :ref:`get_power_state<class_OS_get_power_state>` **(** **)**                                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_process_id<class_OS_get_process_id>` **(** **)** const                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +94,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_static_memory_usage<class_OS_get_static_memory_usage>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_system_dir<class_OS_get_system_dir>` **(** :ref:`int<class_int>` dir **)** const                                                                                                                               |
+| :ref:`String<class_string>`                    | :ref:`get_system_dir<class_OS_get_system_dir>` **(** :ref:`SystemDir<enum_os_systemdir>` dir **)** const                                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_system_time_secs<class_OS_get_system_time_secs>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,7 +112,13 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_user_data_dir<class_OS_get_user_data_dir>` **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_video_driver_count<class_OS_get_video_driver_count>` **(** **)** const                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_video_driver_name<class_OS_get_video_driver_name>` **(** :ref:`int<class_int>` driver **)** const                                                                                                              |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`                      | :ref:`get_window_safe_area<class_OS_get_window_safe_area>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_environment<class_OS_has_environment>` **(** :ref:`String<class_string>` environment **)** const                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,13 +142,13 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_window_always_on_top<class_OS_is_window_always_on_top>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`native_video_is_playing<class_OS_native_video_is_playing>` **(** **)**                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`native_video_pause<class_OS_native_video_pause>` **(** **)**                                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`native_video_play<class_OS_native_video_play>` **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)** |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`native_video_play<class_OS_native_video_play>` **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)** |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`native_video_stop<class_OS_native_video_stop>` **(** **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -158,7 +168,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_ime_position<class_OS_set_ime_position>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,7 +176,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_window_title<class_OS_set_window_title>` **(** :ref:`String<class_string>` title **)**                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`shell_open<class_OS_shell_open>` **(** :ref:`String<class_string>` uri **)**                                                                                                                                       |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`shell_open<class_OS_shell_open>` **(** :ref:`String<class_string>` uri **)**                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`show_virtual_keyboard<class_OS_show_virtual_keyboard>` **(** :ref:`String<class_string>` existing_text="" **)**                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -184,15 +194,15 @@ Member Variables
 
   .. _class_OS_exit_code:
 
-- :ref:`int<class_int>` **exit_code**
+- :ref:`int<class_int>` **exit_code** - The exit code passed to the OS when the main loop exits.
 
   .. _class_OS_keep_screen_on:
 
-- :ref:`bool<class_bool>` **keep_screen_on**
+- :ref:`bool<class_bool>` **keep_screen_on** - If ``true`` the engine tries to keep the screen on while the game is running. Useful on mobile.
 
   .. _class_OS_low_processor_usage_mode:
 
-- :ref:`bool<class_bool>` **low_processor_usage_mode**
+- :ref:`bool<class_bool>` **low_processor_usage_mode** - If ``true`` the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
 
   .. _class_OS_screen_orientation:
 
@@ -200,23 +210,27 @@ Member Variables
 
   .. _class_OS_vsync_enabled:
 
-- :ref:`bool<class_bool>` **vsync_enabled**
+- :ref:`bool<class_bool>` **vsync_enabled** - If ``true`` vertical synchronization (Vsync) is enabled.
 
   .. _class_OS_window_borderless:
 
-- :ref:`bool<class_bool>` **window_borderless** - If ``true``, removes the window frame.
+- :ref:`bool<class_bool>` **window_borderless** - If ``true`` removes the window frame.
 
   .. _class_OS_window_fullscreen:
 
-- :ref:`bool<class_bool>` **window_fullscreen** - If ``true``, the window is fullscreen.
+- :ref:`bool<class_bool>` **window_fullscreen** - If ``true`` the window is fullscreen.
 
   .. _class_OS_window_maximized:
 
-- :ref:`bool<class_bool>` **window_maximized** - If ``true``, the window is maximized.
+- :ref:`bool<class_bool>` **window_maximized** - If ``true`` the window is maximized.
 
   .. _class_OS_window_minimized:
 
-- :ref:`bool<class_bool>` **window_minimized** - If ``true``, the window is minimized.
+- :ref:`bool<class_bool>` **window_minimized** - If ``true`` the window is minimized.
+
+  .. _class_OS_window_per_pixel_transparency_enabled:
+
+- :ref:`bool<class_bool>` **window_per_pixel_transparency_enabled**
 
   .. _class_OS_window_position:
 
@@ -238,65 +252,65 @@ Enums
 
 enum **SystemDir**
 
-- **SYSTEM_DIR_DESKTOP** = **0**
-- **SYSTEM_DIR_DCIM** = **1**
-- **SYSTEM_DIR_DOCUMENTS** = **2**
-- **SYSTEM_DIR_DOWNLOADS** = **3**
-- **SYSTEM_DIR_MOVIES** = **4**
-- **SYSTEM_DIR_MUSIC** = **5**
-- **SYSTEM_DIR_PICTURES** = **6**
-- **SYSTEM_DIR_RINGTONES** = **7**
+- **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
+- **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
+- **SYSTEM_DIR_DOCUMENTS** = **2** --- Documents directory path.
+- **SYSTEM_DIR_DOWNLOADS** = **3** --- Downloads directory path.
+- **SYSTEM_DIR_MOVIES** = **4** --- Movies directory path.
+- **SYSTEM_DIR_MUSIC** = **5** --- Music directory path.
+- **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
+- **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
 
   .. _enum_OS_ScreenOrientation:
 
 enum **ScreenOrientation**
 
-- **SCREEN_ORIENTATION_LANDSCAPE** = **0**
-- **SCREEN_ORIENTATION_PORTRAIT** = **1**
-- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**
-- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3**
-- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4**
-- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5**
-- **SCREEN_ORIENTATION_SENSOR** = **6**
+- **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
+- **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
+- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2** --- Reverse landscape screen orientation.
+- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3** --- Reverse portrait screen orientation.
+- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4** --- Uses landscape or reverse landscape based on the hardware sensor.
+- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
+- **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
 
   .. _enum_OS_PowerState:
 
 enum **PowerState**
 
-- **POWERSTATE_UNKNOWN** = **0**
-- **POWERSTATE_ON_BATTERY** = **1**
-- **POWERSTATE_NO_BATTERY** = **2**
-- **POWERSTATE_CHARGING** = **3**
-- **POWERSTATE_CHARGED** = **4**
+- **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
+- **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
+- **POWERSTATE_NO_BATTERY** = **2** --- Plugged in, no battery available.
+- **POWERSTATE_CHARGING** = **3** --- Plugged in, battery charging.
+- **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
 
   .. _enum_OS_Weekday:
 
 enum **Weekday**
 
-- **DAY_SUNDAY** = **0**
-- **DAY_MONDAY** = **1**
-- **DAY_TUESDAY** = **2**
-- **DAY_WEDNESDAY** = **3**
-- **DAY_THURSDAY** = **4**
-- **DAY_FRIDAY** = **5**
-- **DAY_SATURDAY** = **6**
+- **DAY_SUNDAY** = **0** --- Sunday.
+- **DAY_MONDAY** = **1** --- Monday.
+- **DAY_TUESDAY** = **2** --- Tuesday.
+- **DAY_WEDNESDAY** = **3** --- Wednesday.
+- **DAY_THURSDAY** = **4** --- Thursday.
+- **DAY_FRIDAY** = **5** --- Friday.
+- **DAY_SATURDAY** = **6** --- Saturday.
 
   .. _enum_OS_Month:
 
 enum **Month**
 
-- **MONTH_JANUARY** = **1**
-- **MONTH_FEBRUARY** = **2**
-- **MONTH_MARCH** = **3**
-- **MONTH_APRIL** = **4**
-- **MONTH_MAY** = **5**
-- **MONTH_JUNE** = **6**
-- **MONTH_JULY** = **7**
-- **MONTH_AUGUST** = **8**
-- **MONTH_SEPTEMBER** = **9**
-- **MONTH_OCTOBER** = **10**
-- **MONTH_NOVEMBER** = **11**
-- **MONTH_DECEMBER** = **12**
+- **MONTH_JANUARY** = **1** --- January.
+- **MONTH_FEBRUARY** = **2** --- February.
+- **MONTH_MARCH** = **3** --- March.
+- **MONTH_APRIL** = **4** --- April.
+- **MONTH_MAY** = **5** --- May.
+- **MONTH_JUNE** = **6** --- June.
+- **MONTH_JULY** = **7** --- July.
+- **MONTH_AUGUST** = **8** --- August.
+- **MONTH_SEPTEMBER** = **9** --- September.
+- **MONTH_OCTOBER** = **10** --- October.
+- **MONTH_NOVEMBER** = **11** --- November.
+- **MONTH_DECEMBER** = **12** --- December.
 
 
 Description
@@ -329,17 +343,19 @@ Returns ``true`` if the current host platform is using multiple threads.
 
 - void **center_window** **(** **)**
 
+Centers the window on the screen if in windowed mode.
+
 .. _class_OS_delay_msec:
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** const
 
-Delay executing of the current thread by given milliseconds.
+Delay execution of the current thread by given milliseconds.
 
 .. _class_OS_delay_usec:
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** const
 
-Delay executing of the current thread by given microseconds.
+Delay execution of the current thread by given microseconds.
 
 .. _class_OS_dump_memory_to_file:
 
@@ -347,7 +363,7 @@ Delay executing of the current thread by given microseconds.
 
 Dumps the memory allocation ringlist to a file (only works in debug).
 
-Entry format per line: "Address - Size - Description"
+Entry format per line: "Address - Size - Description".
 
 .. _class_OS_dump_resources_to_file:
 
@@ -355,7 +371,7 @@ Entry format per line: "Address - Size - Description"
 
 Dumps all used resources to file (only works in debug).
 
-Entry format per line: "Resource Type : Resource Location"
+Entry format per line: "Resource Type : Resource Location".
 
 At the end of the file is a statistic of all used Resource Types.
 
@@ -363,30 +379,54 @@ At the end of the file is a statistic of all used Resource Types.
 
 - :ref:`int<class_int>` **execute** **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ] **)**
 
-Execute the file at the given path, optionally blocking until it returns.
+Execute the file at the given path with the arguments passed as an array of strings. Platform path resolution will take place. The resolved file must exist and be executable.
 
-Platform path resolution will take place.  The resolved file must exist and be executable.
+The arguments are used in the given order and separated by a space, so ``OS.execute('ping', ['-c', '3', 'godotengine.org'])`` will resolve to ``ping -c 3 godotengine.org`` in the system's shell.
 
-Returns a process id.
+This method has slightly different behaviour based on whether the ``blocking`` mode is enabled.
 
-For example:
+When ``blocking`` is enabled, the Godot thread will pause its execution while waiting for the process to terminate. The shell output of the process will be written to the ``output`` array as a single string. When the process terminates, the Godot thread will resume execution.
+
+When ``blocking`` is disabled, the Godot thread will continue while the new process runs. It is not possible to retrieve the shell output in non-blocking mode, so ``output`` will be empty.
+
+The return value also depends on the blocking mode. When blocking, the method will return -2 (no process ID information is available in blocking mode). When non-blocking, the method returns a process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_kill>`). If the process forking (non-blocking) or opening (blocking) fails, the method will return -1.
+
+Example of blocking mode and retrieving the shell output:
 
 ::
 
     var output = []
-    var pid = OS.execute('ls', [], true, output)
+    OS.execute('ls', ['-l', '/tmp'], true, output)
 
-If you wish to access a shell built-in or perform a composite command, a platform specific shell can be invoked.  For example:
+Example of non-blocking mode, running another instance of the project and storing its process ID:
 
 ::
 
-    var pid = OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
+    var pid = OS.execute(OS.get_executable_path(), [], false)
+
+If you wish to access a shell built-in or perform a composite command, a platform-specific shell can be invoked. For example:
+
+::
+
+    OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
 
 .. _class_OS_find_scancode_from_string:
 
 - :ref:`int<class_int>` **find_scancode_from_string** **(** :ref:`String<class_string>` string **)** const
 
 Returns the scancode of the given string (e.g. "Escape")
+
+.. _class_OS_get_audio_driver_count:
+
+- :ref:`int<class_int>` **get_audio_driver_count** **(** **)** const
+
+Returns the total number of available audio drivers.
+
+.. _class_OS_get_audio_driver_name:
+
+- :ref:`String<class_string>` **get_audio_driver_name** **(** :ref:`int<class_int>` driver **)** const
+
+Returns the audio driver name for the given index.
 
 .. _class_OS_get_cmdline_args:
 
@@ -472,7 +512,7 @@ Returns the time in seconds before the device runs out of battery.
 
 .. _class_OS_get_power_state:
 
-- :ref:`int<class_int>` **get_power_state** **(** **)**
+- :ref:`PowerState<enum_os_powerstate>` **get_power_state** **(** **)**
 
 Returns the current state of the device regarding battery and power. See ``POWERSTATE_*`` constants.
 
@@ -491,6 +531,8 @@ Returns the number of cores available in the host machine.
 .. _class_OS_get_real_window_size:
 
 - :ref:`Vector2<class_vector2>` **get_real_window_size** **(** **)** const
+
+Returns the window size including decorations like window borders.
 
 .. _class_OS_get_scancode_string:
 
@@ -556,7 +598,7 @@ Returns the amount of static memory being used by the program in bytes.
 
 .. _class_OS_get_system_dir:
 
-- :ref:`String<class_string>` **get_system_dir** **(** :ref:`int<class_int>` dir **)** const
+- :ref:`String<class_string>` **get_system_dir** **(** :ref:`SystemDir<enum_os_systemdir>` dir **)** const
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in OS.SystemDir.
 
@@ -596,7 +638,7 @@ Returns empty string on HTML5 and UWP which are not supported yet.
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** const
 
-Return	the current unix timestamp.
+Returns the current unix epoch timestamp.
 
 .. _class_OS_get_unix_time_from_datetime:
 
@@ -614,9 +656,31 @@ You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_get_date
 
 Returns the absolute directory path where user data is written (``user://``).
 
+On Linux, this is ``~/.local/share/godot/app_userdata/[project_name]``, or ``~/.local/share/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDATA%/[custom_name]`` if ``use_custom_user_dir`` is set.
+
+If the project name is empty, ``user://`` falls back to ``res://``.
+
+.. _class_OS_get_video_driver_count:
+
+- :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
+
+.. _class_OS_get_video_driver_name:
+
+- :ref:`String<class_string>` **get_video_driver_name** **(** :ref:`int<class_int>` driver **)** const
+
 .. _class_OS_get_virtual_keyboard_height:
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**
+
+Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
+
+.. _class_OS_get_window_safe_area:
+
+- :ref:`Rect2<class_rect2>` **get_window_safe_area** **(** **)** const
 
 .. _class_OS_has_environment:
 
@@ -627,6 +691,8 @@ Returns ``true`` if an environment variable exists.
 .. _class_OS_has_feature:
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_string>` tag_name **)** const
+
+Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. See feature tags documentation.
 
 .. _class_OS_has_touchscreen_ui_hint:
 
@@ -684,11 +750,15 @@ If ``true``, the ``user://`` file system is persistent, so that its state is the
 
 - :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
 
+Returns ``true`` if the window should always be on top of other windows.
+
 .. _class_OS_kill:
 
-- :ref:`int<class_int>` **kill** **(** :ref:`int<class_int>` pid **)**
+- :ref:`Error<enum_@globalscope_error>` **kill** **(** :ref:`int<class_int>` pid **)**
 
-Kill a process ID (this method can be used to kill processes that were not spawned by the game).
+Kill (terminate) the process identified by the given process ID (``pid``), e.g. the one returned by :ref:`execute<class_OS_execute>` in non-blocking mode.
+
+Note that this method can also be used to kill processes that were not spawned by the game.
 
 .. _class_OS_native_video_is_playing:
 
@@ -704,7 +774,7 @@ Pauses native video playback.
 
 .. _class_OS_native_video_play:
 
-- :ref:`int<class_int>` **native_video_play** **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)**
+- :ref:`Error<enum_@globalscope_error>` **native_video_play** **(** :ref:`String<class_string>` path, :ref:`float<class_float>` volume, :ref:`String<class_string>` audio_track, :ref:`String<class_string>` subtitle_track **)**
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
@@ -762,7 +832,7 @@ Sets the game's icon.
 
 .. _class_OS_set_thread_name:
 
-- :ref:`int<class_int>` **set_thread_name** **(** :ref:`String<class_string>` name **)**
+- :ref:`Error<enum_@globalscope_error>` **set_thread_name** **(** :ref:`String<class_string>` name **)**
 
 Sets the name of the current thread.
 
@@ -776,6 +846,8 @@ Enables backup saves if ``enabled`` is ``true``.
 
 - void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
+Sets whether the window should always be on top.
+
 .. _class_OS_set_window_title:
 
 - void **set_window_title** **(** :ref:`String<class_string>` title **)**
@@ -784,7 +856,7 @@ Sets the window title to the specified string.
 
 .. _class_OS_shell_open:
 
-- :ref:`int<class_int>` **shell_open** **(** :ref:`String<class_string>` uri **)**
+- :ref:`Error<enum_@globalscope_error>` **shell_open** **(** :ref:`String<class_string>` uri **)**
 
 Requests the OS to open a resource with the most appropriate program. For example.
 

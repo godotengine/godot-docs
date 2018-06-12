@@ -3,16 +3,16 @@
 Packaging Godot
 ===============
 
-Starting with 2.0, Godot has features to make it easier to package it for application repositories.
+Godot has features to make it easier to distribute and to package it for application repositories.
 
 Default behaviour
 -----------------
 
-Per default, Godot stores all settings and installed templates in a per-user directory.
+By default, Godot stores all settings and installed templates in a per-user directory.
 First Godot checks the ``APPDATA`` environment variable. If it exists, the per-user directory
-is the "Godot" subdirectory of ``$APPDATA``.
+is the ``Godot`` subdirectory of ``APPDATA``.
 If ``APPDATA`` doesn't exist, Godot checks the ``HOME`` environment variable. The per-user
-directory is then the ".godot" subdir of ``$HOME``.
+directory is then the ".godot" subdir of ``HOME``.
 
 This meets common operating system standards.
 
@@ -34,15 +34,16 @@ This option is only available on unix based platforms.
 Self contained mode
 -------------------
 
-The self contained mode can be used to package godot for distribution systems where godot
-doesn't live at a fixed location. If the godot editor finds a ``._sc_`` file in the directory
-the executable is located, godot will continue in "self contained mode".
+The self contained mode can be used to package Godot for distribution systems where it
+doesn't live at a fixed location. If the editor finds a ``._sc_`` file in the directory
+the executable is located in, Godot will continue in "self contained mode".
+On Windows, the file name to use is ``_sc_`` (without the preceding dot).
 
 In self contained mode, all config files are located next to the executable in a directory
 called ``editor_data``. Godot doesn't read or write to the per-user location anymore.
 
 The contents of the ``._sc_`` file (when not empty) are read with the ConfigFile api (same
-format as ``engine.cfg``, etc). So far it can contain a list of pre-loaded project in this
+format as ``project.godot``, etc). So far it can contain a list of pre-loaded project in this
 format:
 
 :: 

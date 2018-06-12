@@ -140,6 +140,9 @@ node, so we'll add a script. Click the ``Player`` node and click the
 In the script settings window, you can leave the default settings alone. Just
 click "Create":
 
+.. note:: If you're creating a C# script or other languages, select the 
+            language from the `language` drop down menu before hitting create.
+
 .. image:: img/attach_node_window.png
 
 .. note:: If this is your first time encountering GDScript, please read
@@ -147,28 +150,50 @@ click "Create":
 
 Start by declaring the member variables this object will need:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Area2D
 
     export (int) var SPEED  # how fast the player will move (pixels/sec)
-    var velocity = Vector2()  # the player's movement vector
     var screensize  # size of the game window
+ 
+ .. code-tab:: csharp
+
+    public class Player : Area2D
+    {
+        [Export] 
+        public int Speed = 0;
+        
+        private Vector2 _screenSize;
+    }
+
 
 Using the ``export`` keyword on the first variable ``SPEED`` allows us to
-set its value in the Inspector. This can be very handy for values that you
+set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
+
+.. warning:: If you're using C#, you need to restart godot editor temporarily to see
+            exported variables in the editor until it's fixed.
 
 .. image:: img/export_variable.png
 
 The ``_ready()`` function is called when a node enters the scene tree, 
 which is a good time to find the size of the game window:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         screensize = get_viewport_rect().size
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        _screenSize = GetViewport().GetSize();
+    }   
 
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
@@ -189,10 +214,11 @@ You can detect whether a key is pressed using
 ``Input.is_action_pressed()``, which returns ``true`` if it is pressed
 or ``false`` if it isn't.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        velocity = Vector2()
+        var velocity = Vector2() # the player's movement vector
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
         if Input.is_action_pressed("ui_left"):
@@ -207,6 +233,36 @@ or ``false`` if it isn't.
         else:
             $AnimatedSprite.stop()
 
+ .. code-tab:: csharp
+
+    public override void _Process(float delta)
+    {
+        var velocity = new Vector2();
+        if (Input.IsActionPressed("ui_right")) {
+            velocity.x += 1;
+        }
+    
+        if (Input.IsActionPressed("ui_left")) {
+            velocity.x -= 1;
+        }
+    
+        if (Input.IsActionPressed("ui_down")) {
+            velocity.y += 1;
+        }
+    
+        if (Input.IsActionPressed("ui_up")) {
+            velocity.y -= 1;
+        }
+    
+        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+        if (velocity.Length() > 0) {
+            velocity = velocity.Normalized() * Speed;
+            animatedSprite.Play();
+        } else {
+            animatedSprite.Stop();
+        }
+    }   
+
 We check each input and add/subtract from the ``velocity`` to obtain a
 total direction. For example, if you hold ``right`` and ``down`` at
 the same time, the resulting ``velocity`` vector will be ``(1, 1)``. In
@@ -217,7 +273,7 @@ We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed. This means no
 more fast diagonal movement.
 
-.. tip:: If you've never used vector math before, or just need a refresher,
+.. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
          It's good to know but won't be necessary for the rest of this tutorial.
 
@@ -225,19 +281,29 @@ We also check whether the player is moving so we can start or stop the
 AnimatedSprite animation.
 
 .. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
-         Since AnimatedSprite is a child of the current node, we can just use ``$AnimatedSprite``.
+         Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
          
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
 Now that we have a movement direction, we can update ``Player``'s position
-and use ``clamp()`` to prevent it from leaving the screen:
+and use ``clamp()`` to prevent it from leaving the screen by adding the following
+to the bottom of the ``_process`` function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         position += velocity * delta
         position.x = clamp(position.x, 0, screensize.x)
         position.y = clamp(position.y, 0, screensize.y)
+
+ .. code-tab:: csharp
+
+        Position += velocity * delta;
+        Position = new Vector2(
+            Mathf.Clamp(Position.x, 0, _screenSize.x),
+            Mathf.Clamp(Position.y, 0, _screenSize.y)
+        );
 
 
 .. tip:: *Clamping* a value means restricting it to a given range.
@@ -259,7 +325,8 @@ property for left movement, and an "up" animation, which should be
 flipped vertically with ``flip_v`` for downward movement.
 Let's place this code at the end of our ``_process()`` function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         if velocity.x != 0:
             $AnimatedSprite.animation = "right"
@@ -268,15 +335,31 @@ Let's place this code at the end of our ``_process()`` function:
         elif velocity.y != 0:
             $AnimatedSprite.animation = "up"
             $AnimatedSprite.flip_v = velocity.y > 0
+ 
+ .. code-tab:: csharp
+
+        if (velocity.x != 0) {
+            animatedSprite.Animation = "right";
+            animatedSprite.FlipH = velocity.x < 0;
+            animatedSprite.FlipV = false;
+        } else if(velocity.y != 0) {
+            animatedSprite.Animation = "up";
+            animatedSprite.FlipV = velocity.y > 0;
+        }
 
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
 add this line to ``_ready()`` so the player will be hidden when the game
 starts:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
     
     hide()
+
+ .. code-tab:: csharp
+
+    Hide();
 
 Preparing for Collisions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,9 +370,15 @@ made any enemies yet! That's OK, because we're going to use Godot's
 
 Add the following at the top of the script, after ``extends Area2d``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     signal hit
+
+ .. code-tab:: csharp
+
+    [Signal] 
+    public delegate void Hit();
 
 This defines a custom signal called "hit" that we will have our player
 emit (send out) when it collides with an enemy. We will use ``Area2D`` to
@@ -312,12 +401,26 @@ settings - Godot will automatically create a function called
 
 Add this code to the function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Player_body_entered( body ):
         hide() # Player disappears after being hit
         emit_signal("hit")
         $CollisionShape2D.disabled = true
+
+ .. code-tab:: csharp
+
+    public void OnPlayerBodyEntered(Godot.Object body)
+    {
+        Hide();
+        EmitSignal("Hit");
+        
+        // for the sake of this example, but it's better to create a class var
+        // then assign the variable inside _Ready()
+        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        collisionShape2D.Disabled = true;
+    }
 
 .. Note:: Disabling the area's collision shape means
           it won't detect collisions. By turning it off, we make
@@ -327,12 +430,24 @@ Add this code to the function:
 The last piece for our player is to add a function we can call to reset
 the player when starting a new game.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func start(pos):
         position = pos
         show()
         $CollisionShape2D.disabled = false
+
+ .. code-tab:: csharp
+
+    public void Start(Vector2 pos)
+    {
+        Position = pos;
+        Show();
+        
+        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        collisionShape2D.Disabled = false;
+    }
 
 Enemy Scene
 -----------
@@ -389,13 +504,27 @@ Enemy Script
 
 Add a script to the ``Mob`` and add the following member variables:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody2D
 
     export (int) var MIN_SPEED # minimum speed range
     export (int) var MAX_SPEED # maximum speed range
     var mob_types = ["walk", "swim", "fly"]
+
+ .. code-tab:: csharp
+
+    public class Mob : RigidBody2D
+    {
+        [Export] 
+        public int MinSpeed = 150;
+
+        [Export] 
+        public int MaxSpeed = 250;
+
+        private String[] _mobTypes = {"walk", "swim", "fly"};
+    }
 
 We'll pick a random value between ``MIN_SPEED`` and ``MAX_SPEED`` for
 how fast each mob will move (it would be boring if they were all moving
@@ -406,10 +535,26 @@ we'll use to select a random one.
 Now let's look at the rest of the script. In ``_ready()`` we randomly 
 choose one of the three animation types:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+    
+        // C# doesn't implement gdscript's random methods, so we use Random
+        // as an alternative.
+        //
+        // Note: Never define random multiple times in real projects. Create a
+        // class memory and reuse it to get true random numbers.
+        var randomMob = new Random();
+        animatedSprite.Animation = _mobTypes[randomMob.Next(0, _mobTypes.Length)];
+    }
 
 .. note:: You must use ``randomize()`` if you want
           your sequence of "random" numbers to be different every time you run
@@ -421,10 +566,18 @@ The last piece is to make the mobs delete themselves when they leave the
 screen. Connect the ``screen_exited()`` signal of the ``Visibility``
 node and add this code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_Visibility_screen_exited():
         queue_free()
+
+ .. code-tab:: csharp
+
+    public void onVisibilityScreenExited()
+    {
+        QueueFree();
+    }
 
 This completes the `Mob` scene.
 
@@ -493,7 +646,8 @@ Add a script to ``Main``. At the top of the script we use
 ``export (PackedScene)`` to allow us to choose the Mob scene we want to
 instance.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -503,8 +657,32 @@ instance.
     func _ready():
         randomize()
 
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        [Export] 
+        public PackedScene Mob;
+
+        public int Score = 0;
+
+        // note: we're going to use this many times, so instantiating it
+        // allows our numbers to consistently be random
+        private Random rand = new Random();
+
+        public override void _Ready()
+        {
+        }
+
+        // we'll use this later because c# doesn't support gdscript's randi()
+        private float RandRand(float min, float max)
+        {
+            return (float) (rand.NextDouble() * (max - min) + min);
+        }
+    }
+
 Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
-``Mob`` property.
+``Mob`` property under the Script Variables of the ``Main`` node.
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
@@ -512,7 +690,8 @@ game ends. Type "game_over" in the "Method In Node" box at the bottom of the
 "Connecting Signal" window. Add the following code, as well as a ``new_game``
 function to set everything up for a new game:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func game_over():
         $ScoreTimer.stop()
@@ -523,12 +702,36 @@ function to set everything up for a new game:
         $Player.start($StartPosition.position)
         $StartTimer.start()
 
+ .. code-tab:: csharp
+
+    public void GameOver()
+    {
+        //timers
+        var mobTimer = (Timer) GetNode("MobTimer");
+        var scoreTimer = (Timer) GetNode("ScoreTimer");
+    
+        scoreTimer.Stop();
+        mobTimer.Stop();
+    }
+
+    public void NewGame()
+    {
+        Score = 0;
+    
+        var player = (Player) GetNode("Player");
+        var startTimer = (Timer) GetNode("StartTimer");
+        var startPosition = (Position2D) GetNode("StartPosition");
+        
+        player.Start(startPosition.Position);
+        startTimer.Start();
+    }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes.
 ``StartTimer`` will start the other two timers. ``ScoreTimer`` will
 increment the score by 1.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_StartTimer_timeout():
         $MobTimer.start()
@@ -536,6 +739,23 @@ increment the score by 1.
 
     func _on_ScoreTimer_timeout():
         score += 1
+
+ .. code-tab:: csharp
+
+    public void OnStartTimerTimeout()
+    {
+        //timers
+        var mobTimer = (Timer) GetNode("MobTimer");
+        var scoreTimer = (Timer) GetNode("ScoreTimer");
+    
+        mobTimer.Start();
+        scoreTimer.Start();
+    }
+
+    public void OnScoreTimerTimeout()
+    {
+        Score += 1;
+    }
 
 In ``_on_MobTimer_timeout()`` we will create a mob instance, pick a
 random starting location along the ``Path2D``, and set the mob in
@@ -546,7 +766,8 @@ well as its position.
 Note that a new instance must be added to the scene using
 ``add_child()``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_MobTimer_timeout():
         # choose a random location on Path2D
@@ -563,6 +784,27 @@ Note that a new instance must be added to the scene using
         mob.rotation = direction
         # choose the velocity
         mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
+
+ .. code-tab:: csharp
+
+    public void OnMobTimerTimeout()
+    {
+        //choose random location on path2d
+        var mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
+        mobSpawnLocation.SetOffset(rand.Next());
+    
+        //set direction
+        var direction = mobSpawnLocation.Rotation + Mathf.PI/2;
+        direction += RandRand(-Mathf.PI/4, Mathf.PI/4);
+    
+        //create mob instance and add it to scene
+        var mobInstance = (RigidBody2D) Mob.Instance();
+        mobInstance.Position = mobSpawnLocation.Position;
+        mobInstance.Rotation = direction;
+        mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
+    
+        AddChild(mobInstance);
+    }
 
 .. important:: In functions requiring angles, GDScript uses *radians*,
                not degrees. If you're more comfortable working with
@@ -630,6 +872,19 @@ ScoreLabel
 MessageLabel
 ~~~~~~~~~~~~
 
+-  ``Layout``: "Center"
+-  ``Margin``:
+
+   -  Left: ``-200``
+   -  Top: ``-150``
+   -  Right: ``200``
+   -  Bottom: ``0``
+
+-  Text: ``Dodge the Creeps!``
+
+StartButton
+~~~~~~~~~~~
+
 -  ``Layout``: "Center Bottom"
 -  ``Margin``:
 
@@ -638,22 +893,9 @@ MessageLabel
    -  Right: ``100``
    -  Bottom: ``-100``
 
--  Text: ``Dodge the Creeps!``
-
-StartButton
-~~~~~~~~~~~
-
--  ``Layout``: "Center"
--  ``Margin``:
-
-   -  Left: ``-60``
-   -  Top: ``70``
-   -  Right: ``60``
-   -  Bottom: ``150``
-
 -  Text: ``Start``
 
-The default font for ``Control`` nodes is very small and doesn't scale
+The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
 the three ``Control`` nodes:
@@ -662,7 +904,7 @@ the three ``Control`` nodes:
 
 .. image:: img/custom_font1.png
 
-2. Click on the "DynamicFont" you just added, and under "Font Data",
+2. Click on the "DynamicFont" you added, and under "Font Data",
    choose "Load" and select the "Xolonium-Regular.ttf" file. You must
    also set the font's ``Size``. A setting of ``64`` works well.
 
@@ -670,27 +912,50 @@ the three ``Control`` nodes:
 
 Now add this script to ``HUD``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends CanvasLayer
 
     signal start_game
 
+ .. code-tab:: csharp
+
+    public class HUD : CanvasLayer
+    {
+        [Signal] 
+        public delegate void StartGame();
+    }
+
 The ``start_game`` signal tells the ``Main`` node that the button
 has been pressed.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func show_message(text):
         $MessageLabel.text = text
         $MessageLabel.show()
         $MessageTimer.start()
 
+ .. code-tab:: csharp
+
+    public void ShowMessage(string text)
+    {
+        var messageTimer = (Timer) GetNode("MessageTimer");
+        var messageLabel = (Label) GetNode("MessageLabel");
+    
+        messageLabel.Text = text;
+        messageLabel.Show();
+        messageTimer.Start();
+    }
+
 This function is called when we want to display a message
 temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 ``Wait Time`` to ``2`` and set the ``One Shot`` property to "On".
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func show_game_over():
         show_message("Game Over")
@@ -699,21 +964,46 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
         $MessageLabel.text = "Dodge the\nCreeps!"
         $MessageLabel.show()
 
+ .. code-tab:: csharp
+
+    async public void ShowGameOver()
+    {
+        var startButton = (Button) GetNode("StartButton");
+        var messageTimer = (Timer) GetNode("MessageTimer");
+        var messageLabel = (Label) GetNode("MessageLabel");
+
+        ShowMessage("Game Over");
+        await ToSignal(messageTimer, "timeout");
+        messageLabel.Text = "Dodge the\nCreeps!";
+        messageLabel.Show();
+        startButton.Show();
+    }
+
 This function is called when the player loses. It will show "Game
 Over" for 2 seconds, then return to the title screen and show the
 "Start" button.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func update_score(score):
         $ScoreLabel.text = str(score)
+
+ .. code-tab:: csharp
+
+    public void UpdateScore(int score)
+    {
+        var scoreLabel = (Label) GetNode("ScoreLabel");
+        scoreLabel.Text = score.ToString();
+    }
 
 This function is called in ``Main`` whenever the score changes.
 
 Connect the ``timeout()`` signal of ``MessageTimer`` and the
 ``pressed()`` signal of ``StartButton``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_StartButton_pressed():
         $StartButton.hide()
@@ -721,6 +1011,22 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     func _on_MessageTimer_timeout():
         $MessageLabel.hide()
+
+ .. code-tab:: csharp
+
+    public void OnStartButtonPressed()
+    {
+        var startButton = (Button) GetNode("StartButton");
+        startButton.Hide();
+    
+        EmitSignal("StartGame");
+    }
+
+    public void OnMessageTimerTimeout()
+    {
+        var messageLabel = (Label) GetNode("MessageLabel");
+        messageLabel.Hide();
+    }
 
 Connecting HUD to Main
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -741,23 +1047,42 @@ In the Node tab, connect the HUD's ``start_game`` signal to the
 In ``new_game()``, update the score display and show the "Get Ready"
 message:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         $HUD.update_score(score)
         $HUD.show_message("Get Ready")
 
+ .. code-tab:: csharp
+
+        var hud = (HUD) GetNode("HUD");
+        hud.UpdateScore(Score);
+        hud.ShowMessage("Get Ready!");
+
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         $HUD.show_game_over()
+
+ .. code-tab:: csharp
+
+        var hud = (HUD) GetNode("HUD");
+        hud.ShowGameOver();
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in
 sync with the changing score:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         $HUD.update_score(score)
+
+ .. code-tab:: csharp
+
+        var hud = (HUD) GetNode("HUD");
+        hud.UpdateScore(Score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
@@ -807,7 +1132,7 @@ For one last bit of visual appeal, let's add a trail effect to the
 player's movement. Choose your ``Player`` scene and add a
 :ref:`Particles2D <class_Particles2D>` node named ``Trail``.
 
-There are a very large number of properties to choose from when
+There are a large number of properties to choose from when
 configuring particles. Feel free to experiment and create different
 effects. For the effect in this example, use the following settings:
 

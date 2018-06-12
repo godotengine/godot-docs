@@ -36,6 +36,8 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`            | :ref:`get_item_icon<class_ItemList_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                | :ref:`get_item_icon_modulate<class_ItemList_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** const                                                        |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`                | :ref:`get_item_icon_region<class_ItemList_get_item_icon_region>` **(** :ref:`int<class_int>` idx **)** const                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`            | :ref:`get_item_metadata<class_ItemList_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
@@ -48,6 +50,8 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VScrollBar<class_vscrollbar>`      | :ref:`get_v_scroll<class_ItemList_get_v_scroll>` **(** **)**                                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_anything_selected<class_ItemList_is_anything_selected>` **(** **)**                                                                                            |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_disabled<class_ItemList_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_selectable<class_ItemList_is_item_selectable>` **(** :ref:`int<class_int>` idx **)** const                                                                |
@@ -55,6 +59,8 @@ Member Functions
 | :ref:`bool<class_bool>`                  | :ref:`is_item_tooltip_enabled<class_ItemList_is_item_tooltip_enabled>` **(** :ref:`int<class_int>` idx **)** const                                                      |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selected<class_ItemList_is_selected>` **(** :ref:`int<class_int>` idx **)** const                                                                              |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`move_item<class_ItemList_move_item>` **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**                                                     |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`remove_item<class_ItemList_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +71,8 @@ Member Functions
 | void                                     | :ref:`set_item_disabled<class_ItemList_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                      |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_icon<class_ItemList_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon **)**                                            |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_item_icon_modulate<class_ItemList_set_item_icon_modulate>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` modulate **)**                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_icon_region<class_ItemList_set_item_icon_region>` **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_rect2>` rect **)**                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,6 +89,8 @@ Member Functions
 | void                                     | :ref:`sort_items_by_text<class_ItemList_sort_items_by_text>` **(** **)**                                                                                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`unselect<class_ItemList_unselect>` **(** :ref:`int<class_int>` idx **)**                                                                                          |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`unselect_all<class_ItemList_unselect_all>` **(** **)**                                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -249,6 +259,12 @@ Return count of items currently in the item list.
 
 - :ref:`Texture<class_texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
+.. _class_ItemList_get_item_icon_modulate:
+
+- :ref:`Color<class_color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** const
+
+Returns a :ref:`Color<class_color>` modulating item's icon at the specified index.
+
 .. _class_ItemList_get_item_icon_region:
 
 - :ref:`Rect2<class_rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
@@ -281,6 +297,12 @@ Returns the list of selected indexes.
 
 Returns the current vertical scroll bar for the List.
 
+.. _class_ItemList_is_anything_selected:
+
+- :ref:`bool<class_bool>` **is_anything_selected** **(** **)**
+
+Returns ``true`` if one or more items are selected.
+
 .. _class_ItemList_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
@@ -304,6 +326,12 @@ Returns whether the tooltip is enabled for specified item index.
 - :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether or not item at the specified index is currently selected.
+
+.. _class_ItemList_move_item:
+
+- void **move_item** **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**
+
+Moves item at index ``from_idx`` to ``to_idx``.
 
 .. _class_ItemList_remove_item:
 
@@ -336,6 +364,12 @@ Disabled items are not be selectable and do not fire activation (Enter or double
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon **)**
 
 Set (or replace) icon of the item at the specified index.
+
+.. _class_ItemList_set_item_icon_modulate:
+
+- void **set_item_icon_modulate** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` modulate **)**
+
+Sets a modulating :ref:`Color<class_color>` for item's icon at the specified index.
 
 .. _class_ItemList_set_item_icon_region:
 
@@ -382,5 +416,11 @@ Sorts items in the list by their text.
 - void **unselect** **(** :ref:`int<class_int>` idx **)**
 
 Ensure item at specified index is not selected.
+
+.. _class_ItemList_unselect_all:
+
+- void **unselect_all** **(** **)**
+
+Ensure there are no items selected.
 
 

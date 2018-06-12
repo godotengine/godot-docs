@@ -8,7 +8,7 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 5.2.0+ (mono-complete)
+- Mono (the required version is listed here: :ref:`doc_c_sharp`)
 - MSBuild
 - pkg-config
 
@@ -41,14 +41,34 @@ After the build finishes, you need to run the compiled executable with the param
 
 This command will tell Godot to generate the file *modules/mono/glue/mono_glue.gen.cpp*. Once this file is generated, you can build Godot for all the desired targets without the need to repeat this process.
 
+As always, ``godot`` refers to the compiled Godot binary, so if it isn't in your PATH, you need to give the full path to the executable, e.g. if it is located in the ``bin`` subfolder, it becomes ``bin/godot``.
+
 Notes
 ^^^^^
 -  **Do not** build normal binaries with ``mono_glue=no``. This option disables C# scripting and therefore must only be used for the temporary binary that will be used to generate the glue. Godot should print a message at startup warning you about this.
 -  The glue sources must be regenerated every time the ClassDB API changes. If there is an API mismatch with the generated glue, Godot will print an error at startup.
 
-Example (x11)
--------------
+Examples
+--------
 
+Example (Windows)
+^^^^^^^^^^^^^^^^^
+::
+
+    # Build temporary binary
+    scons p=windows tools=yes module_mono_enabled=yes mono_glue=no
+    # Generate glue sources
+    bin\godot.windows.tools.64.mono --generate-mono-glue modules/mono/glue
+
+    ### Build binaries normally
+    # Editor
+    scons p=windows target=release_debug tools=yes module_mono_enabled=yes
+    # Export templates
+    scons p=windows target=debug tools=no module_mono_enabled=yes
+    scons p=windows target=release tools=no module_mono_enabled=yes
+
+Example (x11)
+^^^^^^^^^^^^^
 ::
 
     # Build temporary binary

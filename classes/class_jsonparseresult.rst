@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_JSONParseResult_error:
 
-- Error **error** - The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@globalscope>` ERR\_\* constants.
+- :ref:`Error<enum_@globalscope_error>` **error** - The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@globalscope>` ERR\_\* constants.
 
   .. _class_JSONParseResult_error_line:
 

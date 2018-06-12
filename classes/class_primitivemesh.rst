@@ -28,6 +28,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PrimitiveMesh_custom_aabb:
+
+- :ref:`AABB<class_aabb>` **custom_aabb**
+
+  .. _class_PrimitiveMesh_flip_faces:
+
+- :ref:`bool<class_bool>` **flip_faces**
+
   .. _class_PrimitiveMesh_material:
 
 - :ref:`Material<class_material>` **material** - The current :ref:`Material<class_material>` of the primitive mesh.

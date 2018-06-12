@@ -6,6 +6,7 @@ __pycache__
 *~
 .directory
 .vscode/
+*.mo
 
 # Finder (MacOS) makes these automatically.
 .DS_Store

@@ -15,7 +15,7 @@ it also makes our work supporting languages more difficult.
 
 The "Main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is their level of integration with Godot, as this
-makes the experience smoother; both have very slick editor integration, while
+makes the experience smoother; both have slick editor integration, while
 C# and C++ need to be edited in a separate IDE. If you are a big fan of statically typed languages, go with C# and C++ instead.
 
 GDScript
@@ -141,7 +141,7 @@ The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
 In GDScript the file itself represents the class, so
-the class name field will not editable.
+the class name field is not editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
 will automatically be filled in with "Panel". This is what we want, as the
@@ -184,18 +184,41 @@ connected to any function of any script instance. Signals are used mostly in
 GUI nodes, although other nodes have them too, and you can even define custom
 signals in your own scripts.
 
-In this step, we'll connect the "pressed" signal to a custom function.
+In this step, we'll connect the "pressed" signal to a custom function. Forming
+connections is the first part and defining the custom function is the second part.
+For the first part, Godot provides two ways to create connections: through a 
+visual interface the editor provides or through code.
 
-The editor provides an interface for connecting signals to your scripts. You
-can access this by selecting the Button node in the scene tree and then selecting the
-"Node" tab. Next, make sure that you have "Signals" selected.
+While we will use the code method for the remainder of this tutorial series, let's
+cover how the editor interface works for future reference.
+
+Select the Button node in the scene tree and then select the "Node" tab. Next,
+make sure that you have "Signals" selected.
 
 .. image:: img/signals.png
 
-At this point, you could use the visual interface to hook up the "pressed"
-signal by double clicking on it and selecting a target node that already has a
-script attached to it. But for the sake of learning, we're going to code up the
-connection manually.
+If you then select "pressed()" under "BaseButton" and click the "Connect..."
+button in the bottom right, you'll open up the connection creation dialogue.
+
+.. image:: img/connect_dialogue.png
+
+In the bottom-left are the key things you need to create a connection: a node
+which implements the method you want to trigger (represented here as a 
+NodePath) and the name of the method to trigger.
+
+The top-left section displays a list of your scene's nodes with the emitting
+node's name highlighted in red. Select the "Panel" node here. When you select
+a node, the NodePath at the bottom will automatically update to point a
+relative path from the emitting node to the selected node.
+
+By default, the method name will contain the emitting node's name ("Button" in
+this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
+"Make Function" check button checked, then the editor will generate the function
+for you before setting up the connection.
+
+And that concludes the guide on how to use the visual interface. However, this
+is a scripting tutorial, so for the sake of learning, let's dive in to the
+manual process!
 
 To accomplish this, we will introduce a function that is probably the most used
 by Godot programmers: :ref:`Node.get_node() <class_Node_get_node>`.
@@ -207,16 +230,20 @@ You will fill out the rest of the script manually.
 
 Because the Button and Label are siblings under the Panel
 where the script is attached, you can fetch the Button by typing
-the following underneath ``extends Panel``:
+the following underneath the ``_ready()`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    get_node("Button")
+    func _ready():
+        get_node("Button")
 
  .. code-tab:: csharp
 
-    GetNode("Button")
+    public override void _Ready()
+    {
+        GetNode("Button")
+    }
 
 Next, write a function which will be called when the button is pressed:
 
@@ -257,11 +284,11 @@ The final script should look like this:
 
     extends Panel
 
-    func _on_button_pressed():
-        get_node("Label").text = "HELLO!"
-
     func _ready():
         get_node("Button").connect("pressed", self, "_on_button_pressed")
+
+    func _on_button_pressed():
+        get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
 
@@ -271,15 +298,15 @@ The final script should look like this:
     // this is case sensitive!
     public class sayhello : Panel
     {
+        public override void _Ready()
+        {
+            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
+        }
+
         public void _OnButtonPressed()
         {
             var label = (Label)GetNode("Label");
             label.Text = "HELLO!";
-        }
-
-        public override void _Ready()
-        {
-            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
         }
     }
 
@@ -290,10 +317,12 @@ Run the scene and press the button. You should get the following result:
 
 Why, hello there! Congratulations on scripting your first scene.
 
-**Note:** A common misunderstanding regarding this tutorial is how ``get_node(path)``
-works. For a given node, ``get_node(path)`` searches its immediate children.
-In the above code, this means that Button must be a child of Panel. If
-Button were instead a child of Label, the code to obtain it would be:
+.. note::
+
+    A common misunderstanding regarding this tutorial is how ``get_node(path)``
+    works. For a given node, ``get_node(path)`` searches its immediate children.
+    In the above code, this means that Button must be a child of Panel. If
+    Button were instead a child of Label, the code to obtain it would be:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -310,3 +339,12 @@ Button were instead a child of Label, the code to obtain it would be:
 
 Also, remember that nodes are referenced by name, not by type.
 
+.. note::
+
+    The right-hand panel of the connect dialogue is for binding specific 
+    values to the connected function's parameters. You can add and remove 
+    values of different types.
+
+    The code approach also enables this with a 4th ``Array`` parameter that
+    is empty by default. Feel free to read up on the ``Object.connect`` 
+    method for more information.

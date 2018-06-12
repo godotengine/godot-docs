@@ -3,7 +3,7 @@
 Features
 ============
 
-This page provied an overview over the commonly used features of both C# and Godot
+This page provides an overview over the commonly used features of both C# and Godot
 and how they are used together.
 
 Type Conversion and Casting
@@ -39,8 +39,8 @@ and for this reason it cannot be used with value types.
 .. code-block:: csharp
 
     Sprite mySprite = GetNode("MySprite") as Sprite;
-    // Only call SetFrame() is mySprite is not null
-    mySprite?.SetFrame(0);;
+    // Only call SetFrame() if mySprite is not null
+    mySprite?.SetFrame(0);
 
 **Type checking using the IS operator**
 
@@ -57,37 +57,93 @@ otherwise it returns true.
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
-Signals
--------
+.. _c_sharp_signals:
+
+C# Signals
+----------
 
 For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
 
-You can use ``Connect("SomeSignal", someObject, "SomeMethod")`` to connect to signals.
-``AddUserSignal("SignalName")`` is used to define custom signals.
-Emitting signals is done with ``EmitSignal("SignalName")``. Params can be given, like ``EmitSignal("SignalName", arg1, arg2, ...)``.
-
-**Custom signals**
+Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
 
 .. code-block:: csharp
-   :emphasize-lines: 5, 10
-   :linenos:
 
-    public class ExampleScript : Node
+    [Signal]
+    delegate void MySignal();
+
+    [Signal]
+    delegate void MySignalWithArguments(string foo, int bar);
+
+These signals can then be connected either in the editor or from code with ``Connect``.
+
+.. code-block:: csharp
+
+    public void MyCallback()
     {
-        public override void _Ready()
-        {
-            AddUserSignal("YourSignal");
-        }
-
-        public override void _Process(float delta)
-        {
-            EmitSignal("YourSignal");
-        }
+        GD.Print("My callback!");
     }
 
-Above in line 5, ``AddUserSignal()`` is used to define the new custom signal ``YourSignal``.
-In line 10 ``EmitSignal()`` is used to emit that custom signal on every frame in ``_Process()``.
+    public void MyCallbackWithArguments(string foo, int bar)
+    {
+        GD.Print("My callback with: ", foo, " and ", bar, "!");
+    }
 
-Make sure that ``AddUserSignal()`` is always executed before any calls using that signal (``EmitSignal()`` and ``Connect()``).
-If you are using both ``AddUserSignal()`` and ``Connect()`` or ``EmitSignal()`` in ``_Ready()``, this is especially important as load order of your node may change,
-and thus the order in which your various ``_Ready()`` functions are called.
+    public void SomeFunction()
+    {
+        instance.Connect("MySignal", this, "MyCallback");
+        instance.Connect(nameof(MySignalWithArguments), this, "MyCallbackWithArguments");
+    }
+
+Emitting signals is done with the ``EmitSignal`` method.
+
+.. code-block:: csharp
+
+    public void SomeFunction()
+    {
+        EmitSignal(nameof(MySignal));
+        EmitSignal("MySignalWithArguments", "hello there", 28);
+    }
+
+Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
+
+It is possible to bind values when establishing a connection by passing an object array.
+
+.. code-block:: csharp
+
+    public int Value { get; private set; } = 0;
+
+    private void ModifyValue(int modifier)
+    {
+        Value += modifier;
+    }
+
+    public void SomeFunction()
+    {
+        var plusButton = (Button)GetNode("PlusButton");
+        var minusButton = (Button)GetNode("MinusButton");
+        
+        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
+        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
+    }
+
+Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
+Consequently any ``Node`` or ``Reference`` will be compatible automatically but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
+
+.. code-block:: csharp
+
+    public class DataObject : Godot.Object
+    {
+        public string Field1 { get; set; }
+        public string Field2 { get; set; }
+    }
+
+
+Finally, signals can be created by calling ``AddUserSignal``, but be aware that it should be executed before any use of said signals (with ``Connect`` or ``EmitSignal``).
+
+.. code-block:: csharp
+
+    public void SomeFunction()
+    {
+        AddUserSignal("MyOtherSignal");
+        EmitSignal("MyOtherSignal");
+    }

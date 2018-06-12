@@ -104,7 +104,7 @@ Splits are in-between. Default values generally work well, but tweaking the firs
 
 Always make sure to set a shadow *Max Distance* according to what the scene needs. The closer the max distance, the higher quality they shadows will have.
 
-Sometimes, the transition between a split and the next can look bad. To fix this, the **"Blend Splits"** option can be turned own, which sacrifices detail in exchange for smoother
+Sometimes, the transition between a split and the next can look bad. To fix this, the **"Blend Splits"** option can be turned on, which sacrifices detail in exchange for smoother
 transitions:
 
 .. image:: img/blend_splits.png
@@ -116,7 +116,7 @@ the shadow a bit thinner.
 
 The **"Bias Split Scale"** parameter can control extra bias for the splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
 
-Finally, the **"Depth Range"** has to settings:
+Finally, the **"Depth Range"** has two settings:
 
 - **Stable**: Keeps the shadow stable while the camera moves, the blocks that appear in the outline when close to the shadow edges remain in-place. This is the default and generally desired, but it reduces the effective shadow resolution.
 - **Optimized**: Triest to achieve the maximum resolution available at any given time. This may result in a "moving saw" effect on shadow edges, but at the same time the shadow looks more detailed (so this effect may be subtle enough to be forgiven).
@@ -137,8 +137,8 @@ radius .
 
 .. image:: img/light_omni.png
 
-In real life, light attenuation is an inverse function, which means omni lights don't really have a radius.
-This is a problem, because it means computing several omni lights would become really demanding.
+In real life, light attenuation is an inverse function, which means omni lights don't have a radius.
+This is a problem, because it means computing several omni lights would become demanding.
 
 To solve this, a *Range* is introduced, together with an attenuation function. 
 
@@ -152,10 +152,10 @@ These two parameters allow tweaking how this works visually, in order to find ae
 Omni Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Omni light shadow mapping is relatively straightforward, as it just works. The main issue that needs to be
+Omni light shadow mapping is relatively straightforward. The main issue that needs to be
 considered is the algorithm used to render it. 
 
-Omni Shadows can be rendered as either **"Dual Paraboloid" or "Cube Mapped"**. The former renders very quickly but can cause deformations,
+Omni Shadows can be rendered as either **"Dual Paraboloid" or "Cube Mapped"**. The former renders quickly but can cause deformations,
 while the later is more correct but more costly. 
 
 .. image:: img/shadow_omni_dp_cm.png
@@ -183,7 +183,7 @@ Spot lights share the same **Range** and **Attenuation** as **OmniLight**, and a
 Spot Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Spots don't need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees of aperture, shadows
+Spots don't need any parameters for shadow mapping. Keep in mind that, at more than 89 degrees of aperture, shadows
 stop functioning for spots, and you should consider using an Omni light.
 
 Shadow Atlas

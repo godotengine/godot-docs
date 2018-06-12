@@ -23,7 +23,7 @@ usefulness when drawing, so they will be detailed next:
 Checking control size
 ~~~~~~~~~~~~~~~~~~~~~
 
-Unlike 2D nodes, "size" is very important with controls, as it helps to
+Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
 :ref:`Control.rect_size <class_Control_rect_size>`
 member variable is provided. Checking it during _draw() is vital to ensure
@@ -37,12 +37,13 @@ focus for keyboard or joypad input. Examples of this are entering text
 or pressing a button. This is controlled with the
 :ref:`Control.focus_mode <class_Control_focus_mode>`
 member variable. When drawing, and if the control supports input focus, it is
-always desired to show some sort of indicator (highight, box, etc) to
+always desired to show some sort of indicator (highlight, box, etc) to
 indicate that this is the currently focused control. To check for this
 status, the :ref:`Control.has_focus() <class_Control_has_focus>` method
 exists. Example
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _draw():
         if has_focus():
@@ -50,10 +51,24 @@ exists. Example
         else:
              draw_normal()
 
+ .. code-tab:: csharp
+
+    public override void _Draw()
+    {
+        if(HasFocus())
+        {
+            DrawSelected()
+        }
+        else 
+        {
+            DrawNormal();
+        }
+    }
+
 Sizing
 ------
 
-As mentioned before, size is very important to controls. This allows
+As mentioned before, size is important to controls. This allows
 them to lay out properly, when set into grids, containers, or anchored.
 Controls most of the time provide a *minimum size* to help to properly
 lay them out. For example, if controls are placed vertically on top of
@@ -65,17 +80,33 @@ To provide this callback, just override
 :ref:`Control.get_minimum_size() <class_Control_get_minimum_size>`,
 for example:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func get_minimum_size(): 
         return Vector2(30, 30)
 
+ .. code-tab:: csharp
+
+    public override Vector2 _GetMinimumSize()
+    {
+        return new Vector2(20, 20);
+    }
+
 Or alternatively, set it via function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         set_custom_minimum_size(Vector2(30, 30))
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        SetCustomMinimumSize(new Vector2(20, 20));
+    }
 
 Input
 -----
@@ -100,13 +131,38 @@ This function is
 :ref:`Control._gui_input() <class_Control__gui_input>`.
 Simply override it in your control. No processing needs to be set.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Control
 
     func _gui_input(event):
        if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
            print("Left mouse button was pressed!")
+
+ .. code-tab:: csharp
+
+    public override void _GuiInput(InputEvent @event)
+    {
+        var mouseButtonEvent = @event as InputEventMouseButton;
+        if (mouseButtonEvent != null)
+        {
+            if (mouseButtonEvent.ButtonIndex == (int)ButtonList.Left && mouseButtonEvent.Pressed)
+            {
+                GD.Print("Left mouse button was pressed!");
+            }
+        }
+    }
+
+    // or alternatively when using C# 7 or greater we can use pattern matching
+    public override void _GuiInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == (int)ButtonList.Left && mbe.Pressed)
+            {
+                GD.Print("Left mouse button was pressed!");
+            }
+        }
+    }
 
 For more information about events themselves, check the :ref:`doc_inputevent`
 tutorial.
@@ -117,7 +173,8 @@ Notifications
 Controls also have many useful notifications for which no callback
 exists, but can be checked with the _notification callback:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _notification(what):
         match what:
@@ -141,3 +198,45 @@ exists, but can be checked with the _notification callback:
             NOTIFICATION_MODAL_CLOSED):
                 pass # for modal popups, notification
                 # that the popup was closed
+
+ .. code-tab:: csharp
+
+    public override void _Notification(int what)
+    {
+        switch(what)
+        {
+            case NotificationMouseEnter:
+                // mouse entered the area of this control
+                break; 
+
+            case NotificationMouseExit:
+                // mouse exited the area of this control
+                break;
+
+            case NotificationFocusEnter:
+                // control gained focus
+                break;
+
+            case NotificationFocusExit:
+                // control lost focus
+                break;
+
+            case NotificationThemeChanged:
+                // theme used to draw the control changed
+                // update and redraw is recommended if using a theme
+                break;
+
+            case NotificationVisibilityChanged:
+                // control became visible/invisible
+                // check new status with is_visible()
+                break;
+
+            case NotificationResized:
+                // control changed size, check new size with get_size()
+                break;
+
+            case NotificationModalClose:
+                // for modal popups, notification that the popup was closed
+                break;
+        }
+    }

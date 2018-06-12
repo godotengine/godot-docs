@@ -60,7 +60,7 @@ by running the lighting shader on every pixel.
 As these calculations are costly, performance can be brought down considerably in some corner cases such as drawing
 several layers of transparency (common in particle systems). Switching to per vertex lighting may help these cases.
 
-Additionally, on very low end devices such as mobile, switching to vertex lighting can considerably increase rendering performance.
+Additionally, on low end or mobile devices, switching to vertex lighting can considerably increase rendering performance.
 
 
 .. image:: img/spatial_material2.png
@@ -95,6 +95,11 @@ Fixed Size
 
 Makes the object rendered at the same size no matter the distance. This is, again, useful mostly for indicators (no depth test and high render priority)
 and some types of billboards.
+
+Do Not Receive Shadows
+~~~~~~~~~~~~~~~~~~~~~~
+
+Makes the object not receive any kind of shadow that would otherwise be cast onto it.
 
 Vertex Color
 ------------
@@ -131,7 +136,7 @@ default one is Burley. Other modes are also available:
 * **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
-* **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works really well for clay-like materials and some types of cloth.
+* **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
 
 .. image:: img/spatial_material6.png
@@ -180,7 +185,7 @@ Specifies when depth rendering must take place.
 * Always: Depth draw is drawn for both opaque and transparent objects
 * Never: No depth draw takes place (note: do not confuse with depth test option above)
 * Depth Pre-Pass: For transparent objects, an opaque pass is made first with the opaque parts,
-  then tranparency is drawn above. Use this option with transparent grass or tree foliage.
+  then transparency is drawn above. Use this option with transparent grass or tree foliage.
 
 .. image:: img/material_depth_draw.png
 
@@ -233,8 +238,8 @@ This renders the object via the opaque pipeline, which is faster and allows it t
 Material colors, maps and channels
 ----------------------------------
 
-Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a very extensive list
-of them (arguably far more than any of the other prominent game engines). They will be described in detail below:
+Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a extensive list
+of them. They will be described in detail below:
 
 Albedo
 ~~~~~~
@@ -300,13 +305,13 @@ then the albedo of the material is used. Using intermediate values generally wor
 Clearcoat
 ~~~~~~~~~
 
-The *clearcoat* parameter is used mostly to add a *secondary* pass of transparent coat to the material. This is very common in car paint and toys.
+The *clearcoat* parameter is used mostly to add a *secondary* pass of transparent coat to the material. This is common in car paint and toys.
 In practice, it's a smaller specular blob added on top of the existing material.
 
 Anisotropy
 ~~~~~~~~~~
 
-Changes the shape of the specular blow and aligns it to tangent space. Anisotropy is commonly used with hair, or to make materials such as brushed alluminium more realistic.
+Changes the shape of the specular blow and aligns it to tangent space. Anisotropy is commonly used with hair, or to make materials such as brushed aluminium more realistic.
 It works especially well when combined with flowmaps.
 
 .. image:: img/spatial_material18.png
@@ -331,7 +336,7 @@ It may not work for complex objets, but it produces a realistic depth effect for
 Subsurface Scattering
 ~~~~~~~~~~~~~~~~~~~~~
 
-This effect emulates light that goes beneath an object's surface, is scattered, and then comes out. It's very useful to make realistic skin, marble, colored liquids, etc.
+This effect emulates light that goes beneath an object's surface, is scattered, and then comes out. It's useful to make realistic skin, marble, colored liquids, etc.
 
 .. image:: img/spatial_material21.png
 
@@ -339,7 +344,7 @@ This effect emulates light that goes beneath an object's surface, is scattered, 
 Transmission
 ~~~~~~~~~~~~
 
-Controls how much light from the lit side (visible to light) is transferred to the dark side (opposite side to light). This works very well for thin objects such as tree/plant leaves,
+Controls how much light from the lit side (visible to light) is transferred to the dark side (opposite side to light). This works well for thin objects such as tree/plant leaves,
 grass, human ears, etc.
 
 .. image:: img/spatial_material22.png
@@ -348,7 +353,7 @@ Refraction
 ~~~~~~~~~~~
 
 When refraction is enabled, it supersedes alpha blending and Godot attempts to fetch information from behind the object being rendered instead. This allows distorting the transparency
-in a way very similar to refraction.
+in a way similar to refraction.
 
 .. image:: img/spatial_material23.png
 
@@ -367,7 +372,7 @@ Godot supports 2 UV channels per material. Secondary UV is often useful for AO o
 Triplanar Mapping
 ~~~~~~~~~~~~~~~~~
 
-Trilpanar mapping is supported for both UV1 and UV2. This is an alternative way to obtain texture coordinates, often called "Autotexture". Textures are sampled in X,Y and Z and blended by the normal.
+Triplanar mapping is supported for both UV1 and UV2. This is an alternative way to obtain texture coordinates, often called "Autotexture". Textures are sampled in X,Y and Z and blended by the normal.
 Triplanar can be either worldspace or object space.
 
 In the image below, you can see how all primitives share the same material with world triplanar, so bricks continue smoothly between them.
@@ -378,7 +383,7 @@ Proximity and Distance Fade
 ----------------------------
 
 Godot allows materials to fade by proximity to another, as well as depending on the distance to the viewer.
-Proximity fade is very useful for effecs such as soft particles, or a mass of water with a smooth blending to the shores.
+Proximity fade is useful for effects such as soft particles, or a mass of water with a smooth blending to the shores.
 Distance fade is useful for light shafts or indicators that are only present after a given distance.
 
 Keep in mind enabling these enables alpha blending, so abusing them for a whole scene is not generally a good idea.
@@ -388,4 +393,4 @@ Keep in mind enabling these enables alpha blending, so abusing them for a whole 
 Render Priority
 ---------------
 
-Rendering order can be changed for objects, although this is mostly useful for transparent ojects (or opaque objects that do depth draw but no color draw, useful for cracks on the floor).
+Rendering order can be changed for objects, although this is mostly useful for transparent objects (or opaque objects that do depth draw but no color draw, useful for cracks on the floor).

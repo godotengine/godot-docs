@@ -25,7 +25,7 @@ just move the ship somewhere and rotate it:
 
 Ok, so in 2D this looks simple, a position and an angle for a rotation.
 But remember, we are grown ups here and don't use angles (plus, angles
-are not really even that useful when working in 3D).
+are not even that useful when working in 3D).
 
 We should realize that at some point, someone *designed* this
 spaceship. Be it for 2D in a drawing such as Paint.net, Gimp,
@@ -77,9 +77,14 @@ Well, let's take the point from top tip of the ship as reference:
 And let's apply the following operation to it (and to all the points in
 the ship too, but we'll track the top tip as our reference point):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var new_pos = pos - origin
+
+ .. code-tab:: csharp
+
+    var newPosition = pos - origin;
 
 Doing this to the selected point will move it back to the center:
 
@@ -89,9 +94,14 @@ This was expected, but then let's do something more interesting. Use the
 dot product of X and the point, and add it to the dot product of Y and
 the point:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var final_pos = Vector2(x.dot(new_pos), y.dot(new_pos))
+
+ .. code-tab:: csharp
+
+    var finalPosition = new Vector2(x.Dot(newPosition), y.Dot(newPosition));
 
 Then what we have is.. wait a minute, it's the ship in its design
 position!
@@ -151,13 +161,20 @@ it's used for 2D. The "X" axis is the element 0, "Y" axis is the element 1 and
 "Origin" is element 2. It's not divided in basis/origin for convenience, due to
 its simplicity.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var m = Transform2D()
     var x = m[0] # 'X'
     var y = m[1] # 'Y'
     var o = m[2] # 'Origin'
-    
+
+ .. code-tab:: csharp
+
+    var m = new Transform2D();
+    Vector2 x = m[0]; // 'X'
+    Vector2 y = m[1]; // 'Y'
+    Vector2 o = m[2]; // 'Origin'
 
 Most operations will be explained with this datatype (Transform2D), but the
 same logic applies to 3D.
@@ -165,7 +182,7 @@ same logic applies to 3D.
 Identity
 --------
 
-By default, Transform2D is created as an "identity" matrix. This means:
+An important transform is the "identity" matrix. This means:
 
 -  'X' Points right: Vector2(1,0)
 -  'Y' Points up (or down in pixels): Vector2(0,1)
@@ -175,8 +192,29 @@ By default, Transform2D is created as an "identity" matrix. This means:
 
 It's easy to guess that an *identity* matrix is just a matrix that
 aligns the transform to its parent coordinate system. It's an *OCS*
-that hasn't been translated, rotated or scaled. All transform types in
-Godot are created with *identity*.
+that hasn't been translated, rotated or scaled.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # The Transform2D constructor will default to Identity
+    var m = Transform2D()
+    print(m)
+    # prints: ((1, 0), (0, 1), (0, 0))
+    
+
+ .. code-tab:: csharp
+
+    // Due to technical limitations on structs in C# the default
+    // constructor will contain zero values for all fields.
+    var defaultTransform = new Transform2D();
+    GD.Print(defaultTransform);
+    // prints: ((0, 0), (0, 0), (0, 0))
+
+    // Instead we can use the Identity property.
+    var identityTransform = Transform2D.Identity;
+    GD.Print(identityTransform);
+    // prints: ((1, 0), (0, 1), (0, 0))
 
 Operations
 ----------
@@ -186,25 +224,39 @@ Rotation
 
 Rotating Transform2D is done by using the "rotated" function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
+
+ .. code-tab:: csharp
+
+    var m = Transform2D.Identity;
+    m = m.Rotated(Mathf.PI / 2); // rotate 90°
 
 .. image:: img/tutomat12.png
 
 Translation
 -----------
 
-There are two ways to translate a Transform2D, the first one is just moving
+There are two ways to translate a Transform2D, the first one is moving
 the origin:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Move 2 units to the right
     var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
-    m[2]+=Vector2(2,0)
+    m[2] += Vector2(2,0)
+
+ .. code-tab:: csharp
+
+    // Move 2 units to the right
+    var m = Transform2D.Identity;
+    m = m.Rotated(Mathf.PI / 2); // rotate 90°
+    m[2] += new Vector2(2, 0);
 
 .. image:: img/tutomat13.png
 
@@ -215,14 +267,43 @@ matrix (towards where the *basis* is oriented), there is the
 :ref:`Transform2D.translated() <class_Transform2D_translated>`
 method:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Move 2 units towards where the basis is oriented
     var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
     m = m.translated( Vector2(2,0) )
 
+ .. code-tab:: csharp
+
+    // Move 2 units towards where the basis is oriented
+    var m = Transform2D.Identity;
+    m = m.Rotated(Mathf.PI / 2); // rotate 90°
+    m = m.Translated(new Vector2(2, 0));
+
 .. image:: img/tutomat14.png
+
+You could also transform the global coordinates to local coordinates manually:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var local_pos = m.xform_inv(point)
+
+ .. code-tab:: csharp
+
+    var localPosition = m.XformInv(point);
+
+But even better, there are helper functions for this as you can read in the next sections.
+
+Local to global coordinates and vice versa
+------------------------------------------
+
+There are helper methods for converting between local and global coordinates.
+
+There are :ref:`Node2D.to_local() <class_Node2D_to_local>` and :ref:`Node2D.to_global() <class_Node2D_to_global>` for 2D
+as well as :ref:`Spatial.to_local() <class_Spatial_to_local>` and :ref:`Spatial.to_global() <class_Spatial_to_global>` for 3D.
 
 Scale
 -----
@@ -231,11 +312,18 @@ A matrix can be scaled too. Scaling will multiply the basis vectors by a
 vector (X vector by x component of the scale, Y vector by y component of
 the scale). It will leave the origin alone:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Make the basis twice its size.
     var m = Transform2D()
     m = m.scaled( Vector2(2,2) )
+
+ .. code-tab:: csharp
+
+    // Make the basis twice its size.
+    var m = Transform2D.Identity;
+    m = m.Scaled(new Vector2(2, 2));
 
 .. image:: img/tutomat15.png
 
@@ -257,21 +345,25 @@ Transform is the act of switching between coordinate systems. To convert
 a position (either 2D or 3D) from "designer" coordinate system to the
 OCS, the "xform" method is used.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var new_pos = m.xform(pos)
 
+ .. code-tab:: csharp
+
+    var newPosition = m.Xform(position);
+
 And only for basis (no translation):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var new_pos = m.basis_xform(pos)
 
-Post - multiplying is also valid:
+ .. code-tab:: csharp
 
-::
-
-    var new_pos = m * pos
+    var newPosition = m.BasisXform(position);
 
 Inverse transform
 -----------------
@@ -279,21 +371,25 @@ Inverse transform
 To do the opposite operation (what we did up there with the rocket), the
 "xform_inv" method is used:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var new_pos = m.xform_inv(pos)
 
+ .. code-tab:: csharp
+
+    var newPosition = m.XformInv(position);
+
 Only for Basis:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var new_pos = m.basis_xform_inv(pos)
 
-Or pre-multiplication:
+ .. code-tab:: csharp
 
-::
-
-    var new_pos = pos * m
+    var newPosition = m.BasisXformInv(position);
 
 Orthonormal matrices
 --------------------
@@ -308,10 +404,16 @@ matrices. For this, these cases an affine inverse must be computed.
 The transform, or inverse transform of an identity matrix will return
 the position unchanged:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Does nothing, pos is unchanged
     pos = Transform2D().xform(pos)
+
+ .. code-tab:: csharp
+
+    // Does nothing, position is unchanged
+    position = Transform2D.Identity.Xform(position);
 
 Affine inverse
 --------------
@@ -321,21 +423,37 @@ another matrix, no matter if the matrix has scale or the axis vectors
 are not orthogonal. The affine inverse is calculated with the
 affine_inverse() method:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var mi = m.affine_inverse()
-    var pos = m.xform(pos)
+    pos = m.xform(pos)
     pos = mi.xform(pos)
     # pos is unchanged
 
+ .. code-tab:: csharp
+
+    var mi = m.AffineInverse();
+    position = m.Xform(position);
+    position = mi.Xform(position);
+    // position is unchanged
+
 If the matrix is orthonormal, then:
 
-::
-
+.. tabs::
+ .. code-tab:: gdscript GDScript
+ 
     # if m is orthonormal, then
     pos = mi.xform(pos)
     # is the same is
     pos = m.xform_inv(pos)
+
+ .. code-tab:: csharp
+
+    // if m is orthonormal, then
+    position = mi.Xform(position);
+    // is the same is
+    position = m.XformInv(position);
 
 Matrix multiplication
 ---------------------
@@ -348,30 +466,53 @@ order.
 
 Example:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var m = more_transforms * some_transforms
 
+ .. code-tab:: csharp
+
+    var m = moreTransforms * someTransforms;
+
 To make it a little clearer, this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     pos = transform1.xform(pos)
     pos = transform2.xform(pos)
 
+ .. code-tab:: csharp
+
+    position = transform1.Xform(position);
+    position = transform2.Xform(position);
+
 Is the same as:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # note the inverse order
     pos = (transform2 * transform1).xform(pos)
 
+ .. code-tab:: csharp
+
+    // note the inverse order
+    position = (transform2 * transform1).Xform(position);
+
 However, this is not the same:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # yields a different results
     pos = (transform1 * transform2).xform(pos)
+
+ .. code-tab:: csharp
+
+    // yields a different results
+    position = (transform1 * transform2).Xform(position);
 
 Because in matrix math, A * B is not the same as B * A.
 
@@ -380,20 +521,32 @@ Multiplication by inverse
 
 Multiplying a matrix by its inverse, results in identity:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # No matter what A is, B will be identity
-    B = A.affine_inverse() * A
+    var B = A.affine_inverse() * A
+
+ .. code-tab:: csharp
+
+    // No matter what A is, B will be identity
+    var B = A.AffineInverse() * A;
 
 Multiplication by identity
 --------------------------
 
 Multiplying a matrix by identity, will result in the unchanged matrix:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # B will be equal to A
     B = A * Transform2D()
+
+ .. code-tab:: csharp
+
+    // B will be equal to A
+    var B = A * Transform2D.Identity;
 
 Matrix tips
 -----------
@@ -401,30 +554,52 @@ Matrix tips
 When using a transform hierarchy, remember that matrix multiplication is
 reversed! To obtain the global transform for a hierarchy, do:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var global_xform = parent_matrix * child_matrix
 
+ .. code-tab:: csharp
+
+    var globalTransform = parentMatrix * childMatrix;
+
 For 3 levels:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var global_xform = gradparent_matrix * parent_matrix * child_matrix
+
+ .. code-tab:: csharp
+
+    var globalTransform = grandparentMatrix * parentMatrix * childMatrix;
 
 To make a matrix relative to the parent, use the affine inverse (or
 regular inverse for orthonormal matrices).
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # transform B from a global matrix to one local to A
     var B_local_to_A = A.affine_inverse() * B
 
+ .. code-tab:: csharp
+
+    // transform B from a global matrix to one local to A
+    var bLocalToA = A.AffineInverse() * B;
+
 Revert it just like the example above:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # transform back local B to global B
-    var B = A * B_local_to_A
+    B = A * B_local_to_A
+
+ .. code-tab:: csharp
+
+    // transform back local B to global B
+    B = A * bLocalToA;
 
 OK, hopefully this should be enough! Let's complete the tutorial by
 moving to 3D matrices.
@@ -442,25 +617,66 @@ Godot has a special type for a 3x3 matrix, named :ref:`Basis <class_basis>`.
 It can be used to represent a 3D rotation and scale. Sub vectors can be
 accessed as:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var m = Basis()
     var x = m[0] # Vector3
     var y = m[1] # Vector3
     var z = m[2] # Vector3
 
+ .. code-tab:: csharp
+
+    var m = new Basis();
+    Vector3 x = m[0];
+    Vector3 y = m[1];
+    Vector3 z = m[2];
+
 Or, alternatively as:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var m = Basis()
     var x = m.x # Vector3
     var y = m.y # Vector3
     var z = m.z # Vector3
 
-Basis is also initialized to Identity by default:
+ .. code-tab:: csharp
+
+    var m = new Basis();
+    Vector3 x = m.x;
+    Vector3 y = m.y;
+    Vector3 z = m.z;
+
+The Identity Basis has the following values:
 
 .. image:: img/tutomat17.png
+
+And can be accessed like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # The Basis constructor will default to Identity
+    var m = Basis()
+    print(m)
+    # prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+
+ .. code-tab:: csharp
+
+    // Due to technical limitations on structs in C# the default
+    // constructor will contain zero values for all fields.
+    var defaultBasis = new Basis();
+    GD.Print(defaultBasis);
+    // prints: ((0, 0, 0), (0, 0, 0), (0, 0, 0))
+
+    // Instead we can use the Identity property.
+    var identityBasis = Basis.Identity;
+    GD.Print(identityBasis);;
+    // prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
+
+
 
 Rotation in 3D
 --------------
@@ -472,11 +688,18 @@ same), because rotation is an implicit 2D operation. To rotate in 3D, an
 The axis for the rotation must be a *normal vector*. As in, a vector
 that can point to any direction, but length must be one (1.0).
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     #rotate in Y axis
     var m3 = Basis()
     m3 = m3.rotated( Vector3(0,1,0), PI/2 )
+
+ .. code-tab:: csharp
+
+    // rotate in Y axis
+    var m3 = Basis.Identity;
+    m3 = m3.Rotated(new Vector3(0, 1, 0), Mathf.PI / 2);
 
 Transform
 ---------
@@ -493,9 +716,17 @@ separately.
 
 An example:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var t = Transform()
     pos = t.xform(pos) # transform 3D position
     pos = t.basis.xform(pos) # (only rotate)
     pos = t.origin + pos # (only translate)
+
+ .. code-tab:: csharp
+
+    var t = new Transform(Basis.Identity, Vector3.Zero);
+    position = t.Xform(position); // transform 3D position
+    position = t.basis.Xform(position); // (only rotate)
+    position = t.origin + position; // (only translate)

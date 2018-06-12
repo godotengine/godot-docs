@@ -26,9 +26,9 @@ Space
 
 In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
-can be obtained by calling
-:ref:`CanvasItem.get_world_2d().get_space() <class_CanvasItem_get_world_2d>`.
-For 3D, it's :ref:`Spatial.get_world().get_space() <class_Spatial_get_world>`.
+can be obtained by accessing
+:ref:`CanvasItem.get_world_2d().space <class_CanvasItem_get_world_2d>`.
+For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_get_world>`.
 
 The resulting space :ref:`RID <class_RID>` can be used in
 :ref:`PhysicsServer <class_PhysicsServer>` and
@@ -49,51 +49,93 @@ To perform queries into physics space, the
 and :ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
 must be used.
 
-In code, for 2D spacestate, this code must be used:
+Use the following code in 2D:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDscript
 
     func _physics_process(delta):
-        var space_rid = get_world_2d().get_space()
+        var space_rid = get_world_2d().space
         var space_state = Physics2DServer.space_get_direct_state(space_rid)
 
-Of course, there is a simpler shortcut:
+ .. code-tab:: csharp
 
-::
+    public override void _PhysicsProcess(float delta)
+    {
+        var spaceRid = GetWorld2d().Space;
+        var spaceState = Physics2DServer.SpaceGetDirectState(spaceRid);
+    }
+
+Or more directly:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-        var space_state = get_world_2d().get_direct_space_state()
+        var space_state = get_world_2d().direct_space_state
 
-For 3D:
+ .. code-tab:: csharp
 
-::
+    public override void _PhysicsProcess(float delta)
+    {
+        var spaceState = GetWorld2d().DirectSpaceState;
+    }
+
+And in 3D:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-        var space_state = get_world().get_direct_space_state()
+        var space_state = get_world().direct_space_state
+
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        var spaceState = GetWorld().DirectSpaceState;
+    }
 
 Raycast query
 -------------
 
 For performing a 2D raycast query, the method
 :ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_intersect_ray>`
-must be used, for example:
+may be used. For example:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-        var space_state = get_world().get_direct_space_state()
+        var space_state = get_world_2d().direct_space_state
         # use global coordinates, not local to node
         var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
 
-Result is a dictionary. If the ray didn't hit anything, the dictionary will
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        var spaceState = GetWorld2d().DirectSpaceState;
+        // use global coordinates, not local to node
+        var result = spaceState.IntersectRay(new Vector2(), new Vector2(50, 100));
+    }
+
+The result is a dictionary. If the ray didn't hit anything, the dictionary will
 be empty. If it did hit something it will contain collision information:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
-        if not result.empty():
+        if result:
             print("Hit at point: ", result.position)
 
-The collision result dictionary, when something hit, has this format:
+ .. code-tab:: csharp
+
+        if (result.Count > 0)
+            GD.Print("Hit at point: ", result["position"]);
+
+The ``result`` dictionary when a collision occurs contains the following
+data:
 
 ::
 
@@ -107,33 +149,78 @@ The collision result dictionary, when something hit, has this format:
        metadata: Variant() # metadata of collider
     }
 
-    # in case of 3D, Vector3 is returned.
+The data is similar in 3D space, using Vector3 coordinates.
 
 Collision exceptions
 --------------------
 
-It is a very common case to attempt casting a ray from a character or
-another game scene to try to infer properties of the world around it.
-The problem with this is that the same character has a collider, so the
-ray can never leave the origin (it will keep hitting its own collider),
-as evidenced in the following image.
+A common use case for ray casting is to enable a character to gather data
+about the world around it. One problem with this is that the same character
+has a collider, so the ray will only detect its parent's collider,
+as shown in the following image:
 
 .. image:: img/raycast_falsepositive.png
 
-To avoid self-intersection, the intersect_ray() function can take an
+To avoid self-intersection, the ``intersect_ray()`` function can take an
 optional third parameter which is an array of exceptions. This is an
 example of how to use it from a KinematicBody2D or any other
-collisionobject based node:
+collision object node:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
 
     func _physics_process(delta):
-        var space_state = get_world().get_direct_space_state()
-        var result = space_state.intersect_ray(get_global_pos(), enemy_pos, [self])
+        var space_state = get_world_2d().direct_space_state
+        var result = space_state.intersect_ray(global_position, enemy_position, [self])
 
-The extra argument is a list of exceptions, can be objects or RIDs.
+ .. code-tab:: csharp
+
+    class Body : KinematicBody2D
+    {
+        public override void _PhysicsProcess(float delta)
+        {
+            var spaceState = GetWorld2d().DirectSpaceState;
+            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new object[] { this });
+        }
+    }
+
+The exceptions array can contain objects or RIDs.
+
+Collision Mask
+--------------
+
+While the exceptions method works fine for excluding the parent body, it becomes
+very inconvenient if you need a large and/or dynamic list of exceptions. In
+this case, it is much more efficient to use the collision layer/mask system.
+
+The optional fourth argument for ``intersect_ray()`` is a collision mask. For
+example, to use same mask as the parent body, use the ``collision_mask``
+member variable:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends KinematicBody2D
+
+    func _physics_process(delta):
+        var space_state = get_world().direct_space_state
+        var result = space_state.intersect_ray(global_position, enemy_position,
+                                [self], collision_mask)
+
+ .. code-tab:: csharp
+
+    class Body : KinematicBody2D
+    {
+        public override void _PhysicsProcess(float delta)
+        {
+            var spaceState = GetWorld2d().DirectSpaceState;
+            var result = spaceState.IntersectRay(globalPosition, enemyPosition,
+                            new object[] { this }, CollisionMask);
+        }
+    }
+
 
 3D ray casting from screen
 --------------------------
@@ -144,25 +231,41 @@ picking. There is not much of a need to do this because
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
-To cast a ray from the screen, the :ref:`Camera <class_Camera>` node
-is needed. Camera can be in two projection modes, perspective and
+To cast a ray from the screen, you need a :ref:`Camera <class_Camera>`
+node. A ``Camera`` can be in two projection modes: perspective and
 orthogonal. Because of this, both the ray origin and direction must be
-obtained. (origin changes in orthogonal, while direction changes in
-perspective):
+obtained. This is because ``origin`` changes in orthogonal mode, while
+``normal`` changes in perspective mode:
 
 .. image:: img/raycast_projection.png
 
 To obtain it using a camera, the following code can be used:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     const ray_length = 1000
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-              var camera = get_node("camera")
+              var camera = $Camera
               var from = camera.project_ray_origin(event.position)
               var to = from + camera.project_ray_normal(event.position) * ray_length
 
-Of course, remember that during ``_input()``, space may be locked, so save
-your query for ``_physics_process()``.
+ .. code-tab:: csharp
+
+    private const float rayLength = 1000;
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
+        {
+            var camera = (Camera)GetNode("Camera");
+            var from = camera.ProjectRayOrigin(eventMouseButton.Position);
+            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * rayLength;
+        }
+    }
+
+
+Remember that during ``_input()``, the space may be locked, so in practice
+this query should be run in ``_physics_process()``.

@@ -32,9 +32,9 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_section_key<class_ConfigFile_has_section_key>` **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key **)** const                                 |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`load<class_ConfigFile_load>` **(** :ref:`String<class_string>` path **)**                                                                                                 |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`load<class_ConfigFile_load>` **(** :ref:`String<class_string>` path **)**                                                                                                 |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`save<class_ConfigFile_save>` **(** :ref:`String<class_string>` path **)**                                                                                                 |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`save<class_ConfigFile_save>` **(** :ref:`String<class_string>` path **)**                                                                                                 |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_value<class_ConfigFile_set_value>` **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value **)**              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-This helper class can be used to store :ref:`Variant<class_variant>` values on the filesystem using INI-style formatting. The stored values are indentified by a section and a key:
+This helper class can be used to store :ref:`Variant<class_variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
 
 ::
 
@@ -109,13 +109,13 @@ Returns ``true`` if the specified section-key pair exists.
 
 .. _class_ConfigFile_load:
 
-- :ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@globalscope_error>` **load** **(** :ref:`String<class_string>` path **)**
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
 
 .. _class_ConfigFile_save:
 
-- :ref:`int<class_int>` **save** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@globalscope_error>` **save** **(** :ref:`String<class_string>` path **)**
 
 Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
 

@@ -24,9 +24,13 @@ Member Functions
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`action_erase_event<class_InputMap_action_erase_event>` **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event **)** |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`action_erase_events<class_InputMap_action_erase_events>` **(** :ref:`String<class_string>` action **)**                                          |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`action_has_event<class_InputMap_action_has_event>` **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event **)**     |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_action<class_InputMap_add_action>` **(** :ref:`String<class_string>` action **)**                                                            |
+| void                       | :ref:`action_set_deadzone<class_InputMap_action_set_deadzone>` **(** :ref:`String<class_string>` deadzone, :ref:`float<class_float>` arg1 **)**        |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_action<class_InputMap_add_action>` **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone=0.5 **)**                    |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`erase_action<class_InputMap_erase_action>` **(** :ref:`String<class_string>` action **)**                                                        |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -61,17 +65,27 @@ Adds an :ref:`InputEvent<class_inputevent>` to an action. This :ref:`InputEvent<
 
 Removes an :ref:`InputEvent<class_inputevent>` from an action.
 
+.. _class_InputMap_action_erase_events:
+
+- void **action_erase_events** **(** :ref:`String<class_string>` action **)**
+
 .. _class_InputMap_action_has_event:
 
 - :ref:`bool<class_bool>` **action_has_event** **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event **)**
 
 Returns true if an action has an :ref:`InputEvent<class_inputevent>` associated with it.
 
+.. _class_InputMap_action_set_deadzone:
+
+- void **action_set_deadzone** **(** :ref:`String<class_string>` deadzone, :ref:`float<class_float>` arg1 **)**
+
 .. _class_InputMap_add_action:
 
-- void **add_action** **(** :ref:`String<class_string>` action **)**
+- void **add_action** **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone=0.5 **)**
 
-Adds an (empty) action to the ``InputMap``. An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
+Adds an (empty) action to the ``InputMap``, with a configurable ``deadzone``.
+
+An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
 
 .. _class_InputMap_erase_action:
 

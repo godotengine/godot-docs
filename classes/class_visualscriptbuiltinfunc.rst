@@ -51,7 +51,7 @@ enum **BuiltinFunc**
 - **MATH_SIGN** = **17** --- Return the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
 - **MATH_POW** = **18** --- Return the input raised to a given power.
 - **MATH_LOG** = **19** --- Return the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
-- **MATH_EXP** = **20** --- Return **e** raised to the power of the input. **e** sometimes called "Euler's number" is a mathematical constant whose value is approximately 2.71828.
+- **MATH_EXP** = **20** --- Return the mathematical constant **e** raised to the specified power of the input. **e** has an approximate value of 2.71828.
 - **MATH_ISNAN** = **21** --- Return whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
 - **MATH_ISINF** = **22** --- Return whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
 - **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
@@ -82,7 +82,7 @@ enum **BuiltinFunc**
 - **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_weakref>` from the input.
 - **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_funcref>` from the input.
 - **TYPE_CONVERT** = **50** --- Convert between types.
-- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check enum Variant.Type for the integers that might be returned.
+- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@globalscope_variant.type>` for the integers that might be returned.
 - **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
 - **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
 - **TEXT_STR** = **54** --- Convert the input to a string.

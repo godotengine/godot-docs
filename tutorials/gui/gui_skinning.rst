@@ -27,7 +27,7 @@ Theme
 The GUI is skinned through the :ref:`Theme <class_Theme>`
 resource. Theme contains all the information required to change the
 entire visual styling of all controls. Theme options are named, so it's
-not obvious which name changes what (specialy from code), but several
+not obvious which name changes what (especially from code), but several
 tools are provided. The ultimate place to look at what each theme option
 is for each control, which will always be more up to date than any
 documentation is the file `scene/resources/default_theme/default_theme.cpp
@@ -49,7 +49,7 @@ Theme options
 Each kind of option in a theme can be:
 
 -  **An integer constant**: A single numerical constant. Generally used
-   to define spacing between compoments or alignment.
+   to define spacing between components or alignment.
 -  **A Color**: A single color, with or without transparency. Colors are
    usually applied to fonts and icons.
 -  **A Texture**: A single image. Textures are not often used, but when
@@ -67,13 +67,22 @@ Every option is associated to:
 
 An example usage:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var t = Theme.new()
     t.set_color("font_color", "Label", Color(1.0, 1.0, 1.0))
 
     var l = Label.new()
     l.set_theme(t)
+
+ .. code-tab:: csharp
+
+    var t = new Theme();
+    t.SetColor("fontColor", "Label", new Color(1.0f, 1.0f, 1.0f));
+    
+    var l = new Label();
+    l.SetTheme(t);
 
 In the example above, a new theme is created. The "font_color" option
 is changed and then applied to a label. As a result, the label (and all
@@ -83,10 +92,16 @@ It is possible to override those options without using the theme
 directly and only for a specific control by using the override API in
 :ref:`Control.add_color_override() <class_Control_add_color_override>`:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var l = Label.new()
     l.add_color_override("font_color", Color(1.0, 1.0, 1.0))
+
+ .. code-tab:: csharp
+
+    var l = new Label();
+    l.AddColorOverride("fontColor", new Color(1.0f, 1.0f, 1.0f));
 
 In the inline help of Godot (in the script tab) you can check which theme options
 are overrideable, or check the :ref:`Control <class_Control>` class reference.
@@ -124,7 +139,7 @@ go to the "theme" menu and select "Add Class Item":
 
 .. image:: img/themeci.png
 
-A menu will appear promting the type of control to create. Select
+A menu will appear prompting the type of control to create. Select
 "Button":
 
 .. image:: img/themeci2.png

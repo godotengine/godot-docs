@@ -35,7 +35,7 @@ considered a resource.
 
 When a resource is loaded from disk, **it is always loaded once**. That
 means, if there is a copy of that resource already loaded in memory,
-trying to load the resource again will just return the same copy again
+trying to load the resource again will return the same copy again
 and again. This corresponds with the fact that resources are just data
 containers, so there is no need to have them duplicated.
 
@@ -82,20 +82,35 @@ Loading resources from code
 Loading resources from code is easy. There are two ways to do it. The
 first is to use load(), like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
             var res = load("res://robi.png") # resource is loaded when line is executed
             get_node("sprite").texture = res
 
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var texture = (Texture)GD.Load("res://robi.png"); // resource is loaded when line is executed
+        var sprite = (Sprite)GetNode("sprite");
+        sprite.Texture = texture;
+    }
+
 The second way is more optimal, but only works with a string constant
 parameter because it loads the resource at compile-time.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
             var res = preload("res://robi.png") # resource is loaded at compile time
             get_node("sprite").texture = res
+
+ .. code-tab:: csharp
+
+    // preload() is unavailable in C Sharp
 
 Loading scenes
 --------------
@@ -107,14 +122,30 @@ To obtain an instance of the scene, the method
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
 must be used.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_shoot():
             var bullet = preload("res://bullet.tscn").instance()
             add_child(bullet)
 
+<<<<<<< HEAD
 This method creates the nodes in the scene's hierarchy, configures
 them (sets all the properties) and returns the root node of the scene,
+=======
+ .. code-tab:: csharp
+
+    private PackedScene _bulletScene = (PackedScene)GD.Load("res://bullet.tscn");
+
+    public void OnShoot()
+    {
+        Node bullet = _bulletScene.Instance();
+        AddChild(bullet);
+    }
+
+This method creates the nodes in the scene's hierarchy, configures 
+them (sets all the properties) and returns the root node of the scene, 
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 which can be added to any other node.
 
 The approach has several advantages. As the

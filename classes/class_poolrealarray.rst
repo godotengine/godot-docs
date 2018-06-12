@@ -42,7 +42,7 @@ Member Functions
 Description
 -----------
 
-Real Array. Array of floating point values. Can only contain floats. Optimized for memory usage, can't fragment the memory.
+Real Array. Array of floating point values. Can only contain floats. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
 Member Function Description
 ---------------------------

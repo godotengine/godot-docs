@@ -6,7 +6,7 @@ Introduction to 3D
 Creating a 3D game can be challenging. That extra Z coordinate makes
 many of the common techniques that helped to make 2D games simple no
 longer work. To aid in this transition, it is worth mentioning that
-Godot uses very similar APIs for 2D and 3D. Most nodes are the same and
+Godot uses similar APIs for 2D and 3D. Most nodes are the same and
 are present in both 2D and 3D versions. In fact, it is worth checking
 the 3D platformer tutorial, or the 3D kinematic character tutorials,
 which are almost identical to their 2D counterparts.
@@ -123,7 +123,7 @@ similar to other tools in Editor Settings:
 Coordinate system
 -----------------
 
-Godot uses the `metric <http://en.wikipedia.org/wiki/Metric_system>`__
+Godot uses the `metric <https://en.wikipedia.org/wiki/Metric_system>`__
 system for everything. 3D Physics and other areas are tuned for this, so
 attempting to use a different scale is usually a bad idea (unless you
 know what you are doing).

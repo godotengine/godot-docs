@@ -20,7 +20,7 @@ In the early days, the engine used the `Lua <http://www.lua.org>`__
 scripting language. Lua is fast, but creating bindings to an object
 oriented system (by using fallbacks) was complex and slow and took an
 enormous amount of code. After some experiments with
-`Python <http://www.python.org>`__, it also proved difficult to embed.
+`Python <https://www.python.org>`__, it also proved difficult to embed.
 
 The last third party scripting language that was used for shipped games
 was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.
@@ -48,40 +48,40 @@ built-in language has proven to be a huge advantage.
 Example of GDScript
 ~~~~~~~~~~~~~~~~~~~
 
-Some people can learn better by just taking a look at the syntax, so
+Some people can learn better by taking a look at the syntax, so
 here's a simple example of how GDScript looks.
 
 ::
 
-    # a file is a class!
+    # A file is a class!
 
-    # inheritance
+    # Inheritance
 
     extends BaseClass
 
-    # member variables
+    # Member Variables
 
     var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
     var dict = {"key": "value", 2:3}
 
-    # constants
+    # Constants
 
-    const answer = 42
-    const thename = "Charly"
+    const ANSWER = 42
+    const THE_NAME = "Charly"
 
-    # enums
+    # Enums
 
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
 
-    # built-in vector types
+    # Built-in Vector Types
 
     var v2 = Vector2(1, 2)
     var v3 = Vector3(1, 2, 3)
 
-    # function
+    # Function
 
     func some_function(param1, param2):
         var local_var = 5
@@ -91,7 +91,7 @@ here's a simple example of how GDScript looks.
         elif param2 > 5:
             print(param2)
         else:
-            print("fail!")
+            print("Fail!")
 
         for i in range(20):
             print(i)
@@ -99,19 +99,24 @@ here's a simple example of how GDScript looks.
         while param2 != 0:
             param2 -= 1
 
-        var local_var2 = param1+3
+        var local_var2 = param1 + 3
         return local_var2
 
+    # Functions override functions with the same name on the base/parent class.
+    # If you still want to call them, use '.' (like 'super' in other languages).
 
-    # inner class
+    func something(p1, p2):
+        .something(p1, p2)
+
+    # Inner Class
 
     class Something:
         var a = 10
 
-    # constructor
+    # Constructor
 
     func _init():
-        print("constructed!")
+        print("Constructed!")
         var lv = Something.new()
         print(lv.a)
 
@@ -139,6 +144,11 @@ Keywords
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
+Operators (like ``in``, ``not``, ``and`` or ``or``) and names of built-in types
+as listed in the following sections are also reserved.
+
+Keywords are defined in the `GDScript tokenizer <https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript_tokenizer.cpp>`_
+in case you want to take a look under the hood.
 
 +------------+---------------------------------------------------------------------------------------------------------------+
 |  Keyword   | Description                                                                                                   |
@@ -175,6 +185,8 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| self       | Refers to current class instance.                                                                             |
++------------+---------------------------------------------------------------------------------------------------------------+
 | tool       | Executes the script in the editor.                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | signal     | Defines a signal.                                                                                             |
@@ -197,12 +209,33 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | breakpoint | Editor helper for debugger breakpoints.                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| preload    | Preloads a class or variable. See `Classes as resources`_.                                                    |
++------------+---------------------------------------------------------------------------------------------------------------+
+| yield      | Coroutine support. See `Coroutines with yield`_.                                                              |
++------------+---------------------------------------------------------------------------------------------------------------+
+| assert     | Asserts a condition, logs error on failure. Ignored in non-debug builds. See `Assert keyword`_.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| remote     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| master     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| slave      | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| sync       | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| PI         | PI constant.                                                                                                  |
++------------+---------------------------------------------------------------------------------------------------------------+
+| TAU        | TAU constant.                                                                                                 |
++------------+---------------------------------------------------------------------------------------------------------------+
+| INF        | Infinity constant. Used for comparisons.                                                                      |
++------------+---------------------------------------------------------------------------------------------------------------+
+| NAN        | NAN (not a number) constant. Used for comparisons.                                                            |
++------------+---------------------------------------------------------------------------------------------------------------+
 
 Operators
 ~~~~~~~~~
 
-The following is the list of supported operators and their precedence
-(TODO, change since this was made to reflect python operators)
+The following is the list of supported operators and their precedence.
 
 +---------------------------------------------------------------+-----------------------------------------+
 | **Operator**                                                  | **Description**                         |
@@ -267,7 +300,7 @@ Literals
 +--------------------------+--------------------------------+
 | ``"Hello"``, ``"Hi"``    | Strings                        |
 +--------------------------+--------------------------------+
-| ``"""Hello, Dude"""``    | Multiline string               |
+| ``"""Hello"""``          | Multiline string               |
 +--------------------------+--------------------------------+
 | ``@"Node/Label"``        | NodePath or StringName         |
 +--------------------------+--------------------------------+
@@ -280,21 +313,27 @@ considered a comment.
 
 ::
 
-    # This is a comment
+    # This is a comment.
 
-..  Uncomment me if/when https://github.com/godotengine/godot/issues/1320 gets fixed
 
-    Multi-line comments can be created using """ (three quotes in a row) at
-    the beginning and end of a block of text.
+Multi-line comments can be created using """ (three quotes in a row) at
+the beginning and end of a block of text. Note that this creates a string,
+therefore, it will not be stripped away when the script is compiled.
 
     ::
 
         """ Everything on these
         lines is considered
-        a comment """
+        a comment. """
 
 Built-in types
 --------------
+
+Built-in types are stack-allocated. They are passed as values.
+This means a copy is created on each assignment or when passing them as arguments to functions.
+The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by reference so they are shared.
+(Not ``PoolArray``\ s like ``PoolByteArray`` though, those are passed as values too,
+so consider this when deciding which to use!)
 
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
@@ -428,18 +467,18 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
     var arr = []
     arr = [1, 2, 3]
-    var b = arr[1] # this is 2
-    var c = arr[arr.size() - 1] # this is 3
-    var d = arr[-1] # same as the previous line, but shorter
-    arr[0] = "Hi!" # replacing value 1 with "Hi"
-    arr.append(4) # array is now ["Hi", 2, 3, 4]
+    var b = arr[1] # This is 2.
+    var c = arr[arr.size() - 1] # This is 3.
+    var d = arr[-1] # Same as the previous line, but shorter.
+    arr[0] = "Hi!" # Replacing value 1 with "Hi".
+    arr.append(4) # Array is now ["Hi", 2, 3, 4].
 
-GDScript arrays are allocated linearly in memory for speed. Very
-large arrays (more than tens of thousands of elements) may however cause
+GDScript arrays are allocated linearly in memory for speed.
+Large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern special types of
 arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
-arrays. They are therefore only recommended to use for very large data sets:
+arrays. They are therefore only recommended to use for large data sets:
 
 - :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
@@ -456,13 +495,13 @@ Associative container which contains values referenced by unique keys.
 
 ::
 
-    var d = {4: 5, "a key": "a value", 28: [1, 2, 3]}
+    var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
     d["Hi!"] = 0
     d = {
-        22: "Value",
-        "somekey": 2,
-        "otherkey": [2, 3, 4],
-        "morekey": "Hello"
+        22: "value",
+        "some_key": 2,
+        "other_key": [2, 3, 4],
+        "more_key": "Hello"
     }
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
@@ -473,19 +512,19 @@ start with a digit.
 ::
 
     var d = {
-        test22 = "Value",
-        somekey = 2,
-        otherkey = [2, 3, 4],
-        morekey = "Hello"
+        test22 = "value",
+        some_key = 2,
+        other_key = [2, 3, 4],
+        more_key = "Hello"
     }
 
 To add a key to an existing dictionary, access it like an existing key and
 assign to it::
 
-    var d = {} # create an empty Dictionary
-    d.waiting = 14 # add String "Waiting" as a key and assign the value 14 to it
-    d[4] = "hello" # add integer `4` as a key and assign the String "hello" as its value
-    d["Godot"] = 3.01 # add String "Godot" as a key and assign the value 3.01 to it
+    var d = {} # Create an empty Dictionary.
+    d.waiting = 14 # Add String "Waiting" as a key and assign the value 14 to it.
+    d[4] = "hello" # Add integer 4 as a key and assign the String "hello" as its value.
+    d["Godot"] = 3.01 # Add String "Godot" as a key and assign the value 3.01 to it.
 
 Data
 ----
@@ -499,10 +538,10 @@ value upon initialization.
 
 ::
 
-    var a # data type is null by default
+    var a # Data type is 'null' by default.
     var b = 5
     var c = 3.8
-    var d = b + c # variables are always initialized in order
+    var d = b + c # Variables are always initialized in order.
 
 Constants
 ~~~~~~~~~
@@ -512,13 +551,13 @@ expressions and must be assigned on initialization.
 
 ::
 
-    const a = 5
-    const b = Vector2(20, 20)
-    const c = 10 + 20 # constant expression
-    const d = Vector2(20, 30).x # constant expression: 20
-    const e = [1, 2, 3, 4][0] # constant expression: 1
-    const f = sin(20) # sin() can be used in constant expressions
-    const g = x + 20 # invalid; this is not a constant expression!
+    const A = 5
+    const B = Vector2(20, 20)
+    const C = 10 + 20 # Constant expression.
+    const D = Vector2(20, 30).x # Constant expression: 20
+    const E = [1, 2, 3, 4][0] # Constant expression: 1
+    const F = sin(20) # sin() can be used in constant expressions.
+    const G = x + 20 # Invalid; this is not a constant expression!
 
 Enums
 ^^^^^
@@ -557,22 +596,15 @@ argument, unlike Python).
 
 ::
 
-    func myfunction(a, b):
+    func my_function(a, b):
         print(a)
         print(b)
-        return a + b  # return is optional; without it null is returned
+        return a + b  # Return is optional; without it 'null' is returned.
 
 A function can ``return`` at any point. The default return value is ``null``.
 
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
-
-To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
-prepend ``.`` to the function name:
-
-::
-
-    .basefunc(args)
 
 Contrary to Python, functions are *not* first class objects in GDScript. This
 means they cannot be stored in variables, passed as an argument to another
@@ -582,13 +614,13 @@ To reference a function by name at runtime, (e.g. to store it in a variable, or
 pass it to another function as an argument) one must use the ``call`` or
 ``funcref`` helpers::
 
-    # Call a function by name in one step
-    mynode.call("myfunction", args)
+    # Call a function by name in one step.
+    my_node.call("my_function", args)
 
-    # Store a function reference
-    var myfunc = funcref(mynode, "myfunction")
-    # Call stored function reference
-    myfunc.call_func(args)
+    # Store a function reference.
+    var my_func = funcref(my_node, "my_function")
+    # Call stored function reference.
+    my_func.call_func(args)
 
 
 Remember that default functions like  ``_init``, and most
@@ -645,7 +677,7 @@ Short statements can be written on the same line as the condition::
 Sometimes you might want to assign a different initial value based on a
 boolean expression. In this case ternary-if expressions come in handy::
 
-    var x = [true-value] if [expression] else [false-value]
+    var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
 
 while
@@ -670,23 +702,23 @@ in the loop variable.
 ::
 
     for x in [5, 7, 11]:
-        statement # loop iterates 3 times with x as 5, then 7 and finally 11
+        statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
         print(dict[i])
 
     for i in range(3):
-        statement # similar to [0, 1, 2] but does not allocate an array
+        statement # Similar to [0, 1, 2] but does not allocate an array.
 
     for i in range(1,3):
-        statement # similar to [1, 2] but does not allocate an array
+        statement # Similar to [1, 2] but does not allocate an array.
 
     for i in range(2,8,2):
-        statement # similar to [2, 4, 6] but does not allocate an array
+        statement # Similar to [2, 4, 6] but does not allocate an array.
 
     for c in "Hello":
-        print(c) # iterate through all characters in a String, print every letter on new line
+        print(c) # Iterate through all characters in a String, print every letter on new line.
 
 match
 ^^^^^
@@ -754,11 +786,11 @@ There are 6 pattern types:
 
         match x:
             1:
-                print("it's one!")
+                print("It's one!")
             2:
-                print("it's one times two!")
+                print("It's one times two!")
             _:
-                print("it's not 1 or 2. I don't care tbh.")
+                print("It's not 1 or 2. I don't care tbh.")
 
 
 - binding pattern
@@ -767,11 +799,11 @@ There are 6 pattern types:
 
         match x:
             1:
-                print("it's one!")
+                print("It's one!")
             2:
-                print("it's one times two!")
+                print("It's one times two!")
             var new_var:
-                print("it's not 1 or 2, it's ", new_var)
+                print("It's not 1 or 2, it's ", new_var)
 
 
 - array pattern
@@ -785,13 +817,13 @@ There are 6 pattern types:
 
         match x:
             []:
-                print("empty array")
+                print("Empty array")
             [1, 3, "test", null]:
-                print("very specific array")
+                print("Very specific array")
             [var start, _, "test"]:
-                print("first element is ", start, ", and the last is \"test\"")
+                print("First element is ", start, ", and the last is \"test\"")
             [42, ..]:
-                print("open ended array")
+                print("Open ended array")
 
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
@@ -808,13 +840,13 @@ There are 6 pattern types:
 
         match x:
             {}:
-                print("empty dict")
-            {"name": "dennis"}:
-                print("the name is dennis")
-            {"name": "dennis", "age": var age}:
-                print("dennis is ", age, " years old.")
+                print("Empty dict")
+            {"name": "Dennis"}:
+                print("The name is Dennis")
+            {"name": "Dennis", "age": var age}:
+                print("Dennis is ", age, " years old.")
             {"name", "age"}:
-                print("has a name and an age, but it's not dennis :(")
+                print("Has a name and an age, but it's not Dennis :(")
             {"key": "godotisawesome", ..}:
                 print("I only checked for one entry and ignored the rest")
 
@@ -823,9 +855,9 @@ Multipatterns:
 
         match x:
             1, 2, 3:
-                print("it's 1 - 3")
-            "sword", "splashpotion", "fist":
-                print("yep, you've taken damage")
+                print("It's 1 - 3")
+            "Sword", "Splash potion", "Fist":
+                print("Yep, you've taken damage")
 
 
 
@@ -834,7 +866,7 @@ Classes
 
 By default, the body of a script file is an unnamed class and it can
 only be referenced externally as a resource or file. Class syntax is
-meant to be very compact and can only contain member variables or
+meant to be compact and can only contain member variables or
 functions. Static functions are allowed, but not static members (this is
 in the spirit of thread safety, since scripts can be initialized in
 separate threads without the user knowing). In the same way, member
@@ -845,7 +877,7 @@ Below is an example of a class file.
 
 ::
 
-    # saved as a file named myclass.gd
+    # Saved as a file named 'myclass.gd'.
 
     var a = 5
 
@@ -867,13 +899,13 @@ Inheritance uses the ``extends`` keyword:
 
 ::
 
-    # Inherit/extend a globally available class
+    # Inherit/extend a globally available class.
     extends SomeClass
 
-    # Inherit/extend a named class file
+    # Inherit/extend a named class file.
     extends "somefile.gd"
 
-    # Inherit/extend an inner class in another file
+    # Inherit/extend an inner class in another file.
     extends "somefile.gd".SomeInnerClass
 
 
@@ -882,14 +914,30 @@ the ``is`` keyword can be used:
 
 ::
 
-    # Cache the enemy class
-    const enemy_class = preload("enemy.gd")
+    # Cache the enemy class.
+    const Enemy = preload("enemy.gd")
 
     # [...]
 
-    # use 'is' to check inheritance
-    if (entity is enemy_class):
+    # Use 'is' to check inheritance.
+    if (entity is Enemy):
         entity.apply_damage()
+
+To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
+prepend ``.`` to the function name:
+
+::
+
+    .basefunc(args)
+
+This is especially useful because functions in extending classes replace
+functions with the same name in their base classes. So if you still want
+to call them, you can use ``.`` like the ``super`` keyword in other languages:
+
+::
+
+    func some_func(x):
+        .some_func(x) # Calls same function on the parent class.
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
@@ -914,15 +962,15 @@ function.
 
 ::
 
-    # Inside a class file
+    # Inside a class file.
 
-    # An inner class in this class file
+    # An inner class in this class file.
     class SomeInnerClass:
         var a = 5
         func print_value_of_a():
             print(a)
 
-    # This is the constructor of the class file's main class
+    # This is the constructor of the class file's main class.
     func _init():
         var c = SomeInnerClass.new()
         c.print_value_of_a()
@@ -935,15 +983,15 @@ must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
 
-    # Load the class resource when calling load()
-    var MyClass = load("myclass.gd")
+    # Load the class resource when calling load().
+    var my_class = load("myclass.gd")
 
-    # Preload the class only once at compile time
-    var MyClass2 = preload("myclass.gd")
+    # Preload the class only once at compile time.
+    const MyClass = preload("myclass.gd")
 
     func _init():
         var a = MyClass.new()
-        a.somefunction()
+        a.some_function()
 
 Exports
 ~~~~~~~
@@ -955,7 +1003,7 @@ is done by using the ``export`` keyword::
 
     extends Button
 
-    export var number = 5 # value will be saved and visible in the property editor
+    export var number = 5 # Value will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
@@ -968,75 +1016,81 @@ special export syntax is provided.
 ::
 
     # If the exported value assigns a constant or constant expression,
-    # the type will be inferred and used in the editor
+    # the type will be inferred and used in the editor.
 
     export var number = 5
 
     # Export can take a basic data type as an argument which will be
-    # used in the editor
+    # used in the editor.
 
     export(int) var number
 
-    # Export can also take a resource type to use as a hint
+    # Export can also take a resource type to use as a hint.
 
     export(Texture) var character_face
     export(PackedScene) var scene_file
 
-    # Integers and strings hint enumerated values
+    # Integers and strings hint enumerated values.
 
-    # Editor will enumerate as 0, 1 and 2
+    # Editor will enumerate as 0, 1 and 2.
     export(int, "Warrior", "Magician", "Thief") var character_class
-    # Editor will enumerate with string names
+    # Editor will enumerate with string names.
     export(String, "Rebecca", "Mary", "Leah") var character_name
 
-    # Strings as paths
+    # Named Enum Values
+    
+    # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
+    enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
+    export (NamedEnum) var x
 
-    # String is a path to a file
+    # Strings as Paths
+
+    # String is a path to a file.
     export(String, FILE) var f
-    # String is a path to a directory
+    # String is a path to a directory.
     export(String, DIR) var f
-    # String is a path to a file, custom filter provided as hint
+    # String is a path to a file, custom filter provided as hint.
     export(String, FILE, "*.txt") var f
 
     # Using paths in the global filesystem is also possible,
-    # but only in tool scripts (see further below)
+    # but only in tool scripts (see further below).
 
-    # String is a path to a PNG file in the global filesystem
+    # String is a path to a PNG file in the global filesystem.
     export(String, FILE, GLOBAL, "*.png") var tool_image
-    # String is a path to a directory in the global filesystem
+    # String is a path to a directory in the global filesystem.
     export(String, DIR, GLOBAL) var tool_dir
 
     # The MULTILINE setting tells the editor to show a large input
-    # field for editing over multiple lines
+    # field for editing over multiple lines.
     export(String, MULTILINE) var text
 
     # Limiting editor input ranges
 
-    # Allow integer values from 0 to 20
+    # Allow integer values from 0 to 20.
     export(int, 20) var i
-    # Allow integer values from -10 to 20
+    # Allow integer values from -10 to 20.
     export(int, -10, 20) var j
-    # Allow floats from -10 to 20, with a step of 0.2
+    # Allow floats from -10 to 20, with a step of 0.2.
     export(float, -10, 20, 0.2) var k
-    # Allow values y = exp(x) where y varies betwee 100 and 1000
+    # Allow values y = exp(x) where y varies between 100 and 1000
     # while snapping to steps of 20. The editor will present a
     # slider for easily editing the value.
     export(float, EXP, 100, 1000, 20) var l
 
-    # Floats with easing hint
+    # Floats with Easing Hint
 
     # Display a visual representation of the ease() function
-    # when editing
+    # when editing.
     export(float, EASE) var transition_speed
 
     # Colors
 
     # Color given as Red-Green-Blue value
-    export(Color, RGB) var col # Color is RGB
+    export(Color, RGB) var col # Color is RGB.
     # Color given as Red-Green-Blue-Alpha value
-    export(Color, RGBA) var col # Color is RGBA
+    export(Color, RGBA) var col # Color is RGBA.
 
-    # Another node in the scene can be exported too
+    # Another node in the scene can be exported too.
 
     export(NodePath) var node
 
@@ -1053,15 +1107,15 @@ can be set from the editor:
 
 ::
 
-    # Individually edit the bits of an integer
+    # Individually edit the bits of an integer.
     export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
 
 Restricting the flags to a certain number of named flags is also
-possible. The syntax is very similar to the enumeration syntax:
+possible. The syntax is similar to the enumeration syntax:
 
 ::
 
-    # Set any of the given flags from the editor
+    # Set any of the given flags from the editor.
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
@@ -1086,7 +1140,18 @@ initializers, but they must be constant expressions.
     # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
-    export var a=[1,2,3]
+    export var a = [1, 2, 3]
+
+    # Exported arrays can specify type (using the same hints as before).
+
+    export(Array, int) var ints = [1,2,3]
+    export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
+    export(Array, Array, float) var two_dimensional = [[1, 2], [3, 4]]
+
+    # You can omit the default value, but then it would be null if not assigned.
+
+    export(Array) var b
+    export(Array, PackedScene) var scenes
 
     # Typed arrays also work, only initialized empty:
 
@@ -1097,7 +1162,7 @@ initializers, but they must be constant expressions.
     # Default value can include run-time values, but can't
     # be exported.
 
-    var b = [a,2,3]
+    var c = [a, 2, 3]
 
 
 Setters/getters
@@ -1122,22 +1187,22 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
 
 ::
 
-    var myvar setget myvar_set,myvar_get
+    var myvar setget my_var_set, my_var_get
 
-    func myvar_set(newvalue):
-        myvar=newvalue
+    func my_var_set(new_value):
+        my_var = new_value
 
-    func myvar_get():
-        return myvar # getter must return a value
+    func my_var_get():
+        return my_var # Getter must return a value.
 
 Either of the *setter* or *getter* functions can be omitted:
 
 ::
 
-    # Only a setter
-    var myvar = 5 setget myvar_set
-    # Only a getter (note the comma)
-    var myvar = 5 setget ,myvar_get
+    # Only a setter.
+    var my_var = 5 setget myvar_set
+    # Only a getter (note the comma).
+    var my_var = 5 setget ,myvar_get
 
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
@@ -1148,13 +1213,13 @@ illustration of this:
 ::
 
     func _init():
-        # Does not trigger setter/getter
-        myinteger = 5
-        print(myinteger)
+        # Does not trigger setter/getter.
+        my_integer = 5
+        print(my_integer)
 
-        # Does trigger setter/getter
-        self.myinteger = 5
-        print(self.myinteger)
+        # Does trigger setter/getter.
+        self.my_integer = 5
+        print(self.my_integer)
 
 Tool mode
 ~~~~~~~~~
@@ -1177,13 +1242,16 @@ Memory management
 ~~~~~~~~~~~~~~~~~
 
 If a class inherits from :ref:`class_Reference`, then instances will be
-freed when no longer in use. No garbage collector exists, just simple
+freed when no longer in use. No garbage collector exists, just 
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
 must inherit :ref:`class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
+Alternatively, when not using references, the
+``is_instance_valid(instance)`` can be used to check if an object has been
+freed.
 
 Signals
 ~~~~~~~
@@ -1194,13 +1262,13 @@ Declaring a signal in GDScript is easy using the `signal` keyword.
 
 ::
 
-    # No arguments
+    # No arguments.
     signal your_signal_name
-    # With arguments
-    signal your_signal_name_with_args(a,b)
+    # With arguments.
+    signal your_signal_name_with_args(a, b)
 
-These signals, just like regular signals, can be connected in the editor
-or from code. Just take the instance of a class where the signal was
+These signals can be connected in the editor or from code like regular signals.
+Take the instance of a class where the signal was
 declared and connect it to the method of another instance:
 
 ::
@@ -1223,7 +1291,7 @@ your custom values:
     func _at_some_func():
         instance.connect("your_signal_name", self, "_callback_args", [22, "hello"])
 
-This is very useful when a signal from many objects is connected to a
+This is useful when a signal from many objects is connected to a
 single callback and the sender must be identified:
 
 ::
@@ -1243,10 +1311,10 @@ Object.emit_signal method:
     func _at_some_func():
         emit_signal("your_signal_name")
         emit_signal("your_signal_name_with_args", 55, 128)
-        someinstance.emit_signal("somesignal")
+        some_instance.emit_signal("some_signal")
 
-Coroutines
-~~~~~~~~~~
+Coroutines with yield
+~~~~~~~~~~~~~~~~~~~~~
 
 GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 via the ``yield`` built-in function. Calling ``yield()`` will
@@ -1258,23 +1326,23 @@ an example:
 
 ::
 
-    func myfunc():
-       print("hello")
+    func my_func():
+       print("Hello")
        yield()
        print("world")
 
     func _ready():
-        var y = myfunc()
-        # Function state saved in 'y'
+        var y = my_func()
+        # Function state saved in 'y'.
         print("my dear")
         y.resume()
-        # 'y' resumed and is now an invalid state
+        # 'y' resumed and is now an invalid state.
 
 Will print:
 
 ::
 
-    hello
+    Hello
     my dear
     world
 
@@ -1283,22 +1351,22 @@ example:
 
 ::
 
-    func myfunc():
-       print("hello")
+    func my_func():
+       print("Hello")
        print(yield())
        return "cheers!"
 
     func _ready():
-        var y = myfunc()
-        # Function state saved in 'y'
+        var y = my_func()
+        # Function state saved in 'y'.
         print(y.resume("world"))
-        # 'y' resumed and is now an invalid state
+        # 'y' resumed and is now an invalid state.
 
 Will print:
 
 ::
 
-    hello
+    Hello
     world
     cheers!
 
@@ -1311,29 +1379,44 @@ signal is received, execution will recommence. Here are some examples:
 
 ::
 
-    # Resume execution the next frame
+    # Resume execution the next frame.
     yield(get_tree(), "idle_frame")
 
-    # Resume execution when animation is done playing:
+    # Resume execution when animation is done playing.
     yield(get_node("AnimationPlayer"), "finished")
 
-    # Wait 5 seconds, then resume execution
+    # Wait 5 seconds, then resume execution.
     yield(get_tree().create_timer(5.0), "timeout")
+
+Coroutines themselves use the ``completed`` signal when they transition
+into an invalid state, for example:
+
+::
+
+    func my_func():
+	    yield(button_func(), "completed")
+	    print("All buttons were pressed, hurray!")
+
+    func button_func():
+        yield($Button0, "pressed")
+	    yield($Button1, "pressed")
+
+``my_func`` will only continue execution once both the buttons are pressed.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
 
-When using nodes, it's very common to desire to keep references to parts
+When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
 configured when entering the active scene tree, the sub-nodes can only
 be obtained when a call to Node._ready() is made.
 
 ::
 
-    var mylabel
+    var my_label
 
     func _ready():
-        mylabel = get_node("MyLabel")
+        my_label = get_node("MyLabel")
 
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``onready`` keyword, that
@@ -1342,4 +1425,15 @@ can replace the above code with a single line:
 
 ::
 
-    onready var mylabel = get_node("MyLabel")
+    onready var my_label = get_node("MyLabel")
+
+Assert keyword
+~~~~~~~~~~~~~~
+
+The ``assert`` keyword can be used to check conditions in debug builds.
+These assertions are ignored in non-debug builds.
+
+::
+
+    # Check that 'i' is 0.
+    assert(i == 0)

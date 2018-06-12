@@ -36,7 +36,7 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`commit_action<class_UndoRedo_commit_action>` **(** **)**                                                                                                                       |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create_action<class_UndoRedo_create_action>` **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0 **)**                                                  |
+| void                           | :ref:`create_action<class_UndoRedo_create_action>` **(** :ref:`String<class_string>` name, :ref:`MergeMode<enum_undoredo_mergemode>` merge_mode=0 **)**                              |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_current_action_name<class_UndoRedo_get_current_action_name>` **(** **)** const                                                                                             |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -115,7 +115,7 @@ Commit the action. All 'do' methods/properties are called/set when this function
 
 .. _class_UndoRedo_create_action:
 
-- void **create_action** **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0 **)**
+- void **create_action** **(** :ref:`String<class_string>` name, :ref:`MergeMode<enum_undoredo_mergemode>` merge_mode=0 **)**
 
 Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_add_do_property>` and :ref:`add_undo_property<class_UndoRedo_add_undo_property>`.
 

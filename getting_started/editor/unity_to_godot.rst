@@ -13,33 +13,33 @@ and aims to help you migrate your existing Unity experience into the world of Go
 Differences
 -----------
 
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-|                   | Unity                                                                             | Godot                                                                                                          |
-+===================+===================================================================================+================================================================================================================+
-| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT license, free and fully open source without any restriction                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, macOS, Linux (unofficial and unsupported)                                | Windows, X11 (Linux, \*BSD), Haiku, macOS                                                                      |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (export)       | | Desktop: Windows, Linux/SteamOS, macOS                                          | | Desktop: Windows, X11, macOS                                                                                 |
-|                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS,                                                                                        |
-|                   | | Web: WebAssembly or asm.js                                                      | | Web: WebAssembly                                                                                             |
-|                   | | Consoles: PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS                 |                                                                                                                |
-|                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens   |                                                                                                                |
-|                   | | TV: Android TV, Samsung SMART TV, tvOS                                          |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
-|                   | | Prefabs                                                                         |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Third-party tools | Visual Studio or SharpEditor                                                      | | Android SDK for Android export                                                                               |
-|                   |                                                                                   | | External editors are possible                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Killer features   | | Huge community                                                                  | | Scene System                                                                                                 |
-|                   | | Large assets store                                                              | | Animation Pipeline                                                                                           |
-|                   |                                                                                   | | Easy to write Shaders                                                                                        |
-|                   |                                                                                   | | Debug on Device                                                                                              |
-|                   |                                                                                   |                                                                                                                |
-|                   |                                                                                   |                                                                                                                |
-+-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+|                   | Unity                                                                              | Godot                                                                                                          |
++===================+====================================================================================+================================================================================================================+
+| License           | Proprietary, closed, free license with revenue caps and usage restrictions         | MIT license, free and fully open source without any restriction                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| OS (editor)       | Windows, macOS, Linux (unofficial and unsupported)                                 | Windows, macOS, X11 (Linux, \*BSD)                                                                             |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| OS (export)       | * **Desktop:** Windows, macOS, Linux                                               | * **Desktop:** Windows, macOS, X11                                                                             |
+|                   | * **Mobile:** Android, iOS, Windows Phone, Tizen                                   | * **Mobile:** Android, iOS                                                                                     |
+|                   | * **Web:** WebAssembly or asm.js                                                   | * **Web:** WebAssembly                                                                                         |
+|                   | * **Consoles:** PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS              | * **Console:** See :ref:`doc_consoles`                                                                         |
+|                   | * **VR:** Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens| * **VR:** Oculus Rift, SteamVR                                                                                 |
+|                   | * **TV:** Android TV, Samsung SMART TV, tvOS                                       |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Scene system      | * Component/Scene (GameObject > Component)                                         | :ref:`Scene tree and nodes <doc_scenes_and_nodes>`, allowing scenes to be nested and/or inherit other scenes   |
+|                   | * Prefabs                                                                          |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Third-party tools | Visual Studio or VS Code                                                           | * :ref:`External editors are possible <doc_external_editor>`                                                   |
+|                   |                                                                                    | * :ref:`Android SDK for Android export <doc_exporting_for_android>`                                            |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| Killer features   | * Huge community                                                                   | * Scene System                                                                                                 |
+|                   | * Large assets store                                                               | * :ref:`Animation Pipeline <doc_animations>`                                                                   |
+|                   |                                                                                    | * :ref:`Easy to write Shaders <doc_shading_language>`                                                          |
+|                   |                                                                                    | * Debug on Device                                                                                              |
+|                   |                                                                                    |                                                                                                                |
+|                   |                                                                                    |                                                                                                                |
++-------------------+------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 
 The editor
@@ -76,9 +76,15 @@ This approach has the disadvantage that the running game can't be explored from 
 (though this may be supported in the future and displaying collision gizmos in the running game is already possible),
 but in exchange has several advantages:
 
+<<<<<<< HEAD
 - Running the project and closing it is very fast (Unity has to save, run the project, close the project, and then reload the previous state).
 - Live editing is a lot more useful because changes done to the editor take effect immediately in the game and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
 - The editor is more stable because the game runs in a separate process.
+=======
+- Running the project and closing it is fast (Unity has to save, run the project, close the project and then reload the previous state).
+- Live editing is a lot more useful, because changes done to the editor take effect immediately in the game, and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
+- The editor is more stable, because the game runs in a separate process.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 Finally, the top toolbar includes a menu for remote debugging.
 These options make it simple to deploy to a device (connected phone, tablet, or browser via HTML5),
@@ -112,18 +118,18 @@ you'd add a BoxCollider2D to all the elements of the scene so that they can coll
 
 In Godot, you would split your whole scene into 3 separate, smaller scenes, which you would then instance in the main scene.
 
-1. First, a scene for the Player alone.
+1. **First, a scene for the Player alone.**
 
 Consider the player as a reusable element in other levels. It is composed of one node in particular:
 an AnimatedSprite node, which contains the sprite textures to form various animations (for example, walking animation)
 
-2. Second, a scene for the Enemy.
+2. **Second, a scene for the Enemy.**
 
 There again, an enemy is a reusable element in other levels. It is almost the same
 as the Player node - the only differences are the script (that manages AI, mostly)
 and sprite textures used by the AnimatedSprite.
 
-3. Lastly, the Level scene.
+3. **Lastly, the Level scene.**
 
 It is composed of Bricks (for platforms), Coins (for the player to grab) and a
 certain number of instances of the previous Enemy scene. These will be different, separate enemies,
@@ -207,11 +213,15 @@ Design
 
 As you may know already, Unity supports C#. C# benefits from its integration with Visual Studio and other features, such as static typing.
 
+<<<<<<< HEAD
 Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support
 for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`doc_c_sharp`.
 GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language,
 please read :ref:`GDScript <doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to the Godot API
 and is really easy to learn: Between one evening for an experienced programmer and a week for a complete beginner.
+=======
+Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`C# <doc_c_sharp>`. GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language, please read :ref:`GDScript <doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to the Godot API, but it is easy to learn.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 Unity allows you to attach as many scripts as you want to a GameObject.
 Each script adds a behaviour to the GameObject: For example, you can attach a script so that it reacts to the player's controls,
@@ -234,18 +244,26 @@ You can control nodes by accessing them using a script and calling functions (bu
 But there's more: You can also place them in a group and call a function on all nodes contained in this group!
 This is explained in :ref:`this page <doc_scripting_continued>`.
 
+<<<<<<< HEAD
 But there's more! Certain nodes throw signals when certain actions happen.
 You can connect these signals to call a specific function when they happen.
 Note that you can define your own signals and send them whenever you want.
 This feature is documented `here <gdscript.html#signals>`_.
+=======
+But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <../scripting/gdscript/gdscript_basics.html#signals>`_.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 
 Using Godot in C++
 ------------------
 
+<<<<<<< HEAD
 Just for your information, Godot also allows you to develop your project directly in C++ by using its API,
 which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game"
 written in C++ using Godot API.
+=======
+For your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 If you are interested in using Godot in C++, you may want to start reading the :ref:`Developing in
 C++ <doc_introduction_to_godot_development>` page.

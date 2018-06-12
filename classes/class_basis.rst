@@ -42,6 +42,8 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_basis>`      | :ref:`scaled<class_Basis_scaled>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                            |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_basis>`      | :ref:`slerp<class_Basis_slerp>` **(** :ref:`Basis<class_basis>` b, :ref:`float<class_float>` t **)**                                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`tdotx<class_Basis_tdotx>` **(** :ref:`Vector3<class_vector3>` with **)**                                                                               |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`tdoty<class_Basis_tdoty>` **(** :ref:`Vector3<class_vector3>` with **)**                                                                               |
@@ -74,7 +76,7 @@ Member Variables
 Description
 -----------
 
-3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y and z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized. Almost always used as orthogonal basis for a :ref:`Transform<class_transform>`.
+3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y and z as its columns, which can be interpreted as the local basis vectors of a transformation. Can also be accessed as array of 3D vectors. These vectors are orthogonal to each other, but are not necessarily normalized (due to scaling). Almost always used as orthogonal basis for a :ref:`Transform<class_transform>`.
 
 For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
 
@@ -145,13 +147,19 @@ Return the orthonormalized version of the matrix (useful to call from time to ti
 
 - :ref:`Basis<class_basis>` **rotated** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**
 
-Introduce an additional rotation around the given axis by phi (radians). Only relevant when the matrix is being used as a part of :ref:`Transform<class_transform>`. The axis must be a normalized vector.
+Introduce an additional rotation around the given axis by phi (radians). The axis must be a normalized vector.
 
 .. _class_Basis_scaled:
 
 - :ref:`Basis<class_basis>` **scaled** **(** :ref:`Vector3<class_vector3>` scale **)**
 
-Introduce an additional scaling specified by the given 3D scaling factor. Only relevant when the matrix is being used as a part of :ref:`Transform<class_transform>`.
+Introduce an additional scaling specified by the given 3D scaling factor.
+
+.. _class_Basis_slerp:
+
+- :ref:`Basis<class_basis>` **slerp** **(** :ref:`Basis<class_basis>` b, :ref:`float<class_float>` t **)**
+
+Assuming that the matrix is a proper rotation matrix, slerp performs a spherical-linear interpolation with another rotation matrix.
 
 .. _class_Basis_tdotx:
 

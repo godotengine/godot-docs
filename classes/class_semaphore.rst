@@ -19,11 +19,11 @@ A synchronization Semaphore.
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`post<class_Semaphore_post>` **(** **)** |
-+------------------------+-----------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`wait<class_Semaphore_wait>` **(** **)** |
-+------------------------+-----------------------------------------------+
++----------------------------------------+-----------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`post<class_Semaphore_post>` **(** **)** |
++----------------------------------------+-----------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`wait<class_Semaphore_wait>` **(** **)** |
++----------------------------------------+-----------------------------------------------+
 
 Description
 -----------
@@ -35,13 +35,13 @@ Member Function Description
 
 .. _class_Semaphore_post:
 
-- :ref:`int<class_int>` **post** **(** **)**
+- :ref:`Error<enum_@globalscope_error>` **post** **(** **)**
 
 Lowers the ``Semaphore``, allowing one more thread in. Returns OK on success, ERR_BUSY otherwise.
 
 .. _class_Semaphore_wait:
 
-- :ref:`int<class_int>` **wait** **(** **)**
+- :ref:`Error<enum_@globalscope_error>` **wait** **(** **)**
 
 Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns OK on success, ERR_BUSY otherwise.
 

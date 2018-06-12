@@ -11,7 +11,7 @@ needs_sphinx = '1.3'
 
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
-extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.imgmath']
+extensions = ['gdscript', 'sphinx_tabs.tabs', 'sphinx.ext.mathjax']
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -66,6 +66,15 @@ html_theme_options = {
     # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
 }
 
+# VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "godotengine", # Username
+    "github_repo": "godot-docs", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/", # Path in the checkout to the docs root
+}
+
 html_logo = 'img/docs_logo.png'
 
 # Output file base name for HTML help builder
@@ -85,3 +94,18 @@ latex_documents = [
   (master_doc, 'GodotEngine.tex', 'Godot Engine Documentation',
    'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
 ]
+
+# -- Options for linkcheck builder ----------------------------------------
+
+# disable checking urls with about.html#this_part_of_page anchors
+linkcheck_anchors = False
+
+linkcheck_timeout = 10
+
+# -- I18n settings --------------------------------------------------------
+
+locale_dirs = ['../sphinx/po/']
+gettext_compact = False
+# Exclude class reference when marked with tag i18n.
+if tags.has('i18n'):
+    exclude_patterns = ['classes']

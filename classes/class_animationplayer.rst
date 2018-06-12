@@ -20,7 +20,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**                                                                    |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`advance<class_AnimationPlayer_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,6 +39,8 @@ Member Functions
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_animation_list<class_AnimationPlayer_get_animation_list>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const                                                               |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                      | :ref:`get_playing_speed<class_AnimationPlayer_get_playing_speed>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_animation<class_AnimationPlayer_has_animation>` **(** :ref:`String<class_string>` name **)** const                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,7 +118,7 @@ Member Variables
 
   .. _class_AnimationPlayer_playback_process_mode:
 
-- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
+- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@globalscope_animation_process_idle>`.
 
   .. _class_AnimationPlayer_playback_speed:
 
@@ -148,7 +150,7 @@ Member Function Description
 
 .. _class_AnimationPlayer_add_animation:
 
-- :ref:`int<class_int>` **add_animation** **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**
+- :ref:`Error<enum_@globalscope_error>` **add_animation** **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**
 
 Adds ``animation`` to the player accessible with the key ``name``.
 
@@ -206,6 +208,12 @@ Returns the list of stored animation names.
 
 Get the blend time (in seconds) between two animations, referenced by their names.
 
+.. _class_AnimationPlayer_get_playing_speed:
+
+- :ref:`float<class_float>` **get_playing_speed** **(** **)** const
+
+Get the actual playing speed of current animation or 0 if not playing. This speed is the ``playback_speed`` property multiplied by ``custom_speed`` argument specified when calling the ``play`` method.
+
 .. _class_AnimationPlayer_has_animation:
 
 - :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_string>` name **)** const
@@ -222,9 +230,7 @@ Returns ``true`` if playing an animation.
 
 - void **play** **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
-Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the
-
-animation backwards.
+Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the animation backwards.
 
 .. _class_AnimationPlayer_play_backwards:
 

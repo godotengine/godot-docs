@@ -14,21 +14,30 @@ VehicleBody
 Brief Description
 -----------------
 
-
+Physics body that simulates the behaviour of a car.
 
 Member Variables
 ----------------
 
   .. _class_VehicleBody_brake:
 
-- :ref:`float<class_float>` **brake**
+- :ref:`float<class_float>` **brake** - Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
   .. _class_VehicleBody_engine_force:
 
-- :ref:`float<class_float>` **engine_force**
+- :ref:`float<class_float>` **engine_force** - Accelerates the vehicle by applying an engine force. The vehicle is only speed up if the wheels that have :ref:`VehicleWheel.set_use_as_traction<class_VehicleWheel_set_use_as_traction>` set to true and are in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration. Note that the simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
+
+A negative value will result in the vehicle reversing.
 
   .. _class_VehicleBody_steering:
 
-- :ref:`float<class_float>` **steering**
+- :ref:`float<class_float>` **steering** - The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.set_use_as_steering<class_VehicleWheel_set_use_as_steering>` set to true will automatically be rotated.
 
+
+Description
+-----------
+
+This nodes implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_collisionshape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_vehiclewheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_meshinstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_brake>`, :ref:`engine_force<class_VehicleBody_engine_force>`, and :ref:`steering<class_VehicleBody_steering>` properties and not change the position or orientation of this node directly.
+
+Note that the origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_collisionshape>` and :ref:`MeshInstance<class_meshinstance>` upwards.
 

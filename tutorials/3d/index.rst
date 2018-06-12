@@ -6,6 +6,7 @@
    :name: toc-learn-features-3d
 
    introduction_to_3d
+   using_transforms
    3d_performance_and_limitations
    spatial_material
    lights_and_shadows
@@ -15,6 +16,8 @@
    environment_and_post_processing
    high_dynamic_range
    using_gridmaps
+   using_multi_mesh_instance
    working_with_3d_skeletons
    inverse_kinematics
    mesh_generation_with_heightmap_and_shaders
+   fps_tutorial/index

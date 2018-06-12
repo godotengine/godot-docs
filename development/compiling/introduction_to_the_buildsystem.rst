@@ -8,7 +8,7 @@ Introduction to the buildsystem
 SCons
 -----
 
-Godot uses `SCons <http://www.scons.org>`__ to build. We love it, we are
+Godot uses `SCons <https://www.scons.org/>`__ to build. We love it, we are
 not changing it for anything else. We are not even sure other build
 systems are up to the task of building Godot. We constantly get requests
 to move the build system to CMake, or Visual Studio, but this is not
@@ -38,7 +38,7 @@ So, please try to keep an open mind and get at least a little familiar with it i
 build Godot yourself.
 
 Setup
-------------------
+-----
 Please refer to the documentation for :ref:`doc_compiling_for_android`, :ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`, :ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools Command Prompt for VS 2017`` or similar, depending on your install, instead of the standard Windows command prompt to enter the commands below.
@@ -184,6 +184,16 @@ else.
 
 This flag appends ".32" or ".64" suffixes to resulting binaries when
 relevant.
+
+Other build options
+-------------------
+
+There are several other build options that you can use to configure the
+way Godot should be built (compiler, debug options, etc.) as well as the
+features to include/disable.
+
+Check the output of ``scons --help`` for details about each option for
+the version you are willing to compile.
 
 Export templates
 ----------------

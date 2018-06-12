@@ -19,19 +19,19 @@ A body that is controlled by the 2D physics engine.
 Member Functions
 ----------------
 
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state **)** virtual                                                                  |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_force<class_RigidBody2D_add_force>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                                                                                      |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**                                                                            |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody2D_get_colliding_bodies>` **(** **)** const                                                                                                                                    |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis_velocity<class_RigidBody2D_set_axis_velocity>` **(** :ref:`Vector2<class_vector2>` axis_velocity **)**                                                                                                    |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`test_motion<class_RigidBody2D_test_motion>` **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state **)** virtual                                                                                                                 |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_force<class_RigidBody2D_add_force>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                                                                                                                                     |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**                                                                                                                           |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody2D_get_colliding_bodies>` **(** **)** const                                                                                                                                                                                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis_velocity<class_RigidBody2D_set_axis_velocity>` **(** :ref:`Vector2<class_vector2>` axis_velocity **)**                                                                                                                                                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`test_motion<class_RigidBody2D_test_motion>` **(** :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -175,15 +175,7 @@ Description
 
 This node implements simulated 2D physics. You do not control a RigidBody2D directly. Instead you apply forces to it (gravity, impulses, etc.) and the physics simulation calculates the resulting movement based on its mass, friction, and other physical properties.
 
-A RigidBody2D has 4 behavior modes (see :ref:`mode<class_RigidBody2D_mode>`):
-
-- **Rigid**: The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
-
-- **Static**: The body behaves like a :ref:`StaticBody2D<class_staticbody2d>` and does not move.
-
-- **Character**: Similar to ``Rigid`` mode, but the body can not rotate.
-
-- **Kinematic**: The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and must be moved by code.
+A RigidBody2D has 4 behavior :ref:`mode<class_RigidBody2D_mode>`\ s: Rigid, Static, Character, and Kinematic.
 
 **Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>`, which allows you to directly access the physics state.
 
@@ -224,7 +216,7 @@ Sets the body's velocity on the given axis. The velocity in the given vector axi
 
 .. _class_RigidBody2D_test_motion:
 
-- :ref:`bool<class_bool>` **test_motion** **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)**
+- :ref:`bool<class_bool>` **test_motion** **(** :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)**
 
 Returns ``true`` if a collision would result from moving in the given vector. ``margin`` increases the size of the shapes involved in the collision detection, and ``result`` is an object of type :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>`, which contains additional information about the collision (should there be one).
 

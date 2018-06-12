@@ -67,7 +67,7 @@ Ambient Light
 
 Ambient (as defined here) is a type of light that affects every piece of geometry with the same intensity. It is global and independent of lights that might be added to the scene. 
 
-There are two types of ambient light, the *Ambient Color* (which is just a constant color multiplied by the material albedo), and then one obtained from the *Sky* (as described before, but a sky needs to be set as background for this to be enabled). 
+There are two types of ambient light, the *Ambient Color* (which is a constant color multiplied by the material albedo), and then one obtained from the *Sky* (as described before, but a sky needs to be set as background for this to be enabled). 
 
 .. image:: img/environment_ambient.png
 
@@ -78,7 +78,7 @@ Here is a comparison of how different ambient light affects a scene:
 
 .. image:: img/environment_ambient2.png
 
-Finally there is a **Energy** setting, which is just a multiplier, useful when working with HDR.
+Finally there is a **Energy** setting, which is a multiplier, useful when working with HDR.
 
 In general, ambient light should only be used for simple scenes, large exteriors or for performance reasons (ambient light is cheap), as it does not provide the best lighting quality. It's better to generate
 ambient light from ReflectionProbe or GIProbe, which will more faithfully simulate how indirect light propagates. Below is a comparison in quality between using a flat ambient color and a GIProbe:
@@ -90,7 +90,7 @@ Using one of the methods described above, objects get constant ambient lighting 
 Fog
 ^^^
 
-Fog, just as in real life, makes distant objects fade away into an uniform color. The physical effect is actually pretty complex, but Godot provides a good approximation. There are two kinds of fog in Godot:
+Fog, as in real life, makes distant objects fade away into an uniform color. The physical effect is actually pretty complex, but Godot provides a good approximation. There are two kinds of fog in Godot:
 
 - **Depth Fog:** This one is applied based on the distance from the camera.
 - **Height Fog:** This one is applied to any objects below (or above) a certain height, regardless of the distance from the camera.
@@ -149,7 +149,7 @@ Screen-Space Reflections (SSR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While Godot supports three sources of reflection data (Sky, ReflectionProbe and GIProbe), they may not provide enough detail for all situations. Scenarios
-where Screen Space Refletions make the most sense are when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
+where Screen Space Reflections make the most sense are when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
 
 .. image:: img/environment_ssr.png
 
@@ -179,7 +179,7 @@ This can be simulated with Screen Space Ambient Occlusion. As you can see in the
 
 It is a common mistake to enable this effect, turn on a light and not be able to appreciate it. This is because SSAO only acts on *ambient* light, not direct light. 
 
-This is why, in the image above, the effect is less noticeable under the direct light (at the left). If you want to force SSAO to work with direct light too, just use the **Light Affect** parameter (even though this is not correct, some artists like how it looks). 
+This is why, in the image above, the effect is less noticeable under the direct light (at the left). If you want to force SSAO to work with direct light too, use the **Light Affect** parameter (even though this is not correct, some artists like how it looks). 
 
 SSAO looks best when combined with a real source of indirect light, like GIProbe:
 
@@ -218,7 +218,7 @@ It has an initial **Distance** with a **Transition** region (in world units):
 
 The **Amount** parameter controls the amount of blur. For larger blurs, tweaking the **Quality** may be needed in order to avoid arctifacts.
 
-It is very common to use both blurs together to focus the viewer's attention on a given object:
+It is common to use both blurs together to focus the viewer's attention on a given object:
 
 .. image:: img/environment_mixed_blur.png
 
@@ -231,7 +231,7 @@ the **Glow** effect.
 
 .. image:: img/environment_glow1.png
 
-By default, even if the effect is enabled, it will be very weak or invisible. One of two conditions need to happen for it to actually show:
+By default, even if the effect is enabled, it will be weak or invisible. One of two conditions need to happen for it to actually show:
 
 - 1) The light in a pixel surpasses the **HDR Threshold** (where 0 is all light surpasses it, and 1.0 is light over the tonemapper **White** value). Normally this value is expected to be at 1.0, but it can be lowered to allow more light to bleed. There is also an extra parameter, **HDR Scale** that allows scaling (making brighter or darker) the light surpasing the threshold.
 
@@ -246,7 +246,7 @@ Both will cause the light to start bleeding out of the brighter areas.
 Once glow is visible, it can be controlled with a few extra parameters:
 
 - **Intensity** is an overall scale for the effect, it can be made stronger or weaker (0.0 removes it).
-- **Strength** is how strong the gaussian filter kernel is processed. Greater values make the filter saturate and expand outwards. In general changing this is not needed, as the size can be more efficienly adjusted with the **Levels**.
+- **Strength** is how strong the gaussian filter kernel is processed. Greater values make the filter saturate and expand outwards. In general changing this is not needed, as the size can be more efficiently adjusted with the **Levels**.
 
 The **Blend Mode** of the effect can also be changed:
 
@@ -263,7 +263,7 @@ The real strength of this system, though, is to combine levels to create more in
 
 .. image:: img/environment_glow_layers2.png
  
-Finally, as the highest layers are created by stretching small blurred images, it is possible that some blockyness may be visible. Enabling **Bicubic Upscaling** gets rids of the it,
+Finally, as the highest layers are created by stretching small blurred images, it is possible that some blockyness may be visible. Enabling **Bicubic Upscaling** gets rids of it,
 at a minimal performance cost.
 
 .. image:: img/environment_glow_bicubic.png

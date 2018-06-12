@@ -40,7 +40,7 @@ Member Variables
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 3D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area<class_area>` to give it a detection shape, or add it to a :ref:`PhysicsBody<class_physicsbody>` to give create solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`get_shape<class_CollisionShape_get_shape>` to get the actual shape.
+Editor facility for creating and editing collision shapes in 3D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area<class_area>` to give it a detection shape, or add it to a :ref:`PhysicsBody<class_physicsbody>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`get_shape<class_CollisionShape_get_shape>` to get the actual shape.
 
 Member Function Description
 ---------------------------

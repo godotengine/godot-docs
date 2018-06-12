@@ -12,14 +12,18 @@ scenes step-by-step using the engine's UI system:
 You will learn how to design game UI efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
 from the editor. To learn how to code a life bar,
-read :doc:`ui_game_user_interface`
+read :doc:`ui_code_a_life_bar`
 
 
 .. figure:: img/ui_main_menu_design_final_result.png
 
    The GUI you're going to create
 
-Download the project files: :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>` and extract the archive. Import the `start/` project in Godot to follow this tutorial. The `end/` folder contains the final result.
+Download the project files: :download:`ui_main_menu_design.zip
+<files/ui_main_menu_design.zip>` and extract the archive. Import the ``start/``
+project in Godot to follow this tutorial. The ``end/`` folder contains the
+final result. You'll find all the sprites in the ``start/assets/main_menu```
+folder.
 
 .. note:
 
@@ -68,10 +72,6 @@ We will use the first approach, because the first version of your UI may
 not work as well as you’d like. You’re likely to throw parts away and
 redesign components as you go. When you're sure everything works, it's
 easy to make some parts reusable, as you'll see below.
-
-Please download :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>`. It
-contains all the files you'll need to follow along. You'll find all the
-sprites in the ``start/assets/main_menu`` folder.
 
 .. figure:: img/ui_main_menu_placeholder_assets.png
 
@@ -138,7 +138,7 @@ define the margins' size. Scroll down the ``Control`` class, to the
 -  Margin Bottom: *80*
 
 We want the container to fit the window. In the Viewport, open the
-Layout menu and select the last option, ``Full Rect``.
+``Layout`` menu and select the last option, ``Full Rect``.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~
@@ -216,10 +216,12 @@ We're left with two problems to solve:
 1. The characters on the right aren't centered
 2. There's no space between the logo and the other UI elements
 
-To center the characters on the right, we'll use a ``CenterContainer``.
-Add a ``CenterContainer`` node inside the ``VBoxContainer``, then drag
-and drop the Characters into it. The Characters element will center
-automatically.
+To center the characters on the right, we'll use a ``CenterContainer``.  Add a
+``CenterContainer`` node as a child of the ``HBoxContainer``. Then in the
+Inspector, scroll down to the ``Size Flags`` category and click on the field to
+the right of the ``Vertical`` property, and check ``Expand``. Do the same for
+the ``Horizontal`` property. Finally drag and drop the Characters into the
+``CenterContainer``. The Characters element will center automatically.
 
 .. figure:: img/ui_main_menu_containers_step_3.png
 

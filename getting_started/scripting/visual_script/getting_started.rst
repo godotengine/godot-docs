@@ -22,7 +22,7 @@ palette from where you can drag and drop all sorts of information to the script 
 Creating a Script
 -----------------
 
-Creating scripts works the same as with other scripting languages: Just select any node in the scene
+Creating scripts works the same as with other scripting languages: Select any node in the scene
 and push the "New Script" button at the top right corner of the Scene Tree dock:
 
 .. image:: img/visual_script3.png

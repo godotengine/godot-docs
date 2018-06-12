@@ -20,9 +20,19 @@ Member Functions
 ----------------
 
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_author_info<class_Engine_get_author_info>` **(** **)** const                              |
++--------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`get_copyright_info<class_Engine_get_copyright_info>` **(** **)** const                        |
++--------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_donor_info<class_Engine_get_donor_info>` **(** **)** const                                |
++--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_frames_drawn<class_Engine_get_frames_drawn>` **(** **)**                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_frames_per_second<class_Engine_get_frames_per_second>` **(** **)** const                  |
++--------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_license_info<class_Engine_get_license_info>` **(** **)** const                            |
++--------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_license_text<class_Engine_get_license_text>` **(** **)** const                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`MainLoop<class_mainloop>`      | :ref:`get_main_loop<class_Engine_get_main_loop>` **(** **)** const                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -46,6 +56,10 @@ Member Variables
 
 - :ref:`int<class_int>` **iterations_per_second** - The number of fixed iterations per second (for fixed process and physics).
 
+  .. _class_Engine_physics_jitter_fix:
+
+- :ref:`float<class_float>` **physics_jitter_fix**
+
   .. _class_Engine_target_fps:
 
 - :ref:`int<class_int>` **target_fps** - The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
@@ -63,6 +77,42 @@ The ``Engine`` class allows you to query and modify the game's run-time paramete
 Member Function Description
 ---------------------------
 
+.. _class_Engine_get_author_info:
+
+- :ref:`Dictionary<class_dictionary>` **get_author_info** **(** **)** const
+
+Returns engine author information in a Dictionary.
+
+
+
+"lead_developers" - Array of Strings, lead developer names
+
+"founders" - Array of Strings, founder names
+
+"project_managers" - Array of Strings, project manager names
+
+"developers" - Array of Strings, developer names
+
+.. _class_Engine_get_copyright_info:
+
+- :ref:`Array<class_array>` **get_copyright_info** **(** **)** const
+
+Returns an Array of copyright information Dictionaries.
+
+
+
+"name" - String, component name
+
+"parts" - Array of Dictionaries {"files", "copyright", "license"} describing subsections of the component
+
+.. _class_Engine_get_donor_info:
+
+- :ref:`Dictionary<class_dictionary>` **get_donor_info** **(** **)** const
+
+Returns a Dictionary of Arrays of donor names.
+
+{"platinum_sponsors", "gold_sponsors", "mini_sponsors", "gold_donors", "silver_donors", "bronze_donors"}
+
 .. _class_Engine_get_frames_drawn:
 
 - :ref:`int<class_int>` **get_frames_drawn** **(** **)**
@@ -74,6 +124,18 @@ Returns the total number of frames drawn.
 - :ref:`float<class_float>` **get_frames_per_second** **(** **)** const
 
 Returns the frames per second of the running game.
+
+.. _class_Engine_get_license_info:
+
+- :ref:`Dictionary<class_dictionary>` **get_license_info** **(** **)** const
+
+Returns Dictionary of licenses used by Godot and included third party components.
+
+.. _class_Engine_get_license_text:
+
+- :ref:`String<class_string>` **get_license_text** **(** **)** const
+
+Returns Godot license text.
 
 .. _class_Engine_get_main_loop:
 
@@ -93,11 +155,11 @@ Returns the current engine version information in a Dictionary.
 
 
 
-"major"    - Holds the major version number as a String
+"major"    - Holds the major version number as an int
 
-"minor"    - Holds the minor version number as a String
+"minor"    - Holds the minor version number as an int
 
-"patch"    - Holds the patch version number as a String
+"patch"    - Holds the patch version number as an int
 
 "status"   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
 

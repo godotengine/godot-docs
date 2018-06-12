@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_VisualScriptReturn_return_type:
 
-- :ref:`Type<enum_variant_type>` **return_type** - The return value's data type.
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **return_type** - The return value's data type.
 
 
 Description

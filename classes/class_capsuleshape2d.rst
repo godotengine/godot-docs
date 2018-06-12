@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_CapsuleShape2D_radius:
 
-- :ref:`float<class_float>` **radius** - The capsules's radius.
+- :ref:`float<class_float>` **radius** - The capsule's radius.
 
 
 Description

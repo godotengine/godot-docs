@@ -32,9 +32,13 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_line<class_CanvasItem_draw_line>` **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`draw_mesh<class_CanvasItem_draw_mesh>` **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**                                                                                                                                                                                                               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_multiline<class_CanvasItem_draw_multiline>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`draw_multimesh<class_CanvasItem_draw_multimesh>` **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**                                                                                                                                                                                                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -192,6 +196,7 @@ enum **BlendMode**
 - **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
 
 
 Description
@@ -240,6 +245,10 @@ Draws a colored polygon of any amount of points, convex or concave.
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
+.. _class_CanvasItem_draw_mesh:
+
+- void **draw_mesh** **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**
+
 .. _class_CanvasItem_draw_multiline:
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
@@ -251,6 +260,10 @@ Draws multiple, parallel lines with a uniform ``color`` and ``width`` and option
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
+
+.. _class_CanvasItem_draw_multimesh:
+
+- void **draw_multimesh** **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**
 
 .. _class_CanvasItem_draw_polygon:
 

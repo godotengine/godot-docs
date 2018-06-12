@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`pack<class_PackedDataContainer_pack>` **(** :ref:`Variant<class_variant>` value **)** |
-+------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>` **(** **)** const                               |
-+------------------------+---------------------------------------------------------------------------------------------+
++----------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`  | :ref:`pack<class_PackedDataContainer_pack>` **(** :ref:`Variant<class_variant>` value **)** |
++----------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`size<class_PackedDataContainer_size>` **(** **)** const                               |
++----------------------------------------+---------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,7 +38,7 @@ Member Function Description
 
 .. _class_PackedDataContainer_pack:
 
-- :ref:`int<class_int>` **pack** **(** :ref:`Variant<class_variant>` value **)**
+- :ref:`Error<enum_@globalscope_error>` **pack** **(** :ref:`Variant<class_variant>` value **)**
 
 .. _class_PackedDataContainer_size:
 

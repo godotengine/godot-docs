@@ -13,7 +13,7 @@ textures, audios, scenes, etc.
 
 In Godot 3.0, we use a more modern approach to importing: Simply drop
 your assets (image files, scenes, audios, fonts, etc) directly in the
-project folder (copy them manually with your OS file exporer).
+project folder (copy them manually with your OS file explorer).
 Godot will automatically import these files internally
 and keep the imported resources hidden in a res://.import folder.
 
@@ -24,11 +24,11 @@ Changing import parameters
 
 Changing the import parameters of an asset in Godot (again, keep in mind
 import parameters are only present in non-native Godot resource types) is
-easy. Just select in the filesystem dock the relevant resource:
+easy. Select the relevant resource in the filesystem dock:
 
 .. image:: img/asset_workflow1.png
 
-And, after adjusting the parameters, just press "Reimport". The parameters
+Then, after adjusting the parameters, press "Reimport". The parameters
 used will be only for this asset and will be used on future reimports.
 
 Changing import parameters of several assets at the same time is also
@@ -50,12 +50,12 @@ configuration. Make sure to commit these to your version control system!
 
 .. image:: img/asset_workflow4.png
 
-Additionally, extra assets will be presset in the hidden res://.import folder:
+Additionally, extra assets will be preset in the hidden res://.import folder:
 
 .. image:: img/asset_workflow5.png
 
 If any of the files present in this folder is erased (or the whole folder), the
-asset or asssets will be reimported automatically. As such, committing this folder
+asset or assets will be reimported automatically. As such, committing this folder
 to the version control system is optional. It can save time on
 reimporting time when checking out in another computer, but it takes considerably
 more space and transfer time. Pick your poison!
@@ -64,7 +64,7 @@ Changing import resource type
 -----------------------------
 
 Some source assets can be imported as different types of resources.
-For this, just select the relevant type of resource desired and
+For this, select the relevant type of resource desired and
 press "Reimport":
 
 .. image:: img/asset_workflow2.png

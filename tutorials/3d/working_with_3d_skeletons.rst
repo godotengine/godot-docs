@@ -10,21 +10,20 @@ skeletal animations as a set of transformation matrices.
 Skeleton node
 -------------
 
-Skeleton node can be directly added anywhere you want on scene. Usually
+The Skeleton node can be directly added anywhere you want on a scene. Usually
 mesh is a child of Skeleton, as it easier to manipulate this way, as
-Transforms within skeleton are relative to where Skeleton is. But you
-can specify Skeleton node in every MeshInstance.
+Transforms within a skeleton are relative to where the Skeleton is. But you
+can specify a Skeleton node in every MeshInstance.
 
 Being obvious, Skeleton is intended to deform meshes, and consists of
-structures called "bones". Each "bone" is represented as Transform, which is
+structures called "bones". Each "bone" is represented as a Transform, which is
 applied to a group of vertices within a mesh. You can directly control a group
-of vertices from Godot. For that please reference :ref:`class_MeshDataTool`
-class, method :ref:`set_vertex_bones <class_MeshDataTool_set_vertex_bones>`.
-This class is very powerful.
+of vertices from Godot. For that please reference the :ref:`class_MeshDataTool`
+class and its method :ref:`set_vertex_bones <class_MeshDataTool_set_vertex_bones>`.
 
-The "bones" are organized in hierarchy, every bone, except for root
-bone(s) have parent. Every bone have associated name you can use to
-refer to it (e.g. "root" or "hand.L", etc.). Also bones are all numbered,
+The "bones" are organized hierarchically, every bone, except for root
+bone(s) have a parent. Every bone has an associated name you can use to
+refer to it (e.g. "root" or "hand.L", etc.). Also all bones are numbered,
 these numbers are bone IDs. Bone parents are referred by their numbered
 IDs.
 
@@ -36,48 +35,18 @@ For the rest of the article we consider the following scene:
     == skel (Skeleton)
     ==== mesh (MeshInstance)
 
-This scene is imported from Blender. It contains arm mesh with 2 bones -
-upperarm and lowerarm, with lowerarm parented to upperarm.
+This scene is imported from Blender. It contains an arm mesh with 2 bones -
+upperarm and lowerarm, with the lowerarm bone parented to the upperarm.
 
 Skeleton class
 --------------
 
-You can view Godot internal help for descriptions of every function.
+You can view Godots internal help for descriptions of all functions.
 Basically all operations on bones are done using their numeric ID. You
-can convert from name to numeric ID and vise versa.
+can convert from a name to a numeric ID and vice versa.
 
-**To find number of bones in skeleton we use get_bone_count()
-function**
-
-::
-
-    extends Spatial
-    var skel
-
-    func _ready():
-        skel = get_node("skel")
-        var id = skel.find_bone("upperarm")
-        print("bone id:", id)
-        var parent = skel.get_bone_parent(id)
-        print("bone parent id:", id)
-
-**to find ID for the bone, use find_bone() function**
-
-::
-
-    extends Spatial
-    var skel
-
-    func _ready():
-        skel = get_node("skel")
-        var id = skel.find_bone("upperarm")
-        print("bone id:", id)
-
-Now, we want to do something interesting with ID except for printing it.
-Also, we might need additional information - to find bone parents to
-complete chain, etc. This all is done with get/set_bone\_\* functions.
-
-**To find bone parent we use get_bone_parent(id) function**
+**To find the number of bones in a skeleton we use the get_bone_count()
+function:**
 
 ::
 
@@ -91,10 +60,40 @@ complete chain, etc. This all is done with get/set_bone\_\* functions.
         var parent = skel.get_bone_parent(id)
         print("bone parent id:", id)
 
-Bone transforms is the thing why we're here at all. There are 3 kind of
+**To find the ID of a bone, use the find_bone() function:**
+
+::
+
+    extends Spatial
+    var skel
+
+    func _ready():
+        skel = get_node("skel")
+        var id = skel.find_bone("upperarm")
+        print("bone id:", id)
+
+Now, we want to do something interesting with the ID, not just printing it.
+Also, we might need additional information - finding bone parents to
+complete chains, etc. This is done with the get/set_bone\_\* functions.
+
+**To find the parent of a bone we use the get_bone_parent(id) function:**
+
+::
+
+    extends Spatial
+    var skel
+
+    func _ready():
+        skel = get_node("skel")
+        var id = skel.find_bone("upperarm")
+        print("bone id:", id)
+        var parent = skel.get_bone_parent(id)
+        print("bone parent id:", id)
+
+The bone transforms are the things of our interest here. There are 3 kind of
 transforms - local, global, custom.
 
-**To find bone local Transform we use get_bone_pose(id) function**
+**To find the local Transform of a bone we use get_bone_pose(id) function:**
 
 ::
 
@@ -110,11 +109,11 @@ transforms - local, global, custom.
         var t = skel.get_bone_pose(id)
         print("bone transform: ", t)
 
-So we see 3x4 matrix there, with first column of 1s. What can we do
-about that? It is a Transform, so we can do everything we can do with
-Transform, basically translate, rotate and scale. Also we can multiply
-transforms to have complex transforms. Remember, "bones" in Godot are
-just Transforms over a group of vertices. Also we can copy Transforms of
+So we get a 3x4 matrix there, with the first column filled with 1s. What can we do
+with this matrix? It is a Transform, so we can do everything we can do with
+Transforms, basically translate, rotate and scale. We could also multiply
+transforms to have more complex transforms. Remember, "bones" in Godot are
+just Transforms over a group of vertices. We could also copy Transforms of
 other objects there. So lets rotate our "upperarm" bone:
 
 ::
@@ -139,17 +138,17 @@ other objects there. So lets rotate our "upperarm" bone:
         skel.set_bone_pose(id, t)
 
 Now we can rotate individual bones. The same happens for scale and
-translate - try these on your own and see results.
+translate - try these on your own and check the results.
 
-What we used now was local pose. By default all bones are not modified.
-But this Transform tells us nothing about relationship between bones.
+What we used here was the local pose. By default all bones are not modified.
+But this Transform tells us nothing about the relationship between bones.
 This information is needed for quite a number of tasks. How can we get
-it? Here comes global transform:
+it? Here the global transform comes into play:
 
-**To find bone global Transform we use get_bone_global_pose(id)
-function**
+**To find the bone global Transform we use get_bone_global_pose(id)
+function:**
 
-We will find global Transform for lowerarm bone:
+Let's find the global Transform for the lowerarm bone:
 
 ::
 
@@ -165,9 +164,9 @@ We will find global Transform for lowerarm bone:
         var t = skel.get_bone_global_pose(id)
         print("bone transform: ", t)
 
-As you see, this transform is not zeroed. While being called global, it
-is actually relative to Skeleton origin. For root bone, origin is always
-at 0 if not modified. Lets print origin for our lowerarm bone:
+As you can see, this transform is not zeroed. While being called global, it
+is actually relative to the Skeleton origin. For a root bone, origin is always
+at 0 if not modified. Lets print the origin for our lowerarm bone:
 
 ::
 
@@ -184,24 +183,24 @@ at 0 if not modified. Lets print origin for our lowerarm bone:
         print("bone origin: ", t.origin)
 
 You will see a number. What does this number mean? It is a rotation
-point of Transform. So it is base part of the bone. In Blender you can
+point of the Transform. So it is base part of the bone. In Blender you can
 go to Pose mode and try there to rotate bones - they will rotate around
-their origin. But what about tip? We can't know things like bone length,
-which we need for many things, without knowing tip location. For all
-bones in chain except for last one we can calculate tip location - it is
-simply a child bone origin. Yes, there are situations when this is not
+their origin. But what about the bone tip? We can't know things like the bone length,
+which we need for many things, without knowing the tip location. For all
+bones in a chain except for the last one we can calculate the tip location - it is
+simply a child bone's origin. Yes, there are situations when this is not
 true, for non-connected bones. But that is OK for us for now, as it is
 not important regarding Transforms. But the leaf bone tip is nowhere to
-be found. Leaf bone is a bone without children. So you don't have any
+be found. A leaf bone is a bone without children. So you don't have any
 information about its tip. But this is not a showstopper. You can
-overcome this by either adding extra bone to the chain or just
-calculating leaf bone length in Blender and store the value in your
+overcome this by either adding an extra bone to the chain or just
+calculating the length of the leaf bone in Blender and storing the value in your
 script.
 
 Using 3D "bones" for mesh control
 ---------------------------------
 
-Now as you know basics we can apply these to make full FK-control of our
+Now as you know the basics we can apply these to make full FK-control of our
 arm (FK is forward-kinematics)
 
 To fully control our arm we need the following parameters:
@@ -220,12 +219,12 @@ Create the following node tree:
     + DirectionLight (DirectionLight)
     + Camera
 
-Set up Camera so that arm is properly visible. Rotate DirectionLight
-so that arm is properly lit while in scene play mode.
+Set up the Camera so that the arm is properly visible. Rotate DirectionLight
+so that the arm is properly lit while in scene play mode.
 
-Now we need to create new script under main:
+Now we need to create a new script under main:
 
-First we setup parameters:
+First we define the setup parameters:
 
 ::
 
@@ -234,7 +233,7 @@ First we setup parameters:
 
 Now we need to setup a way to change them. Let us use keys for that.
 
-Please create 7 actions under project settings:
+Please create 7 actions under project settings -> Input Map:
 
 -  **selext_x** - bind to X key
 -  **selext_y** - bind to Y key
@@ -320,11 +319,11 @@ The full code for arm control is this:
         set_bone_rot("lowerarm", lowerarm_angle)
         set_bone_rot("upperarm", upperarm_angle)
 
-Pressing keys 1/2 select upperarm/lowerarm, select axis by pressing x,
+Pressing keys 1/2 selects upperarm/lowerarm, select the axis by pressing x,
 y, z, rotate using numpad "+"/"-"
 
 This way you fully control your arm in FK mode using 2 bones. You can
-add additional bones and/or improve "feel" of the interface by using
+add additional bones and/or improve the "feel" of the interface by using
 coefficients for the change. I recommend you play with this example a
 lot before going to next part.
 
@@ -335,7 +334,7 @@ You can clone the demo code for this chapter using
     git clone git@github.com:slapin/godot-skel3d.git
     cd demo1
 
-Or you can browse it using web-interface:
+Or you can browse it using the web-interface:
 
 https://github.com/slapin/godot-skel3d
 

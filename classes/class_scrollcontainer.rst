@@ -9,6 +9,8 @@ ScrollContainer
 
 **Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`EditorInspector<class_editorinspector>`
+
 **Category:** Core
 
 Brief Description
@@ -16,8 +18,28 @@ Brief Description
 
 A helper node for displaying scrollable elements (e.g. lists).
 
+Signals
+-------
+
+.. _class_ScrollContainer_scroll_ended:
+
+- **scroll_ended** **(** **)**
+
+Emitted whenever scrolling stops.
+
+.. _class_ScrollContainer_scroll_started:
+
+- **scroll_started** **(** **)**
+
+Emitted whenever scrolling is started.
+
+
 Member Variables
 ----------------
+
+  .. _class_ScrollContainer_scroll_deadzone:
+
+- :ref:`int<class_int>` **scroll_deadzone**
 
   .. _class_ScrollContainer_scroll_horizontal:
 
@@ -29,7 +51,7 @@ Member Variables
 
   .. _class_ScrollContainer_scroll_vertical:
 
-- :ref:`int<class_int>` **scroll_vertical** - The current horizontal scroll value.
+- :ref:`int<class_int>` **scroll_vertical** - The current vertical scroll value.
 
   .. _class_ScrollContainer_scroll_vertical_enabled:
 

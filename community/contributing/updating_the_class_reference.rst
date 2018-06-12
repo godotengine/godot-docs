@@ -5,9 +5,10 @@ Contribute to the Class Reference
 
 Godot ships with many nodes and singletons to help you develop your games in GDscript. Each is a class, documented in the :ref:`class reference <toc-class-ref>`. This reference is essential for anyone learning the engine: it is available both online and in the engine. 
 
-But it's incomplete. Many methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, all of us, to contribute.
+But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
 
-**Important:** we use `a collaborative document <https://hackmd.io/s/H1es51Oeqb>`_ to track who's working on what class. Always notify other writers about what you are working on. You'll find the instructions in the doc.
+**Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
+to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
 
 .. note:: This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKKjOulm5XI>`_.
 
@@ -25,7 +26,7 @@ There are 5 steps to update the class reference (full guide below):
 4. Commit your changes and push them to your fork
 5. Make a pull request on the Godot repository
 
-.. warning:: Always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+.. warning:: Always use these XML files to edit the API reference. Do not edit the generated .rst files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 
 Get started with GitHub
 -----------------------
@@ -74,7 +75,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have 2: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
 
 
 ::

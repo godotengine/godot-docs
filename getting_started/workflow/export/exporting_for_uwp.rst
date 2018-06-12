@@ -4,20 +4,20 @@ Exporting for Universal Windows Platform
 ========================================
 
 There's no extra requirement to export an ``.appx`` package that can be
-installed as a Windows App or submited to the Windows Store. Exporting
-packages also works from any platform, not only on Windows.
+installed as a Windows App or submited to the Windows Store. Exporting UWP
+packages also works from any platform, not only from Windows.
 
 However, if you want to install and run the app, you need to sign it with a
-trusted signature. Currently, Godot supports no signing of packages and you
-need to use externals to tools to do so.
+trusted signature. Currently, Godot does not support signing of packages, so you
+need to use external tools to do so.
 
-Also, make sure the Publisher name you set when export the package matches
-the name on the certificate.
+Also, make sure the Publisher Name you set when exporting the package matches
+the name used on the certificate.
 
 Limitations on Xbox One
 -----------------------
 
-As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
+As described in `UWP documentation <https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
 
 - Submitted as an "App"
     - available memory is 1GB
@@ -34,11 +34,11 @@ As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp
 Creating a signing certificate
 ------------------------------
 
-This requires the tools ``MakeCert.exe`` and ``Pvk2Pfx.exe`` which comes
-with the Windows SDK. If you use Visual Studio, open one of its Developer
-Prompts since they come with those tools available and in the path.
+This requires the ``MakeCert.exe`` and ``Pvk2Pfx.exe`` tools, which come with
+the Windows SDK. If you use Visual Studio, you can open one of its Developer
+Prompts, since it comes with these tools and they can be located in the path.
 
-You can get more detailed instructions from `Microsoft documentation
+You can get more detailed instructions from `Microsoft's documentation
 <https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx>`__.
 
 First, run ``MakeCert`` to create a private key::
@@ -55,25 +55,26 @@ Next, create a Personal Information Exchange (.pfx) file using ``Pvk2Pfx.exe``::
 If you don't specify a password with ``/po`` argument, the PFX will have the
 same password as the private key.
 
-You also need to trust this certificate to be able to actually install the
-apps. Open the Command Prompt as Administrator and run the following command::
+You will also need to trust this certificate in order to be able to install your
+app. Open the Command Prompt as Administrator and run the following command::
 
     Certutil -addStore TrustedPeople MyKey.cer
 
 Signing the package
 -------------------
 
-Using the ``SignTool.exe`` this requires a single command::
+Finally, use ``SignTool.exe`` from the Windows SDK or Visual Studio::
 
     SignTool sign /fd SHA256 /a /f MyKey.pfx /p pfxPassword package.appx
 
 Installing the package
 ----------------------
 
-After Windows 10 Anniversary Update you can install packages by just double
-clicking the ``.appx`` file from the Windows Explorer.
+As of the Windows 10 Anniversary Update, you are able to install packages simply by
+double clicking the ``.appx`` file from Windows Explorer.
 
-It's also possible to install using the ``Add-AppxPackage`` PowerShell cmdlet.
+It's also possible to install by using the ``Add-AppxPackage`` PowerShell cmdlet.
 
-Note that if you don't update the version number, you'll have to uninstall the
-previous installed package before reinstalling it.
+.. note:: If you want to update your already installed app, you must
+          update the version number on the new package or first uninstall
+          the previous package.

@@ -16,11 +16,11 @@ usability and flexibility. Some practical examples of this are:
    makes rendering less efficient, but at the same time less objects are
    rendered, so efficiency overall improves.
 -  Configuring the properties of every material for every object that
-   needs to be renderer is also slow. To solve this, objects are sorted
+   needs to be rendered is also slow. To solve this, objects are sorted
    by material to reduce the costs, but at the same time sorting has a
    cost.
 -  In 3D physics a similar situation happens. The best algorithms to
-   handle large amounts of physics objects (such as SAP) are very slow
+   handle large amounts of physics objects (such as SAP) are slow
    at insertion/removal of objects and ray-casting. Algorithms that
    allow faster insertion and removal, as well as ray-casting will not
    be able to handle as many active objects.
@@ -47,7 +47,7 @@ so this section will have a list of tips.
 Reuse shaders and materials
 ---------------------------
 
-Godot renderer is a little different to what is out there. It's designed
+The Godot renderer is a little different to what is out there. It's designed
 to minimize GPU state changes as much as possible.
 :ref:`class_SpatialMaterial`
 does a good job at reusing materials that need similar shaders but, if
@@ -63,18 +63,18 @@ Godot's priorities will be like this:
    configuration).
 
 If a scene has, for example, 20.000 objects with 20.000 different
-materials each, rendering will be really slow. If the same scene has
+materials each, rendering will be slow. If the same scene has
 20.000 objects, but only uses 100 materials, rendering will be blazing
 fast.
 
 Pixels cost vs vertex cost
 --------------------------
 
-It is a common thought that the lower the polygons in a model, the
+It is a common thought that the lower the number of polygons in a model, the
 faster it will be rendered. This is *really* relative and depends on
 many factors.
 
-On a modern PC and consoles, vertex cost is low. Very low. GPUs
+On a modern PC and console, vertex cost is low. GPUs
 originally only rendered triangles, so all the vertices:
 
 1. Had to be transformed by the CPU (including clipping).
@@ -96,7 +96,7 @@ to be a lot more power efficient.
 To be more efficient, mobile GPUs attempt to avoid *overdraw*. This
 means, the same pixel on the screen being rendered (as in, with lighting
 calculation, etc.) more than once. Imagine a town with several buildings,
-GPUs don't really know what is visible and what is hidden until they
+GPUs don't know what is visible and what is hidden until they
 draw it. A house might be drawn and then another house in front of it
 (rendering happened twice for the same pixel!). PC GPUs normally don't
 care much about this and just throw more pixel processors to the
@@ -162,7 +162,7 @@ Level of detail (LOD)
 ---------------------
 
 As also mentioned before, using objects with less vertices can improve
-performance in some cases. Godot has a very simple system to use level
+performance in some cases. Godot has a simple system to change level
 of detail,
 :ref:`GeometryInstance <class_GeometryInstance>`
 based objects have a visibility range that can be defined. Having
@@ -173,7 +173,7 @@ Use instancing (MultiMesh)
 
 If several identical objects have to be drawn in the same place or
 nearby, try using :ref:`MultiMesh <class_MultiMesh>`
-instead. MultiMesh allows drawing of dozens of thousands of objects at
+instead. MultiMesh allows the drawing of dozens of thousands of objects at
 very little performance cost, making it ideal for flocks, grass,
 particles, etc.
 

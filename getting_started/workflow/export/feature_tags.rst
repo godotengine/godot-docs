@@ -33,25 +33,28 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +=================+========================================================+
 | **Android**     | Running on Android                                     |
 +-----------------+--------------------------------------------------------+
-| **JavaScript**  | Running on JavaScript (HTML5)                          |
+| **HTML5**       | Running on HTML5                                       |
++-----------------+--------------------------------------------------------+
+| **JavaScript**  | :ref:`JavaScript singleton <doc_javascript_eval>` is   |
+|                 | available                                              |
 +-----------------+--------------------------------------------------------+
 | **OSX**         | Running on macOS                                       |
 +-----------------+--------------------------------------------------------+
 | **iOS**         | Running on iOS                                         |
 +-----------------+--------------------------------------------------------+
-| **UWP**         | Running on UWB                                         |
+| **UWP**         | Running on UWP                                         |
 +-----------------+--------------------------------------------------------+
 | **Windows**     | Running on Windows                                     |
 +-----------------+--------------------------------------------------------+
 | **X11**         | Running on X11                                         |
 +-----------------+--------------------------------------------------------+
-| **debug**       | Running on debug build                                 |
+| **debug**       | Running on a debug build                               |
 +-----------------+--------------------------------------------------------+
-| **release**     | Running on release build                               |
+| **release**     | Running on a release build                             |
 +-----------------+--------------------------------------------------------+
-| **32**          | Running on 32-bit build                                |
+| **32**          | Running on a 32-bit build                              |
 +-----------------+--------------------------------------------------------+
-| **64**          | Running on 64-bit build                                |
+| **64**          | Running on a 64-bit build                              |
 +-----------------+--------------------------------------------------------+
 | **mobile**      | Host OS is a mobile platform                           |
 +-----------------+--------------------------------------------------------+
@@ -71,7 +74,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 Custom features
 ---------------
 
-It is possible to add custom features to a build, just use the relevant
+It is possible to add custom features to a build, use the relevant
 field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.png

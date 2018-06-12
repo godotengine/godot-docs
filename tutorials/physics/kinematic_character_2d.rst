@@ -13,14 +13,14 @@ responses). Many attempts were made to create a character controller
 using the dynamics engines but it wasn't as easy as it seems. Godot
 has one of the best implementations of dynamic character controller
 you can find (as it can be seen in the 2d/platformer demo), but using
-it requieres a considerable level of skill and understanding of
+it requires a considerable level of skill and understanding of
 physics engines (or a lot of patience with trial and error).
 
 Some physics engines such as Havok seem to swear by dynamic character
 controllers as the best alternative, while others (PhysX) would rather
 promote the Kinematic one.
 
-So, what is really the difference?:
+So, what is the difference?:
 
 -  A **dynamic character controller** uses a rigid body with infinite
    inertial tensor. Basically, it's a rigid body that can't rotate.
@@ -111,7 +111,7 @@ Moving the Kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go back to the character scene, and open the script, the magic begins
-now! Kinematic body will do nothing by default, but it has a really
+now! Kinematic body will do nothing by default, but it has a
 useful function called
 :ref:`KinematicBody2D.move_and_collide() <class_KinematicBody2D_move_and_collide>`.
 This function takes a :ref:`Vector2 <class_Vector2>` as
@@ -208,7 +208,7 @@ This adds simple walking support by pressing left and right:
         else:
             velocity.x = 0
         
-        # We don't need to multiply velocity by delta becuase MoveAndSlide already takes delta time into account.
+        # We don't need to multiply velocity by delta because MoveAndSlide already takes delta time into account.
 
         # The second parameter of move_and_slide is the normal pointing up.
         # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.

@@ -22,9 +22,9 @@ Member Functions
 ----------------
 
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`action_match<class_InputEvent_action_match>` **(** :ref:`InputEvent<class_inputevent>` event **)** const                                                        |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`          | :ref:`as_text<class_InputEvent_as_text>` **(** **)** const                                                                                                            |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`get_action_strength<class_InputEvent_get_action_strength>` **(** :ref:`String<class_string>` action **)** const                                                 |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_action<class_InputEvent_is_action>` **(** :ref:`String<class_string>` action **)** const                                                                     |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,17 +59,15 @@ Base class of all sort of input event. See :ref:`Node._input<class_Node__input>`
 Member Function Description
 ---------------------------
 
-.. _class_InputEvent_action_match:
-
-- :ref:`bool<class_bool>` **action_match** **(** :ref:`InputEvent<class_inputevent>` event **)** const
-
-Returns ``true`` if this event matches ``event``.
-
 .. _class_InputEvent_as_text:
 
 - :ref:`String<class_string>` **as_text** **(** **)** const
 
 Returns a :ref:`String<class_string>` representation of the event.
+
+.. _class_InputEvent_get_action_strength:
+
+- :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_string>` action **)** const
 
 .. _class_InputEvent_is_action:
 

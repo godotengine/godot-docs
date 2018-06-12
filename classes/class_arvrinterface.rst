@@ -21,21 +21,21 @@ Base class for ARVR interface implementation.
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_capabilities<class_ARVRInterface_get_capabilities>` **(** **)** const       |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_name<class_ARVRInterface_get_name>` **(** **)** const                       |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_render_targetsize<class_ARVRInterface_get_render_targetsize>` **(** **)**   |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>` **(** **)** const |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`initialize<class_ARVRInterface_initialize>` **(** **)**                         |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_stereo<class_ARVRInterface_is_stereo>` **(** **)**                           |
-+--------------------------------+---------------------------------------------------------------------------------------+
-| void                           | :ref:`uninitialize<class_ARVRInterface_uninitialize>` **(** **)**                     |
-+--------------------------------+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                       | :ref:`get_capabilities<class_ARVRInterface_get_capabilities>` **(** **)** const       |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                 | :ref:`get_name<class_ARVRInterface_get_name>` **(** **)** const                       |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`                               | :ref:`get_render_targetsize<class_ARVRInterface_get_render_targetsize>` **(** **)**   |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`Tracking_status<enum_arvrinterface_tracking_status>`  | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>` **(** **)** const |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                     | :ref:`initialize<class_ARVRInterface_initialize>` **(** **)**                         |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                     | :ref:`is_stereo<class_ARVRInterface_is_stereo>` **(** **)**                           |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| void                                                        | :ref:`uninitialize<class_ARVRInterface_uninitialize>` **(** **)**                     |
++-------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -115,7 +115,7 @@ Returns the resolution at which we should render our intermediate results before
 
 .. _class_ARVRInterface_get_tracking_status:
 
-- :ref:`int<class_int>` **get_tracking_status** **(** **)** const
+- :ref:`Tracking_status<enum_arvrinterface_tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 

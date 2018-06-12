@@ -17,7 +17,7 @@ became evident that this was a bottleneck.
 On PC
 ~~~~~
 
-Distributing a game project on PC with Godot is rather easy. Just drop
+Distributing a game project on PC with Godot is rather easy. Drop
 the godot.exe (or godot) binary together in the same place as the
 engine.cfg file, zip it and you are done. This can be taken advantage of to
 make custom installers.
@@ -25,7 +25,7 @@ make custom installers.
 It sounds simple, but there are probably a few reasons why the developer
 may not want to do this. The first one is that it may not be desirable
 to distribute loads of files. Some developers may not like curious users
-peeking at how the game was made, others may just find it inelegant,
+peeking at how the game was made, others may find it inelegant,
 etc.
 
 Another reason is that, for distribution, the developer might prefer a
@@ -61,7 +61,7 @@ After many attempts at different export workflows, the current one has
 proven to work the best. At the time of this writing, not all platforms are
 supported yet, but the supported platforms continue to grow.
 
-To open the export menu, just click the "Export" button:
+To open the export menu, click the "Export" button:
 
 .. image:: img/export.png
 
@@ -132,3 +132,31 @@ creates the package. There are 3 different modes for exporting:
    *really* useful for games distributed on optical media.
 
 .. image:: img/expselected.png
+
+
+
+Export from Command Line
+------------------------
+
+In production it is useful to automate builds, and Godot supports this
+with the ``--export`` and ``--export-debug`` command line parameters.
+Exporting from command line still requires an export template to define
+the export parameters. A basic invocation of the export would be
+``godot --export "Windows Desktop" some_name``
+
+Which, assuming there is a preset called "Windows Desktop" and the 
+template can be found, will export to ``some_name.exe``. The output
+path is relative to the project path or absolute. It does not respect
+the directory the command was invoked from.
+
+You can also configure it to export only the .pck or .zip file (allowing 
+a single export to be used with multiple Godot executables). This
+takes place if:
+
+ - The export preset is not marked as runnable
+ - The target name ends with `.pck` or with `.zip`
+
+It is often useful to combine the ``--export`` flag with the ``--path``
+flag, and to create a dedicated export template for automated export:
+``godot --path path/to/project --export "pck" game_name.pck``
+

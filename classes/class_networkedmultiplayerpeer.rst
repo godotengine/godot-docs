@@ -21,17 +21,17 @@ A high-level network interface to simplify multiplayer interactions.
 Member Functions
 ----------------
 
-+------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const        |
-+------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` **(** **)** const                    |
-+------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_get_unique_id>` **(** **)** const                        |
-+------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`poll<class_NetworkedMultiplayerPeer_poll>` **(** **)**                                                |
-+------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
-+------------------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`ConnectionStatus<enum_networkedmultiplayerpeer_connectionstatus>`  | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const        |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                    | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` **(** **)** const                    |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                    | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_get_unique_id>` **(** **)** const                        |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                                                                     | :ref:`poll<class_NetworkedMultiplayerPeer_poll>` **(** **)**                                                |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                                                                     | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -76,7 +76,7 @@ Member Variables
 
   .. _class_NetworkedMultiplayerPeer_transfer_mode:
 
-- :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See enum TransferMode.
+- :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@globalscope_transfermode>`.
 
 
 Numeric Constants
@@ -115,9 +115,9 @@ Member Function Description
 
 .. _class_NetworkedMultiplayerPeer_get_connection_status:
 
-- :ref:`int<class_int>` **get_connection_status** **(** **)** const
+- :ref:`ConnectionStatus<enum_networkedmultiplayerpeer_connectionstatus>` **get_connection_status** **(** **)** const
 
-Returns the current state of the connection. See enum ConnectionStatus.
+Returns the current state of the connection. See :ref:`ConnectionStatus<enum_@globalscope_connectionstatus>`.
 
 .. _class_NetworkedMultiplayerPeer_get_packet_peer:
 
@@ -141,6 +141,8 @@ Waits up to 1 second to receive a new network event.
 
 - void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 
-The peer to which packets will be sent. Default value: ``0``.
+Sets the peer to which packets will be sent.
+
+The ``id`` can be one of: ``TARGET_PEER_BROADCAST`` to send to all connected peers, ``TARGET_PEER_SERVER`` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. Default: ``TARGET_PEER_BROADCAST``
 
 

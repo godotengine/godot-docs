@@ -10,14 +10,12 @@ Download the Android SDK
 ------------------------
 
 Download and install the Android SDK from
-http://developer.android.com/sdk/index.html
+https://developer.android.com/studio/
+
 
 Install OpenJDK or Oracle JDK
 -----------------------------
-
-Download and install OpenJDK or Oracle JDK. Version 6 and 8 are known to
-work, some users have reported issues with the jarsigner (used to sign the
-APKs) in JDK 7.
+Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work, some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
 
 Create a debug.keystore
 -----------------------

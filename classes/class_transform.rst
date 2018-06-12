@@ -121,7 +121,11 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 - :ref:`Transform<class_transform>` **looking_at** **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
 
-Rotate the transform around the up vector to face the target.
+Returns a copy of the transform rotated such that its -Z axis points towards the ``target`` position.
+
+The transform will first be rotated around the given ``up`` vector, and then fully aligned to the target by a further rotation around an axis perpendicular to both the ``target`` and ``up`` vectors.
+
+Operations take place in global space.
 
 .. _class_Transform_orthonormalized:
 

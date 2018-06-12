@@ -6,8 +6,13 @@ SceneTree
 Introduction
 ------------
 
+<<<<<<< HEAD
 This is where things start getting abstract but don't panic. There's
 not really much more depth than this.
+=======
+This is where things start getting abstract, but don't panic. There's 
+not much more depth than this.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 In previous tutorials, everything revolved around the concept of
 nodes. Scenes are simply a collection of nodes. They become active once
@@ -33,10 +38,16 @@ main/main.cpp file in the source code if you are ever interested to
 see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
+<<<<<<< HEAD
 methods for initialization, idle (frame-synchronized callback), fixed
 (physics-synchronized callback), and input. Again, this is really low
 level and when making games in Godot, writing your own MainLoop does not
 even make sense.
+=======
+methods, for initialization, idle (frame-synchronized callback), fixed
+(physics-synchronized callback), and input. Again, this is low
+level and when making games in Godot, writing your own MainLoop seldom makes sense.
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 SceneTree
 ---------
@@ -75,12 +86,22 @@ The root :ref:`Viewport <class_Viewport>`
 is always at the top of the scene. From a node, it can be obtained in
 two different ways:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
         get_tree().get_root() # access via scenemainloop
         get_node("/root") # access via absolute path
 
+<<<<<<< HEAD
 This node contains the main viewport. Anything that is a child of a
+=======
+ .. code-tab:: csharp
+
+        GetTree().GetRoot(); // access via scenemainloop
+        GetNode("/root"); // access via absolute path
+
+This node contains the main viewport, anything that is a child of a
+>>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 :ref:`Viewport <class_Viewport>`
 is drawn inside of it by default, so it makes sense that the top of all
 nodes is always a node of this type otherwise nothing would be seen!
@@ -140,10 +161,18 @@ another one. The simple way to do this is to use the
 :ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
 function:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _my_level_was_completed():
-        get_tree().change_scene("res://levels/level2.tscn")
+    	get_tree().change_scene("res://levels/level2.tscn")
+
+ .. code-tab:: csharp
+
+    public void _MyLevelWasCompleted()
+    {
+        GetTree().ChangeScene("res://levels/level2.tscn");
+    }
 
 This is a quick and useful way to switch scenes but has the drawback
 that the game will stall until the new scene is loaded and running. At

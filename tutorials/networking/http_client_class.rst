@@ -3,6 +3,10 @@
 HTTP client class
 =================
 
+:ref:`HTTPClient <class_HTTPClient>` provides low-level access to HTTP communication.
+For a more higher-level interface, you may want to take a look at :ref:`HTTPRequest <class_HTTPRequest>` first,
+which has a tutorial available :ref:`here <doc_http_request_class>`.
+
 Here's an example of using the :ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 

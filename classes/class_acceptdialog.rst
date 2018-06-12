@@ -73,7 +73,7 @@ Member Function Description
 
 - :ref:`Button<class_button>` **add_button** **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action="" **)**
 
-Adds a button with label *text* and a custom *action* to the dialog and returns the created button. *action* will be passed to the custom_action signal when pressed.
+Adds a button with label *text* and a custom *action* to the dialog and returns the created button. *action* will be passed to the :ref:`custom_action<class_AcceptDialog_custom_action>` signal when pressed.
 
 If ``true``, *right* will place the button to the right of any sibling buttons. Default value: ``false``.
 

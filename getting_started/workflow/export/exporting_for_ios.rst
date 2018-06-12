@@ -3,70 +3,91 @@
 Exporting for iOS
 =================
 
-Exporting for iOS is done manually at the moment. These are the steps to
-load your game in an XCode project, where you can deploy to a device,
-publish, etc.
+These are the steps to load a Godot project in Xcode. This allows you to 
+build and deploy to an iOS device, build a release for the App Store, and 
+do everything else you can normally do with Xcode.
 
 Requirements
 ------------
 
--  Download XCode for iOS
--  Download the export templates: https://godotengine.org/download
--  Since there is no automatic deployer yet, unzip export_templates.tpz
-   manually and extract GodotiOSXCode.zip from it.
+-  You must export for iOS from a computer running macOS with Xcode installed.
+-  Download the Godot export templates. Use the Godot menu: Editor > Manage Export Templates
 
-The zip contains an XCode project, godot_ios.xcodeproj, an empty
-data.pck file and the engine executable. Open the project, and modify
-the game name, icon, organization, provisioning signing certificate
-identities (??), etc.
 
-Add your project data
----------------------
+Export a Godot project to Xcode
+-------------------------------
 
-Using the Godot editor, :ref:`doc_exporting_for_pc`, to obtain the data.pck
-file. Replace the empty data.pck in the XCode project with the new one,
-and run/archive.
+In the Godot editor, open the **Export** window from the **Project** menu. When the 
+Export window opens, click **Add..** and select **iOS**. 
 
-If you want to test your scenes on the iOS device as you edit them, you
-can add your game directory to the project (instead of data.pck), and
-add a property "godot_path" to Info.plist, with the name of your
-directory as its value.
+The following export options are required. Leaving any blank with cause the 
+exporter to throw an error:
 
-.. image:: img/godot_path.png
+  * In the **Application** category
+    * **App Store Team ID**
+  * Everything in the **Required Icons** category
+  * Everything in the **Landscape Launch Screens** category
+  * Everything in the **Portrait Launch Screens** category
 
-Alternatively you can add all the files from your game directly, with
-"engine.cfg" at the root.
+After you click **Export Project**, there are still two important options left:
 
-Loading files from a host
--------------------------
+  * **Path** is an empty folder that will contain the exported Xcode project files. 
+  * **File** will be the name of the Xcode project and several project specific files and directories.  
 
-Sometimes your game becomes too big and deploying to the device takes
-too long every time you run. In that case you can deploy only the engine
-executable, and serve the game files from your computer.
+.. image:: img/ios_export_file.png
 
-Setting up the file host
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. note:: This tutorial uses **exported_xcode_project_name**, but you will use your
+          project's name. When you see **exported_xcode_project_name** 
+          in the following steps, replace it with the name you used instead. 
 
-On your PC, open the editor, and click the righ-most icon on the
-top-center group of icons, and select "Enable File Server". The icon
-turns red. Your PC will open a port and accept connections to serve
-files from your project's directory (so enable your local firewall
-accordingly).
+When the export completes, the output folder should look like this:
 
-.. image:: img/rfs_server.png
+.. image:: img/ios_export_output.png
 
-Setting up the game
-~~~~~~~~~~~~~~~~~~~
+Opening **exported_xcode_project_name.xcodeproj** lets you build and deploy 
+like any other iOS app. 
 
-On XCode, click on your app name (top left, next to the "Stop" button),
-and select "Edit Scheme". Go to the "Arguments" tab, and add 2
-arguments, "-rfs" and the IP of your PC.
 
-.. image:: img/edit_scheme.png
+Active development considerations
+---------------------------------
 
-When you run, your device will connect to the host and open the files
-remotely. Note that the directory with the game data ("platformer") is
-no longer added to the project, only the engine executable.
+The above method creates an exported project that you can build for
+release, but you have to re-export every time you make a change in Godot. 
+
+While developing, you can speed this process up by linking your
+Godot project files directly into your app. 
+
+In the following example:
+
+  * **exported_xcode_project_name** is the name of the exported iOS application (as above). 
+  * **godot_project_to_export** is the name of the Godot project. 
+
+Steps to link an Godot project folder to Xcode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Start from an exported iOS project (follow the steps above).
+2. In Finder, drag the Godot project folder into the Xcode file browser. 
+
+.. image:: img/ios_export_add_dir.png
+
+3. In the dialog, make sure **Create folder references** is selected. This means
+you will be able to continue to edit your Godot project in its current location.
+
+.. image:: img/ios_export_file_ref.png
+
+4. See the **godot_project_to_export** folder in the Xcode file browser. 
+5. Delete **exported_xcode_project_name.pck** from the Xcode project.
+
+.. image:: img/ios_export_delete_pck.png
+
+6. Open **exported_xcode_project_name-Info.plist** and add a string property named
+**godot_path** (this is the real key name) with a value **godot_project_to_export** 
+(this is the name of your project)
+
+.. image:: img/ios_export_set_path.png
+
+That's it! You can now edit your project in the Godot editor and build it
+in Xcode when you want to run it on a device. 
 
 Services for iOS
 ----------------

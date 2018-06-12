@@ -6,43 +6,43 @@ Inverse kinematics
 This tutorial is a follow-up of :ref:`doc_working_with_3d_skeletons`.
 
 Before continuing on, I'd recommend reading some theory, the simplest
-article I find is this:
+article I could find is this:
 
 http://freespace.virgin.net/hugo.elias/models/m_ik2.htm
 
 Initial problem
 ~~~~~~~~~~~~~~~
 
-Talking in Godot terminology, the task we want to solve here is position
-our 2 angles we talked about above so, that the tip of lowerarm bone is
-as close to target point, which is set by target Vector3() as possible
-using only rotations. This task is very calculation-intensive and never
-resolved by analytical equation solve. So, it is an underconstrained
-problem, which means there is unlimited number of solutions to the
+Talking in Godot terminology, the task we want to solve here is to position
+our 2 angles we talked about above so, that the tip of the lowerarm bone is
+as close to the target point (which is set by the target Vector3()) as possible
+using only rotations. This task is calculation-intensive and never
+resolved by analytical equation solving. So, it is an underconstrained
+problem, which means there is an unlimited number of solutions to the
 equation.
 
 .. image:: img/inverse_kinematics.png
 
-For easy calculation, for this chapter we consider target is also
-child of Skeleton. If it is not the case for your setup you can always
+For easy calculation, in this chapter we consider the target being a
+child of Skeleton. If this is not the case for your setup you can always
 reparent it in your script, as you will save on calculations if you
-do.
+do so.
 
-In the picture you see angles alpha and beta. In this case we don't
+In the picture you see the angles alpha and beta. In this case we don't
 use poles and constraints, so we need to add our own. On the picture
-the angles are 2D angles living in plane which is defined by bone
+the angles are 2D angles living in a plane which is defined by bone
 base, bone tip and target.
 
-The rotation axis is easily calculated using cross-product of bone
-vector and target vector. The rotation in this case will be always in
-positive direction. If t is the Transform which we get from
+The rotation axis is easily calculated using the cross-product of the bone
+vector and the target vector. The rotation in this case will be always in
+positive direction. If ``t`` is the Transform which we get from the
 get_bone_global_pose() function, the bone vector is
 
 ::
 
     t.basis[2]
 
-So we have all information here to execute our algorithm.
+So we have all the information we need to execute our algorithm.
 
 In game dev it is common to resolve this problem by iteratively closing
 to the desired location, adding/subtracting small numbers to the angles
@@ -51,19 +51,19 @@ Sounds easy enough, but there are Godot problems we need to resolve
 there to achieve our goal.
 
 -  **How to find coordinates of the tip of the bone?**
--  **How to find vector from bone base to target?**
+-  **How to find the vector from the bone base to the target?**
 
 For our goal (tip of the bone moved within area of target), we need to know
 where the tip of our IK bone is. As we don't use a leaf bone as IK bone, we
-know the coordinate of the bone base is the tip of parent bone. All these
+know the coordinate of the bone base is the tip of the parent bone. All these
 calculations are quite dependent on the skeleton's structure. You can use
-pre-calculated constants as well. You can add an extra bone for the tip of
-IK and calculate using that.
+pre-calculated constants as well. You can add an extra bone at the tip of the
+IK bone and calculate using that.
 
 Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will just use exported variable for bone length to be easy.
+We will use an exported variable for the bone length to make it easy.
 
 ::
 
@@ -71,16 +71,16 @@ We will just use exported variable for bone length to be easy.
     export var ik_bone_length = 1.0
     export var ik_error = 0.1
 
-Now, we need to apply our transformations from IK bone to the base of
-chain. So we apply rotation to IK bone then move from our IK bone up to
-its parent, then apply rotation again, then move to the parent of
+Now, we need to apply our transformations from the IK bone to the base of
+the chain. So we apply a rotation to the IK bone then move from our IK bone up to
+its parent, apply rotation again, then move to the parent of the
 current bone again, etc. So we need to limit our chain somewhat.
 
 ::
 
     export var ik_limit = 2
 
-For ``_ready()`` function:
+For the ``_ready()`` function:
 
 ::
 
@@ -110,7 +110,7 @@ And for the ``_process()`` function:
     func _process(delta):
         pass_chain(delta)
 
-Executing this script will just pass through bone chain printing bone
+Executing this script will pass through the bone chain, printing bone
 transforms.
 
 ::
@@ -140,17 +140,17 @@ transforms.
     func _process(delta):
         pass_chain(delta)
 
-Now we need to actually work with target. The target should be placed
-somewhere accessible. Since "arm" is imported scene, we better place
-target node within our top level scene. But for us to work with target
-easily its Transform should be on the same level as Skeleton.
+Now we need to actually work with the target. The target should be placed
+somewhere accessible. Since "arm" is an imported scene, we better place
+the target node within our top level scene. But for us to work with target
+easily its Transform should be on the same level as the Skeleton.
 
-To cope with this problem we create "target" node under our scene root
-node and at script run we will reparent it copying global transform,
-which will achieve wanted effect.
+To cope with this problem we create a "target" node under our scene root
+node and at runtime we will reparent it copying the global transform,
+which will achieve the desired effect.
 
-Create new Spatial node under root node and rename it to "target".
-Then modify ``_ready()`` function to look like this:
+Create a new Spatial node under the root node and rename it to "target".
+Then modify the ``_ready()`` function to look like this:
 
 ::
 

@@ -9,7 +9,7 @@ Spatial
 
 **Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
+**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`OrientedPathFollow<class_orientedpathfollow>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
 
 **Category:** Core
 
@@ -217,13 +217,17 @@ Returns whether the node is visible, taking into consideration that its parents 
 
 - void **look_at** **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
 
-Rotates itself to point into direction of target position. Operations take place in global space.
+Rotates itself so that the local -Z axis points towards the ``target`` position.
+
+The transform will first be rotated around the given ``up`` vector, and then fully aligned to the target by a further rotation around an axis perpendicular to both the ``target`` and ``up`` vectors.
+
+Operations take place in global space.
 
 .. _class_Spatial_look_at_from_position:
 
 - void **look_at_from_position** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
 
-Moves the node to specified position and then rotates itself to point into direction of target position. Operations take place in global space.
+Moves the node to the specified ``position``, and then rotates itself to point toward the ``target`` as per :ref:`look_at<class_Spatial_look_at>`. Operations take place in global space.
 
 .. _class_Spatial_orthonormalize:
 

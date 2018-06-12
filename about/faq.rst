@@ -50,7 +50,7 @@ Which platforms are supported by Godot?
 
 Both 32 and 64 bit binaries are supported where it makes sense, with 64 being the default.
 
-Some users also report building and using Godot successfully on ARM-based system with Linux, like the Raspberry Pi.
+Some users also report building and using Godot successfully on ARM-based systems with Linux, like the Raspberry Pi.
 There is also some unofficial thirdparty work being done on building for some consoles.
 None of this is included in the default build scripts or export templates, however.
 
@@ -83,8 +83,8 @@ in Godot (see list of supported options above),
 but we strongly encourage you to try it and see the benefits for yourself.
 
 GDScript is designed to integrate from the ground to the way Godot
-works, more than any other language, and is very simple and easy to
-learn. Takes at most a day or two to get comfortable and it's very easy
+works, more than any other language, and is simple and easy to
+learn. Takes at most a day or two to get comfortable and it's easy
 to see the benefits once you do. Please do the effort to learn
 GDScript, you will not regret it.
 
@@ -122,13 +122,13 @@ The main reasons are:
 5. Garbage collector results in stalls or unnecessarily large memory
    usage (Lua, Python, JS, AS, etc.).
 6. Difficulty to integrate with the code editor for providing code
-   completion, live editing, etc. (all of them). This is very well
+   completion, live editing, etc. (all of them). This is well
    supported by GDScript.
 
-GDScript was designed to solve the issues above, and performs very well
+GDScript was designed to solve the issues above, and performs well
 in all the above scenarios. Please learn GDScript and enjoy a
-very smooth integration of scripting with the game engine (yes, it's a
-rare but very enjoyable situation when things just work). It's worth
+smooth integration of scripting with the game engine (yes, it's a
+rare but enjoyable situation when things just work). It's worth
 it, give it a try!
 
 I want to extend Godot. What are my options for creating plugins?
@@ -151,11 +151,11 @@ the Godot modules as well as the `unofficial Python support <https://github.com/
 Why is FBX not supported for import?
 ------------------------------------
 
-FBX SDK has a very `restrictive license <http://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
-that is incompatible with the `open license <http://opensource.org/licenses/MIT>`_
+FBX SDK has a `restrictive license <https://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
+that is incompatible with the `open license <https://opensource.org/licenses/MIT>`_
 provided by Godot.
 
-That said, Godot's Collada support is really good, please use the
+That said, Godot's Collada support is good, please use the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_
 exporter for maximum compatibility if you are using Maya or 3DS Max.
 If you are using Blender, take a look at our own
@@ -220,7 +220,7 @@ Camera XFov or YFov.
 
 And that's it! Your game should work in multiple resolutions.
 
-If there really is a desire to make your game also work on ancient
+If there is a desire to make your game also work on ancient
 devices with tiny screens (less than 300 pixels in width), you can use
 the export option to shrink images, and set that build to be used for
 certain screen sizes in the App Store or Google Play.

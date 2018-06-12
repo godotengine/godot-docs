@@ -9,8 +9,52 @@ What is it?
 Managing input is usually complex, no matter the OS or platform. To ease
 this a little, a special built-in type is provided, :ref:`InputEvent <class_InputEvent>`.
 This datatype can be configured to contain several types of input
-events. Input Events travel through the engine and can be received in
+events. Input events travel through the engine and can be received in
 multiple locations, depending on the purpose.
+
+Here is a quick example, closing your game if the escape key is hit:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _unhandled_input(event):
+        if event is InputEventKey:
+            if event.pressed and event.scancode == KEY_ESCAPE:
+                get_tree().quit()
+
+ .. code-tab:: csharp
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event is InputEventKey eventKey)
+            if (eventKey.Pressed && eventKey.Scancode == (int)KeyList.Escape)
+                GetTree().Quit();
+    }
+
+However, it is cleaner and more flexible to use the provided :ref:`InputMap <class_InputMap>` feature,
+which allows you to define input actions and assign them different keys. This way,
+you can define multiple keys for the same action (e.g. they keyboard escape key and the start button on a gamepad).
+You can then more easily change this mapping in the project settings without updating your code,
+and even build a key mapping feature on top of it to allow your game to change the key mapping at runtime!
+
+You can setup your InputMap under **Project > Project Settings > Input Map** and then use those actions like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _process(delta):
+        if Input.is_action_pressed("ui_right"):
+            # Move right
+
+ .. code-tab:: csharp
+
+    public override void _Process(float delta)
+    {
+        if (Input.IsActionPressed("ui_right"))
+        {
+            // Move right
+        }
+    }
 
 How does it work?
 -----------------
@@ -67,20 +111,7 @@ Anatomy of an InputEvent
 anything and only contains some basic information, such as event ID
 (which is increased for each event), device index, etc.
 
-InputEvent has a "type" member. By assigning it, it can become
-different types of input event. Every type of InputEvent has different
-properties, according to its role.
-
-Example of changing event type.
-
-::
-
-    # create event
-    var ev = InputEventMouseButton.new()
-    # button_index is only available for the above type
-    ev.button_index = BUTTON_LEFT
-
-There are several types of InputEvent, described in the table below:
+There are several specialised types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | Event                                                             | Type Index         | Description                             |
@@ -136,13 +167,23 @@ from the game code (a good example of this is detecting gestures).
 The Input singleton has a method for this:
 :ref:`Input.parse_input_event() <class_input_parse_input_event>`. You would normally use it like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var ev = InputEventAction.new()
     # set as move_left, pressed
     ev.set_as_action("move_left", true) 
     # feedback
     Input.parse_input_event(ev)
+
+ .. code-tab:: csharp
+
+    var ev = new InputEventAction();
+    // set as move_left, pressed
+    ev.SetAction("move_left");
+    ev.SetPressed(true);
+    // feedback
+    Input.ParseInputEvent(ev);
 
 InputMap
 --------

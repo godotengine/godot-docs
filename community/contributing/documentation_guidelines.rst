@@ -5,7 +5,10 @@ Documentation guidelines
 
 This page describes the rules to follow if you want to contribute to Godot
 Engine by writing or reviewing documentation, or by translating existing
-documentation.
+documentation. Also have a look at README of the
+`godot-docs GitHub repository <https://github.com/godotengine/godot-docs>`_
+and the `docs front page <http://docs.godotengine.org>`_
+on what steps to follow and how to contact the docs team.
 
 How to contribute
 -----------------
@@ -31,14 +34,14 @@ reference documentation about the reStructuredText markup language.
              should edit the ``doc/classes/*`` XML files of Godot's
              main repository. These files are then later used to generate the
              in-editor documentation as well as the API reference of the
-             online docs.
+             online docs. Read more here: :ref:`doc_updating_the_class_reference`.
 
 What makes good documentation?
 ------------------------------
 
 Documentation should be well written in plain English, using well-formed
 sentences and various levels of sections and subsections. It should be clear
-and objective.
+and objective. Also have a look at the :ref:`doc_docs_writing_guidelines`.
 
 We differentiate tutorial pages from other documentation pages by these
 definitions:
@@ -52,10 +55,7 @@ definitions:
    Sprite class, or an overview of the input management in Godot).
 
 You are free to write the kind of documentation you wish, as long as you
-respect the following rules (and the ones on the repo). In particular, you
-can contribute tutorials in the "Community" section of the docs, where they
-could be merged relatively easily, improved by other contributors and
-eventually moved to an "official" section if relevant.
+respect the following rules (and the ones on the repo).
 
 Titles
 ------
@@ -89,23 +89,20 @@ letter.
 Translating existing pages
 --------------------------
 
-For the moment, only English documentation is provided. We want to propose
-localized documentation in the future, but this is not a priority for now.
-Indeed, since the English documentation is still evolving a lot as the
-community improves it and make it more professional, we prefer that
-translators do not spend too much time on it, as their translated
-documentation might quickly grow out of sync with the original.
+You can help to translate the official Godot documentation on our `Hosted Weblate <https://hosted.weblate.org/engage/godot-engine/>`_.
 
-When the English documentation is ready for translations, we will provide
-tools to simplify the work of translators by tracking changes to the English
-docs that they should translate on their end.
+.. image:: https://hosted.weblate.org/widgets/godot-engine/-/godot-docs/287x66-white.png
+    :alt: Translation state
+    :align: center
+    :target: https://hosted.weblate.org/engage/godot-engine/?utm_source=widget
+
+There also is the official `Godot I18N repository <https://github.com/godotengine/godot-docs-l10n>`_. where you can see when the data was last synced.
 
 License
 -------
 
 This documentation and every page it contains is published under the terms of
-the Creative Commons Attribution 3.0 license (CC-BY-3.0), with attribution to
-"Juan Linietsky, Ariel Manzur and the Godot community".
+the `Creative Commons Attribution 3.0 license (CC-BY-3.0) <https://tldrlegal.com/license/creative-commons-attribution-(cc)>`_, with attribution to "Juan Linietsky, Ariel Manzur and the Godot community".
 
 By contributing to the documentation on the GitHub repository, you agree that
 your changes are distributed under this license.

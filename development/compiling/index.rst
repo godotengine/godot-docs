@@ -5,6 +5,7 @@ Compiling
    :maxdepth: 1
    :name: toc-devel-compiling
 
+   getting_source
    introduction_to_the_buildsystem
    compiling_for_windows
    compiling_for_x11
@@ -15,5 +16,4 @@ Compiling
    compiling_for_uwp
    compiling_for_web
    compiling_with_mono
-   batch_building_templates
    packaging_godot

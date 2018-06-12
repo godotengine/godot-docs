@@ -6,7 +6,7 @@ Importing 3D Scenes
 Godot Scene Importer
 --------------------
 
-When dealing with 3D assets, Godot has a very flexible and configurable importer.
+When dealing with 3D assets, Godot has a flexible and configurable importer.
 
 Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
 transferred as close as possible.
@@ -36,7 +36,7 @@ Autodesk added built-in collada support to Maya and 3DS Max, but it's
 broken by default and should not be used. The best way to export this format
 is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
-plugins. They work really well, although they are not always up-to date
+plugins. They work well, although they are not always up-to date
 with the latest version of the software.
 
 Exporting DAE files from Blender
@@ -92,7 +92,7 @@ A special script to process the whole scene after import can be provided.
 This is great for post processing, changing materials, doing funny stuff
 with the geometry etc.
 
-Create a script that basically looks like this:
+Create a script that like this:
 
 ::
 
@@ -237,16 +237,16 @@ In general, this should always be turned on unless you suspect that an animation
 Clips
 ~~~~~~~~~~~~~~~~~~~~~
 
-It is possible to specify multiple animations from a single timeline as clips. Just specify from which frame to which frame each
+It is possible to specify multiple animations from a single timeline as clips. Specify from which frame to which frame each
 clip must be taken (and, of course, don't forget to specify the FPS option above).
 
 Scene Inheritance
 -----------------
 
-In many cases, it may be desired to do modifications to the imported scene. By default, this is not really possible because
+In many cases, it may be desired to do modifications to the imported scene. By default, this is not possible because
 if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
 
-It is possible, however, to do local modifications by using *Scene Inheritance*. Just try to open the imported scene and the
+It is possible, however, to do local modifications by using *Scene Inheritance*. Try to open the imported scene and the
 following dialog will appear:
 
 .. image:: img/scene_import4.png
@@ -274,7 +274,7 @@ actions automatically:
 Remove nodes (-noimp)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Node names that have this suffix will be removed at import time, mo
+Node names that have this suffix will be removed at import time, no
 matter what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -colonly, -convcolonly)

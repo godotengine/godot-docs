@@ -21,7 +21,8 @@ required:
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev (optional, build with `udev=yes`)
+-  *Optional* - libudev (build with ``udev=yes``)
+-  *Optional* - yasm (for WebM SIMD optimizations)
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,9 +55,9 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     urpmi scons pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" "pkgconfig(libpulse)" \|
-|               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
-|               |         "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)"                                              |
+|               |     urpmi scons task-c++-devel pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" \       |
+|               |         "pkgconfig(libpulse)" "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)"\|
+|               |         "pkgconfig(xinerama)" "pkgconfig(xi)" "pkgconfig(xrandr)" "pkgconfig(zlib)"                        |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **OpenBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
@@ -126,7 +127,7 @@ To create standard export templates, the resulting files must be copied to:
 
 ::
 
-    /home/youruser/.godot/templates
+    /home/[username]/.local/share/godot/templates/[gd-version]/
 
 and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 

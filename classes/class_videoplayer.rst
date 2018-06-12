@@ -14,7 +14,7 @@ VideoPlayer
 Brief Description
 -----------------
 
-Control to play video files.
+Control for playing video streams.
 
 Member Functions
 ----------------
@@ -31,32 +31,42 @@ Member Functions
 | void                           | :ref:`stop<class_VideoPlayer_stop>` **(** **)**                             |
 +--------------------------------+-----------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_VideoPlayer_finished:
+
+- **finished** **(** **)**
+
+Emitted when playback is finished.
+
+
 Member Variables
 ----------------
 
   .. _class_VideoPlayer_audio_track:
 
-- :ref:`int<class_int>` **audio_track**
+- :ref:`int<class_int>` **audio_track** - The embedded audio track to play.
 
   .. _class_VideoPlayer_autoplay:
 
-- :ref:`bool<class_bool>` **autoplay**
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` playback starts when the scene loads. Default value: ``false``.
 
   .. _class_VideoPlayer_buffering_msec:
 
-- :ref:`int<class_int>` **buffering_msec** - The amount of milliseconds to store in buffer while playing.
+- :ref:`int<class_int>` **buffering_msec** - Amount of time in milliseconds to store in buffer while playing.
 
   .. _class_VideoPlayer_bus:
 
-- :ref:`String<class_string>` **bus**
+- :ref:`String<class_string>` **bus** - Audio bus to use for sound playback.
 
   .. _class_VideoPlayer_expand:
 
-- :ref:`bool<class_bool>` **expand**
+- :ref:`bool<class_bool>` **expand** - If ``true`` the video scales to the control size. Default value: ``true``.
 
   .. _class_VideoPlayer_paused:
 
-- :ref:`bool<class_bool>` **paused**
+- :ref:`bool<class_bool>` **paused** - If ``true`` the video is paused.
 
   .. _class_VideoPlayer_stream:
 
@@ -68,17 +78,17 @@ Member Variables
 
   .. _class_VideoPlayer_volume:
 
-- :ref:`float<class_float>` **volume** - The volume of the audio track as a linear value.
+- :ref:`float<class_float>` **volume** - Audio volume as a linear value.
 
   .. _class_VideoPlayer_volume_db:
 
-- :ref:`float<class_float>` **volume_db**
+- :ref:`float<class_float>` **volume_db** - Audio volume in dB.
 
 
 Description
 -----------
 
-This control has the ability to play video streams. The only format accepted is the OGV Theora, so any other format must be converted before using in a project.
+Control node for playing video streams. Supported formats are WebM and OGV Theora.
 
 Member Function Description
 ---------------------------
@@ -87,30 +97,30 @@ Member Function Description
 
 - :ref:`String<class_string>` **get_stream_name** **(** **)** const
 
-Get the name of the video stream.
+Returns the video stream's name.
 
 .. _class_VideoPlayer_get_video_texture:
 
 - :ref:`Texture<class_texture>` **get_video_texture** **(** **)**
 
-Get the current frame of the video as a :ref:`Texture<class_texture>`.
+Returns the current frame as a :ref:`Texture<class_texture>`.
 
 .. _class_VideoPlayer_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
-Get whether or not the video is playing.
+Returns ``true`` if the video is playing.
 
 .. _class_VideoPlayer_play:
 
 - void **play** **(** **)**
 
-Start the video playback.
+Starts the video playback.
 
 .. _class_VideoPlayer_stop:
 
 - void **stop** **(** **)**
 
-Stop the video playback.
+Stops the video playback.
 
 

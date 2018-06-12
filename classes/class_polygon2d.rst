@@ -16,12 +16,37 @@ Brief Description
 
 A 2D polygon.
 
+Member Functions
+----------------
+
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`add_bone<class_Polygon2D_add_bone>` **(** :ref:`NodePath<class_nodepath>` path, :ref:`PoolRealArray<class_poolrealarray>` weights **)**        |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`clear_bones<class_Polygon2D_clear_bones>` **(** **)**                                                                                          |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`erase_bone<class_Polygon2D_erase_bone>` **(** :ref:`int<class_int>` index **)**                                                                |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`get_bone_count<class_Polygon2D_get_bone_count>` **(** **)** const                                                                              |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`            | :ref:`get_bone_path<class_Polygon2D_get_bone_path>` **(** :ref:`int<class_int>` index **)** const                                                    |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolRealArray<class_poolrealarray>`  | :ref:`get_bone_weights<class_Polygon2D_get_bone_weights>` **(** :ref:`int<class_int>` index **)** const                                              |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_bone_path<class_Polygon2D_set_bone_path>` **(** :ref:`int<class_int>` index, :ref:`NodePath<class_nodepath>` path **)**                    |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_bone_weights<class_Polygon2D_set_bone_weights>` **(** :ref:`int<class_int>` index, :ref:`PoolRealArray<class_poolrealarray>` weights **)** |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Member Variables
 ----------------
 
   .. _class_Polygon2D_antialiased:
 
 - :ref:`bool<class_bool>` **antialiased** - If ``true`` polygon edges will be anti-aliased. Default value: ``false``.
+
+  .. _class_Polygon2D_bones:
+
+- :ref:`Array<class_array>` **bones**
 
   .. _class_Polygon2D_color:
 
@@ -42,6 +67,14 @@ Member Variables
   .. _class_Polygon2D_polygon:
 
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+
+  .. _class_Polygon2D_skeleton:
+
+- :ref:`NodePath<class_nodepath>` **skeleton**
+
+  .. _class_Polygon2D_splits:
+
+- :ref:`PoolIntArray<class_poolintarray>` **splits**
 
   .. _class_Polygon2D_texture:
 
@@ -76,4 +109,40 @@ Description
 -----------
 
 A Polygon2D is defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed polygon. Polygon2Ds can be filled with color (solid or gradient) or filled with a given texture.
+
+Member Function Description
+---------------------------
+
+.. _class_Polygon2D_add_bone:
+
+- void **add_bone** **(** :ref:`NodePath<class_nodepath>` path, :ref:`PoolRealArray<class_poolrealarray>` weights **)**
+
+.. _class_Polygon2D_clear_bones:
+
+- void **clear_bones** **(** **)**
+
+.. _class_Polygon2D_erase_bone:
+
+- void **erase_bone** **(** :ref:`int<class_int>` index **)**
+
+.. _class_Polygon2D_get_bone_count:
+
+- :ref:`int<class_int>` **get_bone_count** **(** **)** const
+
+.. _class_Polygon2D_get_bone_path:
+
+- :ref:`NodePath<class_nodepath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** const
+
+.. _class_Polygon2D_get_bone_weights:
+
+- :ref:`PoolRealArray<class_poolrealarray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** const
+
+.. _class_Polygon2D_set_bone_path:
+
+- void **set_bone_path** **(** :ref:`int<class_int>` index, :ref:`NodePath<class_nodepath>` path **)**
+
+.. _class_Polygon2D_set_bone_weights:
+
+- void **set_bone_weights** **(** :ref:`int<class_int>` index, :ref:`PoolRealArray<class_poolrealarray>` weights **)**
+
 

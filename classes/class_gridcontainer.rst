@@ -14,7 +14,14 @@ GridContainer
 Brief Description
 -----------------
 
-Grid container used to arrange elements in a grid like layout
+Grid container used to arrange elements in a grid like layout.
+
+Member Functions
+----------------
+
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_control>`  | :ref:`get_child_control_at_cell<class_GridContainer_get_child_control_at_cell>` **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)** |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -28,4 +35,12 @@ Description
 -----------
 
 Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`set_columns<class_GridContainer_set_columns>` method and the number of rows will be equal to the number of children in the container divided by the number of columns, for example: if the container has 5 children, and 2 columns, there will be 3 rows in the container. Notice that grid layout will preserve the columns and rows for every size of the container.
+
+Member Function Description
+---------------------------
+
+.. _class_GridContainer_get_child_control_at_cell:
+
+- :ref:`Control<class_control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
+
 

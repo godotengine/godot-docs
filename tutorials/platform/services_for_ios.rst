@@ -3,7 +3,7 @@
 Services for iOS
 ================
 
-At the moment, there are 2 iOS APIs partially implemented, GameCenter
+At the moment, there are two iOS APIs partially implemented, GameCenter
 and Storekit. Both use the same model of asynchronous calls explained
 below.
 
@@ -18,7 +18,7 @@ this:
     Error purchase(Variant p_params);
 
 The parameter will usually be a Dictionary, with the information
-necessary to make the request, and the call will have 2 phases. First,
+necessary to make the request, and the call will have two phases. First,
 the method will immediately return an Error value. If the Error is not
 'OK', the call operation is completed, with an error probably caused
 locally (no internet connection, API incorrectly configured, etc). If
@@ -50,7 +50,7 @@ network timeout, etc. You should be able to, for example, safely block
 the interface waiting for a reply from the server. If any of the APIs
 don't behave this way it should be treated as a bug.
 
-The pending event interface consists of 2 methods:
+The pending event interface consists of two methods:
 
 -  ``get_pending_event_count()``
    Returns the number of pending events on the queue.
@@ -65,7 +65,7 @@ Implemented in platform/iphone/in_app_store.mm
 
 The Store Kit API is accessible through the "InAppStore" singleton (will
 always be available from gdscript). It is initialized automatically. It
-has 2 methods for purchasing:
+has two methods for purchasing:
 
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
@@ -175,7 +175,7 @@ Posts a score to a Game Center leaderboard.
 Parameters
 ^^^^^^^^^^
 
-Takes a Dictionary as a parameter, with 2 fields:
+Takes a Dictionary as a parameter, with two fields:
 
 -  ``score`` a float number
 -  ``category`` a string with the category name
@@ -364,7 +364,7 @@ achievements, and challenges.
 Parameters
 ^^^^^^^^^^
 
-Takes a Dictionary as a parameter, with 2 fields:
+Takes a Dictionary as a parameter, with two fields:
 
 -  ``view`` (string) (optional) the name of the view to present. Accepts
    "default", "leaderboards", "achievements", or "challenges". Defaults

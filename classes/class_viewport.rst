@@ -30,7 +30,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                  | :ref:`get_mouse_position<class_Viewport_get_mouse_position>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>` **(** :ref:`int<class_int>` info **)**                                                                                                                     |
+| :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>` **(** :ref:`RenderInfo<enum_viewport_renderinfo>` info **)**                                                                                               |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                  | :ref:`get_size_override<class_Viewport_get_size_override>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -115,6 +115,10 @@ Member Variables
   .. _class_Viewport_hdr:
 
 - :ref:`bool<class_bool>` **hdr** - If ``true`` the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
+
+  .. _class_Viewport_keep_3d_linear:
+
+- :ref:`bool<class_bool>` **keep_3d_linear** - If ``true`` the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
 
   .. _class_Viewport_msaa:
 
@@ -305,7 +309,7 @@ Get the mouse position, relative to the viewport.
 
 .. _class_Viewport_get_render_info:
 
-- :ref:`int<class_int>` **get_render_info** **(** :ref:`int<class_int>` info **)**
+- :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_viewport_renderinfo>` info **)**
 
 Get the specific information about the viewport from rendering pipeline.
 
@@ -359,7 +363,7 @@ Get the enabled status of the size override set with :ref:`set_size_override<cla
 
 - :ref:`bool<class_bool>` **is_size_override_stretch_enabled** **(** **)** const
 
-Get the enabled status of the size strech override set with :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
+Get the enabled status of the size stretch override set with :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
 
 .. _class_Viewport_set_attach_to_screen_rect:
 

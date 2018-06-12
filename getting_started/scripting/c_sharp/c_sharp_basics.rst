@@ -13,7 +13,7 @@ Afterwards, you may want to look at :ref:`how to use specific features <doc_c_sh
 read about the :ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`
 and (re)visit the :ref:`Scripting section <doc_scripting>` of the step-by-step tutorial.
 
-C# is a high-level programming language developed by Microsoft. In Godot it is implemented with the Mono 5.2 .NET framework including full support for C# 7.0.
+C# is a high-level programming language developed by Microsoft. In Godot it is implemented with the Mono 5.x .NET framework including full support for C# 7.0.
 Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 A good starting point for checking its capabilities is the `Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_ page in the Mono documentation.
 
@@ -24,8 +24,11 @@ A good starting point for checking its capabilities is the `Compatibility <http:
 Setup C# for Godot
 ------------------
 
-To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed (at least version 5.2), as well 
-as MSBuild (at least version 15.0) which should come with the Mono installation. 
+To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed. Godot 3.0.2 requires Mono 5.4, 3.0.3 requires Mono 5.12 on all platforms.
+You also need MSBuild (at least version 15.0) which should come with the Mono installation.
+
+.. note:: For instructions on installing older versions of Mono on Linux see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
+        Older versions of Mono for MacOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
 
 Additionally, your Godot version must have Mono support enabled, so take care to download the **Mono version** of Godot.
 If you are building Godot from source, make sure to follow the steps to include Mono support in your build outlined on the  :ref:`doc_compiling_with_mono` page.
@@ -37,7 +40,7 @@ While Godot does have its own scripting editor, its support for C# is kept
 minimal, and it's recommended that you use an external IDE or editor, such as
 Microsoft Visual Studio Code, or MonoDevelop, which provide auto-completion,
 debugging and other features useful when working with C#.
-To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll 
+To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll
 down to the bottom, to the ``Mono`` settings. Under Mono click on ``Editor``,
 and on that page choose your external editor of choice.
 
@@ -67,7 +70,7 @@ Example: If you created a script (e.g. ``Test.cs``) and delete it in Godot, comp
 You can for now simply open up the ``.csproj`` and look for the ``ItemGroup``, there should be a line included like the following:
 
 .. code-block:: xml
-   :emphasize-lines: 2
+    :emphasize-lines: 2
 
     <ItemGroup>
         <Compile Include="Test.cs" />``
@@ -79,7 +82,7 @@ Simply remove that line and your project should now again build fine. Same for r
 Example
 -------
 
-Here's a blank C# script with some comments to demonstrate how it works. 
+Here's a blank C# script with some comments to demonstrate how it works.
 
 .. code-block:: csharp
 
@@ -95,7 +98,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
         public override void _Ready()
         {
             // Called every time the node is added to the scene.
-            // Initialization here
+            // Initialization here.
             GD.Print("Hello from C# to Godot :)");
         }
 
@@ -108,6 +111,10 @@ Here's a blank C# script with some comments to demonstrate how it works.
 
 As you can see, the things normally in global scope in GDScript like Godot's ``print`` function are available in the ``GD`` namespace.
 For a list of those, see the class reference pages for :ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
+
+.. note::
+    Keep in mind that the class you wish to attach to your node should be named as the ``.cs`` file.
+    If not, you will get the following error and won't be able to run the scene: ``Cannot find class XXX for script res://XXX.cs``.
 
 General differences between C# and GDScript
 -------------------------------------------
@@ -125,10 +132,9 @@ As C# support is quite new to Godot, there are some growing pains and things tha
 Below is a list of the most important issues you should be aware of when diving into C# in Godot, but if in doubt also take a look over the official `issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
-- Signals can only be added with ``add_user_signal()`` and don't show up in UI (`#11956 <https://github.com/godotengine/godot/issues/11956>`_)
-- Debug output like stack traces, file path and line numbers is missing on Windows (`#14589 <https://github.com/godotengine/godot/issues/14589>`_)
 - Writing editor plugins and tool scripts in C# is not yet supported
-- Exporting a project may not yet work
+- Exporting a project may not yet work (`#15615 <https://github.com/godotengine/godot/issues/15615>`_)
+- Signals with parameters are broken in 3.0.2-stable (`#17553 <https://github.com/godotengine/godot/issues/17553>`_)
 
 Performance of C# in Godot
 --------------------------
@@ -136,3 +142,27 @@ Performance of C# in Godot
 According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_, performance of C# in Godot - while generally in the same order of magnitude - is roughly **~4x** that of GDScript in some naive cases.
 For full performance, C++ is still a little faster; the specifics are going to vary according to your use case. GDScript is likely fast enough for most general scripting workloads.
 C# is faster, but requires some expensive marshalling when talking to Godot.
+
+Using Nuget Packages in Godot
+-----------------------------
+
+`Nuget <https://www.nuget.org/>`_ Packages can be installed and used with Godot,
+as with any project. Many IDEs (such as vs code) can add packages directly. They
+can also be added manually by adding the package reference in the .csproj file
+located in the project root:
+
+.. code-block:: xml
+    :emphasize-lines: 2
+
+        <ItemGroup>
+            <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+        </ItemGroup>
+        ...
+    </Project>
+
+
+Whenever packages are added or modified, run nuget restore in the root of the
+project directory, to ensure that the nuget packages will be available for
+msbuild to use, run::
+
+  $ msbuild /t:restore

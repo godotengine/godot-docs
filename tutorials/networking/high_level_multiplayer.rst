@@ -105,7 +105,7 @@ Checking whether the tree is initialized as a server or client:
 
 ::
 
-    get_tree().is_networking_server()
+    get_tree().is_network_server()
 
 Terminating the networking feature:
 
@@ -305,7 +305,7 @@ Synchronizing game start
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Setting up players might take different amount of time on every peer due to lag, different hardware, or other reasons.
-To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be very useful:
+To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be useful:
 
 ::
 

@@ -32,8 +32,8 @@ For example, here's how a simple shooter game could be imagined:
 
 .. image:: img/shooter_instancing.png
 
-It's pretty easy to come up with a diagram like this for almost any kind
-of game. Just write down the parts of the game that you can visualize, and then
+You can come up with a diagram like this for almost any kind
+of game. Write down the parts of the game that you can visualize, and then
 add arrows to represent ownership of one component by another.
 
 Once you have a diagram like this, the recommended process for making a game is
@@ -79,4 +79,4 @@ scenes and instancing are used in real projects.
 
 Everything discussed here will become second nature to you once you start
 making games and putting these concepts into practice. For now, don't worry
-about it too much, and just go on to the next tutorial!
+about it too much, and go on to the next tutorial!

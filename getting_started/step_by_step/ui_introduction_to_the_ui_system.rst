@@ -25,7 +25,7 @@ This guide will get you started with UI design. You will learn:
 -  The five most common containers
 
 To learn how to control the interface and connect it to other scripts,
-read `Build your first game UI in Godot <#>`__.
+read :ref:`Build your first game UI in Godot <doc_ui_game_user_interface>`.
 
 Only use Control nodes when you design your interfaces. They have unique
 properties that allow them to work with one another. Other nodes like
@@ -51,8 +51,7 @@ The 5 most common UI elements
 -----------------------------
 
 Godot ships with dozens of Control nodes. A lot of them are here to help
-you build editor plugins and applications. To learn more about them,
-check the guide about `Advanced UI nodes and Themes <img/#>`__.
+you build editor plugins and applications.
 
 For most games, you'll only need five types of UI elements, and a few
 Containers. These five Control nodes are:
@@ -76,12 +75,14 @@ TextureRect
 It seems similar to the Sprite node but it offers multiple scaling modes.
 Set the Stretch Mode property to change its behaviour:
 
--  ``Tile`` makes the texture repeat, but it won't scale
--  The default, ``Scale and Expand (compat)``, lets you scale the
-   texture up, but it forces a minimal size
+- ``Scale On Expand (compat)`` scales the texture to fit the node’s bounding rectangle, only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode. Default mode for backwards compatibility.
+- ``Scale`` scales the texture to fit the node’s bounding rectangle
+- ``Tile`` makes the texture repeat, but it won't scale
 -  ``Keep`` and ``Keep Centered`` force the texture to remain at its
    original size, in the top left corner or the center of the frame
    respectively
+- ``Keep Aspect`` and ``Keep Aspect Centered`` scales the texture but force it to remain its original aspect ratio, in the top left corner or the center of the frame respectively
+- ``Keep Aspect Covered`` works just like ``Keep Aspect Centered`` but the shorter side fits the bounding rectangle and the other one clips to the node’s limits
 
 As with Sprite nodes, you can modulate the TextureRect's colour. Click
 the ``Modulate`` property and use the color picker.
@@ -155,7 +156,7 @@ NinePatchRect
 
 **NinePatchRect** takes a texture split in 3 rows and 3 columns. The
 center and the sides tile when you scale the texture, but it never
-scales the corners. It is very useful to build panels, dialogue boxes
+scales the corners. It is useful to build panels, dialogue boxes
 and scalable backgrounds for your UI.
 
 .. figure:: img/five_common_nodes_ninepatchrect.png
@@ -248,7 +249,7 @@ Every control node has Size Flags. They tell containers how the UI
 elements should scale. If you add the "Fill" flag to the Horizontal or
 Vertical property, the node's bounding box will take all the space it
 can, but it'll respect its siblings and retain its size. If there are 3
-TextureFrame nodes in an HBoxContainer, with the "Fill" flags on both
+TextureRect nodes in an HBoxContainer, with the "Fill" flags on both
 axes, they'll each take up to a third of the available space, but no
 more. The container will take over the node and resize it automatically.
 
@@ -262,7 +263,7 @@ edges of its parent, or until it's blocked by another UI node.
 
 .. figure:: img/textureframe_in_box_container_expand.png
 
-   The same example as bove, but the left node has the "Expand" size
+   The same example as above, but the center node has the "Expand" size
    flag
 
 You'll need some practice to understand the size tags, as their effect
@@ -347,5 +348,4 @@ between the rows and columns respectively.
    A GridContainer with 2 columns. It sizes each column automatically.
 
 Godot's UI system is complex, and has a lot more to offer. To learn how
-to design more advanced interface, read `Design advanced UI with other
-Control nodes <img/#>`__.
+to design more advanced interface, head to the :ref:`GUI section <toc-learn-features-gui>` of the docs.

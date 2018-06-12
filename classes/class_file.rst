@@ -42,7 +42,7 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_double<class_File_get_double>` **(** **)** const                                                                                                                            |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_error<class_File_get_error>` **(** **)** const                                                                                                                              |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`get_error<class_File_get_error>` **(** **)** const                                                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_float<class_File_get_float>` **(** **)** const                                                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -56,6 +56,10 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_pascal_string<class_File_get_pascal_string>` **(** **)**                                                                                                                    |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_path<class_File_get_path>` **(** **)** const                                                                                                                                |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_path_absolute<class_File_get_path_absolute>` **(** **)** const                                                                                                              |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_position<class_File_get_position>` **(** **)** const                                                                                                                        |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_real<class_File_get_real>` **(** **)** const                                                                                                                                |
@@ -66,13 +70,13 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_open<class_File_is_open>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open<class_File_open>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**                                                                                |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open<class_File_open>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**                                                                                |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_compressed<class_File_open_compressed>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**           |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_compressed<class_File_open_compressed>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**           |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_encrypted<class_File_open_encrypted>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**        |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_encrypted<class_File_open_encrypted>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**        |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)** |
+| :ref:`Error<enum_@globalscope_error>`          | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>` **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`seek<class_File_seek>` **(** :ref:`int<class_int>` position **)**                                                                                                               |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,7 +114,7 @@ Member Variables
 
 - :ref:`bool<class_bool>` **endian_swap** - If ``true`` the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
 
-Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
+Note that this is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
 
 
 Enums
@@ -146,13 +150,13 @@ Here's a sample on how to write and read from a file:
 
     func save(content):
         var file = File.new()
-        file.open("user://save_game.dat", file.WRITE)
+        file.open("user://save_game.dat", File.WRITE)
         file.store_string(content)
         file.close()
     
     func load():
         var file = File.new()
-        file.open("user://save_game.dat", file.READ)
+        file.open("user://save_game.dat", File.READ)
         var content = file.get_as_text()
         file.close()
         return content
@@ -228,7 +232,7 @@ Returns the next 64 bits from the file as a floating point number.
 
 .. _class_File_get_error:
 
-- :ref:`int<class_int>` **get_error** **(** **)** const
+- :ref:`Error<enum_@globalscope_error>` **get_error** **(** **)** const
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`@GlobalScope<class_@globalscope>`.
 
@@ -268,6 +272,18 @@ Returns the last time the ``file`` was modified in unix timestamp format or retu
 
 Returns a :ref:`String<class_string>` saved in Pascal format from the file.
 
+.. _class_File_get_path:
+
+- :ref:`String<class_string>` **get_path** **(** **)** const
+
+Returns the path as a :ref:`String<class_string>` for the current open file.
+
+.. _class_File_get_path_absolute:
+
+- :ref:`String<class_string>` **get_path_absolute** **(** **)** const
+
+Returns the absolute path as a :ref:`String<class_string>` for the current open file.
+
 .. _class_File_get_position:
 
 - :ref:`int<class_int>` **get_position** **(** **)** const
@@ -300,25 +316,25 @@ Returns ``true`` if the file is currently opened.
 
 .. _class_File_open:
 
-- :ref:`int<class_int>` **open** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**
+- :ref:`Error<enum_@globalscope_error>` **open** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags **)**
 
 Opens the file for writing or reading, depending on the flags.
 
 .. _class_File_open_compressed:
 
-- :ref:`int<class_int>` **open_compressed** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**
+- :ref:`Error<enum_@globalscope_error>` **open_compressed** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**
 
 Opens a compressed file for reading or writing. Use COMPRESSION\_\* constants to set ``compression_mode``.
 
 .. _class_File_open_encrypted:
 
-- :ref:`int<class_int>` **open_encrypted** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**
+- :ref:`Error<enum_@globalscope_error>` **open_encrypted** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key **)**
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
 .. _class_File_open_encrypted_with_pass:
 
-- :ref:`int<class_int>` **open_encrypted_with_pass** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)**
+- :ref:`Error<enum_@globalscope_error>` **open_encrypted_with_pass** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass **)**
 
 Opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 

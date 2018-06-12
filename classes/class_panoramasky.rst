@@ -14,13 +14,18 @@ PanoramaSky
 Brief Description
 -----------------
 
-
+A type of :ref:`Sky<class_sky>` used to draw a background texture.
 
 Member Variables
 ----------------
 
   .. _class_PanoramaSky_panorama:
 
-- :ref:`Texture<class_texture>` **panorama**
+- :ref:`Texture<class_texture>` **panorama** - :ref:`Texture<class_texture>` to be applied to the PanoramaSky.
 
+
+Description
+-----------
+
+A resource referenced in an :ref:`Environment<class_environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines except it uses a equirectangular sky map instead of a cube map.
 

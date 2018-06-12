@@ -20,12 +20,15 @@ You'll also learn to:
 
 Download the project files: :download:`ui_gui_design.zip <files/ui_gui_design.zip>` and extract the archive. Import the `start/` project in Godot to follow this tutorial. The `end/` folder contains the final result.
 
+.. note::
+
+    You can watch this tutorial as a `video on Youtube <https://www.youtube.com/watch?v=y1E_y9AIqow>`_.
 
 Breaking down the UI
 --------------------
 
 Let's break down the final UI and plan the containers we'll use. As in
-the `main menu tutorial <#>`__, it starts with a ``MarginContainer``.
+the :doc:`ui_main_menu`, it starts with a ``MarginContainer``.
 Then, we can see up to three columns:
 
 1. The life and energy counters on the left
@@ -56,12 +59,12 @@ we can jump into Godot and create our GUI.
 Create the base GUI
 -------------------
 
-There 2 possible approaches to the GUI: we can design elements in
+There are two possible approaches to the GUI: we can design elements in
 separate scenes and put them together, or prototype everything in a
 single scene and break it down later. I recommend working with a single
 scene as you can play with your UI's placement and proportions faster
 this way. Once it looks good, you can save entire sections of the node
-tree as reusable sub-scenes. We'll do just that in a moment.
+tree as reusable sub-scenes. We'll do that in a moment.
 
 For now, let's start with a few containers.
 
@@ -170,11 +173,11 @@ the ``Title`` and ``Number``, and drag and drop them onto
    By using the Background node as the two textures' parent, we take
    control away from the Count MarginContainer
 
-Select the ``Title`` and in the Inspector, change its ``Stretch Mode``
-property to ``Keep Centered``. Resize it in the viewport with the
-``Select Mode`` tool so it only takes the left half of the background.
-Next, select the ``Number`` node. In the viewport, click the ``Layout``
-menu and click ``Full Rect``. The node will resize to fit
+Select the ``Title`` and in the Inspector, change its ``Stretch Mode`` property
+to ``Keep Centered``. Next find the ``Rect`` category in the Inspector and
+change the ``Size`` property to (50, 40) so it only takes the left half of
+the background.  Next, select the ``Number`` node. In the viewport, click the
+``Layout`` menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
 property to ``Right``, and the ``VAlign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
@@ -217,7 +220,7 @@ again and tweak the ``Bottom`` property until the text aligns with the
 
    With a Bottom value of 2 pixels, the Number aligns with the Title
 
-With this, we just finished the hardest part of the GUI.
+With this, we finished the hardest part of the GUI.
 Congratulations! Let's move on to the simpler nodes.
 
 Add the progress bar
@@ -483,7 +486,7 @@ Now, select the ``TextureProgress`` node. Drag the ``energy_bar_bg.png``
 file onto the ``Under`` slot and do the same for ``energy_bar_fill.png``
 and drop it onto the ``Progress`` texture slot.
 
-you can resize the node vertically so that its bounding rectangle fits
+You can resize the node vertically so that its bounding rectangle fits
 the gauge. Do the same with the ``Count`` node until its size aligns
 with that of the bar. Because the minimal size of ``TextureProgress`` is
 set based on its textures, you won't be able to downsize the ``Count``
@@ -548,8 +551,8 @@ onto the ``Bars`` container in the scene tree. Do the same for the
 
    The LifeBar and the EnergyBar align automatically
 
-Now, drag and drop the BombCounter and RupeeCounter scenes onto the
-Counters node. They'll resize automatically.
+Now, drag and drop the ``BombCounter.tscn`` and ``RupeeCounter.tscn`` scenes onto the
+``Counters`` node. They'll resize automatically.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
 
@@ -574,7 +577,7 @@ centers inside the ``HBoxContainer``.
 We have one small issue left with the EP label on the EnergyBar: the 2
 bars should align vertically. Click the icon next to the ``EnergyBar``
 node to open its scene. Select the ``Count`` node and scroll down to the
-``Custom Constant`` section. As a add a ``Margin Left`` of ``20``. In
+``Custom Constant`` section. Add a ``Margin Left`` of ``20``. In
 the ``Rect`` section set the node's ``Min Size`` back to 100, the same
 value as on the LifeBar. The ``Count`` should now have some margin on
 the left. If you save and go back to the GUI scene, it will be aligned

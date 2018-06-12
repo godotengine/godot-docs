@@ -23,6 +23,10 @@ Member Variables
 
 - :ref:`float<class_float>` **length** - The ray's length.
 
+  .. _class_RayShape2D_slips_on_slope:
+
+- :ref:`bool<class_bool>` **slips_on_slope** - If ``true`` allow the shape to return the correct normal. Default value: ``false``.
+
 
 Description
 -----------

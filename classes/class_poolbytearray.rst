@@ -52,7 +52,7 @@ Member Functions
 Description
 -----------
 
-Raw byte array. Contains bytes. Optimized for memory usage, can't fragment the memory.
+Raw byte array. Contains bytes. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
 Member Function Description
 ---------------------------

@@ -73,9 +73,14 @@ Obtaining each transform can be achieved with the following functions:
 Finally then, to convert a CanvasItem local coordinates to screen
 coordinates, just multiply in the following order:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var screen_coord = get_viewport_transform() * ( get_global_transform() * local_pos )
+
+ .. code-tab:: csharp
+
+    var screenCord = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
 
 Keep in mind, however, that it is generally not desired to work with
 screen coordinates. The recommended approach is to simply work in Canvas
@@ -89,10 +94,19 @@ It is often desired to feed custom input events to the scene tree. With
 the above knowledge, to correctly do this, it must be done the following
 way:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var local_pos = Vector2(10, 20) # local to Control/Node2D
     var ie = InputEventMouseButton.new()
     ie.button_index = BUTTON_LEFT
     ie.position = get_viewport_transform() * (get_global_transform() * local_pos)
     get_tree().input_event(ie)
+
+ .. code-tab:: csharp
+
+    var localPos = new Vector2(10,20); // local to Control/Node2D
+    var ie = new InputEventMouseButton();
+    ie.ButtonIndex = (int)ButtonList.Left;
+    ie.Position = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
+    GetTree().InputEvent(ie);

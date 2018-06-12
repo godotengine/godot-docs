@@ -161,7 +161,7 @@ As we don't have a track already set up for the transform/location
 property, Godot asks, whether it should set it up for us. Click on
 "Create".
 
-This creates a new track and our very first keyframe at the beginning of
+This creates a new track and our first keyframe at the beginning of
 the timeline:
 
 .. figure:: img/animation_track.png

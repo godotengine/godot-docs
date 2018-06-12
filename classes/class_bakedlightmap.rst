@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`bake<class_BakedLightmap_bake>` **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`debug_bake<class_BakedLightmap_debug_bake>` **(** **)**                                                                               |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`BakeError<enum_bakedlightmap_bakeerror>`  | :ref:`bake<class_BakedLightmap_bake>` **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`debug_bake<class_BakedLightmap_debug_bake>` **(** **)**                                                                               |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -103,7 +103,7 @@ Member Function Description
 
 .. _class_BakedLightmap_bake:
 
-- :ref:`int<class_int>` **bake** **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
+- :ref:`BakeError<enum_bakedlightmap_bakeerror>` **bake** **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
 .. _class_BakedLightmap_debug_bake:
 

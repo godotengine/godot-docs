@@ -24,9 +24,9 @@ Member Functions
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | :ref:`_is_tile_bound<class_TileSet__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`autotile_get_bitmask_mode<class_TileSet_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                      |
+| :ref:`BitmaskMode<enum_tileset_bitmaskmode>`       | :ref:`autotile_get_bitmask_mode<class_TileSet_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                      |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`autotile_set_bitmask_mode<class_TileSet_autotile_set_bitmask_mode>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` mode **)**                                                                                                                                                |
+| void                                               | :ref:`autotile_set_bitmask_mode<class_TileSet_autotile_set_bitmask_mode>` **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_tileset_bitmaskmode>` mode **)**                                                                                                                         |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`clear<class_TileSet_clear>` **(** **)**                                                                                                                                                                                                                                             |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,6 +72,10 @@ Member Functions
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                      | :ref:`tile_get_texture_offset<class_TileSet_tile_get_texture_offset>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                          |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TileMode<enum_tileset_tilemode>`             | :ref:`tile_get_tile_mode<class_TileSet_tile_get_tile_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                    |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`tile_get_z_index<class_TileSet_tile_get_z_index>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                        |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`tile_set_light_occluder<class_TileSet_tile_set_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_occluderpolygon2d>` light_occluder **)**                                                                                                              |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`tile_set_material<class_TileSet_tile_set_material>` **(** :ref:`int<class_int>` id, :ref:`ShaderMaterial<class_shadermaterial>` material **)**                                                                                                                                      |
@@ -100,6 +104,10 @@ Member Functions
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`tile_set_texture_offset<class_TileSet_tile_set_texture_offset>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` texture_offset **)**                                                                                                                                  |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`tile_set_tile_mode<class_TileSet_tile_set_tile_mode>` **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_tileset_tilemode>` tilemode **)**                                                                                                                                         |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`tile_set_z_index<class_TileSet_tile_set_z_index>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` z_index **)**                                                                                                                                                               |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enums
 -----
@@ -109,7 +117,16 @@ Enums
 enum **BitmaskMode**
 
 - **BITMASK_2X2** = **0**
-- **BITMASK_3X3** = **1**
+- **BITMASK_3X3_MINIMAL** = **1**
+- **BITMASK_3X3** = **2**
+
+  .. _enum_TileSet_TileMode:
+
+enum **TileMode**
+
+- **SINGLE_TILE** = **0**
+- **AUTO_TILE** = **1**
+- **ANIMATED_TILE** = **2**
 
   .. _enum_TileSet_AutotileBindings:
 
@@ -145,11 +162,11 @@ Member Function Description
 
 .. _class_TileSet_autotile_get_bitmask_mode:
 
-- :ref:`int<class_int>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
+- :ref:`BitmaskMode<enum_tileset_bitmaskmode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
 
 .. _class_TileSet_autotile_set_bitmask_mode:
 
-- void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` mode **)**
+- void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_tileset_bitmaskmode>` mode **)**
 
 .. _class_TileSet_clear:
 
@@ -271,6 +288,14 @@ Return the texture of the tile.
 
 Return the texture offset of the tile.
 
+.. _class_TileSet_tile_get_tile_mode:
+
+- :ref:`TileMode<enum_tileset_tilemode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** const
+
+.. _class_TileSet_tile_get_z_index:
+
+- :ref:`int<class_int>` **tile_get_z_index** **(** :ref:`int<class_int>` id **)** const
+
 .. _class_TileSet_tile_set_light_occluder:
 
 - void **tile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_occluderpolygon2d>` light_occluder **)**
@@ -346,5 +371,13 @@ Set the texture of the tile.
 - void **tile_set_texture_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` texture_offset **)**
 
 Set the texture offset of the tile.
+
+.. _class_TileSet_tile_set_tile_mode:
+
+- void **tile_set_tile_mode** **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_tileset_tilemode>` tilemode **)**
+
+.. _class_TileSet_tile_set_z_index:
+
+- void **tile_set_z_index** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` z_index **)**
 
 

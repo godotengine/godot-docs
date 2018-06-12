@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptDeconstruct_type:
 
-- :ref:`Type<enum_variant_type>` **type** - The type to deconstruct.
+- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type** - The type to deconstruct.
 
 
 Description

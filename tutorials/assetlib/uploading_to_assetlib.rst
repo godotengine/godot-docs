@@ -37,7 +37,7 @@ is required in the submission form here as well.
 * **Godot version**: 
     The version of the engine that the asset works with.
     Currently it's not possible to have a single asset entry contain downloads for
-    multiple engine versions, so you may need to re-submit the asset mulitple times,
+    multiple engine versions, so you may need to re-submit the asset multiple times,
     with an entry for each Godot version it supports. This is particularly important
     when dealing with major versions of the engine, such as Godot 2.x and Godot 3.x.
 * **Version**: 

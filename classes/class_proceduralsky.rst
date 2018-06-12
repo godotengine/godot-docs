@@ -14,74 +14,74 @@ ProceduralSky
 Brief Description
 -----------------
 
-
+Type of :ref:`Sky<class_sky>` that is generated procedurally based on user input parameters.
 
 Member Variables
 ----------------
 
   .. _class_ProceduralSky_ground_bottom_color:
 
-- :ref:`Color<class_color>` **ground_bottom_color**
+- :ref:`Color<class_color>` **ground_bottom_color** - Color of the ground at the bottom.
 
   .. _class_ProceduralSky_ground_curve:
 
-- :ref:`float<class_float>` **ground_curve**
+- :ref:`float<class_float>` **ground_curve** - How quickly the :ref:`ground_horizon_color<class_ProceduralSky_ground_horizon_color>` fades into the :ref:`ground_bottom_color<class_ProceduralSky_ground_bottom_color>`.
 
   .. _class_ProceduralSky_ground_energy:
 
-- :ref:`float<class_float>` **ground_energy**
+- :ref:`float<class_float>` **ground_energy** - Amount of energy contribution from the ground.
 
   .. _class_ProceduralSky_ground_horizon_color:
 
-- :ref:`Color<class_color>` **ground_horizon_color**
+- :ref:`Color<class_color>` **ground_horizon_color** - Color of the ground at the horizon.
 
   .. _class_ProceduralSky_sky_curve:
 
-- :ref:`float<class_float>` **sky_curve**
+- :ref:`float<class_float>` **sky_curve** - How quickly the :ref:`sky_horizon_color<class_ProceduralSky_sky_horizon_color>` fades into the :ref:`sky_top_color<class_ProceduralSky_sky_top_color>`.
 
   .. _class_ProceduralSky_sky_energy:
 
-- :ref:`float<class_float>` **sky_energy**
+- :ref:`float<class_float>` **sky_energy** - Amount of energy contribution from the sky.
 
   .. _class_ProceduralSky_sky_horizon_color:
 
-- :ref:`Color<class_color>` **sky_horizon_color**
+- :ref:`Color<class_color>` **sky_horizon_color** - Color of the sky at the horizon.
 
   .. _class_ProceduralSky_sky_top_color:
 
-- :ref:`Color<class_color>` **sky_top_color**
+- :ref:`Color<class_color>` **sky_top_color** - Color of the sky at the top.
 
   .. _class_ProceduralSky_sun_angle_max:
 
-- :ref:`float<class_float>` **sun_angle_max**
+- :ref:`float<class_float>` **sun_angle_max** - Distance from center of sun where it fades out completely.
 
   .. _class_ProceduralSky_sun_angle_min:
 
-- :ref:`float<class_float>` **sun_angle_min**
+- :ref:`float<class_float>` **sun_angle_min** - Distance from sun where it goes from solid to starting to fade.
 
   .. _class_ProceduralSky_sun_color:
 
-- :ref:`Color<class_color>` **sun_color**
+- :ref:`Color<class_color>` **sun_color** - Color of the sun.
 
   .. _class_ProceduralSky_sun_curve:
 
-- :ref:`float<class_float>` **sun_curve**
+- :ref:`float<class_float>` **sun_curve** - How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_sun_angle_max>`
 
   .. _class_ProceduralSky_sun_energy:
 
-- :ref:`float<class_float>` **sun_energy**
+- :ref:`float<class_float>` **sun_energy** - Amount of energy contribution from the sun.
 
   .. _class_ProceduralSky_sun_latitude:
 
-- :ref:`float<class_float>` **sun_latitude**
+- :ref:`float<class_float>` **sun_latitude** - The suns height using polar coordinates.
 
   .. _class_ProceduralSky_sun_longitude:
 
-- :ref:`float<class_float>` **sun_longitude**
+- :ref:`float<class_float>` **sun_longitude** - The direction of the sun using polar coordinates.
 
   .. _class_ProceduralSky_texture_size:
 
-- :ref:`TextureSize<enum_proceduralsky_texturesize>` **texture_size**
+- :ref:`TextureSize<enum_proceduralsky_texturesize>` **texture_size** - Size of :ref:`Texture<class_texture>` that the ProceduralSky will generate.
 
 
 Enums
@@ -98,4 +98,11 @@ enum **TextureSize**
 - **TEXTURE_SIZE_4096** = **4**
 - **TEXTURE_SIZE_MAX** = **5**
 
+
+Description
+-----------
+
+ProceduralSky provides a way to create an effective background quickly by defining procedural parameters for the sun, the sky and the ground. The sky and ground are very similar, they are defined by a color at the horizon, another color, and finally an easing curve to interpolate between these two colors. Similarly the sun is described by a position in the sky, a color, and an easing curve. However, the sun also defines a minimum and maximum angle, these two values define at what distance the easing curve begins and ends from the sun, and thus end up defining the size of the sun in the sky.
+
+The ProceduralSky is updated on the CPU after the parameters change and stored in a texture and then displayed as a background in the scene. This makes it relatively unsuitable for realtime updates during gameplay. But with a small texture size it is still feasible to update relatively frequently becuase it is updated on a background thread when multi-threading is available.
 

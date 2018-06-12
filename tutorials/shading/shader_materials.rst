@@ -45,7 +45,7 @@ Converting to ShaderMaterial
 ----------------------------
 
 It is possible to convert from SpatialMaterial, CanvasItemMaterial and
-ParticlesMaterial to ShaderMaterial. Just go to the material properties
+ParticlesMaterial to ShaderMaterial. To do this go to the material properties
 and enable the convert option.
 
 .. image:: img/shader_material_convert.png
