@@ -7,13 +7,13 @@ Introduction
 ~~~~~~~~~~~~
 
 Godot follows a balanced performance philosophy. In performance world,
-there are always trade-offs, which consist in trading speed for
+there are always trade-offs which consist in trading speed for
 usability and flexibility. Some practical examples of this are:
 
 -  Rendering objects efficiently in high amounts is easy, but when a
-   large scene must be rendered it can become inefficient. To solve
+   large scene must be rendered, it can become inefficient. To solve
    this, visibility computation must be added to the rendering, which
-   makes rendering less efficient, but at the same time less objects are
+   makes rendering less efficient, but, at the same time, less objects are
    rendered, so efficiency overall improves.
 -  Configuring the properties of every material for every object that
    needs to be rendered is also slow. To solve this, objects are sorted
