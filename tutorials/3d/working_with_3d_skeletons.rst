@@ -185,14 +185,12 @@ point of the Transform. So it is base part of the bone. In Blender you can
 go to Pose mode and try there to rotate bones. They will rotate around
 their origin.
 
-
 But what about the bone tip? We can't know things like the bone length,
 which we need for many things, without knowing the tip location. For all
 bones in a chain, except for the last one, we can calculate the tip location. It is
 simply a child bone's origin. There are situations when this is not
 true, such as for non-connected bones, but that is OK for us for now, as it is
 not important regarding Transforms.
-
 
 Notice that the leaf bone tip is nowhere to be found. A leaf bone is a bone
 without children, so you don't have any information about its tip.
@@ -293,7 +291,7 @@ The full code for arm control is this:
 
     var bone = "upperarm"
     var coordinate = 0
-    
+
     func set_bone_rot(bone, ang):
         var b = skel.find_bone(bone)
         var rest = skel.get_bone_rest(b)

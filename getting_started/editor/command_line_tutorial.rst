@@ -49,8 +49,8 @@ Creating a project
 ------------------
 
 
-Creating a project from the command line is simple, just navigate the
-shell to the desired place and just make a project.godot file.
+Creating a project from the command line can be done by navigating the
+shell to the desired place and making a project.godot file.
 
 
 ::
@@ -85,7 +85,7 @@ Erasing a scene
 ---------------
 
 Godot is friends with your filesystem and will not create extra
-metadata files. Simply use ``rm`` to erase a scene file. Make sure nothing
+metadata files. Use ``rm`` to erase a scene file. Make sure nothing
 references that scene or else an error will be thrown upon opening.
 
 ::

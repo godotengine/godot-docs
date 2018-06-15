@@ -76,7 +76,7 @@ This approach has the disadvantage that the running game can't be explored from 
 (though this may be supported in the future and displaying collision gizmos in the running game is already possible),
 but in exchange has several advantages:
 
-- Running the project and closing it is very fast (Unity has to save, run the project, close the project, and then reload the previous state).
+- Running the project and closing it is fast (Unity has to save, run the project, close the project, and then reload the previous state).
 - Live editing is a lot more useful because changes done to the editor take effect immediately in the game and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
 - The editor is more stable because the game runs in a separate process.
 
@@ -144,8 +144,8 @@ new specific node that has collision properties. Godot features various collisio
 
 - Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
 
-    - First, this system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: This is inheritance.
-    - Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers the second and third questions: Even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
+    - First, this system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
+    - Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
 
 
 These are the most important concepts you need to remember: "node", "parent node", and "child node".
