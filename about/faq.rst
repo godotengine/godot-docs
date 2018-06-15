@@ -85,7 +85,7 @@ but we strongly encourage you to try it and see the benefits for yourself.
 GDScript is designed to integrate from the ground to the way Godot
 works, more than any other language, and is simple and easy to
 learn. Takes at most a day or two to get comfortable and it's easy
-to see the benefits once you do. Please do the effort to learn
+to see the benefits once you do. Please do make the effort to learn
 GDScript, you will not regret it.
 
 Godot C++ API is also efficient and easy to use (the entire Godot
@@ -221,7 +221,7 @@ Camera XFov or YFov.
 And that's it! Your game should work in multiple resolutions.
 
 If there is a desire to make your game also work on ancient
-devices with tiny screens (less than 300 pixels in width), you can use
+devices with tiny screens (fewer than 300 pixels in width), you can use
 the export option to shrink images, and set that build to be used for
 certain screen sizes in the App Store or Google Play.
 
