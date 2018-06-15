@@ -6,13 +6,8 @@ SceneTree
 Introduction
 ------------
 
-<<<<<<< HEAD
-This is where things start getting abstract but don't panic. There's
-not really much more depth than this.
-=======
-This is where things start getting abstract, but don't panic. There's 
+This is where things start getting abstract, but don't panic. There's
 not much more depth than this.
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 In previous tutorials, everything revolved around the concept of
 nodes. Scenes are simply a collection of nodes. They become active once
@@ -38,16 +33,9 @@ main/main.cpp file in the source code if you are ever interested to
 see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
-<<<<<<< HEAD
-methods for initialization, idle (frame-synchronized callback), fixed
-(physics-synchronized callback), and input. Again, this is really low
-level and when making games in Godot, writing your own MainLoop does not
-even make sense.
-=======
 methods, for initialization, idle (frame-synchronized callback), fixed
 (physics-synchronized callback), and input. Again, this is low
 level and when making games in Godot, writing your own MainLoop seldom makes sense.
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 
 SceneTree
 ---------
@@ -92,16 +80,12 @@ two different ways:
         get_tree().get_root() # access via scenemainloop
         get_node("/root") # access via absolute path
 
-<<<<<<< HEAD
-This node contains the main viewport. Anything that is a child of a
-=======
  .. code-tab:: csharp
 
         GetTree().GetRoot(); // access via scenemainloop
         GetNode("/root"); // access via absolute path
 
 This node contains the main viewport, anything that is a child of a
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
 :ref:`Viewport <class_Viewport>`
 is drawn inside of it by default, so it makes sense that the top of all
 nodes is always a node of this type otherwise nothing would be seen!

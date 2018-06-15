@@ -129,10 +129,7 @@ must be used.
             var bullet = preload("res://bullet.tscn").instance()
             add_child(bullet)
 
-<<<<<<< HEAD
-This method creates the nodes in the scene's hierarchy, configures
-them (sets all the properties) and returns the root node of the scene,
-=======
+
  .. code-tab:: csharp
 
     private PackedScene _bulletScene = (PackedScene)GD.Load("res://bullet.tscn");
@@ -143,9 +140,8 @@ them (sets all the properties) and returns the root node of the scene,
         AddChild(bullet);
     }
 
-This method creates the nodes in the scene's hierarchy, configures 
-them (sets all the properties) and returns the root node of the scene, 
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
+This method creates the nodes in the scene's hierarchy, configures
+them (sets all the properties) and returns the root node of the scene,
 which can be added to any other node.
 
 The approach has several advantages. As the

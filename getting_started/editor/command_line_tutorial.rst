@@ -48,12 +48,10 @@ For example, the full command for exporting your game (as explained below) might
 Creating a project
 ------------------
 
-<<<<<<< HEAD
+
 Creating a project from the command line is simple, just navigate the
 shell to the desired place and just make a project.godot file.
-=======
-To create a project from the command line, navigate the to the desired place and create an empty project.godot file.
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
+
 
 ::
 
@@ -61,11 +59,9 @@ To create a project from the command line, navigate the to the desired place and
     user@host:~$ cd newgame
     user@host:~/newgame$ touch project.godot
 
-<<<<<<< HEAD
-That alone makes an empty Godot project.
-=======
+
 The project can now be opened with Godot.
->>>>>>> b2017534d6a8372fffd27c6b512ba9157405d6e3
+
 
 Running the editor
 ------------------
