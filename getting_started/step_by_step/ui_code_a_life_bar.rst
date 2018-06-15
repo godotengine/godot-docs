@@ -192,7 +192,7 @@ Our GUI is ready to receive the ``health`` value updates from the
 
 .. note::
 
-    There are many useful built-in signals like `enter_tree` and `exit_tree`, that all nodes emit when they are respectively created and destroyed. You can also create your own using the `signal` keyword. On the `Player` node, you'll find two signals we created for you: `died` and `health_changed`.
+    There are many useful built-in signals like `enter_tree` and `exit_tree`, that all nodes emit when they are respectively created and destroyed. You can also create your own using the `signal` keyword. On the `Player` node, you'll find two signals we created for you: `died` and `took_damage`.
 
 Why don't we directly get the ``Player`` node in the ``_process``
 function and look at the health value? Accessing nodes this way creates
@@ -221,21 +221,21 @@ the ``Player`` node in the scene dock to select it. Head down to the
 Inspector and click on the Node tab. This is the place to connect nodes
 to listen the one you selected.
 
-The first section lists custom signals defined in ``player.GD``:
+The first section lists custom signals defined in ``Player.GD``:
 
 -  ``died`` is emitted when the character died. We will use it in a
    moment to hide the UI.
--  ``health_changed`` is emitted when the character got hit.
+-  ``took_damage`` is emitted when the character got hit.
 
 .. figure:: img/lifebar_tutorial_health_changed_signal.png
 
    We're connecting to the health\_changed signal
 
-Select ``health_changed`` and click on the Connect button in the bottom
+Select ``took_damage`` and click on the Connect button in the bottom
 right corner to open the Connect Signal window. On the left side you can
 pick the node that will listen to this signal. Select the ``GUI`` node.
 The right side of the screen lets you pack optional values with the
-signal. We already took care of it in ``player.GD``. In general I
+signal. We already took care of it in ``Player.GD``. In general I
 recommend not to add too many arguments using this window as they're
 less convenient than doing it from the code.
 
@@ -245,7 +245,7 @@ less convenient than doing it from the code.
 
 .. tip::
 
-    You can optionally connect nodes from the code. But doing it from the editor has two advantages:
+    You can optionally connect nodes from the code. However doing it from the editor has two advantages:
 
     1. Godot can write new callback functions for you in the connected script
     2. An emitter icon appears next to the node that emits the signal in the Scene dock
@@ -258,7 +258,7 @@ lets you process them. If you look to the right, there is a "Make
 Function" radio button that is on by default. Click the connect button
 at the bottom of the window. Godot creates the method inside the ``GUI``
 node. The script editor opens with the cursor inside a new
-``_on_player_health_changed`` function.
+``_on_Player_took_damage`` function.
 
 .. note::
 
@@ -272,13 +272,13 @@ node. The script editor opens with the cursor inside a new
    Godot writes the callback method for you and takes you to it
 
 Inside the parens after the function name, add a ``player_health``
-argument. When the player emits the ``health_changed`` signal it will send
+argument. When the player emits the ``took_damage`` signal it will send
 its current ``health`` alongside it. Your code should look like:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_health_changed(player_health):
+    func _on_Player_took_damage(player_health):
         pass
 
  .. code-tab:: csharp
@@ -299,7 +299,7 @@ its current ``health`` alongside it. Your code should look like:
    In Player.gd, when the Player emits the health\_changed signal, it also
    sends its health value
 
-Inside ``_on_Player_health_changed`` let's call a second function called
+Inside ``_on_Player_took_damage`` let's call a second function called
 ``update_health`` and pass it the ``player_health`` variable.
 
 .. note::
@@ -309,7 +309,7 @@ Inside ``_on_Player_health_changed`` let's call a second function called
     1. The name makes it clear for our future selves and teammates that when the player took damage, we update the health count on the GUI
     2. We will reuse this method a bit later
 
-Create a new ``update_health`` method below ``_on_Player_health_changed``.
+Create a new ``update_health`` method below ``_on_Player_took_damage``.
 It takes a new\_value as its only argument:
 
 .. tabs::
@@ -434,7 +434,7 @@ string. That's why we write it as ``"animated_health"``.
 The starting point is the current value the bar's at. We still have to
 code this part, but it's going to be ``animated_health``. The end point
 of the animation is the ``Player``'s ``health`` after the
-``health_changed``: that's ``new_value``. And ``0.6`` is the animation's
+``took_damage``: that's ``new_value``. And ``0.6`` is the animation's
 duration in seconds.
 
 ::
@@ -560,7 +560,7 @@ Try the game again to see a nice blocky animation.
 .. tip::
 
     Every time the player takes a hit, the ``GUI`` calls
-    ``_on_Player_health_changed``, which in turn calls ``update_health``. This
+    ``_on_Player_took_damage``, which in turn calls ``update_health``. This
     updates the animation and the ``number_label`` and ``bar`` follow in
     ``_process``. The animated life bar that shows the health going down gradually
     is a trick. It makes the GUI feel alive. If the ``Player`` takes 3 damage,

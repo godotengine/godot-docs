@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial is created after a topic that is a little dark for most
-users, and explains all the 2D transforms going on for nodes from the
+users and explains all the 2D transforms going on for nodes from the
 moment they draw their content locally to the time they are drawn into
 the screen.
 
@@ -38,11 +38,11 @@ Stretch transform
 
 Finally, viewports have a *Stretch Transform*, which is used when
 resizing or stretching the screen. This transform is used internally (as
-described in :ref:`doc_multiple_resolutions`), but can also be manually set
+described in :ref:`doc_multiple_resolutions`) but can also be manually set
 on each viewport.
 
 Input events received in the :ref:`MainLoop._input_event() <class_MainLoop__input_event>`
-callback are multiplied by this transform, but lack the ones above. To
+callback are multiplied by this transform but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
 :ref:`CanvasItem.make_input_local() <class_CanvasItem_make_input_local>`
 function was added for convenience.
@@ -70,7 +70,7 @@ Obtaining each transform can be achieved with the following functions:
 | CanvasLayer+GlobalCanvas+Stretch | :ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_get_viewport_transform>` |
 +----------------------------------+--------------------------------------------------------------------------------------+
 
-Finally then, to convert a CanvasItem local coordinates to screen
+Finally, then, to convert a CanvasItem local coordinates to screen
 coordinates, just multiply in the following order:
 
 .. tabs::

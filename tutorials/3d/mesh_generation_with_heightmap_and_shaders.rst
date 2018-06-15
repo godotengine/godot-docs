@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial will help you to use Godot shaders to deform a plane
-mesh so it appears like a basic terrain. Remember that this solution
+mesh so that it appears like a basic terrain. Remember that this solution
 has pros and cons.
 
 Pros:
@@ -28,7 +28,7 @@ See this tutorial as an introduction, not a method that you should
 employ in your games, except if you intend to do LOD. Otherwise, this is
 probably not the best way.
 
-However, let's first create a heightmap,or a 2D representation of the terrain.
+However, let's first create a heightmap, or a 2D representation of the terrain.
 To do this, I'll use GIMP, but you can use any image editor you like.
 
 The heightmap
@@ -120,7 +120,7 @@ what you want.
 
 In our default scene (3D), create a root node "Spatial".
 
-Create a MeshInstance node as a child of the node we just created. 
+Create a MeshInstance node as a child of the node we just created.
 Then, load the Mesh selecting "Load" and then our "plane.obj" file.
 
 .. image:: img/14_Godot_LoadMesh.png
@@ -145,10 +145,10 @@ editor opens.
 
 .. image:: img/18_Godot_ShaderEditorOpened.png
 
-Let's start writing our shader. If you don't know how to use shaders in Godot 
+Let's start writing our shader. If you don't know how to use shaders in Godot
 you can check the :ref:`doc_shading_language` page.
 
-Let's start with the Fragment part. 
+Let's start with the Fragment part.
 This one is used to texture the plane using an image.
 For this example, we will texture it with the heightmap image itself,
 so we'll actually see mountains as brighter regions and canyons as
@@ -158,9 +158,9 @@ darker regions. Use this code:
 
     shader_type spatial;
     render_mode unshaded;
-    
+
     uniform sampler2D source;
-    
+
     void fragment() {
         ALBEDO = texture(source, UV).rgb;
     }
@@ -172,10 +172,10 @@ greyscale image. We take a parameter (``uniform``) as a ``sampler2D``,
 which will be the texture of our heightmap.
 
 Then, we set the color of every pixel of the image given by
-``texture(source, UV).rgb`` setting it to the ALBEDO variable. 
+``texture(source, UV).rgb`` setting it to the ALBEDO variable.
 Remember that the ``UV`` variable is a shader variable that returns
 the 2D position of the pixel in the texture image, according to the
-vertex we are currently dealing with. That is the use of the UV Layout 
+vertex we are currently dealing with. That is the use of the UV Layout
 we made before.
 
 However, the plane is displayed white! This is because we didn't set
@@ -185,7 +185,7 @@ the texture file and the color to use.
 
 In the Inspector, click the back arrow to get back to the
 ShaderMaterial. This is where you want to set the texture and the
-color. Click the "Shader Param" line, in "Source", click "Load" 
+color. Click the "Shader Param" line, in "Source", click "Load"
 and select the texture file "heightmap.png". Now you will see
 our heightmap.
 
