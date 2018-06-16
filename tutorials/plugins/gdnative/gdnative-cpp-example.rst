@@ -209,7 +209,7 @@ And our module should compile. You should now be able to find your module in ``d
 Using your GDNative module
 --------------------------
 
-Before we jump back into Godot we need to create two more files. Both can now be created through the interface in Godot but I find it easier to just create them directly.
+Before we jump back into Godot we need to create two more files in ``demo/bin/`` . Both can now be created through the interface in Godot but I find it easier to just create them directly.
 
 The first is a file that lets Godot know what dynamic libraries should be loaded for each platform and is called ``gdexample.gdnlib``.
 
@@ -259,7 +259,7 @@ The second file we need to create is a file we need to create for each native_sc
     _sections_unfolded = [ "Resource" ]
 
 This is a standard Godot resource and you could just create that directly inside of your scene but having this as a resource file makes life a lot easier in (re)using your native_script. 
-The important bits here are that we're pointing to our gdnlib file so Godot knows which dynamic library contains our native_script, and the ``class_name`` which identifies the natice_script in our plugin we want to use.
+The important bits here are that we're pointing to our gdnlib file so Godot knows which dynamic library contains our native_script, and the ``class_name`` which identifies the native_script in our plugin we want to use.
 
 Ok, we're all setup. Time to jump back into Godot. We load up the main scene we created way back in the beginning and now we add a Sprite to our scene:
 
