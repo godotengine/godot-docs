@@ -49,6 +49,17 @@ Godot provides a `Python
 Plugin <https://github.com/godotengine/collada-exporter>`__
 that will do a much better job of exporting the scenes.
 
+Exporting ESCN files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The most powerful one, called `godot-blender-exporter
+<https://github.com/godotengine/godot-blender-exporter>`__. 
+It uses .escn files which is kind of another name of .tscn file(Godot scene file),
+it keeps as much information as possible from a Blender scene.
+
+ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
+its functionality and usage.
+
 Import workflows
 ----------------
 
