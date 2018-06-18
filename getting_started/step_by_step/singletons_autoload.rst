@@ -230,7 +230,7 @@ and scene_b.gd:
     # Add to 'scene_a.gd'.
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_b.tscn")
+            get_node("/root/global").goto_scene("res://scene_b.scn")
 
  .. code-tab:: csharp
 
@@ -250,7 +250,7 @@ and
     # Add to 'scene_b.gd'.
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_a.tscn")
+            get_node("/root/global").goto_scene("res://scene_a.scn")
 
  .. code-tab:: csharp
 
