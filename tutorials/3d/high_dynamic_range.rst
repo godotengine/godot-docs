@@ -27,8 +27,8 @@ started:
 
 .. image:: img/hdr_tonemap.png
 
-Except the scene is more contrasted, because there is a higher light
-range in play. What is this all useful for? The idea is that the scene
+Except the scene is more contrasted because there is a higher light
+range at play. What is this all useful for? The idea is that the scene
 luminance will change while you move through the world, allowing
 situations like this to happen:
 
@@ -68,12 +68,12 @@ to do this:
 SRGB -> linear conversion on image import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the most compatible way of using linear-space assets and it will
+This is the most compatible way of using linear-space assets, and it will
 work everywhere including all mobile devices. The main issue with this
 is loss of quality, as sRGB exists to avoid this same problem. Using 8
 bits per channel to represent linear colors is inefficient from the
 point of view of the human eye. These textures might be later compressed
-too, which makes the problem worse.
+too which makes the problem worse.
 
 In any case though, this is the easy solution that works everywhere.
 
@@ -95,7 +95,7 @@ current :ref:`Environment <class_Environment>` (more on that below).
 
 Keep in mind that sRGB -> Linear and Linear -> sRGB conversions
 must always be **both** enabled. Failing to enable one of them will
-result in horrible visuals suitable only for avant garde experimental
+result in horrible visuals suitable only for avant-garde experimental
 indie games.
 
 Parameters of HDR
@@ -104,7 +104,7 @@ Parameters of HDR
 HDR is found in the :ref:`Environment <class_Environment>`
 resource. These are found most of the time inside a
 :ref:`WorldEnvironment <class_WorldEnvironment>`
-node, or set in a camera. There are many parameters for HDR:
+node or set in a camera. There are many parameters for HDR:
 
 .. image:: img/hdr_parameters.png
 
@@ -114,20 +114,20 @@ ToneMapper
 The ToneMapper is the heart of the algorithm. Many options for
 tonemappers are provided:
 
--  Linear: Simplest tonemapper. It does its job for adjusting scene
+-  **Linear:** Simplest tonemapper. It does its job for adjusting scene
    brightness, but if the differences in light are too big, it will
    cause colors to be too saturated.
--  Log: Similar to linear, but not as extreme.
--  Reinhardt: Classical tonemapper (modified so it will not desaturate
+-  **Log:** Similar to linear but not as extreme.
+-  **Reinhardt:** Classical tonemapper (modified so it will not desaturate
    as much)
--  ReinhardtAutoWhite: Same as above, but uses the max scene luminance
+-  **ReinhardtAutoWhite:** Same as above but uses the max scene luminance
    to adjust the white value.
 
 Exposure
 ~~~~~~~~
 
 The same exposure parameter as in real cameras. Controls how much light
-enters the camera. Higher values will result in a brighter scene and
+enters the camera. Higher values will result in a brighter scene, and
 lower values will result in a darker scene.
 
 White
