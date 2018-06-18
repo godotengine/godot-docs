@@ -7,5 +7,4 @@ Math
 
    vector_math
    vectors_advanced
-   rotations
    matrices_and_transforms
