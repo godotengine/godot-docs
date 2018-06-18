@@ -250,7 +250,7 @@ Next, write a function which will be called when the button is pressed:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_button_pressed():  
+    func _on_Button_pressed():  
         get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
@@ -268,7 +268,7 @@ using :ref:`Object.connect() <class_Object_connect>`.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_button_pressed")
+        get_node("Button").connect("pressed", self, "_on_Button_pressed")
 
  .. code-tab:: csharp
 
@@ -285,7 +285,10 @@ The final script should look like this:
     extends Panel
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_button_pressed")
+        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+
+    func _on_Button_pressed():
+        get_node("Label").text = "HELLO!"
 
     func _on_button_pressed():
         get_node("Label").text = "HELLO!"
@@ -327,14 +330,14 @@ Why, hello there! Congratulations on scripting your first scene.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # not for this case
-    # but just in case
+    # Not for this case,
+    # but just in case.
     get_node("Label/Button") 
 
  .. code-tab:: csharp
 
-    // not for this case
-    // but just in case
+    // Not for this case,
+    // but just in case.
     GetNode("Label/Button")
 
 Also, remember that nodes are referenced by name, not by type.

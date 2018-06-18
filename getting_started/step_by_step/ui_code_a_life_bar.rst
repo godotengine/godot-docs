@@ -95,7 +95,7 @@ scene:
 
         public override void _Ready()
         {
-            // C# doesn't have an onready feature, this works just the same
+            // C# doesn't have an onready feature, this works just the same.
             _bar = (TextureProgress) GetNode("Bars/LifeBar/TextureProgress");
             _tween = (Tween) GetNode("Tween");
             _numberLabel = (Label) GetNode("Bars/LifeBar/Count/Background/Number");
@@ -156,7 +156,7 @@ open its script. In the ``_ready`` function, we're going to store the
 
     public override void _Ready()
     {
-        // add this below _bar, _tween, and _numberLabel
+        // Add this below _bar, _tween, and _numberLabel.
         var player = (Player) GetNode("../Characters/Player");
         _bar.MaxValue = player.MaxHealth;
     }
@@ -316,6 +316,7 @@ It takes a new\_value as its only argument:
  .. code-tab:: gdscript GDScript
 
     func update_health(new_value):
+        pass
 
  .. code-tab:: csharp
 
@@ -408,7 +409,7 @@ clear its content. Let's animate the ``animated_health`` value. Call the
 
  .. code-tab:: csharp
 
-    // add this to the top of your class
+    // Add this to the top of your class.
     private int _animatedHealth = 0;
 
     public void UpdateHealth(int health)
