@@ -6,7 +6,7 @@ Audio Buses
 Introduction
 ------------
 
-Beginning Godot 3.0, the audio engine has been rewritten from scratch.
+Beginning with Godot 3.0, the audio engine has been rewritten from scratch.
 The aim now is to present an interface much friendlier to sound design
 professionals. To achieve this, the audio engine contains a virtual rack
 where unlimited audio buses can be created and, on each of it, unlimited
@@ -19,6 +19,8 @@ entirely from the ground up, without relying on any existing audio libraries.
 Even the effect processors were written exclusively for Godot (save for
 the pitch shifting library), with games in mind. This allows
 a efficient tradeoff between performance and sound quality.
+
+See also: the :ref:`doc_audio-buses` tutorial.
 
 Decibel Scale
 -------------
@@ -65,7 +67,7 @@ To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream
 
 Finally toggle the "playing" property to on and sound will flow.
 
-To learn more about *Audio Streams*, please read the related tutorial later! (@TODO link to audio streams tute)
+You may also be interested in reading about :ref:`doc_audio-buses` now.
 
 Adding Effects
 --------------
@@ -165,7 +167,7 @@ This effect allows for modulating pitch independently of tempo. All frequencies 
 Reverb
 ~~~~~~
 
-Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from Areas (@TODO LINK TO TUTORIAL WHEN DONE), or
+Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from Areas (see :ref:`doc_audio-buses` tutorial, look for the section on Areas), or
 to apply chamber feel to all sounds.
 
 StereoEnhance
