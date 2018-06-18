@@ -144,7 +144,7 @@ Right-clicking the variable allows you to configure its properties:
 .. image:: img/visual_script25.png
 
 
-As it can be seen above, the type and initial value of the variable can be changed, as well as some property hints (@TODO, document this).
+As it can be seen above, the type and initial value of the variable can be changed, as well as some property hints.
 Ticking the "Export" options makes the variable visible in the Inspector when selecting the node. This also makes it available to other scripts via the method described in the previous step.
 
 .. image:: img/visual_script28.png
