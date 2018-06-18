@@ -24,14 +24,14 @@ how many frames per second (FPS) the application is running at:
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        # do something...
+        # Do something...
         pass
 
  .. code-tab:: csharp
     
     public override void _Process(float delta)
     {
-        // do something...
+        // Do something...
     }
 
 The delta parameter contains the time elapsed in seconds, as a
@@ -64,7 +64,7 @@ with the following script:
 
     func _process(delta):
         accum += delta
-        text = str(accum) # text is a built-in label property
+        text = str(accum) # 'text' is a built-in label property.
 
  .. code-tab:: csharp
     
@@ -75,7 +75,7 @@ with the following script:
         public override void _Process(float delta)
         {
             _accum += delta;
-            Text = _accum.ToString();
+            Text = _accum.ToString(); // 'Text' is a built-in label property.
         }
     }
 
@@ -114,12 +114,12 @@ all enemies can be notified about its alarm sounding by using
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_discovered(): # this is a purely illustrative function
+    func _on_discovered(): # This is a purely illustrative function.
         get_tree().call_group("enemies", "player_was_discovered")
 
  .. code-tab:: csharp
     
-    public void _OnDiscovered() // this is a fictional function
+    public void _OnDiscovered() // This is a purely illustrative function.
     {
         GetTree().CallGroup("enemies", "player_was_discovered");
     }
@@ -279,8 +279,8 @@ other class-based datatype. For example:
 
     var s
     func _ready():
-        s = Sprite.new() # create a new sprite!
-        add_child(s) # add it as a child of this node
+        s = Sprite.new() # Create a new sprite!
+        add_child(s) # Add it as a child of this node.
 
  .. code-tab:: csharp
 
@@ -290,8 +290,8 @@ other class-based datatype. For example:
     {
         base._Ready();
     
-        _sprite = new Sprite(); // create a new sprite!
-        AddChild(_sprite); // add it as a child of this node
+        _sprite = new Sprite(); // Create a new sprite!
+        AddChild(_sprite); // Add it as a child of this node.
     }
 
 To delete a node, be it inside or outside the scene, ``free()`` must be
@@ -301,13 +301,13 @@ used:
  .. code-tab:: gdscript GDScript
 
     func _someaction():
-        s.free() # immediately removes the node from the scene and frees it
+        s.free() # Immediately removes the node from the scene and frees it.
 
  .. code-tab:: csharp
 
     public void _SomeAction()
     {
-        _sprite.Free();
+        _sprite.Free(); // Immediately removes the node from the scene and frees it.
     }
 
 When a node is freed, it also frees all its children nodes. Because of
@@ -327,13 +327,13 @@ This erases the node safely during idle.
  .. code-tab:: gdscript GDScript
 
     func _someaction():
-        s.queue_free() # immediately removes the node from the scene and queues it to be freed at idle time
+        s.queue_free() # Immediately removes the node from the scene and frees it.
 
  .. code-tab:: csharp
 
     public void _SomeAction()
     {
-        _sprite.QueueFree(); // immediately removes the node from the scene and queues it to be freed at idle time
+        _sprite.QueueFree(); // Immediately removes the node from the scene and frees it.
     }
 
 Instancing scenes
@@ -345,19 +345,19 @@ first one is to load the scene from your hard drive:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = load("res://myscene.tscn") # will load when the script is instanced
+    var scene = load("res://myscene.tscn") # Will load when the script is instanced.
 
  .. code-tab:: csharp
     
-    var scene = (PackedScene)ResourceLoader.Load("res://myscene.tscn"); // will load when the script is instanced
+    var scene = (PackedScene)ResourceLoader.Load("res://myscene.tscn"); // Will load when the script is instanced.
 
 
 Preloading it can be more convenient, as it happens at parse
-time:
+time (GDScript only):
 
 ::
 
-    var scene = preload("res://myscene.tscn") # will load when parsing the script
+    var scene = preload("res://myscene.tscn") # Will load when parsing the script.
 
 But ``scene`` is not yet a node. It's packed in a
 special resource called :ref:`PackedScene <class_PackedScene>`.

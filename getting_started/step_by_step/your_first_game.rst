@@ -155,21 +155,21 @@ Start by declaring the member variables this object will need:
 
     extends Area2D
 
-    export (int) var SPEED  # how fast the player will move (pixels/sec)
-    var screensize  # size of the game window
+    export (int) var speed  # How fast the player will move (pixels/sec).
+    var screensize  # Size of the game window.
  
  .. code-tab:: csharp
 
     public class Player : Area2D
     {
         [Export] 
-        public int Speed = 0;
+        public int Speed = 0; // How fast the player will move (pixels/sec).
         
-        private Vector2 _screenSize;
+        private Vector2 _screenSize; // Size of the game window.
     }
 
 
-Using the ``export`` keyword on the first variable ``SPEED`` allows us to
+Using the ``export`` keyword on the first variable ``speed`` allows us to
 set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
@@ -218,7 +218,7 @@ or ``false`` if it isn't.
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        var velocity = Vector2() # the player's movement vector
+        var velocity = Vector2() # The player's movement vector.
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
         if Input.is_action_pressed("ui_left"):
@@ -228,7 +228,7 @@ or ``false`` if it isn't.
         if Input.is_action_pressed("ui_up"):
             velocity.y -= 1
         if velocity.length() > 0:
-            velocity = velocity.normalized() * SPEED
+            velocity = velocity.normalized() * speed
             $AnimatedSprite.play()
         else:
             $AnimatedSprite.stop()
@@ -237,7 +237,7 @@ or ``false`` if it isn't.
 
     public override void _Process(float delta)
     {
-        var velocity = new Vector2();
+        var velocity = new Vector2(); // The player's movement vector.
         if (Input.IsActionPressed("ui_right")) {
             velocity.x += 1;
         }
@@ -404,8 +404,8 @@ Add this code to the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_body_entered( body ):
-        hide() # Player disappears after being hit
+    func _on_Player_body_entered(body):
+        hide() # Player disappears after being hit.
         emit_signal("hit")
         $CollisionShape2D.disabled = true
 
@@ -413,10 +413,10 @@ Add this code to the function:
 
     public void OnPlayerBodyEntered(Godot.Object body)
     {
-        Hide();
+        Hide(); // Player disappears after being hit.
         EmitSignal("Hit");
         
-        // for the sake of this example, but it's better to create a class var
+        // For the sake of this example, but it's better to create a class var
         // then assign the variable inside _Ready()
         var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
         collisionShape2D.Disabled = true;
@@ -509,8 +509,8 @@ Add a script to the ``Mob`` and add the following member variables:
 
     extends RigidBody2D
 
-    export (int) var MIN_SPEED # minimum speed range
-    export (int) var MAX_SPEED # maximum speed range
+    export (int) var min_speed # Minimum speed range.
+    export (int) var max_speed # Maximum speed range.
     var mob_types = ["walk", "swim", "fly"]
 
  .. code-tab:: csharp
@@ -518,15 +518,15 @@ Add a script to the ``Mob`` and add the following member variables:
     public class Mob : RigidBody2D
     {
         [Export] 
-        public int MinSpeed = 150;
+        public int MinSpeed = 150; // Minimum speed range.
 
         [Export] 
-        public int MaxSpeed = 250;
+        public int MaxSpeed = 250; // Maximum speed range.
 
         private String[] _mobTypes = {"walk", "swim", "fly"};
     }
 
-We'll pick a random value between ``MIN_SPEED`` and ``MAX_SPEED`` for
+We'll pick a random value between ``min_speed`` and ``max_speed`` for
 how fast each mob will move (it would be boring if they were all moving
 at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
 also have an array containing the names of the three animations, which
@@ -547,7 +547,7 @@ choose one of the three animation types:
     {
         var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
     
-        // C# doesn't implement gdscript's random methods, so we use Random
+        // C# doesn't implement GDScript's random methods, so we use 'Random'
         // as an alternative.
         //
         // Note: Never define random multiple times in real projects. Create a
@@ -666,15 +666,15 @@ instance.
 
         public int Score = 0;
 
-        // note: we're going to use this many times, so instantiating it
-        // allows our numbers to consistently be random
+        // Note: We're going to use this many times, so instantiating it
+        // allows our numbers to consistently be random.
         private Random rand = new Random();
 
         public override void _Ready()
         {
         }
 
-        // we'll use this later because c# doesn't support gdscript's randi()
+        // We'll use this later because C# doesn't support GDScript's randi().
         private float RandRand(float min, float max)
         {
             return (float) (rand.NextDouble() * (max - min) + min);
@@ -770,40 +770,45 @@ Note that a new instance must be added to the scene using
  .. code-tab:: gdscript GDScript
 
     func _on_MobTimer_timeout():
-        # choose a random location on Path2D
+        # Choose a random location on Path2D.
         $MobPath/MobSpawnLocation.set_offset(randi())
-        # create a Mob instance and add it to the scene
+        # Create a Mob instance and add it to the scene.
         var mob = Mob.instance()
         add_child(mob)
-        # set the mob's direction perpendicular to the path direction
-        var direction = $MobPath/MobSpawnLocation.rotation + PI/2
-        # set the mob's position to a random location
+        # Set the mob's direction perpendicular to the path direction.
+        var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
+        # Set the mob's position to a random location.
         mob.position = $MobPath/MobSpawnLocation.position
-        # add some randomness to the direction
-        direction += rand_range(-PI/4, PI/4)
+        # Add some randomness to the direction.
+        direction += rand_range(-PI / 4, PI / 4)
         mob.rotation = direction
-        # choose the velocity
-        mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
+        # Choose the velocity.
+        mob.set_linear_velocity(Vector2(rand_range(mob.min_speed, mob.max_speed), 0).rotated(direction))
 
  .. code-tab:: csharp
 
     public void OnMobTimerTimeout()
     {
-        //choose random location on path2d
+        // Choose a random location on Path2D.
         var mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
         mobSpawnLocation.SetOffset(rand.Next());
-    
-        //set direction
-        var direction = mobSpawnLocation.Rotation + Mathf.PI/2;
-        direction += RandRand(-Mathf.PI/4, Mathf.PI/4);
-    
-        //create mob instance and add it to scene
+
+        // Create a Mob instance and add it to the scene.
         var mobInstance = (RigidBody2D) Mob.Instance();
-        mobInstance.Position = mobSpawnLocation.Position;
-        mobInstance.Rotation = direction;
-        mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
-    
         AddChild(mobInstance);
+
+        // Set the mob's direction perpendicular to the path direction.
+        var direction = mobSpawnLocation.Rotation + Mathf.PI / 2;
+
+        // Set the mob's position to a random location.
+        mobInstance.Position = mobSpawnLocation.Position;
+
+        // Add some randomness to the direction.
+        direction += RandRand(-Mathf.PI / 4, Mathf.PI / 4);
+        mobInstance.Rotation = direction;
+
+        // Choose the velocity.
+        mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
     }
 
 .. important:: In functions requiring angles, GDScript uses *radians*,
