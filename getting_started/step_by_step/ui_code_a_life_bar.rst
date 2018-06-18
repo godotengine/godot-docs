@@ -221,7 +221,7 @@ the ``Player`` node in the scene dock to select it. Head down to the
 Inspector and click on the Node tab. This is the place to connect nodes
 to listen the one you selected.
 
-The first section lists custom signals defined in ``player.GD``:
+The first section lists custom signals defined in ``Player.gd``:
 
 -  ``died`` is emitted when the character died. We will use it in a
    moment to hide the UI.
@@ -235,7 +235,7 @@ Select ``health_changed`` and click on the Connect button in the bottom
 right corner to open the Connect Signal window. On the left side you can
 pick the node that will listen to this signal. Select the ``GUI`` node.
 The right side of the screen lets you pack optional values with the
-signal. We already took care of it in ``player.GD``. In general I
+signal. We already took care of it in ``Player.gd``. In general I
 recommend not to add too many arguments using this window as they're
 less convenient than doing it from the code.
 
@@ -245,7 +245,7 @@ less convenient than doing it from the code.
 
 .. tip::
 
-    You can optionally connect nodes from the code. But doing it from the editor has two advantages:
+    You can optionally connect nodes from the code. However doing it from the editor has two advantages:
 
     1. Godot can write new callback functions for you in the connected script
     2. An emitter icon appears next to the node that emits the signal in the Scene dock
@@ -258,7 +258,7 @@ lets you process them. If you look to the right, there is a "Make
 Function" radio button that is on by default. Click the connect button
 at the bottom of the window. Godot creates the method inside the ``GUI``
 node. The script editor opens with the cursor inside a new
-``_on_player_health_changed`` function.
+``_on_Player_health_changed`` function.
 
 .. note::
 
@@ -288,10 +288,10 @@ its current ``health`` alongside it. Your code should look like:
     }
 
 .. note::
-    
+
     The engine does not convert PascalCase to snake_case, for C# examples we'll be using
     PascalCase for method names & camelCase for method parameters which follows the official `C#
-    naming conventions. <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_ 
+    naming conventions. <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_
 
 
 .. figure:: img/lifebar_tutorial_player_gd_emits_health_changed_code.png
@@ -671,7 +671,7 @@ method:
     {
         var startColor = new Color(1.0f, 1.0f, 1.0f);
         var endColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-        
+
         _tween.InterpolateProperty(this, "modulate", startColor, endColor, 1.0f, Tween.TransitionType.Linear,
             Tween.EaseType.In);
     }

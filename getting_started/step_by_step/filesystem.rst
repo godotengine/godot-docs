@@ -7,7 +7,7 @@ Introduction
 ------------
 
 File systems are yet another hot topic in engine development. The
-file system manages how the assets are stored, and how they are accessed.
+file system manages how the assets are stored and how they are accessed.
 A well designed file system also allows multiple developers to edit the
 same source files and assets while collaborating together.
 
@@ -103,7 +103,7 @@ have to be re-defined to point at the new asset location.
 To avoid this, do all your move, delete and rename operations from within Godot, on the FileSystem
 dock. Never move assets from outside Godot, or dependencies will have to be
 fixed manually (Godot detects this and helps you fix them anyway, but why
-going the hardest route?).
+go the hard route?).
 
 The second is that under Windows and macOS file and path names are case insensitive.
 If a developer working in a case insensitive host file system saves an asset as "myfile.PNG",

@@ -61,7 +61,7 @@ Generated geometry
 ------------------
 
 It is possible to create custom geometry by using the
-:ref:`Mesh <class_Mesh>` resource directly, simply create your arrays
+:ref:`Mesh <class_Mesh>` resource directly. Simply create your arrays
 and use the :ref:`Mesh.add_surface() <class_Mesh_add_surface>`
 function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
@@ -190,7 +190,7 @@ perspective projections:
 
 .. image:: img/tuto_3d10.png
 
-Cameras are associated and only display to a parent or grand-parent
+Cameras are associated with and only display to a parent or grandparent
 viewport. Since the root of the scene tree is a viewport, cameras will
 display on it by default, but if sub-viewports (either as render target
 or picture-in-picture) are desired, they need their own children cameras
@@ -214,4 +214,4 @@ Lights
 ------
 
 There is no limitation on the number of lights nor of types of lights in
-Godot. As many as desired can be added (as long as performance allows). 
+Godot. As many as desired can be added (as long as performance allows).

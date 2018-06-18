@@ -22,8 +22,8 @@ Particles2D
 
 Particle systems are added to the scene via the
 :ref:`Particles2D <class_Particles2D>`
-node. However, after creating that node you will notice that only a white dot was created, 
-and that there is a warning icon next to your Particles2D node in the inspector. This 
+node. However, after creating that node you will notice that only a white dot was created,
+and that there is a warning icon next to your Particles2D node in the inspector. This
 is because the node needs a ParticlesMaterial to function.
 
 ParticlesMaterial
@@ -31,7 +31,7 @@ ParticlesMaterial
 
 To add a process material to your particles node, go to Process Material in
 your inspector panel. Click on the box next to material, and from the dropdown
-menu select New Particles Material. 
+menu select New Particles Material.
 
 .. image:: img/particles_material.png
 
@@ -84,14 +84,14 @@ actually drawn the first time.
 Speed Scale
 ~~~~~~~~~~~
 
-The speed scale has a default value of ``1``, and is used to adjust the
-speed of a particle system. Lowering the value will make the particles 
-slower, increasing the value will make the particles much faster.
+The speed scale has a default value of ``1`` and is used to adjust the
+speed of a particle system. Lowering the value will make the particles
+slower while increasing the value will make the particles much faster.
 
 Explosiveness
 ~~~~~~~~~~~~~
 
-If lifetime is ``1`` and there are ten particles, it means a particle
+If lifetime is ``1`` and there are 10 particles, it means a particle
 will be emitted every 0.1 seconds. The explosiveness parameter changes
 this, and forces particles to be emitted all together. Ranges are:
 
@@ -116,7 +116,7 @@ All physics parameters can be randomized. Random values range from ``0`` to
 Fixed FPS
 ~~~~~~~~~
 
-This setting can be used to set the particle system to render at a fixed 
+This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
@@ -125,12 +125,12 @@ Fract Delta
 
 This can be used to turn Fract Delta on or off.
 
-Drawing Parameters 
+Drawing Parameters
 ------------------
 
 Visibility Rect
 ~~~~~~~~~~~~~~~
- 
+
 The ``W`` and ``H`` values control width and height of the visibility
 rectangle. The ``X`` and ``Y`` values control the position of the upper-left
 corner of the visibility rectangle relative to the particle emitter.
@@ -186,7 +186,7 @@ in all directions (+/- 180).
 Gravity
 ~~~~~~~
 
-The gravity applied to every particle. 
+The gravity applied to every particle.
 
 .. image:: img/paranim7.gif
 
@@ -272,6 +272,6 @@ Used to change the color of the particles being emitted.
 Hue variation
 ~~~~~~~~~~~~~
 
-The variation value sets the initial hue variation applied to each 
-particle. The Variation rand value controls the hue variation
+The Variation value sets the initial hue variation applied to each
+particle. The Variation Rand value controls the hue variation
 randomness ratio.
