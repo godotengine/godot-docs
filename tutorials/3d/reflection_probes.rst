@@ -14,10 +14,8 @@ of it with increasing levels of *blur*. This is used to simulate roughness in ma
 
 While these probes are a efficient way of storing reflections, they have a few shortcomings:
 
-* They are efficient to render but expensive to compute. This leads to a default
-behavior where they only capture on scene load.
-* They work best for rectangular shaped rooms or places, otherwise the reflections
-shown are not as faithful (especially when roughness is 0).
+* They are efficient to render but expensive to compute. This leads to a default behavior where they only capture on scene load.
+* They work best for rectangular shaped rooms or places, otherwise the reflections shown are not as faithful (especially when roughness is 0).
 
 Setting Up
 ----------
