@@ -946,12 +946,53 @@ The class constructor, called on class instantiation, is named ``_init``.
 As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
-If a parent constructor takes arguments, they are passed like this:
+Unlike the call of a regular function like in the above example with ``.some_func``,
+if the constructor from the inherited class takes arguments, they are passed like this:
 
 ::
 
     func _init(args).(parent_args):
        pass
+
+This is better explained through examples. Say we have this scenario:
+
+::
+
+    # State.gd (inherited class)
+    var entity = null
+    var message = null
+
+    func _init(e=null):
+        entity = e
+
+    func enter(m):
+        message = m
+
+
+    # Idle.gd (inheriting class)
+    extends "State.gd"
+
+    func _init(e=null, m).(e):
+        # do something with e
+        message = m
+
+There are a few things to keep in mind here:
+
+1. if the inherited class (``State.gd``) defines a ``_init`` constructor that takes
+   arguments (``e`` in this case) then the inheriting class (``Idle.gd``) *has* to
+   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``
+2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``
+3. in the example above ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
+   in to ``Idle.gd``
+4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments it still needs to pass some value
+   to the ``State.gd`` base class even if it does nothing. Which brings us to the fact that you
+   can pass literals in the base constructor as well, not just variables. Eg.:
+
+   ::
+      # Idle.gd
+
+      func _init().(5):
+        pass
 
 Inner classes
 ^^^^^^^^^^^^^
@@ -1038,7 +1079,7 @@ special export syntax is provided.
     export(String, "Rebecca", "Mary", "Leah") var character_name
 
     # Named Enum Values
-    
+
     # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
     export (NamedEnum) var x
@@ -1242,7 +1283,7 @@ Memory management
 ~~~~~~~~~~~~~~~~~
 
 If a class inherits from :ref:`class_Reference`, then instances will be
-freed when no longer in use. No garbage collector exists, just 
+freed when no longer in use. No garbage collector exists, just
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
 must inherit :ref:`class_Object` manually and must call instance.free(). To
