@@ -972,7 +972,7 @@ This is better explained through examples. Say we have this scenario:
     # Idle.gd (inheriting class)
     extends "State.gd"
 
-    func _init(e=null, m).(e):
+    func _init(e=null, m=null).(e):
         # do something with e
         message = m
 
