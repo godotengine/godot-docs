@@ -54,6 +54,8 @@ The ``amd64`` version of Pywin32 is for a 64-bit version of Python
 ``pywin32-221.win-amd64-py2.7.exe``. Change the ``py`` number to install for
 your version of Python (check via ``python --version`` mentioned above).
 
+.. _doc_compiling_for_windows_install_vs:
+
 Installing Visual Studio caveats
 --------------------------------
 
