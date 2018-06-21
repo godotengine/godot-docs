@@ -17,6 +17,8 @@ Development Environment), here are setup instructions for some popular ones:
 
 It is possible to use other IDEs, but their setup is not documented yet.
 
+.. _doc_configuring_an_ide_qtcreator:
+
 Qt Creator
 ----------
 
@@ -92,6 +94,8 @@ clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to c
 
 .. image:: img/qtcreator-edit-files-dialog.png
 
+.. _doc_configuring_an_ide_kdevelop:
+
 Kdevelop
 --------
 
@@ -152,6 +156,8 @@ platform and depending on your build options).
 
 That's it! Now you should be good to go :)
 
+
+.. _doc_configuring_an_ide_xcode:
 
 Xcode
 -----
