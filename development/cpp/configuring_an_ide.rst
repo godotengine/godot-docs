@@ -6,11 +6,96 @@ Configuring an IDE
 We assume that you already `cloned <https://github.com/godotengine/godot>`_
 and :ref:`compiled <toc-devel-compiling>` Godot.
 
+You can easily develop Godot with any text editor and by invoking ``scons``
+on the command line, but if you want to work with an IDE (Integrated
+Development Environment), here are setup instructions for some popular ones:
+
+- :ref:`Qt Creator <doc_configuring_an_ide_qtcreator>` (all desktop platforms)
+- :ref:`Kdevelop <doc_configuring_an_ide_kdevelop>` (all desktop platforms)
+- :ref:`Xcode <doc_configuring_an_ide_xcode>` (macOS)
+- :ref:`Visual Studio <doc_compiling_for_windows_install_vs>` (Windows)
+
+It is possible to use other IDEs, but their setup is not documented yet.
+
+Qt Creator
+----------
+
+Importing the project
+^^^^^^^^^^^^^^^^^^^^^
+
+-  Choose *New Project* -> *Import Project* -> *Import Existing Project*.
+
+.. image:: img/qtcreator-new-project.png
+
+-  Set the path to your Godot root directory and enter the project name.
+
+.. image:: img/qtcreator-set-project-path.png
+
+-  Here you can choose which folders and files will be visible to the project. C/C++ files
+   are added automatically. Potentially useful additions: \*.py for buildsystem files, \*.java for Android development,
+   \*.mm for macOS. Click "Next".
+
+.. image:: img/qtcreator-apply-import-filter.png
+
+-  Click *Finish*.
+-  Add a line containing ``.`` to *project_name.includes* to get working code completion.
+
+.. image:: img/qtcreator-project-name-includes.png
+
+Build and run
+^^^^^^^^^^^^^
+
+Build configuration:
+
+-  Click on *Projects* and open the *Build* tab.
+-  Delete the pre-defined ``make`` build step.
+
+.. image:: img/qtcreator-projects-build.png
+
+-  Click *Add Build Step* -> *Custom Process Step*.
+
+.. image:: img/qtcreator-add-custom-process-step.png
+
+-  Type ``scons`` in the *Command* field. If it fails with 'Could not start process "scons"',
+   it can mean that ``scons`` is not in your ``PATH`` environment variable, so you may have to
+   use the full path to the SCons binary.
+-  Fill the *Arguments* field with your compilation options. (e.g.: ``p=x11 target=debug -j 4``)
+
+.. image:: img/qtcreator-set-scons-command.png
+
+Run configuration:
+
+-  Open the *Run* tab.
+-  Point the *Executable* to your compiled Godot binary (e.g: ``%{buildDir}/bin/godot.x11.opt.tools.64``)
+-  If you want to run a specific game or project, point *Working directory* to the game directory.
+-  If you want to run the editor, add ``-e`` to the *Command line arguments* field.
+
+.. image:: img/qtcreator-run-command.png
+
+Updating Sources after pulling latest commits
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As a developer you usually want to frequently pull the latest commits 
+from the upstream git repository or a specific fork etc. However this 
+brings a little problem with it: as the development continues, source files 
+(and folders) are added or removed. These changes needs to be reflected in 
+your project files for Qt Creator too, so you continue to have a nice 
+experience coding in it. A simple way to check these things, is to right click 
+at your root folder in the "Projects View" and click on "Edit files..."
+
+.. image:: img/qtcreator-edit-files-menu.png
+
+Now a new dialog should appear that is similar in functionality to the one in the third step
+of the "Importing the project" section. Here now you can check whether you want to add/remove
+specific files and/or folders. You can chose by clicking with your mouse or just simply by 
+clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to continue your work.
+
+.. image:: img/qtcreator-edit-files-dialog.png
+
 Kdevelop
 --------
 
-It is a free, open source IDE (Integrated Development Environment)
-for Linux, Solaris, FreeBSD, Mac OS X and other Unix flavors.
+`Kdevelop <https://www.kdevelop.org>`_ is a free, open source IDE for all desktop platforms.
 
 You can find a video tutorial `here <https://www.youtube.com/watch?v=yNVoWQi9TJA>`_.
 Or you may follow this text version tutorial.
@@ -67,78 +152,6 @@ platform and depending on your build options).
 
 That's it! Now you should be good to go :)
 
-Qt Creator
-----------
-
-Importing the project
-^^^^^^^^^^^^^^^^^^^^^
-
--  Choose *New Project* -> *Import Project* -> *Import Existing Project*.
-
-.. image:: img/qtcreator-new-project.png
-
--  Set the path to your Godot root directory and enter the project name.
-
-.. image:: img/qtcreator-set-project-path.png
-
--  Here you can choose which folders and files will be visible to the project. C/C++ files
-   are added automatically. Potentially useful additions: \*.py for buildsystem files, \*.java for Android development,
-   \*.mm for macOS. Click "Next".
-
-.. image:: img/qtcreator-apply-import-filter.png
-
--  Click *Finish*.
--  Add a line containing ``.`` to *project_name.includes* to get working code completion.
-
-.. image:: img/qtcreator-project-name-includes.png
-
-Build and run
-^^^^^^^^^^^^^
-
-Build configuration:
-
--  Click on *Projects* and open the *Build* tab.
--  Delete the pre-defined ``make`` build step.
-
-.. image:: img/qtcreator-projects-build.png
-
--  Click *Add Build Step* -> *Custom Process Step*.
-
-.. image:: img/qtcreator-add-custom-process-step.png
-
--  Type ``scons`` in the *Command* field.
--  Fill the *Arguments* field with your compilation options. (e.g.: ``p=x11 target=debug -j 4``)
-
-.. image:: img/qtcreator-set-scons-command.png
-
-Run configuration:
-
--  Open the *Run* tab.
--  Point the *Executable* to your compiled Godot binary (e.g: ``%{buildDir}/bin/godot.x11.opt.tools.64``)
--  If you want to run a specific game or project, point *Working directory* to the game directory.
--  If you want to run the editor, add ``-e`` to the *Command line arguments* field.
-
-.. image:: img/qtcreator-run-command.png
-
-Updating Sources after pulling latest commits
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-As a developer you usually want to frequently pull the latest commits 
-from the upstream git repository or a specific fork etc. However this 
-brings a little problem with it: as the development continues, source files 
-(and folders) are added or removed. These changes needs to be reflected in 
-your project files for Qt Creator too, so you continue to have a nice 
-experience coding in it. A simple way to check these things, is to right click 
-at your root folder in the "Projects View" and click on "Edit files..."
-
-.. image:: img/qtcreator-edit-files-menu.png
-
-Now a new dialog should appear that is similar in functionality to the one in the third step
-of the "Importing the project" section. Here now you can check whether you want to add/remove
-specific files and/or folders. You can chose by clicking with your mouse or just simply by 
-clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to continue your work.
-
-.. image:: img/qtcreator-edit-files-dialog.png
 
 Xcode
 -----
