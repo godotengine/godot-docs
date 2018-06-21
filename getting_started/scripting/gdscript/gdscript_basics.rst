@@ -973,7 +973,7 @@ This is better explained through examples. Say we have this scenario:
     extends "State.gd"
 
     func _init(e=null, m=null).(e):
-        # do something with e
+        # Do something with 'e'.
         message = m
 
 There are a few things to keep in mind here:
