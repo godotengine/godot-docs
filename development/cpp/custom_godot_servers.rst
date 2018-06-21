@@ -1,45 +1,44 @@
 .. _doc_custom_godot_servers:
 
-Custom Godot Servers
+Custom Godot servers
 ====================
 
 Introduction
 ------------
 
-Godot implements multi threading as servers. Servers are daemons which 
-manages data, processes, and pushes the result. Server implements the 
-mediator pattern which interprets resource ID and process data for the 
-engine and other modules. In addition, the server claims ownership for 
+Godot implements multi-threading as servers. Servers are daemons which
+manages data, processes, and pushes the result. Servers implement the
+mediator pattern which interprets resource ID and process data for the
+engine and other modules. In addition, the server claims ownership for
 its RID allocations.
 
+This guide assumes the reader knows how to create C++ modules and Godot
+data types. If not, refer to :ref:`doc_custom_modules_in_c++`.
 
-This guide assumes the reader knows how to create C++ modules and godot 
-data types. If not, refer to this guide :ref:`doc_custom_modules_in_c++`.
-
-References:
+References
 ~~~~~~~~~~~
 
-- `Why does Godot use Servers and RIDs? <https://godotengine.org/article/why-does-godot-use-servers-and-rids>`__
+- `Why does Godot use servers and RIDs? <https://godotengine.org/article/why-does-godot-use-servers-and-rids>`__
 
-- `Sigleton Pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`__
+- `Singleton pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`__
 
-- `Mediator Pattern <https://en.wikipedia.org/wiki/Mediator_pattern>`__
+- `Mediator pattern <https://en.wikipedia.org/wiki/Mediator_pattern>`__
 
 What for?
 ---------
 
-- Adding AI
-- Adding a custom asynchronous threads
-- Adding Input support
-- Adding writing threads
-- Adding custom VOIP protocol
-- etc.
+- Adding artificial intelligence.
+- Adding custom asynchronous threads.
+- Adding support for a new input device.
+- Adding writing threads.
+- Adding a custom VoIP protocol.
+- And more...
 
-Creating a Godot Server
+Creating a Godot server
 -----------------------
 
-At minimum, a server must to have: a static instance, sleep timer, thread loop, 
-initialize state, and cleanup. 
+At minimum, a server must have a static instance, a sleep timer, a thread loop,
+an initialization state and a cleanup procedure.
 
 .. code:: cpp
 
@@ -79,10 +78,10 @@ initialize state, and cleanup.
 	private:
 		uint64_t counter;
 		RID_Owner<InfiniteBus> bus_owner;
-		//https://github.com/godotengine/godot/blob/master/core/rid.h#L196
+		// https://github.com/godotengine/godot/blob/master/core/rid.h#L196
 		Set<RID> buses;
 		void _emit_occupy_room(uint64_t room, RID rid);
-		
+
 	public:
 		RID create_bus();
 		Variant get_bus_info(RID id);
@@ -92,8 +91,9 @@ initialize state, and cleanup.
 		void register_rooms();
 		HilbertHotel();
 	};
+
 	#endif
-	
+
 .. code:: cpp
 
 	#include "hilbert_hotel.h"
@@ -103,12 +103,13 @@ initialize state, and cleanup.
 	#include "dictionary.h"
 	#include "prime_225.h"
 
-	oid HilbertHotel::thread_func(void *p_udata){
-		HilbertHotel *ac = (HilbertHotel *) p_udata;
+	oid HilbertHotel::thread_func(void *p_udata) {
 
+		HilbertHotel *ac = (HilbertHotel *) p_udata;
 		uint64_t msdelay = 1000;
-		while(!ac -> exit_thread){
-			if(!ac -> empty()) {
+
+		while (!ac -> exit_thread) {
+			if (!ac -> empty()) {
 				ac->lock();
 				ac->register_rooms();
 				ac->unlock();
@@ -117,60 +118,81 @@ initialize state, and cleanup.
 		}
 	}
 
-	Error HilbertHotel::init(){
+	Error HilbertHotel::init() {
 		thread_exited = false;
 		counter = 0;
 		mutex = Mutex::create();
 		thread = Thread::create(HilbertHotel::thread_func, this);
 		return OK;
 	}
+
 	HilbertHotel *HilbertHotel::singleton = NULL;
-	HilbertHotel *HilbertHotel::get_singleton() { return singleton; }
+
+	HilbertHotel *HilbertHotel::get_singleton() {
+		return singleton;
+	}
+
 	void HilbertHotel::register_rooms() {
-		for( Set<RID>::Element *e = buses.front(); e; e = e->next()) {
+		for (Set<RID>::Element *e = buses.front(); e; e = e->next()) {
 			auto bus = bus_owner.getornull(e->get());
-			if(bus){
+
+			if (bus) {
 				uint64_t room = bus->next_room();
 				_emit_occupy_room(room, bus->get_self());
-			}	
+			}
 		}
 	}
 
 	void HilbertHotel::unlock() {
-		if (!thread || !mutex)
+		if (!thread || !mutex) {
 			return;
+		}
+
 		mutex->unlock();
 	}
+
 	void HilbertHotel::lock() {
-		if (!thread || !mutex)
+		if (!thread || !mutex) {
 			return;
+		}
+
 		mutex->lock();
 	}
+
 	void HilbertHotel::_emit_occupy_room(uint64_t room, RID rid) {
 		_HilbertHotel::get_singleton()->_occupy_room(room, rid);
 	}
+
 	Variant HilbertHotel::get_bus_info(RID id){
 		InfiniteBus * bus = bus_owner.getornull(id);
-		if(bus){
+
+		if (bus) {
 			Dictionary d;
 			d["prime"] = bus->get_bus_num();
 			d["current_room"] = bus->get_current_room();
 			return d;
 		}
+
 		return Variant();
 	}
+
 	void HilbertHotel::finish() {
-		if (!thread)
+		if (!thread) {
 			return;
+		}
 
 		exit_thread = true;
 		Thread::wait_to_finish(thread);
-		
+
 		memdelete(thread);
-		if (mutex)
+
+		if (mutex) {
 			memdelete(mutex);
+		}
+
 		thread = NULL;
 	}
+
 	RID HilbertHotel::create_bus() {
 		lock();
 		InfiniteBus *ptr = memnew(InfiniteBus(PRIME[counter++]));
@@ -178,9 +200,11 @@ initialize state, and cleanup.
 		ptr->set_self(ret);
 		buses.insert(ret);
 		unlock();
+
 		return ret;
 	}
-	//https://github.com/godotengine/godot/blob/master/core/rid.h#L187
+
+	// https://github.com/godotengine/godot/blob/master/core/rid.h#L187
 	bool HilbertHotel::delete_bus(RID id) {
 		if (bus_owner.owns(id)) {
 			lock();
@@ -191,17 +215,20 @@ initialize state, and cleanup.
 			unlock();
 			return true;
 		}
+
 		return false;
 	}
+
 	void HilbertHotel::clear() {
-		
-		for( Set<RID>::Element *e = buses.front(); e; e = e->next()) {
+		for (Set<RID>::Element *e = buses.front(); e; e = e->next()) {
 			delete_bus(e->get());
 		}
 	}
+
 	bool HilbertHotel::empty() {
 		return buses.size() <= 0;
 	}
+
 	void HilbertHotel::_bind_methods() {
 	}
 
@@ -209,12 +236,12 @@ initialize state, and cleanup.
 		singleton = this;
 	}
 
-	
 .. code:: cpp
-	
+
 	/* prime_225.h */
-	
+
 	#include "int_types.h"
+
 	const uint64_t PRIME[225] = {2,3,5,7,11,13,17,19,23,
 	29,31,37,41,43,47,53,59,61,
 	67,71,73,79,83,89,97,101,103,
@@ -240,14 +267,14 @@ initialize state, and cleanup.
 	1217,1223,1229,1231,1237,1249,1259,1277,1279,
 	1283,1289,1291,1297,1301,1303,1307,1319,1321,
 	1327,1361,1367,1373,1381,1399,1409,1423,1427};
-	
-Custom Managed Resource Data
+
+Custom managed resource data
 ----------------------------
 
-Godot servers implement a mediator pattern. All data types inherit ``RID_Data``. 
-`RID_Owner<MyRID_Data>`` owns the object when ``make_rid`` is called. Only during debug mode, 
-RID_Owner maintains a list of RID. In practice, RID is similar to writing 
-object oriented C code.
+Godot servers implement a mediator pattern. All data types inherit ``RID_Data``.
+``RID_Owner<MyRID_Data>`` owns the object when ``make_rid`` is called. During debug mode only,
+RID_Owner maintains a list of RIDs. In practice, RIDs are similar to writing
+object-oriented C code.
 
 .. code:: cpp
 
@@ -262,39 +289,46 @@ object oriented C code.
 		uint64_t next_room() {
 			return prime_num * num++;
 		}
+
 		uint64_t get_bus_num() const {
 			return prime_num;
 		}
+
 		uint64_t get_current_room() const {
 			return prime_num * num;
 		}
-		_FORCE_INLINE_ void set_self(const RID &p_self) { self = p_self; }
-		_FORCE_INLINE_ RID get_self() const { return self; }
+
+		_FORCE_INLINE_ void set_self(const RID &p_self) {
+			self = p_self;
+		}
+
+		_FORCE_INLINE_ RID get_self() const {
+			return self;
+		}
 
 		InfiniteBus(uint64_t prime) : prime_num(prime), num(1) {};
 		~InfiniteBus() {};
 	}
-	
-References:
+
+References
 ~~~~~~~~~~~
 
 - :ref:`RID<class_rid>`
 - `core/rid.h <https://github.com/godotengine/godot/blob/master/core/rid.h>`__
 
-
-Registering the class to GDScript
+Registering the class in GDScript
 ---------------------------------
 
-Server are allocated in ``register_types.cpp``. The constructor sets the static
-instance and init creates the managed thread. ``unregister_types.cpp``
-cleans up the server
+Servers are allocated in ``register_types.cpp``. The constructor sets the static
+instance and ``init()`` creates the managed thread; ``unregister_types.cpp``
+cleans up the server.
 
-Since Godot Server class creates an instance and binds it to a static singleton,
-binding the class might not reference the correct instance. Therefore, a dummy 
-class must be created to reference the proper Godot Server.
+Since a Godot server class creates an instance and binds it to a static singleton,
+binding the class might not reference the correct instance. Therefore, a dummy
+class must be created to reference the proper Godot server.
 
-In ``register_godotserver_types()``, ``Engine::get_singleton()->add_singleton`` is used to register the dummy class to GDScript.
-
+In ``register_server_types()``, ``Engine::get_singleton()->add_singleton``
+is used to register the dummy class in GDScript.
 
 .. code:: cpp
 
@@ -308,39 +342,39 @@ In ``register_godotserver_types()``, ``Engine::get_singleton()->add_singleton`` 
 	static HilbertHotel *hilbert_hotel = NULL;
 	static _HilbertHotel *_hilbert_hotel = NULL;
 
-
 	void register_hilbert_hotel_types() {
-			hilbert_hotel = memnew(HilbertHotel);
-			hilbert_hotel->init();
-			_hilbert_hotel = memnew(_HilbertHotel);
-			ClassDB::register_class<_HilbertHotel>();
-			Engine::get_singleton()->add_singleton(Engine::Singleton("HilbertHotel", _HilbertHotel::get_singleton()));
+		hilbert_hotel = memnew(HilbertHotel);
+		hilbert_hotel->init();
+		_hilbert_hotel = memnew(_HilbertHotel);
+		ClassDB::register_class<_HilbertHotel>();
+		Engine::get_singleton()->add_singleton(Engine::Singleton("HilbertHotel", _HilbertHotel::get_singleton()));
 	}
 
 	void unregister_hilbert_hotel_types() {
-			if(hilbert_hotel){
-					hilbert_hotel->finish();
-					memdelete(hilbert_hotel);
-			}
-			if(_hilbert_hotel) {
-					memdelete(_hilbert_hotel);
-			}
+		if (hilbert_hotel) {
+			hilbert_hotel->finish();
+			memdelete(hilbert_hotel);
+		}
+
+		if (_hilbert_hotel) {
+			memdelete(_hilbert_hotel);
+		}
 	}
 
 .. code:: cpp
 
 	/* register_types.h */
+
+	/* Yes, the word in the middle must be the same as the module folder name */
 	void register_hilbert_hotel_types();
 	void unregister_hilbert_hotel_types();
-	/* yes, the word in the middle must be the same as the module folder name */
-
 
 - `servers/register_server_types.cpp <https://github.com/godotengine/godot/blob/master/servers/register_server_types.cpp>`__
 
-Bind methods 
+Bind methods
 ~~~~~~~~~~~~
 
-The dummy class binds singleton methods to gdscript. In most cases, the dummy class methods wraps around.
+The dummy class binds singleton methods to GDScript. In most cases, the dummy class methods wraps around.
 
 .. code:: cpp
 
@@ -350,7 +384,7 @@ The dummy class binds singleton methods to gdscript. In most cases, the dummy cl
 
 Binding Signals
 
-It is possible to emit signals to gdscript but calling the GDScript dummy object.
+It is possible to emit signals to GDScript but calling the GDScript dummy object.
 
 .. code:: cpp
 
@@ -362,7 +396,7 @@ It is possible to emit signals to gdscript but calling the GDScript dummy object
 
 	class _HilbertHotel : public Object {
 		GDCLASS(_HilbertHotel, Object);
-		
+
 		friend class HilbertHotel;
 		static _HilbertHotel *singleton;
 
@@ -371,19 +405,20 @@ It is possible to emit signals to gdscript but calling the GDScript dummy object
 
 	private:
 		void _occupy_room(int room_number, RID bus);
-		
+
 	public:
 		RID create_bus();
 		void connect_singals();
 		bool delete_bus(RID id);
 		static _HilbertHotel *get_singleton();
 		Variant get_bus_info(RID id);
-		
+
 		_HilbertHotel();
 		~_HilbertHotel();
 	};
+
 	#endif
-	
+
 .. code:: cpp
 
 	_HilbertHotel *_HilbertHotel::singleton = NULL;
@@ -392,38 +427,45 @@ It is possible to emit signals to gdscript but calling the GDScript dummy object
 	RID _HilbertHotel::create_bus() {
 		return HilbertHotel::get_singleton()->create_bus();
 	}
+
 	bool _HilbertHotel::delete_bus(RID rid) {
 		return HilbertHotel::get_singleton()->delete_bus(rid);
 	}
+
 	void _HilbertHotel::_occupy_room(int room_number, RID bus){
 		emit_signal("occupy_room", room_number, bus);
 	}
+
 	Variant _HilbertHotel::get_bus_info(RID id) {
 		return HilbertHotel::get_singleton()->get_bus_info(id);
 	}
+
 	void _HilbertHotel::_bind_methods() {
 		ClassDB::bind_method(D_METHOD("get_bus_info", "r_id"), &_HilbertHotel::get_bus_info);
 		ClassDB::bind_method(D_METHOD("create_bus"), &_HilbertHotel::create_bus);
 		ClassDB::bind_method(D_METHOD("delete_bus"), &_HilbertHotel::delete_bus);
 		ADD_SIGNAL(MethodInfo("occupy_room", PropertyInfo(Variant::INT, "room_number"), PropertyInfo(Variant::_RID, "r_id")));
 	}
+
 	void _HilbertHotel::connect_singals() {
 		HilbertHotel::get_singleton()->connect("occupy_room", _HilbertHotel::get_singleton(), "_occupy_room");
 	}
+
 	_HilbertHotel::_HilbertHotel() {
 		singleton = this;
 	}
+
 	_HilbertHotel::~_HilbertHotel() {
 	}
-	
+
 MessageQueue
 ------------
 
-In order to send commands into scenetree, MessageQueue is a thread safe buffer 
-to queue set and call methods for other threads. To queue a command, obtain 
-the target object RID and use either push_call, push_set, or push_notification 
-to execute the desired behavior. Queue will be flushed whenever either 
-``SceneTree::idle`` or ``SceneTree::iteration`` are executed.
+In order to send commands into SceneTree, MessageQueue is a thread-safe buffer
+to queue set and call methods for other threads. To queue a command, obtain
+the target object RID and use either ``push_call``, ``push_set``, or ``push_notification``
+to execute the desired behavior. The queue will be flushed whenever either
+``SceneTree::idle`` or ``SceneTree::iteration`` is executed.
 
 References:
 ~~~~~~~~~~~
@@ -433,19 +475,13 @@ References:
 Summing it up
 -------------
 
-Here is the GDScript sample code
+Here is the GDScript sample code:
 
 .. code::
-	
+
 	extends Node
 
-	# class member variables go here, for example:
-	# var a = 2
-	# var b = "textvar"
-
 	func _ready():
-		# Called when the node is added to the scene for the first time.
-		# Initialization here
 		print("start Debugging")
 		HilbertHotel.connect("occupy_room", self, "_print_occupy_room")
 		var rid = HilbertHotel.create_bus()
@@ -457,18 +493,13 @@ Here is the GDScript sample code
 		print(HilbertHotel.get_bus_info(rid))
 		HilbertHotel.delete_bus(rid)
 		print("ready done")
-		pass
-
-
 
 	func _print_occupy_room(room_number, r_id):
 		print("room_num: "  + str(room_number) + " rid: " + str(r_id))
 		print(HilbertHotel.get_bus_info(r_id))
-		
+
 Notes
 ~~~~~
 
-- Actual `Hilbert Hotel <https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel>`__ is impossible
-
-- Connecting signal example code is pretty hacky
-
+- The actual `Hilbert Hotel <https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel>`__ is impossible.
+- Connecting signal example code is pretty hacky.
