@@ -19,7 +19,7 @@ def add_sources(sources, directory):
             sources.append(directory + '/' + file)
 
 if platform == "osx":
-    env.Append(CCFLAGS = ['-g','-O3', '-arch', 'x86_64'])
+    env.Append(CCFLAGS = ['-g','-O3', '-arch', 'x86_64', '-std=c++14'])
     env.Append(LINKFLAGS = ['-arch', 'x86_64'])
 
     final_lib_path = final_lib_path + 'osx/'
