@@ -167,7 +167,7 @@ browser opens and lets you pick a sprite to load into the texture slot.
 Repeat the operation for all ``TextureRect`` nodes. You should have the
 logo, the illustration, the three menu options and the version note,
 each as a separate node. Then, double click on each of the nodes in the
-Inspector to rename them
+Scene tab to rename them.
 
 .. figure:: img/ui_main_menu_6_texturerect_nodes.png
 
