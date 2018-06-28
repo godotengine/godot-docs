@@ -37,7 +37,7 @@ built with `scons p=osx target=release_debug`:
 
     user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
-    user@host:~/godot$ cp bin/godot.osx.opt.tools.64 Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
     
 Compiling for 32 and 64-bit
