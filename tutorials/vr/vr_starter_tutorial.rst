@@ -43,10 +43,11 @@ Feel free to use these assets however you want! All original assets belong to th
 
           The font used is **Titillium-Regular**, and is licensed under the ``SIL Open Font License, Version 1.1``.
           
-          The audio used are from several different sources, all **downloaded from the Sonnis #GameAudioGDC Bundle**. The license for the sound effects is included as a PDF
-          and the folders where the audio is stored have the same name as the sources whom they came from. The files were downloaded from https://GameSounds.xyz
+          The audio used are from several different sources, all **downloaded from the Sonnis #GameAudioGDC Bundle**. The license for the sound effects is included as a PDF,
+          and you can find at this link: (https://sonniss.com/gdc-bundle-license/).
+          The folders where the audio files are stored have the same name as folders in the bundle.
           
-          The **OpenVR addon** is created by BastiaanOliji, and is released under the MIT license, and can be found both on the Godot Asset Library, and here on
+          The **OpenVR addon** is created by Bastiaan Olij, and is released under the MIT license, and can be found both on the Godot Asset Library, and here on
           Github: https://github.com/GodotVR/godot-openvr-asset
           
           Everything else is original and created solely for this tutorial by TwistedTwigleg. They are released under the MIT license, so feel free to use however you see fit!
@@ -55,16 +56,19 @@ Feel free to use these assets however you want! All original assets belong to th
 
 Getting everything ready
 ------------------------
+
 Launch Godot and open up the project included in the starter assets.
 
 .. note:: While these assets are not necessarily required to use the scripts provided in this tutorial,
           they will make the tutorial much easier to follow as there are several pre-setup scenes we
           will be using throughout the tutorial series.
 
-First, you may notice there is already quite a bit set up. This includes: A pre-built level, and several instanced scenes placed around,
-some background music, and several GUI related :ref:`MeshInstances <class_MeshInstance>`. You may notice that the GUI related meshes already have a script
-attached to them, and this is simply used to show whatever is inside the :ref:`Viewport <class_Viewport>` on the mesh. Feel free to take a look if you want, but
-this tutorial will not be going over how to use the :ref:`Viewport <class_Viewport>` nodes for making 3D GUI :ref:`MeshInstance <class_MeshInstance>`s. 
+First, you may notice there is already quite a bit set up. This includes A pre-built level, several instanced scenes placed around,
+some background music, and several GUI related :ref:`MeshInstances <class_MeshInstance>` nodes.
+
+You may notice that the GUI related meshes already have a script attached to them, and this is simply used to show whatever is inside the :ref:`Viewport <class_Viewport>`
+on the mesh. Feel free to take a look if you want, but this tutorial will not be going over how to use the :ref:`Viewport <class_Viewport>` nodes for making 3D GUI
+:ref:`MeshInstance <class_MeshInstance>` nodes. 
 
 The other thing to notice before we jump in to writing the code is how the :ref:`ARVROrigin <class_ARVROrigin>` node works. How it works is kind of hard to explain,
 especially if you have never used VR before, but here is the gist of it:
@@ -80,15 +84,15 @@ and so I needed to scale the VR player slightly so they better fit the world. As
           
 Another thing to notice here is how we have everything set up under the :ref:`ARVROrigin <class_ARVROrigin>` node. The player camera is a :ref:`ARVRCamera <class_ARVRCamera>`
 that represents the player's head in the game. The :ref:`ARVRCamera <class_ARVRCamera>` will be offset by the player's height, and if there is room tracking, then the camera
-can move around 3D space as well, relative to the :ref:`ARVROrigin <class_ARVROrigin>`. This is important to note, especially when we later add teleporting.
+can move around 3D space as well, relative to the :ref:`ARVROrigin <class_ARVROrigin>`. This is important to note, especially for later when we add teleporting.
 
 The final thing to note is that there are two :ref:`ARVRController <class_ARVRController>` nodes, and these will represent the left and right controllers in 3D space.
-A :ref:`ARVRController <class_ARVRController>` with an ID of ``1`` is the left hand, while a :ref:`ARVRController <class_ARVRController>` node with an ID of ``2`` is the right.
+A :ref:`ARVRController <class_ARVRController>` with an ID of ``1`` is the left hand, while a :ref:`ARVRController <class_ARVRController>` with an ID of ``2`` is the right hand.
 
 Starting VR
 -----------
 
-First, let's get the VR part up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
+First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
 
 ::
     
@@ -107,15 +111,15 @@ First, let's get the VR part up and going! While ``Game.tscn`` is open, select t
 
 Now, for this to work you will need to have the OpenVR asset from the Godot asset library. The OpenVR asset is included in the starter assets, but there may be newer
 versions that work better, so I would highly suggest deleting the ``addons`` folder, going to the asset library, searching for ``OpenVR``, and downloading the newest
-version from BastiaanOliji/Mux213!
+version from Bastiaan-Olij/Mux213!
 
-So, let's quickly go over what this does.
+With that done, let's quickly go over what this script does.
 
 First, we find a VR interface from the ARVR server. We do this because by default Godot does not include any VR interfaces, but rather exposes a API so anyone can make
-AR/VR interfaces with GDNAtive. Next, we check to see if a OpenVR interface was found, and then we initialize it.
+AR/VR interfaces with GDNative/C++. Next, we check to see if a OpenVR interface was found, and then we initialize it.
 
 Assuming nothing went wrong with initializing, we then turn the main :ref:`Viewport <class_Viewport>` into a AR/VR viewport, by setting ``arvr`` to ``true``.
-We also set HDR to false, since currently as of Godot 3.0.4 you cannot use HDR in VR in Godot.
+We also set HDR to ``false``, since in OpenVR you cannot use HDR.
 
 Then we disable VSync and set the target FPS to ``90`` frames per second. ``90`` FPS is what most VR headsets run at, and since the game will both display
 on the VR headset and on the computer's monitor, we want to disable VSync and set the target FPS manually so the computer's monitor does not drag the VR display down to 60 FPS.
@@ -134,15 +138,17 @@ Coding the controllers
 While perhaps interesting if we were making a VR film, we really want to do more than stand around and look. Currently we cannot move outside of the room tracking boundaries
 (assuming your VR headset has room tracking) and we cannot interact with anything! Let's change that!
 
-You may have noticed that you have a pair of green and black hands following the controllers. Now let's write the code that will allow us to teleport around the world!
+You may have noticed that you have a pair of green and black hands following the controllers. Now let's write the code for those controllers, which will allow the player to teleport
+around the world and allow the player to grab and release :ref:`RigidBody <class_RigidBody>` nodes.
+
 Open either ``Left_Controller.tscn`` or ``Right_Controller.tscn``.
 
 Feel free to look at how the scene is set up. There is only a couple things of note to point out.
 
 First, notice how there is a :ref:`Raycast <class_Raycast>`. We will be using this :ref:`Raycast <class_Raycast>` to teleport around the game world.
 
-The other thing to note is how there is an :ref:`Area <class_Area>`, simply called ``Area`` that is a small sphere in the palm of the hand. This will be used to detect
-whether or not the player can grab an object with the hand. We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will simply be used
+The other thing to note is how there is an :ref:`Area <class_Area>`, simply called ``Area``, that is a small sphere in the palm of the hand. This will be used to detect
+objects the player can pick up with that hand. We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will simply be used
 to wake :ref:`RigidBody <class_RigidBody>` nodes when the hands get close.
 
 Select the root node, either ``Left_Controller`` or ``Right_Controller`` depending on which scene you chose, and create a new script called ``VR_Controller.gd``.
@@ -320,13 +326,13 @@ Add the following to ``VR_Controller.gd``:
         if "can_sleep" in body:
             body.can_sleep = true
 
-This is quite a bit of code (``166`` lines to be exact) of code to go through, so let's break it down bit by bit. First, let's start with the class variables,
+This is quite a bit of code (``166`` lines to be exact) of code to go through, so let's break it down bit by bit. First, let's start with the class variables, which are
 variables outside of any/all functions.
 
 - ``controller_velocity`` : The velocity the controller is moving at. We will calculate this by changes in position every physics frame.
-- ``prior_controller_position`` : The controller's previous position. We will use this and to calculate the controller's velocity.
+- ``prior_controller_position`` : The controller's previous position. We will use this to calculate the controller's velocity.
 - ``prior_controller_velocities`` : The last ``30`` calculated velocities (1/3 of a second worth of velocities, assuming the game is running at ``90`` FPS)
-- ``held_object`` : The currently held object, :ref:`RigidBody <class_RigidBody>`, if there is one.
+- ``held_object`` : The currently held object, a :ref:`RigidBody <class_RigidBody>`, if there is one.
 - ``held_object_data`` : The data of the currently held object, used to reset the object when it is no longer being held.
 - ``grab_area`` : The :ref:`Area <class_Area>` node used to grab objects.
 - ``grab_pos_node`` : The position where held objects stay.
@@ -343,8 +349,8 @@ Next, let's go through ``_ready``.
 
 First we get the teleport :ref:`Raycast <class_Raycast>` node and assign it to ``teleport_raycast``.
 
-Next we get the teleport mesh, and notice how we are getting it from ``Game/Teleport_Mesh``, using ``get_tree().root``. This is because we need the teleport mesh
-to be separate from the controller, so moving and rotating the controller does not effect the teleporation mesh.
+Next we get the teleport mesh, and notice how we are getting it from ``Game/Teleport_Mesh`` using ``get_tree().root``. This is because we need the teleport mesh
+to be separate from the controller, so moving and rotating the controller does not effect the position and rotation of the teleporation mesh.
 
 Then we get the teleportation finger mesh and assign it the proper variable, we get the grab area and position nodes and assign them to the proper variables,
 we connect the ``body_entered`` and ``body_exited`` signals from the sleep area node, we get the hand mesh and assign it the proper variable, and finally
@@ -358,14 +364,14 @@ First we check to see if the teleportation button is down or not. If the telepor
 to update, which will give us frame perfect collision detection. We then check to see if the :ref:`Raycast <class_Raycast>` is colliding with anything.
 
 Next, we check to see if the collision body the :ref:`Raycast <class_Raycast>` is colliding with is a :ref:`StaticBody <class_StaticBody>`. We do this to ensures the player
-can only teleport on :ref:`StaticBody <class_StaticBody>` nodes. We then check to see if the Y value returned by the :ref:`Raycast <class_Raycast>`'s
+can only teleport on :ref:`StaticBody <class_StaticBody>` nodes. We then check to see if the ``Y`` value returned by the :ref:`Raycast <class_Raycast>`'s
 ``get_collision_normal`` function is more than ``0.85``, which is mostly pointing straight up. This allows the player only to teleport on fairly flat faces pointing upwards.
 
 If all those checks for the teleport :ref:`Raycast <class_Raycast>` return true, we then set ``teleport_pos`` to the collision point, and we move the teleportation
 mesh to ``teleport_pos``.
 
 The next thing we check is to see if the :ref:`ARVRController <class_ARVRController>` is active or not. If the :ref:`ARVRController <class_ARVRController>` is active, then
-that means there is a controller and it is being tracked. If the controller is active, we then reset controller_velocity to a empty :ref:`Vector3 <class_Vector3>`.
+that means there is a controller and it is being tracked. If the controller is active, we then reset ``controller_velocity`` to a empty :ref:`Vector3 <class_Vector3>`.
 
 We then add all of the prior velocity calculations in ``prior_controller_velocities`` to ``controller_velocity``. By using the prior calculations, we get a smoother
 throwing/catching experience, though it is not perfect. We want to get the average of these velocities, as otherwise we'd get crazy high velocity numbers that are not realistic.
@@ -377,7 +383,7 @@ We then add the velocity from the controller this physics frame and the last phy
 current position, so we can use it in the calculations in the velocity next physics frame.
 
 .. note:: The way we are calculating velocity is not perfect by any means, since it relies on a consistent amount of frames per second.
-          Ideally we would be able to find the velocity directly from the VR controller but currently in Godot there is not way to access the controller's velocity.
+          Ideally we would be able to find the velocity directly from the VR controller but currently in OpenVR there is not way to access the controller's velocity.
           We can get pretty close to the real velocity by comparing positions between frames though, and this will work just fine for this project.
             
 Then we check to see if we have more than ``30`` stored velocities (more than a third of a second). If there are more than ``30``, we remove the oldest velocity
@@ -385,8 +391,8 @@ from ``prior_controller_velocities``.
 
 
 Finally, the last thing we do in ``_physics_process`` is checking to see if there is a held object. If there is, we update the position and rotation of the held object to the
-position and rotation of ``grab_pos_node``. Because of how scale works, we need to temporarily store it and then reset the scale, otherwise the scale will
-always be the same as the controller, which will break the immersion if the player grabs a scaled object.
+position and rotation of ``grab_pos_node``. Because of how scale works, we need to temporarily store the scale and then reset the scale once we have updated the transform, as
+otherwise the scale will always be the same as the controller, which will break the immersion if the player grabs a scaled object.
 
 _________
 
@@ -416,11 +422,12 @@ the :ref:`Area <class_Area>` do not have a variable called ``NO_PICKUP``, since 
 Assuming there is a :ref:`RigidBody <class_RigidBody>` node inside the grab :ref:`Area <class_Area>` that does not have a variable called ``NO_PICKUP``,
 we assign it to ``rigid_body`` for additional processing.
 
-If ``rigid_body`` is not null, meaning we found a :ref:`RigidBody <class_RigidBody>` in the grab :ref:`Area <class_Area>`, we assign held_object to it.
-Then we store the now held :ref:`RigidBody <class_RigidBody>`'s information into held_object_data. We are storing the :ref:`RigidBody <class_RigidBody>` mode, layer, and mask so
-later when we drop it, we can reset all of those variables back to what they were.
+If ``rigid_body`` is not ``null``, meaning we found a :ref:`RigidBody <class_RigidBody>` in the grab :ref:`Area <class_Area>`, we assign ``held_object`` to it.
+Then we store the now held :ref:`RigidBody <class_RigidBody>`'s information in ``held_object_data``. We are storing the :ref:`RigidBody <class_RigidBody>` mode, layer,
+and mask so later when we drop it, we can reset all of those variables back to what they were before we picked up the :ref:`RigidBody <class_RigidBody>`.
 
-We then set the held object's :ref:`RigidBody <class_RigidBody>` mode to MODE_STATIC and set the collision layer and mask to ``0`` so it cannot collide with any other physics bodies.
+We then set the held object's :ref:`RigidBody <class_RigidBody>` mode to ``MODE_STATIC`` and set the collision layer and mask to ``0`` so it cannot collide with any
+other physic bodies.
 
 We make the hand mesh invisible so it does not get in the way of the object we are holding (and also because I did not feel like animating the hand :P )
 
@@ -470,12 +477,12 @@ the sleep area, while if it has exited we set it to ``true`` so the :ref:`RigidB
 
 _________
 
-Okay, phew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to the other hand controller so both controllers have the same script.
+Okay, phew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to the other controller so both controllers have the same script.
 
 Now go ahead and try the game again, and you should find you can teleport around by pressing the touch pad, and can grab and throw objects
 using the grab/grip buttons.
 
-While this is certainly cool, and a good start, let's add some special :ref:`RigidBody <class_RigidBody>` nodes we can interact with next.
+Let's add some special :ref:`RigidBody <class_RigidBody>` nodes we can interact with next.
 
 Adding destroyable targets
 --------------------------
@@ -560,7 +567,7 @@ Finally, let's go over ``damage``.
 
 First, we check to make sure the target has not already been destroyed.
 
-Then, we remove however much damage the target has taken from health.
+Then, we remove however much damage the target has taken from the target's health.
 
 If the target has zero or less health, then it has taken enough damage to break.
 
@@ -616,7 +623,7 @@ how there is a laser sight mesh, and a flash mesh, both of these do what you'd e
 
 The other thing to notice is how there is a :ref:`Raycast <class_Raycast>` node at the end of the pistol. This is what we will be using to calculate where the bullets impact.
 
-Now that we have looked at the potentially note worthy things, let's write the code. Select the ``Pistol`` root node, the :ref:`RigidBody <class_RigidBody>` node, and make a new
+Now that we have looked at the scene, let's write the code. Select the ``Pistol`` root node, the :ref:`RigidBody <class_RigidBody>` node, and make a new
 script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
 
 ::
@@ -688,13 +695,15 @@ Let's go over what this script does, starting with the class variables:
 - ``flash_mesh`` : The mesh used to make the muzzle flash.
 - ``FLASH_TIME`` : The length of time the muzzle flash is visible.
 - ``flash_timer``: A variable to track how long the muzzle flash has been visible.
-` ``laser_sight_mesh`` : A long rectangular mesh used for the laser sight.
-- ``raycast`` : The raycast node used for the pistol firing.
+- ``laser_sight_mesh``: A long rectangular mesh used for the laser sight.
+- ``raycast``: The raycast node used for the pistol firing.
 - ``BULLET_DAMAGE``: The amount of damage a single bullet does.
 
 ________
 
-Let's go over ``_ready``. All we are doing here is getting the nodes and assigning them to the proper variables. We also make sure the flash and laser
+Let's go over ``_ready``.
+
+All we are doing here is getting the nodes and assigning them to the proper variables. We also make sure the flash and laser
 sight meshes are invisible.
 
 ________
@@ -745,8 +754,8 @@ Let's add a different type of shooting :ref:`RigidBody <class_RigidBody>`: A sho
 
 Open up ``Shotgun.tscn``, which you can find in ``Scenes``. Notice how everything is more or less the same, but instead of a single :ref:`Raycast <class_Raycast>`,
 there are five, and there is no laser pointer.
-This is because a shotgun generally fires in a cone shape, and so we are going to emulate that by having several :ref:`Raycast <class_Raycast>`s, all rotated randomly
-in a cone shape, and for fun I removed the laser pointer.
+This is because a shotgun generally fires in a cone shape, and so we are going to emulate that by having several :ref:`Raycast <class_Raycast>` nodes, all rotated randomly
+in a cone shape, and for fun I removed the laser pointer so the player has to aim without knowing for sure where the shotgun is pointing.
 
 Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called ``Shotgun.gd``. Add the following to ``Shotgun.gd``:
 
@@ -810,7 +819,7 @@ Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>
 
 You may have noticed this is almost exactly the same as the pistol, and indeed it is, so let's only go over what has changed.
 
-- ``raycasts`` : The node that holds all of the five :ref:`Raycast <class_Raycast>`s used for the shotgun's firing.
+- ``raycasts``: The node that holds all of the five :ref:`Raycast <class_Raycast>` nodes used for the shotgun's firing.
 
 In ``_ready``, we get the ``Raycasts`` node, instead of just a single :ref:`Raycast <class_Raycast>`.
 
@@ -827,7 +836,7 @@ Now you can find and fire the shotgun too! The shotgun is located around the bac
 Adding a bomb
 -------------
 
-While both of those are well and good, let's add something we can throw next, let's add a bomb!
+While both of those are well and good, let's add something we can throw next! Let's add a bomb!
 
 Open up ``Bomb.tscn``, which you will find in the ``Scenes`` folder.
 
@@ -835,9 +844,9 @@ First, notice how there is a rather large :ref:`Area <class_Area>` node. This is
 effected by the explosion when the bomb explodes.
 
 The other thing to note is how there are two sets of :ref:`Particles <class_Particles>`: One for smoke coming out of the fuse, and another for the explosion itself.
-Feel free to take a look at the :ref:`Particles <class_Particles>`s if you want!
+Feel free to take a look at the :ref:`Particles <class_Particles>` nodes if you want!
 
-The only thing to notice his how long the explosion :ref:`Particles <class_Particles>`s will last, their lifetime, which is 0.75 seconds. We need to know this so we can time
+The only thing to notice his how long the explosion :ref:`Particles <class_Particles>` node will last, their lifetime, which is 0.75 seconds. We need to know this so we can time
 the removal of the bomb with the end of the explosion :ref:`Particles <class_Particles>`.
 
 Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Bomb.gd``. Add the following code to
@@ -930,17 +939,17 @@ Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidB
 
 Let's go through what this script does, starting with the class variables:
 
-- ``bomb_mesh`` : The :ref:`MeshInstance <class_MeshInstance>` used for the bomb mesh.
-- ``FUSE_TIME`` : The length of the time the fuse burns.
-- ``fuse_timer`` : A variable for tracking how long the fuse has been burning.
-- ``explosion_area`` : The :ref:`Area <class_Area>` node used for detecting what nodes are inside the explosion.
-- ``EXPLOSION_DAMAGE`` : The amount of damage the explosion does.
-- ``EXPLOSION_TIME`` : The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by it's ``speed scale``!)
-- ``explosion_timer`` : A variable for tracking how long the explosion has lasted.
-- ``explode`` : A boolean for tracking whether the bomb has exploded.
-- ``fuse_particles`` : The fuse :ref:`Particles <class_Particles>` node.
-- ``explosion_particles`` : The explosion :ref:`Particles <class_Particles>` node.
-- ``controller`` : The controller that is currently holding the bomb, if there is one. This is set by the controller, so we do not need to check anything outside of checking if it is ``null``.
+- ``bomb_mesh``: The :ref:`MeshInstance <class_MeshInstance>` used for the bomb mesh.
+- ``FUSE_TIME``: The length of time the fuse burns for.
+- ``fuse_timer``: A variable for tracking how long the fuse has been burning.
+- ``explosion_area``: The :ref:`Area <class_Area>` node used for detecting what nodes are inside the explosion.
+- ``EXPLOSION_DAMAGE``: The amount of damage the explosion does.
+- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by it's ``speed scale``)
+- ``explosion_timer``: A variable for tracking how long the explosion has lasted.
+- ``explode``: A boolean for tracking whether the bomb has exploded.
+- ``fuse_particles``: The fuse :ref:`Particles <class_Particles>` node.
+- ``explosion_particles``: The explosion :ref:`Particles <class_Particles>` node.
+- ``controller``: The controller that is currently holding the bomb, if there is one. This is set by the controller, so we do not need to check anything outside of checking if it is ``null``.
 
 ________
 
@@ -1001,7 +1010,7 @@ Open up ``Sword.tscn``, which you will find in ``Scenes``.
 There is not a whole lot to note here, but there is just one thing, and that is how the length of the blade of the sword is broken into several small :ref:`Area <class_Area>` nodes.
 This is because we need to roughly know where on the blade the sword collided, and this is the easiest (and only) way I could figure out how to do this.
 
-.. tip:: If you know how to find the point where a :ref:`Area <class_Area>` and a :ref:`CollisionBody <class_CollisionBody>` meet, please let me know and/or make a PR on the
+.. tip:: If you know how to find the point where a :ref:`Area <class_Area>` and a :ref:`CollisionObject <class_CollisionObject>` meet, please let me know and/or make a PR on the
          Godot documentation! This method of using several small :ref:`Area <class_Area>` nodes works okay, but it is not ideal.
 
 Other than that, there really is not much of note, so let's write the code. Select the ``Sword`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called
