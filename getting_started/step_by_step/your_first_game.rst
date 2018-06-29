@@ -726,7 +726,7 @@ function to set everything up for a new game:
         startTimer.Start();
     }
 
-Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``, ``ScoreTimer`` & ``MobTimer``).
+Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``, ``ScoreTimer`` ,and ``MobTimer``).
 ``StartTimer`` will start the other two timers. ``ScoreTimer`` will
 increment the score by 1.
 
