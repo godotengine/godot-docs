@@ -140,7 +140,7 @@ node, so we'll add a script. Click the ``Player`` node and click the
 In the script settings window, you can leave the default settings alone. Just
 click "Create":
 
-.. note:: If you're creating a C# script or other languages, select the 
+.. note:: If you're creating a C# script or other languages, select the
             language from the `language` drop down menu before hitting create.
 
 .. image:: img/attach_node_window.png
@@ -157,14 +157,14 @@ Start by declaring the member variables this object will need:
 
     export (int) var speed  # How fast the player will move (pixels/sec).
     var screensize  # Size of the game window.
- 
+
  .. code-tab:: csharp
 
     public class Player : Area2D
     {
-        [Export] 
+        [Export]
         public int Speed = 0; // How fast the player will move (pixels/sec).
-        
+
         private Vector2 _screenSize; // Size of the game window.
     }
 
@@ -179,7 +179,7 @@ the ``Player`` node and set the speed property to ``400``.
 
 .. image:: img/export_variable.png
 
-The ``_ready()`` function is called when a node enters the scene tree, 
+The ``_ready()`` function is called when a node enters the scene tree,
 which is a good time to find the size of the game window:
 
 .. tabs::
@@ -193,7 +193,7 @@ which is a good time to find the size of the game window:
     public override void _Ready()
     {
         _screenSize = GetViewport().GetSize();
-    }   
+    }
 
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
@@ -241,19 +241,19 @@ or ``false`` if it isn't.
         if (Input.IsActionPressed("ui_right")) {
             velocity.x += 1;
         }
-    
+
         if (Input.IsActionPressed("ui_left")) {
             velocity.x -= 1;
         }
-    
+
         if (Input.IsActionPressed("ui_down")) {
             velocity.y += 1;
         }
-    
+
         if (Input.IsActionPressed("ui_up")) {
             velocity.y -= 1;
         }
-    
+
         var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
         if (velocity.Length() > 0) {
             velocity = velocity.Normalized() * Speed;
@@ -261,7 +261,7 @@ or ``false`` if it isn't.
         } else {
             animatedSprite.Stop();
         }
-    }   
+    }
 
 We check each input and add/subtract from the ``velocity`` to obtain a
 total direction. For example, if you hold ``right`` and ``down`` at
@@ -282,7 +282,7 @@ AnimatedSprite animation.
 
 .. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
          Since AnimatedSprite is a child of the current node, we can use ``$AnimatedSprite``.
-         
+
          ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
@@ -335,7 +335,7 @@ Let's place this code at the end of our ``_process()`` function:
         elif velocity.y != 0:
             $AnimatedSprite.animation = "up"
             $AnimatedSprite.flip_v = velocity.y > 0
- 
+
  .. code-tab:: csharp
 
         if (velocity.x != 0) {
@@ -354,7 +354,7 @@ starts:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     hide()
 
  .. code-tab:: csharp
@@ -377,7 +377,7 @@ Add the following at the top of the script, after ``extends Area2d``:
 
  .. code-tab:: csharp
 
-    [Signal] 
+    [Signal]
     public delegate void Hit();
 
 This defines a custom signal called "hit" that we will have our player
@@ -415,7 +415,7 @@ Add this code to the function:
     {
         Hide(); // Player disappears after being hit.
         EmitSignal("Hit");
-        
+
         // For the sake of this example, but it's better to create a class var
         // then assign the variable inside _Ready()
         var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
@@ -444,7 +444,7 @@ the player when starting a new game.
     {
         Position = pos;
         Show();
-        
+
         var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
         collisionShape2D.Disabled = false;
     }
@@ -490,7 +490,7 @@ We'll select one of these animations randomly so that the mobs will have some va
 
 .. image:: img/mob_animations.gif
 
-``fly`` should be set to 3 FPS, with ``swim`` and ``walk`` set to 4 FPS. 
+``fly`` should be set to 3 FPS, with ``swim`` and ``walk`` set to 4 FPS.
 
 Like the player images, these mob images need to be scaled down. Set the
 ``AnimatedSprite``'s ``Scale`` property to ``(0.75, 0.75)``.
@@ -517,10 +517,10 @@ Add a script to the ``Mob`` and add the following member variables:
 
     public class Mob : RigidBody2D
     {
-        [Export] 
+        [Export]
         public int MinSpeed = 150; // Minimum speed range.
 
-        [Export] 
+        [Export]
         public int MaxSpeed = 250; // Maximum speed range.
 
         private String[] _mobTypes = {"walk", "swim", "fly"};
@@ -532,7 +532,7 @@ at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
 also have an array containing the names of the three animations, which
 we'll use to select a random one.
 
-Now let's look at the rest of the script. In ``_ready()`` we randomly 
+Now let's look at the rest of the script. In ``_ready()`` we randomly
 choose one of the three animation types:
 
 .. tabs::
@@ -546,7 +546,7 @@ choose one of the three animation types:
     public override void _Ready()
     {
         var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
-    
+
         // C# doesn't implement GDScript's random methods, so we use 'Random'
         // as an alternative.
         //
@@ -615,7 +615,7 @@ Spawning Mobs
 
 The Main node will be spawning new mobs, and we want them to appear at a
 random location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node named
-``MobPath`` as a child of ``Main``. When you select ``Path2D``, 
+``MobPath`` as a child of ``Main``. When you select ``Path2D``,
 you will see some new buttons at the top of the editor:
 
 .. image:: img/path2d_buttons.png
@@ -661,7 +661,7 @@ instance.
 
     public class Main : Node
     {
-        [Export] 
+        [Export]
         public PackedScene Mob;
 
         public int Score = 0;
@@ -709,7 +709,7 @@ function to set everything up for a new game:
         //timers
         var mobTimer = (Timer) GetNode("MobTimer");
         var scoreTimer = (Timer) GetNode("ScoreTimer");
-    
+
         scoreTimer.Stop();
         mobTimer.Stop();
     }
@@ -717,11 +717,11 @@ function to set everything up for a new game:
     public void NewGame()
     {
         Score = 0;
-    
+
         var player = (Player) GetNode("Player");
         var startTimer = (Timer) GetNode("StartTimer");
         var startPosition = (Position2D) GetNode("StartPosition");
-        
+
         player.Start(startPosition.Position);
         startTimer.Start();
     }
@@ -747,7 +747,7 @@ increment the score by 1.
         //timers
         var mobTimer = (Timer) GetNode("MobTimer");
         var scoreTimer = (Timer) GetNode("ScoreTimer");
-    
+
         mobTimer.Start();
         scoreTimer.Start();
     }
@@ -765,6 +765,11 @@ well as its position.
 
 Note that a new instance must be added to the scene using
 ``add_child()``.
+
+Now click on ``MobTimer`` in the scene window then head to inspector window,
+switch to node view then click on ``timeout()`` and connect the signal.
+
+Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -928,7 +933,7 @@ Now add this script to ``HUD``:
 
     public class HUD : CanvasLayer
     {
-        [Signal] 
+        [Signal]
         public delegate void StartGame();
     }
 
@@ -949,7 +954,7 @@ has been pressed.
     {
         var messageTimer = (Timer) GetNode("MessageTimer");
         var messageLabel = (Label) GetNode("MessageLabel");
-    
+
         messageLabel.Text = text;
         messageLabel.Show();
         messageTimer.Start();
@@ -1023,7 +1028,7 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
     {
         var startButton = (Button) GetNode("StartButton");
         startButton.Hide();
-    
+
         EmitSignal("StartGame");
     }
 
