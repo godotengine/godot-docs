@@ -726,7 +726,7 @@ function to set everything up for a new game:
         startTimer.Start();
     }
 
-Now connect the ``timeout()`` signal of each of the Timer nodes.
+Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``, ``ScoreTimer`` & ``MobTimer``).
 ``StartTimer`` will start the other two timers. ``ScoreTimer`` will
 increment the score by 1.
 
@@ -765,11 +765,6 @@ well as its position.
 
 Note that a new instance must be added to the scene using
 ``add_child()``.
-
-Now click on ``MobTimer`` in the scene window then head to inspector window,
-switch to node view then click on ``timeout()`` and connect the signal.
-
-Add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
