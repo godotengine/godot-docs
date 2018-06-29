@@ -53,7 +53,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         "Knife_equip":["Knife_idle"],
         "Knife_fire":["Knife_idle"],
         "Knife_idle":["Knife_fire", "Knife_unequip", "Knife_idle"],
-        "Knife_unequip":["Idle_unarmed"],
+        "Knife_unequip":["Idle_unarmed"]
     }
 
     var animation_speeds = {
@@ -74,7 +74,7 @@ Add the following code to ``AnimationPlayer_Manager.gd``:
         "Knife_equip":1,
         "Knife_fire":1.35,
         "Knife_idle":1,
-        "Knife_unequip":1,
+        "Knife_unequip":1
     }
 
     var current_state = null
@@ -169,7 +169,7 @@ an array holding all of the animations (states) we can transition to. For exampl
 state ``Idle_unarmed``, we can only transition to ``Knife_equip``, ``Pistol_equip``, ``Rifle_equip``, and
 ``Idle_unarmed``.
 
-If we try to transition to a state that is not included in the possible transitions states for the state we are in,
+If we try to transition to a state that is not included in the possible transition states for the state we are in,
 then we get a warning message and the animation does not change. We can also automatically
 transition from some states into others, as will be explained further below in ``animation_ended``
 
@@ -210,10 +210,10 @@ Lets look at ``set_animation`` next.
 *if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 
-To start we check if the passed in animation name is the same as name as the animation currently playing.
+To start we check if the passed in animation name have the same name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
-Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the a animation with the name ``animation_name`` using ``has_animation``.
+Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has an animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
 Then we check if ``current_state`` is set or not. If ``current_state`` is *not* currently set, we
@@ -287,7 +287,7 @@ option that reads "Add Call Func Track". This will open a window showing the ent
 
 .. image:: img/AnimationPlayerCallFuncTrack.png
 
-Now at the bottom of list of animation tracks you will have a green track that reads "AnimationPlayer".
+Now at the bottom of the list of animation tracks you will have a green track that reads "AnimationPlayer".
 Now we need to add the point where we want to call our callback function. Scrub the timeline until you
 reach the point where the muzzle starts to flash.
 
@@ -371,17 +371,17 @@ we will be exploring two of the more common ways: Objects, and raycasts.
 _________
 
 One of the two ways is using a bullet object. This will be an object that travels through the world and handles
-its own collision code. This method we create/spawn a bullet object in the direction our gun is facing, and then
+its own collision code. In this method we create/spawn a bullet object in the direction our gun is facing, and then
 it sends itself forward.
 
 There are several advantages to this method. The first being we do not have to store the bullets in our player. We can simply create the bullet
 and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
-Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
+Another advantage is that we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
 controlling script slowly push the bullet towards the ground. Using a object also makes the bullet take time to reach its target, it doesn't instantly
 hit whatever its pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
 
-One of the huge disadvantages performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
+One of the huge disadvantages is performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
 it comes at the cost of performance. With this method we are calculating every bullet's movement every step, and while this may not be a problem for a few dozen
 bullets, it can become a huge problem when you potentially have several hundred bullets.
 
@@ -397,7 +397,7 @@ because they generally bounce around the world before exploding.
           - Call of Duty (Rocket launchers, grenades, ballistic knives, crossbows, and more)
           - Battlefield (Rocket launchers, grenades, claymores, mortars, and more)
 
-Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with however many clients are connected
+Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with all the clients connected
 to the server.
 
 While we are not implementing any form of networking (as that would be it's own entire tutorial series), it is a consideration
@@ -407,7 +407,7 @@ _________
 
 The other way of handling bullet collisions we will be looking at, is raycasting.
 
-This method is extremely common in guns that have fast moving bullets that rarely change trajectory change over time.
+This method is extremely common in guns that have fast moving bullets that rarely change trajectory over time.
 
 Instead of creating a bullet object and sending it through space, we instead send a ray starting from the barrel/muzzle of the gun forwards.
 We set the raycast's origin to the starting position of the bullet, and based on the length we can adjust how far the bullet 'travels' through space.
@@ -427,9 +427,9 @@ bullet objects.
 Another advantage is we can instantly know if we've hit something or not exactly when we call for it. For networking this is important because we do not need
 to sync the bullet movements over the Internet, we only need to send whether or not the raycast hit.
 
-Raycasting does have some disadvantages though. One major disadvantage is we cannot easily cast a ray in anything but a linear line.
+Raycasting does have some disadvantages though. One major disadvantage is that we cannot easily cast a ray in anything but a linear line.
 This means we can only fire in a straight line for however long our ray length is. You can create the illusion of bullet movement by casting
-multiple rays at different positions, but not only is this hard to implement in code, it is also is heavier on performance.
+multiple rays at different positions, but not only is this hard to implement in code, it is also heavier on performance.
 
 Another disadvantage is we cannot see the bullet. With bullet objects we can actually see the bullet travel through space if we attach a mesh
 to it, but because raycasts happen instantly, we do not have a decent way of showing the bullets. You could draw a line from the origin of the
@@ -498,14 +498,13 @@ First we define a few class variables:
 - ``BULLET_SPEED``: The speed the bullet travels at.
 - ``BULLET_DAMAGE``: The damage the bullet will cause to whatever it collides with.
 - ``KILL_TIMER``: How long the bullet can last without hitting anything.
-- ``timer``: A float for tracking how long we've been alive.
+- ``timer``: A float for tracking how long the bullet has been alive.
 - ``hit_something``: A boolean for tracking whether or not we've hit something.
 
 With the exception of ``timer`` and ``hit_something``, all of these variables
 change how the bullet interacts with the world.
 
-.. note:: The reason we are using a kill timer is so we do not have a case where we
-          get a bullet travelling forever. By using a kill timer, we can assure that
+.. note:: The reason we are using a kill timer is so we do not have a case where the bullet is travelling forever. By using a kill timer, we can assure that
           no bullets will travel forever and consume resources.
 
 .. tip:: As in :ref:`doc_fps_tutorial_part_one`, we have a couple all uppercase class variables. The reason behind this is the same
@@ -520,13 +519,13 @@ the ``collided`` function when a body enters the area.
 
 _________
 
-``_physics_process`` gets the bullet's local ``Z`` axis. If you look in at the scene
+``_physics_process`` gets the bullet's local ``Z`` axis. If you look at the scene
 in local mode, you will find that the bullet faces the positive local ``Z`` axis.
 
 Next we translate the entire bullet by that forward direction, multiplying in our speed and delta time.
 
 After that we add delta time to our timer and check if the timer has as long or longer
-than our ``KILL_TIME`` constant. If it has, we use ``queue_free`` to free ourselves.
+than our ``KILL_TIME`` constant. If it has, we use ``queue_free`` to free the bullet object.
 
 _________
 
@@ -567,7 +566,7 @@ is lined up with the center of the screen and pulled a distance forward on the Z
 axis. ``Gun_aim_point`` will serve as the point where the bullets will for sure collide
 with as it goes along.
 
-.. note:: There is a invisible mesh instance for debugging purposes. The mesh is
+.. note:: There is an invisible mesh instance for debugging purposes. The mesh is
           a small sphere that visually shows where the bullets will be aiming at.
 
 Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
@@ -575,7 +574,7 @@ weapon.
 
 Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
 we will be sending the raycasts for our rifle's bullets.
-The length of the raycast will dictate how far our the bullets will travel.
+The length of the raycast will dictate how far our bullets will travel.
 
 We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet because
 we want to fire lots of bullets quickly. If we use bullet objects, it is quite possible
