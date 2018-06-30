@@ -361,14 +361,14 @@ Interpolation qualifiers
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Certain values are interpolated during the shading pipeline. You can modify how these interpolations
-are done by using *interpolation qualifiers*. 
+are done by using *interpolation qualifiers*.
 
 .. code-block:: glsl
 
     shader_type spatial;
 
     varying flat vec3 our_color;
-    
+
     void vertex() {
         our_color = COLOR.rgb;
     }
@@ -380,7 +380,7 @@ are done by using *interpolation qualifiers*.
 There are three possible interpolation qualifiers:
 
 +-------------------+---------------------------------------------------------------------------------+
-| Qualifier         | Description                                                                     | 
+| Qualifier         | Description                                                                     |
 +===================+=================================================================================+
 | **flat**          | The value is not interpolated                                                   |
 +-------------------+---------------------------------------------------------------------------------+
@@ -1018,7 +1018,9 @@ Fragment Built-Ins
 +----------------------------------+----------------------------------------------------------------+
 | sampler2D **NORMAL_TEXTURE**     | Default 2D normal texture.                                     |
 +----------------------------------+----------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**   | Default 2D texture pixel size.                                 |
+| in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of default 2D texture.                   |
+|                                  | For a Sprite with a texture of size 64x32px,                   |
+|                                  | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`              |
 +----------------------------------+----------------------------------------------------------------+
 | in vec2 **SCREEN_UV**            | Screen UV for use with SCREEN_TEXTURE.                         |
 +----------------------------------+----------------------------------------------------------------+
@@ -1051,7 +1053,9 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | sampler2D **TEXTURE**               | Current texture in use for CanvasItem.                                        |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**      | Pixel size for current 2D texture.                                            |
+| in vec2 **TEXTURE_PIXEL_SIZE**      | Normalized pixel size of default 2D texture.                                  |
+|                                     | For a Sprite with a texture of size 64x32px,                                  |
+|                                     | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                             |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**               | Screen Texture Coordinate (for using with texscreen).                         |
 +-------------------------------------+-------------------------------------------------------------------------------+
