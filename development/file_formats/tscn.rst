@@ -372,7 +372,7 @@ An animation resource consists of tracks. Besides, it has 'length', 'loop' and
 
 1) :code:`length` and :code:`step` are both time in seconds
 
-Each track is described by a list of key, value pairt in the format :code:`tracks/Id/Attribute`,
+Each track is described by a list of key, value pair in the format :code:`tracks/Id/Attribute`,
 it includes:
 
 - type
