@@ -328,7 +328,7 @@ TSCN support two format of surface,
     ii) :code:`arrays` as the name suggests is an array of array, it contains:
 
         1) a array of vertex position
-        2) tagents array
+        2) tangents array
         3) vertex color array
         4) UV array 1
         5) UV array 2
