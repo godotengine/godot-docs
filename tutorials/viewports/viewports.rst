@@ -202,8 +202,8 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: as of the 
-writting of this (v3.0.2) wireframe is broken and currently just renders the scene normally.
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of 
+writing this (v3.0.2) wireframe is broken and currently just renders the scene normally.
 
 Render target
 -------------
