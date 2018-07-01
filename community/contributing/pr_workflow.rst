@@ -54,11 +54,11 @@ The branches on the Git repository are organized as follows:
    occurs. As a development branch, it can be unstable
    and is not meant for use in production. This is where PRs should be done
    in priority.
--  The stable branches are named after their version, E.G. ``3.0`` and ``2.1``.
+-  The stable branches are named after their version, e.g. ``3.0`` and ``2.1``.
    They are used to backport bugfixes and enhancements from the ``master``
-   branch to the currently maintained stable release (E.G. 3.0.2 or 2.1.5).
+   branch to the currently maintained stable release (e.g. 3.0.2 or 2.1.5).
    As a rule of thumb, the last stable branch is maintained until the next
-   major version (E.G. the ``2.0`` branch was maintained until the release of
+   major version (e.g. the ``2.0`` branch was maintained until the release of
    Godot 2.1).
    If you want to make PRs against a maintained stable branch, you will have
    to check if your changes are also relevant for the ``master`` branch.
@@ -221,12 +221,12 @@ bring changes from the working directory to the Git repository, you need to
 There are various commands you should know to review your current work,
 before staging it, while it is staged, and after it has been committed.
 
-- ``git diff`` will show you the current unstaged changes, I.E. the
+- ``git diff`` will show you the current unstaged changes, i.e. the
   differences between your working directory and the staging area.
 - ``git checkout -- <files>`` will undo the unstaged changes to the given
   files.
 - ``git add <files>`` will *stage* the changes on the listed files.
-- ``git diff --staged`` will show the current staged changes, I.E. the
+- ``git diff --staged`` will show the current staged changes, i.e. the
   differences between the staging area and the last commit.
 - ``git reset HEAD <files>`` will *unstage* changes to the listed files.
 - ``git status`` will show you what are the currently staged and unstaged
@@ -354,7 +354,7 @@ Mastering the PR workflow: The rebase
 
 On the situation outlined above, your fellow contributors who are particularly
 pedantic regarding the Git history might ask your to *rebase* your branch to
-*squash* or *meld* the last two commits together (I.E. the two related to the
+*squash* or *meld* the last two commits together (i.e. the two related to the
 project manager), as the second commit basically fixes an issue in the first one.
 
 Once the PR is merged, it is not relevant for a changelog reader that the PR
