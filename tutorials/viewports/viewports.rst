@@ -39,7 +39,7 @@ Input
 
 :ref:`Viewports <class_Viewport>` are also responsible for delivering properly adjusted and
 scaled input events to all their children nodes. Typically input is received by the
-nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not recieve input by checking
+nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not receive input by checking
 'Disable Input' to 'on', this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture 
 the input. 
 
