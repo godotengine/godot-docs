@@ -317,7 +317,7 @@ commits behind, if your ``master`` branch was out of sync with the upstream
 On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the godotengine/godot upstream
 repository. It should show you your two commits, and state "Able to merge".
-If not (E.G. it has way more commits, or says there are merge conflicts),
+If not (e.g. it has way more commits, or says there are merge conflicts),
 don't create the PR, something went wrong. Go to IRC and ask for support :)
 
 Use an explicit title for the PR and put the necessary details in the comment
@@ -333,7 +333,7 @@ changes to your yet-unmerged PR, either because contributors requested them,
 or because you found issues yourself while testing.
 
 The good news is that you can modify a pull request simply by acting on the
-branch you made the pull request from. You can E.G. make a new commit on that
+branch you made the pull request from. You can e.g. make a new commit on that
 branch, push it to your fork, and the PR will be updated automatically:
 
 ::
