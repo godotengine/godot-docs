@@ -24,8 +24,8 @@ skybox.
 
 :ref:`Viewports <class_Viewport>` have a variety of use cases including: 
 
-- Rendering 3d objects within a 2D game
-- Rendering 2d elements in a 3D game
+- Rendering 3D objects within a 2D game
+- Rendering 2D elements in a 3D game
 - Rendering dynamic textures
 - Generating procedural textures at runtime
 - Rendering multiple cameras in the same scene 
@@ -202,7 +202,7 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of 
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. Note: As of 
 writing this (v3.0.2) wireframe is broken and currently just renders the scene normally.
 
 Render target
