@@ -363,7 +363,7 @@ first ``setget`` call, we would get several errors in the debugger.
 Also, notice how we are using a exported variable. This is so we can change the size of the health pick ups in the editor. This makes it where
 we do not have to make two scenes for the two sizes, since we can easily change sizes in the editor using the exported variable.
 
-.. tip:: See :ref:`doc_GDScript` and scroll down to the Exports section for a list of of export hints you can use.
+.. tip:: See :ref:`doc_GDScript` and scroll down to the Exports section for a list of the export hints you can use.
 
 ______
 

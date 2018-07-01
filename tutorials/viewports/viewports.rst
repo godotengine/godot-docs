@@ -39,7 +39,7 @@ Input
 
 :ref:`Viewports <class_Viewport>` are also responsible for delivering properly adjusted and
 scaled input events to all their children nodes. Typically input is received by the
-nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not recieve input by checking
+nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not receive input by checking
 'Disable Input' to 'on', this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture 
 the input. 
 
@@ -69,7 +69,7 @@ following hierarchy:
 CameraA will display on the Root :ref:`Viewport <class_Viewport>` and it will draw MeshA. CameraB
 will be captured by the :ref:`Viewport <class_Viewport>` Node along with MeshB. Even though MeshB is in the scene 
 heirarchy, it will still not be drawn to the Root :ref:`Viewport <class_Viewport>`. Similarly MeshA will not
-be visible from the :ref:`Viewport <class_Viewport>` node becuase :ref:`Viewport <class_Viewport>` nodes only capture nodes below them
+be visible from the :ref:`Viewport <class_Viewport>` node because :ref:`Viewport <class_Viewport>` nodes only capture nodes below them
 in the heirarchy.
 
 There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if there is more
@@ -206,7 +206,7 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 *The same scene with Debug Draw set to Overdraw*
 
 Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: as of the 
-writting of this (v3.0.2) wireframe is broken and currently just renders the scene normally.
+writing of this (v3.0.2) wireframe is broken and currently just renders the scene normally.
 
 Render target
 -------------

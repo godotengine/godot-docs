@@ -473,7 +473,7 @@ Operators
 
 These are mostly generic operators such as addition, multiplication, comparison, etc.
 By default, these mostly accept any datatype (and will error in run-time if the types
-feeded do not match for the operator). It is always recommended to set the right
+fed do not match for the operator). It is always recommended to set the right
 type for operators to catch errors faster and make the graph easier to read.
 
 .. image:: img/visual_script46.png

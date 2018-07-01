@@ -350,7 +350,7 @@ Depth
 
 Setting a depth map to a material produces a ray-marched search to emulate the
 proper displacement of cavities along the view direction. This is not real added geometry, but an illusion of depth.
-It may not work for complex objets, but it produces a realistic depth effect for textues.
+It may not work for complex objects, but it produces a realistic depth effect for textures.
 For best results, *Depth* should be used together with normal mapping.
 
 .. image:: img/spatial_material20.png
