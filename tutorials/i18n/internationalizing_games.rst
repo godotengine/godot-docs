@@ -22,7 +22,7 @@ them is already covered in the :ref:`doc_importing_translations` tutorial, so th
 one could be seen more like a follow up to that one.
 
 
-.. note:: We would be using the offical demo as an example, you can download it in the AssetLib: https://godotengine.org/asset-library/asset/134 or find it in the demo_projects/gui/translation 
+.. note:: We would be using the official demo as an example, you can download it in the AssetLib: https://godotengine.org/asset-library/asset/134 or find it in the demo_projects/gui/translation 
 
 Configuring the imported translation
 ------------------------------------
