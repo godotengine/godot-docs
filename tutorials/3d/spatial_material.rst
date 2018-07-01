@@ -46,8 +46,7 @@ Unshaded
 
 In most cases, it is common for materials to be affected by lighting (shaded).
 
-Sometimes, however, one might want to show just the albedo (color) and ignore the rest. Toggling this flag on will remove all
-shading and show pure, unlit, color.
+Sometimes, however, one might want to show just the albedo (color) and ignore the rest. Toggling this flag on will remove all shading and show pure, unlit, color.
 
 .. image:: img/spatial_material26.png
 
@@ -222,8 +221,7 @@ Grows the object vertices in the direction pointed by their normals:
 
 .. image:: img/spatial_material10.png
 
-This is commonly used to create cheap outlines. Add a second material pass, make it black and unshaded, reverse culling (Cull Front), and
-add some grow:
+This is commonly used to create cheap outlines. Add a second material pass, make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
 
@@ -240,8 +238,7 @@ This renders the object via the opaque pipeline which is faster and allows it to
 Material colors, maps and channels
 ----------------------------------
 
-Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a extensive list
-of them. They will be described in detail below:
+Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a extensive list of them. They will be described in detail below:
 
 Albedo
 ~~~~~~
@@ -350,7 +347,7 @@ Depth
 
 Setting a depth map to a material produces a ray-marched search to emulate the
 proper displacement of cavities along the view direction. This is not real added geometry, but an illusion of depth.
-It may not work for complex objets, but it produces a realistic depth effect for textues.
+It may not work for complex objects, but it produces a realistic depth effect for textures.
 For best results, *Depth* should be used together with normal mapping.
 
 .. image:: img/spatial_material20.png

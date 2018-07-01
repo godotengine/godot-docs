@@ -24,8 +24,8 @@ skybox.
 
 :ref:`Viewports <class_Viewport>` have a variety of use cases including: 
 
-- Rendering 3d objects within a 2d game
-- Rendering 2d elements in a 3d game
+- Rendering 3d objects within a 2D game
+- Rendering 2d elements in a 3D game
 - Rendering dynamic textures
 - Generating procedural textures at runtime
 - Rendering multiple cameras in the same scene 
@@ -39,7 +39,7 @@ Input
 
 :ref:`Viewports <class_Viewport>` are also responsible for delivering properly adjusted and
 scaled input events to all their children nodes. Typically input is received by the
-nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not recieve input by checking
+nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not receive input by checking
 'Disable Input' to 'on', this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture 
 the input. 
 
@@ -68,9 +68,8 @@ following hierarchy:
 
 CameraA will display on the Root :ref:`Viewport <class_Viewport>` and it will draw MeshA. CameraB
 will be captured by the :ref:`Viewport <class_Viewport>` Node along with MeshB. Even though MeshB is in the scene 
-heirarchy, it will still not be drawn to the Root :ref:`Viewport <class_Viewport>`. Similarly MeshA will not
-be visible from the :ref:`Viewport <class_Viewport>` node becuase :ref:`Viewport <class_Viewport>` nodes only capture nodes below them
-in the heirarchy.
+hierarchy, it will still not be drawn to the Root :ref:`Viewport <class_Viewport>`. Similarly MeshA will not
+be visible from the :ref:`Viewport <class_Viewport>` node because :ref:`Viewport <class_Viewport>` nodes only capture nodes below them in the hierarchy.
 
 There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if there is more
 than one, make sure that the desired one has the "current" property set,
@@ -111,7 +110,7 @@ be set in a :ref:`Viewport <class_Viewport>` using the "world" property, and tha
 all children nodes of that :ref:`Viewport <class_Viewport>` from interacting with the parent
 :ref:`Viewport's <class_Viewport>` :ref:`World <class_World>`. This is especially useful in scenarios where, for
 example, you might want to show a separate character in 3D imposed over
-the game (like in Starcraft).
+the game (like in StarCraft).
 
 As a helper for situations where you want to create :ref:`Viewports <class_Viewport>` that
 display single objects and don't want to create a :ref:`World <class_World>`, :ref:`Viewport <class_Viewport>` has
@@ -162,8 +161,7 @@ check out the `Screen Capture example <https://github.com/godotengine/godot-demo
 Viewport Container
 ------------------
 
-If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer <class_viewportcontainer>`, it will become active and
-display anything it has inside. The layout looks like this:
+If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer <class_viewportcontainer>`, it will become active and display anything it has inside. The layout looks like this:
 
 .. image:: img/container.png
 
@@ -177,8 +175,7 @@ Rendering
 Due to the fact that the :ref:`Viewport <class_Viewport>` is an entryway into another rendering surface, it exposes a few
 rendering properties that can be different from the project settings. The first is MSAA, you can
 choose to use a different level of MSAA for each :ref:`Viewport <class_Viewport>`, the default behavior is DISABLED.
-You can also set the :ref:`Viewport <class_Viewport>` to use HDR, HDR is very useful for when you want to store values in the
-texture that are outside the range 0.0 - 1.0. 
+You can also set the :ref:`Viewport <class_Viewport>` to use HDR, HDR is very useful for when you want to store values in the texture that are outside the range 0.0 - 1.0. 
 
 If you know how the :ref:`Viewport <class_Viewport>` is going to be used, you can set its Usage to either 3D or 2D. Godot will then
 restrict how the :ref:`Viewport <class_Viewport>` is drawn to in accordance with your choice, default is 3D. 
@@ -205,8 +202,8 @@ Overdraw draws the meshes semi-transparent with an additive blend so you can see
 
 *The same scene with Debug Draw set to Overdraw*
 
-Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: as of the 
-writting of this (v3.0.2) wireframe is broken and currently just renders the scene normally.
+Lastly, Wireframe draws the scene using only the edges of triangles in the meshes. NOTE: As of 
+writing this (v3.0.2) wireframe is broken and currently just renders the scene normally.
 
 Render target
 -------------

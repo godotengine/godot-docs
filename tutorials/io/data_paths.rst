@@ -38,5 +38,5 @@ to the project. On desktop operating systems, the engine uses the
 typical ``~/.local/share/godot/app_userdata/Name`` on macOS and Linux,
 and ``%APPDATA%/Name`` on Windows. ``Name`` is taken from the
 application name defined in the Project Settings, but it can be
-overriden on a per-platform basis using
+overridden on a per-platform basis using
 :ref:`feature tags <doc_feature_tags>`.

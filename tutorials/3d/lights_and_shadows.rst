@@ -61,7 +61,7 @@ Finally, if gaps can't be solved, the **Contact** option can help:
 .. image:: img/shadow_contact.png
 
 Any sort of bias issues can always be fixed by increasing the shadow map resolution,
-although that may lead to decreased peformance on low-end hardware.
+although that may lead to decreased performance on low-end hardware.
 
 Directional light
 ~~~~~~~~~~~~~~~~~

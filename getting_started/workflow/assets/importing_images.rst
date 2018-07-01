@@ -126,7 +126,7 @@ When set to "Detect" mode, the texture will be marked as SRGB when used in albed
 Process
 -------
 
-Some special processes can be applied to images when importe as texture.
+Some special processes can be applied to images when imported as textures.
 
 Fix Alpha Border
 ~~~~~~~~~~~~~~~~

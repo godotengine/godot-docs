@@ -197,7 +197,7 @@ Below the member panel, exists the list of all available node types:
 
 Ctrl-F (Command-F on Mac) allows you to search the list.
 
-Any of them can be dragged to the scene. Unlike nodes (e.g. dragging a property
+Any of them can be dragged to the scene. Unlike nodes (E.G. dragging a property
 from the Inspector sets the context to the node being edited automatically), these are added without any "contextual" information, so this has to be done manually.
 
 .. image:: img/visual_script34.png
@@ -472,8 +472,8 @@ Operators
 ~~~~~~~~~
 
 These are mostly generic operators such as addition, multiplication, comparison, etc.
-By default, these mostly accept any datatype (and will error in run-time if the types
-feeded do not match for the operator). It is always recommended to set the right
+By default, these mostly accept any datatype (and will error in run-time if the fed types
+do not match for the operator). It is always recommended to set the right
 type for operators to catch errors faster and make the graph easier to read.
 
 .. image:: img/visual_script46.png
