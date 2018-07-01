@@ -63,7 +63,7 @@ so on. For example, a spatial node looks like:
 The Scene Tree
 --------------
 
-The scene tree is made up of ... nodes! The heading of each node consists of
+The scene tree is made up of... nodes! The heading of each node consists of
 it's name, parent and (most of the time) a type. For example
 :code:`[node type="Camera" name="PlayerCamera" parent="Player/Head"]`
 
@@ -325,16 +325,16 @@ TSCN support two format of surface,
     i) :code:`primitive` is an enumerate variable, :code:`primitive=4` which is 
        PRIMITIVE_TRIANGLES is frequently used.
 
-    ii) :code:`arrays` as name suggests is an array of array, it contains:
+    ii) :code:`arrays` as the name suggests is an array of array, it contains:
 
-        1) a array of vertex position
-        2) tangents array
-        3) vertex color array
+        1) An array of vertex position
+        2) Tangents array
+        3) Vertex color array
         4) UV array 1
         5) UV array 2
-        6) bone index array
-        7) bone weight array
-        8) vertex index array
+        6) Bone index array
+        7) Bone weight array
+        8) Vertex index array
 
     iii) :code:`morph_arrays` is an array of morph, each morph is exactly an 
          :code:`arrays` without vertex index array.
@@ -372,7 +372,7 @@ An animation resource consists of tracks. Besides, it has 'length', 'loop' and
 
 1) :code:`length` and :code:`step` are both time in seconds
 
-Each track is described by a list of key, value pair in the format :code:`tracks/Id/Attribute`,
+Each track is described by a list of (key, value) pairs in the format :code:`tracks/Id/Attribute`,
 it includes:
 
 - type
