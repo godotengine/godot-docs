@@ -109,7 +109,7 @@ means all the technologies that ship with it have to be Free (as in freedom) as 
 For the most part, they’re coded from the ground-up by contributors.
 
 Anyone can plug in proprietary tools for the needs of their projects - 
-they just won’t ship with the engine. This may include NViDia PhysX,
+they just won’t ship with the engine. This may include NVIDIA PhysX,
 Google Admob, or an FBX file importer. Any of these can come as
 third-party plugins instead.
 
