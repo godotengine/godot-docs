@@ -206,7 +206,7 @@ _________
 
 Lets look at ``set_animation`` next.
 
-``set_animation`` changes the animation to the the animation named ``animation_name``
+``set_animation`` changes the animation to the animation named ``animation_name``
 *if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 

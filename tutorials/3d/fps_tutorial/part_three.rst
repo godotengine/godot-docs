@@ -675,7 +675,7 @@ There's still a few things that would be nice to add, and we're going to add the
 For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't
 have anything to shoot at outside of the :ref:`RigidBody <class_RigidBody>` nodes.
 
-In In :ref:`doc_fps_tutorial_part_four` we'll add some targets to shoot at, along with some health and ammo pick ups!
+In :ref:`doc_fps_tutorial_part_four` we'll add some targets to shoot at, along with some health and ammo pick ups!
 We're also going to add joypad support, so we can play with wired Xbox 360 controllers!
 
 .. warning:: If you ever get lost, be sure to read over the code again!
