@@ -327,14 +327,14 @@ TSCN support two format of surface,
 
     ii) :code:`arrays` as the name suggests is an array of array, it contains:
 
-        1) a array of vertex position
-        2) tangents array
-        3) vertex color array
+        1) An array of vertex position
+        2) Tangents array
+        3) Vertex color array
         4) UV array 1
         5) UV array 2
-        6) bone index array
-        7) bone weight array
-        8) vertex index array
+        6) Bone index array
+        7) Bone weight array
+        8) Vertex index array
 
     iii) :code:`morph_arrays` is an array of morph, each morph is exactly an 
          :code:`arrays` without vertex index array.
