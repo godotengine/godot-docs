@@ -406,7 +406,7 @@ it includes:
    but have different structure for track with different type
 
     - A transform track use every 12 real number in the :code:`keys` to describte a keyframe. 
-      The first number is the timestamp, the second number is the transision (default 1.0
+      The first number is the timestamp, the second number is the transition (default 1.0
       in transform track), followed by a three number translation vector, followed by 
       four number rotation quaternion (x,y,z,w) and finally a three number scale vector.
 
