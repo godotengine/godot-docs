@@ -132,7 +132,7 @@ be able to open a new issue there, and click on the "New issue" button.
 When you report a bug, you should keep in mind that the process is similar
 to an appointment with your doctor. You noticed *symptoms* that make you think
 that something might be wrong (the engine crashes, some features don't work as
-expected, etc.). It's the role of the bug triagging team and the developers to
+expected, etc.). It's the role of the bug triaging team and the developers to
 then help make the diagnosis of the issue you met, so that the actual cause of
 the bug can be identified and addressed.
 
