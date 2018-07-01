@@ -86,6 +86,10 @@ Another thing to notice here is how we have everything set up under the :ref:`AR
 that represents the player's head in the game. The :ref:`ARVRCamera <class_ARVRCamera>` will be offset by the player's height, and if there is room tracking, then the camera
 can move around 3D space as well, relative to the :ref:`ARVROrigin <class_ARVROrigin>`. This is important to note, especially for later when we add teleporting.
 
+Notice how there is a :ref:`ColorRect <class_ColorRect>` node called ``Movement_Vignette``. This will be a vignette shader that will only be visible when the player is moving.
+We are going to use the vignette shader to help reduce motion sickness while moving in VR.
+The reason it is a child of :ref:`ARVROrigin <class_ARVROrigin>` is because we want it to easily access the VR controllers.
+
 The final thing to note is that there are two :ref:`ARVRController <class_ARVRController>` nodes, and these will represent the left and right controllers in 3D space.
 A :ref:`ARVRController <class_ARVRController>` with an ID of ``1`` is the left hand, while a :ref:`ARVRController <class_ARVRController>` with an ID of ``2`` is the right hand.
 
@@ -145,11 +149,13 @@ Open either ``Left_Controller.tscn`` or ``Right_Controller.tscn``.
 
 Feel free to look at how the scene is set up. There is only a couple things of note to point out.
 
-First, notice how there is a :ref:`Raycast <class_Raycast>`. We will be using this :ref:`Raycast <class_Raycast>` to teleport around the game world.
+First, notice how there is a couple :ref:`Raycast <class_Raycast>` nodes. We will be using one :ref:`Raycast <class_Raycast>` to teleport around the game world (``Raycast``) and
+we will use the other for picking up objects (``GrabCast``) if the player is using :ref:`Raycast <class_Raycast>` nodes to pick up objects.
 
 The other thing to note is how there is an :ref:`Area <class_Area>`, simply called ``Area``, that is a small sphere in the palm of the hand. This will be used to detect
-objects the player can pick up with that hand. We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will simply be used
-to wake :ref:`RigidBody <class_RigidBody>` nodes when the hands get close.
+objects the player can pick up with that hand if the player is using :ref:`Area <class_Area>` nodes to pick up objects.
+
+We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will simply be used to wake :ref:`RigidBody <class_RigidBody>` nodes when the hands get close.
 
 Select the root node, either ``Left_Controller`` or ``Right_Controller`` depending on which scene you chose, and create a new script called ``VR_Controller.gd``.
 Add the following to ``VR_Controller.gd``:
@@ -166,25 +172,32 @@ Add the following to ``VR_Controller.gd``:
     var held_object_data = {"mode":RigidBody.MODE_RIGID, "layer":1, "mask":1}
 
     var grab_area
+    var grab_raycast
+    var grab_mode = "AREA"
     var grab_pos_node
 
     var hand_mesh
 
     var teleport_pos
     var teleport_mesh
-    var teleport_finger_mesh
     var teleport_button_down
     var teleport_raycast
+
+    const CONTROLLER_DEADZONE = 0.65
+
+    const MOVEMENT_SPEED = 1.5
+
+    var directional_movement = false
 
     func _ready():
         teleport_raycast = get_node("RayCast")
         teleport_mesh = get_tree().root.get_node("Game/Teleport_Mesh")
-        teleport_finger_mesh = teleport_raycast.get_node("Mesh")
-        
         teleport_button_down = false
         
         grab_area = get_node("Area")
+        grab_raycast = get_node("GrabCast")
         grab_pos_node = get_node("Grab_Pos")
+        grab_mode = "AREA"
         
         get_node("Sleep_Area").connect("body_entered", self, "sleep_area_entered")
         get_node("Sleep_Area").connect("body_exited", self, "sleep_area_exited")
@@ -196,6 +209,7 @@ Add the following to ``VR_Controller.gd``:
 
 
     func _physics_process(delta):
+        
         if teleport_button_down == true:
             teleport_raycast.force_raycast_update()
             if teleport_raycast.is_colliding():
@@ -204,6 +218,9 @@ Add the following to ``VR_Controller.gd``:
                         teleport_pos = teleport_raycast.get_collision_point()
                         teleport_mesh.global_transform.origin = teleport_pos
         
+        
+        # Controller velocity
+        # --------------------
         if get_is_active() == true:
             
             controller_velocity = Vector3(0,0,0)
@@ -212,6 +229,7 @@ Add the following to ``VR_Controller.gd``:
                 for vel in prior_controller_velocities:
                     controller_velocity += vel
                 
+                # Get the average velocity, instead of just adding them together.
                 controller_velocity = controller_velocity / prior_controller_velocities.size()
             
             prior_controller_velocities.append((global_transform.origin - prior_controller_position) / delta)
@@ -221,64 +239,113 @@ Add the following to ``VR_Controller.gd``:
             
             if prior_controller_velocities.size() > 30:
                 prior_controller_velocities.remove(0)
-            
+        
+        # --------------------
         
         if held_object != null:
             var held_scale = held_object.scale
             held_object.global_transform = grab_pos_node.global_transform
             held_object.scale = held_scale
         
+        
+        # Directional movement
+        # --------------------
+        # NOTE: you may need to change this depending on which VR controllers
+        # you are using and which OS you are on.
+        var trackpad_vector = Vector2(-get_joystick_axis(1), get_joystick_axis(0))
+        var joystick_vector = Vector2(-get_joystick_axis(5), get_joystick_axis(4))
+        
+        if trackpad_vector.length() < CONTROLLER_DEADZONE:
+            trackpad_vector = Vector2(0,0)
+        else:
+            trackpad_vector = trackpad_vector.normalized() * ((trackpad_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
+        
+        if joystick_vector.length() < CONTROLLER_DEADZONE:
+            joystick_vector = Vector2(0,0)
+        else:
+            joystick_vector = joystick_vector.normalized() * ((joystick_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
+        
+        var forward_direction = get_parent().get_node("Player_Camera").global_transform.basis.z.normalized()
+        var right_direction = get_parent().get_node("Player_Camera").global_transform.basis.x.normalized()
+        
+        var movement_vector = (trackpad_vector + joystick_vector).normalized()
+        
+        var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
+        var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
+        
+        movement_forward.y = 0
+        movement_right.y = 0
+        
+        if (movement_right.length() > 0 or movement_forward.length() > 0):
+            get_parent().translate(movement_right + movement_forward)
+            directional_movement = true
+        else:
+            directional_movement = false
+        # --------------------
 
 
     func button_pressed(button_index):
-        
-        # If the touch pad button is pressed...
-        if button_index == 14:
-            if teleport_mesh.visible == false and held_object == null:
-                teleport_button_down = true
-                teleport_mesh.visible = true
-                teleport_finger_mesh.visible = true
-        
         
         # If the trigger is pressed...
         if button_index == 15:
             if held_object != null:
                 if held_object.has_method("interact"):
                     held_object.interact()
+            
+            else:
+                if teleport_mesh.visible == false and held_object == null:
+                    teleport_button_down = true
+                    teleport_mesh.visible = true
+                    teleport_raycast.visible = true
         
         
         # If the grab button is pressed...
         if button_index == 2:
             
+            if (teleport_button_down == true):
+                return
+            
             if held_object == null:
                 
-                var bodies = grab_area.get_overlapping_bodies()
-                if len(bodies) > 0:
+                var rigid_body = null
+                
+                if (grab_mode == "AREA"):
+                    var bodies = grab_area.get_overlapping_bodies()
+                    if len(bodies) > 0:
+                        
+                        for body in bodies:
+                            if body is RigidBody:
+                                if !("NO_PICKUP" in body):
+                                    rigid_body = body
+                                    break
+                
+                elif (grab_mode == "RAYCAST"):
+                    grab_raycast.force_raycast_update()
+                    if (grab_raycast.is_colliding()):
+                        if grab_raycast.get_collider() is RigidBody and !("NO_PICKUP" in grab_raycast.get_collider()):
+                            rigid_body = grab_raycast.get_collider()
+                
+                
+                if rigid_body != null:
                     
-                    var rigid_body = null
-                    for body in bodies:
-                        if body is RigidBody:
-                            if !("NO_PICKUP" in body):
-                                rigid_body = body
-                                break
+                    held_object = rigid_body
                     
-                    if rigid_body != null:
-                        held_object = rigid_body
-                        
-                        held_object_data["mode"] = held_object.mode
-                        held_object_data["layer"] = held_object.collision_layer
-                        held_object_data["mask"] = held_object.collision_mask
-                        
-                        held_object.mode = RigidBody.MODE_STATIC
-                        held_object.collision_layer = 0
-                        held_object.collision_mask = 0
-                        
-                        hand_mesh.visible = false
-                        
-                        if (held_object.has_method("picked_up")):
-                            held_object.picked_up()
-                        if ("controller" in held_object):
-                            held_object.controller = self
+                    held_object_data["mode"] = held_object.mode
+                    held_object_data["layer"] = held_object.collision_layer
+                    held_object_data["mask"] = held_object.collision_mask
+                    
+                    held_object.mode = RigidBody.MODE_STATIC
+                    held_object.collision_layer = 0
+                    held_object.collision_mask = 0
+                    
+                    hand_mesh.visible = false
+                    grab_raycast.visible = false
+                    
+                    if (held_object.has_method("picked_up")):
+                        held_object.picked_up()
+                    if ("controller" in held_object):
+                        held_object.controller = self
+            
             
             else:
                 
@@ -296,25 +363,42 @@ Add the following to ``VR_Controller.gd``:
                 
                 held_object = null
                 hand_mesh.visible = true
+                
+                if (grab_mode == "RAYCAST"):
+                    grab_raycast.visible = true
+                
             
             get_node("AudioStreamPlayer3D").play(0)
+        
+        
+        # If the menu button is pressed...
+        if grab_mode == "AREA":
+			grab_mode = "RAYCAST"
+			
+			if held_object == null:
+				grab_raycast.visible = true
+		elif grab_mode == "RAYCAST":
+			grab_mode = "AREA"
+			grab_raycast.visible = false
 
 
     func button_released(button_index):
         
-        # If the touch pad button is released...
-        if button_index == 14:
+        # If the trigger button is released...
+        if button_index == 15:
             
-            if teleport_pos != null and teleport_mesh.visible == true:
-                var camera_offset = get_parent().get_node("Player_Camera").global_transform.origin - get_parent().global_transform.origin
-                camera_offset.y = 0
+            if (teleport_button_down == true):
                 
-                get_parent().global_transform.origin = teleport_pos - camera_offset
-            
-            teleport_button_down = false
-            teleport_mesh.visible = false
-            teleport_finger_mesh.visible = false
-            teleport_pos = null
+                if teleport_pos != null and teleport_mesh.visible == true:
+                    var camera_offset = get_parent().get_node("Player_Camera").global_transform.origin - get_parent().global_transform.origin
+                    camera_offset.y = 0
+                    
+                    get_parent().global_transform.origin = teleport_pos - camera_offset
+                
+                teleport_button_down = false
+                teleport_mesh.visible = false
+                teleport_raycast.visible = false
+                teleport_pos = null
 
 
     func sleep_area_entered(body):
@@ -326,7 +410,7 @@ Add the following to ``VR_Controller.gd``:
         if "can_sleep" in body:
             body.can_sleep = true
 
-This is quite a bit of code (``166`` lines to be exact) of code to go through, so let's break it down bit by bit. First, let's start with the class variables, which are
+This is quite a bit of code (``245`` lines to be exact) of code to go through, so let's break it down bit by bit. First, let's start with the class variables, which are
 variables outside of any/all functions.
 
 - ``controller_velocity`` : The velocity the controller is moving at. We will calculate this by changes in position every physics frame.
@@ -339,9 +423,11 @@ variables outside of any/all functions.
 - ``hand_mesh`` : The hand mesh, used to represent the player's hand when they are not holding anything.
 - ``teleport_pos`` : The position the teleport :ref:`Raycast <class_Raycast>` is aimed at.
 - ``teleport_mesh`` : The meshed used to represent the teleport position.
-- ``teleport_finger_mesh`` : The mesh used as a 'laser sight' for aiming the teleportation.
 - ``teleport_button_down`` : A variable for tracking whether the teleport button is being held down or not.
 - ``teleport_raycast`` : The teleport :ref:`Raycast <class_Raycast>` node, used for calculating the teleportation position.
+- ``CONTROLLER_DEADZONE`` : The dead zone for both the trackpad and the joystick.
+- ``MOVEMENT_SPEED`` : The speed the player moves at when moving using the trackpad and/or the joystick.
+- ``directional_movement`` : A boolean to track whether the player is moving using this controller.
 
 _________
 
@@ -352,8 +438,11 @@ First we get the teleport :ref:`Raycast <class_Raycast>` node and assign it to `
 Next we get the teleport mesh, and notice how we are getting it from ``Game/Teleport_Mesh`` using ``get_tree().root``. This is because we need the teleport mesh
 to be separate from the controller, so moving and rotating the controller does not effect the position and rotation of the teleporation mesh.
 
-Then we get the teleportation finger mesh and assign it the proper variable, we get the grab area and position nodes and assign them to the proper variables,
-we connect the ``body_entered`` and ``body_exited`` signals from the sleep area node, we get the hand mesh and assign it the proper variable, and finally
+Then we get the grab area, grab :ref:`Raycast <class_Raycast>`, and position node and assign them to the proper variables.
+
+We set the default grab mode to ``AREA`` so it uses the :ref:`Area <class_Area>` node to grab objects by default.
+
+Then we connect the ``body_entered`` and ``body_exited`` signals from the sleep area node, we get the hand mesh and assign it the proper variable, and finally
 we connect the ``button_pressed`` and ``button_released`` signals from the :ref:`ARVRController <class_ARVRController>`.
 
 _________
@@ -390,37 +479,75 @@ Then we check to see if we have more than ``30`` stored velocities (more than a 
 from ``prior_controller_velocities``.
 
 
-Finally, the last thing we do in ``_physics_process`` is checking to see if there is a held object. If there is, we update the position and rotation of the held object to the
+Next we check to see if there is a held object. If there is, we update the position and rotation of the held object to the
 position and rotation of ``grab_pos_node``. Because of how scale works, we need to temporarily store the scale and then reset the scale once we have updated the transform, as
 otherwise the scale will always be the same as the controller, which will break the immersion if the player grabs a scaled object.
+
+
+The last thing we are going to do in ``_physics_process`` is move the player if they are moving the trackpad/joystick on the VR controller.
+
+First, we convert the axis values into :ref:`Vector2 <class_Vector2>` variables so we can process them. We invert the X axis so moving the trackpad/joystick left
+will move the player left.
+
+.. note:: Depending on your VR controller and OS, you may need to change the code so it gets the proper axis values!
+
+Next we account for dead zones on both the trackpad and the joystick. The code for doing this is adapted from the link below, and I would highly recommend looking at it.
+
+.. tip:: You can find a great article explaining joystick deads zone here: http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
+
+One thing to note is how large we are making the dead zones. The reason we are using such large dead zones is to the player cannot move themselves accidentaly by placing their
+finger on the center of the touchpad/joystick, which make players feel motion sick if they are not expecting it.
+
+Next, we get the forward and right directional vectors from the VR camera. We need these so we can move the player forward/backwards and right/left based on where
+they are currently looking.
+
+Then we calculate how much the player will be moving by adding both the trackpad and the joystick vectors together and normalizing them.
+
+Next we calculate how far the player will go forwards/backwards and right/left by multiplying the VR camera's directional vectors by the combined trackpad/joystick vector.
+
+We then remove movement on the Y axis so the player cannot fly/fall simply by moving using the trackpad/joystick.
+
+And finally, we move the player if there is any movement forwards/backwards or right/left. If we are moving the player, we set ``directional_movement`` accordingly.
 
 _________
 
 Now, let's look at ``button_pressed``.
 
-First, we check to see if the button pressed is button ``14``, which for the Windows Mixed Reality controllers is the track pad button.
-If button ``14`` was pressed, we then check to make sure the teleportation mesh is not visible and the controller is not holding a object. These checks
-are to ensure the player cannot teleport while holding something, and to make sure the player cannot teleport with both hands/controllers at the same time.
 
-If the teleportation mesh is not visible and the controller is not holding anything, we set ``teleport_button_down`` to ``true``, make ``teleport_mesh`` visible,
-and make the teleportation 'laser sight' mesh visible. This makes it where the teleportation mesh will follow the :ref:`Raycast <class_Raycast>` coming from the pointer
+If the button pressed is button ``15``, which for the Windows Mixed Reality controllers is the trigger button, we will interact with the held object assuming the
+controller is holding one, and if the player is not holding a object, we will try to start teleporting.
+
+If the controller is holding a object, and the held object has a method/function called ``interact``, we call the ``interact`` function
+on the held object.
+
+If the controller is not holding a object, we then check to make sure the teleportation mesh is not visible. This check ensure the player cannot teleport cannot teleport with
+both hands/controllers at the same time. If the teleportation mesh is not visible, we set ``teleport_button_down`` to ``true``, make ``teleport_mesh`` visible,
+and make the teleportation raycast visible. This makes it where the teleportation mesh will follow the :ref:`Raycast <class_Raycast>` coming from the pointer
 finger of the hand.
 
 
-If the button pressed is button ``15``, which for the Windows Mixed Reality controllers is the trigger button, we will interact with the held object assuming the
-controller is holding one. If the controller is holding a object, and the held object has a method/function called ``interact``, we call the ``interact`` function
-on the held object.
-
-
 If the button pressed is button ``2``, which for the Windows Mixed Reality controllers is the grab/grip button, we will grab/throw a object.
-First, we check to see if the controller is already holding a object or not.
 
-If the controller is not holding a object, we then get all of the bodies overlapping the grab :ref:`Area <class_Area>`. We go through all of the bodies in the
+First, we make sure the player is not trying to teleport, as we do not want the player to be able to grab something while in the middle of trying to teleport.
+
+Then we check to see if the controller is already holding a object or not.
+
+If the controller is not holding a object, we check to see which grab mode the player is using.
+
+If the player is using the ``AREA`` grab mode, we then get all of the bodies overlapping the grab :ref:`Area <class_Area>`. We go through all of the bodies in the
 grab :ref:`Area <class_Area>` and see if there is a :ref:`RigidBody <class_RigidBody>`. We also check to make sure any :ref:`RigidBody <class_RigidBody>` nodes in
 the :ref:`Area <class_Area>` do not have a variable called ``NO_PICKUP``, since we do not want to be able to pick up nodes with that variable.
 
 Assuming there is a :ref:`RigidBody <class_RigidBody>` node inside the grab :ref:`Area <class_Area>` that does not have a variable called ``NO_PICKUP``,
 we assign it to ``rigid_body`` for additional processing.
+
+If the player is using the ``RAYCAST`` grab mode, we first force the :ref:`Raycast <class_Raycast>` to update. We then check to see if the :ref:`Raycast <class_Raycast>`
+is colliding with something.
+
+If the :ref:`Raycast <class_Raycast>` is colliding with something, we then check to see if what is colliding with is a :ref:`RigidBody <class_RigidBody>`, and that it does not have
+a variable called ``NO_PICKUP``. If the :ref:`Raycast <class_Raycast>` is colliding with a :ref:`RigidBody <class_RigidBody>`, and it does not have a
+variable called ``NO_PICKUP``, we assign it to ``rigid_body`` for additional processing.
+
 
 If ``rigid_body`` is not ``null``, meaning we found a :ref:`RigidBody <class_RigidBody>` in the grab :ref:`Area <class_Area>`, we assign ``held_object`` to it.
 Then we store the now held :ref:`RigidBody <class_RigidBody>`'s information in ``held_object_data``. We are storing the :ref:`RigidBody <class_RigidBody>` mode, layer,
@@ -429,7 +556,8 @@ and mask so later when we drop it, we can reset all of those variables back to w
 We then set the held object's :ref:`RigidBody <class_RigidBody>` mode to ``MODE_STATIC`` and set the collision layer and mask to ``0`` so it cannot collide with any
 other physic bodies.
 
-We make the hand mesh invisible so it does not get in the way of the object we are holding (and also because I did not feel like animating the hand :P )
+We make the hand mesh invisible so it does not get in the way of the object we are holding (and also because I did not feel like animating the hand :P ). We also make the
+grab :ref:`Raycast <class_Raycast>` invisible so the mesh used for showing the :ref:`Raycast <class_Raycast>` is no longer visible.
 
 If the :ref:`RigidBody <class_RigidBody>` we picked up has the ``picked_up`` method/function, we call it. If the :ref:`RigidBody <class_RigidBody>` we picked up has a
 variable called ``controller``, we set it to this controller.
@@ -445,18 +573,29 @@ called ``controller`` we set it to ``null``.
 
 Then we set ``held_object`` to ``null``, since we are no longer holding any objects, and we make the hand mesh visible again.
 
+If we are using the ``RAYCAST`` grab mode, we make the :ref:`Raycast <class_Raycast>` visible so we can see the mesh used for showing the grab :ref:`Raycast <class_Raycast>`.
+
 
 Finally, regardless of whether we are grabbing a object or releasing it, we play the sound loaded into ``AudioStreamPlayer3D``, which is a pick-up/drop noise.
+
+
+The last thing we are doing in ``button_pressed`` is checking to see if the button pressed is ``1``, which for the Windows Mixed Reality controllers is the menu button.
+
+If the menu button is pressed, we change grab modes, and set the visibility of the grab :ref:`Raycast <class_Raycast>` so it is only visible when using ``RAYCAST`` as the grab mode.
+
 
 _________
 
 Let's look at ``button_released`` next.
 
-If the button released is button ``14``, the touch pad button, then we want to teleport.
+If the button released is button ``15``, the trigger, then we potentially want to teleport.
 
-We check to see if this controller has a teleport position, and we check to make sure the teleport mesh is visible.
+First, we check to see if ``teleport_button_down`` is ``true``. If it is, that means the player is intending to teleport, while if it is ``false``, the player
+has simply released the trigger while holding a object.
 
-If both of those conditions are true, we then calculate the offset the :ref:`ARVRCamera <class_ARVRCamera>` has from the :ref:`ARVROrigin <class_ARVROrigin>`. We do this
+We then check to see if this controller has a teleport position, and we check to make sure the teleport mesh is visible.
+
+If both of those conditions are ``true``, we then calculate the offset the :ref:`ARVRCamera <class_ARVRCamera>` has from the :ref:`ARVROrigin <class_ARVROrigin>`. We do this
 because of how :ref:`ARVRCamera <class_ARVRCamera>` and :ref:`ARVROrigin <class_ARVROrigin>` work with room scale tracking.
 
 Because we want to teleport the player in their current position to the teleport position, and remember because of room scale tracking their current position can be offset from
@@ -481,6 +620,76 @@ Okay, phew! That was a lot of code! Add the same script, ``VR_Controller.gd`` to
 
 Now go ahead and try the game again, and you should find you can teleport around by pressing the touch pad, and can grab and throw objects
 using the grab/grip buttons.
+
+Now, you may want to try moving using the trackpads and/or joysticks, but **it may make you motion sick!**
+
+One of the main reasons this can make you feel motion sick is because your vision tells you that you are moving, while your body is not moving.
+This conflict of signals makes the body feel sick, so lets fix it!
+
+Reducing motion sickness
+------------------------
+
+.. note:: There are plenty of ways to reduce motion sickness in VR, and there is no one perfect way to reduce motion sickness. See:
+          https://developer.oculus.com/design/latest/concepts/bp-locomotion/ for more information on how to implement locomotion, and how to
+          reduce motion sickness.
+
+To help reduce motion sickness while moving, we are going to add a vignette effect that will only be visible while the player moves.
+
+Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. Notice how it is just a :ref:`ColorRect <class_ColorRect>` node with a custom
+shader. Feel free to look at the custom shader if you want, it is just a slightly modified version of the vignette shader you can find in the Godot demo repository.
+
+With ``Movement_Vignette`` selected, make a new script called ``Movement_Vignette.gd``. Add the following code to ``Movement_Vignette.gd``:
+
+::
+    
+    extends Control
+
+    var controller_one
+    var controller_two
+
+    func _ready():
+        yield(get_tree(), "idle_frame")
+        yield(get_tree(), "idle_frame")
+        yield(get_tree(), "idle_frame")
+        yield(get_tree(), "idle_frame")
+        
+        var interface = ARVRServer.get_primary_interface()
+        
+        rect_size = interface.get_render_targetsize()
+        rect_position = Vector2(0,0)
+        
+        controller_one = get_parent().get_node("Left_Controller")
+        controller_two = get_parent().get_node("Right_Controller")
+        
+        visible = false
+
+
+    func _process(delta):
+        
+        if (controller_one == null or controller_two == null):
+            return
+        
+        if (controller_one.directional_movement == true or controller_two.directional_movement == true):
+            visible = true
+        else:
+            visible = false
+
+Because this script is fairly simple, let's quickly go over what it does.
+
+In ``_ready``, we wait for four frames. We do this to ensure the VR interface is ready and going.
+
+Next, we get the current VR interface, and resize the :ref:`ColorRect <class_ColorRect>` node's size and position so that it covers the entire view in VR.
+
+Then we get the left and right controllers, assigning them to ``controller_one`` and ``controller_two``.
+
+We then make the vignette invisible by default.
+
+In ``_process`` we check to see if either of the controllers are moving the player by checking ``directional_movement``. If either controller is moving the player,
+we make the vignette visible, while if neither controller is moving the player, we make the vignette invisible.
+
+_________
+
+With that done, go ahead and try moving around with the joystick and/or the trackpad. You should find it is much less motion sickness inducing than before!
 
 Let's add some special :ref:`RigidBody <class_RigidBody>` nodes we can interact with next.
 
@@ -922,6 +1131,9 @@ Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidB
                 if controller != null:
                     controller.held_object = null
                     controller.hand_mesh.visible = true
+                    
+                    if controller.grab_mode == "RAYCAST":
+                        controller.grab_raycast.visible = true
                 
                 queue_free()
 
@@ -985,7 +1197,7 @@ Next we check to see if the bomb has exploded, as we need to wait until the expl
 
 If the bomb has exploded, we add time to ``explosion_timer``. We then check to see if the explosion :ref:`Particles <class_Particles>` are done. If they are, we set the explosion
 :ref:`Area <class_Area>`'s monitoring property to ``false`` to ensure we do not get any bugs in the debugger, we make the controller drop the bomb if it is holding onto it,
-and we free/destroy the bomb using ``queue_free``.
+we make the grab :ref:`Raycast <class_Raycast>` visible if the grab mode is ``RAYCAST``, and we free/destroy the bomb using ``queue_free``.
 
 ________
 
