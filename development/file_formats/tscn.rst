@@ -63,7 +63,7 @@ so on. For example, a spatial node looks like:
 The Scene Tree
 --------------
 
-The scene tree is made up of ... nodes! The heading of each node consists of
+The scene tree is made up of … nodes! The heading of each node consists of
 it's name, parent and (most of the time) a type. For example
 :code:`[node type="Camera" name="PlayerCamera" parent="Player/Head"]`
 
@@ -154,7 +154,7 @@ Skeleton
 ~~~~~~~~~
 Skeleton node inherits Spatial node, besides that it may have a list
 of bones described in key, value pair in the format :code:`bones/Id/Attribute=Value`,
-attributes of bone consisits of 
+attributes of bone consists of 
 
 - name
 - parent
@@ -272,7 +272,7 @@ itself. An external resource consists of:
  - A type
  - An ID
 
-Godot alway generates absolute paths relative to the resource directory and 
+Godot always generates absolute paths relative to the resource directory and 
 thus prefixed with :code:`res://`, but paths relative to the TSCN file's 
 location are also valid. 
  
@@ -325,7 +325,7 @@ TSCN support two format of surface,
     i) :code:`primitive` is an enumerate variable, :code:`primitive=4` which is 
        PRIMITIVE_TRIANGLES is frequently used.
 
-    ii) :code:`arrays` as name suggestes is an array of array, it contains:
+    ii) :code:`arrays` as the name suggests is an array of array, it contains:
 
         1) a array of vertex position
         2) tagents array
@@ -373,7 +373,7 @@ An animation resource consists of tracks. Besides, it has 'length', 'loop' and
 1) :code:`length` and :code:`step` are both time in seconds
 
 Each track is described by a list of key, value pairt in the format :code:`tracks/Id/Attribute`,
-it includs:
+it includes:
 
 - type
 - path
