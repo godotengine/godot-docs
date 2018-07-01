@@ -197,7 +197,7 @@ Below the member panel, exists the list of all available node types:
 
 Ctrl-F (Command-F on Mac) allows you to search the list.
 
-Any of them can be dragged to the scene. Unlike nodes (E.G. dragging a property
+Any of them can be dragged to the scene. Unlike nodes (e.g. dragging a property
 from the Inspector sets the context to the node being edited automatically), these are added without any "contextual" information, so this has to be done manually.
 
 .. image:: img/visual_script34.png
