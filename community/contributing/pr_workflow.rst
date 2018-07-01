@@ -30,7 +30,7 @@ The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
 `Git <https://git-scm.com>`_ code repository together with an embedded
 issue tracker and PR system.
 
-.. note:: If you are contributing to the documention, its repository can
+.. note:: If you are contributing to the documentation, its repository can
           be found `here <https://github.com/godotengine/godot-docs>`_.
 
 The Git version control system is the tool used to keep track of successive
@@ -54,11 +54,11 @@ The branches on the Git repository are organized as follows:
    occurs. As a development branch, it can be unstable
    and is not meant for use in production. This is where PRs should be done
    in priority.
--  The stable branches are named after their version, e.g. ``3.0`` and ``2.1``.
+-  The stable branches are named after their version, E.G. ``3.0`` and ``2.1``.
    They are used to backport bugfixes and enhancements from the ``master``
-   branch to the currently maintained stable release (e.g. 3.0.2 or 2.1.5).
+   branch to the currently maintained stable release (E.G. 3.0.2 or 2.1.5).
    As a rule of thumb, the last stable branch is maintained until the next
-   major version (e.g. the ``2.0`` branch was maintained until the release of
+   major version (E.G. the ``2.0`` branch was maintained until the release of
    Godot 2.1).
    If you want to make PRs against a maintained stable branch, you will have
    to check if your changes are also relevant for the ``master`` branch.
@@ -122,10 +122,10 @@ You only need to do the above steps once, as long as you keep that local
 metadata is hidden in its ``.git`` subfolder).
 
 .. note:: *Branch it, pull it, code it, stage it, commit, push it, rebase
-          it... technologic.*
+          it… technologic.*
 
           This bad take on Daft Punk's *Technologic* shows the general
-          conception Git beginners have of its workflow: lots of strange
+          conception Git beginners have of its workflow: Lots of strange
           commands to learn by copy and paste, hoping they will work as
           expected. And that's actually not a bad way to learn, as long as
           you're curious and don't hesitate to question your search engine
@@ -180,7 +180,7 @@ Updating your branch
 This would not be needed the first time (just after you forked the upstream
 repository). However, the next time you want to work on something, you will
 notice that your fork's ``master`` is several commits behind the upstream
-``master`` branch: pull requests from other contributors would have been merged
+``master`` branch: Pull requests from other contributors would have been merged
 in the meantime.
 
 To ensure there won't be conflicts between the feature you develop and the
@@ -221,12 +221,12 @@ bring changes from the working directory to the Git repository, you need to
 There are various commands you should know to review your current work,
 before staging it, while it is staged, and after it has been committed.
 
-- ``git diff`` will show you the current unstaged changes, i.e. the
+- ``git diff`` will show you the current unstaged changes, I.E. the
   differences between your working directory and the staging area.
 - ``git checkout -- <files>`` will undo the unstaged changes to the given
   files.
 - ``git add <files>`` will *stage* the changes on the listed files.
-- ``git diff --staged`` will show the current staged changes, i.e. the
+- ``git diff --staged`` will show the current staged changes, I.E. the
   differences between the staging area and the last commit.
 - ``git reset HEAD <files>`` will *unstage* changes to the listed files.
 - ``git status`` will show you what are the currently staged and unstaged
@@ -317,7 +317,7 @@ commits behind, if your ``master`` branch was out of sync with the upstream
 On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the godotengine/godot upstream
 repository. It should show you your two commits, and state "Able to merge".
-If not (e.g. it has way more commits, or says there are merge conflicts),
+If not (E.G. it has way more commits, or says there are merge conflicts),
 don't create the PR, something went wrong. Go to IRC and ask for support :)
 
 Use an explicit title for the PR and put the necessary details in the comment
@@ -333,7 +333,7 @@ changes to your yet-unmerged PR, either because contributors requested them,
 or because you found issues yourself while testing.
 
 The good news is that you can modify a pull request simply by acting on the
-branch you made the pull request from. You can e.g. make a new commit on that
+branch you made the pull request from. You can E.G. make a new commit on that
 branch, push it to your fork, and the PR will be updated automatically:
 
 ::
@@ -347,14 +347,14 @@ branch, push it to your fork, and the PR will be updated automatically:
     $ git commit -m "Fix a typo in the banner's title"
     $ git push origin better-project-manager
 
-That should do the trick, but...
+That should do the trick, but…
 
-Mastering the PR workflow: the rebase
+Mastering the PR workflow: The rebase
 -------------------------------------
 
 On the situation outlined above, your fellow contributors who are particularly
 pedantic regarding the Git history might ask your to *rebase* your branch to
-*squash* or *meld* the last two commits together (i.e. the two related to the
+*squash* or *meld* the last two commits together (I.E. the two related to the
 project manager), as the second commit basically fixes an issue in the first one.
 
 Once the PR is merged, it is not relevant for a changelog reader that the PR
@@ -418,9 +418,9 @@ will raise an error:
     $ git push origin better-project-manager
     To https://github.com/akien-mga/godot
      ! [rejected]        better-project-manager -> better-project-manager (non-fast-forward)
-    error: failed to push some refs to 'https://akien-mga@github.com/akien-mga/godot'
+    error: Failed to push some refs to 'https://akien-mga@github.com/akien-mga/godot'
     hint: Updates were rejected because the tip of your current branch is behind
-    hint: its remote counterpart.
+    hint: Its remote counterpart.
 
 This is a sane behaviour, Git will not let you push changes that would
 override remote content. But that's actually what we want to do here, so we
@@ -437,7 +437,7 @@ also update the PR accordingly.
 Deleting a Git branch
 ---------------------
 
-After your pull request gets merged, there's one last thing you should do: delete your
+After your pull request gets merged, there's one last thing you should do: Delete your
 Git branch for the PR. There won't be issues if you don't delete your branch, but it's
 good practice to do so. You'll need to do this twice, once for the local branch and another
 for the remote branch on GitHub.
