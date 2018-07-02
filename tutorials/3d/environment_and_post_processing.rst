@@ -154,7 +154,7 @@ Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,
-Godot suports a simple high dynamic range implementation with the auto exposure
+Godot supports a simple high dynamic range implementation with the auto exposure
 mechanism. This is generally used for the sake of realism when combining
 interior areas with low light and outdoors. Auto exposure simulates the camera
 (or eye) in an effort to adapt between light and dark locations and their
@@ -209,7 +209,7 @@ A few user-controlled parameters are available to better tweak the technique:
 - **Max Steps** determines the length of the reflection. The bigger this number, the more costly it is to compute.
 - **Fade In** allows adjusting the fade-in curve, which is useful to make the contact area softer.
 - **Fade Out** allows adjusting the fade-out curve, so the step limit fades out softly.
-- **Depth Tolerance** can be used for scren-space-ray hit tolerance to gaps. The bigger the value, the more gaps will be ignored.
+- **Depth Tolerance** can be used for screen-space-ray hit tolerance to gaps. The bigger the value, the more gaps will be ignored.
 - **Roughness** will apply a screen-space blur to approximate roughness in objects with this material characteristic.
 
 Keep in mind that screen-space-reflections only work for reflecting opaque geometry. Transparent objects can't be reflected.

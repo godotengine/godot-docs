@@ -8,7 +8,7 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono (the required version is listed here: :ref:`doc_c_sharp`)
+- Mono 5.12.0 or greater
 - MSBuild
 - pkg-config
 
@@ -27,7 +27,7 @@ By default, the mono module is disabled for builds. To enable it you can pass th
 Generate The Glue
 -------------------
 
-The glue sources are the wrapper functions that will be called by the managed side. In order to generate them, first, you must build Godot with the options ``tools=yes`` and ``mono_glue=no``:
+The glue sources are the wrapper functions that will be called by managed methods. These source files must be generated before building your final binaries. In order to generate them, first, you must build a temporary Godot binary with the options ``tools=yes`` and ``mono_glue=no``:
 
 ::
 
@@ -45,8 +45,8 @@ As always, ``godot`` refers to the compiled Godot binary, so if it isn't in your
 
 Notes
 ^^^^^
--  **Do not** build normal binaries with ``mono_glue=no``. This option disables C# scripting and therefore must only be used for the temporary binary that will be used to generate the glue. Godot should print a message at startup warning you about this.
--  The glue sources must be regenerated every time the ClassDB API changes. If there is an API mismatch with the generated glue, Godot will print an error at startup.
+-  **Do not** build your final binaries with ``mono_glue=no``. This disables C# scripting. This option must be used only for the temporary binary that will generate the glue. Godot will print a warning at startup if it was built without the glue sources.
+-  The glue sources must be regenerated every time the ClassDB bindings changes. That is, for example, when a new method is added to ClassDB or one of the parameter of such a method changes. Godot will print an error at startup if there is an API mismatch between ClassDB and the glue sources.
 
 Examples
 --------
@@ -85,3 +85,22 @@ Example (x11)
 
 If everything went well, apart from the normal output, SCons should have also built the *GodotSharpTools.dll* assembly and copied it together with the mono runtime shared library to the ``bin`` subdirectory.
 
+Command-line options
+--------------------
+
+The following is the list of command-line options available when building with the mono module:
+
+-  **module_mono_enabled**: Build Godot with the mono module enabled (yes|no)
+     default: no
+
+-  **mono_glue**: Whether to include the glue source files in the build and define `MONO_GLUE_DISABLED` as a preprocessor macro (yes|no)
+     default: yes
+
+-  **xbuild_fallback**: Whether to fallback to xbuild if MSBuild is not available (yes|no)
+     default: no
+
+-  **mono_static**: Whether to link the mono runtime statically (yes|no)
+     default: no
+
+-  **mono_assemblies_output_dir**: Path to the directory where all the managed assemblies will be copied to. The '#' token indicates de top of the source directory, the directory in which SConstruct is located
+     default: #bin

@@ -155,7 +155,7 @@ Do not use a space,
 * After a type cast parentheses.
 * Within single line initializer braces.
 
-The following example shows a proper use of spaces, according to some of the the above mentioned conventions:
+The following example shows a proper use of spaces, according to some of the above mentioned conventions:
 
 .. code-block:: csharp
 

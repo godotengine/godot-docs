@@ -30,7 +30,7 @@ The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
 `Git <https://git-scm.com>`_ code repository together with an embedded
 issue tracker and PR system.
 
-.. note:: If you are contributing to the documention, its repository can
+.. note:: If you are contributing to the documentation, its repository can
           be found `here <https://github.com/godotengine/godot-docs>`_.
 
 The Git version control system is the tool used to keep track of successive
