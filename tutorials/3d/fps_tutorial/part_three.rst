@@ -153,7 +153,7 @@ Now the weapons have a limited amount of ammo, and will stop firing when the pla
 
 _______
 
-Ideally we'd like to let the player be able to see how much ammo is left. Let's make a new function called ``process_ui``.
+Ideally we'd like to let the player be able to see how much ammo is left. Let's make a new function called ``process_UI``.
 
 First, add ``process_UI(delta)`` to ``_physics_process``.
 
@@ -199,7 +199,7 @@ Open up ``Weapon_Pistol.gd`` and add the following class variables:
     const RELOADING_ANIM_NAME = "Pistol_reload"
 
 * ``CAN_RELOAD``: A boolean to track whether this weapon has the ability to reload
-* ``CAN_REFIL``: A boolean to track whether we can refill this weapon's spare ammo. We will not be using ``CAN_REFIL`` in this part, but we will in the next part!
+* ``CAN_REFILL``: A boolean to track whether we can refill this weapon's spare ammo. We will not be using ``CAN_REFILL`` in this part, but we will in the next part!
 * ``RELOADING_ANIM_NAME``: The name of the reloading animation for this weapon.
 
 Now we need to add a function for handling reloading. Add the following function to ``Weapon_Pistol.gd``:
@@ -380,7 +380,7 @@ The first thing we need to change is in the code for changing weapons. We need t
                 changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
                 changing_weapon = true
 
-This makes it where the player cannot change weapons if the player is reloading.
+This makes it so the player cannot change weapons if the player is reloading.
 
 Now we need to add the code to trigger a reload when the player pushes the ``reload`` action. Add the following code to ``process_input``:
 
@@ -627,18 +627,18 @@ Now, we want to make a noise when the player fires the pistol, so add the follow
 
 ::
     
-    player_node.create_sound("pistol_shot", self.global_transform.origin)
+    player_node.create_sound("Pistol_shot", self.global_transform.origin)
 
-Now when the player fires the pistol, we'll play the ``pistol_shot`` sound.
+Now when the player fires the pistol, we'll play the ``Pistol_shot`` sound.
 
 To make a sound when the player reloads, we need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
 ``reload_weapon`` function:
 
 ::
     
-    player_node.create_sound("gun_cock", player_node.camera.global_transform.origin)
+    player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
-Now when the player reloads, we'll play the ``gun_cock`` sound.
+Now when the player reloads, we'll play the ``Gun_cock`` sound.
 
 _________
 
@@ -649,18 +649,18 @@ To play sounds when the rifle is fired, add the following to the end of the ``fi
 
 ::
     
-    player_node.create_sound("rifle_shot", ray.global_transform.origin)
+    player_node.create_sound("Rifle_shot", ray.global_transform.origin)
 
-Now when the player fires the rifle, we'll play the ``rifle_shot`` sound.
+Now when the player fires the rifle, we'll play the ``Rifle_shot`` sound.
 
 To make a sound when the player reloads, we need to add the following right under ``player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)`` in the
 ``reload_weapon`` function:
 
 ::
     
-    player_node.create_sound("gun_cock", player_node.camera.global_transform.origin)
+    player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
-Now when the player reloads, we'll play the ``gun_cock`` sound.
+Now when the player reloads, we'll play the ``Gun_cock`` sound.
 
 Final notes
 -----------
@@ -669,7 +669,7 @@ Final notes
 
 Now you have weapons with limited ammo that play sounds when you fire them!
 
-At this point we have all of the basics of a FPS working.
+At this point we have all of the basics of a FPS game working.
 There's still a few things that would be nice to add, and we're going to add them in the next three parts!
 
 For example, right now we have no way to add ammo to our spares, so we'll eventually run out. Also, we don't
