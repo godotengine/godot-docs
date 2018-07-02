@@ -12,13 +12,18 @@ This tutorial series will show you how to make a simple VR game/project. The int
 on how to make VR games in Godot.
 
 Keep in mind, **one of the most important things when making VR content is getting the scale of your assets correct**!
-Keeping a consistent and realistic scale is one of the most important parts of making VR content, and it takes
-lots of practice and iteration to get it right!
+It can take lots of practice and iterations to get this right, but there are a few things you can do to make it easier:
+
+- In VR, 1 unit is often considered 1 meter. If you design your assets around that standard, you can save yourself a lot of headache.
+- In your 3D model program, see if there is a way to measure and use real world distances. In Blender you can use the MeasureIt add-on, in Maya you can use the Measure Tool.
+- You can make rough models using a tool like Google Blocks, and then refine in another 3D modelling program.
+- Test often, as the assets can look dramatically different in VR then on a flat screen!
 
 Throughout the course of this tutorial, we will cover:
 
 - How to tell Godot to run in VR.
 - How to make a teleportation system for moving the player.
+- How to make a directional movement system (locomotion) for moving the player.
 - How to make a :ref:`RigidBody <class_RigidBody>` based pick up and drop system.
 - How to make various items that can be used in VR
 
