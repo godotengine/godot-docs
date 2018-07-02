@@ -165,8 +165,8 @@ If you are familiar with state machines, then you may have noticed that ``states
 like a basic state machine. Here is roughly how ``states`` is set up:
 
 ``states`` is a dictionary with the key being the name of the current state, and the value being
-an array holding all of the animations (states) we can transition to. For example, if we are in currently in
-state ``Idle_unarmed``, we can only transition to ``Knife_equip``, ``Pistol_equip``, ``Rifle_equip``, and
+an array holding all of the animations (states) we can transition to. For example, if we are currently in the
+``Idle_unarmed`` state, we can only transition to ``Knife_equip``, ``Pistol_equip``, ``Rifle_equip``, and
 ``Idle_unarmed``.
 
 If we try to transition to a state that is not included in the possible transitions states for the state we are in,
@@ -210,7 +210,7 @@ Lets look at ``set_animation`` next.
 *if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 
-To start we check if the passed in animation name is the same as name as the animation currently playing.
+To start we check if the passed in animation name is the same name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
 Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the a animation with the name ``animation_name`` using ``has_animation``.
@@ -225,7 +225,7 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we retu
           By putting in a value of ``-1``, the new animation instantly plays, overriding whatever animation is already playing.
 
           If you put in a value of ``1``, for one second the new animation will play with increasing strength, blending the two animations together for one second
-          before playing only the new animation. This leads to a smooth transition between animations, which is looks great when you are changing from
+          before playing only the new animation. This leads to a smooth transition between animations, which looks great when you are changing from
           a walking animation to a running animation.
 
           We set the blend time to ``-1`` because we want to instantly change animations.
@@ -240,7 +240,7 @@ _________
 
 Now lets look at ``animation_ended``.
 
-``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <class_AnimationPlayer>` when it's done playing a animation.
+``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <class_AnimationPlayer>` when it's done playing an animation.
 
 
 For certain animation states, we may need to transition into another state when its finished. To handle this, we
@@ -260,7 +260,7 @@ Finally we have ``animation_callback``. This function will be called by a functi
 If we have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
 have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
 
-.. tip:: Try running ``Testing_Area.tscn`` to make sure there is no runtime issues. If the game runs but nothing
+.. tip:: Try running ``Testing_Area.tscn`` to make sure there are no runtime issues. If the game runs but nothing
          seems to have changed, then everything is working correctly.
 
 Getting the animations ready
@@ -302,7 +302,7 @@ reach the point where the muzzle starts to flash.
           light that escapes the muzzle when a bullet is fired. The muzzle is also sometimes referred to as the
           barrel of the gun.
 
-.. tip:: For finer control when scrubbing the timeline, press ``control`` and scroll forwards with the mouse wheel to zoom in.
+.. tip:: For finer control when scrubbing the timeline, press ``control`` and scroll forward with the mouse wheel to zoom in.
          Scrolling backwards will zoom out.
 
          You can also change how the timeline scrubbing snaps by changing the value in ``Step (s)`` to a lower/higher value.
@@ -318,7 +318,7 @@ button on the far right corner of the animation window. It looks like a pencil w
 
 .. image:: img/AnimationPlayerEditPoints.png
 
-Once you've click that, a new window will open on the right side. Now click the green point on the ``AnimationPlayer``
+Once you've clicked that, a new window will open on the right side. Now click the green point on the ``AnimationPlayer``
 track. This will bring up the information associated with that point in the timeline. In the empty name field, enter
 ``animation_callback`` and press ``enter``.
 
@@ -332,7 +332,7 @@ _________
 Let's repeat the process for the rifle and knife firing animations!
 
 .. note:: Because the process is exactly the same as the pistol, the process is going to explained in a little less depth.
-          Follow the steps in the above if you get lost! It is exactly the same, just on a different animation.
+          Follow the steps from above if you get lost! It is exactly the same, just on a different animation.
 
 Go to the "Rifle_fire" animation from the animation drop down. Add the function callback track once you reach the bottom of the
 animation track list by clicking the little plus icon at the bottom of the screen. Find the point where the muzzle starts
@@ -354,7 +354,7 @@ Next find a point around the first third of the animation to place the animation
 From there click the little green plus to add a function callback point at the current position. Then click the "enable editing of individual keys"
 button, the button with a plus at the bottom right side of the animation window.
 Select the newly created function callback point, put "animation_callback" into the name field and press ``enter``.
-Click the "enable editing of individual keys" button again to turn off individual key editing.
+Click the "enable editing of individual keys" button again to turn off individual key editing,
 so we cannot change one of the transform tracks by accident.
 
 .. tip:: Be sure to save your work!
@@ -371,22 +371,22 @@ we will be exploring two of the more common ways: Objects, and raycasts.
 _________
 
 One of the two ways is using a bullet object. This will be an object that travels through the world and handles
-its own collision code. This method we create/spawn a bullet object in the direction our gun is facing, and then
-it sends itself forward.
+its own collision code. In this method we create/spawn a bullet object in the direction our gun is facing, and then
+it travels forward.
 
 There are several advantages to this method. The first being we do not have to store the bullets in our player. We can simply create the bullet
 and then move on, and the bullet itself with handle checking for collisions, sending the proper signal(s) to the object it collides with, and destroying itself.
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
-controlling script slowly push the bullet towards the ground. Using a object also makes the bullet take time to reach its target, it doesn't instantly
+controlling script slowly push the bullet towards the ground. Using an object also makes the bullet take time to reach its target, it doesn't instantly
 hit whatever its pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
 
-One of the huge disadvantages performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
+One of the huge disadvantages is performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
 it comes at the cost of performance. With this method we are calculating every bullet's movement every step, and while this may not be a problem for a few dozen
 bullets, it can become a huge problem when you potentially have several hundred bullets.
 
 Despite the performance hit, many first person shooters include some form of object bullets. Rocket launchers are a prime example because in many
-first person shooters, rockets do not just instantly explode at their target position. You can also find bullets as object many times with grenades
+first person shooters, rockets do not just instantly explode at their target position. You can also find bullets as objects many times with grenades
 because they generally bounce around the world before exploding.
 
 .. note:: While I cannot say for sure this is the case, these games *probably* use bullet objects in some form or another:
@@ -397,7 +397,7 @@ because they generally bounce around the world before exploding.
           - Call of Duty (Rocket launchers, grenades, ballistic knives, crossbows, and more)
           - Battlefield (Rocket launchers, grenades, claymores, mortars, and more)
 
-Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with however many clients are connected
+Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with all the clients that are connected
 to the server.
 
 While we are not implementing any form of networking (as that would be it's own entire tutorial series), it is a consideration
@@ -407,7 +407,7 @@ _________
 
 The other way of handling bullet collisions we will be looking at, is raycasting.
 
-This method is extremely common in guns that have fast moving bullets that rarely change trajectory change over time.
+This method is extremely common in guns that have fast moving bullets that rarely change trajectory over time.
 
 Instead of creating a bullet object and sending it through space, we instead send a ray starting from the barrel/muzzle of the gun forwards.
 We set the raycast's origin to the starting position of the bullet, and based on the length we can adjust how far the bullet 'travels' through space.
@@ -420,7 +420,7 @@ We set the raycast's origin to the starting position of the bullet, and based on
           - Call of Duty (Assault rifles, light machine guns, sub machine guns, pistols, and more)
           - Battlefield (Assault rifles, SMGs, carbines, pistols, and more)
 
-One huge advantage for this method is it's light on performance.
+One huge advantage for this method is that it's light on performance.
 Sending a couple hundred rays through space is *way* easier for the computer to calculate than sending a couple hundred
 bullet objects.
 
@@ -441,13 +441,13 @@ _________
 Lets get the bullet object setup. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
 
 Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
-and an :ref:`Area <class_Area>` with a :ref:`CollisionShape <class_CollisionShape>` childed to it.
+and an :ref:`Area <class_Area>` with a :ref:`CollisionShape <class_CollisionShape>` children to it.
 
 Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` :ref:`Spatial <class_Spatial>`.
 
 We are going to move the entire bullet object at the root (``Bullet``). We will be using the :ref:`Area <class_Area>` to check whether or not we've collided with something
 
-.. note:: Why are we using a :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The mean reason we're not using a :ref:`RigidBody <class_RigidBody>`
+.. note:: Why are we using a :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
           is because we do not want the bullet to interact with other :ref:`RigidBody <class_RigidBody>` nodes.
           By using an :ref:`Area <class_Area>` we are assuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
 
@@ -498,7 +498,7 @@ First we define a few class variables:
 - ``BULLET_SPEED``: The speed the bullet travels at.
 - ``BULLET_DAMAGE``: The damage the bullet will cause to whatever it collides with.
 - ``KILL_TIMER``: How long the bullet can last without hitting anything.
-- ``timer``: A float for tracking how long we've been alive.
+- ``timer``: A float for tracking how long the bullet has been alive.
 - ``hit_something``: A boolean for tracking whether or not we've hit something.
 
 With the exception of ``timer`` and ``hit_something``, all of these variables
@@ -526,7 +526,7 @@ in local mode, you will find that the bullet faces the positive local ``Z`` axis
 Next we translate the entire bullet by that forward direction, multiplying in our speed and delta time.
 
 After that we add delta time to our timer and check if the timer has as long or longer
-than our ``KILL_TIME`` constant. If it has, we use ``queue_free`` to free ourselves.
+than our ``KILL_TIME`` constant. If it has, we use ``queue_free`` to free the bullet.
 
 _________
 
@@ -540,7 +540,7 @@ so we can get the bullet's rotation and position.
 .. note:: in ``collided``, the passed in body can be a :ref:`StaticBody <class_StaticBody>`,
           :ref:`RigidBody <class_RigidBody>`, or :ref:`KinematicBody <class_KinematicBody>`
 
-We set the Bullet's ``hit_something`` variable to ``true`` because regardless of whether or not the body
+We set the Bullet's ``hit_something`` variable to ``true`` because regardless of whether or not the body that
 the bullet collided with has the ``bullet_hit`` function/method, it has hit something and so we need to make sure the bullet does not hit anything else.
 
 Then we free the bullet using ``queue_free``.
@@ -575,7 +575,7 @@ weapon.
 
 Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
 we will be sending the raycasts for our rifle's bullets.
-The length of the raycast will dictate how far our the bullets will travel.
+The length of the raycast will dictate how far our bullets will travel.
 
 We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet because
 we want to fire lots of bullets quickly. If we use bullet objects, it is quite possible
@@ -689,7 +689,7 @@ _________
 
 In ``_ready`` we simply pass over it.
 
-There is one thing of note though, an assumption we're assuming we'll fill in ``Player.gd``.
+There is one thing of note though, an assumption that we'll fill in ``Player.gd`` at some point.
 
 We are going to assume that ``Player.gd`` will pass themselves in before calling any of the functions in ``Weapon_Pistol.gd``.
 
@@ -705,9 +705,9 @@ The first thing we do is instance the bullet scene we made earlier.
 
 .. tip:: By instancing the scene, we are creating a new node holding all of the node(s) in the scene we instanced, effectively cloning that scene.
 
-Then we add ``clone`` to the first child node of the root of the scene we are currently in. By doing this we're making it at a child of the root node of the currently loaded scene.
+Then we add a ``clone`` to the first child node of the root of the scene we are currently in. By doing this we're making it a child of the root node of the currently loaded scene.
 
-In other words, we are adding ``clone`` as a child of the first node (whatever is at the top of the scene tree) in the currently loaded/opened scene.
+In other words, we are adding a ``clone`` as a child of the first node (whatever is at the top of the scene tree) in the currently loaded/opened scene.
 If the currently loaded/open scene is ``Testing_Area.tscn``, we'd be adding our ``clone`` as a child of ``Testing_Area``, the root node in that scene.
 
 .. warning:: As mentioned later below in the section on adding sounds, this method makes a assumption. This will be explained later
@@ -731,9 +731,9 @@ If we are in the pistol's idle animation, we set ``is_weapon_enabled`` to ``true
 been equipped.
 
 Because we know our pistol's ``equip`` animation automatically transitions to the pistol's idle animation, if we are in the pistol's
-idle animation the pistol most have finished playing the equip animation.
+idle animation the pistol must have finished playing the equip animation.
 
-.. note:: We know these animations will transition because we wrote to the code to make them transition in ``Animation_Manager.gd``
+.. note:: We know these animations will transition because we wrote the code to make them transition in ``Animation_Manager.gd``
 
 Next we check to see if the player is in the ``Idle_unarmed`` animation state. Because all unequipping animations go to this state, and because any
 weapon can be equipped from this state, we change animations to ``Pistol_equip`` if the player is in the ``Idle_unarmed`` state.
@@ -754,7 +754,7 @@ If the player is not in the ``Pistol_unequip`` animation, we want to play ``pist
           The reason behind the additional check is because we could (in rare cases) call ``unequip_weapon`` twice before we've had a chance to process ``set_animation``,
           so we add this additional check to make sure the unequip animation plays.
 
-Next we check to see if the player is in ``Idle_unarmed``, which is the animation state we will transition into from ``Pistol_unequip``. If the player is are, then we set
+Next we check to see if the player is in ``Idle_unarmed``, which is the animation state we will transition into from ``Pistol_unequip``. If the player is in ``Idle_unarmed``, then we set
 ``is_weapon_enabled`` to ``false`` since we are no longer using this weapon, and return ``true`` because we have successfully unequipped the pistol.
 
 If the player is not in ``Idle_unarmed``, we return ``false`` because we have not yet successfully unequipped the pistol.
@@ -832,7 +832,7 @@ If the :ref:`Raycast <class_Raycast>` has collided with something, we first get 
 Next we want to make sure the body we've collided with is not the player, since we (probably) do not want to give the player the ability to shoot themselves in the foot.
 
 If the body is not the player, we then check to see if they have a function/method called ``bullet_hit``. If they do, we call it and pass in the amount of
-damage this bullet does (``DAMAGE``), and the global transform of the :ref:`Raycast <class_Raycast>` so we can tell which direction the bullet came from.
+damage this bullet does (``DAMAGE``), and the global transform of the :ref:`Raycast <class_Raycast>` so we can tell from which direction the bullet came.
 
 _________
 
@@ -899,7 +899,7 @@ list of every body that touches the :ref:`Area <class_Area>`.
 We next want to go through each of those bodies.
 
 First we check to make sure the body is not the player, because we do not want to let the player be able to stab themselves. If the body is the player,
-we use ``continue`` so we jump to looking at the next body in ``bodies``.
+we use ``continue`` so we jump and look at the next body in ``bodies``.
 
 If we have not jumped to the next body, we then check to see if the body has the ``bullet_hit`` function/method. If it does,
 we call it, passing in the amount of damage a single knife swipe does (``DAMAGE``) and the global transform of the :ref:`Area <class_Area>`.
@@ -1125,7 +1125,7 @@ Add the following code:
 
 Lets go over what's happening here:
 
-The first thing we do is make sure we've revived input to change weapons. We do this by making sure ``changing_weapons`` is ``true``.
+The first thing we do is make sure we've received input to change weapons. We do this by making sure ``changing_weapons`` is ``true``.
 
 Next we define a variable (``weapon_unequipped``) so we can check whether the current weapon has been successfully unequipped or not.
 
@@ -1149,7 +1149,7 @@ nor do we have any animations.
 
 Finally, we check to see if the player has successfully equipped the new weapon. If the player has, we set ``changing_weapon`` to ``false`` because the player is no
 longer changing weapons.
-We also set ``current_weapon_name`` to ``changing_weapon_name``, since the current weapon has changed, and then we set ``changing_weapon_name`` to a empty string.
+We also set ``current_weapon_name`` to ``changing_weapon_name``, since the current weapon has changed, and then we set ``changing_weapon_name`` to an empty string.
 
 _________
 
@@ -1169,7 +1169,7 @@ points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` func
 
 Lets go over what this function is doing:
 
-First we check if to see if the player is changing weapons or not. If the player is changing weapons, we do not want shoot so we ``return``.
+First we check to see if the player is changing weapons or not. If the player is changing weapons, we do not want shoot so we ``return``.
 
 .. tip:: Calling ``return`` stops the rest of the function from being called. In this case, we are not returning a variable
          because we are only interested in not running the rest of the code, and because we are not looking for a returned
@@ -1211,7 +1211,7 @@ Now we need to add this code:
 Lets go over how ``bullet_hit`` works:
 
 
-First we get the bullet's forward directional vector. This is so we can tell which direction the bullet will hit the :ref:`RigidBody <class_RigidBody>` at.
+First we get the bullet's forward directional vector. This is so we can tell from which direction the bullet will hit the :ref:`RigidBody <class_RigidBody>`.
 We will use this to push the :ref:`RigidBody <class_RigidBody>` in the same direction as the bullet.
 
 .. note:: We need to boost the directional vector by ``BASE_BULLET_BOOST`` so the bullet's back a bit more of a punch
@@ -1238,7 +1238,7 @@ Open up ``Testing_Area.tscn`` and select all of the cubes parented to the ``Cube
 .. tip:: If you select the top cube, and then hold down ``shift`` and select the last cube, Godot will
          select all of the cubes in between!
 
-Once you have all of the cubes selected, scroll down in the inspector until you get to the
+Once you have all of the cubes selected, scroll down in the inspector until you get to
 the "scripts" section. Click the drop down and select "Load". Open your newly created ``RigidBody_hit_test.gd`` script.
 
 Final notes
@@ -1246,7 +1246,7 @@ Final notes
 
 .. image:: img/PartTwoFinished.png
 
-That was a lot of code! But now with all that done you can go give your weapons a test!
+That was a lot of code! But now with all that done you can go and give your weapons a test!
 
 You should now be able to fire as many bullets as you want on the cubes and
 they will move in response to the bullets colliding into them.
