@@ -35,7 +35,7 @@ Feel free to use whatever button layout you want. Make sure that the device sele
 * reload: ``Device 0, Button 0 (PS Square, XBox X, Nintendo Y)``
 * flashlight: ``Device 0, Button 12 (D-Pad Up)``
 * shift_weapon_positive: ``Device 0, Button 15 (D-Pad Right)``
-* shift_weapon_negative: ``Device 0, Button 14 (D-Pad Right)``
+* shift_weapon_negative: ``Device 0, Button 14 (D-Pad Left)``
 * fire_grenade: ``Device 0, Button 1 (PS Circle, XBox B, Nintendo A).``
 
 .. note:: These are already set up for you if you downloaded the starter assets
@@ -360,7 +360,7 @@ We're using ``is_ready`` because ``setget`` functions are called before ``_ready
 first kit_size_change call, because we cannot access child nodes until ``_ready`` is called. If we did not ignore the
 first ``setget`` call, we would get several errors in the debugger.
 
-Also, notice how we are using a exported variable. This is so we can change the size of the health pick ups in the editor. This makes it where
+Also, notice how we are using an exported variable. This is so we can change the size of the health pick ups in the editor. This makes it where
 we do not have to make two scenes for the two sizes, since we can easily change sizes in the editor using the exported variable.
 
 .. tip:: See :ref:`doc_GDScript` and scroll down to the Exports section for a list of export hints you can use.
@@ -369,7 +369,7 @@ ______
 
 Let's look at ``_ready``:
 
-First we connect the ``body_entered`` signal from the ``Health_Pickup_Trigger`` to the ``trigger_body_entered`` function. This makes is where any
+First we connect the ``body_entered`` signal from the ``Health_Pickup_Trigger`` to the ``trigger_body_entered`` function. This makes it where any
 body that enters the :ref:`Area <class_Area>` triggers the ``trigger_body_entered`` function.
 
 Next we set ``is_ready`` to ``true`` so we can use the ``setget`` function.
@@ -381,7 +381,7 @@ Then we make only the kit size we selected visible, calling ``kit_size_change_va
 
 ______
 
-Next let's look at ``kit_size_changed``.
+Next let's look at ``kit_size_change``.
 
 The first thing we do is check to see if ``is_ready`` is ``true``.
 
@@ -531,7 +531,7 @@ Other than those two small changes, everything else is exactly the same as the h
 
 _______
 
-All we need to do make the ammo pick ups work is add a new function to the player. Open ``Player.gd`` and add the following function:
+All we need to do for making the ammo pick ups work is to add a new function to the player. Open ``Player.gd`` and add the following function:
 
 ::
     
@@ -575,7 +575,7 @@ Notice how the target is broken up into five pieces, each a :ref:`RigidBody <cla
 and needs to be destroyed. Then we're going to hide the non-broken target, so it looks like the target shattered rather than a shattered target was
 spawned/instanced.
 
-While you still have ``Broken_Target.tscn`` open, attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <class_RigidBody>` nodes. This will make
+While you still have ``Broken_Target.tscn`` open and then attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <class_RigidBody>` nodes. This will make
 it where the player can shoot at the broken pieces and they will react to the bullets.
 
 Alright, now switch back to ``Target.tscn``, select the ``Target`` :ref:`StaticBody <class_StaticBody>` node and create a new script called ``Target.gd``.
@@ -662,7 +662,7 @@ of ``$``. If you want to use ``$``, then you'd need to change ``get_parent().get
 .. note:: At the time of when this was written, I did not realize you can use ``$"../NodeName"`` to get the parent nodes using ``$``, which is why ``get_parent().get_node()``
           is used instead.
 
-Next we get the collision shape and assign it to ``target_collision_shape``. The reason we need to collision shape is because even when the mesh is invisible, the
+Next we get the collision shape and assign it to ``target_collision_shape``. The reason we need the collision shape is because even when the mesh is invisible, the
 collision shape will still exist in the physics world. This makes it where the player can interact with a non-broken target even though it's invisible, which is
 not what we want. To get around this, we will disable/enable the collision shape as we make the mesh visible/invisible.
 
@@ -691,13 +691,13 @@ ______
 
 Finally, let's look at ``bullet_hit``.
 
-The first the we do is remove however much damage the bullet does from the target's health.
+The first thing we do is remove however much damage the bullet does from the target's health.
 
 Next we check to see if the target is at ``0`` health or lower. If it is, the target has just died and we need to spawn a broken target.
 
-We first instance a new destroyed target scene, and assign it to a new variable, ``clone``.
+We first instance a new destroyed target scene, and assign it to a new variable, a ``clone``.
 
-Next we add ``clone`` as a child of the broken target holder.
+Next we add the ``clone`` as a child of the broken target holder.
 
 For bonus effect, we want to make all of the target pieces explode outwards. To do this, we iterate over all of the children in ``clone``.
 
@@ -708,7 +708,7 @@ in the direction away from the center, using the damage of the bullet as the for
 .. note:: We multiply the damage by ``12`` so it has a more dramatic effect. You can change this to a higher or lower value depending on how explosive you want
           your targets to shatter.
 
-Next we set the target's respawn timer. We set the timer to ``TARGET_RESPAWN_TIME``, so it takes ``TARGET_RESPAWN_TIME`` many seconds for the target to respawn.
+Next we set the target's respawn timer. We set the timer to ``TARGET_RESPAWN_TIME``, so it takes ``TARGET_RESPAWN_TIME`` in seconds until it is respawned.
 
 Then we disable the non-broken target's collision shape, and set the target's visibility to ``false``.
 
