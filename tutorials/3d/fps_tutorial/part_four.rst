@@ -70,7 +70,8 @@ ______
            
 In ``process_input`` add the following code, just before ``input_movement_vector = input_movement_vector.normalized()``:
 
-::
+.. tabs::
+ .. code-tab:: Xbox Controller
     
     # Add joypad input, if there is a joypad
     if Input.get_connected_joypads().size() > 0:
@@ -91,6 +92,25 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
         input_movement_vector += joypad_vec
 
+ .. code-tab:: Playstation Controller
+
+    # Add joypad input, if there is a joypad
+    if Input.get_connected_joypads().size() > 0:
+        
+        var joypad_vec = Vector2(0, 0)
+        
+        if OS.get_name() == "Windows" or OS.get_name() == "X11":
+            joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
+        elif OS.get_name() == "OSX":
+            joypad_vec = Vector2(Input.get_joy_axis(0, 1), Input.get_joy_axis(0, 2))
+
+        if joypad_vec.length() < JOYPAD_DEADZONE:
+            joypad_vec = Vector2(0, 0)
+        else:
+            joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
+
+        input_movement_vector += joypad_vec
+
 Let's go over what we're doing.
 
 First we check to see if there is a connected joypad.
@@ -99,7 +119,7 @@ If there is a joypad connected, we then get its left stick axes for right/left a
 Because a wired Xbox 360 controller has different joystick axis mapping based on OS, we will use different axes based on
 the OS.
 
-.. warning:: This tutorial assumes you are using a XBox 360 wired controller.
+.. warning:: This tutorial assumes you are using a XBox 360 or a Playstation wired controller.
              Also, I do not (currently) have access to a Mac computer, so the joystick axes may need changing.
              If they do, please open a GitHub issue on the Godot documentation repository! Thanks!
 
@@ -121,7 +141,8 @@ ______
 
 Make a new function called ``process_view_input`` and add the following:
 
-::
+.. tabs::
+ .. code-tab:: Xbox Controller
     
     func process_view_input(delta):
         
@@ -157,7 +178,41 @@ Make a new function called ``process_view_input`` and add the following:
             camera_rot.x = clamp(camera_rot.x, -70, 70)
             rotation_helper.rotation_degrees = camera_rot
         # ----------------------------------
+ 
+  .. code-tab:: Playstation Controller
      
+     func process_view_input(delta):
+        
+        if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+            return
+
+        # NOTE: Until some bugs relating to captured mouses are fixed, we cannot put the mouse view
+        # rotation code here. Once the bug(s) are fixed, code for mouse view rotation code will go here!
+
+        # ----------------------------------
+        # Joypad rotation
+
+        var joypad_vec = Vector2()
+        if Input.get_connected_joypads().size() > 0:
+
+            if OS.get_name() == "Windows" or OS.get_name() == "X11":
+                joypad_vec = Vector2(Input.get_joy_axis(0, 2), Input.get_joy_axis(0, 3))
+            elif OS.get_name() == "OSX":
+                joypad_vec = Vector2(Input.get_joy_axis(0, 3), Input.get_joy_axis(0, 4))
+
+            if joypad_vec.length() < JOYPAD_DEADZONE:
+                joypad_vec = Vector2(0, 0)
+            else:
+                joypad_vec = joypad_vec.normalized() * ((joypad_vec.length() - JOYPAD_DEADZONE) / (1 - JOYPAD_DEADZONE))
+
+            rotation_helper.rotate_x(deg2rad(joypad_vec.y * JOYPAD_SENSITIVITY))
+
+            rotate_y(deg2rad(joypad_vec.x * JOYPAD_SENSITIVITY * -1))
+
+            var camera_rot = rotation_helper.rotation_degrees
+            camera_rot.x = clamp(camera_rot.x, -70, 70)
+            rotation_helper.rotation_degrees = camera_rot
+        # ----------------------------------
      
 Let's go over what's happening:
 
