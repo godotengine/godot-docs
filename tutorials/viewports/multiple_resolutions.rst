@@ -6,8 +6,8 @@ Multiple resolutions
 Base size
 ---------
 
-A base size for the project can be specified in the project settings
-under "Display", "Window".
+A base size for the window can be specified in the project settings under
+"Display", "Window".
 
 .. image:: img/screenres.png
 
@@ -15,12 +15,12 @@ However, what it does is not completely obvious; the engine will *not*
 attempt to switch the monitor to this resolution. Rather, think of this
 setting as the "design size", i.e. the size of the area that you work
 with in the editor. This setting corresponds directly to the size of the
-magenta rectangle in the 2D editor.
+blue rectangle in the 2D editor.
 
-Of course, there is often a need to support devices with screen sizes
-and window size that are different from this base size. Godot offers
-many ways to control how the viewport will be resized and stretched to
-different screen sizes.
+There is often a need to support devices with screen and window sizes
+that are different from this base size. Godot offers many ways to
+control how the viewport will be resized and stretched to different
+screen sizes.
 
 Resizing
 --------
@@ -65,8 +65,8 @@ demonstrate the effect of different stretch modes. A single sprite, also
 .. Animated GIFs are generated from:
 .. https://github.com/ttencate/godot_scaling_mode
 
--  Stretch Mode = **Disabled** (default): No stretching happens. One unit
-   in the scene corresponds 1:1 to one pixel on the screen. In this
+-  Stretch Mode = **Disabled** (default): No stretching happens. One
+   unit in the scene corresponds to one pixel on the screen. In this
    mode, the "Stretch Aspect" setting has no effect.
 
    This is a good option if you want full control over every screen
@@ -89,11 +89,11 @@ demonstrate the effect of different stretch modes. A single sprite, also
 
    .. image:: img/stretch_2d_expand.gif
 
--  Stretch Mode = **Viewport**: Viewport scaling means that size of the
-   root :ref:`Viewport <class_Viewport>` is set precisely to the base
-   size specified in the "Display" section of the project settings. The
-   scene is rendered to this viewport first. Finally, this viewport is
-   scaled to fit the screen (taking the "Stretch Aspect" setting into
+-  Stretch Mode = **Viewport**: Viewport scaling means that the size of
+   the root :ref:`Viewport <class_Viewport>` is set precisely to the
+   base size specified in the "Display" section of the project settings.
+   The scene is rendered to this viewport first. Finally, this viewport
+   is scaled to fit the screen (taking the "Stretch Aspect" setting into
    account).
 
    This mode is useful when working with pixel-precise games, or for the
@@ -110,7 +110,7 @@ The second setting is the stretch aspect. Note that this only takes effect if
 In the animations below, you will notice gray and black areas. The black
 areas are added by the engine and cannot be drawn into. The gray areas
 are part of your scene, and can be drawn to. The gray areas correspond
-to the region outside the magenta frame you see in the 2D editor.
+to the region outside the blue frame you see in the 2D editor.
 
 -  Stretch Aspect = **Ignore**: Ignore the aspect ratio when stretching
    the screen. This means that the original resolution will be stretched
@@ -170,11 +170,12 @@ Stretch Shrink
 ^^^^^^^^^^^^^^
 
 The "Shrink" setting allows you to add an extra scaling factor on top of
-what the "Stretch" options above already provide. The default, 1, means
-that no scaling occurs.
+what the "Stretch" options above already provide. The default value of 1
+means that no scaling occurs.
 
-If you set "Shrink" to, say, 4 and leave "Stretch Mode" on "Disabled",
-each unit in your scene will correspond to 4×4 pixels on the screen.
+If, for example, you set "Shrink" to 4 and leave "Stretch Mode" on
+"Disabled", each unit in your scene will correspond to 4×4 pixels on the
+screen.
 
 If "Stretch Mode" is set to something other than "Disabled", the size of
 the root viewport is scaled down by the "Shrink" factor, and pixels in
