@@ -182,7 +182,7 @@ Two modes of capturing indirect are provided:
 
 .. image:: img/baked_light_mode.png
 
-- **Voxel Cone**: Trace: Is the default one, it's less precise but faster. Looks similar (but slightly better) to GIProbe.
+- **Voxel Cone Trace**: Is the default one, it's less precise but faster. Looks similar (but slightly better) to GIProbe.
 - **Ray Tracing**: This method is more precise but can take considerably longer to bake. If used in low or medium quality, some scenes may produce grain.
 
 
