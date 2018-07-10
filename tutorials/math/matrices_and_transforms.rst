@@ -233,7 +233,7 @@ Rotating Transform2D is done by using the "rotated" function:
  .. code-tab:: csharp
 
     var m = Transform2D.Identity;
-    m = m.Rotated(Mathf.PI / 2); // rotate 90°
+    m = m.Rotated(Mathf.Pi / 2); // rotate 90°
 
 .. image:: img/tutomat12.png
 
@@ -255,7 +255,7 @@ the origin:
 
     // Move 2 units to the right
     var m = Transform2D.Identity;
-    m = m.Rotated(Mathf.PI / 2); // rotate 90°
+    m = m.Rotated(Mathf.Pi / 2); // rotate 90°
     m[2] += new Vector2(2, 0);
 
 .. image:: img/tutomat13.png
@@ -279,7 +279,7 @@ method:
 
     // Move 2 units towards where the basis is oriented
     var m = Transform2D.Identity;
-    m = m.Rotated(Mathf.PI / 2); // rotate 90°
+    m = m.Rotated(Mathf.Pi / 2); // rotate 90°
     m = m.Translated(new Vector2(2, 0));
 
 .. image:: img/tutomat14.png
@@ -699,7 +699,7 @@ that can point to any direction, but length must be one (1.0).
 
     // rotate in Y axis
     var m3 = Basis.Identity;
-    m3 = m3.Rotated(new Vector3(0, 1, 0), Mathf.PI / 2);
+    m3 = m3.Rotated(new Vector3(0, 1, 0), Mathf.Pi / 2);
 
 Transform
 ---------
