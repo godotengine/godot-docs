@@ -306,7 +306,7 @@ All we're doing in ``_physics_process`` is calling two functions: ``process_inpu
 ``process_input`` will be where we store all of the code relating to player input. We want to call it first before
 anything else so we have fresh player input to work with.
 
-``process_movement`` is where we'll send all of the date necessary to the :ref:`KinematicBody <class_KinematicBody>`
+``process_movement`` is where we'll send all of the data necessary to the :ref:`KinematicBody <class_KinematicBody>`
 so it can move through the game world.
 
 _________
@@ -384,7 +384,7 @@ can get the :ref:`Basis <class_Basis>` from the :ref:`Transform <class_Transform
 Each :ref:`Basis <class_Basis>` has three vectors: ``X``, ``Y``, and ``Z``.
 Each of those vectors point towards each of the local space vectors coming from that object.
 
-To use the a :ref:`Spatial <class_Spatial>` node's local directional vectors, we use this code:
+To use the :ref:`Spatial <class_Spatial>` node's local directional vectors, we use this code:
 
 ::
 

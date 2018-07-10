@@ -381,7 +381,7 @@ Another advantage is we can have more complex bullet movement. If we want to mak
 controlling script slowly push the bullet towards the ground. Using a object also makes the bullet take time to reach its target, it doesn't instantly
 hit whatever its pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
 
-One of the huge disadvantages performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
+One of the huge disadvantages is performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
 it comes at the cost of performance. With this method we are calculating every bullet's movement every step, and while this may not be a problem for a few dozen
 bullets, it can become a huge problem when you potentially have several hundred bullets.
 
@@ -440,7 +440,7 @@ _________
 
 Lets get the bullet object setup. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
 
-Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
+Open up ``Bullet_Scene.tscn``. The scene contains a :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
 and an :ref:`Area <class_Area>` with a :ref:`CollisionShape <class_CollisionShape>` childed to it.
 
 Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` :ref:`Spatial <class_Spatial>`.
@@ -682,7 +682,7 @@ a consistent interface to interact with in ``Player.gd``. By using the same vari
 weapon, we can interact with them without having to know which weapon we are using, which makes our code
 much more modular because we can add weapons without having to change much of the code in ``Player.gd`` and it will just work.
 
-If we could write all of the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
+We could write all of the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
 By using a modular design with a consistent interface, we can keep ``Player.gd`` nice and neat, while also making it easier to add/remove/modify weapons.
 
 _________
@@ -731,7 +731,7 @@ If we are in the pistol's idle animation, we set ``is_weapon_enabled`` to ``true
 been equipped.
 
 Because we know our pistol's ``equip`` animation automatically transitions to the pistol's idle animation, if we are in the pistol's
-idle animation the pistol most have finished playing the equip animation.
+idle animation the pistol have mostly finished playing the equip animation.
 
 .. note:: We know these animations will transition because we wrote to the code to make them transition in ``Animation_Manager.gd``
 
@@ -762,7 +762,7 @@ If the player is not in ``Idle_unarmed``, we return ``false`` because we have no
 Creating the other two weapons
 ------------------------------
 
-Now that we all of the code we'll need for the pistol, let's add the code for the rifle and knife next.
+Now that we have all of the code we'll need for the pistol, let's add the code for the rifle and knife next.
 
 Select ``Rifle_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points`` -> ``Rifle_Point``) and create a new script called ``Weapon_Rifle.gd``,
 then add the following:
