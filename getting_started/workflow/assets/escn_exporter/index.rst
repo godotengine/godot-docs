@@ -10,6 +10,9 @@ Details on exporting
    material
    physics
    lights
+   mesh
+   skeleton
+   animation
 
 
 Disabling specific objects

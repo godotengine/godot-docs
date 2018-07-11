@@ -13,7 +13,7 @@ usability and flexibility. Some practical examples of this are:
 -  Rendering objects efficiently in high amounts is easy, but when a
    large scene must be rendered, it can become inefficient. To solve
    this, visibility computation must be added to the rendering, which
-   makes rendering less efficient, but, at the same time, less objects are
+   makes rendering less efficient, but, at the same time, fewer objects are
    rendered, so efficiency overall improves.
 -  Configuring the properties of every material for every object that
    needs to be rendered is also slow. To solve this, objects are sorted
@@ -54,7 +54,7 @@ does a good job at reusing materials that need similar shaders but, if
 custom shaders are used, make sure to reuse them as much as possible.
 Godot's priorities will be like this:
 
--  **Reusing Materials**: The less amount of different materials in the
+-  **Reusing Materials**: The fewer different materials in the
    scene, the faster the rendering will be. If a scene has a huge amount
    of objects (in the hundreds or thousands) try reusing the materials
    or in the worst case use atlases.
@@ -108,7 +108,7 @@ On mobile, pulling more power is not an option, so a technique called
 variant of it), which divide the screen into a grid. Each cell keeps the
 list of triangles drawn to it and sorts them by depth to minimize
 *overdraw*. This technique improves performance and reduces power
-consumption, but takes a toll on vertex performance. As a result, less
+consumption, but takes a toll on vertex performance. As a result, fewer
 vertices and triangles can be processed for drawing.
 
 Generally, this is not so bad, but there is a corner case on mobile that
@@ -161,7 +161,7 @@ transparency, try to make that section a separate material.
 Level of detail (LOD)
 ---------------------
 
-As also mentioned before, using objects with less vertices can improve
+As also mentioned before, using objects with fewer vertices can improve
 performance in some cases. Godot has a simple system to change level
 of detail,
 :ref:`GeometryInstance <class_GeometryInstance>`

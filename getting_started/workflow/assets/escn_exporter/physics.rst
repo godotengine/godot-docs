@@ -37,7 +37,7 @@ There are the following caveats:
    collision mask is equal to it's collision group. Most of the time, this is
    what you want.
 
-.. important
+.. important::
 	To build compound physics shapes, parent together multiple objects with
 	rigid body enabled. The physics properties are taken from the parent-most
 	rigid body, and the rest are used as collision shapes.

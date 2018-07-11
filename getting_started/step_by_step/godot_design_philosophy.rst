@@ -5,8 +5,10 @@ Godot’s design philosophy
 
 Now that you've gotten your hands wet, let's talk about Godot's design.
 
-**Every game engine is different and fits different needs.** Not only do they offer a range of features, the design of each engine is unique. This leads to different workflows and different ways to form your
-games’ structures. This all stems from their respective design philosophies.
+**Every game engine is different and fits different needs.**
+Not only do they offer a range of features, the design of each engine
+is unique. This leads to different workflows and different ways to form
+your games’ structures. This all stems from their respective design philosophies.
 
 This page is here to help you understand how Godot works, starting
 with some of its core pillars. It is not a list of available features, nor
@@ -14,7 +16,8 @@ is it an engine comparison. To know if any engine can be a good fit for
 your project, you need to try it out for yourself and
 understand its design and limitations.
 
-Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3CqQ>`_ if you're looking for an overview of the engine's features.
+Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3CqQ>`_
+if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
 --------------------------------------
@@ -78,7 +81,7 @@ of game developers and game designers, and they’re tightly integrated in
 the engine and the editor.
 
 GDscript lets you write simple code using Python-like syntax,
-yet it detects types and offers a static-language's quality of auto-completion.
+yet it detects types and offers a static language's quality of auto-completion.
 It is also optimized for gameplay code with built-in types like Vectors and Colors.
 
 Note that with GDNative, you can write high-performance code using compiled
@@ -99,18 +102,19 @@ game code. See `The Godot editor is a Godot game`_ below.
 |image4|
 
 *A State Machine editor plugin in Godot 2 by kubecz3k. It lets you
-manage states and transitions visually*
+manage states and transitions visually.*
 
-Open-source
+Open source
 -----------
 
-Godot offers a fully open-source codebase under the **MIT license.** This
-means all the technologies that ship with it have to be Free (as in freedom) as well.
-For the most part, they’re coded from the ground-up by contributors.
+Godot offers a fully open source codebase under the **MIT license**.
+This means all the technologies that ship with it have to be Free
+(as in freedom) as well.
+For the most part, they’re developed from the ground up by contributors.
 
-Anyone can plug in proprietary tools for the needs of their projects - 
-they just won’t ship with the engine. This may include Nvidia PhysX,
-Google Admob, or an FBX file importer. Any of these can come as
+Anyone can plug in proprietary tools for the needs of their projects —
+they just won’t ship with the engine. This may include NVIDIA PhysX,
+Google AdMob, or an FBX model importer. Any of these can come as
 third-party plugins instead.
 
 On the other hand, an open codebase means you can **learn from and extend
@@ -121,7 +125,6 @@ as Godot will print errors with a stack trace, even if they come from the engine
 
    This **does not affect the work you do with Godot** in any way: there’s
    no strings attached to the engine or anything you make with it.
-
 
 Community-driven
 ----------------
@@ -150,22 +153,22 @@ itself. With the ``tool`` keyword, you can run any game code in the editor.
 
 |image5|
 
-*RPG in a Box is a voxel RPG editor made in Godot 2. It uses Godot’s UI
-tools for its node-based programming system and for the rest of the
+*RPG in a Box is a voxel RPG editor made with Godot 2. It uses Godot’s
+UI tools for its node-based programming system and for the rest of the
 interface.*
 
-Put the ``tool`` keyword at the top of any GDscript file and it will run
-in the editor. This lets you import and export plugins, create plugins like custom level editors,
-or create scripts with the same nodes and API you use in your projects.
-
+Put the ``tool`` keyword at the top of any GDScript file and it will run
+in the editor. This lets you import and export plugins, create plugins
+like custom level editors, or create scripts with the same nodes and API
+you use in your projects.
 
 Separate 2D and 3D engines
 --------------------------
 
-Godot offers dedicated 2D and 3D rendering engines. As a result **the
+Godot offers dedicated 2D and 3D rendering engines. As a result, **the
 base unit for 2D scenes is pixels.** Even though the engines are
 separate, you can render 2D in 3D, 3D in 2D, and overlay 2D sprites and
-interface over your 3D world.
+interfaces over your 3D world.
 
 .. |image0| image:: ./img/engine_design_01.png
 .. |image1| image:: ./img/engine_design_02.png

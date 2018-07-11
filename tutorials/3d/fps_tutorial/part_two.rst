@@ -440,8 +440,10 @@ _________
 
 Lets get the bullet object setup. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
 
+
 Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
 and an :ref:`Area <class_Area>` with a :ref:`CollisionShape <class_CollisionShape>` children to it.
+
 
 Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` :ref:`Spatial <class_Spatial>`.
 
@@ -682,7 +684,7 @@ a consistent interface to interact with in ``Player.gd``. By using the same vari
 weapon, we can interact with them without having to know which weapon we are using, which makes our code
 much more modular because we can add weapons without having to change much of the code in ``Player.gd`` and it will just work.
 
-If we could write all of the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
+We could write all of the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
 By using a modular design with a consistent interface, we can keep ``Player.gd`` nice and neat, while also making it easier to add/remove/modify weapons.
 
 _________
@@ -762,7 +764,7 @@ If the player is not in ``Idle_unarmed``, we return ``false`` because we have no
 Creating the other two weapons
 ------------------------------
 
-Now that we all of the code we'll need for the pistol, let's add the code for the rifle and knife next.
+Now that we have all of the code we'll need for the pistol, let's add the code for the rifle and knife next.
 
 Select ``Rifle_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points`` -> ``Rifle_Point``) and create a new script called ``Weapon_Rifle.gd``,
 then add the following:
