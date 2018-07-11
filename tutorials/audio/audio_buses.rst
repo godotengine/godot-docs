@@ -100,10 +100,10 @@ The aim of a dynamic range compressor is to reduce the level of the sound when t
 One of the main uses of a compressor is to increase the dynamic range while clipping the least possible (when sound goes over 0dB).
 
 Compressor has may uses in the mix, for example:
+
 * It can be used in the Master bus to compress the whole output (Although a Limiter is probably better)
 * It can be used in voice channels to ensure they sound as even as possible.
-* It can be *Sidechained*. This means, it can reduce the sound level using another audio bus for threshold detection. This technique is
-very common in video game mixing to download the level of Music/SFX while voices are being heard.
+* It can be *Sidechained*. This means, it can reduce the sound level using another audio bus for threshold detection. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
 * It can accentuate transients by using a bit wider attack, meaning it can make sound effects sound more punchy.
 
 There is a lot of bibliography written about compressors, and Godot implementation is rather standard.
