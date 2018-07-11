@@ -327,13 +327,13 @@ This erases the node safely during idle.
  .. code-tab:: gdscript GDScript
 
     func _someaction():
-        s.queue_free() # Removes the node from the scene and frees it when it becomse safe to do so.
+        s.queue_free() # Removes the node from the scene and frees it when it becomes safe to do so.
 
  .. code-tab:: csharp
 
     public void _SomeAction()
     {
-        _sprite.QueueFree(); // Removes the node from the scene and frees it when it becomse safe to do so.
+        _sprite.QueueFree(); // Removes the node from the scene and frees it when it becomes safe to do so.
     }
 
 Instancing scenes
