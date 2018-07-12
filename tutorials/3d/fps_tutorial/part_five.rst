@@ -323,7 +323,7 @@ Okay, now let's start making the grenades work with the player. Add the followin
 * ``sticky_grenade_scene``: The sticky grenade scene we worked on earlier.
 * ``GRENADE_THROW_FORCE``: The force at which the player will throw the grenades at.
          
-Most of these variables are similar to how we have out weapons set up.
+Most of these variables are similar to how we have our weapons set up.
 
 .. tip:: While it's possible to make a more modular grenade system, I found it was not worth the additional complexity for just two grenades.
          If you were going to make a more complex FPS with more grenades, you'd likely want to make a system for grenades similar to how we have the weapons set up.
@@ -348,9 +348,9 @@ Now we need to add some code in ``_process_input`` Add the following to ``_proce
             grenade_amounts[current_grenade] -= 1
             
             var grenade_clone
-            if (current_grenade == "Grenade"):
+            if current_grenade == "Grenade":
                 grenade_clone = grenade_scene.instance()
-            elif (current_grenade == "Sticky Grenade"):
+            elif current_grenade == "Sticky Grenade":
                 grenade_clone = sticky_grenade_scene.instance()
                 # Sticky grenades will stick to the player if we do not pass ourselves
                 grenade_clone.player_body = self
@@ -447,7 +447,7 @@ any additional grenades.
 
 ______
 
-Now you should be able to throw grenades now! Go give it a try!
+Now you should be able to throw grenades! Go give it a try!
 
 
 Adding the ability to grab and throw RigidBody nodes to the player
@@ -485,7 +485,7 @@ With that done, all we need to do is add some code to ``process_input``:
             var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
             
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
-            if ray_result:
+            if ray_result != null:
                 if ray_result["collider"] is RigidBody:
                     grabbed_object = ray_result["collider"]
                     grabbed_object.mode = RigidBody.MODE_STATIC
@@ -533,29 +533,29 @@ themselves or the knife's collision :ref:`Area <class_Area>`.
 Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
 If the ray collided with a :ref:`RigidBody <class_RigidBody>`, we set ``grabbed_object`` to the collider the ray collided with. We then set the mode on
-the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it does not move.
+the :ref:`RigidBody <class_RigidBody>` we collided with to ``MODE_STATIC`` so it doesn't move in our hands.
 
 Finally, we set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and collision mask to ``0``.
-This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which will means it will not be able to collide with anything.
+This will make the grabbed :ref:`RigidBody <class_RigidBody>` have no collision layer or mask, which means it will not be able to collide with anything as long as we are holding it.
 
 ______
 
 If ``grabbed_object`` is not ``null``, then we need to throw the :ref:`RigidBody <class_RigidBody>` the player is holding.
 
-We first set the :ref:`RigidBody <class_RigidBody>` we holding mode to ``MODE_RIGID``.
+We first set the :ref:`RigidBody <class_RigidBody>` we are holding mode to ``MODE_RIGID``.
 
-.. note:: This is making a rather large assumption that the all rigid bodies will be using ``MODE_RIGID``. While that is the case for this tutorial series,
+.. note:: This is making a rather large assumption that all the rigid bodies will be using ``MODE_RIGID``. While that is the case for this tutorial series,
           that may not be the case in other projects.
           
           If you have :ref:`RigidBody <class_RigidBody>`'s with different modes, you may need to store the mode of the :ref:`RigidBody <class_RigidBody>` you
           have picked up into a class variable so you can change it back to the mode it was in before you picked it up.
   
-Then we apply an impulse to send it flying forward. We send it flying in the direction the camera is facing, at ``OBJECT_THROW_FORCE`` force.
+Then we apply an impulse to send it flying forward. We send it flying in the direction the camera is facing, using the force we set in the ``OBJECT_THROW_FORCE`` variable.
 
 We then set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and mask to ``1``, so it can collide with anything on layer ``1`` again.
 
-.. note:: This is, once again, making a rather large assumption that all rigid bodies will be only on collision layer ``1``, and all collision masks will be on layer ``1``.
-          If you are using this script in other projects, you may need to store the collision layer/mask of the :ref:`RigidBody <class_RigidBody>` before you change them to ``0``.
+.. note:: This is, once again, making a rather large assumption that all the rigid bodies will be only on collision layer ``1``, and all collision masks will be on layer ``1``.
+          If you are using this script in other projects, you may need to store the collision layer/mask of the :ref:`RigidBody <class_RigidBody>` in a variable before you change them to ``0``, so you would have the original collision layer/mask to set for them when you are reversing the process.
 
 Finally, we set ``grabbed_object`` to ``null`` since the player has successfully thrown the held object.
 
@@ -589,7 +589,7 @@ want the player to be able to change weapons or reload, so change ``_physics_pro
 
 Now the player cannot change weapons or reload while holding an object.
     
-Now you can grab and throw RigidBody nodes while in a ``UNARMED`` state! Go give it a try!
+Now you can grab and throw RigidBody nodes while you're in the ``UNARMED`` state! Go give it a try!
 
 Adding a turret
 ---------------
@@ -606,7 +606,7 @@ a :ref:`StaticBody <class_StaticBody>` and a :ref:`Raycast <class_Raycast>` node
 One thing to note with the ``Head`` is that the raycast will be where the turret's bullets will fire from if we are using raycasting. We also have two meshes called
 ``Flash`` and ``Flash_2``. These will be the muzzle flash that briefly shows when the turret fires.
 
-``Vision_Area`` is a :ref:`Area <class_Area>` we'll use as the turret's ability to see. When something enters ``Vision_Area``, we'll assume the turret can see it.
+``Vision_Area`` is an :ref:`Area <class_Area>` we'll use as the turret's ability to see. When something enters ``Vision_Area``, we'll assume the turret can see it.
 
 ``Smoke`` is a :ref:`Particles <class_Particles>` node that will play when the turret is destroyed and repairing.
 
@@ -717,40 +717,40 @@ Add the following to ``Turret.gd``:
 
 
     func fire_bullet():
-        if use_raycast == false:
-            
-            var clone = bullet_scene.instance()
-            var scene_root = get_tree().root.get_children()[0]
-            scene_root.add_child(clone)
-            
-            clone.global_transform = $Head/Barrel_End.global_transform
-            clone.scale = Vector3(8, 8, 8)
-            clone.BULLET_DAMAGE = TURRET_DAMAGE_BULLET
-            clone.BULLET_SPEED = 60
-            
-            ammo_in_turret -= 1
-        
-        else:
-            node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
-            
-            node_raycast.force_raycast_update()
-            
-            if node_raycast.is_colliding():
-                var body = node_raycast.get_collider()
-                if body.has_method("bullet_hit"):
-                    body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.global_transform)
-            
-            ammo_in_turret -= 1
-        
-        node_flash_one.visible = true
-        node_flash_two.visible = true
-        
-        flash_timer = FLASH_TIME
-        fire_timer = FIRE_TIME
-        
-        if ammo_in_turret <= 0:
-            ammo_reload_timer = AMMO_RELOAD_TIME
-
+	
+	if use_raycast == true:
+		node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
+		
+		node_raycast.force_raycast_update()
+		
+		if node_raycast.is_colliding():
+			var body = node_raycast.get_collider()
+			if body.has_method("bullet_hit"):
+				body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.get_collision_point())
+		
+		ammo_in_turret -= 1
+		
+	else:
+		var clone = bullet_scene.instance()
+		var scene_root = get_tree().root.get_children()[0]
+		scene_root.add_child(clone)
+		
+		clone.global_transform = $Head/Barrel_End.global_transform
+		clone.scale = Vector3(8, 8, 8)
+		clone.BULLET_DAMAGE = TURRET_DAMAGE_BULLET
+		clone.BULLET_SPEED = 60
+				
+		ammo_in_turret -= 1
+		
+	node_flash_one.visible = true
+	node_flash_two.visible = true
+	
+	flas_timer = FLASH_TIME
+	fire_timer = FIRE_TIME
+	
+	if ammo_in_turret <= 0:
+		ammo_reload_timer = AMMO_RELOAD_TIME
+		
 
     func body_entered_vision(body):
         if current_target == null:
@@ -815,9 +815,9 @@ First we get the vision area and connect the ``body_entered`` and ``body_exited`
 
 We then get all of the nodes and assign them to their respective variables.
 
-Next add some exceptions to the :ref:`Raycast <class_Raycast>` so the turret cannot hurt itself.
+Next we add some exceptions to the :ref:`Raycast <class_Raycast>` so the turret cannot hurt itself.
 
-Then we make both flash meshes invisible to start, since we are not going to be firing during ``_ready``.
+Then we make both flash meshes invisible at start, since we are not going to be firing during ``_ready``.
 
 We then get the smoke particles node and assign it to the ``smoke_particles`` node. We also set ``emitting`` to ``false`` to assure the particles are
 not emitting until the turret is broken.
@@ -842,7 +842,7 @@ We then check to see if the turret's health is more than zero. If it is, we then
 If there is ammo in the turret, we then check to see if ``fire_timer`` is more than zero. If ``fire_timer`` is more than zero, the turret cannot fire and we need to
 remove ``delta`` from ``fire_timer``. If ``fire_timer`` is equal to or less than zero, the turret can fire a bullet, so we call the ``fire_bullet`` function.
 
-If there is not any ammo in the turret, we check to see if ``ammo_reload_timer`` is more than zero. If ``ammo_reload_timer`` is more than zero,
+If there isn't any ammo in the turret, we check to see if ``ammo_reload_timer`` is more than zero. If ``ammo_reload_timer`` is more than zero,
 we subtract ``delta`` from ``ammo_reload_timer``. If ``ammo_reload_timer`` is equal to or less than zero, we set ``ammo_in_turret`` to ``AMMO_IN_FULL_TURRET`` because
 the turret has waited long enough to refill its ammo.
 
@@ -873,7 +873,7 @@ We first make a bullet clone and assign it to ``clone``. We then add that as a c
 the barrel end, scale it up since it's too small, and set it's damage and speed using the turret's constant class variables. We then remove ``1`` from
 ``ammo_in_turret``.
 
-Then, regardless of which bullet method we used, we make both of the muzzle flash meshes visible. We set ``flash_timer`` and ``fire_timer`` to
+Then, regardless of which bullet method we used, we make both of the muzzle flash meshes visible. We set ``flash_timer`` and ``fire_timer``
 to ``FLASH_TIME`` and ``FIRE_TIME`` respectively. We then check to see if the turret used the last bullet in its ammo. If the turret has used the last bullet,
 we set ``ammo_reload_timer`` to ``AMMO_RELOAD_TIME`` so the turret reloads.
 
@@ -884,19 +884,19 @@ Let's look at ``body_entered_vision`` next, and thankfully it is rather short.
 We first check to see if the turret currently has a target by checking to see if ``current_target`` is equal to ``null``.
 If the turret does not have a target, we then check to see if the body that just entered the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`
 
-..note:: We're assuming the turret should only should fire at :ref:`KinematicBody <class_KinematicBody>` nodes, since that is what the player is using.
+.. note:: We're assuming the turret should only fire at :ref:`KinematicBody <class_KinematicBody>` nodes, since that is what the player is using.
 
-If the body that just the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`, we set ``current_target`` to the body, and set ``is_active`` to
+If the body that just entered the vision :ref:`Area <class_Area>` is a :ref:`KinematicBody <class_KinematicBody>`, we set ``current_target`` to the body, and set ``is_active`` to
 ``true``.
 
 ______
 
 Now let's look at ``body_exited_vision``.
 
-First we check to see if the turret has a target. If the turret has a target, we then check to see if the body that has just left the turret's vision area
+First we check to see if the turret has a target. If the turret has a target, we then check to see if the body that has just left the turret's vision :ref:`Area <class_Area>`
 is the turret's target.
 
-If the body that just left the area is the turret's current target, we set ``current_target`` to ``null``, set ``is_active`` to ``false``, and reset
+If the body that just left the vision :ref:`Area <class_Area>` is the turret's current target, we set ``current_target`` to ``null``, set ``is_active`` to ``false``, and reset
 all of the variables related to firing the turret, since the turret no longer has a target to fire at.
 
 ______
@@ -932,8 +932,8 @@ Add the following code to ``TurretBodies.gd``:
 All this code does is call ``bullet_hit`` on whatever node ``path_to_turret_root`` leads to. Go back to the editor and assign the :ref:`NodePath <class_NodePath>`
 to the ``Turret`` node.
 
-Now select the other :ref:`StaticBody <class_StaticBody>` node (either in ``Body`` or ``Head``) and assign ``TurretBodies.gd`` to it. Once the script is
-attached, assign the :ref:`NodePath <class_NodePath>` to the ``Turret`` node.
+Now select the other :ref:`StaticBody <class_StaticBody>` node (either in ``Body`` or ``Head``) and assign ``TurretBodies.gd`` script to it. Once the script is
+attached, assign again the :ref:`NodePath <class_NodePath>` to the ``Turret`` node.
 
 ______
 
@@ -953,9 +953,9 @@ Final notes
 
 .. image:: img/PartFiveFinished.png
 
-Now you the player can pick up :ref:`RigidBody <class_RigidBody>` nodes and throw grenades. We now also have turrets to fire at the player.
+Now you can pick up :ref:`RigidBody <class_RigidBody>` nodes and throw grenades. We now also have turrets to fire at the player.
 
-In :ref:`doc_fps_tutorial_part_six`, we're going to add a main menu and pause menu,
+In :ref:`doc_fps_tutorial_part_six`, we're going to add a main menu and a pause menu,
 add a respawn system for the player, and change/move the sound system so we can use it from any script.
 
 .. warning:: If you ever get lost, be sure to read over the code again!

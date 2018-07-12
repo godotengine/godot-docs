@@ -192,6 +192,8 @@ Making the ``Globals`` singleton
 
 Now, for this all to work we need to create the ``Globals`` singleton. Make a new script in the ``Script`` tab and call it ``Globals.gd``.
 
+.. note:: To make the ``Globals`` singleton, go to the ``Script`` tab in the editor, then click ``New`` and a ``Create Script`` box will appear, leave everything unchanged except for the ``Path`` where you need to insert the script's name ``Globals.gd``.
+
 Add the following to ``Globals.gd``.
 
 ::
@@ -208,24 +210,24 @@ Add the following to ``Globals.gd``.
         get_tree().change_scene(new_scene_path)
 
 As you can see, it's quite small and simple. As this part progresses we will
-keeping adding complexities to ``Global.gd``, but for now all it is doing is holding two class variables, and abstracting how we change scenes.
+keep adding more complex logic to ``Globals.gd``, but for now all it is doing is holding two class variables, and abstract defining how we change scenes.
 
 * ``mouse_sensitivity``: The current sensitivity for our mouse, so we can load it in ``Player.gd``.
 * ``joypad_sensitivity``: The current sensitivity for our joypad, so we can load it in ``Player.gd``.
 
 Right now all we will be using ``Globals.gd`` for is a way to carry variables across scenes. Because the sensitivity for our mouse and joypad are
-stored in ``Globals.gd``, any changes we make in one scene (like ``Main_Menu``) will effect the sensitivity for the player.
+stored in ``Globals.gd``, any changes we make in one scene (like in ``Options_Menu``) will effect the sensitivity for the player.
 
 All we're doing in ``load_new_scene`` is calling :ref:`SceneTree <class_SceneTree>`'s ``change_scene`` function, passing in the scene path given in ``load_new_scene``.
 
 That's all of the code needed for ``Globals.gd`` right now! Before we can test the main menu, we first need to set ``Globals.gd`` as an autoload script.
 
-Open up the project settings and click the ``AutoLoad`` tab.
+Open up the ``Project Settings`` and click the ``AutoLoad`` tab.
 
 .. image:: img/AutoloadAddSingleton.png
 
-Then select the path to ``Globals.gd`` in the ``Path`` field by clicking the button beside it. Make sure the name in the ``Node Name`` field is ``Globals``. If you
-have everything like the picture above, then press ``Add``!
+Then select the path to ``Globals.gd`` in the ``Path`` field by clicking the button (``..``) beside it. Make sure the name in the ``Node Name`` field is ``Globals``. If you
+have everything like in the picture above, then press ``Add``!
 
 This will make ``Globals.gd`` a singleton/autoload script, which will allow us to access it from any script, in any scene.
 
@@ -234,7 +236,7 @@ This will make ``Globals.gd`` a singleton/autoload script, which will allow us t
 Now that ``Globals.gd`` is a singleton/autoload script, you can test the main menu!
 
 You may want to change the main scene from ``Testing_Area.tscn`` to ``Main_Menu.tscn`` so when we export the game the player will start at the main menu. You can do this
-through the project settings, under the ``General`` tab. Then in the ``Application`` category, click the ``Run`` subcategory and you can change the main scene by changing
+through the ``Project Settings``, under the ``General`` tab. Then in the ``Application`` category, click the ``Run`` subcategory and you can change the main scene by changing
 the value in ``Main Scene``.
 
 .. warning:: You'll have to set the paths to the correct files in ``Main_Menu`` in the editor before testing the main menu!
@@ -243,7 +245,7 @@ the value in ``Main Scene``.
 Adding the debug menu
 ---------------------
 
-Now let's add a simple debugging scene so the we can track things like FPS (Frames Per Second) in game. Open up ``Debug_Display.tscn``.
+Now let's add a simple debugging scene so we can track things like FPS (Frames Per Second) in game. Open up ``Debug_Display.tscn``.
 
 You can see it's a :ref:`Panel <class_Panel>` positioned in the top right corner of the screen. It has three :ref:`Labels <class_Label>`,
 one for displaying the FPS the game is running at, one for showing what OS the game is running on, and a label for showing the Godot version the game is running with.
@@ -265,7 +267,7 @@ Let's go over what this script does.
 
 ______
 
-In ``_ready`` we set the ``OS_Label``'s text to the name provided in :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
+In ``_ready`` we set the ``OS_Label``'s text to the name provided by :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
 name of the OS (or Operating System) that Godot was compiled for. For example, when you are running Windows it will return ``Windows``, while when you
 are running Linux it will return ``X11``.
 
@@ -314,7 +316,7 @@ Open up ``Globals.gd`` and add the following class variables:
 * ``DEBUG_DISPLAY``: The debug display scene we worked on earlier.
 * ``debug_display``: A variable to hold the debug display when/if there is one.
 
-Now that we have the class variables defined, we need to add a few lines to ready so ``Globals.gd`` will have a canvas layer to use (which we will store in ``canvas_layer``).
+Now that we have the class variables defined, we need to add a few lines to ``_ready`` so ``Globals.gd`` will have a canvas layer to use (which we will store in ``canvas_layer``).
 Change ``_ready`` to the following:
 
 ::
@@ -323,16 +325,16 @@ Change ``_ready`` to the following:
         canvas_layer = CanvasLayer.new()
         add_child(canvas_layer)
 
-Now in ``_ready``, we creating a new canvas layer, assign it to ``canvas_layer`` and add it as a child.
-Because ``Globals.gd`` is a autoload/singleton, Godot will make a :ref:`Node <class_Node>` when the game is launched, and it will have ``Globals.gd`` attached to it.
-Since Godot makes a :ref:`Node <class_Node>`, we can treat ``Globals.gd`` like any other node with regard to adding/removing children nodes.
+Now in ``_ready``, we create a new canvas layer, assign it to ``canvas_layer`` and add it as a child.
+Because ``Globals.gd`` is an autoload/singleton, Godot will make a :ref:`Node <class_Node>` when the game is launched, and it will have ``Globals.gd`` attached to it.
+Since Godot makes a :ref:`Node <class_Node>`, we can treat ``Globals.gd`` like any other node regarding to adding/removing children nodes.
 
 The reason we're adding a :ref:`CanvasLayer <class_CanvasLayer>` is so all of our GUI and UI nodes we instance/spawn in ``Globals.gd``
 are always drawn on top of everything else.
 
 When adding nodes to a singleton/autoload, you have to be careful not to lose reference to any of the child nodes.
 This is because nodes will not be freed/destroyed when you change scene, meaning you can run into memory problems if you are
-instancing/spawning lots of nodes and are not freeing them.
+instancing/spawning lots of nodes and you are not freeing them.
 
 ______
         
@@ -385,7 +387,7 @@ which we need in order to interact with the UI elements.
 
 Now that we've looked at how ``Pause_Popup.tscn`` is set up, lets write the code to make it work. Normally we'd attach a script to the root node of
 the scene, ``Pause_Popup`` in this case, but since we'll need to receive a couple of signals in ``Globals.gd``, we'll write all of the code for
-the pop up there.
+the popup there.
 
 Open up ``Globals.gd`` and add the following class variables:
 
@@ -439,7 +441,7 @@ Then we add ``popup`` as a child of ``canvas_layer`` so it's drawn on top. We th
 Next we make sure the mouse mode is ``MOUSE_MODE_VISIBLE`` so the player can interact with the pop up. If we did not do this, the player would not be able to
 interact with the pop up in any scene where the mouse mode is ``MOUSE_MODE_CAPTURED``.
 
-Finally, get pause the entire :ref:`SceneTree <class_SceneTree>`.
+Finally, we pause the entire :ref:`SceneTree <class_SceneTree>`.
 
 .. note:: For more information on pausing in Godot, see :ref:`doc_pausing_games`
 
@@ -486,15 +488,31 @@ Before we're ready to test the pop up, we should change one thing in ``Player.gd
 
 Open up ``Player.gd`` and in ``process_input``, change the code for capturing/freeing the cursor to the following:
 
+Instead of:
+
+:: 
+    # ----------------------------------
+    # Capturing/Freeing cursor
+    if Input.is_action_just_pressed("ui_cancel"):
+        if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+	    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    # ----------------------------------
+
+You will leave only:
+
 ::
-    
+    # ----------------------------------
+    # Capturing/Freeing cursor
     if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+    # ----------------------------------
 
 Now instead of capturing/freeing the mouse, we check to see if the current mouse mode is ``MOUSE_MODE_VISIBLE``. If it is, we set it back to
 ``MOUSE_MODE_CAPTURED``.
 
-Because the pop up makes the mouse mode ``MOUSE_MODE_VISIBLE`` whenever you pause, we no longer have to worry about freeing the cursor in ``Player.gd``.
+Because the popup makes the mouse mode ``MOUSE_MODE_VISIBLE`` whenever you pause, we no longer have to worry about freeing and capturing the cursor in ``Player.gd``.
 
 ______
 
@@ -559,6 +577,9 @@ Next we need to make a few changes to ``physics_process``. Change ``physics_proc
         process_respawn(delta)
 
 Now the player will not be processing input or movement input when the player is dead. We are also now calling ``process_respawn``.
+
+.. note:: The ``if !is_dead:`` expression is equivalent and works in the same way as the expression ``if is_dead == false:``. And by removing the ``!`` sign from the expression we obtain the opposite expression ``if is_dead == true:``. It is just a shorter way to write the same code functionality.
+
 We have not made ``process_respawn`` yet, so let's change that.
 
 ______
@@ -641,6 +662,7 @@ Next we set ``dead_time`` to ``RESPAWN_TIME`` so we can start counting down how 
 If the player is holding an object when they died, we need to throw it. We first check to see if the player is holding an object or not.
 If the player is holding a object, we throw it using the same code as the throwing code we added in :ref:`doc_fps_tutorial_part_five`.
 
+.. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always usefull when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
 ______
 
 Then we check to see if the player is dead. If the player is dead, we then remove ``delta`` from ``dead_time``.
@@ -654,7 +676,7 @@ Next we check to see if the player has waited long enough and can respawn. We do
 
 If the player has waited long enough to respawn, we set the player's position to a new respawn position provided by ``get_respawn_position``.
 
-We then enable both of the player's collision shapes so the player can collide with the environment.
+We then enable both of the player's collision shapes so the player can collide again with the environment.
 
 Next we make the ``Death_Screen`` invisible and make the rest of the UI, the ``Panel`` and ``Crosshair`` nodes, visible again.
 
@@ -836,12 +858,10 @@ First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
 
             
 There are several changes from the old version, first and foremost being we are no longer storing the sound files in ``SimpleAudioPlayer.gd`` anymore.
-This is much better for performance since we're no longer loading each audio clip when we create a sound, but instead we are forcing a audio stream to be passed
+This is much better for performance since we're no longer loading each audio clip when we create a sound, but instead we are forcing an audio stream to be passed
 in to ``play_sound``.
 
-Another change is we have a new class variable called ``should_loop``. Instead of just destroying the audio player every time it's finished, we instead want check to
-see if the audio player is set to loop or not. This allows us to have audio like looping background music without having to spawn a new audio player with the music
-when the old one is finished.
+Another change is we have a new class variable called ``should_loop``. Instead of just destroying the audio player every time it's finished, we instead want to check and see if the audio player is set to loop or not. This allows us to have audio like looping background music without having to spawn a new audio player with the music when the old one is finished.
 
 Finally, instead of being instanced/spawned in ``Player.gd``, the audio player is instead going to be spawned in ``Globals.gd`` so we can create sounds from any scene.
 Now the audio player stores ``Globals.gd`` singleton so when the audio player is destroyed, we can also remove it from a list in ``Globals.gd``.
@@ -850,15 +870,15 @@ Let's go over the changes.
 
 ______
 
-For the class variables we removed all of the ``audio_[insert name here]`` variables since we will instead have these passed in.
+For the class variables we removed all of the ``audio_[insert name here]`` variables since we will instead have these passed in from ``Globals.gd``.
 
 We also added two new class variables, ``should_loop`` and ``globals``. We'll use ``should_loop`` to tell whether the audio player should loop when the sound has
 finished, and ``globals`` will hold the ``Globals.gd`` singleton.
 
 The only change in ``_ready`` is now audio player is getting the ``Globals.gd`` singleton and assigning it to ``globals``
 
-``play_sound`` now expects a audio stream, named ``audio_stream``, to be passed in, instead of ``sound_name``. Instead of checking the
-sound name and setting the stream for the audio player, we instead check to make sure an audio stream was passed in. If a audio stream is not passed
+``play_sound`` now expects an audio stream, named ``audio_stream``, to be passed in, instead of ``sound_name``. Instead of checking the
+sound name and setting the stream for the audio player, we instead check to make sure an audio stream was passed in. If an audio stream was not passed
 in, we print an error message, remove the audio player from a list in the ``Globals.gd`` singleton called ``created_audio``, and then free the audio player.
 
 Finally, in ``sound_finished`` we first check to see if the audio player is supposed to loop or not using ``should_loop``. If the audio player is supposed to loop,
@@ -876,9 +896,9 @@ Now that we've finished our changes to ``SimpleAudioPlayer.gd``, we now need to 
 
     # You will need to provide your own sound files.
     var audio_clips = {
-        "pistol_shot":null, #preload("res://path_to_your_audio_here!")
-        "rifle_shot":null, #preload("res://path_to_your_audio_here!")
-        "gun_cock":null, #preload("res://path_to_your_audio_here!")
+        "Pistol_shot":null, #preload("res://path_to_your_audio_here!")
+        "Rifle_shot":null, #preload("res://path_to_your_audio_here!")
+        "Gun_cock":null, #preload("res://path_to_your_audio_here!")
     }
 
     const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://Simple_Audio_Player.tscn")
@@ -923,9 +943,9 @@ Now we need to add a new function called ``play_sound`` to ``Globals.gd``:
 
 Let's go over what this function does.
 
-First we check to see if ``Globals.gd`` has a audio clip with the name ``sound_name`` in ``audio_clips``. If it does not, we print an error message.
+First we check to see if ``Globals.gd`` has an audio clip with the name ``sound_name`` in ``audio_clips``. If it does not, we print an error message.
 
-If ``Globals.gd`` has a audio clip with the name ``sound_name``, we then instance/spawn a new ``SIMPLE_AUDIO_PLAYER_SCENE`` and assign it to ``new_audio``.
+If ``Globals.gd`` has an audio clip with the name ``sound_name``, we then instance/spawn a new ``SIMPLE_AUDIO_PLAYER_SCENE`` and assign it to ``new_audio``.
 
 We then set ``should_loop``, and add ``new_audio`` as a child of ``Globals.gd``.
 
@@ -961,14 +981,14 @@ Now, change ``create_sound`` to the following:
     func create_sound(sound_name, position=null):
         globals.play_sound(sound_name, false, position)
 
-Now whenever ``create_sound`` is called, we simply call ``play_sound`` in ``Globals.gd``, passing in all of the arguments revived.
+Now whenever ``create_sound`` is called, we simply call ``play_sound`` in ``Globals.gd``, passing in all of the arguments received.
 
 ______
 
 Now all of the sounds in our FPS can be played from anywhere. All we have to do is get the ``Globals.gd`` singleton, and call ``play_sound``, pass in the name of the sound
 we want to play, whether we want it to loop or not, and the position to play the sound from.
 
-For example, if you want to play an explosion sound when the grenades explode you'd need to add a new sound to ``audio_clips`` in ``Globals.gd``,
+For example, if you want to play an explosion sound when the grenades explodes you'd need to add a new sound to ``audio_clips`` in ``Globals.gd``,
 get the ``Globals.gd`` singleton, and then you just need to add something like
 ``globals.play_sound("explosion", false, global_transform.origin)`` in the grenades
 ``_process`` function, right after the grenade damages all of the bodies within its blast radius.
@@ -997,7 +1017,7 @@ At this point you have a good base to build more complicated FPS games.
              
 .. tip:: The finished project source is hosted on Github as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
          
-         **Please note that the code in Github may or may not be in sync with the tutorial on the documentation**.
+         **Please note that the code in Github may or may not be in sync with the tutorial in the documentation**.
          
          The code in the documentation is likely better managed and/or more up to date.
          If you are unsure on which to use, use the project(s) provided in the documentation as they are maintained by the Godot community.
@@ -1014,7 +1034,7 @@ The skybox is created by **StumpyStrust** and can be found at OpenGameArt.org. h
 
 The font used is **Titillium-Regular**, and is licensed under the ``SIL Open Font License, Version 1.1``.
 
-The skybox was convert to a 360 equirectangular image using this tool: https://www.360toolkit.co/convert-cubemap-to-spherical-equirectangular.html
+The skybox was converted to a 360 equirectangular image using this tool: https://www.360toolkit.co/convert-cubemap-to-spherical-equirectangular.html
 
 While no sounds are provided, you can find many game ready sounds at https://gamesounds.xyz/
 
