@@ -27,7 +27,7 @@ Math
 
 Math functions like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2`` are
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``, instead of in global scope.
-``Pi`` is ``Mathf.Pi``
+``PI`` is ``Mathf.Pi``
 
 Random
 ------
