@@ -71,7 +71,7 @@ ______
 In ``process_input`` add the following code, just before ``input_movement_vector = input_movement_vector.normalized()``:
 
 .. tabs::
- .. code-tab:: Xbox Controller
+ .. code-tab:: gdscript Xbox Controller
     
     # Add joypad input, if there is a joypad
     if Input.get_connected_joypads().size() > 0:
@@ -92,7 +92,7 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
         input_movement_vector += joypad_vec
 
- .. code-tab:: Playstation Controller
+ .. code-tab:: gdscript Playstation Controller
 
     # Add joypad input, if there is a joypad
     if Input.get_connected_joypads().size() > 0:
@@ -142,7 +142,7 @@ ______
 Make a new function called ``process_view_input`` and add the following:
 
 .. tabs::
- .. code-tab:: Xbox Controller
+ .. code-tab:: gdscript Xbox Controller
     
     func process_view_input(delta):
         
@@ -178,8 +178,8 @@ Make a new function called ``process_view_input`` and add the following:
             camera_rot.x = clamp(camera_rot.x, -70, 70)
             rotation_helper.rotation_degrees = camera_rot
         # ----------------------------------
- 
-  .. code-tab:: Playstation Controller
+
+ .. code-tab:: gdscript Playstation Controller
      
      func process_view_input(delta):
         
@@ -213,7 +213,7 @@ Make a new function called ``process_view_input`` and add the following:
             camera_rot.x = clamp(camera_rot.x, -70, 70)
             rotation_helper.rotation_degrees = camera_rot
         # ----------------------------------
-     
+
 Let's go over what's happening:
 
 First we check the mouse mode. If the mouse mode is not ``MOUSE_MODE_CAPTURED``, we want to return, which will skip the code below.

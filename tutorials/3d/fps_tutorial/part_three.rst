@@ -38,7 +38,7 @@ We can place ``RigidBody_hit_test.gd`` on them and then they will react to being
 Follow the instructions below for either (or both) of the scenes you want to use
 
 .. tabs::
- .. code-tab:: gdscript Space_Level
+ .. code-tab:: gdscript Space_Level.tscn
 
     Expand "Other_Objects" and then expand "Turrets_And_Physics_Objects".
     
@@ -61,7 +61,7 @@ Follow the instructions below for either (or both) of the scenes you want to use
     Return back to "Space_Level.tscn".
     
  
- .. code-tab:: gdscript Ruins_Level
+ .. code-tab:: gdscript Ruins_Level.tscn
 
     Expand "Misc_Objects" and then expand "Physics_Objects".
     
