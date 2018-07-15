@@ -945,6 +945,7 @@ Class Constructor
 The class constructor, called on class instantiation, is named ``_init``.
 As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
+Note that the parent class constructor is called before the child class constructor.
 
 Unlike the call of a regular function like in the above example with ``.some_func``,
 if the constructor from the inherited class takes arguments, they are passed like this:
