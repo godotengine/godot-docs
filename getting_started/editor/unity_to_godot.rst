@@ -1,10 +1,10 @@
-.. _unity3D_to_godot:
+.. _unity_to_godot:
 
 ..    references :
 ..    https://wiki.unrealengine.com/Unity3D_Developer's_Guide_to_Unreal_Engine_4
 ..    https://docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/
 
-From Unity3D to Godot Engine
+From Unity to Godot Engine
 ============================
 
 This guide provides an overview of Godot Engine from the viewpoint of a Unity user,
@@ -210,7 +210,7 @@ As you may know already, Unity supports C#. C# benefits from its integration wit
 Godot provides its own scripting language, :ref:`GDScript <doc_scripting>` as well as support
 for :ref:`Visual Script <toc-learn-scripting-visual_script>` and :ref:`doc_c_sharp`.
 GDScript borrows its syntax from Python, but is not related to it. If you wonder about the reasoning for a custom scripting language,
-please read :ref:`GDScript <doc_gdscript>` and `FAQ <faq>`_ pages. GDScript is strongly attached to the Godot API
+please read the :ref:`doc_gdscript` and :ref:`doc_faq` pages. GDScript is strongly attached to the Godot API
 and is really easy to learn: Between one evening for an experienced programmer and a week for a complete beginner.
 
 Unity allows you to attach as many scripts as you want to a GameObject.
@@ -227,8 +227,8 @@ depending on your scene and on what you want to achieve:
 As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection
 and consider splitting a complicated scene into multiple, smaller branches.
 
-Connections : groups and signals
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Connections: groups and signals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can control nodes by accessing them using a script and calling functions (built-in or user-defined) on them.
 But there's more: You can also place them in a group and call a function on all nodes contained in this group!
