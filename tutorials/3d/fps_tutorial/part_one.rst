@@ -306,12 +306,12 @@ All we're doing in ``_physics_process`` is calling two functions: ``process_inpu
 ``process_input`` will be where we store all of the code relating to player input. We want to call it first before
 anything else so we have fresh player input to work with.
 
-``process_movement`` is where we'll send all of the date necessary to the :ref:`KinematicBody <class_KinematicBody>`
+``process_movement`` is where we'll send all of the data necessary to the :ref:`KinematicBody <class_KinematicBody>`
 so it can move through the game world.
 
 _________
 
-Let's look is ``process_movement`` next:
+Let's look at ``process_input`` next:
 
 First we set ``dir`` to an empty :ref:`Vector3 <class_Vector3>`.
 
