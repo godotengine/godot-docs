@@ -61,6 +61,19 @@ Godot 3.1 onwards allows to compile using size optimizations. To enable this, ju
 
 Keep in mind some platforms such as HTML5 already use this mode by default.
 
+Link Time Optimization
+----------------------
+
+Enabling link time optimization produces more efficient binaries, both in
+performance and size. Duplicate template functions are removed, as well as
+unused code. 
+
+::
+
+	scons p=windows target=release tools=no use_lto=yes
+
+Linking is slower with this option, so use mainly for release builds.
+
 Strip your binaries
 -------------------
 
