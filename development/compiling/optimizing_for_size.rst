@@ -75,6 +75,13 @@ Using UPX
 ---------
 
 If you are aiming for desktop platforms, the UPX compressor can be used:
-.. _SO: https://upx.github.io/
-This can reduce binary size considerably.
+
+https://upx.github.io/
+
+This can reduce binary size considerably. Keep in mind some greedy
+anti-virus can detect upx compiled binaries as a virus so, if you are
+releasing a commercial game, make sure to sign your binaries or use a
+platform that will distribute them.
+
+
 
