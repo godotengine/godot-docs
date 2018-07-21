@@ -44,7 +44,7 @@ Pywin32 is required for parallel builds using multiple CPU cores.
 If SCons is issuing a warning about Pywin32 after parsing SConstruct
 build instructions, when beginning to build, you need to install it properly
 from the correct installer executable for your Python version
-`located at Sourceforge. <https://sourceforge.net/projects/pywin32/files/pywin32/>`__
+`located at Github. <https://github.com/mhammond/pywin32/releases>`__
 
 For example, if you installed a 32-bit version of Python 2.7, you would want
 to install the latest version of Pywin32 that is built for the mentioned version
