@@ -159,7 +159,9 @@ After saving the scene, press PLAY SCENE (or F6) again, aaaand... oops.
 
 .. image:: img/no_main_scene.png
 
-Press "Select" and double-click on the "Hello.tscn" file.
+Projects, may have several scenes, so one of them must be set as the main
+scene. This is the scene that will be loaded any time the project is run.
+For now, press "Select" and double-click on the "Hello.tscn" file.
 
 Press PLAY SCENE (or F6) one final time, and the "Hello, World!"
 demo should finally execute:
@@ -173,12 +175,8 @@ Success!
 Configuring the project
 -----------------------
 
-Ok, it's time to configure the project. Right now, the only way to run
-something is to execute the current scene. Projects, however, may have several
-scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run. 
-
-These settings are all stored in a project.godot file, which is a plaintext
+Ok, it's time to configure the project. These settings are all stored in a
+project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
 you can change in this file to alter how a project executes. To simplify this
 process, Godot provides a project settings dialog, which acts as a sort of
@@ -186,8 +184,8 @@ frontend to editing a project.godot file.
 
 To access that dialog, select Project -> Project Settings. Try it now.
 
-Once the window opens, let's select a main scene. Locate the
-`Application/Run/Main Scene` property and click on it to select 'hello.tscn'.
+Once the window opens, locate the `Application/Run/Main Scene` property
+and click on it.  You will see that it is set to 'res://Hello.tscn'.
 
 .. image:: img/main_scene.png
 
