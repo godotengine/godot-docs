@@ -17,3 +17,4 @@ Compiling
    compiling_for_web
    compiling_with_mono
    packaging_godot
+   optimizing_for_size
