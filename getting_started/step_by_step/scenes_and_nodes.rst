@@ -143,7 +143,7 @@ Aaaand... Oops.
 .. image:: img/neversaved.png
 
 Scenes need to be saved to be run, so save the scene to something like
-hello.tscn in Scene -> Save:
+Hello.tscn in Scene -> Save:
 
 .. image:: img/save_scene.png
 
@@ -155,7 +155,13 @@ operations in Godot, remember that "res://" is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
 
-After saving the scene and pressing run scene again, the "Hello, World!"
+After saving the scene, press PLAY SCENE (or F6) again, aaaand... oops.
+
+.. image:: img/no_main_scene.png
+
+Press "Select" and double-click on the "Hello.tscn" file.
+
+Press PLAY SCENE (or F6) one final time, and the "Hello, World!"
 demo should finally execute:
 
 .. image:: img/helloworld.png
