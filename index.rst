@@ -95,6 +95,13 @@ The main documentation for the site is organized into the following sections:
    development/cpp/index
    development/file_formats/index
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Creating Content
+   :name: sec-content
+
+   content/3d/index
+
 
 .. toctree::
    :maxdepth: 1
