@@ -1,7 +1,7 @@
 .. _doc_making_trees:
 
 Making Trees 
-==============
+============
 
 This is a short tutorial on how to make trees and other types of vegetation from scratch.
 
@@ -21,7 +21,7 @@ https://sketchfab.com/models/ea5e6ed7f9d6445ba69589d503e8cebf
 and opened it in Blender.
 
 Paint with Vertex Colors
--------------------------
+------------------------
 
 The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modelling program and paint something like this:
 
@@ -39,7 +39,7 @@ This is a simple example of a shader for leaves:
 .. code-block:: glsl
 
 	shader_type spatial;
-	render_mode depth_draw_alpha_prepass,cull_disabled,world_vertex_coords;
+	render_mode depth_draw_alpha_prepass, cull_disabled, world_vertex_coords;
 
 This is a spatial shader. There is no front/back culling (so leaves can be seen from both sides), and alpha prepass is used, so there are less depth arctifacts that result from using transparency (and leaves cast shadow). Finally, for the sway effect, world coordinates are recommended, so the tree can be duplicated, moved, etc. and it will still work together with other trees.
 
@@ -58,11 +58,10 @@ Here, the texture is read, as well as a transmission color, which is used to add
 	uniform float sway_phase_len = 8.0;
 
 	void vertex() {
-
 		float strength = COLOR.r * sway_strength;
-		VERTEX.x+=sin( VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed) * strength;
-		VERTEX.y+=sin( VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412) * strength;
-		VERTEX.z+=sin( VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123) * strength;
+		VERTEX.x += sin(VERTEX.x * sway_phase_len * 1.123 + TIME * sway_speed) * strength;
+		VERTEX.y += sin(VERTEX.y * sway_phase_len + TIME * sway_speed * 1.12412) * strength;
+		VERTEX.z += sin(VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123) * strength;
 	}
 
 This is the code to create the sway of the leaves. It's basic (just uses a sinewave multiplying by the time and axis position, but works well). Notice that the strength is multiplied by the color. Every axis uses a different small near 1.0 multiplication factor so axes don't appear in sync.
@@ -86,7 +85,7 @@ And this is pretty much it.
 The trunk shader is similar, except it does not write to the alpha channel (thus no alpha prepass is needed) and does not require transmission to work. Both shaders can be improved by adding normal mapping, AO and other maps.
 
 Improving the Shader:
-----------------------
+---------------------
 
 There are many more resources on how to do this that you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this
 (focus mostly on the sway code, as many other techniques shown there are obsolete):

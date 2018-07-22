@@ -153,7 +153,7 @@ must be copied to Godot's templates folder with their respective names.
 The templates folder can be located in:
 
 -  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates\[version]\``
--  Linux: ``/home/[username]/.local/share/godot/templates/[version]/`
+-  Linux: ``/home/[username]/.local/share/godot/templates/[version]/``
 -  macOS: ``/Users/[username]/Library/Application Support/Godot/templates/[version]/``
 
 ``[version]`` is of the form ``major.minor[.patch].status`` using values from
