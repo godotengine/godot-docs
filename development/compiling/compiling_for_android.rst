@@ -152,9 +152,14 @@ The newly-compiled templates (android_debug.apk and android_release.apk)
 must be copied to Godot's templates folder with their respective names.
 The templates folder can be located in:
 
--  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates``
--  Linux: ``/home/[username]/.local/share/godot/templates/[gd-version]/``
--  macOS: ``/users/[username]/.godot/templates``
+-  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates\[version]\``
+-  Linux: ``/home/[username]/.local/share/godot/templates/[version]/`
+-  macOS: ``/Users/[username]/Library/Application Support/Godot/templates/[version]/``
+
+``[version]`` is of the form ``major.minor[.patch].status`` using values from
+``version.py`` in your Godot source repository (e.g. ``3.0.5.stable`` or `3.1.dev``).
+You also need to write this same version string to a ``version.txt`` file located
+next to your export templates.
 
 .. TODO: Move these paths to a common reference page
 
