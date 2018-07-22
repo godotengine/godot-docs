@@ -276,7 +276,7 @@ Example:
     # suppose your game starts with a 10 second cutscene, during which the user can't interact with the game.
     # For that time we know they won't use the pause menu, so we can queue it to load during the cutscene:
     queue.queue_resource("res://pause_menu.tres")
-    start_curscene()
+    start_cutscene()
 
     # later when the user presses the pause button for the first time:
     pause_menu = queue.get_resource("res://pause_menu.tres").instance()
