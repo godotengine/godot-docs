@@ -143,7 +143,7 @@ Aaaand... Oops.
 .. image:: img/neversaved.png
 
 Scenes need to be saved to be run, so save the scene to something like
-hello.tscn in Scene -> Save:
+Hello.tscn in Scene -> Save:
 
 .. image:: img/save_scene.png
 
@@ -155,7 +155,15 @@ operations in Godot, remember that "res://" is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
 
-After saving the scene and pressing run scene again, the "Hello, World!"
+After saving the scene, press PLAY SCENE (or F6) again, aaaand... oops.
+
+.. image:: img/no_main_scene.png
+
+Projects, may have several scenes, so one of them must be set as the main
+scene. This is the scene that will be loaded any time the project is run.
+For now, press "Select" and double-click on the "Hello.tscn" file.
+
+Press PLAY SCENE (or F6) one final time, and the "Hello, World!"
 demo should finally execute:
 
 .. image:: img/helloworld.png
@@ -167,12 +175,8 @@ Success!
 Configuring the project
 -----------------------
 
-Ok, it's time to configure the project. Right now, the only way to run
-something is to execute the current scene. Projects, however, may have several
-scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run. 
-
-These settings are all stored in a project.godot file, which is a plaintext
+Ok, it's time to configure the project. These settings are all stored in a
+project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
 you can change in this file to alter how a project executes. To simplify this
 process, Godot provides a project settings dialog, which acts as a sort of
@@ -180,8 +184,8 @@ frontend to editing a project.godot file.
 
 To access that dialog, select Project -> Project Settings. Try it now.
 
-Once the window opens, let's select a main scene. Locate the
-`Application/Run/Main Scene` property and click on it to select 'hello.tscn'.
+Once the window opens, locate the `Application/Run/Main Scene` property
+and click on it.  You will see that it is set to 'res://Hello.tscn'.
 
 .. image:: img/main_scene.png
 
