@@ -71,6 +71,7 @@ This is the code to create the sway of the leaves. It's basic (just uses a sinew
 Finally all that is left is the fragment shader:
 
 .. code-block:: glsl
+
 	void fragment() {
 		vec4 albedo_tex = texture(texture_albedo,UV);
 		ALBEDO = albedo_tex.rgb;
