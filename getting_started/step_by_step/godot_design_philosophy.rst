@@ -135,7 +135,7 @@ that drive the core updates. New features from the core developers often
 focus on what will benefit the most users first.
 
 That said, although a handful of core developers work on it full-time,
-the project has over 500 contributors at the time of writing. Benevolent
+the project has over 600 contributors at the time of writing. Benevolent
 programmers work on features they may need themselves, so you’ll see
 improvements in all corners of the engine at the same time in every
 major release.
