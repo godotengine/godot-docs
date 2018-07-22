@@ -41,7 +41,7 @@ This is a simple example of a shader for leaves:
 	shader_type spatial;
 	render_mode depth_draw_alpha_prepass,cull_disabled,world_vertex_coords;
 
-This is a spatial shader. There is no front/back culling (so leaves can be seen from both sides), and alpha prepass is used, so there are less depth arctifacts that result from using transparency (and leaves cast shadow). Finally, for the sway effect, vertex coordinates are recommended, so the tree can be duplicated, moved, etc. and it will still work together with other trees.
+This is a spatial shader. There is no front/back culling (so leaves can be seen from both sides), and alpha prepass is used, so there are less depth arctifacts that result from using transparency (and leaves cast shadow). Finally, for the sway effect, world coordinates are recommended, so the tree can be duplicated, moved, etc. and it will still work together with other trees.
 
 .. code-block:: glsl
 
@@ -65,7 +65,7 @@ Here, the texture is read, as well as a transmission color, which is used to add
 		VERTEX.z+=sin( VERTEX.z * sway_phase_len * 0.9123 + TIME * sway_speed * 1.3123) * strength;
 	}
 
-This is the code to create the sway of the leaves. It's basic (just uses a sinewave multiplying by the time and axis position, but works well). Noice that the strength is multiplied by the fragment shader. Every axis uses a different small near 1.0 multiplication factor so axes don't appear in sync.
+This is the code to create the sway of the leaves. It's basic (just uses a sinewave multiplying by the time and axis position, but works well). Notice that the strength is multiplied by the color. Every axis uses a different small near 1.0 multiplication factor so axes don't appear in sync.
 
 
 Finally all that is left is the fragment shader:
@@ -87,7 +87,7 @@ The trunk shader is similar, except it does not write to the alpha channel (thus
 Improving the Shader:
 ----------------------
 
-There are many more resources on how to do this you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this
+There are many more resources on how to do this that you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this
 (focus mostly on the sway code, as many other techniques shown there are obsolete):
 
 https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch16.html
