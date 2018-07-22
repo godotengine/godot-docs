@@ -311,7 +311,7 @@ so it can move through the game world.
 
 _________
 
-Let's look is ``process_movement`` next:
+Let's look at ``process_input`` next:
 
 First we set ``dir`` to an empty :ref:`Vector3 <class_Vector3>`.
 
