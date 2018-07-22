@@ -25,7 +25,7 @@ Paint with Vertex Colors
 
 The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modelling program and paint something like this:
 
-.. image:: img/tree_base.png
+.. image:: img/tree_vertex_paint.png
 
 This is a bit exaggerated, but the idea is that color indicates how much sway affects every part of the tree. This scale here represents it better:
 
@@ -87,7 +87,8 @@ The trunk shader is similar, except it does not write to the alpha channel (thus
 Improving the Shader:
 ----------------------
 
-There are many more resources on how to do this you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this:
+There are many more resources on how to do this you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this
+(focus mostly on the sway code, as many other techniques shown there are obsolete):
 
 https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch16.html
 
