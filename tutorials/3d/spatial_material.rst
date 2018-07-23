@@ -138,7 +138,7 @@ default one is Burley. Other modes are also available:
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
 * **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works well for clay-like materials and some types of cloth.
-* **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness. It is recommended you disable sky contribution from your environment's ambient light settings to achieve a better effect.
+* **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness. It is recommended you disable sky contribution from your environment's ambient light settings or disable ambient light in the spatial material to achieve a better effect.
 
 .. image:: img/spatial_material6.png
 
