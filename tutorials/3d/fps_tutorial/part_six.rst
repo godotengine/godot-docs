@@ -36,7 +36,7 @@ when you're done, as that's the screen we want to show first when we enter the m
 Select ``Main_Menu`` (the root node) and create a new script called ``Main_Menu.gd``. Add the following:
 
 ::
-    
+
     extends Control
 
     var start_menu
@@ -197,7 +197,7 @@ Now, for this all to work we need to create the ``Globals`` singleton. Make a ne
 Add the following to ``Globals.gd``.
 
 ::
-    
+
     extends Node
 
     var mouse_sensitivity = 0.08
@@ -253,7 +253,7 @@ one for displaying the FPS the game is running at, one for showing what OS the g
 Let's add the code needed to fill these :ref:`Labels <class_Label>`. Select ``Debug_Display`` and create a new script called ``Debug_Display.gd``. Add the following:
 
 ::
-    
+
     extends Control
 
     func _ready():
@@ -283,14 +283,14 @@ ______
 Now let's jump back to ``Main_Menu.gd`` and change the following in ``options_menu_button_pressed``:
 
 ::
-    
+
     elif button_name == "debug":
         pass
 
 to this instead:
 
 ::
-    
+
     elif button_name == "debug":
         get_node("/root/Globals").set_debug_display($Options_Menu/Check_Button_Debug.pressed)
 
@@ -301,7 +301,7 @@ ______
 Open up ``Globals.gd`` and add the following class variables:
 
 ::
-    
+
     # ------------------------------------
     # All of the GUI/UI related variables
     
@@ -320,7 +320,7 @@ Now that we have the class variables defined, we need to add a few lines to ``_r
 Change ``_ready`` to the following:
 
 ::
-    
+
     func _ready():
         canvas_layer = CanvasLayer.new()
         add_child(canvas_layer)
@@ -341,7 +341,7 @@ ______
 Now we need to add ``set_debug_display`` to ``Globals.gd``:
 
 ::
-    
+
     func set_debug_display(display_on):
         if display_on == false:
             if debug_display != null:
@@ -392,7 +392,7 @@ the popup there.
 Open up ``Globals.gd`` and add the following class variables:
 
 ::
-    
+
     const MAIN_MENU_PATH = "res://Main_Menu.tscn"
     const POPUP_SCENE = preload("res://Pause_Popup.tscn")
     var popup = null
@@ -405,7 +405,7 @@ Now we need to add ``_process`` to ``Globals.gd`` so it can respond when the ``u
 Add the following to ``_process``:
 
 ::
-    
+
     func _process(delta):
         if Input.is_action_just_pressed("ui_cancel"):
             if popup == null:
@@ -452,7 +452,7 @@ Now we need to add the functions we've connected the signals to. Let's add ``pop
 Add the following to ``Globals.gd``:
 
 ::
-    
+
     func popup_closed():
         get_tree().paused = false
 
@@ -467,7 +467,7 @@ Add the following to ``Globals.gd``:
 Add the following to ``Globals.gd``:
 
 ::
-    
+
     func popup_quit():
         get_tree().paused = false
 
@@ -490,24 +490,22 @@ Open up ``Player.gd`` and in ``process_input``, change the code for capturing/fr
 
 Instead of:
 
-:: 
-    # ----------------------------------
+::
+
     # Capturing/Freeing cursor
     if Input.is_action_just_pressed("ui_cancel"):
         if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 	    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else:
 	    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-    # ----------------------------------
 
 You will leave only:
 
 ::
-    # ----------------------------------
+
     # Capturing/Freeing cursor
     if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-    # ----------------------------------
 
 Now instead of capturing/freeing the mouse, we check to see if the current mouse mode is ``MOUSE_MODE_VISIBLE``. If it is, we set it back to
 ``MOUSE_MODE_CAPTURED``.
@@ -529,7 +527,7 @@ When the player dies, we're going to make ``Death_Screen`` visible, and show the
 Open up ``Player.gd`` and add the following class variables:
 
 ::
-    
+
     const RESPAWN_TIME = 4
     var dead_time = 0
     var is_dead = false
@@ -546,7 +544,7 @@ ______
 We now need to add a couple lines to ``_ready``, so we can use ``Globals.gd`` in ``Player.gd``. Add the following to ``_ready``:
 
 ::
-    
+
     globals = get_node("/root/Globals")
     global_transform.origin = globals.get_respawn_position()
     
@@ -561,7 +559,7 @@ ______
 Next we need to make a few changes to ``physics_process``. Change ``physics_processing`` to the following:
 
 ::
-    
+
     func _physics_process(delta):
 	
         if !is_dead:
@@ -587,7 +585,7 @@ ______
 Let's add ``process_respawn``. Add the following to ``Player.gd``:
 
 ::
-    
+
     func process_respawn(delta):
     
         # If we just died
@@ -663,6 +661,7 @@ If the player is holding an object when they died, we need to throw it. We first
 If the player is holding a object, we throw it using the same code as the throwing code we added in :ref:`doc_fps_tutorial_part_five`.
 
 .. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always usefull when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
+
 ______
 
 Then we check to see if the player is dead. If the player is dead, we then remove ``delta`` from ``dead_time``.
@@ -692,7 +691,7 @@ ______
 Before we leave ``Player.gd``, we need to add one quick thing to ``_input``. Add the following at the beginning of ``_input``:
 
 ::
-    
+
     if is_dead:
         return
 
@@ -704,7 +703,7 @@ Finishing the respawn system
 First let's open ``Weapon_Pistol.gd`` and add the ``reset_weapon`` function. Add the following:
 
 ::
-    
+
     func reset_weapon():
         ammo_in_weapon = 10
         spare_ammo = 20
@@ -714,7 +713,7 @@ Now when we call ``reset_weapon``, the ammo in the pistol and the ammo in the sp
 Now let's add ``reset_weapon`` in ``Weapon_Rifle.gd``:
 
 ::
-    
+
     func reset_weapon():
         ammo_in_weapon = 50
         spare_ammo = 100
@@ -722,7 +721,7 @@ Now let's add ``reset_weapon`` in ``Weapon_Rifle.gd``:
 And add the following to ``Weapon_Knife.gd``:
 
 ::
-    
+
     func reset_weapon():
         ammo_in_weapon = 1
         spare_ammo = 1
@@ -734,7 +733,7 @@ ______
 Now we need to add a few things to ``Globals.gd``. First, add the following class variable:
 
 ::
-    
+
     var respawn_points = null
 
 * ``respawn_points``: A variable to hold all of the respawn points in a level
@@ -742,7 +741,7 @@ Now we need to add a few things to ``Globals.gd``. First, add the following clas
 Because we're getting a random spawn point each time, we need to randomize the number generator. Add the following to ``_ready``:
 
 ::
-    
+
     randomize()
 
 ``randomize`` will get us a new random seed so we get a (relatively) random string of numbers when we using any of the random functions.
@@ -750,7 +749,7 @@ Because we're getting a random spawn point each time, we need to randomize the n
 Now let's add ``get_respawn_position`` to ``Globals.gd``:
 
 ::
-    
+
     func get_respawn_position():
         if respawn_points == null:
             return Vector3(0, 0, 0)
@@ -776,7 +775,7 @@ ______
 Before we are done with ``Globals.gd``. We need to add the following to ``load_new_scene``:
 
 ::
-    
+
     respawn_points = null
 
 We set ``respawn_points`` to ``null`` so when/if the player gets to a level with no respawn points, we do not respawn the player
@@ -788,7 +787,7 @@ Now all we need is a way to set the respawn points. Open up ``Ruins_Level.tscn``
 ``Respawn_Point_Setter.gd`` and attach it to ``Spawn_Points``. Add the following to ``Respawn_Point_Setter.gd``:
 
 ::
-    
+
     extends Spatial
 
     func _ready():
@@ -817,7 +816,7 @@ Finally, lets make a sound system so we can play sounds from anywhere, without h
 First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
 
 ::
-    
+
     extends Spatial
 
     var audio_node = null
@@ -890,8 +889,7 @@ ______
 Now that we've finished our changes to ``SimpleAudioPlayer.gd``, we now need to turn our attention to ``Globals.gd``. First, add the following class variables:
 
 ::
-    
-    # ------------------------------------
+
     # All of the audio files.
 
     # You will need to provide your own sound files.
@@ -903,7 +901,6 @@ Now that we've finished our changes to ``SimpleAudioPlayer.gd``, we now need to 
 
     const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://Simple_Audio_Player.tscn")
     var created_audio = []
-    # ------------------------------------
 
 Lets go over these global variables.
 
@@ -927,7 +924,7 @@ ______
 Now we need to add a new function called ``play_sound`` to ``Globals.gd``:
 
 ::
-    
+
     func play_sound(sound_name, loop_sound=false, sound_position=null):
         if audio_clips.has(sound_name):
             var new_audio = SIMPLE_AUDIO_PLAYER_SCENE.instance()
@@ -960,7 +957,7 @@ Before we leave ``Globals.gd``, we need to add a few lines of code to ``load_new
 Add the following to ``load_new_scene``:
 
 ::
-    
+
     for sound in created_audio:
         if (sound != null):
             sound.queue_free()
@@ -977,7 +974,7 @@ no longer be directly instancing/spawning sounds in ``Player.gd``.
 Now, change ``create_sound`` to the following:
 
 ::
-    
+
     func create_sound(sound_name, position=null):
         globals.play_sound(sound_name, false, position)
 
