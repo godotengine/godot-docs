@@ -1,7 +1,7 @@
 .. _doc_viewport_as_texture:
 
 Using a Viewport as a texture
-=====================================
+=============================
 
 Introduction
 ------------
