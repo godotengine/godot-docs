@@ -195,8 +195,8 @@ we increase the frequency each level, decrease the amplitude, and calculate a ne
     float frequency = 3.0;
     for (int i = 0; i < 6; i++){
       h += noise(x * frequency) * amplitude;
-      a *= 0.5;
-      p *= 2.0;
+      amplitude *= 0.5;
+      frequency *= 2.0;
     }
     return h;
   }
@@ -205,7 +205,7 @@ We can now use this noise function in place of ``cos`` and ``sin`` in the previo
 
 ::
 
-  float height = noise(VERTEX.xz * 4.0);
+  float height = fbm(VERTEX.xz * 4.0);
   VERTEX.y += height * 0.5;
 
 .. image:: img/vertex_displacement_noise1.png
