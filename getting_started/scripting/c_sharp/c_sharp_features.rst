@@ -42,6 +42,25 @@ and for this reason it cannot be used with value types.
     // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
+**Using the generic methods**
+
+Generic methods are also provided to make this type conversion transparent.
+
+``GetNode<T>()`` casts the node before returning it. It will throw an ``InvalidCastException`` if the node cannot be cast to the desired type.
+
+.. code-block:: csharp
+
+    Sprite mySprite = GetNode<Sprite>("MySprite");
+    mySprite.SetFrame(0);
+
+``GetNodeOrNull<T>()`` uses the ``as`` operator and will return ``null`` if the node cannot be cast to the desired type.
+
+.. code-block:: csharp
+
+    Sprite mySprite = GetNodeOrNull<Sprite>("MySprite");
+    // Only call SetFrame() if mySprite is not null
+    mySprite?.SetFrame(0);
+
 **Type checking using the IS operator**
 
 To check if the node can be casted to Sprite, you can use the ``is`` operator.
