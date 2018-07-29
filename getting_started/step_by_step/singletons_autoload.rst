@@ -6,54 +6,63 @@ Singletons (AutoLoad)
 Introduction
 ------------
 
-Scene singletons are useful, catering to a common use case where you need
-to store persistent information between scenes.
+Godot's scene system, while powerful and flexible, has a drawback: there is no
+method for storing information (e.g. a player's score or inventory) that is
+needed by more than one scene.
 
-Albeit powerful, the scene system by itself has a few drawbacks:
+It's possible to address this with some workarounds, but they come with their
+own limitations:
 
--  There is no common place to store information (e.g. a player's items etc.)
-   required by more than one scene.
--  While it is possible for a scene that loads and unloads other scenes as 
-   its children to store information common to these child scenes, it is no 
-   longer possible to run these scenes by themselves and expect them to work 
-   correctly.
--  While information can be stored to disk in \`user://\` and this information 
-   can be loaded by scenes that require it, continuously saving and loading this 
-   data when changing scenes is cumbersome and may be slow.
+-  You can use a "master" scene that loads and unloads other scenes as
+   its children. However, this means you can no longer run those scenes
+   individually and expect them to work correctly.
+-  Information can be stored to disk in ``user://`` and then loaded by scenes
+   that require it, but frequently saving and loading data is cumbersome and
+   may be slow.
 
-However there is still a need in Godot to create parts of a scene that:
+The `Singleton Pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`_ is a
+useful tool for solving the common use case where you need to store persistent
+information between scenes.
 
--  Are always loaded, no matter which scene is opened from the editor
--  Can store global variables, such as player information, items, money
-   etc. and share information between scenes
--  Can handle switching scenes and transitions
--  Acts like a singleton, since GDScript does not support global variables by design.
+Using this concept, you can create objects that:
 
-Auto-loading nodes and scripts caters to this need.
+-  Are always loaded, no matter which scene is currently running
+-  Can store global variables, such as player information
+-  Can handle switching scenes and between-scene transitions
+-  Act like a singleton, since GDScript does not support global variables by design
+
+Autoloading nodes and scripts caters to this need.
 
 AutoLoad
 --------
 
-You can use AutoLoad to load a scene, or a script that inherits from Node (a node
-will be created and the script will be set to it). 
-
-To autoload a scene or script, select Project > Project Settings from the menu and switch
-to the AutoLoad tab. Each entry in the list requires a name, which is used as the name
-of the node, and the node is always added to the root viewport before any other scenes 
-are loaded.
+You can use AutoLoad to load a scene or a script that inherits from
+:ref:`Node <class_Node>`. Note: when autoloading a script, a Node will be
+created and the script will be attached to it. This node will be added to the
+root viewport before any other scenes are loaded.
 
 .. image:: img/singleton.png
 
-This means that any node can access a singleton named "playervariables" with:
+To autoload a scene or script, select ``Project -> Project Settings`` from the
+menu and switch to the "AutoLoad" tab.
+
+.. image:: img/autoload_tab.png
+
+Here you can add any number of scenes or scripts. Each entry in the list
+requires a name, which assigned as the node's ``name`` property.
+
+.. image:: img/autoload_example.png
+
+This means that any node can access a singleton named "PlayerVariables" with:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   var player_vars = get_node("/root/playervariables")
-   player_vars.health
+   var player_vars = get_node("/root/PlayerVariables")
+   player_vars.health -= 10
 
  .. code-tab:: csharp
- 
+
     var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
     playerVariables.Health -= 10; // Instance field.
 
@@ -62,59 +71,57 @@ Or even simpler using the name directly:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   playervariables.health
+   PlayerVariables.health -= 10
 
  .. code-tab:: csharp
 
     // Static members can be accessed by using the class name.
     PlayerVariables.Health -= 10;
 
+Note that autoload objects (scripts and/or scenes) are accessed just like any
+other node in the scene tree. In fact, if you look at the running scene tree,
+you'll see the autoloaded nodes appear:
+
+.. image:: img/autoload_runtime.png
+
 Custom scene switcher
 ---------------------
 
-This short tutorial will explain how to make a scene switcher using
-autoload. For simple scene switching, the
+This tutorial will demonstrate building a scene switcher using autoload. For
+basic scene switching, you can use the
 :ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
-method suffices (described in :ref:`doc_scene_tree`), so this method is for
-more complex behavior when switching between scenes.
+method (see :ref:`doc_scene_tree` for details). However, if you need more
+complex behavior when changing scenes, this method provides more functionality.
 
-First download the template from here:
-:download:`autoload.zip <files/autoload.zip>`, then open it.
+To begin, download the template from here:
+:download:`autoload.zip <files/autoload.zip>` and open it in Godot.
 
-Two scenes are present, scene_a.tscn and scene_b.tscn on an otherwise
-empty project. Each are identical and contain a button connected to a
-callback for switching to the other scene. When the project runs, it
-starts in scene_a.tscn. However, this currently does nothing and pressing the
-button does not work.
+The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
+scene is contains a label displaying the scene name and a button with its
+``pressed()`` signal connected. When you run the project, it starts in
+``Scene1.tscn``. However, pressing the button does nothing.
 
-global.gd
----------
+Global.gd
+~~~~~~~~~
 
-First of all, create a global.gd script. The easy way to create a
-resource from scratch is from the new resource button in the inspector tab:
+Switch to the "Script" tab and create a new script called Global.gd. Make sure
+it inherits from ``Node``:
 
-.. image:: img/newscript.png
+.. image:: img/autoload_script.png
 
-Save the script as `global.gd`:
+The next step is to add this script to the autoLoad list. Open
+``Project > Project Settings`` from the menu, switch to the "AutoLoad" tab and
+select the script by clicking the ``..`` button or typing its path:
+``res://Global.gd``. Press "Add" to add it to the autoload list:
 
-.. image:: img/saveasscript.png
+.. image:: img/autoload_tutorial1.png
 
-The script should open in the script editor. The next step is to add
-it to AutoLoad list. Select Project > Project Settings from the menu,
-switch to the AutoLoad tab and add a new entry with name "global" that
-points to this file:
+Now whenever we run any scene in the project, this script will always be loaded.
 
-.. image:: img/addglobal.png
-
-Now, whenever you run any of your scenes, the script is always loaded.
-
-Returning to our script, the current scene needs to be fetched in the 
-`_ready()` function. Both the current scene and `global.gd` are children of
-root, but the autoloaded nodes are always first. This means that the
-last child of root is always the loaded scene.
-
-Note: Make sure that global.gd extends Node, otherwise it won't be
-loaded!
+Returning to the script, it needs to fetch the current scene in the
+`_ready()` function. Both the current scene (the one with the button) and
+``global.gd`` are children of root, but autoloaded nodes are always first. This
+means that the last child of root is always the loaded scene.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -124,8 +131,8 @@ loaded!
     var current_scene = null
 
     func _ready():
-            var root = get_tree().get_root()
-            current_scene = root.get_child(root.get_child_count() -1)
+        var root = get_tree().get_root()
+        current_scene = root.get_child(root.get_child_count() - 1)
 
  .. code-tab:: csharp
 
@@ -143,31 +150,30 @@ loaded!
         }
     }
 
-Next up is the function for changing the scene. This function frees the
-current scene and replaces it with the requested one.
+Now we need a function for changing the scene. This function needs to free the
+current scene and replace it with the requested one.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func goto_scene(path):
         # This function will usually be called from a signal callback,
-        # or some other function from the running scene.
-        # Deleting the current scene at this point might be
-        # a bad idea, because it may be inside of a callback or function of it.
-        # The worst case will be a crash or unexpected behavior.
+        # or some other function in the current scene.
+        # Deleting the current scene at this point is
+        # a bad idea, because it may still be executing code.
+        # This will result in a crash or unexpected behavior.
 
-        # The way around this is deferring the load to a later time, when
-        # it is ensured that no code from the current scene is running:
+        # The solution is to defer the load to a later time, when
+        # we can be sure that no code from the current scene is running:
 
         call_deferred("_deferred_goto_scene", path)
 
 
     func _deferred_goto_scene(path):
-        # Immediately free the current scene,
-        # there is no risk here.    
+        # It is now safe to remove the current scene
         current_scene.free()
 
-        # Load new scene.
+        # Load the new scene.
         var s = ResourceLoader.load(path)
 
         # Instance the new scene.
@@ -176,7 +182,7 @@ current scene and replaces it with the requested one.
         # Add it to the active scene, as child of root.
         get_tree().get_root().add_child(current_scene)
 
-        # Optional, to make it compatible with the SceneTree.change_scene() API.
+        # Optionally, to make it compatible with the SceneTree.change_scene() API.
         get_tree().set_current_scene(current_scene)
 
  .. code-tab:: csharp
@@ -184,20 +190,20 @@ current scene and replaces it with the requested one.
     public void GotoScene(string path)
     {
         // This function will usually be called from a signal callback,
-        // or some other function from the running scene.
-        // Deleting the current scene at this point might be
-        // a bad idea, because it may be inside of a callback or function of it.
-        // The worst case will be a crash or unexpected behavior.
+        // or some other function from the current scene.
+        // Deleting the current scene at this point is
+        // a bad idea, because it may still be executing code.
+        // This will result in a crash or unexpected behavior.
 
-        // The way around this is deferring the load to a later time, when
-        // it is ensured that no code from the current scene is running:
+        // The solution is to defer the load to a later time, when
+        // we can be sure that no code from the current scene is running:
 
         CallDeferred(nameof(DeferredGotoScene), path);
     }
 
     public void DeferredGotoScene(string path)
     {
-        // Immediately free the current scene, there is no risk here.
+        // It is now safe to remove the current scene
         CurrentScene.Free();
 
         // Load a new scene.
@@ -209,37 +215,34 @@ current scene and replaces it with the requested one.
         // Add it to the active scene, as child of root.
         GetTree().GetRoot().AddChild(CurrentScene);
 
-        // Optional, to make it compatible with the SceneTree.change_scene() API.
+        // Optionally, to make it compatible with the SceneTree.change_scene() API.
         GetTree().SetCurrentScene(CurrentScene);
     }
 
-As mentioned in the comments above, we want to avoid the
-situation of having the current scene being deleted while being used
-(code from functions of it being run), so using
-:ref:`Object.call_deferred() <class_Object_call_deferred>`
-is desired at this point. The result is that execution of the commands
-in the second function will happen at a later time when no code from
-the current scene is running.
+As mentioned in the comments above, we need to avoid the situation of deleting
+the current scene while it is still being used (i.e. its code is still running),
+so using :ref:`Object.call_deferred() <class_Object_call_deferred>`
+is required at this point. The result is that the second function will run
+at a later time when any code from the current scene has completed.
 
-Finally, all that is left is to fill the empty functions in scene_a.gd
-and scene_b.gd:
+Finally, we need to fill the empty callback functions in the two scenes:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Add to 'scene_a.gd'.
+    # Add to 'Scene1.gd'.
 
-    func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_b.tscn")
+    func _on_Button_pressed():
+        Global.goto_scene("res://Scene1.tscn")
 
  .. code-tab:: csharp
 
-    // Add to 'SceneA.cs'.
+    // Add to 'Scene1.cs'.
 
-    public void OnGotoScenePressed()
+    public void OnButtonPressed()
     {
         var global = (Global)GetNode("/root/Global");
-        global.GotoScene("res://scene_b.tscn");
+        global.GotoScene("res://Scene2.tscn");
     }
 
 and
@@ -247,23 +250,25 @@ and
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Add to 'scene_b.gd'.
+    # Add to 'Scene2.gd'.
 
-    func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_a.tscn")
+    func _on_Button_pressed():
+        Global.goto_scene("res://Scene2.tscn")
 
  .. code-tab:: csharp
 
-    // Add to 'SceneB.cs'.
+    // Add to 'Scene2.cs'.
 
-    public void OnGotoScenePressed()
+    public void OnButtonPressed()
     {
         var global = (Global)GetNode("/root/Global");
-        global.GotoScene("res://scene_a.tscn");
+        global.GotoScene("res://Scene1.tscn");
     }
 
-Now if you run the project, you can switch between both scenes by pressing
+Run the project and test that you can switch between scenes by pressing
 the button!
 
-To load scenes with a progress bar, check out the next tutorial,
+Note: When scenes are small, the transition is instantaneous. However, if your
+scenes are more complex, they may take a noticeable amount of time to appear. To
+learn how to handle this, see the next tutorial,
 :ref:`doc_background_loading`
