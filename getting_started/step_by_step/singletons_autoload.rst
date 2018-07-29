@@ -97,7 +97,7 @@ To begin, download the template from here:
 :download:`autoload.zip <files/autoload.zip>` and open it in Godot.
 
 The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
-scene is contains a label displaying the scene name and a button with its
+scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
 ``Scene1.tscn``. However, pressing the button does nothing.
 
@@ -270,5 +270,4 @@ the button!
 
 Note: When scenes are small, the transition is instantaneous. However, if your
 scenes are more complex, they may take a noticeable amount of time to appear. To
-learn how to handle this, see the next tutorial,
-:ref:`doc_background_loading`
+learn how to handle this, see the next tutorial: :ref:`doc_background_loading`
