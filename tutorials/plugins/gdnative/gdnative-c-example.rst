@@ -44,9 +44,19 @@ For number 3, we suggest that you create a folder somewhere that you use to stor
 
     git clone https://github.com/GodotNativeTools/godot_headers
 
-This will download the required files into that folder. 
+This will download the required files into that folder.
 
-If you are building Godot from source, you may need a newer version of these files. You can find this at ``<godotsource>/modules/gdnative/include``
+.. note:: On this repository you will now find different branches. As Godot evolves, so does GDNative. With the exception of one breaking change in ARVR between 3.0 and 3.1, GDNative modules build for older versions of Godot will work with newer versions of Godot but not the other way around.
+
+The master branch of the ``godot_headers`` repository is kept in line with the master branch of Godot and thus contains the GDNative class and structure definitions that will work with the latest Godot master.
+
+The 3.0 branch of the ``godot_headers`` repository contains the GDNative class and structure definitions that will work with Godot 3.0. You can clone this branch by executing:
+
+.. code-block:: none
+
+    git clone https://github.com/GodotNativeTools/godot_headers -b 3.0
+
+If you are building Godot from source with your own changes that impact GDNative, you can find the updated class and structure definition in ``<godotsource>/modules/gdnative/include``
 
 Our C source
 ------------
@@ -244,7 +254,7 @@ On Windows:
     cl /Fosimple.obj /c simple.c /nologo -EHsc -DNDEBUG /MD /I. /IC:\PATH\TO\GODOT\HEADERS
     link /nologo /dll /out:..\bin\libsimple.dll /implib:..\bin\libsimple.lib simple.obj
 
-Note that on the Windows build you also end up with a libsimple.lib library. This is a library that you can compile into a project to provide access to the DLL. We get it as a bonus and we do not need it :) When exporting your game for release this file will be ignored.
+.. note:: on the Windows build you also end up with a libsimple.lib library. This is a library that you can compile into a project to provide access to the DLL. We get it as a bonus and we do not need it :) When exporting your game for release this file will be ignored.
 
 Creating our GDNLIB file
 ------------------------
