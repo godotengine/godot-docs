@@ -24,7 +24,14 @@ A good starting point for checking its capabilities is the `Compatibility <http:
 Setup C# for Godot
 ------------------
 
-To use C# in Godot you must have `Mono <http://www.mono-project.com/download/>`_ installed. Godot 3.0.2 requires Mono 5.4, 3.0.3 requires Mono 5.12 on all platforms.
+Download and install the `Mono <http://www.mono-project.com/download/>`_ SDK. 
+
+Godot 3.0.3+ requires Mono 5.12 on all platforms. 
+
+.. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the  `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.6+.
+
+If you are using Godot 3.0.2 you must use Mono 5.4. Do not try to use another version of Mono with Godot 3.0.2.
+
 You also need MSBuild (at least version 15.0) which should come with the Mono installation.
 
 .. note:: For instructions on installing older versions of Mono on Linux see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
@@ -32,6 +39,8 @@ You also need MSBuild (at least version 15.0) which should come with the Mono in
 
 Additionally, your Godot version must have Mono support enabled, so take care to download the **Mono version** of Godot.
 If you are building Godot from source, make sure to follow the steps to include Mono support in your build outlined on the  :ref:`doc_compiling_with_mono` page.
+
+In summary, you must 1) have installed the Mono SDK, and 2) The Mono version of Godot. 
 
 Configuring an external editor
 ------------------------------
@@ -43,6 +52,8 @@ debugging and other features useful when working with C#.
 To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll
 down to the bottom, to the ``Mono`` settings. Under Mono click on ``Editor``,
 and on that page choose your external editor of choice.
+
+.. note:: If you are using Visual Studio Code, ensure you download and install the .NET tools extension. Without this, Godot will crash when trying to create a new C# project or edit a C# script. 
 
 Creating a C# script
 --------------------
