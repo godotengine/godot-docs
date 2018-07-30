@@ -185,7 +185,7 @@ loader.
         var length = get_node("animation").get_current_animation_length()
 
         # call this on a paused animation. use "true" as the second parameter to force the animation to update
-        get_node("animation").seek(progress * lenght, true)
+        get_node("animation").seek(progress * length, true)
 
     func set_new_scene(scene_resource):
         current_scene = scene_resource.instance()
