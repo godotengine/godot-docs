@@ -12,7 +12,7 @@ of making a procedural planet like the one below:
 
 .. image:: img/planet_example.png
 
-.. note:: This tutorial does not cover how to code a dynamic atmosphere like the one this planet has
+.. note:: This tutorial does not cover how to code a dynamic atmosphere like the one this planet has.
 
 This tutorial assumes you are familiar with how to set up a basic scene including:
 a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a 
@@ -91,7 +91,7 @@ Your sphere should now be colored in with the colors we rendered to the Viewport
 
 .. image:: img/planet_seam.png
 
-Notice the ugly seem that forms where the texture texture wraps around? This is because we are picking 
+Notice the ugly seam that forms where the texture texture wraps around? This is because we are picking 
 a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic 
 problem in 2D map projection. Gamedevs often have a 2-dimensional map they want to project 
 onto a sphere but when it wraps around it has large seams. There is an elegant work around for this 
@@ -125,7 +125,7 @@ For each pixel we will calculate its 3D position on the sphere. From that we wil
 3D noise to determine a color value. By calculating the noise in 3D we solve the problem
 of the pinching at the poles. To understand why, picture the noise being calculated across the 
 surface of the sphere instead of across the 2D plane. When you calculate across the 
-surface of the sphere you never hit an edge, and hence you never create a seem or
+surface of the sphere you never hit an edge, and hence you never create a seam or
 a pinch point on the pole. The following code converts the ``UVs`` into Cartesion
 coordinates.
 
@@ -204,7 +204,7 @@ Now to use ``noised``, add the following to the  ``fragment`` function:
 
 .. image:: img/planet_noise.png
 
-.. note:: In order to highlight the texture, I have turned set the material to unshaded.
+.. note:: In order to highlight the texture, I have set the material to unshaded.
 
 You can see now that the noise indeed wraps seamlessly around the sphere. Although this
 looks nothing like the planet you were promised. So lets move onto something more colorful.
@@ -250,9 +250,9 @@ and it returns ``1`` whenever ``n.x`` is above ``0``.
 
 One more thing to make this a little more planet-y. The land shouldn't be so blobby lets make the edges
 a little rougher. A trick that is often used in shaders to make rough looking terrain with noise is
-to layer levels of noise over one another and various frequencies. We use one layer to make the 
+to layer levels of noise over one another at various frequencies. We use one layer to make the 
 overall blobby structure of the continents. Then another layer breaks up the edges a bit, and then
-another and so on. What we will do is calculate ``n`` with four lines of shader code
+another, and so on. What we will do is calculate ``n`` with four lines of shader code
 instead of just one. ``n`` becomes:
 
 ::
