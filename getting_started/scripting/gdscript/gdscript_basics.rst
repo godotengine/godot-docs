@@ -988,10 +988,11 @@ There are a few things to keep in mind here:
    to the ``State.gd`` base class even if it does nothing. Which brings us to the fact that you
    can pass literals in the base constructor as well, not just variables. Eg.:
 
-   ::
-      # Idle.gd
+::
 
-      func _init().(5):
+    # Idle.gd
+
+    func _init().(5):
         pass
 
 Inner classes
