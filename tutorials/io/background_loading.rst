@@ -145,7 +145,7 @@ precise control over the timings.
             set_process(false)
             return
 
-        if wait_frames > 0: # wait for frames to let the "loading" animation to show up
+        if wait_frames > 0: # wait for frames to let the "loading" animation show up
             wait_frames -= 1
             return
 
@@ -182,10 +182,10 @@ loader.
         get_node("progress").set_progress(progress)
 
         # or update a progress animation?
-        var len = get_node("animation").get_current_animation_length()
+        var length = get_node("animation").get_current_animation_length()
 
         # call this on a paused animation. use "true" as the second parameter to force the animation to update
-        get_node("animation").seek(progress * len, true)
+        get_node("animation").seek(progress * length, true)
 
     func set_new_scene(scene_resource):
         current_scene = scene_resource.instance()
