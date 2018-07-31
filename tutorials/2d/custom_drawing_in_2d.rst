@@ -361,8 +361,8 @@ calls _draw(). This way, you can control when you want to refresh the frame.
         return fmod(f1, f2) + min_val
 
     func _process(delta):
-        angle_from += rotation_ang
-        angle_to += rotation_ang
+        angle_from += rotation_angle
+        angle_to += rotation_angle
 
         # We only wrap angles if both of them are bigger than 360
         if angle_from > 360 and angle_to > 360:
@@ -429,7 +429,7 @@ time elapsed between the two last rendered frames. It is generally small
 control your drawing ensures that your program runs at the same speed on
 everybody's hardware.
 
-In our case, we simply need to multiply our 'rotation_ang' variable by 'delta'
+In our case, we simply need to multiply our 'rotation_angle' variable by 'delta'
 in the _process() function. This way, our 2 angles will be increased by a much
 smaller value, which directly depends on the rendering speed.
 
@@ -437,8 +437,8 @@ smaller value, which directly depends on the rendering speed.
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        angle_from += rotation_ang * delta
-        angle_to += rotation_ang * delta
+        angle_from += rotation_angle * delta
+        angle_to += rotation_angle * delta
 
         # we only wrap angles if both of them are bigger than 360
         if angle_from > 360 and angle_to > 360:
