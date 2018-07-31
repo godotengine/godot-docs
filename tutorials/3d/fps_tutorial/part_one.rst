@@ -259,7 +259,7 @@ First, we define some class variables to dictate how our player will move about 
 
 Let's go through each of the class variables:
 
-- ``GRAV``: How strong gravity pulls us down.
+- ``GRAVITY``: How strong gravity pulls us down.
 - ``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity.
 - ``MAX_SPEED``: The fastest speed we can reach. Once we hit this speed, we will not go any faster.
 - ``JUMP_SPEED``: How high we can jump.
