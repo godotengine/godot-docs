@@ -1,7 +1,7 @@
 .. _doc_thread_safe_apis:
 
 Thread Safe APIs
-=============
+================
 
 Threads
 -------
@@ -25,22 +25,22 @@ Interacting with the active scene tree is **NOT** thread safe. Make sure to use 
 
 ::
 
-	# unsafe:
-        node.add_child(child_node)
- 	# safe:
-	node.call_deferred("add_child",child_node)
+    # Unsafe:
+    node.add_child(child_node)
+    # Safe:
+    node.call_deferred("add_child", child_node)
 
 However, creating scene chunks (nodes in tree arrangement) outside the active tree is fine. This way, parts of a scene can be built or instantiated in a thread, then added in the main thread:
 
 ::
 
-	var enemy_scene = load("res://enemy_scene.scn").instance()
-        var enemy = enemy_scene.instance()
-	enemy.add_child(weapon) #set a weapon
-	world.call_deferred("add_child",enemy)
+    var enemy_scene = load("res://enemy_scene.scn").instance()
+    var enemy = enemy_scene.instance()
+    enemy.add_child(weapon) # Set a weapon.
+    world.call_deferred("add_child", enemy)
 
 GDScript Arrays, Dictionaries:
--------------------------------
+------------------------------
 
 In GDScript, reading and writing elements from multiple threads is ok, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
 
