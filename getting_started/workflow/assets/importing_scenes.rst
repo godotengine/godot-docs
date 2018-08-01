@@ -318,7 +318,7 @@ depending on the Blender's empty draw type:
 For better visibility in Blender's editor user can set "X-Ray" option on collision
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
 
-Create navigatopm (-navmesh)
+Create navigation (-navmesh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
