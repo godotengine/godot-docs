@@ -39,8 +39,8 @@ However, creating scene chunks (nodes in tree arrangement) outside the active tr
 	enemy.add_child(weapon) #set a weapon
 	world.call_deferred("add_child",enemy)
 
-Containers
-----------
+GDScript Arrays, Dictionaries:
+-------------------------------
 
 In GDScript, reading and writing elements from multiple threads is ok, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
 
