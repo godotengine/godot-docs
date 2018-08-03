@@ -1057,7 +1057,7 @@ Light Built-Ins
 |                                     | For a Sprite with a texture of size 64x32px,                                  |
 |                                     | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                             |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**               | Screen Texture Coordinate (for using with texscreen).                         |
+| in vec2 **SCREEN_UV**               | Screen Texture Coordinate (for using with screen texture).                    |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**             | Current UV for Point Sprite.                                                  |
 +-------------------------------------+-------------------------------------------------------------------------------+
