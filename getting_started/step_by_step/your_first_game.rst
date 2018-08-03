@@ -331,19 +331,27 @@ Let's place this code at the end of our ``_process()`` function:
         if velocity.x != 0:
             $AnimatedSprite.animation = "right"
             $AnimatedSprite.flip_v = false
-            $AnimatedSprite.flip_h = velocity.x < 0
+            # Below is a boolean assignment and results in true or false
+            # which effectively turns this property on or off.
+            $AnimatedSprite.flip_h = (velocity.x < 0)
         elif velocity.y != 0:
             $AnimatedSprite.animation = "up"
+            # Below is also a boolean assignment without the parenthesis
+            # how you write your boolean assignment is a personal preference
             $AnimatedSprite.flip_v = velocity.y > 0
 
  .. code-tab:: csharp
 
         if (velocity.x != 0) {
             animatedSprite.Animation = "right";
-            animatedSprite.FlipH = velocity.x < 0;
+            # Below is a boolean assignment and results in true or false
+            # which effectively turns this property on or off.
+            animatedSprite.FlipH = (velocity.x < 0);
             animatedSprite.FlipV = false;
         } else if(velocity.y != 0) {
             animatedSprite.Animation = "up";
+            # Below is also a boolean assignment without the parenthesis
+            # how you write your boolean assignment is a personal preference
             animatedSprite.FlipV = velocity.y > 0;
         }
 
