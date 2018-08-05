@@ -257,7 +257,7 @@ Don't worry about this for now, we'll fix the size soon.
 
 Rename the ``Count2`` node to ``Counter``. Unlike the bars, we want the
 number to be on the left, and an icon to sit on the right. The setup is
-the same: we need background, a ``NinePatchFrame``, the title, and the
+the same: we need background, a ``NinePatchRect``, the title, and the
 number nodes. The ``Title`` node is a ``TextureRect``, so it's what we
 need to display the icon. In the scene tree, select the ``Title`` node,
 and rename it to ``Icon``.
