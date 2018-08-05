@@ -1,22 +1,23 @@
 .. _doc_feature_tags:
 
-Feature Tags
+Feature tags
 ============
 
 Introduction
 ------------
 
-Godot has a special system to tag availability of features. Each *feature* is represented
-as a string, and it can refer to many of the following:
+Godot has a special system to tag availability of features.
+Each *feature* is represented as a string, which can refer to many of the following:
 
 * Platform name.
-* Platform bits (64/32).
-* Platform type (desktop/mobile).
-* Supported texture compression in platform.
-* Whether a build is debug or release.
+* Platform architecture (64-bit or 32-bit, x86 or ARM).
+* Platform type (desktop, mobile, Web).
+* Supported texture compression algorithms on the platform.
+* Whether a build is ``debug`` or ``release`` (``debug`` includes the editor).
+* Whether the project is running from the editor or a "standalone" binary.
 * Many more things.
 
-Features can be queried in run-time to the singleton API by calling:
+Features can be queried at run-time from the singleton API by calling:
 
 ::
 
@@ -26,10 +27,10 @@ Features can be queried in run-time to the singleton API by calling:
 Default features
 ----------------
 
-Here is a list of most feature tags in Godot. Keep in mind they are *case sensitive*:
+Here is a list of most feature tags in Godot. Keep in mind they are **case-sensitive**:
 
 +-----------------+--------------------------------------------------------+
-| **Feature Tag** | **Description**                                        |
+| **Feature tag** | **Description**                                        |
 +=================+========================================================+
 | **Android**     | Running on Android                                     |
 +-----------------+--------------------------------------------------------+
@@ -46,15 +47,29 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +-----------------+--------------------------------------------------------+
 | **Windows**     | Running on Windows                                     |
 +-----------------+--------------------------------------------------------+
-| **X11**         | Running on X11                                         |
+| **X11**         | Running on X11 (Linux/BSD desktop)                     |
 +-----------------+--------------------------------------------------------+
-| **debug**       | Running on a debug build                               |
+| **Server**      | Running on the headless server platform                |
++-----------------+--------------------------------------------------------+
+| **debug**       | Running on a debug build (including the editor)        |
 +-----------------+--------------------------------------------------------+
 | **release**     | Running on a release build                             |
 +-----------------+--------------------------------------------------------+
-| **32**          | Running on a 32-bit build                              |
+| **editor**      | Running on an editor build                             |
 +-----------------+--------------------------------------------------------+
-| **64**          | Running on a 64-bit build                              |
+| **standalone**  | Running on a non-editor build                          |
++-----------------+--------------------------------------------------------+
+| **64**          | Running on a 64-bit build (any architecture)           |
++-----------------+--------------------------------------------------------+
+| **32**          | Running on a 32-bit build (any architecture)           |
++-----------------+--------------------------------------------------------+
+| **x86_64**      | Running on a 64-bit x86 build                          |
++-----------------+--------------------------------------------------------+
+| **x86**         | Running on a 32-bit x86 build                          |
++-----------------+--------------------------------------------------------+
+| **arm64**       | Running on a 64-bit ARM build                          |
++-----------------+--------------------------------------------------------+
+| **arm**         | Running on a 32-bit ARM build                          |
 +-----------------+--------------------------------------------------------+
 | **mobile**      | Host OS is a mobile platform                           |
 +-----------------+--------------------------------------------------------+
