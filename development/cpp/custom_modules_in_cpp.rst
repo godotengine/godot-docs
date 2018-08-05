@@ -168,7 +168,7 @@ string list:
     src_list = ["summator.cpp", "other.cpp", "etc.cpp"]
     env.add_source_files(env.modules_sources, src_list)
 
-This allows for powerful possibilities using Python to contruct the file list
+This allows for powerful possibilities using Python to construct the file list
 using loops and logic statements. Look at some of the other modules that ship
 with Godot by default for examples.
 
@@ -240,6 +240,10 @@ You can now use your newly created module from any script:
     s.reset()
 
 And the output will be ``60``.
+
+.. seealso:: The previous Summator example is great for small, custom modules, but
+             what if you want to use a larger, external library?  Refer to :ref:`_doc_binding_to_external_libraries`
+             for details about binding to external libraries.
 
 Improving the build system for development
 ------------------------------------------
