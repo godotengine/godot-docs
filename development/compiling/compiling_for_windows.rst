@@ -176,6 +176,11 @@ root directory of the engine source code and type:
 
     C:\godot> scons platform=windows
 
+.. note:: If you are compiling Godot for production use and not to hack
+          on the engine then you can make the final executeable much
+          more performant by adding the scons option:
+          target=release_debug
+          
 Tip: if you installed "Pywin32 Python Extension" you can append the -j
 command to instruct SCons to run parallel builds like this:
 
