@@ -1,7 +1,7 @@
 .. _doc_thread_safe_apis:
 
 Thread Safe APIs
-=============
+================
 
 Threads
 -------
