@@ -123,6 +123,11 @@ following parameters:
 Note that cross compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.
 
+.. note:: If you are compiling Godot for production use and not to hack
+          on the engine then you can make the final executeable much
+          more performant by adding the scons option:
+          target=release_debug
+
 To create standard export templates, the resulting files must be copied to:
 
 ::
