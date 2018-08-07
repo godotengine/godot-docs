@@ -6,7 +6,7 @@ Working with lights and shadows in 2D
 Introduction
 ------------
 
-This tutorial will explain how the 2D lighting works in the 
+This tutorial explains how the 2D lighting works in the 
 `lights and shadows <https://github.com/godotengine/godot-demo-projects/tree/master/2d/lights_and_shadows>`_ demo project.
 It begins with a brief description of the resources used final demo and then describes how
 to make a scene like the demo step by step.
@@ -15,7 +15,7 @@ to make a scene like the demo step by step.
 
 All the resources for this tutorial can be found in the `official demo repository <https://github.com/godotengine/godot-demo-projects>`_
 on github. I suggest you download it before starting. Alternatively, 
-it can be downloaded from the project manager. Just launch Godot and in the top 
+it can be downloaded from the Project Manager. Launch Godot and in the top 
 bar select "Templates" and search for "2D Lights and Shadows Demo".
 
 Setup
@@ -23,7 +23,7 @@ Setup
 
 For this demo we use four textures: two for the lights, one for the shadow casters, 
 and one for the background. I've included links to them all here if you want to download them
-separate from the demo.
+separately from the demo.
 
 The first is the background image (`bg.png <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/bg.png>`_) 
 used in the demo. You do not necessarily need a background, but we use one for the demo.
@@ -51,24 +51,23 @@ The demo uses four different nodes:
   * :ref:`Light2D <class_Light2D>`
   * :ref:`LightOccluder2D <class_LightOccluder2D>`
 
-:ref:`CanvasModulate<class_CanvasModulate>` is used to add ambient light to the scene. Ambient 
-light is not actually necessary, it just darkens the scene. 
+:ref:`CanvasModulate<class_CanvasModulate>` is used to darken the scene. 
 
 :ref:`Sprites <class_Sprite>` are used to display the textures for the light blobs, the 
 background, and for the shadow casters.
 
 :ref:`Light2Ds <class_Light2D>` are used to light the scene. The way a light typically works 
-is by selecting a light texture and then adding that texture over the rest of the scene to 
-simulate lighting. 
+is by adding a selected texture over the rest of the scene to simulate lighting. But it can be
+used in other ways, for example masking out parts of the scene.
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` are used to tell the shader which parts of 
-the scene cast shadows. The shadows will appear only on areas covered by the :ref:`Light2D <class_Light2D>` and 
-the direction will be based on the center of the :ref:`Light <class_Light2D>`.
+the scene cast shadows. The shadows appear only on areas covered by the :ref:`Light2D <class_Light2D>` and 
+their direction is based on the center of the :ref:`Light <class_Light2D>`.
 
 Lights
 ------
 
-:ref:`Lights <class_Light2D>` cover the entire extent of their respective Texture. What they do is use additive 
+:ref:`Lights <class_Light2D>` cover the entire extent of their respective Texture. They use additive 
 blending to add the color of their texture to the scene. 
 
 .. image:: img/light_shadow_light.png
@@ -86,9 +85,9 @@ halfway between the color of the light and the color underneath.
 the color of the light.
 
 For the demo the lights have two components, the :ref:`Light <class_Light2D>` itself (which 
-is the effect of the light), and a :ref:`Sprite <class_Sprite>` blob which is just an image that shows the 
+is the effect of the light), and a :ref:`Sprite <class_Sprite>` blob which is an image showing the 
 location of the light source. A child :ref:`Sprite <class_Sprite>` is not necessary to make a 
-:ref:`Light <class_Light2D>` work but is used to show the location of the light.
+:ref:`Light <class_Light2D>` work.
 
 .. image:: img/light_shadow_light_blob.png
 
@@ -101,18 +100,18 @@ By default shadows are turned off. To turn them on click on the :ref:`Light <cla
 and under the Shadows section check ``Enabled``.
 
 In the demo we are using a :ref:`Sprite <class_Sprite>` with a Texture on it to make the "Shadow Casters", 
-but in reality all you need is a couple :ref:`LightOccluder2Ds <class_LightOccluder2D>`. By itself 
+but in reality all you need is a couple of :ref:`LightOccluder2Ds <class_LightOccluder2D>`. By itself 
 the :ref:`LightOccluder2D <class_LightOccluder2D>` looks like a dark spot and in this demo the :ref:`Sprite <class_Sprite>` is 
 just a black square.
 
 Step by step
 ------------
 
-Now that we have covered the basics of the nodes that will be used, we will now walk step by step through 
+Now that we have covered the basics of the nodes being used, we can now walk step by step through 
 the process of making a scene like the one found in the demo.
 
-First add a :ref:`Sprite <class_Sprite>` and set its texture to the `background image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/bg.png>`_. For your game this can be whatever 
-your background will be. For this style of shadows it is most likely to be a floor texture. 
+First add a :ref:`Sprite <class_Sprite>` and set its texture to the `background image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/bg.png>`_. For your game this can be any 
+background you choose. For this style of shadow it is most likely to be a floor texture. 
 
 .. image:: img/light_shadow_background.png
 
@@ -122,7 +121,7 @@ means that each light adds its own color to whatever is underneath.
 
 .. image:: img/light_shadow_all_lights_no_blob.png
 
-Next child a :ref:`Sprite <class_Sprite>` to each of the :ref:`Light <class_Light2D>` nodes, and set 
+Next add a child :ref:`Sprite <class_Sprite>` to each of the :ref:`Light <class_Light2D>` nodes, and set 
 the :ref:`Sprite's <class_Sprite>` texture to the `blob image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/spot.png>`_. Each of these 
 should stay centered on the :ref:`Light <class_Light2D>` node. The blob is the image of the light 
 itself while the :ref:`Light <class_Light2D>` shows the effect that the light has on the scene. The 
@@ -131,10 +130,11 @@ node which is why we want the blob to be centered on its parent :ref:`Light <cla
 
 .. image:: img/light_shadow_all_lights.png
 
-.. note:: At the time of writing this tutorial the stable version is 3.0 but the master version that will become 3.1
-          contains many changes to the animation system. So the animations contained in the demo will not be covered.
+.. note:: At the time of writing, 3.0 is the stable release version. The 3.1 development branch contains 
+          many changes to the animation system, so the animations in the demo will not be covered here. 
+          See :ref:Introduction to 2D Animation. <doc_introduction_2d> for more information.
 
-Right now the scene should look too bright this is because all three lights are adding color to the scene. 
+Right now the scene should look too bright. This is because all three lights are adding color to the scene. 
 This is why the demo uses a :ref:`CanvasModulate <class_CanvasModulate>` in the scene. The
 :ref:`CanvasModulate <class_CanvasModulate>` multiples the entire viewport by a specific color.
 
@@ -152,27 +152,45 @@ This way we can show and hide them all at the same time.
 Each shadow caster is made of a :ref:`Sprite <class_Sprite>`, with a :ref:`LightOccluder2D <class_LightOccluder2D>` 
 child. For the demo the :ref:`Sprite <class_Sprite>` has a texture 
 set to the `caster image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/caster.png>`_ and nothing else. The child :ref:`LightOccluder2D <class_LightOccluder2D>` is where all the magic happens. In a 
-game the :ref:`Sprite <class_Sprite>` could be more than a black box, it could be an image of whatever object is casting 
-the shadow, it could be a wall, a magical chest, or anything else.
+game the :ref:`Sprite <class_Sprite>` could be more than a black box; it could be an image of whatever object is casting 
+the shadow: a wall, a magical chest, or anything else.
 
 .. image:: img/light_shadow_sprites.png
 
-:ref:`LightOccluder2Ds <class_LightOccluder2D>` tell the game what the occluder looks like. They hold 
+:ref:`LightOccluder2Ds <class_LightOccluder2D>` tell the game what shape the occluder has. They hold 
 an :ref:`OccluderPolygon2D <class_OccluderPolygon2D>` which is a container 
-for a polygon and some other information. For this demo, since our wall is a square. We 
+for a polygon and some other information. For this demo, since our wall is a square, we 
 set ``Polygon`` to a square. The other default settings are fine.
 
 The first setting, ``Closed`` can be either ``on`` or ``off``. A closed polygon occludes light 
-coming from all directions. An open polygon only occludes light from only one direction
+coming from all directions. An open polygon only occludes light from one direction
 
 ``Cull Mode`` lets you select which direction gets culled. The default is ``Disabled``, meaning the occluder 
 will cast a shadow no matter which side the light is on. The other two settings ``Clockwise`` and 
-``Counter-Clockwise`` refer to the winding order of the vertices of the polygon. They essentially 
-pick out which direction will cast shadows. 
+``Counter-Clockwise`` refer to the winding order of the vertices of the polygon. The winding order 
+is used to determine which side of the line is inside the polygon. Only outward facing lines cast shadows. 
+
+To illustrate the difference, here is an image of a :ref:`LightOccluder2D <class_LightOccluder2D>` with ``Closed``
+set to ``off`` in the corresponding :ref:`OccluderPolygon2D <class_OccluderPolygon2D>` so that the 
+lines of the polygon can be seen:
+
+.. image:: img/light_shadow_cull_disabled.png
+
+.. note:: ``Cull Mode`` is set to ``Disabled``. All three lines cast shadows.
+
+.. image:: img/light_shadow_cull_clockwise.png
+
+.. note:: ``Cull Mode`` is set to ``Clockwise``. Only the top and right lines cast shadows.
+
+.. image:: img/light_shadow_cull_counter_clockwise.png
+
+.. note:: ``Cull Mode`` is set to ``Counter-Clockwise``. Only the bottom line casts a shadow.
+          If ``Closed`` was set to ``on`` there would be an additional vertical line on the
+          left which would cast a shadow as well.
 
 When you have added the :ref:`LightOccluder2Ds <class_LightOccluder2D>` the shadows still won't 
 appear. You need to go back into the :ref:`Light2Ds <class_Light2D>` and under the Shadow 
-section and set ``Enable`` to ``on``. This will turn on shadows with hard edges like in the image below.
+section set ``Enable`` to ``on``. This turns on shadows with hard edges like in the image below.
 
 .. image:: img/light_shadow_filter0_pcf0.png
 
