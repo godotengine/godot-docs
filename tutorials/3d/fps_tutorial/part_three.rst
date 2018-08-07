@@ -40,7 +40,7 @@ Follow the instructions below for either (or both) of the scenes you want to use
 .. tabs::
  .. code-tab:: gdscript Space_Level.tscn
 
-    Expand "Other_Objects" and then expand "Turrets_And_Physics_Objects".
+    Expand "Other_Objects" and then expand "Physics_Objects".
     
     Expand one of the "Barrel_Group" nodes and then select "Barrel_Rigid_Body" and open it using
     the "Open in Editor" button.
@@ -51,9 +51,9 @@ Follow the instructions below for either (or both) of the scenes you want to use
     
     Return back to "Space_Level.tscn".
     
-    Expand one of the "Box_Group" nodes and then select "Box_Rigid_Body" and open it using the
+    Expand one of the "Box_Group" nodes and then select "Crate_Rigid_Body" and open it using the
     "Open in Editor" button.
-    This will bring you to the "Box_Rigid_Body" scene. From there select the root node and
+    This will bring you to the "Crate_Rigid_Body" scene. From there select the root node and
     scroll the inspector down to the bottom.
     Select the drop down arrow under the "Node" tab, and then select "Load". Navigate to
     "RigidBody_hit_test.gd" and select "Open".
@@ -463,7 +463,7 @@ Finally, let's add some sounds that play when the player is reloading, changing 
          https://gamesounds.xyz/ is a collection of **"royalty free or public domain music and sounds suitable for games"**.
          I used Gamemaster's Gun Sound Pack, which can be found in the Sonniss.com GDC 2017 Game Audio Bundle.
 
-Open up ``SimpleAudioPlayer.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as it's child.
+Open up ``Simple_Audio_Player.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as it's child.
 
 .. note:: The reason this is called a 'simple' audio player is because we are not taking performance into account
           and because the code is designed to provide sound in the simplest way possible.
@@ -476,7 +476,7 @@ In the source for this tutorial, we will be using :ref:`AudioStreamPlayer <class
 use :ref:`AudioStreamPlayer3D <class_AudioStreamPlayer3D>` if you desire, and the code provided below will work regardless of which
 one you chose.
 
-Create a new script and call it ``SimpleAudioPlayer.gd``. Attach it to the :ref:`Spatial <class_Spatial>` in ``SimpleAudioPlayer.tscn``
+Create a new script and call it ``Simple_Audio_Player.gd``. Attach it to the :ref:`Spatial <class_Spatial>` in ``Simple_Audio_Player.tscn``
 and insert the following code:
 
 ::
@@ -574,7 +574,7 @@ to save on resources.
 _________
 
 With that done, let's open up ``Player.gd`` again.
-First we need to load the ``SimpleAudioPlayer.tscn``. Place the following code in the class variables:
+First we need to load the ``Simple_Audio_Player.tscn``. Place the following code in the class variables:
 
 ::
 
@@ -611,11 +611,11 @@ If this doesn't make sense to you, don't worry too much about it. The second lin
 reliably if you have multiple scenes loaded as children to the root node at a time, which will rarely happen for most projects and will not be happening in this tutorial series.
 This is only potentially a issue depending on how you handle scene loading.
 
-The third line adds our newly created ``SimpleAudioPlayer`` scene to be a child of the scene root. This
+The third line adds our newly created ``Simple_Audio_Player`` scene to be a child of the scene root. This
 works exactly the same as when we are spawning bullets.
 
 Finally, we call the ``play_sound`` function and pass in the arguments passed in to ``create_sound``. This will call
-``SimpleAudioPlayer.gd``'s ``play_sound`` function with the passed in arguments.
+``Simple_Audio_Player.gd``'s ``play_sound`` function with the passed in arguments.
 
 _________
 
