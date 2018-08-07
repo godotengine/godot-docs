@@ -1041,7 +1041,7 @@ Light Built-Ins
 +-------------------------------------+-------------------------------------------------------------------------------+
 | Built-In                            | Description                                                                   |
 +=====================================+===============================================================================+
-| in vec2 **POSITION**                | Fragment coordinate, pixel adjusted.                                          |
+| in vec2 **FRAGCOORD**               | Fragment coordinate, pixel adjusted.                                          |
 +-------------------------------------+-------------------------------------------------------------------------------+
 | in vec3 **NORMAL**                  | Input Normal. Although this value is passed in,                               |
 |                                     | **normal calculation still happens outside of this function**.                |
