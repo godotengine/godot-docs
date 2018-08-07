@@ -29,6 +29,13 @@ their own irrelevance would again take over their life.
 No, we definitely do not want this to happen, so let's see how to
 encrypt savegames and protect the world order.
 
+(NOTE: This method can not really prevent players from editing their savegames
+locally, because since the encryption key is stored inside the game, the player
+can still decrypt and edit the file themselves. The only way to prevent this
+from being possible is to store the save data on a remote server where players
+can only make authorized changes to their save data. If your game deals with
+real money, you need to be doing this anyway.)
+
 How?
 ----
 
