@@ -139,7 +139,7 @@ or "Node2D" (root type of all 2D-related nodes), "Spatial" (root type of all 3D-
 
 As you can see, every scene is organized as a tree. The same goes for nodes' properties: you don't *add* a
 collision component to a node to make it collidable like Unity does. Instead, you make this node a *child* of a
-new specific node that has collision properties. Godot features various collision types nodes, depending of the use
+new specific node that has collision properties. Godot features various collision types nodes, depending on the usage
 (see the :ref:`Physics introduction <doc_physics_introduction>`).
 
 - Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
