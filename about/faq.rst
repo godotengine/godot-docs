@@ -56,8 +56,8 @@ None of this is included in the default build scripts or export templates, howev
 
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>` and :ref:`compiling Godot yourself <toc-devel-compiling>`.
 
-Which languages are supported in Godot?
----------------------------------------
+Which programming languages are supported in Godot?
+---------------------------------------------------
 
 The officially supported languages for Godot are GDScript, Visual Scripting, C# and C++.
 See the subcategories for each language in the :ref:`scripting <toc-learn-scripting>` section.
@@ -82,11 +82,11 @@ in a worse experience. We understand if you would rather use another language
 in Godot (see list of supported options above),
 but we strongly encourage you to try it and see the benefits for yourself.
 
-GDScript is designed to integrate from the ground to the way Godot
-works, more than any other language, and is simple and easy to
-learn. Takes at most a day or two to get comfortable and it's easy
-to see the benefits once you do. Please make the effort to learn
-GDScript, you will not regret it.
+GDScript was designed specifically to integrate with the way Godot
+works, more than any existing language could, and is simple and easy to
+learn. For experienced programmers it takes at most a day or two to get 
+comfortable with the syntax and it's easy to see the benefits once you 
+do. Please make the effort to learn GDScript, you will not regret it.
 
 Godot C++ API is also efficient and easy to use (the entire Godot
 editor is made with this API), and an excellent tool to optimize parts
@@ -109,24 +109,24 @@ I don't believe you. What are the technical reasons for the item above?
 
 The main reasons are:
 
-1. No good thread support in most script VMs, and Godot uses threads
+1. Poor multithreading support in most script VMs, and Godot uses threads
    (Lua, Python, Squirrel, JS, AS, etc.).
-2. No good class extending support in most script VMs, and adapting to
+2. Poor class extending support in most script VMs, and adapting to
    the way Godot works is highly inefficient (Lua, Python, JS).
 3. Horrible interface for binding to C++, results in large amount of
    code, bugs, bottlenecks and general inefficiency (Lua, Python,
    Squirrel, JS, etc.)
-4. No native vector types (vector3, matrix4, etc.), resulting in highly
+4. Missing native vector types (vector3, matrix4, etc.), resulting in highly
    reduced performance when using custom types (Lua, Python, Squirrel,
    JS, AS, etc.).
 5. Garbage collector results in stalls or unnecessarily large memory
    usage (Lua, Python, JS, AS, etc.).
-6. Difficulty to integrate with the code editor for providing code
+6. Difficulty integrating with the code editor for providing code
    completion, live editing, etc. (all of them). This is well
    supported by GDScript.
 
 GDScript was designed to solve the issues above, and performs well
-in all the above scenarios. Please learn GDScript and enjoy a
+in all the above scenarios. Learn GDScript and enjoy a
 smooth integration of scripting with the game engine (yes, it's a
 rare but enjoyable situation when things just work). It's worth
 it, give it a try!
