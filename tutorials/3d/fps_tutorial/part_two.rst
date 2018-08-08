@@ -213,7 +213,7 @@ has the passed in animation state name in ``states``, then we will change to tha
 To start we check if the passed in animation name is the same name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
-Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the a animation with the name ``animation_name`` using ``has_animation``.
+Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
 Then we check if ``current_state`` is set or not. If ``current_state`` is *not* currently set, we
@@ -295,7 +295,7 @@ reach the point where the muzzle starts to flash.
           points represents a point of animation data.
 
           Scrubbing the timeline means moving ourselves through the animation. So when we say "scrub the timeline
-          until you reach a point", what we mean is move through the animation window until you reach the a point
+          until you reach a point", what we mean is move through the animation window until you reach the point
           on the timeline.
 
           Also, the muzzle of a gun is the end point where the bullet comes out. The muzzle flash is the flash of
@@ -1134,7 +1134,7 @@ Next we define a variable (``weapon_unequipped``) so we can check whether the cu
 Then we get the current weapon from ``weapons``.
 
 If the current weapon is not ``null``, then we have need to check to see if the weapon is enabled or not. If the weapon is enabled, we call it's ``unequip_weapon`` function
-so it will start the unequip animation. If the weapon is not enabled, we set ``weapon_unequippped`` to ``true`` because the weapon has successfully been unequipped.
+so it will start the unequip animation. If the weapon is not enabled, we set ``weapon_unequipped`` to ``true`` because the weapon has successfully been unequipped.
 
 If the current weapon is ``null``, then we can simply set ``weapon_unequipped`` to ``true``. The reason we do this check is because there is no weapon script/node for
 ``UNARMED``, but there is also no animations for ``UNARMED``, so we can just start equipping the weapon the player wants to change to.
@@ -1157,7 +1157,7 @@ _________
 
 Now, we need to add one more function to the player, and then the player is ready to start firing the weapons!
 
-We need to add ``fire_bullet``, which will be called when by the :ref:`AnimationPlayer <class_AnimationPlayer>` at those
+We need to add ``fire_bullet``, which will be called by the :ref:`AnimationPlayer <class_AnimationPlayer>` at those
 points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` function track:
 
 ::
@@ -1216,11 +1216,11 @@ Lets go over how ``bullet_hit`` works:
 First we get the bullet's forward directional vector. This is so we can tell from which direction the bullet will hit the :ref:`RigidBody <class_RigidBody>`.
 We will use this to push the :ref:`RigidBody <class_RigidBody>` in the same direction as the bullet.
 
-.. note:: We need to boost the directional vector by ``BASE_BULLET_BOOST`` so the bullet's back a bit more of a punch
-          and move the :ref:`RigidBody <class_RigidBody>` nodes in a visible way. You can just ``BASE_BULLET_BOOST`` to lower or higher values if you want
+.. note:: We need to boost the directional vector by ``BASE_BULLET_BOOST`` so the bullets pack a bit more of a punch
+          and move the :ref:`RigidBody <class_RigidBody>` nodes in a visible way. You can just set ``BASE_BULLET_BOOST`` to lower or higher values if you want
           less or more of a reaction when the bullets collide with the :ref:`RigidBody <class_RigidBody>`.
 
-Then we apply a impulse using ``apply_impulse``.
+Then we apply an impulse using ``apply_impulse``.
 
 First, we need to calculate the position for the impulse.
 Because ``apply_impulse`` takes a vector relative to the :ref:`RigidBody <class_RigidBody>`, we need to calculate the distance from
@@ -1228,7 +1228,7 @@ the :ref:`RigidBody <class_RigidBody>` to the bullet. We do this by subtracting 
 This gets us the distance from the :ref:`RigidBody <class_RigidBody>` to the bullet. We normalize this vector so the size of the collider does not effect how much
 the bullets move the :ref:`RigidBody <class_RigidBody>`.
 
-Finally, we need to calculate the force for the impulse. For this we use the bullet is facing and multiply it by the bullet's damage.
+Finally, we need to calculate the force for the impulse. For this we use the direction the bullet is facing and multiply it by the bullet's damage.
 This gives a nice result and for stronger bullets, we get a stronger result.
 
 _______
