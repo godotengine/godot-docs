@@ -10,14 +10,22 @@ Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_
 
 In short:
 
-* You are free to download and use Godot for any purpose, personal, non-profit, commercial, or otherwise;
-* You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
+* You are free to download and use Godot for any purpose, personal, 
+non-profit, commercial, or otherwise;
+* You are free to modify, distribute, redistribute, and remix Godot 
+to your heart's content, for any reason, both non-commercially and commercially.
 
-All the contents of this accompanying documentation are published under the permissive Creative Commons Attribution 3.0 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community."
+All the contents of this accompanying documentation are published under 
+the permissive Creative Commons Attribution 3.0 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution 
+to "Juan Linietsky, Ariel Manzur and the Godot Engine community."
 
-Logos and icons are generally under the same Creative Commons license. Note that some third-party libraries included with Godot's source code may have different licenses.
+Logos and icons are generally under the same Creative Commons license. Note 
+that some third-party libraries included with Godot's source code may have 
+different licenses.
 
-For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_ as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_ and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files in the Godot repository.
+For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_ as well 
+as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_ and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files 
+in the Godot repository.
 
 Also see `the license page on the Godot website <https://godotengine.org/license>`_.
 
@@ -39,47 +47,87 @@ Which platforms are supported by Godot?
 * iOS
 * Web
 
-Both 32- and 64-bit binaries are supported where it makes sense, with 64 being the default.
+Both 32- and 64-bit binaries are supported where it makes sense, with 64
+being the default.
 
-Some users also report building and using Godot successfully on ARM-based systems with Linux, like the Raspberry Pi.
+Some users also report building and using Godot successfully on ARM-based 
+systems with Linux, like the Raspberry Pi.
 
-Additionally, there is some unofficial third-party work being done on building for some consoles. However, none of this is included in the default build scripts or export templates at this time.
+Additionally, there is some unofficial third-party work being done on building 
+for some consoles. However, none of this is included in the default build 
+scripts or export templates at this time.
 
-For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>` and :ref:`compiling Godot yourself <toc-devel-compiling>`.
+For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>` 
+and :ref:`compiling Godot yourself <toc-devel-compiling>`.
 
-Which languages are supported in Godot?
+Which programming languages are supported in Godot?
 ---------------------------------------
 
-The officially supported languages for Godot are GDScript, Visual Scripting, C#, and C++. See the subcategories for each language in the :ref:`scripting <toc-learn-scripting>` section.
+The officially supported languages for Godot are GDScript, Visual Scripting, 
+C#, and C++. See the subcategories for each language in the 
+:ref:`scripting <toc-learn-scripting>` section.
 
-If you are just starting out with either Godot or game development in general, GDScript is the recommended language to learn and use since it is native to Godot. While scripting languages tend to be less performant than lower-level languages in the long run, for prototyping, developing Minimum Viable Products (MVPs), and focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and capable way of developing your games.
+If you are just starting out with either Godot or game development in general, 
+GDScript is the recommended language to learn and use since it is native to Godot. 
+While scripting languages tend to be less performant than lower-level languages in 
+the long run, for prototyping, developing Minimum Viable Products (MVPs), and 
+focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and capable 
+way of developing your games.
 
-Note that C# support is still relatively new, and as such, you may encounter some issues along the way. Our friendly and hard-working development community is always ready to tackle new problems as they arise, but since this is an open-source project, we recommend that you first do some due diligence yourself. Searching through discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a great way to start your troubleshooting. 
+Note that C# support is still relatively new, and as such, you may encounter some 
+issues along the way. Our friendly and hard-working development community is always 
+ready to tackle new problems as they arise, but since this is an open-source project, 
+we recommend that you first do some due diligence yourself. Searching through 
+discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a 
+great way to start your troubleshooting. 
 
-As for new languages, support is possible via third parties using the GDNative / NativeScript / PluginScript facilities. (See question about plugins below.) Work is currently underway, for example, on unofficial bindings for Godot
+As for new languages, support is possible via third parties using the GDNative / 
+NativeScript / PluginScript facilities. (See question about plugins below.) 
+Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
 What is GDScript and why should I use it?
 -------------------------------------------------------------------------------
 
-GDScript is Godot's integrated scripting language. It was built from the ground up to maximize Godot's potential in the least amount of code, affording both novice and expert developers alike to capitalize on Godot's strengths as fast as possible. If you've ever written anything in a language like Python before then you'll feel right at home. For examples, history, and a complete overview of the power GDScript offers you, check out the `GDScript scripting guide <gdscript_basics>`_.
+GDScript is Godot's integrated scripting language. It was built from the ground 
+up to maximize Godot's potential in the least amount of code, affording both novice 
+and expert developers alike to capitalize on Godot's strengths as fast as possible. 
+If you've ever written anything in a language like Python before then you'll feel 
+right at home. For examples, history, and a complete overview of the power GDScript 
+offers you, check out the `GDScript scripting guide <gdscript_basics>`_.
 
-There are several reasons to use GDScript--especially when you are prototyping, in alpha/beta stages of your project, or are not creating the next AAA title--but the most salient reason is the overall **reduction of complexity.** 
+There are several reasons to use GDScript--especially when you are prototyping, in 
+alpha/beta stages of your project, or are not creating the next AAA title--but the 
+most salient reason is the overall **reduction of complexity.** 
 
-The original intent of creating a tightly integrated, custom scripting language for Godot was two-fold: first, it reduces the amount of time necessary to get up and running with Godot, giving developers a rapid way of exposing themselves to the engine with a focus on productivity; second, it reduces the overall burden of maintenance, attenuates the dimensionality of issues, and allows the developers of the engine to focus on squashing bugs and improving features related to the engine core--rather than spending a lot of time trying to get a small set of incremental features working across a large set of languages. 
+The original intent of creating a tightly integrated, custom scripting language for 
+Godot was two-fold: first, it reduces the amount of time necessary to get up and running 
+with Godot, giving developers a rapid way of exposing themselves to the engine with a 
+focus on productivity; second, it reduces the overall burden of maintenance, attenuates 
+the dimensionality of issues, and allows the developers of the engine to focus on squashing 
+bugs and improving features related to the engine core--rather than spending a lot of time 
+trying to get a small set of incremental features working across a large set of languages. 
 
-Since Godot is an open-source project, it was imperative from the start to prioritize a more integrated and seamless experience over attracting additional users by supporting more familiar programming languages--especially when supporting those more familiar languages would result in a worse experience. We understand if you would rather use another language in Godot (see list of supported options above). That being said, if you haven't given GDScript a try, try it for **three days**. Just like Godot, once you see how powerful it is and rapid your development becomes, we think GDScript will grow on you. 
+Since Godot is an open-source project, it was imperative from the start to prioritize a 
+more integrated and seamless experience over attracting additional users by supporting
+more familiar programming languages--especially when supporting those more familiar 
+languages would result in a worse experience. We understand if you would rather use 
+another language in Godot (see list of supported options above). That being said, if 
+you haven't given GDScript a try, try it for **three days**. Just like Godot, 
+once you see how powerful it is and rapid your development becomes, we think GDScript 
+will grow on you. 
 
-More information about getting comfortable with GDScript or dynamically typed languages can be found in the :ref:`doc_gdscript_more_efficiently` tutorial.
+More information about getting comfortable with GDScript or dynamically typed 
+languages can be found in the :ref:`doc_gdscript_more_efficiently` tutorial.
 
 What were the motivations behind creating GDScript?
 -----------------------------------------------------------------------
 
 The main reasons for creating a custom scripting language for Godot were:
 
-1. No good thread support in most script VMs, and Godot uses threads
+1. Poor thread support in most script VMs, and Godot uses threads
    (Lua, Python, Squirrel, JS, AS, etc.).
-2. No good class-extending support in most script VMs, and adapting to
+2. Poor class-extending support in most script VMs, and adapting to
    the way Godot works is highly inefficient (Lua, Python, JS).
 3. Many existing languages have horrible interfaces for binding to C++, resulting in large amount of
    code, bugs, bottlenecks, and general inefficiency (Lua, Python,
@@ -106,25 +154,43 @@ As of Godot 3.0, glTF is supported.
 
 FBX SDK has a `restrictive license <https://www.blender.org/bf/Autodesk_FBX_License.rtf>`_,
 that is incompatible with the `open license <https://opensource.org/licenses/MIT>`_
-provided by Godot. That being said, FBX support could still be provided by third parties as a plugin. (See Plugins question above.)
+provided by Godot. That being said, FBX support could still be provided by third parties 
+as a plugin. (See Plugins question above.)
 
 Will [Insert closed SDK such as PhysX, GameWorks, etc.] be supported in Godot?
 ------------------------------------------------------------------------------
 
-The aim of Godot is to create a free and open-source MIT-licensed engine that is modular and extendable. There are no plans for the core engine development community to support any third-party, closed-source/proprietary SDKs, as integrating with these would go against Godot's ethos. 
+The aim of Godot is to create a free and open-source MIT-licensed engine that 
+is modular and extendable. There are no plans for the core engine development 
+community to support any third-party, closed-source/proprietary SDKs, as integrating 
+with these would go against Godot's ethos. 
 
-That said, because Godot is open-source and modular, nothing prevents you or anyone else interested into adding those libraries as a module and shipping your game with them--as either open- or closed-source.
+That said, because Godot is open-source and modular, nothing prevents you or 
+anyone else interested in adding those libraries as a module and shipping your 
+game with them--as either open- or closed-source.
 
-To see how support for your SDK of choice could still be provided, look at the Plugins question above.
+To see how support for your SDK of choice could still be provided, look at the 
+Plugins question above.
 
-If you know of a third-party SDK that is not supported by Godot but that offers free and open-source integration, consider starting the integration work yourself. Godot is not owned by one person; it belongs to the community, and it grows along with ambitious community contributors like you. 
+If you know of a third-party SDK that is not supported by Godot but that offers 
+free and open-source integration, consider starting the integration work yourself.
+Godot is not owned by one person; it belongs to the community, and it grows along 
+with ambitious community contributors like you. 
 
 How should assets be created to handle multiple resolutions and aspect ratios?
 ------------------------------------------------------------------------------
 
-This question pops up often and it's probably thanks to the misunderstanding created by Apple when they originally doubled the resolution of their devices. It made people think that having the same assets in different resolutions was a good idea, so many continued towards that path. That originally worked to a point and only for Apple devices, but then several Android and Apple devices with different resolutions and aspect ratios were created, with a very wide range of sizes and DPIs.
+This question pops up often and it's probably thanks to the misunderstanding 
+created by Apple when they originally doubled the resolution of their devices.
+It made people think that having the same assets in different resolutions was a 
+good idea, so many continued towards that path. That originally worked to a 
+point and only for Apple devices, but then several Android and Apple devices 
+with different resolutions and aspect ratios were created, with a very wide 
+range of sizes and DPIs.
 
-The most common and proper way to achieve this is to, instead, use a single base resolution for the game and only handle different screen aspect ratios. This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov.
+The most common and proper way to achieve this is to, instead, use a single 
+base resolution for the game and only handle different screen aspect ratios.
+This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov.
 
 1. Choose a single base resolution for your game. Even if there are
    devices that go up to 2K and devices that go down to 400p, regular
@@ -157,28 +223,44 @@ certain screen sizes in the App Store or Google Play.
 How can I extend Godot? 
 -----------------------------------------------------------------
 
-For extending Godot, like creating Godot Editor plugins or adding support for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>` and tool scripts.
+For extending Godot, like creating Godot Editor plugins or adding support 
+for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>` 
+and tool scripts.
 
 Also see the official blog posts on these topics:
 
 * `A look at the GDNative architecture <https://godotengine.org/article/look-gdnative-architecture>`_
 * `GDNative is here! <https://godotengine.org/article/dlscript-here>`_
 
-You can also take a look at the GDScript implementation, the Godot modules, as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot. This would be a good starting point to see how another third-party library integrates with Godot. 
+You can also take a look at the GDScript implementation, the Godot modules, 
+as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
+This would be a good starting point to see how another third-party library 
+integrates with Godot. 
 
 I would like to contribute! How can I get started?
 -------------------------------------------------------------------
 
-Awesome! As an open-source project, Godot thrives off of the innovation and ambition of developers like you. 
+Awesome! As an open-source project, Godot thrives off of the innovation and 
+ambition of developers like you. 
 
-The first place to get started is in the `issues <https://github.com/godotengine/godot/issues>`_. Find an issue that resonates with you, then proceed to the `How to Contribute <https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#contributing-pull-requests>`_ guide to learn how to fork, modify, and submit a Pull Request (PR) with your changes.
+The first place to get started is in the `issues <https://github.com/godotengine/godot/issues>`_.
+Find an issue that resonates with you, then proceed to the `How to Contribute <https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#contributing-pull-requests>`_ 
+guide to learn how to fork, modify, and submit a Pull Request (PR) with your changes.
 
 I have a great idea for Godot. How can I share it?
 -------------------------------------------------------------------
 
-It might be tempting to want to bring ideas to Godot--massive core changes, some sort of mimicry of what another game engine does, or some massive alternative workflow that you'd like build into the editor. These are great and we are thankful to have such motivated people want to contribute, but Godot's focus is and always will be the core functionality as outlined in the `Roadmap <https://github.com/godotengine/godot-roadmap/blob/master/ROADMAP.md>`_, `squashing bugs and addressing issues <https://github.com/godotengine/godot/issues>`_, and conversations between Godot community members. 
+It might be tempting to want to bring ideas to Godot, like ones that 
+result in massive core changes, some sort of mimicry of what another
+game engine does, or alternative workflows that you'd like built into 
+the editor. These are great and we are thankful to have such motivated 
+people want to contribute, but Godot's focus is and always will be the 
+core functionality as outlined in the `Roadmap <https://github.com/godotengine/godot-roadmap/blob/master/ROADMAP.md>`_, 
+`squashing bugs and addressing issues <https://github.com/godotengine/godot/issues>`_, 
+and conversations between Godot community members. 
 
-Most developers in the Godot community will be more interested to learn about things like:
+Most developers in the Godot community will be more interested to learn 
+about things like:
 
 -  Your experience using the software and the problems you have (we
    care about this much more than ideas on how to improve it).
@@ -188,11 +270,18 @@ Most developers in the Godot community will be more interested to learn about th
 -  The parts of your workflow you would like to see optimized.
 -  Parts where you missed clear tutorials or where the documentation wasn't clear.
 
-That being said, please don't feel like your ideas for Godot are unwelcome. Instead, try to reformulate them as a problem first, so developers and the community have a functional foundation to ground your ideas on.
+Please don't feel like your ideas for Godot are unwelcome. Instead, 
+try to reformulate them as a problem first, so developers and the community 
+have a functional foundation to ground your ideas on.
 
-A good way to approach sharing your ideas and problems with the community is as a set of user stories. Explain what you are trying to do, what behavior you expect to happen, and then what behavior actually happened. Framing problems and ideas this way will help the whole community stay focused on improving developer experiences as a whole. 
+A good way to approach sharing your ideas and problems with the community 
+is as a set of user stories. Explain what you are trying to do, what behavior 
+you expect to happen, and then what behavior actually happened. Framing problems 
+and ideas this way will help the whole community stay focused on improving 
+developer experiences as a whole. 
 
-Bonus points for bringing screenshots, concrete numbers, test cases, or example projects (if applicable).
+Bonus points for bringing screenshots, concrete numbers, test cases, or example 
+projects (if applicable).
 
 How can I support Godot development or contribute?
 --------------------------------------------------
