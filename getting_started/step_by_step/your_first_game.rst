@@ -174,8 +174,8 @@ set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
-.. warning:: If you're using C#, you need to restart godot editor temporarily to see
-            exported variables in the editor until it's fixed.
+.. warning:: If you're using C#, you need to rebuild the Project to see the exported variables in the editor.
+             Just click on the Mono-tab on the bottom of the screen and select "Build Project".
 
 .. image:: img/export_variable.png
 
@@ -237,7 +237,7 @@ or ``false`` if it isn't.
 
     public override void _Process(float delta)
     {
-        var velocity = new Vector2(); // The player's movement vector.
+        Vector2 velocity = new Vector2(); // The player's movement vector.
         if (Input.IsActionPressed("ui_right")) {
             velocity.x += 1;
         }
@@ -254,7 +254,7 @@ or ``false`` if it isn't.
             velocity.y -= 1;
         }
 
-        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+        AnimatedSprite animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
         if (velocity.Length() > 0) {
             velocity = velocity.Normalized() * Speed;
             animatedSprite.Play();
@@ -313,7 +313,8 @@ around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
              this likely means you spelled the node name wrong. Node names are case-sensitive
-             and ``$NodeName`` or ``get_node("NodeName")`` must match the name you see in the scene tree.
+             and ``$NodeName``, ``get_node("NodeName")`` or in C# ``GetNode("NodeName")`` must match
+             the name you see in the scene tree.
 
 Choosing Animations
 ~~~~~~~~~~~~~~~~~~~
@@ -391,9 +392,11 @@ Notice our custom "hit" signal is there as well! Since our enemies are
 going to be ``RigidBody2D`` nodes, we want the
 ``body_entered( Object body )`` signal; this will be emitted when a
 body contacts the player. Click "Connect.." and then "Connect" again on
-the "Connecting Signal" window. We don't need to change any of these
-settings - Godot will automatically create a function called
-``_on_Player_body_entered`` in your player's script.
+the "Connecting Signal" window. If you are using GDScript, you don't need 
+to change any of these settings - Godot will automatically create a function 
+called ``_on_Player_body_entered`` in your player's script. If you are using
+C#, you will have to change the functionname to the C#-functionname.
+For example: replace ``_on_Player_body_entered`` with ``OnPlayerBodyEntered``.
 
 .. tip:: When connecting a signal, instead of having Godot create a
          function for you, you can also give the name of an existing
@@ -418,7 +421,7 @@ Add this code to the function:
 
         // For the sake of this example, but it's better to create a class var
         // then assign the variable inside _Ready()
-        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        CollisionShape2D collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
         collisionShape2D.Disabled = true;
     }
 
@@ -444,8 +447,8 @@ the player when starting a new game.
     {
         Position = pos;
         Show();
-
-        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
+        
+        CollisionShape2D collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
         collisionShape2D.Disabled = false;
     }
 
@@ -545,18 +548,18 @@ choose one of the three animation types:
 
     public override void _Ready()
     {
-        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
+        AnimatedSprite animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
 
         // C# doesn't implement GDScript's random methods, so we use 'Random'
         // as an alternative.
         //
         // Note: Never define random multiple times in real projects. Create a
-        // class memory and reuse it to get true random numbers.
-        var randomMob = new Random();
+        // class memory and reuse it to get true random numbers. A singleton-pattern might be adviseable.
+        Random randomMob = new Random();
         animatedSprite.Animation = _mobTypes[randomMob.Next(0, _mobTypes.Length)];
     }
 
-.. note:: You must use ``randomize()`` if you want
+.. note:: (Only GDScript) You must use ``randomize()`` if you want
           your sequence of "random" numbers to be different every time you run
           the scene. We're going to use ``randomize()`` in our ``Main`` scene,
           so we won't need it here. ``randi() % n`` is the standard way to get
@@ -707,8 +710,8 @@ function to set everything up for a new game:
     public void GameOver()
     {
         //timers
-        var mobTimer = (Timer) GetNode("MobTimer");
-        var scoreTimer = (Timer) GetNode("ScoreTimer");
+        Timer mobTimer = (Timer) GetNode("MobTimer");
+        Timer scoreTimer = (Timer) GetNode("ScoreTimer");
 
         scoreTimer.Stop();
         mobTimer.Stop();
@@ -718,9 +721,9 @@ function to set everything up for a new game:
     {
         Score = 0;
 
-        var player = (Player) GetNode("Player");
-        var startTimer = (Timer) GetNode("StartTimer");
-        var startPosition = (Position2D) GetNode("StartPosition");
+        Player player = (Player) GetNode("Player");
+        Timer startTimer = (Timer) GetNode("StartTimer");
+        Timer startPosition = (Position2D) GetNode("StartPosition");
 
         player.Start(startPosition.Position);
         startTimer.Start();
@@ -745,8 +748,8 @@ increment the score by 1.
     public void OnStartTimerTimeout()
     {
         //timers
-        var mobTimer = (Timer) GetNode("MobTimer");
-        var scoreTimer = (Timer) GetNode("ScoreTimer");
+        Timer mobTimer = (Timer) GetNode("MobTimer");
+        Timer scoreTimer = (Timer) GetNode("ScoreTimer");
 
         mobTimer.Start();
         scoreTimer.Start();
@@ -795,15 +798,15 @@ Add the following code:
     public void OnMobTimerTimeout()
     {
         // Choose a random location on Path2D.
-        var mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
+        PathFollow2D mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
         mobSpawnLocation.SetOffset(rand.Next());
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D) Mob.Instance();
+        RigidBody2D mobInstance = (RigidBody2D) Mob.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
-        var direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
+        float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
 
         // Set the mob's position to a random location.
         mobInstance.Position = mobSpawnLocation.Position;
@@ -978,9 +981,9 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
     async public void ShowGameOver()
     {
-        var startButton = (Button) GetNode("StartButton");
-        var messageTimer = (Timer) GetNode("MessageTimer");
-        var messageLabel = (Label) GetNode("MessageLabel");
+        Button startButton = (Button) GetNode("StartButton");
+        Timer messageTimer = (Timer) GetNode("MessageTimer");
+        Label messageLabel = (Label) GetNode("MessageLabel");
 
         ShowMessage("Game Over");
         await ToSignal(messageTimer, "timeout");
@@ -1003,7 +1006,7 @@ Over" for 2 seconds, then return to the title screen and show the
 
     public void UpdateScore(int score)
     {
-        var scoreLabel = (Label) GetNode("ScoreLabel");
+        Label scoreLabel = (Label) GetNode("ScoreLabel");
         scoreLabel.Text = score.ToString();
     }
 
@@ -1026,7 +1029,7 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     public void OnStartButtonPressed()
     {
-        var startButton = (Button) GetNode("StartButton");
+        Button startButton = (Button) GetNode("StartButton");
         startButton.Hide();
 
         EmitSignal("StartGame");
@@ -1034,7 +1037,7 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     public void OnMessageTimerTimeout()
     {
-        var messageLabel = (Label) GetNode("MessageLabel");
+        Label messageLabel = (Label) GetNode("MessageLabel");
         messageLabel.Hide();
     }
 
@@ -1065,7 +1068,7 @@ message:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
+        HUD hud = (HUD) GetNode("HUD");
         hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");
 
@@ -1078,7 +1081,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
+        HUD hud = (HUD) GetNode("HUD");
         hud.ShowGameOver();
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in
@@ -1091,7 +1094,7 @@ sync with the changing score:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
+        HUD hud = (HUD) GetNode("HUD");
         hud.UpdateScore(Score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
