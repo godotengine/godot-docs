@@ -24,9 +24,6 @@ This guide will get you started with UI design. You will learn:
    containers
 -  The five most common containers
 
-To learn how to control the interface and connect it to other scripts,
-read `Build your first game UI in Godot <#>`__.
-
 Only use Control nodes when you design your interfaces. They have unique
 properties that allow them to work with one another. Other nodes like
 Node2D, Sprite, etc. will not work. You can still use some nodes that
