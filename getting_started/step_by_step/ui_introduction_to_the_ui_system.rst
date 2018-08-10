@@ -342,6 +342,4 @@ between the rows and columns respectively.
 
    A GridContainer with 2 columns. It sizes each column automatically.
 
-Godot's UI system is complex, and has a lot more to offer. To learn how
-to design more advanced interface, read `Design advanced UI with other
-Control nodes <img/#>`__.
+Godot's UI system is complex, and has a lot more to offer. Keep reading to learn more!
