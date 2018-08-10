@@ -48,10 +48,7 @@ The 5 most common UI elements
 -----------------------------
 
 Godot ships with dozens of Control nodes. A lot of them are here to help
-you build editor plugins and applications. To learn more about them,
-check the guide about `Advanced UI nodes and Themes <img/#>`__.
-
-For most games, you'll only need five types of UI elements, and a few
+you build editor plugins and applications. For most games, you'll only need five types of UI elements, and a few
 Containers. These five Control nodes are:
 
 1. Label: for displaying text
