@@ -10,10 +10,8 @@ Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_
 
 In short:
 
-* You are free to download and use Godot for any purpose, personal, 
-non-profit, commercial, or otherwise;
-* You are free to modify, distribute, redistribute, and remix Godot 
-to your heart's content, for any reason, both non-commercially and commercially.
+* You are free to download and use Godot for any purpose, personal, non-profit, commercial, or otherwise;
+* You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
 
 All the contents of this accompanying documentation are published under 
 the permissive Creative Commons Attribution 3.0 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution 
@@ -61,7 +59,7 @@ For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export
 and :ref:`compiling Godot yourself <toc-devel-compiling>`.
 
 Which programming languages are supported in Godot?
----------------------------------------
+---------------------------------------------------
 
 The officially supported languages for Godot are GDScript, Visual Scripting, 
 C#, and C++. See the subcategories for each language in the 
@@ -87,7 +85,7 @@ Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
 What is GDScript and why should I use it?
--------------------------------------------------------------------------------
+-----------------------------------------
 
 GDScript is Godot's integrated scripting language. It was built from the ground 
 up to maximize Godot's potential in the least amount of code, affording both novice 
@@ -121,7 +119,7 @@ More information about getting comfortable with GDScript or dynamically typed
 languages can be found in the :ref:`doc_gdscript_more_efficiently` tutorial.
 
 What were the motivations behind creating GDScript?
------------------------------------------------------------------------
+---------------------------------------------------
 
 The main reasons for creating a custom scripting language for Godot were:
 
@@ -144,7 +142,7 @@ The main reasons for creating a custom scripting language for Godot were:
 GDScript was designed to curtail the issues above and more. 
 
 What type of 3D model formats does Godot support?
-------------------------------------
+-------------------------------------------------
 
 Godot supports Collada via the `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_ exporter (Maya, 3DSMax).
 
@@ -221,7 +219,7 @@ the export option to shrink images, and set that build to be used for
 certain screen sizes in the App Store or Google Play.
 
 How can I extend Godot? 
------------------------------------------------------------------
+-----------------------
 
 For extending Godot, like creating Godot Editor plugins or adding support 
 for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>` 
@@ -238,7 +236,7 @@ This would be a good starting point to see how another third-party library
 integrates with Godot. 
 
 I would like to contribute! How can I get started?
--------------------------------------------------------------------
+--------------------------------------------------
 
 Awesome! As an open-source project, Godot thrives off of the innovation and 
 ambition of developers like you. 
@@ -248,7 +246,7 @@ Find an issue that resonates with you, then proceed to the `How to Contribute <h
 guide to learn how to fork, modify, and submit a Pull Request (PR) with your changes.
 
 I have a great idea for Godot. How can I share it?
--------------------------------------------------------------------
+--------------------------------------------------
 
 It might be tempting to want to bring ideas to Godot, like ones that 
 result in massive core changes, some sort of mimicry of what another
