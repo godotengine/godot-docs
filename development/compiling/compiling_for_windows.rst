@@ -197,6 +197,10 @@ build a corresponding executable.
 This executable file contains the whole engine and runs without any
 dependencies. Executing it will bring up the Project Manager.
 
+.. note:: If you are compiling Godot for production use, then you can
+          make the final executable smaller and faster by adding the
+          SCons option ``target=release_debug``.
+
 How the prompts actually work
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
