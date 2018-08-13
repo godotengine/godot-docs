@@ -331,30 +331,42 @@ Let's place this code at the end of our ``_process()`` function:
         if velocity.x != 0:
             $AnimatedSprite.animation = "right"
             $AnimatedSprite.flip_v = false
-            # Below is a boolean assignment and results in true or false
-            # which effectively turns this property on or off.
-            $AnimatedSprite.flip_h = (velocity.x < 0)
+            # See the note below about boolean assignment
+            $AnimatedSprite.flip_h = velocity.x < 0
         elif velocity.y != 0:
             $AnimatedSprite.animation = "up"
-            # Below is also a boolean assignment without the parenthesis
-            # how you write your boolean assignment is a personal preference
             $AnimatedSprite.flip_v = velocity.y > 0
 
  .. code-tab:: csharp
 
         if (velocity.x != 0) {
             animatedSprite.Animation = "right";
-            # Below is a boolean assignment and results in true or false
-            # which effectively turns this property on or off.
-            animatedSprite.FlipH = (velocity.x < 0);
+            # See the note below about boolean assignment
+            animatedSprite.FlipH = velocity.x < 0;
             animatedSprite.FlipV = false;
         } else if(velocity.y != 0) {
             animatedSprite.Animation = "up";
-            # Below is also a boolean assignment without the parenthesis
-            # how you write your boolean assignment is a personal preference
             animatedSprite.FlipV = velocity.y > 0;
         }
 
+.. Note:: The boolean assignments in the code above are a common shorthand
+          for C programmers. Consider this code versus the shortened 
+          boolean assignment above.
+          .. tabs::
+           .. code-tab :: gdscript GDScript
+           
+             if velocity.x < 0:
+                 $AnimatedSprite.flip_h = true
+             else:
+                 $AnimatedSprite.flip_h = false
+              
+           .. code-tab:: csharp
+           
+             if velocity.x < 0:
+                 animatedSprite.FlipH = true
+             else:
+                 animatedSprite.FlipH = false
+          
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
 add this line to ``_ready()`` so the player will be hidden when the game
