@@ -352,6 +352,7 @@ Let's place this code at the end of our ``_process()`` function:
 .. Note:: The boolean assignments in the code above are a common shorthand
           for C programmers. Consider this code versus the shortened 
           boolean assignment above.
+          
           .. tabs::
            .. code-tab :: gdscript GDScript
            
