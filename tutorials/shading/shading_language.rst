@@ -151,6 +151,17 @@ Construction of matrix types requires pass vectors of same dimension as matrix. 
     mat3 m3 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
     mat4 identity = mat4(1.0);
 
+Matrix can also been builded from matrix of another dimension.
+There are two rules :
+If a larger matrix is constructed from a smaller matrix, the additional rows and columns are set to the values they would have in an identity matrix.
+If a smaller matrix is constructed from a larger matrix, the top, left submatrix of the larger matrix is chosen.
+
+.. code-block:: glsl
+	
+	mat3 basis = mat3(WORLD_MATRIX);
+	mat4 m4 = mat4(basis);
+	mat2 m2 = mat2(m4);
+
 Swizzling
 ~~~~~~~~~
 
