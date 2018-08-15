@@ -59,7 +59,7 @@ here's a simple example of how GDScript looks.
 
     extends BaseClass
 
-    # optional script class with optional icon
+    # (optional) class definition with a custom icon
 
     class_name MyClass, "res://path/to/optional/icon.svg"
 
@@ -868,36 +868,61 @@ Multipatterns:
 Classes
 ~~~~~~~
 
-By default, the body of a script file is an unnamed class and it can
-only be referenced externally as a resource or file. Users can also define
-an explicit name for a script using the 'class_name' keyword, optionally
-followed by a path to an image resource. Named scripts appear in Godot
-Engine's editor with their base class icon or the custom defined icon.
-
-Class syntax is meant to be very compact and can only contain member variables
-or functions. Static functions are allowed, but not static members (this is
-in the spirit of thread safety, since scripts can be initialized in
-separate threads without the user knowing). In the same way, member
-variables (including arrays and dictionaries) are initialized every time
-an instance is created.
-
-Below is an example of a class file.
+By default, all script files are unnamed classes. In this case, you can only
+reference them using the file's path, using either a relative or an absolute
+path. For example, if you name a script file ``character.gd``
 
 ::
 
-    # Saved as a file named 'myclass.gd'.
-    
-    class_name MyClass
+   # Inherit from Character.gd
 
-    var a = 5
+   extends res://path/to/character.gd
 
-    func print_value_of_a():
-        print(a)
-    
-    func print_script_three_times():
+   # Load character.gd and create a new node instance from it
+
+   var Character = load("res://path/to/character.gd")
+   var character_node = Character.instance()
+
+Instead, you can give your class a name to register it as a new type in Godot's
+editor. For that, you use the 'class_name' keyword followed. You can add an
+optional comma followed by a path to an image, to use it as an icon. Your class
+will then appear with its new icon in the editor:
+
+::
+
+   # Item.gd
+
+   extends Node
+
+   class_name Item, "res://interface/icons/item.png"
+
+.. image:: img/class_name_editor_register_example.png
+
+Here's a class file example:
+
+::
+
+    # Saved as a file named 'character.gd'.
+
+    class_name Character
+
+    var health = 5
+
+    func print_health():
+        print(health)
+
+    func print_this_script_three_times():
         print(get_script())
         print(ResourceLoader.load("res://myclass.gd"))
         print(MyClass)
+
+
+.. note:: Godot's class syntax is compact: it can only contain member variables or
+          functions. You can use static functions, but not static member variables. In the
+          same way, the engine initializes variables every time you create an instance,
+          and this includes arrays and dictionaries. This is in the spirit of thread
+          safety, since scripts can be initialized in separate threads without the user
+          knowing.
 
 Inheritance
 ^^^^^^^^^^^

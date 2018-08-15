@@ -6,7 +6,7 @@ Scripting (continued)
 Processing
 ----------
 
-Several actions in Godot are triggered by callbacks or virtual functions, 
+Several actions in Godot are triggered by callbacks or virtual functions,
 so there is no need to write code that runs all the time.
 
 However, it is still common to need a script to be processed on every
@@ -28,7 +28,7 @@ how many frames per second (FPS) the application is running at:
         pass
 
  .. code-tab:: csharp
-    
+
     public override void _Process(float delta)
     {
         // Do something...
@@ -37,7 +37,7 @@ how many frames per second (FPS) the application is running at:
 The delta parameter contains the time elapsed in seconds, as a
 floating point, since the previous call to ``_process()``.
 
-This parameter can be used to make sure things always take the same 
+This parameter can be used to make sure things always take the same
 amount of time, regardless of the game's FPS.
 
 For example, movement is often multiplied with a time delta to make movement
@@ -49,7 +49,7 @@ It always runs before a physics step and it is called at fixed time intervals:
 60 times per second by default. You can change the interval from the Project Settings, under
 Physics -> Common -> Physics Fps.
 
-The function ``_process()``, however, is not synced with physics. Its frame rate is not constant and is dependent 
+The function ``_process()``, however, is not synced with physics. Its frame rate is not constant and is dependent
 on hardware and game optimization. Its execution is done after the physics step on single-threaded games.
 
 A simple way to test this is to create a scene with a single Label node,
@@ -67,7 +67,7 @@ with the following script:
         text = str(accum) # 'text' is a built-in label property.
 
  .. code-tab:: csharp
-    
+
     public class CustomLabel : Label
     {
         private float _accum;
@@ -99,11 +99,11 @@ which are enemies:
         add_to_group("enemies")
 
  .. code-tab:: csharp
-        
+
     public override void _Ready()
     {
         base._Ready();
-        
+
         AddToGroup("enemies");
     }
 
@@ -118,7 +118,7 @@ all enemies can be notified about its alarm sounding by using
         get_tree().call_group("enemies", "player_was_discovered")
 
  .. code-tab:: csharp
-    
+
     public void _OnDiscovered() // This is a purely illustrative function.
     {
         GetTree().CallGroup("enemies", "player_was_discovered");
@@ -137,7 +137,7 @@ calling
     var enemies = get_tree().get_nodes_in_group("enemies")
 
  .. code-tab:: csharp
-    
+
     var enemies = GetTree().GetNodesInGroup("enemies");
 
 The :ref:`SceneTree <class_SceneTree>` class provides many useful methods,
@@ -153,7 +153,7 @@ Notifications
 Godot has a system of notifications. These are usually not needed for
 scripting, as it's too low-level and virtual functions are provided for
 most of them. It's just good to know they exist. For example,
-you may add an 
+you may add an
 :ref:`Object._notification() <class_Object__notification>`
 function in your script:
 
@@ -226,7 +226,7 @@ follows, can be applied to nodes:
         pass
 
  .. code-tab:: csharp
- 
+
     public override void _EnterTree()
     {
         // When the node enters the _Scene Tree_, it becomes active
@@ -270,7 +270,7 @@ the notification system.
 Creating nodes
 --------------
 
-To create a node from code, call the ``.new()`` method, like for any 
+To create a node from code, call the ``.new()`` method, like for any
 other class-based datatype. For example:
 
 
@@ -289,7 +289,7 @@ other class-based datatype. For example:
     public override void _Ready()
     {
         base._Ready();
-    
+
         _sprite = new Sprite(); // Create a new sprite!
         AddChild(_sprite); // Add it as a child of this node.
     }
@@ -348,7 +348,7 @@ first one is to load the scene from your hard drive:
     var scene = load("res://myscene.tscn") # Will load when the script is instanced.
 
  .. code-tab:: csharp
-    
+
     var scene = (PackedScene)ResourceLoader.Load("res://myscene.tscn"); // Will load when the script is instanced.
 
 
@@ -373,7 +373,7 @@ the active scene:
     add_child(node)
 
  .. code-tab:: csharp
-    
+
     var node = scene.Instance();
     AddChild(node);
 
@@ -382,20 +382,17 @@ kept loaded and ready to use so that you can create as many
 instances as desired. This is especially useful to quickly instance
 several enemies, bullets, and other entities in the active scene.
 
-Script Classes
---------------
+Register Scripts as Classes
+---------------------------
 
-Godot has a "Script Class" feature to register individual scripts with the 
-Editor. By default, unnamed scripts are only accessible by loading the file 
-directly. Users name the script and give it an optional icon. These name-script 
-pairings are then supplied to scripting languages in Godot. The named scripts 
-that derive Node or Resource will show up in their respective creation dialogs 
-in the Editor.
+Godot has a "Script Class" feature to register individual scripts with the
+Editor. By default, you can only access unnamed scripts by loading the file
+directly.
 
-At this time...
-
-- Only GDScript and NativeScript (C++ and other GDNative-powered languages) can register scripts.
-- Only GDScript creates global variables for each named script.
+You can name a script and register it as a type in the editor with the
+``class_name`` keyword followed by the class's name. You may add a comma and an
+optional path to an image to use as an icon. You will then find your new type in
+the Node or Resource creation dialog.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -406,10 +403,15 @@ At this time...
     class_name ScriptName, "res://path/to/optional/icon.svg"
 
     func _ready():
-        var this = ScriptName           # script
-        var cppNode = MyCppNode.new()   # instance of a script
+        var this = ScriptName           # reference to the script
+        var cppNode = MyCppNode.new()   # new instance of a class named MyCppNode
 
         cppNode.queue_free()
 
 .. image:: img/script_class_nativescript_example.png
 
+
+.. warning:: In Godot 3.1:
+
+            - Only GDScript and NativeScript, i.e., C++ and other GDNative-powered languages, can register scripts.
+            - Only GDScript creates global variables for each named script.
