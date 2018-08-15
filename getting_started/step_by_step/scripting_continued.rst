@@ -381,3 +381,35 @@ The advantage of this two-step process is that a packed scene may be
 kept loaded and ready to use so that you can create as many
 instances as desired. This is especially useful to quickly instance
 several enemies, bullets, and other entities in the active scene.
+
+Script Classes
+--------------
+
+Godot has a "Script Class" feature to register individual scripts with the 
+Editor. By default, unnamed scripts are only accessible by loading the file 
+directly. Users name the script and give it an optional icon. These name-script 
+pairings are then supplied to scripting languages in Godot. The named scripts 
+that derive Node or Resource will show up in their respective creation dialogs 
+in the Editor.
+
+At this time...
+
+- Only GDScript and NativeScript (C++ and other GDNative-powered languages) can register scripts.
+- Only GDScript creates global variables for each named script.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node
+
+    # Declare the class name here
+    class_name ScriptName, "res://path/to/optional/icon.svg"
+
+    func _ready():
+        var this = ScriptName           # script
+        var cppNode = MyCppNode.new()   # instance of a script
+
+        cppNode.queue_free()
+
+.. image:: img/script_class_nativescript_example.png
+
