@@ -64,7 +64,7 @@ as a resource.
 
 .. image:: img/gridmap_export.png
 
-You can find an already exported MeshLibrary in the project named "MeshLibrary.tscn".
+You can find an already exported MeshLibrary in the project named "MeshLibrary.tres".
 
 Using GridMap
 -------------
