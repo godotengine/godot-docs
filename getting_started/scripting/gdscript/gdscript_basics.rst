@@ -887,10 +887,10 @@ path. For example, if you name a script file ``character.gd``
    # Load character.gd and create a new node instance from it
 
    var Character = load("res://path/to/character.gd")
-   var character_node = Character.instance()
+   var character_node = Character.new()
 
 Instead, you can give your class a name to register it as a new type in Godot's
-editor. For that, you use the 'class_name' keyword followed. You can add an
+editor. For that, you use the 'class_name' keyword. You can add an
 optional comma followed by a path to an image, to use it as an icon. Your class
 will then appear with its new icon in the editor:
 
@@ -919,8 +919,8 @@ Here's a class file example:
 
     func print_this_script_three_times():
         print(get_script())
-        print(ResourceLoader.load("res://myclass.gd"))
-        print(MyClass)
+        print(ResourceLoader.load("res://character.gd"))
+        print(Character)
 
 
 .. note:: Godot's class syntax is compact: it can only contain member variables or
