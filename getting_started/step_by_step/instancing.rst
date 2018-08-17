@@ -112,4 +112,5 @@ Conclusion
 ----------
 
 Instancing can be useful when you want to create many copies of the
-same object.
+same object. It is also possible to create instances in code by using
+GDScript, see :ref:`doc_scripting_continued#instancing-scenes`.
