@@ -139,7 +139,9 @@ dialog. For that, change the ``custom_node.gd`` script to the following::
         remove_custom_type("MyButton")
 
 With that done, the plugin should already be available in the plugin list at
-Project Settings. So activate it and try to add a new node to see the result:
+Project Settings, so activate it as explained in `Checking the results`_. 
+
+Then try it out by adding your new node :
 
 .. image:: img/making_plugins-custom_node_create.png
 
