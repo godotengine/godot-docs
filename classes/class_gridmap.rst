@@ -113,6 +113,11 @@ A GridMap contains a collection of cells. Each grid cell refers to a :ref:`MeshL
 
 A GridMap is split into a sparse collection of octants for efficient rendering and physics processing. Every octant has the same dimensions and can contain several cells.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/using_gridmaps`
+
 Member Function Description
 ---------------------------
 

@@ -39,3 +39,8 @@ Description
 
 Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_index>` for multi-touch count and order.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

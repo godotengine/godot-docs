@@ -96,6 +96,7 @@ enum **LineTextureMode**
 
 - **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
 - **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
+- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with Repeat Disabled for best results.
 
   .. _enum_Line2D_LineJointMode:
 

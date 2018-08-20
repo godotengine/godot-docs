@@ -23,9 +23,13 @@ Member Variables
 
 - :ref:`Color<class_color>` **color**
 
-  .. _class_StyleBoxLine_grow:
+  .. _class_StyleBoxLine_grow_begin:
 
-- :ref:`float<class_float>` **grow**
+- :ref:`float<class_float>` **grow_begin**
+
+  .. _class_StyleBoxLine_grow_end:
+
+- :ref:`float<class_float>` **grow_end**
 
   .. _class_StyleBoxLine_thickness:
 

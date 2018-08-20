@@ -84,6 +84,10 @@ Notifies when an animation finished playing.
 
 Notifies when an animation starts playing.
 
+.. _class_AnimationPlayer_caches_cleared:
+
+- **caches_cleared** **(** **)**
+
 
 Member Variables
 ----------------
@@ -138,12 +142,19 @@ enum **AnimationProcessMode**
 
 - **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+- **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use the 'advance' method to process the animation manually.
 
 
 Description
 -----------
 
 An animation player is used for general purpose playback of :ref:`Animation<class_animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/animations`
+- :doc:`../tutorials/animation/index`
 
 Member Function Description
 ---------------------------

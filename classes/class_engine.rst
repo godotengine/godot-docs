@@ -83,8 +83,6 @@ Member Function Description
 
 Returns engine author information in a Dictionary.
 
-
-
 "lead_developers" - Array of Strings, lead developer names
 
 "founders" - Array of Strings, founder names
@@ -98,8 +96,6 @@ Returns engine author information in a Dictionary.
 - :ref:`Array<class_array>` **get_copyright_info** **(** **)** const
 
 Returns an Array of copyright information Dictionaries.
-
-
 
 "name" - String, component name
 
@@ -152,8 +148,6 @@ Returns the main loop object (see :ref:`MainLoop<class_mainloop>` and :ref:`Scen
 - :ref:`Dictionary<class_dictionary>` **get_version_info** **(** **)** const
 
 Returns the current engine version information in a Dictionary.
-
-
 
 "major"    - Holds the major version number as an int
 

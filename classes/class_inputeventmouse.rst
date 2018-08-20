@@ -39,3 +39,8 @@ Description
 
 Stores general mouse events information.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

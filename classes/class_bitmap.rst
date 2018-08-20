@@ -30,6 +30,10 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>` **(** **)** const                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`grow_mask<class_BitMap_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_rect2>` rect **)**                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`opaque_to_polygons<class_BitMap_opaque_to_polygons>` **(** :ref:`Rect2<class_rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_bit<class_BitMap_set_bit>` **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)**                                  |
@@ -72,6 +76,14 @@ Returns bitmap's dimensions.
 - :ref:`int<class_int>` **get_true_bit_count** **(** **)** const
 
 Returns the amount of bitmap elements that are set to true.
+
+.. _class_BitMap_grow_mask:
+
+- void **grow_mask** **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_rect2>` rect **)**
+
+.. _class_BitMap_opaque_to_polygons:
+
+- :ref:`Array<class_array>` **opaque_to_polygons** **(** :ref:`Rect2<class_rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const
 
 .. _class_BitMap_set_bit:
 

@@ -66,6 +66,10 @@ Member Variables
 
 - :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 
+  .. _class_AudioStreamPlayer_stream_paused:
+
+- :ref:`bool<class_bool>` **stream_paused**
+
   .. _class_AudioStreamPlayer_volume_db:
 
 - :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
@@ -88,6 +92,12 @@ Description
 
 Plays background audio.
 
+Tutorials
+---------
+
+- :doc:`../learning/features/audio/index`
+- :doc:`../tutorials/audio/audio_streams`
+
 Member Function Description
 ---------------------------
 
@@ -95,7 +105,7 @@ Member Function Description
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
-Returns the position in the :ref:`AudioStream<class_audiostream>`.
+Returns the position in the :ref:`AudioStream<class_audiostream>` in seconds.
 
 .. _class_AudioStreamPlayer_play:
 

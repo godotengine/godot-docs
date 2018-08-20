@@ -9,7 +9,7 @@ Spatial
 
 **Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`OrientedPathFollow<class_orientedpathfollow>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
+**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`Path<class_path>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`SpringArm<class_springarm>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`OrientedPathFollow<class_orientedpathfollow>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
 
 **Category:** Core
 
@@ -36,6 +36,8 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_local_transform_notification_enabled<class_Spatial_is_local_transform_notification_enabled>` **(** **)** const                                                                      |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_scale_disabled<class_Spatial_is_scale_disabled>` **(** **)** const                                                                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_set_as_toplevel<class_Spatial_is_set_as_toplevel>` **(** **)** const                                                                                                                |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_transform_notification_enabled<class_Spatial_is_transform_notification_enabled>` **(** **)** const                                                                                  |
@@ -61,6 +63,8 @@ Member Functions
 | void                           | :ref:`scale_object_local<class_Spatial_scale_object_local>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_as_toplevel<class_Spatial_set_as_toplevel>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_disable_scale<class_Spatial_set_disable_scale>` **(** :ref:`bool<class_bool>` disable **)**                                                                                        |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_identity<class_Spatial_set_identity>` **(** **)**                                                                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,8 +112,6 @@ Member Variables
 
 - :ref:`Vector3<class_vector3>` **rotation** - Rotation part of the local transformation, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle), in radians.
 
-
-
 Note that in the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three indepdent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_vector3>` exists as a convenient data-structure to store 3 floating point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
 
   .. _class_Spatial_rotation_degrees:
@@ -148,9 +150,12 @@ Description
 
 Most basic 3D game object, with a 3D :ref:`Transform<class_transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use Spatial as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
-
-
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the Spatial object is set as top level. Affine operations in this coordinate system correspond to direct affine operations on the Spatial's transform. The word local below refers to this coordinate system. The coordinate system that is attached to the Spatial object itself is referred to as object-local coordinate system.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/introduction_to_3d`
 
 Member Function Description
 ---------------------------
@@ -194,6 +199,10 @@ Disables rendering of this node. Change Spatial Visible property to false.
 - :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
 
 Returns whether node notifies about its local transformation changes. Spatial will not propagate this by default.
+
+.. _class_Spatial_is_scale_disabled:
+
+- :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** const
 
 .. _class_Spatial_is_set_as_toplevel:
 
@@ -276,6 +285,10 @@ Scales the local transformation by given 3D scale factors in object-local coordi
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
 Makes the node ignore its parents transformations. Node transformations are only in global space.
+
+.. _class_Spatial_set_disable_scale:
+
+- void **set_disable_scale** **(** :ref:`bool<class_bool>` disable **)**
 
 .. _class_Spatial_set_identity:
 

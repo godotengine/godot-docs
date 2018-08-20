@@ -74,9 +74,17 @@ Member Functions
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                    | :ref:`area_set_transform<class_PhysicsServer_area_set_transform>` **(** :ref:`RID<class_rid>` area, :ref:`Transform<class_transform>` transform **)**                                                                                                                         |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                    | :ref:`body_add_central_force<class_PhysicsServer_body_add_central_force>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` force **)**                                                                                                                         |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                    | :ref:`body_add_collision_exception<class_PhysicsServer_body_add_collision_exception>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**                                                                                                             |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                    | :ref:`body_add_force<class_PhysicsServer_body_add_force>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**                                                                                                 |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                    | :ref:`body_add_shape<class_PhysicsServer_body_add_shape>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) **)**                                                    |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                    | :ref:`body_add_torque<class_PhysicsServer_body_add_torque>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` torque **)**                                                                                                                                      |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                    | :ref:`body_apply_central_impulse<class_PhysicsServer_body_apply_central_impulse>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse **)**                                                                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                    | :ref:`body_apply_impulse<class_PhysicsServer_body_apply_impulse>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**                                                                                       |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -288,10 +296,11 @@ enum **ShapeType**
 - **SHAPE_SPHERE** = **2** --- The :ref:`Shape<class_shape>` is a :ref:`SphereShape<class_sphereshape>`.
 - **SHAPE_BOX** = **3** --- The :ref:`Shape<class_shape>` is a :ref:`BoxShape<class_boxshape>`.
 - **SHAPE_CAPSULE** = **4** --- The :ref:`Shape<class_shape>` is a :ref:`CapsuleShape<class_capsuleshape>`.
-- **SHAPE_CONVEX_POLYGON** = **5** --- The :ref:`Shape<class_shape>` is a :ref:`ConvexPolygonShape<class_convexpolygonshape>`.
-- **SHAPE_CONCAVE_POLYGON** = **6** --- The :ref:`Shape<class_shape>` is a :ref:`ConcavePolygonShape<class_concavepolygonshape>`.
-- **SHAPE_HEIGHTMAP** = **7** --- The :ref:`Shape<class_shape>` is a HeightMapShape.
-- **SHAPE_CUSTOM** = **8** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
+- **SHAPE_CYLINDER** = **5** --- The :ref:`Shape<class_shape>` is a :ref:`CylinderShape<class_cylindershape>`.
+- **SHAPE_CONVEX_POLYGON** = **6** --- The :ref:`Shape<class_shape>` is a :ref:`ConvexPolygonShape<class_convexpolygonshape>`.
+- **SHAPE_CONCAVE_POLYGON** = **7** --- The :ref:`Shape<class_shape>` is a :ref:`ConcavePolygonShape<class_concavepolygonshape>`.
+- **SHAPE_HEIGHTMAP** = **8** --- The :ref:`Shape<class_shape>` is a HeightMapShape.
+- **SHAPE_CUSTOM** = **9** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
 
   .. _enum_PhysicsServer_HingeJointFlag:
 
@@ -639,17 +648,33 @@ Sets the space override mode for the area. The modes are described in the consta
 
 Sets the transform matrix for an area.
 
+.. _class_PhysicsServer_body_add_central_force:
+
+- void **body_add_central_force** **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` force **)**
+
 .. _class_PhysicsServer_body_add_collision_exception:
 
 - void **body_add_collision_exception** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**
 
 Adds a body to the list of bodies exempt from collisions.
 
+.. _class_PhysicsServer_body_add_force:
+
+- void **body_add_force** **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**
+
 .. _class_PhysicsServer_body_add_shape:
 
 - void **body_add_shape** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) **)**
 
 Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
+
+.. _class_PhysicsServer_body_add_torque:
+
+- void **body_add_torque** **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` torque **)**
+
+.. _class_PhysicsServer_body_apply_central_impulse:
+
+- void **body_apply_central_impulse** **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse **)**
 
 .. _class_PhysicsServer_body_apply_impulse:
 

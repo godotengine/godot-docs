@@ -35,6 +35,10 @@ Member Variables
 
 - :ref:`float<class_float>` **friction** - The body friction, from 0 (frictionless) to 1 (full friction).
 
+  .. _class_StaticBody_physics_material_override:
+
+- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
+
 
 Description
 -----------

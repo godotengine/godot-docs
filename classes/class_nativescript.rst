@@ -42,6 +42,14 @@ Member Variables
 
 - :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
 
+  .. _class_NativeScript_script_class_icon_path:
+
+- :ref:`String<class_string>` **script_class_icon_path**
+
+  .. _class_NativeScript_script_class_name:
+
+- :ref:`String<class_string>` **script_class_name**
+
 
 Member Function Description
 ---------------------------

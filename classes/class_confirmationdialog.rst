@@ -9,7 +9,7 @@ ConfirmationDialog
 
 **Inherits:** :ref:`AcceptDialog<class_acceptdialog>` **<** :ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`EditorFileDialog<class_editorfiledialog>`, :ref:`FileDialog<class_filedialog>`
+**Inherited By:** :ref:`ScriptCreateDialog<class_scriptcreatedialog>`, :ref:`EditorFileDialog<class_editorfiledialog>`, :ref:`FileDialog<class_filedialog>`
 
 **Category:** Core
 

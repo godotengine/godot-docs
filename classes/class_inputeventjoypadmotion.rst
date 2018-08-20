@@ -33,3 +33,8 @@ Description
 
 Stores information about joystick motions. One ``InputEventJoypadMotion`` represents one axis at a time.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

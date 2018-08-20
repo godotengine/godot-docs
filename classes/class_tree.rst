@@ -174,7 +174,7 @@ Member Variables
 
   .. _class_Tree_drop_mode_flags:
 
-- :ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants.
+- :ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to ``DROP_MODE_DISABLED``. Setting this during :ref:`can_drop_data<class_Tree_can_drop_data>` is recommended.
 
   .. _class_Tree_hide_folding:
 
@@ -281,6 +281,10 @@ Returns the rectangle for custom popups. Helper to create custom cell controls t
 .. _class_Tree_get_drop_section_at_position:
 
 - :ref:`int<class_int>` **get_drop_section_at_position** **(** :ref:`Vector2<class_vector2>` position **)** const
+
+If :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_INBETWEEN``, returns -1 if ``position`` is the upper part of a tree item at that position, 1 for the lower part, and additionally 0 for the middle part if :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_ON_ITEM``. 
+
+Otherwise, returns 0. If there are no tree item at ``position``, returns -100.
 
 .. _class_Tree_get_edited:
 

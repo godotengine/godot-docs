@@ -80,6 +80,12 @@ Description
 
 For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/using_transforms`
+- :doc:`../tutorials/math/rotations`
+
 Member Function Description
 ---------------------------
 

@@ -65,7 +65,5 @@ Band 20 : 16000 Hz
 
 Band 21 : 22000 Hz
 
-
-
 See also :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`.
 

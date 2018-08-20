@@ -33,3 +33,8 @@ Description
 
 Contains mouse motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+

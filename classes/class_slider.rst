@@ -29,6 +29,10 @@ Member Variables
 
 - :ref:`FocusMode<enum_control_focusmode>` **focus_mode**
 
+  .. _class_Slider_scrollable:
+
+- :ref:`bool<class_bool>` **scrollable**
+
   .. _class_Slider_tick_count:
 
 - :ref:`int<class_int>` **tick_count**

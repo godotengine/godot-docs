@@ -18,13 +18,13 @@ Member Functions
 ----------------
 
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**         |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**                                      |
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`String<class_string>` from **)**                                                                                           |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`int<class_int>` from **)**                                                                                                 |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`String<class_string>` from **)**                                                                                           |
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**                                      |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**         |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`blend<class_Color_blend>` **(** :ref:`Color<class_color>` over **)**                                                                                             |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,11 +42,19 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`linear_interpolate<class_Color_linear_interpolate>` **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t **)**                                         |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_abgr32<class_Color_to_abgr32>` **(** **)**                                                                                                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_abgr64<class_Color_to_abgr64>` **(** **)**                                                                                                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`to_argb32<class_Color_to_argb32>` **(** **)**                                                                                                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_argb64<class_Color_to_argb64>` **(** **)**                                                                                                                    |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`to_html<class_Color_to_html>` **(** :ref:`bool<class_bool>` with_alpha=True **)**                                                                                |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`to_rgba32<class_Color_to_rgba32>` **(** **)**                                                                                                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_rgba64<class_Color_to_rgba64>` **(** **)**                                                                                                                    |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -97,45 +105,164 @@ Member Variables
 - :ref:`float<class_float>` **v** - Value (0 to 1)
 
 
+Numeric Constants
+-----------------
+
+- **gray** = **Color( 0.75, 0.75, 0.75, 1 )**
+- **aliceblue** = **Color( 0.94, 0.97, 1, 1 )**
+- **antiquewhite** = **Color( 0.98, 0.92, 0.84, 1 )**
+- **aqua** = **Color( 0, 1, 1, 1 )**
+- **aquamarine** = **Color( 0.5, 1, 0.83, 1 )**
+- **azure** = **Color( 0.94, 1, 1, 1 )**
+- **beige** = **Color( 0.96, 0.96, 0.86, 1 )**
+- **bisque** = **Color( 1, 0.89, 0.77, 1 )**
+- **black** = **Color( 0, 0, 0, 1 )**
+- **blanchedalmond** = **Color( 1, 0.92, 0.8, 1 )**
+- **blue** = **Color( 0, 0, 1, 1 )**
+- **blueviolet** = **Color( 0.54, 0.17, 0.89, 1 )**
+- **brown** = **Color( 0.65, 0.16, 0.16, 1 )**
+- **burlywood** = **Color( 0.87, 0.72, 0.53, 1 )**
+- **cadetblue** = **Color( 0.37, 0.62, 0.63, 1 )**
+- **chartreuse** = **Color( 0.5, 1, 0, 1 )**
+- **chocolate** = **Color( 0.82, 0.41, 0.12, 1 )**
+- **coral** = **Color( 1, 0.5, 0.31, 1 )**
+- **cornflower** = **Color( 0.39, 0.58, 0.93, 1 )**
+- **cornsilk** = **Color( 1, 0.97, 0.86, 1 )**
+- **crimson** = **Color( 0.86, 0.08, 0.24, 1 )**
+- **cyan** = **Color( 0, 1, 1, 1 )**
+- **darkblue** = **Color( 0, 0, 0.55, 1 )**
+- **darkcyan** = **Color( 0, 0.55, 0.55, 1 )**
+- **darkgoldenrod** = **Color( 0.72, 0.53, 0.04, 1 )**
+- **darkgray** = **Color( 0.66, 0.66, 0.66, 1 )**
+- **darkgreen** = **Color( 0, 0.39, 0, 1 )**
+- **darkkhaki** = **Color( 0.74, 0.72, 0.42, 1 )**
+- **darkmagenta** = **Color( 0.55, 0, 0.55, 1 )**
+- **darkolivegreen** = **Color( 0.33, 0.42, 0.18, 1 )**
+- **darkorange** = **Color( 1, 0.55, 0, 1 )**
+- **darkorchid** = **Color( 0.6, 0.2, 0.8, 1 )**
+- **darkred** = **Color( 0.55, 0, 0, 1 )**
+- **darksalmon** = **Color( 0.91, 0.59, 0.48, 1 )**
+- **darkseagreen** = **Color( 0.56, 0.74, 0.56, 1 )**
+- **darkslateblue** = **Color( 0.28, 0.24, 0.55, 1 )**
+- **darkslategray** = **Color( 0.18, 0.31, 0.31, 1 )**
+- **darkturquoise** = **Color( 0, 0.81, 0.82, 1 )**
+- **darkviolet** = **Color( 0.58, 0, 0.83, 1 )**
+- **deeppink** = **Color( 1, 0.08, 0.58, 1 )**
+- **deepskyblue** = **Color( 0, 0.75, 1, 1 )**
+- **dimgray** = **Color( 0.41, 0.41, 0.41, 1 )**
+- **dodgerblue** = **Color( 0.12, 0.56, 1, 1 )**
+- **firebrick** = **Color( 0.7, 0.13, 0.13, 1 )**
+- **floralwhite** = **Color( 1, 0.98, 0.94, 1 )**
+- **forestgreen** = **Color( 0.13, 0.55, 0.13, 1 )**
+- **fuchsia** = **Color( 1, 0, 1, 1 )**
+- **gainsboro** = **Color( 0.86, 0.86, 0.86, 1 )**
+- **ghostwhite** = **Color( 0.97, 0.97, 1, 1 )**
+- **gold** = **Color( 1, 0.84, 0, 1 )**
+- **goldenrod** = **Color( 0.85, 0.65, 0.13, 1 )**
+- **green** = **Color( 0, 1, 0, 1 )**
+- **greenyellow** = **Color( 0.68, 1, 0.18, 1 )**
+- **honeydew** = **Color( 0.94, 1, 0.94, 1 )**
+- **hotpink** = **Color( 1, 0.41, 0.71, 1 )**
+- **indianred** = **Color( 0.8, 0.36, 0.36, 1 )**
+- **indigo** = **Color( 0.29, 0, 0.51, 1 )**
+- **ivory** = **Color( 1, 1, 0.94, 1 )**
+- **khaki** = **Color( 0.94, 0.9, 0.55, 1 )**
+- **lavender** = **Color( 0.9, 0.9, 0.98, 1 )**
+- **lavenderblush** = **Color( 1, 0.94, 0.96, 1 )**
+- **lawngreen** = **Color( 0.49, 0.99, 0, 1 )**
+- **lemonchiffon** = **Color( 1, 0.98, 0.8, 1 )**
+- **lightblue** = **Color( 0.68, 0.85, 0.9, 1 )**
+- **lightcoral** = **Color( 0.94, 0.5, 0.5, 1 )**
+- **lightcyan** = **Color( 0.88, 1, 1, 1 )**
+- **lightgoldenrod** = **Color( 0.98, 0.98, 0.82, 1 )**
+- **lightgray** = **Color( 0.83, 0.83, 0.83, 1 )**
+- **lightgreen** = **Color( 0.56, 0.93, 0.56, 1 )**
+- **lightpink** = **Color( 1, 0.71, 0.76, 1 )**
+- **lightsalmon** = **Color( 1, 0.63, 0.48, 1 )**
+- **lightseagreen** = **Color( 0.13, 0.7, 0.67, 1 )**
+- **lightskyblue** = **Color( 0.53, 0.81, 0.98, 1 )**
+- **lightslategray** = **Color( 0.47, 0.53, 0.6, 1 )**
+- **lightsteelblue** = **Color( 0.69, 0.77, 0.87, 1 )**
+- **lightyellow** = **Color( 1, 1, 0.88, 1 )**
+- **lime** = **Color( 0, 1, 0, 1 )**
+- **limegreen** = **Color( 0.2, 0.8, 0.2, 1 )**
+- **linen** = **Color( 0.98, 0.94, 0.9, 1 )**
+- **magenta** = **Color( 1, 0, 1, 1 )**
+- **maroon** = **Color( 0.69, 0.19, 0.38, 1 )**
+- **mediumaquamarine** = **Color( 0.4, 0.8, 0.67, 1 )**
+- **mediumblue** = **Color( 0, 0, 0.8, 1 )**
+- **mediumorchid** = **Color( 0.73, 0.33, 0.83, 1 )**
+- **mediumpurple** = **Color( 0.58, 0.44, 0.86, 1 )**
+- **mediumseagreen** = **Color( 0.24, 0.7, 0.44, 1 )**
+- **mediumslateblue** = **Color( 0.48, 0.41, 0.93, 1 )**
+- **mediumspringgreen** = **Color( 0, 0.98, 0.6, 1 )**
+- **mediumturquoise** = **Color( 0.28, 0.82, 0.8, 1 )**
+- **mediumvioletred** = **Color( 0.78, 0.08, 0.52, 1 )**
+- **midnightblue** = **Color( 0.1, 0.1, 0.44, 1 )**
+- **mintcream** = **Color( 0.96, 1, 0.98, 1 )**
+- **mistyrose** = **Color( 1, 0.89, 0.88, 1 )**
+- **moccasin** = **Color( 1, 0.89, 0.71, 1 )**
+- **navajowhite** = **Color( 1, 0.87, 0.68, 1 )**
+- **navyblue** = **Color( 0, 0, 0.5, 1 )**
+- **oldlace** = **Color( 0.99, 0.96, 0.9, 1 )**
+- **olive** = **Color( 0.5, 0.5, 0, 1 )**
+- **olivedrab** = **Color( 0.42, 0.56, 0.14, 1 )**
+- **orange** = **Color( 1, 0.65, 0, 1 )**
+- **orangered** = **Color( 1, 0.27, 0, 1 )**
+- **orchid** = **Color( 0.85, 0.44, 0.84, 1 )**
+- **palegoldenrod** = **Color( 0.93, 0.91, 0.67, 1 )**
+- **palegreen** = **Color( 0.6, 0.98, 0.6, 1 )**
+- **paleturquoise** = **Color( 0.69, 0.93, 0.93, 1 )**
+- **palevioletred** = **Color( 0.86, 0.44, 0.58, 1 )**
+- **papayawhip** = **Color( 1, 0.94, 0.84, 1 )**
+- **peachpuff** = **Color( 1, 0.85, 0.73, 1 )**
+- **peru** = **Color( 0.8, 0.52, 0.25, 1 )**
+- **pink** = **Color( 1, 0.75, 0.8, 1 )**
+- **plum** = **Color( 0.87, 0.63, 0.87, 1 )**
+- **powderblue** = **Color( 0.69, 0.88, 0.9, 1 )**
+- **purple** = **Color( 0.63, 0.13, 0.94, 1 )**
+- **rebeccapurple** = **Color( 0.4, 0.2, 0.6, 1 )**
+- **red** = **Color( 1, 0, 0, 1 )**
+- **rosybrown** = **Color( 0.74, 0.56, 0.56, 1 )**
+- **royalblue** = **Color( 0.25, 0.41, 0.88, 1 )**
+- **saddlebrown** = **Color( 0.55, 0.27, 0.07, 1 )**
+- **salmon** = **Color( 0.98, 0.5, 0.45, 1 )**
+- **sandybrown** = **Color( 0.96, 0.64, 0.38, 1 )**
+- **seagreen** = **Color( 0.18, 0.55, 0.34, 1 )**
+- **seashell** = **Color( 1, 0.96, 0.93, 1 )**
+- **sienna** = **Color( 0.63, 0.32, 0.18, 1 )**
+- **silver** = **Color( 0.75, 0.75, 0.75, 1 )**
+- **skyblue** = **Color( 0.53, 0.81, 0.92, 1 )**
+- **slateblue** = **Color( 0.42, 0.35, 0.8, 1 )**
+- **slategray** = **Color( 0.44, 0.5, 0.56, 1 )**
+- **snow** = **Color( 1, 0.98, 0.98, 1 )**
+- **springgreen** = **Color( 0, 1, 0.5, 1 )**
+- **steelblue** = **Color( 0.27, 0.51, 0.71, 1 )**
+- **tan** = **Color( 0.82, 0.71, 0.55, 1 )**
+- **teal** = **Color( 0, 0.5, 0.5, 1 )**
+- **thistle** = **Color( 0.85, 0.75, 0.85, 1 )**
+- **tomato** = **Color( 1, 0.39, 0.28, 1 )**
+- **turquoise** = **Color( 0.25, 0.88, 0.82, 1 )**
+- **violet** = **Color( 0.93, 0.51, 0.93, 1 )**
+- **webgray** = **Color( 0.5, 0.5, 0.5, 1 )**
+- **webgreen** = **Color( 0, 0.5, 0, 1 )**
+- **webmaroon** = **Color( 0.5, 0, 0, 1 )**
+- **webpurple** = **Color( 0.5, 0, 0.5, 1 )**
+- **wheat** = **Color( 0.96, 0.87, 0.7, 1 )**
+- **white** = **Color( 1, 1, 1, 1 )**
+- **whitesmoke** = **Color( 0.96, 0.96, 0.96, 1 )**
+- **yellow** = **Color( 1, 1, 0, 1 )**
+- **yellowgreen** = **Color( 0.6, 0.8, 0.2, 1 )**
+
 Description
 -----------
 
 A color is represented as red, green and blue (r,g,b) components. Additionally, "a" represents the alpha component, often used for transparency. Values are in floating point and usually range from 0 to 1.  Some methods (such as set_modulate(color)) may accept values > 1.
 
-You can also create a color from standardised color names with :ref:`@GDScript.ColorN<class_@GDScript_ColorN>`.
+You can also create a color from standardised color names with Color.ColorN (e.g. Color.green) or :ref:`@GDScript.ColorN<class_@GDScript_ColorN>`.
 
 Member Function Description
 ---------------------------
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
-
-Constructs a color from an RGBA profile using values between 0 and 1 (float).
-
-::
-
-    var c = Color(0.2, 1.0, .7, .8) # a color of an RGBA(51, 255, 178, 204)
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
-
-Constructs a color from an RGB profile using values between 0 and 1 (float). Alpha will always be 1.
-
-::
-
-    var c = Color(0.2, 1.0, .7) # a color of an RGBA(51, 255, 178, 255)
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>` **Color** **(** :ref:`int<class_int>` from **)**
-
-Constructs a color from a 32-bit integer (each byte represents a component of the RGBA profile).
-
-::
-
-    var c = Color(274) # a color of an RGBA(0, 0, 1, 18)
 
 .. _class_Color_Color:
 
@@ -160,6 +287,36 @@ The following string formats are supported:
     var c2 = Color("ffb2d90a")  # ARGB format
     var c3 = Color("#b2d90a")   # RGB format with '#'
     var c4 = Color("b2d90a")    # RGB format
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>` **Color** **(** :ref:`int<class_int>` from **)**
+
+Constructs a color from a 32-bit integer (each byte represents a component of the RGBA profile).
+
+::
+
+    var c = Color(274) # a color of an RGBA(0, 0, 1, 18)
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
+
+Constructs a color from an RGB profile using values between 0 and 1 (float). Alpha will always be 1.
+
+::
+
+    var c = Color(0.2, 1.0, .7) # a color of an RGBA(51, 255, 178, 255)
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
+
+Constructs a color from an RGBA profile using values between 0 and 1 (float).
+
+::
+
+    var c = Color(0.2, 1.0, .7, .8) # a color of an RGBA(51, 255, 178, 204)
 
 .. _class_Color_blend:
 
@@ -252,16 +409,49 @@ Returns the color of the linear interpolation with another color. The value t is
     var c2 = Color(0.0, 1.0, 0.0)
     var li_c = c1.linear_interpolate(c2, 0.5) # a color of an RGBA(128, 128, 0, 255)
 
-.. _class_Color_to_argb32:
+.. _class_Color_to_abgr32:
 
-- :ref:`int<class_int>` **to_argb32** **(** **)**
+- :ref:`int<class_int>` **to_abgr32** **(** **)**
 
-Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile). More compatible with DirectX.
+Returns the color's 32-bit integer in ABGR format (each byte represents a component of the ABGR profile). ABGR is the reversed version of the default format.
 
 ::
 
     var c = Color(1, .5, .2)
-    print(str(c.to_32())) # prints 4294934323
+    print(c.to_abgr32()) # Prints 4281565439
+
+.. _class_Color_to_abgr64:
+
+- :ref:`int<class_int>` **to_abgr64** **(** **)**
+
+Returns the color's 64-bit integer in ABGR format (each word represents a component of the ABGR profile). ABGR is the reversed version of the default format.
+
+::
+
+    var c = Color(1, .5, .2)
+    print(c.to_abgr64()) # Prints -225178692812801
+
+.. _class_Color_to_argb32:
+
+- :ref:`int<class_int>` **to_argb32** **(** **)**
+
+Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile). ARGB is more compatible with DirectX.
+
+::
+
+    var c = Color(1, .5, .2)
+    print(c.to_argb32()) # Prints 4294934323
+
+.. _class_Color_to_argb64:
+
+- :ref:`int<class_int>` **to_argb64** **(** **)**
+
+Returns the color's 64-bit integer in ARGB format (each word represents a component of the ARGB profile). ARGB is more compatible with DirectX.
+
+::
+
+    var c = Color(1, .5, .2)
+    print(c.to_argb64()) # Prints -2147470541
 
 .. _class_Color_to_html:
 
@@ -281,13 +471,22 @@ Optionally flag 'false' to not include alpha in hexadecimal string.
 
 - :ref:`int<class_int>` **to_rgba32** **(** **)**
 
-Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile).
+Returns the color's 32-bit integer in RGBA format (each byte represents a component of the RGBA profile). RGBA is the format that Godot uses by default.
 
 ::
 
     var c = Color(1, .5, .2)
-    print(str(c.to_32())) # prints 4294934323
+    print(c.to_rgba32()) # Prints 4286526463
 
-*This is same as :ref:`to_argb32<class_Color_to_argb32>` but may be changed later to support RGBA format instead*.
+.. _class_Color_to_rgba64:
+
+- :ref:`int<class_int>` **to_rgba64** **(** **)**
+
+Returns the color's 64-bit integer in RGBA format (each word represents a component of the RGBA profile). RGBA is the format that Godot uses by default.
+
+::
+
+    var c = Color(1, .5, .2)
+    print(c.to_rgba64()) # Prints -140736629309441
 
 

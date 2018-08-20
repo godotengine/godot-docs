@@ -33,3 +33,8 @@ Description
 
 Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
+

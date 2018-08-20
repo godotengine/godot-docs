@@ -174,6 +174,12 @@ A ``HTTPClient`` should be reused between multiple requests or to connect to dif
 
 For more information on HTTP, see https://developer.mozilla.org/en-US/docs/Web/HTTP (or read RFC 2616 to get it straight from the source: https://tools.ietf.org/html/rfc2616).
 
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/http_client_class`
+- :doc:`../tutorials/networking/ssl_certificates`
+
 Member Function Description
 ---------------------------
 

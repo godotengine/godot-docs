@@ -7,7 +7,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`JavaScript<class_javascript>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`GodotSharp<class_godotsharp>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`VisualScriptEditor<class_visualscripteditor>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
+**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`JavaScript<class_javascript>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`GodotSharp<class_godotsharp>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`VisualScriptEditor<class_visualscripteditor>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
 
 **Category:** Core
 
@@ -20,7 +20,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`_get<class_Object__get>` **(** :ref:`String<class_string>` property **)** virtual                                                                                                                                          |
+| :ref:`Variant<class_variant>`                  | :ref:`_get<class_Object__get>` **(** :ref:`String<class_string>` property **)** virtual                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                      | :ref:`_get_property_list<class_Object__get_property_list>` **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -131,6 +131,7 @@ enum **ConnectFlags**
 - **CONNECT_DEFERRED** = **1** --- Connect a signal in deferred mode. This way, signal emissions are stored in a queue, then set on idle time.
 - **CONNECT_PERSIST** = **2** --- Persisting connections are saved when the object is serialized to file.
 - **CONNECT_ONESHOT** = **4** --- One shot connections disconnect themselves after emission.
+- **CONNECT_REFERENCE_COUNTED** = **8**
 
 
 Description
@@ -151,7 +152,7 @@ Member Function Description
 
 .. _class_Object__get:
 
-- void **_get** **(** :ref:`String<class_string>` property **)** virtual
+- :ref:`Variant<class_variant>` **_get** **(** :ref:`String<class_string>` property **)** virtual
 
 Returns the given property. Returns ``null`` if the ``property`` does not exist.
 
@@ -262,6 +263,10 @@ Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
 .. _class_Object_get_indexed:
 
 - :ref:`Variant<class_variant>` **get_indexed** **(** :ref:`NodePath<class_nodepath>` property **)** const
+
+Get indexed object property by String.
+
+Property indices get accessed with colon seperation, for example: ``position:x``
 
 .. _class_Object_get_instance_id:
 

@@ -9,6 +9,8 @@ MeshInstance
 
 **Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`SoftBody<class_softbody>`
+
 **Category:** Core
 
 Brief Description

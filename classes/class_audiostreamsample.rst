@@ -16,6 +16,13 @@ Brief Description
 
 Plays audio.
 
+Member Functions
+----------------
+
++-------+------------------------------------------------------------------------------------------------------+
+| void  | :ref:`save_to_wav<class_AudioStreamSample_save_to_wav>` **(** :ref:`String<class_string>` path **)** |
++-------+------------------------------------------------------------------------------------------------------+
+
 Member Variables
 ----------------
 
@@ -72,4 +79,12 @@ Description
 -----------
 
 Plays audio, can loop.
+
+Member Function Description
+---------------------------
+
+.. _class_AudioStreamSample_save_to_wav:
+
+- void **save_to_wav** **(** :ref:`String<class_string>` path **)**
+
 

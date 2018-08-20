@@ -26,6 +26,8 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`get_camera_transform<class_Camera_get_camera_transform>` **(** **)** const                                                                                  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_cull_mask_bit<class_Camera_get_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                                                            |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_position_behind<class_Camera_is_position_behind>` **(** :ref:`Vector3<class_vector3>` world_point **)** const                                            |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`make_current<class_Camera_make_current>` **(** **)**                                                                                                        |
@@ -37,6 +39,8 @@ Member Functions
 | :ref:`Vector3<class_vector3>`      | :ref:`project_ray_normal<class_Camera_project_ray_normal>` **(** :ref:`Vector2<class_vector2>` screen_point **)** const                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`      | :ref:`project_ray_origin<class_Camera_project_ray_origin>` **(** :ref:`Vector2<class_vector2>` screen_point **)** const                                           |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_cull_mask_bit<class_Camera_set_cull_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**                                  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_orthogonal<class_Camera_set_orthogonal>` **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -143,6 +147,10 @@ If this is the current Camera, remove it from being current. If ``enable_next`` 
 
 Gets the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_node>` transform.
 
+.. _class_Camera_get_cull_mask_bit:
+
+- :ref:`bool<class_bool>` **get_cull_mask_bit** **(** :ref:`int<class_int>` layer **)** const
+
 .. _class_Camera_is_position_behind:
 
 - :ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_vector3>` world_point **)** const
@@ -178,6 +186,10 @@ Returns a normal vector in worldspace, that is the result of projecting a point 
 - :ref:`Vector3<class_vector3>` **project_ray_origin** **(** :ref:`Vector2<class_vector2>` screen_point **)** const
 
 Returns a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+
+.. _class_Camera_set_cull_mask_bit:
+
+- void **set_cull_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enable **)**
 
 .. _class_Camera_set_orthogonal:
 

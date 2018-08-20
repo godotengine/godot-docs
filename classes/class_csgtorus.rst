@@ -14,33 +14,38 @@ CSGTorus
 Brief Description
 -----------------
 
-
+A CSG Torus shape.
 
 Member Variables
 ----------------
 
   .. _class_CSGTorus_inner_radius:
 
-- :ref:`float<class_float>` **inner_radius**
+- :ref:`float<class_float>` **inner_radius** - The inner radius of the torus.
 
   .. _class_CSGTorus_material:
 
-- :ref:`Material<class_material>` **material**
+- :ref:`Material<class_material>` **material** - The material used to render the torus.
 
   .. _class_CSGTorus_outer_radius:
 
-- :ref:`float<class_float>` **outer_radius**
+- :ref:`float<class_float>` **outer_radius** - The outer radius of the torus.
 
   .. _class_CSGTorus_ring_sides:
 
-- :ref:`int<class_int>` **ring_sides**
+- :ref:`int<class_int>` **ring_sides** - The number of edges each ring of the torus is constructed of.
 
   .. _class_CSGTorus_sides:
 
-- :ref:`int<class_int>` **sides**
+- :ref:`int<class_int>` **sides** - The number of slices the torus is constructed of.
 
   .. _class_CSGTorus_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces**
+- :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the torus are set to give a smooth effect making the torus seem rounded. When false the torus will have a flat shaded look.
 
+
+Description
+-----------
+
+This node allows you to create a torus for use with the CSG system.
 

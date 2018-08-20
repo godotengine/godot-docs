@@ -14,22 +14,22 @@ ColorRect
 Brief Description
 -----------------
 
-Colored rect for canvas.
+Colored rectangle.
 
 Member Variables
 ----------------
 
   .. _class_ColorRect_color:
 
-- :ref:`Color<class_color>` **color** - The color to fill the ``ColorRect``.
+- :ref:`Color<class_color>` **color** - The fill color.
 
 ::
 
-    $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect node's color to red
+    $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect's color to red.
 
 
 Description
 -----------
 
-An object that is represented on the canvas as a rect with color. :ref:`Color<class_color>` is used to set or get color info for the rect.
+Displays a colored rectangle.
 

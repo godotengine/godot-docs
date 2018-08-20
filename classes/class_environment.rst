@@ -271,6 +271,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **ss_reflections_roughness**
 
+  .. _class_Environment_ssao_ao_channel_affect:
+
+- :ref:`float<class_float>` **ssao_ao_channel_affect**
+
   .. _class_Environment_ssao_bias:
 
 - :ref:`float<class_float>` **ssao_bias**
@@ -403,4 +407,10 @@ Resource for environment nodes (like :ref:`WorldEnvironment<class_worldenvironme
 - Tonemap (auto exposure)
 
 - Adjustments
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/environment_and_post_processing`
+- :doc:`../tutorials/3d/high_dynamic_range`
 

@@ -24,6 +24,14 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`_integrate_forces<class_RigidBody__integrate_forces>` **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state **)** virtual |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_central_force<class_RigidBody_add_central_force>` **(** :ref:`Vector3<class_vector3>` force **)**                                       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_force<class_RigidBody_add_force>` **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**               |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_torque<class_RigidBody_add_torque>` **(** :ref:`Vector3<class_vector3>` torque **)**                                                    |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`apply_central_impulse<class_RigidBody_apply_central_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                             |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`apply_impulse<class_RigidBody_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`apply_torque_impulse<class_RigidBody_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                               |
@@ -156,6 +164,10 @@ Continuous collision detection tries to predict where a moving body will collide
 
 - :ref:`Mode<enum_rigidbody_mode>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
 
+  .. _class_RigidBody_physics_material_override:
+
+- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
+
   .. _class_RigidBody_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping** - If ``true`` RigidBody is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
@@ -189,6 +201,11 @@ A RigidBody has 4 behavior :ref:`mode<class_RigidBody_mode>`\ s: Rigid, Static, 
 
 If you need to override the default physics behavior, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody_custom_integrator>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
+
 Member Function Description
 ---------------------------
 
@@ -197,6 +214,22 @@ Member Function Description
 - void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state **)** virtual
 
 Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
+
+.. _class_RigidBody_add_central_force:
+
+- void **add_central_force** **(** :ref:`Vector3<class_vector3>` force **)**
+
+.. _class_RigidBody_add_force:
+
+- void **add_force** **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**
+
+.. _class_RigidBody_add_torque:
+
+- void **add_torque** **(** :ref:`Vector3<class_vector3>` torque **)**
+
+.. _class_RigidBody_apply_central_impulse:
+
+- void **apply_central_impulse** **(** :ref:`Vector3<class_vector3>` impulse **)**
 
 .. _class_RigidBody_apply_impulse:
 

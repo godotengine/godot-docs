@@ -22,6 +22,18 @@ Member Functions
 ----------------
 
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`add_central_force<class_Physics2DDirectBodyState_add_central_force>` **(** :ref:`Vector2<class_vector2>` force **)**                                                     |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`add_force<class_Physics2DDirectBodyState_add_force>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                               |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`add_torque<class_Physics2DDirectBodyState_add_torque>` **(** :ref:`float<class_float>` torque **)**                                                                      |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`apply_central_impulse<class_Physics2DDirectBodyState_apply_central_impulse>` **(** :ref:`Vector2<class_vector2>` impulse **)**                                           |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`apply_impulse<class_Physics2DDirectBodyState_apply_impulse>` **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**                     |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`apply_torque_impulse<class_Physics2DDirectBodyState_apply_torque_impulse>` **(** :ref:`float<class_float>` impulse **)**                                                 |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`get_contact_collider<class_Physics2DDirectBodyState_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** const                                           |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_contact_collider_id<class_Physics2DDirectBodyState_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** const                                     |
@@ -100,6 +112,30 @@ Direct access object to a physics body in the :ref:`Physics2DServer<class_physic
 
 Member Function Description
 ---------------------------
+
+.. _class_Physics2DDirectBodyState_add_central_force:
+
+- void **add_central_force** **(** :ref:`Vector2<class_vector2>` force **)**
+
+.. _class_Physics2DDirectBodyState_add_force:
+
+- void **add_force** **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**
+
+.. _class_Physics2DDirectBodyState_add_torque:
+
+- void **add_torque** **(** :ref:`float<class_float>` torque **)**
+
+.. _class_Physics2DDirectBodyState_apply_central_impulse:
+
+- void **apply_central_impulse** **(** :ref:`Vector2<class_vector2>` impulse **)**
+
+.. _class_Physics2DDirectBodyState_apply_impulse:
+
+- void **apply_impulse** **(** :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` impulse **)**
+
+.. _class_Physics2DDirectBodyState_apply_torque_impulse:
+
+- void **apply_torque_impulse** **(** :ref:`float<class_float>` impulse **)**
 
 .. _class_Physics2DDirectBodyState_get_contact_collider:
 

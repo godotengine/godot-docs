@@ -80,6 +80,11 @@ Here is an example on how to iterate through the files of a directory:
         else:
             print("An error occurred when trying to access the path.")
 
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/filesystem`
+
 Member Function Description
 ---------------------------
 

@@ -56,6 +56,12 @@ Description
 
 Base class of all sort of input event. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+- :doc:`../tutorials/2d/2d_transforms`
+
 Member Function Description
 ---------------------------
 

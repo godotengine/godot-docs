@@ -9,6 +9,8 @@ Shader
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`VisualShader<class_visualshader>`
+
 **Category:** Core
 
 Brief Description
@@ -53,6 +55,11 @@ Description
 -----------
 
 This class allows you to define a custom shader program that can be used for various materials to render objects.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/shading/index`
 
 Member Function Description
 ---------------------------

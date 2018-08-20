@@ -21,8 +21,6 @@ Description
 
 This is a helper class to generate a flat :ref:`Button<class_button>` (see :ref:`Button.set_flat<class_Button_set_flat>`), creating a ToolButton is equivalent to:
 
-
-
 ::
 
     var btn = Button.new()

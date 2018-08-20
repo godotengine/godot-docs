@@ -43,7 +43,5 @@ Band 9 : 8000 Hz
 
 Band 10 : 16000 Hz
 
-
-
 See also :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ21<class_audioeffecteq21>`.
 

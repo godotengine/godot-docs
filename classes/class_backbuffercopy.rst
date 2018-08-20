@@ -14,7 +14,7 @@ BackBufferCopy
 Brief Description
 -----------------
 
-Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with the texscreen() shader instruction.
+Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with ``SCREEN_TEXTURE`` in the ``texture()`` function.
 
 Member Variables
 ----------------
@@ -43,5 +43,5 @@ enum **CopyMode**
 Description
 -----------
 
-Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Accessing this buffer is done with the texscreen() shader instruction.
+Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use ``SCREEN_TEXTURE`` in the ``texture()`` function to access the buffer.
 

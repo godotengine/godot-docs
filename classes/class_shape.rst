@@ -9,7 +9,7 @@ Shape
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`PlaneShape<class_planeshape>`, :ref:`SphereShape<class_sphereshape>`, :ref:`CapsuleShape<class_capsuleshape>`, :ref:`BoxShape<class_boxshape>`, :ref:`ConvexPolygonShape<class_convexpolygonshape>`, :ref:`RayShape<class_rayshape>`, :ref:`ConcavePolygonShape<class_concavepolygonshape>`
+**Inherited By:** :ref:`CylinderShape<class_cylindershape>`, :ref:`RayShape<class_rayshape>`, :ref:`SphereShape<class_sphereshape>`, :ref:`CapsuleShape<class_capsuleshape>`, :ref:`BoxShape<class_boxshape>`, :ref:`ConvexPolygonShape<class_convexpolygonshape>`, :ref:`PlaneShape<class_planeshape>`, :ref:`ConcavePolygonShape<class_concavepolygonshape>`
 
 **Category:** Core
 
@@ -22,4 +22,9 @@ Description
 -----------
 
 Base class for all 3D shape resources. All 3D shapes that inherit from this can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
 

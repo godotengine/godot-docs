@@ -14,29 +14,34 @@ CSGSphere
 Brief Description
 -----------------
 
-
+A CSG Sphere shape.
 
 Member Variables
 ----------------
 
   .. _class_CSGSphere_material:
 
-- :ref:`Material<class_material>` **material**
+- :ref:`Material<class_material>` **material** - The material used to render the sphere.
 
   .. _class_CSGSphere_radial_segments:
 
-- :ref:`int<class_int>` **radial_segments**
+- :ref:`int<class_int>` **radial_segments** - Number of vertical slices for the sphere.
 
   .. _class_CSGSphere_radius:
 
-- :ref:`float<class_float>` **radius**
+- :ref:`float<class_float>` **radius** - Radius of the sphere.
 
   .. _class_CSGSphere_rings:
 
-- :ref:`int<class_int>` **rings**
+- :ref:`int<class_int>` **rings** - Number of horizontal slices for the sphere.
 
   .. _class_CSGSphere_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces**
+- :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the sphere are set to give a smooth effect making the sphere seem rounded. When false the sphere will have a flat shaded look.
 
+
+Description
+-----------
+
+This node allows you to create a sphere for use with the CSG system.
 

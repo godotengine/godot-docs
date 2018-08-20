@@ -24,7 +24,7 @@ Member Functions
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`empty<class_Dictionary_empty>` **(** **)**                                            |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| void                                 | :ref:`erase<class_Dictionary_erase>` **(** var key **)**                                    |
+| :ref:`bool<class_bool>`              | :ref:`erase<class_Dictionary_erase>` **(** var key **)**                                    |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`has<class_Dictionary_has>` **(** var key **)**                                        |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
@@ -67,7 +67,7 @@ Return true if the dictionary is empty.
 
 .. _class_Dictionary_erase:
 
-- void **erase** **(** var key **)**
+- :ref:`bool<class_bool>` **erase** **(** var key **)**
 
 Erase a dictionary key/value pair by key.
 

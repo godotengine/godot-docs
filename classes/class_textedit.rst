@@ -48,6 +48,8 @@ Member Functions
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`fold_line<class_TextEdit_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                           |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                | :ref:`get_breakpoints<class_TextEdit_get_breakpoints>` **(** **)** const                                                                                                                                                    |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`get_keyword_color<class_TextEdit_get_keyword_color>` **(** :ref:`String<class_string>` keyword **)** const                                                                                                            |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`              | :ref:`get_line<class_TextEdit_get_line>` **(** :ref:`int<class_int>` line **)** const                                                                                                                                       |
@@ -83,6 +85,8 @@ Member Functions
 | void                                     | :ref:`paste<class_TextEdit_paste>` **(** **)**                                                                                                                                                                              |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`redo<class_TextEdit_redo>` **(** **)**                                                                                                                                                                                |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`remove_breakpoints<class_TextEdit_remove_breakpoints>` **(** **)**                                                                                                                                                    |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`  | :ref:`search<class_TextEdit_search>` **(** :ref:`String<class_string>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const                                     |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,6 +137,10 @@ Emitted when the text changes.
 
 Member Variables
 ----------------
+
+  .. _class_TextEdit_breakpoint_gutter:
+
+- :ref:`bool<class_bool>` **breakpoint_gutter** - If ``true`` the breakpoint gutter is visible.
 
   .. _class_TextEdit_caret_blink:
 
@@ -309,6 +317,12 @@ Clears the current selection.
 
 - void **fold_line** **(** :ref:`int<class_int>` line **)**
 
+.. _class_TextEdit_get_breakpoints:
+
+- :ref:`Array<class_array>` **get_breakpoints** **(** **)** const
+
+Return an array containing the line number of each breakpoint.
+
 .. _class_TextEdit_get_keyword_color:
 
 - :ref:`Color<class_color>` **get_keyword_color** **(** :ref:`String<class_string>` keyword **)** const
@@ -402,6 +416,12 @@ Paste the current selection.
 - void **redo** **(** **)**
 
 Perform redo operation.
+
+.. _class_TextEdit_remove_breakpoints:
+
+- void **remove_breakpoints** **(** **)**
+
+Removes all the breakpoints (without firing "breakpoint_toggled" signal).
 
 .. _class_TextEdit_search:
 

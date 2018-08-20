@@ -58,6 +58,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`normalized<class_Vector2_normalized>` **(** **)**                                                                                                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`project<class_Vector2_project>` **(** :ref:`Vector2<class_vector2>` b **)**                                                                                                                             |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`reflect<class_Vector2_reflect>` **(** :ref:`Vector2<class_vector2>` n **)**                                                                                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`rotated<class_Vector2_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
@@ -85,10 +87,25 @@ Member Variables
 - :ref:`float<class_float>` **y** - The vector's y component.
 
 
+Numeric Constants
+-----------------
+
+- **ZERO** = **Vector2( 0, 0 )**
+- **INF** = **Vector2( inf, inf )**
+- **LEFT** = **Vector2( -1, 0 )**
+- **RIGHT** = **Vector2( 1, 0 )**
+- **UP** = **Vector2( 0, -1 )**
+- **DOWN** = **Vector2( 0, 1 )**
+
 Description
 -----------
 
 2-element structure that can be used to represent positions in 2d space or any other pair of numeric values.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Member Function Description
 ---------------------------
@@ -141,6 +158,8 @@ Returns the vector "bounced off" from a plane defined by the given normal.
 
 - :ref:`Vector2<class_vector2>` **ceil** **(** **)**
 
+Returns the vector with all components rounded up.
+
 .. _class_Vector2_clamped:
 
 - :ref:`Vector2<class_vector2>` **clamped** **(** :ref:`float<class_float>` length **)**
@@ -181,7 +200,7 @@ Returns the dot product with vector ``b``.
 
 - :ref:`Vector2<class_vector2>` **floor** **(** **)**
 
-Remove the fractional part of x and y.
+Returns the vector with all components rounded down.
 
 .. _class_Vector2_is_normalized:
 
@@ -213,6 +232,12 @@ Returns the result of the linear interpolation between this vector and ``b`` by 
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
+.. _class_Vector2_project:
+
+- :ref:`Vector2<class_vector2>` **project** **(** :ref:`Vector2<class_vector2>` b **)**
+
+Returns the vector projected onto the vector ``b``.
+
 .. _class_Vector2_reflect:
 
 - :ref:`Vector2<class_vector2>` **reflect** **(** :ref:`Vector2<class_vector2>` n **)**
@@ -228,6 +253,8 @@ Returns the vector rotated by ``phi`` radians.
 .. _class_Vector2_round:
 
 - :ref:`Vector2<class_vector2>` **round** **(** **)**
+
+Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 .. _class_Vector2_slerp:
 

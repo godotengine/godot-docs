@@ -62,6 +62,8 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_bone_global_pose<class_Skeleton_set_bone_global_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_transform>` pose **)**        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_bone_ignore_animation<class_Skeleton_set_bone_ignore_animation>` **(** :ref:`int<class_int>` bone, :ref:`bool<class_bool>` ignore **)**          |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_bone_parent<class_Skeleton_set_bone_parent>` **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` parent_idx **)**                        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_bone_pose<class_Skeleton_set_bone_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_transform>` pose **)**                      |
@@ -82,6 +84,10 @@ Description
 -----------
 
 Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_animation>`). Skeleton will support rag doll dynamics in the future.
+
+The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
+
+Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
 
 Member Function Description
 ---------------------------
@@ -120,15 +126,19 @@ Return the amount of bones in the skeleton.
 
 - :ref:`Transform<class_transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
+Return the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
+
 .. _class_Skeleton_get_bone_global_pose:
 
 - :ref:`Transform<class_transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** const
+
+Return the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
 .. _class_Skeleton_get_bone_name:
 
 - :ref:`String<class_string>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the name of the bone at index "index"
+Return the name of the bone at index "index".
 
 .. _class_Skeleton_get_bone_parent:
 
@@ -140,7 +150,7 @@ Return the bone index which is the parent of the bone at "bone_idx". If -1, then
 
 - :ref:`Transform<class_transform>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
-Return the pose transform for bone "bone_idx".
+Return the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
 
 .. _class_Skeleton_get_bone_rest:
 
@@ -151,6 +161,8 @@ Return the rest transform for a bone "bone_idx".
 .. _class_Skeleton_get_bone_transform:
 
 - :ref:`Transform<class_transform>` **get_bone_transform** **(** :ref:`int<class_int>` bone_idx **)** const
+
+Return the combination of custom pose and pose. The returned transform is in skeleton's reference frame.
 
 .. _class_Skeleton_get_bound_child_nodes_to_bone:
 
@@ -189,6 +201,10 @@ Deprecated soon.
 .. _class_Skeleton_set_bone_global_pose:
 
 - void **set_bone_global_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_transform>` pose **)**
+
+.. _class_Skeleton_set_bone_ignore_animation:
+
+- void **set_bone_ignore_animation** **(** :ref:`int<class_int>` bone, :ref:`bool<class_bool>` ignore **)**
 
 .. _class_Skeleton_set_bone_parent:
 

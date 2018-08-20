@@ -36,6 +36,11 @@ Description
 
 Direct access object to a space in the :ref:`PhysicsServer<class_physicsserver>`. It's used mainly to do queries against objects and areas residing in a given space.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
+
 Member Function Description
 ---------------------------
 

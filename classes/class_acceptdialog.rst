@@ -40,7 +40,7 @@ Signals
 
 - **confirmed** **(** **)**
 
-Emitted when the dialog is accepted.
+Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 .. _class_AcceptDialog_custom_action:
 
@@ -54,7 +54,9 @@ Member Variables
 
   .. _class_AcceptDialog_dialog_hide_on_ok:
 
-- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when accepted. Default value: ``true``.
+- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_confirmed>` signal, and handle hiding the dialog in your own logic. Default value: ``true``.
+
+Note: Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_filedialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such this property can't be used in :ref:`FileDialog<class_filedialog>` to disable hiding the dialog when pressing OK.
 
   .. _class_AcceptDialog_dialog_text:
 

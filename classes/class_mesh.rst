@@ -91,7 +91,7 @@ enum **ArrayFormat**
 - **ARRAY_COMPRESS_INDEX** = **131072**
 - **ARRAY_FLAG_USE_2D_VERTICES** = **262144**
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288**
-- **ARRAY_COMPRESS_DEFAULT** = **97792**
+- **ARRAY_COMPRESS_DEFAULT** = **97280**
 
   .. _enum_Mesh_PrimitiveType:
 

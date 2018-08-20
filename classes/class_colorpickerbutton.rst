@@ -19,11 +19,11 @@ Button that pops out a :ref:`ColorPicker<class_colorpicker>`.
 Member Functions
 ----------------
 
-+----------------------------------------+-----------------------------------------------------------------------+
-| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)**     |
-+----------------------------------------+-----------------------------------------------------------------------+
-| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)** const |
-+----------------------------------------+-----------------------------------------------------------------------+
++----------------------------------------+-------------------------------------------------------------------+
+| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
++----------------------------------------+-------------------------------------------------------------------+
+| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
++----------------------------------------+-------------------------------------------------------------------+
 
 Signals
 -------
@@ -54,7 +54,7 @@ Member Variables
 Description
 -----------
 
-Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pressing a button, pressing the button will toggle the :ref:`ColorPicker<class_colorpicker>` visibility
+Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_colorpicker>` visibility.
 
 Member Function Description
 ---------------------------
@@ -63,12 +63,12 @@ Member Function Description
 
 - :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)**
 
-Returns the ``ColorPicker`` that this ``ColorPickerButton`` toggles.
+Returns the :ref:`ColorPicker<class_colorpicker>` that this node toggles.
 
 .. _class_ColorPickerButton_get_popup:
 
-- :ref:`PopupPanel<class_popuppanel>` **get_popup** **(** **)** const
+- :ref:`PopupPanel<class_popuppanel>` **get_popup** **(** **)**
 
-Returns the control's :ref:`PopupPanel<class_popuppanel>` which allows you to connect to Popup Signals. This allows you to handle events when the ColorPicker is shown or hidden.
+Returns the control's :ref:`PopupPanel<class_popuppanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
 

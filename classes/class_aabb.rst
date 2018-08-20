@@ -82,6 +82,11 @@ Description
 
 AABB consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+
 Member Function Description
 ---------------------------
 

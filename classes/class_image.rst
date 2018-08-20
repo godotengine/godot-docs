@@ -94,6 +94,8 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@globalscope_error>`      | :ref:`load_png_from_buffer<class_Image_load_png_from_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@globalscope_error>`      | :ref:`load_webp_from_buffer<class_Image_load_webp_from_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                                                                                                                              |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`lock<class_Image_lock>` **(** **)**                                                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`normalmap_to_xy<class_Image_normalmap_to_xy>` **(** **)**                                                                                                                                                                                           |
@@ -103,6 +105,8 @@ Member Functions
 | void                                       | :ref:`resize<class_Image_resize>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_image_interpolation>` interpolation=1 **)**                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`resize_to_po2<class_Image_resize_to_po2>` **(** :ref:`bool<class_bool>` square=false **)**                                                                                                                                                          |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`                  | :ref:`rgbe_to_srgb<class_Image_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@globalscope_error>`      | :ref:`save_png<class_Image_save_png>` **(** :ref:`String<class_string>` path **)** const                                                                                                                                                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -145,6 +149,13 @@ enum **Interpolation**
 - **INTERPOLATE_NEAREST** = **0**
 - **INTERPOLATE_BILINEAR** = **1**
 - **INTERPOLATE_CUBIC** = **2**
+- **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most suited mipmap levels, then linearly interpolates between them.
+
+It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, with much less aliasing artifacts.
+
+If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
+
+On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
   .. _enum_Image_AlphaMode:
 
@@ -432,6 +443,12 @@ Loads an image from the binary contents of a JPEG file.
 
 Loads an image from the binary contents of a PNG file.
 
+.. _class_Image_load_webp_from_buffer:
+
+- :ref:`Error<enum_@globalscope_error>` **load_webp_from_buffer** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+
+Loads an image from the binary contents of a WebP file.
+
 .. _class_Image_lock:
 
 - void **lock** **(** **)**
@@ -461,6 +478,10 @@ Resizes the image to the given ``width`` and ``height``. New pixels are calculat
 - void **resize_to_po2** **(** :ref:`bool<class_bool>` square=false **)**
 
 Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same.
+
+.. _class_Image_rgbe_to_srgb:
+
+- :ref:`Image<class_image>` **rgbe_to_srgb** **(** **)**
 
 .. _class_Image_save_png:
 

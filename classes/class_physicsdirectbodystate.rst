@@ -28,6 +28,8 @@ Member Functions
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`add_torque<class_PhysicsDirectBodyState_add_torque>` **(** :ref:`Vector3<class_vector3>` torque **)**                                                                  |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`apply_central_impulse<class_PhysicsDirectBodyState_apply_central_impulse>` **(** :ref:`Vector3<class_vector3>` j **)**                                                 |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`apply_impulse<class_PhysicsDirectBodyState_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` j **)**                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`apply_torque_impulse<class_PhysicsDirectBodyState_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` j **)**                                                   |
@@ -45,6 +47,8 @@ Member Functions
 | :ref:`Vector3<class_vector3>`                                  | :ref:`get_contact_collider_velocity_at_position<class_PhysicsDirectBodyState_get_contact_collider_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** const |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`get_contact_count<class_PhysicsDirectBodyState_get_contact_count>` **(** **)** const                                                                                   |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`get_contact_impulse<class_PhysicsDirectBodyState_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** const                                             |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                                  | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** const                                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,6 +128,10 @@ Member Function Description
 
 - void **add_torque** **(** :ref:`Vector3<class_vector3>` torque **)**
 
+.. _class_PhysicsDirectBodyState_apply_central_impulse:
+
+- void **apply_central_impulse** **(** :ref:`Vector3<class_vector3>` j **)**
+
 .. _class_PhysicsDirectBodyState_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` j **)**
@@ -159,6 +167,12 @@ Member Function Description
 .. _class_PhysicsDirectBodyState_get_contact_count:
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
+
+.. _class_PhysicsDirectBodyState_get_contact_impulse:
+
+- :ref:`float<class_float>` **get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** const
+
+Impulse created by the contact. Only implemented for Bullet physics.
 
 .. _class_PhysicsDirectBodyState_get_contact_local_normal:
 

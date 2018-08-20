@@ -24,6 +24,12 @@ Member Functions
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`add_bus_effect<class_AudioServer_add_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` at_position=-1 **)** |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                       | :ref:`capture_get_device<class_AudioServer_capture_get_device>` **(** **)**                                                                                                           |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                         | :ref:`capture_get_device_list<class_AudioServer_capture_get_device_list>` **(** **)**                                                                                                 |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`capture_set_device<class_AudioServer_capture_set_device>` **(** :ref:`String<class_string>` name **)**                                                                          |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_audiobuslayout>`       | :ref:`generate_bus_layout<class_AudioServer_generate_bus_layout>` **(** **)** const                                                                                                   |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_bus_count<class_AudioServer_get_bus_count>` **(** **)** const                                                                                                               |
@@ -86,7 +92,7 @@ Member Functions
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_bus_volume_db<class_AudioServer_set_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**                                          |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_device<class_AudioServer_set_device>` **(** :ref:`String<class_string>` arg0 **)**                                                                                          |
+| void                                              | :ref:`set_device<class_AudioServer_set_device>` **(** :ref:`String<class_string>` device **)**                                                                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`swap_bus_effects<class_AudioServer_swap_bus_effects>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**          |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,6 +126,11 @@ Description
 
 AudioServer is a low level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_buses`
+
 Member Function Description
 ---------------------------
 
@@ -134,6 +145,18 @@ Adds a bus at ``at_position``.
 - void **add_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` at_position=-1 **)**
 
 Adds an :ref:`AudioEffect<class_audioeffect>` effect to the bus ``bus_idx`` at ``at_position``.
+
+.. _class_AudioServer_capture_get_device:
+
+- :ref:`String<class_string>` **capture_get_device** **(** **)**
+
+.. _class_AudioServer_capture_get_device_list:
+
+- :ref:`Array<class_array>` **capture_get_device_list** **(** **)**
+
+.. _class_AudioServer_capture_set_device:
+
+- void **capture_set_device** **(** :ref:`String<class_string>` name **)**
 
 .. _class_AudioServer_generate_bus_layout:
 
@@ -319,7 +342,7 @@ Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
 .. _class_AudioServer_set_device:
 
-- void **set_device** **(** :ref:`String<class_string>` arg0 **)**
+- void **set_device** **(** :ref:`String<class_string>` device **)**
 
 .. _class_AudioServer_swap_bus_effects:
 

@@ -38,7 +38,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_radio_check_shortcut<class_PopupMenu_add_radio_check_shortcut>` **(** :ref:`ShortCut<class_shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                      |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_separator<class_PopupMenu_add_separator>` **(** **)**                                                                                                                                                                        |
+| void                             | :ref:`add_separator<class_PopupMenu_add_separator>` **(** :ref:`String<class_string>` label="" **)**                                                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_shortcut<class_PopupMenu_add_shortcut>` **(** :ref:`ShortCut<class_shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,6 +66,8 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_item_tooltip<class_PopupMenu_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_hide_on_window_lose_focus<class_PopupMenu_is_hide_on_window_lose_focus>` **(** **)** const                                                                                                                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checkable<class_PopupMenu_is_item_checkable>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checked<class_PopupMenu_is_item_checked>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                    |
@@ -76,7 +78,11 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_separator<class_PopupMenu_is_item_separator>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_item_shortcut_disabled<class_PopupMenu_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`remove_item<class_PopupMenu_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                  |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_on_window_lose_focus<class_PopupMenu_set_hide_on_window_lose_focus>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                         |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_accelerator<class_PopupMenu_set_item_accelerator>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` accel **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +105,8 @@ Member Functions
 | void                             | :ref:`set_item_multistate<class_PopupMenu_set_item_multistate>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` state **)**                                                                                                     |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_shortcut<class_PopupMenu_set_item_shortcut>` **(** :ref:`int<class_int>` idx, :ref:`ShortCut<class_shortcut>` shortcut, :ref:`bool<class_bool>` global=false **)**                                                      |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_shortcut_disabled<class_PopupMenu_set_item_shortcut_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_submenu<class_PopupMenu_set_item_submenu>` **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` submenu **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -147,6 +155,10 @@ Member Variables
   .. _class_PopupMenu_hide_on_state_item_selection:
 
 - :ref:`bool<class_bool>` **hide_on_state_item_selection**
+
+  .. _class_PopupMenu_submenu_popup_delay:
+
+- :ref:`float<class_float>` **submenu_popup_delay** - Sets the delay time for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item. Default value: ``0.3`` seconds.
 
 
 Description
@@ -207,7 +219,7 @@ The same as :ref:`add_check_item<class_PopupMenu_add_check_item>` but the insert
 
 .. _class_PopupMenu_add_separator:
 
-- void **add_separator** **(** **)**
+- void **add_separator** **(** :ref:`String<class_string>` label="" **)**
 
 Add a separator between items. Separators also occupy an index.
 
@@ -283,6 +295,10 @@ Return the text of the item at index "idx".
 
 - :ref:`String<class_string>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
+.. _class_PopupMenu_is_hide_on_window_lose_focus:
+
+- :ref:`bool<class_bool>` **is_hide_on_window_lose_focus** **(** **)** const
+
 .. _class_PopupMenu_is_item_checkable:
 
 - :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
@@ -313,11 +329,19 @@ Return whether the item at index "idx" has radio-button-style checkability. Reme
 
 Return whether the item is a separator. If it is, it would be displayed as a line.
 
+.. _class_PopupMenu_is_item_shortcut_disabled:
+
+- :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` idx **)** const
+
 .. _class_PopupMenu_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
 Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
+.. _class_PopupMenu_set_hide_on_window_lose_focus:
+
+- void **set_hide_on_window_lose_focus** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_PopupMenu_set_item_accelerator:
 
@@ -380,6 +404,10 @@ Sets the metadata of an item, which might be of any type. You can later get it w
 .. _class_PopupMenu_set_item_shortcut:
 
 - void **set_item_shortcut** **(** :ref:`int<class_int>` idx, :ref:`ShortCut<class_shortcut>` shortcut, :ref:`bool<class_bool>` global=false **)**
+
+.. _class_PopupMenu_set_item_shortcut_disabled:
+
+- void **set_item_shortcut_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
 .. _class_PopupMenu_set_item_submenu:
 

@@ -47,3 +47,8 @@ Description
 
 Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

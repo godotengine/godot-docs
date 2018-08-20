@@ -14,26 +14,26 @@ OmniLight
 Brief Description
 -----------------
 
-OmniDirectional Light, such as a light bulb or a candle.
+Omnidirectional light, such as a light bulb or a candle.
 
 Member Variables
 ----------------
 
   .. _class_OmniLight_omni_attenuation:
 
-- :ref:`float<class_float>` **omni_attenuation**
+- :ref:`float<class_float>` **omni_attenuation** - The light's attenuation (drop-off) curve. A number of presets are available in the Inspector.
 
   .. _class_OmniLight_omni_range:
 
-- :ref:`float<class_float>` **omni_range**
+- :ref:`float<class_float>` **omni_range** - Maximum distance the light affects.
 
   .. _class_OmniLight_omni_shadow_detail:
 
-- :ref:`ShadowDetail<enum_omnilight_shadowdetail>` **omni_shadow_detail**
+- :ref:`ShadowDetail<enum_omnilight_shadowdetail>` **omni_shadow_detail** - See :ref:`ShadowDetail<enum_@globalscope_shadowdetail>`.
 
   .. _class_OmniLight_omni_shadow_mode:
 
-- :ref:`ShadowMode<enum_omnilight_shadowmode>` **omni_shadow_mode**
+- :ref:`ShadowMode<enum_omnilight_shadowmode>` **omni_shadow_mode** - See :ref:`ShadowMode<enum_@globalscope_shadowmode>`.
 
 
 Enums
@@ -57,5 +57,10 @@ enum **ShadowMode**
 Description
 -----------
 
-An OmniDirectional light is a type of :ref:`Light<class_light>` node that emits lights in all directions. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_light>`.
+An Omnidirectional light is a type of :ref:`Light<class_light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
 

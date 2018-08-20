@@ -68,6 +68,11 @@ Description
 
 Rect2 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+
 Member Function Description
 ---------------------------
 
@@ -86,6 +91,8 @@ Constructs a ``Rect2`` by x, y, width, and height.
 .. _class_Rect2_abs:
 
 - :ref:`Rect2<class_rect2>` **abs** **(** **)**
+
+Returns a ``Rect2`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
 
 .. _class_Rect2_clip:
 

@@ -79,3 +79,8 @@ enum **UpdateMode**
 - **UPDATE_ALWAYS** = **1**
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/reflection_probes`
+

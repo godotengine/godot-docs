@@ -69,10 +69,22 @@ Member Variables
 - :ref:`float<class_float>` **z**
 
 
+Numeric Constants
+-----------------
+
+- **X** = **Plane( 1, 0, 0, 0 )**
+- **Y** = **Plane( 0, 1, 0, 0 )**
+- **Z** = **Plane( 0, 0, 1, 0 )**
+
 Description
 -----------
 
 Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Member Function Description
 ---------------------------

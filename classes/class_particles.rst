@@ -38,23 +38,23 @@ Member Variables
 
   .. _class_Particles_draw_pass_1:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_1**
+- :ref:`Mesh<class_mesh>` **draw_pass_1** - :ref:`Mesh<class_mesh>` that is drawn for the first draw pass.
 
   .. _class_Particles_draw_pass_2:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_2**
+- :ref:`Mesh<class_mesh>` **draw_pass_2** - :ref:`Mesh<class_mesh>` that is drawn for the second draw pass.
 
   .. _class_Particles_draw_pass_3:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_3**
+- :ref:`Mesh<class_mesh>` **draw_pass_3** - :ref:`Mesh<class_mesh>` that is drawn for the third draw pass.
 
   .. _class_Particles_draw_pass_4:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_4**
+- :ref:`Mesh<class_mesh>` **draw_pass_4** - :ref:`Mesh<class_mesh>` that is drawn for the fourth draw pass.
 
   .. _class_Particles_draw_passes:
 
-- :ref:`int<class_int>` **draw_passes**
+- :ref:`int<class_int>` **draw_passes** - The number of draw passes when rendering particles.
 
   .. _class_Particles_emitting:
 
@@ -86,7 +86,7 @@ Member Variables
 
   .. _class_Particles_preprocess:
 
-- :ref:`float<class_float>` **preprocess**
+- :ref:`float<class_float>` **preprocess** - Amount of time to preprocess the particles before animation starts. Lets you start the animation some time after particles have started emitting.
 
   .. _class_Particles_process_material:
 
@@ -102,13 +102,13 @@ Member Variables
 
   .. _class_Particles_visibility_aabb:
 
-- :ref:`AABB<class_aabb>` **visibility_aabb**
+- :ref:`AABB<class_aabb>` **visibility_aabb** - The :ref:`AABB<class_aabb>` that determines the area of the world part of which needs to be visible on screen for the particle system to be active.
 
 
 Numeric Constants
 -----------------
 
-- **MAX_DRAW_PASSES** = **4**
+- **MAX_DRAW_PASSES** = **4** --- Maximum number of draw passes supported.
 
 Enums
 -----
@@ -139,5 +139,7 @@ Member Function Description
 .. _class_Particles_restart:
 
 - void **restart** **(** **)**
+
+Restarts the particle emmission, clearing existing particles.
 
 

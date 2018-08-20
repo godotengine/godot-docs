@@ -16,6 +16,13 @@ Brief Description
 
 
 
+Member Functions
+----------------
+
++-------+-----------------------------------------------------------+
+| void  | :ref:`refresh<class_EditorInspector_refresh>` **(** **)** |
++-------+-----------------------------------------------------------+
+
 Signals
 -------
 
@@ -23,12 +30,32 @@ Signals
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
+.. _class_EditorInspector_property_edited:
+
+- **property_edited** **(** :ref:`String<class_string>` property **)**
+
 .. _class_EditorInspector_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_string>` property **)**
 
+.. _class_EditorInspector_property_selected:
+
+- **property_selected** **(** :ref:`String<class_string>` property **)**
+
 .. _class_EditorInspector_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_object>` res, :ref:`String<class_string>` prop **)**
+
+.. _class_EditorInspector_restart_requested:
+
+- **restart_requested** **(** **)**
+
+
+Member Function Description
+---------------------------
+
+.. _class_EditorInspector_refresh:
+
+- void **refresh** **(** **)**
 
 

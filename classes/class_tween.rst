@@ -207,7 +207,7 @@ Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``du
 
 - :ref:`bool<class_bool>` **interpolate_property** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
-Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later.
+Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Setting the initial value to ``null`` uses the current value of the property.
 
                 Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 

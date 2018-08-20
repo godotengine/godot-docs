@@ -9,7 +9,7 @@ NetworkedMultiplayerPeer
 
 **Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`, :ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>`
+**Inherited By:** :ref:`MultiplayerPeerGDNative<class_multiplayerpeergdnative>`, :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`, :ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>`
 
 **Category:** Core
 
@@ -109,6 +109,11 @@ Description
 -----------
 
 Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
 
 Member Function Description
 ---------------------------

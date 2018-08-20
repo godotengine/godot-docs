@@ -58,6 +58,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_basis>`      | :ref:`outer<class_Vector3_outer>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`project<class_Vector3_project>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                             |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`reflect<class_Vector3_reflect>` **(** :ref:`Vector3<class_vector3>` n **)**                                                                                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`rotated<class_Vector3_rotated>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                           |
@@ -95,11 +97,24 @@ Numeric Constants
 - **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_max_axis>` and :ref:`min_axis<class_Vector3_min_axis>`.
 - **AXIS_Y** = **1** --- Enumerated value for the Y axis.
 - **AXIS_Z** = **2** --- Enumerated value for the Z axis.
+- **ZERO** = **Vector3( 0, 0, 0 )**
+- **INF** = **Vector3( inf, inf, inf )**
+- **LEFT** = **Vector3( -1, 0, 0 )**
+- **RIGHT** = **Vector3( 1, 0, 0 )**
+- **UP** = **Vector3( 0, 1, 0 )**
+- **DOWN** = **Vector3( 0, -1, 0 )**
+- **FORWARD** = **Vector3( 0, 0, -1 )**
+- **BACK** = **Vector3( 0, 0, 1 )**
 
 Description
 -----------
 
 Vector3 is one of the core classes of the engine, and includes several built-in helper functions to perform basic vector math operations.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
 
 Member Function Description
 ---------------------------
@@ -224,6 +239,12 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 Returns the outer product with ``b``.
 
+.. _class_Vector3_project:
+
+- :ref:`Vector3<class_vector3>` **project** **(** :ref:`Vector3<class_vector3>` b **)**
+
+Returns the vector projected onto the vector ``b``.
+
 .. _class_Vector3_reflect:
 
 - :ref:`Vector3<class_vector3>` **reflect** **(** :ref:`Vector3<class_vector3>` n **)**
@@ -239,6 +260,8 @@ Rotates the vector around a given axis by ``phi`` radians. The axis must be a no
 .. _class_Vector3_round:
 
 - :ref:`Vector3<class_vector3>` **round** **(** **)**
+
+Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 .. _class_Vector3_slerp:
 

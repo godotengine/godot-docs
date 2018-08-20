@@ -62,6 +62,7 @@ Numeric Constants
 - **NOTIFICATION_OS_MEMORY_WARNING** = **9**
 - **NOTIFICATION_TRANSLATION_CHANGED** = **90**
 - **NOTIFICATION_WM_ABOUT** = **91**
+- **NOTIFICATION_CRASH** = **92**
 
 Description
 -----------

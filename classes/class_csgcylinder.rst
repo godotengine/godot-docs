@@ -14,33 +14,38 @@ CSGCylinder
 Brief Description
 -----------------
 
-
+A CSG Cylinder shape.
 
 Member Variables
 ----------------
 
   .. _class_CSGCylinder_cone:
 
-- :ref:`bool<class_bool>` **cone**
+- :ref:`bool<class_bool>` **cone** - If true a cone is created, the :ref:`radius<class_CSGCylinder_radius>` will only apply to one side.
 
   .. _class_CSGCylinder_height:
 
-- :ref:`float<class_float>` **height**
+- :ref:`float<class_float>` **height** - The height of the cylinder.
 
   .. _class_CSGCylinder_material:
 
-- :ref:`Material<class_material>` **material**
+- :ref:`Material<class_material>` **material** - The material used to render the cylinder.
 
   .. _class_CSGCylinder_radius:
 
-- :ref:`float<class_float>` **radius**
+- :ref:`float<class_float>` **radius** - The radius of the cylinder.
 
   .. _class_CSGCylinder_sides:
 
-- :ref:`int<class_int>` **sides**
+- :ref:`int<class_int>` **sides** - The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
 
   .. _class_CSGCylinder_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces**
+- :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. When false the cylinder will have a flat shaded look.
 
+
+Description
+-----------
+
+This node allows you to create a cylinder (or cone) for use with the CSG system.
 

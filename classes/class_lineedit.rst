@@ -70,6 +70,10 @@ Member Variables
 
 - :ref:`int<class_int>` **caret_position** - The cursor's position inside the ``LineEdit``. When set, the text may scroll to accommodate it.
 
+  .. _class_LineEdit_clear_button_enabled:
+
+- :ref:`bool<class_bool>` **clear_button_enabled**
+
   .. _class_LineEdit_context_menu_enabled:
 
 - :ref:`bool<class_bool>` **context_menu_enabled** - If ``true`` the context menu will appear when right clicked.

@@ -9,7 +9,7 @@ GeometryInstance
 
 **Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`Particles<class_particles>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`ImmediateGeometry<class_immediategeometry>`
+**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`Particles<class_particles>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`ImmediateGeometry<class_immediategeometry>`, :ref:`CPUParticles<class_cpuparticles>`
 
 **Category:** Core
 
@@ -66,7 +66,7 @@ enum **Flags**
 - **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
 
 Added documentation for GeometryInstance and VisualInstance
-- **FLAG_MAX** = **1**
+- **FLAG_MAX** = **2**
 
   .. _enum_GeometryInstance_ShadowCastingSetting:
 

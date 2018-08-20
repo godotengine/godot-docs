@@ -14,13 +14,20 @@ ViewportTexture
 Brief Description
 -----------------
 
-
+Texture which displays the content of a :ref:`Viewport<class_viewport>`.
 
 Member Variables
 ----------------
 
   .. _class_ViewportTexture_viewport_path:
 
-- :ref:`NodePath<class_nodepath>` **viewport_path**
+- :ref:`NodePath<class_nodepath>` **viewport_path** - The path to the :ref:`Viewport<class_viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
 
+
+Description
+-----------
+
+Displays the content of a :ref:`Viewport<class_viewport>` node as a dynamic :ref:`Texture<class_texture>`. This can be used to mix controls, 2D, and 3D elements in the same scene.
+
+To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_get_texture>` method on the target viewport.
 

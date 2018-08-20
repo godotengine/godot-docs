@@ -78,6 +78,12 @@ Description
 
 A PacketPeer implementation that should be passed to :ref:`SceneTree.set_network_peer<class_SceneTree_set_network_peer>` after being initialized as either a client or server. Events can then be handled by connecting to :ref:`SceneTree<class_scenetree>` signals.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/high_level_multiplayer`
+- `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`_
+
 Member Function Description
 ---------------------------
 

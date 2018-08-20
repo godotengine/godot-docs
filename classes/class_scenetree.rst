@@ -221,25 +221,31 @@ enum **GroupCallFlags**
 
 enum **StretchMode**
 
-- **STRETCH_MODE_DISABLED** = **0**
-- **STRETCH_MODE_2D** = **1**
-- **STRETCH_MODE_VIEWPORT** = **2**
+- **STRETCH_MODE_DISABLED** = **0** --- No stretching.
+- **STRETCH_MODE_2D** = **1** --- Render stretching in higher resolution (interpolated).
+- **STRETCH_MODE_VIEWPORT** = **2** --- Keep the specified display resolution. No interpolation. Content may appear pixelated.
 
   .. _enum_SceneTree_StretchAspect:
 
 enum **StretchAspect**
 
-- **STRETCH_ASPECT_IGNORE** = **0**
-- **STRETCH_ASPECT_KEEP** = **1**
-- **STRETCH_ASPECT_KEEP_WIDTH** = **2**
-- **STRETCH_ASPECT_KEEP_HEIGHT** = **3**
-- **STRETCH_ASPECT_EXPAND** = **4**
+- **STRETCH_ASPECT_IGNORE** = **0** --- Fill the window with the content stretched to cover excessive space. Content may appear elongated.
+- **STRETCH_ASPECT_KEEP** = **1** --- Retain the same aspect ratio by padding with black bars in either axes. No expansion of content.
+- **STRETCH_ASPECT_KEEP_WIDTH** = **2** --- Expand vertically. Left/right black bars may appear if the window is too wide.
+- **STRETCH_ASPECT_KEEP_HEIGHT** = **3** --- Expand horizontally. Top/bottom black bars may appear if the window is too tall.
+- **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. No black bars.
 
 
 Description
 -----------
 
 As one of the most important classes, the ``SceneTree`` manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded. You can also use the SceneTree to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. a "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scene_tree`
+- :doc:`../tutorials/viewports/multiple_resolutions`
 
 Member Function Description
 ---------------------------

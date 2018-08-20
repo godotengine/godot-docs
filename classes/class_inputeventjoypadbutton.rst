@@ -37,3 +37,8 @@ Description
 
 Input event type for gamepad buttons. For joysticks see :ref:`InputEventJoypadMotion<class_inputeventjoypadmotion>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

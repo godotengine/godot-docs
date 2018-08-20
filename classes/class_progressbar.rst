@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_ProgressBar_percent_visible:
 
-- :ref:`bool<class_bool>` **percent_visible**
+- :ref:`bool<class_bool>` **percent_visible** - If ``true`` the fill percentage is displayed on the bar. Default value: ``true``.
 
 
 Description

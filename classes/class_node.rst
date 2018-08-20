@@ -9,7 +9,7 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`AudioStreamPlayer<class_audiostreamplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`EditorInterface<class_editorinterface>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Timer<class_timer>`, :ref:`Tween<class_tween>`
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`AudioStreamPlayer<class_audiostreamplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`SkeletonIK<class_skeletonik>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`AnimationTree<class_animationtree>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`EditorInterface<class_editorinterface>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Timer<class_timer>`, :ref:`Tween<class_tween>`
 
 **Category:** Core
 
@@ -25,6 +25,8 @@ Member Functions
 | void                               | :ref:`_enter_tree<class_Node__enter_tree>` **(** **)** virtual                                                                                                                               |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_exit_tree<class_Node__exit_tree>` **(** **)** virtual                                                                                                                                 |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`        | :ref:`_get_configuration_warning<class_Node__get_configuration_warning>` **(** **)** virtual                                                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_input<class_Node__input>` **(** :ref:`InputEvent<class_inputevent>` event **)** virtual                                                                                               |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,6 +176,8 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_internal<class_Node_set_process_internal>` **(** :ref:`bool<class_bool>` enable **)**                                                                                      |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_process_priority<class_Node_set_process_priority>` **(** :ref:`int<class_int>` priority **)**                                                                                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_unhandled_key_input<class_Node_set_process_unhandled_key_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                |
@@ -310,6 +314,11 @@ Finally, when a node is freed with :ref:`free<class_Node_free>` or :ref:`queue_f
 
 **Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`) it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling :ref:`rpc<class_Node_rpc>` with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call Godot will use its :ref:`NodePath<class_nodepath>` (make sure node names are the same on all peers). Also take a look at the high-level networking tutorial and corresponding demos.
 
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/scenes_and_nodes`
+
 Member Function Description
 ---------------------------
 
@@ -328,6 +337,10 @@ Corresponds to the NOTIFICATION_ENTER_TREE notification in :ref:`Object._notific
 Called when the node is about to leave the :ref:`SceneTree<class_scenetree>` (e.g. upon freeing, scene changing, or after calling :ref:`remove_child<class_Node_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node__exit_tree>` callback will be called last, after all its children have left the tree.
 
 Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object__notification>` and signal :ref:`tree_exiting<class_Node_tree_exiting>`. To get notified when the node has already left the active tree, connect to the :ref:`tree_exited<class_Node_tree_exited>`
+
+.. _class_Node__get_configuration_warning:
+
+- :ref:`String<class_string>` **_get_configuration_warning** **(** **)** virtual
 
 .. _class_Node__input:
 
@@ -479,9 +492,9 @@ Returns the peer ID of the network master for this node. See :ref:`set_network_m
 
 Fetches a node. The :ref:`NodePath<class_nodepath>` can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a ``null instance`` is returned and attempts to access it will result in an "Attempt to call <method> on a null instance." error.
 
-Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
+**Note:** Fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
-*Example:* Assume your current node is Character and the following tree:
+**Example:** Assume your current node is Character and the following tree:
 
 ::
 
@@ -846,6 +859,10 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 - void **set_process_internal** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_set_process>`). Only useful for advanced uses to manipulate built-in nodes behaviour.
+
+.. _class_Node_set_process_priority:
+
+- void **set_process_priority** **(** :ref:`int<class_int>` priority **)**
 
 .. _class_Node_set_process_unhandled_input:
 

@@ -163,9 +163,17 @@ Member Variables
 
 - :ref:`bool<class_bool>` **flags_albedo_tex_force_srgb**
 
+  .. _class_SpatialMaterial_flags_disable_ambient_light:
+
+- :ref:`bool<class_bool>` **flags_disable_ambient_light**
+
   .. _class_SpatialMaterial_flags_do_not_receive_shadows:
 
 - :ref:`bool<class_bool>` **flags_do_not_receive_shadows**
+
+  .. _class_SpatialMaterial_flags_ensure_correct_normals:
+
+- :ref:`bool<class_bool>` **flags_ensure_correct_normals**
 
   .. _class_SpatialMaterial_flags_fixed_size:
 
@@ -226,6 +234,10 @@ Member Variables
   .. _class_SpatialMaterial_params_alpha_scissor_threshold:
 
 - :ref:`float<class_float>` **params_alpha_scissor_threshold**
+
+  .. _class_SpatialMaterial_params_billboard_keep_scale:
+
+- :ref:`bool<class_bool>` **params_billboard_keep_scale**
 
   .. _class_SpatialMaterial_params_billboard_mode:
 
@@ -488,15 +500,18 @@ enum **Flags**
 - **FLAG_SRGB_VERTEX_COLOR** = **4**
 - **FLAG_USE_POINT_SIZE** = **5**
 - **FLAG_FIXED_SIZE** = **6**
-- **FLAG_UV1_USE_TRIPLANAR** = **7**
-- **FLAG_UV2_USE_TRIPLANAR** = **8**
-- **FLAG_AO_ON_UV2** = **10**
-- **FLAG_EMISSION_ON_UV2** = **11**
-- **FLAG_USE_ALPHA_SCISSOR** = **12**
-- **FLAG_TRIPLANAR_USE_WORLD** = **9**
-- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **13**
-- **FLAG_DONT_RECEIVE_SHADOWS** = **14**
-- **FLAG_MAX** = **15**
+- **FLAG_BILLBOARD_KEEP_SCALE** = **7**
+- **FLAG_UV1_USE_TRIPLANAR** = **8**
+- **FLAG_UV2_USE_TRIPLANAR** = **9**
+- **FLAG_AO_ON_UV2** = **11**
+- **FLAG_EMISSION_ON_UV2** = **12**
+- **FLAG_USE_ALPHA_SCISSOR** = **13**
+- **FLAG_TRIPLANAR_USE_WORLD** = **10**
+- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **14**
+- **FLAG_DONT_RECEIVE_SHADOWS** = **15**
+- **FLAG_DISABLE_AMBIENT_LIGHT** = **17**
+- **FLAG_ENSURE_CORRECT_NORMALS** = **16**
+- **FLAG_MAX** = **18**
 
   .. _enum_SpatialMaterial_BlendMode:
 
@@ -543,4 +558,9 @@ enum **EmissionOperator**
 - **EMISSION_OP_ADD** = **0**
 - **EMISSION_OP_MULTIPLY** = **1**
 
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/spatial_material`
 

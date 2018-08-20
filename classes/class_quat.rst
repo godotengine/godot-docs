@@ -73,6 +73,11 @@ Member Variables
 - :ref:`float<class_float>` **z** - Z component of the quaternion. Default value: ``0``
 
 
+Numeric Constants
+-----------------
+
+- **IDENTITY** = **Quat( 0, 0, 0, 1 )**
+
 Description
 -----------
 
@@ -80,9 +85,13 @@ A unit quaternion used for representing 3D rotations.
 
 It is similar to :ref:`Basis<class_basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating point errors.
 
-
-
 Quaternions need to be (re)normalized.
+
+Tutorials
+---------
+
+- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
+- :doc:`../tutorials/math/rotations`
 
 Member Function Description
 ---------------------------

@@ -48,8 +48,6 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`clear<class_EditorPlugin_clear>` **(** **)** virtual                                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorSpatialGizmo<class_editorspatialgizmo>`  | :ref:`create_spatial_gizmo<class_EditorPlugin_create_spatial_gizmo>` **(** :ref:`Spatial<class_spatial>` for_spatial **)** virtual                                                                                              |
-+------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`edit<class_EditorPlugin_edit>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`InputEvent<class_inputevent>` event **)** virtual                                                                                      |
@@ -67,6 +65,8 @@ Member Functions
 | :ref:`Object<class_object>`                          | :ref:`get_plugin_icon<class_EditorPlugin_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                          | :ref:`get_plugin_name<class_EditorPlugin_get_plugin_name>` **(** **)** virtual                                                                                                                                                  |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ScriptCreateDialog<class_scriptcreatedialog>`  | :ref:`get_script_create_dialog<class_EditorPlugin_get_script_create_dialog>` **(** **)**                                                                                                                                        |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`                  | :ref:`get_state<class_EditorPlugin_get_state>` **(** **)** virtual                                                                                                                                                              |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -181,6 +181,11 @@ Description
 
 Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins.
 
+Tutorials
+---------
+
+- :doc:`../development/plugins/index`
+
 Member Function Description
 ---------------------------
 
@@ -272,12 +277,6 @@ This is used, for example, in shader editors to let the plugin know that it must
 
 Clear all the state and reset the object being edited to zero. This ensures your plugin does not keep editing a currently existing node, or a node from the wrong scene.
 
-.. _class_EditorPlugin_create_spatial_gizmo:
-
-- :ref:`EditorSpatialGizmo<class_editorspatialgizmo>` **create_spatial_gizmo** **(** :ref:`Spatial<class_spatial>` for_spatial **)** virtual
-
-This is used for plugins that create gizmos used by the spatial editor. Just check that the node passed in the "for_spatial" argument matches your plugin.
-
 .. _class_EditorPlugin_edit:
 
 - void **edit** **(** :ref:`Object<class_object>` object **)** virtual
@@ -321,6 +320,12 @@ This is for editors that edit script based objects. You can return a list of bre
 .. _class_EditorPlugin_get_plugin_name:
 
 - :ref:`String<class_string>` **get_plugin_name** **(** **)** virtual
+
+.. _class_EditorPlugin_get_script_create_dialog:
+
+- :ref:`ScriptCreateDialog<class_scriptcreatedialog>` **get_script_create_dialog** **(** **)**
+
+Gets the Editor's dialogue used for making scripts. Note that users can configure it before use.
 
 .. _class_EditorPlugin_get_state:
 

@@ -45,3 +45,8 @@ Description
 
 Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/ray-casting`
+

@@ -19,20 +19,20 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Bone2D<class_bone2d>`  | :ref:`get_bone<class_Skeleton2D_get_bone>` **(** :ref:`int<class_int>` arg0 **)** |
-+------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_bone_count<class_Skeleton2D_get_bone_count>` **(** **)** const          |
-+------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`        | :ref:`get_skeleton<class_Skeleton2D_get_skeleton>` **(** **)** const              |
-+------------------------------+-----------------------------------------------------------------------------------+
++------------------------------+----------------------------------------------------------------------------------+
+| :ref:`Bone2D<class_bone2d>`  | :ref:`get_bone<class_Skeleton2D_get_bone>` **(** :ref:`int<class_int>` idx **)** |
++------------------------------+----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_bone_count<class_Skeleton2D_get_bone_count>` **(** **)** const         |
++------------------------------+----------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`        | :ref:`get_skeleton<class_Skeleton2D_get_skeleton>` **(** **)** const             |
++------------------------------+----------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_Skeleton2D_get_bone:
 
-- :ref:`Bone2D<class_bone2d>` **get_bone** **(** :ref:`int<class_int>` arg0 **)**
+- :ref:`Bone2D<class_bone2d>` **get_bone** **(** :ref:`int<class_int>` idx **)**
 
 .. _class_Skeleton2D_get_bone_count:
 

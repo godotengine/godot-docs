@@ -56,6 +56,11 @@ Description
 
 PhysicsBody is an abstract base class for implementing a physics body. All \*Body types inherit from it.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
+
 Member Function Description
 ---------------------------
 

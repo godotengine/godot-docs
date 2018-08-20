@@ -9,7 +9,7 @@ Texture
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`CurveTexture<class_curvetexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`ProxyTexture<class_proxytexture>`, :ref:`GradientTexture<class_gradienttexture>`, :ref:`ViewportTexture<class_viewporttexture>`, :ref:`StreamTexture<class_streamtexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
+**Inherited By:** :ref:`CurveTexture<class_curvetexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`ProxyTexture<class_proxytexture>`, :ref:`GradientTexture<class_gradienttexture>`, :ref:`ViewportTexture<class_viewporttexture>`, :ref:`AnimatedTexture<class_animatedtexture>`, :ref:`StreamTexture<class_streamtexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
 
 **Category:** Core
 
@@ -63,13 +63,15 @@ enum **Flags**
 More effective on planes often shown going to the horrizon as those textures (Walls or Ground for example) get squashed in the viewport to different aspect ratios and regular mipmaps keep the aspect ratio so they don't optimize storage that well in those cases.
 - **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats texture with alternate sections mirrored.
-- **FLAG_VIDEO_SURFACE** = **4096** --- Texture is a video surface.
+- **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
 
 
 Description
 -----------
 
 A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_sprite>` or GUI :ref:`Control<class_control>`.
+
+Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_load>`.
 
 Member Function Description
 ---------------------------

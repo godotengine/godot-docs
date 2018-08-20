@@ -50,13 +50,7 @@ Description
 
 EditorImportPlugins provide a way to extend the editor's resource import functionality. Use them to import resources from custom files or to provide alternatives to the editor's existing importers. Register your :ref:`EditorPlugin<class_editorplugin>` with :ref:`EditorPlugin.add_import_plugin<class_EditorPlugin_add_import_plugin>`.
 
-
-
 EditorImportPlugins work by associating with specific file extensions and a resource type. See :ref:`get_recognized_extension<class_EditorImportPlugin_get_recognized_extension>` and :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>`). They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the ``.import`` directory.
-
-
-
-
 
 Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_mesh>` from a file with the extension ".special" or ".spec":
 
@@ -89,16 +83,21 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_mesh>` fr
     func get_import_options(i):
         return [{"name": "my_option", "default_value": false}]
     
-    func load(src, dst, opts, r_platform_variants, r_gen_files):
+    func import(source_file, save_path, options, r_platform_variants, r_gen_files):
         var file = File.new()
-        if file.open(src, File.READ) != OK:
+        if file.open(source_file, File.READ) != OK:
             return FAILED
     
         var mesh = Mesh.new()
     
-        var save = dst + "." + get_save_extension()
-        ResourceSaver.save(file, mesh)
+        var filename = save_path + "." + get_save_extension()
+        ResourceSaver.save(filename, mesh)
         return OK
+
+Tutorials
+---------
+
+- :doc:`../tutorials/plugins/editor/import_plugins`
 
 Member Function Description
 ---------------------------
@@ -153,7 +152,7 @@ Get the list of file extensions to associate with this loader (case insensitive)
 
 - :ref:`String<class_string>` **get_resource_type** **(** **)** virtual
 
-Get the godot resource type associated with this loader. e.g. "Mesh" or "Animation".
+Get the Godot resource type associated with this loader. e.g. "Mesh" or "Animation".
 
 .. _class_EditorImportPlugin_get_save_extension:
 

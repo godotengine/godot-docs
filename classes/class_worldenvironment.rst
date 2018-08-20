@@ -33,3 +33,8 @@ The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:
 
 The ``WorldEnvironment`` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox). Usually, these are added in order to improve the realism/color balance of the scene.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/environment_and_post_processing`
+

@@ -57,7 +57,8 @@ enum **Monitor**
 - **PHYSICS_3D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody<class_rigidbody>` and :ref:`VehicleBody<class_vehiclebody>` nodes in the game.
 - **PHYSICS_3D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 3D physics engine.
 - **PHYSICS_3D_ISLAND_COUNT** = **26** --- Number of islands in the 3D physics engine.
-- **MONITOR_MAX** = **27**
+- **AUDIO_OUTPUT_LATENCY** = **27**
+- **MONITOR_MAX** = **28**
 
 
 Description

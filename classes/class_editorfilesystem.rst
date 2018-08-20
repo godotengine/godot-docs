@@ -36,6 +36,8 @@ Member Functions
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`update_file<class_EditorFileSystem_update_file>` **(** :ref:`String<class_string>` path **)**                 |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`update_script_classes<class_EditorFileSystem_update_script_classes>` **(** **)**                              |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -51,6 +53,10 @@ Emitted if the filesystem changed.
 - **resources_reimported** **(** :ref:`PoolStringArray<class_poolstringarray>` resources **)**
 
 Remitted if a resource is reimported.
+
+.. _class_EditorFileSystem_script_classes_updated:
+
+- **script_classes_updated** **(** **)**
 
 .. _class_EditorFileSystem_sources_changed:
 
@@ -114,5 +120,9 @@ Check if the source of any imported resource changed.
 - void **update_file** **(** :ref:`String<class_string>` path **)**
 
 Update a file information. Call this if an external program (not Godot) modified the file.
+
+.. _class_EditorFileSystem_update_script_classes:
+
+- void **update_script_classes** **(** **)**
 
 

@@ -212,6 +212,12 @@ Canvas items can also be hidden (hiding also their subtree). They provide many m
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
+
 Member Function Description
 ---------------------------
 

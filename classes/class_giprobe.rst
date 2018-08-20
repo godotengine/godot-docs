@@ -83,6 +83,11 @@ enum **Subdiv**
 - **SUBDIV_MAX** = **4**
 
 
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/gi_probes`
+
 Member Function Description
 ---------------------------
 

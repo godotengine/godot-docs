@@ -44,7 +44,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`clamp<class_@GDScript_clamp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                                | :ref:`convert<class_@GDScript_convert>` **(** :ref:`Variant<class_variant>` what, :ref:`int<class_int>` type **)**                                                                                                              |
+| :ref:`Variant<class_variant>`                              | :ref:`convert<class_@GDScript_convert>` **(** :ref:`Variant<class_variant>` what, :ref:`int<class_int>` type **)**                                                                                                              |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`cos<class_@GDScript_cos>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,7 +70,9 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`fposmod<class_@GDScript_fposmod>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                                | :ref:`funcref<class_@GDScript_funcref>` **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname **)**                                                                                                  |
+| :ref:`FuncRef<class_funcref>`                              | :ref:`funcref<class_@GDScript_funcref>` **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname **)**                                                                                                  |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`get_stack<class_@GDScript_get_stack>` **(** **)**                                                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`hash<class_@GDScript_hash>` **(** :ref:`Variant<class_variant>` var **)**                                                                                                                                                 |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,7 +94,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`linear2db<class_@GDScript_linear2db>` **(** :ref:`float<class_float>` nrg **)**                                                                                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                                | :ref:`load<class_@GDScript_load>` **(** :ref:`String<class_string>` path **)**                                                                                                                                                  |
+| :ref:`Resource<class_resource>`                            | :ref:`load<class_@GDScript_load>` **(** :ref:`String<class_string>` path **)**                                                                                                                                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`log<class_@GDScript_log>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -111,6 +113,8 @@ Member Functions
 | :ref:`Resource<class_resource>`                            | :ref:`preload<class_@GDScript_preload>` **(** :ref:`String<class_string>` path **)**                                                                                                                                            |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`print<class_@GDScript_print>` **(** **)** vararg                                                                                                                                                                          |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`print_debug<class_@GDScript_print_debug>` **(** **)** vararg                                                                                                                                                              |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`print_stack<class_@GDScript_print_stack>` **(** **)**                                                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,7 +176,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`var2str<class_@GDScript_var2str>` **(** :ref:`Variant<class_variant>` var **)**                                                                                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                                | :ref:`weakref<class_@GDScript_weakref>` **(** :ref:`Object<class_object>` obj **)**                                                                                                                                             |
+| :ref:`WeakRef<class_weakref>`                              | :ref:`weakref<class_@GDScript_weakref>` **(** :ref:`Object<class_object>` obj **)**                                                                                                                                             |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`wrapf<class_@GDScript_wrapf>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,7 +198,7 @@ The NaN values are used to identify undefined or non-representable values for fl
 Description
 -----------
 
-This contains the list of built-in gdscript functions. Mostly math functions and other utilities. Everything else is expanded by objects.
+List of core built-in GDScript functions. Math functions and other utilities. Everything else is provided by objects. (Keywords: builtin, built in, global functions.)
 
 Member Function Description
 ---------------------------
@@ -354,7 +358,7 @@ Clamps ``value`` and returns a value not less than ``min`` and not more than ``m
 
 .. _class_@GDScript_convert:
 
-- :ref:`Object<class_object>` **convert** **(** :ref:`Variant<class_variant>` what, :ref:`int<class_int>` type **)**
+- :ref:`Variant<class_variant>` **convert** **(** :ref:`Variant<class_variant>` what, :ref:`int<class_int>` type **)**
 
 Converts from a type to another in the best way possible. The ``type`` parameter uses the enum TYPE\_\* in :ref:`@GlobalScope<class_@globalscope>`.
 
@@ -508,7 +512,7 @@ Produces:
 
 .. _class_@GDScript_funcref:
 
-- :ref:`Object<class_object>` **funcref** **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname **)**
+- :ref:`FuncRef<class_funcref>` **funcref** **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname **)**
 
 Returns a reference to the specified function ``funcname`` in the ``instance`` node. As functions aren't first-class objects in GDscript, use ``funcref`` to store a :ref:`FuncRef<class_funcref>` in a variable and call it later.
 
@@ -519,6 +523,10 @@ Returns a reference to the specified function ``funcname`` in the ``instance`` n
     
     a = funcref(self, "foo")
     print(a.call_func()) # prints bar
+
+.. _class_@GDScript_get_stack:
+
+- void **get_stack** **(** **)**
 
 .. _class_@GDScript_hash:
 
@@ -595,7 +603,9 @@ Returns True/False whether ``s`` is a NaN (Not-A-Number) value.
 
 - :ref:`int<class_int>` **len** **(** :ref:`Variant<class_variant>` var **)**
 
-Returns length of Variant ``var``. Length is the character count of String, element count of Array, size of Dictionary, etc. Note: Generates a fatal error if Variant can not provide a length.
+Returns length of Variant ``var``. Length is the character count of String, element count of Array, size of Dictionary, etc.
+
+**Note:** Generates a fatal error if Variant can not provide a length.
 
 ::
 
@@ -620,9 +630,11 @@ Converts from linear energy to decibels (audio).
 
 .. _class_@GDScript_load:
 
-- :ref:`Object<class_object>` **load** **(** :ref:`String<class_string>` path **)**
+- :ref:`Resource<class_resource>` **load** **(** :ref:`String<class_string>` path **)**
 
-Loads a resource from the filesystem located at ``path``. Note: resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
+Loads a resource from the filesystem located at ``path``.
+
+**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
 
 ::
 
@@ -633,7 +645,9 @@ Loads a resource from the filesystem located at ``path``. Note: resource paths c
 
 - :ref:`float<class_float>` **log** **(** :ref:`float<class_float>` s **)**
 
-Natural logarithm. The amount of time needed to reach a certain level of continuous growth. Note: This is not the same as the log function on your calculator which is a base 10 logarithm.
+Natural logarithm. The amount of time needed to reach a certain level of continuous growth.
+
+**Note:** This is not the same as the log function on your calculator which is a base 10 logarithm.
 
 ::
 
@@ -711,7 +725,9 @@ Returns the result of ``x`` raised to the power of ``y``.
 
 - :ref:`Resource<class_resource>` **preload** **(** :ref:`String<class_string>` path **)**
 
-Returns a resource from the filesystem that is loaded during script parsing. Note: resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
+Returns a resource from the filesystem that is loaded during script parsing.
+
+**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
 
 ::
 
@@ -728,6 +744,10 @@ Converts one or more arguments to strings in the best way possible and prints th
 
     a = [1,2,3]
     print("a","b",a) # prints ab[1, 2, 3]
+
+.. _class_@GDScript_print_debug:
+
+- void **print_debug** **(** **)** vararg
 
 .. _class_@GDScript_print_stack:
 
@@ -1080,7 +1100,7 @@ prints
 
 .. _class_@GDScript_weakref:
 
-- :ref:`Object<class_object>` **weakref** **(** :ref:`Object<class_object>` obj **)**
+- :ref:`WeakRef<class_weakref>` **weakref** **(** :ref:`Object<class_object>` obj **)**
 
 Returns a weak reference to an object.
 
@@ -1136,8 +1156,10 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 - :ref:`GDScriptFunctionState<class_gdscriptfunctionstate>` **yield** **(** :ref:`Object<class_object>` object=null, :ref:`String<class_string>` signal="" **)**
 
-Stops the function execution and returns the current state. Call :ref:`GDScriptFunctionState.resume<class_GDScriptFunctionState_resume>` on the state to resume execution. This invalidates the state.
+Stops the function execution and returns the current suspended state to the calling function.
 
-Returns anything that was passed to the resume function call. If passed an object and a signal, the execution is resumed when the object's signal is emitted.
+From the caller, call :ref:`GDScriptFunctionState.resume<class_GDScriptFunctionState_resume>` on the state to resume execution. This invalidates the state. Within the resumed function, ``yield()`` returns whatever was passed to the ``resume()`` function call.
+
+If passed an object and a signal, the execution is resumed when the object emits the given signal. In this case, ``yield()`` returns the argument passed to ``emit_signal()`` if the signal takes only one argument, or an array containing all the arguments passed to ``emit_signal()`` if the signal takes multiple arguments.
 
 

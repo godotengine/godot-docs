@@ -102,6 +102,11 @@ Description
 
 A 2D game object, with a position, rotation and scale. All 2D physics nodes and sprites inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control on the node's render order.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
+
 Member Function Description
 ---------------------------
 

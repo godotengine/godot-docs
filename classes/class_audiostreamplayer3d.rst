@@ -106,6 +106,10 @@ Member Variables
 
 - :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 
+  .. _class_AudioStreamPlayer3D_stream_paused:
+
+- :ref:`bool<class_bool>` **stream_paused**
+
   .. _class_AudioStreamPlayer3D_unit_db:
 
 - :ref:`float<class_float>` **unit_db** - Base sound level unaffected by dampening, in dB.
@@ -146,6 +150,12 @@ Description
 -----------
 
 Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space.
+
+Tutorials
+---------
+
+- :doc:`../learning/features/audio/index`
+- :doc:`../tutorials/audio/audio_streams`
 
 Member Function Description
 ---------------------------

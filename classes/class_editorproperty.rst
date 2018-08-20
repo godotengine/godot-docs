@@ -24,6 +24,8 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_edited_property<class_EditorProperty_get_edited_property>` **(** **)** |
 +------------------------------+----------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_tooltip_text<class_EditorProperty_get_tooltip_text>` **(** **)** const |
++------------------------------+----------------------------------------------------------------------------------+
 | void                         | :ref:`update_property<class_EditorProperty_update_property>` **(** **)** virtual |
 +------------------------------+----------------------------------------------------------------------------------+
 
@@ -101,6 +103,10 @@ Member Function Description
 .. _class_EditorProperty_get_edited_property:
 
 - :ref:`String<class_string>` **get_edited_property** **(** **)**
+
+.. _class_EditorProperty_get_tooltip_text:
+
+- :ref:`String<class_string>` **get_tooltip_text** **(** **)** const
 
 .. _class_EditorProperty_update_property:
 

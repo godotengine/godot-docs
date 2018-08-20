@@ -14,25 +14,30 @@ CSGBox
 Brief Description
 -----------------
 
-
+A CSG Box shape.
 
 Member Variables
 ----------------
 
   .. _class_CSGBox_depth:
 
-- :ref:`float<class_float>` **depth**
+- :ref:`float<class_float>` **depth** - Depth of the box measured from the center of the box.
 
   .. _class_CSGBox_height:
 
-- :ref:`float<class_float>` **height**
+- :ref:`float<class_float>` **height** - Height of the box measured from the center of the box.
 
   .. _class_CSGBox_material:
 
-- :ref:`Material<class_material>` **material**
+- :ref:`Material<class_material>` **material** - The material used to render the box.
 
   .. _class_CSGBox_width:
 
-- :ref:`float<class_float>` **width**
+- :ref:`float<class_float>` **width** - Width of the box measured from the center of the box.
 
+
+Description
+-----------
+
+This node allows you to create a box for use with the CSG system.
 

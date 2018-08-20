@@ -16,7 +16,7 @@ CSGShape
 Brief Description
 -----------------
 
-
+The CSG base class.
 
 Member Functions
 ----------------
@@ -30,7 +30,7 @@ Member Variables
 
   .. _class_CSGShape_operation:
 
-- :ref:`Operation<enum_csgshape_operation>` **operation**
+- :ref:`Operation<enum_csgshape_operation>` **operation** - The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
   .. _class_CSGShape_snap:
 
@@ -38,7 +38,7 @@ Member Variables
 
   .. _class_CSGShape_use_collision:
 
-- :ref:`bool<class_bool>` **use_collision**
+- :ref:`bool<class_bool>` **use_collision** - Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
 
 
 Enums
@@ -48,10 +48,15 @@ Enums
 
 enum **Operation**
 
-- **OPERATION_UNION** = **0**
-- **OPERATION_INTERSECTION** = **1**
-- **OPERATION_SUBTRACTION** = **2**
+- **OPERATION_UNION** = **0** --- Geometry of both primitives is merged, intersecting geometry is removed.
+- **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
+- **OPERATION_SUBTRACTION** = **2** --- The second shape is susbtracted from the first, leaving a dent with it's shape.
 
+
+Description
+-----------
+
+This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
 Member Function Description
 ---------------------------
@@ -59,5 +64,7 @@ Member Function Description
 .. _class_CSGShape_is_root_shape:
 
 - :ref:`bool<class_bool>` **is_root_shape** **(** **)** const
+
+Returns true if this is a root shape and is thus the object that is rendered.
 
 

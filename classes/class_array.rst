@@ -90,7 +90,18 @@ Member Functions
 Description
 -----------
 
-Generic array, contains several elements of any type, accessible by numerical index starting at 0. Negative indices can be used to count from the right, like in Python. Arrays are always passed by reference.
+Generic array, contains several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 the second to last, etc.). Example:
+
+::
+
+    var array = ["One", 2, 3, "Four"]
+    print(array[0])   # One
+    print(array[2])   # 3
+    print(array[-1])  # Four
+    array[2] = "Three"
+    print(array[-2])  # Three
+
+Arrays are always passed by reference.
 
 Member Function Description
 ---------------------------
@@ -306,7 +317,9 @@ Sort the array using natural order.
 
 - void **sort_custom** **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func **)**
 
-Sort the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise. Note: you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
+Sort the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise.
+
+**Note:** you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 ::
 

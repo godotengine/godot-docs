@@ -28,7 +28,7 @@ Member Functions
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`action_has_event<class_InputMap_action_has_event>` **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event **)**     |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`action_set_deadzone<class_InputMap_action_set_deadzone>` **(** :ref:`String<class_string>` deadzone, :ref:`float<class_float>` arg1 **)**        |
+| void                       | :ref:`action_set_deadzone<class_InputMap_action_set_deadzone>` **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone **)**      |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`add_action<class_InputMap_add_action>` **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone=0.5 **)**                    |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,6 +50,11 @@ Description
 
 Manages all :ref:`InputEventAction<class_inputeventaction>` which can be created/modified from the project settings menu ``Project > Project Settings > Input Map`` or in code with :ref:`add_action<class_InputMap_add_action>` and :ref:`action_add_event<class_InputMap_action_add_event>`. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- `#inputmap <../tutorials/inputs/inputevent.html#inputmap>`_ in :doc:`../tutorials/inputs/inputevent`
+
 Member Function Description
 ---------------------------
 
@@ -69,21 +74,23 @@ Removes an :ref:`InputEvent<class_inputevent>` from an action.
 
 - void **action_erase_events** **(** :ref:`String<class_string>` action **)**
 
+Removes all events from an action.
+
 .. _class_InputMap_action_has_event:
 
 - :ref:`bool<class_bool>` **action_has_event** **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event **)**
 
-Returns true if an action has an :ref:`InputEvent<class_inputevent>` associated with it.
+Returns ``true`` if the action has the given :ref:`InputEvent<class_inputevent>` associated with it.
 
 .. _class_InputMap_action_set_deadzone:
 
-- void **action_set_deadzone** **(** :ref:`String<class_string>` deadzone, :ref:`float<class_float>` arg1 **)**
+- void **action_set_deadzone** **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone **)**
 
 .. _class_InputMap_add_action:
 
 - void **add_action** **(** :ref:`String<class_string>` action, :ref:`float<class_float>` deadzone=0.5 **)**
 
-Adds an (empty) action to the ``InputMap``, with a configurable ``deadzone``.
+Adds an empty action to the ``InputMap`` with a configurable ``deadzone``.
 
 An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
 

@@ -37,10 +37,6 @@ Member Variables
 
 - :ref:`Geometry<class_geometry>` **Geometry** - :ref:`Geometry<class_geometry>` singleton
 
-  .. _class_@GlobalScope_GodotSharp:
-
-- :ref:`GodotSharp<class_godotsharp>` **GodotSharp** - :ref:`GodotSharp<class_godotsharp>` singleton
-
   .. _class_@GlobalScope_IP:
 
 - :ref:`IP<class_ip>` **IP** - :ref:`IP<class_ip>` singleton
@@ -250,6 +246,40 @@ enum **JoystickList**
 - **JOY_ANALOG_L2** = **6** --- Joypad Left Analog Trigger
 - **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
 
+  .. _enum_@GlobalScope_MidiMessageList:
+
+enum **MidiMessageList**
+
+- **MIDI_MESSAGE_NOTE_OFF** = **8**
+- **MIDI_MESSAGE_NOTE_ON** = **9**
+- **MIDI_MESSAGE_AFTERTOUCH** = **10**
+- **MIDI_MESSAGE_CONTROL_CHANGE** = **11**
+- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12**
+- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13**
+- **MIDI_MESSAGE_PITCH_BEND** = **14**
+
+  .. _enum_@GlobalScope_KeyModifierMask:
+
+enum **KeyModifierMask**
+
+- **KEY_CODE_MASK** = **33554431** --- Key Code Mask
+- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier Key Mask
+- **KEY_MASK_SHIFT** = **33554432** --- Shift Key Mask
+- **KEY_MASK_ALT** = **67108864** --- Alt Key Mask
+- **KEY_MASK_META** = **134217728** --- Meta Key Mask
+- **KEY_MASK_CTRL** = **268435456** --- CTRL Key Mask
+- **KEY_MASK_CMD** = **268435456** --- CMD Key Mask
+- **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
+- **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
+
+  .. _enum_@GlobalScope_HAlign:
+
+enum **HAlign**
+
+- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
+- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
+- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
+
   .. _enum_@GlobalScope_Error:
 
 enum **Error**
@@ -296,28 +326,6 @@ enum **Error**
 - **ERR_HELP** = **46** --- Help error
 - **ERR_BUG** = **47** --- Bug error
 
-  .. _enum_@GlobalScope_KeyModifierMask:
-
-enum **KeyModifierMask**
-
-- **KEY_CODE_MASK** = **33554431** --- Key Code Mask
-- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier Key Mask
-- **KEY_MASK_SHIFT** = **33554432** --- Shift Key Mask
-- **KEY_MASK_ALT** = **67108864** --- Alt Key Mask
-- **KEY_MASK_META** = **134217728** --- Meta Key Mask
-- **KEY_MASK_CTRL** = **268435456** --- CTRL Key Mask
-- **KEY_MASK_CMD** = **268435456** --- CMD Key Mask
-- **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
-- **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
-
-  .. _enum_@GlobalScope_HAlign:
-
-enum **HAlign**
-
-- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
-- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
-- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
-
   .. _enum_@GlobalScope_VAlign:
 
 enum **VAlign**
@@ -348,9 +356,10 @@ enum **PropertyHint**
 - **PROPERTY_HINT_GLOBAL_DIR** = **16**
 - **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- String property is a resource, so open the resource popup menu when edited.
 - **PROPERTY_HINT_MULTILINE_TEXT** = **18**
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **19**
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **20** --- Hints that the image is compressed using lossy compression.
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **21** --- Hints that the image is compressed using lossless compression.
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19**
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that the image is compressed using lossy compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that the image is compressed using lossless compression.
 
   .. _enum_@GlobalScope_Corner:
 
@@ -657,6 +666,8 @@ enum **ButtonList**
 - **BUTTON_LEFT** = **1** --- Left Mouse Button
 - **BUTTON_RIGHT** = **2** --- Right Mouse Button
 - **BUTTON_MIDDLE** = **3** --- Middle Mouse Button
+- **BUTTON_XBUTTON1** = **8**
+- **BUTTON_XBUTTON2** = **9**
 - **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up
 - **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down
 - **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button
@@ -664,6 +675,8 @@ enum **ButtonList**
 - **BUTTON_MASK_LEFT** = **1** --- Left Mouse Button Mask
 - **BUTTON_MASK_RIGHT** = **2** --- Right Mouse Button Mask
 - **BUTTON_MASK_MIDDLE** = **4** --- Middle Mouse Button Mask
+- **BUTTON_MASK_XBUTTON1** = **128**
+- **BUTTON_MASK_XBUTTON2** = **256**
 
 
 Description

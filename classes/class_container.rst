@@ -9,7 +9,7 @@ Container
 
 **Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`PanelContainer<class_panelcontainer>`, :ref:`GridContainer<class_gridcontainer>`, :ref:`ScrollContainer<class_scrollcontainer>`, :ref:`ViewportContainer<class_viewportcontainer>`, :ref:`MarginContainer<class_margincontainer>`, :ref:`CenterContainer<class_centercontainer>`, :ref:`GraphNode<class_graphnode>`, :ref:`SplitContainer<class_splitcontainer>`, :ref:`BoxContainer<class_boxcontainer>`, :ref:`EditorProperty<class_editorproperty>`
+**Inherited By:** :ref:`PanelContainer<class_panelcontainer>`, :ref:`GridContainer<class_gridcontainer>`, :ref:`ScrollContainer<class_scrollcontainer>`, :ref:`ViewportContainer<class_viewportcontainer>`, :ref:`MarginContainer<class_margincontainer>`, :ref:`CenterContainer<class_centercontainer>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`GraphNode<class_graphnode>`, :ref:`SplitContainer<class_splitcontainer>`, :ref:`BoxContainer<class_boxcontainer>`, :ref:`EditorProperty<class_editorproperty>`
 
 **Category:** Core
 

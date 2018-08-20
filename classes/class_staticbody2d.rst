@@ -35,6 +35,10 @@ Member Variables
 
 - :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
 
+  .. _class_StaticBody2D_physics_material_override:
+
+- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
+
 
 Description
 -----------

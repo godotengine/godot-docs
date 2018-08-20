@@ -69,6 +69,13 @@ Member Variables
 - :ref:`Vector2<class_vector2>` **y** - The Y axis of 2x2 basis matrix containing 2 :ref:`Vector2<class_vector2>`\ s as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
 
+Numeric Constants
+-----------------
+
+- **IDENTITY** = **Transform2D( 1, 0, 0, 1, 0, 0 )**
+- **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )**
+- **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )**
+
 Description
 -----------
 

@@ -40,19 +40,23 @@ Member Variables
 
 - :ref:`Color<class_color>` **color** - The currently selected color.
 
+  .. _class_ColorPicker_deferred_mode:
+
+- :ref:`bool<class_bool>` **deferred_mode** - If ``true`` the color will apply only after the user releases the mouse button, otherwise it will apply immediatly even in mouse motion event (which can cause performance issues).
+
   .. _class_ColorPicker_edit_alpha:
 
-- :ref:`bool<class_bool>` **edit_alpha** - If ``true``, shows an alpha channel slider (transparency).
+- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` shows an alpha channel slider (transparency).
 
   .. _class_ColorPicker_raw_mode:
 
-- :ref:`bool<class_bool>` **raw_mode** - If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+- :ref:`bool<class_bool>` **raw_mode** - If ``true`` allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 
 Description
 -----------
 
-This is a simple color picker :ref:`Control<class_control>`. It's useful for selecting a color from an RGB/RGBA colorspace.
+:ref:`Control<class_control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
 
 Member Function Description
 ---------------------------
@@ -61,6 +65,6 @@ Member Function Description
 
 - void **add_preset** **(** :ref:`Color<class_color>` color **)**
 
-Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
+Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
 
 

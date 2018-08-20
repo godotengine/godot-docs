@@ -20,6 +20,8 @@ Member Functions
 ----------------
 
 +--------------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_bone_id<class_PhysicalBone_get_bone_id>` **(** **)** const               |
++--------------------------+------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_simulate_physics<class_PhysicalBone_get_simulate_physics>` **(** **)**   |
 +--------------------------+------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_simulating_physics<class_PhysicalBone_is_simulating_physics>` **(** **)** |
@@ -80,6 +82,10 @@ enum **JointType**
 
 Member Function Description
 ---------------------------
+
+.. _class_PhysicalBone_get_bone_id:
+
+- :ref:`int<class_int>` **get_bone_id** **(** **)** const
 
 .. _class_PhysicalBone_get_simulate_physics:
 

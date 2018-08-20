@@ -9,7 +9,7 @@ StreamPeer
 
 **Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`StreamPeerBuffer<class_streampeerbuffer>`, :ref:`StreamPeerSSL<class_streampeerssl>`, :ref:`StreamPeerTCP<class_streampeertcp>`
+**Inherited By:** :ref:`StreamPeerBuffer<class_streampeerbuffer>`, :ref:`StreamPeerSSL<class_streampeerssl>`, :ref:`StreamPeerTCP<class_streampeertcp>`, :ref:`StreamPeerGDNative<class_streampeergdnative>`
 
 **Category:** Core
 

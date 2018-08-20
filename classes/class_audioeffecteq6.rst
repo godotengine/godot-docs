@@ -35,7 +35,5 @@ Band 5 : 3200 Hz
 
 Band 6 : 10000 Hz
 
-
-
 See also :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`, :ref:`AudioEffectEQ21<class_audioeffecteq21>`.
 

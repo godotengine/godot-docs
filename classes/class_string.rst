@@ -661,7 +661,9 @@ Returns the right side of the string from a given position.
 
 - :ref:`PoolStringArray<class_poolstringarray>` **rsplit** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
 
-Splits the string by a ``divisor`` string and returns an array of the substrings, starting from right. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
+Splits the string by a ``divisor`` string and returns an array of the substrings, starting from right.
+
+**Example:** "One,Two,Three" will return "One","Two","Three" if split by ",".
 
 If ``maxsplit`` is specified, then it is number of splits to do, default is 0 which splits all the items.
 
@@ -691,7 +693,9 @@ Returns the similarity index of the text compared to this string. 1 means totall
 
 - :ref:`PoolStringArray<class_poolstringarray>` **split** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
 
-Splits the string by a divisor string and returns an array of the substrings. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
+Splits the string by a divisor string and returns an array of the substrings.
+
+**Example:** "One,Two,Three" will return "One","Two","Three" if split by ",".
 
 If ``maxsplit`` is given, at most maxsplit number of splits occur, and the remainder of the string is returned as the final element of the list (thus, the list will have at most maxsplit+1 elements)
 
@@ -699,7 +703,9 @@ If ``maxsplit`` is given, at most maxsplit number of splits occur, and the remai
 
 - :ref:`PoolRealArray<class_poolrealarray>` **split_floats** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**
 
-Splits the string in floats by using a divisor string and returns an array of the substrings. Example "1,2.5,3" will return 1,2.5,3 if split by ",".
+Splits the string in floats by using a divisor string and returns an array of the substrings.
+
+**Example:** "1,2.5,3" will return 1,2.5,3 if split by ",".
 
 .. _class_String_strip_edges:
 

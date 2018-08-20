@@ -370,7 +370,7 @@ Moves this TreeItem to the top in the :ref:`Tree<class_tree>` hierarchy.
 
 - void **remove_child** **(** :ref:`Object<class_object>` child **)**
 
-Removes the child TreeItem at index ``index``.
+Removes the given child TreeItem.
 
 .. _class_TreeItem_select:
 

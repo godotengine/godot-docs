@@ -9,22 +9,26 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`TextureRect<class_texturerect>`, :ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`GraphEdit<class_graphedit>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`NinePatchRect<class_ninepatchrect>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`ItemList<class_itemlist>`
+**Inherited By:** :ref:`TextureRect<class_texturerect>`, :ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`GraphEdit<class_graphedit>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`NinePatchRect<class_ninepatchrect>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-All User Interface nodes inherit from Control. Features anchors and margins to adapt its position and size to its parent.
+All User Interface nodes inherit from Control. A control's anchors and margins adapt its position and size relative to its parent.
 
 Member Functions
 ----------------
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`_clips_input<class_Control__clips_input>` **(** **)** virtual                                                                                                                                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                 | :ref:`_get_minimum_size<class_Control__get_minimum_size>` **(** **)** virtual                                                                                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`_gui_input<class_Control__gui_input>` **(** :ref:`InputEvent<class_inputevent>` event **)** virtual                                                                                                                                                   |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                   | :ref:`_make_custom_tooltip<class_Control__make_custom_tooltip>` **(** :ref:`String<class_string>` for_text **)** virtual                                                                                                                                    |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`accept_event<class_Control_accept_event>` **(** **)**                                                                                                                                                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -282,6 +286,8 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
 - :ref:`CursorShape<enum_control_cursorshape>` **mouse_default_cursor_shape** - The default cursor shape for this control. Useful for Godot plugins and applications or games that use the system's mouse cursors.
 
+**Note:** On Linux, shapes may vary depending on the cursor theme of the system.
+
   .. _class_Control_mouse_filter:
 
 - :ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER_*`` constants. See the constants to learn what each does.
@@ -339,11 +345,11 @@ Numeric Constants
 -----------------
 
 - **NOTIFICATION_RESIZED** = **40** --- Sent when the node changes size. Use :ref:`rect_size<class_Control_rect_size>` to get the new size.
-- **NOTIFICATION_MOUSE_ENTER** = **41** --- Sent when the mouse pointer enters the node's ``Rect`` area.
-- **NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer exits the node's ``Rect`` area.
+- **NOTIFICATION_MOUSE_ENTER** = **41** --- Sent when the mouse pointer enters the node.
+- **NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer exits the node.
 - **NOTIFICATION_FOCUS_ENTER** = **43** --- Sent when the node grabs focus.
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
-- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the ``Control``. Happens when you call one of the ``add_*_override``
+- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_*_override``
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
 - **NOTIFICATION_SCROLL_BEGIN** = **47**
 - **NOTIFICATION_SCROLL_END** = **48**
@@ -358,7 +364,7 @@ enum **SizeFlags**
 - **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
 - **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
 - **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
-- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_container>` to center the node in itself. It centers the ``Control`` based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_container>` to center the node in itself. It centers the control based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
 - **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
 
   .. _enum_Control_CursorShape:
@@ -387,9 +393,9 @@ enum **CursorShape**
 
 enum **FocusMode**
 
-- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
-- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
-- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
+- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`focus_mode<class_Control_focus_mode>`.
+- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Control_focus_mode>`.
+- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`focus_mode<class_Control_focus_mode>`.
 
   .. _enum_Control_GrowDirection:
 
@@ -462,14 +468,24 @@ Set :ref:`mouse_filter<class_Control_mouse_filter>` to MOUSE_FILTER_IGNORE to te
 
 :ref:`Theme<class_theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_add_font_override>`. You can override the theme with the inspector.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/index`
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
+
 Member Function Description
 ---------------------------
+
+.. _class_Control__clips_input:
+
+- :ref:`bool<class_bool>` **_clips_input** **(** **)** virtual
 
 .. _class_Control__get_minimum_size:
 
 - :ref:`Vector2<class_vector2>` **_get_minimum_size** **(** **)** virtual
 
-Returns the minimum size this Control can shrink to. The node can never be smaller than this minimum size.
+Returns the minimum size for this control. See :ref:`rect_min_size<class_Control_rect_min_size>`.
 
 .. _class_Control__gui_input:
 
@@ -478,6 +494,10 @@ Returns the minimum size this Control can shrink to. The node can never be small
 The node's parent forwards input events to this method. Use it to process and accept inputs on UI elements. See :ref:`accept_event<class_Control_accept_event>`.
 
 Replaces Godot 2's ``_input_event``.
+
+.. _class_Control__make_custom_tooltip:
+
+- :ref:`Object<class_object>` **_make_custom_tooltip** **(** :ref:`String<class_string>` for_text **)** virtual
 
 .. _class_Control_accept_event:
 
@@ -566,6 +586,8 @@ The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_dat
 
 - :ref:`Vector2<class_vector2>` **get_begin** **(** **)** const
 
+Returns :ref:`margin_left<class_Control_margin_left>` and :ref:`margin_top<class_Control_margin_top>`. See also :ref:`rect_position<class_Control_rect_position>`.
+
 .. _class_Control_get_color:
 
 - :ref:`Color<class_color>` **get_color** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type="" **)** const
@@ -582,7 +604,7 @@ The methods :ref:`can_drop_data<class_Control_can_drop_data>` and :ref:`drop_dat
 
 - :ref:`CursorShape<enum_control_cursorshape>` **get_cursor_shape** **(** :ref:`Vector2<class_vector2>` position=Vector2( 0, 0 ) **)** const
 
-Returns the mouse cursor shape the control displays on mouse hover, one of the ``CURSOR_*`` constants.
+Returns the mouse cursor shape the control displays on mouse hover. See :ref:`CursorShape<enum_@globalscope_cursorshape>`.
 
 .. _class_Control_get_drag_data:
 
@@ -605,13 +627,13 @@ A preview that will follow the mouse that should represent the data can be set w
 
 - :ref:`Vector2<class_vector2>` **get_end** **(** **)** const
 
-Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
+Returns :ref:`margin_right<class_Control_margin_right>` and :ref:`margin_bottom<class_Control_margin_bottom>`.
 
 .. _class_Control_get_focus_owner:
 
 - :ref:`Control<class_control>` **get_focus_owner** **(** **)** const
 
-Return which control is owning the keyboard focus, or null if no one.
+Returns the control that has the keyboard focus or ``null`` if none.
 
 .. _class_Control_get_font:
 
@@ -621,7 +643,7 @@ Return which control is owning the keyboard focus, or null if no one.
 
 - :ref:`Rect2<class_rect2>` **get_global_rect** **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_position<class_Control_get_global_position>`, :ref:`get_size<class_Control_get_size>`).
+Returns the position and size of the control relative to the top-left corner of the screen. See :ref:`rect_position<class_Control_rect_position>` and :ref:`rect_size<class_Control_rect_size>`.
 
 .. _class_Control_get_icon:
 
@@ -631,27 +653,31 @@ Return position and size of the Control, relative to the top-left corner of the 
 
 - :ref:`Vector2<class_vector2>` **get_minimum_size** **(** **)** const
 
-Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
+Returns the minimum size for this control. See :ref:`rect_min_size<class_Control_rect_min_size>`.
 
 .. _class_Control_get_parent_area_size:
 
 - :ref:`Vector2<class_vector2>` **get_parent_area_size** **(** **)** const
 
+Returns the width/height occupied in the parent control.
+
 .. _class_Control_get_parent_control:
 
 - :ref:`Control<class_control>` **get_parent_control** **(** **)** const
+
+Returns the parent control node.
 
 .. _class_Control_get_rect:
 
 - :ref:`Rect2<class_rect2>` **get_rect** **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_position<class_Control_get_position>`, :ref:`get_size<class_Control_get_size>`).
+Returns the position and size of the control relative to the top-left corner of the parent Control. See :ref:`rect_position<class_Control_rect_position>` and :ref:`rect_size<class_Control_rect_size>`.
 
 .. _class_Control_get_rotation:
 
 - :ref:`float<class_float>` **get_rotation** **(** **)** const
 
-Return the rotation (in radians)
+Returns the rotation (in radians).
 
 .. _class_Control_get_stylebox:
 
@@ -661,7 +687,7 @@ Return the rotation (in radians)
 
 - :ref:`String<class_string>` **get_tooltip** **(** :ref:`Vector2<class_vector2>` at_position=Vector2( 0, 0 ) **)** const
 
-Return the tooltip, which will appear when the cursor is resting over this control.
+Returns the tooltip, which will appear when the cursor is resting over this control.
 
 .. _class_Control_grab_click_focus:
 
@@ -693,7 +719,7 @@ Steal the focus from another control and become the focused control (see :ref:`s
 
 - :ref:`bool<class_bool>` **has_focus** **(** **)** const
 
-Return whether the Control is the current focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
+Returns ``true`` if this is the current focused control. See :ref:`focus_mode<class_Control_focus_mode>`.
 
 .. _class_Control_has_font:
 
@@ -735,7 +761,7 @@ Return whether the Control is the current focused control (see :ref:`set_focus_m
 
 - void **release_focus** **(** **)**
 
-Give up the focus, no other control will be able to receive keyboard input.
+Give up the focus. No other control will be able to receive keyboard input.
 
 .. _class_Control_set_anchor:
 
@@ -757,7 +783,7 @@ Give up the focus, no other control will be able to receive keyboard input.
 
 - void **set_begin** **(** :ref:`Vector2<class_vector2>` position **)**
 
-Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
+Sets :ref:`margin_left<class_Control_margin_left>` and :ref:`margin_top<class_Control_margin_top>` at the same time.
 
 .. _class_Control_set_drag_forwarding:
 
@@ -800,7 +826,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
 - void **set_end** **(** :ref:`Vector2<class_vector2>` position **)**
 
-Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
+Sets :ref:`margin_right<class_Control_margin_right>` and :ref:`margin_bottom<class_Control_margin_bottom>` at the same time.
 
 .. _class_Control_set_margins_preset:
 
@@ -810,13 +836,13 @@ Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref
 
 - void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
-Set the rotation (in radians).
+Sets the rotation (in radians).
 
 .. _class_Control_show_modal:
 
 - void **show_modal** **(** :ref:`bool<class_bool>` exclusive=false **)**
 
-Display a Control as modal. Control must be a subwindow. Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
+Displays a control as modal. Control must be a subwindow. Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
 
 .. _class_Control_warp_mouse:
 

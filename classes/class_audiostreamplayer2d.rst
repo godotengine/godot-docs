@@ -74,6 +74,10 @@ Member Variables
 
 - :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 
+  .. _class_AudioStreamPlayer2D_stream_paused:
+
+- :ref:`bool<class_bool>` **stream_paused**
+
   .. _class_AudioStreamPlayer2D_volume_db:
 
 - :ref:`float<class_float>` **volume_db** - Base volume without dampening.
@@ -83,6 +87,12 @@ Description
 -----------
 
 Plays audio that dampens with distance from screen center.
+
+Tutorials
+---------
+
+- :doc:`../learning/features/audio/index`
+- :doc:`../tutorials/audio/audio_streams`
 
 Member Function Description
 ---------------------------

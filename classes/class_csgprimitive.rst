@@ -16,13 +16,13 @@ CSGPrimitive
 Brief Description
 -----------------
 
-
+Base class for CSG primitives.
 
 Member Variables
 ----------------
 
   .. _class_CSGPrimitive_invert_faces:
 
-- :ref:`bool<class_bool>` **invert_faces**
+- :ref:`bool<class_bool>` **invert_faces** - Invert the faces of the mesh.
 
 

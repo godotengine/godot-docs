@@ -60,6 +60,11 @@ Description
 
 PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
+
 Member Function Description
 ---------------------------
 

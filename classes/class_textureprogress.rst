@@ -97,6 +97,9 @@ enum **FillMode**
 - **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from bottom to top.
 - **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
 - **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
+- **FILL_BILINEAR_LEFT_AND_RIGHT** = **6**
+- **FILL_BILINEAR_TOP_AND_BOTTOM** = **7**
+- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8**
 
 
 Description

@@ -186,6 +186,11 @@ Rich text can contain custom text, fonts, images and some basic formatting. The 
 
 Note that assignments to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_pop>` methods.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
 Member Function Description
 ---------------------------
 

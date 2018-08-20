@@ -19,56 +19,46 @@ Kinematic body 3D node.
 Member Functions
 ----------------
 
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`                        | :ref:`get_floor_velocity<class_KinematicBody_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                               |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`KinematicCollision<class_kinematiccollision>`  | :ref:`get_slide_collision<class_KinematicBody_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                   |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                | :ref:`get_slide_count<class_KinematicBody_get_slide_count>` **(** **)** const                                                                                                                                                                                                                                                                                                     |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`is_on_ceiling<class_KinematicBody_is_on_ceiling>` **(** **)** const                                                                                                                                                                                                                                                                                                         |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`is_on_floor<class_KinematicBody_is_on_floor>` **(** **)** const                                                                                                                                                                                                                                                                                                             |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`is_on_wall<class_KinematicBody_is_on_wall>` **(** **)** const                                                                                                                                                                                                                                                                                                               |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`KinematicCollision<class_kinematiccollision>`  | :ref:`move_and_collide<class_KinematicBody_move_and_collide>` **(** :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                                                                                                                                                                                    |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`                        | :ref:`move_and_slide<class_KinematicBody_move_and_slide>` **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` slope_stop_min_velocity=0.05, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)** |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`test_move<class_KinematicBody_test_move>` **(** :ref:`Transform<class_transform>` from, :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**                                                                                                                                                                                               |
-+------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                        | :ref:`get_floor_velocity<class_KinematicBody_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                             |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`KinematicCollision<class_kinematiccollision>`  | :ref:`get_slide_collision<class_KinematicBody_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                                                                 |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                | :ref:`get_slide_count<class_KinematicBody_get_slide_count>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                   |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`is_on_ceiling<class_KinematicBody_is_on_ceiling>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                       |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`is_on_floor<class_KinematicBody_is_on_floor>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                           |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`is_on_wall<class_KinematicBody_is_on_wall>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                             |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`KinematicCollision<class_kinematiccollision>`  | :ref:`move_and_collide<class_KinematicBody_move_and_collide>` **(** :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` test_only=false **)**                                                                                                                                                                                                                         |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                        | :ref:`move_and_slide<class_KinematicBody_move_and_slide>` **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                          |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                        | :ref:`move_and_slide_with_snap<class_KinematicBody_move_and_slide_with_snap>` **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` snap, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)** |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`test_move<class_KinematicBody_test_move>` **(** :ref:`Transform<class_transform>` from, :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**                                                                                                                                                                                                                                             |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-  .. _class_KinematicBody_axis_lock_angular_x:
-
-- :ref:`bool<class_bool>` **axis_lock_angular_x**
-
-  .. _class_KinematicBody_axis_lock_angular_y:
-
-- :ref:`bool<class_bool>` **axis_lock_angular_y**
-
-  .. _class_KinematicBody_axis_lock_angular_z:
-
-- :ref:`bool<class_bool>` **axis_lock_angular_z**
-
-  .. _class_KinematicBody_axis_lock_linear_x:
-
-- :ref:`bool<class_bool>` **axis_lock_linear_x**
-
-  .. _class_KinematicBody_axis_lock_linear_y:
-
-- :ref:`bool<class_bool>` **axis_lock_linear_y**
-
-  .. _class_KinematicBody_axis_lock_linear_z:
-
-- :ref:`bool<class_bool>` **axis_lock_linear_z**
-
   .. _class_KinematicBody_collision/safe_margin:
 
 - :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.
+
+  .. _class_KinematicBody_move_lock_x:
+
+- :ref:`bool<class_bool>` **move_lock_x**
+
+  .. _class_KinematicBody_move_lock_y:
+
+- :ref:`bool<class_bool>` **move_lock_y**
+
+  .. _class_KinematicBody_move_lock_z:
+
+- :ref:`bool<class_bool>` **move_lock_z**
 
 
 Description
@@ -79,6 +69,11 @@ Kinematic bodies are special types of bodies that are meant to be user-controlle
 Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
 Kinematic Characters: KinematicBody also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/kinematic_character_2d`
 
 Member Function Description
 ---------------------------
@@ -121,13 +116,15 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 
 .. _class_KinematicBody_move_and_collide:
 
-- :ref:`KinematicCollision<class_kinematiccollision>` **move_and_collide** **(** :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**
+- :ref:`KinematicCollision<class_kinematiccollision>` **move_and_collide** **(** :ref:`Vector3<class_vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` test_only=false **)**
 
 Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision<class_kinematiccollision>`, which contains information about the collision.
 
+If ``test_only`` is ``true[/true], the body does not move but the would-be collision information is given.
+
 .. _class_KinematicBody_move_and_slide:
 
-- :ref:`Vector3<class_vector3>` **move_and_slide** **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`float<class_float>` slope_stop_min_velocity=0.05, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
+- :ref:`Vector3<class_vector3>` **move_and_slide** **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_slides=4, :ref:`float<class_float>` floor_max_angle=0.785398, :ref:`bool<class_bool>` infinite_inertia=true **)**
 
 Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody`` or :ref:`RigidBody<class_rigidbody>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
@@ -135,13 +132,17 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall. This is useful for topdown games.
 
-If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
+*TODO: Update for new stop_on_slode argument.* If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
 Returns the movement that remained when the body stopped. To get more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody_get_slide_collision>`.
+
+.. _class_KinematicBody_move_and_slide_with_snap:
+
+- :ref:`Vector3<class_vector3>` **move_and_slide_with_snap** **(** :ref:`Vector3<class_vector3>` linear_velocity, :ref:`Vector3<class_vector3>` snap, :ref:`Vector3<class_vector3>` floor_normal=Vector3( 0, 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
 
 .. _class_KinematicBody_test_move:
 

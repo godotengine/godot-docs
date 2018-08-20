@@ -48,11 +48,18 @@ Description
 
 Stores key presses on the keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_echo>` events.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+
 Member Function Description
 ---------------------------
 
 .. _class_InputEventKey_get_scancode_with_modifiers:
 
 - :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
+
+Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>`.
 
 

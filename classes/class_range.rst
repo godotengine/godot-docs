@@ -34,13 +34,13 @@ Signals
 
 - **changed** **(** **)**
 
-This signal is emitted when min, max, range or step change.
+Emitted when :ref:`min_value<class_Range_min_value>`, :ref:`max_value<class_Range_max_value>`, :ref:`page<class_Range_page>`, or :ref:`step<class_Range_step>` change.
 
 .. _class_Range_value_changed:
 
 - **value_changed** **(** :ref:`float<class_float>` value **)**
 
-This signal is emitted when value changes.
+Emitted when :ref:`value<class_Range_value>` changes.
 
 
 Member Variables
@@ -48,11 +48,11 @@ Member Variables
 
   .. _class_Range_allow_greater:
 
-- :ref:`bool<class_bool>` **allow_greater**
+- :ref:`bool<class_bool>` **allow_greater** - If ``true`` :ref:`value<class_Range_value>` may be greater than :ref:`max_value<class_Range_max_value>`. Default value: ``false``.
 
   .. _class_Range_allow_lesser:
 
-- :ref:`bool<class_bool>` **allow_lesser**
+- :ref:`bool<class_bool>` **allow_lesser** - If ``true`` :ref:`value<class_Range_value>` may be less than :ref:`min_value<class_Range_min_value>`. Default value: ``false``.
 
   .. _class_Range_exp_edit:
 
@@ -60,11 +60,11 @@ Member Variables
 
   .. _class_Range_max_value:
 
-- :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: 100.
+- :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: ``100``.
 
   .. _class_Range_min_value:
 
-- :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: 0.
+- :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: ``0``.
 
   .. _class_Range_page:
 
@@ -76,7 +76,7 @@ Member Variables
 
   .. _class_Range_rounded:
 
-- :ref:`bool<class_bool>` **rounded** - If ``true``, ``value`` will always be rounded to the nearest integer.
+- :ref:`bool<class_bool>` **rounded** - If ``true`` ``value`` will always be rounded to the nearest integer. Default value: ``false``.
 
   .. _class_Range_step:
 
@@ -99,12 +99,12 @@ Member Function Description
 
 - void **share** **(** :ref:`Node<class_node>` with **)**
 
-Binds two Ranges together along with any Ranges previously grouped with either of them. When any of Range's member variables change, it will share the new value with all other Ranges in its group.
+Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
 .. _class_Range_unshare:
 
 - void **unshare** **(** **)**
 
-Stop Range from sharing its member variables with any other Range.
+Stop range from sharing its member variables with any other.
 
 

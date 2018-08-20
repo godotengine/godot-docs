@@ -193,7 +193,7 @@ Enums
 enum **UpdateMode**
 
 - **UPDATE_DISABLED** = **0** --- Do not update the render target.
-- **UPDATE_ONCE** = **1** --- Update the render target once, then switch to ``UPDATE_DISABLED``
+- **UPDATE_ONCE** = **1** --- Update the render target once, then switch to ``UPDATE_DISABLED``.
 - **UPDATE_WHEN_VISIBLE** = **2** --- Update the render target only when it is visible. This is the default value.
 - **UPDATE_ALWAYS** = **3** --- Always update the render target.
 
@@ -223,9 +223,9 @@ enum **MSAA**
 
 enum **ClearMode**
 
-- **CLEAR_MODE_ALWAYS** = **0**
-- **CLEAR_MODE_NEVER** = **1**
-- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2**
+- **CLEAR_MODE_ALWAYS** = **0** --- Always clear the render target before drawing.
+- **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
+- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to ``CLEAR_MODE_NEVER``.
 
   .. _enum_Viewport_Usage:
 
@@ -242,7 +242,7 @@ enum **DebugDraw**
 
 - **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
 - **DEBUG_DRAW_UNSHADED** = **1** --- Objects are displayed without light information.
-- **DEBUG_DRAW_OVERDRAW** = **2**
+- **DEBUG_DRAW_OVERDRAW** = **2** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
 - **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
 
   .. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
@@ -266,13 +266,19 @@ A Viewport creates a different view into the screen, or a sub-view inside anothe
 
 Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
 
-If a viewport is a child of a :ref:`Control<class_control>`, it will automatically take up its same rect and position, otherwise they must be set manually.
+If a viewport is a child of a :ref:`ViewportContainer<class_viewportcontainer>`, it will automatically take up its size, otherwise it must be set manually.
 
 Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
 
 Also, viewports can be assigned to different screens in case the devices have multiple screens.
 
 Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`../tutorials/viewports/index`
 
 Member Function Description
 ---------------------------
@@ -281,61 +287,61 @@ Member Function Description
 
 - :ref:`World<class_world>` **find_world** **(** **)** const
 
-Return the 3D world of the viewport, or if no such present, the one of the parent viewport.
+Returns the 3D world of the viewport, or if none the world of the parent viewport.
 
 .. _class_Viewport_find_world_2d:
 
 - :ref:`World2D<class_world2d>` **find_world_2d** **(** **)** const
 
-Return the 2D world of the viewport.
+Returns the 2D world of the viewport.
 
 .. _class_Viewport_get_camera:
 
 - :ref:`Camera<class_camera>` **get_camera** **(** **)** const
 
-Return the active 3D camera.
+Returns the active 3D camera.
 
 .. _class_Viewport_get_final_transform:
 
 - :ref:`Transform2D<class_transform2d>` **get_final_transform** **(** **)** const
 
-Get the total transform of the viewport.
+Returns the total transform of the viewport.
 
 .. _class_Viewport_get_mouse_position:
 
 - :ref:`Vector2<class_vector2>` **get_mouse_position** **(** **)** const
 
-Get the mouse position, relative to the viewport.
+Returns the mouse position relative to the viewport.
 
 .. _class_Viewport_get_render_info:
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_viewport_renderinfo>` info **)**
 
-Get the specific information about the viewport from rendering pipeline.
+Returns information about the viewport from the rendering pipeline.
 
 .. _class_Viewport_get_size_override:
 
 - :ref:`Vector2<class_vector2>` **get_size_override** **(** **)** const
 
-Get the size override set with :ref:`set_size_override<class_Viewport_set_size_override>`.
+Returns the size override set with :ref:`set_size_override<class_Viewport_set_size_override>`.
 
 .. _class_Viewport_get_texture:
 
 - :ref:`ViewportTexture<class_viewporttexture>` **get_texture** **(** **)** const
 
-Get the viewport's texture, for use with various objects that you want to texture with the viewport.
+Returns the viewport's texture.
 
 .. _class_Viewport_get_viewport_rid:
 
 - :ref:`RID<class_rid>` **get_viewport_rid** **(** **)** const
 
-Get the viewport RID from the :ref:`VisualServer<class_visualserver>`.
+Returns the viewport's RID from the :ref:`VisualServer<class_visualserver>`.
 
 .. _class_Viewport_get_visible_rect:
 
 - :ref:`Rect2<class_rect2>` **get_visible_rect** **(** **)** const
 
-Return the final, visible rect in global screen coordinates.
+Returns the visible rectangle in global screen coordinates.
 
 .. _class_Viewport_gui_get_drag_data:
 
@@ -347,7 +353,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 - :ref:`bool<class_bool>` **gui_has_modal_stack** **(** **)** const
 
-Returns whether there are shown modals on-screen.
+Returns ``true`` if there are visible modals on-screen.
 
 .. _class_Viewport_input:
 
@@ -357,13 +363,13 @@ Returns whether there are shown modals on-screen.
 
 - :ref:`bool<class_bool>` **is_size_override_enabled** **(** **)** const
 
-Get the enabled status of the size override set with :ref:`set_size_override<class_Viewport_set_size_override>`.
+Returns ``true`` if the size override is enabled. See :ref:`set_size_override<class_Viewport_set_size_override>`.
 
 .. _class_Viewport_is_size_override_stretch_enabled:
 
 - :ref:`bool<class_bool>` **is_size_override_stretch_enabled** **(** **)** const
 
-Get the enabled status of the size stretch override set with :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
+Returns ``true`` if the size stretch override is enabled. See :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
 
 .. _class_Viewport_set_attach_to_screen_rect:
 
@@ -373,13 +379,13 @@ Get the enabled status of the size stretch override set with :ref:`set_size_over
 
 - void **set_size_override** **(** :ref:`bool<class_bool>` enable, :ref:`Vector2<class_vector2>` size=Vector2( -1, -1 ), :ref:`Vector2<class_vector2>` margin=Vector2( 0, 0 ) **)**
 
-Set the size override of the viewport. If the enable parameter is true, it would use the override, otherwise it would use the default size. If the size parameter is equal to ``(-1, -1)``, it won't update the size.
+Sets the size override of the viewport. If the ``enable`` parameter is ``true`` the override is used, otherwise it uses the default size. If the size parameter is ``(-1, -1)``, it won't update the size.
 
 .. _class_Viewport_set_size_override_stretch:
 
 - void **set_size_override_stretch** **(** :ref:`bool<class_bool>` enabled **)**
 
-Set whether the size override affects stretch as well.
+If ``true`` the size override affects stretch as well.
 
 .. _class_Viewport_unhandled_input:
 
@@ -389,12 +395,12 @@ Set whether the size override affects stretch as well.
 
 - void **update_worlds** **(** **)**
 
-Force update of the 2D and 3D worlds.
+Forces update of the 2D and 3D worlds.
 
 .. _class_Viewport_warp_mouse:
 
 - void **warp_mouse** **(** :ref:`Vector2<class_vector2>` to_position **)**
 
-Warp the mouse to a position, relative to the viewport.
+Warps the mouse to a position relative to the viewport.
 
 

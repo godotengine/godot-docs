@@ -21,9 +21,11 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------+--------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`get_item_rect<class_SpriteBase3D_get_item_rect>` **(** **)** const |
-+----------------------------+--------------------------------------------------------------------------+
++------------------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`TriangleMesh<class_trianglemesh>`  | :ref:`generate_triangle_mesh<class_SpriteBase3D_generate_triangle_mesh>` **(** **)** const |
++------------------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`                | :ref:`get_item_rect<class_SpriteBase3D_get_item_rect>` **(** **)** const                   |
++------------------------------------------+--------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -105,6 +107,10 @@ A node that displays 2D texture information in a 3D environment.
 
 Member Function Description
 ---------------------------
+
+.. _class_SpriteBase3D_generate_triangle_mesh:
+
+- :ref:`TriangleMesh<class_trianglemesh>` **generate_triangle_mesh** **(** **)** const
 
 .. _class_SpriteBase3D_get_item_rect:
 

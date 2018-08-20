@@ -26,6 +26,8 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_offset_buttons_visible<class_Tabs_get_offset_buttons_visible>` **(** **)** const                                       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_select_with_rmb<class_Tabs_get_select_with_rmb>` **(** **)** const                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tab_count<class_Tabs_get_tab_count>` **(** **)** const                                                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_tab_disabled<class_Tabs_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
@@ -43,6 +45,8 @@ Member Functions
 | void                           | :ref:`move_tab<class_Tabs_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_tab<class_Tabs_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_select_with_rmb<class_Tabs_set_select_with_rmb>` **(** :ref:`bool<class_bool>` enabled **)**                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_disabled<class_Tabs_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -147,6 +151,10 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
 
+.. _class_Tabs_get_select_with_rmb:
+
+- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** const
+
 .. _class_Tabs_get_tab_count:
 
 - :ref:`int<class_int>` **get_tab_count** **(** **)** const
@@ -186,6 +194,10 @@ Rearrange tab.
 .. _class_Tabs_remove_tab:
 
 - void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**
+
+.. _class_Tabs_set_select_with_rmb:
+
+- void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
 
 .. _class_Tabs_set_tab_disabled:
 

@@ -34,6 +34,8 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`get_item_custom_bg_color<class_ItemList_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                | :ref:`get_item_custom_fg_color<class_ItemList_get_item_custom_fg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`            | :ref:`get_item_icon<class_ItemList_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`get_item_icon_modulate<class_ItemList_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** const                                                        |
@@ -67,6 +69,8 @@ Member Functions
 | void                                     | :ref:`select<class_ItemList_select>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true **)**                                                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_custom_bg_color<class_ItemList_set_item_custom_bg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_bg_color **)**               |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_item_custom_fg_color<class_ItemList_set_item_custom_fg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_fg_color **)**               |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_disabled<class_ItemList_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                      |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,13 +206,9 @@ enum **SelectMode**
 Description
 -----------
 
-This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons,
+This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
 
-or both text and icon.  Tooltips are supported and may be different for every item in the list.  Selectable items in the list
-
-may be selected or deselected and multiple selection may be enabled.  Selection with right mouse button may also be enabled
-
-to allow use of popup context menus.  Items may also be 'activated' with a double click (or Enter key).
+Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be 'activated' with a double click (or Enter key).
 
 Member Function Description
 ---------------------------
@@ -254,6 +254,10 @@ Return count of items currently in the item list.
 .. _class_ItemList_get_item_custom_bg_color:
 
 - :ref:`Color<class_color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
+
+.. _class_ItemList_get_item_custom_fg_color:
+
+- :ref:`Color<class_color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_icon:
 
@@ -350,6 +354,10 @@ Note:  This method does not trigger the item selection signal.
 .. _class_ItemList_set_item_custom_bg_color:
 
 - void **set_item_custom_bg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_bg_color **)**
+
+.. _class_ItemList_set_item_custom_fg_color:
+
+- void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_fg_color **)**
 
 .. _class_ItemList_set_item_disabled:
 

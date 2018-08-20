@@ -46,6 +46,8 @@ Member Functions
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ShaderMaterial<class_shadermaterial>`        | :ref:`tile_get_material<class_TileSet_tile_get_material>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                          | :ref:`tile_get_modulate<class_TileSet_tile_get_modulate>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                        | :ref:`tile_get_name<class_TileSet_tile_get_name>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                              |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NavigationPolygon<class_navigationpolygon>`  | :ref:`tile_get_navigation_polygon<class_TileSet_tile_get_navigation_polygon>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                  |
@@ -79,6 +81,8 @@ Member Functions
 | void                                               | :ref:`tile_set_light_occluder<class_TileSet_tile_set_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_occluderpolygon2d>` light_occluder **)**                                                                                                              |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`tile_set_material<class_TileSet_tile_set_material>` **(** :ref:`int<class_int>` id, :ref:`ShaderMaterial<class_shadermaterial>` material **)**                                                                                                                                      |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`tile_set_modulate<class_TileSet_tile_set_modulate>` **(** :ref:`int<class_int>` id, :ref:`Color<class_color>` color **)**                                                                                                                                                           |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`tile_set_name<class_TileSet_tile_set_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name **)**                                                                                                                                                                  |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -126,7 +130,7 @@ enum **TileMode**
 
 - **SINGLE_TILE** = **0**
 - **AUTO_TILE** = **1**
-- **ANIMATED_TILE** = **2**
+- **ATLAS_TILE** = **2**
 
   .. _enum_TileSet_AutotileBindings:
 
@@ -172,37 +176,37 @@ Member Function Description
 
 - void **clear** **(** **)**
 
-Clear all tiles.
+Clears all tiles.
 
 .. _class_TileSet_create_tile:
 
 - void **create_tile** **(** :ref:`int<class_int>` id **)**
 
-Create a new tile which will be referenced by the given ID.
+Creates a new tile which will be referenced by the given ID.
 
 .. _class_TileSet_find_tile_by_name:
 
 - :ref:`int<class_int>` **find_tile_by_name** **(** :ref:`String<class_string>` name **)** const
 
-Find the first tile matching the given name.
+Returns the first tile matching the given name.
 
 .. _class_TileSet_get_last_unused_tile_id:
 
 - :ref:`int<class_int>` **get_last_unused_tile_id** **(** **)** const
 
-Return the ID following the last currently used ID, useful when creating a new tile.
+Returns the ID following the last currently used ID, useful when creating a new tile.
 
 .. _class_TileSet_get_tiles_ids:
 
 - :ref:`Array<class_array>` **get_tiles_ids** **(** **)** const
 
-Return an array of all currently used tile IDs.
+Returns an array of all currently used tile IDs.
 
 .. _class_TileSet_remove_tile:
 
 - void **remove_tile** **(** :ref:`int<class_int>` id **)**
 
-Remove the tile referenced by the given ID.
+Removes the tile referenced by the given ID.
 
 .. _class_TileSet_tile_add_shape:
 
@@ -212,31 +216,35 @@ Remove the tile referenced by the given ID.
 
 - :ref:`OccluderPolygon2D<class_occluderpolygon2d>` **tile_get_light_occluder** **(** :ref:`int<class_int>` id **)** const
 
-Return the light occluder of the tile.
+Returns the light occluder of the tile.
 
 .. _class_TileSet_tile_get_material:
 
 - :ref:`ShaderMaterial<class_shadermaterial>` **tile_get_material** **(** :ref:`int<class_int>` id **)** const
 
-Return the material of the tile.
+Returns the material of the tile.
+
+.. _class_TileSet_tile_get_modulate:
+
+- :ref:`Color<class_color>` **tile_get_modulate** **(** :ref:`int<class_int>` id **)** const
 
 .. _class_TileSet_tile_get_name:
 
 - :ref:`String<class_string>` **tile_get_name** **(** :ref:`int<class_int>` id **)** const
 
-Return the name of the tile.
+Returns the name of the tile.
 
 .. _class_TileSet_tile_get_navigation_polygon:
 
 - :ref:`NavigationPolygon<class_navigationpolygon>` **tile_get_navigation_polygon** **(** :ref:`int<class_int>` id **)** const
 
-Return the navigation polygon of the tile.
+Returns the navigation polygon of the tile.
 
 .. _class_TileSet_tile_get_navigation_polygon_offset:
 
 - :ref:`Vector2<class_vector2>` **tile_get_navigation_polygon_offset** **(** :ref:`int<class_int>` id **)** const
 
-Return the offset of the tile's navigation polygon.
+Returns the offset of the tile's navigation polygon.
 
 .. _class_TileSet_tile_get_normal_map:
 
@@ -246,13 +254,13 @@ Return the offset of the tile's navigation polygon.
 
 - :ref:`Vector2<class_vector2>` **tile_get_occluder_offset** **(** :ref:`int<class_int>` id **)** const
 
-Return the offset of the tile's light occluder.
+Returns the offset of the tile's light occluder.
 
 .. _class_TileSet_tile_get_region:
 
 - :ref:`Rect2<class_rect2>` **tile_get_region** **(** :ref:`int<class_int>` id **)** const
 
-Return the tile sub-region in the texture.
+Returns the tile sub-region in the texture.
 
 .. _class_TileSet_tile_get_shape:
 
@@ -274,19 +282,19 @@ Return the tile sub-region in the texture.
 
 - :ref:`Array<class_array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** const
 
-Return the array of shapes of the tile.
+Returns the array of shapes of the tile.
 
 .. _class_TileSet_tile_get_texture:
 
 - :ref:`Texture<class_texture>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** const
 
-Return the texture of the tile.
+Returns the texture of the tile.
 
 .. _class_TileSet_tile_get_texture_offset:
 
 - :ref:`Vector2<class_vector2>` **tile_get_texture_offset** **(** :ref:`int<class_int>` id **)** const
 
-Return the texture offset of the tile.
+Returns the texture offset of the tile.
 
 .. _class_TileSet_tile_get_tile_mode:
 
@@ -300,35 +308,43 @@ Return the texture offset of the tile.
 
 - void **tile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_occluderpolygon2d>` light_occluder **)**
 
-Set a light occluder for the tile.
+Sets a light occluder for the tile.
 
 .. _class_TileSet_tile_set_material:
 
 - void **tile_set_material** **(** :ref:`int<class_int>` id, :ref:`ShaderMaterial<class_shadermaterial>` material **)**
 
-Set the material of the tile.
+Sets the tile's material.
+
+.. _class_TileSet_tile_set_modulate:
+
+- void **tile_set_modulate** **(** :ref:`int<class_int>` id, :ref:`Color<class_color>` color **)**
+
+Sets the tile's modulation color.
 
 .. _class_TileSet_tile_set_name:
 
 - void **tile_set_name** **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name **)**
 
-Set the name of the tile, for descriptive purposes.
+Sets the tile's name.
 
 .. _class_TileSet_tile_set_navigation_polygon:
 
 - void **tile_set_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`NavigationPolygon<class_navigationpolygon>` navigation_polygon **)**
 
-Set a navigation polygon for the tile.
+Sets the tile's navigation polygon.
 
 .. _class_TileSet_tile_set_navigation_polygon_offset:
 
 - void **tile_set_navigation_polygon_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` navigation_polygon_offset **)**
 
-Set an offset for the tile's navigation polygon.
+Sets an offset for the tile's navigation polygon.
 
 .. _class_TileSet_tile_set_normal_map:
 
 - void **tile_set_normal_map** **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` normal_map **)**
+
+Sets the tile's normal map texture.
 
 .. _class_TileSet_tile_set_occluder_offset:
 
@@ -340,7 +356,7 @@ Set an offset for the tile's light occluder.
 
 - void **tile_set_region** **(** :ref:`int<class_int>` id, :ref:`Rect2<class_rect2>` region **)**
 
-Set the tile sub-region in the texture. This is common in texture atlases.
+Set the tile's sub-region in the texture. This is common in texture atlases.
 
 .. _class_TileSet_tile_set_shape:
 
@@ -358,26 +374,30 @@ Set the tile sub-region in the texture. This is common in texture atlases.
 
 - void **tile_set_shapes** **(** :ref:`int<class_int>` id, :ref:`Array<class_array>` shapes **)**
 
-Set an array of shapes for the tile, enabling physics to collide with it.
+Sets an array of shapes for the tile, enabling collision.
 
 .. _class_TileSet_tile_set_texture:
 
 - void **tile_set_texture** **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` texture **)**
 
-Set the texture of the tile.
+Sets the tile's texture.
 
 .. _class_TileSet_tile_set_texture_offset:
 
 - void **tile_set_texture_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` texture_offset **)**
 
-Set the texture offset of the tile.
+Sets the tile's texture offset.
 
 .. _class_TileSet_tile_set_tile_mode:
 
 - void **tile_set_tile_mode** **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_tileset_tilemode>` tilemode **)**
 
+Sets the tile's :ref:`TileMode<enum_@globalscope_tilemode>`.
+
 .. _class_TileSet_tile_set_z_index:
 
 - void **tile_set_z_index** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` z_index **)**
+
+Sets the tile's drawing index.
 
 

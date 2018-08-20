@@ -14,7 +14,7 @@ BakedLightmap
 Brief Description
 -----------------
 
-
+Prerendered indirect light map for a scene.
 
 Member Functions
 ----------------
@@ -30,7 +30,7 @@ Member Variables
 
   .. _class_BakedLightmap_bake_cell_size:
 
-- :ref:`float<class_float>` **bake_cell_size**
+- :ref:`float<class_float>` **bake_cell_size** - Grid subdivision size for lightmapper calculation. Default value of ``0.25`` will work for most cases. Increase for better lighting on small details or if your scene is very large.
 
   .. _class_BakedLightmap_bake_energy:
 
@@ -38,15 +38,15 @@ Member Variables
 
   .. _class_BakedLightmap_bake_extents:
 
-- :ref:`Vector3<class_vector3>` **bake_extents**
+- :ref:`Vector3<class_vector3>` **bake_extents** - Size of affected area.
 
   .. _class_BakedLightmap_bake_hdr:
 
-- :ref:`bool<class_bool>` **bake_hdr**
+- :ref:`bool<class_bool>` **bake_hdr** - If ``true`` lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller lightmap. Default value:``false``.
 
   .. _class_BakedLightmap_bake_mode:
 
-- :ref:`BakeMode<enum_bakedlightmap_bakemode>` **bake_mode**
+- :ref:`BakeMode<enum_bakedlightmap_bakemode>` **bake_mode** - Lightmapping mode. See :ref:`BakeMode<enum_@globalscope_bakemode>`.
 
   .. _class_BakedLightmap_bake_propagation:
 
@@ -54,19 +54,19 @@ Member Variables
 
   .. _class_BakedLightmap_bake_quality:
 
-- :ref:`BakeQuality<enum_bakedlightmap_bakequality>` **bake_quality**
+- :ref:`BakeQuality<enum_bakedlightmap_bakequality>` **bake_quality** - Three quality modes are available. Higher quality requires more rendering time. See :ref:`BakeQuality<enum_@globalscope_bakequality>`.
 
   .. _class_BakedLightmap_capture_cell_size:
 
-- :ref:`float<class_float>` **capture_cell_size**
+- :ref:`float<class_float>` **capture_cell_size** - Grid size used for real-time capture information on dynamic objects. Cannot be larger than :ref:`bake_cell_size<class_BakedLightmap_bake_cell_size>`.
 
   .. _class_BakedLightmap_image_path:
 
-- :ref:`String<class_string>` **image_path**
+- :ref:`String<class_string>` **image_path** - Location where lightmaps will be saved.
 
   .. _class_BakedLightmap_light_data:
 
-- :ref:`BakedLightmapData<class_bakedlightmapdata>` **light_data**
+- :ref:`BakedLightmapData<class_bakedlightmapdata>` **light_data** - The calculated light data.
 
 
 Enums
@@ -76,9 +76,9 @@ Enums
 
 enum **BakeQuality**
 
-- **BAKE_QUALITY_LOW** = **0**
-- **BAKE_QUALITY_MEDIUM** = **1**
-- **BAKE_QUALITY_HIGH** = **2**
+- **BAKE_QUALITY_LOW** = **0** --- Lowest bake quality mode. Fastest to calculate.
+- **BAKE_QUALITY_MEDIUM** = **1** --- Default bake quality mode.
+- **BAKE_QUALITY_HIGH** = **2** --- Highest bake quality mode. Takes longer to calculate.
 
   .. _enum_BakedLightmap_BakeError:
 
@@ -94,9 +94,19 @@ enum **BakeError**
 
 enum **BakeMode**
 
-- **BAKE_MODE_CONE_TRACE** = **0**
-- **BAKE_MODE_RAY_TRACE** = **1**
+- **BAKE_MODE_CONE_TRACE** = **0** --- Less precise but faster bake mode.
+- **BAKE_MODE_RAY_TRACE** = **1** --- More precise bake mode but can take considerably longer to bake.
 
+
+Description
+-----------
+
+Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_giprobe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/baked_lightmaps`
 
 Member Function Description
 ---------------------------

@@ -20,7 +20,7 @@ Member Functions
 ----------------
 
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`     | :ref:`accept_stream<class_StreamPeerSSL_accept_stream>` **(** :ref:`StreamPeer<class_streampeer>` stream **)**                                                                                                    |
+| :ref:`Error<enum_@globalscope_error>`     | :ref:`accept_stream<class_StreamPeerSSL_accept_stream>` **(** :ref:`StreamPeer<class_streampeer>` base **)**                                                                                                      |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@globalscope_error>`     | :ref:`connect_to_stream<class_StreamPeerSSL_connect_to_stream>` **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname="" **)** |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -31,6 +31,14 @@ Member Functions
 | void                                      | :ref:`poll<class_StreamPeerSSL_poll>` **(** **)**                                                                                                                                                                 |
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+  .. _class_StreamPeerSSL_blocking_handshake:
+
+- :ref:`bool<class_bool>` **blocking_handshake**
+
+
 Enums
 -----
 
@@ -39,9 +47,9 @@ Enums
 enum **Status**
 
 - **STATUS_DISCONNECTED** = **0** --- A status representing a ``StreamPeerSSL`` that is disconnected.
-- **STATUS_CONNECTED** = **1** --- A status representing a ``StreamPeerSSL`` that is connected to a host.
-- **STATUS_ERROR_NO_CERTIFICATE** = **2** --- An errot status that shows the peer did not present a SSL certificate and validation was requested.
-- **STATUS_ERROR_HOSTNAME_MISMATCH** = **3** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
+- **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerSSL`` that is connected to a host.
+- **STATUS_ERROR** = **3**
+- **STATUS_ERROR_HOSTNAME_MISMATCH** = **4** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
 
 
 Description
@@ -49,12 +57,17 @@ Description
 
 SSL Stream peer. This object can be used to connect to SSL servers.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/networking/ssl_certificates`
+
 Member Function Description
 ---------------------------
 
 .. _class_StreamPeerSSL_accept_stream:
 
-- :ref:`Error<enum_@globalscope_error>` **accept_stream** **(** :ref:`StreamPeer<class_streampeer>` stream **)**
+- :ref:`Error<enum_@globalscope_error>` **accept_stream** **(** :ref:`StreamPeer<class_streampeer>` base **)**
 
 .. _class_StreamPeerSSL_connect_to_stream:
 

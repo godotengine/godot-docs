@@ -46,6 +46,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>` **(** **)**                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_connected_midi_inputs<class_OS_get_connected_midi_inputs>` **(** **)**                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_datetime<class_OS_get_datetime>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                           |
@@ -99,6 +101,8 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`get_system_time_secs<class_OS_get_system_time_secs>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_ticks_msec<class_OS_get_ticks_msec>` **(** **)** const                                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_ticks_usec<class_OS_get_ticks_usec>` **(** **)** const                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_time<class_OS_get_time>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -434,6 +438,10 @@ Returns the audio driver name for the given index.
 
 Returns the command line arguments passed to the engine.
 
+.. _class_OS_get_connected_midi_inputs:
+
+- :ref:`PoolStringArray<class_poolstringarray>` **get_connected_midi_inputs** **(** **)**
+
 .. _class_OS_get_date:
 
 - :ref:`Dictionary<class_dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
@@ -552,8 +560,6 @@ Returns the number of displays attached to the host machine.
 
 Returns the dots per inch density of the specified screen.
 
-
-
 On Android Devices, the actual screen densities are grouped into six generalized densities:
 
 ldpi    - 120 dpi
@@ -613,6 +619,12 @@ Returns the epoch time of the operating system in seconds.
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** const
 
 Returns the amount of time passed in milliseconds since the engine started.
+
+.. _class_OS_get_ticks_usec:
+
+- :ref:`int<class_int>` **get_ticks_usec** **(** **)** const
+
+Returns the amount of time passed in microseconds since the engine started.
 
 .. _class_OS_get_time:
 

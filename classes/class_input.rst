@@ -147,6 +147,11 @@ Description
 
 A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the Project Settings / Input Map tab. Or be set with :ref:`InputMap<class_inputmap>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/index`
+
 Member Function Description
 ---------------------------
 

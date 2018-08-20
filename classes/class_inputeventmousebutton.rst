@@ -29,7 +29,7 @@ Member Variables
 
   .. _class_InputEventMouseButton_factor:
 
-- :ref:`float<class_float>` **factor** - TO TALK in PR, reduz said : i think it's used for apple touch but i don't remember what it does
+- :ref:`float<class_float>` **factor** - Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
 
   .. _class_InputEventMouseButton_pressed:
 
@@ -40,4 +40,9 @@ Description
 -----------
 
 Contains mouse click information. See :ref:`Node._input<class_Node__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 

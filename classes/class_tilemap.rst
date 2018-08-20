@@ -48,6 +48,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_cell<class_TileMap_set_cell>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false, :ref:`Vector2<class_vector2>` autotile_coord=Vector2( 0, 0 ) **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_celld<class_TileMap_set_celld>` **(** :ref:`Vector2<class_vector2>` position, :ref:`Dictionary<class_dictionary>` data **)**                                                                                                                                                                              |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_cellv<class_TileMap_set_cellv>` **(** :ref:`Vector2<class_vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_layer_bit<class_TileMap_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                                                                                                                                          |
@@ -57,6 +59,8 @@ Member Functions
 | void                           | :ref:`update_bitmask_area<class_TileMap_update_bitmask_area>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                                                                                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`update_bitmask_region<class_TileMap_update_bitmask_region>` **(** :ref:`Vector2<class_vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) **)**                                                                                                                                |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`update_dirty_quadrants<class_TileMap_update_dirty_quadrants>` **(** **)**                                                                                                                                                                                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`world_to_map<class_TileMap_world_to_map>` **(** :ref:`Vector2<class_vector2>` world_position **)** const                                                                                                                                                                                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -173,6 +177,11 @@ Description
 
 Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_tileset>` which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based maps.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/using_tilemaps`
+
 Member Function Description
 ---------------------------
 
@@ -216,7 +225,7 @@ Returns ``true`` if the given collision mask bit is set.
 
 - :ref:`Array<class_array>` **get_used_cells** **(** **)** const
 
-Returns an array of all cells containing a tile from the tileset (i.e. a tile index different from ``-1``).
+Returns a :ref:`Vector2<class_vector2>` array with the positions of all cells containing a tile from the tileset (i.e. a tile index different from ``-1``).
 
 .. _class_TileMap_get_used_cells_by_id:
 
@@ -266,6 +275,14 @@ An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped, transposed, or given autotile coordinates.
 
+Note that data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+
+If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_update_dirty_quadrants>`.
+
+.. _class_TileMap_set_celld:
+
+- void **set_celld** **(** :ref:`Vector2<class_vector2>` position, :ref:`Dictionary<class_dictionary>` data **)**
+
 .. _class_TileMap_set_cellv:
 
 - void **set_cellv** **(** :ref:`Vector2<class_vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**
@@ -275,6 +292,10 @@ Sets the tile index for the given cell.
 An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped or transposed.
+
+Note that data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+
+If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_update_dirty_quadrants>`.
 
 .. _class_TileMap_set_collision_layer_bit:
 
@@ -301,6 +322,12 @@ Applies autotiling rules to the cell (and its adjacent cells) referenced by its 
 Applies autotiling rules to the cells in the given region (specified by grid-based x and y coordinates).
 
 Calling with invalid (or missing) parameters applies autotiling rules for the entire tilemap.
+
+.. _class_TileMap_update_dirty_quadrants:
+
+- void **update_dirty_quadrants** **(** **)**
+
+Updates the tile map's quadrants, allowing things such as navigation and collision shapes to be immediately used if modified.
 
 .. _class_TileMap_world_to_map:
 

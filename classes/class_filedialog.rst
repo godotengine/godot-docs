@@ -26,6 +26,8 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------+
 | void                                       | :ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**                            |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`LineEdit<class_lineedit>`            | :ref:`get_line_edit<class_FileDialog_get_line_edit>` **(** **)**                              |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------+
 | void                                       | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                    |
@@ -134,6 +136,10 @@ Clear all the added filters in the dialog.
 .. _class_FileDialog_deselect_items:
 
 - void **deselect_items** **(** **)**
+
+.. _class_FileDialog_get_line_edit:
+
+- :ref:`LineEdit<class_lineedit>` **get_line_edit** **(** **)**
 
 .. _class_FileDialog_get_vbox:
 

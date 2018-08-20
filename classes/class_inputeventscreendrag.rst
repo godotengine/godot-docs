@@ -43,3 +43,8 @@ Description
 
 Contains screen drag information. See :ref:`Node._input<class_Node__input>`.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+

@@ -16,6 +16,14 @@ Brief Description
 
 Reference frame for GUI.
 
+Member Variables
+----------------
+
+  .. _class_ReferenceRect_border_color:
+
+- :ref:`Color<class_color>` **border_color**
+
+
 Description
 -----------
 

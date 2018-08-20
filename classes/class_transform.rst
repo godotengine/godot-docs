@@ -61,10 +61,24 @@ Member Variables
 - :ref:`Vector3<class_vector3>` **origin** - The translation offset of the transform.
 
 
+Numeric Constants
+-----------------
+
+- **IDENTITY** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+- **FLIP_X** = **Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+- **FLIP_Y** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+- **FLIP_Z** = **Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )**
+
 Description
 -----------
 
 Represents one or many transformations in 3D space such as translation, rotation, or scaling. It consists of a :ref:`Basis<class_basis>` "basis" and an :ref:`Vector3<class_vector3>` "origin". It is similar to a 3x4 matrix.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+- :doc:`../tutorials/3d/using_transforms`
 
 Member Function Description
 ---------------------------

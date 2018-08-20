@@ -124,6 +124,11 @@ A script implemented in the  Visual Script programming environment. The script e
 
 You are most likely to use this class via the Visual Script editor or when writing plugins for it.
 
+Tutorials
+---------
+
+- :doc:`../getting_started/scripting/visual_script/index`
+
 Member Function Description
 ---------------------------
 
