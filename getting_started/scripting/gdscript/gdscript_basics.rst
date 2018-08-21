@@ -730,6 +730,20 @@ in the loop variable.
     for c in "Hello":
         print(c) # Iterate through all characters in a String, print every letter on new line.
 
+Alternatively you can use numbers and vectors to achive same results.	
+		
+:: 
+    
+    for i in 3: 
+        statement # Alternative syntax for range(3)
+		
+    for i in Vector2(1,3): 
+        statement # Alternative syntax for range(1,3)
+    
+    for i in Vector3(2,8,2): 
+        statement # Alternative syntax for range(2,8,2)
+		
+		
 match
 ^^^^^
 
