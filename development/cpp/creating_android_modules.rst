@@ -229,7 +229,7 @@ the project folder inside the module directory and configure it:
 
     c:\godot\modules\mymodule\sdk-1.2> android -p . -t 15
 
-As of this writing, Godot uses minsdk 10 and target sdk 15. If this ever
+As of this writing, Godot uses minsdk 18 and target sdk 27. If this ever
 changes, it should be reflected in the manifest template:
 `AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`
 
