@@ -89,7 +89,7 @@ A singleton object template follows:
 .. code:: java
 
     package org.godotengine.godot;
-    
+
     import com.godot.game.R;
 
     public class MySingleton extends Godot.SingletonBase {
@@ -100,7 +100,7 @@ A singleton object template follows:
 
         static public Godot.SingletonBase initialize(Activity p_activity) {
             return new MySingleton(p_activity);
-        } 
+        }
 
         public MySingleton(Activity p_activity) {
             //register class name and functions to bind
@@ -176,7 +176,7 @@ module, add it like this:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contains MySingelton.java") 
+            env.android_add_java_dir("Directory that contains MySingelton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
 
 
@@ -192,8 +192,8 @@ add something like this:
     def configure(env):
         if env['platform'] == 'android':
             # [...]
-            env.android_add_res_dir("Directory that contains resource subdirectories (values, drawable, etc.)") 
-            
+            env.android_add_res_dir("Directory that contains resource subdirectories (values, drawable, etc.)")
+
 Now you can refer to those resources by their id (``R.string.my_string``, and the like)
 by importing the ``com.godot.game.R`` class in your Java code.
 
@@ -212,12 +212,12 @@ easiest to integrate, put it in the module directory and add it:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contains MySingelton.java") 
+            env.android_add_java_dir("Directory that contains MySingelton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
             env.android_add_dependency("compile files('something_local.jar')") # if you have a jar, the path is relative to platform/android/java/gradlew, so it will start with ../../../modules/module_name/
             env.android_add_maven_repository("maven url") #add a maven url
             env.android_add_dependency("compile 'com.google.android.gms:play-services-ads:8'") #get dependency from maven repository
-           
+
 
 SDK project
 -----------
@@ -231,7 +231,7 @@ the project folder inside the module directory and configure it:
 
 As of this writing, Godot uses minsdk 18 and target sdk 27. If this ever
 changes, it should be reflected in the manifest template:
-`AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`
+`AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`__
 
 Then, add the module folder to the project:
 
@@ -243,11 +243,11 @@ Then, add the module folder to the project:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_module_file("MySingleton.java") 
+            env.android_module_file("MySingleton.java")
             env.android_module_manifest("AndroidManifestChunk.xml")
             env.android_module_source("sdk-1.2","")
-    
-    
+
+
 Building
 --------
 
