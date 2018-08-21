@@ -17,7 +17,7 @@ nodes organized in a tree structure, with a single node as the tree root.
 
 .. image:: img/tree.png
 
-You can create as many scenes as you like and save them to disk. Scenes 
+You can create as many scenes as you like and save them to disk. Scenes
 saved in this manner are called "Packed Scenes" and have a ``.tscn`` filename
 extension.
 
@@ -113,4 +113,4 @@ Conclusion
 
 Instancing can be useful when you want to create many copies of the
 same object. It is also possible to create instances in code by using
-GDScript, see :ref:`doc_scripting_continued#instancing-scenes`.
+GDScript, see :ref:`doc_scripting_continued`.
