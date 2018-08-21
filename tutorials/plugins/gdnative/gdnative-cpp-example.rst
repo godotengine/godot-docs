@@ -87,7 +87,7 @@ To generate and compile the bindings, use this command (replacing
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> headers=../godot_headers generate_bindings=yes
+    scons platform=<platform> headers_dir=../godot_headers generate_bindings=yes
     cd ..
 
 This step will take a while. When it is completed, you should have static
