@@ -36,7 +36,7 @@ functions. However, any given node always has the following attributes:
 -  It has editable properties.
 -  It can receive a callback to process every frame.
 -  It can be extended (to have more functions).
--  It can be added to other nodes as children.
+-  It can be added to other nodes as a child.
 
 .. image:: img/tree.png
 
@@ -62,7 +62,7 @@ step is to explain what a Scene is.
 A scene is composed of a group of nodes organized hierarchically (in
 tree fashion). Furthermore, a scene:
 
--  always has only one root node.
+-  always has one root node.
 -  can be saved to disk and loaded back.
 -  can be *instanced* (more on that later).
 
@@ -100,7 +100,7 @@ editor:
 
 As mentioned before, making games in Godot feels like being in a
 kitchen, so let's open the refrigerator and add some fresh nodes to the
-project. We'll begin with a "Hello World!" message that we'll put on the
+project. We'll begin with a "Hello World" message that we'll put on the
 screen.
 
 To do this, press the "New Node" button (which looks like a plus symbol):
@@ -113,7 +113,7 @@ that can be created:
 .. image:: img/node_classes.png
 
 From there, select the "Label" node first. Searching for it is probably
-the quickest way:
+the fastest way:
 
 .. image:: img/node_search_label.png
 
@@ -129,7 +129,7 @@ corner), and the label properties appear in the Inspector (box in the
 bottom right corner).
 
 The next step will be to change the "Text" Property of the label. Let's
-change it to "Hello, World!":
+change it to "Hello World":
 
 .. image:: img/hw.png
 
@@ -155,7 +155,7 @@ operations in Godot, remember that "res://" is the resource path, and no
 matter the platform or install location, it is the way to locate where
 resource files are from inside the game.
 
-After saving the scene and pressing run scene again, the "Hello, World!"
+After saving the scene and pressing run scene again, the "Hello World"
 demo should finally execute:
 
 .. image:: img/helloworld.png
