@@ -9,3 +9,4 @@ Shading
    shader_materials
    intro_to_shaders_water_workshop
    screen-reading_shaders
+   migrating_to_godot_shader_language
