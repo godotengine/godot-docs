@@ -6,41 +6,41 @@ Migrating to Godot shading language
 Introduction
 ------------
 
-This document will explain the differences between Godot's shading language
-and glsl as well as give practical advice on how to migrate shaders from other
+This document explains the differences between Godot's shading language
+and GLSL and gives practical advice on how to migrate shaders from other
 sources, such as Shadertoy and The Book of Shaders, into Godot shaders.
 
 For detailed information on Godot's shading language please refer to the :ref:`Shading Language <doc_shading_language>`
 reference.
 
-Glsl
+GLSL
 ----
 
-Godot uses a shading language based on glsl, with the addition of a few quality of life features.
-Accordingly, most features available in glsl are available in Godot's shading language.
+Godot uses a shading language based on GLSL with the addition of a few quality-of-life features.
+Accordingly, most features available in GLSL are available in Godot's shading language.
 
 Shader Programs
 ^^^^^^^^^^^^^^^
 
-In glsl each shader uses a seperate program. So you have one program for the vertex shader and  one 
-for the fragment shader. In godot you have a single shader that contains a ``vertex`` and/or a 
-``fragment`` function. If you only choose to write one, Godot will use a default  for the other. 
+In GLSL each shader uses a separate program. You have one program for the vertex shader and one 
+for the fragment shader. In Godot you have a single shader that contains a ``vertex`` and/or a 
+``fragment`` function. If you only choose to write one, Godot will supply the other. 
 
 Godot allows uniform variables and functions to be shared by defining the fragment and vertex 
-shaders in one file. In glsl the vertex and fragment programs cannot share variables except 
-for when varyings are used.
+shaders in one file. In GLSL the vertex and fragment programs cannot share variables except 
+when varyings are used.
 
 Varyings
 ^^^^^^^^
 
 Varyings are a type of variable that can be passed from the vertex shader to the fragment shader. In
-modern glsl (3.0 and up) varyings are defined with the ``in`` and ``out`` keywords. A variable going
+modern GLSL (3.0 and up) varyings are defined with the ``in`` and ``out`` keywords. A variable going
 out of the vertex shader is defined with ``out`` in the vertex shader and ``in`` inside the fragment shader.
 
 Main
 ^^^^
 
-In glsl each shader program looks like a self-contained C-style program. Accordingly, the main entry point 
+In GLSL each shader program looks like a self-contained C-style program. Accordingly, the main entry point 
 is ``main``. If you are copying a vertex shader, rename ``main`` to ``vertex`` and if you are copying a 
 fragment shader, rename ``main`` to ``fragment``.
 
@@ -53,16 +53,16 @@ to the value, but you will not benefit from the increased speed from using a con
 Macros
 ^^^^^^
 
-In keeping with its similarity to C, glsl lets you use macros. Commonly ``#define`` is used to define
+In keeping with its similarity to C, GLSL lets you use macros. Commonly ``#define`` is used to define
 constants or small functions. There is no straightforward way to translate defines to Godot's shading language.
 If it is a function that is defined, then replace with a function, and if it is a constant then replace with
-a uniform. For other macros (``#if``, ``#ifdef``, etc.) there is no equivalent becuase they run during the 
+a uniform. For other macros (``#if``, ``#ifdef``, etc.) there is no equivalent because they run during the 
 pre-processing stage of compilation.
 
 Variables
 ^^^^^^^^^
 
-Glsl has many built in variables that are hard-coded in. These variables are not uniforms, so they
+GLSL has many built in variables that are hard-coded. These variables are not uniforms, so they
 are not editable from the main program. 
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -70,7 +70,7 @@ are not editable from the main program.
 +=====================+=========+========================+=====================================================+
 |gl_FragColor         |out vec4 |COLOR                   |Output color for each pixel.                         |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|gl_FragCoord         |vec4     |FRAGCOORD               |For full screen quads, for smaller quads use UV.     |
+|gl_FragCoord         |vec4     |FRAGCOORD               |For full screen quads. For smaller quads use UV.     |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |gl_Position          |vec4     |VERTEX                  |Position of Vertex, output from Vertex Shader.       |
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -86,13 +86,13 @@ are not editable from the main program.
 Coordinates
 ^^^^^^^^^^^
 
-``gl_FragCoord`` in glsl and ``FRAGCOORD`` in the Godot shading language use the same coordinate system. 
+``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the Godot shading language use the same coordinate system. 
 If using UV in Godot, the y-coordinate will be flipped upside down.
 
 Precision
 ^^^^^^^^^
 
-In glsl you can define the precision of a given type (float or int) at the top of the shader with the 
+In GLSL you can define the precision of a given type (float or int) at the top of the shader with the 
 ``precision`` keyword. In Godot you can set the precision of individual variables as you need by placing
 precision qualifiers ``lowp``, ``mediump``, and ``highp`` before the type when defining the variable. For
 more information see the :ref:`Shading Language <doc_shading_language>` reference.
@@ -110,7 +110,7 @@ shader.
 Types
 ^^^^^
 
-Shadertoy uses the webgl spec so it runs a slightly different version of glsl. However, it still
+Shadertoy uses the webgl spec so it runs a slightly different version of GLSL. However, it still
 has the regular types, including `Constants`_ and macros.
 
 mainImage
@@ -135,17 +135,17 @@ uniform themself. The description gives the reader a hint about what they can pa
 +=====================+=========+========================+=====================================================+
 |fragColor            |out vec4 |COLOR                   |Output color for each pixel.                         |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|fragCoord            |vec2     |FRAGCOORD               |For full screen quads, for smaller quads use UV.     |
+|fragCoord            |vec2     |FRAGCOORD               |For full screen quads. For smaller quads use UV.     |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iResolution          |vec3     |1.0 / SCREEN_PIXEL_SIZE |Can also pass in manually.                           |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|iTime                |float    |TIME                    |Time since shader starts.                            |
+|iTime                |float    |TIME                    |Time since shader started.                           |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iTimeDelta           |float    |Provide with Uniform    |Time to render previous frame.                       |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iFrame               |float    |Provide with Uniform    |Frame number.                                        |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|iChannelTime[4]      |float    |Provide with Uniform    |Time since that particular texture started           |
+|iChannelTime[4]      |float    |Provide with Uniform    |Time since that particular texture started.          |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iMouse               |vec4     |Provide with Uniform    |Mouse position in pixel coordinates.                 |
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -158,7 +158,7 @@ uniform themself. The description gives the reader a hint about what they can pa
 
 Coordinates
 ^^^^^^^^^^^
-``fragCoord`` behaves the same as ``gl_FragCoord`` in :ref:`glsl <glsl_coordinates>` and ``FRAGCOORD`` in Godot.
+``fragCoord`` behaves the same as ``gl_FragCoord`` in :ref:`GLSL <glsl_coordinates>` and ``FRAGCOORD`` in Godot.
 
 
 
@@ -175,19 +175,19 @@ a `page <https://thebookofshaders.com/04>`_ on running shaders in various framew
 Types
 ^^^^^
 
-The Book of Shaders uses the webgl spec so it runs a slightly different version of glsl. However, it still
+The Book of Shaders uses the webgl spec so it runs a slightly different version of GLSL. However, it still
 has the regular types, including `Constants`_ and macros.
 
 Main
 ^^^^
 
-The entry point for a Book of Shaders fragment shader is ``main``, just like in glsl. Everything written in
+The entry point for a Book of Shaders fragment shader is ``main``, just like in GLSL. Everything written in
 a Book of Shaders ``main`` function should be copied into Godot's ``fragment`` function.
 
 Variables
 ^^^^^^^^^
 
-The Book of Shaders sticks closer to plain glsl than Shadertoy does. It also implements fewer uniforms than 
+The Book of Shaders sticks closer to plain GLSL than Shadertoy does. It also implements fewer uniforms than 
 Shadertoy. 
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -195,11 +195,11 @@ Shadertoy.
 +=====================+=========+========================+=====================================================+
 |gl_FragColor         |out vec4 |COLOR                   |Output color for each pixel.                         |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|gl_FragCoord         |vec4     |FRAGCOORD               |For full screen quads, for smaller quads use UV.     |
+|gl_FragCoord         |vec4     |FRAGCOORD               |For full screen quads. For smaller quads use UV.     |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |u_resolution         |vec2     |1.0 / SCREEN_PIXEL_SIZE |Can also pass in manually.                           |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|u_time               |float    |TIME                    |Time since shader starts.                            |
+|u_time               |float    |TIME                    |Time since shader started.                           |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |u_mouse              |vec2     |Provide with Uniform    |Mouse position in pixel coordinates.                 |
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -207,5 +207,5 @@ Shadertoy.
 Coordinates
 ^^^^^^^^^^^
 
-The Book of Shaders uses the same coordinate system as :ref:`glsl <glsl_coordinates>`.
+The Book of Shaders uses the same coordinate system as :ref:`GLSL <glsl_coordinates>`.
 
