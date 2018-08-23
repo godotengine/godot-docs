@@ -6,10 +6,9 @@ Viewport and canvas transforms
 Introduction
 ------------
 
-This tutorial is created after a topic that is a little dark for most
-users and explains all the 2D transforms going on for nodes from the
-moment they draw their content locally to the time they are drawn into
-the screen.
+This is an overview of the 2D transforms going on for nodes from the
+moment they draw their content locally to the time they are drawn onto
+the screen. This overview discusses very low level details of the engine.
 
 Canvas transform
 ----------------
