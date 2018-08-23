@@ -15,7 +15,7 @@ as if you were building a level with an unlimited amount of Lego blocks.
 Collisions and navigation can also be added to the meshes, just like you
 would do with the tiles of a tilemap.
 
-Example Project
+Example project
 ---------------
 
 To learn how GridMaps work, start by downloading the sample project:
@@ -98,7 +98,7 @@ the drawing plane higher or lower on its axis.
 
 .. image:: img/gridmap_shift_axis.png
 
-Using gridmap in code
+Using GridMap in code
 ---------------------
 
 See :ref:`class_GridMap` for details on the node's methods and member variables.

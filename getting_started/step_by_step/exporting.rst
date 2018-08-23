@@ -118,7 +118,7 @@ changed:
         hide()
         emit_signal("hit")
 
-Export Templates
+Export templates
 ----------------
 
 In order to export, you need to download the *export templates* from the
@@ -136,7 +136,7 @@ version that matches your version of Godot.
 .. note:: If you upgrade Godot, you must download templates that match the new version
           or your exported projects may not work correctly.
 
-Export Presets
+Export presets
 --------------
 
 Next, you can configure the export settings by clicking on *Project -> Export*:
@@ -156,13 +156,13 @@ of your game, such as an `.apk` for Android or an `.exe` for Windows.
 In the "Resources" and "Features" tabs you can customize how the game is
 exported for each platform. We can leave those settings alone for now.
 
-Exporting by Platform
+Exporting by platform
 ---------------------
 
 In this section, we'll walk through the process for each platform,
 including any additional software or requirements you'll need.
 
-PC (Linux/MacOS/Windows)
+PC (Linux/macOS/Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Exporting PC platforms works the same across the three supported operating

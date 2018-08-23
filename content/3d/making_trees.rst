@@ -1,6 +1,6 @@
 .. _doc_making_trees:
 
-Making Trees 
+Making trees
 ============
 
 This is a short tutorial on how to make trees and other types of vegetation from scratch.
@@ -20,7 +20,7 @@ https://sketchfab.com/models/ea5e6ed7f9d6445ba69589d503e8cebf
 
 and opened it in Blender.
 
-Paint with Vertex Colors
+Paint with vertex colors
 ------------------------
 
 The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modelling program and paint something like this:
@@ -84,12 +84,10 @@ And this is pretty much it.
 
 The trunk shader is similar, except it does not write to the alpha channel (thus no alpha prepass is needed) and does not require transmission to work. Both shaders can be improved by adding normal mapping, AO and other maps.
 
-Improving the Shader:
----------------------
+Improving the shader
+--------------------
 
 There are many more resources on how to do this that you can read. Now that you know the basics, a recommended read is the chapter from GPU Gems3 about how Crysis does this
 (focus mostly on the sway code, as many other techniques shown there are obsolete):
 
 https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch16.html
-
-

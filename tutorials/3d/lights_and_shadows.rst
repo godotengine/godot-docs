@@ -1,6 +1,6 @@
 .. _doc_lights_and_shadows:
 
-Lights And Shadows
+Lights and shadows
 ==================
 
 Introduction
@@ -38,7 +38,7 @@ Each one has a specific function:
 -  **Specular**: Affects the intensity of the specular blob in objects affected by this light. At zero, this light becomes a pure diffuse light.
 -  **Cull Mask**: Objects that are in the selected layers below will be affected by this light.
 
-Shadow Mapping
+Shadow mapping
 ^^^^^^^^^^^^^^
 
 Lights can optionally cast shadows. This gives them greater realism (light does
@@ -80,7 +80,7 @@ does not affect the lighting at all and can be anywhere.
 Every face whose front-side is hit by the light rays is lit while the others stay dark. Most light types
 have specific parameters, but directional lights are pretty simple in nature so they don't.
 
-Directional Shadow Mapping
+Directional shadow mapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To compute shadow maps, the scene is rendered (only depth) from an orthogonal point of view that covers
@@ -159,7 +159,7 @@ These two parameters allow tweaking how this works visually in order to find aes
 .. image:: img/light_attenuation.png
 
 
-Omni Shadow Mapping
+Omni shadow mapping
 ^^^^^^^^^^^^^^^^^^^
 
 Omni light shadow mapping is relatively straightforward. The main issue that needs to be
@@ -174,7 +174,6 @@ while the later is more correct but more costly.
 If the objects being rendered are mostly irregular, Dual Paraboloid is usually
 enough. In any case, as these shadows are cached in a shadow atlas (more on that at the end), it
 may not make a difference in performance for most scenes.
-
 
 Spot light
 ~~~~~~~~~~
@@ -191,14 +190,13 @@ Spot lights share the same **Range** and **Attenuation** as **OmniLight**, and a
 - **Angle**: The aperture angle of the light
 - **Angle Attenuation**: The cone attenuation, which helps soften the cone borders.
 
-
-Spot Shadow Mapping
+Spot shadow mapping
 ^^^^^^^^^^^^^^^^^^^
 
 Spots don't need any parameters for shadow mapping. Keep in mind that, at more than 89 degrees of aperture, shadows
 stop functioning for spots, and you should consider using an Omni light instead.
 
-Shadow Atlas
+Shadow atlas
 ~~~~~~~~~~~~
 
 Unlike Directional lights which have their own shadow texture, Omni and Spot lights are assigned to slots of a shadow atlas.
@@ -230,7 +228,7 @@ If the slots in a quadrant are full, lights are pushed back to smaller slots dep
 This allocation strategy works for most games, but you may to use a separate one in some cases (as example, a top-down game where
 all lights are around the same size and quadrands may have all the same subdivision).
 
-Shadow Filter Quality
+Shadow filter quality
 ~~~~~~~~~~~~~~~~~~~~~
 
 The filter quality of shadows can be tweaked. This can be found in

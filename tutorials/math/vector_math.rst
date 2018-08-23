@@ -54,7 +54,7 @@ Both vectors represent a point 4 units to the right and 3 units below some
 starting point. It does not matter where on the plane you draw the vector,
 it always represents a relative direction and magnitude.
 
-Vector Operations
+Vector operations
 ~~~~~~~~~~~~~~~~~
 
 You can use either method (x and y coordinates or angle and magnitude) to
@@ -383,7 +383,7 @@ With Godot, you can use the built-in method:
           give the same result as ``b.cross(a)``. The resulting vectors
           point in **opposite** directions.
 
-Calculating Normals
+Calculating normals
 -------------------
 
 One common use of cross products is to find the surface normal of a plane
@@ -414,7 +414,7 @@ Here is a function to calculate a triangle's normal:
         return normal;
     }
 
-Pointing to a Target
+Pointing to a target
 --------------------
 
 In the dot product section above, we saw how it could be used to find the
@@ -424,8 +424,7 @@ calculating the cross product of the current facing direction and the
 target direction. The resulting perpendicular vector is the axis of
 rotation.
 
-
-More Information
+More information
 ~~~~~~~~~~~~~~~~
 
 For more information on using vector math in Godot, see the following articles:

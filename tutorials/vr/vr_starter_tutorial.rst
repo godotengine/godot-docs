@@ -1,10 +1,10 @@
 .. _doc_vr_starter_tutorial:
 
-VR Starter Tutorial
+VR starter tutorial
 ===================
 
-Tutorial introduction
----------------------
+Introduction
+------------
 
 .. image:: img/starter_vr_tutorial_sword.png
 
@@ -588,7 +588,6 @@ The last thing we are doing in ``button_pressed`` is checking to see if the butt
 
 If the menu button is pressed, we change grab modes, and set the visibility of the grab :ref:`Raycast <class_Raycast>` so it is only visible when using ``RAYCAST`` as the grab mode.
 
-
 _________
 
 Let's look at ``button_released`` next.
@@ -790,7 +789,6 @@ Next, we spawn/instance the :ref:`RigidBody <class_RigidBody>` version of the ta
 
 Then we set ``destroyed`` to ``true`` and start processing ``_physics_process``.
 Finally, we play a sound, and remove a sphere from ``Game.gd`` by calling ``remove_sphere``.
-
 
 ________
 

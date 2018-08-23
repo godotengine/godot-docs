@@ -1,7 +1,7 @@
 .. _doc_2d_lights_and_shadows:
 
-Working with lights and shadows in 2D
-=====================================
+2D lights and shadows
+=====================
 
 Introduction
 ------------

@@ -178,7 +178,6 @@ represents the shape of a light source reflected in the object.
 
 .. image:: img/spatial_material7.png
 
-
 Blend Mode
 ~~~~~~~~~~
 
@@ -399,7 +398,6 @@ liquids, etc.
 
 .. image:: img/spatial_material21.png
 
-
 Transmission
 ~~~~~~~~~~~~
 
@@ -447,7 +445,7 @@ world triplanar, so the brick texture continues smoothly between them.
 
 .. image:: img/spatial_material25.png
 
-Proximity and Distance Fade
+Proximity and distance fade
 ----------------------------
 
 Godot allows materials to fade by proximity to each other as well as depending
@@ -461,7 +459,7 @@ entire scene is usually not a good idea.
 
 .. image:: img/spatial_material_proxfade.gif
 
-Render Priority
+Render priority
 ---------------
 
 The rendering order of objects can be changed, although this is mostly

@@ -1,6 +1,6 @@
 .. _doc_audio-streams:
 
-Audio Streams
+Audio streams
 =============
 
 Introduction
@@ -58,7 +58,7 @@ Similar to AudioStreamPlayer2D, an Area can divert the sound to an audio bus.
 
 Unlike for 2D, the 3D version of AudioStreamPlayer has a few more advanced options:
 
-Reverb Buses
+Reverb buses
 ~~~~~~~~~~~~
 
 Godot allows 3D Audio Streams that enter a specific *Area* to send dry and wet audio to separate buses. This is useful when you have several reverb configurations for different types of rooms.

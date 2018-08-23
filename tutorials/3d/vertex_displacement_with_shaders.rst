@@ -213,7 +213,7 @@ We can now use this noise function in place of ``cos`` and ``sin`` in the previo
 With the noise function in place we already have something that looks kind of cool.
 There is a lot of detail, it kind of looks hilly or mountainous. 
 
-Fragment Shader
+Fragment shader
 ---------------
 
 The difference between a vertex shader and a fragment shader is that the vertex shader

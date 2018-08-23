@@ -1,6 +1,6 @@
 .. _doc_audio-buses:
 
-Audio Buses
+Audio buses
 ===========
 
 Introduction
@@ -22,7 +22,7 @@ a efficient tradeoff between performance and sound quality.
 
 See also: the :ref:`doc_audio-buses` tutorial.
 
-Decibel Scale
+Decibel scale
 -------------
 
 The new audio engine works primarily using the decibel scale. We have
@@ -41,7 +41,7 @@ For those unfamiliar with it, it can be explained with a few facts:
 
 This can take a bit getting used to, but it's friendlier in the end and will allow you to communicate better with audio professionals.
 
-Audio Buses
+Audio buses
 -----------
 
 Audio buses can be found in the bottom panel of Godot Editor:
@@ -58,7 +58,7 @@ avoids creating infinite routing loops!
 
 In the above image, *Bus 2* is routing its output to *Master* bus.
 
-Playback of Audio to a Bus
+Playback of audio to a bus
 --------------------------
 
 To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
@@ -69,7 +69,7 @@ Finally toggle the "playing" property to on and sound will flow.
 
 You may also be interested in reading about :ref:`doc_audio-buses` now.
 
-Adding Effects
+Adding effects
 --------------
 
 Audio buses can contain all sorts of effects. These effects modify the sound in one way or another and are applied in order.
@@ -175,20 +175,20 @@ StereoEnhance
 
 This effect has a few algorithms available to enhance the stereo spectrum, in case this is needed.
 
-Automatic Bus Disabling
+Automatic bus disabling
 -----------------------
 
 There is no need to disable buses manually when not in use, Godot detects that the bus has been silent for a few seconds and disable it (including all effects).
 
 .. image:: img/audio_buses5.png
 
-Bus Rearrangement
+Bus rearrangement
 -----------------
 
 Stream Players use bus names to identify a bus, which allows adding, removing and moving buses around while the reference to them is kept.
 If a bus is renamed, however, the reference will be lost and the Stream Player will output to Master. This system was chosen because rearranging buses is a more common process than renaming them.
 
-Default Bus Layout
+Default bus layout
 ------------------
 
 The default bus layout is automatically saved to the "res://default_bus_layout.res" file. Other bus layouts can be saved/retrieved from files in case of having

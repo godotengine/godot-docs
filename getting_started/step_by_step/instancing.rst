@@ -30,7 +30,7 @@ if it were any other node.
 
 In the above picture, Scene B was added to Scene A as an instance.
 
-Instancing By Example
+Instancing by example
 ---------------------
 
 To learn how instancing works, let's start by downloading a sample
@@ -74,7 +74,7 @@ Press "Play" and watch the ball fall to the bottom of the screen:
 
 .. image:: img/instancing_playbutton.png
 
-Multiple Instances
+Multiple instances
 ------------------
 
 You can add as many instances as you like to a scene, either by using the

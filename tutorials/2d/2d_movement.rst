@@ -1,6 +1,6 @@
 .. _doc_2d_movement:
 
-2D Movement Overview
+2D movement overview
 ====================
 
 Introduction
@@ -25,7 +25,7 @@ input actions (see :ref:`InputEvent <doc_inputevent>` for details):
 
 .. image:: img/movement_inputs.png
 
-8-Way Movement
+8-way movement
 --------------
 
 In this scenario, you want the user to press the four directional keys (up/left/down/right
@@ -112,11 +112,7 @@ its *length* to ``1``, and multiply by the desired speed.
 .. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
 
-
-
-
-
-Rotation + Movement
+Rotation + movement
 -------------------
 
 This type of movement is sometimes called "Asteroids-style" because it resembles
@@ -206,7 +202,7 @@ in the same direction as the body. ``rotated()`` is a useful vector function
 that you can use in many circumstances where you would otherwise need to apply
 trigonometric functions.
 
-Rotation + Movement (mouse)
+Rotation + movement (mouse)
 ---------------------------
 
 This style of movement is a variation of the previous one. This time, the direction
@@ -283,7 +279,7 @@ could get the same effect by setting the angle like this:
     var rotation = GetGlobalMousePosition().AngleToPoint(Position);
 
 
-Click-and-Move
+Click-and-move
 --------------
 
 This last example uses only the mouse to control the character. Clicking

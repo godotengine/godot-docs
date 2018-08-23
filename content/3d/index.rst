@@ -1,4 +1,4 @@
-Creating 3D Content
+Creating 3D content
 ===================
 
 .. toctree::
