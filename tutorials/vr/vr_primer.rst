@@ -1,14 +1,14 @@
 .. _doc_vr_primer:
 
-An AR/VR Primer for Godot
-=========================
+AR/VR primer
+============
 
 This tutorial gives you a springboard into the world of AR and VR in the Godot game engine.
 
 A new architecture was introduced in Godot 3 called the AR/VR Server. On top of this architecture specific implementations are available as interfaces most of which are plugins based on GDNative.
 This tutorial focuses purely on the core elements abstracted by the core architecture. This architecture has enough features for you to create an entire VR experience that can then be deployed for various interfaces. However each platform often has some unique features that are impossible to abstract. Such features will be documented on the relevant interfaces and fall outside of the scope of this primer.
 
-AR/VR Server
+AR/VR server
 ------------
 
 When Godot starts each available interface will make itself known to the AR/VR server. GDNative interfaces are setup as singletons, as long as they are added to the list of GDNative singletons in your project they will make themselves known to the server.
@@ -38,7 +38,7 @@ For our mobile vr interface, and any interface where the main input is directly 
 
 Finally you should only initialize an interface once, switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily just disable the viewport or set arvr to false on the viewport. In most scenarios though you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
 
-New AR/VR Nodes
+New AR/VR nodes
 ---------------
 
 Three new node types have been added for supporting AR and VR in Godot and one additional node type especially for AR. These are:

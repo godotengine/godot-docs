@@ -1,6 +1,6 @@
 .. _doc_baked_lightmaps:
 
-Baked Lightmaps
+Baked lightmaps
 ===============
 
 Introduction
@@ -25,7 +25,7 @@ use case. In general, GIProbe looks better and is much
 easier to set up. For low-end compatibility or mobile, though, Baked Lightmaps
 are your only choice.
 
-Visual Comparison
+Visual comparison
 -----------------
 
 Here are some comparisons of how Baked Lightmaps vs GIProbe look. Notice that
@@ -36,8 +36,7 @@ smooth overall.
 
 .. image:: img/baked_light_comparison.png
 
-
-Setting Up
+Setting up
 ----------
 
 First of all, before the lightmapper can do anything, the objects to be baked need
@@ -81,7 +80,7 @@ It can be found in the Mesh menu:
 This will generate a second set of UV2 coordinates which can be used for baking,
 and it will also set the texture size automatically.
 
-Unwrap on Scene import
+Unwrap on scene import
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This is probably the best approach overall. The only downside is that, on large
@@ -112,7 +111,7 @@ Make sure, if something is failing, to check that the meshes have these UV2 coor
 
 .. image:: img/baked_light_uvchannel.png
 
-Setting up the Scene
+Setting up the scene
 --------------------
 
 Before anything is done, a **BakedLight** Node needs to be added to a scene.
@@ -125,8 +124,7 @@ A sub-scene can be instanced several times, as this is supported by the baker, a
 each will be assigned a lightmap of its own (just make sure to respect the rule
 about scaling mentioned before):
 
-
-Configure Bounds
+Configure bounds
 ~~~~~~~~~~~~~~~~
 
 Lightmap needs an approximate volume of the area affected because it uses it to
@@ -135,7 +133,7 @@ cover the scene with the volume as you do with GIProbe:
 
 .. image:: img/baked_light_bounds.png
 
-Setting Up Meshes
+Setting up meshes
 ~~~~~~~~~~~~~~~~~
 
 For a **MeshInstance** node to take part in the baking process, it needs to have
@@ -145,7 +143,7 @@ the "Use in Baked Light" property enabled.
 
 When auto-generating lightmaps on scene import, this is enabled automatically.
 
-Setting up Lights
+Setting up lights
 ~~~~~~~~~~~~~~~~~
 
 Lights are baked with indirect light by default. This means that shadowmapping
@@ -157,13 +155,13 @@ can be controlled from the **Bake Mode** menu in lights:
 
 .. image:: img/baked_light_bake_mode.png
 
-The modes are :
+The modes are:
 
 - **Disabled:** Light is ignored in baking. Keep in mind hiding a light will have no effect for baking, so this must be used instead.
 - **Indirect:** This is the default mode. Only indirect lighting will be baked.
 - **All:** Both indirect and direct lighting will be baked. If you don't want the light to appear twice (dynamically and statically), simply hide it.
 
-Baking Quality
+Baking quality
 ~~~~~~~~~~~~~~
 
 BakedLightmap uses, for simplicity, a voxelized version of the scene to compute
@@ -185,7 +183,6 @@ Two modes of capturing indirect are provided:
 - **Voxel Cone**: Trace: Is the default one, it's less precise but faster. Looks similar (but slightly better) to GIProbe.
 - **Ray Tracing**: This method is more precise but can take considerably longer to bake. If used in low or medium quality, some scenes may produce grain.
 
-
 Baking
 ------
 
@@ -197,7 +194,7 @@ when selecting the BakedLightmap node:
 This can take from seconds to minutes (or hours) depending on scene size, bake
 method and quality selected.
 
-Configuring Bake
+Configuring bake
 ~~~~~~~~~~~~~~~~
 
 Several more options are present for baking:
@@ -212,8 +209,7 @@ Several more options are present for baking:
 - **Extents**: Size of the area affected (can be edited visually)
 - **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects which can be a bit heavy. If you are using .tscn formats (instead of .scn), you can save it to disk.
 
-
-Dynamic Objects
+Dynamic objects
 ---------------
 
 In other engines or lightmapper implementations, you are required to manually

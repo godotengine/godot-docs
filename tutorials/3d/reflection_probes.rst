@@ -1,13 +1,13 @@
 .. _doc_reflection_probes:
 
-Reflection Probes
+Reflection probes
 =================
 
 Introduction
 ------------
 
 As stated in the :ref:`doc_spatial_material`, objects can show reflected or diffuse light.
-Reflection Probes are used as a source of reflected and ambient light for objects inside their area of influence.
+Reflection probes are used as a source of reflected and ambient light for objects inside their area of influence.
 
 A probe of this type captures the surroundings (as a sort of 360 degrees image), and stores versions
 of it with increasing levels of *blur*. This is used to simulate roughness in materials, as well as ambient lighting.
@@ -17,7 +17,7 @@ While these probes are a efficient way of storing reflections, they have a few s
 * They are efficient to render but expensive to compute. This leads to a default behavior where they only capture on scene load.
 * They work best for rectangular shaped rooms or places, otherwise the reflections shown are not as faithful (especially when roughness is 0).
 
-Setting Up
+Setting up
 ----------
 
 Create a ReflectionProbe node and wrap it around the area where you want to have reflections:
@@ -61,7 +61,7 @@ use the *Cull Mask* setting:
 
 .. image:: img/refprobe_cullmask.png
 
-Interior vs Exterior
+Interior vs exterior
 --------------------
 
 If you are using reflection probes in an interior setting, it is recommended
@@ -76,7 +76,6 @@ specified per probe. Just choose a color and an energy.
 Optionally, you can blend this ambient light with the probe diffuse capture by
 tweaking the **Ambient Contribution** property (0.0 means, pure ambient color,
 while 1.0 means pure diffuse capture).
-
 
 Blending
 --------
@@ -101,7 +100,7 @@ Finally, blending interior and exterior probes is the recommended approach when 
 levels that combine both interiors and exteriors. Near the door, a probe can
 be marked as *exterior* (so it will get sky reflections) while on the inside, it can be interior.
 
-Reflection Atlas
+Reflection atlas
 ----------------
 
 In the current renderer implementation, all probes are the same size and

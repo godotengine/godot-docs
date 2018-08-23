@@ -1,7 +1,7 @@
 .. _doc_using_transforms:
 
-Using 3D transforms in Godot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using 3D transforms
+~~~~~~~~~~~~~~~~~~~
 
 Introduction
 ------------
@@ -24,12 +24,12 @@ hat).
 The idea of this document is to explain why, as well as outlining best practices for dealing with transforms when programming 3D games.
 
 
-Problems of Euler Angles
+Problems of Euler angles
 ------------------------
 
 While it may seem intuitive that each axis has a rotation, the truth is that it's just not practical.
 
-Axis Order
+Axis order
 ==========
 
 The main reason for this is that there isn't a *unique* way to construct an orientation from the angles. There isn't a standard mathematical function that
@@ -58,7 +58,6 @@ If we were to apply rotation in the *X* axis first, and then in *Y*, the effect 
 
 Depending on the type of game or effect desired, the order in which you want axis rotations to be applied may differ. Therefore, applying rotations in X, Y, and Z is not enough: you also need a *rotation order*.
 
-
 Interpolation
 =============
 
@@ -77,14 +76,14 @@ There are a few reasons this may happen:
 * Rotations don't map linearly to orientation, so interpolating them does not always result in the shortest path (i.e., to go from ``270`` to ``0`` degrees is not the same as going from ``270`` to ``360``, even though the angles are equivalent).
 * Gimbal lock is at play (first and last rotated axis align, so a degree of freedom is lost). See `Wikipedia's page on Gimbal Lock <https://en.wikipedia.org/wiki/Gimbal_lock>`_ for a detailed explanation of this problem.
 
-Say no to Euler Angles
+Say no to Euler angles
 ======================
 
 The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
 
 Instead, there is a better way to solve your rotation problems.
 
-Introducing Transforms
+Introducing transforms
 ----------------------
 
 Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`class_Spatial` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Spatial-derived type.
@@ -140,7 +139,7 @@ The gizmo's arrows show the ``X``, ``Y``, and ``Z`` axes (in red, green, and blu
 
 For more information on the mathematics of vectors and transforms, please read the :ref:`doc_vector_math` tutorials.
 
-Manipulating Transforms
+Manipulating transforms
 =======================
 
 Of course, transforms are not as straightforward to manipulate as angles and have problems of their own.
@@ -194,7 +193,7 @@ To rotate relative to object space (the node's own transform) use the following:
     // Rotate locally
     RotateObjectLocal(Vector3.Right, Mathf.Pi);
 
-Precision Errors
+Precision errors
 ================
 
 Doing successive operations on transforms will result in a loss of precision due to floating-point error. This means the scale of each axis may no longer be exactly ``1.0``, and they may not be exactly ``90`` degrees from each other.
@@ -227,7 +226,7 @@ It is recommended you don't scale nodes that are going to be manipulated. Scale 
     transform = transform.Orthonormalized();
     transform = transform.Scaled(scale);
 
-Obtaining Information
+Obtaining information
 =====================
 
 You might be thinking at this point: **"Ok, but how do I get angles from a transform?"**. The answer again is: you don't. You must do your best to stop thinking in angles.
@@ -303,7 +302,7 @@ Jump:
 
 All common behaviors and logic can be done with just vectors.
 
-Setting Information
+Setting information
 ===================
 
 There are, of course, cases where you want to set information to a transform. Imagine a first person controller or orbiting camera. Those are definitely done using angles, because you *do want* the transforms to happen in a specific order.
@@ -355,7 +354,7 @@ Example of looking around, FPS style:
 
 As you can see, in such cases it's even simpler to keep the rotation outside, then use the transform as the *final* orientation.
 
-Interpolating with Quaternions
+Interpolating with quaternions
 ==============================
 
 Interpolating between two transforms can efficiently be done with quaternions. More information about how quaternions work can be found in other places around the Internet. For practical use, it's enough to understand that pretty much their main use is doing a closest path interpolation. As in, if you have two rotations, a quaternion will smoothly allow interpolation between them using the closest axis.

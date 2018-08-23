@@ -1,4 +1,4 @@
-TSCN File Format
+TSCN file format
 ================
 
 A :code:`.tscn` File format is the "Text SCeNe" file format and represents 
@@ -15,8 +15,7 @@ For those looking for a complete description, the parsing is handled in the
 file `scene_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/scene_format_text.cpp>`_
 in the class :code:`ResourceFormatLoaderText`
 
-
-File Structure
+File structure
 --------------
 
 There are five main sections inside the TSCN File:
@@ -26,7 +25,6 @@ There are five main sections inside the TSCN File:
 2. Internal resources
 3. Nodes
 4. Connections
-
 
 The file descriptor looks like :code:`[gd_scene load_steps=1 format=2]` And 
 should be the first entry in the file. The load_steps parameter should (in 
@@ -39,9 +37,9 @@ for all of the items in the section.
 For example, the heading of all external resources should start with
 :code:`[ext_resource .....]`
 
-
 Entries inside the file
 ~~~~~~~~~~~~~~~~~~~~~~~
+
 A heading looks like:
 :code:`[<resource_type> key=value key=value key=value ...]`
 Where resource_type is one of:
@@ -60,7 +58,7 @@ so on. For example, a spatial node looks like:
     [node name="Cube" type="Spatial" parent="."]
     transform=Transform( 1.0, 0.0, 0.0 ,0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0 )
 
-The Scene Tree
+The scene tree
 --------------
 
 The scene tree is made up of... nodes! The heading of each node consists of
@@ -81,6 +79,7 @@ exactly one scene root. It it does not, Godot will fail to import the file.
 The parent path of other nodes should be absolute, but without the scene 
 root's name. If it is a direct child of the scene root, it should be 
 :code:`"."`. Here is an example scene tree (but without any node content).
+
 ::
 
     [node name="Player" type="Spatial"]             ; The scene root
@@ -125,8 +124,8 @@ save a file with that node in it. Some example nodes are:
     transform = Transform( 0.6859206557273865 , -0.32401350140571594 , 0.6515582203865051 , 0.0 , 0.8953956365585327 , 0.44527143239974976 , -0.7276763319969177 , -0.3054208755493164 , 0.6141703724861145 ,14.430776596069336 ,10.093015670776367 ,13.058500289916992  )
     far = 100.0
 
-Node Path
-~~~~~~~~~
+NodePath
+~~~~~~~~
 
 A tree structure is not enough to represent the whole scene, Godot use
 a :code:`NodePath(Path/To/Node)` structure to refer to another node or
@@ -151,7 +150,8 @@ animation track use :code:`NodePath()` points to animated attribute in node.
     ...
 
 Skeleton
-~~~~~~~~~
+~~~~~~~~
+
 Skeleton node inherits Spatial node, besides that it may have a list
 of bones described in key, value pair in the format :code:`bones/Id/Attribute=Value`,
 attributes of bone consists of 
@@ -196,6 +196,7 @@ An example of a skeleton node with two bones:
 
 BoneAttachment
 ~~~~~~~~~~~~~~
+
 BoneAttachment node is an intermediate node to describe some node being parented
 to a single bone in Skeleton node. The BoneAttachment has a :code:`bone_name=NameOfBone`,
 and the corresponding bone being the parent has the BoneAttachment node 
@@ -225,7 +226,8 @@ An example of one MeshInstance parented to a bone in Skeleton:
     transform = Transform(1.0, 0.0, 0.0, 0.0, 1.86265e-09, 1.0, 0.0, -1.0, 0.0, 0.0219986, -0.0343127, 2.25595)
 
 AnimationPlayer
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+
 AnimationPlayer works as an animation lib. it has animations listed in the format
 :code:`anim/Name=SubResource(ResourceId)`, each refers to a Animation
 internal resource. All the animation resources use the root node of AnimationPlayer.
@@ -243,10 +245,9 @@ The root node is stored as :code:`root_node=NodePath(Path/To/Node)`.
     anims/default = SubResource( 2 )
     blend_times = [  ]
 
-
-
 Resources
 ---------
+
 Resources are components that make up the nodes. For example, a MeshInstance
 node will have an accompanying ArrayMesh resource. The ArrayMesh resource
 may be either internal or external to the TSCN file.
@@ -261,8 +262,7 @@ For example, to refer to the resource
 :code:`[ext_resource id=3 type="PackedScene" path=....]` you would use 
 :code:`ExtResource(3)`
 
-
-External Resources
+External resources
 ~~~~~~~~~~~~~~~~~~
 
 External resources are links to resources not contained within the TSCN file
@@ -283,8 +283,7 @@ Some example external resources are:
     [ext_resource path="res://characters/player.dae" type="PackedScene" id=1]
     [ext_resource path="metal.tres" type="Material" id=2]
 
-
-Internal Resources
+Internal resources
 ~~~~~~~~~~~~~~~~~~
 
 A TSCN file can contain meshes, materials and other data, and these are 
@@ -311,6 +310,7 @@ saved files, others can only be found by looking through Godot's source.
 
 ArrayMesh
 ~~~~~~~~~
+
 ArrayMesh consists of several surfaces, each in the format :code:`surface\Index={}`,
 each surface is a set of vertex and a material.
 
@@ -362,7 +362,8 @@ An example of ArrayMesh:
     }
 
 Animation
-~~~~~~~~~~
+~~~~~~~~~
+
 An animation resource consists of tracks. Besides, it has 'length', 'loop' and
 'step' applied to all the tracks.
 
@@ -382,7 +383,6 @@ it includes:
 - loop_wrap
 - imported
 - enabled
-
 
 1) The :code:`type` must be put as the first attribute of each track. 
    The value of :code:`type` can be:

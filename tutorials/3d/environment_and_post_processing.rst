@@ -1,6 +1,6 @@
 .. _doc_environment_and_post_processing:
 
-Environment and Post-Processing
+Environment and post-processing
 ===============================
 
 Godot 3 provides a redesigned Environment resource, as well as a brand new
@@ -14,8 +14,8 @@ rendering environment. This includes sky, ambient lighting, tone mapping,
 effects, and adjustments. By itself it does nothing, but it becomes enabled once
 used in one of the following locations in order of priority:
 
-Camera Node
-^^^^^^^^^^^^
+Camera node
+^^^^^^^^^^^
 
 An Environment can be set to a camera. It will have priority over any other setting.
 
@@ -24,8 +24,7 @@ An Environment can be set to a camera. It will have priority over any other sett
 This is mostly useful when wanting to override an existing environment,
 but in general it's a better idea to use the option below.
 
-
-WorldEnvironment Node
+WorldEnvironment node
 ^^^^^^^^^^^^^^^^^^^^^
 
 The WorldEnvironment node can be added to any scene, but only one can exist per
@@ -37,9 +36,8 @@ Any Environment added has higher priority than the default Environment
 (explained below). This means it can be overridden on a per-scene basis,
 which makes it quite useful.
 
-
-Default Environment
-^^^^^^^^^^^^^^^^^^^^^
+Default environment
+^^^^^^^^^^^^^^^^^^^
 
 A default environment can be set, which acts as a fallback when no Environment
 was set to a Camera or WorldEnvironment.
@@ -51,12 +49,11 @@ New projects created from the Project Manager come with a default environment
 (``default_env.tres``). If one needs to be created, save it to disk before
 referencing it here.
 
-Environment Options
+Environment options
 -------------------
 
 Following is a detailed description of all environment options and how they
 are intended to be used.
-
 
 Background
 ^^^^^^^^^^
@@ -75,7 +72,6 @@ There are many ways to set the background:
 - **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a simple sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
 - **Color+Sky** lets you define a sky (as above) but uses a constant color value for drawing the background. The sky will only be used for reflection and ambient light.
 
-
 Ambient Light
 ^^^^^^^^^^^^^
 
@@ -89,7 +85,6 @@ color multiplied by the material albedo) and then one obtained from the *Sky*
 enabled).
 
 .. image:: img/environment_ambient.png
-
 
 When a *Sky* is set as background, it's possible to blend between ambient color
 and sky using the **Sky Contribution** setting (this value is 1.0 by default for
@@ -184,7 +179,7 @@ defaults, but you can still tweak then:
 - **Max Luma:** Maximum luminance that auto exposure will aim to adjust for.
 - **Speed:** Speed at which luminance corrects itself. The higher the value, the faster correction happens.
 
-Mid and Post-Processing Effects
+Mid and post-processing effects
 -------------------------------
 
 A large amount of widely-used mid and post-processing effects are supported
@@ -269,7 +264,6 @@ a given range. It has an initial **Distance** with a **Transition** region
 The **Amount** parameter controls the amount of blur. For larger blurs, tweaking
 the **Quality** may be needed in order to avoid artifacts.
 
-
 Depth of Field / Near Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -286,7 +280,6 @@ It is common to use both blurs together to focus the viewer's attention on a
 given object:
 
 .. image:: img/environment_mixed_blur.png
-
 
 Glow
 ^^^^

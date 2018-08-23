@@ -47,7 +47,7 @@ Click it and select *Populate surface* in the dropdown menu. A new window titled
 
 .. image:: img/multimesh_settings.png
 
-MultiMesh Settings
+MultiMesh settings
 ~~~~~~~~~~~~~~~~~~
 
 Below are descriptions of the options.

@@ -154,7 +154,6 @@ portion of a circle? You will have to code a function to perform this and draw i
 Arc function
 ^^^^^^^^^^^^
 
-
 An arc is defined by its support circle parameters. That is: the center position
 and the radius. The arc itself is then defined by the angle it starts from
 and the angle at which it stops. These are the 4 parameters that we have to provide to our drawing.
@@ -234,6 +233,7 @@ increase the number of points.
 
 Draw the arc on screen
 ^^^^^^^^^^^^^^^^^^^^^^
+
 We now have a function that draws stuff on the screen:
 It is time to call in the _draw() function.
 
@@ -265,10 +265,9 @@ Result:
 
 .. image:: img/result_drawarc.png
 
-
-
 Arc polygon function
 ^^^^^^^^^^^^^^^^^^^^
+
 We can take this a step further and not only write a function that draws the plain
 portion of the disc defined by the arc, but also its shape. The method is exactly
 the same as previously, except that we draw a polygon instead of lines:
@@ -310,6 +309,7 @@ the same as previously, except that we draw a polygon instead of lines:
 
 Dynamic custom drawing
 ^^^^^^^^^^^^^^^^^^^^^^
+
 Alright, we are now able to draw custom stuff on screen. However, it is static:
 Let's make this shape turn around the center. The solution to do this is simply
 to change the angle_from and angle_to values over time. For our example,

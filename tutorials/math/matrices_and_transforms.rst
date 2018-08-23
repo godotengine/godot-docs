@@ -154,7 +154,7 @@ which should be a lot simpler to understand after completing this
 tutorial. We'll just explain how to use transforms.
 
 Transform2D
------------
+~~~~~~~~~~~
 
 :ref:`class_Transform2D` is a 3x2 matrix. It has 3 Vector2 elements and
 it's used for 2D. The "X" axis is the element 0, "Y" axis is the element 1 and
@@ -180,7 +180,7 @@ Most operations will be explained with this datatype (Transform2D), but the
 same logic applies to 3D.
 
 Identity
---------
+~~~~~~~~
 
 An important transform is the "identity" matrix. This means:
 
@@ -220,7 +220,7 @@ Operations
 ----------
 
 Rotation
---------
+~~~~~~~~
 
 Rotating Transform2D is done by using the "rotated" function:
 
@@ -238,7 +238,7 @@ Rotating Transform2D is done by using the "rotated" function:
 .. image:: img/tutomat12.png
 
 Translation
------------
+~~~~~~~~~~~
 
 There are two ways to translate a Transform2D, the first one is moving
 the origin:
@@ -298,7 +298,7 @@ You could also transform the global coordinates to local coordinates manually:
 But even better, there are helper functions for this as you can read in the next sections.
 
 Local to global coordinates and vice versa
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are helper methods for converting between local and global coordinates.
 
@@ -306,7 +306,7 @@ There are :ref:`Node2D.to_local() <class_Node2D_to_local>` and :ref:`Node2D.to_g
 as well as :ref:`Spatial.to_local() <class_Spatial_to_local>` and :ref:`Spatial.to_global() <class_Spatial_to_global>` for 3D.
 
 Scale
------
+~~~~~
 
 A matrix can be scaled too. Scaling will multiply the basis vectors by a
 vector (X vector by x component of the scale, Y vector by y component of
@@ -339,7 +339,7 @@ matrix inside (and you are likely learning this many years *after*
 discovering Santa is not real).
 
 Transform
----------
+~~~~~~~~~
 
 Transform is the act of switching between coordinate systems. To convert
 a position (either 2D or 3D) from "designer" coordinate system to the
@@ -366,7 +366,7 @@ And only for basis (no translation):
     var newPosition = m.BasisXform(position);
 
 Inverse transform
------------------
+~~~~~~~~~~~~~~~~~
 
 To do the opposite operation (what we did up there with the rocket), the
 "xform_inv" method is used:
@@ -392,7 +392,7 @@ Only for Basis:
     var newPosition = m.BasisXformInv(position);
 
 Orthonormal matrices
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 However, if the matrix has been scaled (vectors are not unit length),
 or the basis vectors are not orthogonal (90°), the inverse transform
@@ -416,7 +416,7 @@ the position unchanged:
     position = Transform2D.Identity.Xform(position);
 
 Affine inverse
---------------
+~~~~~~~~~~~~~~
 
 The affine inverse is a matrix that does the inverse operation of
 another matrix, no matter if the matrix has scale or the axis vectors
@@ -456,7 +456,7 @@ If the matrix is orthonormal, then:
     position = m.XformInv(position);
 
 Matrix multiplication
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Matrices can be multiplied. Multiplication of two matrices "chains"
 (concatenates) their transforms.
@@ -517,7 +517,7 @@ However, this is not the same:
 Because in matrix math, A * B is not the same as B * A.
 
 Multiplication by inverse
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Multiplying a matrix by its inverse, results in identity:
 
@@ -533,7 +533,7 @@ Multiplying a matrix by its inverse, results in identity:
     var B = A.AffineInverse() * A;
 
 Multiplication by identity
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Multiplying a matrix by identity, will result in the unchanged matrix:
 
@@ -611,7 +611,7 @@ As mentioned before, for 3D, we deal with 3 :ref:`Vector3 <class_Vector3>`
 vectors for the rotation matrix, and an extra one for the origin.
 
 Basis
------
+~~~~~
 
 Godot has a special type for a 3x3 matrix, named :ref:`Basis <class_basis>`.
 It can be used to represent a 3D rotation and scale. Sub vectors can be
@@ -676,10 +676,8 @@ And can be accessed like this:
     GD.Print(identityBasis);;
     // prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
 
-
-
 Rotation in 3D
---------------
+~~~~~~~~~~~~~~
 
 Rotation in 3D is more complex than in 2D (translation and scale are the
 same), because rotation is an implicit 2D operation. To rotate in 3D, an
@@ -702,7 +700,7 @@ that can point to any direction, but length must be one (1.0).
     m3 = m3.Rotated(new Vector3(0, 1, 0), Mathf.Pi / 2);
 
 Transform
----------
+~~~~~~~~~
 
 To add the final component to the mix, Godot provides the
 :ref:`Transform <class_Transform>` type. Transform has two members:

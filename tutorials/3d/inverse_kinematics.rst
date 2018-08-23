@@ -65,7 +65,7 @@ pre-calculated constants, or you could add an extra bone at the tip of the
 IK bone and calculate using that.
 
 Implementation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 We will use an exported variable for the bone length to make it easy.
 

@@ -1,7 +1,7 @@
 .. _doc_gi_probes:
 
 GI Probes
-==========
+=========
 
 Introduction
 ------------
@@ -17,18 +17,18 @@ will be used, lights can be added, changed or removed, and this will be updated
 in real-time. Dynamic objects that move within one of these
 probes will also receive indirect lighting from the scene automatically.
 
-Just like with ReflectionProbe, GIProbes can be blended (in a bit more limited
+Just like with ReflectionProbe, GIProbe can be blended (in a bit more limited
 way), so it is possible to provide full real-time lighting
 for a stage without having to resort to lightmaps.
 
-The main downside of GIProbes are:
+The main downsides of GIProbe are:
 
 - A small amount of light leaking can occur if the level is not carefully designed. This must be artist-tweaked.
 - Performance requirements are higher than for lightmaps, so it may not run properly in low-end integrated GPUs (may need to reduce resolution).
 - Reflections are voxelized, so they don't look as sharp as with ReflectionProbe. However, in exchange they are volumetric, so any room size or shape works for them. Mixing them with Screen Space Reflection also works well.
 - They consume considerably more video memory than Reflection Probes, so they must be used by care in the right subdivision sizes.
 
-Setting Up
+Setting up
 ----------
 
 Just like a ReflectionProbe, simply set up the GIProbe by wrapping it around
@@ -46,8 +46,8 @@ toolbar to begin the pre-baking process:
 
 .. image:: img/giprobe_bake.png
 
-Adding Lights
---------------
+Adding lights
+-------------
 
 Unless there are materials with emission, GIProbe does nothing by default.
 Lights need to be added to the scene to have an effect.
@@ -80,8 +80,7 @@ as a full 3-stage fallback-chain. This allows to have precise reflections where 
 
 .. image:: img/giprobe_ref_blending.png
 
-
-Interior vs Exterior
+Interior vs exterior
 --------------------
 
 GI Probes normally allow mixing with lighting from the sky. This can be disabled
@@ -97,7 +96,6 @@ from spreading inside to being ignored.
 As complex buildings may mix interiors with exteriors, combining GIProbes
 for both parts works well.
 
-
 Tweaking
 --------
 
@@ -112,7 +110,6 @@ GI Probes support a few parameters for tweaking:
 - **Propagation** How much light propagates through the probe internally.
 - **Bias** Value used to avoid self-occlusion when doing voxel cone tracing, should generally be above 1.0 (1==voxel size).
 - **Normal Bias** Alternative type of bias useful for some scenes. Experiment with this one if regular bias does not work.
-
 
 Quality
 -------

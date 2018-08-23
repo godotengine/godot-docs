@@ -1,4 +1,4 @@
-Multi-Threading
+Multi-threading
 ===============
 
 .. toctree::

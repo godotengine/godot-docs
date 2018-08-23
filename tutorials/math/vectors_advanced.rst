@@ -1,6 +1,6 @@
 .. _doc_vectors_advanced:
 
-Advanced Vector Math
+Advanced vector math
 ====================
 
 Planes

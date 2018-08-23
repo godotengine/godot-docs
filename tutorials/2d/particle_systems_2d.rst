@@ -1,6 +1,6 @@
 .. _doc_particle_systems_2d:
 
-Particle Systems (2D)
+Particle systems (2D)
 =====================
 
 Intro
@@ -49,7 +49,7 @@ the relevant texture property:
 
 .. image:: img/particles2.png
 
-Time Parameters
+Time parameters
 ---------------
 
 Lifetime
@@ -125,7 +125,7 @@ Fract Delta
 
 This can be used to turn Fract Delta on or off.
 
-Drawing Parameters
+Drawing parameters
 ------------------
 
 Visibility Rect

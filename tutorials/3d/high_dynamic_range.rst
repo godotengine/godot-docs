@@ -77,8 +77,8 @@ too which makes the problem worse.
 
 In any case though, this is the easy solution that works everywhere.
 
-Hardware sRGB -> linear conversion.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware sRGB -> linear conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the most correct way to use assets in linear-space, as the
 texture sampler on the GPU will do the conversion after reading the
@@ -86,8 +86,8 @@ texel using floating point. This works fine on PC and consoles, but most
 mobile devices do no support it, or do not support it on compressed
 texture format (iOS for example).
 
-Linear -> sRGB at the end.
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Linear -> sRGB at the end
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After all the rendering is done, the linear-space rendered image must be
 converted back to sRGB. To do this, simply enable sRGB conversion in the

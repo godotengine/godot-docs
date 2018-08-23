@@ -1,6 +1,6 @@
 .. _doc_your_first_game:
 
-Your First Game
+Your first game
 ===============
 
 Overview
@@ -24,7 +24,7 @@ final result:
 **Why 2D?** 3D games are much more complex than 2D ones. You should stick to 2D
 until you have a good understanding of the game development process.
 
-Project Setup
+Project setup
 -------------
 
 Launch Godot and create a new project. Then, download
@@ -39,7 +39,7 @@ This game will use portrait mode, so we need to adjust the size of the
 game window. Click on Project -> Project Settings -> Display -> Window and
 set "Width" to 480 and "Height" to 720.
 
-Organizing the Project
+Organizing the project
 ~~~~~~~~~~~~~~~~~~~~~~
 
 In this project, we will make 3 independent scenes: ``Player``,
@@ -52,14 +52,14 @@ Dock in the upper left corner:
 
 .. image:: img/filesystem_dock.png
 
-Player Scene
+Player scene
 ------------
 
 The first scene we will make defines the ``Player`` object. One of the benefits
 of creating a separate Player scene is that we can test it separately, even
 before we've created other parts of the game.
 
-Node Structure
+Node structure
 ~~~~~~~~~~~~~~
 
 To begin, click the "Add/Create a New Node" button and add an :ref:`Area2D <class_Area2D>`
@@ -84,7 +84,7 @@ Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``C
           conventions. Classes (nodes) use ``PascalCase``, variables and
           functions use ``snake_case``, and constants use ``ALL_CAPS``.
 
-Sprite Animation
+Sprite animation
 ~~~~~~~~~~~~~~~~
 
 Click on the ``Player`` node and add an :ref:`AnimatedSprite <class_AnimatedSprite>` node as a
@@ -128,7 +128,7 @@ When you're finished, your ``Player`` scene should look like this:
 
 .. image:: img/player_scene_nodes.png
 
-Moving the Player
+Moving the player
 ~~~~~~~~~~~~~~~~~
 
 Now we need to add some functionality that we can't get from a built-in
@@ -315,7 +315,7 @@ around the screen in all directions.
              this likely means you spelled the node name wrong. Node names are case-sensitive
              and ``$NodeName`` or ``get_node("NodeName")`` must match the name you see in the scene tree.
 
-Choosing Animations
+Choosing animations
 ~~~~~~~~~~~~~~~~~~~
 
 Now that the player can move, we need to change which animation the
@@ -382,7 +382,7 @@ starts:
 
     Hide();
 
-Preparing for Collisions
+Preparing for collisions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 We want ``Player`` to detect when it's hit by an enemy, but we haven't
@@ -470,7 +470,7 @@ the player when starting a new game.
         collisionShape2D.Disabled = false;
     }
 
-Enemy Scene
+Enemy scene
 -----------
 
 Now it's time to make the enemies our player will have to dodge. Their
@@ -481,7 +481,7 @@ despawn when they go offscreen.
 We will build this into a ``Mob`` scene, which we can then *instance* to
 create any number of independent mobs in the game.
 
-Node Setup
+Node setup
 ~~~~~~~~~~
 
 Click Scene -> New Scene and we'll create the Mob.
@@ -520,7 +520,7 @@ As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
 collision. To align the shape with the image, you'll need to set the
 ``Rotation Degrees`` property to ``90`` under ``Node2D``.
 
-Enemy Script
+Enemy script
 ~~~~~~~~~~~~
 
 Add a script to the ``Mob`` and add the following member variables:
@@ -602,7 +602,7 @@ node and add this code:
 
 This completes the `Mob` scene.
 
-Main Scene
+Main scene
 ----------
 
 Now it's time to bring it all together. Create a new scene and add a
@@ -631,7 +631,7 @@ follows:
 In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and
 set ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
 
-Spawning Mobs
+Spawning mobs
 ~~~~~~~~~~~~~
 
 The Main node will be spawning new mobs, and we want them to appear at a
@@ -660,7 +660,7 @@ node as a child of ``MobPath`` and name it ``MobSpawnLocation``. This node will
 automatically rotate and follow the path as it moves, so we can use it
 to select a random position and direction along the path.
 
-Main Script
+Main script
 ~~~~~~~~~~~
 
 Add a script to ``Main``. At the top of the script we use
@@ -1118,7 +1118,7 @@ sync with the changing score:
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
 
-Finishing Up
+Finishing up
 ------------
 
 We have now completed all the functionality for our game. Below are some
@@ -1138,7 +1138,7 @@ screen.
 You can also add a background image, if you have one, by using a
 ``Sprite`` node.
 
-Sound Effects
+Sound effects
 ~~~~~~~~~~~~~
 
 Sound and music can be the single most effective way to add appeal to
@@ -1191,7 +1191,7 @@ all the way to ``0``.
 .. seealso:: See :ref:`Particles2D <class_Particles2D>` for more details on using
              particle effects.
 
-Project Files
+Project files
 -------------
 
 You can find a completed version of this project here:

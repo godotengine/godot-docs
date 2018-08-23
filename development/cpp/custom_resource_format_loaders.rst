@@ -1,6 +1,6 @@
 .. _doc_custom_resource_format_loaders:
 
-Custom Resource Format Loaders
+Custom resource format loaders
 ==============================
 
 Introduction
@@ -14,9 +14,8 @@ loaded resources must be stateless.
 This guide assumes the reader knows how to create C++ modules and godot 
 data types. If not, refer to this guide :ref:`doc_custom_modules_in_c++`.
 
-
-References:
-~~~~~~~~~~~
+References
+~~~~~~~~~~
 
 - :ref:`ResourceLoader<class_resourceloader>`
 - `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L258>`__
@@ -36,8 +35,8 @@ What not?
 
 ImageFormatLoader should be used to load images.
 
-References:
-~~~~~~~~~~~
+References
+~~~~~~~~~~
 
 - `core/io/image_loader.h <https://github.com/godotengine/godot/blob/master/core/io/image_loader.h>`__
 
@@ -107,7 +106,7 @@ read and handle data serialization.
 	}
 
 
-Creating Custom Data Types
+Creating custom data types
 --------------------------
 
 Godot may not have a proper substitute within its :ref:`doc_core_types`
@@ -207,13 +206,14 @@ calls into ``std::istream``.
 	};
 
 
-References:
-~~~~~~~~~~~
+References
+~~~~~~~~~~
+
 - `istream <http://www.cplusplus.com/reference/istream/istream/>`__
 - `streambuf <http://www.cplusplus.com/reference/streambuf/streambuf/?kw=streambuf>`__
 - `core/io/fileaccess.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`__
 
-Registering the New File Format
+Registering the new file format
 -------------------------------
 
 Godot registers ``ResourcesFormatLoader`` with a ``ResourceLoader``
@@ -240,10 +240,10 @@ when ``load`` is called.
 		memdelete(my_json_loader);
 	}
 
-References:
-~~~~~~~~~~~
-- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L280>`__
+References
+~~~~~~~~~~
 
+- `core/io/resource_loader.cpp <https://github.com/godotengine/godot/blob/master/core/io/resource_loader.cpp#L280>`__
 
 Loading it on GDScript
 ----------------------
