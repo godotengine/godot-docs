@@ -176,7 +176,7 @@ To solve these problems, Godot supports a simple method of skeletons.
 Skeletons
 ~~~~~~~~~
 
-Godot doesn't actually support *true* Skeketons, but it does feature a
+Godot doesn't actually support *true* Skeletons, but it does feature a
 helper to create "bones" between nodes. This is enough for most cases,
 but the way it works is not completely obvious.
 
