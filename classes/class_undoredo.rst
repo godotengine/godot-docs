@@ -62,7 +62,7 @@ enum **MergeMode**
 Description
 -----------
 
-Helper to manage UndoRedo in the editor or custom tools. It works by storing calls to functions in both 'do' an 'undo' lists.
+Helper to manage UndoRedo in the editor or custom tools. It works by storing calls to functions in both 'do' and 'undo' lists.
 
 Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
 
