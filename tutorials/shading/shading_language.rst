@@ -769,7 +769,7 @@ happen later, though) with the following code, so it can be done manually:
     void vertex() {
 
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-        NORMAL = (MODELVIEW_MATRIX * vec4(VERTEX, 0.0)).xyz;
+        NORMAL = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
         // same as above for binormal and tangent, if normal mapping is used
     }
 
