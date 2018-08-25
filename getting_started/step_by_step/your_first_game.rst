@@ -926,6 +926,9 @@ StartButton
 
 -  Text: ``Start``
 
+To make the text of the ``MessageLabel`` fit the game's window click
+the small icon next to your text property. This will open up a new
+window where you can add a new line between the words.
 The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
