@@ -85,8 +85,7 @@ received input, in order:
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
-   not spread any more. Events that are not consumed will propagate  **up**,
-   to :ref:`Control <class_Control>`'s ancestors. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
+   not spread any more. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
    property to control whether a :ref:`Control <class_Control>` is notified
    of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
    callback, and whether these events are propagated further.
@@ -103,6 +102,20 @@ received input, in order:
    not. This can be configured through :ref:`Area <class_Area>` properties).
 5. Finally, if the event was unhandled, it will be passed to the next
    Viewport in the tree, otherwise it will be ignored.
+
+When sending events to all listening nodes within a scene, the viewport
+will do so in a reverse depth-first order: Starting with the node at
+the bottom of the scene tree, and ending at the root node:
+
+.. image:: img/input_event_scene_flow.png
+
+GUI events also travel up the scene tree but, since these events target
+specific Controls, only direct ancestors of the targeted Control node receive the event.
+
+In accordance with Godot's node-based design, this enables
+specialized child nodes to handle and consume particular events, while
+their ancestors, and ultimately the scene root, can provide more
+generalized behaviour if needed.
 
 Anatomy of an InputEvent
 ------------------------
