@@ -91,7 +91,7 @@ Member Function Description
 
 - void **add_icon_item** **(** :ref:`Texture<class_texture>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id **)**
 
-Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
+Add an item, with a "texture" icon, text "label" and id. New items are appended at the end.
 
 .. _class_OptionButton_add_item:
 
