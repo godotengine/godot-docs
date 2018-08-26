@@ -74,11 +74,11 @@ received input, in order:
 
 .. image:: img/input_event_flow.png
 
-1. First of all, the standard :ref:`Node._input() <class_Node__input>`) function
+1. First of all, the standard :ref:`Node._input() <class_Node__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_set_process_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
    not spread any more. This ensures that you can filter all events of interest, even before the GUI. 
-   For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>`) is generally a better fit, because it allows the GUI to intercept the events.
+   For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._gui_input() <class_Control__gui_input>` and the signal
