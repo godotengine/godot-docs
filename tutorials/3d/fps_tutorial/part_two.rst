@@ -551,18 +551,18 @@ Expand ``Rotation_Helper`` and notice how it has two nodes: ``Gun_Fire_Points`` 
 
 ``Gun_aim_point`` is the point that the bullets will be aiming at. Notice how it
 is lined up with the center of the screen and pulled a distance forward on the Z
-axis. ``Gun_aim_point`` will serve as the point where the bullets will for sure collide
+axis. ``Gun_aim_point`` will serve as the point the bullets will for sure collide
 with as it goes along.
 
 .. note:: There is a invisible mesh instance for debugging purposes. The mesh is
-          a small sphere that visually shows where the bullets will be aiming at.
+          a small sphere that visually shows where the bullets will be aiming.
 
 Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
 weapon.
 
 Open up ``Rifle_Point`` and you'll find a :ref:`Raycast <class_Raycast>` node. This is where
 we will be sending the raycasts for our rifle's bullets.
-The length of the raycast will dictate how far our the bullets will travel.
+The length of the raycast will dictate how far our bullets will travel.
 
 We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet because
 we want to fire lots of bullets quickly. If we use bullet objects, it is quite possible
