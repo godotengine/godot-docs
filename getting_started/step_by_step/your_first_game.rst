@@ -309,7 +309,8 @@ to the bottom of the ``_process`` function:
 .. tip:: *Clamping* a value means restricting it to a given range.
 
 Click "Play Scene" (``F6``) and confirm you can move the player
-around the screen in all directions.
+around the screen in all directions. The console output that opens upon playing the scene can be closed
+by clicking ``Output`` (which should be highlighted in blue) in the lower left of the Bottom Panel.
 
 .. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
              this likely means you spelled the node name wrong. Node names are case-sensitive
