@@ -74,19 +74,18 @@ received input, in order:
 
 .. image:: img/input_event_flow.png
 
-1. First of all, the standard :ref:`Node._input() <class_Node__input>`) function
+1. First of all, the standard :ref:`Node._input() <class_Node__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_set_process_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
    not spread any more. This ensures that you can filter all events of interest, even before the GUI. 
-   For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>`) is generally a better fit, because it allows the GUI to intercept the events.
+   For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._gui_input() <class_Control__gui_input>` and the signal
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
-   not spread any more. Events that are not consumed will propagate  **up**,
-   to :ref:`Control <class_Control>`'s ancestors. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
+   not spread any more. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
    property to control whether a :ref:`Control <class_Control>` is notified
    of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
    callback, and whether these events are propagated further.
@@ -103,6 +102,20 @@ received input, in order:
    not. This can be configured through :ref:`Area <class_Area>` properties).
 5. Finally, if the event was unhandled, it will be passed to the next
    Viewport in the tree, otherwise it will be ignored.
+
+When sending events to all listening nodes within a scene, the viewport
+will do so in a reverse depth-first order: Starting with the node at
+the bottom of the scene tree, and ending at the root node:
+
+.. image:: img/input_event_scene_flow.png
+
+GUI events also travel up the scene tree but, since these events target
+specific Controls, only direct ancestors of the targeted Control node receive the event.
+
+In accordance with Godot's node-based design, this enables
+specialized child nodes to handle and consume particular events, while
+their ancestors, and ultimately the scene root, can provide more
+generalized behaviour if needed.
 
 Anatomy of an InputEvent
 ------------------------
