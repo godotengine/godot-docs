@@ -61,7 +61,7 @@ Let's start by writing our main code. Ideally, we want to end up with a file str
       + bin
         - libsimple.dll/so/dylib
         - libsimple.gdnlib
-        - simple.gdns
+        - Simple.gdns
       + src
         - .gdignore
         - simple.c
@@ -329,7 +329,7 @@ Now we can implement our main.gd code:
     extends Control
 
     # load the SIMPLE library
-    onready var data = preload("res://bin/simple.gdns").new()
+    onready var data = preload("res://bin/Simple.gdns").new()
 
     func _on_Button_pressed():
         $Label.text = "Data = " + data.get_data()
