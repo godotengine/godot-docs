@@ -87,10 +87,12 @@ class GDScriptLexer(RegexLexer):
         ],
         'keywords': [
             (words((
-                'do', 'var', 'const', 'extends', 'is', 'export', 'onready', 'tool',
-                'static', 'setget', 'signal', 'breakpoint', 'switch', 'case',
-                'assert', 'break', 'continue', 'elif', 'else', 'for', 'if',
-                'pass', 'return', 'while', 'match', 'master', 'sync', 'slave', 'rpc', 'enum'), suffix=r'\b'),
+                'and', 'in', 'not', 'or', 'as', 'breakpoint', 'class', 'class_name',
+                'extends', 'is', 'func', 'setget', 'signal', 'tool', 'const',
+                'enum', 'export', 'onready', 'static', 'var', 'break', 'continue',
+                'if', 'elif', 'else', 'for', 'pass', 'return', 'match', 'while',
+                'remote', 'sync', 'master', 'slave', 'remotesync', 'mastersync',
+                'slavesync'), suffix=r'\b'),
              Keyword),
         ],
         'builtins': [
@@ -109,7 +111,7 @@ class GDScriptLexer(RegexLexer):
                 'weakref', 'yield'),
                 prefix=r'(?<!\.)', suffix=r'\b'),
              Name.Builtin),
-            (r'((?<!\.)(self|false|true)|(PI|NAN|INF)'
+            (r'((?<!\.)(self|false|true)|(PI|TAU|NAN|INF)'
              r')\b', Name.Builtin.Pseudo),
             (words((
                 'bool', 'int', 'float', 'String', 'NodePath'
