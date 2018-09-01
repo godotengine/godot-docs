@@ -304,7 +304,7 @@ Press Create, now the inspector will show a few fields we need to enter. In Clas
 
 .. image:: img/nativescript_library.png
 
-Finally click on the save icon and save this as bin/Simple.gdns:
+Finally click on the save icon and save this as bin/simple.gdns:
 
 .. image:: img/save_gdns.gif
 
