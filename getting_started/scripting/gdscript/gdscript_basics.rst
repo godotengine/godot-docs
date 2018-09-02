@@ -1231,10 +1231,10 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
     var myvar setget my_var_set, my_var_get
 
     func my_var_set(new_value):
-        my_var = new_value
+        myvar = new_value
 
     func my_var_get():
-        return my_var # Getter must return a value.
+        return myvar # Getter must return a value.
 
 Either of the *setter* or *getter* functions can be omitted:
 
