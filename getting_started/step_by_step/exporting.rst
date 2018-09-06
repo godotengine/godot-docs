@@ -52,7 +52,7 @@ changed:
 
     signal hit
 
-    export (int) var SPEED
+    export (int) var speed
     var velocity = Vector2()
     var screensize
     # Add this variable to hold the clicked position.
@@ -67,7 +67,7 @@ changed:
         # Initial target is the start position.
         target = pos
         show()
-        $Collision.disabled = false
+        $CollisionShape2D.disabled = false
 
     # Change the target whenever a touch event happens.
     func _input(event):
@@ -77,7 +77,7 @@ changed:
     func _process(delta):
         # Move towards the target and stop when close.
         if position.distance_to(target) > 10:
-            velocity = (target - position).normalized() * SPEED
+            velocity = (target - position).normalized() * speed
         else:
             velocity = Vector2()
 
@@ -92,7 +92,7 @@ changed:
     #		velocity.y -= 1
 
         if velocity.length() > 0:
-            velocity = velocity.normalized() * SPEED
+            velocity = velocity.normalized() * speed
             $AnimatedSprite.play()
             $Trail.emitting = true
         else:
