@@ -69,6 +69,8 @@ here's a simple example of how GDScript looks.
     var s = "Hello"
     var arr = [1, 2, 3]
     var dict = {"key": "value", 2:3}
+    var typed_var: int
+    var inferred_type := "String"
 
     # Constants
 
@@ -187,7 +189,9 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                          |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| is         | Tests whether a variable extends a given class.                                                               |
+| is         | Tests whether a variable extends a given class, or is of a given built-in type.                               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| as         | Cast the value to a given type if possible.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance.                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -553,6 +557,75 @@ value upon initialization.
     var c = 3.8
     var d = b + c # Variables are always initialized in order.
 
+Variables can optionally have a type specification. When a type is specified,
+the variable will be forced to have always that same type, and trying to assign
+an incompatible value will raise an error.
+
+Types are specified in the variable declaration using a ``:`` (colon) symbol
+after the variable name, followed by the type.
+
+::
+
+    var my_vector2: Vector2
+    var my_node: Node = Sprite.new()
+
+If the variable is initialized within the declaration the type can be inferred, so
+it's possible to omit the type name::
+
+    var my_vector2 :=  Vector2() # 'my_vector2' is of type 'Vector2'
+    var my_node := Sprite.new() # 'my_node' is of type 'Sprite'
+
+Type inference is only possible if the assigned value has a defined type, otherwise
+it will raise an error.
+
+Valid types are:
+
+- Built-in types (Array, Vector2, int, String, etc.)
+- Engine classes (Node, Resource, Reference, etc.)
+- Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
+- Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope)
+- Script classes declared with the ``class_name`` keyword.
+
+Casting
+^^^^^^^
+
+Values assigned to typed variables must have a compatible type. If it's needed to
+coerce a value to be of a certain type, in particular for object types, you can
+use the casting operator ``as``.
+
+Casting between object types results on the same object if the value is of the
+same type or a subtype of the casted type.
+
+::
+
+    var my_node2D: Node2D
+    my_node2D = $Sprite as Node2D # Works since Sprite is subtype of Node2D
+
+If the value is not a subtype, the casting operation will result in a ``null`` value.
+
+::
+
+    var my_node2D: Node2D
+    my_node2D = $Button # Results in 'null' since a Button is not a subtype of Node2D
+
+For built-in types, they will be forcibly converted if possible, otherwise the
+engine will raise an error.
+
+::
+
+    var my_int: int
+    my_int = "123" as int # The string can be converted to int
+    my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error
+
+Casting is also useful to have better type-safe variables when interacting with
+tree::
+
+    # will infer the variable to be of type Sprite:
+    var my_sprite := $Character as Sprite
+
+    # will fail if $AnimPlayer is not an AnimationPlayer, even if it has the method 'play()':
+    ($AnimPlayer as AnimationPlayer).play("walk")
+
 Constants
 ~~~~~~~~~
 
@@ -568,6 +641,14 @@ expressions and must be assigned on initialization.
     const E = [1, 2, 3, 4][0] # Constant expression: 1
     const F = sin(20) # sin() can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
+
+Although the type of constants are inferred from the assigned value, it's also
+possible to add explicit type specification::
+
+    const A: int = 5
+    const B: Vector2 = Vector2()
+
+Assigning a value of an incompatible type will raise an error.
 
 Enums
 ^^^^^
@@ -612,6 +693,39 @@ argument, unlike Python).
         return a + b  # Return is optional; without it 'null' is returned.
 
 A function can ``return`` at any point. The default return value is ``null``.
+
+Functions can also have type specification for the arguments and for the return
+value. Types for arguments can be added in a similar way to variables::
+
+    func my_function(a: int, b: String):
+        pass
+
+If a function argument has a default value, it's possible to infer the type::
+
+    func my_function(int_arg := 42, String_arg := "string"):
+        pass
+
+The return type of the function can be specified after the arguments list using
+the arrow token (``->``)::
+
+    func my_int_function() -> int:
+        return 0
+
+Functions that have a return type **must** return a proper value. Setting the
+type as ``void`` means the function doesn't return anything. Void functions can
+return early with the ``return`` keyword, but they can't return any value.
+
+::
+
+    void_function() -> void:
+        return # Can't return a value
+
+.. note:: Non-void functions must **always** return a value, so if your code have
+          branching statements (such as ``if``/``else`` construct), all the
+          possible paths must have a return. E.g., if you have a ``return``
+          inside an ``if`` block but not after it, the editor will raise an
+          error because if the block is not executed the function won't have a
+          valid value to return.
 
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
