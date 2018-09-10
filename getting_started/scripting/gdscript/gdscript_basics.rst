@@ -1228,7 +1228,7 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
 
 ::
 
-    var myvar setget my_var_set, my_var_get
+    var my_var setget my_var_set, my_var_get
 
     func my_var_set(new_value):
         my_var = new_value
