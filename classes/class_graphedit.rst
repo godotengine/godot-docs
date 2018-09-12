@@ -7,8 +7,7 @@
 GraphEdit
 =========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`add_valid_connection_type<class_GraphEdit_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                 |
@@ -28,15 +27,15 @@ Member Functions
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_connections<class_GraphEdit_clear_connections>` **(** **)**                                                                                                                                                                                |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`connect_node<class_GraphEdit_connect_node>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**                                                         |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`connect_node<class_GraphEdit_connect_node>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**                                                         |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`disconnect_node<class_GraphEdit_disconnect_node>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**                                                   |
+| void                                       | :ref:`disconnect_node<class_GraphEdit_disconnect_node>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**                                                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                  | :ref:`get_connection_list<class_GraphEdit_get_connection_list>` **(** **)** const                                                                                                                                                                      |
+| :ref:`Array<class_Array>`                  | :ref:`get_connection_list<class_GraphEdit_get_connection_list>` **(** **)** const                                                                                                                                                                      |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`HBoxContainer<class_hboxcontainer>`  | :ref:`get_zoom_hbox<class_GraphEdit_get_zoom_hbox>` **(** **)**                                                                                                                                                                                        |
+| :ref:`HBoxContainer<class_HBoxContainer>`  | :ref:`get_zoom_hbox<class_GraphEdit_get_zoom_hbox>` **(** **)**                                                                                                                                                                                        |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_node_connected<class_GraphEdit_is_node_connected>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**                                               |
+| :ref:`bool<class_bool>`                    | :ref:`is_node_connected<class_GraphEdit_is_node_connected>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**                                               |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_valid_connection_type<class_GraphEdit_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -46,9 +45,9 @@ Member Functions
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_remove_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_connection_activity<class_GraphEdit_set_connection_activity>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)** |
+| void                                       | :ref:`set_connection_activity<class_GraphEdit_set_connection_activity>` **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)** |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_selected<class_GraphEdit_set_selected>` **(** :ref:`Node<class_node>` node **)**                                                                                                                                                             |
+| void                                       | :ref:`set_selected<class_GraphEdit_set_selected>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -68,13 +67,13 @@ Signal sent at the end of a GraphNode movement.
 
 .. _class_GraphEdit_connection_request:
 
-- **connection_request** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot **)**
+- **connection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
 
 .. _class_GraphEdit_connection_to_empty:
 
-- **connection_to_empty** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_vector2>` release_position **)**
+- **connection_to_empty** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_Vector2>` release_position **)**
 
 .. _class_GraphEdit_delete_nodes_request:
 
@@ -84,7 +83,7 @@ Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
 
 .. _class_GraphEdit_disconnection_request:
 
-- **disconnection_request** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot **)**
+- **disconnection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
 
@@ -96,23 +95,30 @@ Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
 
 .. _class_GraphEdit_node_selected:
 
-- **node_selected** **(** :ref:`Object<class_object>` node **)**
+- **node_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted when a GraphNode is selected.
 
 .. _class_GraphEdit_popup_request:
 
-- **popup_request** **(** :ref:`Vector2<class_vector2>` p_position **)**
+- **popup_request** **(** :ref:`Vector2<class_Vector2>` p_position **)**
 
 Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
 
 .. _class_GraphEdit_scroll_offset_changed:
 
-- **scroll_offset_changed** **(** :ref:`Vector2<class_vector2>` ofs **)**
+- **scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` ofs **)**
 
 
-Member Variables
-----------------
+Description
+-----------
+
+GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
+
+It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`) when using GraphEdits.
+
+Property Descriptions
+---------------------
 
   .. _class_GraphEdit_right_disconnects:
 
@@ -120,7 +126,7 @@ Member Variables
 
   .. _class_GraphEdit_scroll_offset:
 
-- :ref:`Vector2<class_vector2>` **scroll_offset** - The scroll offset.
+- :ref:`Vector2<class_Vector2>` **scroll_offset** - The scroll offset.
 
   .. _class_GraphEdit_snap_distance:
 
@@ -135,15 +141,8 @@ Member Variables
 - :ref:`float<class_float>` **zoom** - The current zoom value.
 
 
-Description
------------
-
-GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
-
-It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`) when using GraphEdits.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GraphEdit_add_valid_connection_type:
 
@@ -171,29 +170,29 @@ Remove all connections between nodes.
 
 .. _class_GraphEdit_connect_node:
 
-- :ref:`Error<enum_@globalscope_error>` **connect_node** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
 
 .. _class_GraphEdit_disconnect_node:
 
-- void **disconnect_node** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**
+- void **disconnect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode, if connection exists.
 
 .. _class_GraphEdit_get_connection_list:
 
-- :ref:`Array<class_array>` **get_connection_list** **(** **)** const
+- :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
 
 Return an Array containing the list of connections. A connection consists in a structure of the form {from_slot: 0, from: "GraphNode name 0", to_slot: 1, to: "GraphNode name 1" }
 
 .. _class_GraphEdit_get_zoom_hbox:
 
-- :ref:`HBoxContainer<class_hboxcontainer>` **get_zoom_hbox** **(** **)**
+- :ref:`HBoxContainer<class_HBoxContainer>` **get_zoom_hbox** **(** **)**
 
 .. _class_GraphEdit_is_node_connected:
 
-- :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**
+- :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
@@ -223,11 +222,11 @@ Removes the possibility to disconnect nodes when dragging from the slot at the r
 
 .. _class_GraphEdit_set_connection_activity:
 
-- void **set_connection_activity** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
+- void **set_connection_activity** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
 
 .. _class_GraphEdit_set_selected:
 
-- void **set_selected** **(** :ref:`Node<class_node>` node **)**
+- void **set_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Sets the specified ``node`` as the one selected.
 

@@ -7,8 +7,7 @@
 AudioEffectReverb
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +17,13 @@ Adds a Reverb audio effect to an Audio bus.
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
 
-Member Variables
-----------------
+Description
+-----------
+
+Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectReverb_damping:
 
@@ -53,9 +57,4 @@ Member Variables
 
 - :ref:`float<class_float>` **wet** - Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1. Default value: ``0.5``.
 
-
-Description
------------
-
-Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
 

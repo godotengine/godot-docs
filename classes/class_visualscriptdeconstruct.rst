@@ -7,8 +7,7 @@
 VisualScriptDeconstruct
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 A Visual Script node which deconstructs a base type instance into its parts.
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptDeconstruct_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type** - The type to deconstruct.
-
-
 Description
 -----------
 
 A Visual Script node which deconstructs a base type instance into its parts.
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptDeconstruct_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The type to deconstruct.
+
 

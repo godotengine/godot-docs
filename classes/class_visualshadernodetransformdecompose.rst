@@ -7,8 +7,7 @@
 VisualShaderNodeTransformDecompose
 ==================================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description

@@ -7,8 +7,7 @@
 AtlasTexture
 ============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,19 @@ Brief Description
 
 Packs multiple small textures in a single, bigger one. Helps to optimize video memory costs and render calls.
 
-Member Variables
-----------------
+Description
+-----------
+
+:ref:`Texture<class_Texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_Texture>`, a margin that defines the border width,
+
+and a region that defines the actual area of the AtlasTexture.
+
+Property Descriptions
+---------------------
 
   .. _class_AtlasTexture_atlas:
 
-- :ref:`Texture<class_texture>` **atlas** - The texture that contains the atlas. Can be any :ref:`Texture<class_texture>` subtype.
+- :ref:`Texture<class_Texture>` **atlas** - The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
 
   .. _class_AtlasTexture_filter_clip:
 
@@ -29,17 +35,10 @@ Member Variables
 
   .. _class_AtlasTexture_margin:
 
-- :ref:`Rect2<class_rect2>` **margin** - The margin around the region. The :ref:`Rect2<class_rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
+- :ref:`Rect2<class_Rect2>` **margin** - The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
 
   .. _class_AtlasTexture_region:
 
-- :ref:`Rect2<class_rect2>` **region** - The AtlasTexture's used region.
+- :ref:`Rect2<class_Rect2>` **region** - The AtlasTexture's used region.
 
-
-Description
------------
-
-:ref:`Texture<class_texture>` resource aimed at managing big textures files that pack multiple smaller textures. Consists of a :ref:`Texture<class_texture>`, a margin that defines the border width,
-
-and a region that defines the actual area of the AtlasTexture.
 

@@ -7,8 +7,7 @@
 StreamPeerBuffer
 ================
 
-**Inherits:** :ref:`StreamPeer<class_streampeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------------+-------------------------------------------------------------------------------------+
 | void                                             | :ref:`clear<class_StreamPeerBuffer_clear>` **(** **)**                              |
 +--------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`StreamPeerBuffer<class_streampeerbuffer>`  | :ref:`duplicate<class_StreamPeerBuffer_duplicate>` **(** **)** const                |
+| :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`  | :ref:`duplicate<class_StreamPeerBuffer_duplicate>` **(** **)** const                |
 +--------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_position<class_StreamPeerBuffer_get_position>` **(** **)** const          |
 +--------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -33,16 +32,16 @@ Member Functions
 | void                                             | :ref:`seek<class_StreamPeerBuffer_seek>` **(** :ref:`int<class_int>` position **)** |
 +--------------------------------------------------+-------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_StreamPeerBuffer_data_array:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **data_array**
+- :ref:`PoolByteArray<class_PoolByteArray>` **data_array**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_StreamPeerBuffer_clear:
 
@@ -50,7 +49,7 @@ Member Function Description
 
 .. _class_StreamPeerBuffer_duplicate:
 
-- :ref:`StreamPeerBuffer<class_streampeerbuffer>` **duplicate** **(** **)** const
+- :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** const
 
 .. _class_StreamPeerBuffer_get_position:
 

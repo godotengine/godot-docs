@@ -7,8 +7,7 @@
 ProjectSettings
 ===============
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,43 +15,48 @@ Brief Description
 
 Contains global variables accessible from everywhere.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`add_property_info<class_ProjectSettings_add_property_info>` **(** :ref:`Dictionary<class_dictionary>` hint **)**                              |
+| void                                   | :ref:`add_property_info<class_ProjectSettings_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear<class_ProjectSettings_clear>` **(** :ref:`String<class_string>` name **)**                                                              |
+| void                                   | :ref:`clear<class_ProjectSettings_clear>` **(** :ref:`String<class_String>` name **)**                                                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_order<class_ProjectSettings_get_order>` **(** :ref:`String<class_string>` name **)** const                                                |
+| :ref:`int<class_int>`                  | :ref:`get_order<class_ProjectSettings_get_order>` **(** :ref:`String<class_String>` name **)** const                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`          | :ref:`get_setting<class_ProjectSettings_get_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
+| :ref:`Variant<class_Variant>`          | :ref:`get_setting<class_ProjectSettings_get_setting>` **(** :ref:`String<class_String>` name **)** const                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`globalize_path<class_ProjectSettings_globalize_path>` **(** :ref:`String<class_string>` path **)** const                                      |
+| :ref:`String<class_String>`            | :ref:`globalize_path<class_ProjectSettings_globalize_path>` **(** :ref:`String<class_String>` path **)** const                                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_setting<class_ProjectSettings_has_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
+| :ref:`bool<class_bool>`                | :ref:`has_setting<class_ProjectSettings_has_setting>` **(** :ref:`String<class_String>` name **)** const                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`load_resource_pack<class_ProjectSettings_load_resource_pack>` **(** :ref:`String<class_string>` pack **)**                                    |
+| :ref:`bool<class_bool>`                | :ref:`load_resource_pack<class_ProjectSettings_load_resource_pack>` **(** :ref:`String<class_String>` pack **)**                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`localize_path<class_ProjectSettings_localize_path>` **(** :ref:`String<class_string>` path **)** const                                        |
+| :ref:`String<class_String>`            | :ref:`localize_path<class_ProjectSettings_localize_path>` **(** :ref:`String<class_String>` path **)** const                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`property_can_revert<class_ProjectSettings_property_can_revert>` **(** :ref:`String<class_string>` name **)**                                  |
+| :ref:`bool<class_bool>`                | :ref:`property_can_revert<class_ProjectSettings_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`          | :ref:`property_get_revert<class_ProjectSettings_property_get_revert>` **(** :ref:`String<class_string>` name **)**                                  |
+| :ref:`Variant<class_Variant>`          | :ref:`property_get_revert<class_ProjectSettings_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`save<class_ProjectSettings_save>` **(** **)**                                                                                                 |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`save<class_ProjectSettings_save>` **(** **)**                                                                                                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`save_custom<class_ProjectSettings_save_custom>` **(** :ref:`String<class_string>` file **)**                                                  |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`save_custom<class_ProjectSettings_save_custom>` **(** :ref:`String<class_String>` file **)**                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_initial_value<class_ProjectSettings_set_initial_value>` **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value **)** |
+| void                                   | :ref:`set_initial_value<class_ProjectSettings_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)** |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_order<class_ProjectSettings_set_order>` **(** :ref:`String<class_string>` name, :ref:`int<class_int>` position **)**                      |
+| void                                   | :ref:`set_order<class_ProjectSettings_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_setting<class_ProjectSettings_set_setting>` **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value **)**             |
+| void                                   | :ref:`set_setting<class_ProjectSettings_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**             |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Contains global variables accessible from everywhere. Use "ProjectSettings.get_setting(variable)", "ProjectSettings.set_setting(variable,value)" or "ProjectSettings.has_setting(variable)" to access them. Variables stored in project.godot are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+
+Property Descriptions
+---------------------
 
   .. _class_ProjectSettings_application/boot_splash/fullsize:
 
@@ -60,21 +64,21 @@ Member Variables
 
   .. _class_ProjectSettings_application/boot_splash/image:
 
-- :ref:`String<class_string>` **application/boot_splash/image** - Path to an image used for boot splash.
+- :ref:`String<class_String>` **application/boot_splash/image** - Path to an image used for boot splash.
 
   .. _class_ProjectSettings_application/config/custom_user_dir_name:
 
-- :ref:`String<class_string>` **application/config/custom_user_dir_name** - This directory is used for storing persistent data (user:// filesystem). If a custom name is set, then system paths will be used to store this on Desktop (AppData on Windows, user ~/.config on Unixes, etc), else the Godot config folder is used. This name needs to be unique, and it's recommended to set it to something before publishing.
+- :ref:`String<class_String>` **application/config/custom_user_dir_name** - This directory is used for storing persistent data (user:// filesystem). If a custom name is set, then system paths will be used to store this on Desktop (AppData on Windows, user ~/.config on Unixes, etc), else the Godot config folder is used. This name needs to be unique, and it's recommended to set it to something before publishing.
 
 the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_application/config/icon:
 
-- :ref:`String<class_string>` **application/config/icon** - Icon used for the project, set when project loads. Exporters will use this icon when possible to.
+- :ref:`String<class_String>` **application/config/icon** - Icon used for the project, set when project loads. Exporters will use this icon when possible to.
 
   .. _class_ProjectSettings_application/config/name:
 
-- :ref:`String<class_string>` **application/config/name** - Name of the project. It is used from both project manager and by the exporters. Overriding this as name.locale allows setting it in multiple languages.
+- :ref:`String<class_String>` **application/config/name** - Name of the project. It is used from both project manager and by the exporters. Overriding this as name.locale allows setting it in multiple languages.
 
   .. _class_ProjectSettings_application/config/use_custom_user_dir:
 
@@ -102,7 +106,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_application/run/main_scene:
 
-- :ref:`String<class_string>` **application/run/main_scene** - Path to the main scene file that will be loaded when the project runs.
+- :ref:`String<class_String>` **application/run/main_scene** - Path to the main scene file that will be loaded when the project runs.
 
   .. _class_ProjectSettings_audio/channel_disable_threshold_db:
 
@@ -114,7 +118,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_audio/driver:
 
-- :ref:`String<class_string>` **audio/driver**
+- :ref:`String<class_String>` **audio/driver**
 
   .. _class_ProjectSettings_audio/mix_rate:
 
@@ -254,7 +258,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_debug/settings/crash_handler/message:
 
-- :ref:`String<class_string>` **debug/settings/crash_handler/message**
+- :ref:`String<class_String>` **debug/settings/crash_handler/message**
 
   .. _class_ProjectSettings_debug/settings/fps/force_fps:
 
@@ -282,11 +286,11 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_display/mouse_cursor/custom_image:
 
-- :ref:`String<class_string>` **display/mouse_cursor/custom_image** - Custom image for the mouse cursor.
+- :ref:`String<class_String>` **display/mouse_cursor/custom_image** - Custom image for the mouse cursor.
 
   .. _class_ProjectSettings_display/mouse_cursor/custom_image_hotspot:
 
-- :ref:`Vector2<class_vector2>` **display/mouse_cursor/custom_image_hotspot** - Hotspot for the custom mouse cursor image.
+- :ref:`Vector2<class_Vector2>` **display/mouse_cursor/custom_image_hotspot** - Hotspot for the custom mouse cursor image.
 
   .. _class_ProjectSettings_display/window/allow_per_pixel_transparency:
 
@@ -302,7 +306,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_display/window/handheld/orientation:
 
-- :ref:`String<class_string>` **display/window/handheld/orientation** - Default orientation for cell phone or tablet.
+- :ref:`String<class_String>` **display/window/handheld/orientation** - Default orientation for cell phone or tablet.
 
   .. _class_ProjectSettings_display/window/per_pixel_transparency:
 
@@ -362,11 +366,11 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_gui/theme/custom:
 
-- :ref:`String<class_string>` **gui/theme/custom** - Use a custom theme resource, set a path to it here.
+- :ref:`String<class_String>` **gui/theme/custom** - Use a custom theme resource, set a path to it here.
 
   .. _class_ProjectSettings_gui/theme/custom_font:
 
-- :ref:`String<class_string>` **gui/theme/custom_font** - USe a custom default font resource, set a path to it here.
+- :ref:`String<class_String>` **gui/theme/custom_font** - USe a custom default font resource, set a path to it here.
 
   .. _class_ProjectSettings_gui/theme/use_hidpi:
 
@@ -382,55 +386,55 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_input/ui_accept:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_accept**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_accept**
 
   .. _class_ProjectSettings_input/ui_cancel:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_cancel**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_cancel**
 
   .. _class_ProjectSettings_input/ui_down:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_down**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_down**
 
   .. _class_ProjectSettings_input/ui_end:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_end**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_end**
 
   .. _class_ProjectSettings_input/ui_focus_next:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_focus_next**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_focus_next**
 
   .. _class_ProjectSettings_input/ui_focus_prev:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_focus_prev**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_focus_prev**
 
   .. _class_ProjectSettings_input/ui_home:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_home**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_home**
 
   .. _class_ProjectSettings_input/ui_left:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_left**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_left**
 
   .. _class_ProjectSettings_input/ui_page_down:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_page_down**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_page_down**
 
   .. _class_ProjectSettings_input/ui_page_up:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_page_up**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_page_up**
 
   .. _class_ProjectSettings_input/ui_right:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_right**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_right**
 
   .. _class_ProjectSettings_input/ui_select:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_select**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_select**
 
   .. _class_ProjectSettings_input/ui_up:
 
-- :ref:`Dictionary<class_dictionary>` **input/ui_up**
+- :ref:`Dictionary<class_Dictionary>` **input/ui_up**
 
   .. _class_ProjectSettings_input_devices/pointing/emulate_mouse_from_touch:
 
@@ -442,331 +446,331 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_1:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_1**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_1**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_10:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_10**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_10**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_11:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_11**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_11**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_12:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_12**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_12**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_13:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_13**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_13**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_14:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_14**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_14**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_15:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_15**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_15**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_16:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_16**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_16**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_17:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_17**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_17**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_18:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_18**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_18**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_19:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_19**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_19**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_2:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_2**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_2**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_20:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_20**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_20**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_3:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_3**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_3**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_4:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_4**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_4**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_5:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_5**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_5**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_6:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_6**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_6**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_7:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_7**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_7**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_8:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_8**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_8**
 
   .. _class_ProjectSettings_layer_names/2d_physics/layer_9:
 
-- :ref:`String<class_string>` **layer_names/2d_physics/layer_9**
+- :ref:`String<class_String>` **layer_names/2d_physics/layer_9**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_1:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_1**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_1**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_10:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_10**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_10**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_11:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_11**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_11**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_12:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_12**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_12**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_13:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_13**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_13**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_14:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_14**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_14**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_15:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_15**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_15**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_16:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_16**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_16**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_17:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_17**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_17**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_18:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_18**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_18**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_19:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_19**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_19**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_2:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_2**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_2**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_20:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_20**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_20**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_3:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_3**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_3**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_4:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_4**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_4**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_5:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_5**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_5**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_6:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_6**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_6**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_7:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_7**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_7**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_8:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_8**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_8**
 
   .. _class_ProjectSettings_layer_names/2d_render/layer_9:
 
-- :ref:`String<class_string>` **layer_names/2d_render/layer_9**
+- :ref:`String<class_String>` **layer_names/2d_render/layer_9**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_1:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_1**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_1**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_10:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_10**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_10**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_11:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_11**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_11**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_12:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_12**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_12**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_13:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_13**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_13**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_14:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_14**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_14**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_15:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_15**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_15**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_16:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_16**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_16**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_17:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_17**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_17**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_18:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_18**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_18**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_19:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_19**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_19**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_2:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_2**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_2**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_20:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_20**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_20**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_3:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_3**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_3**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_4:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_4**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_4**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_5:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_5**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_5**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_6:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_6**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_6**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_7:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_7**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_7**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_8:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_8**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_8**
 
   .. _class_ProjectSettings_layer_names/3d_physics/layer_9:
 
-- :ref:`String<class_string>` **layer_names/3d_physics/layer_9**
+- :ref:`String<class_String>` **layer_names/3d_physics/layer_9**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_1:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_1**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_1**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_10:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_10**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_10**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_11:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_11**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_11**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_12:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_12**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_12**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_13:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_13**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_13**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_14:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_14**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_14**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_15:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_15**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_15**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_16:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_16**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_16**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_17:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_17**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_17**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_18:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_18**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_18**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_19:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_19**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_19**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_2:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_2**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_2**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_20:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_20**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_20**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_3:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_3**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_3**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_4:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_4**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_4**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_5:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_5**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_5**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_6:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_6**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_6**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_7:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_7**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_7**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_8:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_8**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_8**
 
   .. _class_ProjectSettings_layer_names/3d_render/layer_9:
 
-- :ref:`String<class_string>` **layer_names/3d_render/layer_9**
+- :ref:`String<class_String>` **layer_names/3d_render/layer_9**
 
   .. _class_ProjectSettings_locale/fallback:
 
-- :ref:`String<class_string>` **locale/fallback**
+- :ref:`String<class_String>` **locale/fallback**
 
   .. _class_ProjectSettings_locale/test:
 
-- :ref:`String<class_string>` **locale/test**
+- :ref:`String<class_String>` **locale/test**
 
   .. _class_ProjectSettings_logging/file_logging/enable_file_logging:
 
@@ -774,7 +778,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_logging/file_logging/log_path:
 
-- :ref:`String<class_string>` **logging/file_logging/log_path** - Path to logs withint he project. Using an user:// based path is recommended.
+- :ref:`String<class_String>` **logging/file_logging/log_path** - Path to logs withint he project. Using an user:// based path is recommended.
 
   .. _class_ProjectSettings_logging/file_logging/max_log_files:
 
@@ -787,6 +791,22 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
   .. _class_ProjectSettings_memory/limits/multithreaded_server/rid_pool_prealloc:
 
 - :ref:`int<class_int>` **memory/limits/multithreaded_server/rid_pool_prealloc** - This is used by servers when used in multi threading mode (servers and visual). RIDs are preallocated to avoid stalling the server requesting them on threads. If servers get stalled too often when loading resources in a thread, increase this number.
+
+  .. _class_ProjectSettings_mono/debugger_agent/port:
+
+- :ref:`int<class_int>` **mono/debugger_agent/port**
+
+  .. _class_ProjectSettings_mono/debugger_agent/wait_for_debugger:
+
+- :ref:`bool<class_bool>` **mono/debugger_agent/wait_for_debugger**
+
+  .. _class_ProjectSettings_mono/debugger_agent/wait_timeout:
+
+- :ref:`int<class_int>` **mono/debugger_agent/wait_timeout**
+
+  .. _class_ProjectSettings_mono/export/include_scripts_content:
+
+- :ref:`bool<class_bool>` **mono/export/include_scripts_content**
 
   .. _class_ProjectSettings_network/limits/debugger_stdout/max_chars_per_second:
 
@@ -818,7 +838,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_network/ssl/certificates:
 
-- :ref:`String<class_string>` **network/ssl/certificates** - If your game or application uses HTTPS, a certificates file is needed. It must be set here.
+- :ref:`String<class_String>` **network/ssl/certificates** - If your game or application uses HTTPS, a certificates file is needed. It must be set here.
 
   .. _class_ProjectSettings_node/name_casing:
 
@@ -830,7 +850,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_physics/2d/physics_engine:
 
-- :ref:`String<class_string>` **physics/2d/physics_engine**
+- :ref:`String<class_String>` **physics/2d/physics_engine**
 
   .. _class_ProjectSettings_physics/2d/thread_model:
 
@@ -842,7 +862,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_physics/3d/physics_engine:
 
-- :ref:`String<class_string>` **physics/3d/physics_engine**
+- :ref:`String<class_String>` **physics/3d/physics_engine**
 
   .. _class_ProjectSettings_physics/common/physics_fps:
 
@@ -854,7 +874,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_rendering/environment/default_clear_color:
 
-- :ref:`Color<class_color>` **rendering/environment/default_clear_color** - Default background clear color.
+- :ref:`Color<class_Color>` **rendering/environment/default_clear_color** - Default background clear color.
 
   .. _class_ProjectSettings_rendering/limits/buffers/blend_shape_max_buffer_size_kb:
 
@@ -886,7 +906,7 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_rendering/quality/depth_prepass/disable_for_vendors:
 
-- :ref:`String<class_string>` **rendering/quality/depth_prepass/disable_for_vendors** - Disable depth pre-pass for some GPU vendors (usually mobile), as their architecture already does this.
+- :ref:`String<class_String>` **rendering/quality/depth_prepass/disable_for_vendors** - Disable depth pre-pass for some GPU vendors (usually mobile), as their architecture already does this.
 
   .. _class_ProjectSettings_rendering/quality/depth_prepass/enable:
 
@@ -900,9 +920,13 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
 - :ref:`int<class_int>` **rendering/quality/directional_shadow/size.mobile**
 
+  .. _class_ProjectSettings_rendering/quality/driver/driver_fallback:
+
+- :ref:`String<class_String>` **rendering/quality/driver/driver_fallback** - Whether to allow falling back to other graphics drivers if the preferred driver is not available. Best means use the best working driver (this is the default). Never means never fall back to another driver even if it does not work. This means the project will not run if the preferred driver does not function.
+
   .. _class_ProjectSettings_rendering/quality/driver/driver_name:
 
-- :ref:`String<class_string>` **rendering/quality/driver/driver_name**
+- :ref:`String<class_String>` **rendering/quality/driver/driver_name**
 
   .. _class_ProjectSettings_rendering/quality/filters/anisotropic_filter_level:
 
@@ -1000,6 +1024,10 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
 - :ref:`int<class_int>` **rendering/threads/thread_model** - Thread model for rendering. Rendering on a thread can vastly improve performance, but syncinc to the main thread can cause a bit more jitter.
 
+  .. _class_ProjectSettings_rendering/vram_compression/import_bptc:
+
+- :ref:`bool<class_bool>` **rendering/vram_compression/import_bptc**
+
   .. _class_ProjectSettings_rendering/vram_compression/import_etc:
 
 - :ref:`bool<class_bool>` **rendering/vram_compression/import_etc** - If the project uses this compression (usually low end mobile), texture importer will import these.
@@ -1018,22 +1046,17 @@ the "use_custom_user_dir" setting must be enabled for this to take effect.
 
   .. _class_ProjectSettings_script:
 
-- :ref:`Script<class_script>` **script**
+- :ref:`Script<class_Script>` **script**
 
 
-Description
------------
-
-Contains global variables accessible from everywhere. Use "ProjectSettings.get_setting(variable)", "ProjectSettings.set_setting(variable,value)" or "ProjectSettings.has_setting(variable)" to access them. Variables stored in project.godot are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ProjectSettings_add_property_info:
 
-- void **add_property_info** **(** :ref:`Dictionary<class_dictionary>` hint **)**
+- void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` hint **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@globalscope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@globalscope>`), hint_string::ref:`String<class_string>`.
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
 Example:
 
@@ -1052,70 +1075,70 @@ Example:
 
 .. _class_ProjectSettings_clear:
 
-- void **clear** **(** :ref:`String<class_string>` name **)**
+- void **clear** **(** :ref:`String<class_String>` name **)**
 
 Clear the whole configuration (not recommended, may break things).
 
 .. _class_ProjectSettings_get_order:
 
-- :ref:`int<class_int>` **get_order** **(** :ref:`String<class_string>` name **)** const
+- :ref:`int<class_int>` **get_order** **(** :ref:`String<class_String>` name **)** const
 
 Return the order of a configuration value (influences when saved to the config file).
 
 .. _class_ProjectSettings_get_setting:
 
-- :ref:`Variant<class_variant>` **get_setting** **(** :ref:`String<class_string>` name **)** const
+- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** const
 
 .. _class_ProjectSettings_globalize_path:
 
-- :ref:`String<class_string>` **globalize_path** **(** :ref:`String<class_string>` path **)** const
+- :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** const
 
 Convert a localized path (res://) to a full native OS path.
 
 .. _class_ProjectSettings_has_setting:
 
-- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** const
 
 Return true if a configuration value is present.
 
 .. _class_ProjectSettings_load_resource_pack:
 
-- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_string>` pack **)**
+- :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack **)**
 
 .. _class_ProjectSettings_localize_path:
 
-- :ref:`String<class_string>` **localize_path** **(** :ref:`String<class_string>` path **)** const
+- :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** const
 
 Convert a path to a localized path (res:// path).
 
 .. _class_ProjectSettings_property_can_revert:
 
-- :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_string>` name **)**
+- :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
 .. _class_ProjectSettings_property_get_revert:
 
-- :ref:`Variant<class_variant>` **property_get_revert** **(** :ref:`String<class_string>` name **)**
+- :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
 
 .. _class_ProjectSettings_save:
 
-- :ref:`Error<enum_@globalscope_error>` **save** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** **)**
 
 .. _class_ProjectSettings_save_custom:
 
-- :ref:`Error<enum_@globalscope_error>` **save_custom** **(** :ref:`String<class_string>` file **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save_custom** **(** :ref:`String<class_String>` file **)**
 
 .. _class_ProjectSettings_set_initial_value:
 
-- void **set_initial_value** **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value **)**
+- void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
 .. _class_ProjectSettings_set_order:
 
-- void **set_order** **(** :ref:`String<class_string>` name, :ref:`int<class_int>` position **)**
+- void **set_order** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**
 
 Set the order of a configuration value (influences when saved to the config file).
 
 .. _class_ProjectSettings_set_setting:
 
-- void **set_setting** **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value **)**
+- void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
 

@@ -7,25 +7,12 @@
 VisualScriptOperator
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptOperator_operator:
-
-- :ref:`Variant.Operator<enum_@globalscope_variant.operator>` **operator**
-
-  .. _class_VisualScriptOperator_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type**
 
 
 Description
@@ -40,4 +27,16 @@ Description
 **Output Ports:**
 
 - Data (variant): ``result``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptOperator_operator:
+
+- :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
+
+  .. _class_VisualScriptOperator_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+
 

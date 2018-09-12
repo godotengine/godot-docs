@@ -7,8 +7,7 @@
 Sprite
 ======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,14 @@ Brief Description
 
 General purpose Sprite node.
 
-Member Functions
-----------------
+Methods
+-------
 
-+----------------------------+----------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`get_rect<class_Sprite_get_rect>` **(** **)** const |
-+----------------------------+----------------------------------------------------------+
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`  | :ref:`get_rect<class_Sprite_get_rect>` **(** **)** const                                                 |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_pixel_opaque<class_Sprite_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** const |
++----------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -39,8 +40,13 @@ Emitted when the :ref:`frame<class_Sprite_frame>` changes.
 Emitted when the :ref:`texture<class_Sprite_texture>` changes.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+
+Property Descriptions
+---------------------
 
   .. _class_Sprite_centered:
 
@@ -64,11 +70,11 @@ Member Variables
 
   .. _class_Sprite_normal_map:
 
-- :ref:`Texture<class_texture>` **normal_map** - The normal map gives depth to the Sprite.
+- :ref:`Texture<class_Texture>` **normal_map** - The normal map gives depth to the Sprite.
 
   .. _class_Sprite_offset:
 
-- :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+- :ref:`Vector2<class_Vector2>` **offset** - The texture's drawing offset.
 
   .. _class_Sprite_region_enabled:
 
@@ -80,29 +86,28 @@ Member Variables
 
   .. _class_Sprite_region_rect:
 
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_region_enabled>` must be ``true``.
+- :ref:`Rect2<class_Rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_region_enabled>` must be ``true``.
 
   .. _class_Sprite_texture:
 
-- :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
+- :ref:`Texture<class_Texture>` **texture** - :ref:`Texture<class_Texture>` object to draw.
 
   .. _class_Sprite_vframes:
 
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
 
 
-Description
------------
-
-A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Sprite_get_rect:
 
-- :ref:`Rect2<class_rect2>` **get_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** const
 
 Returns a Rect2 representing the Sprite's boundary relative to its local coordinates.
+
+.. _class_Sprite_is_pixel_opaque:
+
+- :ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** const
 
 

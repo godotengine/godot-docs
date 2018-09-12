@@ -7,10 +7,8 @@
 BoxContainer
 ============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`VBoxContainer<class_vboxcontainer>`, :ref:`HBoxContainer<class_hboxcontainer>`, :ref:`ColorPicker<class_colorpicker>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`VBoxContainer<class_VBoxContainer>`, :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`ColorPicker<class_ColorPicker>`
 **Category:** Core
 
 Brief Description
@@ -18,23 +16,15 @@ Brief Description
 
 Base class for box containers.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+--------------------------------------------------------------------------------------------+
 | void  | :ref:`add_spacer<class_BoxContainer_add_spacer>` **(** :ref:`bool<class_bool>` begin **)** |
 +-------+--------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_BoxContainer_alignment:
-
-- :ref:`AlignMode<enum_boxcontainer_alignmode>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_BoxContainer_AlignMode:
 
@@ -50,8 +40,16 @@ Description
 
 Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_BoxContainer_alignment:
+
+- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
+
+
+Method Descriptions
+-------------------
 
 .. _class_BoxContainer_add_spacer:
 

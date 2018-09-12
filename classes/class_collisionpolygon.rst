@@ -7,8 +7,7 @@
 CollisionPolygon
 ================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Editor-only class for defining a collision polygon in 3D space.
 
-Member Variables
-----------------
+Description
+-----------
+
+Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at runtime. Creates a :ref:`Shape<class_Shape>` for gameplay. Properties modified during gameplay will have no effect.
+
+Property Descriptions
+---------------------
 
   .. _class_CollisionPolygon_depth:
 
@@ -29,11 +33,6 @@ Member Variables
 
   .. _class_CollisionPolygon_polygon:
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - Array of vertices which define the polygon.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - Array of vertices which define the polygon.
 
-
-Description
------------
-
-Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at runtime. Creates a :ref:`Shape<class_shape>` for gameplay. Properties modified during gameplay will have no effect.
 

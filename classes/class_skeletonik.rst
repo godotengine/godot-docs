@@ -7,8 +7,7 @@
 SkeletonIK
 ==========
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`Skeleton<class_skeleton>`  | :ref:`get_parent_skeleton<class_SkeletonIK_get_parent_skeleton>` **(** **)** const      |
+| :ref:`Skeleton<class_Skeleton>`  | :ref:`get_parent_skeleton<class_SkeletonIK_get_parent_skeleton>` **(** **)** const      |
 +----------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_running<class_SkeletonIK_is_running>` **(** **)**                              |
 +----------------------------------+-----------------------------------------------------------------------------------------+
@@ -29,8 +28,8 @@ Member Functions
 | void                             | :ref:`stop<class_SkeletonIK_stop>` **(** **)**                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_SkeletonIK_interpolation:
 
@@ -38,7 +37,7 @@ Member Variables
 
   .. _class_SkeletonIK_magnet:
 
-- :ref:`Vector3<class_vector3>` **magnet**
+- :ref:`Vector3<class_Vector3>` **magnet**
 
   .. _class_SkeletonIK_max_iterations:
 
@@ -50,31 +49,31 @@ Member Variables
 
   .. _class_SkeletonIK_root_bone:
 
-- :ref:`String<class_string>` **root_bone**
+- :ref:`String<class_String>` **root_bone**
 
   .. _class_SkeletonIK_target:
 
-- :ref:`Transform<class_transform>` **target**
+- :ref:`Transform<class_Transform>` **target**
 
   .. _class_SkeletonIK_target_node:
 
-- :ref:`NodePath<class_nodepath>` **target_node**
+- :ref:`NodePath<class_NodePath>` **target_node**
 
   .. _class_SkeletonIK_tip_bone:
 
-- :ref:`String<class_string>` **tip_bone**
+- :ref:`String<class_String>` **tip_bone**
 
   .. _class_SkeletonIK_use_magnet:
 
 - :ref:`bool<class_bool>` **use_magnet**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_SkeletonIK_get_parent_skeleton:
 
-- :ref:`Skeleton<class_skeleton>` **get_parent_skeleton** **(** **)** const
+- :ref:`Skeleton<class_Skeleton>` **get_parent_skeleton** **(** **)** const
 
 .. _class_SkeletonIK_is_running:
 

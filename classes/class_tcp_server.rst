@@ -7,8 +7,7 @@
 TCP_Server
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,26 +15,26 @@ Brief Description
 
 TCP Server.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_connection_available<class_TCP_Server_is_connection_available>` **(** **)** const                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`listen<class_TCP_Server_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`listen<class_TCP_Server_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`stop<class_TCP_Server_stop>` **(** **)**                                                                              |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StreamPeerTCP<class_streampeertcp>`  | :ref:`take_connection<class_TCP_Server_take_connection>` **(** **)**                                                        |
+| :ref:`StreamPeerTCP<class_StreamPeerTCP>`  | :ref:`take_connection<class_TCP_Server_take_connection>` **(** **)**                                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-TCP Server class. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_streampeertcp>` when got a connection.
+TCP Server class. Listens to connections on a port and returns a :ref:`StreamPeerTCP<class_StreamPeerTCP>` when got a connection.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_TCP_Server_is_connection_available:
 
@@ -45,7 +44,7 @@ Return true if a connection is available for taking.
 
 .. _class_TCP_Server_listen:
 
-- :ref:`Error<enum_@globalscope_error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*" **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
 
 Listen on the "port" binding to "bind_address".
 
@@ -63,7 +62,7 @@ Stop listening.
 
 .. _class_TCP_Server_take_connection:
 
-- :ref:`StreamPeerTCP<class_streampeertcp>` **take_connection** **(** **)**
+- :ref:`StreamPeerTCP<class_StreamPeerTCP>` **take_connection** **(** **)**
 
 If a connection is available, return a StreamPeerTCP with the connection/
 

@@ -7,8 +7,7 @@
 Light2D
 =======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,41 @@ Brief Description
 
 Casts light in a 2D environment.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Light2D_Mode:
+
+enum **Mode**
+
+- **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
+- **MODE_SUB** = **1** --- Subtracts the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
+- **MODE_MIX** = **2** --- Mix the value of pixels corresponding to the Light2D to the values of pixels under it by linear interpolation.
+- **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
+
+  .. _enum_Light2D_ShadowFilter:
+
+enum **ShadowFilter**
+
+- **SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+
+
+Description
+-----------
+
+Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
+
+Property Descriptions
+---------------------
 
   .. _class_Light2D_color:
 
-- :ref:`Color<class_color>` **color** - The Light2D's :ref:`Color<class_color>`.
+- :ref:`Color<class_Color>` **color** - The Light2D's :ref:`Color<class_Color>`.
 
   .. _class_Light2D_editor_only:
 
@@ -37,11 +65,11 @@ Member Variables
 
   .. _class_Light2D_mode:
 
-- :ref:`Mode<enum_light2d_mode>` **mode** - The Light2D's mode. See MODE\_\* constants for values.
+- :ref:`Mode<enum_Light2D_Mode>` **mode** - The Light2D's mode. See MODE\_\* constants for values.
 
   .. _class_Light2D_offset:
 
-- :ref:`Vector2<class_vector2>` **offset** - The offset of the Light2D's ``texture``.
+- :ref:`Vector2<class_Vector2>` **offset** - The offset of the Light2D's ``texture``.
 
   .. _class_Light2D_range_height:
 
@@ -73,7 +101,7 @@ Member Variables
 
   .. _class_Light2D_shadow_color:
 
-- :ref:`Color<class_color>` **shadow_color** - :ref:`Color<class_color>` of shadows cast by the Light2D.
+- :ref:`Color<class_Color>` **shadow_color** - :ref:`Color<class_Color>` of shadows cast by the Light2D.
 
   .. _class_Light2D_shadow_enabled:
 
@@ -81,7 +109,7 @@ Member Variables
 
   .. _class_Light2D_shadow_filter:
 
-- :ref:`ShadowFilter<enum_light2d_shadowfilter>` **shadow_filter** - Shadow filter type. Use SHADOW_FILTER\_\* constants to set ``shadow_filter``. Default value: ``None``.
+- :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **shadow_filter** - Shadow filter type. Use SHADOW_FILTER\_\* constants to set ``shadow_filter``. Default value: ``None``.
 
   .. _class_Light2D_shadow_filter_smooth:
 
@@ -93,43 +121,14 @@ Member Variables
 
   .. _class_Light2D_shadow_item_cull_mask:
 
-- :ref:`int<class_int>` **shadow_item_cull_mask** - The shadow mask. Used with :ref:`LightOccluder2D<class_lightoccluder2d>` to cast shadows. Only occluders with a matching shadow mask will cast shadows.
+- :ref:`int<class_int>` **shadow_item_cull_mask** - The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching shadow mask will cast shadows.
 
   .. _class_Light2D_texture:
 
-- :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` used for the Light2D's appearance.
+- :ref:`Texture<class_Texture>` **texture** - :ref:`Texture<class_Texture>` used for the Light2D's appearance.
 
   .. _class_Light2D_texture_scale:
 
 - :ref:`float<class_float>` **texture_scale** - The ``texture``'s scale factor.
 
-
-Enums
------
-
-  .. _enum_Light2D_Mode:
-
-enum **Mode**
-
-- **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
-- **MODE_SUB** = **1** --- Subtracts the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
-- **MODE_MIX** = **2** --- Mix the value of pixels corresponding to the Light2D to the values of pixels under it by linear interpolation.
-- **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
-
-  .. _enum_Light2D_ShadowFilter:
-
-enum **ShadowFilter**
-
-- **SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-- **SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-- **SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-- **SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-- **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-- **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
-
-
-Description
------------
-
-Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
 

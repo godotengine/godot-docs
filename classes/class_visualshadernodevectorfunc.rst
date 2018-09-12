@@ -7,8 +7,7 @@
 VisualShaderNodeVectorFunc
 ==========================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeVectorFunc_function:
-
-- :ref:`Function<enum_visualshadernodevectorfunc_function>` **function**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeVectorFunc_Function:
 
@@ -37,5 +28,13 @@ enum **Function**
 - **FUNC_RECIPROCAL** = **3**
 - **FUNC_RGB2HSV** = **4**
 - **FUNC_HSV2RGB** = **5**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeVectorFunc_function:
+
+- :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
 
 

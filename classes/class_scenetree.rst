@@ -7,8 +7,7 @@
 SceneTree
 =========
 
-**Inherits:** :ref:`MainLoop<class_mainloop>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`MainLoop<class_MainLoop>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,33 +15,33 @@ Brief Description
 
 SceneTree manages a hierarchy of nodes.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                | :ref:`call_group<class_SceneTree_call_group>` **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method **)** vararg                                                                                                                              |
+| :ref:`Variant<class_Variant>`                | :ref:`call_group<class_SceneTree_call_group>` **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg                                                                                                                              |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                | :ref:`call_group_flags<class_SceneTree_call_group_flags>` **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method **)** vararg                                                                                     |
+| :ref:`Variant<class_Variant>`                | :ref:`call_group_flags<class_SceneTree_call_group_flags>` **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg                                                                                     |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`        | :ref:`change_scene<class_SceneTree_change_scene>` **(** :ref:`String<class_string>` path **)**                                                                                                                                                                      |
+| :ref:`Error<enum_@GlobalScope_Error>`        | :ref:`change_scene<class_SceneTree_change_scene>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                      |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`        | :ref:`change_scene_to<class_SceneTree_change_scene_to>` **(** :ref:`PackedScene<class_packedscene>` packed_scene **)**                                                                                                                                              |
+| :ref:`Error<enum_@GlobalScope_Error>`        | :ref:`change_scene_to<class_SceneTree_change_scene_to>` **(** :ref:`PackedScene<class_PackedScene>` packed_scene **)**                                                                                                                                              |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>` **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**                                                                                                                   |
+| :ref:`SceneTreeTimer<class_SceneTreeTimer>`  | :ref:`create_timer<class_SceneTree_create_timer>` **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**                                                                                                                   |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_frame<class_SceneTree_get_frame>` **(** **)** const                                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`      | :ref:`get_network_connected_peers<class_SceneTree_get_network_connected_peers>` **(** **)** const                                                                                                                                                                   |
+| :ref:`PoolIntArray<class_PoolIntArray>`      | :ref:`get_network_connected_peers<class_SceneTree_get_network_connected_peers>` **(** **)** const                                                                                                                                                                   |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_network_unique_id<class_SceneTree_get_network_unique_id>` **(** **)** const                                                                                                                                                                               |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_node_count<class_SceneTree_get_node_count>` **(** **)** const                                                                                                                                                                                             |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                    | :ref:`get_nodes_in_group<class_SceneTree_get_nodes_in_group>` **(** :ref:`String<class_string>` group **)**                                                                                                                                                         |
+| :ref:`Array<class_Array>`                    | :ref:`get_nodes_in_group<class_SceneTree_get_nodes_in_group>` **(** :ref:`String<class_String>` group **)**                                                                                                                                                         |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_rpc_sender_id<class_SceneTree_get_rpc_sender_id>` **(** **)** const                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`has_group<class_SceneTree_has_group>` **(** :ref:`String<class_string>` name **)** const                                                                                                                                                                      |
+| :ref:`bool<class_bool>`                      | :ref:`has_group<class_SceneTree_has_group>` **(** :ref:`String<class_String>` name **)** const                                                                                                                                                                      |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_network_peer<class_SceneTree_has_network_peer>` **(** **)** const                                                                                                                                                                                         |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,27 +49,27 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_network_server<class_SceneTree_is_network_server>` **(** **)** const                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`notify_group<class_SceneTree_notify_group>` **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**                                                                                                                                 |
+| void                                         | :ref:`notify_group<class_SceneTree_notify_group>` **(** :ref:`String<class_String>` group, :ref:`int<class_int>` notification **)**                                                                                                                                 |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`notify_group_flags<class_SceneTree_notify_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**                                                                                   |
+| void                                         | :ref:`notify_group_flags<class_SceneTree_notify_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_String>` group, :ref:`int<class_int>` notification **)**                                                                                   |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`queue_delete<class_SceneTree_queue_delete>` **(** :ref:`Object<class_object>` obj **)**                                                                                                                                                                       |
+| void                                         | :ref:`queue_delete<class_SceneTree_queue_delete>` **(** :ref:`Object<class_Object>` obj **)**                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`quit<class_SceneTree_quit>` **(** **)**                                                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`        | :ref:`reload_current_scene<class_SceneTree_reload_current_scene>` **(** **)**                                                                                                                                                                                       |
+| :ref:`Error<enum_@GlobalScope_Error>`        | :ref:`reload_current_scene<class_SceneTree_reload_current_scene>` **(** **)**                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_auto_accept_quit<class_SceneTree_set_auto_accept_quit>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_group<class_SceneTree_set_group>` **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                                                                                |
+| void                                         | :ref:`set_group<class_SceneTree_set_group>` **(** :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                                                                |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_group_flags<class_SceneTree_set_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                                  |
+| void                                         | :ref:`set_group_flags<class_SceneTree_set_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                  |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_input_as_handled<class_SceneTree_set_input_as_handled>` **(** **)**                                                                                                                                                                                       |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_quit_on_go_back<class_SceneTree_set_quit_on_go_back>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                         |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>` **(** :ref:`StretchMode<enum_scenetree_stretchmode>` mode, :ref:`StretchAspect<enum_scenetree_stretchaspect>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)** |
+| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>` **(** :ref:`StretchMode<enum_SceneTree_StretchMode>` mode, :ref:`StretchAspect<enum_SceneTree_StretchAspect>` aspect, :ref:`Vector2<class_Vector2>` minsize, :ref:`float<class_float>` shrink=1 **)** |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -90,7 +89,7 @@ Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_network_pee
 
 .. _class_SceneTree_files_dropped:
 
-- **files_dropped** **(** :ref:`PoolStringArray<class_poolstringarray>` files, :ref:`int<class_int>` screen **)**
+- **files_dropped** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` screen **)**
 
 Emitted whenever files are drag-and-dropped onto the window.
 
@@ -114,19 +113,19 @@ Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_network_pee
 
 .. _class_SceneTree_node_added:
 
-- **node_added** **(** :ref:`Object<class_object>` node **)**
+- **node_added** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted whenever a node is added to the SceneTree.
 
 .. _class_SceneTree_node_configuration_warning_changed:
 
-- **node_configuration_warning_changed** **(** :ref:`Object<class_object>` node **)**
+- **node_configuration_warning_changed** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted when a node's configuration changed. Only emitted in tool mode.
 
 .. _class_SceneTree_node_removed:
 
-- **node_removed** **(** :ref:`Object<class_object>` node **)**
+- **node_removed** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted whenever a node is removed from the SceneTree.
 
@@ -155,58 +154,8 @@ Emitted whenever this SceneTree's :ref:`network_peer<class_SceneTree_network_pee
 Emitted whenever the SceneTree hierarchy changed (children being moved or renamed, etc.).
 
 
-Member Variables
-----------------
-
-  .. _class_SceneTree_current_scene:
-
-- :ref:`Node<class_node>` **current_scene** - The current scene.
-
-  .. _class_SceneTree_debug_collisions_hint:
-
-- :ref:`bool<class_bool>` **debug_collisions_hint**
-
-  .. _class_SceneTree_debug_navigation_hint:
-
-- :ref:`bool<class_bool>` **debug_navigation_hint**
-
-  .. _class_SceneTree_edited_scene_root:
-
-- :ref:`Node<class_node>` **edited_scene_root** - The root of the edited scene.
-
-  .. _class_SceneTree_multiplayer:
-
-- :ref:`MultiplayerAPI<class_multiplayerapi>` **multiplayer** - The default :ref:`MultiplayerAPI<class_multiplayerapi>` instance for this SceneTree.
-
-  .. _class_SceneTree_multiplayer_poll:
-
-- :ref:`bool<class_bool>` **multiplayer_poll** - If ``true`` (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_multiplayerapi>` for this SceneTree during :ref:`idle_frame<class_SceneTree_idle_frame>`.
-
-When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_poll>` for processing network packets and delivering RPCs/RSETs. This allows to run RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_mutex>` protecion when accessing the :ref:`MultiplayerAPI<class_multiplayerapi>` from threads.
-
-  .. _class_SceneTree_network_peer:
-
-- :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
-
-  .. _class_SceneTree_paused:
-
-- :ref:`bool<class_bool>` **paused** - If ``true`` the SceneTree is paused.
-
-  .. _class_SceneTree_refuse_new_network_connections:
-
-- :ref:`bool<class_bool>` **refuse_new_network_connections** - If ``true`` the SceneTree's :ref:`network_peer<class_SceneTree_network_peer>` refuses new incoming connections.
-
-  .. _class_SceneTree_root:
-
-- :ref:`Viewport<class_viewport>` **root** - The SceneTree's :ref:`Viewport<class_viewport>`.
-
-  .. _class_SceneTree_use_font_oversampling:
-
-- :ref:`bool<class_bool>` **use_font_oversampling** - If ``true`` font oversampling is used.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_SceneTree_GroupCallFlags:
 
@@ -247,38 +196,88 @@ Tutorials
 - :doc:`../getting_started/step_by_step/scene_tree`
 - :doc:`../tutorials/viewports/multiple_resolutions`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_SceneTree_current_scene:
+
+- :ref:`Node<class_Node>` **current_scene** - The current scene.
+
+  .. _class_SceneTree_debug_collisions_hint:
+
+- :ref:`bool<class_bool>` **debug_collisions_hint**
+
+  .. _class_SceneTree_debug_navigation_hint:
+
+- :ref:`bool<class_bool>` **debug_navigation_hint**
+
+  .. _class_SceneTree_edited_scene_root:
+
+- :ref:`Node<class_Node>` **edited_scene_root** - The root of the edited scene.
+
+  .. _class_SceneTree_multiplayer:
+
+- :ref:`MultiplayerAPI<class_MultiplayerAPI>` **multiplayer** - The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this SceneTree.
+
+  .. _class_SceneTree_multiplayer_poll:
+
+- :ref:`bool<class_bool>` **multiplayer_poll** - If ``true`` (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_idle_frame>`.
+
+When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_poll>` for processing network packets and delivering RPCs/RSETs. This allows to run RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_Mutex>` protecion when accessing the :ref:`MultiplayerAPI<class_MultiplayerAPI>` from threads.
+
+  .. _class_SceneTree_network_peer:
+
+- :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
+
+  .. _class_SceneTree_paused:
+
+- :ref:`bool<class_bool>` **paused** - If ``true`` the SceneTree is paused.
+
+  .. _class_SceneTree_refuse_new_network_connections:
+
+- :ref:`bool<class_bool>` **refuse_new_network_connections** - If ``true`` the SceneTree's :ref:`network_peer<class_SceneTree_network_peer>` refuses new incoming connections.
+
+  .. _class_SceneTree_root:
+
+- :ref:`Viewport<class_Viewport>` **root** - The SceneTree's :ref:`Viewport<class_Viewport>`.
+
+  .. _class_SceneTree_use_font_oversampling:
+
+- :ref:`bool<class_bool>` **use_font_oversampling** - If ``true`` font oversampling is used.
+
+
+Method Descriptions
+-------------------
 
 .. _class_SceneTree_call_group:
 
-- :ref:`Variant<class_variant>` **call_group** **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg
 
 Calls ``method`` on each member of the given group.
 
 .. _class_SceneTree_call_group_flags:
 
-- :ref:`Variant<class_variant>` **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method **)** vararg
+- :ref:`Variant<class_Variant>` **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`String<class_String>` group, :ref:`String<class_String>` method **)** vararg
 
-Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_@globalscope_groupcallflags>`.
+Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_@GlobalScope_GroupCallFlags>`.
 
 .. _class_SceneTree_change_scene:
 
-- :ref:`Error<enum_@globalscope_error>` **change_scene** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **change_scene** **(** :ref:`String<class_String>` path **)**
 
 Changes to the scene at the given ``path``.
 
 .. _class_SceneTree_change_scene_to:
 
-- :ref:`Error<enum_@globalscope_error>` **change_scene_to** **(** :ref:`PackedScene<class_packedscene>` packed_scene **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **change_scene_to** **(** :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
-Changes to the given :ref:`PackedScene<class_packedscene>`.
+Changes to the given :ref:`PackedScene<class_PackedScene>`.
 
 .. _class_SceneTree_create_timer:
 
-- :ref:`SceneTreeTimer<class_scenetreetimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**
+- :ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**
 
-Returns a :ref:`SceneTreeTimer<class_scenetreetimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to false, pausing the SceneTree will also pause the timer.
+Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_timeout>` after the given time in seconds elapsed in this SceneTree. If ``pause_mode_process`` is set to false, pausing the SceneTree will also pause the timer.
 
 .. _class_SceneTree_get_frame:
 
@@ -286,7 +285,7 @@ Returns a :ref:`SceneTreeTimer<class_scenetreetimer>` which will :ref:`SceneTree
 
 .. _class_SceneTree_get_network_connected_peers:
 
-- :ref:`PoolIntArray<class_poolintarray>` **get_network_connected_peers** **(** **)** const
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const
 
 Returns the peer IDs of all connected peers of this SceneTree's :ref:`network_peer<class_SceneTree_network_peer>`.
 
@@ -304,7 +303,7 @@ Returns the number of nodes in this SceneTree.
 
 .. _class_SceneTree_get_nodes_in_group:
 
-- :ref:`Array<class_array>` **get_nodes_in_group** **(** :ref:`String<class_string>` group **)**
+- :ref:`Array<class_Array>` **get_nodes_in_group** **(** :ref:`String<class_String>` group **)**
 
 Returns all nodes assigned to the given group.
 
@@ -316,7 +315,7 @@ Returns the sender's peer ID for the most recently received RPC call.
 
 .. _class_SceneTree_has_group:
 
-- :ref:`bool<class_bool>` **has_group** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_group** **(** :ref:`String<class_String>` name **)** const
 
 Returns ``true`` if the given group exists.
 
@@ -340,19 +339,19 @@ Returns ``true`` if this SceneTree's :ref:`network_peer<class_SceneTree_network_
 
 .. _class_SceneTree_notify_group:
 
-- void **notify_group** **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**
+- void **notify_group** **(** :ref:`String<class_String>` group, :ref:`int<class_int>` notification **)**
 
 Sends the given notification to all members of the ``group``.
 
 .. _class_SceneTree_notify_group_flags:
 
-- void **notify_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**
+- void **notify_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`String<class_String>` group, :ref:`int<class_int>` notification **)**
 
-Sends the given notification to all members of the ``group``, respecting the given :ref:`GroupCallFlags<enum_@globalscope_groupcallflags>`.
+Sends the given notification to all members of the ``group``, respecting the given :ref:`GroupCallFlags<enum_@GlobalScope_GroupCallFlags>`.
 
 .. _class_SceneTree_queue_delete:
 
-- void **queue_delete** **(** :ref:`Object<class_object>` obj **)**
+- void **queue_delete** **(** :ref:`Object<class_Object>` obj **)**
 
 Queues the given object for deletion, delaying the call to :ref:`Object.free<class_Object_free>` to after the current frame.
 
@@ -364,7 +363,7 @@ Quits the application.
 
 .. _class_SceneTree_reload_current_scene:
 
-- :ref:`Error<enum_@globalscope_error>` **reload_current_scene** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **reload_current_scene** **(** **)**
 
 Reloads the currently active scene.
 
@@ -376,15 +375,15 @@ If ``true`` the application automatically accepts quitting.
 
 .. _class_SceneTree_set_group:
 
-- void **set_group** **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
+- void **set_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Sets the given ``property`` to ``value`` on all members of the given group.
 
 .. _class_SceneTree_set_group_flags:
 
-- void **set_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
+- void **set_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
-Sets the given ``property`` to ``value`` on all members of the given group, respecting the given :ref:`GroupCallFlags<enum_@globalscope_groupcallflags>`.
+Sets the given ``property`` to ``value`` on all members of the given group, respecting the given :ref:`GroupCallFlags<enum_@GlobalScope_GroupCallFlags>`.
 
 .. _class_SceneTree_set_input_as_handled:
 
@@ -400,8 +399,8 @@ If ``true`` the application quits automatically on going back (e.g. on Android).
 
 .. _class_SceneTree_set_screen_stretch:
 
-- void **set_screen_stretch** **(** :ref:`StretchMode<enum_scenetree_stretchmode>` mode, :ref:`StretchAspect<enum_scenetree_stretchaspect>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**
+- void **set_screen_stretch** **(** :ref:`StretchMode<enum_SceneTree_StretchMode>` mode, :ref:`StretchAspect<enum_SceneTree_StretchAspect>` aspect, :ref:`Vector2<class_Vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**
 
-Configures screen stretching to the given :ref:`StretchMode<enum_@globalscope_stretchmode>`, :ref:`StretchAspect<enum_@globalscope_stretchaspect>`, minimum size and ``shrink``.
+Configures screen stretching to the given :ref:`StretchMode<enum_@GlobalScope_StretchMode>`, :ref:`StretchAspect<enum_@GlobalScope_StretchAspect>`, minimum size and ``shrink``.
 
 

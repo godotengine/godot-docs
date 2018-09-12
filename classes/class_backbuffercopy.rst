@@ -7,8 +7,7 @@
 BackBufferCopy
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,8 @@ Brief Description
 
 Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with ``SCREEN_TEXTURE`` in the ``texture()`` function.
 
-Member Variables
-----------------
-
-  .. _class_BackBufferCopy_copy_mode:
-
-- :ref:`CopyMode<enum_backbuffercopy_copymode>` **copy_mode** - Buffer mode. See ``COPY_MODE_*`` constants.
-
-  .. _class_BackBufferCopy_rect:
-
-- :ref:`Rect2<class_rect2>` **rect** - The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_BackBufferCopy_CopyMode:
 
@@ -44,4 +31,16 @@ Description
 -----------
 
 Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Use ``SCREEN_TEXTURE`` in the ``texture()`` function to access the buffer.
+
+Property Descriptions
+---------------------
+
+  .. _class_BackBufferCopy_copy_mode:
+
+- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode** - Buffer mode. See ``COPY_MODE_*`` constants.
+
+  .. _class_BackBufferCopy_rect:
+
+- :ref:`Rect2<class_Rect2>` **rect** - The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
+
 

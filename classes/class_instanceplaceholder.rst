@@ -7,26 +7,25 @@
 InstancePlaceholder
 ===================
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Placeholder for the root :ref:`Node<class_node>` of a :ref:`PackedScene<class_packedscene>`.
+Placeholder for the root :ref:`Node<class_Node>` of a :ref:`PackedScene<class_PackedScene>`.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`              | :ref:`create_instance<class_InstancePlaceholder_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_packedscene>` custom_scene=null **)** |
+| :ref:`Node<class_Node>`              | :ref:`create_instance<class_InstancePlaceholder_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)** |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>` **(** **)** const                                                                                      |
+| :ref:`String<class_String>`          | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>` **(** **)** const                                                                                      |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>` **(** :ref:`PackedScene<class_packedscene>` custom_scene=null **)**                                |
+| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>` **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**                                |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,26 +35,26 @@ Turning on the option **Load As Placeholder** for an instanced scene in the edit
 
 The InstancePlaceholder does not have a transform. This causes any child nodes to be positioned relatively to the Viewport from point (0,0), rather than their parent as displayed in the editor. Replacing the placeholder with a scene with a transform will transform children relatively to their parent again.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_InstancePlaceholder_create_instance:
 
-- :ref:`Node<class_node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_packedscene>` custom_scene=null **)**
+- :ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
 .. _class_InstancePlaceholder_get_instance_path:
 
-- :ref:`String<class_string>` **get_instance_path** **(** **)** const
+- :ref:`String<class_String>` **get_instance_path** **(** **)** const
 
-Retrieve the path to the :ref:`PackedScene<class_packedscene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`.
+Retrieve the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`.
 
 .. _class_InstancePlaceholder_get_stored_values:
 
-- :ref:`Dictionary<class_dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
+- :ref:`Dictionary<class_Dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
 
 .. _class_InstancePlaceholder_replace_by_instance:
 
-- void **replace_by_instance** **(** :ref:`PackedScene<class_packedscene>` custom_scene=null **)**
+- void **replace_by_instance** **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
 Replace this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
 

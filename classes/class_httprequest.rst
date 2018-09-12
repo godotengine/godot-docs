@@ -7,8 +7,7 @@
 HTTPRequest
 ===========
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 A node with the ability to send HTTP requests.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`cancel_request<class_HTTPRequest_cancel_request>` **(** **)**                                                                                                                                                                                                                                                    |
@@ -26,9 +25,9 @@ Member Functions
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_downloaded_bytes<class_HTTPRequest_get_downloaded_bytes>` **(** **)** const                                                                                                                                                                                                                                  |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_httpclient_status>`  | :ref:`get_http_client_status<class_HTTPRequest_get_http_client_status>` **(** **)** const                                                                                                                                                                                                                              |
+| :ref:`Status<enum_HTTPClient_Status>`  | :ref:`get_http_client_status<class_HTTPRequest_get_http_client_status>` **(** **)** const                                                                                                                                                                                                                              |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`request<class_HTTPRequest_request>` **(** :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_httpclient_method>` method=0, :ref:`String<class_string>` request_data="" **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`request<class_HTTPRequest_request>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)** |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -36,33 +35,13 @@ Signals
 
 .. _class_HTTPRequest_request_completed:
 
-- **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body **)**
+- **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
 This signal is emitted upon request completion.
 
 
-Member Variables
-----------------
-
-  .. _class_HTTPRequest_body_size_limit:
-
-- :ref:`int<class_int>` **body_size_limit** - Maximum allowed size for response bodies.
-
-  .. _class_HTTPRequest_download_file:
-
-- :ref:`String<class_string>` **download_file** - The file to download into. Will output any received file into it.
-
-  .. _class_HTTPRequest_max_redirects:
-
-- :ref:`int<class_int>` **max_redirects** - Maximum number of allowed redirects.
-
-  .. _class_HTTPRequest_use_threads:
-
-- :ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is used to improve performance.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_HTTPRequest_Result:
 
@@ -85,7 +64,7 @@ enum **Result**
 Description
 -----------
 
-A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_httpclient>` internally.
+A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPClient>` internally.
 
 Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
 
@@ -94,8 +73,28 @@ Tutorials
 
 - :doc:`../tutorials/networking/ssl_certificates`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_HTTPRequest_body_size_limit:
+
+- :ref:`int<class_int>` **body_size_limit** - Maximum allowed size for response bodies.
+
+  .. _class_HTTPRequest_download_file:
+
+- :ref:`String<class_String>` **download_file** - The file to download into. Will output any received file into it.
+
+  .. _class_HTTPRequest_max_redirects:
+
+- :ref:`int<class_int>` **max_redirects** - Maximum number of allowed redirects.
+
+  .. _class_HTTPRequest_use_threads:
+
+- :ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is used to improve performance.
+
+
+Method Descriptions
+-------------------
 
 .. _class_HTTPRequest_cancel_request:
 
@@ -117,16 +116,16 @@ Returns the amount of bytes this HTTPRequest downloaded.
 
 .. _class_HTTPRequest_get_http_client_status:
 
-- :ref:`Status<enum_httpclient_status>` **get_http_client_status** **(** **)** const
+- :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
-Returns the current status of the underlying :ref:`HTTPClient<class_httpclient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_httpclient>`.
+Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
 
 .. _class_HTTPRequest_request:
 
-- :ref:`Error<enum_@globalscope_error>` **request** **(** :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_httpclient_method>` method=0, :ref:`String<class_string>` request_data="" **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 
-Creates request on the underlying :ref:`HTTPClient<class_httpclient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_request>`.
+Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_request>`.
 
-Returns ``OK`` if request is successfully created. (Does not imply that the server has responded), ``ERR_UNCONFIGURED`` if not in the tree, ``ERR_BUSY`` if still processing previous request, ``ERR_INVALID_PARAMETER`` if given string is not a valid URL format, or ``ERR_CANT_CONNECT`` if not using thread and the :ref:`HTTPClient<class_httpclient>` cannot connect to host.
+Returns ``OK`` if request is successfully created. (Does not imply that the server has responded), ``ERR_UNCONFIGURED`` if not in the tree, ``ERR_BUSY`` if still processing previous request, ``ERR_INVALID_PARAMETER`` if given string is not a valid URL format, or ``ERR_CANT_CONNECT`` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
 

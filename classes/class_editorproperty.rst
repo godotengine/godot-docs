@@ -7,8 +7,7 @@
 EditorProperty
 ==============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,15 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+----------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_edited_object<class_EditorProperty_get_edited_object>` **(** **)**     |
+| :ref:`Object<class_Object>`  | :ref:`get_edited_object<class_EditorProperty_get_edited_object>` **(** **)**     |
 +------------------------------+----------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_edited_property<class_EditorProperty_get_edited_property>` **(** **)** |
+| :ref:`String<class_String>`  | :ref:`get_edited_property<class_EditorProperty_get_edited_property>` **(** **)** |
 +------------------------------+----------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_tooltip_text<class_EditorProperty_get_tooltip_text>` **(** **)** const |
+| :ref:`String<class_String>`  | :ref:`get_tooltip_text<class_EditorProperty_get_tooltip_text>` **(** **)** const |
 +------------------------------+----------------------------------------------------------------------------------+
 | void                         | :ref:`update_property<class_EditorProperty_update_property>` **(** **)** virtual |
 +------------------------------+----------------------------------------------------------------------------------+
@@ -34,39 +33,39 @@ Signals
 
 .. _class_EditorProperty_multiple_properties_changed:
 
-- **multiple_properties_changed** **(** :ref:`PoolStringArray<class_poolstringarray>` properties, :ref:`Array<class_array>` value **)**
+- **multiple_properties_changed** **(** :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Array<class_Array>` value **)**
 
 .. _class_EditorProperty_object_id_selected:
 
-- **object_id_selected** **(** :ref:`String<class_string>` property, :ref:`int<class_int>` id **)**
+- **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
 
 .. _class_EditorProperty_property_changed:
 
-- **property_changed** **(** :ref:`String<class_string>` property, :ref:`Nil<class_nil>` value **)**
+- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
 .. _class_EditorProperty_property_checked:
 
-- **property_checked** **(** :ref:`String<class_string>` property, :ref:`String<class_string>` bool **)**
+- **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
 
 .. _class_EditorProperty_property_keyed:
 
-- **property_keyed** **(** :ref:`String<class_string>` property **)**
+- **property_keyed** **(** :ref:`String<class_String>` property **)**
 
 .. _class_EditorProperty_property_keyed_with_value:
 
-- **property_keyed_with_value** **(** :ref:`String<class_string>` property, :ref:`Nil<class_nil>` value **)**
+- **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
 .. _class_EditorProperty_resource_selected:
 
-- **resource_selected** **(** :ref:`String<class_string>` path, :ref:`Object<class_object>` resource **)**
+- **resource_selected** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource **)**
 
 .. _class_EditorProperty_selected:
 
-- **selected** **(** :ref:`String<class_string>` path, :ref:`int<class_int>` focusable_idx **)**
+- **selected** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` focusable_idx **)**
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_EditorProperty_checkable:
 
@@ -86,27 +85,27 @@ Member Variables
 
   .. _class_EditorProperty_label:
 
-- :ref:`String<class_string>` **label**
+- :ref:`String<class_String>` **label**
 
   .. _class_EditorProperty_read_only:
 
 - :ref:`bool<class_bool>` **read_only**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorProperty_get_edited_object:
 
-- :ref:`Object<class_object>` **get_edited_object** **(** **)**
+- :ref:`Object<class_Object>` **get_edited_object** **(** **)**
 
 .. _class_EditorProperty_get_edited_property:
 
-- :ref:`String<class_string>` **get_edited_property** **(** **)**
+- :ref:`String<class_String>` **get_edited_property** **(** **)**
 
 .. _class_EditorProperty_get_tooltip_text:
 
-- :ref:`String<class_string>` **get_tooltip_text** **(** **)** const
+- :ref:`String<class_String>` **get_tooltip_text** **(** **)** const
 
 .. _class_EditorProperty_update_property:
 

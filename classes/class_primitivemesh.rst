@@ -7,30 +7,33 @@
 PrimitiveMesh
 =============
 
-**Inherits:** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`PlaneMesh<class_planemesh>`, :ref:`CubeMesh<class_cubemesh>`, :ref:`SphereMesh<class_spheremesh>`, :ref:`CylinderMesh<class_cylindermesh>`, :ref:`CapsuleMesh<class_capsulemesh>`, :ref:`QuadMesh<class_quadmesh>`, :ref:`PrismMesh<class_prismmesh>`
-
+**Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`SphereMesh<class_SphereMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`PrismMesh<class_PrismMesh>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_material>` to a primitive mesh.
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>` **(** **)** const |
+| :ref:`Array<class_Array>`  | :ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>` **(** **)** const |
 +----------------------------+-------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
+
+Property Descriptions
+---------------------
 
   .. _class_PrimitiveMesh_custom_aabb:
 
-- :ref:`AABB<class_aabb>` **custom_aabb**
+- :ref:`AABB<class_AABB>` **custom_aabb**
 
   .. _class_PrimitiveMesh_flip_faces:
 
@@ -38,19 +41,14 @@ Member Variables
 
   .. _class_PrimitiveMesh_material:
 
-- :ref:`Material<class_material>` **material** - The current :ref:`Material<class_material>` of the primitive mesh.
+- :ref:`Material<class_Material>` **material** - The current :ref:`Material<class_Material>` of the primitive mesh.
 
 
-Description
------------
-
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_material>` to a primitive mesh.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PrimitiveMesh_get_mesh_arrays:
 
-- :ref:`Array<class_array>` **get_mesh_arrays** **(** **)** const
+- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
 
 

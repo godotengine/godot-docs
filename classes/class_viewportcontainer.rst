@@ -7,21 +7,25 @@
 ViewportContainer
 =================
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
+Control for holding :ref:`Viewport<class_Viewport>`\ s.
 
+Description
+-----------
 
-Member Variables
-----------------
+A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
+
+Property Descriptions
+---------------------
 
   .. _class_ViewportContainer_stretch:
 
-- :ref:`bool<class_bool>` **stretch**
+- :ref:`bool<class_bool>` **stretch** - If ``true`` the viewport will be scaled to the control's size. Default value:``false``.
 
   .. _class_ViewportContainer_stretch_shrink:
 

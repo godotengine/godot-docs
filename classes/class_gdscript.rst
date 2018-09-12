@@ -7,8 +7,7 @@
 GDScript
 ========
 
-**Inherits:** :ref:`Script<class_script>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 A script implemented in the GDScript programming language.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>` **(** **)** const |
+| :ref:`PoolByteArray<class_PoolByteArray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>` **(** **)** const |
 +--------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                | :ref:`new<class_GDScript_new>` **(** **)** vararg                          |
+| :ref:`Object<class_Object>`                | :ref:`new<class_GDScript_new>` **(** **)** vararg                          |
 +--------------------------------------------+----------------------------------------------------------------------------+
 
 Description
@@ -37,18 +36,18 @@ Tutorials
 
 - :doc:`../getting_started/scripting/gdscript/index`
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GDScript_get_as_byte_code:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **get_as_byte_code** **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 
 .. _class_GDScript_new:
 
-- :ref:`Object<class_object>` **new** **(** **)** vararg
+- :ref:`Object<class_Object>` **new** **(** **)** vararg
 
 Returns a new instance of the script.
 

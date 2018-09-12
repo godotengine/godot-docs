@@ -7,8 +7,7 @@
 Physics2DTestMotionResult
 =========================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,12 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_Physics2DTestMotionResult_collider:
 
-- :ref:`Object<class_object>` **collider**
+- :ref:`Object<class_Object>` **collider**
 
   .. _class_Physics2DTestMotionResult_collider_id:
 
@@ -29,7 +28,7 @@ Member Variables
 
   .. _class_Physics2DTestMotionResult_collider_rid:
 
-- :ref:`RID<class_rid>` **collider_rid**
+- :ref:`RID<class_RID>` **collider_rid**
 
   .. _class_Physics2DTestMotionResult_collider_shape:
 
@@ -37,22 +36,22 @@ Member Variables
 
   .. _class_Physics2DTestMotionResult_collider_velocity:
 
-- :ref:`Vector2<class_vector2>` **collider_velocity**
+- :ref:`Vector2<class_Vector2>` **collider_velocity**
 
   .. _class_Physics2DTestMotionResult_collision_normal:
 
-- :ref:`Vector2<class_vector2>` **collision_normal**
+- :ref:`Vector2<class_Vector2>` **collision_normal**
 
   .. _class_Physics2DTestMotionResult_collision_point:
 
-- :ref:`Vector2<class_vector2>` **collision_point**
+- :ref:`Vector2<class_Vector2>` **collision_point**
 
   .. _class_Physics2DTestMotionResult_motion:
 
-- :ref:`Vector2<class_vector2>` **motion**
+- :ref:`Vector2<class_Vector2>` **motion**
 
   .. _class_Physics2DTestMotionResult_motion_remainder:
 
-- :ref:`Vector2<class_vector2>` **motion_remainder**
+- :ref:`Vector2<class_Vector2>` **motion_remainder**
 
 

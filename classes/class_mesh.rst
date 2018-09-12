@@ -7,42 +7,40 @@
 Mesh
 ====
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ArrayMesh<class_arraymesh>`, :ref:`PrimitiveMesh<class_primitivemesh>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`PrimitiveMesh<class_PrimitiveMesh>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-A :ref:`Resource<class_resource>` that contains vertex-array based geometry.
+A :ref:`Resource<class_Resource>` that contains vertex-array based geometry.
 
-Member Functions
-----------------
+Methods
+-------
 
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`                        | :ref:`create_convex_shape<class_Mesh_create_convex_shape>` **(** **)** const                        |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`                          | :ref:`create_outline<class_Mesh_create_outline>` **(** :ref:`float<class_float>` margin **)** const |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`                        | :ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>` **(** **)** const                      |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_trianglemesh>`          | :ref:`generate_triangle_mesh<class_Mesh_generate_triangle_mesh>` **(** **)** const                  |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_Mesh_get_faces>` **(** **)** const                                            |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_Shape>`                        | :ref:`create_convex_shape<class_Mesh_create_convex_shape>` **(** **)** const                                                      |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                          | :ref:`create_outline<class_Mesh_create_outline>` **(** :ref:`float<class_float>` margin **)** const                               |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_Shape>`                        | :ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>` **(** **)** const                                                    |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TriangleMesh<class_TriangleMesh>`          | :ref:`generate_triangle_mesh<class_Mesh_generate_triangle_mesh>` **(** **)** const                                                |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>`  | :ref:`get_faces<class_Mesh_get_faces>` **(** **)** const                                                                          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_surface_count<class_Mesh_get_surface_count>` **(** **)** const                                                          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                        | :ref:`surface_get_arrays<class_Mesh_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** const                         |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                        | :ref:`surface_get_blend_shape_arrays<class_Mesh_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** const |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>`                  | :ref:`surface_get_material<class_Mesh_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** const                     |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_Mesh_lightmap_size_hint:
-
-- :ref:`Vector2<class_vector2>` **lightmap_size_hint**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Mesh_BlendShapeMode:
 
@@ -55,15 +53,15 @@ enum **BlendShapeMode**
 
 enum **ArrayType**
 
-- **ARRAY_VERTEX** = **0**
-- **ARRAY_NORMAL** = **1**
-- **ARRAY_TANGENT** = **2**
-- **ARRAY_COLOR** = **3**
-- **ARRAY_TEX_UV** = **4**
-- **ARRAY_TEX_UV2** = **5**
-- **ARRAY_BONES** = **6**
-- **ARRAY_WEIGHTS** = **7**
-- **ARRAY_INDEX** = **8**
+- **ARRAY_VERTEX** = **0** --- Array of vertices.
+- **ARRAY_NORMAL** = **1** --- Array of normals.
+- **ARRAY_TANGENT** = **2** --- Array of tangents as an array of floats, 4 floats per tangent.
+- **ARRAY_COLOR** = **3** --- Array of colors.
+- **ARRAY_TEX_UV** = **4** --- Array of UV coordinates.
+- **ARRAY_TEX_UV2** = **5** --- Array of second set of UV coordinates.
+- **ARRAY_BONES** = **6** --- Array of bone data.
+- **ARRAY_WEIGHTS** = **7** --- Array of weights.
+- **ARRAY_INDEX** = **8** --- Array of indices.
 - **ARRAY_MAX** = **9**
 
   .. _enum_Mesh_ArrayFormat:
@@ -109,39 +107,71 @@ enum **PrimitiveType**
 Description
 -----------
 
-Mesh is a type of :ref:`Resource<class_resource>` that contains vertex-array based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
+Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex-array based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Mesh_lightmap_size_hint:
+
+- :ref:`Vector2<class_Vector2>` **lightmap_size_hint**
+
+
+Method Descriptions
+-------------------
 
 .. _class_Mesh_create_convex_shape:
 
-- :ref:`Shape<class_shape>` **create_convex_shape** **(** **)** const
+- :ref:`Shape<class_Shape>` **create_convex_shape** **(** **)** const
 
-Calculate a :ref:`ConvexPolygonShape<class_convexpolygonshape>` from the mesh.
+Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
 .. _class_Mesh_create_outline:
 
-- :ref:`Mesh<class_mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
+- :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh. Note: Typically returns the vertices in reverse order (e.g. clockwise to anti-clockwise).
 
 .. _class_Mesh_create_trimesh_shape:
 
-- :ref:`Shape<class_shape>` **create_trimesh_shape** **(** **)** const
+- :ref:`Shape<class_Shape>` **create_trimesh_shape** **(** **)** const
 
-Calculate a :ref:`ConcavePolygonShape<class_concavepolygonshape>` from the mesh.
+Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 
 .. _class_Mesh_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_trianglemesh>` **generate_triangle_mesh** **(** **)** const
+- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
-Generate a :ref:`TriangleMesh<class_trianglemesh>` from the mesh.
+Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
 .. _class_Mesh_get_faces:
 
-- :ref:`PoolVector3Array<class_poolvector3array>` **get_faces** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
 
 Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.
+
+.. _class_Mesh_get_surface_count:
+
+- :ref:`int<class_int>` **get_surface_count** **(** **)** const
+
+Return the amount of surfaces that the ``Mesh`` holds.
+
+.. _class_Mesh_surface_get_arrays:
+
+- :ref:`Array<class_Array>` **surface_get_arrays** **(** :ref:`int<class_int>` surf_idx **)** const
+
+Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface (see :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_add_surface_from_arrays>`).
+
+.. _class_Mesh_surface_get_blend_shape_arrays:
+
+- :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** const
+
+Returns the blend shape arrays for the requested surface.
+
+.. _class_Mesh_surface_get_material:
+
+- :ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** const
+
+Return a :ref:`Material<class_Material>` in a given surface. Surface is rendered using this material.
 
 

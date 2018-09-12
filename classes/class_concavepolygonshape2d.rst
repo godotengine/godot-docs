@@ -7,8 +7,7 @@
 ConcavePolygonShape2D
 =====================
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,18 +15,18 @@ Brief Description
 
 Concave polygon 2D shape resource for physics.
 
-Member Variables
-----------------
-
-  .. _class_ConcavePolygonShape2D_segments:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **segments** - The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
-
-
 Description
 -----------
 
-Concave polygon 2D shape resource for physics. It is made out of segments and is very optimal for complex polygonal concave collisions. It is really not advised to use for :ref:`RigidBody2D<class_rigidbody2d>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
+Concave polygon 2D shape resource for physics. It is made out of segments and is very optimal for complex polygonal concave collisions. It is really not advised to use for :ref:`RigidBody2D<class_RigidBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
 
-The main difference between a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+
+Property Descriptions
+---------------------
+
+  .. _class_ConcavePolygonShape2D_segments:
+
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments** - The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
+
 

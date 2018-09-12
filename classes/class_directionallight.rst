@@ -7,8 +7,7 @@
 DirectionalLight
 ================
 
-**Inherits:** :ref:`Light<class_light>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,48 +15,8 @@ Brief Description
 
 Directional light from a distance, as from the Sun.
 
-Member Variables
-----------------
-
-  .. _class_DirectionalLight_directional_shadow_bias_split_scale:
-
-- :ref:`float<class_float>` **directional_shadow_bias_split_scale** - Amount of extra bias for shadow splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
-
-  .. _class_DirectionalLight_directional_shadow_blend_splits:
-
-- :ref:`bool<class_bool>` **directional_shadow_blend_splits** - If ``true`` shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
-
-  .. _class_DirectionalLight_directional_shadow_depth_range:
-
-- :ref:`ShadowDepthRange<enum_directionallight_shadowdepthrange>` **directional_shadow_depth_range** - Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRange<enum_@globalscope_shadowdepthrange>`.
-
-  .. _class_DirectionalLight_directional_shadow_max_distance:
-
-- :ref:`float<class_float>` **directional_shadow_max_distance** - The maximum distance for shadow splits.
-
-  .. _class_DirectionalLight_directional_shadow_mode:
-
-- :ref:`ShadowMode<enum_directionallight_shadowmode>` **directional_shadow_mode** - The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_@globalscope_shadowmode>`.
-
-  .. _class_DirectionalLight_directional_shadow_normal_bias:
-
-- :ref:`float<class_float>` **directional_shadow_normal_bias** - Can be used to fix special cases of self shadowing when objects are perpendicular to the light.
-
-  .. _class_DirectionalLight_directional_shadow_split_1:
-
-- :ref:`float<class_float>` **directional_shadow_split_1** - The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@globalscope_directional_shadow_mode>` SHADOW_PARALLEL\_\*_SPLITS.
-
-  .. _class_DirectionalLight_directional_shadow_split_2:
-
-- :ref:`float<class_float>` **directional_shadow_split_2** - The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@globalscope_directional_shadow_mode>` SHADOW_PARALLEL\_\*_SPLITS.
-
-  .. _class_DirectionalLight_directional_shadow_split_3:
-
-- :ref:`float<class_float>` **directional_shadow_split_3** - The distance from shadow split 2 to split 3. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@globalscope_directional_shadow_mode>` SHADOW_PARALLEL_4_SPLITS.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_DirectionalLight_ShadowDepthRange:
 
@@ -78,10 +37,50 @@ enum **ShadowMode**
 Description
 -----------
 
-A directional light is a type of :ref:`Light<class_light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used do determine light direction.
+A directional light is a type of :ref:`Light<class_Light>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored. Only the basis is used do determine light direction.
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
+
+Property Descriptions
+---------------------
+
+  .. _class_DirectionalLight_directional_shadow_bias_split_scale:
+
+- :ref:`float<class_float>` **directional_shadow_bias_split_scale** - Amount of extra bias for shadow splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
+
+  .. _class_DirectionalLight_directional_shadow_blend_splits:
+
+- :ref:`bool<class_bool>` **directional_shadow_blend_splits** - If ``true`` shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
+
+  .. _class_DirectionalLight_directional_shadow_depth_range:
+
+- :ref:`ShadowDepthRange<enum_DirectionalLight_ShadowDepthRange>` **directional_shadow_depth_range** - Optimizes shadow rendering for detail versus movement. See :ref:`ShadowDepthRange<enum_@GlobalScope_ShadowDepthRange>`.
+
+  .. _class_DirectionalLight_directional_shadow_max_distance:
+
+- :ref:`float<class_float>` **directional_shadow_max_distance** - The maximum distance for shadow splits.
+
+  .. _class_DirectionalLight_directional_shadow_mode:
+
+- :ref:`ShadowMode<enum_DirectionalLight_ShadowMode>` **directional_shadow_mode** - The light's shadow rendering algorithm. See :ref:`ShadowMode<enum_@GlobalScope_ShadowMode>`.
+
+  .. _class_DirectionalLight_directional_shadow_normal_bias:
+
+- :ref:`float<class_float>` **directional_shadow_normal_bias** - Can be used to fix special cases of self shadowing when objects are perpendicular to the light.
+
+  .. _class_DirectionalLight_directional_shadow_split_1:
+
+- :ref:`float<class_float>` **directional_shadow_split_1** - The distance from camera to shadow split 1. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@GlobalScope_directional_shadow_mode>` SHADOW_PARALLEL\_\*_SPLITS.
+
+  .. _class_DirectionalLight_directional_shadow_split_2:
+
+- :ref:`float<class_float>` **directional_shadow_split_2** - The distance from shadow split 1 to split 2. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@GlobalScope_directional_shadow_mode>` SHADOW_PARALLEL\_\*_SPLITS.
+
+  .. _class_DirectionalLight_directional_shadow_split_3:
+
+- :ref:`float<class_float>` **directional_shadow_split_3** - The distance from shadow split 2 to split 3. Relative to :ref:`directional_shadow_max_distance<class_DirectionalLight_directional_shadow_max_distance>`. Only used in :ref:`directional_shadow_mode<enum_@GlobalScope_directional_shadow_mode>` SHADOW_PARALLEL_4_SPLITS.
+
 

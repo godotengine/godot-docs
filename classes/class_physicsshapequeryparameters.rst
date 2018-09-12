@@ -7,8 +7,7 @@
 PhysicsShapeQueryParameters
 ===========================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-----------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_shape<class_PhysicsShapeQueryParameters_set_shape>` **(** :ref:`Resource<class_resource>` shape **)** |
+| void  | :ref:`set_shape<class_PhysicsShapeQueryParameters_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
 +-------+-----------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
+
+  .. _class_PhysicsShapeQueryParameters_collide_with_areas:
+
+- :ref:`bool<class_bool>` **collide_with_areas**
+
+  .. _class_PhysicsShapeQueryParameters_collide_with_bodies:
+
+- :ref:`bool<class_bool>` **collide_with_bodies**
 
   .. _class_PhysicsShapeQueryParameters_collision_mask:
 
@@ -32,7 +39,7 @@ Member Variables
 
   .. _class_PhysicsShapeQueryParameters_exclude:
 
-- :ref:`Array<class_array>` **exclude**
+- :ref:`Array<class_Array>` **exclude**
 
   .. _class_PhysicsShapeQueryParameters_margin:
 
@@ -40,18 +47,18 @@ Member Variables
 
   .. _class_PhysicsShapeQueryParameters_shape_rid:
 
-- :ref:`RID<class_rid>` **shape_rid**
+- :ref:`RID<class_RID>` **shape_rid**
 
   .. _class_PhysicsShapeQueryParameters_transform:
 
-- :ref:`Transform<class_transform>` **transform**
+- :ref:`Transform<class_Transform>` **transform**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PhysicsShapeQueryParameters_set_shape:
 
-- void **set_shape** **(** :ref:`Resource<class_resource>` shape **)**
+- void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 
 

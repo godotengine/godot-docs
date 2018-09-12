@@ -7,10 +7,8 @@
 AudioEffectEQ
 =============
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ21<class_audioeffecteq21>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`
 **Category:** Core
 
 Brief Description
@@ -18,10 +16,10 @@ Brief Description
 
 Base class for audio equalizers. Gives you control over frequencies.
 
-Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>` or :ref:`AudioEffectEQ21<class_audioeffecteq21>` don't fit your needs.
+Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>` or :ref:`AudioEffectEQ21<class_AudioEffectEQ21>` don't fit your needs.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_band_count<class_AudioEffectEQ_get_band_count>` **(** **)** const                                                                   |
@@ -36,8 +34,8 @@ Description
 
 AudioEffectEQ gives you control over frequencies. Use it to compensate for existing deficiencies in audio. AudioEffectEQ are very useful on the Master Bus to completely master a mix and give it character. They are also very useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AudioEffectEQ_get_band_count:
 

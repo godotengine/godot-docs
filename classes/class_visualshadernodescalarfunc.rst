@@ -7,8 +7,7 @@
 VisualShaderNodeScalarFunc
 ==========================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeScalarFunc_function:
-
-- :ref:`Function<enum_visualshadernodescalarfunc_function>` **function**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeScalarFunc_Function:
 
@@ -51,5 +42,13 @@ enum **Function**
 - **FUNC_FRAC** = **17**
 - **FUNC_SATURATE** = **18**
 - **FUNC_NEGATE** = **19**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeScalarFunc_function:
+
+- :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
 
 

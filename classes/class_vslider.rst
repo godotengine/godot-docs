@@ -7,8 +7,7 @@
 VSlider
 =======
 
-**Inherits:** :ref:`Slider<class_slider>` **<** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -19,5 +18,5 @@ Vertical slider.
 Description
 -----------
 
-Vertical slider. See :ref:`Slider<class_slider>`. This one goes from left (min) to right (max).
+Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
 

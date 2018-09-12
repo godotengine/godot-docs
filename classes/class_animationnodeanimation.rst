@@ -7,8 +7,7 @@
 AnimationNodeAnimation
 ======================
 
-**Inherits:** :ref:`AnimationRootNode<class_animationrootnode>` **<** :ref:`AnimationNode<class_animationnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,23 +15,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_playback_time<class_AnimationNodeAnimation_get_playback_time>` **(** **)** const |
 +----------------------------+--------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_AnimationNodeAnimation_animation:
 
-- :ref:`String<class_string>` **animation**
+- :ref:`String<class_String>` **animation**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AnimationNodeAnimation_get_playback_time:
 

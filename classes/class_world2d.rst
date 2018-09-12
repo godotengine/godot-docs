@@ -7,30 +7,13 @@
 World2D
 =======
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class that has everything pertaining to a 2D world.
-
-Member Variables
-----------------
-
-  .. _class_World2D_canvas:
-
-- :ref:`RID<class_rid>` **canvas** - The :ref:`RID<class_rid>` of this world's canvas resource. Used by the :ref:`VisualServer<class_visualserver>` for 2D drawing.
-
-  .. _class_World2D_direct_space_state:
-
-- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>` **direct_space_state** - The state of this world's physics space. This allows arbitrary querying for collision.
-
-  .. _class_World2D_space:
-
-- :ref:`RID<class_rid>` **space** - The :ref:`RID<class_rid>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_physics2dserver>` for 2D physics, treating it as both a space and an area.
-
 
 Description
 -----------
@@ -41,4 +24,20 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
+
+Property Descriptions
+---------------------
+
+  .. _class_World2D_canvas:
+
+- :ref:`RID<class_RID>` **canvas** - The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
+
+  .. _class_World2D_direct_space_state:
+
+- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state** - The state of this world's physics space. This allows arbitrary querying for collision.
+
+  .. _class_World2D_space:
+
+- :ref:`RID<class_RID>` **space** - The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
+
 

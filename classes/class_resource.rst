@@ -7,10 +7,8 @@
 Resource
 ========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AnimationNodeStateMachinePlayback<class_animationnodestatemachineplayback>`, :ref:`AudioStream<class_audiostream>`, :ref:`Sky<class_sky>`, :ref:`Theme<class_theme>`, :ref:`TextureLayered<class_texturelayered>`, :ref:`CubeMap<class_cubemap>`, :ref:`DynamicFontData<class_dynamicfontdata>`, :ref:`InputEvent<class_inputevent>`, :ref:`VisualShaderNode<class_visualshadernode>`, :ref:`Curve2D<class_curve2d>`, :ref:`Image<class_image>`, :ref:`Shape<class_shape>`, :ref:`Shape2D<class_shape2d>`, :ref:`Curve<class_curve>`, :ref:`Mesh<class_mesh>`, :ref:`StyleBox<class_stylebox>`, :ref:`Environment<class_environment>`, :ref:`GDNativeLibrary<class_gdnativelibrary>`, :ref:`Material<class_material>`, :ref:`PhysicsMaterial<class_physicsmaterial>`, :ref:`VideoStream<class_videostream>`, :ref:`PackedScene<class_packedscene>`, :ref:`Texture<class_texture>`, :ref:`TextFile<class_textfile>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`TileSet<class_tileset>`, :ref:`ShortCut<class_shortcut>`, :ref:`BitMap<class_bitmap>`, :ref:`Animation<class_animation>`, :ref:`BakedLightmapData<class_bakedlightmapdata>`, :ref:`PolygonPathFinder<class_polygonpathfinder>`, :ref:`Translation<class_translation>`, :ref:`Shader<class_shader>`, :ref:`Script<class_script>`, :ref:`AudioBusLayout<class_audiobuslayout>`, :ref:`AnimationNode<class_animationnode>`, :ref:`World<class_world>`, :ref:`AudioEffect<class_audioeffect>`, :ref:`VisualScriptNode<class_visualscriptnode>`, :ref:`AnimationNodeStateMachineTransition<class_animationnodestatemachinetransition>`, :ref:`World2D<class_world2d>`, :ref:`GIProbeData<class_giprobedata>`, :ref:`Font<class_font>`, :ref:`SpriteFrames<class_spriteframes>`, :ref:`MeshLibrary<class_meshlibrary>`, :ref:`Curve3D<class_curve3d>`, :ref:`NavigationPolygon<class_navigationpolygon>`, :ref:`EditorSettings<class_editorsettings>`, :ref:`Gradient<class_gradient>`, :ref:`OccluderPolygon2D<class_occluderpolygon2d>`, :ref:`MultiMesh<class_multimesh>`, :ref:`PackedDataContainer<class_packeddatacontainer>`, :ref:`NavigationMesh<class_navigationmesh>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>`, :ref:`AudioStream<class_AudioStream>`, :ref:`Sky<class_Sky>`, :ref:`Theme<class_Theme>`, :ref:`TextureLayered<class_TextureLayered>`, :ref:`CubeMap<class_CubeMap>`, :ref:`DynamicFontData<class_DynamicFontData>`, :ref:`InputEvent<class_InputEvent>`, :ref:`VisualShaderNode<class_VisualShaderNode>`, :ref:`Curve2D<class_Curve2D>`, :ref:`Image<class_Image>`, :ref:`Shape<class_Shape>`, :ref:`Shape2D<class_Shape2D>`, :ref:`Curve<class_Curve>`, :ref:`Mesh<class_Mesh>`, :ref:`StyleBox<class_StyleBox>`, :ref:`Environment<class_Environment>`, :ref:`GDNativeLibrary<class_GDNativeLibrary>`, :ref:`Material<class_Material>`, :ref:`PhysicsMaterial<class_PhysicsMaterial>`, :ref:`VideoStream<class_VideoStream>`, :ref:`PackedScene<class_PackedScene>`, :ref:`Texture<class_Texture>`, :ref:`TextFile<class_TextFile>`, :ref:`ButtonGroup<class_ButtonGroup>`, :ref:`TileSet<class_TileSet>`, :ref:`ShortCut<class_ShortCut>`, :ref:`BitMap<class_BitMap>`, :ref:`Animation<class_Animation>`, :ref:`BakedLightmapData<class_BakedLightmapData>`, :ref:`PolygonPathFinder<class_PolygonPathFinder>`, :ref:`Translation<class_Translation>`, :ref:`Shader<class_Shader>`, :ref:`Script<class_Script>`, :ref:`AudioBusLayout<class_AudioBusLayout>`, :ref:`AnimationNode<class_AnimationNode>`, :ref:`World<class_World>`, :ref:`AudioEffect<class_AudioEffect>`, :ref:`VisualScriptNode<class_VisualScriptNode>`, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>`, :ref:`World2D<class_World2D>`, :ref:`GIProbeData<class_GIProbeData>`, :ref:`Font<class_Font>`, :ref:`SpriteFrames<class_SpriteFrames>`, :ref:`MeshLibrary<class_MeshLibrary>`, :ref:`Curve3D<class_Curve3D>`, :ref:`NavigationPolygon<class_NavigationPolygon>`, :ref:`EditorSettings<class_EditorSettings>`, :ref:`Gradient<class_Gradient>`, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`, :ref:`MultiMesh<class_MultiMesh>`, :ref:`PackedDataContainer<class_PackedDataContainer>`, :ref:`NavigationMesh<class_NavigationMesh>`
 **Category:** Core
 
 Brief Description
@@ -18,21 +16,21 @@ Brief Description
 
 Base class for all resources.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>` **(** **)** virtual                  |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`  | :ref:`duplicate<class_Resource_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
+| :ref:`Resource<class_Resource>`  | :ref:`duplicate<class_Resource_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`          | :ref:`get_local_scene<class_Resource_get_local_scene>` **(** **)** const                                |
+| :ref:`Node<class_Node>`          | :ref:`get_local_scene<class_Resource_get_local_scene>` **(** **)** const                                |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`            | :ref:`get_rid<class_Resource_get_rid>` **(** **)** const                                                |
+| :ref:`RID<class_RID>`            | :ref:`get_rid<class_Resource_get_rid>` **(** **)** const                                                |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`setup_local_to_scene<class_Resource_setup_local_to_scene>` **(** **)**                            |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`take_over_path<class_Resource_take_over_path>` **(** :ref:`String<class_string>` path **)**       |
+| void                             | :ref:`take_over_path<class_Resource_take_over_path>` **(** :ref:`String<class_String>` path **)**       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -43,8 +41,13 @@ Signals
 - **changed** **(** **)**
 
 
-Member Variables
-----------------
+Description
+-----------
+
+Resource is the base class for all resource types. Resources are primarily data containers. They are reference counted and freed when no longer in use. They are also loaded only once from disk, and further attempts to load the resource will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+
+Property Descriptions
+---------------------
 
   .. _class_Resource_resource_local_to_scene:
 
@@ -52,20 +55,15 @@ Member Variables
 
   .. _class_Resource_resource_name:
 
-- :ref:`String<class_string>` **resource_name**
+- :ref:`String<class_String>` **resource_name**
 
   .. _class_Resource_resource_path:
 
-- :ref:`String<class_string>` **resource_path**
+- :ref:`String<class_String>` **resource_path**
 
 
-Description
------------
-
-Resource is the base class for all resource types. Resources are primarily data containers. They are reference counted and freed when no longer in use. They are also loaded only once from disk, and further attempts to load the resource will return the same reference (all this in contrast to a :ref:`Node<class_node>`, which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_node>` or another resource.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Resource__setup_local_to_scene:
 
@@ -73,17 +71,17 @@ Member Function Description
 
 .. _class_Resource_duplicate:
 
-- :ref:`Resource<class_resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
+- :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
 .. _class_Resource_get_local_scene:
 
-- :ref:`Node<class_node>` **get_local_scene** **(** **)** const
+- :ref:`Node<class_Node>` **get_local_scene** **(** **)** const
 
 .. _class_Resource_get_rid:
 
-- :ref:`RID<class_rid>` **get_rid** **(** **)** const
+- :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
-Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_texture>`, :ref:`Mesh<class_mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
+Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
 
 .. _class_Resource_setup_local_to_scene:
 
@@ -91,7 +89,7 @@ Return the RID of the resource (or an empty RID). Many resources (such as :ref:`
 
 .. _class_Resource_take_over_path:
 
-- void **take_over_path** **(** :ref:`String<class_string>` path **)**
+- void **take_over_path** **(** :ref:`String<class_String>` path **)**
 
 Set the path of the resource. Differs from set_path(), if another ``Resource`` exists with "path" it over-takes it, instead of failing.
 

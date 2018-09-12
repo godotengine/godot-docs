@@ -7,8 +7,7 @@
 Particles2D
 ===========
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,17 +15,35 @@ Brief Description
 
 2D particle emitter.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-----------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`capture_rect<class_Particles2D_capture_rect>` **(** **)** const |
+| :ref:`Rect2<class_Rect2>`  | :ref:`capture_rect<class_Particles2D_capture_rect>` **(** **)** const |
 +----------------------------+-----------------------------------------------------------------------+
 | void                       | :ref:`restart<class_Particles2D_restart>` **(** **)**                 |
 +----------------------------+-----------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Particles2D_DrawOrder:
+
+enum **DrawOrder**
+
+- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
+
+
+Description
+-----------
+
+2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+
+Property Descriptions
+---------------------
 
   .. _class_Particles2D_amount:
 
@@ -34,7 +51,7 @@ Member Variables
 
   .. _class_Particles2D_draw_order:
 
-- :ref:`DrawOrder<enum_particles2d_draworder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
+- :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
   .. _class_Particles2D_emitting:
 
@@ -66,7 +83,7 @@ Member Variables
 
   .. _class_Particles2D_normal_map:
 
-- :ref:`Texture<class_texture>` **normal_map**
+- :ref:`Texture<class_Texture>` **normal_map**
 
   .. _class_Particles2D_one_shot:
 
@@ -78,7 +95,7 @@ Member Variables
 
   .. _class_Particles2D_process_material:
 
-- :ref:`Material<class_material>` **process_material** - :ref:`Material<class_material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_particlesmaterial>` or a :ref:`ShaderMaterial<class_shadermaterial>`.
+- :ref:`Material<class_Material>` **process_material** - :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
   .. _class_Particles2D_randomness:
 
@@ -86,11 +103,11 @@ Member Variables
 
   .. _class_Particles2D_speed_scale:
 
-- :ref:`float<class_float>` **speed_scale** - Particle system's running speed scaling ratio. Default value: ``1``.
+- :ref:`float<class_float>` **speed_scale** - Particle system's running speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
   .. _class_Particles2D_texture:
 
-- :ref:`Texture<class_texture>` **texture** - Particle texture. If ``null`` particles will be squares.
+- :ref:`Texture<class_Texture>` **texture** - Particle texture. If ``null`` particles will be squares.
 
   .. _class_Particles2D_v_frames:
 
@@ -98,33 +115,15 @@ Member Variables
 
   .. _class_Particles2D_visibility_rect:
 
-- :ref:`Rect2<class_rect2>` **visibility_rect** - Editor visibility helper.
+- :ref:`Rect2<class_Rect2>` **visibility_rect** - Editor visibility helper.
 
 
-Enums
------
-
-  .. _enum_Particles2D_DrawOrder:
-
-enum **DrawOrder**
-
-- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
-- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
-
-
-Description
------------
-
-2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
-
-Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_particlesmaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_shadermaterial>` which will be applied to all particles.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Particles2D_capture_rect:
 
-- :ref:`Rect2<class_rect2>` **capture_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
 
 .. _class_Particles2D_restart:
 

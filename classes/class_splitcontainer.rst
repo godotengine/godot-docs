@@ -7,10 +7,8 @@
 SplitContainer
 ==============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`HSplitContainer<class_hsplitcontainer>`, :ref:`VSplitContainer<class_vsplitcontainer>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
 **Category:** Core
 
 Brief Description
@@ -28,24 +26,8 @@ Signals
 Emitted when the dragger is dragged by user.
 
 
-Member Variables
-----------------
-
-  .. _class_SplitContainer_collapsed:
-
-- :ref:`bool<class_bool>` **collapsed**
-
-  .. _class_SplitContainer_dragger_visibility:
-
-- :ref:`DraggerVisibility<enum_splitcontainer_draggervisibility>` **dragger_visibility** - Determines whether the dragger is visible.
-
-  .. _class_SplitContainer_split_offset:
-
-- :ref:`int<class_int>` **split_offset**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_SplitContainer_DraggerVisibility:
 
@@ -60,4 +42,20 @@ Description
 -----------
 
 Container for splitting two controls vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
+
+Property Descriptions
+---------------------
+
+  .. _class_SplitContainer_collapsed:
+
+- :ref:`bool<class_bool>` **collapsed**
+
+  .. _class_SplitContainer_dragger_visibility:
+
+- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility** - Determines whether the dragger is visible.
+
+  .. _class_SplitContainer_split_offset:
+
+- :ref:`int<class_int>` **split_offset**
+
 

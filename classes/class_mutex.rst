@@ -7,8 +7,7 @@
 Mutex
 =====
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 A synchronization Mutex.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+---------------------------------------------------+
 | void                                   | :ref:`lock<class_Mutex_lock>` **(** **)**         |
 +----------------------------------------+---------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`try_lock<class_Mutex_try_lock>` **(** **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`try_lock<class_Mutex_try_lock>` **(** **)** |
 +----------------------------------------+---------------------------------------------------+
 | void                                   | :ref:`unlock<class_Mutex_unlock>` **(** **)**     |
 +----------------------------------------+---------------------------------------------------+
@@ -30,10 +29,10 @@ Member Functions
 Description
 -----------
 
-A synchronization Mutex. Element used to synchronize multiple :ref:`Thread<class_thread>`\ s. Basically a binary :ref:`Semaphore<class_semaphore>`. Guarantees that only one thread can ever acquire this lock at a time. Can be used to protect a critical section. Be careful to avoid deadlocks.
+A synchronization Mutex. Element used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Basically a binary :ref:`Semaphore<class_Semaphore>`. Guarantees that only one thread can ever acquire this lock at a time. Can be used to protect a critical section. Be careful to avoid deadlocks.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Mutex_lock:
 
@@ -43,7 +42,7 @@ Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
 .. _class_Mutex_try_lock:
 
-- :ref:`Error<enum_@globalscope_error>` **try_lock** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
 
 Try locking this ``Mutex``, does not block. Returns OK on success, ERR_BUSY otherwise.
 

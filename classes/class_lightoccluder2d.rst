@@ -7,8 +7,7 @@
 LightOccluder2D
 ===============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Occludes light cast by a Light2D, casting shadows.
 
-Member Variables
-----------------
+Description
+-----------
+
+Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be provided with an :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` in order for the shadow to be computed.
+
+Property Descriptions
+---------------------
 
   .. _class_LightOccluder2D_light_mask:
 
@@ -25,11 +29,6 @@ Member Variables
 
   .. _class_LightOccluder2D_occluder:
 
-- :ref:`OccluderPolygon2D<class_occluderpolygon2d>` **occluder** - The :ref:`OccluderPolygon2D<class_occluderpolygon2d>` used to compute the shadow.
+- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder** - The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 
-
-Description
------------
-
-Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be provided with an :ref:`OccluderPolygon2D<class_occluderpolygon2d>` in order for the shadow to be computed.
 

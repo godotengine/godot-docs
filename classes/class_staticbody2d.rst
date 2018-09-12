@@ -7,8 +7,7 @@
 StaticBody2D
 ============
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,15 @@ Brief Description
 
 Static body for 2D Physics.
 
-Member Variables
-----------------
+Description
+-----------
+
+Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
+
+Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
+
+Property Descriptions
+---------------------
 
   .. _class_StaticBody2D_bounce:
 
@@ -29,7 +35,7 @@ Member Variables
 
   .. _class_StaticBody2D_constant_linear_velocity:
 
-- :ref:`Vector2<class_vector2>` **constant_linear_velocity** - Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
+- :ref:`Vector2<class_Vector2>` **constant_linear_velocity** - Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
 
   .. _class_StaticBody2D_friction:
 
@@ -37,13 +43,6 @@ Member Variables
 
   .. _class_StaticBody2D_physics_material_override:
 
-- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-
-Description
------------
-
-Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
-
-Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 

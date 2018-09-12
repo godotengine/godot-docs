@@ -7,10 +7,8 @@
 GeometryInstance
 ================
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`Particles<class_particles>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`ImmediateGeometry<class_immediategeometry>`, :ref:`CPUParticles<class_cpuparticles>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`SpriteBase3D<class_SpriteBase3D>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`CPUParticles<class_CPUParticles>`
 **Category:** Core
 
 Brief Description
@@ -18,52 +16,14 @@ Brief Description
 
 Base node for geometry based visual instances.
 
-Member Variables
-----------------
-
-  .. _class_GeometryInstance_cast_shadow:
-
-- :ref:`ShadowCastingSetting<enum_geometryinstance_shadowcastingsetting>` **cast_shadow** - The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
-
-  .. _class_GeometryInstance_extra_cull_margin:
-
-- :ref:`float<class_float>` **extra_cull_margin** - The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_aabb>`) to increase its cull box.
-
-  .. _class_GeometryInstance_lod_max_distance:
-
-- :ref:`float<class_float>` **lod_max_distance** - The GeometryInstance's max LOD distance.
-
-  .. _class_GeometryInstance_lod_max_hysteresis:
-
-- :ref:`float<class_float>` **lod_max_hysteresis** - The GeometryInstance's max LOD margin.
-
-  .. _class_GeometryInstance_lod_min_distance:
-
-- :ref:`float<class_float>` **lod_min_distance** - The GeometryInstance's min LOD distance.
-
-  .. _class_GeometryInstance_lod_min_hysteresis:
-
-- :ref:`float<class_float>` **lod_min_hysteresis** - The GeometryInstance's min LOD margin.
-
-  .. _class_GeometryInstance_material_override:
-
-- :ref:`Material<class_material>` **material_override** - The material override for the whole geometry.
-
-If there is a material in material_override, it will be used instead of any material set in any material slot of the mesh.
-
-  .. _class_GeometryInstance_use_in_baked_light:
-
-- :ref:`bool<class_bool>` **use_in_baked_light** - If ``true`` this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_GeometryInstance_Flags:
 
 enum **Flags**
 
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
 
 Added documentation for GeometryInstance and VisualInstance
 - **FLAG_MAX** = **2**
@@ -88,4 +48,42 @@ Description
 -----------
 
 Base node for geometry based visual instances. Shares some common functionality like visibility and custom materials.
+
+Property Descriptions
+---------------------
+
+  .. _class_GeometryInstance_cast_shadow:
+
+- :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **cast_shadow** - The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
+
+  .. _class_GeometryInstance_extra_cull_margin:
+
+- :ref:`float<class_float>` **extra_cull_margin** - The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
+
+  .. _class_GeometryInstance_lod_max_distance:
+
+- :ref:`float<class_float>` **lod_max_distance** - The GeometryInstance's max LOD distance.
+
+  .. _class_GeometryInstance_lod_max_hysteresis:
+
+- :ref:`float<class_float>` **lod_max_hysteresis** - The GeometryInstance's max LOD margin.
+
+  .. _class_GeometryInstance_lod_min_distance:
+
+- :ref:`float<class_float>` **lod_min_distance** - The GeometryInstance's min LOD distance.
+
+  .. _class_GeometryInstance_lod_min_hysteresis:
+
+- :ref:`float<class_float>` **lod_min_hysteresis** - The GeometryInstance's min LOD margin.
+
+  .. _class_GeometryInstance_material_override:
+
+- :ref:`Material<class_Material>` **material_override** - The material override for the whole geometry.
+
+If there is a material in material_override, it will be used instead of any material set in any material slot of the mesh.
+
+  .. _class_GeometryInstance_use_in_baked_light:
+
+- :ref:`bool<class_bool>` **use_in_baked_light** - If ``true`` this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+
 

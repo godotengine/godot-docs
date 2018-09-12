@@ -7,22 +7,13 @@
 VisualScriptSequence
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Executes a series of Sequence ports.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptSequence_steps:
-
-- :ref:`int<class_int>` **steps** - The number of steps in the sequence.
-
 
 Description
 -----------
@@ -40,4 +31,12 @@ Steps through a series of one or more output Sequence ports. The ``current`` dat
 - Sequence: ``2 - n`` (optional)
 
 - Data (int): ``current``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptSequence_steps:
+
+- :ref:`int<class_int>` **steps** - The number of steps in the sequence.
+
 

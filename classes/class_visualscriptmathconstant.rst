@@ -7,8 +7,7 @@
 VisualScriptMathConstant
 ========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 Commonly used mathematical constants.
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptMathConstant_constant:
-
-- :ref:`MathConstant<enum_visualscriptmathconstant_mathconstant>` **constant** - The math constant.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptMathConstant_MathConstant:
 
@@ -54,4 +45,12 @@ none
 **Output Ports:**
 
 - Data (variant): ``get``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptMathConstant_constant:
+
+- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant** - The math constant.
+
 

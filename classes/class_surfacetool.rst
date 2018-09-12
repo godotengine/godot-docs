@@ -7,8 +7,7 @@
 SurfaceTool
 ===========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,43 +15,43 @@ Brief Description
 
 Helper tool to create geometry.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_bones<class_SurfaceTool_add_bones>` **(** :ref:`PoolIntArray<class_poolintarray>` bones **)**                                                                                                                                                                                                                                                                                                                                                                             |
+| void                               | :ref:`add_bones<class_SurfaceTool_add_bones>` **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**                                                                                                                                                                                                                                                                                                                                                                             |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_color<class_SurfaceTool_add_color>` **(** :ref:`Color<class_color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                           |
+| void                               | :ref:`add_color<class_SurfaceTool_add_color>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`add_index<class_SurfaceTool_add_index>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                                                                                                                                                                                                               |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_normal<class_SurfaceTool_add_normal>` **(** :ref:`Vector3<class_vector3>` normal **)**                                                                                                                                                                                                                                                                                                                                                                                    |
+| void                               | :ref:`add_normal<class_SurfaceTool_add_normal>` **(** :ref:`Vector3<class_Vector3>` normal **)**                                                                                                                                                                                                                                                                                                                                                                                    |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`add_smooth_group<class_SurfaceTool_add_smooth_group>` **(** :ref:`bool<class_bool>` smooth **)**                                                                                                                                                                                                                                                                                                                                                                              |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_tangent<class_SurfaceTool_add_tangent>` **(** :ref:`Plane<class_plane>` tangent **)**                                                                                                                                                                                                                                                                                                                                                                                     |
+| void                               | :ref:`add_tangent<class_SurfaceTool_add_tangent>` **(** :ref:`Plane<class_Plane>` tangent **)**                                                                                                                                                                                                                                                                                                                                                                                     |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`add_to_format<class_SurfaceTool_add_to_format>` **(** :ref:`int<class_int>` flags **)**                                                                                                                                                                                                                                                                                                                                                                                       |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_triangle_fan<class_SurfaceTool_add_triangle_fan>` **(** :ref:`PoolVector3Array<class_poolvector3array>` vertexes, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_poolcolorarray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_poolvector2array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_poolvector3array>` normals=PoolVector3Array(  ), :ref:`Array<class_array>` tangents=[  ] **)** |
+| void                               | :ref:`add_triangle_fan<class_SurfaceTool_add_triangle_fan>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertexes, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_PoolColorArray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_PoolVector2Array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_PoolVector3Array>` normals=PoolVector3Array(  ), :ref:`Array<class_Array>` tangents=[  ] **)** |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_uv<class_SurfaceTool_add_uv>` **(** :ref:`Vector2<class_vector2>` uv **)**                                                                                                                                                                                                                                                                                                                                                                                                |
+| void                               | :ref:`add_uv<class_SurfaceTool_add_uv>` **(** :ref:`Vector2<class_Vector2>` uv **)**                                                                                                                                                                                                                                                                                                                                                                                                |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_uv2<class_SurfaceTool_add_uv2>` **(** :ref:`Vector2<class_vector2>` uv2 **)**                                                                                                                                                                                                                                                                                                                                                                                             |
+| void                               | :ref:`add_uv2<class_SurfaceTool_add_uv2>` **(** :ref:`Vector2<class_Vector2>` uv2 **)**                                                                                                                                                                                                                                                                                                                                                                                             |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_vertex<class_SurfaceTool_add_vertex>` **(** :ref:`Vector3<class_vector3>` vertex **)**                                                                                                                                                                                                                                                                                                                                                                                    |
+| void                               | :ref:`add_vertex<class_SurfaceTool_add_vertex>` **(** :ref:`Vector3<class_Vector3>` vertex **)**                                                                                                                                                                                                                                                                                                                                                                                    |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`add_weights<class_SurfaceTool_add_weights>` **(** :ref:`PoolRealArray<class_poolrealarray>` weights **)**                                                                                                                                                                                                                                                                                                                                                                     |
+| void                               | :ref:`add_weights<class_SurfaceTool_add_weights>` **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**                                                                                                                                                                                                                                                                                                                                                                     |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`append_from<class_SurfaceTool_append_from>` **(** :ref:`Mesh<class_mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_transform>` transform **)**                                                                                                                                                                                                                                                                                                          |
+| void                               | :ref:`append_from<class_SurfaceTool_append_from>` **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_Transform>` transform **)**                                                                                                                                                                                                                                                                                                          |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`begin<class_SurfaceTool_begin>` **(** :ref:`PrimitiveType<enum_mesh_primitivetype>` primitive **)**                                                                                                                                                                                                                                                                                                                                                                           |
+| void                               | :ref:`begin<class_SurfaceTool_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive **)**                                                                                                                                                                                                                                                                                                                                                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`clear<class_SurfaceTool_clear>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ArrayMesh<class_arraymesh>`  | :ref:`commit<class_SurfaceTool_commit>` **(** :ref:`ArrayMesh<class_arraymesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**                                                                                                                                                                                                                                                                                                                                              |
+| :ref:`ArrayMesh<class_ArrayMesh>`  | :ref:`commit<class_SurfaceTool_commit>` **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**                                                                                                                                                                                                                                                                                                                                              |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`create_from<class_SurfaceTool_create_from>` **(** :ref:`Mesh<class_mesh>` existing, :ref:`int<class_int>` surface **)**                                                                                                                                                                                                                                                                                                                                                       |
+| void                               | :ref:`create_from<class_SurfaceTool_create_from>` **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface **)**                                                                                                                                                                                                                                                                                                                                                       |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`deindex<class_SurfaceTool_deindex>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,13 +61,13 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`index<class_SurfaceTool_index>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_material<class_SurfaceTool_set_material>` **(** :ref:`Material<class_material>` material **)**                                                                                                                                                                                                                                                                                                                                                                            |
+| void                               | :ref:`set_material<class_SurfaceTool_set_material>` **(** :ref:`Material<class_Material>` material **)**                                                                                                                                                                                                                                                                                                                                                                            |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`. For example adding vertex colors and UVs looks like
+The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_Mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`. For example adding vertex colors and UVs looks like
 
 ::
 
@@ -78,24 +77,24 @@ The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_mesh>` by specifying
     st.add_uv(Vector2(0, 0))
     st.add_vertex(Vector3(0, 0, 0))
 
-The ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_add_uv>` or :ref:`add_color<class_SurfaceTool_add_color>` then the last values would be used.
+The ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_Color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_add_uv>` or :ref:`add_color<class_SurfaceTool_add_color>` then the last values would be used.
 
 It is very important that vertex attributes are passed **before** the call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`, failure to do this will result in an error when committing the vertex information to a mesh.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_SurfaceTool_add_bones:
 
-- void **add_bones** **(** :ref:`PoolIntArray<class_poolintarray>` bones **)**
+- void **add_bones** **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
 Add an array of bones for the next Vertex to use.
 
 .. _class_SurfaceTool_add_color:
 
-- void **add_color** **(** :ref:`Color<class_color>` color **)**
+- void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
-Specify a :ref:`Color<class_color>` for the next Vertex to use.
+Specify a :ref:`Color<class_Color>` for the next Vertex to use.
 
 .. _class_SurfaceTool_add_index:
 
@@ -105,7 +104,7 @@ Adds an index to index array if you are using indexed Vertices. Does not need to
 
 .. _class_SurfaceTool_add_normal:
 
-- void **add_normal** **(** :ref:`Vector3<class_vector3>` normal **)**
+- void **add_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
 Specify a normal for the next Vertex to use.
 
@@ -117,7 +116,7 @@ Specify whether current Vertex (if using only Vertex arrays) or current index (i
 
 .. _class_SurfaceTool_add_tangent:
 
-- void **add_tangent** **(** :ref:`Plane<class_plane>` tangent **)**
+- void **add_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
 Specify a Tangent for the next Vertex to use.
 
@@ -127,41 +126,41 @@ Specify a Tangent for the next Vertex to use.
 
 .. _class_SurfaceTool_add_triangle_fan:
 
-- void **add_triangle_fan** **(** :ref:`PoolVector3Array<class_poolvector3array>` vertexes, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_poolcolorarray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_poolvector2array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_poolvector3array>` normals=PoolVector3Array(  ), :ref:`Array<class_array>` tangents=[  ] **)**
+- void **add_triangle_fan** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertexes, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_PoolColorArray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_PoolVector2Array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_PoolVector3Array>` normals=PoolVector3Array(  ), :ref:`Array<class_Array>` tangents=[  ] **)**
 
-Insert a triangle fan made of array data into :ref:`Mesh<class_mesh>` being constructed.
+Insert a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
 
 .. _class_SurfaceTool_add_uv:
 
-- void **add_uv** **(** :ref:`Vector2<class_vector2>` uv **)**
+- void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
 Specify UV Coordinate for next Vertex to use.
 
 .. _class_SurfaceTool_add_uv2:
 
-- void **add_uv2** **(** :ref:`Vector2<class_vector2>` uv2 **)**
+- void **add_uv2** **(** :ref:`Vector2<class_Vector2>` uv2 **)**
 
 Specify an optional second set of UV coordinates for next Vertex to use.
 
 .. _class_SurfaceTool_add_vertex:
 
-- void **add_vertex** **(** :ref:`Vector3<class_vector3>` vertex **)**
+- void **add_vertex** **(** :ref:`Vector3<class_Vector3>` vertex **)**
 
 Specify position of current Vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
 
 .. _class_SurfaceTool_add_weights:
 
-- void **add_weights** **(** :ref:`PoolRealArray<class_poolrealarray>` weights **)**
+- void **add_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
 Specify weight value for next Vertex to use.
 
 .. _class_SurfaceTool_append_from:
 
-- void **append_from** **(** :ref:`Mesh<class_mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_transform>` transform **)**
+- void **append_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_Transform>` transform **)**
 
 .. _class_SurfaceTool_begin:
 
-- void **begin** **(** :ref:`PrimitiveType<enum_mesh_primitivetype>` primitive **)**
+- void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive **)**
 
 Called before adding any Vertices. Takes the primitive type as an argument (e.g. Mesh.PRIMITIVE_TRIANGLES).
 
@@ -173,13 +172,13 @@ Clear all information passed into the surface tool so far.
 
 .. _class_SurfaceTool_commit:
 
-- :ref:`ArrayMesh<class_arraymesh>` **commit** **(** :ref:`ArrayMesh<class_arraymesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**
+- :ref:`ArrayMesh<class_ArrayMesh>` **commit** **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**
 
-Returns a constructed :ref:`ArrayMesh<class_arraymesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_arraymesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_arraymesh>`.
+Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
 .. _class_SurfaceTool_create_from:
 
-- void **create_from** **(** :ref:`Mesh<class_mesh>` existing, :ref:`int<class_int>` surface **)**
+- void **create_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface **)**
 
 .. _class_SurfaceTool_deindex:
 
@@ -207,8 +206,8 @@ Shrinks Vertex array by creating an index array. Avoids reusing Vertices.
 
 .. _class_SurfaceTool_set_material:
 
-- void **set_material** **(** :ref:`Material<class_material>` material **)**
+- void **set_material** **(** :ref:`Material<class_Material>` material **)**
 
-Sets :ref:`Material<class_material>` to be used by the :ref:`Mesh<class_mesh>` you are constructing.
+Sets :ref:`Material<class_Material>` to be used by the :ref:`Mesh<class_Mesh>` you are constructing.
 
 

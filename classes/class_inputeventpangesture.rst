@@ -7,8 +7,7 @@
 InputEventPanGesture
 ====================
 
-**Inherits:** :ref:`InputEventGesture<class_inputeventgesture>` **<** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEventGesture<class_InputEventGesture>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_InputEventPanGesture_delta:
 
-- :ref:`Vector2<class_vector2>` **delta**
+- :ref:`Vector2<class_Vector2>` **delta**
 
 

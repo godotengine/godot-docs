@@ -7,8 +7,7 @@
 BakedLightmapData
 =================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,31 +15,31 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_user<class_BakedLightmapData_add_user>` **(** :ref:`NodePath<class_nodepath>` path, :ref:`Texture<class_texture>` lightmap, :ref:`int<class_int>` instance **)** |
+| void                             | :ref:`add_user<class_BakedLightmapData_add_user>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`Texture<class_Texture>` lightmap, :ref:`int<class_int>` instance **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`clear_users<class_BakedLightmapData_clear_users>` **(** **)**                                                                                                        |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_user_count<class_BakedLightmapData_get_user_count>` **(** **)** const                                                                                            |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`    | :ref:`get_user_lightmap<class_BakedLightmapData_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** const                                                       |
+| :ref:`Texture<class_Texture>`    | :ref:`get_user_lightmap<class_BakedLightmapData_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** const                                                       |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_user_path<class_BakedLightmapData_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** const                                                               |
+| :ref:`NodePath<class_NodePath>`  | :ref:`get_user_path<class_BakedLightmapData_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** const                                                               |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_BakedLightmapData_bounds:
 
-- :ref:`AABB<class_aabb>` **bounds**
+- :ref:`AABB<class_AABB>` **bounds**
 
   .. _class_BakedLightmapData_cell_space_transform:
 
-- :ref:`Transform<class_transform>` **cell_space_transform**
+- :ref:`Transform<class_Transform>` **cell_space_transform**
 
   .. _class_BakedLightmapData_cell_subdiv:
 
@@ -52,15 +51,15 @@ Member Variables
 
   .. _class_BakedLightmapData_octree:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **octree**
+- :ref:`PoolByteArray<class_PoolByteArray>` **octree**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_BakedLightmapData_add_user:
 
-- void **add_user** **(** :ref:`NodePath<class_nodepath>` path, :ref:`Texture<class_texture>` lightmap, :ref:`int<class_int>` instance **)**
+- void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Texture<class_Texture>` lightmap, :ref:`int<class_int>` instance **)**
 
 .. _class_BakedLightmapData_clear_users:
 
@@ -72,10 +71,10 @@ Member Function Description
 
 .. _class_BakedLightmapData_get_user_lightmap:
 
-- :ref:`Texture<class_texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** const
+- :ref:`Texture<class_Texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** const
 
 .. _class_BakedLightmapData_get_user_path:
 
-- :ref:`NodePath<class_nodepath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** const
+- :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** const
 
 

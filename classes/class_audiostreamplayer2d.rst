@@ -7,8 +7,7 @@
 AudioStreamPlayer2D
 ===================
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Plays audio in 2D.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_playback_position<class_AudioStreamPlayer2D_get_playback_position>` **(** **)**           |
@@ -39,8 +38,19 @@ Signals
 Emitted when the audio stops playing.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+Plays audio that dampens with distance from screen center.
+
+Tutorials
+---------
+
+- :doc:`../learning/features/audio/index`
+- :doc:`../tutorials/audio/audio_streams`
+
+Property Descriptions
+---------------------
 
   .. _class_AudioStreamPlayer2D_area_mask:
 
@@ -56,7 +66,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer2D_bus:
 
-- :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
+- :ref:`String<class_String>` **bus** - Bus on which this audio is playing.
 
   .. _class_AudioStreamPlayer2D_max_distance:
 
@@ -72,7 +82,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer2D_stream:
 
-- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
+- :ref:`AudioStream<class_AudioStream>` **stream** - The :ref:`AudioStream<class_AudioStream>` object to be played.
 
   .. _class_AudioStreamPlayer2D_stream_paused:
 
@@ -83,25 +93,14 @@ Member Variables
 - :ref:`float<class_float>` **volume_db** - Base volume without dampening.
 
 
-Description
------------
-
-Plays audio that dampens with distance from screen center.
-
-Tutorials
----------
-
-- :doc:`../learning/features/audio/index`
-- :doc:`../tutorials/audio/audio_streams`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AudioStreamPlayer2D_get_playback_position:
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
-Returns the position in the :ref:`AudioStream<class_audiostream>`.
+Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 .. _class_AudioStreamPlayer2D_play:
 

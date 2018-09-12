@@ -7,8 +7,7 @@
 WebSocketPeer
 =============
 
-**Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,27 +15,27 @@ Brief Description
 
 A class representing a specific WebSocket connection.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`close<class_WebSocketPeer_close>` **(** **)**                                                                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                     | :ref:`get_connected_host<class_WebSocketPeer_get_connected_host>` **(** **)** const                                       |
+| :ref:`String<class_String>`                     | :ref:`get_connected_host<class_WebSocketPeer_get_connected_host>` **(** **)** const                                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_connected_port<class_WebSocketPeer_get_connected_port>` **(** **)** const                                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WriteMode<enum_websocketpeer_writemode>`  | :ref:`get_write_mode<class_WebSocketPeer_get_write_mode>` **(** **)** const                                               |
+| :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`  | :ref:`get_write_mode<class_WebSocketPeer_get_write_mode>` **(** **)** const                                               |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_connected_to_host<class_WebSocketPeer_is_connected_to_host>` **(** **)** const                                   |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_write_mode<class_WebSocketPeer_set_write_mode>` **(** :ref:`WriteMode<enum_websocketpeer_writemode>` mode **)** |
+| void                                            | :ref:`set_write_mode<class_WebSocketPeer_set_write_mode>` **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)** |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`was_string_packet<class_WebSocketPeer_was_string_packet>` **(** **)** const                                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_WebSocketPeer_WriteMode:
 
@@ -53,8 +52,8 @@ This class represent a specific WebSocket connection, you can do lower level ope
 
 You can choose to write to the socket in binary or text mode, and you can recognize the mode used for writing by the other peer.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_WebSocketPeer_close:
 
@@ -64,7 +63,7 @@ Close this WebSocket connection, actively disconnecting the peer.
 
 .. _class_WebSocketPeer_get_connected_host:
 
-- :ref:`String<class_string>` **get_connected_host** **(** **)** const
+- :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
 Returns the IP Address of the connected peer. (Not available in HTML5 export)
 
@@ -76,9 +75,9 @@ Returns the remote port of the connected peer. (Not available in HTML5 export)
 
 .. _class_WebSocketPeer_get_write_mode:
 
-- :ref:`WriteMode<enum_websocketpeer_writemode>` **get_write_mode** **(** **)** const
+- :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
 
-Get the current selected write mode. See :ref:`WriteMode<enum_@globalscope_writemode>`.
+Get the current selected write mode. See :ref:`WriteMode<enum_@GlobalScope_WriteMode>`.
 
 .. _class_WebSocketPeer_is_connected_to_host:
 
@@ -88,14 +87,14 @@ Returns ``true`` if this peer is currently connected.
 
 .. _class_WebSocketPeer_set_write_mode:
 
-- void **set_write_mode** **(** :ref:`WriteMode<enum_websocketpeer_writemode>` mode **)**
+- void **set_write_mode** **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**
 
-Sets the socket to use the given :ref:`WriteMode<enum_@globalscope_writemode>`.
+Sets the socket to use the given :ref:`WriteMode<enum_@GlobalScope_WriteMode>`.
 
 .. _class_WebSocketPeer_was_string_packet:
 
 - :ref:`bool<class_bool>` **was_string_packet** **(** **)** const
 
-Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_@globalscope_writemode>`
+Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_@GlobalScope_WriteMode>`
 
 

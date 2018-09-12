@@ -14,25 +14,25 @@ Brief Description
 
 Quaternion.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Basis<class_basis>` from **)**                                                                                                      |
+| :ref:`Quat<class_Quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                                      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_vector3>` euler **)**                                                                                                 |
+| :ref:`Quat<class_Quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                                                 |
+| :ref:`Quat<class_Quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                  |
+| :ref:`Quat<class_Quat>`        | :ref:`Quat<class_Quat_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`cubic_slerp<class_Quat_cubic_slerp>` **(** :ref:`Quat<class_quat>` b, :ref:`Quat<class_quat>` pre_a, :ref:`Quat<class_quat>` post_b, :ref:`float<class_float>` t **)** |
+| :ref:`Quat<class_Quat>`        | :ref:`cubic_slerp<class_Quat_cubic_slerp>` **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` t **)** |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`dot<class_Quat_dot>` **(** :ref:`Quat<class_quat>` b **)**                                                                                                             |
+| :ref:`float<class_float>`      | :ref:`dot<class_Quat_dot>` **(** :ref:`Quat<class_Quat>` b **)**                                                                                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_euler<class_Quat_get_euler>` **(** **)**                                                                                                                           |
+| :ref:`Vector3<class_Vector3>`  | :ref:`get_euler<class_Quat_get_euler>` **(** **)**                                                                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`inverse<class_Quat_inverse>` **(** **)**                                                                                                                               |
+| :ref:`Quat<class_Quat>`        | :ref:`inverse<class_Quat_inverse>` **(** **)**                                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_normalized<class_Quat_is_normalized>` **(** **)**                                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -40,21 +40,41 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`length_squared<class_Quat_length_squared>` **(** **)**                                                                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`normalized<class_Quat_normalized>` **(** **)**                                                                                                                         |
+| :ref:`Quat<class_Quat>`        | :ref:`normalized<class_Quat_normalized>` **(** **)**                                                                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_axis_angle<class_Quat_set_axis_angle>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                             |
+| void                           | :ref:`set_axis_angle<class_Quat_set_axis_angle>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_euler<class_Quat_set_euler>` **(** :ref:`Vector3<class_vector3>` euler **)**                                                                                       |
+| void                           | :ref:`set_euler<class_Quat_set_euler>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`slerp<class_Quat_slerp>` **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**                                                                            |
+| :ref:`Quat<class_Quat>`        | :ref:`slerp<class_Quat_slerp>` **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**                                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`slerpni<class_Quat_slerpni>` **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**                                                                        |
+| :ref:`Quat<class_Quat>`        | :ref:`slerpni<class_Quat_slerpni>` **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**                                                                        |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`xform<class_Quat_xform>` **(** :ref:`Vector3<class_vector3>` v **)**                                                                                                   |
+| :ref:`Vector3<class_Vector3>`  | :ref:`xform<class_Quat_xform>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Constants
+---------
+
+- **IDENTITY** = **Quat( 0, 0, 0, 1 )**
+
+Description
+-----------
+
+A unit quaternion used for representing 3D rotations.
+
+It is similar to :ref:`Basis<class_Basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating point errors.
+
+Quaternions need to be (re)normalized.
+
+Tutorials
+---------
+
+- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
+- :doc:`../tutorials/math/rotations`
+
+Property Descriptions
+---------------------
 
   .. _class_Quat_w:
 
@@ -73,74 +93,54 @@ Member Variables
 - :ref:`float<class_float>` **z** - Z component of the quaternion. Default value: ``0``
 
 
-Numeric Constants
------------------
-
-- **IDENTITY** = **Quat( 0, 0, 0, 1 )**
-
-Description
------------
-
-A unit quaternion used for representing 3D rotations.
-
-It is similar to :ref:`Basis<class_basis>`, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. But due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating point errors.
-
-Quaternions need to be (re)normalized.
-
-Tutorials
----------
-
-- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
-- :doc:`../tutorials/math/rotations`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Basis<class_basis>` from **)**
+- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Basis<class_Basis>` from **)**
 
 Returns the rotation matrix corresponding to the given quaternion.
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Vector3<class_vector3>` euler **)**
+- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Returns a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Returns a quaternion that will rotate around the given axis by the specified angle. The axis must be a normalized vector.
 
 .. _class_Quat_Quat:
 
-- :ref:`Quat<class_quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
+- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
 Returns a quaternion defined by these values.
 
 .. _class_Quat_cubic_slerp:
 
-- :ref:`Quat<class_quat>` **cubic_slerp** **(** :ref:`Quat<class_quat>` b, :ref:`Quat<class_quat>` pre_a, :ref:`Quat<class_quat>` post_b, :ref:`float<class_float>` t **)**
+- :ref:`Quat<class_Quat>` **cubic_slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` t **)**
 
 Performs a cubic spherical-linear interpolation with another quaternion.
 
 .. _class_Quat_dot:
 
-- :ref:`float<class_float>` **dot** **(** :ref:`Quat<class_quat>` b **)**
+- :ref:`float<class_float>` **dot** **(** :ref:`Quat<class_Quat>` b **)**
 
 Returns the dot product of two quaternions.
 
 .. _class_Quat_get_euler:
 
-- :ref:`Vector3<class_vector3>` **get_euler** **(** **)**
+- :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
 Return Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_inverse:
 
-- :ref:`Quat<class_quat>` **inverse** **(** **)**
+- :ref:`Quat<class_Quat>` **inverse** **(** **)**
 
 Returns the inverse of the quaternion.
 
@@ -164,37 +164,37 @@ Returns the length of the quaternion, squared.
 
 .. _class_Quat_normalized:
 
-- :ref:`Quat<class_quat>` **normalized** **(** **)**
+- :ref:`Quat<class_Quat>` **normalized** **(** **)**
 
 Returns a copy of the quaternion, normalized to unit length.
 
 .. _class_Quat_set_axis_angle:
 
-- void **set_axis_angle** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+- void **set_axis_angle** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Set the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
 
 .. _class_Quat_set_euler:
 
-- void **set_euler** **(** :ref:`Vector3<class_vector3>` euler **)**
+- void **set_euler** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Set the quaternion to a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
 .. _class_Quat_slerp:
 
-- :ref:`Quat<class_quat>` **slerp** **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**
+- :ref:`Quat<class_Quat>` **slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**
 
 Performs a spherical-linear interpolation with another quaternion.
 
 .. _class_Quat_slerpni:
 
-- :ref:`Quat<class_quat>` **slerpni** **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**
+- :ref:`Quat<class_Quat>` **slerpni** **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**
 
 Performs a spherical-linear interpolation with another quaterion without checking if the rotation path is not bigger than 90°.
 
 .. _class_Quat_xform:
 
-- :ref:`Vector3<class_vector3>` **xform** **(** :ref:`Vector3<class_vector3>` v **)**
+- :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Transforms the vector ``v`` by this quaternion.
 

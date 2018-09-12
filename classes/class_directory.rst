@@ -7,8 +7,7 @@
 Directory
 =========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,45 +15,45 @@ Brief Description
 
 Type used to handle the filesystem.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`change_dir<class_Directory_change_dir>` **(** :ref:`String<class_string>` todir **)**                                                                  |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`change_dir<class_Directory_change_dir>` **(** :ref:`String<class_String>` todir **)**                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`copy<class_Directory_copy>` **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to **)**                                               |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`copy<class_Directory_copy>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`current_is_dir<class_Directory_current_is_dir>` **(** **)** const                                                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`dir_exists<class_Directory_dir_exists>` **(** :ref:`String<class_string>` path **)**                                                                   |
+| :ref:`bool<class_bool>`                | :ref:`dir_exists<class_Directory_dir_exists>` **(** :ref:`String<class_String>` path **)**                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`file_exists<class_Directory_file_exists>` **(** :ref:`String<class_string>` path **)**                                                                 |
+| :ref:`bool<class_bool>`                | :ref:`file_exists<class_Directory_file_exists>` **(** :ref:`String<class_String>` path **)**                                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_current_dir<class_Directory_get_current_dir>` **(** **)**                                                                                          |
+| :ref:`String<class_String>`            | :ref:`get_current_dir<class_Directory_get_current_dir>` **(** **)**                                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_current_drive<class_Directory_get_current_drive>` **(** **)**                                                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_drive<class_Directory_get_drive>` **(** :ref:`int<class_int>` idx **)**                                                                            |
+| :ref:`String<class_String>`            | :ref:`get_drive<class_Directory_get_drive>` **(** :ref:`int<class_int>` idx **)**                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_drive_count<class_Directory_get_drive_count>` **(** **)**                                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_next<class_Directory_get_next>` **(** **)**                                                                                                        |
+| :ref:`String<class_String>`            | :ref:`get_next<class_Directory_get_next>` **(** **)**                                                                                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_space_left<class_Directory_get_space_left>` **(** **)**                                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`list_dir_begin<class_Directory_list_dir_begin>` **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`list_dir_begin<class_Directory_list_dir_begin>` **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)** |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`list_dir_end<class_Directory_list_dir_end>` **(** **)**                                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`make_dir<class_Directory_make_dir>` **(** :ref:`String<class_string>` path **)**                                                                       |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`make_dir<class_Directory_make_dir>` **(** :ref:`String<class_String>` path **)**                                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`make_dir_recursive<class_Directory_make_dir_recursive>` **(** :ref:`String<class_string>` path **)**                                                   |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`make_dir_recursive<class_Directory_make_dir_recursive>` **(** :ref:`String<class_String>` path **)**                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`open<class_Directory_open>` **(** :ref:`String<class_string>` path **)**                                                                               |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`open<class_Directory_open>` **(** :ref:`String<class_String>` path **)**                                                                               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`remove<class_Directory_remove>` **(** :ref:`String<class_string>` path **)**                                                                           |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`remove<class_Directory_remove>` **(** :ref:`String<class_String>` path **)**                                                                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`rename<class_Directory_rename>` **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to **)**                                           |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`rename<class_Directory_rename>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -85,24 +84,24 @@ Tutorials
 
 - :doc:`../getting_started/step_by_step/filesystem`
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Directory_change_dir:
 
-- :ref:`Error<enum_@globalscope_error>` **change_dir** **(** :ref:`String<class_string>` todir **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **change_dir** **(** :ref:`String<class_String>` todir **)**
 
 Change the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or ERR\_\*).
 
 .. _class_Directory_copy:
 
-- :ref:`Error<enum_@globalscope_error>` **copy** **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **copy** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Copy the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
+Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_current_is_dir:
 
@@ -112,19 +111,19 @@ Return whether the current item processed with the last :ref:`get_next<class_Dir
 
 .. _class_Directory_dir_exists:
 
-- :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_string>` path **)**
+- :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
 
 Return whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
 .. _class_Directory_file_exists:
 
-- :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_string>` path **)**
+- :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
 Return whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
 .. _class_Directory_get_current_dir:
 
-- :ref:`String<class_string>` **get_current_dir** **(** **)**
+- :ref:`String<class_String>` **get_current_dir** **(** **)**
 
 Return the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
@@ -136,7 +135,7 @@ Returns the currently opened directory's drive index. See :ref:`get_drive<class_
 
 .. _class_Directory_get_drive:
 
-- :ref:`String<class_string>` **get_drive** **(** :ref:`int<class_int>` idx **)**
+- :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
 On Windows, return the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
 
@@ -148,7 +147,7 @@ On Windows, return the number of drives (partitions) mounted on the current file
 
 .. _class_Directory_get_next:
 
-- :ref:`String<class_string>` **get_next** **(** **)**
+- :ref:`String<class_String>` **get_next** **(** **)**
 
 Return the next element (file or directory) in the current directory (including ``.`` and ``..``, unless ``skip_navigational`` was given to :ref:`list_dir_begin<class_Directory_list_dir_begin>`).
 
@@ -162,7 +161,7 @@ On Unix desktop systems, return the available space on the current directory's d
 
 .. _class_Directory_list_dir_begin:
 
-- :ref:`Error<enum_@globalscope_error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
 
 Initialise the stream used to list all files and directories using the :ref:`get_next<class_Directory_get_next>` function, closing the current opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_list_dir_end>`.
 
@@ -178,42 +177,42 @@ Close the current stream opened with :ref:`list_dir_begin<class_Directory_list_d
 
 .. _class_Directory_make_dir:
 
-- :ref:`Error<enum_@globalscope_error>` **make_dir** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **make_dir** **(** :ref:`String<class_String>` path **)**
 
 Create a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_make_dir_recursive:
 
-- :ref:`Error<enum_@globalscope_error>` **make_dir_recursive** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive** **(** :ref:`String<class_String>` path **)**
 
 Create a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_open:
 
-- :ref:`Error<enum_@globalscope_error>` **open** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
 
 Open an existing directory of the filesystem. The *path* argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
-The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or ERR\_\*).
 
 .. _class_Directory_remove:
 
-- :ref:`Error<enum_@globalscope_error>` **remove** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
 
 .. _class_Directory_rename:
 
-- :ref:`Error<enum_@globalscope_error>` **rename** **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **rename** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
 
 

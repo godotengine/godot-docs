@@ -7,8 +7,7 @@
 Sprite3D
 ========
 
-**Inherits:** :ref:`SpriteBase3D<class_spritebase3d>` **<** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -26,8 +25,13 @@ Signals
 Emitted when the :ref:`frame<class_Sprite3D_frame>` changes.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+
+Property Descriptions
+---------------------
 
   .. _class_Sprite3D_frame:
 
@@ -43,19 +47,14 @@ Member Variables
 
   .. _class_Sprite3D_region_rect:
 
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_region_enabled>` must be ``true``.
+- :ref:`Rect2<class_Rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_region_enabled>` must be ``true``.
 
   .. _class_Sprite3D_texture:
 
-- :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
+- :ref:`Texture<class_Texture>` **texture** - :ref:`Texture<class_Texture>` object to draw.
 
   .. _class_Sprite3D_vframes:
 
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
 
-
-Description
------------
-
-A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 

@@ -7,8 +7,7 @@
 GDNativeLibrary
 ===============
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_current_dependencies<class_GDNativeLibrary_get_current_dependencies>` **(** **)** const |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_current_dependencies<class_GDNativeLibrary_get_current_dependencies>` **(** **)** const |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_current_library_path<class_GDNativeLibrary_get_current_library_path>` **(** **)** const |
+| :ref:`String<class_String>`                    | :ref:`get_current_library_path<class_GDNativeLibrary_get_current_library_path>` **(** **)** const |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_GDNativeLibrary_config_file:
 
-- :ref:`ConfigFile<class_configfile>` **config_file**
+- :ref:`ConfigFile<class_ConfigFile>` **config_file**
 
   .. _class_GDNativeLibrary_load_once:
 
@@ -46,18 +45,18 @@ Member Variables
 
   .. _class_GDNativeLibrary_symbol_prefix:
 
-- :ref:`String<class_string>` **symbol_prefix**
+- :ref:`String<class_String>` **symbol_prefix**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GDNativeLibrary_get_current_dependencies:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_current_dependencies** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** const
 
 .. _class_GDNativeLibrary_get_current_library_path:
 
-- :ref:`String<class_string>` **get_current_library_path** **(** **)** const
+- :ref:`String<class_String>` **get_current_library_path** **(** **)** const
 
 

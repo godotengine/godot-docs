@@ -7,10 +7,8 @@
 MainLoop
 ========
 
-**Inherits:** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`SceneTree<class_scenetree>`
-
+**Inherits:** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`SceneTree<class_SceneTree>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 Main loop is the abstract main loop base class.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_drop_files<class_MainLoop__drop_files>` **(** :ref:`PoolStringArray<class_poolstringarray>` files, :ref:`int<class_int>` screen **)** virtual |
+| void                     | :ref:`_drop_files<class_MainLoop__drop_files>` **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` screen **)** virtual |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`_finalize<class_MainLoop__finalize>` **(** **)** virtual                                                                                       |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -30,9 +28,9 @@ Member Functions
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`_initialize<class_MainLoop__initialize>` **(** **)** virtual                                                                                   |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_input_event<class_MainLoop__input_event>` **(** :ref:`InputEvent<class_inputevent>` ev **)** virtual                                          |
+| void                     | :ref:`_input_event<class_MainLoop__input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual                                       |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_input_text<class_MainLoop__input_text>` **(** :ref:`String<class_string>` text **)** virtual                                                  |
+| void                     | :ref:`_input_text<class_MainLoop__input_text>` **(** :ref:`String<class_String>` text **)** virtual                                                  |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`_iteration<class_MainLoop__iteration>` **(** :ref:`float<class_float>` delta **)** virtual                                                     |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,15 +40,15 @@ Member Functions
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`init<class_MainLoop_init>` **(** **)**                                                                                                         |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`input_event<class_MainLoop_input_event>` **(** :ref:`InputEvent<class_inputevent>` ev **)**                                                    |
+| void                     | :ref:`input_event<class_MainLoop_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                 |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`input_text<class_MainLoop_input_text>` **(** :ref:`String<class_string>` text **)**                                                            |
+| void                     | :ref:`input_text<class_MainLoop_input_text>` **(** :ref:`String<class_String>` text **)**                                                            |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`iteration<class_MainLoop_iteration>` **(** :ref:`float<class_float>` delta **)**                                                               |
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Constants
+---------
 
 - **NOTIFICATION_WM_MOUSE_ENTER** = **2**
 - **NOTIFICATION_WM_MOUSE_EXIT** = **3**
@@ -67,14 +65,14 @@ Numeric Constants
 Description
 -----------
 
-Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a ``MainLoop`` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneTree<class_scenetree>` is created), unless a main :ref:`Script<class_script>` is supplied, which may or not create and return a ``MainLoop``.
+Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a ``MainLoop`` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created), unless a main :ref:`Script<class_Script>` is supplied, which may or not create and return a ``MainLoop``.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_MainLoop__drop_files:
 
-- void **_drop_files** **(** :ref:`PoolStringArray<class_poolstringarray>` files, :ref:`int<class_int>` screen **)** virtual
+- void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` screen **)** virtual
 
 .. _class_MainLoop__finalize:
 
@@ -96,11 +94,11 @@ Called once during initialization.
 
 .. _class_MainLoop__input_event:
 
-- void **_input_event** **(** :ref:`InputEvent<class_inputevent>` ev **)** virtual
+- void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
 .. _class_MainLoop__input_text:
 
-- void **_input_text** **(** :ref:`String<class_string>` text **)** virtual
+- void **_input_text** **(** :ref:`String<class_String>` text **)** virtual
 
 .. _class_MainLoop__iteration:
 
@@ -120,11 +118,11 @@ Called once during initialization.
 
 .. _class_MainLoop_input_event:
 
-- void **input_event** **(** :ref:`InputEvent<class_inputevent>` ev **)**
+- void **input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
 .. _class_MainLoop_input_text:
 
-- void **input_text** **(** :ref:`String<class_string>` text **)**
+- void **input_text** **(** :ref:`String<class_String>` text **)**
 
 .. _class_MainLoop_iteration:
 

@@ -7,10 +7,8 @@
 PhysicsBody2D
 =============
 
-**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`RigidBody2D<class_rigidbody2d>`, :ref:`StaticBody2D<class_staticbody2d>`, :ref:`KinematicBody2D<class_kinematicbody2d>`
-
+**Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`, :ref:`KinematicBody2D<class_KinematicBody2D>`
 **Category:** Core
 
 Brief Description
@@ -18,25 +16,35 @@ Brief Description
 
 Base class for all objects affected by physics in 2D space.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**                   |
+| void                     | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**             |
+| void                     | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
+
+Property Descriptions
+---------------------
 
   .. _class_PhysicsBody2D_collision_layer:
 
@@ -55,22 +63,12 @@ A contact is detected if object A is in any of the layers that object B scans, o
 - :ref:`int<class_int>` **layers** - Both collision_layer and collision_mask. Returns collision_layer when accessed. Updates collision_layers and collision_mask when modified.
 
 
-Description
------------
-
-PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PhysicsBody2D_add_collision_exception_with:
 
-- void **add_collision_exception_with** **(** :ref:`Node<class_node>` body **)**
+- void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
 
@@ -88,7 +86,7 @@ Return an individual bit on the collision mask.
 
 .. _class_PhysicsBody2D_remove_collision_exception_with:
 
-- void **remove_collision_exception_with** **(** :ref:`Node<class_node>` body **)**
+- void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Removes a body from the list of bodies that this body can't collide with.
 

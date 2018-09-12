@@ -7,8 +7,7 @@
 AnimatedSprite
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 Sprite node that can use multiple textures for animation.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_playing<class_AnimatedSprite_is_playing>` **(** **)** const                   |
 +--------------------------+----------------------------------------------------------------------------------------+
-| void                     | :ref:`play<class_AnimatedSprite_play>` **(** :ref:`String<class_string>` anim="" **)** |
+| void                     | :ref:`play<class_AnimatedSprite_play>` **(** :ref:`String<class_String>` anim="" **)** |
 +--------------------------+----------------------------------------------------------------------------------------+
 | void                     | :ref:`stop<class_AnimatedSprite_stop>` **(** **)**                                     |
 +--------------------------+----------------------------------------------------------------------------------------+
@@ -43,12 +42,17 @@ Emitted when the animation is finished (when it plays the last frame). If the an
 Emitted when :ref:`frame<class_AnimatedSprite_frame>` changed.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
+
+Property Descriptions
+---------------------
 
   .. _class_AnimatedSprite_animation:
 
-- :ref:`String<class_string>` **animation** - The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
+- :ref:`String<class_String>` **animation** - The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
   .. _class_AnimatedSprite_centered:
 
@@ -68,11 +72,11 @@ Member Variables
 
   .. _class_AnimatedSprite_frames:
 
-- :ref:`SpriteFrames<class_spriteframes>` **frames** - The :ref:`SpriteFrames<class_spriteframes>` resource containing the animation(s).
+- :ref:`SpriteFrames<class_SpriteFrames>` **frames** - The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
   .. _class_AnimatedSprite_offset:
 
-- :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+- :ref:`Vector2<class_Vector2>` **offset** - The texture's drawing offset.
 
   .. _class_AnimatedSprite_playing:
 
@@ -83,13 +87,8 @@ Member Variables
 - :ref:`float<class_float>` **speed_scale**
 
 
-Description
------------
-
-Animations are created using a :ref:`SpriteFrames<class_spriteframes>` resource, which can be configured in the editor via the SpriteFrames panel.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AnimatedSprite_is_playing:
 
@@ -99,7 +98,7 @@ Return true if an animation if currently being played.
 
 .. _class_AnimatedSprite_play:
 
-- void **play** **(** :ref:`String<class_string>` anim="" **)**
+- void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
 

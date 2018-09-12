@@ -7,8 +7,7 @@
 VisualShaderNodeVec3Constant
 ============================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_VisualShaderNodeVec3Constant_constant:
 
-- :ref:`Vector3<class_vector3>` **constant**
+- :ref:`Vector3<class_Vector3>` **constant**
 
 

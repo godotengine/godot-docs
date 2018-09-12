@@ -7,8 +7,7 @@
 PinJoint2D
 ==========
 
-**Inherits:** :ref:`Joint2D<class_joint2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Pin Joint for 2D Shapes.
 
-Member Variables
-----------------
+Description
+-----------
+
+Pin Joint for 2D Rigid Bodies. It pins two bodies (rigid or static) together.
+
+Property Descriptions
+---------------------
 
   .. _class_PinJoint2D_softness:
 
 - :ref:`float<class_float>` **softness** - The higher this value, the more the bond to the pinned partner can flex.
 
-
-Description
------------
-
-Pin Joint for 2D Rigid Bodies. It pins two bodies (rigid or static) together.
 

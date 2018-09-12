@@ -7,17 +7,21 @@
 PrismMesh
 =========
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Class representing a prism-shaped :ref:`PrimitiveMesh<class_primitivemesh>`.
+Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Property Descriptions
+---------------------
 
   .. _class_PrismMesh_left_to_right:
 
@@ -25,7 +29,7 @@ Member Variables
 
   .. _class_PrismMesh_size:
 
-- :ref:`Vector3<class_vector3>` **size** - Size of the prism. Defaults to (2.0, 2.0, 2.0).
+- :ref:`Vector3<class_Vector3>` **size** - Size of the prism. Defaults to (2.0, 2.0, 2.0).
 
   .. _class_PrismMesh_subdivide_depth:
 
@@ -39,9 +43,4 @@ Member Variables
 
 - :ref:`int<class_int>` **subdivide_width** - Number of added edge loops along the x-axis. Defaults to 0.
 
-
-Description
------------
-
-Class representing a prism-shaped :ref:`PrimitiveMesh<class_primitivemesh>`.
 

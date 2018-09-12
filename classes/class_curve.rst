@@ -7,8 +7,7 @@
 Curve
 =====
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 A mathematic curve.
 
-Member Functions
-----------------
+Methods
+-------
 
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`add_point<class_Curve_add_point>` **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_curve_tangentmode>` left_mode=0, :ref:`TangentMode<enum_curve_tangentmode>` right_mode=0 **)** |
+| :ref:`int<class_int>`                       | :ref:`add_point<class_Curve_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)** |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`bake<class_Curve_bake>` **(** **)**                                                                                                                                                                                                                                                        |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -28,13 +27,15 @@ Member Functions
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`clear_points<class_Curve_clear_points>` **(** **)**                                                                                                                                                                                                                                        |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TangentMode<enum_curve_tangentmode>`  | :ref:`get_point_left_mode<class_Curve_get_point_left_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                        |
+| :ref:`int<class_int>`                       | :ref:`get_point_count<class_Curve_get_point_count>` **(** **)** const                                                                                                                                                                                                                            |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TangentMode<enum_Curve_TangentMode>`  | :ref:`get_point_left_mode<class_Curve_get_point_left_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                        |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                   | :ref:`get_point_left_tangent<class_Curve_get_point_left_tangent>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                  |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`               | :ref:`get_point_position<class_Curve_get_point_position>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>`               | :ref:`get_point_position<class_Curve_get_point_position>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                          |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TangentMode<enum_curve_tangentmode>`  | :ref:`get_point_right_mode<class_Curve_get_point_right_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                      |
+| :ref:`TangentMode<enum_Curve_TangentMode>`  | :ref:`get_point_right_mode<class_Curve_get_point_right_mode>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                      |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                   | :ref:`get_point_right_tangent<class_Curve_get_point_right_tangent>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                                |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,13 +45,13 @@ Member Functions
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`remove_point<class_Curve_remove_point>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                            |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_point_left_mode<class_Curve_set_point_left_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_curve_tangentmode>` mode **)**                                                                                                                                             |
+| void                                        | :ref:`set_point_left_mode<class_Curve_set_point_left_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**                                                                                                                                             |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_point_left_tangent<class_Curve_set_point_left_tangent>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**                                                                                                                                                     |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`set_point_offset<class_Curve_set_point_offset>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**                                                                                                                                                                  |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_point_right_mode<class_Curve_set_point_right_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_curve_tangentmode>` mode **)**                                                                                                                                           |
+| void                                        | :ref:`set_point_right_mode<class_Curve_set_point_right_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**                                                                                                                                           |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_point_right_tangent<class_Curve_set_point_right_tangent>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**                                                                                                                                                   |
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,24 +68,8 @@ Signals
 Emitted when :ref:`max_value<class_Curve_max_value>` or :ref:`min_value<class_Curve_min_value>` is changed.
 
 
-Member Variables
-----------------
-
-  .. _class_Curve_bake_resolution:
-
-- :ref:`int<class_int>` **bake_resolution** - The number of points to include in the baked (i.e. cached) curve data.
-
-  .. _class_Curve_max_value:
-
-- :ref:`float<class_float>` **max_value** - The maximum value the curve can reach. Default value: ``1``.
-
-  .. _class_Curve_min_value:
-
-- :ref:`float<class_float>` **min_value** - The minimum value the curve can reach. Default value: ``0``.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Curve_TangentMode:
 
@@ -100,12 +85,28 @@ Description
 
 A curve that can be saved and re-used for other objects. By default it ranges between ``0`` and ``1`` on the y-axis and positions points relative to the ``0.5`` y-position.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Curve_bake_resolution:
+
+- :ref:`int<class_int>` **bake_resolution** - The number of points to include in the baked (i.e. cached) curve data.
+
+  .. _class_Curve_max_value:
+
+- :ref:`float<class_float>` **max_value** - The maximum value the curve can reach. Default value: ``1``.
+
+  .. _class_Curve_min_value:
+
+- :ref:`float<class_float>` **min_value** - The minimum value the curve can reach. Default value: ``0``.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Curve_add_point:
 
-- :ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_curve_tangentmode>` left_mode=0, :ref:`TangentMode<enum_curve_tangentmode>` right_mode=0 **)**
+- :ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)**
 
 Adds a point to the curve. For each side, if the ``*_mode`` is ``TANGENT_LINEAR``, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to ``TANGENT_FREE``.
 
@@ -127,9 +128,15 @@ Removes points that are closer than ``CMP_EPSILON`` (0.00001) units to their nei
 
 Removes all points from the curve.
 
+.. _class_Curve_get_point_count:
+
+- :ref:`int<class_int>` **get_point_count** **(** **)** const
+
+Returns the number of points describing the curve.
+
 .. _class_Curve_get_point_left_mode:
 
-- :ref:`TangentMode<enum_curve_tangentmode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
+- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** const
 
 Returns the left ``TangentMode`` for the point at ``index``.
 
@@ -141,13 +148,13 @@ Returns the left tangent angle (in degrees) for the point at ``index``.
 
 .. _class_Curve_get_point_position:
 
-- :ref:`Vector2<class_vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** const
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** const
 
 Returns the curve coordinates for the point at ``index``.
 
 .. _class_Curve_get_point_right_mode:
 
-- :ref:`TangentMode<enum_curve_tangentmode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** const
+- :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** const
 
 Returns the right ``TangentMode`` for the point at ``index``.
 
@@ -177,7 +184,7 @@ Removes the point at ``index`` from the curve.
 
 .. _class_Curve_set_point_left_mode:
 
-- void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_curve_tangentmode>` mode **)**
+- void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
 Sets the left ``TangentMode`` for the point at ``index`` to ``mode``.
 
@@ -195,7 +202,7 @@ Sets the offset from ``0.5``
 
 .. _class_Curve_set_point_right_mode:
 
-- void **set_point_right_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_curve_tangentmode>` mode **)**
+- void **set_point_right_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
 Sets the right ``TangentMode`` for the point at ``index`` to ``mode``.
 

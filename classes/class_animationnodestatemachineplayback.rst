@@ -7,8 +7,7 @@
 AnimationNodeStateMachinePlayback
 =================================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,33 +15,33 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_get_current_node>` **(** **)** const           |
+| :ref:`String<class_String>`                    | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_get_current_node>` **(** **)** const           |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_get_travel_path>` **(** **)** const             |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_get_travel_path>` **(** **)** const             |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_is_playing>` **(** **)** const                       |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`start<class_AnimationNodeStateMachinePlayback_start>` **(** :ref:`String<class_string>` node **)**      |
+| void                                           | :ref:`start<class_AnimationNodeStateMachinePlayback_start>` **(** :ref:`String<class_String>` node **)**      |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`stop<class_AnimationNodeStateMachinePlayback_stop>` **(** **)**                                         |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`travel<class_AnimationNodeStateMachinePlayback_travel>` **(** :ref:`String<class_string>` to_node **)** |
+| void                                           | :ref:`travel<class_AnimationNodeStateMachinePlayback_travel>` **(** :ref:`String<class_String>` to_node **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AnimationNodeStateMachinePlayback_get_current_node:
 
-- :ref:`String<class_string>` **get_current_node** **(** **)** const
+- :ref:`String<class_String>` **get_current_node** **(** **)** const
 
 .. _class_AnimationNodeStateMachinePlayback_get_travel_path:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_travel_path** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** const
 
 .. _class_AnimationNodeStateMachinePlayback_is_playing:
 
@@ -50,7 +49,7 @@ Member Function Description
 
 .. _class_AnimationNodeStateMachinePlayback_start:
 
-- void **start** **(** :ref:`String<class_string>` node **)**
+- void **start** **(** :ref:`String<class_String>` node **)**
 
 .. _class_AnimationNodeStateMachinePlayback_stop:
 
@@ -58,6 +57,6 @@ Member Function Description
 
 .. _class_AnimationNodeStateMachinePlayback_travel:
 
-- void **travel** **(** :ref:`String<class_string>` to_node **)**
+- void **travel** **(** :ref:`String<class_String>` to_node **)**
 
 

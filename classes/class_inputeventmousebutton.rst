@@ -7,8 +7,7 @@
 InputEventMouseButton
 =====================
 
-**Inherits:** :ref:`InputEventMouse<class_inputeventmouse>` **<** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,22 @@ Brief Description
 
 Input event type for mouse button events.
 
-Member Variables
-----------------
+Description
+-----------
+
+Contains mouse click information. See :ref:`Node._input<class_Node__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+
+Property Descriptions
+---------------------
 
   .. _class_InputEventMouseButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@globalscope>`.
+- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
   .. _class_InputEventMouseButton_doubleclick:
 
@@ -35,14 +44,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **pressed** - If ``true`` the mouse button's state is pressed. If ``false`` the mouse button's state is released.
 
-
-Description
------------
-
-Contains mouse click information. See :ref:`Node._input<class_Node__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 

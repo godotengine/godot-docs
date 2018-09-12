@@ -7,8 +7,7 @@
 EditorResourcePreview
 =====================
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,19 +15,19 @@ Brief Description
 
 Helper to generate previews of resources or files.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_preview_generator<class_EditorResourcePreview_add_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>` generator **)**                                                                                             |
+| void  | :ref:`add_preview_generator<class_EditorResourcePreview_add_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                             |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`check_for_invalidation<class_EditorResourcePreview_check_for_invalidation>` **(** :ref:`String<class_string>` path **)**                                                                                                                                                |
+| void  | :ref:`check_for_invalidation<class_EditorResourcePreview_check_for_invalidation>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`queue_edited_resource_preview<class_EditorResourcePreview_queue_edited_resource_preview>` **(** :ref:`Resource<class_resource>` resource, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata **)** |
+| void  | :ref:`queue_edited_resource_preview<class_EditorResourcePreview_queue_edited_resource_preview>` **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)** |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`queue_resource_preview<class_EditorResourcePreview_queue_resource_preview>` **(** :ref:`String<class_string>` path, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata **)**                       |
+| void  | :ref:`queue_resource_preview<class_EditorResourcePreview_queue_resource_preview>` **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**                       |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`remove_preview_generator<class_EditorResourcePreview_remove_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>` generator **)**                                                                                       |
+| void  | :ref:`remove_preview_generator<class_EditorResourcePreview_remove_preview_generator>` **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**                                                                                       |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -36,7 +35,7 @@ Signals
 
 .. _class_EditorResourcePreview_preview_invalidated:
 
-- **preview_invalidated** **(** :ref:`String<class_string>` path **)**
+- **preview_invalidated** **(** :ref:`String<class_String>` path **)**
 
 If a preview was invalidated (changed) this signal will emit (using the path of the preview)
 
@@ -46,36 +45,36 @@ Description
 
 This object is used to generate previews for resources of files.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorResourcePreview_add_preview_generator:
 
-- void **add_preview_generator** **(** :ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>` generator **)**
+- void **add_preview_generator** **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**
 
 Create an own, custom preview generator.
 
 .. _class_EditorResourcePreview_check_for_invalidation:
 
-- void **check_for_invalidation** **(** :ref:`String<class_string>` path **)**
+- void **check_for_invalidation** **(** :ref:`String<class_String>` path **)**
 
 Check if the resource changed, if so it will be invalidated and the corresponding signal emitted.
 
 .. _class_EditorResourcePreview_queue_edited_resource_preview:
 
-- void **queue_edited_resource_preview** **(** :ref:`Resource<class_resource>` resource, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata **)**
+- void **queue_edited_resource_preview** **(** :ref:`Resource<class_Resource>` resource, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
 Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
 .. _class_EditorResourcePreview_queue_resource_preview:
 
-- void **queue_resource_preview** **(** :ref:`String<class_string>` path, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata **)**
+- void **queue_resource_preview** **(** :ref:`String<class_String>` path, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` receiver_func, :ref:`Variant<class_Variant>` userdata **)**
 
 Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
 .. _class_EditorResourcePreview_remove_preview_generator:
 
-- void **remove_preview_generator** **(** :ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>` generator **)**
+- void **remove_preview_generator** **(** :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>` generator **)**
 
 Remove a custom preview generator.
 

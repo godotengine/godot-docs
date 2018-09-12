@@ -7,8 +7,7 @@
 AnimatedTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_AnimatedTexture_fps:
 
@@ -29,7 +28,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_0/texture:
 
-- :ref:`Texture<class_texture>` **frame_0/texture**
+- :ref:`Texture<class_Texture>` **frame_0/texture**
 
   .. _class_AnimatedTexture_frame_1/delay_sec:
 
@@ -37,7 +36,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_1/texture:
 
-- :ref:`Texture<class_texture>` **frame_1/texture**
+- :ref:`Texture<class_Texture>` **frame_1/texture**
 
   .. _class_AnimatedTexture_frame_10/delay_sec:
 
@@ -45,7 +44,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_10/texture:
 
-- :ref:`Texture<class_texture>` **frame_10/texture**
+- :ref:`Texture<class_Texture>` **frame_10/texture**
 
   .. _class_AnimatedTexture_frame_100/delay_sec:
 
@@ -53,7 +52,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_100/texture:
 
-- :ref:`Texture<class_texture>` **frame_100/texture**
+- :ref:`Texture<class_Texture>` **frame_100/texture**
 
   .. _class_AnimatedTexture_frame_101/delay_sec:
 
@@ -61,7 +60,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_101/texture:
 
-- :ref:`Texture<class_texture>` **frame_101/texture**
+- :ref:`Texture<class_Texture>` **frame_101/texture**
 
   .. _class_AnimatedTexture_frame_102/delay_sec:
 
@@ -69,7 +68,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_102/texture:
 
-- :ref:`Texture<class_texture>` **frame_102/texture**
+- :ref:`Texture<class_Texture>` **frame_102/texture**
 
   .. _class_AnimatedTexture_frame_103/delay_sec:
 
@@ -77,7 +76,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_103/texture:
 
-- :ref:`Texture<class_texture>` **frame_103/texture**
+- :ref:`Texture<class_Texture>` **frame_103/texture**
 
   .. _class_AnimatedTexture_frame_104/delay_sec:
 
@@ -85,7 +84,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_104/texture:
 
-- :ref:`Texture<class_texture>` **frame_104/texture**
+- :ref:`Texture<class_Texture>` **frame_104/texture**
 
   .. _class_AnimatedTexture_frame_105/delay_sec:
 
@@ -93,7 +92,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_105/texture:
 
-- :ref:`Texture<class_texture>` **frame_105/texture**
+- :ref:`Texture<class_Texture>` **frame_105/texture**
 
   .. _class_AnimatedTexture_frame_106/delay_sec:
 
@@ -101,7 +100,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_106/texture:
 
-- :ref:`Texture<class_texture>` **frame_106/texture**
+- :ref:`Texture<class_Texture>` **frame_106/texture**
 
   .. _class_AnimatedTexture_frame_107/delay_sec:
 
@@ -109,7 +108,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_107/texture:
 
-- :ref:`Texture<class_texture>` **frame_107/texture**
+- :ref:`Texture<class_Texture>` **frame_107/texture**
 
   .. _class_AnimatedTexture_frame_108/delay_sec:
 
@@ -117,7 +116,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_108/texture:
 
-- :ref:`Texture<class_texture>` **frame_108/texture**
+- :ref:`Texture<class_Texture>` **frame_108/texture**
 
   .. _class_AnimatedTexture_frame_109/delay_sec:
 
@@ -125,7 +124,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_109/texture:
 
-- :ref:`Texture<class_texture>` **frame_109/texture**
+- :ref:`Texture<class_Texture>` **frame_109/texture**
 
   .. _class_AnimatedTexture_frame_11/delay_sec:
 
@@ -133,7 +132,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_11/texture:
 
-- :ref:`Texture<class_texture>` **frame_11/texture**
+- :ref:`Texture<class_Texture>` **frame_11/texture**
 
   .. _class_AnimatedTexture_frame_110/delay_sec:
 
@@ -141,7 +140,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_110/texture:
 
-- :ref:`Texture<class_texture>` **frame_110/texture**
+- :ref:`Texture<class_Texture>` **frame_110/texture**
 
   .. _class_AnimatedTexture_frame_111/delay_sec:
 
@@ -149,7 +148,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_111/texture:
 
-- :ref:`Texture<class_texture>` **frame_111/texture**
+- :ref:`Texture<class_Texture>` **frame_111/texture**
 
   .. _class_AnimatedTexture_frame_112/delay_sec:
 
@@ -157,7 +156,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_112/texture:
 
-- :ref:`Texture<class_texture>` **frame_112/texture**
+- :ref:`Texture<class_Texture>` **frame_112/texture**
 
   .. _class_AnimatedTexture_frame_113/delay_sec:
 
@@ -165,7 +164,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_113/texture:
 
-- :ref:`Texture<class_texture>` **frame_113/texture**
+- :ref:`Texture<class_Texture>` **frame_113/texture**
 
   .. _class_AnimatedTexture_frame_114/delay_sec:
 
@@ -173,7 +172,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_114/texture:
 
-- :ref:`Texture<class_texture>` **frame_114/texture**
+- :ref:`Texture<class_Texture>` **frame_114/texture**
 
   .. _class_AnimatedTexture_frame_115/delay_sec:
 
@@ -181,7 +180,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_115/texture:
 
-- :ref:`Texture<class_texture>` **frame_115/texture**
+- :ref:`Texture<class_Texture>` **frame_115/texture**
 
   .. _class_AnimatedTexture_frame_116/delay_sec:
 
@@ -189,7 +188,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_116/texture:
 
-- :ref:`Texture<class_texture>` **frame_116/texture**
+- :ref:`Texture<class_Texture>` **frame_116/texture**
 
   .. _class_AnimatedTexture_frame_117/delay_sec:
 
@@ -197,7 +196,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_117/texture:
 
-- :ref:`Texture<class_texture>` **frame_117/texture**
+- :ref:`Texture<class_Texture>` **frame_117/texture**
 
   .. _class_AnimatedTexture_frame_118/delay_sec:
 
@@ -205,7 +204,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_118/texture:
 
-- :ref:`Texture<class_texture>` **frame_118/texture**
+- :ref:`Texture<class_Texture>` **frame_118/texture**
 
   .. _class_AnimatedTexture_frame_119/delay_sec:
 
@@ -213,7 +212,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_119/texture:
 
-- :ref:`Texture<class_texture>` **frame_119/texture**
+- :ref:`Texture<class_Texture>` **frame_119/texture**
 
   .. _class_AnimatedTexture_frame_12/delay_sec:
 
@@ -221,7 +220,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_12/texture:
 
-- :ref:`Texture<class_texture>` **frame_12/texture**
+- :ref:`Texture<class_Texture>` **frame_12/texture**
 
   .. _class_AnimatedTexture_frame_120/delay_sec:
 
@@ -229,7 +228,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_120/texture:
 
-- :ref:`Texture<class_texture>` **frame_120/texture**
+- :ref:`Texture<class_Texture>` **frame_120/texture**
 
   .. _class_AnimatedTexture_frame_121/delay_sec:
 
@@ -237,7 +236,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_121/texture:
 
-- :ref:`Texture<class_texture>` **frame_121/texture**
+- :ref:`Texture<class_Texture>` **frame_121/texture**
 
   .. _class_AnimatedTexture_frame_122/delay_sec:
 
@@ -245,7 +244,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_122/texture:
 
-- :ref:`Texture<class_texture>` **frame_122/texture**
+- :ref:`Texture<class_Texture>` **frame_122/texture**
 
   .. _class_AnimatedTexture_frame_123/delay_sec:
 
@@ -253,7 +252,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_123/texture:
 
-- :ref:`Texture<class_texture>` **frame_123/texture**
+- :ref:`Texture<class_Texture>` **frame_123/texture**
 
   .. _class_AnimatedTexture_frame_124/delay_sec:
 
@@ -261,7 +260,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_124/texture:
 
-- :ref:`Texture<class_texture>` **frame_124/texture**
+- :ref:`Texture<class_Texture>` **frame_124/texture**
 
   .. _class_AnimatedTexture_frame_125/delay_sec:
 
@@ -269,7 +268,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_125/texture:
 
-- :ref:`Texture<class_texture>` **frame_125/texture**
+- :ref:`Texture<class_Texture>` **frame_125/texture**
 
   .. _class_AnimatedTexture_frame_126/delay_sec:
 
@@ -277,7 +276,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_126/texture:
 
-- :ref:`Texture<class_texture>` **frame_126/texture**
+- :ref:`Texture<class_Texture>` **frame_126/texture**
 
   .. _class_AnimatedTexture_frame_127/delay_sec:
 
@@ -285,7 +284,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_127/texture:
 
-- :ref:`Texture<class_texture>` **frame_127/texture**
+- :ref:`Texture<class_Texture>` **frame_127/texture**
 
   .. _class_AnimatedTexture_frame_128/delay_sec:
 
@@ -293,7 +292,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_128/texture:
 
-- :ref:`Texture<class_texture>` **frame_128/texture**
+- :ref:`Texture<class_Texture>` **frame_128/texture**
 
   .. _class_AnimatedTexture_frame_129/delay_sec:
 
@@ -301,7 +300,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_129/texture:
 
-- :ref:`Texture<class_texture>` **frame_129/texture**
+- :ref:`Texture<class_Texture>` **frame_129/texture**
 
   .. _class_AnimatedTexture_frame_13/delay_sec:
 
@@ -309,7 +308,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_13/texture:
 
-- :ref:`Texture<class_texture>` **frame_13/texture**
+- :ref:`Texture<class_Texture>` **frame_13/texture**
 
   .. _class_AnimatedTexture_frame_130/delay_sec:
 
@@ -317,7 +316,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_130/texture:
 
-- :ref:`Texture<class_texture>` **frame_130/texture**
+- :ref:`Texture<class_Texture>` **frame_130/texture**
 
   .. _class_AnimatedTexture_frame_131/delay_sec:
 
@@ -325,7 +324,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_131/texture:
 
-- :ref:`Texture<class_texture>` **frame_131/texture**
+- :ref:`Texture<class_Texture>` **frame_131/texture**
 
   .. _class_AnimatedTexture_frame_132/delay_sec:
 
@@ -333,7 +332,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_132/texture:
 
-- :ref:`Texture<class_texture>` **frame_132/texture**
+- :ref:`Texture<class_Texture>` **frame_132/texture**
 
   .. _class_AnimatedTexture_frame_133/delay_sec:
 
@@ -341,7 +340,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_133/texture:
 
-- :ref:`Texture<class_texture>` **frame_133/texture**
+- :ref:`Texture<class_Texture>` **frame_133/texture**
 
   .. _class_AnimatedTexture_frame_134/delay_sec:
 
@@ -349,7 +348,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_134/texture:
 
-- :ref:`Texture<class_texture>` **frame_134/texture**
+- :ref:`Texture<class_Texture>` **frame_134/texture**
 
   .. _class_AnimatedTexture_frame_135/delay_sec:
 
@@ -357,7 +356,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_135/texture:
 
-- :ref:`Texture<class_texture>` **frame_135/texture**
+- :ref:`Texture<class_Texture>` **frame_135/texture**
 
   .. _class_AnimatedTexture_frame_136/delay_sec:
 
@@ -365,7 +364,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_136/texture:
 
-- :ref:`Texture<class_texture>` **frame_136/texture**
+- :ref:`Texture<class_Texture>` **frame_136/texture**
 
   .. _class_AnimatedTexture_frame_137/delay_sec:
 
@@ -373,7 +372,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_137/texture:
 
-- :ref:`Texture<class_texture>` **frame_137/texture**
+- :ref:`Texture<class_Texture>` **frame_137/texture**
 
   .. _class_AnimatedTexture_frame_138/delay_sec:
 
@@ -381,7 +380,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_138/texture:
 
-- :ref:`Texture<class_texture>` **frame_138/texture**
+- :ref:`Texture<class_Texture>` **frame_138/texture**
 
   .. _class_AnimatedTexture_frame_139/delay_sec:
 
@@ -389,7 +388,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_139/texture:
 
-- :ref:`Texture<class_texture>` **frame_139/texture**
+- :ref:`Texture<class_Texture>` **frame_139/texture**
 
   .. _class_AnimatedTexture_frame_14/delay_sec:
 
@@ -397,7 +396,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_14/texture:
 
-- :ref:`Texture<class_texture>` **frame_14/texture**
+- :ref:`Texture<class_Texture>` **frame_14/texture**
 
   .. _class_AnimatedTexture_frame_140/delay_sec:
 
@@ -405,7 +404,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_140/texture:
 
-- :ref:`Texture<class_texture>` **frame_140/texture**
+- :ref:`Texture<class_Texture>` **frame_140/texture**
 
   .. _class_AnimatedTexture_frame_141/delay_sec:
 
@@ -413,7 +412,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_141/texture:
 
-- :ref:`Texture<class_texture>` **frame_141/texture**
+- :ref:`Texture<class_Texture>` **frame_141/texture**
 
   .. _class_AnimatedTexture_frame_142/delay_sec:
 
@@ -421,7 +420,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_142/texture:
 
-- :ref:`Texture<class_texture>` **frame_142/texture**
+- :ref:`Texture<class_Texture>` **frame_142/texture**
 
   .. _class_AnimatedTexture_frame_143/delay_sec:
 
@@ -429,7 +428,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_143/texture:
 
-- :ref:`Texture<class_texture>` **frame_143/texture**
+- :ref:`Texture<class_Texture>` **frame_143/texture**
 
   .. _class_AnimatedTexture_frame_144/delay_sec:
 
@@ -437,7 +436,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_144/texture:
 
-- :ref:`Texture<class_texture>` **frame_144/texture**
+- :ref:`Texture<class_Texture>` **frame_144/texture**
 
   .. _class_AnimatedTexture_frame_145/delay_sec:
 
@@ -445,7 +444,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_145/texture:
 
-- :ref:`Texture<class_texture>` **frame_145/texture**
+- :ref:`Texture<class_Texture>` **frame_145/texture**
 
   .. _class_AnimatedTexture_frame_146/delay_sec:
 
@@ -453,7 +452,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_146/texture:
 
-- :ref:`Texture<class_texture>` **frame_146/texture**
+- :ref:`Texture<class_Texture>` **frame_146/texture**
 
   .. _class_AnimatedTexture_frame_147/delay_sec:
 
@@ -461,7 +460,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_147/texture:
 
-- :ref:`Texture<class_texture>` **frame_147/texture**
+- :ref:`Texture<class_Texture>` **frame_147/texture**
 
   .. _class_AnimatedTexture_frame_148/delay_sec:
 
@@ -469,7 +468,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_148/texture:
 
-- :ref:`Texture<class_texture>` **frame_148/texture**
+- :ref:`Texture<class_Texture>` **frame_148/texture**
 
   .. _class_AnimatedTexture_frame_149/delay_sec:
 
@@ -477,7 +476,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_149/texture:
 
-- :ref:`Texture<class_texture>` **frame_149/texture**
+- :ref:`Texture<class_Texture>` **frame_149/texture**
 
   .. _class_AnimatedTexture_frame_15/delay_sec:
 
@@ -485,7 +484,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_15/texture:
 
-- :ref:`Texture<class_texture>` **frame_15/texture**
+- :ref:`Texture<class_Texture>` **frame_15/texture**
 
   .. _class_AnimatedTexture_frame_150/delay_sec:
 
@@ -493,7 +492,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_150/texture:
 
-- :ref:`Texture<class_texture>` **frame_150/texture**
+- :ref:`Texture<class_Texture>` **frame_150/texture**
 
   .. _class_AnimatedTexture_frame_151/delay_sec:
 
@@ -501,7 +500,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_151/texture:
 
-- :ref:`Texture<class_texture>` **frame_151/texture**
+- :ref:`Texture<class_Texture>` **frame_151/texture**
 
   .. _class_AnimatedTexture_frame_152/delay_sec:
 
@@ -509,7 +508,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_152/texture:
 
-- :ref:`Texture<class_texture>` **frame_152/texture**
+- :ref:`Texture<class_Texture>` **frame_152/texture**
 
   .. _class_AnimatedTexture_frame_153/delay_sec:
 
@@ -517,7 +516,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_153/texture:
 
-- :ref:`Texture<class_texture>` **frame_153/texture**
+- :ref:`Texture<class_Texture>` **frame_153/texture**
 
   .. _class_AnimatedTexture_frame_154/delay_sec:
 
@@ -525,7 +524,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_154/texture:
 
-- :ref:`Texture<class_texture>` **frame_154/texture**
+- :ref:`Texture<class_Texture>` **frame_154/texture**
 
   .. _class_AnimatedTexture_frame_155/delay_sec:
 
@@ -533,7 +532,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_155/texture:
 
-- :ref:`Texture<class_texture>` **frame_155/texture**
+- :ref:`Texture<class_Texture>` **frame_155/texture**
 
   .. _class_AnimatedTexture_frame_156/delay_sec:
 
@@ -541,7 +540,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_156/texture:
 
-- :ref:`Texture<class_texture>` **frame_156/texture**
+- :ref:`Texture<class_Texture>` **frame_156/texture**
 
   .. _class_AnimatedTexture_frame_157/delay_sec:
 
@@ -549,7 +548,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_157/texture:
 
-- :ref:`Texture<class_texture>` **frame_157/texture**
+- :ref:`Texture<class_Texture>` **frame_157/texture**
 
   .. _class_AnimatedTexture_frame_158/delay_sec:
 
@@ -557,7 +556,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_158/texture:
 
-- :ref:`Texture<class_texture>` **frame_158/texture**
+- :ref:`Texture<class_Texture>` **frame_158/texture**
 
   .. _class_AnimatedTexture_frame_159/delay_sec:
 
@@ -565,7 +564,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_159/texture:
 
-- :ref:`Texture<class_texture>` **frame_159/texture**
+- :ref:`Texture<class_Texture>` **frame_159/texture**
 
   .. _class_AnimatedTexture_frame_16/delay_sec:
 
@@ -573,7 +572,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_16/texture:
 
-- :ref:`Texture<class_texture>` **frame_16/texture**
+- :ref:`Texture<class_Texture>` **frame_16/texture**
 
   .. _class_AnimatedTexture_frame_160/delay_sec:
 
@@ -581,7 +580,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_160/texture:
 
-- :ref:`Texture<class_texture>` **frame_160/texture**
+- :ref:`Texture<class_Texture>` **frame_160/texture**
 
   .. _class_AnimatedTexture_frame_161/delay_sec:
 
@@ -589,7 +588,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_161/texture:
 
-- :ref:`Texture<class_texture>` **frame_161/texture**
+- :ref:`Texture<class_Texture>` **frame_161/texture**
 
   .. _class_AnimatedTexture_frame_162/delay_sec:
 
@@ -597,7 +596,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_162/texture:
 
-- :ref:`Texture<class_texture>` **frame_162/texture**
+- :ref:`Texture<class_Texture>` **frame_162/texture**
 
   .. _class_AnimatedTexture_frame_163/delay_sec:
 
@@ -605,7 +604,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_163/texture:
 
-- :ref:`Texture<class_texture>` **frame_163/texture**
+- :ref:`Texture<class_Texture>` **frame_163/texture**
 
   .. _class_AnimatedTexture_frame_164/delay_sec:
 
@@ -613,7 +612,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_164/texture:
 
-- :ref:`Texture<class_texture>` **frame_164/texture**
+- :ref:`Texture<class_Texture>` **frame_164/texture**
 
   .. _class_AnimatedTexture_frame_165/delay_sec:
 
@@ -621,7 +620,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_165/texture:
 
-- :ref:`Texture<class_texture>` **frame_165/texture**
+- :ref:`Texture<class_Texture>` **frame_165/texture**
 
   .. _class_AnimatedTexture_frame_166/delay_sec:
 
@@ -629,7 +628,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_166/texture:
 
-- :ref:`Texture<class_texture>` **frame_166/texture**
+- :ref:`Texture<class_Texture>` **frame_166/texture**
 
   .. _class_AnimatedTexture_frame_167/delay_sec:
 
@@ -637,7 +636,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_167/texture:
 
-- :ref:`Texture<class_texture>` **frame_167/texture**
+- :ref:`Texture<class_Texture>` **frame_167/texture**
 
   .. _class_AnimatedTexture_frame_168/delay_sec:
 
@@ -645,7 +644,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_168/texture:
 
-- :ref:`Texture<class_texture>` **frame_168/texture**
+- :ref:`Texture<class_Texture>` **frame_168/texture**
 
   .. _class_AnimatedTexture_frame_169/delay_sec:
 
@@ -653,7 +652,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_169/texture:
 
-- :ref:`Texture<class_texture>` **frame_169/texture**
+- :ref:`Texture<class_Texture>` **frame_169/texture**
 
   .. _class_AnimatedTexture_frame_17/delay_sec:
 
@@ -661,7 +660,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_17/texture:
 
-- :ref:`Texture<class_texture>` **frame_17/texture**
+- :ref:`Texture<class_Texture>` **frame_17/texture**
 
   .. _class_AnimatedTexture_frame_170/delay_sec:
 
@@ -669,7 +668,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_170/texture:
 
-- :ref:`Texture<class_texture>` **frame_170/texture**
+- :ref:`Texture<class_Texture>` **frame_170/texture**
 
   .. _class_AnimatedTexture_frame_171/delay_sec:
 
@@ -677,7 +676,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_171/texture:
 
-- :ref:`Texture<class_texture>` **frame_171/texture**
+- :ref:`Texture<class_Texture>` **frame_171/texture**
 
   .. _class_AnimatedTexture_frame_172/delay_sec:
 
@@ -685,7 +684,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_172/texture:
 
-- :ref:`Texture<class_texture>` **frame_172/texture**
+- :ref:`Texture<class_Texture>` **frame_172/texture**
 
   .. _class_AnimatedTexture_frame_173/delay_sec:
 
@@ -693,7 +692,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_173/texture:
 
-- :ref:`Texture<class_texture>` **frame_173/texture**
+- :ref:`Texture<class_Texture>` **frame_173/texture**
 
   .. _class_AnimatedTexture_frame_174/delay_sec:
 
@@ -701,7 +700,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_174/texture:
 
-- :ref:`Texture<class_texture>` **frame_174/texture**
+- :ref:`Texture<class_Texture>` **frame_174/texture**
 
   .. _class_AnimatedTexture_frame_175/delay_sec:
 
@@ -709,7 +708,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_175/texture:
 
-- :ref:`Texture<class_texture>` **frame_175/texture**
+- :ref:`Texture<class_Texture>` **frame_175/texture**
 
   .. _class_AnimatedTexture_frame_176/delay_sec:
 
@@ -717,7 +716,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_176/texture:
 
-- :ref:`Texture<class_texture>` **frame_176/texture**
+- :ref:`Texture<class_Texture>` **frame_176/texture**
 
   .. _class_AnimatedTexture_frame_177/delay_sec:
 
@@ -725,7 +724,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_177/texture:
 
-- :ref:`Texture<class_texture>` **frame_177/texture**
+- :ref:`Texture<class_Texture>` **frame_177/texture**
 
   .. _class_AnimatedTexture_frame_178/delay_sec:
 
@@ -733,7 +732,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_178/texture:
 
-- :ref:`Texture<class_texture>` **frame_178/texture**
+- :ref:`Texture<class_Texture>` **frame_178/texture**
 
   .. _class_AnimatedTexture_frame_179/delay_sec:
 
@@ -741,7 +740,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_179/texture:
 
-- :ref:`Texture<class_texture>` **frame_179/texture**
+- :ref:`Texture<class_Texture>` **frame_179/texture**
 
   .. _class_AnimatedTexture_frame_18/delay_sec:
 
@@ -749,7 +748,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_18/texture:
 
-- :ref:`Texture<class_texture>` **frame_18/texture**
+- :ref:`Texture<class_Texture>` **frame_18/texture**
 
   .. _class_AnimatedTexture_frame_180/delay_sec:
 
@@ -757,7 +756,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_180/texture:
 
-- :ref:`Texture<class_texture>` **frame_180/texture**
+- :ref:`Texture<class_Texture>` **frame_180/texture**
 
   .. _class_AnimatedTexture_frame_181/delay_sec:
 
@@ -765,7 +764,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_181/texture:
 
-- :ref:`Texture<class_texture>` **frame_181/texture**
+- :ref:`Texture<class_Texture>` **frame_181/texture**
 
   .. _class_AnimatedTexture_frame_182/delay_sec:
 
@@ -773,7 +772,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_182/texture:
 
-- :ref:`Texture<class_texture>` **frame_182/texture**
+- :ref:`Texture<class_Texture>` **frame_182/texture**
 
   .. _class_AnimatedTexture_frame_183/delay_sec:
 
@@ -781,7 +780,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_183/texture:
 
-- :ref:`Texture<class_texture>` **frame_183/texture**
+- :ref:`Texture<class_Texture>` **frame_183/texture**
 
   .. _class_AnimatedTexture_frame_184/delay_sec:
 
@@ -789,7 +788,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_184/texture:
 
-- :ref:`Texture<class_texture>` **frame_184/texture**
+- :ref:`Texture<class_Texture>` **frame_184/texture**
 
   .. _class_AnimatedTexture_frame_185/delay_sec:
 
@@ -797,7 +796,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_185/texture:
 
-- :ref:`Texture<class_texture>` **frame_185/texture**
+- :ref:`Texture<class_Texture>` **frame_185/texture**
 
   .. _class_AnimatedTexture_frame_186/delay_sec:
 
@@ -805,7 +804,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_186/texture:
 
-- :ref:`Texture<class_texture>` **frame_186/texture**
+- :ref:`Texture<class_Texture>` **frame_186/texture**
 
   .. _class_AnimatedTexture_frame_187/delay_sec:
 
@@ -813,7 +812,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_187/texture:
 
-- :ref:`Texture<class_texture>` **frame_187/texture**
+- :ref:`Texture<class_Texture>` **frame_187/texture**
 
   .. _class_AnimatedTexture_frame_188/delay_sec:
 
@@ -821,7 +820,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_188/texture:
 
-- :ref:`Texture<class_texture>` **frame_188/texture**
+- :ref:`Texture<class_Texture>` **frame_188/texture**
 
   .. _class_AnimatedTexture_frame_189/delay_sec:
 
@@ -829,7 +828,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_189/texture:
 
-- :ref:`Texture<class_texture>` **frame_189/texture**
+- :ref:`Texture<class_Texture>` **frame_189/texture**
 
   .. _class_AnimatedTexture_frame_19/delay_sec:
 
@@ -837,7 +836,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_19/texture:
 
-- :ref:`Texture<class_texture>` **frame_19/texture**
+- :ref:`Texture<class_Texture>` **frame_19/texture**
 
   .. _class_AnimatedTexture_frame_190/delay_sec:
 
@@ -845,7 +844,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_190/texture:
 
-- :ref:`Texture<class_texture>` **frame_190/texture**
+- :ref:`Texture<class_Texture>` **frame_190/texture**
 
   .. _class_AnimatedTexture_frame_191/delay_sec:
 
@@ -853,7 +852,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_191/texture:
 
-- :ref:`Texture<class_texture>` **frame_191/texture**
+- :ref:`Texture<class_Texture>` **frame_191/texture**
 
   .. _class_AnimatedTexture_frame_192/delay_sec:
 
@@ -861,7 +860,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_192/texture:
 
-- :ref:`Texture<class_texture>` **frame_192/texture**
+- :ref:`Texture<class_Texture>` **frame_192/texture**
 
   .. _class_AnimatedTexture_frame_193/delay_sec:
 
@@ -869,7 +868,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_193/texture:
 
-- :ref:`Texture<class_texture>` **frame_193/texture**
+- :ref:`Texture<class_Texture>` **frame_193/texture**
 
   .. _class_AnimatedTexture_frame_194/delay_sec:
 
@@ -877,7 +876,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_194/texture:
 
-- :ref:`Texture<class_texture>` **frame_194/texture**
+- :ref:`Texture<class_Texture>` **frame_194/texture**
 
   .. _class_AnimatedTexture_frame_195/delay_sec:
 
@@ -885,7 +884,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_195/texture:
 
-- :ref:`Texture<class_texture>` **frame_195/texture**
+- :ref:`Texture<class_Texture>` **frame_195/texture**
 
   .. _class_AnimatedTexture_frame_196/delay_sec:
 
@@ -893,7 +892,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_196/texture:
 
-- :ref:`Texture<class_texture>` **frame_196/texture**
+- :ref:`Texture<class_Texture>` **frame_196/texture**
 
   .. _class_AnimatedTexture_frame_197/delay_sec:
 
@@ -901,7 +900,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_197/texture:
 
-- :ref:`Texture<class_texture>` **frame_197/texture**
+- :ref:`Texture<class_Texture>` **frame_197/texture**
 
   .. _class_AnimatedTexture_frame_198/delay_sec:
 
@@ -909,7 +908,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_198/texture:
 
-- :ref:`Texture<class_texture>` **frame_198/texture**
+- :ref:`Texture<class_Texture>` **frame_198/texture**
 
   .. _class_AnimatedTexture_frame_199/delay_sec:
 
@@ -917,7 +916,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_199/texture:
 
-- :ref:`Texture<class_texture>` **frame_199/texture**
+- :ref:`Texture<class_Texture>` **frame_199/texture**
 
   .. _class_AnimatedTexture_frame_2/delay_sec:
 
@@ -925,7 +924,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_2/texture:
 
-- :ref:`Texture<class_texture>` **frame_2/texture**
+- :ref:`Texture<class_Texture>` **frame_2/texture**
 
   .. _class_AnimatedTexture_frame_20/delay_sec:
 
@@ -933,7 +932,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_20/texture:
 
-- :ref:`Texture<class_texture>` **frame_20/texture**
+- :ref:`Texture<class_Texture>` **frame_20/texture**
 
   .. _class_AnimatedTexture_frame_200/delay_sec:
 
@@ -941,7 +940,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_200/texture:
 
-- :ref:`Texture<class_texture>` **frame_200/texture**
+- :ref:`Texture<class_Texture>` **frame_200/texture**
 
   .. _class_AnimatedTexture_frame_201/delay_sec:
 
@@ -949,7 +948,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_201/texture:
 
-- :ref:`Texture<class_texture>` **frame_201/texture**
+- :ref:`Texture<class_Texture>` **frame_201/texture**
 
   .. _class_AnimatedTexture_frame_202/delay_sec:
 
@@ -957,7 +956,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_202/texture:
 
-- :ref:`Texture<class_texture>` **frame_202/texture**
+- :ref:`Texture<class_Texture>` **frame_202/texture**
 
   .. _class_AnimatedTexture_frame_203/delay_sec:
 
@@ -965,7 +964,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_203/texture:
 
-- :ref:`Texture<class_texture>` **frame_203/texture**
+- :ref:`Texture<class_Texture>` **frame_203/texture**
 
   .. _class_AnimatedTexture_frame_204/delay_sec:
 
@@ -973,7 +972,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_204/texture:
 
-- :ref:`Texture<class_texture>` **frame_204/texture**
+- :ref:`Texture<class_Texture>` **frame_204/texture**
 
   .. _class_AnimatedTexture_frame_205/delay_sec:
 
@@ -981,7 +980,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_205/texture:
 
-- :ref:`Texture<class_texture>` **frame_205/texture**
+- :ref:`Texture<class_Texture>` **frame_205/texture**
 
   .. _class_AnimatedTexture_frame_206/delay_sec:
 
@@ -989,7 +988,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_206/texture:
 
-- :ref:`Texture<class_texture>` **frame_206/texture**
+- :ref:`Texture<class_Texture>` **frame_206/texture**
 
   .. _class_AnimatedTexture_frame_207/delay_sec:
 
@@ -997,7 +996,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_207/texture:
 
-- :ref:`Texture<class_texture>` **frame_207/texture**
+- :ref:`Texture<class_Texture>` **frame_207/texture**
 
   .. _class_AnimatedTexture_frame_208/delay_sec:
 
@@ -1005,7 +1004,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_208/texture:
 
-- :ref:`Texture<class_texture>` **frame_208/texture**
+- :ref:`Texture<class_Texture>` **frame_208/texture**
 
   .. _class_AnimatedTexture_frame_209/delay_sec:
 
@@ -1013,7 +1012,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_209/texture:
 
-- :ref:`Texture<class_texture>` **frame_209/texture**
+- :ref:`Texture<class_Texture>` **frame_209/texture**
 
   .. _class_AnimatedTexture_frame_21/delay_sec:
 
@@ -1021,7 +1020,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_21/texture:
 
-- :ref:`Texture<class_texture>` **frame_21/texture**
+- :ref:`Texture<class_Texture>` **frame_21/texture**
 
   .. _class_AnimatedTexture_frame_210/delay_sec:
 
@@ -1029,7 +1028,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_210/texture:
 
-- :ref:`Texture<class_texture>` **frame_210/texture**
+- :ref:`Texture<class_Texture>` **frame_210/texture**
 
   .. _class_AnimatedTexture_frame_211/delay_sec:
 
@@ -1037,7 +1036,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_211/texture:
 
-- :ref:`Texture<class_texture>` **frame_211/texture**
+- :ref:`Texture<class_Texture>` **frame_211/texture**
 
   .. _class_AnimatedTexture_frame_212/delay_sec:
 
@@ -1045,7 +1044,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_212/texture:
 
-- :ref:`Texture<class_texture>` **frame_212/texture**
+- :ref:`Texture<class_Texture>` **frame_212/texture**
 
   .. _class_AnimatedTexture_frame_213/delay_sec:
 
@@ -1053,7 +1052,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_213/texture:
 
-- :ref:`Texture<class_texture>` **frame_213/texture**
+- :ref:`Texture<class_Texture>` **frame_213/texture**
 
   .. _class_AnimatedTexture_frame_214/delay_sec:
 
@@ -1061,7 +1060,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_214/texture:
 
-- :ref:`Texture<class_texture>` **frame_214/texture**
+- :ref:`Texture<class_Texture>` **frame_214/texture**
 
   .. _class_AnimatedTexture_frame_215/delay_sec:
 
@@ -1069,7 +1068,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_215/texture:
 
-- :ref:`Texture<class_texture>` **frame_215/texture**
+- :ref:`Texture<class_Texture>` **frame_215/texture**
 
   .. _class_AnimatedTexture_frame_216/delay_sec:
 
@@ -1077,7 +1076,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_216/texture:
 
-- :ref:`Texture<class_texture>` **frame_216/texture**
+- :ref:`Texture<class_Texture>` **frame_216/texture**
 
   .. _class_AnimatedTexture_frame_217/delay_sec:
 
@@ -1085,7 +1084,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_217/texture:
 
-- :ref:`Texture<class_texture>` **frame_217/texture**
+- :ref:`Texture<class_Texture>` **frame_217/texture**
 
   .. _class_AnimatedTexture_frame_218/delay_sec:
 
@@ -1093,7 +1092,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_218/texture:
 
-- :ref:`Texture<class_texture>` **frame_218/texture**
+- :ref:`Texture<class_Texture>` **frame_218/texture**
 
   .. _class_AnimatedTexture_frame_219/delay_sec:
 
@@ -1101,7 +1100,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_219/texture:
 
-- :ref:`Texture<class_texture>` **frame_219/texture**
+- :ref:`Texture<class_Texture>` **frame_219/texture**
 
   .. _class_AnimatedTexture_frame_22/delay_sec:
 
@@ -1109,7 +1108,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_22/texture:
 
-- :ref:`Texture<class_texture>` **frame_22/texture**
+- :ref:`Texture<class_Texture>` **frame_22/texture**
 
   .. _class_AnimatedTexture_frame_220/delay_sec:
 
@@ -1117,7 +1116,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_220/texture:
 
-- :ref:`Texture<class_texture>` **frame_220/texture**
+- :ref:`Texture<class_Texture>` **frame_220/texture**
 
   .. _class_AnimatedTexture_frame_221/delay_sec:
 
@@ -1125,7 +1124,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_221/texture:
 
-- :ref:`Texture<class_texture>` **frame_221/texture**
+- :ref:`Texture<class_Texture>` **frame_221/texture**
 
   .. _class_AnimatedTexture_frame_222/delay_sec:
 
@@ -1133,7 +1132,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_222/texture:
 
-- :ref:`Texture<class_texture>` **frame_222/texture**
+- :ref:`Texture<class_Texture>` **frame_222/texture**
 
   .. _class_AnimatedTexture_frame_223/delay_sec:
 
@@ -1141,7 +1140,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_223/texture:
 
-- :ref:`Texture<class_texture>` **frame_223/texture**
+- :ref:`Texture<class_Texture>` **frame_223/texture**
 
   .. _class_AnimatedTexture_frame_224/delay_sec:
 
@@ -1149,7 +1148,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_224/texture:
 
-- :ref:`Texture<class_texture>` **frame_224/texture**
+- :ref:`Texture<class_Texture>` **frame_224/texture**
 
   .. _class_AnimatedTexture_frame_225/delay_sec:
 
@@ -1157,7 +1156,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_225/texture:
 
-- :ref:`Texture<class_texture>` **frame_225/texture**
+- :ref:`Texture<class_Texture>` **frame_225/texture**
 
   .. _class_AnimatedTexture_frame_226/delay_sec:
 
@@ -1165,7 +1164,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_226/texture:
 
-- :ref:`Texture<class_texture>` **frame_226/texture**
+- :ref:`Texture<class_Texture>` **frame_226/texture**
 
   .. _class_AnimatedTexture_frame_227/delay_sec:
 
@@ -1173,7 +1172,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_227/texture:
 
-- :ref:`Texture<class_texture>` **frame_227/texture**
+- :ref:`Texture<class_Texture>` **frame_227/texture**
 
   .. _class_AnimatedTexture_frame_228/delay_sec:
 
@@ -1181,7 +1180,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_228/texture:
 
-- :ref:`Texture<class_texture>` **frame_228/texture**
+- :ref:`Texture<class_Texture>` **frame_228/texture**
 
   .. _class_AnimatedTexture_frame_229/delay_sec:
 
@@ -1189,7 +1188,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_229/texture:
 
-- :ref:`Texture<class_texture>` **frame_229/texture**
+- :ref:`Texture<class_Texture>` **frame_229/texture**
 
   .. _class_AnimatedTexture_frame_23/delay_sec:
 
@@ -1197,7 +1196,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_23/texture:
 
-- :ref:`Texture<class_texture>` **frame_23/texture**
+- :ref:`Texture<class_Texture>` **frame_23/texture**
 
   .. _class_AnimatedTexture_frame_230/delay_sec:
 
@@ -1205,7 +1204,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_230/texture:
 
-- :ref:`Texture<class_texture>` **frame_230/texture**
+- :ref:`Texture<class_Texture>` **frame_230/texture**
 
   .. _class_AnimatedTexture_frame_231/delay_sec:
 
@@ -1213,7 +1212,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_231/texture:
 
-- :ref:`Texture<class_texture>` **frame_231/texture**
+- :ref:`Texture<class_Texture>` **frame_231/texture**
 
   .. _class_AnimatedTexture_frame_232/delay_sec:
 
@@ -1221,7 +1220,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_232/texture:
 
-- :ref:`Texture<class_texture>` **frame_232/texture**
+- :ref:`Texture<class_Texture>` **frame_232/texture**
 
   .. _class_AnimatedTexture_frame_233/delay_sec:
 
@@ -1229,7 +1228,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_233/texture:
 
-- :ref:`Texture<class_texture>` **frame_233/texture**
+- :ref:`Texture<class_Texture>` **frame_233/texture**
 
   .. _class_AnimatedTexture_frame_234/delay_sec:
 
@@ -1237,7 +1236,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_234/texture:
 
-- :ref:`Texture<class_texture>` **frame_234/texture**
+- :ref:`Texture<class_Texture>` **frame_234/texture**
 
   .. _class_AnimatedTexture_frame_235/delay_sec:
 
@@ -1245,7 +1244,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_235/texture:
 
-- :ref:`Texture<class_texture>` **frame_235/texture**
+- :ref:`Texture<class_Texture>` **frame_235/texture**
 
   .. _class_AnimatedTexture_frame_236/delay_sec:
 
@@ -1253,7 +1252,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_236/texture:
 
-- :ref:`Texture<class_texture>` **frame_236/texture**
+- :ref:`Texture<class_Texture>` **frame_236/texture**
 
   .. _class_AnimatedTexture_frame_237/delay_sec:
 
@@ -1261,7 +1260,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_237/texture:
 
-- :ref:`Texture<class_texture>` **frame_237/texture**
+- :ref:`Texture<class_Texture>` **frame_237/texture**
 
   .. _class_AnimatedTexture_frame_238/delay_sec:
 
@@ -1269,7 +1268,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_238/texture:
 
-- :ref:`Texture<class_texture>` **frame_238/texture**
+- :ref:`Texture<class_Texture>` **frame_238/texture**
 
   .. _class_AnimatedTexture_frame_239/delay_sec:
 
@@ -1277,7 +1276,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_239/texture:
 
-- :ref:`Texture<class_texture>` **frame_239/texture**
+- :ref:`Texture<class_Texture>` **frame_239/texture**
 
   .. _class_AnimatedTexture_frame_24/delay_sec:
 
@@ -1285,7 +1284,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_24/texture:
 
-- :ref:`Texture<class_texture>` **frame_24/texture**
+- :ref:`Texture<class_Texture>` **frame_24/texture**
 
   .. _class_AnimatedTexture_frame_240/delay_sec:
 
@@ -1293,7 +1292,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_240/texture:
 
-- :ref:`Texture<class_texture>` **frame_240/texture**
+- :ref:`Texture<class_Texture>` **frame_240/texture**
 
   .. _class_AnimatedTexture_frame_241/delay_sec:
 
@@ -1301,7 +1300,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_241/texture:
 
-- :ref:`Texture<class_texture>` **frame_241/texture**
+- :ref:`Texture<class_Texture>` **frame_241/texture**
 
   .. _class_AnimatedTexture_frame_242/delay_sec:
 
@@ -1309,7 +1308,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_242/texture:
 
-- :ref:`Texture<class_texture>` **frame_242/texture**
+- :ref:`Texture<class_Texture>` **frame_242/texture**
 
   .. _class_AnimatedTexture_frame_243/delay_sec:
 
@@ -1317,7 +1316,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_243/texture:
 
-- :ref:`Texture<class_texture>` **frame_243/texture**
+- :ref:`Texture<class_Texture>` **frame_243/texture**
 
   .. _class_AnimatedTexture_frame_244/delay_sec:
 
@@ -1325,7 +1324,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_244/texture:
 
-- :ref:`Texture<class_texture>` **frame_244/texture**
+- :ref:`Texture<class_Texture>` **frame_244/texture**
 
   .. _class_AnimatedTexture_frame_245/delay_sec:
 
@@ -1333,7 +1332,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_245/texture:
 
-- :ref:`Texture<class_texture>` **frame_245/texture**
+- :ref:`Texture<class_Texture>` **frame_245/texture**
 
   .. _class_AnimatedTexture_frame_246/delay_sec:
 
@@ -1341,7 +1340,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_246/texture:
 
-- :ref:`Texture<class_texture>` **frame_246/texture**
+- :ref:`Texture<class_Texture>` **frame_246/texture**
 
   .. _class_AnimatedTexture_frame_247/delay_sec:
 
@@ -1349,7 +1348,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_247/texture:
 
-- :ref:`Texture<class_texture>` **frame_247/texture**
+- :ref:`Texture<class_Texture>` **frame_247/texture**
 
   .. _class_AnimatedTexture_frame_248/delay_sec:
 
@@ -1357,7 +1356,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_248/texture:
 
-- :ref:`Texture<class_texture>` **frame_248/texture**
+- :ref:`Texture<class_Texture>` **frame_248/texture**
 
   .. _class_AnimatedTexture_frame_249/delay_sec:
 
@@ -1365,7 +1364,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_249/texture:
 
-- :ref:`Texture<class_texture>` **frame_249/texture**
+- :ref:`Texture<class_Texture>` **frame_249/texture**
 
   .. _class_AnimatedTexture_frame_25/delay_sec:
 
@@ -1373,7 +1372,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_25/texture:
 
-- :ref:`Texture<class_texture>` **frame_25/texture**
+- :ref:`Texture<class_Texture>` **frame_25/texture**
 
   .. _class_AnimatedTexture_frame_250/delay_sec:
 
@@ -1381,7 +1380,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_250/texture:
 
-- :ref:`Texture<class_texture>` **frame_250/texture**
+- :ref:`Texture<class_Texture>` **frame_250/texture**
 
   .. _class_AnimatedTexture_frame_251/delay_sec:
 
@@ -1389,7 +1388,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_251/texture:
 
-- :ref:`Texture<class_texture>` **frame_251/texture**
+- :ref:`Texture<class_Texture>` **frame_251/texture**
 
   .. _class_AnimatedTexture_frame_252/delay_sec:
 
@@ -1397,7 +1396,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_252/texture:
 
-- :ref:`Texture<class_texture>` **frame_252/texture**
+- :ref:`Texture<class_Texture>` **frame_252/texture**
 
   .. _class_AnimatedTexture_frame_253/delay_sec:
 
@@ -1405,7 +1404,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_253/texture:
 
-- :ref:`Texture<class_texture>` **frame_253/texture**
+- :ref:`Texture<class_Texture>` **frame_253/texture**
 
   .. _class_AnimatedTexture_frame_254/delay_sec:
 
@@ -1413,7 +1412,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_254/texture:
 
-- :ref:`Texture<class_texture>` **frame_254/texture**
+- :ref:`Texture<class_Texture>` **frame_254/texture**
 
   .. _class_AnimatedTexture_frame_255/delay_sec:
 
@@ -1421,7 +1420,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_255/texture:
 
-- :ref:`Texture<class_texture>` **frame_255/texture**
+- :ref:`Texture<class_Texture>` **frame_255/texture**
 
   .. _class_AnimatedTexture_frame_26/delay_sec:
 
@@ -1429,7 +1428,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_26/texture:
 
-- :ref:`Texture<class_texture>` **frame_26/texture**
+- :ref:`Texture<class_Texture>` **frame_26/texture**
 
   .. _class_AnimatedTexture_frame_27/delay_sec:
 
@@ -1437,7 +1436,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_27/texture:
 
-- :ref:`Texture<class_texture>` **frame_27/texture**
+- :ref:`Texture<class_Texture>` **frame_27/texture**
 
   .. _class_AnimatedTexture_frame_28/delay_sec:
 
@@ -1445,7 +1444,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_28/texture:
 
-- :ref:`Texture<class_texture>` **frame_28/texture**
+- :ref:`Texture<class_Texture>` **frame_28/texture**
 
   .. _class_AnimatedTexture_frame_29/delay_sec:
 
@@ -1453,7 +1452,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_29/texture:
 
-- :ref:`Texture<class_texture>` **frame_29/texture**
+- :ref:`Texture<class_Texture>` **frame_29/texture**
 
   .. _class_AnimatedTexture_frame_3/delay_sec:
 
@@ -1461,7 +1460,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_3/texture:
 
-- :ref:`Texture<class_texture>` **frame_3/texture**
+- :ref:`Texture<class_Texture>` **frame_3/texture**
 
   .. _class_AnimatedTexture_frame_30/delay_sec:
 
@@ -1469,7 +1468,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_30/texture:
 
-- :ref:`Texture<class_texture>` **frame_30/texture**
+- :ref:`Texture<class_Texture>` **frame_30/texture**
 
   .. _class_AnimatedTexture_frame_31/delay_sec:
 
@@ -1477,7 +1476,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_31/texture:
 
-- :ref:`Texture<class_texture>` **frame_31/texture**
+- :ref:`Texture<class_Texture>` **frame_31/texture**
 
   .. _class_AnimatedTexture_frame_32/delay_sec:
 
@@ -1485,7 +1484,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_32/texture:
 
-- :ref:`Texture<class_texture>` **frame_32/texture**
+- :ref:`Texture<class_Texture>` **frame_32/texture**
 
   .. _class_AnimatedTexture_frame_33/delay_sec:
 
@@ -1493,7 +1492,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_33/texture:
 
-- :ref:`Texture<class_texture>` **frame_33/texture**
+- :ref:`Texture<class_Texture>` **frame_33/texture**
 
   .. _class_AnimatedTexture_frame_34/delay_sec:
 
@@ -1501,7 +1500,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_34/texture:
 
-- :ref:`Texture<class_texture>` **frame_34/texture**
+- :ref:`Texture<class_Texture>` **frame_34/texture**
 
   .. _class_AnimatedTexture_frame_35/delay_sec:
 
@@ -1509,7 +1508,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_35/texture:
 
-- :ref:`Texture<class_texture>` **frame_35/texture**
+- :ref:`Texture<class_Texture>` **frame_35/texture**
 
   .. _class_AnimatedTexture_frame_36/delay_sec:
 
@@ -1517,7 +1516,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_36/texture:
 
-- :ref:`Texture<class_texture>` **frame_36/texture**
+- :ref:`Texture<class_Texture>` **frame_36/texture**
 
   .. _class_AnimatedTexture_frame_37/delay_sec:
 
@@ -1525,7 +1524,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_37/texture:
 
-- :ref:`Texture<class_texture>` **frame_37/texture**
+- :ref:`Texture<class_Texture>` **frame_37/texture**
 
   .. _class_AnimatedTexture_frame_38/delay_sec:
 
@@ -1533,7 +1532,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_38/texture:
 
-- :ref:`Texture<class_texture>` **frame_38/texture**
+- :ref:`Texture<class_Texture>` **frame_38/texture**
 
   .. _class_AnimatedTexture_frame_39/delay_sec:
 
@@ -1541,7 +1540,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_39/texture:
 
-- :ref:`Texture<class_texture>` **frame_39/texture**
+- :ref:`Texture<class_Texture>` **frame_39/texture**
 
   .. _class_AnimatedTexture_frame_4/delay_sec:
 
@@ -1549,7 +1548,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_4/texture:
 
-- :ref:`Texture<class_texture>` **frame_4/texture**
+- :ref:`Texture<class_Texture>` **frame_4/texture**
 
   .. _class_AnimatedTexture_frame_40/delay_sec:
 
@@ -1557,7 +1556,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_40/texture:
 
-- :ref:`Texture<class_texture>` **frame_40/texture**
+- :ref:`Texture<class_Texture>` **frame_40/texture**
 
   .. _class_AnimatedTexture_frame_41/delay_sec:
 
@@ -1565,7 +1564,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_41/texture:
 
-- :ref:`Texture<class_texture>` **frame_41/texture**
+- :ref:`Texture<class_Texture>` **frame_41/texture**
 
   .. _class_AnimatedTexture_frame_42/delay_sec:
 
@@ -1573,7 +1572,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_42/texture:
 
-- :ref:`Texture<class_texture>` **frame_42/texture**
+- :ref:`Texture<class_Texture>` **frame_42/texture**
 
   .. _class_AnimatedTexture_frame_43/delay_sec:
 
@@ -1581,7 +1580,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_43/texture:
 
-- :ref:`Texture<class_texture>` **frame_43/texture**
+- :ref:`Texture<class_Texture>` **frame_43/texture**
 
   .. _class_AnimatedTexture_frame_44/delay_sec:
 
@@ -1589,7 +1588,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_44/texture:
 
-- :ref:`Texture<class_texture>` **frame_44/texture**
+- :ref:`Texture<class_Texture>` **frame_44/texture**
 
   .. _class_AnimatedTexture_frame_45/delay_sec:
 
@@ -1597,7 +1596,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_45/texture:
 
-- :ref:`Texture<class_texture>` **frame_45/texture**
+- :ref:`Texture<class_Texture>` **frame_45/texture**
 
   .. _class_AnimatedTexture_frame_46/delay_sec:
 
@@ -1605,7 +1604,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_46/texture:
 
-- :ref:`Texture<class_texture>` **frame_46/texture**
+- :ref:`Texture<class_Texture>` **frame_46/texture**
 
   .. _class_AnimatedTexture_frame_47/delay_sec:
 
@@ -1613,7 +1612,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_47/texture:
 
-- :ref:`Texture<class_texture>` **frame_47/texture**
+- :ref:`Texture<class_Texture>` **frame_47/texture**
 
   .. _class_AnimatedTexture_frame_48/delay_sec:
 
@@ -1621,7 +1620,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_48/texture:
 
-- :ref:`Texture<class_texture>` **frame_48/texture**
+- :ref:`Texture<class_Texture>` **frame_48/texture**
 
   .. _class_AnimatedTexture_frame_49/delay_sec:
 
@@ -1629,7 +1628,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_49/texture:
 
-- :ref:`Texture<class_texture>` **frame_49/texture**
+- :ref:`Texture<class_Texture>` **frame_49/texture**
 
   .. _class_AnimatedTexture_frame_5/delay_sec:
 
@@ -1637,7 +1636,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_5/texture:
 
-- :ref:`Texture<class_texture>` **frame_5/texture**
+- :ref:`Texture<class_Texture>` **frame_5/texture**
 
   .. _class_AnimatedTexture_frame_50/delay_sec:
 
@@ -1645,7 +1644,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_50/texture:
 
-- :ref:`Texture<class_texture>` **frame_50/texture**
+- :ref:`Texture<class_Texture>` **frame_50/texture**
 
   .. _class_AnimatedTexture_frame_51/delay_sec:
 
@@ -1653,7 +1652,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_51/texture:
 
-- :ref:`Texture<class_texture>` **frame_51/texture**
+- :ref:`Texture<class_Texture>` **frame_51/texture**
 
   .. _class_AnimatedTexture_frame_52/delay_sec:
 
@@ -1661,7 +1660,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_52/texture:
 
-- :ref:`Texture<class_texture>` **frame_52/texture**
+- :ref:`Texture<class_Texture>` **frame_52/texture**
 
   .. _class_AnimatedTexture_frame_53/delay_sec:
 
@@ -1669,7 +1668,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_53/texture:
 
-- :ref:`Texture<class_texture>` **frame_53/texture**
+- :ref:`Texture<class_Texture>` **frame_53/texture**
 
   .. _class_AnimatedTexture_frame_54/delay_sec:
 
@@ -1677,7 +1676,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_54/texture:
 
-- :ref:`Texture<class_texture>` **frame_54/texture**
+- :ref:`Texture<class_Texture>` **frame_54/texture**
 
   .. _class_AnimatedTexture_frame_55/delay_sec:
 
@@ -1685,7 +1684,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_55/texture:
 
-- :ref:`Texture<class_texture>` **frame_55/texture**
+- :ref:`Texture<class_Texture>` **frame_55/texture**
 
   .. _class_AnimatedTexture_frame_56/delay_sec:
 
@@ -1693,7 +1692,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_56/texture:
 
-- :ref:`Texture<class_texture>` **frame_56/texture**
+- :ref:`Texture<class_Texture>` **frame_56/texture**
 
   .. _class_AnimatedTexture_frame_57/delay_sec:
 
@@ -1701,7 +1700,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_57/texture:
 
-- :ref:`Texture<class_texture>` **frame_57/texture**
+- :ref:`Texture<class_Texture>` **frame_57/texture**
 
   .. _class_AnimatedTexture_frame_58/delay_sec:
 
@@ -1709,7 +1708,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_58/texture:
 
-- :ref:`Texture<class_texture>` **frame_58/texture**
+- :ref:`Texture<class_Texture>` **frame_58/texture**
 
   .. _class_AnimatedTexture_frame_59/delay_sec:
 
@@ -1717,7 +1716,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_59/texture:
 
-- :ref:`Texture<class_texture>` **frame_59/texture**
+- :ref:`Texture<class_Texture>` **frame_59/texture**
 
   .. _class_AnimatedTexture_frame_6/delay_sec:
 
@@ -1725,7 +1724,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_6/texture:
 
-- :ref:`Texture<class_texture>` **frame_6/texture**
+- :ref:`Texture<class_Texture>` **frame_6/texture**
 
   .. _class_AnimatedTexture_frame_60/delay_sec:
 
@@ -1733,7 +1732,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_60/texture:
 
-- :ref:`Texture<class_texture>` **frame_60/texture**
+- :ref:`Texture<class_Texture>` **frame_60/texture**
 
   .. _class_AnimatedTexture_frame_61/delay_sec:
 
@@ -1741,7 +1740,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_61/texture:
 
-- :ref:`Texture<class_texture>` **frame_61/texture**
+- :ref:`Texture<class_Texture>` **frame_61/texture**
 
   .. _class_AnimatedTexture_frame_62/delay_sec:
 
@@ -1749,7 +1748,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_62/texture:
 
-- :ref:`Texture<class_texture>` **frame_62/texture**
+- :ref:`Texture<class_Texture>` **frame_62/texture**
 
   .. _class_AnimatedTexture_frame_63/delay_sec:
 
@@ -1757,7 +1756,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_63/texture:
 
-- :ref:`Texture<class_texture>` **frame_63/texture**
+- :ref:`Texture<class_Texture>` **frame_63/texture**
 
   .. _class_AnimatedTexture_frame_64/delay_sec:
 
@@ -1765,7 +1764,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_64/texture:
 
-- :ref:`Texture<class_texture>` **frame_64/texture**
+- :ref:`Texture<class_Texture>` **frame_64/texture**
 
   .. _class_AnimatedTexture_frame_65/delay_sec:
 
@@ -1773,7 +1772,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_65/texture:
 
-- :ref:`Texture<class_texture>` **frame_65/texture**
+- :ref:`Texture<class_Texture>` **frame_65/texture**
 
   .. _class_AnimatedTexture_frame_66/delay_sec:
 
@@ -1781,7 +1780,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_66/texture:
 
-- :ref:`Texture<class_texture>` **frame_66/texture**
+- :ref:`Texture<class_Texture>` **frame_66/texture**
 
   .. _class_AnimatedTexture_frame_67/delay_sec:
 
@@ -1789,7 +1788,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_67/texture:
 
-- :ref:`Texture<class_texture>` **frame_67/texture**
+- :ref:`Texture<class_Texture>` **frame_67/texture**
 
   .. _class_AnimatedTexture_frame_68/delay_sec:
 
@@ -1797,7 +1796,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_68/texture:
 
-- :ref:`Texture<class_texture>` **frame_68/texture**
+- :ref:`Texture<class_Texture>` **frame_68/texture**
 
   .. _class_AnimatedTexture_frame_69/delay_sec:
 
@@ -1805,7 +1804,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_69/texture:
 
-- :ref:`Texture<class_texture>` **frame_69/texture**
+- :ref:`Texture<class_Texture>` **frame_69/texture**
 
   .. _class_AnimatedTexture_frame_7/delay_sec:
 
@@ -1813,7 +1812,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_7/texture:
 
-- :ref:`Texture<class_texture>` **frame_7/texture**
+- :ref:`Texture<class_Texture>` **frame_7/texture**
 
   .. _class_AnimatedTexture_frame_70/delay_sec:
 
@@ -1821,7 +1820,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_70/texture:
 
-- :ref:`Texture<class_texture>` **frame_70/texture**
+- :ref:`Texture<class_Texture>` **frame_70/texture**
 
   .. _class_AnimatedTexture_frame_71/delay_sec:
 
@@ -1829,7 +1828,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_71/texture:
 
-- :ref:`Texture<class_texture>` **frame_71/texture**
+- :ref:`Texture<class_Texture>` **frame_71/texture**
 
   .. _class_AnimatedTexture_frame_72/delay_sec:
 
@@ -1837,7 +1836,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_72/texture:
 
-- :ref:`Texture<class_texture>` **frame_72/texture**
+- :ref:`Texture<class_Texture>` **frame_72/texture**
 
   .. _class_AnimatedTexture_frame_73/delay_sec:
 
@@ -1845,7 +1844,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_73/texture:
 
-- :ref:`Texture<class_texture>` **frame_73/texture**
+- :ref:`Texture<class_Texture>` **frame_73/texture**
 
   .. _class_AnimatedTexture_frame_74/delay_sec:
 
@@ -1853,7 +1852,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_74/texture:
 
-- :ref:`Texture<class_texture>` **frame_74/texture**
+- :ref:`Texture<class_Texture>` **frame_74/texture**
 
   .. _class_AnimatedTexture_frame_75/delay_sec:
 
@@ -1861,7 +1860,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_75/texture:
 
-- :ref:`Texture<class_texture>` **frame_75/texture**
+- :ref:`Texture<class_Texture>` **frame_75/texture**
 
   .. _class_AnimatedTexture_frame_76/delay_sec:
 
@@ -1869,7 +1868,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_76/texture:
 
-- :ref:`Texture<class_texture>` **frame_76/texture**
+- :ref:`Texture<class_Texture>` **frame_76/texture**
 
   .. _class_AnimatedTexture_frame_77/delay_sec:
 
@@ -1877,7 +1876,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_77/texture:
 
-- :ref:`Texture<class_texture>` **frame_77/texture**
+- :ref:`Texture<class_Texture>` **frame_77/texture**
 
   .. _class_AnimatedTexture_frame_78/delay_sec:
 
@@ -1885,7 +1884,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_78/texture:
 
-- :ref:`Texture<class_texture>` **frame_78/texture**
+- :ref:`Texture<class_Texture>` **frame_78/texture**
 
   .. _class_AnimatedTexture_frame_79/delay_sec:
 
@@ -1893,7 +1892,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_79/texture:
 
-- :ref:`Texture<class_texture>` **frame_79/texture**
+- :ref:`Texture<class_Texture>` **frame_79/texture**
 
   .. _class_AnimatedTexture_frame_8/delay_sec:
 
@@ -1901,7 +1900,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_8/texture:
 
-- :ref:`Texture<class_texture>` **frame_8/texture**
+- :ref:`Texture<class_Texture>` **frame_8/texture**
 
   .. _class_AnimatedTexture_frame_80/delay_sec:
 
@@ -1909,7 +1908,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_80/texture:
 
-- :ref:`Texture<class_texture>` **frame_80/texture**
+- :ref:`Texture<class_Texture>` **frame_80/texture**
 
   .. _class_AnimatedTexture_frame_81/delay_sec:
 
@@ -1917,7 +1916,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_81/texture:
 
-- :ref:`Texture<class_texture>` **frame_81/texture**
+- :ref:`Texture<class_Texture>` **frame_81/texture**
 
   .. _class_AnimatedTexture_frame_82/delay_sec:
 
@@ -1925,7 +1924,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_82/texture:
 
-- :ref:`Texture<class_texture>` **frame_82/texture**
+- :ref:`Texture<class_Texture>` **frame_82/texture**
 
   .. _class_AnimatedTexture_frame_83/delay_sec:
 
@@ -1933,7 +1932,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_83/texture:
 
-- :ref:`Texture<class_texture>` **frame_83/texture**
+- :ref:`Texture<class_Texture>` **frame_83/texture**
 
   .. _class_AnimatedTexture_frame_84/delay_sec:
 
@@ -1941,7 +1940,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_84/texture:
 
-- :ref:`Texture<class_texture>` **frame_84/texture**
+- :ref:`Texture<class_Texture>` **frame_84/texture**
 
   .. _class_AnimatedTexture_frame_85/delay_sec:
 
@@ -1949,7 +1948,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_85/texture:
 
-- :ref:`Texture<class_texture>` **frame_85/texture**
+- :ref:`Texture<class_Texture>` **frame_85/texture**
 
   .. _class_AnimatedTexture_frame_86/delay_sec:
 
@@ -1957,7 +1956,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_86/texture:
 
-- :ref:`Texture<class_texture>` **frame_86/texture**
+- :ref:`Texture<class_Texture>` **frame_86/texture**
 
   .. _class_AnimatedTexture_frame_87/delay_sec:
 
@@ -1965,7 +1964,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_87/texture:
 
-- :ref:`Texture<class_texture>` **frame_87/texture**
+- :ref:`Texture<class_Texture>` **frame_87/texture**
 
   .. _class_AnimatedTexture_frame_88/delay_sec:
 
@@ -1973,7 +1972,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_88/texture:
 
-- :ref:`Texture<class_texture>` **frame_88/texture**
+- :ref:`Texture<class_Texture>` **frame_88/texture**
 
   .. _class_AnimatedTexture_frame_89/delay_sec:
 
@@ -1981,7 +1980,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_89/texture:
 
-- :ref:`Texture<class_texture>` **frame_89/texture**
+- :ref:`Texture<class_Texture>` **frame_89/texture**
 
   .. _class_AnimatedTexture_frame_9/delay_sec:
 
@@ -1989,7 +1988,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_9/texture:
 
-- :ref:`Texture<class_texture>` **frame_9/texture**
+- :ref:`Texture<class_Texture>` **frame_9/texture**
 
   .. _class_AnimatedTexture_frame_90/delay_sec:
 
@@ -1997,7 +1996,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_90/texture:
 
-- :ref:`Texture<class_texture>` **frame_90/texture**
+- :ref:`Texture<class_Texture>` **frame_90/texture**
 
   .. _class_AnimatedTexture_frame_91/delay_sec:
 
@@ -2005,7 +2004,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_91/texture:
 
-- :ref:`Texture<class_texture>` **frame_91/texture**
+- :ref:`Texture<class_Texture>` **frame_91/texture**
 
   .. _class_AnimatedTexture_frame_92/delay_sec:
 
@@ -2013,7 +2012,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_92/texture:
 
-- :ref:`Texture<class_texture>` **frame_92/texture**
+- :ref:`Texture<class_Texture>` **frame_92/texture**
 
   .. _class_AnimatedTexture_frame_93/delay_sec:
 
@@ -2021,7 +2020,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_93/texture:
 
-- :ref:`Texture<class_texture>` **frame_93/texture**
+- :ref:`Texture<class_Texture>` **frame_93/texture**
 
   .. _class_AnimatedTexture_frame_94/delay_sec:
 
@@ -2029,7 +2028,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_94/texture:
 
-- :ref:`Texture<class_texture>` **frame_94/texture**
+- :ref:`Texture<class_Texture>` **frame_94/texture**
 
   .. _class_AnimatedTexture_frame_95/delay_sec:
 
@@ -2037,7 +2036,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_95/texture:
 
-- :ref:`Texture<class_texture>` **frame_95/texture**
+- :ref:`Texture<class_Texture>` **frame_95/texture**
 
   .. _class_AnimatedTexture_frame_96/delay_sec:
 
@@ -2045,7 +2044,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_96/texture:
 
-- :ref:`Texture<class_texture>` **frame_96/texture**
+- :ref:`Texture<class_Texture>` **frame_96/texture**
 
   .. _class_AnimatedTexture_frame_97/delay_sec:
 
@@ -2053,7 +2052,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_97/texture:
 
-- :ref:`Texture<class_texture>` **frame_97/texture**
+- :ref:`Texture<class_Texture>` **frame_97/texture**
 
   .. _class_AnimatedTexture_frame_98/delay_sec:
 
@@ -2061,7 +2060,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_98/texture:
 
-- :ref:`Texture<class_texture>` **frame_98/texture**
+- :ref:`Texture<class_Texture>` **frame_98/texture**
 
   .. _class_AnimatedTexture_frame_99/delay_sec:
 
@@ -2069,7 +2068,7 @@ Member Variables
 
   .. _class_AnimatedTexture_frame_99/texture:
 
-- :ref:`Texture<class_texture>` **frame_99/texture**
+- :ref:`Texture<class_Texture>` **frame_99/texture**
 
   .. _class_AnimatedTexture_frames:
 

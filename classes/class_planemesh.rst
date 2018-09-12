@@ -7,21 +7,25 @@
 PlaneMesh
 =========
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Class representing a planar :ref:`PrimitiveMesh<class_primitivemesh>`.
+Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness.
+
+Property Descriptions
+---------------------
 
   .. _class_PlaneMesh_size:
 
-- :ref:`Vector2<class_vector2>` **size** - Size of the generated plane. Defaults to (2.0, 2.0).
+- :ref:`Vector2<class_Vector2>` **size** - Size of the generated plane. Defaults to (2.0, 2.0).
 
   .. _class_PlaneMesh_subdivide_depth:
 
@@ -31,9 +35,4 @@ Member Variables
 
 - :ref:`int<class_int>` **subdivide_width** - Number of subdivision along the x-axis. Defaults to 0.
 
-
-Description
------------
-
-Class representing a planar :ref:`PrimitiveMesh<class_primitivemesh>`. This flat mesh does not have a thickness.
 

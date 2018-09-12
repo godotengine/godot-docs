@@ -7,8 +7,7 @@
 VSplitContainer
 ===============
 
-**Inherits:** :ref:`SplitContainer<class_splitcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -19,5 +18,5 @@ Vertical split container.
 Description
 -----------
 
-Vertical split container. See :ref:`SplitContainer<class_splitcontainer>`. This goes from left to right.
+Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
 

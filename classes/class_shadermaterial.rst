@@ -7,49 +7,48 @@
 ShaderMaterial
 ==============
 
-**Inherits:** :ref:`Material<class_material>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-A material that uses a custom :ref:`Shader<class_shader>` program.
+A material that uses a custom :ref:`Shader<class_Shader>` program.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_shader_param<class_ShaderMaterial_get_shader_param>` **(** :ref:`String<class_string>` param **)** const                                |
+| :ref:`Variant<class_Variant>`  | :ref:`get_shader_param<class_ShaderMaterial_get_shader_param>` **(** :ref:`String<class_String>` param **)** const                                |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shader_param<class_ShaderMaterial_set_shader_param>` **(** :ref:`String<class_string>` param, :ref:`Variant<class_variant>` value **)** |
+| void                           | :ref:`set_shader_param<class_ShaderMaterial_set_shader_param>` **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_ShaderMaterial_shader:
-
-- :ref:`Shader<class_shader>` **shader** - The :ref:`Shader<class_shader>` program used to render this material.
-
 
 Description
 -----------
 
-A material that uses a custom :ref:`Shader<class_shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
+A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ShaderMaterial_shader:
+
+- :ref:`Shader<class_Shader>` **shader** - The :ref:`Shader<class_Shader>` program used to render this material.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ShaderMaterial_get_shader_param:
 
-- :ref:`Variant<class_variant>` **get_shader_param** **(** :ref:`String<class_string>` param **)** const
+- :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`String<class_String>` param **)** const
 
 Returns the current value set for this material of a uniform in the shader.
 
 .. _class_ShaderMaterial_set_shader_param:
 
-- void **set_shader_param** **(** :ref:`String<class_string>` param, :ref:`Variant<class_variant>` value **)**
+- void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
 
 Changes the value set for this material of a uniform in the shader.
 

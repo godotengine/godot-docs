@@ -7,8 +7,7 @@
 AnimationNodeStateMachineTransition
 ===================================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -24,12 +23,24 @@ Signals
 - **advance_condition_changed** **(** **)**
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_AnimationNodeStateMachineTransition_SwitchMode:
+
+enum **SwitchMode**
+
+- **SWITCH_MODE_IMMEDIATE** = **0**
+- **SWITCH_MODE_SYNC** = **1**
+- **SWITCH_MODE_AT_END** = **2**
+
+
+Property Descriptions
+---------------------
 
   .. _class_AnimationNodeStateMachineTransition_advance_condition:
 
-- :ref:`String<class_string>` **advance_condition**
+- :ref:`String<class_String>` **advance_condition**
 
   .. _class_AnimationNodeStateMachineTransition_auto_advance:
 
@@ -45,22 +56,10 @@ Member Variables
 
   .. _class_AnimationNodeStateMachineTransition_switch_mode:
 
-- :ref:`SwitchMode<enum_animationnodestatemachinetransition_switchmode>` **switch_mode**
+- :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` **switch_mode**
 
   .. _class_AnimationNodeStateMachineTransition_xfade_time:
 
 - :ref:`float<class_float>` **xfade_time**
-
-
-Enums
------
-
-  .. _enum_AnimationNodeStateMachineTransition_SwitchMode:
-
-enum **SwitchMode**
-
-- **SWITCH_MODE_IMMEDIATE** = **0**
-- **SWITCH_MODE_SYNC** = **1**
-- **SWITCH_MODE_AT_END** = **2**
 
 

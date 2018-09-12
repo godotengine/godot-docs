@@ -7,10 +7,8 @@
 WindowDialog
 ============
 
-**Inherits:** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AcceptDialog<class_acceptdialog>`
-
+**Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`
 **Category:** Core
 
 Brief Description
@@ -18,15 +16,20 @@ Brief Description
 
 Base class for window dialogs.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>` **(** **)** |
+| :ref:`TextureButton<class_TextureButton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>` **(** **)** |
 +--------------------------------------------+--------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
+
+Property Descriptions
+---------------------
 
   .. _class_WindowDialog_resizable:
 
@@ -34,21 +37,16 @@ Member Variables
 
   .. _class_WindowDialog_window_title:
 
-- :ref:`String<class_string>` **window_title** - The text displayed in the window's title bar. Default value: "Save a File".
+- :ref:`String<class_String>` **window_title** - The text displayed in the window's title bar.
 
 
-Description
------------
-
-Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_control>` that draws a window decoration and allows motion and resizing.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_WindowDialog_get_close_button:
 
-- :ref:`TextureButton<class_texturebutton>` **get_close_button** **(** **)**
+- :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 
-Return the close :ref:`TextureButton<class_texturebutton>`.
+Return the close :ref:`TextureButton<class_TextureButton>`.
 
 

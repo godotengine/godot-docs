@@ -7,24 +7,13 @@
 ARVROrigin
 ==========
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Our origin point in AR/VR.
-
-Member Variables
-----------------
-
-  .. _class_ARVROrigin_world_scale:
-
-- :ref:`float<class_float>` **world_scale** - Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
-
-Note that this method is a passthrough to the :ref:`ARVRServer<class_arvrserver>` itself.
-
 
 Description
 -----------
@@ -36,4 +25,14 @@ There should be only one of these nodes in your scene and you must have one. All
 It is the position of this node that you update when you're character needs to move through your game world while we're not moving in the real world. Movement in the real world is always in relation to this origin point.
 
 So say that your character is driving a car, the ARVROrigin node should be a child node of this car. If you implement a teleport system to move your character, you change the position of this node. Etc.
+
+Property Descriptions
+---------------------
+
+  .. _class_ARVROrigin_world_scale:
+
+- :ref:`float<class_float>` **world_scale** - Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
+
+Note that this method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
+
 

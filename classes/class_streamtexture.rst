@@ -7,8 +7,7 @@
 StreamTexture
 =============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 A .stex texture.
 
-Member Variables
-----------------
-
-  .. _class_StreamTexture_load_path:
-
-- :ref:`String<class_string>` **load_path** - The StreamTexture's filepath to a .stex file.
-
-
 Description
 -----------
 
 A texture that is loaded from a .stex file.
+
+Property Descriptions
+---------------------
+
+  .. _class_StreamTexture_load_path:
+
+- :ref:`String<class_String>` **load_path** - The StreamTexture's filepath to a .stex file.
+
 

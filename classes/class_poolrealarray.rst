@@ -14,15 +14,15 @@ Brief Description
 
 Real Array.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_poolrealarray>`  | :ref:`PoolRealArray<class_PoolRealArray_PoolRealArray>` **(** :ref:`Array<class_array>` from **)**                |
+| :ref:`PoolRealArray<class_PoolRealArray>`  | :ref:`PoolRealArray<class_PoolRealArray_PoolRealArray>` **(** :ref:`Array<class_Array>` from **)**                |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`append<class_PoolRealArray_append>` **(** :ref:`float<class_float>` value **)**                             |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`append_array<class_PoolRealArray_append_array>` **(** :ref:`PoolRealArray<class_poolrealarray>` array **)** |
+| void                                       | :ref:`append_array<class_PoolRealArray_append_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)** |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`insert<class_PoolRealArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**  |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -44,12 +44,12 @@ Description
 
 Real Array. Array of floating point values. Can only contain floats. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PoolRealArray_PoolRealArray:
 
-- :ref:`PoolRealArray<class_poolrealarray>` **PoolRealArray** **(** :ref:`Array<class_array>` from **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **PoolRealArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
@@ -61,7 +61,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolRe
 
 .. _class_PoolRealArray_append_array:
 
-- void **append_array** **(** :ref:`PoolRealArray<class_poolrealarray>` array **)**
+- void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
 
 Append an RealArray at the end of this array.
 
@@ -75,7 +75,7 @@ Insert a new element at a given position in the array. The position must be vali
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array (so first element will now be the last).
+Reverse the order of the elements in the array.
 
 .. _class_PoolRealArray_push_back:
 

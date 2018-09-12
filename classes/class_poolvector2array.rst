@@ -14,27 +14,27 @@ Brief Description
 
 An Array of Vector2.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`PoolVector2Array<class_PoolVector2Array_PoolVector2Array>` **(** :ref:`Array<class_array>` from **)**                |
+| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`PoolVector2Array<class_PoolVector2Array_PoolVector2Array>` **(** :ref:`Array<class_Array>` from **)**                |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`append<class_PoolVector2Array_append>` **(** :ref:`Vector2<class_vector2>` vector2 **)**                             |
+| void                                             | :ref:`append<class_PoolVector2Array_append>` **(** :ref:`Vector2<class_Vector2>` vector2 **)**                             |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`append_array<class_PoolVector2Array_append_array>` **(** :ref:`PoolVector2Array<class_poolvector2array>` array **)** |
+| void                                             | :ref:`append_array<class_PoolVector2Array_append_array>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)** |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`insert<class_PoolVector2Array_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` vector2 **)**  |
+| :ref:`int<class_int>`                            | :ref:`insert<class_PoolVector2Array_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**  |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`invert<class_PoolVector2Array_invert>` **(** **)**                                                                   |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`push_back<class_PoolVector2Array_push_back>` **(** :ref:`Vector2<class_vector2>` vector2 **)**                       |
+| void                                             | :ref:`push_back<class_PoolVector2Array_push_back>` **(** :ref:`Vector2<class_Vector2>` vector2 **)**                       |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`remove<class_PoolVector2Array_remove>` **(** :ref:`int<class_int>` idx **)**                                         |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`resize<class_PoolVector2Array_resize>` **(** :ref:`int<class_int>` idx **)**                                         |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set<class_PoolVector2Array_set>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` vector2 **)**        |
+| void                                             | :ref:`set<class_PoolVector2Array_set>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`size<class_PoolVector2Array_size>` **(** **)**                                                                       |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -44,30 +44,30 @@ Description
 
 An Array specifically designed to hold Vector2. Note that this type is passed by value and not by reference.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PoolVector2Array_PoolVector2Array:
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **PoolVector2Array** **(** :ref:`Array<class_array>` from **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **PoolVector2Array** **(** :ref:`Array<class_Array>` from **)**
 
 Construct a new ``PoolVector2Array``. Optionally, you can pass in an Array that will be converted.
 
 .. _class_PoolVector2Array_append:
 
-- void **append** **(** :ref:`Vector2<class_vector2>` vector2 **)**
+- void **append** **(** :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolVector2Array_push_back>`).
 
 .. _class_PoolVector2Array_append_array:
 
-- void **append_array** **(** :ref:`PoolVector2Array<class_poolvector2array>` array **)**
+- void **append_array** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)**
 
 Append an ``PoolVector2Array`` at the end of this array.
 
 .. _class_PoolVector2Array_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` vector2 **)**
+- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
@@ -75,13 +75,13 @@ Insert a new element at a given position in the array. The position must be vali
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array (so first element will now be the last).
+Reverse the order of the elements in the array.
 
 .. _class_PoolVector2Array_push_back:
 
-- void **push_back** **(** :ref:`Vector2<class_vector2>` vector2 **)**
+- void **push_back** **(** :ref:`Vector2<class_Vector2>` vector2 **)**
 
-Insert a :ref:`Vector2<class_vector2>` at the end.
+Insert a :ref:`Vector2<class_Vector2>` at the end.
 
 .. _class_PoolVector2Array_remove:
 
@@ -97,9 +97,9 @@ Set the size of the array. If the array is grown reserve elements at the end of 
 
 .. _class_PoolVector2Array_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` vector2 **)**
+- void **set** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**
 
-Change the :ref:`Vector2<class_vector2>` at the given index.
+Change the :ref:`Vector2<class_Vector2>` at the given index.
 
 .. _class_PoolVector2Array_size:
 

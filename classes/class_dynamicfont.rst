@@ -7,8 +7,7 @@
 DynamicFont
 ===========
 
-**Inherits:** :ref:`Font<class_font>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,23 +15,41 @@ Brief Description
 
 DynamicFont renders vector font files at runtime.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_fallback<class_DynamicFont_add_fallback>` **(** :ref:`DynamicFontData<class_dynamicfontdata>` data **)**                            |
+| void                                           | :ref:`add_fallback<class_DynamicFont_add_fallback>` **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**                            |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`DynamicFontData<class_dynamicfontdata>`  | :ref:`get_fallback<class_DynamicFont_get_fallback>` **(** :ref:`int<class_int>` idx **)** const                                               |
+| :ref:`DynamicFontData<class_DynamicFontData>`  | :ref:`get_fallback<class_DynamicFont_get_fallback>` **(** :ref:`int<class_int>` idx **)** const                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_fallback_count<class_DynamicFont_get_fallback_count>` **(** **)** const                                                             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`remove_fallback<class_DynamicFont_remove_fallback>` **(** :ref:`int<class_int>` idx **)**                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_fallback<class_DynamicFont_set_fallback>` **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` data **)** |
+| void                                           | :ref:`set_fallback<class_DynamicFont_set_fallback>` **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)** |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_DynamicFont_SpacingType:
+
+enum **SpacingType**
+
+- **SPACING_TOP** = **0** --- Spacing at the top.
+- **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
+- **SPACING_CHAR** = **2** --- Character spacing.
+- **SPACING_SPACE** = **3** --- Space spacing.
+
+
+Description
+-----------
+
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths.
+
+Property Descriptions
+---------------------
 
   .. _class_DynamicFont_extra_spacing_bottom:
 
@@ -52,11 +69,11 @@ Member Variables
 
   .. _class_DynamicFont_font_data:
 
-- :ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font data.
+- :ref:`DynamicFontData<class_DynamicFontData>` **font_data** - The font data.
 
   .. _class_DynamicFont_outline_color:
 
-- :ref:`Color<class_color>` **outline_color**
+- :ref:`Color<class_Color>` **outline_color**
 
   .. _class_DynamicFont_outline_size:
 
@@ -75,36 +92,18 @@ Member Variables
 - :ref:`bool<class_bool>` **use_mipmaps** - If ``true`` mipmapping is used.
 
 
-Enums
------
-
-  .. _enum_DynamicFont_SpacingType:
-
-enum **SpacingType**
-
-- **SPACING_TOP** = **0** --- Spacing at the top.
-- **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
-- **SPACING_CHAR** = **2** --- Character spacing.
-- **SPACING_SPACE** = **3** --- Space spacing.
-
-
-Description
------------
-
-DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_bitmapfont>`. This trades the faster loading time of :ref:`BitmapFont<class_bitmapfont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_dynamicfontdata>` is used for referencing the font file paths.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_DynamicFont_add_fallback:
 
-- void **add_fallback** **(** :ref:`DynamicFontData<class_dynamicfontdata>` data **)**
+- void **add_fallback** **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
 Adds a fallback font.
 
 .. _class_DynamicFont_get_fallback:
 
-- :ref:`DynamicFontData<class_dynamicfontdata>` **get_fallback** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`DynamicFontData<class_DynamicFontData>` **get_fallback** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the fallback font at index ``idx``.
 
@@ -122,7 +121,7 @@ Removes the fallback font at index ``idx``.
 
 .. _class_DynamicFont_set_fallback:
 
-- void **set_fallback** **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` data **)**
+- void **set_fallback** **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
 Sets the fallback font at index ``idx``.
 

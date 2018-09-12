@@ -7,8 +7,7 @@
 ReflectionProbe
 ===============
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,24 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_ReflectionProbe_UpdateMode:
+
+enum **UpdateMode**
+
+- **UPDATE_ONCE** = **0**
+- **UPDATE_ALWAYS** = **1**
+
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/reflection_probes`
+
+Property Descriptions
+---------------------
 
   .. _class_ReflectionProbe_box_projection:
 
@@ -33,7 +48,7 @@ Member Variables
 
   .. _class_ReflectionProbe_extents:
 
-- :ref:`Vector3<class_vector3>` **extents**
+- :ref:`Vector3<class_Vector3>` **extents**
 
   .. _class_ReflectionProbe_intensity:
 
@@ -41,7 +56,7 @@ Member Variables
 
   .. _class_ReflectionProbe_interior_ambient_color:
 
-- :ref:`Color<class_color>` **interior_ambient_color**
+- :ref:`Color<class_Color>` **interior_ambient_color**
 
   .. _class_ReflectionProbe_interior_ambient_contrib:
 
@@ -61,26 +76,10 @@ Member Variables
 
   .. _class_ReflectionProbe_origin_offset:
 
-- :ref:`Vector3<class_vector3>` **origin_offset**
+- :ref:`Vector3<class_Vector3>` **origin_offset**
 
   .. _class_ReflectionProbe_update_mode:
 
-- :ref:`UpdateMode<enum_reflectionprobe_updatemode>` **update_mode**
+- :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode**
 
-
-Enums
------
-
-  .. _enum_ReflectionProbe_UpdateMode:
-
-enum **UpdateMode**
-
-- **UPDATE_ONCE** = **0**
-- **UPDATE_ALWAYS** = **1**
-
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/reflection_probes`
 

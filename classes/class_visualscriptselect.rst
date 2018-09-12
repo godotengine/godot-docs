@@ -7,22 +7,13 @@
 VisualScriptSelect
 ==================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Chooses between two input values.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptSelect_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type** - The input variables' type.
-
 
 Description
 -----------
@@ -40,4 +31,12 @@ Chooses between two input values based on a Boolean condition.
 **Output Ports:**
 
 - Data (variant): ``out``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptSelect_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The input variables' type.
+
 

@@ -7,10 +7,8 @@
 ConfirmationDialog
 ==================
 
-**Inherits:** :ref:`AcceptDialog<class_acceptdialog>` **<** :ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ScriptCreateDialog<class_scriptcreatedialog>`, :ref:`EditorFileDialog<class_editorfiledialog>`, :ref:`FileDialog<class_filedialog>`
-
+**Inherits:** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`, :ref:`EditorFileDialog<class_EditorFileDialog>`, :ref:`FileDialog<class_FileDialog>`
 **Category:** Core
 
 Brief Description
@@ -18,24 +16,24 @@ Brief Description
 
 Dialog for confirmation of actions.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+--------------------------------------------------------------------+
-| :ref:`Button<class_button>`  | :ref:`get_cancel<class_ConfirmationDialog_get_cancel>` **(** **)** |
+| :ref:`Button<class_Button>`  | :ref:`get_cancel<class_ConfirmationDialog_get_cancel>` **(** **)** |
 +------------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
 
-Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_acceptdialog>`, but has by default an OK and Cancel button (in host OS order).
+Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_AcceptDialog>`, but has by default an OK and Cancel button (in host OS order).
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ConfirmationDialog_get_cancel:
 
-- :ref:`Button<class_button>` **get_cancel** **(** **)**
+- :ref:`Button<class_Button>` **get_cancel** **(** **)**
 
 Return the cancel button.
 

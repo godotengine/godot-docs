@@ -7,8 +7,7 @@
 AudioStreamPlayer3D
 ===================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Plays 3D sound in 3D space.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_playback_position<class_AudioStreamPlayer3D_get_playback_position>` **(** **)**           |
@@ -39,88 +38,8 @@ Signals
 Fires when the audio stops playing.
 
 
-Member Variables
-----------------
-
-  .. _class_AudioStreamPlayer3D_area_mask:
-
-- :ref:`int<class_int>` **area_mask** - Areas in which this sound plays.
-
-  .. _class_AudioStreamPlayer3D_attenuation_filter_cutoff_hz:
-
-- :ref:`float<class_float>` **attenuation_filter_cutoff_hz** - Dampens audio above this frequency, in Hz.
-
-  .. _class_AudioStreamPlayer3D_attenuation_filter_db:
-
-- :ref:`float<class_float>` **attenuation_filter_db** - Amount how much the filter affects the loudness, in dB.
-
-  .. _class_AudioStreamPlayer3D_attenuation_model:
-
-- :ref:`AttenuationModel<enum_audiostreamplayer3d_attenuationmodel>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
-
-  .. _class_AudioStreamPlayer3D_autoplay:
-
-- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
-
-  .. _class_AudioStreamPlayer3D_bus:
-
-- :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
-
-  .. _class_AudioStreamPlayer3D_doppler_tracking:
-
-- :ref:`DopplerTracking<enum_audiostreamplayer3d_dopplertracking>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
-
-  .. _class_AudioStreamPlayer3D_emission_angle_degrees:
-
-- :ref:`float<class_float>` **emission_angle_degrees** - The angle in which the audio reaches cameras undampened.
-
-  .. _class_AudioStreamPlayer3D_emission_angle_enabled:
-
-- :ref:`bool<class_bool>` **emission_angle_enabled** - If ``true`` the audio should be dampened according to the direction of the sound.
-
-  .. _class_AudioStreamPlayer3D_emission_angle_filter_attenuation_db:
-
-- :ref:`float<class_float>` **emission_angle_filter_attenuation_db** - dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
-
-  .. _class_AudioStreamPlayer3D_max_db:
-
-- :ref:`float<class_float>` **max_db** - Sets the absolute maximum of the soundlevel, in dB.
-
-  .. _class_AudioStreamPlayer3D_max_distance:
-
-- :ref:`float<class_float>` **max_distance** - Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect if set to 0.
-
-  .. _class_AudioStreamPlayer3D_out_of_range_mode:
-
-- :ref:`OutOfRangeMode<enum_audiostreamplayer3d_outofrangemode>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
-
-  .. _class_AudioStreamPlayer3D_pitch_scale:
-
-- :ref:`float<class_float>` **pitch_scale** - Changes the pitch and the tempo of the audio.
-
-  .. _class_AudioStreamPlayer3D_playing:
-
-- :ref:`bool<class_bool>` **playing** - If ``true``, audio is playing.
-
-  .. _class_AudioStreamPlayer3D_stream:
-
-- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
-
-  .. _class_AudioStreamPlayer3D_stream_paused:
-
-- :ref:`bool<class_bool>` **stream_paused**
-
-  .. _class_AudioStreamPlayer3D_unit_db:
-
-- :ref:`float<class_float>` **unit_db** - Base sound level unaffected by dampening, in dB.
-
-  .. _class_AudioStreamPlayer3D_unit_size:
-
-- :ref:`float<class_float>` **unit_size** - Factor for the attenuation effect.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_AudioStreamPlayer3D_DopplerTracking:
 
@@ -157,14 +76,94 @@ Tutorials
 - :doc:`../learning/features/audio/index`
 - :doc:`../tutorials/audio/audio_streams`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_AudioStreamPlayer3D_area_mask:
+
+- :ref:`int<class_int>` **area_mask** - Areas in which this sound plays.
+
+  .. _class_AudioStreamPlayer3D_attenuation_filter_cutoff_hz:
+
+- :ref:`float<class_float>` **attenuation_filter_cutoff_hz** - Dampens audio above this frequency, in Hz.
+
+  .. _class_AudioStreamPlayer3D_attenuation_filter_db:
+
+- :ref:`float<class_float>` **attenuation_filter_db** - Amount how much the filter affects the loudness, in dB.
+
+  .. _class_AudioStreamPlayer3D_attenuation_model:
+
+- :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
+
+  .. _class_AudioStreamPlayer3D_autoplay:
+
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
+
+  .. _class_AudioStreamPlayer3D_bus:
+
+- :ref:`String<class_String>` **bus** - Bus on which this audio is playing.
+
+  .. _class_AudioStreamPlayer3D_doppler_tracking:
+
+- :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
+
+  .. _class_AudioStreamPlayer3D_emission_angle_degrees:
+
+- :ref:`float<class_float>` **emission_angle_degrees** - The angle in which the audio reaches cameras undampened.
+
+  .. _class_AudioStreamPlayer3D_emission_angle_enabled:
+
+- :ref:`bool<class_bool>` **emission_angle_enabled** - If ``true`` the audio should be dampened according to the direction of the sound.
+
+  .. _class_AudioStreamPlayer3D_emission_angle_filter_attenuation_db:
+
+- :ref:`float<class_float>` **emission_angle_filter_attenuation_db** - dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
+
+  .. _class_AudioStreamPlayer3D_max_db:
+
+- :ref:`float<class_float>` **max_db** - Sets the absolute maximum of the soundlevel, in dB.
+
+  .. _class_AudioStreamPlayer3D_max_distance:
+
+- :ref:`float<class_float>` **max_distance** - Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect if set to 0.
+
+  .. _class_AudioStreamPlayer3D_out_of_range_mode:
+
+- :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
+
+  .. _class_AudioStreamPlayer3D_pitch_scale:
+
+- :ref:`float<class_float>` **pitch_scale** - Changes the pitch and the tempo of the audio.
+
+  .. _class_AudioStreamPlayer3D_playing:
+
+- :ref:`bool<class_bool>` **playing** - If ``true``, audio is playing.
+
+  .. _class_AudioStreamPlayer3D_stream:
+
+- :ref:`AudioStream<class_AudioStream>` **stream** - The :ref:`AudioStream<class_AudioStream>` object to be played.
+
+  .. _class_AudioStreamPlayer3D_stream_paused:
+
+- :ref:`bool<class_bool>` **stream_paused**
+
+  .. _class_AudioStreamPlayer3D_unit_db:
+
+- :ref:`float<class_float>` **unit_db** - Base sound level unaffected by dampening, in dB.
+
+  .. _class_AudioStreamPlayer3D_unit_size:
+
+- :ref:`float<class_float>` **unit_size** - Factor for the attenuation effect.
+
+
+Method Descriptions
+-------------------
 
 .. _class_AudioStreamPlayer3D_get_playback_position:
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
-Returns the position in the :ref:`AudioStream<class_audiostream>`.
+Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 .. _class_AudioStreamPlayer3D_play:
 

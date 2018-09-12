@@ -7,8 +7,7 @@
 SphereShape
 ===========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Sphere shape for 3D collisions.
 
-Member Variables
-----------------
+Description
+-----------
+
+Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. This shape is useful for modeling sphere-like 3D objects.
+
+Property Descriptions
+---------------------
 
   .. _class_SphereShape_radius:
 
 - :ref:`float<class_float>` **radius** - The sphere's radius. The shape's diameter is double the radius.
 
-
-Description
------------
-
-Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`. This shape is useful for modeling sphere-like 3D objects.
 

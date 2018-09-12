@@ -7,8 +7,7 @@
 EditorPlugin
 ============
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,31 +15,31 @@ Brief Description
 
 Used by the editor to extend its functionality.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_autoload_singleton<class_EditorPlugin_add_autoload_singleton>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` path **)**                                                                         |
+| void                                                 | :ref:`add_autoload_singleton<class_EditorPlugin_add_autoload_singleton>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` path **)**                                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ToolButton<class_toolbutton>`                  | :ref:`add_control_to_bottom_panel<class_EditorPlugin_add_control_to_bottom_panel>` **(** :ref:`Control<class_control>` control, :ref:`String<class_string>` title **)**                                                         |
+| :ref:`ToolButton<class_ToolButton>`                  | :ref:`add_control_to_bottom_panel<class_EditorPlugin_add_control_to_bottom_panel>` **(** :ref:`Control<class_Control>` control, :ref:`String<class_String>` title **)**                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>` **(** :ref:`CustomControlContainer<enum_editorplugin_customcontrolcontainer>` container, :ref:`Control<class_control>` control **)**               |
+| void                                                 | :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>` **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**               |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_control_to_dock<class_EditorPlugin_add_control_to_dock>` **(** :ref:`DockSlot<enum_editorplugin_dockslot>` slot, :ref:`Control<class_control>` control **)**                                                          |
+| void                                                 | :ref:`add_control_to_dock<class_EditorPlugin_add_control_to_dock>` **(** :ref:`DockSlot<enum_EditorPlugin_DockSlot>` slot, :ref:`Control<class_Control>` control **)**                                                          |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>` **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon **)**               |
+| void                                                 | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture<class_Texture>` icon **)**               |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_export_plugin<class_EditorPlugin_add_export_plugin>` **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin **)**                                                                                           |
+| void                                                 | :ref:`add_export_plugin<class_EditorPlugin_add_export_plugin>` **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**                                                                                           |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_import_plugin<class_EditorPlugin_add_import_plugin>` **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**                                                                                         |
+| void                                                 | :ref:`add_import_plugin<class_EditorPlugin_add_import_plugin>` **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**                                                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_inspector_plugin<class_EditorPlugin_add_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_editorinspectorplugin>` plugin **)**                                                                               |
+| void                                                 | :ref:`add_inspector_plugin<class_EditorPlugin_add_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                               |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_scene_import_plugin<class_EditorPlugin_add_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**                                                                     |
+| void                                                 | :ref:`add_scene_import_plugin<class_EditorPlugin_add_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_tool_menu_item<class_EditorPlugin_add_tool_menu_item>` **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` handler, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` ud=null **)** |
+| void                                                 | :ref:`add_tool_menu_item<class_EditorPlugin_add_tool_menu_item>` **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)** |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>` **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` submenu **)**                                                                        |
+| void                                                 | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>` **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**                                                                        |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`apply_changes<class_EditorPlugin_apply_changes>` **(** **)** virtual                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -48,63 +47,63 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`clear<class_EditorPlugin_clear>` **(** **)** virtual                                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`edit<class_EditorPlugin_edit>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                                     |
+| void                                                 | :ref:`edit<class_EditorPlugin_edit>` **(** :ref:`Object<class_Object>` object **)** virtual                                                                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`InputEvent<class_inputevent>` event **)** virtual                                                                                      |
+| :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`forward_draw_over_viewport<class_EditorPlugin_forward_draw_over_viewport>` **(** :ref:`Control<class_control>` overlay **)** virtual                                                                                      |
+| void                                                 | :ref:`forward_draw_over_viewport<class_EditorPlugin_forward_draw_over_viewport>` **(** :ref:`Control<class_Control>` overlay **)** virtual                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`forward_force_draw_over_viewport<class_EditorPlugin_forward_force_draw_over_viewport>` **(** :ref:`Control<class_control>` overlay **)** virtual                                                                          |
+| void                                                 | :ref:`forward_force_draw_over_viewport<class_EditorPlugin_forward_force_draw_over_viewport>` **(** :ref:`Control<class_Control>` overlay **)** virtual                                                                          |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>` **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event **)** virtual                                                |
+| :ref:`bool<class_bool>`                              | :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>` **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual                                                |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`        | :ref:`get_breakpoints<class_EditorPlugin_get_breakpoints>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`PoolStringArray<class_PoolStringArray>`        | :ref:`get_breakpoints<class_EditorPlugin_get_breakpoints>` **(** **)** virtual                                                                                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorInterface<class_editorinterface>`        | :ref:`get_editor_interface<class_EditorPlugin_get_editor_interface>` **(** **)**                                                                                                                                                |
+| :ref:`EditorInterface<class_EditorInterface>`        | :ref:`get_editor_interface<class_EditorPlugin_get_editor_interface>` **(** **)**                                                                                                                                                |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                          | :ref:`get_plugin_icon<class_EditorPlugin_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`Object<class_Object>`                          | :ref:`get_plugin_icon<class_EditorPlugin_get_plugin_icon>` **(** **)** virtual                                                                                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                          | :ref:`get_plugin_name<class_EditorPlugin_get_plugin_name>` **(** **)** virtual                                                                                                                                                  |
+| :ref:`String<class_String>`                          | :ref:`get_plugin_name<class_EditorPlugin_get_plugin_name>` **(** **)** virtual                                                                                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ScriptCreateDialog<class_scriptcreatedialog>`  | :ref:`get_script_create_dialog<class_EditorPlugin_get_script_create_dialog>` **(** **)**                                                                                                                                        |
+| :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`  | :ref:`get_script_create_dialog<class_EditorPlugin_get_script_create_dialog>` **(** **)**                                                                                                                                        |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`                  | :ref:`get_state<class_EditorPlugin_get_state>` **(** **)** virtual                                                                                                                                                              |
+| :ref:`Dictionary<class_Dictionary>`                  | :ref:`get_state<class_EditorPlugin_get_state>` **(** **)** virtual                                                                                                                                                              |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`UndoRedo<class_undoredo>`                      | :ref:`get_undo_redo<class_EditorPlugin_get_undo_redo>` **(** **)**                                                                                                                                                              |
+| :ref:`UndoRedo<class_UndoRedo>`                      | :ref:`get_undo_redo<class_EditorPlugin_get_undo_redo>` **(** **)**                                                                                                                                                              |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`get_window_layout<class_EditorPlugin_get_window_layout>` **(** :ref:`ConfigFile<class_configfile>` layout **)** virtual                                                                                                   |
+| void                                                 | :ref:`get_window_layout<class_EditorPlugin_get_window_layout>` **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`handles<class_EditorPlugin_handles>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                               |
+| :ref:`bool<class_bool>`                              | :ref:`handles<class_EditorPlugin_handles>` **(** :ref:`Object<class_Object>` object **)** virtual                                                                                                                               |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`has_main_screen<class_EditorPlugin_has_main_screen>` **(** **)** virtual                                                                                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`hide_bottom_panel<class_EditorPlugin_hide_bottom_panel>` **(** **)**                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`make_bottom_panel_item_visible<class_EditorPlugin_make_bottom_panel_item_visible>` **(** :ref:`Control<class_control>` item **)**                                                                                         |
+| void                                                 | :ref:`make_bottom_panel_item_visible<class_EditorPlugin_make_bottom_panel_item_visible>` **(** :ref:`Control<class_Control>` item **)**                                                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`make_visible<class_EditorPlugin_make_visible>` **(** :ref:`bool<class_bool>` visible **)** virtual                                                                                                                        |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`queue_save_layout<class_EditorPlugin_queue_save_layout>` **(** **)** const                                                                                                                                                |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_autoload_singleton<class_EditorPlugin_remove_autoload_singleton>` **(** :ref:`String<class_string>` name **)**                                                                                                     |
+| void                                                 | :ref:`remove_autoload_singleton<class_EditorPlugin_remove_autoload_singleton>` **(** :ref:`String<class_String>` name **)**                                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>` **(** :ref:`Control<class_control>` control **)**                                                                                  |
+| void                                                 | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>` **(** :ref:`Control<class_Control>` control **)**                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_control_from_container<class_EditorPlugin_remove_control_from_container>` **(** :ref:`CustomControlContainer<enum_editorplugin_customcontrolcontainer>` container, :ref:`Control<class_control>` control **)**     |
+| void                                                 | :ref:`remove_control_from_container<class_EditorPlugin_remove_control_from_container>` **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>` **(** :ref:`Control<class_control>` control **)**                                                                                                |
+| void                                                 | :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>` **(** :ref:`Control<class_Control>` control **)**                                                                                                |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>` **(** :ref:`String<class_string>` type **)**                                                                                                                   |
+| void                                                 | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>` **(** :ref:`String<class_String>` type **)**                                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_export_plugin<class_EditorPlugin_remove_export_plugin>` **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin **)**                                                                                     |
+| void                                                 | :ref:`remove_export_plugin<class_EditorPlugin_remove_export_plugin>` **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>` **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**                                                                                   |
+| void                                                 | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>` **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_inspector_plugin<class_EditorPlugin_remove_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_editorinspectorplugin>` plugin **)**                                                                         |
+| void                                                 | :ref:`remove_inspector_plugin<class_EditorPlugin_remove_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_scene_import_plugin<class_EditorPlugin_remove_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**                                                               |
+| void                                                 | :ref:`remove_scene_import_plugin<class_EditorPlugin_remove_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**                                                               |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`remove_tool_menu_item<class_EditorPlugin_remove_tool_menu_item>` **(** :ref:`String<class_string>` name **)**                                                                                                             |
+| void                                                 | :ref:`remove_tool_menu_item<class_EditorPlugin_remove_tool_menu_item>` **(** :ref:`String<class_String>` name **)**                                                                                                             |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`save_external_data<class_EditorPlugin_save_external_data>` **(** **)** virtual                                                                                                                                            |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,9 +111,9 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`set_input_event_forwarding_always_enabled<class_EditorPlugin_set_input_event_forwarding_always_enabled>` **(** **)**                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`set_state<class_EditorPlugin_set_state>` **(** :ref:`Dictionary<class_dictionary>` state **)** virtual                                                                                                                    |
+| void                                                 | :ref:`set_state<class_EditorPlugin_set_state>` **(** :ref:`Dictionary<class_Dictionary>` state **)** virtual                                                                                                                    |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`set_window_layout<class_EditorPlugin_set_window_layout>` **(** :ref:`ConfigFile<class_configfile>` layout **)** virtual                                                                                                   |
+| void                                                 | :ref:`set_window_layout<class_EditorPlugin_set_window_layout>` **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                | :ref:`update_overlays<class_EditorPlugin_update_overlays>` **(** **)** const                                                                                                                                                    |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,29 +123,29 @@ Signals
 
 .. _class_EditorPlugin_main_screen_changed:
 
-- **main_screen_changed** **(** :ref:`String<class_string>` screen_name **)**
+- **main_screen_changed** **(** :ref:`String<class_String>` screen_name **)**
 
 Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
 
 .. _class_EditorPlugin_resource_saved:
 
-- **resource_saved** **(** :ref:`Object<class_object>` resource **)**
+- **resource_saved** **(** :ref:`Resource<class_Resource>` resource **)**
 
 .. _class_EditorPlugin_scene_changed:
 
-- **scene_changed** **(** :ref:`Object<class_object>` scene_root **)**
+- **scene_changed** **(** :ref:`Node<class_Node>` scene_root **)**
 
 Emitted when user change scene. The argument is a root node of freshly opened scene.
 
 .. _class_EditorPlugin_scene_closed:
 
-- **scene_closed** **(** :ref:`String<class_string>` filepath **)**
+- **scene_closed** **(** :ref:`String<class_String>` filepath **)**
 
 Emitted when user close scene. The argument is file path to a closed scene.
 
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_EditorPlugin_DockSlot:
 
@@ -168,12 +167,14 @@ enum **CustomControlContainer**
 
 - **CONTAINER_TOOLBAR** = **0**
 - **CONTAINER_SPATIAL_EDITOR_MENU** = **1**
-- **CONTAINER_SPATIAL_EDITOR_SIDE** = **2**
-- **CONTAINER_SPATIAL_EDITOR_BOTTOM** = **3**
-- **CONTAINER_CANVAS_EDITOR_MENU** = **4**
-- **CONTAINER_CANVAS_EDITOR_SIDE** = **5**
-- **CONTAINER_CANVAS_EDITOR_BOTTOM** = **6**
-- **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **7**
+- **CONTAINER_SPATIAL_EDITOR_SIDE_LEFT** = **2**
+- **CONTAINER_SPATIAL_EDITOR_SIDE_RIGHT** = **3**
+- **CONTAINER_SPATIAL_EDITOR_BOTTOM** = **4**
+- **CONTAINER_CANVAS_EDITOR_MENU** = **5**
+- **CONTAINER_CANVAS_EDITOR_SIDE_LEFT** = **6**
+- **CONTAINER_CANVAS_EDITOR_SIDE_RIGHT** = **7**
+- **CONTAINER_CANVAS_EDITOR_BOTTOM** = **8**
+- **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **9**
 
 
 Description
@@ -186,24 +187,24 @@ Tutorials
 
 - :doc:`../development/plugins/index`
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorPlugin_add_autoload_singleton:
 
-- void **add_autoload_singleton** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` path **)**
+- void **add_autoload_singleton** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` path **)**
 
 Add a script at ``path`` to the Autoload list as ``name``.
 
 .. _class_EditorPlugin_add_control_to_bottom_panel:
 
-- :ref:`ToolButton<class_toolbutton>` **add_control_to_bottom_panel** **(** :ref:`Control<class_control>` control, :ref:`String<class_string>` title **)**
+- :ref:`ToolButton<class_ToolButton>` **add_control_to_bottom_panel** **(** :ref:`Control<class_Control>` control, :ref:`String<class_String>` title **)**
 
 Add a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. If your plugin is being removed, also make sure to remove your control by calling :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>`.
 
 .. _class_EditorPlugin_add_control_to_container:
 
-- void **add_control_to_container** **(** :ref:`CustomControlContainer<enum_editorplugin_customcontrolcontainer>` container, :ref:`Control<class_control>` control **)**
+- void **add_control_to_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
 Add a custom control to a container (see CONTAINER\_\* enum). There are many locations where custom controls can be added in the editor UI.
 
@@ -213,7 +214,7 @@ If your plugin is being removed, also make sure to remove your custom controls t
 
 .. _class_EditorPlugin_add_control_to_dock:
 
-- void **add_control_to_dock** **(** :ref:`DockSlot<enum_editorplugin_dockslot>` slot, :ref:`Control<class_control>` control **)**
+- void **add_control_to_dock** **(** :ref:`DockSlot<enum_EditorPlugin_DockSlot>` slot, :ref:`Control<class_Control>` control **)**
 
 Add the control to a specific dock slot (see DOCK\_\* enum for options).
 
@@ -223,7 +224,7 @@ If your plugin is being removed, also make sure to remove your control by callin
 
 .. _class_EditorPlugin_add_custom_type:
 
-- void **add_custom_type** **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon **)**
+- void **add_custom_type** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture<class_Texture>` icon **)**
 
 Add a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed.
 
@@ -235,29 +236,29 @@ During run-time, this will be a simple object with a script so this function doe
 
 .. _class_EditorPlugin_add_export_plugin:
 
-- void **add_export_plugin** **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin **)**
+- void **add_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
 .. _class_EditorPlugin_add_import_plugin:
 
-- void **add_import_plugin** **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**
+- void **add_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
 
 .. _class_EditorPlugin_add_inspector_plugin:
 
-- void **add_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_editorinspectorplugin>` plugin **)**
+- void **add_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
 
 .. _class_EditorPlugin_add_scene_import_plugin:
 
-- void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**
+- void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
 .. _class_EditorPlugin_add_tool_menu_item:
 
-- void **add_tool_menu_item** **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` handler, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` ud=null **)**
+- void **add_tool_menu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)**
 
 Adds a custom menu to 'Project > Tools' as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
 
 .. _class_EditorPlugin_add_tool_submenu_item:
 
-- void **add_tool_submenu_item** **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` submenu **)**
+- void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**
 
 .. _class_EditorPlugin_apply_changes:
 
@@ -279,25 +280,25 @@ Clear all the state and reset the object being edited to zero. This ensures your
 
 .. _class_EditorPlugin_edit:
 
-- void **edit** **(** :ref:`Object<class_object>` object **)** virtual
+- void **edit** **(** :ref:`Object<class_Object>` object **)** virtual
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
 .. _class_EditorPlugin_forward_canvas_gui_input:
 
-- :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`InputEvent<class_inputevent>` event **)** virtual
+- :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
 .. _class_EditorPlugin_forward_draw_over_viewport:
 
-- void **forward_draw_over_viewport** **(** :ref:`Control<class_control>` overlay **)** virtual
+- void **forward_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
 
 .. _class_EditorPlugin_forward_force_draw_over_viewport:
 
-- void **forward_force_draw_over_viewport** **(** :ref:`Control<class_control>` overlay **)** virtual
+- void **forward_force_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
 
 .. _class_EditorPlugin_forward_spatial_gui_input:
 
-- :ref:`bool<class_bool>` **forward_spatial_gui_input** **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event **)** virtual
+- :ref:`bool<class_bool>` **forward_spatial_gui_input** **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
 Implement this function if you are interested in 3D view screen input events. It will be called only if currently selected node is handled by your plugin.
 
@@ -305,49 +306,49 @@ If you would like to always gets those input events then additionally use :ref:`
 
 .. _class_EditorPlugin_get_breakpoints:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_breakpoints** **(** **)** virtual
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_breakpoints** **(** **)** virtual
 
 This is for editors that edit script based objects. You can return a list of breakpoints in the format (script:line), for example: res://path_to_script.gd:25
 
 .. _class_EditorPlugin_get_editor_interface:
 
-- :ref:`EditorInterface<class_editorinterface>` **get_editor_interface** **(** **)**
+- :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
 .. _class_EditorPlugin_get_plugin_icon:
 
-- :ref:`Object<class_object>` **get_plugin_icon** **(** **)** virtual
+- :ref:`Object<class_Object>` **get_plugin_icon** **(** **)** virtual
 
 .. _class_EditorPlugin_get_plugin_name:
 
-- :ref:`String<class_string>` **get_plugin_name** **(** **)** virtual
+- :ref:`String<class_String>` **get_plugin_name** **(** **)** virtual
 
 .. _class_EditorPlugin_get_script_create_dialog:
 
-- :ref:`ScriptCreateDialog<class_scriptcreatedialog>` **get_script_create_dialog** **(** **)**
+- :ref:`ScriptCreateDialog<class_ScriptCreateDialog>` **get_script_create_dialog** **(** **)**
 
 Gets the Editor's dialogue used for making scripts. Note that users can configure it before use.
 
 .. _class_EditorPlugin_get_state:
 
-- :ref:`Dictionary<class_dictionary>` **get_state** **(** **)** virtual
+- :ref:`Dictionary<class_Dictionary>` **get_state** **(** **)** virtual
 
 Get the state of your plugin editor. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns).
 
 .. _class_EditorPlugin_get_undo_redo:
 
-- :ref:`UndoRedo<class_undoredo>` **get_undo_redo** **(** **)**
+- :ref:`UndoRedo<class_UndoRedo>` **get_undo_redo** **(** **)**
 
 Get the undo/redo object. Most actions in the editor can be undoable, so use this object to make sure this happens when it's worth it.
 
 .. _class_EditorPlugin_get_window_layout:
 
-- void **get_window_layout** **(** :ref:`ConfigFile<class_configfile>` layout **)** virtual
+- void **get_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual
 
 Get the GUI layout of the plugin. This is used to save the project's editor layout when the :ref:`EditorPlugin.queue_save_layout<class_EditorPlugin_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
 
 .. _class_EditorPlugin_handles:
 
-- :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_object>` object **)** virtual
+- :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_Object>` object **)** virtual
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`EditorPlugin.edit<class_EditorPlugin_edit>` and :ref:`EditorPlugin.make_visible<class_EditorPlugin_make_visible>` called when the editor requests them.
 
@@ -363,7 +364,7 @@ Return true if this is a main screen editor plugin (it goes in the main screen s
 
 .. _class_EditorPlugin_make_bottom_panel_item_visible:
 
-- void **make_bottom_panel_item_visible** **(** :ref:`Control<class_control>` item **)**
+- void **make_bottom_panel_item_visible** **(** :ref:`Control<class_Control>` item **)**
 
 .. _class_EditorPlugin_make_visible:
 
@@ -381,53 +382,53 @@ Queue save the project's editor layout.
 
 .. _class_EditorPlugin_remove_autoload_singleton:
 
-- void **remove_autoload_singleton** **(** :ref:`String<class_string>` name **)**
+- void **remove_autoload_singleton** **(** :ref:`String<class_String>` name **)**
 
 Remove an Autoload ``name`` from the list.
 
 .. _class_EditorPlugin_remove_control_from_bottom_panel:
 
-- void **remove_control_from_bottom_panel** **(** :ref:`Control<class_control>` control **)**
+- void **remove_control_from_bottom_panel** **(** :ref:`Control<class_Control>` control **)**
 
 Remove the control from the bottom panel. Don't forget to call this if you added one, so the editor can remove it cleanly.
 
 .. _class_EditorPlugin_remove_control_from_container:
 
-- void **remove_control_from_container** **(** :ref:`CustomControlContainer<enum_editorplugin_customcontrolcontainer>` container, :ref:`Control<class_control>` control **)**
+- void **remove_control_from_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
 Remove the control from the specified container. Use it when cleaning up after adding a control with :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>`. Note that you can simply free the control if you won't use it anymore.
 
 .. _class_EditorPlugin_remove_control_from_docks:
 
-- void **remove_control_from_docks** **(** :ref:`Control<class_control>` control **)**
+- void **remove_control_from_docks** **(** :ref:`Control<class_Control>` control **)**
 
 Remove the control from the dock. Don't forget to call this if you added one, so the editor can save the layout and remove it cleanly.
 
 .. _class_EditorPlugin_remove_custom_type:
 
-- void **remove_custom_type** **(** :ref:`String<class_string>` type **)**
+- void **remove_custom_type** **(** :ref:`String<class_String>` type **)**
 
 Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlugin_add_custom_type>`
 
 .. _class_EditorPlugin_remove_export_plugin:
 
-- void **remove_export_plugin** **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin **)**
+- void **remove_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
 .. _class_EditorPlugin_remove_import_plugin:
 
-- void **remove_import_plugin** **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**
+- void **remove_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
 
 .. _class_EditorPlugin_remove_inspector_plugin:
 
-- void **remove_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_editorinspectorplugin>` plugin **)**
+- void **remove_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
 
 .. _class_EditorPlugin_remove_scene_import_plugin:
 
-- void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**
+- void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
 .. _class_EditorPlugin_remove_tool_menu_item:
 
-- void **remove_tool_menu_item** **(** :ref:`String<class_string>` name **)**
+- void **remove_tool_menu_item** **(** :ref:`String<class_String>` name **)**
 
 Removes a menu ``name`` from 'Project > Tools'.
 
@@ -449,13 +450,13 @@ Use this method if you always want to receive inputs from 3D view screen inside 
 
 .. _class_EditorPlugin_set_state:
 
-- void **set_state** **(** :ref:`Dictionary<class_dictionary>` state **)** virtual
+- void **set_state** **(** :ref:`Dictionary<class_Dictionary>` state **)** virtual
 
 Restore the state saved by :ref:`EditorPlugin.get_state<class_EditorPlugin_get_state>`.
 
 .. _class_EditorPlugin_set_window_layout:
 
-- void **set_window_layout** **(** :ref:`ConfigFile<class_configfile>` layout **)** virtual
+- void **set_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual
 
 Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<class_EditorPlugin_get_window_layout>`.
 

@@ -7,8 +7,7 @@
 GDNative
 ========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,31 +15,31 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`call_native<class_GDNative_call_native>` **(** :ref:`String<class_string>` calling_type, :ref:`String<class_string>` procedure_name, :ref:`Array<class_array>` arguments **)** |
+| :ref:`Variant<class_Variant>`  | :ref:`call_native<class_GDNative_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`initialize<class_GDNative_initialize>` **(** **)**                                                                                                                             |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`terminate<class_GDNative_terminate>` **(** **)**                                                                                                                               |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_GDNative_library:
 
-- :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
+- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GDNative_call_native:
 
-- :ref:`Variant<class_variant>` **call_native** **(** :ref:`String<class_string>` calling_type, :ref:`String<class_string>` procedure_name, :ref:`Array<class_array>` arguments **)**
+- :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
 
 .. _class_GDNative_initialize:
 

@@ -14,21 +14,21 @@ Brief Description
 
 Pre-parsed scene tree path.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>` **(** :ref:`String<class_string>` from **)**  |
+| :ref:`NodePath<class_NodePath>`  | :ref:`NodePath<class_NodePath_NodePath>` **(** :ref:`String<class_String>` from **)**  |
 +----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_as_property_path<class_NodePath_get_as_property_path>` **(** **)**           |
+| :ref:`NodePath<class_NodePath>`  | :ref:`get_as_property_path<class_NodePath_get_as_property_path>` **(** **)**           |
 +----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_concatenated_subnames<class_NodePath_get_concatenated_subnames>` **(** **)** |
+| :ref:`String<class_String>`      | :ref:`get_concatenated_subnames<class_NodePath_get_concatenated_subnames>` **(** **)** |
 +----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_name<class_NodePath_get_name>` **(** :ref:`int<class_int>` idx **)**         |
+| :ref:`String<class_String>`      | :ref:`get_name<class_NodePath_get_name>` **(** :ref:`int<class_int>` idx **)**         |
 +----------------------------------+----------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_name_count<class_NodePath_get_name_count>` **(** **)**                       |
 +----------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_subname<class_NodePath_get_subname>` **(** :ref:`int<class_int>` idx **)**   |
+| :ref:`String<class_String>`      | :ref:`get_subname<class_NodePath_get_subname>` **(** :ref:`int<class_int>` idx **)**   |
 +----------------------------------+----------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_subname_count<class_NodePath_get_subname_count>` **(** **)**                 |
 +----------------------------------+----------------------------------------------------------------------------------------+
@@ -46,26 +46,26 @@ You will usually just pass a string to :ref:`Node.get_node<class_Node_get_node>`
 
 A ``NodePath`` is made up of a list of node names, a list of "subnode" (resource) names, and the name of a property in the final node or resource.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_NodePath_NodePath:
 
-- :ref:`NodePath<class_nodepath>` **NodePath** **(** :ref:`String<class_string>` from **)**
+- :ref:`NodePath<class_NodePath>` **NodePath** **(** :ref:`String<class_String>` from **)**
 
 Create a NodePath from a string, e.g. "Path2D/PathFollow2D/Sprite:texture:size". A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
 
 .. _class_NodePath_get_as_property_path:
 
-- :ref:`NodePath<class_nodepath>` **get_as_property_path** **(** **)**
+- :ref:`NodePath<class_NodePath>` **get_as_property_path** **(** **)**
 
 .. _class_NodePath_get_concatenated_subnames:
 
-- :ref:`String<class_string>` **get_concatenated_subnames** **(** **)**
+- :ref:`String<class_String>` **get_concatenated_subnames** **(** **)**
 
 .. _class_NodePath_get_name:
 
-- :ref:`String<class_string>` **get_name** **(** :ref:`int<class_int>` idx **)**
+- :ref:`String<class_String>` **get_name** **(** :ref:`int<class_int>` idx **)**
 
 Get the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_get_name_count>`)
 
@@ -77,7 +77,7 @@ Get the number of node names which make up the path.
 
 .. _class_NodePath_get_subname:
 
-- :ref:`String<class_string>` **get_subname** **(** :ref:`int<class_int>` idx **)**
+- :ref:`String<class_String>` **get_subname** **(** :ref:`int<class_int>` idx **)**
 
 Get the resource name indicated by ``idx`` (0 to :ref:`get_subname_count<class_NodePath_get_subname_count>`)
 

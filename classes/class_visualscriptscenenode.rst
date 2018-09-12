@@ -7,22 +7,13 @@
 VisualScriptSceneNode
 =====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node reference.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptSceneNode_node_path:
-
-- :ref:`NodePath<class_nodepath>` **node_path** - The node's path in the scene tree.
-
 
 Description
 -----------
@@ -36,4 +27,12 @@ none
 **Output Ports:**
 
 - Data: ``node`` (obj)
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptSceneNode_node_path:
+
+- :ref:`NodePath<class_NodePath>` **node_path** - The node's path in the scene tree.
+
 

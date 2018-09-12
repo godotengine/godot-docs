@@ -7,8 +7,7 @@
 VisualScriptYieldSignal
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,28 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptYieldSignal_base_type:
-
-- :ref:`String<class_string>` **base_type**
-
-  .. _class_VisualScriptYieldSignal_call_mode:
-
-- :ref:`CallMode<enum_visualscriptyieldsignal_callmode>` **call_mode**
-
-  .. _class_VisualScriptYieldSignal_node_path:
-
-- :ref:`NodePath<class_nodepath>` **node_path**
-
-  .. _class_VisualScriptYieldSignal_signal:
-
-- :ref:`String<class_string>` **signal**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptYieldSignal_CallMode:
 
@@ -46,5 +25,25 @@ enum **CallMode**
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptYieldSignal_base_type:
+
+- :ref:`String<class_String>` **base_type**
+
+  .. _class_VisualScriptYieldSignal_call_mode:
+
+- :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
+
+  .. _class_VisualScriptYieldSignal_node_path:
+
+- :ref:`NodePath<class_NodePath>` **node_path**
+
+  .. _class_VisualScriptYieldSignal_signal:
+
+- :ref:`String<class_String>` **signal**
 
 

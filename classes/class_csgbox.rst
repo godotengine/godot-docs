@@ -7,8 +7,7 @@
 CSGBox
 ======
 
-**Inherits:** :ref:`CSGPrimitive<class_csgprimitive>` **<** :ref:`CSGShape<class_csgshape>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 A CSG Box shape.
 
-Member Variables
-----------------
+Description
+-----------
+
+This node allows you to create a box for use with the CSG system.
+
+Property Descriptions
+---------------------
 
   .. _class_CSGBox_depth:
 
@@ -29,15 +33,10 @@ Member Variables
 
   .. _class_CSGBox_material:
 
-- :ref:`Material<class_material>` **material** - The material used to render the box.
+- :ref:`Material<class_Material>` **material** - The material used to render the box.
 
   .. _class_CSGBox_width:
 
 - :ref:`float<class_float>` **width** - Width of the box measured from the center of the box.
 
-
-Description
------------
-
-This node allows you to create a box for use with the CSG system.
 

@@ -7,8 +7,7 @@
 ARVRAnchor
 ==========
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,26 +15,18 @@ Brief Description
 
 Anchor point in AR Space.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_anchor_name<class_ARVRAnchor_get_anchor_name>` **(** **)** const |
+| :ref:`String<class_String>`    | :ref:`get_anchor_name<class_ARVRAnchor_get_anchor_name>` **(** **)** const |
 +--------------------------------+----------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_is_active<class_ARVRAnchor_get_is_active>` **(** **)** const     |
 +--------------------------------+----------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`      | :ref:`get_plane<class_ARVRAnchor_get_plane>` **(** **)** const             |
+| :ref:`Plane<class_Plane>`      | :ref:`get_plane<class_ARVRAnchor_get_plane>` **(** **)** const             |
 +--------------------------------+----------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_size<class_ARVRAnchor_get_size>` **(** **)** const               |
+| :ref:`Vector3<class_Vector3>`  | :ref:`get_size<class_ARVRAnchor_get_size>` **(** **)** const               |
 +--------------------------------+----------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_ARVRAnchor_anchor_id:
-
-- :ref:`int<class_int>` **anchor_id** - The anchor's id. You can set this before the anchor itself exists. The first anchor gets an id of ``1``, the second an id of ``2``, etc. When anchors get removed, the engine can then assign the corresponding id to new anchors. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
-
 
 Description
 -----------
@@ -46,12 +37,20 @@ This node is mapped to one of the anchors through its unique id. When you receiv
 
 Keep in mind that as long as plane detection is enable the size, placing and orientation of an anchor will be updates as the detection logic learns more about the real world out there especially if only part of the surface is in view.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ARVRAnchor_anchor_id:
+
+- :ref:`int<class_int>` **anchor_id** - The anchor's id. You can set this before the anchor itself exists. The first anchor gets an id of ``1``, the second an id of ``2``, etc. When anchors get removed, the engine can then assign the corresponding id to new anchors. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ARVRAnchor_get_anchor_name:
 
-- :ref:`String<class_string>` **get_anchor_name** **(** **)** const
+- :ref:`String<class_String>` **get_anchor_name** **(** **)** const
 
 Returns the name given to this anchor.
 
@@ -63,13 +62,13 @@ Returns true if the anchor is being tracked and false if no anchor with this id 
 
 .. _class_ARVRAnchor_get_plane:
 
-- :ref:`Plane<class_plane>` **get_plane** **(** **)** const
+- :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor, handy for intersection testing
 
 .. _class_ARVRAnchor_get_size:
 
-- :ref:`Vector3<class_vector3>` **get_size** **(** **)** const
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)** const
 
 Returns the estimated size of the plane that was detected. Say when the anchor relates to a table in the real world, this is the estimated size of the surface of that table.
 

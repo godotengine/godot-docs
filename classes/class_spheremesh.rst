@@ -7,17 +7,21 @@
 SphereMesh
 ==========
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Class representing a spherical :ref:`PrimitiveMesh<class_primitivemesh>`.
+Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Property Descriptions
+---------------------
 
   .. _class_SphereMesh_height:
 
@@ -39,9 +43,4 @@ Member Variables
 
 - :ref:`int<class_int>` **rings** - Number of segments along the height of the sphere. Defaults to 32.
 
-
-Description
------------
-
-Class representing a spherical :ref:`PrimitiveMesh<class_primitivemesh>`.
 

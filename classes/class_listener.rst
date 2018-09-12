@@ -7,8 +7,7 @@
 Listener
 ========
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------+----------------------------------------------------------------------------------------+
 | void                               | :ref:`clear_current<class_Listener_clear_current>` **(** **)**                         |
 +------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_listener_transform<class_Listener_get_listener_transform>` **(** **)** const |
+| :ref:`Transform<class_Transform>`  | :ref:`get_listener_transform<class_Listener_get_listener_transform>` **(** **)** const |
 +------------------------------------+----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_current<class_Listener_is_current>` **(** **)** const                         |
 +------------------------------------+----------------------------------------------------------------------------------------+
 | void                               | :ref:`make_current<class_Listener_make_current>` **(** **)**                           |
 +------------------------------------+----------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Listener_clear_current:
 
@@ -38,7 +37,7 @@ Member Function Description
 
 .. _class_Listener_get_listener_transform:
 
-- :ref:`Transform<class_transform>` **get_listener_transform** **(** **)** const
+- :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
 
 .. _class_Listener_is_current:
 

@@ -7,8 +7,7 @@
 YSort
 =====
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Sort all child nodes based on their Y positions.
 
-Member Variables
-----------------
+Description
+-----------
+
+Sort all child nodes based on their Y positions. The child node must inherit from :ref:`CanvasItem<class_CanvasItem>` for it to be sorted. Nodes that have a higher Y position will be drawn later, so they will appear on top of nodes that have a lower Y position.
+
+Property Descriptions
+---------------------
 
   .. _class_YSort_sort_enabled:
 
 - :ref:`bool<class_bool>` **sort_enabled**
 
-
-Description
------------
-
-Sort all child nodes based on their Y positions. The child node must inherit from :ref:`CanvasItem<class_canvasitem>` for it to be sorted. Nodes that have a higher Y position will be drawn later, so they will appear on top of nodes that have a lower Y position.
 

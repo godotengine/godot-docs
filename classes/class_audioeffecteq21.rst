@@ -7,8 +7,7 @@
 AudioEffectEQ21
 ===============
 
-**Inherits:** :ref:`AudioEffectEQ<class_audioeffecteq>` **<** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffectEQ<class_AudioEffectEQ>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -65,5 +64,5 @@ Band 20 : 16000 Hz
 
 Band 21 : 22000 Hz
 
-See also :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`.
+See also :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`.
 

@@ -7,10 +7,8 @@
 AudioEffectFilter
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AudioEffectHighPassFilter<class_audioeffecthighpassfilter>`, :ref:`AudioEffectBandLimitFilter<class_audioeffectbandlimitfilter>`, :ref:`AudioEffectLowShelfFilter<class_audioeffectlowshelffilter>`, :ref:`AudioEffectHighShelfFilter<class_audioeffecthighshelffilter>`, :ref:`AudioEffectBandPassFilter<class_audioeffectbandpassfilter>`, :ref:`AudioEffectNotchFilter<class_audioeffectnotchfilter>`, :ref:`AudioEffectLowPassFilter<class_audioeffectlowpassfilter>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AudioEffectHighPassFilter<class_AudioEffectHighPassFilter>`, :ref:`AudioEffectBandLimitFilter<class_AudioEffectBandLimitFilter>`, :ref:`AudioEffectLowShelfFilter<class_AudioEffectLowShelfFilter>`, :ref:`AudioEffectHighShelfFilter<class_AudioEffectHighShelfFilter>`, :ref:`AudioEffectBandPassFilter<class_AudioEffectBandPassFilter>`, :ref:`AudioEffectNotchFilter<class_AudioEffectNotchFilter>`, :ref:`AudioEffectLowPassFilter<class_AudioEffectLowPassFilter>`
 **Category:** Core
 
 Brief Description
@@ -18,28 +16,8 @@ Brief Description
 
 Adds a filter to the Audio Bus.
 
-Member Variables
-----------------
-
-  .. _class_AudioEffectFilter_cutoff_hz:
-
-- :ref:`float<class_float>` **cutoff_hz** - Threshold frequency for the filter.
-
-  .. _class_AudioEffectFilter_db:
-
-- :ref:`FilterDB<enum_audioeffectfilter_filterdb>` **db**
-
-  .. _class_AudioEffectFilter_gain:
-
-- :ref:`float<class_float>` **gain** - Gain amount of the frequencies after the filter.
-
-  .. _class_AudioEffectFilter_resonance:
-
-- :ref:`float<class_float>` **resonance** - Amount of boost in the overtones near the cutoff frequency.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_AudioEffectFilter_FilterDB:
 
@@ -55,4 +33,24 @@ Description
 -----------
 
 Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` to pass.
+
+Property Descriptions
+---------------------
+
+  .. _class_AudioEffectFilter_cutoff_hz:
+
+- :ref:`float<class_float>` **cutoff_hz** - Threshold frequency for the filter.
+
+  .. _class_AudioEffectFilter_db:
+
+- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
+
+  .. _class_AudioEffectFilter_gain:
+
+- :ref:`float<class_float>` **gain** - Gain amount of the frequencies after the filter.
+
+  .. _class_AudioEffectFilter_resonance:
+
+- :ref:`float<class_float>` **resonance** - Amount of boost in the overtones near the cutoff frequency.
+
 

@@ -7,8 +7,7 @@
 RayShape
 ========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Ray shape for 3D collisions.
 
-Member Variables
-----------------
+Description
+-----------
+
+Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
+
+Property Descriptions
+---------------------
 
   .. _class_RayShape_length:
 
@@ -27,9 +31,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **slips_on_slope** - If ``true`` allow the shape to return the correct normal. Default value: ``false``.
 
-
-Description
------------
-
-Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 

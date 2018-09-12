@@ -7,8 +7,7 @@
 XMLParser
 =========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,47 +15,47 @@ Brief Description
 
 Low-level class for creating parsers for XML files.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_attribute_count<class_XMLParser_get_attribute_count>` **(** **)** const                                                        |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_attribute_name<class_XMLParser_get_attribute_name>` **(** :ref:`int<class_int>` idx **)** const                                |
+| :ref:`String<class_String>`               | :ref:`get_attribute_name<class_XMLParser_get_attribute_name>` **(** :ref:`int<class_int>` idx **)** const                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_attribute_value<class_XMLParser_get_attribute_value>` **(** :ref:`int<class_int>` idx **)** const                              |
+| :ref:`String<class_String>`               | :ref:`get_attribute_value<class_XMLParser_get_attribute_value>` **(** :ref:`int<class_int>` idx **)** const                              |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_current_line<class_XMLParser_get_current_line>` **(** **)** const                                                              |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_named_attribute_value<class_XMLParser_get_named_attribute_value>` **(** :ref:`String<class_string>` name **)** const           |
+| :ref:`String<class_String>`               | :ref:`get_named_attribute_value<class_XMLParser_get_named_attribute_value>` **(** :ref:`String<class_String>` name **)** const           |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_named_attribute_value_safe<class_XMLParser_get_named_attribute_value_safe>` **(** :ref:`String<class_string>` name **)** const |
+| :ref:`String<class_String>`               | :ref:`get_named_attribute_value_safe<class_XMLParser_get_named_attribute_value_safe>` **(** :ref:`String<class_String>` name **)** const |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_node_data<class_XMLParser_get_node_data>` **(** **)** const                                                                    |
+| :ref:`String<class_String>`               | :ref:`get_node_data<class_XMLParser_get_node_data>` **(** **)** const                                                                    |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`               | :ref:`get_node_name<class_XMLParser_get_node_name>` **(** **)** const                                                                    |
+| :ref:`String<class_String>`               | :ref:`get_node_name<class_XMLParser_get_node_name>` **(** **)** const                                                                    |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_node_offset<class_XMLParser_get_node_offset>` **(** **)** const                                                                |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodeType<enum_xmlparser_nodetype>`  | :ref:`get_node_type<class_XMLParser_get_node_type>` **(** **)**                                                                          |
+| :ref:`NodeType<enum_XMLParser_NodeType>`  | :ref:`get_node_type<class_XMLParser_get_node_type>` **(** **)**                                                                          |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has_attribute<class_XMLParser_has_attribute>` **(** :ref:`String<class_string>` name **)** const                                   |
+| :ref:`bool<class_bool>`                   | :ref:`has_attribute<class_XMLParser_has_attribute>` **(** :ref:`String<class_String>` name **)** const                                   |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`is_empty<class_XMLParser_is_empty>` **(** **)** const                                                                              |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`     | :ref:`open<class_XMLParser_open>` **(** :ref:`String<class_string>` file **)**                                                           |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`open<class_XMLParser_open>` **(** :ref:`String<class_String>` file **)**                                                           |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`     | :ref:`open_buffer<class_XMLParser_open_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                             |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`open_buffer<class_XMLParser_open_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`     | :ref:`read<class_XMLParser_read>` **(** **)**                                                                                            |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`read<class_XMLParser_read>` **(** **)**                                                                                            |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`     | :ref:`seek<class_XMLParser_seek>` **(** :ref:`int<class_int>` position **)**                                                             |
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`seek<class_XMLParser_seek>` **(** :ref:`int<class_int>` position **)**                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`skip_section<class_XMLParser_skip_section>` **(** **)**                                                                            |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_XMLParser_NodeType:
 
@@ -76,8 +75,8 @@ Description
 
 This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low level so it can be applied to any possible schema.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_XMLParser_get_attribute_count:
 
@@ -87,13 +86,13 @@ Get the amount of attributes in the current element.
 
 .. _class_XMLParser_get_attribute_name:
 
-- :ref:`String<class_string>` **get_attribute_name** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_attribute_name** **(** :ref:`int<class_int>` idx **)** const
 
 Get the name of the attribute specified by the index in ``idx`` argument.
 
 .. _class_XMLParser_get_attribute_value:
 
-- :ref:`String<class_string>` **get_attribute_value** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_attribute_value** **(** :ref:`int<class_int>` idx **)** const
 
 Get the value of the attribute specified by the index in ``idx`` argument.
 
@@ -105,25 +104,25 @@ Get the current line in the parsed file (currently not implemented).
 
 .. _class_XMLParser_get_named_attribute_value:
 
-- :ref:`String<class_string>` **get_named_attribute_value** **(** :ref:`String<class_string>` name **)** const
+- :ref:`String<class_String>` **get_named_attribute_value** **(** :ref:`String<class_String>` name **)** const
 
 Get the value of a certain attribute of the current element by name. This will raise an error if the element has no such attribute.
 
 .. _class_XMLParser_get_named_attribute_value_safe:
 
-- :ref:`String<class_string>` **get_named_attribute_value_safe** **(** :ref:`String<class_string>` name **)** const
+- :ref:`String<class_String>` **get_named_attribute_value_safe** **(** :ref:`String<class_String>` name **)** const
 
-Get the value of a certain attribute of the current element by name. This will return an empty :ref:`String<class_string>` if the attribute is not found.
+Get the value of a certain attribute of the current element by name. This will return an empty :ref:`String<class_String>` if the attribute is not found.
 
 .. _class_XMLParser_get_node_data:
 
-- :ref:`String<class_string>` **get_node_data** **(** **)** const
+- :ref:`String<class_String>` **get_node_data** **(** **)** const
 
 Get the contents of a text node. This will raise an error in any other type of node.
 
 .. _class_XMLParser_get_node_name:
 
-- :ref:`String<class_string>` **get_node_name** **(** **)** const
+- :ref:`String<class_String>` **get_node_name** **(** **)** const
 
 Get the name of the current element node. This will raise an error if the current node type is not ``NODE_ELEMENT`` nor ``NODE_ELEMENT_END``
 
@@ -135,13 +134,13 @@ Get the byte offset of the current node since the beginning of the file or buffe
 
 .. _class_XMLParser_get_node_type:
 
-- :ref:`NodeType<enum_xmlparser_nodetype>` **get_node_type** **(** **)**
+- :ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type** **(** **)**
 
 Get the type of the current node. Compare with ``NODE_*`` constants.
 
 .. _class_XMLParser_has_attribute:
 
-- :ref:`bool<class_bool>` **has_attribute** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_attribute** **(** :ref:`String<class_String>` name **)** const
 
 Check whether or not the current element has a certain attribute.
 
@@ -153,25 +152,25 @@ Check whether the current element is empty (this only works for completely empty
 
 .. _class_XMLParser_open:
 
-- :ref:`Error<enum_@globalscope_error>` **open** **(** :ref:`String<class_string>` file **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` file **)**
 
 Open a XML file for parsing. This returns an error code.
 
 .. _class_XMLParser_open_buffer:
 
-- :ref:`Error<enum_@globalscope_error>` **open_buffer** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Open a XML raw buffer for parsing. This returns an error code.
 
 .. _class_XMLParser_read:
 
-- :ref:`Error<enum_@globalscope_error>` **read** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **read** **(** **)**
 
 Read the next node of the file. This returns an error code.
 
 .. _class_XMLParser_seek:
 
-- :ref:`Error<enum_@globalscope_error>` **seek** **(** :ref:`int<class_int>` position **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **seek** **(** :ref:`int<class_int>` position **)**
 
 Move the buffer cursor to a certain offset (since the beginning) and read the next node there. This returns an error code.
 

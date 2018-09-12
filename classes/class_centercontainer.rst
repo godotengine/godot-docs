@@ -7,8 +7,7 @@
 CenterContainer
 ===============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Keeps children controls centered.
 
-Member Variables
-----------------
+Description
+-----------
+
+CenterContainer Keeps children controls centered. This container keeps all children to their minimum size, in the center.
+
+Property Descriptions
+---------------------
 
   .. _class_CenterContainer_use_top_left:
 
 - :ref:`bool<class_bool>` **use_top_left** - If ``true`` centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
 
-
-Description
------------
-
-CenterContainer Keeps children controls centered. This container keeps all children to their minimum size, in the center.
 

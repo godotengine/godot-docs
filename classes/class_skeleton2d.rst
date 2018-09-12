@@ -7,8 +7,7 @@
 Skeleton2D
 ==========
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,23 +15,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+----------------------------------------------------------------------------------+
-| :ref:`Bone2D<class_bone2d>`  | :ref:`get_bone<class_Skeleton2D_get_bone>` **(** :ref:`int<class_int>` idx **)** |
+| :ref:`Bone2D<class_Bone2D>`  | :ref:`get_bone<class_Skeleton2D_get_bone>` **(** :ref:`int<class_int>` idx **)** |
 +------------------------------+----------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_bone_count<class_Skeleton2D_get_bone_count>` **(** **)** const         |
 +------------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`        | :ref:`get_skeleton<class_Skeleton2D_get_skeleton>` **(** **)** const             |
+| :ref:`RID<class_RID>`        | :ref:`get_skeleton<class_Skeleton2D_get_skeleton>` **(** **)** const             |
 +------------------------------+----------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Skeleton2D_get_bone:
 
-- :ref:`Bone2D<class_bone2d>` **get_bone** **(** :ref:`int<class_int>` idx **)**
+- :ref:`Bone2D<class_Bone2D>` **get_bone** **(** :ref:`int<class_int>` idx **)**
 
 .. _class_Skeleton2D_get_bone_count:
 
@@ -40,6 +39,6 @@ Member Function Description
 
 .. _class_Skeleton2D_get_skeleton:
 
-- :ref:`RID<class_rid>` **get_skeleton** **(** **)** const
+- :ref:`RID<class_RID>` **get_skeleton** **(** **)** const
 
 

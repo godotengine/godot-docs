@@ -7,8 +7,7 @@
 AudioEffectPanner
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Adds a Panner audio effect to an Audio bus. Pans sound left or right.
 
-Member Variables
-----------------
+Description
+-----------
+
+Determines how much of an audio signal is sent to the left and right buses.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectPanner_pan:
 
 - :ref:`float<class_float>` **pan** - Pan position. Value can range from -1 (fully left) to 1 (fully right).
 
-
-Description
------------
-
-Determines how much of an audio signal is sent to the left and right buses.
 

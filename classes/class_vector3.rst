@@ -14,33 +14,33 @@ Brief Description
 
 Vector class, which performs basic 3D vector math operations.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`Vector3<class_Vector3_Vector3>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                                                                       |
+| :ref:`Vector3<class_Vector3>`  | :ref:`Vector3<class_Vector3_Vector3>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`abs<class_Vector3_abs>` **(** **)**                                                                                                                                                                     |
+| :ref:`Vector3<class_Vector3>`  | :ref:`abs<class_Vector3_abs>` **(** **)**                                                                                                                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`angle_to<class_Vector3_angle_to>` **(** :ref:`Vector3<class_vector3>` to **)**                                                                                                                          |
+| :ref:`float<class_float>`      | :ref:`angle_to<class_Vector3_angle_to>` **(** :ref:`Vector3<class_Vector3>` to **)**                                                                                                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`bounce<class_Vector3_bounce>` **(** :ref:`Vector3<class_vector3>` n **)**                                                                                                                               |
+| :ref:`Vector3<class_Vector3>`  | :ref:`bounce<class_Vector3_bounce>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                               |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`ceil<class_Vector3_ceil>` **(** **)**                                                                                                                                                                   |
+| :ref:`Vector3<class_Vector3>`  | :ref:`ceil<class_Vector3_ceil>` **(** **)**                                                                                                                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`cross<class_Vector3_cross>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                                 |
+| :ref:`Vector3<class_Vector3>`  | :ref:`cross<class_Vector3_cross>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`cubic_interpolate<class_Vector3_cubic_interpolate>` **(** :ref:`Vector3<class_vector3>` b, :ref:`Vector3<class_vector3>` pre_a, :ref:`Vector3<class_vector3>` post_b, :ref:`float<class_float>` t **)** |
+| :ref:`Vector3<class_Vector3>`  | :ref:`cubic_interpolate<class_Vector3_cubic_interpolate>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`distance_squared_to<class_Vector3_distance_squared_to>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                     |
+| :ref:`float<class_float>`      | :ref:`distance_squared_to<class_Vector3_distance_squared_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`distance_to<class_Vector3_distance_to>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                     |
+| :ref:`float<class_float>`      | :ref:`distance_to<class_Vector3_distance_to>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`dot<class_Vector3_dot>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                                     |
+| :ref:`float<class_float>`      | :ref:`dot<class_Vector3_dot>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`floor<class_Vector3_floor>` **(** **)**                                                                                                                                                                 |
+| :ref:`Vector3<class_Vector3>`  | :ref:`floor<class_Vector3_floor>` **(** **)**                                                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`inverse<class_Vector3_inverse>` **(** **)**                                                                                                                                                             |
+| :ref:`Vector3<class_Vector3>`  | :ref:`inverse<class_Vector3_inverse>` **(** **)**                                                                                                                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_normalized<class_Vector3_is_normalized>` **(** **)**                                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -48,35 +48,60 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`length_squared<class_Vector3_length_squared>` **(** **)**                                                                                                                                               |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`linear_interpolate<class_Vector3_linear_interpolate>` **(** :ref:`Vector3<class_vector3>` b, :ref:`float<class_float>` t **)**                                                                          |
+| :ref:`Vector3<class_Vector3>`  | :ref:`linear_interpolate<class_Vector3_linear_interpolate>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**                                                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`max_axis<class_Vector3_max_axis>` **(** **)**                                                                                                                                                           |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`min_axis<class_Vector3_min_axis>` **(** **)**                                                                                                                                                           |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`normalized<class_Vector3_normalized>` **(** **)**                                                                                                                                                       |
+| :ref:`Vector3<class_Vector3>`  | :ref:`normalized<class_Vector3_normalized>` **(** **)**                                                                                                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_basis>`      | :ref:`outer<class_Vector3_outer>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                                 |
+| :ref:`Basis<class_Basis>`      | :ref:`outer<class_Vector3_outer>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`project<class_Vector3_project>` **(** :ref:`Vector3<class_vector3>` b **)**                                                                                                                             |
+| :ref:`Vector3<class_Vector3>`  | :ref:`project<class_Vector3_project>` **(** :ref:`Vector3<class_Vector3>` b **)**                                                                                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`reflect<class_Vector3_reflect>` **(** :ref:`Vector3<class_vector3>` n **)**                                                                                                                             |
+| :ref:`Vector3<class_Vector3>`  | :ref:`reflect<class_Vector3_reflect>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`rotated<class_Vector3_rotated>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                           |
+| :ref:`Vector3<class_Vector3>`  | :ref:`rotated<class_Vector3_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                           |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`round<class_Vector3_round>` **(** **)**                                                                                                                                                                 |
+| :ref:`Vector3<class_Vector3>`  | :ref:`round<class_Vector3_round>` **(** **)**                                                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`slerp<class_Vector3_slerp>` **(** :ref:`Vector3<class_vector3>` b, :ref:`float<class_float>` t **)**                                                                                                    |
+| :ref:`Vector3<class_Vector3>`  | :ref:`slerp<class_Vector3_slerp>` **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**                                                                                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`slide<class_Vector3_slide>` **(** :ref:`Vector3<class_vector3>` n **)**                                                                                                                                 |
+| :ref:`Vector3<class_Vector3>`  | :ref:`slide<class_Vector3_slide>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`snapped<class_Vector3_snapped>` **(** :ref:`Vector3<class_vector3>` by **)**                                                                                                                            |
+| :ref:`Vector3<class_Vector3>`  | :ref:`snapped<class_Vector3_snapped>` **(** :ref:`Vector3<class_Vector3>` by **)**                                                                                                                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_basis>`      | :ref:`to_diagonal_matrix<class_Vector3_to_diagonal_matrix>` **(** **)**                                                                                                                                       |
+| :ref:`Basis<class_Basis>`      | :ref:`to_diagonal_matrix<class_Vector3_to_diagonal_matrix>` **(** **)**                                                                                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Constants
+---------
+
+- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_max_axis>` and :ref:`min_axis<class_Vector3_min_axis>`.
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+- **AXIS_Z** = **2** --- Enumerated value for the Z axis.
+- **ZERO** = **Vector3( 0, 0, 0 )** --- Null vector.
+- **INF** = **Vector3( inf, inf, inf )** --- Infinite vector.
+- **LEFT** = **Vector3( -1, 0, 0 )** --- Left unit vector.
+- **RIGHT** = **Vector3( 1, 0, 0 )** --- Right unit vector.
+- **UP** = **Vector3( 0, 1, 0 )** --- Up unit vector.
+- **DOWN** = **Vector3( 0, -1, 0 )** --- Down unit vector.
+- **FORWARD** = **Vector3( 0, 0, -1 )** --- Forward unit vector.
+- **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
+
+Description
+-----------
+
+Vector3 is one of the core classes of the engine, and includes several built-in helper functions to perform basic vector math operations.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/math/index`
+
+Property Descriptions
+---------------------
 
   .. _class_Vector3_x:
 
@@ -91,103 +116,78 @@ Member Variables
 - :ref:`float<class_float>` **z** - The vector's z component.
 
 
-Numeric Constants
------------------
-
-- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_max_axis>` and :ref:`min_axis<class_Vector3_min_axis>`.
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
-- **AXIS_Z** = **2** --- Enumerated value for the Z axis.
-- **ZERO** = **Vector3( 0, 0, 0 )**
-- **INF** = **Vector3( inf, inf, inf )**
-- **LEFT** = **Vector3( -1, 0, 0 )**
-- **RIGHT** = **Vector3( 1, 0, 0 )**
-- **UP** = **Vector3( 0, 1, 0 )**
-- **DOWN** = **Vector3( 0, -1, 0 )**
-- **FORWARD** = **Vector3( 0, 0, -1 )**
-- **BACK** = **Vector3( 0, 0, 1 )**
-
-Description
------------
-
-Vector3 is one of the core classes of the engine, and includes several built-in helper functions to perform basic vector math operations.
-
-Tutorials
----------
-
-- :doc:`../tutorials/math/index`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Vector3_Vector3:
 
-- :ref:`Vector3<class_vector3>` **Vector3** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
+- :ref:`Vector3<class_Vector3>` **Vector3** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
 
 Returns a Vector3 with the given components.
 
 .. _class_Vector3_abs:
 
-- :ref:`Vector3<class_vector3>` **abs** **(** **)**
+- :ref:`Vector3<class_Vector3>` **abs** **(** **)**
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
 .. _class_Vector3_angle_to:
 
-- :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_vector3>` to **)**
+- :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_Vector3>` to **)**
 
 Returns the minimum angle to the given vector.
 
 .. _class_Vector3_bounce:
 
-- :ref:`Vector3<class_vector3>` **bounce** **(** :ref:`Vector3<class_vector3>` n **)**
+- :ref:`Vector3<class_Vector3>` **bounce** **(** :ref:`Vector3<class_Vector3>` n **)**
 
 Returns the vector "bounced off" from a plane defined by the given normal.
 
 .. _class_Vector3_ceil:
 
-- :ref:`Vector3<class_vector3>` **ceil** **(** **)**
+- :ref:`Vector3<class_Vector3>` **ceil** **(** **)**
 
 Returns a new vector with all components rounded up.
 
 .. _class_Vector3_cross:
 
-- :ref:`Vector3<class_vector3>` **cross** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`Vector3<class_Vector3>` **cross** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the cross product with ``b``.
 
 .. _class_Vector3_cubic_interpolate:
 
-- :ref:`Vector3<class_vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_vector3>` b, :ref:`Vector3<class_vector3>` pre_a, :ref:`Vector3<class_vector3>` post_b, :ref:`float<class_float>` t **)**
+- :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` t **)**
 
-Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount (t). (t) should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
+Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
 .. _class_Vector3_distance_squared_to:
 
-- :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the squared distance to ``b``. Prefer this function over :ref:`distance_to<class_Vector3_distance_to>` if you need to sort vectors or need the squared distance for some formula.
 
 .. _class_Vector3_distance_to:
 
-- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the distance to ``b``.
 
 .. _class_Vector3_dot:
 
-- :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the dot product with ``b``.
 
 .. _class_Vector3_floor:
 
-- :ref:`Vector3<class_vector3>` **floor** **(** **)**
+- :ref:`Vector3<class_Vector3>` **floor** **(** **)**
 
 Returns a new vector with all components rounded down.
 
 .. _class_Vector3_inverse:
 
-- :ref:`Vector3<class_vector3>` **inverse** **(** **)**
+- :ref:`Vector3<class_Vector3>` **inverse** **(** **)**
 
 Returns the inverse of the vector. This is the same as ``Vector3( 1.0 / v.x, 1.0 / v.y, 1.0 / v.z )``.
 
@@ -211,9 +211,9 @@ Returns the vector's length squared. Prefer this function over :ref:`length<clas
 
 .. _class_Vector3_linear_interpolate:
 
-- :ref:`Vector3<class_vector3>` **linear_interpolate** **(** :ref:`Vector3<class_vector3>` b, :ref:`float<class_float>` t **)**
+- :ref:`Vector3<class_Vector3>` **linear_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, a percentage of how far along the interpolation is.
+Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation..
 
 .. _class_Vector3_max_axis:
 
@@ -229,63 +229,63 @@ Returns the axis of the vector's smallest value. See ``AXIS_*`` constants.
 
 .. _class_Vector3_normalized:
 
-- :ref:`Vector3<class_vector3>` **normalized** **(** **)**
+- :ref:`Vector3<class_Vector3>` **normalized** **(** **)**
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 .. _class_Vector3_outer:
 
-- :ref:`Basis<class_basis>` **outer** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`Basis<class_Basis>` **outer** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the outer product with ``b``.
 
 .. _class_Vector3_project:
 
-- :ref:`Vector3<class_vector3>` **project** **(** :ref:`Vector3<class_vector3>` b **)**
+- :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)**
 
 Returns the vector projected onto the vector ``b``.
 
 .. _class_Vector3_reflect:
 
-- :ref:`Vector3<class_vector3>` **reflect** **(** :ref:`Vector3<class_vector3>` n **)**
+- :ref:`Vector3<class_Vector3>` **reflect** **(** :ref:`Vector3<class_Vector3>` n **)**
 
 Returns the vector reflected from a plane defined by the given normal.
 
 .. _class_Vector3_rotated:
 
-- :ref:`Vector3<class_vector3>` **rotated** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
 
 Rotates the vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
 
 .. _class_Vector3_round:
 
-- :ref:`Vector3<class_vector3>` **round** **(** **)**
+- :ref:`Vector3<class_Vector3>` **round** **(** **)**
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 .. _class_Vector3_slerp:
 
-- :ref:`Vector3<class_vector3>` **slerp** **(** :ref:`Vector3<class_vector3>` b, :ref:`float<class_float>` t **)**
+- :ref:`Vector3<class_Vector3>` **slerp** **(** :ref:`Vector3<class_Vector3>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of SLERP between this vector and "b", by amount "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
+Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
 Both vectors need to be normalized.
 
 .. _class_Vector3_slide:
 
-- :ref:`Vector3<class_vector3>` **slide** **(** :ref:`Vector3<class_vector3>` n **)**
+- :ref:`Vector3<class_Vector3>` **slide** **(** :ref:`Vector3<class_Vector3>` n **)**
 
 Returns the component of the vector along a plane defined by the given normal.
 
 .. _class_Vector3_snapped:
 
-- :ref:`Vector3<class_vector3>` **snapped** **(** :ref:`Vector3<class_vector3>` by **)**
+- :ref:`Vector3<class_Vector3>` **snapped** **(** :ref:`Vector3<class_Vector3>` by **)**
 
 Returns a copy of the vector, snapped to the lowest neared multiple.
 
 .. _class_Vector3_to_diagonal_matrix:
 
-- :ref:`Basis<class_basis>` **to_diagonal_matrix** **(** **)**
+- :ref:`Basis<class_Basis>` **to_diagonal_matrix** **(** **)**
 
 Returns a diagonal matrix with the vector as main diagonal.
 

@@ -7,8 +7,7 @@
 AnimationTree
 =============
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,43 +15,19 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`advance<class_AnimationTree_advance>` **(** :ref:`float<class_float>` delta **)**                                                              |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_root_motion_transform<class_AnimationTree_get_root_motion_transform>` **(** **)** const                                                    |
+| :ref:`Transform<class_Transform>`  | :ref:`get_root_motion_transform<class_AnimationTree_get_root_motion_transform>` **(** **)** const                                                    |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`rename_parameter<class_AnimationTree_rename_parameter>` **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name **)** |
+| void                               | :ref:`rename_parameter<class_AnimationTree_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)** |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_AnimationTree_active:
-
-- :ref:`bool<class_bool>` **active**
-
-  .. _class_AnimationTree_anim_player:
-
-- :ref:`NodePath<class_nodepath>` **anim_player**
-
-  .. _class_AnimationTree_process_mode:
-
-- :ref:`AnimationProcessMode<enum_animationtree_animationprocessmode>` **process_mode**
-
-  .. _class_AnimationTree_root_motion_track:
-
-- :ref:`NodePath<class_nodepath>` **root_motion_track**
-
-  .. _class_AnimationTree_tree_root:
-
-- :ref:`AnimationNode<class_animationnode>` **tree_root**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_AnimationTree_AnimationProcessMode:
 
@@ -63,8 +38,32 @@ enum **AnimationProcessMode**
 - **ANIMATION_PROCESS_MANUAL** = **2**
 
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_AnimationTree_active:
+
+- :ref:`bool<class_bool>` **active**
+
+  .. _class_AnimationTree_anim_player:
+
+- :ref:`NodePath<class_NodePath>` **anim_player**
+
+  .. _class_AnimationTree_process_mode:
+
+- :ref:`AnimationProcessMode<enum_AnimationTree_AnimationProcessMode>` **process_mode**
+
+  .. _class_AnimationTree_root_motion_track:
+
+- :ref:`NodePath<class_NodePath>` **root_motion_track**
+
+  .. _class_AnimationTree_tree_root:
+
+- :ref:`AnimationNode<class_AnimationNode>` **tree_root**
+
+
+Method Descriptions
+-------------------
 
 .. _class_AnimationTree_advance:
 
@@ -72,10 +71,10 @@ Member Function Description
 
 .. _class_AnimationTree_get_root_motion_transform:
 
-- :ref:`Transform<class_transform>` **get_root_motion_transform** **(** **)** const
+- :ref:`Transform<class_Transform>` **get_root_motion_transform** **(** **)** const
 
 .. _class_AnimationTree_rename_parameter:
 
-- void **rename_parameter** **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name **)**
+- void **rename_parameter** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**
 
 

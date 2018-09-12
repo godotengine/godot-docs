@@ -7,8 +7,7 @@
 PackedDataContainerRef
 ======================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,15 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainerRef_size>` **(** **)** const |
 +------------------------+------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PackedDataContainerRef_size:
 

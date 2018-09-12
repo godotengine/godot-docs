@@ -7,10 +7,8 @@
 NetworkedMultiplayerPeer
 ========================
 
-**Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`MultiplayerPeerGDNative<class_multiplayerpeergdnative>`, :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`, :ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>`
-
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 A high-level network interface to simplify multiplayer interactions.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionStatus<enum_networkedmultiplayerpeer_connectionstatus>`  | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const        |
+| :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`  | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const        |
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                    | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` **(** **)** const                    |
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -67,26 +65,8 @@ Emitted by the server when a client disconnects.
 Emitted by clients when the server disconnects.
 
 
-Member Variables
-----------------
-
-  .. _class_NetworkedMultiplayerPeer_refuse_new_connections:
-
-- :ref:`bool<class_bool>` **refuse_new_connections** - If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
-
-  .. _class_NetworkedMultiplayerPeer_transfer_mode:
-
-- :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@globalscope_transfermode>`.
-
-
-Numeric Constants
------------------
-
-- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
-- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_NetworkedMultiplayerPeer_TransferMode:
 
@@ -105,6 +85,12 @@ enum **ConnectionStatus**
 - **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
 
 
+Constants
+---------
+
+- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+
 Description
 -----------
 
@@ -115,14 +101,26 @@ Tutorials
 
 - :doc:`../tutorials/networking/high_level_multiplayer`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_NetworkedMultiplayerPeer_refuse_new_connections:
+
+- :ref:`bool<class_bool>` **refuse_new_connections** - If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
+
+  .. _class_NetworkedMultiplayerPeer_transfer_mode:
+
+- :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@GlobalScope_TransferMode>`.
+
+
+Method Descriptions
+-------------------
 
 .. _class_NetworkedMultiplayerPeer_get_connection_status:
 
-- :ref:`ConnectionStatus<enum_networkedmultiplayerpeer_connectionstatus>` **get_connection_status** **(** **)** const
+- :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** const
 
-Returns the current state of the connection. See :ref:`ConnectionStatus<enum_@globalscope_connectionstatus>`.
+Returns the current state of the connection. See :ref:`ConnectionStatus<enum_@GlobalScope_ConnectionStatus>`.
 
 .. _class_NetworkedMultiplayerPeer_get_packet_peer:
 

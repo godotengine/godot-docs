@@ -7,8 +7,7 @@
 AudioEffectEQ6
 ==============
 
-**Inherits:** :ref:`AudioEffectEQ<class_audioeffecteq>` **<** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffectEQ<class_AudioEffectEQ>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -35,5 +34,5 @@ Band 5 : 3200 Hz
 
 Band 6 : 10000 Hz
 
-See also :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`, :ref:`AudioEffectEQ21<class_audioeffecteq21>`.
+See also :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`.
 

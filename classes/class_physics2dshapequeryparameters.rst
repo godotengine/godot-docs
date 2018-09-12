@@ -7,8 +7,7 @@
 Physics2DShapeQueryParameters
 =============================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,28 @@ Brief Description
 
 Parameters to be sent to a 2D shape physics query.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>` **(** :ref:`Resource<class_resource>` shape **)** |
+| void  | :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
 +-------+-------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+This class contains the shape and other parameters for intersection/collision queries.
+
+Property Descriptions
+---------------------
+
+  .. _class_Physics2DShapeQueryParameters_collide_with_areas:
+
+- :ref:`bool<class_bool>` **collide_with_areas**
+
+  .. _class_Physics2DShapeQueryParameters_collide_with_bodies:
+
+- :ref:`bool<class_bool>` **collide_with_bodies**
 
   .. _class_Physics2DShapeQueryParameters_collision_layer:
 
@@ -32,7 +44,7 @@ Member Variables
 
   .. _class_Physics2DShapeQueryParameters_exclude:
 
-- :ref:`Array<class_array>` **exclude** - The list of objects or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
+- :ref:`Array<class_Array>` **exclude** - The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded from collisions.
 
   .. _class_Physics2DShapeQueryParameters_margin:
 
@@ -40,29 +52,24 @@ Member Variables
 
   .. _class_Physics2DShapeQueryParameters_motion:
 
-- :ref:`Vector2<class_vector2>` **motion** - The motion of the shape being queried for.
+- :ref:`Vector2<class_Vector2>` **motion** - The motion of the shape being queried for.
 
   .. _class_Physics2DShapeQueryParameters_shape_rid:
 
-- :ref:`RID<class_rid>` **shape_rid** - The :ref:`RID<class_rid>` of the queried shape. See :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>` also.
+- :ref:`RID<class_RID>` **shape_rid** - The :ref:`RID<class_RID>` of the queried shape. See :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>` also.
 
   .. _class_Physics2DShapeQueryParameters_transform:
 
-- :ref:`Transform2D<class_transform2d>` **transform** - the transform matrix of the queried shape.
+- :ref:`Transform2D<class_Transform2D>` **transform** - the transform matrix of the queried shape.
 
 
-Description
------------
-
-This class contains the shape and other parameters for intersection/collision queries.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Physics2DShapeQueryParameters_set_shape:
 
-- void **set_shape** **(** :ref:`Resource<class_resource>` shape **)**
+- void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 
-Set the :ref:`Shape2D<class_shape2d>` that will be used for collision/intersection queries.
+Set the :ref:`Shape2D<class_Shape2D>` that will be used for collision/intersection queries.
 
 

@@ -7,10 +7,8 @@
 Joint2D
 =======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`PinJoint2D<class_pinjoint2d>`, :ref:`DampedSpringJoint2D<class_dampedspringjoint2d>`, :ref:`GrooveJoint2D<class_groovejoint2d>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`PinJoint2D<class_PinJoint2D>`, :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,13 @@ Brief Description
 
 Base node for all joint constraints in 2D physics.
 
-Member Variables
-----------------
+Description
+-----------
+
+Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+
+Property Descriptions
+---------------------
 
   .. _class_Joint2D_bias:
 
@@ -31,15 +34,10 @@ Member Variables
 
   .. _class_Joint2D_node_a:
 
-- :ref:`NodePath<class_nodepath>` **node_a** - The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_physicsbody2d>`.
+- :ref:`NodePath<class_NodePath>` **node_a** - The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
   .. _class_Joint2D_node_b:
 
-- :ref:`NodePath<class_nodepath>` **node_b** - The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_physicsbody2d>`.
+- :ref:`NodePath<class_NodePath>` **node_b** - The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
-
-Description
------------
-
-Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
 

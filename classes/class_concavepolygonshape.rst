@@ -7,8 +7,7 @@
 ConcavePolygonShape
 ===================
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,32 +15,32 @@ Brief Description
 
 Concave polygon shape.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_ConcavePolygonShape_get_faces>` **(** **)** const                                                 |
+| :ref:`PoolVector3Array<class_PoolVector3Array>`  | :ref:`get_faces<class_ConcavePolygonShape_get_faces>` **(** **)** const                                                 |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_faces<class_ConcavePolygonShape_set_faces>` **(** :ref:`PoolVector3Array<class_poolvector3array>` faces **)** |
+| void                                             | :ref:`set_faces<class_ConcavePolygonShape_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or area. This shape is created by feeding a list of triangles.
+Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ConcavePolygonShape_get_faces:
 
-- :ref:`PoolVector3Array<class_poolvector3array>` **get_faces** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
 
 Return the faces (an array of triangles).
 
 .. _class_ConcavePolygonShape_set_faces:
 
-- void **set_faces** **(** :ref:`PoolVector3Array<class_poolvector3array>` faces **)**
+- void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
 
 Set the faces (an array of triangles).
 

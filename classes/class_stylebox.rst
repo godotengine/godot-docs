@@ -7,10 +7,8 @@
 StyleBox
 ========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`StyleBoxLine<class_styleboxline>`, :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`StyleBoxLine<class_StyleBoxLine>`, :ref:`StyleBoxFlat<class_StyleBoxFlat>`, :ref:`StyleBoxTexture<class_StyleBoxTexture>`, :ref:`StyleBoxEmpty<class_StyleBoxEmpty>`
 **Category:** Core
 
 Brief Description
@@ -18,25 +16,30 @@ Brief Description
 
 Base class for drawing stylized boxes for the UI.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`draw<class_StyleBox_draw>` **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect **)** const             |
+| void                           | :ref:`draw<class_StyleBox_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_center_size<class_StyleBox_get_center_size>` **(** **)** const                                                         |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_center_size<class_StyleBox_get_center_size>` **(** **)** const                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_margin<class_StyleBox_get_margin>` **(** :ref:`Margin<enum_@globalscope_margin>` margin **)** const                    |
+| :ref:`float<class_float>`      | :ref:`get_margin<class_StyleBox_get_margin>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const                    |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_minimum_size<class_StyleBox_get_minimum_size>` **(** **)** const                                                       |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_minimum_size<class_StyleBox_get_minimum_size>` **(** **)** const                                                       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_offset<class_StyleBox_get_offset>` **(** **)** const                                                                   |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_offset<class_StyleBox_get_offset>` **(** **)** const                                                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`test_mask<class_StyleBox_test_mask>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect **)** const |
+| :ref:`bool<class_bool>`        | :ref:`test_mask<class_StyleBox_test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** const |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
+
+Property Descriptions
+---------------------
 
   .. _class_StyleBox_content_margin_bottom:
 
@@ -55,43 +58,38 @@ Member Variables
 - :ref:`float<class_float>` **content_margin_top**
 
 
-Description
------------
-
-StyleBox is :ref:`Resource<class_resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_StyleBox_draw:
 
-- void **draw** **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect **)** const
+- void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const
 
 .. _class_StyleBox_get_center_size:
 
-- :ref:`Vector2<class_vector2>` **get_center_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** const
 
 .. _class_StyleBox_get_margin:
 
-- :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@globalscope_margin>` margin **)** const
+- :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
 Return the offset of margin "margin" (see MARGIN\_\* enum).
 
 .. _class_StyleBox_get_minimum_size:
 
-- :ref:`Vector2<class_vector2>` **get_minimum_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_minimum_size** **(** **)** const
 
 Return the minimum size that this stylebox can be shrunk to.
 
 .. _class_StyleBox_get_offset:
 
-- :ref:`Vector2<class_vector2>` **get_offset** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)** const
 
 Return the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
 .. _class_StyleBox_test_mask:
 
-- :ref:`bool<class_bool>` **test_mask** **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect **)** const
+- :ref:`bool<class_bool>` **test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** const
 
 Test a position in a rectangle, return whether it passes the mask test.
 

@@ -7,8 +7,7 @@
 InputEventJoypadButton
 ======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,22 @@ Brief Description
 
 Input event for gamepad buttons.
 
-Member Variables
-----------------
+Description
+-----------
+
+Input event type for gamepad buttons. For joysticks see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
 
   .. _class_InputEventJoypadButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@globalscope>`.
+- :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
   .. _class_InputEventJoypadButton_pressed:
 
@@ -31,14 +40,4 @@ Member Variables
 
 - :ref:`float<class_float>` **pressure** - Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
 
-
-Description
------------
-
-Input event type for gamepad buttons. For joysticks see :ref:`InputEventJoypadMotion<class_inputeventjoypadmotion>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 

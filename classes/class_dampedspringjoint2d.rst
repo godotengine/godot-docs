@@ -7,8 +7,7 @@
 DampedSpringJoint2D
 ===================
 
-**Inherits:** :ref:`Joint2D<class_joint2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Damped spring constraint for 2D physics.
 
-Member Variables
-----------------
+Description
+-----------
+
+Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
+
+Property Descriptions
+---------------------
 
   .. _class_DampedSpringJoint2D_damping:
 
@@ -35,9 +39,4 @@ Member Variables
 
 - :ref:`float<class_float>` **stiffness** - The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
 
-
-Description
------------
-
-Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
 

@@ -7,8 +7,7 @@
 Position2D
 ==========
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -19,5 +18,5 @@ Generic 2D Position hint for editing.
 Description
 -----------
 
-Generic 2D Position hint for editing. It's just like a plain :ref:`Node2D<class_node2d>` but displays as a cross in the 2D-Editor at all times.
+Generic 2D Position hint for editing. It's just like a plain :ref:`Node2D<class_Node2D>` but displays as a cross in the 2D-Editor at all times.
 

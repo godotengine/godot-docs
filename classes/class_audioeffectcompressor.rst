@@ -7,8 +7,7 @@
 AudioEffectCompressor
 =====================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +17,23 @@ Adds a Compressor audio effect to an Audio bus.
 
 Reduces sounds that exceed a certain threshold level, smooths out the dynamics and increases the overall volume.
 
-Member Variables
-----------------
+Description
+-----------
+
+Dynamic range compressor reduces the level of the sound when the amplitude goes over a certain threshold in Decibels. One of the main uses of a compressor is to increase the dynamic range by clipping as little as possible (when sound goes over 0dB).
+
+Compressor has many uses in the mix:
+
+- In the Master bus to compress the whole output (Although a :ref:`AudioEffectLimiter<class_AudioEffectLimiter>` is probably better)
+
+- In voice channels to ensure they sound as balanced as possible.
+
+- Sidechained. Sidechained, which can reduce the sound level sidechained with another audio bus for threshold detection.. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
+
+- Accentuates transients by using a wider attack, making effects sound more punchy.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectCompressor_attack_us:
 
@@ -43,25 +57,10 @@ Member Variables
 
   .. _class_AudioEffectCompressor_sidechain:
 
-- :ref:`String<class_string>` **sidechain** - Reduce the sound level using another audio bus for threshold detection.
+- :ref:`String<class_String>` **sidechain** - Reduce the sound level using another audio bus for threshold detection.
 
   .. _class_AudioEffectCompressor_threshold:
 
 - :ref:`float<class_float>` **threshold** - The level above which compression is applied to the audio. Value can range from -60 to 0. Default value: ``0``.
 
-
-Description
------------
-
-Dynamic range compressor reduces the level of the sound when the amplitude goes over a certain threshold in Decibels. One of the main uses of a compressor is to increase the dynamic range by clipping as little as possible (when sound goes over 0dB).
-
-Compressor has many uses in the mix:
-
-- In the Master bus to compress the whole output (Although a :ref:`AudioEffectLimiter<class_audioeffectlimiter>` is probably better)
-
-- In voice channels to ensure they sound as balanced as possible.
-
-- Sidechained. Sidechained, which can reduce the sound level sidechained with another audio bus for threshold detection.. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
-
-- Accentuates transients by using a wider attack, making effects sound more punchy.
 

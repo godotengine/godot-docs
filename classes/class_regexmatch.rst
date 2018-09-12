@@ -7,8 +7,7 @@
 RegExMatch
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,46 +15,46 @@ Brief Description
 
 Contains the results of a regex search.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_end<class_RegExMatch_get_end>` **(** :ref:`Variant<class_variant>` name=0 **)** const       |
+| :ref:`int<class_int>`        | :ref:`get_end<class_RegExMatch_get_end>` **(** :ref:`Variant<class_Variant>` name=0 **)** const       |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_group_count<class_RegExMatch_get_group_count>` **(** **)** const                            |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_start<class_RegExMatch_get_start>` **(** :ref:`Variant<class_variant>` name=0 **)** const   |
+| :ref:`int<class_int>`        | :ref:`get_start<class_RegExMatch_get_start>` **(** :ref:`Variant<class_Variant>` name=0 **)** const   |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_string<class_RegExMatch_get_string>` **(** :ref:`Variant<class_variant>` name=0 **)** const |
+| :ref:`String<class_String>`  | :ref:`get_string<class_RegExMatch_get_string>` **(** :ref:`Variant<class_Variant>` name=0 **)** const |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_RegExMatch_names:
-
-- :ref:`Dictionary<class_dictionary>` **names** - A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
-
-  .. _class_RegExMatch_strings:
-
-- :ref:`Array<class_array>` **strings** - An :ref:`Array<class_array>` of the match and its capturing groups.
-
-  .. _class_RegExMatch_subject:
-
-- :ref:`String<class_string>` **subject** - The source string used with the search pattern to find this matching result.
-
 
 Description
 -----------
 
 Contains the results of a single regex match returned by :ref:`RegEx.search<class_RegEx_search>` and :ref:`RegEx.search_all<class_RegEx_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its sub-string for you.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_RegExMatch_names:
+
+- :ref:`Dictionary<class_Dictionary>` **names** - A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
+
+  .. _class_RegExMatch_strings:
+
+- :ref:`Array<class_Array>` **strings** - An :ref:`Array<class_Array>` of the match and its capturing groups.
+
+  .. _class_RegExMatch_subject:
+
+- :ref:`String<class_String>` **subject** - The source string used with the search pattern to find this matching result.
+
+
+Method Descriptions
+-------------------
 
 .. _class_RegExMatch_get_end:
 
-- :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_variant>` name=0 **)** const
+- :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
 Returns the end position of the match within the source string. The end position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -69,7 +68,7 @@ Returns the number of capturing groups.
 
 .. _class_RegExMatch_get_start:
 
-- :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_variant>` name=0 **)** const
+- :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
 Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -77,7 +76,7 @@ Returns -1 if the group did not match or doesn't exist.
 
 .. _class_RegExMatch_get_string:
 
-- :ref:`String<class_string>` **get_string** **(** :ref:`Variant<class_variant>` name=0 **)** const
+- :ref:`String<class_String>` **get_string** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
 Returns the substring of the match from the source string. Capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 

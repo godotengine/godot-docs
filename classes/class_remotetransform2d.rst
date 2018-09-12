@@ -7,43 +7,42 @@
 RemoteTransform2D
 =================
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node in the scene.
+RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node in the scene.
 
-Member Variables
-----------------
+Description
+-----------
+
+RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node (called the remote node) in the scene.
+
+It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
+
+Property Descriptions
+---------------------
 
   .. _class_RemoteTransform2D_remote_path:
 
-- :ref:`NodePath<class_nodepath>` **remote_path** - The :ref:`NodePath<class_nodepath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
+- :ref:`NodePath<class_NodePath>` **remote_path** - The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
 
   .. _class_RemoteTransform2D_update_position:
 
-- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_rotation:
 
-- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_scale:
 
-- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_use_global_coordinates:
 
 - :ref:`bool<class_bool>` **use_global_coordinates** - If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
 
-
-Description
------------
-
-RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node (called the remote node) in the scene.
-
-It can be set to track another Node's position, rotation and/or scale. It can update using either global or local coordinates.
 

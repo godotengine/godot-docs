@@ -7,8 +7,7 @@
 VisualShaderNodeTransformVecMult
 ================================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeTransformVecMult_operator:
-
-- :ref:`Operator<enum_visualshadernodetransformvecmult_operator>` **operator**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeTransformVecMult_Operator:
 
@@ -35,5 +26,13 @@ enum **Operator**
 - **OP_BxA** = **1**
 - **OP_3x3_AxB** = **2**
 - **OP_3x3_BxA** = **3**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeTransformVecMult_operator:
+
+- :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **operator**
 
 

@@ -7,8 +7,7 @@
 PhysicalBone
 ============
 
-**Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`    | :ref:`get_bone_id<class_PhysicalBone_get_bone_id>` **(** **)** const               |
@@ -29,12 +28,27 @@ Member Functions
 | :ref:`bool<class_bool>`  | :ref:`is_static_body<class_PhysicalBone_is_static_body>` **(** **)**               |
 +--------------------------+------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_PhysicalBone_JointType:
+
+enum **JointType**
+
+- **JOINT_TYPE_NONE** = **0**
+- **JOINT_TYPE_PIN** = **1**
+- **JOINT_TYPE_CONE** = **2**
+- **JOINT_TYPE_HINGE** = **3**
+- **JOINT_TYPE_SLIDER** = **4**
+- **JOINT_TYPE_6DOF** = **5**
+
+
+Property Descriptions
+---------------------
 
   .. _class_PhysicalBone_body_offset:
 
-- :ref:`Transform<class_transform>` **body_offset**
+- :ref:`Transform<class_Transform>` **body_offset**
 
   .. _class_PhysicalBone_bounce:
 
@@ -50,11 +64,11 @@ Member Variables
 
   .. _class_PhysicalBone_joint_offset:
 
-- :ref:`Transform<class_transform>` **joint_offset**
+- :ref:`Transform<class_Transform>` **joint_offset**
 
   .. _class_PhysicalBone_joint_type:
 
-- :ref:`JointType<enum_physicalbone_jointtype>` **joint_type**
+- :ref:`JointType<enum_PhysicalBone_JointType>` **joint_type**
 
   .. _class_PhysicalBone_mass:
 
@@ -65,23 +79,8 @@ Member Variables
 - :ref:`float<class_float>` **weight**
 
 
-Enums
------
-
-  .. _enum_PhysicalBone_JointType:
-
-enum **JointType**
-
-- **JOINT_TYPE_NONE** = **0**
-- **JOINT_TYPE_PIN** = **1**
-- **JOINT_TYPE_CONE** = **2**
-- **JOINT_TYPE_HINGE** = **3**
-- **JOINT_TYPE_SLIDER** = **4**
-- **JOINT_TYPE_6DOF** = **5**
-
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PhysicalBone_get_bone_id:
 

@@ -7,8 +7,7 @@
 Timer
 =====
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 A countdown timer.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+-----------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_stopped<class_Timer_is_stopped>` **(** **)** const                       |
@@ -37,8 +36,24 @@ Signals
 Emitted when the Timer reaches 0.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Timer_TimerProcessMode:
+
+enum **TimerProcessMode**
+
+- **TIMER_PROCESS_PHYSICS** = **0** --- Update the Timer during the physics step at each frame (fixed framerate processing).
+- **TIMER_PROCESS_IDLE** = **1** --- Update the Timer during the idle time at each frame.
+
+
+Description
+-----------
+
+Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one shot" mode.
+
+Property Descriptions
+---------------------
 
   .. _class_Timer_autostart:
 
@@ -54,7 +69,7 @@ Member Variables
 
   .. _class_Timer_process_mode:
 
-- :ref:`TimerProcessMode<enum_timer_timerprocessmode>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
+- :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
 
   .. _class_Timer_time_left:
 
@@ -65,24 +80,8 @@ Member Variables
 - :ref:`float<class_float>` **wait_time** - Wait time in seconds.
 
 
-Enums
------
-
-  .. _enum_Timer_TimerProcessMode:
-
-enum **TimerProcessMode**
-
-- **TIMER_PROCESS_PHYSICS** = **0** --- Update the Timer during the physics step at each frame (fixed framerate processing).
-- **TIMER_PROCESS_IDLE** = **1** --- Update the Timer during the idle time at each frame.
-
-
-Description
------------
-
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one shot" mode.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Timer_is_stopped:
 

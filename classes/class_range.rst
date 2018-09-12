@@ -7,10 +7,8 @@
 Range
 =====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`SpinBox<class_spinbox>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`ProgressBar<class_progressbar>`, :ref:`TextureProgress<class_textureprogress>`, :ref:`Slider<class_slider>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`SpinBox<class_SpinBox>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`ProgressBar<class_ProgressBar>`, :ref:`TextureProgress<class_TextureProgress>`, :ref:`Slider<class_Slider>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 Abstract base class for range-based controls.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+--------------------------------------------------------------------------+
-| void  | :ref:`share<class_Range_share>` **(** :ref:`Node<class_node>` with **)** |
+| void  | :ref:`share<class_Range_share>` **(** :ref:`Node<class_Node>` with **)** |
 +-------+--------------------------------------------------------------------------+
 | void  | :ref:`unshare<class_Range_unshare>` **(** **)**                          |
 +-------+--------------------------------------------------------------------------+
@@ -43,8 +41,13 @@ Emitted when :ref:`min_value<class_Range_min_value>`, :ref:`max_value<class_Rang
 Emitted when :ref:`value<class_Range_value>` changes.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+Range is a base class for :ref:`Control<class_Control>` nodes that change a floating point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
+
+Property Descriptions
+---------------------
 
   .. _class_Range_allow_greater:
 
@@ -68,7 +71,7 @@ Member Variables
 
   .. _class_Range_page:
 
-- :ref:`float<class_float>` **page** - Page size. Used mainly for :ref:`ScrollBar<class_scrollbar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
+- :ref:`float<class_float>` **page** - Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
   .. _class_Range_ratio:
 
@@ -87,17 +90,12 @@ Member Variables
 - :ref:`float<class_float>` **value** - Range's current value.
 
 
-Description
------------
-
-Range is a base class for :ref:`Control<class_control>` nodes that change a floating point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_scrollbar>`.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Range_share:
 
-- void **share** **(** :ref:`Node<class_node>` with **)**
+- void **share** **(** :ref:`Node<class_Node>` with **)**
 
 Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 

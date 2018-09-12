@@ -7,8 +7,7 @@
 VisualScriptBuiltinFunc
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 A Visual Script node used to call built-in functions.
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptBuiltinFunc_function:
-
-- :ref:`BuiltinFunc<enum_visualscriptbuiltinfunc_builtinfunc>` **function** - The function to be executed.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
 
@@ -79,28 +70,36 @@ enum **BuiltinFunc**
 - **LOGIC_MIN** = **45** --- Return the lesser of the two numbers, also known as their minimum.
 - **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to `min(max(input, range_low), range_high)`
 - **LOGIC_NEAREST_PO2** = **47** --- Return the nearest power of 2 to the input.
-- **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_weakref>` from the input.
-- **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_funcref>` from the input.
+- **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+- **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_FuncRef>` from the input.
 - **TYPE_CONVERT** = **50** --- Convert between types.
-- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@globalscope_variant.type>` for the integers that might be returned.
-- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
+- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
 - **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
 - **TEXT_STR** = **54** --- Convert the input to a string.
 - **TEXT_PRINT** = **55** --- Print the given string to the output window.
 - **TEXT_PRINTERR** = **56** --- Print the given string to the standard error output.
 - **TEXT_PRINTRAW** = **57** --- Print the given string to the standard output, without adding a newline.
-- **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_variant>` to a string.
-- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_variant>` from a string serialized using VAR_TO_STR.
-- **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_variant>` to a :ref:`PoolByteArray<class_poolbytearray>`.
-- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
-- **COLORN** = **62** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+- **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using VAR_TO_STR.
+- **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
+- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using VAR_TO_BYTES.
+- **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 - **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
 
 
 Description
 -----------
 
-A built-in function used inside a :ref:`VisualScript<class_visualscript>`. It is usually a math function or an utility function.
+A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is usually a math function or an utility function.
 
-See also :ref:`@GDScript<class_@gdscript>`, for the same functions in the GDScript language.
+See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptBuiltinFunc_function:
+
+- :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function** - The function to be executed.
+
 

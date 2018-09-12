@@ -7,8 +7,7 @@
 KinematicBody2D
 ===============
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 Kinematic body 2D node.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                            | :ref:`get_floor_velocity<class_KinematicBody2D_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                          |
+| :ref:`Vector2<class_Vector2>`                            | :ref:`get_floor_velocity<class_KinematicBody2D_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                                                                                                                          |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`KinematicCollision2D<class_kinematiccollision2d>`  | :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                                                              |
+| :ref:`KinematicCollision2D<class_KinematicCollision2D>`  | :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                                                                                                                              |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                    | :ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -32,26 +31,14 @@ Member Functions
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`is_on_wall<class_KinematicBody2D_is_on_wall>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                          |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`KinematicCollision2D<class_kinematiccollision2d>`  | :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>` **(** :ref:`Vector2<class_vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` exclude_raycast_shapes=true, :ref:`bool<class_bool>` test_only=false **)**                                                                                                                                                                 |
+| :ref:`KinematicCollision2D<class_KinematicCollision2D>`  | :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` exclude_raycast_shapes=true, :ref:`bool<class_bool>` test_only=false **)**                                                                                                                                                                 |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                            | :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**                                                         |
+| :ref:`Vector2<class_Vector2>`                            | :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**                                                         |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                            | :ref:`move_and_slide_with_snap<class_KinematicBody2D_move_and_slide_with_snap>` **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` snap, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)** |
+| :ref:`Vector2<class_Vector2>`                            | :ref:`move_and_slide_with_snap<class_KinematicBody2D_move_and_slide_with_snap>` **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` snap, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)** |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`test_move<class_KinematicBody2D_test_move>` **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**                                                                                                                                                                                                                                      |
+| :ref:`bool<class_bool>`                                  | :ref:`test_move<class_KinematicBody2D_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**                                                                                                                                                                                                                                      |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_KinematicBody2D_collision/safe_margin:
-
-- :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.
-
-  .. _class_KinematicBody2D_motion/sync_to_physics:
-
-- :ref:`bool<class_bool>` **motion/sync_to_physics** - If ``true`` the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_animationplayer>`, for example on moving platforms.
-
 
 Description
 -----------
@@ -62,20 +49,32 @@ Simulated Motion: When these bodies are moved manually, either from code or from
 
 Kinematic Characters: KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_KinematicBody2D_collision/safe_margin:
+
+- :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.
+
+  .. _class_KinematicBody2D_motion/sync_to_physics:
+
+- :ref:`bool<class_bool>` **motion/sync_to_physics** - If ``true`` the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms.
+
+
+Method Descriptions
+-------------------
 
 .. _class_KinematicBody2D_get_floor_velocity:
 
-- :ref:`Vector2<class_vector2>` **get_floor_velocity** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_floor_velocity** **(** **)** const
 
 Returns the velocity of the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
 .. _class_KinematicBody2D_get_slide_collision:
 
-- :ref:`KinematicCollision2D<class_kinematiccollision2d>` **get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**
+- :ref:`KinematicCollision2D<class_KinematicCollision2D>` **get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**
 
-Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occurred during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` - 1).
+Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about a collision that occurred during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` - 1).
 
 .. _class_KinematicBody2D_get_slide_count:
 
@@ -103,15 +102,15 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 
 .. _class_KinematicBody2D_move_and_collide:
 
-- :ref:`KinematicCollision2D<class_kinematiccollision2d>` **move_and_collide** **(** :ref:`Vector2<class_vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` exclude_raycast_shapes=true, :ref:`bool<class_bool>` test_only=false **)**
+- :ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide** **(** :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` exclude_raycast_shapes=true, :ref:`bool<class_bool>` test_only=false **)**
 
-Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about the collision.
+Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision.
 
 .. _class_KinematicBody2D_move_and_slide:
 
-- :ref:`Vector2<class_vector2>` **move_and_slide** **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
+- :ref:`Vector2<class_Vector2>` **move_and_slide** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
 
-Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_rigidbody2d>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
+Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_RigidBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
 ``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
 
@@ -127,7 +126,7 @@ Returns the movement that remained when the body stopped. To get more detailed i
 
 .. _class_KinematicBody2D_move_and_slide_with_snap:
 
-- :ref:`Vector2<class_vector2>` **move_and_slide_with_snap** **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` snap, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
+- :ref:`Vector2<class_Vector2>` **move_and_slide_with_snap** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`Vector2<class_Vector2>` snap, :ref:`Vector2<class_Vector2>` floor_normal=Vector2( 0, 0 ), :ref:`bool<class_bool>` infinite_inertia=true, :ref:`bool<class_bool>` stop_on_slope=false, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
 
 Moves the body while keeping it attached to slopes. Similar to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
@@ -135,8 +134,8 @@ As long as the ``snap`` vector is in contact with the ground, the body will rema
 
 .. _class_KinematicBody2D_test_move:
 
-- :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**
+- :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia **)**
 
-Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_transform2d>`, then tries to move the body along the vector ``rel_vec``. Returns ``true`` if a collision would occur.
+Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``rel_vec``. Returns ``true`` if a collision would occur.
 
 

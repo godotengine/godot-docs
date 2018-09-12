@@ -7,10 +7,8 @@
 InputEventGesture
 =================
 
-**Inherits:** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`InputEventPanGesture<class_inputeventpangesture>`, :ref:`InputEventMagnifyGesture<class_inputeventmagnifygesture>`
-
+**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`InputEventPanGesture<class_InputEventPanGesture>`, :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_InputEventGesture_position:
 
-- :ref:`Vector2<class_vector2>` **position**
+- :ref:`Vector2<class_Vector2>` **position**
 
 

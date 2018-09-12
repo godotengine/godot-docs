@@ -7,8 +7,7 @@
 RootMotionView
 ==============
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,12 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_RootMotionView_animation_path:
 
-- :ref:`NodePath<class_nodepath>` **animation_path**
+- :ref:`NodePath<class_NodePath>` **animation_path**
 
   .. _class_RootMotionView_cell_size:
 
@@ -29,7 +28,7 @@ Member Variables
 
   .. _class_RootMotionView_color:
 
-- :ref:`Color<class_color>` **color**
+- :ref:`Color<class_Color>` **color**
 
   .. _class_RootMotionView_radius:
 

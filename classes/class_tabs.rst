@@ -7,8 +7,7 @@
 Tabs
 ====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 Tabs Control.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_tab<class_Tabs_add_tab>` **(** :ref:`String<class_string>` title="", :ref:`Texture<class_texture>` icon=null **)**     |
+| void                           | :ref:`add_tab<class_Tabs_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`ensure_tab_visible<class_Tabs_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -32,13 +31,13 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_tab_disabled<class_Tabs_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_tab_icon<class_Tabs_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
+| :ref:`Texture<class_Texture>`  | :ref:`get_tab_icon<class_Tabs_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tab_offset<class_Tabs_get_tab_offset>` **(** **)** const                                                               |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`      | :ref:`get_tab_rect<class_Tabs_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
+| :ref:`Rect2<class_Rect2>`      | :ref:`get_tab_rect<class_Tabs_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_tab_title<class_Tabs_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
+| :ref:`String<class_String>`    | :ref:`get_tab_title<class_Tabs_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tabs_rearrange_group<class_Tabs_get_tabs_rearrange_group>` **(** **)** const                                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -50,9 +49,9 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_disabled<class_Tabs_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_icon<class_Tabs_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon **)**       |
+| void                           | :ref:`set_tab_icon<class_Tabs_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_title<class_Tabs_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**      |
+| void                           | :ref:`set_tab_title<class_Tabs_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**      |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tabs_rearrange_group<class_Tabs_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -85,32 +84,8 @@ Signals
 - **tab_hover** **(** :ref:`int<class_int>` tab **)**
 
 
-Member Variables
-----------------
-
-  .. _class_Tabs_current_tab:
-
-- :ref:`int<class_int>` **current_tab**
-
-  .. _class_Tabs_drag_to_rearrange_enabled:
-
-- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
-
-  .. _class_Tabs_scrolling_enabled:
-
-- :ref:`bool<class_bool>` **scrolling_enabled**
-
-  .. _class_Tabs_tab_align:
-
-- :ref:`TabAlign<enum_tabs_tabalign>` **tab_align**
-
-  .. _class_Tabs_tab_close_display_policy:
-
-- :ref:`CloseButtonDisplayPolicy<enum_tabs_closebuttondisplaypolicy>` **tab_close_display_policy**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Tabs_CloseButtonDisplayPolicy:
 
@@ -134,14 +109,38 @@ enum **TabAlign**
 Description
 -----------
 
-Simple tabs control, similar to :ref:`TabContainer<class_tabcontainer>` but is only in charge of drawing tabs, not interact with children.
+Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interact with children.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Tabs_current_tab:
+
+- :ref:`int<class_int>` **current_tab**
+
+  .. _class_Tabs_drag_to_rearrange_enabled:
+
+- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
+
+  .. _class_Tabs_scrolling_enabled:
+
+- :ref:`bool<class_bool>` **scrolling_enabled**
+
+  .. _class_Tabs_tab_align:
+
+- :ref:`TabAlign<enum_Tabs_TabAlign>` **tab_align**
+
+  .. _class_Tabs_tab_close_display_policy:
+
+- :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **tab_close_display_policy**
+
+
+Method Descriptions
+-------------------
 
 .. _class_Tabs_add_tab:
 
-- void **add_tab** **(** :ref:`String<class_string>` title="", :ref:`Texture<class_texture>` icon=null **)**
+- void **add_tab** **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**
 
 .. _class_Tabs_ensure_tab_visible:
 
@@ -165,7 +164,7 @@ Member Function Description
 
 .. _class_Tabs_get_tab_icon:
 
-- :ref:`Texture<class_texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
 
 .. _class_Tabs_get_tab_offset:
 
@@ -173,13 +172,13 @@ Member Function Description
 
 .. _class_Tabs_get_tab_rect:
 
-- :ref:`Rect2<class_rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Returns tab :ref:`Rect2<class_rect2>` with local position and size.
+Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
 
 .. _class_Tabs_get_tab_title:
 
-- :ref:`String<class_string>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
+- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
 .. _class_Tabs_get_tabs_rearrange_group:
 
@@ -205,11 +204,11 @@ Rearrange tab.
 
 .. _class_Tabs_set_tab_icon:
 
-- void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon **)**
+- void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
 .. _class_Tabs_set_tab_title:
 
-- void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**
+- void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
 .. _class_Tabs_set_tabs_rearrange_group:
 

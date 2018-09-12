@@ -7,10 +7,8 @@
 CanvasLayer
 ===========
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ParallaxBackground<class_parallaxbackground>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ParallaxBackground<class_ParallaxBackground>`
 **Category:** Core
 
 Brief Description
@@ -18,19 +16,30 @@ Brief Description
 
 Canvas drawing layer.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+-------------------------------------------------------------------+
-| :ref:`RID<class_rid>`  | :ref:`get_canvas<class_CanvasLayer_get_canvas>` **(** **)** const |
+| :ref:`RID<class_RID>`  | :ref:`get_canvas<class_CanvasLayer_get_canvas>` **(** **)** const |
 +------------------------+-------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Canvas drawing layer. :ref:`CanvasItem<class_CanvasItem>` nodes that are direct or indirect children of a ``CanvasLayer`` will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index 0, so a ``CanvasLayer`` with index -1 will be drawn below, and one with index 1 will be drawn above. This is very useful for HUDs (in layer 1+ or above), or backgrounds (in layer -1 or below).
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`../tutorials/2d/canvas_layers`
+
+Property Descriptions
+---------------------
 
   .. _class_CanvasLayer_custom_viewport:
 
-- :ref:`Node<class_node>` **custom_viewport** - The custom :ref:`Viewport<class_viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
+- :ref:`Node<class_Node>` **custom_viewport** - The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
 
   .. _class_CanvasLayer_layer:
 
@@ -38,7 +47,7 @@ Member Variables
 
   .. _class_CanvasLayer_offset:
 
-- :ref:`Vector2<class_vector2>` **offset** - The layer's base offset.
+- :ref:`Vector2<class_Vector2>` **offset** - The layer's base offset.
 
   .. _class_CanvasLayer_rotation:
 
@@ -50,30 +59,19 @@ Member Variables
 
   .. _class_CanvasLayer_scale:
 
-- :ref:`Vector2<class_vector2>` **scale** - The layer's scale.
+- :ref:`Vector2<class_Vector2>` **scale** - The layer's scale.
 
   .. _class_CanvasLayer_transform:
 
-- :ref:`Transform2D<class_transform2d>` **transform** - The layer's transform.
+- :ref:`Transform2D<class_Transform2D>` **transform** - The layer's transform.
 
 
-Description
------------
-
-Canvas drawing layer. :ref:`CanvasItem<class_canvasitem>` nodes that are direct or indirect children of a ``CanvasLayer`` will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index 0, so a ``CanvasLayer`` with index -1 will be drawn below, and one with index 1 will be drawn above. This is very useful for HUDs (in layer 1+ or above), or backgrounds (in layer -1 or below).
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_transforms`
-- :doc:`../tutorials/2d/canvas_layers`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_CanvasLayer_get_canvas:
 
-- :ref:`RID<class_rid>` **get_canvas** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
 Returns the RID of the canvas used by this layer.
 

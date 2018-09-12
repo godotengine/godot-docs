@@ -7,17 +7,16 @@
 Physics2DDirectBodyStateSW
 ==========================
 
-**Inherits:** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Software implementation of :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`.
+Software implementation of :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`.
 
 Description
 -----------
 
-Software implementation of :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`. This object exposes no new methods or properties and should not be used, as :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` selects the best implementation available.
+Software implementation of :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`. This object exposes no new methods or properties and should not be used, as :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` selects the best implementation available.
 

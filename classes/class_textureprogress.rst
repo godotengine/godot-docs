@@ -7,8 +7,7 @@
 TextureProgress
 ===============
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,31 @@ Brief Description
 
 Texture-based progress bar. Useful for loading screens and life or stamina bars.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_TextureProgress_FillMode:
+
+enum **FillMode**
+
+- **FILL_LEFT_TO_RIGHT** = **0** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from left to right.
+- **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from right to left.
+- **FILL_TOP_TO_BOTTOM** = **2** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from top to bototm.
+- **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from bottom to top.
+- **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
+- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
+- **FILL_BILINEAR_LEFT_AND_RIGHT** = **6**
+- **FILL_BILINEAR_TOP_AND_BOTTOM** = **7**
+- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8**
+
+
+Description
+-----------
+
+TextureProgress works like :ref:`ProgressBar<class_ProgressBar>` but it uses up to 3 textures instead of Godot's :ref:`Theme<class_Theme>` resource. Works horizontally, vertically, and radially.
+
+Property Descriptions
+---------------------
 
   .. _class_TextureProgress_fill_mode:
 
@@ -25,11 +47,11 @@ Member Variables
 
   .. _class_TextureProgress_nine_patch_stretch:
 
-- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_ninepatchrect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
+- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
 
   .. _class_TextureProgress_radial_center_offset:
 
-- :ref:`Vector2<class_vector2>` **radial_center_offset** - Offsets :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
+- :ref:`Vector2<class_Vector2>` **radial_center_offset** - Offsets :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
 
   .. _class_TextureProgress_radial_fill_degrees:
 
@@ -59,51 +81,28 @@ See :ref:`Range.value<class_Range_value>`, :ref:`Range.max_value<class_Range_max
 
   .. _class_TextureProgress_texture_over:
 
-- :ref:`Texture<class_texture>` **texture_over** - :ref:`Texture<class_texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_texture_progress>`.
+- :ref:`Texture<class_Texture>` **texture_over** - :ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_texture_progress>`.
 
   .. _class_TextureProgress_texture_progress:
 
-- :ref:`Texture<class_texture>` **texture_progress** - :ref:`Texture<class_texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
+- :ref:`Texture<class_Texture>` **texture_progress** - :ref:`Texture<class_Texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
 
-The ``value`` property comes from :ref:`Range<class_range>`. See :ref:`Range.value<class_Range_value>`, :ref:`Range.min_value<class_Range_min_value>`, :ref:`Range.max_value<class_Range_max_value>`.
+The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.value<class_Range_value>`, :ref:`Range.min_value<class_Range_min_value>`, :ref:`Range.max_value<class_Range_max_value>`.
 
   .. _class_TextureProgress_texture_under:
 
-- :ref:`Texture<class_texture>` **texture_under** - :ref:`Texture<class_texture>` that draws under the progress bar. The bar's background.
+- :ref:`Texture<class_Texture>` **texture_under** - :ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
 
   .. _class_TextureProgress_tint_over:
 
-- :ref:`Color<class_color>` **tint_over**
+- :ref:`Color<class_Color>` **tint_over**
 
   .. _class_TextureProgress_tint_progress:
 
-- :ref:`Color<class_color>` **tint_progress**
+- :ref:`Color<class_Color>` **tint_progress**
 
   .. _class_TextureProgress_tint_under:
 
-- :ref:`Color<class_color>` **tint_under**
+- :ref:`Color<class_Color>` **tint_under**
 
-
-Enums
------
-
-  .. _enum_TextureProgress_FillMode:
-
-enum **FillMode**
-
-- **FILL_LEFT_TO_RIGHT** = **0** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from left to right.
-- **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from right to left.
-- **FILL_TOP_TO_BOTTOM** = **2** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from top to bototm.
-- **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from bottom to top.
-- **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
-- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
-- **FILL_BILINEAR_LEFT_AND_RIGHT** = **6**
-- **FILL_BILINEAR_TOP_AND_BOTTOM** = **7**
-- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8**
-
-
-Description
------------
-
-TextureProgress works like :ref:`ProgressBar<class_progressbar>` but it uses up to 3 textures instead of Godot's :ref:`Theme<class_theme>` resource. Works horizontally, vertically, and radially.
 

@@ -7,8 +7,7 @@
 VehicleBody
 ===========
 
-**Inherits:** :ref:`RigidBody<class_rigidbody>` **<** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`RigidBody<class_RigidBody>` **<** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,15 @@ Brief Description
 
 Physics body that simulates the behaviour of a car.
 
-Member Variables
-----------------
+Description
+-----------
+
+This nodes implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_CollisionShape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_VehicleWheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_MeshInstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_brake>`, :ref:`engine_force<class_VehicleBody_engine_force>`, and :ref:`steering<class_VehicleBody_steering>` properties and not change the position or orientation of this node directly.
+
+Note that the origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
+
+Property Descriptions
+---------------------
 
   .. _class_VehicleBody_brake:
 
@@ -33,11 +39,4 @@ A negative value will result in the vehicle reversing.
 
 - :ref:`float<class_float>` **steering** - The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.set_use_as_steering<class_VehicleWheel_set_use_as_steering>` set to true will automatically be rotated.
 
-
-Description
------------
-
-This nodes implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_collisionshape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_vehiclewheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_meshinstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_brake>`, :ref:`engine_force<class_VehicleBody_engine_force>`, and :ref:`steering<class_VehicleBody_steering>` properties and not change the position or orientation of this node directly.
-
-Note that the origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_collisionshape>` and :ref:`MeshInstance<class_meshinstance>` upwards.
 

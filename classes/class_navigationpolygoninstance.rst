@@ -7,8 +7,7 @@
 NavigationPolygonInstance
 =========================
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_NavigationPolygonInstance_enabled:
 
@@ -25,6 +24,6 @@ Member Variables
 
   .. _class_NavigationPolygonInstance_navpoly:
 
-- :ref:`NavigationPolygon<class_navigationpolygon>` **navpoly**
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 
 

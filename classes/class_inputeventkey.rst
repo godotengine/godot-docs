@@ -7,8 +7,7 @@
 InputEventKey
 =============
 
-**Inherits:** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,32 +15,12 @@ Brief Description
 
 Input event type for keyboard events.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`get_scancode_with_modifiers<class_InputEventKey_get_scancode_with_modifiers>` **(** **)** const |
 +------------------------+-------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_InputEventKey_echo:
-
-- :ref:`bool<class_bool>` **echo** - If ``true`` the key was already pressed before this event. It means the user is holding the key down.
-
-  .. _class_InputEventKey_pressed:
-
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the key's state is pressed. If ``false`` the key's state is released.
-
-  .. _class_InputEventKey_scancode:
-
-- :ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@globalscope>`.
-
-  .. _class_InputEventKey_unicode:
-
-- :ref:`int<class_int>` **unicode** - Key unicode identifier when relevant.
-
 
 Description
 -----------
@@ -53,13 +32,33 @@ Tutorials
 
 - :doc:`../tutorials/inputs/inputevent`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_InputEventKey_echo:
+
+- :ref:`bool<class_bool>` **echo** - If ``true`` the key was already pressed before this event. It means the user is holding the key down.
+
+  .. _class_InputEventKey_pressed:
+
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the key's state is pressed. If ``false`` the key's state is released.
+
+  .. _class_InputEventKey_scancode:
+
+- :ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+
+  .. _class_InputEventKey_unicode:
+
+- :ref:`int<class_int>` **unicode** - Key unicode identifier when relevant.
+
+
+Method Descriptions
+-------------------
 
 .. _class_InputEventKey_get_scancode_with_modifiers:
 
 - :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
 
-Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>`.
+Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
 

@@ -7,8 +7,7 @@
 LargeTexture
 ============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,25 +15,25 @@ Brief Description
 
 A Texture capable of storing many smaller Textures with offsets.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`add_piece<class_LargeTexture_add_piece>` **(** :ref:`Vector2<class_vector2>` ofs, :ref:`Texture<class_texture>` texture **)**         |
+| :ref:`int<class_int>`          | :ref:`add_piece<class_LargeTexture_add_piece>` **(** :ref:`Vector2<class_Vector2>` ofs, :ref:`Texture<class_Texture>` texture **)**         |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`clear<class_LargeTexture_clear>` **(** **)**                                                                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_piece_count<class_LargeTexture_get_piece_count>` **(** **)** const                                                                |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_piece_offset<class_LargeTexture_get_piece_offset>` **(** :ref:`int<class_int>` idx **)** const                                    |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_piece_offset<class_LargeTexture_get_piece_offset>` **(** :ref:`int<class_int>` idx **)** const                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_piece_texture<class_LargeTexture_get_piece_texture>` **(** :ref:`int<class_int>` idx **)** const                                  |
+| :ref:`Texture<class_Texture>`  | :ref:`get_piece_texture<class_LargeTexture_get_piece_texture>` **(** :ref:`int<class_int>` idx **)** const                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_piece_offset<class_LargeTexture_set_piece_offset>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` ofs **)**       |
+| void                           | :ref:`set_piece_offset<class_LargeTexture_set_piece_offset>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` ofs **)**       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_piece_texture<class_LargeTexture_set_piece_texture>` **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture **)** |
+| void                           | :ref:`set_piece_texture<class_LargeTexture_set_piece_texture>` **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_size<class_LargeTexture_set_size>` **(** :ref:`Vector2<class_vector2>` size **)**                                                 |
+| void                           | :ref:`set_size<class_LargeTexture_set_size>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -42,16 +41,16 @@ Description
 
 A Texture capable of storing many smaller Textures with offsets.
 
-You can dynamically add pieces(:ref:`Texture<class_texture>`) to this ``LargeTexture`` using different offsets.
+You can dynamically add pieces(:ref:`Texture<class_Texture>`) to this ``LargeTexture`` using different offsets.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_LargeTexture_add_piece:
 
-- :ref:`int<class_int>` **add_piece** **(** :ref:`Vector2<class_vector2>` ofs, :ref:`Texture<class_texture>` texture **)**
+- :ref:`int<class_int>` **add_piece** **(** :ref:`Vector2<class_Vector2>` ofs, :ref:`Texture<class_Texture>` texture **)**
 
-Add another :ref:`Texture<class_texture>` to this ``LargeTexture``, starting on offset "ofs".
+Add another :ref:`Texture<class_Texture>` to this ``LargeTexture``, starting on offset "ofs".
 
 .. _class_LargeTexture_clear:
 
@@ -67,31 +66,31 @@ Returns the number of pieces currently in this ``LargeTexture``.
 
 .. _class_LargeTexture_get_piece_offset:
 
-- :ref:`Vector2<class_vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Vector2<class_Vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the offset of the piece with index "idx".
 
 .. _class_LargeTexture_get_piece_texture:
 
-- :ref:`Texture<class_texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the :ref:`Texture<class_texture>` of the piece with index "idx".
+Returns the :ref:`Texture<class_Texture>` of the piece with index "idx".
 
 .. _class_LargeTexture_set_piece_offset:
 
-- void **set_piece_offset** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` ofs **)**
+- void **set_piece_offset** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` ofs **)**
 
 Sets the offset of the piece with index "idx" to "ofs".
 
 .. _class_LargeTexture_set_piece_texture:
 
-- void **set_piece_texture** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture **)**
+- void **set_piece_texture** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
-Sets the :ref:`Texture<class_texture>` of the piece with index "idx" to  "ofs".
+Sets the :ref:`Texture<class_Texture>` of the piece with index "idx" to  "ofs".
 
 .. _class_LargeTexture_set_size:
 
-- void **set_size** **(** :ref:`Vector2<class_vector2>` size **)**
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` size **)**
 
 Sets the size of this ``LargeTexture``.
 

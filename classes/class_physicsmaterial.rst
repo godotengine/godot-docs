@@ -7,17 +7,21 @@
 PhysicsMaterial
 ===============
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
+A material for physics properties.
 
+Description
+-----------
 
-Member Variables
-----------------
+Provides a means of modifying the collision properties of a :ref:`PhysicsBody<class_PhysicsBody>`.
+
+Property Descriptions
+---------------------
 
   .. _class_PhysicsMaterial_absorbent:
 
@@ -25,11 +29,11 @@ Member Variables
 
   .. _class_PhysicsMaterial_bounce:
 
-- :ref:`float<class_float>` **bounce**
+- :ref:`float<class_float>` **bounce** - The body's bounciness. Default value: ``0``.
 
   .. _class_PhysicsMaterial_friction:
 
-- :ref:`float<class_float>` **friction**
+- :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
 
   .. _class_PhysicsMaterial_rough:
 

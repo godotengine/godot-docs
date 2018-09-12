@@ -7,8 +7,7 @@
 VisualShaderNodeTextureUniform
 ==============================
 
-**Inherits:** :ref:`VisualShaderNodeUniform<class_visualshadernodeuniform>` **<** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeTextureUniform_color_default:
-
-- :ref:`ColorDefault<enum_visualshadernodetextureuniform_colordefault>` **color_default**
-
-  .. _class_VisualShaderNodeTextureUniform_texture_type:
-
-- :ref:`TextureType<enum_visualshadernodetextureuniform_texturetype>` **texture_type**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeTextureUniform_TextureType:
 
@@ -46,5 +33,17 @@ enum **ColorDefault**
 
 - **COLOR_DEFAULT_WHITE** = **0**
 - **COLOR_DEFAULT_BLACK** = **1**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeTextureUniform_color_default:
+
+- :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **color_default**
+
+  .. _class_VisualShaderNodeTextureUniform_texture_type:
+
+- :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **texture_type**
 
 

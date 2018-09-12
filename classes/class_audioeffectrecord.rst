@@ -7,8 +7,7 @@
 AudioEffectRecord
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,31 +15,31 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamSample<class_audiostreamsample>`  | :ref:`get_recording<class_AudioEffectRecord_get_recording>` **(** **)** const                                        |
+| :ref:`AudioStreamSample<class_AudioStreamSample>`  | :ref:`get_recording<class_AudioEffectRecord_get_recording>` **(** **)** const                                        |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | :ref:`is_recording_active<class_AudioEffectRecord_is_recording_active>` **(** **)** const                            |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`set_recording_active<class_AudioEffectRecord_set_recording_active>` **(** :ref:`bool<class_bool>` record **)** |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectRecord_format:
 
-- :ref:`Format<enum_audiostreamsample_format>` **format**
+- :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AudioEffectRecord_get_recording:
 
-- :ref:`AudioStreamSample<class_audiostreamsample>` **get_recording** **(** **)** const
+- :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
 
 .. _class_AudioEffectRecord_is_recording_active:
 

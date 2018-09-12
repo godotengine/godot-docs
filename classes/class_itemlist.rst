@@ -7,8 +7,7 @@
 ItemList
 ========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,41 +15,41 @@ Brief Description
 
 Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>` **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true **)**                              |
+| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>` **(** :ref:`Texture<class_Texture>` icon, :ref:`bool<class_bool>` selectable=true **)**                              |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_item<class_ItemList_add_item>` **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)** |
+| void                                     | :ref:`add_item<class_ItemList_add_item>` **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)** |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear<class_ItemList_clear>` **(** **)**                                                                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`ensure_current_is_visible<class_ItemList_ensure_current_is_visible>` **(** **)**                                                                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_item_at_position<class_ItemList_get_item_at_position>` **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` exact=false **)** const          |
+| :ref:`int<class_int>`                    | :ref:`get_item_at_position<class_ItemList_get_item_at_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_item_count<class_ItemList_get_item_count>` **(** **)** const                                                                                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_item_custom_bg_color<class_ItemList_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
+| :ref:`Color<class_Color>`                | :ref:`get_item_custom_bg_color<class_ItemList_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_item_custom_fg_color<class_ItemList_get_item_custom_fg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
+| :ref:`Color<class_Color>`                | :ref:`get_item_custom_fg_color<class_ItemList_get_item_custom_fg_color>` **(** :ref:`int<class_int>` idx **)** const                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`            | :ref:`get_item_icon<class_ItemList_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
+| :ref:`Texture<class_Texture>`            | :ref:`get_item_icon<class_ItemList_get_item_icon>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_item_icon_modulate<class_ItemList_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** const                                                        |
+| :ref:`Color<class_Color>`                | :ref:`get_item_icon_modulate<class_ItemList_get_item_icon_modulate>` **(** :ref:`int<class_int>` idx **)** const                                                        |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`                | :ref:`get_item_icon_region<class_ItemList_get_item_icon_region>` **(** :ref:`int<class_int>` idx **)** const                                                            |
+| :ref:`Rect2<class_Rect2>`                | :ref:`get_item_icon_region<class_ItemList_get_item_icon_region>` **(** :ref:`int<class_int>` idx **)** const                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`            | :ref:`get_item_metadata<class_ItemList_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
+| :ref:`Variant<class_Variant>`            | :ref:`get_item_metadata<class_ItemList_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** const                                                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`              | :ref:`get_item_text<class_ItemList_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
+| :ref:`String<class_String>`              | :ref:`get_item_text<class_ItemList_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`              | :ref:`get_item_tooltip<class_ItemList_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
+| :ref:`String<class_String>`              | :ref:`get_item_tooltip<class_ItemList_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`  | :ref:`get_selected_items<class_ItemList_get_selected_items>` **(** **)**                                                                                                |
+| :ref:`PoolIntArray<class_PoolIntArray>`  | :ref:`get_selected_items<class_ItemList_get_selected_items>` **(** **)**                                                                                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VScrollBar<class_vscrollbar>`      | :ref:`get_v_scroll<class_ItemList_get_v_scroll>` **(** **)**                                                                                                            |
+| :ref:`VScrollBar<class_VScrollBar>`      | :ref:`get_v_scroll<class_ItemList_get_v_scroll>` **(** **)**                                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_anything_selected<class_ItemList_is_anything_selected>` **(** **)**                                                                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,25 +67,25 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`select<class_ItemList_select>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true **)**                                                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_custom_bg_color<class_ItemList_set_item_custom_bg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_bg_color **)**               |
+| void                                     | :ref:`set_item_custom_bg_color<class_ItemList_set_item_custom_bg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_bg_color **)**               |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_custom_fg_color<class_ItemList_set_item_custom_fg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_fg_color **)**               |
+| void                                     | :ref:`set_item_custom_fg_color<class_ItemList_set_item_custom_fg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_fg_color **)**               |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_disabled<class_ItemList_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                      |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_icon<class_ItemList_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon **)**                                            |
+| void                                     | :ref:`set_item_icon<class_ItemList_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**                                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_icon_modulate<class_ItemList_set_item_icon_modulate>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` modulate **)**                          |
+| void                                     | :ref:`set_item_icon_modulate<class_ItemList_set_item_icon_modulate>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` modulate **)**                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_icon_region<class_ItemList_set_item_icon_region>` **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_rect2>` rect **)**                                  |
+| void                                     | :ref:`set_item_icon_region<class_ItemList_set_item_icon_region>` **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_metadata<class_ItemList_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata **)**                                |
+| void                                     | :ref:`set_item_metadata<class_ItemList_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_selectable<class_ItemList_set_item_selectable>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable **)**                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_text<class_ItemList_set_item_text>` **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text **)**                                              |
+| void                                     | :ref:`set_item_text<class_ItemList_set_item_text>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**                                              |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_item_tooltip<class_ItemList_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip **)**                                     |
+| void                                     | :ref:`set_item_tooltip<class_ItemList_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**                                     |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_tooltip_enabled<class_ItemList_set_item_tooltip_enabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,7 +107,7 @@ Fired when specified list item is activated via double click or Enter.
 
 .. _class_ItemList_item_rmb_selected:
 
-- **item_rmb_selected** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_vector2>` at_position **)**
+- **item_rmb_selected** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` at_position **)**
 
 Fired when specified list item has been selected via right mouse clicking.
 
@@ -134,59 +133,11 @@ Fired when a multiple selection is altered on a list allowing multiple selection
 
 .. _class_ItemList_rmb_clicked:
 
-- **rmb_clicked** **(** :ref:`Vector2<class_vector2>` at_position **)**
+- **rmb_clicked** **(** :ref:`Vector2<class_Vector2>` at_position **)**
 
 
-Member Variables
-----------------
-
-  .. _class_ItemList_allow_reselect:
-
-- :ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently selected item may be selected again.
-
-  .. _class_ItemList_allow_rmb_select:
-
-- :ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse button click can select items.
-
-  .. _class_ItemList_auto_height:
-
-- :ref:`bool<class_bool>` **auto_height**
-
-  .. _class_ItemList_fixed_column_width:
-
-- :ref:`int<class_int>` **fixed_column_width**
-
-  .. _class_ItemList_fixed_icon_size:
-
-- :ref:`Vector2<class_vector2>` **fixed_icon_size**
-
-  .. _class_ItemList_icon_mode:
-
-- :ref:`IconMode<enum_itemlist_iconmode>` **icon_mode**
-
-  .. _class_ItemList_icon_scale:
-
-- :ref:`float<class_float>` **icon_scale**
-
-  .. _class_ItemList_max_columns:
-
-- :ref:`int<class_int>` **max_columns**
-
-  .. _class_ItemList_max_text_lines:
-
-- :ref:`int<class_int>` **max_text_lines**
-
-  .. _class_ItemList_same_column_width:
-
-- :ref:`bool<class_bool>` **same_column_width**
-
-  .. _class_ItemList_select_mode:
-
-- :ref:`SelectMode<enum_itemlist_selectmode>` **select_mode** - Allow single or multiple selection. See the ``SELECT_*`` constants.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_ItemList_IconMode:
 
@@ -210,18 +161,66 @@ This control provides a selectable list of items that may be in a single (or mul
 
 Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be 'activated' with a double click (or Enter key).
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ItemList_allow_reselect:
+
+- :ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently selected item may be selected again.
+
+  .. _class_ItemList_allow_rmb_select:
+
+- :ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse button click can select items.
+
+  .. _class_ItemList_auto_height:
+
+- :ref:`bool<class_bool>` **auto_height**
+
+  .. _class_ItemList_fixed_column_width:
+
+- :ref:`int<class_int>` **fixed_column_width**
+
+  .. _class_ItemList_fixed_icon_size:
+
+- :ref:`Vector2<class_Vector2>` **fixed_icon_size**
+
+  .. _class_ItemList_icon_mode:
+
+- :ref:`IconMode<enum_ItemList_IconMode>` **icon_mode**
+
+  .. _class_ItemList_icon_scale:
+
+- :ref:`float<class_float>` **icon_scale**
+
+  .. _class_ItemList_max_columns:
+
+- :ref:`int<class_int>` **max_columns**
+
+  .. _class_ItemList_max_text_lines:
+
+- :ref:`int<class_int>` **max_text_lines**
+
+  .. _class_ItemList_same_column_width:
+
+- :ref:`bool<class_bool>` **same_column_width**
+
+  .. _class_ItemList_select_mode:
+
+- :ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode** - Allow single or multiple selection. See the ``SELECT_*`` constants.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ItemList_add_icon_item:
 
-- void **add_icon_item** **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true **)**
+- void **add_icon_item** **(** :ref:`Texture<class_Texture>` icon, :ref:`bool<class_bool>` selectable=true **)**
 
 Adds an item to the item list with no text, only an icon.
 
 .. _class_ItemList_add_item:
 
-- void **add_item** **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
+- void **add_item** **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
 
 Adds an item to the item list with specified text.  Specify an icon of null for a list item with no icon.
 
@@ -241,7 +240,7 @@ Ensure selection is visible, adjusting the scroll position as necessary.
 
 .. _class_ItemList_get_item_at_position:
 
-- :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
+- :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
 
 Given a position within the control return the item (if any) at that point.
 
@@ -253,51 +252,51 @@ Return count of items currently in the item list.
 
 .. _class_ItemList_get_item_custom_bg_color:
 
-- :ref:`Color<class_color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_custom_fg_color:
 
-- :ref:`Color<class_color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_icon:
 
-- :ref:`Texture<class_texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_icon_modulate:
 
-- :ref:`Color<class_color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Color<class_Color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** const
 
-Returns a :ref:`Color<class_color>` modulating item's icon at the specified index.
+Returns a :ref:`Color<class_Color>` modulating item's icon at the specified index.
 
 .. _class_ItemList_get_item_icon_region:
 
-- :ref:`Rect2<class_rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_metadata:
 
-- :ref:`Variant<class_variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_ItemList_get_item_text:
 
-- :ref:`String<class_string>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
 Return the text for specified item index.
 
 .. _class_ItemList_get_item_tooltip:
 
-- :ref:`String<class_string>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
+- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
 Return tooltip hint for specified item index.
 
 .. _class_ItemList_get_selected_items:
 
-- :ref:`PoolIntArray<class_poolintarray>` **get_selected_items** **(** **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_selected_items** **(** **)**
 
 Returns the list of selected indexes.
 
 .. _class_ItemList_get_v_scroll:
 
-- :ref:`VScrollBar<class_vscrollbar>` **get_v_scroll** **(** **)**
+- :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll** **(** **)**
 
 Returns the current vertical scroll bar for the List.
 
@@ -353,11 +352,11 @@ Note:  This method does not trigger the item selection signal.
 
 .. _class_ItemList_set_item_custom_bg_color:
 
-- void **set_item_custom_bg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_bg_color **)**
+- void **set_item_custom_bg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_bg_color **)**
 
 .. _class_ItemList_set_item_custom_fg_color:
 
-- void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_fg_color **)**
+- void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_fg_color **)**
 
 .. _class_ItemList_set_item_disabled:
 
@@ -369,23 +368,23 @@ Disabled items are not be selectable and do not fire activation (Enter or double
 
 .. _class_ItemList_set_item_icon:
 
-- void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon **)**
+- void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**
 
 Set (or replace) icon of the item at the specified index.
 
 .. _class_ItemList_set_item_icon_modulate:
 
-- void **set_item_icon_modulate** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` modulate **)**
+- void **set_item_icon_modulate** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` modulate **)**
 
-Sets a modulating :ref:`Color<class_color>` for item's icon at the specified index.
+Sets a modulating :ref:`Color<class_Color>` for item's icon at the specified index.
 
 .. _class_ItemList_set_item_icon_region:
 
-- void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_rect2>` rect **)**
+- void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**
 
 .. _class_ItemList_set_item_metadata:
 
-- void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata **)**
+- void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
 Sets a value (of any type) to be stored with the item at the specified index.
 
@@ -397,13 +396,13 @@ Allow or disallow selection of the item at the specified index.
 
 .. _class_ItemList_set_item_text:
 
-- void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text **)**
+- void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
 Sets text of item at specified index.
 
 .. _class_ItemList_set_item_tooltip:
 
-- void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip **)**
+- void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
 Sets tooltip hint for item at specified index.
 

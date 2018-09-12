@@ -7,10 +7,8 @@
 AnimationRootNode
 =================
 
-**Inherits:** :ref:`AnimationNode<class_animationnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AnimationNodeAnimation<class_animationnodeanimation>`, :ref:`AnimationNodeBlendSpace2D<class_animationnodeblendspace2d>`, :ref:`AnimationNodeStateMachine<class_animationnodestatemachine>`, :ref:`AnimationNodeBlendSpace1D<class_animationnodeblendspace1d>`, :ref:`AnimationNodeBlendTree<class_animationnodeblendtree>`
-
+**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AnimationNodeAnimation<class_AnimationNodeAnimation>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`
 **Category:** Core
 
 Brief Description

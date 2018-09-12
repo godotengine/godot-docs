@@ -7,10 +7,8 @@
 VisibilityNotifier
 ==================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`VisibilityEnabler<class_visibilityenabler>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,8 @@ Brief Description
 
 Detects when the node is visible on screen.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>` **(** **)** const |
@@ -30,15 +28,15 @@ Signals
 
 .. _class_VisibilityNotifier_camera_entered:
 
-- **camera_entered** **(** :ref:`Object<class_object>` camera **)**
+- **camera_entered** **(** :ref:`Camera<class_Camera>` camera **)**
 
-Emitted when the VisibilityNotifier enters a :ref:`Camera<class_camera>`'s view.
+Emitted when the VisibilityNotifier enters a :ref:`Camera<class_Camera>`'s view.
 
 .. _class_VisibilityNotifier_camera_exited:
 
-- **camera_exited** **(** :ref:`Object<class_object>` camera **)**
+- **camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
 
-Emitted when the VisibilityNotifier exits a :ref:`Camera<class_camera>`'s view.
+Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
 
 .. _class_VisibilityNotifier_screen_entered:
 
@@ -53,21 +51,21 @@ Emitted when the VisibilityNotifier enters the screen.
 Emitted when the VisibilityNotifier exits the screen.
 
 
-Member Variables
-----------------
-
-  .. _class_VisibilityNotifier_aabb:
-
-- :ref:`AABB<class_aabb>` **aabb** - The VisibilityNotifier's bounding box.
-
-
 Description
 -----------
 
-The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_camera>`'s view.
+The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_VisibilityNotifier_aabb:
+
+- :ref:`AABB<class_AABB>` **aabb** - The VisibilityNotifier's bounding box.
+
+
+Method Descriptions
+-------------------
 
 .. _class_VisibilityNotifier_is_on_screen:
 

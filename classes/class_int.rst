@@ -14,15 +14,15 @@ Brief Description
 
 Integer built-in type.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`int<class_int_int>` **(** :ref:`bool<class_bool>` from **)**     |
 +------------------------+------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`int<class_int_int>` **(** :ref:`float<class_float>` from **)**   |
 +------------------------+------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`int<class_int_int>` **(** :ref:`String<class_string>` from **)** |
+| :ref:`int<class_int>`  | :ref:`int<class_int_int>` **(** :ref:`String<class_String>` from **)** |
 +------------------------+------------------------------------------------------------------------+
 
 Description
@@ -30,8 +30,8 @@ Description
 
 Integer built-in type.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_int_int:
 
@@ -47,8 +47,8 @@ Cast a float value to an integer value, this method simply removes the number fr
 
 .. _class_int_int:
 
-- :ref:`int<class_int>` **int** **(** :ref:`String<class_string>` from **)**
+- :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
 
-Cast a :ref:`String<class_string>` value to an integer value, this method is an integer parser from a string, so calling this method with an invalid integer string will return 0, a valid string will be something like ``'1.7'``. This method will ignore all non-number characters, so calling ``int('1e3')`` will return 13.
+Cast a :ref:`String<class_String>` value to an integer value, this method is an integer parser from a string, so calling this method with an invalid integer string will return 0, a valid string will be something like ``'1.7'``. This method will ignore all non-number characters, so calling ``int('1e3')`` will return 13.
 
 

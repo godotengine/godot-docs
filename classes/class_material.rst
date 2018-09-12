@@ -7,31 +7,17 @@
 Material
 ========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ParticlesMaterial<class_particlesmaterial>`, :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`SpatialMaterial<class_spatialmaterial>`, :ref:`CanvasItemMaterial<class_canvasitemmaterial>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
+Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 
-Member Variables
-----------------
-
-  .. _class_Material_next_pass:
-
-- :ref:`Material<class_material>` **next_pass**
-
-  .. _class_Material_render_priority:
-
-- :ref:`int<class_int>` **render_priority**
-
-
-Numeric Constants
------------------
+Constants
+---------
 
 - **RENDER_PRIORITY_MAX** = **127**
 - **RENDER_PRIORITY_MIN** = **-128**
@@ -39,5 +25,17 @@ Numeric Constants
 Description
 -----------
 
-Material is a base :ref:`Resource<class_resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_visualinstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+Property Descriptions
+---------------------
+
+  .. _class_Material_next_pass:
+
+- :ref:`Material<class_Material>` **next_pass**
+
+  .. _class_Material_render_priority:
+
+- :ref:`int<class_int>` **render_priority**
+
 

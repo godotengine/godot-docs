@@ -7,8 +7,7 @@
 AudioEffectLimiter
 ==================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,15 @@ Brief Description
 
 Adds a soft clip Limiter audio effect to an Audio bus.
 
-Member Variables
-----------------
+Description
+-----------
+
+A limiter is similar to a compressor, but it’s less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master Bus is always recommended to reduce the effects of clipping.
+
+Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectLimiter_ceiling_db:
 
@@ -35,11 +41,4 @@ Member Variables
 
 - :ref:`float<class_float>` **threshold_db** - Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: ``0dB``.
 
-
-Description
------------
-
-A limiter is similar to a compressor, but it’s less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master Bus is always recommended to reduce the effects of clipping.
-
-Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 

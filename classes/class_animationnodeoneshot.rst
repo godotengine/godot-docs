@@ -7,8 +7,7 @@
 AnimationNodeOneShot
 ====================
 
-**Inherits:** :ref:`AnimationNode<class_animationnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,17 +15,28 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MixMode<enum_animationnodeoneshot_mixmode>`  | :ref:`get_mix_mode<class_AnimationNodeOneShot_get_mix_mode>` **(** **)** const                                                  |
+| :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>`  | :ref:`get_mix_mode<class_AnimationNodeOneShot_get_mix_mode>` **(** **)** const                                                  |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_mix_mode<class_AnimationNodeOneShot_set_mix_mode>` **(** :ref:`MixMode<enum_animationnodeoneshot_mixmode>` mode **)** |
+| void                                               | :ref:`set_mix_mode<class_AnimationNodeOneShot_set_mix_mode>` **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)** |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_AnimationNodeOneShot_MixMode:
+
+enum **MixMode**
+
+- **MIX_MODE_BLEND** = **0**
+- **MIX_MODE_ADD** = **1**
+
+
+Property Descriptions
+---------------------
 
   .. _class_AnimationNodeOneShot_autorestart:
 
@@ -53,26 +63,15 @@ Member Variables
 - :ref:`bool<class_bool>` **sync**
 
 
-Enums
------
-
-  .. _enum_AnimationNodeOneShot_MixMode:
-
-enum **MixMode**
-
-- **MIX_MODE_BLEND** = **0**
-- **MIX_MODE_ADD** = **1**
-
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AnimationNodeOneShot_get_mix_mode:
 
-- :ref:`MixMode<enum_animationnodeoneshot_mixmode>` **get_mix_mode** **(** **)** const
+- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** const
 
 .. _class_AnimationNodeOneShot_set_mix_mode:
 
-- void **set_mix_mode** **(** :ref:`MixMode<enum_animationnodeoneshot_mixmode>` mode **)**
+- void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)**
 
 

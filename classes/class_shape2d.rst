@@ -7,10 +7,8 @@
 Shape2D
 =======
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`RayShape2D<class_rayshape2d>`, :ref:`LineShape2D<class_lineshape2d>`, :ref:`CircleShape2D<class_circleshape2d>`, :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>`, :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>`, :ref:`CapsuleShape2D<class_capsuleshape2d>`, :ref:`RectangleShape2D<class_rectangleshape2d>`, :ref:`SegmentShape2D<class_segmentshape2d>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`RayShape2D<class_RayShape2D>`, :ref:`LineShape2D<class_LineShape2D>`, :ref:`CircleShape2D<class_CircleShape2D>`, :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`, :ref:`CapsuleShape2D<class_CapsuleShape2D>`, :ref:`RectangleShape2D<class_RectangleShape2D>`, :ref:`SegmentShape2D<class_SegmentShape2D>`
 **Category:** Core
 
 Brief Description
@@ -18,26 +16,18 @@ Brief Description
 
 Base class for all 2D Shapes.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`collide<class_Shape2D_collide>` **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform **)**                                                                                                                                                   |
+| :ref:`bool<class_bool>`        | :ref:`collide<class_Shape2D_collide>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**                                                                                                                                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`collide_and_get_contacts<class_Shape2D_collide_and_get_contacts>` **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform **)**                                                                                                                 |
+| :ref:`Variant<class_Variant>`  | :ref:`collide_and_get_contacts<class_Shape2D_collide_and_get_contacts>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**                                                                                                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`collide_with_motion<class_Shape2D_collide_with_motion>` **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Vector2<class_vector2>` local_motion, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform, :ref:`Vector2<class_vector2>` shape_motion **)**                                   |
+| :ref:`bool<class_bool>`        | :ref:`collide_with_motion<class_Shape2D_collide_with_motion>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)**                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`collide_with_motion_and_get_contacts<class_Shape2D_collide_with_motion_and_get_contacts>` **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Vector2<class_vector2>` local_motion, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform, :ref:`Vector2<class_vector2>` shape_motion **)** |
+| :ref:`Variant<class_Variant>`  | :ref:`collide_with_motion_and_get_contacts<class_Shape2D_collide_with_motion_and_get_contacts>` **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_Shape2D_custom_solver_bias:
-
-- :ref:`float<class_float>` **custom_solver_bias**
-
 
 Description
 -----------
@@ -49,12 +39,20 @@ Tutorials
 
 - :doc:`../tutorials/physics/physics_introduction`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Shape2D_custom_solver_bias:
+
+- :ref:`float<class_float>` **custom_solver_bias**
+
+
+Method Descriptions
+-------------------
 
 .. _class_Shape2D_collide:
 
-- :ref:`bool<class_bool>` **collide** **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform **)**
+- :ref:`bool<class_bool>` **collide** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**
 
 Return whether this shape is colliding with another.
 
@@ -62,7 +60,7 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 .. _class_Shape2D_collide_and_get_contacts:
 
-- :ref:`Variant<class_variant>` **collide_and_get_contacts** **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform **)**
+- :ref:`Variant<class_Variant>` **collide_and_get_contacts** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**
 
 Return a list of the points where this shape touches another. If there are no collisions, the list is empty.
 
@@ -70,7 +68,7 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 .. _class_Shape2D_collide_with_motion:
 
-- :ref:`bool<class_bool>` **collide_with_motion** **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Vector2<class_vector2>` local_motion, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform, :ref:`Vector2<class_vector2>` shape_motion **)**
+- :ref:`bool<class_bool>` **collide_with_motion** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)**
 
 Return whether this shape would collide with another, if a given movement was applied.
 
@@ -78,7 +76,7 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 .. _class_Shape2D_collide_with_motion_and_get_contacts:
 
-- :ref:`Variant<class_variant>` **collide_with_motion_and_get_contacts** **(** :ref:`Transform2D<class_transform2d>` local_xform, :ref:`Vector2<class_vector2>` local_motion, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Transform2D<class_transform2d>` shape_xform, :ref:`Vector2<class_vector2>` shape_motion **)**
+- :ref:`Variant<class_Variant>` **collide_with_motion_and_get_contacts** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)**
 
 Return a list of the points where this shape would touch another, if a given movement was applied. If there are no collisions, the list is empty.
 

@@ -7,10 +7,8 @@
 Spatial
 =======
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`Path<class_path>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`SpringArm<class_springarm>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`OrientedPathFollow<class_orientedpathfollow>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`Joint<class_Joint>`, :ref:`RayCast<class_RayCast>`, :ref:`Camera<class_Camera>`, :ref:`BoneAttachment<class_BoneAttachment>`, :ref:`CollisionShape<class_CollisionShape>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`Path<class_Path>`, :ref:`ARVRController<class_ARVRController>`, :ref:`VisualInstance<class_VisualInstance>`, :ref:`VehicleWheel<class_VehicleWheel>`, :ref:`Position3D<class_Position3D>`, :ref:`ProximityGroup<class_ProximityGroup>`, :ref:`SpringArm<class_SpringArm>`, :ref:`ARVRAnchor<class_ARVRAnchor>`, :ref:`RemoteTransform<class_RemoteTransform>`, :ref:`CollisionObject<class_CollisionObject>`, :ref:`OrientedPathFollow<class_OrientedPathFollow>`, :ref:`PathFollow<class_PathFollow>`, :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`, :ref:`Listener<class_Listener>`, :ref:`VisibilityNotifier<class_VisibilityNotifier>`, :ref:`Navigation<class_Navigation>`, :ref:`CollisionPolygon<class_CollisionPolygon>`, :ref:`GridMap<class_GridMap>`, :ref:`Skeleton<class_Skeleton>`, :ref:`ARVROrigin<class_ARVROrigin>`
 **Category:** Core
 
 Brief Description
@@ -18,19 +16,21 @@ Brief Description
 
 Most basic 3D game object, parent of all 3D related nodes.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Spatial<class_spatial>`  | :ref:`get_parent_spatial<class_Spatial_get_parent_spatial>` **(** **)** const                                                                                                                |
+| void                           | :ref:`force_update_transform<class_Spatial_force_update_transform>` **(** **)**                                                                                                              |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World<class_world>`      | :ref:`get_world<class_Spatial_get_world>` **(** **)** const                                                                                                                                  |
+| :ref:`Spatial<class_Spatial>`  | :ref:`get_parent_spatial<class_Spatial_get_parent_spatial>` **(** **)** const                                                                                                                |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`global_rotate<class_Spatial_global_rotate>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                                            |
+| :ref:`World<class_World>`      | :ref:`get_world<class_Spatial_get_world>` **(** **)** const                                                                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`global_scale<class_Spatial_global_scale>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                                              |
+| void                           | :ref:`global_rotate<class_Spatial_global_rotate>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`global_translate<class_Spatial_global_translate>` **(** :ref:`Vector3<class_vector3>` offset **)**                                                                                     |
+| void                           | :ref:`global_scale<class_Spatial_global_scale>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                                              |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`global_translate<class_Spatial_global_translate>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`hide<class_Spatial_hide>` **(** **)**                                                                                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,15 +44,15 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_visible_in_tree<class_Spatial_is_visible_in_tree>` **(** **)** const                                                                                                                |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`look_at<class_Spatial_look_at>` **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**                                                                     |
+| void                           | :ref:`look_at<class_Spatial_look_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**                                                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`look_at_from_position<class_Spatial_look_at_from_position>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)** |
+| void                           | :ref:`look_at_from_position<class_Spatial_look_at_from_position>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`orthonormalize<class_Spatial_orthonormalize>` **(** **)**                                                                                                                              |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`rotate<class_Spatial_rotate>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                                                          |
+| void                           | :ref:`rotate<class_Spatial_rotate>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                          |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`rotate_object_local<class_Spatial_rotate_object_local>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**                                                |
+| void                           | :ref:`rotate_object_local<class_Spatial_rotate_object_local>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`rotate_x<class_Spatial_rotate_x>` **(** :ref:`float<class_float>` angle **)**                                                                                                          |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,7 +60,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`rotate_z<class_Spatial_rotate_z>` **(** :ref:`float<class_float>` angle **)**                                                                                                          |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`scale_object_local<class_Spatial_scale_object_local>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                                  |
+| void                           | :ref:`scale_object_local<class_Spatial_scale_object_local>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_as_toplevel<class_Spatial_set_as_toplevel>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -76,13 +76,13 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`show<class_Spatial_show>` **(** **)**                                                                                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`to_global<class_Spatial_to_global>` **(** :ref:`Vector3<class_vector3>` local_point **)** const                                                                                        |
+| :ref:`Vector3<class_Vector3>`  | :ref:`to_global<class_Spatial_to_global>` **(** :ref:`Vector3<class_Vector3>` local_point **)** const                                                                                        |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`to_local<class_Spatial_to_local>` **(** :ref:`Vector3<class_vector3>` global_point **)** const                                                                                         |
+| :ref:`Vector3<class_Vector3>`  | :ref:`to_local<class_Spatial_to_local>` **(** :ref:`Vector3<class_Vector3>` global_point **)** const                                                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`translate<class_Spatial_translate>` **(** :ref:`Vector3<class_vector3>` offset **)**                                                                                                   |
+| void                           | :ref:`translate<class_Spatial_translate>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`translate_object_local<class_Spatial_translate_object_local>` **(** :ref:`Vector3<class_vector3>` offset **)**                                                                         |
+| void                           | :ref:`translate_object_local<class_Spatial_translate_object_local>` **(** :ref:`Vector3<class_Vector3>` offset **)**                                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`update_gizmo<class_Spatial_update_gizmo>` **(** **)**                                                                                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,58 +97,20 @@ Signals
 Emitted when node visibility changes.
 
 
-Member Variables
-----------------
-
-  .. _class_Spatial_gizmo:
-
-- :ref:`SpatialGizmo<class_spatialgizmo>` **gizmo** - The SpatialGizmo for this node. Used for example in :ref:`EditorSpatialGizmo<class_editorspatialgizmo>` as custom visualization and editing handles in Editor.
-
-  .. _class_Spatial_global_transform:
-
-- :ref:`Transform<class_transform>` **global_transform** - World space (global) :ref:`Transform<class_transform>` of this node.
-
-  .. _class_Spatial_rotation:
-
-- :ref:`Vector3<class_vector3>` **rotation** - Rotation part of the local transformation, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle), in radians.
-
-Note that in the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three indepdent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_vector3>` exists as a convenient data-structure to store 3 floating point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
-
-  .. _class_Spatial_rotation_degrees:
-
-- :ref:`Vector3<class_vector3>` **rotation_degrees** - Rotation part of the local transformation, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle), in degrees.
-
-  .. _class_Spatial_scale:
-
-- :ref:`Vector3<class_vector3>` **scale** - Scale part of the local transformation.
-
-  .. _class_Spatial_transform:
-
-- :ref:`Transform<class_transform>` **transform** - Local space :ref:`Transform<class_transform>` of this node, with respect to the parent node.
-
-  .. _class_Spatial_translation:
-
-- :ref:`Vector3<class_vector3>` **translation** - Local translation of this node.
-
-  .. _class_Spatial_visible:
-
-- :ref:`bool<class_bool>` **visible** - Visibility of this node. Toggles if this node is rendered.
-
-
-Numeric Constants
------------------
+Constants
+---------
 
 - **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for NOTIFICATION_TRANSFORM_CHANGED to work user first needs to ask for it, with set_notify_transform(true).
-- **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_world>` resource.
-- **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_world>` resource.
+- **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
+- **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_World>` resource.
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
 
 Description
 -----------
 
-Most basic 3D game object, with a 3D :ref:`Transform<class_transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use Spatial as a parent node to move, scale, rotate and show/hide children in a 3D project.
+Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use Spatial as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the Spatial object is set as top level. Affine operations in this coordinate system correspond to direct affine operations on the Spatial's transform. The word local below refers to this coordinate system. The coordinate system that is attached to the Spatial object itself is referred to as object-local coordinate system.
 
@@ -157,36 +119,78 @@ Tutorials
 
 - :doc:`../tutorials/3d/introduction_to_3d`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Spatial_gizmo:
+
+- :ref:`SpatialGizmo<class_SpatialGizmo>` **gizmo** - The SpatialGizmo for this node. Used for example in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` as custom visualization and editing handles in Editor.
+
+  .. _class_Spatial_global_transform:
+
+- :ref:`Transform<class_Transform>` **global_transform** - World space (global) :ref:`Transform<class_Transform>` of this node.
+
+  .. _class_Spatial_rotation:
+
+- :ref:`Vector3<class_Vector3>` **rotation** - Rotation part of the local transformation in radians, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle).
+
+Note that in the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+
+  .. _class_Spatial_rotation_degrees:
+
+- :ref:`Vector3<class_Vector3>` **rotation_degrees** - Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle).
+
+  .. _class_Spatial_scale:
+
+- :ref:`Vector3<class_Vector3>` **scale** - Scale part of the local transformation.
+
+  .. _class_Spatial_transform:
+
+- :ref:`Transform<class_Transform>` **transform** - Local space :ref:`Transform<class_Transform>` of this node, with respect to the parent node.
+
+  .. _class_Spatial_translation:
+
+- :ref:`Vector3<class_Vector3>` **translation** - Local translation of this node.
+
+  .. _class_Spatial_visible:
+
+- :ref:`bool<class_bool>` **visible** - If ``true`` this node is drawn. Default value: ``true``.
+
+
+Method Descriptions
+-------------------
+
+.. _class_Spatial_force_update_transform:
+
+- void **force_update_transform** **(** **)**
 
 .. _class_Spatial_get_parent_spatial:
 
-- :ref:`Spatial<class_spatial>` **get_parent_spatial** **(** **)** const
+- :ref:`Spatial<class_Spatial>` **get_parent_spatial** **(** **)** const
 
-Returns the parent ``Spatial``, or an empty :ref:`Object<class_object>` if no parent exists or parent is not of type ``Spatial``.
+Returns the parent ``Spatial``, or an empty :ref:`Object<class_Object>` if no parent exists or parent is not of type ``Spatial``.
 
 .. _class_Spatial_get_world:
 
-- :ref:`World<class_world>` **get_world** **(** **)** const
+- :ref:`World<class_World>` **get_world** **(** **)** const
 
-Returns the current :ref:`World<class_world>` resource this Spatial node is registered to.
+Returns the current :ref:`World<class_World>` resource this Spatial node is registered to.
 
 .. _class_Spatial_global_rotate:
 
-- void **global_rotate** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+- void **global_rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the global (world) transformation around axis, a unit :ref:`Vector3<class_vector3>`, by specified angle in radians. The rotation axis is in global coordinate system.
+Rotates the global (world) transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in global coordinate system.
 
 .. _class_Spatial_global_scale:
 
-- void **global_scale** **(** :ref:`Vector3<class_vector3>` scale **)**
+- void **global_scale** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
 .. _class_Spatial_global_translate:
 
-- void **global_translate** **(** :ref:`Vector3<class_vector3>` offset **)**
+- void **global_translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Moves the global (world) transformation by :ref:`Vector3<class_vector3>` offset. The offset is in global coordinate system.
+Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset. The offset is in global coordinate system.
 
 .. _class_Spatial_hide:
 
@@ -224,7 +228,7 @@ Returns whether the node is visible, taking into consideration that its parents 
 
 .. _class_Spatial_look_at:
 
-- void **look_at** **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
+- void **look_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**
 
 Rotates itself so that the local -Z axis points towards the ``target`` position.
 
@@ -234,7 +238,7 @@ Operations take place in global space.
 
 .. _class_Spatial_look_at_from_position:
 
-- void **look_at_from_position** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
+- void **look_at_from_position** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**
 
 Moves the node to the specified ``position``, and then rotates itself to point toward the ``target`` as per :ref:`look_at<class_Spatial_look_at>`. Operations take place in global space.
 
@@ -246,15 +250,15 @@ Resets this node's transformations (like scale, skew and taper) preserving its r
 
 .. _class_Spatial_rotate:
 
-- void **rotate** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+- void **rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around axis, a unit :ref:`Vector3<class_vector3>`, by specified angle in radians.
+Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians.
 
 .. _class_Spatial_rotate_object_local:
 
-- void **rotate_object_local** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle **)**
+- void **rotate_object_local** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around axis, a unit :ref:`Vector3<class_vector3>`, by specified angle in radians. The rotation axis is in object-local coordinate system.
+Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in object-local coordinate system.
 
 .. _class_Spatial_rotate_x:
 
@@ -276,7 +280,7 @@ Rotates the local transformation around the Z axis by angle in radians.
 
 .. _class_Spatial_scale_object_local:
 
-- void **scale_object_local** **(** :ref:`Vector3<class_vector3>` scale **)**
+- void **scale_object_local** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
 Scales the local transformation by given 3D scale factors in object-local coordinate system.
 
@@ -322,30 +326,30 @@ Enables rendering of this node. Change Spatial Visible property to "True".
 
 .. _class_Spatial_to_global:
 
-- :ref:`Vector3<class_vector3>` **to_global** **(** :ref:`Vector3<class_vector3>` local_point **)** const
+- :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** const
 
-Transforms :ref:`Vector3<class_vector3>` "local_point" from this node's local space to world space.
+Transforms :ref:`Vector3<class_Vector3>` "local_point" from this node's local space to world space.
 
 .. _class_Spatial_to_local:
 
-- :ref:`Vector3<class_vector3>` **to_local** **(** :ref:`Vector3<class_vector3>` global_point **)** const
+- :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** const
 
-Transforms :ref:`Vector3<class_vector3>` "global_point" from world space to this node's local space.
+Transforms :ref:`Vector3<class_Vector3>` "global_point" from world space to this node's local space.
 
 .. _class_Spatial_translate:
 
-- void **translate** **(** :ref:`Vector3<class_vector3>` offset **)**
+- void **translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Changes the node's position by given offset :ref:`Vector3<class_vector3>`.
+Changes the node's position by given offset :ref:`Vector3<class_Vector3>`.
 
 .. _class_Spatial_translate_object_local:
 
-- void **translate_object_local** **(** :ref:`Vector3<class_vector3>` offset **)**
+- void **translate_object_local** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
 .. _class_Spatial_update_gizmo:
 
 - void **update_gizmo** **(** **)**
 
-Updates the :ref:`SpatialGizmo<class_spatialgizmo>` of this node.
+Updates the :ref:`SpatialGizmo<class_SpatialGizmo>` of this node.
 
 

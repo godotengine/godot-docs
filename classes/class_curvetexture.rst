@@ -7,8 +7,7 @@
 CurveTexture
 ============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,20 @@ Brief Description
 
 A texture that shows a curve.
 
-Member Variables
-----------------
+Description
+-----------
+
+Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
+
+Property Descriptions
+---------------------
 
   .. _class_CurveTexture_curve:
 
-- :ref:`Curve<class_curve>` **curve** - The ``curve`` rendered onto the texture.
+- :ref:`Curve<class_Curve>` **curve** - The ``curve`` rendered onto the texture.
 
   .. _class_CurveTexture_width:
 
 - :ref:`int<class_int>` **width** - The width of the texture.
 
-
-Description
------------
-
-Renders a given :ref:`Curve<class_curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
 

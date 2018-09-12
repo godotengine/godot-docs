@@ -7,8 +7,7 @@
 VisualScriptYield
 =================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptYield_mode:
-
-- :ref:`YieldMode<enum_visualscriptyield_yieldmode>` **mode**
-
-  .. _class_VisualScriptYield_wait_time:
-
-- :ref:`float<class_float>` **wait_time**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptYield_YieldMode:
 
@@ -38,5 +25,17 @@ enum **YieldMode**
 - **YIELD_FRAME** = **1**
 - **YIELD_PHYSICS_FRAME** = **2**
 - **YIELD_WAIT** = **3**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptYield_mode:
+
+- :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **mode**
+
+  .. _class_VisualScriptYield_wait_time:
+
+- :ref:`float<class_float>` **wait_time**
 
 

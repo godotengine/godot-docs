@@ -7,8 +7,7 @@
 Particles
 =========
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,17 +15,41 @@ Brief Description
 
 3D particle emitter.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+---------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`  | :ref:`capture_aabb<class_Particles_capture_aabb>` **(** **)** const |
+| :ref:`AABB<class_AABB>`  | :ref:`capture_aabb<class_Particles_capture_aabb>` **(** **)** const |
 +--------------------------+---------------------------------------------------------------------+
 | void                     | :ref:`restart<class_Particles_restart>` **(** **)**                 |
 +--------------------------+---------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Particles_DrawOrder:
+
+enum **DrawOrder**
+
+- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
+- **DRAW_ORDER_VIEW_DEPTH** = **2** --- Particles are drawn in order of depth.
+
+
+Constants
+---------
+
+- **MAX_DRAW_PASSES** = **4** --- Maximum number of draw passes supported.
+
+Description
+-----------
+
+3D particle node used to create a variety of particle systems and effects. ``Particles`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+
+Property Descriptions
+---------------------
 
   .. _class_Particles_amount:
 
@@ -34,23 +57,23 @@ Member Variables
 
   .. _class_Particles_draw_order:
 
-- :ref:`DrawOrder<enum_particles_draworder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
+- :ref:`DrawOrder<enum_Particles_DrawOrder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
   .. _class_Particles_draw_pass_1:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_1** - :ref:`Mesh<class_mesh>` that is drawn for the first draw pass.
+- :ref:`Mesh<class_Mesh>` **draw_pass_1** - :ref:`Mesh<class_Mesh>` that is drawn for the first draw pass.
 
   .. _class_Particles_draw_pass_2:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_2** - :ref:`Mesh<class_mesh>` that is drawn for the second draw pass.
+- :ref:`Mesh<class_Mesh>` **draw_pass_2** - :ref:`Mesh<class_Mesh>` that is drawn for the second draw pass.
 
   .. _class_Particles_draw_pass_3:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_3** - :ref:`Mesh<class_mesh>` that is drawn for the third draw pass.
+- :ref:`Mesh<class_Mesh>` **draw_pass_3** - :ref:`Mesh<class_Mesh>` that is drawn for the third draw pass.
 
   .. _class_Particles_draw_pass_4:
 
-- :ref:`Mesh<class_mesh>` **draw_pass_4** - :ref:`Mesh<class_mesh>` that is drawn for the fourth draw pass.
+- :ref:`Mesh<class_Mesh>` **draw_pass_4** - :ref:`Mesh<class_Mesh>` that is drawn for the fourth draw pass.
 
   .. _class_Particles_draw_passes:
 
@@ -90,7 +113,7 @@ Member Variables
 
   .. _class_Particles_process_material:
 
-- :ref:`Material<class_material>` **process_material** - :ref:`Material<class_material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_particlesmaterial>` or a :ref:`ShaderMaterial<class_shadermaterial>`.
+- :ref:`Material<class_Material>` **process_material** - :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
   .. _class_Particles_randomness:
 
@@ -98,43 +121,19 @@ Member Variables
 
   .. _class_Particles_speed_scale:
 
-- :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: ``1``.
+- :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
   .. _class_Particles_visibility_aabb:
 
-- :ref:`AABB<class_aabb>` **visibility_aabb** - The :ref:`AABB<class_aabb>` that determines the area of the world part of which needs to be visible on screen for the particle system to be active.
+- :ref:`AABB<class_AABB>` **visibility_aabb** - The :ref:`AABB<class_AABB>` that determines the area of the world part of which needs to be visible on screen for the particle system to be active.
 
 
-Numeric Constants
------------------
-
-- **MAX_DRAW_PASSES** = **4** --- Maximum number of draw passes supported.
-
-Enums
------
-
-  .. _enum_Particles_DrawOrder:
-
-enum **DrawOrder**
-
-- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
-- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
-- **DRAW_ORDER_VIEW_DEPTH** = **2** --- Particles are drawn in order of depth.
-
-
-Description
------------
-
-3D particle node used to create a variety of particle systems and effects. ``Particles`` features an emitter that generates some number of particles at a given rate.
-
-Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_particlesmaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_shadermaterial>` which will be applied to all particles.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Particles_capture_aabb:
 
-- :ref:`AABB<class_aabb>` **capture_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** const
 
 .. _class_Particles_restart:
 

@@ -7,8 +7,7 @@
 VisualShaderNodeTexture
 =======================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,24 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeTexture_source:
-
-- :ref:`Source<enum_visualshadernodetexture_source>` **source**
-
-  .. _class_VisualShaderNodeTexture_texture:
-
-- :ref:`Texture<class_texture>` **texture**
-
-  .. _class_VisualShaderNodeTexture_texture_type:
-
-- :ref:`TextureType<enum_visualshadernodetexture_texturetype>` **texture_type**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeTexture_Source:
 
@@ -51,5 +34,21 @@ enum **TextureType**
 - **TYPE_DATA** = **0**
 - **TYPE_COLOR** = **1**
 - **TYPE_NORMALMAP** = **2**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeTexture_source:
+
+- :ref:`Source<enum_VisualShaderNodeTexture_Source>` **source**
+
+  .. _class_VisualShaderNodeTexture_texture:
+
+- :ref:`Texture<class_Texture>` **texture**
+
+  .. _class_VisualShaderNodeTexture_texture_type:
+
+- :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type**
 
 

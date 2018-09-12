@@ -7,10 +7,8 @@
 Translation
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`PHashTranslation<class_phashtranslation>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`PHashTranslation<class_PHashTranslation>`
 **Category:** Core
 
 Brief Description
@@ -18,52 +16,52 @@ Brief Description
 
 Language Translation.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_message<class_Translation_add_message>` **(** :ref:`String<class_string>` src_message, :ref:`String<class_string>` xlated_message **)** |
+| void                                           | :ref:`add_message<class_Translation_add_message>` **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`erase_message<class_Translation_erase_message>` **(** :ref:`String<class_string>` src_message **)**                                         |
+| void                                           | :ref:`erase_message<class_Translation_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_message<class_Translation_get_message>` **(** :ref:`String<class_string>` src_message **)** const                                       |
+| :ref:`String<class_String>`                    | :ref:`get_message<class_Translation_get_message>` **(** :ref:`String<class_String>` src_message **)** const                                       |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_message_count<class_Translation_get_message_count>` **(** **)** const                                                                   |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_message_list<class_Translation_get_message_list>` **(** **)** const                                                                     |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_message_list<class_Translation_get_message_list>` **(** **)** const                                                                     |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_Translation_locale:
-
-- :ref:`String<class_string>` **locale**
-
 
 Description
 -----------
 
 Translations are resources that can be loaded/unloaded on demand. They map a string to another string.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Translation_locale:
+
+- :ref:`String<class_String>` **locale**
+
+
+Method Descriptions
+-------------------
 
 .. _class_Translation_add_message:
 
-- void **add_message** **(** :ref:`String<class_string>` src_message, :ref:`String<class_string>` xlated_message **)**
+- void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
 
 Add a message for translation.
 
 .. _class_Translation_erase_message:
 
-- void **erase_message** **(** :ref:`String<class_string>` src_message **)**
+- void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
 Erase a message.
 
 .. _class_Translation_get_message:
 
-- :ref:`String<class_string>` **get_message** **(** :ref:`String<class_string>` src_message **)** const
+- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
 
 Return a message for translation.
 
@@ -73,7 +71,7 @@ Return a message for translation.
 
 .. _class_Translation_get_message_list:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_message_list** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
 
 Return all the messages (keys).
 

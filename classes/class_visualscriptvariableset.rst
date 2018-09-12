@@ -7,22 +7,13 @@
 VisualScriptVariableSet
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Changes a variable's value.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptVariableSet_var_name:
-
-- :ref:`String<class_string>` **var_name** - The variable's name.
-
 
 Description
 -----------
@@ -38,4 +29,12 @@ Changes a variable's value to the given input.
 **Output Ports:**
 
 - Sequence
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptVariableSet_var_name:
+
+- :ref:`String<class_String>` **var_name** - The variable's name.
+
 

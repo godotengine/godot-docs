@@ -7,8 +7,7 @@
 VideoPlayer
 ===========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 Control for playing video streams.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-----------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>` **(** **)** const |
+| :ref:`String<class_String>`    | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>` **(** **)** const |
 +--------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>` **(** **)**   |
+| :ref:`Texture<class_Texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>` **(** **)**   |
 +--------------------------------+-----------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_playing<class_VideoPlayer_is_playing>` **(** **)** const           |
 +--------------------------------+-----------------------------------------------------------------------------+
@@ -41,8 +40,13 @@ Signals
 Emitted when playback is finished.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+Control node for playing video streams. Supported formats are WebM and OGV Theora.
+
+Property Descriptions
+---------------------
 
   .. _class_VideoPlayer_audio_track:
 
@@ -58,7 +62,7 @@ Member Variables
 
   .. _class_VideoPlayer_bus:
 
-- :ref:`String<class_string>` **bus** - Audio bus to use for sound playback.
+- :ref:`String<class_String>` **bus** - Audio bus to use for sound playback.
 
   .. _class_VideoPlayer_expand:
 
@@ -70,7 +74,7 @@ Member Variables
 
   .. _class_VideoPlayer_stream:
 
-- :ref:`VideoStream<class_videostream>` **stream**
+- :ref:`VideoStream<class_VideoStream>` **stream**
 
   .. _class_VideoPlayer_stream_position:
 
@@ -85,25 +89,20 @@ Member Variables
 - :ref:`float<class_float>` **volume_db** - Audio volume in dB.
 
 
-Description
------------
-
-Control node for playing video streams. Supported formats are WebM and OGV Theora.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_VideoPlayer_get_stream_name:
 
-- :ref:`String<class_string>` **get_stream_name** **(** **)** const
+- :ref:`String<class_String>` **get_stream_name** **(** **)** const
 
 Returns the video stream's name.
 
 .. _class_VideoPlayer_get_video_texture:
 
-- :ref:`Texture<class_texture>` **get_video_texture** **(** **)**
+- :ref:`Texture<class_Texture>` **get_video_texture** **(** **)**
 
-Returns the current frame as a :ref:`Texture<class_texture>`.
+Returns the current frame as a :ref:`Texture<class_Texture>`.
 
 .. _class_VideoPlayer_is_playing:
 

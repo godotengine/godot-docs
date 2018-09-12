@@ -7,8 +7,7 @@
 WorldEnvironment
 ================
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,12 @@ Brief Description
 
 Default environment properties for the entire scene (post-processing effects, lightning and background settings).
 
-Member Variables
-----------------
-
-  .. _class_WorldEnvironment_environment:
-
-- :ref:`Environment<class_environment>` **environment** - The :ref:`Environment<class_environment>` resource used by this ``WorldEnvironment``, defining the default properties.
-
-
 Description
 -----------
 
-The ``WorldEnvironment`` node is used to configure the default :ref:`Environment<class_environment>` for the scene.
+The ``WorldEnvironment`` node is used to configure the default :ref:`Environment<class_Environment>` for the scene.
 
-The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_environment>` node set on the current :ref:`Camera<class_camera>`. Additionally, only one ``WorldEnvironment`` may be instanced in a given scene at a time.
+The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_Environment>` node set on the current :ref:`Camera<class_Camera>`. Additionally, only one ``WorldEnvironment`` may be instanced in a given scene at a time.
 
 The ``WorldEnvironment`` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox). Usually, these are added in order to improve the realism/color balance of the scene.
 
@@ -37,4 +28,12 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
+
+Property Descriptions
+---------------------
+
+  .. _class_WorldEnvironment_environment:
+
+- :ref:`Environment<class_Environment>` **environment** - The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
+
 

@@ -7,10 +7,8 @@
 SpriteBase3D
 ============
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`AnimatedSprite3D<class_animatedsprite3d>`, :ref:`Sprite3D<class_sprite3d>`
-
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`AnimatedSprite3D<class_AnimatedSprite3D>`, :ref:`Sprite3D<class_Sprite3D>`
 **Category:** Core
 
 Brief Description
@@ -18,69 +16,17 @@ Brief Description
 
 2D Sprite node in 3D environment.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_trianglemesh>`  | :ref:`generate_triangle_mesh<class_SpriteBase3D_generate_triangle_mesh>` **(** **)** const |
+| :ref:`TriangleMesh<class_TriangleMesh>`  | :ref:`generate_triangle_mesh<class_SpriteBase3D_generate_triangle_mesh>` **(** **)** const |
 +------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`                | :ref:`get_item_rect<class_SpriteBase3D_get_item_rect>` **(** **)** const                   |
+| :ref:`Rect2<class_Rect2>`                | :ref:`get_item_rect<class_SpriteBase3D_get_item_rect>` **(** **)** const                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_SpriteBase3D_alpha_cut:
-
-- :ref:`AlphaCutMode<enum_spritebase3d_alphacutmode>` **alpha_cut**
-
-  .. _class_SpriteBase3D_axis:
-
-- :ref:`Axis<enum_vector3_axis>` **axis** - The direction in which the front of the texture faces.
-
-  .. _class_SpriteBase3D_centered:
-
-- :ref:`bool<class_bool>` **centered** - If ``true`` texture will be centered. Default value: ``true``.
-
-  .. _class_SpriteBase3D_double_sided:
-
-- :ref:`bool<class_bool>` **double_sided** - If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
-
-  .. _class_SpriteBase3D_flip_h:
-
-- :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
-
-  .. _class_SpriteBase3D_flip_v:
-
-- :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
-
-  .. _class_SpriteBase3D_modulate:
-
-- :ref:`Color<class_color>` **modulate** - A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
-
-  .. _class_SpriteBase3D_offset:
-
-- :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
-
-  .. _class_SpriteBase3D_opacity:
-
-- :ref:`float<class_float>` **opacity** - The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
-
-  .. _class_SpriteBase3D_pixel_size:
-
-- :ref:`float<class_float>` **pixel_size** - The size of one pixel's width on the Sprite to scale it in 3D.
-
-  .. _class_SpriteBase3D_shaded:
-
-- :ref:`bool<class_bool>` **shaded** - If ``true`` the :ref:`Light<class_light>` in the :ref:`Environment<class_environment>` has effects on the Sprite. Default value: ``false``.
-
-  .. _class_SpriteBase3D_transparent:
-
-- :ref:`bool<class_bool>` **transparent** - If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_SpriteBase3D_AlphaCutMode:
 
@@ -105,15 +51,67 @@ Description
 
 A node that displays 2D texture information in a 3D environment.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_SpriteBase3D_alpha_cut:
+
+- :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **alpha_cut**
+
+  .. _class_SpriteBase3D_axis:
+
+- :ref:`Axis<enum_Vector3_Axis>` **axis** - The direction in which the front of the texture faces.
+
+  .. _class_SpriteBase3D_centered:
+
+- :ref:`bool<class_bool>` **centered** - If ``true`` texture will be centered. Default value: ``true``.
+
+  .. _class_SpriteBase3D_double_sided:
+
+- :ref:`bool<class_bool>` **double_sided** - If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
+
+  .. _class_SpriteBase3D_flip_h:
+
+- :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+
+  .. _class_SpriteBase3D_flip_v:
+
+- :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
+
+  .. _class_SpriteBase3D_modulate:
+
+- :ref:`Color<class_Color>` **modulate** - A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
+
+  .. _class_SpriteBase3D_offset:
+
+- :ref:`Vector2<class_Vector2>` **offset** - The texture's drawing offset.
+
+  .. _class_SpriteBase3D_opacity:
+
+- :ref:`float<class_float>` **opacity** - The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
+
+  .. _class_SpriteBase3D_pixel_size:
+
+- :ref:`float<class_float>` **pixel_size** - The size of one pixel's width on the Sprite to scale it in 3D.
+
+  .. _class_SpriteBase3D_shaded:
+
+- :ref:`bool<class_bool>` **shaded** - If ``true`` the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
+
+  .. _class_SpriteBase3D_transparent:
+
+- :ref:`bool<class_bool>` **transparent** - If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
+
+
+Method Descriptions
+-------------------
 
 .. _class_SpriteBase3D_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_trianglemesh>` **generate_triangle_mesh** **(** **)** const
+- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
 .. _class_SpriteBase3D_get_item_rect:
 
-- :ref:`Rect2<class_rect2>` **get_item_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** const
 
 

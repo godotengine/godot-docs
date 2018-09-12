@@ -7,38 +7,13 @@
 StaticBody
 ==========
 
-**Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Static body for 3D Physics.
-
-Member Variables
-----------------
-
-  .. _class_StaticBody_bounce:
-
-- :ref:`float<class_float>` **bounce** - The body bounciness.
-
-  .. _class_StaticBody_constant_angular_velocity:
-
-- :ref:`Vector3<class_vector3>` **constant_angular_velocity** - The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
-
-  .. _class_StaticBody_constant_linear_velocity:
-
-- :ref:`Vector3<class_vector3>` **constant_linear_velocity** - The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
-
-  .. _class_StaticBody_friction:
-
-- :ref:`float<class_float>` **friction** - The body friction, from 0 (frictionless) to 1 (full friction).
-
-  .. _class_StaticBody_physics_material_override:
-
-- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
-
 
 Description
 -----------
@@ -48,4 +23,28 @@ Static body for 3D Physics. A static body is a simple body that is not intended 
 A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
 
 Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
+
+Property Descriptions
+---------------------
+
+  .. _class_StaticBody_bounce:
+
+- :ref:`float<class_float>` **bounce** - The body bounciness.
+
+  .. _class_StaticBody_constant_angular_velocity:
+
+- :ref:`Vector3<class_Vector3>` **constant_angular_velocity** - The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
+
+  .. _class_StaticBody_constant_linear_velocity:
+
+- :ref:`Vector3<class_Vector3>` **constant_linear_velocity** - The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
+
+  .. _class_StaticBody_friction:
+
+- :ref:`float<class_float>` **friction** - The body friction, from 0 (frictionless) to 1 (full friction).
+
+  .. _class_StaticBody_physics_material_override:
+
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+
 

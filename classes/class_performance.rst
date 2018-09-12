@@ -7,8 +7,7 @@
 Performance
 ===========
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,15 @@ Brief Description
 
 Exposes performance related data.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`Monitor<enum_performance_monitor>` monitor **)** const |
+| :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_Performance_Monitor:
 
@@ -51,10 +50,10 @@ enum **Monitor**
 - **RENDER_TEXTURE_MEM_USED** = **18** --- Texture memory used.
 - **RENDER_VERTEX_MEM_USED** = **19** --- Vertex memory used.
 - **RENDER_USAGE_VIDEO_MEM_TOTAL** = **20**
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **21** --- Number of active :ref:`RigidBody2D<class_rigidbody2d>` nodes in the game.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **21** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
 - **PHYSICS_2D_COLLISION_PAIRS** = **22** --- Number of collision pairs in the 2D physics engine.
 - **PHYSICS_2D_ISLAND_COUNT** = **23** --- Number of islands in the 2D physics engine.
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody<class_rigidbody>` and :ref:`VehicleBody<class_vehiclebody>` nodes in the game.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
 - **PHYSICS_3D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 3D physics engine.
 - **PHYSICS_3D_ISLAND_COUNT** = **26** --- Number of islands in the 3D physics engine.
 - **AUDIO_OUTPUT_LATENCY** = **27**
@@ -68,12 +67,12 @@ This class provides access to a number of different monitors related to performa
 
 Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Performance_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_performance_monitor>` monitor **)** const
+- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
 
 Returns the value of one of the available monitors. You should provide one of this class's constants as the argument, like this:
 

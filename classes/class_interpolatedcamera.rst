@@ -7,8 +7,7 @@
 InterpolatedCamera
 ==================
 
-**Inherits:** :ref:`Camera<class_camera>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,22 @@ Brief Description
 
 Camera which moves toward another node.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_target<class_InterpolatedCamera_set_target>` **(** :ref:`Object<class_object>` target **)** |
+| void  | :ref:`set_target<class_InterpolatedCamera_set_target>` **(** :ref:`Object<class_Object>` target **)** |
 +-------+-------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+InterpolatedCamera is a :ref:`Camera<class_Camera>` which smoothly moves to match a target node's position and rotation.
+
+If it is not :ref:`enabled<class_InterpolatedCamera_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
+
+Property Descriptions
+---------------------
 
   .. _class_InterpolatedCamera_enabled:
 
@@ -36,22 +42,15 @@ Member Variables
 
   .. _class_InterpolatedCamera_target:
 
-- :ref:`NodePath<class_nodepath>` **target** - The target's :ref:`NodePath<class_nodepath>`.
+- :ref:`NodePath<class_NodePath>` **target** - The target's :ref:`NodePath<class_NodePath>`.
 
 
-Description
------------
-
-InterpolatedCamera is a :ref:`Camera<class_camera>` which smoothly moves to match a target node's position and rotation.
-
-If it is not :ref:`enabled<class_InterpolatedCamera_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_InterpolatedCamera_set_target:
 
-- void **set_target** **(** :ref:`Object<class_object>` target **)**
+- void **set_target** **(** :ref:`Object<class_Object>` target **)**
 
 Sets the node to move toward and orient with.
 

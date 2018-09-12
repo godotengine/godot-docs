@@ -7,8 +7,7 @@
 StyleBoxFlat
 ============
 
-**Inherits:** :ref:`StyleBox<class_stylebox>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Customizable Stylebox with a given set of parameters. (no texture required)
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`get_border_width_min<class_StyleBoxFlat_get_border_width_min>` **(** **)** const                                                                                                                                                                              |
@@ -33,8 +32,38 @@ Member Functions
 | void                   | :ref:`set_expand_margin_individual<class_StyleBoxFlat_set_expand_margin_individual>` **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**               |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+This stylebox can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
+
+ - Color
+
+ - Border width (individual width for each border)
+
+ - Rounded corners (individual radius for each corner)
+
+ - Shadow
+
+ About corner radius:
+
+ 	Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
+
+::
+
+    height = 30
+    corner_radius_top_left = 50
+    corner_radius_bottom_left = 100
+
+The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
+
+::
+
+    corner_radius_top_left: 10
+    corner_radius_bottom_left: 20
+
+Property Descriptions
+---------------------
 
   .. _class_StyleBoxFlat_anti_aliasing:
 
@@ -46,7 +75,7 @@ Member Variables
 
   .. _class_StyleBoxFlat_bg_color:
 
-- :ref:`Color<class_color>` **bg_color** - The background color of the stylebox.
+- :ref:`Color<class_Color>` **bg_color** - The background color of the stylebox.
 
   .. _class_StyleBoxFlat_border_blend:
 
@@ -54,7 +83,7 @@ Member Variables
 
   .. _class_StyleBoxFlat_border_color:
 
-- :ref:`Color<class_color>` **border_color** - Sets the color of the border.
+- :ref:`Color<class_Color>` **border_color** - Sets the color of the border.
 
   .. _class_StyleBoxFlat_border_width_bottom:
 
@@ -118,45 +147,15 @@ For corner radius smaller than 30: 8-12 should be enough ...
 
   .. _class_StyleBoxFlat_shadow_color:
 
-- :ref:`Color<class_color>` **shadow_color** - The color of the shadow. (This has no effect when shadow_size < 1)
+- :ref:`Color<class_Color>` **shadow_color** - The color of the shadow. (This has no effect when shadow_size < 1)
 
   .. _class_StyleBoxFlat_shadow_size:
 
 - :ref:`int<class_int>` **shadow_size** - The shadow size in pixels.
 
 
-Description
------------
-
-This stylebox can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
-
- - Color
-
- - Border width (individual width for each border)
-
- - Rounded corners (individual radius for each corner)
-
- - Shadow
-
- About corner radius:
-
- 	Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
-
-::
-
-    height = 30
-    corner_radius_top_left = 50
-    corner_radius_bottom_left = 100
-
-The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
-
-::
-
-    corner_radius_top_left: 10
-    corner_radius_bottom_left: 20
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_StyleBoxFlat_get_border_width_min:
 

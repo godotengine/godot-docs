@@ -7,10 +7,8 @@
 Button
 ======
 
-**Inherits:** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`OptionButton<class_optionbutton>`, :ref:`ColorPickerButton<class_colorpickerbutton>`, :ref:`CheckButton<class_checkbutton>`, :ref:`MenuButton<class_menubutton>`, :ref:`ToolButton<class_toolbutton>`, :ref:`CheckBox<class_checkbox>`
-
+**Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`OptionButton<class_OptionButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`CheckButton<class_CheckButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`ToolButton<class_ToolButton>`, :ref:`CheckBox<class_CheckBox>`
 **Category:** Core
 
 Brief Description
@@ -18,32 +16,8 @@ Brief Description
 
 Standard themed Button.
 
-Member Variables
-----------------
-
-  .. _class_Button_align:
-
-- :ref:`TextAlign<enum_button_textalign>` **align** - Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
-
-  .. _class_Button_clip_text:
-
-- :ref:`bool<class_bool>` **clip_text** - When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
-
-  .. _class_Button_flat:
-
-- :ref:`bool<class_bool>` **flat** - Flat buttons don't display decoration.
-
-  .. _class_Button_icon:
-
-- :ref:`Texture<class_texture>` **icon** - Button's icon, if text is present the icon will be placed before the text.
-
-  .. _class_Button_text:
-
-- :ref:`String<class_string>` **text** - The button's text that will be displayed inside the button's area.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Button_TextAlign:
 
@@ -57,5 +31,29 @@ enum **TextAlign**
 Description
 -----------
 
-Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_theme>`.
+Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
+
+Property Descriptions
+---------------------
+
+  .. _class_Button_align:
+
+- :ref:`TextAlign<enum_Button_TextAlign>` **align** - Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
+
+  .. _class_Button_clip_text:
+
+- :ref:`bool<class_bool>` **clip_text** - When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
+
+  .. _class_Button_flat:
+
+- :ref:`bool<class_bool>` **flat** - Flat buttons don't display decoration.
+
+  .. _class_Button_icon:
+
+- :ref:`Texture<class_Texture>` **icon** - Button's icon, if text is present the icon will be placed before the text.
+
+  .. _class_Button_text:
+
+- :ref:`String<class_String>` **text** - The button's text that will be displayed inside the button's area.
+
 

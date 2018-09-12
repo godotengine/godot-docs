@@ -7,10 +7,8 @@
 StreamPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`StreamPeerBuffer<class_streampeerbuffer>`, :ref:`StreamPeerSSL<class_streampeerssl>`, :ref:`StreamPeerTCP<class_streampeertcp>`, :ref:`StreamPeerGDNative<class_streampeergdnative>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerSSL<class_StreamPeerSSL>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`, :ref:`StreamPeerGDNative<class_StreamPeerGDNative>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,8 @@ Brief Description
 
 Abstraction and base class for stream-based protocols.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_16<class_StreamPeer_get_16>` **(** **)**                                                                    |
@@ -32,15 +30,15 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_available_bytes<class_StreamPeer_get_available_bytes>` **(** **)** const                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`              | :ref:`get_data<class_StreamPeer_get_data>` **(** :ref:`int<class_int>` bytes **)**                                    |
+| :ref:`Array<class_Array>`              | :ref:`get_data<class_StreamPeer_get_data>` **(** :ref:`int<class_int>` bytes **)**                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_double<class_StreamPeer_get_double>` **(** **)**                                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_float<class_StreamPeer_get_float>` **(** **)**                                                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`              | :ref:`get_partial_data<class_StreamPeer_get_partial_data>` **(** :ref:`int<class_int>` bytes **)**                    |
+| :ref:`Array<class_Array>`              | :ref:`get_partial_data<class_StreamPeer_get_partial_data>` **(** :ref:`int<class_int>` bytes **)**                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_string<class_StreamPeer_get_string>` **(** :ref:`int<class_int>` bytes **)**                                |
+| :ref:`String<class_String>`            | :ref:`get_string<class_StreamPeer_get_string>` **(** :ref:`int<class_int>` bytes **)**                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_u16<class_StreamPeer_get_u16>` **(** **)**                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -50,9 +48,9 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_u8<class_StreamPeer_get_u8>` **(** **)**                                                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_utf8_string<class_StreamPeer_get_utf8_string>` **(** :ref:`int<class_int>` bytes **)**                      |
+| :ref:`String<class_String>`            | :ref:`get_utf8_string<class_StreamPeer_get_utf8_string>` **(** :ref:`int<class_int>` bytes **)**                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`          | :ref:`get_var<class_StreamPeer_get_var>` **(** **)**                                                                  |
+| :ref:`Variant<class_Variant>`          | :ref:`get_var<class_StreamPeer_get_var>` **(** **)**                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_16<class_StreamPeer_put_16>` **(** :ref:`int<class_int>` value **)**                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -62,13 +60,13 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_8<class_StreamPeer_put_8>` **(** :ref:`int<class_int>` value **)**                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`put_data<class_StreamPeer_put_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**                 |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`put_data<class_StreamPeer_put_data>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_double<class_StreamPeer_put_double>` **(** :ref:`float<class_float>` value **)**                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_float<class_StreamPeer_put_float>` **(** :ref:`float<class_float>` value **)**                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`              | :ref:`put_partial_data<class_StreamPeer_put_partial_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)** |
+| :ref:`Array<class_Array>`              | :ref:`put_partial_data<class_StreamPeer_put_partial_data>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)** |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_u16<class_StreamPeer_put_u16>` **(** :ref:`int<class_int>` value **)**                                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -78,26 +76,26 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_u8<class_StreamPeer_put_u8>` **(** :ref:`int<class_int>` value **)**                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`put_utf8_string<class_StreamPeer_put_utf8_string>` **(** :ref:`String<class_string>` value **)**                |
+| void                                   | :ref:`put_utf8_string<class_StreamPeer_put_utf8_string>` **(** :ref:`String<class_String>` value **)**                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`put_var<class_StreamPeer_put_var>` **(** :ref:`Variant<class_variant>` value **)**                              |
+| void                                   | :ref:`put_var<class_StreamPeer_put_var>` **(** :ref:`Variant<class_Variant>` value **)**                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_StreamPeer_big_endian:
-
-- :ref:`bool<class_bool>` **big_endian** - If ``true``, this ``StreamPeer`` will using big-endian format for encoding and decoding.
-
 
 Description
 -----------
 
 StreamPeer is an abstraction and base class for stream-based protocols (such as TCP or Unix Sockets). It provides an API for sending and receiving data through streams as raw data or strings.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_StreamPeer_big_endian:
+
+- :ref:`bool<class_bool>` **big_endian** - If ``true``, this ``StreamPeer`` will using big-endian format for encoding and decoding.
+
+
+Method Descriptions
+-------------------
 
 .. _class_StreamPeer_get_16:
 
@@ -131,7 +129,7 @@ Return the amount of bytes this ``StreamPeer`` has available.
 
 .. _class_StreamPeer_get_data:
 
-- :ref:`Array<class_array>` **get_data** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`Array<class_Array>` **get_data** **(** :ref:`int<class_int>` bytes **)**
 
 Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an Error code and a data array.
 
@@ -149,13 +147,13 @@ Get a single-precision float from the stream.
 
 .. _class_StreamPeer_get_partial_data:
 
-- :ref:`Array<class_array>` **get_partial_data** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`Array<class_Array>` **get_partial_data** **(** :ref:`int<class_int>` bytes **)**
 
 Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an Error code, and a data array.
 
 .. _class_StreamPeer_get_string:
 
-- :ref:`String<class_string>` **get_string** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes **)**
 
 Get a string with byte-length "bytes" from the stream.
 
@@ -185,13 +183,13 @@ Get an unsigned byte from the stream.
 
 .. _class_StreamPeer_get_utf8_string:
 
-- :ref:`String<class_string>` **get_utf8_string** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes **)**
 
 Get a utf8 string with byte-length "bytes" from the stream (this decodes the string sent as utf8).
 
 .. _class_StreamPeer_get_var:
 
-- :ref:`Variant<class_variant>` **get_var** **(** **)**
+- :ref:`Variant<class_Variant>` **get_var** **(** **)**
 
 Get a Variant from the stream.
 
@@ -221,7 +219,7 @@ Put a signed byte into the stream.
 
 .. _class_StreamPeer_put_data:
 
-- :ref:`Error<enum_@globalscope_error>` **put_data** **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Send a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an Error code.
 
@@ -239,7 +237,7 @@ Put a single-precision float into the stream.
 
 .. _class_StreamPeer_put_partial_data:
 
-- :ref:`Array<class_array>` **put_partial_data** **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**
+- :ref:`Array<class_Array>` **put_partial_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an Error code and an integer, describing how much data was actually sent.
 
@@ -269,13 +267,13 @@ Put an unsigned byte into the stream.
 
 .. _class_StreamPeer_put_utf8_string:
 
-- void **put_utf8_string** **(** :ref:`String<class_string>` value **)**
+- void **put_utf8_string** **(** :ref:`String<class_String>` value **)**
 
 Put a zero-terminated utf8 string into the stream.
 
 .. _class_StreamPeer_put_var:
 
-- void **put_var** **(** :ref:`Variant<class_variant>` value **)**
+- void **put_var** **(** :ref:`Variant<class_Variant>` value **)**
 
 Put a Variant into the stream.
 

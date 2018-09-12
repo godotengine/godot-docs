@@ -14,101 +14,8 @@ Brief Description
 
 Global scope constants and variables.
 
-Member Variables
-----------------
-
-  .. _class_@GlobalScope_ARVRServer:
-
-- :ref:`ARVRServer<class_arvrserver>` **ARVRServer** - :ref:`ARVRServer<class_arvrserver>` singleton
-
-  .. _class_@GlobalScope_AudioServer:
-
-- :ref:`AudioServer<class_audioserver>` **AudioServer** - :ref:`AudioServer<class_audioserver>` singleton
-
-  .. _class_@GlobalScope_ClassDB:
-
-- :ref:`ClassDB<class_classdb>` **ClassDB** - :ref:`ClassDB<class_classdb>` singleton
-
-  .. _class_@GlobalScope_Engine:
-
-- :ref:`Engine<class_engine>` **Engine** - :ref:`Engine<class_engine>` singleton
-
-  .. _class_@GlobalScope_Geometry:
-
-- :ref:`Geometry<class_geometry>` **Geometry** - :ref:`Geometry<class_geometry>` singleton
-
-  .. _class_@GlobalScope_IP:
-
-- :ref:`IP<class_ip>` **IP** - :ref:`IP<class_ip>` singleton
-
-  .. _class_@GlobalScope_Input:
-
-- :ref:`Input<class_input>` **Input** - :ref:`Input<class_input>` singleton
-
-  .. _class_@GlobalScope_InputMap:
-
-- :ref:`InputMap<class_inputmap>` **InputMap** - :ref:`InputMap<class_inputmap>` singleton
-
-  .. _class_@GlobalScope_JSON:
-
-- :ref:`JSON<class_json>` **JSON** - :ref:`JSON<class_json>` singleton
-
-  .. _class_@GlobalScope_JavaScript:
-
-- :ref:`JavaScript<class_javascript>` **JavaScript** - :ref:`JavaScript<class_javascript>` singleton
-
-  .. _class_@GlobalScope_Marshalls:
-
-- :ref:`Reference<class_reference>` **Marshalls** - :ref:`Marshalls<class_marshalls>` singleton
-
-  .. _class_@GlobalScope_OS:
-
-- :ref:`OS<class_os>` **OS** - :ref:`OS<class_os>` singleton
-
-  .. _class_@GlobalScope_Performance:
-
-- :ref:`Performance<class_performance>` **Performance** - :ref:`Performance<class_performance>` singleton
-
-  .. _class_@GlobalScope_Physics2DServer:
-
-- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - :ref:`Physics2DServer<class_physics2dserver>` singleton
-
-  .. _class_@GlobalScope_PhysicsServer:
-
-- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - :ref:`PhysicsServer<class_physicsserver>` singleton
-
-  .. _class_@GlobalScope_ProjectSettings:
-
-- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - :ref:`ProjectSettings<class_projectsettings>` singleton
-
-  .. _class_@GlobalScope_ResourceLoader:
-
-- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - :ref:`ResourceLoader<class_resourceloader>` singleton
-
-  .. _class_@GlobalScope_ResourceSaver:
-
-- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - :ref:`ResourceSaver<class_resourcesaver>` singleton
-
-  .. _class_@GlobalScope_TranslationServer:
-
-- :ref:`TranslationServer<class_translationserver>` **TranslationServer** - :ref:`TranslationServer<class_translationserver>` singleton
-
-  .. _class_@GlobalScope_VisualScriptEditor:
-
-- :ref:`VisualScriptEditor<class_visualscripteditor>` **VisualScriptEditor** - :ref:`VisualScriptEditor<class_visualscripteditor>` singleton
-
-  .. _class_@GlobalScope_VisualServer:
-
-- :ref:`VisualServer<class_visualserver>` **VisualServer** - :ref:`VisualServer<class_visualserver>` singleton
-
-
-Numeric Constants
------------------
-
-- **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_@GlobalScope_Variant.Operator:
 
@@ -158,8 +65,8 @@ enum **MethodFlags**
 
 enum **Orientation**
 
-- **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
-- **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
+- **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+- **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
 
   .. _enum_@GlobalScope_PropertyUsageFlags:
 
@@ -625,39 +532,39 @@ enum **Variant.Type**
 - **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
 - **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
 - **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>`/real.
-- **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_string>`.
-- **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_vector2>`.
-- **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_rect2>`.
-- **TYPE_VECTOR3** = **7** --- Variable is of type :ref:`Vector3<class_vector3>`.
-- **TYPE_TRANSFORM2D** = **8** --- Variable is of type :ref:`Transform2D<class_transform2d>`.
-- **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_plane>`.
-- **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_quat>`.
-- **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_aabb>`.
-- **TYPE_BASIS** = **12** --- Variable is of type :ref:`Basis<class_basis>`.
-- **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_transform>`.
-- **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_color>`.
-- **TYPE_NODE_PATH** = **15** --- Variable is of type :ref:`NodePath<class_nodepath>`.
-- **TYPE_RID** = **16** --- Variable is of type :ref:`RID<class_rid>`.
-- **TYPE_OBJECT** = **17** --- Variable is of type :ref:`Object<class_object>`.
-- **TYPE_DICTIONARY** = **18** --- Variable is of type :ref:`Dictionary<class_dictionary>`.
-- **TYPE_ARRAY** = **19** --- Variable is of type :ref:`Array<class_array>`.
-- **TYPE_RAW_ARRAY** = **20** --- Variable is of type :ref:`PoolByteArray<class_poolbytearray>`.
-- **TYPE_INT_ARRAY** = **21** --- Variable is of type :ref:`PoolIntArray<class_poolintarray>`.
-- **TYPE_REAL_ARRAY** = **22** --- Variable is of type :ref:`PoolRealArray<class_poolrealarray>`.
-- **TYPE_STRING_ARRAY** = **23** --- Variable is of type :ref:`PoolStringArray<class_poolstringarray>`.
-- **TYPE_VECTOR2_ARRAY** = **24** --- Variable is of type :ref:`PoolVector2Array<class_poolvector2array>`.
-- **TYPE_VECTOR3_ARRAY** = **25** --- Variable is of type :ref:`PoolVector3Array<class_poolvector3array>`.
-- **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_poolcolorarray>`.
+- **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_String>`.
+- **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_Vector2>`.
+- **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_Rect2>`.
+- **TYPE_VECTOR3** = **7** --- Variable is of type :ref:`Vector3<class_Vector3>`.
+- **TYPE_TRANSFORM2D** = **8** --- Variable is of type :ref:`Transform2D<class_Transform2D>`.
+- **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_Plane>`.
+- **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_Quat>`.
+- **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_AABB>`.
+- **TYPE_BASIS** = **12** --- Variable is of type :ref:`Basis<class_Basis>`.
+- **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_Transform>`.
+- **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_Color>`.
+- **TYPE_NODE_PATH** = **15** --- Variable is of type :ref:`NodePath<class_NodePath>`.
+- **TYPE_RID** = **16** --- Variable is of type :ref:`RID<class_RID>`.
+- **TYPE_OBJECT** = **17** --- Variable is of type :ref:`Object<class_Object>`.
+- **TYPE_DICTIONARY** = **18** --- Variable is of type :ref:`Dictionary<class_Dictionary>`.
+- **TYPE_ARRAY** = **19** --- Variable is of type :ref:`Array<class_Array>`.
+- **TYPE_RAW_ARRAY** = **20** --- Variable is of type :ref:`PoolByteArray<class_PoolByteArray>`.
+- **TYPE_INT_ARRAY** = **21** --- Variable is of type :ref:`PoolIntArray<class_PoolIntArray>`.
+- **TYPE_REAL_ARRAY** = **22** --- Variable is of type :ref:`PoolRealArray<class_PoolRealArray>`.
+- **TYPE_STRING_ARRAY** = **23** --- Variable is of type :ref:`PoolStringArray<class_PoolStringArray>`.
+- **TYPE_VECTOR2_ARRAY** = **24** --- Variable is of type :ref:`PoolVector2Array<class_PoolVector2Array>`.
+- **TYPE_VECTOR3_ARRAY** = **25** --- Variable is of type :ref:`PoolVector3Array<class_PoolVector3Array>`.
+- **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_PoolColorArray>`.
 - **TYPE_MAX** = **27** --- Marker for end of type constants.
 
   .. _enum_@GlobalScope_Margin:
 
 enum **Margin**
 
-- **MARGIN_LEFT** = **0** --- Left margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
-- **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
-- **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
-- **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **MARGIN_LEFT** = **0** --- Left margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
   .. _enum_@GlobalScope_ButtonList:
 
@@ -679,10 +586,107 @@ enum **ButtonList**
 - **BUTTON_MASK_XBUTTON2** = **256**
 
 
+Constants
+---------
+
+- **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
+
 Description
 -----------
 
 Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc. It's not much.
 
 Singletons are also documented here, since they can be accessed from anywhere.
+
+Property Descriptions
+---------------------
+
+  .. _class_@GlobalScope_ARVRServer:
+
+- :ref:`ARVRServer<class_ARVRServer>` **ARVRServer** - :ref:`ARVRServer<class_ARVRServer>` singleton
+
+  .. _class_@GlobalScope_AudioServer:
+
+- :ref:`AudioServer<class_AudioServer>` **AudioServer** - :ref:`AudioServer<class_AudioServer>` singleton
+
+  .. _class_@GlobalScope_ClassDB:
+
+- :ref:`ClassDB<class_ClassDB>` **ClassDB** - :ref:`ClassDB<class_ClassDB>` singleton
+
+  .. _class_@GlobalScope_Engine:
+
+- :ref:`Engine<class_Engine>` **Engine** - :ref:`Engine<class_Engine>` singleton
+
+  .. _class_@GlobalScope_Geometry:
+
+- :ref:`Geometry<class_Geometry>` **Geometry** - :ref:`Geometry<class_Geometry>` singleton
+
+  .. _class_@GlobalScope_GodotSharp:
+
+- :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
+
+  .. _class_@GlobalScope_IP:
+
+- :ref:`IP<class_IP>` **IP** - :ref:`IP<class_IP>` singleton
+
+  .. _class_@GlobalScope_Input:
+
+- :ref:`Input<class_Input>` **Input** - :ref:`Input<class_Input>` singleton
+
+  .. _class_@GlobalScope_InputMap:
+
+- :ref:`InputMap<class_InputMap>` **InputMap** - :ref:`InputMap<class_InputMap>` singleton
+
+  .. _class_@GlobalScope_JSON:
+
+- :ref:`JSON<class_JSON>` **JSON** - :ref:`JSON<class_JSON>` singleton
+
+  .. _class_@GlobalScope_JavaScript:
+
+- :ref:`JavaScript<class_JavaScript>` **JavaScript** - :ref:`JavaScript<class_JavaScript>` singleton
+
+  .. _class_@GlobalScope_Marshalls:
+
+- :ref:`Reference<class_Reference>` **Marshalls** - :ref:`Marshalls<class_Marshalls>` singleton
+
+  .. _class_@GlobalScope_OS:
+
+- :ref:`OS<class_OS>` **OS** - :ref:`OS<class_OS>` singleton
+
+  .. _class_@GlobalScope_Performance:
+
+- :ref:`Performance<class_Performance>` **Performance** - :ref:`Performance<class_Performance>` singleton
+
+  .. _class_@GlobalScope_Physics2DServer:
+
+- :ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer** - :ref:`Physics2DServer<class_Physics2DServer>` singleton
+
+  .. _class_@GlobalScope_PhysicsServer:
+
+- :ref:`PhysicsServer<class_PhysicsServer>` **PhysicsServer** - :ref:`PhysicsServer<class_PhysicsServer>` singleton
+
+  .. _class_@GlobalScope_ProjectSettings:
+
+- :ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings** - :ref:`ProjectSettings<class_ProjectSettings>` singleton
+
+  .. _class_@GlobalScope_ResourceLoader:
+
+- :ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader** - :ref:`ResourceLoader<class_ResourceLoader>` singleton
+
+  .. _class_@GlobalScope_ResourceSaver:
+
+- :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver** - :ref:`ResourceSaver<class_ResourceSaver>` singleton
+
+  .. _class_@GlobalScope_TranslationServer:
+
+- :ref:`TranslationServer<class_TranslationServer>` **TranslationServer** - :ref:`TranslationServer<class_TranslationServer>` singleton
+
+  .. _class_@GlobalScope_VisualScriptEditor:
+
+- :ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor** - :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton
+
+  .. _class_@GlobalScope_VisualServer:
+
+- :ref:`VisualServer<class_VisualServer>` **VisualServer** - :ref:`VisualServer<class_VisualServer>` singleton
+
 

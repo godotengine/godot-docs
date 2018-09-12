@@ -7,10 +7,8 @@
 Physics2DServer
 ===============
 
-**Inherits:** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`Physics2DServerSW<class_physics2dserversw>`
-
+**Inherits:** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`Physics2DServerSW<class_Physics2DServerSW>`
 **Category:** Core
 
 Brief Description
@@ -18,209 +16,209 @@ Brief Description
 
 Physics 2D Server.
 
-Member Functions
-----------------
+Methods
+-------
 
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_add_shape<class_Physics2DServer_area_add_shape>` **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**                                                                                                                                         |
+| void                                                                      | :ref:`area_add_shape<class_Physics2DServer_area_add_shape>` **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_attach_object_instance_id<class_Physics2DServer_area_attach_object_instance_id>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id **)**                                                                                                                                                                                             |
+| void                                                                      | :ref:`area_attach_object_instance_id<class_Physics2DServer_area_attach_object_instance_id>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**                                                                                                                                                                                             |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_clear_shapes<class_Physics2DServer_area_clear_shapes>` **(** :ref:`RID<class_rid>` area **)**                                                                                                                                                                                                                                                 |
+| void                                                                      | :ref:`area_clear_shapes<class_Physics2DServer_area_clear_shapes>` **(** :ref:`RID<class_RID>` area **)**                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`area_create<class_Physics2DServer_area_create>` **(** **)**                                                                                                                                                                                                                                                                                        |
+| :ref:`RID<class_RID>`                                                     | :ref:`area_create<class_Physics2DServer_area_create>` **(** **)**                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`area_get_object_instance_id<class_Physics2DServer_area_get_object_instance_id>` **(** :ref:`RID<class_rid>` area **)** const                                                                                                                                                                                                                       |
+| :ref:`int<class_int>`                                                     | :ref:`area_get_object_instance_id<class_Physics2DServer_area_get_object_instance_id>` **(** :ref:`RID<class_RID>` area **)** const                                                                                                                                                                                                                       |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                                             | :ref:`area_get_param<class_Physics2DServer_area_get_param>` **(** :ref:`RID<class_rid>` area, :ref:`AreaParameter<enum_physics2dserver_areaparameter>` param **)** const                                                                                                                                                                                 |
+| :ref:`Variant<class_Variant>`                                             | :ref:`area_get_param<class_Physics2DServer_area_get_param>` **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param **)** const                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`area_get_shape<class_Physics2DServer_area_get_shape>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                                                |
+| :ref:`RID<class_RID>`                                                     | :ref:`area_get_shape<class_Physics2DServer_area_get_shape>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`area_get_shape_count<class_Physics2DServer_area_get_shape_count>` **(** :ref:`RID<class_rid>` area **)** const                                                                                                                                                                                                                                     |
+| :ref:`int<class_int>`                                                     | :ref:`area_get_shape_count<class_Physics2DServer_area_get_shape_count>` **(** :ref:`RID<class_RID>` area **)** const                                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`                                     | :ref:`area_get_shape_transform<class_Physics2DServer_area_get_shape_transform>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                            |
+| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`area_get_shape_transform<class_Physics2DServer_area_get_shape_transform>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`area_get_space<class_Physics2DServer_area_get_space>` **(** :ref:`RID<class_rid>` area **)** const                                                                                                                                                                                                                                                 |
+| :ref:`RID<class_RID>`                                                     | :ref:`area_get_space<class_Physics2DServer_area_get_space>` **(** :ref:`RID<class_RID>` area **)** const                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AreaSpaceOverrideMode<enum_physics2dserver_areaspaceoverridemode>`  | :ref:`area_get_space_override_mode<class_Physics2DServer_area_get_space_override_mode>` **(** :ref:`RID<class_rid>` area **)** const                                                                                                                                                                                                                     |
+| :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>`  | :ref:`area_get_space_override_mode<class_Physics2DServer_area_get_space_override_mode>` **(** :ref:`RID<class_RID>` area **)** const                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`                                     | :ref:`area_get_transform<class_Physics2DServer_area_get_transform>` **(** :ref:`RID<class_rid>` area **)** const                                                                                                                                                                                                                                         |
+| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`area_get_transform<class_Physics2DServer_area_get_transform>` **(** :ref:`RID<class_RID>` area **)** const                                                                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_remove_shape<class_Physics2DServer_area_remove_shape>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)**                                                                                                                                                                                                                |
+| void                                                                      | :ref:`area_remove_shape<class_Physics2DServer_area_remove_shape>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)**                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_area_monitor_callback<class_Physics2DServer_area_set_area_monitor_callback>` **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method **)**                                                                                                                                             |
+| void                                                                      | :ref:`area_set_area_monitor_callback<class_Physics2DServer_area_set_area_monitor_callback>` **(** :ref:`RID<class_RID>` area, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method **)**                                                                                                                                             |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_collision_layer<class_Physics2DServer_area_set_collision_layer>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer **)**                                                                                                                                                                                                      |
+| void                                                                      | :ref:`area_set_collision_layer<class_Physics2DServer_area_set_collision_layer>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` layer **)**                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_collision_mask<class_Physics2DServer_area_set_collision_mask>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                         |
+| void                                                                      | :ref:`area_set_collision_mask<class_Physics2DServer_area_set_collision_mask>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_monitor_callback<class_Physics2DServer_area_set_monitor_callback>` **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method **)**                                                                                                                                                       |
+| void                                                                      | :ref:`area_set_monitor_callback<class_Physics2DServer_area_set_monitor_callback>` **(** :ref:`RID<class_RID>` area, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method **)**                                                                                                                                                       |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_monitorable<class_Physics2DServer_area_set_monitorable>` **(** :ref:`RID<class_rid>` area, :ref:`bool<class_bool>` monitorable **)**                                                                                                                                                                                                      |
+| void                                                                      | :ref:`area_set_monitorable<class_Physics2DServer_area_set_monitorable>` **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_param<class_Physics2DServer_area_set_param>` **(** :ref:`RID<class_rid>` area, :ref:`AreaParameter<enum_physics2dserver_areaparameter>` param, :ref:`Variant<class_variant>` value **)**                                                                                                                                                  |
+| void                                                                      | :ref:`area_set_param<class_Physics2DServer_area_set_param>` **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                  |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_shape<class_Physics2DServer_area_set_shape>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**                                                                                                                                                                                         |
+| void                                                                      | :ref:`area_set_shape<class_Physics2DServer_area_set_shape>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_shape_disabled<class_Physics2DServer_area_set_shape_disabled>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**                                                                                                                                                                   |
+| void                                                                      | :ref:`area_set_shape_disabled<class_Physics2DServer_area_set_shape_disabled>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**                                                                                                                                                                   |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_shape_transform<class_Physics2DServer_area_set_shape_transform>` **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform **)**                                                                                                                                                 |
+| void                                                                      | :ref:`area_set_shape_transform<class_Physics2DServer_area_set_shape_transform>` **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_space<class_Physics2DServer_area_set_space>` **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` space **)**                                                                                                                                                                                                                          |
+| void                                                                      | :ref:`area_set_space<class_Physics2DServer_area_set_space>` **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` space **)**                                                                                                                                                                                                                          |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_space_override_mode<class_Physics2DServer_area_set_space_override_mode>` **(** :ref:`RID<class_rid>` area, :ref:`AreaSpaceOverrideMode<enum_physics2dserver_areaspaceoverridemode>` mode **)**                                                                                                                                            |
+| void                                                                      | :ref:`area_set_space_override_mode<class_Physics2DServer_area_set_space_override_mode>` **(** :ref:`RID<class_RID>` area, :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>` mode **)**                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`area_set_transform<class_Physics2DServer_area_set_transform>` **(** :ref:`RID<class_rid>` area, :ref:`Transform2D<class_transform2d>` transform **)**                                                                                                                                                                                              |
+| void                                                                      | :ref:`area_set_transform<class_Physics2DServer_area_set_transform>` **(** :ref:`RID<class_RID>` area, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                                                              |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_add_central_force<class_Physics2DServer_body_add_central_force>` **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` force **)**                                                                                                                                                                                                  |
+| void                                                                      | :ref:`body_add_central_force<class_Physics2DServer_body_add_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                                                                                  |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_add_collision_exception<class_Physics2DServer_body_add_collision_exception>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**                                                                                                                                                                                      |
+| void                                                                      | :ref:`body_add_collision_exception<class_Physics2DServer_body_add_collision_exception>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_add_force<class_Physics2DServer_body_add_force>` **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**                                                                                                                                                                            |
+| void                                                                      | :ref:`body_add_force<class_Physics2DServer_body_add_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_add_shape<class_Physics2DServer_body_add_shape>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**                                                                                                                                         |
+| void                                                                      | :ref:`body_add_shape<class_Physics2DServer_body_add_shape>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_add_torque<class_Physics2DServer_body_add_torque>` **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` torque **)**                                                                                                                                                                                                                   |
+| void                                                                      | :ref:`body_add_torque<class_Physics2DServer_body_add_torque>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**                                                                                                                                                                                                                   |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_apply_central_impulse<class_Physics2DServer_body_apply_central_impulse>` **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` impulse **)**                                                                                                                                                                                        |
+| void                                                                      | :ref:`body_apply_central_impulse<class_Physics2DServer_body_apply_central_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)**                                                                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>` **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` position, :ref:`Vector2<class_vector2>` impulse **)**                                                                                                                                                                |
+| void                                                                      | :ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` impulse **)**                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_apply_torque_impulse<class_Physics2DServer_body_apply_torque_impulse>` **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` impulse **)**                                                                                                                                                                                              |
+| void                                                                      | :ref:`body_apply_torque_impulse<class_Physics2DServer_body_apply_torque_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)**                                                                                                                                                                                              |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_attach_object_instance_id<class_Physics2DServer_body_attach_object_instance_id>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id **)**                                                                                                                                                                                             |
+| void                                                                      | :ref:`body_attach_object_instance_id<class_Physics2DServer_body_attach_object_instance_id>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)**                                                                                                                                                                                             |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_clear_shapes<class_Physics2DServer_body_clear_shapes>` **(** :ref:`RID<class_rid>` body **)**                                                                                                                                                                                                                                                 |
+| void                                                                      | :ref:`body_clear_shapes<class_Physics2DServer_body_clear_shapes>` **(** :ref:`RID<class_RID>` body **)**                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`body_create<class_Physics2DServer_body_create>` **(** **)**                                                                                                                                                                                                                                                                                        |
+| :ref:`RID<class_RID>`                                                     | :ref:`body_create<class_Physics2DServer_body_create>` **(** **)**                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                             |
+| :ref:`int<class_int>`                                                     | :ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                             |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`body_get_collision_mask<class_Physics2DServer_body_get_collision_mask>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                               |
+| :ref:`int<class_int>`                                                     | :ref:`body_get_collision_mask<class_Physics2DServer_body_get_collision_mask>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                               |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CCDMode<enum_physics2dserver_ccdmode>`                              | :ref:`body_get_continuous_collision_detection_mode<class_Physics2DServer_body_get_continuous_collision_detection_mode>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                     |
+| :ref:`CCDMode<enum_Physics2DServer_CCDMode>`                              | :ref:`body_get_continuous_collision_detection_mode<class_Physics2DServer_body_get_continuous_collision_detection_mode>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                     |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`           | :ref:`body_get_direct_state<class_Physics2DServer_body_get_direct_state>` **(** :ref:`RID<class_rid>` body **)**                                                                                                                                                                                                                                         |
+| :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`           | :ref:`body_get_direct_state<class_Physics2DServer_body_get_direct_state>` **(** :ref:`RID<class_RID>` body **)**                                                                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`body_get_max_contacts_reported<class_Physics2DServer_body_get_max_contacts_reported>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                 |
+| :ref:`int<class_int>`                                                     | :ref:`body_get_max_contacts_reported<class_Physics2DServer_body_get_max_contacts_reported>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BodyMode<enum_physics2dserver_bodymode>`                            | :ref:`body_get_mode<class_Physics2DServer_body_get_mode>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                                                   |
+| :ref:`BodyMode<enum_Physics2DServer_BodyMode>`                            | :ref:`body_get_mode<class_Physics2DServer_body_get_mode>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                                                   |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`body_get_object_instance_id<class_Physics2DServer_body_get_object_instance_id>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                       |
+| :ref:`int<class_int>`                                                     | :ref:`body_get_object_instance_id<class_Physics2DServer_body_get_object_instance_id>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                       |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                 | :ref:`body_get_param<class_Physics2DServer_body_get_param>` **(** :ref:`RID<class_rid>` body, :ref:`BodyParameter<enum_physics2dserver_bodyparameter>` param **)** const                                                                                                                                                                                 |
+| :ref:`float<class_float>`                                                 | :ref:`body_get_param<class_Physics2DServer_body_get_param>` **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param **)** const                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`body_get_shape<class_Physics2DServer_body_get_shape>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                                                |
+| :ref:`RID<class_RID>`                                                     | :ref:`body_get_shape<class_Physics2DServer_body_get_shape>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`body_get_shape_count<class_Physics2DServer_body_get_shape_count>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                                     |
+| :ref:`int<class_int>`                                                     | :ref:`body_get_shape_count<class_Physics2DServer_body_get_shape_count>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                                             | :ref:`body_get_shape_metadata<class_Physics2DServer_body_get_shape_metadata>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                              |
+| :ref:`Variant<class_Variant>`                                             | :ref:`body_get_shape_metadata<class_Physics2DServer_body_get_shape_metadata>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                              |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`                                     | :ref:`body_get_shape_transform<class_Physics2DServer_body_get_shape_transform>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                            |
+| :ref:`Transform2D<class_Transform2D>`                                     | :ref:`body_get_shape_transform<class_Physics2DServer_body_get_shape_transform>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const                                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`body_get_space<class_Physics2DServer_body_get_space>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                                                                 |
+| :ref:`RID<class_RID>`                                                     | :ref:`body_get_space<class_Physics2DServer_body_get_space>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                                             | :ref:`body_get_state<class_Physics2DServer_body_get_state>` **(** :ref:`RID<class_rid>` body, :ref:`BodyState<enum_physics2dserver_bodystate>` state **)** const                                                                                                                                                                                         |
+| :ref:`Variant<class_Variant>`                                             | :ref:`body_get_state<class_Physics2DServer_body_get_state>` **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_Physics2DServer_BodyState>` state **)** const                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`body_is_omitting_force_integration<class_Physics2DServer_body_is_omitting_force_integration>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                                         |
+| :ref:`bool<class_bool>`                                                   | :ref:`body_is_omitting_force_integration<class_Physics2DServer_body_is_omitting_force_integration>` **(** :ref:`RID<class_RID>` body **)** const                                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_remove_collision_exception<class_Physics2DServer_body_remove_collision_exception>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**                                                                                                                                                                                |
+| void                                                                      | :ref:`body_remove_collision_exception<class_Physics2DServer_body_remove_collision_exception>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_remove_shape<class_Physics2DServer_body_remove_shape>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)**                                                                                                                                                                                                                |
+| void                                                                      | :ref:`body_remove_shape<class_Physics2DServer_body_remove_shape>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)**                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_axis_velocity<class_Physics2DServer_body_set_axis_velocity>` **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` axis_velocity **)**                                                                                                                                                                                          |
+| void                                                                      | :ref:`body_set_axis_velocity<class_Physics2DServer_body_set_axis_velocity>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` axis_velocity **)**                                                                                                                                                                                          |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_collision_layer<class_Physics2DServer_body_set_collision_layer>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer **)**                                                                                                                                                                                                      |
+| void                                                                      | :ref:`body_set_collision_layer<class_Physics2DServer_body_set_collision_layer>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_collision_mask<class_Physics2DServer_body_set_collision_mask>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                         |
+| void                                                                      | :ref:`body_set_collision_mask<class_Physics2DServer_body_set_collision_mask>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_continuous_collision_detection_mode<class_Physics2DServer_body_set_continuous_collision_detection_mode>` **(** :ref:`RID<class_rid>` body, :ref:`CCDMode<enum_physics2dserver_ccdmode>` mode **)**                                                                                                                                        |
+| void                                                                      | :ref:`body_set_continuous_collision_detection_mode<class_Physics2DServer_body_set_continuous_collision_detection_mode>` **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_Physics2DServer_CCDMode>` mode **)**                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>` **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null **)**                                                                                      |
+| void                                                                      | :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>` **(** :ref:`RID<class_RID>` body, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null **)**                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount **)**                                                                                                                                                                                         |
+| void                                                                      | :ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` amount **)**                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_mode<class_Physics2DServer_body_set_mode>` **(** :ref:`RID<class_rid>` body, :ref:`BodyMode<enum_physics2dserver_bodymode>` mode **)**                                                                                                                                                                                                    |
+| void                                                                      | :ref:`body_set_mode<class_Physics2DServer_body_set_mode>` **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_Physics2DServer_BodyMode>` mode **)**                                                                                                                                                                                                    |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_omit_force_integration<class_Physics2DServer_body_set_omit_force_integration>` **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                     |
+| void                                                                      | :ref:`body_set_omit_force_integration<class_Physics2DServer_body_set_omit_force_integration>` **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                     |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_param<class_Physics2DServer_body_set_param>` **(** :ref:`RID<class_rid>` body, :ref:`BodyParameter<enum_physics2dserver_bodyparameter>` param, :ref:`float<class_float>` value **)**                                                                                                                                                      |
+| void                                                                      | :ref:`body_set_param<class_Physics2DServer_body_set_param>` **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param, :ref:`float<class_float>` value **)**                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_shape<class_Physics2DServer_body_set_shape>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**                                                                                                                                                                                         |
+| void                                                                      | :ref:`body_set_shape<class_Physics2DServer_body_set_shape>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**                                                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_shape_as_one_way_collision<class_Physics2DServer_body_set_shape_as_one_way_collision>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable **)**                                                                                                                                            |
+| void                                                                      | :ref:`body_set_shape_as_one_way_collision<class_Physics2DServer_body_set_shape_as_one_way_collision>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable **)**                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_shape_disabled<class_Physics2DServer_body_set_shape_disabled>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**                                                                                                                                                                   |
+| void                                                                      | :ref:`body_set_shape_disabled<class_Physics2DServer_body_set_shape_disabled>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**                                                                                                                                                                   |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`Variant<class_variant>` metadata **)**                                                                                                                                                            |
+| void                                                                      | :ref:`body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Variant<class_Variant>` metadata **)**                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_shape_transform<class_Physics2DServer_body_set_shape_transform>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform **)**                                                                                                                                                 |
+| void                                                                      | :ref:`body_set_shape_transform<class_Physics2DServer_body_set_shape_transform>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_space<class_Physics2DServer_body_set_space>` **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` space **)**                                                                                                                                                                                                                          |
+| void                                                                      | :ref:`body_set_space<class_Physics2DServer_body_set_space>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)**                                                                                                                                                                                                                          |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`body_set_state<class_Physics2DServer_body_set_state>` **(** :ref:`RID<class_rid>` body, :ref:`BodyState<enum_physics2dserver_bodystate>` state, :ref:`Variant<class_variant>` value **)**                                                                                                                                                          |
+| void                                                                      | :ref:`body_set_state<class_Physics2DServer_body_set_state>` **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_Physics2DServer_BodyState>` state, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                          |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>` **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
+| :ref:`bool<class_bool>`                                                   | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>` **(** :ref:`RID<class_RID>` body, :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` infinite_inertia, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` result=null **)** |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`capsule_shape_create<class_Physics2DServer_capsule_shape_create>` **(** **)**                                                                                                                                                                                                                                                                      |
+| :ref:`RID<class_RID>`                                                     | :ref:`capsule_shape_create<class_Physics2DServer_capsule_shape_create>` **(** **)**                                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`circle_shape_create<class_Physics2DServer_circle_shape_create>` **(** **)**                                                                                                                                                                                                                                                                        |
+| :ref:`RID<class_RID>`                                                     | :ref:`circle_shape_create<class_Physics2DServer_circle_shape_create>` **(** **)**                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`concave_polygon_shape_create<class_Physics2DServer_concave_polygon_shape_create>` **(** **)**                                                                                                                                                                                                                                                      |
+| :ref:`RID<class_RID>`                                                     | :ref:`concave_polygon_shape_create<class_Physics2DServer_concave_polygon_shape_create>` **(** **)**                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`convex_polygon_shape_create<class_Physics2DServer_convex_polygon_shape_create>` **(** **)**                                                                                                                                                                                                                                                        |
+| :ref:`RID<class_RID>`                                                     | :ref:`convex_polygon_shape_create<class_Physics2DServer_convex_polygon_shape_create>` **(** **)**                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>` **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**                                                                                                               |
+| :ref:`RID<class_RID>`                                                     | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>` **(** :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**                                                                                                               |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                 | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>` **(** :ref:`RID<class_rid>` joint, :ref:`DampedStringParam<enum_physics2dserver_dampedstringparam>` param **)** const                                                                                                                                          |
+| :ref:`float<class_float>`                                                 | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` param **)** const                                                                                                                                          |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`damped_string_joint_set_param<class_Physics2DServer_damped_string_joint_set_param>` **(** :ref:`RID<class_rid>` joint, :ref:`DampedStringParam<enum_physics2dserver_dampedstringparam>` param, :ref:`float<class_float>` value **)**                                                                                                               |
+| void                                                                      | :ref:`damped_string_joint_set_param<class_Physics2DServer_damped_string_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` param, :ref:`float<class_float>` value **)**                                                                                                               |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`free_rid<class_Physics2DServer_free_rid>` **(** :ref:`RID<class_rid>` rid **)**                                                                                                                                                                                                                                                                    |
+| void                                                                      | :ref:`free_rid<class_Physics2DServer_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                                                                                                                    |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                     | :ref:`get_process_info<class_Physics2DServer_get_process_info>` **(** :ref:`ProcessInfo<enum_physics2dserver_processinfo>` process_info **)**                                                                                                                                                                                                            |
+| :ref:`int<class_int>`                                                     | :ref:`get_process_info<class_Physics2DServer_get_process_info>` **(** :ref:`ProcessInfo<enum_Physics2DServer_ProcessInfo>` process_info **)**                                                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>` **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**                                                                                   |
+| :ref:`RID<class_RID>`                                                     | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>` **(** :ref:`Vector2<class_Vector2>` groove1_a, :ref:`Vector2<class_Vector2>` groove2_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**                                                                                   |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                 | :ref:`joint_get_param<class_Physics2DServer_joint_get_param>` **(** :ref:`RID<class_rid>` joint, :ref:`JointParam<enum_physics2dserver_jointparam>` param **)** const                                                                                                                                                                                    |
+| :ref:`float<class_float>`                                                 | :ref:`joint_get_param<class_Physics2DServer_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_Physics2DServer_JointParam>` param **)** const                                                                                                                                                                                    |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JointType<enum_physics2dserver_jointtype>`                          | :ref:`joint_get_type<class_Physics2DServer_joint_get_type>` **(** :ref:`RID<class_rid>` joint **)** const                                                                                                                                                                                                                                                |
+| :ref:`JointType<enum_Physics2DServer_JointType>`                          | :ref:`joint_get_type<class_Physics2DServer_joint_get_type>` **(** :ref:`RID<class_RID>` joint **)** const                                                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`joint_set_param<class_Physics2DServer_joint_set_param>` **(** :ref:`RID<class_rid>` joint, :ref:`JointParam<enum_physics2dserver_jointparam>` param, :ref:`float<class_float>` value **)**                                                                                                                                                         |
+| void                                                                      | :ref:`joint_set_param<class_Physics2DServer_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_Physics2DServer_JointParam>` param, :ref:`float<class_float>` value **)**                                                                                                                                                         |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`line_shape_create<class_Physics2DServer_line_shape_create>` **(** **)**                                                                                                                                                                                                                                                                            |
+| :ref:`RID<class_RID>`                                                     | :ref:`line_shape_create<class_Physics2DServer_line_shape_create>` **(** **)**                                                                                                                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>` **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**                                                                                                                                                                             |
+| :ref:`RID<class_RID>`                                                     | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>` **(** :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**                                                                                                                                                                             |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`ray_shape_create<class_Physics2DServer_ray_shape_create>` **(** **)**                                                                                                                                                                                                                                                                              |
+| :ref:`RID<class_RID>`                                                     | :ref:`ray_shape_create<class_Physics2DServer_ray_shape_create>` **(** **)**                                                                                                                                                                                                                                                                              |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`rectangle_shape_create<class_Physics2DServer_rectangle_shape_create>` **(** **)**                                                                                                                                                                                                                                                                  |
+| :ref:`RID<class_RID>`                                                     | :ref:`rectangle_shape_create<class_Physics2DServer_rectangle_shape_create>` **(** **)**                                                                                                                                                                                                                                                                  |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`segment_shape_create<class_Physics2DServer_segment_shape_create>` **(** **)**                                                                                                                                                                                                                                                                      |
+| :ref:`RID<class_RID>`                                                     | :ref:`segment_shape_create<class_Physics2DServer_segment_shape_create>` **(** **)**                                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`set_active<class_Physics2DServer_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                                                           |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                                             | :ref:`shape_get_data<class_Physics2DServer_shape_get_data>` **(** :ref:`RID<class_rid>` shape **)** const                                                                                                                                                                                                                                                |
+| :ref:`Variant<class_Variant>`                                             | :ref:`shape_get_data<class_Physics2DServer_shape_get_data>` **(** :ref:`RID<class_RID>` shape **)** const                                                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ShapeType<enum_physics2dserver_shapetype>`                          | :ref:`shape_get_type<class_Physics2DServer_shape_get_type>` **(** :ref:`RID<class_rid>` shape **)** const                                                                                                                                                                                                                                                |
+| :ref:`ShapeType<enum_Physics2DServer_ShapeType>`                          | :ref:`shape_get_type<class_Physics2DServer_shape_get_type>` **(** :ref:`RID<class_RID>` shape **)** const                                                                                                                                                                                                                                                |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`shape_set_data<class_Physics2DServer_shape_set_data>` **(** :ref:`RID<class_rid>` shape, :ref:`Variant<class_variant>` data **)**                                                                                                                                                                                                                  |
+| void                                                                      | :ref:`shape_set_data<class_Physics2DServer_shape_set_data>` **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_Variant>` data **)**                                                                                                                                                                                                                  |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                                     | :ref:`space_create<class_Physics2DServer_space_create>` **(** **)**                                                                                                                                                                                                                                                                                      |
+| :ref:`RID<class_RID>`                                                     | :ref:`space_create<class_Physics2DServer_space_create>` **(** **)**                                                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`         | :ref:`space_get_direct_state<class_Physics2DServer_space_get_direct_state>` **(** :ref:`RID<class_rid>` space **)**                                                                                                                                                                                                                                      |
+| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`         | :ref:`space_get_direct_state<class_Physics2DServer_space_get_direct_state>` **(** :ref:`RID<class_RID>` space **)**                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                 | :ref:`space_get_param<class_Physics2DServer_space_get_param>` **(** :ref:`RID<class_rid>` space, :ref:`SpaceParameter<enum_physics2dserver_spaceparameter>` param **)** const                                                                                                                                                                            |
+| :ref:`float<class_float>`                                                 | :ref:`space_get_param<class_Physics2DServer_space_get_param>` **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` param **)** const                                                                                                                                                                            |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`space_is_active<class_Physics2DServer_space_is_active>` **(** :ref:`RID<class_rid>` space **)** const                                                                                                                                                                                                                                              |
+| :ref:`bool<class_bool>`                                                   | :ref:`space_is_active<class_Physics2DServer_space_is_active>` **(** :ref:`RID<class_RID>` space **)** const                                                                                                                                                                                                                                              |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`space_set_active<class_Physics2DServer_space_set_active>` **(** :ref:`RID<class_rid>` space, :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                  |
+| void                                                                      | :ref:`space_set_active<class_Physics2DServer_space_set_active>` **(** :ref:`RID<class_RID>` space, :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                  |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`space_set_param<class_Physics2DServer_space_set_param>` **(** :ref:`RID<class_rid>` space, :ref:`SpaceParameter<enum_physics2dserver_spaceparameter>` param, :ref:`float<class_float>` value **)**                                                                                                                                                 |
+| void                                                                      | :ref:`space_set_param<class_Physics2DServer_space_set_param>` **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` param, :ref:`float<class_float>` value **)**                                                                                                                                                 |
 +---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_Physics2DServer_CCDMode:
 
@@ -356,112 +354,112 @@ Description
 
 Physics 2D Server is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Physics2DServer_area_add_shape:
 
-- void **area_add_shape** **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**
+- void **area_add_shape** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**
 
 Adds a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
 .. _class_Physics2DServer_area_attach_object_instance_id:
 
-- void **area_attach_object_instance_id** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id **)**
+- void **area_attach_object_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**
 
-Assigns the area to a descendant of :ref:`Object<class_object>`, so it can exist in the node tree.
+Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
 
 .. _class_Physics2DServer_area_clear_shapes:
 
-- void **area_clear_shapes** **(** :ref:`RID<class_rid>` area **)**
+- void **area_clear_shapes** **(** :ref:`RID<class_RID>` area **)**
 
 Removes all shapes from an area. It does not delete the shapes, so they can be reassigned later.
 
 .. _class_Physics2DServer_area_create:
 
-- :ref:`RID<class_rid>` **area_create** **(** **)**
+- :ref:`RID<class_RID>` **area_create** **(** **)**
 
-Creates an :ref:`Area2D<class_area2d>`.
+Creates an :ref:`Area2D<class_Area2D>`.
 
 .. _class_Physics2DServer_area_get_object_instance_id:
 
-- :ref:`int<class_int>` **area_get_object_instance_id** **(** :ref:`RID<class_rid>` area **)** const
+- :ref:`int<class_int>` **area_get_object_instance_id** **(** :ref:`RID<class_RID>` area **)** const
 
 Gets the instance ID of the object the area is assigned to.
 
 .. _class_Physics2DServer_area_get_param:
 
-- :ref:`Variant<class_variant>` **area_get_param** **(** :ref:`RID<class_rid>` area, :ref:`AreaParameter<enum_physics2dserver_areaparameter>` param **)** const
+- :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param **)** const
 
 Returns an area parameter value. A list of available parameters is on the AREA_PARAM\_\* constants.
 
 .. _class_Physics2DServer_area_get_shape:
 
-- :ref:`RID<class_rid>` **area_get_shape** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const
+- :ref:`RID<class_RID>` **area_get_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** const
 
-Returns the :ref:`RID<class_rid>` of the nth shape of an area.
+Returns the :ref:`RID<class_RID>` of the nth shape of an area.
 
 .. _class_Physics2DServer_area_get_shape_count:
 
-- :ref:`int<class_int>` **area_get_shape_count** **(** :ref:`RID<class_rid>` area **)** const
+- :ref:`int<class_int>` **area_get_shape_count** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the number of shapes assigned to an area.
 
 .. _class_Physics2DServer_area_get_shape_transform:
 
-- :ref:`Transform2D<class_transform2d>` **area_get_shape_transform** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)** const
+- :ref:`Transform2D<class_Transform2D>` **area_get_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** const
 
 Returns the transform matrix of a shape within an area.
 
 .. _class_Physics2DServer_area_get_space:
 
-- :ref:`RID<class_rid>` **area_get_space** **(** :ref:`RID<class_rid>` area **)** const
+- :ref:`RID<class_RID>` **area_get_space** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the space assigned to the area.
 
 .. _class_Physics2DServer_area_get_space_override_mode:
 
-- :ref:`AreaSpaceOverrideMode<enum_physics2dserver_areaspaceoverridemode>` **area_get_space_override_mode** **(** :ref:`RID<class_rid>` area **)** const
+- :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>` **area_get_space_override_mode** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the space override mode for the area.
 
 .. _class_Physics2DServer_area_get_transform:
 
-- :ref:`Transform2D<class_transform2d>` **area_get_transform** **(** :ref:`RID<class_rid>` area **)** const
+- :ref:`Transform2D<class_Transform2D>` **area_get_transform** **(** :ref:`RID<class_RID>` area **)** const
 
 Returns the transform matrix for an area.
 
 .. _class_Physics2DServer_area_remove_shape:
 
-- void **area_remove_shape** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx **)**
+- void **area_remove_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)**
 
 Removes a shape from an area. It does not delete the shape, so it can be reassigned later.
 
 .. _class_Physics2DServer_area_set_area_monitor_callback:
 
-- void **area_set_area_monitor_callback** **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method **)**
+- void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method **)**
 
 .. _class_Physics2DServer_area_set_collision_layer:
 
-- void **area_set_collision_layer** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer **)**
+- void **area_set_collision_layer** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` layer **)**
 
 Assigns the area to one or many physics layers.
 
 .. _class_Physics2DServer_area_set_collision_mask:
 
-- void **area_set_collision_mask** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask **)**
+- void **area_set_collision_mask** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` mask **)**
 
 Sets which physics layers the area will monitor.
 
 .. _class_Physics2DServer_area_set_monitor_callback:
 
-- void **area_set_monitor_callback** **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method **)**
+- void **area_set_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method **)**
 
 Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
 
 1: AREA_BODY_ADDED or AREA_BODY_REMOVED, depending on whether the object entered or exited the area.
 
-2: :ref:`RID<class_rid>` of the object that entered/exited the area.
+2: :ref:`RID<class_RID>` of the object that entered/exited the area.
 
 3: Instance ID of the object that entered/exited the area.
 
@@ -471,231 +469,231 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 .. _class_Physics2DServer_area_set_monitorable:
 
-- void **area_set_monitorable** **(** :ref:`RID<class_rid>` area, :ref:`bool<class_bool>` monitorable **)**
+- void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**
 
 .. _class_Physics2DServer_area_set_param:
 
-- void **area_set_param** **(** :ref:`RID<class_rid>` area, :ref:`AreaParameter<enum_physics2dserver_areaparameter>` param, :ref:`Variant<class_variant>` value **)**
+- void **area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_Physics2DServer_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
 Sets the value for an area parameter. A list of available parameters is on the AREA_PARAM\_\* constants.
 
 .. _class_Physics2DServer_area_set_shape:
 
-- void **area_set_shape** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**
+- void **area_set_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**
 
-Substitutes a given area shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_rid>`.
+Substitutes a given area shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
 
 .. _class_Physics2DServer_area_set_shape_disabled:
 
-- void **area_set_shape_disabled** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
+- void **area_set_shape_disabled** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
 
 Disables a given shape in an area.
 
 .. _class_Physics2DServer_area_set_shape_transform:
 
-- void **area_set_shape_transform** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform **)**
+- void **area_set_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**
 
 Sets the transform matrix for an area shape.
 
 .. _class_Physics2DServer_area_set_space:
 
-- void **area_set_space** **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` space **)**
+- void **area_set_space** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` space **)**
 
 Assigns a space to the area.
 
 .. _class_Physics2DServer_area_set_space_override_mode:
 
-- void **area_set_space_override_mode** **(** :ref:`RID<class_rid>` area, :ref:`AreaSpaceOverrideMode<enum_physics2dserver_areaspaceoverridemode>` mode **)**
+- void **area_set_space_override_mode** **(** :ref:`RID<class_RID>` area, :ref:`AreaSpaceOverrideMode<enum_Physics2DServer_AreaSpaceOverrideMode>` mode **)**
 
 Sets the space override mode for the area. The modes are described in the constants AREA_SPACE_OVERRIDE\_\*.
 
 .. _class_Physics2DServer_area_set_transform:
 
-- void **area_set_transform** **(** :ref:`RID<class_rid>` area, :ref:`Transform2D<class_transform2d>` transform **)**
+- void **area_set_transform** **(** :ref:`RID<class_RID>` area, :ref:`Transform2D<class_Transform2D>` transform **)**
 
 Sets the transform matrix for an area.
 
 .. _class_Physics2DServer_body_add_central_force:
 
-- void **body_add_central_force** **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` force **)**
+- void **body_add_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
 
 .. _class_Physics2DServer_body_add_collision_exception:
 
-- void **body_add_collision_exception** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**
+- void **body_add_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
 
 Adds a body to the list of bodies exempt from collisions.
 
 .. _class_Physics2DServer_body_add_force:
 
-- void **body_add_force** **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force **)**
+- void **body_add_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**
 
 Adds a positioned force to the applied force and torque. As with :ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>`, both the force and the offset from the body origin are in global coordinates. A force differs from an impulse in that, while the two are forces, the impulse clears itself after being applied.
 
 .. _class_Physics2DServer_body_add_shape:
 
-- void **body_add_shape** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**
+- void **body_add_shape** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D( 1, 0, 0, 1, 0, 0 ) **)**
 
 Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
 .. _class_Physics2DServer_body_add_torque:
 
-- void **body_add_torque** **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` torque **)**
+- void **body_add_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
 
 .. _class_Physics2DServer_body_apply_central_impulse:
 
-- void **body_apply_central_impulse** **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` impulse **)**
+- void **body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)**
 
 .. _class_Physics2DServer_body_apply_impulse:
 
-- void **body_apply_impulse** **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` position, :ref:`Vector2<class_vector2>` impulse **)**
+- void **body_apply_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` impulse **)**
 
 Adds a positioned impulse to the applied force and torque. Both the force and the offset from the body origin are in global coordinates.
 
 .. _class_Physics2DServer_body_apply_torque_impulse:
 
-- void **body_apply_torque_impulse** **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` impulse **)**
+- void **body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)**
 
 .. _class_Physics2DServer_body_attach_object_instance_id:
 
-- void **body_attach_object_instance_id** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id **)**
+- void **body_attach_object_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)**
 
-Assigns the area to a descendant of :ref:`Object<class_object>`, so it can exist in the node tree.
+Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
 
 .. _class_Physics2DServer_body_clear_shapes:
 
-- void **body_clear_shapes** **(** :ref:`RID<class_rid>` body **)**
+- void **body_clear_shapes** **(** :ref:`RID<class_RID>` body **)**
 
 Removes all shapes from a body.
 
 .. _class_Physics2DServer_body_create:
 
-- :ref:`RID<class_rid>` **body_create** **(** **)**
+- :ref:`RID<class_RID>` **body_create** **(** **)**
 
 Creates a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
 .. _class_Physics2DServer_body_get_collision_layer:
 
-- :ref:`int<class_int>` **body_get_collision_layer** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`int<class_int>` **body_get_collision_layer** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the physics layer or layers a body belongs to.
 
 .. _class_Physics2DServer_body_get_collision_mask:
 
-- :ref:`int<class_int>` **body_get_collision_mask** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`int<class_int>` **body_get_collision_mask** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the physics layer or layers a body can collide with.
 
 .. _class_Physics2DServer_body_get_continuous_collision_detection_mode:
 
-- :ref:`CCDMode<enum_physics2dserver_ccdmode>` **body_get_continuous_collision_detection_mode** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`CCDMode<enum_Physics2DServer_CCDMode>` **body_get_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the continuous collision detection mode.
 
 .. _class_Physics2DServer_body_get_direct_state:
 
-- :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` **body_get_direct_state** **(** :ref:`RID<class_rid>` body **)**
+- :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` **body_get_direct_state** **(** :ref:`RID<class_RID>` body **)**
 
-Returns the :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` of the body.
+Returns the :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` of the body.
 
 .. _class_Physics2DServer_body_get_max_contacts_reported:
 
-- :ref:`int<class_int>` **body_get_max_contacts_reported** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`int<class_int>` **body_get_max_contacts_reported** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the maximum contacts that can be reported. See :ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>`.
 
 .. _class_Physics2DServer_body_get_mode:
 
-- :ref:`BodyMode<enum_physics2dserver_bodymode>` **body_get_mode** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`BodyMode<enum_Physics2DServer_BodyMode>` **body_get_mode** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the body mode.
 
 .. _class_Physics2DServer_body_get_object_instance_id:
 
-- :ref:`int<class_int>` **body_get_object_instance_id** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`int<class_int>` **body_get_object_instance_id** **(** :ref:`RID<class_RID>` body **)** const
 
 Gets the instance ID of the object the area is assigned to.
 
 .. _class_Physics2DServer_body_get_param:
 
-- :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_rid>` body, :ref:`BodyParameter<enum_physics2dserver_bodyparameter>` param **)** const
+- :ref:`float<class_float>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param **)** const
 
 Returns the value of a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
 
 .. _class_Physics2DServer_body_get_shape:
 
-- :ref:`RID<class_rid>` **body_get_shape** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const
+- :ref:`RID<class_RID>` **body_get_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const
 
-Returns the :ref:`RID<class_rid>` of the nth shape of a body.
+Returns the :ref:`RID<class_RID>` of the nth shape of a body.
 
 .. _class_Physics2DServer_body_get_shape_count:
 
-- :ref:`int<class_int>` **body_get_shape_count** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`int<class_int>` **body_get_shape_count** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns the number of shapes assigned to a body.
 
 .. _class_Physics2DServer_body_get_shape_metadata:
 
-- :ref:`Variant<class_variant>` **body_get_shape_metadata** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const
+- :ref:`Variant<class_Variant>` **body_get_shape_metadata** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const
 
 Returns the metadata of a shape of a body.
 
 .. _class_Physics2DServer_body_get_shape_transform:
 
-- :ref:`Transform2D<class_transform2d>` **body_get_shape_transform** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)** const
+- :ref:`Transform2D<class_Transform2D>` **body_get_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** const
 
 Returns the transform matrix of a body shape.
 
 .. _class_Physics2DServer_body_get_space:
 
-- :ref:`RID<class_rid>` **body_get_space** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`RID<class_RID>` **body_get_space** **(** :ref:`RID<class_RID>` body **)** const
 
-Returns the :ref:`RID<class_rid>` of the space assigned to a body.
+Returns the :ref:`RID<class_RID>` of the space assigned to a body.
 
 .. _class_Physics2DServer_body_get_state:
 
-- :ref:`Variant<class_variant>` **body_get_state** **(** :ref:`RID<class_rid>` body, :ref:`BodyState<enum_physics2dserver_bodystate>` state **)** const
+- :ref:`Variant<class_Variant>` **body_get_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_Physics2DServer_BodyState>` state **)** const
 
 Returns a body state.
 
 .. _class_Physics2DServer_body_is_omitting_force_integration:
 
-- :ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** :ref:`RID<class_RID>` body **)** const
 
 Returns whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`).
 
 .. _class_Physics2DServer_body_remove_collision_exception:
 
-- void **body_remove_collision_exception** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body **)**
+- void **body_remove_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
 
 Removes a body from the list of bodies exempt from collisions.
 
 .. _class_Physics2DServer_body_remove_shape:
 
-- void **body_remove_shape** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)**
+- void **body_remove_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)**
 
 Removes a shape from a body. The shape is not deleted, so it can be reused afterwards.
 
 .. _class_Physics2DServer_body_set_axis_velocity:
 
-- void **body_set_axis_velocity** **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` axis_velocity **)**
+- void **body_set_axis_velocity** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` axis_velocity **)**
 
 Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
 .. _class_Physics2DServer_body_set_collision_layer:
 
-- void **body_set_collision_layer** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer **)**
+- void **body_set_collision_layer** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**
 
 Sets the physics layer or layers a body belongs to.
 
 .. _class_Physics2DServer_body_set_collision_mask:
 
-- void **body_set_collision_mask** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask **)**
+- void **body_set_collision_mask** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**
 
 Sets the physics layer or layers a body can collide with.
 
 .. _class_Physics2DServer_body_set_continuous_collision_detection_mode:
 
-- void **body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_rid>` body, :ref:`CCDMode<enum_physics2dserver_ccdmode>` mode **)**
+- void **body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_Physics2DServer_CCDMode>` mode **)**
 
 Sets the continuous collision detection mode from any of the CCD_MODE\_\* constants.
 
@@ -703,173 +701,173 @@ Continuous collision detection tries to predict where a moving body will collide
 
 .. _class_Physics2DServer_body_set_force_integration_callback:
 
-- void **body_set_force_integration_callback** **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null **)**
+- void **body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null **)**
 
 Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_Physics2DServer_body_set_omit_force_integration>`).
 
 .. _class_Physics2DServer_body_set_max_contacts_reported:
 
-- void **body_set_max_contacts_reported** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount **)**
+- void **body_set_max_contacts_reported** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` amount **)**
 
 Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
 
 .. _class_Physics2DServer_body_set_mode:
 
-- void **body_set_mode** **(** :ref:`RID<class_rid>` body, :ref:`BodyMode<enum_physics2dserver_bodymode>` mode **)**
+- void **body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_Physics2DServer_BodyMode>` mode **)**
 
 Sets the body mode, from one of the constants BODY_MODE\*.
 
 .. _class_Physics2DServer_body_set_omit_force_integration:
 
-- void **body_set_omit_force_integration** **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**
+- void **body_set_omit_force_integration** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**
 
 Sets whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`).
 
 .. _class_Physics2DServer_body_set_param:
 
-- void **body_set_param** **(** :ref:`RID<class_rid>` body, :ref:`BodyParameter<enum_physics2dserver_bodyparameter>` param, :ref:`float<class_float>` value **)**
+- void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_Physics2DServer_BodyParameter>` param, :ref:`float<class_float>` value **)**
 
 Sets a body parameter. A list of available parameters is on the BODY_PARAM\_\* constants.
 
 .. _class_Physics2DServer_body_set_shape:
 
-- void **body_set_shape** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape **)**
+- void **body_set_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**
 
-Substitutes a given body shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_rid>`.
+Substitutes a given body shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
 
 .. _class_Physics2DServer_body_set_shape_as_one_way_collision:
 
-- void **body_set_shape_as_one_way_collision** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable **)**
+- void **body_set_shape_as_one_way_collision** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable **)**
 
 Enables one way collision on body if ``enable`` is ``true``.
 
 .. _class_Physics2DServer_body_set_shape_disabled:
 
-- void **body_set_shape_disabled** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
+- void **body_set_shape_disabled** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
 
 Disables shape in body if ``disable`` is ``true``.
 
 .. _class_Physics2DServer_body_set_shape_metadata:
 
-- void **body_set_shape_metadata** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`Variant<class_variant>` metadata **)**
+- void **body_set_shape_metadata** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Variant<class_Variant>` metadata **)**
 
 Sets metadata of a shape within a body. This metadata is different from :ref:`Object.set_meta<class_Object_set_meta>`, and can be retrieved on shape queries.
 
 .. _class_Physics2DServer_body_set_shape_transform:
 
-- void **body_set_shape_transform** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform **)**
+- void **body_set_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**
 
 Sets the transform matrix for a body shape.
 
 .. _class_Physics2DServer_body_set_space:
 
-- void **body_set_space** **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` space **)**
+- void **body_set_space** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)**
 
 Assigns a space to the body (see :ref:`space_create<class_Physics2DServer_space_create>`).
 
 .. _class_Physics2DServer_body_set_state:
 
-- void **body_set_state** **(** :ref:`RID<class_rid>` body, :ref:`BodyState<enum_physics2dserver_bodystate>` state, :ref:`Variant<class_variant>` value **)**
+- void **body_set_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_Physics2DServer_BodyState>` state, :ref:`Variant<class_Variant>` value **)**
 
 Sets a body state (see BODY_STATE\* constants).
 
 .. _class_Physics2DServer_body_test_motion:
 
-- :ref:`bool<class_bool>` **body_test_motion** **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`bool<class_bool>` infinite_inertia, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)**
+- :ref:`bool<class_bool>` **body_test_motion** **(** :ref:`RID<class_RID>` body, :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` infinite_inertia, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` result=null **)**
 
-Returns whether a body can move from a given point in a given direction. Apart from the boolean return value, a :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` can be passed to return additional information in.
+Returns whether a body can move from a given point in a given direction. Apart from the boolean return value, a :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>` can be passed to return additional information in.
 
 .. _class_Physics2DServer_capsule_shape_create:
 
-- :ref:`RID<class_rid>` **capsule_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **capsule_shape_create** **(** **)**
 
 .. _class_Physics2DServer_circle_shape_create:
 
-- :ref:`RID<class_rid>` **circle_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **circle_shape_create** **(** **)**
 
 .. _class_Physics2DServer_concave_polygon_shape_create:
 
-- :ref:`RID<class_rid>` **concave_polygon_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **concave_polygon_shape_create** **(** **)**
 
 .. _class_Physics2DServer_convex_polygon_shape_create:
 
-- :ref:`RID<class_rid>` **convex_polygon_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **convex_polygon_shape_create** **(** **)**
 
 .. _class_Physics2DServer_damped_spring_joint_create:
 
-- :ref:`RID<class_rid>` **damped_spring_joint_create** **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**
+- :ref:`RID<class_RID>` **damped_spring_joint_create** **(** :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
 Creates a damped spring joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 
 .. _class_Physics2DServer_damped_string_joint_get_param:
 
-- :ref:`float<class_float>` **damped_string_joint_get_param** **(** :ref:`RID<class_rid>` joint, :ref:`DampedStringParam<enum_physics2dserver_dampedstringparam>` param **)** const
+- :ref:`float<class_float>` **damped_string_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` param **)** const
 
 Returns the value of a damped spring joint parameter.
 
 .. _class_Physics2DServer_damped_string_joint_set_param:
 
-- void **damped_string_joint_set_param** **(** :ref:`RID<class_rid>` joint, :ref:`DampedStringParam<enum_physics2dserver_dampedstringparam>` param, :ref:`float<class_float>` value **)**
+- void **damped_string_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedStringParam<enum_Physics2DServer_DampedStringParam>` param, :ref:`float<class_float>` value **)**
 
 Sets a damped spring joint parameter. Parameters are explained in the DAMPED_STRING\* constants.
 
 .. _class_Physics2DServer_free_rid:
 
-- void **free_rid** **(** :ref:`RID<class_rid>` rid **)**
+- void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Destroys any of the objects created by Physics2DServer. If the :ref:`RID<class_rid>` passed is not one of the objects that can be created by Physics2DServer, an error will be sent to the console.
+Destroys any of the objects created by Physics2DServer. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by Physics2DServer, an error will be sent to the console.
 
 .. _class_Physics2DServer_get_process_info:
 
-- :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_physics2dserver_processinfo>` process_info **)**
+- :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_Physics2DServer_ProcessInfo>` process_info **)**
 
 Returns information about the current state of the 2D physics engine. The states are listed under the INFO\_\* constants.
 
 .. _class_Physics2DServer_groove_joint_create:
 
-- :ref:`RID<class_rid>` **groove_joint_create** **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**
+- :ref:`RID<class_RID>` **groove_joint_create** **(** :ref:`Vector2<class_Vector2>` groove1_a, :ref:`Vector2<class_Vector2>` groove2_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
 Creates a groove joint between two bodies. If not specified, the bodyies are assumed to be the joint itself.
 
 .. _class_Physics2DServer_joint_get_param:
 
-- :ref:`float<class_float>` **joint_get_param** **(** :ref:`RID<class_rid>` joint, :ref:`JointParam<enum_physics2dserver_jointparam>` param **)** const
+- :ref:`float<class_float>` **joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_Physics2DServer_JointParam>` param **)** const
 
 Returns the value of a joint parameter.
 
 .. _class_Physics2DServer_joint_get_type:
 
-- :ref:`JointType<enum_physics2dserver_jointtype>` **joint_get_type** **(** :ref:`RID<class_rid>` joint **)** const
+- :ref:`JointType<enum_Physics2DServer_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** const
 
 Returns the type of a joint (see JOINT\_\* constants).
 
 .. _class_Physics2DServer_joint_set_param:
 
-- void **joint_set_param** **(** :ref:`RID<class_rid>` joint, :ref:`JointParam<enum_physics2dserver_jointparam>` param, :ref:`float<class_float>` value **)**
+- void **joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_Physics2DServer_JointParam>` param, :ref:`float<class_float>` value **)**
 
 Sets a joint parameter. Parameters are explained in the JOINT_PARAM\* constants.
 
 .. _class_Physics2DServer_line_shape_create:
 
-- :ref:`RID<class_rid>` **line_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **line_shape_create** **(** **)**
 
 .. _class_Physics2DServer_pin_joint_create:
 
-- :ref:`RID<class_rid>` **pin_joint_create** **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**
+- :ref:`RID<class_RID>` **pin_joint_create** **(** :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
 Creates a pin joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 
 .. _class_Physics2DServer_ray_shape_create:
 
-- :ref:`RID<class_rid>` **ray_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **ray_shape_create** **(** **)**
 
 .. _class_Physics2DServer_rectangle_shape_create:
 
-- :ref:`RID<class_rid>` **rectangle_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **rectangle_shape_create** **(** **)**
 
 .. _class_Physics2DServer_segment_shape_create:
 
-- :ref:`RID<class_rid>` **segment_shape_create** **(** **)**
+- :ref:`RID<class_RID>` **segment_shape_create** **(** **)**
 
 .. _class_Physics2DServer_set_active:
 
@@ -879,55 +877,55 @@ Activates or deactivates the 2D physics engine.
 
 .. _class_Physics2DServer_shape_get_data:
 
-- :ref:`Variant<class_variant>` **shape_get_data** **(** :ref:`RID<class_rid>` shape **)** const
+- :ref:`Variant<class_Variant>` **shape_get_data** **(** :ref:`RID<class_RID>` shape **)** const
 
 Returns the shape data.
 
 .. _class_Physics2DServer_shape_get_type:
 
-- :ref:`ShapeType<enum_physics2dserver_shapetype>` **shape_get_type** **(** :ref:`RID<class_rid>` shape **)** const
+- :ref:`ShapeType<enum_Physics2DServer_ShapeType>` **shape_get_type** **(** :ref:`RID<class_RID>` shape **)** const
 
 Returns the type of shape (see SHAPE\_\* constants).
 
 .. _class_Physics2DServer_shape_set_data:
 
-- void **shape_set_data** **(** :ref:`RID<class_rid>` shape, :ref:`Variant<class_variant>` data **)**
+- void **shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_Variant>` data **)**
 
 Sets the shape data that defines its shape and size. The data to be passed depends on the kind of shape created :ref:`shape_get_type<class_Physics2DServer_shape_get_type>`.
 
 .. _class_Physics2DServer_space_create:
 
-- :ref:`RID<class_rid>` **space_create** **(** **)**
+- :ref:`RID<class_RID>` **space_create** **(** **)**
 
 Creates a space. A space is a collection of parameters for the physics engine that can be assigned to an area or a body. It can be assigned to an area with :ref:`area_set_space<class_Physics2DServer_area_set_space>`, or to a body with :ref:`body_set_space<class_Physics2DServer_body_set_space>`.
 
 .. _class_Physics2DServer_space_get_direct_state:
 
-- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>` **space_get_direct_state** **(** :ref:`RID<class_rid>` space **)**
+- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **space_get_direct_state** **(** :ref:`RID<class_RID>` space **)**
 
-Returns the state of a space, a :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`. This object can be used to make collision/intersection queries.
+Returns the state of a space, a :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`. This object can be used to make collision/intersection queries.
 
 .. _class_Physics2DServer_space_get_param:
 
-- :ref:`float<class_float>` **space_get_param** **(** :ref:`RID<class_rid>` space, :ref:`SpaceParameter<enum_physics2dserver_spaceparameter>` param **)** const
+- :ref:`float<class_float>` **space_get_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` param **)** const
 
 Returns the value of a space parameter.
 
 .. _class_Physics2DServer_space_is_active:
 
-- :ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_rid>` space **)** const
+- :ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_RID>` space **)** const
 
 Returns whether the space is active.
 
 .. _class_Physics2DServer_space_set_active:
 
-- void **space_set_active** **(** :ref:`RID<class_rid>` space, :ref:`bool<class_bool>` active **)**
+- void **space_set_active** **(** :ref:`RID<class_RID>` space, :ref:`bool<class_bool>` active **)**
 
 Marks a space as active. It will not have an effect, unless it is assigned to an area or body.
 
 .. _class_Physics2DServer_space_set_param:
 
-- void **space_set_param** **(** :ref:`RID<class_rid>` space, :ref:`SpaceParameter<enum_physics2dserver_spaceparameter>` param, :ref:`float<class_float>` value **)**
+- void **space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_Physics2DServer_SpaceParameter>` param, :ref:`float<class_float>` value **)**
 
 Sets the value for a space parameter. A list of available parameters is on the SPACE_PARAM\_\* constants.
 

@@ -7,8 +7,7 @@
 SceneTreeTimer
 ==============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -24,8 +23,8 @@ Signals
 - **timeout** **(** **)**
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_SceneTreeTimer_time_left:
 

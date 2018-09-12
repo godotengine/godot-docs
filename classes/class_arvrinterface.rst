@@ -7,10 +7,8 @@
 ARVRInterface
 =============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ARVRInterfaceGDNative<class_arvrinterfacegdnative>`, :ref:`MobileVRInterface<class_mobilevrinterface>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`
 **Category:** Core
 
 Brief Description
@@ -18,17 +16,17 @@ Brief Description
 
 Base class for ARVR interface implementation.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                       | :ref:`get_capabilities<class_ARVRInterface_get_capabilities>` **(** **)** const       |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                 | :ref:`get_name<class_ARVRInterface_get_name>` **(** **)** const                       |
+| :ref:`String<class_String>`                                 | :ref:`get_name<class_ARVRInterface_get_name>` **(** **)** const                       |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                               | :ref:`get_render_targetsize<class_ARVRInterface_get_render_targetsize>` **(** **)**   |
+| :ref:`Vector2<class_Vector2>`                               | :ref:`get_render_targetsize<class_ARVRInterface_get_render_targetsize>` **(** **)**   |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`Tracking_status<enum_arvrinterface_tracking_status>`  | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>` **(** **)** const |
+| :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>`  | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>` **(** **)** const |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                     | :ref:`initialize<class_ARVRInterface_initialize>` **(** **)**                         |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
@@ -37,24 +35,8 @@ Member Functions
 | void                                                        | :ref:`uninitialize<class_ARVRInterface_uninitialize>` **(** **)**                     |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_ARVRInterface_ar_is_anchor_detection_enabled:
-
-- :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled** - On an AR interface, is our anchor detection enabled?
-
-  .. _class_ARVRInterface_interface_is_initialized:
-
-- :ref:`bool<class_bool>` **interface_is_initialized** - Has this interface been initialized?
-
-  .. _class_ARVRInterface_interface_is_primary:
-
-- :ref:`bool<class_bool>` **interface_is_primary** - Is this our primary interface?
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_ARVRInterface_Eyes:
 
@@ -92,8 +74,24 @@ This class needs to be implemented to make an AR or VR platform available to God
 
 Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through ARVRServer.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ARVRInterface_ar_is_anchor_detection_enabled:
+
+- :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled** - On an AR interface, is our anchor detection enabled?
+
+  .. _class_ARVRInterface_interface_is_initialized:
+
+- :ref:`bool<class_bool>` **interface_is_initialized** - Has this interface been initialized?
+
+  .. _class_ARVRInterface_interface_is_primary:
+
+- :ref:`bool<class_bool>` **interface_is_primary** - Is this our primary interface?
+
+
+Method Descriptions
+-------------------
 
 .. _class_ARVRInterface_get_capabilities:
 
@@ -103,19 +101,19 @@ Returns a combination of flags providing information about the capabilities of t
 
 .. _class_ARVRInterface_get_name:
 
-- :ref:`String<class_string>` **get_name** **(** **)** const
+- :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
 .. _class_ARVRInterface_get_render_targetsize:
 
-- :ref:`Vector2<class_vector2>` **get_render_targetsize** **(** **)**
+- :ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
 .. _class_ARVRInterface_get_tracking_status:
 
-- :ref:`Tracking_status<enum_arvrinterface_tracking_status>` **get_tracking_status** **(** **)** const
+- :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 

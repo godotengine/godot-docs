@@ -7,26 +7,25 @@
 ResourceSaver
 =============
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Resource Saving Interface.
+Resource saving interface.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>` **(** :ref:`Resource<class_resource>` type **)**                            |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                            |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`          | :ref:`save<class_ResourceSaver_save>` **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0 **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`save<class_ResourceSaver_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)** |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_ResourceSaver_SaverFlags:
 
@@ -43,21 +42,21 @@ enum **SaverFlags**
 Description
 -----------
 
-Resource Saving Interface. This interface is used for saving resources to disk.
+Resource saving interface, used for saving resources to disk.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ResourceSaver_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_recognized_extensions** **(** :ref:`Resource<class_resource>` type **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
-Return the list of extensions available for saving a resource of a given type.
+Returns the list of extensions available for saving a resource of a given type.
 
 .. _class_ResourceSaver_save:
 
-- :ref:`Error<enum_@globalscope_error>` **save** **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
 
-Save a resource to disk, to a given path.
+Saves a resource to disk.
 
 

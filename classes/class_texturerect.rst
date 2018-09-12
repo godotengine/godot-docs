@@ -7,8 +7,7 @@
 TextureRect
 ===========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,24 +15,8 @@ Brief Description
 
 Control for drawing textures.
 
-Member Variables
-----------------
-
-  .. _class_TextureRect_expand:
-
-- :ref:`bool<class_bool>` **expand** - If ``true`` the texture scales to fit its bounding rectangle. Default value: ``false``.
-
-  .. _class_TextureRect_stretch_mode:
-
-- :ref:`StretchMode<enum_texturerect_stretchmode>` **stretch_mode** - Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@globalscope_stretchmode>`.
-
-  .. _class_TextureRect_texture:
-
-- :ref:`Texture<class_texture>` **texture** - The node's :ref:`Texture<class_texture>` resource.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_TextureRect_StretchMode:
 
@@ -53,4 +36,20 @@ Description
 -----------
 
 Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
+
+Property Descriptions
+---------------------
+
+  .. _class_TextureRect_expand:
+
+- :ref:`bool<class_bool>` **expand** - If ``true`` the texture scales to fit its bounding rectangle. Default value: ``false``.
+
+  .. _class_TextureRect_stretch_mode:
+
+- :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode** - Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@GlobalScope_StretchMode>`.
+
+  .. _class_TextureRect_texture:
+
+- :ref:`Texture<class_Texture>` **texture** - The node's :ref:`Texture<class_Texture>` resource.
+
 

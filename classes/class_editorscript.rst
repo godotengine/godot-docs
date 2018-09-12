@@ -7,8 +7,7 @@
 EditorScript
 ============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,23 +15,23 @@ Brief Description
 
 Base script that can be used to add extension functions to the editor.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`_run<class_EditorScript__run>` **(** **)** virtual                                        |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_root_node<class_EditorScript_add_root_node>` **(** :ref:`Node<class_node>` node **)** |
+| void                                           | :ref:`add_root_node<class_EditorScript_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`EditorInterface<class_editorinterface>`  | :ref:`get_editor_interface<class_EditorScript_get_editor_interface>` **(** **)**                |
+| :ref:`EditorInterface<class_EditorInterface>`  | :ref:`get_editor_interface<class_EditorScript_get_editor_interface>` **(** **)**                |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                        | :ref:`get_scene<class_EditorScript_get_scene>` **(** **)**                                      |
+| :ref:`Node<class_Node>`                        | :ref:`get_scene<class_EditorScript_get_scene>` **(** **)**                                      |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Scripts extending this class and implementing its ``_run()`` method can be executed from the Script Editor's ``File -> Run`` menu option (or by pressing ``CTRL+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_editorplugin>`\ s instead. Note that extending scripts need to have ``tool mode`` enabled.
+Scripts extending this class and implementing its ``_run()`` method can be executed from the Script Editor's ``File -> Run`` menu option (or by pressing ``CTRL+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead. Note that extending scripts need to have ``tool mode`` enabled.
 
 Example script:
 
@@ -46,8 +45,8 @@ Example script:
 
 Note that the script is run in the Editor context, which means the output is visible in the console window started with the Editor (STDOUT) instead of the usual Godot *Output* dock.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorScript__run:
 
@@ -57,7 +56,7 @@ This method is executed by the Editor when ``File -> Run`` is used.
 
 .. _class_EditorScript_add_root_node:
 
-- void **add_root_node** **(** :ref:`Node<class_node>` node **)**
+- void **add_root_node** **(** :ref:`Node<class_Node>` node **)**
 
 Adds ``node`` as a child of the root node in the editor context.
 
@@ -65,13 +64,13 @@ WARNING: The implementation of this method is currently disabled.
 
 .. _class_EditorScript_get_editor_interface:
 
-- :ref:`EditorInterface<class_editorinterface>` **get_editor_interface** **(** **)**
+- :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Returns the :ref:`EditorInterface<class_editorinterface>` singleton instance.
+Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. _class_EditorScript_get_scene:
 
-- :ref:`Node<class_node>` **get_scene** **(** **)**
+- :ref:`Node<class_Node>` **get_scene** **(** **)**
 
 Returns the Editor's currently active scene.
 

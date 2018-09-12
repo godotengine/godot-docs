@@ -7,8 +7,7 @@
 CylinderShape
 =============
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Cylinder shape for collisions.
 
-Member Variables
-----------------
+Description
+-----------
+
+Cylinder shape for collisions.
+
+Property Descriptions
+---------------------
 
   .. _class_CylinderShape_height:
 
@@ -27,9 +31,4 @@ Member Variables
 
 - :ref:`float<class_float>` **radius** - The cylinder's radius.
 
-
-Description
------------
-
-Cylinder shape for collisions.
 

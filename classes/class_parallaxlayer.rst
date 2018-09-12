@@ -7,35 +7,34 @@
 ParallaxLayer
 =============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_parallaxbackground>`.
-
-Member Variables
-----------------
-
-  .. _class_ParallaxLayer_motion_mirroring:
-
-- :ref:`Vector2<class_vector2>` **motion_mirroring** - The ParallaxLayer's :ref:`Texture<class_texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0`` the :ref:`Texture<class_texture>` will not be mirrored. Default value: ``(0, 0)``.
-
-  .. _class_ParallaxLayer_motion_offset:
-
-- :ref:`Vector2<class_vector2>` **motion_offset** - The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_scroll_offset>`.
-
-  .. _class_ParallaxLayer_motion_scale:
-
-- :ref:`Vector2<class_vector2>` **motion_scale** - Multiplies the ParallaxLayer's motion. If an axis is set to ``0`` it will not scroll.
-
+A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_ParallaxBackground>`.
 
 Description
 -----------
 
-A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_parallaxbackground>` node. Each ParallaxLayer can be set to move at different speeds relative to the camera movement or the :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_scroll_offset>` value.
+A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBackground>` node. Each ParallaxLayer can be set to move at different speeds relative to the camera movement or the :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_scroll_offset>` value.
 
 This node's children will be affected by its scroll offset.
+
+Property Descriptions
+---------------------
+
+  .. _class_ParallaxLayer_motion_mirroring:
+
+- :ref:`Vector2<class_Vector2>` **motion_mirroring** - The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0`` the :ref:`Texture<class_Texture>` will not be mirrored. Default value: ``(0, 0)``.
+
+  .. _class_ParallaxLayer_motion_offset:
+
+- :ref:`Vector2<class_Vector2>` **motion_offset** - The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_scroll_offset>`.
+
+  .. _class_ParallaxLayer_motion_scale:
+
+- :ref:`Vector2<class_Vector2>` **motion_scale** - Multiplies the ParallaxLayer's motion. If an axis is set to ``0`` it will not scroll.
+
 

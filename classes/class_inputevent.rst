@@ -7,10 +7,8 @@
 InputEvent
 ==========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`InputEventScreenTouch<class_inputeventscreentouch>`, :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>`, :ref:`InputEventScreenDrag<class_inputeventscreendrag>`, :ref:`InputEventJoypadMotion<class_inputeventjoypadmotion>`, :ref:`InputEventJoypadButton<class_inputeventjoypadbutton>`, :ref:`InputEventAction<class_inputeventaction>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`, :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`, :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`, :ref:`InputEventAction<class_InputEventAction>`
 **Category:** Core
 
 Brief Description
@@ -18,19 +16,19 @@ Brief Description
 
 Generic input event
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`as_text<class_InputEvent_as_text>` **(** **)** const                                                                                                            |
+| :ref:`String<class_String>`          | :ref:`as_text<class_InputEvent_as_text>` **(** **)** const                                                                                                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`get_action_strength<class_InputEvent_get_action_strength>` **(** :ref:`String<class_string>` action **)** const                                                 |
+| :ref:`float<class_float>`            | :ref:`get_action_strength<class_InputEvent_get_action_strength>` **(** :ref:`String<class_String>` action **)** const                                                 |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_action<class_InputEvent_is_action>` **(** :ref:`String<class_string>` action **)** const                                                                     |
+| :ref:`bool<class_bool>`              | :ref:`is_action<class_InputEvent_is_action>` **(** :ref:`String<class_String>` action **)** const                                                                     |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_action_pressed<class_InputEvent_is_action_pressed>` **(** :ref:`String<class_string>` action **)** const                                                     |
+| :ref:`bool<class_bool>`              | :ref:`is_action_pressed<class_InputEvent_is_action_pressed>` **(** :ref:`String<class_String>` action **)** const                                                     |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_action_released<class_InputEvent_is_action_released>` **(** :ref:`String<class_string>` action **)** const                                                   |
+| :ref:`bool<class_bool>`              | :ref:`is_action_released<class_InputEvent_is_action_released>` **(** :ref:`String<class_String>` action **)** const                                                   |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_action_type<class_InputEvent_is_action_type>` **(** **)** const                                                                                              |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,18 +36,10 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_pressed<class_InputEvent_is_pressed>` **(** **)** const                                                                                                      |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`shortcut_match<class_InputEvent_shortcut_match>` **(** :ref:`InputEvent<class_inputevent>` event **)** const                                                    |
+| :ref:`bool<class_bool>`              | :ref:`shortcut_match<class_InputEvent_shortcut_match>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const                                                    |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_inputevent>`  | :ref:`xformed_by<class_InputEvent_xformed_by>` **(** :ref:`Transform2D<class_transform2d>` xform, :ref:`Vector2<class_vector2>` local_ofs=Vector2( 0, 0 ) **)** const |
+| :ref:`InputEvent<class_InputEvent>`  | :ref:`xformed_by<class_InputEvent_xformed_by>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_InputEvent_device:
-
-- :ref:`int<class_int>` **device** - The event's device ID.
-
 
 Description
 -----------
@@ -62,34 +52,42 @@ Tutorials
 - :doc:`../tutorials/inputs/inputevent`
 - :doc:`../tutorials/2d/2d_transforms`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_InputEvent_device:
+
+- :ref:`int<class_int>` **device** - The event's device ID.
+
+
+Method Descriptions
+-------------------
 
 .. _class_InputEvent_as_text:
 
-- :ref:`String<class_string>` **as_text** **(** **)** const
+- :ref:`String<class_String>` **as_text** **(** **)** const
 
-Returns a :ref:`String<class_string>` representation of the event.
+Returns a :ref:`String<class_String>` representation of the event.
 
 .. _class_InputEvent_get_action_strength:
 
-- :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_string>` action **)** const
+- :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
 
 .. _class_InputEvent_is_action:
 
-- :ref:`bool<class_bool>` **is_action** **(** :ref:`String<class_string>` action **)** const
+- :ref:`bool<class_bool>` **is_action** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if this input event matches a pre-defined action of any type.
 
 .. _class_InputEvent_is_action_pressed:
 
-- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_string>` action **)** const
+- :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if the given action is being pressed (and is not an echo event for KEY events). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
 .. _class_InputEvent_is_action_released:
 
-- :ref:`bool<class_bool>` **is_action_released** **(** :ref:`String<class_string>` action **)** const
+- :ref:`bool<class_bool>` **is_action_released** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
@@ -113,10 +111,10 @@ Returns ``true`` if this input event is pressed. Not relevant for the event type
 
 .. _class_InputEvent_shortcut_match:
 
-- :ref:`bool<class_bool>` **shortcut_match** **(** :ref:`InputEvent<class_inputevent>` event **)** const
+- :ref:`bool<class_bool>` **shortcut_match** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 .. _class_InputEvent_xformed_by:
 
-- :ref:`InputEvent<class_inputevent>` **xformed_by** **(** :ref:`Transform2D<class_transform2d>` xform, :ref:`Vector2<class_vector2>` local_ofs=Vector2( 0, 0 ) **)** const
+- :ref:`InputEvent<class_InputEvent>` **xformed_by** **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const
 
 

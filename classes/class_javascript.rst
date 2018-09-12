@@ -7,8 +7,7 @@
 JavaScript
 ==========
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 Singleton that connects the engine with the browser's JavaScript context in HTML5 export.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`eval<class_JavaScript_eval>` **(** :ref:`String<class_string>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
+| :ref:`Variant<class_Variant>`  | :ref:`eval<class_JavaScript_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -33,12 +32,12 @@ Tutorials
 
 - `#calling-javascript-from-script <../getting_started/workflow/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../getting_started/workflow/export/exporting_for_web`
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_JavaScript_eval:
 
-- :ref:`Variant<class_variant>` **eval** **(** :ref:`String<class_string>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
+- :ref:`Variant<class_Variant>` **eval** **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
 
 Execute the string ``code`` as JavaScript code within the browser window. This is a call to the actual global JavaScript function ``eval()``.
 

@@ -7,8 +7,7 @@
 VisibilityEnabler2D
 ===================
 
-**Inherits:** :ref:`VisibilityNotifier2D<class_visibilitynotifier2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,29 @@ Brief Description
 
 Enable certain nodes only when visible.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_VisibilityEnabler2D_Enabler:
+
+enum **Enabler**
+
+- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody2D<class_RigidBody2D>` nodes.
+- **ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop :ref:`Particles2D<class_Particles2D>` nodes.
+- **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's _process function.
+- **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
+- **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
+- **ENABLER_MAX** = **6**
+
+
+Description
+-----------
+
+The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, and other nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler2D itself.
+
+Property Descriptions
+---------------------
 
   .. _class_VisibilityEnabler2D_freeze_bodies:
 
@@ -43,25 +63,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **process_parent**
 
-
-Enums
------
-
-  .. _enum_VisibilityEnabler2D_Enabler:
-
-enum **Enabler**
-
-- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
-- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody2D<class_rigidbody2d>` nodes.
-- **ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop :ref:`Particles2D<class_particles2d>` nodes.
-- **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's _process function.
-- **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
-- **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
-- **ENABLER_MAX** = **6**
-
-
-Description
------------
-
-The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_rigidbody2d>`, :ref:`AnimationPlayer<class_animationplayer>`, and other nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler2D itself.
 

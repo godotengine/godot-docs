@@ -7,8 +7,7 @@
 ShortCut
 ========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,48 +15,48 @@ Brief Description
 
 A shortcut for binding input.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_as_text<class_ShortCut_get_as_text>` **(** **)** const                                           |
+| :ref:`String<class_String>`  | :ref:`get_as_text<class_ShortCut_get_as_text>` **(** **)** const                                           |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_shortcut<class_ShortCut_is_shortcut>` **(** :ref:`InputEvent<class_inputevent>` event **)** const |
+| :ref:`bool<class_bool>`      | :ref:`is_shortcut<class_ShortCut_is_shortcut>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_valid<class_ShortCut_is_valid>` **(** **)** const                                                 |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_ShortCut_shortcut:
-
-- :ref:`InputEvent<class_inputevent>` **shortcut** - The Shortcut's :ref:`InputEvent<class_inputevent>`.
-
-Generally the :ref:`InputEvent<class_inputevent>` is a keyboard key, though it can be any :ref:`InputEvent<class_inputevent>`.
-
 
 Description
 -----------
 
 A shortcut for binding input.
 
-Shortcuts are commonly used for interacting with a :ref:`Control<class_control>` element from a :ref:`InputEvent<class_inputevent>`.
+Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from a :ref:`InputEvent<class_InputEvent>`.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ShortCut_shortcut:
+
+- :ref:`InputEvent<class_InputEvent>` **shortcut** - The Shortcut's :ref:`InputEvent<class_InputEvent>`.
+
+Generally the :ref:`InputEvent<class_InputEvent>` is a keyboard key, though it can be any :ref:`InputEvent<class_InputEvent>`.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ShortCut_get_as_text:
 
-- :ref:`String<class_string>` **get_as_text** **(** **)** const
+- :ref:`String<class_String>` **get_as_text** **(** **)** const
 
-Returns the Shortcut's :ref:`InputEvent<class_inputevent>` as a :ref:`String<class_string>`.
+Returns the Shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
 .. _class_ShortCut_is_shortcut:
 
-- :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_inputevent>` event **)** const
+- :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
-Returns ``true`` if the Shortcut's :ref:`InputEvent<class_inputevent>` equals ``event``.
+Returns ``true`` if the Shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
 
 .. _class_ShortCut_is_valid:
 

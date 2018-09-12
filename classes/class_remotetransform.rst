@@ -7,43 +7,42 @@
 RemoteTransform
 ===============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-RemoteTransform leads the :ref:`Transform<class_transform>` of another :ref:`Spatial<class_spatial>` derived Node in the scene.
+RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node in the scene.
 
-Member Variables
-----------------
+Description
+-----------
+
+RemoteTransform pushes its own :ref:`Transform<class_Transform>` to another :ref:`Spatial<class_Spatial>` derived Node (called the remote node) in the scene.
+
+It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
+
+Property Descriptions
+---------------------
 
   .. _class_RemoteTransform_remote_path:
 
-- :ref:`NodePath<class_nodepath>` **remote_path** - The :ref:`NodePath<class_nodepath>` to the remote node, relative to the RemoteTransform's position in the scene.
+- :ref:`NodePath<class_NodePath>` **remote_path** - The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform's position in the scene.
 
   .. _class_RemoteTransform_update_position:
 
-- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is updated. Default value: ``true``.
 
   .. _class_RemoteTransform_update_rotation:
 
-- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is updated. Default value: ``true``.
 
   .. _class_RemoteTransform_update_scale:
 
-- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is tracked. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is updated. Default value: ``true``.
 
   .. _class_RemoteTransform_use_global_coordinates:
 
 - :ref:`bool<class_bool>` **use_global_coordinates** - If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
 
-
-Description
------------
-
-RemoteTransform leads the :ref:`Transform<class_transform>` of another :ref:`Spatial<class_spatial>` derived Node (called the remote node) in the scene.
-
-It can be set to track another Node's position, rotation and/or scale. It can update using either global or local coordinates.
 

@@ -7,8 +7,7 @@
 AudioStreamRandomPitch
 ======================
 
-**Inherits:** :ref:`AudioStream<class_audiostream>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,20 @@ Brief Description
 
 Plays audio with random pitch tweaking.
 
-Member Variables
-----------------
+Description
+-----------
+
+Randomly varies pitch on each start.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioStreamRandomPitch_audio_stream:
 
-- :ref:`AudioStream<class_audiostream>` **audio_stream** - The current :ref:`AudioStream<class_audiostream>`.
+- :ref:`AudioStream<class_AudioStream>` **audio_stream** - The current :ref:`AudioStream<class_AudioStream>`.
 
   .. _class_AudioStreamRandomPitch_random_pitch:
 
 - :ref:`float<class_float>` **random_pitch** - The intensity of random pitch variation.
 
-
-Description
------------
-
-Randomly varies pitch on each start.
 

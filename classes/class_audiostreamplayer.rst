@@ -7,8 +7,7 @@
 AudioStreamPlayer
 =================
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Plays back audio.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_playback_position<class_AudioStreamPlayer_get_playback_position>` **(** **)**           |
@@ -39,44 +38,8 @@ Signals
 Emitted when the audio stops playing.
 
 
-Member Variables
-----------------
-
-  .. _class_AudioStreamPlayer_autoplay:
-
-- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
-
-  .. _class_AudioStreamPlayer_bus:
-
-- :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
-
-  .. _class_AudioStreamPlayer_mix_target:
-
-- :ref:`MixTarget<enum_audiostreamplayer_mixtarget>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
-
-  .. _class_AudioStreamPlayer_pitch_scale:
-
-- :ref:`float<class_float>` **pitch_scale** - Changes the pitch and the tempo of the audio.
-
-  .. _class_AudioStreamPlayer_playing:
-
-- :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
-
-  .. _class_AudioStreamPlayer_stream:
-
-- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
-
-  .. _class_AudioStreamPlayer_stream_paused:
-
-- :ref:`bool<class_bool>` **stream_paused**
-
-  .. _class_AudioStreamPlayer_volume_db:
-
-- :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_AudioStreamPlayer_MixTarget:
 
@@ -98,14 +61,50 @@ Tutorials
 - :doc:`../learning/features/audio/index`
 - :doc:`../tutorials/audio/audio_streams`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_AudioStreamPlayer_autoplay:
+
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
+
+  .. _class_AudioStreamPlayer_bus:
+
+- :ref:`String<class_String>` **bus** - Bus on which this audio is playing.
+
+  .. _class_AudioStreamPlayer_mix_target:
+
+- :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
+
+  .. _class_AudioStreamPlayer_pitch_scale:
+
+- :ref:`float<class_float>` **pitch_scale** - Changes the pitch and the tempo of the audio.
+
+  .. _class_AudioStreamPlayer_playing:
+
+- :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
+
+  .. _class_AudioStreamPlayer_stream:
+
+- :ref:`AudioStream<class_AudioStream>` **stream** - The :ref:`AudioStream<class_AudioStream>` object to be played.
+
+  .. _class_AudioStreamPlayer_stream_paused:
+
+- :ref:`bool<class_bool>` **stream_paused**
+
+  .. _class_AudioStreamPlayer_volume_db:
+
+- :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
+
+
+Method Descriptions
+-------------------
 
 .. _class_AudioStreamPlayer_get_playback_position:
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
-Returns the position in the :ref:`AudioStream<class_audiostream>` in seconds.
+Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 
 .. _class_AudioStreamPlayer_play:
 

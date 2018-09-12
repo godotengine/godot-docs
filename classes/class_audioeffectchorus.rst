@@ -7,8 +7,7 @@
 AudioEffectChorus
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Adds a chorus audio effect.
 
-Member Variables
-----------------
+Description
+-----------
+
+Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioEffectChorus_dry:
 
@@ -127,9 +131,4 @@ Member Variables
 
 - :ref:`float<class_float>` **wet** - The effect's processed signal.
 
-
-Description
------------
-
-Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
 

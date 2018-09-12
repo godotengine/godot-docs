@@ -7,8 +7,7 @@
 MultiplayerAPI
 ==============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 High Level Multiplayer API.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear<class_MultiplayerAPI_clear>` **(** **)**                                                                                                                                                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`  | :ref:`get_network_connected_peers<class_MultiplayerAPI_get_network_connected_peers>` **(** **)** const                                                                                                             |
+| :ref:`PoolIntArray<class_PoolIntArray>`  | :ref:`get_network_connected_peers<class_MultiplayerAPI_get_network_connected_peers>` **(** **)** const                                                                                                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_network_unique_id<class_MultiplayerAPI_get_network_unique_id>` **(** **)** const                                                                                                                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -34,9 +33,9 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`poll<class_MultiplayerAPI_poll>` **(** **)**                                                                                                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`    | :ref:`send_bytes<class_MultiplayerAPI_send_bytes>` **(** :ref:`PoolByteArray<class_poolbytearray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` mode=2 **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`send_bytes<class_MultiplayerAPI_send_bytes>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_root_node<class_MultiplayerAPI_set_root_node>` **(** :ref:`Node<class_node>` node **)**                                                                                                                  |
+| void                                     | :ref:`set_root_node<class_MultiplayerAPI_set_root_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -68,7 +67,7 @@ Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_n
 
 .. _class_MultiplayerAPI_network_peer_packet:
 
-- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_poolbytearray>` packet **)**
+- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_PoolByteArray>` packet **)**
 
 Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_send_bytes>`). ID is the peer ID of the peer that sent the packet.
 
@@ -79,20 +78,8 @@ Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_n
 Emitted whenever this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` disconnects from server. Only emitted on clients.
 
 
-Member Variables
-----------------
-
-  .. _class_MultiplayerAPI_network_peer:
-
-- :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
-
-  .. _class_MultiplayerAPI_refuse_new_network_connections:
-
-- :ref:`bool<class_bool>` **refuse_new_network_connections** - If ``true`` the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` refuses new incoming connections.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_MultiplayerAPI_RPCMode:
 
@@ -113,12 +100,24 @@ Description
 
 This class implements most of the logic behind the high level multiplayer API.
 
-By default, :ref:`SceneTree<class_scenetree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
+By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPC/RSET) across the whole scene.
 
 It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_MultiplayerAPI_network_peer:
+
+- :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+
+  .. _class_MultiplayerAPI_refuse_new_network_connections:
+
+- :ref:`bool<class_bool>` **refuse_new_network_connections** - If ``true`` the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` refuses new incoming connections.
+
+
+Method Descriptions
+-------------------
 
 .. _class_MultiplayerAPI_clear:
 
@@ -128,7 +127,7 @@ Clears the current MultiplayerAPI network state (you shouldn't call this unless 
 
 .. _class_MultiplayerAPI_get_network_connected_peers:
 
-- :ref:`PoolIntArray<class_poolintarray>` **get_network_connected_peers** **(** **)** const
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** const
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>`.
 
@@ -162,19 +161,19 @@ Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAP
 
 - void **poll** **(** **)**
 
-Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_multiplayer_poll>` to ``false``. By default :ref:`SceneTree<class_scenetree>` will poll its MultiplayerAPI for you.
+Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_multiplayer_poll>` to ``false``. By default :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
 
-NOTE: This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_thread>`).
+NOTE: This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
 
 .. _class_MultiplayerAPI_send_bytes:
 
-- :ref:`Error<enum_@globalscope_error>` **send_bytes** **(** :ref:`PoolByteArray<class_poolbytearray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` mode=2 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
 
 Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
 
 .. _class_MultiplayerAPI_set_root_node:
 
-- void **set_root_node** **(** :ref:`Node<class_node>` node **)**
+- void **set_root_node** **(** :ref:`Node<class_Node>` node **)**
 
 Sets the base root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
 

@@ -7,10 +7,8 @@
 VisualShaderNodeUniform
 =======================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`VisualShaderNodeVec3Uniform<class_visualshadernodevec3uniform>`, :ref:`VisualShaderNodeScalarUniform<class_visualshadernodescalaruniform>`, :ref:`VisualShaderNodeTextureUniform<class_visualshadernodetextureuniform>`, :ref:`VisualShaderNodeTransformUniform<class_visualshadernodetransformuniform>`, :ref:`VisualShaderNodeColorUniform<class_visualshadernodecoloruniform>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_VisualShaderNodeUniform_uniform_name:
 
-- :ref:`String<class_string>` **uniform_name**
+- :ref:`String<class_String>` **uniform_name**
 
 

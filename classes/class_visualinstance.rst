@@ -7,10 +7,8 @@
 VisualInstance
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`BakedLightmap<class_bakedlightmap>`, :ref:`Light<class_light>`, :ref:`RootMotionView<class_rootmotionview>`, :ref:`ReflectionProbe<class_reflectionprobe>`, :ref:`CSGShape<class_csgshape>`, :ref:`GIProbe<class_giprobe>`, :ref:`GeometryInstance<class_geometryinstance>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`Light<class_Light>`, :ref:`RootMotionView<class_RootMotionView>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`CSGShape<class_CSGShape>`, :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`
 **Category:** Core
 
 Brief Description
@@ -18,39 +16,39 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`  | :ref:`get_aabb<class_VisualInstance_get_aabb>` **(** **)** const                                                                            |
+| :ref:`AABB<class_AABB>`  | :ref:`get_aabb<class_VisualInstance_get_aabb>` **(** **)** const                                                                            |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_layer_mask_bit<class_VisualInstance_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** const                            |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`  | :ref:`get_transformed_aabb<class_VisualInstance_get_transformed_aabb>` **(** **)** const                                                    |
+| :ref:`AABB<class_AABB>`  | :ref:`get_transformed_aabb<class_VisualInstance_get_transformed_aabb>` **(** **)** const                                                    |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_base<class_VisualInstance_set_base>` **(** :ref:`RID<class_rid>` base **)**                                                       |
+| void                     | :ref:`set_base<class_VisualInstance_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                       |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_layer_mask_bit<class_VisualInstance_set_layer_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)** |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_VisualInstance_layers:
 
 - :ref:`int<class_int>` **layers** - The render layer(s) this VisualInstance is drawn on.
 
-This object will only be visible for :ref:`Camera<class_camera>`\ s whose cull mask includes the render object this VisualInstance is set to.
+This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this VisualInstance is set to.
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_VisualInstance_get_aabb:
 
-- :ref:`AABB<class_aabb>` **get_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
-Returns the :ref:`AABB<class_aabb>` (also known as the bounding box) for this VisualInstance.
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
 
 .. _class_VisualInstance_get_layer_mask_bit:
 
@@ -58,15 +56,15 @@ Returns the :ref:`AABB<class_aabb>` (also known as the bounding box) for this Vi
 
 .. _class_VisualInstance_get_transformed_aabb:
 
-- :ref:`AABB<class_aabb>` **get_transformed_aabb** **(** **)** const
+- :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** const
 
-Returns the transformed :ref:`AABB<class_aabb>` (also known as the bounding box) for this VisualInstance.
+Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
 
-Transformed in this case means the :ref:`AABB<class_aabb>` plus the position, rotation, and scale of the :ref:`Spatial<class_spatial>`\ s :ref:`Transform<class_transform>`
+Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`\ s :ref:`Transform<class_Transform>`
 
 .. _class_VisualInstance_set_base:
 
-- void **set_base** **(** :ref:`RID<class_rid>` base **)**
+- void **set_base** **(** :ref:`RID<class_RID>` base **)**
 
 Sets the base of the VisualInstance, which changes how the engine handles the VisualInstance under the hood.
 

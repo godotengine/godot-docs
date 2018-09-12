@@ -14,107 +14,107 @@ Brief Description
 
 Built-in string class.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`bool<class_bool>` from **)**                                                                                    |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`bool<class_bool>` from **)**                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`int<class_int>` from **)**                                                                                      |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`int<class_int>` from **)**                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`float<class_float>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`float<class_float>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Vector2<class_vector2>` from **)**                                                                              |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Vector2<class_Vector2>` from **)**                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Rect2<class_rect2>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Rect2<class_Rect2>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Vector3<class_vector3>` from **)**                                                                              |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Vector3<class_Vector3>` from **)**                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Transform2D<class_transform2d>` from **)**                                                                      |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Transform2D<class_Transform2D>` from **)**                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Plane<class_plane>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Plane<class_Plane>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Quat<class_quat>` from **)**                                                                                    |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Quat<class_Quat>` from **)**                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`AABB<class_aabb>` from **)**                                                                                    |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`AABB<class_AABB>` from **)**                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Basis<class_basis>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Transform<class_transform>` from **)**                                                                          |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Transform<class_Transform>` from **)**                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Color<class_color>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Color<class_Color>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`NodePath<class_nodepath>` from **)**                                                                            |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`NodePath<class_NodePath>` from **)**                                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`RID<class_rid>` from **)**                                                                                      |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`RID<class_RID>` from **)**                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Dictionary<class_dictionary>` from **)**                                                                        |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Dictionary<class_Dictionary>` from **)**                                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Array<class_array>` from **)**                                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`Array<class_Array>` from **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolByteArray<class_poolbytearray>` from **)**                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolIntArray<class_poolintarray>` from **)**                                                                    |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolIntArray<class_PoolIntArray>` from **)**                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolRealArray<class_poolrealarray>` from **)**                                                                  |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolRealArray<class_PoolRealArray>` from **)**                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolStringArray<class_poolstringarray>` from **)**                                                              |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolStringArray<class_PoolStringArray>` from **)**                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolVector2Array<class_poolvector2array>` from **)**                                                            |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` from **)**                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolVector3Array<class_poolvector3array>` from **)**                                                            |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` from **)**                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolColorArray<class_poolcolorarray>` from **)**                                                                |
+| :ref:`String<class_String>`                    | :ref:`String<class_String_String>` **(** :ref:`PoolColorArray<class_PoolColorArray>` from **)**                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`begins_with<class_String_begins_with>` **(** :ref:`String<class_string>` text **)**                                                                      |
+| :ref:`bool<class_bool>`                        | :ref:`begins_with<class_String_begins_with>` **(** :ref:`String<class_String>` text **)**                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`bigrams<class_String_bigrams>` **(** **)**                                                                                                               |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`bigrams<class_String_bigrams>` **(** **)**                                                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`c_escape<class_String_c_escape>` **(** **)**                                                                                                             |
+| :ref:`String<class_String>`                    | :ref:`c_escape<class_String_c_escape>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`c_unescape<class_String_c_unescape>` **(** **)**                                                                                                         |
+| :ref:`String<class_String>`                    | :ref:`c_unescape<class_String_c_unescape>` **(** **)**                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`capitalize<class_String_capitalize>` **(** **)**                                                                                                         |
+| :ref:`String<class_String>`                    | :ref:`capitalize<class_String_capitalize>` **(** **)**                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`casecmp_to<class_String_casecmp_to>` **(** :ref:`String<class_string>` to **)**                                                                          |
+| :ref:`int<class_int>`                          | :ref:`casecmp_to<class_String_casecmp_to>` **(** :ref:`String<class_String>` to **)**                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`dedent<class_String_dedent>` **(** **)**                                                                                                                 |
+| :ref:`String<class_String>`                    | :ref:`dedent<class_String_dedent>` **(** **)**                                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`empty<class_String_empty>` **(** **)**                                                                                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`ends_with<class_String_ends_with>` **(** :ref:`String<class_string>` text **)**                                                                          |
+| :ref:`bool<class_bool>`                        | :ref:`ends_with<class_String_ends_with>` **(** :ref:`String<class_String>` text **)**                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`erase<class_String_erase>` **(** :ref:`int<class_int>` position, :ref:`int<class_int>` chars **)**                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`find<class_String_find>` **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**                                                      |
+| :ref:`int<class_int>`                          | :ref:`find<class_String_find>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`find_last<class_String_find_last>` **(** :ref:`String<class_string>` what **)**                                                                          |
+| :ref:`int<class_int>`                          | :ref:`find_last<class_String_find_last>` **(** :ref:`String<class_String>` what **)**                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`findn<class_String_findn>` **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**                                                    |
+| :ref:`int<class_int>`                          | :ref:`findn<class_String_findn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`format<class_String_format>` **(** var values, :ref:`String<class_string>` placeholder={_} **)**                                                         |
+| :ref:`String<class_String>`                    | :ref:`format<class_String_format>` **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder={_} **)**                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_base_dir<class_String_get_base_dir>` **(** **)**                                                                                                     |
+| :ref:`String<class_String>`                    | :ref:`get_base_dir<class_String_get_base_dir>` **(** **)**                                                                                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_basename<class_String_get_basename>` **(** **)**                                                                                                     |
+| :ref:`String<class_String>`                    | :ref:`get_basename<class_String_get_basename>` **(** **)**                                                                                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_extension<class_String_get_extension>` **(** **)**                                                                                                   |
+| :ref:`String<class_String>`                    | :ref:`get_extension<class_String_get_extension>` **(** **)**                                                                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_file<class_String_get_file>` **(** **)**                                                                                                             |
+| :ref:`String<class_String>`                    | :ref:`get_file<class_String_get_file>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`hash<class_String_hash>` **(** **)**                                                                                                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`hex_to_int<class_String_hex_to_int>` **(** **)**                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`insert<class_String_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_string>` what **)**                                                |
+| :ref:`String<class_String>`                    | :ref:`insert<class_String_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_abs_path<class_String_is_abs_path>` **(** **)**                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_rel_path<class_String_is_rel_path>` **(** **)**                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_subsequence_of<class_String_is_subsequence_of>` **(** :ref:`String<class_string>` text **)**                                                          |
+| :ref:`bool<class_bool>`                        | :ref:`is_subsequence_of<class_String_is_subsequence_of>` **(** :ref:`String<class_String>` text **)**                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_subsequence_ofi<class_String_is_subsequence_ofi>` **(** :ref:`String<class_string>` text **)**                                                        |
+| :ref:`bool<class_bool>`                        | :ref:`is_subsequence_ofi<class_String_is_subsequence_ofi>` **(** :ref:`String<class_String>` text **)**                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_valid_float<class_String_is_valid_float>` **(** **)**                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -126,83 +126,83 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_valid_ip_address<class_String_is_valid_ip_address>` **(** **)**                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`json_escape<class_String_json_escape>` **(** **)**                                                                                                       |
+| :ref:`String<class_String>`                    | :ref:`json_escape<class_String_json_escape>` **(** **)**                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`left<class_String_left>` **(** :ref:`int<class_int>` position **)**                                                                                      |
+| :ref:`String<class_String>`                    | :ref:`left<class_String_left>` **(** :ref:`int<class_int>` position **)**                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`length<class_String_length>` **(** **)**                                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`lstrip<class_String_lstrip>` **(** :ref:`String<class_string>` chars **)**                                                                               |
+| :ref:`String<class_String>`                    | :ref:`lstrip<class_String_lstrip>` **(** :ref:`String<class_String>` chars **)**                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`match<class_String_match>` **(** :ref:`String<class_string>` expr **)**                                                                                  |
+| :ref:`bool<class_bool>`                        | :ref:`match<class_String_match>` **(** :ref:`String<class_String>` expr **)**                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`matchn<class_String_matchn>` **(** :ref:`String<class_string>` expr **)**                                                                                |
+| :ref:`bool<class_bool>`                        | :ref:`matchn<class_String_matchn>` **(** :ref:`String<class_String>` expr **)**                                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`md5_buffer<class_String_md5_buffer>` **(** **)**                                                                                                         |
+| :ref:`PoolByteArray<class_PoolByteArray>`      | :ref:`md5_buffer<class_String_md5_buffer>` **(** **)**                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`md5_text<class_String_md5_text>` **(** **)**                                                                                                             |
+| :ref:`String<class_String>`                    | :ref:`md5_text<class_String_md5_text>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`nocasecmp_to<class_String_nocasecmp_to>` **(** :ref:`String<class_string>` to **)**                                                                      |
+| :ref:`int<class_int>`                          | :ref:`nocasecmp_to<class_String_nocasecmp_to>` **(** :ref:`String<class_String>` to **)**                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`ord_at<class_String_ord_at>` **(** :ref:`int<class_int>` at **)**                                                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`pad_decimals<class_String_pad_decimals>` **(** :ref:`int<class_int>` digits **)**                                                                        |
+| :ref:`String<class_String>`                    | :ref:`pad_decimals<class_String_pad_decimals>` **(** :ref:`int<class_int>` digits **)**                                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`pad_zeros<class_String_pad_zeros>` **(** :ref:`int<class_int>` digits **)**                                                                              |
+| :ref:`String<class_String>`                    | :ref:`pad_zeros<class_String_pad_zeros>` **(** :ref:`int<class_int>` digits **)**                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`percent_decode<class_String_percent_decode>` **(** **)**                                                                                                 |
+| :ref:`String<class_String>`                    | :ref:`percent_decode<class_String_percent_decode>` **(** **)**                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`percent_encode<class_String_percent_encode>` **(** **)**                                                                                                 |
+| :ref:`String<class_String>`                    | :ref:`percent_encode<class_String_percent_encode>` **(** **)**                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`plus_file<class_String_plus_file>` **(** :ref:`String<class_string>` file **)**                                                                          |
+| :ref:`String<class_String>`                    | :ref:`plus_file<class_String_plus_file>` **(** :ref:`String<class_String>` file **)**                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`replace<class_String_replace>` **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**                                         |
+| :ref:`String<class_String>`                    | :ref:`replace<class_String_replace>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`replacen<class_String_replacen>` **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**                                       |
+| :ref:`String<class_String>`                    | :ref:`replacen<class_String_replacen>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`rfind<class_String_rfind>` **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**                                                   |
+| :ref:`int<class_int>`                          | :ref:`rfind<class_String_rfind>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`rfindn<class_String_rfindn>` **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**                                                 |
+| :ref:`int<class_int>`                          | :ref:`rfindn<class_String_rfindn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`right<class_String_right>` **(** :ref:`int<class_int>` position **)**                                                                                    |
+| :ref:`String<class_String>`                    | :ref:`right<class_String_right>` **(** :ref:`int<class_int>` position **)**                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`rsplit<class_String_rsplit>` **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)** |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`rsplit<class_String_rsplit>` **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)** |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`rstrip<class_String_rstrip>` **(** :ref:`String<class_string>` chars **)**                                                                               |
+| :ref:`String<class_String>`                    | :ref:`rstrip<class_String_rstrip>` **(** :ref:`String<class_String>` chars **)**                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`sha256_buffer<class_String_sha256_buffer>` **(** **)**                                                                                                   |
+| :ref:`PoolByteArray<class_PoolByteArray>`      | :ref:`sha256_buffer<class_String_sha256_buffer>` **(** **)**                                                                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`sha256_text<class_String_sha256_text>` **(** **)**                                                                                                       |
+| :ref:`String<class_String>`                    | :ref:`sha256_text<class_String_sha256_text>` **(** **)**                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                      | :ref:`similarity<class_String_similarity>` **(** :ref:`String<class_string>` text **)**                                                                        |
+| :ref:`float<class_float>`                      | :ref:`similarity<class_String_similarity>` **(** :ref:`String<class_String>` text **)**                                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`split<class_String_split>` **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**   |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`split<class_String_split>` **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_poolrealarray>`      | :ref:`split_floats<class_String_split_floats>` **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**                       |
+| :ref:`PoolRealArray<class_PoolRealArray>`      | :ref:`split_floats<class_String_split_floats>` **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`strip_edges<class_String_strip_edges>` **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**                                 |
+| :ref:`String<class_String>`                    | :ref:`strip_edges<class_String_strip_edges>` **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`substr<class_String_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**                                                           |
+| :ref:`String<class_String>`                    | :ref:`substr<class_String_substr>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**                                                           |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`to_ascii<class_String_to_ascii>` **(** **)**                                                                                                             |
+| :ref:`PoolByteArray<class_PoolByteArray>`      | :ref:`to_ascii<class_String_to_ascii>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`to_float<class_String_to_float>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`to_int<class_String_to_int>` **(** **)**                                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`to_lower<class_String_to_lower>` **(** **)**                                                                                                             |
+| :ref:`String<class_String>`                    | :ref:`to_lower<class_String_to_lower>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`to_upper<class_String_to_upper>` **(** **)**                                                                                                             |
+| :ref:`String<class_String>`                    | :ref:`to_upper<class_String_to_upper>` **(** **)**                                                                                                             |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`to_utf8<class_String_to_utf8>` **(** **)**                                                                                                               |
+| :ref:`PoolByteArray<class_PoolByteArray>`      | :ref:`to_utf8<class_String_to_utf8>` **(** **)**                                                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`trim_prefix<class_String_trim_prefix>` **(** :ref:`String<class_string>` prefix **)**                                                                    |
+| :ref:`String<class_String>`                    | :ref:`trim_prefix<class_String_trim_prefix>` **(** :ref:`String<class_String>` prefix **)**                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`trim_suffix<class_String_trim_suffix>` **(** :ref:`String<class_string>` suffix **)**                                                                    |
+| :ref:`String<class_String>`                    | :ref:`trim_suffix<class_String_trim_suffix>` **(** :ref:`String<class_String>` suffix **)**                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`xml_escape<class_String_xml_escape>` **(** **)**                                                                                                         |
+| :ref:`String<class_String>`                    | :ref:`xml_escape<class_String_xml_escape>` **(** **)**                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`xml_unescape<class_String_xml_unescape>` **(** **)**                                                                                                     |
+| :ref:`String<class_String>`                    | :ref:`xml_unescape<class_String_xml_unescape>` **(** **)**                                                                                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -210,192 +210,192 @@ Description
 
 This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`bool<class_bool>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`bool<class_bool>` from **)**
 
 Constructs a new String from the given :ref:`bool<class_bool>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`int<class_int>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`int<class_int>` from **)**
 
 Constructs a new String from the given :ref:`int<class_int>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`float<class_float>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`float<class_float>` from **)**
 
 Constructs a new String from the given :ref:`float<class_float>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Vector2<class_vector2>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Vector2<class_Vector2>` from **)**
 
-Constructs a new String from the given :ref:`Vector2<class_vector2>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Rect2<class_rect2>` from **)**
-
-Constructs a new String from the given :ref:`Rect2<class_rect2>`.
+Constructs a new String from the given :ref:`Vector2<class_Vector2>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Vector3<class_vector3>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Rect2<class_Rect2>` from **)**
 
-Constructs a new String from the given :ref:`Vector3<class_vector3>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Transform2D<class_transform2d>` from **)**
-
-Constructs a new String from the given :ref:`Transform2D<class_transform2d>`.
+Constructs a new String from the given :ref:`Rect2<class_Rect2>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Plane<class_plane>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Vector3<class_Vector3>` from **)**
 
-Constructs a new String from the given :ref:`Plane<class_plane>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Quat<class_quat>` from **)**
-
-Constructs a new String from the given :ref:`Quat<class_quat>`.
+Constructs a new String from the given :ref:`Vector3<class_Vector3>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`AABB<class_aabb>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Transform2D<class_Transform2D>` from **)**
 
-Constructs a new String from the given :ref:`AABB<class_aabb>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Basis<class_basis>` from **)**
-
-Constructs a new String from the given :ref:`Basis<class_basis>`.
+Constructs a new String from the given :ref:`Transform2D<class_Transform2D>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Transform<class_transform>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Plane<class_Plane>` from **)**
 
-Constructs a new String from the given :ref:`Transform<class_transform>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Color<class_color>` from **)**
-
-Constructs a new String from the given :ref:`Color<class_color>`.
+Constructs a new String from the given :ref:`Plane<class_Plane>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`NodePath<class_nodepath>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Quat<class_Quat>` from **)**
 
-Constructs a new String from the given :ref:`NodePath<class_nodepath>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`RID<class_rid>` from **)**
-
-Constructs a new String from the given :ref:`RID<class_rid>`.
+Constructs a new String from the given :ref:`Quat<class_Quat>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Dictionary<class_dictionary>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`AABB<class_AABB>` from **)**
 
-Constructs a new String from the given :ref:`Dictionary<class_dictionary>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`Array<class_array>` from **)**
-
-Constructs a new String from the given :ref:`Array<class_array>`.
+Constructs a new String from the given :ref:`AABB<class_AABB>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`PoolByteArray<class_poolbytearray>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Basis<class_Basis>` from **)**
 
-Constructs a new String from the given :ref:`PoolByteArray<class_poolbytearray>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`PoolIntArray<class_poolintarray>` from **)**
-
-Constructs a new String from the given :ref:`PoolIntArray<class_poolintarray>`.
+Constructs a new String from the given :ref:`Basis<class_Basis>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`PoolRealArray<class_poolrealarray>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Transform<class_Transform>` from **)**
 
-Constructs a new String from the given :ref:`PoolRealArray<class_poolrealarray>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`PoolStringArray<class_poolstringarray>` from **)**
-
-Constructs a new String from the given :ref:`PoolStringArray<class_poolstringarray>`.
+Constructs a new String from the given :ref:`Transform<class_Transform>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`PoolVector2Array<class_poolvector2array>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`Color<class_Color>` from **)**
 
-Constructs a new String from the given :ref:`PoolVector2Array<class_poolvector2array>`.
-
-.. _class_String_String:
-
-- :ref:`String<class_string>` **String** **(** :ref:`PoolVector3Array<class_poolvector3array>` from **)**
-
-Constructs a new String from the given :ref:`PoolVector3Array<class_poolvector3array>`.
+Constructs a new String from the given :ref:`Color<class_Color>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`PoolColorArray<class_poolcolorarray>` from **)**
+- :ref:`String<class_String>` **String** **(** :ref:`NodePath<class_NodePath>` from **)**
 
-Constructs a new String from the given :ref:`PoolColorArray<class_poolcolorarray>`.
+Constructs a new String from the given :ref:`NodePath<class_NodePath>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`RID<class_RID>` from **)**
+
+Constructs a new String from the given :ref:`RID<class_RID>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`Dictionary<class_Dictionary>` from **)**
+
+Constructs a new String from the given :ref:`Dictionary<class_Dictionary>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new String from the given :ref:`Array<class_Array>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolByteArray<class_PoolByteArray>` from **)**
+
+Constructs a new String from the given :ref:`PoolByteArray<class_PoolByteArray>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolIntArray<class_PoolIntArray>` from **)**
+
+Constructs a new String from the given :ref:`PoolIntArray<class_PoolIntArray>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolRealArray<class_PoolRealArray>` from **)**
+
+Constructs a new String from the given :ref:`PoolRealArray<class_PoolRealArray>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolStringArray<class_PoolStringArray>` from **)**
+
+Constructs a new String from the given :ref:`PoolStringArray<class_PoolStringArray>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` from **)**
+
+Constructs a new String from the given :ref:`PoolVector2Array<class_PoolVector2Array>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` from **)**
+
+Constructs a new String from the given :ref:`PoolVector3Array<class_PoolVector3Array>`.
+
+.. _class_String_String:
+
+- :ref:`String<class_String>` **String** **(** :ref:`PoolColorArray<class_PoolColorArray>` from **)**
+
+Constructs a new String from the given :ref:`PoolColorArray<class_PoolColorArray>`.
 
 .. _class_String_begins_with:
 
-- :ref:`bool<class_bool>` **begins_with** **(** :ref:`String<class_string>` text **)**
+- :ref:`bool<class_bool>` **begins_with** **(** :ref:`String<class_String>` text **)**
 
 Returns ``true`` if the string begins with the given string.
 
 .. _class_String_bigrams:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **bigrams** **(** **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **bigrams** **(** **)**
 
 Returns the bigrams (pairs of consecutive letters) of this string.
 
 .. _class_String_c_escape:
 
-- :ref:`String<class_string>` **c_escape** **(** **)**
+- :ref:`String<class_String>` **c_escape** **(** **)**
 
 Returns a copy of the string with special characters escaped using the C language standard.
 
 .. _class_String_c_unescape:
 
-- :ref:`String<class_string>` **c_unescape** **(** **)**
+- :ref:`String<class_String>` **c_unescape** **(** **)**
 
 Returns a copy of the string with escaped characters replaced by their meanings according to the C language standard.
 
 .. _class_String_capitalize:
 
-- :ref:`String<class_string>` **capitalize** **(** **)**
+- :ref:`String<class_String>` **capitalize** **(** **)**
 
 Changes the case of some letters. Replaces underscores with spaces, converts all letters to lowercase, then capitalizes first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores`` it will return ``Capitalize Camelcase Mixed With Underscores``.
 
 .. _class_String_casecmp_to:
 
-- :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_string>` to **)**
+- :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_String>` to **)**
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
 .. _class_String_dedent:
 
-- :ref:`String<class_string>` **dedent** **(** **)**
+- :ref:`String<class_String>` **dedent** **(** **)**
 
 Removes indentation from string.
 
@@ -407,7 +407,7 @@ Returns ``true`` if the string is empty.
 
 .. _class_String_ends_with:
 
-- :ref:`bool<class_bool>` **ends_with** **(** :ref:`String<class_string>` text **)**
+- :ref:`bool<class_bool>` **ends_with** **(** :ref:`String<class_String>` text **)**
 
 Returns ``true`` if the string ends with the given string.
 
@@ -419,49 +419,49 @@ Erases ``chars`` characters from the string starting from ``position``.
 
 .. _class_String_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**
+- :ref:`int<class_int>` **find** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**
 
 Finds the first occurrence of a substring. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_find_last:
 
-- :ref:`int<class_int>` **find_last** **(** :ref:`String<class_string>` what **)**
+- :ref:`int<class_int>` **find_last** **(** :ref:`String<class_String>` what **)**
 
 Finds the last occurrence of a substring. Returns the starting position of the substring or -1 if not found.
 
 .. _class_String_findn:
 
-- :ref:`int<class_int>` **findn** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**
+- :ref:`int<class_int>` **findn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)**
 
 Finds the first occurrence of a substring, ignoring case. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_format:
 
-- :ref:`String<class_string>` **format** **(** var values, :ref:`String<class_string>` placeholder={_} **)**
+- :ref:`String<class_String>` **format** **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder={_} **)**
 
 Formats the string by replacing all occurrences of ``placeholder`` with ``values``.
 
 .. _class_String_get_base_dir:
 
-- :ref:`String<class_string>` **get_base_dir** **(** **)**
+- :ref:`String<class_String>` **get_base_dir** **(** **)**
 
 If the string is a valid file path, returns the base directory name.
 
 .. _class_String_get_basename:
 
-- :ref:`String<class_string>` **get_basename** **(** **)**
+- :ref:`String<class_String>` **get_basename** **(** **)**
 
 If the string is a valid file path, returns the full file path without the extension.
 
 .. _class_String_get_extension:
 
-- :ref:`String<class_string>` **get_extension** **(** **)**
+- :ref:`String<class_String>` **get_extension** **(** **)**
 
 If the string is a valid file path, returns the extension.
 
 .. _class_String_get_file:
 
-- :ref:`String<class_string>` **get_file** **(** **)**
+- :ref:`String<class_String>` **get_file** **(** **)**
 
 If the string is a valid file path, returns the filename.
 
@@ -479,7 +479,7 @@ Converts a string containing a hexadecimal number into an integer.
 
 .. _class_String_insert:
 
-- :ref:`String<class_string>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_string>` what **)**
+- :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)**
 
 Inserts a substring at a given position.
 
@@ -497,13 +497,13 @@ If the string is a path to a file or directory, returns ``true`` if the path is 
 
 .. _class_String_is_subsequence_of:
 
-- :ref:`bool<class_bool>` **is_subsequence_of** **(** :ref:`String<class_string>` text **)**
+- :ref:`bool<class_bool>` **is_subsequence_of** **(** :ref:`String<class_String>` text **)**
 
 Returns ``true`` if this string is a subsequence of the given string.
 
 .. _class_String_is_subsequence_ofi:
 
-- :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_string>` text **)**
+- :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_String>` text **)**
 
 Returns ``true`` if this string is a subsequence of the given string, without considering case.
 
@@ -539,13 +539,13 @@ Returns ``true`` if this string contains a valid IP address.
 
 .. _class_String_json_escape:
 
-- :ref:`String<class_string>` **json_escape** **(** **)**
+- :ref:`String<class_String>` **json_escape** **(** **)**
 
 Returns a copy of the string with special characters escaped using the JSON standard.
 
 .. _class_String_left:
 
-- :ref:`String<class_string>` **left** **(** :ref:`int<class_int>` position **)**
+- :ref:`String<class_String>` **left** **(** :ref:`int<class_int>` position **)**
 
 Returns a number of characters from the left of the string.
 
@@ -557,37 +557,37 @@ Returns the string's amount of characters.
 
 .. _class_String_lstrip:
 
-- :ref:`String<class_string>` **lstrip** **(** :ref:`String<class_string>` chars **)**
+- :ref:`String<class_String>` **lstrip** **(** :ref:`String<class_String>` chars **)**
 
 Returns a copy of the string with characters removed from the left.
 
 .. _class_String_match:
 
-- :ref:`bool<class_bool>` **match** **(** :ref:`String<class_string>` expr **)**
+- :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
 Does a simple expression match, where '\*' matches zero or more arbitrary characters and '?' matches any single character except '.'.
 
 .. _class_String_matchn:
 
-- :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_string>` expr **)**
+- :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
 Does a simple case insensitive expression match, using ? and \* wildcards (see :ref:`match<class_String_match>`).
 
 .. _class_String_md5_buffer:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **md5_buffer** **(** **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **md5_buffer** **(** **)**
 
 Returns the MD5 hash of the string as an array of bytes.
 
 .. _class_String_md5_text:
 
-- :ref:`String<class_string>` **md5_text** **(** **)**
+- :ref:`String<class_String>` **md5_text** **(** **)**
 
 Returns the MD5 hash of the string as a string.
 
 .. _class_String_nocasecmp_to:
 
-- :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_string>` to **)**
+- :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_String>` to **)**
 
 Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
@@ -599,67 +599,67 @@ Returns the character code at position ``at``.
 
 .. _class_String_pad_decimals:
 
-- :ref:`String<class_string>` **pad_decimals** **(** :ref:`int<class_int>` digits **)**
+- :ref:`String<class_String>` **pad_decimals** **(** :ref:`int<class_int>` digits **)**
 
 Formats a number to have an exact number of ``digits`` after the decimal point.
 
 .. _class_String_pad_zeros:
 
-- :ref:`String<class_string>` **pad_zeros** **(** :ref:`int<class_int>` digits **)**
+- :ref:`String<class_String>` **pad_zeros** **(** :ref:`int<class_int>` digits **)**
 
 Formats a number to have an exact number of ``digits`` before the decimal point.
 
 .. _class_String_percent_decode:
 
-- :ref:`String<class_string>` **percent_decode** **(** **)**
+- :ref:`String<class_String>` **percent_decode** **(** **)**
 
 Decode a percent-encoded string. See :ref:`percent_encode<class_String_percent_encode>`.
 
 .. _class_String_percent_encode:
 
-- :ref:`String<class_string>` **percent_encode** **(** **)**
+- :ref:`String<class_String>` **percent_encode** **(** **)**
 
 Percent-encodes a string. Encodes parameters in a URL when sending a HTTP GET request (and bodies of form-urlencoded POST requests).
 
 .. _class_String_plus_file:
 
-- :ref:`String<class_string>` **plus_file** **(** :ref:`String<class_string>` file **)**
+- :ref:`String<class_String>` **plus_file** **(** :ref:`String<class_String>` file **)**
 
 If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".plus_file("path") == "this/is/path"``.
 
 .. _class_String_replace:
 
-- :ref:`String<class_string>` **replace** **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**
+- :ref:`String<class_String>` **replace** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
 Replaces occurrences of a substring with the given one inside the string.
 
 .. _class_String_replacen:
 
-- :ref:`String<class_string>` **replacen** **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**
+- :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)**
 
 Replaces occurrences of a substring with the given one inside the string. Ignores case.
 
 .. _class_String_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**
+- :ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**
 
 Performs a search for a substring, but starts from the end of the string instead of the beginning.
 
 .. _class_String_rfindn:
 
-- :ref:`int<class_int>` **rfindn** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**
+- :ref:`int<class_int>` **rfindn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)**
 
 Performs a search for a substring, but starts from the end of the string instead of the beginning. Ignores case.
 
 .. _class_String_right:
 
-- :ref:`String<class_string>` **right** **(** :ref:`int<class_int>` position **)**
+- :ref:`String<class_String>` **right** **(** :ref:`int<class_int>` position **)**
 
 Returns the right side of the string from a given position.
 
 .. _class_String_rsplit:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **rsplit** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **rsplit** **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
 
 Splits the string by a ``divisor`` string and returns an array of the substrings, starting from right.
 
@@ -669,29 +669,29 @@ If ``maxsplit`` is specified, then it is number of splits to do, default is 0 wh
 
 .. _class_String_rstrip:
 
-- :ref:`String<class_string>` **rstrip** **(** :ref:`String<class_string>` chars **)**
+- :ref:`String<class_String>` **rstrip** **(** :ref:`String<class_String>` chars **)**
 
 Returns a copy of the string with characters removed from the right.
 
 .. _class_String_sha256_buffer:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **sha256_buffer** **(** **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **sha256_buffer** **(** **)**
 
 .. _class_String_sha256_text:
 
-- :ref:`String<class_string>` **sha256_text** **(** **)**
+- :ref:`String<class_String>` **sha256_text** **(** **)**
 
 Returns the SHA-256 hash of the string as a string.
 
 .. _class_String_similarity:
 
-- :ref:`float<class_float>` **similarity** **(** :ref:`String<class_string>` text **)**
+- :ref:`float<class_float>` **similarity** **(** :ref:`String<class_String>` text **)**
 
 Returns the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
 
 .. _class_String_split:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **split** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **split** **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True, :ref:`int<class_int>` maxsplit=0 **)**
 
 Splits the string by a divisor string and returns an array of the substrings.
 
@@ -701,7 +701,7 @@ If ``maxsplit`` is given, at most maxsplit number of splits occur, and the remai
 
 .. _class_String_split_floats:
 
-- :ref:`PoolRealArray<class_poolrealarray>` **split_floats** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **split_floats** **(** :ref:`String<class_String>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**
 
 Splits the string in floats by using a divisor string and returns an array of the substrings.
 
@@ -709,21 +709,21 @@ Splits the string in floats by using a divisor string and returns an array of th
 
 .. _class_String_strip_edges:
 
-- :ref:`String<class_string>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
+- :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
 
 Returns a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
 
 .. _class_String_substr:
 
-- :ref:`String<class_string>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**
+- :ref:`String<class_String>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**
 
 Returns part of the string from the position ``from`` with length ``len``.
 
 .. _class_String_to_ascii:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **to_ascii** **(** **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **to_ascii** **(** **)**
 
-Converts the String (which is a character array) to :ref:`PoolByteArray<class_poolbytearray>` (which is an array of bytes). The conversion is sped up in comparison to to_utf8() with the assumption that all the characters the String contains are only ASCII characters.
+Converts the String (which is a character array) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is sped up in comparison to to_utf8() with the assumption that all the characters the String contains are only ASCII characters.
 
 .. _class_String_to_float:
 
@@ -739,43 +739,43 @@ Converts a string containing an integer number into an ``int``.
 
 .. _class_String_to_lower:
 
-- :ref:`String<class_string>` **to_lower** **(** **)**
+- :ref:`String<class_String>` **to_lower** **(** **)**
 
 Returns the string converted to lowercase.
 
 .. _class_String_to_upper:
 
-- :ref:`String<class_string>` **to_upper** **(** **)**
+- :ref:`String<class_String>` **to_upper** **(** **)**
 
 Returns the string converted to uppercase.
 
 .. _class_String_to_utf8:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **to_utf8** **(** **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **to_utf8** **(** **)**
 
-Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_poolbytearray>` (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
+Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
 
 .. _class_String_trim_prefix:
 
-- :ref:`String<class_string>` **trim_prefix** **(** :ref:`String<class_string>` prefix **)**
+- :ref:`String<class_String>` **trim_prefix** **(** :ref:`String<class_String>` prefix **)**
 
 Removes a given string from the start if it starts with it or leaves the string unchanged.
 
 .. _class_String_trim_suffix:
 
-- :ref:`String<class_string>` **trim_suffix** **(** :ref:`String<class_string>` suffix **)**
+- :ref:`String<class_String>` **trim_suffix** **(** :ref:`String<class_String>` suffix **)**
 
 Removes a given string from the end if it ends with it or leaves the string unchanged.
 
 .. _class_String_xml_escape:
 
-- :ref:`String<class_string>` **xml_escape** **(** **)**
+- :ref:`String<class_String>` **xml_escape** **(** **)**
 
 Returns a copy of the string with special characters escaped using the XML standard.
 
 .. _class_String_xml_unescape:
 
-- :ref:`String<class_string>` **xml_unescape** **(** **)**
+- :ref:`String<class_String>` **xml_unescape** **(** **)**
 
 Returns a copy of the string with escaped characters replaced by their meanings according to the XML standard.
 

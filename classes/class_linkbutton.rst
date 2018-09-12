@@ -7,8 +7,7 @@
 LinkButton
 ==========
 
-**Inherits:** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,8 @@ Brief Description
 
 Simple button used to represent a link to some resource.
 
-Member Variables
-----------------
-
-  .. _class_LinkButton_text:
-
-- :ref:`String<class_string>` **text**
-
-  .. _class_LinkButton_underline:
-
-- :ref:`UnderlineMode<enum_linkbutton_underlinemode>` **underline**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_LinkButton_UnderlineMode:
 
@@ -44,4 +31,16 @@ Description
 -----------
 
 This kind of buttons are primarily used when the interaction with the button causes a context change (like linking to a web page).
+
+Property Descriptions
+---------------------
+
+  .. _class_LinkButton_text:
+
+- :ref:`String<class_String>` **text**
+
+  .. _class_LinkButton_underline:
+
+- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
+
 

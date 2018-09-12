@@ -7,8 +7,7 @@
 GIProbe
 =======
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,61 +15,17 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`bake<class_GIProbe_bake>` **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
+| void  | :ref:`bake<class_GIProbe_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`debug_bake<class_GIProbe_debug_bake>` **(** **)**                                                                               |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_GIProbe_bias:
-
-- :ref:`float<class_float>` **bias**
-
-  .. _class_GIProbe_compress:
-
-- :ref:`bool<class_bool>` **compress**
-
-  .. _class_GIProbe_data:
-
-- :ref:`GIProbeData<class_giprobedata>` **data**
-
-  .. _class_GIProbe_dynamic_range:
-
-- :ref:`int<class_int>` **dynamic_range**
-
-  .. _class_GIProbe_energy:
-
-- :ref:`float<class_float>` **energy**
-
-  .. _class_GIProbe_extents:
-
-- :ref:`Vector3<class_vector3>` **extents**
-
-  .. _class_GIProbe_interior:
-
-- :ref:`bool<class_bool>` **interior**
-
-  .. _class_GIProbe_normal_bias:
-
-- :ref:`float<class_float>` **normal_bias**
-
-  .. _class_GIProbe_propagation:
-
-- :ref:`float<class_float>` **propagation**
-
-  .. _class_GIProbe_subdiv:
-
-- :ref:`Subdiv<enum_giprobe_subdiv>` **subdiv**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_GIProbe_Subdiv:
 
@@ -88,12 +43,56 @@ Tutorials
 
 - :doc:`../tutorials/3d/gi_probes`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_GIProbe_bias:
+
+- :ref:`float<class_float>` **bias**
+
+  .. _class_GIProbe_compress:
+
+- :ref:`bool<class_bool>` **compress**
+
+  .. _class_GIProbe_data:
+
+- :ref:`GIProbeData<class_GIProbeData>` **data**
+
+  .. _class_GIProbe_dynamic_range:
+
+- :ref:`int<class_int>` **dynamic_range**
+
+  .. _class_GIProbe_energy:
+
+- :ref:`float<class_float>` **energy**
+
+  .. _class_GIProbe_extents:
+
+- :ref:`Vector3<class_Vector3>` **extents**
+
+  .. _class_GIProbe_interior:
+
+- :ref:`bool<class_bool>` **interior**
+
+  .. _class_GIProbe_normal_bias:
+
+- :ref:`float<class_float>` **normal_bias**
+
+  .. _class_GIProbe_propagation:
+
+- :ref:`float<class_float>` **propagation**
+
+  .. _class_GIProbe_subdiv:
+
+- :ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv**
+
+
+Method Descriptions
+-------------------
 
 .. _class_GIProbe_bake:
 
-- void **bake** **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
+- void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
 .. _class_GIProbe_debug_bake:
 

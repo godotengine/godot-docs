@@ -7,8 +7,7 @@
 ToolButton
 ==========
 
-**Inherits:** :ref:`Button<class_button>` **<** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -19,7 +18,7 @@ Flat button helper class.
 Description
 -----------
 
-This is a helper class to generate a flat :ref:`Button<class_button>` (see :ref:`Button.set_flat<class_Button_set_flat>`), creating a ToolButton is equivalent to:
+This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.set_flat<class_Button_set_flat>`), creating a ToolButton is equivalent to:
 
 ::
 

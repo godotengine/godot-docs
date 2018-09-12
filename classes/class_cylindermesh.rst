@@ -7,17 +7,21 @@
 CylinderMesh
 ============
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Class representing a cylindrical :ref:`PrimitiveMesh<class_primitivemesh>`.
+Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Property Descriptions
+---------------------
 
   .. _class_CylinderMesh_bottom_radius:
 
@@ -39,9 +43,4 @@ Member Variables
 
 - :ref:`float<class_float>` **top_radius** - Top radius of the cylinder. Defaults to 1.0.
 
-
-Description
------------
-
-Class representing a cylindrical :ref:`PrimitiveMesh<class_primitivemesh>`.
 

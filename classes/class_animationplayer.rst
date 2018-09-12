@@ -7,58 +7,57 @@
 AnimationPlayer
 ===============
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Container and player of :ref:`Animation<class_animation>` resources.
+Container and player of :ref:`Animation<class_Animation>` resources.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**                                                                    |
+| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`add_animation<class_AnimationPlayer_add_animation>` **(** :ref:`String<class_String>` name, :ref:`Animation<class_Animation>` animation **)**                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`advance<class_AnimationPlayer_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`animation_get_next<class_AnimationPlayer_animation_get_next>` **(** :ref:`String<class_string>` anim_from **)** const                                                                                            |
+| :ref:`String<class_String>`                    | :ref:`animation_get_next<class_AnimationPlayer_animation_get_next>` **(** :ref:`String<class_String>` anim_from **)** const                                                                                            |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`animation_set_next<class_AnimationPlayer_animation_set_next>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)**                                                             |
+| void                                           | :ref:`animation_set_next<class_AnimationPlayer_animation_set_next>` **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)**                                                             |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`clear_caches<class_AnimationPlayer_clear_caches>` **(** **)**                                                                                                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`clear_queue<class_AnimationPlayer_clear_queue>` **(** **)**                                                                                                                                                      |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`find_animation<class_AnimationPlayer_find_animation>` **(** :ref:`Animation<class_animation>` animation **)** const                                                                                              |
+| :ref:`String<class_String>`                    | :ref:`find_animation<class_AnimationPlayer_find_animation>` **(** :ref:`Animation<class_Animation>` animation **)** const                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_animation>`              | :ref:`get_animation<class_AnimationPlayer_get_animation>` **(** :ref:`String<class_string>` name **)** const                                                                                                           |
+| :ref:`Animation<class_Animation>`              | :ref:`get_animation<class_AnimationPlayer_get_animation>` **(** :ref:`String<class_String>` name **)** const                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_animation_list<class_AnimationPlayer_get_animation_list>` **(** **)** const                                                                                                                                  |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_animation_list<class_AnimationPlayer_get_animation_list>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                      | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const                                                               |
+| :ref:`float<class_float>`                      | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)** const                                                               |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_playing_speed<class_AnimationPlayer_get_playing_speed>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_animation<class_AnimationPlayer_has_animation>` **(** :ref:`String<class_string>` name **)** const                                                                                                           |
+| :ref:`bool<class_bool>`                        | :ref:`has_animation<class_AnimationPlayer_has_animation>` **(** :ref:`String<class_String>` name **)** const                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_playing<class_AnimationPlayer_is_playing>` **(** **)** const                                                                                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`play<class_AnimationPlayer_play>` **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)** |
+| void                                           | :ref:`play<class_AnimationPlayer_play>` **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)** |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`play_backwards<class_AnimationPlayer_play_backwards>` **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1 **)**                                                                 |
+| void                                           | :ref:`play_backwards<class_AnimationPlayer_play_backwards>` **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1 **)**                                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`queue<class_AnimationPlayer_queue>` **(** :ref:`String<class_string>` name **)**                                                                                                                                 |
+| void                                           | :ref:`queue<class_AnimationPlayer_queue>` **(** :ref:`String<class_String>` name **)**                                                                                                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`remove_animation<class_AnimationPlayer_remove_animation>` **(** :ref:`String<class_string>` name **)**                                                                                                           |
+| void                                           | :ref:`remove_animation<class_AnimationPlayer_remove_animation>` **(** :ref:`String<class_String>` name **)**                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`rename_animation<class_AnimationPlayer_rename_animation>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname **)**                                                                      |
+| void                                           | :ref:`rename_animation<class_AnimationPlayer_rename_animation>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**                                                                      |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`seek<class_AnimationPlayer_seek>` **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false **)**                                                                                            |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_blend_time<class_AnimationPlayer_set_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec **)**                                      |
+| void                                           | :ref:`set_blend_time<class_AnimationPlayer_set_blend_time>` **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to, :ref:`float<class_float>` sec **)**                                      |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`stop<class_AnimationPlayer_stop>` **(** :ref:`bool<class_bool>` reset=true **)**                                                                                                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,19 +67,19 @@ Signals
 
 .. _class_AnimationPlayer_animation_changed:
 
-- **animation_changed** **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name **)**
+- **animation_changed** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**
 
 If the currently being played animation changes, this signal will notify of such change.
 
 .. _class_AnimationPlayer_animation_finished:
 
-- **animation_finished** **(** :ref:`String<class_string>` anim_name **)**
+- **animation_finished** **(** :ref:`String<class_String>` anim_name **)**
 
 Notifies when an animation finished playing.
 
 .. _class_AnimationPlayer_animation_started:
 
-- **animation_started** **(** :ref:`String<class_string>` anim_name **)**
+- **animation_started** **(** :ref:`String<class_String>` anim_name **)**
 
 Notifies when an animation starts playing.
 
@@ -89,20 +88,43 @@ Notifies when an animation starts playing.
 - **caches_cleared** **(** **)**
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_AnimationPlayer_AnimationProcessMode:
+
+enum **AnimationProcessMode**
+
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+- **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use the 'advance' method to process the animation manually.
+
+
+Description
+-----------
+
+An animation player is used for general purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
+
+Tutorials
+---------
+
+- :doc:`../getting_started/step_by_step/animations`
+- :doc:`../tutorials/animation/index`
+
+Property Descriptions
+---------------------
 
   .. _class_AnimationPlayer_assigned_animation:
 
-- :ref:`String<class_string>` **assigned_animation** - If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also :ref:`current_animation<class_AnimationPlayer_current_animation>`.
+- :ref:`String<class_String>` **assigned_animation** - If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also :ref:`current_animation<class_AnimationPlayer_current_animation>`.
 
   .. _class_AnimationPlayer_autoplay:
 
-- :ref:`String<class_string>` **autoplay** - The name of the animation to play when the scene loads. Default value: ``""``.
+- :ref:`String<class_String>` **autoplay** - The name of the animation to play when the scene loads. Default value: ``""``.
 
   .. _class_AnimationPlayer_current_animation:
 
-- :ref:`String<class_string>` **current_animation** - The name of the current animation, "" if not playing anything. When being set, does not restart the animation. See also :ref:`play<class_AnimationPlayer_play>`. Default value: ``""``.
+- :ref:`String<class_String>` **current_animation** - The name of the current animation, "" if not playing anything. When being set, does not restart the animation. See also :ref:`play<class_AnimationPlayer_play>`. Default value: ``""``.
 
   .. _class_AnimationPlayer_current_animation_length:
 
@@ -122,7 +144,7 @@ Member Variables
 
   .. _class_AnimationPlayer_playback_process_mode:
 
-- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@globalscope_animation_process_idle>`.
+- :ref:`AnimationProcessMode<enum_AnimationPlayer_AnimationProcessMode>` **playback_process_mode** - The process notification in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@GlobalScope_ANIMATION_PROCESS_IDLE>`.
 
   .. _class_AnimationPlayer_playback_speed:
 
@@ -130,38 +152,15 @@ Member Variables
 
   .. _class_AnimationPlayer_root_node:
 
-- :ref:`NodePath<class_nodepath>` **root_node** - The node from which node path references will travel. Default value: ``".."``.
+- :ref:`NodePath<class_NodePath>` **root_node** - The node from which node path references will travel. Default value: ``".."``.
 
 
-Enums
------
-
-  .. _enum_AnimationPlayer_AnimationProcessMode:
-
-enum **AnimationProcessMode**
-
-- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
-- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
-- **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use the 'advance' method to process the animation manually.
-
-
-Description
------------
-
-An animation player is used for general purpose playback of :ref:`Animation<class_animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
-
-Tutorials
----------
-
-- :doc:`../getting_started/step_by_step/animations`
-- :doc:`../tutorials/animation/index`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_AnimationPlayer_add_animation:
 
-- :ref:`Error<enum_@globalscope_error>` **add_animation** **(** :ref:`String<class_string>` name, :ref:`Animation<class_animation>` animation **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`String<class_String>` name, :ref:`Animation<class_Animation>` animation **)**
 
 Adds ``animation`` to the player accessible with the key ``name``.
 
@@ -173,13 +172,13 @@ Shifts position in the animation timeline. Delta is the time in seconds to shift
 
 .. _class_AnimationPlayer_animation_get_next:
 
-- :ref:`String<class_string>` **animation_get_next** **(** :ref:`String<class_string>` anim_from **)** const
+- :ref:`String<class_String>` **animation_get_next** **(** :ref:`String<class_String>` anim_from **)** const
 
 Returns the name of the next animation in the queue.
 
 .. _class_AnimationPlayer_animation_set_next:
 
-- void **animation_set_next** **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)**
+- void **animation_set_next** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)**
 
 Triggers the ``anim_to`` animation when the ``anim_from`` animation completes.
 
@@ -197,25 +196,25 @@ Clears all queued, unplayed animations.
 
 .. _class_AnimationPlayer_find_animation:
 
-- :ref:`String<class_string>` **find_animation** **(** :ref:`Animation<class_animation>` animation **)** const
+- :ref:`String<class_String>` **find_animation** **(** :ref:`Animation<class_Animation>` animation **)** const
 
 Returns the name of ``animation`` or empty string if not found.
 
 .. _class_AnimationPlayer_get_animation:
 
-- :ref:`Animation<class_animation>` **get_animation** **(** :ref:`String<class_string>` name **)** const
+- :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`String<class_String>` name **)** const
 
-Returns the :ref:`Animation<class_animation>` with key ``name`` or ``null`` if not found.
+Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if not found.
 
 .. _class_AnimationPlayer_get_animation_list:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_animation_list** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_animation_list** **(** **)** const
 
 Returns the list of stored animation names.
 
 .. _class_AnimationPlayer_get_blend_time:
 
-- :ref:`float<class_float>` **get_blend_time** **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const
+- :ref:`float<class_float>` **get_blend_time** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to **)** const
 
 Get the blend time (in seconds) between two animations, referenced by their names.
 
@@ -227,9 +226,9 @@ Get the actual playing speed of current animation or 0 if not playing. This spee
 
 .. _class_AnimationPlayer_has_animation:
 
-- :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_String>` name **)** const
 
-Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`Animation<class_animation>` with key ``name``.
+Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`Animation<class_Animation>` with key ``name``.
 
 .. _class_AnimationPlayer_is_playing:
 
@@ -239,31 +238,31 @@ Returns ``true`` if playing an animation.
 
 .. _class_AnimationPlayer_play:
 
-- void **play** **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
+- void **play** **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
 Play the animation with key ``name``. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the animation backwards.
 
 .. _class_AnimationPlayer_play_backwards:
 
-- void **play_backwards** **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1 **)**
+- void **play_backwards** **(** :ref:`String<class_String>` name="", :ref:`float<class_float>` custom_blend=-1 **)**
 
 Play the animation with key ``name`` in reverse.
 
 .. _class_AnimationPlayer_queue:
 
-- void **queue** **(** :ref:`String<class_string>` name **)**
+- void **queue** **(** :ref:`String<class_String>` name **)**
 
 Queue an animation for playback once the current one is done.
 
 .. _class_AnimationPlayer_remove_animation:
 
-- void **remove_animation** **(** :ref:`String<class_string>` name **)**
+- void **remove_animation** **(** :ref:`String<class_String>` name **)**
 
 Remove the animation with key ``name``.
 
 .. _class_AnimationPlayer_rename_animation:
 
-- void **rename_animation** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname **)**
+- void **rename_animation** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**
 
 Rename an existing animation with key ``name`` to ``newname``.
 
@@ -275,7 +274,7 @@ Seek the animation to the ``seconds`` point in time (in seconds). If ``update`` 
 
 .. _class_AnimationPlayer_set_blend_time:
 
-- void **set_blend_time** **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec **)**
+- void **set_blend_time** **(** :ref:`String<class_String>` anim_from, :ref:`String<class_String>` anim_to, :ref:`float<class_float>` sec **)**
 
 Specify a blend time (in seconds) between two animations, referenced by their names.
 

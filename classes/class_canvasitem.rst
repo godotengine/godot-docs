@@ -7,10 +7,8 @@
 CanvasItem
 ==========
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`Node2D<class_node2d>`, :ref:`Control<class_control>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`Node2D<class_Node2D>`, :ref:`Control<class_Control>`
 **Category:** Core
 
 Brief Description
@@ -18,73 +16,75 @@ Brief Description
 
 Base class of anything 2D.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`_draw<class_CanvasItem__draw>` **(** **)** virtual                                                                                                                                                                                                                                                                                                                                  |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`draw_char<class_CanvasItem_draw_char>` **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` char, :ref:`String<class_string>` next, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ) **)**                                                                                                                                 |
+| :ref:`float<class_float>`              | :ref:`draw_char<class_CanvasItem_draw_char>` **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**                                                                                                                                 |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_circle<class_CanvasItem_draw_circle>` **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_color>` color **)**                                                                                                                                                                                                                    |
+| void                                   | :ref:`draw_circle<class_CanvasItem_draw_circle>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**    |
+| void                                   | :ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_line<class_CanvasItem_draw_line>` **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                            |
+| void                                   | :ref:`draw_line<class_CanvasItem_draw_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_mesh<class_CanvasItem_draw_mesh>` **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**                                                                                                                                                                                                               |
+| void                                   | :ref:`draw_mesh<class_CanvasItem_draw_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                                                                                               |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_multiline<class_CanvasItem_draw_multiline>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                |
+| void                                   | :ref:`draw_multiline<class_CanvasItem_draw_multiline>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                               |
+| void                                   | :ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                               |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_multimesh<class_CanvasItem_draw_multimesh>` **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**                                                                                                                                                                                                     |
+| void                                   | :ref:`draw_multimesh<class_CanvasItem_draw_multimesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                                                                                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)** |
+| void                                   | :ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_polyline<class_CanvasItem_draw_polyline>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                  |
+| void                                   | :ref:`draw_polyline<class_CanvasItem_draw_polyline>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                  |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_polyline_colors<class_CanvasItem_draw_polyline_colors>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                 |
+| void                                   | :ref:`draw_polyline_colors<class_CanvasItem_draw_polyline_colors>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                 |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_primitive<class_CanvasItem_draw_primitive>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs, :ref:`Texture<class_texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_texture>` normal_map=null **)**                        |
+| void                                   | :ref:`draw_primitive<class_CanvasItem_draw_primitive>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**                        |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_rect<class_CanvasItem_draw_rect>` **(** :ref:`Rect2<class_rect2>` rect, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` filled=true **)**                                                                                                                                                                                                                             |
+| void                                   | :ref:`draw_rect<class_CanvasItem_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true **)**                                                                                                                                                                                                                             |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_set_transform<class_CanvasItem_draw_set_transform>` **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` scale **)**                                                                                                                                                                                                |
+| void                                   | :ref:`draw_set_transform<class_CanvasItem_draw_set_transform>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale **)**                                                                                                                                                                                                |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_set_transform_matrix<class_CanvasItem_draw_set_transform_matrix>` **(** :ref:`Transform2D<class_transform2d>` xform **)**                                                                                                                                                                                                                                                      |
+| void                                   | :ref:`draw_set_transform_matrix<class_CanvasItem_draw_set_transform_matrix>` **(** :ref:`Transform2D<class_Transform2D>` xform **)**                                                                                                                                                                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_string<class_CanvasItem_draw_string>` **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` text, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**                                                                                                                              |
+| void                                   | :ref:`draw_string<class_CanvasItem_draw_string>` **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**                                                                                                                              |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_style_box<class_CanvasItem_draw_style_box>` **(** :ref:`StyleBox<class_stylebox>` style_box, :ref:`Rect2<class_rect2>` rect **)**                                                                                                                                                                                                                                              |
+| void                                   | :ref:`draw_style_box<class_CanvasItem_draw_style_box>` **(** :ref:`StyleBox<class_StyleBox>` style_box, :ref:`Rect2<class_Rect2>` rect **)**                                                                                                                                                                                                                                              |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_texture<class_CanvasItem_draw_texture>` **(** :ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_texture>` normal_map=null **)**                                                                                                                                       |
+| void                                   | :ref:`draw_texture<class_CanvasItem_draw_texture>` **(** :ref:`Texture<class_Texture>` texture, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                       |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_texture_rect<class_CanvasItem_draw_texture_rect>` **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)**                                                              |
+| void                                   | :ref:`draw_texture_rect<class_CanvasItem_draw_texture_rect>` **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)**                                                              |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_texture_rect_region<class_CanvasItem_draw_texture_rect_region>` **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**    |
+| void                                   | :ref:`draw_texture_rect_region<class_CanvasItem_draw_texture_rect_region>` **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                  | :ref:`get_canvas<class_CanvasItem_get_canvas>` **(** **)** const                                                                                                                                                                                                                                                                                                                          |
+| void                                   | :ref:`force_update_transform<class_CanvasItem_force_update_transform>` **(** **)**                                                                                                                                                                                                                                                                                                        |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                  | :ref:`get_canvas_item<class_CanvasItem_get_canvas_item>` **(** **)** const                                                                                                                                                                                                                                                                                                                |
+| :ref:`RID<class_RID>`                  | :ref:`get_canvas<class_CanvasItem_get_canvas>` **(** **)** const                                                                                                                                                                                                                                                                                                                          |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_canvas_transform<class_CanvasItem_get_canvas_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
+| :ref:`RID<class_RID>`                  | :ref:`get_canvas_item<class_CanvasItem_get_canvas_item>` **(** **)** const                                                                                                                                                                                                                                                                                                                |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_global_mouse_position<class_CanvasItem_get_global_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                            |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_canvas_transform<class_CanvasItem_get_canvas_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_global_transform<class_CanvasItem_get_global_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
+| :ref:`Vector2<class_Vector2>`          | :ref:`get_global_mouse_position<class_CanvasItem_get_global_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_global_transform_with_canvas<class_CanvasItem_get_global_transform_with_canvas>` **(** **)** const                                                                                                                                                                                                                                                                              |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_global_transform<class_CanvasItem_get_global_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_local_mouse_position<class_CanvasItem_get_local_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                              |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_global_transform_with_canvas<class_CanvasItem_get_global_transform_with_canvas>` **(** **)** const                                                                                                                                                                                                                                                                              |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_transform<class_CanvasItem_get_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                                    |
+| :ref:`Vector2<class_Vector2>`          | :ref:`get_local_mouse_position<class_CanvasItem_get_local_mouse_position>` **(** **)** const                                                                                                                                                                                                                                                                                              |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`              | :ref:`get_viewport_rect<class_CanvasItem_get_viewport_rect>` **(** **)** const                                                                                                                                                                                                                                                                                                            |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_transform<class_CanvasItem_get_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_viewport_transform<class_CanvasItem_get_viewport_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                  |
+| :ref:`Rect2<class_Rect2>`              | :ref:`get_viewport_rect<class_CanvasItem_get_viewport_rect>` **(** **)** const                                                                                                                                                                                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_world2d>`          | :ref:`get_world_2d<class_CanvasItem_get_world_2d>` **(** **)** const                                                                                                                                                                                                                                                                                                                      |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_viewport_transform<class_CanvasItem_get_viewport_transform>` **(** **)** const                                                                                                                                                                                                                                                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`World2D<class_World2D>`          | :ref:`get_world_2d<class_CanvasItem_get_world_2d>` **(** **)** const                                                                                                                                                                                                                                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`hide<class_CanvasItem_hide>` **(** **)**                                                                                                                                                                                                                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,9 +96,9 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_visible_in_tree<class_CanvasItem_is_visible_in_tree>` **(** **)** const                                                                                                                                                                                                                                                                                                          |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`make_canvas_position_local<class_CanvasItem_make_canvas_position_local>` **(** :ref:`Vector2<class_vector2>` screen_point **)** const                                                                                                                                                                                                                                               |
+| :ref:`Vector2<class_Vector2>`          | :ref:`make_canvas_position_local<class_CanvasItem_make_canvas_position_local>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** const                                                                                                                                                                                                                                               |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_inputevent>`    | :ref:`make_input_local<class_CanvasItem_make_input_local>` **(** :ref:`InputEvent<class_inputevent>` event **)** const                                                                                                                                                                                                                                                                    |
+| :ref:`InputEvent<class_InputEvent>`    | :ref:`make_input_local<class_CanvasItem_make_input_local>` **(** :ref:`InputEvent<class_InputEvent>` event **)** const                                                                                                                                                                                                                                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                       |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,24 +139,67 @@ Emitted when the item rect has changed.
 Emitted when the visibility (hidden/visible) changes.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_CanvasItem_BlendMode:
+
+enum **BlendMode**
+
+- **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
+- **BLEND_MODE_ADD** = **1** --- Additive blending mode.
+- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
+- **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
+- **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
+
+
+Constants
+---------
+
+- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
+- **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
+- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
+- **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
+- **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
+
+Description
+-----------
+
+Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_Control>`, for anything GUI related, and by :ref:`Node2D<class_Node2D>` for anything 2D engine related.
+
+Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
+
+Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
+
+Canvas items can also be hidden (hiding also their subtree). They provide many means for changing standard parameters such as opacity (for it and the subtree) and self opacity, blend mode.
+
+Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`../tutorials/2d/custom_drawing_in_2d`
+
+Property Descriptions
+---------------------
 
   .. _class_CanvasItem_light_mask:
 
-- :ref:`int<class_int>` **light_mask** - The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_light2d>` nodes. Default value: ``1``.
+- :ref:`int<class_int>` **light_mask** - The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes. Default value: ``1``.
 
   .. _class_CanvasItem_material:
 
-- :ref:`Material<class_material>` **material** - The material applied to textures on this ``CanvasItem``. Default value: ``null``.
+- :ref:`Material<class_Material>` **material** - The material applied to textures on this ``CanvasItem``. Default value: ``null``.
 
   .. _class_CanvasItem_modulate:
 
-- :ref:`Color<class_color>` **modulate** - The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
+- :ref:`Color<class_Color>` **modulate** - The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
 
   .. _class_CanvasItem_self_modulate:
 
-- :ref:`Color<class_color>` **self_modulate** - The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
+- :ref:`Color<class_Color>` **self_modulate** - The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
 
   .. _class_CanvasItem_show_behind_parent:
 
@@ -175,51 +218,8 @@ Member Variables
 - :ref:`bool<class_bool>` **visible** - If ``true`` this ``CanvasItem`` is drawn. Default value: ``true``.
 
 
-Numeric Constants
------------------
-
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
-- **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
-- **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
-- **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
-- **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
-
-Enums
------
-
-  .. _enum_CanvasItem_BlendMode:
-
-enum **BlendMode**
-
-- **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
-- **BLEND_MODE_ADD** = **1** --- Additive blending mode.
-- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
-- **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
-- **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
-- **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
-
-
-Description
------------
-
-Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_control>`, for anything GUI related, and by :ref:`Node2D<class_node2d>` for anything 2D engine related.
-
-Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
-
-Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
-
-Canvas items can also be hidden (hiding also their subtree). They provide many means for changing standard parameters such as opacity (for it and the subtree) and self opacity, blend mode.
-
-Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
-
-Tutorials
----------
-
-- :doc:`../tutorials/2d/2d_transforms`
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_CanvasItem__draw:
 
@@ -229,185 +229,189 @@ Called (if exists) to draw the canvas item.
 
 .. _class_CanvasItem_draw_char:
 
-- :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` char, :ref:`String<class_string>` next, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ) **)**
+- :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
 Draws a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
 
 .. _class_CanvasItem_draw_circle:
 
-- void **draw_circle** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_color>` color **)**
+- void **draw_circle** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
 Draws a colored circle.
 
 .. _class_CanvasItem_draw_colored_polygon:
 
-- void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a colored polygon of any amount of points, convex or concave.
 
 .. _class_CanvasItem_draw_line:
 
-- void **draw_line** **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
 .. _class_CanvasItem_draw_mesh:
 
-- void **draw_mesh** **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**
+- void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 .. _class_CanvasItem_draw_multiline:
 
-- void **draw_multiline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_multiline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``color`` and ``width`` and optional antialiasing.
 
 .. _class_CanvasItem_draw_multiline_colors:
 
-- void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
 .. _class_CanvasItem_draw_multimesh:
 
-- void **draw_multimesh** **(** :ref:`Mesh<class_mesh>` mesh, :ref:`Texture<class_texture>` texture, :ref:`Texture<class_texture>` normal_map=null **)**
+- void **draw_multimesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 .. _class_CanvasItem_draw_polygon:
 
-- void **draw_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a polygon of any amount of points, convex or concave.
 
 .. _class_CanvasItem_draw_polyline:
 
-- void **draw_polyline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_polyline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing.
 
 .. _class_CanvasItem_draw_polyline_colors:
 
-- void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+- void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws interconnected line segments with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
 .. _class_CanvasItem_draw_primitive:
 
-- void **draw_primitive** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs, :ref:`Texture<class_texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_texture>` normal_map=null **)**
+- void **draw_primitive** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
 
 .. _class_CanvasItem_draw_rect:
 
-- void **draw_rect** **(** :ref:`Rect2<class_rect2>` rect, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` filled=true **)**
+- void **draw_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true **)**
 
 Draws a colored rectangle.
 
 .. _class_CanvasItem_draw_set_transform:
 
-- void **draw_set_transform** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` scale **)**
+- void **draw_set_transform** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale **)**
 
 Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
 .. _class_CanvasItem_draw_set_transform_matrix:
 
-- void **draw_set_transform_matrix** **(** :ref:`Transform2D<class_transform2d>` xform **)**
+- void **draw_set_transform_matrix** **(** :ref:`Transform2D<class_Transform2D>` xform **)**
 
 Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
 .. _class_CanvasItem_draw_string:
 
-- void **draw_string** **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` text, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
+- void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
 Draws a string using a custom font.
 
 .. _class_CanvasItem_draw_style_box:
 
-- void **draw_style_box** **(** :ref:`StyleBox<class_stylebox>` style_box, :ref:`Rect2<class_rect2>` rect **)**
+- void **draw_style_box** **(** :ref:`StyleBox<class_StyleBox>` style_box, :ref:`Rect2<class_Rect2>` rect **)**
 
 Draws a styled rectangle.
 
 .. _class_CanvasItem_draw_texture:
 
-- void **draw_texture** **(** :ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_texture>` normal_map=null **)**
+- void **draw_texture** **(** :ref:`Texture<class_Texture>` texture, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a texture at a given position.
 
 .. _class_CanvasItem_draw_texture_rect:
 
-- void **draw_texture_rect** **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)**
+- void **draw_texture_rect** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a textured rectangle at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
 .. _class_CanvasItem_draw_texture_rect_region:
 
-- void **draw_texture_rect_region** **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
+- void **draw_texture_rect_region** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
 
 Draws a textured rectangle region at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
+.. _class_CanvasItem_force_update_transform:
+
+- void **force_update_transform** **(** **)**
+
 .. _class_CanvasItem_get_canvas:
 
-- :ref:`RID<class_rid>` **get_canvas** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
-Return the :ref:`RID<class_rid>` of the :ref:`World2D<class_world2d>` canvas where this item is in.
+Return the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
 .. _class_CanvasItem_get_canvas_item:
 
-- :ref:`RID<class_rid>` **get_canvas_item** **(** **)** const
+- :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
 
-Return the canvas item RID used by :ref:`VisualServer<class_visualserver>` for this item.
+Return the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
 
 .. _class_CanvasItem_get_canvas_transform:
 
-- :ref:`Transform2D<class_transform2d>` **get_canvas_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** const
 
 Get the transform matrix of this item's canvas.
 
 .. _class_CanvasItem_get_global_mouse_position:
 
-- :ref:`Vector2<class_vector2>` **get_global_mouse_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
 
 Get the global position of the mouse.
 
 .. _class_CanvasItem_get_global_transform:
 
-- :ref:`Transform2D<class_transform2d>` **get_global_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** const
 
 Get the global transform matrix of this item.
 
 .. _class_CanvasItem_get_global_transform_with_canvas:
 
-- :ref:`Transform2D<class_transform2d>` **get_global_transform_with_canvas** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
 
 Get the global transform matrix of this item in relation to the canvas.
 
 .. _class_CanvasItem_get_local_mouse_position:
 
-- :ref:`Vector2<class_vector2>` **get_local_mouse_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** const
 
 Get the mouse position relative to this item's position.
 
 .. _class_CanvasItem_get_transform:
 
-- :ref:`Transform2D<class_transform2d>` **get_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
 
 Get the transform matrix of this item.
 
 .. _class_CanvasItem_get_viewport_rect:
 
-- :ref:`Rect2<class_rect2>` **get_viewport_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** const
 
-Get the viewport's boundaries as a :ref:`Rect2<class_rect2>`.
+Get the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_CanvasItem_get_viewport_transform:
 
-- :ref:`Transform2D<class_transform2d>` **get_viewport_transform** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
 
 Get this item's transform in relation to the viewport.
 
 .. _class_CanvasItem_get_world_2d:
 
-- :ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const
+- :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** const
 
-Get the :ref:`World2D<class_world2d>` where this item is in.
+Get the :ref:`World2D<class_World2D>` where this item is in.
 
 .. _class_CanvasItem_hide:
 
@@ -437,17 +441,17 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_scenetree>`, its :ref:`visible<class_CanvasItem_visible>` property is ``true`` and its inherited visibility is also ``true``.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_visible>` property is ``true`` and its inherited visibility is also ``true``.
 
 .. _class_CanvasItem_make_canvas_position_local:
 
-- :ref:`Vector2<class_vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_vector2>` screen_point **)** const
+- :ref:`Vector2<class_Vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
 
 Assigns ``screen_point`` as this node's new local transform.
 
 .. _class_CanvasItem_make_input_local:
 
-- :ref:`InputEvent<class_inputevent>` **make_input_local** **(** :ref:`InputEvent<class_inputevent>` event **)** const
+- :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
 

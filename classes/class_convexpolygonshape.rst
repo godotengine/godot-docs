@@ -7,8 +7,7 @@
 ConvexPolygonShape
 ==================
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Convex polygon shape for 3D physics.
 
-Member Variables
-----------------
-
-  .. _class_ConvexPolygonShape_points:
-
-- :ref:`PoolVector3Array<class_poolvector3array>` **points** - The list of 3D points forming the convex polygon shape.
-
-
 Description
 -----------
 
-Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_physicsbody>` or area.
+Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or area.
+
+Property Descriptions
+---------------------
+
+  .. _class_ConvexPolygonShape_points:
+
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **points** - The list of 3D points forming the convex polygon shape.
+
 

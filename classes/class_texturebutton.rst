@@ -7,8 +7,7 @@
 TextureButton
 =============
 
-**Inherits:** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,44 +15,8 @@ Brief Description
 
 Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
 
-Member Variables
-----------------
-
-  .. _class_TextureButton_expand:
-
-- :ref:`bool<class_bool>` **expand** - If ``true`` the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_stretch_mode>`. If ``false`` the texture will not scale with the node. Default value: ``false``.
-
-  .. _class_TextureButton_stretch_mode:
-
-- :ref:`StretchMode<enum_texturebutton_stretchmode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
-
-  .. _class_TextureButton_texture_click_mask:
-
-- :ref:`BitMap<class_bitmap>` **texture_click_mask** - Pure black and white Bitmap image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
-
-  .. _class_TextureButton_texture_disabled:
-
-- :ref:`Texture<class_texture>` **texture_disabled** - Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_disabled>`.
-
-  .. _class_TextureButton_texture_focused:
-
-- :ref:`Texture<class_texture>` **texture_focused** - Texture to display when the node has mouse or keyboard focus.
-
-  .. _class_TextureButton_texture_hover:
-
-- :ref:`Texture<class_texture>` **texture_hover** - Texture to display when the mouse hovers the node.
-
-  .. _class_TextureButton_texture_normal:
-
-- :ref:`Texture<class_texture>` **texture_normal** - Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
-
-  .. _class_TextureButton_texture_pressed:
-
-- :ref:`Texture<class_texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_shortcut>` key.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_TextureButton_StretchMode:
 
@@ -71,7 +34,43 @@ enum **StretchMode**
 Description
 -----------
 
-``TextureButton`` has the same functionality as :ref:`Button<class_button>`, except it uses sprites instead of Godot's :ref:`Theme<class_theme>` resource. It is faster to create, but it doesn't support localization like more complex Controls.
+``TextureButton`` has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex Controls.
 
 The Normal state's texture is required. Others are optional.
+
+Property Descriptions
+---------------------
+
+  .. _class_TextureButton_expand:
+
+- :ref:`bool<class_bool>` **expand** - If ``true`` the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_stretch_mode>`. If ``false`` the texture will not scale with the node. Default value: ``false``.
+
+  .. _class_TextureButton_stretch_mode:
+
+- :ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
+
+  .. _class_TextureButton_texture_click_mask:
+
+- :ref:`BitMap<class_BitMap>` **texture_click_mask** - Pure black and white Bitmap image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
+
+  .. _class_TextureButton_texture_disabled:
+
+- :ref:`Texture<class_Texture>` **texture_disabled** - Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_disabled>`.
+
+  .. _class_TextureButton_texture_focused:
+
+- :ref:`Texture<class_Texture>` **texture_focused** - Texture to display when the node has mouse or keyboard focus.
+
+  .. _class_TextureButton_texture_hover:
+
+- :ref:`Texture<class_Texture>` **texture_hover** - Texture to display when the mouse hovers the node.
+
+  .. _class_TextureButton_texture_normal:
+
+- :ref:`Texture<class_Texture>` **texture_normal** - Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
+
+  .. _class_TextureButton_texture_pressed:
+
+- :ref:`Texture<class_Texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_shortcut>` key.
+
 

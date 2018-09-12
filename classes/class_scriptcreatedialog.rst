@@ -7,20 +7,19 @@
 ScriptCreateDialog
 ==================
 
-**Inherits:** :ref:`ConfirmationDialog<class_confirmationdialog>` **<** :ref:`AcceptDialog<class_acceptdialog>` **<** :ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-The Editor's popup dialog for creating new :ref:`Script<class_script>` files.
+The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`config<class_ScriptCreateDialog_config>` **(** :ref:`String<class_string>` inherits, :ref:`String<class_string>` path **)** |
+| void  | :ref:`config<class_ScriptCreateDialog_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)** |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -28,7 +27,7 @@ Signals
 
 .. _class_ScriptCreateDialog_script_created:
 
-- **script_created** **(** :ref:`Object<class_object>` script **)**
+- **script_created** **(** :ref:`Script<class_Script>` script **)**
 
 Emitted when the user clicks the OK button.
 
@@ -45,12 +44,12 @@ The ScriptCreateDialog creates script files according to a given template for a 
     dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # for script types
     dialog.popup_centered()
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ScriptCreateDialog_config:
 
-- void **config** **(** :ref:`String<class_string>` inherits, :ref:`String<class_string>` path **)**
+- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 

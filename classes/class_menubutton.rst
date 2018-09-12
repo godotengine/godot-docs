@@ -7,20 +7,19 @@
 MenuButton
 ==========
 
-**Inherits:** :ref:`Button<class_button>` **<** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked.
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** const                                                    |
+| :ref:`PopupMenu<class_PopupMenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** const                                                    |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_disable_shortcuts<class_MenuButton_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -32,22 +31,22 @@ Signals
 
 - **about_to_show** **(** **)**
 
-Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
+Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
 
 Description
 -----------
 
-Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_MenuButton_get_popup:
 
-- :ref:`PopupMenu<class_popupmenu>` **get_popup** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
-Return the :ref:`PopupMenu<class_popupmenu>` contained in this button.
+Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. _class_MenuButton_set_disable_shortcuts:
 

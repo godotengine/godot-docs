@@ -7,8 +7,7 @@
 GradientTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,20 @@ Brief Description
 
 Gradient filled texture.
 
-Member Variables
-----------------
-
-  .. _class_GradientTexture_gradient:
-
-- :ref:`Gradient<class_gradient>` **gradient** - The :ref:`Gradient<class_gradient>` that will be used to fill the texture.
-
-  .. _class_GradientTexture_width:
-
-- :ref:`int<class_int>` **width** - The number of color samples that will be obtained from the :ref:`Gradient<class_gradient>`.
-
-
 Description
 -----------
 
-Uses a :ref:`Gradient<class_gradient>` to fill the texture data, the gradient will be filled from left to right using colors obtained from the gradient, this means that the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`set_width<class_GradientTexture_set_width>`).
+Uses a :ref:`Gradient<class_Gradient>` to fill the texture data, the gradient will be filled from left to right using colors obtained from the gradient, this means that the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`set_width<class_GradientTexture_set_width>`).
+
+Property Descriptions
+---------------------
+
+  .. _class_GradientTexture_gradient:
+
+- :ref:`Gradient<class_Gradient>` **gradient** - The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
+
+  .. _class_GradientTexture_width:
+
+- :ref:`int<class_int>` **width** - The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
+
 

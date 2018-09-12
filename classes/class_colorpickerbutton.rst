@@ -7,22 +7,21 @@
 ColorPickerButton
 =================
 
-**Inherits:** :ref:`Button<class_button>` **<** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Button that pops out a :ref:`ColorPicker<class_colorpicker>`.
+Button that pops out a :ref:`ColorPicker<class_ColorPicker>`.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+-------------------------------------------------------------------+
-| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
+| :ref:`ColorPicker<class_ColorPicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
 +----------------------------------------+-------------------------------------------------------------------+
-| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
+| :ref:`PopupPanel<class_PopupPanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
 +----------------------------------------+-------------------------------------------------------------------+
 
 Signals
@@ -30,7 +29,7 @@ Signals
 
 .. _class_ColorPickerButton_color_changed:
 
-- **color_changed** **(** :ref:`Color<class_color>` color **)**
+- **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color changes.
 
@@ -39,36 +38,36 @@ Emitted when the color changes.
 - **popup_closed** **(** **)**
 
 
-Member Variables
-----------------
-
-  .. _class_ColorPickerButton_color:
-
-- :ref:`Color<class_color>` **color** - The currently selected color.
-
-  .. _class_ColorPickerButton_edit_alpha:
-
-- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_colorpicker>` will be visible. Default value: ``true``.
-
-
 Description
 -----------
 
-Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_colorpicker>` visibility.
+Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accesible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ColorPickerButton_color:
+
+- :ref:`Color<class_Color>` **color** - The currently selected color.
+
+  .. _class_ColorPickerButton_edit_alpha:
+
+- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible. Default value: ``true``.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ColorPickerButton_get_picker:
 
-- :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)**
+- :ref:`ColorPicker<class_ColorPicker>` **get_picker** **(** **)**
 
-Returns the :ref:`ColorPicker<class_colorpicker>` that this node toggles.
+Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
 .. _class_ColorPickerButton_get_popup:
 
-- :ref:`PopupPanel<class_popuppanel>` **get_popup** **(** **)**
+- :ref:`PopupPanel<class_PopupPanel>` **get_popup** **(** **)**
 
-Returns the control's :ref:`PopupPanel<class_popuppanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
+Returns the control's :ref:`PopupPanel<class_PopupPanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
 

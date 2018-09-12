@@ -7,10 +7,8 @@
 WebSocketMultiplayerPeer
 ========================
 
-**Inherits:** :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **<** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`WebSocketClient<class_websocketclient>`, :ref:`WebSocketServer<class_websocketserver>`
-
+**Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`WebSocketClient<class_WebSocketClient>`, :ref:`WebSocketServer<class_WebSocketServer>`
 **Category:** Core
 
 Brief Description
@@ -18,11 +16,11 @@ Brief Description
 
 Base class for WebSocket server and client.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`WebSocketPeer<class_websocketpeer>`  | :ref:`get_peer<class_WebSocketMultiplayerPeer_get_peer>` **(** :ref:`int<class_int>` peer_id **)** const |
+| :ref:`WebSocketPeer<class_WebSocketPeer>`  | :ref:`get_peer<class_WebSocketMultiplayerPeer_get_peer>` **(** :ref:`int<class_int>` peer_id **)** const |
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -38,15 +36,15 @@ Emitted when a packet is received from a peer. Note: this signal is only emitted
 Description
 -----------
 
-Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_multiplayerapi>`.
+Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_WebSocketMultiplayerPeer_get_peer:
 
-- :ref:`WebSocketPeer<class_websocketpeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
+- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
 
-Returns the :ref:`WebSocketPeer<class_websocketpeer>` associated to the given ``peer_id``.
+Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
 

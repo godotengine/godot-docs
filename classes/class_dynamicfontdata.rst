@@ -7,29 +7,16 @@
 DynamicFontData
 ===============
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Used with :ref:`DynamicFont<class_dynamicfont>` to describe the location of a font file.
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
 
-Member Variables
-----------------
-
-  .. _class_DynamicFontData_font_path:
-
-- :ref:`String<class_string>` **font_path** - The path to the vector font file.
-
-  .. _class_DynamicFontData_hinting:
-
-- :ref:`Hinting<enum_dynamicfontdata_hinting>` **hinting** - The font hinting mode used by FreeType.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_DynamicFontData_Hinting:
 
@@ -43,5 +30,17 @@ enum **Hinting**
 Description
 -----------
 
-Used with :ref:`DynamicFont<class_dynamicfont>` to describe the location of a vector font file for dynamic rendering at runtime.
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
+
+Property Descriptions
+---------------------
+
+  .. _class_DynamicFontData_font_path:
+
+- :ref:`String<class_String>` **font_path** - The path to the vector font file.
+
+  .. _class_DynamicFontData_hinting:
+
+- :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting** - The font hinting mode used by FreeType.
+
 

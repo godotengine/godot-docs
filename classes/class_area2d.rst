@@ -7,8 +7,7 @@
 Area2D
 ======
 
-**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 2D area for detection and 2D physics influence.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`get_collision_layer_bit<class_Area2D_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`get_collision_mask_bit<class_Area2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_overlapping_areas<class_Area2D_get_overlapping_areas>` **(** **)** const                                                        |
+| :ref:`Array<class_Array>`  | :ref:`get_overlapping_areas<class_Area2D_get_overlapping_areas>` **(** **)** const                                                        |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_overlapping_bodies<class_Area2D_get_overlapping_bodies>` **(** **)** const                                                      |
+| :ref:`Array<class_Array>`  | :ref:`get_overlapping_bodies<class_Area2D_get_overlapping_bodies>` **(** **)** const                                                      |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`overlaps_area<class_Area2D_overlaps_area>` **(** :ref:`Node<class_node>` area **)** const                                           |
+| :ref:`bool<class_bool>`    | :ref:`overlaps_area<class_Area2D_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** const                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`overlaps_body<class_Area2D_overlaps_body>` **(** :ref:`Node<class_node>` body **)** const                                           |
+| :ref:`bool<class_bool>`    | :ref:`overlaps_body<class_Area2D_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** const                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_collision_layer_bit<class_Area2D_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,55 +41,74 @@ Signals
 
 .. _class_Area2D_area_entered:
 
-- **area_entered** **(** :ref:`Object<class_object>` area **)**
+- **area_entered** **(** :ref:`Area2D<class_Area2D>` area **)**
 
 Emitted when another area enters.
 
 .. _class_Area2D_area_exited:
 
-- **area_exited** **(** :ref:`Object<class_object>` area **)**
+- **area_exited** **(** :ref:`Area2D<class_Area2D>` area **)**
 
 Emitted when another area exits.
 
 .. _class_Area2D_area_shape_entered:
 
-- **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
+- **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area enters, reporting which shapes overlapped.
 
 .. _class_Area2D_area_shape_exited:
 
-- **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
+- **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area exits, reporting which shapes were overlapping.
 
 .. _class_Area2D_body_entered:
 
-- **body_entered** **(** :ref:`Object<class_object>` body **)**
+- **body_entered** **(** :ref:`PhysicsBody2D<class_PhysicsBody2D>` body **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object enters.
 
 .. _class_Area2D_body_exited:
 
-- **body_exited** **(** :ref:`Object<class_object>` body **)**
+- **body_exited** **(** :ref:`PhysicsBody2D<class_PhysicsBody2D>` body **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object exits.
 
 .. _class_Area2D_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`PhysicsBody2D<class_PhysicsBody2D>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters, reporting which shapes overlapped.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object enters, reporting which shapes overlapped.
 
 .. _class_Area2D_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`PhysicsBody2D<class_PhysicsBody2D>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
-Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting which shapes were overlapping.
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object exits, reporting which shapes were overlapping.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Area2D_SpaceOverride:
+
+enum **SpaceOverride**
+
+- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
+- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
+- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
+- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
+- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
+
+
+Description
+-----------
+
+2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
+
+Property Descriptions
+---------------------
 
   .. _class_Area2D_angular_damp:
 
@@ -98,7 +116,7 @@ Member Variables
 
   .. _class_Area2D_audio_bus_name:
 
-- :ref:`String<class_string>` **audio_bus_name** - The name of the area's audio bus.
+- :ref:`String<class_String>` **audio_bus_name** - The name of the area's audio bus.
 
   .. _class_Area2D_audio_bus_override:
 
@@ -126,7 +144,7 @@ Member Variables
 
   .. _class_Area2D_gravity_vec:
 
-- :ref:`Vector2<class_vector2>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the point of attraction.
+- :ref:`Vector2<class_Vector2>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the point of attraction.
 
   .. _class_Area2D_linear_damp:
 
@@ -146,30 +164,11 @@ Member Variables
 
   .. _class_Area2D_space_override:
 
-- :ref:`SpaceOverride<enum_area2d_spaceoverride>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
+- :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
 
 
-Enums
------
-
-  .. _enum_Area2D_SpaceOverride:
-
-enum **SpaceOverride**
-
-- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
-- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
-- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
-- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
-- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
-
-
-Description
------------
-
-2D area that detects :ref:`CollisionObject2D<class_collisionobject2d>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Area2D_get_collision_layer_bit:
 
@@ -185,25 +184,25 @@ Return an individual bit on the collision mask. Describes whether this area will
 
 .. _class_Area2D_get_overlapping_areas:
 
-- :ref:`Array<class_array>` **get_overlapping_areas** **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** const
 
 Returns a list of intersecting ``Area2D``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
 .. _class_Area2D_get_overlapping_bodies:
 
-- :ref:`Array<class_array>` **get_overlapping_bodies** **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
 
-Returns a list of intersecting :ref:`PhysicsBody2D<class_physicsbody2d>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
 .. _class_Area2D_overlaps_area:
 
-- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_node>` area **)** const
+- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
 If ``true`` the given area overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area2D_overlaps_body:
 
-- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_node>` body **)** const
+- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
 If ``true`` the given body overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 

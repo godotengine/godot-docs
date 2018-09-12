@@ -7,8 +7,7 @@
 Tween
 =====
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,35 +15,35 @@ Brief Description
 
 Smoothly animates a node's properties over time.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`follow_method<class_Tween_follow_method>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_method, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**                  |
+| :ref:`bool<class_bool>`    | :ref:`follow_method<class_Tween_follow_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` initial_val, :ref:`Object<class_Object>` target, :ref:`String<class_String>` target_method, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**                  |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`follow_property<class_Tween_follow_property>` **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Object<class_object>` target, :ref:`NodePath<class_nodepath>` target_property, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**  |
+| :ref:`bool<class_bool>`    | :ref:`follow_property<class_Tween_follow_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Object<class_Object>` target, :ref:`NodePath<class_NodePath>` target_property, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**  |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_runtime<class_Tween_get_runtime>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                                                                     |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`interpolate_callback<class_Tween_interpolate_callback>` **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**                                                               |
+| :ref:`bool<class_bool>`    | :ref:`interpolate_callback<class_Tween_interpolate_callback>` **(** :ref:`Object<class_Object>` object, :ref:`float<class_float>` duration, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` arg1=null, :ref:`Variant<class_Variant>` arg2=null, :ref:`Variant<class_Variant>` arg3=null, :ref:`Variant<class_Variant>` arg4=null, :ref:`Variant<class_Variant>` arg5=null **)**                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`interpolate_deferred_callback<class_Tween_interpolate_deferred_callback>` **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**                                             |
+| :ref:`bool<class_bool>`    | :ref:`interpolate_deferred_callback<class_Tween_interpolate_deferred_callback>` **(** :ref:`Object<class_Object>` object, :ref:`float<class_float>` duration, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` arg1=null, :ref:`Variant<class_Variant>` arg2=null, :ref:`Variant<class_Variant>` arg3=null, :ref:`Variant<class_Variant>` arg4=null, :ref:`Variant<class_Variant>` arg5=null **)**                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`interpolate_method<class_Tween_interpolate_method>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**                                              |
+| :ref:`bool<class_bool>`    | :ref:`interpolate_method<class_Tween_interpolate_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**                                              |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`interpolate_property<class_Tween_interpolate_property>` **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**                                    |
+| :ref:`bool<class_bool>`    | :ref:`interpolate_property<class_Tween_interpolate_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**                                    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_active<class_Tween_is_active>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                                                                         |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`remove<class_Tween_remove>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**                                                                                                                                                                                                                                                                                                                                              |
+| :ref:`bool<class_bool>`    | :ref:`remove<class_Tween_remove>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**                                                                                                                                                                                                                                                                                                                                              |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`remove_all<class_Tween_remove_all>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`reset<class_Tween_reset>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**                                                                                                                                                                                                                                                                                                                                                |
+| :ref:`bool<class_bool>`    | :ref:`reset<class_Tween_reset>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**                                                                                                                                                                                                                                                                                                                                                |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`reset_all<class_Tween_reset_all>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`resume<class_Tween_resume>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**                                                                                                                                                                                                                                                                                                                                              |
+| :ref:`bool<class_bool>`    | :ref:`resume<class_Tween_resume>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**                                                                                                                                                                                                                                                                                                                                              |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`resume_all<class_Tween_resume_all>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,13 +53,13 @@ Member Functions
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`start<class_Tween_start>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`stop<class_Tween_stop>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**                                                                                                                                                                                                                                                                                                                                                  |
+| :ref:`bool<class_bool>`    | :ref:`stop<class_Tween_stop>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**                                                                                                                                                                                                                                                                                                                                                  |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`stop_all<class_Tween_stop_all>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`targeting_method<class_Tween_targeting_method>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**            |
+| :ref:`bool<class_bool>`    | :ref:`targeting_method<class_Tween_targeting_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Object<class_Object>` initial, :ref:`String<class_String>` initial_method, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**            |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`targeting_property<class_Tween_targeting_property>` **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Object<class_object>` initial, :ref:`NodePath<class_nodepath>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)** |
+| :ref:`bool<class_bool>`    | :ref:`targeting_property<class_Tween_targeting_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Object<class_Object>` initial, :ref:`NodePath<class_NodePath>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`tell<class_Tween_tell>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,41 +69,25 @@ Signals
 
 .. _class_Tween_tween_completed:
 
-- **tween_completed** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key **)**
+- **tween_completed** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key **)**
 
 Emitted when a tween ends.
 
 .. _class_Tween_tween_started:
 
-- **tween_started** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key **)**
+- **tween_started** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key **)**
 
 Emitted when a tween starts.
 
 .. _class_Tween_tween_step:
 
-- **tween_step** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value **)**
+- **tween_step** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_Object>` value **)**
 
 Emitted at each step of the animation.
 
 
-Member Variables
-----------------
-
-  .. _class_Tween_playback_process_mode:
-
-- :ref:`TweenProcessMode<enum_tween_tweenprocessmode>` **playback_process_mode** - The tween's animation process thread. See :ref:`TweenProcessMode<enum_@globalscope_tweenprocessmode>`. Default value: :ref:`TWEEN_PROCESS_IDLE<enum_@globalscope_tween_process_idle>`.
-
-  .. _class_Tween_playback_speed:
-
-- :ref:`float<class_float>` **playback_speed** - The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, ``2.0`` for two times normal speed, or ``0.5`` for half of the normal speed. A value of ``0`` pauses the animation, but see also :ref:`set_active<class_Tween_set_active>` or :ref:`stop_all<class_Tween_stop_all>` for this.
-
-  .. _class_Tween_repeat:
-
-- :ref:`bool<class_bool>` **repeat** - If ``true`` the tween loops.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Tween_TweenProcessMode:
 
@@ -156,26 +139,42 @@ Here is a brief usage example that causes a 2D node to move smoothly between two
 
 Many methods require a property name, such as "position" above. You can find the correct property name by hovering over the property in the Inspector.
 
-Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_@globalscope_transitiontype>` constant, and refers to the way the timing of the animation is handled (see ``http://easings.net/`` for some examples). The second accepts an :ref:`EaseType<enum_@globalscope_easetype>` constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_@globalscope_transitiontype>` constants with :ref:`EASE_IN_OUT<enum_@globalscope_ease_in_out>`, and use the one that looks best.
+Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an :ref:`TransitionType<enum_@GlobalScope_TransitionType>` constant, and refers to the way the timing of the animation is handled (see ``http://easings.net/`` for some examples). The second accepts an :ref:`EaseType<enum_@GlobalScope_EaseType>` constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_@GlobalScope_TransitionType>` constants with :ref:`EASE_IN_OUT<enum_@GlobalScope_EASE_IN_OUT>`, and use the one that looks best.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Tween_playback_process_mode:
+
+- :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **playback_process_mode** - The tween's animation process thread. See :ref:`TweenProcessMode<enum_@GlobalScope_TweenProcessMode>`. Default value: :ref:`TWEEN_PROCESS_IDLE<enum_@GlobalScope_TWEEN_PROCESS_IDLE>`.
+
+  .. _class_Tween_playback_speed:
+
+- :ref:`float<class_float>` **playback_speed** - The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, ``2.0`` for two times normal speed, or ``0.5`` for half of the normal speed. A value of ``0`` pauses the animation, but see also :ref:`set_active<class_Tween_set_active>` or :ref:`stop_all<class_Tween_stop_all>` for this.
+
+  .. _class_Tween_repeat:
+
+- :ref:`bool<class_bool>` **repeat** - If ``true`` the tween loops.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Tween_follow_method:
 
-- :ref:`bool<class_bool>` **follow_method** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_method, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **follow_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` initial_val, :ref:`Object<class_Object>` target, :ref:`String<class_String>` target_method, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Follows ``method`` of ``object`` and applies the returned value on ``target_method`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` later. Methods are called with consecutive values.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_follow_property:
 
-- :ref:`bool<class_bool>` **follow_property** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Object<class_object>` target, :ref:`NodePath<class_nodepath>` target_property, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **follow_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Object<class_Object>` target, :ref:`NodePath<class_NodePath>` target_property, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Follows ``property`` of ``object`` and applies it on ``target_property`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_get_runtime:
 
@@ -185,31 +184,31 @@ Returns the total time needed for all tweens to end. If you have two tweens, one
 
 .. _class_Tween_interpolate_callback:
 
-- :ref:`bool<class_bool>` **interpolate_callback** **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**
+- :ref:`bool<class_bool>` **interpolate_callback** **(** :ref:`Object<class_Object>` object, :ref:`float<class_float>` duration, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` arg1=null, :ref:`Variant<class_Variant>` arg2=null, :ref:`Variant<class_Variant>` arg3=null, :ref:`Variant<class_Variant>` arg4=null, :ref:`Variant<class_Variant>` arg5=null **)**
 
 Calls ``callback`` of ``object`` after ``duration``. ``arg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_interpolate_deferred_callback:
 
-- :ref:`bool<class_bool>` **interpolate_deferred_callback** **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**
+- :ref:`bool<class_bool>` **interpolate_deferred_callback** **(** :ref:`Object<class_Object>` object, :ref:`float<class_float>` duration, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` arg1=null, :ref:`Variant<class_Variant>` arg2=null, :ref:`Variant<class_Variant>` arg3=null, :ref:`Variant<class_Variant>` arg4=null, :ref:`Variant<class_Variant>` arg5=null **)**
 
 Calls ``callback`` of ``object`` after ``duration`` on the main thread (similar to :ref:`Object.call_deferred<class_Object_call_deferred>`). ``arg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_interpolate_method:
 
-- :ref:`bool<class_bool>` **interpolate_method** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **interpolate_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are called with consecutive values.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_interpolate_property:
 
-- :ref:`bool<class_bool>` **interpolate_property** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **interpolate_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Setting the initial value to ``null`` uses the current value of the property.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_is_active:
 
@@ -219,7 +218,7 @@ Returns ``true`` if any tweens are currently running. Note that this method does
 
 .. _class_Tween_remove:
 
-- :ref:`bool<class_bool>` **remove** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**
+- :ref:`bool<class_bool>` **remove** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
 Stops animation and removes a tween, given its object and property/method pair. By default, all tweens are removed, unless ``key`` is specified.
 
@@ -231,7 +230,7 @@ Stops animation and removes all tweens.
 
 .. _class_Tween_reset:
 
-- :ref:`bool<class_bool>` **reset** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**
+- :ref:`bool<class_bool>` **reset** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
 Resets a tween to its initial value (the one given, not the one before the tween), given its object and property/method pair. By default, all tweens are removed, unless ``key`` is specified.
 
@@ -243,7 +242,7 @@ Resets all tweens to their initial values (the ones given, not those before the 
 
 .. _class_Tween_resume:
 
-- :ref:`bool<class_bool>` **resume** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**
+- :ref:`bool<class_bool>` **resume** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
 Continues animating a stopped tween, given its object and property/method pair. By default, all tweens are resumed, unless ``key`` is specified.
 
@@ -273,7 +272,7 @@ Starts the tween. You can define animations both before and after this.
 
 .. _class_Tween_stop:
 
-- :ref:`bool<class_bool>` **stop** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**
+- :ref:`bool<class_bool>` **stop** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
 Stops a tween, given its object and property/method pair. By default, all tweens are stopped, unless ``key`` is specified.
 
@@ -285,19 +284,19 @@ Stops animating all tweens.
 
 .. _class_Tween_targeting_method:
 
-- :ref:`bool<class_bool>` **targeting_method** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **targeting_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Object<class_Object>` initial, :ref:`String<class_String>` initial_method, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Animates ``method`` of ``object`` from the value returned by ``initial_method`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecutive values.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_targeting_property:
 
-- :ref:`bool<class_bool>` **targeting_property** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Object<class_object>` initial, :ref:`NodePath<class_nodepath>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_tween_transitiontype>` trans_type, :ref:`EaseType<enum_tween_easetype>` ease_type, :ref:`float<class_float>` delay=0 **)**
+- :ref:`bool<class_bool>` **targeting_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Object<class_Object>` initial, :ref:`NodePath<class_NodePath>` initial_val, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type, :ref:`float<class_float>` delay=0 **)**
 
 Animates ``property`` of ``object`` from the current value of the ``initial_val`` property of ``initial`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-                Use :ref:`TransitionType<enum_@globalscope_transitiontype>` for ``trans_type`` and :ref:`EaseType<enum_@globalscope_easetype>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_tell:
 

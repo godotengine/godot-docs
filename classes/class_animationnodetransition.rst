@@ -7,8 +7,7 @@
 AnimationNodeTransition
 =======================
 
-**Inherits:** :ref:`AnimationNode<class_animationnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_AnimationNodeTransition_input_0/auto_advance:
 
@@ -25,7 +24,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_0/name:
 
-- :ref:`String<class_string>` **input_0/name**
+- :ref:`String<class_String>` **input_0/name**
 
   .. _class_AnimationNodeTransition_input_1/auto_advance:
 
@@ -33,7 +32,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_1/name:
 
-- :ref:`String<class_string>` **input_1/name**
+- :ref:`String<class_String>` **input_1/name**
 
   .. _class_AnimationNodeTransition_input_10/auto_advance:
 
@@ -41,7 +40,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_10/name:
 
-- :ref:`String<class_string>` **input_10/name**
+- :ref:`String<class_String>` **input_10/name**
 
   .. _class_AnimationNodeTransition_input_11/auto_advance:
 
@@ -49,7 +48,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_11/name:
 
-- :ref:`String<class_string>` **input_11/name**
+- :ref:`String<class_String>` **input_11/name**
 
   .. _class_AnimationNodeTransition_input_12/auto_advance:
 
@@ -57,7 +56,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_12/name:
 
-- :ref:`String<class_string>` **input_12/name**
+- :ref:`String<class_String>` **input_12/name**
 
   .. _class_AnimationNodeTransition_input_13/auto_advance:
 
@@ -65,7 +64,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_13/name:
 
-- :ref:`String<class_string>` **input_13/name**
+- :ref:`String<class_String>` **input_13/name**
 
   .. _class_AnimationNodeTransition_input_14/auto_advance:
 
@@ -73,7 +72,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_14/name:
 
-- :ref:`String<class_string>` **input_14/name**
+- :ref:`String<class_String>` **input_14/name**
 
   .. _class_AnimationNodeTransition_input_15/auto_advance:
 
@@ -81,7 +80,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_15/name:
 
-- :ref:`String<class_string>` **input_15/name**
+- :ref:`String<class_String>` **input_15/name**
 
   .. _class_AnimationNodeTransition_input_16/auto_advance:
 
@@ -89,7 +88,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_16/name:
 
-- :ref:`String<class_string>` **input_16/name**
+- :ref:`String<class_String>` **input_16/name**
 
   .. _class_AnimationNodeTransition_input_17/auto_advance:
 
@@ -97,7 +96,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_17/name:
 
-- :ref:`String<class_string>` **input_17/name**
+- :ref:`String<class_String>` **input_17/name**
 
   .. _class_AnimationNodeTransition_input_18/auto_advance:
 
@@ -105,7 +104,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_18/name:
 
-- :ref:`String<class_string>` **input_18/name**
+- :ref:`String<class_String>` **input_18/name**
 
   .. _class_AnimationNodeTransition_input_19/auto_advance:
 
@@ -113,7 +112,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_19/name:
 
-- :ref:`String<class_string>` **input_19/name**
+- :ref:`String<class_String>` **input_19/name**
 
   .. _class_AnimationNodeTransition_input_2/auto_advance:
 
@@ -121,7 +120,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_2/name:
 
-- :ref:`String<class_string>` **input_2/name**
+- :ref:`String<class_String>` **input_2/name**
 
   .. _class_AnimationNodeTransition_input_20/auto_advance:
 
@@ -129,7 +128,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_20/name:
 
-- :ref:`String<class_string>` **input_20/name**
+- :ref:`String<class_String>` **input_20/name**
 
   .. _class_AnimationNodeTransition_input_21/auto_advance:
 
@@ -137,7 +136,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_21/name:
 
-- :ref:`String<class_string>` **input_21/name**
+- :ref:`String<class_String>` **input_21/name**
 
   .. _class_AnimationNodeTransition_input_22/auto_advance:
 
@@ -145,7 +144,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_22/name:
 
-- :ref:`String<class_string>` **input_22/name**
+- :ref:`String<class_String>` **input_22/name**
 
   .. _class_AnimationNodeTransition_input_23/auto_advance:
 
@@ -153,7 +152,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_23/name:
 
-- :ref:`String<class_string>` **input_23/name**
+- :ref:`String<class_String>` **input_23/name**
 
   .. _class_AnimationNodeTransition_input_24/auto_advance:
 
@@ -161,7 +160,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_24/name:
 
-- :ref:`String<class_string>` **input_24/name**
+- :ref:`String<class_String>` **input_24/name**
 
   .. _class_AnimationNodeTransition_input_25/auto_advance:
 
@@ -169,7 +168,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_25/name:
 
-- :ref:`String<class_string>` **input_25/name**
+- :ref:`String<class_String>` **input_25/name**
 
   .. _class_AnimationNodeTransition_input_26/auto_advance:
 
@@ -177,7 +176,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_26/name:
 
-- :ref:`String<class_string>` **input_26/name**
+- :ref:`String<class_String>` **input_26/name**
 
   .. _class_AnimationNodeTransition_input_27/auto_advance:
 
@@ -185,7 +184,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_27/name:
 
-- :ref:`String<class_string>` **input_27/name**
+- :ref:`String<class_String>` **input_27/name**
 
   .. _class_AnimationNodeTransition_input_28/auto_advance:
 
@@ -193,7 +192,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_28/name:
 
-- :ref:`String<class_string>` **input_28/name**
+- :ref:`String<class_String>` **input_28/name**
 
   .. _class_AnimationNodeTransition_input_29/auto_advance:
 
@@ -201,7 +200,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_29/name:
 
-- :ref:`String<class_string>` **input_29/name**
+- :ref:`String<class_String>` **input_29/name**
 
   .. _class_AnimationNodeTransition_input_3/auto_advance:
 
@@ -209,7 +208,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_3/name:
 
-- :ref:`String<class_string>` **input_3/name**
+- :ref:`String<class_String>` **input_3/name**
 
   .. _class_AnimationNodeTransition_input_30/auto_advance:
 
@@ -217,7 +216,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_30/name:
 
-- :ref:`String<class_string>` **input_30/name**
+- :ref:`String<class_String>` **input_30/name**
 
   .. _class_AnimationNodeTransition_input_31/auto_advance:
 
@@ -225,7 +224,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_31/name:
 
-- :ref:`String<class_string>` **input_31/name**
+- :ref:`String<class_String>` **input_31/name**
 
   .. _class_AnimationNodeTransition_input_4/auto_advance:
 
@@ -233,7 +232,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_4/name:
 
-- :ref:`String<class_string>` **input_4/name**
+- :ref:`String<class_String>` **input_4/name**
 
   .. _class_AnimationNodeTransition_input_5/auto_advance:
 
@@ -241,7 +240,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_5/name:
 
-- :ref:`String<class_string>` **input_5/name**
+- :ref:`String<class_String>` **input_5/name**
 
   .. _class_AnimationNodeTransition_input_6/auto_advance:
 
@@ -249,7 +248,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_6/name:
 
-- :ref:`String<class_string>` **input_6/name**
+- :ref:`String<class_String>` **input_6/name**
 
   .. _class_AnimationNodeTransition_input_7/auto_advance:
 
@@ -257,7 +256,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_7/name:
 
-- :ref:`String<class_string>` **input_7/name**
+- :ref:`String<class_String>` **input_7/name**
 
   .. _class_AnimationNodeTransition_input_8/auto_advance:
 
@@ -265,7 +264,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_8/name:
 
-- :ref:`String<class_string>` **input_8/name**
+- :ref:`String<class_String>` **input_8/name**
 
   .. _class_AnimationNodeTransition_input_9/auto_advance:
 
@@ -273,7 +272,7 @@ Member Variables
 
   .. _class_AnimationNodeTransition_input_9/name:
 
-- :ref:`String<class_string>` **input_9/name**
+- :ref:`String<class_String>` **input_9/name**
 
   .. _class_AnimationNodeTransition_input_count:
 

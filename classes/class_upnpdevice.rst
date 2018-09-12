@@ -7,8 +7,7 @@
 UPNPDevice
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,49 +15,21 @@ Brief Description
 
 UPNP device.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`add_port_mapping<class_UPNPDevice_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_string>` desc="", :ref:`String<class_string>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const |
+| :ref:`int<class_int>`        | :ref:`add_port_mapping<class_UPNPDevice_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`delete_port_mapping<class_UPNPDevice_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_string>` proto="UDP" **)** const                                                                                                         |
+| :ref:`int<class_int>`        | :ref:`delete_port_mapping<class_UPNPDevice_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const                                                                                                         |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_valid_gateway<class_UPNPDevice_is_valid_gateway>` **(** **)** const                                                                                                                                                                                   |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`query_external_address<class_UPNPDevice_query_external_address>` **(** **)** const                                                                                                                                                                       |
+| :ref:`String<class_String>`  | :ref:`query_external_address<class_UPNPDevice_query_external_address>` **(** **)** const                                                                                                                                                                       |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_UPNPDevice_description_url:
-
-- :ref:`String<class_string>` **description_url** - URL to the device description.
-
-  .. _class_UPNPDevice_igd_control_url:
-
-- :ref:`String<class_string>` **igd_control_url** - IDG control URL.
-
-  .. _class_UPNPDevice_igd_our_addr:
-
-- :ref:`String<class_string>` **igd_our_addr** - Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_upnpdevice>`.
-
-  .. _class_UPNPDevice_igd_service_type:
-
-- :ref:`String<class_string>` **igd_service_type** - IGD service type.
-
-  .. _class_UPNPDevice_igd_status:
-
-- :ref:`IGDStatus<enum_upnpdevice_igdstatus>` **igd_status** - IGD status. See :ref:`IGDStatus<enum_@globalscope_igdstatus>`.
-
-  .. _class_UPNPDevice_service_type:
-
-- :ref:`String<class_string>` **service_type** - Service type.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_UPNPDevice_IGDStatus:
 
@@ -79,20 +50,48 @@ enum **IGDStatus**
 Description
 -----------
 
-UPNP device. See :ref:`UPNP<class_upnp>` for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
+UPNP device. See :ref:`UPNP<class_UPNP>` for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_UPNPDevice_description_url:
+
+- :ref:`String<class_String>` **description_url** - URL to the device description.
+
+  .. _class_UPNPDevice_igd_control_url:
+
+- :ref:`String<class_String>` **igd_control_url** - IDG control URL.
+
+  .. _class_UPNPDevice_igd_our_addr:
+
+- :ref:`String<class_String>` **igd_our_addr** - Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
+
+  .. _class_UPNPDevice_igd_service_type:
+
+- :ref:`String<class_String>` **igd_service_type** - IGD service type.
+
+  .. _class_UPNPDevice_igd_status:
+
+- :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status** - IGD status. See :ref:`IGDStatus<enum_@GlobalScope_IGDStatus>`.
+
+  .. _class_UPNPDevice_service_type:
+
+- :ref:`String<class_String>` **service_type** - Service type.
+
+
+Method Descriptions
+-------------------
 
 .. _class_UPNPDevice_add_port_mapping:
 
-- :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_string>` desc="", :ref:`String<class_string>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
+- :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
 
-Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_upnpdevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_add_port_mapping>`.
+Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_UPNPDevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_add_port_mapping>`.
 
 .. _class_UPNPDevice_delete_port_mapping:
 
-- :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_string>` proto="UDP" **)** const
+- :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_delete_port_mapping>`.
 
@@ -104,8 +103,8 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 
 .. _class_UPNPDevice_query_external_address:
 
-- :ref:`String<class_string>` **query_external_address** **(** **)** const
+- :ref:`String<class_String>` **query_external_address** **(** **)** const
 
-Returns the external IP address of this :ref:`UPNPDevice<class_upnpdevice>` or an empty string.
+Returns the external IP address of this :ref:`UPNPDevice<class_UPNPDevice>` or an empty string.
 
 

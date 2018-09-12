@@ -14,15 +14,15 @@ Brief Description
 
 Integer Array.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`  | :ref:`PoolIntArray<class_PoolIntArray_PoolIntArray>` **(** :ref:`Array<class_array>` from **)**                |
+| :ref:`PoolIntArray<class_PoolIntArray>`  | :ref:`PoolIntArray<class_PoolIntArray_PoolIntArray>` **(** :ref:`Array<class_Array>` from **)**                |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`append<class_PoolIntArray_append>` **(** :ref:`int<class_int>` integer **)**                             |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`append_array<class_PoolIntArray_append_array>` **(** :ref:`PoolIntArray<class_poolintarray>` array **)** |
+| void                                     | :ref:`append_array<class_PoolIntArray_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`insert<class_PoolIntArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------+
@@ -44,12 +44,12 @@ Description
 
 Integer Array. Contains integers. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PoolIntArray_PoolIntArray:
 
-- :ref:`PoolIntArray<class_poolintarray>` **PoolIntArray** **(** :ref:`Array<class_array>` from **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **PoolIntArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
@@ -61,7 +61,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolIn
 
 .. _class_PoolIntArray_append_array:
 
-- void **append_array** **(** :ref:`PoolIntArray<class_poolintarray>` array **)**
+- void **append_array** **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)**
 
 Append an ``PoolIntArray`` at the end of this array.
 
@@ -75,7 +75,7 @@ Insert a new int at a given position in the array. The position must be valid, o
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array (so first element will now be the last).
+Reverse the order of the elements in the array.
 
 .. _class_PoolIntArray_push_back:
 

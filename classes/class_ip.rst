@@ -7,10 +7,8 @@
 IP
 ==
 
-**Inherits:** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`IP_Unix<class_ip_unix>`
-
+**Inherits:** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`IP_Unix<class_IP_Unix>`
 **Category:** Core
 
 Brief Description
@@ -18,33 +16,27 @@ Brief Description
 
 Internet protocol (IP) support functions like DNS resolution.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`clear_cache<class_IP_clear_cache>` **(** :ref:`String<class_string>` hostname="" **)**                                                               |
+| void                                           | :ref:`clear_cache<class_IP_clear_cache>` **(** :ref:`String<class_String>` hostname="" **)**                                                               |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`erase_resolve_item<class_IP_erase_resolve_item>` **(** :ref:`int<class_int>` id **)**                                                                |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                      | :ref:`get_local_addresses<class_IP_get_local_addresses>` **(** **)** const                                                                                 |
+| :ref:`Array<class_Array>`                      | :ref:`get_local_addresses<class_IP_get_local_addresses>` **(** **)** const                                                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_resolve_item_address<class_IP_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** const                                              |
+| :ref:`String<class_String>`                    | :ref:`get_resolve_item_address<class_IP_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** const                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResolverStatus<enum_ip_resolverstatus>`  | :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** const                                                |
+| :ref:`ResolverStatus<enum_IP_ResolverStatus>`  | :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** const                                                |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`resolve_hostname<class_IP_resolve_hostname>` **(** :ref:`String<class_string>` host, :ref:`Type<enum_ip_type>` ip_type=3 **)**                       |
+| :ref:`String<class_String>`                    | :ref:`resolve_hostname<class_IP_resolve_hostname>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**                       |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`resolve_hostname_queue_item<class_IP_resolve_hostname_queue_item>` **(** :ref:`String<class_string>` host, :ref:`Type<enum_ip_type>` ip_type=3 **)** |
+| :ref:`int<class_int>`                          | :ref:`resolve_hostname_queue_item<class_IP_resolve_hostname_queue_item>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)** |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
-
-- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
-- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_IP_ResolverStatus:
 
@@ -65,17 +57,23 @@ enum **Type**
 - **TYPE_ANY** = **3** --- Address type: Any.
 
 
+Constants
+---------
+
+- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
+- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+
 Description
 -----------
 
-IP contains support functions for the Internet Protocol (IP). TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_streampeertcp>` and :ref:`TCP_Server<class_tcp_server>`). IP provides DNS hostname resolution support, both blocking and threaded.
+IP contains support functions for the Internet Protocol (IP). TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_StreamPeerTCP>` and :ref:`TCP_Server<class_TCP_Server>`). IP provides DNS hostname resolution support, both blocking and threaded.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_IP_clear_cache:
 
-- void **clear_cache** **(** :ref:`String<class_string>` hostname="" **)**
+- void **clear_cache** **(** :ref:`String<class_String>` hostname="" **)**
 
 Removes all of a "hostname"'s cached references. If no "hostname" is given then all cached IP addresses are removed.
 
@@ -87,31 +85,31 @@ Removes a given item "id" from the queue. This should be used to free a queue af
 
 .. _class_IP_get_local_addresses:
 
-- :ref:`Array<class_array>` **get_local_addresses** **(** **)** const
+- :ref:`Array<class_Array>` **get_local_addresses** **(** **)** const
 
 Returns all of the user's current IPv4 and IPv6 addresses as an array.
 
 .. _class_IP_get_resolve_item_address:
 
-- :ref:`String<class_string>` **get_resolve_item_address** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **get_resolve_item_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns a queued hostname's IP address, given its queue "id". Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`).
 
 .. _class_IP_get_resolve_item_status:
 
-- :ref:`ResolverStatus<enum_ip_resolverstatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** const
+- :ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** const
 
 Returns a queued hostname's status as a RESOLVER_STATUS\_\* constant, given its queue "id".
 
 .. _class_IP_resolve_hostname:
 
-- :ref:`String<class_string>` **resolve_hostname** **(** :ref:`String<class_string>` host, :ref:`Type<enum_ip_type>` ip_type=3 **)**
+- :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the TYPE\_\* constant given as "ip_type".
 
 .. _class_IP_resolve_hostname_queue_item:
 
-- :ref:`int<class_int>` **resolve_hostname_queue_item** **(** :ref:`String<class_string>` host, :ref:`Type<enum_ip_type>` ip_type=3 **)**
+- :ref:`int<class_int>` **resolve_hostname_queue_item** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Creates a queue item to resolve a hostname to an IPv4 or IPv6 address depending on the TYPE\_\* constant given as "ip_type". Returns the queue ID if successful, or RESOLVER_INVALID_ID on error.
 

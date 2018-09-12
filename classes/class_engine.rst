@@ -7,8 +7,7 @@
 Engine
 ======
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,37 +15,42 @@ Brief Description
 
 Access to basic engine properties.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_author_info<class_Engine_get_author_info>` **(** **)** const                              |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_author_info<class_Engine_get_author_info>` **(** **)** const                              |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`get_copyright_info<class_Engine_get_copyright_info>` **(** **)** const                        |
+| :ref:`Array<class_Array>`            | :ref:`get_copyright_info<class_Engine_get_copyright_info>` **(** **)** const                        |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_donor_info<class_Engine_get_donor_info>` **(** **)** const                                |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_donor_info<class_Engine_get_donor_info>` **(** **)** const                                |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_frames_drawn<class_Engine_get_frames_drawn>` **(** **)**                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_frames_per_second<class_Engine_get_frames_per_second>` **(** **)** const                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_license_info<class_Engine_get_license_info>` **(** **)** const                            |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_license_info<class_Engine_get_license_info>` **(** **)** const                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_license_text<class_Engine_get_license_text>` **(** **)** const                            |
+| :ref:`String<class_String>`          | :ref:`get_license_text<class_Engine_get_license_text>` **(** **)** const                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`MainLoop<class_mainloop>`      | :ref:`get_main_loop<class_Engine_get_main_loop>` **(** **)** const                                  |
+| :ref:`MainLoop<class_MainLoop>`      | :ref:`get_main_loop<class_Engine_get_main_loop>` **(** **)** const                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`          | :ref:`get_singleton<class_Engine_get_singleton>` **(** :ref:`String<class_string>` name **)** const |
+| :ref:`Object<class_Object>`          | :ref:`get_singleton<class_Engine_get_singleton>` **(** :ref:`String<class_String>` name **)** const |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_version_info<class_Engine_get_version_info>` **(** **)** const                            |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`get_version_info<class_Engine_get_version_info>` **(** **)** const                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`has_singleton<class_Engine_has_singleton>` **(** :ref:`String<class_string>` name **)** const |
+| :ref:`bool<class_bool>`              | :ref:`has_singleton<class_Engine_has_singleton>` **(** :ref:`String<class_String>` name **)** const |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_in_physics_frame<class_Engine_is_in_physics_frame>` **(** **)** const                      |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+The ``Engine`` class allows you to query and modify the game's run-time parameters, such as frames per second, time scale, and others.
+
+Property Descriptions
+---------------------
 
   .. _class_Engine_editor_hint:
 
@@ -69,17 +73,12 @@ Member Variables
 - :ref:`float<class_float>` **time_scale** - Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
 
 
-Description
------------
-
-The ``Engine`` class allows you to query and modify the game's run-time parameters, such as frames per second, time scale, and others.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Engine_get_author_info:
 
-- :ref:`Dictionary<class_dictionary>` **get_author_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** const
 
 Returns engine author information in a Dictionary.
 
@@ -93,7 +92,7 @@ Returns engine author information in a Dictionary.
 
 .. _class_Engine_get_copyright_info:
 
-- :ref:`Array<class_array>` **get_copyright_info** **(** **)** const
+- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** const
 
 Returns an Array of copyright information Dictionaries.
 
@@ -103,7 +102,7 @@ Returns an Array of copyright information Dictionaries.
 
 .. _class_Engine_get_donor_info:
 
-- :ref:`Dictionary<class_dictionary>` **get_donor_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** const
 
 Returns a Dictionary of Arrays of donor names.
 
@@ -123,29 +122,29 @@ Returns the frames per second of the running game.
 
 .. _class_Engine_get_license_info:
 
-- :ref:`Dictionary<class_dictionary>` **get_license_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** const
 
 Returns Dictionary of licenses used by Godot and included third party components.
 
 .. _class_Engine_get_license_text:
 
-- :ref:`String<class_string>` **get_license_text** **(** **)** const
+- :ref:`String<class_String>` **get_license_text** **(** **)** const
 
 Returns Godot license text.
 
 .. _class_Engine_get_main_loop:
 
-- :ref:`MainLoop<class_mainloop>` **get_main_loop** **(** **)** const
+- :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** const
 
-Returns the main loop object (see :ref:`MainLoop<class_mainloop>` and :ref:`SceneTree<class_scenetree>`).
+Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`SceneTree<class_SceneTree>`).
 
 .. _class_Engine_get_singleton:
 
-- :ref:`Object<class_object>` **get_singleton** **(** :ref:`String<class_string>` name **)** const
+- :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
 
 .. _class_Engine_get_version_info:
 
-- :ref:`Dictionary<class_dictionary>` **get_version_info** **(** **)** const
+- :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** const
 
 Returns the current engine version information in a Dictionary.
 
@@ -163,7 +162,7 @@ Returns the current engine version information in a Dictionary.
 
 .. _class_Engine_has_singleton:
 
-- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
 
 .. _class_Engine_is_in_physics_frame:
 

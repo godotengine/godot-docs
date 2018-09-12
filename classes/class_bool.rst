@@ -14,15 +14,15 @@ Brief Description
 
 Boolean built-in type
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>` **(** :ref:`int<class_int>` from **)**       |
 +--------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>` **(** :ref:`float<class_float>` from **)**   |
 +--------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>` **(** :ref:`String<class_string>` from **)** |
+| :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>` **(** :ref:`String<class_String>` from **)** |
 +--------------------------+---------------------------------------------------------------------------+
 
 Description
@@ -30,8 +30,8 @@ Description
 
 Boolean built-in type.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_bool_bool:
 
@@ -47,8 +47,8 @@ Cast a :ref:`float<class_float>` value to a boolean value, this method will retu
 
 .. _class_bool_bool:
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`String<class_string>` from **)**
+- :ref:`bool<class_bool>` **bool** **(** :ref:`String<class_String>` from **)**
 
-Cast a :ref:`String<class_string>` value to a boolean value, this method will return true if called with a non empty string and false in other case. Examples: ``bool('False')`` returns true, ``bool('')``. returns false
+Cast a :ref:`String<class_String>` value to a boolean value, this method will return true if called with a non empty string and false in other case. Examples: ``bool('False')`` returns true, ``bool('')``. returns false
 
 

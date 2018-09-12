@@ -7,8 +7,7 @@
 VehicleWheel
 ============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Physics object that simulates the behaviour of a wheel.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+--------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_skidinfo<class_VehicleWheel_get_skidinfo>` **(** **)** const   |
@@ -25,8 +24,13 @@ Member Functions
 | :ref:`bool<class_bool>`    | :ref:`is_in_contact<class_VehicleWheel_is_in_contact>` **(** **)** const |
 +----------------------------+--------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behaviour of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
+
+Property Descriptions
+---------------------
 
   .. _class_VehicleWheel_damping_compression:
 
@@ -38,7 +42,7 @@ Member Variables
 
   .. _class_VehicleWheel_suspension_max_force:
 
-- :ref:`float<class_float>` **suspension_max_force** - The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_mass>` of the :ref:`VehicleBody<class_vehiclebody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3x to 4x this number.
+- :ref:`float<class_float>` **suspension_max_force** - The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_mass>` of the :ref:`VehicleBody<class_VehicleBody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3x to 4x this number.
 
   .. _class_VehicleWheel_suspension_stiffness:
 
@@ -75,13 +79,8 @@ It's best to set this to 1.0 when starting out.
 - :ref:`float<class_float>` **wheel_roll_influence** - This value effects the roll of your vehicle. If set to 0.0 for all wheels your vehicle will be prone to rolling over while a value of 1.0 will resist body roll.
 
 
-Description
------------
-
-This node needs to be used as a child node of :ref:`VehicleBody<class_vehiclebody>` and simulates the behaviour of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_VehicleWheel_get_skidinfo:
 

@@ -7,10 +7,8 @@
 InputEventWithModifiers
 =======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`InputEventKey<class_inputeventkey>`, :ref:`InputEventMouse<class_inputeventmouse>`, :ref:`InputEventGesture<class_inputeventgesture>`
-
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`InputEventKey<class_InputEventKey>`, :ref:`InputEventMouse<class_InputEventMouse>`, :ref:`InputEventGesture<class_InputEventGesture>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,18 @@ Brief Description
 
 Base class for keys events with modifiers.
 
-Member Variables
-----------------
+Description
+-----------
+
+Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
 
   .. _class_InputEventWithModifiers_alt:
 
@@ -41,14 +49,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **shift** - State of the Shift modifier.
 
-
-Description
------------
-
-Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/inputs/inputevent`
 

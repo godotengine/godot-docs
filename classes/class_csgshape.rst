@@ -7,10 +7,8 @@
 CSGShape
 ========
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`CSGCombiner<class_csgcombiner>`, :ref:`CSGPrimitive<class_csgprimitive>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
 **Category:** Core
 
 Brief Description
@@ -18,31 +16,15 @@ Brief Description
 
 The CSG base class.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+----------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_root_shape<class_CSGShape_is_root_shape>` **(** **)** const |
 +--------------------------+----------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_CSGShape_operation:
-
-- :ref:`Operation<enum_csgshape_operation>` **operation** - The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
-
-  .. _class_CSGShape_snap:
-
-- :ref:`float<class_float>` **snap**
-
-  .. _class_CSGShape_use_collision:
-
-- :ref:`bool<class_bool>` **use_collision** - Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_CSGShape_Operation:
 
@@ -58,8 +40,24 @@ Description
 
 This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_CSGShape_operation:
+
+- :ref:`Operation<enum_CSGShape_Operation>` **operation** - The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
+
+  .. _class_CSGShape_snap:
+
+- :ref:`float<class_float>` **snap**
+
+  .. _class_CSGShape_use_collision:
+
+- :ref:`bool<class_bool>` **use_collision** - Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
+
+
+Method Descriptions
+-------------------
 
 .. _class_CSGShape_is_root_shape:
 

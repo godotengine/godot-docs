@@ -7,8 +7,7 @@
 GodotSharp
 ==========
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+--------------------------------------------------------------------------------+
 | void                     | :ref:`attach_thread<class_GodotSharp_attach_thread>` **(** **)**               |
@@ -29,8 +28,8 @@ Member Functions
 | :ref:`bool<class_bool>`  | :ref:`is_finalizing_domain<class_GodotSharp_is_finalizing_domain>` **(** **)** |
 +--------------------------+--------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GodotSharp_attach_thread:
 

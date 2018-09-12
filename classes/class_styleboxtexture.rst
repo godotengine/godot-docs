@@ -7,8 +7,7 @@
 StyleBoxTexture
 ===============
 
-**Inherits:** :ref:`StyleBox<class_stylebox>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Texture Based 3x3 scale style.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`set_expand_margin_all<class_StyleBoxTexture_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                                                                                                                     |
@@ -33,16 +32,33 @@ Signals
 - **texture_changed** **(** **)**
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_StyleBoxTexture_AxisStretchMode:
+
+enum **AxisStretchMode**
+
+- **AXIS_STRETCH_MODE_STRETCH** = **0**
+- **AXIS_STRETCH_MODE_TILE** = **1**
+- **AXIS_STRETCH_MODE_TILE_FIT** = **2**
+
+
+Description
+-----------
+
+Texture Based 3x3 scale style. This stylebox performs a 3x3 scaling of a texture, where only the center cell is fully stretched. This allows for the easy creation of bordered styles.
+
+Property Descriptions
+---------------------
 
   .. _class_StyleBoxTexture_axis_stretch_horizontal:
 
-- :ref:`AxisStretchMode<enum_styleboxtexture_axisstretchmode>` **axis_stretch_horizontal**
+- :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_horizontal**
 
   .. _class_StyleBoxTexture_axis_stretch_vertical:
 
-- :ref:`AxisStretchMode<enum_styleboxtexture_axisstretchmode>` **axis_stretch_vertical**
+- :ref:`AxisStretchMode<enum_StyleBoxTexture_AxisStretchMode>` **axis_stretch_vertical**
 
   .. _class_StyleBoxTexture_draw_center:
 
@@ -82,40 +98,23 @@ Member Variables
 
   .. _class_StyleBoxTexture_modulate_color:
 
-- :ref:`Color<class_color>` **modulate_color**
+- :ref:`Color<class_Color>` **modulate_color**
 
   .. _class_StyleBoxTexture_normal_map:
 
-- :ref:`Texture<class_texture>` **normal_map**
+- :ref:`Texture<class_Texture>` **normal_map**
 
   .. _class_StyleBoxTexture_region_rect:
 
-- :ref:`Rect2<class_rect2>` **region_rect**
+- :ref:`Rect2<class_Rect2>` **region_rect**
 
   .. _class_StyleBoxTexture_texture:
 
-- :ref:`Texture<class_texture>` **texture**
+- :ref:`Texture<class_Texture>` **texture**
 
 
-Enums
------
-
-  .. _enum_StyleBoxTexture_AxisStretchMode:
-
-enum **AxisStretchMode**
-
-- **AXIS_STRETCH_MODE_STRETCH** = **0**
-- **AXIS_STRETCH_MODE_TILE** = **1**
-- **AXIS_STRETCH_MODE_TILE_FIT** = **2**
-
-
-Description
------------
-
-Texture Based 3x3 scale style. This stylebox performs a 3x3 scaling of a texture, where only the center cell is fully stretched. This allows for the easy creation of bordered styles.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_StyleBoxTexture_set_expand_margin_all:
 

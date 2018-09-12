@@ -7,8 +7,7 @@
 InputEventScreenTouch
 =====================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -17,22 +16,6 @@ Brief Description
 Input event type for screen touch events.
 
 (only available on mobile devices)
-
-Member Variables
-----------------
-
-  .. _class_InputEventScreenTouch_index:
-
-- :ref:`int<class_int>` **index** - Touch index in the case of a multi-touch event. One index = one finger.
-
-  .. _class_InputEventScreenTouch_position:
-
-- :ref:`Vector2<class_vector2>` **position** - Touch position.
-
-  .. _class_InputEventScreenTouch_pressed:
-
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
-
 
 Description
 -----------
@@ -43,4 +26,20 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
+
+  .. _class_InputEventScreenTouch_index:
+
+- :ref:`int<class_int>` **index** - Touch index in the case of a multi-touch event. One index = one finger.
+
+  .. _class_InputEventScreenTouch_position:
+
+- :ref:`Vector2<class_Vector2>` **position** - Touch position.
+
+  .. _class_InputEventScreenTouch_pressed:
+
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
+
 

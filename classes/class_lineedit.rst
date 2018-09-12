@@ -7,8 +7,7 @@
 LineEdit
 ========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,17 +15,17 @@ Brief Description
 
 Control that provides single line string editing.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`append_at_cursor<class_LineEdit_append_at_cursor>` **(** :ref:`String<class_string>` text **)**      |
+| void                               | :ref:`append_at_cursor<class_LineEdit_append_at_cursor>` **(** :ref:`String<class_String>` text **)**      |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`clear<class_LineEdit_clear>` **(** **)**                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`deselect<class_LineEdit_deselect>` **(** **)**                                                       |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_menu<class_LineEdit_get_menu>` **(** **)** const                                                 |
+| :ref:`PopupMenu<class_PopupMenu>`  | :ref:`get_menu<class_LineEdit_get_menu>` **(** **)** const                                                 |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`menu_option<class_LineEdit_menu_option>` **(** :ref:`int<class_int>` option **)**                    |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -40,23 +39,54 @@ Signals
 
 .. _class_LineEdit_text_changed:
 
-- **text_changed** **(** :ref:`String<class_string>` new_text **)**
+- **text_changed** **(** :ref:`String<class_String>` new_text **)**
 
 Emitted when the text changes.
 
 .. _class_LineEdit_text_entered:
 
-- **text_entered** **(** :ref:`String<class_string>` new_text **)**
+- **text_entered** **(** :ref:`String<class_String>` new_text **)**
 
 Emitted when the user presses KEY_ENTER on the ``LineEdit``.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_LineEdit_Align:
+
+enum **Align**
+
+- **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the :ref:`LineEdit<class_LineEdit>`.
+- **ALIGN_CENTER** = **1** --- Centers the text in the middle of the :ref:`LineEdit<class_LineEdit>`.
+- **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the :ref:`LineEdit<class_LineEdit>`.
+- **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the :ref:`LineEdit<class_LineEdit>`'s width.
+
+  .. _enum_LineEdit_MenuItems:
+
+enum **MenuItems**
+
+- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+- **MENU_COPY** = **1** --- Copies the selected text.
+- **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
+- **MENU_CLEAR** = **3** --- Erases the whole Linedit text.
+- **MENU_SELECT_ALL** = **4** --- Selects the whole Linedit text.
+- **MENU_UNDO** = **5** --- Undoes the previous action.
+- **MENU_REDO** = **6**
+- **MENU_MAX** = **7**
+
+
+Description
+-----------
+
+LineEdit provides a single line string editor, used for text fields.
+
+Property Descriptions
+---------------------
 
   .. _class_LineEdit_align:
 
-- :ref:`Align<enum_lineedit_align>` **align** - Text alignment as defined in the ALIGN\_\* enum.
+- :ref:`Align<enum_LineEdit_Align>` **align** - Text alignment as defined in the ALIGN\_\* enum.
 
   .. _class_LineEdit_caret_blink:
 
@@ -84,15 +114,15 @@ Member Variables
 
   .. _class_LineEdit_expand_to_text_length:
 
-- :ref:`bool<class_bool>` **expand_to_text_length** - If ``true`` the :ref:`LineEdit<class_lineedit>` width will increase to stay longer than the :ref:`text<class_LineEdit_text>`. It will **not** compress if the :ref:`text<class_LineEdit_text>` is shortened.
+- :ref:`bool<class_bool>` **expand_to_text_length** - If ``true`` the :ref:`LineEdit<class_LineEdit>` width will increase to stay longer than the :ref:`text<class_LineEdit_text>`. It will **not** compress if the :ref:`text<class_LineEdit_text>` is shortened.
 
   .. _class_LineEdit_focus_mode:
 
-- :ref:`FocusMode<enum_control_focusmode>` **focus_mode** - Defines how the :ref:`LineEdit<class_lineedit>` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_control>` for details.
+- :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode** - Defines how the :ref:`LineEdit<class_LineEdit>` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_Control>` for details.
 
   .. _class_LineEdit_max_length:
 
-- :ref:`int<class_int>` **max_length** - Maximum amount of characters that can be entered inside the :ref:`LineEdit<class_lineedit>`. If ``0``, there is no limit.
+- :ref:`int<class_int>` **max_length** - Maximum amount of characters that can be entered inside the :ref:`LineEdit<class_LineEdit>`. If ``0``, there is no limit.
 
   .. _class_LineEdit_placeholder_alpha:
 
@@ -100,7 +130,7 @@ Member Variables
 
   .. _class_LineEdit_placeholder_text:
 
-- :ref:`String<class_string>` **placeholder_text** - Text shown when the :ref:`LineEdit<class_lineedit>` is empty. It is **not** the :ref:`LineEdit<class_lineedit>`'s default value (see :ref:`text<class_LineEdit_text>`).
+- :ref:`String<class_String>` **placeholder_text** - Text shown when the :ref:`LineEdit<class_LineEdit>` is empty. It is **not** the :ref:`LineEdit<class_LineEdit>`'s default value (see :ref:`text<class_LineEdit_text>`).
 
   .. _class_LineEdit_secret:
 
@@ -108,50 +138,19 @@ Member Variables
 
   .. _class_LineEdit_secret_character:
 
-- :ref:`String<class_string>` **secret_character** - The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
+- :ref:`String<class_String>` **secret_character** - The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
 
   .. _class_LineEdit_text:
 
-- :ref:`String<class_string>` **text** - String value of the :ref:`LineEdit<class_lineedit>`.
+- :ref:`String<class_String>` **text** - String value of the :ref:`LineEdit<class_LineEdit>`.
 
 
-Enums
------
-
-  .. _enum_LineEdit_Align:
-
-enum **Align**
-
-- **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the :ref:`LineEdit<class_lineedit>`.
-- **ALIGN_CENTER** = **1** --- Centers the text in the middle of the :ref:`LineEdit<class_lineedit>`.
-- **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the :ref:`LineEdit<class_lineedit>`.
-- **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the :ref:`LineEdit<class_lineedit>`'s width.
-
-  .. _enum_LineEdit_MenuItems:
-
-enum **MenuItems**
-
-- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
-- **MENU_COPY** = **1** --- Copies the selected text.
-- **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
-- **MENU_CLEAR** = **3** --- Erases the whole Linedit text.
-- **MENU_SELECT_ALL** = **4** --- Selects the whole Linedit text.
-- **MENU_UNDO** = **5** --- Undoes the previous action.
-- **MENU_REDO** = **6**
-- **MENU_MAX** = **7**
-
-
-Description
------------
-
-LineEdit provides a single line string editor, used for text fields.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_LineEdit_append_at_cursor:
 
-- void **append_at_cursor** **(** :ref:`String<class_string>` text **)**
+- void **append_at_cursor** **(** :ref:`String<class_String>` text **)**
 
 Adds ``text`` after the cursor. If the resulting value is longer than :ref:`max_length<class_LineEdit_max_length>`, nothing happens.
 
@@ -159,7 +158,7 @@ Adds ``text`` after the cursor. If the resulting value is longer than :ref:`max_
 
 - void **clear** **(** **)**
 
-Erases the :ref:`LineEdit<class_lineedit>` text.
+Erases the :ref:`LineEdit<class_LineEdit>` text.
 
 .. _class_LineEdit_deselect:
 
@@ -169,9 +168,9 @@ Clears the current selection.
 
 .. _class_LineEdit_get_menu:
 
-- :ref:`PopupMenu<class_popupmenu>` **get_menu** **(** **)** const
+- :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
 
-Returns the :ref:`PopupMenu<class_popupmenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the :ref:`LineEdit<class_lineedit>`.
+Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the :ref:`LineEdit<class_LineEdit>`.
 
 .. _class_LineEdit_menu_option:
 
@@ -183,7 +182,7 @@ Executes a given action as defined in the MENU\_\* enum.
 
 - void **select** **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1 **)**
 
-Selects characters inside :ref:`LineEdit<class_lineedit>` between ``from`` and ``to``. By default ``from`` is at the beginning and ``to`` at the end.
+Selects characters inside :ref:`LineEdit<class_LineEdit>` between ``from`` and ``to``. By default ``from`` is at the beginning and ``to`` at the end.
 
 ::
 
@@ -196,6 +195,6 @@ Selects characters inside :ref:`LineEdit<class_lineedit>` between ``from`` and `
 
 - void **select_all** **(** **)**
 
-Selects the whole :ref:`String<class_string>`.
+Selects the whole :ref:`String<class_String>`.
 
 

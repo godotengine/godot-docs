@@ -7,8 +7,7 @@
 Image
 =====
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,41 +15,41 @@ Brief Description
 
 Image datatype.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`blend_rect<class_Image_blend_rect>` **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**                                                                                                |
+| void                                       | :ref:`blend_rect<class_Image_blend_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`blend_rect_mask<class_Image_blend_rect_mask>` **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**                                                      |
+| void                                       | :ref:`blend_rect_mask<class_Image_blend_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                      |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`blit_rect<class_Image_blit_rect>` **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**                                                                                                  |
+| void                                       | :ref:`blit_rect<class_Image_blit_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                                                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`blit_rect_mask<class_Image_blit_rect_mask>` **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**                                                        |
+| void                                       | :ref:`blit_rect_mask<class_Image_blit_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`bumpmap_to_normalmap<class_Image_bumpmap_to_normalmap>` **(** :ref:`float<class_float>` bump_scale=1.0 **)**                                                                                                                                        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_mipmaps<class_Image_clear_mipmaps>` **(** **)**                                                                                                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`compress<class_Image_compress>` **(** :ref:`CompressMode<enum_image_compressmode>` mode, :ref:`CompressSource<enum_image_compresssource>` source, :ref:`float<class_float>` lossy_quality **)**                                                     |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`compress<class_Image_compress>` **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`CompressSource<enum_Image_CompressSource>` source, :ref:`float<class_float>` lossy_quality **)**                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`convert<class_Image_convert>` **(** :ref:`Format<enum_image_format>` format **)**                                                                                                                                                                   |
+| void                                       | :ref:`convert<class_Image_convert>` **(** :ref:`Format<enum_Image_Format>` format **)**                                                                                                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`copy_from<class_Image_copy_from>` **(** :ref:`Image<class_image>` src **)**                                                                                                                                                                         |
+| void                                       | :ref:`copy_from<class_Image_copy_from>` **(** :ref:`Image<class_Image>` src **)**                                                                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`create<class_Image_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_image_format>` format **)**                                                                     |
+| void                                       | :ref:`create<class_Image_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**                                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`create_from_data<class_Image_create_from_data>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_image_format>` format, :ref:`PoolByteArray<class_poolbytearray>` data **)** |
+| void                                       | :ref:`create_from_data<class_Image_create_from_data>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)** |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`crop<class_Image_crop>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**                                                                                                                                                       |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`decompress<class_Image_decompress>` **(** **)**                                                                                                                                                                                                     |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`decompress<class_Image_decompress>` **(** **)**                                                                                                                                                                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AlphaMode<enum_image_alphamode>`     | :ref:`detect_alpha<class_Image_detect_alpha>` **(** **)** const                                                                                                                                                                                           |
+| :ref:`AlphaMode<enum_Image_AlphaMode>`     | :ref:`detect_alpha<class_Image_detect_alpha>` **(** **)** const                                                                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`expand_x2_hq2x<class_Image_expand_x2_hq2x>` **(** **)**                                                                                                                                                                                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`fill<class_Image_fill>` **(** :ref:`Color<class_color>` color **)**                                                                                                                                                                                 |
+| void                                       | :ref:`fill<class_Image_fill>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`fix_alpha_edges<class_Image_fix_alpha_edges>` **(** **)**                                                                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,25 +57,25 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`flip_y<class_Image_flip_y>` **(** **)**                                                                                                                                                                                                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`generate_mipmaps<class_Image_generate_mipmaps>` **(** :ref:`bool<class_bool>` renormalize=false **)**                                                                                                                                               |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`generate_mipmaps<class_Image_generate_mipmaps>` **(** :ref:`bool<class_bool>` renormalize=false **)**                                                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_Image_get_data>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`PoolByteArray<class_PoolByteArray>`  | :ref:`get_data<class_Image_get_data>` **(** **)** const                                                                                                                                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_image_format>`           | :ref:`get_format<class_Image_get_format>` **(** **)** const                                                                                                                                                                                               |
+| :ref:`Format<enum_Image_Format>`           | :ref:`get_format<class_Image_get_format>` **(** **)** const                                                                                                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_height<class_Image_get_height>` **(** **)** const                                                                                                                                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_mipmap_offset<class_Image_get_mipmap_offset>` **(** :ref:`int<class_int>` mipmap **)** const                                                                                                                                                    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                  | :ref:`get_pixel<class_Image_get_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                |
+| :ref:`Color<class_Color>`                  | :ref:`get_pixel<class_Image_get_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                  | :ref:`get_pixelv<class_Image_get_pixelv>` **(** :ref:`Vector2<class_vector2>` src **)** const                                                                                                                                                             |
+| :ref:`Color<class_Color>`                  | :ref:`get_pixelv<class_Image_get_pixelv>` **(** :ref:`Vector2<class_Vector2>` src **)** const                                                                                                                                                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_image>`                  | :ref:`get_rect<class_Image_get_rect>` **(** :ref:`Rect2<class_rect2>` rect **)** const                                                                                                                                                                    |
+| :ref:`Image<class_Image>`                  | :ref:`get_rect<class_Image_get_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** const                                                                                                                                                                    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`              | :ref:`get_size<class_Image_get_size>` **(** **)** const                                                                                                                                                                                                   |
+| :ref:`Vector2<class_Vector2>`              | :ref:`get_size<class_Image_get_size>` **(** **)** const                                                                                                                                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`                  | :ref:`get_used_rect<class_Image_get_used_rect>` **(** **)** const                                                                                                                                                                                         |
+| :ref:`Rect2<class_Rect2>`                  | :ref:`get_used_rect<class_Image_get_used_rect>` **(** **)** const                                                                                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_width<class_Image_get_width>` **(** **)** const                                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,13 +87,13 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_invisible<class_Image_is_invisible>` **(** **)** const                                                                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`load<class_Image_load>` **(** :ref:`String<class_string>` path **)**                                                                                                                                                                                |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`load<class_Image_load>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`load_jpg_from_buffer<class_Image_load_jpg_from_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                                                                                                                                |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`load_jpg_from_buffer<class_Image_load_jpg_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`load_png_from_buffer<class_Image_load_png_from_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                                                                                                                                |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`load_png_from_buffer<class_Image_load_png_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`load_webp_from_buffer<class_Image_load_webp_from_buffer>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**                                                                                                                              |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`load_webp_from_buffer<class_Image_load_webp_from_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                                                                              |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`lock<class_Image_lock>` **(** **)**                                                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,17 +101,17 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`premultiply_alpha<class_Image_premultiply_alpha>` **(** **)**                                                                                                                                                                                       |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`resize<class_Image_resize>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_image_interpolation>` interpolation=1 **)**                                                                                   |
+| void                                       | :ref:`resize<class_Image_resize>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**                                                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`resize_to_po2<class_Image_resize_to_po2>` **(** :ref:`bool<class_bool>` square=false **)**                                                                                                                                                          |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_image>`                  | :ref:`rgbe_to_srgb<class_Image_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
+| :ref:`Image<class_Image>`                  | :ref:`rgbe_to_srgb<class_Image_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                 |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`save_png<class_Image_save_png>` **(** :ref:`String<class_string>` path **)** const                                                                                                                                                                  |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`save_png<class_Image_save_png>` **(** :ref:`String<class_String>` path **)** const                                                                                                                                                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_pixel<class_Image_set_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color **)**                                                                                                                     |
+| void                                       | :ref:`set_pixel<class_Image_set_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_Color>` color **)**                                                                                                                     |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_pixelv<class_Image_set_pixelv>` **(** :ref:`Vector2<class_vector2>` dst, :ref:`Color<class_color>` color **)**                                                                                                                                  |
+| void                                       | :ref:`set_pixelv<class_Image_set_pixelv>` **(** :ref:`Vector2<class_Vector2>` dst, :ref:`Color<class_Color>` color **)**                                                                                                                                  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`shrink_x2<class_Image_shrink_x2>` **(** **)**                                                                                                                                                                                                       |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,16 +120,8 @@ Member Functions
 | void                                       | :ref:`unlock<class_Image_unlock>` **(** **)**                                                                                                                                                                                                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_Image_data:
-
-- :ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT_*`` constants.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Image_CompressMode:
 
@@ -220,32 +211,40 @@ enum **Format**
 Description
 -----------
 
-Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` is 16384 pixels.
+Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_Texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` is 16384 pixels.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Image_data:
+
+- :ref:`Dictionary<class_Dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT_*`` constants.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Image_blend_rect:
 
-- void **blend_rect** **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
+- void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
 Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``.
 
 .. _class_Image_blend_rect_mask:
 
-- void **blend_rect_mask** **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
+- void **blend_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
 Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
 
 .. _class_Image_blit_rect:
 
-- void **blit_rect** **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
+- void **blit_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
 Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
 
 .. _class_Image_blit_rect_mask:
 
-- void **blit_rect_mask** **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
+- void **blit_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
 Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
 
@@ -261,31 +260,31 @@ Removes the image's mipmaps.
 
 .. _class_Image_compress:
 
-- :ref:`Error<enum_@globalscope_error>` **compress** **(** :ref:`CompressMode<enum_image_compressmode>` mode, :ref:`CompressSource<enum_image_compresssource>` source, :ref:`float<class_float>` lossy_quality **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **compress** **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`CompressSource<enum_Image_CompressSource>` source, :ref:`float<class_float>` lossy_quality **)**
 
 Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See ``COMPRESS_*`` constants.
 
 .. _class_Image_convert:
 
-- void **convert** **(** :ref:`Format<enum_image_format>` format **)**
+- void **convert** **(** :ref:`Format<enum_Image_Format>` format **)**
 
 Converts the image's format. See ``FORMAT_*`` constants.
 
 .. _class_Image_copy_from:
 
-- void **copy_from** **(** :ref:`Image<class_image>` src **)**
+- void **copy_from** **(** :ref:`Image<class_Image>` src **)**
 
 Copies ``src`` image to this image.
 
 .. _class_Image_create:
 
-- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_image_format>` format **)**
+- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)**
 
 Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_create_from_data:
 
-- void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_image_format>` format, :ref:`PoolByteArray<class_poolbytearray>` data **)**
+- void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
@@ -297,13 +296,13 @@ Crops the image to the given ``width`` and ``height``. If the specified size is 
 
 .. _class_Image_decompress:
 
-- :ref:`Error<enum_@globalscope_error>` **decompress** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **decompress** **(** **)**
 
 Decompresses the image if it is compressed. Returns an error if decompress function is not available.
 
 .. _class_Image_detect_alpha:
 
-- :ref:`AlphaMode<enum_image_alphamode>` **detect_alpha** **(** **)** const
+- :ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha** **(** **)** const
 
 Returns ALPHA_BLEND if the image has data for alpha values. Returns ALPHA_BIT if all the alpha values are below a certain threshold or the maximum value. Returns ALPHA_NONE if no data for alpha values is found.
 
@@ -315,9 +314,9 @@ Stretches the image and enlarges it by a factor of 2. No interpolation is done.
 
 .. _class_Image_fill:
 
-- void **fill** **(** :ref:`Color<class_color>` color **)**
+- void **fill** **(** :ref:`Color<class_Color>` color **)**
 
-Fills the image with a given :ref:`Color<class_color>`.
+Fills the image with a given :ref:`Color<class_Color>`.
 
 .. _class_Image_fix_alpha_edges:
 
@@ -339,19 +338,19 @@ Flips the image vertically.
 
 .. _class_Image_generate_mipmaps:
 
-- :ref:`Error<enum_@globalscope_error>` **generate_mipmaps** **(** :ref:`bool<class_bool>` renormalize=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **generate_mipmaps** **(** :ref:`bool<class_bool>` renormalize=false **)**
 
 Generates mipmaps for the image. Mipmaps are pre-calculated and lower resolution copies of the image. Mipmaps are automatically used if the image needs to be scaled down when rendered. This improves image quality and the performance of the rendering. Returns an error if the image is compressed, in a custom format or if the image's width/height is 0.
 
 .. _class_Image_get_data:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **get_data** **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_data** **(** **)** const
 
 Returns the image's raw data.
 
 .. _class_Image_get_format:
 
-- :ref:`Format<enum_image_format>` **get_format** **(** **)** const
+- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
 Returns the image’s format. See ``FORMAT_*`` constants.
 
@@ -369,31 +368,31 @@ Returns the offset where the image's mipmap with index ``mipmap`` is stored in t
 
 .. _class_Image_get_pixel:
 
-- :ref:`Color<class_color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+- :ref:`Color<class_Color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
-Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked it always returns a :ref:`Color<class_color>` with the value ``(0, 0, 0, 1.0)``.
+Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked it always returns a :ref:`Color<class_Color>` with the value ``(0, 0, 0, 1.0)``.
 
 .. _class_Image_get_pixelv:
 
-- :ref:`Color<class_color>` **get_pixelv** **(** :ref:`Vector2<class_vector2>` src **)** const
+- :ref:`Color<class_Color>` **get_pixelv** **(** :ref:`Vector2<class_Vector2>` src **)** const
 
 .. _class_Image_get_rect:
 
-- :ref:`Image<class_image>` **get_rect** **(** :ref:`Rect2<class_rect2>` rect **)** const
+- :ref:`Image<class_Image>` **get_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** const
 
 Returns a new image that is a copy of the image's area specified with ``rect``.
 
 .. _class_Image_get_size:
 
-- :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Returns the image's size (width and height).
 
 .. _class_Image_get_used_rect:
 
-- :ref:`Rect2<class_rect2>` **get_used_rect** **(** **)** const
+- :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)** const
 
-Returns a :ref:`Rect2<class_rect2>` enclosing the visible portion of the image.
+Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image.
 
 .. _class_Image_get_width:
 
@@ -427,25 +426,25 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 .. _class_Image_load:
 
-- :ref:`Error<enum_@globalscope_error>` **load** **(** :ref:`String<class_string>` path **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Loads an image from file ``path``.
 
 .. _class_Image_load_jpg_from_buffer:
 
-- :ref:`Error<enum_@globalscope_error>` **load_jpg_from_buffer** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **load_jpg_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Loads an image from the binary contents of a JPEG file.
 
 .. _class_Image_load_png_from_buffer:
 
-- :ref:`Error<enum_@globalscope_error>` **load_png_from_buffer** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **load_png_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Loads an image from the binary contents of a PNG file.
 
 .. _class_Image_load_webp_from_buffer:
 
-- :ref:`Error<enum_@globalscope_error>` **load_webp_from_buffer** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **load_webp_from_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Loads an image from the binary contents of a WebP file.
 
@@ -469,7 +468,7 @@ Multiplies color values with alpha values. Resulting color values for a pixel ar
 
 .. _class_Image_resize:
 
-- void **resize** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_image_interpolation>` interpolation=1 **)**
+- void **resize** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**
 
 Resizes the image to the given ``width`` and ``height``. New pixels are calculated using ``interpolation``. See ``interpolation`` constants.
 
@@ -481,19 +480,19 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 .. _class_Image_rgbe_to_srgb:
 
-- :ref:`Image<class_image>` **rgbe_to_srgb** **(** **)**
+- :ref:`Image<class_Image>` **rgbe_to_srgb** **(** **)**
 
 .. _class_Image_save_png:
 
-- :ref:`Error<enum_@globalscope_error>` **save_png** **(** :ref:`String<class_string>` path **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **save_png** **(** :ref:`String<class_String>` path **)** const
 
 Saves the image as a PNG file to ``path``.
 
 .. _class_Image_set_pixel:
 
-- void **set_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color **)**
+- void **set_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_Color>` color **)**
 
-Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is locked. Example:
+Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` if the image is locked. Example:
 
 ::
 
@@ -506,7 +505,7 @@ Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is lo
 
 .. _class_Image_set_pixelv:
 
-- void **set_pixelv** **(** :ref:`Vector2<class_vector2>` dst, :ref:`Color<class_color>` color **)**
+- void **set_pixelv** **(** :ref:`Vector2<class_Vector2>` dst, :ref:`Color<class_Color>` color **)**
 
 .. _class_Image_shrink_x2:
 

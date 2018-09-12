@@ -7,23 +7,29 @@
 OrientedPathFollow
 ==================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Oriented point sampler for a :ref:`Path<class_path>`.
+Oriented point sampler for a :ref:`Path<class_Path>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+This node behaves like :ref:`PathFollow<class_PathFollow>`, except it uses its parent :ref:`Path<class_Path>` up vector information to enforce orientation. 
+
+Make sure to check if the curve of this node's parent :ref:`Path<class_Path>` has up vectors enabled. See :ref:`PathFollow<class_PathFollow>` and :ref:`Curve3D<class_Curve3D>` for further information.
+
+Property Descriptions
+---------------------
 
   .. _class_OrientedPathFollow_cubic_interp:
 
 - :ref:`bool<class_bool>` **cubic_interp** - If ``true`` the position between two cached points is interpolated cubically, and linearly otherwise.
 
-The points along the :ref:`Curve3D<class_curve3d>` of the :ref:`Path<class_path>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
+The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
 
 There are two answers to this problem: Either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
@@ -47,11 +53,4 @@ There are two answers to this problem: Either increase the number of cached poin
 
 - :ref:`float<class_float>` **v_offset** - The node's offset perpendicular to the curve.
 
-
-Description
------------
-
-This node behaves like :ref:`PathFollow<class_pathfollow>`, except it uses its parent :ref:`Path<class_path>` up vector information to enforce orientation. 
-
-Make sure to check if the curve of this node's parent :ref:`Path<class_path>` has up vectors enabled. See :ref:`PathFollow<class_pathfollow>` and :ref:`Curve3D<class_curve3d>` for further information.
 

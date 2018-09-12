@@ -7,8 +7,7 @@
 GIProbeData
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_GIProbeData_bias:
 
@@ -25,7 +24,7 @@ Member Variables
 
   .. _class_GIProbeData_bounds:
 
-- :ref:`AABB<class_aabb>` **bounds**
+- :ref:`AABB<class_AABB>` **bounds**
 
   .. _class_GIProbeData_cell_size:
 
@@ -37,7 +36,7 @@ Member Variables
 
   .. _class_GIProbeData_dynamic_data:
 
-- :ref:`PoolIntArray<class_poolintarray>` **dynamic_data**
+- :ref:`PoolIntArray<class_PoolIntArray>` **dynamic_data**
 
   .. _class_GIProbeData_dynamic_range:
 
@@ -61,6 +60,6 @@ Member Variables
 
   .. _class_GIProbeData_to_cell_xform:
 
-- :ref:`Transform<class_transform>` **to_cell_xform**
+- :ref:`Transform<class_Transform>` **to_cell_xform**
 
 

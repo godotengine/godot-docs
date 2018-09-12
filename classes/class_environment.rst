@@ -7,17 +7,98 @@
 Environment
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Resource for environment nodes (like :ref:`WorldEnvironment<class_worldenvironment>`) that define multiple rendering options.
+Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple rendering options.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Environment_BGMode:
+
+enum **BGMode**
+
+- **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
+- **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
+- **BG_COLOR** = **1** --- Clear the background using a custom clear color.
+- **BG_SKY** = **2** --- Display a user-defined sky in the background.
+- **BG_COLOR_SKY** = **3** --- Clear the background using a custom clear color and allows defining a sky for shading and reflection.
+- **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_CanvasLayer>` in the background.
+- **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
+
+  .. _enum_Environment_DOFBlurQuality:
+
+enum **DOFBlurQuality**
+
+- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+
+  .. _enum_Environment_GlowBlendMode:
+
+enum **GlowBlendMode**
+
+- **GLOW_BLEND_MODE_ADDITIVE** = **0** --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
+- **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
+- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Softlight glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
+- **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
+
+  .. _enum_Environment_ToneMapper:
+
+enum **ToneMapper**
+
+- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
+- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
+- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
+- **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
+
+  .. _enum_Environment_SSAOBlur:
+
+enum **SSAOBlur**
+
+- **SSAO_BLUR_DISABLED** = **0**
+- **SSAO_BLUR_1x1** = **1**
+- **SSAO_BLUR_2x2** = **2**
+- **SSAO_BLUR_3x3** = **3**
+
+  .. _enum_Environment_SSAOQuality:
+
+enum **SSAOQuality**
+
+- **SSAO_QUALITY_LOW** = **0**
+- **SSAO_QUALITY_MEDIUM** = **1**
+- **SSAO_QUALITY_HIGH** = **2**
+
+
+Description
+-----------
+
+Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
+
+ 		
+
+- DOF Blur
+
+- Motion Blur
+
+- Bloom
+
+- Tonemap (auto exposure)
+
+- Adjustments
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/environment_and_post_processing`
+- :doc:`../tutorials/3d/high_dynamic_range`
+
+Property Descriptions
+---------------------
 
   .. _class_Environment_adjustment_brightness:
 
@@ -25,7 +106,7 @@ Member Variables
 
   .. _class_Environment_adjustment_color_correction:
 
-- :ref:`Texture<class_texture>` **adjustment_color_correction** - Applies the provided :ref:`Texture<class_texture>` resource to affect the global color aspect of the rendered scene.
+- :ref:`Texture<class_Texture>` **adjustment_color_correction** - Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
 
   .. _class_Environment_adjustment_contrast:
 
@@ -41,7 +122,7 @@ Member Variables
 
   .. _class_Environment_ambient_light_color:
 
-- :ref:`Color<class_color>` **ambient_light_color** - :ref:`Color<class_color>` of the ambient light.
+- :ref:`Color<class_Color>` **ambient_light_color** - :ref:`Color<class_Color>` of the ambient light.
 
   .. _class_Environment_ambient_light_energy:
 
@@ -77,7 +158,7 @@ Member Variables
 
   .. _class_Environment_background_color:
 
-- :ref:`Color<class_color>` **background_color** - Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+- :ref:`Color<class_Color>` **background_color** - Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
 
   .. _class_Environment_background_energy:
 
@@ -85,15 +166,15 @@ Member Variables
 
   .. _class_Environment_background_mode:
 
-- :ref:`BGMode<enum_environment_bgmode>` **background_mode** - Defines the mode of background.
+- :ref:`BGMode<enum_Environment_BGMode>` **background_mode** - Defines the mode of background.
 
   .. _class_Environment_background_sky:
 
-- :ref:`Sky<class_sky>` **background_sky** - :ref:`Sky<class_sky>` resource defined as background.
+- :ref:`Sky<class_Sky>` **background_sky** - :ref:`Sky<class_Sky>` resource defined as background.
 
   .. _class_Environment_background_sky_custom_fov:
 
-- :ref:`float<class_float>` **background_sky_custom_fov** - :ref:`Sky<class_sky>` resource's custom field of view.
+- :ref:`float<class_float>` **background_sky_custom_fov** - :ref:`Sky<class_Sky>` resource's custom field of view.
 
   .. _class_Environment_dof_blur_far_amount:
 
@@ -109,7 +190,7 @@ Member Variables
 
   .. _class_Environment_dof_blur_far_quality:
 
-- :ref:`DOFBlurQuality<enum_environment_dofblurquality>` **dof_blur_far_quality** - Quality of the far blur quality.
+- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_far_quality** - Quality of the far blur quality.
 
   .. _class_Environment_dof_blur_far_transition:
 
@@ -129,7 +210,7 @@ Member Variables
 
   .. _class_Environment_dof_blur_near_quality:
 
-- :ref:`DOFBlurQuality<enum_environment_dofblurquality>` **dof_blur_near_quality** - Quality of the near blur quality.
+- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_near_quality** - Quality of the near blur quality.
 
   .. _class_Environment_dof_blur_near_transition:
 
@@ -137,7 +218,7 @@ Member Variables
 
   .. _class_Environment_fog_color:
 
-- :ref:`Color<class_color>` **fog_color** - Fog's :ref:`Color<class_color>`.
+- :ref:`Color<class_Color>` **fog_color** - Fog's :ref:`Color<class_Color>`.
 
   .. _class_Environment_fog_depth_begin:
 
@@ -177,7 +258,7 @@ Member Variables
 
   .. _class_Environment_fog_sun_color:
 
-- :ref:`Color<class_color>` **fog_sun_color** - Sun :ref:`Color<class_color>`.
+- :ref:`Color<class_Color>` **fog_sun_color** - Sun :ref:`Color<class_Color>`.
 
   .. _class_Environment_fog_transmit_curve:
 
@@ -193,7 +274,7 @@ Member Variables
 
   .. _class_Environment_glow_blend_mode:
 
-- :ref:`GlowBlendMode<enum_environment_glowblendmode>` **glow_blend_mode** - Glow blending mode.
+- :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** - Glow blending mode.
 
   .. _class_Environment_glow_bloom:
 
@@ -281,11 +362,11 @@ Member Variables
 
   .. _class_Environment_ssao_blur:
 
-- :ref:`SSAOBlur<enum_environment_ssaoblur>` **ssao_blur**
+- :ref:`SSAOBlur<enum_Environment_SSAOBlur>` **ssao_blur**
 
   .. _class_Environment_ssao_color:
 
-- :ref:`Color<class_color>` **ssao_color**
+- :ref:`Color<class_Color>` **ssao_color**
 
   .. _class_Environment_ssao_edge_sharpness:
 
@@ -309,7 +390,7 @@ Member Variables
 
   .. _class_Environment_ssao_quality:
 
-- :ref:`SSAOQuality<enum_environment_ssaoquality>` **ssao_quality**
+- :ref:`SSAOQuality<enum_Environment_SSAOQuality>` **ssao_quality**
 
   .. _class_Environment_ssao_radius:
 
@@ -325,92 +406,10 @@ Member Variables
 
   .. _class_Environment_tonemap_mode:
 
-- :ref:`ToneMapper<enum_environment_tonemapper>` **tonemap_mode** - Tonemapping mode.
+- :ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode** - Tonemapping mode.
 
   .. _class_Environment_tonemap_white:
 
 - :ref:`float<class_float>` **tonemap_white** - White reference value for tonemap.
 
-
-Enums
------
-
-  .. _enum_Environment_BGMode:
-
-enum **BGMode**
-
-- **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
-- **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
-- **BG_COLOR** = **1** --- Clear the background using a custom clear color.
-- **BG_SKY** = **2** --- Display a user-defined sky in the background.
-- **BG_COLOR_SKY** = **3** --- Clear the background using a custom clear color and allows defining a sky for shading and reflection.
-- **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_canvaslayer>` in the background.
-- **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
-
-  .. _enum_Environment_DOFBlurQuality:
-
-enum **DOFBlurQuality**
-
-- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
-- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
-- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
-
-  .. _enum_Environment_GlowBlendMode:
-
-enum **GlowBlendMode**
-
-- **GLOW_BLEND_MODE_ADDITIVE** = **0** --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
-- **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
-- **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Softlight glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
-- **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
-
-  .. _enum_Environment_ToneMapper:
-
-enum **ToneMapper**
-
-- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
-- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
-- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
-- **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
-
-  .. _enum_Environment_SSAOBlur:
-
-enum **SSAOBlur**
-
-- **SSAO_BLUR_DISABLED** = **0**
-- **SSAO_BLUR_1x1** = **1**
-- **SSAO_BLUR_2x2** = **2**
-- **SSAO_BLUR_3x3** = **3**
-
-  .. _enum_Environment_SSAOQuality:
-
-enum **SSAOQuality**
-
-- **SSAO_QUALITY_LOW** = **0**
-- **SSAO_QUALITY_MEDIUM** = **1**
-- **SSAO_QUALITY_HIGH** = **2**
-
-
-Description
------------
-
-Resource for environment nodes (like :ref:`WorldEnvironment<class_worldenvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_sky>` or :ref:`Color<class_color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
-
- 		
-
-- DOF Blur
-
-- Motion Blur
-
-- Bloom
-
-- Tonemap (auto exposure)
-
-- Adjustments
-
-Tutorials
----------
-
-- :doc:`../tutorials/3d/environment_and_post_processing`
-- :doc:`../tutorials/3d/high_dynamic_range`
 

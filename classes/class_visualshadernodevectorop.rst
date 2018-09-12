@@ -7,8 +7,7 @@
 VisualShaderNodeVectorOp
 ========================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualShaderNodeVectorOp_operator:
-
-- :ref:`Operator<enum_visualshadernodevectorop_operator>` **operator**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualShaderNodeVectorOp_Operator:
 
@@ -40,5 +31,13 @@ enum **Operator**
 - **OP_MAX** = **6**
 - **OP_MIN** = **7**
 - **OP_CROSS** = **8**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualShaderNodeVectorOp_operator:
+
+- :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` **operator**
 
 

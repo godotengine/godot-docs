@@ -7,26 +7,13 @@
 VisualScriptLocalVar
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Gets a local variable's value.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptLocalVar_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **type** - The local variable's type.
-
-  .. _class_VisualScriptLocalVar_var_name:
-
-- :ref:`String<class_string>` **var_name** - The local variable's name.
-
 
 Description
 -----------
@@ -40,4 +27,16 @@ none
 **Output Ports:**
 
 - Data (variant): ``get``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptLocalVar_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The local variable's type.
+
+  .. _class_VisualScriptLocalVar_var_name:
+
+- :ref:`String<class_String>` **var_name** - The local variable's name.
+
 

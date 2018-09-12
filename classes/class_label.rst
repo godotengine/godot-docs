@@ -7,17 +7,16 @@
 Label
 =====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_richtextlabel>`.
+Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_RichTextLabel>`.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------+-------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`get_line_count<class_Label_get_line_count>` **(** **)** const                       |
@@ -29,52 +28,8 @@ Member Functions
 | :ref:`int<class_int>`  | :ref:`get_visible_line_count<class_Label_get_visible_line_count>` **(** **)** const       |
 +------------------------+-------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_Label_align:
-
-- :ref:`Align<enum_label_align>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
-
-  .. _class_Label_autowrap:
-
-- :ref:`bool<class_bool>` **autowrap** - If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
-
-  .. _class_Label_clip_text:
-
-- :ref:`bool<class_bool>` **clip_text** - If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
-
-  .. _class_Label_lines_skipped:
-
-- :ref:`int<class_int>` **lines_skipped** - The node ignores the first ``lines_skipped`` lines before it starts to display text.
-
-  .. _class_Label_max_lines_visible:
-
-- :ref:`int<class_int>` **max_lines_visible** - Limits the lines of text the node shows on screen.
-
-  .. _class_Label_percent_visible:
-
-- :ref:`float<class_float>` **percent_visible** - Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
-
-  .. _class_Label_text:
-
-- :ref:`String<class_string>` **text** - The text to display on screen.
-
-  .. _class_Label_uppercase:
-
-- :ref:`bool<class_bool>` **uppercase** - If ``true``, all the text displays as UPPERCASE.
-
-  .. _class_Label_valign:
-
-- :ref:`VAlign<enum_label_valign>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
-
-  .. _class_Label_visible_characters:
-
-- :ref:`int<class_int>` **visible_characters** - Restricts the number of characters to display. Set to -1 to disable.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Label_Align:
 
@@ -98,12 +53,56 @@ enum **VAlign**
 Description
 -----------
 
-Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment, and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics or other formatting. For that, use :ref:`RichTextLabel<class_richtextlabel>` instead.
+Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment, and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
-Note that contrarily to most other :ref:`Control<class_control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_mouse_filter>` defaults to MOUSE_FILTER_IGNORE (i.e. it doesn't react to mouse input events).
+Note that contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_mouse_filter>` defaults to MOUSE_FILTER_IGNORE (i.e. it doesn't react to mouse input events).
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Label_align:
+
+- :ref:`Align<enum_Label_Align>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
+
+  .. _class_Label_autowrap:
+
+- :ref:`bool<class_bool>` **autowrap** - If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
+
+  .. _class_Label_clip_text:
+
+- :ref:`bool<class_bool>` **clip_text** - If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
+
+  .. _class_Label_lines_skipped:
+
+- :ref:`int<class_int>` **lines_skipped** - The node ignores the first ``lines_skipped`` lines before it starts to display text.
+
+  .. _class_Label_max_lines_visible:
+
+- :ref:`int<class_int>` **max_lines_visible** - Limits the lines of text the node shows on screen.
+
+  .. _class_Label_percent_visible:
+
+- :ref:`float<class_float>` **percent_visible** - Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+
+  .. _class_Label_text:
+
+- :ref:`String<class_String>` **text** - The text to display on screen.
+
+  .. _class_Label_uppercase:
+
+- :ref:`bool<class_bool>` **uppercase** - If ``true``, all the text displays as UPPERCASE.
+
+  .. _class_Label_valign:
+
+- :ref:`VAlign<enum_Label_VAlign>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
+
+  .. _class_Label_visible_characters:
+
+- :ref:`int<class_int>` **visible_characters** - Restricts the number of characters to display. Set to -1 to disable.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Label_get_line_count:
 

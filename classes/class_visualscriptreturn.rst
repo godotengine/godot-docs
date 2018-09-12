@@ -7,8 +7,7 @@
 VisualScriptReturn
 ==================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,22 +15,10 @@ Brief Description
 
 Exits a function and returns an optional value.
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptReturn_return_enabled:
-
-- :ref:`bool<class_bool>` **return_enabled** - If ``true`` the ``return`` input port is available.
-
-  .. _class_VisualScriptReturn_return_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **return_type** - The return value's data type.
-
-
 Description
 -----------
 
-Ends the execution of a function and returns control to the calling function. Optionally, it can return a :ref:`Variant<class_variant>` value.
+Ends the execution of a function and returns control to the calling function. Optionally, it can return a :ref:`Variant<class_Variant>` value.
 
 **Input Ports:**
 
@@ -42,4 +29,16 @@ Ends the execution of a function and returns control to the calling function. Op
 **Output Ports:**
 
 none
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptReturn_return_enabled:
+
+- :ref:`bool<class_bool>` **return_enabled** - If ``true`` the ``return`` input port is available.
+
+  .. _class_VisualScriptReturn_return_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type** - The return value's data type.
+
 

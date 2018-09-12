@@ -7,8 +7,7 @@
 ColorPicker
 ===========
 
-**Inherits:** :ref:`BoxContainer<class_boxcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 Color picker control.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+---------------------------------------------------------------------------------------------+
-| void  | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_color>` color **)** |
+| void  | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_Color>` color **)** |
 +-------+---------------------------------------------------------------------------------------------+
 
 Signals
@@ -28,17 +27,22 @@ Signals
 
 .. _class_ColorPicker_color_changed:
 
-- **color_changed** **(** :ref:`Color<class_color>` color **)**
+- **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color is changed.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+:ref:`Control<class_Control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
+
+Property Descriptions
+---------------------
 
   .. _class_ColorPicker_color:
 
-- :ref:`Color<class_color>` **color** - The currently selected color.
+- :ref:`Color<class_Color>` **color** - The currently selected color.
 
   .. _class_ColorPicker_deferred_mode:
 
@@ -53,17 +57,12 @@ Member Variables
 - :ref:`bool<class_bool>` **raw_mode** - If ``true`` allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 
-Description
------------
-
-:ref:`Control<class_control>` node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ColorPicker_add_preset:
 
-- void **add_preset** **(** :ref:`Color<class_color>` color **)**
+- void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
 

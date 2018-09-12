@@ -7,8 +7,7 @@
 JSONParseResult
 ===============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,17 @@ Brief Description
 
 Data class wrapper for decoded JSON.
 
-Member Variables
-----------------
+Description
+-----------
+
+Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == OK``.
+
+Property Descriptions
+---------------------
 
   .. _class_JSONParseResult_error:
 
-- :ref:`Error<enum_@globalscope_error>` **error** - The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@globalscope>` ERR\_\* constants.
+- :ref:`Error<enum_@GlobalScope_Error>` **error** - The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
   .. _class_JSONParseResult_error_line:
 
@@ -29,11 +33,11 @@ Member Variables
 
   .. _class_JSONParseResult_error_string:
 
-- :ref:`String<class_string>` **error_string** - The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@globalscope>` ERR\_\* constants.
+- :ref:`String<class_String>` **error_string** - The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
   .. _class_JSONParseResult_result:
 
-- :ref:`Variant<class_variant>` **result** - A :ref:`Variant<class_variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_array>` will be returned.
+- :ref:`Variant<class_Variant>` **result** - A :ref:`Variant<class_Variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_Dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_Array>` will be returned.
 
 *Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.
 
@@ -47,9 +51,4 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
     else:
         print("unexpected results")
 
-
-Description
------------
-
-Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == OK``.
 

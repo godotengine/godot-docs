@@ -7,8 +7,7 @@
 VisualScriptFunctionCall
 ========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,52 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptFunctionCall_base_script:
-
-- :ref:`String<class_string>` **base_script**
-
-  .. _class_VisualScriptFunctionCall_base_type:
-
-- :ref:`String<class_string>` **base_type**
-
-  .. _class_VisualScriptFunctionCall_basic_type:
-
-- :ref:`Variant.Type<enum_@globalscope_variant.type>` **basic_type**
-
-  .. _class_VisualScriptFunctionCall_call_mode:
-
-- :ref:`CallMode<enum_visualscriptfunctioncall_callmode>` **call_mode**
-
-  .. _class_VisualScriptFunctionCall_function:
-
-- :ref:`String<class_string>` **function**
-
-  .. _class_VisualScriptFunctionCall_node_path:
-
-- :ref:`NodePath<class_nodepath>` **node_path**
-
-  .. _class_VisualScriptFunctionCall_rpc_call_mode:
-
-- :ref:`RPCCallMode<enum_visualscriptfunctioncall_rpccallmode>` **rpc_call_mode**
-
-  .. _class_VisualScriptFunctionCall_singleton:
-
-- :ref:`String<class_string>` **singleton**
-
-  .. _class_VisualScriptFunctionCall_use_default_args:
-
-- :ref:`int<class_int>` **use_default_args**
-
-  .. _class_VisualScriptFunctionCall_validate:
-
-- :ref:`bool<class_bool>` **validate**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptFunctionCall_CallMode:
 
@@ -82,5 +37,49 @@ enum **RPCCallMode**
 - **RPC_UNRELIABLE** = **2**
 - **RPC_RELIABLE_TO_ID** = **3**
 - **RPC_UNRELIABLE_TO_ID** = **4**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptFunctionCall_base_script:
+
+- :ref:`String<class_String>` **base_script**
+
+  .. _class_VisualScriptFunctionCall_base_type:
+
+- :ref:`String<class_String>` **base_type**
+
+  .. _class_VisualScriptFunctionCall_basic_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
+
+  .. _class_VisualScriptFunctionCall_call_mode:
+
+- :ref:`CallMode<enum_VisualScriptFunctionCall_CallMode>` **call_mode**
+
+  .. _class_VisualScriptFunctionCall_function:
+
+- :ref:`String<class_String>` **function**
+
+  .. _class_VisualScriptFunctionCall_node_path:
+
+- :ref:`NodePath<class_NodePath>` **node_path**
+
+  .. _class_VisualScriptFunctionCall_rpc_call_mode:
+
+- :ref:`RPCCallMode<enum_VisualScriptFunctionCall_RPCCallMode>` **rpc_call_mode**
+
+  .. _class_VisualScriptFunctionCall_singleton:
+
+- :ref:`String<class_String>` **singleton**
+
+  .. _class_VisualScriptFunctionCall_use_default_args:
+
+- :ref:`int<class_int>` **use_default_args**
+
+  .. _class_VisualScriptFunctionCall_validate:
+
+- :ref:`bool<class_bool>` **validate**
 
 

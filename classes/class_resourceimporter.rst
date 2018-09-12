@@ -7,10 +7,8 @@
 ResourceImporter
 ================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ResourceImporterOGGVorbis<class_resourceimporteroggvorbis>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ResourceImporterOGGVorbis<class_ResourceImporterOGGVorbis>`
 **Category:** Core
 
 Brief Description

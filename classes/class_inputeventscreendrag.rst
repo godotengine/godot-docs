@@ -7,8 +7,7 @@
 InputEventScreenDrag
 ====================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -17,26 +16,6 @@ Brief Description
 Input event type for screen drag events.
 
 (only available on mobile devices)
-
-Member Variables
-----------------
-
-  .. _class_InputEventScreenDrag_index:
-
-- :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
-
-  .. _class_InputEventScreenDrag_position:
-
-- :ref:`Vector2<class_vector2>` **position** - Drag position.
-
-  .. _class_InputEventScreenDrag_relative:
-
-- :ref:`Vector2<class_vector2>` **relative** - Drag position relative to its start position.
-
-  .. _class_InputEventScreenDrag_speed:
-
-- :ref:`Vector2<class_vector2>` **speed** - Drag speed.
-
 
 Description
 -----------
@@ -47,4 +26,24 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
+
+  .. _class_InputEventScreenDrag_index:
+
+- :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
+
+  .. _class_InputEventScreenDrag_position:
+
+- :ref:`Vector2<class_Vector2>` **position** - Drag position.
+
+  .. _class_InputEventScreenDrag_relative:
+
+- :ref:`Vector2<class_Vector2>` **relative** - Drag position relative to its start position.
+
+  .. _class_InputEventScreenDrag_speed:
+
+- :ref:`Vector2<class_Vector2>` **speed** - Drag speed.
+
 

@@ -7,10 +7,8 @@
 AcceptDialog
 ============
 
-**Inherits:** :ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`ConfirmationDialog<class_confirmationdialog>`
-
+**Inherits:** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 **Category:** Core
 
 Brief Description
@@ -18,19 +16,19 @@ Brief Description
 
 Base dialog for user notification.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_button>`  | :ref:`add_button<class_AcceptDialog_add_button>` **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action="" **)** |
+| :ref:`Button<class_Button>`  | :ref:`add_button<class_AcceptDialog_add_button>` **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)** |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_button>`  | :ref:`add_cancel<class_AcceptDialog_add_cancel>` **(** :ref:`String<class_string>` name **)**                                                                             |
+| :ref:`Button<class_Button>`  | :ref:`add_cancel<class_AcceptDialog_add_cancel>` **(** :ref:`String<class_String>` name **)**                                                                             |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Label<class_label>`    | :ref:`get_label<class_AcceptDialog_get_label>` **(** **)**                                                                                                                |
+| :ref:`Label<class_Label>`    | :ref:`get_label<class_AcceptDialog_get_label>` **(** **)**                                                                                                                |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_button>`  | :ref:`get_ok<class_AcceptDialog_get_ok>` **(** **)**                                                                                                                      |
+| :ref:`Button<class_Button>`  | :ref:`get_ok<class_AcceptDialog_get_ok>` **(** **)**                                                                                                                      |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`register_text_enter<class_AcceptDialog_register_text_enter>` **(** :ref:`Node<class_node>` line_edit **)**                                                          |
+| void                         | :ref:`register_text_enter<class_AcceptDialog_register_text_enter>` **(** :ref:`Node<class_Node>` line_edit **)**                                                          |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -44,23 +42,9 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 .. _class_AcceptDialog_custom_action:
 
-- **custom_action** **(** :ref:`String<class_string>` action **)**
+- **custom_action** **(** :ref:`String<class_String>` action **)**
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_add_button>`.
-
-
-Member Variables
-----------------
-
-  .. _class_AcceptDialog_dialog_hide_on_ok:
-
-- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_confirmed>` signal, and handle hiding the dialog in your own logic. Default value: ``true``.
-
-Note: Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_filedialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such this property can't be used in :ref:`FileDialog<class_filedialog>` to disable hiding the dialog when pressing OK.
-
-  .. _class_AcceptDialog_dialog_text:
-
-- :ref:`String<class_string>` **dialog_text** - The text displayed by this dialog.
 
 
 Description
@@ -68,12 +52,26 @@ Description
 
 This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_AcceptDialog_dialog_hide_on_ok:
+
+- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_confirmed>` signal, and handle hiding the dialog in your own logic. Default value: ``true``.
+
+Note: Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
+
+  .. _class_AcceptDialog_dialog_text:
+
+- :ref:`String<class_String>` **dialog_text** - The text displayed by this dialog.
+
+
+Method Descriptions
+-------------------
 
 .. _class_AcceptDialog_add_button:
 
-- :ref:`Button<class_button>` **add_button** **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action="" **)**
+- :ref:`Button<class_Button>` **add_button** **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)**
 
 Adds a button with label *text* and a custom *action* to the dialog and returns the created button. *action* will be passed to the :ref:`custom_action<class_AcceptDialog_custom_action>` signal when pressed.
 
@@ -81,26 +79,26 @@ If ``true``, *right* will place the button to the right of any sibling buttons. 
 
 .. _class_AcceptDialog_add_cancel:
 
-- :ref:`Button<class_button>` **add_cancel** **(** :ref:`String<class_string>` name **)**
+- :ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
 
 Adds a button with label *name* and a cancel action to the dialog and returns the created button.
 
 .. _class_AcceptDialog_get_label:
 
-- :ref:`Label<class_label>` **get_label** **(** **)**
+- :ref:`Label<class_Label>` **get_label** **(** **)**
 
 Return the label used for built-in text.
 
 .. _class_AcceptDialog_get_ok:
 
-- :ref:`Button<class_button>` **get_ok** **(** **)**
+- :ref:`Button<class_Button>` **get_ok** **(** **)**
 
 Return the OK Button.
 
 .. _class_AcceptDialog_register_text_enter:
 
-- void **register_text_enter** **(** :ref:`Node<class_node>` line_edit **)**
+- void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
 
-Registers a :ref:`LineEdit<class_lineedit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
+Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
 
 

@@ -7,8 +7,7 @@
 GrooveJoint2D
 =============
 
-**Inherits:** :ref:`Joint2D<class_joint2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Groove constraint for 2D physics.
 
-Member Variables
-----------------
+Description
+-----------
+
+Groove constraint for 2D physics. This is useful for making a body "slide" through a segment placed in another.
+
+Property Descriptions
+---------------------
 
   .. _class_GrooveJoint2D_initial_offset:
 
@@ -27,9 +31,4 @@ Member Variables
 
 - :ref:`float<class_float>` **length** - The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_length>` along the joint's local y axis. Default value: ``50``
 
-
-Description
------------
-
-Groove constraint for 2D physics. This is useful for making a body "slide" through a segment placed in another.
 

@@ -7,14 +7,13 @@
 Path
 ====
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Container for a :ref:`Curve3D<class_curve3d>`.
+Container for a :ref:`Curve3D<class_Curve3D>`.
 
 Signals
 -------
@@ -24,16 +23,16 @@ Signals
 - **curve_changed** **(** **)**
 
 
-Member Variables
-----------------
-
-  .. _class_Path_curve:
-
-- :ref:`Curve3D<class_curve3d>` **curve**
-
-
 Description
 -----------
 
-This class is a container/Node-ification of a :ref:`Curve3D<class_curve3d>`, so it can have :ref:`Spatial<class_spatial>` properties and :ref:`Node<class_node>` info.
+This class is a container/Node-ification of a :ref:`Curve3D<class_Curve3D>`, so it can have :ref:`Spatial<class_Spatial>` properties and :ref:`Node<class_Node>` info.
+
+Property Descriptions
+---------------------
+
+  .. _class_Path_curve:
+
+- :ref:`Curve3D<class_Curve3D>` **curve**
+
 

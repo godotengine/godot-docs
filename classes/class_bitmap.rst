@@ -7,8 +7,7 @@
 BitMap
 ======
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,27 +15,27 @@ Brief Description
 
 Boolean matrix.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create<class_BitMap_create>` **(** :ref:`Vector2<class_vector2>` size **)**                                                                         |
+| void                           | :ref:`create<class_BitMap_create>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                         |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>` **(** :ref:`Image<class_image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
+| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>` **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>` **(** :ref:`Vector2<class_vector2>` position **)** const                                                             |
+| :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>` **(** :ref:`Vector2<class_Vector2>` position **)** const                                                             |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>` **(** **)** const                                                                                                  |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_size<class_BitMap_get_size>` **(** **)** const                                                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>` **(** **)** const                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`grow_mask<class_BitMap_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_rect2>` rect **)**                                         |
+| void                           | :ref:`grow_mask<class_BitMap_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**                                         |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`opaque_to_polygons<class_BitMap_opaque_to_polygons>` **(** :ref:`Rect2<class_rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const        |
+| :ref:`Array<class_Array>`      | :ref:`opaque_to_polygons<class_BitMap_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit<class_BitMap_set_bit>` **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
+| void                           | :ref:`set_bit<class_BitMap_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)**                                  |
+| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` p_rect, :ref:`bool<class_bool>` bit **)**                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -44,30 +43,30 @@ Description
 
 A two-dimensional array of boolean values, can be used to efficiently store a binary matrix (every matrix element takes only one bit) and query the values using natural cartesian coordinates.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_BitMap_create:
 
-- void **create** **(** :ref:`Vector2<class_vector2>` size **)**
+- void **create** **(** :ref:`Vector2<class_Vector2>` size **)**
 
 Creates a bitmap with the specified size, filled with false.
 
 .. _class_BitMap_create_from_image_alpha:
 
-- void **create_from_image_alpha** **(** :ref:`Image<class_image>` image, :ref:`float<class_float>` threshold=0.1 **)**
+- void **create_from_image_alpha** **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)**
 
 Creates a bitmap that matches the given image dimensions, every element of the bitmap is set to false if the alpha value of the image at that position is equal to ``threshold`` or less, and true in other case.
 
 .. _class_BitMap_get_bit:
 
-- :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_vector2>` position **)** const
+- :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
 Returns bitmap's value at the specified position.
 
 .. _class_BitMap_get_size:
 
-- :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Returns bitmap's dimensions.
 
@@ -79,21 +78,21 @@ Returns the amount of bitmap elements that are set to true.
 
 .. _class_BitMap_grow_mask:
 
-- void **grow_mask** **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_rect2>` rect **)**
+- void **grow_mask** **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**
 
 .. _class_BitMap_opaque_to_polygons:
 
-- :ref:`Array<class_array>` **opaque_to_polygons** **(** :ref:`Rect2<class_rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const
+- :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const
 
 .. _class_BitMap_set_bit:
 
-- void **set_bit** **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit **)**
+- void **set_bit** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**
 
 Sets the bitmap's element at the specified position, to the specified value.
 
 .. _class_BitMap_set_bit_rect:
 
-- void **set_bit_rect** **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)**
+- void **set_bit_rect** **(** :ref:`Rect2<class_Rect2>` p_rect, :ref:`bool<class_bool>` bit **)**
 
 Sets a rectangular portion of the bitmap to the specified value.
 

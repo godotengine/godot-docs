@@ -7,8 +7,7 @@
 Thread
 ======
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 A unit of execution in a process.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_id<class_Thread_get_id>` **(** **)** const                                                                                                                                                 |
+| :ref:`String<class_String>`            | :ref:`get_id<class_Thread_get_id>` **(** **)** const                                                                                                                                                 |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_active<class_Thread_is_active>` **(** **)** const                                                                                                                                           |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`start<class_Thread_start>` **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null, :ref:`int<class_int>` priority=1 **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`start<class_Thread_start>` **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`int<class_int>` priority=1 **)** |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`          | :ref:`wait_to_finish<class_Thread_wait_to_finish>` **(** **)**                                                                                                                                       |
+| :ref:`Variant<class_Variant>`          | :ref:`wait_to_finish<class_Thread_wait_to_finish>` **(** **)**                                                                                                                                       |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enums
------
+Enumerations
+------------
 
   .. _enum_Thread_Priority:
 
@@ -44,14 +43,14 @@ enum **Priority**
 Description
 -----------
 
-A unit of execution in a process. Can run methods on :ref:`Object<class_object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_mutex>`, :ref:`Semaphore<class_semaphore>` is advised if working with shared objects.
+A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>`, :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Thread_get_id:
 
-- :ref:`String<class_string>` **get_id** **(** **)** const
+- :ref:`String<class_String>` **get_id** **(** **)** const
 
 Returns the current ``Thread``\ s id, uniquely identifying it among all threads.
 
@@ -63,7 +62,7 @@ Returns true if this ``Thread`` is currently active. An active ``Thread`` cannot
 
 .. _class_Thread_start:
 
-- :ref:`Error<enum_@globalscope_error>` **start** **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null, :ref:`int<class_int>` priority=1 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null, :ref:`int<class_int>` priority=1 **)**
 
 Starts a new ``Thread`` that runs "method" on object "instance" with "userdata" passed as an argument. The "priority" of the ``Thread`` can be changed by passing a PRIORITY\_\* enum.
 
@@ -71,7 +70,7 @@ Returns OK on success, or ERR_CANT_CREATE on failure.
 
 .. _class_Thread_wait_to_finish:
 
-- :ref:`Variant<class_variant>` **wait_to_finish** **(** **)**
+- :ref:`Variant<class_Variant>` **wait_to_finish** **(** **)**
 
 Joins the ``Thread`` and waits for it to finish. Returns what the method called returned.
 

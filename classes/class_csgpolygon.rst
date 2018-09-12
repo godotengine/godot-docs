@@ -7,8 +7,7 @@
 CSGPolygon
 ==========
 
-**Inherits:** :ref:`CSGPrimitive<class_csgprimitive>` **<** :ref:`CSGShape<class_csgshape>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,33 @@ Brief Description
 
 Extrudes a 2D polygon shape to create a 3D mesh.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_CSGPolygon_Mode:
+
+enum **Mode**
+
+- **MODE_DEPTH** = **0** --- Shape is extruded to :ref:`depth<class_CSGPolygon_depth>`.
+- **MODE_SPIN** = **1** --- Shape is extruded by rotating it around an axis.
+- **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_Shape>` set in :ref:`path_node<class_CSGPolygon_path_node>`.
+
+  .. _enum_CSGPolygon_PathRotation:
+
+enum **PathRotation**
+
+- **PATH_ROTATION_POLYGON** = **0** --- Slice is not rotated.
+- **PATH_ROTATION_PATH** = **1** --- Slice is rotated around the up vector of the path.
+- **PATH_ROTATION_PATH_FOLLOW** = **2** --- Slice is rotate to match the path exactly.
+
+
+Description
+-----------
+
+This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
+
+Property Descriptions
+---------------------
 
   .. _class_CSGPolygon_depth:
 
@@ -25,11 +49,11 @@ Member Variables
 
   .. _class_CSGPolygon_material:
 
-- :ref:`Material<class_material>` **material** - Material to use for the resulting mesh.
+- :ref:`Material<class_Material>` **material** - Material to use for the resulting mesh.
 
   .. _class_CSGPolygon_mode:
 
-- :ref:`Mode<enum_csgpolygon_mode>` **mode** - Extrusion mode.
+- :ref:`Mode<enum_CSGPolygon_Mode>` **mode** - Extrusion mode.
 
   .. _class_CSGPolygon_path_continuous_u:
 
@@ -49,15 +73,15 @@ Member Variables
 
   .. _class_CSGPolygon_path_node:
 
-- :ref:`NodePath<class_nodepath>` **path_node** - The :ref:`Shape<class_shape>` object containing the path along which we extrude when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
+- :ref:`NodePath<class_NodePath>` **path_node** - The :ref:`Shape<class_Shape>` object containing the path along which we extrude when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
   .. _class_CSGPolygon_path_rotation:
 
-- :ref:`PathRotation<enum_csgpolygon_pathrotation>` **path_rotation** - The method by which each slice is rotated along the path when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
+- :ref:`PathRotation<enum_CSGPolygon_PathRotation>` **path_rotation** - The method by which each slice is rotated along the path when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
   .. _class_CSGPolygon_polygon:
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - Point array that defines the shape that we'll extrude.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - Point array that defines the shape that we'll extrude.
 
   .. _class_CSGPolygon_smooth_faces:
 
@@ -71,29 +95,4 @@ Member Variables
 
 - :ref:`int<class_int>` **spin_sides** - Number of extrusion when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_SPIN.
 
-
-Enums
------
-
-  .. _enum_CSGPolygon_Mode:
-
-enum **Mode**
-
-- **MODE_DEPTH** = **0** --- Shape is extruded to :ref:`depth<class_CSGPolygon_depth>`.
-- **MODE_SPIN** = **1** --- Shape is extruded by rotating it around an axis.
-- **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_shape>` set in :ref:`path_node<class_CSGPolygon_path_node>`.
-
-  .. _enum_CSGPolygon_PathRotation:
-
-enum **PathRotation**
-
-- **PATH_ROTATION_POLYGON** = **0** --- Slice is not rotated.
-- **PATH_ROTATION_PATH** = **1** --- Slice is rotated around the up vector of the path.
-- **PATH_ROTATION_PATH_FOLLOW** = **2** --- Slice is rotate to match the path exactly.
-
-
-Description
------------
-
-This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
 

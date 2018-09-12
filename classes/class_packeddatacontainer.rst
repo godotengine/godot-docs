@@ -7,8 +7,7 @@
 PackedDataContainer
 ===================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,29 +15,29 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`pack<class_PackedDataContainer_pack>` **(** :ref:`Variant<class_variant>` value **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`pack<class_PackedDataContainer_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
 +----------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`size<class_PackedDataContainer_size>` **(** **)** const                               |
 +----------------------------------------+---------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_PackedDataContainer___data__:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **__data__**
+- :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PackedDataContainer_pack:
 
-- :ref:`Error<enum_@globalscope_error>` **pack** **(** :ref:`Variant<class_variant>` value **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
 
 .. _class_PackedDataContainer_size:
 

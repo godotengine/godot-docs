@@ -7,8 +7,7 @@
 ResourcePreloader
 =================
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 Resource Preloader Node.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_resource<class_ResourcePreloader_add_resource>` **(** :ref:`String<class_string>` name, :ref:`Resource<class_resource>` resource **)**  |
+| void                                           | :ref:`add_resource<class_ResourcePreloader_add_resource>` **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**  |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`                | :ref:`get_resource<class_ResourcePreloader_get_resource>` **(** :ref:`String<class_string>` name **)** const                                      |
+| :ref:`Resource<class_Resource>`                | :ref:`get_resource<class_ResourcePreloader_get_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_resource_list<class_ResourcePreloader_get_resource_list>` **(** **)** const                                                             |
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_resource_list<class_ResourcePreloader_get_resource_list>` **(** **)** const                                                             |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_resource<class_ResourcePreloader_has_resource>` **(** :ref:`String<class_string>` name **)** const                                      |
+| :ref:`bool<class_bool>`                        | :ref:`has_resource<class_ResourcePreloader_has_resource>` **(** :ref:`String<class_String>` name **)** const                                      |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`remove_resource<class_ResourcePreloader_remove_resource>` **(** :ref:`String<class_string>` name **)**                                      |
+| void                                           | :ref:`remove_resource<class_ResourcePreloader_remove_resource>` **(** :ref:`String<class_String>` name **)**                                      |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`rename_resource<class_ResourcePreloader_rename_resource>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname **)** |
+| void                                           | :ref:`rename_resource<class_ResourcePreloader_rename_resource>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -38,40 +37,40 @@ Description
 
 Resource Preloader Node. This node is used to preload sub-resources inside a scene, so when the scene is loaded all the resources are ready to use and be retrieved from here.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ResourcePreloader_add_resource:
 
-- void **add_resource** **(** :ref:`String<class_string>` name, :ref:`Resource<class_resource>` resource **)**
+- void **add_resource** **(** :ref:`String<class_String>` name, :ref:`Resource<class_Resource>` resource **)**
 
 .. _class_ResourcePreloader_get_resource:
 
-- :ref:`Resource<class_resource>` **get_resource** **(** :ref:`String<class_string>` name **)** const
+- :ref:`Resource<class_Resource>` **get_resource** **(** :ref:`String<class_String>` name **)** const
 
 Return the resource given a text-id.
 
 .. _class_ResourcePreloader_get_resource_list:
 
-- :ref:`PoolStringArray<class_poolstringarray>` **get_resource_list** **(** **)** const
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_resource_list** **(** **)** const
 
 Return the list of resources inside the preloader.
 
 .. _class_ResourcePreloader_has_resource:
 
-- :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_string>` name **)** const
+- :ref:`bool<class_bool>` **has_resource** **(** :ref:`String<class_String>` name **)** const
 
 Return true if the preloader has a given resource.
 
 .. _class_ResourcePreloader_remove_resource:
 
-- void **remove_resource** **(** :ref:`String<class_string>` name **)**
+- void **remove_resource** **(** :ref:`String<class_String>` name **)**
 
 Remove a resource from the preloader by text id.
 
 .. _class_ResourcePreloader_rename_resource:
 
-- void **rename_resource** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname **)**
+- void **rename_resource** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` newname **)**
 
 Rename a resource inside the preloader, from a text-id to a new text-id.
 

@@ -7,8 +7,7 @@
 EditorResourcePreviewGenerator
 ==============================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,15 @@ Brief Description
 
 Custom generator of previews.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`generate<class_EditorResourcePreviewGenerator_generate>` **(** :ref:`Resource<class_resource>` from **)** virtual                 |
+| :ref:`Texture<class_Texture>`  | :ref:`generate<class_EditorResourcePreviewGenerator_generate>` **(** :ref:`Resource<class_Resource>` from **)** virtual                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`generate_from_path<class_EditorResourcePreviewGenerator_generate_from_path>` **(** :ref:`String<class_string>` path **)** virtual |
+| :ref:`Texture<class_Texture>`  | :ref:`generate_from_path<class_EditorResourcePreviewGenerator_generate_from_path>` **(** :ref:`String<class_String>` path **)** virtual |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`handles<class_EditorResourcePreviewGenerator_handles>` **(** :ref:`String<class_string>` type **)** virtual                       |
+| :ref:`bool<class_bool>`        | :ref:`handles<class_EditorResourcePreviewGenerator_handles>` **(** :ref:`String<class_String>` type **)** virtual                       |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -32,12 +31,12 @@ Description
 
 Custom code to generate previews. Please check "file_dialog/thumbnail_size" in EditorSettings to find out the right size to do previews at.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorResourcePreviewGenerator_generate:
 
-- :ref:`Texture<class_texture>` **generate** **(** :ref:`Resource<class_resource>` from **)** virtual
+- :ref:`Texture<class_Texture>` **generate** **(** :ref:`Resource<class_Resource>` from **)** virtual
 
 Generate a preview from a given resource. This must be always implemented.
 
@@ -47,7 +46,7 @@ Care must be taken because this function is always called from a thread (not the
 
 .. _class_EditorResourcePreviewGenerator_generate_from_path:
 
-- :ref:`Texture<class_texture>` **generate_from_path** **(** :ref:`String<class_string>` path **)** virtual
+- :ref:`Texture<class_Texture>` **generate_from_path** **(** :ref:`String<class_String>` path **)** virtual
 
 Generate a preview directly from a path, implementing this is optional, as default code will load and call generate()
 
@@ -57,7 +56,7 @@ Care must be taken because this function is always called from a thread (not the
 
 .. _class_EditorResourcePreviewGenerator_handles:
 
-- :ref:`bool<class_bool>` **handles** **(** :ref:`String<class_string>` type **)** virtual
+- :ref:`bool<class_bool>` **handles** **(** :ref:`String<class_String>` type **)** virtual
 
 Return if your generator supports this resource type.
 

@@ -7,8 +7,7 @@
 EditorInterface
 ===============
 
-**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,172 +15,172 @@ Brief Description
 
 Editor interface and main components.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`edit_resource<class_EditorInterface_edit_resource>` **(** :ref:`Resource<class_resource>` resource **)**                                          |
+| void                                                       | :ref:`edit_resource<class_EditorInterface_edit_resource>` **(** :ref:`Resource<class_Resource>` resource **)**                                          |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_control>`                              | :ref:`get_base_control<class_EditorInterface_get_base_control>` **(** **)**                                                                             |
+| :ref:`Control<class_Control>`                              | :ref:`get_base_control<class_EditorInterface_get_base_control>` **(** **)**                                                                             |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                                    | :ref:`get_edited_scene_root<class_EditorInterface_get_edited_scene_root>` **(** **)**                                                                   |
+| :ref:`Node<class_Node>`                                    | :ref:`get_edited_scene_root<class_EditorInterface_get_edited_scene_root>` **(** **)**                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorSettings<class_editorsettings>`                | :ref:`get_editor_settings<class_EditorInterface_get_editor_settings>` **(** **)**                                                                       |
+| :ref:`EditorSettings<class_EditorSettings>`                | :ref:`get_editor_settings<class_EditorInterface_get_editor_settings>` **(** **)**                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_control>`                              | :ref:`get_editor_viewport<class_EditorInterface_get_editor_viewport>` **(** **)**                                                                       |
+| :ref:`Control<class_Control>`                              | :ref:`get_editor_viewport<class_EditorInterface_get_editor_viewport>` **(** **)**                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                                  | :ref:`get_open_scenes<class_EditorInterface_get_open_scenes>` **(** **)** const                                                                         |
+| :ref:`Array<class_Array>`                                  | :ref:`get_open_scenes<class_EditorInterface_get_open_scenes>` **(** **)** const                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorFileSystem<class_editorfilesystem>`            | :ref:`get_resource_filesystem<class_EditorInterface_get_resource_filesystem>` **(** **)**                                                               |
+| :ref:`EditorFileSystem<class_EditorFileSystem>`            | :ref:`get_resource_filesystem<class_EditorInterface_get_resource_filesystem>` **(** **)**                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorResourcePreview<class_editorresourcepreview>`  | :ref:`get_resource_previewer<class_EditorInterface_get_resource_previewer>` **(** **)**                                                                 |
+| :ref:`EditorResourcePreview<class_EditorResourcePreview>`  | :ref:`get_resource_previewer<class_EditorInterface_get_resource_previewer>` **(** **)**                                                                 |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ScriptEditor<class_scripteditor>`                    | :ref:`get_script_editor<class_EditorInterface_get_script_editor>` **(** **)**                                                                           |
+| :ref:`ScriptEditor<class_ScriptEditor>`                    | :ref:`get_script_editor<class_EditorInterface_get_script_editor>` **(** **)**                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                | :ref:`get_selected_path<class_EditorInterface_get_selected_path>` **(** **)** const                                                                     |
+| :ref:`String<class_String>`                                | :ref:`get_selected_path<class_EditorInterface_get_selected_path>` **(** **)** const                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorSelection<class_editorselection>`              | :ref:`get_selection<class_EditorInterface_get_selection>` **(** **)**                                                                                   |
+| :ref:`EditorSelection<class_EditorSelection>`              | :ref:`get_selection<class_EditorInterface_get_selection>` **(** **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`inspect_object<class_EditorInterface_inspect_object>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` for_property="" **)** |
+| void                                                       | :ref:`inspect_object<class_EditorInterface_inspect_object>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)** |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`is_plugin_enabled<class_EditorInterface_is_plugin_enabled>` **(** :ref:`String<class_string>` plugin **)** const                                  |
+| :ref:`bool<class_bool>`                                    | :ref:`is_plugin_enabled<class_EditorInterface_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** const                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                                  | :ref:`make_mesh_previews<class_EditorInterface_make_mesh_previews>` **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size **)**    |
+| :ref:`Array<class_Array>`                                  | :ref:`make_mesh_previews<class_EditorInterface_make_mesh_previews>` **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`open_scene_from_path<class_EditorInterface_open_scene_from_path>` **(** :ref:`String<class_string>` scene_filepath **)**                          |
+| void                                                       | :ref:`open_scene_from_path<class_EditorInterface_open_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                          |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`reload_scene_from_path<class_EditorInterface_reload_scene_from_path>` **(** :ref:`String<class_string>` scene_filepath **)**                      |
+| void                                                       | :ref:`reload_scene_from_path<class_EditorInterface_reload_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                      |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`                      | :ref:`save_scene<class_EditorInterface_save_scene>` **(** **)**                                                                                         |
+| :ref:`Error<enum_@GlobalScope_Error>`                      | :ref:`save_scene<class_EditorInterface_save_scene>` **(** **)**                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
+| void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_string>` p_file **)**                                                    |
+| void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_String>` p_file **)**                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`set_plugin_enabled<class_EditorInterface_set_plugin_enabled>` **(** :ref:`String<class_string>` plugin, :ref:`bool<class_bool>` enabled **)**     |
+| void                                                       | :ref:`set_plugin_enabled<class_EditorInterface_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects and provides access to :ref:`EditorSettings<class_editorsettings>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`ScriptEditor<class_scripteditor>`, the editor viewport, as well as information about scenes. Also see :ref:`EditorPlugin<class_editorplugin>` and :ref:`EditorScript<class_editorscript>`.
+Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects and provides access to :ref:`EditorSettings<class_EditorSettings>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`ScriptEditor<class_ScriptEditor>`, the editor viewport, as well as information about scenes. Also see :ref:`EditorPlugin<class_EditorPlugin>` and :ref:`EditorScript<class_EditorScript>`.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorInterface_edit_resource:
 
-- void **edit_resource** **(** :ref:`Resource<class_resource>` resource **)**
+- void **edit_resource** **(** :ref:`Resource<class_Resource>` resource **)**
 
-Edits the given :ref:`Resource<class_resource>`.
+Edits the given :ref:`Resource<class_Resource>`.
 
 .. _class_EditorInterface_get_base_control:
 
-- :ref:`Control<class_control>` **get_base_control** **(** **)**
+- :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
-Returns the base :ref:`Control<class_control>`.
+Returns the base :ref:`Control<class_Control>`.
 
 .. _class_EditorInterface_get_edited_scene_root:
 
-- :ref:`Node<class_node>` **get_edited_scene_root** **(** **)**
+- :ref:`Node<class_Node>` **get_edited_scene_root** **(** **)**
 
-Returns the edited scene's root :ref:`Node<class_node>`.
+Returns the edited scene's root :ref:`Node<class_Node>`.
 
 .. _class_EditorInterface_get_editor_settings:
 
-- :ref:`EditorSettings<class_editorsettings>` **get_editor_settings** **(** **)**
+- :ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)**
 
-Returns the :ref:`EditorSettings<class_editorsettings>`.
+Returns the :ref:`EditorSettings<class_EditorSettings>`.
 
 .. _class_EditorInterface_get_editor_viewport:
 
-- :ref:`Control<class_control>` **get_editor_viewport** **(** **)**
+- :ref:`Control<class_Control>` **get_editor_viewport** **(** **)**
 
-Returns the editor :ref:`Viewport<class_viewport>`.
+Returns the editor :ref:`Viewport<class_Viewport>`.
 
 .. _class_EditorInterface_get_open_scenes:
 
-- :ref:`Array<class_array>` **get_open_scenes** **(** **)** const
+- :ref:`Array<class_Array>` **get_open_scenes** **(** **)** const
 
-Returns an :ref:`Array<class_array>` of the currently opened scenes.
+Returns an :ref:`Array<class_Array>` of the currently opened scenes.
 
 .. _class_EditorInterface_get_resource_filesystem:
 
-- :ref:`EditorFileSystem<class_editorfilesystem>` **get_resource_filesystem** **(** **)**
+- :ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)**
 
-Returns the :ref:`EditorFileSystem<class_editorfilesystem>`.
+Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
 
 .. _class_EditorInterface_get_resource_previewer:
 
-- :ref:`EditorResourcePreview<class_editorresourcepreview>` **get_resource_previewer** **(** **)**
+- :ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)**
 
-Returns the :ref:`EditorResourcePreview<class_editorresourcepreview>`\ er.
+Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`\ er.
 
 .. _class_EditorInterface_get_script_editor:
 
-- :ref:`ScriptEditor<class_scripteditor>` **get_script_editor** **(** **)**
+- :ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)**
 
-Returns the :ref:`ScriptEditor<class_scripteditor>`.
+Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
 
 .. _class_EditorInterface_get_selected_path:
 
-- :ref:`String<class_string>` **get_selected_path** **(** **)** const
+- :ref:`String<class_String>` **get_selected_path** **(** **)** const
 
 .. _class_EditorInterface_get_selection:
 
-- :ref:`EditorSelection<class_editorselection>` **get_selection** **(** **)**
+- :ref:`EditorSelection<class_EditorSelection>` **get_selection** **(** **)**
 
-Returns the :ref:`EditorSelection<class_editorselection>`.
+Returns the :ref:`EditorSelection<class_EditorSelection>`.
 
 .. _class_EditorInterface_inspect_object:
 
-- void **inspect_object** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` for_property="" **)**
+- void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)**
 
 Shows the given property on the given ``object`` in the Editor's Inspector dock.
 
 .. _class_EditorInterface_is_plugin_enabled:
 
-- :ref:`bool<class_bool>` **is_plugin_enabled** **(** :ref:`String<class_string>` plugin **)** const
+- :ref:`bool<class_bool>` **is_plugin_enabled** **(** :ref:`String<class_String>` plugin **)** const
 
 Returns the enabled status of a plugin. The plugin name is the same as its directory name.
 
 .. _class_EditorInterface_make_mesh_previews:
 
-- :ref:`Array<class_array>` **make_mesh_previews** **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size **)**
+- :ref:`Array<class_Array>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
 
-Returns mesh previews rendered at the given size as an :ref:`Array<class_array>` of :ref:`Texture<class_texture>`\ s.
+Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture<class_Texture>`\ s.
 
 .. _class_EditorInterface_open_scene_from_path:
 
-- void **open_scene_from_path** **(** :ref:`String<class_string>` scene_filepath **)**
+- void **open_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Opens the scene at the given path.
 
 .. _class_EditorInterface_reload_scene_from_path:
 
-- void **reload_scene_from_path** **(** :ref:`String<class_string>` scene_filepath **)**
+- void **reload_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Reloads the scene at the given path.
 
 .. _class_EditorInterface_save_scene:
 
-- :ref:`Error<enum_@globalscope_error>` **save_scene** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save_scene** **(** **)**
 
-Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@globalscope>` constants.
+Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@GlobalScope>` constants.
 
 .. _class_EditorInterface_save_scene_as:
 
-- void **save_scene_as** **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**
+- void **save_scene_as** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**
 
 Saves the scene as a file at ``path``.
 
 .. _class_EditorInterface_select_file:
 
-- void **select_file** **(** :ref:`String<class_string>` p_file **)**
+- void **select_file** **(** :ref:`String<class_String>` p_file **)**
 
 .. _class_EditorInterface_set_plugin_enabled:
 
-- void **set_plugin_enabled** **(** :ref:`String<class_string>` plugin, :ref:`bool<class_bool>` enabled **)**
+- void **set_plugin_enabled** **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**
 
 Sets the enabled status of a plugin. The plugin name is the same as its directory name.
 

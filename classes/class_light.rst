@@ -7,10 +7,8 @@
 Light
 =====
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`SpotLight<class_spotlight>`, :ref:`OmniLight<class_omnilight>`, :ref:`DirectionalLight<class_directionallight>`
-
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`SpotLight<class_SpotLight>`, :ref:`OmniLight<class_OmniLight>`, :ref:`DirectionalLight<class_DirectionalLight>`
 **Category:** Core
 
 Brief Description
@@ -18,64 +16,8 @@ Brief Description
 
 Provides a base class for different kinds of light nodes.
 
-Member Variables
-----------------
-
-  .. _class_Light_editor_only:
-
-- :ref:`bool<class_bool>` **editor_only** - If ``true`` the light only appears in the editor and will not be visible at runtime. Default value:``false``.
-
-  .. _class_Light_light_bake_mode:
-
-- :ref:`BakeMode<enum_light_bakemode>` **light_bake_mode** - The light's bake mode. See :ref:`BakeMode<enum_@globalscope_bakemode>`.
-
-  .. _class_Light_light_color:
-
-- :ref:`Color<class_color>` **light_color** - The light's color.
-
-  .. _class_Light_light_cull_mask:
-
-- :ref:`int<class_int>` **light_cull_mask** - The light will affect objects in the selected layers.
-
-  .. _class_Light_light_energy:
-
-- :ref:`float<class_float>` **light_energy** - The light's strength multiplier.
-
-  .. _class_Light_light_indirect_energy:
-
-- :ref:`float<class_float>` **light_indirect_energy** - Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
-
-  .. _class_Light_light_negative:
-
-- :ref:`bool<class_bool>` **light_negative** - If ``true`` the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
-
-  .. _class_Light_light_specular:
-
-- :ref:`float<class_float>` **light_specular** - The intensity of the specular blob in objects affected by the light. At ``0`` the light becomes a pure diffuse light.
-
-  .. _class_Light_shadow_bias:
-
-- :ref:`float<class_float>` **shadow_bias** - Used to adjust shadow appearance. Too small a value results in self shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
-
-  .. _class_Light_shadow_color:
-
-- :ref:`Color<class_color>` **shadow_color** - The color of shadows cast by this light.
-
-  .. _class_Light_shadow_contact:
-
-- :ref:`float<class_float>` **shadow_contact** - Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
-
-  .. _class_Light_shadow_enabled:
-
-- :ref:`bool<class_bool>` **shadow_enabled** - If ``true`` the light will cast shadows. Default value: ``false``.
-
-  .. _class_Light_shadow_reverse_cull_face:
-
-- :ref:`bool<class_bool>` **shadow_reverse_cull_face**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Light_BakeMode:
 
@@ -116,4 +58,60 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
+
+Property Descriptions
+---------------------
+
+  .. _class_Light_editor_only:
+
+- :ref:`bool<class_bool>` **editor_only** - If ``true`` the light only appears in the editor and will not be visible at runtime. Default value:``false``.
+
+  .. _class_Light_light_bake_mode:
+
+- :ref:`BakeMode<enum_Light_BakeMode>` **light_bake_mode** - The light's bake mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
+
+  .. _class_Light_light_color:
+
+- :ref:`Color<class_Color>` **light_color** - The light's color.
+
+  .. _class_Light_light_cull_mask:
+
+- :ref:`int<class_int>` **light_cull_mask** - The light will affect objects in the selected layers.
+
+  .. _class_Light_light_energy:
+
+- :ref:`float<class_float>` **light_energy** - The light's strength multiplier.
+
+  .. _class_Light_light_indirect_energy:
+
+- :ref:`float<class_float>` **light_indirect_energy** - Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
+
+  .. _class_Light_light_negative:
+
+- :ref:`bool<class_bool>` **light_negative** - If ``true`` the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
+
+  .. _class_Light_light_specular:
+
+- :ref:`float<class_float>` **light_specular** - The intensity of the specular blob in objects affected by the light. At ``0`` the light becomes a pure diffuse light.
+
+  .. _class_Light_shadow_bias:
+
+- :ref:`float<class_float>` **shadow_bias** - Used to adjust shadow appearance. Too small a value results in self shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
+
+  .. _class_Light_shadow_color:
+
+- :ref:`Color<class_Color>` **shadow_color** - The color of shadows cast by this light.
+
+  .. _class_Light_shadow_contact:
+
+- :ref:`float<class_float>` **shadow_contact** - Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
+
+  .. _class_Light_shadow_enabled:
+
+- :ref:`bool<class_bool>` **shadow_enabled** - If ``true`` the light will cast shadows. Default value: ``false``.
+
+  .. _class_Light_shadow_reverse_cull_face:
+
+- :ref:`bool<class_bool>` **shadow_reverse_cull_face**
+
 

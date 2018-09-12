@@ -7,8 +7,7 @@
 GDScriptFunctionState
 =====================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 State of a function call after yielding.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDScriptFunctionState_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** const |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDScriptFunctionState_resume>` **(** :ref:`Variant<class_variant>` arg=null **)**                 |
+| :ref:`Variant<class_Variant>`  | :ref:`resume<class_GDScriptFunctionState_resume>` **(** :ref:`Variant<class_Variant>` arg=null **)**                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -30,7 +29,7 @@ Signals
 
 .. _class_GDScriptFunctionState_completed:
 
-- **completed** **(** :ref:`Nil<class_nil>` result **)**
+- **completed** **(** :ref:`Nil<class_Nil>` result **)**
 
 
 Description
@@ -38,8 +37,8 @@ Description
 
 Calling :ref:`@GDScript.yield<class_@GDScript_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_resume>` on this state object.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GDScriptFunctionState_is_valid:
 
@@ -51,11 +50,11 @@ If ``extended_check`` is enabled, it also checks if the associated script and ob
 
 .. _class_GDScriptFunctionState_resume:
 
-- :ref:`Variant<class_variant>` **resume** **(** :ref:`Variant<class_variant>` arg=null **)**
+- :ref:`Variant<class_Variant>` **resume** **(** :ref:`Variant<class_Variant>` arg=null **)**
 
 Resume execution of the yielded function call.
 
-If handed an argument, return the argument from the :ref:`@GDScript.yield<class_@GDScript_yield>` call in the yielded function call. You can pass e.g. an :ref:`Array<class_array>` to hand multiple arguments.
+If handed an argument, return the argument from the :ref:`@GDScript.yield<class_@GDScript_yield>` call in the yielded function call. You can pass e.g. an :ref:`Array<class_Array>` to hand multiple arguments.
 
 This function returns what the resumed function call returns, possibly another function state if yielded again.
 

@@ -7,8 +7,7 @@
 SoftBody
 ========
 
-**Inherits:** :ref:`MeshInstance<class_meshinstance>` **<** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`MeshInstance<class_MeshInstance>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`add_collision_exception_with<class_SoftBody_add_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**                   |
+| void                     | :ref:`add_collision_exception_with<class_SoftBody_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_SoftBody_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -28,7 +27,7 @@ Member Functions
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_ray_pickable<class_SoftBody_is_ray_pickable>` **(** **)** const                                                                    |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`remove_collision_exception_with<class_SoftBody_remove_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**             |
+| void                     | :ref:`remove_collision_exception_with<class_SoftBody_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_collision_layer_bit<class_SoftBody_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,8 +36,8 @@ Member Functions
 | void                     | :ref:`set_ray_pickable<class_SoftBody_set_ray_pickable>` **(** :ref:`bool<class_bool>` ray_pickable **)**                                   |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_SoftBody_areaAngular_stiffness:
 
@@ -66,7 +65,7 @@ Member Variables
 
   .. _class_SoftBody_parent_collision_ignore:
 
-- :ref:`NodePath<class_nodepath>` **parent_collision_ignore**
+- :ref:`NodePath<class_NodePath>` **parent_collision_ignore**
 
   .. _class_SoftBody_pose_matching_coefficient:
 
@@ -89,12 +88,12 @@ Member Variables
 - :ref:`float<class_float>` **volume_stiffness**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_SoftBody_add_collision_exception_with:
 
-- void **add_collision_exception_with** **(** :ref:`Node<class_node>` body **)**
+- void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 .. _class_SoftBody_get_collision_layer_bit:
 
@@ -110,7 +109,7 @@ Member Function Description
 
 .. _class_SoftBody_remove_collision_exception_with:
 
-- void **remove_collision_exception_with** **(** :ref:`Node<class_node>` body **)**
+- void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 .. _class_SoftBody_set_collision_layer_bit:
 

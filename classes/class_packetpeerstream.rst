@@ -7,8 +7,7 @@
 PacketPeerStream
 ================
 
-**Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 Wrapper to use a PacketPeer over a StreamPeer.
 
-Member Variables
-----------------
+Description
+-----------
+
+PacketStreamPeer provides a wrapper for working using packets over a stream. This allows for using packet based code with StreamPeers. PacketPeerStream implements a custom protocol over the StreamPeer, so the user should not read or write to the wrapped StreamPeer directly.
+
+Property Descriptions
+---------------------
 
   .. _class_PacketPeerStream_input_buffer_max_size:
 
@@ -29,11 +33,6 @@ Member Variables
 
   .. _class_PacketPeerStream_stream_peer:
 
-- :ref:`StreamPeer<class_streampeer>` **stream_peer** - The wrapped :ref:`StreamPeer<class_streampeer>` object.
+- :ref:`StreamPeer<class_StreamPeer>` **stream_peer** - The wrapped :ref:`StreamPeer<class_StreamPeer>` object.
 
-
-Description
------------
-
-PacketStreamPeer provides a wrapper for working using packets over a stream. This allows for using packet based code with StreamPeers. PacketPeerStream implements a custom protocol over the StreamPeer, so the user should not read or write to the wrapped StreamPeer directly.
 

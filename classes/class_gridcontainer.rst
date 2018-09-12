@@ -7,8 +7,7 @@
 GridContainer
 =============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,31 +15,31 @@ Brief Description
 
 Grid container used to arrange elements in a grid like layout.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_control>`  | :ref:`get_child_control_at_cell<class_GridContainer_get_child_control_at_cell>` **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)** |
+| :ref:`Control<class_Control>`  | :ref:`get_child_control_at_cell<class_GridContainer_get_child_control_at_cell>` **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)** |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_GridContainer_columns:
-
-- :ref:`int<class_int>` **columns** - The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
-
 
 Description
 -----------
 
 Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`set_columns<class_GridContainer_set_columns>` method and the number of rows will be equal to the number of children in the container divided by the number of columns, for example: if the container has 5 children, and 2 columns, there will be 3 rows in the container. Notice that grid layout will preserve the columns and rows for every size of the container.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_GridContainer_columns:
+
+- :ref:`int<class_int>` **columns** - The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
+
+
+Method Descriptions
+-------------------
 
 .. _class_GridContainer_get_child_control_at_cell:
 
-- :ref:`Control<class_control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
+- :ref:`Control<class_Control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
 
 

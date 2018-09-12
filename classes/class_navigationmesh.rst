@@ -7,8 +7,7 @@
 NavigationMesh
 ==============
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,27 +15,34 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_polygon<class_NavigationMesh_add_polygon>` **(** :ref:`PoolIntArray<class_poolintarray>` polygon **)**            |
+| void                                             | :ref:`add_polygon<class_NavigationMesh_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`clear_polygons<class_NavigationMesh_clear_polygons>` **(** **)**                                                      |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`create_from_mesh<class_NavigationMesh_create_from_mesh>` **(** :ref:`Mesh<class_mesh>` mesh **)**                     |
+| void                                             | :ref:`create_from_mesh<class_NavigationMesh_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                     |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_polygon<class_NavigationMesh_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                  |
+| :ref:`PoolIntArray<class_PoolIntArray>`          | :ref:`get_polygon<class_NavigationMesh_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                  |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_polygon_count<class_NavigationMesh_get_polygon_count>` **(** **)** const                                          |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_vertices<class_NavigationMesh_get_vertices>` **(** **)** const                                                    |
+| :ref:`PoolVector3Array<class_PoolVector3Array>`  | :ref:`get_vertices<class_NavigationMesh_get_vertices>` **(** **)** const                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_vertices<class_NavigationMesh_set_vertices>` **(** :ref:`PoolVector3Array<class_poolvector3array>` vertices **)** |
+| void                                             | :ref:`set_vertices<class_NavigationMesh_set_vertices>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)** |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Constants
+---------
+
+- **SAMPLE_PARTITION_WATERSHED** = **0**
+- **SAMPLE_PARTITION_MONOTONE** = **1**
+- **SAMPLE_PARTITION_LAYERS** = **2**
+
+Property Descriptions
+---------------------
 
   .. _class_NavigationMesh_agent/height:
 
@@ -107,19 +113,12 @@ Member Variables
 - :ref:`int<class_int>` **sample_partition_type/sample_partition_type**
 
 
-Numeric Constants
------------------
-
-- **SAMPLE_PARTITION_WATERSHED** = **0**
-- **SAMPLE_PARTITION_MONOTONE** = **1**
-- **SAMPLE_PARTITION_LAYERS** = **2**
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_NavigationMesh_add_polygon:
 
-- void **add_polygon** **(** :ref:`PoolIntArray<class_poolintarray>` polygon **)**
+- void **add_polygon** **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**
 
 .. _class_NavigationMesh_clear_polygons:
 
@@ -127,11 +126,11 @@ Member Function Description
 
 .. _class_NavigationMesh_create_from_mesh:
 
-- void **create_from_mesh** **(** :ref:`Mesh<class_mesh>` mesh **)**
+- void **create_from_mesh** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
 .. _class_NavigationMesh_get_polygon:
 
-- :ref:`PoolIntArray<class_poolintarray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
 
 .. _class_NavigationMesh_get_polygon_count:
 
@@ -139,10 +138,10 @@ Member Function Description
 
 .. _class_NavigationMesh_get_vertices:
 
-- :ref:`PoolVector3Array<class_poolvector3array>` **get_vertices** **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** const
 
 .. _class_NavigationMesh_set_vertices:
 
-- void **set_vertices** **(** :ref:`PoolVector3Array<class_poolvector3array>` vertices **)**
+- void **set_vertices** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)**
 
 

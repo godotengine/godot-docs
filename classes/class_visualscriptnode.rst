@@ -7,28 +7,26 @@
 VisualScriptNode
 ================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`VisualScriptLocalVar<class_visualscriptlocalvar>`, :ref:`VisualScriptSceneNode<class_visualscriptscenenode>`, :ref:`VisualScriptBasicTypeConstant<class_visualscriptbasictypeconstant>`, :ref:`VisualScriptSequence<class_visualscriptsequence>`, :ref:`VisualScriptVariableSet<class_visualscriptvariableset>`, :ref:`VisualScriptSelf<class_visualscriptself>`, :ref:`VisualScriptConstant<class_visualscriptconstant>`, :ref:`VisualScriptReturn<class_visualscriptreturn>`, :ref:`VisualScriptSceneTree<class_visualscriptscenetree>`, :ref:`VisualScriptIndexSet<class_visualscriptindexset>`, :ref:`VisualScriptResourcePath<class_visualscriptresourcepath>`, :ref:`VisualScriptPropertyGet<class_visualscriptpropertyget>`, :ref:`VisualScriptVariableGet<class_visualscriptvariableget>`, :ref:`VisualScriptInputAction<class_visualscriptinputaction>`, :ref:`VisualScriptEmitSignal<class_visualscriptemitsignal>`, :ref:`VisualScriptDeconstruct<class_visualscriptdeconstruct>`, :ref:`VisualScriptTypeCast<class_visualscripttypecast>`, :ref:`VisualScriptGlobalConstant<class_visualscriptglobalconstant>`, :ref:`VisualScriptFunctionCall<class_visualscriptfunctioncall>`, :ref:`VisualScriptSwitch<class_visualscriptswitch>`, :ref:`VisualScriptBuiltinFunc<class_visualscriptbuiltinfunc>`, :ref:`VisualScriptClassConstant<class_visualscriptclassconstant>`, :ref:`VisualScriptEngineSingleton<class_visualscriptenginesingleton>`, :ref:`VisualScriptCondition<class_visualscriptcondition>`, :ref:`VisualScriptOperator<class_visualscriptoperator>`, :ref:`VisualScriptIterator<class_visualscriptiterator>`, :ref:`VisualScriptCustomNode<class_visualscriptcustomnode>`, :ref:`VisualScriptYield<class_visualscriptyield>`, :ref:`VisualScriptSubCall<class_visualscriptsubcall>`, :ref:`VisualScriptYieldSignal<class_visualscriptyieldsignal>`, :ref:`VisualScriptIndexGet<class_visualscriptindexget>`, :ref:`VisualScriptLocalVarSet<class_visualscriptlocalvarset>`, :ref:`VisualScriptWhile<class_visualscriptwhile>`, :ref:`VisualScriptConstructor<class_visualscriptconstructor>`, :ref:`VisualScriptMathConstant<class_visualscriptmathconstant>`, :ref:`VisualScriptComment<class_visualscriptcomment>`, :ref:`VisualScriptExpression<class_visualscriptexpression>`, :ref:`VisualScriptPropertySet<class_visualscriptpropertyset>`, :ref:`VisualScriptFunction<class_visualscriptfunction>`, :ref:`VisualScriptPreload<class_visualscriptpreload>`, :ref:`VisualScriptSelect<class_visualscriptselect>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`VisualScriptLocalVar<class_VisualScriptLocalVar>`, :ref:`VisualScriptSceneNode<class_VisualScriptSceneNode>`, :ref:`VisualScriptBasicTypeConstant<class_VisualScriptBasicTypeConstant>`, :ref:`VisualScriptSequence<class_VisualScriptSequence>`, :ref:`VisualScriptVariableSet<class_VisualScriptVariableSet>`, :ref:`VisualScriptSelf<class_VisualScriptSelf>`, :ref:`VisualScriptConstant<class_VisualScriptConstant>`, :ref:`VisualScriptReturn<class_VisualScriptReturn>`, :ref:`VisualScriptSceneTree<class_VisualScriptSceneTree>`, :ref:`VisualScriptIndexSet<class_VisualScriptIndexSet>`, :ref:`VisualScriptResourcePath<class_VisualScriptResourcePath>`, :ref:`VisualScriptPropertyGet<class_VisualScriptPropertyGet>`, :ref:`VisualScriptVariableGet<class_VisualScriptVariableGet>`, :ref:`VisualScriptInputAction<class_VisualScriptInputAction>`, :ref:`VisualScriptEmitSignal<class_VisualScriptEmitSignal>`, :ref:`VisualScriptDeconstruct<class_VisualScriptDeconstruct>`, :ref:`VisualScriptTypeCast<class_VisualScriptTypeCast>`, :ref:`VisualScriptGlobalConstant<class_VisualScriptGlobalConstant>`, :ref:`VisualScriptFunctionCall<class_VisualScriptFunctionCall>`, :ref:`VisualScriptSwitch<class_VisualScriptSwitch>`, :ref:`VisualScriptBuiltinFunc<class_VisualScriptBuiltinFunc>`, :ref:`VisualScriptClassConstant<class_VisualScriptClassConstant>`, :ref:`VisualScriptEngineSingleton<class_VisualScriptEngineSingleton>`, :ref:`VisualScriptCondition<class_VisualScriptCondition>`, :ref:`VisualScriptOperator<class_VisualScriptOperator>`, :ref:`VisualScriptIterator<class_VisualScriptIterator>`, :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>`, :ref:`VisualScriptYield<class_VisualScriptYield>`, :ref:`VisualScriptSubCall<class_VisualScriptSubCall>`, :ref:`VisualScriptYieldSignal<class_VisualScriptYieldSignal>`, :ref:`VisualScriptIndexGet<class_VisualScriptIndexGet>`, :ref:`VisualScriptLocalVarSet<class_VisualScriptLocalVarSet>`, :ref:`VisualScriptWhile<class_VisualScriptWhile>`, :ref:`VisualScriptConstructor<class_VisualScriptConstructor>`, :ref:`VisualScriptMathConstant<class_VisualScriptMathConstant>`, :ref:`VisualScriptComment<class_VisualScriptComment>`, :ref:`VisualScriptExpression<class_VisualScriptExpression>`, :ref:`VisualScriptPropertySet<class_VisualScriptPropertySet>`, :ref:`VisualScriptFunction<class_VisualScriptFunction>`, :ref:`VisualScriptPreload<class_VisualScriptPreload>`, :ref:`VisualScriptSelect<class_VisualScriptSelect>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-A node which is part of a :ref:`VisualScript<class_visualscript>`.
+A node which is part of a :ref:`VisualScript<class_VisualScript>`.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`            | :ref:`get_default_input_value<class_VisualScriptNode_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** const                                |
+| :ref:`Variant<class_Variant>`            | :ref:`get_default_input_value<class_VisualScriptNode_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** const                                |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VisualScript<class_visualscript>`  | :ref:`get_visual_script<class_VisualScriptNode_get_visual_script>` **(** **)** const                                                                           |
+| :ref:`VisualScript<class_VisualScript>`  | :ref:`get_visual_script<class_VisualScriptNode_get_visual_script>` **(** **)** const                                                                           |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`ports_changed_notify<class_VisualScriptNode_ports_changed_notify>` **(** **)**                                                                           |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_default_input_value<class_VisualScriptNode_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_variant>` value **)** |
+| void                                     | :ref:`set_default_input_value<class_VisualScriptNode_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)** |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -44,32 +42,32 @@ Emitted when the available input/output ports are changed.
 Description
 -----------
 
-A node which is part of a :ref:`VisualScript<class_visualscript>`. Not to be confused with :ref:`Node<class_node>`, which is a part of a :ref:`SceneTree<class_scenetree>`.
+A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be confused with :ref:`Node<class_Node>`, which is a part of a :ref:`SceneTree<class_SceneTree>`.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_VisualScriptNode_get_default_input_value:
 
-- :ref:`Variant<class_variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** const
+- :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** const
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
 
 .. _class_VisualScriptNode_get_visual_script:
 
-- :ref:`VisualScript<class_visualscript>` **get_visual_script** **(** **)** const
+- :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** const
 
-Returns the :ref:`VisualScript<class_visualscript>` instance the node is bound to.
+Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
 
 .. _class_VisualScriptNode_ports_changed_notify:
 
 - void **ports_changed_notify** **(** **)**
 
-Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_visualscriptcustomnode>` .
+Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>` .
 
 .. _class_VisualScriptNode_set_default_input_value:
 
-- void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_variant>` value **)**
+- void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)**
 
 Change the default value of a given port.
 

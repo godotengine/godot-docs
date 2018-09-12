@@ -14,15 +14,15 @@ Brief Description
 
 Float built-in type
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`bool<class_bool>` from **)**     |
 +----------------------------+------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`int<class_int>` from **)**       |
 +----------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`String<class_string>` from **)** |
+| :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`String<class_String>` from **)** |
 +----------------------------+------------------------------------------------------------------------------+
 
 Description
@@ -30,8 +30,8 @@ Description
 
 Float built-in type.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_float_float:
 
@@ -47,8 +47,8 @@ Cast an :ref:`int<class_int>` value to a floating point value, ``float(1)`` will
 
 .. _class_float_float:
 
-- :ref:`float<class_float>` **float** **(** :ref:`String<class_string>` from **)**
+- :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 
-Cast a :ref:`String<class_string>` value to a floating point value. This method accepts float value strings like `` '1.23' `` and exponential notation strings for its parameter so calling `` float('1e3') `` will return 1000.0 and calling `` float('1e-3') `` will return -0.001.
+Cast a :ref:`String<class_String>` value to a floating point value. This method accepts float value strings like `` '1.23' `` and exponential notation strings for its parameter so calling `` float('1e3') `` will return 1000.0 and calling `` float('1e-3') `` will return -0.001.
 
 

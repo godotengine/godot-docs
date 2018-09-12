@@ -7,38 +7,13 @@
 World
 =====
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class that has everything pertaining to a world.
-
-Member Variables
-----------------
-
-  .. _class_World_direct_space_state:
-
-- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` **direct_space_state** - The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
-
-  .. _class_World_environment:
-
-- :ref:`Environment<class_environment>` **environment** - The World's :ref:`Environment<class_environment>`.
-
-  .. _class_World_fallback_environment:
-
-- :ref:`Environment<class_environment>` **fallback_environment** - The World's fallback_environment will be used if the World's :ref:`Environment<class_environment>` fails or is missing.
-
-  .. _class_World_scenario:
-
-- :ref:`RID<class_rid>` **scenario** - The World's visual scenario.
-
-  .. _class_World_space:
-
-- :ref:`RID<class_rid>` **space** - The World's physics space.
-
 
 Description
 -----------
@@ -49,4 +24,28 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
+
+Property Descriptions
+---------------------
+
+  .. _class_World_direct_space_state:
+
+- :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **direct_space_state** - The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
+
+  .. _class_World_environment:
+
+- :ref:`Environment<class_Environment>` **environment** - The World's :ref:`Environment<class_Environment>`.
+
+  .. _class_World_fallback_environment:
+
+- :ref:`Environment<class_Environment>` **fallback_environment** - The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
+
+  .. _class_World_scenario:
+
+- :ref:`RID<class_RID>` **scenario** - The World's visual scenario.
+
+  .. _class_World_space:
+
+- :ref:`RID<class_RID>` **space** - The World's physics space.
+
 

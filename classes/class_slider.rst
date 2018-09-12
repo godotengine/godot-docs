@@ -7,10 +7,8 @@
 Slider
 ======
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`HSlider<class_hslider>`, :ref:`VSlider<class_vslider>`
-
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`HSlider<class_HSlider>`, :ref:`VSlider<class_VSlider>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,13 @@ Brief Description
 
 Base class for GUI Sliders.
 
-Member Variables
-----------------
+Description
+-----------
+
+Base class for GUI Sliders.
+
+Property Descriptions
+---------------------
 
   .. _class_Slider_editable:
 
@@ -27,7 +30,7 @@ Member Variables
 
   .. _class_Slider_focus_mode:
 
-- :ref:`FocusMode<enum_control_focusmode>` **focus_mode**
+- :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
   .. _class_Slider_scrollable:
 
@@ -41,9 +44,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **ticks_on_borders**
 
-
-Description
------------
-
-Base class for GUI Sliders.
 

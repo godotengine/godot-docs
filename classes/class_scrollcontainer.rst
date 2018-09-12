@@ -7,10 +7,8 @@
 ScrollContainer
 ===============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`EditorInspector<class_editorinspector>`
-
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`EditorInspector<class_EditorInspector>`
 **Category:** Core
 
 Brief Description
@@ -18,13 +16,13 @@ Brief Description
 
 A helper node for displaying scrollable elements (e.g. lists).
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------+---------------------------------------------------------------------------+
-| :ref:`HScrollBar<class_hscrollbar>`  | :ref:`get_h_scrollbar<class_ScrollContainer_get_h_scrollbar>` **(** **)** |
+| :ref:`HScrollBar<class_HScrollBar>`  | :ref:`get_h_scrollbar<class_ScrollContainer_get_h_scrollbar>` **(** **)** |
 +--------------------------------------+---------------------------------------------------------------------------+
-| :ref:`VScrollBar<class_vscrollbar>`  | :ref:`get_v_scrollbar<class_ScrollContainer_get_v_scrollbar>` **(** **)** |
+| :ref:`VScrollBar<class_VScrollBar>`  | :ref:`get_v_scrollbar<class_ScrollContainer_get_v_scrollbar>` **(** **)** |
 +--------------------------------------+---------------------------------------------------------------------------+
 
 Signals
@@ -43,8 +41,13 @@ Emitted whenever scrolling stops.
 Emitted whenever scrolling is started.
 
 
-Member Variables
-----------------
+Description
+-----------
+
+A ScrollContainer node with a :ref:`Control<class_Control>` child and scrollbar child (HScrollbar, :ref:`VScrollBar<class_VScrollBar>`, or both) will only draw the Control within the ScrollContainer area.  Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer.  Scrollbars will also automatically resize the grabber based on the minimum_size of the Control relative to the ScrollContainer.  Works great with a :ref:`Panel<class_Panel>` control.  You can set EXPAND on children size flags, so they will upscale to ScrollContainer size if ScrollContainer size is bigger (scroll is invisible for chosen dimension).
+
+Property Descriptions
+---------------------
 
   .. _class_ScrollContainer_scroll_deadzone:
 
@@ -67,20 +70,15 @@ Member Variables
 - :ref:`bool<class_bool>` **scroll_vertical_enabled** - If ``true``, enables vertical scrolling.
 
 
-Description
------------
-
-A ScrollContainer node with a :ref:`Control<class_control>` child and scrollbar child (HScrollbar, :ref:`VScrollBar<class_vscrollbar>`, or both) will only draw the Control within the ScrollContainer area.  Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer.  Scrollbars will also automatically resize the grabber based on the minimum_size of the Control relative to the ScrollContainer.  Works great with a :ref:`Panel<class_panel>` control.  You can set EXPAND on children size flags, so they will upscale to ScrollContainer size if ScrollContainer size is bigger (scroll is invisible for chosen dimension).
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_ScrollContainer_get_h_scrollbar:
 
-- :ref:`HScrollBar<class_hscrollbar>` **get_h_scrollbar** **(** **)**
+- :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
 
 .. _class_ScrollContainer_get_v_scrollbar:
 
-- :ref:`VScrollBar<class_vscrollbar>` **get_v_scrollbar** **(** **)**
+- :ref:`VScrollBar<class_VScrollBar>` **get_v_scrollbar** **(** **)**
 
 

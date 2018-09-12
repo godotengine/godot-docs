@@ -7,10 +7,8 @@
 Texture
 =======
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`CurveTexture<class_curvetexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`ProxyTexture<class_proxytexture>`, :ref:`GradientTexture<class_gradienttexture>`, :ref:`ViewportTexture<class_viewporttexture>`, :ref:`AnimatedTexture<class_animatedtexture>`, :ref:`StreamTexture<class_streamtexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`CurveTexture<class_CurveTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`, :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`
 **Category:** Core
 
 Brief Description
@@ -18,37 +16,29 @@ Brief Description
 
 Texture for 2D and 3D.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`draw<class_Texture_draw>` **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)** const                                                                                           |
+| void                           | :ref:`draw<class_Texture_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const                                                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`draw_rect<class_Texture_draw_rect>` **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)** const                                                           |
+| void                           | :ref:`draw_rect<class_Texture_draw_rect>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`draw_rect_region<class_Texture_draw_rect_region>` **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const |
+| void                           | :ref:`draw_rect_region<class_Texture_draw_rect_region>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_image>`      | :ref:`get_data<class_Texture_get_data>` **(** **)** const                                                                                                                                                                                                                                                                                                             |
+| :ref:`Image<class_Image>`      | :ref:`get_data<class_Texture_get_data>` **(** **)** const                                                                                                                                                                                                                                                                                                             |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_height<class_Texture_get_height>` **(** **)** const                                                                                                                                                                                                                                                                                                         |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_Texture_get_size>` **(** **)** const                                                                                                                                                                                                                                                                                                             |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_size<class_Texture_get_size>` **(** **)** const                                                                                                                                                                                                                                                                                                             |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_width<class_Texture_get_width>` **(** **)** const                                                                                                                                                                                                                                                                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`has_alpha<class_Texture_has_alpha>` **(** **)** const                                                                                                                                                                                                                                                                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_Texture_flags:
-
-- :ref:`int<class_int>` **flags** - The texture's flags.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_Texture_Flags:
 
@@ -69,28 +59,36 @@ More effective on planes often shown going to the horrizon as those textures (Wa
 Description
 -----------
 
-A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_sprite>` or GUI :ref:`Control<class_control>`.
+A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_Sprite>` or GUI :ref:`Control<class_Control>`.
 
 Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_load>`.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Texture_flags:
+
+- :ref:`int<class_int>` **flags** - The texture's flags.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Texture_draw:
 
-- void **draw** **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)** const
+- void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
 .. _class_Texture_draw_rect:
 
-- void **draw_rect** **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)** const
+- void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
 .. _class_Texture_draw_rect_region:
 
-- void **draw_rect_region** **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const
+- void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const
 
 .. _class_Texture_get_data:
 
-- :ref:`Image<class_image>` **get_data** **(** **)** const
+- :ref:`Image<class_Image>` **get_data** **(** **)** const
 
 .. _class_Texture_get_height:
 
@@ -100,7 +98,7 @@ Return the texture height.
 
 .. _class_Texture_get_size:
 
-- :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Return the texture size.
 

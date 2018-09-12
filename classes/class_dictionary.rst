@@ -14,29 +14,29 @@ Brief Description
 
 Dictionary type.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | void                                 | :ref:`clear<class_Dictionary_clear>` **(** **)**                                            |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`duplicate<class_Dictionary_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)** |
+| :ref:`Dictionary<class_Dictionary>`  | :ref:`duplicate<class_Dictionary_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)** |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`empty<class_Dictionary_empty>` **(** **)**                                            |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`erase<class_Dictionary_erase>` **(** var key **)**                                    |
+| :ref:`bool<class_bool>`              | :ref:`erase<class_Dictionary_erase>` **(** :ref:`Variant<class_Variant>` key **)**          |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`has<class_Dictionary_has>` **(** var key **)**                                        |
+| :ref:`bool<class_bool>`              | :ref:`has<class_Dictionary_has>` **(** :ref:`Variant<class_Variant>` key **)**              |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`has_all<class_Dictionary_has_all>` **(** :ref:`Array<class_array>` keys **)**         |
+| :ref:`bool<class_bool>`              | :ref:`has_all<class_Dictionary_has_all>` **(** :ref:`Array<class_Array>` keys **)**         |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`hash<class_Dictionary_hash>` **(** **)**                                              |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`keys<class_Dictionary_keys>` **(** **)**                                              |
+| :ref:`Array<class_Array>`            | :ref:`keys<class_Dictionary_keys>` **(** **)**                                              |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`size<class_Dictionary_size>` **(** **)**                                              |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`values<class_Dictionary_values>` **(** **)**                                          |
+| :ref:`Array<class_Array>`            | :ref:`values<class_Dictionary_values>` **(** **)**                                          |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 
 Description
@@ -44,8 +44,8 @@ Description
 
 Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Dictionary_clear:
 
@@ -55,7 +55,7 @@ Clear the dictionary, removing all key/value pairs.
 
 .. _class_Dictionary_duplicate:
 
-- :ref:`Dictionary<class_dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
+- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
 
 Creates a copy of the dictionary, and returns it.
 
@@ -67,19 +67,19 @@ Return true if the dictionary is empty.
 
 .. _class_Dictionary_erase:
 
-- :ref:`bool<class_bool>` **erase** **(** var key **)**
+- :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
 Erase a dictionary key/value pair by key.
 
 .. _class_Dictionary_has:
 
-- :ref:`bool<class_bool>` **has** **(** var key **)**
+- :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
 Return true if the dictionary has a given key.
 
 .. _class_Dictionary_has_all:
 
-- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_array>` keys **)**
+- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
 Return true if the dictionary has all of the keys in the given array.
 
@@ -91,7 +91,7 @@ Return a hashed integer value representing the dictionary contents.
 
 .. _class_Dictionary_keys:
 
-- :ref:`Array<class_array>` **keys** **(** **)**
+- :ref:`Array<class_Array>` **keys** **(** **)**
 
 Return the list of keys in the ``Dictionary``.
 
@@ -103,7 +103,7 @@ Return the size of the dictionary (in pairs).
 
 .. _class_Dictionary_values:
 
-- :ref:`Array<class_array>` **values** **(** **)**
+- :ref:`Array<class_Array>` **values** **(** **)**
 
 Return the list of values in the ``Dictionary``.
 

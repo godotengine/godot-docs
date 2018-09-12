@@ -7,8 +7,7 @@
 CSGCylinder
 ===========
 
-**Inherits:** :ref:`CSGPrimitive<class_csgprimitive>` **<** :ref:`CSGShape<class_csgshape>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,13 @@ Brief Description
 
 A CSG Cylinder shape.
 
-Member Variables
-----------------
+Description
+-----------
+
+This node allows you to create a cylinder (or cone) for use with the CSG system.
+
+Property Descriptions
+---------------------
 
   .. _class_CSGCylinder_cone:
 
@@ -29,7 +33,7 @@ Member Variables
 
   .. _class_CSGCylinder_material:
 
-- :ref:`Material<class_material>` **material** - The material used to render the cylinder.
+- :ref:`Material<class_Material>` **material** - The material used to render the cylinder.
 
   .. _class_CSGCylinder_radius:
 
@@ -43,9 +47,4 @@ Member Variables
 
 - :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. When false the cylinder will have a flat shaded look.
 
-
-Description
------------
-
-This node allows you to create a cylinder (or cone) for use with the CSG system.
 

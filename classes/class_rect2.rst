@@ -14,54 +14,38 @@ Brief Description
 
 2D Axis-aligned bounding box.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`Vector2<class_vector2>` position, :ref:`Vector2<class_vector2>` size **)**                                                                            |
+| :ref:`Rect2<class_Rect2>`  | :ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**                                                                            |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**                           |
+| :ref:`Rect2<class_Rect2>`  | :ref:`Rect2<class_Rect2_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`abs<class_Rect2_abs>` **(** **)**                                                                                                                                                           |
+| :ref:`Rect2<class_Rect2>`  | :ref:`abs<class_Rect2_abs>` **(** **)**                                                                                                                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`clip<class_Rect2_clip>` **(** :ref:`Rect2<class_rect2>` b **)**                                                                                                                             |
+| :ref:`Rect2<class_Rect2>`  | :ref:`clip<class_Rect2_clip>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`encloses<class_Rect2_encloses>` **(** :ref:`Rect2<class_rect2>` b **)**                                                                                                                     |
+| :ref:`bool<class_bool>`    | :ref:`encloses<class_Rect2_encloses>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`expand<class_Rect2_expand>` **(** :ref:`Vector2<class_vector2>` to **)**                                                                                                                    |
+| :ref:`Rect2<class_Rect2>`  | :ref:`expand<class_Rect2_expand>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                    |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_area<class_Rect2_get_area>` **(** **)**                                                                                                                                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`grow<class_Rect2_grow>` **(** :ref:`float<class_float>` by **)**                                                                                                                            |
+| :ref:`Rect2<class_Rect2>`  | :ref:`grow<class_Rect2_grow>` **(** :ref:`float<class_float>` by **)**                                                                                                                            |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`grow_individual<class_Rect2_grow_individual>` **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)** |
+| :ref:`Rect2<class_Rect2>`  | :ref:`grow_individual<class_Rect2_grow_individual>` **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)** |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`grow_margin<class_Rect2_grow_margin>` **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**                                                                                |
+| :ref:`Rect2<class_Rect2>`  | :ref:`grow_margin<class_Rect2_grow_margin>` **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**                                                                                |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`has_no_area<class_Rect2_has_no_area>` **(** **)**                                                                                                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has_point<class_Rect2_has_point>` **(** :ref:`Vector2<class_vector2>` point **)**                                                                                                           |
+| :ref:`bool<class_bool>`    | :ref:`has_point<class_Rect2_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)**                                                                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`intersects<class_Rect2_intersects>` **(** :ref:`Rect2<class_rect2>` b **)**                                                                                                                 |
+| :ref:`bool<class_bool>`    | :ref:`intersects<class_Rect2_intersects>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`merge<class_Rect2_merge>` **(** :ref:`Rect2<class_rect2>` b **)**                                                                                                                           |
+| :ref:`Rect2<class_Rect2>`  | :ref:`merge<class_Rect2_merge>` **(** :ref:`Rect2<class_Rect2>` b **)**                                                                                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_Rect2_end:
-
-- :ref:`Vector2<class_vector2>` **end** - Ending corner.
-
-  .. _class_Rect2_position:
-
-- :ref:`Vector2<class_vector2>` **position** - Position (starting corner).
-
-  .. _class_Rect2_size:
-
-- :ref:`Vector2<class_vector2>` **size** - Size from position to end.
-
 
 Description
 -----------
@@ -73,42 +57,58 @@ Tutorials
 
 - :doc:`../tutorials/math/index`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Rect2_end:
+
+- :ref:`Vector2<class_Vector2>` **end** - Ending corner.
+
+  .. _class_Rect2_position:
+
+- :ref:`Vector2<class_Vector2>` **position** - Position (starting corner).
+
+  .. _class_Rect2_size:
+
+- :ref:`Vector2<class_Vector2>` **size** - Size from position to end.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Rect2_Rect2:
 
-- :ref:`Rect2<class_rect2>` **Rect2** **(** :ref:`Vector2<class_vector2>` position, :ref:`Vector2<class_vector2>` size **)**
+- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**
 
 Constructs a ``Rect2`` by position and size.
 
 .. _class_Rect2_Rect2:
 
-- :ref:`Rect2<class_rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
+- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
 
 Constructs a ``Rect2`` by x, y, width, and height.
 
 .. _class_Rect2_abs:
 
-- :ref:`Rect2<class_rect2>` **abs** **(** **)**
+- :ref:`Rect2<class_Rect2>` **abs** **(** **)**
 
 Returns a ``Rect2`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
 
 .. _class_Rect2_clip:
 
-- :ref:`Rect2<class_rect2>` **clip** **(** :ref:`Rect2<class_rect2>` b **)**
+- :ref:`Rect2<class_Rect2>` **clip** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns the intersection of this ``Rect2`` and b.
 
 .. _class_Rect2_encloses:
 
-- :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2<class_rect2>` b **)**
+- :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns ``true`` if this ``Rect2`` completely encloses another one.
 
 .. _class_Rect2_expand:
 
-- :ref:`Rect2<class_rect2>` **expand** **(** :ref:`Vector2<class_vector2>` to **)**
+- :ref:`Rect2<class_Rect2>` **expand** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns this ``Rect2`` expanded to include a given point.
 
@@ -120,19 +120,19 @@ Returns the area of the ``Rect2``.
 
 .. _class_Rect2_grow:
 
-- :ref:`Rect2<class_rect2>` **grow** **(** :ref:`float<class_float>` by **)**
+- :ref:`Rect2<class_Rect2>` **grow** **(** :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards all the sides.
 
 .. _class_Rect2_grow_individual:
 
-- :ref:`Rect2<class_rect2>` **grow_individual** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)**
+- :ref:`Rect2<class_Rect2>` **grow_individual** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>`  bottom **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards each direction individually.
 
 .. _class_Rect2_grow_margin:
 
-- :ref:`Rect2<class_rect2>` **grow_margin** **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**
+- :ref:`Rect2<class_Rect2>` **grow_margin** **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``Rect2`` grown a given amount of units towards the Margin direction.
 
@@ -144,19 +144,19 @@ Returns ``true`` if the ``Rect2`` is flat or empty.
 
 .. _class_Rect2_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_vector2>` point **)**
+- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)**
 
 Returns ``true`` if the ``Rect2`` contains a point.
 
 .. _class_Rect2_intersects:
 
-- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_rect2>` b **)**
+- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns ``true`` if the ``Rect2`` overlaps with another.
 
 .. _class_Rect2_merge:
 
-- :ref:`Rect2<class_rect2>` **merge** **(** :ref:`Rect2<class_rect2>` b **)**
+- :ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)**
 
 Returns a larger Rect2 that contains this Rect2 and ``with``.
 

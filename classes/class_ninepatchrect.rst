@@ -7,8 +7,7 @@
 NinePatchRect
 =============
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -26,16 +25,33 @@ Signals
 Fired when the node's texture changes.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_NinePatchRect_AxisStretchMode:
+
+enum **AxisStretchMode**
+
+- **AXIS_STRETCH_MODE_STRETCH** = **0** --- Doesn't do anything at the time of writing. Default value for ``axis_stretch_horizontal`` and ``axis_stretch_vertical``.
+- **AXIS_STRETCH_MODE_TILE** = **1** --- Doesn't do anything at the time of writing.
+- **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Doesn't do anything at the time of writing.
+
+
+Description
+-----------
+
+Better known as 9-slice panels, NinePatchRect produces clean panels of any size, based on a small texture. To do so, it splits the texture in a 3 by 3 grid. When you scale the node, it tiles the texture's sides horizontally or vertically, the center on both axes but it doesn't scale or tile the corners.
+
+Property Descriptions
+---------------------
 
   .. _class_NinePatchRect_axis_stretch_horizontal:
 
-- :ref:`AxisStretchMode<enum_ninepatchrect_axisstretchmode>` **axis_stretch_horizontal** - Doesn't do anything at the time of writing.
+- :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_horizontal** - Doesn't do anything at the time of writing.
 
   .. _class_NinePatchRect_axis_stretch_vertical:
 
-- :ref:`AxisStretchMode<enum_ninepatchrect_axisstretchmode>` **axis_stretch_vertical** - Doesn't do anything at the time of writing.
+- :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **axis_stretch_vertical** - Doesn't do anything at the time of writing.
 
   .. _class_NinePatchRect_draw_center:
 
@@ -59,27 +75,10 @@ Member Variables
 
   .. _class_NinePatchRect_region_rect:
 
-- :ref:`Rect2<class_rect2>` **region_rect** - Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one.
+- :ref:`Rect2<class_Rect2>` **region_rect** - Rectangular region of the texture to sample from. If you're working with an atlas, use this property to define the area the 9-slice should use. All other properties are relative to this one.
 
   .. _class_NinePatchRect_texture:
 
-- :ref:`Texture<class_texture>` **texture** - The node's texture resource.
+- :ref:`Texture<class_Texture>` **texture** - The node's texture resource.
 
-
-Enums
------
-
-  .. _enum_NinePatchRect_AxisStretchMode:
-
-enum **AxisStretchMode**
-
-- **AXIS_STRETCH_MODE_STRETCH** = **0** --- Doesn't do anything at the time of writing. Default value for ``axis_stretch_horizontal`` and ``axis_stretch_vertical``.
-- **AXIS_STRETCH_MODE_TILE** = **1** --- Doesn't do anything at the time of writing.
-- **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Doesn't do anything at the time of writing.
-
-
-Description
------------
-
-Better known as 9-slice panels, NinePatchRect produces clean panels of any size, based on a small texture. To do so, it splits the texture in a 3 by 3 grid. When you scale the node, it tiles the texture's sides horizontally or vertically, the center on both axes but it doesn't scale or tile the corners.
 

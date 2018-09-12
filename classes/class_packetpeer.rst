@@ -7,10 +7,8 @@
 PacketPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`PacketPeerStream<class_packetpeerstream>`, :ref:`PacketPeerUDP<class_packetpeerudp>`, :ref:`WebSocketPeer<class_websocketpeer>`, :ref:`PacketPeerGDNative<class_packetpeergdnative>`, :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`
 **Category:** Core
 
 Brief Description
@@ -18,38 +16,38 @@ Brief Description
 
 Abstraction and base class for packet-based protocols.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>` **(** **)** const            |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>` **(** **)**                                                  |
+| :ref:`PoolByteArray<class_PoolByteArray>`  | :ref:`get_packet<class_PacketPeer_get_packet>` **(** **)**                                                  |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** const                                |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** const                                |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>` **(** **)**                                                        |
+| :ref:`Variant<class_Variant>`              | :ref:`get_var<class_PacketPeer_get_var>` **(** **)**                                                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`put_packet<class_PacketPeer_put_packet>` **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`put_packet<class_PacketPeer_put_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)** |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`      | :ref:`put_var<class_PacketPeer_put_var>` **(** :ref:`Variant<class_variant>` var **)**                      |
+| :ref:`Error<enum_@GlobalScope_Error>`      | :ref:`put_var<class_PacketPeer_put_var>` **(** :ref:`Variant<class_Variant>` var **)**                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_PacketPeer_allow_object_decoding:
-
-- :ref:`bool<class_bool>` **allow_object_decoding**
-
 
 Description
 -----------
 
 PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low level bytes or having to worry about network ordering.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_PacketPeer_allow_object_decoding:
+
+- :ref:`bool<class_bool>` **allow_object_decoding**
+
+
+Method Descriptions
+-------------------
 
 .. _class_PacketPeer_get_available_packet_count:
 
@@ -59,31 +57,31 @@ Return the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_get_packet:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **get_packet** **(** **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_packet** **(** **)**
 
 Get a raw packet.
 
 .. _class_PacketPeer_get_packet_error:
 
-- :ref:`Error<enum_@globalscope_error>` **get_packet_error** **(** **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
 Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_get_packet>` and :ref:`get_var<class_PacketPeer_get_var>`).
 
 .. _class_PacketPeer_get_var:
 
-- :ref:`Variant<class_variant>` **get_var** **(** **)**
+- :ref:`Variant<class_Variant>` **get_var** **(** **)**
 
 Get a Variant.
 
 .. _class_PacketPeer_put_packet:
 
-- :ref:`Error<enum_@globalscope_error>` **put_packet** **(** :ref:`PoolByteArray<class_poolbytearray>` buffer **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Send a raw packet.
 
 .. _class_PacketPeer_put_var:
 
-- :ref:`Error<enum_@globalscope_error>` **put_var** **(** :ref:`Variant<class_variant>` var **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var **)**
 
 Send a Variant as a packet.
 

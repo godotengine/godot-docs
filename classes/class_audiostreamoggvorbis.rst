@@ -7,8 +7,7 @@
 AudioStreamOGGVorbis
 ====================
 
-**Inherits:** :ref:`AudioStream<class_audiostream>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,12 +15,17 @@ Brief Description
 
 OGG Vorbis audio stream driver.
 
-Member Variables
-----------------
+Description
+-----------
+
+OGG Vorbis audio stream driver.
+
+Property Descriptions
+---------------------
 
   .. _class_AudioStreamOGGVorbis_data:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **data** - Contains the audio data in bytes.
+- :ref:`PoolByteArray<class_PoolByteArray>` **data** - Contains the audio data in bytes.
 
   .. _class_AudioStreamOGGVorbis_loop:
 
@@ -31,9 +35,4 @@ Member Variables
 
 - :ref:`float<class_float>` **loop_offset**
 
-
-Description
------------
-
-OGG Vorbis audio stream driver.
 

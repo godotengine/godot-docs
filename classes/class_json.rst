@@ -7,8 +7,7 @@
 JSON
 ====
 
-**Inherits:** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,32 +15,32 @@ Brief Description
 
 Helper class for parsing JSON data.
 
-Member Functions
-----------------
+Methods
+-------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JSONParseResult<class_jsonparseresult>`  | :ref:`parse<class_JSON_parse>` **(** :ref:`String<class_string>` json **)**                                                                                    |
+| :ref:`JSONParseResult<class_JSONParseResult>`  | :ref:`parse<class_JSON_parse>` **(** :ref:`String<class_String>` json **)**                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`print<class_JSON_print>` **(** :ref:`Variant<class_variant>` value, :ref:`String<class_string>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
+| :ref:`String<class_String>`                    | :ref:`print<class_JSON_print>` **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_jsonparseresult>`.
+Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_JSONParseResult>`.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_JSON_parse:
 
-- :ref:`JSONParseResult<class_jsonparseresult>` **parse** **(** :ref:`String<class_string>` json **)**
+- :ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
 
-Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_jsonparseresult>` containing the result.
+Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
 
 .. _class_JSON_print:
 
-- :ref:`String<class_string>` **print** **(** :ref:`Variant<class_variant>` value, :ref:`String<class_string>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
+- :ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
 
 Converts a Variant var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 

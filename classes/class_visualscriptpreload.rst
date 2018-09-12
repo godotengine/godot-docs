@@ -7,27 +7,18 @@
 VisualScriptPreload
 ===================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Creates a new :ref:`Resource<class_resource>` or loads one from the filesystem.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptPreload_resource:
-
-- :ref:`Resource<class_resource>` **resource** - The :ref:`Resource<class_resource>` to load.
-
+Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
 Description
 -----------
 
-Creates a new :ref:`Resource<class_resource>` or loads one from the filesystem.
+Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
 **Input Ports:**
 
@@ -36,4 +27,12 @@ none
 **Output Ports:**
 
 - Data (object): ``res``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptPreload_resource:
+
+- :ref:`Resource<class_Resource>` **resource** - The :ref:`Resource<class_Resource>` to load.
+
 

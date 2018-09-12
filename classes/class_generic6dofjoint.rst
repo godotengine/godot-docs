@@ -7,8 +7,7 @@
 Generic6DOFJoint
 ================
 
-**Inherits:** :ref:`Joint<class_joint>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,49 @@ Brief Description
 
 The generic 6 degrees of freedom joint can implement a variety of joint-types by locking certain axes' rotation or translation.
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Generic6DOFJoint_Flag:
+
+enum **Flag**
+
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+- **FLAG_ENABLE_LINEAR_MOTOR** = **3**
+- **FLAG_MAX** = **4** --- End flag of FLAG\_\* constants, used internally.
+
+  .. _enum_Generic6DOFJoint_Param:
+
+enum **Param**
+
+- **PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
+- **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
+- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
+- **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
+- **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
+- **PARAM_LINEAR_MOTOR_TARGET_VELOCITY** = **5** --- The velocity the linear motor will try to reach.
+- **PARAM_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force the linear motor will apply while trying to reach the velocity target.
+- **PARAM_ANGULAR_LOWER_LIMIT** = **7** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_UPPER_LIMIT** = **8** --- The minimum rotation in positive direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **9** --- The speed of all rotations across the axes.
+- **PARAM_ANGULAR_DAMPING** = **10** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **PARAM_ANGULAR_RESTITUTION** = **11** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **PARAM_ANGULAR_FORCE_LIMIT** = **12** --- The maximum amount of force that can occur, when rotating around the axes.
+- **PARAM_ANGULAR_ERP** = **13** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **14** --- Target speed for the motor at the axes.
+- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
+- **PARAM_MAX** = **16** --- End flag of PARAM\_\* constants, used internally.
+
+
+Description
+-----------
+
+The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
+
+Property Descriptions
+---------------------
 
   .. _class_Generic6DOFJoint_angular_limit_x/damping:
 
@@ -261,45 +301,4 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
 - :ref:`float<class_float>` **linear_motor_z/target_velocity** - The speed that the linear motor will attempt to reach on the z-axis.
 
-
-Enums
------
-
-  .. _enum_Generic6DOFJoint_Flag:
-
-enum **Flag**
-
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
-- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
-- **FLAG_ENABLE_LINEAR_MOTOR** = **3**
-- **FLAG_MAX** = **4** --- End flag of FLAG\_\* constants, used internally.
-
-  .. _enum_Generic6DOFJoint_Param:
-
-enum **Param**
-
-- **PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
-- **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
-- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
-- **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
-- **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
-- **PARAM_LINEAR_MOTOR_TARGET_VELOCITY** = **5** --- The velocity the linear motor will try to reach.
-- **PARAM_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force the linear motor will apply while trying to reach the velocity target.
-- **PARAM_ANGULAR_LOWER_LIMIT** = **7** --- The minimum rotation in negative direction to break loose and rotate around the axes.
-- **PARAM_ANGULAR_UPPER_LIMIT** = **8** --- The minimum rotation in positive direction to break loose and rotate around the axes.
-- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **9** --- The speed of all rotations across the axes.
-- **PARAM_ANGULAR_DAMPING** = **10** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
-- **PARAM_ANGULAR_RESTITUTION** = **11** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
-- **PARAM_ANGULAR_FORCE_LIMIT** = **12** --- The maximum amount of force that can occur, when rotating around the axes.
-- **PARAM_ANGULAR_ERP** = **13** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
-- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **14** --- Target speed for the motor at the axes.
-- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
-- **PARAM_MAX** = **16** --- End flag of PARAM\_\* constants, used internally.
-
-
-Description
------------
-
-The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
 

@@ -7,10 +7,8 @@
 Node2D
 ======
 
-**Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`RemoteTransform2D<class_remotetransform2d>`, :ref:`Joint2D<class_joint2d>`, :ref:`Skeleton2D<class_skeleton2d>`, :ref:`VisibilityNotifier2D<class_visibilitynotifier2d>`, :ref:`Navigation2D<class_navigation2d>`, :ref:`CollisionPolygon2D<class_collisionpolygon2d>`, :ref:`TouchScreenButton<class_touchscreenbutton>`, :ref:`Particles2D<class_particles2d>`, :ref:`AnimatedSprite<class_animatedsprite>`, :ref:`RayCast2D<class_raycast2d>`, :ref:`Light2D<class_light2d>`, :ref:`Path2D<class_path2d>`, :ref:`Line2D<class_line2d>`, :ref:`AudioStreamPlayer2D<class_audiostreamplayer2d>`, :ref:`CanvasModulate<class_canvasmodulate>`, :ref:`Sprite<class_sprite>`, :ref:`CollisionShape2D<class_collisionshape2d>`, :ref:`NavigationPolygonInstance<class_navigationpolygoninstance>`, :ref:`PathFollow2D<class_pathfollow2d>`, :ref:`ParallaxLayer<class_parallaxlayer>`, :ref:`Polygon2D<class_polygon2d>`, :ref:`Position2D<class_position2d>`, :ref:`LightOccluder2D<class_lightoccluder2d>`, :ref:`CollisionObject2D<class_collisionobject2d>`, :ref:`BackBufferCopy<class_backbuffercopy>`, :ref:`MeshInstance2D<class_meshinstance2d>`, :ref:`YSort<class_ysort>`, :ref:`TileMap<class_tilemap>`, :ref:`Bone2D<class_bone2d>`, :ref:`Camera2D<class_camera2d>`
-
+**Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`RemoteTransform2D<class_RemoteTransform2D>`, :ref:`Joint2D<class_Joint2D>`, :ref:`Skeleton2D<class_Skeleton2D>`, :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>`, :ref:`Navigation2D<class_Navigation2D>`, :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`, :ref:`TouchScreenButton<class_TouchScreenButton>`, :ref:`Particles2D<class_Particles2D>`, :ref:`AnimatedSprite<class_AnimatedSprite>`, :ref:`RayCast2D<class_RayCast2D>`, :ref:`Light2D<class_Light2D>`, :ref:`Path2D<class_Path2D>`, :ref:`Line2D<class_Line2D>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, :ref:`CanvasModulate<class_CanvasModulate>`, :ref:`Sprite<class_Sprite>`, :ref:`CPUParticles2D<class_CPUParticles2D>`, :ref:`CollisionShape2D<class_CollisionShape2D>`, :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>`, :ref:`PathFollow2D<class_PathFollow2D>`, :ref:`ParallaxLayer<class_ParallaxLayer>`, :ref:`Polygon2D<class_Polygon2D>`, :ref:`Position2D<class_Position2D>`, :ref:`LightOccluder2D<class_LightOccluder2D>`, :ref:`CollisionObject2D<class_CollisionObject2D>`, :ref:`BackBufferCopy<class_BackBufferCopy>`, :ref:`MeshInstance2D<class_MeshInstance2D>`, :ref:`YSort<class_YSort>`, :ref:`TileMap<class_TileMap>`, :ref:`Bone2D<class_Bone2D>`, :ref:`Camera2D<class_Camera2D>`
 **Category:** Core
 
 Brief Description
@@ -18,19 +16,19 @@ Brief Description
 
 A 2D game object, parent of all 2D related nodes. Has a position, rotation, scale and Z-index.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`apply_scale<class_Node2D_apply_scale>` **(** :ref:`Vector2<class_vector2>` ratio **)**                                            |
+| void                                   | :ref:`apply_scale<class_Node2D_apply_scale>` **(** :ref:`Vector2<class_Vector2>` ratio **)**                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_angle_to<class_Node2D_get_angle_to>` **(** :ref:`Vector2<class_vector2>` point **)** const                                    |
+| :ref:`float<class_float>`              | :ref:`get_angle_to<class_Node2D_get_angle_to>` **(** :ref:`Vector2<class_Vector2>` point **)** const                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>` **(** :ref:`Node<class_node>` parent **)** const |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>` **(** :ref:`Node<class_Node>` parent **)** const |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`global_translate<class_Node2D_global_translate>` **(** :ref:`Vector2<class_vector2>` offset **)**                                 |
+| void                                   | :ref:`global_translate<class_Node2D_global_translate>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`look_at<class_Node2D_look_at>` **(** :ref:`Vector2<class_vector2>` point **)**                                                    |
+| void                                   | :ref:`look_at<class_Node2D_look_at>` **(** :ref:`Vector2<class_Vector2>` point **)**                                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`move_local_x<class_Node2D_move_local_x>` **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,64 +36,12 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`rotate<class_Node2D_rotate>` **(** :ref:`float<class_float>` radians **)**                                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`to_global<class_Node2D_to_global>` **(** :ref:`Vector2<class_vector2>` local_point **)** const                                    |
+| :ref:`Vector2<class_Vector2>`          | :ref:`to_global<class_Node2D_to_global>` **(** :ref:`Vector2<class_Vector2>` local_point **)** const                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`to_local<class_Node2D_to_local>` **(** :ref:`Vector2<class_vector2>` global_point **)** const                                     |
+| :ref:`Vector2<class_Vector2>`          | :ref:`to_local<class_Node2D_to_local>` **(** :ref:`Vector2<class_Vector2>` global_point **)** const                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`translate<class_Node2D_translate>` **(** :ref:`Vector2<class_vector2>` offset **)**                                               |
+| void                                   | :ref:`translate<class_Node2D_translate>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                               |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_Node2D_global_position:
-
-- :ref:`Vector2<class_vector2>` **global_position** - Global position.
-
-  .. _class_Node2D_global_rotation:
-
-- :ref:`float<class_float>` **global_rotation** - Global rotation in radians.
-
-  .. _class_Node2D_global_rotation_degrees:
-
-- :ref:`float<class_float>` **global_rotation_degrees** - Global rotation in degrees.
-
-  .. _class_Node2D_global_scale:
-
-- :ref:`Vector2<class_vector2>` **global_scale** - Global scale.
-
-  .. _class_Node2D_global_transform:
-
-- :ref:`Transform2D<class_transform2d>` **global_transform** - Global :ref:`Transform2D<class_transform2d>`.
-
-  .. _class_Node2D_position:
-
-- :ref:`Vector2<class_vector2>` **position** - Position, relative to the node's parent.
-
-  .. _class_Node2D_rotation:
-
-- :ref:`float<class_float>` **rotation** - Rotation in radians, relative to the node's parent.
-
-  .. _class_Node2D_rotation_degrees:
-
-- :ref:`float<class_float>` **rotation_degrees** - Rotation in degrees, relative to the node's parent.
-
-  .. _class_Node2D_scale:
-
-- :ref:`Vector2<class_vector2>` **scale** - The node's scale. Unscaled value: ``(1, 1)``
-
-  .. _class_Node2D_transform:
-
-- :ref:`Transform2D<class_transform2d>` **transform** - Local :ref:`Transform2D<class_transform2d>`.
-
-  .. _class_Node2D_z_as_relative:
-
-- :ref:`bool<class_bool>` **z_as_relative** - If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
-
-  .. _class_Node2D_z_index:
-
-- :ref:`int<class_int>` **z_index** - Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
-
 
 Description
 -----------
@@ -107,36 +53,88 @@ Tutorials
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_Node2D_global_position:
+
+- :ref:`Vector2<class_Vector2>` **global_position** - Global position.
+
+  .. _class_Node2D_global_rotation:
+
+- :ref:`float<class_float>` **global_rotation** - Global rotation in radians.
+
+  .. _class_Node2D_global_rotation_degrees:
+
+- :ref:`float<class_float>` **global_rotation_degrees** - Global rotation in degrees.
+
+  .. _class_Node2D_global_scale:
+
+- :ref:`Vector2<class_Vector2>` **global_scale** - Global scale.
+
+  .. _class_Node2D_global_transform:
+
+- :ref:`Transform2D<class_Transform2D>` **global_transform** - Global :ref:`Transform2D<class_Transform2D>`.
+
+  .. _class_Node2D_position:
+
+- :ref:`Vector2<class_Vector2>` **position** - Position, relative to the node's parent.
+
+  .. _class_Node2D_rotation:
+
+- :ref:`float<class_float>` **rotation** - Rotation in radians, relative to the node's parent.
+
+  .. _class_Node2D_rotation_degrees:
+
+- :ref:`float<class_float>` **rotation_degrees** - Rotation in degrees, relative to the node's parent.
+
+  .. _class_Node2D_scale:
+
+- :ref:`Vector2<class_Vector2>` **scale** - The node's scale. Unscaled value: ``(1, 1)``
+
+  .. _class_Node2D_transform:
+
+- :ref:`Transform2D<class_Transform2D>` **transform** - Local :ref:`Transform2D<class_Transform2D>`.
+
+  .. _class_Node2D_z_as_relative:
+
+- :ref:`bool<class_bool>` **z_as_relative** - If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+
+  .. _class_Node2D_z_index:
+
+- :ref:`int<class_int>` **z_index** - Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
+
+
+Method Descriptions
+-------------------
 
 .. _class_Node2D_apply_scale:
 
-- void **apply_scale** **(** :ref:`Vector2<class_vector2>` ratio **)**
+- void **apply_scale** **(** :ref:`Vector2<class_Vector2>` ratio **)**
 
 Multiplies the current scale by the 'ratio' vector.
 
 .. _class_Node2D_get_angle_to:
 
-- :ref:`float<class_float>` **get_angle_to** **(** :ref:`Vector2<class_vector2>` point **)** const
+- :ref:`float<class_float>` **get_angle_to** **(** :ref:`Vector2<class_Vector2>` point **)** const
 
 Returns the angle between the node and the 'point' in radians.
 
 .. _class_Node2D_get_relative_transform_to_parent:
 
-- :ref:`Transform2D<class_transform2d>` **get_relative_transform_to_parent** **(** :ref:`Node<class_node>` parent **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_relative_transform_to_parent** **(** :ref:`Node<class_Node>` parent **)** const
 
-Returns the :ref:`Transform2D<class_transform2d>` relative to this node's parent.
+Returns the :ref:`Transform2D<class_Transform2D>` relative to this node's parent.
 
 .. _class_Node2D_global_translate:
 
-- void **global_translate** **(** :ref:`Vector2<class_vector2>` offset **)**
+- void **global_translate** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Adds the 'offset' vector to the node's global position.
 
 .. _class_Node2D_look_at:
 
-- void **look_at** **(** :ref:`Vector2<class_vector2>` point **)**
+- void **look_at** **(** :ref:`Vector2<class_Vector2>` point **)**
 
 Rotates the node so it points towards the 'point'.
 
@@ -160,19 +158,19 @@ Applies a rotation to the node, in radians, starting from its current rotation.
 
 .. _class_Node2D_to_global:
 
-- :ref:`Vector2<class_vector2>` **to_global** **(** :ref:`Vector2<class_vector2>` local_point **)** const
+- :ref:`Vector2<class_Vector2>` **to_global** **(** :ref:`Vector2<class_Vector2>` local_point **)** const
 
 Converts a local point's coordinates to global coordinates.
 
 .. _class_Node2D_to_local:
 
-- :ref:`Vector2<class_vector2>` **to_local** **(** :ref:`Vector2<class_vector2>` global_point **)** const
+- :ref:`Vector2<class_Vector2>` **to_local** **(** :ref:`Vector2<class_Vector2>` global_point **)** const
 
 Converts a global point's coordinates to local coordinates.
 
 .. _class_Node2D_translate:
 
-- void **translate** **(** :ref:`Vector2<class_vector2>` offset **)**
+- void **translate** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Translates the node by the given ``offset`` in local coordinates.
 

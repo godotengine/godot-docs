@@ -7,26 +7,13 @@
 InputEventJoypadMotion
 ======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadButton``.
-
-Member Variables
-----------------
-
-  .. _class_InputEventJoypadMotion_axis:
-
-- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@globalscope>`.
-
-  .. _class_InputEventJoypadMotion_axis_value:
-
-- :ref:`float<class_float>` **axis_value** - Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
-
 
 Description
 -----------
@@ -37,4 +24,16 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
+
+  .. _class_InputEventJoypadMotion_axis:
+
+- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+
+  .. _class_InputEventJoypadMotion_axis_value:
+
+- :ref:`float<class_float>` **axis_value** - Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
+
 

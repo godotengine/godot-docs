@@ -7,10 +7,8 @@
 RigidBody
 =========
 
-**Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`VehicleBody<class_vehiclebody>`
-
+**Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`VehicleBody<class_VehicleBody>`
 **Category:** Core
 
 Brief Description
@@ -18,27 +16,27 @@ Brief Description
 
 Physics Body whose position is determined through physics simulation in 3D space.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`_integrate_forces<class_RigidBody__integrate_forces>` **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state **)** virtual |
+| void                       | :ref:`_integrate_forces<class_RigidBody__integrate_forces>` **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_central_force<class_RigidBody_add_central_force>` **(** :ref:`Vector3<class_vector3>` force **)**                                       |
+| void                       | :ref:`add_central_force<class_RigidBody_add_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_force<class_RigidBody_add_force>` **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**               |
+| void                       | :ref:`add_force<class_RigidBody_add_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_torque<class_RigidBody_add_torque>` **(** :ref:`Vector3<class_vector3>` torque **)**                                                    |
+| void                       | :ref:`add_torque<class_RigidBody_add_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                    |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_central_impulse<class_RigidBody_apply_central_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                             |
+| void                       | :ref:`apply_central_impulse<class_RigidBody_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_impulse<class_RigidBody_apply_impulse>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**     |
+| void                       | :ref:`apply_impulse<class_RigidBody_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`apply_torque_impulse<class_RigidBody_apply_torque_impulse>` **(** :ref:`Vector3<class_vector3>` impulse **)**                               |
+| void                       | :ref:`apply_torque_impulse<class_RigidBody_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_colliding_bodies<class_RigidBody_get_colliding_bodies>` **(** **)** const                                                               |
+| :ref:`Array<class_Array>`  | :ref:`get_colliding_bodies<class_RigidBody_get_colliding_bodies>` **(** **)** const                                                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>` **(** :ref:`Vector3<class_vector3>` axis_velocity **)**                               |
+| void                       | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -46,31 +44,31 @@ Signals
 
 .. _class_RigidBody_body_entered:
 
-- **body_entered** **(** :ref:`Object<class_object>` body **)**
+- **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 .. _class_RigidBody_body_exited:
 
-- **body_exited** **(** :ref:`Object<class_object>` body **)**
+- **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 .. _class_RigidBody_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
-This signal not only receives the body that collided with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body collided with.
+This signal not only receives the body that collided with this one, but also its :ref:`RID<class_RID>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body collided with.
 
 .. _class_RigidBody_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
+- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
 Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
-This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body stopped colliding with.
+This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_RID>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body stopped colliding with.
 
 .. _class_RigidBody_sleeping_state_changed:
 
@@ -79,8 +77,37 @@ This signal not only receives the body that stopped colliding with this one, but
 Emitted when the body changes its sleeping state. Either by sleeping or waking up.
 
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_RigidBody_Mode:
+
+enum **Mode**
+
+- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_StaticBody>`, and can only move by user code.
+- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
+- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_KinematicBody>`, and can only move by user code.
+
+
+Description
+-----------
+
+This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
+
+A RigidBody has 4 behavior :ref:`mode<class_RigidBody_mode>`\ s: Rigid, Static, Character, and Kinematic.
+
+**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody__integrate_forces>`, which allows you to directly access the physics state.
+
+If you need to override the default physics behavior, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody_custom_integrator>`.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/physics/physics_introduction`
+
+Property Descriptions
+---------------------
 
   .. _class_RigidBody_angular_damp:
 
@@ -88,7 +115,7 @@ Member Variables
 
   .. _class_RigidBody_angular_velocity:
 
-- :ref:`Vector3<class_vector3>` **angular_velocity** - RigidBody's rotational velocity.
+- :ref:`Vector3<class_Vector3>` **angular_velocity** - RigidBody's rotational velocity.
 
   .. _class_RigidBody_axis_lock_angular_x:
 
@@ -154,7 +181,7 @@ Continuous collision detection tries to predict where a moving body will collide
 
   .. _class_RigidBody_linear_velocity:
 
-- :ref:`Vector3<class_vector3>` **linear_velocity** - RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
+- :ref:`Vector3<class_Vector3>` **linear_velocity** - RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
 
   .. _class_RigidBody_mass:
 
@@ -162,11 +189,11 @@ Continuous collision detection tries to predict where a moving body will collide
 
   .. _class_RigidBody_mode:
 
-- :ref:`Mode<enum_rigidbody_mode>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
+- :ref:`Mode<enum_RigidBody_Mode>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
 
   .. _class_RigidBody_physics_material_override:
 
-- :ref:`PhysicsMaterial<class_physicsmaterial>` **physics_material_override**
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
   .. _class_RigidBody_sleeping:
 
@@ -177,81 +204,64 @@ Continuous collision detection tries to predict where a moving body will collide
 - :ref:`float<class_float>` **weight** - RigidBody's weight based on its mass and the global 3D gravity. Global values are set in "Project > Project Settings > Physics > 3d".
 
 
-Enums
------
-
-  .. _enum_RigidBody_Mode:
-
-enum **Mode**
-
-- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
-- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
-- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
-- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
-
-
-Description
------------
-
-This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
-
-A RigidBody has 4 behavior :ref:`mode<class_RigidBody_mode>`\ s: Rigid, Static, Character, and Kinematic.
-
-**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody__integrate_forces>`, which allows you to directly access the physics state.
-
-If you need to override the default physics behavior, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody_custom_integrator>`.
-
-Tutorials
----------
-
-- :doc:`../tutorials/physics/physics_introduction`
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_RigidBody__integrate_forces:
 
-- void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state **)** virtual
+- void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual
 
 Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
 
 .. _class_RigidBody_add_central_force:
 
-- void **add_central_force** **(** :ref:`Vector3<class_vector3>` force **)**
+- void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
+
+Adds a constant directional force without affecting rotation.
+
+This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
 .. _class_RigidBody_add_force:
 
-- void **add_force** **(** :ref:`Vector3<class_vector3>` force, :ref:`Vector3<class_vector3>` position **)**
+- void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
+
+Adds a constant force (i.e. acceleration).
 
 .. _class_RigidBody_add_torque:
 
-- void **add_torque** **(** :ref:`Vector3<class_vector3>` torque **)**
+- void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Adds a constant rotational force (i.e. a motor) without affecting position.
 
 .. _class_RigidBody_apply_central_impulse:
 
-- void **apply_central_impulse** **(** :ref:`Vector3<class_vector3>` impulse **)**
+- void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
+
+Applies a single directional impulse without affecting rotation.
+
+This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
 .. _class_RigidBody_apply_impulse:
 
-- void **apply_impulse** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` impulse **)**
+- void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
 
 Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
 
 .. _class_RigidBody_apply_torque_impulse:
 
-- void **apply_torque_impulse** **(** :ref:`Vector3<class_vector3>` impulse **)**
+- void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
 Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
 
 .. _class_RigidBody_get_colliding_bodies:
 
-- :ref:`Array<class_array>` **get_colliding_bodies** **(** **)** const
+- :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
 Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.  Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody_set_axis_velocity:
 
-- void **set_axis_velocity** **(** :ref:`Vector3<class_vector3>` axis_velocity **)**
+- void **set_axis_velocity** **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**
 
 Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 

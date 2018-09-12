@@ -7,8 +7,7 @@
 EditorInspector
 ===============
 
-**Inherits:** :ref:`ScrollContainer<class_scrollcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`ScrollContainer<class_ScrollContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-----------------------------------------------------------+
 | void  | :ref:`refresh<class_EditorInspector_refresh>` **(** **)** |
@@ -32,27 +31,27 @@ Signals
 
 .. _class_EditorInspector_property_edited:
 
-- **property_edited** **(** :ref:`String<class_string>` property **)**
+- **property_edited** **(** :ref:`String<class_String>` property **)**
 
 .. _class_EditorInspector_property_keyed:
 
-- **property_keyed** **(** :ref:`String<class_string>` property **)**
+- **property_keyed** **(** :ref:`String<class_String>` property **)**
 
 .. _class_EditorInspector_property_selected:
 
-- **property_selected** **(** :ref:`String<class_string>` property **)**
+- **property_selected** **(** :ref:`String<class_String>` property **)**
 
 .. _class_EditorInspector_resource_selected:
 
-- **resource_selected** **(** :ref:`Object<class_object>` res, :ref:`String<class_string>` prop **)**
+- **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
 
 .. _class_EditorInspector_restart_requested:
 
 - **restart_requested** **(** **)**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_EditorInspector_refresh:
 

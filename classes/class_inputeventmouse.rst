@@ -7,32 +7,14 @@
 InputEventMouse
 ===============
 
-**Inherits:** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`InputEventMouseMotion<class_inputeventmousemotion>`, :ref:`InputEventMouseButton<class_inputeventmousebutton>`
-
+**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`, :ref:`InputEventMouseButton<class_InputEventMouseButton>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base input event type for mouse events.
-
-Member Variables
-----------------
-
-  .. _class_InputEventMouse_button_mask:
-
-- :ref:`int<class_int>` **button_mask** - Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@globalscope>`.
-
-  .. _class_InputEventMouse_global_position:
-
-- :ref:`Vector2<class_vector2>` **global_position** - Mouse position relative to the current :ref:`Viewport<class_viewport>` when used in :ref:`Control._gui_input<class_Control__gui_input>`, otherwise is at 0,0.
-
-  .. _class_InputEventMouse_position:
-
-- :ref:`Vector2<class_vector2>` **position** - Mouse local position relative to the :ref:`Viewport<class_viewport>`. If used in :ref:`Control._gui_input<class_Control__gui_input>` the position is relative to the current :ref:`Control<class_control>` which is under the mouse.
-
 
 Description
 -----------
@@ -43,4 +25,20 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
+
+  .. _class_InputEventMouse_button_mask:
+
+- :ref:`int<class_int>` **button_mask** - Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+
+  .. _class_InputEventMouse_global_position:
+
+- :ref:`Vector2<class_Vector2>` **global_position** - Mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control__gui_input>`, otherwise is at 0,0.
+
+  .. _class_InputEventMouse_position:
+
+- :ref:`Vector2<class_Vector2>` **position** - Mouse local position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control__gui_input>` the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
+
 

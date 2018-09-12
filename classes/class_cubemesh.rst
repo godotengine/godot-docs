@@ -7,21 +7,25 @@
 CubeMesh
 ========
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_primitivemesh>`.
+Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-Member Variables
-----------------
+Description
+-----------
+
+Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Property Descriptions
+---------------------
 
   .. _class_CubeMesh_size:
 
-- :ref:`Vector3<class_vector3>` **size** - Size of the cuboid mesh. Defaults to (2, 2, 2).
+- :ref:`Vector3<class_Vector3>` **size** - Size of the cuboid mesh. Defaults to (2, 2, 2).
 
   .. _class_CubeMesh_subdivide_depth:
 
@@ -35,9 +39,4 @@ Member Variables
 
 - :ref:`int<class_int>` **subdivide_width** - Number of extra edge loops inserted along the x-axis. Defaults to 0.
 
-
-Description
------------
-
-Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_primitivemesh>`.
 

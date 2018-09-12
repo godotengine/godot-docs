@@ -7,8 +7,7 @@
 BulletPhysicsDirectBodyState
 ============================
 
-**Inherits:** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description

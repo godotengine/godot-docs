@@ -14,27 +14,27 @@ Brief Description
 
 Array of Colors
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_poolcolorarray>`  | :ref:`PoolColorArray<class_PoolColorArray_PoolColorArray>` **(** :ref:`Array<class_array>` from **)**                |
+| :ref:`PoolColorArray<class_PoolColorArray>`  | :ref:`PoolColorArray<class_PoolColorArray_PoolColorArray>` **(** :ref:`Array<class_Array>` from **)**                |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`append<class_PoolColorArray_append>` **(** :ref:`Color<class_color>` color **)**                               |
+| void                                         | :ref:`append<class_PoolColorArray_append>` **(** :ref:`Color<class_Color>` color **)**                               |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`append_array<class_PoolColorArray_append_array>` **(** :ref:`PoolColorArray<class_poolcolorarray>` array **)** |
+| void                                         | :ref:`append_array<class_PoolColorArray_append_array>` **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)** |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`insert<class_PoolColorArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color **)**    |
+| :ref:`int<class_int>`                        | :ref:`insert<class_PoolColorArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**    |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`invert<class_PoolColorArray_invert>` **(** **)**                                                               |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`push_back<class_PoolColorArray_push_back>` **(** :ref:`Color<class_color>` color **)**                         |
+| void                                         | :ref:`push_back<class_PoolColorArray_push_back>` **(** :ref:`Color<class_Color>` color **)**                         |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`remove<class_PoolColorArray_remove>` **(** :ref:`int<class_int>` idx **)**                                     |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`resize<class_PoolColorArray_resize>` **(** :ref:`int<class_int>` idx **)**                                     |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set<class_PoolColorArray_set>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color **)**          |
+| void                                         | :ref:`set<class_PoolColorArray_set>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**          |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`size<class_PoolColorArray_size>` **(** **)**                                                                   |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
@@ -44,30 +44,30 @@ Description
 
 Array of Color, Contains colors. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_PoolColorArray_PoolColorArray:
 
-- :ref:`PoolColorArray<class_poolcolorarray>` **PoolColorArray** **(** :ref:`Array<class_array>` from **)**
+- :ref:`PoolColorArray<class_PoolColorArray>` **PoolColorArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
 .. _class_PoolColorArray_append:
 
-- void **append** **(** :ref:`Color<class_color>` color **)**
+- void **append** **(** :ref:`Color<class_Color>` color **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolColorArray_push_back>`).
 
 .. _class_PoolColorArray_append_array:
 
-- void **append_array** **(** :ref:`PoolColorArray<class_poolcolorarray>` array **)**
+- void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
 
 Append a ``PoolColorArray`` at the end of this array.
 
 .. _class_PoolColorArray_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color **)**
+- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
@@ -75,11 +75,11 @@ Insert a new element at a given position in the array. The position must be vali
 
 - void **invert** **(** **)**
 
-Reverse the order of the elements in the array (so first element will now be the last).
+Reverse the order of the elements in the array.
 
 .. _class_PoolColorArray_push_back:
 
-- void **push_back** **(** :ref:`Color<class_color>` color **)**
+- void **push_back** **(** :ref:`Color<class_Color>` color **)**
 
 Append a value to the array.
 
@@ -97,9 +97,9 @@ Set the size of the array. If the array is grown reserve elements at the end of 
 
 .. _class_PoolColorArray_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color **)**
+- void **set** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
-Change the :ref:`Color<class_color>` at the given index.
+Change the :ref:`Color<class_Color>` at the given index.
 
 .. _class_PoolColorArray_size:
 

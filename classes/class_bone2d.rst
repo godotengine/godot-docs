@@ -7,8 +7,7 @@
 Bone2D
 ======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,19 +15,19 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+------------------------------------------------------------------------------------+
 | void                                   | :ref:`apply_rest<class_Bone2D_apply_rest>` **(** **)**                             |
 +----------------------------------------+------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_index_in_skeleton<class_Bone2D_get_index_in_skeleton>` **(** **)** const |
 +----------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_skeleton_rest<class_Bone2D_get_skeleton_rest>` **(** **)** const         |
+| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_skeleton_rest<class_Bone2D_get_skeleton_rest>` **(** **)** const         |
 +----------------------------------------+------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_Bone2D_default_length:
 
@@ -36,11 +35,11 @@ Member Variables
 
   .. _class_Bone2D_rest:
 
-- :ref:`Transform2D<class_transform2d>` **rest**
+- :ref:`Transform2D<class_Transform2D>` **rest**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Bone2D_apply_rest:
 
@@ -52,6 +51,6 @@ Member Function Description
 
 .. _class_Bone2D_get_skeleton_rest:
 
-- :ref:`Transform2D<class_transform2d>` **get_skeleton_rest** **(** **)** const
+- :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** const
 
 

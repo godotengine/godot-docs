@@ -7,8 +7,7 @@
 WebSocketServer
 ===============
 
-**Inherits:** :ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>` **<** :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **<** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 A WebSocket server implementation
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`disconnect_peer<class_WebSocketServer_disconnect_peer>` **(** :ref:`int<class_int>` id **)**                                                                                                       |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_peer_address<class_WebSocketServer_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                               |
+| :ref:`String<class_String>`            | :ref:`get_peer_address<class_WebSocketServer_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_peer_port<class_WebSocketServer_get_peer_port>` **(** :ref:`int<class_int>` id **)** const                                                                                                     |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -30,7 +29,7 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_listening<class_WebSocketServer_is_listening>` **(** **)** const                                                                                                                                |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@globalscope_error>`  | :ref:`listen<class_WebSocketServer_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_poolstringarray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
+| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`listen<class_WebSocketServer_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`stop<class_WebSocketServer_stop>` **(** **)**                                                                                                                                                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -40,7 +39,7 @@ Signals
 
 .. _class_WebSocketServer_client_connected:
 
-- **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_string>` protocol **)**
+- **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
 
 Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.
 
@@ -66,8 +65,8 @@ After starting the server (:ref:`listen<class_WebSocketServer_listen>`), you wil
 
 Note: This class will not work in HTML5 exports due to browser restrictions.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_WebSocketServer_disconnect_peer:
 
@@ -77,7 +76,7 @@ Disconnects the given peer.
 
 .. _class_WebSocketServer_get_peer_address:
 
-- :ref:`String<class_string>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
+- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns the IP address of the given peer.
 
@@ -101,13 +100,13 @@ Returns ``true`` if the server is actively listening on a port.
 
 .. _class_WebSocketServer_listen:
 
-- :ref:`Error<enum_@globalscope_error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_poolstringarray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
 Start listening on the given port.
 
 You can specify the desired subprotocols via the "protocols" array. If the list empty (default), "binary" will be used.
 
-You can use this server as a network peer for :ref:`MultiplayerAPI<class_multiplayerapi>` by passing true as "gd_mp_api". Note: :ref:`data_received<class_WebSocketServer_data_received>` will not be fired and clients other than Godot will not work in this case.
+You can use this server as a network peer for :ref:`MultiplayerAPI<class_MultiplayerAPI>` by passing true as "gd_mp_api". Note: :ref:`data_received<class_WebSocketServer_data_received>` will not be fired and clients other than Godot will not work in this case.
 
 .. _class_WebSocketServer_stop:
 

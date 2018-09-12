@@ -7,29 +7,16 @@
 CanvasItemMaterial
 ==================
 
-**Inherits:** :ref:`Material<class_material>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
-A material for :ref:`CanvasItem<class_canvasitem>`\ s.
+A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
 
-Member Variables
-----------------
-
-  .. _class_CanvasItemMaterial_blend_mode:
-
-- :ref:`BlendMode<enum_canvasitemmaterial_blendmode>` **blend_mode** - The manner in which a material's rendering is applied to underlying textures.
-
-  .. _class_CanvasItemMaterial_light_mode:
-
-- :ref:`LightMode<enum_canvasitemmaterial_lightmode>` **light_mode** - The manner in which material reacts to lighting.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_CanvasItemMaterial_LightMode:
 
@@ -53,5 +40,17 @@ enum **BlendMode**
 Description
 -----------
 
-``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_shadermaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_canvasitem>`.
+``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_ShaderMaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_CanvasItem>`.
+
+Property Descriptions
+---------------------
+
+  .. _class_CanvasItemMaterial_blend_mode:
+
+- :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode** - The manner in which a material's rendering is applied to underlying textures.
+
+  .. _class_CanvasItemMaterial_light_mode:
+
+- :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode** - The manner in which material reacts to lighting.
+
 

@@ -7,26 +7,13 @@
 VisualScriptClassConstant
 =========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
 -----------------
 
 Gets a constant from a given class.
-
-Member Variables
-----------------
-
-  .. _class_VisualScriptClassConstant_base_type:
-
-- :ref:`String<class_string>` **base_type** - The constant's parent class.
-
-  .. _class_VisualScriptClassConstant_constant:
-
-- :ref:`String<class_string>` **constant** - The constant to return. See the given class for its available constants.
-
 
 Description
 -----------
@@ -40,4 +27,16 @@ none
 **Output Ports:**
 
 - Data (variant): ``value``
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptClassConstant_base_type:
+
+- :ref:`String<class_String>` **base_type** - The constant's parent class.
+
+  .. _class_VisualScriptClassConstant_constant:
+
+- :ref:`String<class_String>` **constant** - The constant to return. See the given class for its available constants.
+
 

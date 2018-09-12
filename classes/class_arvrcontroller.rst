@@ -7,8 +7,7 @@
 ARVRController
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,13 +15,13 @@ Brief Description
 
 A spatial node representing a spatially tracked controller.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                 | :ref:`get_controller_name<class_ARVRController_get_controller_name>` **(** **)** const                          |
+| :ref:`String<class_String>`                                 | :ref:`get_controller_name<class_ARVRController_get_controller_name>` **(** **)** const                          |
 +-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`TrackerHand<enum_arvrpositionaltracker_trackerhand>`  | :ref:`get_hand<class_ARVRController_get_hand>` **(** **)** const                                                |
+| :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>`  | :ref:`get_hand<class_ARVRController_get_hand>` **(** **)** const                                                |
 +-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                     | :ref:`get_is_active<class_ARVRController_get_is_active>` **(** **)** const                                      |
 +-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -49,24 +48,6 @@ Emitted when a button on this controller is pressed.
 Emitted when a button on this controller is released.
 
 
-Member Variables
-----------------
-
-  .. _class_ARVRController_controller_id:
-
-- :ref:`int<class_int>` **controller_id** - The controller's id.
-
-A controller id of 0 is unbound and will always result in an inactive node. Controller id 1 is reserved for the first controller that identifies itself as the left hand controller and id 2 is reserved for the first controller that identifies itself as the right hand controller.
-
-For any other controller that the :ref:`ARVRServer<class_arvrserver>` detects we continue with controller id 3.
-
-When a controller is turned off, its slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
-
-  .. _class_ARVRController_rumble:
-
-- :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_rumble>` accordingly.
-
-
 Description
 -----------
 
@@ -76,20 +57,38 @@ Controllers are linked by their id. You can create controller nodes before the c
 
 The position of the controller node is automatically updated by the ARVR Server. This makes this node ideal to add child  nodes to visualise the controller.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ARVRController_controller_id:
+
+- :ref:`int<class_int>` **controller_id** - The controller's id.
+
+A controller id of 0 is unbound and will always result in an inactive node. Controller id 1 is reserved for the first controller that identifies itself as the left hand controller and id 2 is reserved for the first controller that identifies itself as the right hand controller.
+
+For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects we continue with controller id 3.
+
+When a controller is turned off, its slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
+
+  .. _class_ARVRController_rumble:
+
+- :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_rumble>` accordingly.
+
+
+Method Descriptions
+-------------------
 
 .. _class_ARVRController_get_controller_name:
 
-- :ref:`String<class_string>` **get_controller_name** **(** **)** const
+- :ref:`String<class_String>` **get_controller_name** **(** **)** const
 
 If active, returns the name of the associated controller if provided by the AR/VR SDK used.
 
 .. _class_ARVRController_get_hand:
 
-- :ref:`TrackerHand<enum_arvrpositionaltracker_trackerhand>` **get_hand** **(** **)** const
+- :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`.
+Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`.
 
 .. _class_ARVRController_get_is_active:
 

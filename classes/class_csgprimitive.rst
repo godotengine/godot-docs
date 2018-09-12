@@ -7,10 +7,8 @@
 CSGPrimitive
 ============
 
-**Inherits:** :ref:`CSGShape<class_csgshape>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
-**Inherited By:** :ref:`CSGSphere<class_csgsphere>`, :ref:`CSGPolygon<class_csgpolygon>`, :ref:`CSGCylinder<class_csgcylinder>`, :ref:`CSGBox<class_csgbox>`, :ref:`CSGTorus<class_csgtorus>`, :ref:`CSGMesh<class_csgmesh>`
-
+**Inherits:** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherited By:** :ref:`CSGSphere<class_CSGSphere>`, :ref:`CSGPolygon<class_CSGPolygon>`, :ref:`CSGCylinder<class_CSGCylinder>`, :ref:`CSGBox<class_CSGBox>`, :ref:`CSGTorus<class_CSGTorus>`, :ref:`CSGMesh<class_CSGMesh>`
 **Category:** Core
 
 Brief Description
@@ -18,8 +16,8 @@ Brief Description
 
 Base class for CSG primitives.
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_CSGPrimitive_invert_faces:
 

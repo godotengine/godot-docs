@@ -7,8 +7,7 @@
 SpringArm
 =========
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,21 +15,21 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_excluded_object<class_SpringArm_add_excluded_object>` **(** :ref:`RID<class_rid>` RID **)**       |
+| void                       | :ref:`add_excluded_object<class_SpringArm_add_excluded_object>` **(** :ref:`RID<class_RID>` RID **)**       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`clear_excluded_objects<class_SpringArm_clear_excluded_objects>` **(** **)**                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_hit_length<class_SpringArm_get_hit_length>` **(** **)**                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`remove_excluded_object<class_SpringArm_remove_excluded_object>` **(** :ref:`RID<class_rid>` RID **)** |
+| :ref:`bool<class_bool>`    | :ref:`remove_excluded_object<class_SpringArm_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_SpringArm_collision_mask:
 
@@ -42,19 +41,19 @@ Member Variables
 
   .. _class_SpringArm_shape:
 
-- :ref:`Shape<class_shape>` **shape**
+- :ref:`Shape<class_Shape>` **shape**
 
   .. _class_SpringArm_spring_length:
 
 - :ref:`float<class_float>` **spring_length**
 
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_SpringArm_add_excluded_object:
 
-- void **add_excluded_object** **(** :ref:`RID<class_rid>` RID **)**
+- void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
 .. _class_SpringArm_clear_excluded_objects:
 
@@ -66,6 +65,6 @@ Member Function Description
 
 .. _class_SpringArm_remove_excluded_object:
 
-- :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_rid>` RID **)**
+- :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
 

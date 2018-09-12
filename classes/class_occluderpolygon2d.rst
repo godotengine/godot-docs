@@ -7,8 +7,7 @@
 OccluderPolygon2D
 =================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,24 +15,8 @@ Brief Description
 
 Defines a 2D polygon for LightOccluder2D.
 
-Member Variables
-----------------
-
-  .. _class_OccluderPolygon2D_closed:
-
-- :ref:`bool<class_bool>` **closed** - If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
-
-  .. _class_OccluderPolygon2D_cull_mode:
-
-- :ref:`CullMode<enum_occluderpolygon2d_cullmode>` **cull_mode** - Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
-
-  .. _class_OccluderPolygon2D_polygon:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - A :ref:`Vector2<class_vector2>` array with the index for polygon's vertices positions.
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_OccluderPolygon2D_CullMode:
 
@@ -47,5 +30,21 @@ enum **CullMode**
 Description
 -----------
 
-Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_lightoccluder2d>`.
+Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
+
+Property Descriptions
+---------------------
+
+  .. _class_OccluderPolygon2D_closed:
+
+- :ref:`bool<class_bool>` **closed** - If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
+
+  .. _class_OccluderPolygon2D_cull_mode:
+
+- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode** - Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
+
+  .. _class_OccluderPolygon2D_polygon:
+
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
+
 

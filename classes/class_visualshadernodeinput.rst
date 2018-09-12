@@ -7,8 +7,7 @@
 VisualShaderNodeInput
 =====================
 
-**Inherits:** :ref:`VisualShaderNode<class_visualshadernode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -24,11 +23,11 @@ Signals
 - **input_type_changed** **(** **)**
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_VisualShaderNodeInput_input_name:
 
-- :ref:`String<class_string>` **input_name**
+- :ref:`String<class_String>` **input_name**
 
 

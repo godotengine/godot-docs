@@ -7,8 +7,7 @@
 GDScriptNativeClass
 ===================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,18 +15,18 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+-------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`new<class_GDScriptNativeClass_new>` **(** **)** |
+| :ref:`Variant<class_Variant>`  | :ref:`new<class_GDScriptNativeClass_new>` **(** **)** |
 +--------------------------------+-------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_GDScriptNativeClass_new:
 
-- :ref:`Variant<class_variant>` **new** **(** **)**
+- :ref:`Variant<class_Variant>` **new** **(** **)**
 
 

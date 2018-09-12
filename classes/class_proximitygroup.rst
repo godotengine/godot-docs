@@ -7,8 +7,7 @@
 ProximityGroup
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,11 +15,11 @@ Brief Description
 
 General purpose proximity-detection node.
 
-Member Functions
-----------------
+Methods
+-------
 
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`broadcast<class_ProximityGroup_broadcast>` **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters **)** |
+| void  | :ref:`broadcast<class_ProximityGroup_broadcast>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` parameters **)** |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -28,27 +27,11 @@ Signals
 
 .. _class_ProximityGroup_broadcast:
 
-- **broadcast** **(** :ref:`String<class_string>` group_name, :ref:`Array<class_array>` parameters **)**
+- **broadcast** **(** :ref:`String<class_String>` group_name, :ref:`Array<class_Array>` parameters **)**
 
 
-Member Variables
-----------------
-
-  .. _class_ProximityGroup_dispatch_mode:
-
-- :ref:`DispatchMode<enum_proximitygroup_dispatchmode>` **dispatch_mode**
-
-  .. _class_ProximityGroup_grid_radius:
-
-- :ref:`Vector3<class_vector3>` **grid_radius**
-
-  .. _class_ProximityGroup_group_name:
-
-- :ref:`String<class_string>` **group_name**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_ProximityGroup_DispatchMode:
 
@@ -63,11 +46,27 @@ Description
 
 General purpose proximity-detection node.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
+
+  .. _class_ProximityGroup_dispatch_mode:
+
+- :ref:`DispatchMode<enum_ProximityGroup_DispatchMode>` **dispatch_mode**
+
+  .. _class_ProximityGroup_grid_radius:
+
+- :ref:`Vector3<class_Vector3>` **grid_radius**
+
+  .. _class_ProximityGroup_group_name:
+
+- :ref:`String<class_String>` **group_name**
+
+
+Method Descriptions
+-------------------
 
 .. _class_ProximityGroup_broadcast:
 
-- void **broadcast** **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters **)**
+- void **broadcast** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` parameters **)**
 
 

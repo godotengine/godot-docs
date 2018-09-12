@@ -7,8 +7,7 @@
 Camera2D
 ========
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,8 @@ Brief Description
 
 Camera node for 2D scenes.
 
-Member Functions
-----------------
+Methods
+-------
 
 +--------------------------------+--------------------------------------------------------------------------------------------+
 | void                           | :ref:`align<class_Camera2D_align>` **(** **)**                                             |
@@ -26,21 +25,39 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------+
 | void                           | :ref:`force_update_scroll<class_Camera2D_force_update_scroll>` **(** **)**                 |
 +--------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_position<class_Camera2D_get_camera_position>` **(** **)** const           |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_camera_position<class_Camera2D_get_camera_position>` **(** **)** const           |
 +--------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_screen_center<class_Camera2D_get_camera_screen_center>` **(** **)** const |
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_camera_screen_center<class_Camera2D_get_camera_screen_center>` **(** **)** const |
 +--------------------------------+--------------------------------------------------------------------------------------------+
 | void                           | :ref:`make_current<class_Camera2D_make_current>` **(** **)**                               |
 +--------------------------------+--------------------------------------------------------------------------------------------+
 | void                           | :ref:`reset_smoothing<class_Camera2D_reset_smoothing>` **(** **)**                         |
 +--------------------------------+--------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
+
+  .. _enum_Camera2D_AnchorMode:
+
+enum **AnchorMode**
+
+- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed so that the top-left corner is always at the origin.
+- **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
+
+
+Description
+-----------
+
+Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_CanvasItem>` based nodes.
+
+This node is intended to be a simple helper to get things going quickly and it may happen often that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_Viewport>`.
+
+Property Descriptions
+---------------------
 
   .. _class_Camera2D_anchor_mode:
 
-- :ref:`AnchorMode<enum_camera2d_anchormode>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
+- :ref:`AnchorMode<enum_Camera2D_AnchorMode>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 
   .. _class_Camera2D_current:
 
@@ -48,7 +65,7 @@ Member Variables
 
   .. _class_Camera2D_custom_viewport:
 
-- :ref:`Node<class_node>` **custom_viewport** - The custom :ref:`Viewport<class_viewport>` node attached to the ``Camera2D``. If null or not a :ref:`Viewport<class_viewport>`, uses the default viewport instead.
+- :ref:`Node<class_Node>` **custom_viewport** - The custom :ref:`Viewport<class_Viewport>` node attached to the ``Camera2D``. If null or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
 
   .. _class_Camera2D_drag_margin_bottom:
 
@@ -108,7 +125,7 @@ Member Variables
 
   .. _class_Camera2D_offset:
 
-- :ref:`Vector2<class_vector2>` **offset** - The camera's offset, useful for looking around or camera shake animations.
+- :ref:`Vector2<class_Vector2>` **offset** - The camera's offset, useful for looking around or camera shake animations.
 
   .. _class_Camera2D_offset_h:
 
@@ -132,29 +149,11 @@ Member Variables
 
   .. _class_Camera2D_zoom:
 
-- :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
+- :ref:`Vector2<class_Vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
 
 
-Enums
------
-
-  .. _enum_Camera2D_AnchorMode:
-
-enum **AnchorMode**
-
-- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed so that the top-left corner is always at the origin.
-- **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
-
-
-Description
------------
-
-Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_canvasitem>` based nodes.
-
-This node is intended to be a simple helper to get things going quickly and it may happen often that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_node2d>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_viewport>`.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_Camera2D_align:
 
@@ -166,7 +165,7 @@ Align the camera to the tracked node
 
 - void **clear_current** **(** **)**
 
-Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_viewport>`'s internal currently-assigned camera.
+Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_Viewport>`'s internal currently-assigned camera.
 
 .. _class_Camera2D_force_update_scroll:
 
@@ -176,13 +175,13 @@ Force the camera to update scroll immediately.
 
 .. _class_Camera2D_get_camera_position:
 
-- :ref:`Vector2<class_vector2>` **get_camera_position** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** const
 
 Return the camera position.
 
 .. _class_Camera2D_get_camera_screen_center:
 
-- :ref:`Vector2<class_vector2>` **get_camera_screen_center** **(** **)** const
+- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** const
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 

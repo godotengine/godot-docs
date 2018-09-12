@@ -7,8 +7,7 @@
 VisualScriptInputAction
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,20 +15,8 @@ Brief Description
 
 
 
-Member Variables
-----------------
-
-  .. _class_VisualScriptInputAction_action:
-
-- :ref:`String<class_string>` **action**
-
-  .. _class_VisualScriptInputAction_mode:
-
-- :ref:`Mode<enum_visualscriptinputaction_mode>` **mode**
-
-
-Enums
------
+Enumerations
+------------
 
   .. _enum_VisualScriptInputAction_Mode:
 
@@ -39,5 +26,17 @@ enum **Mode**
 - **MODE_RELEASED** = **1**
 - **MODE_JUST_PRESSED** = **2**
 - **MODE_JUST_RELEASED** = **3**
+
+
+Property Descriptions
+---------------------
+
+  .. _class_VisualScriptInputAction_action:
+
+- :ref:`String<class_String>` **action**
+
+  .. _class_VisualScriptInputAction_mode:
+
+- :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 
 

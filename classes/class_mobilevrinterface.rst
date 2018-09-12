@@ -7,8 +7,7 @@
 MobileVRInterface
 =================
 
-**Inherits:** :ref:`ARVRInterface<class_arvrinterface>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`ARVRInterface<class_ARVRInterface>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,8 +15,15 @@ Brief Description
 
 Generic mobile VR implementation
 
-Member Variables
-----------------
+Description
+-----------
+
+This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect you do need a mobile phone with a gyroscope and accelerometer.
+
+Note that even though there is no positional tracking the camera will assume the headset is at a height of 1.85 meters.
+
+Property Descriptions
+---------------------
 
   .. _class_MobileVRInterface_display_to_lens:
 
@@ -43,11 +49,4 @@ Member Variables
 
 - :ref:`float<class_float>` **oversample** - The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 
-
-Description
------------
-
-This is a generic mobile VR implementation where you need to provide details about the phone and HMD used. It does not rely on any existing framework. This is the most basic interface we have. For the best effect you do need a mobile phone with a gyroscope and accelerometer.
-
-Note that even though there is no positional tracking the camera will assume the headset is at a height of 1.85 meters.
 

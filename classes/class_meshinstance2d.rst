@@ -7,8 +7,7 @@
 MeshInstance2D
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,19 +15,19 @@ Brief Description
 
 
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
   .. _class_MeshInstance2D_mesh:
 
-- :ref:`Mesh<class_mesh>` **mesh**
+- :ref:`Mesh<class_Mesh>` **mesh**
 
   .. _class_MeshInstance2D_normal_map:
 
-- :ref:`Texture<class_texture>` **normal_map**
+- :ref:`Texture<class_Texture>` **normal_map**
 
   .. _class_MeshInstance2D_texture:
 
-- :ref:`Texture<class_texture>` **texture**
+- :ref:`Texture<class_Texture>` **texture**
 
 

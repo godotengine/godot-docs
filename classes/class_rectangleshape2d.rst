@@ -7,8 +7,7 @@
 RectangleShape2D
 ================
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,16 +15,16 @@ Brief Description
 
 Rectangle shape for 2D collisions.
 
-Member Variables
-----------------
-
-  .. _class_RectangleShape2D_extents:
-
-- :ref:`Vector2<class_vector2>` **extents** - The rectangle's half extents. The width and height of this shape is twice the half extents.
-
-
 Description
 -----------
 
 Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
+
+Property Descriptions
+---------------------
+
+  .. _class_RectangleShape2D_extents:
+
+- :ref:`Vector2<class_Vector2>` **extents** - The rectangle's half extents. The width and height of this shape is twice the half extents.
+
 

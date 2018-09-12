@@ -7,8 +7,7 @@
 SpinBox
 =======
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
-
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 **Category:** Core
 
 Brief Description
@@ -16,15 +15,20 @@ Brief Description
 
 Numerical input text field.
 
-Member Functions
-----------------
+Methods
+-------
 
 +----------------------------------+---------------------------------------------------------------+
-| :ref:`LineEdit<class_lineedit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)** |
+| :ref:`LineEdit<class_LineEdit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)** |
 +----------------------------------+---------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+SpinBox is a numerical input text field. It allows entering integers and floats.
+
+Property Descriptions
+---------------------
 
   .. _class_SpinBox_editable:
 
@@ -32,23 +36,18 @@ Member Variables
 
   .. _class_SpinBox_prefix:
 
-- :ref:`String<class_string>` **prefix**
+- :ref:`String<class_String>` **prefix**
 
   .. _class_SpinBox_suffix:
 
-- :ref:`String<class_string>` **suffix**
+- :ref:`String<class_String>` **suffix**
 
 
-Description
------------
-
-SpinBox is a numerical input text field. It allows entering integers and floats.
-
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
 .. _class_SpinBox_get_line_edit:
 
-- :ref:`LineEdit<class_lineedit>` **get_line_edit** **(** **)**
+- :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
 
