@@ -384,7 +384,7 @@ The dummy class binds singleton methods to GDScript. In most cases, the dummy cl
 
 Binding Signals
 
-It is possible to emit signals to GDScript but calling the GDScript dummy object.
+It is possible to emit signals to GDScript by calling the GDScript dummy object.
 
 .. code:: cpp
 
