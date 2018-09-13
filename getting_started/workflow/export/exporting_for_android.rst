@@ -59,3 +59,28 @@ In that screen, the path to 3 files needs to be set:
 -  The debug *keystore*
 
 Once that is configured, everything is ready to export to Android!
+
+Exporting for Google Play Store
+-------------------------------
+
+Uploading an APK to Google's Play Store requires you to sign using a non-debug
+keystore file, such file can be generated like this:
+
+::
+
+    keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
+
+This key is used to verify your developer identity, remember its password and keep it in a safe place!
+Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
+
+Now fill the following forms in you Android Export Presets:
+
+- Release: Enter the path to the keystore file you just generated.
+- Release User: Replace with what your key alias.
+- Release Password: Key password.
+
+Now your export_presets.cfg file contains sensitive info, if using a Version Control System it is a good idea to remove it from public repositories.
+
+Don't forget to disable the Export with debug button while choosing the APK's name.
+
+.. image:: img/export-with-debug-button.png
