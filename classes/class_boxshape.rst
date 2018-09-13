@@ -8,12 +8,20 @@ BoxShape
 ========
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Box shape resource.
+
+Properties
+----------
+
++-------------------------------+----------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_extents>` |
++-------------------------------+----------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_BoxShape_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents** - The shape's half extents.
+- :ref:`Vector3<class_Vector3>` **extents**
 
++----------+--------------------+
+| *Setter* | set_extents(value) |
++----------+--------------------+
+| *Getter* | get_extents()      |
++----------+--------------------+
+
+The shape's half extents.
 

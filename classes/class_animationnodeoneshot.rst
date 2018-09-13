@@ -8,12 +8,30 @@ AnimationNodeOneShot
 ====================
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`autorestart<class_AnimationNodeOneShot_autorestart>`                           |
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`autorestart_delay<class_AnimationNodeOneShot_autorestart_delay>`               |
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_autorestart_random_delay>` |
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`fadein_time<class_AnimationNodeOneShot_fadein_time>`                           |
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`fadeout_time<class_AnimationNodeOneShot_fadeout_time>`                         |
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`sync<class_AnimationNodeOneShot_sync>`                                         |
++---------------------------+--------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -29,11 +47,10 @@ Enumerations
 
   .. _enum_AnimationNodeOneShot_MixMode:
 
-enum **MixMode**
+enum **MixMode**:
 
 - **MIX_MODE_BLEND** = **0**
 - **MIX_MODE_ADD** = **1**
-
 
 Property Descriptions
 ---------------------
@@ -42,36 +59,70 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **autorestart**
 
++----------+------------------------+
+| *Setter* | set_autorestart(value) |
++----------+------------------------+
+| *Getter* | has_autorestart()      |
++----------+------------------------+
+
   .. _class_AnimationNodeOneShot_autorestart_delay:
 
 - :ref:`float<class_float>` **autorestart_delay**
+
++----------+------------------------------+
+| *Setter* | set_autorestart_delay(value) |
++----------+------------------------------+
+| *Getter* | get_autorestart_delay()      |
++----------+------------------------------+
 
   .. _class_AnimationNodeOneShot_autorestart_random_delay:
 
 - :ref:`float<class_float>` **autorestart_random_delay**
 
++----------+-------------------------------------+
+| *Setter* | set_autorestart_random_delay(value) |
++----------+-------------------------------------+
+| *Getter* | get_autorestart_random_delay()      |
++----------+-------------------------------------+
+
   .. _class_AnimationNodeOneShot_fadein_time:
 
 - :ref:`float<class_float>` **fadein_time**
+
++----------+------------------------+
+| *Setter* | set_fadein_time(value) |
++----------+------------------------+
+| *Getter* | get_fadein_time()      |
++----------+------------------------+
 
   .. _class_AnimationNodeOneShot_fadeout_time:
 
 - :ref:`float<class_float>` **fadeout_time**
 
++----------+-------------------------+
+| *Setter* | set_fadeout_time(value) |
++----------+-------------------------+
+| *Getter* | get_fadeout_time()      |
++----------+-------------------------+
+
   .. _class_AnimationNodeOneShot_sync:
 
 - :ref:`bool<class_bool>` **sync**
 
++----------+---------------------+
+| *Setter* | set_use_sync(value) |
++----------+---------------------+
+| *Getter* | is_using_sync()     |
++----------+---------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeOneShot_get_mix_mode:
+  .. _class_AnimationNodeOneShot_get_mix_mode:
 
 - :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)** const
 
-.. _class_AnimationNodeOneShot_set_mix_mode:
+  .. _class_AnimationNodeOneShot_set_mix_mode:
 
 - void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` mode **)**
-
 

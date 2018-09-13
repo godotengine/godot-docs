@@ -8,6 +8,7 @@ VisualShaderNodeTexture
 =======================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,23 @@ Brief Description
 
 
 
+Properties
+----------
+
++--------------------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`Source<enum_VisualShaderNodeTexture_Source>`           | :ref:`source<class_VisualShaderNodeTexture_source>`             |
++--------------------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                | :ref:`texture<class_VisualShaderNodeTexture_texture>`           |
++--------------------------------------------------------------+-----------------------------------------------------------------+
+| :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` | :ref:`texture_type<class_VisualShaderNodeTexture_texture_type>` |
++--------------------------------------------------------------+-----------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualShaderNodeTexture_Source:
 
-enum **Source**
+enum **Source**:
 
 - **SOURCE_TEXTURE** = **0**
 - **SOURCE_SCREEN** = **1**
@@ -29,12 +41,11 @@ enum **Source**
 
   .. _enum_VisualShaderNodeTexture_TextureType:
 
-enum **TextureType**
+enum **TextureType**:
 
 - **TYPE_DATA** = **0**
 - **TYPE_COLOR** = **1**
 - **TYPE_NORMALMAP** = **2**
-
 
 Property Descriptions
 ---------------------
@@ -43,12 +54,29 @@ Property Descriptions
 
 - :ref:`Source<enum_VisualShaderNodeTexture_Source>` **source**
 
++----------+-------------------+
+| *Setter* | set_source(value) |
++----------+-------------------+
+| *Getter* | get_source()      |
++----------+-------------------+
+
   .. _class_VisualShaderNodeTexture_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_VisualShaderNodeTexture_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type**
 
++----------+-------------------------+
+| *Setter* | set_texture_type(value) |
++----------+-------------------------+
+| *Getter* | get_texture_type()      |
++----------+-------------------------+
 

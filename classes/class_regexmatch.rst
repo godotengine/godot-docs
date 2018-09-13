@@ -8,12 +8,24 @@ RegExMatch
 ==========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Contains the results of a regex search.
+
+Properties
+----------
+
++-------------------------------------+------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_names>`     |
++-------------------------------------+------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_strings>` |
++-------------------------------------+------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_subject>` |
++-------------------------------------+------------------------------------------+
 
 Methods
 -------
@@ -38,21 +50,38 @@ Property Descriptions
 
   .. _class_RegExMatch_names:
 
-- :ref:`Dictionary<class_Dictionary>` **names** - A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
+- :ref:`Dictionary<class_Dictionary>` **names**
+
++----------+-------------+
+| *Getter* | get_names() |
++----------+-------------+
+
+A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
   .. _class_RegExMatch_strings:
 
-- :ref:`Array<class_Array>` **strings** - An :ref:`Array<class_Array>` of the match and its capturing groups.
+- :ref:`Array<class_Array>` **strings**
+
++----------+---------------+
+| *Getter* | get_strings() |
++----------+---------------+
+
+An :ref:`Array<class_Array>` of the match and its capturing groups.
 
   .. _class_RegExMatch_subject:
 
-- :ref:`String<class_String>` **subject** - The source string used with the search pattern to find this matching result.
+- :ref:`String<class_String>` **subject**
 
++----------+---------------+
+| *Getter* | get_subject() |
++----------+---------------+
+
+The source string used with the search pattern to find this matching result.
 
 Method Descriptions
 -------------------
 
-.. _class_RegExMatch_get_end:
+  .. _class_RegExMatch_get_end:
 
 - :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
@@ -60,13 +89,13 @@ Returns the end position of the match within the source string. The end position
 
 Returns -1 if the group did not match or doesn't exist.
 
-.. _class_RegExMatch_get_group_count:
+  .. _class_RegExMatch_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of capturing groups.
 
-.. _class_RegExMatch_get_start:
+  .. _class_RegExMatch_get_start:
 
 - :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
@@ -74,12 +103,11 @@ Returns the starting position of the match within the source string. The startin
 
 Returns -1 if the group did not match or doesn't exist.
 
-.. _class_RegExMatch_get_string:
+  .. _class_RegExMatch_get_string:
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
 Returns the substring of the match from the source string. Capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
 Returns an empty string if the group did not match or doesn't exist.
-
 

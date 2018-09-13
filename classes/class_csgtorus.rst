@@ -8,12 +8,30 @@ CSGTorus
 ========
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A CSG Torus shape.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus_inner_radius>` |
++---------------------------------+--------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus_material>`         |
++---------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus_outer_radius>` |
++---------------------------------+--------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus_ring_sides>`     |
++---------------------------------+--------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`sides<class_CSGTorus_sides>`               |
++---------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGTorus_smooth_faces>` |
++---------------------------------+--------------------------------------------------+
 
 Description
 -----------
@@ -25,26 +43,73 @@ Property Descriptions
 
   .. _class_CSGTorus_inner_radius:
 
-- :ref:`float<class_float>` **inner_radius** - The inner radius of the torus.
+- :ref:`float<class_float>` **inner_radius**
+
++----------+-------------------------+
+| *Setter* | set_inner_radius(value) |
++----------+-------------------------+
+| *Getter* | get_inner_radius()      |
++----------+-------------------------+
+
+The inner radius of the torus.
 
   .. _class_CSGTorus_material:
 
-- :ref:`Material<class_Material>` **material** - The material used to render the torus.
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+The material used to render the torus.
 
   .. _class_CSGTorus_outer_radius:
 
-- :ref:`float<class_float>` **outer_radius** - The outer radius of the torus.
+- :ref:`float<class_float>` **outer_radius**
+
++----------+-------------------------+
+| *Setter* | set_outer_radius(value) |
++----------+-------------------------+
+| *Getter* | get_outer_radius()      |
++----------+-------------------------+
+
+The outer radius of the torus.
 
   .. _class_CSGTorus_ring_sides:
 
-- :ref:`int<class_int>` **ring_sides** - The number of edges each ring of the torus is constructed of.
+- :ref:`int<class_int>` **ring_sides**
+
++----------+-----------------------+
+| *Setter* | set_ring_sides(value) |
++----------+-----------------------+
+| *Getter* | get_ring_sides()      |
++----------+-----------------------+
+
+The number of edges each ring of the torus is constructed of.
 
   .. _class_CSGTorus_sides:
 
-- :ref:`int<class_int>` **sides** - The number of slices the torus is constructed of.
+- :ref:`int<class_int>` **sides**
+
++----------+------------------+
+| *Setter* | set_sides(value) |
++----------+------------------+
+| *Getter* | get_sides()      |
++----------+------------------+
+
+The number of slices the torus is constructed of.
 
   .. _class_CSGTorus_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the torus are set to give a smooth effect making the torus seem rounded. When false the torus will have a flat shaded look.
+- :ref:`bool<class_bool>` **smooth_faces**
 
++----------+-------------------------+
+| *Setter* | set_smooth_faces(value) |
++----------+-------------------------+
+| *Getter* | get_smooth_faces()      |
++----------+-------------------------+
+
+If true the normals of the torus are set to give a smooth effect making the torus seem rounded. When false the torus will have a flat shaded look.
 

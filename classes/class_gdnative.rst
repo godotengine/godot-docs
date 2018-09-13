@@ -8,12 +8,20 @@ GDNative
 ========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------------------------+----------------------------------------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_library>` |
++-----------------------------------------------+----------------------------------------+
 
 Methods
 -------
@@ -33,20 +41,24 @@ Property Descriptions
 
 - :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
++----------+--------------------+
+| *Setter* | set_library(value) |
++----------+--------------------+
+| *Getter* | get_library()      |
++----------+--------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_GDNative_call_native:
+  .. _class_GDNative_call_native:
 
 - :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
 
-.. _class_GDNative_initialize:
+  .. _class_GDNative_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** **)**
 
-.. _class_GDNative_terminate:
+  .. _class_GDNative_terminate:
 
 - :ref:`bool<class_bool>` **terminate** **(** **)**
-
 

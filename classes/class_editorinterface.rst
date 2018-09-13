@@ -8,6 +8,7 @@ EditorInterface
 ===============
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -68,120 +69,119 @@ Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews
 Method Descriptions
 -------------------
 
-.. _class_EditorInterface_edit_resource:
+  .. _class_EditorInterface_edit_resource:
 
 - void **edit_resource** **(** :ref:`Resource<class_Resource>` resource **)**
 
 Edits the given :ref:`Resource<class_Resource>`.
 
-.. _class_EditorInterface_get_base_control:
+  .. _class_EditorInterface_get_base_control:
 
 - :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
 Returns the base :ref:`Control<class_Control>`.
 
-.. _class_EditorInterface_get_edited_scene_root:
+  .. _class_EditorInterface_get_edited_scene_root:
 
 - :ref:`Node<class_Node>` **get_edited_scene_root** **(** **)**
 
 Returns the edited scene's root :ref:`Node<class_Node>`.
 
-.. _class_EditorInterface_get_editor_settings:
+  .. _class_EditorInterface_get_editor_settings:
 
 - :ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)**
 
 Returns the :ref:`EditorSettings<class_EditorSettings>`.
 
-.. _class_EditorInterface_get_editor_viewport:
+  .. _class_EditorInterface_get_editor_viewport:
 
 - :ref:`Control<class_Control>` **get_editor_viewport** **(** **)**
 
 Returns the editor :ref:`Viewport<class_Viewport>`.
 
-.. _class_EditorInterface_get_open_scenes:
+  .. _class_EditorInterface_get_open_scenes:
 
 - :ref:`Array<class_Array>` **get_open_scenes** **(** **)** const
 
 Returns an :ref:`Array<class_Array>` of the currently opened scenes.
 
-.. _class_EditorInterface_get_resource_filesystem:
+  .. _class_EditorInterface_get_resource_filesystem:
 
 - :ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)**
 
 Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
 
-.. _class_EditorInterface_get_resource_previewer:
+  .. _class_EditorInterface_get_resource_previewer:
 
 - :ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)**
 
 Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`\ er.
 
-.. _class_EditorInterface_get_script_editor:
+  .. _class_EditorInterface_get_script_editor:
 
 - :ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)**
 
 Returns the :ref:`ScriptEditor<class_ScriptEditor>`.
 
-.. _class_EditorInterface_get_selected_path:
+  .. _class_EditorInterface_get_selected_path:
 
 - :ref:`String<class_String>` **get_selected_path** **(** **)** const
 
-.. _class_EditorInterface_get_selection:
+  .. _class_EditorInterface_get_selection:
 
 - :ref:`EditorSelection<class_EditorSelection>` **get_selection** **(** **)**
 
 Returns the :ref:`EditorSelection<class_EditorSelection>`.
 
-.. _class_EditorInterface_inspect_object:
+  .. _class_EditorInterface_inspect_object:
 
 - void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="" **)**
 
 Shows the given property on the given ``object`` in the Editor's Inspector dock.
 
-.. _class_EditorInterface_is_plugin_enabled:
+  .. _class_EditorInterface_is_plugin_enabled:
 
 - :ref:`bool<class_bool>` **is_plugin_enabled** **(** :ref:`String<class_String>` plugin **)** const
 
 Returns the enabled status of a plugin. The plugin name is the same as its directory name.
 
-.. _class_EditorInterface_make_mesh_previews:
+  .. _class_EditorInterface_make_mesh_previews:
 
 - :ref:`Array<class_Array>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
 
 Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture<class_Texture>`\ s.
 
-.. _class_EditorInterface_open_scene_from_path:
+  .. _class_EditorInterface_open_scene_from_path:
 
 - void **open_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Opens the scene at the given path.
 
-.. _class_EditorInterface_reload_scene_from_path:
+  .. _class_EditorInterface_reload_scene_from_path:
 
 - void **reload_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Reloads the scene at the given path.
 
-.. _class_EditorInterface_save_scene:
+  .. _class_EditorInterface_save_scene:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_scene** **(** **)**
 
 Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@GlobalScope>` constants.
 
-.. _class_EditorInterface_save_scene_as:
+  .. _class_EditorInterface_save_scene_as:
 
 - void **save_scene_as** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**
 
 Saves the scene as a file at ``path``.
 
-.. _class_EditorInterface_select_file:
+  .. _class_EditorInterface_select_file:
 
 - void **select_file** **(** :ref:`String<class_String>` p_file **)**
 
-.. _class_EditorInterface_set_plugin_enabled:
+  .. _class_EditorInterface_set_plugin_enabled:
 
 - void **set_plugin_enabled** **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**
 
 Sets the enabled status of a plugin. The plugin name is the same as its directory name.
-
 

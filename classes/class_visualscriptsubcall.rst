@@ -8,6 +8,7 @@ VisualScriptSubCall
 ===================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -25,8 +26,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptSubCall__subcall:
+  .. _class_VisualScriptSubCall__subcall:
 
 - :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** virtual
-
 

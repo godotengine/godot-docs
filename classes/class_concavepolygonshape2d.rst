@@ -8,12 +8,20 @@ ConcavePolygonShape2D
 =====================
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Concave polygon 2D shape resource for physics.
+
+Properties
+----------
+
++-------------------------------------------------+-------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_segments>` |
++-------------------------------------------------+-------------------------------------------------------+
 
 Description
 -----------
@@ -27,6 +35,13 @@ Property Descriptions
 
   .. _class_ConcavePolygonShape2D_segments:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments** - The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
 
++----------+---------------------+
+| *Setter* | set_segments(value) |
++----------+---------------------+
+| *Getter* | get_segments()      |
++----------+---------------------+
+
+The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 

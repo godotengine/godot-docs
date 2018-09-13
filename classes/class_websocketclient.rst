@@ -8,12 +8,20 @@ WebSocketClient
 ===============
 
 **Inherits:** :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>` **<** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A WebSocket client implementation
+
+Properties
+----------
+
++-------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`verify_ssl<class_WebSocketClient_verify_ssl>` |
++-------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -27,30 +35,29 @@ Methods
 Signals
 -------
 
-.. _class_WebSocketClient_connection_closed:
+  .. _class_WebSocketClient_connection_closed:
 
 - **connection_closed** **(** **)**
 
 Emitted when the connection to the server is closed.
 
-.. _class_WebSocketClient_connection_error:
+  .. _class_WebSocketClient_connection_error:
 
 - **connection_error** **(** **)**
 
 Emitted when the connection to the server fails.
 
-.. _class_WebSocketClient_connection_established:
+  .. _class_WebSocketClient_connection_established:
 
 - **connection_established** **(** :ref:`String<class_String>` protocol **)**
 
 Emitted when a connection with the server is established, ``protocol`` will contain the sub-protocol agreed with the server.
 
-.. _class_WebSocketClient_data_received:
+  .. _class_WebSocketClient_data_received:
 
 - **data_received** **(** **)**
 
 Emitted when a WebSocket message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
-
 
 Description
 -----------
@@ -68,24 +75,30 @@ Property Descriptions
 
   .. _class_WebSocketClient_verify_ssl:
 
-- :ref:`bool<class_bool>` **verify_ssl** - Enable or disable SSL certificate verification. Note: You must specify the certificates to be used in the project settings for it to work when exported.
+- :ref:`bool<class_bool>` **verify_ssl**
 
++----------+-------------------------------+
+| *Setter* | set_verify_ssl_enabled(value) |
++----------+-------------------------------+
+| *Getter* | is_verify_ssl_enabled()       |
++----------+-------------------------------+
+
+Enable or disable SSL certificate verification. Note: You must specify the certificates to be used in the project settings for it to work when exported.
 
 Method Descriptions
 -------------------
 
-.. _class_WebSocketClient_connect_to_url:
+  .. _class_WebSocketClient_connect_to_url:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
 Connect to the given URL requesting one of the given ``protocols`` as sub-protocol.
 
-If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connnections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_data_received>` will not be emitted when this option is true.
+If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_data_received>` will not be emitted when this option is true.
 
-.. _class_WebSocketClient_disconnect_from_host:
+  .. _class_WebSocketClient_disconnect_from_host:
 
 - void **disconnect_from_host** **(** **)**
 
 Disconnect from the server if currently connected.
-
 

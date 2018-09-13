@@ -14,6 +14,21 @@ Brief Description
 
 Plane in hessian form.
 
+Properties
+----------
+
++-------------------------------+-----------------------------------+
+| :ref:`float<class_float>`     | :ref:`d<class_Plane_d>`           |
++-------------------------------+-----------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_Plane_normal>` |
++-------------------------------+-----------------------------------+
+| :ref:`float<class_float>`     | :ref:`x<class_Plane_x>`           |
++-------------------------------+-----------------------------------+
+| :ref:`float<class_float>`     | :ref:`y<class_Plane_y>`           |
++-------------------------------+-----------------------------------+
+| :ref:`float<class_float>`     | :ref:`z<class_Plane_z>`           |
++-------------------------------+-----------------------------------+
+
 Methods
 -------
 
@@ -51,7 +66,6 @@ Constants
 - **PLANE_YZ** = **Plane( 1, 0, 0, 0 )**
 - **PLANE_XZ** = **Plane( 0, 1, 0, 0 )**
 - **PLANE_XY** = **Plane( 0, 0, 1, 0 )**
-
 Description
 -----------
 
@@ -61,7 +75,6 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
@@ -85,86 +98,84 @@ Property Descriptions
 
 - :ref:`float<class_float>` **z**
 
-
 Method Descriptions
 -------------------
 
-.. _class_Plane_Plane:
+  .. _class_Plane_Plane:
 
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)**
 
 Creates a plane from the four parameters "a", "b", "c" and "d".
 
-.. _class_Plane_Plane:
+  .. _class_Plane_Plane:
 
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**
 
 Creates a plane from three points.
 
-.. _class_Plane_Plane:
+  .. _class_Plane_Plane:
 
 - :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**
 
 Creates a plane from the normal and the plane's distance to the origin.
 
-.. _class_Plane_center:
+  .. _class_Plane_center:
 
 - :ref:`Vector3<class_Vector3>` **center** **(** **)**
 
 Returns the center of the plane.
 
-.. _class_Plane_distance_to:
+  .. _class_Plane_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns the shortest distance from the plane to the position "point".
 
-.. _class_Plane_get_any_point:
+  .. _class_Plane_get_any_point:
 
 - :ref:`Vector3<class_Vector3>` **get_any_point** **(** **)**
 
 Returns a point on the plane.
 
-.. _class_Plane_has_point:
+  .. _class_Plane_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=0.00001 **)**
 
 Returns true if "point" is inside the plane (by a very minimum threshold).
 
-.. _class_Plane_intersect_3:
+  .. _class_Plane_intersect_3:
 
 - :ref:`Vector3<class_Vector3>` **intersect_3** **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**
 
 Returns the intersection point of the three planes "b", "c" and this plane. If no intersection is found null is returned.
 
-.. _class_Plane_intersects_ray:
+  .. _class_Plane_intersects_ray:
 
 - :ref:`Vector3<class_Vector3>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**
 
 Returns the intersection point of a ray consisting of the position "from" and the direction normal "dir" with this plane. If no intersection is found null is returned.
 
-.. _class_Plane_intersects_segment:
+  .. _class_Plane_intersects_segment:
 
 - :ref:`Vector3<class_Vector3>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**
 
 Returns the intersection point of a segment from position "begin" to position "end" with this plane. If no intersection is found null is returned.
 
-.. _class_Plane_is_point_over:
+  .. _class_Plane_is_point_over:
 
 - :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns true if "point" is located above the plane.
 
-.. _class_Plane_normalized:
+  .. _class_Plane_normalized:
 
 - :ref:`Plane<class_Plane>` **normalized** **(** **)**
 
 Returns a copy of the plane, normalized.
 
-.. _class_Plane_project:
+  .. _class_Plane_project:
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns the orthogonal projection of point "p" into a point in the plane.
-
 

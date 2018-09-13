@@ -8,12 +8,20 @@ ARVRPositionalTracker
 =====================
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A tracked object
+
+Properties
+----------
+
++---------------------------+---------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRPositionalTracker_rumble>` |
++---------------------------+---------------------------------------------------+
 
 Methods
 -------
@@ -43,12 +51,11 @@ Enumerations
 
   .. _enum_ARVRPositionalTracker_TrackerHand:
 
-enum **TrackerHand**
+enum **TrackerHand**:
 
 - **TRACKER_HAND_UNKNOWN** = **0** --- The hand this tracker is held in is unknown or not applicable.
 - **TRACKER_LEFT_HAND** = **1** --- This tracker is the left hand controller.
 - **TRACKER_RIGHT_HAND** = **2** --- This tracker is the right hand controller.
-
 
 Description
 -----------
@@ -64,64 +71,70 @@ Property Descriptions
 
   .. _class_ARVRPositionalTracker_rumble:
 
-- :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
+- :ref:`float<class_float>` **rumble**
 
++----------+-------------------+
+| *Setter* | set_rumble(value) |
++----------+-------------------+
+| *Getter* | get_rumble()      |
++----------+-------------------+
+
+The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
 
 Method Descriptions
 -------------------
 
-.. _class_ARVRPositionalTracker_get_hand:
+  .. _class_ARVRPositionalTracker_get_hand:
 
 - :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
 Returns the hand holding this tracker, if known. See TRACKER\_\* constants.
 
-.. _class_ARVRPositionalTracker_get_joy_id:
+  .. _class_ARVRPositionalTracker_get_joy_id:
 
 - :ref:`int<class_int>` **get_joy_id** **(** **)** const
 
 If this is a controller that is being tracked the controller will also be represented by a joystick entry with this id.
 
-.. _class_ARVRPositionalTracker_get_name:
+  .. _class_ARVRPositionalTracker_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the controller or anchor point's name if available.
 
-.. _class_ARVRPositionalTracker_get_orientation:
+  .. _class_ARVRPositionalTracker_get_orientation:
 
 - :ref:`Basis<class_Basis>` **get_orientation** **(** **)** const
 
 Returns the controller's orientation matrix.
 
-.. _class_ARVRPositionalTracker_get_position:
+  .. _class_ARVRPositionalTracker_get_position:
 
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)** const
 
 Returns the world-space controller position.
 
-.. _class_ARVRPositionalTracker_get_tracks_orientation:
+  .. _class_ARVRPositionalTracker_get_tracks_orientation:
 
 - :ref:`bool<class_bool>` **get_tracks_orientation** **(** **)** const
 
 Returns ``true`` if this device tracks orientation.
 
-.. _class_ARVRPositionalTracker_get_tracks_position:
+  .. _class_ARVRPositionalTracker_get_tracks_position:
 
 - :ref:`bool<class_bool>` **get_tracks_position** **(** **)** const
 
 Returns ``true`` if this device tracks position.
 
-.. _class_ARVRPositionalTracker_get_transform:
+  .. _class_ARVRPositionalTracker_get_transform:
 
 - :ref:`Transform<class_Transform>` **get_transform** **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const
 
 Returns the transform combining this device's orientation and position.
 
-.. _class_ARVRPositionalTracker_get_type:
+  .. _class_ARVRPositionalTracker_get_type:
 
 - :ref:`TrackerType<enum_ARVRServer_TrackerType>` **get_type** **(** **)** const
 
 Returns the tracker's type.
-
 

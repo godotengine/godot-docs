@@ -8,6 +8,7 @@ VisualScriptBuiltinFunc
 =======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,19 @@ Brief Description
 
 A Visual Script node used to call built-in functions.
 
+Properties
+----------
+
++--------------------------------------------------------------+---------------------------------------------------------+
+| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_function>` |
++--------------------------------------------------------------+---------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
 
-enum **BuiltinFunc**
+enum **BuiltinFunc**:
 
 - **MATH_SIN** = **0** --- Return the sine of the input.
 - **MATH_COS** = **1** --- Return the cosine of the input.
@@ -87,7 +95,6 @@ enum **BuiltinFunc**
 - **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 - **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
 
-
 Description
 -----------
 
@@ -100,6 +107,13 @@ Property Descriptions
 
   .. _class_VisualScriptBuiltinFunc_function:
 
-- :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function** - The function to be executed.
+- :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 
++----------+-----------------+
+| *Setter* | set_func(value) |
++----------+-----------------+
+| *Getter* | get_func()      |
++----------+-----------------+
+
+The function to be executed.
 

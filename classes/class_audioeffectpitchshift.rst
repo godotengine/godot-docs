@@ -8,6 +8,7 @@ AudioEffectPitchShift
 =====================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -16,6 +17,13 @@ Brief Description
 Adds a Pitch shift audio effect to an Audio bus.
 
 Raises or lowers the pitch of original sound.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pitch_scale<class_AudioEffectPitchShift_pitch_scale>` |
++---------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -27,6 +35,13 @@ Property Descriptions
 
   .. _class_AudioEffectPitchShift_pitch_scale:
 
-- :ref:`float<class_float>` **pitch_scale** - Pitch value. Can range from 0 (-1 octave) to 16 (+16 octaves).
+- :ref:`float<class_float>` **pitch_scale**
 
++----------+------------------------+
+| *Setter* | set_pitch_scale(value) |
++----------+------------------------+
+| *Getter* | get_pitch_scale()      |
++----------+------------------------+
+
+Pitch value. Can range from 0 (-1 octave) to 16 (+16 octaves).
 

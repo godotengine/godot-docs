@@ -8,12 +8,48 @@ TileMap
 =======
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node for 2D tile-based maps.
+
+Properties
+----------
+
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`cell_clip_uv<class_TileMap_cell_clip_uv>`                       |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`      | :ref:`cell_custom_transform<class_TileMap_cell_custom_transform>`     |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`HalfOffset<enum_TileMap_HalfOffset>` | :ref:`cell_half_offset<class_TileMap_cell_half_offset>`               |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`cell_quadrant_size<class_TileMap_cell_quadrant_size>`           |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`              | :ref:`cell_size<class_TileMap_cell_size>`                             |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`TileOrigin<enum_TileMap_TileOrigin>` | :ref:`cell_tile_origin<class_TileMap_cell_tile_origin>`               |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`cell_y_sort<class_TileMap_cell_y_sort>`                         |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`collision_bounce<class_TileMap_collision_bounce>`               |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`collision_friction<class_TileMap_collision_friction>`           |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`collision_layer<class_TileMap_collision_layer>`                 |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`collision_mask<class_TileMap_collision_mask>`                   |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`collision_use_kinematic<class_TileMap_collision_use_kinematic>` |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_mode>`                                       |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_occluder_light_mask>`         |
++--------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`TileSet<class_TileSet>`              | :ref:`tile_set<class_TileMap_tile_set>`                               |
++--------------------------------------------+-----------------------------------------------------------------------+
 
 Methods
 -------
@@ -65,19 +101,18 @@ Methods
 Signals
 -------
 
-.. _class_TileMap_settings_changed:
+  .. _class_TileMap_settings_changed:
 
 - **settings_changed** **(** **)**
 
 Emitted when a tilemap setting has changed.
-
 
 Enumerations
 ------------
 
   .. _enum_TileMap_HalfOffset:
 
-enum **HalfOffset**
+enum **HalfOffset**:
 
 - **HALF_OFFSET_X** = **0** --- Half offset on the X coordinate.
 - **HALF_OFFSET_Y** = **1** --- Half offset on the Y coordinate.
@@ -85,7 +120,7 @@ enum **HalfOffset**
 
   .. _enum_TileMap_TileOrigin:
 
-enum **TileOrigin**
+enum **TileOrigin**:
 
 - **TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner.
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
@@ -93,18 +128,16 @@ enum **TileOrigin**
 
   .. _enum_TileMap_Mode:
 
-enum **Mode**
+enum **Mode**:
 
 - **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
 - **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
 - **MODE_CUSTOM** = **2** --- Custom orientation mode.
 
-
 Constants
 ---------
 
 - **INVALID_CELL** = **-1** --- Returned when a cell doesn't exist.
-
 Description
 -----------
 
@@ -114,7 +147,6 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/2d/using_tilemaps`
-
 Property Descriptions
 ---------------------
 
@@ -122,139 +154,256 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **cell_clip_uv**
 
++----------+--------------------+
+| *Setter* | set_clip_uv(value) |
++----------+--------------------+
+| *Getter* | get_clip_uv()      |
++----------+--------------------+
+
   .. _class_TileMap_cell_custom_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **cell_custom_transform** - The custom :ref:`Transform2D<class_Transform2D>` to be applied to the TileMap's cells.
+- :ref:`Transform2D<class_Transform2D>` **cell_custom_transform**
+
++----------+-----------------------------+
+| *Setter* | set_custom_transform(value) |
++----------+-----------------------------+
+| *Getter* | get_custom_transform()      |
++----------+-----------------------------+
+
+The custom :ref:`Transform2D<class_Transform2D>` to be applied to the TileMap's cells.
 
   .. _class_TileMap_cell_half_offset:
 
-- :ref:`HalfOffset<enum_TileMap_HalfOffset>` **cell_half_offset** - Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
+- :ref:`HalfOffset<enum_TileMap_HalfOffset>` **cell_half_offset**
+
++----------+------------------------+
+| *Setter* | set_half_offset(value) |
++----------+------------------------+
+| *Getter* | get_half_offset()      |
++----------+------------------------+
+
+Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
 
   .. _class_TileMap_cell_quadrant_size:
 
-- :ref:`int<class_int>` **cell_quadrant_size** - The TileMap's quadrant size.  Optimizes drawing by batching, using chunks of this size. Default value: 16.
+- :ref:`int<class_int>` **cell_quadrant_size**
+
++----------+--------------------------+
+| *Setter* | set_quadrant_size(value) |
++----------+--------------------------+
+| *Getter* | get_quadrant_size()      |
++----------+--------------------------+
+
+The TileMap's quadrant size.  Optimizes drawing by batching, using chunks of this size. Default value: 16.
 
   .. _class_TileMap_cell_size:
 
-- :ref:`Vector2<class_Vector2>` **cell_size** - The TileMap's cell size.
+- :ref:`Vector2<class_Vector2>` **cell_size**
+
++----------+----------------------+
+| *Setter* | set_cell_size(value) |
++----------+----------------------+
+| *Getter* | get_cell_size()      |
++----------+----------------------+
+
+The TileMap's cell size.
 
   .. _class_TileMap_cell_tile_origin:
 
-- :ref:`TileOrigin<enum_TileMap_TileOrigin>` **cell_tile_origin** - Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
+- :ref:`TileOrigin<enum_TileMap_TileOrigin>` **cell_tile_origin**
+
++----------+------------------------+
+| *Setter* | set_tile_origin(value) |
++----------+------------------------+
+| *Getter* | get_tile_origin()      |
++----------+------------------------+
+
+Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
 
   .. _class_TileMap_cell_y_sort:
 
-- :ref:`bool<class_bool>` **cell_y_sort** - If ``true`` the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
+- :ref:`bool<class_bool>` **cell_y_sort**
+
++----------+--------------------------+
+| *Setter* | set_y_sort_mode(value)   |
++----------+--------------------------+
+| *Getter* | is_y_sort_mode_enabled() |
++----------+--------------------------+
+
+If ``true`` the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
 
   .. _class_TileMap_collision_bounce:
 
-- :ref:`float<class_float>` **collision_bounce** - Bounce value for static body collisions (see ``collision_use_kinematic``). Default value: 0.
+- :ref:`float<class_float>` **collision_bounce**
+
++----------+-----------------------------+
+| *Setter* | set_collision_bounce(value) |
++----------+-----------------------------+
+| *Getter* | get_collision_bounce()      |
++----------+-----------------------------+
+
+Bounce value for static body collisions (see ``collision_use_kinematic``). Default value: 0.
 
   .. _class_TileMap_collision_friction:
 
-- :ref:`float<class_float>` **collision_friction** - Friction value for static body collisions (see ``collision_use_kinematic``). Default value: 1.
+- :ref:`float<class_float>` **collision_friction**
+
++----------+-------------------------------+
+| *Setter* | set_collision_friction(value) |
++----------+-------------------------------+
+| *Getter* | get_collision_friction()      |
++----------+-------------------------------+
+
+Friction value for static body collisions (see ``collision_use_kinematic``). Default value: 1.
 
   .. _class_TileMap_collision_layer:
 
-- :ref:`int<class_int>` **collision_layer** - The collision layer(s) for all colliders in the TileMap.
+- :ref:`int<class_int>` **collision_layer**
+
++----------+----------------------------+
+| *Setter* | set_collision_layer(value) |
++----------+----------------------------+
+| *Getter* | get_collision_layer()      |
++----------+----------------------------+
+
+The collision layer(s) for all colliders in the TileMap.
 
   .. _class_TileMap_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask** - The collision mask(s) for all colliders in the TileMap.
+- :ref:`int<class_int>` **collision_mask**
+
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
+The collision mask(s) for all colliders in the TileMap.
 
   .. _class_TileMap_collision_use_kinematic:
 
-- :ref:`bool<class_bool>` **collision_use_kinematic** - If ``true`` TileMap collisions will be handled as a kinematic body. If ``false`` collisions will be handled as static body. Default value: ``false``.
+- :ref:`bool<class_bool>` **collision_use_kinematic**
+
++----------+------------------------------------+
+| *Setter* | set_collision_use_kinematic(value) |
++----------+------------------------------------+
+| *Getter* | get_collision_use_kinematic()      |
++----------+------------------------------------+
+
+If ``true`` TileMap collisions will be handled as a kinematic body. If ``false`` collisions will be handled as static body. Default value: ``false``.
 
   .. _class_TileMap_mode:
 
-- :ref:`Mode<enum_TileMap_Mode>` **mode** - The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
+- :ref:`Mode<enum_TileMap_Mode>` **mode**
+
++----------+-----------------+
+| *Setter* | set_mode(value) |
++----------+-----------------+
+| *Getter* | get_mode()      |
++----------+-----------------+
+
+The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
 
   .. _class_TileMap_occluder_light_mask:
 
-- :ref:`int<class_int>` **occluder_light_mask** - The light mask assigned to all light occluders in the TileMap.  The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
+- :ref:`int<class_int>` **occluder_light_mask**
+
++----------+--------------------------------+
+| *Setter* | set_occluder_light_mask(value) |
++----------+--------------------------------+
+| *Getter* | get_occluder_light_mask()      |
++----------+--------------------------------+
+
+The light mask assigned to all light occluders in the TileMap.  The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
 
   .. _class_TileMap_tile_set:
 
-- :ref:`TileSet<class_TileSet>` **tile_set** - The assigned :ref:`TileSet<class_TileSet>`.
+- :ref:`TileSet<class_TileSet>` **tile_set**
 
++----------+--------------------+
+| *Setter* | set_tileset(value) |
++----------+--------------------+
+| *Getter* | get_tileset()      |
++----------+--------------------+
+
+The assigned :ref:`TileSet<class_TileSet>`.
 
 Method Descriptions
 -------------------
 
-.. _class_TileMap_clear:
+  .. _class_TileMap_clear:
 
 - void **clear** **(** **)**
 
 Clears all cells.
 
-.. _class_TileMap_fix_invalid_tiles:
+  .. _class_TileMap_fix_invalid_tiles:
 
 - void **fix_invalid_tiles** **(** **)**
 
 Clears cells that do not exist in the tileset.
 
-.. _class_TileMap_get_cell:
+  .. _class_TileMap_get_cell:
 
 - :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 Returns the tile index of the given cell.
 
-.. _class_TileMap_get_cellv:
+  .. _class_TileMap_get_cellv:
 
 - :ref:`int<class_int>` **get_cellv** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
 Returns the tile index of the cell given by a Vector2.
 
-.. _class_TileMap_get_collision_layer_bit:
+  .. _class_TileMap_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns ``true`` if the given collision layer bit is set.
 
-.. _class_TileMap_get_collision_mask_bit:
+  .. _class_TileMap_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns ``true`` if the given collision mask bit is set.
 
-.. _class_TileMap_get_used_cells:
+  .. _class_TileMap_get_used_cells:
 
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** const
 
 Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells containing a tile from the tileset (i.e. a tile index different from ``-1``).
 
-.. _class_TileMap_get_used_cells_by_id:
+  .. _class_TileMap_get_used_cells_by_id:
 
 - :ref:`Array<class_Array>` **get_used_cells_by_id** **(** :ref:`int<class_int>` id **)** const
 
 Returns an array of all cells with the given tile id.
 
-.. _class_TileMap_get_used_rect:
+  .. _class_TileMap_get_used_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)**
 
 Returns a rectangle enclosing the used (non-empty) tiles of the map.
 
-.. _class_TileMap_is_cell_transposed:
+  .. _class_TileMap_is_cell_transposed:
 
 - :ref:`bool<class_bool>` **is_cell_transposed** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 Returns ``true`` if the given cell is transposed, i.e. the x and y axes are swapped.
 
-.. _class_TileMap_is_cell_x_flipped:
+  .. _class_TileMap_is_cell_x_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_x_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 Returns ``true`` if the given cell is flipped in the x axis.
 
-.. _class_TileMap_is_cell_y_flipped:
+  .. _class_TileMap_is_cell_y_flipped:
 
 - :ref:`bool<class_bool>` **is_cell_y_flipped** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 Returns ``true`` if the given cell is flipped in the y axis.
 
-.. _class_TileMap_map_to_world:
+  .. _class_TileMap_map_to_world:
 
 - :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2<class_Vector2>` map_position, :ref:`bool<class_bool>` ignore_half_ofs=false **)** const
 
@@ -262,7 +411,7 @@ Returns the global position corresponding to the given tilemap (grid-based) coor
 
 Optionally, the tilemap's half offset can be ignored.
 
-.. _class_TileMap_set_cell:
+  .. _class_TileMap_set_cell:
 
 - void **set_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false, :ref:`Vector2<class_Vector2>` autotile_coord=Vector2( 0, 0 ) **)**
 
@@ -276,7 +425,7 @@ Note that data such as navigation polygons and collision shapes are not immediat
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_update_dirty_quadrants>`.
 
-.. _class_TileMap_set_cellv:
+  .. _class_TileMap_set_cellv:
 
 - void **set_cellv** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**
 
@@ -290,25 +439,25 @@ Note that data such as navigation polygons and collision shapes are not immediat
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_update_dirty_quadrants>`.
 
-.. _class_TileMap_set_collision_layer_bit:
+  .. _class_TileMap_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets the given collision layer bit.
 
-.. _class_TileMap_set_collision_mask_bit:
+  .. _class_TileMap_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets the given collision mask bit.
 
-.. _class_TileMap_update_bitmask_area:
+  .. _class_TileMap_update_bitmask_area:
 
 - void **update_bitmask_area** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based x and y coordinates.
 
-.. _class_TileMap_update_bitmask_region:
+  .. _class_TileMap_update_bitmask_region:
 
 - void **update_bitmask_region** **(** :ref:`Vector2<class_Vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_Vector2>` end=Vector2( 0, 0 ) **)**
 
@@ -316,16 +465,15 @@ Applies autotiling rules to the cells in the given region (specified by grid-bas
 
 Calling with invalid (or missing) parameters applies autotiling rules for the entire tilemap.
 
-.. _class_TileMap_update_dirty_quadrants:
+  .. _class_TileMap_update_dirty_quadrants:
 
 - void **update_dirty_quadrants** **(** **)**
 
 Updates the tile map's quadrants, allowing things such as navigation and collision shapes to be immediately used if modified.
 
-.. _class_TileMap_world_to_map:
+  .. _class_TileMap_world_to_map:
 
 - :ref:`Vector2<class_Vector2>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** const
 
 Returns the tilemap (grid-based) coordinatescorresponding to the given global position.
-
 

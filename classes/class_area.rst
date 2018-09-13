@@ -8,12 +8,54 @@ Area
 ====
 
 **Inherits:** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 General purpose area node for detection and 3D physics influence.
+
+Properties
+----------
+
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`angular_damp<class_Area_angular_damp>`                     |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`audio_bus_name<class_Area_audio_bus_name>`                 |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`audio_bus_override<class_Area_audio_bus_override>`         |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`collision_layer<class_Area_collision_layer>`               |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`collision_mask<class_Area_collision_mask>`                 |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`gravity<class_Area_gravity>`                               |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`gravity_distance_scale<class_Area_gravity_distance_scale>` |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`gravity_point<class_Area_gravity_point>`                   |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                 | :ref:`gravity_vec<class_Area_gravity_vec>`                       |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`linear_damp<class_Area_linear_damp>`                       |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`monitorable<class_Area_monitorable>`                       |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`monitoring<class_Area_monitoring>`                         |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`priority<class_Area_priority>`                             |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`reverb_bus_amount<class_Area_reverb_bus_amount>`           |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`reverb_bus_enable<class_Area_reverb_bus_enable>`           |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`reverb_bus_name<class_Area_reverb_bus_name>`               |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`reverb_bus_uniformity<class_Area_reverb_bus_uniformity>`   |
++-----------------------------------------------+------------------------------------------------------------------+
+| :ref:`SpaceOverride<enum_Area_SpaceOverride>` | :ref:`space_override<class_Area_space_override>`                 |
++-----------------------------------------------+------------------------------------------------------------------+
 
 Methods
 -------
@@ -39,68 +81,66 @@ Methods
 Signals
 -------
 
-.. _class_Area_area_entered:
+  .. _class_Area_area_entered:
 
 - **area_entered** **(** :ref:`Area<class_Area>` area **)**
 
 Emitted when another area enters.
 
-.. _class_Area_area_exited:
+  .. _class_Area_area_exited:
 
 - **area_exited** **(** :ref:`Area<class_Area>` area **)**
 
 Emitted when another area exits.
 
-.. _class_Area_area_shape_entered:
+  .. _class_Area_area_shape_entered:
 
 - **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area enters, reporting which areas overlapped.
 
-.. _class_Area_area_shape_exited:
+  .. _class_Area_area_shape_exited:
 
 - **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
 Emitted when another area exits, reporting which areas were overlapping.
 
-.. _class_Area_body_entered:
+  .. _class_Area_body_entered:
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object enters.
 
-.. _class_Area_body_exited:
+  .. _class_Area_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object exits.
 
-.. _class_Area_body_shape_entered:
+  .. _class_Area_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object enters, reporting which shapes overlapped.
 
-.. _class_Area_body_shape_exited:
+  .. _class_Area_body_shape_exited:
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` object exits, reporting which shapes were overlapping.
-
 
 Enumerations
 ------------
 
   .. _enum_Area_SpaceOverride:
 
-enum **SpaceOverride**
+enum **SpaceOverride**:
 
 - **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
 - **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
 - **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
 - **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
 - **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
-
 
 Description
 -----------
@@ -112,126 +152,268 @@ Property Descriptions
 
   .. _class_Area_angular_damp:
 
-- :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+- :ref:`float<class_float>` **angular_damp**
+
++----------+-------------------------+
+| *Setter* | set_angular_damp(value) |
++----------+-------------------------+
+| *Getter* | get_angular_damp()      |
++----------+-------------------------+
+
+The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
   .. _class_Area_audio_bus_name:
 
-- :ref:`String<class_String>` **audio_bus_name** - The name of the area's audio bus.
+- :ref:`String<class_String>` **audio_bus_name**
+
++----------+----------------------+
+| *Setter* | set_audio_bus(value) |
++----------+----------------------+
+| *Getter* | get_audio_bus()      |
++----------+----------------------+
+
+The name of the area's audio bus.
 
   .. _class_Area_audio_bus_override:
 
-- :ref:`bool<class_bool>` **audio_bus_override** - If ``true`` the area's audio bus overrides the default audio bus. Default value: ``false``.
+- :ref:`bool<class_bool>` **audio_bus_override**
+
++----------+-------------------------------+
+| *Setter* | set_audio_bus_override(value) |
++----------+-------------------------------+
+| *Getter* | is_overriding_audio_bus()     |
++----------+-------------------------------+
+
+If ``true`` the area's audio bus overrides the default audio bus. Default value: ``false``.
 
   .. _class_Area_collision_layer:
 
-- :ref:`int<class_int>` **collision_layer** - The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also ``collision_mask``.
+- :ref:`int<class_int>` **collision_layer**
+
++----------+----------------------------+
+| *Setter* | set_collision_layer(value) |
++----------+----------------------------+
+| *Getter* | get_collision_layer()      |
++----------+----------------------------+
+
+The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also ``collision_mask``.
 
   .. _class_Area_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask** - The physics layers this area scans to determine collision detection.
+- :ref:`int<class_int>` **collision_mask**
+
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
+The physics layers this area scans to determine collision detection.
 
   .. _class_Area_gravity:
 
-- :ref:`float<class_float>` **gravity** - The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+- :ref:`float<class_float>` **gravity**
+
++----------+--------------------+
+| *Setter* | set_gravity(value) |
++----------+--------------------+
+| *Getter* | get_gravity()      |
++----------+--------------------+
+
+The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
 
   .. _class_Area_gravity_distance_scale:
 
-- :ref:`float<class_float>` **gravity_distance_scale** - The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+- :ref:`float<class_float>` **gravity_distance_scale**
+
++----------+-----------------------------------+
+| *Setter* | set_gravity_distance_scale(value) |
++----------+-----------------------------------+
+| *Getter* | get_gravity_distance_scale()      |
++----------+-----------------------------------+
+
+The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
 
   .. _class_Area_gravity_point:
 
-- :ref:`bool<class_bool>` **gravity_point** - If ``true`` gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
+- :ref:`bool<class_bool>` **gravity_point**
+
++----------+-----------------------------+
+| *Setter* | set_gravity_is_point(value) |
++----------+-----------------------------+
+| *Getter* | is_gravity_a_point()        |
++----------+-----------------------------+
+
+If ``true`` gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
 
   .. _class_Area_gravity_vec:
 
-- :ref:`Vector3<class_Vector3>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the point of attraction.
+- :ref:`Vector3<class_Vector3>` **gravity_vec**
+
++----------+---------------------------+
+| *Setter* | set_gravity_vector(value) |
++----------+---------------------------+
+| *Getter* | get_gravity_vector()      |
++----------+---------------------------+
+
+The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the point of attraction.
 
   .. _class_Area_linear_damp:
 
-- :ref:`float<class_float>` **linear_damp** - The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+- :ref:`float<class_float>` **linear_damp**
+
++----------+------------------------+
+| *Setter* | set_linear_damp(value) |
++----------+------------------------+
+| *Getter* | get_linear_damp()      |
++----------+------------------------+
+
+The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
   .. _class_Area_monitorable:
 
-- :ref:`bool<class_bool>` **monitorable** - If ``true`` other monitoring areas can detect this area. Default value: ``true``.
+- :ref:`bool<class_bool>` **monitorable**
+
++----------+------------------------+
+| *Setter* | set_monitorable(value) |
++----------+------------------------+
+| *Getter* | is_monitorable()       |
++----------+------------------------+
+
+If ``true`` other monitoring areas can detect this area. Default value: ``true``.
 
   .. _class_Area_monitoring:
 
-- :ref:`bool<class_bool>` **monitoring** - If ``true`` the area detects bodies or areas entering and exiting it. Default value: ``true``.
+- :ref:`bool<class_bool>` **monitoring**
+
++----------+-----------------------+
+| *Setter* | set_monitoring(value) |
++----------+-----------------------+
+| *Getter* | is_monitoring()       |
++----------+-----------------------+
+
+If ``true`` the area detects bodies or areas entering and exiting it. Default value: ``true``.
 
   .. _class_Area_priority:
 
-- :ref:`float<class_float>` **priority** - The area's priority. Higher priority areas are processed first. Default value: 0.
+- :ref:`float<class_float>` **priority**
+
++----------+---------------------+
+| *Setter* | set_priority(value) |
++----------+---------------------+
+| *Getter* | get_priority()      |
++----------+---------------------+
+
+The area's priority. Higher priority areas are processed first. Default value: 0.
 
   .. _class_Area_reverb_bus_amount:
 
-- :ref:`float<class_float>` **reverb_bus_amount** - The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+- :ref:`float<class_float>` **reverb_bus_amount**
+
++----------+--------------------------+
+| *Setter* | set_reverb_amount(value) |
++----------+--------------------------+
+| *Getter* | get_reverb_amount()      |
++----------+--------------------------+
+
+The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
   .. _class_Area_reverb_bus_enable:
 
-- :ref:`bool<class_bool>` **reverb_bus_enable** - If ``true`` the area applies reverb to its associated audio.
+- :ref:`bool<class_bool>` **reverb_bus_enable**
+
++----------+---------------------------+
+| *Setter* | set_use_reverb_bus(value) |
++----------+---------------------------+
+| *Getter* | is_using_reverb_bus()     |
++----------+---------------------------+
+
+If ``true`` the area applies reverb to its associated audio.
 
   .. _class_Area_reverb_bus_name:
 
-- :ref:`String<class_String>` **reverb_bus_name** - The reverb bus name to use for this area's associated audio.
+- :ref:`String<class_String>` **reverb_bus_name**
+
++----------+-----------------------+
+| *Setter* | set_reverb_bus(value) |
++----------+-----------------------+
+| *Getter* | get_reverb_bus()      |
++----------+-----------------------+
+
+The reverb bus name to use for this area's associated audio.
 
   .. _class_Area_reverb_bus_uniformity:
 
-- :ref:`float<class_float>` **reverb_bus_uniformity** - The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+- :ref:`float<class_float>` **reverb_bus_uniformity**
+
++----------+------------------------------+
+| *Setter* | set_reverb_uniformity(value) |
++----------+------------------------------+
+| *Getter* | get_reverb_uniformity()      |
++----------+------------------------------+
+
+The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
   .. _class_Area_space_override:
 
-- :ref:`SpaceOverride<enum_Area_SpaceOverride>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
+- :ref:`SpaceOverride<enum_Area_SpaceOverride>` **space_override**
 
++----------+--------------------------------+
+| *Setter* | set_space_override_mode(value) |
++----------+--------------------------------+
+| *Getter* | get_space_override_mode()      |
++----------+--------------------------------+
+
+Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
 
 Method Descriptions
 -------------------
 
-.. _class_Area_get_collision_layer_bit:
+  .. _class_Area_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the layer mask.
 
-.. _class_Area_get_collision_mask_bit:
+  .. _class_Area_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Returns an individual bit on the collision mask.
 
-.. _class_Area_get_overlapping_areas:
+  .. _class_Area_get_overlapping_areas:
 
 - :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** const
 
 Returns a list of intersecting ``Area``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-.. _class_Area_get_overlapping_bodies:
+  .. _class_Area_get_overlapping_bodies:
 
 - :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
 
 Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-.. _class_Area_overlaps_area:
+  .. _class_Area_overlaps_area:
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
 If ``true`` the given area overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-.. _class_Area_overlaps_body:
+  .. _class_Area_overlaps_body:
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
 If ``true`` the given body overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-.. _class_Area_set_collision_layer_bit:
+  .. _class_Area_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the layer mask. This simplifies editing this ``Area[code]'s layers.
 
-.. _class_Area_set_collision_mask_bit:
+  .. _class_Area_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the collision mask. This simplifies editing which ``Area`` layers this ``Area`` scans.
-
 

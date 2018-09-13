@@ -8,6 +8,7 @@ BitMap
 ======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -46,54 +47,53 @@ A two-dimensional array of boolean values, can be used to efficiently store a bi
 Method Descriptions
 -------------------
 
-.. _class_BitMap_create:
+  .. _class_BitMap_create:
 
 - void **create** **(** :ref:`Vector2<class_Vector2>` size **)**
 
 Creates a bitmap with the specified size, filled with false.
 
-.. _class_BitMap_create_from_image_alpha:
+  .. _class_BitMap_create_from_image_alpha:
 
 - void **create_from_image_alpha** **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)**
 
 Creates a bitmap that matches the given image dimensions, every element of the bitmap is set to false if the alpha value of the image at that position is equal to ``threshold`` or less, and true in other case.
 
-.. _class_BitMap_get_bit:
+  .. _class_BitMap_get_bit:
 
 - :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
 Returns bitmap's value at the specified position.
 
-.. _class_BitMap_get_size:
+  .. _class_BitMap_get_size:
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Returns bitmap's dimensions.
 
-.. _class_BitMap_get_true_bit_count:
+  .. _class_BitMap_get_true_bit_count:
 
 - :ref:`int<class_int>` **get_true_bit_count** **(** **)** const
 
 Returns the amount of bitmap elements that are set to true.
 
-.. _class_BitMap_grow_mask:
+  .. _class_BitMap_grow_mask:
 
 - void **grow_mask** **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**
 
-.. _class_BitMap_opaque_to_polygons:
+  .. _class_BitMap_opaque_to_polygons:
 
 - :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** const
 
-.. _class_BitMap_set_bit:
+  .. _class_BitMap_set_bit:
 
 - void **set_bit** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**
 
 Sets the bitmap's element at the specified position, to the specified value.
 
-.. _class_BitMap_set_bit_rect:
+  .. _class_BitMap_set_bit_rect:
 
 - void **set_bit_rect** **(** :ref:`Rect2<class_Rect2>` p_rect, :ref:`bool<class_bool>` bit **)**
 
 Sets a rectangular portion of the bitmap to the specified value.
-
 

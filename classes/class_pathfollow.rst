@@ -8,6 +8,7 @@ PathFollow
 ==========
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,18 +16,36 @@ Brief Description
 
 Point sampler for a :ref:`Path<class_Path>`.
 
+Properties
+----------
+
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_cubic_interp>`   |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_h_offset>`           |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_loop>`                   |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_offset>`               |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_rotation_mode>` |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_unit_offset>`     |
++---------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_v_offset>`           |
++---------------------------------------------------+------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_PathFollow_RotationMode:
 
-enum **RotationMode**
+enum **RotationMode**:
 
 - **ROTATION_NONE** = **0** --- Forbids the PathFollow to rotate.
 - **ROTATION_Y** = **1** --- Allows the PathFollow to rotate in the Y axis only.
 - **ROTATION_XY** = **2** --- Allows the PathFollow to rotate in both the X, and Y axes.
 - **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
-
 
 Description
 -----------
@@ -40,7 +59,15 @@ Property Descriptions
 
   .. _class_PathFollow_cubic_interp:
 
-- :ref:`bool<class_bool>` **cubic_interp** - If ``true`` the position between two cached points is interpolated cubically, and linearly otherwise.
+- :ref:`bool<class_bool>` **cubic_interp**
+
++----------+--------------------------------+
+| *Setter* | set_cubic_interpolation(value) |
++----------+--------------------------------+
+| *Getter* | get_cubic_interpolation()      |
++----------+--------------------------------+
+
+If ``true`` the position between two cached points is interpolated cubically, and linearly otherwise.
 
 The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
 
@@ -48,26 +75,73 @@ There are two answers to this problem: Either increase the number of cached poin
 
   .. _class_PathFollow_h_offset:
 
-- :ref:`float<class_float>` **h_offset** - The node's offset along the curve.
+- :ref:`float<class_float>` **h_offset**
+
++----------+---------------------+
+| *Setter* | set_h_offset(value) |
++----------+---------------------+
+| *Getter* | get_h_offset()      |
++----------+---------------------+
+
+The node's offset along the curve.
 
   .. _class_PathFollow_loop:
 
-- :ref:`bool<class_bool>` **loop** - If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
+- :ref:`bool<class_bool>` **loop**
+
++----------+-----------------+
+| *Setter* | set_loop(value) |
++----------+-----------------+
+| *Getter* | has_loop()      |
++----------+-----------------+
+
+If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
   .. _class_PathFollow_offset:
 
-- :ref:`float<class_float>` **offset** - The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
+- :ref:`float<class_float>` **offset**
+
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
+
+The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
 
   .. _class_PathFollow_rotation_mode:
 
-- :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode** - Allows or forbids rotation on one or more axes, depending on the constants being used.
+- :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode**
+
++----------+--------------------------+
+| *Setter* | set_rotation_mode(value) |
++----------+--------------------------+
+| *Getter* | get_rotation_mode()      |
++----------+--------------------------+
+
+Allows or forbids rotation on one or more axes, depending on the constants being used.
 
   .. _class_PathFollow_unit_offset:
 
-- :ref:`float<class_float>` **unit_offset** - The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
+- :ref:`float<class_float>` **unit_offset**
+
++----------+------------------------+
+| *Setter* | set_unit_offset(value) |
++----------+------------------------+
+| *Getter* | get_unit_offset()      |
++----------+------------------------+
+
+The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
   .. _class_PathFollow_v_offset:
 
-- :ref:`float<class_float>` **v_offset** - The node's offset perpendicular to the curve.
+- :ref:`float<class_float>` **v_offset**
 
++----------+---------------------+
+| *Setter* | set_v_offset(value) |
++----------+---------------------+
+| *Getter* | get_v_offset()      |
++----------+---------------------+
+
+The node's offset perpendicular to the curve.
 

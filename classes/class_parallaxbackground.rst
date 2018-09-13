@@ -8,12 +8,30 @@ ParallaxBackground
 ==================
 
 **Inherits:** :ref:`CanvasLayer<class_CanvasLayer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A node used to create a parallax scrolling background.
+
+Properties
+----------
+
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_offset<class_ParallaxBackground_scroll_base_offset>`               |
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_base_scale<class_ParallaxBackground_scroll_base_scale>`                 |
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`scroll_ignore_camera_zoom<class_ParallaxBackground_scroll_ignore_camera_zoom>` |
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_begin<class_ParallaxBackground_scroll_limit_begin>`               |
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_limit_end<class_ParallaxBackground_scroll_limit_end>`                   |
++-------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_ParallaxBackground_scroll_offset>`                         |
++-------------------------------+--------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -25,26 +43,73 @@ Property Descriptions
 
   .. _class_ParallaxBackground_scroll_base_offset:
 
-- :ref:`Vector2<class_Vector2>` **scroll_base_offset** - Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
+- :ref:`Vector2<class_Vector2>` **scroll_base_offset**
+
++----------+-------------------------------+
+| *Setter* | set_scroll_base_offset(value) |
++----------+-------------------------------+
+| *Getter* | get_scroll_base_offset()      |
++----------+-------------------------------+
+
+Base position offset of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
   .. _class_ParallaxBackground_scroll_base_scale:
 
-- :ref:`Vector2<class_Vector2>` **scroll_base_scale** - Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
+- :ref:`Vector2<class_Vector2>` **scroll_base_scale**
+
++----------+------------------------------+
+| *Setter* | set_scroll_base_scale(value) |
++----------+------------------------------+
+| *Getter* | get_scroll_base_scale()      |
++----------+------------------------------+
+
+Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
   .. _class_ParallaxBackground_scroll_ignore_camera_zoom:
 
-- :ref:`bool<class_bool>` **scroll_ignore_camera_zoom** - If ``true`` elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
+- :ref:`bool<class_bool>` **scroll_ignore_camera_zoom**
+
++----------+-------------------------------+
+| *Setter* | set_ignore_camera_zoom(value) |
++----------+-------------------------------+
+| *Getter* | is_ignore_camera_zoom()       |
++----------+-------------------------------+
+
+If ``true`` elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
 
   .. _class_ParallaxBackground_scroll_limit_begin:
 
-- :ref:`Vector2<class_Vector2>` **scroll_limit_begin** - Top left limits for scrolling to begin. If the camera is outside of this limit the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_scroll_limit_end>` to work.
+- :ref:`Vector2<class_Vector2>` **scroll_limit_begin**
+
++----------+------------------------+
+| *Setter* | set_limit_begin(value) |
++----------+------------------------+
+| *Getter* | get_limit_begin()      |
++----------+------------------------+
+
+Top left limits for scrolling to begin. If the camera is outside of this limit the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_scroll_limit_end>` to work.
 
   .. _class_ParallaxBackground_scroll_limit_end:
 
-- :ref:`Vector2<class_Vector2>` **scroll_limit_end** - Right bottom limits for scrolling to end. If the camera is outside of this limit the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_scroll_limit_begin>` to work.
+- :ref:`Vector2<class_Vector2>` **scroll_limit_end**
+
++----------+----------------------+
+| *Setter* | set_limit_end(value) |
++----------+----------------------+
+| *Getter* | get_limit_end()      |
++----------+----------------------+
+
+Right bottom limits for scrolling to end. If the camera is outside of this limit the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_scroll_limit_begin>` to work.
 
   .. _class_ParallaxBackground_scroll_offset:
 
-- :ref:`Vector2<class_Vector2>` **scroll_offset** - The ParallaxBackground's scroll value. Calculated automatically when using a :ref:`Camera2D<class_Camera2D>`, but can be used to manually manage scrolling when no camera is present.
+- :ref:`Vector2<class_Vector2>` **scroll_offset**
 
++----------+--------------------------+
+| *Setter* | set_scroll_offset(value) |
++----------+--------------------------+
+| *Getter* | get_scroll_offset()      |
++----------+--------------------------+
+
+The ParallaxBackground's scroll value. Calculated automatically when using a :ref:`Camera2D<class_Camera2D>`, but can be used to manually manage scrolling when no camera is present.
 

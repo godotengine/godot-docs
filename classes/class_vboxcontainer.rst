@@ -8,12 +8,20 @@ VBoxContainer
 =============
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Vertical box container.
+
+Theme Properties
+----------------
+
++-----------------------+---------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`separation<class_VBoxContainer_separation>` |
++-----------------------+---------------------------------------------------+
 
 Description
 -----------

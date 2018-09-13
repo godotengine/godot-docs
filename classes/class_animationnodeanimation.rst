@@ -8,12 +8,20 @@ AnimationNodeAnimation
 ======================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------+----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_animation>` |
++-----------------------------+----------------------------------------------------------+
 
 Methods
 -------
@@ -29,12 +37,16 @@ Property Descriptions
 
 - :ref:`String<class_String>` **animation**
 
++----------+----------------------+
+| *Setter* | set_animation(value) |
++----------+----------------------+
+| *Getter* | get_animation()      |
++----------+----------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeAnimation_get_playback_time:
+  .. _class_AnimationNodeAnimation_get_playback_time:
 
 - :ref:`float<class_float>` **get_playback_time** **(** **)** const
-
 

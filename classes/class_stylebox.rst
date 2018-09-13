@@ -8,13 +8,28 @@ StyleBox
 ========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`StyleBoxLine<class_StyleBoxLine>`, :ref:`StyleBoxFlat<class_StyleBoxFlat>`, :ref:`StyleBoxTexture<class_StyleBoxTexture>`, :ref:`StyleBoxEmpty<class_StyleBoxEmpty>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for drawing stylized boxes for the UI.
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`content_margin_bottom<class_StyleBox_content_margin_bottom>` |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`content_margin_left<class_StyleBox_content_margin_left>`     |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`content_margin_right<class_StyleBox_content_margin_right>`   |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`content_margin_top<class_StyleBox_content_margin_top>`       |
++---------------------------+--------------------------------------------------------------------+
 
 Methods
 -------
@@ -45,52 +60,74 @@ Property Descriptions
 
 - :ref:`float<class_float>` **content_margin_bottom**
 
++----------+---------------------------+
+| *Setter* | set_default_margin(value) |
++----------+---------------------------+
+| *Getter* | get_default_margin()      |
++----------+---------------------------+
+
   .. _class_StyleBox_content_margin_left:
 
 - :ref:`float<class_float>` **content_margin_left**
+
++----------+---------------------------+
+| *Setter* | set_default_margin(value) |
++----------+---------------------------+
+| *Getter* | get_default_margin()      |
++----------+---------------------------+
 
   .. _class_StyleBox_content_margin_right:
 
 - :ref:`float<class_float>` **content_margin_right**
 
++----------+---------------------------+
+| *Setter* | set_default_margin(value) |
++----------+---------------------------+
+| *Getter* | get_default_margin()      |
++----------+---------------------------+
+
   .. _class_StyleBox_content_margin_top:
 
 - :ref:`float<class_float>` **content_margin_top**
 
++----------+---------------------------+
+| *Setter* | set_default_margin(value) |
++----------+---------------------------+
+| *Getter* | get_default_margin()      |
++----------+---------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_StyleBox_draw:
+  .. _class_StyleBox_draw:
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const
 
-.. _class_StyleBox_get_center_size:
+  .. _class_StyleBox_get_center_size:
 
 - :ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** const
 
-.. _class_StyleBox_get_margin:
+  .. _class_StyleBox_get_margin:
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
 Return the offset of margin "margin" (see MARGIN\_\* enum).
 
-.. _class_StyleBox_get_minimum_size:
+  .. _class_StyleBox_get_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **get_minimum_size** **(** **)** const
 
 Return the minimum size that this stylebox can be shrunk to.
 
-.. _class_StyleBox_get_offset:
+  .. _class_StyleBox_get_offset:
 
 - :ref:`Vector2<class_Vector2>` **get_offset** **(** **)** const
 
 Return the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
-.. _class_StyleBox_test_mask:
+  .. _class_StyleBox_test_mask:
 
 - :ref:`bool<class_bool>` **test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** const
 
 Test a position in a rectangle, return whether it passes the mask test.
-
 

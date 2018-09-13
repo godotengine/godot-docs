@@ -8,12 +8,22 @@ GrooveJoint2D
 =============
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Groove constraint for 2D physics.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`initial_offset<class_GrooveJoint2D_initial_offset>` |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_GrooveJoint2D_length>`                 |
++---------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_GrooveJoint2D_initial_offset:
 
-- :ref:`float<class_float>` **initial_offset** - The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_initial_offset>` along the joint's y axis (along the groove). Default value: ``25``
+- :ref:`float<class_float>` **initial_offset**
+
++----------+---------------------------+
+| *Setter* | set_initial_offset(value) |
++----------+---------------------------+
+| *Getter* | get_initial_offset()      |
++----------+---------------------------+
+
+The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_initial_offset>` along the joint's y axis (along the groove). Default value: ``25``
 
   .. _class_GrooveJoint2D_length:
 
-- :ref:`float<class_float>` **length** - The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_length>` along the joint's local y axis. Default value: ``50``
+- :ref:`float<class_float>` **length**
 
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
+
+The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_length>` along the joint's local y axis. Default value: ``50``
 

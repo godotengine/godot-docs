@@ -8,13 +8,24 @@ NetworkedMultiplayerPeer
 ========================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A high-level network interface to simplify multiplayer interactions.
+
+Properties
+----------
+
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_refuse_new_connections>` |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_transfer_mode>`                   |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -34,43 +45,42 @@ Methods
 Signals
 -------
 
-.. _class_NetworkedMultiplayerPeer_connection_failed:
+  .. _class_NetworkedMultiplayerPeer_connection_failed:
 
 - **connection_failed** **(** **)**
 
 Emitted when a connection attempt fails.
 
-.. _class_NetworkedMultiplayerPeer_connection_succeeded:
+  .. _class_NetworkedMultiplayerPeer_connection_succeeded:
 
 - **connection_succeeded** **(** **)**
 
 Emitted when a connection attempt succeeds.
 
-.. _class_NetworkedMultiplayerPeer_peer_connected:
+  .. _class_NetworkedMultiplayerPeer_peer_connected:
 
 - **peer_connected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client connects.
 
-.. _class_NetworkedMultiplayerPeer_peer_disconnected:
+  .. _class_NetworkedMultiplayerPeer_peer_disconnected:
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client disconnects.
 
-.. _class_NetworkedMultiplayerPeer_server_disconnected:
+  .. _class_NetworkedMultiplayerPeer_server_disconnected:
 
 - **server_disconnected** **(** **)**
 
 Emitted by clients when the server disconnects.
-
 
 Enumerations
 ------------
 
   .. _enum_NetworkedMultiplayerPeer_TransferMode:
 
-enum **TransferMode**
+enum **TransferMode**:
 
 - **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are sent via unordered UDP packets.
 - **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via ordered UDP packets.
@@ -78,19 +88,17 @@ enum **TransferMode**
 
   .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
-enum **ConnectionStatus**
+enum **ConnectionStatus**:
 
 - **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
 - **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
 - **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
-
 
 Constants
 ---------
 
 - **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
-
 Description
 -----------
 
@@ -100,52 +108,65 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/networking/high_level_multiplayer`
-
 Property Descriptions
 ---------------------
 
   .. _class_NetworkedMultiplayerPeer_refuse_new_connections:
 
-- :ref:`bool<class_bool>` **refuse_new_connections** - If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
+- :ref:`bool<class_bool>` **refuse_new_connections**
+
++----------+-----------------------------------+
+| *Setter* | set_refuse_new_connections(value) |
++----------+-----------------------------------+
+| *Getter* | is_refusing_new_connections()     |
++----------+-----------------------------------+
+
+If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
 
   .. _class_NetworkedMultiplayerPeer_transfer_mode:
 
-- :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@GlobalScope_TransferMode>`.
+- :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
++----------+--------------------------+
+| *Setter* | set_transfer_mode(value) |
++----------+--------------------------+
+| *Getter* | get_transfer_mode()      |
++----------+--------------------------+
+
+The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@GlobalScope_TransferMode>`.
 
 Method Descriptions
 -------------------
 
-.. _class_NetworkedMultiplayerPeer_get_connection_status:
+  .. _class_NetworkedMultiplayerPeer_get_connection_status:
 
 - :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** const
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_@GlobalScope_ConnectionStatus>`.
 
-.. _class_NetworkedMultiplayerPeer_get_packet_peer:
+  .. _class_NetworkedMultiplayerPeer_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** const
 
 Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
 
-.. _class_NetworkedMultiplayerPeer_get_unique_id:
+  .. _class_NetworkedMultiplayerPeer_get_unique_id:
 
 - :ref:`int<class_int>` **get_unique_id** **(** **)** const
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
-.. _class_NetworkedMultiplayerPeer_poll:
+  .. _class_NetworkedMultiplayerPeer_poll:
 
 - void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
 
-.. _class_NetworkedMultiplayerPeer_set_target_peer:
+  .. _class_NetworkedMultiplayerPeer_set_target_peer:
 
 - void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 
 Sets the peer to which packets will be sent.
 
 The ``id`` can be one of: ``TARGET_PEER_BROADCAST`` to send to all connected peers, ``TARGET_PEER_SERVER`` to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. Default: ``TARGET_PEER_BROADCAST``
-
 

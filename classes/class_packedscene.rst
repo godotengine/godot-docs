@@ -8,12 +8,20 @@ PackedScene
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 An abstraction of a serialized scene.
+
+Properties
+----------
+
++-------------------------------------+---------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene__bundled>` |
++-------------------------------------+---------------------------------------------+
 
 Methods
 -------
@@ -33,12 +41,11 @@ Enumerations
 
   .. _enum_PackedScene_GenEditState:
 
-enum **GenEditState**
+enum **GenEditState**:
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_instance>`, blocks edits to the scene state.
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Requires tools compiled.
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
-
 
 Description
 -----------
@@ -61,36 +68,36 @@ Property Descriptions
 
   .. _class_PackedScene__bundled:
 
-- :ref:`Dictionary<class_Dictionary>` **_bundled** - A dictionary representation of the scene contents.
+- :ref:`Dictionary<class_Dictionary>` **_bundled**
+
+A dictionary representation of the scene contents.
 
 Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for base scene children overrides, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
-
 
 Method Descriptions
 -------------------
 
-.. _class_PackedScene_can_instance:
+  .. _class_PackedScene_can_instance:
 
 - :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 Returns ``true`` if the scene file has nodes.
 
-.. _class_PackedScene_get_state:
+  .. _class_PackedScene_get_state:
 
 - :ref:`SceneState<class_SceneState>` **get_state** **(** **)**
 
 Returns the ``SceneState`` representing the scene file contents.
 
-.. _class_PackedScene_instance:
+  .. _class_PackedScene_instance:
 
 - :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the :ref:`NOTIFICATION_INSTANCED<enum_Object_NOTIFICATION_INSTANCED>` notification on the root node.
 
-.. _class_PackedScene_pack:
+  .. _class_PackedScene_pack:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
-
 

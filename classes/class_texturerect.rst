@@ -8,6 +8,7 @@ TextureRect
 ===========
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,23 @@ Brief Description
 
 Control for drawing textures.
 
+Properties
+----------
+
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_expand>`             |
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_stretch_mode>` |
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_texture>`           |
++--------------------------------------------------+-----------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_TextureRect_StretchMode:
 
-enum **StretchMode**
+enum **StretchMode**:
 
 - **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like ``STRETCH_KEEP``.
 - **STRETCH_SCALE** = **1** --- Scale to fit the node's bounding rectangle.
@@ -30,7 +42,6 @@ enum **StretchMode**
 - **STRETCH_KEEP_ASPECT** = **5** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
 - **STRETCH_KEEP_ASPECT_CENTERED** = **6** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
 - **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
-
 
 Description
 -----------
@@ -42,14 +53,37 @@ Property Descriptions
 
   .. _class_TextureRect_expand:
 
-- :ref:`bool<class_bool>` **expand** - If ``true`` the texture scales to fit its bounding rectangle. Default value: ``false``.
+- :ref:`bool<class_bool>` **expand**
+
++----------+-------------------+
+| *Setter* | set_expand(value) |
++----------+-------------------+
+| *Getter* | has_expand()      |
++----------+-------------------+
+
+If ``true`` the texture scales to fit its bounding rectangle. Default value: ``false``.
 
   .. _class_TextureRect_stretch_mode:
 
-- :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode** - Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@GlobalScope_StretchMode>`.
+- :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
+
++----------+-------------------------+
+| *Setter* | set_stretch_mode(value) |
++----------+-------------------------+
+| *Getter* | get_stretch_mode()      |
++----------+-------------------------+
+
+Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@GlobalScope_StretchMode>`.
 
   .. _class_TextureRect_texture:
 
-- :ref:`Texture<class_Texture>` **texture** - The node's :ref:`Texture<class_Texture>` resource.
+- :ref:`Texture<class_Texture>` **texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
+The node's :ref:`Texture<class_Texture>` resource.
 

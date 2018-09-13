@@ -47,64 +47,63 @@ Array of Color, Contains colors. Optimized for memory usage, can't fragment the 
 Method Descriptions
 -------------------
 
-.. _class_PoolColorArray_PoolColorArray:
+  .. _class_PoolColorArray_PoolColorArray:
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **PoolColorArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
-.. _class_PoolColorArray_append:
+  .. _class_PoolColorArray_append:
 
 - void **append** **(** :ref:`Color<class_Color>` color **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolColorArray_push_back>`).
 
-.. _class_PoolColorArray_append_array:
+  .. _class_PoolColorArray_append_array:
 
 - void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
 
 Append a ``PoolColorArray`` at the end of this array.
 
-.. _class_PoolColorArray_insert:
+  .. _class_PoolColorArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
-.. _class_PoolColorArray_invert:
+  .. _class_PoolColorArray_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-.. _class_PoolColorArray_push_back:
+  .. _class_PoolColorArray_push_back:
 
 - void **push_back** **(** :ref:`Color<class_Color>` color **)**
 
 Append a value to the array.
 
-.. _class_PoolColorArray_remove:
+  .. _class_PoolColorArray_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-.. _class_PoolColorArray_resize:
+  .. _class_PoolColorArray_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-.. _class_PoolColorArray_set:
+  .. _class_PoolColorArray_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
 Change the :ref:`Color<class_Color>` at the given index.
 
-.. _class_PoolColorArray_size:
+  .. _class_PoolColorArray_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
 Return the size of the array.
-
 

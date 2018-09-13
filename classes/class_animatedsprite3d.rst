@@ -8,12 +8,26 @@ AnimatedSprite3D
 ================
 
 **Inherits:** :ref:`SpriteBase3D<class_SpriteBase3D>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 2D sprite node in 3D world, that can use multiple 2D textures for animation.
+
+Properties
+----------
+
++-----------------------------------------+----------------------------------------------------+
+| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_animation>` |
++-----------------------------------------+----------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_frame>`         |
++-----------------------------------------+----------------------------------------------------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_frames>`       |
++-----------------------------------------+----------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_playing>`     |
++-----------------------------------------+----------------------------------------------------+
 
 Methods
 -------
@@ -29,12 +43,11 @@ Methods
 Signals
 -------
 
-.. _class_AnimatedSprite3D_frame_changed:
+  .. _class_AnimatedSprite3D_frame_changed:
 
 - **frame_changed** **(** **)**
 
 Emitted when :ref:`frame<class_AnimatedSprite3D_frame>` changed.
-
 
 Description
 -----------
@@ -46,40 +59,64 @@ Property Descriptions
 
   .. _class_AnimatedSprite3D_animation:
 
-- :ref:`String<class_String>` **animation** - The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
+- :ref:`String<class_String>` **animation**
+
++----------+----------------------+
+| *Setter* | set_animation(value) |
++----------+----------------------+
+| *Getter* | get_animation()      |
++----------+----------------------+
+
+The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
   .. _class_AnimatedSprite3D_frame:
 
-- :ref:`int<class_int>` **frame** - The displayed animation frame's index.
+- :ref:`int<class_int>` **frame**
+
++----------+------------------+
+| *Setter* | set_frame(value) |
++----------+------------------+
+| *Getter* | get_frame()      |
++----------+------------------+
+
+The displayed animation frame's index.
 
   .. _class_AnimatedSprite3D_frames:
 
-- :ref:`SpriteFrames<class_SpriteFrames>` **frames** - The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+- :ref:`SpriteFrames<class_SpriteFrames>` **frames**
+
++----------+--------------------------+
+| *Setter* | set_sprite_frames(value) |
++----------+--------------------------+
+| *Getter* | get_sprite_frames()      |
++----------+--------------------------+
+
+The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
   .. _class_AnimatedSprite3D_playing:
 
-- :ref:`bool<class_bool>` **playing** - If ``true`` the :ref:`animation<class_AnimatedSprite3D_animation>` is currently playing.
+- :ref:`bool<class_bool>` **playing**
 
+If ``true`` the :ref:`animation<class_AnimatedSprite3D_animation>` is currently playing.
 
 Method Descriptions
 -------------------
 
-.. _class_AnimatedSprite3D_is_playing:
+  .. _class_AnimatedSprite3D_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 Return true if an animation if currently being played.
 
-.. _class_AnimatedSprite3D_play:
+  .. _class_AnimatedSprite3D_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
 
-.. _class_AnimatedSprite3D_stop:
+  .. _class_AnimatedSprite3D_stop:
 
 - void **stop** **(** **)**
 
 Stop the current animation (does not reset the frame counter).
-
 

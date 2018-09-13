@@ -8,12 +8,48 @@ OS
 ==
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Operating System functions.
+
+Properties
+----------
+
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`clipboard<class_OS_clipboard>`                                                         |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`current_screen<class_OS_current_screen>`                                               |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`exit_code<class_OS_exit_code>`                                                         |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`keep_screen_on<class_OS_keep_screen_on>`                                               |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`low_processor_usage_mode<class_OS_low_processor_usage_mode>`                           |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| _OS.ScreenOrientation         | :ref:`screen_orientation<class_OS_screen_orientation>`                                       |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`vsync_enabled<class_OS_vsync_enabled>`                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_borderless<class_OS_window_borderless>`                                         |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_fullscreen<class_OS_window_fullscreen>`                                         |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_maximized<class_OS_window_maximized>`                                           |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_minimized<class_OS_window_minimized>`                                           |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_per_pixel_transparency_enabled<class_OS_window_per_pixel_transparency_enabled>` |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`window_position<class_OS_window_position>`                                             |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`window_resizable<class_OS_window_resizable>`                                           |
++-------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`window_size<class_OS_window_size>`                                                     |
++-------------------------------+----------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -193,7 +229,7 @@ Enumerations
 
   .. _enum_OS_SystemDir:
 
-enum **SystemDir**
+enum **SystemDir**:
 
 - **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
 - **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
@@ -206,7 +242,7 @@ enum **SystemDir**
 
   .. _enum_OS_ScreenOrientation:
 
-enum **ScreenOrientation**
+enum **ScreenOrientation**:
 
 - **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
 - **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
@@ -218,7 +254,7 @@ enum **ScreenOrientation**
 
   .. _enum_OS_PowerState:
 
-enum **PowerState**
+enum **PowerState**:
 
 - **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
 - **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
@@ -228,7 +264,7 @@ enum **PowerState**
 
   .. _enum_OS_Weekday:
 
-enum **Weekday**
+enum **Weekday**:
 
 - **DAY_SUNDAY** = **0** --- Sunday.
 - **DAY_MONDAY** = **1** --- Monday.
@@ -240,7 +276,7 @@ enum **Weekday**
 
   .. _enum_OS_Month:
 
-enum **Month**
+enum **Month**:
 
 - **MONTH_JANUARY** = **1** --- January.
 - **MONTH_FEBRUARY** = **2** --- February.
@@ -255,7 +291,6 @@ enum **Month**
 - **MONTH_NOVEMBER** = **11** --- November.
 - **MONTH_DECEMBER** = **12** --- December.
 
-
 Description
 -----------
 
@@ -266,109 +301,226 @@ Property Descriptions
 
   .. _class_OS_clipboard:
 
-- :ref:`String<class_String>` **clipboard** - The clipboard from the host OS. Might be unavailable on some platforms.
+- :ref:`String<class_String>` **clipboard**
+
++----------+----------------------+
+| *Setter* | set_clipboard(value) |
++----------+----------------------+
+| *Getter* | get_clipboard()      |
++----------+----------------------+
+
+The clipboard from the host OS. Might be unavailable on some platforms.
 
   .. _class_OS_current_screen:
 
-- :ref:`int<class_int>` **current_screen** - The current screen index (starting from 0).
+- :ref:`int<class_int>` **current_screen**
+
++----------+---------------------------+
+| *Setter* | set_current_screen(value) |
++----------+---------------------------+
+| *Getter* | get_current_screen()      |
++----------+---------------------------+
+
+The current screen index (starting from 0).
 
   .. _class_OS_exit_code:
 
-- :ref:`int<class_int>` **exit_code** - The exit code passed to the OS when the main loop exits.
+- :ref:`int<class_int>` **exit_code**
+
++----------+----------------------+
+| *Setter* | set_exit_code(value) |
++----------+----------------------+
+| *Getter* | get_exit_code()      |
++----------+----------------------+
+
+The exit code passed to the OS when the main loop exits.
 
   .. _class_OS_keep_screen_on:
 
-- :ref:`bool<class_bool>` **keep_screen_on** - If ``true`` the engine tries to keep the screen on while the game is running. Useful on mobile.
+- :ref:`bool<class_bool>` **keep_screen_on**
+
++----------+---------------------------+
+| *Setter* | set_keep_screen_on(value) |
++----------+---------------------------+
+| *Getter* | is_keep_screen_on()       |
++----------+---------------------------+
+
+If ``true`` the engine tries to keep the screen on while the game is running. Useful on mobile.
 
   .. _class_OS_low_processor_usage_mode:
 
-- :ref:`bool<class_bool>` **low_processor_usage_mode** - If ``true`` the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
+- :ref:`bool<class_bool>` **low_processor_usage_mode**
+
++----------+-------------------------------------+
+| *Setter* | set_low_processor_usage_mode(value) |
++----------+-------------------------------------+
+| *Getter* | is_in_low_processor_usage_mode()    |
++----------+-------------------------------------+
+
+If ``true`` the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
 
   .. _class_OS_screen_orientation:
 
-- _OS.ScreenOrientation **screen_orientation** - The current screen orientation.
+- _OS.ScreenOrientation **screen_orientation**
+
++----------+-------------------------------+
+| *Setter* | set_screen_orientation(value) |
++----------+-------------------------------+
+| *Getter* | get_screen_orientation()      |
++----------+-------------------------------+
+
+The current screen orientation.
 
   .. _class_OS_vsync_enabled:
 
-- :ref:`bool<class_bool>` **vsync_enabled** - If ``true`` vertical synchronization (Vsync) is enabled.
+- :ref:`bool<class_bool>` **vsync_enabled**
+
++----------+----------------------+
+| *Setter* | set_use_vsync(value) |
++----------+----------------------+
+| *Getter* | is_vsync_enabled()   |
++----------+----------------------+
+
+If ``true`` vertical synchronization (Vsync) is enabled.
 
   .. _class_OS_window_borderless:
 
-- :ref:`bool<class_bool>` **window_borderless** - If ``true`` removes the window frame.
+- :ref:`bool<class_bool>` **window_borderless**
+
++----------+------------------------------+
+| *Setter* | set_borderless_window(value) |
++----------+------------------------------+
+| *Getter* | get_borderless_window()      |
++----------+------------------------------+
+
+If ``true`` removes the window frame.
 
   .. _class_OS_window_fullscreen:
 
-- :ref:`bool<class_bool>` **window_fullscreen** - If ``true`` the window is fullscreen.
+- :ref:`bool<class_bool>` **window_fullscreen**
+
++----------+------------------------------+
+| *Setter* | set_window_fullscreen(value) |
++----------+------------------------------+
+| *Getter* | is_window_fullscreen()       |
++----------+------------------------------+
+
+If ``true`` the window is fullscreen.
 
   .. _class_OS_window_maximized:
 
-- :ref:`bool<class_bool>` **window_maximized** - If ``true`` the window is maximized.
+- :ref:`bool<class_bool>` **window_maximized**
+
++----------+-----------------------------+
+| *Setter* | set_window_maximized(value) |
++----------+-----------------------------+
+| *Getter* | is_window_maximized()       |
++----------+-----------------------------+
+
+If ``true`` the window is maximized.
 
   .. _class_OS_window_minimized:
 
-- :ref:`bool<class_bool>` **window_minimized** - If ``true`` the window is minimized.
+- :ref:`bool<class_bool>` **window_minimized**
+
++----------+-----------------------------+
+| *Setter* | set_window_minimized(value) |
++----------+-----------------------------+
+| *Getter* | is_window_minimized()       |
++----------+-----------------------------+
+
+If ``true`` the window is minimized.
 
   .. _class_OS_window_per_pixel_transparency_enabled:
 
 - :ref:`bool<class_bool>` **window_per_pixel_transparency_enabled**
 
++----------+--------------------------------------------------+
+| *Setter* | set_window_per_pixel_transparency_enabled(value) |
++----------+--------------------------------------------------+
+| *Getter* | get_window_per_pixel_transparency_enabled()      |
++----------+--------------------------------------------------+
+
   .. _class_OS_window_position:
 
-- :ref:`Vector2<class_Vector2>` **window_position** - The window position relative to the screen, the origin is the top left corner, +Y axis goes to the bottom and +X axis goes to the right.
+- :ref:`Vector2<class_Vector2>` **window_position**
+
++----------+----------------------------+
+| *Setter* | set_window_position(value) |
++----------+----------------------------+
+| *Getter* | get_window_position()      |
++----------+----------------------------+
+
+The window position relative to the screen, the origin is the top left corner, +Y axis goes to the bottom and +X axis goes to the right.
 
   .. _class_OS_window_resizable:
 
-- :ref:`bool<class_bool>` **window_resizable** - If ``true``, the window is resizable by the user.
+- :ref:`bool<class_bool>` **window_resizable**
+
++----------+-----------------------------+
+| *Setter* | set_window_resizable(value) |
++----------+-----------------------------+
+| *Getter* | is_window_resizable()       |
++----------+-----------------------------+
+
+If ``true``, the window is resizable by the user.
 
   .. _class_OS_window_size:
 
-- :ref:`Vector2<class_Vector2>` **window_size** - The size of the window (without counting window manager decorations).
+- :ref:`Vector2<class_Vector2>` **window_size**
 
++----------+------------------------+
+| *Setter* | set_window_size(value) |
++----------+------------------------+
+| *Getter* | get_window_size()      |
++----------+------------------------+
+
+The size of the window (without counting window manager decorations).
 
 Method Descriptions
 -------------------
 
-.. _class_OS_alert:
+  .. _class_OS_alert:
 
 - void **alert** **(** :ref:`String<class_String>` text, :ref:`String<class_String>` title="Alert!" **)**
 
 Displays a modal dialog box utilizing the host OS.
 
-.. _class_OS_can_draw:
+  .. _class_OS_can_draw:
 
 - :ref:`bool<class_bool>` **can_draw** **(** **)** const
 
 Returns ``true`` if the host OS allows drawing.
 
-.. _class_OS_can_use_threads:
+  .. _class_OS_can_use_threads:
 
 - :ref:`bool<class_bool>` **can_use_threads** **(** **)** const
 
 Returns ``true`` if the current host platform is using multiple threads.
 
-.. _class_OS_center_window:
+  .. _class_OS_center_window:
 
 - void **center_window** **(** **)**
 
 Centers the window on the screen if in windowed mode.
 
-.. _class_OS_close_midi_inputs:
+  .. _class_OS_close_midi_inputs:
 
 - void **close_midi_inputs** **(** **)**
 
-.. _class_OS_delay_msec:
+  .. _class_OS_delay_msec:
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** const
 
 Delay execution of the current thread by given milliseconds.
 
-.. _class_OS_delay_usec:
+  .. _class_OS_delay_usec:
 
 - void **delay_usec** **(** :ref:`int<class_int>` usec **)** const
 
 Delay execution of the current thread by given microseconds.
 
-.. _class_OS_dump_memory_to_file:
+  .. _class_OS_dump_memory_to_file:
 
 - void **dump_memory_to_file** **(** :ref:`String<class_String>` file **)**
 
@@ -376,7 +528,7 @@ Dumps the memory allocation ringlist to a file (only works in debug).
 
 Entry format per line: "Address - Size - Description".
 
-.. _class_OS_dump_resources_to_file:
+  .. _class_OS_dump_resources_to_file:
 
 - void **dump_resources_to_file** **(** :ref:`String<class_String>` file **)**
 
@@ -386,7 +538,7 @@ Entry format per line: "Resource Type : Resource Location".
 
 At the end of the file is a statistic of all used Resource Types.
 
-.. _class_OS_execute:
+  .. _class_OS_execute:
 
 - :ref:`int<class_int>` **execute** **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_Array>` output=[  ] **)**
 
@@ -421,47 +573,47 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
     OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
 
-.. _class_OS_find_scancode_from_string:
+  .. _class_OS_find_scancode_from_string:
 
 - :ref:`int<class_int>` **find_scancode_from_string** **(** :ref:`String<class_String>` string **)** const
 
 Returns the scancode of the given string (e.g. "Escape")
 
-.. _class_OS_get_audio_driver_count:
+  .. _class_OS_get_audio_driver_count:
 
 - :ref:`int<class_int>` **get_audio_driver_count** **(** **)** const
 
 Returns the total number of available audio drivers.
 
-.. _class_OS_get_audio_driver_name:
+  .. _class_OS_get_audio_driver_name:
 
 - :ref:`String<class_String>` **get_audio_driver_name** **(** :ref:`int<class_int>` driver **)** const
 
 Returns the audio driver name for the given index.
 
-.. _class_OS_get_cmdline_args:
+  .. _class_OS_get_cmdline_args:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_cmdline_args** **(** **)**
 
 Returns the command line arguments passed to the engine.
 
-.. _class_OS_get_connected_midi_inputs:
+  .. _class_OS_get_connected_midi_inputs:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_connected_midi_inputs** **(** **)**
 
-.. _class_OS_get_date:
+  .. _class_OS_get_date:
 
 - :ref:`Dictionary<class_Dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current date as a dictionary of keys: year, month, day, weekday, dst (daylight savings time).
 
-.. _class_OS_get_datetime:
+  .. _class_OS_get_datetime:
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current datetime as a dictionary of keys: year, month, day, weekday, dst (daylight savings time), hour, minute, second.
 
-.. _class_OS_get_datetime_from_unix_time:
+  .. _class_OS_get_datetime_from_unix_time:
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime_from_unix_time** **(** :ref:`int<class_int>` unix_time_val **)** const
 
@@ -469,25 +621,25 @@ Get a dictionary of time values when given epoch time.
 
 Dictionary Time values will be a union of values from :ref:`get_time<class_OS_get_time>` and :ref:`get_date<class_OS_get_date>` dictionaries (with the exception of dst = day light standard time, as it cannot be determined from epoch).
 
-.. _class_OS_get_dynamic_memory_usage:
+  .. _class_OS_get_dynamic_memory_usage:
 
 - :ref:`int<class_int>` **get_dynamic_memory_usage** **(** **)** const
 
 Returns the total amount of dynamic memory used (only works in debug).
 
-.. _class_OS_get_environment:
+  .. _class_OS_get_environment:
 
 - :ref:`String<class_String>` **get_environment** **(** :ref:`String<class_String>` environment **)** const
 
 Returns an environment variable.
 
-.. _class_OS_get_executable_path:
+  .. _class_OS_get_executable_path:
 
 - :ref:`String<class_String>` **get_executable_path** **(** **)** const
 
 Returns the path to the current engine executable.
 
-.. _class_OS_get_latin_keyboard_variant:
+  .. _class_OS_get_latin_keyboard_variant:
 
 - :ref:`String<class_String>` **get_latin_keyboard_variant** **(** **)** const
 
@@ -495,73 +647,73 @@ Returns the current latin keyboard variant as a String.
 
 Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO", "COLEMAK" or "ERROR".
 
-.. _class_OS_get_locale:
+  .. _class_OS_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const
 
 Returns the host OS locale.
 
-.. _class_OS_get_model_name:
+  .. _class_OS_get_model_name:
 
 - :ref:`String<class_String>` **get_model_name** **(** **)** const
 
 Returns the model name of the current device.
 
-.. _class_OS_get_name:
+  .. _class_OS_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the name of the host OS. Possible values are: "Android", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11".
 
-.. _class_OS_get_power_percent_left:
+  .. _class_OS_get_power_percent_left:
 
 - :ref:`int<class_int>` **get_power_percent_left** **(** **)**
 
 Returns the amount of battery left in the device as a percentage.
 
-.. _class_OS_get_power_seconds_left:
+  .. _class_OS_get_power_seconds_left:
 
 - :ref:`int<class_int>` **get_power_seconds_left** **(** **)**
 
 Returns the time in seconds before the device runs out of battery.
 
-.. _class_OS_get_power_state:
+  .. _class_OS_get_power_state:
 
 - :ref:`PowerState<enum_OS_PowerState>` **get_power_state** **(** **)**
 
 Returns the current state of the device regarding battery and power. See ``POWERSTATE_*`` constants.
 
-.. _class_OS_get_process_id:
+  .. _class_OS_get_process_id:
 
 - :ref:`int<class_int>` **get_process_id** **(** **)** const
 
 Returns the game process ID
 
-.. _class_OS_get_processor_count:
+  .. _class_OS_get_processor_count:
 
 - :ref:`int<class_int>` **get_processor_count** **(** **)** const
 
 Returns the number of cores available in the host machine.
 
-.. _class_OS_get_real_window_size:
+  .. _class_OS_get_real_window_size:
 
 - :ref:`Vector2<class_Vector2>` **get_real_window_size** **(** **)** const
 
 Returns the window size including decorations like window borders.
 
-.. _class_OS_get_scancode_string:
+  .. _class_OS_get_scancode_string:
 
 - :ref:`String<class_String>` **get_scancode_string** **(** :ref:`int<class_int>` code **)** const
 
 Returns the given scancode as a string (e.g. Return values: "Escape", "Shift+Escape").
 
-.. _class_OS_get_screen_count:
+  .. _class_OS_get_screen_count:
 
 - :ref:`int<class_int>` **get_screen_count** **(** **)** const
 
 Returns the number of displays attached to the host machine.
 
-.. _class_OS_get_screen_dpi:
+  .. _class_OS_get_screen_dpi:
 
 - :ref:`int<class_int>` **get_screen_dpi** **(** :ref:`int<class_int>` screen=-1 **)** const
 
@@ -581,71 +733,71 @@ xxhdpi  - 480 dpi
 
 xxxhdpi - 640 dpi
 
-.. _class_OS_get_screen_position:
+  .. _class_OS_get_screen_position:
 
 - :ref:`Vector2<class_Vector2>` **get_screen_position** **(** :ref:`int<class_int>` screen=-1 **)** const
 
 Returns the position of the specified screen by index. If no screen index is provided, the current screen will be used.
 
-.. _class_OS_get_screen_size:
+  .. _class_OS_get_screen_size:
 
 - :ref:`Vector2<class_Vector2>` **get_screen_size** **(** :ref:`int<class_int>` screen=-1 **)** const
 
 Returns the dimensions in pixels of the specified screen.
 
-.. _class_OS_get_splash_tick_msec:
+  .. _class_OS_get_splash_tick_msec:
 
 - :ref:`int<class_int>` **get_splash_tick_msec** **(** **)** const
 
-.. _class_OS_get_static_memory_peak_usage:
+  .. _class_OS_get_static_memory_peak_usage:
 
 - :ref:`int<class_int>` **get_static_memory_peak_usage** **(** **)** const
 
 Returns the max amount of static memory used (only works in debug).
 
-.. _class_OS_get_static_memory_usage:
+  .. _class_OS_get_static_memory_usage:
 
 - :ref:`int<class_int>` **get_static_memory_usage** **(** **)** const
 
 Returns the amount of static memory being used by the program in bytes.
 
-.. _class_OS_get_system_dir:
+  .. _class_OS_get_system_dir:
 
 - :ref:`String<class_String>` **get_system_dir** **(** :ref:`SystemDir<enum_OS_SystemDir>` dir **)** const
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in OS.SystemDir.
 
-.. _class_OS_get_system_time_secs:
+  .. _class_OS_get_system_time_secs:
 
 - :ref:`int<class_int>` **get_system_time_secs** **(** **)** const
 
 Returns the epoch time of the operating system in seconds.
 
-.. _class_OS_get_ticks_msec:
+  .. _class_OS_get_ticks_msec:
 
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** const
 
 Returns the amount of time passed in milliseconds since the engine started.
 
-.. _class_OS_get_ticks_usec:
+  .. _class_OS_get_ticks_usec:
 
 - :ref:`int<class_int>` **get_ticks_usec** **(** **)** const
 
 Returns the amount of time passed in microseconds since the engine started.
 
-.. _class_OS_get_time:
+  .. _class_OS_get_time:
 
 - :ref:`Dictionary<class_Dictionary>` **get_time** **(** :ref:`bool<class_bool>` utc=false **)** const
 
 Returns current time as a dictionary of keys: hour, minute, second.
 
-.. _class_OS_get_time_zone_info:
+  .. _class_OS_get_time_zone_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_time_zone_info** **(** **)** const
 
 Returns the current time zone as a dictionary with the keys: bias and name.
 
-.. _class_OS_get_unique_id:
+  .. _class_OS_get_unique_id:
 
 - :ref:`String<class_String>` **get_unique_id** **(** **)** const
 
@@ -653,13 +805,13 @@ Returns a string that is unique to the device.
 
 Returns empty string on HTML5 and UWP which are not supported yet.
 
-.. _class_OS_get_unix_time:
+  .. _class_OS_get_unix_time:
 
 - :ref:`int<class_int>` **get_unix_time** **(** **)** const
 
 Returns the current unix epoch timestamp.
 
-.. _class_OS_get_unix_time_from_datetime:
+  .. _class_OS_get_unix_time_from_datetime:
 
 - :ref:`int<class_int>` **get_unix_time_from_datetime** **(** :ref:`Dictionary<class_Dictionary>` datetime **)** const
 
@@ -669,7 +821,7 @@ Get an epoch time value from a dictionary of time values.
 
 You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>` directly into this function. Daylight savings time (dst), if present, is ignored.
 
-.. _class_OS_get_user_data_dir:
+  .. _class_OS_get_user_data_dir:
 
 - :ref:`String<class_String>` **get_user_data_dir** **(** **)** const
 
@@ -683,55 +835,55 @@ On Windows, this is ``%APPDATA%/Godot/app_userdata/[project_name]``, or ``%APPDA
 
 If the project name is empty, ``user://`` falls back to ``res://``.
 
-.. _class_OS_get_video_driver_count:
+  .. _class_OS_get_video_driver_count:
 
 - :ref:`int<class_int>` **get_video_driver_count** **(** **)** const
 
-.. _class_OS_get_video_driver_name:
+  .. _class_OS_get_video_driver_name:
 
 - :ref:`String<class_String>` **get_video_driver_name** **(** :ref:`int<class_int>` driver **)** const
 
-.. _class_OS_get_virtual_keyboard_height:
+  .. _class_OS_get_virtual_keyboard_height:
 
 - :ref:`int<class_int>` **get_virtual_keyboard_height** **(** **)**
 
 Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or it is currently hidden.
 
-.. _class_OS_get_window_safe_area:
+  .. _class_OS_get_window_safe_area:
 
 - :ref:`Rect2<class_Rect2>` **get_window_safe_area** **(** **)** const
 
-.. _class_OS_has_environment:
+  .. _class_OS_has_environment:
 
 - :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` environment **)** const
 
 Returns ``true`` if an environment variable exists.
 
-.. _class_OS_has_feature:
+  .. _class_OS_has_feature:
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** const
 
 Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on platform, build etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. See feature tags documentation.
 
-.. _class_OS_has_touchscreen_ui_hint:
+  .. _class_OS_has_touchscreen_ui_hint:
 
 - :ref:`bool<class_bool>` **has_touchscreen_ui_hint** **(** **)** const
 
 Returns ``true`` if the device has a touchscreen or emulates one.
 
-.. _class_OS_has_virtual_keyboard:
+  .. _class_OS_has_virtual_keyboard:
 
 - :ref:`bool<class_bool>` **has_virtual_keyboard** **(** **)** const
 
 Returns ``true`` if the platform has a virtual keyboard, ``false`` otherwise.
 
-.. _class_OS_hide_virtual_keyboard:
+  .. _class_OS_hide_virtual_keyboard:
 
 - void **hide_virtual_keyboard** **(** **)**
 
 Hides the virtual keyboard if it is shown, does nothing otherwise.
 
-.. _class_OS_is_debug_build:
+  .. _class_OS_is_debug_build:
 
 - :ref:`bool<class_bool>` **is_debug_build** **(** **)** const
 
@@ -741,37 +893,37 @@ Returns ``true`` when running in the editor.
 
 Returns ``false`` if the build is a release build.
 
-.. _class_OS_is_ok_left_and_cancel_right:
+  .. _class_OS_is_ok_left_and_cancel_right:
 
 - :ref:`bool<class_bool>` **is_ok_left_and_cancel_right** **(** **)** const
 
 Returns ``true`` if the "Okay" button should appear on the left and "Cancel" on the right.
 
-.. _class_OS_is_scancode_unicode:
+  .. _class_OS_is_scancode_unicode:
 
 - :ref:`bool<class_bool>` **is_scancode_unicode** **(** :ref:`int<class_int>` code **)** const
 
 Returns ``true`` if the input code has a unicode character.
 
-.. _class_OS_is_stdout_verbose:
+  .. _class_OS_is_stdout_verbose:
 
 - :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** const
 
 Returns ``true`` if the engine was executed with -v (verbose stdout).
 
-.. _class_OS_is_userfs_persistent:
+  .. _class_OS_is_userfs_persistent:
 
 - :ref:`bool<class_bool>` **is_userfs_persistent** **(** **)** const
 
 If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the HTML5 platform, where this persistence may be unavailable.
 
-.. _class_OS_is_window_always_on_top:
+  .. _class_OS_is_window_always_on_top:
 
 - :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
 
 Returns ``true`` if the window should always be on top of other windows.
 
-.. _class_OS_kill:
+  .. _class_OS_kill:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **kill** **(** :ref:`int<class_int>` pid **)**
 
@@ -779,105 +931,105 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 Note that this method can also be used to kill processes that were not spawned by the game.
 
-.. _class_OS_native_video_is_playing:
+  .. _class_OS_native_video_is_playing:
 
 - :ref:`bool<class_bool>` **native_video_is_playing** **(** **)**
 
 Returns ``true`` if native video is playing.
 
-.. _class_OS_native_video_pause:
+  .. _class_OS_native_video_pause:
 
 - void **native_video_pause** **(** **)**
 
 Pauses native video playback.
 
-.. _class_OS_native_video_play:
+  .. _class_OS_native_video_play:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **native_video_play** **(** :ref:`String<class_String>` path, :ref:`float<class_float>` volume, :ref:`String<class_String>` audio_track, :ref:`String<class_String>` subtitle_track **)**
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
 
-.. _class_OS_native_video_stop:
+  .. _class_OS_native_video_stop:
 
 - void **native_video_stop** **(** **)**
 
 Stops native video playback.
 
-.. _class_OS_native_video_unpause:
+  .. _class_OS_native_video_unpause:
 
 - void **native_video_unpause** **(** **)**
 
 Resumes native video playback.
 
-.. _class_OS_open_midi_inputs:
+  .. _class_OS_open_midi_inputs:
 
 - void **open_midi_inputs** **(** **)**
 
-.. _class_OS_print_all_resources:
+  .. _class_OS_print_all_resources:
 
 - void **print_all_resources** **(** :ref:`String<class_String>` tofile="" **)**
 
 Shows all resources in the game. Optionally the list can be written to a file.
 
-.. _class_OS_print_all_textures_by_size:
+  .. _class_OS_print_all_textures_by_size:
 
 - void **print_all_textures_by_size** **(** **)**
 
 Shows the list of loaded textures sorted by size in memory.
 
-.. _class_OS_print_resources_by_type:
+  .. _class_OS_print_resources_by_type:
 
 - void **print_resources_by_type** **(** :ref:`PoolStringArray<class_PoolStringArray>` types **)**
 
 Shows the number of resources loaded by the game of the given types.
 
-.. _class_OS_print_resources_in_use:
+  .. _class_OS_print_resources_in_use:
 
 - void **print_resources_in_use** **(** :ref:`bool<class_bool>` short=false **)**
 
 Shows all resources currently used by the game.
 
-.. _class_OS_request_attention:
+  .. _class_OS_request_attention:
 
 - void **request_attention** **(** **)**
 
 Request the user attention to the window. It'll flash the taskbar button on Windows or bounce the dock icon on OSX.
 
-.. _class_OS_set_icon:
+  .. _class_OS_set_icon:
 
 - void **set_icon** **(** :ref:`Image<class_Image>` icon **)**
 
 Sets the game's icon.
 
-.. _class_OS_set_ime_position:
+  .. _class_OS_set_ime_position:
 
 - void **set_ime_position** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-.. _class_OS_set_thread_name:
+  .. _class_OS_set_thread_name:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **set_thread_name** **(** :ref:`String<class_String>` name **)**
 
 Sets the name of the current thread.
 
-.. _class_OS_set_use_file_access_save_and_swap:
+  .. _class_OS_set_use_file_access_save_and_swap:
 
 - void **set_use_file_access_save_and_swap** **(** :ref:`bool<class_bool>` enabled **)**
 
 Enables backup saves if ``enabled`` is ``true``.
 
-.. _class_OS_set_window_always_on_top:
+  .. _class_OS_set_window_always_on_top:
 
 - void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
 Sets whether the window should always be on top.
 
-.. _class_OS_set_window_title:
+  .. _class_OS_set_window_title:
 
 - void **set_window_title** **(** :ref:`String<class_String>` title **)**
 
 Sets the window title to the specified string.
 
-.. _class_OS_shell_open:
+  .. _class_OS_shell_open:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **shell_open** **(** :ref:`String<class_String>` uri **)**
 
@@ -887,10 +1039,9 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 ``OS.shell_open("http://godotengine.org")`` opens the default web browser on the official Godot website.
 
-.. _class_OS_show_virtual_keyboard:
+  .. _class_OS_show_virtual_keyboard:
 
 - void **show_virtual_keyboard** **(** :ref:`String<class_String>` existing_text="" **)**
 
 Shows the virtual keyboard if the platform has one. The *existing_text* parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
-
 

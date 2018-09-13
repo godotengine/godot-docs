@@ -8,6 +8,7 @@ JavaScript
 ==========
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -31,16 +32,14 @@ Tutorials
 ---------
 
 - `#calling-javascript-from-script <../getting_started/workflow/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../getting_started/workflow/export/exporting_for_web`
-
 Method Descriptions
 -------------------
 
-.. _class_JavaScript_eval:
+  .. _class_JavaScript_eval:
 
 - :ref:`Variant<class_Variant>` **eval** **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
 
 Execute the string ``code`` as JavaScript code within the browser window. This is a call to the actual global JavaScript function ``eval()``.
 
 If ``use_global_execution_context`` is ``true``, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.
-
 

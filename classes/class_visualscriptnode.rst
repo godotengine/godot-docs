@@ -8,7 +8,9 @@ VisualScriptNode
 ================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisualScriptLocalVar<class_VisualScriptLocalVar>`, :ref:`VisualScriptSceneNode<class_VisualScriptSceneNode>`, :ref:`VisualScriptBasicTypeConstant<class_VisualScriptBasicTypeConstant>`, :ref:`VisualScriptSequence<class_VisualScriptSequence>`, :ref:`VisualScriptVariableSet<class_VisualScriptVariableSet>`, :ref:`VisualScriptSelf<class_VisualScriptSelf>`, :ref:`VisualScriptConstant<class_VisualScriptConstant>`, :ref:`VisualScriptReturn<class_VisualScriptReturn>`, :ref:`VisualScriptSceneTree<class_VisualScriptSceneTree>`, :ref:`VisualScriptIndexSet<class_VisualScriptIndexSet>`, :ref:`VisualScriptResourcePath<class_VisualScriptResourcePath>`, :ref:`VisualScriptPropertyGet<class_VisualScriptPropertyGet>`, :ref:`VisualScriptVariableGet<class_VisualScriptVariableGet>`, :ref:`VisualScriptInputAction<class_VisualScriptInputAction>`, :ref:`VisualScriptEmitSignal<class_VisualScriptEmitSignal>`, :ref:`VisualScriptDeconstruct<class_VisualScriptDeconstruct>`, :ref:`VisualScriptTypeCast<class_VisualScriptTypeCast>`, :ref:`VisualScriptGlobalConstant<class_VisualScriptGlobalConstant>`, :ref:`VisualScriptFunctionCall<class_VisualScriptFunctionCall>`, :ref:`VisualScriptSwitch<class_VisualScriptSwitch>`, :ref:`VisualScriptBuiltinFunc<class_VisualScriptBuiltinFunc>`, :ref:`VisualScriptClassConstant<class_VisualScriptClassConstant>`, :ref:`VisualScriptEngineSingleton<class_VisualScriptEngineSingleton>`, :ref:`VisualScriptCondition<class_VisualScriptCondition>`, :ref:`VisualScriptOperator<class_VisualScriptOperator>`, :ref:`VisualScriptIterator<class_VisualScriptIterator>`, :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>`, :ref:`VisualScriptYield<class_VisualScriptYield>`, :ref:`VisualScriptSubCall<class_VisualScriptSubCall>`, :ref:`VisualScriptYieldSignal<class_VisualScriptYieldSignal>`, :ref:`VisualScriptIndexGet<class_VisualScriptIndexGet>`, :ref:`VisualScriptLocalVarSet<class_VisualScriptLocalVarSet>`, :ref:`VisualScriptWhile<class_VisualScriptWhile>`, :ref:`VisualScriptConstructor<class_VisualScriptConstructor>`, :ref:`VisualScriptMathConstant<class_VisualScriptMathConstant>`, :ref:`VisualScriptComment<class_VisualScriptComment>`, :ref:`VisualScriptExpression<class_VisualScriptExpression>`, :ref:`VisualScriptPropertySet<class_VisualScriptPropertySet>`, :ref:`VisualScriptFunction<class_VisualScriptFunction>`, :ref:`VisualScriptPreload<class_VisualScriptPreload>`, :ref:`VisualScriptSelect<class_VisualScriptSelect>`
+
 **Category:** Core
 
 Brief Description
@@ -32,12 +34,11 @@ Methods
 Signals
 -------
 
-.. _class_VisualScriptNode_ports_changed:
+  .. _class_VisualScriptNode_ports_changed:
 
 - **ports_changed** **(** **)**
 
 Emitted when the available input/output ports are changed.
-
 
 Description
 -----------
@@ -47,28 +48,27 @@ A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be con
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptNode_get_default_input_value:
+  .. _class_VisualScriptNode_get_default_input_value:
 
 - :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** const
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
 
-.. _class_VisualScriptNode_get_visual_script:
+  .. _class_VisualScriptNode_get_visual_script:
 
 - :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** const
 
 Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
 
-.. _class_VisualScriptNode_ports_changed_notify:
+  .. _class_VisualScriptNode_ports_changed_notify:
 
 - void **ports_changed_notify** **(** **)**
 
 Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>` .
 
-.. _class_VisualScriptNode_set_default_input_value:
+  .. _class_VisualScriptNode_set_default_input_value:
 
 - void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)**
 
 Change the default value of a given port.
-
 

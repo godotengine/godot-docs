@@ -8,13 +8,22 @@ Translation
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PHashTranslation<class_PHashTranslation>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Language Translation.
+
+Properties
+----------
+
++-----------------------------+-----------------------------------------+
+| :ref:`String<class_String>` | :ref:`locale<class_Translation_locale>` |
++-----------------------------+-----------------------------------------+
 
 Methods
 -------
@@ -43,36 +52,40 @@ Property Descriptions
 
 - :ref:`String<class_String>` **locale**
 
++----------+-------------------+
+| *Setter* | set_locale(value) |
++----------+-------------------+
+| *Getter* | get_locale()      |
++----------+-------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_Translation_add_message:
+  .. _class_Translation_add_message:
 
 - void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
 
 Add a message for translation.
 
-.. _class_Translation_erase_message:
+  .. _class_Translation_erase_message:
 
 - void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
 Erase a message.
 
-.. _class_Translation_get_message:
+  .. _class_Translation_get_message:
 
 - :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
 
 Return a message for translation.
 
-.. _class_Translation_get_message_count:
+  .. _class_Translation_get_message_count:
 
 - :ref:`int<class_int>` **get_message_count** **(** **)** const
 
-.. _class_Translation_get_message_list:
+  .. _class_Translation_get_message_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
 
 Return all the messages (keys).
-
 

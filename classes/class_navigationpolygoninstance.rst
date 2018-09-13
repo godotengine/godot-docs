@@ -8,12 +8,22 @@ NavigationPolygonInstance
 =========================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------------------------------+---------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_enabled>` |
++---------------------------------------------------+---------------------------------------------------------+
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_navpoly>` |
++---------------------------------------------------+---------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,8 +32,19 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **enabled**
 
++----------+--------------------+
+| *Setter* | set_enabled(value) |
++----------+--------------------+
+| *Getter* | is_enabled()       |
++----------+--------------------+
+
   .. _class_NavigationPolygonInstance_navpoly:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 
++----------+-------------------------------+
+| *Setter* | set_navigation_polygon(value) |
++----------+-------------------------------+
+| *Getter* | get_navigation_polygon()      |
++----------+-------------------------------+
 

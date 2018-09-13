@@ -8,7 +8,9 @@ Font
 ====
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`DynamicFont<class_DynamicFont>`, :ref:`BitmapFont<class_BitmapFont>`
+
 **Category:** Core
 
 Brief Description
@@ -47,54 +49,53 @@ Font contains a unicode compatible character set, as well as the ability to draw
 Method Descriptions
 -------------------
 
-.. _class_Font_draw:
+  .. _class_Font_draw:
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` string, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1, :ref:`Color<class_Color>` outline_modulate=Color( 1, 1, 1, 1 ) **)** const
 
 Draw "string" into a canvas item using the font at a given position, with "modulate" color, and optionally clipping the width. "position" specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
-.. _class_Font_draw_char:
+  .. _class_Font_draw_char:
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` outline=false **)** const
 
 Draw character "char" into a canvas item using the font at a given position, with "modulate" color, and optionally kerning if "next" is passed. clipping the width. "position" specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.
 
-.. _class_Font_get_ascent:
+  .. _class_Font_get_ascent:
 
 - :ref:`float<class_float>` **get_ascent** **(** **)** const
 
 Return the font ascent (number of pixels above the baseline).
 
-.. _class_Font_get_descent:
+  .. _class_Font_get_descent:
 
 - :ref:`float<class_float>` **get_descent** **(** **)** const
 
 Return the font descent (number of pixels below the baseline).
 
-.. _class_Font_get_height:
+  .. _class_Font_get_height:
 
 - :ref:`float<class_float>` **get_height** **(** **)** const
 
 Return the total font height (ascent plus descent) in pixels.
 
-.. _class_Font_get_string_size:
+  .. _class_Font_get_string_size:
 
 - :ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` string **)** const
 
 Return the size of a string, taking kerning and advance into account.
 
-.. _class_Font_has_outline:
+  .. _class_Font_has_outline:
 
 - :ref:`bool<class_bool>` **has_outline** **(** **)** const
 
-.. _class_Font_is_distance_field_hint:
+  .. _class_Font_is_distance_field_hint:
 
 - :ref:`bool<class_bool>` **is_distance_field_hint** **(** **)** const
 
-.. _class_Font_update_changes:
+  .. _class_Font_update_changes:
 
 - void **update_changes** **(** **)**
 
 After editing a font (changing size, ascent, char rects, etc.). Call this function to propagate changes to controls that might use it.
-
 

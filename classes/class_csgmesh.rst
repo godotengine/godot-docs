@@ -8,12 +8,20 @@ CSGMesh
 =======
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A CSG Mesh shape that uses a mesh resource.
+
+Properties
+----------
+
++-------------------------+---------------------------------+
+| :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_CSGMesh_mesh>` |
++-------------------------+---------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_CSGMesh_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh** - The mesh resource to use as a CSG shape.
+- :ref:`Mesh<class_Mesh>` **mesh**
 
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
+
+The mesh resource to use as a CSG shape.
 

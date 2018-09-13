@@ -8,12 +8,22 @@ VisualScriptConstant
 ====================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Gets a contant's value.
+
+Properties
+----------
+
++-----------------------------------------------------+------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_type>`   |
++-----------------------------------------------------+------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_value>` |
++-----------------------------------------------------+------------------------------------------------+
 
 Description
 -----------
@@ -33,10 +43,25 @@ Property Descriptions
 
   .. _class_VisualScriptConstant_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The constant's type.
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+
++----------+--------------------------+
+| *Setter* | set_constant_type(value) |
++----------+--------------------------+
+| *Getter* | get_constant_type()      |
++----------+--------------------------+
+
+The constant's type.
 
   .. _class_VisualScriptConstant_value:
 
-- :ref:`Variant<class_Variant>` **value** - The constant's value.
+- :ref:`Variant<class_Variant>` **value**
 
++----------+---------------------------+
+| *Setter* | set_constant_value(value) |
++----------+---------------------------+
+| *Getter* | get_constant_value()      |
++----------+---------------------------+
+
+The constant's value.
 

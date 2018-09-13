@@ -8,6 +8,7 @@ ScriptCreateDialog
 ==================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -25,12 +26,11 @@ Methods
 Signals
 -------
 
-.. _class_ScriptCreateDialog_script_created:
+  .. _class_ScriptCreateDialog_script_created:
 
 - **script_created** **(** :ref:`Script<class_Script>` script **)**
 
 Emitted when the user clicks the OK button.
-
 
 Description
 -----------
@@ -47,10 +47,9 @@ The ScriptCreateDialog creates script files according to a given template for a 
 Method Descriptions
 -------------------
 
-.. _class_ScriptCreateDialog_config:
+  .. _class_ScriptCreateDialog_config:
 
 - void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
-
 

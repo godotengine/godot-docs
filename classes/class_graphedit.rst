@@ -8,12 +8,28 @@ GraphEdit
 =========
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
+
+Properties
+----------
+
++-------------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`right_disconnects<class_GraphEdit_right_disconnects>` |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_GraphEdit_scroll_offset>`         |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`snap_distance<class_GraphEdit_snap_distance>`         |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`use_snap<class_GraphEdit_use_snap>`                   |
++-------------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`zoom<class_GraphEdit_zoom>`                           |
++-------------------------------+-------------------------------------------------------------+
 
 Methods
 -------
@@ -50,65 +66,93 @@ Methods
 | void                                       | :ref:`set_selected<class_GraphEdit_set_selected>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`activity<class_GraphEdit_activity>`                                           |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`bezier_len_neg<class_GraphEdit_bezier_len_neg>`                               |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`bezier_len_pos<class_GraphEdit_bezier_len_pos>`                               |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_GraphEdit_bg>`                                                       |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`grid_major<class_GraphEdit_grid_major>`                                       |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`grid_minor<class_GraphEdit_grid_minor>`                                       |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`minus<class_GraphEdit_minus>`                                                 |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`more<class_GraphEdit_more>`                                                   |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`port_grab_distance_horizontal<class_GraphEdit_port_grab_distance_horizontal>` |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`port_grab_distance_vertical<class_GraphEdit_port_grab_distance_vertical>`     |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`reset<class_GraphEdit_reset>`                                                 |
++---------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`snap<class_GraphEdit_snap>`                                                   |
++---------------------------------+-------------------------------------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_GraphEdit__begin_node_move:
+  .. _class_GraphEdit__begin_node_move:
 
 - **_begin_node_move** **(** **)**
 
 Signal sent at the beginning of a GraphNode movement.
 
-.. _class_GraphEdit__end_node_move:
+  .. _class_GraphEdit__end_node_move:
 
 - **_end_node_move** **(** **)**
 
 Signal sent at the end of a GraphNode movement.
 
-.. _class_GraphEdit_connection_request:
+  .. _class_GraphEdit_connection_request:
 
 - **connection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
 
-.. _class_GraphEdit_connection_to_empty:
+  .. _class_GraphEdit_connection_to_empty:
 
 - **connection_to_empty** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_Vector2>` release_position **)**
 
-.. _class_GraphEdit_delete_nodes_request:
+  .. _class_GraphEdit_delete_nodes_request:
 
 - **delete_nodes_request** **(** **)**
 
 Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
 
-.. _class_GraphEdit_disconnection_request:
+  .. _class_GraphEdit_disconnection_request:
 
 - **disconnection_request** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_String>` to, :ref:`int<class_int>` to_slot **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
 
-.. _class_GraphEdit_duplicate_nodes_request:
+  .. _class_GraphEdit_duplicate_nodes_request:
 
 - **duplicate_nodes_request** **(** **)**
 
 Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
 
-.. _class_GraphEdit_node_selected:
+  .. _class_GraphEdit_node_selected:
 
 - **node_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Emitted when a GraphNode is selected.
 
-.. _class_GraphEdit_popup_request:
+  .. _class_GraphEdit_popup_request:
 
 - **popup_request** **(** :ref:`Vector2<class_Vector2>` p_position **)**
 
 Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
 
-.. _class_GraphEdit_scroll_offset_changed:
+  .. _class_GraphEdit_scroll_offset_changed:
 
 - **scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` ofs **)**
-
 
 Description
 -----------
@@ -122,112 +166,150 @@ Property Descriptions
 
   .. _class_GraphEdit_right_disconnects:
 
-- :ref:`bool<class_bool>` **right_disconnects** - If ``true``, enables disconnection of existing connections in the GraphEdit by dragging the right end.
+- :ref:`bool<class_bool>` **right_disconnects**
+
++----------+--------------------------------+
+| *Setter* | set_right_disconnects(value)   |
++----------+--------------------------------+
+| *Getter* | is_right_disconnects_enabled() |
++----------+--------------------------------+
+
+If ``true``, enables disconnection of existing connections in the GraphEdit by dragging the right end.
 
   .. _class_GraphEdit_scroll_offset:
 
-- :ref:`Vector2<class_Vector2>` **scroll_offset** - The scroll offset.
+- :ref:`Vector2<class_Vector2>` **scroll_offset**
+
++----------+-----------------------+
+| *Setter* | set_scroll_ofs(value) |
++----------+-----------------------+
+| *Getter* | get_scroll_ofs()      |
++----------+-----------------------+
+
+The scroll offset.
 
   .. _class_GraphEdit_snap_distance:
 
-- :ref:`int<class_int>` **snap_distance** - The snapping distance in pixels.
+- :ref:`int<class_int>` **snap_distance**
+
++----------+-----------------+
+| *Setter* | set_snap(value) |
++----------+-----------------+
+| *Getter* | get_snap()      |
++----------+-----------------+
+
+The snapping distance in pixels.
 
   .. _class_GraphEdit_use_snap:
 
-- :ref:`bool<class_bool>` **use_snap** - If ``true``, enables snapping.
+- :ref:`bool<class_bool>` **use_snap**
+
++----------+---------------------+
+| *Setter* | set_use_snap(value) |
++----------+---------------------+
+| *Getter* | is_using_snap()     |
++----------+---------------------+
+
+If ``true``, enables snapping.
 
   .. _class_GraphEdit_zoom:
 
-- :ref:`float<class_float>` **zoom** - The current zoom value.
+- :ref:`float<class_float>` **zoom**
 
++----------+-----------------+
+| *Setter* | set_zoom(value) |
++----------+-----------------+
+| *Getter* | get_zoom()      |
++----------+-----------------+
+
+The current zoom value.
 
 Method Descriptions
 -------------------
 
-.. _class_GraphEdit_add_valid_connection_type:
+  .. _class_GraphEdit_add_valid_connection_type:
 
 - void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
 
 Makes possible the connection between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_set_slot>` method.
 
-.. _class_GraphEdit_add_valid_left_disconnect_type:
+  .. _class_GraphEdit_add_valid_left_disconnect_type:
 
 - void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Makes possible to disconnect nodes when dragging from the slot at the left if it has the specified type.
 
-.. _class_GraphEdit_add_valid_right_disconnect_type:
+  .. _class_GraphEdit_add_valid_right_disconnect_type:
 
 - void **add_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Makes possible to disconnect nodes when dragging from the slot at the right if it has the specified type.
 
-.. _class_GraphEdit_clear_connections:
+  .. _class_GraphEdit_clear_connections:
 
 - void **clear_connections** **(** **)**
 
 Remove all connections between nodes.
 
-.. _class_GraphEdit_connect_node:
+  .. _class_GraphEdit_connect_node:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
 
-.. _class_GraphEdit_disconnect_node:
+  .. _class_GraphEdit_disconnect_node:
 
 - void **disconnect_node** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode, if connection exists.
 
-.. _class_GraphEdit_get_connection_list:
+  .. _class_GraphEdit_get_connection_list:
 
 - :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
 
 Return an Array containing the list of connections. A connection consists in a structure of the form {from_slot: 0, from: "GraphNode name 0", to_slot: 1, to: "GraphNode name 1" }
 
-.. _class_GraphEdit_get_zoom_hbox:
+  .. _class_GraphEdit_get_zoom_hbox:
 
 - :ref:`HBoxContainer<class_HBoxContainer>` **get_zoom_hbox** **(** **)**
 
-.. _class_GraphEdit_is_node_connected:
+  .. _class_GraphEdit_is_node_connected:
 
 - :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port **)**
 
 Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
-.. _class_GraphEdit_is_valid_connection_type:
+  .. _class_GraphEdit_is_valid_connection_type:
 
 - :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const
 
 Returns whether it's possible to connect slots of the specified types.
 
-.. _class_GraphEdit_remove_valid_connection_type:
+  .. _class_GraphEdit_remove_valid_connection_type:
 
 - void **remove_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
 
 Makes it not possible to connect between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_set_slot>` method.
 
-.. _class_GraphEdit_remove_valid_left_disconnect_type:
+  .. _class_GraphEdit_remove_valid_left_disconnect_type:
 
 - void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Removes the possibility to disconnect nodes when dragging from the slot at the left if it has the specified type.
 
-.. _class_GraphEdit_remove_valid_right_disconnect_type:
+  .. _class_GraphEdit_remove_valid_right_disconnect_type:
 
 - void **remove_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
 Removes the possibility to disconnect nodes when dragging from the slot at the right if it has the specified type.
 
-.. _class_GraphEdit_set_connection_activity:
+  .. _class_GraphEdit_set_connection_activity:
 
 - void **set_connection_activity** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` from_port, :ref:`String<class_String>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
 
-.. _class_GraphEdit_set_selected:
+  .. _class_GraphEdit_set_selected:
 
 - void **set_selected** **(** :ref:`Node<class_Node>` node **)**
 
 Sets the specified ``node`` as the one selected.
-
 

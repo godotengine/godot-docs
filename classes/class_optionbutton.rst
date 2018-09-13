@@ -8,12 +8,20 @@ OptionButton
 ============
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Button control that provides selectable options when pressed.
+
+Properties
+----------
+
++-----------------------+----------------------------------------------+
+| :ref:`int<class_int>` | :ref:`selected<class_OptionButton_selected>` |
++-----------------------+----------------------------------------------+
 
 Methods
 -------
@@ -60,21 +68,51 @@ Methods
 | void                               | :ref:`set_item_text<class_OptionButton_set_item_text>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**                                           |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`arrow<class_OptionButton_arrow>`                             |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`arrow_margin<class_OptionButton_arrow_margin>`               |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_OptionButton_disabled>`                       |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_OptionButton_focus>`                             |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_OptionButton_font>`                               |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_OptionButton_font_color>`                   |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_OptionButton_font_color_disabled>` |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_OptionButton_font_color_hover>`       |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_OptionButton_font_color_pressed>`   |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_OptionButton_hover>`                             |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_OptionButton_hseparation>`                 |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_OptionButton_normal>`                           |
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_OptionButton_pressed>`                         |
++---------------------------------+--------------------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_OptionButton_item_focused:
+  .. _class_OptionButton_item_focused:
 
 - **item_focused** **(** :ref:`int<class_int>` ID **)**
 
 This signal is emitted when user navigated to an item using ``ui_up`` or ``ui_down`` action. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
 
-.. _class_OptionButton_item_selected:
+  .. _class_OptionButton_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` ID **)**
 
 This signal is emitted when the current item was changed by the user. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
-
 
 Description
 -----------
@@ -88,114 +126,116 @@ Property Descriptions
 
 - :ref:`int<class_int>` **selected**
 
++----------+----------------+
+| *Getter* | get_selected() |
++----------+----------------+
 
 Method Descriptions
 -------------------
 
-.. _class_OptionButton_add_icon_item:
+  .. _class_OptionButton_add_icon_item:
 
 - void **add_icon_item** **(** :ref:`Texture<class_Texture>` texture, :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
 Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
 
-.. _class_OptionButton_add_item:
+  .. _class_OptionButton_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**
 
 Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
 
-.. _class_OptionButton_add_separator:
+  .. _class_OptionButton_add_separator:
 
 - void **add_separator** **(** **)**
 
 Add a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
 
-.. _class_OptionButton_clear:
+  .. _class_OptionButton_clear:
 
 - void **clear** **(** **)**
 
 Clear all the items in the ``OptionButton``.
 
-.. _class_OptionButton_get_item_count:
+  .. _class_OptionButton_get_item_count:
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
 Return the amount of items in the OptionButton.
 
-.. _class_OptionButton_get_item_icon:
+  .. _class_OptionButton_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
 Return the icon of the item at index "idx".
 
-.. _class_OptionButton_get_item_id:
+  .. _class_OptionButton_get_item_id:
 
 - :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` idx **)** const
 
 Return the ID of the item at index "idx".
 
-.. _class_OptionButton_get_item_metadata:
+  .. _class_OptionButton_get_item_metadata:
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_OptionButton_get_item_text:
+  .. _class_OptionButton_get_item_text:
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
 Return the text of the item at index "idx".
 
-.. _class_OptionButton_get_popup:
+  .. _class_OptionButton_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
 Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-.. _class_OptionButton_get_selected_id:
+  .. _class_OptionButton_get_selected_id:
 
 - :ref:`int<class_int>` **get_selected_id** **(** **)** const
 
-.. _class_OptionButton_get_selected_metadata:
+  .. _class_OptionButton_get_selected_metadata:
 
 - :ref:`Variant<class_Variant>` **get_selected_metadata** **(** **)** const
 
-.. _class_OptionButton_is_item_disabled:
+  .. _class_OptionButton_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_OptionButton_remove_item:
+  .. _class_OptionButton_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
-.. _class_OptionButton_select:
+  .. _class_OptionButton_select:
 
 - void **select** **(** :ref:`int<class_int>` idx **)**
 
 Select an item by index and make it the current item.
 
-.. _class_OptionButton_set_item_disabled:
+  .. _class_OptionButton_set_item_disabled:
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
-.. _class_OptionButton_set_item_icon:
+  .. _class_OptionButton_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
 Set the icon of an item at index "idx".
 
-.. _class_OptionButton_set_item_id:
+  .. _class_OptionButton_set_item_id:
 
 - void **set_item_id** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id **)**
 
 Set the ID of an item at index "idx".
 
-.. _class_OptionButton_set_item_metadata:
+  .. _class_OptionButton_set_item_metadata:
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
-.. _class_OptionButton_set_item_text:
+  .. _class_OptionButton_set_item_text:
 
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
 Set the text of an item at index "idx".
-
 

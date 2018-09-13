@@ -8,12 +8,30 @@ AnimationNodeBlendSpace2D
 =========================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_auto_triangles>` |
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`max_space<class_AnimationNodeBlendSpace2D_max_space>`           |
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`min_space<class_AnimationNodeBlendSpace2D_min_space>`           |
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`snap<class_AnimationNodeBlendSpace2D_snap>`                     |
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`x_label<class_AnimationNodeBlendSpace2D_x_label>`               |
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`y_label<class_AnimationNodeBlendSpace2D_y_label>`               |
++-------------------------------+-----------------------------------------------------------------------+
 
 Methods
 -------
@@ -49,72 +67,106 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **auto_triangles**
 
++----------+---------------------------+
+| *Setter* | set_auto_triangles(value) |
++----------+---------------------------+
+| *Getter* | get_auto_triangles()      |
++----------+---------------------------+
+
   .. _class_AnimationNodeBlendSpace2D_max_space:
 
 - :ref:`Vector2<class_Vector2>` **max_space**
+
++----------+----------------------+
+| *Setter* | set_max_space(value) |
++----------+----------------------+
+| *Getter* | get_max_space()      |
++----------+----------------------+
 
   .. _class_AnimationNodeBlendSpace2D_min_space:
 
 - :ref:`Vector2<class_Vector2>` **min_space**
 
++----------+----------------------+
+| *Setter* | set_min_space(value) |
++----------+----------------------+
+| *Getter* | get_min_space()      |
++----------+----------------------+
+
   .. _class_AnimationNodeBlendSpace2D_snap:
 
 - :ref:`Vector2<class_Vector2>` **snap**
+
++----------+-----------------+
+| *Setter* | set_snap(value) |
++----------+-----------------+
+| *Getter* | get_snap()      |
++----------+-----------------+
 
   .. _class_AnimationNodeBlendSpace2D_x_label:
 
 - :ref:`String<class_String>` **x_label**
 
++----------+--------------------+
+| *Setter* | set_x_label(value) |
++----------+--------------------+
+| *Getter* | get_x_label()      |
++----------+--------------------+
+
   .. _class_AnimationNodeBlendSpace2D_y_label:
 
 - :ref:`String<class_String>` **y_label**
 
++----------+--------------------+
+| *Setter* | set_y_label(value) |
++----------+--------------------+
+| *Getter* | get_y_label()      |
++----------+--------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeBlendSpace2D_add_blend_point:
+  .. _class_AnimationNodeBlendSpace2D_add_blend_point:
 
 - void **add_blend_point** **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` at_index=-1 **)**
 
-.. _class_AnimationNodeBlendSpace2D_add_triangle:
+  .. _class_AnimationNodeBlendSpace2D_add_triangle:
 
 - void **add_triangle** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` at_index=-1 **)**
 
-.. _class_AnimationNodeBlendSpace2D_get_blend_point_count:
+  .. _class_AnimationNodeBlendSpace2D_get_blend_point_count:
 
 - :ref:`int<class_int>` **get_blend_point_count** **(** **)** const
 
-.. _class_AnimationNodeBlendSpace2D_get_blend_point_node:
+  .. _class_AnimationNodeBlendSpace2D_get_blend_point_node:
 
 - :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
 
-.. _class_AnimationNodeBlendSpace2D_get_blend_point_position:
+  .. _class_AnimationNodeBlendSpace2D_get_blend_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** const
 
-.. _class_AnimationNodeBlendSpace2D_get_triangle_count:
+  .. _class_AnimationNodeBlendSpace2D_get_triangle_count:
 
 - :ref:`int<class_int>` **get_triangle_count** **(** **)** const
 
-.. _class_AnimationNodeBlendSpace2D_get_triangle_point:
+  .. _class_AnimationNodeBlendSpace2D_get_triangle_point:
 
 - :ref:`int<class_int>` **get_triangle_point** **(** :ref:`int<class_int>` triangle, :ref:`int<class_int>` point **)**
 
-.. _class_AnimationNodeBlendSpace2D_remove_blend_point:
+  .. _class_AnimationNodeBlendSpace2D_remove_blend_point:
 
 - void **remove_blend_point** **(** :ref:`int<class_int>` point **)**
 
-.. _class_AnimationNodeBlendSpace2D_remove_triangle:
+  .. _class_AnimationNodeBlendSpace2D_remove_triangle:
 
 - void **remove_triangle** **(** :ref:`int<class_int>` triangle **)**
 
-.. _class_AnimationNodeBlendSpace2D_set_blend_point_node:
+  .. _class_AnimationNodeBlendSpace2D_set_blend_point_node:
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
-.. _class_AnimationNodeBlendSpace2D_set_blend_point_position:
+  .. _class_AnimationNodeBlendSpace2D_set_blend_point_position:
 
 - void **set_blend_point_position** **(** :ref:`int<class_int>` point, :ref:`Vector2<class_Vector2>` pos **)**
-
 

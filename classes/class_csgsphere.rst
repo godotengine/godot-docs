@@ -8,12 +8,28 @@ CSGSphere
 =========
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A CSG Sphere shape.
+
+Properties
+----------
+
++---------------------------------+---------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_material>`               |
++---------------------------------+---------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_radial_segments>` |
++---------------------------------+---------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere_radius>`                   |
++---------------------------------+---------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere_rings>`                     |
++---------------------------------+---------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_smooth_faces>`       |
++---------------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -25,22 +41,61 @@ Property Descriptions
 
   .. _class_CSGSphere_material:
 
-- :ref:`Material<class_Material>` **material** - The material used to render the sphere.
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+The material used to render the sphere.
 
   .. _class_CSGSphere_radial_segments:
 
-- :ref:`int<class_int>` **radial_segments** - Number of vertical slices for the sphere.
+- :ref:`int<class_int>` **radial_segments**
+
++----------+----------------------------+
+| *Setter* | set_radial_segments(value) |
++----------+----------------------------+
+| *Getter* | get_radial_segments()      |
++----------+----------------------------+
+
+Number of vertical slices for the sphere.
 
   .. _class_CSGSphere_radius:
 
-- :ref:`float<class_float>` **radius** - Radius of the sphere.
+- :ref:`float<class_float>` **radius**
+
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
+
+Radius of the sphere.
 
   .. _class_CSGSphere_rings:
 
-- :ref:`int<class_int>` **rings** - Number of horizontal slices for the sphere.
+- :ref:`int<class_int>` **rings**
+
++----------+------------------+
+| *Setter* | set_rings(value) |
++----------+------------------+
+| *Getter* | get_rings()      |
++----------+------------------+
+
+Number of horizontal slices for the sphere.
 
   .. _class_CSGSphere_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces** - If true the normals of the sphere are set to give a smooth effect making the sphere seem rounded. When false the sphere will have a flat shaded look.
+- :ref:`bool<class_bool>` **smooth_faces**
 
++----------+-------------------------+
+| *Setter* | set_smooth_faces(value) |
++----------+-------------------------+
+| *Getter* | get_smooth_faces()      |
++----------+-------------------------+
+
+If true the normals of the sphere are set to give a smooth effect making the sphere seem rounded. When false the sphere will have a flat shaded look.
 

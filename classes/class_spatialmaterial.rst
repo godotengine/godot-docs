@@ -8,6 +8,7 @@ SpatialMaterial
 ===============
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,19 +16,220 @@ Brief Description
 
 
 
+Properties
+----------
+
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                                      | :ref:`albedo_color<class_SpatialMaterial_albedo_color>`                                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`albedo_texture<class_SpatialMaterial_albedo_texture>`                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`anisotropy<class_SpatialMaterial_anisotropy>`                                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`anisotropy_enabled<class_SpatialMaterial_anisotropy_enabled>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`anisotropy_flowmap<class_SpatialMaterial_anisotropy_flowmap>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`ao_enabled<class_SpatialMaterial_ao_enabled>`                                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`ao_light_affect<class_SpatialMaterial_ao_light_affect>`                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`ao_on_uv2<class_SpatialMaterial_ao_on_uv2>`                                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`ao_texture<class_SpatialMaterial_ao_texture>`                                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`ao_texture_channel<class_SpatialMaterial_ao_texture_channel>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`clearcoat<class_SpatialMaterial_clearcoat>`                                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`clearcoat_enabled<class_SpatialMaterial_clearcoat_enabled>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`clearcoat_gloss<class_SpatialMaterial_clearcoat_gloss>`                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`clearcoat_texture<class_SpatialMaterial_clearcoat_texture>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`depth_deep_parallax<class_SpatialMaterial_depth_deep_parallax>`                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`depth_enabled<class_SpatialMaterial_depth_enabled>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`depth_max_layers<class_SpatialMaterial_depth_max_layers>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`depth_min_layers<class_SpatialMaterial_depth_min_layers>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`depth_scale<class_SpatialMaterial_depth_scale>`                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`depth_texture<class_SpatialMaterial_depth_texture>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`detail_albedo<class_SpatialMaterial_detail_albedo>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`               | :ref:`detail_blend_mode<class_SpatialMaterial_detail_blend_mode>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`detail_enabled<class_SpatialMaterial_detail_enabled>`                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`detail_mask<class_SpatialMaterial_detail_mask>`                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`detail_normal<class_SpatialMaterial_detail_normal>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`DetailUV<enum_SpatialMaterial_DetailUV>`                 | :ref:`detail_uv_layer<class_SpatialMaterial_detail_uv_layer>`                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`distance_fade_max_distance<class_SpatialMaterial_distance_fade_max_distance>`         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`distance_fade_min_distance<class_SpatialMaterial_distance_fade_min_distance>`         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`DistanceFadeMode<enum_SpatialMaterial_DistanceFadeMode>` | :ref:`distance_fade_mode<class_SpatialMaterial_distance_fade_mode>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                                      | :ref:`emission<class_SpatialMaterial_emission>`                                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`emission_enabled<class_SpatialMaterial_emission_enabled>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`emission_energy<class_SpatialMaterial_emission_energy>`                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`emission_on_uv2<class_SpatialMaterial_emission_on_uv2>`                               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`EmissionOperator<enum_SpatialMaterial_EmissionOperator>` | :ref:`emission_operator<class_SpatialMaterial_emission_operator>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`emission_texture<class_SpatialMaterial_emission_texture>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_albedo_tex_force_srgb<class_SpatialMaterial_flags_albedo_tex_force_srgb>`       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_disable_ambient_light<class_SpatialMaterial_flags_disable_ambient_light>`       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_do_not_receive_shadows<class_SpatialMaterial_flags_do_not_receive_shadows>`     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_ensure_correct_normals<class_SpatialMaterial_flags_ensure_correct_normals>`     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_fixed_size<class_SpatialMaterial_flags_fixed_size>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_no_depth_test<class_SpatialMaterial_flags_no_depth_test>`                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_transparent<class_SpatialMaterial_flags_transparent>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_unshaded<class_SpatialMaterial_flags_unshaded>`                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_use_point_size<class_SpatialMaterial_flags_use_point_size>`                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_vertex_lighting<class_SpatialMaterial_flags_vertex_lighting>`                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_world_triplanar<class_SpatialMaterial_flags_world_triplanar>`                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`metallic<class_SpatialMaterial_metallic>`                                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`metallic_specular<class_SpatialMaterial_metallic_specular>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`metallic_texture<class_SpatialMaterial_metallic_texture>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`metallic_texture_channel<class_SpatialMaterial_metallic_texture_channel>`             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`normal_enabled<class_SpatialMaterial_normal_enabled>`                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`normal_scale<class_SpatialMaterial_normal_scale>`                                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`normal_texture<class_SpatialMaterial_normal_texture>`                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`params_alpha_scissor_threshold<class_SpatialMaterial_params_alpha_scissor_threshold>` |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`params_billboard_keep_scale<class_SpatialMaterial_params_billboard_keep_scale>`       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>`       | :ref:`params_billboard_mode<class_SpatialMaterial_params_billboard_mode>`                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`               | :ref:`params_blend_mode<class_SpatialMaterial_params_blend_mode>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`CullMode<enum_SpatialMaterial_CullMode>`                 | :ref:`params_cull_mode<class_SpatialMaterial_params_cull_mode>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`DepthDrawMode<enum_SpatialMaterial_DepthDrawMode>`       | :ref:`params_depth_draw_mode<class_SpatialMaterial_params_depth_draw_mode>`                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`DiffuseMode<enum_SpatialMaterial_DiffuseMode>`           | :ref:`params_diffuse_mode<class_SpatialMaterial_params_diffuse_mode>`                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`params_grow<class_SpatialMaterial_params_grow>`                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`params_grow_amount<class_SpatialMaterial_params_grow_amount>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`params_line_width<class_SpatialMaterial_params_line_width>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`params_point_size<class_SpatialMaterial_params_point_size>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`SpecularMode<enum_SpatialMaterial_SpecularMode>`         | :ref:`params_specular_mode<class_SpatialMaterial_params_specular_mode>`                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`params_use_alpha_scissor<class_SpatialMaterial_params_use_alpha_scissor>`             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`particles_anim_h_frames<class_SpatialMaterial_particles_anim_h_frames>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`particles_anim_loop<class_SpatialMaterial_particles_anim_loop>`                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`particles_anim_v_frames<class_SpatialMaterial_particles_anim_v_frames>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`proximity_fade_distance<class_SpatialMaterial_proximity_fade_distance>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`proximity_fade_enable<class_SpatialMaterial_proximity_fade_enable>`                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`refraction_enabled<class_SpatialMaterial_refraction_enabled>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`refraction_scale<class_SpatialMaterial_refraction_scale>`                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`refraction_texture<class_SpatialMaterial_refraction_texture>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`refraction_texture_channel<class_SpatialMaterial_refraction_texture_channel>`         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`rim<class_SpatialMaterial_rim>`                                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`rim_enabled<class_SpatialMaterial_rim_enabled>`                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`rim_texture<class_SpatialMaterial_rim_texture>`                                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`rim_tint<class_SpatialMaterial_rim_tint>`                                             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`roughness<class_SpatialMaterial_roughness>`                                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`roughness_texture<class_SpatialMaterial_roughness_texture>`                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`roughness_texture_channel<class_SpatialMaterial_roughness_texture_channel>`           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`subsurf_scatter_enabled<class_SpatialMaterial_subsurf_scatter_enabled>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`subsurf_scatter_strength<class_SpatialMaterial_subsurf_scatter_strength>`             |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`subsurf_scatter_texture<class_SpatialMaterial_subsurf_scatter_texture>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                                      | :ref:`transmission<class_SpatialMaterial_transmission>`                                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`transmission_enabled<class_SpatialMaterial_transmission_enabled>`                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                                  | :ref:`transmission_texture<class_SpatialMaterial_transmission_texture>`                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                  | :ref:`uv1_offset<class_SpatialMaterial_uv1_offset>`                                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                  | :ref:`uv1_scale<class_SpatialMaterial_uv1_scale>`                                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`uv1_triplanar<class_SpatialMaterial_uv1_triplanar>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`uv1_triplanar_sharpness<class_SpatialMaterial_uv1_triplanar_sharpness>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                  | :ref:`uv2_offset<class_SpatialMaterial_uv2_offset>`                                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                  | :ref:`uv2_scale<class_SpatialMaterial_uv2_scale>`                                           |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`uv2_triplanar<class_SpatialMaterial_uv2_triplanar>`                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`uv2_triplanar_sharpness<class_SpatialMaterial_uv2_triplanar_sharpness>`               |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`vertex_color_is_srgb<class_SpatialMaterial_vertex_color_is_srgb>`                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`vertex_color_use_as_albedo<class_SpatialMaterial_vertex_color_use_as_albedo>`         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_SpatialMaterial_DetailUV:
 
-enum **DetailUV**
+enum **DetailUV**:
 
 - **DETAIL_UV_1** = **0**
 - **DETAIL_UV_2** = **1**
 
   .. _enum_SpatialMaterial_TextureParam:
 
-enum **TextureParam**
+enum **TextureParam**:
 
 - **TEXTURE_ALBEDO** = **0**
 - **TEXTURE_METALLIC** = **1**
@@ -49,7 +251,7 @@ enum **TextureParam**
 
   .. _enum_SpatialMaterial_DistanceFadeMode:
 
-enum **DistanceFadeMode**
+enum **DistanceFadeMode**:
 
 - **DISTANCE_FADE_DISABLED** = **0**
 - **DISTANCE_FADE_PIXEL_ALPHA** = **1**
@@ -58,7 +260,7 @@ enum **DistanceFadeMode**
 
   .. _enum_SpatialMaterial_DepthDrawMode:
 
-enum **DepthDrawMode**
+enum **DepthDrawMode**:
 
 - **DEPTH_DRAW_OPAQUE_ONLY** = **0**
 - **DEPTH_DRAW_ALWAYS** = **1**
@@ -67,7 +269,7 @@ enum **DepthDrawMode**
 
   .. _enum_SpatialMaterial_DiffuseMode:
 
-enum **DiffuseMode**
+enum **DiffuseMode**:
 
 - **DIFFUSE_BURLEY** = **0**
 - **DIFFUSE_LAMBERT** = **1**
@@ -77,7 +279,7 @@ enum **DiffuseMode**
 
   .. _enum_SpatialMaterial_CullMode:
 
-enum **CullMode**
+enum **CullMode**:
 
 - **CULL_BACK** = **0**
 - **CULL_FRONT** = **1**
@@ -85,7 +287,7 @@ enum **CullMode**
 
   .. _enum_SpatialMaterial_Feature:
 
-enum **Feature**
+enum **Feature**:
 
 - **FEATURE_TRANSPARENT** = **0**
 - **FEATURE_EMISSION** = **1**
@@ -103,7 +305,7 @@ enum **Feature**
 
   .. _enum_SpatialMaterial_Flags:
 
-enum **Flags**
+enum **Flags**:
 
 - **FLAG_UNSHADED** = **0**
 - **FLAG_USE_VERTEX_LIGHTING** = **1**
@@ -127,7 +329,7 @@ enum **Flags**
 
   .. _enum_SpatialMaterial_BlendMode:
 
-enum **BlendMode**
+enum **BlendMode**:
 
 - **BLEND_MODE_MIX** = **0**
 - **BLEND_MODE_ADD** = **1**
@@ -136,7 +338,7 @@ enum **BlendMode**
 
   .. _enum_SpatialMaterial_SpecularMode:
 
-enum **SpecularMode**
+enum **SpecularMode**:
 
 - **SPECULAR_SCHLICK_GGX** = **0**
 - **SPECULAR_BLINN** = **1**
@@ -146,7 +348,7 @@ enum **SpecularMode**
 
   .. _enum_SpatialMaterial_TextureChannel:
 
-enum **TextureChannel**
+enum **TextureChannel**:
 
 - **TEXTURE_CHANNEL_RED** = **0**
 - **TEXTURE_CHANNEL_GREEN** = **1**
@@ -156,7 +358,7 @@ enum **TextureChannel**
 
   .. _enum_SpatialMaterial_BillboardMode:
 
-enum **BillboardMode**
+enum **BillboardMode**:
 
 - **BILLBOARD_DISABLED** = **0**
 - **BILLBOARD_ENABLED** = **1**
@@ -165,17 +367,15 @@ enum **BillboardMode**
 
   .. _enum_SpatialMaterial_EmissionOperator:
 
-enum **EmissionOperator**
+enum **EmissionOperator**:
 
 - **EMISSION_OP_ADD** = **0**
 - **EMISSION_OP_MULTIPLY** = **1**
-
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/spatial_material`
-
 Property Descriptions
 ---------------------
 
@@ -183,392 +383,979 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **albedo_color**
 
++----------+-------------------+
+| *Setter* | set_albedo(value) |
++----------+-------------------+
+| *Getter* | get_albedo()      |
++----------+-------------------+
+
   .. _class_SpatialMaterial_albedo_texture:
 
 - :ref:`Texture<class_Texture>` **albedo_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_anisotropy:
 
 - :ref:`float<class_float>` **anisotropy**
 
++----------+-----------------------+
+| *Setter* | set_anisotropy(value) |
++----------+-----------------------+
+| *Getter* | get_anisotropy()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_anisotropy_enabled:
 
 - :ref:`bool<class_bool>` **anisotropy_enabled**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_anisotropy_flowmap:
 
 - :ref:`Texture<class_Texture>` **anisotropy_flowmap**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_ao_enabled:
 
 - :ref:`bool<class_bool>` **ao_enabled**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_ao_light_affect:
 
 - :ref:`float<class_float>` **ao_light_affect**
 
++----------+----------------------------+
+| *Setter* | set_ao_light_affect(value) |
++----------+----------------------------+
+| *Getter* | get_ao_light_affect()      |
++----------+----------------------------+
+
   .. _class_SpatialMaterial_ao_on_uv2:
 
 - :ref:`bool<class_bool>` **ao_on_uv2**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_ao_texture:
 
 - :ref:`Texture<class_Texture>` **ao_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_ao_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **ao_texture_channel**
+
++----------+-------------------------------+
+| *Setter* | set_ao_texture_channel(value) |
++----------+-------------------------------+
+| *Getter* | get_ao_texture_channel()      |
++----------+-------------------------------+
 
   .. _class_SpatialMaterial_clearcoat:
 
 - :ref:`float<class_float>` **clearcoat**
 
++----------+----------------------+
+| *Setter* | set_clearcoat(value) |
++----------+----------------------+
+| *Getter* | get_clearcoat()      |
++----------+----------------------+
+
   .. _class_SpatialMaterial_clearcoat_enabled:
 
 - :ref:`bool<class_bool>` **clearcoat_enabled**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_clearcoat_gloss:
 
 - :ref:`float<class_float>` **clearcoat_gloss**
 
++----------+----------------------------+
+| *Setter* | set_clearcoat_gloss(value) |
++----------+----------------------------+
+| *Getter* | get_clearcoat_gloss()      |
++----------+----------------------------+
+
   .. _class_SpatialMaterial_clearcoat_texture:
 
 - :ref:`Texture<class_Texture>` **clearcoat_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_depth_deep_parallax:
 
 - :ref:`bool<class_bool>` **depth_deep_parallax**
 
++----------+----------------------------------+
+| *Setter* | set_depth_deep_parallax(value)   |
++----------+----------------------------------+
+| *Getter* | is_depth_deep_parallax_enabled() |
++----------+----------------------------------+
+
   .. _class_SpatialMaterial_depth_enabled:
 
 - :ref:`bool<class_bool>` **depth_enabled**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_depth_max_layers:
 
 - :ref:`int<class_int>` **depth_max_layers**
 
++----------+-------------------------------------------+
+| *Setter* | set_depth_deep_parallax_max_layers(value) |
++----------+-------------------------------------------+
+| *Getter* | get_depth_deep_parallax_max_layers()      |
++----------+-------------------------------------------+
+
   .. _class_SpatialMaterial_depth_min_layers:
 
 - :ref:`int<class_int>` **depth_min_layers**
+
++----------+-------------------------------------------+
+| *Setter* | set_depth_deep_parallax_min_layers(value) |
++----------+-------------------------------------------+
+| *Getter* | get_depth_deep_parallax_min_layers()      |
++----------+-------------------------------------------+
 
   .. _class_SpatialMaterial_depth_scale:
 
 - :ref:`float<class_float>` **depth_scale**
 
++----------+------------------------+
+| *Setter* | set_depth_scale(value) |
++----------+------------------------+
+| *Getter* | get_depth_scale()      |
++----------+------------------------+
+
   .. _class_SpatialMaterial_depth_texture:
 
 - :ref:`Texture<class_Texture>` **depth_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_detail_albedo:
 
 - :ref:`Texture<class_Texture>` **detail_albedo**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_detail_blend_mode:
 
 - :ref:`BlendMode<enum_SpatialMaterial_BlendMode>` **detail_blend_mode**
+
++----------+------------------------------+
+| *Setter* | set_detail_blend_mode(value) |
++----------+------------------------------+
+| *Getter* | get_detail_blend_mode()      |
++----------+------------------------------+
 
   .. _class_SpatialMaterial_detail_enabled:
 
 - :ref:`bool<class_bool>` **detail_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_detail_mask:
 
 - :ref:`Texture<class_Texture>` **detail_mask**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_detail_normal:
 
 - :ref:`Texture<class_Texture>` **detail_normal**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_detail_uv_layer:
 
 - :ref:`DetailUV<enum_SpatialMaterial_DetailUV>` **detail_uv_layer**
+
++----------+----------------------+
+| *Setter* | set_detail_uv(value) |
++----------+----------------------+
+| *Getter* | get_detail_uv()      |
++----------+----------------------+
 
   .. _class_SpatialMaterial_distance_fade_max_distance:
 
 - :ref:`float<class_float>` **distance_fade_max_distance**
 
++----------+---------------------------------------+
+| *Setter* | set_distance_fade_max_distance(value) |
++----------+---------------------------------------+
+| *Getter* | get_distance_fade_max_distance()      |
++----------+---------------------------------------+
+
   .. _class_SpatialMaterial_distance_fade_min_distance:
 
 - :ref:`float<class_float>` **distance_fade_min_distance**
+
++----------+---------------------------------------+
+| *Setter* | set_distance_fade_min_distance(value) |
++----------+---------------------------------------+
+| *Getter* | get_distance_fade_min_distance()      |
++----------+---------------------------------------+
 
   .. _class_SpatialMaterial_distance_fade_mode:
 
 - :ref:`DistanceFadeMode<enum_SpatialMaterial_DistanceFadeMode>` **distance_fade_mode**
 
++----------+--------------------------+
+| *Setter* | set_distance_fade(value) |
++----------+--------------------------+
+| *Getter* | get_distance_fade()      |
++----------+--------------------------+
+
   .. _class_SpatialMaterial_emission:
 
 - :ref:`Color<class_Color>` **emission**
+
++----------+---------------------+
+| *Setter* | set_emission(value) |
++----------+---------------------+
+| *Getter* | get_emission()      |
++----------+---------------------+
 
   .. _class_SpatialMaterial_emission_enabled:
 
 - :ref:`bool<class_bool>` **emission_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_emission_energy:
 
 - :ref:`float<class_float>` **emission_energy**
+
++----------+----------------------------+
+| *Setter* | set_emission_energy(value) |
++----------+----------------------------+
+| *Getter* | get_emission_energy()      |
++----------+----------------------------+
 
   .. _class_SpatialMaterial_emission_on_uv2:
 
 - :ref:`bool<class_bool>` **emission_on_uv2**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_emission_operator:
 
 - :ref:`EmissionOperator<enum_SpatialMaterial_EmissionOperator>` **emission_operator**
+
++----------+------------------------------+
+| *Setter* | set_emission_operator(value) |
++----------+------------------------------+
+| *Getter* | get_emission_operator()      |
++----------+------------------------------+
 
   .. _class_SpatialMaterial_emission_texture:
 
 - :ref:`Texture<class_Texture>` **emission_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_flags_albedo_tex_force_srgb:
 
 - :ref:`bool<class_bool>` **flags_albedo_tex_force_srgb**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_flags_disable_ambient_light:
 
 - :ref:`bool<class_bool>` **flags_disable_ambient_light**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_flags_do_not_receive_shadows:
 
 - :ref:`bool<class_bool>` **flags_do_not_receive_shadows**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_flags_ensure_correct_normals:
 
 - :ref:`bool<class_bool>` **flags_ensure_correct_normals**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_flags_fixed_size:
 
 - :ref:`bool<class_bool>` **flags_fixed_size**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_flags_no_depth_test:
 
 - :ref:`bool<class_bool>` **flags_no_depth_test**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_flags_transparent:
 
 - :ref:`bool<class_bool>` **flags_transparent**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_flags_unshaded:
 
 - :ref:`bool<class_bool>` **flags_unshaded**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_flags_use_point_size:
 
 - :ref:`bool<class_bool>` **flags_use_point_size**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_flags_vertex_lighting:
 
 - :ref:`bool<class_bool>` **flags_vertex_lighting**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_flags_world_triplanar:
 
 - :ref:`bool<class_bool>` **flags_world_triplanar**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_metallic:
 
 - :ref:`float<class_float>` **metallic**
 
++----------+---------------------+
+| *Setter* | set_metallic(value) |
++----------+---------------------+
+| *Getter* | get_metallic()      |
++----------+---------------------+
+
   .. _class_SpatialMaterial_metallic_specular:
 
 - :ref:`float<class_float>` **metallic_specular**
+
++----------+---------------------+
+| *Setter* | set_specular(value) |
++----------+---------------------+
+| *Getter* | get_specular()      |
++----------+---------------------+
 
   .. _class_SpatialMaterial_metallic_texture:
 
 - :ref:`Texture<class_Texture>` **metallic_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_metallic_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **metallic_texture_channel**
+
++----------+-------------------------------------+
+| *Setter* | set_metallic_texture_channel(value) |
++----------+-------------------------------------+
+| *Getter* | get_metallic_texture_channel()      |
++----------+-------------------------------------+
 
   .. _class_SpatialMaterial_normal_enabled:
 
 - :ref:`bool<class_bool>` **normal_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_normal_scale:
 
 - :ref:`float<class_float>` **normal_scale**
+
++----------+-------------------------+
+| *Setter* | set_normal_scale(value) |
++----------+-------------------------+
+| *Getter* | get_normal_scale()      |
++----------+-------------------------+
 
   .. _class_SpatialMaterial_normal_texture:
 
 - :ref:`Texture<class_Texture>` **normal_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_params_alpha_scissor_threshold:
 
 - :ref:`float<class_float>` **params_alpha_scissor_threshold**
+
++----------+------------------------------------+
+| *Setter* | set_alpha_scissor_threshold(value) |
++----------+------------------------------------+
+| *Getter* | get_alpha_scissor_threshold()      |
++----------+------------------------------------+
 
   .. _class_SpatialMaterial_params_billboard_keep_scale:
 
 - :ref:`bool<class_bool>` **params_billboard_keep_scale**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_params_billboard_mode:
 
 - :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **params_billboard_mode**
+
++----------+---------------------------+
+| *Setter* | set_billboard_mode(value) |
++----------+---------------------------+
+| *Getter* | get_billboard_mode()      |
++----------+---------------------------+
 
   .. _class_SpatialMaterial_params_blend_mode:
 
 - :ref:`BlendMode<enum_SpatialMaterial_BlendMode>` **params_blend_mode**
 
++----------+-----------------------+
+| *Setter* | set_blend_mode(value) |
++----------+-----------------------+
+| *Getter* | get_blend_mode()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_params_cull_mode:
 
 - :ref:`CullMode<enum_SpatialMaterial_CullMode>` **params_cull_mode**
+
++----------+----------------------+
+| *Setter* | set_cull_mode(value) |
++----------+----------------------+
+| *Getter* | get_cull_mode()      |
++----------+----------------------+
 
   .. _class_SpatialMaterial_params_depth_draw_mode:
 
 - :ref:`DepthDrawMode<enum_SpatialMaterial_DepthDrawMode>` **params_depth_draw_mode**
 
++----------+----------------------------+
+| *Setter* | set_depth_draw_mode(value) |
++----------+----------------------------+
+| *Getter* | get_depth_draw_mode()      |
++----------+----------------------------+
+
   .. _class_SpatialMaterial_params_diffuse_mode:
 
 - :ref:`DiffuseMode<enum_SpatialMaterial_DiffuseMode>` **params_diffuse_mode**
+
++----------+-------------------------+
+| *Setter* | set_diffuse_mode(value) |
++----------+-------------------------+
+| *Getter* | get_diffuse_mode()      |
++----------+-------------------------+
 
   .. _class_SpatialMaterial_params_grow:
 
 - :ref:`bool<class_bool>` **params_grow**
 
++----------+-------------------------+
+| *Setter* | set_grow_enabled(value) |
++----------+-------------------------+
+| *Getter* | is_grow_enabled()       |
++----------+-------------------------+
+
   .. _class_SpatialMaterial_params_grow_amount:
 
 - :ref:`float<class_float>` **params_grow_amount**
+
++----------+-----------------+
+| *Setter* | set_grow(value) |
++----------+-----------------+
+| *Getter* | get_grow()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_params_line_width:
 
 - :ref:`float<class_float>` **params_line_width**
 
++----------+-----------------------+
+| *Setter* | set_line_width(value) |
++----------+-----------------------+
+| *Getter* | get_line_width()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_params_point_size:
 
 - :ref:`float<class_float>` **params_point_size**
+
++----------+-----------------------+
+| *Setter* | set_point_size(value) |
++----------+-----------------------+
+| *Getter* | get_point_size()      |
++----------+-----------------------+
 
   .. _class_SpatialMaterial_params_specular_mode:
 
 - :ref:`SpecularMode<enum_SpatialMaterial_SpecularMode>` **params_specular_mode**
 
++----------+--------------------------+
+| *Setter* | set_specular_mode(value) |
++----------+--------------------------+
+| *Getter* | get_specular_mode()      |
++----------+--------------------------+
+
   .. _class_SpatialMaterial_params_use_alpha_scissor:
 
 - :ref:`bool<class_bool>` **params_use_alpha_scissor**
+
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 
   .. _class_SpatialMaterial_particles_anim_h_frames:
 
 - :ref:`int<class_int>` **particles_anim_h_frames**
 
++----------+------------------------------------+
+| *Setter* | set_particles_anim_h_frames(value) |
++----------+------------------------------------+
+| *Getter* | get_particles_anim_h_frames()      |
++----------+------------------------------------+
+
   .. _class_SpatialMaterial_particles_anim_loop:
 
 - :ref:`int<class_int>` **particles_anim_loop**
+
++----------+--------------------------------+
+| *Setter* | set_particles_anim_loop(value) |
++----------+--------------------------------+
+| *Getter* | get_particles_anim_loop()      |
++----------+--------------------------------+
 
   .. _class_SpatialMaterial_particles_anim_v_frames:
 
 - :ref:`int<class_int>` **particles_anim_v_frames**
 
++----------+------------------------------------+
+| *Setter* | set_particles_anim_v_frames(value) |
++----------+------------------------------------+
+| *Getter* | get_particles_anim_v_frames()      |
++----------+------------------------------------+
+
   .. _class_SpatialMaterial_proximity_fade_distance:
 
 - :ref:`float<class_float>` **proximity_fade_distance**
+
++----------+------------------------------------+
+| *Setter* | set_proximity_fade_distance(value) |
++----------+------------------------------------+
+| *Getter* | get_proximity_fade_distance()      |
++----------+------------------------------------+
 
   .. _class_SpatialMaterial_proximity_fade_enable:
 
 - :ref:`bool<class_bool>` **proximity_fade_enable**
 
++----------+-----------------------------+
+| *Setter* | set_proximity_fade(value)   |
++----------+-----------------------------+
+| *Getter* | is_proximity_fade_enabled() |
++----------+-----------------------------+
+
   .. _class_SpatialMaterial_refraction_enabled:
 
 - :ref:`bool<class_bool>` **refraction_enabled**
+
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_refraction_scale:
 
 - :ref:`float<class_float>` **refraction_scale**
 
++----------+-----------------------+
+| *Setter* | set_refraction(value) |
++----------+-----------------------+
+| *Getter* | get_refraction()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_refraction_texture:
 
 - :ref:`Texture<class_Texture>` **refraction_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_refraction_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **refraction_texture_channel**
 
++----------+---------------------------------------+
+| *Setter* | set_refraction_texture_channel(value) |
++----------+---------------------------------------+
+| *Getter* | get_refraction_texture_channel()      |
++----------+---------------------------------------+
+
   .. _class_SpatialMaterial_rim:
 
 - :ref:`float<class_float>` **rim**
+
++----------+----------------+
+| *Setter* | set_rim(value) |
++----------+----------------+
+| *Getter* | get_rim()      |
++----------+----------------+
 
   .. _class_SpatialMaterial_rim_enabled:
 
 - :ref:`bool<class_bool>` **rim_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_rim_texture:
 
 - :ref:`Texture<class_Texture>` **rim_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_rim_tint:
 
 - :ref:`float<class_float>` **rim_tint**
 
++----------+---------------------+
+| *Setter* | set_rim_tint(value) |
++----------+---------------------+
+| *Getter* | get_rim_tint()      |
++----------+---------------------+
+
   .. _class_SpatialMaterial_roughness:
 
 - :ref:`float<class_float>` **roughness**
+
++----------+----------------------+
+| *Setter* | set_roughness(value) |
++----------+----------------------+
+| *Getter* | get_roughness()      |
++----------+----------------------+
 
   .. _class_SpatialMaterial_roughness_texture:
 
 - :ref:`Texture<class_Texture>` **roughness_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_roughness_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **roughness_texture_channel**
+
++----------+--------------------------------------+
+| *Setter* | set_roughness_texture_channel(value) |
++----------+--------------------------------------+
+| *Getter* | get_roughness_texture_channel()      |
++----------+--------------------------------------+
 
   .. _class_SpatialMaterial_subsurf_scatter_enabled:
 
 - :ref:`bool<class_bool>` **subsurf_scatter_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_subsurf_scatter_strength:
 
 - :ref:`float<class_float>` **subsurf_scatter_strength**
+
++----------+-------------------------------------------+
+| *Setter* | set_subsurface_scattering_strength(value) |
++----------+-------------------------------------------+
+| *Getter* | get_subsurface_scattering_strength()      |
++----------+-------------------------------------------+
 
   .. _class_SpatialMaterial_subsurf_scatter_texture:
 
 - :ref:`Texture<class_Texture>` **subsurf_scatter_texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_transmission:
 
 - :ref:`Color<class_Color>` **transmission**
+
++----------+-------------------------+
+| *Setter* | set_transmission(value) |
++----------+-------------------------+
+| *Getter* | get_transmission()      |
++----------+-------------------------+
 
   .. _class_SpatialMaterial_transmission_enabled:
 
 - :ref:`bool<class_bool>` **transmission_enabled**
 
++----------+--------------------+
+| *Setter* | set_feature(value) |
++----------+--------------------+
+| *Getter* | get_feature()      |
++----------+--------------------+
+
   .. _class_SpatialMaterial_transmission_texture:
 
 - :ref:`Texture<class_Texture>` **transmission_texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
   .. _class_SpatialMaterial_uv1_offset:
 
 - :ref:`Vector3<class_Vector3>` **uv1_offset**
 
++----------+-----------------------+
+| *Setter* | set_uv1_offset(value) |
++----------+-----------------------+
+| *Getter* | get_uv1_offset()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_uv1_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv1_scale**
+
++----------+----------------------+
+| *Setter* | set_uv1_scale(value) |
++----------+----------------------+
+| *Getter* | get_uv1_scale()      |
++----------+----------------------+
 
   .. _class_SpatialMaterial_uv1_triplanar:
 
 - :ref:`bool<class_bool>` **uv1_triplanar**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_uv1_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv1_triplanar_sharpness**
+
++----------+------------------------------------------+
+| *Setter* | set_uv1_triplanar_blend_sharpness(value) |
++----------+------------------------------------------+
+| *Getter* | get_uv1_triplanar_blend_sharpness()      |
++----------+------------------------------------------+
 
   .. _class_SpatialMaterial_uv2_offset:
 
 - :ref:`Vector3<class_Vector3>` **uv2_offset**
 
++----------+-----------------------+
+| *Setter* | set_uv2_offset(value) |
++----------+-----------------------+
+| *Getter* | get_uv2_offset()      |
++----------+-----------------------+
+
   .. _class_SpatialMaterial_uv2_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv2_scale**
+
++----------+----------------------+
+| *Setter* | set_uv2_scale(value) |
++----------+----------------------+
+| *Getter* | get_uv2_scale()      |
++----------+----------------------+
 
   .. _class_SpatialMaterial_uv2_triplanar:
 
 - :ref:`bool<class_bool>` **uv2_triplanar**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_uv2_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv2_triplanar_sharpness**
+
++----------+------------------------------------------+
+| *Setter* | set_uv2_triplanar_blend_sharpness(value) |
++----------+------------------------------------------+
+| *Getter* | get_uv2_triplanar_blend_sharpness()      |
++----------+------------------------------------------+
 
   .. _class_SpatialMaterial_vertex_color_is_srgb:
 
 - :ref:`bool<class_bool>` **vertex_color_is_srgb**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
+
   .. _class_SpatialMaterial_vertex_color_use_as_albedo:
 
 - :ref:`bool<class_bool>` **vertex_color_use_as_albedo**
 
++----------+-----------------+
+| *Setter* | set_flag(value) |
++----------+-----------------+
+| *Getter* | get_flag()      |
++----------+-----------------+
 

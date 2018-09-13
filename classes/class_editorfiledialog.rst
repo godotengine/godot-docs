@@ -8,12 +8,34 @@ EditorFileDialog
 ================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`Access<enum_EditorFileDialog_Access>`           | :ref:`access<class_EditorFileDialog_access>`                                       |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`current_dir<class_EditorFileDialog_current_dir>`                             |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`current_file<class_EditorFileDialog_current_file>`                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`current_path<class_EditorFileDialog_current_path>`                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`disable_overwrite_warning<class_EditorFileDialog_disable_overwrite_warning>` |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` | :ref:`display_mode<class_EditorFileDialog_display_mode>`                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`Mode<enum_EditorFileDialog_Mode>`               | :ref:`mode<class_EditorFileDialog_mode>`                                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`show_hidden_files<class_EditorFileDialog_show_hidden_files>`                 |
++-------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -31,31 +53,30 @@ Methods
 Signals
 -------
 
-.. _class_EditorFileDialog_dir_selected:
+  .. _class_EditorFileDialog_dir_selected:
 
 - **dir_selected** **(** :ref:`String<class_String>` dir **)**
 
 Emitted when a directory is selected.
 
-.. _class_EditorFileDialog_file_selected:
+  .. _class_EditorFileDialog_file_selected:
 
 - **file_selected** **(** :ref:`String<class_String>` path **)**
 
 Emitted when a file is selected.
 
-.. _class_EditorFileDialog_files_selected:
+  .. _class_EditorFileDialog_files_selected:
 
 - **files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
 
 Emitted when multiple files are selected.
-
 
 Enumerations
 ------------
 
   .. _enum_EditorFileDialog_Access:
 
-enum **Access**
+enum **Access**:
 
 - **ACCESS_RESOURCES** = **0** --- The ``EditorFileDialog`` can only view ``res://`` directory contents.
 - **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
@@ -63,14 +84,14 @@ enum **Access**
 
   .. _enum_EditorFileDialog_DisplayMode:
 
-enum **DisplayMode**
+enum **DisplayMode**:
 
 - **DISPLAY_THUMBNAILS** = **0** --- The ``EditorFileDialog`` displays resources as thumbnails.
 - **DISPLAY_LIST** = **1** --- The ``EditorFileDialog`` displays resources as a list of filenames.
 
   .. _enum_EditorFileDialog_Mode:
 
-enum **Mode**
+enum **Mode**:
 
 - **MODE_OPEN_FILE** = **0** --- The ``EditorFileDialog`` can select only one file. Accepting the window will open the file.
 - **MODE_OPEN_FILES** = **1** --- The ``EditorFileDialog`` can select multiple files. Accepting the window will open all files.
@@ -78,47 +99,109 @@ enum **Mode**
 - **MODE_OPEN_ANY** = **3** --- The ``EditorFileDialog`` can select a file or directory. Accepting the window will open it.
 - **MODE_SAVE_FILE** = **4** --- The ``EditorFileDialog`` can select only one file. Accepting the window will save the file.
 
-
 Property Descriptions
 ---------------------
 
   .. _class_EditorFileDialog_access:
 
-- :ref:`Access<enum_EditorFileDialog_Access>` **access** - The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
+- :ref:`Access<enum_EditorFileDialog_Access>` **access**
+
++----------+-------------------+
+| *Setter* | set_access(value) |
++----------+-------------------+
+| *Getter* | get_access()      |
++----------+-------------------+
+
+The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
 
   .. _class_EditorFileDialog_current_dir:
 
-- :ref:`String<class_String>` **current_dir** - The currently occupied directory.
+- :ref:`String<class_String>` **current_dir**
+
++----------+------------------------+
+| *Setter* | set_current_dir(value) |
++----------+------------------------+
+| *Getter* | get_current_dir()      |
++----------+------------------------+
+
+The currently occupied directory.
 
   .. _class_EditorFileDialog_current_file:
 
-- :ref:`String<class_String>` **current_file** - The currently selected file.
+- :ref:`String<class_String>` **current_file**
+
++----------+-------------------------+
+| *Setter* | set_current_file(value) |
++----------+-------------------------+
+| *Getter* | get_current_file()      |
++----------+-------------------------+
+
+The currently selected file.
 
   .. _class_EditorFileDialog_current_path:
 
-- :ref:`String<class_String>` **current_path** - The file system path in the address bar.
+- :ref:`String<class_String>` **current_path**
+
++----------+-------------------------+
+| *Setter* | set_current_path(value) |
++----------+-------------------------+
+| *Getter* | get_current_path()      |
++----------+-------------------------+
+
+The file system path in the address bar.
 
   .. _class_EditorFileDialog_disable_overwrite_warning:
 
-- :ref:`bool<class_bool>` **disable_overwrite_warning** - If ``true`` the ``EditorFileDialog`` will not warn the user before overwriting files.
+- :ref:`bool<class_bool>` **disable_overwrite_warning**
+
++----------+--------------------------------------+
+| *Setter* | set_disable_overwrite_warning(value) |
++----------+--------------------------------------+
+| *Getter* | is_overwrite_warning_disabled()      |
++----------+--------------------------------------+
+
+If ``true`` the ``EditorFileDialog`` will not warn the user before overwriting files.
 
   .. _class_EditorFileDialog_display_mode:
 
-- :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode** - The view format in which the ``EditorFileDialog`` displays resources to the user.
+- :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode**
+
++----------+-------------------------+
+| *Setter* | set_display_mode(value) |
++----------+-------------------------+
+| *Getter* | get_display_mode()      |
++----------+-------------------------+
+
+The view format in which the ``EditorFileDialog`` displays resources to the user.
 
   .. _class_EditorFileDialog_mode:
 
-- :ref:`Mode<enum_EditorFileDialog_Mode>` **mode** - The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
+- :ref:`Mode<enum_EditorFileDialog_Mode>` **mode**
+
++----------+-----------------+
+| *Setter* | set_mode(value) |
++----------+-----------------+
+| *Getter* | get_mode()      |
++----------+-----------------+
+
+The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
 
   .. _class_EditorFileDialog_show_hidden_files:
 
-- :ref:`bool<class_bool>` **show_hidden_files** - If ``true`` hidden files and directories will be visible in the ``EditorFileDialog``.
+- :ref:`bool<class_bool>` **show_hidden_files**
 
++----------+------------------------------+
+| *Setter* | set_show_hidden_files(value) |
++----------+------------------------------+
+| *Getter* | is_showing_hidden_files()    |
++----------+------------------------------+
+
+If ``true`` hidden files and directories will be visible in the ``EditorFileDialog``.
 
 Method Descriptions
 -------------------
 
-.. _class_EditorFileDialog_add_filter:
+  .. _class_EditorFileDialog_add_filter:
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
@@ -126,22 +209,21 @@ Adds a comma-delimited file extension filter option to the ``EditorFileDialog`` 
 
 Example: "\*.tscn, \*.scn; Scenes", results in filter text "Scenes (\*.tscn, \*.scn)".
 
-.. _class_EditorFileDialog_clear_filters:
+  .. _class_EditorFileDialog_clear_filters:
 
 - void **clear_filters** **(** **)**
 
 Removes all filters except for "All Files (\*)".
 
-.. _class_EditorFileDialog_get_vbox:
+  .. _class_EditorFileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
 Returns the ``VBoxContainer`` used to display the file system.
 
-.. _class_EditorFileDialog_invalidate:
+  .. _class_EditorFileDialog_invalidate:
 
 - void **invalidate** **(** **)**
 
 Notify the ``EditorFileDialog`` that its view of the data is no longer accurate. Updates the view contents on next view update.
-
 

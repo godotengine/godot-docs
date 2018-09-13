@@ -8,12 +8,22 @@ VisualScriptOperator
 ====================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------------------------------------+------------------------------------------------------+
+| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_operator>` |
++-------------------------------------------------------------+------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_type>`         |
++-------------------------------------------------------------+------------------------------------------------------+
 
 Description
 -----------
@@ -35,8 +45,19 @@ Property Descriptions
 
 - :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
 
++----------+---------------------+
+| *Setter* | set_operator(value) |
++----------+---------------------+
+| *Getter* | get_operator()      |
++----------+---------------------+
+
   .. _class_VisualScriptOperator_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
++----------+------------------+
+| *Setter* | set_typed(value) |
++----------+------------------+
+| *Getter* | get_typed()      |
++----------+------------------+
 

@@ -8,6 +8,7 @@ LinkButton
 ==========
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,17 +16,42 @@ Brief Description
 
 Simple button used to represent a link to some resource.
 
+Properties
+----------
+
++-----------------------------------------------------+----------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_text>`           |
++-----------------------------------------------------+----------------------------------------------+
+| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_underline>` |
++-----------------------------------------------------+----------------------------------------------+
+
+Theme Properties
+----------------
+
++---------------------------------+----------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_focus>`                           |
++---------------------------------+----------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_font>`                             |
++---------------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_font_color>`                 |
++---------------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_LinkButton_font_color_hover>`     |
++---------------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_LinkButton_font_color_pressed>` |
++---------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_underline_spacing>`   |
++---------------------------------+----------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_LinkButton_UnderlineMode:
 
-enum **UnderlineMode**
+enum **UnderlineMode**:
 
 - **UNDERLINE_MODE_ALWAYS** = **0** --- The LinkButton will always show an underline at the bottom of its text
 - **UNDERLINE_MODE_ON_HOVER** = **1** --- The LinkButton will show an underline at the bottom of its text when the mouse cursor is over it.
 - **UNDERLINE_MODE_NEVER** = **2** --- The LinkButton will never show an underline at the bottom of its text.
-
 
 Description
 -----------
@@ -39,8 +65,19 @@ Property Descriptions
 
 - :ref:`String<class_String>` **text**
 
++----------+-----------------+
+| *Setter* | set_text(value) |
++----------+-----------------+
+| *Getter* | get_text()      |
++----------+-----------------+
+
   .. _class_LinkButton_underline:
 
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
 
++----------+---------------------------+
+| *Setter* | set_underline_mode(value) |
++----------+---------------------------+
+| *Getter* | get_underline_mode()      |
++----------+---------------------------+
 

@@ -8,12 +8,28 @@ PrismMesh
 =========
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Properties
+----------
+
++-------------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_left_to_right>`       |
++-------------------------------+-----------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_size>`                         |
++-------------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_subdivide_depth>`   |
++-------------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_height<class_PrismMesh_subdivide_height>` |
++-------------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PrismMesh_subdivide_width>`   |
++-------------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -25,22 +41,61 @@ Property Descriptions
 
   .. _class_PrismMesh_left_to_right:
 
-- :ref:`float<class_float>` **left_to_right** - Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottome left edge. Defaults to 0.5 (positioned on the midpoint).
+- :ref:`float<class_float>` **left_to_right**
+
++----------+--------------------------+
+| *Setter* | set_left_to_right(value) |
++----------+--------------------------+
+| *Getter* | get_left_to_right()      |
++----------+--------------------------+
+
+Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottome left edge. Defaults to 0.5 (positioned on the midpoint).
 
   .. _class_PrismMesh_size:
 
-- :ref:`Vector3<class_Vector3>` **size** - Size of the prism. Defaults to (2.0, 2.0, 2.0).
+- :ref:`Vector3<class_Vector3>` **size**
+
++----------+-----------------+
+| *Setter* | set_size(value) |
++----------+-----------------+
+| *Getter* | get_size()      |
++----------+-----------------+
+
+Size of the prism. Defaults to (2.0, 2.0, 2.0).
 
   .. _class_PrismMesh_subdivide_depth:
 
-- :ref:`int<class_int>` **subdivide_depth** - Number of added edge loops along the z-axis. Defaults to 0.
+- :ref:`int<class_int>` **subdivide_depth**
+
++----------+----------------------------+
+| *Setter* | set_subdivide_depth(value) |
++----------+----------------------------+
+| *Getter* | get_subdivide_depth()      |
++----------+----------------------------+
+
+Number of added edge loops along the z-axis. Defaults to 0.
 
   .. _class_PrismMesh_subdivide_height:
 
-- :ref:`int<class_int>` **subdivide_height** - Number of added edge loops along the y-axis. Defaults to 0.
+- :ref:`int<class_int>` **subdivide_height**
+
++----------+-----------------------------+
+| *Setter* | set_subdivide_height(value) |
++----------+-----------------------------+
+| *Getter* | get_subdivide_height()      |
++----------+-----------------------------+
+
+Number of added edge loops along the y-axis. Defaults to 0.
 
   .. _class_PrismMesh_subdivide_width:
 
-- :ref:`int<class_int>` **subdivide_width** - Number of added edge loops along the x-axis. Defaults to 0.
+- :ref:`int<class_int>` **subdivide_width**
 
++----------+----------------------------+
+| *Setter* | set_subdivide_width(value) |
++----------+----------------------------+
+| *Getter* | get_subdivide_width()      |
++----------+----------------------------+
+
+Number of added edge loops along the x-axis. Defaults to 0.
 

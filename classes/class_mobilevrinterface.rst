@@ -8,12 +8,30 @@ MobileVRInterface
 =================
 
 **Inherits:** :ref:`ARVRInterface<class_ARVRInterface>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Generic mobile VR implementation
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_display_to_lens>` |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_display_width>`     |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_iod>`                         |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_k1>`                           |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_k2>`                           |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_oversample>`           |
++---------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -27,26 +45,73 @@ Property Descriptions
 
   .. _class_MobileVRInterface_display_to_lens:
 
-- :ref:`float<class_float>` **display_to_lens** - The distance between the display and the lenses inside of the device in centimeters.
+- :ref:`float<class_float>` **display_to_lens**
+
++----------+----------------------------+
+| *Setter* | set_display_to_lens(value) |
++----------+----------------------------+
+| *Getter* | get_display_to_lens()      |
++----------+----------------------------+
+
+The distance between the display and the lenses inside of the device in centimeters.
 
   .. _class_MobileVRInterface_display_width:
 
-- :ref:`float<class_float>` **display_width** - The width of the display in centimeters.
+- :ref:`float<class_float>` **display_width**
+
++----------+--------------------------+
+| *Setter* | set_display_width(value) |
++----------+--------------------------+
+| *Getter* | get_display_width()      |
++----------+--------------------------+
+
+The width of the display in centimeters.
 
   .. _class_MobileVRInterface_iod:
 
-- :ref:`float<class_float>` **iod** - The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
+- :ref:`float<class_float>` **iod**
+
++----------+----------------+
+| *Setter* | set_iod(value) |
++----------+----------------+
+| *Getter* | get_iod()      |
++----------+----------------+
+
+The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
   .. _class_MobileVRInterface_k1:
 
-- :ref:`float<class_float>` **k1** - The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
+- :ref:`float<class_float>` **k1**
+
++----------+---------------+
+| *Setter* | set_k1(value) |
++----------+---------------+
+| *Getter* | get_k1()      |
++----------+---------------+
+
+The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
   .. _class_MobileVRInterface_k2:
 
-- :ref:`float<class_float>` **k2** - The k2 lens factor, see k1.
+- :ref:`float<class_float>` **k2**
+
++----------+---------------+
+| *Setter* | set_k2(value) |
++----------+---------------+
+| *Getter* | get_k2()      |
++----------+---------------+
+
+The k2 lens factor, see k1.
 
   .. _class_MobileVRInterface_oversample:
 
-- :ref:`float<class_float>` **oversample** - The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
+- :ref:`float<class_float>` **oversample**
 
++----------+-----------------------+
+| *Setter* | set_oversample(value) |
++----------+-----------------------+
+| *Getter* | get_oversample()      |
++----------+-----------------------+
+
+The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 

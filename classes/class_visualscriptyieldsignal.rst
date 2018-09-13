@@ -8,6 +8,7 @@ VisualScriptYieldSignal
 =======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,17 +16,29 @@ Brief Description
 
 
 
+Properties
+----------
+
++--------------------------------------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_base_type>` |
++--------------------------------------------------------+-----------------------------------------------------------+
+| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_call_mode>` |
++--------------------------------------------------------+-----------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_node_path>` |
++--------------------------------------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_signal>`       |
++--------------------------------------------------------+-----------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualScriptYieldSignal_CallMode:
 
-enum **CallMode**
+enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
-
 
 Property Descriptions
 ---------------------
@@ -34,16 +47,39 @@ Property Descriptions
 
 - :ref:`String<class_String>` **base_type**
 
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
+
   .. _class_VisualScriptYieldSignal_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
+
++----------+----------------------+
+| *Setter* | set_call_mode(value) |
++----------+----------------------+
+| *Getter* | get_call_mode()      |
++----------+----------------------+
 
   .. _class_VisualScriptYieldSignal_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 
++----------+----------------------+
+| *Setter* | set_base_path(value) |
++----------+----------------------+
+| *Getter* | get_base_path()      |
++----------+----------------------+
+
   .. _class_VisualScriptYieldSignal_signal:
 
 - :ref:`String<class_String>` **signal**
 
++----------+-------------------+
+| *Setter* | set_signal(value) |
++----------+-------------------+
+| *Getter* | get_signal()      |
++----------+-------------------+
 

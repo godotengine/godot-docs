@@ -8,12 +8,28 @@ Engine
 ======
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Access to basic engine properties.
+
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`editor_hint<class_Engine_editor_hint>`                     |
++---------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`iterations_per_second<class_Engine_iterations_per_second>` |
++---------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_physics_jitter_fix>`       |
++---------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_target_fps>`                       |
++---------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_time_scale>`                       |
++---------------------------+------------------------------------------------------------------+
 
 Methods
 -------
@@ -54,29 +70,66 @@ Property Descriptions
 
   .. _class_Engine_editor_hint:
 
-- :ref:`bool<class_bool>` **editor_hint** - If ``true``, it is running inside the editor. Useful for tool scripts.
+- :ref:`bool<class_bool>` **editor_hint**
+
++----------+------------------------+
+| *Setter* | set_editor_hint(value) |
++----------+------------------------+
+| *Getter* | is_editor_hint()       |
++----------+------------------------+
+
+If ``true``, it is running inside the editor. Useful for tool scripts.
 
   .. _class_Engine_iterations_per_second:
 
-- :ref:`int<class_int>` **iterations_per_second** - The number of fixed iterations per second (for fixed process and physics).
+- :ref:`int<class_int>` **iterations_per_second**
+
++----------+----------------------------------+
+| *Setter* | set_iterations_per_second(value) |
++----------+----------------------------------+
+| *Getter* | get_iterations_per_second()      |
++----------+----------------------------------+
+
+The number of fixed iterations per second (for fixed process and physics).
 
   .. _class_Engine_physics_jitter_fix:
 
 - :ref:`float<class_float>` **physics_jitter_fix**
 
++----------+-------------------------------+
+| *Setter* | set_physics_jitter_fix(value) |
++----------+-------------------------------+
+| *Getter* | get_physics_jitter_fix()      |
++----------+-------------------------------+
+
   .. _class_Engine_target_fps:
 
-- :ref:`int<class_int>` **target_fps** - The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
+- :ref:`int<class_int>` **target_fps**
+
++----------+-----------------------+
+| *Setter* | set_target_fps(value) |
++----------+-----------------------+
+| *Getter* | get_target_fps()      |
++----------+-----------------------+
+
+The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
 
   .. _class_Engine_time_scale:
 
-- :ref:`float<class_float>` **time_scale** - Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
+- :ref:`float<class_float>` **time_scale**
 
++----------+-----------------------+
+| *Setter* | set_time_scale(value) |
++----------+-----------------------+
+| *Getter* | get_time_scale()      |
++----------+-----------------------+
+
+Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
 
 Method Descriptions
 -------------------
 
-.. _class_Engine_get_author_info:
+  .. _class_Engine_get_author_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** const
 
@@ -90,7 +143,7 @@ Returns engine author information in a Dictionary.
 
 "developers" - Array of Strings, developer names
 
-.. _class_Engine_get_copyright_info:
+  .. _class_Engine_get_copyright_info:
 
 - :ref:`Array<class_Array>` **get_copyright_info** **(** **)** const
 
@@ -100,7 +153,7 @@ Returns an Array of copyright information Dictionaries.
 
 "parts" - Array of Dictionaries {"files", "copyright", "license"} describing subsections of the component
 
-.. _class_Engine_get_donor_info:
+  .. _class_Engine_get_donor_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_donor_info** **(** **)** const
 
@@ -108,41 +161,41 @@ Returns a Dictionary of Arrays of donor names.
 
 {"platinum_sponsors", "gold_sponsors", "mini_sponsors", "gold_donors", "silver_donors", "bronze_donors"}
 
-.. _class_Engine_get_frames_drawn:
+  .. _class_Engine_get_frames_drawn:
 
 - :ref:`int<class_int>` **get_frames_drawn** **(** **)**
 
 Returns the total number of frames drawn.
 
-.. _class_Engine_get_frames_per_second:
+  .. _class_Engine_get_frames_per_second:
 
 - :ref:`float<class_float>` **get_frames_per_second** **(** **)** const
 
 Returns the frames per second of the running game.
 
-.. _class_Engine_get_license_info:
+  .. _class_Engine_get_license_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_license_info** **(** **)** const
 
 Returns Dictionary of licenses used by Godot and included third party components.
 
-.. _class_Engine_get_license_text:
+  .. _class_Engine_get_license_text:
 
 - :ref:`String<class_String>` **get_license_text** **(** **)** const
 
 Returns Godot license text.
 
-.. _class_Engine_get_main_loop:
+  .. _class_Engine_get_main_loop:
 
 - :ref:`MainLoop<class_MainLoop>` **get_main_loop** **(** **)** const
 
 Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`SceneTree<class_SceneTree>`).
 
-.. _class_Engine_get_singleton:
+  .. _class_Engine_get_singleton:
 
 - :ref:`Object<class_Object>` **get_singleton** **(** :ref:`String<class_String>` name **)** const
 
-.. _class_Engine_get_version_info:
+  .. _class_Engine_get_version_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_version_info** **(** **)** const
 
@@ -160,14 +213,13 @@ Returns the current engine version information in a Dictionary.
 
 "string"   - major + minor + patch + status + build in a single String
 
-.. _class_Engine_has_singleton:
+  .. _class_Engine_has_singleton:
 
 - :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_String>` name **)** const
 
-.. _class_Engine_is_in_physics_frame:
+  .. _class_Engine_is_in_physics_frame:
 
 - :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** const
 
 Returns ``true`` if the game is inside the fixed process and physics phase of the game loop.
-
 

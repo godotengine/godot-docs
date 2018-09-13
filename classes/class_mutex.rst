@@ -8,6 +8,7 @@ Mutex
 =====
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -34,22 +35,21 @@ A synchronization Mutex. Element used to synchronize multiple :ref:`Thread<class
 Method Descriptions
 -------------------
 
-.. _class_Mutex_lock:
+  .. _class_Mutex_lock:
 
 - void **lock** **(** **)**
 
 Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
-.. _class_Mutex_try_lock:
+  .. _class_Mutex_try_lock:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
 
 Try locking this ``Mutex``, does not block. Returns OK on success, ERR_BUSY otherwise.
 
-.. _class_Mutex_unlock:
+  .. _class_Mutex_unlock:
 
 - void **unlock** **(** **)**
 
 Unlock this ``Mutex``, leaving it to other threads.
-
 

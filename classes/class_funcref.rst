@@ -8,6 +8,7 @@ FuncRef
 =======
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -36,22 +37,21 @@ However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDSc
 Method Descriptions
 -------------------
 
-.. _class_FuncRef_call_func:
+  .. _class_FuncRef_call_func:
 
 - :ref:`Variant<class_Variant>` **call_func** **(** **)** vararg
 
 Calls the referenced function previously set by :ref:`set_function<class_FuncRef_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_funcref>`.
 
-.. _class_FuncRef_set_function:
+  .. _class_FuncRef_set_function:
 
 - void **set_function** **(** :ref:`String<class_String>` name **)**
 
 The name of the referenced function to call on the object, without parentheses or any parameters.
 
-.. _class_FuncRef_set_instance:
+  .. _class_FuncRef_set_instance:
 
 - void **set_instance** **(** :ref:`Object<class_Object>` instance **)**
 
 The object containing the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_Object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_Vector2>` or :ref:`Dictionary<class_Dictionary>`.
-
 

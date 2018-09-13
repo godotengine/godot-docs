@@ -8,12 +8,22 @@ CurveTexture
 ============
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A texture that shows a curve.
+
+Properties
+----------
+
++---------------------------+----------------------------------------+
+| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_curve>` |
++---------------------------+----------------------------------------+
+| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_width>` |
++---------------------------+----------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_CurveTexture_curve:
 
-- :ref:`Curve<class_Curve>` **curve** - The ``curve`` rendered onto the texture.
+- :ref:`Curve<class_Curve>` **curve**
+
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
+
+The ``curve`` rendered onto the texture.
 
   .. _class_CurveTexture_width:
 
-- :ref:`int<class_int>` **width** - The width of the texture.
+- :ref:`int<class_int>` **width**
 
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
+
+The width of the texture.
 

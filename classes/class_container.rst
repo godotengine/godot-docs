@@ -8,7 +8,9 @@ Container
 =========
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PanelContainer<class_PanelContainer>`, :ref:`GridContainer<class_GridContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`ViewportContainer<class_ViewportContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`TabContainer<class_TabContainer>`, :ref:`GraphNode<class_GraphNode>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`BoxContainer<class_BoxContainer>`, :ref:`EditorProperty<class_EditorProperty>`
+
 **Category:** Core
 
 Brief Description
@@ -28,18 +30,16 @@ Methods
 Signals
 -------
 
-.. _class_Container_sort_children:
+  .. _class_Container_sort_children:
 
 - **sort_children** **(** **)**
 
 Emitted when sorting the children is needed.
 
-
 Constants
 ---------
 
 - **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
-
 Description
 -----------
 
@@ -50,16 +50,15 @@ A Control can inherit this to create custom container classes.
 Method Descriptions
 -------------------
 
-.. _class_Container_fit_child_in_rect:
+  .. _class_Container_fit_child_in_rect:
 
 - void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
-.. _class_Container_queue_sort:
+  .. _class_Container_queue_sort:
 
 - void **queue_sort** **(** **)**
 
 Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
-
 

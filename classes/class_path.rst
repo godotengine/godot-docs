@@ -8,6 +8,7 @@ Path
 ====
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,13 +16,19 @@ Brief Description
 
 Container for a :ref:`Curve3D<class_Curve3D>`.
 
+Properties
+----------
+
++-------------------------------+--------------------------------+
+| :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path_curve>` |
++-------------------------------+--------------------------------+
+
 Signals
 -------
 
-.. _class_Path_curve_changed:
+  .. _class_Path_curve_changed:
 
 - **curve_changed** **(** **)**
-
 
 Description
 -----------
@@ -35,4 +42,9 @@ Property Descriptions
 
 - :ref:`Curve3D<class_Curve3D>` **curve**
 
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
 

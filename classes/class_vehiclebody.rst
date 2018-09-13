@@ -8,12 +8,24 @@ VehicleBody
 ===========
 
 **Inherits:** :ref:`RigidBody<class_RigidBody>` **<** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Physics body that simulates the behaviour of a car.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_brake>`               |
++---------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_engine_force>` |
++---------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_steering>`         |
++---------------------------+-----------------------------------------------------+
 
 Description
 -----------
@@ -27,16 +39,39 @@ Property Descriptions
 
   .. _class_VehicleBody_brake:
 
-- :ref:`float<class_float>` **brake** - Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
+- :ref:`float<class_float>` **brake**
+
++----------+------------------+
+| *Setter* | set_brake(value) |
++----------+------------------+
+| *Getter* | get_brake()      |
++----------+------------------+
+
+Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
   .. _class_VehicleBody_engine_force:
 
-- :ref:`float<class_float>` **engine_force** - Accelerates the vehicle by applying an engine force. The vehicle is only speed up if the wheels that have :ref:`VehicleWheel.set_use_as_traction<class_VehicleWheel_set_use_as_traction>` set to true and are in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration. Note that the simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
+- :ref:`float<class_float>` **engine_force**
+
++----------+-------------------------+
+| *Setter* | set_engine_force(value) |
++----------+-------------------------+
+| *Getter* | get_engine_force()      |
++----------+-------------------------+
+
+Accelerates the vehicle by applying an engine force. The vehicle is only speed up if the wheels that have :ref:`VehicleWheel.set_use_as_traction<class_VehicleWheel_set_use_as_traction>` set to true and are in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration. Note that the simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 
 A negative value will result in the vehicle reversing.
 
   .. _class_VehicleBody_steering:
 
-- :ref:`float<class_float>` **steering** - The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.set_use_as_steering<class_VehicleWheel_set_use_as_steering>` set to true will automatically be rotated.
+- :ref:`float<class_float>` **steering**
 
++----------+---------------------+
+| *Setter* | set_steering(value) |
++----------+---------------------+
+| *Getter* | get_steering()      |
++----------+---------------------+
+
+The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel.set_use_as_steering<class_VehicleWheel_set_use_as_steering>` set to true will automatically be rotated.
 

@@ -8,6 +8,7 @@ Generic6DOFJoint
 ================
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,137 @@ Brief Description
 
 The generic 6 degrees of freedom joint can implement a variety of joint-types by locking certain axes' rotation or translation.
 
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/damping<class_Generic6DOFJoint_angular_limit_x/damping>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_x/enabled<class_Generic6DOFJoint_angular_limit_x/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/erp<class_Generic6DOFJoint_angular_limit_x/erp>`                         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/force_limit<class_Generic6DOFJoint_angular_limit_x/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/lower_angle<class_Generic6DOFJoint_angular_limit_x/lower_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/restitution<class_Generic6DOFJoint_angular_limit_x/restitution>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/softness<class_Generic6DOFJoint_angular_limit_x/softness>`               |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/upper_angle<class_Generic6DOFJoint_angular_limit_x/upper_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/damping<class_Generic6DOFJoint_angular_limit_y/damping>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_y/enabled<class_Generic6DOFJoint_angular_limit_y/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/erp<class_Generic6DOFJoint_angular_limit_y/erp>`                         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/force_limit<class_Generic6DOFJoint_angular_limit_y/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/lower_angle<class_Generic6DOFJoint_angular_limit_y/lower_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/restitution<class_Generic6DOFJoint_angular_limit_y/restitution>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/softness<class_Generic6DOFJoint_angular_limit_y/softness>`               |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/upper_angle<class_Generic6DOFJoint_angular_limit_y/upper_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/damping<class_Generic6DOFJoint_angular_limit_z/damping>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_z/enabled<class_Generic6DOFJoint_angular_limit_z/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/erp<class_Generic6DOFJoint_angular_limit_z/erp>`                         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/force_limit<class_Generic6DOFJoint_angular_limit_z/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/lower_angle<class_Generic6DOFJoint_angular_limit_z/lower_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/restitution<class_Generic6DOFJoint_angular_limit_z/restitution>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/softness<class_Generic6DOFJoint_angular_limit_z/softness>`               |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/upper_angle<class_Generic6DOFJoint_angular_limit_z/upper_angle>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_x/enabled<class_Generic6DOFJoint_angular_motor_x/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_x/force_limit<class_Generic6DOFJoint_angular_motor_x/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_x/target_velocity<class_Generic6DOFJoint_angular_motor_x/target_velocity>` |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_y/enabled<class_Generic6DOFJoint_angular_motor_y/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_y/force_limit<class_Generic6DOFJoint_angular_motor_y/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_y/target_velocity<class_Generic6DOFJoint_angular_motor_y/target_velocity>` |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_z/enabled<class_Generic6DOFJoint_angular_motor_z/enabled>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_z/force_limit<class_Generic6DOFJoint_angular_motor_z/force_limit>`         |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_z/target_velocity<class_Generic6DOFJoint_angular_motor_z/target_velocity>` |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/damping<class_Generic6DOFJoint_linear_limit_x/damping>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_x/enabled<class_Generic6DOFJoint_linear_limit_x/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/lower_distance<class_Generic6DOFJoint_linear_limit_x/lower_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/restitution<class_Generic6DOFJoint_linear_limit_x/restitution>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/softness<class_Generic6DOFJoint_linear_limit_x/softness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/upper_distance<class_Generic6DOFJoint_linear_limit_x/upper_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/damping<class_Generic6DOFJoint_linear_limit_y/damping>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_y/enabled<class_Generic6DOFJoint_linear_limit_y/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/lower_distance<class_Generic6DOFJoint_linear_limit_y/lower_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/restitution<class_Generic6DOFJoint_linear_limit_y/restitution>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/softness<class_Generic6DOFJoint_linear_limit_y/softness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/upper_distance<class_Generic6DOFJoint_linear_limit_y/upper_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/damping<class_Generic6DOFJoint_linear_limit_z/damping>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_z/enabled<class_Generic6DOFJoint_linear_limit_z/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/lower_distance<class_Generic6DOFJoint_linear_limit_z/lower_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/restitution<class_Generic6DOFJoint_linear_limit_z/restitution>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/softness<class_Generic6DOFJoint_linear_limit_z/softness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/upper_distance<class_Generic6DOFJoint_linear_limit_z/upper_distance>`     |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_x/enabled<class_Generic6DOFJoint_linear_motor_x/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_x/force_limit<class_Generic6DOFJoint_linear_motor_x/force_limit>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_x/target_velocity<class_Generic6DOFJoint_linear_motor_x/target_velocity>`   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_y/enabled<class_Generic6DOFJoint_linear_motor_y/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_y/force_limit<class_Generic6DOFJoint_linear_motor_y/force_limit>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_y/target_velocity<class_Generic6DOFJoint_linear_motor_y/target_velocity>`   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_z/enabled<class_Generic6DOFJoint_linear_motor_z/enabled>`                   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_z/force_limit<class_Generic6DOFJoint_linear_motor_z/force_limit>`           |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_z/target_velocity<class_Generic6DOFJoint_linear_motor_z/target_velocity>`   |
++---------------------------+------------------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_Generic6DOFJoint_Flag:
 
-enum **Flag**
+enum **Flag**:
 
 - **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
 - **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
@@ -30,7 +156,7 @@ enum **Flag**
 
   .. _enum_Generic6DOFJoint_Param:
 
-enum **Param**
+enum **Param**:
 
 - **PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
 - **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
@@ -50,7 +176,6 @@ enum **Param**
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
 - **PARAM_MAX** = **16** --- End flag of PARAM\_\* constants, used internally.
 
-
 Description
 -----------
 
@@ -61,244 +186,687 @@ Property Descriptions
 
   .. _class_Generic6DOFJoint_angular_limit_x/damping:
 
-- :ref:`float<class_float>` **angular_limit_x/damping** - The amount of rotational damping across the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/damping**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The amount of rotational damping across the x-axis.
 
 The lower, the longer an impulse from one side takes to travel to the other side.
 
   .. _class_Generic6DOFJoint_angular_limit_x/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` rotation across the x-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+If ``true`` rotation across the x-axis is limited.
 
   .. _class_Generic6DOFJoint_angular_limit_x/erp:
 
-- :ref:`float<class_float>` **angular_limit_x/erp** - When rotating across x-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_x/erp**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+When rotating across x-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
   .. _class_Generic6DOFJoint_angular_limit_x/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum amount of force that can occur, when rotating around x-axis.
+- :ref:`float<class_float>` **angular_limit_x/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The maximum amount of force that can occur, when rotating around x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_x/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/lower_angle**
+
+The minimum rotation in negative direction to break loose and rotate around the x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_x/restitution:
 
-- :ref:`float<class_float>` **angular_limit_x/restitution** - The amount of rotational restitution across the x-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_x/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The amount of rotational restitution across the x-axis. The lower, the more restitution occurs.
 
   .. _class_Generic6DOFJoint_angular_limit_x/softness:
 
-- :ref:`float<class_float>` **angular_limit_x/softness** - The speed of all rotations across the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/softness**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The speed of all rotations across the x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_x/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/upper_angle**
+
+The minimum rotation in positive direction to break loose and rotate around the x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/damping:
 
-- :ref:`float<class_float>` **angular_limit_y/damping** - The amount of rotational damping across the y-axis. The lower, the more dampening occurs.
+- :ref:`float<class_float>` **angular_limit_y/damping**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The amount of rotational damping across the y-axis. The lower, the more dampening occurs.
 
   .. _class_Generic6DOFJoint_angular_limit_y/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` rotation across the y-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+If ``true`` rotation across the y-axis is limited.
 
   .. _class_Generic6DOFJoint_angular_limit_y/erp:
 
-- :ref:`float<class_float>` **angular_limit_y/erp** - When rotating across y-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_y/erp**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+When rotating across y-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
   .. _class_Generic6DOFJoint_angular_limit_y/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum amount of force that can occur, when rotating around y-axis.
+- :ref:`float<class_float>` **angular_limit_y/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The maximum amount of force that can occur, when rotating around y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/lower_angle**
+
+The minimum rotation in negative direction to break loose and rotate around the y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/restitution:
 
-- :ref:`float<class_float>` **angular_limit_y/restitution** - The amount of rotational restitution across the y-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_y/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The amount of rotational restitution across the y-axis. The lower, the more restitution occurs.
 
   .. _class_Generic6DOFJoint_angular_limit_y/softness:
 
-- :ref:`float<class_float>` **angular_limit_y/softness** - The speed of all rotations across the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/softness**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The speed of all rotations across the y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/upper_angle**
+
+The minimum rotation in positive direction to break loose and rotate around the y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/damping:
 
-- :ref:`float<class_float>` **angular_limit_z/damping** - The amount of rotational damping across the z-axis. The lower, the more dampening occurs.
+- :ref:`float<class_float>` **angular_limit_z/damping**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The amount of rotational damping across the z-axis. The lower, the more dampening occurs.
 
   .. _class_Generic6DOFJoint_angular_limit_z/enabled:
 
-- :ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` rotation across the z-axis is limited.
+- :ref:`bool<class_bool>` **angular_limit_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+If ``true`` rotation across the z-axis is limited.
 
   .. _class_Generic6DOFJoint_angular_limit_z/erp:
 
-- :ref:`float<class_float>` **angular_limit_z/erp** - When rotating across z-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_z/erp**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+When rotating across z-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
   .. _class_Generic6DOFJoint_angular_limit_z/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum amount of force that can occur, when rotating around z-axis.
+- :ref:`float<class_float>` **angular_limit_z/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The maximum amount of force that can occur, when rotating around z-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/lower_angle**
+
+The minimum rotation in negative direction to break loose and rotate around the z-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/restitution:
 
-- :ref:`float<class_float>` **angular_limit_z/restitution** - The amount of rotational restitution across the z-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_z/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The amount of rotational restitution across the z-axis. The lower, the more restitution occurs.
 
   .. _class_Generic6DOFJoint_angular_limit_z/softness:
 
-- :ref:`float<class_float>` **angular_limit_z/softness** - The speed of all rotations across the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/softness**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The speed of all rotations across the z-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/upper_angle**
+
+The minimum rotation in positive direction to break loose and rotate around the z-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_x/enabled:
 
-- :ref:`bool<class_bool>` **angular_motor_x/enabled** - If ``true`` a rotating motor at the x-axis is enabled.
+- :ref:`bool<class_bool>` **angular_motor_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+If ``true`` a rotating motor at the x-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_motor_x/force_limit:
 
-- :ref:`float<class_float>` **angular_motor_x/force_limit** - Maximum acceleration for the motor at the x-axis.
+- :ref:`float<class_float>` **angular_motor_x/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+Maximum acceleration for the motor at the x-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_x/target_velocity:
 
-- :ref:`float<class_float>` **angular_motor_x/target_velocity** - Target speed for the motor at the x-axis.
+- :ref:`float<class_float>` **angular_motor_x/target_velocity**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+Target speed for the motor at the x-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_y/enabled:
 
-- :ref:`bool<class_bool>` **angular_motor_y/enabled** - If ``true`` a rotating motor at the y-axis is enabled.
+- :ref:`bool<class_bool>` **angular_motor_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+If ``true`` a rotating motor at the y-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_motor_y/force_limit:
 
-- :ref:`float<class_float>` **angular_motor_y/force_limit** - Maximum acceleration for the motor at the y-axis.
+- :ref:`float<class_float>` **angular_motor_y/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+Maximum acceleration for the motor at the y-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_y/target_velocity:
 
-- :ref:`float<class_float>` **angular_motor_y/target_velocity** - Target speed for the motor at the y-axis.
+- :ref:`float<class_float>` **angular_motor_y/target_velocity**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+Target speed for the motor at the y-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_z/enabled:
 
-- :ref:`bool<class_bool>` **angular_motor_z/enabled** - If ``true`` a rotating motor at the z-axis is enabled.
+- :ref:`bool<class_bool>` **angular_motor_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+If ``true`` a rotating motor at the z-axis is enabled.
 
   .. _class_Generic6DOFJoint_angular_motor_z/force_limit:
 
-- :ref:`float<class_float>` **angular_motor_z/force_limit** - Maximum acceleration for the motor at the z-axis.
+- :ref:`float<class_float>` **angular_motor_z/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+Maximum acceleration for the motor at the z-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_z/target_velocity:
 
-- :ref:`float<class_float>` **angular_motor_z/target_velocity** - Target speed for the motor at the z-axis.
+- :ref:`float<class_float>` **angular_motor_z/target_velocity**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+Target speed for the motor at the z-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_x/damping:
 
-- :ref:`float<class_float>` **linear_limit_x/damping** - The amount of damping that happens at the x-motion.
+- :ref:`float<class_float>` **linear_limit_x/damping**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The amount of damping that happens at the x-motion.
 
   .. _class_Generic6DOFJoint_linear_limit_x/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the linear motion across the x-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+If ``true`` the linear motion across the x-axis is limited.
 
   .. _class_Generic6DOFJoint_linear_limit_x/lower_distance:
 
-- :ref:`float<class_float>` **linear_limit_x/lower_distance** - The minimum difference between the pivot points' x-axis.
+- :ref:`float<class_float>` **linear_limit_x/lower_distance**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The minimum difference between the pivot points' x-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_x/restitution:
 
-- :ref:`float<class_float>` **linear_limit_x/restitution** - The amount of restitution on the x-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_x/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The amount of restitution on the x-axis movement The lower, the more momentum gets lost.
 
   .. _class_Generic6DOFJoint_linear_limit_x/softness:
 
-- :ref:`float<class_float>` **linear_limit_x/softness** - A factor applied to the movement across the x-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_x/softness**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+A factor applied to the movement across the x-axis The lower, the slower the movement.
 
   .. _class_Generic6DOFJoint_linear_limit_x/upper_distance:
 
-- :ref:`float<class_float>` **linear_limit_x/upper_distance** - The maximum difference between the pivot points' x-axis.
+- :ref:`float<class_float>` **linear_limit_x/upper_distance**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The maximum difference between the pivot points' x-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_y/damping:
 
-- :ref:`float<class_float>` **linear_limit_y/damping** - The amount of damping that happens at the y-motion.
+- :ref:`float<class_float>` **linear_limit_y/damping**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The amount of damping that happens at the y-motion.
 
   .. _class_Generic6DOFJoint_linear_limit_y/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the linear motion across the y-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+If ``true`` the linear motion across the y-axis is limited.
 
   .. _class_Generic6DOFJoint_linear_limit_y/lower_distance:
 
-- :ref:`float<class_float>` **linear_limit_y/lower_distance** - The minimum difference between the pivot points' y-axis.
+- :ref:`float<class_float>` **linear_limit_y/lower_distance**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The minimum difference between the pivot points' y-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_y/restitution:
 
-- :ref:`float<class_float>` **linear_limit_y/restitution** - The amount of restitution on the y-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_y/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The amount of restitution on the y-axis movement The lower, the more momentum gets lost.
 
   .. _class_Generic6DOFJoint_linear_limit_y/softness:
 
-- :ref:`float<class_float>` **linear_limit_y/softness** - A factor applied to the movement across the y-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_y/softness**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+A factor applied to the movement across the y-axis The lower, the slower the movement.
 
   .. _class_Generic6DOFJoint_linear_limit_y/upper_distance:
 
-- :ref:`float<class_float>` **linear_limit_y/upper_distance** - The maximum difference between the pivot points' y-axis.
+- :ref:`float<class_float>` **linear_limit_y/upper_distance**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The maximum difference between the pivot points' y-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_z/damping:
 
-- :ref:`float<class_float>` **linear_limit_z/damping** - The amount of damping that happens at the z-motion.
+- :ref:`float<class_float>` **linear_limit_z/damping**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The amount of damping that happens at the z-motion.
 
   .. _class_Generic6DOFJoint_linear_limit_z/enabled:
 
-- :ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the linear motion across the z-axis is limited.
+- :ref:`bool<class_bool>` **linear_limit_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+If ``true`` the linear motion across the z-axis is limited.
 
   .. _class_Generic6DOFJoint_linear_limit_z/lower_distance:
 
-- :ref:`float<class_float>` **linear_limit_z/lower_distance** - The minimum difference between the pivot points' z-axis.
+- :ref:`float<class_float>` **linear_limit_z/lower_distance**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The minimum difference between the pivot points' z-axis.
 
   .. _class_Generic6DOFJoint_linear_limit_z/restitution:
 
-- :ref:`float<class_float>` **linear_limit_z/restitution** - The amount of restitution on the z-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_z/restitution**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The amount of restitution on the z-axis movement The lower, the more momentum gets lost.
 
   .. _class_Generic6DOFJoint_linear_limit_z/softness:
 
-- :ref:`float<class_float>` **linear_limit_z/softness** - A factor applied to the movement across the z-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_z/softness**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+A factor applied to the movement across the z-axis The lower, the slower the movement.
 
   .. _class_Generic6DOFJoint_linear_limit_z/upper_distance:
 
-- :ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum difference between the pivot points' z-axis.
+- :ref:`float<class_float>` **linear_limit_z/upper_distance**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The maximum difference between the pivot points' z-axis.
 
   .. _class_Generic6DOFJoint_linear_motor_x/enabled:
 
-- :ref:`bool<class_bool>` **linear_motor_x/enabled** - If ``true`` then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
+- :ref:`bool<class_bool>` **linear_motor_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+If ``true`` then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
 
   .. _class_Generic6DOFJoint_linear_motor_x/force_limit:
 
-- :ref:`float<class_float>` **linear_motor_x/force_limit** - The maximum force the linear motor can apply on the x-axis while trying to reach the target velocity.
+- :ref:`float<class_float>` **linear_motor_x/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The maximum force the linear motor can apply on the x-axis while trying to reach the target velocity.
 
   .. _class_Generic6DOFJoint_linear_motor_x/target_velocity:
 
-- :ref:`float<class_float>` **linear_motor_x/target_velocity** - The speed that the linear motor will attempt to reach on the x-axis.
+- :ref:`float<class_float>` **linear_motor_x/target_velocity**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+The speed that the linear motor will attempt to reach on the x-axis.
 
   .. _class_Generic6DOFJoint_linear_motor_y/enabled:
 
-- :ref:`bool<class_bool>` **linear_motor_y/enabled** - If ``true`` then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
+- :ref:`bool<class_bool>` **linear_motor_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+If ``true`` then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
 
   .. _class_Generic6DOFJoint_linear_motor_y/force_limit:
 
-- :ref:`float<class_float>` **linear_motor_y/force_limit** - The maximum force the linear motor can apply on the y-axis while trying to reach the target velocity.
+- :ref:`float<class_float>` **linear_motor_y/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The maximum force the linear motor can apply on the y-axis while trying to reach the target velocity.
 
   .. _class_Generic6DOFJoint_linear_motor_y/target_velocity:
 
-- :ref:`float<class_float>` **linear_motor_y/target_velocity** - The speed that the linear motor will attempt to reach on the y-axis.
+- :ref:`float<class_float>` **linear_motor_y/target_velocity**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+The speed that the linear motor will attempt to reach on the y-axis.
 
   .. _class_Generic6DOFJoint_linear_motor_z/enabled:
 
-- :ref:`bool<class_bool>` **linear_motor_z/enabled** - If ``true`` then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
+- :ref:`bool<class_bool>` **linear_motor_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+If ``true`` then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
 
   .. _class_Generic6DOFJoint_linear_motor_z/force_limit:
 
-- :ref:`float<class_float>` **linear_motor_z/force_limit** - The maximum force the linear motor can apply on the z-axis while trying to reach the target velocity.
+- :ref:`float<class_float>` **linear_motor_z/force_limit**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The maximum force the linear motor can apply on the z-axis while trying to reach the target velocity.
 
   .. _class_Generic6DOFJoint_linear_motor_z/target_velocity:
 
-- :ref:`float<class_float>` **linear_motor_z/target_velocity** - The speed that the linear motor will attempt to reach on the z-axis.
+- :ref:`float<class_float>` **linear_motor_z/target_velocity**
 
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+The speed that the linear motor will attempt to reach on the z-axis.
 

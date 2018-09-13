@@ -8,13 +8,30 @@ ScrollContainer
 ===============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`EditorInspector<class_EditorInspector>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A helper node for displaying scrollable elements (e.g. lists).
+
+Properties
+----------
+
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_scroll_deadzone>`                     |
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_scroll_horizontal>`                 |
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_scroll_horizontal_enabled>` |
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_scroll_vertical>`                     |
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_scroll_vertical_enabled>`     |
++-------------------------+-----------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -25,21 +42,27 @@ Methods
 | :ref:`VScrollBar<class_VScrollBar>`  | :ref:`get_v_scrollbar<class_ScrollContainer_get_v_scrollbar>` **(** **)** |
 +--------------------------------------+---------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ScrollContainer_bg>` |
++---------------------------------+-------------------------------------+
+
 Signals
 -------
 
-.. _class_ScrollContainer_scroll_ended:
+  .. _class_ScrollContainer_scroll_ended:
 
 - **scroll_ended** **(** **)**
 
 Emitted whenever scrolling stops.
 
-.. _class_ScrollContainer_scroll_started:
+  .. _class_ScrollContainer_scroll_started:
 
 - **scroll_started** **(** **)**
 
 Emitted whenever scrolling is started.
-
 
 Description
 -----------
@@ -53,32 +76,68 @@ Property Descriptions
 
 - :ref:`int<class_int>` **scroll_deadzone**
 
++----------+---------------------+
+| *Setter* | set_deadzone(value) |
++----------+---------------------+
+| *Getter* | get_deadzone()      |
++----------+---------------------+
+
   .. _class_ScrollContainer_scroll_horizontal:
 
-- :ref:`int<class_int>` **scroll_horizontal** - The current horizontal scroll value.
+- :ref:`int<class_int>` **scroll_horizontal**
+
++----------+---------------------+
+| *Setter* | set_h_scroll(value) |
++----------+---------------------+
+| *Getter* | get_h_scroll()      |
++----------+---------------------+
+
+The current horizontal scroll value.
 
   .. _class_ScrollContainer_scroll_horizontal_enabled:
 
-- :ref:`bool<class_bool>` **scroll_horizontal_enabled** - If ``true``, enables horizontal scrolling.
+- :ref:`bool<class_bool>` **scroll_horizontal_enabled**
+
++----------+----------------------------+
+| *Setter* | set_enable_h_scroll(value) |
++----------+----------------------------+
+| *Getter* | is_h_scroll_enabled()      |
++----------+----------------------------+
+
+If ``true``, enables horizontal scrolling.
 
   .. _class_ScrollContainer_scroll_vertical:
 
-- :ref:`int<class_int>` **scroll_vertical** - The current vertical scroll value.
+- :ref:`int<class_int>` **scroll_vertical**
+
++----------+---------------------+
+| *Setter* | set_v_scroll(value) |
++----------+---------------------+
+| *Getter* | get_v_scroll()      |
++----------+---------------------+
+
+The current vertical scroll value.
 
   .. _class_ScrollContainer_scroll_vertical_enabled:
 
-- :ref:`bool<class_bool>` **scroll_vertical_enabled** - If ``true``, enables vertical scrolling.
+- :ref:`bool<class_bool>` **scroll_vertical_enabled**
 
++----------+----------------------------+
+| *Setter* | set_enable_v_scroll(value) |
++----------+----------------------------+
+| *Getter* | is_v_scroll_enabled()      |
++----------+----------------------------+
+
+If ``true``, enables vertical scrolling.
 
 Method Descriptions
 -------------------
 
-.. _class_ScrollContainer_get_h_scrollbar:
+  .. _class_ScrollContainer_get_h_scrollbar:
 
 - :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
 
-.. _class_ScrollContainer_get_v_scrollbar:
+  .. _class_ScrollContainer_get_v_scrollbar:
 
 - :ref:`VScrollBar<class_VScrollBar>` **get_v_scrollbar** **(** **)**
-
 

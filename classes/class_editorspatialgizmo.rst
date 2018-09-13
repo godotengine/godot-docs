@@ -8,6 +8,7 @@ EditorSpatialGizmo
 ==================
 
 **Inherits:** :ref:`SpatialGizmo<class_SpatialGizmo>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -56,17 +57,17 @@ Custom gizmo that is used for providing custom visualization and editing (handle
 Method Descriptions
 -------------------
 
-.. _class_EditorSpatialGizmo_add_collision_segments:
+  .. _class_EditorSpatialGizmo_add_collision_segments:
 
 - void **add_collision_segments** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` segments **)**
 
-.. _class_EditorSpatialGizmo_add_collision_triangles:
+  .. _class_EditorSpatialGizmo_add_collision_triangles:
 
 - void **add_collision_triangles** **(** :ref:`TriangleMesh<class_TriangleMesh>` triangles **)**
 
 Add collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_TriangleMesh>` can be generated from a regular :ref:`Mesh<class_Mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
-.. _class_EditorSpatialGizmo_add_handles:
+  .. _class_EditorSpatialGizmo_add_handles:
 
 - void **add_handles** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` handles, :ref:`Material<class_Material>` material, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false **)**
 
@@ -74,27 +75,27 @@ Add a list of handles (points) which can be used to deform the object being edit
 
 There are virtual functions which will be called upon editing of these handles. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
-.. _class_EditorSpatialGizmo_add_lines:
+  .. _class_EditorSpatialGizmo_add_lines:
 
 - void **add_lines** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` lines, :ref:`Material<class_Material>` material, :ref:`bool<class_bool>` billboard=false **)**
 
 Add lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
-.. _class_EditorSpatialGizmo_add_mesh:
+  .. _class_EditorSpatialGizmo_add_mesh:
 
 - void **add_mesh** **(** :ref:`ArrayMesh<class_ArrayMesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_RID>` skeleton **)**
 
-.. _class_EditorSpatialGizmo_add_unscaled_billboard:
+  .. _class_EditorSpatialGizmo_add_unscaled_billboard:
 
 - void **add_unscaled_billboard** **(** :ref:`Material<class_Material>` material, :ref:`float<class_float>` default_scale=1 **)**
 
 Add an unscaled billboard for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
-.. _class_EditorSpatialGizmo_clear:
+  .. _class_EditorSpatialGizmo_clear:
 
 - void **clear** **(** **)**
 
-.. _class_EditorSpatialGizmo_commit_handle:
+  .. _class_EditorSpatialGizmo_commit_handle:
 
 - void **commit_handle** **(** :ref:`int<class_int>` index, :ref:`Variant<class_Variant>` restore, :ref:`bool<class_bool>` cancel=false **)** virtual
 
@@ -102,7 +103,7 @@ Commit a handle being edited (handles must have been previously added by :ref:`a
 
 If the cancel parameter is true, an option to restore the edited value to the original is provided.
 
-.. _class_EditorSpatialGizmo_get_handle_name:
+  .. _class_EditorSpatialGizmo_get_handle_name:
 
 - :ref:`String<class_String>` **get_handle_name** **(** :ref:`int<class_int>` index **)** virtual
 
@@ -110,19 +111,19 @@ Get the name of an edited handle (handles must have been previously added by :re
 
 Handles can be named for reference to the user when editing.
 
-.. _class_EditorSpatialGizmo_get_handle_value:
+  .. _class_EditorSpatialGizmo_get_handle_value:
 
 - :ref:`Variant<class_Variant>` **get_handle_value** **(** :ref:`int<class_int>` index **)** virtual
 
 Get actual value of a handle. This value can be anything and used for eventually undoing the motion when calling :ref:`commit_handle<class_EditorSpatialGizmo_commit_handle>`
 
-.. _class_EditorSpatialGizmo_redraw:
+  .. _class_EditorSpatialGizmo_redraw:
 
 - void **redraw** **(** **)** virtual
 
 This function is called when the Spatial this gizmo refers to changes (the :ref:`Spatial.update_gizmo<class_Spatial_update_gizmo>` is called).
 
-.. _class_EditorSpatialGizmo_set_handle:
+  .. _class_EditorSpatialGizmo_set_handle:
 
 - void **set_handle** **(** :ref:`int<class_int>` index, :ref:`Camera<class_Camera>` camera, :ref:`Vector2<class_Vector2>` point **)** virtual
 
@@ -130,12 +131,11 @@ This function is used when the user drags a gizmo handle (previously added with 
 
 The :ref:`Camera<class_Camera>` is also provided so screen coordinates can be converted to raycasts.
 
-.. _class_EditorSpatialGizmo_set_hidden:
+  .. _class_EditorSpatialGizmo_set_hidden:
 
 - void **set_hidden** **(** :ref:`bool<class_bool>` hidden **)**
 
-.. _class_EditorSpatialGizmo_set_spatial_node:
+  .. _class_EditorSpatialGizmo_set_spatial_node:
 
 - void **set_spatial_node** **(** :ref:`Node<class_Node>` node **)**
-
 

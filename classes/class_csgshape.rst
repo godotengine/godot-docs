@@ -8,13 +8,26 @@ CSGShape
 ========
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`CSGCombiner<class_CSGCombiner>`, :ref:`CSGPrimitive<class_CSGPrimitive>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 The CSG base class.
+
+Properties
+----------
+
++-------------------------------------------+----------------------------------------------------+
+| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_operation>`         |
++-------------------------------------------+----------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_snap>`                   |
++-------------------------------------------+----------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_use_collision>` |
++-------------------------------------------+----------------------------------------------------+
 
 Methods
 -------
@@ -28,12 +41,11 @@ Enumerations
 
   .. _enum_CSGShape_Operation:
 
-enum **Operation**
+enum **Operation**:
 
 - **OPERATION_UNION** = **0** --- Geometry of both primitives is merged, intersecting geometry is removed.
 - **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
 - **OPERATION_SUBTRACTION** = **2** --- The second shape is susbtracted from the first, leaving a dent with it's shape.
-
 
 Description
 -----------
@@ -45,24 +57,44 @@ Property Descriptions
 
   .. _class_CSGShape_operation:
 
-- :ref:`Operation<enum_CSGShape_Operation>` **operation** - The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
+- :ref:`Operation<enum_CSGShape_Operation>` **operation**
+
++----------+----------------------+
+| *Setter* | set_operation(value) |
++----------+----------------------+
+| *Getter* | get_operation()      |
++----------+----------------------+
+
+The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
   .. _class_CSGShape_snap:
 
 - :ref:`float<class_float>` **snap**
 
++----------+-----------------+
+| *Setter* | set_snap(value) |
++----------+-----------------+
+| *Getter* | get_snap()      |
++----------+-----------------+
+
   .. _class_CSGShape_use_collision:
 
-- :ref:`bool<class_bool>` **use_collision** - Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
+- :ref:`bool<class_bool>` **use_collision**
 
++----------+--------------------------+
+| *Setter* | set_use_collision(value) |
++----------+--------------------------+
+| *Getter* | is_using_collision()     |
++----------+--------------------------+
+
+Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
 
 Method Descriptions
 -------------------
 
-.. _class_CSGShape_is_root_shape:
+  .. _class_CSGShape_is_root_shape:
 
 - :ref:`bool<class_bool>` **is_root_shape** **(** **)** const
 
 Returns true if this is a root shape and is thus the object that is rendered.
-
 

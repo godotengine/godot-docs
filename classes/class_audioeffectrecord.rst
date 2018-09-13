@@ -8,12 +8,20 @@ AudioEffectRecord
 =================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++----------------------------------------------+-----------------------------------------------+
+| :ref:`Format<enum_AudioStreamSample_Format>` | :ref:`format<class_AudioEffectRecord_format>` |
++----------------------------------------------+-----------------------------------------------+
 
 Methods
 -------
@@ -33,20 +41,24 @@ Property Descriptions
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
++----------+-------------------+
+| *Setter* | set_format(value) |
++----------+-------------------+
+| *Getter* | get_format()      |
++----------+-------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_AudioEffectRecord_get_recording:
+  .. _class_AudioEffectRecord_get_recording:
 
 - :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
 
-.. _class_AudioEffectRecord_is_recording_active:
+  .. _class_AudioEffectRecord_is_recording_active:
 
 - :ref:`bool<class_bool>` **is_recording_active** **(** **)** const
 
-.. _class_AudioEffectRecord_set_recording_active:
+  .. _class_AudioEffectRecord_set_recording_active:
 
 - void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
-
 

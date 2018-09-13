@@ -8,12 +8,28 @@ GDNativeLibrary
 ===============
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------------+-----------------------------------------------------------+
+| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_config_file>`     |
++-------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_load_once>`         |
++-------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_reloadable>`       |
++-------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_singleton>`         |
++-------------------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_symbol_prefix>` |
++-------------------------------------+-----------------------------------------------------------+
 
 Methods
 -------
@@ -31,32 +47,60 @@ Property Descriptions
 
 - :ref:`ConfigFile<class_ConfigFile>` **config_file**
 
++----------+------------------------+
+| *Setter* | set_config_file(value) |
++----------+------------------------+
+| *Getter* | get_config_file()      |
++----------+------------------------+
+
   .. _class_GDNativeLibrary_load_once:
 
 - :ref:`bool<class_bool>` **load_once**
+
++----------+----------------------+
+| *Setter* | set_load_once(value) |
++----------+----------------------+
+| *Getter* | should_load_once()   |
++----------+----------------------+
 
   .. _class_GDNativeLibrary_reloadable:
 
 - :ref:`bool<class_bool>` **reloadable**
 
++----------+-----------------------+
+| *Setter* | set_reloadable(value) |
++----------+-----------------------+
+| *Getter* | is_reloadable()       |
++----------+-----------------------+
+
   .. _class_GDNativeLibrary_singleton:
 
 - :ref:`bool<class_bool>` **singleton**
+
++----------+----------------------+
+| *Setter* | set_singleton(value) |
++----------+----------------------+
+| *Getter* | is_singleton()       |
++----------+----------------------+
 
   .. _class_GDNativeLibrary_symbol_prefix:
 
 - :ref:`String<class_String>` **symbol_prefix**
 
++----------+--------------------------+
+| *Setter* | set_symbol_prefix(value) |
++----------+--------------------------+
+| *Getter* | get_symbol_prefix()      |
++----------+--------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_GDNativeLibrary_get_current_dependencies:
+  .. _class_GDNativeLibrary_get_current_dependencies:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** const
 
-.. _class_GDNativeLibrary_get_current_library_path:
+  .. _class_GDNativeLibrary_get_current_library_path:
 
 - :ref:`String<class_String>` **get_current_library_path** **(** **)** const
-
 

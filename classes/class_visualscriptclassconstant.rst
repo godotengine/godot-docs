@@ -8,12 +8,22 @@ VisualScriptClassConstant
 =========================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Gets a constant from a given class.
+
+Properties
+----------
+
++-----------------------------+-------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_base_type>` |
++-----------------------------+-------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_constant>`   |
++-----------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -33,10 +43,25 @@ Property Descriptions
 
   .. _class_VisualScriptClassConstant_base_type:
 
-- :ref:`String<class_String>` **base_type** - The constant's parent class.
+- :ref:`String<class_String>` **base_type**
+
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
+
+The constant's parent class.
 
   .. _class_VisualScriptClassConstant_constant:
 
-- :ref:`String<class_String>` **constant** - The constant to return. See the given class for its available constants.
+- :ref:`String<class_String>` **constant**
 
++----------+---------------------------+
+| *Setter* | set_class_constant(value) |
++----------+---------------------------+
+| *Getter* | get_class_constant()      |
++----------+---------------------------+
+
+The constant to return. See the given class for its available constants.
 

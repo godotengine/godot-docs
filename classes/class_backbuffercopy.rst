@@ -8,6 +8,7 @@ BackBufferCopy
 ==============
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,17 +16,25 @@ Brief Description
 
 Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with ``SCREEN_TEXTURE`` in the ``texture()`` function.
 
+Properties
+----------
+
++-----------------------------------------------+--------------------------------------------------+
+| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_copy_mode>` |
++-----------------------------------------------+--------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_rect>`           |
++-----------------------------------------------+--------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_BackBufferCopy_CopyMode:
 
-enum **CopyMode**
+enum **CopyMode**:
 
 - **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
 - **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
 - **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
-
 
 Description
 -----------
@@ -37,10 +46,25 @@ Property Descriptions
 
   .. _class_BackBufferCopy_copy_mode:
 
-- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode** - Buffer mode. See ``COPY_MODE_*`` constants.
+- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
+
++----------+----------------------+
+| *Setter* | set_copy_mode(value) |
++----------+----------------------+
+| *Getter* | get_copy_mode()      |
++----------+----------------------+
+
+Buffer mode. See ``COPY_MODE_*`` constants.
 
   .. _class_BackBufferCopy_rect:
 
-- :ref:`Rect2<class_Rect2>` **rect** - The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
+- :ref:`Rect2<class_Rect2>` **rect**
 
++----------+-----------------+
+| *Setter* | set_rect(value) |
++----------+-----------------+
+| *Getter* | get_rect()      |
++----------+-----------------+
+
+The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
 

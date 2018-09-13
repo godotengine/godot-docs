@@ -8,6 +8,7 @@ InputEventScreenTouch
 =====================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -16,6 +17,17 @@ Brief Description
 Input event type for screen touch events.
 
 (only available on mobile devices)
+
+Properties
+----------
+
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_index>`       |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_position>` |
++-------------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_pressed>`   |
++-------------------------------+-------------------------------------------------------+
 
 Description
 -----------
@@ -26,20 +38,42 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventScreenTouch_index:
 
-- :ref:`int<class_int>` **index** - Touch index in the case of a multi-touch event. One index = one finger.
+- :ref:`int<class_int>` **index**
+
++----------+------------------+
+| *Setter* | set_index(value) |
++----------+------------------+
+| *Getter* | get_index()      |
++----------+------------------+
+
+Touch index in the case of a multi-touch event. One index = one finger.
 
   .. _class_InputEventScreenTouch_position:
 
-- :ref:`Vector2<class_Vector2>` **position** - Touch position.
+- :ref:`Vector2<class_Vector2>` **position**
+
++----------+---------------------+
+| *Setter* | set_position(value) |
++----------+---------------------+
+| *Getter* | get_position()      |
++----------+---------------------+
+
+Touch position.
 
   .. _class_InputEventScreenTouch_pressed:
 
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
+- :ref:`bool<class_bool>` **pressed**
 
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
+
+If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
 

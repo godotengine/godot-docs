@@ -8,12 +8,24 @@ MeshInstance2D
 ==============
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------+----------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshInstance2D_mesh>`             |
++-------------------------------+----------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_MeshInstance2D_normal_map>` |
++-------------------------------+----------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture<class_MeshInstance2D_texture>`       |
++-------------------------------+----------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,12 +34,29 @@ Property Descriptions
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
+
   .. _class_MeshInstance2D_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
+
++----------+-----------------------+
+| *Setter* | set_normal_map(value) |
++----------+-----------------------+
+| *Getter* | get_normal_map()      |
++----------+-----------------------+
 
   .. _class_MeshInstance2D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 

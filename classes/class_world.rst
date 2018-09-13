@@ -8,12 +8,28 @@ World
 =====
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class that has everything pertaining to a world.
+
+Properties
+----------
+
++---------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_direct_space_state>`     |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_environment>`                   |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`fallback_environment<class_World_fallback_environment>` |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`scenario<class_World_scenario>`                         |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`space<class_World_space>`                               |
++---------------------------------------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -24,28 +40,60 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
-
 Property Descriptions
 ---------------------
 
   .. _class_World_direct_space_state:
 
-- :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **direct_space_state** - The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
+- :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **direct_space_state**
+
++----------+--------------------------+
+| *Getter* | get_direct_space_state() |
++----------+--------------------------+
+
+The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
 
   .. _class_World_environment:
 
-- :ref:`Environment<class_Environment>` **environment** - The World's :ref:`Environment<class_Environment>`.
+- :ref:`Environment<class_Environment>` **environment**
+
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
+
+The World's :ref:`Environment<class_Environment>`.
 
   .. _class_World_fallback_environment:
 
-- :ref:`Environment<class_Environment>` **fallback_environment** - The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
+- :ref:`Environment<class_Environment>` **fallback_environment**
+
++----------+---------------------------------+
+| *Setter* | set_fallback_environment(value) |
++----------+---------------------------------+
+| *Getter* | get_fallback_environment()      |
++----------+---------------------------------+
+
+The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 
   .. _class_World_scenario:
 
-- :ref:`RID<class_RID>` **scenario** - The World's visual scenario.
+- :ref:`RID<class_RID>` **scenario**
+
++----------+----------------+
+| *Getter* | get_scenario() |
++----------+----------------+
+
+The World's visual scenario.
 
   .. _class_World_space:
 
-- :ref:`RID<class_RID>` **space** - The World's physics space.
+- :ref:`RID<class_RID>` **space**
 
++----------+-------------+
+| *Getter* | get_space() |
++----------+-------------+
+
+The World's physics space.
 

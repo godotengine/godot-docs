@@ -8,13 +8,22 @@ Shape2D
 =======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`RayShape2D<class_RayShape2D>`, :ref:`LineShape2D<class_LineShape2D>`, :ref:`CircleShape2D<class_CircleShape2D>`, :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`, :ref:`CapsuleShape2D<class_CapsuleShape2D>`, :ref:`RectangleShape2D<class_RectangleShape2D>`, :ref:`SegmentShape2D<class_SegmentShape2D>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for all 2D Shapes.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`custom_solver_bias<class_Shape2D_custom_solver_bias>` |
++---------------------------+-------------------------------------------------------------+
 
 Methods
 -------
@@ -38,7 +47,6 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
@@ -46,11 +54,16 @@ Property Descriptions
 
 - :ref:`float<class_float>` **custom_solver_bias**
 
++----------+-------------------------------+
+| *Setter* | set_custom_solver_bias(value) |
++----------+-------------------------------+
+| *Getter* | get_custom_solver_bias()      |
++----------+-------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_Shape2D_collide:
+  .. _class_Shape2D_collide:
 
 - :ref:`bool<class_bool>` **collide** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**
 
@@ -58,7 +71,7 @@ Return whether this shape is colliding with another.
 
 This method needs the transformation matrix for this shape (``local_xform``), the shape to check collisions with (``with_shape``), and the transformation matrix of that shape (``shape_xform``).
 
-.. _class_Shape2D_collide_and_get_contacts:
+  .. _class_Shape2D_collide_and_get_contacts:
 
 - :ref:`Variant<class_Variant>` **collide_and_get_contacts** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform **)**
 
@@ -66,7 +79,7 @@ Return a list of the points where this shape touches another. If there are no co
 
 This method needs the transformation matrix for this shape (``local_xform``), the shape to check collisions with (``with_shape``), and the transformation matrix of that shape (``shape_xform``).
 
-.. _class_Shape2D_collide_with_motion:
+  .. _class_Shape2D_collide_with_motion:
 
 - :ref:`bool<class_bool>` **collide_with_motion** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)**
 
@@ -74,12 +87,11 @@ Return whether this shape would collide with another, if a given movement was ap
 
 This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test onto the other object (``shape_motion``).
 
-.. _class_Shape2D_collide_with_motion_and_get_contacts:
+  .. _class_Shape2D_collide_with_motion_and_get_contacts:
 
 - :ref:`Variant<class_Variant>` **collide_with_motion_and_get_contacts** **(** :ref:`Transform2D<class_Transform2D>` local_xform, :ref:`Vector2<class_Vector2>` local_motion, :ref:`Shape2D<class_Shape2D>` with_shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` shape_motion **)**
 
 Return a list of the points where this shape would touch another, if a given movement was applied. If there are no collisions, the list is empty.
 
 This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test onto the other object (``shape_motion``).
-
 

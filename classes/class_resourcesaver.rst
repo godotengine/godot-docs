@@ -8,6 +8,7 @@ ResourceSaver
 =============
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -29,7 +30,7 @@ Enumerations
 
   .. _enum_ResourceSaver_SaverFlags:
 
-enum **SaverFlags**
+enum **SaverFlags**:
 
 - **FLAG_RELATIVE_PATHS** = **1**
 - **FLAG_BUNDLE_RESOURCES** = **2**
@@ -37,7 +38,6 @@ enum **SaverFlags**
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8**
 - **FLAG_SAVE_BIG_ENDIAN** = **16**
 - **FLAG_COMPRESS** = **32**
-
 
 Description
 -----------
@@ -47,16 +47,15 @@ Resource saving interface, used for saving resources to disk.
 Method Descriptions
 -------------------
 
-.. _class_ResourceSaver_get_recognized_extensions:
+  .. _class_ResourceSaver_get_recognized_extensions:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
 Returns the list of extensions available for saving a resource of a given type.
 
-.. _class_ResourceSaver_save:
+  .. _class_ResourceSaver_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
 
 Saves a resource to disk.
-
 

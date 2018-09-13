@@ -8,12 +8,20 @@ MultiMeshInstance
 =================
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node that instances a :ref:`MultiMesh<class_MultiMesh>`.
+
+Properties
+----------
+
++-----------------------------------+-----------------------------------------------------+
+| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_multimesh>` |
++-----------------------------------+-----------------------------------------------------+
 
 Description
 -----------
@@ -27,6 +35,13 @@ Property Descriptions
 
   .. _class_MultiMeshInstance_multimesh:
 
-- :ref:`MultiMesh<class_MultiMesh>` **multimesh** - The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
+- :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
++----------+----------------------+
+| *Setter* | set_multimesh(value) |
++----------+----------------------+
+| *Getter* | get_multimesh()      |
++----------+----------------------+
+
+The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
 

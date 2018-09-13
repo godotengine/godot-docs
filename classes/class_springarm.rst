@@ -8,12 +8,26 @@ SpringArm
 =========
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_collision_mask>` |
++---------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_margin>`                 |
++---------------------------+-------------------------------------------------------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_shape>`                   |
++---------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_spring_length>`   |
++---------------------------+-------------------------------------------------------+
 
 Methods
 -------
@@ -35,36 +49,58 @@ Property Descriptions
 
 - :ref:`int<class_int>` **collision_mask**
 
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
   .. _class_SpringArm_margin:
 
 - :ref:`float<class_float>` **margin**
+
++----------+-------------------+
+| *Setter* | set_margin(value) |
++----------+-------------------+
+| *Getter* | get_margin()      |
++----------+-------------------+
 
   .. _class_SpringArm_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
 
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
+
   .. _class_SpringArm_spring_length:
 
 - :ref:`float<class_float>` **spring_length**
 
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_SpringArm_add_excluded_object:
+  .. _class_SpringArm_add_excluded_object:
 
 - void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
-.. _class_SpringArm_clear_excluded_objects:
+  .. _class_SpringArm_clear_excluded_objects:
 
 - void **clear_excluded_objects** **(** **)**
 
-.. _class_SpringArm_get_hit_length:
+  .. _class_SpringArm_get_hit_length:
 
 - :ref:`float<class_float>` **get_hit_length** **(** **)**
 
-.. _class_SpringArm_remove_excluded_object:
+  .. _class_SpringArm_remove_excluded_object:
 
 - :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
-
 

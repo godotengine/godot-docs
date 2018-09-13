@@ -8,12 +8,20 @@ ConvexPolygonShape
 ==================
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Convex polygon shape for 3D physics.
+
+Properties
+----------
+
++-------------------------------------------------+------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_points>` |
++-------------------------------------------------+------------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_ConvexPolygonShape_points:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **points** - The list of 3D points forming the convex polygon shape.
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
 
++----------+-------------------+
+| *Setter* | set_points(value) |
++----------+-------------------+
+| *Getter* | get_points()      |
++----------+-------------------+
+
+The list of 3D points forming the convex polygon shape.
 

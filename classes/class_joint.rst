@@ -8,13 +8,28 @@ Joint
 =====
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ConeTwistJoint<class_ConeTwistJoint>`, :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`, :ref:`SliderJoint<class_SliderJoint>`, :ref:`HingeJoint<class_HingeJoint>`, :ref:`PinJoint<class_PinJoint>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for all 3D joints
+
+Properties
+----------
+
++---------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_collision/exclude_nodes>` |
++---------------------------------+---------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_nodes/node_a>`                       |
++---------------------------------+---------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_nodes/node_b>`                       |
++---------------------------------+---------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_solver/priority>`                 |
++---------------------------------+---------------------------------------------------------------------+
 
 Description
 -----------
@@ -26,18 +41,49 @@ Property Descriptions
 
   .. _class_Joint_collision/exclude_nodes:
 
-- :ref:`bool<class_bool>` **collision/exclude_nodes** - If ``true`` the two bodies of the nodes are not able to collide with each other.
+- :ref:`bool<class_bool>` **collision/exclude_nodes**
+
++----------+-----------------------------------------+
+| *Setter* | set_exclude_nodes_from_collision(value) |
++----------+-----------------------------------------+
+| *Getter* | get_exclude_nodes_from_collision()      |
++----------+-----------------------------------------+
+
+If ``true`` the two bodies of the nodes are not able to collide with each other.
 
   .. _class_Joint_nodes/node_a:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_a** - The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
+- :ref:`NodePath<class_NodePath>` **nodes/node_a**
+
++----------+-------------------+
+| *Setter* | set_node_a(value) |
++----------+-------------------+
+| *Getter* | get_node_a()      |
++----------+-------------------+
+
+The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
 
   .. _class_Joint_nodes/node_b:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_b** - The :ref:`Node<class_Node>`, the second side of the Joint attaches to.
+- :ref:`NodePath<class_NodePath>` **nodes/node_b**
+
++----------+-------------------+
+| *Setter* | set_node_b(value) |
++----------+-------------------+
+| *Getter* | get_node_b()      |
++----------+-------------------+
+
+The :ref:`Node<class_Node>`, the second side of the Joint attaches to.
 
   .. _class_Joint_solver/priority:
 
-- :ref:`int<class_int>` **solver/priority** - The order in which the solver is executed compared to the other Joints, the lower, the earlier.
+- :ref:`int<class_int>` **solver/priority**
 
++----------+----------------------------+
+| *Setter* | set_solver_priority(value) |
++----------+----------------------------+
+| *Getter* | get_solver_priority()      |
++----------+----------------------------+
+
+The order in which the solver is executed compared to the other Joints, the lower, the earlier.
 

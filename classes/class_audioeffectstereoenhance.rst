@@ -8,12 +8,24 @@ AudioEffectStereoEnhance
 ========================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pan_pullout<class_AudioEffectStereoEnhance_pan_pullout>`         |
++---------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`surround<class_AudioEffectStereoEnhance_surround>`               |
++---------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_time_pullout_ms>` |
++---------------------------+------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,12 +34,29 @@ Property Descriptions
 
 - :ref:`float<class_float>` **pan_pullout**
 
++----------+------------------------+
+| *Setter* | set_pan_pullout(value) |
++----------+------------------------+
+| *Getter* | get_pan_pullout()      |
++----------+------------------------+
+
   .. _class_AudioEffectStereoEnhance_surround:
 
 - :ref:`float<class_float>` **surround**
+
++----------+---------------------+
+| *Setter* | set_surround(value) |
++----------+---------------------+
+| *Getter* | get_surround()      |
++----------+---------------------+
 
   .. _class_AudioEffectStereoEnhance_time_pullout_ms:
 
 - :ref:`float<class_float>` **time_pullout_ms**
 
++----------+-------------------------+
+| *Setter* | set_time_pullout(value) |
++----------+-------------------------+
+| *Getter* | get_time_pullout()      |
++----------+-------------------------+
 

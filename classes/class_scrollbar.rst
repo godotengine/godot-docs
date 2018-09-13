@@ -8,7 +8,9 @@ ScrollBar
 =========
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`
+
 **Category:** Core
 
 Brief Description
@@ -16,15 +18,21 @@ Brief Description
 
 Base class for scroll bars.
 
+Properties
+----------
+
++---------------------------+-------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`custom_step<class_ScrollBar_custom_step>` |
++---------------------------+-------------------------------------------------+
+
 Signals
 -------
 
-.. _class_ScrollBar_scrolling:
+  .. _class_ScrollBar_scrolling:
 
 - **scrolling** **(** **)**
 
 Emitted whenever the scrollbar is being scrolled.
-
 
 Description
 -----------
@@ -38,4 +46,9 @@ Property Descriptions
 
 - :ref:`float<class_float>` **custom_step**
 
++----------+------------------------+
+| *Setter* | set_custom_step(value) |
++----------+------------------------+
+| *Getter* | get_custom_step()      |
++----------+------------------------+
 

@@ -8,12 +8,20 @@ AnimationNodeBlend3
 ===================
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------+---------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeBlend3_sync>` |
++-------------------------+---------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,4 +30,9 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **sync**
 
++----------+---------------------+
+| *Setter* | set_use_sync(value) |
++----------+---------------------+
+| *Getter* | is_using_sync()     |
++----------+---------------------+
 

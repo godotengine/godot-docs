@@ -8,6 +8,7 @@ VisualScriptConstructor
 =======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -36,20 +37,19 @@ A Visual Script node which calls a base type constructor. It can be used for typ
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptConstructor_get_constructor:
+  .. _class_VisualScriptConstructor_get_constructor:
 
 - :ref:`Dictionary<class_Dictionary>` **get_constructor** **(** **)** const
 
-.. _class_VisualScriptConstructor_get_constructor_type:
+  .. _class_VisualScriptConstructor_get_constructor_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constructor_type** **(** **)** const
 
-.. _class_VisualScriptConstructor_set_constructor:
+  .. _class_VisualScriptConstructor_set_constructor:
 
 - void **set_constructor** **(** :ref:`Dictionary<class_Dictionary>` constructor **)**
 
-.. _class_VisualScriptConstructor_set_constructor_type:
+  .. _class_VisualScriptConstructor_set_constructor_type:
 
 - void **set_constructor_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
-
 

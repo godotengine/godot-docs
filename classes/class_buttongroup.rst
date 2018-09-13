@@ -8,6 +8,7 @@ ButtonGroup
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -22,6 +23,13 @@ Methods
 | :ref:`BaseButton<class_BaseButton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>` **(** **)** |
 +--------------------------------------+-----------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+---------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ButtonGroup_panel>` |
++---------------------------------+---------------------------------------+
+
 Description
 -----------
 
@@ -32,10 +40,9 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 Method Descriptions
 -------------------
 
-.. _class_ButtonGroup_get_pressed_button:
+  .. _class_ButtonGroup_get_pressed_button:
 
 - :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
 
 Return the pressed button.
-
 

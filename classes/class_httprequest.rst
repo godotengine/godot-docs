@@ -8,12 +8,26 @@ HTTPRequest
 ===========
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A node with the ability to send HTTP requests.
+
+Properties
+----------
+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`body_size_limit<class_HTTPRequest_body_size_limit>` |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`download_file<class_HTTPRequest_download_file>`     |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_max_redirects>`     |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_use_threads>`         |
++-----------------------------+-----------------------------------------------------------+
 
 Methods
 -------
@@ -33,19 +47,18 @@ Methods
 Signals
 -------
 
-.. _class_HTTPRequest_request_completed:
+  .. _class_HTTPRequest_request_completed:
 
 - **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
 This signal is emitted upon request completion.
-
 
 Enumerations
 ------------
 
   .. _enum_HTTPRequest_Result:
 
-enum **Result**
+enum **Result**:
 
 - **RESULT_SUCCESS** = **0** --- Request successful.
 - **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = **1**
@@ -60,7 +73,6 @@ enum **Result**
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.
 - **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`set_max_redirects<class_HTTPRequest_set_max_redirects>`.
 
-
 Description
 -----------
 
@@ -72,60 +84,89 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/networking/ssl_certificates`
-
 Property Descriptions
 ---------------------
 
   .. _class_HTTPRequest_body_size_limit:
 
-- :ref:`int<class_int>` **body_size_limit** - Maximum allowed size for response bodies.
+- :ref:`int<class_int>` **body_size_limit**
+
++----------+----------------------------+
+| *Setter* | set_body_size_limit(value) |
++----------+----------------------------+
+| *Getter* | get_body_size_limit()      |
++----------+----------------------------+
+
+Maximum allowed size for response bodies.
 
   .. _class_HTTPRequest_download_file:
 
-- :ref:`String<class_String>` **download_file** - The file to download into. Will output any received file into it.
+- :ref:`String<class_String>` **download_file**
+
++----------+--------------------------+
+| *Setter* | set_download_file(value) |
++----------+--------------------------+
+| *Getter* | get_download_file()      |
++----------+--------------------------+
+
+The file to download into. Will output any received file into it.
 
   .. _class_HTTPRequest_max_redirects:
 
-- :ref:`int<class_int>` **max_redirects** - Maximum number of allowed redirects.
+- :ref:`int<class_int>` **max_redirects**
+
++----------+--------------------------+
+| *Setter* | set_max_redirects(value) |
++----------+--------------------------+
+| *Getter* | get_max_redirects()      |
++----------+--------------------------+
+
+Maximum number of allowed redirects.
 
   .. _class_HTTPRequest_use_threads:
 
-- :ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is used to improve performance.
+- :ref:`bool<class_bool>` **use_threads**
 
++----------+------------------------+
+| *Setter* | set_use_threads(value) |
++----------+------------------------+
+| *Getter* | is_using_threads()     |
++----------+------------------------+
+
+If ``true`` multithreading is used to improve performance.
 
 Method Descriptions
 -------------------
 
-.. _class_HTTPRequest_cancel_request:
+  .. _class_HTTPRequest_cancel_request:
 
 - void **cancel_request** **(** **)**
 
 Cancels the current request.
 
-.. _class_HTTPRequest_get_body_size:
+  .. _class_HTTPRequest_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
 Returns the response body length.
 
-.. _class_HTTPRequest_get_downloaded_bytes:
+  .. _class_HTTPRequest_get_downloaded_bytes:
 
 - :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** const
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
-.. _class_HTTPRequest_get_http_client_status:
+  .. _class_HTTPRequest_get_http_client_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
 
-.. _class_HTTPRequest_request:
+  .. _class_HTTPRequest_request:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_request>`.
 
 Returns ``OK`` if request is successfully created. (Does not imply that the server has responded), ``ERR_UNCONFIGURED`` if not in the tree, ``ERR_BUSY`` if still processing previous request, ``ERR_INVALID_PARAMETER`` if given string is not a valid URL format, or ``ERR_CANT_CONNECT`` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
-
 

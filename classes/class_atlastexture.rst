@@ -8,12 +8,26 @@ AtlasTexture
 ============
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Packs multiple small textures in a single, bigger one. Helps to optimize video memory costs and render calls.
+
+Properties
+----------
+
++-------------------------------+----------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_atlas>`             |
++-------------------------------+----------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_filter_clip>` |
++-------------------------------+----------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_margin>`           |
++-------------------------------+----------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_region>`           |
++-------------------------------+----------------------------------------------------+
 
 Description
 -----------
@@ -27,18 +41,49 @@ Property Descriptions
 
   .. _class_AtlasTexture_atlas:
 
-- :ref:`Texture<class_Texture>` **atlas** - The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
+- :ref:`Texture<class_Texture>` **atlas**
+
++----------+------------------+
+| *Setter* | set_atlas(value) |
++----------+------------------+
+| *Getter* | get_atlas()      |
++----------+------------------+
+
+The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
 
   .. _class_AtlasTexture_filter_clip:
 
-- :ref:`bool<class_bool>` **filter_clip** - If ``true`` clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
+- :ref:`bool<class_bool>` **filter_clip**
+
++----------+------------------------+
+| *Setter* | set_filter_clip(value) |
++----------+------------------------+
+| *Getter* | has_filter_clip()      |
++----------+------------------------+
+
+If ``true`` clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
 
   .. _class_AtlasTexture_margin:
 
-- :ref:`Rect2<class_Rect2>` **margin** - The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
+- :ref:`Rect2<class_Rect2>` **margin**
+
++----------+-------------------+
+| *Setter* | set_margin(value) |
++----------+-------------------+
+| *Getter* | get_margin()      |
++----------+-------------------+
+
+The margin around the region. The :ref:`Rect2<class_Rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
 
   .. _class_AtlasTexture_region:
 
-- :ref:`Rect2<class_Rect2>` **region** - The AtlasTexture's used region.
+- :ref:`Rect2<class_Rect2>` **region**
 
++----------+-------------------+
+| *Setter* | set_region(value) |
++----------+-------------------+
+| *Getter* | get_region()      |
++----------+-------------------+
+
+The AtlasTexture's used region.
 

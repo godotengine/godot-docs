@@ -8,13 +8,22 @@ PanelContainer
 ==============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ScriptEditor<class_ScriptEditor>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Panel container type.
+
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PanelContainer_panel>` |
++---------------------------------+------------------------------------------+
 
 Description
 -----------

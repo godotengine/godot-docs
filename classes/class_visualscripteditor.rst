@@ -8,6 +8,7 @@ VisualScriptEditor
 ==================
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -27,26 +28,24 @@ Methods
 Signals
 -------
 
-.. _class_VisualScriptEditor_custom_nodes_updated:
+  .. _class_VisualScriptEditor_custom_nodes_updated:
 
 - **custom_nodes_updated** **(** **)**
 
 Emitted when a custom Visual Script node is added or removed.
 
-
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptEditor_add_custom_node:
+  .. _class_VisualScriptEditor_add_custom_node:
 
 - void **add_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)**
 
 Add a custom Visual Script node to the editor. It'll be placed under "Custom Nodes" with the ``category`` as the parameter.
 
-.. _class_VisualScriptEditor_remove_custom_node:
+  .. _class_VisualScriptEditor_remove_custom_node:
 
 - void **remove_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**
 
 Remove a custom Visual Script node from the editor. Custom nodes already placed on scripts won't be removed.
-
 

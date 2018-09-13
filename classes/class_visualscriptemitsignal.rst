@@ -8,12 +8,20 @@ VisualScriptEmitSignal
 ======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Emits a specified signal.
+
+Properties
+----------
+
++-----------------------------+----------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_signal>` |
++-----------------------------+----------------------------------------------------+
 
 Description
 -----------
@@ -33,6 +41,13 @@ Property Descriptions
 
   .. _class_VisualScriptEmitSignal_signal:
 
-- :ref:`String<class_String>` **signal** - The signal to emit.
+- :ref:`String<class_String>` **signal**
 
++----------+-------------------+
+| *Setter* | set_signal(value) |
++----------+-------------------+
+| *Getter* | get_signal()      |
++----------+-------------------+
+
+The signal to emit.
 

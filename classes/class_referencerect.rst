@@ -8,12 +8,20 @@ ReferenceRect
 =============
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Reference frame for GUI.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_border_color>` |
++---------------------------+-------------------------------------------------------+
 
 Description
 -----------
@@ -27,4 +35,9 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **border_color**
 
++----------+-------------------------+
+| *Setter* | set_border_color(value) |
++----------+-------------------------+
+| *Getter* | get_border_color()      |
++----------+-------------------------+
 

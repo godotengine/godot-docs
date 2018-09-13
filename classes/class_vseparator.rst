@@ -8,12 +8,22 @@ VSeparator
 ==========
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Vertical version of :ref:`Separator<class_Separator>`.
+
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`separation<class_VSeparator_separation>` |
++---------------------------------+------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_VSeparator_separator>`   |
++---------------------------------+------------------------------------------------+
 
 Description
 -----------

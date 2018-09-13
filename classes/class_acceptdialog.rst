@@ -8,13 +8,24 @@ AcceptDialog
 ============
 
 **Inherits:** :ref:`WindowDialog<class_WindowDialog>` **<** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base dialog for user notification.
+
+Properties
+----------
+
++-----------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_dialog_hide_on_ok>` |
++-----------------------------+----------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_dialog_text>`             |
++-----------------------------+----------------------------------------------------------------+
 
 Methods
 -------
@@ -34,18 +45,17 @@ Methods
 Signals
 -------
 
-.. _class_AcceptDialog_confirmed:
+  .. _class_AcceptDialog_confirmed:
 
 - **confirmed** **(** **)**
 
 Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
-.. _class_AcceptDialog_custom_action:
+  .. _class_AcceptDialog_custom_action:
 
 - **custom_action** **(** :ref:`String<class_String>` action **)**
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_add_button>`.
-
 
 Description
 -----------
@@ -57,19 +67,34 @@ Property Descriptions
 
   .. _class_AcceptDialog_dialog_hide_on_ok:
 
-- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_confirmed>` signal, and handle hiding the dialog in your own logic. Default value: ``true``.
+- :ref:`bool<class_bool>` **dialog_hide_on_ok**
+
++----------+-----------------------+
+| *Setter* | set_hide_on_ok(value) |
++----------+-----------------------+
+| *Getter* | get_hide_on_ok()      |
++----------+-----------------------+
+
+If ``true`` the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_confirmed>` signal, and handle hiding the dialog in your own logic. Default value: ``true``.
 
 Note: Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
 
   .. _class_AcceptDialog_dialog_text:
 
-- :ref:`String<class_String>` **dialog_text** - The text displayed by this dialog.
+- :ref:`String<class_String>` **dialog_text**
 
++----------+-----------------+
+| *Setter* | set_text(value) |
++----------+-----------------+
+| *Getter* | get_text()      |
++----------+-----------------+
+
+The text displayed by this dialog.
 
 Method Descriptions
 -------------------
 
-.. _class_AcceptDialog_add_button:
+  .. _class_AcceptDialog_add_button:
 
 - :ref:`Button<class_Button>` **add_button** **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)**
 
@@ -77,28 +102,27 @@ Adds a button with label *text* and a custom *action* to the dialog and returns 
 
 If ``true``, *right* will place the button to the right of any sibling buttons. Default value: ``false``.
 
-.. _class_AcceptDialog_add_cancel:
+  .. _class_AcceptDialog_add_cancel:
 
 - :ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
 
 Adds a button with label *name* and a cancel action to the dialog and returns the created button.
 
-.. _class_AcceptDialog_get_label:
+  .. _class_AcceptDialog_get_label:
 
 - :ref:`Label<class_Label>` **get_label** **(** **)**
 
 Return the label used for built-in text.
 
-.. _class_AcceptDialog_get_ok:
+  .. _class_AcceptDialog_get_ok:
 
 - :ref:`Button<class_Button>` **get_ok** **(** **)**
 
 Return the OK Button.
 
-.. _class_AcceptDialog_register_text_enter:
+  .. _class_AcceptDialog_register_text_enter:
 
 - void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
 
 Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
-
 

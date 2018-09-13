@@ -8,12 +8,24 @@ World2D
 =======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class that has everything pertaining to a 2D world.
+
+Properties
+----------
+
++-------------------------------------------------------------------+-------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_canvas>`                         |
++-------------------------------------------------------------------+-------------------------------------------------------------+
+| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_direct_space_state>` |
++-------------------------------------------------------------------+-------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_space>`                           |
++-------------------------------------------------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -24,20 +36,36 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
-
 Property Descriptions
 ---------------------
 
   .. _class_World2D_canvas:
 
-- :ref:`RID<class_RID>` **canvas** - The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
+- :ref:`RID<class_RID>` **canvas**
+
++----------+--------------+
+| *Getter* | get_canvas() |
++----------+--------------+
+
+The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
 
   .. _class_World2D_direct_space_state:
 
-- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state** - The state of this world's physics space. This allows arbitrary querying for collision.
+- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state**
+
++----------+--------------------------+
+| *Getter* | get_direct_space_state() |
++----------+--------------------------+
+
+The state of this world's physics space. This allows arbitrary querying for collision.
 
   .. _class_World2D_space:
 
-- :ref:`RID<class_RID>` **space** - The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
+- :ref:`RID<class_RID>` **space**
 
++----------+-------------+
+| *Getter* | get_space() |
++----------+-------------+
+
+The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
 

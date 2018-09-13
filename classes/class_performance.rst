@@ -8,6 +8,7 @@ Performance
 ===========
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -27,7 +28,7 @@ Enumerations
 
   .. _enum_Performance_Monitor:
 
-enum **Monitor**
+enum **Monitor**:
 
 - **TIME_FPS** = **0** --- Frames per second.
 - **TIME_PROCESS** = **1** --- Time it took to complete one frame.
@@ -59,7 +60,6 @@ enum **Monitor**
 - **AUDIO_OUTPUT_LATENCY** = **27**
 - **MONITOR_MAX** = **28**
 
-
 Description
 -----------
 
@@ -70,7 +70,7 @@ Many of these monitors are not updated in real-time, so there may be a short del
 Method Descriptions
 -------------------
 
-.. _class_Performance_get_monitor:
+  .. _class_Performance_get_monitor:
 
 - :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
 
@@ -79,5 +79,4 @@ Returns the value of one of the available monitors. You should provide one of th
 ::
 
     print(Performance.get_monitor(Performance.TIME_FPS)) # Prints the FPS to the console
-
 

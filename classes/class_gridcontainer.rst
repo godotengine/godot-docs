@@ -8,6 +8,7 @@ GridContainer
 =============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,28 @@ Brief Description
 
 Grid container used to arrange elements in a grid like layout.
 
+Properties
+----------
+
++-----------------------+---------------------------------------------+
+| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_columns>` |
++-----------------------+---------------------------------------------+
+
 Methods
 -------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>`  | :ref:`get_child_control_at_cell<class_GridContainer_get_child_control_at_cell>` **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)** |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++-----------------------+-----------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`hseparation<class_GridContainer_hseparation>` |
++-----------------------+-----------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`vseparation<class_GridContainer_vseparation>` |
++-----------------------+-----------------------------------------------------+
 
 Description
 -----------
@@ -32,14 +49,20 @@ Property Descriptions
 
   .. _class_GridContainer_columns:
 
-- :ref:`int<class_int>` **columns** - The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
+- :ref:`int<class_int>` **columns**
 
++----------+--------------------+
+| *Setter* | set_columns(value) |
++----------+--------------------+
+| *Getter* | get_columns()      |
++----------+--------------------+
+
+The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
 
 Method Descriptions
 -------------------
 
-.. _class_GridContainer_get_child_control_at_cell:
+  .. _class_GridContainer_get_child_control_at_cell:
 
 - :ref:`Control<class_Control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
-
 

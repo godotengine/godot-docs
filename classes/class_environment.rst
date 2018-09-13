@@ -8,6 +8,7 @@ Environment
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,173 @@ Brief Description
 
 Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple rendering options.
 
+Properties
+----------
+
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`adjustment_brightness<class_Environment_adjustment_brightness>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                          | :ref:`adjustment_color_correction<class_Environment_adjustment_color_correction>`       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`adjustment_contrast<class_Environment_adjustment_contrast>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`adjustment_enabled<class_Environment_adjustment_enabled>`                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`adjustment_saturation<class_Environment_adjustment_saturation>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                              | :ref:`ambient_light_color<class_Environment_ambient_light_color>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ambient_light_energy<class_Environment_ambient_light_energy>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ambient_light_sky_contribution<class_Environment_ambient_light_sky_contribution>` |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`auto_exposure_enabled<class_Environment_auto_exposure_enabled>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`auto_exposure_max_luma<class_Environment_auto_exposure_max_luma>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`auto_exposure_min_luma<class_Environment_auto_exposure_min_luma>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`auto_exposure_scale<class_Environment_auto_exposure_scale>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`auto_exposure_speed<class_Environment_auto_exposure_speed>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                  | :ref:`background_canvas_max_layer<class_Environment_background_canvas_max_layer>`       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                              | :ref:`background_color<class_Environment_background_color>`                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`background_energy<class_Environment_background_energy>`                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`BGMode<enum_Environment_BGMode>`                 | :ref:`background_mode<class_Environment_background_mode>`                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Sky<class_Sky>`                                  | :ref:`background_sky<class_Environment_background_sky>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`background_sky_custom_fov<class_Environment_background_sky_custom_fov>`           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_far_amount<class_Environment_dof_blur_far_amount>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_far_distance<class_Environment_dof_blur_far_distance>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`dof_blur_far_enabled<class_Environment_dof_blur_far_enabled>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` | :ref:`dof_blur_far_quality<class_Environment_dof_blur_far_quality>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_far_transition<class_Environment_dof_blur_far_transition>`               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_near_amount<class_Environment_dof_blur_near_amount>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_near_distance<class_Environment_dof_blur_near_distance>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`dof_blur_near_enabled<class_Environment_dof_blur_near_enabled>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` | :ref:`dof_blur_near_quality<class_Environment_dof_blur_near_quality>`                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`dof_blur_near_transition<class_Environment_dof_blur_near_transition>`             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                              | :ref:`fog_color<class_Environment_fog_color>`                                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_depth_begin<class_Environment_fog_depth_begin>`                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_depth_curve<class_Environment_fog_depth_curve>`                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`fog_depth_enabled<class_Environment_fog_depth_enabled>`                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`fog_enabled<class_Environment_fog_enabled>`                                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_height_curve<class_Environment_fog_height_curve>`                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`fog_height_enabled<class_Environment_fog_height_enabled>`                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_height_max<class_Environment_fog_height_max>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_height_min<class_Environment_fog_height_min>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_sun_amount<class_Environment_fog_sun_amount>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                              | :ref:`fog_sun_color<class_Environment_fog_sun_color>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_transmit_curve<class_Environment_fog_transmit_curve>`                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`fog_transmit_enabled<class_Environment_fog_transmit_enabled>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_bicubic_upscale<class_Environment_glow_bicubic_upscale>`                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>`   | :ref:`glow_blend_mode<class_Environment_glow_blend_mode>`                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_bloom<class_Environment_glow_bloom>`                                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_enabled<class_Environment_glow_enabled>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_hdr_scale<class_Environment_glow_hdr_scale>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_hdr_threshold<class_Environment_glow_hdr_threshold>`                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_intensity<class_Environment_glow_intensity>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/1<class_Environment_glow_levels/1>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/2<class_Environment_glow_levels/2>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/3<class_Environment_glow_levels/3>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/4<class_Environment_glow_levels/4>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/5<class_Environment_glow_levels/5>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/6<class_Environment_glow_levels/6>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`glow_levels/7<class_Environment_glow_levels/7>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_strength<class_Environment_glow_strength>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ss_reflections_depth_tolerance<class_Environment_ss_reflections_depth_tolerance>` |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`ss_reflections_enabled<class_Environment_ss_reflections_enabled>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ss_reflections_fade_in<class_Environment_ss_reflections_fade_in>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ss_reflections_fade_out<class_Environment_ss_reflections_fade_out>`               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                  | :ref:`ss_reflections_max_steps<class_Environment_ss_reflections_max_steps>`             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`ss_reflections_roughness<class_Environment_ss_reflections_roughness>`             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_ao_channel_affect<class_Environment_ssao_ao_channel_affect>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_bias<class_Environment_ssao_bias>`                                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`SSAOBlur<enum_Environment_SSAOBlur>`             | :ref:`ssao_blur<class_Environment_ssao_blur>`                                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                              | :ref:`ssao_color<class_Environment_ssao_color>`                                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_edge_sharpness<class_Environment_ssao_edge_sharpness>`                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                | :ref:`ssao_enabled<class_Environment_ssao_enabled>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_intensity<class_Environment_ssao_intensity>`                                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_intensity2<class_Environment_ssao_intensity2>`                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_light_affect<class_Environment_ssao_light_affect>`                           |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`SSAOQuality<enum_Environment_SSAOQuality>`       | :ref:`ssao_quality<class_Environment_ssao_quality>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_radius<class_Environment_ssao_radius>`                                       |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`ssao_radius2<class_Environment_ssao_radius2>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`tonemap_exposure<class_Environment_tonemap_exposure>`                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`ToneMapper<enum_Environment_ToneMapper>`         | :ref:`tonemap_mode<class_Environment_tonemap_mode>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`tonemap_white<class_Environment_tonemap_white>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_Environment_BGMode:
 
-enum **BGMode**
+enum **BGMode**:
 
 - **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
 - **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
@@ -32,7 +194,7 @@ enum **BGMode**
 
   .. _enum_Environment_DOFBlurQuality:
 
-enum **DOFBlurQuality**
+enum **DOFBlurQuality**:
 
 - **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
 - **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
@@ -40,7 +202,7 @@ enum **DOFBlurQuality**
 
   .. _enum_Environment_GlowBlendMode:
 
-enum **GlowBlendMode**
+enum **GlowBlendMode**:
 
 - **GLOW_BLEND_MODE_ADDITIVE** = **0** --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
 - **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
@@ -49,7 +211,7 @@ enum **GlowBlendMode**
 
   .. _enum_Environment_ToneMapper:
 
-enum **ToneMapper**
+enum **ToneMapper**:
 
 - **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
 - **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
@@ -58,7 +220,7 @@ enum **ToneMapper**
 
   .. _enum_Environment_SSAOBlur:
 
-enum **SSAOBlur**
+enum **SSAOBlur**:
 
 - **SSAO_BLUR_DISABLED** = **0**
 - **SSAO_BLUR_1x1** = **1**
@@ -67,12 +229,11 @@ enum **SSAOBlur**
 
   .. _enum_Environment_SSAOQuality:
 
-enum **SSAOQuality**
+enum **SSAOQuality**:
 
 - **SSAO_QUALITY_LOW** = **0**
 - **SSAO_QUALITY_MEDIUM** = **1**
 - **SSAO_QUALITY_HIGH** = **2**
-
 
 Description
 -----------
@@ -96,320 +257,904 @@ Tutorials
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
 - :doc:`../tutorials/3d/high_dynamic_range`
-
 Property Descriptions
 ---------------------
 
   .. _class_Environment_adjustment_brightness:
 
-- :ref:`float<class_float>` **adjustment_brightness** - Global brightness value of the rendered scene (default value is 1).
+- :ref:`float<class_float>` **adjustment_brightness**
+
++----------+----------------------------------+
+| *Setter* | set_adjustment_brightness(value) |
++----------+----------------------------------+
+| *Getter* | get_adjustment_brightness()      |
++----------+----------------------------------+
+
+Global brightness value of the rendered scene (default value is 1).
 
   .. _class_Environment_adjustment_color_correction:
 
-- :ref:`Texture<class_Texture>` **adjustment_color_correction** - Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
+- :ref:`Texture<class_Texture>` **adjustment_color_correction**
+
++----------+----------------------------------------+
+| *Setter* | set_adjustment_color_correction(value) |
++----------+----------------------------------------+
+| *Getter* | get_adjustment_color_correction()      |
++----------+----------------------------------------+
+
+Applies the provided :ref:`Texture<class_Texture>` resource to affect the global color aspect of the rendered scene.
 
   .. _class_Environment_adjustment_contrast:
 
-- :ref:`float<class_float>` **adjustment_contrast** - Global contrast value of the rendered scene (default value is 1).
+- :ref:`float<class_float>` **adjustment_contrast**
+
++----------+--------------------------------+
+| *Setter* | set_adjustment_contrast(value) |
++----------+--------------------------------+
+| *Getter* | get_adjustment_contrast()      |
++----------+--------------------------------+
+
+Global contrast value of the rendered scene (default value is 1).
 
   .. _class_Environment_adjustment_enabled:
 
-- :ref:`bool<class_bool>` **adjustment_enabled** - Enables the adjustment\_\* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
+- :ref:`bool<class_bool>` **adjustment_enabled**
+
++----------+------------------------------+
+| *Setter* | set_adjustment_enable(value) |
++----------+------------------------------+
+| *Getter* | is_adjustment_enabled()      |
++----------+------------------------------+
+
+Enables the adjustment\_\* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
 
   .. _class_Environment_adjustment_saturation:
 
-- :ref:`float<class_float>` **adjustment_saturation** - Global color saturation value of the rendered scene (default value is 1).
+- :ref:`float<class_float>` **adjustment_saturation**
+
++----------+----------------------------------+
+| *Setter* | set_adjustment_saturation(value) |
++----------+----------------------------------+
+| *Getter* | get_adjustment_saturation()      |
++----------+----------------------------------+
+
+Global color saturation value of the rendered scene (default value is 1).
 
   .. _class_Environment_ambient_light_color:
 
-- :ref:`Color<class_Color>` **ambient_light_color** - :ref:`Color<class_Color>` of the ambient light.
+- :ref:`Color<class_Color>` **ambient_light_color**
+
++----------+--------------------------------+
+| *Setter* | set_ambient_light_color(value) |
++----------+--------------------------------+
+| *Getter* | get_ambient_light_color()      |
++----------+--------------------------------+
+
+:ref:`Color<class_Color>` of the ambient light.
 
   .. _class_Environment_ambient_light_energy:
 
-- :ref:`float<class_float>` **ambient_light_energy** - Energy of the ambient light. The higher the value, the stronger the light.
+- :ref:`float<class_float>` **ambient_light_energy**
+
++----------+---------------------------------+
+| *Setter* | set_ambient_light_energy(value) |
++----------+---------------------------------+
+| *Getter* | get_ambient_light_energy()      |
++----------+---------------------------------+
+
+Energy of the ambient light. The higher the value, the stronger the light.
 
   .. _class_Environment_ambient_light_sky_contribution:
 
-- :ref:`float<class_float>` **ambient_light_sky_contribution** - Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+- :ref:`float<class_float>` **ambient_light_sky_contribution**
+
++----------+-------------------------------------------+
+| *Setter* | set_ambient_light_sky_contribution(value) |
++----------+-------------------------------------------+
+| *Getter* | get_ambient_light_sky_contribution()      |
++----------+-------------------------------------------+
+
+Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
 
   .. _class_Environment_auto_exposure_enabled:
 
-- :ref:`bool<class_bool>` **auto_exposure_enabled** - Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
+- :ref:`bool<class_bool>` **auto_exposure_enabled**
+
++----------+----------------------------------+
+| *Setter* | set_tonemap_auto_exposure(value) |
++----------+----------------------------------+
+| *Getter* | get_tonemap_auto_exposure()      |
++----------+----------------------------------+
+
+Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
 
   .. _class_Environment_auto_exposure_max_luma:
 
-- :ref:`float<class_float>` **auto_exposure_max_luma** - Maximum luminance value for the auto exposure.
+- :ref:`float<class_float>` **auto_exposure_max_luma**
+
++----------+--------------------------------------+
+| *Setter* | set_tonemap_auto_exposure_max(value) |
++----------+--------------------------------------+
+| *Getter* | get_tonemap_auto_exposure_max()      |
++----------+--------------------------------------+
+
+Maximum luminance value for the auto exposure.
 
   .. _class_Environment_auto_exposure_min_luma:
 
-- :ref:`float<class_float>` **auto_exposure_min_luma** - Minimum luminance value for the auto exposure.
+- :ref:`float<class_float>` **auto_exposure_min_luma**
+
++----------+--------------------------------------+
+| *Setter* | set_tonemap_auto_exposure_min(value) |
++----------+--------------------------------------+
+| *Getter* | get_tonemap_auto_exposure_min()      |
++----------+--------------------------------------+
+
+Minimum luminance value for the auto exposure.
 
   .. _class_Environment_auto_exposure_scale:
 
-- :ref:`float<class_float>` **auto_exposure_scale** - Scale of the auto exposure effect. Affects the intensity of auto exposure.
+- :ref:`float<class_float>` **auto_exposure_scale**
+
++----------+---------------------------------------+
+| *Setter* | set_tonemap_auto_exposure_grey(value) |
++----------+---------------------------------------+
+| *Getter* | get_tonemap_auto_exposure_grey()      |
++----------+---------------------------------------+
+
+Scale of the auto exposure effect. Affects the intensity of auto exposure.
 
   .. _class_Environment_auto_exposure_speed:
 
-- :ref:`float<class_float>` **auto_exposure_speed** - Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
+- :ref:`float<class_float>` **auto_exposure_speed**
+
++----------+----------------------------------------+
+| *Setter* | set_tonemap_auto_exposure_speed(value) |
++----------+----------------------------------------+
+| *Getter* | get_tonemap_auto_exposure_speed()      |
++----------+----------------------------------------+
+
+Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
 
   .. _class_Environment_background_canvas_max_layer:
 
-- :ref:`int<class_int>` **background_canvas_max_layer** - Maximum layer id (if using Layer background mode).
+- :ref:`int<class_int>` **background_canvas_max_layer**
+
++----------+-----------------------------+
+| *Setter* | set_canvas_max_layer(value) |
++----------+-----------------------------+
+| *Getter* | get_canvas_max_layer()      |
++----------+-----------------------------+
+
+Maximum layer id (if using Layer background mode).
 
   .. _class_Environment_background_color:
 
-- :ref:`Color<class_Color>` **background_color** - Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+- :ref:`Color<class_Color>` **background_color**
+
++----------+---------------------+
+| *Setter* | set_bg_color(value) |
++----------+---------------------+
+| *Getter* | get_bg_color()      |
++----------+---------------------+
+
+Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
 
   .. _class_Environment_background_energy:
 
-- :ref:`float<class_float>` **background_energy** - Power of light emitted by the background.
+- :ref:`float<class_float>` **background_energy**
+
++----------+----------------------+
+| *Setter* | set_bg_energy(value) |
++----------+----------------------+
+| *Getter* | get_bg_energy()      |
++----------+----------------------+
+
+Power of light emitted by the background.
 
   .. _class_Environment_background_mode:
 
-- :ref:`BGMode<enum_Environment_BGMode>` **background_mode** - Defines the mode of background.
+- :ref:`BGMode<enum_Environment_BGMode>` **background_mode**
+
++----------+-----------------------+
+| *Setter* | set_background(value) |
++----------+-----------------------+
+| *Getter* | get_background()      |
++----------+-----------------------+
+
+Defines the mode of background.
 
   .. _class_Environment_background_sky:
 
-- :ref:`Sky<class_Sky>` **background_sky** - :ref:`Sky<class_Sky>` resource defined as background.
+- :ref:`Sky<class_Sky>` **background_sky**
+
++----------+----------------+
+| *Setter* | set_sky(value) |
++----------+----------------+
+| *Getter* | get_sky()      |
++----------+----------------+
+
+:ref:`Sky<class_Sky>` resource defined as background.
 
   .. _class_Environment_background_sky_custom_fov:
 
-- :ref:`float<class_float>` **background_sky_custom_fov** - :ref:`Sky<class_Sky>` resource's custom field of view.
+- :ref:`float<class_float>` **background_sky_custom_fov**
+
++----------+---------------------------+
+| *Setter* | set_sky_custom_fov(value) |
++----------+---------------------------+
+| *Getter* | get_sky_custom_fov()      |
++----------+---------------------------+
+
+:ref:`Sky<class_Sky>` resource's custom field of view.
 
   .. _class_Environment_dof_blur_far_amount:
 
-- :ref:`float<class_float>` **dof_blur_far_amount** - Amount of far blur.
+- :ref:`float<class_float>` **dof_blur_far_amount**
+
++----------+--------------------------------+
+| *Setter* | set_dof_blur_far_amount(value) |
++----------+--------------------------------+
+| *Getter* | get_dof_blur_far_amount()      |
++----------+--------------------------------+
+
+Amount of far blur.
 
   .. _class_Environment_dof_blur_far_distance:
 
-- :ref:`float<class_float>` **dof_blur_far_distance** - Distance from the camera where the far blur effect affects the rendering.
+- :ref:`float<class_float>` **dof_blur_far_distance**
+
++----------+----------------------------------+
+| *Setter* | set_dof_blur_far_distance(value) |
++----------+----------------------------------+
+| *Getter* | get_dof_blur_far_distance()      |
++----------+----------------------------------+
+
+Distance from the camera where the far blur effect affects the rendering.
 
   .. _class_Environment_dof_blur_far_enabled:
 
-- :ref:`bool<class_bool>` **dof_blur_far_enabled** - Enables the far blur effect.
+- :ref:`bool<class_bool>` **dof_blur_far_enabled**
+
++----------+---------------------------------+
+| *Setter* | set_dof_blur_far_enabled(value) |
++----------+---------------------------------+
+| *Getter* | is_dof_blur_far_enabled()       |
++----------+---------------------------------+
+
+Enables the far blur effect.
 
   .. _class_Environment_dof_blur_far_quality:
 
-- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_far_quality** - Quality of the far blur quality.
+- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_far_quality**
+
++----------+---------------------------------+
+| *Setter* | set_dof_blur_far_quality(value) |
++----------+---------------------------------+
+| *Getter* | get_dof_blur_far_quality()      |
++----------+---------------------------------+
+
+Quality of the far blur quality.
 
   .. _class_Environment_dof_blur_far_transition:
 
-- :ref:`float<class_float>` **dof_blur_far_transition** - Transition between no-blur area and far blur.
+- :ref:`float<class_float>` **dof_blur_far_transition**
+
++----------+------------------------------------+
+| *Setter* | set_dof_blur_far_transition(value) |
++----------+------------------------------------+
+| *Getter* | get_dof_blur_far_transition()      |
++----------+------------------------------------+
+
+Transition between no-blur area and far blur.
 
   .. _class_Environment_dof_blur_near_amount:
 
-- :ref:`float<class_float>` **dof_blur_near_amount** - Amount of near blur.
+- :ref:`float<class_float>` **dof_blur_near_amount**
+
++----------+---------------------------------+
+| *Setter* | set_dof_blur_near_amount(value) |
++----------+---------------------------------+
+| *Getter* | get_dof_blur_near_amount()      |
++----------+---------------------------------+
+
+Amount of near blur.
 
   .. _class_Environment_dof_blur_near_distance:
 
-- :ref:`float<class_float>` **dof_blur_near_distance** - Distance from the camera where the near blur effect affects the rendering.
+- :ref:`float<class_float>` **dof_blur_near_distance**
+
++----------+-----------------------------------+
+| *Setter* | set_dof_blur_near_distance(value) |
++----------+-----------------------------------+
+| *Getter* | get_dof_blur_near_distance()      |
++----------+-----------------------------------+
+
+Distance from the camera where the near blur effect affects the rendering.
 
   .. _class_Environment_dof_blur_near_enabled:
 
-- :ref:`bool<class_bool>` **dof_blur_near_enabled** - Enables the near blur effect.
+- :ref:`bool<class_bool>` **dof_blur_near_enabled**
+
++----------+----------------------------------+
+| *Setter* | set_dof_blur_near_enabled(value) |
++----------+----------------------------------+
+| *Getter* | is_dof_blur_near_enabled()       |
++----------+----------------------------------+
+
+Enables the near blur effect.
 
   .. _class_Environment_dof_blur_near_quality:
 
-- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_near_quality** - Quality of the near blur quality.
+- :ref:`DOFBlurQuality<enum_Environment_DOFBlurQuality>` **dof_blur_near_quality**
+
++----------+----------------------------------+
+| *Setter* | set_dof_blur_near_quality(value) |
++----------+----------------------------------+
+| *Getter* | get_dof_blur_near_quality()      |
++----------+----------------------------------+
+
+Quality of the near blur quality.
 
   .. _class_Environment_dof_blur_near_transition:
 
-- :ref:`float<class_float>` **dof_blur_near_transition** - Transition between near blur and no-blur area.
+- :ref:`float<class_float>` **dof_blur_near_transition**
+
++----------+-------------------------------------+
+| *Setter* | set_dof_blur_near_transition(value) |
++----------+-------------------------------------+
+| *Getter* | get_dof_blur_near_transition()      |
++----------+-------------------------------------+
+
+Transition between near blur and no-blur area.
 
   .. _class_Environment_fog_color:
 
-- :ref:`Color<class_Color>` **fog_color** - Fog's :ref:`Color<class_Color>`.
+- :ref:`Color<class_Color>` **fog_color**
+
++----------+----------------------+
+| *Setter* | set_fog_color(value) |
++----------+----------------------+
+| *Getter* | get_fog_color()      |
++----------+----------------------+
+
+Fog's :ref:`Color<class_Color>`.
 
   .. _class_Environment_fog_depth_begin:
 
-- :ref:`float<class_float>` **fog_depth_begin** - Fog's depth starting distance from the camera.
+- :ref:`float<class_float>` **fog_depth_begin**
+
++----------+----------------------------+
+| *Setter* | set_fog_depth_begin(value) |
++----------+----------------------------+
+| *Getter* | get_fog_depth_begin()      |
++----------+----------------------------+
+
+Fog's depth starting distance from the camera.
 
   .. _class_Environment_fog_depth_curve:
 
-- :ref:`float<class_float>` **fog_depth_curve** - Value defining the fog depth intensity.
+- :ref:`float<class_float>` **fog_depth_curve**
+
++----------+----------------------------+
+| *Setter* | set_fog_depth_curve(value) |
++----------+----------------------------+
+| *Getter* | get_fog_depth_curve()      |
++----------+----------------------------+
+
+Value defining the fog depth intensity.
 
   .. _class_Environment_fog_depth_enabled:
 
-- :ref:`bool<class_bool>` **fog_depth_enabled** - Enables the fog depth.
+- :ref:`bool<class_bool>` **fog_depth_enabled**
+
++----------+------------------------------+
+| *Setter* | set_fog_depth_enabled(value) |
++----------+------------------------------+
+| *Getter* | is_fog_depth_enabled()       |
++----------+------------------------------+
+
+Enables the fog depth.
 
   .. _class_Environment_fog_enabled:
 
-- :ref:`bool<class_bool>` **fog_enabled** - Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually display fog.
+- :ref:`bool<class_bool>` **fog_enabled**
+
++----------+------------------------+
+| *Setter* | set_fog_enabled(value) |
++----------+------------------------+
+| *Getter* | is_fog_enabled()       |
++----------+------------------------+
+
+Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually display fog.
 
   .. _class_Environment_fog_height_curve:
 
-- :ref:`float<class_float>` **fog_height_curve** - Value defining the fog height intensity.
+- :ref:`float<class_float>` **fog_height_curve**
+
++----------+-----------------------------+
+| *Setter* | set_fog_height_curve(value) |
++----------+-----------------------------+
+| *Getter* | get_fog_height_curve()      |
++----------+-----------------------------+
+
+Value defining the fog height intensity.
 
   .. _class_Environment_fog_height_enabled:
 
-- :ref:`bool<class_bool>` **fog_height_enabled** - Enables the fog height.
+- :ref:`bool<class_bool>` **fog_height_enabled**
+
++----------+-------------------------------+
+| *Setter* | set_fog_height_enabled(value) |
++----------+-------------------------------+
+| *Getter* | is_fog_height_enabled()       |
++----------+-------------------------------+
+
+Enables the fog height.
 
   .. _class_Environment_fog_height_max:
 
-- :ref:`float<class_float>` **fog_height_max** - Maximum height of fog.
+- :ref:`float<class_float>` **fog_height_max**
+
++----------+---------------------------+
+| *Setter* | set_fog_height_max(value) |
++----------+---------------------------+
+| *Getter* | get_fog_height_max()      |
++----------+---------------------------+
+
+Maximum height of fog.
 
   .. _class_Environment_fog_height_min:
 
-- :ref:`float<class_float>` **fog_height_min** - Minimum height of fog.
+- :ref:`float<class_float>` **fog_height_min**
+
++----------+---------------------------+
+| *Setter* | set_fog_height_min(value) |
++----------+---------------------------+
+| *Getter* | get_fog_height_min()      |
++----------+---------------------------+
+
+Minimum height of fog.
 
   .. _class_Environment_fog_sun_amount:
 
-- :ref:`float<class_float>` **fog_sun_amount** - Amount of sun that affects the fog rendering.
+- :ref:`float<class_float>` **fog_sun_amount**
+
++----------+---------------------------+
+| *Setter* | set_fog_sun_amount(value) |
++----------+---------------------------+
+| *Getter* | get_fog_sun_amount()      |
++----------+---------------------------+
+
+Amount of sun that affects the fog rendering.
 
   .. _class_Environment_fog_sun_color:
 
-- :ref:`Color<class_Color>` **fog_sun_color** - Sun :ref:`Color<class_Color>`.
+- :ref:`Color<class_Color>` **fog_sun_color**
+
++----------+--------------------------+
+| *Setter* | set_fog_sun_color(value) |
++----------+--------------------------+
+| *Getter* | get_fog_sun_color()      |
++----------+--------------------------+
+
+Sun :ref:`Color<class_Color>`.
 
   .. _class_Environment_fog_transmit_curve:
 
-- :ref:`float<class_float>` **fog_transmit_curve** - Amount of light that the fog transmits.
+- :ref:`float<class_float>` **fog_transmit_curve**
+
++----------+-------------------------------+
+| *Setter* | set_fog_transmit_curve(value) |
++----------+-------------------------------+
+| *Getter* | get_fog_transmit_curve()      |
++----------+-------------------------------+
+
+Amount of light that the fog transmits.
 
   .. _class_Environment_fog_transmit_enabled:
 
-- :ref:`bool<class_bool>` **fog_transmit_enabled** - Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
+- :ref:`bool<class_bool>` **fog_transmit_enabled**
+
++----------+---------------------------------+
+| *Setter* | set_fog_transmit_enabled(value) |
++----------+---------------------------------+
+| *Getter* | is_fog_transmit_enabled()       |
++----------+---------------------------------+
+
+Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
 
   .. _class_Environment_glow_bicubic_upscale:
 
 - :ref:`bool<class_bool>` **glow_bicubic_upscale**
 
++----------+-----------------------------------+
+| *Setter* | set_glow_bicubic_upscale(value)   |
++----------+-----------------------------------+
+| *Getter* | is_glow_bicubic_upscale_enabled() |
++----------+-----------------------------------+
+
   .. _class_Environment_glow_blend_mode:
 
-- :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode** - Glow blending mode.
+- :ref:`GlowBlendMode<enum_Environment_GlowBlendMode>` **glow_blend_mode**
+
++----------+----------------------------+
+| *Setter* | set_glow_blend_mode(value) |
++----------+----------------------------+
+| *Getter* | get_glow_blend_mode()      |
++----------+----------------------------+
+
+Glow blending mode.
 
   .. _class_Environment_glow_bloom:
 
-- :ref:`float<class_float>` **glow_bloom** - Bloom value (global glow).
+- :ref:`float<class_float>` **glow_bloom**
+
++----------+-----------------------+
+| *Setter* | set_glow_bloom(value) |
++----------+-----------------------+
+| *Getter* | get_glow_bloom()      |
++----------+-----------------------+
+
+Bloom value (global glow).
 
   .. _class_Environment_glow_enabled:
 
-- :ref:`bool<class_bool>` **glow_enabled** - Enables glow rendering.
+- :ref:`bool<class_bool>` **glow_enabled**
+
++----------+-------------------------+
+| *Setter* | set_glow_enabled(value) |
++----------+-------------------------+
+| *Getter* | is_glow_enabled()       |
++----------+-------------------------+
+
+Enables glow rendering.
 
   .. _class_Environment_glow_hdr_scale:
 
-- :ref:`float<class_float>` **glow_hdr_scale** - Bleed scale of the HDR glow.
+- :ref:`float<class_float>` **glow_hdr_scale**
+
++----------+---------------------------------+
+| *Setter* | set_glow_hdr_bleed_scale(value) |
++----------+---------------------------------+
+| *Getter* | get_glow_hdr_bleed_scale()      |
++----------+---------------------------------+
+
+Bleed scale of the HDR glow.
 
   .. _class_Environment_glow_hdr_threshold:
 
-- :ref:`float<class_float>` **glow_hdr_threshold** - Bleed threshold of the HDR glow.
+- :ref:`float<class_float>` **glow_hdr_threshold**
+
++----------+-------------------------------------+
+| *Setter* | set_glow_hdr_bleed_threshold(value) |
++----------+-------------------------------------+
+| *Getter* | get_glow_hdr_bleed_threshold()      |
++----------+-------------------------------------+
+
+Bleed threshold of the HDR glow.
 
   .. _class_Environment_glow_intensity:
 
-- :ref:`float<class_float>` **glow_intensity** - Glow intensity.
+- :ref:`float<class_float>` **glow_intensity**
+
++----------+---------------------------+
+| *Setter* | set_glow_intensity(value) |
++----------+---------------------------+
+| *Getter* | get_glow_intensity()      |
++----------+---------------------------+
+
+Glow intensity.
 
   .. _class_Environment_glow_levels/1:
 
-- :ref:`bool<class_bool>` **glow_levels/1** - First level of glow (most local).
+- :ref:`bool<class_bool>` **glow_levels/1**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+First level of glow (most local).
 
   .. _class_Environment_glow_levels/2:
 
-- :ref:`bool<class_bool>` **glow_levels/2** - Second level of glow.
+- :ref:`bool<class_bool>` **glow_levels/2**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Second level of glow.
 
   .. _class_Environment_glow_levels/3:
 
-- :ref:`bool<class_bool>` **glow_levels/3** - Third level of glow.
+- :ref:`bool<class_bool>` **glow_levels/3**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Third level of glow.
 
   .. _class_Environment_glow_levels/4:
 
-- :ref:`bool<class_bool>` **glow_levels/4** - Fourth level of glow.
+- :ref:`bool<class_bool>` **glow_levels/4**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Fourth level of glow.
 
   .. _class_Environment_glow_levels/5:
 
-- :ref:`bool<class_bool>` **glow_levels/5** - Fifth level of glow.
+- :ref:`bool<class_bool>` **glow_levels/5**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Fifth level of glow.
 
   .. _class_Environment_glow_levels/6:
 
-- :ref:`bool<class_bool>` **glow_levels/6** - Sixth level of glow.
+- :ref:`bool<class_bool>` **glow_levels/6**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Sixth level of glow.
 
   .. _class_Environment_glow_levels/7:
 
-- :ref:`bool<class_bool>` **glow_levels/7** - Seventh level of glow (most global).
+- :ref:`bool<class_bool>` **glow_levels/7**
+
++----------+-------------------------+
+| *Setter* | set_glow_level(value)   |
++----------+-------------------------+
+| *Getter* | is_glow_level_enabled() |
++----------+-------------------------+
+
+Seventh level of glow (most global).
 
   .. _class_Environment_glow_strength:
 
-- :ref:`float<class_float>` **glow_strength** - Glow strength.
+- :ref:`float<class_float>` **glow_strength**
+
++----------+--------------------------+
+| *Setter* | set_glow_strength(value) |
++----------+--------------------------+
+| *Getter* | get_glow_strength()      |
++----------+--------------------------+
+
+Glow strength.
 
   .. _class_Environment_ss_reflections_depth_tolerance:
 
 - :ref:`float<class_float>` **ss_reflections_depth_tolerance**
 
++----------+--------------------------------+
+| *Setter* | set_ssr_depth_tolerance(value) |
++----------+--------------------------------+
+| *Getter* | get_ssr_depth_tolerance()      |
++----------+--------------------------------+
+
   .. _class_Environment_ss_reflections_enabled:
 
 - :ref:`bool<class_bool>` **ss_reflections_enabled**
+
++----------+------------------------+
+| *Setter* | set_ssr_enabled(value) |
++----------+------------------------+
+| *Getter* | is_ssr_enabled()       |
++----------+------------------------+
 
   .. _class_Environment_ss_reflections_fade_in:
 
 - :ref:`float<class_float>` **ss_reflections_fade_in**
 
++----------+------------------------+
+| *Setter* | set_ssr_fade_in(value) |
++----------+------------------------+
+| *Getter* | get_ssr_fade_in()      |
++----------+------------------------+
+
   .. _class_Environment_ss_reflections_fade_out:
 
 - :ref:`float<class_float>` **ss_reflections_fade_out**
+
++----------+-------------------------+
+| *Setter* | set_ssr_fade_out(value) |
++----------+-------------------------+
+| *Getter* | get_ssr_fade_out()      |
++----------+-------------------------+
 
   .. _class_Environment_ss_reflections_max_steps:
 
 - :ref:`int<class_int>` **ss_reflections_max_steps**
 
++----------+--------------------------+
+| *Setter* | set_ssr_max_steps(value) |
++----------+--------------------------+
+| *Getter* | get_ssr_max_steps()      |
++----------+--------------------------+
+
   .. _class_Environment_ss_reflections_roughness:
 
 - :ref:`bool<class_bool>` **ss_reflections_roughness**
+
++----------+----------------------+
+| *Setter* | set_ssr_rough(value) |
++----------+----------------------+
+| *Getter* | is_ssr_rough()       |
++----------+----------------------+
 
   .. _class_Environment_ssao_ao_channel_affect:
 
 - :ref:`float<class_float>` **ssao_ao_channel_affect**
 
++----------+-----------------------------------+
+| *Setter* | set_ssao_ao_channel_affect(value) |
++----------+-----------------------------------+
+| *Getter* | get_ssao_ao_channel_affect()      |
++----------+-----------------------------------+
+
   .. _class_Environment_ssao_bias:
 
 - :ref:`float<class_float>` **ssao_bias**
+
++----------+----------------------+
+| *Setter* | set_ssao_bias(value) |
++----------+----------------------+
+| *Getter* | get_ssao_bias()      |
++----------+----------------------+
 
   .. _class_Environment_ssao_blur:
 
 - :ref:`SSAOBlur<enum_Environment_SSAOBlur>` **ssao_blur**
 
++----------+------------------------+
+| *Setter* | set_ssao_blur(value)   |
++----------+------------------------+
+| *Getter* | is_ssao_blur_enabled() |
++----------+------------------------+
+
   .. _class_Environment_ssao_color:
 
 - :ref:`Color<class_Color>` **ssao_color**
+
++----------+-----------------------+
+| *Setter* | set_ssao_color(value) |
++----------+-----------------------+
+| *Getter* | get_ssao_color()      |
++----------+-----------------------+
 
   .. _class_Environment_ssao_edge_sharpness:
 
 - :ref:`float<class_float>` **ssao_edge_sharpness**
 
++----------+--------------------------------+
+| *Setter* | set_ssao_edge_sharpness(value) |
++----------+--------------------------------+
+| *Getter* | get_ssao_edge_sharpness()      |
++----------+--------------------------------+
+
   .. _class_Environment_ssao_enabled:
 
 - :ref:`bool<class_bool>` **ssao_enabled**
+
++----------+-------------------------+
+| *Setter* | set_ssao_enabled(value) |
++----------+-------------------------+
+| *Getter* | is_ssao_enabled()       |
++----------+-------------------------+
 
   .. _class_Environment_ssao_intensity:
 
 - :ref:`float<class_float>` **ssao_intensity**
 
++----------+---------------------------+
+| *Setter* | set_ssao_intensity(value) |
++----------+---------------------------+
+| *Getter* | get_ssao_intensity()      |
++----------+---------------------------+
+
   .. _class_Environment_ssao_intensity2:
 
 - :ref:`float<class_float>` **ssao_intensity2**
+
++----------+----------------------------+
+| *Setter* | set_ssao_intensity2(value) |
++----------+----------------------------+
+| *Getter* | get_ssao_intensity2()      |
++----------+----------------------------+
 
   .. _class_Environment_ssao_light_affect:
 
 - :ref:`float<class_float>` **ssao_light_affect**
 
++----------+-------------------------------------+
+| *Setter* | set_ssao_direct_light_affect(value) |
++----------+-------------------------------------+
+| *Getter* | get_ssao_direct_light_affect()      |
++----------+-------------------------------------+
+
   .. _class_Environment_ssao_quality:
 
 - :ref:`SSAOQuality<enum_Environment_SSAOQuality>` **ssao_quality**
+
++----------+-------------------------+
+| *Setter* | set_ssao_quality(value) |
++----------+-------------------------+
+| *Getter* | get_ssao_quality()      |
++----------+-------------------------+
 
   .. _class_Environment_ssao_radius:
 
 - :ref:`float<class_float>` **ssao_radius**
 
++----------+------------------------+
+| *Setter* | set_ssao_radius(value) |
++----------+------------------------+
+| *Getter* | get_ssao_radius()      |
++----------+------------------------+
+
   .. _class_Environment_ssao_radius2:
 
 - :ref:`float<class_float>` **ssao_radius2**
 
++----------+-------------------------+
+| *Setter* | set_ssao_radius2(value) |
++----------+-------------------------+
+| *Getter* | get_ssao_radius2()      |
++----------+-------------------------+
+
   .. _class_Environment_tonemap_exposure:
 
-- :ref:`float<class_float>` **tonemap_exposure** - Default exposure for tonemap.
+- :ref:`float<class_float>` **tonemap_exposure**
+
++----------+-----------------------------+
+| *Setter* | set_tonemap_exposure(value) |
++----------+-----------------------------+
+| *Getter* | get_tonemap_exposure()      |
++----------+-----------------------------+
+
+Default exposure for tonemap.
 
   .. _class_Environment_tonemap_mode:
 
-- :ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode** - Tonemapping mode.
+- :ref:`ToneMapper<enum_Environment_ToneMapper>` **tonemap_mode**
+
++----------+-----------------------+
+| *Setter* | set_tonemapper(value) |
++----------+-----------------------+
+| *Getter* | get_tonemapper()      |
++----------+-----------------------+
+
+Tonemapping mode.
 
   .. _class_Environment_tonemap_white:
 
-- :ref:`float<class_float>` **tonemap_white** - White reference value for tonemap.
+- :ref:`float<class_float>` **tonemap_white**
 
++----------+--------------------------+
+| *Setter* | set_tonemap_white(value) |
++----------+--------------------------+
+| *Getter* | get_tonemap_white()      |
++----------+--------------------------+
+
+White reference value for tonemap.
 

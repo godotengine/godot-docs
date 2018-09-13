@@ -14,6 +14,17 @@ Brief Description
 
 Axis-Aligned Bounding Box.
 
+Properties
+----------
+
++-------------------------------+--------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_end>`           |
++-------------------------------+--------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_position>` |
++-------------------------------+--------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_size>`         |
++-------------------------------+--------------------------------------+
+
 Methods
 -------
 
@@ -70,150 +81,153 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
-
 Property Descriptions
 ---------------------
 
   .. _class_AABB_end:
 
-- :ref:`Vector3<class_Vector3>` **end** - Ending corner.
+- :ref:`Vector3<class_Vector3>` **end**
+
+Ending corner.
 
   .. _class_AABB_position:
 
-- :ref:`Vector3<class_Vector3>` **position** - Beginning corner.
+- :ref:`Vector3<class_Vector3>` **position**
+
+Beginning corner.
 
   .. _class_AABB_size:
 
-- :ref:`Vector3<class_Vector3>` **size** - Size from position to end.
+- :ref:`Vector3<class_Vector3>` **size**
 
+Size from position to end.
 
 Method Descriptions
 -------------------
 
-.. _class_AABB_AABB:
+  .. _class_AABB_AABB:
 
 - :ref:`AABB<class_AABB>` **AABB** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**
 
 Optional constructor, accepts position and size.
 
-.. _class_AABB_encloses:
+  .. _class_AABB_encloses:
 
 - :ref:`bool<class_bool>` **encloses** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns ``true`` if this ``AABB`` completely encloses another one.
 
-.. _class_AABB_expand:
+  .. _class_AABB_expand:
 
 - :ref:`AABB<class_AABB>` **expand** **(** :ref:`Vector3<class_Vector3>` to_point **)**
 
 Returns this ``AABB`` expanded to include a given point.
 
-.. _class_AABB_get_area:
+  .. _class_AABB_get_area:
 
 - :ref:`float<class_float>` **get_area** **(** **)**
 
 Gets the area of the ``AABB``.
 
-.. _class_AABB_get_endpoint:
+  .. _class_AABB_get_endpoint:
 
 - :ref:`Vector3<class_Vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)**
 
 Gets the position of the 8 endpoints of the ``AABB`` in space.
 
-.. _class_AABB_get_longest_axis:
+  .. _class_AABB_get_longest_axis:
 
 - :ref:`Vector3<class_Vector3>` **get_longest_axis** **(** **)**
 
 Returns the normalized longest axis of the ``AABB``.
 
-.. _class_AABB_get_longest_axis_index:
+  .. _class_AABB_get_longest_axis_index:
 
 - :ref:`int<class_int>` **get_longest_axis_index** **(** **)**
 
 Returns the index of the longest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
 
-.. _class_AABB_get_longest_axis_size:
+  .. _class_AABB_get_longest_axis_size:
 
 - :ref:`float<class_float>` **get_longest_axis_size** **(** **)**
 
 Returns the scalar length of the longest axis of the ``AABB``.
 
-.. _class_AABB_get_shortest_axis:
+  .. _class_AABB_get_shortest_axis:
 
 - :ref:`Vector3<class_Vector3>` **get_shortest_axis** **(** **)**
 
 Returns the normalized shortest axis of the ``AABB``.
 
-.. _class_AABB_get_shortest_axis_index:
+  .. _class_AABB_get_shortest_axis_index:
 
 - :ref:`int<class_int>` **get_shortest_axis_index** **(** **)**
 
 Returns the index of the shortest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
 
-.. _class_AABB_get_shortest_axis_size:
+  .. _class_AABB_get_shortest_axis_size:
 
 - :ref:`float<class_float>` **get_shortest_axis_size** **(** **)**
 
 Returns the scalar length of the shortest axis of the ``AABB``.
 
-.. _class_AABB_get_support:
+  .. _class_AABB_get_support:
 
 - :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)**
 
 Returns the support point in a given direction. This is useful for collision detection algorithms.
 
-.. _class_AABB_grow:
+  .. _class_AABB_grow:
 
 - :ref:`AABB<class_AABB>` **grow** **(** :ref:`float<class_float>` by **)**
 
 Returns a copy of the ``AABB`` grown a given amount of units towards all the sides.
 
-.. _class_AABB_has_no_area:
+  .. _class_AABB_has_no_area:
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)**
 
 Returns ``true`` if the ``AABB`` is flat or empty.
 
-.. _class_AABB_has_no_surface:
+  .. _class_AABB_has_no_surface:
 
 - :ref:`bool<class_bool>` **has_no_surface** **(** **)**
 
 Returns ``true`` if the ``AABB`` is empty.
 
-.. _class_AABB_has_point:
+  .. _class_AABB_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns ``true`` if the ``AABB`` contains a point.
 
-.. _class_AABB_intersection:
+  .. _class_AABB_intersection:
 
 - :ref:`AABB<class_AABB>` **intersection** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns the intersection between two ``AABB``. An empty AABB (size 0,0,0) is returned on failure.
 
-.. _class_AABB_intersects:
+  .. _class_AABB_intersects:
 
 - :ref:`bool<class_bool>` **intersects** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns ``true`` if the ``AABB`` overlaps with another.
 
-.. _class_AABB_intersects_plane:
+  .. _class_AABB_intersects_plane:
 
 - :ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_Plane>` plane **)**
 
 Returns ``true`` if the ``AABB`` is on both sides of a plane.
 
-.. _class_AABB_intersects_segment:
+  .. _class_AABB_intersects_segment:
 
 - :ref:`bool<class_bool>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)**
 
 Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` and ``to``.
 
-.. _class_AABB_merge:
+  .. _class_AABB_merge:
 
 - :ref:`AABB<class_AABB>` **merge** **(** :ref:`AABB<class_AABB>` with **)**
 
 Returns a larger AABB that contains this AABB and ``with``.
-
 

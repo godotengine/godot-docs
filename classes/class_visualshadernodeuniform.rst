@@ -8,13 +8,22 @@ VisualShaderNodeUniform
 =======================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`, :ref:`VisualShaderNodeScalarUniform<class_VisualShaderNodeScalarUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------+-----------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`uniform_name<class_VisualShaderNodeUniform_uniform_name>` |
++-----------------------------+-----------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -23,4 +32,9 @@ Property Descriptions
 
 - :ref:`String<class_String>` **uniform_name**
 
++----------+-------------------------+
+| *Setter* | set_uniform_name(value) |
++----------+-------------------------+
+| *Getter* | get_uniform_name()      |
++----------+-------------------------+
 

@@ -8,6 +8,7 @@ EditorSelection
 ===============
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -33,12 +34,11 @@ Methods
 Signals
 -------
 
-.. _class_EditorSelection_selection_changed:
+  .. _class_EditorSelection_selection_changed:
 
 - **selection_changed** **(** **)**
 
 Emitted when the selection changes.
-
 
 Description
 -----------
@@ -48,34 +48,33 @@ This object manages the SceneTree selection in the editor.
 Method Descriptions
 -------------------
 
-.. _class_EditorSelection_add_node:
+  .. _class_EditorSelection_add_node:
 
 - void **add_node** **(** :ref:`Node<class_Node>` node **)**
 
 Add a node to the selection.
 
-.. _class_EditorSelection_clear:
+  .. _class_EditorSelection_clear:
 
 - void **clear** **(** **)**
 
 Clear the selection.
 
-.. _class_EditorSelection_get_selected_nodes:
+  .. _class_EditorSelection_get_selected_nodes:
 
 - :ref:`Array<class_Array>` **get_selected_nodes** **(** **)**
 
 Get the list of selected nodes.
 
-.. _class_EditorSelection_get_transformable_selected_nodes:
+  .. _class_EditorSelection_get_transformable_selected_nodes:
 
 - :ref:`Array<class_Array>` **get_transformable_selected_nodes** **(** **)**
 
 Get the list of selected nodes, optimized for transform operations (ie, moving them, rotating, etc). This list avoids situations where a node is selected and also chid/grandchild.
 
-.. _class_EditorSelection_remove_node:
+  .. _class_EditorSelection_remove_node:
 
 - void **remove_node** **(** :ref:`Node<class_Node>` node **)**
 
 Remove a node from the selection.
-
 

@@ -8,12 +8,20 @@ Path2D
 ======
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Contains a :ref:`Curve2D<class_Curve2D>` path for :ref:`PathFollow2D<class_PathFollow2D>` nodes to follow.
+
+Properties
+----------
+
++-------------------------------+----------------------------------+
+| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_curve>` |
++-------------------------------+----------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_Path2D_curve:
 
-- :ref:`Curve2D<class_Curve2D>` **curve** - A :ref:`Curve2D<class_Curve2D>` describing the path.
+- :ref:`Curve2D<class_Curve2D>` **curve**
 
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
+
+A :ref:`Curve2D<class_Curve2D>` describing the path.
 

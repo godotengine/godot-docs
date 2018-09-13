@@ -8,12 +8,46 @@ CheckButton
 ===========
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Checkable button.
+
+Theme Properties
+----------------
+
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`check_vadjust<class_CheckButton_check_vadjust>`             |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_CheckButton_disabled>`                       |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_CheckButton_focus>`                             |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_CheckButton_font>`                               |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_CheckButton_font_color>`                   |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_CheckButton_font_color_disabled>` |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_CheckButton_font_color_hover>`       |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_CheckButton_font_color_pressed>`   |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_CheckButton_hover>`                             |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_CheckButton_hseparation>`                 |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_CheckButton_normal>`                           |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`off<class_CheckButton_off>`                                 |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`on<class_CheckButton_on>`                                   |
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_CheckButton_pressed>`                         |
++---------------------------------+-------------------------------------------------------------------+
 
 Description
 -----------

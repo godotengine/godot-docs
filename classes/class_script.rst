@@ -8,13 +8,22 @@ Script
 ======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisualScript<class_VisualScript>`, :ref:`GDScript<class_GDScript>`, :ref:`CSharpScript<class_CSharpScript>`, :ref:`NativeScript<class_NativeScript>`, :ref:`PluginScript<class_PluginScript>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A class stored as a resource.
+
+Properties
+----------
+
++-----------------------------+----------------------------------------------+
+| :ref:`String<class_String>` | :ref:`source_code<class_Script_source_code>` |
++-----------------------------+----------------------------------------------+
 
 Methods
 -------
@@ -48,64 +57,69 @@ Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/scripting`
-
 Property Descriptions
 ---------------------
 
   .. _class_Script_source_code:
 
-- :ref:`String<class_String>` **source_code** - The script source code or an empty string if source code is not available. When set, does not reload the class implementation automatically.
+- :ref:`String<class_String>` **source_code**
 
++----------+------------------------+
+| *Setter* | set_source_code(value) |
++----------+------------------------+
+| *Getter* | get_source_code()      |
++----------+------------------------+
+
+The script source code or an empty string if source code is not available. When set, does not reload the class implementation automatically.
 
 Method Descriptions
 -------------------
 
-.. _class_Script_can_instance:
+  .. _class_Script_can_instance:
 
 - :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 Returns ``true`` if the script can be instanced.
 
-.. _class_Script_get_base_script:
+  .. _class_Script_get_base_script:
 
 - :ref:`Script<class_Script>` **get_base_script** **(** **)** const
 
 Returns the script directly inherited by this script.
 
-.. _class_Script_get_instance_base_type:
+  .. _class_Script_get_instance_base_type:
 
 - :ref:`String<class_String>` **get_instance_base_type** **(** **)** const
 
 Returns the script's base type.
 
-.. _class_Script_has_script_signal:
+  .. _class_Script_has_script_signal:
 
 - :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`String<class_String>` signal_name **)** const
 
 Returns ``true`` if the script, or a base class, defines a signal with the given name.
 
-.. _class_Script_has_source_code:
+  .. _class_Script_has_source_code:
 
 - :ref:`bool<class_bool>` **has_source_code** **(** **)** const
 
 Returns ``true`` if the script contains non-empty source code.
 
-.. _class_Script_instance_has:
+  .. _class_Script_instance_has:
 
 - :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** const
 
 Returns ``true`` if ``base_object`` is an instance of this script.
 
-.. _class_Script_is_tool:
+  .. _class_Script_is_tool:
 
 - :ref:`bool<class_bool>` **is_tool** **(** **)** const
 
 Returns ``true`` if the script is a tool script. A tool script can run in the editor.
 
-.. _class_Script_reload:
+  .. _class_Script_reload:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **reload** **(** :ref:`bool<class_bool>` keep_state=false **)**
 
 Reloads the script's class implementation. Returns an error code.
-
 

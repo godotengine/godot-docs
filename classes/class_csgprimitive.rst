@@ -8,7 +8,9 @@ CSGPrimitive
 ============
 
 **Inherits:** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`CSGSphere<class_CSGSphere>`, :ref:`CSGPolygon<class_CSGPolygon>`, :ref:`CSGCylinder<class_CSGCylinder>`, :ref:`CSGBox<class_CSGBox>`, :ref:`CSGTorus<class_CSGTorus>`, :ref:`CSGMesh<class_CSGMesh>`
+
 **Category:** Core
 
 Brief Description
@@ -16,11 +18,25 @@ Brief Description
 
 Base class for CSG primitives.
 
+Properties
+----------
+
++-------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive_invert_faces>` |
++-------------------------+------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
   .. _class_CSGPrimitive_invert_faces:
 
-- :ref:`bool<class_bool>` **invert_faces** - Invert the faces of the mesh.
+- :ref:`bool<class_bool>` **invert_faces**
 
++----------+-------------------------+
+| *Setter* | set_invert_faces(value) |
++----------+-------------------------+
+| *Getter* | is_inverting_faces()    |
++----------+-------------------------+
+
+Invert the faces of the mesh.
 

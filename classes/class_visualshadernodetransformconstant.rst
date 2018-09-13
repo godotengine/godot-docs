@@ -8,12 +8,20 @@ VisualShaderNodeTransformConstant
 =================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------------+-------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`constant<class_VisualShaderNodeTransformConstant_constant>` |
++-----------------------------------+-------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,4 +30,9 @@ Property Descriptions
 
 - :ref:`Transform<class_Transform>` **constant**
 
++----------+---------------------+
+| *Setter* | set_constant(value) |
++----------+---------------------+
+| *Getter* | get_constant()      |
++----------+---------------------+
 

@@ -8,12 +8,20 @@ BoneAttachment
 ==============
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A node that will attach to a bone.
+
+Properties
+----------
+
++-----------------------------+--------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment_bone_name>` |
++-----------------------------+--------------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_BoneAttachment_bone_name:
 
-- :ref:`String<class_String>` **bone_name** - The name of the attached bone.
+- :ref:`String<class_String>` **bone_name**
 
++----------+----------------------+
+| *Setter* | set_bone_name(value) |
++----------+----------------------+
+| *Getter* | get_bone_name()      |
++----------+----------------------+
+
+The name of the attached bone.
 

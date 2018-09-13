@@ -8,7 +8,9 @@ VideoStream
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VideoStreamWebm<class_VideoStreamWebm>`, :ref:`VideoStreamTheora<class_VideoStreamTheora>`
+
 **Category:** Core
 
 Brief Description

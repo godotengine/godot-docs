@@ -8,6 +8,7 @@ VisualScriptMathConstant
 ========================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,19 @@ Brief Description
 
 Commonly used mathematical constants.
 
+Properties
+----------
+
++-----------------------------------------------------------------+----------------------------------------------------------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_constant>` |
++-----------------------------------------------------------------+----------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualScriptMathConstant_MathConstant:
 
-enum **MathConstant**
+enum **MathConstant**:
 
 - **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
 - **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
@@ -31,7 +39,6 @@ enum **MathConstant**
 - **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
 - **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
 - **MATH_CONSTANT_MAX** = **8**
-
 
 Description
 -----------
@@ -51,6 +58,13 @@ Property Descriptions
 
   .. _class_VisualScriptMathConstant_constant:
 
-- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant** - The math constant.
+- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 
++----------+--------------------------+
+| *Setter* | set_math_constant(value) |
++----------+--------------------------+
+| *Getter* | get_math_constant()      |
++----------+--------------------------+
+
+The math constant.
 

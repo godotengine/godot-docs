@@ -8,12 +8,20 @@ ShortCut
 ========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A shortcut for binding input.
+
+Properties
+----------
+
++-------------------------------------+------------------------------------------+
+| :ref:`InputEvent<class_InputEvent>` | :ref:`shortcut<class_ShortCut_shortcut>` |
++-------------------------------------+------------------------------------------+
 
 Methods
 -------
@@ -38,30 +46,36 @@ Property Descriptions
 
   .. _class_ShortCut_shortcut:
 
-- :ref:`InputEvent<class_InputEvent>` **shortcut** - The Shortcut's :ref:`InputEvent<class_InputEvent>`.
+- :ref:`InputEvent<class_InputEvent>` **shortcut**
+
++----------+---------------------+
+| *Setter* | set_shortcut(value) |
++----------+---------------------+
+| *Getter* | get_shortcut()      |
++----------+---------------------+
+
+The Shortcut's :ref:`InputEvent<class_InputEvent>`.
 
 Generally the :ref:`InputEvent<class_InputEvent>` is a keyboard key, though it can be any :ref:`InputEvent<class_InputEvent>`.
-
 
 Method Descriptions
 -------------------
 
-.. _class_ShortCut_get_as_text:
+  .. _class_ShortCut_get_as_text:
 
 - :ref:`String<class_String>` **get_as_text** **(** **)** const
 
 Returns the Shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
-.. _class_ShortCut_is_shortcut:
+  .. _class_ShortCut_is_shortcut:
 
 - :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Returns ``true`` if the Shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
 
-.. _class_ShortCut_is_valid:
+  .. _class_ShortCut_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
 If ``true`` this Shortcut is valid.
-
 

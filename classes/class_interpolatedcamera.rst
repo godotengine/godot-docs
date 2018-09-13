@@ -8,12 +8,24 @@ InterpolatedCamera
 ==================
 
 **Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Camera which moves toward another node.
+
+Properties
+----------
+
++---------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`enabled<class_InterpolatedCamera_enabled>` |
++---------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`speed<class_InterpolatedCamera_speed>`     |
++---------------------------------+--------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`target<class_InterpolatedCamera_target>`   |
++---------------------------------+--------------------------------------------------+
 
 Methods
 -------
@@ -34,24 +46,46 @@ Property Descriptions
 
   .. _class_InterpolatedCamera_enabled:
 
-- :ref:`bool<class_bool>` **enabled** - If ``true`` and a target is set, the camera will move automatically.
+- :ref:`bool<class_bool>` **enabled**
+
++----------+----------------------------------+
+| *Setter* | set_interpolation_enabled(value) |
++----------+----------------------------------+
+| *Getter* | is_interpolation_enabled()       |
++----------+----------------------------------+
+
+If ``true`` and a target is set, the camera will move automatically.
 
   .. _class_InterpolatedCamera_speed:
 
-- :ref:`float<class_float>` **speed** - How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
+- :ref:`float<class_float>` **speed**
+
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
+
+How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
 
   .. _class_InterpolatedCamera_target:
 
-- :ref:`NodePath<class_NodePath>` **target** - The target's :ref:`NodePath<class_NodePath>`.
+- :ref:`NodePath<class_NodePath>` **target**
 
++----------+------------------------+
+| *Setter* | set_target_path(value) |
++----------+------------------------+
+| *Getter* | get_target_path()      |
++----------+------------------------+
+
+The target's :ref:`NodePath<class_NodePath>`.
 
 Method Descriptions
 -------------------
 
-.. _class_InterpolatedCamera_set_target:
+  .. _class_InterpolatedCamera_set_target:
 
 - void **set_target** **(** :ref:`Object<class_Object>` target **)**
 
 Sets the node to move toward and orient with.
-
 

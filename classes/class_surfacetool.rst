@@ -8,6 +8,7 @@ SurfaceTool
 ===========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -84,109 +85,109 @@ It is very important that vertex attributes are passed **before** the call to :r
 Method Descriptions
 -------------------
 
-.. _class_SurfaceTool_add_bones:
+  .. _class_SurfaceTool_add_bones:
 
 - void **add_bones** **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
 Add an array of bones for the next Vertex to use.
 
-.. _class_SurfaceTool_add_color:
+  .. _class_SurfaceTool_add_color:
 
 - void **add_color** **(** :ref:`Color<class_Color>` color **)**
 
 Specify a :ref:`Color<class_Color>` for the next Vertex to use.
 
-.. _class_SurfaceTool_add_index:
+  .. _class_SurfaceTool_add_index:
 
 - void **add_index** **(** :ref:`int<class_int>` index **)**
 
 Adds an index to index array if you are using indexed Vertices. Does not need to be called before adding Vertex.
 
-.. _class_SurfaceTool_add_normal:
+  .. _class_SurfaceTool_add_normal:
 
 - void **add_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
 Specify a normal for the next Vertex to use.
 
-.. _class_SurfaceTool_add_smooth_group:
+  .. _class_SurfaceTool_add_smooth_group:
 
 - void **add_smooth_group** **(** :ref:`bool<class_bool>` smooth **)**
 
 Specify whether current Vertex (if using only Vertex arrays) or current index (if also using index arrays) should utilize smooth normals for normal calculation.
 
-.. _class_SurfaceTool_add_tangent:
+  .. _class_SurfaceTool_add_tangent:
 
 - void **add_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
 
 Specify a Tangent for the next Vertex to use.
 
-.. _class_SurfaceTool_add_to_format:
+  .. _class_SurfaceTool_add_to_format:
 
 - void **add_to_format** **(** :ref:`int<class_int>` flags **)**
 
-.. _class_SurfaceTool_add_triangle_fan:
+  .. _class_SurfaceTool_add_triangle_fan:
 
 - void **add_triangle_fan** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertexes, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`PoolColorArray<class_PoolColorArray>` colors=PoolColorArray(  ), :ref:`PoolVector2Array<class_PoolVector2Array>` uv2s=PoolVector2Array(  ), :ref:`PoolVector3Array<class_PoolVector3Array>` normals=PoolVector3Array(  ), :ref:`Array<class_Array>` tangents=[  ] **)**
 
 Insert a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
 
-.. _class_SurfaceTool_add_uv:
+  .. _class_SurfaceTool_add_uv:
 
 - void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
 
 Specify UV Coordinate for next Vertex to use.
 
-.. _class_SurfaceTool_add_uv2:
+  .. _class_SurfaceTool_add_uv2:
 
 - void **add_uv2** **(** :ref:`Vector2<class_Vector2>` uv2 **)**
 
 Specify an optional second set of UV coordinates for next Vertex to use.
 
-.. _class_SurfaceTool_add_vertex:
+  .. _class_SurfaceTool_add_vertex:
 
 - void **add_vertex** **(** :ref:`Vector3<class_Vector3>` vertex **)**
 
 Specify position of current Vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
 
-.. _class_SurfaceTool_add_weights:
+  .. _class_SurfaceTool_add_weights:
 
 - void **add_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
 Specify weight value for next Vertex to use.
 
-.. _class_SurfaceTool_append_from:
+  .. _class_SurfaceTool_append_from:
 
 - void **append_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_Transform>` transform **)**
 
-.. _class_SurfaceTool_begin:
+  .. _class_SurfaceTool_begin:
 
 - void **begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive **)**
 
 Called before adding any Vertices. Takes the primitive type as an argument (e.g. Mesh.PRIMITIVE_TRIANGLES).
 
-.. _class_SurfaceTool_clear:
+  .. _class_SurfaceTool_clear:
 
 - void **clear** **(** **)**
 
 Clear all information passed into the surface tool so far.
 
-.. _class_SurfaceTool_commit:
+  .. _class_SurfaceTool_commit:
 
 - :ref:`ArrayMesh<class_ArrayMesh>` **commit** **(** :ref:`ArrayMesh<class_ArrayMesh>` existing=null, :ref:`int<class_int>` flags=97280 **)**
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
-.. _class_SurfaceTool_create_from:
+  .. _class_SurfaceTool_create_from:
 
 - void **create_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface **)**
 
-.. _class_SurfaceTool_deindex:
+  .. _class_SurfaceTool_deindex:
 
 - void **deindex** **(** **)**
 
 Removes index array by expanding Vertex array.
 
-.. _class_SurfaceTool_generate_normals:
+  .. _class_SurfaceTool_generate_normals:
 
 - void **generate_normals** **(** :ref:`bool<class_bool>` flip=false **)**
 
@@ -194,20 +195,19 @@ Generates normals from Vertices so you do not have to do it manually.
 
 Setting "flip" ``true`` inverts resulting normals.
 
-.. _class_SurfaceTool_generate_tangents:
+  .. _class_SurfaceTool_generate_tangents:
 
 - void **generate_tangents** **(** **)**
 
-.. _class_SurfaceTool_index:
+  .. _class_SurfaceTool_index:
 
 - void **index** **(** **)**
 
 Shrinks Vertex array by creating an index array. Avoids reusing Vertices.
 
-.. _class_SurfaceTool_set_material:
+  .. _class_SurfaceTool_set_material:
 
 - void **set_material** **(** :ref:`Material<class_Material>` material **)**
 
 Sets :ref:`Material<class_Material>` to be used by the :ref:`Mesh<class_Mesh>` you are constructing.
-
 

@@ -8,12 +8,20 @@ VisualScriptEngineSingleton
 ===========================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`
+
+Properties
+----------
+
++-----------------------------+-------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_constant>` |
++-----------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_VisualScriptEngineSingleton_constant:
 
-- :ref:`String<class_String>` **constant** - The singleton's name.
+- :ref:`String<class_String>` **constant**
 
++----------+----------------------+
+| *Setter* | set_singleton(value) |
++----------+----------------------+
+| *Getter* | get_singleton()      |
++----------+----------------------+
+
+The singleton's name.
 

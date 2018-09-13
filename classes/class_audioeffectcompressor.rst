@@ -8,6 +8,7 @@ AudioEffectCompressor
 =====================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -16,6 +17,25 @@ Brief Description
 Adds a Compressor audio effect to an Audio bus.
 
 Reduces sounds that exceed a certain threshold level, smooths out the dynamics and increases the overall volume.
+
+Properties
+----------
+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`attack_us<class_AudioEffectCompressor_attack_us>`   |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`gain<class_AudioEffectCompressor_gain>`             |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`mix<class_AudioEffectCompressor_mix>`               |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`ratio<class_AudioEffectCompressor_ratio>`           |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`release_ms<class_AudioEffectCompressor_release_ms>` |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`sidechain<class_AudioEffectCompressor_sidechain>`   |
++-----------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`threshold<class_AudioEffectCompressor_threshold>`   |
++-----------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -37,30 +57,85 @@ Property Descriptions
 
   .. _class_AudioEffectCompressor_attack_us:
 
-- :ref:`float<class_float>` **attack_us** - Compressor's reaction time when the signal exceeds the threshold. Value can range from 20 to 2000. Default value: ``20ms``.
+- :ref:`float<class_float>` **attack_us**
+
++----------+----------------------+
+| *Setter* | set_attack_us(value) |
++----------+----------------------+
+| *Getter* | get_attack_us()      |
++----------+----------------------+
+
+Compressor's reaction time when the signal exceeds the threshold. Value can range from 20 to 2000. Default value: ``20ms``.
 
   .. _class_AudioEffectCompressor_gain:
 
-- :ref:`float<class_float>` **gain** - Gain applied to the output signal.
+- :ref:`float<class_float>` **gain**
+
++----------+-----------------+
+| *Setter* | set_gain(value) |
++----------+-----------------+
+| *Getter* | get_gain()      |
++----------+-----------------+
+
+Gain applied to the output signal.
 
   .. _class_AudioEffectCompressor_mix:
 
-- :ref:`float<class_float>` **mix** - Balance between original signal and effect signal. Value can range from 0 (totally dry) to 1 (totally wet). Default value: ``1``.
+- :ref:`float<class_float>` **mix**
+
++----------+----------------+
+| *Setter* | set_mix(value) |
++----------+----------------+
+| *Getter* | get_mix()      |
++----------+----------------+
+
+Balance between original signal and effect signal. Value can range from 0 (totally dry) to 1 (totally wet). Default value: ``1``.
 
   .. _class_AudioEffectCompressor_ratio:
 
-- :ref:`float<class_float>` **ratio** - Amount of compression applied to the audio once it passes the threshold level. The higher the ratio the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: ``4``.
+- :ref:`float<class_float>` **ratio**
+
++----------+------------------+
+| *Setter* | set_ratio(value) |
++----------+------------------+
+| *Getter* | get_ratio()      |
++----------+------------------+
+
+Amount of compression applied to the audio once it passes the threshold level. The higher the ratio the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: ``4``.
 
   .. _class_AudioEffectCompressor_release_ms:
 
-- :ref:`float<class_float>` **release_ms** - Compressor's delay time to stop reducing the signal after the signal level falls below the threshold. Value can range from 20 to 2000. Default value: ``250ms``.
+- :ref:`float<class_float>` **release_ms**
+
++----------+-----------------------+
+| *Setter* | set_release_ms(value) |
++----------+-----------------------+
+| *Getter* | get_release_ms()      |
++----------+-----------------------+
+
+Compressor's delay time to stop reducing the signal after the signal level falls below the threshold. Value can range from 20 to 2000. Default value: ``250ms``.
 
   .. _class_AudioEffectCompressor_sidechain:
 
-- :ref:`String<class_String>` **sidechain** - Reduce the sound level using another audio bus for threshold detection.
+- :ref:`String<class_String>` **sidechain**
+
++----------+----------------------+
+| *Setter* | set_sidechain(value) |
++----------+----------------------+
+| *Getter* | get_sidechain()      |
++----------+----------------------+
+
+Reduce the sound level using another audio bus for threshold detection.
 
   .. _class_AudioEffectCompressor_threshold:
 
-- :ref:`float<class_float>` **threshold** - The level above which compression is applied to the audio. Value can range from -60 to 0. Default value: ``0``.
+- :ref:`float<class_float>` **threshold**
 
++----------+----------------------+
+| *Setter* | set_threshold(value) |
++----------+----------------------+
+| *Getter* | get_threshold()      |
++----------+----------------------+
+
+The level above which compression is applied to the audio. Value can range from -60 to 0. Default value: ``0``.
 

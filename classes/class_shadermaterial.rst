@@ -8,12 +8,20 @@ ShaderMaterial
 ==============
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A material that uses a custom :ref:`Shader<class_Shader>` program.
+
+Properties
+----------
+
++-----------------------------+--------------------------------------------+
+| :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_shader>` |
++-----------------------------+--------------------------------------------+
 
 Methods
 -------
@@ -34,22 +42,28 @@ Property Descriptions
 
   .. _class_ShaderMaterial_shader:
 
-- :ref:`Shader<class_Shader>` **shader** - The :ref:`Shader<class_Shader>` program used to render this material.
+- :ref:`Shader<class_Shader>` **shader**
 
++----------+-------------------+
+| *Setter* | set_shader(value) |
++----------+-------------------+
+| *Getter* | get_shader()      |
++----------+-------------------+
+
+The :ref:`Shader<class_Shader>` program used to render this material.
 
 Method Descriptions
 -------------------
 
-.. _class_ShaderMaterial_get_shader_param:
+  .. _class_ShaderMaterial_get_shader_param:
 
 - :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`String<class_String>` param **)** const
 
 Returns the current value set for this material of a uniform in the shader.
 
-.. _class_ShaderMaterial_set_shader_param:
+  .. _class_ShaderMaterial_set_shader_param:
 
 - void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
 
 Changes the value set for this material of a uniform in the shader.
-
 

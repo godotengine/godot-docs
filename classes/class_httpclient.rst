@@ -8,12 +8,22 @@ HTTPClient
 ==========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Hyper-text transfer protocol client.
+
+Properties
+----------
+
++-------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`blocking_mode_enabled<class_HTTPClient_blocking_mode_enabled>` |
++-------------------------------------+----------------------------------------------------------------------+
+| :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_connection>`                       |
++-------------------------------------+----------------------------------------------------------------------+
 
 Methods
 -------
@@ -55,7 +65,7 @@ Enumerations
 
   .. _enum_HTTPClient_Status:
 
-enum **Status**
+enum **Status**:
 
 - **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
 - **STATUS_RESOLVING** = **1** --- Status: Currently resolving the hostname for the given URL into an IP.
@@ -70,7 +80,7 @@ enum **Status**
 
   .. _enum_HTTPClient_Method:
 
-enum **Method**
+enum **Method**:
 
 - **METHOD_GET** = **0** --- HTTP GET method. The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
 - **METHOD_HEAD** = **1** --- HTTP HEAD method. The HEAD method asks for a response identical to that of a GET request, but without the response body. This is useful to request metadata like HTTP headers or to check if a resource exists.
@@ -85,7 +95,7 @@ enum **Method**
 
   .. _enum_HTTPClient_ResponseCode:
 
-enum **ResponseCode**
+enum **ResponseCode**:
 
 - **RESPONSE_CONTINUE** = **100** --- HTTP status code ``100 Continue``. Interim response that indicates everything so far is OK and that the client should continue with the request (or ignore this status if already finished).
 - **RESPONSE_SWITCHING_PROTOCOLS** = **101** --- HTTP status code ``101 Switching Protocol``. Sent in response to an ``Upgrade`` request header by the client. Indicates the protocol the server is switching to.
@@ -149,7 +159,6 @@ enum **ResponseCode**
 - **RESPONSE_NOT_EXTENDED** = **510** --- HTTP status code ``510 Not Extended``. The policy for accessing the resource has not been met in the request. The server should send back all the information necessary for the client to issue an extended request.
 - **RESPONSE_NETWORK_AUTH_REQUIRED** = **511** --- HTTP status code ``511 Network Authentication Required``. The client needs to authenticate to gain network access.
 
-
 Description
 -----------
 
@@ -166,29 +175,43 @@ Tutorials
 
 - :doc:`../tutorials/networking/http_client_class`
 - :doc:`../tutorials/networking/ssl_certificates`
-
 Property Descriptions
 ---------------------
 
   .. _class_HTTPClient_blocking_mode_enabled:
 
-- :ref:`bool<class_bool>` **blocking_mode_enabled** - If ``true``, execution will block until all data is read from the response.
+- :ref:`bool<class_bool>` **blocking_mode_enabled**
+
++----------+----------------------------+
+| *Setter* | set_blocking_mode(value)   |
++----------+----------------------------+
+| *Getter* | is_blocking_mode_enabled() |
++----------+----------------------------+
+
+If ``true``, execution will block until all data is read from the response.
 
   .. _class_HTTPClient_connection:
 
-- :ref:`StreamPeer<class_StreamPeer>` **connection** - The connection to use for this client.
+- :ref:`StreamPeer<class_StreamPeer>` **connection**
 
++----------+-----------------------+
+| *Setter* | set_connection(value) |
++----------+-----------------------+
+| *Getter* | get_connection()      |
++----------+-----------------------+
+
+The connection to use for this client.
 
 Method Descriptions
 -------------------
 
-.. _class_HTTPClient_close:
+  .. _class_HTTPClient_close:
 
 - void **close** **(** **)**
 
 Closes the current connection, allowing reuse of this ``HTTPClient``.
 
-.. _class_HTTPClient_connect_to_host:
+  .. _class_HTTPClient_connect_to_host:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
 
@@ -200,25 +223,25 @@ If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 f
 
 ``verify_host`` will check the SSL identity of the host if set to ``true``.
 
-.. _class_HTTPClient_get_response_body_length:
+  .. _class_HTTPClient_get_response_body_length:
 
 - :ref:`int<class_int>` **get_response_body_length** **(** **)** const
 
 Returns the response's body length.
 
-.. _class_HTTPClient_get_response_code:
+  .. _class_HTTPClient_get_response_code:
 
 - :ref:`int<class_int>` **get_response_code** **(** **)** const
 
 Returns the response's HTTP status code.
 
-.. _class_HTTPClient_get_response_headers:
+  .. _class_HTTPClient_get_response_headers:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_response_headers** **(** **)**
 
 Returns the response headers.
 
-.. _class_HTTPClient_get_response_headers_as_dictionary:
+  .. _class_HTTPClient_get_response_headers_as_dictionary:
 
 - :ref:`Dictionary<class_Dictionary>` **get_response_headers_as_dictionary** **(** **)**
 
@@ -228,31 +251,31 @@ Structure: ("key":"value1; value2")
 
 Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
-.. _class_HTTPClient_get_status:
+  .. _class_HTTPClient_get_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_status** **(** **)** const
 
 Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
 
-.. _class_HTTPClient_has_response:
+  .. _class_HTTPClient_has_response:
 
 - :ref:`bool<class_bool>` **has_response** **(** **)** const
 
 If ``true`` this ``HTTPClient`` has a response available.
 
-.. _class_HTTPClient_is_response_chunked:
+  .. _class_HTTPClient_is_response_chunked:
 
 - :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
 If ``true`` this ``HTTPClient`` has a response that is chunked.
 
-.. _class_HTTPClient_poll:
+  .. _class_HTTPClient_poll:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_get_status>`
 
-.. _class_HTTPClient_query_string_from_dict:
+  .. _class_HTTPClient_query_string_from_dict:
 
 - :ref:`String<class_String>` **query_string_from_dict** **(** :ref:`Dictionary<class_Dictionary>` fields **)**
 
@@ -272,13 +295,13 @@ Furthermore, if a key has a null value, only the key itself is added, without eq
     String queryString = httpClient.query_string_from_dict(fields)
     returns:= "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
-.. _class_HTTPClient_read_response_body_chunk:
+  .. _class_HTTPClient_read_response_body_chunk:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **read_response_body_chunk** **(** **)**
 
 Reads one chunk from the response.
 
-.. _class_HTTPClient_request:
+  .. _class_HTTPClient_request:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**
 
@@ -295,7 +318,7 @@ To create a POST request with query strings to push to the server, do:
     var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())]
     var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
 
-.. _class_HTTPClient_request_raw:
+  .. _class_HTTPClient_request_raw:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
@@ -305,10 +328,9 @@ Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
 
-.. _class_HTTPClient_set_read_chunk_size:
+  .. _class_HTTPClient_set_read_chunk_size:
 
 - void **set_read_chunk_size** **(** :ref:`int<class_int>` bytes **)**
 
 Sets the size of the buffer used and maximum bytes to read per iteration. see :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`
-
 

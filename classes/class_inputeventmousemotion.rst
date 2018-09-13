@@ -8,12 +8,22 @@ InputEventMouseMotion
 =====================
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event type for mouse motion events.
+
+Properties
+----------
+
++-------------------------------+-------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_relative>` |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_speed>`       |
++-------------------------------+-------------------------------------------------------+
 
 Description
 -----------
@@ -24,16 +34,30 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventMouseMotion_relative:
 
-- :ref:`Vector2<class_Vector2>` **relative** - Mouse position relative to the previous position (position at the last frame).
+- :ref:`Vector2<class_Vector2>` **relative**
+
++----------+---------------------+
+| *Setter* | set_relative(value) |
++----------+---------------------+
+| *Getter* | get_relative()      |
++----------+---------------------+
+
+Mouse position relative to the previous position (position at the last frame).
 
   .. _class_InputEventMouseMotion_speed:
 
-- :ref:`Vector2<class_Vector2>` **speed** - Mouse speed.
+- :ref:`Vector2<class_Vector2>` **speed**
 
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
+
+Mouse speed.
 

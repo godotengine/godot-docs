@@ -49,70 +49,69 @@ String Array. Array of strings. Can only contain strings. Optimized for memory u
 Method Descriptions
 -------------------
 
-.. _class_PoolStringArray_PoolStringArray:
+  .. _class_PoolStringArray_PoolStringArray:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **PoolStringArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
-.. _class_PoolStringArray_append:
+  .. _class_PoolStringArray_append:
 
 - void **append** **(** :ref:`String<class_String>` string **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolStringArray_push_back>`).
 
-.. _class_PoolStringArray_append_array:
+  .. _class_PoolStringArray_append_array:
 
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
 Append an StringArray at the end of this array.
 
-.. _class_PoolStringArray_insert:
+  .. _class_PoolStringArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
-.. _class_PoolStringArray_invert:
+  .. _class_PoolStringArray_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-.. _class_PoolStringArray_join:
+  .. _class_PoolStringArray_join:
 
 - :ref:`String<class_String>` **join** **(** :ref:`String<class_String>` delimiter **)**
 
 Returns a :ref:`String<class_String>` with each element of the array joined with the delimiter.
 
-.. _class_PoolStringArray_push_back:
+  .. _class_PoolStringArray_push_back:
 
 - void **push_back** **(** :ref:`String<class_String>` string **)**
 
 Append a string element at end of the array.
 
-.. _class_PoolStringArray_remove:
+  .. _class_PoolStringArray_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-.. _class_PoolStringArray_resize:
+  .. _class_PoolStringArray_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-.. _class_PoolStringArray_set:
+  .. _class_PoolStringArray_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
 Change the :ref:`String<class_String>` at the given index.
 
-.. _class_PoolStringArray_size:
+  .. _class_PoolStringArray_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
 Return the size of the array.
-
 

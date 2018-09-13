@@ -8,12 +8,28 @@ SphereMesh
 ==========
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+
+Properties
+----------
+
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_height>`                   |
++---------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_is_hemisphere>`     |
++---------------------------+----------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_radial_segments>` |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_radius>`                   |
++---------------------------+----------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_rings>`                     |
++---------------------------+----------------------------------------------------------+
 
 Description
 -----------
@@ -25,22 +41,61 @@ Property Descriptions
 
   .. _class_SphereMesh_height:
 
-- :ref:`float<class_float>` **height** - Full height of the sphere. Defaults to 2.0.
+- :ref:`float<class_float>` **height**
+
++----------+-------------------+
+| *Setter* | set_height(value) |
++----------+-------------------+
+| *Getter* | get_height()      |
++----------+-------------------+
+
+Full height of the sphere. Defaults to 2.0.
 
   .. _class_SphereMesh_is_hemisphere:
 
-- :ref:`bool<class_bool>` **is_hemisphere** - Determines whether a full sphere or a hemisphere is created. Attention: To get a regular hemisphere the height and radius of the sphere have to equal. Defaults to false.
+- :ref:`bool<class_bool>` **is_hemisphere**
+
++----------+--------------------------+
+| *Setter* | set_is_hemisphere(value) |
++----------+--------------------------+
+| *Getter* | get_is_hemisphere()      |
++----------+--------------------------+
+
+Determines whether a full sphere or a hemisphere is created. Attention: To get a regular hemisphere the height and radius of the sphere have to equal. Defaults to false.
 
   .. _class_SphereMesh_radial_segments:
 
-- :ref:`int<class_int>` **radial_segments** - Number of radial segments on the sphere. Defaults to 64.
+- :ref:`int<class_int>` **radial_segments**
+
++----------+----------------------------+
+| *Setter* | set_radial_segments(value) |
++----------+----------------------------+
+| *Getter* | get_radial_segments()      |
++----------+----------------------------+
+
+Number of radial segments on the sphere. Defaults to 64.
 
   .. _class_SphereMesh_radius:
 
-- :ref:`float<class_float>` **radius** - Radius of sphere. Defaults to 1.0.
+- :ref:`float<class_float>` **radius**
+
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
+
+Radius of sphere. Defaults to 1.0.
 
   .. _class_SphereMesh_rings:
 
-- :ref:`int<class_int>` **rings** - Number of segments along the height of the sphere. Defaults to 32.
+- :ref:`int<class_int>` **rings**
 
++----------+------------------+
+| *Setter* | set_rings(value) |
++----------+------------------+
+| *Getter* | get_rings()      |
++----------+------------------+
+
+Number of segments along the height of the sphere. Defaults to 32.
 

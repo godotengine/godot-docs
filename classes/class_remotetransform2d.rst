@@ -8,12 +8,28 @@ RemoteTransform2D
 =================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node in the scene.
+
+Properties
+----------
+
++---------------------------------+-------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`remote_path<class_RemoteTransform2D_remote_path>`                       |
++---------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_position<class_RemoteTransform2D_update_position>`               |
++---------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_rotation<class_RemoteTransform2D_update_rotation>`               |
++---------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`update_scale<class_RemoteTransform2D_update_scale>`                     |
++---------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_global_coordinates<class_RemoteTransform2D_use_global_coordinates>` |
++---------------------------------+-------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -27,22 +43,61 @@ Property Descriptions
 
   .. _class_RemoteTransform2D_remote_path:
 
-- :ref:`NodePath<class_NodePath>` **remote_path** - The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
+- :ref:`NodePath<class_NodePath>` **remote_path**
+
++----------+------------------------+
+| *Setter* | set_remote_node(value) |
++----------+------------------------+
+| *Getter* | get_remote_node()      |
++----------+------------------------+
+
+The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
 
   .. _class_RemoteTransform2D_update_position:
 
-- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is updated. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_position**
+
++----------+----------------------------+
+| *Setter* | set_update_position(value) |
++----------+----------------------------+
+| *Getter* | get_update_position()      |
++----------+----------------------------+
+
+If ``true`` the remote node's position is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_rotation:
 
-- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is updated. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_rotation**
+
++----------+----------------------------+
+| *Setter* | set_update_rotation(value) |
++----------+----------------------------+
+| *Getter* | get_update_rotation()      |
++----------+----------------------------+
+
+If ``true`` the remote node's rotation is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_scale:
 
-- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is updated. Default value: ``true``.
+- :ref:`bool<class_bool>` **update_scale**
+
++----------+-------------------------+
+| *Setter* | set_update_scale(value) |
++----------+-------------------------+
+| *Getter* | get_update_scale()      |
++----------+-------------------------+
+
+If ``true`` the remote node's scale is updated. Default value: ``true``.
 
   .. _class_RemoteTransform2D_use_global_coordinates:
 
-- :ref:`bool<class_bool>` **use_global_coordinates** - If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
+- :ref:`bool<class_bool>` **use_global_coordinates**
 
++----------+-----------------------------------+
+| *Setter* | set_use_global_coordinates(value) |
++----------+-----------------------------------+
+| *Getter* | get_use_global_coordinates()      |
++----------+-----------------------------------+
+
+If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
 

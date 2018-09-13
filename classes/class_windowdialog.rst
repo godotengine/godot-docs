@@ -8,7 +8,9 @@ WindowDialog
 ============
 
 **Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`
+
 **Category:** Core
 
 Brief Description
@@ -16,12 +18,44 @@ Brief Description
 
 Base class for window dialogs.
 
+Properties
+----------
+
++-----------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_resizable>`       |
++-----------------------------+------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_window_title>` |
++-----------------------------+------------------------------------------------------+
+
 Methods
 -------
 
 +--------------------------------------------+--------------------------------------------------------------------------+
 | :ref:`TextureButton<class_TextureButton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>` **(** **)** |
 +--------------------------------------------+--------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`close<class_WindowDialog_close>`                       |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`close_h_ofs<class_WindowDialog_close_h_ofs>`           |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`close_highlight<class_WindowDialog_close_highlight>`   |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`close_v_ofs<class_WindowDialog_close_v_ofs>`           |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_WindowDialog_panel>`                       |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`scaleborder_size<class_WindowDialog_scaleborder_size>` |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`title_color<class_WindowDialog_title_color>`           |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`title_font<class_WindowDialog_title_font>`             |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`title_height<class_WindowDialog_title_height>`         |
++---------------------------------+--------------------------------------------------------------+
 
 Description
 -----------
@@ -33,20 +67,34 @@ Property Descriptions
 
   .. _class_WindowDialog_resizable:
 
-- :ref:`bool<class_bool>` **resizable** - If ``true`` the user can resize the window. Default value: ``false``.
+- :ref:`bool<class_bool>` **resizable**
+
++----------+----------------------+
+| *Setter* | set_resizable(value) |
++----------+----------------------+
+| *Getter* | get_resizable()      |
++----------+----------------------+
+
+If ``true`` the user can resize the window. Default value: ``false``.
 
   .. _class_WindowDialog_window_title:
 
-- :ref:`String<class_String>` **window_title** - The text displayed in the window's title bar.
+- :ref:`String<class_String>` **window_title**
 
++----------+------------------+
+| *Setter* | set_title(value) |
++----------+------------------+
+| *Getter* | get_title()      |
++----------+------------------+
+
+The text displayed in the window's title bar.
 
 Method Descriptions
 -------------------
 
-.. _class_WindowDialog_get_close_button:
+  .. _class_WindowDialog_get_close_button:
 
 - :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 
 Return the close :ref:`TextureButton<class_TextureButton>`.
-
 

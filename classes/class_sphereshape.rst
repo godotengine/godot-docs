@@ -8,12 +8,20 @@ SphereShape
 ===========
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Sphere shape for 3D collisions.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_SphereShape_radius>` |
++---------------------------+-----------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_SphereShape_radius:
 
-- :ref:`float<class_float>` **radius** - The sphere's radius. The shape's diameter is double the radius.
+- :ref:`float<class_float>` **radius**
 
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
+
+The sphere's radius. The shape's diameter is double the radius.
 

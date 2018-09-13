@@ -8,10 +8,34 @@ VScrollBar
 ==========
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from left (min) to right (max).
+
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_VScrollBar_decrement>`                     |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_VScrollBar_decrement_highlight>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber<class_VScrollBar_grabber>`                         |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_highlight<class_VScrollBar_grabber_highlight>`     |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_pressed<class_VScrollBar_grabber_pressed>`         |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`increment<class_VScrollBar_increment>`                     |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_VScrollBar_increment_highlight>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`scroll<class_VScrollBar_scroll>`                           |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`scroll_focus<class_VScrollBar_scroll_focus>`               |
++---------------------------------+------------------------------------------------------------------+
 

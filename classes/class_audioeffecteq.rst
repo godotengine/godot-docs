@@ -8,7 +8,9 @@ AudioEffectEQ
 =============
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`
+
 **Category:** Core
 
 Brief Description
@@ -37,22 +39,21 @@ AudioEffectEQ gives you control over frequencies. Use it to compensate for exist
 Method Descriptions
 -------------------
 
-.. _class_AudioEffectEQ_get_band_count:
+  .. _class_AudioEffectEQ_get_band_count:
 
 - :ref:`int<class_int>` **get_band_count** **(** **)** const
 
 Returns the number of bands of the equalizer.
 
-.. _class_AudioEffectEQ_get_band_gain_db:
+  .. _class_AudioEffectEQ_get_band_gain_db:
 
 - :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** const
 
 Returns the band's gain at the specified index, in dB.
 
-.. _class_AudioEffectEQ_set_band_gain_db:
+  .. _class_AudioEffectEQ_set_band_gain_db:
 
 - void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
 
 Sets band's gain at the specified index, in dB.
-
 

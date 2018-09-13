@@ -8,12 +8,22 @@ ImageTexture
 ============
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`.
+
+Properties
+----------
+
++-------------------------------------------+--------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_lossy_quality>` |
++-------------------------------------------+--------------------------------------------------------+
+| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_storage>`             |
++-------------------------------------------+--------------------------------------------------------+
 
 Methods
 -------
@@ -37,12 +47,11 @@ Enumerations
 
   .. _enum_ImageTexture_Storage:
 
-enum **Storage**
+enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- :ref:`Image<class_Image>` data is stored raw and unaltered.
 - **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`.
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_Image>` data is compressed with a lossless algorithm.
-
 
 Description
 -----------
@@ -54,17 +63,32 @@ Property Descriptions
 
   .. _class_ImageTexture_lossy_quality:
 
-- :ref:`float<class_float>` **lossy_quality** - The storage quality for ``ImageTexture``.STORAGE_COMPRESS_LOSSY.
+- :ref:`float<class_float>` **lossy_quality**
+
++----------+----------------------------------+
+| *Setter* | set_lossy_storage_quality(value) |
++----------+----------------------------------+
+| *Getter* | get_lossy_storage_quality()      |
++----------+----------------------------------+
+
+The storage quality for ``ImageTexture``.STORAGE_COMPRESS_LOSSY.
 
   .. _class_ImageTexture_storage:
 
-- :ref:`Storage<enum_ImageTexture_Storage>` **storage** - The storage type (raw, lossy, or compressed).
+- :ref:`Storage<enum_ImageTexture_Storage>` **storage**
 
++----------+--------------------+
+| *Setter* | set_storage(value) |
++----------+--------------------+
+| *Getter* | get_storage()      |
++----------+--------------------+
+
+The storage type (raw, lossy, or compressed).
 
 Method Descriptions
 -------------------
 
-.. _class_ImageTexture_create:
+  .. _class_ImageTexture_create:
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)**
 
@@ -74,34 +98,33 @@ Create a new ``ImageTexture`` with "width" and "height".
 
 "flags" one or more of :ref:`Texture<class_Texture>`.FLAG\_\*.
 
-.. _class_ImageTexture_create_from_image:
+  .. _class_ImageTexture_create_from_image:
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
 Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with "flags" from :ref:`Texture<class_Texture>`.FLAG\_\*.
 
-.. _class_ImageTexture_get_format:
+  .. _class_ImageTexture_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
 Return the format of the ``ImageTexture``, one of :ref:`Image<class_Image>`.FORMAT\_\*.
 
-.. _class_ImageTexture_load:
+  .. _class_ImageTexture_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Load an ``ImageTexture`` from a file path.
 
-.. _class_ImageTexture_set_data:
+  .. _class_ImageTexture_set_data:
 
 - void **set_data** **(** :ref:`Image<class_Image>` image **)**
 
 Set the :ref:`Image<class_Image>` of this ``ImageTexture``.
 
-.. _class_ImageTexture_set_size_override:
+  .. _class_ImageTexture_set_size_override:
 
 - void **set_size_override** **(** :ref:`Vector2<class_Vector2>` size **)**
 
 Resizes the ``ImageTexture`` to the specified dimensions.
-
 

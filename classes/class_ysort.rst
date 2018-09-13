@@ -8,12 +8,20 @@ YSort
 =====
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Sort all child nodes based on their Y positions.
+
+Properties
+----------
+
++-------------------------+-----------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_sort_enabled>` |
++-------------------------+-----------------------------------------------+
 
 Description
 -----------
@@ -27,4 +35,9 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **sort_enabled**
 
++----------+-------------------------+
+| *Setter* | set_sort_enabled(value) |
++----------+-------------------------+
+| *Getter* | is_sort_enabled()       |
++----------+-------------------------+
 

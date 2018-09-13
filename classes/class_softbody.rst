@@ -8,12 +8,42 @@ SoftBody
 ========
 
 **Inherits:** :ref:`MeshInstance<class_MeshInstance>` **<** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`areaAngular_stiffness<class_SoftBody_areaAngular_stiffness>`         |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`collision_layer<class_SoftBody_collision_layer>`                     |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`collision_mask<class_SoftBody_collision_mask>`                       |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`damping_coefficient<class_SoftBody_damping_coefficient>`             |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`drag_coefficient<class_SoftBody_drag_coefficient>`                   |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_linear_stiffness>`                   |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_parent_collision_ignore>`     |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_pose_matching_coefficient>` |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_pressure_coefficient>`           |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_simulation_precision>`           |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_total_mass>`                               |
++---------------------------------+----------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`volume_stiffness<class_SoftBody_volume_stiffness>`                   |
++---------------------------------+----------------------------------------------------------------------------+
 
 Methods
 -------
@@ -43,84 +73,154 @@ Property Descriptions
 
 - :ref:`float<class_float>` **areaAngular_stiffness**
 
++----------+----------------------------------+
+| *Setter* | set_areaAngular_stiffness(value) |
++----------+----------------------------------+
+| *Getter* | get_areaAngular_stiffness()      |
++----------+----------------------------------+
+
   .. _class_SoftBody_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
+
++----------+----------------------------+
+| *Setter* | set_collision_layer(value) |
++----------+----------------------------+
+| *Getter* | get_collision_layer()      |
++----------+----------------------------+
 
   .. _class_SoftBody_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
   .. _class_SoftBody_damping_coefficient:
 
 - :ref:`float<class_float>` **damping_coefficient**
+
++----------+--------------------------------+
+| *Setter* | set_damping_coefficient(value) |
++----------+--------------------------------+
+| *Getter* | get_damping_coefficient()      |
++----------+--------------------------------+
 
   .. _class_SoftBody_drag_coefficient:
 
 - :ref:`float<class_float>` **drag_coefficient**
 
++----------+-----------------------------+
+| *Setter* | set_drag_coefficient(value) |
++----------+-----------------------------+
+| *Getter* | get_drag_coefficient()      |
++----------+-----------------------------+
+
   .. _class_SoftBody_linear_stiffness:
 
 - :ref:`float<class_float>` **linear_stiffness**
+
++----------+-----------------------------+
+| *Setter* | set_linear_stiffness(value) |
++----------+-----------------------------+
+| *Getter* | get_linear_stiffness()      |
++----------+-----------------------------+
 
   .. _class_SoftBody_parent_collision_ignore:
 
 - :ref:`NodePath<class_NodePath>` **parent_collision_ignore**
 
++----------+------------------------------------+
+| *Setter* | set_parent_collision_ignore(value) |
++----------+------------------------------------+
+| *Getter* | get_parent_collision_ignore()      |
++----------+------------------------------------+
+
   .. _class_SoftBody_pose_matching_coefficient:
 
 - :ref:`float<class_float>` **pose_matching_coefficient**
+
++----------+--------------------------------------+
+| *Setter* | set_pose_matching_coefficient(value) |
++----------+--------------------------------------+
+| *Getter* | get_pose_matching_coefficient()      |
++----------+--------------------------------------+
 
   .. _class_SoftBody_pressure_coefficient:
 
 - :ref:`float<class_float>` **pressure_coefficient**
 
++----------+---------------------------------+
+| *Setter* | set_pressure_coefficient(value) |
++----------+---------------------------------+
+| *Getter* | get_pressure_coefficient()      |
++----------+---------------------------------+
+
   .. _class_SoftBody_simulation_precision:
 
 - :ref:`int<class_int>` **simulation_precision**
+
++----------+---------------------------------+
+| *Setter* | set_simulation_precision(value) |
++----------+---------------------------------+
+| *Getter* | get_simulation_precision()      |
++----------+---------------------------------+
 
   .. _class_SoftBody_total_mass:
 
 - :ref:`float<class_float>` **total_mass**
 
++----------+-----------------------+
+| *Setter* | set_total_mass(value) |
++----------+-----------------------+
+| *Getter* | get_total_mass()      |
++----------+-----------------------+
+
   .. _class_SoftBody_volume_stiffness:
 
 - :ref:`float<class_float>` **volume_stiffness**
 
++----------+-----------------------------+
+| *Setter* | set_volume_stiffness(value) |
++----------+-----------------------------+
+| *Getter* | get_volume_stiffness()      |
++----------+-----------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_SoftBody_add_collision_exception_with:
+  .. _class_SoftBody_add_collision_exception_with:
 
 - void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
-.. _class_SoftBody_get_collision_layer_bit:
+  .. _class_SoftBody_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
-.. _class_SoftBody_get_collision_mask_bit:
+  .. _class_SoftBody_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-.. _class_SoftBody_is_ray_pickable:
+  .. _class_SoftBody_is_ray_pickable:
 
 - :ref:`bool<class_bool>` **is_ray_pickable** **(** **)** const
 
-.. _class_SoftBody_remove_collision_exception_with:
+  .. _class_SoftBody_remove_collision_exception_with:
 
 - void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
-.. _class_SoftBody_set_collision_layer_bit:
+  .. _class_SoftBody_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-.. _class_SoftBody_set_collision_mask_bit:
+  .. _class_SoftBody_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-.. _class_SoftBody_set_ray_pickable:
+  .. _class_SoftBody_set_ray_pickable:
 
 - void **set_ray_pickable** **(** :ref:`bool<class_bool>` ray_pickable **)**
-
 

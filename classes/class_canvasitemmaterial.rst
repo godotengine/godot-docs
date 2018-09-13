@@ -8,6 +8,7 @@ CanvasItemMaterial
 ==================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,21 @@ Brief Description
 
 A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
 
+Properties
+----------
+
++-----------------------------------------------------+--------------------------------------------------------+
+| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_blend_mode>` |
++-----------------------------------------------------+--------------------------------------------------------+
+| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_light_mode>` |
++-----------------------------------------------------+--------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_CanvasItemMaterial_LightMode:
 
-enum **LightMode**
+enum **LightMode**:
 
 - **LIGHT_MODE_NORMAL** = **0** --- Render the material using both light and non-light sensitive material properties.
 - **LIGHT_MODE_UNSHADED** = **1** --- Render the material as if there were no light.
@@ -28,14 +38,13 @@ enum **LightMode**
 
   .. _enum_CanvasItemMaterial_BlendMode:
 
-enum **BlendMode**
+enum **BlendMode**:
 
 - **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
 - **BLEND_MODE_ADD** = **1** --- Additive blending mode.
 - **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
-
 
 Description
 -----------
@@ -47,10 +56,25 @@ Property Descriptions
 
   .. _class_CanvasItemMaterial_blend_mode:
 
-- :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode** - The manner in which a material's rendering is applied to underlying textures.
+- :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode**
+
++----------+-----------------------+
+| *Setter* | set_blend_mode(value) |
++----------+-----------------------+
+| *Getter* | get_blend_mode()      |
++----------+-----------------------+
+
+The manner in which a material's rendering is applied to underlying textures.
 
   .. _class_CanvasItemMaterial_light_mode:
 
-- :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode** - The manner in which material reacts to lighting.
+- :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode**
 
++----------+-----------------------+
+| *Setter* | set_light_mode(value) |
++----------+-----------------------+
+| *Getter* | get_light_mode()      |
++----------+-----------------------+
+
+The manner in which material reacts to lighting.
 

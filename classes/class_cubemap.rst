@@ -8,12 +8,24 @@ CubeMap
 =======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A CubeMap is a 6 sided 3D texture.
+
+Properties
+----------
+
++--------------------------------------+-------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_flags>`                                 |
++--------------------------------------+-------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_lossy_storage_quality>` |
++--------------------------------------+-------------------------------------------------------------------+
+| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_storage_mode>`                   |
++--------------------------------------+-------------------------------------------------------------------+
 
 Methods
 -------
@@ -33,7 +45,7 @@ Enumerations
 
   .. _enum_CubeMap_Flags:
 
-enum **Flags**
+enum **Flags**:
 
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
 - **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
@@ -42,7 +54,7 @@ enum **Flags**
 
   .. _enum_CubeMap_Storage:
 
-enum **Storage**
+enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- Store the ``CubeMap`` without any compression.
 - **STORAGE_COMPRESS_LOSSY** = **1** --- Store the ``CubeMap`` with strong compression that reduces image quality.
@@ -50,7 +62,7 @@ enum **Storage**
 
   .. _enum_CubeMap_Side:
 
-enum **Side**
+enum **Side**:
 
 - **SIDE_LEFT** = **0** --- Identifier for the left face of the ``CubeMap``.
 - **SIDE_RIGHT** = **1** --- Identifier for the right face of the ``CubeMap``.
@@ -58,7 +70,6 @@ enum **Side**
 - **SIDE_TOP** = **3** --- Identifier for the top face of the ``CubeMap``.
 - **SIDE_FRONT** = **4** --- Identifier for the front face of the ``CubeMap``.
 - **SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``.
-
 
 Description
 -----------
@@ -70,42 +81,64 @@ Property Descriptions
 
   .. _class_CubeMap_flags:
 
-- :ref:`int<class_int>` **flags** - The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
+- :ref:`int<class_int>` **flags**
+
++----------+------------------+
+| *Setter* | set_flags(value) |
++----------+------------------+
+| *Getter* | get_flags()      |
++----------+------------------+
+
+The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 
   .. _class_CubeMap_lossy_storage_quality:
 
-- :ref:`float<class_float>` **lossy_storage_quality** - The lossy storage quality of the ``CubeMap`` if the storage mode is set to STORAGE_COMPRESS_LOSSY.
+- :ref:`float<class_float>` **lossy_storage_quality**
+
++----------+----------------------------------+
+| *Setter* | set_lossy_storage_quality(value) |
++----------+----------------------------------+
+| *Getter* | get_lossy_storage_quality()      |
++----------+----------------------------------+
+
+The lossy storage quality of the ``CubeMap`` if the storage mode is set to STORAGE_COMPRESS_LOSSY.
 
   .. _class_CubeMap_storage_mode:
 
-- :ref:`Storage<enum_CubeMap_Storage>` **storage_mode** - The ``CubeMap``'s storage mode. See ``STORAGE_*`` constants.
+- :ref:`Storage<enum_CubeMap_Storage>` **storage_mode**
 
++----------+--------------------+
+| *Setter* | set_storage(value) |
++----------+--------------------+
+| *Getter* | get_storage()      |
++----------+--------------------+
+
+The ``CubeMap``'s storage mode. See ``STORAGE_*`` constants.
 
 Method Descriptions
 -------------------
 
-.. _class_CubeMap_get_height:
+  .. _class_CubeMap_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
 Returns the ``CubeMap``'s height.
 
-.. _class_CubeMap_get_side:
+  .. _class_CubeMap_get_side:
 
 - :ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** const
 
 Returns an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 
-.. _class_CubeMap_get_width:
+  .. _class_CubeMap_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
 Returns the ``CubeMap``'s width.
 
-.. _class_CubeMap_set_side:
+  .. _class_CubeMap_set_side:
 
 - void **set_side** **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)**
 
 Sets an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
-
 

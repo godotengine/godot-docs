@@ -8,12 +8,22 @@ VisualScriptBasicTypeConstant
 =============================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A Visual Script node representing a constant from the base types.
+
+Properties
+----------
+
++-----------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_basic_type>` |
++-----------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_constant>`     |
++-----------------------------------------------------+-------------------------------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_VisualScriptBasicTypeConstant_basic_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type** - The type to get the constant from.
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
+
++----------+-----------------------+
+| *Setter* | set_basic_type(value) |
++----------+-----------------------+
+| *Getter* | get_basic_type()      |
++----------+-----------------------+
+
+The type to get the constant from.
 
   .. _class_VisualScriptBasicTypeConstant_constant:
 
-- :ref:`String<class_String>` **constant** - The name of the constant to return.
+- :ref:`String<class_String>` **constant**
 
++----------+--------------------------------+
+| *Setter* | set_basic_type_constant(value) |
++----------+--------------------------------+
+| *Getter* | get_basic_type_constant()      |
++----------+--------------------------------+
+
+The name of the constant to return.
 

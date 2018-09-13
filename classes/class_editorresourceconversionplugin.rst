@@ -8,6 +8,7 @@ EditorResourceConversionPlugin
 ==============================
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -27,12 +28,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorResourceConversionPlugin__convert:
+  .. _class_EditorResourceConversionPlugin__convert:
 
 - :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-.. _class_EditorResourceConversionPlugin__converts_to:
+  .. _class_EditorResourceConversionPlugin__converts_to:
 
 - :ref:`String<class_String>` **_converts_to** **(** **)** virtual
-
 

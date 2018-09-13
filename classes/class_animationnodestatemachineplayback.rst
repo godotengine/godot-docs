@@ -8,6 +8,7 @@ AnimationNodeStateMachinePlayback
 =================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -35,28 +36,27 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeStateMachinePlayback_get_current_node:
+  .. _class_AnimationNodeStateMachinePlayback_get_current_node:
 
 - :ref:`String<class_String>` **get_current_node** **(** **)** const
 
-.. _class_AnimationNodeStateMachinePlayback_get_travel_path:
+  .. _class_AnimationNodeStateMachinePlayback_get_travel_path:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_travel_path** **(** **)** const
 
-.. _class_AnimationNodeStateMachinePlayback_is_playing:
+  .. _class_AnimationNodeStateMachinePlayback_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
-.. _class_AnimationNodeStateMachinePlayback_start:
+  .. _class_AnimationNodeStateMachinePlayback_start:
 
 - void **start** **(** :ref:`String<class_String>` node **)**
 
-.. _class_AnimationNodeStateMachinePlayback_stop:
+  .. _class_AnimationNodeStateMachinePlayback_stop:
 
 - void **stop** **(** **)**
 
-.. _class_AnimationNodeStateMachinePlayback_travel:
+  .. _class_AnimationNodeStateMachinePlayback_travel:
 
 - void **travel** **(** :ref:`String<class_String>` to_node **)**
-
 

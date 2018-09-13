@@ -8,13 +8,22 @@ Texture
 =======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`CurveTexture<class_CurveTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`, :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Texture for 2D and 3D.
+
+Properties
+----------
+
++-----------------------+-----------------------------------+
+| :ref:`int<class_int>` | :ref:`flags<class_Texture_flags>` |
++-----------------------+-----------------------------------+
 
 Methods
 -------
@@ -42,7 +51,7 @@ Enumerations
 
   .. _enum_Texture_Flags:
 
-enum **Flags**
+enum **Flags**:
 
 - **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
@@ -54,7 +63,6 @@ More effective on planes often shown going to the horrizon as those textures (Wa
 - **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats texture with alternate sections mirrored.
 - **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
-
 
 Description
 -----------
@@ -68,48 +76,54 @@ Property Descriptions
 
   .. _class_Texture_flags:
 
-- :ref:`int<class_int>` **flags** - The texture's flags.
+- :ref:`int<class_int>` **flags**
 
++----------+------------------+
+| *Setter* | set_flags(value) |
++----------+------------------+
+| *Getter* | get_flags()      |
++----------+------------------+
+
+The texture's flags.
 
 Method Descriptions
 -------------------
 
-.. _class_Texture_draw:
+  .. _class_Texture_draw:
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
-.. _class_Texture_draw_rect:
+  .. _class_Texture_draw_rect:
 
 - void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** const
 
-.. _class_Texture_draw_rect_region:
+  .. _class_Texture_draw_rect_region:
 
 - void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** const
 
-.. _class_Texture_get_data:
+  .. _class_Texture_get_data:
 
 - :ref:`Image<class_Image>` **get_data** **(** **)** const
 
-.. _class_Texture_get_height:
+  .. _class_Texture_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
 Return the texture height.
 
-.. _class_Texture_get_size:
+  .. _class_Texture_get_size:
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** const
 
 Return the texture size.
 
-.. _class_Texture_get_width:
+  .. _class_Texture_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
 Return the texture width.
 
-.. _class_Texture_has_alpha:
+  .. _class_Texture_has_alpha:
 
 - :ref:`bool<class_bool>` **has_alpha** **(** **)** const
-
 

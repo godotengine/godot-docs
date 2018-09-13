@@ -8,12 +8,20 @@ VisualScriptSelect
 ==================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Chooses between two input values.
+
+Properties
+----------
+
++-----------------------------------------------------+--------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_type>` |
++-----------------------------------------------------+--------------------------------------------+
 
 Description
 -----------
@@ -37,6 +45,13 @@ Property Descriptions
 
   .. _class_VisualScriptSelect_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The input variables' type.
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
++----------+------------------+
+| *Setter* | set_typed(value) |
++----------+------------------+
+| *Getter* | get_typed()      |
++----------+------------------+
+
+The input variables' type.
 

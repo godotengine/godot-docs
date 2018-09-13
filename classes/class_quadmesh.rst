@@ -8,12 +8,20 @@ QuadMesh
 ========
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Class representing a square mesh.
+
+Properties
+----------
+
++-------------------------------+----------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_size>` |
++-------------------------------+----------------------------------+
 
 Description
 -----------
@@ -27,4 +35,9 @@ Property Descriptions
 
 - :ref:`Vector2<class_Vector2>` **size**
 
++----------+-----------------+
+| *Setter* | set_size(value) |
++----------+-----------------+
+| *Getter* | get_size()      |
++----------+-----------------+
 

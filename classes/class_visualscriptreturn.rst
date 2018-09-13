@@ -8,12 +8,22 @@ VisualScriptReturn
 ==================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Exits a function and returns an optional value.
+
+Properties
+----------
+
++-----------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_return_enabled>` |
++-----------------------------------------------------+----------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_return_type>`       |
++-----------------------------------------------------+----------------------------------------------------------------+
 
 Description
 -----------
@@ -35,10 +45,25 @@ Property Descriptions
 
   .. _class_VisualScriptReturn_return_enabled:
 
-- :ref:`bool<class_bool>` **return_enabled** - If ``true`` the ``return`` input port is available.
+- :ref:`bool<class_bool>` **return_enabled**
+
++----------+--------------------------------+
+| *Setter* | set_enable_return_value(value) |
++----------+--------------------------------+
+| *Getter* | is_return_value_enabled()      |
++----------+--------------------------------+
+
+If ``true`` the ``return`` input port is available.
 
   .. _class_VisualScriptReturn_return_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type** - The return value's data type.
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
 
++----------+------------------------+
+| *Setter* | set_return_type(value) |
++----------+------------------------+
+| *Getter* | get_return_type()      |
++----------+------------------------+
+
+The return value's data type.
 

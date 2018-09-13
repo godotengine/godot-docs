@@ -8,12 +8,35 @@ ProgressBar
 ===========
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 General purpose progress bar.
+
+Properties
+----------
+
++-------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_percent_visible>` |
++-------------------------+-----------------------------------------------------------+
+
+Theme Properties
+----------------
+
++---------------------------------+---------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_bg>`                               |
++---------------------------------+---------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_fg>`                               |
++---------------------------------+---------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_font>`                           |
++---------------------------------+---------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_font_color>`               |
++---------------------------------+---------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_ProgressBar_font_color_shadow>` |
++---------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -25,6 +48,13 @@ Property Descriptions
 
   .. _class_ProgressBar_percent_visible:
 
-- :ref:`bool<class_bool>` **percent_visible** - If ``true`` the fill percentage is displayed on the bar. Default value: ``true``.
+- :ref:`bool<class_bool>` **percent_visible**
 
++----------+----------------------------+
+| *Setter* | set_percent_visible(value) |
++----------+----------------------------+
+| *Getter* | is_percent_visible()       |
++----------+----------------------------+
+
+If ``true`` the fill percentage is displayed on the bar. Default value: ``true``.
 

@@ -8,13 +8,28 @@ Joint2D
 =======
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PinJoint2D<class_PinJoint2D>`, :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base node for all joint constraints in 2D physics.
+
+Properties
+----------
+
++---------------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`bias<class_Joint2D_bias>`                           |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`disable_collision<class_Joint2D_disable_collision>` |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint2D_node_a>`                       |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_node_b>`                       |
++---------------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -26,18 +41,49 @@ Property Descriptions
 
   .. _class_Joint2D_bias:
 
-- :ref:`float<class_float>` **bias** - When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
+- :ref:`float<class_float>` **bias**
+
++----------+-----------------+
+| *Setter* | set_bias(value) |
++----------+-----------------+
+| *Getter* | get_bias()      |
++----------+-----------------+
+
+When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
 
   .. _class_Joint2D_disable_collision:
 
-- :ref:`bool<class_bool>` **disable_collision** - If ``true`` :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` can collide. Default value: ``false``.
+- :ref:`bool<class_bool>` **disable_collision**
+
++----------+-----------------------------------------+
+| *Setter* | set_exclude_nodes_from_collision(value) |
++----------+-----------------------------------------+
+| *Getter* | get_exclude_nodes_from_collision()      |
++----------+-----------------------------------------+
+
+If ``true`` :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` can collide. Default value: ``false``.
 
   .. _class_Joint2D_node_a:
 
-- :ref:`NodePath<class_NodePath>` **node_a** - The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+- :ref:`NodePath<class_NodePath>` **node_a**
+
++----------+-------------------+
+| *Setter* | set_node_a(value) |
++----------+-------------------+
+| *Getter* | get_node_a()      |
++----------+-------------------+
+
+The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
   .. _class_Joint2D_node_b:
 
-- :ref:`NodePath<class_NodePath>` **node_b** - The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+- :ref:`NodePath<class_NodePath>` **node_b**
 
++----------+-------------------+
+| *Setter* | set_node_b(value) |
++----------+-------------------+
+| *Getter* | get_node_b()      |
++----------+-------------------+
+
+The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 

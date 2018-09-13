@@ -8,12 +8,22 @@ InputEventJoypadMotion
 ======================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadButton``.
+
+Properties
+----------
+
++---------------------------+------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`axis<class_InputEventJoypadMotion_axis>`             |
++---------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`axis_value<class_InputEventJoypadMotion_axis_value>` |
++---------------------------+------------------------------------------------------------+
 
 Description
 -----------
@@ -24,16 +34,30 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventJoypadMotion_axis:
 
-- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+- :ref:`int<class_int>` **axis**
+
++----------+-----------------+
+| *Setter* | set_axis(value) |
++----------+-----------------+
+| *Getter* | get_axis()      |
++----------+-----------------+
+
+Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
   .. _class_InputEventJoypadMotion_axis_value:
 
-- :ref:`float<class_float>` **axis_value** - Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
+- :ref:`float<class_float>` **axis_value**
 
++----------+-----------------------+
+| *Setter* | set_axis_value(value) |
++----------+-----------------------+
+| *Getter* | get_axis_value()      |
++----------+-----------------------+
+
+Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
 

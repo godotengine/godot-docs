@@ -8,13 +8,34 @@ CanvasLayer
 ===========
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ParallaxBackground<class_ParallaxBackground>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Canvas drawing layer.
+
+Properties
+----------
+
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`custom_viewport<class_CanvasLayer_custom_viewport>`   |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`layer<class_CanvasLayer_layer>`                       |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CanvasLayer_offset>`                     |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation<class_CanvasLayer_rotation>`                 |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`rotation_degrees<class_CanvasLayer_rotation_degrees>` |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_CanvasLayer_scale>`                       |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_transform>`               |
++---------------------------------------+-------------------------------------------------------------+
 
 Methods
 -------
@@ -33,46 +54,99 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_transforms`
 - :doc:`../tutorials/2d/canvas_layers`
-
 Property Descriptions
 ---------------------
 
   .. _class_CanvasLayer_custom_viewport:
 
-- :ref:`Node<class_Node>` **custom_viewport** - The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
+- :ref:`Node<class_Node>` **custom_viewport**
+
++----------+----------------------------+
+| *Setter* | set_custom_viewport(value) |
++----------+----------------------------+
+| *Getter* | get_custom_viewport()      |
++----------+----------------------------+
+
+The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
 
   .. _class_CanvasLayer_layer:
 
-- :ref:`int<class_int>` **layer** - Layer index for draw order. Lower values are drawn first. Default value: ``1``.
+- :ref:`int<class_int>` **layer**
+
++----------+------------------+
+| *Setter* | set_layer(value) |
++----------+------------------+
+| *Getter* | get_layer()      |
++----------+------------------+
+
+Layer index for draw order. Lower values are drawn first. Default value: ``1``.
 
   .. _class_CanvasLayer_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset** - The layer's base offset.
+- :ref:`Vector2<class_Vector2>` **offset**
+
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
+
+The layer's base offset.
 
   .. _class_CanvasLayer_rotation:
 
-- :ref:`float<class_float>` **rotation** - The layer's rotation in radians.
+- :ref:`float<class_float>` **rotation**
+
++----------+---------------------+
+| *Setter* | set_rotation(value) |
++----------+---------------------+
+| *Getter* | get_rotation()      |
++----------+---------------------+
+
+The layer's rotation in radians.
 
   .. _class_CanvasLayer_rotation_degrees:
 
-- :ref:`float<class_float>` **rotation_degrees** - The layer's rotation in degrees.
+- :ref:`float<class_float>` **rotation_degrees**
+
++----------+-----------------------------+
+| *Setter* | set_rotation_degrees(value) |
++----------+-----------------------------+
+| *Getter* | get_rotation_degrees()      |
++----------+-----------------------------+
+
+The layer's rotation in degrees.
 
   .. _class_CanvasLayer_scale:
 
-- :ref:`Vector2<class_Vector2>` **scale** - The layer's scale.
+- :ref:`Vector2<class_Vector2>` **scale**
+
++----------+------------------+
+| *Setter* | set_scale(value) |
++----------+------------------+
+| *Getter* | get_scale()      |
++----------+------------------+
+
+The layer's scale.
 
   .. _class_CanvasLayer_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **transform** - The layer's transform.
+- :ref:`Transform2D<class_Transform2D>` **transform**
 
++----------+----------------------+
+| *Setter* | set_transform(value) |
++----------+----------------------+
+| *Getter* | get_transform()      |
++----------+----------------------+
+
+The layer's transform.
 
 Method Descriptions
 -------------------
 
-.. _class_CanvasLayer_get_canvas:
+  .. _class_CanvasLayer_get_canvas:
 
 - :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
 Returns the RID of the canvas used by this layer.
-
 

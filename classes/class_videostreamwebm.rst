@@ -8,6 +8,7 @@ VideoStreamWebm
 ===============
 
 **Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -27,12 +28,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_VideoStreamWebm_get_file:
+  .. _class_VideoStreamWebm_get_file:
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
-.. _class_VideoStreamWebm_set_file:
+  .. _class_VideoStreamWebm_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
-
 

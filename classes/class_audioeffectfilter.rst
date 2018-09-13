@@ -8,7 +8,9 @@ AudioEffectFilter
 =================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AudioEffectHighPassFilter<class_AudioEffectHighPassFilter>`, :ref:`AudioEffectBandLimitFilter<class_AudioEffectBandLimitFilter>`, :ref:`AudioEffectLowShelfFilter<class_AudioEffectLowShelfFilter>`, :ref:`AudioEffectHighShelfFilter<class_AudioEffectHighShelfFilter>`, :ref:`AudioEffectBandPassFilter<class_AudioEffectBandPassFilter>`, :ref:`AudioEffectNotchFilter<class_AudioEffectNotchFilter>`, :ref:`AudioEffectLowPassFilter<class_AudioEffectLowPassFilter>`
+
 **Category:** Core
 
 Brief Description
@@ -16,18 +18,30 @@ Brief Description
 
 Adds a filter to the Audio Bus.
 
+Properties
+----------
+
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` |
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_db>`               |
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_gain>`           |
++--------------------------------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_resonance>` |
++--------------------------------------------------+-----------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_AudioEffectFilter_FilterDB:
 
-enum **FilterDB**
+enum **FilterDB**:
 
 - **FILTER_6DB** = **0**
 - **FILTER_12DB** = **1**
 - **FILTER_18DB** = **2**
 - **FILTER_24DB** = **3**
-
 
 Description
 -----------
@@ -39,18 +53,47 @@ Property Descriptions
 
   .. _class_AudioEffectFilter_cutoff_hz:
 
-- :ref:`float<class_float>` **cutoff_hz** - Threshold frequency for the filter.
+- :ref:`float<class_float>` **cutoff_hz**
+
++----------+-------------------+
+| *Setter* | set_cutoff(value) |
++----------+-------------------+
+| *Getter* | get_cutoff()      |
++----------+-------------------+
+
+Threshold frequency for the filter.
 
   .. _class_AudioEffectFilter_db:
 
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
++----------+---------------+
+| *Setter* | set_db(value) |
++----------+---------------+
+| *Getter* | get_db()      |
++----------+---------------+
+
   .. _class_AudioEffectFilter_gain:
 
-- :ref:`float<class_float>` **gain** - Gain amount of the frequencies after the filter.
+- :ref:`float<class_float>` **gain**
+
++----------+-----------------+
+| *Setter* | set_gain(value) |
++----------+-----------------+
+| *Getter* | get_gain()      |
++----------+-----------------+
+
+Gain amount of the frequencies after the filter.
 
   .. _class_AudioEffectFilter_resonance:
 
-- :ref:`float<class_float>` **resonance** - Amount of boost in the overtones near the cutoff frequency.
+- :ref:`float<class_float>` **resonance**
 
++----------+----------------------+
+| *Setter* | set_resonance(value) |
++----------+----------------------+
+| *Getter* | get_resonance()      |
++----------+----------------------+
+
+Amount of boost in the overtones near the cutoff frequency.
 

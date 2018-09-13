@@ -8,13 +8,36 @@ CanvasItem
 ==========
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`Node2D<class_Node2D>`, :ref:`Control<class_Control>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class of anything 2D.
+
+Properties
+----------
+
++---------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`light_mask<class_CanvasItem_light_mask>`                   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CanvasItem_material>`                       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`modulate<class_CanvasItem_modulate>`                       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`self_modulate<class_CanvasItem_self_modulate>`             |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_behind_parent<class_CanvasItem_show_behind_parent>`   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`show_on_top<class_CanvasItem_show_on_top>`                 |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`use_parent_material<class_CanvasItem_use_parent_material>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`visible<class_CanvasItem_visible>`                         |
++---------------------------------+------------------------------------------------------------------+
 
 Methods
 -------
@@ -114,37 +137,36 @@ Methods
 Signals
 -------
 
-.. _class_CanvasItem_draw:
+  .. _class_CanvasItem_draw:
 
 - **draw** **(** **)**
 
 Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
 
-.. _class_CanvasItem_hide:
+  .. _class_CanvasItem_hide:
 
 - **hide** **(** **)**
 
 Emitted when becoming hidden.
 
-.. _class_CanvasItem_item_rect_changed:
+  .. _class_CanvasItem_item_rect_changed:
 
 - **item_rect_changed** **(** **)**
 
 Emitted when the item rect has changed.
 
-.. _class_CanvasItem_visibility_changed:
+  .. _class_CanvasItem_visibility_changed:
 
 - **visibility_changed** **(** **)**
 
 Emitted when the visibility (hidden/visible) changes.
-
 
 Enumerations
 ------------
 
   .. _enum_CanvasItem_BlendMode:
 
-enum **BlendMode**
+enum **BlendMode**:
 
 - **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
 - **BLEND_MODE_ADD** = **1** --- Additive blending mode.
@@ -152,7 +174,6 @@ enum **BlendMode**
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 - **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
-
 
 Constants
 ---------
@@ -162,7 +183,6 @@ Constants
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
 - **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
 - **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
-
 Description
 -----------
 
@@ -181,308 +201,363 @@ Tutorials
 
 - :doc:`../tutorials/2d/2d_transforms`
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
-
 Property Descriptions
 ---------------------
 
   .. _class_CanvasItem_light_mask:
 
-- :ref:`int<class_int>` **light_mask** - The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes. Default value: ``1``.
+- :ref:`int<class_int>` **light_mask**
+
++----------+-----------------------+
+| *Setter* | set_light_mask(value) |
++----------+-----------------------+
+| *Getter* | get_light_mask()      |
++----------+-----------------------+
+
+The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_Light2D>` nodes. Default value: ``1``.
 
   .. _class_CanvasItem_material:
 
-- :ref:`Material<class_Material>` **material** - The material applied to textures on this ``CanvasItem``. Default value: ``null``.
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+The material applied to textures on this ``CanvasItem``. Default value: ``null``.
 
   .. _class_CanvasItem_modulate:
 
-- :ref:`Color<class_Color>` **modulate** - The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
+- :ref:`Color<class_Color>` **modulate**
+
++----------+---------------------+
+| *Setter* | set_modulate(value) |
++----------+---------------------+
+| *Getter* | get_modulate()      |
++----------+---------------------+
+
+The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
 
   .. _class_CanvasItem_self_modulate:
 
-- :ref:`Color<class_Color>` **self_modulate** - The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
+- :ref:`Color<class_Color>` **self_modulate**
+
++----------+--------------------------+
+| *Setter* | set_self_modulate(value) |
++----------+--------------------------+
+| *Getter* | get_self_modulate()      |
++----------+--------------------------+
+
+The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
 
   .. _class_CanvasItem_show_behind_parent:
 
-- :ref:`bool<class_bool>` **show_behind_parent** - If ``true`` the object draws behind its parent. Default value: ``false``.
+- :ref:`bool<class_bool>` **show_behind_parent**
+
++----------+---------------------------------+
+| *Setter* | set_draw_behind_parent(value)   |
++----------+---------------------------------+
+| *Getter* | is_draw_behind_parent_enabled() |
++----------+---------------------------------+
+
+If ``true`` the object draws behind its parent. Default value: ``false``.
 
   .. _class_CanvasItem_show_on_top:
 
-- :ref:`bool<class_bool>` **show_on_top** - If ``true`` the object draws on top of its parent. Default value: ``true``.
+- :ref:`bool<class_bool>` **show_on_top**
+
+If ``true`` the object draws on top of its parent. Default value: ``true``.
 
   .. _class_CanvasItem_use_parent_material:
 
-- :ref:`bool<class_bool>` **use_parent_material** - If ``true`` the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is used as this one's material. Default value: ``false``.
+- :ref:`bool<class_bool>` **use_parent_material**
+
++----------+--------------------------------+
+| *Setter* | set_use_parent_material(value) |
++----------+--------------------------------+
+| *Getter* | get_use_parent_material()      |
++----------+--------------------------------+
+
+If ``true`` the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is used as this one's material. Default value: ``false``.
 
   .. _class_CanvasItem_visible:
 
-- :ref:`bool<class_bool>` **visible** - If ``true`` this ``CanvasItem`` is drawn. Default value: ``true``.
+- :ref:`bool<class_bool>` **visible**
 
++----------+--------------------+
+| *Setter* | set_visible(value) |
++----------+--------------------+
+| *Getter* | is_visible()       |
++----------+--------------------+
+
+If ``true`` this ``CanvasItem`` is drawn. Default value: ``true``.
 
 Method Descriptions
 -------------------
 
-.. _class_CanvasItem__draw:
+  .. _class_CanvasItem__draw:
 
 - void **_draw** **(** **)** virtual
 
 Called (if exists) to draw the canvas item.
 
-.. _class_CanvasItem_draw_char:
+  .. _class_CanvasItem_draw_char:
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` char, :ref:`String<class_String>` next, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
 Draws a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
 
-.. _class_CanvasItem_draw_circle:
+  .. _class_CanvasItem_draw_circle:
 
 - void **draw_circle** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
 Draws a colored circle.
 
-.. _class_CanvasItem_draw_colored_polygon:
+  .. _class_CanvasItem_draw_colored_polygon:
 
 - void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a colored polygon of any amount of points, convex or concave.
 
-.. _class_CanvasItem_draw_line:
+  .. _class_CanvasItem_draw_line:
 
 - void **draw_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
-.. _class_CanvasItem_draw_mesh:
+  .. _class_CanvasItem_draw_mesh:
 
 - void **draw_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
 
-.. _class_CanvasItem_draw_multiline:
+  .. _class_CanvasItem_draw_multiline:
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``color`` and ``width`` and optional antialiasing.
 
-.. _class_CanvasItem_draw_multiline_colors:
+  .. _class_CanvasItem_draw_multiline_colors:
 
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
-.. _class_CanvasItem_draw_multimesh:
+  .. _class_CanvasItem_draw_multimesh:
 
 - void **draw_multimesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
 
-.. _class_CanvasItem_draw_polygon:
+  .. _class_CanvasItem_draw_polygon:
 
 - void **draw_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws a polygon of any amount of points, convex or concave.
 
-.. _class_CanvasItem_draw_polyline:
+  .. _class_CanvasItem_draw_polyline:
 
 - void **draw_polyline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing.
 
-.. _class_CanvasItem_draw_polyline_colors:
+  .. _class_CanvasItem_draw_polyline_colors:
 
 - void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 Draws interconnected line segments with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
-.. _class_CanvasItem_draw_primitive:
+  .. _class_CanvasItem_draw_primitive:
 
 - void **draw_primitive** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs, :ref:`Texture<class_Texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
 
-.. _class_CanvasItem_draw_rect:
+  .. _class_CanvasItem_draw_rect:
 
 - void **draw_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true **)**
 
 Draws a colored rectangle.
 
-.. _class_CanvasItem_draw_set_transform:
+  .. _class_CanvasItem_draw_set_transform:
 
 - void **draw_set_transform** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_Vector2>` scale **)**
 
 Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
-.. _class_CanvasItem_draw_set_transform_matrix:
+  .. _class_CanvasItem_draw_set_transform_matrix:
 
 - void **draw_set_transform_matrix** **(** :ref:`Transform2D<class_Transform2D>` xform **)**
 
 Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
-.. _class_CanvasItem_draw_string:
+  .. _class_CanvasItem_draw_string:
 
 - void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` text, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
 Draws a string using a custom font.
 
-.. _class_CanvasItem_draw_style_box:
+  .. _class_CanvasItem_draw_style_box:
 
 - void **draw_style_box** **(** :ref:`StyleBox<class_StyleBox>` style_box, :ref:`Rect2<class_Rect2>` rect **)**
 
 Draws a styled rectangle.
 
-.. _class_CanvasItem_draw_texture:
+  .. _class_CanvasItem_draw_texture:
 
 - void **draw_texture** **(** :ref:`Texture<class_Texture>` texture, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a texture at a given position.
 
-.. _class_CanvasItem_draw_texture_rect:
+  .. _class_CanvasItem_draw_texture_rect:
 
 - void **draw_texture_rect** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 Draws a textured rectangle at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
-.. _class_CanvasItem_draw_texture_rect_region:
+  .. _class_CanvasItem_draw_texture_rect_region:
 
 - void **draw_texture_rect_region** **(** :ref:`Texture<class_Texture>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
 
 Draws a textured rectangle region at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
-.. _class_CanvasItem_force_update_transform:
+  .. _class_CanvasItem_force_update_transform:
 
 - void **force_update_transform** **(** **)**
 
-.. _class_CanvasItem_get_canvas:
+  .. _class_CanvasItem_get_canvas:
 
 - :ref:`RID<class_RID>` **get_canvas** **(** **)** const
 
 Return the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
-.. _class_CanvasItem_get_canvas_item:
+  .. _class_CanvasItem_get_canvas_item:
 
 - :ref:`RID<class_RID>` **get_canvas_item** **(** **)** const
 
 Return the canvas item RID used by :ref:`VisualServer<class_VisualServer>` for this item.
 
-.. _class_CanvasItem_get_canvas_transform:
+  .. _class_CanvasItem_get_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** const
 
 Get the transform matrix of this item's canvas.
 
-.. _class_CanvasItem_get_global_mouse_position:
+  .. _class_CanvasItem_get_global_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** const
 
 Get the global position of the mouse.
 
-.. _class_CanvasItem_get_global_transform:
+  .. _class_CanvasItem_get_global_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform** **(** **)** const
 
 Get the global transform matrix of this item.
 
-.. _class_CanvasItem_get_global_transform_with_canvas:
+  .. _class_CanvasItem_get_global_transform_with_canvas:
 
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** const
 
 Get the global transform matrix of this item in relation to the canvas.
 
-.. _class_CanvasItem_get_local_mouse_position:
+  .. _class_CanvasItem_get_local_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** const
 
 Get the mouse position relative to this item's position.
 
-.. _class_CanvasItem_get_transform:
+  .. _class_CanvasItem_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** const
 
 Get the transform matrix of this item.
 
-.. _class_CanvasItem_get_viewport_rect:
+  .. _class_CanvasItem_get_viewport_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_viewport_rect** **(** **)** const
 
 Get the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
-.. _class_CanvasItem_get_viewport_transform:
+  .. _class_CanvasItem_get_viewport_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** const
 
 Get this item's transform in relation to the viewport.
 
-.. _class_CanvasItem_get_world_2d:
+  .. _class_CanvasItem_get_world_2d:
 
 - :ref:`World2D<class_World2D>` **get_world_2d** **(** **)** const
 
 Get the :ref:`World2D<class_World2D>` where this item is in.
 
-.. _class_CanvasItem_hide:
+  .. _class_CanvasItem_hide:
 
 - void **hide** **(** **)**
 
 Hide the CanvasItem currently visible.
 
-.. _class_CanvasItem_is_local_transform_notification_enabled:
+  .. _class_CanvasItem_is_local_transform_notification_enabled:
 
 - :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
 
 Returns ``true`` if local transform notifications are communicated to children.
 
-.. _class_CanvasItem_is_set_as_toplevel:
+  .. _class_CanvasItem_is_set_as_toplevel:
 
 - :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
 
 Return if set as toplevel. See :ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>`.
 
-.. _class_CanvasItem_is_transform_notification_enabled:
+  .. _class_CanvasItem_is_transform_notification_enabled:
 
 - :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
 
 Returns ``true`` if global transform notifications are communicated to children.
 
-.. _class_CanvasItem_is_visible_in_tree:
+  .. _class_CanvasItem_is_visible_in_tree:
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_visible>` property is ``true`` and its inherited visibility is also ``true``.
 
-.. _class_CanvasItem_make_canvas_position_local:
+  .. _class_CanvasItem_make_canvas_position_local:
 
 - :ref:`Vector2<class_Vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_Vector2>` screen_point **)** const
 
 Assigns ``screen_point`` as this node's new local transform.
 
-.. _class_CanvasItem_make_input_local:
+  .. _class_CanvasItem_make_input_local:
 
 - :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
 
-.. _class_CanvasItem_set_as_toplevel:
+  .. _class_CanvasItem_set_as_toplevel:
 
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
 Sets as top level. This means that it will not inherit transform from parent canvas items.
 
-.. _class_CanvasItem_set_notify_local_transform:
+  .. _class_CanvasItem_set_notify_local_transform:
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, children will be updated with local transform data.
 
-.. _class_CanvasItem_set_notify_transform:
+  .. _class_CanvasItem_set_notify_transform:
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, children will be updated with global transform data.
 
-.. _class_CanvasItem_show:
+  .. _class_CanvasItem_show:
 
 - void **show** **(** **)**
 
 Show the CanvasItem currently hidden.
 
-.. _class_CanvasItem_update:
+  .. _class_CanvasItem_update:
 
 - void **update** **(** **)**
 
 Queue the CanvasItem for update. ``NOTIFICATION_DRAW`` will be called on idle time to request redraw.
-
 

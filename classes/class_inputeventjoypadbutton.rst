@@ -8,12 +8,24 @@ InputEventJoypadButton
 ======================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event for gamepad buttons.
+
+Properties
+----------
+
++---------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_button_index>` |
++---------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_pressed>`           |
++---------------------------+----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_pressure>`         |
++---------------------------+----------------------------------------------------------------+
 
 Description
 -----------
@@ -24,20 +36,42 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventJoypadButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
+- :ref:`int<class_int>` **button_index**
+
++----------+-------------------------+
+| *Setter* | set_button_index(value) |
++----------+-------------------------+
+| *Getter* | get_button_index()      |
++----------+-------------------------+
+
+Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
   .. _class_InputEventJoypadButton_pressed:
 
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the button's state is pressed. If ``false`` the button's state is released.
+- :ref:`bool<class_bool>` **pressed**
+
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
+
+If ``true`` the button's state is pressed. If ``false`` the button's state is released.
 
   .. _class_InputEventJoypadButton_pressure:
 
-- :ref:`float<class_float>` **pressure** - Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
+- :ref:`float<class_float>` **pressure**
 
++----------+---------------------+
+| *Setter* | set_pressure(value) |
++----------+---------------------+
+| *Getter* | get_pressure()      |
++----------+---------------------+
+
+Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
 

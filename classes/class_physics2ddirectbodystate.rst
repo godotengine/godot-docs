@@ -8,13 +8,40 @@ Physics2DDirectBodyState
 ========================
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`Physics2DDirectBodyStateSW<class_Physics2DDirectBodyStateSW>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Direct access object to a physics body in the :ref:`Physics2DServer<class_Physics2DServer>`.
+
+Properties
+----------
+
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`angular_velocity<class_Physics2DDirectBodyState_angular_velocity>`     |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`inverse_inertia<class_Physics2DDirectBodyState_inverse_inertia>`       |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`inverse_mass<class_Physics2DDirectBodyState_inverse_mass>`             |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`linear_velocity<class_Physics2DDirectBodyState_linear_velocity>`       |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`sleeping<class_Physics2DDirectBodyState_sleeping>`                     |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`step<class_Physics2DDirectBodyState_step>`                             |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`total_angular_damp<class_Physics2DDirectBodyState_total_angular_damp>` |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`total_gravity<class_Physics2DDirectBodyState_total_gravity>`           |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`total_linear_damp<class_Physics2DDirectBodyState_total_linear_damp>`   |
++---------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Physics2DDirectBodyState_transform>`                   |
++---------------------------------------+------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -69,148 +96,214 @@ Property Descriptions
 
   .. _class_Physics2DDirectBodyState_angular_velocity:
 
-- :ref:`float<class_float>` **angular_velocity** - The angular velocity of the body.
+- :ref:`float<class_float>` **angular_velocity**
+
++----------+-----------------------------+
+| *Setter* | set_angular_velocity(value) |
++----------+-----------------------------+
+| *Getter* | get_angular_velocity()      |
++----------+-----------------------------+
+
+The angular velocity of the body.
 
   .. _class_Physics2DDirectBodyState_inverse_inertia:
 
-- :ref:`float<class_float>` **inverse_inertia** - The inverse of the inertia of the body.
+- :ref:`float<class_float>` **inverse_inertia**
+
++----------+-----------------------+
+| *Getter* | get_inverse_inertia() |
++----------+-----------------------+
+
+The inverse of the inertia of the body.
 
   .. _class_Physics2DDirectBodyState_inverse_mass:
 
-- :ref:`float<class_float>` **inverse_mass** - The inverse of the mass of the body.
+- :ref:`float<class_float>` **inverse_mass**
+
++----------+--------------------+
+| *Getter* | get_inverse_mass() |
++----------+--------------------+
+
+The inverse of the mass of the body.
 
   .. _class_Physics2DDirectBodyState_linear_velocity:
 
-- :ref:`Vector2<class_Vector2>` **linear_velocity** - The linear velocity of the body.
+- :ref:`Vector2<class_Vector2>` **linear_velocity**
+
++----------+----------------------------+
+| *Setter* | set_linear_velocity(value) |
++----------+----------------------------+
+| *Getter* | get_linear_velocity()      |
++----------+----------------------------+
+
+The linear velocity of the body.
 
   .. _class_Physics2DDirectBodyState_sleeping:
 
-- :ref:`bool<class_bool>` **sleeping** - ``true`` if this body is currently sleeping (not active).
+- :ref:`bool<class_bool>` **sleeping**
+
++----------+------------------------+
+| *Setter* | set_sleep_state(value) |
++----------+------------------------+
+| *Getter* | is_sleeping()          |
++----------+------------------------+
+
+``true`` if this body is currently sleeping (not active).
 
   .. _class_Physics2DDirectBodyState_step:
 
-- :ref:`float<class_float>` **step** - The timestep (delta) used for the simulation.
+- :ref:`float<class_float>` **step**
+
++----------+------------+
+| *Getter* | get_step() |
++----------+------------+
+
+The timestep (delta) used for the simulation.
 
   .. _class_Physics2DDirectBodyState_total_angular_damp:
 
-- :ref:`float<class_float>` **total_angular_damp** - The rate at which the body stops rotating, if there are not any other forces moving it.
+- :ref:`float<class_float>` **total_angular_damp**
+
++----------+--------------------------+
+| *Getter* | get_total_angular_damp() |
++----------+--------------------------+
+
+The rate at which the body stops rotating, if there are not any other forces moving it.
 
   .. _class_Physics2DDirectBodyState_total_gravity:
 
-- :ref:`Vector2<class_Vector2>` **total_gravity** - The total gravity vector being currently applied to this body.
+- :ref:`Vector2<class_Vector2>` **total_gravity**
+
++----------+---------------------+
+| *Getter* | get_total_gravity() |
++----------+---------------------+
+
+The total gravity vector being currently applied to this body.
 
   .. _class_Physics2DDirectBodyState_total_linear_damp:
 
-- :ref:`float<class_float>` **total_linear_damp** - The rate at which the body stops moving, if there are not any other forces moving it.
+- :ref:`float<class_float>` **total_linear_damp**
+
++----------+-------------------------+
+| *Getter* | get_total_linear_damp() |
++----------+-------------------------+
+
+The rate at which the body stops moving, if there are not any other forces moving it.
 
   .. _class_Physics2DDirectBodyState_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **transform** - The transformation matrix of the body.
+- :ref:`Transform2D<class_Transform2D>` **transform**
 
++----------+----------------------+
+| *Setter* | set_transform(value) |
++----------+----------------------+
+| *Getter* | get_transform()      |
++----------+----------------------+
+
+The transformation matrix of the body.
 
 Method Descriptions
 -------------------
 
-.. _class_Physics2DDirectBodyState_add_central_force:
+  .. _class_Physics2DDirectBodyState_add_central_force:
 
 - void **add_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
 
-.. _class_Physics2DDirectBodyState_add_force:
+  .. _class_Physics2DDirectBodyState_add_force:
 
 - void **add_force** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` force **)**
 
-.. _class_Physics2DDirectBodyState_add_torque:
+  .. _class_Physics2DDirectBodyState_add_torque:
 
 - void **add_torque** **(** :ref:`float<class_float>` torque **)**
 
-.. _class_Physics2DDirectBodyState_apply_central_impulse:
+  .. _class_Physics2DDirectBodyState_apply_central_impulse:
 
 - void **apply_central_impulse** **(** :ref:`Vector2<class_Vector2>` impulse **)**
 
-.. _class_Physics2DDirectBodyState_apply_impulse:
+  .. _class_Physics2DDirectBodyState_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` offset, :ref:`Vector2<class_Vector2>` impulse **)**
 
-.. _class_Physics2DDirectBodyState_apply_torque_impulse:
+  .. _class_Physics2DDirectBodyState_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`float<class_float>` impulse **)**
 
-.. _class_Physics2DDirectBodyState_get_contact_collider:
+  .. _class_Physics2DDirectBodyState_get_contact_collider:
 
 - :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the :ref:`RID<class_RID>` of the collider.
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_id:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_id:
 
 - :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the object id of the collider.
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_object:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_object:
 
 - :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the collider object, this depends on how it was created (will return a scene node if such was used to create it).
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_position:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the contact position in the collider.
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_shape:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_shape:
 
 - :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the collider shape index.
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_shape_metadata:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_shape_metadata:
 
 - :ref:`Variant<class_Variant>` **get_contact_collider_shape_metadata** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the metadata of the collided shape. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 
-.. _class_Physics2DDirectBodyState_get_contact_collider_velocity_at_position:
+  .. _class_Physics2DDirectBodyState_get_contact_collider_velocity_at_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the linear velocity vector at contact point of the collider.
 
-.. _class_Physics2DDirectBodyState_get_contact_count:
+  .. _class_Physics2DDirectBodyState_get_contact_count:
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
 
 Return the amount of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts.
 
-.. _class_Physics2DDirectBodyState_get_contact_local_normal:
+  .. _class_Physics2DDirectBodyState_get_contact_local_normal:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the local normal (of this body) of the contact point.
 
-.. _class_Physics2DDirectBodyState_get_contact_local_position:
+  .. _class_Physics2DDirectBodyState_get_contact_local_position:
 
 - :ref:`Vector2<class_Vector2>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the local position (of this body) of the contact point.
 
-.. _class_Physics2DDirectBodyState_get_contact_local_shape:
+  .. _class_Physics2DDirectBodyState_get_contact_local_shape:
 
 - :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Return the local shape index of the collision.
 
-.. _class_Physics2DDirectBodyState_get_space_state:
+  .. _class_Physics2DDirectBodyState_get_space_state:
 
 - :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **get_space_state** **(** **)**
 
 Return the current state of space, useful for queries.
 
-.. _class_Physics2DDirectBodyState_integrate_forces:
+  .. _class_Physics2DDirectBodyState_integrate_forces:
 
 - void **integrate_forces** **(** **)**
 
 Call the built-in force integration code.
-
 

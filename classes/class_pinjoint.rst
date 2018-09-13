@@ -8,6 +8,7 @@ PinJoint
 ========
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,23 @@ Brief Description
 
 Pin Joint for 3D Shapes.
 
+Properties
+----------
+
++---------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_params/bias>`                   |
++---------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_params/damping>`             |
++---------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_params/impulse_clamp>` |
++---------------------------+------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_PinJoint_Param:
 
-enum **Param**
+enum **Param**:
 
 - **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other.
 
@@ -29,7 +41,6 @@ The higher, the stronger.
 
 The higher, the stronger.
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
-
 
 Description
 -----------
@@ -41,18 +52,41 @@ Property Descriptions
 
   .. _class_PinJoint_params/bias:
 
-- :ref:`float<class_float>` **params/bias** - The force with which the pinned objects stay in positional relation to each other.
+- :ref:`float<class_float>` **params/bias**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The force with which the pinned objects stay in positional relation to each other.
 
 The higher, the stronger.
 
   .. _class_PinJoint_params/damping:
 
-- :ref:`float<class_float>` **params/damping** - The force with which the pinned objects stay in velocity relation to each other.
+- :ref:`float<class_float>` **params/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
 
   .. _class_PinJoint_params/impulse_clamp:
 
-- :ref:`float<class_float>` **params/impulse_clamp** - If above 0, this value is the maximum value for an impulse that this Joint produces.
+- :ref:`float<class_float>` **params/impulse_clamp**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+If above 0, this value is the maximum value for an impulse that this Joint produces.
 

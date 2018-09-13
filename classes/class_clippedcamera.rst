@@ -8,12 +8,28 @@ ClippedCamera
 =============
 
 **Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++----------------------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_areas<class_ClippedCamera_clip_to_areas>`   |
++----------------------------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`clip_to_bodies<class_ClippedCamera_clip_to_bodies>` |
++----------------------------------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`collision_mask<class_ClippedCamera_collision_mask>` |
++----------------------------------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`margin<class_ClippedCamera_margin>`                 |
++----------------------------------------------------+-----------------------------------------------------------+
+| :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` | :ref:`process_mode<class_ClippedCamera_process_mode>`     |
++----------------------------------------------------+-----------------------------------------------------------+
 
 Methods
 -------
@@ -39,11 +55,10 @@ Enumerations
 
   .. _enum_ClippedCamera_ProcessMode:
 
-enum **ProcessMode**
+enum **ProcessMode**:
 
 - **CLIP_PROCESS_PHYSICS** = **0**
 - **CLIP_PROCESS_IDLE** = **1**
-
 
 Property Descriptions
 ---------------------
@@ -52,52 +67,80 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **clip_to_areas**
 
++----------+----------------------------+
+| *Setter* | set_clip_to_areas(value)   |
++----------+----------------------------+
+| *Getter* | is_clip_to_areas_enabled() |
++----------+----------------------------+
+
   .. _class_ClippedCamera_clip_to_bodies:
 
 - :ref:`bool<class_bool>` **clip_to_bodies**
+
++----------+-----------------------------+
+| *Setter* | set_clip_to_bodies(value)   |
++----------+-----------------------------+
+| *Getter* | is_clip_to_bodies_enabled() |
++----------+-----------------------------+
 
   .. _class_ClippedCamera_collision_mask:
 
 - :ref:`int<class_int>` **collision_mask**
 
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
   .. _class_ClippedCamera_margin:
 
 - :ref:`float<class_float>` **margin**
+
++----------+-------------------+
+| *Setter* | set_margin(value) |
++----------+-------------------+
+| *Getter* | get_margin()      |
++----------+-------------------+
 
   .. _class_ClippedCamera_process_mode:
 
 - :ref:`ProcessMode<enum_ClippedCamera_ProcessMode>` **process_mode**
 
++----------+-------------------------+
+| *Setter* | set_process_mode(value) |
++----------+-------------------------+
+| *Getter* | get_process_mode()      |
++----------+-------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_ClippedCamera_add_exception:
+  .. _class_ClippedCamera_add_exception:
 
 - void **add_exception** **(** :ref:`Object<class_Object>` node **)**
 
-.. _class_ClippedCamera_add_exception_rid:
+  .. _class_ClippedCamera_add_exception_rid:
 
 - void **add_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-.. _class_ClippedCamera_clear_exceptions:
+  .. _class_ClippedCamera_clear_exceptions:
 
 - void **clear_exceptions** **(** **)**
 
-.. _class_ClippedCamera_get_collision_mask_bit:
+  .. _class_ClippedCamera_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-.. _class_ClippedCamera_remove_exception:
+  .. _class_ClippedCamera_remove_exception:
 
 - void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
 
-.. _class_ClippedCamera_remove_exception_rid:
+  .. _class_ClippedCamera_remove_exception_rid:
 
 - void **remove_exception_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-.. _class_ClippedCamera_set_collision_mask_bit:
+  .. _class_ClippedCamera_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
-
 

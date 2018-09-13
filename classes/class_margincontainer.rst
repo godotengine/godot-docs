@@ -8,12 +8,26 @@ MarginContainer
 ===============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Simple margin container.
+
+Theme Properties
+----------------
+
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`margin_bottom<class_MarginContainer_margin_bottom>` |
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`margin_left<class_MarginContainer_margin_left>`     |
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`margin_right<class_MarginContainer_margin_right>`   |
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`margin_top<class_MarginContainer_margin_top>`       |
++-----------------------+-----------------------------------------------------------+
 
 Description
 -----------

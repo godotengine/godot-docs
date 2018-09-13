@@ -8,12 +8,22 @@ ViewportContainer
 =================
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Control for holding :ref:`Viewport<class_Viewport>`\ s.
+
+Properties
+----------
+
++-------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_stretch>`               |
++-------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_stretch_shrink>` |
++-------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,23 @@ Property Descriptions
 
   .. _class_ViewportContainer_stretch:
 
-- :ref:`bool<class_bool>` **stretch** - If ``true`` the viewport will be scaled to the control's size. Default value:``false``.
+- :ref:`bool<class_bool>` **stretch**
+
++----------+----------------------+
+| *Setter* | set_stretch(value)   |
++----------+----------------------+
+| *Getter* | is_stretch_enabled() |
++----------+----------------------+
+
+If ``true`` the viewport will be scaled to the control's size. Default value:``false``.
 
   .. _class_ViewportContainer_stretch_shrink:
 
 - :ref:`int<class_int>` **stretch_shrink**
 
++----------+---------------------------+
+| *Setter* | set_stretch_shrink(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_shrink()      |
++----------+---------------------------+
 

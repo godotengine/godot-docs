@@ -8,7 +8,9 @@ MainLoop
 ========
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`SceneTree<class_SceneTree>`
+
 **Category:** Core
 
 Brief Description
@@ -61,7 +63,6 @@ Constants
 - **NOTIFICATION_TRANSLATION_CHANGED** = **90**
 - **NOTIFICATION_WM_ABOUT** = **91**
 - **NOTIFICATION_CRASH** = **92**
-
 Description
 -----------
 
@@ -70,62 +71,61 @@ Main loop is the abstract main loop base class. All other main loop classes are 
 Method Descriptions
 -------------------
 
-.. _class_MainLoop__drop_files:
+  .. _class_MainLoop__drop_files:
 
 - void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` screen **)** virtual
 
-.. _class_MainLoop__finalize:
+  .. _class_MainLoop__finalize:
 
 - void **_finalize** **(** **)** virtual
 
 Called before the program exits.
 
-.. _class_MainLoop__idle:
+  .. _class_MainLoop__idle:
 
 - void **_idle** **(** :ref:`float<class_float>` delta **)** virtual
 
 Called each idle frame with time since last call as an only argument.
 
-.. _class_MainLoop__initialize:
+  .. _class_MainLoop__initialize:
 
 - void **_initialize** **(** **)** virtual
 
 Called once during initialization.
 
-.. _class_MainLoop__input_event:
+  .. _class_MainLoop__input_event:
 
 - void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
-.. _class_MainLoop__input_text:
+  .. _class_MainLoop__input_text:
 
 - void **_input_text** **(** :ref:`String<class_String>` text **)** virtual
 
-.. _class_MainLoop__iteration:
+  .. _class_MainLoop__iteration:
 
 - void **_iteration** **(** :ref:`float<class_float>` delta **)** virtual
 
-.. _class_MainLoop_finish:
+  .. _class_MainLoop_finish:
 
 - void **finish** **(** **)**
 
-.. _class_MainLoop_idle:
+  .. _class_MainLoop_idle:
 
 - :ref:`bool<class_bool>` **idle** **(** :ref:`float<class_float>` delta **)**
 
-.. _class_MainLoop_init:
+  .. _class_MainLoop_init:
 
 - void **init** **(** **)**
 
-.. _class_MainLoop_input_event:
+  .. _class_MainLoop_input_event:
 
 - void **input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
-.. _class_MainLoop_input_text:
+  .. _class_MainLoop_input_text:
 
 - void **input_text** **(** :ref:`String<class_String>` text **)**
 
-.. _class_MainLoop_iteration:
+  .. _class_MainLoop_iteration:
 
 - :ref:`bool<class_bool>` **iteration** **(** :ref:`float<class_float>` delta **)**
-
 

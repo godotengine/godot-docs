@@ -8,13 +8,44 @@ SpriteBase3D
 ============
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AnimatedSprite3D<class_AnimatedSprite3D>`, :ref:`Sprite3D<class_Sprite3D>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 2D Sprite node in 3D environment.
+
+Properties
+----------
+
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` | :ref:`alpha_cut<class_SpriteBase3D_alpha_cut>`       |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`Axis<enum_Vector3_Axis>`                      | :ref:`axis<class_SpriteBase3D_axis>`                 |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`centered<class_SpriteBase3D_centered>`         |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`double_sided<class_SpriteBase3D_double_sided>` |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`flip_h<class_SpriteBase3D_flip_h>`             |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`flip_v<class_SpriteBase3D_flip_v>`             |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`Color<class_Color>`                           | :ref:`modulate<class_SpriteBase3D_modulate>`         |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                       | :ref:`offset<class_SpriteBase3D_offset>`             |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`opacity<class_SpriteBase3D_opacity>`           |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`pixel_size<class_SpriteBase3D_pixel_size>`     |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`shaded<class_SpriteBase3D_shaded>`             |
++-----------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`transparent<class_SpriteBase3D_transparent>`   |
++-----------------------------------------------------+------------------------------------------------------+
 
 Methods
 -------
@@ -30,7 +61,7 @@ Enumerations
 
   .. _enum_SpriteBase3D_AlphaCutMode:
 
-enum **AlphaCutMode**
+enum **AlphaCutMode**:
 
 - **ALPHA_CUT_DISABLED** = **0**
 - **ALPHA_CUT_DISCARD** = **1**
@@ -38,13 +69,12 @@ enum **AlphaCutMode**
 
   .. _enum_SpriteBase3D_DrawFlags:
 
-enum **DrawFlags**
+enum **DrawFlags**:
 
 - **FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and the opacity are used to make those parts of the Sprite invisible.
 - **FLAG_SHADED** = **1** --- If set, the Light in the Environment has effects on the Sprite.
 - **FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.
 - **FLAG_MAX** = **3** --- Used internally to mark the end of the Flags section.
-
 
 Description
 -----------
@@ -58,60 +88,152 @@ Property Descriptions
 
 - :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **alpha_cut**
 
++----------+---------------------------+
+| *Setter* | set_alpha_cut_mode(value) |
++----------+---------------------------+
+| *Getter* | get_alpha_cut_mode()      |
++----------+---------------------------+
+
   .. _class_SpriteBase3D_axis:
 
-- :ref:`Axis<enum_Vector3_Axis>` **axis** - The direction in which the front of the texture faces.
+- :ref:`Axis<enum_Vector3_Axis>` **axis**
+
++----------+-----------------+
+| *Setter* | set_axis(value) |
++----------+-----------------+
+| *Getter* | get_axis()      |
++----------+-----------------+
+
+The direction in which the front of the texture faces.
 
   .. _class_SpriteBase3D_centered:
 
-- :ref:`bool<class_bool>` **centered** - If ``true`` texture will be centered. Default value: ``true``.
+- :ref:`bool<class_bool>` **centered**
+
++----------+---------------------+
+| *Setter* | set_centered(value) |
++----------+---------------------+
+| *Getter* | is_centered()       |
++----------+---------------------+
+
+If ``true`` texture will be centered. Default value: ``true``.
 
   .. _class_SpriteBase3D_double_sided:
 
-- :ref:`bool<class_bool>` **double_sided** - If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
+- :ref:`bool<class_bool>` **double_sided**
+
++----------+----------------------+
+| *Setter* | set_draw_flag(value) |
++----------+----------------------+
+| *Getter* | get_draw_flag()      |
++----------+----------------------+
+
+If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
 
   .. _class_SpriteBase3D_flip_h:
 
-- :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+- :ref:`bool<class_bool>` **flip_h**
+
++----------+-------------------+
+| *Setter* | set_flip_h(value) |
++----------+-------------------+
+| *Getter* | is_flipped_h()    |
++----------+-------------------+
+
+If ``true`` texture is flipped horizontally. Default value: ``false``.
 
   .. _class_SpriteBase3D_flip_v:
 
-- :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
+- :ref:`bool<class_bool>` **flip_v**
+
++----------+-------------------+
+| *Setter* | set_flip_v(value) |
++----------+-------------------+
+| *Getter* | is_flipped_v()    |
++----------+-------------------+
+
+If ``true`` texture is flipped vertically. Default value: ``false``.
 
   .. _class_SpriteBase3D_modulate:
 
-- :ref:`Color<class_Color>` **modulate** - A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
+- :ref:`Color<class_Color>` **modulate**
+
++----------+---------------------+
+| *Setter* | set_modulate(value) |
++----------+---------------------+
+| *Getter* | get_modulate()      |
++----------+---------------------+
+
+A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
 
   .. _class_SpriteBase3D_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset** - The texture's drawing offset.
+- :ref:`Vector2<class_Vector2>` **offset**
+
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
+
+The texture's drawing offset.
 
   .. _class_SpriteBase3D_opacity:
 
-- :ref:`float<class_float>` **opacity** - The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
+- :ref:`float<class_float>` **opacity**
+
++----------+--------------------+
+| *Setter* | set_opacity(value) |
++----------+--------------------+
+| *Getter* | get_opacity()      |
++----------+--------------------+
+
+The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
 
   .. _class_SpriteBase3D_pixel_size:
 
-- :ref:`float<class_float>` **pixel_size** - The size of one pixel's width on the Sprite to scale it in 3D.
+- :ref:`float<class_float>` **pixel_size**
+
++----------+-----------------------+
+| *Setter* | set_pixel_size(value) |
++----------+-----------------------+
+| *Getter* | get_pixel_size()      |
++----------+-----------------------+
+
+The size of one pixel's width on the Sprite to scale it in 3D.
 
   .. _class_SpriteBase3D_shaded:
 
-- :ref:`bool<class_bool>` **shaded** - If ``true`` the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
+- :ref:`bool<class_bool>` **shaded**
+
++----------+----------------------+
+| *Setter* | set_draw_flag(value) |
++----------+----------------------+
+| *Getter* | get_draw_flag()      |
++----------+----------------------+
+
+If ``true`` the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
 
   .. _class_SpriteBase3D_transparent:
 
-- :ref:`bool<class_bool>` **transparent** - If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
+- :ref:`bool<class_bool>` **transparent**
 
++----------+----------------------+
+| *Setter* | set_draw_flag(value) |
++----------+----------------------+
+| *Getter* | get_draw_flag()      |
++----------+----------------------+
+
+If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
 
 Method Descriptions
 -------------------
 
-.. _class_SpriteBase3D_generate_triangle_mesh:
+  .. _class_SpriteBase3D_generate_triangle_mesh:
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** const
 
-.. _class_SpriteBase3D_get_item_rect:
+  .. _class_SpriteBase3D_get_item_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** const
-
 

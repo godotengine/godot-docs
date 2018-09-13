@@ -8,13 +8,22 @@ CollisionObject2D
 =================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`Area2D<class_Area2D>`, :ref:`PhysicsBody2D<class_PhysicsBody2D>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base node for 2D collision objects.
+
+Properties
+----------
+
++-------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`input_pickable<class_CollisionObject2D_input_pickable>` |
++-------------------------+---------------------------------------------------------------+
 
 Methods
 -------
@@ -62,24 +71,23 @@ Methods
 Signals
 -------
 
-.. _class_CollisionObject2D_input_event:
+  .. _class_CollisionObject2D_input_event:
 
 - **input_event** **(** :ref:`Node<class_Node>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)**
 
 Emitted when an input event occurs and ``input_pickable`` is ``true``. See :ref:`_input_event<class_CollisionObject2D__input_event>` for details.
 
-.. _class_CollisionObject2D_mouse_entered:
+  .. _class_CollisionObject2D_mouse_entered:
 
 - **mouse_entered** **(** **)**
 
 Emitted when the mouse pointer enters any of this object's shapes.
 
-.. _class_CollisionObject2D_mouse_exited:
+  .. _class_CollisionObject2D_mouse_exited:
 
 - **mouse_exited** **(** **)**
 
 Emitted when the mouse pointer exits all this object's shapes.
-
 
 Description
 -----------
@@ -91,124 +99,130 @@ Property Descriptions
 
   .. _class_CollisionObject2D_input_pickable:
 
-- :ref:`bool<class_bool>` **input_pickable** - If ``true`` this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
+- :ref:`bool<class_bool>` **input_pickable**
 
++----------+---------------------+
+| *Setter* | set_pickable(value) |
++----------+---------------------+
+| *Getter* | is_pickable()       |
++----------+---------------------+
+
+If ``true`` this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
 
 Method Descriptions
 -------------------
 
-.. _class_CollisionObject2D__input_event:
+  .. _class_CollisionObject2D__input_event:
 
 - void **_input_event** **(** :ref:`Object<class_Object>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** virtual
 
 Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to the ``input_event`` signal to easily pick up these events.
 
-.. _class_CollisionObject2D_create_shape_owner:
+  .. _class_CollisionObject2D_create_shape_owner:
 
 - :ref:`int<class_int>` **create_shape_owner** **(** :ref:`Object<class_Object>` owner **)**
 
 Creates a new shape owner for the given object. Returns ``owner_id`` of the new owner for future reference.
 
-.. _class_CollisionObject2D_get_rid:
+  .. _class_CollisionObject2D_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
 Returns the object's :ref:`RID<class_RID>`.
 
-.. _class_CollisionObject2D_get_shape_owners:
+  .. _class_CollisionObject2D_get_shape_owners:
 
 - :ref:`Array<class_Array>` **get_shape_owners** **(** **)**
 
 Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 
-.. _class_CollisionObject2D_is_shape_owner_disabled:
+  .. _class_CollisionObject2D_is_shape_owner_disabled:
 
 - :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
 
 If ``true`` the shape owner and its shapes are disabled.
 
-.. _class_CollisionObject2D_is_shape_owner_one_way_collision_enabled:
+  .. _class_CollisionObject2D_is_shape_owner_one_way_collision_enabled:
 
 - :ref:`bool<class_bool>` **is_shape_owner_one_way_collision_enabled** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns ``true`` if collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
-.. _class_CollisionObject2D_remove_shape_owner:
+  .. _class_CollisionObject2D_remove_shape_owner:
 
 - void **remove_shape_owner** **(** :ref:`int<class_int>` owner_id **)**
 
 Removes the given shape owner.
 
-.. _class_CollisionObject2D_shape_find_owner:
+  .. _class_CollisionObject2D_shape_find_owner:
 
 - :ref:`int<class_int>` **shape_find_owner** **(** :ref:`int<class_int>` shape_index **)** const
 
 Returns the ``owner_id`` of the given shape.
 
-.. _class_CollisionObject2D_shape_owner_add_shape:
+  .. _class_CollisionObject2D_shape_owner_add_shape:
 
 - void **shape_owner_add_shape** **(** :ref:`int<class_int>` owner_id, :ref:`Shape2D<class_Shape2D>` shape **)**
 
 Adds a :ref:`Shape2D<class_Shape2D>` to the shape owner.
 
-.. _class_CollisionObject2D_shape_owner_clear_shapes:
+  .. _class_CollisionObject2D_shape_owner_clear_shapes:
 
 - void **shape_owner_clear_shapes** **(** :ref:`int<class_int>` owner_id **)**
 
 Removes all shapes from the shape owner.
 
-.. _class_CollisionObject2D_shape_owner_get_owner:
+  .. _class_CollisionObject2D_shape_owner_get_owner:
 
 - :ref:`Object<class_Object>` **shape_owner_get_owner** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the parent object of the given shape owner.
 
-.. _class_CollisionObject2D_shape_owner_get_shape:
+  .. _class_CollisionObject2D_shape_owner_get_shape:
 
 - :ref:`Shape2D<class_Shape2D>` **shape_owner_get_shape** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
 
 Returns the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
 
-.. _class_CollisionObject2D_shape_owner_get_shape_count:
+  .. _class_CollisionObject2D_shape_owner_get_shape_count:
 
 - :ref:`int<class_int>` **shape_owner_get_shape_count** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the number of shapes the given shape owner contains.
 
-.. _class_CollisionObject2D_shape_owner_get_shape_index:
+  .. _class_CollisionObject2D_shape_owner_get_shape_index:
 
 - :ref:`int<class_int>` **shape_owner_get_shape_index** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
 
 Returns the child index of the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
 
-.. _class_CollisionObject2D_shape_owner_get_transform:
+  .. _class_CollisionObject2D_shape_owner_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **shape_owner_get_transform** **(** :ref:`int<class_int>` owner_id **)** const
 
 Returns the shape owner's :ref:`Transform2D<class_Transform2D>`.
 
-.. _class_CollisionObject2D_shape_owner_remove_shape:
+  .. _class_CollisionObject2D_shape_owner_remove_shape:
 
 - void **shape_owner_remove_shape** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)**
 
 Removes a shape from the given shape owner.
 
-.. _class_CollisionObject2D_shape_owner_set_disabled:
+  .. _class_CollisionObject2D_shape_owner_set_disabled:
 
 - void **shape_owner_set_disabled** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**
 
 If ``true`` disables the given shape owner.
 
-.. _class_CollisionObject2D_shape_owner_set_one_way_collision:
+  .. _class_CollisionObject2D_shape_owner_set_one_way_collision:
 
 - void **shape_owner_set_one_way_collision** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` enable **)**
 
 If ``enable`` is ``true``, collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
-.. _class_CollisionObject2D_shape_owner_set_transform:
+  .. _class_CollisionObject2D_shape_owner_set_transform:
 
 - void **shape_owner_set_transform** **(** :ref:`int<class_int>` owner_id, :ref:`Transform2D<class_Transform2D>` transform **)**
 
 Sets the :ref:`Transform2D<class_Transform2D>` of the given shape owner.
-
 

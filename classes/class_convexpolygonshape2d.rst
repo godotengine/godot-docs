@@ -8,12 +8,20 @@ ConvexPolygonShape2D
 ====================
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Convex Polygon Shape for 2D physics.
+
+Properties
+----------
+
++-------------------------------------------------+--------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_points>` |
++-------------------------------------------------+--------------------------------------------------+
 
 Methods
 -------
@@ -34,16 +42,22 @@ Property Descriptions
 
   .. _class_ConvexPolygonShape2D_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **points** - The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
++----------+-------------------+
+| *Setter* | set_points(value) |
++----------+-------------------+
+| *Getter* | get_points()      |
++----------+-------------------+
+
+The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 
 Method Descriptions
 -------------------
 
-.. _class_ConvexPolygonShape2D_set_point_cloud:
+  .. _class_ConvexPolygonShape2D_set_point_cloud:
 
 - void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
 
 Currently, this method does nothing.
-
 

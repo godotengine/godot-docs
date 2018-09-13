@@ -8,12 +8,22 @@ VisualScriptLocalVarSet
 =======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Changes a local variable's value.
+
+Properties
+----------
+
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_type>`         |
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVarSet_var_name>` |
++-----------------------------------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -37,10 +47,25 @@ Property Descriptions
 
   .. _class_VisualScriptLocalVarSet_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** - The local variable's type.
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+
++----------+---------------------+
+| *Setter* | set_var_type(value) |
++----------+---------------------+
+| *Getter* | get_var_type()      |
++----------+---------------------+
+
+The local variable's type.
 
   .. _class_VisualScriptLocalVarSet_var_name:
 
-- :ref:`String<class_String>` **var_name** - The local variable's name.
+- :ref:`String<class_String>` **var_name**
 
++----------+---------------------+
+| *Setter* | set_var_name(value) |
++----------+---------------------+
+| *Getter* | get_var_name()      |
++----------+---------------------+
+
+The local variable's name.
 

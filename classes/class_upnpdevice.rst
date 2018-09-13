@@ -8,12 +8,30 @@ UPNPDevice
 ==========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 UPNP device.
+
+Properties
+----------
+
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`description_url<class_UPNPDevice_description_url>`   |
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`igd_control_url<class_UPNPDevice_igd_control_url>`   |
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`igd_our_addr<class_UPNPDevice_igd_our_addr>`         |
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`igd_service_type<class_UPNPDevice_igd_service_type>` |
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` | :ref:`igd_status<class_UPNPDevice_igd_status>`             |
++---------------------------------------------+------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`service_type<class_UPNPDevice_service_type>`         |
++---------------------------------------------+------------------------------------------------------------+
 
 Methods
 -------
@@ -33,7 +51,7 @@ Enumerations
 
   .. _enum_UPNPDevice_IGDStatus:
 
-enum **IGDStatus**
+enum **IGDStatus**:
 
 - **IGD_STATUS_OK** = **0** --- OK.
 - **IGD_STATUS_HTTP_ERROR** = **1** --- HTTP error.
@@ -46,7 +64,6 @@ enum **IGDStatus**
 - **IGD_STATUS_MALLOC_ERROR** = **8** --- Memory allocation error.
 - **IGD_STATUS_UNKNOWN_ERROR** = **9** --- Unknown error.
 
-
 Description
 -----------
 
@@ -57,54 +74,100 @@ Property Descriptions
 
   .. _class_UPNPDevice_description_url:
 
-- :ref:`String<class_String>` **description_url** - URL to the device description.
+- :ref:`String<class_String>` **description_url**
+
++----------+----------------------------+
+| *Setter* | set_description_url(value) |
++----------+----------------------------+
+| *Getter* | get_description_url()      |
++----------+----------------------------+
+
+URL to the device description.
 
   .. _class_UPNPDevice_igd_control_url:
 
-- :ref:`String<class_String>` **igd_control_url** - IDG control URL.
+- :ref:`String<class_String>` **igd_control_url**
+
++----------+----------------------------+
+| *Setter* | set_igd_control_url(value) |
++----------+----------------------------+
+| *Getter* | get_igd_control_url()      |
++----------+----------------------------+
+
+IDG control URL.
 
   .. _class_UPNPDevice_igd_our_addr:
 
-- :ref:`String<class_String>` **igd_our_addr** - Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
+- :ref:`String<class_String>` **igd_our_addr**
+
++----------+-------------------------+
+| *Setter* | set_igd_our_addr(value) |
++----------+-------------------------+
+| *Getter* | get_igd_our_addr()      |
++----------+-------------------------+
+
+Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
 
   .. _class_UPNPDevice_igd_service_type:
 
-- :ref:`String<class_String>` **igd_service_type** - IGD service type.
+- :ref:`String<class_String>` **igd_service_type**
+
++----------+-----------------------------+
+| *Setter* | set_igd_service_type(value) |
++----------+-----------------------------+
+| *Getter* | get_igd_service_type()      |
++----------+-----------------------------+
+
+IGD service type.
 
   .. _class_UPNPDevice_igd_status:
 
-- :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status** - IGD status. See :ref:`IGDStatus<enum_@GlobalScope_IGDStatus>`.
+- :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status**
+
++----------+-----------------------+
+| *Setter* | set_igd_status(value) |
++----------+-----------------------+
+| *Getter* | get_igd_status()      |
++----------+-----------------------+
+
+IGD status. See :ref:`IGDStatus<enum_@GlobalScope_IGDStatus>`.
 
   .. _class_UPNPDevice_service_type:
 
-- :ref:`String<class_String>` **service_type** - Service type.
+- :ref:`String<class_String>` **service_type**
 
++----------+-------------------------+
+| *Setter* | set_service_type(value) |
++----------+-------------------------+
+| *Getter* | get_service_type()      |
++----------+-------------------------+
+
+Service type.
 
 Method Descriptions
 -------------------
 
-.. _class_UPNPDevice_add_port_mapping:
+  .. _class_UPNPDevice_add_port_mapping:
 
 - :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
 
 Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_UPNPDevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_add_port_mapping>`.
 
-.. _class_UPNPDevice_delete_port_mapping:
+  .. _class_UPNPDevice_delete_port_mapping:
 
 - :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_delete_port_mapping>`.
 
-.. _class_UPNPDevice_is_valid_gateway:
+  .. _class_UPNPDevice_is_valid_gateway:
 
 - :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** const
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
 
-.. _class_UPNPDevice_query_external_address:
+  .. _class_UPNPDevice_query_external_address:
 
 - :ref:`String<class_String>` **query_external_address** **(** **)** const
 
 Returns the external IP address of this :ref:`UPNPDevice<class_UPNPDevice>` or an empty string.
-
 

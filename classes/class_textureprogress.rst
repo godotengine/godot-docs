@@ -8,6 +8,7 @@ TextureProgress
 ===============
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,47 @@ Brief Description
 
 Texture-based progress bar. Useful for loading screens and life or stamina bars.
 
+Properties
+----------
+
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`fill_mode<class_TextureProgress_fill_mode>`                         |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`nine_patch_stretch<class_TextureProgress_nine_patch_stretch>`       |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`   |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>`     |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>`   |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>` |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`stretch_margin_left<class_TextureProgress_stretch_margin_left>`     |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`stretch_margin_right<class_TextureProgress_stretch_margin_right>`   |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`stretch_margin_top<class_TextureProgress_stretch_margin_top>`       |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture_over<class_TextureProgress_texture_over>`                   |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture_progress<class_TextureProgress_texture_progress>`           |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`texture_under<class_TextureProgress_texture_under>`                 |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`tint_over<class_TextureProgress_tint_over>`                         |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`tint_progress<class_TextureProgress_tint_progress>`                 |
++-------------------------------+---------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`tint_under<class_TextureProgress_tint_under>`                       |
++-------------------------------+---------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_TextureProgress_FillMode:
 
-enum **FillMode**
+enum **FillMode**:
 
 - **FILL_LEFT_TO_RIGHT** = **0** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from left to right.
 - **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from right to left.
@@ -32,7 +68,6 @@ enum **FillMode**
 - **FILL_BILINEAR_TOP_AND_BOTTOM** = **7**
 - **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8**
 
-
 Description
 -----------
 
@@ -43,66 +78,179 @@ Property Descriptions
 
   .. _class_TextureProgress_fill_mode:
 
-- :ref:`int<class_int>` **fill_mode** - The fill direction. Uses FILL\_\* constants.
+- :ref:`int<class_int>` **fill_mode**
+
++----------+----------------------+
+| *Setter* | set_fill_mode(value) |
++----------+----------------------+
+| *Getter* | get_fill_mode()      |
++----------+----------------------+
+
+The fill direction. Uses FILL\_\* constants.
 
   .. _class_TextureProgress_nine_patch_stretch:
 
-- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
+- :ref:`bool<class_bool>` **nine_patch_stretch**
+
++----------+-------------------------------+
+| *Setter* | set_nine_patch_stretch(value) |
++----------+-------------------------------+
+| *Getter* | get_nine_patch_stretch()      |
++----------+-------------------------------+
+
+If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
 
   .. _class_TextureProgress_radial_center_offset:
 
-- :ref:`Vector2<class_Vector2>` **radial_center_offset** - Offsets :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
+- :ref:`Vector2<class_Vector2>` **radial_center_offset**
+
++----------+---------------------------------+
+| *Setter* | set_radial_center_offset(value) |
++----------+---------------------------------+
+| *Getter* | get_radial_center_offset()      |
++----------+---------------------------------+
+
+Offsets :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
 
   .. _class_TextureProgress_radial_fill_degrees:
 
-- :ref:`float<class_float>` **radial_fill_degrees** - Upper limit for the fill of :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
+- :ref:`float<class_float>` **radial_fill_degrees**
+
++----------+-------------------------+
+| *Setter* | set_fill_degrees(value) |
++----------+-------------------------+
+| *Getter* | get_fill_degrees()      |
++----------+-------------------------+
+
+Upper limit for the fill of :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
 
 See :ref:`Range.value<class_Range_value>`, :ref:`Range.max_value<class_Range_max_value>`.
 
   .. _class_TextureProgress_radial_initial_angle:
 
-- :ref:`float<class_float>` **radial_initial_angle** - Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>`.
+- :ref:`float<class_float>` **radial_initial_angle**
+
++----------+---------------------------------+
+| *Setter* | set_radial_initial_angle(value) |
++----------+---------------------------------+
+| *Getter* | get_radial_initial_angle()      |
++----------+---------------------------------+
+
+Starting angle for the fill of :ref:`texture_progress<class_TextureProgress_texture_progress>` if :ref:`fill_mode<class_TextureProgress_fill_mode>` is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>`.
 
   .. _class_TextureProgress_stretch_margin_bottom:
 
-- :ref:`int<class_int>` **stretch_margin_bottom** - The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
+- :ref:`int<class_int>` **stretch_margin_bottom**
+
++----------+---------------------------+
+| *Setter* | set_stretch_margin(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_margin()      |
++----------+---------------------------+
+
+The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 
   .. _class_TextureProgress_stretch_margin_left:
 
-- :ref:`int<class_int>` **stretch_margin_left** - The width of the 9-patch's left column.
+- :ref:`int<class_int>` **stretch_margin_left**
+
++----------+---------------------------+
+| *Setter* | set_stretch_margin(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_margin()      |
++----------+---------------------------+
+
+The width of the 9-patch's left column.
 
   .. _class_TextureProgress_stretch_margin_right:
 
-- :ref:`int<class_int>` **stretch_margin_right** - The width of the 9-patch's right column.
+- :ref:`int<class_int>` **stretch_margin_right**
+
++----------+---------------------------+
+| *Setter* | set_stretch_margin(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_margin()      |
++----------+---------------------------+
+
+The width of the 9-patch's right column.
 
   .. _class_TextureProgress_stretch_margin_top:
 
-- :ref:`int<class_int>` **stretch_margin_top** - The height of the 9-patch's top row.
+- :ref:`int<class_int>` **stretch_margin_top**
+
++----------+---------------------------+
+| *Setter* | set_stretch_margin(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_margin()      |
++----------+---------------------------+
+
+The height of the 9-patch's top row.
 
   .. _class_TextureProgress_texture_over:
 
-- :ref:`Texture<class_Texture>` **texture_over** - :ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_texture_progress>`.
+- :ref:`Texture<class_Texture>` **texture_over**
+
++----------+-------------------------+
+| *Setter* | set_over_texture(value) |
++----------+-------------------------+
+| *Getter* | get_over_texture()      |
++----------+-------------------------+
+
+:ref:`Texture<class_Texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of :ref:`texture_progress<class_TextureProgress_texture_progress>`.
 
   .. _class_TextureProgress_texture_progress:
 
-- :ref:`Texture<class_Texture>` **texture_progress** - :ref:`Texture<class_Texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
+- :ref:`Texture<class_Texture>` **texture_progress**
+
++----------+-----------------------------+
+| *Setter* | set_progress_texture(value) |
++----------+-----------------------------+
+| *Getter* | get_progress_texture()      |
++----------+-----------------------------+
+
+:ref:`Texture<class_Texture>` that clips based on the node's ``value`` and :ref:`fill_mode<class_TextureProgress_fill_mode>`. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
 
 The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.value<class_Range_value>`, :ref:`Range.min_value<class_Range_min_value>`, :ref:`Range.max_value<class_Range_max_value>`.
 
   .. _class_TextureProgress_texture_under:
 
-- :ref:`Texture<class_Texture>` **texture_under** - :ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
+- :ref:`Texture<class_Texture>` **texture_under**
+
++----------+--------------------------+
+| *Setter* | set_under_texture(value) |
++----------+--------------------------+
+| *Getter* | get_under_texture()      |
++----------+--------------------------+
+
+:ref:`Texture<class_Texture>` that draws under the progress bar. The bar's background.
 
   .. _class_TextureProgress_tint_over:
 
 - :ref:`Color<class_Color>` **tint_over**
 
++----------+----------------------+
+| *Setter* | set_tint_over(value) |
++----------+----------------------+
+| *Getter* | get_tint_over()      |
++----------+----------------------+
+
   .. _class_TextureProgress_tint_progress:
 
 - :ref:`Color<class_Color>` **tint_progress**
+
++----------+--------------------------+
+| *Setter* | set_tint_progress(value) |
++----------+--------------------------+
+| *Getter* | get_tint_progress()      |
++----------+--------------------------+
 
   .. _class_TextureProgress_tint_under:
 
 - :ref:`Color<class_Color>` **tint_under**
 
++----------+-----------------------+
+| *Setter* | set_tint_under(value) |
++----------+-----------------------+
+| *Getter* | get_tint_under()      |
++----------+-----------------------+
 

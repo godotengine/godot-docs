@@ -8,12 +8,20 @@ ViewportTexture
 ===============
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
+
+Properties
+----------
+
++---------------------------------+-----------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_viewport_path>` |
++---------------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -27,6 +35,13 @@ Property Descriptions
 
   .. _class_ViewportTexture_viewport_path:
 
-- :ref:`NodePath<class_NodePath>` **viewport_path** - The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
+- :ref:`NodePath<class_NodePath>` **viewport_path**
 
++----------+-----------------------------------+
+| *Setter* | set_viewport_path_in_scene(value) |
++----------+-----------------------------------+
+| *Getter* | get_viewport_path_in_scene()      |
++----------+-----------------------------------+
+
+The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
 

@@ -8,6 +8,7 @@ Skeleton2D
 ==========
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -29,16 +30,15 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_Skeleton2D_get_bone:
+  .. _class_Skeleton2D_get_bone:
 
 - :ref:`Bone2D<class_Bone2D>` **get_bone** **(** :ref:`int<class_int>` idx **)**
 
-.. _class_Skeleton2D_get_bone_count:
+  .. _class_Skeleton2D_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
-.. _class_Skeleton2D_get_skeleton:
+  .. _class_Skeleton2D_get_skeleton:
 
 - :ref:`RID<class_RID>` **get_skeleton** **(** **)** const
-
 

@@ -8,6 +8,7 @@ VisualShaderNodeColorOp
 =======================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,19 @@ Brief Description
 
 
 
+Properties
+----------
+
++--------------------------------------------------------+---------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` | :ref:`operator<class_VisualShaderNodeColorOp_operator>` |
++--------------------------------------------------------+---------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualShaderNodeColorOp_Operator:
 
-enum **Operator**
+enum **Operator**:
 
 - **OP_SCREEN** = **0**
 - **OP_DIFFERENCE** = **1**
@@ -32,7 +40,6 @@ enum **Operator**
 - **OP_SOFT_LIGHT** = **7**
 - **OP_HARD_LIGHT** = **8**
 
-
 Property Descriptions
 ---------------------
 
@@ -40,4 +47,9 @@ Property Descriptions
 
 - :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator**
 
++----------+---------------------+
+| *Setter* | set_operator(value) |
++----------+---------------------+
+| *Getter* | get_operator()      |
++----------+---------------------+
 

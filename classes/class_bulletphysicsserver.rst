@@ -8,6 +8,7 @@ BulletPhysicsServer
 ===================
 
 **Inherits:** :ref:`PhysicsServer<class_PhysicsServer>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description

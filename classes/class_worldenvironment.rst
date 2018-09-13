@@ -8,12 +8,20 @@ WorldEnvironment
 ================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Default environment properties for the entire scene (post-processing effects, lightning and background settings).
+
+Properties
+----------
+
++---------------------------------------+--------------------------------------------------------+
+| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_environment>` |
++---------------------------------------+--------------------------------------------------------+
 
 Description
 -----------
@@ -28,12 +36,18 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
-
 Property Descriptions
 ---------------------
 
   .. _class_WorldEnvironment_environment:
 
-- :ref:`Environment<class_Environment>` **environment** - The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
+- :ref:`Environment<class_Environment>` **environment**
 
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
+
+The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
 

@@ -8,12 +8,20 @@ CanvasModulate
 ==============
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Tint the entire canvas.
+
+Properties
+----------
+
++---------------------------+------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_color>` |
++---------------------------+------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_CanvasModulate_color:
 
-- :ref:`Color<class_Color>` **color** - The tint color to apply.
+- :ref:`Color<class_Color>` **color**
 
++----------+------------------+
+| *Setter* | set_color(value) |
++----------+------------------+
+| *Getter* | get_color()      |
++----------+------------------+
+
+The tint color to apply.
 

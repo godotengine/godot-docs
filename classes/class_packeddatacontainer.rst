@@ -8,12 +8,20 @@ PackedDataContainer
 ===================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-------------------------------------------+-----------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer___data__>` |
++-------------------------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -31,16 +39,14 @@ Property Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
-
 Method Descriptions
 -------------------
 
-.. _class_PackedDataContainer_pack:
+  .. _class_PackedDataContainer_pack:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
 
-.. _class_PackedDataContainer_size:
+  .. _class_PackedDataContainer_size:
 
 - :ref:`int<class_int>` **size** **(** **)** const
-
 

@@ -8,7 +8,9 @@ WebSocketMultiplayerPeer
 ========================
 
 **Inherits:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`WebSocketClient<class_WebSocketClient>`, :ref:`WebSocketServer<class_WebSocketServer>`
+
 **Category:** Core
 
 Brief Description
@@ -26,12 +28,11 @@ Methods
 Signals
 -------
 
-.. _class_WebSocketMultiplayerPeer_peer_packet:
+  .. _class_WebSocketMultiplayerPeer_peer_packet:
 
 - **peer_packet** **(** :ref:`int<class_int>` peer_source **)**
 
 Emitted when a packet is received from a peer. Note: this signal is only emitted when the client or server is configured to use Godot multiplayer API.
-
 
 Description
 -----------
@@ -41,10 +42,9 @@ Base class for WebSocket server and client, allowing them to be used as network 
 Method Descriptions
 -------------------
 
-.. _class_WebSocketMultiplayerPeer_get_peer:
+  .. _class_WebSocketMultiplayerPeer_get_peer:
 
 - :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
-
 

@@ -8,12 +8,28 @@ StaticBody
 ==========
 
 **Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Static body for 3D Physics.
+
+Properties
+----------
+
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody_bounce>`                                       |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_angular_velocity<class_StaticBody_constant_angular_velocity>` |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_linear_velocity<class_StaticBody_constant_linear_velocity>`   |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody_friction>`                                   |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody_physics_material_override>` |
++-----------------------------------------------+------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -29,22 +45,59 @@ Property Descriptions
 
   .. _class_StaticBody_bounce:
 
-- :ref:`float<class_float>` **bounce** - The body bounciness.
+- :ref:`float<class_float>` **bounce**
+
++----------+-------------------+
+| *Setter* | set_bounce(value) |
++----------+-------------------+
+| *Getter* | get_bounce()      |
++----------+-------------------+
+
+The body bounciness.
 
   .. _class_StaticBody_constant_angular_velocity:
 
-- :ref:`Vector3<class_Vector3>` **constant_angular_velocity** - The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
+- :ref:`Vector3<class_Vector3>` **constant_angular_velocity**
+
++----------+--------------------------------------+
+| *Setter* | set_constant_angular_velocity(value) |
++----------+--------------------------------------+
+| *Getter* | get_constant_angular_velocity()      |
++----------+--------------------------------------+
+
+The constant angular velocity for the body. This does not rotate the body, but affects other bodies that touch it, as if it was in a state of rotation.
 
   .. _class_StaticBody_constant_linear_velocity:
 
-- :ref:`Vector3<class_Vector3>` **constant_linear_velocity** - The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
+- :ref:`Vector3<class_Vector3>` **constant_linear_velocity**
+
++----------+-------------------------------------+
+| *Setter* | set_constant_linear_velocity(value) |
++----------+-------------------------------------+
+| *Getter* | get_constant_linear_velocity()      |
++----------+-------------------------------------+
+
+The constant linear velocity for the body. This does not move the body, but affects other bodies that touch it, as if it was in a state of movement.
 
   .. _class_StaticBody_friction:
 
-- :ref:`float<class_float>` **friction** - The body friction, from 0 (frictionless) to 1 (full friction).
+- :ref:`float<class_float>` **friction**
+
++----------+---------------------+
+| *Setter* | set_friction(value) |
++----------+---------------------+
+| *Getter* | get_friction()      |
++----------+---------------------+
+
+The body friction, from 0 (frictionless) to 1 (full friction).
 
   .. _class_StaticBody_physics_material_override:
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
++----------+--------------------------------------+
+| *Setter* | set_physics_material_override(value) |
++----------+--------------------------------------+
+| *Getter* | get_physics_material_override()      |
++----------+--------------------------------------+
 

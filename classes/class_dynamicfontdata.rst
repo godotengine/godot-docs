@@ -8,6 +8,7 @@ DynamicFontData
 ===============
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,17 +16,25 @@ Brief Description
 
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
 
+Properties
+----------
+
++----------------------------------------------+---------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_font_path>` |
++----------------------------------------------+---------------------------------------------------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_hinting>`     |
++----------------------------------------------+---------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_DynamicFontData_Hinting:
 
-enum **Hinting**
+enum **Hinting**:
 
 - **HINTING_NONE** = **0** --- Disable font hinting (smoother but less crisp).
 - **HINTING_LIGHT** = **1** --- Use the light font hinting mode.
 - **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
-
 
 Description
 -----------
@@ -37,10 +46,25 @@ Property Descriptions
 
   .. _class_DynamicFontData_font_path:
 
-- :ref:`String<class_String>` **font_path** - The path to the vector font file.
+- :ref:`String<class_String>` **font_path**
+
++----------+----------------------+
+| *Setter* | set_font_path(value) |
++----------+----------------------+
+| *Getter* | get_font_path()      |
++----------+----------------------+
+
+The path to the vector font file.
 
   .. _class_DynamicFontData_hinting:
 
-- :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting** - The font hinting mode used by FreeType.
+- :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 
++----------+--------------------+
+| *Setter* | set_hinting(value) |
++----------+--------------------+
+| *Getter* | get_hinting()      |
++----------+--------------------+
+
+The font hinting mode used by FreeType.
 

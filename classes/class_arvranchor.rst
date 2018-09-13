@@ -8,12 +8,20 @@ ARVRAnchor
 ==========
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Anchor point in AR Space.
+
+Properties
+----------
+
++-----------------------+----------------------------------------------+
+| :ref:`int<class_int>` | :ref:`anchor_id<class_ARVRAnchor_anchor_id>` |
++-----------------------+----------------------------------------------+
 
 Methods
 -------
@@ -42,34 +50,40 @@ Property Descriptions
 
   .. _class_ARVRAnchor_anchor_id:
 
-- :ref:`int<class_int>` **anchor_id** - The anchor's id. You can set this before the anchor itself exists. The first anchor gets an id of ``1``, the second an id of ``2``, etc. When anchors get removed, the engine can then assign the corresponding id to new anchors. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
+- :ref:`int<class_int>` **anchor_id**
 
++----------+----------------------+
+| *Setter* | set_anchor_id(value) |
++----------+----------------------+
+| *Getter* | get_anchor_id()      |
++----------+----------------------+
+
+The anchor's id. You can set this before the anchor itself exists. The first anchor gets an id of ``1``, the second an id of ``2``, etc. When anchors get removed, the engine can then assign the corresponding id to new anchors. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
 
 Method Descriptions
 -------------------
 
-.. _class_ARVRAnchor_get_anchor_name:
+  .. _class_ARVRAnchor_get_anchor_name:
 
 - :ref:`String<class_String>` **get_anchor_name** **(** **)** const
 
 Returns the name given to this anchor.
 
-.. _class_ARVRAnchor_get_is_active:
+  .. _class_ARVRAnchor_get_is_active:
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
 Returns true if the anchor is being tracked and false if no anchor with this id is currently known.
 
-.. _class_ARVRAnchor_get_plane:
+  .. _class_ARVRAnchor_get_plane:
 
 - :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor, handy for intersection testing
 
-.. _class_ARVRAnchor_get_size:
+  .. _class_ARVRAnchor_get_size:
 
 - :ref:`Vector3<class_Vector3>` **get_size** **(** **)** const
 
 Returns the estimated size of the plane that was detected. Say when the anchor relates to a table in the real world, this is the estimated size of the surface of that table.
-
 

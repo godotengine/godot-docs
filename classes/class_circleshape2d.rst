@@ -8,12 +8,20 @@ CircleShape2D
 =============
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Circular shape for 2D collisions.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_radius>` |
++---------------------------+-------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_CircleShape2D_radius:
 
-- :ref:`float<class_float>` **radius** - The circle's radius.
+- :ref:`float<class_float>` **radius**
 
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
+
+The circle's radius.
 

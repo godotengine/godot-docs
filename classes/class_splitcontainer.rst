@@ -8,7 +8,9 @@ SplitContainer
 ==============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
+
 **Category:** Core
 
 Brief Description
@@ -16,27 +18,36 @@ Brief Description
 
 Container for splitting and adjusting.
 
+Properties
+----------
+
++-----------------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_collapsed>`                   |
++-----------------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_dragger_visibility>` |
++-----------------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_split_offset>`             |
++-----------------------------------------------------------------+--------------------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_SplitContainer_dragged:
+  .. _class_SplitContainer_dragged:
 
 - **dragged** **(** :ref:`int<class_int>` offset **)**
 
 Emitted when the dragger is dragged by user.
-
 
 Enumerations
 ------------
 
   .. _enum_SplitContainer_DraggerVisibility:
 
-enum **DraggerVisibility**
+enum **DraggerVisibility**:
 
 - **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
 - **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
 - **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
-
 
 Description
 -----------
@@ -50,12 +61,31 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **collapsed**
 
++----------+----------------------+
+| *Setter* | set_collapsed(value) |
++----------+----------------------+
+| *Getter* | is_collapsed()       |
++----------+----------------------+
+
   .. _class_SplitContainer_dragger_visibility:
 
-- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility** - Determines whether the dragger is visible.
+- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
+
++----------+-------------------------------+
+| *Setter* | set_dragger_visibility(value) |
++----------+-------------------------------+
+| *Getter* | get_dragger_visibility()      |
++----------+-------------------------------+
+
+Determines whether the dragger is visible.
 
   .. _class_SplitContainer_split_offset:
 
 - :ref:`int<class_int>` **split_offset**
 
++----------+-------------------------+
+| *Setter* | set_split_offset(value) |
++----------+-------------------------+
+| *Getter* | get_split_offset()      |
++----------+-------------------------+
 

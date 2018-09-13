@@ -8,6 +8,7 @@ AudioEffectPhaser
 =================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -16,6 +17,21 @@ Brief Description
 Adds a Phaser audio effect to an Audio bus.
 
 Combines the original signal with a copy that is slightly out of phase with the original.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`depth<class_AudioEffectPhaser_depth>`               |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`feedback<class_AudioEffectPhaser_feedback>`         |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`range_max_hz<class_AudioEffectPhaser_range_max_hz>` |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`range_min_hz<class_AudioEffectPhaser_range_min_hz>` |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`rate_hz<class_AudioEffectPhaser_rate_hz>`           |
++---------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -27,22 +43,61 @@ Property Descriptions
 
   .. _class_AudioEffectPhaser_depth:
 
-- :ref:`float<class_float>` **depth** - Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: ``1``.
+- :ref:`float<class_float>` **depth**
+
++----------+------------------+
+| *Setter* | set_depth(value) |
++----------+------------------+
+| *Getter* | get_depth()      |
++----------+------------------+
+
+Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: ``1``.
 
   .. _class_AudioEffectPhaser_feedback:
 
-- :ref:`float<class_float>` **feedback** - Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: ``0.7``.
+- :ref:`float<class_float>` **feedback**
+
++----------+---------------------+
+| *Setter* | set_feedback(value) |
++----------+---------------------+
+| *Getter* | get_feedback()      |
++----------+---------------------+
+
+Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: ``0.7``.
 
   .. _class_AudioEffectPhaser_range_max_hz:
 
-- :ref:`float<class_float>` **range_max_hz** - Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``1600hz``.
+- :ref:`float<class_float>` **range_max_hz**
+
++----------+-------------------------+
+| *Setter* | set_range_max_hz(value) |
++----------+-------------------------+
+| *Getter* | get_range_max_hz()      |
++----------+-------------------------+
+
+Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``1600hz``.
 
   .. _class_AudioEffectPhaser_range_min_hz:
 
-- :ref:`float<class_float>` **range_min_hz** - Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``440hz``.
+- :ref:`float<class_float>` **range_min_hz**
+
++----------+-------------------------+
+| *Setter* | set_range_min_hz(value) |
++----------+-------------------------+
+| *Getter* | get_range_min_hz()      |
++----------+-------------------------+
+
+Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``440hz``.
 
   .. _class_AudioEffectPhaser_rate_hz:
 
-- :ref:`float<class_float>` **rate_hz** - Adjusts the rate at which the effect sweeps up and down across the frequency range.
+- :ref:`float<class_float>` **rate_hz**
 
++----------+--------------------+
+| *Setter* | set_rate_hz(value) |
++----------+--------------------+
+| *Getter* | get_rate_hz()      |
++----------+--------------------+
+
+Adjusts the rate at which the effect sweeps up and down across the frequency range.
 

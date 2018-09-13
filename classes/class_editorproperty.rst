@@ -8,12 +8,30 @@ EditorProperty
 ==============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_checkable>` |
++-----------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_checked>`     |
++-----------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`draw_red<class_EditorProperty_draw_red>`   |
++-----------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_keying>`       |
++-----------------------------+--------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`label<class_EditorProperty_label>`         |
++-----------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_read_only>` |
++-----------------------------+--------------------------------------------------+
 
 Methods
 -------
@@ -31,38 +49,37 @@ Methods
 Signals
 -------
 
-.. _class_EditorProperty_multiple_properties_changed:
+  .. _class_EditorProperty_multiple_properties_changed:
 
 - **multiple_properties_changed** **(** :ref:`PoolStringArray<class_PoolStringArray>` properties, :ref:`Array<class_Array>` value **)**
 
-.. _class_EditorProperty_object_id_selected:
+  .. _class_EditorProperty_object_id_selected:
 
 - **object_id_selected** **(** :ref:`String<class_String>` property, :ref:`int<class_int>` id **)**
 
-.. _class_EditorProperty_property_changed:
+  .. _class_EditorProperty_property_changed:
 
 - **property_changed** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
-.. _class_EditorProperty_property_checked:
+  .. _class_EditorProperty_property_checked:
 
 - **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
 
-.. _class_EditorProperty_property_keyed:
+  .. _class_EditorProperty_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
-.. _class_EditorProperty_property_keyed_with_value:
+  .. _class_EditorProperty_property_keyed_with_value:
 
 - **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Nil<class_Nil>` value **)**
 
-.. _class_EditorProperty_resource_selected:
+  .. _class_EditorProperty_resource_selected:
 
 - **resource_selected** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource **)**
 
-.. _class_EditorProperty_selected:
+  .. _class_EditorProperty_selected:
 
 - **selected** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` focusable_idx **)**
-
 
 Property Descriptions
 ---------------------
@@ -71,44 +88,78 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **checkable**
 
++----------+----------------------+
+| *Setter* | set_checkable(value) |
++----------+----------------------+
+| *Getter* | is_checkable()       |
++----------+----------------------+
+
   .. _class_EditorProperty_checked:
 
 - :ref:`bool<class_bool>` **checked**
+
++----------+--------------------+
+| *Setter* | set_checked(value) |
++----------+--------------------+
+| *Getter* | is_checked()       |
++----------+--------------------+
 
   .. _class_EditorProperty_draw_red:
 
 - :ref:`bool<class_bool>` **draw_red**
 
++----------+---------------------+
+| *Setter* | set_draw_red(value) |
++----------+---------------------+
+| *Getter* | is_draw_red()       |
++----------+---------------------+
+
   .. _class_EditorProperty_keying:
 
 - :ref:`bool<class_bool>` **keying**
+
++----------+-------------------+
+| *Setter* | set_keying(value) |
++----------+-------------------+
+| *Getter* | is_keying()       |
++----------+-------------------+
 
   .. _class_EditorProperty_label:
 
 - :ref:`String<class_String>` **label**
 
++----------+------------------+
+| *Setter* | set_label(value) |
++----------+------------------+
+| *Getter* | get_label()      |
++----------+------------------+
+
   .. _class_EditorProperty_read_only:
 
 - :ref:`bool<class_bool>` **read_only**
 
++----------+----------------------+
+| *Setter* | set_read_only(value) |
++----------+----------------------+
+| *Getter* | is_read_only()       |
++----------+----------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_EditorProperty_get_edited_object:
+  .. _class_EditorProperty_get_edited_object:
 
 - :ref:`Object<class_Object>` **get_edited_object** **(** **)**
 
-.. _class_EditorProperty_get_edited_property:
+  .. _class_EditorProperty_get_edited_property:
 
 - :ref:`String<class_String>` **get_edited_property** **(** **)**
 
-.. _class_EditorProperty_get_tooltip_text:
+  .. _class_EditorProperty_get_tooltip_text:
 
 - :ref:`String<class_String>` **get_tooltip_text** **(** **)** const
 
-.. _class_EditorProperty_update_property:
+  .. _class_EditorProperty_update_property:
 
 - void **update_property** **(** **)** virtual
-
 

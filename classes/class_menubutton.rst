@@ -8,6 +8,7 @@ MenuButton
 ==========
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -24,15 +25,41 @@ Methods
 | void                               | :ref:`set_disable_shortcuts<class_MenuButton_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_disabled>`                       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_focus>`                             |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_font>`                               |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_font_color>`                   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_MenuButton_font_color_disabled>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_MenuButton_font_color_hover>`       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_MenuButton_font_color_pressed>`   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_hover>`                             |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_MenuButton_hseparation>`                 |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_normal>`                           |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuButton_pressed>`                         |
++---------------------------------+------------------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_MenuButton_about_to_show:
+  .. _class_MenuButton_about_to_show:
 
 - **about_to_show** **(** **)**
 
 Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
-
 
 Description
 -----------
@@ -42,14 +69,13 @@ Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. 
 Method Descriptions
 -------------------
 
-.. _class_MenuButton_get_popup:
+  .. _class_MenuButton_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
 Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-.. _class_MenuButton_set_disable_shortcuts:
+  .. _class_MenuButton_set_disable_shortcuts:
 
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
-
 

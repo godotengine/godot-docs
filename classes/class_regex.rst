@@ -8,6 +8,7 @@ RegEx
 =====
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -86,58 +87,57 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_search_all
 Method Descriptions
 -------------------
 
-.. _class_RegEx_clear:
+  .. _class_RegEx_clear:
 
 - void **clear** **(** **)**
 
 This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object.
 
-.. _class_RegEx_compile:
+  .. _class_RegEx_compile:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **compile** **(** :ref:`String<class_String>` pattern **)**
 
 Compiles and assign the search pattern to use. Returns OK if the compilation is successful. If an error is encountered the details are printed to STDOUT and FAILED is returned.
 
-.. _class_RegEx_get_group_count:
+  .. _class_RegEx_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of capturing groups in compiled pattern.
 
-.. _class_RegEx_get_names:
+  .. _class_RegEx_get_names:
 
 - :ref:`Array<class_Array>` **get_names** **(** **)** const
 
 Returns an array of names of named capturing groups in the compiled pattern. They are ordered by appearance.
 
-.. _class_RegEx_get_pattern:
+  .. _class_RegEx_get_pattern:
 
 - :ref:`String<class_String>` **get_pattern** **(** **)** const
 
 Returns the original search pattern that was compiled.
 
-.. _class_RegEx_is_valid:
+  .. _class_RegEx_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
 Returns whether this object has a valid search pattern assigned.
 
-.. _class_RegEx_search:
+  .. _class_RegEx_search:
 
 - :ref:`RegExMatch<class_RegExMatch>` **search** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
 Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise null. The region to search within can be specified without modifying where the start and end anchor would be.
 
-.. _class_RegEx_search_all:
+  .. _class_RegEx_search_all:
 
 - :ref:`Array<class_Array>` **search_all** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
 Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found an empty array is returned instead. The region to search within can be specified without modifying where the start and end anchor would be.
 
-.. _class_RegEx_sub:
+  .. _class_RegEx_sub:
 
 - :ref:`String<class_String>` **sub** **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** const
 
 Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``\1`` and ``\g<name>`` expanded and resolved. By default only the first instance is replaced but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
-
 

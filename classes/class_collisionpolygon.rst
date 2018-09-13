@@ -8,12 +8,24 @@ CollisionPolygon
 ================
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Editor-only class for defining a collision polygon in 3D space.
+
+Properties
+----------
+
++-------------------------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_depth>`       |
++-------------------------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_disabled>` |
++-------------------------------------------------+--------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_polygon>`   |
++-------------------------------------------------+--------------------------------------------------+
 
 Description
 -----------
@@ -25,14 +37,37 @@ Property Descriptions
 
   .. _class_CollisionPolygon_depth:
 
-- :ref:`float<class_float>` **depth** - Length that the resulting collision extends in either direction perpendicular to its polygon.
+- :ref:`float<class_float>` **depth**
+
++----------+------------------+
+| *Setter* | set_depth(value) |
++----------+------------------+
+| *Getter* | get_depth()      |
++----------+------------------+
+
+Length that the resulting collision extends in either direction perpendicular to its polygon.
 
   .. _class_CollisionPolygon_disabled:
 
-- :ref:`bool<class_bool>` **disabled** - If true, no collision will be produced.
+- :ref:`bool<class_bool>` **disabled**
+
++----------+---------------------+
+| *Setter* | set_disabled(value) |
++----------+---------------------+
+| *Getter* | is_disabled()       |
++----------+---------------------+
+
+If true, no collision will be produced.
 
   .. _class_CollisionPolygon_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - Array of vertices which define the polygon.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
++----------+--------------------+
+| *Setter* | set_polygon(value) |
++----------+--------------------+
+| *Getter* | get_polygon()      |
++----------+--------------------+
+
+Array of vertices which define the polygon.
 

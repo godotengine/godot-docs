@@ -8,6 +8,7 @@ SliderJoint
 ===========
 
 **Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,61 @@ Brief Description
 
 Piston kind of slider between two bodies in 3D.
 
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit/damping<class_SliderJoint_angular_limit/damping>`             |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit/lower_angle<class_SliderJoint_angular_limit/lower_angle>`     |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit/restitution<class_SliderJoint_angular_limit/restitution>`     |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit/softness<class_SliderJoint_angular_limit/softness>`           |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit/upper_angle<class_SliderJoint_angular_limit/upper_angle>`     |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motion/damping<class_SliderJoint_angular_motion/damping>`           |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motion/restitution<class_SliderJoint_angular_motion/restitution>`   |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motion/softness<class_SliderJoint_angular_motion/softness>`         |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_ortho/damping<class_SliderJoint_angular_ortho/damping>`             |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_ortho/restitution<class_SliderJoint_angular_ortho/restitution>`     |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_ortho/softness<class_SliderJoint_angular_ortho/softness>`           |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit/damping<class_SliderJoint_linear_limit/damping>`               |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit/lower_distance<class_SliderJoint_linear_limit/lower_distance>` |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit/restitution<class_SliderJoint_linear_limit/restitution>`       |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit/softness<class_SliderJoint_linear_limit/softness>`             |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit/upper_distance<class_SliderJoint_linear_limit/upper_distance>` |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motion/damping<class_SliderJoint_linear_motion/damping>`             |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motion/restitution<class_SliderJoint_linear_motion/restitution>`     |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motion/softness<class_SliderJoint_linear_motion/softness>`           |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_ortho/damping<class_SliderJoint_linear_ortho/damping>`               |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_ortho/restitution<class_SliderJoint_linear_ortho/restitution>`       |
++---------------------------+-----------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_ortho/softness<class_SliderJoint_linear_ortho/softness>`             |
++---------------------------+-----------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_SliderJoint_Param:
 
-enum **Param**
+enum **Param**:
 
 - **PARAM_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
 - **PARAM_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
@@ -46,7 +96,6 @@ enum **Param**
 - **PARAM_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 - **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
 
-
 Description
 -----------
 
@@ -57,96 +106,259 @@ Property Descriptions
 
   .. _class_SliderJoint_angular_limit/damping:
 
-- :ref:`float<class_float>` **angular_limit/damping** - The amount of damping of the rotation when the limit is surpassed.
+- :ref:`float<class_float>` **angular_limit/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping of the rotation when the limit is surpassed.
 
 A lower damping value allows a rotation initiated by body A to travel to body B slower.
 
   .. _class_SliderJoint_angular_limit/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit/lower_angle** - The lower limit of rotation in the slider.
+- :ref:`float<class_float>` **angular_limit/lower_angle**
+
+The lower limit of rotation in the slider.
 
   .. _class_SliderJoint_angular_limit/restitution:
 
-- :ref:`float<class_float>` **angular_limit/restitution** - The amount of restitution of the rotation when the limit is surpassed.
+- :ref:`float<class_float>` **angular_limit/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution of the rotation when the limit is surpassed.
 
 Does not affect damping.
 
   .. _class_SliderJoint_angular_limit/softness:
 
-- :ref:`float<class_float>` **angular_limit/softness** - A factor applied to the all rotation once the limit is surpassed.
+- :ref:`float<class_float>` **angular_limit/softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the all rotation once the limit is surpassed.
 
 Makes all rotation slower when between 0 and 1.
 
   .. _class_SliderJoint_angular_limit/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit/upper_angle** - The upper limit of rotation in the slider.
+- :ref:`float<class_float>` **angular_limit/upper_angle**
+
+The upper limit of rotation in the slider.
 
   .. _class_SliderJoint_angular_motion/damping:
 
-- :ref:`float<class_float>` **angular_motion/damping** - The amount of damping of the rotation in the limits.
+- :ref:`float<class_float>` **angular_motion/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping of the rotation in the limits.
 
   .. _class_SliderJoint_angular_motion/restitution:
 
-- :ref:`float<class_float>` **angular_motion/restitution** - The amount of restitution of the rotation in the limits.
+- :ref:`float<class_float>` **angular_motion/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution of the rotation in the limits.
 
   .. _class_SliderJoint_angular_motion/softness:
 
-- :ref:`float<class_float>` **angular_motion/softness** - A factor applied to the all rotation in the limits.
+- :ref:`float<class_float>` **angular_motion/softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the all rotation in the limits.
 
   .. _class_SliderJoint_angular_ortho/damping:
 
-- :ref:`float<class_float>` **angular_ortho/damping** - The amount of damping of the rotation across axes orthogonal to the slider.
+- :ref:`float<class_float>` **angular_ortho/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping of the rotation across axes orthogonal to the slider.
 
   .. _class_SliderJoint_angular_ortho/restitution:
 
-- :ref:`float<class_float>` **angular_ortho/restitution** - The amount of restitution of the rotation across axes orthogonal to the slider.
+- :ref:`float<class_float>` **angular_ortho/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution of the rotation across axes orthogonal to the slider.
 
   .. _class_SliderJoint_angular_ortho/softness:
 
-- :ref:`float<class_float>` **angular_ortho/softness** - A factor applied to the all rotation across axes orthogonal to the slider.
+- :ref:`float<class_float>` **angular_ortho/softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the all rotation across axes orthogonal to the slider.
 
   .. _class_SliderJoint_linear_limit/damping:
 
-- :ref:`float<class_float>` **linear_limit/damping** - The amount of damping that happens once the limit defined by :ref:`linear_limit/lower_distance<class_SliderJoint_linear_limit/lower_distance>` and :ref:`linear_limit/upper_distance<class_SliderJoint_linear_limit/upper_distance>` is surpassed.
+- :ref:`float<class_float>` **linear_limit/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping that happens once the limit defined by :ref:`linear_limit/lower_distance<class_SliderJoint_linear_limit/lower_distance>` and :ref:`linear_limit/upper_distance<class_SliderJoint_linear_limit/upper_distance>` is surpassed.
 
   .. _class_SliderJoint_linear_limit/lower_distance:
 
-- :ref:`float<class_float>` **linear_limit/lower_distance** - The minimum difference between the pivot points on their x-axis before damping happens.
+- :ref:`float<class_float>` **linear_limit/lower_distance**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The minimum difference between the pivot points on their x-axis before damping happens.
 
   .. _class_SliderJoint_linear_limit/restitution:
 
-- :ref:`float<class_float>` **linear_limit/restitution** - The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
+- :ref:`float<class_float>` **linear_limit/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
 
   .. _class_SliderJoint_linear_limit/softness:
 
-- :ref:`float<class_float>` **linear_limit/softness** - A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit/softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
 
   .. _class_SliderJoint_linear_limit/upper_distance:
 
-- :ref:`float<class_float>` **linear_limit/upper_distance** - The maximum difference between the pivot points on their x-axis before damping happens.
+- :ref:`float<class_float>` **linear_limit/upper_distance**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The maximum difference between the pivot points on their x-axis before damping happens.
 
   .. _class_SliderJoint_linear_motion/damping:
 
-- :ref:`float<class_float>` **linear_motion/damping** - The amount of damping inside the slider limits.
+- :ref:`float<class_float>` **linear_motion/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping inside the slider limits.
 
   .. _class_SliderJoint_linear_motion/restitution:
 
-- :ref:`float<class_float>` **linear_motion/restitution** - The amount of restitution inside the slider limits.
+- :ref:`float<class_float>` **linear_motion/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution inside the slider limits.
 
   .. _class_SliderJoint_linear_motion/softness:
 
-- :ref:`float<class_float>` **linear_motion/softness** - A factor applied to the movement across the slider axis as long as the slider is in the limits. The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_motion/softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the movement across the slider axis as long as the slider is in the limits. The lower, the slower the movement.
 
   .. _class_SliderJoint_linear_ortho/damping:
 
-- :ref:`float<class_float>` **linear_ortho/damping** - The amount of damping when movement is across axes orthogonal to the slider.
+- :ref:`float<class_float>` **linear_ortho/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of damping when movement is across axes orthogonal to the slider.
 
   .. _class_SliderJoint_linear_ortho/restitution:
 
-- :ref:`float<class_float>` **linear_ortho/restitution** - The amount of restitution when movement is across axes orthogonal to the slider.
+- :ref:`float<class_float>` **linear_ortho/restitution**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The amount of restitution when movement is across axes orthogonal to the slider.
 
   .. _class_SliderJoint_linear_ortho/softness:
 
-- :ref:`float<class_float>` **linear_ortho/softness** - A factor applied to the movement across axes orthogonal to the slider.
+- :ref:`float<class_float>` **linear_ortho/softness**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+A factor applied to the movement across axes orthogonal to the slider.
 

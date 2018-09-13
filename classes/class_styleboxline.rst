@@ -8,12 +8,28 @@ StyleBoxLine
 ============
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_color>`           |
++---------------------------+--------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_grow_begin>` |
++---------------------------+--------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_grow_end>`     |
++---------------------------+--------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_thickness>`   |
++---------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_vertical>`     |
++---------------------------+--------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,20 +38,49 @@ Property Descriptions
 
 - :ref:`Color<class_Color>` **color**
 
++----------+------------------+
+| *Setter* | set_color(value) |
++----------+------------------+
+| *Getter* | get_color()      |
++----------+------------------+
+
   .. _class_StyleBoxLine_grow_begin:
 
 - :ref:`float<class_float>` **grow_begin**
+
++----------+-----------------------+
+| *Setter* | set_grow_begin(value) |
++----------+-----------------------+
+| *Getter* | get_grow_begin()      |
++----------+-----------------------+
 
   .. _class_StyleBoxLine_grow_end:
 
 - :ref:`float<class_float>` **grow_end**
 
++----------+---------------------+
+| *Setter* | set_grow_end(value) |
++----------+---------------------+
+| *Getter* | get_grow_end()      |
++----------+---------------------+
+
   .. _class_StyleBoxLine_thickness:
 
 - :ref:`int<class_int>` **thickness**
+
++----------+----------------------+
+| *Setter* | set_thickness(value) |
++----------+----------------------+
+| *Getter* | get_thickness()      |
++----------+----------------------+
 
   .. _class_StyleBoxLine_vertical:
 
 - :ref:`bool<class_bool>` **vertical**
 
++----------+---------------------+
+| *Setter* | set_vertical(value) |
++----------+---------------------+
+| *Getter* | is_vertical()       |
++----------+---------------------+
 

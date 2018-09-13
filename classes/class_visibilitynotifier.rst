@@ -8,13 +8,22 @@ VisibilityNotifier
 ==================
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Detects when the node is visible on screen.
+
+Properties
+----------
+
++-------------------------+--------------------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibilityNotifier_aabb>` |
++-------------------------+--------------------------------------------+
 
 Methods
 -------
@@ -26,30 +35,29 @@ Methods
 Signals
 -------
 
-.. _class_VisibilityNotifier_camera_entered:
+  .. _class_VisibilityNotifier_camera_entered:
 
 - **camera_entered** **(** :ref:`Camera<class_Camera>` camera **)**
 
 Emitted when the VisibilityNotifier enters a :ref:`Camera<class_Camera>`'s view.
 
-.. _class_VisibilityNotifier_camera_exited:
+  .. _class_VisibilityNotifier_camera_exited:
 
 - **camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
 
 Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
 
-.. _class_VisibilityNotifier_screen_entered:
+  .. _class_VisibilityNotifier_screen_entered:
 
 - **screen_entered** **(** **)**
 
 Emitted when the VisibilityNotifier enters the screen.
 
-.. _class_VisibilityNotifier_screen_exited:
+  .. _class_VisibilityNotifier_screen_exited:
 
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier exits the screen.
-
 
 Description
 -----------
@@ -61,16 +69,22 @@ Property Descriptions
 
   .. _class_VisibilityNotifier_aabb:
 
-- :ref:`AABB<class_AABB>` **aabb** - The VisibilityNotifier's bounding box.
+- :ref:`AABB<class_AABB>` **aabb**
 
++----------+-----------------+
+| *Setter* | set_aabb(value) |
++----------+-----------------+
+| *Getter* | get_aabb()      |
++----------+-----------------+
+
+The VisibilityNotifier's bounding box.
 
 Method Descriptions
 -------------------
 
-.. _class_VisibilityNotifier_is_on_screen:
+  .. _class_VisibilityNotifier_is_on_screen:
 
 - :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 
 If ``true`` the bounding box is on the screen.
-
 

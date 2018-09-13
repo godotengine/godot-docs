@@ -8,12 +8,24 @@ CollisionShape2D
 ================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node that represents collision shape data in 2D space.
+
+Properties
+----------
+
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_disabled>`                   |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_one_way_collision>` |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_shape>`                         |
++-------------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
@@ -24,20 +36,42 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
   .. _class_CollisionShape2D_disabled:
 
-- :ref:`bool<class_bool>` **disabled** - A disabled collision shape has no effect in the world.
+- :ref:`bool<class_bool>` **disabled**
+
++----------+---------------------+
+| *Setter* | set_disabled(value) |
++----------+---------------------+
+| *Getter* | is_disabled()       |
++----------+---------------------+
+
+A disabled collision shape has no effect in the world.
 
   .. _class_CollisionShape2D_one_way_collision:
 
-- :ref:`bool<class_bool>` **one_way_collision** - Sets whether this collision shape should only detect collision on one side (top or bottom).
+- :ref:`bool<class_bool>` **one_way_collision**
+
++----------+--------------------------------+
+| *Setter* | set_one_way_collision(value)   |
++----------+--------------------------------+
+| *Getter* | is_one_way_collision_enabled() |
++----------+--------------------------------+
+
+Sets whether this collision shape should only detect collision on one side (top or bottom).
 
   .. _class_CollisionShape2D_shape:
 
-- :ref:`Shape2D<class_Shape2D>` **shape** - The actual shape owned by this collision shape.
+- :ref:`Shape2D<class_Shape2D>` **shape**
 
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
+
+The actual shape owned by this collision shape.
 

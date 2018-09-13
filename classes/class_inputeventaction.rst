@@ -8,12 +8,22 @@ InputEventAction
 ================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event type for actions.
+
+Properties
+----------
+
++-----------------------------+------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_action>`   |
++-----------------------------+------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_pressed>` |
++-----------------------------+------------------------------------------------+
 
 Description
 -----------
@@ -24,16 +34,30 @@ Tutorials
 ---------
 
 - `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventAction_action:
 
-- :ref:`String<class_String>` **action** - The action's name. Actions are accessed via this :ref:`String<class_String>`.
+- :ref:`String<class_String>` **action**
+
++----------+-------------------+
+| *Setter* | set_action(value) |
++----------+-------------------+
+| *Getter* | get_action()      |
++----------+-------------------+
+
+The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
   .. _class_InputEventAction_pressed:
 
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the action's state is pressed. If ``false`` the action's state is released.
+- :ref:`bool<class_bool>` **pressed**
 
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
+
+If ``true`` the action's state is pressed. If ``false`` the action's state is released.
 

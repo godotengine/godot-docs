@@ -8,12 +8,20 @@ PlaneShape
 ==========
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------+--------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_plane>` |
++---------------------------+--------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,4 +30,9 @@ Property Descriptions
 
 - :ref:`Plane<class_Plane>` **plane**
 
++----------+------------------+
+| *Setter* | set_plane(value) |
++----------+------------------+
+| *Getter* | get_plane()      |
++----------+------------------+
 

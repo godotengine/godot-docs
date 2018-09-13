@@ -8,12 +8,22 @@ GradientTexture
 ===============
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Gradient filled texture.
+
+Properties
+----------
+
++---------------------------------+-------------------------------------------------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_gradient>` |
++---------------------------------+-------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_width>`       |
++---------------------------------+-------------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_GradientTexture_gradient:
 
-- :ref:`Gradient<class_Gradient>` **gradient** - The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
+- :ref:`Gradient<class_Gradient>` **gradient**
+
++----------+---------------------+
+| *Setter* | set_gradient(value) |
++----------+---------------------+
+| *Getter* | get_gradient()      |
++----------+---------------------+
+
+The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
   .. _class_GradientTexture_width:
 
-- :ref:`int<class_int>` **width** - The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
+- :ref:`int<class_int>` **width**
 
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
+
+The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 

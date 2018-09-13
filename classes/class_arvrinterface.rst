@@ -8,13 +8,26 @@ ARVRInterface
 =============
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`, :ref:`MobileVRInterface<class_MobileVRInterface>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for ARVR interface implementation.
+
+Properties
+----------
+
++-------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_ar_is_anchor_detection_enabled>` |
++-------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_interface_is_initialized>`             |
++-------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_interface_is_primary>`                     |
++-------------------------+-------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -40,7 +53,7 @@ Enumerations
 
   .. _enum_ARVRInterface_Eyes:
 
-enum **Eyes**
+enum **Eyes**:
 
 - **EYE_MONO** = **0** --- Mono output, this is mostly used internally when retrieving positioning information for our camera node or when stereo scopic rendering is not supported.
 - **EYE_LEFT** = **1** --- Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
@@ -48,7 +61,7 @@ enum **Eyes**
 
   .. _enum_ARVRInterface_Tracking_status:
 
-enum **Tracking_status**
+enum **Tracking_status**:
 
 - **ARVR_NORMAL_TRACKING** = **0** --- Tracking is behaving as expected.
 - **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion, player is moving faster then tracking can keep up.
@@ -58,14 +71,13 @@ enum **Tracking_status**
 
   .. _enum_ARVRInterface_Capabilities:
 
-enum **Capabilities**
+enum **Capabilities**:
 
 - **ARVR_NONE** = **0** --- No ARVR capabilities.
 - **ARVR_MONO** = **1** --- This interface can work with normal rendering output (non-HMD based AR).
 - **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
 - **ARVR_AR** = **4** --- This interface support AR (video background and real world tracking).
 - **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of get_render_targetsize. Using a separate viewport node frees up the main viewport for other purposes.
-
 
 Description
 -----------
@@ -79,45 +91,68 @@ Property Descriptions
 
   .. _class_ARVRInterface_ar_is_anchor_detection_enabled:
 
-- :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled** - On an AR interface, is our anchor detection enabled?
+- :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
+
++----------+----------------------------------------+
+| *Setter* | set_anchor_detection_is_enabled(value) |
++----------+----------------------------------------+
+| *Getter* | get_anchor_detection_is_enabled()      |
++----------+----------------------------------------+
+
+On an AR interface, is our anchor detection enabled?
 
   .. _class_ARVRInterface_interface_is_initialized:
 
-- :ref:`bool<class_bool>` **interface_is_initialized** - Has this interface been initialized?
+- :ref:`bool<class_bool>` **interface_is_initialized**
+
++----------+---------------------------+
+| *Setter* | set_is_initialized(value) |
++----------+---------------------------+
+| *Getter* | is_initialized()          |
++----------+---------------------------+
+
+Has this interface been initialized?
 
   .. _class_ARVRInterface_interface_is_primary:
 
-- :ref:`bool<class_bool>` **interface_is_primary** - Is this our primary interface?
+- :ref:`bool<class_bool>` **interface_is_primary**
 
++----------+-----------------------+
+| *Setter* | set_is_primary(value) |
++----------+-----------------------+
+| *Getter* | is_primary()          |
++----------+-----------------------+
+
+Is this our primary interface?
 
 Method Descriptions
 -------------------
 
-.. _class_ARVRInterface_get_capabilities:
+  .. _class_ARVRInterface_get_capabilities:
 
 - :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
 Returns a combination of flags providing information about the capabilities of this interface.
 
-.. _class_ARVRInterface_get_name:
+  .. _class_ARVRInterface_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
-.. _class_ARVRInterface_get_render_targetsize:
+  .. _class_ARVRInterface_get_render_targetsize:
 
 - :ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
-.. _class_ARVRInterface_get_tracking_status:
+  .. _class_ARVRInterface_get_tracking_status:
 
 - :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 
-.. _class_ARVRInterface_initialize:
+  .. _class_ARVRInterface_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** **)**
 
@@ -131,16 +166,15 @@ If you do this for a platform that handles its own output (such as OpenVR) Godot
 
 While currently not used you can activate additional interfaces, you may wish to do this if you want to track controllers from other platforms. However at this point in time only one interface can render to an HMD.
 
-.. _class_ARVRInterface_is_stereo:
+  .. _class_ARVRInterface_is_stereo:
 
 - :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns true if the current output of this interface is in stereo.
 
-.. _class_ARVRInterface_uninitialize:
+  .. _class_ARVRInterface_uninitialize:
 
 - void **uninitialize** **(** **)**
 
 Turns the interface off.
-
 

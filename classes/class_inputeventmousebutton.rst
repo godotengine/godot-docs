@@ -8,12 +8,26 @@ InputEventMouseButton
 =====================
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Input event type for mouse button events.
+
+Properties
+----------
+
++---------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_button_index>` |
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_doubleclick>`   |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_factor>`             |
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_pressed>`           |
++---------------------------+---------------------------------------------------------------+
 
 Description
 -----------
@@ -24,24 +38,54 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventMouseButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+- :ref:`int<class_int>` **button_index**
+
++----------+-------------------------+
+| *Setter* | set_button_index(value) |
++----------+-------------------------+
+| *Getter* | get_button_index()      |
++----------+-------------------------+
+
+Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
   .. _class_InputEventMouseButton_doubleclick:
 
-- :ref:`bool<class_bool>` **doubleclick** - If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
+- :ref:`bool<class_bool>` **doubleclick**
+
++----------+------------------------+
+| *Setter* | set_doubleclick(value) |
++----------+------------------------+
+| *Getter* | is_doubleclick()       |
++----------+------------------------+
+
+If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
 
   .. _class_InputEventMouseButton_factor:
 
-- :ref:`float<class_float>` **factor** - Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
+- :ref:`float<class_float>` **factor**
+
++----------+-------------------+
+| *Setter* | set_factor(value) |
++----------+-------------------+
+| *Getter* | get_factor()      |
++----------+-------------------+
+
+Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
 
   .. _class_InputEventMouseButton_pressed:
 
-- :ref:`bool<class_bool>` **pressed** - If ``true`` the mouse button's state is pressed. If ``false`` the mouse button's state is released.
+- :ref:`bool<class_bool>` **pressed**
 
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
+
+If ``true`` the mouse button's state is pressed. If ``false`` the mouse button's state is released.
 

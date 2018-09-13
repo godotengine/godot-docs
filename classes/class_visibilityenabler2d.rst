@@ -8,6 +8,7 @@ VisibilityEnabler2D
 ===================
 
 **Inherits:** :ref:`VisibilityNotifier2D<class_VisibilityNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,29 @@ Brief Description
 
 Enable certain nodes only when visible.
 
+Properties
+----------
+
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler2D_freeze_bodies>`                   |
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animated_sprites<class_VisibilityEnabler2D_pause_animated_sprites>` |
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler2D_pause_animations>`             |
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_particles<class_VisibilityEnabler2D_pause_particles>`               |
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`physics_process_parent<class_VisibilityEnabler2D_physics_process_parent>` |
++-------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_process_parent>`                 |
++-------------------------+---------------------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisibilityEnabler2D_Enabler:
 
-enum **Enabler**
+enum **Enabler**:
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody2D<class_RigidBody2D>` nodes.
@@ -29,7 +47,6 @@ enum **Enabler**
 - **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
 - **ENABLER_MAX** = **6**
-
 
 Description
 -----------
@@ -43,24 +60,59 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
+
   .. _class_VisibilityEnabler2D_pause_animated_sprites:
 
 - :ref:`bool<class_bool>` **pause_animated_sprites**
+
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
 
   .. _class_VisibilityEnabler2D_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
+
   .. _class_VisibilityEnabler2D_pause_particles:
 
 - :ref:`bool<class_bool>` **pause_particles**
+
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
 
   .. _class_VisibilityEnabler2D_physics_process_parent:
 
 - :ref:`bool<class_bool>` **physics_process_parent**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
+
   .. _class_VisibilityEnabler2D_process_parent:
 
 - :ref:`bool<class_bool>` **process_parent**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
 

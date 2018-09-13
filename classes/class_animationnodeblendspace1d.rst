@@ -8,12 +8,26 @@ AnimationNodeBlendSpace1D
 =========================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_max_space>`     |
++-----------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_min_space>`     |
++-----------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_snap>`               |
++-----------------------------+-----------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_value_label>` |
++-----------------------------+-----------------------------------------------------------------+
 
 Methods
 -------
@@ -41,48 +55,70 @@ Property Descriptions
 
 - :ref:`float<class_float>` **max_space**
 
++----------+----------------------+
+| *Setter* | set_max_space(value) |
++----------+----------------------+
+| *Getter* | get_max_space()      |
++----------+----------------------+
+
   .. _class_AnimationNodeBlendSpace1D_min_space:
 
 - :ref:`float<class_float>` **min_space**
+
++----------+----------------------+
+| *Setter* | set_min_space(value) |
++----------+----------------------+
+| *Getter* | get_min_space()      |
++----------+----------------------+
 
   .. _class_AnimationNodeBlendSpace1D_snap:
 
 - :ref:`float<class_float>` **snap**
 
++----------+-----------------+
+| *Setter* | set_snap(value) |
++----------+-----------------+
+| *Getter* | get_snap()      |
++----------+-----------------+
+
   .. _class_AnimationNodeBlendSpace1D_value_label:
 
 - :ref:`String<class_String>` **value_label**
 
++----------+------------------------+
+| *Setter* | set_value_label(value) |
++----------+------------------------+
+| *Getter* | get_value_label()      |
++----------+------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeBlendSpace1D_add_blend_point:
+  .. _class_AnimationNodeBlendSpace1D_add_blend_point:
 
 - void **add_blend_point** **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`float<class_float>` pos, :ref:`int<class_int>` at_index=-1 **)**
 
-.. _class_AnimationNodeBlendSpace1D_get_blend_point_count:
+  .. _class_AnimationNodeBlendSpace1D_get_blend_point_count:
 
 - :ref:`int<class_int>` **get_blend_point_count** **(** **)** const
 
-.. _class_AnimationNodeBlendSpace1D_get_blend_point_node:
+  .. _class_AnimationNodeBlendSpace1D_get_blend_point_node:
 
 - :ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** const
 
-.. _class_AnimationNodeBlendSpace1D_get_blend_point_position:
+  .. _class_AnimationNodeBlendSpace1D_get_blend_point_position:
 
 - :ref:`float<class_float>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** const
 
-.. _class_AnimationNodeBlendSpace1D_remove_blend_point:
+  .. _class_AnimationNodeBlendSpace1D_remove_blend_point:
 
 - void **remove_blend_point** **(** :ref:`int<class_int>` point **)**
 
-.. _class_AnimationNodeBlendSpace1D_set_blend_point_node:
+  .. _class_AnimationNodeBlendSpace1D_set_blend_point_node:
 
 - void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
 
-.. _class_AnimationNodeBlendSpace1D_set_blend_point_position:
+  .. _class_AnimationNodeBlendSpace1D_set_blend_point_position:
 
 - void **set_blend_point_position** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` pos **)**
-
 

@@ -8,12 +8,22 @@ ColorPickerButton
 =================
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Button that pops out a :ref:`ColorPicker<class_ColorPicker>`.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_color>`           |
++---------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_edit_alpha>` |
++---------------------------+-------------------------------------------------------+
 
 Methods
 -------
@@ -24,50 +34,92 @@ Methods
 | :ref:`PopupPanel<class_PopupPanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
 +----------------------------------------+-------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`bg<class_ColorPickerButton_bg>`                                   |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ColorPickerButton_disabled>`                       |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ColorPickerButton_focus>`                             |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ColorPickerButton_font>`                               |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_ColorPickerButton_font_color>`                   |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ColorPickerButton_font_color_disabled>` |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ColorPickerButton_font_color_hover>`       |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ColorPickerButton_font_color_pressed>`   |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ColorPickerButton_hover>`                             |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_ColorPickerButton_hseparation>`                 |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ColorPickerButton_normal>`                           |
++---------------------------------+-------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ColorPickerButton_pressed>`                         |
++---------------------------------+-------------------------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_ColorPickerButton_color_changed:
+  .. _class_ColorPickerButton_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color changes.
 
-.. _class_ColorPickerButton_popup_closed:
+  .. _class_ColorPickerButton_popup_closed:
 
 - **popup_closed** **(** **)**
-
 
 Description
 -----------
 
-Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accesible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
+Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pressing a button. Pressing the button will toggle the :ref:`ColorPicker<class_ColorPicker>` visibility.
 
 Property Descriptions
 ---------------------
 
   .. _class_ColorPickerButton_color:
 
-- :ref:`Color<class_Color>` **color** - The currently selected color.
+- :ref:`Color<class_Color>` **color**
+
++----------+-----------------------+
+| *Setter* | set_pick_color(value) |
++----------+-----------------------+
+| *Getter* | get_pick_color()      |
++----------+-----------------------+
+
+The currently selected color.
 
   .. _class_ColorPickerButton_edit_alpha:
 
-- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible. Default value: ``true``.
+- :ref:`bool<class_bool>` **edit_alpha**
 
++----------+-----------------------+
+| *Setter* | set_edit_alpha(value) |
++----------+-----------------------+
+| *Getter* | is_editing_alpha()    |
++----------+-----------------------+
+
+If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible. Default value: ``true``.
 
 Method Descriptions
 -------------------
 
-.. _class_ColorPickerButton_get_picker:
+  .. _class_ColorPickerButton_get_picker:
 
 - :ref:`ColorPicker<class_ColorPicker>` **get_picker** **(** **)**
 
 Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
-.. _class_ColorPickerButton_get_popup:
+  .. _class_ColorPickerButton_get_popup:
 
 - :ref:`PopupPanel<class_PopupPanel>` **get_popup** **(** **)**
 
 Returns the control's :ref:`PopupPanel<class_PopupPanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
-
 

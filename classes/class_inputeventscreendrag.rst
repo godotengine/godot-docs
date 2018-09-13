@@ -8,6 +8,7 @@ InputEventScreenDrag
 ====================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -16,6 +17,19 @@ Brief Description
 Input event type for screen drag events.
 
 (only available on mobile devices)
+
+Properties
+----------
+
++-------------------------------+------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_index>`       |
++-------------------------------+------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_position>` |
++-------------------------------+------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_relative>` |
++-------------------------------+------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_speed>`       |
++-------------------------------+------------------------------------------------------+
 
 Description
 -----------
@@ -26,24 +40,54 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
-
 Property Descriptions
 ---------------------
 
   .. _class_InputEventScreenDrag_index:
 
-- :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
+- :ref:`int<class_int>` **index**
+
++----------+------------------+
+| *Setter* | set_index(value) |
++----------+------------------+
+| *Getter* | get_index()      |
++----------+------------------+
+
+Drag event index in the case of a multi-drag event.
 
   .. _class_InputEventScreenDrag_position:
 
-- :ref:`Vector2<class_Vector2>` **position** - Drag position.
+- :ref:`Vector2<class_Vector2>` **position**
+
++----------+---------------------+
+| *Setter* | set_position(value) |
++----------+---------------------+
+| *Getter* | get_position()      |
++----------+---------------------+
+
+Drag position.
 
   .. _class_InputEventScreenDrag_relative:
 
-- :ref:`Vector2<class_Vector2>` **relative** - Drag position relative to its start position.
+- :ref:`Vector2<class_Vector2>` **relative**
+
++----------+---------------------+
+| *Setter* | set_relative(value) |
++----------+---------------------+
+| *Getter* | get_relative()      |
++----------+---------------------+
+
+Drag position relative to its start position.
 
   .. _class_InputEventScreenDrag_speed:
 
-- :ref:`Vector2<class_Vector2>` **speed** - Drag speed.
+- :ref:`Vector2<class_Vector2>` **speed**
 
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
+
+Drag speed.
 

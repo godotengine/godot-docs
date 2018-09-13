@@ -8,12 +8,22 @@ LineShape2D
 ===========
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Line shape for 2D collisions.
+
+Properties
+----------
+
++-------------------------------+-----------------------------------------+
+| :ref:`float<class_float>`     | :ref:`d<class_LineShape2D_d>`           |
++-------------------------------+-----------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`normal<class_LineShape2D_normal>` |
++-------------------------------+-----------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_LineShape2D_d:
 
-- :ref:`float<class_float>` **d** - The line's distance from the origin.
+- :ref:`float<class_float>` **d**
+
++----------+--------------+
+| *Setter* | set_d(value) |
++----------+--------------+
+| *Getter* | get_d()      |
++----------+--------------+
+
+The line's distance from the origin.
 
   .. _class_LineShape2D_normal:
 
-- :ref:`Vector2<class_Vector2>` **normal** - The line's normal.
+- :ref:`Vector2<class_Vector2>` **normal**
 
++----------+-------------------+
+| *Setter* | set_normal(value) |
++----------+-------------------+
+| *Getter* | get_normal()      |
++----------+-------------------+
+
+The line's normal.
 

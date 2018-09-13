@@ -8,6 +8,7 @@ VisibilityEnabler
 =================
 
 **Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,17 +16,25 @@ Brief Description
 
 Enable certain nodes only when visible.
 
+Properties
+----------
+
++-------------------------+-------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_freeze_bodies>`       |
++-------------------------+-------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_pause_animations>` |
++-------------------------+-------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisibilityEnabler_Enabler:
 
-enum **Enabler**
+enum **Enabler**:
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
 - **ENABLER_MAX** = **2**
-
 
 Description
 -----------
@@ -39,8 +48,19 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
+
   .. _class_VisibilityEnabler_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
 

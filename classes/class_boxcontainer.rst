@@ -8,13 +8,22 @@ BoxContainer
 ============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VBoxContainer<class_VBoxContainer>`, :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`ColorPicker<class_ColorPicker>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for box containers.
+
+Properties
+----------
+
++-----------------------------------------------+------------------------------------------------+
+| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_alignment>` |
++-----------------------------------------------+------------------------------------------------+
 
 Methods
 -------
@@ -28,12 +37,11 @@ Enumerations
 
   .. _enum_BoxContainer_AlignMode:
 
-enum **AlignMode**
+enum **AlignMode**:
 
 - **ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the container.
 - **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
-
 
 Description
 -----------
@@ -45,16 +53,22 @@ Property Descriptions
 
   .. _class_BoxContainer_alignment:
 
-- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
+- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
++----------+----------------------+
+| *Setter* | set_alignment(value) |
++----------+----------------------+
+| *Getter* | get_alignment()      |
++----------+----------------------+
+
+The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
 
 Method Descriptions
 -------------------
 
-.. _class_BoxContainer_add_spacer:
+  .. _class_BoxContainer_add_spacer:
 
 - void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
 Adds a control to the box as a spacer. If ``true``, *begin* will insert the spacer control in front of other children.
-
 

@@ -8,12 +8,136 @@ CPUParticles2D
 ==============
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`amount<class_CPUParticles2D_amount>`                                   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`angle<class_CPUParticles2D_angle>`                                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`angle_curve<class_CPUParticles2D_angle_curve>`                         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`angle_random<class_CPUParticles2D_angle_random>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`angular_velocity<class_CPUParticles2D_angular_velocity>`               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`angular_velocity_curve<class_CPUParticles2D_angular_velocity_curve>`   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`angular_velocity_random<class_CPUParticles2D_angular_velocity_random>` |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`anim_loop<class_CPUParticles2D_anim_loop>`                             |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`anim_offset<class_CPUParticles2D_anim_offset>`                         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`anim_offset_curve<class_CPUParticles2D_anim_offset_curve>`             |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`anim_offset_random<class_CPUParticles2D_anim_offset_random>`           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`anim_speed<class_CPUParticles2D_anim_speed>`                           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`anim_speed_curve<class_CPUParticles2D_anim_speed_curve>`               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`anim_speed_random<class_CPUParticles2D_anim_speed_random>`             |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                               | :ref:`color<class_CPUParticles2D_color>`                                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles2D_color_ramp>`                           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`damping<class_CPUParticles2D_damping>`                                 |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`damping_curve<class_CPUParticles2D_damping_curve>`                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`damping_random<class_CPUParticles2D_damping_random>`                   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>`         | :ref:`draw_order<class_CPUParticles2D_draw_order>`                           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>`             | :ref:`emission_colors<class_CPUParticles2D_emission_colors>`                 |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`         | :ref:`emission_normals<class_CPUParticles2D_emission_normals>`               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`         | :ref:`emission_points<class_CPUParticles2D_emission_points>`                 |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                           | :ref:`emission_rect_extents<class_CPUParticles2D_emission_rect_extents>`     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` | :ref:`emission_shape<class_CPUParticles2D_emission_shape>`                   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`emission_sphere_radius<class_CPUParticles2D_emission_sphere_radius>`   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`emitting<class_CPUParticles2D_emitting>`                               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`explosiveness<class_CPUParticles2D_explosiveness>`                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`fixed_fps<class_CPUParticles2D_fixed_fps>`                             |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`flag_align_y<class_CPUParticles2D_flag_align_y>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`flatness<class_CPUParticles2D_flatness>`                               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`fract_delta<class_CPUParticles2D_fract_delta>`                         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                           | :ref:`gravity<class_CPUParticles2D_gravity>`                                 |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`hue_variation<class_CPUParticles2D_hue_variation>`                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`hue_variation_curve<class_CPUParticles2D_hue_variation_curve>`         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`hue_variation_random<class_CPUParticles2D_hue_variation_random>`       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`initial_velocity<class_CPUParticles2D_initial_velocity>`               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`initial_velocity_random<class_CPUParticles2D_initial_velocity_random>` |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`lifetime<class_CPUParticles2D_lifetime>`                               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`linear_accel<class_CPUParticles2D_linear_accel>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`linear_accel_curve<class_CPUParticles2D_linear_accel_curve>`           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`linear_accel_random<class_CPUParticles2D_linear_accel_random>`         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles2D_local_coords>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                           | :ref:`normalmap<class_CPUParticles2D_normalmap>`                             |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`one_shot<class_CPUParticles2D_one_shot>`                               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`preprocess<class_CPUParticles2D_preprocess>`                           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`radial_accel<class_CPUParticles2D_radial_accel>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`radial_accel_curve<class_CPUParticles2D_radial_accel_curve>`           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`radial_accel_random<class_CPUParticles2D_radial_accel_random>`         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`randomness<class_CPUParticles2D_randomness>`                           |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`scale<class_CPUParticles2D_scale>`                                     |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`scale_curve<class_CPUParticles2D_scale_curve>`                         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`scale_random<class_CPUParticles2D_scale_random>`                       |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`speed_scale<class_CPUParticles2D_speed_scale>`                         |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`spread<class_CPUParticles2D_spread>`                                   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`tangential_accel<class_CPUParticles2D_tangential_accel>`               |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Curve<class_Curve>`                               | :ref:`tangential_accel_curve<class_CPUParticles2D_tangential_accel_curve>`   |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`tangential_accel_random<class_CPUParticles2D_tangential_accel_random>` |
++---------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                           | :ref:`texture<class_CPUParticles2D_texture>`                                 |
++---------------------------------------------------------+------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -29,14 +153,14 @@ Enumerations
 
   .. _enum_CPUParticles2D_Flags:
 
-enum **Flags**
+enum **Flags**:
 
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
 - **FLAG_MAX** = **2**
 
   .. _enum_CPUParticles2D_Parameter:
 
-enum **Parameter**
+enum **Parameter**:
 
 - **PARAM_INITIAL_LINEAR_VELOCITY** = **0**
 - **PARAM_ANGULAR_VELOCITY** = **1**
@@ -54,7 +178,7 @@ enum **Parameter**
 
   .. _enum_CPUParticles2D_EmissionShape:
 
-enum **EmissionShape**
+enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0**
 - **EMISSION_SHAPE_CIRCLE** = **1**
@@ -64,11 +188,10 @@ enum **EmissionShape**
 
   .. _enum_CPUParticles2D_DrawOrder:
 
-enum **DrawOrder**
+enum **DrawOrder**:
 
 - **DRAW_ORDER_INDEX** = **0**
 - **DRAW_ORDER_LIFETIME** = **1**
-
 
 Property Descriptions
 ---------------------
@@ -77,248 +200,600 @@ Property Descriptions
 
 - :ref:`int<class_int>` **amount**
 
++----------+-------------------+
+| *Setter* | set_amount(value) |
++----------+-------------------+
+| *Getter* | get_amount()      |
++----------+-------------------+
+
   .. _class_CPUParticles2D_angle:
 
 - :ref:`float<class_float>` **angle**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_CPUParticles2D_angle_curve:
 
 - :ref:`Curve<class_Curve>` **angle_curve**
 
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
+
   .. _class_CPUParticles2D_angle_random:
 
 - :ref:`float<class_float>` **angle_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_angular_velocity:
 
 - :ref:`float<class_float>` **angular_velocity**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_angular_velocity_curve:
 
 - :ref:`Curve<class_Curve>` **angular_velocity_curve**
+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_angular_velocity_random:
 
 - :ref:`float<class_float>` **angular_velocity_random**
 
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
+
   .. _class_CPUParticles2D_anim_loop:
 
 - :ref:`bool<class_bool>` **anim_loop**
+
++----------+--------------------------+
+| *Setter* | set_particle_flag(value) |
++----------+--------------------------+
+| *Getter* | get_particle_flag()      |
++----------+--------------------------+
 
   .. _class_CPUParticles2D_anim_offset:
 
 - :ref:`float<class_float>` **anim_offset**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_anim_offset_curve:
 
 - :ref:`Curve<class_Curve>` **anim_offset_curve**
+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_anim_offset_random:
 
 - :ref:`float<class_float>` **anim_offset_random**
 
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
+
   .. _class_CPUParticles2D_anim_speed:
 
 - :ref:`float<class_float>` **anim_speed**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_CPUParticles2D_anim_speed_curve:
 
 - :ref:`Curve<class_Curve>` **anim_speed_curve**
 
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
+
   .. _class_CPUParticles2D_anim_speed_random:
 
 - :ref:`float<class_float>` **anim_speed_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_color:
 
 - :ref:`Color<class_Color>` **color**
 
++----------+------------------+
+| *Setter* | set_color(value) |
++----------+------------------+
+| *Getter* | get_color()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_color_ramp:
 
 - :ref:`Gradient<class_Gradient>` **color_ramp**
+
++----------+-----------------------+
+| *Setter* | set_color_ramp(value) |
++----------+-----------------------+
+| *Getter* | get_color_ramp()      |
++----------+-----------------------+
 
   .. _class_CPUParticles2D_damping:
 
 - :ref:`float<class_float>` **damping**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_damping_curve:
 
 - :ref:`Curve<class_Curve>` **damping_curve**
+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_damping_random:
 
 - :ref:`float<class_float>` **damping_random**
 
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
+
   .. _class_CPUParticles2D_draw_order:
 
 - :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` **draw_order**
+
++----------+-----------------------+
+| *Setter* | set_draw_order(value) |
++----------+-----------------------+
+| *Getter* | get_draw_order()      |
++----------+-----------------------+
 
   .. _class_CPUParticles2D_emission_colors:
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **emission_colors**
 
++----------+----------------------------+
+| *Setter* | set_emission_colors(value) |
++----------+----------------------------+
+| *Getter* | get_emission_colors()      |
++----------+----------------------------+
+
   .. _class_CPUParticles2D_emission_normals:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **emission_normals**
+
++----------+-----------------------------+
+| *Setter* | set_emission_normals(value) |
++----------+-----------------------------+
+| *Getter* | get_emission_normals()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_emission_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **emission_points**
 
++----------+----------------------------+
+| *Setter* | set_emission_points(value) |
++----------+----------------------------+
+| *Getter* | get_emission_points()      |
++----------+----------------------------+
+
   .. _class_CPUParticles2D_emission_rect_extents:
 
 - :ref:`Vector2<class_Vector2>` **emission_rect_extents**
+
++----------+----------------------------------+
+| *Setter* | set_emission_rect_extents(value) |
++----------+----------------------------------+
+| *Getter* | get_emission_rect_extents()      |
++----------+----------------------------------+
 
   .. _class_CPUParticles2D_emission_shape:
 
 - :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` **emission_shape**
 
++----------+---------------------------+
+| *Setter* | set_emission_shape(value) |
++----------+---------------------------+
+| *Getter* | get_emission_shape()      |
++----------+---------------------------+
+
   .. _class_CPUParticles2D_emission_sphere_radius:
 
 - :ref:`float<class_float>` **emission_sphere_radius**
+
++----------+-----------------------------------+
+| *Setter* | set_emission_sphere_radius(value) |
++----------+-----------------------------------+
+| *Getter* | get_emission_sphere_radius()      |
++----------+-----------------------------------+
 
   .. _class_CPUParticles2D_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
 
++----------+---------------------+
+| *Setter* | set_emitting(value) |
++----------+---------------------+
+| *Getter* | is_emitting()       |
++----------+---------------------+
+
   .. _class_CPUParticles2D_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
+
++----------+--------------------------------+
+| *Setter* | set_explosiveness_ratio(value) |
++----------+--------------------------------+
+| *Getter* | get_explosiveness_ratio()      |
++----------+--------------------------------+
 
   .. _class_CPUParticles2D_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
 
++----------+----------------------+
+| *Setter* | set_fixed_fps(value) |
++----------+----------------------+
+| *Getter* | get_fixed_fps()      |
++----------+----------------------+
+
   .. _class_CPUParticles2D_flag_align_y:
 
 - :ref:`bool<class_bool>` **flag_align_y**
+
++----------+--------------------------+
+| *Setter* | set_particle_flag(value) |
++----------+--------------------------+
+| *Getter* | get_particle_flag()      |
++----------+--------------------------+
 
   .. _class_CPUParticles2D_flatness:
 
 - :ref:`float<class_float>` **flatness**
 
++----------+---------------------+
+| *Setter* | set_flatness(value) |
++----------+---------------------+
+| *Getter* | get_flatness()      |
++----------+---------------------+
+
   .. _class_CPUParticles2D_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
+
++----------+-----------------------------+
+| *Setter* | set_fractional_delta(value) |
++----------+-----------------------------+
+| *Getter* | get_fractional_delta()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_gravity:
 
 - :ref:`Vector2<class_Vector2>` **gravity**
 
++----------+--------------------+
+| *Setter* | set_gravity(value) |
++----------+--------------------+
+| *Getter* | get_gravity()      |
++----------+--------------------+
+
   .. _class_CPUParticles2D_hue_variation:
 
 - :ref:`float<class_float>` **hue_variation**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_CPUParticles2D_hue_variation_curve:
 
 - :ref:`Curve<class_Curve>` **hue_variation_curve**
 
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
+
   .. _class_CPUParticles2D_hue_variation_random:
 
 - :ref:`float<class_float>` **hue_variation_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_initial_velocity:
 
 - :ref:`float<class_float>` **initial_velocity**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_initial_velocity_random:
 
 - :ref:`float<class_float>` **initial_velocity_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
 
++----------+---------------------+
+| *Setter* | set_lifetime(value) |
++----------+---------------------+
+| *Getter* | get_lifetime()      |
++----------+---------------------+
+
   .. _class_CPUParticles2D_linear_accel:
 
 - :ref:`float<class_float>` **linear_accel**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_CPUParticles2D_linear_accel_curve:
 
 - :ref:`Curve<class_Curve>` **linear_accel_curve**
 
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
+
   .. _class_CPUParticles2D_linear_accel_random:
 
 - :ref:`float<class_float>` **linear_accel_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
 
++----------+----------------------------------+
+| *Setter* | set_use_local_coordinates(value) |
++----------+----------------------------------+
+| *Getter* | get_use_local_coordinates()      |
++----------+----------------------------------+
+
   .. _class_CPUParticles2D_normalmap:
 
 - :ref:`Texture<class_Texture>` **normalmap**
+
++----------+----------------------+
+| *Setter* | set_normalmap(value) |
++----------+----------------------+
+| *Getter* | get_normalmap()      |
++----------+----------------------+
 
   .. _class_CPUParticles2D_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
++----------+---------------------+
+| *Setter* | set_one_shot(value) |
++----------+---------------------+
+| *Getter* | get_one_shot()      |
++----------+---------------------+
+
   .. _class_CPUParticles2D_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
+
++----------+-----------------------------+
+| *Setter* | set_pre_process_time(value) |
++----------+-----------------------------+
+| *Getter* | get_pre_process_time()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_radial_accel:
 
 - :ref:`float<class_float>` **radial_accel**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_radial_accel_curve:
 
 - :ref:`Curve<class_Curve>` **radial_accel_curve**
+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_radial_accel_random:
 
 - :ref:`float<class_float>` **radial_accel_random**
 
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
+
   .. _class_CPUParticles2D_randomness:
 
 - :ref:`float<class_float>` **randomness**
+
++----------+-----------------------------+
+| *Setter* | set_randomness_ratio(value) |
++----------+-----------------------------+
+| *Getter* | get_randomness_ratio()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_scale:
 
 - :ref:`float<class_float>` **scale**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_CPUParticles2D_scale_curve:
 
 - :ref:`Curve<class_Curve>` **scale_curve**
+
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_scale_random:
 
 - :ref:`float<class_float>` **scale_random**
 
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
+
   .. _class_CPUParticles2D_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
+
++----------+------------------------+
+| *Setter* | set_speed_scale(value) |
++----------+------------------------+
+| *Getter* | get_speed_scale()      |
++----------+------------------------+
 
   .. _class_CPUParticles2D_spread:
 
 - :ref:`float<class_float>` **spread**
 
++----------+-------------------+
+| *Setter* | set_spread(value) |
++----------+-------------------+
+| *Getter* | get_spread()      |
++----------+-------------------+
+
   .. _class_CPUParticles2D_tangential_accel:
 
 - :ref:`float<class_float>` **tangential_accel**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_CPUParticles2D_tangential_accel_curve:
 
 - :ref:`Curve<class_Curve>` **tangential_accel_curve**
 
++----------+------------------------+
+| *Setter* | set_param_curve(value) |
++----------+------------------------+
+| *Getter* | get_param_curve()      |
++----------+------------------------+
+
   .. _class_CPUParticles2D_tangential_accel_random:
 
 - :ref:`float<class_float>` **tangential_accel_random**
+
++----------+-----------------------------+
+| *Setter* | set_param_randomness(value) |
++----------+-----------------------------+
+| *Getter* | get_param_randomness()      |
++----------+-----------------------------+
 
   .. _class_CPUParticles2D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_CPUParticles2D_convert_from_particles:
+  .. _class_CPUParticles2D_convert_from_particles:
 
 - void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
 
-.. _class_CPUParticles2D_restart:
+  .. _class_CPUParticles2D_restart:
 
 - void **restart** **(** **)**
-
 

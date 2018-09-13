@@ -8,13 +8,24 @@ PhysicsBody
 ===========
 
 **Inherits:** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`StaticBody<class_StaticBody>`, :ref:`KinematicBody<class_KinematicBody>`, :ref:`RigidBody<class_RigidBody>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for all objects affected by physics in 3D space.
+
+Properties
+----------
+
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`collision_layer<class_PhysicsBody_collision_layer>` |
++-----------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`collision_mask<class_PhysicsBody_collision_mask>`   |
++-----------------------+-----------------------------------------------------------+
 
 Methods
 -------
@@ -42,13 +53,20 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
   .. _class_PhysicsBody_collision_layer:
 
-- :ref:`int<class_int>` **collision_layer** - The physics layers this area is in.
+- :ref:`int<class_int>` **collision_layer**
+
++----------+----------------------------+
+| *Setter* | set_collision_layer(value) |
++----------+----------------------------+
+| *Getter* | get_collision_layer()      |
++----------+----------------------------+
+
+The physics layers this area is in.
 
 Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the collision_mask property.
 
@@ -56,38 +74,44 @@ A contact is detected if object A is in any of the layers that object B scans, o
 
   .. _class_PhysicsBody_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask** - The physics layers this area can scan for collisions.
+- :ref:`int<class_int>` **collision_mask**
 
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
+The physics layers this area can scan for collisions.
 
 Method Descriptions
 -------------------
 
-.. _class_PhysicsBody_add_collision_exception_with:
+  .. _class_PhysicsBody_add_collision_exception_with:
 
 - void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
 
-.. _class_PhysicsBody_get_collision_layer_bit:
+  .. _class_PhysicsBody_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
-.. _class_PhysicsBody_get_collision_mask_bit:
+  .. _class_PhysicsBody_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-.. _class_PhysicsBody_remove_collision_exception_with:
+  .. _class_PhysicsBody_remove_collision_exception_with:
 
 - void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Removes a body from the list of bodies that this body can't collide with.
 
-.. _class_PhysicsBody_set_collision_layer_bit:
+  .. _class_PhysicsBody_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-.. _class_PhysicsBody_set_collision_mask_bit:
+  .. _class_PhysicsBody_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
-
 

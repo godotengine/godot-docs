@@ -8,12 +8,22 @@ CollisionShape
 ==============
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node that represents collision shape data in 3D space.
+
+Properties
+----------
+
++---------------------------+------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_disabled>` |
++---------------------------+------------------------------------------------+
+| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_shape>`       |
++---------------------------+------------------------------------------------+
 
 Methods
 -------
@@ -33,32 +43,45 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
-
 Property Descriptions
 ---------------------
 
   .. _class_CollisionShape_disabled:
 
-- :ref:`bool<class_bool>` **disabled** - A disabled collision shape has no effect in the world.
+- :ref:`bool<class_bool>` **disabled**
+
++----------+---------------------+
+| *Setter* | set_disabled(value) |
++----------+---------------------+
+| *Getter* | is_disabled()       |
++----------+---------------------+
+
+A disabled collision shape has no effect in the world.
 
   .. _class_CollisionShape_shape:
 
-- :ref:`Shape<class_Shape>` **shape** - The actual shape owned by this collision shape.
+- :ref:`Shape<class_Shape>` **shape**
 
++----------+------------------+
+| *Setter* | set_shape(value) |
++----------+------------------+
+| *Getter* | get_shape()      |
++----------+------------------+
+
+The actual shape owned by this collision shape.
 
 Method Descriptions
 -------------------
 
-.. _class_CollisionShape_make_convex_from_brothers:
+  .. _class_CollisionShape_make_convex_from_brothers:
 
 - void **make_convex_from_brothers** **(** **)**
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance<class_MeshInstance>` siblings geometry.
 
-.. _class_CollisionShape_resource_changed:
+  .. _class_CollisionShape_resource_changed:
 
 - void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
 If this method exists within a script it will be called whenever the shape resource has been modified.
-
 

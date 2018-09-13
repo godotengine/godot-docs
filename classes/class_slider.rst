@@ -8,13 +8,30 @@ Slider
 ======
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`HSlider<class_HSlider>`, :ref:`VSlider<class_VSlider>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Base class for GUI Sliders.
+
+Properties
+----------
+
++------------------------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_editable>`                 |
++------------------------------------------+--------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_focus_mode>`             |
++------------------------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_scrollable>`             |
++------------------------------------------+--------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_tick_count>`             |
++------------------------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_ticks_on_borders>` |
++------------------------------------------+--------------------------------------------------------+
 
 Description
 -----------
@@ -28,20 +45,49 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **editable**
 
++----------+---------------------+
+| *Setter* | set_editable(value) |
++----------+---------------------+
+| *Getter* | is_editable()       |
++----------+---------------------+
+
   .. _class_Slider_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
+
++----------+-----------------------+
+| *Setter* | set_focus_mode(value) |
++----------+-----------------------+
+| *Getter* | get_focus_mode()      |
++----------+-----------------------+
 
   .. _class_Slider_scrollable:
 
 - :ref:`bool<class_bool>` **scrollable**
 
++----------+-----------------------+
+| *Setter* | set_scrollable(value) |
++----------+-----------------------+
+| *Getter* | is_scrollable()       |
++----------+-----------------------+
+
   .. _class_Slider_tick_count:
 
 - :ref:`int<class_int>` **tick_count**
+
++----------+------------------+
+| *Setter* | set_ticks(value) |
++----------+------------------+
+| *Getter* | get_ticks()      |
++----------+------------------+
 
   .. _class_Slider_ticks_on_borders:
 
 - :ref:`bool<class_bool>` **ticks_on_borders**
 
++----------+-----------------------------+
+| *Setter* | set_ticks_on_borders(value) |
++----------+-----------------------------+
+| *Getter* | get_ticks_on_borders()      |
++----------+-----------------------------+
 

@@ -8,12 +8,36 @@ VSlider
 =======
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Vertical slider.
+
+Theme Properties
+----------------
+
++---------------------------------+-----------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_VSlider_focus>`                         |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_VSlider_grabber>`                     |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_VSlider_grabber_area>`           |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`grabber_disabled<class_VSlider_grabber_disabled>`   |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_disabled<class_VSlider_grabber_disabled>`   |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`grabber_highlight<class_VSlider_grabber_highlight>` |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_highlight<class_VSlider_grabber_highlight>` |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_VSlider_slider>`                       |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`tick<class_VSlider_tick>`                           |
++---------------------------------+-----------------------------------------------------------+
 
 Description
 -----------

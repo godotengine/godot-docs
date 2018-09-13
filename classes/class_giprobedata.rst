@@ -8,12 +8,40 @@ GIProbeData
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`bias<class_GIProbeData_bias>`                   |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`AABB<class_AABB>`                 | :ref:`bounds<class_GIProbeData_bounds>`               |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`cell_size<class_GIProbeData_cell_size>`         |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`compress<class_GIProbeData_compress>`           |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`dynamic_data<class_GIProbeData_dynamic_data>`   |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`dynamic_range<class_GIProbeData_dynamic_range>` |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`energy<class_GIProbeData_energy>`               |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`interior<class_GIProbeData_interior>`           |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`normal_bias<class_GIProbeData_normal_bias>`     |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`propagation<class_GIProbeData_propagation>`     |
++-----------------------------------------+-------------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`to_cell_xform<class_GIProbeData_to_cell_xform>` |
++-----------------------------------------+-------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -22,44 +50,109 @@ Property Descriptions
 
 - :ref:`float<class_float>` **bias**
 
++----------+-----------------+
+| *Setter* | set_bias(value) |
++----------+-----------------+
+| *Getter* | get_bias()      |
++----------+-----------------+
+
   .. _class_GIProbeData_bounds:
 
 - :ref:`AABB<class_AABB>` **bounds**
+
++----------+-------------------+
+| *Setter* | set_bounds(value) |
++----------+-------------------+
+| *Getter* | get_bounds()      |
++----------+-------------------+
 
   .. _class_GIProbeData_cell_size:
 
 - :ref:`float<class_float>` **cell_size**
 
++----------+----------------------+
+| *Setter* | set_cell_size(value) |
++----------+----------------------+
+| *Getter* | get_cell_size()      |
++----------+----------------------+
+
   .. _class_GIProbeData_compress:
 
 - :ref:`bool<class_bool>` **compress**
+
++----------+---------------------+
+| *Setter* | set_compress(value) |
++----------+---------------------+
+| *Getter* | is_compressed()     |
++----------+---------------------+
 
   .. _class_GIProbeData_dynamic_data:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **dynamic_data**
 
++----------+-------------------------+
+| *Setter* | set_dynamic_data(value) |
++----------+-------------------------+
+| *Getter* | get_dynamic_data()      |
++----------+-------------------------+
+
   .. _class_GIProbeData_dynamic_range:
 
 - :ref:`int<class_int>` **dynamic_range**
+
++----------+--------------------------+
+| *Setter* | set_dynamic_range(value) |
++----------+--------------------------+
+| *Getter* | get_dynamic_range()      |
++----------+--------------------------+
 
   .. _class_GIProbeData_energy:
 
 - :ref:`float<class_float>` **energy**
 
++----------+-------------------+
+| *Setter* | set_energy(value) |
++----------+-------------------+
+| *Getter* | get_energy()      |
++----------+-------------------+
+
   .. _class_GIProbeData_interior:
 
 - :ref:`bool<class_bool>` **interior**
+
++----------+---------------------+
+| *Setter* | set_interior(value) |
++----------+---------------------+
+| *Getter* | is_interior()       |
++----------+---------------------+
 
   .. _class_GIProbeData_normal_bias:
 
 - :ref:`float<class_float>` **normal_bias**
 
++----------+------------------------+
+| *Setter* | set_normal_bias(value) |
++----------+------------------------+
+| *Getter* | get_normal_bias()      |
++----------+------------------------+
+
   .. _class_GIProbeData_propagation:
 
 - :ref:`float<class_float>` **propagation**
+
++----------+------------------------+
+| *Setter* | set_propagation(value) |
++----------+------------------------+
+| *Getter* | get_propagation()      |
++----------+------------------------+
 
   .. _class_GIProbeData_to_cell_xform:
 
 - :ref:`Transform<class_Transform>` **to_cell_xform**
 
++----------+--------------------------+
+| *Setter* | set_to_cell_xform(value) |
++----------+--------------------------+
+| *Getter* | get_to_cell_xform()      |
++----------+--------------------------+
 

@@ -8,6 +8,7 @@ EncodedObjectAsID
 =================
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -27,12 +28,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EncodedObjectAsID_get_object_id:
+  .. _class_EncodedObjectAsID_get_object_id:
 
 - :ref:`int<class_int>` **get_object_id** **(** **)** const
 
-.. _class_EncodedObjectAsID_set_object_id:
+  .. _class_EncodedObjectAsID_set_object_id:
 
 - void **set_object_id** **(** :ref:`int<class_int>` id **)**
-
 

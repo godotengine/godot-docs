@@ -8,6 +8,7 @@ EditorScript
 ============
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -48,13 +49,13 @@ Note that the script is run in the Editor context, which means the output is vis
 Method Descriptions
 -------------------
 
-.. _class_EditorScript__run:
+  .. _class_EditorScript__run:
 
 - void **_run** **(** **)** virtual
 
 This method is executed by the Editor when ``File -> Run`` is used.
 
-.. _class_EditorScript_add_root_node:
+  .. _class_EditorScript_add_root_node:
 
 - void **add_root_node** **(** :ref:`Node<class_Node>` node **)**
 
@@ -62,16 +63,15 @@ Adds ``node`` as a child of the root node in the editor context.
 
 WARNING: The implementation of this method is currently disabled.
 
-.. _class_EditorScript_get_editor_interface:
+  .. _class_EditorScript_get_editor_interface:
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
 Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
-.. _class_EditorScript_get_scene:
+  .. _class_EditorScript_get_scene:
 
 - :ref:`Node<class_Node>` **get_scene** **(** **)**
 
 Returns the Editor's currently active scene.
-
 

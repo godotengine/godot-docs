@@ -14,6 +14,19 @@ Brief Description
 
 Quaternion.
 
+Properties
+----------
+
++---------------------------+------------------------+
+| :ref:`float<class_float>` | :ref:`w<class_Quat_w>` |
++---------------------------+------------------------+
+| :ref:`float<class_float>` | :ref:`x<class_Quat_x>` |
++---------------------------+------------------------+
+| :ref:`float<class_float>` | :ref:`y<class_Quat_y>` |
++---------------------------+------------------------+
+| :ref:`float<class_float>` | :ref:`z<class_Quat_z>` |
++---------------------------+------------------------+
+
 Methods
 -------
 
@@ -57,7 +70,6 @@ Constants
 ---------
 
 - **IDENTITY** = **Quat( 0, 0, 0, 1 )**
-
 Description
 -----------
 
@@ -72,130 +84,135 @@ Tutorials
 
 - `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
 - :doc:`../tutorials/math/rotations`
-
 Property Descriptions
 ---------------------
 
   .. _class_Quat_w:
 
-- :ref:`float<class_float>` **w** - W component of the quaternion. Default value: ``1``
+- :ref:`float<class_float>` **w**
+
+W component of the quaternion. Default value: ``1``
 
   .. _class_Quat_x:
 
-- :ref:`float<class_float>` **x** - X component of the quaternion. Default value: ``0``
+- :ref:`float<class_float>` **x**
+
+X component of the quaternion. Default value: ``0``
 
   .. _class_Quat_y:
 
-- :ref:`float<class_float>` **y** - Y component of the quaternion. Default value: ``0``
+- :ref:`float<class_float>` **y**
+
+Y component of the quaternion. Default value: ``0``
 
   .. _class_Quat_z:
 
-- :ref:`float<class_float>` **z** - Z component of the quaternion. Default value: ``0``
+- :ref:`float<class_float>` **z**
 
+Z component of the quaternion. Default value: ``0``
 
 Method Descriptions
 -------------------
 
-.. _class_Quat_Quat:
+  .. _class_Quat_Quat:
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Basis<class_Basis>` from **)**
 
 Returns the rotation matrix corresponding to the given quaternion.
 
-.. _class_Quat_Quat:
+  .. _class_Quat_Quat:
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Returns a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
-.. _class_Quat_Quat:
+  .. _class_Quat_Quat:
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Returns a quaternion that will rotate around the given axis by the specified angle. The axis must be a normalized vector.
 
-.. _class_Quat_Quat:
+  .. _class_Quat_Quat:
 
 - :ref:`Quat<class_Quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
 Returns a quaternion defined by these values.
 
-.. _class_Quat_cubic_slerp:
+  .. _class_Quat_cubic_slerp:
 
 - :ref:`Quat<class_Quat>` **cubic_slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` t **)**
 
 Performs a cubic spherical-linear interpolation with another quaternion.
 
-.. _class_Quat_dot:
+  .. _class_Quat_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Quat<class_Quat>` b **)**
 
 Returns the dot product of two quaternions.
 
-.. _class_Quat_get_euler:
+  .. _class_Quat_get_euler:
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
 Return Euler angles (in the YXZ convention: first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
 
-.. _class_Quat_inverse:
+  .. _class_Quat_inverse:
 
 - :ref:`Quat<class_Quat>` **inverse** **(** **)**
 
 Returns the inverse of the quaternion.
 
-.. _class_Quat_is_normalized:
+  .. _class_Quat_is_normalized:
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
 Returns whether the quaternion is normalized or not.
 
-.. _class_Quat_length:
+  .. _class_Quat_length:
 
 - :ref:`float<class_float>` **length** **(** **)**
 
 Returns the length of the quaternion.
 
-.. _class_Quat_length_squared:
+  .. _class_Quat_length_squared:
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
 Returns the length of the quaternion, squared.
 
-.. _class_Quat_normalized:
+  .. _class_Quat_normalized:
 
 - :ref:`Quat<class_Quat>` **normalized** **(** **)**
 
 Returns a copy of the quaternion, normalized to unit length.
 
-.. _class_Quat_set_axis_angle:
+  .. _class_Quat_set_axis_angle:
 
 - void **set_axis_angle** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Set the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
 
-.. _class_Quat_set_euler:
+  .. _class_Quat_set_euler:
 
 - void **set_euler** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Set the quaternion to a rotation specified by Euler angles (in the YXZ convention: first Z, then X, and Y last), given in the vector format as (X-angle, Y-angle, Z-angle).
 
-.. _class_Quat_slerp:
+  .. _class_Quat_slerp:
 
 - :ref:`Quat<class_Quat>` **slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**
 
 Performs a spherical-linear interpolation with another quaternion.
 
-.. _class_Quat_slerpni:
+  .. _class_Quat_slerpni:
 
 - :ref:`Quat<class_Quat>` **slerpni** **(** :ref:`Quat<class_Quat>` b, :ref:`float<class_float>` t **)**
 
 Performs a spherical-linear interpolation with another quaterion without checking if the rotation path is not bigger than 90°.
 
-.. _class_Quat_xform:
+  .. _class_Quat_xform:
 
 - :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Transforms the vector ``v`` by this quaternion.
-
 

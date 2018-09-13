@@ -8,12 +8,26 @@ ColorPicker
 ===========
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Color picker control.
+
+Properties
+----------
+
++---------------------------+-------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_color>`                 |
++---------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_deferred_mode>` |
++---------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_edit_alpha>`       |
++---------------------------+-------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_raw_mode>`           |
++---------------------------+-------------------------------------------------------+
 
 Methods
 -------
@@ -22,15 +36,39 @@ Methods
 | void  | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_Color>` color **)** |
 +-------+---------------------------------------------------------------------------------------------+
 
+Theme Properties
+----------------
+
++-------------------------------+-------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_add_preset>`       |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_color_hue>`         |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_color_sample>`   |
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`h_width<class_ColorPicker_h_width>`             |
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`label_width<class_ColorPicker_label_width>`     |
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`margin<class_ColorPicker_margin>`               |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`preset_bg<class_ColorPicker_preset_bg>`         |
++-------------------------------+-------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`screen_picker<class_ColorPicker_screen_picker>` |
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_sv_height>`         |
++-------------------------------+-------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_sv_width>`           |
++-------------------------------+-------------------------------------------------------+
+
 Signals
 -------
 
-.. _class_ColorPicker_color_changed:
+  .. _class_ColorPicker_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color is changed.
-
 
 Description
 -----------
@@ -42,28 +80,58 @@ Property Descriptions
 
   .. _class_ColorPicker_color:
 
-- :ref:`Color<class_Color>` **color** - The currently selected color.
+- :ref:`Color<class_Color>` **color**
+
++----------+-----------------------+
+| *Setter* | set_pick_color(value) |
++----------+-----------------------+
+| *Getter* | get_pick_color()      |
++----------+-----------------------+
+
+The currently selected color.
 
   .. _class_ColorPicker_deferred_mode:
 
-- :ref:`bool<class_bool>` **deferred_mode** - If ``true`` the color will apply only after the user releases the mouse button, otherwise it will apply immediatly even in mouse motion event (which can cause performance issues).
+- :ref:`bool<class_bool>` **deferred_mode**
+
++----------+--------------------------+
+| *Setter* | set_deferred_mode(value) |
++----------+--------------------------+
+| *Getter* | is_deferred_mode()       |
++----------+--------------------------+
+
+If ``true`` the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
   .. _class_ColorPicker_edit_alpha:
 
-- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` shows an alpha channel slider (transparency).
+- :ref:`bool<class_bool>` **edit_alpha**
+
++----------+-----------------------+
+| *Setter* | set_edit_alpha(value) |
++----------+-----------------------+
+| *Getter* | is_editing_alpha()    |
++----------+-----------------------+
+
+If ``true`` shows an alpha channel slider (transparency).
 
   .. _class_ColorPicker_raw_mode:
 
-- :ref:`bool<class_bool>` **raw_mode** - If ``true`` allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+- :ref:`bool<class_bool>` **raw_mode**
 
++----------+---------------------+
+| *Setter* | set_raw_mode(value) |
++----------+---------------------+
+| *Getter* | is_raw_mode()       |
++----------+---------------------+
+
+If ``true`` allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 Method Descriptions
 -------------------
 
-.. _class_ColorPicker_add_preset:
+  .. _class_ColorPicker_add_preset:
 
 - void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
-
 

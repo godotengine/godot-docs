@@ -8,12 +8,26 @@ CSGBox
 ======
 
 **Inherits:** :ref:`CSGPrimitive<class_CSGPrimitive>` **<** :ref:`CSGShape<class_CSGShape>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A CSG Box shape.
+
+Properties
+----------
+
++---------------------------------+----------------------------------------+
+| :ref:`float<class_float>`       | :ref:`depth<class_CSGBox_depth>`       |
++---------------------------------+----------------------------------------+
+| :ref:`float<class_float>`       | :ref:`height<class_CSGBox_height>`     |
++---------------------------------+----------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGBox_material>` |
++---------------------------------+----------------------------------------+
+| :ref:`float<class_float>`       | :ref:`width<class_CSGBox_width>`       |
++---------------------------------+----------------------------------------+
 
 Description
 -----------
@@ -25,18 +39,49 @@ Property Descriptions
 
   .. _class_CSGBox_depth:
 
-- :ref:`float<class_float>` **depth** - Depth of the box measured from the center of the box.
+- :ref:`float<class_float>` **depth**
+
++----------+------------------+
+| *Setter* | set_depth(value) |
++----------+------------------+
+| *Getter* | get_depth()      |
++----------+------------------+
+
+Depth of the box measured from the center of the box.
 
   .. _class_CSGBox_height:
 
-- :ref:`float<class_float>` **height** - Height of the box measured from the center of the box.
+- :ref:`float<class_float>` **height**
+
++----------+-------------------+
+| *Setter* | set_height(value) |
++----------+-------------------+
+| *Getter* | get_height()      |
++----------+-------------------+
+
+Height of the box measured from the center of the box.
 
   .. _class_CSGBox_material:
 
-- :ref:`Material<class_Material>` **material** - The material used to render the box.
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+The material used to render the box.
 
   .. _class_CSGBox_width:
 
-- :ref:`float<class_float>` **width** - Width of the box measured from the center of the box.
+- :ref:`float<class_float>` **width**
 
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
+
+Width of the box measured from the center of the box.
 

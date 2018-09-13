@@ -8,12 +8,24 @@ TreeItem
 ========
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Control for a single item inside a :ref:`Tree<class_Tree>`.
+
+Properties
+----------
+
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`collapsed<class_TreeItem_collapsed>`                         |
++-------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`custom_minimum_height<class_TreeItem_custom_minimum_height>` |
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`disable_folding<class_TreeItem_disable_folding>`             |
++-------------------------+--------------------------------------------------------------------+
 
 Methods
 -------
@@ -133,7 +145,7 @@ Enumerations
 
   .. _enum_TreeItem_TreeCellMode:
 
-enum **TreeCellMode**
+enum **TreeCellMode**:
 
 - **CELL_MODE_STRING** = **0** --- Cell contains a string.
 - **CELL_MODE_CHECK** = **1** --- Cell can be checked.
@@ -144,12 +156,11 @@ enum **TreeCellMode**
 
   .. _enum_TreeItem_TextAlign:
 
-enum **TextAlign**
+enum **TextAlign**:
 
 - **ALIGN_LEFT** = **0** --- Align text to the left. See ``set_text_align()``.
 - **ALIGN_CENTER** = **1** --- Center text. See ``set_text_align()``.
 - **ALIGN_RIGHT** = **2** --- Align text to the right. See ``set_text_align()``.
-
 
 Description
 -----------
@@ -161,324 +172,346 @@ Property Descriptions
 
   .. _class_TreeItem_collapsed:
 
-- :ref:`bool<class_bool>` **collapsed** - If ``true`` the TreeItem is collapsed.
+- :ref:`bool<class_bool>` **collapsed**
+
++----------+----------------------+
+| *Setter* | set_collapsed(value) |
++----------+----------------------+
+| *Getter* | is_collapsed()       |
++----------+----------------------+
+
+If ``true`` the TreeItem is collapsed.
 
   .. _class_TreeItem_custom_minimum_height:
 
-- :ref:`int<class_int>` **custom_minimum_height** - The custom minimum height.
+- :ref:`int<class_int>` **custom_minimum_height**
+
++----------+----------------------------------+
+| *Setter* | set_custom_minimum_height(value) |
++----------+----------------------------------+
+| *Getter* | get_custom_minimum_height()      |
++----------+----------------------------------+
+
+The custom minimum height.
 
   .. _class_TreeItem_disable_folding:
 
-- :ref:`bool<class_bool>` **disable_folding** - If ``true`` folding is disabled for this TreeItem.
+- :ref:`bool<class_bool>` **disable_folding**
 
++----------+----------------------------+
+| *Setter* | set_disable_folding(value) |
++----------+----------------------------+
+| *Getter* | is_folding_disabled()      |
++----------+----------------------------+
+
+If ``true`` folding is disabled for this TreeItem.
 
 Method Descriptions
 -------------------
 
-.. _class_TreeItem_add_button:
+  .. _class_TreeItem_add_button:
 
 - void **add_button** **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` button, :ref:`int<class_int>` button_idx=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)**
 
 Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling ``get_buton_count()`` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
-.. _class_TreeItem_clear_custom_bg_color:
+  .. _class_TreeItem_clear_custom_bg_color:
 
 - void **clear_custom_bg_color** **(** :ref:`int<class_int>` column **)**
 
 Resets the background color for the given column to default.
 
-.. _class_TreeItem_clear_custom_color:
+  .. _class_TreeItem_clear_custom_color:
 
 - void **clear_custom_color** **(** :ref:`int<class_int>` column **)**
 
 Resets the color for the given column to default.
 
-.. _class_TreeItem_deselect:
+  .. _class_TreeItem_deselect:
 
 - void **deselect** **(** :ref:`int<class_int>` column **)**
 
 Deselects the given column.
 
-.. _class_TreeItem_erase_button:
+  .. _class_TreeItem_erase_button:
 
 - void **erase_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)**
 
 Removes the button at index ``button_idx`` in column ``column``.
 
-.. _class_TreeItem_get_button:
+  .. _class_TreeItem_get_button:
 
 - :ref:`Texture<class_Texture>` **get_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** const
 
 Returns the :ref:`Texture<class_Texture>` of the button at index ``button_idx`` in column ``column``.
 
-.. _class_TreeItem_get_button_count:
+  .. _class_TreeItem_get_button_count:
 
 - :ref:`int<class_int>` **get_button_count** **(** :ref:`int<class_int>` column **)** const
 
 Returns the number of buttons in column ``column``. May be used to get the most recently added button's index, if no index was specified.
 
-.. _class_TreeItem_get_cell_mode:
+  .. _class_TreeItem_get_cell_mode:
 
 - :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **get_cell_mode** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's cell mode. See ``CELL_MODE_*`` constants.
 
-.. _class_TreeItem_get_children:
+  .. _class_TreeItem_get_children:
 
 - :ref:`TreeItem<class_TreeItem>` **get_children** **(** **)**
 
 Returns the TreeItem's child items.
 
-.. _class_TreeItem_get_custom_bg_color:
+  .. _class_TreeItem_get_custom_bg_color:
 
 - :ref:`Color<class_Color>` **get_custom_bg_color** **(** :ref:`int<class_int>` column **)** const
 
 Returns the custom background color of column ``column``.
 
-.. _class_TreeItem_get_expand_right:
+  .. _class_TreeItem_get_expand_right:
 
 - :ref:`bool<class_bool>` **get_expand_right** **(** :ref:`int<class_int>` column **)** const
 
 Returns ``true`` if ``expand_right`` is set.
 
-.. _class_TreeItem_get_icon:
+  .. _class_TreeItem_get_icon:
 
 - :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`int<class_int>` column **)** const
 
 Returns the given column's icon :ref:`Texture<class_Texture>`. Error if no icon is set.
 
-.. _class_TreeItem_get_icon_max_width:
+  .. _class_TreeItem_get_icon_max_width:
 
 - :ref:`int<class_int>` **get_icon_max_width** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's icon's maximum width.
 
-.. _class_TreeItem_get_icon_region:
+  .. _class_TreeItem_get_icon_region:
 
 - :ref:`Rect2<class_Rect2>` **get_icon_region** **(** :ref:`int<class_int>` column **)** const
 
 Returns the icon :ref:`Texture<class_Texture>` region as :ref:`Rect2<class_Rect2>`.
 
-.. _class_TreeItem_get_metadata:
+  .. _class_TreeItem_get_metadata:
 
 - :ref:`Variant<class_Variant>` **get_metadata** **(** :ref:`int<class_int>` column **)** const
 
-.. _class_TreeItem_get_next:
+  .. _class_TreeItem_get_next:
 
 - :ref:`TreeItem<class_TreeItem>` **get_next** **(** **)**
 
 Returns the next TreeItem in the tree.
 
-.. _class_TreeItem_get_next_visible:
+  .. _class_TreeItem_get_next_visible:
 
 - :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** **)**
 
 Returns the next visible TreeItem in the tree.
 
-.. _class_TreeItem_get_parent:
+  .. _class_TreeItem_get_parent:
 
 - :ref:`TreeItem<class_TreeItem>` **get_parent** **(** **)**
 
 Returns the parent TreeItem.
 
-.. _class_TreeItem_get_prev:
+  .. _class_TreeItem_get_prev:
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev** **(** **)**
 
 Returns the previous TreeItem in the tree.
 
-.. _class_TreeItem_get_prev_visible:
+  .. _class_TreeItem_get_prev_visible:
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** **)**
 
 Returns the previous visible TreeItem in the tree.
 
-.. _class_TreeItem_get_range:
+  .. _class_TreeItem_get_range:
 
 - :ref:`float<class_float>` **get_range** **(** :ref:`int<class_int>` column **)** const
 
-.. _class_TreeItem_get_range_config:
+  .. _class_TreeItem_get_range_config:
 
 - :ref:`Dictionary<class_Dictionary>` **get_range_config** **(** :ref:`int<class_int>` column **)**
 
-.. _class_TreeItem_get_text:
+  .. _class_TreeItem_get_text:
 
 - :ref:`String<class_String>` **get_text** **(** :ref:`int<class_int>` column **)** const
 
 Returns the given column's text.
 
-.. _class_TreeItem_get_text_align:
+  .. _class_TreeItem_get_text_align:
 
 - :ref:`TextAlign<enum_TreeItem_TextAlign>` **get_text_align** **(** :ref:`int<class_int>` column **)** const
 
 Returns the given column's text alignment.
 
-.. _class_TreeItem_get_tooltip:
+  .. _class_TreeItem_get_tooltip:
 
 - :ref:`String<class_String>` **get_tooltip** **(** :ref:`int<class_int>` column **)** const
 
 Returns the given column's tooltip.
 
-.. _class_TreeItem_is_button_disabled:
+  .. _class_TreeItem_is_button_disabled:
 
 - :ref:`bool<class_bool>` **is_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** const
 
 Returns ``true`` if the button at index ``button_idx`` for the given column is disabled.
 
-.. _class_TreeItem_is_checked:
+  .. _class_TreeItem_is_checked:
 
 - :ref:`bool<class_bool>` **is_checked** **(** :ref:`int<class_int>` column **)** const
 
 Returns ``true`` if the given column is checked.
 
-.. _class_TreeItem_is_custom_set_as_button:
+  .. _class_TreeItem_is_custom_set_as_button:
 
 - :ref:`bool<class_bool>` **is_custom_set_as_button** **(** :ref:`int<class_int>` column **)** const
 
-.. _class_TreeItem_is_editable:
+  .. _class_TreeItem_is_editable:
 
 - :ref:`bool<class_bool>` **is_editable** **(** :ref:`int<class_int>` column **)**
 
 Returns ``true`` if column ``column`` is editable.
 
-.. _class_TreeItem_is_selectable:
+  .. _class_TreeItem_is_selectable:
 
 - :ref:`bool<class_bool>` **is_selectable** **(** :ref:`int<class_int>` column **)** const
 
 Returns ``true`` if column ``column`` is selectable.
 
-.. _class_TreeItem_is_selected:
+  .. _class_TreeItem_is_selected:
 
 - :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` column **)**
 
 Returns ``true`` if column ``column`` is selected.
 
-.. _class_TreeItem_move_to_bottom:
+  .. _class_TreeItem_move_to_bottom:
 
 - void **move_to_bottom** **(** **)**
 
 Moves this TreeItem to the bottom in the :ref:`Tree<class_Tree>` hierarchy.
 
-.. _class_TreeItem_move_to_top:
+  .. _class_TreeItem_move_to_top:
 
 - void **move_to_top** **(** **)**
 
 Moves this TreeItem to the top in the :ref:`Tree<class_Tree>` hierarchy.
 
-.. _class_TreeItem_remove_child:
+  .. _class_TreeItem_remove_child:
 
 - void **remove_child** **(** :ref:`Object<class_Object>` child **)**
 
 Removes the given child TreeItem.
 
-.. _class_TreeItem_select:
+  .. _class_TreeItem_select:
 
 - void **select** **(** :ref:`int<class_int>` column **)**
 
 Selects the column ``column``.
 
-.. _class_TreeItem_set_button:
+  .. _class_TreeItem_set_button:
 
 - void **set_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_Texture>` button **)**
 
 Sets the given column's button :ref:`Texture<class_Texture>` at index ``button_idx`` to ``button``.
 
-.. _class_TreeItem_set_cell_mode:
+  .. _class_TreeItem_set_cell_mode:
 
 - void **set_cell_mode** **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**
 
 Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
 
-.. _class_TreeItem_set_checked:
+  .. _class_TreeItem_set_checked:
 
 - void **set_checked** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**
 
 If ``true`` the column ``column`` is checked.
 
-.. _class_TreeItem_set_custom_as_button:
+  .. _class_TreeItem_set_custom_as_button:
 
 - void **set_custom_as_button** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
 
-.. _class_TreeItem_set_custom_bg_color:
+  .. _class_TreeItem_set_custom_bg_color:
 
 - void **set_custom_bg_color** **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` just_outline=false **)**
 
 Sets the given column's custom background color and whether to just use it as an outline.
 
-.. _class_TreeItem_set_custom_color:
+  .. _class_TreeItem_set_custom_color:
 
 - void **set_custom_color** **(** :ref:`int<class_int>` column, :ref:`Color<class_Color>` color **)**
 
 Sets the given column's custom color.
 
-.. _class_TreeItem_set_custom_draw:
+  .. _class_TreeItem_set_custom_draw:
 
 - void **set_custom_draw** **(** :ref:`int<class_int>` column, :ref:`Object<class_Object>` object, :ref:`String<class_String>` callback **)**
 
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
 
-.. _class_TreeItem_set_editable:
+  .. _class_TreeItem_set_editable:
 
 - void **set_editable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**
 
 If ``true`` column ``column`` is editable.
 
-.. _class_TreeItem_set_expand_right:
+  .. _class_TreeItem_set_expand_right:
 
 - void **set_expand_right** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
 
 If ``true`` column ``column`` is expanded to the right.
 
-.. _class_TreeItem_set_icon:
+  .. _class_TreeItem_set_icon:
 
 - void **set_icon** **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` texture **)**
 
 Sets the given column's icon :ref:`Texture<class_Texture>`.
 
-.. _class_TreeItem_set_icon_max_width:
+  .. _class_TreeItem_set_icon_max_width:
 
 - void **set_icon_max_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` width **)**
 
 Sets the given column's icon's maximum width.
 
-.. _class_TreeItem_set_icon_region:
+  .. _class_TreeItem_set_icon_region:
 
 - void **set_icon_region** **(** :ref:`int<class_int>` column, :ref:`Rect2<class_Rect2>` region **)**
 
 Sets the given column's icon's texture region.
 
-.. _class_TreeItem_set_metadata:
+  .. _class_TreeItem_set_metadata:
 
 - void **set_metadata** **(** :ref:`int<class_int>` column, :ref:`Variant<class_Variant>` meta **)**
 
-.. _class_TreeItem_set_range:
+  .. _class_TreeItem_set_range:
 
 - void **set_range** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` value **)**
 
-.. _class_TreeItem_set_range_config:
+  .. _class_TreeItem_set_range_config:
 
 - void **set_range_config** **(** :ref:`int<class_int>` column, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step, :ref:`bool<class_bool>` expr=false **)**
 
-.. _class_TreeItem_set_selectable:
+  .. _class_TreeItem_set_selectable:
 
 - void **set_selectable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**
 
 If ``true`` the given column is selectable.
 
-.. _class_TreeItem_set_text:
+  .. _class_TreeItem_set_text:
 
 - void **set_text** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` text **)**
 
-.. _class_TreeItem_set_text_align:
+  .. _class_TreeItem_set_text_align:
 
 - void **set_text_align** **(** :ref:`int<class_int>` column, :ref:`TextAlign<enum_TreeItem_TextAlign>` text_align **)**
 
 Sets the given column's text alignment. See ``ALIGN_*`` constants.
 
-.. _class_TreeItem_set_tooltip:
+  .. _class_TreeItem_set_tooltip:
 
 - void **set_tooltip** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tooltip **)**
 
 Sets the given column's tooltip text.
-
 

@@ -8,13 +8,24 @@ MeshInstance
 ============
 
 **Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`SoftBody<class_SoftBody>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Node that instances meshes into a scenario.
+
+Properties
+----------
+
++---------------------------------+----------------------------------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_mesh>`         |
++---------------------------------+----------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_skeleton>` |
++---------------------------------+----------------------------------------------+
 
 Methods
 -------
@@ -41,44 +52,58 @@ Property Descriptions
 
   .. _class_MeshInstance_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh** - The :ref:`Mesh<class_Mesh>` resource for the instance.
+- :ref:`Mesh<class_Mesh>` **mesh**
+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
+
+The :ref:`Mesh<class_Mesh>` resource for the instance.
 
   .. _class_MeshInstance_skeleton:
 
-- :ref:`NodePath<class_NodePath>` **skeleton** - :ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
+- :ref:`NodePath<class_NodePath>` **skeleton**
 
++----------+--------------------------+
+| *Setter* | set_skeleton_path(value) |
++----------+--------------------------+
+| *Getter* | get_skeleton_path()      |
++----------+--------------------------+
+
+:ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
 
 Method Descriptions
 -------------------
 
-.. _class_MeshInstance_create_convex_collision:
+  .. _class_MeshInstance_create_convex_collision:
 
 - void **create_convex_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-.. _class_MeshInstance_create_debug_tangents:
+  .. _class_MeshInstance_create_debug_tangents:
 
 - void **create_debug_tangents** **(** **)**
 
 This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
 
-.. _class_MeshInstance_create_trimesh_collision:
+  .. _class_MeshInstance_create_trimesh_collision:
 
 - void **create_trimesh_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-.. _class_MeshInstance_get_surface_material:
+  .. _class_MeshInstance_get_surface_material:
 
 - :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
 Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
-.. _class_MeshInstance_set_surface_material:
+  .. _class_MeshInstance_set_surface_material:
 
 - void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
 
 Sets the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
-
 

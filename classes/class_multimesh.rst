@@ -8,12 +8,28 @@ MultiMesh
 =========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Provides high performance mesh instancing.
+
+Properties
+----------
+
++----------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_color_format>`             |
++----------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_custom_data_format>` |
++----------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_instance_count>`         |
++----------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_mesh>`                             |
++----------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_transform_format>`     |
++----------------------------------------------------------+---------------------------------------------------------------+
 
 Methods
 -------
@@ -39,14 +55,14 @@ Enumerations
 
   .. _enum_MultiMesh_TransformFormat:
 
-enum **TransformFormat**
+enum **TransformFormat**:
 
 - **TRANSFORM_2D** = **0**
 - **TRANSFORM_3D** = **1**
 
   .. _enum_MultiMesh_ColorFormat:
 
-enum **ColorFormat**
+enum **ColorFormat**:
 
 - **COLOR_NONE** = **0**
 - **COLOR_8BIT** = **1**
@@ -54,12 +70,11 @@ enum **ColorFormat**
 
   .. _enum_MultiMesh_CustomDataFormat:
 
-enum **CustomDataFormat**
+enum **CustomDataFormat**:
 
 - **CUSTOM_DATA_NONE** = **0**
 - **CUSTOM_DATA_8BIT** = **1**
 - **CUSTOM_DATA_FLOAT** = **2**
-
 
 Description
 -----------
@@ -79,62 +94,90 @@ Property Descriptions
 
 - :ref:`ColorFormat<enum_MultiMesh_ColorFormat>` **color_format**
 
++----------+-------------------------+
+| *Setter* | set_color_format(value) |
++----------+-------------------------+
+| *Getter* | get_color_format()      |
++----------+-------------------------+
+
   .. _class_MultiMesh_custom_data_format:
 
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
+
++----------+-------------------------------+
+| *Setter* | set_custom_data_format(value) |
++----------+-------------------------------+
+| *Getter* | get_custom_data_format()      |
++----------+-------------------------------+
 
   .. _class_MultiMesh_instance_count:
 
 - :ref:`int<class_int>` **instance_count**
 
++----------+---------------------------+
+| *Setter* | set_instance_count(value) |
++----------+---------------------------+
+| *Getter* | get_instance_count()      |
++----------+---------------------------+
+
   .. _class_MultiMesh_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
   .. _class_MultiMesh_transform_format:
 
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
 
++----------+-----------------------------+
+| *Setter* | set_transform_format(value) |
++----------+-----------------------------+
+| *Getter* | get_transform_format()      |
++----------+-----------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_MultiMesh_get_aabb:
+  .. _class_MultiMesh_get_aabb:
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
 Return the visibility AABB.
 
-.. _class_MultiMesh_get_instance_color:
+  .. _class_MultiMesh_get_instance_color:
 
 - :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
 
 Get the color of a specific instance.
 
-.. _class_MultiMesh_get_instance_custom_data:
+  .. _class_MultiMesh_get_instance_custom_data:
 
 - :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
 
-.. _class_MultiMesh_get_instance_transform:
+  .. _class_MultiMesh_get_instance_transform:
 
 - :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
 
 Return the transform of a specific instance.
 
-.. _class_MultiMesh_set_instance_color:
+  .. _class_MultiMesh_set_instance_color:
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
 Set the color of a specific instance.
 
-.. _class_MultiMesh_set_instance_custom_data:
+  .. _class_MultiMesh_set_instance_custom_data:
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-.. _class_MultiMesh_set_instance_transform:
+  .. _class_MultiMesh_set_instance_transform:
 
 - void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 
 Set the transform for a specific instance.
-
 

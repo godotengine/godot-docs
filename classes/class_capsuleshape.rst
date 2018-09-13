@@ -8,12 +8,22 @@ CapsuleShape
 ============
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Capsule shape for collisions.
+
+Properties
+----------
+
++---------------------------+------------------------------------------+
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape_height>` |
++---------------------------+------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape_radius>` |
++---------------------------+------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_CapsuleShape_height:
 
-- :ref:`float<class_float>` **height** - The capsule's height.
+- :ref:`float<class_float>` **height**
+
++----------+-------------------+
+| *Setter* | set_height(value) |
++----------+-------------------+
+| *Getter* | get_height()      |
++----------+-------------------+
+
+The capsule's height.
 
   .. _class_CapsuleShape_radius:
 
-- :ref:`float<class_float>` **radius** - The capsule's radius.
+- :ref:`float<class_float>` **radius**
 
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
+
+The capsule's radius.
 

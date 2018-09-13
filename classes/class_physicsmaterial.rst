@@ -8,12 +8,26 @@ PhysicsMaterial
 ===============
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A material for physics properties.
+
+Properties
+----------
+
++---------------------------+---------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`absorbent<class_PhysicsMaterial_absorbent>` |
++---------------------------+---------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`bounce<class_PhysicsMaterial_bounce>`       |
++---------------------------+---------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`friction<class_PhysicsMaterial_friction>`   |
++---------------------------+---------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_rough>`         |
++---------------------------+---------------------------------------------------+
 
 Description
 -----------
@@ -27,16 +41,43 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **absorbent**
 
++----------+----------------------+
+| *Setter* | set_absorbent(value) |
++----------+----------------------+
+| *Getter* | is_absorbent()       |
++----------+----------------------+
+
   .. _class_PhysicsMaterial_bounce:
 
-- :ref:`float<class_float>` **bounce** - The body's bounciness. Default value: ``0``.
+- :ref:`float<class_float>` **bounce**
+
++----------+-------------------+
+| *Setter* | set_bounce(value) |
++----------+-------------------+
+| *Getter* | get_bounce()      |
++----------+-------------------+
+
+The body's bounciness. Default value: ``0``.
 
   .. _class_PhysicsMaterial_friction:
 
-- :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
+- :ref:`float<class_float>` **friction**
+
++----------+---------------------+
+| *Setter* | set_friction(value) |
++----------+---------------------+
+| *Getter* | get_friction()      |
++----------+---------------------+
+
+The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
 
   .. _class_PhysicsMaterial_rough:
 
 - :ref:`bool<class_bool>` **rough**
 
++----------+------------------+
+| *Setter* | set_rough(value) |
++----------+------------------+
+| *Getter* | is_rough()       |
++----------+------------------+
 

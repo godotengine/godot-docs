@@ -8,13 +8,22 @@ Shader
 ======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisualShader<class_VisualShader>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A custom shader program.
+
+Properties
+----------
+
++-----------------------------+--------------------------------+
+| :ref:`String<class_String>` | :ref:`code<class_Shader_code>` |
++-----------------------------+--------------------------------+
 
 Methods
 -------
@@ -34,12 +43,11 @@ Enumerations
 
   .. _enum_Shader_Mode:
 
-enum **Mode**
+enum **Mode**:
 
 - **MODE_SPATIAL** = **0**
 - **MODE_CANVAS_ITEM** = **1**
 - **MODE_PARTICLES** = **2**
-
 
 Description
 -----------
@@ -50,7 +58,6 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/shading/index`
-
 Property Descriptions
 ---------------------
 
@@ -58,26 +65,30 @@ Property Descriptions
 
 - :ref:`String<class_String>` **code**
 
++----------+-----------------+
+| *Setter* | set_code(value) |
++----------+-----------------+
+| *Getter* | get_code()      |
++----------+-----------------+
 
 Method Descriptions
 -------------------
 
-.. _class_Shader_get_default_texture_param:
+  .. _class_Shader_get_default_texture_param:
 
 - :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
 
-.. _class_Shader_get_mode:
+  .. _class_Shader_get_mode:
 
 - :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
 
-Returns the shader mode for the shader, eiter ``MODE_CANVAS_ITEM``, ``MODE_SPATIAL`` or ``MODE_PARTICLES``
+Returns the shader mode for the shader, either ``MODE_CANVAS_ITEM``, ``MODE_SPATIAL`` or ``MODE_PARTICLES``
 
-.. _class_Shader_has_param:
+  .. _class_Shader_has_param:
 
 - :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
 
-.. _class_Shader_set_default_texture_param:
+  .. _class_Shader_set_default_texture_param:
 
 - void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
-
 

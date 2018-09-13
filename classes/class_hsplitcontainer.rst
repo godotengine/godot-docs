@@ -8,12 +8,26 @@ HSplitContainer
 ===============
 
 **Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Horizontal split container.
+
+Theme Properties
+----------------
+
++---------------------------------+-----------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`autohide<class_HSplitContainer_autohide>`     |
++---------------------------------+-----------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_HSplitContainer_bg>`                 |
++---------------------------------+-----------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSplitContainer_grabber>`       |
++---------------------------------+-----------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`separation<class_HSplitContainer_separation>` |
++---------------------------------+-----------------------------------------------------+
 
 Description
 -----------

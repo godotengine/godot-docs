@@ -8,13 +8,22 @@ VisibilityNotifier2D
 ====================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`VisibilityEnabler2D<class_VisibilityEnabler2D>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Detects when the node is visible on screen.
+
+Properties
+----------
+
++---------------------------+----------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_rect>` |
++---------------------------+----------------------------------------------+
 
 Methods
 -------
@@ -26,30 +35,29 @@ Methods
 Signals
 -------
 
-.. _class_VisibilityNotifier2D_screen_entered:
+  .. _class_VisibilityNotifier2D_screen_entered:
 
 - **screen_entered** **(** **)**
 
 Emitted when the VisibilityNotifier2D enters the screen.
 
-.. _class_VisibilityNotifier2D_screen_exited:
+  .. _class_VisibilityNotifier2D_screen_exited:
 
 - **screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier2D exits the screen.
 
-.. _class_VisibilityNotifier2D_viewport_entered:
+  .. _class_VisibilityNotifier2D_viewport_entered:
 
 - **viewport_entered** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_Viewport>`'s view.
 
-.. _class_VisibilityNotifier2D_viewport_exited:
+  .. _class_VisibilityNotifier2D_viewport_exited:
 
 - **viewport_exited** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D exits a :ref:`Viewport<class_Viewport>`'s view.
-
 
 Description
 -----------
@@ -61,16 +69,22 @@ Property Descriptions
 
   .. _class_VisibilityNotifier2D_rect:
 
-- :ref:`Rect2<class_Rect2>` **rect** - The VisibilityNotifier2D's bounding rectangle.
+- :ref:`Rect2<class_Rect2>` **rect**
 
++----------+-----------------+
+| *Setter* | set_rect(value) |
++----------+-----------------+
+| *Getter* | get_rect()      |
++----------+-----------------+
+
+The VisibilityNotifier2D's bounding rectangle.
 
 Method Descriptions
 -------------------
 
-.. _class_VisibilityNotifier2D_is_on_screen:
+  .. _class_VisibilityNotifier2D_is_on_screen:
 
 - :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 
 If ``true`` the bounding rectangle is on the screen.
-
 

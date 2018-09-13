@@ -14,6 +14,33 @@ Brief Description
 
 Color in RGBA format with some support for ARGB format.
 
+Properties
+----------
+
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`a<class_Color_a>`   |
++---------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`a8<class_Color_a8>` |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`b<class_Color_b>`   |
++---------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`b8<class_Color_b8>` |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`g<class_Color_g>`   |
++---------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`g8<class_Color_g8>` |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`h<class_Color_h>`   |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`r<class_Color_r>`   |
++---------------------------+---------------------------+
+| :ref:`int<class_int>`     | :ref:`r8<class_Color_r8>` |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`s<class_Color_s>`   |
++---------------------------+---------------------------+
+| :ref:`float<class_float>` | :ref:`v<class_Color_v>`   |
++---------------------------+---------------------------+
+
 Methods
 -------
 
@@ -205,7 +232,6 @@ Constants
 - **whitesmoke** = **Color( 0.96, 0.96, 0.96, 1 )**
 - **yellow** = **Color( 1, 1, 0, 1 )**
 - **yellowgreen** = **Color( 0.6, 0.8, 0.2, 1 )**
-
 Description
 -----------
 
@@ -218,53 +244,74 @@ Property Descriptions
 
   .. _class_Color_a:
 
-- :ref:`float<class_float>` **a** - Alpha (0 to 1)
+- :ref:`float<class_float>` **a**
+
+Alpha (0 to 1)
 
   .. _class_Color_a8:
 
-- :ref:`int<class_int>` **a8** - Alpha (0 to 255)
+- :ref:`int<class_int>` **a8**
+
+Alpha (0 to 255)
 
   .. _class_Color_b:
 
-- :ref:`float<class_float>` **b** - Blue (0 to 1)
+- :ref:`float<class_float>` **b**
+
+Blue (0 to 1)
 
   .. _class_Color_b8:
 
-- :ref:`int<class_int>` **b8** - Blue (0 to 255)
+- :ref:`int<class_int>` **b8**
+
+Blue (0 to 255)
 
   .. _class_Color_g:
 
-- :ref:`float<class_float>` **g** - Green (0 to 1)
+- :ref:`float<class_float>` **g**
+
+Green (0 to 1)
 
   .. _class_Color_g8:
 
-- :ref:`int<class_int>` **g8** - Green (0 to 255)
+- :ref:`int<class_int>` **g8**
+
+Green (0 to 255)
 
   .. _class_Color_h:
 
-- :ref:`float<class_float>` **h** - Hue (0 to 1)
+- :ref:`float<class_float>` **h**
+
+Hue (0 to 1)
 
   .. _class_Color_r:
 
-- :ref:`float<class_float>` **r** - Red (0 to 1)
+- :ref:`float<class_float>` **r**
+
+Red (0 to 1)
 
   .. _class_Color_r8:
 
-- :ref:`int<class_int>` **r8** - Red (0 to 255)
+- :ref:`int<class_int>` **r8**
+
+Red (0 to 255)
 
   .. _class_Color_s:
 
-- :ref:`float<class_float>` **s** - Saturation (0 to 1)
+- :ref:`float<class_float>` **s**
+
+Saturation (0 to 1)
 
   .. _class_Color_v:
 
-- :ref:`float<class_float>` **v** - Value (0 to 1)
+- :ref:`float<class_float>` **v**
 
+Value (0 to 1)
 
 Method Descriptions
 -------------------
 
-.. _class_Color_Color:
+  .. _class_Color_Color:
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`String<class_String>` from **)**
 
@@ -288,7 +335,7 @@ The following string formats are supported:
     var c3 = Color("#b2d90a")   # RGB format with '#'
     var c4 = Color("b2d90a")    # RGB format
 
-.. _class_Color_Color:
+  .. _class_Color_Color:
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`int<class_int>` from **)**
 
@@ -298,7 +345,7 @@ Constructs a color from a 32-bit integer (each byte represents a component of th
 
     var c = Color(274) # a color of an RGBA(0, 0, 1, 18)
 
-.. _class_Color_Color:
+  .. _class_Color_Color:
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
 
@@ -308,7 +355,7 @@ Constructs a color from an RGB profile using values between 0 and 1 (float). Alp
 
     var c = Color(0.2, 1.0, .7) # a color of an RGBA(51, 255, 178, 255)
 
-.. _class_Color_Color:
+  .. _class_Color_Color:
 
 - :ref:`Color<class_Color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
 
@@ -318,7 +365,7 @@ Constructs a color from an RGBA profile using values between 0 and 1 (float).
 
     var c = Color(0.2, 1.0, .7, .8) # a color of an RGBA(51, 255, 178, 204)
 
-.. _class_Color_blend:
+  .. _class_Color_blend:
 
 - :ref:`Color<class_Color>` **blend** **(** :ref:`Color<class_Color>` over **)**
 
@@ -330,7 +377,7 @@ Returns a new color resulting from blending this color over another color. If th
     var fg = Color(1.0, 0.0, 0.0, .5) # Red with alpha of 50%
     var blendedColor = bg.blend(fg) # Brown with alpha of 75%
 
-.. _class_Color_contrasted:
+  .. _class_Color_contrasted:
 
 - :ref:`Color<class_Color>` **contrasted** **(** **)**
 
@@ -341,7 +388,7 @@ Returns the most contrasting color.
     var c = Color(.3, .4, .9)
     var contrastedColor = c.contrasted() # a color of an RGBA(204, 229, 102, 255)
 
-.. _class_Color_darkened:
+  .. _class_Color_darkened:
 
 - :ref:`Color<class_Color>` **darkened** **(** :ref:`float<class_float>` amount **)**
 
@@ -352,7 +399,7 @@ Returns a new color resulting from making this color darker by the specified per
     var green = Color(0.0, 1.0, 0.0)
     var darkgreen = green.darkened(0.2) # 20% darker than regular green
 
-.. _class_Color_from_hsv:
+  .. _class_Color_from_hsv:
 
 - :ref:`Color<class_Color>` **from_hsv** **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` a=1 **)**
 
@@ -362,7 +409,7 @@ Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values betwe
 
     var c = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
 
-.. _class_Color_gray:
+  .. _class_Color_gray:
 
 - :ref:`float<class_float>` **gray** **(** **)**
 
@@ -375,7 +422,7 @@ The gray is calculated by (r + g + b) / 3.
     var c = Color(0.2, 0.45, 0.82)
     var gray = c.gray() # a value of 0.466667
 
-.. _class_Color_inverted:
+  .. _class_Color_inverted:
 
 - :ref:`Color<class_Color>` **inverted** **(** **)**
 
@@ -386,7 +433,7 @@ Returns the inverted color (1-r, 1-g, 1-b, 1-a).
     var c = Color(.3, .4, .9)
     var invertedColor = c.inverted() # a color of an RGBA(178, 153, 26, 255)
 
-.. _class_Color_lightened:
+  .. _class_Color_lightened:
 
 - :ref:`Color<class_Color>` **lightened** **(** :ref:`float<class_float>` amount **)**
 
@@ -397,7 +444,7 @@ Returns a new color resulting from making this color lighter by the specified pe
     var green = Color(0.0, 1.0, 0.0)
     var lightgreen = green.lightened(0.2) # 20% lighter than regular green
 
-.. _class_Color_linear_interpolate:
+  .. _class_Color_linear_interpolate:
 
 - :ref:`Color<class_Color>` **linear_interpolate** **(** :ref:`Color<class_Color>` b, :ref:`float<class_float>` t **)**
 
@@ -409,7 +456,7 @@ Returns the color of the linear interpolation with another color. The value t is
     var c2 = Color(0.0, 1.0, 0.0)
     var li_c = c1.linear_interpolate(c2, 0.5) # a color of an RGBA(128, 128, 0, 255)
 
-.. _class_Color_to_abgr32:
+  .. _class_Color_to_abgr32:
 
 - :ref:`int<class_int>` **to_abgr32** **(** **)**
 
@@ -420,7 +467,7 @@ Returns the color's 32-bit integer in ABGR format (each byte represents a compon
     var c = Color(1, .5, .2)
     print(c.to_abgr32()) # Prints 4281565439
 
-.. _class_Color_to_abgr64:
+  .. _class_Color_to_abgr64:
 
 - :ref:`int<class_int>` **to_abgr64** **(** **)**
 
@@ -431,7 +478,7 @@ Returns the color's 64-bit integer in ABGR format (each word represents a compon
     var c = Color(1, .5, .2)
     print(c.to_abgr64()) # Prints -225178692812801
 
-.. _class_Color_to_argb32:
+  .. _class_Color_to_argb32:
 
 - :ref:`int<class_int>` **to_argb32** **(** **)**
 
@@ -442,7 +489,7 @@ Returns the color's 32-bit integer in ARGB format (each byte represents a compon
     var c = Color(1, .5, .2)
     print(c.to_argb32()) # Prints 4294934323
 
-.. _class_Color_to_argb64:
+  .. _class_Color_to_argb64:
 
 - :ref:`int<class_int>` **to_argb64** **(** **)**
 
@@ -453,7 +500,7 @@ Returns the color's 64-bit integer in ARGB format (each word represents a compon
     var c = Color(1, .5, .2)
     print(c.to_argb64()) # Prints -2147470541
 
-.. _class_Color_to_html:
+  .. _class_Color_to_html:
 
 - :ref:`String<class_String>` **to_html** **(** :ref:`bool<class_bool>` with_alpha=True **)**
 
@@ -467,7 +514,7 @@ Optionally flag 'false' to not include alpha in hexadecimal string.
     var s1 = c.to_html() # Results "7fffffff"
     var s2 = c.to_html(false) # Results 'ffffff'
 
-.. _class_Color_to_rgba32:
+  .. _class_Color_to_rgba32:
 
 - :ref:`int<class_int>` **to_rgba32** **(** **)**
 
@@ -478,7 +525,7 @@ Returns the color's 32-bit integer in RGBA format (each byte represents a compon
     var c = Color(1, .5, .2)
     print(c.to_rgba32()) # Prints 4286526463
 
-.. _class_Color_to_rgba64:
+  .. _class_Color_to_rgba64:
 
 - :ref:`int<class_int>` **to_rgba64** **(** **)**
 
@@ -488,5 +535,4 @@ Returns the color's 64-bit integer in RGBA format (each word represents a compon
 
     var c = Color(1, .5, .2)
     print(c.to_rgba64()) # Prints -140736629309441
-
 

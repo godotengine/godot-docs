@@ -8,12 +8,22 @@ RayShape2D
 ==========
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Ray shape for 2D collisions.
+
+Properties
+----------
+
++---------------------------+--------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_length>`                 |
++---------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_slips_on_slope>` |
++---------------------------+--------------------------------------------------------+
 
 Description
 -----------
@@ -25,10 +35,25 @@ Property Descriptions
 
   .. _class_RayShape2D_length:
 
-- :ref:`float<class_float>` **length** - The ray's length.
+- :ref:`float<class_float>` **length**
+
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
+
+The ray's length.
 
   .. _class_RayShape2D_slips_on_slope:
 
-- :ref:`bool<class_bool>` **slips_on_slope** - If ``true`` allow the shape to return the correct normal. Default value: ``false``.
+- :ref:`bool<class_bool>` **slips_on_slope**
 
++----------+---------------------------+
+| *Setter* | set_slips_on_slope(value) |
++----------+---------------------------+
+| *Getter* | get_slips_on_slope()      |
++----------+---------------------------+
+
+If ``true`` allow the shape to return the correct normal. Default value: ``false``.
 

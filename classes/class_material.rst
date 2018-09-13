@@ -8,7 +8,9 @@ Material
 ========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`
+
 **Category:** Core
 
 Brief Description
@@ -16,12 +18,20 @@ Brief Description
 
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 
+Properties
+----------
+
++---------------------------------+--------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_next_pass>`             |
++---------------------------------+--------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_render_priority>` |
++---------------------------------+--------------------------------------------------------+
+
 Constants
 ---------
 
 - **RENDER_PRIORITY_MAX** = **127**
 - **RENDER_PRIORITY_MIN** = **-128**
-
 Description
 -----------
 
@@ -34,8 +44,19 @@ Property Descriptions
 
 - :ref:`Material<class_Material>` **next_pass**
 
++----------+----------------------+
+| *Setter* | set_next_pass(value) |
++----------+----------------------+
+| *Getter* | get_next_pass()      |
++----------+----------------------+
+
   .. _class_Material_render_priority:
 
 - :ref:`int<class_int>` **render_priority**
 
++----------+----------------------------+
+| *Setter* | set_render_priority(value) |
++----------+----------------------------+
+| *Getter* | get_render_priority()      |
++----------+----------------------------+
 

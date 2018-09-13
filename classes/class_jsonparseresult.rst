@@ -8,12 +8,26 @@ JSONParseResult
 ===============
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Data class wrapper for decoded JSON.
+
+Properties
+----------
+
++---------------------------------------+---------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_error>`               |
++---------------------------------------+---------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_error_line>`     |
++---------------------------------------+---------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_error_string>` |
++---------------------------------------+---------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_result>`             |
++---------------------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -25,19 +39,51 @@ Property Descriptions
 
   .. _class_JSONParseResult_error:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **error** - The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
+- :ref:`Error<enum_@GlobalScope_Error>` **error**
+
++----------+------------------+
+| *Setter* | set_error(value) |
++----------+------------------+
+| *Getter* | get_error()      |
++----------+------------------+
+
+The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
   .. _class_JSONParseResult_error_line:
 
-- :ref:`int<class_int>` **error_line** - The line number where the error occurred if JSON source was not successfully parsed.
+- :ref:`int<class_int>` **error_line**
+
++----------+-----------------------+
+| *Setter* | set_error_line(value) |
++----------+-----------------------+
+| *Getter* | get_error_line()      |
++----------+-----------------------+
+
+The line number where the error occurred if JSON source was not successfully parsed.
 
   .. _class_JSONParseResult_error_string:
 
-- :ref:`String<class_String>` **error_string** - The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
+- :ref:`String<class_String>` **error_string**
+
++----------+-------------------------+
+| *Setter* | set_error_string(value) |
++----------+-------------------------+
+| *Getter* | get_error_string()      |
++----------+-------------------------+
+
+The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
   .. _class_JSONParseResult_result:
 
-- :ref:`Variant<class_Variant>` **result** - A :ref:`Variant<class_Variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_Dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_Array>` will be returned.
+- :ref:`Variant<class_Variant>` **result**
+
++----------+-------------------+
+| *Setter* | set_result(value) |
++----------+-------------------+
+| *Getter* | get_result()      |
++----------+-------------------+
+
+A :ref:`Variant<class_Variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_Dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_Array>` will be returned.
 
 *Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.
 
@@ -50,5 +96,4 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
         print(p.result[0]) # prints 'hello'
     else:
         print("unexpected results")
-
 

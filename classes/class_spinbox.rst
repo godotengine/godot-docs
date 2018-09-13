@@ -8,6 +8,7 @@ SpinBox
 =======
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,30 @@ Brief Description
 
 Numerical input text field.
 
+Properties
+----------
+
++-----------------------------+-----------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`editable<class_SpinBox_editable>` |
++-----------------------------+-----------------------------------------+
+| :ref:`String<class_String>` | :ref:`prefix<class_SpinBox_prefix>`     |
++-----------------------------+-----------------------------------------+
+| :ref:`String<class_String>` | :ref:`suffix<class_SpinBox_suffix>`     |
++-----------------------------+-----------------------------------------+
+
 Methods
 -------
 
 +----------------------------------+---------------------------------------------------------------+
 | :ref:`LineEdit<class_LineEdit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)** |
 +----------------------------------+---------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++-------------------------------+-------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`updown<class_SpinBox_updown>` |
++-------------------------------+-------------------------------------+
 
 Description
 -----------
@@ -34,20 +53,36 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **editable**
 
++----------+---------------------+
+| *Setter* | set_editable(value) |
++----------+---------------------+
+| *Getter* | is_editable()       |
++----------+---------------------+
+
   .. _class_SpinBox_prefix:
 
 - :ref:`String<class_String>` **prefix**
+
++----------+-------------------+
+| *Setter* | set_prefix(value) |
++----------+-------------------+
+| *Getter* | get_prefix()      |
++----------+-------------------+
 
   .. _class_SpinBox_suffix:
 
 - :ref:`String<class_String>` **suffix**
 
++----------+-------------------+
+| *Setter* | set_suffix(value) |
++----------+-------------------+
+| *Getter* | get_suffix()      |
++----------+-------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_SpinBox_get_line_edit:
+  .. _class_SpinBox_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
-
 

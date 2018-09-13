@@ -8,12 +8,22 @@ Bone2D
 ======
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 
+
+Properties
+----------
+
++---------------------------------------+----------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_default_length>` |
++---------------------------------------+----------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_rest>`                     |
++---------------------------------------+----------------------------------------------------+
 
 Methods
 -------
@@ -33,24 +43,34 @@ Property Descriptions
 
 - :ref:`float<class_float>` **default_length**
 
++----------+---------------------------+
+| *Setter* | set_default_length(value) |
++----------+---------------------------+
+| *Getter* | get_default_length()      |
++----------+---------------------------+
+
   .. _class_Bone2D_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **rest**
 
++----------+-----------------+
+| *Setter* | set_rest(value) |
++----------+-----------------+
+| *Getter* | get_rest()      |
++----------+-----------------+
 
 Method Descriptions
 -------------------
 
-.. _class_Bone2D_apply_rest:
+  .. _class_Bone2D_apply_rest:
 
 - void **apply_rest** **(** **)**
 
-.. _class_Bone2D_get_index_in_skeleton:
+  .. _class_Bone2D_get_index_in_skeleton:
 
 - :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** const
 
-.. _class_Bone2D_get_skeleton_rest:
+  .. _class_Bone2D_get_skeleton_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** const
-
 

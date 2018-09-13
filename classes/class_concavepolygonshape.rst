@@ -8,6 +8,7 @@ ConcavePolygonShape
 ===================
 
 **Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -32,16 +33,15 @@ Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_
 Method Descriptions
 -------------------
 
-.. _class_ConcavePolygonShape_get_faces:
+  .. _class_ConcavePolygonShape_get_faces:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** const
 
 Return the faces (an array of triangles).
 
-.. _class_ConcavePolygonShape_set_faces:
+  .. _class_ConcavePolygonShape_set_faces:
 
 - void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
 
 Set the faces (an array of triangles).
-
 

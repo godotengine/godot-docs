@@ -8,6 +8,7 @@ VisualScriptInputAction
 =======================
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,18 +16,26 @@ Brief Description
 
 
 
+Properties
+----------
+
++------------------------------------------------+-----------------------------------------------------+
+| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_action>` |
++------------------------------------------------+-----------------------------------------------------+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_mode>`     |
++------------------------------------------------+-----------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualScriptInputAction_Mode:
 
-enum **Mode**
+enum **Mode**:
 
 - **MODE_PRESSED** = **0**
 - **MODE_RELEASED** = **1**
 - **MODE_JUST_PRESSED** = **2**
 - **MODE_JUST_RELEASED** = **3**
-
 
 Property Descriptions
 ---------------------
@@ -35,8 +44,19 @@ Property Descriptions
 
 - :ref:`String<class_String>` **action**
 
++----------+------------------------+
+| *Setter* | set_action_name(value) |
++----------+------------------------+
+| *Getter* | get_action_name()      |
++----------+------------------------+
+
   .. _class_VisualScriptInputAction_mode:
 
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 
++----------+------------------------+
+| *Setter* | set_action_mode(value) |
++----------+------------------------+
+| *Getter* | get_action_mode()      |
++----------+------------------------+
 

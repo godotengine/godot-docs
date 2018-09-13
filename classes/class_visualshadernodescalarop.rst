@@ -8,6 +8,7 @@ VisualShaderNodeScalarOp
 ========================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,19 @@ Brief Description
 
 
 
+Properties
+----------
+
++---------------------------------------------------------+----------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_operator>` |
++---------------------------------------------------------+----------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualShaderNodeScalarOp_Operator:
 
-enum **Operator**
+enum **Operator**:
 
 - **OP_ADD** = **0**
 - **OP_SUB** = **1**
@@ -32,7 +40,6 @@ enum **Operator**
 - **OP_MIN** = **7**
 - **OP_ATAN2** = **8**
 
-
 Property Descriptions
 ---------------------
 
@@ -40,4 +47,9 @@ Property Descriptions
 
 - :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator**
 
++----------+---------------------+
+| *Setter* | set_operator(value) |
++----------+---------------------+
+| *Getter* | get_operator()      |
++----------+---------------------+
 

@@ -8,6 +8,7 @@ WebSocketPeer
 =============
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -39,11 +40,10 @@ Enumerations
 
   .. _enum_WebSocketPeer_WriteMode:
 
-enum **WriteMode**
+enum **WriteMode**:
 
 - **WRITE_MODE_TEXT** = **0** --- Specify that WebSockets messages should be transferred as text payload (only valid UTF-8 is allowed).
 - **WRITE_MODE_BINARY** = **1** --- Specify that WebSockets messages should be transferred as binary payload (any byte combination is allowed).
-
 
 Description
 -----------
@@ -55,46 +55,45 @@ You can choose to write to the socket in binary or text mode, and you can recogn
 Method Descriptions
 -------------------
 
-.. _class_WebSocketPeer_close:
+  .. _class_WebSocketPeer_close:
 
 - void **close** **(** **)**
 
 Close this WebSocket connection, actively disconnecting the peer.
 
-.. _class_WebSocketPeer_get_connected_host:
+  .. _class_WebSocketPeer_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
 Returns the IP Address of the connected peer. (Not available in HTML5 export)
 
-.. _class_WebSocketPeer_get_connected_port:
+  .. _class_WebSocketPeer_get_connected_port:
 
 - :ref:`int<class_int>` **get_connected_port** **(** **)** const
 
 Returns the remote port of the connected peer. (Not available in HTML5 export)
 
-.. _class_WebSocketPeer_get_write_mode:
+  .. _class_WebSocketPeer_get_write_mode:
 
 - :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` **get_write_mode** **(** **)** const
 
 Get the current selected write mode. See :ref:`WriteMode<enum_@GlobalScope_WriteMode>`.
 
-.. _class_WebSocketPeer_is_connected_to_host:
+  .. _class_WebSocketPeer_is_connected_to_host:
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
 
 Returns ``true`` if this peer is currently connected.
 
-.. _class_WebSocketPeer_set_write_mode:
+  .. _class_WebSocketPeer_set_write_mode:
 
 - void **set_write_mode** **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**
 
 Sets the socket to use the given :ref:`WriteMode<enum_@GlobalScope_WriteMode>`.
 
-.. _class_WebSocketPeer_was_string_packet:
+  .. _class_WebSocketPeer_was_string_packet:
 
 - :ref:`bool<class_bool>` **was_string_packet** **(** **)** const
 
 Returns ``true`` if the last received packet was sent as a text payload. See :ref:`WriteMode<enum_@GlobalScope_WriteMode>`
-
 

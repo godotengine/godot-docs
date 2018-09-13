@@ -8,6 +8,7 @@ EditorPlugin
 ============
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -121,35 +122,34 @@ Methods
 Signals
 -------
 
-.. _class_EditorPlugin_main_screen_changed:
+  .. _class_EditorPlugin_main_screen_changed:
 
 - **main_screen_changed** **(** :ref:`String<class_String>` screen_name **)**
 
 Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
 
-.. _class_EditorPlugin_resource_saved:
+  .. _class_EditorPlugin_resource_saved:
 
 - **resource_saved** **(** :ref:`Resource<class_Resource>` resource **)**
 
-.. _class_EditorPlugin_scene_changed:
+  .. _class_EditorPlugin_scene_changed:
 
 - **scene_changed** **(** :ref:`Node<class_Node>` scene_root **)**
 
 Emitted when user change scene. The argument is a root node of freshly opened scene.
 
-.. _class_EditorPlugin_scene_closed:
+  .. _class_EditorPlugin_scene_closed:
 
 - **scene_closed** **(** :ref:`String<class_String>` filepath **)**
 
 Emitted when user close scene. The argument is file path to a closed scene.
-
 
 Enumerations
 ------------
 
   .. _enum_EditorPlugin_DockSlot:
 
-enum **DockSlot**
+enum **DockSlot**:
 
 - **DOCK_SLOT_LEFT_UL** = **0**
 - **DOCK_SLOT_LEFT_BL** = **1**
@@ -163,7 +163,7 @@ enum **DockSlot**
 
   .. _enum_EditorPlugin_CustomControlContainer:
 
-enum **CustomControlContainer**
+enum **CustomControlContainer**:
 
 - **CONTAINER_TOOLBAR** = **0**
 - **CONTAINER_SPATIAL_EDITOR_MENU** = **1**
@@ -176,7 +176,6 @@ enum **CustomControlContainer**
 - **CONTAINER_CANVAS_EDITOR_BOTTOM** = **8**
 - **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **9**
 
-
 Description
 -----------
 
@@ -186,23 +185,22 @@ Tutorials
 ---------
 
 - :doc:`../development/plugins/index`
-
 Method Descriptions
 -------------------
 
-.. _class_EditorPlugin_add_autoload_singleton:
+  .. _class_EditorPlugin_add_autoload_singleton:
 
 - void **add_autoload_singleton** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` path **)**
 
 Add a script at ``path`` to the Autoload list as ``name``.
 
-.. _class_EditorPlugin_add_control_to_bottom_panel:
+  .. _class_EditorPlugin_add_control_to_bottom_panel:
 
 - :ref:`ToolButton<class_ToolButton>` **add_control_to_bottom_panel** **(** :ref:`Control<class_Control>` control, :ref:`String<class_String>` title **)**
 
 Add a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. If your plugin is being removed, also make sure to remove your control by calling :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>`.
 
-.. _class_EditorPlugin_add_control_to_container:
+  .. _class_EditorPlugin_add_control_to_container:
 
 - void **add_control_to_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
@@ -212,7 +210,7 @@ Please remember that you have to manage the visibility of your custom controls y
 
 If your plugin is being removed, also make sure to remove your custom controls too.
 
-.. _class_EditorPlugin_add_control_to_dock:
+  .. _class_EditorPlugin_add_control_to_dock:
 
 - void **add_control_to_dock** **(** :ref:`DockSlot<enum_EditorPlugin_DockSlot>` slot, :ref:`Control<class_Control>` control **)**
 
@@ -222,7 +220,7 @@ If the dock is repositioned and as long as the plugin is active, the editor will
 
 If your plugin is being removed, also make sure to remove your control by calling :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>`.
 
-.. _class_EditorPlugin_add_custom_type:
+  .. _class_EditorPlugin_add_custom_type:
 
 - void **add_custom_type** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture<class_Texture>` icon **)**
 
@@ -234,33 +232,33 @@ You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
 
-.. _class_EditorPlugin_add_export_plugin:
+  .. _class_EditorPlugin_add_export_plugin:
 
 - void **add_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
-.. _class_EditorPlugin_add_import_plugin:
+  .. _class_EditorPlugin_add_import_plugin:
 
 - void **add_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
 
-.. _class_EditorPlugin_add_inspector_plugin:
+  .. _class_EditorPlugin_add_inspector_plugin:
 
 - void **add_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
 
-.. _class_EditorPlugin_add_scene_import_plugin:
+  .. _class_EditorPlugin_add_scene_import_plugin:
 
 - void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
-.. _class_EditorPlugin_add_tool_menu_item:
+  .. _class_EditorPlugin_add_tool_menu_item:
 
 - void **add_tool_menu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)**
 
 Adds a custom menu to 'Project > Tools' as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
 
-.. _class_EditorPlugin_add_tool_submenu_item:
+  .. _class_EditorPlugin_add_tool_submenu_item:
 
 - void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**
 
-.. _class_EditorPlugin_apply_changes:
+  .. _class_EditorPlugin_apply_changes:
 
 - void **apply_changes** **(** **)** virtual
 
@@ -268,35 +266,35 @@ This method is called when the editor is about to save the project, switch to an
 
 This is used, for example, in shader editors to let the plugin know that it must apply the shader code being written by the user to the object.
 
-.. _class_EditorPlugin_build:
+  .. _class_EditorPlugin_build:
 
 - :ref:`bool<class_bool>` **build** **(** **)** virtual
 
-.. _class_EditorPlugin_clear:
+  .. _class_EditorPlugin_clear:
 
 - void **clear** **(** **)** virtual
 
 Clear all the state and reset the object being edited to zero. This ensures your plugin does not keep editing a currently existing node, or a node from the wrong scene.
 
-.. _class_EditorPlugin_edit:
+  .. _class_EditorPlugin_edit:
 
 - void **edit** **(** :ref:`Object<class_Object>` object **)** virtual
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
-.. _class_EditorPlugin_forward_canvas_gui_input:
+  .. _class_EditorPlugin_forward_canvas_gui_input:
 
 - :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
-.. _class_EditorPlugin_forward_draw_over_viewport:
+  .. _class_EditorPlugin_forward_draw_over_viewport:
 
 - void **forward_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
 
-.. _class_EditorPlugin_forward_force_draw_over_viewport:
+  .. _class_EditorPlugin_forward_force_draw_over_viewport:
 
 - void **forward_force_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
 
-.. _class_EditorPlugin_forward_spatial_gui_input:
+  .. _class_EditorPlugin_forward_spatial_gui_input:
 
 - :ref:`bool<class_bool>` **forward_spatial_gui_input** **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
@@ -304,69 +302,69 @@ Implement this function if you are interested in 3D view screen input events. It
 
 If you would like to always gets those input events then additionally use :ref:`set_input_forwarding_always_enabled<class_EditorPlugin_set_input_forwarding_always_enabled>`.
 
-.. _class_EditorPlugin_get_breakpoints:
+  .. _class_EditorPlugin_get_breakpoints:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_breakpoints** **(** **)** virtual
 
 This is for editors that edit script based objects. You can return a list of breakpoints in the format (script:line), for example: res://path_to_script.gd:25
 
-.. _class_EditorPlugin_get_editor_interface:
+  .. _class_EditorPlugin_get_editor_interface:
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-.. _class_EditorPlugin_get_plugin_icon:
+  .. _class_EditorPlugin_get_plugin_icon:
 
 - :ref:`Object<class_Object>` **get_plugin_icon** **(** **)** virtual
 
-.. _class_EditorPlugin_get_plugin_name:
+  .. _class_EditorPlugin_get_plugin_name:
 
 - :ref:`String<class_String>` **get_plugin_name** **(** **)** virtual
 
-.. _class_EditorPlugin_get_script_create_dialog:
+  .. _class_EditorPlugin_get_script_create_dialog:
 
 - :ref:`ScriptCreateDialog<class_ScriptCreateDialog>` **get_script_create_dialog** **(** **)**
 
 Gets the Editor's dialogue used for making scripts. Note that users can configure it before use.
 
-.. _class_EditorPlugin_get_state:
+  .. _class_EditorPlugin_get_state:
 
 - :ref:`Dictionary<class_Dictionary>` **get_state** **(** **)** virtual
 
 Get the state of your plugin editor. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns).
 
-.. _class_EditorPlugin_get_undo_redo:
+  .. _class_EditorPlugin_get_undo_redo:
 
 - :ref:`UndoRedo<class_UndoRedo>` **get_undo_redo** **(** **)**
 
 Get the undo/redo object. Most actions in the editor can be undoable, so use this object to make sure this happens when it's worth it.
 
-.. _class_EditorPlugin_get_window_layout:
+  .. _class_EditorPlugin_get_window_layout:
 
 - void **get_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual
 
 Get the GUI layout of the plugin. This is used to save the project's editor layout when the :ref:`EditorPlugin.queue_save_layout<class_EditorPlugin_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
 
-.. _class_EditorPlugin_handles:
+  .. _class_EditorPlugin_handles:
 
 - :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_Object>` object **)** virtual
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`EditorPlugin.edit<class_EditorPlugin_edit>` and :ref:`EditorPlugin.make_visible<class_EditorPlugin_make_visible>` called when the editor requests them.
 
-.. _class_EditorPlugin_has_main_screen:
+  .. _class_EditorPlugin_has_main_screen:
 
 - :ref:`bool<class_bool>` **has_main_screen** **(** **)** virtual
 
 Return true if this is a main screen editor plugin (it goes in the main screen selector together with 2D, 3D, Script).
 
-.. _class_EditorPlugin_hide_bottom_panel:
+  .. _class_EditorPlugin_hide_bottom_panel:
 
 - void **hide_bottom_panel** **(** **)**
 
-.. _class_EditorPlugin_make_bottom_panel_item_visible:
+  .. _class_EditorPlugin_make_bottom_panel_item_visible:
 
 - void **make_bottom_panel_item_visible** **(** :ref:`Control<class_Control>` item **)**
 
-.. _class_EditorPlugin_make_visible:
+  .. _class_EditorPlugin_make_visible:
 
 - void **make_visible** **(** :ref:`bool<class_bool>` visible **)** virtual
 
@@ -374,94 +372,93 @@ This function will be called when the editor is requested to become visible. It 
 
 Remember that you have to manage the visibility of all your editor controls manually.
 
-.. _class_EditorPlugin_queue_save_layout:
+  .. _class_EditorPlugin_queue_save_layout:
 
 - void **queue_save_layout** **(** **)** const
 
 Queue save the project's editor layout.
 
-.. _class_EditorPlugin_remove_autoload_singleton:
+  .. _class_EditorPlugin_remove_autoload_singleton:
 
 - void **remove_autoload_singleton** **(** :ref:`String<class_String>` name **)**
 
 Remove an Autoload ``name`` from the list.
 
-.. _class_EditorPlugin_remove_control_from_bottom_panel:
+  .. _class_EditorPlugin_remove_control_from_bottom_panel:
 
 - void **remove_control_from_bottom_panel** **(** :ref:`Control<class_Control>` control **)**
 
 Remove the control from the bottom panel. Don't forget to call this if you added one, so the editor can remove it cleanly.
 
-.. _class_EditorPlugin_remove_control_from_container:
+  .. _class_EditorPlugin_remove_control_from_container:
 
 - void **remove_control_from_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
 Remove the control from the specified container. Use it when cleaning up after adding a control with :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>`. Note that you can simply free the control if you won't use it anymore.
 
-.. _class_EditorPlugin_remove_control_from_docks:
+  .. _class_EditorPlugin_remove_control_from_docks:
 
 - void **remove_control_from_docks** **(** :ref:`Control<class_Control>` control **)**
 
 Remove the control from the dock. Don't forget to call this if you added one, so the editor can save the layout and remove it cleanly.
 
-.. _class_EditorPlugin_remove_custom_type:
+  .. _class_EditorPlugin_remove_custom_type:
 
 - void **remove_custom_type** **(** :ref:`String<class_String>` type **)**
 
 Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlugin_add_custom_type>`
 
-.. _class_EditorPlugin_remove_export_plugin:
+  .. _class_EditorPlugin_remove_export_plugin:
 
 - void **remove_export_plugin** **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**
 
-.. _class_EditorPlugin_remove_import_plugin:
+  .. _class_EditorPlugin_remove_import_plugin:
 
 - void **remove_import_plugin** **(** :ref:`EditorImportPlugin<class_EditorImportPlugin>` importer **)**
 
-.. _class_EditorPlugin_remove_inspector_plugin:
+  .. _class_EditorPlugin_remove_inspector_plugin:
 
 - void **remove_inspector_plugin** **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**
 
-.. _class_EditorPlugin_remove_scene_import_plugin:
+  .. _class_EditorPlugin_remove_scene_import_plugin:
 
 - void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
 
-.. _class_EditorPlugin_remove_tool_menu_item:
+  .. _class_EditorPlugin_remove_tool_menu_item:
 
 - void **remove_tool_menu_item** **(** :ref:`String<class_String>` name **)**
 
 Removes a menu ``name`` from 'Project > Tools'.
 
-.. _class_EditorPlugin_save_external_data:
+  .. _class_EditorPlugin_save_external_data:
 
 - void **save_external_data** **(** **)** virtual
 
 This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
-.. _class_EditorPlugin_set_force_draw_over_forwarding_enabled:
+  .. _class_EditorPlugin_set_force_draw_over_forwarding_enabled:
 
 - void **set_force_draw_over_forwarding_enabled** **(** **)**
 
-.. _class_EditorPlugin_set_input_event_forwarding_always_enabled:
+  .. _class_EditorPlugin_set_input_event_forwarding_always_enabled:
 
 - void **set_input_event_forwarding_always_enabled** **(** **)**
 
 Use this method if you always want to receive inputs from 3D view screen inside :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>`. It might be especially usable if your plugin will want to use raycast in the scene.
 
-.. _class_EditorPlugin_set_state:
+  .. _class_EditorPlugin_set_state:
 
 - void **set_state** **(** :ref:`Dictionary<class_Dictionary>` state **)** virtual
 
 Restore the state saved by :ref:`EditorPlugin.get_state<class_EditorPlugin_get_state>`.
 
-.. _class_EditorPlugin_set_window_layout:
+  .. _class_EditorPlugin_set_window_layout:
 
 - void **set_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual
 
 Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<class_EditorPlugin_get_window_layout>`.
 
-.. _class_EditorPlugin_update_overlays:
+  .. _class_EditorPlugin_update_overlays:
 
 - :ref:`int<class_int>` **update_overlays** **(** **)** const
-
 

@@ -8,7 +8,9 @@ Sky
 ===
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PanoramaSky<class_PanoramaSky>`, :ref:`ProceduralSky<class_ProceduralSky>`
+
 **Category:** Core
 
 Brief Description
@@ -16,12 +18,19 @@ Brief Description
 
 The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
+Properties
+----------
+
++--------------------------------------------+-----------------------------------------------+
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_radiance_size>` |
++--------------------------------------------+-----------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_Sky_RadianceSize:
 
-enum **RadianceSize**
+enum **RadianceSize**:
 
 - **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels.
 - **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels.
@@ -31,7 +40,6 @@ enum **RadianceSize**
 - **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 pixels.
 - **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 pixels.
 - **RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest size it can be.
-
 
 Description
 -----------
@@ -43,10 +51,17 @@ Property Descriptions
 
   .. _class_Sky_radiance_size:
 
-- :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size** - The Sky's radiance map size.
+- :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
+
++----------+--------------------------+
+| *Setter* | set_radiance_size(value) |
++----------+--------------------------+
+| *Getter* | get_radiance_size()      |
++----------+--------------------------+
+
+The Sky's radiance map size.
 
 The higher the radiance map size, the more detailed the lighting from the Sky will be.
 
 See RADIANCE_SIZE\_\* constants for values. Default size is RADIANCE_SIZE_512.
-
 

@@ -8,6 +8,7 @@ InputDefault
 ============
 
 **Inherits:** :ref:`Input<class_Input>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description

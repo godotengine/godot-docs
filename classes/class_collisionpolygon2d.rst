@@ -8,6 +8,7 @@ CollisionPolygon2D
 ==================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,16 +16,28 @@ Brief Description
 
 Defines a 2D collision polygon.
 
+Properties
+----------
+
++-----------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_build_mode>`               |
++-----------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_disabled>`                   |
++-----------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_one_way_collision>` |
++-----------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`polygon<class_CollisionPolygon2D_polygon>`                     |
++-----------------------------------------------------+----------------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_CollisionPolygon2D_BuildMode:
 
-enum **BuildMode**
+enum **BuildMode**:
 
 - **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
 - **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
-
 
 Description
 -----------
@@ -36,18 +49,49 @@ Property Descriptions
 
   .. _class_CollisionPolygon2D_build_mode:
 
-- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode** - Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUILD_SOLIDS``.
+- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode**
+
++----------+-----------------------+
+| *Setter* | set_build_mode(value) |
++----------+-----------------------+
+| *Getter* | get_build_mode()      |
++----------+-----------------------+
+
+Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUILD_SOLIDS``.
 
   .. _class_CollisionPolygon2D_disabled:
 
-- :ref:`bool<class_bool>` **disabled** - If ``true`` no collisions will be detected.
+- :ref:`bool<class_bool>` **disabled**
+
++----------+---------------------+
+| *Setter* | set_disabled(value) |
++----------+---------------------+
+| *Getter* | is_disabled()       |
++----------+---------------------+
+
+If ``true`` no collisions will be detected.
 
   .. _class_CollisionPolygon2D_one_way_collision:
 
-- :ref:`bool<class_bool>` **one_way_collision** - If ``true`` only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
+- :ref:`bool<class_bool>` **one_way_collision**
+
++----------+--------------------------------+
+| *Setter* | set_one_way_collision(value)   |
++----------+--------------------------------+
+| *Getter* | is_one_way_collision_enabled() |
++----------+--------------------------------+
+
+If ``true`` only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
 
   .. _class_CollisionPolygon2D_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
++----------+--------------------+
+| *Setter* | set_polygon(value) |
++----------+--------------------+
+| *Getter* | get_polygon()      |
++----------+--------------------+
+
+The polygon's list of vertices. The final point will be connected to the first.
 

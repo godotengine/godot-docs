@@ -8,6 +8,7 @@ EditorResourcePreviewGenerator
 ==============================
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -34,7 +35,7 @@ Custom code to generate previews. Please check "file_dialog/thumbnail_size" in E
 Method Descriptions
 -------------------
 
-.. _class_EditorResourcePreviewGenerator_generate:
+  .. _class_EditorResourcePreviewGenerator_generate:
 
 - :ref:`Texture<class_Texture>` **generate** **(** :ref:`Resource<class_Resource>` from **)** virtual
 
@@ -44,7 +45,7 @@ Returning an empty texture is an OK way to fail and let another generator take c
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
-.. _class_EditorResourcePreviewGenerator_generate_from_path:
+  .. _class_EditorResourcePreviewGenerator_generate_from_path:
 
 - :ref:`Texture<class_Texture>` **generate_from_path** **(** :ref:`String<class_String>` path **)** virtual
 
@@ -54,10 +55,9 @@ Returning an empty texture is an OK way to fail and let another generator take c
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
-.. _class_EditorResourcePreviewGenerator_handles:
+  .. _class_EditorResourcePreviewGenerator_handles:
 
 - :ref:`bool<class_bool>` **handles** **(** :ref:`String<class_String>` type **)** virtual
 
 Return if your generator supports this resource type.
-
 

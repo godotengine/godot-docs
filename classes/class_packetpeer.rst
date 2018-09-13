@@ -8,13 +8,22 @@ PacketPeer
 ==========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Abstraction and base class for packet-based protocols.
+
+Properties
+----------
+
++-------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_allow_object_decoding>` |
++-------------------------+----------------------------------------------------------------------+
 
 Methods
 -------
@@ -45,44 +54,48 @@ Property Descriptions
 
 - :ref:`bool<class_bool>` **allow_object_decoding**
 
++----------+----------------------------------+
+| *Setter* | set_allow_object_decoding(value) |
++----------+----------------------------------+
+| *Getter* | is_object_decoding_allowed()     |
++----------+----------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_PacketPeer_get_available_packet_count:
+  .. _class_PacketPeer_get_available_packet_count:
 
 - :ref:`int<class_int>` **get_available_packet_count** **(** **)** const
 
 Return the number of packets currently available in the ring-buffer.
 
-.. _class_PacketPeer_get_packet:
+  .. _class_PacketPeer_get_packet:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_packet** **(** **)**
 
 Get a raw packet.
 
-.. _class_PacketPeer_get_packet_error:
+  .. _class_PacketPeer_get_packet_error:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
 Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_get_packet>` and :ref:`get_var<class_PacketPeer_get_var>`).
 
-.. _class_PacketPeer_get_var:
+  .. _class_PacketPeer_get_var:
 
 - :ref:`Variant<class_Variant>` **get_var** **(** **)**
 
 Get a Variant.
 
-.. _class_PacketPeer_put_packet:
+  .. _class_PacketPeer_put_packet:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Send a raw packet.
 
-.. _class_PacketPeer_put_var:
+  .. _class_PacketPeer_put_var:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var **)**
 
 Send a Variant as a packet.
-
 

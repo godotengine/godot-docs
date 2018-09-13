@@ -8,12 +8,20 @@ PanoramaSky
 ===========
 
 **Inherits:** :ref:`Sky<class_Sky>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A type of :ref:`Sky<class_Sky>` used to draw a background texture.
+
+Properties
+----------
+
++-------------------------------+---------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_panorama>` |
++-------------------------------+---------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_PanoramaSky_panorama:
 
-- :ref:`Texture<class_Texture>` **panorama** - :ref:`Texture<class_Texture>` to be applied to the PanoramaSky.
+- :ref:`Texture<class_Texture>` **panorama**
 
++----------+---------------------+
+| *Setter* | set_panorama(value) |
++----------+---------------------+
+| *Getter* | get_panorama()      |
++----------+---------------------+
+
+:ref:`Texture<class_Texture>` to be applied to the PanoramaSky.
 

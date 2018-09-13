@@ -8,12 +8,24 @@ PacketPeerStream
 ================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Wrapper to use a PacketPeer over a StreamPeer.
+
+Properties
+----------
+
++-------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`input_buffer_max_size<class_PacketPeerStream_input_buffer_max_size>`   |
++-------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`output_buffer_max_size<class_PacketPeerStream_output_buffer_max_size>` |
++-------------------------------------+------------------------------------------------------------------------------+
+| :ref:`StreamPeer<class_StreamPeer>` | :ref:`stream_peer<class_PacketPeerStream_stream_peer>`                       |
++-------------------------------------+------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -27,12 +39,31 @@ Property Descriptions
 
 - :ref:`int<class_int>` **input_buffer_max_size**
 
++----------+----------------------------------+
+| *Setter* | set_input_buffer_max_size(value) |
++----------+----------------------------------+
+| *Getter* | get_input_buffer_max_size()      |
++----------+----------------------------------+
+
   .. _class_PacketPeerStream_output_buffer_max_size:
 
 - :ref:`int<class_int>` **output_buffer_max_size**
 
++----------+-----------------------------------+
+| *Setter* | set_output_buffer_max_size(value) |
++----------+-----------------------------------+
+| *Getter* | get_output_buffer_max_size()      |
++----------+-----------------------------------+
+
   .. _class_PacketPeerStream_stream_peer:
 
-- :ref:`StreamPeer<class_StreamPeer>` **stream_peer** - The wrapped :ref:`StreamPeer<class_StreamPeer>` object.
+- :ref:`StreamPeer<class_StreamPeer>` **stream_peer**
 
++----------+------------------------+
+| *Setter* | set_stream_peer(value) |
++----------+------------------------+
+| *Getter* | get_stream_peer()      |
++----------+------------------------+
+
+The wrapped :ref:`StreamPeer<class_StreamPeer>` object.
 

@@ -8,12 +8,20 @@ ColorRect
 =========
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Colored rectangle.
+
+Properties
+----------
+
++---------------------------+-------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_color>` |
++---------------------------+-------------------------------------+
 
 Description
 -----------
@@ -25,10 +33,17 @@ Property Descriptions
 
   .. _class_ColorRect_color:
 
-- :ref:`Color<class_Color>` **color** - The fill color.
+- :ref:`Color<class_Color>` **color**
+
++----------+------------------------+
+| *Setter* | set_frame_color(value) |
++----------+------------------------+
+| *Getter* | get_frame_color()      |
++----------+------------------------+
+
+The fill color.
 
 ::
 
     $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect's color to red.
-
 

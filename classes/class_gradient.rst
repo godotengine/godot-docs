@@ -8,12 +8,22 @@ Gradient
 ========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Color interpolator node.
+
+Properties
+----------
+
++---------------------------------------------+----------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`colors<class_Gradient_colors>`   |
++---------------------------------------------+----------------------------------------+
+| :ref:`PoolRealArray<class_PoolRealArray>`   | :ref:`offsets<class_Gradient_offsets>` |
++---------------------------------------------+----------------------------------------+
 
 Methods
 -------
@@ -46,62 +56,76 @@ Property Descriptions
 
   .. _class_Gradient_colors:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **colors** - Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
+- :ref:`PoolColorArray<class_PoolColorArray>` **colors**
+
++----------+-------------------+
+| *Setter* | set_colors(value) |
++----------+-------------------+
+| *Getter* | get_colors()      |
++----------+-------------------+
+
+Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
 
   .. _class_Gradient_offsets:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **offsets** - Gradient's offsets returned as a :ref:`PoolRealArray<class_PoolRealArray>`.
+- :ref:`PoolRealArray<class_PoolRealArray>` **offsets**
 
++----------+--------------------+
+| *Setter* | set_offsets(value) |
++----------+--------------------+
+| *Getter* | get_offsets()      |
++----------+--------------------+
+
+Gradient's offsets returned as a :ref:`PoolRealArray<class_PoolRealArray>`.
 
 Method Descriptions
 -------------------
 
-.. _class_Gradient_add_point:
+  .. _class_Gradient_add_point:
 
 - void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
 
 Adds the specified color to the end of the ramp, with the specified offset
 
-.. _class_Gradient_get_color:
+  .. _class_Gradient_get_color:
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)** const
 
 Returns the color of the ramp color at index *point*
 
-.. _class_Gradient_get_offset:
+  .. _class_Gradient_get_offset:
 
 - :ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)** const
 
 Returns the offset of the ramp color at index *point*
 
-.. _class_Gradient_get_point_count:
+  .. _class_Gradient_get_point_count:
 
 - :ref:`int<class_int>` **get_point_count** **(** **)** const
 
 Returns the number of colors in the ramp
 
-.. _class_Gradient_interpolate:
+  .. _class_Gradient_interpolate:
 
 - :ref:`Color<class_Color>` **interpolate** **(** :ref:`float<class_float>` offset **)**
 
 Returns the interpolated color specified by *offset*
 
-.. _class_Gradient_remove_point:
+  .. _class_Gradient_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` offset **)**
 
 Removes the color at the index *offset*
 
-.. _class_Gradient_set_color:
+  .. _class_Gradient_set_color:
 
 - void **set_color** **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**
 
 Sets the color of the ramp color at index *point*
 
-.. _class_Gradient_set_offset:
+  .. _class_Gradient_set_offset:
 
 - void **set_offset** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**
 
 Sets the offset for the ramp color at index *point*
-
 

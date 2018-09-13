@@ -8,6 +8,7 @@ GodotSharp
 ==========
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -31,28 +32,27 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_GodotSharp_attach_thread:
+  .. _class_GodotSharp_attach_thread:
 
 - void **attach_thread** **(** **)**
 
 Attaches the current thread to the mono runtime.
 
-.. _class_GodotSharp_detach_thread:
+  .. _class_GodotSharp_detach_thread:
 
 - void **detach_thread** **(** **)**
 
 Detaches the current thread from the mono runtime.
 
-.. _class_GodotSharp_is_domain_loaded:
+  .. _class_GodotSharp_is_domain_loaded:
 
 - :ref:`bool<class_bool>` **is_domain_loaded** **(** **)**
 
 Returns whether the scripts domain is loaded.
 
-.. _class_GodotSharp_is_finalizing_domain:
+  .. _class_GodotSharp_is_finalizing_domain:
 
 - :ref:`bool<class_bool>` **is_finalizing_domain** **(** **)**
 
 Returns whether the scripts domain is being finalized.
-
 

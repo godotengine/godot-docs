@@ -8,6 +8,7 @@ IP_Unix
 =======
 
 **Inherits:** :ref:`IP<class_IP>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description

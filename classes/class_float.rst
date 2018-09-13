@@ -33,22 +33,21 @@ Float built-in type.
 Method Descriptions
 -------------------
 
-.. _class_float_float:
+  .. _class_float_float:
 
 - :ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)**
 
 Cast a :ref:`bool<class_bool>` value to a floating point value, ``float(true)`` will be equals to 1.0 and ``float(false)`` will be equals to 0.0.
 
-.. _class_float_float:
+  .. _class_float_float:
 
 - :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a floating point value, ``float(1)`` will be equals to 1.0.
 
-.. _class_float_float:
+  .. _class_float_float:
 
 - :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 
 Cast a :ref:`String<class_String>` value to a floating point value. This method accepts float value strings like `` '1.23' `` and exponential notation strings for its parameter so calling `` float('1e3') `` will return 1000.0 and calling `` float('1e-3') `` will return -0.001.
-
 

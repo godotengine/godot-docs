@@ -8,12 +8,26 @@ DampedSpringJoint2D
 ===================
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Damped spring constraint for 2D physics.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`damping<class_DampedSpringJoint2D_damping>`         |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_DampedSpringJoint2D_length>`           |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`rest_length<class_DampedSpringJoint2D_rest_length>` |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`stiffness<class_DampedSpringJoint2D_stiffness>`     |
++---------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -25,18 +39,49 @@ Property Descriptions
 
   .. _class_DampedSpringJoint2D_damping:
 
-- :ref:`float<class_float>` **damping** - The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
+- :ref:`float<class_float>` **damping**
+
++----------+--------------------+
+| *Setter* | set_damping(value) |
++----------+--------------------+
+| *Getter* | get_damping()      |
++----------+--------------------+
+
+The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
 
   .. _class_DampedSpringJoint2D_length:
 
-- :ref:`float<class_float>` **length** - The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
+- :ref:`float<class_float>` **length**
+
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
+
+The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
 
   .. _class_DampedSpringJoint2D_rest_length:
 
-- :ref:`float<class_float>` **rest_length** - When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
+- :ref:`float<class_float>` **rest_length**
+
++----------+------------------------+
+| *Setter* | set_rest_length(value) |
++----------+------------------------+
+| *Getter* | get_rest_length()      |
++----------+------------------------+
+
+When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
 
   .. _class_DampedSpringJoint2D_stiffness:
 
-- :ref:`float<class_float>` **stiffness** - The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
+- :ref:`float<class_float>` **stiffness**
 
++----------+----------------------+
+| *Setter* | set_stiffness(value) |
++----------+----------------------+
+| *Getter* | get_stiffness()      |
++----------+----------------------+
+
+The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
 

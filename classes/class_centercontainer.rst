@@ -8,12 +8,20 @@ CenterContainer
 ===============
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Keeps children controls centered.
+
+Properties
+----------
+
++-------------------------+---------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_use_top_left>` |
++-------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -25,6 +33,13 @@ Property Descriptions
 
   .. _class_CenterContainer_use_top_left:
 
-- :ref:`bool<class_bool>` **use_top_left** - If ``true`` centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
+- :ref:`bool<class_bool>` **use_top_left**
 
++----------+-------------------------+
+| *Setter* | set_use_top_left(value) |
++----------+-------------------------+
+| *Getter* | is_using_top_left()     |
++----------+-------------------------+
+
+If ``true`` centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
 

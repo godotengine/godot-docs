@@ -8,12 +8,22 @@ HSeparator
 ==========
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Horizontal separator.
+
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`separation<class_HSeparator_separation>` |
++---------------------------------+------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_HSeparator_separator>`   |
++---------------------------------+------------------------------------------------+
 
 Description
 -----------

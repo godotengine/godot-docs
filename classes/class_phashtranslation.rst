@@ -8,6 +8,7 @@ PHashTranslation
 ================
 
 **Inherits:** :ref:`Translation<class_Translation>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -30,8 +31,7 @@ Optimized translation. Uses real-time compressed translations, which results in 
 Method Descriptions
 -------------------
 
-.. _class_PHashTranslation_generate:
+  .. _class_PHashTranslation_generate:
 
 - void **generate** **(** :ref:`Translation<class_Translation>` from **)**
-
 

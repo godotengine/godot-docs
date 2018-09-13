@@ -8,12 +8,40 @@ ToolButton
 ==========
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Flat button helper class.
+
+Theme Properties
+----------------
+
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ToolButton_disabled>`                       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ToolButton_focus>`                             |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ToolButton_font>`                               |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_ToolButton_font_color>`                   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ToolButton_font_color_disabled>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ToolButton_font_color_hover>`       |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ToolButton_font_color_pressed>`   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ToolButton_hover>`                             |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_ToolButton_hseparation>`                 |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ToolButton_normal>`                           |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ToolButton_pressed>`                         |
++---------------------------------+------------------------------------------------------------------+
 
 Description
 -----------

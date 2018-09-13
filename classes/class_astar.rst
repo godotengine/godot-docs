@@ -8,6 +8,7 @@ AStar
 =====
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -70,19 +71,19 @@ You must add points manually with :ref:`AStar.add_point<class_AStar_add_point>` 
 Method Descriptions
 -------------------
 
-.. _class_AStar__compute_cost:
+  .. _class_AStar__compute_cost:
 
 - :ref:`float<class_float>` **_compute_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when computing the cost between two connected points.
 
-.. _class_AStar__estimate_cost:
+  .. _class_AStar__estimate_cost:
 
 - :ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when estimating the cost between a point and the path's ending point.
 
-.. _class_AStar_add_point:
+  .. _class_AStar_add_point:
 
 - void **add_point** **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position, :ref:`float<class_float>` weight_scale=1.0 **)**
 
@@ -96,19 +97,19 @@ Adds a new point at the given position with the given identifier. The algorithm 
 
 If there already exists a point for the given id, its position and weight scale are updated to the given values.
 
-.. _class_AStar_are_points_connected:
+  .. _class_AStar_are_points_connected:
 
 - :ref:`bool<class_bool>` **are_points_connected** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)** const
 
 Returns whether there is a connection/segment between the given points.
 
-.. _class_AStar_clear:
+  .. _class_AStar_clear:
 
 - void **clear** **(** **)**
 
 Clears all the points and segments.
 
-.. _class_AStar_connect_points:
+  .. _class_AStar_connect_points:
 
 - void **connect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**
 
@@ -124,25 +125,25 @@ Creates a segment between the given points.
     as.connect_points(1, 2, false) # If bidirectional=false it's only possible to go from point 1 to point 2
                                    # and not from point 2 to point 1.
 
-.. _class_AStar_disconnect_points:
+  .. _class_AStar_disconnect_points:
 
 - void **disconnect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id **)**
 
 Deletes the segment between the given points.
 
-.. _class_AStar_get_available_point_id:
+  .. _class_AStar_get_available_point_id:
 
 - :ref:`int<class_int>` **get_available_point_id** **(** **)** const
 
 Returns the next available point id with no point associated to it.
 
-.. _class_AStar_get_closest_point:
+  .. _class_AStar_get_closest_point:
 
 - :ref:`int<class_int>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_position **)** const
 
 Returns the id of the closest point to ``to_position``. Returns -1 if there are no points in the points pool.
 
-.. _class_AStar_get_closest_position_in_segment:
+  .. _class_AStar_get_closest_position_in_segment:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_position_in_segment** **(** :ref:`Vector3<class_Vector3>` to_position **)** const
 
@@ -161,7 +162,7 @@ Returns the closest position to ``to_position`` that resides inside a segment be
 
 The result is in the segment that goes from ``y=0`` to ``y=5``. It's the closest position in the segment to the given point.
 
-.. _class_AStar_get_id_path:
+  .. _class_AStar_get_id_path:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_id_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
@@ -186,7 +187,7 @@ Returns an array with the ids of the points that form the path found by AStar be
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
-.. _class_AStar_get_point_connections:
+  .. _class_AStar_get_point_connections:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
 
@@ -206,52 +207,51 @@ Returns an array with the ids of the points that form the connect with the given
     
     var neighbors = as.get_point_connections(1) # returns [2, 3]
 
-.. _class_AStar_get_point_path:
+  .. _class_AStar_get_point_path:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_point_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
 Returns an array with the points that are in the path found by AStar between the given points. The array is ordered from the starting point to the ending point of the path.
 
-.. _class_AStar_get_point_position:
+  .. _class_AStar_get_point_position:
 
 - :ref:`Vector3<class_Vector3>` **get_point_position** **(** :ref:`int<class_int>` id **)** const
 
 Returns the position of the point associated with the given id.
 
-.. _class_AStar_get_point_weight_scale:
+  .. _class_AStar_get_point_weight_scale:
 
 - :ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`int<class_int>` id **)** const
 
 Returns the weight scale of the point associated with the given id.
 
-.. _class_AStar_get_points:
+  .. _class_AStar_get_points:
 
 - :ref:`Array<class_Array>` **get_points** **(** **)**
 
 Returns an array of all points.
 
-.. _class_AStar_has_point:
+  .. _class_AStar_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id **)** const
 
 Returns whether a point associated with the given id exists.
 
-.. _class_AStar_remove_point:
+  .. _class_AStar_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
 Removes the point associated with the given id from the points pool.
 
-.. _class_AStar_set_point_position:
+  .. _class_AStar_set_point_position:
 
 - void **set_point_position** **(** :ref:`int<class_int>` id, :ref:`Vector3<class_Vector3>` position **)**
 
 Sets the position for the point with the given id.
 
-.. _class_AStar_set_point_weight_scale:
+  .. _class_AStar_set_point_weight_scale:
 
 - void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
 
 Sets the ``weight_scale`` for the point with the given id.
-
 

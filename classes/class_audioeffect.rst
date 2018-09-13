@@ -8,7 +8,9 @@ AudioEffect
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AudioEffectCompressor<class_AudioEffectCompressor>`, :ref:`AudioEffectLimiter<class_AudioEffectLimiter>`, :ref:`AudioEffectAmplify<class_AudioEffectAmplify>`, :ref:`AudioEffectFilter<class_AudioEffectFilter>`, :ref:`AudioEffectDistortion<class_AudioEffectDistortion>`, :ref:`AudioEffectDelay<class_AudioEffectDelay>`, :ref:`AudioEffectStereoEnhance<class_AudioEffectStereoEnhance>`, :ref:`AudioEffectReverb<class_AudioEffectReverb>`, :ref:`AudioEffectPanner<class_AudioEffectPanner>`, :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectPitchShift<class_AudioEffectPitchShift>`, :ref:`AudioEffectRecord<class_AudioEffectRecord>`, :ref:`AudioEffectChorus<class_AudioEffectChorus>`, :ref:`AudioEffectPhaser<class_AudioEffectPhaser>`
+
 **Category:** Core
 
 Brief Description

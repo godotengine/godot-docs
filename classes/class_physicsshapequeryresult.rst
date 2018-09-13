@@ -8,6 +8,7 @@ PhysicsShapeQueryResult
 =======================
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -33,24 +34,23 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_PhysicsShapeQueryResult_get_result_count:
+  .. _class_PhysicsShapeQueryResult_get_result_count:
 
 - :ref:`int<class_int>` **get_result_count** **(** **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_object:
+  .. _class_PhysicsShapeQueryResult_get_result_object:
 
 - :ref:`Object<class_Object>` **get_result_object** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_object_id:
+  .. _class_PhysicsShapeQueryResult_get_result_object_id:
 
 - :ref:`int<class_int>` **get_result_object_id** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_object_shape:
+  .. _class_PhysicsShapeQueryResult_get_result_object_shape:
 
 - :ref:`int<class_int>` **get_result_object_shape** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_rid:
+  .. _class_PhysicsShapeQueryResult_get_result_rid:
 
 - :ref:`RID<class_RID>` **get_result_rid** **(** :ref:`int<class_int>` idx **)** const
-
 

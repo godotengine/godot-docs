@@ -8,6 +8,7 @@ WeakRef
 =======
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -30,10 +31,9 @@ A weakref can hold a :ref:`Reference<class_Reference>`, without contributing to 
 Method Descriptions
 -------------------
 
-.. _class_WeakRef_get_ref:
+  .. _class_WeakRef_get_ref:
 
 - :ref:`Variant<class_Variant>` **get_ref** **(** **)** const
 
 Returns the :ref:`Object<class_Object>` this weakref is referring to.
-
 

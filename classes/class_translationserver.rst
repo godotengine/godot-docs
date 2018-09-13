@@ -8,6 +8,7 @@ TranslationServer
 =================
 
 **Inherits:** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -37,32 +38,31 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_TranslationServer_add_translation:
+  .. _class_TranslationServer_add_translation:
 
 - void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
-.. _class_TranslationServer_clear:
+  .. _class_TranslationServer_clear:
 
 - void **clear** **(** **)**
 
-.. _class_TranslationServer_get_locale:
+  .. _class_TranslationServer_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const
 
-.. _class_TranslationServer_get_locale_name:
+  .. _class_TranslationServer_get_locale_name:
 
 - :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** const
 
-.. _class_TranslationServer_remove_translation:
+  .. _class_TranslationServer_remove_translation:
 
 - void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
-.. _class_TranslationServer_set_locale:
+  .. _class_TranslationServer_set_locale:
 
 - void **set_locale** **(** :ref:`String<class_String>` locale **)**
 
-.. _class_TranslationServer_translate:
+  .. _class_TranslationServer_translate:
 
 - :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** const
-
 

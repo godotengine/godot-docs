@@ -8,6 +8,7 @@ VisualShaderNodeVectorFunc
 ==========================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -15,12 +16,19 @@ Brief Description
 
 
 
+Properties
+----------
+
++-----------------------------------------------------------+------------------------------------------------------------+
+| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_function>` |
++-----------------------------------------------------------+------------------------------------------------------------+
+
 Enumerations
 ------------
 
   .. _enum_VisualShaderNodeVectorFunc_Function:
 
-enum **Function**
+enum **Function**:
 
 - **FUNC_NORMALIZE** = **0**
 - **FUNC_SATURATE** = **1**
@@ -29,7 +37,6 @@ enum **Function**
 - **FUNC_RGB2HSV** = **4**
 - **FUNC_HSV2RGB** = **5**
 
-
 Property Descriptions
 ---------------------
 
@@ -37,4 +44,9 @@ Property Descriptions
 
 - :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
 
++----------+---------------------+
+| *Setter* | set_function(value) |
++----------+---------------------+
+| *Getter* | get_function()      |
++----------+---------------------+
 

@@ -8,7 +8,9 @@ AudioStream
 ===========
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Inherited By:** :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamSample<class_AudioStreamSample>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`
+
 **Category:** Core
 
 Brief Description
@@ -32,14 +34,12 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
-
 Method Descriptions
 -------------------
 
-.. _class_AudioStream_get_length:
+  .. _class_AudioStream_get_length:
 
 - :ref:`float<class_float>` **get_length** **(** **)** const
 
 Returns the length of the audio stream in seconds.
-
 

@@ -8,6 +8,7 @@ TileSet
 =======
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -125,7 +126,7 @@ Enumerations
 
   .. _enum_TileSet_BitmaskMode:
 
-enum **BitmaskMode**
+enum **BitmaskMode**:
 
 - **BITMASK_2X2** = **0**
 - **BITMASK_3X3_MINIMAL** = **1**
@@ -133,7 +134,7 @@ enum **BitmaskMode**
 
   .. _enum_TileSet_TileMode:
 
-enum **TileMode**
+enum **TileMode**:
 
 - **SINGLE_TILE** = **0**
 - **AUTO_TILE** = **1**
@@ -141,7 +142,7 @@ enum **TileMode**
 
   .. _enum_TileSet_AutotileBindings:
 
-enum **AutotileBindings**
+enum **AutotileBindings**:
 
 - **BIND_TOPLEFT** = **1**
 - **BIND_TOP** = **2**
@@ -151,7 +152,6 @@ enum **AutotileBindings**
 - **BIND_BOTTOMLEFT** = **64**
 - **BIND_BOTTOM** = **128**
 - **BIND_BOTTOMRIGHT** = **256**
-
 
 Description
 -----------
@@ -163,264 +163,263 @@ Tiles are referenced by a unique integer ID.
 Method Descriptions
 -------------------
 
-.. _class_TileSet__forward_subtile_selection:
+  .. _class_TileSet__forward_subtile_selection:
 
 - :ref:`Vector2<class_Vector2>` **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_Object>` tilemap, :ref:`Vector2<class_Vector2>` tile_location **)** virtual
 
-.. _class_TileSet__is_tile_bound:
+  .. _class_TileSet__is_tile_bound:
 
 - :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
 
-.. _class_TileSet_autotile_get_bitmask_mode:
+  .. _class_TileSet_autotile_get_bitmask_mode:
 
 - :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_autotile_get_size:
+  .. _class_TileSet_autotile_get_size:
 
 - :ref:`Vector2<class_Vector2>` **autotile_get_size** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_autotile_set_bitmask_mode:
+  .. _class_TileSet_autotile_set_bitmask_mode:
 
 - void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` mode **)**
 
-.. _class_TileSet_autotile_set_size:
+  .. _class_TileSet_autotile_set_size:
 
 - void **autotile_set_size** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` size **)**
 
-.. _class_TileSet_clear:
+  .. _class_TileSet_clear:
 
 - void **clear** **(** **)**
 
 Clears all tiles.
 
-.. _class_TileSet_create_tile:
+  .. _class_TileSet_create_tile:
 
 - void **create_tile** **(** :ref:`int<class_int>` id **)**
 
 Creates a new tile which will be referenced by the given ID.
 
-.. _class_TileSet_find_tile_by_name:
+  .. _class_TileSet_find_tile_by_name:
 
 - :ref:`int<class_int>` **find_tile_by_name** **(** :ref:`String<class_String>` name **)** const
 
 Returns the first tile matching the given name.
 
-.. _class_TileSet_get_last_unused_tile_id:
+  .. _class_TileSet_get_last_unused_tile_id:
 
 - :ref:`int<class_int>` **get_last_unused_tile_id** **(** **)** const
 
 Returns the ID following the last currently used ID, useful when creating a new tile.
 
-.. _class_TileSet_get_tiles_ids:
+  .. _class_TileSet_get_tiles_ids:
 
 - :ref:`Array<class_Array>` **get_tiles_ids** **(** **)** const
 
 Returns an array of all currently used tile IDs.
 
-.. _class_TileSet_remove_tile:
+  .. _class_TileSet_remove_tile:
 
 - void **remove_tile** **(** :ref:`int<class_int>` id **)**
 
 Removes the tile referenced by the given ID.
 
-.. _class_TileSet_tile_add_shape:
+  .. _class_TileSet_tile_add_shape:
 
 - void **tile_add_shape** **(** :ref:`int<class_int>` id, :ref:`Shape2D<class_Shape2D>` shape, :ref:`Transform2D<class_Transform2D>` shape_transform, :ref:`bool<class_bool>` one_way=false, :ref:`Vector2<class_Vector2>` autotile_coord=Vector2( 0, 0 ) **)**
 
-.. _class_TileSet_tile_get_light_occluder:
+  .. _class_TileSet_tile_get_light_occluder:
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **tile_get_light_occluder** **(** :ref:`int<class_int>` id **)** const
 
 Returns the light occluder of the tile.
 
-.. _class_TileSet_tile_get_material:
+  .. _class_TileSet_tile_get_material:
 
 - :ref:`ShaderMaterial<class_ShaderMaterial>` **tile_get_material** **(** :ref:`int<class_int>` id **)** const
 
 Returns the material of the tile.
 
-.. _class_TileSet_tile_get_modulate:
+  .. _class_TileSet_tile_get_modulate:
 
 - :ref:`Color<class_Color>` **tile_get_modulate** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_tile_get_name:
+  .. _class_TileSet_tile_get_name:
 
 - :ref:`String<class_String>` **tile_get_name** **(** :ref:`int<class_int>` id **)** const
 
 Returns the name of the tile.
 
-.. _class_TileSet_tile_get_navigation_polygon:
+  .. _class_TileSet_tile_get_navigation_polygon:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **tile_get_navigation_polygon** **(** :ref:`int<class_int>` id **)** const
 
 Returns the navigation polygon of the tile.
 
-.. _class_TileSet_tile_get_navigation_polygon_offset:
+  .. _class_TileSet_tile_get_navigation_polygon_offset:
 
 - :ref:`Vector2<class_Vector2>` **tile_get_navigation_polygon_offset** **(** :ref:`int<class_int>` id **)** const
 
 Returns the offset of the tile's navigation polygon.
 
-.. _class_TileSet_tile_get_normal_map:
+  .. _class_TileSet_tile_get_normal_map:
 
 - :ref:`Texture<class_Texture>` **tile_get_normal_map** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_tile_get_occluder_offset:
+  .. _class_TileSet_tile_get_occluder_offset:
 
 - :ref:`Vector2<class_Vector2>` **tile_get_occluder_offset** **(** :ref:`int<class_int>` id **)** const
 
 Returns the offset of the tile's light occluder.
 
-.. _class_TileSet_tile_get_region:
+  .. _class_TileSet_tile_get_region:
 
 - :ref:`Rect2<class_Rect2>` **tile_get_region** **(** :ref:`int<class_int>` id **)** const
 
 Returns the tile sub-region in the texture.
 
-.. _class_TileSet_tile_get_shape:
+  .. _class_TileSet_tile_get_shape:
 
 - :ref:`Shape2D<class_Shape2D>` **tile_get_shape** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
 
-.. _class_TileSet_tile_get_shape_count:
+  .. _class_TileSet_tile_get_shape_count:
 
 - :ref:`int<class_int>` **tile_get_shape_count** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_tile_get_shape_offset:
+  .. _class_TileSet_tile_get_shape_offset:
 
 - :ref:`Vector2<class_Vector2>` **tile_get_shape_offset** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
 
-.. _class_TileSet_tile_get_shape_one_way:
+  .. _class_TileSet_tile_get_shape_one_way:
 
 - :ref:`bool<class_bool>` **tile_get_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
 
-.. _class_TileSet_tile_get_shape_transform:
+  .. _class_TileSet_tile_get_shape_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **tile_get_shape_transform** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id **)** const
 
-.. _class_TileSet_tile_get_shapes:
+  .. _class_TileSet_tile_get_shapes:
 
 - :ref:`Array<class_Array>` **tile_get_shapes** **(** :ref:`int<class_int>` id **)** const
 
 Returns the array of shapes of the tile.
 
-.. _class_TileSet_tile_get_texture:
+  .. _class_TileSet_tile_get_texture:
 
 - :ref:`Texture<class_Texture>` **tile_get_texture** **(** :ref:`int<class_int>` id **)** const
 
 Returns the texture of the tile.
 
-.. _class_TileSet_tile_get_texture_offset:
+  .. _class_TileSet_tile_get_texture_offset:
 
 - :ref:`Vector2<class_Vector2>` **tile_get_texture_offset** **(** :ref:`int<class_int>` id **)** const
 
 Returns the texture offset of the tile.
 
-.. _class_TileSet_tile_get_tile_mode:
+  .. _class_TileSet_tile_get_tile_mode:
 
 - :ref:`TileMode<enum_TileSet_TileMode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_tile_get_z_index:
+  .. _class_TileSet_tile_get_z_index:
 
 - :ref:`int<class_int>` **tile_get_z_index** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_TileSet_tile_set_light_occluder:
+  .. _class_TileSet_tile_set_light_occluder:
 
 - void **tile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder **)**
 
 Sets a light occluder for the tile.
 
-.. _class_TileSet_tile_set_material:
+  .. _class_TileSet_tile_set_material:
 
 - void **tile_set_material** **(** :ref:`int<class_int>` id, :ref:`ShaderMaterial<class_ShaderMaterial>` material **)**
 
 Sets the tile's material.
 
-.. _class_TileSet_tile_set_modulate:
+  .. _class_TileSet_tile_set_modulate:
 
 - void **tile_set_modulate** **(** :ref:`int<class_int>` id, :ref:`Color<class_Color>` color **)**
 
 Sets the tile's modulation color.
 
-.. _class_TileSet_tile_set_name:
+  .. _class_TileSet_tile_set_name:
 
 - void **tile_set_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
 Sets the tile's name.
 
-.. _class_TileSet_tile_set_navigation_polygon:
+  .. _class_TileSet_tile_set_navigation_polygon:
 
 - void **tile_set_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**
 
 Sets the tile's navigation polygon.
 
-.. _class_TileSet_tile_set_navigation_polygon_offset:
+  .. _class_TileSet_tile_set_navigation_polygon_offset:
 
 - void **tile_set_navigation_polygon_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` navigation_polygon_offset **)**
 
 Sets an offset for the tile's navigation polygon.
 
-.. _class_TileSet_tile_set_normal_map:
+  .. _class_TileSet_tile_set_normal_map:
 
 - void **tile_set_normal_map** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` normal_map **)**
 
 Sets the tile's normal map texture.
 
-.. _class_TileSet_tile_set_occluder_offset:
+  .. _class_TileSet_tile_set_occluder_offset:
 
 - void **tile_set_occluder_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` occluder_offset **)**
 
 Set an offset for the tile's light occluder.
 
-.. _class_TileSet_tile_set_region:
+  .. _class_TileSet_tile_set_region:
 
 - void **tile_set_region** **(** :ref:`int<class_int>` id, :ref:`Rect2<class_Rect2>` region **)**
 
 Set the tile's sub-region in the texture. This is common in texture atlases.
 
-.. _class_TileSet_tile_set_shape:
+  .. _class_TileSet_tile_set_shape:
 
 - void **tile_set_shape** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Shape2D<class_Shape2D>` shape **)**
 
-.. _class_TileSet_tile_set_shape_offset:
+  .. _class_TileSet_tile_set_shape_offset:
 
 - void **tile_set_shape_offset** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Vector2<class_Vector2>` shape_offset **)**
 
-.. _class_TileSet_tile_set_shape_one_way:
+  .. _class_TileSet_tile_set_shape_one_way:
 
 - void **tile_set_shape_one_way** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`bool<class_bool>` one_way **)**
 
-.. _class_TileSet_tile_set_shape_transform:
+  .. _class_TileSet_tile_set_shape_transform:
 
 - void **tile_set_shape_transform** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` shape_id, :ref:`Transform2D<class_Transform2D>` shape_transform **)**
 
-.. _class_TileSet_tile_set_shapes:
+  .. _class_TileSet_tile_set_shapes:
 
 - void **tile_set_shapes** **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**
 
 Sets an array of shapes for the tile, enabling collision.
 
-.. _class_TileSet_tile_set_texture:
+  .. _class_TileSet_tile_set_texture:
 
 - void **tile_set_texture** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**
 
 Sets the tile's texture.
 
-.. _class_TileSet_tile_set_texture_offset:
+  .. _class_TileSet_tile_set_texture_offset:
 
 - void **tile_set_texture_offset** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` texture_offset **)**
 
 Sets the tile's texture offset.
 
-.. _class_TileSet_tile_set_tile_mode:
+  .. _class_TileSet_tile_set_tile_mode:
 
 - void **tile_set_tile_mode** **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_TileSet_TileMode>` tilemode **)**
 
 Sets the tile's :ref:`TileMode<enum_@GlobalScope_TileMode>`.
 
-.. _class_TileSet_tile_set_z_index:
+  .. _class_TileSet_tile_set_z_index:
 
 - void **tile_set_z_index** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` z_index **)**
 
 Sets the tile's drawing index.
-
 

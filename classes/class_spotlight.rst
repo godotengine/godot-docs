@@ -8,12 +8,26 @@ SpotLight
 =========
 
 **Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 Spotlight :ref:`Light<class_Light>`, such as a reflector spotlight or a lantern.
+
+Properties
+----------
+
++---------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_spot_angle>`                         |
++---------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_spot_angle_attenuation>` |
++---------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_spot_attenuation>`             |
++---------------------------+-----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_spot_range>`                         |
++---------------------------+-----------------------------------------------------------------------+
 
 Description
 -----------
@@ -24,7 +38,6 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
-
 Property Descriptions
 ---------------------
 
@@ -32,16 +45,39 @@ Property Descriptions
 
 - :ref:`float<class_float>` **spot_angle**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_SpotLight_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
   .. _class_SpotLight_spot_attenuation:
 
 - :ref:`float<class_float>` **spot_attenuation**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
   .. _class_SpotLight_spot_range:
 
 - :ref:`float<class_float>` **spot_range**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 

@@ -8,12 +8,50 @@ Polygon2D
 =========
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
 -----------------
 
 A 2D polygon.
+
+Properties
+----------
+
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`antialiased<class_Polygon2D_antialiased>`                           |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`bones<class_Polygon2D_bones>`                                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                       | :ref:`color<class_Polygon2D_color>`                                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`invert_border<class_Polygon2D_invert_border>`                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`invert_enable<class_Polygon2D_invert_enable>`                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`offset<class_Polygon2D_offset>`                                     |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_Polygon2D_polygon>`                                   |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                 | :ref:`skeleton<class_Polygon2D_skeleton>`                                 |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`splits<class_Polygon2D_splits>`                                     |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                   | :ref:`texture<class_Polygon2D_texture>`                                   |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`texture_offset<class_Polygon2D_texture_offset>`                     |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`texture_rotation<class_Polygon2D_texture_rotation>`                 |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`texture_rotation_degrees<class_Polygon2D_texture_rotation_degrees>` |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`texture_scale<class_Polygon2D_texture_scale>`                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`uv<class_Polygon2D_uv>`                                             |
++-------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>`     | :ref:`vertex_colors<class_Polygon2D_vertex_colors>`                       |
++-------------------------------------------------+---------------------------------------------------------------------------+
 
 Methods
 -------
@@ -46,7 +84,15 @@ Property Descriptions
 
   .. _class_Polygon2D_antialiased:
 
-- :ref:`bool<class_bool>` **antialiased** - If ``true`` polygon edges will be anti-aliased. Default value: ``false``.
+- :ref:`bool<class_bool>` **antialiased**
+
++----------+------------------------+
+| *Setter* | set_antialiased(value) |
++----------+------------------------+
+| *Getter* | get_antialiased()      |
++----------+------------------------+
+
+If ``true`` polygon edges will be anti-aliased. Default value: ``false``.
 
   .. _class_Polygon2D_bones:
 
@@ -54,94 +100,200 @@ Property Descriptions
 
   .. _class_Polygon2D_color:
 
-- :ref:`Color<class_Color>` **color** - The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
+- :ref:`Color<class_Color>` **color**
+
++----------+------------------+
+| *Setter* | set_color(value) |
++----------+------------------+
+| *Getter* | get_color()      |
++----------+------------------+
+
+The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
 
   .. _class_Polygon2D_invert_border:
 
-- :ref:`float<class_float>` **invert_border** - Added padding applied to the bounding box when using ``invert``. Setting this value too small may result in a "Bad Polygon" error. Default value: ``100``.
+- :ref:`float<class_float>` **invert_border**
+
++----------+--------------------------+
+| *Setter* | set_invert_border(value) |
++----------+--------------------------+
+| *Getter* | get_invert_border()      |
++----------+--------------------------+
+
+Added padding applied to the bounding box when using ``invert``. Setting this value too small may result in a "Bad Polygon" error. Default value: ``100``.
 
   .. _class_Polygon2D_invert_enable:
 
-- :ref:`bool<class_bool>` **invert_enable** - If ``true`` polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
+- :ref:`bool<class_bool>` **invert_enable**
+
++----------+-------------------+
+| *Setter* | set_invert(value) |
++----------+-------------------+
+| *Getter* | get_invert()      |
++----------+-------------------+
+
+If ``true`` polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
 
   .. _class_Polygon2D_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset** - The offset applied to each vertex.
+- :ref:`Vector2<class_Vector2>` **offset**
+
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
+
+The offset applied to each vertex.
 
   .. _class_Polygon2D_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
+
++----------+--------------------+
+| *Setter* | set_polygon(value) |
++----------+--------------------+
+| *Getter* | get_polygon()      |
++----------+--------------------+
+
+The polygon's list of vertices. The final point will be connected to the first.
 
   .. _class_Polygon2D_skeleton:
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
 
++----------+---------------------+
+| *Setter* | set_skeleton(value) |
++----------+---------------------+
+| *Getter* | get_skeleton()      |
++----------+---------------------+
+
   .. _class_Polygon2D_splits:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **splits**
 
++----------+-------------------+
+| *Setter* | set_splits(value) |
++----------+-------------------+
+| *Getter* | get_splits()      |
++----------+-------------------+
+
   .. _class_Polygon2D_texture:
 
-- :ref:`Texture<class_Texture>` **texture** - The polygon's fill texture. Use ``uv`` to set texture coordinates.
+- :ref:`Texture<class_Texture>` **texture**
+
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
+
+The polygon's fill texture. Use ``uv`` to set texture coordinates.
 
   .. _class_Polygon2D_texture_offset:
 
-- :ref:`Vector2<class_Vector2>` **texture_offset** - Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (its top-left corner) will be placed at the polygon's ``position``.
+- :ref:`Vector2<class_Vector2>` **texture_offset**
+
++----------+---------------------------+
+| *Setter* | set_texture_offset(value) |
++----------+---------------------------+
+| *Getter* | get_texture_offset()      |
++----------+---------------------------+
+
+Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (its top-left corner) will be placed at the polygon's ``position``.
 
   .. _class_Polygon2D_texture_rotation:
 
-- :ref:`float<class_float>` **texture_rotation** - The texture's rotation in radians.
+- :ref:`float<class_float>` **texture_rotation**
+
++----------+-------------------------------------+
+| *Setter* | set_texture_rotation_degrees(value) |
++----------+-------------------------------------+
+| *Getter* | get_texture_rotation_degrees()      |
++----------+-------------------------------------+
+
+The texture's rotation in radians.
 
   .. _class_Polygon2D_texture_rotation_degrees:
 
-- :ref:`float<class_float>` **texture_rotation_degrees** - The texture's rotation in degrees.
+- :ref:`float<class_float>` **texture_rotation_degrees**
+
++----------+-------------------------------------+
+| *Setter* | set_texture_rotation_degrees(value) |
++----------+-------------------------------------+
+| *Getter* | get_texture_rotation_degrees()      |
++----------+-------------------------------------+
+
+The texture's rotation in degrees.
 
   .. _class_Polygon2D_texture_scale:
 
-- :ref:`Vector2<class_Vector2>` **texture_scale** - Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger values make the texture smaller, and vice versa.
+- :ref:`Vector2<class_Vector2>` **texture_scale**
+
++----------+--------------------------+
+| *Setter* | set_texture_scale(value) |
++----------+--------------------------+
+| *Getter* | get_texture_scale()      |
++----------+--------------------------+
+
+Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger values make the texture smaller, and vice versa.
 
   .. _class_Polygon2D_uv:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **uv** - Texture coordinates for each vertex of the polygon. There should be one ``uv`` per polygon vertex. If there are fewer, undefined vertices will use ``(0, 0)``.
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **uv**
+
++----------+---------------+
+| *Setter* | set_uv(value) |
++----------+---------------+
+| *Getter* | get_uv()      |
++----------+---------------+
+
+Texture coordinates for each vertex of the polygon. There should be one ``uv`` per polygon vertex. If there are fewer, undefined vertices will use ``(0, 0)``.
 
   .. _class_Polygon2D_vertex_colors:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **vertex_colors** - Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use ``color``.
+- :ref:`PoolColorArray<class_PoolColorArray>` **vertex_colors**
 
++----------+--------------------------+
+| *Setter* | set_vertex_colors(value) |
++----------+--------------------------+
+| *Getter* | get_vertex_colors()      |
++----------+--------------------------+
+
+Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use ``color``.
 
 Method Descriptions
 -------------------
 
-.. _class_Polygon2D_add_bone:
+  .. _class_Polygon2D_add_bone:
 
 - void **add_bone** **(** :ref:`NodePath<class_NodePath>` path, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
-.. _class_Polygon2D_clear_bones:
+  .. _class_Polygon2D_clear_bones:
 
 - void **clear_bones** **(** **)**
 
-.. _class_Polygon2D_erase_bone:
+  .. _class_Polygon2D_erase_bone:
 
 - void **erase_bone** **(** :ref:`int<class_int>` index **)**
 
-.. _class_Polygon2D_get_bone_count:
+  .. _class_Polygon2D_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
-.. _class_Polygon2D_get_bone_path:
+  .. _class_Polygon2D_get_bone_path:
 
 - :ref:`NodePath<class_NodePath>` **get_bone_path** **(** :ref:`int<class_int>` index **)** const
 
-.. _class_Polygon2D_get_bone_weights:
+  .. _class_Polygon2D_get_bone_weights:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** const
 
-.. _class_Polygon2D_set_bone_path:
+  .. _class_Polygon2D_set_bone_path:
 
 - void **set_bone_path** **(** :ref:`int<class_int>` index, :ref:`NodePath<class_NodePath>` path **)**
 
-.. _class_Polygon2D_set_bone_weights:
+  .. _class_Polygon2D_set_bone_weights:
 
 - void **set_bone_weights** **(** :ref:`int<class_int>` index, :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
-
 

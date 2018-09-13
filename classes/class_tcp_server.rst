@@ -8,6 +8,7 @@ TCP_Server
 ==========
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
 **Category:** Core
 
 Brief Description
@@ -36,13 +37,13 @@ TCP Server class. Listens to connections on a port and returns a :ref:`StreamPee
 Method Descriptions
 -------------------
 
-.. _class_TCP_Server_is_connection_available:
+  .. _class_TCP_Server_is_connection_available:
 
 - :ref:`bool<class_bool>` **is_connection_available** **(** **)** const
 
 Return true if a connection is available for taking.
 
-.. _class_TCP_Server_listen:
+  .. _class_TCP_Server_listen:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
 
@@ -54,16 +55,15 @@ If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the server 
 
 If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the server will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
-.. _class_TCP_Server_stop:
+  .. _class_TCP_Server_stop:
 
 - void **stop** **(** **)**
 
 Stop listening.
 
-.. _class_TCP_Server_take_connection:
+  .. _class_TCP_Server_take_connection:
 
 - :ref:`StreamPeerTCP<class_StreamPeerTCP>` **take_connection** **(** **)**
 
 If a connection is available, return a StreamPeerTCP with the connection/
-
 
