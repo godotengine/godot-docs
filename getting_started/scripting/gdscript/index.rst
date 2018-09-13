@@ -8,4 +8,5 @@ GDScript
    gdscript_basics
    gdscript_advanced
    gdscript_styleguide
+   static_typing
    gdscript_format_string
