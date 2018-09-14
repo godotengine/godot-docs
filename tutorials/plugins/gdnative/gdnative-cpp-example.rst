@@ -38,7 +38,10 @@ See also :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download these repositories from GitHub or let Git
-do the work for you. If you are versioning your project using Git,
+do the work for you. 
+Note that these repositories now have different branches for different versions of Godot. GDNative modules written for an earlier version of Godot will work in newer versions (with the exception of one breaking change in ARVR interfaces between 3.0 and 3.1) but not vise versa so make sure you download the correct branch.
+
+If you are versioning your project using Git,
 it is a good idea to add them as Git submodules:
 
 .. code-block:: none
@@ -46,13 +49,28 @@ it is a good idea to add them as Git submodules:
     mkdir gdnative_cpp_example
     cd gdnative_cpp_example
     git init
-    git submodule add https://github.com/GodotNativeTools/godot_headers
-    git submodule add https://github.com/GodotNativeTools/godot-cpp
+    git submodule add -b 3.0 https://github.com/GodotNativeTools/godot-cpp
+    cd godot-cpp
+    git submodule init
+    git submodule update
+    cd ..
 
 If you decide to just download the repositories or clone them
 into your project folder, make sure to keep the folder layout identical
 to the one described here, as much of the code we'll be showcasing here
 assumes the project follows this layout.
+
+Do make sure you clone recursive to pull in both repositories:
+.. code-block:: none
+
+    mkdir gdnative_cpp_example
+    cd gdnative_cpp_example
+    git clone --recursive -b 3.0 https://github.com/GodotNativeTools/godot-cpp
+
+.. note:: The ``-b 3.0`` I've added as an example to show how to select a specific branch for a specific version of Godot.
+          Also ``godot-cpp`` now includes ``godot_headers`` as a nested submodule, if you've manually downloaded them please make sure to place ``godot_headers`` inside of the ``godot-cpp`` folder.
+          
+          You don't have to do it this way but I've found it easiest to manage. If you decide to just download the repositories or just clone them into your folder, makes sure to keep the folder layout the same as I've setup here as much of the code we'll be showcasing here assumes the project has this layout.
 
 If you cloned the example from the link specified in
 the introduction, the submodules are not automatically initialized.
@@ -61,7 +79,7 @@ You will need to execute the following commands:
 .. code-block:: none
 
     cd gdnative_cpp_example
-    git submodule --init update
+    git submodule --init update --recursive
 
 This will clone these two repositories into your project folder.
 
@@ -77,9 +95,9 @@ simply call the Godot executable:
 
 .. code-block:: none
 
-    godot --gdnative-generate-json-api godot_api.json
+    godot --gdnative-generate-json-api api.json
 
-Place the resulting ``godot_api.json`` file in the ``godot-cpp/`` folder.
+Place the resulting ``api.json`` file in the project folder and add ``use_custom_api_file=yes custom_api_file=../api.json`` to the scons command below.
 
 To generate and compile the bindings, use this command (replacing
 ``<platform>`` with ``windows``, ``x11`` or ``osx`` depending on your OS):
@@ -87,7 +105,7 @@ To generate and compile the bindings, use this command (replacing
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> headers_dir=../godot_headers generate_bindings=yes
+    scons platform=<platform> generate_bindings=yes
     cd ..
 
 This step will take a while. When it is completed, you should have static
@@ -272,7 +290,7 @@ and ``demo``, then run:
 
 You should now be able to find the module in ``demo/bin/<platform>``.
 
-**Note:** Here, we've compiled both godot-cpp and our gdexample library
+.. note:: Here, we've compiled both godot-cpp and our gdexample library
 as debug builds. For optimized builds, you should compile them using
 the ``target=release`` switch.
 
