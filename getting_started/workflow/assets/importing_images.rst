@@ -90,7 +90,7 @@ There are plenty of settings that can be toggled when importing an image as a te
 Repeat
 ~~~~~~
 
-This setting is mosty commonly used in 3D than 2D (thus it's generally disabled in 2D). It makes UV coordinates going beyond the 0,0 - 1,1 range to "loop".
+This setting is most commonly used in 3D than 2D (thus it's generally disabled in 2D). It makes UV coordinates going beyond the 0,0 - 1,1 range to "loop".
 Repeating can optionally be set to mirrored mode.
 
 Filter
