@@ -28,7 +28,7 @@ Methods
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`get_connected_port<class_StreamPeerTCP_get_connected_port>` **(** **)** const                                                  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerTCP_Status>`  | :ref:`get_status<class_StreamPeerTCP_get_status>` **(** **)** const                                                                  |
+| :ref:`Status<enum_StreamPeerTCP_Status>`  | :ref:`get_status<class_StreamPeerTCP_get_status>` **(** **)**                                                                        |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`is_connected_to_host<class_StreamPeerTCP_is_connected_to_host>` **(** **)** const                                              |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Return the port of this peer.
 
   .. _class_StreamPeerTCP_get_status:
 
-- :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)** const
+- :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)**
 
 Return the status of the connection, one of STATUS\_\* enum.
 

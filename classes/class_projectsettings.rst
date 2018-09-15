@@ -20,6 +20,8 @@ Properties
 ----------
 
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`           | :ref:`application/boot_splash/bg_color<class_ProjectSettings_application/boot_splash/bg_color>`                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/boot_splash/fullsize<class_ProjectSettings_application/boot_splash/fullsize>`                                                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`application/boot_splash/image<class_ProjectSettings_application/boot_splash/image>`                                                                   |
@@ -67,6 +69,8 @@ Properties
 | :ref:`int<class_int>`               | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_compression/formats/zstd/window_log_size>`                                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_debug/gdscript/warnings/constant_used_as_function>`                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_debug/gdscript/warnings/deprecated_keyword>`                                         |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/enable<class_ProjectSettings_debug/gdscript/warnings/enable>`                                                                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -558,6 +562,10 @@ Contains global variables accessible from everywhere. Use "ProjectSettings.get_s
 Property Descriptions
 ---------------------
 
+  .. _class_ProjectSettings_application/boot_splash/bg_color:
+
+- :ref:`Color<class_Color>` **application/boot_splash/bg_color**
+
   .. _class_ProjectSettings_application/boot_splash/fullsize:
 
 - :ref:`bool<class_bool>` **application/boot_splash/fullsize**
@@ -695,6 +703,10 @@ Enable long distance matching in zstd.
   .. _class_ProjectSettings_debug/gdscript/warnings/constant_used_as_function:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/constant_used_as_function**
+
+  .. _class_ProjectSettings_debug/gdscript/warnings/deprecated_keyword:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/deprecated_keyword**
 
   .. _class_ProjectSettings_debug/gdscript/warnings/enable:
 
@@ -1506,7 +1518,7 @@ Fix to improve physics jitter, specially on monitors where refresh rate is diffe
 
 - :ref:`Color<class_Color>` **rendering/environment/default_clear_color**
 
-Default background clear color.
+Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_background_mode>` and :ref:`Environment.background_color<class_Environment_background_color>` in particular. To change this default color programmatically, use :ref:`VisualServer.set_default_clear_color<class_VisualServer_set_default_clear_color>`.
 
   .. _class_ProjectSettings_rendering/limits/buffers/blend_shape_max_buffer_size_kb:
 

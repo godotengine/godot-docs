@@ -9,7 +9,7 @@ Texture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CurveTexture<class_CurveTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`, :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`
+**Inherited By:** :ref:`CurveTexture<class_CurveTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`, :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`
 
 **Category:** Core
 

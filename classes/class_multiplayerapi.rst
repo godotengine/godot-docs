@@ -95,13 +95,14 @@ Enumerations
 enum **RPCMode**:
 
 - **RPC_MODE_DISABLED** = **0** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
-- **RPC_MODE_REMOTE** = **1** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword. Calls and property changes are accepted from all remote peers, no matter if they are node's master or slaves.
-- **RPC_MODE_SYNC** = **2** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Analogous to the ``sync`` keyword.
-- **RPC_MODE_MASTER** = **3** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. Only accepts calls or property changes from the node's network slaves, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
-- **RPC_MODE_SLAVE** = **4** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on slaves for this node. Analogous to the ``slave`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
-- **RPC_MODE_REMOTESYNC** = **5** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Same as ``RPC_MODE_SYNC`` which is only kept for compatibility. Analogous to the ``remotesync`` keyword.
-- **RPC_MODE_MASTERSYNC** = **6** --- Behave like ``RPC_MODE_MASTER`` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
-- **RPC_MODE_SLAVESYNC** = **7** --- Behave like ``RPC_MODE_SLAVE`` but also make the call or property change locally. Analogous to the ``slavesync`` keyword.
+- **RPC_MODE_REMOTE** = **1** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword. Calls and property changes are accepted from all remote peers, no matter if they are node's master or puppets.
+- **RPC_MODE_MASTER** = **2** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. Only accepts calls or property changes from the node's network puppets, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
+- **RPC_MODE_PUPPET** = **3** --- Used with :ref:`Node.rpc_config<class_Node_rpc_config>` or :ref:`Node.rset_config<class_Node_rset_config>` to set a method to be called or a property to be changed only on puppets for this node. Analogous to the ``puppet`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_set_network_master>`.
+- **RPC_MODE_SLAVE** = **3** --- Deprecated. Use ``RPC_MODE_PUPPET`` instead. Analogous to the ``slave`` keyword.
+- **RPC_MODE_REMOTESYNC** = **4** --- Behave like ``RPC_MODE_REMOTE`` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
+- **RPC_MODE_SYNC** = **4** --- Deprecated. Use ``RPC_MODE_REMOTESYNC`` instead. Analogous to the ``sync`` keyword.
+- **RPC_MODE_MASTERSYNC** = **5** --- Behave like ``RPC_MODE_MASTER`` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
+- **RPC_MODE_PUPPETSYNC** = **6** --- Behave like ``RPC_MODE_PUPPET`` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
 
 Description
 -----------
@@ -125,7 +126,7 @@ Property Descriptions
 | *Getter* | get_network_peer()      |
 +----------+-------------------------+
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_is_network_server>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
 
   .. _class_MultiplayerAPI_refuse_new_network_connections:
 

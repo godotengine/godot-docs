@@ -304,7 +304,7 @@ When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_Multipl
 | *Getter* | get_network_peer()      |
 +----------+-------------------------+
 
-The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
+The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_Node>`), or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
 
   .. _class_SceneTree_paused:
 

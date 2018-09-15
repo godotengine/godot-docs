@@ -87,6 +87,8 @@ Methods
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>`          | :ref:`get_final_transform<class_Viewport_get_final_transform>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_Control>`                  | :ref:`get_modal_stack_top<class_Viewport_get_modal_stack_top>` **(** **)** const                                                                                                                                  |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                  | :ref:`get_mouse_position<class_Viewport_get_mouse_position>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>` **(** :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**                                                                                               |
@@ -579,6 +581,12 @@ Returns the active 3D camera.
 - :ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** const
 
 Returns the total transform of the viewport.
+
+  .. _class_Viewport_get_modal_stack_top:
+
+- :ref:`Control<class_Control>` **get_modal_stack_top** **(** **)** const
+
+Returns the topmost modal in the stack.
 
   .. _class_Viewport_get_mouse_position:
 

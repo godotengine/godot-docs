@@ -514,6 +514,8 @@ Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.m
 
 Returns a child node by its index (see :ref:`get_child_count<class_Node_get_child_count>`). This method is often used for iterating all children of a node.
 
+To access a child node via its name, use :ref:`get_node<class_Node_get_node>`.
+
   .. _class_Node_get_child_count:
 
 - :ref:`int<class_int>` **get_child_count** **(** **)** const
@@ -826,7 +828,7 @@ Sends a remote procedure call request for the given ``method`` to peers on the n
 
 - void **rpc_config** **(** :ref:`String<class_String>` method, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**
 
-Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
+Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, methods are not exposed to networking (and RPCs). Also see :ref:`rset<class_Node_rset>` and :ref:`rset_config<class_Node_rset_config>` for properties.
 
   .. _class_Node_rpc_id:
 
@@ -856,7 +858,7 @@ Remotely changes a property's value on other peers (and locally). Behaviour depe
 
 - void **rset_config** **(** :ref:`String<class_String>` property, :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` mode **)**
 
-Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``sync``, ``master``, ``slave``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
+Changes the RPC mode for the given ``property`` to the given ``mode``. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. An alternative is annotating methods and properties with the corresponding keywords (``remote``, ``master``, ``puppet``, ``remotesync``, ``mastersync``, ``puppetsync``). By default, properties are not exposed to networking (and RPCs). Also see :ref:`rpc<class_Node_rpc>` and :ref:`rpc_config<class_Node_rpc_config>` for methods.
 
   .. _class_Node_rset_id:
 
@@ -886,7 +888,7 @@ Sets the folded state of the node in the Scene dock.
 
 - void **set_network_master** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**
 
-Sets the node's network master to the peer with the given peer ID. The network master is the peer that has authority over the node on the network. Useful in conjunction with the ``master`` and ``slave`` keywords. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the master for all children of this node.
+Sets the node's network master to the peer with the given peer ID. The network master is the peer that has authority over the node on the network. Useful in conjunction with the ``master`` and ``puppet`` keywords. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the master for all children of this node.
 
   .. _class_Node_set_physics_process:
 
