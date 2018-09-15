@@ -240,13 +240,13 @@ to delete a file on another client's system).
 The second use is to specify how the function will be called via RPC. There are four different keywords:
 
 - `remote`
-- `sync`
+- `remotesync`
 - `master`
-- `slave`
+- `puppet`
 
 The `remote` keyword means that the `rpc()` call will go via network and execute remotely.
 
-The `sync` keyword means that the `rpc()` call will go via network and execute remotely, but will also execute locally (do a normal function call).
+The `remotesync` keyword means that the `rpc()` call will go via network and execute remotely, but will also execute locally (do a normal function call).
 
 The others will be explained further down.
 Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
@@ -370,7 +370,7 @@ If you have paid attention to the previous example, it's possible you noticed th
 	[...]
 
 
-Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as slaves with the server being their network master.
+Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as puppets with the server being their network master.
 
 To clarify, here is an example of how this looks in the
 `bomber demo <https://github.com/godotengine/godot-demo-projects/tree/master/networking/multiplayer_bomber>`_:
@@ -378,12 +378,12 @@ To clarify, here is an example of how this looks in the
 .. image:: img/nmms.png
 
 
-Master and slave keywords
+Master and puppet keywords
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. FIXME: Clarify the equivalents to the GDScript keywords in C# and Visual Script.
 
-The real advantage of this model is when used with the `master`/`slave` keywords in GDScript (or their equivalent in C# and Visual Script).
+The real advantage of this model is when used with the `master`/`puppet` keywords in GDScript (or their equivalent in C# and Visual Script).
 Similarly to the `remote` keyword, functions can also be tagged with them:
 
 Example bomb code:
@@ -398,7 +398,7 @@ Example player code:
 
 ::
 
-    slave func stun():
+    puppet func stun():
         stunned = true
 
     master func exploded(by_who):
@@ -406,7 +406,7 @@ Example player code:
             return # Already stunned
 
         rpc("stun")
-        stun() # Stun myself, could have used sync keyword too.
+        stun() # Stun myself, could have used remotesync keyword too.
 
 In the above example, a bomb explodes somewhere (likely managed by whoever is master). The bomb knows the bodies in the area, so it checks them
 and checks that they contain an `exploded` function.
@@ -414,7 +414,7 @@ and checks that they contain an `exploded` function.
 If they do, the bomb calls `exploded` on it. However, the `exploded` method in the player has a `master` keyword. This means that only the player
 who is master for that instance will actually get the function.
 
-This instance, then, calls the `stun` function in the same instances of that same player (but in different peers), and only those which are set as slave,
+This instance, then, calls the `stun` function in the same instances of that same player (but in different peers), and only those which are set as puppet,
 making the player look stunned in all the peers (as well as the current, master one).
 
 Note that you could also send the stun() message only to a specific player by using rpc_id(<id>, "exploded", bomb_owner).

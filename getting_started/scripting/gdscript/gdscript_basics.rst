@@ -227,9 +227,13 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | master     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| slave      | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
+| puppet     | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| sync       | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
+| remotesync | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| mastersync | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++------------+---------------------------------------------------------------------------------------------------------------+
+| puppetsync | Networking RPC annotation. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | PI         | PI constant.                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------+

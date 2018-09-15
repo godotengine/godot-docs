@@ -91,8 +91,8 @@ class GDScriptLexer(RegexLexer):
                 'extends', 'is', 'func', 'setget', 'signal', 'tool', 'const',
                 'enum', 'export', 'onready', 'static', 'var', 'break', 'continue',
                 'if', 'elif', 'else', 'for', 'pass', 'return', 'match', 'while',
-                'remote', 'sync', 'master', 'slave', 'remotesync', 'mastersync',
-                'slavesync'), suffix=r'\b'),
+                'remote', 'master', 'puppet', 'remotesync', 'mastersync',
+                'puppetsync'), suffix=r'\b'),
              Keyword),
         ],
         'builtins': [
