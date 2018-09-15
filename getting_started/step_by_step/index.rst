@@ -24,3 +24,4 @@ Step by step
    filesystem
    scene_tree
    singletons_autoload
+   simple_2d_game
