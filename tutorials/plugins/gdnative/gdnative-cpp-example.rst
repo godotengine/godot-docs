@@ -290,9 +290,11 @@ and ``demo``, then run:
 
 You should now be able to find the module in ``demo/bin/<platform>``.
 
-.. note:: Here, we've compiled both godot-cpp and our gdexample library
-as debug builds. For optimized builds, you should compile them using
-the ``target=release`` switch.
+.. note::
+
+    Here, we've compiled both godot-cpp and our gdexample library
+    as debug builds. For optimized builds, you should compile them using
+    the ``target=release`` switch.
 
 Using the GDNative module
 -------------------------

@@ -379,7 +379,7 @@ To clarify, here is an example of how this looks in the
 
 
 Master and puppet keywords
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. FIXME: Clarify the equivalents to the GDScript keywords in C# and Visual Script.
 
