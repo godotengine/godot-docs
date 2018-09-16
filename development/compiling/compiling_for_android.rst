@@ -28,7 +28,7 @@ For compiling under Windows, Linux or macOS, the following is required:
 -  Android build tools version 19.1
 -  Android NDK r13 or later
 -  Gradle (will be downloaded and installed automatically if missing)
--  JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 is untested as of now
+-  JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 does not work with Gradle at this time.
 
 Setting up the buildsystem
 --------------------------
