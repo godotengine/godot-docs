@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | get_shortcut()      |
 +----------+---------------------+
 
-The Shortcut's :ref:`InputEvent<class_InputEvent>`.
+The shortcut's :ref:`InputEvent<class_InputEvent>`.
 
 Generally the :ref:`InputEvent<class_InputEvent>` is a keyboard key, though it can be any :ref:`InputEvent<class_InputEvent>`.
 
@@ -65,17 +65,17 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_as_text** **(** **)** const
 
-Returns the Shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
+Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
   .. _class_ShortCut_is_shortcut:
 
 - :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
-Returns ``true`` if the Shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
+Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
 
   .. _class_ShortCut_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
-If ``true`` this Shortcut is valid.
+If ``true`` this shortcut is valid.
 

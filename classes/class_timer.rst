@@ -51,7 +51,7 @@ Signals
 
 - **timeout** **(** **)**
 
-Emitted when the Timer reaches 0.
+Emitted when the timer reaches 0.
 
 Enumerations
 ------------
@@ -60,8 +60,8 @@ Enumerations
 
 enum **TimerProcessMode**:
 
-- **TIMER_PROCESS_PHYSICS** = **0** --- Update the Timer during the physics step at each frame (fixed framerate processing).
-- **TIMER_PROCESS_IDLE** = **1** --- Update the Timer during the idle time at each frame.
+- **TIMER_PROCESS_PHYSICS** = **0** --- Update the timer during the physics step at each frame (fixed framerate processing).
+- **TIMER_PROCESS_IDLE** = **1** --- Update the timer during the idle time at each frame.
 
 Description
 -----------
@@ -81,7 +81,7 @@ Property Descriptions
 | *Getter* | has_autostart()      |
 +----------+----------------------+
 
-If ``true``, Timer will automatically start when entering the scene tree. Default value: ``false``.
+If ``true`` the timer will automatically start when entering the scene tree. Default value: ``false``.
 
   .. _class_Timer_one_shot:
 
@@ -93,7 +93,7 @@ If ``true``, Timer will automatically start when entering the scene tree. Defaul
 | *Getter* | is_one_shot()       |
 +----------+---------------------+
 
-If ``true``, Timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
+If ``true`` the timer will stop when reaching 0. If ``false`` it will restart. Default value: ``false``.
 
   .. _class_Timer_paused:
 
@@ -105,7 +105,7 @@ If ``true``, Timer will stop when reaching 0. If ``false``, it will restart. Def
 | *Getter* | is_paused()       |
 +----------+-------------------+
 
-If ``true``, the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_start>` is called.
+If ``true`` the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_start>` is called.
 
   .. _class_Timer_process_mode:
 
@@ -117,7 +117,7 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 | *Getter* | get_timer_process_mode()      |
 +----------+-------------------------------+
 
-Processing mode. Uses TIMER_PROCESS\_\* constants as value.
+Processing mode. See :ref:`TimerProcessMode<enum_@GlobalScope_TimerProcessMode>`.
 
   .. _class_Timer_time_left:
 
@@ -128,6 +128,8 @@ Processing mode. Uses TIMER_PROCESS\_\* constants as value.
 +----------+-----------------+
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
+
+Note: You cannot set this value. To change the timer's remaining time, use :ref:`wait_time<class_Timer_wait_time>`.
 
   .. _class_Timer_wait_time:
 
@@ -162,5 +164,5 @@ Note: this method will not resume a paused timer. See :ref:`set_paused<class_Tim
 
 - void **stop** **(** **)**
 
-Stop (cancel) the Timer.
+Stops the timer.
 

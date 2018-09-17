@@ -334,7 +334,7 @@ Removes all mappings from the internal db that match the given uid.
 
 - void **set_custom_mouse_cursor** **(** :ref:`Resource<class_Resource>` image, :ref:`CursorShape<enum_Input_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2( 0, 0 ) **)**
 
-Set a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See enum ``CURSOR_*`` for the list of shapes.
+Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See enum ``CURSOR_*`` for the list of shapes.
 
 ``image``'s size must be lower than 256x256.
 
@@ -343,6 +343,10 @@ Set a custom mouse cursor image, which is only visible inside the game window. T
   .. _class_Input_set_default_cursor_shape:
 
 - void **set_default_cursor_shape** **(** :ref:`CursorShape<enum_Input_CursorShape>` shape=0 **)**
+
+Sets the default cursor shape to be used in the viewport instead of ``CURSOR_ARROW``.
+
+Note that if you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_mouse_default_cursor_shape>` instead.
 
   .. _class_Input_set_mouse_mode:
 

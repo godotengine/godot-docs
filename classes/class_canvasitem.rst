@@ -178,7 +178,7 @@ enum **BlendMode**:
 Constants
 ---------
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_set_notify_local_transform>`.
 - **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
 - **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.

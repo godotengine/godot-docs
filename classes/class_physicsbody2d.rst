@@ -84,13 +84,13 @@ A contact is detected if object A is in any of the layers that object B scans, o
 | *Getter* | get_collision_mask()      |
 +----------+---------------------------+
 
-The physics layers this area can scan for collisions.
+The physics layers this area scans for collisions.
 
   .. _class_PhysicsBody2D_layers:
 
 - :ref:`int<class_int>` **layers**
 
-Both collision_layer and collision_mask. Returns collision_layer when accessed. Updates collision_layers and collision_mask when modified.
+Both :ref:`collision_layer<class_PhysicsBody2D_collision_layer>` and :ref:`collision_mask<class_PhysicsBody2D_collision_mask>`. Returns :ref:`collision_layer<class_PhysicsBody2D_collision_layer>` when accessed. Updates :ref:`collision_layer<class_PhysicsBody2D_collision_layer>` and :ref:`collision_mask<class_PhysicsBody2D_collision_mask>` when modified.
 
 Method Descriptions
 -------------------
@@ -105,13 +105,13 @@ Adds a body to the list of bodies that this body can't collide with.
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the collision mask.
+Returns an individual bit on the collision mask.
 
   .. _class_PhysicsBody2D_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the collision mask.
+Returns an individual bit on the collision mask.
 
   .. _class_PhysicsBody2D_remove_collision_exception_with:
 
@@ -123,11 +123,11 @@ Removes a body from the list of bodies that this body can't collide with.
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the layer mask. This makes getting a body in/out of only one layer easier.
+Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
 
   .. _class_PhysicsBody2D_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
+Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
 
