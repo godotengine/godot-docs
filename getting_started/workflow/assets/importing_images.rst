@@ -90,14 +90,14 @@ There are plenty of settings that can be toggled when importing an image as a te
 Repeat
 ~~~~~~
 
-This setting is most commonly used in 3D, and is therefore generally disabled in 2D. It makes UV coordinates going beyond the 0,0 - 1,1 range to "loop".
+This setting is most commonly used in 3D, and is therefore generally disabled in 2D. It sets UV coordinates going beyond the 0,0 - 1,1 range to "loop".
+
 Repeating can optionally be set to mirrored mode.
 
 Filter
 ~~~~~~
 
-When pixels become larger than the screen pixels, this options enable linear interpolation for them. The result is a smoother (less blocky) texture. This
-setting can be commonly used in 2D and 3D, but it's usually disabled when making pixel perfect games.
+When pixels become larger than the screen pixels, this options enable linear interpolation for them. The result is a smoother (less blocky) texture. This setting can be commonly used in 2D and 3D, but it's usually disabled when making pixel perfect games.
 
 Mipmaps
 -------
