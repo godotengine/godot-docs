@@ -274,7 +274,7 @@ You can tweak many of these variables to get different results. For example, by 
 increasing ``JUMP_SPEED`` you can get a more 'floaty' feeling character.
 Feel free to experiment!
 
-.. note:: You may have noticed that ``MOUSE_SENSITIVITY`` is written in all caps like the other constants, but is ``MOUSE_SENSITIVITY`` is not a constant.
+.. note:: You may have noticed that ``MOUSE_SENSITIVITY`` is written in all caps like the other constants, but ``MOUSE_SENSITIVITY`` is not a constant.
           
           The reason behind this is we want to treat it like a constant variable (a variable that cannot change) throughout our script, but we want to be
           able to change the value later when we add customizable settings. So, in an effort to remind ourselves to treat it like a constant, it's named in all caps.
