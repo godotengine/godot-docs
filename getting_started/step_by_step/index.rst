@@ -11,6 +11,7 @@ Step by step
    instancing_continued
    scripting
    scripting_continued
+   signals
    your_first_game
    exporting
    godot_design_philosophy
