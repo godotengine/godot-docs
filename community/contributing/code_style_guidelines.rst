@@ -23,6 +23,7 @@ To name a few:
 - One space around math and assignments operators as well as after commas
 - Pointer and reference operators are affixed to the variable identifier, not
   to the type name
+- See further down regarding header includes
 
 The rules used by clang-format are outlined in the
 `.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`__
@@ -119,13 +120,127 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
 
 (Pull requests welcome to extend this list with tested plugins.)
 
+Header includes
+~~~~~~~~~~~~~~~
+
+When adding new C++ or Objective-C files or including new headers in existing
+ones, the following rules should be followed:
+
+- The first lines in the file should be Godot's copyright header and MIT
+  license, copy-pasted from another file. Make sure to adjust the filename.
+- In a ``.h`` header, include guards should be used with the form
+  ``FILENAME_H``.
+
+- In a ``.cpp`` file (e.g. ``filename.cpp``), the first include should be the
+  one where the class is declared (e.g. ``#include "filename.h"``), followed by
+  an empty line for separation.
+- Then come headers from Godot's own code base, included in alphabetical order
+  (enforced by ``clang-format``) with paths relative to the root folder. Those
+  includes should be done with quotes, e.g. ``#include "core/object.h"``. The
+  block of Godot header includes should then be followed by an empty line for
+  separation.
+- Finally, thirdparty headers (either from ``thirdparty`` or from the system's
+  include paths) come next and should be included with the < and > symbols, e.g.
+  ``#include <png.h>``. The block of thirdparty headers should also be followed
+  by an empty line for separation.
+- Godot and thirdparty headers should be included in the file that requires
+  them, i.e. in the `.h` header if used in the declarative code or in the `.cpp`
+  if used only in the imperative code.
+
+Example:
+
+.. code:: cpp
+
+    /*************************************************************************/
+    /*  my_new_file.h                                                        */
+    /*************************************************************************/
+    /*                       This file is part of:                           */
+    /*                           GODOT ENGINE                                */
+    /*                      https://godotengine.org                          */
+    /*************************************************************************/
+    /* Copyright (c) 2007-2018 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2018 Godot Engine contributors (cf. AUTHORS.md)    */
+    /*                                                                       */
+    /* Permission is hereby granted, free of charge, to any person obtaining */
+    /* a copy of this software and associated documentation files (the       */
+    /* "Software"), to deal in the Software without restriction, including   */
+    /* without limitation the rights to use, copy, modify, merge, publish,   */
+    /* distribute, sublicense, and/or sell copies of the Software, and to    */
+    /* permit persons to whom the Software is furnished to do so, subject to */
+    /* the following conditions:                                             */
+    /*                                                                       */
+    /* The above copyright notice and this permission notice shall be        */
+    /* included in all copies or substantial portions of the Software.       */
+    /*                                                                       */
+    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,       */
+    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF    */
+    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.*/
+    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  */
+    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,  */
+    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE     */
+    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                */
+    /*************************************************************************/
+
+    #ifndef MY_NEW_FILE_H
+    #define MY_NEW_FILE_H
+
+    #include "core/hash_map.h"
+    #include "core/list.h"
+    #include "scene/gui/control.h
+
+    #include <png.h>
+
+    ...
+
+    #endif // MY_NEW_FILE_H
+
+.. code:: cpp
+
+    /*************************************************************************/
+    /*  my_new_file.cpp                                                      */
+    /*************************************************************************/
+    /*                       This file is part of:                           */
+    /*                           GODOT ENGINE                                */
+    /*                      https://godotengine.org                          */
+    /*************************************************************************/
+    /* Copyright (c) 2007-2018 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2018 Godot Engine contributors (cf. AUTHORS.md)    */
+    /*                                                                       */
+    /* Permission is hereby granted, free of charge, to any person obtaining */
+    /* a copy of this software and associated documentation files (the       */
+    /* "Software"), to deal in the Software without restriction, including   */
+    /* without limitation the rights to use, copy, modify, merge, publish,   */
+    /* distribute, sublicense, and/or sell copies of the Software, and to    */
+    /* permit persons to whom the Software is furnished to do so, subject to */
+    /* the following conditions:                                             */
+    /*                                                                       */
+    /* The above copyright notice and this permission notice shall be        */
+    /* included in all copies or substantial portions of the Software.       */
+    /*                                                                       */
+    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,       */
+    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF    */
+    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.*/
+    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  */
+    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,  */
+    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE     */
+    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                */
+    /*************************************************************************/
+
+    #include "my_new_file.h"
+
+    #include "core/math/math_funcs.h"
+    #include "scene/gui/line_edit.h
+
+    #include <zlib.h>
+    #include <zstd.h>
+
 Java
 ----
 
-For Godot's Java code (mostly in ``platform/android``), there is currently no
-style guide, so for now try to stay consistent with the existing code.
-
-Once a style is decided upon, it could also be enforced via clang-format.
+Godot's Java code (mostly in ``platform/android``) is also enforced via
+``clang-format``, so see the instructions above to set it up. Keep in mind that
+this style guide only applies to code written and maintained by Godot, not
+thirdparty code such as the ``java/src/com/google`` subfolder.
 
 Python
 ------
