@@ -56,7 +56,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_ProceduralSky_TextureSize:
+.. _enum_ProceduralSky_TextureSize:
 
 enum **TextureSize**:
 
@@ -77,7 +77,7 @@ The ProceduralSky is updated on the CPU after the parameters change and stored i
 Property Descriptions
 ---------------------
 
-  .. _class_ProceduralSky_ground_bottom_color:
+.. _class_ProceduralSky_ground_bottom_color:
 
 - :ref:`Color<class_Color>` **ground_bottom_color**
 
@@ -89,7 +89,7 @@ Property Descriptions
 
 Color of the ground at the bottom.
 
-  .. _class_ProceduralSky_ground_curve:
+.. _class_ProceduralSky_ground_curve:
 
 - :ref:`float<class_float>` **ground_curve**
 
@@ -101,7 +101,7 @@ Color of the ground at the bottom.
 
 How quickly the :ref:`ground_horizon_color<class_ProceduralSky_ground_horizon_color>` fades into the :ref:`ground_bottom_color<class_ProceduralSky_ground_bottom_color>`.
 
-  .. _class_ProceduralSky_ground_energy:
+.. _class_ProceduralSky_ground_energy:
 
 - :ref:`float<class_float>` **ground_energy**
 
@@ -113,7 +113,7 @@ How quickly the :ref:`ground_horizon_color<class_ProceduralSky_ground_horizon_co
 
 Amount of energy contribution from the ground.
 
-  .. _class_ProceduralSky_ground_horizon_color:
+.. _class_ProceduralSky_ground_horizon_color:
 
 - :ref:`Color<class_Color>` **ground_horizon_color**
 
@@ -125,7 +125,7 @@ Amount of energy contribution from the ground.
 
 Color of the ground at the horizon.
 
-  .. _class_ProceduralSky_sky_curve:
+.. _class_ProceduralSky_sky_curve:
 
 - :ref:`float<class_float>` **sky_curve**
 
@@ -137,7 +137,7 @@ Color of the ground at the horizon.
 
 How quickly the :ref:`sky_horizon_color<class_ProceduralSky_sky_horizon_color>` fades into the :ref:`sky_top_color<class_ProceduralSky_sky_top_color>`.
 
-  .. _class_ProceduralSky_sky_energy:
+.. _class_ProceduralSky_sky_energy:
 
 - :ref:`float<class_float>` **sky_energy**
 
@@ -149,7 +149,7 @@ How quickly the :ref:`sky_horizon_color<class_ProceduralSky_sky_horizon_color>` 
 
 Amount of energy contribution from the sky.
 
-  .. _class_ProceduralSky_sky_horizon_color:
+.. _class_ProceduralSky_sky_horizon_color:
 
 - :ref:`Color<class_Color>` **sky_horizon_color**
 
@@ -161,7 +161,7 @@ Amount of energy contribution from the sky.
 
 Color of the sky at the horizon.
 
-  .. _class_ProceduralSky_sky_top_color:
+.. _class_ProceduralSky_sky_top_color:
 
 - :ref:`Color<class_Color>` **sky_top_color**
 
@@ -173,7 +173,7 @@ Color of the sky at the horizon.
 
 Color of the sky at the top.
 
-  .. _class_ProceduralSky_sun_angle_max:
+.. _class_ProceduralSky_sun_angle_max:
 
 - :ref:`float<class_float>` **sun_angle_max**
 
@@ -185,7 +185,7 @@ Color of the sky at the top.
 
 Distance from center of sun where it fades out completely.
 
-  .. _class_ProceduralSky_sun_angle_min:
+.. _class_ProceduralSky_sun_angle_min:
 
 - :ref:`float<class_float>` **sun_angle_min**
 
@@ -197,7 +197,7 @@ Distance from center of sun where it fades out completely.
 
 Distance from sun where it goes from solid to starting to fade.
 
-  .. _class_ProceduralSky_sun_color:
+.. _class_ProceduralSky_sun_color:
 
 - :ref:`Color<class_Color>` **sun_color**
 
@@ -209,7 +209,7 @@ Distance from sun where it goes from solid to starting to fade.
 
 Color of the sun.
 
-  .. _class_ProceduralSky_sun_curve:
+.. _class_ProceduralSky_sun_curve:
 
 - :ref:`float<class_float>` **sun_curve**
 
@@ -221,7 +221,7 @@ Color of the sun.
 
 How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_sun_angle_max>`
 
-  .. _class_ProceduralSky_sun_energy:
+.. _class_ProceduralSky_sun_energy:
 
 - :ref:`float<class_float>` **sun_energy**
 
@@ -233,7 +233,7 @@ How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_s
 
 Amount of energy contribution from the sun.
 
-  .. _class_ProceduralSky_sun_latitude:
+.. _class_ProceduralSky_sun_latitude:
 
 - :ref:`float<class_float>` **sun_latitude**
 
@@ -245,7 +245,7 @@ Amount of energy contribution from the sun.
 
 The suns height using polar coordinates.
 
-  .. _class_ProceduralSky_sun_longitude:
+.. _class_ProceduralSky_sun_longitude:
 
 - :ref:`float<class_float>` **sun_longitude**
 
@@ -257,7 +257,7 @@ The suns height using polar coordinates.
 
 The direction of the sun using polar coordinates.
 
-  .. _class_ProceduralSky_texture_size:
+.. _class_ProceduralSky_texture_size:
 
 - :ref:`TextureSize<enum_ProceduralSky_TextureSize>` **texture_size**
 

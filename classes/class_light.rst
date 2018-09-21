@@ -52,7 +52,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_Light_BakeMode:
+.. _enum_Light_BakeMode:
 
 enum **BakeMode**:
 
@@ -60,7 +60,7 @@ enum **BakeMode**:
 - **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked. Default value.
 - **BAKE_ALL** = **2** --- Both direct and indirect light will be baked. Note: you should hide the light if you don't want it to appear twice (dynamic and baked).
 
-  .. _enum_Light_Param:
+.. _enum_Light_Param:
 
 enum **Param**:
 
@@ -90,10 +90,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Light_editor_only:
+.. _class_Light_editor_only:
 
 - :ref:`bool<class_bool>` **editor_only**
 
@@ -105,7 +106,7 @@ Property Descriptions
 
 If ``true`` the light only appears in the editor and will not be visible at runtime. Default value:``false``.
 
-  .. _class_Light_light_bake_mode:
+.. _class_Light_light_bake_mode:
 
 - :ref:`BakeMode<enum_Light_BakeMode>` **light_bake_mode**
 
@@ -117,7 +118,7 @@ If ``true`` the light only appears in the editor and will not be visible at runt
 
 The light's bake mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 
-  .. _class_Light_light_color:
+.. _class_Light_light_color:
 
 - :ref:`Color<class_Color>` **light_color**
 
@@ -129,7 +130,7 @@ The light's bake mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 
 The light's color.
 
-  .. _class_Light_light_cull_mask:
+.. _class_Light_light_cull_mask:
 
 - :ref:`int<class_int>` **light_cull_mask**
 
@@ -141,7 +142,7 @@ The light's color.
 
 The light will affect objects in the selected layers.
 
-  .. _class_Light_light_energy:
+.. _class_Light_light_energy:
 
 - :ref:`float<class_float>` **light_energy**
 
@@ -153,7 +154,7 @@ The light will affect objects in the selected layers.
 
 The light's strength multiplier.
 
-  .. _class_Light_light_indirect_energy:
+.. _class_Light_light_indirect_energy:
 
 - :ref:`float<class_float>` **light_indirect_energy**
 
@@ -165,7 +166,7 @@ The light's strength multiplier.
 
 Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
 
-  .. _class_Light_light_negative:
+.. _class_Light_light_negative:
 
 - :ref:`bool<class_bool>` **light_negative**
 
@@ -177,7 +178,7 @@ Secondary multiplier used with indirect light (light bounces). This works in bak
 
 If ``true`` the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
 
-  .. _class_Light_light_specular:
+.. _class_Light_light_specular:
 
 - :ref:`float<class_float>` **light_specular**
 
@@ -189,7 +190,7 @@ If ``true`` the light's effect is reversed, darkening areas and casting bright s
 
 The intensity of the specular blob in objects affected by the light. At ``0`` the light becomes a pure diffuse light.
 
-  .. _class_Light_shadow_bias:
+.. _class_Light_shadow_bias:
 
 - :ref:`float<class_float>` **shadow_bias**
 
@@ -201,7 +202,7 @@ The intensity of the specular blob in objects affected by the light. At ``0`` th
 
 Used to adjust shadow appearance. Too small a value results in self shadowing, while too large a value causes shadows to separate from casters. Adjust as needed.
 
-  .. _class_Light_shadow_color:
+.. _class_Light_shadow_color:
 
 - :ref:`Color<class_Color>` **shadow_color**
 
@@ -213,7 +214,7 @@ Used to adjust shadow appearance. Too small a value results in self shadowing, w
 
 The color of shadows cast by this light.
 
-  .. _class_Light_shadow_contact:
+.. _class_Light_shadow_contact:
 
 - :ref:`float<class_float>` **shadow_contact**
 
@@ -225,7 +226,7 @@ The color of shadows cast by this light.
 
 Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
 
-  .. _class_Light_shadow_enabled:
+.. _class_Light_shadow_enabled:
 
 - :ref:`bool<class_bool>` **shadow_enabled**
 
@@ -237,7 +238,7 @@ Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
 
 If ``true`` the light will cast shadows. Default value: ``false``.
 
-  .. _class_Light_shadow_reverse_cull_face:
+.. _class_Light_shadow_reverse_cull_face:
 
 - :ref:`bool<class_bool>` **shadow_reverse_cull_face**
 

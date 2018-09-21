@@ -40,7 +40,7 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 Method Descriptions
 -------------------
 
-  .. _class_ButtonGroup_get_pressed_button:
+.. _class_ButtonGroup_get_pressed_button:
 
 - :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
 

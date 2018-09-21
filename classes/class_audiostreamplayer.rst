@@ -53,7 +53,7 @@ Methods
 Signals
 -------
 
-  .. _class_AudioStreamPlayer_finished:
+.. _class_AudioStreamPlayer_finished:
 
 - **finished** **(** **)**
 
@@ -62,7 +62,7 @@ Emitted when the audio stops playing.
 Enumerations
 ------------
 
-  .. _enum_AudioStreamPlayer_MixTarget:
+.. _enum_AudioStreamPlayer_MixTarget:
 
 enum **MixTarget**:
 
@@ -79,11 +79,13 @@ Tutorials
 ---------
 
 - :doc:`../learning/features/audio/index`
+
 - :doc:`../tutorials/audio/audio_streams`
+
 Property Descriptions
 ---------------------
 
-  .. _class_AudioStreamPlayer_autoplay:
+.. _class_AudioStreamPlayer_autoplay:
 
 - :ref:`bool<class_bool>` **autoplay**
 
@@ -95,7 +97,7 @@ Property Descriptions
 
 If ``true`` audio plays when added to scene tree. Default value: ``false``.
 
-  .. _class_AudioStreamPlayer_bus:
+.. _class_AudioStreamPlayer_bus:
 
 - :ref:`String<class_String>` **bus**
 
@@ -107,7 +109,7 @@ If ``true`` audio plays when added to scene tree. Default value: ``false``.
 
 Bus on which this audio is playing.
 
-  .. _class_AudioStreamPlayer_mix_target:
+.. _class_AudioStreamPlayer_mix_target:
 
 - :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **mix_target**
 
@@ -119,7 +121,7 @@ Bus on which this audio is playing.
 
 If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET_*`` constants.
 
-  .. _class_AudioStreamPlayer_pitch_scale:
+.. _class_AudioStreamPlayer_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 
@@ -131,7 +133,7 @@ If the audio configuration has more than two speakers, this sets the target chan
 
 Changes the pitch and the tempo of the audio.
 
-  .. _class_AudioStreamPlayer_playing:
+.. _class_AudioStreamPlayer_playing:
 
 - :ref:`bool<class_bool>` **playing**
 
@@ -141,7 +143,7 @@ Changes the pitch and the tempo of the audio.
 
 If ``true`` audio is playing.
 
-  .. _class_AudioStreamPlayer_stream:
+.. _class_AudioStreamPlayer_stream:
 
 - :ref:`AudioStream<class_AudioStream>` **stream**
 
@@ -153,7 +155,7 @@ If ``true`` audio is playing.
 
 The :ref:`AudioStream<class_AudioStream>` object to be played.
 
-  .. _class_AudioStreamPlayer_stream_paused:
+.. _class_AudioStreamPlayer_stream_paused:
 
 - :ref:`bool<class_bool>` **stream_paused**
 
@@ -163,7 +165,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 | *Getter* | get_stream_paused()      |
 +----------+--------------------------+
 
-  .. _class_AudioStreamPlayer_volume_db:
+.. _class_AudioStreamPlayer_volume_db:
 
 - :ref:`float<class_float>` **volume_db**
 
@@ -178,25 +180,25 @@ Volume of sound, in dB.
 Method Descriptions
 -------------------
 
-  .. _class_AudioStreamPlayer_get_playback_position:
+.. _class_AudioStreamPlayer_get_playback_position:
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>` in seconds.
 
-  .. _class_AudioStreamPlayer_play:
+.. _class_AudioStreamPlayer_play:
 
 - void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
 Plays the audio from the given position 'from_position', in seconds.
 
-  .. _class_AudioStreamPlayer_seek:
+.. _class_AudioStreamPlayer_seek:
 
 - void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
 
-  .. _class_AudioStreamPlayer_stop:
+.. _class_AudioStreamPlayer_stop:
 
 - void **stop** **(** **)**
 

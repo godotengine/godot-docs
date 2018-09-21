@@ -33,7 +33,7 @@ Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of
 Property Descriptions
 ---------------------
 
-  .. _class_CurveTexture_curve:
+.. _class_CurveTexture_curve:
 
 - :ref:`Curve<class_Curve>` **curve**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The ``curve`` rendered onto the texture.
 
-  .. _class_CurveTexture_width:
+.. _class_CurveTexture_width:
 
 - :ref:`int<class_int>` **width**
 

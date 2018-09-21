@@ -35,18 +35,18 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_PackedDataContainer___data__:
+.. _class_PackedDataContainer___data__:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
 Method Descriptions
 -------------------
 
-  .. _class_PackedDataContainer_pack:
+.. _class_PackedDataContainer_pack:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
 
-  .. _class_PackedDataContainer_size:
+.. _class_PackedDataContainer_size:
 
 - :ref:`int<class_int>` **size** **(** **)** const
 

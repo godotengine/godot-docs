@@ -32,14 +32,14 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_OmniLight_ShadowDetail:
+.. _enum_OmniLight_ShadowDetail:
 
 enum **ShadowDetail**:
 
 - **SHADOW_DETAIL_VERTICAL** = **0**
 - **SHADOW_DETAIL_HORIZONTAL** = **1**
 
-  .. _enum_OmniLight_ShadowMode:
+.. _enum_OmniLight_ShadowMode:
 
 enum **ShadowMode**:
 
@@ -55,10 +55,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
+
 Property Descriptions
 ---------------------
 
-  .. _class_OmniLight_omni_attenuation:
+.. _class_OmniLight_omni_attenuation:
 
 - :ref:`float<class_float>` **omni_attenuation**
 
@@ -70,7 +71,7 @@ Property Descriptions
 
 The light's attenuation (drop-off) curve. A number of presets are available in the Inspector.
 
-  .. _class_OmniLight_omni_range:
+.. _class_OmniLight_omni_range:
 
 - :ref:`float<class_float>` **omni_range**
 
@@ -82,7 +83,7 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 Maximum distance the light affects.
 
-  .. _class_OmniLight_omni_shadow_detail:
+.. _class_OmniLight_omni_shadow_detail:
 
 - :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
 
@@ -94,7 +95,7 @@ Maximum distance the light affects.
 
 See :ref:`ShadowDetail<enum_@GlobalScope_ShadowDetail>`.
 
-  .. _class_OmniLight_omni_shadow_mode:
+.. _class_OmniLight_omni_shadow_mode:
 
 - :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
 

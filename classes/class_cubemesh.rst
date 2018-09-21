@@ -37,7 +37,7 @@ Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Property Descriptions
 ---------------------
 
-  .. _class_CubeMesh_size:
+.. _class_CubeMesh_size:
 
 - :ref:`Vector3<class_Vector3>` **size**
 
@@ -49,7 +49,7 @@ Property Descriptions
 
 Size of the cuboid mesh. Defaults to (2, 2, 2).
 
-  .. _class_CubeMesh_subdivide_depth:
+.. _class_CubeMesh_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
 
@@ -61,7 +61,7 @@ Size of the cuboid mesh. Defaults to (2, 2, 2).
 
 Number of extra edge loops inserted along the z-axis. Defaults to 0.
 
-  .. _class_CubeMesh_subdivide_height:
+.. _class_CubeMesh_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
 
@@ -73,7 +73,7 @@ Number of extra edge loops inserted along the z-axis. Defaults to 0.
 
 Number of extra edge loops inserted along the y-axis. Defaults to 0.
 
-  .. _class_CubeMesh_subdivide_width:
+.. _class_CubeMesh_subdivide_width:
 
 - :ref:`int<class_int>` **subdivide_width**
 

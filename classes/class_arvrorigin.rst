@@ -37,7 +37,7 @@ So say that your character is driving a car, the ARVROrigin node should be a chi
 Property Descriptions
 ---------------------
 
-  .. _class_ARVROrigin_world_scale:
+.. _class_ARVROrigin_world_scale:
 
 - :ref:`float<class_float>` **world_scale**
 

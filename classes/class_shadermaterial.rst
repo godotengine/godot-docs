@@ -44,7 +44,7 @@ A material that uses a custom :ref:`Shader<class_Shader>` program to render eith
 Property Descriptions
 ---------------------
 
-  .. _class_ShaderMaterial_shader:
+.. _class_ShaderMaterial_shader:
 
 - :ref:`Shader<class_Shader>` **shader**
 
@@ -59,21 +59,21 @@ The :ref:`Shader<class_Shader>` program used to render this material.
 Method Descriptions
 -------------------
 
-  .. _class_ShaderMaterial_get_shader_param:
+.. _class_ShaderMaterial_get_shader_param:
 
 - :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`String<class_String>` param **)** const
 
 Returns the current value set for this material of a uniform in the shader.
 
-  .. _class_ShaderMaterial_property_can_revert:
+.. _class_ShaderMaterial_property_can_revert:
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
-  .. _class_ShaderMaterial_property_get_revert:
+.. _class_ShaderMaterial_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
 
-  .. _class_ShaderMaterial_set_shader_param:
+.. _class_ShaderMaterial_set_shader_param:
 
 - void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
 

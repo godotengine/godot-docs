@@ -41,7 +41,7 @@ Description
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptOperator_operator:
+.. _class_VisualScriptOperator_operator:
 
 - :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
 
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | get_operator()      |
 +----------+---------------------+
 
-  .. _class_VisualScriptOperator_type:
+.. _class_VisualScriptOperator_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 

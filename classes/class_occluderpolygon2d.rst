@@ -30,7 +30,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_OccluderPolygon2D_CullMode:
+.. _enum_OccluderPolygon2D_CullMode:
 
 enum **CullMode**:
 
@@ -46,7 +46,7 @@ Editor facility that helps you draw a 2D polygon used as resource for :ref:`Ligh
 Property Descriptions
 ---------------------
 
-  .. _class_OccluderPolygon2D_closed:
+.. _class_OccluderPolygon2D_closed:
 
 - :ref:`bool<class_bool>` **closed**
 
@@ -58,7 +58,7 @@ Property Descriptions
 
 If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
 
-  .. _class_OccluderPolygon2D_cull_mode:
+.. _class_OccluderPolygon2D_cull_mode:
 
 - :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
 
@@ -70,7 +70,7 @@ If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light co
 
 Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
 
-  .. _class_OccluderPolygon2D_polygon:
+.. _class_OccluderPolygon2D_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 

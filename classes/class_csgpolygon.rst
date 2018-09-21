@@ -50,7 +50,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_CSGPolygon_Mode:
+.. _enum_CSGPolygon_Mode:
 
 enum **Mode**:
 
@@ -58,7 +58,7 @@ enum **Mode**:
 - **MODE_SPIN** = **1** --- Shape is extruded by rotating it around an axis.
 - **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_Shape>` set in :ref:`path_node<class_CSGPolygon_path_node>`.
 
-  .. _enum_CSGPolygon_PathRotation:
+.. _enum_CSGPolygon_PathRotation:
 
 enum **PathRotation**:
 
@@ -74,7 +74,7 @@ This node takes a 2D polygon shape and extrudes it to create a 3D mesh.
 Property Descriptions
 ---------------------
 
-  .. _class_CSGPolygon_depth:
+.. _class_CSGPolygon_depth:
 
 - :ref:`float<class_float>` **depth**
 
@@ -86,7 +86,7 @@ Property Descriptions
 
 Extrusion depth when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_DEPTH.
 
-  .. _class_CSGPolygon_material:
+.. _class_CSGPolygon_material:
 
 - :ref:`Material<class_Material>` **material**
 
@@ -98,7 +98,7 @@ Extrusion depth when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_DEPTH.
 
 Material to use for the resulting mesh.
 
-  .. _class_CSGPolygon_mode:
+.. _class_CSGPolygon_mode:
 
 - :ref:`Mode<enum_CSGPolygon_Mode>` **mode**
 
@@ -110,7 +110,7 @@ Material to use for the resulting mesh.
 
 Extrusion mode.
 
-  .. _class_CSGPolygon_path_continuous_u:
+.. _class_CSGPolygon_path_continuous_u:
 
 - :ref:`bool<class_bool>` **path_continuous_u**
 
@@ -122,7 +122,7 @@ Extrusion mode.
 
 If true the u component of our uv will continuously increase in unison with the distance traveled along our path when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_path_interval:
+.. _class_CSGPolygon_path_interval:
 
 - :ref:`float<class_float>` **path_interval**
 
@@ -134,7 +134,7 @@ If true the u component of our uv will continuously increase in unison with the 
 
 Interval at which a new extrusion slice is added along the path when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_path_joined:
+.. _class_CSGPolygon_path_joined:
 
 - :ref:`bool<class_bool>` **path_joined**
 
@@ -146,7 +146,7 @@ Interval at which a new extrusion slice is added along the path when :ref:`mode<
 
 If true the start and end of our path are joined together ensuring there is no seam when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_path_local:
+.. _class_CSGPolygon_path_local:
 
 - :ref:`bool<class_bool>` **path_local**
 
@@ -158,7 +158,7 @@ If true the start and end of our path are joined together ensuring there is no s
 
 If false we extrude centered on our path, if true we extrude in relation to the position of our CSGPolygon when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_path_node:
+.. _class_CSGPolygon_path_node:
 
 - :ref:`NodePath<class_NodePath>` **path_node**
 
@@ -170,7 +170,7 @@ If false we extrude centered on our path, if true we extrude in relation to the 
 
 The :ref:`Shape<class_Shape>` object containing the path along which we extrude when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_path_rotation:
+.. _class_CSGPolygon_path_rotation:
 
 - :ref:`PathRotation<enum_CSGPolygon_PathRotation>` **path_rotation**
 
@@ -182,7 +182,7 @@ The :ref:`Shape<class_Shape>` object containing the path along which we extrude 
 
 The method by which each slice is rotated along the path when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_PATH.
 
-  .. _class_CSGPolygon_polygon:
+.. _class_CSGPolygon_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
@@ -194,7 +194,7 @@ The method by which each slice is rotated along the path when :ref:`mode<class_C
 
 Point array that defines the shape that we'll extrude.
 
-  .. _class_CSGPolygon_smooth_faces:
+.. _class_CSGPolygon_smooth_faces:
 
 - :ref:`bool<class_bool>` **smooth_faces**
 
@@ -206,7 +206,7 @@ Point array that defines the shape that we'll extrude.
 
 Generates smooth normals so smooth shading is applied to our mesh.
 
-  .. _class_CSGPolygon_spin_degrees:
+.. _class_CSGPolygon_spin_degrees:
 
 - :ref:`float<class_float>` **spin_degrees**
 
@@ -218,7 +218,7 @@ Generates smooth normals so smooth shading is applied to our mesh.
 
 Degrees to rotate our extrusion for each slice when :ref:`mode<class_CSGPolygon_mode>` is constant MODE_SPIN.
 
-  .. _class_CSGPolygon_spin_sides:
+.. _class_CSGPolygon_spin_sides:
 
 - :ref:`int<class_int>` **spin_sides**
 

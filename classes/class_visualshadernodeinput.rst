@@ -26,14 +26,14 @@ Properties
 Signals
 -------
 
-  .. _class_VisualShaderNodeInput_input_type_changed:
+.. _class_VisualShaderNodeInput_input_type_changed:
 
 - **input_type_changed** **(** **)**
 
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeInput_input_name:
+.. _class_VisualShaderNodeInput_input_name:
 
 - :ref:`String<class_String>` **input_name**
 

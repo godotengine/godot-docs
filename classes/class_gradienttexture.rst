@@ -33,7 +33,7 @@ Uses a :ref:`Gradient<class_Gradient>` to fill the texture data, the gradient wi
 Property Descriptions
 ---------------------
 
-  .. _class_GradientTexture_gradient:
+.. _class_GradientTexture_gradient:
 
 - :ref:`Gradient<class_Gradient>` **gradient**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
-  .. _class_GradientTexture_width:
+.. _class_GradientTexture_width:
 
 - :ref:`int<class_int>` **width**
 

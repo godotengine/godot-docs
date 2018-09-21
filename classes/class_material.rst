@@ -32,6 +32,7 @@ Constants
 
 - **RENDER_PRIORITY_MAX** = **127**
 - **RENDER_PRIORITY_MIN** = **-128**
+
 Description
 -----------
 
@@ -40,7 +41,7 @@ Material is a base :ref:`Resource<class_Resource>` used for coloring and shading
 Property Descriptions
 ---------------------
 
-  .. _class_Material_next_pass:
+.. _class_Material_next_pass:
 
 - :ref:`Material<class_Material>` **next_pass**
 
@@ -50,7 +51,7 @@ Property Descriptions
 | *Getter* | get_next_pass()      |
 +----------+----------------------+
 
-  .. _class_Material_render_priority:
+.. _class_Material_render_priority:
 
 - :ref:`int<class_int>` **render_priority**
 

@@ -26,7 +26,7 @@ Properties
 +---------------------------+----------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`period<class_SimplexNoise_period>`           |
 +---------------------------+----------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`persistance<class_SimplexNoise_persistance>` |
+| :ref:`float<class_float>` | :ref:`persistence<class_SimplexNoise_persistence>` |
 +---------------------------+----------------------------------------------------+
 | :ref:`int<class_int>`     | :ref:`seed<class_SimplexNoise_seed>`               |
 +---------------------------+----------------------------------------------------+
@@ -67,18 +67,18 @@ Here is a brief usage example that configures a SimplexNoise and gets samples at
     noise.seed = randi()
     noise.octaves = 4
     noise.period = 20.0
-    noise.persistance = 0.8
+    noise.persistence = 0.8
     
-    #Sample
+    # Sample
     print("Values:")
-    print(noise.get_noise_2d(1.0,1.0))
-    print(noise.get_noise_3d(0.5,3.0,15.0))
-    print(noise.get_noise_3d(0.5,1.9,4.7,0.0))
+    print(noise.get_noise_2d(1.0, 1.0))
+    print(noise.get_noise_3d(0.5, 3.0, 15.0))
+    print(noise.get_noise_4d(0.5, 1.9, 4.7, 0.0))
 
 Property Descriptions
 ---------------------
 
-  .. _class_SimplexNoise_lacunarity:
+.. _class_SimplexNoise_lacunarity:
 
 - :ref:`float<class_float>` **lacunarity**
 
@@ -90,7 +90,7 @@ Property Descriptions
 
 Difference in period between :ref:`octaves<class_SimplexNoise_octaves>`.
 
-  .. _class_SimplexNoise_octaves:
+.. _class_SimplexNoise_octaves:
 
 - :ref:`int<class_int>` **octaves**
 
@@ -100,9 +100,9 @@ Difference in period between :ref:`octaves<class_SimplexNoise_octaves>`.
 | *Getter* | get_octaves()      |
 +----------+--------------------+
 
-Number of Simplex Noise layers that are sampled to get the fractal noise.
+Number of Simplex noise layers that are sampled to get the fractal noise.
 
-  .. _class_SimplexNoise_period:
+.. _class_SimplexNoise_period:
 
 - :ref:`float<class_float>` **period**
 
@@ -112,25 +112,25 @@ Number of Simplex Noise layers that are sampled to get the fractal noise.
 | *Getter* | get_period()      |
 +----------+-------------------+
 
-Period of the base octave. 
+Period of the base octave.
 
-A lower period results in a higher frequancy noise (more value changes across the same distance).
+A lower period results in a higher-frequency noise (more value changes across the same distance).
 
-  .. _class_SimplexNoise_persistance:
+.. _class_SimplexNoise_persistence:
 
-- :ref:`float<class_float>` **persistance**
+- :ref:`float<class_float>` **persistence**
 
 +----------+------------------------+
-| *Setter* | set_persistance(value) |
+| *Setter* | set_persistence(value) |
 +----------+------------------------+
-| *Getter* | get_persistance()      |
+| *Getter* | get_persistence()      |
 +----------+------------------------+
 
-Contribuiton factor of the different octaves. 
+Contribution factor of the different octaves.
 
-A ``persistance`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
+A ``persistence`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
 
-  .. _class_SimplexNoise_seed:
+.. _class_SimplexNoise_seed:
 
 - :ref:`int<class_int>` **seed**
 
@@ -145,47 +145,47 @@ Seed used to generate random values, different seeds will generate different noi
 Method Descriptions
 -------------------
 
-  .. _class_SimplexNoise_get_image:
+.. _class_SimplexNoise_get_image:
 
 - :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
 
 Generate a noise image with the requested ``width`` and ``height``, based on the current noise parameters.
 
-  .. _class_SimplexNoise_get_noise_2d:
+.. _class_SimplexNoise_get_noise_2d:
 
 - :ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-2D noise value -1,1 at position ``x``,``y``.
+Returns the 2D noise value ``[-1,1]`` at the given position.
 
-  .. _class_SimplexNoise_get_noise_2dv:
+.. _class_SimplexNoise_get_noise_2dv:
 
 - :ref:`float<class_float>` **get_noise_2dv** **(** :ref:`Vector2<class_Vector2>` pos **)**
 
-2D noise value -1,1 at position ``pos.x``,``pos.y``.
+Returns the 2D noise value ``[-1,1]`` at the given position.
 
-  .. _class_SimplexNoise_get_noise_3d:
+.. _class_SimplexNoise_get_noise_3d:
 
 - :ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)**
 
-3D noise value -1,1 at position ``x``,``y``,``z``.
+Returns the 3D noise value ``[-1,1]`` at the given position.
 
-  .. _class_SimplexNoise_get_noise_3dv:
+.. _class_SimplexNoise_get_noise_3dv:
 
 - :ref:`float<class_float>` **get_noise_3dv** **(** :ref:`Vector3<class_Vector3>` pos **)**
 
-3D noise value -1,1 at position ``pos.x``,``pos.y``,``pos.z``.
+Returns the 3D noise value ``[-1,1]`` at the given position.
 
-  .. _class_SimplexNoise_get_noise_4d:
+.. _class_SimplexNoise_get_noise_4d:
 
 - :ref:`float<class_float>` **get_noise_4d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
-4D noise value -1,1 at position ``x``,``y``,``z``,``w``.
+Returns the 4D noise value ``[-1,1]`` at the given position.
 
-  .. _class_SimplexNoise_get_seamless_image:
+.. _class_SimplexNoise_get_seamless_image:
 
 - :ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` size **)**
 
-Generate a tileable noise image, based on the current noise parameters. 
+Generate a tileable noise image, based on the current noise parameters.
 
-Generated seamless images are always square (``size``\ x``size``).
+Generated seamless images are always square (``size`` x ``size``).
 

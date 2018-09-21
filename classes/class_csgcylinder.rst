@@ -41,7 +41,7 @@ This node allows you to create a cylinder (or cone) for use with the CSG system.
 Property Descriptions
 ---------------------
 
-  .. _class_CSGCylinder_cone:
+.. _class_CSGCylinder_cone:
 
 - :ref:`bool<class_bool>` **cone**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 If true a cone is created, the :ref:`radius<class_CSGCylinder_radius>` will only apply to one side.
 
-  .. _class_CSGCylinder_height:
+.. _class_CSGCylinder_height:
 
 - :ref:`float<class_float>` **height**
 
@@ -65,7 +65,7 @@ If true a cone is created, the :ref:`radius<class_CSGCylinder_radius>` will only
 
 The height of the cylinder.
 
-  .. _class_CSGCylinder_material:
+.. _class_CSGCylinder_material:
 
 - :ref:`Material<class_Material>` **material**
 
@@ -77,7 +77,7 @@ The height of the cylinder.
 
 The material used to render the cylinder.
 
-  .. _class_CSGCylinder_radius:
+.. _class_CSGCylinder_radius:
 
 - :ref:`float<class_float>` **radius**
 
@@ -89,7 +89,7 @@ The material used to render the cylinder.
 
 The radius of the cylinder.
 
-  .. _class_CSGCylinder_sides:
+.. _class_CSGCylinder_sides:
 
 - :ref:`int<class_int>` **sides**
 
@@ -101,7 +101,7 @@ The radius of the cylinder.
 
 The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
 
-  .. _class_CSGCylinder_smooth_faces:
+.. _class_CSGCylinder_smooth_faces:
 
 - :ref:`bool<class_bool>` **smooth_faces**
 

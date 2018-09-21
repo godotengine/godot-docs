@@ -61,7 +61,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_Line2D_LineCapMode:
+.. _enum_Line2D_LineCapMode:
 
 enum **LineCapMode**:
 
@@ -69,7 +69,7 @@ enum **LineCapMode**:
 - **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
 - **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
 
-  .. _enum_Line2D_LineTextureMode:
+.. _enum_Line2D_LineTextureMode:
 
 enum **LineTextureMode**:
 
@@ -77,7 +77,7 @@ enum **LineTextureMode**:
 - **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
 - **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with Repeat Disabled for best results.
 
-  .. _enum_Line2D_LineJointMode:
+.. _enum_Line2D_LineJointMode:
 
 enum **LineJointMode**:
 
@@ -93,7 +93,7 @@ A line through several points in 2D space.
 Property Descriptions
 ---------------------
 
-  .. _class_Line2D_begin_cap_mode:
+.. _class_Line2D_begin_cap_mode:
 
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode**
 
@@ -105,7 +105,7 @@ Property Descriptions
 
 Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
-  .. _class_Line2D_default_color:
+.. _class_Line2D_default_color:
 
 - :ref:`Color<class_Color>` **default_color**
 
@@ -117,7 +117,7 @@ Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Defa
 
 The line's color. Will not be used if a gradient is set.
 
-  .. _class_Line2D_end_cap_mode:
+.. _class_Line2D_end_cap_mode:
 
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode**
 
@@ -129,7 +129,7 @@ The line's color. Will not be used if a gradient is set.
 
 Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
-  .. _class_Line2D_gradient:
+.. _class_Line2D_gradient:
 
 - :ref:`Gradient<class_Gradient>` **gradient**
 
@@ -141,7 +141,7 @@ Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Defau
 
 The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
 
-  .. _class_Line2D_joint_mode:
+.. _class_Line2D_joint_mode:
 
 - :ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode**
 
@@ -153,7 +153,7 @@ The gradient is drawn through the whole line from start to finish. The default c
 
 The style for the points between the start and the end.
 
-  .. _class_Line2D_points:
+.. _class_Line2D_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
@@ -165,7 +165,7 @@ The style for the points between the start and the end.
 
 The points that form the lines. The line is drawn between every point set in this array.
 
-  .. _class_Line2D_round_precision:
+.. _class_Line2D_round_precision:
 
 - :ref:`int<class_int>` **round_precision**
 
@@ -177,7 +177,7 @@ The points that form the lines. The line is drawn between every point set in thi
 
 The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
 
-  .. _class_Line2D_sharp_limit:
+.. _class_Line2D_sharp_limit:
 
 - :ref:`float<class_float>` **sharp_limit**
 
@@ -189,7 +189,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 
 The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to ``LINE_JOINT_SHARP``.
 
-  .. _class_Line2D_texture:
+.. _class_Line2D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
@@ -201,7 +201,7 @@ The direction difference in radians between vector points. This value is only us
 
 The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
 
-  .. _class_Line2D_texture_mode:
+.. _class_Line2D_texture_mode:
 
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode**
 
@@ -213,7 +213,7 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 
 The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: ``LINE_TEXTURE_NONE``.
 
-  .. _class_Line2D_width:
+.. _class_Line2D_width:
 
 - :ref:`float<class_float>` **width**
 
@@ -228,31 +228,31 @@ The line's width.
 Method Descriptions
 -------------------
 
-  .. _class_Line2D_add_point:
+.. _class_Line2D_add_point:
 
 - void **add_point** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Add a point at the ``position``. Appends the point at the end of the line.
 
-  .. _class_Line2D_get_point_count:
+.. _class_Line2D_get_point_count:
 
 - :ref:`int<class_int>` **get_point_count** **(** **)** const
 
 Returns the Line2D's amount of points.
 
-  .. _class_Line2D_get_point_position:
+.. _class_Line2D_get_point_position:
 
 - :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** const
 
 Returns point ``i``'s position.
 
-  .. _class_Line2D_remove_point:
+.. _class_Line2D_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` i **)**
 
 Remove the point at index ``i`` from the line.
 
-  .. _class_Line2D_set_point_position:
+.. _class_Line2D_set_point_position:
 
 - void **set_point_position** **(** :ref:`int<class_int>` i, :ref:`Vector2<class_Vector2>` position **)**
 

@@ -26,7 +26,7 @@ Properties
 Signals
 -------
 
-  .. _class_Path_curve_changed:
+.. _class_Path_curve_changed:
 
 - **curve_changed** **(** **)**
 
@@ -38,7 +38,7 @@ This class is a container/Node-ification of a :ref:`Curve3D<class_Curve3D>`, so 
 Property Descriptions
 ---------------------
 
-  .. _class_Path_curve:
+.. _class_Path_curve:
 
 - :ref:`Curve3D<class_Curve3D>` **curve**
 

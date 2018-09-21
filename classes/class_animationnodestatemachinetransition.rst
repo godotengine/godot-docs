@@ -36,14 +36,14 @@ Properties
 Signals
 -------
 
-  .. _class_AnimationNodeStateMachineTransition_advance_condition_changed:
+.. _class_AnimationNodeStateMachineTransition_advance_condition_changed:
 
 - **advance_condition_changed** **(** **)**
 
 Enumerations
 ------------
 
-  .. _enum_AnimationNodeStateMachineTransition_SwitchMode:
+.. _enum_AnimationNodeStateMachineTransition_SwitchMode:
 
 enum **SwitchMode**:
 
@@ -54,7 +54,7 @@ enum **SwitchMode**:
 Property Descriptions
 ---------------------
 
-  .. _class_AnimationNodeStateMachineTransition_advance_condition:
+.. _class_AnimationNodeStateMachineTransition_advance_condition:
 
 - :ref:`String<class_String>` **advance_condition**
 
@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | get_advance_condition()      |
 +----------+------------------------------+
 
-  .. _class_AnimationNodeStateMachineTransition_auto_advance:
+.. _class_AnimationNodeStateMachineTransition_auto_advance:
 
 - :ref:`bool<class_bool>` **auto_advance**
 
@@ -74,7 +74,7 @@ Property Descriptions
 | *Getter* | has_auto_advance()      |
 +----------+-------------------------+
 
-  .. _class_AnimationNodeStateMachineTransition_disabled:
+.. _class_AnimationNodeStateMachineTransition_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -84,7 +84,7 @@ Property Descriptions
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
-  .. _class_AnimationNodeStateMachineTransition_priority:
+.. _class_AnimationNodeStateMachineTransition_priority:
 
 - :ref:`int<class_int>` **priority**
 
@@ -94,7 +94,7 @@ Property Descriptions
 | *Getter* | get_priority()      |
 +----------+---------------------+
 
-  .. _class_AnimationNodeStateMachineTransition_switch_mode:
+.. _class_AnimationNodeStateMachineTransition_switch_mode:
 
 - :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` **switch_mode**
 
@@ -104,7 +104,7 @@ Property Descriptions
 | *Getter* | get_switch_mode()      |
 +----------+------------------------+
 
-  .. _class_AnimationNodeStateMachineTransition_xfade_time:
+.. _class_AnimationNodeStateMachineTransition_xfade_time:
 
 - :ref:`float<class_float>` **xfade_time**
 

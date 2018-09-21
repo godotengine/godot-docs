@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeScalarOp_Operator:
+.. _enum_VisualShaderNodeScalarOp_Operator:
 
 enum **Operator**:
 
@@ -43,7 +43,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeScalarOp_operator:
+.. _class_VisualShaderNodeScalarOp_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator**
 

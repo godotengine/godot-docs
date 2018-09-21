@@ -41,7 +41,7 @@ Changes a variable's value to the given input.
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptVariableSet_var_name:
+.. _class_VisualScriptVariableSet_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

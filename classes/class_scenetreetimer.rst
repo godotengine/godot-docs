@@ -26,14 +26,14 @@ Properties
 Signals
 -------
 
-  .. _class_SceneTreeTimer_timeout:
+.. _class_SceneTreeTimer_timeout:
 
 - **timeout** **(** **)**
 
 Property Descriptions
 ---------------------
 
-  .. _class_SceneTreeTimer_time_left:
+.. _class_SceneTreeTimer_time_left:
 
 - :ref:`float<class_float>` **time_left**
 

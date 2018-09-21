@@ -33,7 +33,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_AnimationNodeAnimation_animation:
+.. _class_AnimationNodeAnimation_animation:
 
 - :ref:`String<class_String>` **animation**
 
@@ -46,7 +46,7 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_AnimationNodeAnimation_get_playback_time:
+.. _class_AnimationNodeAnimation_get_playback_time:
 
 - :ref:`float<class_float>` **get_playback_time** **(** **)** const
 

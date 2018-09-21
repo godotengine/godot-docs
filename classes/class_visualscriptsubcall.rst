@@ -26,7 +26,7 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_VisualScriptSubCall__subcall:
+.. _class_VisualScriptSubCall__subcall:
 
 - :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** virtual
 

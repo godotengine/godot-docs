@@ -46,7 +46,7 @@ General purpose progress bar. Shows fill percentage from right to left.
 Property Descriptions
 ---------------------
 
-  .. _class_ProgressBar_percent_visible:
+.. _class_ProgressBar_percent_visible:
 
 - :ref:`bool<class_bool>` **percent_visible**
 

@@ -55,25 +55,25 @@ Methods
 Signals
 -------
 
-  .. _class_BaseButton_button_down:
+.. _class_BaseButton_button_down:
 
 - **button_down** **(** **)**
 
 Emitted when the button starts being held down.
 
-  .. _class_BaseButton_button_up:
+.. _class_BaseButton_button_up:
 
 - **button_up** **(** **)**
 
 Emitted when the button stops being held down.
 
-  .. _class_BaseButton_pressed:
+.. _class_BaseButton_pressed:
 
 - **pressed** **(** **)**
 
 This signal is emitted every time the button is toggled or pressed (i.e. activated, so on ``button_down`` if "Click on press" is active and on ``button_up`` otherwise).
 
-  .. _class_BaseButton_toggled:
+.. _class_BaseButton_toggled:
 
 - **toggled** **(** :ref:`bool<class_bool>` button_pressed **)**
 
@@ -82,14 +82,14 @@ This signal is emitted when the button was just toggled between pressed and norm
 Enumerations
 ------------
 
-  .. _enum_BaseButton_ActionMode:
+.. _enum_BaseButton_ActionMode:
 
 enum **ActionMode**:
 
 - **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
 - **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
 
-  .. _enum_BaseButton_DrawMode:
+.. _enum_BaseButton_DrawMode:
 
 enum **DrawMode**:
 
@@ -106,7 +106,7 @@ BaseButton is the abstract base class for buttons, so it shouldn't be used direc
 Property Descriptions
 ---------------------
 
-  .. _class_BaseButton_action_mode:
+.. _class_BaseButton_action_mode:
 
 - :ref:`ActionMode<enum_BaseButton_ActionMode>` **action_mode**
 
@@ -118,7 +118,7 @@ Property Descriptions
 
 Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
 
-  .. _class_BaseButton_button_mask:
+.. _class_BaseButton_button_mask:
 
 - :ref:`int<class_int>` **button_mask**
 
@@ -132,7 +132,7 @@ Binary mask to choose which mouse buttons this button will respond to.
 
 To allow both left-click and right-click, set this to 3, because it's BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT.
 
-  .. _class_BaseButton_disabled:
+.. _class_BaseButton_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -144,7 +144,7 @@ To allow both left-click and right-click, set this to 3, because it's BUTTON_MAS
 
 If ``true`` the button is in disabled state and can't be clicked or toggled.
 
-  .. _class_BaseButton_enabled_focus_mode:
+.. _class_BaseButton_enabled_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **enabled_focus_mode**
 
@@ -156,7 +156,7 @@ If ``true`` the button is in disabled state and can't be clicked or toggled.
 
 Focus access mode to use when switching between enabled/disabled (see :ref:`Control.set_focus_mode<class_Control_set_focus_mode>` and :ref:`disabled<class_BaseButton_disabled>`).
 
-  .. _class_BaseButton_group:
+.. _class_BaseButton_group:
 
 - :ref:`ButtonGroup<class_ButtonGroup>` **group**
 
@@ -168,7 +168,7 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 
 :ref:`ButtonGroup<class_ButtonGroup>` associated to the button.
 
-  .. _class_BaseButton_pressed:
+.. _class_BaseButton_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 
@@ -180,7 +180,7 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 
 If ``true`` the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
 
-  .. _class_BaseButton_shortcut:
+.. _class_BaseButton_shortcut:
 
 - :ref:`ShortCut<class_ShortCut>` **shortcut**
 
@@ -192,7 +192,7 @@ If ``true`` the button's state is pressed. Means the button is pressed down or t
 
 Shortcut associated to the button.
 
-  .. _class_BaseButton_toggle_mode:
+.. _class_BaseButton_toggle_mode:
 
 - :ref:`bool<class_bool>` **toggle_mode**
 
@@ -207,25 +207,25 @@ If ``true`` the button is in toggle mode. Makes the button flip state between pr
 Method Descriptions
 -------------------
 
-  .. _class_BaseButton__pressed:
+.. _class_BaseButton__pressed:
 
 - void **_pressed** **(** **)** virtual
 
 Called when the button is pressed.
 
-  .. _class_BaseButton__toggled:
+.. _class_BaseButton__toggled:
 
 - void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
 Called when the button is toggled (only if toggle_mode is active).
 
-  .. _class_BaseButton_get_draw_mode:
+.. _class_BaseButton_get_draw_mode:
 
 - :ref:`DrawMode<enum_BaseButton_DrawMode>` **get_draw_mode** **(** **)** const
 
 Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 
-  .. _class_BaseButton_is_hovered:
+.. _class_BaseButton_is_hovered:
 
 - :ref:`bool<class_bool>` **is_hovered** **(** **)** const
 

@@ -36,7 +36,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisibilityEnabler2D_Enabler:
+.. _enum_VisibilityEnabler2D_Enabler:
 
 enum **Enabler**:
 
@@ -56,7 +56,7 @@ The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref
 Property Descriptions
 ---------------------
 
-  .. _class_VisibilityEnabler2D_freeze_bodies:
+.. _class_VisibilityEnabler2D_freeze_bodies:
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
@@ -66,7 +66,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler2D_pause_animated_sprites:
+.. _class_VisibilityEnabler2D_pause_animated_sprites:
 
 - :ref:`bool<class_bool>` **pause_animated_sprites**
 
@@ -76,7 +76,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler2D_pause_animations:
+.. _class_VisibilityEnabler2D_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 
@@ -86,7 +86,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler2D_pause_particles:
+.. _class_VisibilityEnabler2D_pause_particles:
 
 - :ref:`bool<class_bool>` **pause_particles**
 
@@ -96,7 +96,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler2D_physics_process_parent:
+.. _class_VisibilityEnabler2D_physics_process_parent:
 
 - :ref:`bool<class_bool>` **physics_process_parent**
 
@@ -106,7 +106,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler2D_process_parent:
+.. _class_VisibilityEnabler2D_process_parent:
 
 - :ref:`bool<class_bool>` **process_parent**
 

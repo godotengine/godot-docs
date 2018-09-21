@@ -44,7 +44,7 @@ If it is not :ref:`enabled<class_InterpolatedCamera_enabled>` or does not have a
 Property Descriptions
 ---------------------
 
-  .. _class_InterpolatedCamera_enabled:
+.. _class_InterpolatedCamera_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
 
@@ -56,7 +56,7 @@ Property Descriptions
 
 If ``true`` and a target is set, the camera will move automatically.
 
-  .. _class_InterpolatedCamera_speed:
+.. _class_InterpolatedCamera_speed:
 
 - :ref:`float<class_float>` **speed**
 
@@ -68,7 +68,7 @@ If ``true`` and a target is set, the camera will move automatically.
 
 How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
 
-  .. _class_InterpolatedCamera_target:
+.. _class_InterpolatedCamera_target:
 
 - :ref:`NodePath<class_NodePath>` **target**
 
@@ -83,7 +83,7 @@ The target's :ref:`NodePath<class_NodePath>`.
 Method Descriptions
 -------------------
 
-  .. _class_InterpolatedCamera_set_target:
+.. _class_InterpolatedCamera_set_target:
 
 - void **set_target** **(** :ref:`Object<class_Object>` target **)**
 

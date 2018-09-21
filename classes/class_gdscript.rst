@@ -36,16 +36,17 @@ Tutorials
 ---------
 
 - :doc:`../getting_started/scripting/gdscript/index`
+
 Method Descriptions
 -------------------
 
-  .. _class_GDScript_get_as_byte_code:
+.. _class_GDScript_get_as_byte_code:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 
-  .. _class_GDScript_new:
+.. _class_GDScript_new:
 
 - :ref:`Object<class_Object>` **new** **(** **)** vararg
 

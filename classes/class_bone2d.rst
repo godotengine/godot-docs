@@ -39,7 +39,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_Bone2D_default_length:
+.. _class_Bone2D_default_length:
 
 - :ref:`float<class_float>` **default_length**
 
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_default_length()      |
 +----------+---------------------------+
 
-  .. _class_Bone2D_rest:
+.. _class_Bone2D_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **rest**
 
@@ -62,15 +62,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_Bone2D_apply_rest:
+.. _class_Bone2D_apply_rest:
 
 - void **apply_rest** **(** **)**
 
-  .. _class_Bone2D_get_index_in_skeleton:
+.. _class_Bone2D_get_index_in_skeleton:
 
 - :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** const
 
-  .. _class_Bone2D_get_skeleton_rest:
+.. _class_Bone2D_get_skeleton_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** const
 

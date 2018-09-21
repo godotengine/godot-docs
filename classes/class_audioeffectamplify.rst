@@ -33,7 +33,7 @@ Increases or decreases the volume being routed through the audio bus.
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectAmplify_volume_db:
+.. _class_AudioEffectAmplify_volume_db:
 
 - :ref:`float<class_float>` **volume_db**
 

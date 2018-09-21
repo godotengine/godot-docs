@@ -34,10 +34,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
+
 Method Descriptions
 -------------------
 
-  .. _class_AudioStream_get_length:
+.. _class_AudioStream_get_length:
 
 - :ref:`float<class_float>` **get_length** **(** **)** const
 

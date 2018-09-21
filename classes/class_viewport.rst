@@ -129,7 +129,7 @@ Methods
 Signals
 -------
 
-  .. _class_Viewport_size_changed:
+.. _class_Viewport_size_changed:
 
 - **size_changed** **(** **)**
 
@@ -138,7 +138,7 @@ Emitted when the size of the viewport is changed, whether by :ref:`set_size_over
 Enumerations
 ------------
 
-  .. _enum_Viewport_UpdateMode:
+.. _enum_Viewport_UpdateMode:
 
 enum **UpdateMode**:
 
@@ -147,7 +147,7 @@ enum **UpdateMode**:
 - **UPDATE_WHEN_VISIBLE** = **2** --- Update the render target only when it is visible. This is the default value.
 - **UPDATE_ALWAYS** = **3** --- Always update the render target.
 
-  .. _enum_Viewport_RenderInfo:
+.. _enum_Viewport_RenderInfo:
 
 enum **RenderInfo**:
 
@@ -159,7 +159,7 @@ enum **RenderInfo**:
 - **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
 - **RENDER_INFO_MAX** = **6** --- Enum limiter. Do not use it directly.
 
-  .. _enum_Viewport_MSAA:
+.. _enum_Viewport_MSAA:
 
 enum **MSAA**:
 
@@ -169,7 +169,7 @@ enum **MSAA**:
 - **MSAA_8X** = **3**
 - **MSAA_16X** = **4**
 
-  .. _enum_Viewport_ClearMode:
+.. _enum_Viewport_ClearMode:
 
 enum **ClearMode**:
 
@@ -177,7 +177,7 @@ enum **ClearMode**:
 - **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
 - **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to ``CLEAR_MODE_NEVER``.
 
-  .. _enum_Viewport_Usage:
+.. _enum_Viewport_Usage:
 
 enum **Usage**:
 
@@ -186,7 +186,7 @@ enum **Usage**:
 - **USAGE_3D** = **2**
 - **USAGE_3D_NO_EFFECTS** = **3**
 
-  .. _enum_Viewport_DebugDraw:
+.. _enum_Viewport_DebugDraw:
 
 enum **DebugDraw**:
 
@@ -195,7 +195,7 @@ enum **DebugDraw**:
 - **DEBUG_DRAW_OVERDRAW** = **2** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
 - **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
 
-  .. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
+.. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
 
 enum **ShadowAtlasQuadrantSubdiv**:
 
@@ -227,11 +227,13 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/2d/2d_transforms`
+
 - :doc:`../tutorials/viewports/index`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Viewport_arvr:
+.. _class_Viewport_arvr:
 
 - :ref:`bool<class_bool>` **arvr**
 
@@ -243,7 +245,7 @@ Property Descriptions
 
 If ``true`` the viewport will be used in AR/VR process. Default value: ``false``.
 
-  .. _class_Viewport_audio_listener_enable_2d:
+.. _class_Viewport_audio_listener_enable_2d:
 
 - :ref:`bool<class_bool>` **audio_listener_enable_2d**
 
@@ -255,7 +257,7 @@ If ``true`` the viewport will be used in AR/VR process. Default value: ``false``
 
 If ``true`` the viewport will process 2D audio streams. Default value: ``false``.
 
-  .. _class_Viewport_audio_listener_enable_3d:
+.. _class_Viewport_audio_listener_enable_3d:
 
 - :ref:`bool<class_bool>` **audio_listener_enable_3d**
 
@@ -267,7 +269,7 @@ If ``true`` the viewport will process 2D audio streams. Default value: ``false``
 
 If ``true`` the viewport will process 3D audio streams. Default value: ``false``.
 
-  .. _class_Viewport_canvas_transform:
+.. _class_Viewport_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **canvas_transform**
 
@@ -279,7 +281,7 @@ If ``true`` the viewport will process 3D audio streams. Default value: ``false``
 
 The canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_CanvasItem>`\ s. This is relative to the global canvas transform of the viewport.
 
-  .. _class_Viewport_debug_draw:
+.. _class_Viewport_debug_draw:
 
 - :ref:`DebugDraw<enum_Viewport_DebugDraw>` **debug_draw**
 
@@ -291,7 +293,7 @@ The canvas transform of the viewport, useful for changing the on-screen position
 
 The overlay mode for test rendered geometry in debug purposes. Default value: ``DEBUG_DRAW_DISABLED``.
 
-  .. _class_Viewport_disable_3d:
+.. _class_Viewport_disable_3d:
 
 - :ref:`bool<class_bool>` **disable_3d**
 
@@ -303,7 +305,7 @@ The overlay mode for test rendered geometry in debug purposes. Default value: ``
 
 If ``true`` the viewport will disable 3D rendering. For actual disabling use ``usage``. Default value: ``false``.
 
-  .. _class_Viewport_global_canvas_transform:
+.. _class_Viewport_global_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **global_canvas_transform**
 
@@ -315,7 +317,7 @@ If ``true`` the viewport will disable 3D rendering. For actual disabling use ``u
 
 The global canvas transform of the viewport. The canvas transform is relative to this.
 
-  .. _class_Viewport_gui_disable_input:
+.. _class_Viewport_gui_disable_input:
 
 - :ref:`bool<class_bool>` **gui_disable_input**
 
@@ -327,7 +329,7 @@ The global canvas transform of the viewport. The canvas transform is relative to
 
 If ``true`` the viewport will not receive input event. Default value: ``false``.
 
-  .. _class_Viewport_gui_snap_controls_to_pixels:
+.. _class_Viewport_gui_snap_controls_to_pixels:
 
 - :ref:`bool<class_bool>` **gui_snap_controls_to_pixels**
 
@@ -339,7 +341,7 @@ If ``true`` the viewport will not receive input event. Default value: ``false``.
 
 If ``true`` the GUI controls on the viewport will lay pixel perfectly. Default value: ``true``.
 
-  .. _class_Viewport_hdr:
+.. _class_Viewport_hdr:
 
 - :ref:`bool<class_bool>` **hdr**
 
@@ -351,7 +353,7 @@ If ``true`` the GUI controls on the viewport will lay pixel perfectly. Default v
 
 If ``true`` the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
 
-  .. _class_Viewport_keep_3d_linear:
+.. _class_Viewport_keep_3d_linear:
 
 - :ref:`bool<class_bool>` **keep_3d_linear**
 
@@ -363,7 +365,7 @@ If ``true`` the viewport rendering will receive benefits from High Dynamic Range
 
 If ``true`` the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
 
-  .. _class_Viewport_msaa:
+.. _class_Viewport_msaa:
 
 - :ref:`MSAA<enum_Viewport_MSAA>` **msaa**
 
@@ -375,7 +377,7 @@ If ``true`` the result after 3D rendering will not have a linear to sRGB color c
 
 The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.
 
-  .. _class_Viewport_own_world:
+.. _class_Viewport_own_world:
 
 - :ref:`bool<class_bool>` **own_world**
 
@@ -387,7 +389,7 @@ The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.
 
 If ``true`` the viewport will use :ref:`World<class_World>` defined in ``world`` property. Default value: ``false``.
 
-  .. _class_Viewport_physics_object_picking:
+.. _class_Viewport_physics_object_picking:
 
 - :ref:`bool<class_bool>` **physics_object_picking**
 
@@ -399,7 +401,7 @@ If ``true`` the viewport will use :ref:`World<class_World>` defined in ``world``
 
 If ``true`` the objects rendered by viewport become subjects of mouse picking process. Default value: ``false``.
 
-  .. _class_Viewport_render_target_clear_mode:
+.. _class_Viewport_render_target_clear_mode:
 
 - :ref:`ClearMode<enum_Viewport_ClearMode>` **render_target_clear_mode**
 
@@ -411,7 +413,7 @@ If ``true`` the objects rendered by viewport become subjects of mouse picking pr
 
 The clear mode when viewport used as a render target. Default value: ``CLEAR_MODE_ALWAYS``.
 
-  .. _class_Viewport_render_target_update_mode:
+.. _class_Viewport_render_target_update_mode:
 
 - :ref:`UpdateMode<enum_Viewport_UpdateMode>` **render_target_update_mode**
 
@@ -423,7 +425,7 @@ The clear mode when viewport used as a render target. Default value: ``CLEAR_MOD
 
 The update mode when viewport used as a render target. Default value: ``UPDATE_WHEN_VISIBLE``.
 
-  .. _class_Viewport_render_target_v_flip:
+.. _class_Viewport_render_target_v_flip:
 
 - :ref:`bool<class_bool>` **render_target_v_flip**
 
@@ -435,7 +437,7 @@ The update mode when viewport used as a render target. Default value: ``UPDATE_W
 
 If ``true`` the result of rendering will be flipped vertically. Default value: ``false``.
 
-  .. _class_Viewport_shadow_atlas_quad_0:
+.. _class_Viewport_shadow_atlas_quad_0:
 
 - :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **shadow_atlas_quad_0**
 
@@ -447,7 +449,7 @@ If ``true`` the result of rendering will be flipped vertically. Default value: `
 
 The subdivision amount of first quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_4``.
 
-  .. _class_Viewport_shadow_atlas_quad_1:
+.. _class_Viewport_shadow_atlas_quad_1:
 
 - :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **shadow_atlas_quad_1**
 
@@ -459,7 +461,7 @@ The subdivision amount of first quadrant on shadow atlas. Default value: ``SHADO
 
 The subdivision amount of second quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_4``.
 
-  .. _class_Viewport_shadow_atlas_quad_2:
+.. _class_Viewport_shadow_atlas_quad_2:
 
 - :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **shadow_atlas_quad_2**
 
@@ -471,7 +473,7 @@ The subdivision amount of second quadrant on shadow atlas. Default value: ``SHAD
 
 The subdivision amount of third quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_16``.
 
-  .. _class_Viewport_shadow_atlas_quad_3:
+.. _class_Viewport_shadow_atlas_quad_3:
 
 - :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` **shadow_atlas_quad_3**
 
@@ -483,7 +485,7 @@ The subdivision amount of third quadrant on shadow atlas. Default value: ``SHADO
 
 The subdivision amount of fourth quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_64``.
 
-  .. _class_Viewport_shadow_atlas_size:
+.. _class_Viewport_shadow_atlas_size:
 
 - :ref:`int<class_int>` **shadow_atlas_size**
 
@@ -495,7 +497,7 @@ The subdivision amount of fourth quadrant on shadow atlas. Default value: ``SHAD
 
 The resolution of shadow atlas. Both width and height is equal to one value.
 
-  .. _class_Viewport_size:
+.. _class_Viewport_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
@@ -507,7 +509,7 @@ The resolution of shadow atlas. Both width and height is equal to one value.
 
 The width and height of viewport.
 
-  .. _class_Viewport_transparent_bg:
+.. _class_Viewport_transparent_bg:
 
 - :ref:`bool<class_bool>` **transparent_bg**
 
@@ -519,7 +521,7 @@ The width and height of viewport.
 
 If ``true`` the viewport should render its background as transparent. Default value: ``false``.
 
-  .. _class_Viewport_usage:
+.. _class_Viewport_usage:
 
 - :ref:`Usage<enum_Viewport_Usage>` **usage**
 
@@ -531,7 +533,7 @@ If ``true`` the viewport should render its background as transparent. Default va
 
 The rendering mode of viewport. Default value: ``USAGE_3D``.
 
-  .. _class_Viewport_world:
+.. _class_Viewport_world:
 
 - :ref:`World<class_World>` **world**
 
@@ -543,7 +545,7 @@ The rendering mode of viewport. Default value: ``USAGE_3D``.
 
 The custom :ref:`World<class_World>` which can be used as 3D environment source.
 
-  .. _class_Viewport_world_2d:
+.. _class_Viewport_world_2d:
 
 - :ref:`World2D<class_World2D>` **world_2d**
 
@@ -558,131 +560,131 @@ The custom :ref:`World2D<class_World2D>` which can be used as 2D environment sou
 Method Descriptions
 -------------------
 
-  .. _class_Viewport_find_world:
+.. _class_Viewport_find_world:
 
 - :ref:`World<class_World>` **find_world** **(** **)** const
 
 Returns the 3D world of the viewport, or if none the world of the parent viewport.
 
-  .. _class_Viewport_find_world_2d:
+.. _class_Viewport_find_world_2d:
 
 - :ref:`World2D<class_World2D>` **find_world_2d** **(** **)** const
 
 Returns the 2D world of the viewport.
 
-  .. _class_Viewport_get_camera:
+.. _class_Viewport_get_camera:
 
 - :ref:`Camera<class_Camera>` **get_camera** **(** **)** const
 
 Returns the active 3D camera.
 
-  .. _class_Viewport_get_final_transform:
+.. _class_Viewport_get_final_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** const
 
 Returns the total transform of the viewport.
 
-  .. _class_Viewport_get_modal_stack_top:
+.. _class_Viewport_get_modal_stack_top:
 
 - :ref:`Control<class_Control>` **get_modal_stack_top** **(** **)** const
 
 Returns the topmost modal in the stack.
 
-  .. _class_Viewport_get_mouse_position:
+.. _class_Viewport_get_mouse_position:
 
 - :ref:`Vector2<class_Vector2>` **get_mouse_position** **(** **)** const
 
 Returns the mouse position relative to the viewport.
 
-  .. _class_Viewport_get_render_info:
+.. _class_Viewport_get_render_info:
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**
 
 Returns information about the viewport from the rendering pipeline.
 
-  .. _class_Viewport_get_size_override:
+.. _class_Viewport_get_size_override:
 
 - :ref:`Vector2<class_Vector2>` **get_size_override** **(** **)** const
 
 Returns the size override set with :ref:`set_size_override<class_Viewport_set_size_override>`.
 
-  .. _class_Viewport_get_texture:
+.. _class_Viewport_get_texture:
 
 - :ref:`ViewportTexture<class_ViewportTexture>` **get_texture** **(** **)** const
 
 Returns the viewport's texture.
 
-  .. _class_Viewport_get_viewport_rid:
+.. _class_Viewport_get_viewport_rid:
 
 - :ref:`RID<class_RID>` **get_viewport_rid** **(** **)** const
 
 Returns the viewport's RID from the :ref:`VisualServer<class_VisualServer>`.
 
-  .. _class_Viewport_get_visible_rect:
+.. _class_Viewport_get_visible_rect:
 
 - :ref:`Rect2<class_Rect2>` **get_visible_rect** **(** **)** const
 
 Returns the visible rectangle in global screen coordinates.
 
-  .. _class_Viewport_gui_get_drag_data:
+.. _class_Viewport_gui_get_drag_data:
 
 - :ref:`Variant<class_Variant>` **gui_get_drag_data** **(** **)** const
 
 Returns the drag data from the GUI, that was previously returned by :ref:`Control.get_drag_data<class_Control_get_drag_data>`.
 
-  .. _class_Viewport_gui_has_modal_stack:
+.. _class_Viewport_gui_has_modal_stack:
 
 - :ref:`bool<class_bool>` **gui_has_modal_stack** **(** **)** const
 
 Returns ``true`` if there are visible modals on-screen.
 
-  .. _class_Viewport_gui_is_dragging:
+.. _class_Viewport_gui_is_dragging:
 
 - :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** const
 
-  .. _class_Viewport_input:
+.. _class_Viewport_input:
 
 - void **input** **(** :ref:`InputEvent<class_InputEvent>` local_event **)**
 
-  .. _class_Viewport_is_size_override_enabled:
+.. _class_Viewport_is_size_override_enabled:
 
 - :ref:`bool<class_bool>` **is_size_override_enabled** **(** **)** const
 
 Returns ``true`` if the size override is enabled. See :ref:`set_size_override<class_Viewport_set_size_override>`.
 
-  .. _class_Viewport_is_size_override_stretch_enabled:
+.. _class_Viewport_is_size_override_stretch_enabled:
 
 - :ref:`bool<class_bool>` **is_size_override_stretch_enabled** **(** **)** const
 
 Returns ``true`` if the size stretch override is enabled. See :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>`.
 
-  .. _class_Viewport_set_attach_to_screen_rect:
+.. _class_Viewport_set_attach_to_screen_rect:
 
 - void **set_attach_to_screen_rect** **(** :ref:`Rect2<class_Rect2>` rect **)**
 
-  .. _class_Viewport_set_size_override:
+.. _class_Viewport_set_size_override:
 
 - void **set_size_override** **(** :ref:`bool<class_bool>` enable, :ref:`Vector2<class_Vector2>` size=Vector2( -1, -1 ), :ref:`Vector2<class_Vector2>` margin=Vector2( 0, 0 ) **)**
 
 Sets the size override of the viewport. If the ``enable`` parameter is ``true`` the override is used, otherwise it uses the default size. If the size parameter is ``(-1, -1)``, it won't update the size.
 
-  .. _class_Viewport_set_size_override_stretch:
+.. _class_Viewport_set_size_override_stretch:
 
 - void **set_size_override_stretch** **(** :ref:`bool<class_bool>` enabled **)**
 
 If ``true`` the size override affects stretch as well.
 
-  .. _class_Viewport_unhandled_input:
+.. _class_Viewport_unhandled_input:
 
 - void **unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` local_event **)**
 
-  .. _class_Viewport_update_worlds:
+.. _class_Viewport_update_worlds:
 
 - void **update_worlds** **(** **)**
 
 Forces update of the 2D and 3D worlds.
 
-  .. _class_Viewport_warp_mouse:
+.. _class_Viewport_warp_mouse:
 
 - void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` to_position **)**
 

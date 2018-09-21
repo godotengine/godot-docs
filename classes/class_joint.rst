@@ -39,7 +39,7 @@ All 3D joints link two nodes, has a priority, and can decide if the two bodies o
 Property Descriptions
 ---------------------
 
-  .. _class_Joint_collision/exclude_nodes:
+.. _class_Joint_collision/exclude_nodes:
 
 - :ref:`bool<class_bool>` **collision/exclude_nodes**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 If ``true`` the two bodies of the nodes are not able to collide with each other.
 
-  .. _class_Joint_nodes/node_a:
+.. _class_Joint_nodes/node_a:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_a**
 
@@ -63,7 +63,7 @@ If ``true`` the two bodies of the nodes are not able to collide with each other.
 
 The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
 
-  .. _class_Joint_nodes/node_b:
+.. _class_Joint_nodes/node_b:
 
 - :ref:`NodePath<class_NodePath>` **nodes/node_b**
 
@@ -75,7 +75,7 @@ The :ref:`Node<class_Node>`, the first side of the Joint attaches to.
 
 The :ref:`Node<class_Node>`, the second side of the Joint attaches to.
 
-  .. _class_Joint_solver/priority:
+.. _class_Joint_solver/priority:
 
 - :ref:`int<class_int>` **solver/priority**
 

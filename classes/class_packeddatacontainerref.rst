@@ -26,7 +26,7 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_PackedDataContainerRef_size:
+.. _class_PackedDataContainerRef_size:
 
 - :ref:`int<class_int>` **size** **(** **)** const
 

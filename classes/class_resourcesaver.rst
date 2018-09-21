@@ -28,7 +28,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_ResourceSaver_SaverFlags:
+.. _enum_ResourceSaver_SaverFlags:
 
 enum **SaverFlags**:
 
@@ -47,13 +47,13 @@ Resource saving interface, used for saving resources to disk.
 Method Descriptions
 -------------------
 
-  .. _class_ResourceSaver_get_recognized_extensions:
+.. _class_ResourceSaver_get_recognized_extensions:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
 Returns the list of extensions available for saving a resource of a given type.
 
-  .. _class_ResourceSaver_save:
+.. _class_ResourceSaver_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
 

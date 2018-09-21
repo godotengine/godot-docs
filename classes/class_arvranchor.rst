@@ -48,7 +48,7 @@ Keep in mind that as long as plane detection is enable the size, placing and ori
 Property Descriptions
 ---------------------
 
-  .. _class_ARVRAnchor_anchor_id:
+.. _class_ARVRAnchor_anchor_id:
 
 - :ref:`int<class_int>` **anchor_id**
 
@@ -63,25 +63,25 @@ The anchor's id. You can set this before the anchor itself exists. The first anc
 Method Descriptions
 -------------------
 
-  .. _class_ARVRAnchor_get_anchor_name:
+.. _class_ARVRAnchor_get_anchor_name:
 
 - :ref:`String<class_String>` **get_anchor_name** **(** **)** const
 
 Returns the name given to this anchor.
 
-  .. _class_ARVRAnchor_get_is_active:
+.. _class_ARVRAnchor_get_is_active:
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
 Returns true if the anchor is being tracked and false if no anchor with this id is currently known.
 
-  .. _class_ARVRAnchor_get_plane:
+.. _class_ARVRAnchor_get_plane:
 
 - :ref:`Plane<class_Plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor, handy for intersection testing
 
-  .. _class_ARVRAnchor_get_size:
+.. _class_ARVRAnchor_get_size:
 
 - :ref:`Vector3<class_Vector3>` **get_size** **(** **)** const
 

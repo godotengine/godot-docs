@@ -43,7 +43,7 @@ Methods
 Signals
 -------
 
-  .. _class_AnimatedSprite3D_frame_changed:
+.. _class_AnimatedSprite3D_frame_changed:
 
 - **frame_changed** **(** **)**
 
@@ -57,7 +57,7 @@ Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource,
 Property Descriptions
 ---------------------
 
-  .. _class_AnimatedSprite3D_animation:
+.. _class_AnimatedSprite3D_animation:
 
 - :ref:`String<class_String>` **animation**
 
@@ -69,7 +69,7 @@ Property Descriptions
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
-  .. _class_AnimatedSprite3D_frame:
+.. _class_AnimatedSprite3D_frame:
 
 - :ref:`int<class_int>` **frame**
 
@@ -81,7 +81,7 @@ The current animation from the ``frames`` resource. If this value changes, the `
 
 The displayed animation frame's index.
 
-  .. _class_AnimatedSprite3D_frames:
+.. _class_AnimatedSprite3D_frames:
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
 
@@ -93,7 +93,7 @@ The displayed animation frame's index.
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
-  .. _class_AnimatedSprite3D_playing:
+.. _class_AnimatedSprite3D_playing:
 
 - :ref:`bool<class_bool>` **playing**
 
@@ -102,19 +102,19 @@ If ``true`` the :ref:`animation<class_AnimatedSprite3D_animation>` is currently 
 Method Descriptions
 -------------------
 
-  .. _class_AnimatedSprite3D_is_playing:
+.. _class_AnimatedSprite3D_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 Return true if an animation if currently being played.
 
-  .. _class_AnimatedSprite3D_play:
+.. _class_AnimatedSprite3D_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
 
-  .. _class_AnimatedSprite3D_stop:
+.. _class_AnimatedSprite3D_stop:
 
 - void **stop** **(** **)**
 

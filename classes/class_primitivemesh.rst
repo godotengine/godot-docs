@@ -44,7 +44,7 @@ Base class for all primitive meshes. Handles applying a :ref:`Material<class_Mat
 Property Descriptions
 ---------------------
 
-  .. _class_PrimitiveMesh_custom_aabb:
+.. _class_PrimitiveMesh_custom_aabb:
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | get_custom_aabb()      |
 +----------+------------------------+
 
-  .. _class_PrimitiveMesh_flip_faces:
+.. _class_PrimitiveMesh_flip_faces:
 
 - :ref:`bool<class_bool>` **flip_faces**
 
@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | get_flip_faces()      |
 +----------+-----------------------+
 
-  .. _class_PrimitiveMesh_material:
+.. _class_PrimitiveMesh_material:
 
 - :ref:`Material<class_Material>` **material**
 
@@ -79,7 +79,7 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 Method Descriptions
 -------------------
 
-  .. _class_PrimitiveMesh_get_mesh_arrays:
+.. _class_PrimitiveMesh_get_mesh_arrays:
 
 - :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
 

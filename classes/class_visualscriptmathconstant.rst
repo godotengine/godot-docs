@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualScriptMathConstant_MathConstant:
+.. _enum_VisualScriptMathConstant_MathConstant:
 
 enum **MathConstant**:
 
@@ -56,7 +56,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptMathConstant_constant:
+.. _class_VisualScriptMathConstant_constant:
 
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 

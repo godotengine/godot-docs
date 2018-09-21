@@ -26,7 +26,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_Performance_Monitor:
+.. _enum_Performance_Monitor:
 
 enum **Monitor**:
 
@@ -70,7 +70,7 @@ Many of these monitors are not updated in real-time, so there may be a short del
 Method Descriptions
 -------------------
 
-  .. _class_Performance_get_monitor:
+.. _class_Performance_get_monitor:
 
 - :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** const
 

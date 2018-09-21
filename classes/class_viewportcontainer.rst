@@ -33,7 +33,7 @@ A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewp
 Property Descriptions
 ---------------------
 
-  .. _class_ViewportContainer_stretch:
+.. _class_ViewportContainer_stretch:
 
 - :ref:`bool<class_bool>` **stretch**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 If ``true`` the viewport will be scaled to the control's size. Default value:``false``.
 
-  .. _class_ViewportContainer_stretch_shrink:
+.. _class_ViewportContainer_stretch_shrink:
 
 - :ref:`int<class_int>` **stretch_shrink**
 

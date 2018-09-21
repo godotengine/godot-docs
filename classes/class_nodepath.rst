@@ -49,51 +49,51 @@ A ``NodePath`` is made up of a list of node names, a list of "subnode" (resource
 Method Descriptions
 -------------------
 
-  .. _class_NodePath_NodePath:
+.. _class_NodePath_NodePath:
 
 - :ref:`NodePath<class_NodePath>` **NodePath** **(** :ref:`String<class_String>` from **)**
 
 Create a NodePath from a string, e.g. "Path2D/PathFollow2D/Sprite:texture:size". A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
 
-  .. _class_NodePath_get_as_property_path:
+.. _class_NodePath_get_as_property_path:
 
 - :ref:`NodePath<class_NodePath>` **get_as_property_path** **(** **)**
 
-  .. _class_NodePath_get_concatenated_subnames:
+.. _class_NodePath_get_concatenated_subnames:
 
 - :ref:`String<class_String>` **get_concatenated_subnames** **(** **)**
 
-  .. _class_NodePath_get_name:
+.. _class_NodePath_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** :ref:`int<class_int>` idx **)**
 
 Get the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_get_name_count>`)
 
-  .. _class_NodePath_get_name_count:
+.. _class_NodePath_get_name_count:
 
 - :ref:`int<class_int>` **get_name_count** **(** **)**
 
 Get the number of node names which make up the path.
 
-  .. _class_NodePath_get_subname:
+.. _class_NodePath_get_subname:
 
 - :ref:`String<class_String>` **get_subname** **(** :ref:`int<class_int>` idx **)**
 
 Get the resource name indicated by ``idx`` (0 to :ref:`get_subname_count<class_NodePath_get_subname_count>`)
 
-  .. _class_NodePath_get_subname_count:
+.. _class_NodePath_get_subname_count:
 
 - :ref:`int<class_int>` **get_subname_count** **(** **)**
 
 Get the number of resource names in the path.
 
-  .. _class_NodePath_is_absolute:
+.. _class_NodePath_is_absolute:
 
 - :ref:`bool<class_bool>` **is_absolute** **(** **)**
 
 Return true if the node path is absolute (not relative).
 
-  .. _class_NodePath_is_empty:
+.. _class_NodePath_is_empty:
 
 - :ref:`bool<class_bool>` **is_empty** **(** **)**
 

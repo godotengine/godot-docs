@@ -79,6 +79,7 @@ Constants
 ---------
 
 - **NOTIFICATION_UPDATE_SKELETON** = **50**
+
 Description
 -----------
 
@@ -91,145 +92,145 @@ Note that "global pose" below refers to the overall transform of the bone with r
 Method Descriptions
 -------------------
 
-  .. _class_Skeleton_add_bone:
+.. _class_Skeleton_add_bone:
 
 - void **add_bone** **(** :ref:`String<class_String>` name **)**
 
 Add a bone, with name "name". :ref:`get_bone_count<class_Skeleton_get_bone_count>` will become the bone index.
 
-  .. _class_Skeleton_bind_child_node_to_bone:
+.. _class_Skeleton_bind_child_node_to_bone:
 
 - void **bind_child_node_to_bone** **(** :ref:`int<class_int>` bone_idx, :ref:`Node<class_Node>` node **)**
 
 Deprecated soon.
 
-  .. _class_Skeleton_clear_bones:
+.. _class_Skeleton_clear_bones:
 
 - void **clear_bones** **(** **)**
 
 Clear all the bones in this skeleton.
 
-  .. _class_Skeleton_find_bone:
+.. _class_Skeleton_find_bone:
 
 - :ref:`int<class_int>` **find_bone** **(** :ref:`String<class_String>` name **)** const
 
 Return the bone index that matches "name" as its name.
 
-  .. _class_Skeleton_get_bone_count:
+.. _class_Skeleton_get_bone_count:
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** const
 
 Return the amount of bones in the skeleton.
 
-  .. _class_Skeleton_get_bone_custom_pose:
+.. _class_Skeleton_get_bone_custom_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the custom pose of the specified bone. Custom pose is applied on top of the rest pose.
 
-  .. _class_Skeleton_get_bone_global_pose:
+.. _class_Skeleton_get_bone_global_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_global_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
-  .. _class_Skeleton_get_bone_name:
+.. _class_Skeleton_get_bone_name:
 
 - :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the name of the bone at index "index".
 
-  .. _class_Skeleton_get_bone_parent:
+.. _class_Skeleton_get_bone_parent:
 
 - :ref:`int<class_int>` **get_bone_parent** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the bone index which is the parent of the bone at "bone_idx". If -1, then bone has no parent. Note that the parent bone returned will always be less than "bone_idx".
 
-  .. _class_Skeleton_get_bone_pose:
+.. _class_Skeleton_get_bone_pose:
 
 - :ref:`Transform<class_Transform>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
 
-  .. _class_Skeleton_get_bone_rest:
+.. _class_Skeleton_get_bone_rest:
 
 - :ref:`Transform<class_Transform>` **get_bone_rest** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the rest transform for a bone "bone_idx".
 
-  .. _class_Skeleton_get_bone_transform:
+.. _class_Skeleton_get_bone_transform:
 
 - :ref:`Transform<class_Transform>` **get_bone_transform** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Return the combination of custom pose and pose. The returned transform is in skeleton's reference frame.
 
-  .. _class_Skeleton_get_bound_child_nodes_to_bone:
+.. _class_Skeleton_get_bound_child_nodes_to_bone:
 
 - :ref:`Array<class_Array>` **get_bound_child_nodes_to_bone** **(** :ref:`int<class_int>` bone_idx **)** const
 
 Deprecated soon.
 
-  .. _class_Skeleton_is_bone_rest_disabled:
+.. _class_Skeleton_is_bone_rest_disabled:
 
 - :ref:`bool<class_bool>` **is_bone_rest_disabled** **(** :ref:`int<class_int>` bone_idx **)** const
 
-  .. _class_Skeleton_physical_bones_add_collision_exception:
+.. _class_Skeleton_physical_bones_add_collision_exception:
 
 - void **physical_bones_add_collision_exception** **(** :ref:`RID<class_RID>` exception **)**
 
-  .. _class_Skeleton_physical_bones_remove_collision_exception:
+.. _class_Skeleton_physical_bones_remove_collision_exception:
 
 - void **physical_bones_remove_collision_exception** **(** :ref:`RID<class_RID>` exception **)**
 
-  .. _class_Skeleton_physical_bones_start_simulation:
+.. _class_Skeleton_physical_bones_start_simulation:
 
 - void **physical_bones_start_simulation** **(** :ref:`Array<class_Array>` bones=[  ] **)**
 
-  .. _class_Skeleton_physical_bones_stop_simulation:
+.. _class_Skeleton_physical_bones_stop_simulation:
 
 - void **physical_bones_stop_simulation** **(** **)**
 
-  .. _class_Skeleton_set_bone_custom_pose:
+.. _class_Skeleton_set_bone_custom_pose:
 
 - void **set_bone_custom_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` custom_pose **)**
 
-  .. _class_Skeleton_set_bone_disable_rest:
+.. _class_Skeleton_set_bone_disable_rest:
 
 - void **set_bone_disable_rest** **(** :ref:`int<class_int>` bone_idx, :ref:`bool<class_bool>` disable **)**
 
-  .. _class_Skeleton_set_bone_global_pose:
+.. _class_Skeleton_set_bone_global_pose:
 
 - void **set_bone_global_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**
 
-  .. _class_Skeleton_set_bone_ignore_animation:
+.. _class_Skeleton_set_bone_ignore_animation:
 
 - void **set_bone_ignore_animation** **(** :ref:`int<class_int>` bone, :ref:`bool<class_bool>` ignore **)**
 
-  .. _class_Skeleton_set_bone_parent:
+.. _class_Skeleton_set_bone_parent:
 
 - void **set_bone_parent** **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` parent_idx **)**
 
 Set the bone index "parent_idx" as the parent of the bone at "bone_idx". If -1, then bone has no parent. Note: "parent_idx" must be less than "bone_idx".
 
-  .. _class_Skeleton_set_bone_pose:
+.. _class_Skeleton_set_bone_pose:
 
 - void **set_bone_pose** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` pose **)**
 
 Return the pose transform for bone "bone_idx".
 
-  .. _class_Skeleton_set_bone_rest:
+.. _class_Skeleton_set_bone_rest:
 
 - void **set_bone_rest** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform<class_Transform>` rest **)**
 
 Set the rest transform for bone "bone_idx"
 
-  .. _class_Skeleton_unbind_child_node_from_bone:
+.. _class_Skeleton_unbind_child_node_from_bone:
 
 - void **unbind_child_node_from_bone** **(** :ref:`int<class_int>` bone_idx, :ref:`Node<class_Node>` node **)**
 
 Deprecated soon.
 
-  .. _class_Skeleton_unparent_bone_and_rest:
+.. _class_Skeleton_unparent_bone_and_rest:
 
 - void **unparent_bone_and_rest** **(** :ref:`int<class_int>` bone_idx **)**
 

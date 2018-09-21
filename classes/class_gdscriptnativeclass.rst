@@ -26,7 +26,7 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_GDScriptNativeClass_new:
+.. _class_GDScriptNativeClass_new:
 
 - :ref:`Variant<class_Variant>` **new** **(** **)**
 

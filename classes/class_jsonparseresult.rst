@@ -37,7 +37,7 @@ Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains de
 Property Descriptions
 ---------------------
 
-  .. _class_JSONParseResult_error:
+.. _class_JSONParseResult_error:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **error**
 
@@ -49,7 +49,7 @@ Property Descriptions
 
 The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
-  .. _class_JSONParseResult_error_line:
+.. _class_JSONParseResult_error_line:
 
 - :ref:`int<class_int>` **error_line**
 
@@ -61,7 +61,7 @@ The error type if JSON source was not successfully parsed. See :ref:`@GlobalScop
 
 The line number where the error occurred if JSON source was not successfully parsed.
 
-  .. _class_JSONParseResult_error_string:
+.. _class_JSONParseResult_error_string:
 
 - :ref:`String<class_String>` **error_string**
 
@@ -73,7 +73,7 @@ The line number where the error occurred if JSON source was not successfully par
 
 The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
-  .. _class_JSONParseResult_result:
+.. _class_JSONParseResult_result:
 
 - :ref:`Variant<class_Variant>` **result**
 

@@ -31,13 +31,13 @@ The RID type is used to access the unique integer ID of a resource.  They are op
 Method Descriptions
 -------------------
 
-  .. _class_RID_RID:
+.. _class_RID_RID:
 
 - :ref:`RID<class_RID>` **RID** **(** :ref:`Object<class_Object>` from **)**
 
 Creates a new RID instance with the ID of a given resource. When not handed a valid resource, silently stores the unused ID 0.
 
-  .. _class_RID_get_id:
+.. _class_RID_get_id:
 
 - :ref:`int<class_int>` **get_id** **(** **)**
 

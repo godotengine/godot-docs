@@ -38,10 +38,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventScreenTouch_index:
+.. _class_InputEventScreenTouch_index:
 
 - :ref:`int<class_int>` **index**
 
@@ -53,7 +54,7 @@ Property Descriptions
 
 Touch index in the case of a multi-touch event. One index = one finger.
 
-  .. _class_InputEventScreenTouch_position:
+.. _class_InputEventScreenTouch_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
@@ -65,7 +66,7 @@ Touch index in the case of a multi-touch event. One index = one finger.
 
 Touch position.
 
-  .. _class_InputEventScreenTouch_pressed:
+.. _class_InputEventScreenTouch_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 

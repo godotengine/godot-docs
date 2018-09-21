@@ -31,7 +31,7 @@ A texture that is loaded from a .stex file.
 Property Descriptions
 ---------------------
 
-  .. _class_StreamTexture_load_path:
+.. _class_StreamTexture_load_path:
 
 - :ref:`String<class_String>` **load_path**
 

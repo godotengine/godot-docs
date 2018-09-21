@@ -49,7 +49,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_BakedLightmapData_bounds:
+.. _class_BakedLightmapData_bounds:
 
 - :ref:`AABB<class_AABB>` **bounds**
 
@@ -59,7 +59,7 @@ Property Descriptions
 | *Getter* | get_bounds()      |
 +----------+-------------------+
 
-  .. _class_BakedLightmapData_cell_space_transform:
+.. _class_BakedLightmapData_cell_space_transform:
 
 - :ref:`Transform<class_Transform>` **cell_space_transform**
 
@@ -69,7 +69,7 @@ Property Descriptions
 | *Getter* | get_cell_space_transform()      |
 +----------+---------------------------------+
 
-  .. _class_BakedLightmapData_cell_subdiv:
+.. _class_BakedLightmapData_cell_subdiv:
 
 - :ref:`int<class_int>` **cell_subdiv**
 
@@ -79,7 +79,7 @@ Property Descriptions
 | *Getter* | get_cell_subdiv()      |
 +----------+------------------------+
 
-  .. _class_BakedLightmapData_energy:
+.. _class_BakedLightmapData_energy:
 
 - :ref:`float<class_float>` **energy**
 
@@ -89,7 +89,7 @@ Property Descriptions
 | *Getter* | get_energy()      |
 +----------+-------------------+
 
-  .. _class_BakedLightmapData_octree:
+.. _class_BakedLightmapData_octree:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **octree**
 
@@ -102,23 +102,23 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_BakedLightmapData_add_user:
+.. _class_BakedLightmapData_add_user:
 
 - void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Texture<class_Texture>` lightmap, :ref:`int<class_int>` instance **)**
 
-  .. _class_BakedLightmapData_clear_users:
+.. _class_BakedLightmapData_clear_users:
 
 - void **clear_users** **(** **)**
 
-  .. _class_BakedLightmapData_get_user_count:
+.. _class_BakedLightmapData_get_user_count:
 
 - :ref:`int<class_int>` **get_user_count** **(** **)** const
 
-  .. _class_BakedLightmapData_get_user_lightmap:
+.. _class_BakedLightmapData_get_user_lightmap:
 
 - :ref:`Texture<class_Texture>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** const
 
-  .. _class_BakedLightmapData_get_user_path:
+.. _class_BakedLightmapData_get_user_path:
 
 - :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** const
 

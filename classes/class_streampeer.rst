@@ -98,7 +98,7 @@ StreamPeer is an abstraction and base class for stream-based protocols (such as 
 Property Descriptions
 ---------------------
 
-  .. _class_StreamPeer_big_endian:
+.. _class_StreamPeer_big_endian:
 
 - :ref:`bool<class_bool>` **big_endian**
 
@@ -113,181 +113,181 @@ If ``true``, this ``StreamPeer`` will using big-endian format for encoding and d
 Method Descriptions
 -------------------
 
-  .. _class_StreamPeer_get_16:
+.. _class_StreamPeer_get_16:
 
 - :ref:`int<class_int>` **get_16** **(** **)**
 
 Get a signed 16 bit value from the stream.
 
-  .. _class_StreamPeer_get_32:
+.. _class_StreamPeer_get_32:
 
 - :ref:`int<class_int>` **get_32** **(** **)**
 
 Get a signed 32 bit value from the stream.
 
-  .. _class_StreamPeer_get_64:
+.. _class_StreamPeer_get_64:
 
 - :ref:`int<class_int>` **get_64** **(** **)**
 
 Get a signed 64 bit value from the stream.
 
-  .. _class_StreamPeer_get_8:
+.. _class_StreamPeer_get_8:
 
 - :ref:`int<class_int>` **get_8** **(** **)**
 
 Get a signed byte from the stream.
 
-  .. _class_StreamPeer_get_available_bytes:
+.. _class_StreamPeer_get_available_bytes:
 
 - :ref:`int<class_int>` **get_available_bytes** **(** **)** const
 
 Return the amount of bytes this ``StreamPeer`` has available.
 
-  .. _class_StreamPeer_get_data:
+.. _class_StreamPeer_get_data:
 
 - :ref:`Array<class_Array>` **get_data** **(** :ref:`int<class_int>` bytes **)**
 
 Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an Error code and a data array.
 
-  .. _class_StreamPeer_get_double:
+.. _class_StreamPeer_get_double:
 
 - :ref:`float<class_float>` **get_double** **(** **)**
 
 Get a double-precision float from the stream.
 
-  .. _class_StreamPeer_get_float:
+.. _class_StreamPeer_get_float:
 
 - :ref:`float<class_float>` **get_float** **(** **)**
 
 Get a single-precision float from the stream.
 
-  .. _class_StreamPeer_get_partial_data:
+.. _class_StreamPeer_get_partial_data:
 
 - :ref:`Array<class_Array>` **get_partial_data** **(** :ref:`int<class_int>` bytes **)**
 
 Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an Error code, and a data array.
 
-  .. _class_StreamPeer_get_string:
+.. _class_StreamPeer_get_string:
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes **)**
 
 Get a string with byte-length "bytes" from the stream.
 
-  .. _class_StreamPeer_get_u16:
+.. _class_StreamPeer_get_u16:
 
 - :ref:`int<class_int>` **get_u16** **(** **)**
 
 Get an unsigned 16 bit value from the stream.
 
-  .. _class_StreamPeer_get_u32:
+.. _class_StreamPeer_get_u32:
 
 - :ref:`int<class_int>` **get_u32** **(** **)**
 
 Get an unsigned 32 bit value from the stream.
 
-  .. _class_StreamPeer_get_u64:
+.. _class_StreamPeer_get_u64:
 
 - :ref:`int<class_int>` **get_u64** **(** **)**
 
 Get an unsigned 64 bit value from the stream.
 
-  .. _class_StreamPeer_get_u8:
+.. _class_StreamPeer_get_u8:
 
 - :ref:`int<class_int>` **get_u8** **(** **)**
 
 Get an unsigned byte from the stream.
 
-  .. _class_StreamPeer_get_utf8_string:
+.. _class_StreamPeer_get_utf8_string:
 
 - :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes **)**
 
 Get a utf8 string with byte-length "bytes" from the stream (this decodes the string sent as utf8).
 
-  .. _class_StreamPeer_get_var:
+.. _class_StreamPeer_get_var:
 
 - :ref:`Variant<class_Variant>` **get_var** **(** **)**
 
 Get a Variant from the stream.
 
-  .. _class_StreamPeer_put_16:
+.. _class_StreamPeer_put_16:
 
 - void **put_16** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 16 bit value into the stream.
 
-  .. _class_StreamPeer_put_32:
+.. _class_StreamPeer_put_32:
 
 - void **put_32** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 32 bit value into the stream.
 
-  .. _class_StreamPeer_put_64:
+.. _class_StreamPeer_put_64:
 
 - void **put_64** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 64 bit value into the stream.
 
-  .. _class_StreamPeer_put_8:
+.. _class_StreamPeer_put_8:
 
 - void **put_8** **(** :ref:`int<class_int>` value **)**
 
 Put a signed byte into the stream.
 
-  .. _class_StreamPeer_put_data:
+.. _class_StreamPeer_put_data:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **put_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Send a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an Error code.
 
-  .. _class_StreamPeer_put_double:
+.. _class_StreamPeer_put_double:
 
 - void **put_double** **(** :ref:`float<class_float>` value **)**
 
 Put a double-precision float into the stream.
 
-  .. _class_StreamPeer_put_float:
+.. _class_StreamPeer_put_float:
 
 - void **put_float** **(** :ref:`float<class_float>` value **)**
 
 Put a single-precision float into the stream.
 
-  .. _class_StreamPeer_put_partial_data:
+.. _class_StreamPeer_put_partial_data:
 
 - :ref:`Array<class_Array>` **put_partial_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an Error code and an integer, describing how much data was actually sent.
 
-  .. _class_StreamPeer_put_u16:
+.. _class_StreamPeer_put_u16:
 
 - void **put_u16** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 16 bit value into the stream.
 
-  .. _class_StreamPeer_put_u32:
+.. _class_StreamPeer_put_u32:
 
 - void **put_u32** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 32 bit value into the stream.
 
-  .. _class_StreamPeer_put_u64:
+.. _class_StreamPeer_put_u64:
 
 - void **put_u64** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 64 bit value into the stream.
 
-  .. _class_StreamPeer_put_u8:
+.. _class_StreamPeer_put_u8:
 
 - void **put_u8** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned byte into the stream.
 
-  .. _class_StreamPeer_put_utf8_string:
+.. _class_StreamPeer_put_utf8_string:
 
 - void **put_utf8_string** **(** :ref:`String<class_String>` value **)**
 
 Put a zero-terminated utf8 string into the stream.
 
-  .. _class_StreamPeer_put_var:
+.. _class_StreamPeer_put_var:
 
 - void **put_var** **(** :ref:`Variant<class_Variant>` value **)**
 

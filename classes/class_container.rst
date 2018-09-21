@@ -30,7 +30,7 @@ Methods
 Signals
 -------
 
-  .. _class_Container_sort_children:
+.. _class_Container_sort_children:
 
 - **sort_children** **(** **)**
 
@@ -40,6 +40,7 @@ Constants
 ---------
 
 - **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
+
 Description
 -----------
 
@@ -50,13 +51,13 @@ A Control can inherit this to create custom container classes.
 Method Descriptions
 -------------------
 
-  .. _class_Container_fit_child_in_rect:
+.. _class_Container_fit_child_in_rect:
 
 - void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
-  .. _class_Container_queue_sort:
+.. _class_Container_queue_sort:
 
 - void **queue_sort** **(** **)**
 

@@ -52,7 +52,7 @@ This class contains the shape and other parameters for intersection/collision qu
 Property Descriptions
 ---------------------
 
-  .. _class_Physics2DShapeQueryParameters_collide_with_areas:
+.. _class_Physics2DShapeQueryParameters_collide_with_areas:
 
 - :ref:`bool<class_bool>` **collide_with_areas**
 
@@ -62,7 +62,7 @@ Property Descriptions
 | *Getter* | is_collide_with_areas_enabled() |
 +----------+---------------------------------+
 
-  .. _class_Physics2DShapeQueryParameters_collide_with_bodies:
+.. _class_Physics2DShapeQueryParameters_collide_with_bodies:
 
 - :ref:`bool<class_bool>` **collide_with_bodies**
 
@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter* | is_collide_with_bodies_enabled() |
 +----------+----------------------------------+
 
-  .. _class_Physics2DShapeQueryParameters_collision_layer:
+.. _class_Physics2DShapeQueryParameters_collision_layer:
 
 - :ref:`int<class_int>` **collision_layer**
 
@@ -84,7 +84,7 @@ Property Descriptions
 
 The physics layer the query should be made on.
 
-  .. _class_Physics2DShapeQueryParameters_exclude:
+.. _class_Physics2DShapeQueryParameters_exclude:
 
 - :ref:`Array<class_Array>` **exclude**
 
@@ -96,7 +96,7 @@ The physics layer the query should be made on.
 
 The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded from collisions.
 
-  .. _class_Physics2DShapeQueryParameters_margin:
+.. _class_Physics2DShapeQueryParameters_margin:
 
 - :ref:`float<class_float>` **margin**
 
@@ -108,7 +108,7 @@ The list of objects or object :ref:`RID<class_RID>`\ s, that will be excluded fr
 
 The collision margin for the shape.
 
-  .. _class_Physics2DShapeQueryParameters_motion:
+.. _class_Physics2DShapeQueryParameters_motion:
 
 - :ref:`Vector2<class_Vector2>` **motion**
 
@@ -120,7 +120,7 @@ The collision margin for the shape.
 
 The motion of the shape being queried for.
 
-  .. _class_Physics2DShapeQueryParameters_shape_rid:
+.. _class_Physics2DShapeQueryParameters_shape_rid:
 
 - :ref:`RID<class_RID>` **shape_rid**
 
@@ -132,7 +132,7 @@ The motion of the shape being queried for.
 
 The :ref:`RID<class_RID>` of the queried shape. See :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>` also.
 
-  .. _class_Physics2DShapeQueryParameters_transform:
+.. _class_Physics2DShapeQueryParameters_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
 
@@ -147,7 +147,7 @@ the transform matrix of the queried shape.
 Method Descriptions
 -------------------
 
-  .. _class_Physics2DShapeQueryParameters_set_shape:
+.. _class_Physics2DShapeQueryParameters_set_shape:
 
 - void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 

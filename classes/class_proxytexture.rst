@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_ProxyTexture_base:
+.. _class_ProxyTexture_base:
 
 - :ref:`Texture<class_Texture>` **base**
 

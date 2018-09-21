@@ -53,13 +53,13 @@ Methods
 Signals
 -------
 
-  .. _class_AnimatedSprite_animation_finished:
+.. _class_AnimatedSprite_animation_finished:
 
 - **animation_finished** **(** **)**
 
 Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
 
-  .. _class_AnimatedSprite_frame_changed:
+.. _class_AnimatedSprite_frame_changed:
 
 - **frame_changed** **(** **)**
 
@@ -73,7 +73,7 @@ Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource,
 Property Descriptions
 ---------------------
 
-  .. _class_AnimatedSprite_animation:
+.. _class_AnimatedSprite_animation:
 
 - :ref:`String<class_String>` **animation**
 
@@ -85,7 +85,7 @@ Property Descriptions
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
-  .. _class_AnimatedSprite_centered:
+.. _class_AnimatedSprite_centered:
 
 - :ref:`bool<class_bool>` **centered**
 
@@ -97,7 +97,7 @@ The current animation from the ``frames`` resource. If this value changes, the `
 
 If ``true`` texture will be centered. Default value: ``true``.
 
-  .. _class_AnimatedSprite_flip_h:
+.. _class_AnimatedSprite_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
 
@@ -109,7 +109,7 @@ If ``true`` texture will be centered. Default value: ``true``.
 
 If ``true`` texture is flipped horizontally. Default value: ``false``.
 
-  .. _class_AnimatedSprite_flip_v:
+.. _class_AnimatedSprite_flip_v:
 
 - :ref:`bool<class_bool>` **flip_v**
 
@@ -121,7 +121,7 @@ If ``true`` texture is flipped horizontally. Default value: ``false``.
 
 If ``true`` texture is flipped vertically. Default value: ``false``.
 
-  .. _class_AnimatedSprite_frame:
+.. _class_AnimatedSprite_frame:
 
 - :ref:`int<class_int>` **frame**
 
@@ -133,7 +133,7 @@ If ``true`` texture is flipped vertically. Default value: ``false``.
 
 The displayed animation frame's index.
 
-  .. _class_AnimatedSprite_frames:
+.. _class_AnimatedSprite_frames:
 
 - :ref:`SpriteFrames<class_SpriteFrames>` **frames**
 
@@ -145,7 +145,7 @@ The displayed animation frame's index.
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
 
-  .. _class_AnimatedSprite_offset:
+.. _class_AnimatedSprite_offset:
 
 - :ref:`Vector2<class_Vector2>` **offset**
 
@@ -157,13 +157,13 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 The texture's drawing offset.
 
-  .. _class_AnimatedSprite_playing:
+.. _class_AnimatedSprite_playing:
 
 - :ref:`bool<class_bool>` **playing**
 
 If ``true`` the :ref:`animation<class_AnimatedSprite_animation>` is currently playing.
 
-  .. _class_AnimatedSprite_speed_scale:
+.. _class_AnimatedSprite_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
 
@@ -176,19 +176,19 @@ If ``true`` the :ref:`animation<class_AnimatedSprite_animation>` is currently pl
 Method Descriptions
 -------------------
 
-  .. _class_AnimatedSprite_is_playing:
+.. _class_AnimatedSprite_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 Return true if an animation if currently being played.
 
-  .. _class_AnimatedSprite_play:
+.. _class_AnimatedSprite_play:
 
 - void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
 
-  .. _class_AnimatedSprite_stop:
+.. _class_AnimatedSprite_stop:
 
 - void **stop** **(** **)**
 

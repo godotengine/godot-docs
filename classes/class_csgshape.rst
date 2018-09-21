@@ -39,7 +39,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_CSGShape_Operation:
+.. _enum_CSGShape_Operation:
 
 enum **Operation**:
 
@@ -55,7 +55,7 @@ This is the CSG base class that provides CSG operation support to the various CS
 Property Descriptions
 ---------------------
 
-  .. _class_CSGShape_operation:
+.. _class_CSGShape_operation:
 
 - :ref:`Operation<enum_CSGShape_Operation>` **operation**
 
@@ -67,7 +67,7 @@ Property Descriptions
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
-  .. _class_CSGShape_snap:
+.. _class_CSGShape_snap:
 
 - :ref:`float<class_float>` **snap**
 
@@ -77,7 +77,7 @@ The operation that is performed on this shape. This is ignored for the first CSG
 | *Getter* | get_snap()      |
 +----------+-----------------+
 
-  .. _class_CSGShape_use_collision:
+.. _class_CSGShape_use_collision:
 
 - :ref:`bool<class_bool>` **use_collision**
 
@@ -92,7 +92,7 @@ Adds a collision shape to the physics engine for our CSG shape. This will always
 Method Descriptions
 -------------------
 
-  .. _class_CSGShape_is_root_shape:
+.. _class_CSGShape_is_root_shape:
 
 - :ref:`bool<class_bool>` **is_root_shape** **(** **)** const
 

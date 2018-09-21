@@ -38,7 +38,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_StreamPeerTCP_Status:
+.. _enum_StreamPeerTCP_Status:
 
 enum **Status**:
 
@@ -55,41 +55,41 @@ TCP Stream peer. This object can be used to connect to TCP servers, or also is r
 Method Descriptions
 -------------------
 
-  .. _class_StreamPeerTCP_connect_to_host:
+.. _class_StreamPeerTCP_connect_to_host:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
 Connect to the specified host:port pair. A hostname will be resolved if valid. Returns OK on success or FAILED on failure.
 
-  .. _class_StreamPeerTCP_disconnect_from_host:
+.. _class_StreamPeerTCP_disconnect_from_host:
 
 - void **disconnect_from_host** **(** **)**
 
 Disconnect from host.
 
-  .. _class_StreamPeerTCP_get_connected_host:
+.. _class_StreamPeerTCP_get_connected_host:
 
 - :ref:`String<class_String>` **get_connected_host** **(** **)** const
 
 Return the IP of this peer.
 
-  .. _class_StreamPeerTCP_get_connected_port:
+.. _class_StreamPeerTCP_get_connected_port:
 
 - :ref:`int<class_int>` **get_connected_port** **(** **)** const
 
 Return the port of this peer.
 
-  .. _class_StreamPeerTCP_get_status:
+.. _class_StreamPeerTCP_get_status:
 
 - :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)**
 
 Return the status of the connection, one of STATUS\_\* enum.
 
-  .. _class_StreamPeerTCP_is_connected_to_host:
+.. _class_StreamPeerTCP_is_connected_to_host:
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
 
-  .. _class_StreamPeerTCP_set_no_delay:
+.. _class_StreamPeerTCP_set_no_delay:
 
 - void **set_no_delay** **(** :ref:`bool<class_bool>` enabled **)**
 

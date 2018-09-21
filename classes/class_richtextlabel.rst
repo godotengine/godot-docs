@@ -138,19 +138,19 @@ Theme Properties
 Signals
 -------
 
-  .. _class_RichTextLabel_meta_clicked:
+.. _class_RichTextLabel_meta_clicked:
 
 - **meta_clicked** **(** :ref:`Nil<class_Nil>` meta **)**
 
 Triggered when the user clicks on content between url tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_push_meta>` method must be used to manually insert the data into the tag stack.
 
-  .. _class_RichTextLabel_meta_hover_ended:
+.. _class_RichTextLabel_meta_hover_ended:
 
 - **meta_hover_ended** **(** :ref:`Nil<class_Nil>` meta **)**
 
 Triggers when the mouse exits a meta tag.
 
-  .. _class_RichTextLabel_meta_hover_started:
+.. _class_RichTextLabel_meta_hover_started:
 
 - **meta_hover_started** **(** :ref:`Nil<class_Nil>` meta **)**
 
@@ -159,7 +159,7 @@ Triggers when the mouse enters a meta tag.
 Enumerations
 ------------
 
-  .. _enum_RichTextLabel_ListType:
+.. _enum_RichTextLabel_ListType:
 
 enum **ListType**:
 
@@ -167,7 +167,7 @@ enum **ListType**:
 - **LIST_LETTERS** = **1**
 - **LIST_DOTS** = **2**
 
-  .. _enum_RichTextLabel_Align:
+.. _enum_RichTextLabel_Align:
 
 enum **Align**:
 
@@ -176,7 +176,7 @@ enum **Align**:
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_FILL** = **3**
 
-  .. _enum_RichTextLabel_ItemType:
+.. _enum_RichTextLabel_ItemType:
 
 enum **ItemType**:
 
@@ -204,10 +204,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/gui/bbcode_in_richtextlabel`
+
 Property Descriptions
 ---------------------
 
-  .. _class_RichTextLabel_bbcode_enabled:
+.. _class_RichTextLabel_bbcode_enabled:
 
 - :ref:`bool<class_bool>` **bbcode_enabled**
 
@@ -219,7 +220,7 @@ Property Descriptions
 
 If ``true`` the label uses BBCode formatting. Default value: ``false``.
 
-  .. _class_RichTextLabel_bbcode_text:
+.. _class_RichTextLabel_bbcode_text:
 
 - :ref:`String<class_String>` **bbcode_text**
 
@@ -231,7 +232,7 @@ If ``true`` the label uses BBCode formatting. Default value: ``false``.
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
-  .. _class_RichTextLabel_meta_underlined:
+.. _class_RichTextLabel_meta_underlined:
 
 - :ref:`bool<class_bool>` **meta_underlined**
 
@@ -243,7 +244,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 
 If ``true``, the label underlines meta tags such as url{text}. Default value: ``true``.
 
-  .. _class_RichTextLabel_override_selected_font_color:
+.. _class_RichTextLabel_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
@@ -255,7 +256,7 @@ If ``true``, the label underlines meta tags such as url{text}. Default value: ``
 
 If ``true`` the label uses the custom font color. Default value: ``false``.
 
-  .. _class_RichTextLabel_percent_visible:
+.. _class_RichTextLabel_percent_visible:
 
 - :ref:`float<class_float>` **percent_visible**
 
@@ -267,7 +268,7 @@ If ``true`` the label uses the custom font color. Default value: ``false``.
 
 The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
-  .. _class_RichTextLabel_scroll_active:
+.. _class_RichTextLabel_scroll_active:
 
 - :ref:`bool<class_bool>` **scroll_active**
 
@@ -279,7 +280,7 @@ The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
 If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>`. Default value: ``true``.
 
-  .. _class_RichTextLabel_scroll_following:
+.. _class_RichTextLabel_scroll_following:
 
 - :ref:`bool<class_bool>` **scroll_following**
 
@@ -291,7 +292,7 @@ If ``true``, the scrollbar is visible. Does not block scrolling completely. See 
 
 If ``true``, the window scrolls down to display new content automatically. Default value: ``false``.
 
-  .. _class_RichTextLabel_selection_enabled:
+.. _class_RichTextLabel_selection_enabled:
 
 - :ref:`bool<class_bool>` **selection_enabled**
 
@@ -303,7 +304,7 @@ If ``true``, the window scrolls down to display new content automatically. Defau
 
 If ``true``, the label allows text selection.
 
-  .. _class_RichTextLabel_tab_size:
+.. _class_RichTextLabel_tab_size:
 
 - :ref:`int<class_int>` **tab_size**
 
@@ -315,7 +316,7 @@ If ``true``, the label allows text selection.
 
 The number of spaces associated with a single tab length. Does not affect "\\t" in text tags, only indent tags.
 
-  .. _class_RichTextLabel_text:
+.. _class_RichTextLabel_text:
 
 - :ref:`String<class_String>` **text**
 
@@ -329,7 +330,7 @@ The raw text of the label.
 
 When set, clears the tag stack and adds a raw text tag to the top of it. Does not parse bbcodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_bbcode_text>`.
 
-  .. _class_RichTextLabel_visible_characters:
+.. _class_RichTextLabel_visible_characters:
 
 - :ref:`int<class_int>` **visible_characters**
 
@@ -344,145 +345,145 @@ The restricted number of characters to display in the label.
 Method Descriptions
 -------------------
 
-  .. _class_RichTextLabel_add_image:
+.. _class_RichTextLabel_add_image:
 
 - void **add_image** **(** :ref:`Texture<class_Texture>` image **)**
 
 Adds an image's opening and closing tags to the tag stack.
 
-  .. _class_RichTextLabel_add_text:
+.. _class_RichTextLabel_add_text:
 
 - void **add_text** **(** :ref:`String<class_String>` text **)**
 
 Adds raw non-bbcode-parsed text to the tag stack.
 
-  .. _class_RichTextLabel_append_bbcode:
+.. _class_RichTextLabel_append_bbcode:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **append_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, ``OK`` if successful.
 
-  .. _class_RichTextLabel_clear:
+.. _class_RichTextLabel_clear:
 
 - void **clear** **(** **)**
 
 Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` to an empty string.
 
-  .. _class_RichTextLabel_get_content_height:
+.. _class_RichTextLabel_get_content_height:
 
 - :ref:`int<class_int>` **get_content_height** **(** **)**
 
 Returns the height of the content.
 
-  .. _class_RichTextLabel_get_line_count:
+.. _class_RichTextLabel_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
 Returns the total number of newlines in the tag stack's text tags. Considers wrapped text as one line.
 
-  .. _class_RichTextLabel_get_total_character_count:
+.. _class_RichTextLabel_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
 Returns the total number of characters from text tags. Does not include bbcodes.
 
-  .. _class_RichTextLabel_get_v_scroll:
+.. _class_RichTextLabel_get_v_scroll:
 
 - :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll** **(** **)**
 
 Returns the vertical scrollbar.
 
-  .. _class_RichTextLabel_get_visible_line_count:
+.. _class_RichTextLabel_get_visible_line_count:
 
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
 Returns the number of visible lines.
 
-  .. _class_RichTextLabel_newline:
+.. _class_RichTextLabel_newline:
 
 - void **newline** **(** **)**
 
 Adds a newline tag to the tag stack.
 
-  .. _class_RichTextLabel_parse_bbcode:
+.. _class_RichTextLabel_parse_bbcode:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
 The assignment version of :ref:`append_bbcode<class_RichTextLabel_append_bbcode>`. Clears the tag stack and inserts the new content. Returns ``OK`` if parses ``bbcode`` successfully.
 
-  .. _class_RichTextLabel_pop:
+.. _class_RichTextLabel_pop:
 
 - void **pop** **(** **)**
 
 Terminates the current tag. Use after ``push_*`` methods to close bbcodes manually. Does not need to follow ``add_*`` methods.
 
-  .. _class_RichTextLabel_push_align:
+.. _class_RichTextLabel_push_align:
 
 - void **push_align** **(** :ref:`Align<enum_RichTextLabel_Align>` align **)**
 
 Adds a ``[right]`` tag to the tag stack.
 
-  .. _class_RichTextLabel_push_cell:
+.. _class_RichTextLabel_push_cell:
 
 - void **push_cell** **(** **)**
 
 Adds a ``[cell]`` tag to the tag stack. Must be inside a table tag. See :ref:`push_table<class_RichTextLabel_push_table>` for details.
 
-  .. _class_RichTextLabel_push_color:
+.. _class_RichTextLabel_push_color:
 
 - void **push_color** **(** :ref:`Color<class_Color>` color **)**
 
 Adds a ``[color]`` tag to the tag stack.
 
-  .. _class_RichTextLabel_push_font:
+.. _class_RichTextLabel_push_font:
 
 - void **push_font** **(** :ref:`Font<class_Font>` font **)**
 
 Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration.
 
-  .. _class_RichTextLabel_push_indent:
+.. _class_RichTextLabel_push_indent:
 
 - void **push_indent** **(** :ref:`int<class_int>` level **)**
 
 Adds an ``[indent]`` tag to the tag stack. Multiplies "level" by current tab_size to determine new margin length.
 
-  .. _class_RichTextLabel_push_list:
+.. _class_RichTextLabel_push_list:
 
 - void **push_list** **(** :ref:`ListType<enum_RichTextLabel_ListType>` type **)**
 
 Adds a list tag to the tag stack. Similar to the bbcodes ``[ol]`` or ``[ul]``, but supports more list types. Not fully implemented!
 
-  .. _class_RichTextLabel_push_meta:
+.. _class_RichTextLabel_push_meta:
 
 - void **push_meta** **(** :ref:`Variant<class_Variant>` data **)**
 
 Adds a meta tag to the tag stack. Similar to the bbcode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
 
-  .. _class_RichTextLabel_push_table:
+.. _class_RichTextLabel_push_table:
 
 - void **push_table** **(** :ref:`int<class_int>` columns **)**
 
 Adds a ``[table=columns]`` tag to the tag stack.
 
-  .. _class_RichTextLabel_push_underline:
+.. _class_RichTextLabel_push_underline:
 
 - void **push_underline** **(** **)**
 
 Adds a ``[u]`` tag to the tag stack.
 
-  .. _class_RichTextLabel_remove_line:
+.. _class_RichTextLabel_remove_line:
 
 - :ref:`bool<class_bool>` **remove_line** **(** :ref:`int<class_int>` line **)**
 
 Removes a line of content from the label. Returns ``true`` if the line exists.
 
-  .. _class_RichTextLabel_scroll_to_line:
+.. _class_RichTextLabel_scroll_to_line:
 
 - void **scroll_to_line** **(** :ref:`int<class_int>` line **)**
 
 Scrolls the window's top line to match ``line``.
 
-  .. _class_RichTextLabel_set_table_column_expand:
+.. _class_RichTextLabel_set_table_column_expand:
 
 - void **set_table_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio **)**
 

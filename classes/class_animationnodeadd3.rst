@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_AnimationNodeAdd3_sync:
+.. _class_AnimationNodeAdd3_sync:
 
 - :ref:`bool<class_bool>` **sync**
 

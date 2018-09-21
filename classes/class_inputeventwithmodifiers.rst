@@ -42,10 +42,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventWithModifiers_alt:
+.. _class_InputEventWithModifiers_alt:
 
 - :ref:`bool<class_bool>` **alt**
 
@@ -57,7 +58,7 @@ Property Descriptions
 
 State of the Alt modifier.
 
-  .. _class_InputEventWithModifiers_command:
+.. _class_InputEventWithModifiers_command:
 
 - :ref:`bool<class_bool>` **command**
 
@@ -69,7 +70,7 @@ State of the Alt modifier.
 
 State of the Command modifier.
 
-  .. _class_InputEventWithModifiers_control:
+.. _class_InputEventWithModifiers_control:
 
 - :ref:`bool<class_bool>` **control**
 
@@ -81,7 +82,7 @@ State of the Command modifier.
 
 State of the Ctrl modifier.
 
-  .. _class_InputEventWithModifiers_meta:
+.. _class_InputEventWithModifiers_meta:
 
 - :ref:`bool<class_bool>` **meta**
 
@@ -93,7 +94,7 @@ State of the Ctrl modifier.
 
 State of the Meta modifier.
 
-  .. _class_InputEventWithModifiers_shift:
+.. _class_InputEventWithModifiers_shift:
 
 - :ref:`bool<class_bool>` **shift**
 

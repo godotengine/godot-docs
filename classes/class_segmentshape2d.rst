@@ -33,7 +33,7 @@ Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 Property Descriptions
 ---------------------
 
-  .. _class_SegmentShape2D_a:
+.. _class_SegmentShape2D_a:
 
 - :ref:`Vector2<class_Vector2>` **a**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The segment's first point position.
 
-  .. _class_SegmentShape2D_b:
+.. _class_SegmentShape2D_b:
 
 - :ref:`Vector2<class_Vector2>` **b**
 

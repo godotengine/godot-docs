@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventMagnifyGesture_factor:
+.. _class_InputEventMagnifyGesture_factor:
 
 - :ref:`float<class_float>` **factor**
 

@@ -48,7 +48,7 @@ NoiseTexture can also generate normalmap textures.
 Property Descriptions
 ---------------------
 
-  .. _class_NoiseTexture_as_normalmap:
+.. _class_NoiseTexture_as_normalmap:
 
 - :ref:`bool<class_bool>` **as_normalmap**
 
@@ -60,7 +60,7 @@ Property Descriptions
 
 If true, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
-  .. _class_NoiseTexture_noise:
+.. _class_NoiseTexture_noise:
 
 - :ref:`SimplexNoise<class_SimplexNoise>` **noise**
 
@@ -72,7 +72,7 @@ If true, the resulting texture contains a normal map created from the original n
 
 The :ref:`SimplexNoise<class_SimplexNoise>` instance used to generate the noise.
 
-  .. _class_NoiseTexture_seamless:
+.. _class_NoiseTexture_seamless:
 
 - :ref:`bool<class_bool>` **seamless**
 
@@ -84,7 +84,7 @@ The :ref:`SimplexNoise<class_SimplexNoise>` instance used to generate the noise.
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
-  .. _class_NoiseTexture_size:
+.. _class_NoiseTexture_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
@@ -99,13 +99,13 @@ Size of the generated texture.
 Method Descriptions
 -------------------
 
-  .. _class_NoiseTexture_set_height:
+.. _class_NoiseTexture_set_height:
 
 - void **set_height** **(** :ref:`int<class_int>` height **)**
 
 Set texture height.
 
-  .. _class_NoiseTexture_set_width:
+.. _class_NoiseTexture_set_width:
 
 - void **set_width** **(** :ref:`int<class_int>` width **)**
 

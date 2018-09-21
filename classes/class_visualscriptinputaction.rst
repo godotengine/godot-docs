@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualScriptInputAction_Mode:
+.. _enum_VisualScriptInputAction_Mode:
 
 enum **Mode**:
 
@@ -40,7 +40,7 @@ enum **Mode**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptInputAction_action:
+.. _class_VisualScriptInputAction_action:
 
 - :ref:`String<class_String>` **action**
 
@@ -50,7 +50,7 @@ Property Descriptions
 | *Getter* | get_action_name()      |
 +----------+------------------------+
 
-  .. _class_VisualScriptInputAction_mode:
+.. _class_VisualScriptInputAction_mode:
 
 - :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 

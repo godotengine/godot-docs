@@ -30,7 +30,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_MeshInstance2D_mesh:
+.. _class_MeshInstance2D_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
@@ -40,7 +40,7 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-  .. _class_MeshInstance2D_normal_map:
+.. _class_MeshInstance2D_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
@@ -50,7 +50,7 @@ Property Descriptions
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
 
-  .. _class_MeshInstance2D_texture:
+.. _class_MeshInstance2D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 

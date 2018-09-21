@@ -31,7 +31,7 @@ Sort all child nodes based on their Y positions. The child node must inherit fro
 Property Descriptions
 ---------------------
 
-  .. _class_YSort_sort_enabled:
+.. _class_YSort_sort_enabled:
 
 - :ref:`bool<class_bool>` **sort_enabled**
 

@@ -31,7 +31,7 @@ Displays a colored rectangle.
 Property Descriptions
 ---------------------
 
-  .. _class_ColorRect_color:
+.. _class_ColorRect_color:
 
 - :ref:`Color<class_Color>` **color**
 

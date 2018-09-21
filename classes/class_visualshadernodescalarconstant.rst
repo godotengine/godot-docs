@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeScalarConstant_constant:
+.. _class_VisualShaderNodeScalarConstant_constant:
 
 - :ref:`float<class_float>` **constant**
 

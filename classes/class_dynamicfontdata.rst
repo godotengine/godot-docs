@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_DynamicFontData_Hinting:
+.. _enum_DynamicFontData_Hinting:
 
 enum **Hinting**:
 
@@ -44,7 +44,7 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a ve
 Property Descriptions
 ---------------------
 
-  .. _class_DynamicFontData_font_path:
+.. _class_DynamicFontData_font_path:
 
 - :ref:`String<class_String>` **font_path**
 
@@ -56,7 +56,7 @@ Property Descriptions
 
 The path to the vector font file.
 
-  .. _class_DynamicFontData_hinting:
+.. _class_DynamicFontData_hinting:
 
 - :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 

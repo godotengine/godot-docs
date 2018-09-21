@@ -39,7 +39,7 @@ Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Property Descriptions
 ---------------------
 
-  .. _class_PrismMesh_left_to_right:
+.. _class_PrismMesh_left_to_right:
 
 - :ref:`float<class_float>` **left_to_right**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 Displacement of the upper edge along the x-axis. 0.0 positions edge straight above the bottome left edge. Defaults to 0.5 (positioned on the midpoint).
 
-  .. _class_PrismMesh_size:
+.. _class_PrismMesh_size:
 
 - :ref:`Vector3<class_Vector3>` **size**
 
@@ -63,7 +63,7 @@ Displacement of the upper edge along the x-axis. 0.0 positions edge straight abo
 
 Size of the prism. Defaults to (2.0, 2.0, 2.0).
 
-  .. _class_PrismMesh_subdivide_depth:
+.. _class_PrismMesh_subdivide_depth:
 
 - :ref:`int<class_int>` **subdivide_depth**
 
@@ -75,7 +75,7 @@ Size of the prism. Defaults to (2.0, 2.0, 2.0).
 
 Number of added edge loops along the z-axis. Defaults to 0.
 
-  .. _class_PrismMesh_subdivide_height:
+.. _class_PrismMesh_subdivide_height:
 
 - :ref:`int<class_int>` **subdivide_height**
 
@@ -87,7 +87,7 @@ Number of added edge loops along the z-axis. Defaults to 0.
 
 Number of added edge loops along the y-axis. Defaults to 0.
 
-  .. _class_PrismMesh_subdivide_width:
+.. _class_PrismMesh_subdivide_width:
 
 - :ref:`int<class_int>` **subdivide_width**
 

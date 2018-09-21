@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptResourcePath_path:
+.. _class_VisualScriptResourcePath_path:
 
 - :ref:`String<class_String>` **path**
 

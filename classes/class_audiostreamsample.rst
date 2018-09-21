@@ -45,7 +45,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_AudioStreamSample_LoopMode:
+.. _enum_AudioStreamSample_LoopMode:
 
 enum **LoopMode**:
 
@@ -53,7 +53,7 @@ enum **LoopMode**:
 - **LOOP_FORWARD** = **1** --- Audio loops the data between loop_begin and loop_end playing forward only.
 - **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
 
-  .. _enum_AudioStreamSample_Format:
+.. _enum_AudioStreamSample_Format:
 
 enum **Format**:
 
@@ -69,7 +69,7 @@ Plays audio, can loop.
 Property Descriptions
 ---------------------
 
-  .. _class_AudioStreamSample_data:
+.. _class_AudioStreamSample_data:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
@@ -81,7 +81,7 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
-  .. _class_AudioStreamSample_format:
+.. _class_AudioStreamSample_format:
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
@@ -93,7 +93,7 @@ Contains the audio data in bytes.
 
 Audio format. See FORMAT\_\* constants for values.
 
-  .. _class_AudioStreamSample_loop_begin:
+.. _class_AudioStreamSample_loop_begin:
 
 - :ref:`int<class_int>` **loop_begin**
 
@@ -105,7 +105,7 @@ Audio format. See FORMAT\_\* constants for values.
 
 Loop start in bytes.
 
-  .. _class_AudioStreamSample_loop_end:
+.. _class_AudioStreamSample_loop_end:
 
 - :ref:`int<class_int>` **loop_end**
 
@@ -117,7 +117,7 @@ Loop start in bytes.
 
 Loop end in bytes.
 
-  .. _class_AudioStreamSample_loop_mode:
+.. _class_AudioStreamSample_loop_mode:
 
 - :ref:`LoopMode<enum_AudioStreamSample_LoopMode>` **loop_mode**
 
@@ -129,7 +129,7 @@ Loop end in bytes.
 
 Loop mode. See LOOP\_\* constants for values.
 
-  .. _class_AudioStreamSample_mix_rate:
+.. _class_AudioStreamSample_mix_rate:
 
 - :ref:`int<class_int>` **mix_rate**
 
@@ -141,7 +141,7 @@ Loop mode. See LOOP\_\* constants for values.
 
 The sample rate for mixing this audio.
 
-  .. _class_AudioStreamSample_stereo:
+.. _class_AudioStreamSample_stereo:
 
 - :ref:`bool<class_bool>` **stereo**
 
@@ -156,7 +156,7 @@ If ``true``, audio is stereo. Default value: ``false``.
 Method Descriptions
 -------------------
 
-  .. _class_AudioStreamSample_save_to_wav:
+.. _class_AudioStreamSample_save_to_wav:
 
 - void **save_to_wav** **(** :ref:`String<class_String>` path **)**
 

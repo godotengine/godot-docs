@@ -117,7 +117,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_File_CompressionMode:
+.. _enum_File_CompressionMode:
 
 enum **CompressionMode**:
 
@@ -126,7 +126,7 @@ enum **CompressionMode**:
 - **COMPRESSION_ZSTD** = **2** --- Uses the Zstd compression method.
 - **COMPRESSION_GZIP** = **3** --- Uses the gzip compression method.
 
-  .. _enum_File_ModeFlags:
+.. _enum_File_ModeFlags:
 
 enum **ModeFlags**:
 
@@ -161,10 +161,11 @@ Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/filesystem`
+
 Property Descriptions
 ---------------------
 
-  .. _class_File_endian_swap:
+.. _class_File_endian_swap:
 
 - :ref:`bool<class_bool>` **endian_swap**
 
@@ -181,259 +182,259 @@ Note that this is about the file format, not CPU type. This is always reset to `
 Method Descriptions
 -------------------
 
-  .. _class_File_close:
+.. _class_File_close:
 
 - void **close** **(** **)**
 
 Closes the currently opened file.
 
-  .. _class_File_eof_reached:
+.. _class_File_eof_reached:
 
 - :ref:`bool<class_bool>` **eof_reached** **(** **)** const
 
 Returns ``true`` if the file cursor has reached the end of the file.
 
-  .. _class_File_file_exists:
+.. _class_File_file_exists:
 
 - :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)** const
 
 Returns ``true`` if the file exists in the given path.
 
-  .. _class_File_get_16:
+.. _class_File_get_16:
 
 - :ref:`int<class_int>` **get_16** **(** **)** const
 
 Returns the next 16 bits from the file as an integer.
 
-  .. _class_File_get_32:
+.. _class_File_get_32:
 
 - :ref:`int<class_int>` **get_32** **(** **)** const
 
 Returns the next 32 bits from the file as an integer.
 
-  .. _class_File_get_64:
+.. _class_File_get_64:
 
 - :ref:`int<class_int>` **get_64** **(** **)** const
 
 Returns the next 64 bits from the file as an integer.
 
-  .. _class_File_get_8:
+.. _class_File_get_8:
 
 - :ref:`int<class_int>` **get_8** **(** **)** const
 
 Returns the next 8 bits from the file as an integer.
 
-  .. _class_File_get_as_text:
+.. _class_File_get_as_text:
 
 - :ref:`String<class_String>` **get_as_text** **(** **)** const
 
 Returns the whole file as a :ref:`String<class_String>`.
 
-  .. _class_File_get_buffer:
+.. _class_File_get_buffer:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_buffer** **(** :ref:`int<class_int>` len **)** const
 
 Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteArray>`.
 
-  .. _class_File_get_csv_line:
+.. _class_File_get_csv_line:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
 
 Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma).
 
-  .. _class_File_get_double:
+.. _class_File_get_double:
 
 - :ref:`float<class_float>` **get_double** **(** **)** const
 
 Returns the next 64 bits from the file as a floating point number.
 
-  .. _class_File_get_error:
+.. _class_File_get_error:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **get_error** **(** **)** const
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_File_get_float:
+.. _class_File_get_float:
 
 - :ref:`float<class_float>` **get_float** **(** **)** const
 
 Returns the next 32 bits from the file as a floating point number.
 
-  .. _class_File_get_len:
+.. _class_File_get_len:
 
 - :ref:`int<class_int>` **get_len** **(** **)** const
 
 Returns the size of the file in bytes.
 
-  .. _class_File_get_line:
+.. _class_File_get_line:
 
 - :ref:`String<class_String>` **get_line** **(** **)** const
 
 Returns the next line of the file as a :ref:`String<class_String>`.
 
-  .. _class_File_get_md5:
+.. _class_File_get_md5:
 
 - :ref:`String<class_String>` **get_md5** **(** :ref:`String<class_String>` path **)** const
 
 Returns an MD5 String representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
-  .. _class_File_get_modified_time:
+.. _class_File_get_modified_time:
 
 - :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** const
 
 Returns the last time the ``file`` was modified in unix timestamp format or returns a :ref:`String<class_String>` "ERROR IN ``file``". This unix timestamp can be converted to datetime by using :ref:`OS.get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>`.
 
-  .. _class_File_get_pascal_string:
+.. _class_File_get_pascal_string:
 
 - :ref:`String<class_String>` **get_pascal_string** **(** **)**
 
 Returns a :ref:`String<class_String>` saved in Pascal format from the file.
 
-  .. _class_File_get_path:
+.. _class_File_get_path:
 
 - :ref:`String<class_String>` **get_path** **(** **)** const
 
 Returns the path as a :ref:`String<class_String>` for the current open file.
 
-  .. _class_File_get_path_absolute:
+.. _class_File_get_path_absolute:
 
 - :ref:`String<class_String>` **get_path_absolute** **(** **)** const
 
 Returns the absolute path as a :ref:`String<class_String>` for the current open file.
 
-  .. _class_File_get_position:
+.. _class_File_get_position:
 
 - :ref:`int<class_int>` **get_position** **(** **)** const
 
 Returns the file cursor's position.
 
-  .. _class_File_get_real:
+.. _class_File_get_real:
 
 - :ref:`float<class_float>` **get_real** **(** **)** const
 
 Returns the next bits from the file as a floating point number.
 
-  .. _class_File_get_sha256:
+.. _class_File_get_sha256:
 
 - :ref:`String<class_String>` **get_sha256** **(** :ref:`String<class_String>` path **)** const
 
 Returns a SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
-  .. _class_File_get_var:
+.. _class_File_get_var:
 
 - :ref:`Variant<class_Variant>` **get_var** **(** **)** const
 
 Returns the next :ref:`Variant<class_Variant>` value from the file.
 
-  .. _class_File_is_open:
+.. _class_File_is_open:
 
 - :ref:`bool<class_bool>` **is_open** **(** **)** const
 
 Returns ``true`` if the file is currently opened.
 
-  .. _class_File_open:
+.. _class_File_open:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)**
 
 Opens the file for writing or reading, depending on the flags.
 
-  .. _class_File_open_compressed:
+.. _class_File_open_compressed:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_compressed** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0 **)**
 
 Opens a compressed file for reading or writing. Use COMPRESSION\_\* constants to set ``compression_mode``.
 
-  .. _class_File_open_encrypted:
+.. _class_File_open_encrypted:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_encrypted** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
-  .. _class_File_open_encrypted_with_pass:
+.. _class_File_open_encrypted_with_pass:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_encrypted_with_pass** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_String>` pass **)**
 
 Opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 
-  .. _class_File_seek:
+.. _class_File_seek:
 
 - void **seek** **(** :ref:`int<class_int>` position **)**
 
 Change the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
 
-  .. _class_File_seek_end:
+.. _class_File_seek_end:
 
 - void **seek_end** **(** :ref:`int<class_int>` position=0 **)**
 
 Changes the file reading/writing cursor to the specified position (in bytes from the end of the file). Note that this is an offset, so you should use negative numbers or the cursor will be at the end of the file.
 
-  .. _class_File_store_16:
+.. _class_File_store_16:
 
 - void **store_16** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 16 bits in the file.
 
-  .. _class_File_store_32:
+.. _class_File_store_32:
 
 - void **store_32** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 32 bits in the file.
 
-  .. _class_File_store_64:
+.. _class_File_store_64:
 
 - void **store_64** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 64 bits in the file.
 
-  .. _class_File_store_8:
+.. _class_File_store_8:
 
 - void **store_8** **(** :ref:`int<class_int>` value **)**
 
 Stores an integer as 8 bits in the file.
 
-  .. _class_File_store_buffer:
+.. _class_File_store_buffer:
 
 - void **store_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Stores the given array of bytes in the file.
 
-  .. _class_File_store_double:
+.. _class_File_store_double:
 
 - void **store_double** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating point number as 64 bits in the file.
 
-  .. _class_File_store_float:
+.. _class_File_store_float:
 
 - void **store_float** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating point number as 32 bits in the file.
 
-  .. _class_File_store_line:
+.. _class_File_store_line:
 
 - void **store_line** **(** :ref:`String<class_String>` line **)**
 
 Stores the given :ref:`String<class_String>` as a line in the file.
 
-  .. _class_File_store_pascal_string:
+.. _class_File_store_pascal_string:
 
 - void **store_pascal_string** **(** :ref:`String<class_String>` string **)**
 
 Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string).
 
-  .. _class_File_store_real:
+.. _class_File_store_real:
 
 - void **store_real** **(** :ref:`float<class_float>` value **)**
 
 Stores a floating point number in the file.
 
-  .. _class_File_store_string:
+.. _class_File_store_string:
 
 - void **store_string** **(** :ref:`String<class_String>` string **)**
 
 Stores the given :ref:`String<class_String>` in the file.
 
-  .. _class_File_store_var:
+.. _class_File_store_var:
 
 - void **store_var** **(** :ref:`Variant<class_Variant>` value **)**
 

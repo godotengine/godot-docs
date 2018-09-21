@@ -47,7 +47,7 @@ Simulates rooms of different sizes. Its parameters can be adjusted to simulate t
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectReverb_damping:
+.. _class_AudioEffectReverb_damping:
 
 - :ref:`float<class_float>` **damping**
 
@@ -59,7 +59,7 @@ Property Descriptions
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: ``1``.
 
-  .. _class_AudioEffectReverb_dry:
+.. _class_AudioEffectReverb_dry:
 
 - :ref:`float<class_float>` **dry**
 
@@ -71,7 +71,7 @@ Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Val
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1. Default value: ``1``.
 
-  .. _class_AudioEffectReverb_hipass:
+.. _class_AudioEffectReverb_hipass:
 
 - :ref:`float<class_float>` **hipass**
 
@@ -83,7 +83,7 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1. Default value: ``0``.
 
-  .. _class_AudioEffectReverb_predelay_feedback:
+.. _class_AudioEffectReverb_predelay_feedback:
 
 - :ref:`float<class_float>` **predelay_feedback**
 
@@ -95,7 +95,7 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
 
-  .. _class_AudioEffectReverb_predelay_msec:
+.. _class_AudioEffectReverb_predelay_msec:
 
 - :ref:`float<class_float>` **predelay_msec**
 
@@ -107,7 +107,7 @@ Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
 
 Time between the original signal and the early reflections of the reverb signal. Default value: ``150ms``.
 
-  .. _class_AudioEffectReverb_room_size:
+.. _class_AudioEffectReverb_room_size:
 
 - :ref:`float<class_float>` **room_size**
 
@@ -119,7 +119,7 @@ Time between the original signal and the early reflections of the reverb signal.
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1. Default value: ``0.8``.
 
-  .. _class_AudioEffectReverb_spread:
+.. _class_AudioEffectReverb_spread:
 
 - :ref:`float<class_float>` **spread**
 
@@ -131,7 +131,7 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: ``1``.
 
-  .. _class_AudioEffectReverb_wet:
+.. _class_AudioEffectReverb_wet:
 
 - :ref:`float<class_float>` **wet**
 

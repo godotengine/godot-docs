@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_Sky_RadianceSize:
+.. _enum_Sky_RadianceSize:
 
 enum **RadianceSize**:
 
@@ -49,7 +49,7 @@ The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky
 Property Descriptions
 ---------------------
 
-  .. _class_Sky_radiance_size:
+.. _class_Sky_radiance_size:
 
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
 

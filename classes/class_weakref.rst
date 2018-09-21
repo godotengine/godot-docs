@@ -31,7 +31,7 @@ A weakref can hold a :ref:`Reference<class_Reference>`, without contributing to 
 Method Descriptions
 -------------------
 
-  .. _class_WeakRef_get_ref:
+.. _class_WeakRef_get_ref:
 
 - :ref:`Variant<class_Variant>` **get_ref** **(** **)** const
 

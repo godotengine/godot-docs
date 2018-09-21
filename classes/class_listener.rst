@@ -32,19 +32,19 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_Listener_clear_current:
+.. _class_Listener_clear_current:
 
 - void **clear_current** **(** **)**
 
-  .. _class_Listener_get_listener_transform:
+.. _class_Listener_get_listener_transform:
 
 - :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** const
 
-  .. _class_Listener_is_current:
+.. _class_Listener_is_current:
 
 - :ref:`bool<class_bool>` **is_current** **(** **)** const
 
-  .. _class_Listener_make_current:
+.. _class_Listener_make_current:
 
 - void **make_current** **(** **)**
 

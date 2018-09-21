@@ -153,7 +153,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_CPUParticles_Flags:
+.. _enum_CPUParticles_Flags:
 
 enum **Flags**:
 
@@ -161,7 +161,7 @@ enum **Flags**:
 - **FLAG_ROTATE_Y** = **1**
 - **FLAG_MAX** = **4**
 
-  .. _enum_CPUParticles_Parameter:
+.. _enum_CPUParticles_Parameter:
 
 enum **Parameter**:
 
@@ -178,7 +178,7 @@ enum **Parameter**:
 - **PARAM_ANIM_OFFSET** = **10**
 - **PARAM_MAX** = **11**
 
-  .. _enum_CPUParticles_EmissionShape:
+.. _enum_CPUParticles_EmissionShape:
 
 enum **EmissionShape**:
 
@@ -188,7 +188,7 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3**
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
 
-  .. _enum_CPUParticles_DrawOrder:
+.. _enum_CPUParticles_DrawOrder:
 
 enum **DrawOrder**:
 
@@ -199,7 +199,7 @@ enum **DrawOrder**:
 Property Descriptions
 ---------------------
 
-  .. _class_CPUParticles_amount:
+.. _class_CPUParticles_amount:
 
 - :ref:`int<class_int>` **amount**
 
@@ -209,7 +209,7 @@ Property Descriptions
 | *Getter* | get_amount()      |
 +----------+-------------------+
 
-  .. _class_CPUParticles_angle:
+.. _class_CPUParticles_angle:
 
 - :ref:`float<class_float>` **angle**
 
@@ -219,7 +219,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_angle_curve:
+.. _class_CPUParticles_angle_curve:
 
 - :ref:`Curve<class_Curve>` **angle_curve**
 
@@ -229,7 +229,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_angle_random:
+.. _class_CPUParticles_angle_random:
 
 - :ref:`float<class_float>` **angle_random**
 
@@ -239,7 +239,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_angular_velocity:
+.. _class_CPUParticles_angular_velocity:
 
 - :ref:`float<class_float>` **angular_velocity**
 
@@ -249,7 +249,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_angular_velocity_curve:
+.. _class_CPUParticles_angular_velocity_curve:
 
 - :ref:`Curve<class_Curve>` **angular_velocity_curve**
 
@@ -259,7 +259,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_angular_velocity_random:
+.. _class_CPUParticles_angular_velocity_random:
 
 - :ref:`float<class_float>` **angular_velocity_random**
 
@@ -269,7 +269,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_anim_loop:
+.. _class_CPUParticles_anim_loop:
 
 - :ref:`bool<class_bool>` **anim_loop**
 
@@ -279,7 +279,7 @@ Property Descriptions
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-  .. _class_CPUParticles_anim_offset:
+.. _class_CPUParticles_anim_offset:
 
 - :ref:`float<class_float>` **anim_offset**
 
@@ -289,7 +289,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_anim_offset_curve:
+.. _class_CPUParticles_anim_offset_curve:
 
 - :ref:`Curve<class_Curve>` **anim_offset_curve**
 
@@ -299,7 +299,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_anim_offset_random:
+.. _class_CPUParticles_anim_offset_random:
 
 - :ref:`float<class_float>` **anim_offset_random**
 
@@ -309,7 +309,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_anim_speed:
+.. _class_CPUParticles_anim_speed:
 
 - :ref:`float<class_float>` **anim_speed**
 
@@ -319,7 +319,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_anim_speed_curve:
+.. _class_CPUParticles_anim_speed_curve:
 
 - :ref:`Curve<class_Curve>` **anim_speed_curve**
 
@@ -329,7 +329,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_anim_speed_random:
+.. _class_CPUParticles_anim_speed_random:
 
 - :ref:`float<class_float>` **anim_speed_random**
 
@@ -339,7 +339,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_color:
+.. _class_CPUParticles_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -349,7 +349,7 @@ Property Descriptions
 | *Getter* | get_color()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_color_ramp:
+.. _class_CPUParticles_color_ramp:
 
 - :ref:`Gradient<class_Gradient>` **color_ramp**
 
@@ -359,7 +359,7 @@ Property Descriptions
 | *Getter* | get_color_ramp()      |
 +----------+-----------------------+
 
-  .. _class_CPUParticles_damping:
+.. _class_CPUParticles_damping:
 
 - :ref:`float<class_float>` **damping**
 
@@ -369,7 +369,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_damping_curve:
+.. _class_CPUParticles_damping_curve:
 
 - :ref:`Curve<class_Curve>` **damping_curve**
 
@@ -379,7 +379,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_damping_random:
+.. _class_CPUParticles_damping_random:
 
 - :ref:`float<class_float>` **damping_random**
 
@@ -389,7 +389,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_draw_order:
+.. _class_CPUParticles_draw_order:
 
 - :ref:`DrawOrder<enum_CPUParticles_DrawOrder>` **draw_order**
 
@@ -399,7 +399,7 @@ Property Descriptions
 | *Getter* | get_draw_order()      |
 +----------+-----------------------+
 
-  .. _class_CPUParticles_emission_box_extents:
+.. _class_CPUParticles_emission_box_extents:
 
 - :ref:`Vector3<class_Vector3>` **emission_box_extents**
 
@@ -409,7 +409,7 @@ Property Descriptions
 | *Getter* | get_emission_box_extents()      |
 +----------+---------------------------------+
 
-  .. _class_CPUParticles_emission_colors:
+.. _class_CPUParticles_emission_colors:
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **emission_colors**
 
@@ -419,7 +419,7 @@ Property Descriptions
 | *Getter* | get_emission_colors()      |
 +----------+----------------------------+
 
-  .. _class_CPUParticles_emission_normals:
+.. _class_CPUParticles_emission_normals:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **emission_normals**
 
@@ -429,7 +429,7 @@ Property Descriptions
 | *Getter* | get_emission_normals()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_emission_points:
+.. _class_CPUParticles_emission_points:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **emission_points**
 
@@ -439,7 +439,7 @@ Property Descriptions
 | *Getter* | get_emission_points()      |
 +----------+----------------------------+
 
-  .. _class_CPUParticles_emission_shape:
+.. _class_CPUParticles_emission_shape:
 
 - :ref:`EmissionShape<enum_CPUParticles_EmissionShape>` **emission_shape**
 
@@ -449,7 +449,7 @@ Property Descriptions
 | *Getter* | get_emission_shape()      |
 +----------+---------------------------+
 
-  .. _class_CPUParticles_emission_sphere_radius:
+.. _class_CPUParticles_emission_sphere_radius:
 
 - :ref:`float<class_float>` **emission_sphere_radius**
 
@@ -459,7 +459,7 @@ Property Descriptions
 | *Getter* | get_emission_sphere_radius()      |
 +----------+-----------------------------------+
 
-  .. _class_CPUParticles_emitting:
+.. _class_CPUParticles_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
 
@@ -469,7 +469,7 @@ Property Descriptions
 | *Getter* | is_emitting()       |
 +----------+---------------------+
 
-  .. _class_CPUParticles_explosiveness:
+.. _class_CPUParticles_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
 
@@ -479,7 +479,7 @@ Property Descriptions
 | *Getter* | get_explosiveness_ratio()      |
 +----------+--------------------------------+
 
-  .. _class_CPUParticles_fixed_fps:
+.. _class_CPUParticles_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
 
@@ -489,7 +489,7 @@ Property Descriptions
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
-  .. _class_CPUParticles_flag_align_y:
+.. _class_CPUParticles_flag_align_y:
 
 - :ref:`bool<class_bool>` **flag_align_y**
 
@@ -499,7 +499,7 @@ Property Descriptions
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-  .. _class_CPUParticles_flag_disable_z:
+.. _class_CPUParticles_flag_disable_z:
 
 - :ref:`bool<class_bool>` **flag_disable_z**
 
@@ -509,7 +509,7 @@ Property Descriptions
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-  .. _class_CPUParticles_flag_rotate_y:
+.. _class_CPUParticles_flag_rotate_y:
 
 - :ref:`bool<class_bool>` **flag_rotate_y**
 
@@ -519,7 +519,7 @@ Property Descriptions
 | *Getter* | get_particle_flag()      |
 +----------+--------------------------+
 
-  .. _class_CPUParticles_flatness:
+.. _class_CPUParticles_flatness:
 
 - :ref:`float<class_float>` **flatness**
 
@@ -529,7 +529,7 @@ Property Descriptions
 | *Getter* | get_flatness()      |
 +----------+---------------------+
 
-  .. _class_CPUParticles_fract_delta:
+.. _class_CPUParticles_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
 
@@ -539,7 +539,7 @@ Property Descriptions
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_gravity:
+.. _class_CPUParticles_gravity:
 
 - :ref:`Vector3<class_Vector3>` **gravity**
 
@@ -549,7 +549,7 @@ Property Descriptions
 | *Getter* | get_gravity()      |
 +----------+--------------------+
 
-  .. _class_CPUParticles_hue_variation:
+.. _class_CPUParticles_hue_variation:
 
 - :ref:`float<class_float>` **hue_variation**
 
@@ -559,7 +559,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_hue_variation_curve:
+.. _class_CPUParticles_hue_variation_curve:
 
 - :ref:`Curve<class_Curve>` **hue_variation_curve**
 
@@ -569,7 +569,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_hue_variation_random:
+.. _class_CPUParticles_hue_variation_random:
 
 - :ref:`float<class_float>` **hue_variation_random**
 
@@ -579,7 +579,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_initial_velocity:
+.. _class_CPUParticles_initial_velocity:
 
 - :ref:`float<class_float>` **initial_velocity**
 
@@ -589,7 +589,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_initial_velocity_random:
+.. _class_CPUParticles_initial_velocity_random:
 
 - :ref:`float<class_float>` **initial_velocity_random**
 
@@ -599,7 +599,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_lifetime:
+.. _class_CPUParticles_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
 
@@ -609,7 +609,7 @@ Property Descriptions
 | *Getter* | get_lifetime()      |
 +----------+---------------------+
 
-  .. _class_CPUParticles_linear_accel:
+.. _class_CPUParticles_linear_accel:
 
 - :ref:`float<class_float>` **linear_accel**
 
@@ -619,7 +619,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_linear_accel_curve:
+.. _class_CPUParticles_linear_accel_curve:
 
 - :ref:`Curve<class_Curve>` **linear_accel_curve**
 
@@ -629,7 +629,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_linear_accel_random:
+.. _class_CPUParticles_linear_accel_random:
 
 - :ref:`float<class_float>` **linear_accel_random**
 
@@ -639,7 +639,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_local_coords:
+.. _class_CPUParticles_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
 
@@ -649,7 +649,7 @@ Property Descriptions
 | *Getter* | get_use_local_coordinates()      |
 +----------+----------------------------------+
 
-  .. _class_CPUParticles_mesh:
+.. _class_CPUParticles_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
@@ -659,7 +659,7 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-  .. _class_CPUParticles_one_shot:
+.. _class_CPUParticles_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
@@ -669,7 +669,7 @@ Property Descriptions
 | *Getter* | get_one_shot()      |
 +----------+---------------------+
 
-  .. _class_CPUParticles_preprocess:
+.. _class_CPUParticles_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
 
@@ -679,7 +679,7 @@ Property Descriptions
 | *Getter* | get_pre_process_time()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_radial_accel:
+.. _class_CPUParticles_radial_accel:
 
 - :ref:`float<class_float>` **radial_accel**
 
@@ -689,7 +689,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_radial_accel_curve:
+.. _class_CPUParticles_radial_accel_curve:
 
 - :ref:`Curve<class_Curve>` **radial_accel_curve**
 
@@ -699,7 +699,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_radial_accel_random:
+.. _class_CPUParticles_radial_accel_random:
 
 - :ref:`float<class_float>` **radial_accel_random**
 
@@ -709,7 +709,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_randomness:
+.. _class_CPUParticles_randomness:
 
 - :ref:`float<class_float>` **randomness**
 
@@ -719,7 +719,7 @@ Property Descriptions
 | *Getter* | get_randomness_ratio()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_scale:
+.. _class_CPUParticles_scale:
 
 - :ref:`float<class_float>` **scale**
 
@@ -729,7 +729,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_scale_curve:
+.. _class_CPUParticles_scale_curve:
 
 - :ref:`Curve<class_Curve>` **scale_curve**
 
@@ -739,7 +739,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_scale_random:
+.. _class_CPUParticles_scale_random:
 
 - :ref:`float<class_float>` **scale_random**
 
@@ -749,7 +749,7 @@ Property Descriptions
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
 
-  .. _class_CPUParticles_speed_scale:
+.. _class_CPUParticles_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
 
@@ -759,7 +759,7 @@ Property Descriptions
 | *Getter* | get_speed_scale()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_spread:
+.. _class_CPUParticles_spread:
 
 - :ref:`float<class_float>` **spread**
 
@@ -769,7 +769,7 @@ Property Descriptions
 | *Getter* | get_spread()      |
 +----------+-------------------+
 
-  .. _class_CPUParticles_tangential_accel:
+.. _class_CPUParticles_tangential_accel:
 
 - :ref:`float<class_float>` **tangential_accel**
 
@@ -779,7 +779,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-  .. _class_CPUParticles_tangential_accel_curve:
+.. _class_CPUParticles_tangential_accel_curve:
 
 - :ref:`Curve<class_Curve>` **tangential_accel_curve**
 
@@ -789,7 +789,7 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-  .. _class_CPUParticles_tangential_accel_random:
+.. _class_CPUParticles_tangential_accel_random:
 
 - :ref:`float<class_float>` **tangential_accel_random**
 
@@ -802,11 +802,11 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_CPUParticles_convert_from_particles:
+.. _class_CPUParticles_convert_from_particles:
 
 - void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
 
-  .. _class_CPUParticles_restart:
+.. _class_CPUParticles_restart:
 
 - void **restart** **(** **)**
 

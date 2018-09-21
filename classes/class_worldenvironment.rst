@@ -36,10 +36,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/environment_and_post_processing`
+
 Property Descriptions
 ---------------------
 
-  .. _class_WorldEnvironment_environment:
+.. _class_WorldEnvironment_environment:
 
 - :ref:`Environment<class_Environment>` **environment**
 

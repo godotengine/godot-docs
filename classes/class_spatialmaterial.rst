@@ -220,14 +220,14 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_SpatialMaterial_DetailUV:
+.. _enum_SpatialMaterial_DetailUV:
 
 enum **DetailUV**:
 
 - **DETAIL_UV_1** = **0**
 - **DETAIL_UV_2** = **1**
 
-  .. _enum_SpatialMaterial_TextureParam:
+.. _enum_SpatialMaterial_TextureParam:
 
 enum **TextureParam**:
 
@@ -249,7 +249,7 @@ enum **TextureParam**:
 - **TEXTURE_DETAIL_NORMAL** = **15**
 - **TEXTURE_MAX** = **16**
 
-  .. _enum_SpatialMaterial_DistanceFadeMode:
+.. _enum_SpatialMaterial_DistanceFadeMode:
 
 enum **DistanceFadeMode**:
 
@@ -258,7 +258,7 @@ enum **DistanceFadeMode**:
 - **DISTANCE_FADE_PIXEL_DITHER** = **2**
 - **DISTANCE_FADE_OBJECT_DITHER** = **3**
 
-  .. _enum_SpatialMaterial_DepthDrawMode:
+.. _enum_SpatialMaterial_DepthDrawMode:
 
 enum **DepthDrawMode**:
 
@@ -267,7 +267,7 @@ enum **DepthDrawMode**:
 - **DEPTH_DRAW_DISABLED** = **2**
 - **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3**
 
-  .. _enum_SpatialMaterial_DiffuseMode:
+.. _enum_SpatialMaterial_DiffuseMode:
 
 enum **DiffuseMode**:
 
@@ -277,7 +277,7 @@ enum **DiffuseMode**:
 - **DIFFUSE_OREN_NAYAR** = **3**
 - **DIFFUSE_TOON** = **4**
 
-  .. _enum_SpatialMaterial_CullMode:
+.. _enum_SpatialMaterial_CullMode:
 
 enum **CullMode**:
 
@@ -285,7 +285,7 @@ enum **CullMode**:
 - **CULL_FRONT** = **1**
 - **CULL_DISABLED** = **2**
 
-  .. _enum_SpatialMaterial_Feature:
+.. _enum_SpatialMaterial_Feature:
 
 enum **Feature**:
 
@@ -303,7 +303,7 @@ enum **Feature**:
 - **FEATURE_DETAIL** = **11**
 - **FEATURE_MAX** = **12**
 
-  .. _enum_SpatialMaterial_Flags:
+.. _enum_SpatialMaterial_Flags:
 
 enum **Flags**:
 
@@ -327,7 +327,7 @@ enum **Flags**:
 - **FLAG_ENSURE_CORRECT_NORMALS** = **16**
 - **FLAG_MAX** = **18**
 
-  .. _enum_SpatialMaterial_BlendMode:
+.. _enum_SpatialMaterial_BlendMode:
 
 enum **BlendMode**:
 
@@ -336,7 +336,7 @@ enum **BlendMode**:
 - **BLEND_MODE_SUB** = **2**
 - **BLEND_MODE_MUL** = **3**
 
-  .. _enum_SpatialMaterial_SpecularMode:
+.. _enum_SpatialMaterial_SpecularMode:
 
 enum **SpecularMode**:
 
@@ -346,7 +346,7 @@ enum **SpecularMode**:
 - **SPECULAR_TOON** = **3**
 - **SPECULAR_DISABLED** = **4**
 
-  .. _enum_SpatialMaterial_TextureChannel:
+.. _enum_SpatialMaterial_TextureChannel:
 
 enum **TextureChannel**:
 
@@ -356,7 +356,7 @@ enum **TextureChannel**:
 - **TEXTURE_CHANNEL_ALPHA** = **3**
 - **TEXTURE_CHANNEL_GRAYSCALE** = **4**
 
-  .. _enum_SpatialMaterial_BillboardMode:
+.. _enum_SpatialMaterial_BillboardMode:
 
 enum **BillboardMode**:
 
@@ -365,7 +365,7 @@ enum **BillboardMode**:
 - **BILLBOARD_FIXED_Y** = **2**
 - **BILLBOARD_PARTICLES** = **3**
 
-  .. _enum_SpatialMaterial_EmissionOperator:
+.. _enum_SpatialMaterial_EmissionOperator:
 
 enum **EmissionOperator**:
 
@@ -376,10 +376,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/spatial_material`
+
 Property Descriptions
 ---------------------
 
-  .. _class_SpatialMaterial_albedo_color:
+.. _class_SpatialMaterial_albedo_color:
 
 - :ref:`Color<class_Color>` **albedo_color**
 
@@ -389,7 +390,7 @@ Property Descriptions
 | *Getter* | get_albedo()      |
 +----------+-------------------+
 
-  .. _class_SpatialMaterial_albedo_texture:
+.. _class_SpatialMaterial_albedo_texture:
 
 - :ref:`Texture<class_Texture>` **albedo_texture**
 
@@ -399,7 +400,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_anisotropy:
+.. _class_SpatialMaterial_anisotropy:
 
 - :ref:`float<class_float>` **anisotropy**
 
@@ -409,7 +410,7 @@ Property Descriptions
 | *Getter* | get_anisotropy()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_anisotropy_enabled:
+.. _class_SpatialMaterial_anisotropy_enabled:
 
 - :ref:`bool<class_bool>` **anisotropy_enabled**
 
@@ -419,7 +420,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_anisotropy_flowmap:
+.. _class_SpatialMaterial_anisotropy_flowmap:
 
 - :ref:`Texture<class_Texture>` **anisotropy_flowmap**
 
@@ -429,7 +430,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_ao_enabled:
+.. _class_SpatialMaterial_ao_enabled:
 
 - :ref:`bool<class_bool>` **ao_enabled**
 
@@ -439,7 +440,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_ao_light_affect:
+.. _class_SpatialMaterial_ao_light_affect:
 
 - :ref:`float<class_float>` **ao_light_affect**
 
@@ -449,7 +450,7 @@ Property Descriptions
 | *Getter* | get_ao_light_affect()      |
 +----------+----------------------------+
 
-  .. _class_SpatialMaterial_ao_on_uv2:
+.. _class_SpatialMaterial_ao_on_uv2:
 
 - :ref:`bool<class_bool>` **ao_on_uv2**
 
@@ -459,7 +460,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_ao_texture:
+.. _class_SpatialMaterial_ao_texture:
 
 - :ref:`Texture<class_Texture>` **ao_texture**
 
@@ -469,7 +470,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_ao_texture_channel:
+.. _class_SpatialMaterial_ao_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **ao_texture_channel**
 
@@ -479,7 +480,7 @@ Property Descriptions
 | *Getter* | get_ao_texture_channel()      |
 +----------+-------------------------------+
 
-  .. _class_SpatialMaterial_clearcoat:
+.. _class_SpatialMaterial_clearcoat:
 
 - :ref:`float<class_float>` **clearcoat**
 
@@ -489,7 +490,7 @@ Property Descriptions
 | *Getter* | get_clearcoat()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_clearcoat_enabled:
+.. _class_SpatialMaterial_clearcoat_enabled:
 
 - :ref:`bool<class_bool>` **clearcoat_enabled**
 
@@ -499,7 +500,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_clearcoat_gloss:
+.. _class_SpatialMaterial_clearcoat_gloss:
 
 - :ref:`float<class_float>` **clearcoat_gloss**
 
@@ -509,7 +510,7 @@ Property Descriptions
 | *Getter* | get_clearcoat_gloss()      |
 +----------+----------------------------+
 
-  .. _class_SpatialMaterial_clearcoat_texture:
+.. _class_SpatialMaterial_clearcoat_texture:
 
 - :ref:`Texture<class_Texture>` **clearcoat_texture**
 
@@ -519,7 +520,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_depth_deep_parallax:
+.. _class_SpatialMaterial_depth_deep_parallax:
 
 - :ref:`bool<class_bool>` **depth_deep_parallax**
 
@@ -529,7 +530,7 @@ Property Descriptions
 | *Getter* | is_depth_deep_parallax_enabled() |
 +----------+----------------------------------+
 
-  .. _class_SpatialMaterial_depth_enabled:
+.. _class_SpatialMaterial_depth_enabled:
 
 - :ref:`bool<class_bool>` **depth_enabled**
 
@@ -539,7 +540,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_depth_max_layers:
+.. _class_SpatialMaterial_depth_max_layers:
 
 - :ref:`int<class_int>` **depth_max_layers**
 
@@ -549,7 +550,7 @@ Property Descriptions
 | *Getter* | get_depth_deep_parallax_max_layers()      |
 +----------+-------------------------------------------+
 
-  .. _class_SpatialMaterial_depth_min_layers:
+.. _class_SpatialMaterial_depth_min_layers:
 
 - :ref:`int<class_int>` **depth_min_layers**
 
@@ -559,7 +560,7 @@ Property Descriptions
 | *Getter* | get_depth_deep_parallax_min_layers()      |
 +----------+-------------------------------------------+
 
-  .. _class_SpatialMaterial_depth_scale:
+.. _class_SpatialMaterial_depth_scale:
 
 - :ref:`float<class_float>` **depth_scale**
 
@@ -569,7 +570,7 @@ Property Descriptions
 | *Getter* | get_depth_scale()      |
 +----------+------------------------+
 
-  .. _class_SpatialMaterial_depth_texture:
+.. _class_SpatialMaterial_depth_texture:
 
 - :ref:`Texture<class_Texture>` **depth_texture**
 
@@ -579,7 +580,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_detail_albedo:
+.. _class_SpatialMaterial_detail_albedo:
 
 - :ref:`Texture<class_Texture>` **detail_albedo**
 
@@ -589,7 +590,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_detail_blend_mode:
+.. _class_SpatialMaterial_detail_blend_mode:
 
 - :ref:`BlendMode<enum_SpatialMaterial_BlendMode>` **detail_blend_mode**
 
@@ -599,7 +600,7 @@ Property Descriptions
 | *Getter* | get_detail_blend_mode()      |
 +----------+------------------------------+
 
-  .. _class_SpatialMaterial_detail_enabled:
+.. _class_SpatialMaterial_detail_enabled:
 
 - :ref:`bool<class_bool>` **detail_enabled**
 
@@ -609,7 +610,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_detail_mask:
+.. _class_SpatialMaterial_detail_mask:
 
 - :ref:`Texture<class_Texture>` **detail_mask**
 
@@ -619,7 +620,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_detail_normal:
+.. _class_SpatialMaterial_detail_normal:
 
 - :ref:`Texture<class_Texture>` **detail_normal**
 
@@ -629,7 +630,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_detail_uv_layer:
+.. _class_SpatialMaterial_detail_uv_layer:
 
 - :ref:`DetailUV<enum_SpatialMaterial_DetailUV>` **detail_uv_layer**
 
@@ -639,7 +640,7 @@ Property Descriptions
 | *Getter* | get_detail_uv()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_distance_fade_max_distance:
+.. _class_SpatialMaterial_distance_fade_max_distance:
 
 - :ref:`float<class_float>` **distance_fade_max_distance**
 
@@ -649,7 +650,7 @@ Property Descriptions
 | *Getter* | get_distance_fade_max_distance()      |
 +----------+---------------------------------------+
 
-  .. _class_SpatialMaterial_distance_fade_min_distance:
+.. _class_SpatialMaterial_distance_fade_min_distance:
 
 - :ref:`float<class_float>` **distance_fade_min_distance**
 
@@ -659,7 +660,7 @@ Property Descriptions
 | *Getter* | get_distance_fade_min_distance()      |
 +----------+---------------------------------------+
 
-  .. _class_SpatialMaterial_distance_fade_mode:
+.. _class_SpatialMaterial_distance_fade_mode:
 
 - :ref:`DistanceFadeMode<enum_SpatialMaterial_DistanceFadeMode>` **distance_fade_mode**
 
@@ -669,7 +670,7 @@ Property Descriptions
 | *Getter* | get_distance_fade()      |
 +----------+--------------------------+
 
-  .. _class_SpatialMaterial_emission:
+.. _class_SpatialMaterial_emission:
 
 - :ref:`Color<class_Color>` **emission**
 
@@ -679,7 +680,7 @@ Property Descriptions
 | *Getter* | get_emission()      |
 +----------+---------------------+
 
-  .. _class_SpatialMaterial_emission_enabled:
+.. _class_SpatialMaterial_emission_enabled:
 
 - :ref:`bool<class_bool>` **emission_enabled**
 
@@ -689,7 +690,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_emission_energy:
+.. _class_SpatialMaterial_emission_energy:
 
 - :ref:`float<class_float>` **emission_energy**
 
@@ -699,7 +700,7 @@ Property Descriptions
 | *Getter* | get_emission_energy()      |
 +----------+----------------------------+
 
-  .. _class_SpatialMaterial_emission_on_uv2:
+.. _class_SpatialMaterial_emission_on_uv2:
 
 - :ref:`bool<class_bool>` **emission_on_uv2**
 
@@ -709,7 +710,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_emission_operator:
+.. _class_SpatialMaterial_emission_operator:
 
 - :ref:`EmissionOperator<enum_SpatialMaterial_EmissionOperator>` **emission_operator**
 
@@ -719,7 +720,7 @@ Property Descriptions
 | *Getter* | get_emission_operator()      |
 +----------+------------------------------+
 
-  .. _class_SpatialMaterial_emission_texture:
+.. _class_SpatialMaterial_emission_texture:
 
 - :ref:`Texture<class_Texture>` **emission_texture**
 
@@ -729,7 +730,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_flags_albedo_tex_force_srgb:
+.. _class_SpatialMaterial_flags_albedo_tex_force_srgb:
 
 - :ref:`bool<class_bool>` **flags_albedo_tex_force_srgb**
 
@@ -739,7 +740,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_disable_ambient_light:
+.. _class_SpatialMaterial_flags_disable_ambient_light:
 
 - :ref:`bool<class_bool>` **flags_disable_ambient_light**
 
@@ -749,7 +750,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_do_not_receive_shadows:
+.. _class_SpatialMaterial_flags_do_not_receive_shadows:
 
 - :ref:`bool<class_bool>` **flags_do_not_receive_shadows**
 
@@ -759,7 +760,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_ensure_correct_normals:
+.. _class_SpatialMaterial_flags_ensure_correct_normals:
 
 - :ref:`bool<class_bool>` **flags_ensure_correct_normals**
 
@@ -769,7 +770,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_fixed_size:
+.. _class_SpatialMaterial_flags_fixed_size:
 
 - :ref:`bool<class_bool>` **flags_fixed_size**
 
@@ -779,7 +780,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_no_depth_test:
+.. _class_SpatialMaterial_flags_no_depth_test:
 
 - :ref:`bool<class_bool>` **flags_no_depth_test**
 
@@ -789,7 +790,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_transparent:
+.. _class_SpatialMaterial_flags_transparent:
 
 - :ref:`bool<class_bool>` **flags_transparent**
 
@@ -799,7 +800,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_flags_unshaded:
+.. _class_SpatialMaterial_flags_unshaded:
 
 - :ref:`bool<class_bool>` **flags_unshaded**
 
@@ -809,7 +810,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_use_point_size:
+.. _class_SpatialMaterial_flags_use_point_size:
 
 - :ref:`bool<class_bool>` **flags_use_point_size**
 
@@ -819,7 +820,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_vertex_lighting:
+.. _class_SpatialMaterial_flags_vertex_lighting:
 
 - :ref:`bool<class_bool>` **flags_vertex_lighting**
 
@@ -829,7 +830,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_flags_world_triplanar:
+.. _class_SpatialMaterial_flags_world_triplanar:
 
 - :ref:`bool<class_bool>` **flags_world_triplanar**
 
@@ -839,7 +840,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_metallic:
+.. _class_SpatialMaterial_metallic:
 
 - :ref:`float<class_float>` **metallic**
 
@@ -849,7 +850,7 @@ Property Descriptions
 | *Getter* | get_metallic()      |
 +----------+---------------------+
 
-  .. _class_SpatialMaterial_metallic_specular:
+.. _class_SpatialMaterial_metallic_specular:
 
 - :ref:`float<class_float>` **metallic_specular**
 
@@ -859,7 +860,7 @@ Property Descriptions
 | *Getter* | get_specular()      |
 +----------+---------------------+
 
-  .. _class_SpatialMaterial_metallic_texture:
+.. _class_SpatialMaterial_metallic_texture:
 
 - :ref:`Texture<class_Texture>` **metallic_texture**
 
@@ -869,7 +870,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_metallic_texture_channel:
+.. _class_SpatialMaterial_metallic_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **metallic_texture_channel**
 
@@ -879,7 +880,7 @@ Property Descriptions
 | *Getter* | get_metallic_texture_channel()      |
 +----------+-------------------------------------+
 
-  .. _class_SpatialMaterial_normal_enabled:
+.. _class_SpatialMaterial_normal_enabled:
 
 - :ref:`bool<class_bool>` **normal_enabled**
 
@@ -889,7 +890,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_normal_scale:
+.. _class_SpatialMaterial_normal_scale:
 
 - :ref:`float<class_float>` **normal_scale**
 
@@ -899,7 +900,7 @@ Property Descriptions
 | *Getter* | get_normal_scale()      |
 +----------+-------------------------+
 
-  .. _class_SpatialMaterial_normal_texture:
+.. _class_SpatialMaterial_normal_texture:
 
 - :ref:`Texture<class_Texture>` **normal_texture**
 
@@ -909,7 +910,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_params_alpha_scissor_threshold:
+.. _class_SpatialMaterial_params_alpha_scissor_threshold:
 
 - :ref:`float<class_float>` **params_alpha_scissor_threshold**
 
@@ -919,7 +920,7 @@ Property Descriptions
 | *Getter* | get_alpha_scissor_threshold()      |
 +----------+------------------------------------+
 
-  .. _class_SpatialMaterial_params_billboard_keep_scale:
+.. _class_SpatialMaterial_params_billboard_keep_scale:
 
 - :ref:`bool<class_bool>` **params_billboard_keep_scale**
 
@@ -929,7 +930,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_params_billboard_mode:
+.. _class_SpatialMaterial_params_billboard_mode:
 
 - :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **params_billboard_mode**
 
@@ -939,7 +940,7 @@ Property Descriptions
 | *Getter* | get_billboard_mode()      |
 +----------+---------------------------+
 
-  .. _class_SpatialMaterial_params_blend_mode:
+.. _class_SpatialMaterial_params_blend_mode:
 
 - :ref:`BlendMode<enum_SpatialMaterial_BlendMode>` **params_blend_mode**
 
@@ -949,7 +950,7 @@ Property Descriptions
 | *Getter* | get_blend_mode()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_params_cull_mode:
+.. _class_SpatialMaterial_params_cull_mode:
 
 - :ref:`CullMode<enum_SpatialMaterial_CullMode>` **params_cull_mode**
 
@@ -959,7 +960,7 @@ Property Descriptions
 | *Getter* | get_cull_mode()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_params_depth_draw_mode:
+.. _class_SpatialMaterial_params_depth_draw_mode:
 
 - :ref:`DepthDrawMode<enum_SpatialMaterial_DepthDrawMode>` **params_depth_draw_mode**
 
@@ -969,7 +970,7 @@ Property Descriptions
 | *Getter* | get_depth_draw_mode()      |
 +----------+----------------------------+
 
-  .. _class_SpatialMaterial_params_diffuse_mode:
+.. _class_SpatialMaterial_params_diffuse_mode:
 
 - :ref:`DiffuseMode<enum_SpatialMaterial_DiffuseMode>` **params_diffuse_mode**
 
@@ -979,7 +980,7 @@ Property Descriptions
 | *Getter* | get_diffuse_mode()      |
 +----------+-------------------------+
 
-  .. _class_SpatialMaterial_params_grow:
+.. _class_SpatialMaterial_params_grow:
 
 - :ref:`bool<class_bool>` **params_grow**
 
@@ -989,7 +990,7 @@ Property Descriptions
 | *Getter* | is_grow_enabled()       |
 +----------+-------------------------+
 
-  .. _class_SpatialMaterial_params_grow_amount:
+.. _class_SpatialMaterial_params_grow_amount:
 
 - :ref:`float<class_float>` **params_grow_amount**
 
@@ -999,7 +1000,7 @@ Property Descriptions
 | *Getter* | get_grow()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_params_line_width:
+.. _class_SpatialMaterial_params_line_width:
 
 - :ref:`float<class_float>` **params_line_width**
 
@@ -1009,7 +1010,7 @@ Property Descriptions
 | *Getter* | get_line_width()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_params_point_size:
+.. _class_SpatialMaterial_params_point_size:
 
 - :ref:`float<class_float>` **params_point_size**
 
@@ -1019,7 +1020,7 @@ Property Descriptions
 | *Getter* | get_point_size()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_params_specular_mode:
+.. _class_SpatialMaterial_params_specular_mode:
 
 - :ref:`SpecularMode<enum_SpatialMaterial_SpecularMode>` **params_specular_mode**
 
@@ -1029,7 +1030,7 @@ Property Descriptions
 | *Getter* | get_specular_mode()      |
 +----------+--------------------------+
 
-  .. _class_SpatialMaterial_params_use_alpha_scissor:
+.. _class_SpatialMaterial_params_use_alpha_scissor:
 
 - :ref:`bool<class_bool>` **params_use_alpha_scissor**
 
@@ -1039,7 +1040,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_particles_anim_h_frames:
+.. _class_SpatialMaterial_particles_anim_h_frames:
 
 - :ref:`int<class_int>` **particles_anim_h_frames**
 
@@ -1049,7 +1050,7 @@ Property Descriptions
 | *Getter* | get_particles_anim_h_frames()      |
 +----------+------------------------------------+
 
-  .. _class_SpatialMaterial_particles_anim_loop:
+.. _class_SpatialMaterial_particles_anim_loop:
 
 - :ref:`int<class_int>` **particles_anim_loop**
 
@@ -1059,7 +1060,7 @@ Property Descriptions
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
-  .. _class_SpatialMaterial_particles_anim_v_frames:
+.. _class_SpatialMaterial_particles_anim_v_frames:
 
 - :ref:`int<class_int>` **particles_anim_v_frames**
 
@@ -1069,7 +1070,7 @@ Property Descriptions
 | *Getter* | get_particles_anim_v_frames()      |
 +----------+------------------------------------+
 
-  .. _class_SpatialMaterial_proximity_fade_distance:
+.. _class_SpatialMaterial_proximity_fade_distance:
 
 - :ref:`float<class_float>` **proximity_fade_distance**
 
@@ -1079,7 +1080,7 @@ Property Descriptions
 | *Getter* | get_proximity_fade_distance()      |
 +----------+------------------------------------+
 
-  .. _class_SpatialMaterial_proximity_fade_enable:
+.. _class_SpatialMaterial_proximity_fade_enable:
 
 - :ref:`bool<class_bool>` **proximity_fade_enable**
 
@@ -1089,7 +1090,7 @@ Property Descriptions
 | *Getter* | is_proximity_fade_enabled() |
 +----------+-----------------------------+
 
-  .. _class_SpatialMaterial_refraction_enabled:
+.. _class_SpatialMaterial_refraction_enabled:
 
 - :ref:`bool<class_bool>` **refraction_enabled**
 
@@ -1099,7 +1100,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_refraction_scale:
+.. _class_SpatialMaterial_refraction_scale:
 
 - :ref:`float<class_float>` **refraction_scale**
 
@@ -1109,7 +1110,7 @@ Property Descriptions
 | *Getter* | get_refraction()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_refraction_texture:
+.. _class_SpatialMaterial_refraction_texture:
 
 - :ref:`Texture<class_Texture>` **refraction_texture**
 
@@ -1119,7 +1120,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_refraction_texture_channel:
+.. _class_SpatialMaterial_refraction_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **refraction_texture_channel**
 
@@ -1129,7 +1130,7 @@ Property Descriptions
 | *Getter* | get_refraction_texture_channel()      |
 +----------+---------------------------------------+
 
-  .. _class_SpatialMaterial_rim:
+.. _class_SpatialMaterial_rim:
 
 - :ref:`float<class_float>` **rim**
 
@@ -1139,7 +1140,7 @@ Property Descriptions
 | *Getter* | get_rim()      |
 +----------+----------------+
 
-  .. _class_SpatialMaterial_rim_enabled:
+.. _class_SpatialMaterial_rim_enabled:
 
 - :ref:`bool<class_bool>` **rim_enabled**
 
@@ -1149,7 +1150,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_rim_texture:
+.. _class_SpatialMaterial_rim_texture:
 
 - :ref:`Texture<class_Texture>` **rim_texture**
 
@@ -1159,7 +1160,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_rim_tint:
+.. _class_SpatialMaterial_rim_tint:
 
 - :ref:`float<class_float>` **rim_tint**
 
@@ -1169,7 +1170,7 @@ Property Descriptions
 | *Getter* | get_rim_tint()      |
 +----------+---------------------+
 
-  .. _class_SpatialMaterial_roughness:
+.. _class_SpatialMaterial_roughness:
 
 - :ref:`float<class_float>` **roughness**
 
@@ -1179,7 +1180,7 @@ Property Descriptions
 | *Getter* | get_roughness()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_roughness_texture:
+.. _class_SpatialMaterial_roughness_texture:
 
 - :ref:`Texture<class_Texture>` **roughness_texture**
 
@@ -1189,7 +1190,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_roughness_texture_channel:
+.. _class_SpatialMaterial_roughness_texture_channel:
 
 - :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>` **roughness_texture_channel**
 
@@ -1199,7 +1200,7 @@ Property Descriptions
 | *Getter* | get_roughness_texture_channel()      |
 +----------+--------------------------------------+
 
-  .. _class_SpatialMaterial_subsurf_scatter_enabled:
+.. _class_SpatialMaterial_subsurf_scatter_enabled:
 
 - :ref:`bool<class_bool>` **subsurf_scatter_enabled**
 
@@ -1209,7 +1210,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_subsurf_scatter_strength:
+.. _class_SpatialMaterial_subsurf_scatter_strength:
 
 - :ref:`float<class_float>` **subsurf_scatter_strength**
 
@@ -1219,7 +1220,7 @@ Property Descriptions
 | *Getter* | get_subsurface_scattering_strength()      |
 +----------+-------------------------------------------+
 
-  .. _class_SpatialMaterial_subsurf_scatter_texture:
+.. _class_SpatialMaterial_subsurf_scatter_texture:
 
 - :ref:`Texture<class_Texture>` **subsurf_scatter_texture**
 
@@ -1229,7 +1230,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_transmission:
+.. _class_SpatialMaterial_transmission:
 
 - :ref:`Color<class_Color>` **transmission**
 
@@ -1239,7 +1240,7 @@ Property Descriptions
 | *Getter* | get_transmission()      |
 +----------+-------------------------+
 
-  .. _class_SpatialMaterial_transmission_enabled:
+.. _class_SpatialMaterial_transmission_enabled:
 
 - :ref:`bool<class_bool>` **transmission_enabled**
 
@@ -1249,7 +1250,7 @@ Property Descriptions
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_transmission_texture:
+.. _class_SpatialMaterial_transmission_texture:
 
 - :ref:`Texture<class_Texture>` **transmission_texture**
 
@@ -1259,7 +1260,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_SpatialMaterial_uv1_offset:
+.. _class_SpatialMaterial_uv1_offset:
 
 - :ref:`Vector3<class_Vector3>` **uv1_offset**
 
@@ -1269,7 +1270,7 @@ Property Descriptions
 | *Getter* | get_uv1_offset()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_uv1_scale:
+.. _class_SpatialMaterial_uv1_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv1_scale**
 
@@ -1279,7 +1280,7 @@ Property Descriptions
 | *Getter* | get_uv1_scale()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_uv1_triplanar:
+.. _class_SpatialMaterial_uv1_triplanar:
 
 - :ref:`bool<class_bool>` **uv1_triplanar**
 
@@ -1289,7 +1290,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_uv1_triplanar_sharpness:
+.. _class_SpatialMaterial_uv1_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv1_triplanar_sharpness**
 
@@ -1299,7 +1300,7 @@ Property Descriptions
 | *Getter* | get_uv1_triplanar_blend_sharpness()      |
 +----------+------------------------------------------+
 
-  .. _class_SpatialMaterial_uv2_offset:
+.. _class_SpatialMaterial_uv2_offset:
 
 - :ref:`Vector3<class_Vector3>` **uv2_offset**
 
@@ -1309,7 +1310,7 @@ Property Descriptions
 | *Getter* | get_uv2_offset()      |
 +----------+-----------------------+
 
-  .. _class_SpatialMaterial_uv2_scale:
+.. _class_SpatialMaterial_uv2_scale:
 
 - :ref:`Vector3<class_Vector3>` **uv2_scale**
 
@@ -1319,7 +1320,7 @@ Property Descriptions
 | *Getter* | get_uv2_scale()      |
 +----------+----------------------+
 
-  .. _class_SpatialMaterial_uv2_triplanar:
+.. _class_SpatialMaterial_uv2_triplanar:
 
 - :ref:`bool<class_bool>` **uv2_triplanar**
 
@@ -1329,7 +1330,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_uv2_triplanar_sharpness:
+.. _class_SpatialMaterial_uv2_triplanar_sharpness:
 
 - :ref:`float<class_float>` **uv2_triplanar_sharpness**
 
@@ -1339,7 +1340,7 @@ Property Descriptions
 | *Getter* | get_uv2_triplanar_blend_sharpness()      |
 +----------+------------------------------------------+
 
-  .. _class_SpatialMaterial_vertex_color_is_srgb:
+.. _class_SpatialMaterial_vertex_color_is_srgb:
 
 - :ref:`bool<class_bool>` **vertex_color_is_srgb**
 
@@ -1349,7 +1350,7 @@ Property Descriptions
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-  .. _class_SpatialMaterial_vertex_color_use_as_albedo:
+.. _class_SpatialMaterial_vertex_color_use_as_albedo:
 
 - :ref:`bool<class_bool>` **vertex_color_use_as_albedo**
 

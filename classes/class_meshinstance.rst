@@ -50,7 +50,7 @@ MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it
 Property Descriptions
 ---------------------
 
-  .. _class_MeshInstance_mesh:
+.. _class_MeshInstance_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
@@ -62,7 +62,7 @@ Property Descriptions
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
 
-  .. _class_MeshInstance_skeleton:
+.. _class_MeshInstance_skeleton:
 
 - :ref:`NodePath<class_NodePath>` **skeleton**
 
@@ -77,31 +77,31 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 Method Descriptions
 -------------------
 
-  .. _class_MeshInstance_create_convex_collision:
+.. _class_MeshInstance_create_convex_collision:
 
 - void **create_convex_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-  .. _class_MeshInstance_create_debug_tangents:
+.. _class_MeshInstance_create_debug_tangents:
 
 - void **create_debug_tangents** **(** **)**
 
 This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
 
-  .. _class_MeshInstance_create_trimesh_collision:
+.. _class_MeshInstance_create_trimesh_collision:
 
 - void **create_trimesh_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-  .. _class_MeshInstance_get_surface_material:
+.. _class_MeshInstance_get_surface_material:
 
 - :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
 Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
-  .. _class_MeshInstance_set_surface_material:
+.. _class_MeshInstance_set_surface_material:
 
 - void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
 

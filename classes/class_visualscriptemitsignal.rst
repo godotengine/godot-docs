@@ -39,7 +39,7 @@ Emits a specified signal when it is executed.
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptEmitSignal_signal:
+.. _class_VisualScriptEmitSignal_signal:
 
 - :ref:`String<class_String>` **signal**
 

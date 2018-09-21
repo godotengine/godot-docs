@@ -43,10 +43,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
+
 Property Descriptions
 ---------------------
 
-  .. _class_CollisionShape_disabled:
+.. _class_CollisionShape_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -58,7 +59,7 @@ Property Descriptions
 
 A disabled collision shape has no effect in the world.
 
-  .. _class_CollisionShape_shape:
+.. _class_CollisionShape_shape:
 
 - :ref:`Shape<class_Shape>` **shape**
 
@@ -73,13 +74,13 @@ The actual shape owned by this collision shape.
 Method Descriptions
 -------------------
 
-  .. _class_CollisionShape_make_convex_from_brothers:
+.. _class_CollisionShape_make_convex_from_brothers:
 
 - void **make_convex_from_brothers** **(** **)**
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance<class_MeshInstance>` siblings geometry.
 
-  .. _class_CollisionShape_resource_changed:
+.. _class_CollisionShape_resource_changed:
 
 - void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 

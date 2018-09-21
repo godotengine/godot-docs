@@ -31,7 +31,7 @@ A Visual Script node which deconstructs a base type instance into its parts.
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptDeconstruct_type:
+.. _class_VisualScriptDeconstruct_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 

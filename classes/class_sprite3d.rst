@@ -36,7 +36,7 @@ Properties
 Signals
 -------
 
-  .. _class_Sprite3D_frame_changed:
+.. _class_Sprite3D_frame_changed:
 
 - **frame_changed** **(** **)**
 
@@ -50,7 +50,7 @@ A node that displays a 2D texture in a 3D environment. The texture displayed can
 Property Descriptions
 ---------------------
 
-  .. _class_Sprite3D_frame:
+.. _class_Sprite3D_frame:
 
 - :ref:`int<class_int>` **frame**
 
@@ -62,7 +62,7 @@ Property Descriptions
 
 Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_vframes>` or :ref:`hframes<class_Sprite3D_hframes>` must be greater than 1.
 
-  .. _class_Sprite3D_hframes:
+.. _class_Sprite3D_hframes:
 
 - :ref:`int<class_int>` **hframes**
 
@@ -74,7 +74,7 @@ Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_vframes
 
 The number of columns in the sprite sheet.
 
-  .. _class_Sprite3D_region_enabled:
+.. _class_Sprite3D_region_enabled:
 
 - :ref:`bool<class_bool>` **region_enabled**
 
@@ -86,7 +86,7 @@ The number of columns in the sprite sheet.
 
 If ``true`` texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_region_rect>`. Default value: ``false``.
 
-  .. _class_Sprite3D_region_rect:
+.. _class_Sprite3D_region_rect:
 
 - :ref:`Rect2<class_Rect2>` **region_rect**
 
@@ -98,7 +98,7 @@ If ``true`` texture will be cut from a larger atlas texture. See :ref:`region_re
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_region_enabled>` must be ``true``.
 
-  .. _class_Sprite3D_texture:
+.. _class_Sprite3D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
@@ -110,7 +110,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 
 :ref:`Texture<class_Texture>` object to draw.
 
-  .. _class_Sprite3D_vframes:
+.. _class_Sprite3D_vframes:
 
 - :ref:`int<class_int>` **vframes**
 

@@ -39,7 +39,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptVariableGet_var_name:
+.. _class_VisualScriptVariableGet_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

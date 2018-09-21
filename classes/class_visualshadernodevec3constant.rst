@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeVec3Constant_constant:
+.. _class_VisualShaderNodeVec3Constant_constant:
 
 - :ref:`Vector3<class_Vector3>` **constant**
 

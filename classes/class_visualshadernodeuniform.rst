@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeUniform_uniform_name:
+.. _class_VisualShaderNodeUniform_uniform_name:
 
 - :ref:`String<class_String>` **uniform_name**
 

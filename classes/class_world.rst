@@ -40,10 +40,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
+
 Property Descriptions
 ---------------------
 
-  .. _class_World_direct_space_state:
+.. _class_World_direct_space_state:
 
 - :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **direct_space_state**
 
@@ -53,7 +54,7 @@ Property Descriptions
 
 The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
 
-  .. _class_World_environment:
+.. _class_World_environment:
 
 - :ref:`Environment<class_Environment>` **environment**
 
@@ -65,7 +66,7 @@ The World's physics direct space state, used for making various queries. Might b
 
 The World's :ref:`Environment<class_Environment>`.
 
-  .. _class_World_fallback_environment:
+.. _class_World_fallback_environment:
 
 - :ref:`Environment<class_Environment>` **fallback_environment**
 
@@ -77,7 +78,7 @@ The World's :ref:`Environment<class_Environment>`.
 
 The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 
-  .. _class_World_scenario:
+.. _class_World_scenario:
 
 - :ref:`RID<class_RID>` **scenario**
 
@@ -87,7 +88,7 @@ The World's fallback_environment will be used if the World's :ref:`Environment<c
 
 The World's visual scenario.
 
-  .. _class_World_space:
+.. _class_World_space:
 
 - :ref:`RID<class_RID>` **space**
 

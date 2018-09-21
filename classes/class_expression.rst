@@ -32,19 +32,19 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_Expression_execute:
+.. _class_Expression_execute:
 
 - :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)**
 
-  .. _class_Expression_get_error_text:
+.. _class_Expression_get_error_text:
 
 - :ref:`String<class_String>` **get_error_text** **(** **)** const
 
-  .. _class_Expression_has_execute_failed:
+.. _class_Expression_has_execute_failed:
 
 - :ref:`bool<class_bool>` **has_execute_failed** **(** **)** const
 
-  .. _class_Expression_parse:
+.. _class_Expression_parse:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
 

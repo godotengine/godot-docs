@@ -70,19 +70,19 @@ Theme Properties
 Signals
 -------
 
-  .. _class_FileDialog_dir_selected:
+.. _class_FileDialog_dir_selected:
 
 - **dir_selected** **(** :ref:`String<class_String>` dir **)**
 
 Event emitted when the user selects a directory.
 
-  .. _class_FileDialog_file_selected:
+.. _class_FileDialog_file_selected:
 
 - **file_selected** **(** :ref:`String<class_String>` path **)**
 
 Event emitted when the user selects a file (double clicks it or presses the OK button).
 
-  .. _class_FileDialog_files_selected:
+.. _class_FileDialog_files_selected:
 
 - **files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
 
@@ -91,7 +91,7 @@ Event emitted when the user selects multiple files.
 Enumerations
 ------------
 
-  .. _enum_FileDialog_Access:
+.. _enum_FileDialog_Access:
 
 enum **Access**:
 
@@ -99,7 +99,7 @@ enum **Access**:
 - **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_Resource>` path(res://) .
 - **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
 
-  .. _enum_FileDialog_Mode:
+.. _enum_FileDialog_Mode:
 
 enum **Mode**:
 
@@ -117,7 +117,7 @@ FileDialog is a preset dialog used to choose files and directories in the filesy
 Property Descriptions
 ---------------------
 
-  .. _class_FileDialog_access:
+.. _class_FileDialog_access:
 
 - :ref:`Access<enum_FileDialog_Access>` **access**
 
@@ -127,7 +127,7 @@ Property Descriptions
 | *Getter* | get_access()      |
 +----------+-------------------+
 
-  .. _class_FileDialog_current_dir:
+.. _class_FileDialog_current_dir:
 
 - :ref:`String<class_String>` **current_dir**
 
@@ -139,7 +139,7 @@ Property Descriptions
 
 The current working directory of the file dialog.
 
-  .. _class_FileDialog_current_file:
+.. _class_FileDialog_current_file:
 
 - :ref:`String<class_String>` **current_file**
 
@@ -151,7 +151,7 @@ The current working directory of the file dialog.
 
 The currently selected file of the file dialog.
 
-  .. _class_FileDialog_current_path:
+.. _class_FileDialog_current_path:
 
 - :ref:`String<class_String>` **current_path**
 
@@ -163,7 +163,7 @@ The currently selected file of the file dialog.
 
 The currently selected file path of the file dialog.
 
-  .. _class_FileDialog_filters:
+.. _class_FileDialog_filters:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **filters**
 
@@ -173,7 +173,7 @@ The currently selected file path of the file dialog.
 | *Getter* | get_filters()      |
 +----------+--------------------+
 
-  .. _class_FileDialog_mode:
+.. _class_FileDialog_mode:
 
 - :ref:`Mode<enum_FileDialog_Mode>` **mode**
 
@@ -183,7 +183,7 @@ The currently selected file path of the file dialog.
 | *Getter* | get_mode()      |
 +----------+-----------------+
 
-  .. _class_FileDialog_mode_overrides_title:
+.. _class_FileDialog_mode_overrides_title:
 
 - :ref:`bool<class_bool>` **mode_overrides_title**
 
@@ -195,7 +195,7 @@ The currently selected file path of the file dialog.
 
 If ``true``, changing the ``mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
 
-  .. _class_FileDialog_show_hidden_files:
+.. _class_FileDialog_show_hidden_files:
 
 - :ref:`bool<class_bool>` **show_hidden_files**
 
@@ -208,33 +208,33 @@ If ``true``, changing the ``mode`` property will set the window title accordingl
 Method Descriptions
 -------------------
 
-  .. _class_FileDialog_add_filter:
+.. _class_FileDialog_add_filter:
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
 Add a custom filter. Filter format is: "mask ; description", example (C++): dialog->add_filter("\*.png ; PNG Images");
 
-  .. _class_FileDialog_clear_filters:
+.. _class_FileDialog_clear_filters:
 
 - void **clear_filters** **(** **)**
 
 Clear all the added filters in the dialog.
 
-  .. _class_FileDialog_deselect_items:
+.. _class_FileDialog_deselect_items:
 
 - void **deselect_items** **(** **)**
 
-  .. _class_FileDialog_get_line_edit:
+.. _class_FileDialog_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
-  .. _class_FileDialog_get_vbox:
+.. _class_FileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
 Return the vertical box container of the dialog, custom controls can be added to it.
 
-  .. _class_FileDialog_invalidate:
+.. _class_FileDialog_invalidate:
 
 - void **invalidate** **(** **)**
 

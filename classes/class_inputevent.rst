@@ -59,11 +59,13 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 - :doc:`../tutorials/2d/2d_transforms`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEvent_device:
+.. _class_InputEvent_device:
 
 - :ref:`int<class_int>` **device**
 
@@ -78,57 +80,57 @@ The event's device ID.
 Method Descriptions
 -------------------
 
-  .. _class_InputEvent_as_text:
+.. _class_InputEvent_as_text:
 
 - :ref:`String<class_String>` **as_text** **(** **)** const
 
 Returns a :ref:`String<class_String>` representation of the event.
 
-  .. _class_InputEvent_get_action_strength:
+.. _class_InputEvent_get_action_strength:
 
 - :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
 
-  .. _class_InputEvent_is_action:
+.. _class_InputEvent_is_action:
 
 - :ref:`bool<class_bool>` **is_action** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if this input event matches a pre-defined action of any type.
 
-  .. _class_InputEvent_is_action_pressed:
+.. _class_InputEvent_is_action_pressed:
 
 - :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if the given action is being pressed (and is not an echo event for KEY events). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
-  .. _class_InputEvent_is_action_released:
+.. _class_InputEvent_is_action_released:
 
 - :ref:`bool<class_bool>` **is_action_released** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
-  .. _class_InputEvent_is_action_type:
+.. _class_InputEvent_is_action_type:
 
 - :ref:`bool<class_bool>` **is_action_type** **(** **)** const
 
 Returns ``true`` if this input event's type is one of the ``InputEvent`` constants.
 
-  .. _class_InputEvent_is_echo:
+.. _class_InputEvent_is_echo:
 
 - :ref:`bool<class_bool>` **is_echo** **(** **)** const
 
 Returns ``true`` if this input event is an echo event (only for events of type KEY).
 
-  .. _class_InputEvent_is_pressed:
+.. _class_InputEvent_is_pressed:
 
 - :ref:`bool<class_bool>` **is_pressed** **(** **)** const
 
 Returns ``true`` if this input event is pressed. Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
-  .. _class_InputEvent_shortcut_match:
+.. _class_InputEvent_shortcut_match:
 
 - :ref:`bool<class_bool>` **shortcut_match** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
-  .. _class_InputEvent_xformed_by:
+.. _class_InputEvent_xformed_by:
 
 - :ref:`InputEvent<class_InputEvent>` **xformed_by** **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` local_ofs=Vector2( 0, 0 ) **)** const
 

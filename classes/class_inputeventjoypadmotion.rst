@@ -34,10 +34,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventJoypadMotion_axis:
+.. _class_InputEventJoypadMotion_axis:
 
 - :ref:`int<class_int>` **axis**
 
@@ -49,7 +50,7 @@ Property Descriptions
 
 Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_InputEventJoypadMotion_axis_value:
+.. _class_InputEventJoypadMotion_axis_value:
 
 - :ref:`float<class_float>` **axis_value**
 

@@ -26,7 +26,7 @@ Methods
 Signals
 -------
 
-  .. _class_ScriptCreateDialog_script_created:
+.. _class_ScriptCreateDialog_script_created:
 
 - **script_created** **(** :ref:`Script<class_Script>` script **)**
 
@@ -47,7 +47,7 @@ The ScriptCreateDialog creates script files according to a given template for a 
 Method Descriptions
 -------------------
 
-  .. _class_ScriptCreateDialog_config:
+.. _class_ScriptCreateDialog_config:
 
 - void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)**
 

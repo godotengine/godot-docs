@@ -41,37 +41,37 @@ Provides data transformation and encoding utility functions.
 Method Descriptions
 -------------------
 
-  .. _class_Marshalls_base64_to_raw:
+.. _class_Marshalls_base64_to_raw:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **base64_to_raw** **(** :ref:`String<class_String>` base64_str **)**
 
 Return :ref:`PoolByteArray<class_PoolByteArray>` of a given base64 encoded String.
 
-  .. _class_Marshalls_base64_to_utf8:
+.. _class_Marshalls_base64_to_utf8:
 
 - :ref:`String<class_String>` **base64_to_utf8** **(** :ref:`String<class_String>` base64_str **)**
 
 Return utf8 String of a given base64 encoded String.
 
-  .. _class_Marshalls_base64_to_variant:
+.. _class_Marshalls_base64_to_variant:
 
 - :ref:`Variant<class_Variant>` **base64_to_variant** **(** :ref:`String<class_String>` base64_str **)**
 
 Return :ref:`Variant<class_Variant>` of a given base64 encoded String.
 
-  .. _class_Marshalls_raw_to_base64:
+.. _class_Marshalls_raw_to_base64:
 
 - :ref:`String<class_String>` **raw_to_base64** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
 Return base64 encoded String of a given :ref:`PoolByteArray<class_PoolByteArray>`.
 
-  .. _class_Marshalls_utf8_to_base64:
+.. _class_Marshalls_utf8_to_base64:
 
 - :ref:`String<class_String>` **utf8_to_base64** **(** :ref:`String<class_String>` utf8_str **)**
 
 Return base64 encoded String of a given utf8 String.
 
-  .. _class_Marshalls_variant_to_base64:
+.. _class_Marshalls_variant_to_base64:
 
 - :ref:`String<class_String>` **variant_to_base64** **(** :ref:`Variant<class_Variant>` variant **)**
 

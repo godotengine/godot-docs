@@ -38,7 +38,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualScriptPropertyGet_CallMode:
+.. _enum_VisualScriptPropertyGet_CallMode:
 
 enum **CallMode**:
 
@@ -49,7 +49,7 @@ enum **CallMode**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptPropertyGet_base_script:
+.. _class_VisualScriptPropertyGet_base_script:
 
 - :ref:`String<class_String>` **base_script**
 
@@ -59,7 +59,7 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
-  .. _class_VisualScriptPropertyGet_base_type:
+.. _class_VisualScriptPropertyGet_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -69,7 +69,7 @@ Property Descriptions
 | *Getter* | get_base_type()      |
 +----------+----------------------+
 
-  .. _class_VisualScriptPropertyGet_basic_type:
+.. _class_VisualScriptPropertyGet_basic_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
@@ -79,7 +79,7 @@ Property Descriptions
 | *Getter* | get_basic_type()      |
 +----------+-----------------------+
 
-  .. _class_VisualScriptPropertyGet_index:
+.. _class_VisualScriptPropertyGet_index:
 
 - :ref:`String<class_String>` **index**
 
@@ -89,7 +89,7 @@ Property Descriptions
 | *Getter* | get_index()      |
 +----------+------------------+
 
-  .. _class_VisualScriptPropertyGet_node_path:
+.. _class_VisualScriptPropertyGet_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 
@@ -99,7 +99,7 @@ Property Descriptions
 | *Getter* | get_base_path()      |
 +----------+----------------------+
 
-  .. _class_VisualScriptPropertyGet_property:
+.. _class_VisualScriptPropertyGet_property:
 
 - :ref:`String<class_String>` **property**
 
@@ -109,7 +109,7 @@ Property Descriptions
 | *Getter* | get_property()      |
 +----------+---------------------+
 
-  .. _class_VisualScriptPropertyGet_set_mode:
+.. _class_VisualScriptPropertyGet_set_mode:
 
 - :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **set_mode**
 

@@ -33,7 +33,7 @@ Line shape for 2D collisions. It works like a 2D plane and will not allow any bo
 Property Descriptions
 ---------------------
 
-  .. _class_LineShape2D_d:
+.. _class_LineShape2D_d:
 
 - :ref:`float<class_float>` **d**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The line's distance from the origin.
 
-  .. _class_LineShape2D_normal:
+.. _class_LineShape2D_normal:
 
 - :ref:`Vector2<class_Vector2>` **normal**
 

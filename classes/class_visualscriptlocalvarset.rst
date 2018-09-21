@@ -45,7 +45,7 @@ Changes a local variable's value to the given input. The new value is also provi
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptLocalVarSet_type:
+.. _class_VisualScriptLocalVarSet_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
@@ -57,7 +57,7 @@ Property Descriptions
 
 The local variable's type.
 
-  .. _class_VisualScriptLocalVarSet_var_name:
+.. _class_VisualScriptLocalVarSet_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

@@ -38,10 +38,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventMouseButton_button_index:
+.. _class_InputEventMouseButton_button_index:
 
 - :ref:`int<class_int>` **button_index**
 
@@ -53,7 +54,7 @@ Property Descriptions
 
 Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_InputEventMouseButton_doubleclick:
+.. _class_InputEventMouseButton_doubleclick:
 
 - :ref:`bool<class_bool>` **doubleclick**
 
@@ -65,7 +66,7 @@ Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in 
 
 If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
 
-  .. _class_InputEventMouseButton_factor:
+.. _class_InputEventMouseButton_factor:
 
 - :ref:`float<class_float>` **factor**
 
@@ -77,7 +78,7 @@ If ``true`` the mouse button's state is a double-click. If ``false`` the mouse b
 
 Magnitude. Amount (or delta) of the event. Used for scroll events, indicates scroll amount (vertically or horizontally). Only supported on some platforms, sensitivity varies by platform. May be 0 if not supported.
 
-  .. _class_InputEventMouseButton_pressed:
+.. _class_InputEventMouseButton_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 

@@ -53,7 +53,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_BakedLightmap_BakeQuality:
+.. _enum_BakedLightmap_BakeQuality:
 
 enum **BakeQuality**:
 
@@ -61,7 +61,7 @@ enum **BakeQuality**:
 - **BAKE_QUALITY_MEDIUM** = **1** --- Default bake quality mode.
 - **BAKE_QUALITY_HIGH** = **2** --- Highest bake quality mode. Takes longer to calculate.
 
-  .. _enum_BakedLightmap_BakeError:
+.. _enum_BakedLightmap_BakeError:
 
 enum **BakeError**:
 
@@ -71,7 +71,7 @@ enum **BakeError**:
 - **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
 - **BAKE_ERROR_USER_ABORTED** = **4**
 
-  .. _enum_BakedLightmap_BakeMode:
+.. _enum_BakedLightmap_BakeMode:
 
 enum **BakeMode**:
 
@@ -87,10 +87,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/baked_lightmaps`
+
 Property Descriptions
 ---------------------
 
-  .. _class_BakedLightmap_bake_cell_size:
+.. _class_BakedLightmap_bake_cell_size:
 
 - :ref:`float<class_float>` **bake_cell_size**
 
@@ -102,7 +103,7 @@ Property Descriptions
 
 Grid subdivision size for lightmapper calculation. Default value of ``0.25`` will work for most cases. Increase for better lighting on small details or if your scene is very large.
 
-  .. _class_BakedLightmap_bake_energy:
+.. _class_BakedLightmap_bake_energy:
 
 - :ref:`float<class_float>` **bake_energy**
 
@@ -112,7 +113,7 @@ Grid subdivision size for lightmapper calculation. Default value of ``0.25`` wil
 | *Getter* | get_energy()      |
 +----------+-------------------+
 
-  .. _class_BakedLightmap_bake_extents:
+.. _class_BakedLightmap_bake_extents:
 
 - :ref:`Vector3<class_Vector3>` **bake_extents**
 
@@ -124,7 +125,7 @@ Grid subdivision size for lightmapper calculation. Default value of ``0.25`` wil
 
 Size of affected area.
 
-  .. _class_BakedLightmap_bake_hdr:
+.. _class_BakedLightmap_bake_hdr:
 
 - :ref:`bool<class_bool>` **bake_hdr**
 
@@ -136,7 +137,7 @@ Size of affected area.
 
 If ``true`` lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller lightmap. Default value:``false``.
 
-  .. _class_BakedLightmap_bake_mode:
+.. _class_BakedLightmap_bake_mode:
 
 - :ref:`BakeMode<enum_BakedLightmap_BakeMode>` **bake_mode**
 
@@ -148,7 +149,7 @@ If ``true`` lightmap can capture light values greater than ``1.0``. Turning this
 
 Lightmapping mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 
-  .. _class_BakedLightmap_bake_propagation:
+.. _class_BakedLightmap_bake_propagation:
 
 - :ref:`float<class_float>` **bake_propagation**
 
@@ -158,7 +159,7 @@ Lightmapping mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 | *Getter* | get_propagation()      |
 +----------+------------------------+
 
-  .. _class_BakedLightmap_bake_quality:
+.. _class_BakedLightmap_bake_quality:
 
 - :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **bake_quality**
 
@@ -170,7 +171,7 @@ Lightmapping mode. See :ref:`BakeMode<enum_@GlobalScope_BakeMode>`.
 
 Three quality modes are available. Higher quality requires more rendering time. See :ref:`BakeQuality<enum_@GlobalScope_BakeQuality>`.
 
-  .. _class_BakedLightmap_capture_cell_size:
+.. _class_BakedLightmap_capture_cell_size:
 
 - :ref:`float<class_float>` **capture_cell_size**
 
@@ -182,7 +183,7 @@ Three quality modes are available. Higher quality requires more rendering time. 
 
 Grid size used for real-time capture information on dynamic objects. Cannot be larger than :ref:`bake_cell_size<class_BakedLightmap_bake_cell_size>`.
 
-  .. _class_BakedLightmap_image_path:
+.. _class_BakedLightmap_image_path:
 
 - :ref:`String<class_String>` **image_path**
 
@@ -194,7 +195,7 @@ Grid size used for real-time capture information on dynamic objects. Cannot be l
 
 Location where lightmaps will be saved.
 
-  .. _class_BakedLightmap_light_data:
+.. _class_BakedLightmap_light_data:
 
 - :ref:`BakedLightmapData<class_BakedLightmapData>` **light_data**
 
@@ -209,11 +210,11 @@ The calculated light data.
 Method Descriptions
 -------------------
 
-  .. _class_BakedLightmap_bake:
+.. _class_BakedLightmap_bake:
 
 - :ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
-  .. _class_BakedLightmap_debug_bake:
+.. _class_BakedLightmap_debug_bake:
 
 - void **debug_bake** **(** **)**
 

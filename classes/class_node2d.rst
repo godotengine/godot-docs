@@ -83,10 +83,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/2d/custom_drawing_in_2d`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Node2D_global_position:
+.. _class_Node2D_global_position:
 
 - :ref:`Vector2<class_Vector2>` **global_position**
 
@@ -98,7 +99,7 @@ Property Descriptions
 
 Global position.
 
-  .. _class_Node2D_global_rotation:
+.. _class_Node2D_global_rotation:
 
 - :ref:`float<class_float>` **global_rotation**
 
@@ -110,7 +111,7 @@ Global position.
 
 Global rotation in radians.
 
-  .. _class_Node2D_global_rotation_degrees:
+.. _class_Node2D_global_rotation_degrees:
 
 - :ref:`float<class_float>` **global_rotation_degrees**
 
@@ -122,7 +123,7 @@ Global rotation in radians.
 
 Global rotation in degrees.
 
-  .. _class_Node2D_global_scale:
+.. _class_Node2D_global_scale:
 
 - :ref:`Vector2<class_Vector2>` **global_scale**
 
@@ -134,7 +135,7 @@ Global rotation in degrees.
 
 Global scale.
 
-  .. _class_Node2D_global_transform:
+.. _class_Node2D_global_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **global_transform**
 
@@ -146,7 +147,7 @@ Global scale.
 
 Global :ref:`Transform2D<class_Transform2D>`.
 
-  .. _class_Node2D_position:
+.. _class_Node2D_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
@@ -158,7 +159,7 @@ Global :ref:`Transform2D<class_Transform2D>`.
 
 Position, relative to the node's parent.
 
-  .. _class_Node2D_rotation:
+.. _class_Node2D_rotation:
 
 - :ref:`float<class_float>` **rotation**
 
@@ -170,7 +171,7 @@ Position, relative to the node's parent.
 
 Rotation in radians, relative to the node's parent.
 
-  .. _class_Node2D_rotation_degrees:
+.. _class_Node2D_rotation_degrees:
 
 - :ref:`float<class_float>` **rotation_degrees**
 
@@ -182,7 +183,7 @@ Rotation in radians, relative to the node's parent.
 
 Rotation in degrees, relative to the node's parent.
 
-  .. _class_Node2D_scale:
+.. _class_Node2D_scale:
 
 - :ref:`Vector2<class_Vector2>` **scale**
 
@@ -194,7 +195,7 @@ Rotation in degrees, relative to the node's parent.
 
 The node's scale. Unscaled value: ``(1, 1)``
 
-  .. _class_Node2D_transform:
+.. _class_Node2D_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
 
@@ -206,7 +207,7 @@ The node's scale. Unscaled value: ``(1, 1)``
 
 Local :ref:`Transform2D<class_Transform2D>`.
 
-  .. _class_Node2D_z_as_relative:
+.. _class_Node2D_z_as_relative:
 
 - :ref:`bool<class_bool>` **z_as_relative**
 
@@ -218,7 +219,7 @@ Local :ref:`Transform2D<class_Transform2D>`.
 
 If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
 
-  .. _class_Node2D_z_index:
+.. _class_Node2D_z_index:
 
 - :ref:`int<class_int>` **z_index**
 
@@ -233,67 +234,67 @@ Z-index. Controls the order in which the nodes render. A node with a higher Z-in
 Method Descriptions
 -------------------
 
-  .. _class_Node2D_apply_scale:
+.. _class_Node2D_apply_scale:
 
 - void **apply_scale** **(** :ref:`Vector2<class_Vector2>` ratio **)**
 
 Multiplies the current scale by the 'ratio' vector.
 
-  .. _class_Node2D_get_angle_to:
+.. _class_Node2D_get_angle_to:
 
 - :ref:`float<class_float>` **get_angle_to** **(** :ref:`Vector2<class_Vector2>` point **)** const
 
 Returns the angle between the node and the 'point' in radians.
 
-  .. _class_Node2D_get_relative_transform_to_parent:
+.. _class_Node2D_get_relative_transform_to_parent:
 
 - :ref:`Transform2D<class_Transform2D>` **get_relative_transform_to_parent** **(** :ref:`Node<class_Node>` parent **)** const
 
 Returns the :ref:`Transform2D<class_Transform2D>` relative to this node's parent.
 
-  .. _class_Node2D_global_translate:
+.. _class_Node2D_global_translate:
 
 - void **global_translate** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Adds the 'offset' vector to the node's global position.
 
-  .. _class_Node2D_look_at:
+.. _class_Node2D_look_at:
 
 - void **look_at** **(** :ref:`Vector2<class_Vector2>` point **)**
 
 Rotates the node so it points towards the 'point'.
 
-  .. _class_Node2D_move_local_x:
+.. _class_Node2D_move_local_x:
 
 - void **move_local_x** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
 Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
 
-  .. _class_Node2D_move_local_y:
+.. _class_Node2D_move_local_y:
 
 - void **move_local_y** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
 Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
 
-  .. _class_Node2D_rotate:
+.. _class_Node2D_rotate:
 
 - void **rotate** **(** :ref:`float<class_float>` radians **)**
 
 Applies a rotation to the node, in radians, starting from its current rotation.
 
-  .. _class_Node2D_to_global:
+.. _class_Node2D_to_global:
 
 - :ref:`Vector2<class_Vector2>` **to_global** **(** :ref:`Vector2<class_Vector2>` local_point **)** const
 
 Converts a local point's coordinates to global coordinates.
 
-  .. _class_Node2D_to_local:
+.. _class_Node2D_to_local:
 
 - :ref:`Vector2<class_Vector2>` **to_local** **(** :ref:`Vector2<class_Vector2>` global_point **)** const
 
 Converts a global point's coordinates to local coordinates.
 
-  .. _class_Node2D_translate:
+.. _class_Node2D_translate:
 
 - void **translate** **(** :ref:`Vector2<class_Vector2>` offset **)**
 

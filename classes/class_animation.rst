@@ -147,7 +147,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_Animation_UpdateMode:
+.. _enum_Animation_UpdateMode:
 
 enum **UpdateMode**:
 
@@ -156,7 +156,7 @@ enum **UpdateMode**:
 - **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
 - **UPDATE_CAPTURE** = **3**
 
-  .. _enum_Animation_InterpolationType:
+.. _enum_Animation_InterpolationType:
 
 enum **InterpolationType**:
 
@@ -164,7 +164,7 @@ enum **InterpolationType**:
 - **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
 - **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
 
-  .. _enum_Animation_TrackType:
+.. _enum_Animation_TrackType:
 
 enum **TrackType**:
 
@@ -186,10 +186,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/animation/index`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Animation_length:
+.. _class_Animation_length:
 
 - :ref:`float<class_float>` **length**
 
@@ -201,7 +202,7 @@ Property Descriptions
 
 The total length of the animation (in seconds). Note that length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
 
-  .. _class_Animation_loop:
+.. _class_Animation_loop:
 
 - :ref:`bool<class_bool>` **loop**
 
@@ -213,7 +214,7 @@ The total length of the animation (in seconds). Note that length is not delimite
 
 A flag indicating that the animation must loop. This is uses for correct interpolation of animation cycles, and for hinting the player that it must restart the animation.
 
-  .. _class_Animation_step:
+.. _class_Animation_step:
 
 - :ref:`float<class_float>` **step**
 
@@ -228,265 +229,265 @@ The animation step value.
 Method Descriptions
 -------------------
 
-  .. _class_Animation_add_track:
+.. _class_Animation_add_track:
 
 - :ref:`int<class_int>` **add_track** **(** :ref:`TrackType<enum_Animation_TrackType>` type, :ref:`int<class_int>` at_position=-1 **)**
 
 Add a track to the Animation. The track type must be specified as any of the values in the TYPE\_\* enumeration.
 
-  .. _class_Animation_animation_track_get_key_animation:
+.. _class_Animation_animation_track_get_key_animation:
 
 - :ref:`String<class_String>` **animation_track_get_key_animation** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_animation_track_insert_key:
+.. _class_Animation_animation_track_insert_key:
 
 - :ref:`int<class_int>` **animation_track_insert_key** **(** :ref:`int<class_int>` track, :ref:`float<class_float>` time, :ref:`String<class_String>` animation **)**
 
-  .. _class_Animation_animation_track_set_key_animation:
+.. _class_Animation_animation_track_set_key_animation:
 
 - void **animation_track_set_key_animation** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`String<class_String>` animation **)**
 
-  .. _class_Animation_audio_track_get_key_end_offset:
+.. _class_Animation_audio_track_get_key_end_offset:
 
 - :ref:`float<class_float>` **audio_track_get_key_end_offset** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_audio_track_get_key_start_offset:
+.. _class_Animation_audio_track_get_key_start_offset:
 
 - :ref:`float<class_float>` **audio_track_get_key_start_offset** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_audio_track_get_key_stream:
+.. _class_Animation_audio_track_get_key_stream:
 
 - :ref:`Resource<class_Resource>` **audio_track_get_key_stream** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_audio_track_insert_key:
+.. _class_Animation_audio_track_insert_key:
 
 - :ref:`int<class_int>` **audio_track_insert_key** **(** :ref:`int<class_int>` track, :ref:`float<class_float>` time, :ref:`Resource<class_Resource>` stream, :ref:`float<class_float>` start_offset=0, :ref:`float<class_float>` end_offset=0 **)**
 
-  .. _class_Animation_audio_track_set_key_end_offset:
+.. _class_Animation_audio_track_set_key_end_offset:
 
 - void **audio_track_set_key_end_offset** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**
 
-  .. _class_Animation_audio_track_set_key_start_offset:
+.. _class_Animation_audio_track_set_key_start_offset:
 
 - void **audio_track_set_key_start_offset** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**
 
-  .. _class_Animation_audio_track_set_key_stream:
+.. _class_Animation_audio_track_set_key_stream:
 
 - void **audio_track_set_key_stream** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`Resource<class_Resource>` stream **)**
 
-  .. _class_Animation_bezier_track_get_key_in_handle:
+.. _class_Animation_bezier_track_get_key_in_handle:
 
 - :ref:`Vector2<class_Vector2>` **bezier_track_get_key_in_handle** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_bezier_track_get_key_out_handle:
+.. _class_Animation_bezier_track_get_key_out_handle:
 
 - :ref:`Vector2<class_Vector2>` **bezier_track_get_key_out_handle** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_bezier_track_get_key_value:
+.. _class_Animation_bezier_track_get_key_value:
 
 - :ref:`float<class_float>` **bezier_track_get_key_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
-  .. _class_Animation_bezier_track_insert_key:
+.. _class_Animation_bezier_track_insert_key:
 
 - :ref:`int<class_int>` **bezier_track_insert_key** **(** :ref:`int<class_int>` track, :ref:`float<class_float>` time, :ref:`float<class_float>` value, :ref:`Vector2<class_Vector2>` in_handle=Vector2( 0, 0 ), :ref:`Vector2<class_Vector2>` out_handle=Vector2( 0, 0 ) **)**
 
-  .. _class_Animation_bezier_track_interpolate:
+.. _class_Animation_bezier_track_interpolate:
 
 - :ref:`float<class_float>` **bezier_track_interpolate** **(** :ref:`int<class_int>` track, :ref:`float<class_float>` time **)** const
 
-  .. _class_Animation_bezier_track_set_key_in_handle:
+.. _class_Animation_bezier_track_set_key_in_handle:
 
 - void **bezier_track_set_key_in_handle** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`Vector2<class_Vector2>` in_handle **)**
 
-  .. _class_Animation_bezier_track_set_key_out_handle:
+.. _class_Animation_bezier_track_set_key_out_handle:
 
 - void **bezier_track_set_key_out_handle** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`Vector2<class_Vector2>` out_handle **)**
 
-  .. _class_Animation_bezier_track_set_key_value:
+.. _class_Animation_bezier_track_set_key_value:
 
 - void **bezier_track_set_key_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` value **)**
 
-  .. _class_Animation_clear:
+.. _class_Animation_clear:
 
 - void **clear** **(** **)**
 
 Clear the animation (clear all tracks and reset all).
 
-  .. _class_Animation_copy_track:
+.. _class_Animation_copy_track:
 
 - void **copy_track** **(** :ref:`int<class_int>` track, :ref:`Animation<class_Animation>` to_animation **)**
 
 Adds a new track that is a copy of the given track from ``to_animation``.
 
-  .. _class_Animation_find_track:
+.. _class_Animation_find_track:
 
 - :ref:`int<class_int>` **find_track** **(** :ref:`NodePath<class_NodePath>` path **)** const
 
 Return the index of the specified track. If the track is not found, return -1.
 
-  .. _class_Animation_get_track_count:
+.. _class_Animation_get_track_count:
 
 - :ref:`int<class_int>` **get_track_count** **(** **)** const
 
 Return the amount of tracks in the animation.
 
-  .. _class_Animation_method_track_get_key_indices:
+.. _class_Animation_method_track_get_key_indices:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **method_track_get_key_indices** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, :ref:`float<class_float>` delta **)** const
 
 Return all the key indices of a method track, given a position and delta time.
 
-  .. _class_Animation_method_track_get_name:
+.. _class_Animation_method_track_get_name:
 
 - :ref:`String<class_String>` **method_track_get_name** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
 Return the method name of a method track.
 
-  .. _class_Animation_method_track_get_params:
+.. _class_Animation_method_track_get_params:
 
 - :ref:`Array<class_Array>` **method_track_get_params** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
 Return the arguments values to be called on a method track for a given key in a given track.
 
-  .. _class_Animation_remove_track:
+.. _class_Animation_remove_track:
 
 - void **remove_track** **(** :ref:`int<class_int>` idx **)**
 
 Remove a track by specifying the track index.
 
-  .. _class_Animation_track_find_key:
+.. _class_Animation_track_find_key:
 
 - :ref:`int<class_int>` **track_find_key** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false **)** const
 
 Find the key index by time in a given track. Optionally, only find it if the exact time is given.
 
-  .. _class_Animation_track_get_interpolation_loop_wrap:
+.. _class_Animation_track_get_interpolation_loop_wrap:
 
 - :ref:`bool<class_bool>` **track_get_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx **)** const
 
 Returns ``true`` if the track at ``idx`` wraps the interpolation loop. Default value: ``true``.
 
-  .. _class_Animation_track_get_interpolation_type:
+.. _class_Animation_track_get_interpolation_type:
 
 - :ref:`InterpolationType<enum_Animation_InterpolationType>` **track_get_interpolation_type** **(** :ref:`int<class_int>` idx **)** const
 
 Return the interpolation type of a given track, from the INTERPOLATION\_\* enum.
 
-  .. _class_Animation_track_get_key_count:
+.. _class_Animation_track_get_key_count:
 
 - :ref:`int<class_int>` **track_get_key_count** **(** :ref:`int<class_int>` idx **)** const
 
 Return the amount of keys in a given track.
 
-  .. _class_Animation_track_get_key_time:
+.. _class_Animation_track_get_key_time:
 
 - :ref:`float<class_float>` **track_get_key_time** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
 Return the time at which the key is located.
 
-  .. _class_Animation_track_get_key_transition:
+.. _class_Animation_track_get_key_transition:
 
 - :ref:`float<class_float>` **track_get_key_transition** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
 Return the transition curve (easing) for a specific key (see built-in math function "ease").
 
-  .. _class_Animation_track_get_key_value:
+.. _class_Animation_track_get_key_value:
 
 - :ref:`Variant<class_Variant>` **track_get_key_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const
 
 Return the value of a given key in a given track.
 
-  .. _class_Animation_track_get_path:
+.. _class_Animation_track_get_path:
 
 - :ref:`NodePath<class_NodePath>` **track_get_path** **(** :ref:`int<class_int>` idx **)** const
 
 Get the path of a track. for more information on the path format, see :ref:`track_set_path<class_Animation_track_set_path>`
 
-  .. _class_Animation_track_get_type:
+.. _class_Animation_track_get_type:
 
 - :ref:`TrackType<enum_Animation_TrackType>` **track_get_type** **(** :ref:`int<class_int>` idx **)** const
 
 Get the type of a track.
 
-  .. _class_Animation_track_insert_key:
+.. _class_Animation_track_insert_key:
 
 - void **track_insert_key** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`Variant<class_Variant>` key, :ref:`float<class_float>` transition=1 **)**
 
 Insert a generic key in a given track.
 
-  .. _class_Animation_track_is_enabled:
+.. _class_Animation_track_is_enabled:
 
 - :ref:`bool<class_bool>` **track_is_enabled** **(** :ref:`int<class_int>` idx **)** const
 
 Returns ``true`` if the track at index ``idx`` is enabled.
 
-  .. _class_Animation_track_is_imported:
+.. _class_Animation_track_is_imported:
 
 - :ref:`bool<class_bool>` **track_is_imported** **(** :ref:`int<class_int>` idx **)** const
 
 Return true if the given track is imported. Else, return false.
 
-  .. _class_Animation_track_move_down:
+.. _class_Animation_track_move_down:
 
 - void **track_move_down** **(** :ref:`int<class_int>` idx **)**
 
 Move a track down.
 
-  .. _class_Animation_track_move_up:
+.. _class_Animation_track_move_up:
 
 - void **track_move_up** **(** :ref:`int<class_int>` idx **)**
 
 Move a track up.
 
-  .. _class_Animation_track_remove_key:
+.. _class_Animation_track_remove_key:
 
 - void **track_remove_key** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)**
 
 Remove a key by index in a given track.
 
-  .. _class_Animation_track_remove_key_at_position:
+.. _class_Animation_track_remove_key_at_position:
 
 - void **track_remove_key_at_position** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` position **)**
 
 Remove a key by position (seconds) in a given track.
 
-  .. _class_Animation_track_set_enabled:
+.. _class_Animation_track_set_enabled:
 
 - void **track_set_enabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**
 
 Enables/disables the given track. Tracks are enabled by default.
 
-  .. _class_Animation_track_set_imported:
+.. _class_Animation_track_set_imported:
 
 - void **track_set_imported** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` imported **)**
 
 Set the given track as imported or not.
 
-  .. _class_Animation_track_set_interpolation_loop_wrap:
+.. _class_Animation_track_set_interpolation_loop_wrap:
 
 - void **track_set_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` interpolation **)**
 
 If ``true`` the track at ``idx`` wraps the interpolation loop.
 
-  .. _class_Animation_track_set_interpolation_type:
+.. _class_Animation_track_set_interpolation_type:
 
 - void **track_set_interpolation_type** **(** :ref:`int<class_int>` idx, :ref:`InterpolationType<enum_Animation_InterpolationType>` interpolation **)**
 
 Set the interpolation type of a given track, from the INTERPOLATION\_\* enum.
 
-  .. _class_Animation_track_set_key_transition:
+.. _class_Animation_track_set_key_transition:
 
 - void **track_set_key_transition** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` transition **)**
 
 Set the transition curve (easing) for a specific key (see built-in math function "ease").
 
-  .. _class_Animation_track_set_key_value:
+.. _class_Animation_track_set_key_value:
 
 - void **track_set_key_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key, :ref:`Variant<class_Variant>` value **)**
 
 Set the value of an existing key.
 
-  .. _class_Animation_track_set_path:
+.. _class_Animation_track_set_path:
 
 - void **track_set_path** **(** :ref:`int<class_int>` idx, :ref:`NodePath<class_NodePath>` path **)**
 
@@ -494,35 +495,35 @@ Set the path of a track. Paths must be valid scene-tree paths to a node, and mus
 
 **Example:** "character/skeleton:ankle" or "character/mesh:transform/local".
 
-  .. _class_Animation_track_swap:
+.. _class_Animation_track_swap:
 
 - void **track_swap** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` with_idx **)**
 
-  .. _class_Animation_transform_track_insert_key:
+.. _class_Animation_transform_track_insert_key:
 
 - :ref:`int<class_int>` **transform_track_insert_key** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`Vector3<class_Vector3>` location, :ref:`Quat<class_Quat>` rotation, :ref:`Vector3<class_Vector3>` scale **)**
 
 Insert a transform key for a transform track.
 
-  .. _class_Animation_transform_track_interpolate:
+.. _class_Animation_transform_track_interpolate:
 
 - :ref:`Array<class_Array>` **transform_track_interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec **)** const
 
 Return the interpolated value of a transform track at a given time (in seconds). An array consisting of 3 elements: position (:ref:`Vector3<class_Vector3>`), rotation (:ref:`Quat<class_Quat>`) and scale (:ref:`Vector3<class_Vector3>`).
 
-  .. _class_Animation_value_track_get_key_indices:
+.. _class_Animation_value_track_get_key_indices:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **value_track_get_key_indices** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, :ref:`float<class_float>` delta **)** const
 
 Return all the key indices of a value track, given a position and delta time.
 
-  .. _class_Animation_value_track_get_update_mode:
+.. _class_Animation_value_track_get_update_mode:
 
 - :ref:`UpdateMode<enum_Animation_UpdateMode>` **value_track_get_update_mode** **(** :ref:`int<class_int>` idx **)** const
 
 Return the update mode of a value track.
 
-  .. _class_Animation_value_track_set_update_mode:
+.. _class_Animation_value_track_set_update_mode:
 
 - void **value_track_set_update_mode** **(** :ref:`int<class_int>` idx, :ref:`UpdateMode<enum_Animation_UpdateMode>` mode **)**
 

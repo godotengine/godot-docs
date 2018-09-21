@@ -45,10 +45,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventKey_echo:
+.. _class_InputEventKey_echo:
 
 - :ref:`bool<class_bool>` **echo**
 
@@ -60,7 +61,7 @@ Property Descriptions
 
 If ``true`` the key was already pressed before this event. It means the user is holding the key down.
 
-  .. _class_InputEventKey_pressed:
+.. _class_InputEventKey_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 
@@ -72,7 +73,7 @@ If ``true`` the key was already pressed before this event. It means the user is 
 
 If ``true`` the key's state is pressed. If ``false`` the key's state is released.
 
-  .. _class_InputEventKey_scancode:
+.. _class_InputEventKey_scancode:
 
 - :ref:`int<class_int>` **scancode**
 
@@ -84,7 +85,7 @@ If ``true`` the key's state is pressed. If ``false`` the key's state is released
 
 Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_InputEventKey_unicode:
+.. _class_InputEventKey_unicode:
 
 - :ref:`int<class_int>` **unicode**
 
@@ -99,7 +100,7 @@ Key unicode identifier when relevant.
 Method Descriptions
 -------------------
 
-  .. _class_InputEventKey_get_scancode_with_modifiers:
+.. _class_InputEventKey_get_scancode_with_modifiers:
 
 - :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
 

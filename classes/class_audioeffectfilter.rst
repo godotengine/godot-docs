@@ -34,7 +34,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_AudioEffectFilter_FilterDB:
+.. _enum_AudioEffectFilter_FilterDB:
 
 enum **FilterDB**:
 
@@ -51,7 +51,7 @@ Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_cutoff
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectFilter_cutoff_hz:
+.. _class_AudioEffectFilter_cutoff_hz:
 
 - :ref:`float<class_float>` **cutoff_hz**
 
@@ -63,7 +63,7 @@ Property Descriptions
 
 Threshold frequency for the filter.
 
-  .. _class_AudioEffectFilter_db:
+.. _class_AudioEffectFilter_db:
 
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
@@ -73,7 +73,7 @@ Threshold frequency for the filter.
 | *Getter* | get_db()      |
 +----------+---------------+
 
-  .. _class_AudioEffectFilter_gain:
+.. _class_AudioEffectFilter_gain:
 
 - :ref:`float<class_float>` **gain**
 
@@ -85,7 +85,7 @@ Threshold frequency for the filter.
 
 Gain amount of the frequencies after the filter.
 
-  .. _class_AudioEffectFilter_resonance:
+.. _class_AudioEffectFilter_resonance:
 
 - :ref:`float<class_float>` **resonance**
 

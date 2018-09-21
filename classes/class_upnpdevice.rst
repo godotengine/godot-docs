@@ -49,7 +49,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_UPNPDevice_IGDStatus:
+.. _enum_UPNPDevice_IGDStatus:
 
 enum **IGDStatus**:
 
@@ -72,7 +72,7 @@ UPNP device. See :ref:`UPNP<class_UPNP>` for UPNP discovery and utility function
 Property Descriptions
 ---------------------
 
-  .. _class_UPNPDevice_description_url:
+.. _class_UPNPDevice_description_url:
 
 - :ref:`String<class_String>` **description_url**
 
@@ -84,7 +84,7 @@ Property Descriptions
 
 URL to the device description.
 
-  .. _class_UPNPDevice_igd_control_url:
+.. _class_UPNPDevice_igd_control_url:
 
 - :ref:`String<class_String>` **igd_control_url**
 
@@ -96,7 +96,7 @@ URL to the device description.
 
 IDG control URL.
 
-  .. _class_UPNPDevice_igd_our_addr:
+.. _class_UPNPDevice_igd_our_addr:
 
 - :ref:`String<class_String>` **igd_our_addr**
 
@@ -108,7 +108,7 @@ IDG control URL.
 
 Address of the local machine in the network connecting it to this :ref:`UPNPDevice<class_UPNPDevice>`.
 
-  .. _class_UPNPDevice_igd_service_type:
+.. _class_UPNPDevice_igd_service_type:
 
 - :ref:`String<class_String>` **igd_service_type**
 
@@ -120,7 +120,7 @@ Address of the local machine in the network connecting it to this :ref:`UPNPDevi
 
 IGD service type.
 
-  .. _class_UPNPDevice_igd_status:
+.. _class_UPNPDevice_igd_status:
 
 - :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **igd_status**
 
@@ -132,7 +132,7 @@ IGD service type.
 
 IGD status. See :ref:`IGDStatus<enum_@GlobalScope_IGDStatus>`.
 
-  .. _class_UPNPDevice_service_type:
+.. _class_UPNPDevice_service_type:
 
 - :ref:`String<class_String>` **service_type**
 
@@ -147,25 +147,25 @@ Service type.
 Method Descriptions
 -------------------
 
-  .. _class_UPNPDevice_add_port_mapping:
+.. _class_UPNPDevice_add_port_mapping:
 
 - :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
 
 Adds a port mapping to forward the given external port on this :ref:`UPNPDevice<class_UPNPDevice>` for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_add_port_mapping>`.
 
-  .. _class_UPNPDevice_delete_port_mapping:
+.. _class_UPNPDevice_delete_port_mapping:
 
 - :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_delete_port_mapping>`.
 
-  .. _class_UPNPDevice_is_valid_gateway:
+.. _class_UPNPDevice_is_valid_gateway:
 
 - :ref:`bool<class_bool>` **is_valid_gateway** **(** **)** const
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
 
-  .. _class_UPNPDevice_query_external_address:
+.. _class_UPNPDevice_query_external_address:
 
 - :ref:`String<class_String>` **query_external_address** **(** **)** const
 

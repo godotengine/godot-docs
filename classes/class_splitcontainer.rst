@@ -32,7 +32,7 @@ Properties
 Signals
 -------
 
-  .. _class_SplitContainer_dragged:
+.. _class_SplitContainer_dragged:
 
 - **dragged** **(** :ref:`int<class_int>` offset **)**
 
@@ -41,7 +41,7 @@ Emitted when the dragger is dragged by user.
 Enumerations
 ------------
 
-  .. _enum_SplitContainer_DraggerVisibility:
+.. _enum_SplitContainer_DraggerVisibility:
 
 enum **DraggerVisibility**:
 
@@ -57,7 +57,7 @@ Container for splitting two controls vertically or horizontally, with a grabber 
 Property Descriptions
 ---------------------
 
-  .. _class_SplitContainer_collapsed:
+.. _class_SplitContainer_collapsed:
 
 - :ref:`bool<class_bool>` **collapsed**
 
@@ -67,7 +67,7 @@ Property Descriptions
 | *Getter* | is_collapsed()       |
 +----------+----------------------+
 
-  .. _class_SplitContainer_dragger_visibility:
+.. _class_SplitContainer_dragger_visibility:
 
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
@@ -79,7 +79,7 @@ Property Descriptions
 
 Determines whether the dragger is visible.
 
-  .. _class_SplitContainer_split_offset:
+.. _class_SplitContainer_split_offset:
 
 - :ref:`int<class_int>` **split_offset**
 

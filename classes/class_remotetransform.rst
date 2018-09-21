@@ -41,7 +41,7 @@ It can be set to update another Node's position, rotation and/or scale. It can u
 Property Descriptions
 ---------------------
 
-  .. _class_RemoteTransform_remote_path:
+.. _class_RemoteTransform_remote_path:
 
 - :ref:`NodePath<class_NodePath>` **remote_path**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTransform's position in the scene.
 
-  .. _class_RemoteTransform_update_position:
+.. _class_RemoteTransform_update_position:
 
 - :ref:`bool<class_bool>` **update_position**
 
@@ -65,7 +65,7 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 
 If ``true`` the remote node's position is updated. Default value: ``true``.
 
-  .. _class_RemoteTransform_update_rotation:
+.. _class_RemoteTransform_update_rotation:
 
 - :ref:`bool<class_bool>` **update_rotation**
 
@@ -77,7 +77,7 @@ If ``true`` the remote node's position is updated. Default value: ``true``.
 
 If ``true`` the remote node's rotation is updated. Default value: ``true``.
 
-  .. _class_RemoteTransform_update_scale:
+.. _class_RemoteTransform_update_scale:
 
 - :ref:`bool<class_bool>` **update_scale**
 
@@ -89,7 +89,7 @@ If ``true`` the remote node's rotation is updated. Default value: ``true``.
 
 If ``true`` the remote node's scale is updated. Default value: ``true``.
 
-  .. _class_RemoteTransform_use_global_coordinates:
+.. _class_RemoteTransform_use_global_coordinates:
 
 - :ref:`bool<class_bool>` **use_global_coordinates**
 

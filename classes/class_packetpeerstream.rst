@@ -35,7 +35,7 @@ PacketStreamPeer provides a wrapper for working using packets over a stream. Thi
 Property Descriptions
 ---------------------
 
-  .. _class_PacketPeerStream_input_buffer_max_size:
+.. _class_PacketPeerStream_input_buffer_max_size:
 
 - :ref:`int<class_int>` **input_buffer_max_size**
 
@@ -45,7 +45,7 @@ Property Descriptions
 | *Getter* | get_input_buffer_max_size()      |
 +----------+----------------------------------+
 
-  .. _class_PacketPeerStream_output_buffer_max_size:
+.. _class_PacketPeerStream_output_buffer_max_size:
 
 - :ref:`int<class_int>` **output_buffer_max_size**
 
@@ -55,7 +55,7 @@ Property Descriptions
 | *Getter* | get_output_buffer_max_size()      |
 +----------+-----------------------------------+
 
-  .. _class_PacketPeerStream_stream_peer:
+.. _class_PacketPeerStream_stream_peer:
 
 - :ref:`StreamPeer<class_StreamPeer>` **stream_peer**
 

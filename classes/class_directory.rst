@@ -84,10 +84,11 @@ Tutorials
 ---------
 
 - :doc:`../getting_started/step_by_step/filesystem`
+
 Method Descriptions
 -------------------
 
-  .. _class_Directory_change_dir:
+.. _class_Directory_change_dir:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **change_dir** **(** :ref:`String<class_String>` todir **)**
 
@@ -95,7 +96,7 @@ Change the currently opened directory to the one passed as an argument. The argu
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or ERR\_\*).
 
-  .. _class_Directory_copy:
+.. _class_Directory_copy:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **copy** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
@@ -103,49 +104,49 @@ Copy the *from* file to the *to* destination. Both arguments should be paths to 
 
 Returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
-  .. _class_Directory_current_is_dir:
+.. _class_Directory_current_is_dir:
 
 - :ref:`bool<class_bool>` **current_is_dir** **(** **)** const
 
 Return whether the current item processed with the last :ref:`get_next<class_Directory_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
-  .. _class_Directory_dir_exists:
+.. _class_Directory_dir_exists:
 
 - :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
 
 Return whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
-  .. _class_Directory_file_exists:
+.. _class_Directory_file_exists:
 
 - :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
 Return whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
-  .. _class_Directory_get_current_dir:
+.. _class_Directory_get_current_dir:
 
 - :ref:`String<class_String>` **get_current_dir** **(** **)**
 
 Return the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
-  .. _class_Directory_get_current_drive:
+.. _class_Directory_get_current_drive:
 
 - :ref:`int<class_int>` **get_current_drive** **(** **)**
 
 Returns the currently opened directory's drive index. See :ref:`get_drive<class_Directory_get_drive>` to convert returned index to the name of the drive.
 
-  .. _class_Directory_get_drive:
+.. _class_Directory_get_drive:
 
 - :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
 On Windows, return the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
 
-  .. _class_Directory_get_drive_count:
+.. _class_Directory_get_drive_count:
 
 - :ref:`int<class_int>` **get_drive_count** **(** **)**
 
 On Windows, return the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
 
-  .. _class_Directory_get_next:
+.. _class_Directory_get_next:
 
 - :ref:`String<class_String>` **get_next** **(** **)**
 
@@ -153,13 +154,13 @@ Return the next element (file or directory) in the current directory (including 
 
 The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_list_dir_end>` would not be mandatory in such a case).
 
-  .. _class_Directory_get_space_left:
+.. _class_Directory_get_space_left:
 
 - :ref:`int<class_int>` **get_space_left** **(** **)**
 
 On Unix desktop systems, return the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
 
-  .. _class_Directory_list_dir_begin:
+.. _class_Directory_list_dir_begin:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
 
@@ -169,13 +170,13 @@ If you pass ``skip_navigational``, then ``.`` and ``..`` would be filtered out.
 
 If you pass ``skip_hidden``, then hidden files would be filtered out.
 
-  .. _class_Directory_list_dir_end:
+.. _class_Directory_list_dir_end:
 
 - void **list_dir_end** **(** **)**
 
 Close the current stream opened with :ref:`list_dir_begin<class_Directory_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_get_next>` or not does not matter).
 
-  .. _class_Directory_make_dir:
+.. _class_Directory_make_dir:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **make_dir** **(** :ref:`String<class_String>` path **)**
 
@@ -183,7 +184,7 @@ Create a directory. The argument can be relative to the current directory, or an
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
-  .. _class_Directory_make_dir_recursive:
+.. _class_Directory_make_dir_recursive:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive** **(** :ref:`String<class_String>` path **)**
 
@@ -191,7 +192,7 @@ Create a target directory and all necessary intermediate directories in its path
 
 Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK, FAILED or ERR\_\*).
 
-  .. _class_Directory_open:
+.. _class_Directory_open:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
 
@@ -199,7 +200,7 @@ Open an existing directory of the filesystem. The *path* argument can be within 
 
 The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or ERR\_\*).
 
-  .. _class_Directory_remove:
+.. _class_Directory_remove:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
 
@@ -207,7 +208,7 @@ Delete the target file or an empty directory. The argument can be relative to th
 
 Return one of the error code constants defined in :ref:`@GlobalScope<class_@GlobalScope>` (OK or FAILED).
 
-  .. _class_Directory_rename:
+.. _class_Directory_rename:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **rename** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 

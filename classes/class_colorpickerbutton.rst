@@ -66,13 +66,13 @@ Theme Properties
 Signals
 -------
 
-  .. _class_ColorPickerButton_color_changed:
+.. _class_ColorPickerButton_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color changes.
 
-  .. _class_ColorPickerButton_popup_closed:
+.. _class_ColorPickerButton_popup_closed:
 
 - **popup_closed** **(** **)**
 
@@ -84,7 +84,7 @@ Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pre
 Property Descriptions
 ---------------------
 
-  .. _class_ColorPickerButton_color:
+.. _class_ColorPickerButton_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -96,7 +96,7 @@ Property Descriptions
 
 The currently selected color.
 
-  .. _class_ColorPickerButton_edit_alpha:
+.. _class_ColorPickerButton_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
 
@@ -111,13 +111,13 @@ If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_ColorPick
 Method Descriptions
 -------------------
 
-  .. _class_ColorPickerButton_get_picker:
+.. _class_ColorPickerButton_get_picker:
 
 - :ref:`ColorPicker<class_ColorPicker>` **get_picker** **(** **)**
 
 Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
-  .. _class_ColorPickerButton_get_popup:
+.. _class_ColorPickerButton_get_popup:
 
 - :ref:`PopupPanel<class_PopupPanel>` **get_popup** **(** **)**
 

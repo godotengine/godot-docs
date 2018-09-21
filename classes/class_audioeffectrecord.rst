@@ -37,7 +37,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectRecord_format:
+.. _class_AudioEffectRecord_format:
 
 - :ref:`Format<enum_AudioStreamSample_Format>` **format**
 
@@ -50,15 +50,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_AudioEffectRecord_get_recording:
+.. _class_AudioEffectRecord_get_recording:
 
 - :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** const
 
-  .. _class_AudioEffectRecord_is_recording_active:
+.. _class_AudioEffectRecord_is_recording_active:
 
 - :ref:`bool<class_bool>` **is_recording_active** **(** **)** const
 
-  .. _class_AudioEffectRecord_set_recording_active:
+.. _class_AudioEffectRecord_set_recording_active:
 
 - void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
 

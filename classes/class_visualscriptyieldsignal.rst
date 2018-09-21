@@ -32,7 +32,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualScriptYieldSignal_CallMode:
+.. _enum_VisualScriptYieldSignal_CallMode:
 
 enum **CallMode**:
 
@@ -43,7 +43,7 @@ enum **CallMode**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptYieldSignal_base_type:
+.. _class_VisualScriptYieldSignal_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter* | get_base_type()      |
 +----------+----------------------+
 
-  .. _class_VisualScriptYieldSignal_call_mode:
+.. _class_VisualScriptYieldSignal_call_mode:
 
 - :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
 
@@ -63,7 +63,7 @@ Property Descriptions
 | *Getter* | get_call_mode()      |
 +----------+----------------------+
 
-  .. _class_VisualScriptYieldSignal_node_path:
+.. _class_VisualScriptYieldSignal_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 
@@ -73,7 +73,7 @@ Property Descriptions
 | *Getter* | get_base_path()      |
 +----------+----------------------+
 
-  .. _class_VisualScriptYieldSignal_signal:
+.. _class_VisualScriptYieldSignal_signal:
 
 - :ref:`String<class_String>` **signal**
 

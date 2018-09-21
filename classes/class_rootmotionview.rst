@@ -34,7 +34,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_RootMotionView_animation_path:
+.. _class_RootMotionView_animation_path:
 
 - :ref:`NodePath<class_NodePath>` **animation_path**
 
@@ -44,7 +44,7 @@ Property Descriptions
 | *Getter* | get_animation_path()      |
 +----------+---------------------------+
 
-  .. _class_RootMotionView_cell_size:
+.. _class_RootMotionView_cell_size:
 
 - :ref:`float<class_float>` **cell_size**
 
@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | get_cell_size()      |
 +----------+----------------------+
 
-  .. _class_RootMotionView_color:
+.. _class_RootMotionView_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | get_color()      |
 +----------+------------------+
 
-  .. _class_RootMotionView_radius:
+.. _class_RootMotionView_radius:
 
 - :ref:`float<class_float>` **radius**
 
@@ -74,7 +74,7 @@ Property Descriptions
 | *Getter* | get_radius()      |
 +----------+-------------------+
 
-  .. _class_RootMotionView_zero_y:
+.. _class_RootMotionView_zero_y:
 
 - :ref:`bool<class_bool>` **zero_y**
 

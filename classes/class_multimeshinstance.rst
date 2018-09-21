@@ -33,7 +33,7 @@ This is useful to optimize the rendering of a high amount of instances of a give
 Property Descriptions
 ---------------------
 
-  .. _class_MultiMeshInstance_multimesh:
+.. _class_MultiMeshInstance_multimesh:
 
 - :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 

@@ -69,7 +69,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_Particles2D_DrawOrder:
+.. _enum_Particles2D_DrawOrder:
 
 enum **DrawOrder**:
 
@@ -86,7 +86,7 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 Property Descriptions
 ---------------------
 
-  .. _class_Particles2D_amount:
+.. _class_Particles2D_amount:
 
 - :ref:`int<class_int>` **amount**
 
@@ -98,7 +98,7 @@ Property Descriptions
 
 Number of particles emitted in one emission cycle.
 
-  .. _class_Particles2D_draw_order:
+.. _class_Particles2D_draw_order:
 
 - :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order**
 
@@ -110,7 +110,7 @@ Number of particles emitted in one emission cycle.
 
 Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
-  .. _class_Particles2D_emitting:
+.. _class_Particles2D_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
 
@@ -122,7 +122,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 If ``true`` particles are being emitted. Default value: ``true``.
 
-  .. _class_Particles2D_explosiveness:
+.. _class_Particles2D_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
 
@@ -134,7 +134,7 @@ If ``true`` particles are being emitted. Default value: ``true``.
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins. Default value: ``0``.
 
-  .. _class_Particles2D_fixed_fps:
+.. _class_Particles2D_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
 
@@ -144,7 +144,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
-  .. _class_Particles2D_fract_delta:
+.. _class_Particles2D_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
 
@@ -154,7 +154,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-  .. _class_Particles2D_h_frames:
+.. _class_Particles2D_h_frames:
 
 - :ref:`int<class_int>` **h_frames**
 
@@ -166,7 +166,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 
 Number of horizontal frames in ``texture``.
 
-  .. _class_Particles2D_lifetime:
+.. _class_Particles2D_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
 
@@ -178,7 +178,7 @@ Number of horizontal frames in ``texture``.
 
 Amount of time each particle will exist. Default value: ``1``.
 
-  .. _class_Particles2D_local_coords:
+.. _class_Particles2D_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
 
@@ -190,7 +190,7 @@ Amount of time each particle will exist. Default value: ``1``.
 
 If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
 
-  .. _class_Particles2D_normal_map:
+.. _class_Particles2D_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
@@ -200,7 +200,7 @@ If ``true`` particles use the parent node's coordinate space. If ``false`` they 
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
 
-  .. _class_Particles2D_one_shot:
+.. _class_Particles2D_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
@@ -212,7 +212,7 @@ If ``true`` particles use the parent node's coordinate space. If ``false`` they 
 
 If ``true`` only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
 
-  .. _class_Particles2D_preprocess:
+.. _class_Particles2D_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
 
@@ -224,7 +224,7 @@ If ``true`` only one emission cycle occurs. If set ``true`` during a cycle, emis
 
 Particle system starts as if it had already run for this many seconds.
 
-  .. _class_Particles2D_process_material:
+.. _class_Particles2D_process_material:
 
 - :ref:`Material<class_Material>` **process_material**
 
@@ -236,7 +236,7 @@ Particle system starts as if it had already run for this many seconds.
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-  .. _class_Particles2D_randomness:
+.. _class_Particles2D_randomness:
 
 - :ref:`float<class_float>` **randomness**
 
@@ -248,7 +248,7 @@ Particle system starts as if it had already run for this many seconds.
 
 Emission lifetime randomness ratio. Default value: ``0``.
 
-  .. _class_Particles2D_speed_scale:
+.. _class_Particles2D_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
 
@@ -260,7 +260,7 @@ Emission lifetime randomness ratio. Default value: ``0``.
 
 Particle system's running speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
-  .. _class_Particles2D_texture:
+.. _class_Particles2D_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
@@ -272,7 +272,7 @@ Particle system's running speed scaling ratio. Default value: ``1``. A value of 
 
 Particle texture. If ``null`` particles will be squares.
 
-  .. _class_Particles2D_v_frames:
+.. _class_Particles2D_v_frames:
 
 - :ref:`int<class_int>` **v_frames**
 
@@ -284,7 +284,7 @@ Particle texture. If ``null`` particles will be squares.
 
 Number of vertical frames in ``texture``.
 
-  .. _class_Particles2D_visibility_rect:
+.. _class_Particles2D_visibility_rect:
 
 - :ref:`Rect2<class_Rect2>` **visibility_rect**
 
@@ -299,11 +299,11 @@ Editor visibility helper.
 Method Descriptions
 -------------------
 
-  .. _class_Particles2D_capture_rect:
+.. _class_Particles2D_capture_rect:
 
 - :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
 
-  .. _class_Particles2D_restart:
+.. _class_Particles2D_restart:
 
 - void **restart** **(** **)**
 

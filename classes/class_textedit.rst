@@ -218,27 +218,27 @@ Theme Properties
 Signals
 -------
 
-  .. _class_TextEdit_breakpoint_toggled:
+.. _class_TextEdit_breakpoint_toggled:
 
 - **breakpoint_toggled** **(** :ref:`int<class_int>` row **)**
 
 Emitted when a breakpoint is placed via the breakpoint gutter.
 
-  .. _class_TextEdit_cursor_changed:
+.. _class_TextEdit_cursor_changed:
 
 - **cursor_changed** **(** **)**
 
 Emitted when the cursor changes.
 
-  .. _class_TextEdit_request_completion:
+.. _class_TextEdit_request_completion:
 
 - **request_completion** **(** **)**
 
-  .. _class_TextEdit_symbol_lookup:
+.. _class_TextEdit_symbol_lookup:
 
 - **symbol_lookup** **(** :ref:`String<class_String>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
 
-  .. _class_TextEdit_text_changed:
+.. _class_TextEdit_text_changed:
 
 - **text_changed** **(** **)**
 
@@ -247,7 +247,7 @@ Emitted when the text changes.
 Enumerations
 ------------
 
-  .. _enum_TextEdit_MenuItems:
+.. _enum_TextEdit_MenuItems:
 
 enum **MenuItems**:
 
@@ -259,7 +259,7 @@ enum **MenuItems**:
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 - **MENU_MAX** = **6**
 
-  .. _enum_TextEdit_SearchFlags:
+.. _enum_TextEdit_SearchFlags:
 
 enum **SearchFlags**:
 
@@ -275,7 +275,7 @@ TextEdit is meant for editing large, multiline text. It also has facilities for 
 Property Descriptions
 ---------------------
 
-  .. _class_TextEdit_breakpoint_gutter:
+.. _class_TextEdit_breakpoint_gutter:
 
 - :ref:`bool<class_bool>` **breakpoint_gutter**
 
@@ -287,7 +287,7 @@ Property Descriptions
 
 If ``true`` the breakpoint gutter is visible.
 
-  .. _class_TextEdit_caret_blink:
+.. _class_TextEdit_caret_blink:
 
 - :ref:`bool<class_bool>` **caret_blink**
 
@@ -299,7 +299,7 @@ If ``true`` the breakpoint gutter is visible.
 
 If ``true`` the caret (visual cursor) blinks.
 
-  .. _class_TextEdit_caret_blink_speed:
+.. _class_TextEdit_caret_blink_speed:
 
 - :ref:`float<class_float>` **caret_blink_speed**
 
@@ -311,7 +311,7 @@ If ``true`` the caret (visual cursor) blinks.
 
 Duration (in seconds) of a caret's blinking cycle.
 
-  .. _class_TextEdit_caret_block_mode:
+.. _class_TextEdit_caret_block_mode:
 
 - :ref:`bool<class_bool>` **caret_block_mode**
 
@@ -325,7 +325,7 @@ If ``true`` the caret displays as a rectangle.
 
 If ``false`` the caret displays as a bar.
 
-  .. _class_TextEdit_caret_moving_by_right_click:
+.. _class_TextEdit_caret_moving_by_right_click:
 
 - :ref:`bool<class_bool>` **caret_moving_by_right_click**
 
@@ -339,7 +339,7 @@ If ``true`` a right click moves the cursor at the mouse position before displayi
 
 If ``false`` the context menu disregards mouse location.
 
-  .. _class_TextEdit_context_menu_enabled:
+.. _class_TextEdit_context_menu_enabled:
 
 - :ref:`bool<class_bool>` **context_menu_enabled**
 
@@ -351,7 +351,7 @@ If ``false`` the context menu disregards mouse location.
 
 If ``true`` a right click displays the context menu.
 
-  .. _class_TextEdit_hiding_enabled:
+.. _class_TextEdit_hiding_enabled:
 
 - :ref:`int<class_int>` **hiding_enabled**
 
@@ -361,7 +361,7 @@ If ``true`` a right click displays the context menu.
 | *Getter* | is_hiding_enabled()       |
 +----------+---------------------------+
 
-  .. _class_TextEdit_highlight_all_occurrences:
+.. _class_TextEdit_highlight_all_occurrences:
 
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
 
@@ -371,7 +371,7 @@ If ``true`` a right click displays the context menu.
 | *Getter* | is_highlight_all_occurrences_enabled() |
 +----------+----------------------------------------+
 
-  .. _class_TextEdit_highlight_current_line:
+.. _class_TextEdit_highlight_current_line:
 
 - :ref:`bool<class_bool>` **highlight_current_line**
 
@@ -383,7 +383,7 @@ If ``true`` a right click displays the context menu.
 
 If ``true`` the line containing the cursor is highlighted.
 
-  .. _class_TextEdit_override_selected_font_color:
+.. _class_TextEdit_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
@@ -393,7 +393,7 @@ If ``true`` the line containing the cursor is highlighted.
 | *Getter* | is_overriding_selected_font_color()     |
 +----------+-----------------------------------------+
 
-  .. _class_TextEdit_readonly:
+.. _class_TextEdit_readonly:
 
 - :ref:`bool<class_bool>` **readonly**
 
@@ -405,7 +405,7 @@ If ``true`` the line containing the cursor is highlighted.
 
 If ``true`` read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
 
-  .. _class_TextEdit_show_line_numbers:
+.. _class_TextEdit_show_line_numbers:
 
 - :ref:`bool<class_bool>` **show_line_numbers**
 
@@ -417,7 +417,7 @@ If ``true`` read-only mode is enabled. Existing text cannot be modified and new 
 
 If ``true`` line numbers are displayed to the left of the text.
 
-  .. _class_TextEdit_smooth_scrolling:
+.. _class_TextEdit_smooth_scrolling:
 
 - :ref:`bool<class_bool>` **smooth_scrolling**
 
@@ -427,7 +427,7 @@ If ``true`` line numbers are displayed to the left of the text.
 | *Getter* | is_smooth_scroll_enabled()      |
 +----------+---------------------------------+
 
-  .. _class_TextEdit_syntax_highlighting:
+.. _class_TextEdit_syntax_highlighting:
 
 - :ref:`bool<class_bool>` **syntax_highlighting**
 
@@ -437,7 +437,7 @@ If ``true`` line numbers are displayed to the left of the text.
 | *Getter* | is_syntax_coloring_enabled() |
 +----------+------------------------------+
 
-  .. _class_TextEdit_text:
+.. _class_TextEdit_text:
 
 - :ref:`String<class_String>` **text**
 
@@ -449,7 +449,7 @@ If ``true`` line numbers are displayed to the left of the text.
 
 String value of the :ref:`TextEdit<class_TextEdit>`.
 
-  .. _class_TextEdit_v_scroll_speed:
+.. _class_TextEdit_v_scroll_speed:
 
 - :ref:`float<class_float>` **v_scroll_speed**
 
@@ -461,7 +461,7 @@ String value of the :ref:`TextEdit<class_TextEdit>`.
 
 If ``true``, enables text wrapping when it goes beyond he edge of what is visible.
 
-  .. _class_TextEdit_wrap_enabled:
+.. _class_TextEdit_wrap_enabled:
 
 - :ref:`bool<class_bool>` **wrap_enabled**
 
@@ -474,225 +474,225 @@ If ``true``, enables text wrapping when it goes beyond he edge of what is visibl
 Method Descriptions
 -------------------
 
-  .. _class_TextEdit_add_color_region:
+.. _class_TextEdit_add_color_region:
 
 - void **add_color_region** **(** :ref:`String<class_String>` begin_key, :ref:`String<class_String>` end_key, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` line_only=false **)**
 
 Add color region (given the delimiters) and its colors.
 
-  .. _class_TextEdit_add_keyword_color:
+.. _class_TextEdit_add_keyword_color:
 
 - void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
 
 Add a keyword and its color.
 
-  .. _class_TextEdit_can_fold:
+.. _class_TextEdit_can_fold:
 
 - :ref:`bool<class_bool>` **can_fold** **(** :ref:`int<class_int>` line **)** const
 
-  .. _class_TextEdit_clear_colors:
+.. _class_TextEdit_clear_colors:
 
 - void **clear_colors** **(** **)**
 
 Clear all the syntax coloring information.
 
-  .. _class_TextEdit_clear_undo_history:
+.. _class_TextEdit_clear_undo_history:
 
 - void **clear_undo_history** **(** **)**
 
 Clear the undo history.
 
-  .. _class_TextEdit_copy:
+.. _class_TextEdit_copy:
 
 - void **copy** **(** **)**
 
 Copy the current selection.
 
-  .. _class_TextEdit_cursor_get_column:
+.. _class_TextEdit_cursor_get_column:
 
 - :ref:`int<class_int>` **cursor_get_column** **(** **)** const
 
 Return the column the editing cursor is at.
 
-  .. _class_TextEdit_cursor_get_line:
+.. _class_TextEdit_cursor_get_line:
 
 - :ref:`int<class_int>` **cursor_get_line** **(** **)** const
 
 Return the line the editing cursor is at.
 
-  .. _class_TextEdit_cursor_set_column:
+.. _class_TextEdit_cursor_set_column:
 
 - void **cursor_set_column** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=true **)**
 
-  .. _class_TextEdit_cursor_set_line:
+.. _class_TextEdit_cursor_set_line:
 
 - void **cursor_set_line** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=true, :ref:`bool<class_bool>` can_be_hidden=true, :ref:`int<class_int>` wrap_index=0 **)**
 
-  .. _class_TextEdit_cut:
+.. _class_TextEdit_cut:
 
 - void **cut** **(** **)**
 
 Cut the current selection.
 
-  .. _class_TextEdit_deselect:
+.. _class_TextEdit_deselect:
 
 - void **deselect** **(** **)**
 
 Clears the current selection.
 
-  .. _class_TextEdit_fold_all_lines:
+.. _class_TextEdit_fold_all_lines:
 
 - void **fold_all_lines** **(** **)**
 
-  .. _class_TextEdit_fold_line:
+.. _class_TextEdit_fold_line:
 
 - void **fold_line** **(** :ref:`int<class_int>` line **)**
 
-  .. _class_TextEdit_get_breakpoints:
+.. _class_TextEdit_get_breakpoints:
 
 - :ref:`Array<class_Array>` **get_breakpoints** **(** **)** const
 
 Return an array containing the line number of each breakpoint.
 
-  .. _class_TextEdit_get_keyword_color:
+.. _class_TextEdit_get_keyword_color:
 
 - :ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
 
-  .. _class_TextEdit_get_line:
+.. _class_TextEdit_get_line:
 
 - :ref:`String<class_String>` **get_line** **(** :ref:`int<class_int>` line **)** const
 
 Return the text of a specific line.
 
-  .. _class_TextEdit_get_line_count:
+.. _class_TextEdit_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
 Return the amount of total lines in the text.
 
-  .. _class_TextEdit_get_menu:
+.. _class_TextEdit_get_menu:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** const
 
-  .. _class_TextEdit_get_selection_from_column:
+.. _class_TextEdit_get_selection_from_column:
 
 - :ref:`int<class_int>` **get_selection_from_column** **(** **)** const
 
 Return the selection begin column.
 
-  .. _class_TextEdit_get_selection_from_line:
+.. _class_TextEdit_get_selection_from_line:
 
 - :ref:`int<class_int>` **get_selection_from_line** **(** **)** const
 
 Return the selection begin line.
 
-  .. _class_TextEdit_get_selection_text:
+.. _class_TextEdit_get_selection_text:
 
 - :ref:`String<class_String>` **get_selection_text** **(** **)** const
 
 Return the text inside the selection.
 
-  .. _class_TextEdit_get_selection_to_column:
+.. _class_TextEdit_get_selection_to_column:
 
 - :ref:`int<class_int>` **get_selection_to_column** **(** **)** const
 
 Return the selection end column.
 
-  .. _class_TextEdit_get_selection_to_line:
+.. _class_TextEdit_get_selection_to_line:
 
 - :ref:`int<class_int>` **get_selection_to_line** **(** **)** const
 
 Return the selection end line.
 
-  .. _class_TextEdit_get_word_under_cursor:
+.. _class_TextEdit_get_word_under_cursor:
 
 - :ref:`String<class_String>` **get_word_under_cursor** **(** **)** const
 
-  .. _class_TextEdit_has_keyword_color:
+.. _class_TextEdit_has_keyword_color:
 
 - :ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** const
 
-  .. _class_TextEdit_insert_text_at_cursor:
+.. _class_TextEdit_insert_text_at_cursor:
 
 - void **insert_text_at_cursor** **(** :ref:`String<class_String>` text **)**
 
 Insert a given text at the cursor position.
 
-  .. _class_TextEdit_is_folded:
+.. _class_TextEdit_is_folded:
 
 - :ref:`bool<class_bool>` **is_folded** **(** :ref:`int<class_int>` line **)** const
 
-  .. _class_TextEdit_is_line_hidden:
+.. _class_TextEdit_is_line_hidden:
 
 - :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** const
 
-  .. _class_TextEdit_is_selection_active:
+.. _class_TextEdit_is_selection_active:
 
 - :ref:`bool<class_bool>` **is_selection_active** **(** **)** const
 
 Return true if the selection is active.
 
-  .. _class_TextEdit_menu_option:
+.. _class_TextEdit_menu_option:
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-  .. _class_TextEdit_paste:
+.. _class_TextEdit_paste:
 
 - void **paste** **(** **)**
 
 Paste the current selection.
 
-  .. _class_TextEdit_redo:
+.. _class_TextEdit_redo:
 
 - void **redo** **(** **)**
 
 Perform redo operation.
 
-  .. _class_TextEdit_remove_breakpoints:
+.. _class_TextEdit_remove_breakpoints:
 
 - void **remove_breakpoints** **(** **)**
 
 Removes all the breakpoints (without firing "breakpoint_toggled" signal).
 
-  .. _class_TextEdit_search:
+.. _class_TextEdit_search:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **search** **(** :ref:`String<class_String>` key, :ref:`int<class_int>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column **)** const
 
 Perform a search inside the text. Search flags can be specified in the SEARCH\_\* enum.
 
-  .. _class_TextEdit_select:
+.. _class_TextEdit_select:
 
 - void **select** **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column **)**
 
 Perform selection, from line/column to line/column.
 
-  .. _class_TextEdit_select_all:
+.. _class_TextEdit_select_all:
 
 - void **select_all** **(** **)**
 
 Select all the text.
 
-  .. _class_TextEdit_set_line_as_hidden:
+.. _class_TextEdit_set_line_as_hidden:
 
 - void **set_line_as_hidden** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**
 
-  .. _class_TextEdit_toggle_fold_line:
+.. _class_TextEdit_toggle_fold_line:
 
 - void **toggle_fold_line** **(** :ref:`int<class_int>` line **)**
 
 Toggle the folding of the code block at the given line.
 
-  .. _class_TextEdit_undo:
+.. _class_TextEdit_undo:
 
 - void **undo** **(** **)**
 
 Perform undo operation.
 
-  .. _class_TextEdit_unfold_line:
+.. _class_TextEdit_unfold_line:
 
 - void **unfold_line** **(** :ref:`int<class_int>` line **)**
 
-  .. _class_TextEdit_unhide_all_lines:
+.. _class_TextEdit_unhide_all_lines:
 
 - void **unhide_all_lines** **(** **)**
 

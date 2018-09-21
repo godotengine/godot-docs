@@ -47,7 +47,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_NativeScript_class_name:
+.. _class_NativeScript_class_name:
 
 - :ref:`String<class_String>` **class_name**
 
@@ -57,7 +57,7 @@ Property Descriptions
 | *Getter* | get_class_name()      |
 +----------+-----------------------+
 
-  .. _class_NativeScript_library:
+.. _class_NativeScript_library:
 
 - :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
@@ -67,7 +67,7 @@ Property Descriptions
 | *Getter* | get_library()      |
 +----------+--------------------+
 
-  .. _class_NativeScript_script_class_icon_path:
+.. _class_NativeScript_script_class_icon_path:
 
 - :ref:`String<class_String>` **script_class_icon_path**
 
@@ -77,7 +77,7 @@ Property Descriptions
 | *Getter* | get_script_class_icon_path()      |
 +----------+-----------------------------------+
 
-  .. _class_NativeScript_script_class_name:
+.. _class_NativeScript_script_class_name:
 
 - :ref:`String<class_String>` **script_class_name**
 
@@ -90,31 +90,31 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_NativeScript_get_class_documentation:
+.. _class_NativeScript_get_class_documentation:
 
 - :ref:`String<class_String>` **get_class_documentation** **(** **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_class_documentation``.
 
-  .. _class_NativeScript_get_method_documentation:
+.. _class_NativeScript_get_method_documentation:
 
 - :ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_method_documentation``.
 
-  .. _class_NativeScript_get_property_documentation:
+.. _class_NativeScript_get_property_documentation:
 
 - :ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_property_documentation``.
 
-  .. _class_NativeScript_get_signal_documentation:
+.. _class_NativeScript_get_signal_documentation:
 
 - :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** const
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_signal_documentation``.
 
-  .. _class_NativeScript_new:
+.. _class_NativeScript_new:
 
 - :ref:`Object<class_Object>` **new** **(** **)** vararg
 

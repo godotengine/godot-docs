@@ -64,7 +64,7 @@ Theme Properties
 Signals
 -------
 
-  .. _class_ColorPicker_color_changed:
+.. _class_ColorPicker_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
@@ -78,7 +78,7 @@ Description
 Property Descriptions
 ---------------------
 
-  .. _class_ColorPicker_color:
+.. _class_ColorPicker_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -90,7 +90,7 @@ Property Descriptions
 
 The currently selected color.
 
-  .. _class_ColorPicker_deferred_mode:
+.. _class_ColorPicker_deferred_mode:
 
 - :ref:`bool<class_bool>` **deferred_mode**
 
@@ -102,7 +102,7 @@ The currently selected color.
 
 If ``true`` the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
-  .. _class_ColorPicker_edit_alpha:
+.. _class_ColorPicker_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
 
@@ -114,7 +114,7 @@ If ``true`` the color will apply only after the user releases the mouse button, 
 
 If ``true`` shows an alpha channel slider (transparency).
 
-  .. _class_ColorPicker_raw_mode:
+.. _class_ColorPicker_raw_mode:
 
 - :ref:`bool<class_bool>` **raw_mode**
 
@@ -129,7 +129,7 @@ If ``true`` allows the color R, G, B component values to go beyond 1.0, which ca
 Method Descriptions
 -------------------
 
-  .. _class_ColorPicker_add_preset:
+.. _class_ColorPicker_add_preset:
 
 - void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 

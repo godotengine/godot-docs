@@ -44,7 +44,7 @@ Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>`
 Property Descriptions
 ---------------------
 
-  .. _class_ShortCut_shortcut:
+.. _class_ShortCut_shortcut:
 
 - :ref:`InputEvent<class_InputEvent>` **shortcut**
 
@@ -61,19 +61,19 @@ Generally the :ref:`InputEvent<class_InputEvent>` is a keyboard key, though it c
 Method Descriptions
 -------------------
 
-  .. _class_ShortCut_get_as_text:
+.. _class_ShortCut_get_as_text:
 
 - :ref:`String<class_String>` **get_as_text** **(** **)** const
 
 Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
-  .. _class_ShortCut_is_shortcut:
+.. _class_ShortCut_is_shortcut:
 
 - :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** const
 
 Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
 
-  .. _class_ShortCut_is_valid:
+.. _class_ShortCut_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 

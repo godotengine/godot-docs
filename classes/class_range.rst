@@ -55,13 +55,13 @@ Methods
 Signals
 -------
 
-  .. _class_Range_changed:
+.. _class_Range_changed:
 
 - **changed** **(** **)**
 
 Emitted when :ref:`min_value<class_Range_min_value>`, :ref:`max_value<class_Range_max_value>`, :ref:`page<class_Range_page>`, or :ref:`step<class_Range_step>` change.
 
-  .. _class_Range_value_changed:
+.. _class_Range_value_changed:
 
 - **value_changed** **(** :ref:`float<class_float>` value **)**
 
@@ -75,7 +75,7 @@ Range is a base class for :ref:`Control<class_Control>` nodes that change a floa
 Property Descriptions
 ---------------------
 
-  .. _class_Range_allow_greater:
+.. _class_Range_allow_greater:
 
 - :ref:`bool<class_bool>` **allow_greater**
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 If ``true`` :ref:`value<class_Range_value>` may be greater than :ref:`max_value<class_Range_max_value>`. Default value: ``false``.
 
-  .. _class_Range_allow_lesser:
+.. _class_Range_allow_lesser:
 
 - :ref:`bool<class_bool>` **allow_lesser**
 
@@ -99,7 +99,7 @@ If ``true`` :ref:`value<class_Range_value>` may be greater than :ref:`max_value<
 
 If ``true`` :ref:`value<class_Range_value>` may be less than :ref:`min_value<class_Range_min_value>`. Default value: ``false``.
 
-  .. _class_Range_exp_edit:
+.. _class_Range_exp_edit:
 
 - :ref:`bool<class_bool>` **exp_edit**
 
@@ -111,7 +111,7 @@ If ``true`` :ref:`value<class_Range_value>` may be less than :ref:`min_value<cla
 
 If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
 
-  .. _class_Range_max_value:
+.. _class_Range_max_value:
 
 - :ref:`float<class_float>` **max_value**
 
@@ -123,7 +123,7 @@ If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented e
 
 Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: ``100``.
 
-  .. _class_Range_min_value:
+.. _class_Range_min_value:
 
 - :ref:`float<class_float>` **min_value**
 
@@ -135,7 +135,7 @@ Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Defa
 
 Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: ``0``.
 
-  .. _class_Range_page:
+.. _class_Range_page:
 
 - :ref:`float<class_float>` **page**
 
@@ -147,7 +147,7 @@ Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default
 
 Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
-  .. _class_Range_ratio:
+.. _class_Range_ratio:
 
 - :ref:`float<class_float>` **ratio**
 
@@ -159,7 +159,7 @@ Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length
 
 The value mapped between 0 and 1.
 
-  .. _class_Range_rounded:
+.. _class_Range_rounded:
 
 - :ref:`bool<class_bool>` **rounded**
 
@@ -171,7 +171,7 @@ The value mapped between 0 and 1.
 
 If ``true`` ``value`` will always be rounded to the nearest integer. Default value: ``false``.
 
-  .. _class_Range_step:
+.. _class_Range_step:
 
 - :ref:`float<class_float>` **step**
 
@@ -183,7 +183,7 @@ If ``true`` ``value`` will always be rounded to the nearest integer. Default val
 
 If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
 
-  .. _class_Range_value:
+.. _class_Range_value:
 
 - :ref:`float<class_float>` **value**
 
@@ -198,13 +198,13 @@ Range's current value.
 Method Descriptions
 -------------------
 
-  .. _class_Range_share:
+.. _class_Range_share:
 
 - void **share** **(** :ref:`Node<class_Node>` with **)**
 
 Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
-  .. _class_Range_unshare:
+.. _class_Range_unshare:
 
 - void **unshare** **(** **)**
 

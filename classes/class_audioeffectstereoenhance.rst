@@ -30,7 +30,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectStereoEnhance_pan_pullout:
+.. _class_AudioEffectStereoEnhance_pan_pullout:
 
 - :ref:`float<class_float>` **pan_pullout**
 
@@ -40,7 +40,7 @@ Property Descriptions
 | *Getter* | get_pan_pullout()      |
 +----------+------------------------+
 
-  .. _class_AudioEffectStereoEnhance_surround:
+.. _class_AudioEffectStereoEnhance_surround:
 
 - :ref:`float<class_float>` **surround**
 
@@ -50,7 +50,7 @@ Property Descriptions
 | *Getter* | get_surround()      |
 +----------+---------------------+
 
-  .. _class_AudioEffectStereoEnhance_time_pullout_ms:
+.. _class_AudioEffectStereoEnhance_time_pullout_ms:
 
 - :ref:`float<class_float>` **time_pullout_ms**
 

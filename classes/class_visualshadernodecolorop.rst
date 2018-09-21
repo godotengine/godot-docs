@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeColorOp_Operator:
+.. _enum_VisualShaderNodeColorOp_Operator:
 
 enum **Operator**:
 
@@ -43,7 +43,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeColorOp_operator:
+.. _class_VisualShaderNodeColorOp_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeColorOp_Operator>` **operator**
 

@@ -39,7 +39,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptSceneNode_node_path:
+.. _class_VisualScriptSceneNode_node_path:
 
 - :ref:`NodePath<class_NodePath>` **node_path**
 

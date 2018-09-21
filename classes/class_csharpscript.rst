@@ -26,7 +26,7 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_CSharpScript_new:
+.. _class_CSharpScript_new:
 
 - :ref:`Object<class_Object>` **new** **(** **)** vararg
 

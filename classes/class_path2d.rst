@@ -31,7 +31,7 @@ Can have :ref:`PathFollow2D<class_PathFollow2D>` child-nodes moving along the :r
 Property Descriptions
 ---------------------
 
-  .. _class_Path2D_curve:
+.. _class_Path2D_curve:
 
 - :ref:`Curve2D<class_Curve2D>` **curve**
 

@@ -31,7 +31,7 @@ This node must be the child of a :ref:`Skeleton<class_Skeleton>` node. You can t
 Property Descriptions
 ---------------------
 
-  .. _class_BoneAttachment_bone_name:
+.. _class_BoneAttachment_bone_name:
 
 - :ref:`String<class_String>` **bone_name**
 

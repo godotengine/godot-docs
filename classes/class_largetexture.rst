@@ -47,49 +47,49 @@ You can dynamically add pieces(:ref:`Texture<class_Texture>`) to this ``LargeTex
 Method Descriptions
 -------------------
 
-  .. _class_LargeTexture_add_piece:
+.. _class_LargeTexture_add_piece:
 
 - :ref:`int<class_int>` **add_piece** **(** :ref:`Vector2<class_Vector2>` ofs, :ref:`Texture<class_Texture>` texture **)**
 
 Add another :ref:`Texture<class_Texture>` to this ``LargeTexture``, starting on offset "ofs".
 
-  .. _class_LargeTexture_clear:
+.. _class_LargeTexture_clear:
 
 - void **clear** **(** **)**
 
 Clears the ``LargeTexture``.
 
-  .. _class_LargeTexture_get_piece_count:
+.. _class_LargeTexture_get_piece_count:
 
 - :ref:`int<class_int>` **get_piece_count** **(** **)** const
 
 Returns the number of pieces currently in this ``LargeTexture``.
 
-  .. _class_LargeTexture_get_piece_offset:
+.. _class_LargeTexture_get_piece_offset:
 
 - :ref:`Vector2<class_Vector2>` **get_piece_offset** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the offset of the piece with index "idx".
 
-  .. _class_LargeTexture_get_piece_texture:
+.. _class_LargeTexture_get_piece_texture:
 
 - :ref:`Texture<class_Texture>` **get_piece_texture** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the :ref:`Texture<class_Texture>` of the piece with index "idx".
 
-  .. _class_LargeTexture_set_piece_offset:
+.. _class_LargeTexture_set_piece_offset:
 
 - void **set_piece_offset** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` ofs **)**
 
 Sets the offset of the piece with index "idx" to "ofs".
 
-  .. _class_LargeTexture_set_piece_texture:
+.. _class_LargeTexture_set_piece_texture:
 
 - void **set_piece_texture** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
 Sets the :ref:`Texture<class_Texture>` of the piece with index "idx" to  "ofs".
 
-  .. _class_LargeTexture_set_size:
+.. _class_LargeTexture_set_size:
 
 - void **set_size** **(** :ref:`Vector2<class_Vector2>` size **)**
 

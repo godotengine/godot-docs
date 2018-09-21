@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeTransformVecMult_Operator:
+.. _enum_VisualShaderNodeTransformVecMult_Operator:
 
 enum **Operator**:
 
@@ -38,7 +38,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeTransformVecMult_operator:
+.. _class_VisualShaderNodeTransformVecMult_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **operator**
 

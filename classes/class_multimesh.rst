@@ -53,14 +53,14 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_MultiMesh_TransformFormat:
+.. _enum_MultiMesh_TransformFormat:
 
 enum **TransformFormat**:
 
 - **TRANSFORM_2D** = **0**
 - **TRANSFORM_3D** = **1**
 
-  .. _enum_MultiMesh_ColorFormat:
+.. _enum_MultiMesh_ColorFormat:
 
 enum **ColorFormat**:
 
@@ -68,7 +68,7 @@ enum **ColorFormat**:
 - **COLOR_8BIT** = **1**
 - **COLOR_FLOAT** = **2**
 
-  .. _enum_MultiMesh_CustomDataFormat:
+.. _enum_MultiMesh_CustomDataFormat:
 
 enum **CustomDataFormat**:
 
@@ -90,7 +90,7 @@ Since instances may have any behavior, the AABB used for visibility must be prov
 Property Descriptions
 ---------------------
 
-  .. _class_MultiMesh_color_format:
+.. _class_MultiMesh_color_format:
 
 - :ref:`ColorFormat<enum_MultiMesh_ColorFormat>` **color_format**
 
@@ -100,7 +100,7 @@ Property Descriptions
 | *Getter* | get_color_format()      |
 +----------+-------------------------+
 
-  .. _class_MultiMesh_custom_data_format:
+.. _class_MultiMesh_custom_data_format:
 
 - :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
 
@@ -110,7 +110,7 @@ Property Descriptions
 | *Getter* | get_custom_data_format()      |
 +----------+-------------------------------+
 
-  .. _class_MultiMesh_instance_count:
+.. _class_MultiMesh_instance_count:
 
 - :ref:`int<class_int>` **instance_count**
 
@@ -120,7 +120,7 @@ Property Descriptions
 | *Getter* | get_instance_count()      |
 +----------+---------------------------+
 
-  .. _class_MultiMesh_mesh:
+.. _class_MultiMesh_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 
@@ -130,7 +130,7 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-  .. _class_MultiMesh_transform_format:
+.. _class_MultiMesh_transform_format:
 
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
 
@@ -143,39 +143,39 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_MultiMesh_get_aabb:
+.. _class_MultiMesh_get_aabb:
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
 Return the visibility AABB.
 
-  .. _class_MultiMesh_get_instance_color:
+.. _class_MultiMesh_get_instance_color:
 
 - :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
 
 Get the color of a specific instance.
 
-  .. _class_MultiMesh_get_instance_custom_data:
+.. _class_MultiMesh_get_instance_custom_data:
 
 - :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
 
-  .. _class_MultiMesh_get_instance_transform:
+.. _class_MultiMesh_get_instance_transform:
 
 - :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
 
 Return the transform of a specific instance.
 
-  .. _class_MultiMesh_set_instance_color:
+.. _class_MultiMesh_set_instance_color:
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
 Set the color of a specific instance.
 
-  .. _class_MultiMesh_set_instance_custom_data:
+.. _class_MultiMesh_set_instance_custom_data:
 
 - void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-  .. _class_MultiMesh_set_instance_transform:
+.. _class_MultiMesh_set_instance_transform:
 
 - void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 

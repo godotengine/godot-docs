@@ -37,7 +37,7 @@ Note that the origin point of your VehicleBody will determine the center of grav
 Property Descriptions
 ---------------------
 
-  .. _class_VehicleBody_brake:
+.. _class_VehicleBody_brake:
 
 - :ref:`float<class_float>` **brake**
 
@@ -49,7 +49,7 @@ Property Descriptions
 
 Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody.mass<class_RigidBody_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
-  .. _class_VehicleBody_engine_force:
+.. _class_VehicleBody_engine_force:
 
 - :ref:`float<class_float>` **engine_force**
 
@@ -63,7 +63,7 @@ Accelerates the vehicle by applying an engine force. The vehicle is only speed u
 
 A negative value will result in the vehicle reversing.
 
-  .. _class_VehicleBody_steering:
+.. _class_VehicleBody_steering:
 
 - :ref:`float<class_float>` **steering**
 

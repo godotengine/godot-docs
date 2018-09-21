@@ -34,10 +34,11 @@ Tutorials
 ---------
 
 - `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventAction_action:
+.. _class_InputEventAction_action:
 
 - :ref:`String<class_String>` **action**
 
@@ -49,7 +50,7 @@ Property Descriptions
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
-  .. _class_InputEventAction_pressed:
+.. _class_InputEventAction_pressed:
 
 - :ref:`bool<class_bool>` **pressed**
 

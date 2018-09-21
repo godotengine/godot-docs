@@ -39,7 +39,7 @@ Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Property Descriptions
 ---------------------
 
-  .. _class_CylinderMesh_bottom_radius:
+.. _class_CylinderMesh_bottom_radius:
 
 - :ref:`float<class_float>` **bottom_radius**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 Bottom radius of the cylinder. Defaults to 1.0.
 
-  .. _class_CylinderMesh_height:
+.. _class_CylinderMesh_height:
 
 - :ref:`float<class_float>` **height**
 
@@ -63,7 +63,7 @@ Bottom radius of the cylinder. Defaults to 1.0.
 
 Full height of the cylinder. Defaults to 2.0.
 
-  .. _class_CylinderMesh_radial_segments:
+.. _class_CylinderMesh_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
 
@@ -75,7 +75,7 @@ Full height of the cylinder. Defaults to 2.0.
 
 Number of radial segments on the cylinder. Defaults to 64.
 
-  .. _class_CylinderMesh_rings:
+.. _class_CylinderMesh_rings:
 
 - :ref:`int<class_int>` **rings**
 
@@ -87,7 +87,7 @@ Number of radial segments on the cylinder. Defaults to 64.
 
 Number of edge rings along the height of the cylinder. Defaults to 4.
 
-  .. _class_CylinderMesh_top_radius:
+.. _class_CylinderMesh_top_radius:
 
 - :ref:`float<class_float>` **top_radius**
 

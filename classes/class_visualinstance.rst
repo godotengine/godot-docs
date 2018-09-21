@@ -43,7 +43,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_VisualInstance_layers:
+.. _class_VisualInstance_layers:
 
 - :ref:`int<class_int>` **layers**
 
@@ -60,17 +60,17 @@ This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull m
 Method Descriptions
 -------------------
 
-  .. _class_VisualInstance_get_aabb:
+.. _class_VisualInstance_get_aabb:
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
 
 Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this VisualInstance.
 
-  .. _class_VisualInstance_get_layer_mask_bit:
+.. _class_VisualInstance_get_layer_mask_bit:
 
 - :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** const
 
-  .. _class_VisualInstance_get_transformed_aabb:
+.. _class_VisualInstance_get_transformed_aabb:
 
 - :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** const
 
@@ -78,7 +78,7 @@ Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box)
 
 Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`\ s :ref:`Transform<class_Transform>`
 
-  .. _class_VisualInstance_set_base:
+.. _class_VisualInstance_set_base:
 
 - void **set_base** **(** :ref:`RID<class_RID>` base **)**
 
@@ -86,7 +86,7 @@ Sets the base of the VisualInstance, which changes how the engine handles the Vi
 
 It is recommended to only use set_base if you know what you're doing.
 
-  .. _class_VisualInstance_set_layer_mask_bit:
+.. _class_VisualInstance_set_layer_mask_bit:
 
 - void **set_layer_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)**
 

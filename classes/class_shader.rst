@@ -41,7 +41,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_Shader_Mode:
+.. _enum_Shader_Mode:
 
 enum **Mode**:
 
@@ -58,10 +58,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/shading/index`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Shader_code:
+.. _class_Shader_code:
 
 - :ref:`String<class_String>` **code**
 
@@ -74,21 +75,21 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_Shader_get_default_texture_param:
+.. _class_Shader_get_default_texture_param:
 
 - :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** const
 
-  .. _class_Shader_get_mode:
+.. _class_Shader_get_mode:
 
 - :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** const
 
 Returns the shader mode for the shader, either ``MODE_CANVAS_ITEM``, ``MODE_SPATIAL`` or ``MODE_PARTICLES``
 
-  .. _class_Shader_has_param:
+.. _class_Shader_has_param:
 
 - :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** const
 
-  .. _class_Shader_set_default_texture_param:
+.. _class_Shader_set_default_texture_param:
 
 - void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
 

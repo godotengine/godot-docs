@@ -31,7 +31,7 @@ Reference frame for GUI. It's just like an empty control, except a red box is di
 Property Descriptions
 ---------------------
 
-  .. _class_ReferenceRect_border_color:
+.. _class_ReferenceRect_border_color:
 
 - :ref:`Color<class_Color>` **border_color**
 

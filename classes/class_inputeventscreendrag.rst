@@ -40,10 +40,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventScreenDrag_index:
+.. _class_InputEventScreenDrag_index:
 
 - :ref:`int<class_int>` **index**
 
@@ -55,7 +56,7 @@ Property Descriptions
 
 Drag event index in the case of a multi-drag event.
 
-  .. _class_InputEventScreenDrag_position:
+.. _class_InputEventScreenDrag_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
@@ -67,7 +68,7 @@ Drag event index in the case of a multi-drag event.
 
 Drag position.
 
-  .. _class_InputEventScreenDrag_relative:
+.. _class_InputEventScreenDrag_relative:
 
 - :ref:`Vector2<class_Vector2>` **relative**
 
@@ -79,7 +80,7 @@ Drag position.
 
 Drag position relative to its start position.
 
-  .. _class_InputEventScreenDrag_speed:
+.. _class_InputEventScreenDrag_speed:
 
 - :ref:`Vector2<class_Vector2>` **speed**
 

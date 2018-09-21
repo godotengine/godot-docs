@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_PlaneShape_plane:
+.. _class_PlaneShape_plane:
 
 - :ref:`Plane<class_Plane>` **plane**
 

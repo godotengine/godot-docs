@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventPanGesture_delta:
+.. _class_InputEventPanGesture_delta:
 
 - :ref:`Vector2<class_Vector2>` **delta**
 

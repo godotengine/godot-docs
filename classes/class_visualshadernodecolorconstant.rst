@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeColorConstant_constant:
+.. _class_VisualShaderNodeColorConstant_constant:
 
 - :ref:`Color<class_Color>` **constant**
 

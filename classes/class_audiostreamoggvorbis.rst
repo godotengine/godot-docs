@@ -35,7 +35,7 @@ OGG Vorbis audio stream driver.
 Property Descriptions
 ---------------------
 
-  .. _class_AudioStreamOGGVorbis_data:
+.. _class_AudioStreamOGGVorbis_data:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
@@ -47,7 +47,7 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
-  .. _class_AudioStreamOGGVorbis_loop:
+.. _class_AudioStreamOGGVorbis_loop:
 
 - :ref:`bool<class_bool>` **loop**
 
@@ -57,7 +57,7 @@ Contains the audio data in bytes.
 | *Getter* | has_loop()      |
 +----------+-----------------+
 
-  .. _class_AudioStreamOGGVorbis_loop_offset:
+.. _class_AudioStreamOGGVorbis_loop_offset:
 
 - :ref:`float<class_float>` **loop_offset**
 

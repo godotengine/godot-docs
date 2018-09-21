@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeTransformConstant_constant:
+.. _class_VisualShaderNodeTransformConstant_constant:
 
 - :ref:`Transform<class_Transform>` **constant**
 

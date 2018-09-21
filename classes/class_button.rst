@@ -63,7 +63,7 @@ Theme Properties
 Enumerations
 ------------
 
-  .. _enum_Button_TextAlign:
+.. _enum_Button_TextAlign:
 
 enum **TextAlign**:
 
@@ -79,7 +79,7 @@ Button is the standard themed button. It can contain text and an icon, and will 
 Property Descriptions
 ---------------------
 
-  .. _class_Button_align:
+.. _class_Button_align:
 
 - :ref:`TextAlign<enum_Button_TextAlign>` **align**
 
@@ -91,7 +91,7 @@ Property Descriptions
 
 Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 
-  .. _class_Button_clip_text:
+.. _class_Button_clip_text:
 
 - :ref:`bool<class_bool>` **clip_text**
 
@@ -103,7 +103,7 @@ Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 
 When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
 
-  .. _class_Button_flat:
+.. _class_Button_flat:
 
 - :ref:`bool<class_bool>` **flat**
 
@@ -115,7 +115,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 
 Flat buttons don't display decoration.
 
-  .. _class_Button_icon:
+.. _class_Button_icon:
 
 - :ref:`Texture<class_Texture>` **icon**
 
@@ -127,7 +127,7 @@ Flat buttons don't display decoration.
 
 Button's icon, if text is present the icon will be placed before the text.
 
-  .. _class_Button_text:
+.. _class_Button_text:
 
 - :ref:`String<class_String>` **text**
 

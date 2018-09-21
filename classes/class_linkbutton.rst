@@ -45,7 +45,7 @@ Theme Properties
 Enumerations
 ------------
 
-  .. _enum_LinkButton_UnderlineMode:
+.. _enum_LinkButton_UnderlineMode:
 
 enum **UnderlineMode**:
 
@@ -61,7 +61,7 @@ This kind of buttons are primarily used when the interaction with the button cau
 Property Descriptions
 ---------------------
 
-  .. _class_LinkButton_text:
+.. _class_LinkButton_text:
 
 - :ref:`String<class_String>` **text**
 
@@ -71,7 +71,7 @@ Property Descriptions
 | *Getter* | get_text()      |
 +----------+-----------------+
 
-  .. _class_LinkButton_underline:
+.. _class_LinkButton_underline:
 
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
 

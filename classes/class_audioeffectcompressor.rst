@@ -55,7 +55,7 @@ Compressor has many uses in the mix:
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectCompressor_attack_us:
+.. _class_AudioEffectCompressor_attack_us:
 
 - :ref:`float<class_float>` **attack_us**
 
@@ -67,7 +67,7 @@ Property Descriptions
 
 Compressor's reaction time when the signal exceeds the threshold. Value can range from 20 to 2000. Default value: ``20ms``.
 
-  .. _class_AudioEffectCompressor_gain:
+.. _class_AudioEffectCompressor_gain:
 
 - :ref:`float<class_float>` **gain**
 
@@ -79,7 +79,7 @@ Compressor's reaction time when the signal exceeds the threshold. Value can rang
 
 Gain applied to the output signal.
 
-  .. _class_AudioEffectCompressor_mix:
+.. _class_AudioEffectCompressor_mix:
 
 - :ref:`float<class_float>` **mix**
 
@@ -91,7 +91,7 @@ Gain applied to the output signal.
 
 Balance between original signal and effect signal. Value can range from 0 (totally dry) to 1 (totally wet). Default value: ``1``.
 
-  .. _class_AudioEffectCompressor_ratio:
+.. _class_AudioEffectCompressor_ratio:
 
 - :ref:`float<class_float>` **ratio**
 
@@ -103,7 +103,7 @@ Balance between original signal and effect signal. Value can range from 0 (total
 
 Amount of compression applied to the audio once it passes the threshold level. The higher the ratio the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: ``4``.
 
-  .. _class_AudioEffectCompressor_release_ms:
+.. _class_AudioEffectCompressor_release_ms:
 
 - :ref:`float<class_float>` **release_ms**
 
@@ -115,7 +115,7 @@ Amount of compression applied to the audio once it passes the threshold level. T
 
 Compressor's delay time to stop reducing the signal after the signal level falls below the threshold. Value can range from 20 to 2000. Default value: ``250ms``.
 
-  .. _class_AudioEffectCompressor_sidechain:
+.. _class_AudioEffectCompressor_sidechain:
 
 - :ref:`String<class_String>` **sidechain**
 
@@ -127,7 +127,7 @@ Compressor's delay time to stop reducing the signal after the signal level falls
 
 Reduce the sound level using another audio bus for threshold detection.
 
-  .. _class_AudioEffectCompressor_threshold:
+.. _class_AudioEffectCompressor_threshold:
 
 - :ref:`float<class_float>` **threshold**
 

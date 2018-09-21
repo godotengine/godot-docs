@@ -39,7 +39,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptPreload_resource:
+.. _class_VisualScriptPreload_resource:
 
 - :ref:`Resource<class_Resource>` **resource**
 

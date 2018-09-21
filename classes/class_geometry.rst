@@ -70,137 +70,137 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_Geometry_build_box_planes:
+.. _class_Geometry_build_box_planes:
 
 - :ref:`Array<class_Array>` **build_box_planes** **(** :ref:`Vector3<class_Vector3>` extents **)**
 
 Returns an array with 6 :ref:`Plane<class_Plane>`\ s that describe the sides of a box centered at the origin. The box size is defined by ``extents``, which represents one (positive) corner of the box (i.e. half its actual size).
 
-  .. _class_Geometry_build_capsule_planes:
+.. _class_Geometry_build_capsule_planes:
 
 - :ref:`Array<class_Array>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`Axis<enum_Vector3_Axis>` axis=2 **)**
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted capsule centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the side part of the capsule, whereas ``lats`` gives the number of latitudinal steps at the bottom and top of the capsule. The parameter ``axis`` describes the axis along which the capsule is oriented (0 for X, 1 for Y, 2 for Z).
 
-  .. _class_Geometry_build_cylinder_planes:
+.. _class_Geometry_build_cylinder_planes:
 
 - :ref:`Array<class_Array>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`Axis<enum_Vector3_Axis>` axis=2 **)**
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted cylinder centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the round part of the cylinder. The parameter ``axis`` describes the axis along which the cylinder is oriented (0 for X, 1 for Y, 2 for Z).
 
-  .. _class_Geometry_clip_polygon:
+.. _class_Geometry_clip_polygon:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **clip_polygon** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**
 
 Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
 
-  .. _class_Geometry_convex_hull_2d:
+.. _class_Geometry_convex_hull_2d:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counter-clockwise order. The last point is the same as the first one.
 
-  .. _class_Geometry_get_closest_point_to_segment:
+.. _class_Geometry_get_closest_point_to_segment:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
 Returns the 3d point on the 3d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
-  .. _class_Geometry_get_closest_point_to_segment_2d:
+.. _class_Geometry_get_closest_point_to_segment_2d:
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_2d** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
 
 Returns the 2d point on the 2d segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
-  .. _class_Geometry_get_closest_point_to_segment_uncapped:
+.. _class_Geometry_get_closest_point_to_segment_uncapped:
 
 - :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment_uncapped** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**
 
 Returns the 3d point on the 3d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
-  .. _class_Geometry_get_closest_point_to_segment_uncapped_2d:
+.. _class_Geometry_get_closest_point_to_segment_uncapped_2d:
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_uncapped_2d** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
 
 Returns the 2d point on the 2d line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
-  .. _class_Geometry_get_closest_points_between_segments:
+.. _class_Geometry_get_closest_points_between_segments:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_closest_points_between_segments** **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**
 
 Given the two 3d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector3Array<class_PoolVector3Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
-  .. _class_Geometry_get_closest_points_between_segments_2d:
+.. _class_Geometry_get_closest_points_between_segments_2d:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_closest_points_between_segments_2d** **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**
 
 Given the two 2d segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
 
-  .. _class_Geometry_get_uv84_normal_bit:
+.. _class_Geometry_get_uv84_normal_bit:
 
 - :ref:`int<class_int>` **get_uv84_normal_bit** **(** :ref:`Vector3<class_Vector3>` normal **)**
 
-  .. _class_Geometry_line_intersects_line_2d:
+.. _class_Geometry_line_intersects_line_2d:
 
 - :ref:`Variant<class_Variant>` **line_intersects_line_2d** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**
 
 Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`. Note that the lines are specified using direction vectors, not end points.
 
-  .. _class_Geometry_make_atlas:
+.. _class_Geometry_make_atlas:
 
 - :ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a vector of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
 
-  .. _class_Geometry_point_is_inside_triangle:
+.. _class_Geometry_point_is_inside_triangle:
 
 - :ref:`bool<class_bool>` **point_is_inside_triangle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** const
 
 Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
-  .. _class_Geometry_ray_intersects_triangle:
+.. _class_Geometry_ray_intersects_triangle:
 
 - :ref:`Variant<class_Variant>` **ray_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
 Tests if the 3d ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
 
-  .. _class_Geometry_segment_intersects_circle:
+.. _class_Geometry_segment_intersects_circle:
 
 - :ref:`float<class_float>` **segment_intersects_circle** **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
 
 Given the 2d segment (``segment_from``, ``segment_to``), returns the position on the segment (as a number between 0 and 1) at which the segment hits the circle that is located at position ``circle_position`` and has radius ``circle_radius``. If the segment does not intersect the circle, -1 is returned (this is also the case if the line extending the segment would intersect the circle, but the segment does not).
 
-  .. _class_Geometry_segment_intersects_convex:
+.. _class_Geometry_segment_intersects_convex:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **segment_intersects_convex** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` planes **)**
 
 Given a convex hull defined though the :ref:`Plane<class_Plane>`\ s in the array ``planes``, tests if the segment (``from``, ``to``) intersects with that hull. If an intersection is found, returns a :ref:`PoolVector3Array<class_PoolVector3Array>` containing the point the intersection and the hull's normal. If no intersecion is found, an the returned array is empty.
 
-  .. _class_Geometry_segment_intersects_cylinder:
+.. _class_Geometry_segment_intersects_cylinder:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **segment_intersects_cylinder** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**
 
 Checks if the segment (``from``, ``to``) intersects the cylinder with height ``height`` that is centered at the origin and has radius ``radius``. If no, returns an empty :ref:`PoolVector3Array<class_PoolVector3Array>`. If an intersection takes place, the returned array contains the point of intersection and the cylinder's normal at the point of intersection.
 
-  .. _class_Geometry_segment_intersects_segment_2d:
+.. _class_Geometry_segment_intersects_segment_2d:
 
 - :ref:`Variant<class_Variant>` **segment_intersects_segment_2d** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**
 
 Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
 
-  .. _class_Geometry_segment_intersects_sphere:
+.. _class_Geometry_segment_intersects_sphere:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **segment_intersects_sphere** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` sphere_position, :ref:`float<class_float>` sphere_radius **)**
 
 Checks if the segment (``from``, ``to``) intersects the sphere that is located at ``sphere_position`` and has radius ``sphere_radius``. If no, returns an empty :ref:`PoolVector3Array<class_PoolVector3Array>`. If yes, returns a :ref:`PoolVector3Array<class_PoolVector3Array>` containing the point of intersection and the sphere's normal at the point of intersection.
 
-  .. _class_Geometry_segment_intersects_triangle:
+.. _class_Geometry_segment_intersects_triangle:
 
 - :ref:`Variant<class_Variant>` **segment_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
 Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
 
-  .. _class_Geometry_triangulate_polygon:
+.. _class_Geometry_triangulate_polygon:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **triangulate_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 

@@ -39,7 +39,7 @@ Soft clipping starts to reduce the peaks a little below the threshold level and 
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectLimiter_ceiling_db:
+.. _class_AudioEffectLimiter_ceiling_db:
 
 - :ref:`float<class_float>` **ceiling_db**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
 
-  .. _class_AudioEffectLimiter_soft_clip_db:
+.. _class_AudioEffectLimiter_soft_clip_db:
 
 - :ref:`float<class_float>` **soft_clip_db**
 
@@ -63,7 +63,7 @@ The waveform's maximum allowed value. Value can range from -20 to -0.1. Default 
 
 Applies a gain to the limited waves. Value can range from 0 to 6. Default value: ``2dB``.
 
-  .. _class_AudioEffectLimiter_soft_clip_ratio:
+.. _class_AudioEffectLimiter_soft_clip_ratio:
 
 - :ref:`float<class_float>` **soft_clip_ratio**
 
@@ -73,7 +73,7 @@ Applies a gain to the limited waves. Value can range from 0 to 6. Default value:
 | *Getter* | get_soft_clip_ratio()      |
 +----------+----------------------------+
 
-  .. _class_AudioEffectLimiter_threshold_db:
+.. _class_AudioEffectLimiter_threshold_db:
 
 - :ref:`float<class_float>` **threshold_db**
 

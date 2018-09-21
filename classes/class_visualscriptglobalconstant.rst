@@ -26,7 +26,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptGlobalConstant_constant:
+.. _class_VisualScriptGlobalConstant_constant:
 
 - :ref:`int<class_int>` **constant**
 

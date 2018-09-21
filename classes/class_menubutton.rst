@@ -55,7 +55,7 @@ Theme Properties
 Signals
 -------
 
-  .. _class_MenuButton_about_to_show:
+.. _class_MenuButton_about_to_show:
 
 - **about_to_show** **(** **)**
 
@@ -69,13 +69,13 @@ Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. 
 Method Descriptions
 -------------------
 
-  .. _class_MenuButton_get_popup:
+.. _class_MenuButton_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
 
 Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-  .. _class_MenuButton_set_disable_shortcuts:
+.. _class_MenuButton_set_disable_shortcuts:
 
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 

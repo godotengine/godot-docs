@@ -53,7 +53,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_GIProbe_Subdiv:
+.. _enum_GIProbe_Subdiv:
 
 enum **Subdiv**:
 
@@ -67,10 +67,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/gi_probes`
+
 Property Descriptions
 ---------------------
 
-  .. _class_GIProbe_bias:
+.. _class_GIProbe_bias:
 
 - :ref:`float<class_float>` **bias**
 
@@ -80,7 +81,7 @@ Property Descriptions
 | *Getter* | get_bias()      |
 +----------+-----------------+
 
-  .. _class_GIProbe_compress:
+.. _class_GIProbe_compress:
 
 - :ref:`bool<class_bool>` **compress**
 
@@ -90,7 +91,7 @@ Property Descriptions
 | *Getter* | is_compressed()     |
 +----------+---------------------+
 
-  .. _class_GIProbe_data:
+.. _class_GIProbe_data:
 
 - :ref:`GIProbeData<class_GIProbeData>` **data**
 
@@ -100,7 +101,7 @@ Property Descriptions
 | *Getter* | get_probe_data()      |
 +----------+-----------------------+
 
-  .. _class_GIProbe_dynamic_range:
+.. _class_GIProbe_dynamic_range:
 
 - :ref:`int<class_int>` **dynamic_range**
 
@@ -110,7 +111,7 @@ Property Descriptions
 | *Getter* | get_dynamic_range()      |
 +----------+--------------------------+
 
-  .. _class_GIProbe_energy:
+.. _class_GIProbe_energy:
 
 - :ref:`float<class_float>` **energy**
 
@@ -120,7 +121,7 @@ Property Descriptions
 | *Getter* | get_energy()      |
 +----------+-------------------+
 
-  .. _class_GIProbe_extents:
+.. _class_GIProbe_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
@@ -130,7 +131,7 @@ Property Descriptions
 | *Getter* | get_extents()      |
 +----------+--------------------+
 
-  .. _class_GIProbe_interior:
+.. _class_GIProbe_interior:
 
 - :ref:`bool<class_bool>` **interior**
 
@@ -140,7 +141,7 @@ Property Descriptions
 | *Getter* | is_interior()       |
 +----------+---------------------+
 
-  .. _class_GIProbe_normal_bias:
+.. _class_GIProbe_normal_bias:
 
 - :ref:`float<class_float>` **normal_bias**
 
@@ -150,7 +151,7 @@ Property Descriptions
 | *Getter* | get_normal_bias()      |
 +----------+------------------------+
 
-  .. _class_GIProbe_propagation:
+.. _class_GIProbe_propagation:
 
 - :ref:`float<class_float>` **propagation**
 
@@ -160,7 +161,7 @@ Property Descriptions
 | *Getter* | get_propagation()      |
 +----------+------------------------+
 
-  .. _class_GIProbe_subdiv:
+.. _class_GIProbe_subdiv:
 
 - :ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv**
 
@@ -173,11 +174,11 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_GIProbe_bake:
+.. _class_GIProbe_bake:
 
 - void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
-  .. _class_GIProbe_debug_bake:
+.. _class_GIProbe_debug_bake:
 
 - void **debug_bake** **(** **)**
 

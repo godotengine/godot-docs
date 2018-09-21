@@ -33,7 +33,7 @@ Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_Phy
 Property Descriptions
 ---------------------
 
-  .. _class_RayShape_length:
+.. _class_RayShape_length:
 
 - :ref:`float<class_float>` **length**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The ray's length.
 
-  .. _class_RayShape_slips_on_slope:
+.. _class_RayShape_slips_on_slope:
 
 - :ref:`bool<class_bool>` **slips_on_slope**
 

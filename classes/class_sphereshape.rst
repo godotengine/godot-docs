@@ -31,7 +31,7 @@ Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_
 Property Descriptions
 ---------------------
 
-  .. _class_SphereShape_radius:
+.. _class_SphereShape_radius:
 
 - :ref:`float<class_float>` **radius**
 

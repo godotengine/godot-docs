@@ -31,7 +31,7 @@ Class representing a square mesh with size (2,2,0). Consider using a :ref:`Plane
 Property Descriptions
 ---------------------
 
-  .. _class_QuadMesh_size:
+.. _class_QuadMesh_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 

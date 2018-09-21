@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptTypeCast_base_script:
+.. _class_VisualScriptTypeCast_base_script:
 
 - :ref:`String<class_String>` **base_script**
 
@@ -38,7 +38,7 @@ Property Descriptions
 | *Getter* | get_base_script()      |
 +----------+------------------------+
 
-  .. _class_VisualScriptTypeCast_base_type:
+.. _class_VisualScriptTypeCast_base_type:
 
 - :ref:`String<class_String>` **base_type**
 

@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventGesture_position:
+.. _class_InputEventGesture_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 

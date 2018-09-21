@@ -33,7 +33,7 @@ Groove constraint for 2D physics. This is useful for making a body "slide" throu
 Property Descriptions
 ---------------------
 
-  .. _class_GrooveJoint2D_initial_offset:
+.. _class_GrooveJoint2D_initial_offset:
 
 - :ref:`float<class_float>` **initial_offset**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_initial_offset>` along the joint's y axis (along the groove). Default value: ``25``
 
-  .. _class_GrooveJoint2D_length:
+.. _class_GrooveJoint2D_length:
 
 - :ref:`float<class_float>` **length**
 

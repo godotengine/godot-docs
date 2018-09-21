@@ -46,30 +46,31 @@ Constants
 - **IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = **512**
 - **IMPORT_MATERIALS_IN_INSTANCES** = **1024**
 - **IMPORT_USE_COMPRESSION** = **2048**
+
 Method Descriptions
 -------------------
 
-  .. _class_EditorSceneImporter__get_extensions:
+.. _class_EditorSceneImporter__get_extensions:
 
 - :ref:`Array<class_Array>` **_get_extensions** **(** **)** virtual
 
-  .. _class_EditorSceneImporter__get_import_flags:
+.. _class_EditorSceneImporter__get_import_flags:
 
 - :ref:`int<class_int>` **_get_import_flags** **(** **)** virtual
 
-  .. _class_EditorSceneImporter__import_animation:
+.. _class_EditorSceneImporter__import_animation:
 
 - :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
 
-  .. _class_EditorSceneImporter__import_scene:
+.. _class_EditorSceneImporter__import_scene:
 
 - :ref:`Node<class_Node>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** virtual
 
-  .. _class_EditorSceneImporter_import_animation_from_other_importer:
+.. _class_EditorSceneImporter_import_animation_from_other_importer:
 
 - :ref:`Animation<class_Animation>` **import_animation_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
 
-  .. _class_EditorSceneImporter_import_scene_from_other_importer:
+.. _class_EditorSceneImporter_import_scene_from_other_importer:
 
 - :ref:`Node<class_Node>` **import_scene_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
 

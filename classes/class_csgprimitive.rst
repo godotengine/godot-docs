@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_CSGPrimitive_invert_faces:
+.. _class_CSGPrimitive_invert_faces:
 
 - :ref:`bool<class_bool>` **invert_faces**
 

@@ -34,10 +34,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventMouseMotion_relative:
+.. _class_InputEventMouseMotion_relative:
 
 - :ref:`Vector2<class_Vector2>` **relative**
 
@@ -49,7 +50,7 @@ Property Descriptions
 
 Mouse position relative to the previous position (position at the last frame).
 
-  .. _class_InputEventMouseMotion_speed:
+.. _class_InputEventMouseMotion_speed:
 
 - :ref:`Vector2<class_Vector2>` **speed**
 

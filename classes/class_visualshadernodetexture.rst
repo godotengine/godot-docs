@@ -30,7 +30,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeTexture_Source:
+.. _enum_VisualShaderNodeTexture_Source:
 
 enum **Source**:
 
@@ -39,7 +39,7 @@ enum **Source**:
 - **SOURCE_2D_TEXTURE** = **2**
 - **SOURCE_2D_NORMAL** = **3**
 
-  .. _enum_VisualShaderNodeTexture_TextureType:
+.. _enum_VisualShaderNodeTexture_TextureType:
 
 enum **TextureType**:
 
@@ -50,7 +50,7 @@ enum **TextureType**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeTexture_source:
+.. _class_VisualShaderNodeTexture_source:
 
 - :ref:`Source<enum_VisualShaderNodeTexture_Source>` **source**
 
@@ -60,7 +60,7 @@ Property Descriptions
 | *Getter* | get_source()      |
 +----------+-------------------+
 
-  .. _class_VisualShaderNodeTexture_texture:
+.. _class_VisualShaderNodeTexture_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
@@ -70,7 +70,7 @@ Property Descriptions
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-  .. _class_VisualShaderNodeTexture_texture_type:
+.. _class_VisualShaderNodeTexture_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **texture_type**
 

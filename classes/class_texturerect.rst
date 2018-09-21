@@ -30,7 +30,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_TextureRect_StretchMode:
+.. _enum_TextureRect_StretchMode:
 
 enum **StretchMode**:
 
@@ -51,7 +51,7 @@ Used to draw icons and sprites in a user interface. The texture's placement can 
 Property Descriptions
 ---------------------
 
-  .. _class_TextureRect_expand:
+.. _class_TextureRect_expand:
 
 - :ref:`bool<class_bool>` **expand**
 
@@ -63,7 +63,7 @@ Property Descriptions
 
 If ``true`` the texture scales to fit its bounding rectangle. Default value: ``false``.
 
-  .. _class_TextureRect_stretch_mode:
+.. _class_TextureRect_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
 
@@ -75,7 +75,7 @@ If ``true`` the texture scales to fit its bounding rectangle. Default value: ``f
 
 Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@GlobalScope_StretchMode>`.
 
-  .. _class_TextureRect_texture:
+.. _class_TextureRect_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 

@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeVectorFunc_Function:
+.. _enum_VisualShaderNodeVectorFunc_Function:
 
 enum **Function**:
 
@@ -40,7 +40,7 @@ enum **Function**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeVectorFunc_function:
+.. _class_VisualShaderNodeVectorFunc_function:
 
 - :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
 

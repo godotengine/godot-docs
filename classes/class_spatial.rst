@@ -113,7 +113,7 @@ Methods
 Signals
 -------
 
-  .. _class_Spatial_visibility_changed:
+.. _class_Spatial_visibility_changed:
 
 - **visibility_changed** **(** **)**
 
@@ -128,6 +128,7 @@ In order for NOTIFICATION_TRANSFORM_CHANGED to work user first needs to ask for 
 - **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
 - **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_World>` resource.
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
+
 Description
 -----------
 
@@ -139,10 +140,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/introduction_to_3d`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Spatial_gizmo:
+.. _class_Spatial_gizmo:
 
 - :ref:`SpatialGizmo<class_SpatialGizmo>` **gizmo**
 
@@ -154,7 +156,7 @@ Property Descriptions
 
 The SpatialGizmo for this node. Used for example in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` as custom visualization and editing handles in Editor.
 
-  .. _class_Spatial_global_transform:
+.. _class_Spatial_global_transform:
 
 - :ref:`Transform<class_Transform>` **global_transform**
 
@@ -166,7 +168,7 @@ The SpatialGizmo for this node. Used for example in :ref:`EditorSpatialGizmo<cla
 
 World space (global) :ref:`Transform<class_Transform>` of this node.
 
-  .. _class_Spatial_rotation:
+.. _class_Spatial_rotation:
 
 - :ref:`Vector3<class_Vector3>` **rotation**
 
@@ -180,7 +182,7 @@ Rotation part of the local transformation in radians, specified in terms of YXZ-
 
 Note that in the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
 
-  .. _class_Spatial_rotation_degrees:
+.. _class_Spatial_rotation_degrees:
 
 - :ref:`Vector3<class_Vector3>` **rotation_degrees**
 
@@ -192,7 +194,7 @@ Note that in the mathematical sense, rotation is a matrix and not a vector. The 
 
 Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X-angle, Y-angle, Z-angle).
 
-  .. _class_Spatial_scale:
+.. _class_Spatial_scale:
 
 - :ref:`Vector3<class_Vector3>` **scale**
 
@@ -204,7 +206,7 @@ Rotation part of the local transformation in degrees, specified in terms of YXZ-
 
 Scale part of the local transformation.
 
-  .. _class_Spatial_transform:
+.. _class_Spatial_transform:
 
 - :ref:`Transform<class_Transform>` **transform**
 
@@ -216,7 +218,7 @@ Scale part of the local transformation.
 
 Local space :ref:`Transform<class_Transform>` of this node, with respect to the parent node.
 
-  .. _class_Spatial_translation:
+.. _class_Spatial_translation:
 
 - :ref:`Vector3<class_Vector3>` **translation**
 
@@ -228,7 +230,7 @@ Local space :ref:`Transform<class_Transform>` of this node, with respect to the 
 
 Local translation of this node.
 
-  .. _class_Spatial_visible:
+.. _class_Spatial_visible:
 
 - :ref:`bool<class_bool>` **visible**
 
@@ -243,73 +245,73 @@ If ``true`` this node is drawn. Default value: ``true``.
 Method Descriptions
 -------------------
 
-  .. _class_Spatial_force_update_transform:
+.. _class_Spatial_force_update_transform:
 
 - void **force_update_transform** **(** **)**
 
-  .. _class_Spatial_get_parent_spatial:
+.. _class_Spatial_get_parent_spatial:
 
 - :ref:`Spatial<class_Spatial>` **get_parent_spatial** **(** **)** const
 
 Returns the parent ``Spatial``, or an empty :ref:`Object<class_Object>` if no parent exists or parent is not of type ``Spatial``.
 
-  .. _class_Spatial_get_world:
+.. _class_Spatial_get_world:
 
 - :ref:`World<class_World>` **get_world** **(** **)** const
 
 Returns the current :ref:`World<class_World>` resource this Spatial node is registered to.
 
-  .. _class_Spatial_global_rotate:
+.. _class_Spatial_global_rotate:
 
 - void **global_rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Rotates the global (world) transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in global coordinate system.
 
-  .. _class_Spatial_global_scale:
+.. _class_Spatial_global_scale:
 
 - void **global_scale** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-  .. _class_Spatial_global_translate:
+.. _class_Spatial_global_translate:
 
 - void **global_translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
 Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset. The offset is in global coordinate system.
 
-  .. _class_Spatial_hide:
+.. _class_Spatial_hide:
 
 - void **hide** **(** **)**
 
 Disables rendering of this node. Change Spatial Visible property to false.
 
-  .. _class_Spatial_is_local_transform_notification_enabled:
+.. _class_Spatial_is_local_transform_notification_enabled:
 
 - :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
 
 Returns whether node notifies about its local transformation changes. Spatial will not propagate this by default.
 
-  .. _class_Spatial_is_scale_disabled:
+.. _class_Spatial_is_scale_disabled:
 
 - :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** const
 
-  .. _class_Spatial_is_set_as_toplevel:
+.. _class_Spatial_is_set_as_toplevel:
 
 - :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
 
 Returns whether this node is set as Toplevel, that is whether it ignores its parent nodes transformations.
 
-  .. _class_Spatial_is_transform_notification_enabled:
+.. _class_Spatial_is_transform_notification_enabled:
 
 - :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
 
 Returns whether the node notifies about its global and local transformation changes. Spatial will not propagate this by default.
 
-  .. _class_Spatial_is_visible_in_tree:
+.. _class_Spatial_is_visible_in_tree:
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
 Returns whether the node is visible, taking into consideration that its parents visibility.
 
-  .. _class_Spatial_look_at:
+.. _class_Spatial_look_at:
 
 - void **look_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**
 
@@ -319,117 +321,117 @@ The transform will first be rotated around the given ``up`` vector, and then ful
 
 Operations take place in global space.
 
-  .. _class_Spatial_look_at_from_position:
+.. _class_Spatial_look_at_from_position:
 
 - void **look_at_from_position** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**
 
 Moves the node to the specified ``position``, and then rotates itself to point toward the ``target`` as per :ref:`look_at<class_Spatial_look_at>`. Operations take place in global space.
 
-  .. _class_Spatial_orthonormalize:
+.. _class_Spatial_orthonormalize:
 
 - void **orthonormalize** **(** **)**
 
 Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's Transform3D.
 
-  .. _class_Spatial_rotate:
+.. _class_Spatial_rotate:
 
 - void **rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians.
 
-  .. _class_Spatial_rotate_object_local:
+.. _class_Spatial_rotate_object_local:
 
 - void **rotate_object_local** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in object-local coordinate system.
 
-  .. _class_Spatial_rotate_x:
+.. _class_Spatial_rotate_x:
 
 - void **rotate_x** **(** :ref:`float<class_float>` angle **)**
 
 Rotates the local transformation around the X axis by angle in radians
 
-  .. _class_Spatial_rotate_y:
+.. _class_Spatial_rotate_y:
 
 - void **rotate_y** **(** :ref:`float<class_float>` angle **)**
 
 Rotates the local transformation around the Y axis by angle in radians.
 
-  .. _class_Spatial_rotate_z:
+.. _class_Spatial_rotate_z:
 
 - void **rotate_z** **(** :ref:`float<class_float>` angle **)**
 
 Rotates the local transformation around the Z axis by angle in radians.
 
-  .. _class_Spatial_scale_object_local:
+.. _class_Spatial_scale_object_local:
 
 - void **scale_object_local** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
 Scales the local transformation by given 3D scale factors in object-local coordinate system.
 
-  .. _class_Spatial_set_as_toplevel:
+.. _class_Spatial_set_as_toplevel:
 
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
 Makes the node ignore its parents transformations. Node transformations are only in global space.
 
-  .. _class_Spatial_set_disable_scale:
+.. _class_Spatial_set_disable_scale:
 
 - void **set_disable_scale** **(** :ref:`bool<class_bool>` disable **)**
 
-  .. _class_Spatial_set_identity:
+.. _class_Spatial_set_identity:
 
 - void **set_identity** **(** **)**
 
 Reset all transformations for this node. Set its Transform3D to identity matrix.
 
-  .. _class_Spatial_set_ignore_transform_notification:
+.. _class_Spatial_set_ignore_transform_notification:
 
 - void **set_ignore_transform_notification** **(** :ref:`bool<class_bool>` enabled **)**
 
 Set whether the node ignores notification that its transformation (global or local) changed.
 
-  .. _class_Spatial_set_notify_local_transform:
+.. _class_Spatial_set_notify_local_transform:
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
 Set whether the node notifies about its local transformation changes. Spatial will not propagate this by default.
 
-  .. _class_Spatial_set_notify_transform:
+.. _class_Spatial_set_notify_transform:
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
 Set whether the node notifies about its global and local transformation changes. Spatial will not propagate this by default.
 
-  .. _class_Spatial_show:
+.. _class_Spatial_show:
 
 - void **show** **(** **)**
 
 Enables rendering of this node. Change Spatial Visible property to "True".
 
-  .. _class_Spatial_to_global:
+.. _class_Spatial_to_global:
 
 - :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** const
 
 Transforms :ref:`Vector3<class_Vector3>` "local_point" from this node's local space to world space.
 
-  .. _class_Spatial_to_local:
+.. _class_Spatial_to_local:
 
 - :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** const
 
 Transforms :ref:`Vector3<class_Vector3>` "global_point" from world space to this node's local space.
 
-  .. _class_Spatial_translate:
+.. _class_Spatial_translate:
 
 - void **translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
 Changes the node's position by given offset :ref:`Vector3<class_Vector3>`.
 
-  .. _class_Spatial_translate_object_local:
+.. _class_Spatial_translate_object_local:
 
 - void **translate_object_local** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-  .. _class_Spatial_update_gizmo:
+.. _class_Spatial_update_gizmo:
 
 - void **update_gizmo** **(** **)**
 

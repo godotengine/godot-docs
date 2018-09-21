@@ -38,19 +38,19 @@ Methods
 Signals
 -------
 
-  .. _class_WebSocketServer_client_connected:
+.. _class_WebSocketServer_client_connected:
 
 - **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
 
 Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.
 
-  .. _class_WebSocketServer_client_disconnected:
+.. _class_WebSocketServer_client_disconnected:
 
 - **client_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted when a client disconnects.
 
-  .. _class_WebSocketServer_data_received:
+.. _class_WebSocketServer_data_received:
 
 - **data_received** **(** :ref:`int<class_int>` id **)**
 
@@ -68,37 +68,37 @@ Note: This class will not work in HTML5 exports due to browser restrictions.
 Method Descriptions
 -------------------
 
-  .. _class_WebSocketServer_disconnect_peer:
+.. _class_WebSocketServer_disconnect_peer:
 
 - void **disconnect_peer** **(** :ref:`int<class_int>` id **)**
 
 Disconnects the given peer.
 
-  .. _class_WebSocketServer_get_peer_address:
+.. _class_WebSocketServer_get_peer_address:
 
 - :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns the IP address of the given peer.
 
-  .. _class_WebSocketServer_get_peer_port:
+.. _class_WebSocketServer_get_peer_port:
 
 - :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** const
 
 Returns the remote port of the given peer.
 
-  .. _class_WebSocketServer_has_peer:
+.. _class_WebSocketServer_has_peer:
 
 - :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** const
 
 Returns ``true`` if a peer with the given ID is connected.
 
-  .. _class_WebSocketServer_is_listening:
+.. _class_WebSocketServer_is_listening:
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
 Returns ``true`` if the server is actively listening on a port.
 
-  .. _class_WebSocketServer_listen:
+.. _class_WebSocketServer_listen:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
@@ -108,7 +108,7 @@ You can specify the desired subprotocols via the "protocols" array. If the list 
 
 You can use this server as a network peer for :ref:`MultiplayerAPI<class_MultiplayerAPI>` by passing true as "gd_mp_api". Note: :ref:`data_received<class_WebSocketServer_data_received>` will not be fired and clients other than Godot will not work in this case.
 
-  .. _class_WebSocketServer_stop:
+.. _class_WebSocketServer_stop:
 
 - void **stop** **(** **)**
 

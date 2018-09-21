@@ -33,7 +33,7 @@ Capsule shape for 2D collisions.
 Property Descriptions
 ---------------------
 
-  .. _class_CapsuleShape2D_height:
+.. _class_CapsuleShape2D_height:
 
 - :ref:`float<class_float>` **height**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The capsule's height.
 
-  .. _class_CapsuleShape2D_radius:
+.. _class_CapsuleShape2D_radius:
 
 - :ref:`float<class_float>` **radius**
 

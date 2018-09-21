@@ -43,7 +43,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptReturn_return_enabled:
+.. _class_VisualScriptReturn_return_enabled:
 
 - :ref:`bool<class_bool>` **return_enabled**
 
@@ -55,7 +55,7 @@ Property Descriptions
 
 If ``true`` the ``return`` input port is available.
 
-  .. _class_VisualScriptReturn_return_type:
+.. _class_VisualScriptReturn_return_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
 

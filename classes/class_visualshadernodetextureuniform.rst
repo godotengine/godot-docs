@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeTextureUniform_TextureType:
+.. _enum_VisualShaderNodeTextureUniform_TextureType:
 
 enum **TextureType**:
 
@@ -37,7 +37,7 @@ enum **TextureType**:
 - **TYPE_NORMALMAP** = **2**
 - **TYPE_ANISO** = **3**
 
-  .. _enum_VisualShaderNodeTextureUniform_ColorDefault:
+.. _enum_VisualShaderNodeTextureUniform_ColorDefault:
 
 enum **ColorDefault**:
 
@@ -47,7 +47,7 @@ enum **ColorDefault**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeTextureUniform_color_default:
+.. _class_VisualShaderNodeTextureUniform_color_default:
 
 - :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **color_default**
 
@@ -57,7 +57,7 @@ Property Descriptions
 | *Getter* | get_color_default()      |
 +----------+--------------------------+
 
-  .. _class_VisualShaderNodeTextureUniform_texture_type:
+.. _class_VisualShaderNodeTextureUniform_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **texture_type**
 

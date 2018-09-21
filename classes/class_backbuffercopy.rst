@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_BackBufferCopy_CopyMode:
+.. _enum_BackBufferCopy_CopyMode:
 
 enum **CopyMode**:
 
@@ -44,7 +44,7 @@ Node for back-buffering the currently displayed screen. The region defined in th
 Property Descriptions
 ---------------------
 
-  .. _class_BackBufferCopy_copy_mode:
+.. _class_BackBufferCopy_copy_mode:
 
 - :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
 
@@ -56,7 +56,7 @@ Property Descriptions
 
 Buffer mode. See ``COPY_MODE_*`` constants.
 
-  .. _class_BackBufferCopy_rect:
+.. _class_BackBufferCopy_rect:
 
 - :ref:`Rect2<class_Rect2>` **rect**
 

@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptConstant_type:
+.. _class_VisualScriptConstant_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The constant's type.
 
-  .. _class_VisualScriptConstant_value:
+.. _class_VisualScriptConstant_value:
 
 - :ref:`Variant<class_Variant>` **value**
 

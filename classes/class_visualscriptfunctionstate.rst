@@ -30,15 +30,15 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_VisualScriptFunctionState_connect_to_signal:
+.. _class_VisualScriptFunctionState_connect_to_signal:
 
 - void **connect_to_signal** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)**
 
-  .. _class_VisualScriptFunctionState_is_valid:
+.. _class_VisualScriptFunctionState_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
-  .. _class_VisualScriptFunctionState_resume:
+.. _class_VisualScriptFunctionState_resume:
 
 - :ref:`Variant<class_Variant>` **resume** **(** :ref:`Array<class_Array>` args=null **)**
 

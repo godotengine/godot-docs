@@ -33,7 +33,7 @@ Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be p
 Property Descriptions
 ---------------------
 
-  .. _class_LightOccluder2D_light_mask:
+.. _class_LightOccluder2D_light_mask:
 
 - :ref:`int<class_int>` **light_mask**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
 
-  .. _class_LightOccluder2D_occluder:
+.. _class_LightOccluder2D_occluder:
 
 - :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**
 

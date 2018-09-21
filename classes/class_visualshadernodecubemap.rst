@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeCubeMap_TextureType:
+.. _enum_VisualShaderNodeCubeMap_TextureType:
 
 enum **TextureType**:
 
@@ -39,7 +39,7 @@ enum **TextureType**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeCubeMap_cube_map:
+.. _class_VisualShaderNodeCubeMap_cube_map:
 
 - :ref:`CubeMap<class_CubeMap>` **cube_map**
 
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_cube_map()      |
 +----------+---------------------+
 
-  .. _class_VisualShaderNodeCubeMap_texture_type:
+.. _class_VisualShaderNodeCubeMap_texture_type:
 
 - :ref:`TextureType<enum_VisualShaderNodeCubeMap_TextureType>` **texture_type**
 

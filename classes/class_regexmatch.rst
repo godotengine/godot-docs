@@ -48,7 +48,7 @@ Contains the results of a single regex match returned by :ref:`RegEx.search<clas
 Property Descriptions
 ---------------------
 
-  .. _class_RegExMatch_names:
+.. _class_RegExMatch_names:
 
 - :ref:`Dictionary<class_Dictionary>` **names**
 
@@ -58,7 +58,7 @@ Property Descriptions
 
 A dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
-  .. _class_RegExMatch_strings:
+.. _class_RegExMatch_strings:
 
 - :ref:`Array<class_Array>` **strings**
 
@@ -68,7 +68,7 @@ A dictionary of named groups and its corresponding group number. Only groups wit
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 
-  .. _class_RegExMatch_subject:
+.. _class_RegExMatch_subject:
 
 - :ref:`String<class_String>` **subject**
 
@@ -81,7 +81,7 @@ The source string used with the search pattern to find this matching result.
 Method Descriptions
 -------------------
 
-  .. _class_RegExMatch_get_end:
+.. _class_RegExMatch_get_end:
 
 - :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
@@ -89,13 +89,13 @@ Returns the end position of the match within the source string. The end position
 
 Returns -1 if the group did not match or doesn't exist.
 
-  .. _class_RegExMatch_get_group_count:
+.. _class_RegExMatch_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of capturing groups.
 
-  .. _class_RegExMatch_get_start:
+.. _class_RegExMatch_get_start:
 
 - :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 
@@ -103,7 +103,7 @@ Returns the starting position of the match within the source string. The startin
 
 Returns -1 if the group did not match or doesn't exist.
 
-  .. _class_RegExMatch_get_string:
+.. _class_RegExMatch_get_string:
 
 - :ref:`String<class_String>` **get_string** **(** :ref:`Variant<class_Variant>` name=0 **)** const
 

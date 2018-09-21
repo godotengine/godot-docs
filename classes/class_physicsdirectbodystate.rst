@@ -93,7 +93,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_PhysicsDirectBodyState_angular_velocity:
+.. _class_PhysicsDirectBodyState_angular_velocity:
 
 - :ref:`Vector3<class_Vector3>` **angular_velocity**
 
@@ -105,7 +105,7 @@ Property Descriptions
 
 The angular velocity of the body.
 
-  .. _class_PhysicsDirectBodyState_center_of_mass:
+.. _class_PhysicsDirectBodyState_center_of_mass:
 
 - :ref:`Vector3<class_Vector3>` **center_of_mass**
 
@@ -113,7 +113,7 @@ The angular velocity of the body.
 | *Getter* | get_center_of_mass() |
 +----------+----------------------+
 
-  .. _class_PhysicsDirectBodyState_inverse_inertia:
+.. _class_PhysicsDirectBodyState_inverse_inertia:
 
 - :ref:`Vector3<class_Vector3>` **inverse_inertia**
 
@@ -123,7 +123,7 @@ The angular velocity of the body.
 
 The inverse of the inertia of the body.
 
-  .. _class_PhysicsDirectBodyState_inverse_mass:
+.. _class_PhysicsDirectBodyState_inverse_mass:
 
 - :ref:`float<class_float>` **inverse_mass**
 
@@ -133,7 +133,7 @@ The inverse of the inertia of the body.
 
 The inverse of the mass of the body.
 
-  .. _class_PhysicsDirectBodyState_linear_velocity:
+.. _class_PhysicsDirectBodyState_linear_velocity:
 
 - :ref:`Vector3<class_Vector3>` **linear_velocity**
 
@@ -145,7 +145,7 @@ The inverse of the mass of the body.
 
 The linear velocity of the body.
 
-  .. _class_PhysicsDirectBodyState_principal_inertia_axes:
+.. _class_PhysicsDirectBodyState_principal_inertia_axes:
 
 - :ref:`Basis<class_Basis>` **principal_inertia_axes**
 
@@ -153,7 +153,7 @@ The linear velocity of the body.
 | *Getter* | get_principal_inertia_axes() |
 +----------+------------------------------+
 
-  .. _class_PhysicsDirectBodyState_sleeping:
+.. _class_PhysicsDirectBodyState_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**
 
@@ -165,7 +165,7 @@ The linear velocity of the body.
 
 ``true`` if this body is currently sleeping (not active).
 
-  .. _class_PhysicsDirectBodyState_step:
+.. _class_PhysicsDirectBodyState_step:
 
 - :ref:`float<class_float>` **step**
 
@@ -175,7 +175,7 @@ The linear velocity of the body.
 
 The timestep (delta) used for the simulation.
 
-  .. _class_PhysicsDirectBodyState_total_angular_damp:
+.. _class_PhysicsDirectBodyState_total_angular_damp:
 
 - :ref:`float<class_float>` **total_angular_damp**
 
@@ -185,7 +185,7 @@ The timestep (delta) used for the simulation.
 
 The rate at which the body stops rotating, if there are not any other forces moving it.
 
-  .. _class_PhysicsDirectBodyState_total_gravity:
+.. _class_PhysicsDirectBodyState_total_gravity:
 
 - :ref:`Vector3<class_Vector3>` **total_gravity**
 
@@ -195,7 +195,7 @@ The rate at which the body stops rotating, if there are not any other forces mov
 
 The total gravity vector being currently applied to this body.
 
-  .. _class_PhysicsDirectBodyState_total_linear_damp:
+.. _class_PhysicsDirectBodyState_total_linear_damp:
 
 - :ref:`float<class_float>` **total_linear_damp**
 
@@ -205,7 +205,7 @@ The total gravity vector being currently applied to this body.
 
 The rate at which the body stops moving, if there are not any other forces moving it.
 
-  .. _class_PhysicsDirectBodyState_transform:
+.. _class_PhysicsDirectBodyState_transform:
 
 - :ref:`Transform<class_Transform>` **transform**
 
@@ -220,7 +220,7 @@ The transformation matrix of the body.
 Method Descriptions
 -------------------
 
-  .. _class_PhysicsDirectBodyState_add_central_force:
+.. _class_PhysicsDirectBodyState_add_central_force:
 
 - void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
 
@@ -228,19 +228,19 @@ Adds a constant directional force without affecting rotation.
 
 This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
-  .. _class_PhysicsDirectBodyState_add_force:
+.. _class_PhysicsDirectBodyState_add_force:
 
 - void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
 
 Adds a constant force (i.e. acceleration).
 
-  .. _class_PhysicsDirectBodyState_add_torque:
+.. _class_PhysicsDirectBodyState_add_torque:
 
 - void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
 
 Adds a constant rotational force (i.e. a motor) without affecting position.
 
-  .. _class_PhysicsDirectBodyState_apply_central_impulse:
+.. _class_PhysicsDirectBodyState_apply_central_impulse:
 
 - void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` j **)**
 
@@ -248,69 +248,69 @@ Applies a single directional impulse without affecting rotation.
 
 This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
-  .. _class_PhysicsDirectBodyState_apply_impulse:
+.. _class_PhysicsDirectBodyState_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` j **)**
 
 Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
 
-  .. _class_PhysicsDirectBodyState_apply_torque_impulse:
+.. _class_PhysicsDirectBodyState_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` j **)**
 
 Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider:
+.. _class_PhysicsDirectBodyState_get_contact_collider:
 
 - :ref:`RID<class_RID>` **get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider_id:
+.. _class_PhysicsDirectBodyState_get_contact_collider_id:
 
 - :ref:`int<class_int>` **get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider_object:
+.. _class_PhysicsDirectBodyState_get_contact_collider_object:
 
 - :ref:`Object<class_Object>` **get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider_position:
+.. _class_PhysicsDirectBodyState_get_contact_collider_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider_shape:
+.. _class_PhysicsDirectBodyState_get_contact_collider_shape:
 
 - :ref:`int<class_int>` **get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_collider_velocity_at_position:
+.. _class_PhysicsDirectBodyState_get_contact_collider_velocity_at_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_count:
+.. _class_PhysicsDirectBodyState_get_contact_count:
 
 - :ref:`int<class_int>` **get_contact_count** **(** **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_impulse:
+.. _class_PhysicsDirectBodyState_get_contact_impulse:
 
 - :ref:`float<class_float>` **get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** const
 
 Impulse created by the contact. Only implemented for Bullet physics.
 
-  .. _class_PhysicsDirectBodyState_get_contact_local_normal:
+.. _class_PhysicsDirectBodyState_get_contact_local_normal:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_local_position:
+.. _class_PhysicsDirectBodyState_get_contact_local_position:
 
 - :ref:`Vector3<class_Vector3>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_contact_local_shape:
+.. _class_PhysicsDirectBodyState_get_contact_local_shape:
 
 - :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** const
 
-  .. _class_PhysicsDirectBodyState_get_space_state:
+.. _class_PhysicsDirectBodyState_get_space_state:
 
 - :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **get_space_state** **(** **)**
 
-  .. _class_PhysicsDirectBodyState_integrate_forces:
+.. _class_PhysicsDirectBodyState_integrate_forces:
 
 - void **integrate_forces** **(** **)**
 

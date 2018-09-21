@@ -31,7 +31,7 @@ Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_P
 Property Descriptions
 ---------------------
 
-  .. _class_ConvexPolygonShape_points:
+.. _class_ConvexPolygonShape_points:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
 

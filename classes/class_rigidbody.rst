@@ -95,19 +95,19 @@ Methods
 Signals
 -------
 
-  .. _class_RigidBody_body_entered:
+.. _class_RigidBody_body_entered:
 
 - **body_entered** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
-  .. _class_RigidBody_body_exited:
+.. _class_RigidBody_body_exited:
 
 - **body_exited** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
-  .. _class_RigidBody_body_shape_entered:
+.. _class_RigidBody_body_shape_entered:
 
 - **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
@@ -115,7 +115,7 @@ Emitted when a body enters into contact with this one. Contact monitor and conta
 
 This signal not only receives the body that collided with this one, but also its :ref:`RID<class_RID>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body collided with.
 
-  .. _class_RigidBody_body_shape_exited:
+.. _class_RigidBody_body_shape_exited:
 
 - **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape **)**
 
@@ -123,7 +123,7 @@ Emitted when a body shape exits contact with this one. Contact monitor and conta
 
 This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_RID>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body stopped colliding with.
 
-  .. _class_RigidBody_sleeping_state_changed:
+.. _class_RigidBody_sleeping_state_changed:
 
 - **sleeping_state_changed** **(** **)**
 
@@ -132,7 +132,7 @@ Emitted when the body changes its sleeping state. Either by sleeping or waking u
 Enumerations
 ------------
 
-  .. _enum_RigidBody_Mode:
+.. _enum_RigidBody_Mode:
 
 enum **Mode**:
 
@@ -156,10 +156,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
+
 Property Descriptions
 ---------------------
 
-  .. _class_RigidBody_angular_damp:
+.. _class_RigidBody_angular_damp:
 
 - :ref:`float<class_float>` **angular_damp**
 
@@ -171,7 +172,7 @@ Property Descriptions
 
 Damps RigidBody's rotational forces.
 
-  .. _class_RigidBody_angular_velocity:
+.. _class_RigidBody_angular_velocity:
 
 - :ref:`Vector3<class_Vector3>` **angular_velocity**
 
@@ -183,7 +184,7 @@ Damps RigidBody's rotational forces.
 
 RigidBody's rotational velocity.
 
-  .. _class_RigidBody_axis_lock_angular_x:
+.. _class_RigidBody_axis_lock_angular_x:
 
 - :ref:`bool<class_bool>` **axis_lock_angular_x**
 
@@ -193,7 +194,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_axis_lock_angular_y:
+.. _class_RigidBody_axis_lock_angular_y:
 
 - :ref:`bool<class_bool>` **axis_lock_angular_y**
 
@@ -203,7 +204,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_axis_lock_angular_z:
+.. _class_RigidBody_axis_lock_angular_z:
 
 - :ref:`bool<class_bool>` **axis_lock_angular_z**
 
@@ -213,7 +214,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_axis_lock_linear_x:
+.. _class_RigidBody_axis_lock_linear_x:
 
 - :ref:`bool<class_bool>` **axis_lock_linear_x**
 
@@ -223,7 +224,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_axis_lock_linear_y:
+.. _class_RigidBody_axis_lock_linear_y:
 
 - :ref:`bool<class_bool>` **axis_lock_linear_y**
 
@@ -233,7 +234,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_axis_lock_linear_z:
+.. _class_RigidBody_axis_lock_linear_z:
 
 - :ref:`bool<class_bool>` **axis_lock_linear_z**
 
@@ -243,7 +244,7 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
-  .. _class_RigidBody_bounce:
+.. _class_RigidBody_bounce:
 
 - :ref:`float<class_float>` **bounce**
 
@@ -255,7 +256,7 @@ RigidBody's rotational velocity.
 
 RigidBody's bounciness.
 
-  .. _class_RigidBody_can_sleep:
+.. _class_RigidBody_can_sleep:
 
 - :ref:`bool<class_bool>` **can_sleep**
 
@@ -267,7 +268,7 @@ RigidBody's bounciness.
 
 If ``true`` the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the ``apply_impulse`` method is used.
 
-  .. _class_RigidBody_contact_monitor:
+.. _class_RigidBody_contact_monitor:
 
 - :ref:`bool<class_bool>` **contact_monitor**
 
@@ -279,7 +280,7 @@ If ``true`` the RigidBody will not calculate forces and will act as a static bod
 
 If true, the RigidBody will emit signals when it collides with another RigidBody.
 
-  .. _class_RigidBody_contacts_reported:
+.. _class_RigidBody_contacts_reported:
 
 - :ref:`int<class_int>` **contacts_reported**
 
@@ -291,7 +292,7 @@ If true, the RigidBody will emit signals when it collides with another RigidBody
 
 The maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
 
-  .. _class_RigidBody_continuous_cd:
+.. _class_RigidBody_continuous_cd:
 
 - :ref:`bool<class_bool>` **continuous_cd**
 
@@ -305,7 +306,7 @@ If ``true`` continuous collision detection is used.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. Continuous collision detection is more precise, and misses less impacts by small, fast-moving objects. Not using continuous collision detection is faster to compute, but can miss small, fast-moving objects.
 
-  .. _class_RigidBody_custom_integrator:
+.. _class_RigidBody_custom_integrator:
 
 - :ref:`bool<class_bool>` **custom_integrator**
 
@@ -317,7 +318,7 @@ Continuous collision detection tries to predict where a moving body will collide
 
 If ``true`` internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody__integrate_forces>` function, if defined.
 
-  .. _class_RigidBody_friction:
+.. _class_RigidBody_friction:
 
 - :ref:`float<class_float>` **friction**
 
@@ -329,7 +330,7 @@ If ``true`` internal force integration will be disabled (like gravity or air fri
 
 The body friction, from 0 (frictionless) to 1 (max friction).
 
-  .. _class_RigidBody_gravity_scale:
+.. _class_RigidBody_gravity_scale:
 
 - :ref:`float<class_float>` **gravity_scale**
 
@@ -341,7 +342,7 @@ The body friction, from 0 (frictionless) to 1 (max friction).
 
 This is multiplied by the global 3D gravity setting found in "Project > Project Settings > Physics > 3d" to produce RigidBody's gravity. E.g. a value of 1 will be normal gravity, 2 will apply double gravity, and 0.5 will apply half gravity to this object.
 
-  .. _class_RigidBody_linear_damp:
+.. _class_RigidBody_linear_damp:
 
 - :ref:`float<class_float>` **linear_damp**
 
@@ -353,7 +354,7 @@ This is multiplied by the global 3D gravity setting found in "Project > Project 
 
 RigidBody's linear damp. Default value: -1, cannot be less than -1. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
 
-  .. _class_RigidBody_linear_velocity:
+.. _class_RigidBody_linear_velocity:
 
 - :ref:`Vector3<class_Vector3>` **linear_velocity**
 
@@ -365,7 +366,7 @@ RigidBody's linear damp. Default value: -1, cannot be less than -1. If this valu
 
 RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
 
-  .. _class_RigidBody_mass:
+.. _class_RigidBody_mass:
 
 - :ref:`float<class_float>` **mass**
 
@@ -377,7 +378,7 @@ RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN E
 
 RigidBody's mass.
 
-  .. _class_RigidBody_mode:
+.. _class_RigidBody_mode:
 
 - :ref:`Mode<enum_RigidBody_Mode>` **mode**
 
@@ -389,7 +390,7 @@ RigidBody's mass.
 
 The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
 
-  .. _class_RigidBody_physics_material_override:
+.. _class_RigidBody_physics_material_override:
 
 - :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
@@ -399,7 +400,7 @@ The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC
 | *Getter* | get_physics_material_override()      |
 +----------+--------------------------------------+
 
-  .. _class_RigidBody_sleeping:
+.. _class_RigidBody_sleeping:
 
 - :ref:`bool<class_bool>` **sleeping**
 
@@ -411,7 +412,7 @@ The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC
 
 If ``true`` RigidBody is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
 
-  .. _class_RigidBody_weight:
+.. _class_RigidBody_weight:
 
 - :ref:`float<class_float>` **weight**
 
@@ -426,13 +427,13 @@ RigidBody's weight based on its mass and the global 3D gravity. Global values ar
 Method Descriptions
 -------------------
 
-  .. _class_RigidBody__integrate_forces:
+.. _class_RigidBody__integrate_forces:
 
 - void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual
 
 Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
 
-  .. _class_RigidBody_add_central_force:
+.. _class_RigidBody_add_central_force:
 
 - void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
 
@@ -440,19 +441,19 @@ Adds a constant directional force without affecting rotation.
 
 This is equivalent to ``add_force(force, Vector3(0,0,0))``.
 
-  .. _class_RigidBody_add_force:
+.. _class_RigidBody_add_force:
 
 - void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)**
 
 Adds a constant force (i.e. acceleration).
 
-  .. _class_RigidBody_add_torque:
+.. _class_RigidBody_add_torque:
 
 - void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
 
 Adds a constant rotational force (i.e. a motor) without affecting position.
 
-  .. _class_RigidBody_apply_central_impulse:
+.. _class_RigidBody_apply_central_impulse:
 
 - void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
@@ -460,25 +461,25 @@ Applies a single directional impulse without affecting rotation.
 
 This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
-  .. _class_RigidBody_apply_impulse:
+.. _class_RigidBody_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
 
 Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
 
-  .. _class_RigidBody_apply_torque_impulse:
+.. _class_RigidBody_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
 Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
 
-  .. _class_RigidBody_get_colliding_bodies:
+.. _class_RigidBody_get_colliding_bodies:
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
 Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.  Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
-  .. _class_RigidBody_set_axis_velocity:
+.. _class_RigidBody_set_axis_velocity:
 
 - void **set_axis_velocity** **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**
 

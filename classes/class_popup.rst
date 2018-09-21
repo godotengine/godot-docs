@@ -41,13 +41,13 @@ Methods
 Signals
 -------
 
-  .. _class_Popup_about_to_show:
+.. _class_Popup_about_to_show:
 
 - **about_to_show** **(** **)**
 
 This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_PopupMenu>` for clearing the list of options and creating a new one according to the current context).
 
-  .. _class_Popup_popup_hide:
+.. _class_Popup_popup_hide:
 
 - **popup_hide** **(** **)**
 
@@ -58,6 +58,7 @@ Constants
 
 - **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
 - **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
+
 Description
 -----------
 
@@ -66,7 +67,7 @@ Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. I
 Property Descriptions
 ---------------------
 
-  .. _class_Popup_popup_exclusive:
+.. _class_Popup_popup_exclusive:
 
 - :ref:`bool<class_bool>` **popup_exclusive**
 
@@ -81,25 +82,25 @@ If ``true`` the popup will not be hidden when a click event occurs outside of it
 Method Descriptions
 -------------------
 
-  .. _class_Popup_popup:
+.. _class_Popup_popup:
 
 - void **popup** **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**
 
 Popup (show the control in modal form).
 
-  .. _class_Popup_popup_centered:
+.. _class_Popup_popup_centered:
 
 - void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen, at the current size, or at a size determined by "size".
 
-  .. _class_Popup_popup_centered_minsize:
+.. _class_Popup_popup_centered_minsize:
 
 - void **popup_centered_minsize** **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen, ensuring the size is never smaller than ``minsize``.
 
-  .. _class_Popup_popup_centered_ratio:
+.. _class_Popup_popup_centered_ratio:
 
 - void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 

@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_NavigationMeshInstance_enabled:
+.. _class_NavigationMeshInstance_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
 
@@ -38,7 +38,7 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-  .. _class_NavigationMeshInstance_navmesh:
+.. _class_NavigationMeshInstance_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
 

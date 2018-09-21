@@ -46,7 +46,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_GIProbeData_bias:
+.. _class_GIProbeData_bias:
 
 - :ref:`float<class_float>` **bias**
 
@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter* | get_bias()      |
 +----------+-----------------+
 
-  .. _class_GIProbeData_bounds:
+.. _class_GIProbeData_bounds:
 
 - :ref:`AABB<class_AABB>` **bounds**
 
@@ -66,7 +66,7 @@ Property Descriptions
 | *Getter* | get_bounds()      |
 +----------+-------------------+
 
-  .. _class_GIProbeData_cell_size:
+.. _class_GIProbeData_cell_size:
 
 - :ref:`float<class_float>` **cell_size**
 
@@ -76,7 +76,7 @@ Property Descriptions
 | *Getter* | get_cell_size()      |
 +----------+----------------------+
 
-  .. _class_GIProbeData_compress:
+.. _class_GIProbeData_compress:
 
 - :ref:`bool<class_bool>` **compress**
 
@@ -86,7 +86,7 @@ Property Descriptions
 | *Getter* | is_compressed()     |
 +----------+---------------------+
 
-  .. _class_GIProbeData_dynamic_data:
+.. _class_GIProbeData_dynamic_data:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **dynamic_data**
 
@@ -96,7 +96,7 @@ Property Descriptions
 | *Getter* | get_dynamic_data()      |
 +----------+-------------------------+
 
-  .. _class_GIProbeData_dynamic_range:
+.. _class_GIProbeData_dynamic_range:
 
 - :ref:`int<class_int>` **dynamic_range**
 
@@ -106,7 +106,7 @@ Property Descriptions
 | *Getter* | get_dynamic_range()      |
 +----------+--------------------------+
 
-  .. _class_GIProbeData_energy:
+.. _class_GIProbeData_energy:
 
 - :ref:`float<class_float>` **energy**
 
@@ -116,7 +116,7 @@ Property Descriptions
 | *Getter* | get_energy()      |
 +----------+-------------------+
 
-  .. _class_GIProbeData_interior:
+.. _class_GIProbeData_interior:
 
 - :ref:`bool<class_bool>` **interior**
 
@@ -126,7 +126,7 @@ Property Descriptions
 | *Getter* | is_interior()       |
 +----------+---------------------+
 
-  .. _class_GIProbeData_normal_bias:
+.. _class_GIProbeData_normal_bias:
 
 - :ref:`float<class_float>` **normal_bias**
 
@@ -136,7 +136,7 @@ Property Descriptions
 | *Getter* | get_normal_bias()      |
 +----------+------------------------+
 
-  .. _class_GIProbeData_propagation:
+.. _class_GIProbeData_propagation:
 
 - :ref:`float<class_float>` **propagation**
 
@@ -146,7 +146,7 @@ Property Descriptions
 | *Getter* | get_propagation()      |
 +----------+------------------------+
 
-  .. _class_GIProbeData_to_cell_xform:
+.. _class_GIProbeData_to_cell_xform:
 
 - :ref:`Transform<class_Transform>` **to_cell_xform**
 

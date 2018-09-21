@@ -38,10 +38,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
+
 Property Descriptions
 ---------------------
 
-  .. _class_InputEventMouse_button_mask:
+.. _class_InputEventMouse_button_mask:
 
 - :ref:`int<class_int>` **button_mask**
 
@@ -53,7 +54,7 @@ Property Descriptions
 
 Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_InputEventMouse_global_position:
+.. _class_InputEventMouse_global_position:
 
 - :ref:`Vector2<class_Vector2>` **global_position**
 
@@ -65,7 +66,7 @@ Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK
 
 Mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control__gui_input>`, otherwise is at 0,0.
 
-  .. _class_InputEventMouse_position:
+.. _class_InputEventMouse_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 

@@ -43,7 +43,7 @@ Make sure to check if the curve of this node's parent :ref:`Path<class_Path>` ha
 Property Descriptions
 ---------------------
 
-  .. _class_OrientedPathFollow_cubic_interp:
+.. _class_OrientedPathFollow_cubic_interp:
 
 - :ref:`bool<class_bool>` **cubic_interp**
 
@@ -59,7 +59,7 @@ The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>
 
 There are two answers to this problem: Either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
-  .. _class_OrientedPathFollow_h_offset:
+.. _class_OrientedPathFollow_h_offset:
 
 - :ref:`float<class_float>` **h_offset**
 
@@ -71,7 +71,7 @@ There are two answers to this problem: Either increase the number of cached poin
 
 The node's offset along the curve.
 
-  .. _class_OrientedPathFollow_loop:
+.. _class_OrientedPathFollow_loop:
 
 - :ref:`bool<class_bool>` **loop**
 
@@ -83,7 +83,7 @@ The node's offset along the curve.
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
-  .. _class_OrientedPathFollow_offset:
+.. _class_OrientedPathFollow_offset:
 
 - :ref:`float<class_float>` **offset**
 
@@ -95,7 +95,7 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
 
-  .. _class_OrientedPathFollow_unit_offset:
+.. _class_OrientedPathFollow_unit_offset:
 
 - :ref:`float<class_float>` **unit_offset**
 
@@ -107,7 +107,7 @@ The distance from the first vertex, measured in 3D units along the path. This se
 
 The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
-  .. _class_OrientedPathFollow_v_offset:
+.. _class_OrientedPathFollow_v_offset:
 
 - :ref:`float<class_float>` **v_offset**
 

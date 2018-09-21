@@ -47,61 +47,61 @@ Real Array. Array of floating point values. Can only contain floats. Optimized f
 Method Descriptions
 -------------------
 
-  .. _class_PoolRealArray_PoolRealArray:
+.. _class_PoolRealArray_PoolRealArray:
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **PoolRealArray** **(** :ref:`Array<class_Array>` from **)**
 
 Create from a generic array.
 
-  .. _class_PoolRealArray_append:
+.. _class_PoolRealArray_append:
 
 - void **append** **(** :ref:`float<class_float>` value **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolRealArray_push_back>`).
 
-  .. _class_PoolRealArray_append_array:
+.. _class_PoolRealArray_append_array:
 
 - void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
 
 Append an RealArray at the end of this array.
 
-  .. _class_PoolRealArray_insert:
+.. _class_PoolRealArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
-  .. _class_PoolRealArray_invert:
+.. _class_PoolRealArray_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-  .. _class_PoolRealArray_push_back:
+.. _class_PoolRealArray_push_back:
 
 - void **push_back** **(** :ref:`float<class_float>` value **)**
 
 Append an element at the end of the array.
 
-  .. _class_PoolRealArray_remove:
+.. _class_PoolRealArray_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-  .. _class_PoolRealArray_resize:
+.. _class_PoolRealArray_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-  .. _class_PoolRealArray_set:
+.. _class_PoolRealArray_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Change the float at the given index.
 
-  .. _class_PoolRealArray_size:
+.. _class_PoolRealArray_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 

@@ -34,10 +34,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
+
 Property Descriptions
 ---------------------
 
-  .. _class_Shape_margin:
+.. _class_Shape_margin:
 
 - :ref:`float<class_float>` **margin**
 

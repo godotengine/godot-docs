@@ -47,7 +47,7 @@ Methods
 Signals
 -------
 
-  .. _class_HTTPRequest_request_completed:
+.. _class_HTTPRequest_request_completed:
 
 - **request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
@@ -56,7 +56,7 @@ This signal is emitted upon request completion.
 Enumerations
 ------------
 
-  .. _enum_HTTPRequest_Result:
+.. _enum_HTTPRequest_Result:
 
 enum **Result**:
 
@@ -84,10 +84,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/networking/ssl_certificates`
+
 Property Descriptions
 ---------------------
 
-  .. _class_HTTPRequest_body_size_limit:
+.. _class_HTTPRequest_body_size_limit:
 
 - :ref:`int<class_int>` **body_size_limit**
 
@@ -99,7 +100,7 @@ Property Descriptions
 
 Maximum allowed size for response bodies.
 
-  .. _class_HTTPRequest_download_file:
+.. _class_HTTPRequest_download_file:
 
 - :ref:`String<class_String>` **download_file**
 
@@ -111,7 +112,7 @@ Maximum allowed size for response bodies.
 
 The file to download into. Will output any received file into it.
 
-  .. _class_HTTPRequest_max_redirects:
+.. _class_HTTPRequest_max_redirects:
 
 - :ref:`int<class_int>` **max_redirects**
 
@@ -123,7 +124,7 @@ The file to download into. Will output any received file into it.
 
 Maximum number of allowed redirects.
 
-  .. _class_HTTPRequest_use_threads:
+.. _class_HTTPRequest_use_threads:
 
 - :ref:`bool<class_bool>` **use_threads**
 
@@ -138,31 +139,31 @@ If ``true`` multithreading is used to improve performance.
 Method Descriptions
 -------------------
 
-  .. _class_HTTPRequest_cancel_request:
+.. _class_HTTPRequest_cancel_request:
 
 - void **cancel_request** **(** **)**
 
 Cancels the current request.
 
-  .. _class_HTTPRequest_get_body_size:
+.. _class_HTTPRequest_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
 Returns the response body length.
 
-  .. _class_HTTPRequest_get_downloaded_bytes:
+.. _class_HTTPRequest_get_downloaded_bytes:
 
 - :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** const
 
 Returns the amount of bytes this HTTPRequest downloaded.
 
-  .. _class_HTTPRequest_get_http_client_status:
+.. _class_HTTPRequest_get_http_client_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** const
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See ``STATUS_*`` enum on :ref:`HTTPClient<class_HTTPClient>`.
 
-  .. _class_HTTPRequest_request:
+.. _class_HTTPRequest_request:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 

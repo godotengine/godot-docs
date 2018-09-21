@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptLocalVar_type:
+.. _class_VisualScriptLocalVar_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The local variable's type.
 
-  .. _class_VisualScriptLocalVar_var_name:
+.. _class_VisualScriptLocalVar_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

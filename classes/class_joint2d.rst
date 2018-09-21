@@ -39,7 +39,7 @@ Base node for all joint constraints in 2D physics. Joints take 2 bodies and appl
 Property Descriptions
 ---------------------
 
-  .. _class_Joint2D_bias:
+.. _class_Joint2D_bias:
 
 - :ref:`float<class_float>` **bias**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
 
-  .. _class_Joint2D_disable_collision:
+.. _class_Joint2D_disable_collision:
 
 - :ref:`bool<class_bool>` **disable_collision**
 
@@ -63,7 +63,7 @@ When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>`
 
 If ``true`` :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` can collide. Default value: ``false``.
 
-  .. _class_Joint2D_node_a:
+.. _class_Joint2D_node_a:
 
 - :ref:`NodePath<class_NodePath>` **node_a**
 
@@ -75,7 +75,7 @@ If ``true`` :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_n
 
 The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
-  .. _class_Joint2D_node_b:
+.. _class_Joint2D_node_b:
 
 - :ref:`NodePath<class_NodePath>` **node_b**
 

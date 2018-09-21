@@ -41,7 +41,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_StreamPeerSSL_Status:
+.. _enum_StreamPeerSSL_Status:
 
 enum **Status**:
 
@@ -59,10 +59,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/networking/ssl_certificates`
+
 Property Descriptions
 ---------------------
 
-  .. _class_StreamPeerSSL_blocking_handshake:
+.. _class_StreamPeerSSL_blocking_handshake:
 
 - :ref:`bool<class_bool>` **blocking_handshake**
 
@@ -75,29 +76,29 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_StreamPeerSSL_accept_stream:
+.. _class_StreamPeerSSL_accept_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` base **)**
 
-  .. _class_StreamPeerSSL_connect_to_stream:
+.. _class_StreamPeerSSL_connect_to_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)**
 
 Connect to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` "stream", when "validate_certs" is true, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the "for_hostname".
 
-  .. _class_StreamPeerSSL_disconnect_from_stream:
+.. _class_StreamPeerSSL_disconnect_from_stream:
 
 - void **disconnect_from_stream** **(** **)**
 
 Disconnect from host.
 
-  .. _class_StreamPeerSSL_get_status:
+.. _class_StreamPeerSSL_get_status:
 
 - :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
 
 Return the status of the connection, one of STATUS\_\* enum.
 
-  .. _class_StreamPeerSSL_poll:
+.. _class_StreamPeerSSL_poll:
 
 - void **poll** **(** **)**
 

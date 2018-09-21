@@ -33,7 +33,7 @@ A Visual Script node representing a constant from base types, such as Vector3.AX
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptBasicTypeConstant_basic_type:
+.. _class_VisualScriptBasicTypeConstant_basic_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The type to get the constant from.
 
-  .. _class_VisualScriptBasicTypeConstant_constant:
+.. _class_VisualScriptBasicTypeConstant_constant:
 
 - :ref:`String<class_String>` **constant**
 

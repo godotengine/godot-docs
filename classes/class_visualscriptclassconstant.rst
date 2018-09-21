@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptClassConstant_base_type:
+.. _class_VisualScriptClassConstant_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The constant's parent class.
 
-  .. _class_VisualScriptClassConstant_constant:
+.. _class_VisualScriptClassConstant_constant:
 
 - :ref:`String<class_String>` **constant**
 

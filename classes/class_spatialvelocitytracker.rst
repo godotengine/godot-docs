@@ -37,7 +37,7 @@ Methods
 Property Descriptions
 ---------------------
 
-  .. _class_SpatialVelocityTracker_track_physics_step:
+.. _class_SpatialVelocityTracker_track_physics_step:
 
 - :ref:`bool<class_bool>` **track_physics_step**
 
@@ -50,15 +50,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_SpatialVelocityTracker_get_tracked_linear_velocity:
+.. _class_SpatialVelocityTracker_get_tracked_linear_velocity:
 
 - :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** const
 
-  .. _class_SpatialVelocityTracker_reset:
+.. _class_SpatialVelocityTracker_reset:
 
 - void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
 
-  .. _class_SpatialVelocityTracker_update_position:
+.. _class_SpatialVelocityTracker_update_position:
 
 - void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
 

@@ -31,7 +31,7 @@ Description
 Property Descriptions
 ---------------------
 
-  .. _class_BoxShape_extents:
+.. _class_BoxShape_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 

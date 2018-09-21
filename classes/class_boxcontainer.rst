@@ -35,7 +35,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_BoxContainer_AlignMode:
+.. _enum_BoxContainer_AlignMode:
 
 enum **AlignMode**:
 
@@ -51,7 +51,7 @@ Arranges child controls vertically or horizontally, and rearranges the controls 
 Property Descriptions
 ---------------------
 
-  .. _class_BoxContainer_alignment:
+.. _class_BoxContainer_alignment:
 
 - :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
 
@@ -66,7 +66,7 @@ The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CEN
 Method Descriptions
 -------------------
 
-  .. _class_BoxContainer_add_spacer:
+.. _class_BoxContainer_add_spacer:
 
 - void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 

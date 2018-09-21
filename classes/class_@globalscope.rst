@@ -66,7 +66,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_@GlobalScope_Variant.Operator:
+.. _enum_@GlobalScope_Variant.Operator:
 
 enum **Variant.Operator**:
 
@@ -97,7 +97,7 @@ enum **Variant.Operator**:
 - **OP_IN** = **24**
 - **OP_MAX** = **25**
 
-  .. _enum_@GlobalScope_MethodFlags:
+.. _enum_@GlobalScope_MethodFlags:
 
 enum **MethodFlags**:
 
@@ -110,14 +110,14 @@ enum **MethodFlags**:
 - **METHOD_FLAG_FROM_SCRIPT** = **64** --- Flag for method from script
 - **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags
 
-  .. _enum_@GlobalScope_Orientation:
+.. _enum_@GlobalScope_Orientation:
 
 enum **Orientation**:
 
 - **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
 - **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
 
-  .. _enum_@GlobalScope_PropertyUsageFlags:
+.. _enum_@GlobalScope_PropertyUsageFlags:
 
 enum **PropertyUsageFlags**:
 
@@ -139,7 +139,7 @@ enum **PropertyUsageFlags**:
 - **PROPERTY_USAGE_DEFAULT_INTL** = **71**
 - **PROPERTY_USAGE_NOEDITOR** = **5**
 
-  .. _enum_@GlobalScope_JoystickList:
+.. _enum_@GlobalScope_JoystickList:
 
 enum **JoystickList**:
 
@@ -202,7 +202,7 @@ enum **JoystickList**:
 - **JOY_ANALOG_L2** = **6** --- Joypad Left Analog Trigger
 - **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
 
-  .. _enum_@GlobalScope_MidiMessageList:
+.. _enum_@GlobalScope_MidiMessageList:
 
 enum **MidiMessageList**:
 
@@ -214,7 +214,7 @@ enum **MidiMessageList**:
 - **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13**
 - **MIDI_MESSAGE_PITCH_BEND** = **14**
 
-  .. _enum_@GlobalScope_KeyModifierMask:
+.. _enum_@GlobalScope_KeyModifierMask:
 
 enum **KeyModifierMask**:
 
@@ -228,7 +228,7 @@ enum **KeyModifierMask**:
 - **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
 - **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
 
-  .. _enum_@GlobalScope_HAlign:
+.. _enum_@GlobalScope_HAlign:
 
 enum **HAlign**:
 
@@ -236,7 +236,7 @@ enum **HAlign**:
 - **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
 - **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
 
-  .. _enum_@GlobalScope_Error:
+.. _enum_@GlobalScope_Error:
 
 enum **Error**:
 
@@ -282,7 +282,7 @@ enum **Error**:
 - **ERR_HELP** = **46** --- Help error
 - **ERR_BUG** = **47** --- Bug error
 
-  .. _enum_@GlobalScope_VAlign:
+.. _enum_@GlobalScope_VAlign:
 
 enum **VAlign**:
 
@@ -290,7 +290,7 @@ enum **VAlign**:
 - **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
 - **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
 
-  .. _enum_@GlobalScope_PropertyHint:
+.. _enum_@GlobalScope_PropertyHint:
 
 enum **PropertyHint**:
 
@@ -317,7 +317,7 @@ enum **PropertyHint**:
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that the image is compressed using lossy compression.
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that the image is compressed using lossless compression.
 
-  .. _enum_@GlobalScope_Corner:
+.. _enum_@GlobalScope_Corner:
 
 enum **Corner**:
 
@@ -326,7 +326,7 @@ enum **Corner**:
 - **CORNER_BOTTOM_RIGHT** = **2**
 - **CORNER_BOTTOM_LEFT** = **3**
 
-  .. _enum_@GlobalScope_KeyList:
+.. _enum_@GlobalScope_KeyList:
 
 enum **KeyList**:
 
@@ -573,7 +573,7 @@ enum **KeyList**:
 - **KEY_DIVISION** = **247** --- ÷ key
 - **KEY_YDIAERESIS** = **255** --- ÿ key
 
-  .. _enum_@GlobalScope_Variant.Type:
+.. _enum_@GlobalScope_Variant.Type:
 
 enum **Variant.Type**:
 
@@ -606,7 +606,7 @@ enum **Variant.Type**:
 - **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_PoolColorArray>`.
 - **TYPE_MAX** = **27** --- Marker for end of type constants.
 
-  .. _enum_@GlobalScope_Margin:
+.. _enum_@GlobalScope_Margin:
 
 enum **Margin**:
 
@@ -615,7 +615,7 @@ enum **Margin**:
 - **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 - **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
-  .. _enum_@GlobalScope_ButtonList:
+.. _enum_@GlobalScope_ButtonList:
 
 enum **ButtonList**:
 
@@ -638,6 +638,7 @@ Constants
 ---------
 
 - **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
+
 Description
 -----------
 
@@ -648,131 +649,131 @@ Singletons are also documented here, since they can be accessed from anywhere.
 Property Descriptions
 ---------------------
 
-  .. _class_@GlobalScope_ARVRServer:
+.. _class_@GlobalScope_ARVRServer:
 
 - :ref:`ARVRServer<class_ARVRServer>` **ARVRServer**
 
 :ref:`ARVRServer<class_ARVRServer>` singleton
 
-  .. _class_@GlobalScope_AudioServer:
+.. _class_@GlobalScope_AudioServer:
 
 - :ref:`AudioServer<class_AudioServer>` **AudioServer**
 
 :ref:`AudioServer<class_AudioServer>` singleton
 
-  .. _class_@GlobalScope_ClassDB:
+.. _class_@GlobalScope_ClassDB:
 
 - :ref:`ClassDB<class_ClassDB>` **ClassDB**
 
 :ref:`ClassDB<class_ClassDB>` singleton
 
-  .. _class_@GlobalScope_Engine:
+.. _class_@GlobalScope_Engine:
 
 - :ref:`Engine<class_Engine>` **Engine**
 
 :ref:`Engine<class_Engine>` singleton
 
-  .. _class_@GlobalScope_Geometry:
+.. _class_@GlobalScope_Geometry:
 
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 :ref:`Geometry<class_Geometry>` singleton
 
-  .. _class_@GlobalScope_GodotSharp:
+.. _class_@GlobalScope_GodotSharp:
 
 - :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
 
-  .. _class_@GlobalScope_IP:
+.. _class_@GlobalScope_IP:
 
 - :ref:`IP<class_IP>` **IP**
 
 :ref:`IP<class_IP>` singleton
 
-  .. _class_@GlobalScope_Input:
+.. _class_@GlobalScope_Input:
 
 - :ref:`Input<class_Input>` **Input**
 
 :ref:`Input<class_Input>` singleton
 
-  .. _class_@GlobalScope_InputMap:
+.. _class_@GlobalScope_InputMap:
 
 - :ref:`InputMap<class_InputMap>` **InputMap**
 
 :ref:`InputMap<class_InputMap>` singleton
 
-  .. _class_@GlobalScope_JSON:
+.. _class_@GlobalScope_JSON:
 
 - :ref:`JSON<class_JSON>` **JSON**
 
 :ref:`JSON<class_JSON>` singleton
 
-  .. _class_@GlobalScope_JavaScript:
+.. _class_@GlobalScope_JavaScript:
 
 - :ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 :ref:`JavaScript<class_JavaScript>` singleton
 
-  .. _class_@GlobalScope_Marshalls:
+.. _class_@GlobalScope_Marshalls:
 
 - :ref:`Reference<class_Reference>` **Marshalls**
 
 :ref:`Marshalls<class_Marshalls>` singleton
 
-  .. _class_@GlobalScope_OS:
+.. _class_@GlobalScope_OS:
 
 - :ref:`OS<class_OS>` **OS**
 
 :ref:`OS<class_OS>` singleton
 
-  .. _class_@GlobalScope_Performance:
+.. _class_@GlobalScope_Performance:
 
 - :ref:`Performance<class_Performance>` **Performance**
 
 :ref:`Performance<class_Performance>` singleton
 
-  .. _class_@GlobalScope_Physics2DServer:
+.. _class_@GlobalScope_Physics2DServer:
 
 - :ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer**
 
 :ref:`Physics2DServer<class_Physics2DServer>` singleton
 
-  .. _class_@GlobalScope_PhysicsServer:
+.. _class_@GlobalScope_PhysicsServer:
 
 - :ref:`PhysicsServer<class_PhysicsServer>` **PhysicsServer**
 
 :ref:`PhysicsServer<class_PhysicsServer>` singleton
 
-  .. _class_@GlobalScope_ProjectSettings:
+.. _class_@GlobalScope_ProjectSettings:
 
 - :ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
 
 :ref:`ProjectSettings<class_ProjectSettings>` singleton
 
-  .. _class_@GlobalScope_ResourceLoader:
+.. _class_@GlobalScope_ResourceLoader:
 
 - :ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader**
 
 :ref:`ResourceLoader<class_ResourceLoader>` singleton
 
-  .. _class_@GlobalScope_ResourceSaver:
+.. _class_@GlobalScope_ResourceSaver:
 
 - :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
 
 :ref:`ResourceSaver<class_ResourceSaver>` singleton
 
-  .. _class_@GlobalScope_TranslationServer:
+.. _class_@GlobalScope_TranslationServer:
 
 - :ref:`TranslationServer<class_TranslationServer>` **TranslationServer**
 
 :ref:`TranslationServer<class_TranslationServer>` singleton
 
-  .. _class_@GlobalScope_VisualScriptEditor:
+.. _class_@GlobalScope_VisualScriptEditor:
 
 - :ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor**
 
 :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton
 
-  .. _class_@GlobalScope_VisualServer:
+.. _class_@GlobalScope_VisualServer:
 
 - :ref:`VisualServer<class_VisualServer>` **VisualServer**
 

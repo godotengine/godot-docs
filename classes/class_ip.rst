@@ -40,7 +40,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_IP_ResolverStatus:
+.. _enum_IP_ResolverStatus:
 
 enum **ResolverStatus**:
 
@@ -49,7 +49,7 @@ enum **ResolverStatus**:
 - **RESOLVER_STATUS_DONE** = **2** --- DNS hostname resolver status: Done.
 - **RESOLVER_STATUS_ERROR** = **3** --- DNS hostname resolver status: Error.
 
-  .. _enum_IP_Type:
+.. _enum_IP_Type:
 
 enum **Type**:
 
@@ -63,6 +63,7 @@ Constants
 
 - **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
 - **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+
 Description
 -----------
 
@@ -71,43 +72,43 @@ IP contains support functions for the Internet Protocol (IP). TCP/IP support is 
 Method Descriptions
 -------------------
 
-  .. _class_IP_clear_cache:
+.. _class_IP_clear_cache:
 
 - void **clear_cache** **(** :ref:`String<class_String>` hostname="" **)**
 
 Removes all of a "hostname"'s cached references. If no "hostname" is given then all cached IP addresses are removed.
 
-  .. _class_IP_erase_resolve_item:
+.. _class_IP_erase_resolve_item:
 
 - void **erase_resolve_item** **(** :ref:`int<class_int>` id **)**
 
 Removes a given item "id" from the queue. This should be used to free a queue after it has completed to enable more queries to happen.
 
-  .. _class_IP_get_local_addresses:
+.. _class_IP_get_local_addresses:
 
 - :ref:`Array<class_Array>` **get_local_addresses** **(** **)** const
 
 Returns all of the user's current IPv4 and IPv6 addresses as an array.
 
-  .. _class_IP_get_resolve_item_address:
+.. _class_IP_get_resolve_item_address:
 
 - :ref:`String<class_String>` **get_resolve_item_address** **(** :ref:`int<class_int>` id **)** const
 
 Returns a queued hostname's IP address, given its queue "id". Returns an empty string on error or if resolution hasn't happened yet (see :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`).
 
-  .. _class_IP_get_resolve_item_status:
+.. _class_IP_get_resolve_item_status:
 
 - :ref:`ResolverStatus<enum_IP_ResolverStatus>` **get_resolve_item_status** **(** :ref:`int<class_int>` id **)** const
 
 Returns a queued hostname's status as a RESOLVER_STATUS\_\* constant, given its queue "id".
 
-  .. _class_IP_resolve_hostname:
+.. _class_IP_resolve_hostname:
 
 - :ref:`String<class_String>` **resolve_hostname** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type method). The address type returned depends on the TYPE\_\* constant given as "ip_type".
 
-  .. _class_IP_resolve_hostname_queue_item:
+.. _class_IP_resolve_hostname_queue_item:
 
 - :ref:`int<class_int>` **resolve_hostname_queue_item** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 

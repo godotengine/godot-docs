@@ -31,7 +31,7 @@ Determines how much of an audio signal is sent to the left and right buses.
 Property Descriptions
 ---------------------
 
-  .. _class_AudioEffectPanner_pan:
+.. _class_AudioEffectPanner_pan:
 
 - :ref:`float<class_float>` **pan**
 

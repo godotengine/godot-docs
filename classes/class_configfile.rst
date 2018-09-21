@@ -61,7 +61,7 @@ The following example shows how to parse an INI-style file from the system, read
     var err = config.load("user://settings.cfg")
     if err == OK: # if not, something went wrong with the file loading
         # Look for the display/width pair, and default to 1024 if missing
-        var screen_width = get_value("display", "width", 1024)
+        var screen_width = config.get_value("display", "width", 1024)
         # Store a variable if and only if it hasn't been defined yet
         if not config.has_section_key("audio", "mute"):
             config.set_value("audio", "mute", false)
@@ -71,55 +71,55 @@ The following example shows how to parse an INI-style file from the system, read
 Method Descriptions
 -------------------
 
-  .. _class_ConfigFile_erase_section:
+.. _class_ConfigFile_erase_section:
 
 - void **erase_section** **(** :ref:`String<class_String>` section **)**
 
 Deletes the specified section along with all the key-value pairs inside.
 
-  .. _class_ConfigFile_get_section_keys:
+.. _class_ConfigFile_get_section_keys:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_section_keys** **(** :ref:`String<class_String>` section **)** const
 
 Returns an array of all defined key identifiers in the specified section.
 
-  .. _class_ConfigFile_get_sections:
+.. _class_ConfigFile_get_sections:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_sections** **(** **)** const
 
 Returns an array of all defined section identifiers.
 
-  .. _class_ConfigFile_get_value:
+.. _class_ConfigFile_get_value:
 
 - :ref:`Variant<class_Variant>` **get_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** const
 
 Returns the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional ``default`` argument, or ``null`` if it is omitted.
 
-  .. _class_ConfigFile_has_section:
+.. _class_ConfigFile_has_section:
 
 - :ref:`bool<class_bool>` **has_section** **(** :ref:`String<class_String>` section **)** const
 
 Returns ``true`` if the specified section exists.
 
-  .. _class_ConfigFile_has_section_key:
+.. _class_ConfigFile_has_section_key:
 
 - :ref:`bool<class_bool>` **has_section_key** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key **)** const
 
 Returns ``true`` if the specified section-key pair exists.
 
-  .. _class_ConfigFile_load:
+.. _class_ConfigFile_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
 
-  .. _class_ConfigFile_save:
+.. _class_ConfigFile_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
 Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@GlobalScope>`. If the load was successful, the return value is ``OK``.
 
-  .. _class_ConfigFile_set_value:
+.. _class_ConfigFile_set_value:
 
 - void **set_value** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` value **)**
 

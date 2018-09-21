@@ -49,7 +49,7 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
 Property Descriptions
 ---------------------
 
-  .. _class_SpinBox_editable:
+.. _class_SpinBox_editable:
 
 - :ref:`bool<class_bool>` **editable**
 
@@ -59,7 +59,7 @@ Property Descriptions
 | *Getter* | is_editable()       |
 +----------+---------------------+
 
-  .. _class_SpinBox_prefix:
+.. _class_SpinBox_prefix:
 
 - :ref:`String<class_String>` **prefix**
 
@@ -69,7 +69,7 @@ Property Descriptions
 | *Getter* | get_prefix()      |
 +----------+-------------------+
 
-  .. _class_SpinBox_suffix:
+.. _class_SpinBox_suffix:
 
 - :ref:`String<class_String>` **suffix**
 
@@ -82,7 +82,7 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_SpinBox_get_line_edit:
+.. _class_SpinBox_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 

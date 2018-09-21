@@ -45,31 +45,31 @@ Methods
 Signals
 -------
 
-  .. _class_NetworkedMultiplayerPeer_connection_failed:
+.. _class_NetworkedMultiplayerPeer_connection_failed:
 
 - **connection_failed** **(** **)**
 
 Emitted when a connection attempt fails.
 
-  .. _class_NetworkedMultiplayerPeer_connection_succeeded:
+.. _class_NetworkedMultiplayerPeer_connection_succeeded:
 
 - **connection_succeeded** **(** **)**
 
 Emitted when a connection attempt succeeds.
 
-  .. _class_NetworkedMultiplayerPeer_peer_connected:
+.. _class_NetworkedMultiplayerPeer_peer_connected:
 
 - **peer_connected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client connects.
 
-  .. _class_NetworkedMultiplayerPeer_peer_disconnected:
+.. _class_NetworkedMultiplayerPeer_peer_disconnected:
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client disconnects.
 
-  .. _class_NetworkedMultiplayerPeer_server_disconnected:
+.. _class_NetworkedMultiplayerPeer_server_disconnected:
 
 - **server_disconnected** **(** **)**
 
@@ -78,7 +78,7 @@ Emitted by clients when the server disconnects.
 Enumerations
 ------------
 
-  .. _enum_NetworkedMultiplayerPeer_TransferMode:
+.. _enum_NetworkedMultiplayerPeer_TransferMode:
 
 enum **TransferMode**:
 
@@ -86,7 +86,7 @@ enum **TransferMode**:
 - **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via ordered UDP packets.
 - **TRANSFER_MODE_RELIABLE** = **2** --- Packets are sent via TCP packets.
 
-  .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
+.. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
 enum **ConnectionStatus**:
 
@@ -99,6 +99,7 @@ Constants
 
 - **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+
 Description
 -----------
 
@@ -108,10 +109,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/networking/high_level_multiplayer`
+
 Property Descriptions
 ---------------------
 
-  .. _class_NetworkedMultiplayerPeer_refuse_new_connections:
+.. _class_NetworkedMultiplayerPeer_refuse_new_connections:
 
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
@@ -123,7 +125,7 @@ Property Descriptions
 
 If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
 
-  .. _class_NetworkedMultiplayerPeer_transfer_mode:
+.. _class_NetworkedMultiplayerPeer_transfer_mode:
 
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
@@ -138,31 +140,31 @@ The manner in which to send packets to the ``target_peer``. See :ref:`TransferMo
 Method Descriptions
 -------------------
 
-  .. _class_NetworkedMultiplayerPeer_get_connection_status:
+.. _class_NetworkedMultiplayerPeer_get_connection_status:
 
 - :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** const
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_@GlobalScope_ConnectionStatus>`.
 
-  .. _class_NetworkedMultiplayerPeer_get_packet_peer:
+.. _class_NetworkedMultiplayerPeer_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** const
 
 Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
 
-  .. _class_NetworkedMultiplayerPeer_get_unique_id:
+.. _class_NetworkedMultiplayerPeer_get_unique_id:
 
 - :ref:`int<class_int>` **get_unique_id** **(** **)** const
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
-  .. _class_NetworkedMultiplayerPeer_poll:
+.. _class_NetworkedMultiplayerPeer_poll:
 
 - void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
 
-  .. _class_NetworkedMultiplayerPeer_set_target_peer:
+.. _class_NetworkedMultiplayerPeer_set_target_peer:
 
 - void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 

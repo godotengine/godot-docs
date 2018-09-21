@@ -65,7 +65,7 @@ Windowdialog is the base class for all window-based dialogs. It's a by-default t
 Property Descriptions
 ---------------------
 
-  .. _class_WindowDialog_resizable:
+.. _class_WindowDialog_resizable:
 
 - :ref:`bool<class_bool>` **resizable**
 
@@ -77,7 +77,7 @@ Property Descriptions
 
 If ``true`` the user can resize the window. Default value: ``false``.
 
-  .. _class_WindowDialog_window_title:
+.. _class_WindowDialog_window_title:
 
 - :ref:`String<class_String>` **window_title**
 
@@ -92,7 +92,7 @@ The text displayed in the window's title bar.
 Method Descriptions
 -------------------
 
-  .. _class_WindowDialog_get_close_button:
+.. _class_WindowDialog_get_close_button:
 
 - :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 

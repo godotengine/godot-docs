@@ -32,7 +32,7 @@ Methods
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`atan<class_@GDScript_atan>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`atan2<class_@GDScript_atan2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                                        |
+| :ref:`float<class_float>`                                  | :ref:`atan2<class_@GDScript_atan2>` **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**                                                                                                                        |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                              | :ref:`bytes2var<class_@GDScript_bytes2var>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes **)**                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,6 +194,7 @@ Constants
 - **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
 
 The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
+
 Description
 -----------
 
@@ -202,7 +203,7 @@ List of core built-in GDScript functions. Math functions and other utilities. Ev
 Method Descriptions
 -------------------
 
-  .. _class_@GDScript_Color8:
+.. _class_@GDScript_Color8:
 
 - :ref:`Color<class_Color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
@@ -220,7 +221,7 @@ Returns a 32 bit color with red, green, blue and alpha channels. Each channel ha
 
     red = Color8(255, 0, 0)
 
-  .. _class_@GDScript_ColorN:
+.. _class_@GDScript_ColorN:
 
 - :ref:`Color<class_Color>` **ColorN** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` alpha=1.0 **)**
 
@@ -234,7 +235,7 @@ Supported color names:
 
 "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflower", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "webgray", "green", "webgreen", "greenyellow", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrod", "lightgray", "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon", "webmaroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navyblue", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "webpurple", "rebeccapurple", "red", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen".
 
-  .. _class_@GDScript_abs:
+.. _class_@GDScript_abs:
 
 - :ref:`float<class_float>` **abs** **(** :ref:`float<class_float>` s **)**
 
@@ -245,7 +246,7 @@ Returns the absolute value of parameter ``s``  (i.e. unsigned value, works for i
     # a is 1
     a = abs(-1)
 
-  .. _class_@GDScript_acos:
+.. _class_@GDScript_acos:
 
 - :ref:`float<class_float>` **acos** **(** :ref:`float<class_float>` s **)**
 
@@ -256,7 +257,7 @@ Returns the arc cosine of ``s`` in radians. Use to get the angle of cosine ``s``
     # c is 0.523599 or 30 degrees if converted with rad2deg(s)
     c = acos(0.866025)
 
-  .. _class_@GDScript_asin:
+.. _class_@GDScript_asin:
 
 - :ref:`float<class_float>` **asin** **(** :ref:`float<class_float>` s **)**
 
@@ -267,7 +268,7 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``.
     # s is 0.523599 or 30 degrees if converted with rad2deg(s)
     s = asin(0.5)
 
-  .. _class_@GDScript_assert:
+.. _class_@GDScript_assert:
 
 - void **assert** **(** :ref:`bool<class_bool>` condition **)**
 
@@ -281,7 +282,7 @@ Assert that the ``condition`` is true. If the ``condition`` is false a fatal err
     assert(speed >= 0) # Is false and program stops
     assert(speed >= 0 && speed < 20) # Or combined
 
-  .. _class_@GDScript_atan:
+.. _class_@GDScript_atan:
 
 - :ref:`float<class_float>` **atan** **(** :ref:`float<class_float>` s **)**
 
@@ -293,9 +294,9 @@ The method cannot know in which quadrant the angle should fall. See :ref:`atan2<
 
     a = atan(0.5) # a is 0.463648
 
-  .. _class_@GDScript_atan2:
+.. _class_@GDScript_atan2:
 
-- :ref:`float<class_float>` **atan2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
+- :ref:`float<class_float>` **atan2** **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**
 
 Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent ``y/x``. To compute the value, the method takes into account the sign of both arguments in order to determine the quadrant.
 
@@ -303,19 +304,19 @@ Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent `
 
     a = atan(0,-1) # a is 3.141593
 
-  .. _class_@GDScript_bytes2var:
+.. _class_@GDScript_bytes2var:
 
 - :ref:`Variant<class_Variant>` **bytes2var** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes **)**
 
 Decodes a byte array back to a value.
 
-  .. _class_@GDScript_cartesian2polar:
+.. _class_@GDScript_cartesian2polar:
 
 - :ref:`Vector2<class_Vector2>` **cartesian2polar** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
 Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
 
-  .. _class_@GDScript_ceil:
+.. _class_@GDScript_ceil:
 
 - :ref:`float<class_float>` **ceil** **(** :ref:`float<class_float>` s **)**
 
@@ -326,7 +327,7 @@ Rounds ``s`` upward, returning the smallest integral value that is not less than
     i = ceil(1.45)  # i is 2
     i = ceil(1.001) # i is 2
 
-  .. _class_@GDScript_char:
+.. _class_@GDScript_char:
 
 - :ref:`String<class_String>` **char** **(** :ref:`int<class_int>` ascii **)**
 
@@ -339,7 +340,7 @@ Returns a character as a String of the given ASCII code.
     # a is 'a'
     a = char(65+32)
 
-  .. _class_@GDScript_clamp:
+.. _class_@GDScript_clamp:
 
 - :ref:`float<class_float>` **clamp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
@@ -355,7 +356,7 @@ Clamps ``value`` and returns a value not less than ``min`` and not more than ``m
     # a is 1
     a = clamp(speed, 1, 20)
 
-  .. _class_@GDScript_convert:
+.. _class_@GDScript_convert:
 
 - :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
 
@@ -371,7 +372,7 @@ Converts from a type to another in the best way possible. The ``type`` parameter
     # (1, 0) is 6 characters
     print(a.length())
 
-  .. _class_@GDScript_cos:
+.. _class_@GDScript_cos:
 
 - :ref:`float<class_float>` **cos** **(** :ref:`float<class_float>` s **)**
 
@@ -383,7 +384,7 @@ Returns the cosine of angle ``s`` in radians.
     print(cos(PI*2))
     print(cos(PI))
 
-  .. _class_@GDScript_cosh:
+.. _class_@GDScript_cosh:
 
 - :ref:`float<class_float>` **cosh** **(** :ref:`float<class_float>` s **)**
 
@@ -394,13 +395,13 @@ Returns the hyperbolic cosine of ``s`` in radians.
     # prints 1.543081
     print(cosh(1))
 
-  .. _class_@GDScript_db2linear:
+.. _class_@GDScript_db2linear:
 
 - :ref:`float<class_float>` **db2linear** **(** :ref:`float<class_float>` db **)**
 
 Converts from decibels to linear energy (audio).
 
-  .. _class_@GDScript_decimals:
+.. _class_@GDScript_decimals:
 
 - :ref:`float<class_float>` **decimals** **(** :ref:`float<class_float>` step **)**
 
@@ -411,7 +412,7 @@ Returns the position of the first non-zero digit, after the decimal point.
     # n is 2
     n = decimals(0.035)
 
-  .. _class_@GDScript_dectime:
+.. _class_@GDScript_dectime:
 
 - :ref:`float<class_float>` **dectime** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step **)**
 
@@ -422,7 +423,7 @@ Returns the result of ``value`` decreased by ``step`` \* ``amount``.
     # a = 59
     a = dectime(60, 10, 0.1))
 
-  .. _class_@GDScript_deg2rad:
+.. _class_@GDScript_deg2rad:
 
 - :ref:`float<class_float>` **deg2rad** **(** :ref:`float<class_float>` deg **)**
 
@@ -433,19 +434,19 @@ Returns degrees converted to radians.
     # r is 3.141593
     r = deg2rad(180)
 
-  .. _class_@GDScript_dict2inst:
+.. _class_@GDScript_dict2inst:
 
 - :ref:`Object<class_Object>` **dict2inst** **(** :ref:`Dictionary<class_Dictionary>` dict **)**
 
 Converts a previously converted instance to a dictionary, back into an instance. Useful for deserializing.
 
-  .. _class_@GDScript_ease:
+.. _class_@GDScript_ease:
 
 - :ref:`float<class_float>` **ease** **(** :ref:`float<class_float>` s, :ref:`float<class_float>` curve **)**
 
 Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
 
-  .. _class_@GDScript_exp:
+.. _class_@GDScript_exp:
 
 - :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` s **)**
 
@@ -457,7 +458,7 @@ The natural exponential function. It raises the mathematical constant **e** to t
 
     a = exp(2) # approximately 7.39
 
-  .. _class_@GDScript_floor:
+.. _class_@GDScript_floor:
 
 - :ref:`float<class_float>` **floor** **(** :ref:`float<class_float>` s **)**
 
@@ -470,7 +471,7 @@ Rounds ``s`` to the closest smaller integer and returns it.
     # a is -3
     a = floor(-2.99)
 
-  .. _class_@GDScript_fmod:
+.. _class_@GDScript_fmod:
 
 - :ref:`float<class_float>` **fmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
@@ -481,7 +482,7 @@ Returns the floating-point remainder of ``x/y``.
     # remainder is 1.5
     var remainder = fmod(7, 5.5)
 
-  .. _class_@GDScript_fposmod:
+.. _class_@GDScript_fposmod:
 
 - :ref:`float<class_float>` **fposmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
@@ -509,7 +510,7 @@ Produces:
     -2 8
     -1 9
 
-  .. _class_@GDScript_funcref:
+.. _class_@GDScript_funcref:
 
 - :ref:`FuncRef<class_FuncRef>` **funcref** **(** :ref:`Object<class_Object>` instance, :ref:`String<class_String>` funcname **)**
 
@@ -523,11 +524,11 @@ Returns a reference to the specified function ``funcname`` in the ``instance`` n
     a = funcref(self, "foo")
     print(a.call_func()) # prints bar
 
-  .. _class_@GDScript_get_stack:
+.. _class_@GDScript_get_stack:
 
 - :ref:`Array<class_Array>` **get_stack** **(** **)**
 
-  .. _class_@GDScript_hash:
+.. _class_@GDScript_hash:
 
 - :ref:`int<class_int>` **hash** **(** :ref:`Variant<class_Variant>` var **)**
 
@@ -537,7 +538,7 @@ Returns the integer hash of the variable passed.
 
     print(hash("a")) # prints 177670
 
-  .. _class_@GDScript_inst2dict:
+.. _class_@GDScript_inst2dict:
 
 - :ref:`Dictionary<class_Dictionary>` **inst2dict** **(** :ref:`Object<class_Object>` inst **)**
 
@@ -558,7 +559,7 @@ Prints out:
     [@subpath, @path, foo]
     [, res://test.gd, bar]
 
-  .. _class_@GDScript_instance_from_id:
+.. _class_@GDScript_instance_from_id:
 
 - :ref:`Object<class_Object>` **instance_from_id** **(** :ref:`int<class_int>` instance_id **)**
 
@@ -572,7 +573,7 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
         var inst = instance_from_id(id)
         print(inst.foo) # prints bar
 
-  .. _class_@GDScript_inverse_lerp:
+.. _class_@GDScript_inverse_lerp:
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
@@ -582,23 +583,23 @@ Returns a normalized value considering the given range.
 
     inverse_lerp(3, 5, 4) # returns 0.5
 
-  .. _class_@GDScript_is_inf:
+.. _class_@GDScript_is_inf:
 
 - :ref:`bool<class_bool>` **is_inf** **(** :ref:`float<class_float>` s **)**
 
 Returns True/False whether ``s`` is an infinity value (either positive infinity or negative infinity).
 
-  .. _class_@GDScript_is_instance_valid:
+.. _class_@GDScript_is_instance_valid:
 
 - :ref:`bool<class_bool>` **is_instance_valid** **(** :ref:`Object<class_Object>` instance **)**
 
-  .. _class_@GDScript_is_nan:
+.. _class_@GDScript_is_nan:
 
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` s **)**
 
 Returns True/False whether ``s`` is a NaN (Not-A-Number) value.
 
-  .. _class_@GDScript_len:
+.. _class_@GDScript_len:
 
 - :ref:`int<class_int>` **len** **(** :ref:`Variant<class_Variant>` var **)**
 
@@ -611,7 +612,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
     a = [1, 2, 3, 4]
     len(a) # returns 4
 
-  .. _class_@GDScript_lerp:
+.. _class_@GDScript_lerp:
 
 - :ref:`float<class_float>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
@@ -621,13 +622,13 @@ Linearly interpolates between two values by a normalized value.
 
     lerp(1, 3, 0.5) # returns 2
 
-  .. _class_@GDScript_linear2db:
+.. _class_@GDScript_linear2db:
 
 - :ref:`float<class_float>` **linear2db** **(** :ref:`float<class_float>` nrg **)**
 
 Converts from linear energy to decibels (audio).
 
-  .. _class_@GDScript_load:
+.. _class_@GDScript_load:
 
 - :ref:`Resource<class_Resource>` **load** **(** :ref:`String<class_String>` path **)**
 
@@ -640,7 +641,7 @@ Loads a resource from the filesystem located at ``path``.
     # load a scene called main located in the root of the project directory
     var main = load("res://main.tscn")
 
-  .. _class_@GDScript_log:
+.. _class_@GDScript_log:
 
 - :ref:`float<class_float>` **log** **(** :ref:`float<class_float>` s **)**
 
@@ -652,7 +653,7 @@ Natural logarithm. The amount of time needed to reach a certain level of continu
 
     log(10) # returns 2.302585
 
-  .. _class_@GDScript_max:
+.. _class_@GDScript_max:
 
 - :ref:`float<class_float>` **max** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
@@ -663,7 +664,7 @@ Returns the maximum of two values.
     max(1,2) # returns 2
     max(-3.99, -4) # returns -3.99
 
-  .. _class_@GDScript_min:
+.. _class_@GDScript_min:
 
 - :ref:`float<class_float>` **min** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
@@ -674,7 +675,7 @@ Returns the minimum of two values.
     min(1,2) # returns 1
     min(-3.99, -4) # returns -4
 
-  .. _class_@GDScript_nearest_po2:
+.. _class_@GDScript_nearest_po2:
 
 - :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
@@ -686,7 +687,7 @@ Returns the nearest larger power of 2 for integer ``value``.
     nearest_po2(4) # returns 4
     nearest_po2(5) # returns 8
 
-  .. _class_@GDScript_parse_json:
+.. _class_@GDScript_parse_json:
 
 - :ref:`Variant<class_Variant>` **parse_json** **(** :ref:`String<class_String>` json **)**
 
@@ -704,13 +705,13 @@ Note that JSON objects do not preserve key order like Godot dictionaries, thus y
     else:
         print("unexpected results")
 
-  .. _class_@GDScript_polar2cartesian:
+.. _class_@GDScript_polar2cartesian:
 
 - :ref:`Vector2<class_Vector2>` **polar2cartesian** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` th **)**
 
 Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
 
-  .. _class_@GDScript_pow:
+.. _class_@GDScript_pow:
 
 - :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
@@ -720,7 +721,7 @@ Returns the result of ``x`` raised to the power of ``y``.
 
     pow(2,5) # returns 32
 
-  .. _class_@GDScript_preload:
+.. _class_@GDScript_preload:
 
 - :ref:`Resource<class_Resource>` **preload** **(** :ref:`String<class_String>` path **)**
 
@@ -733,7 +734,7 @@ Returns a resource from the filesystem that is loaded during script parsing.
     # load a scene called main located in the root of the project directory
     var main = preload("res://main.tscn")
 
-  .. _class_@GDScript_print:
+.. _class_@GDScript_print:
 
 - void **print** **(** **)** vararg
 
@@ -744,11 +745,11 @@ Converts one or more arguments to strings in the best way possible and prints th
     a = [1,2,3]
     print("a","b",a) # prints ab[1, 2, 3]
 
-  .. _class_@GDScript_print_debug:
+.. _class_@GDScript_print_debug:
 
 - void **print_debug** **(** **)** vararg
 
-  .. _class_@GDScript_print_stack:
+.. _class_@GDScript_print_stack:
 
 - void **print_stack** **(** **)**
 
@@ -760,7 +761,7 @@ Output in the console would look something like this:
 
     Frame 0 - res://test.gd:16 in function '_process'
 
-  .. _class_@GDScript_printerr:
+.. _class_@GDScript_printerr:
 
 - void **printerr** **(** **)** vararg
 
@@ -770,7 +771,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
     printerr("prints to stderr")
 
-  .. _class_@GDScript_printraw:
+.. _class_@GDScript_printraw:
 
 - void **printraw** **(** **)** vararg
 
@@ -782,7 +783,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
     printraw("B")
     # prints AB
 
-  .. _class_@GDScript_prints:
+.. _class_@GDScript_prints:
 
 - void **prints** **(** **)** vararg
 
@@ -792,7 +793,7 @@ Prints one or more arguments to the console with a space between each argument.
 
     prints("A", "B", "C") # prints A B C
 
-  .. _class_@GDScript_printt:
+.. _class_@GDScript_printt:
 
 - void **printt** **(** **)** vararg
 
@@ -802,7 +803,7 @@ Prints one or more arguments to the console with a tab between each argument.
 
     printt("A", "B", "C") # prints A       B       C
 
-  .. _class_@GDScript_rad2deg:
+.. _class_@GDScript_rad2deg:
 
 - :ref:`float<class_float>` **rad2deg** **(** :ref:`float<class_float>` rad **)**
 
@@ -812,7 +813,7 @@ Converts from radians to degrees.
 
     rad2deg(0.523599) # returns 30
 
-  .. _class_@GDScript_rand_range:
+.. _class_@GDScript_rand_range:
 
 - :ref:`float<class_float>` **rand_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
@@ -822,13 +823,13 @@ Random range, any floating point value between ``from`` and ``to``.
 
     prints(rand_range(0, 1), rand_range(0, 1)) # prints 0.135591 0.405263
 
-  .. _class_@GDScript_rand_seed:
+.. _class_@GDScript_rand_seed:
 
 - :ref:`Array<class_Array>` **rand_seed** **(** :ref:`int<class_int>` seed **)**
 
 Random from seed: pass a ``seed``, and an array with both number and new seed is returned. "Seed" here refers to the internal state of the pseudo random number generator. The internal state of the current implementation is 64 bits.
 
-  .. _class_@GDScript_randf:
+.. _class_@GDScript_randf:
 
 - :ref:`float<class_float>` **randf** **(** **)**
 
@@ -838,7 +839,7 @@ Returns a random floating point value between 0 and 1.
 
     randf() # returns 0.375671
 
-  .. _class_@GDScript_randi:
+.. _class_@GDScript_randi:
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
@@ -850,7 +851,7 @@ Returns a random 32 bit integer. Use remainder to obtain a random value between 
     randi() % 100     # returns random number between 0 and 99
     randi() % 100 + 1 # returns random number between 1 and 100
 
-  .. _class_@GDScript_randomize:
+.. _class_@GDScript_randomize:
 
 - void **randomize** **(** **)**
 
@@ -861,7 +862,7 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
     func _ready():
         randomize()
 
-  .. _class_@GDScript_range:
+.. _class_@GDScript_range:
 
 - :ref:`Array<class_Array>` **range** **(** **)** vararg
 
@@ -893,7 +894,7 @@ Output:
     2
     4
 
-  .. _class_@GDScript_range_lerp:
+.. _class_@GDScript_range_lerp:
 
 - :ref:`float<class_float>` **range_lerp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**
 
@@ -903,7 +904,7 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``.
 
     range_lerp(75, 0, 100, -1, 1) # returns 0.5
 
-  .. _class_@GDScript_round:
+.. _class_@GDScript_round:
 
 - :ref:`float<class_float>` **round** **(** :ref:`float<class_float>` s **)**
 
@@ -913,7 +914,7 @@ Returns the integral value that is nearest to ``s``, with halfway cases rounded 
 
     round(2.6) # returns 3
 
-  .. _class_@GDScript_seed:
+.. _class_@GDScript_seed:
 
 - void **seed** **(** :ref:`int<class_int>` seed **)**
 
@@ -924,7 +925,7 @@ Sets seed for the random number generator.
     my_seed = "Godot Rocks"
     seed(my_seed.hash())
 
-  .. _class_@GDScript_sign:
+.. _class_@GDScript_sign:
 
 - :ref:`float<class_float>` **sign** **(** :ref:`float<class_float>` s **)**
 
@@ -936,7 +937,7 @@ Returns the sign of ``s``: -1 or 1. Returns 0 if ``s`` is 0.
     sign(0)  # returns 0
     sign(6)  # returns 1
 
-  .. _class_@GDScript_sin:
+.. _class_@GDScript_sin:
 
 - :ref:`float<class_float>` **sin** **(** :ref:`float<class_float>` s **)**
 
@@ -946,7 +947,7 @@ Returns the sine of angle ``s`` in radians.
 
     sin(0.523599) # returns 0.5
 
-  .. _class_@GDScript_sinh:
+.. _class_@GDScript_sinh:
 
 - :ref:`float<class_float>` **sinh** **(** :ref:`float<class_float>` s **)**
 
@@ -957,7 +958,7 @@ Returns the hyperbolic sine of ``s``.
     a = log(2.0) # returns 0.693147
     sinh(a) # returns 0.75
 
-  .. _class_@GDScript_sqrt:
+.. _class_@GDScript_sqrt:
 
 - :ref:`float<class_float>` **sqrt** **(** :ref:`float<class_float>` s **)**
 
@@ -967,13 +968,13 @@ Returns the square root of ``s``.
 
     sqrt(9) # returns 3
 
-  .. _class_@GDScript_stepify:
+.. _class_@GDScript_stepify:
 
 - :ref:`float<class_float>` **stepify** **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step **)**
 
 Snaps float value ``s`` to a given ``step``.
 
-  .. _class_@GDScript_str:
+.. _class_@GDScript_str:
 
 - :ref:`String<class_String>` **str** **(** **)** vararg
 
@@ -986,7 +987,7 @@ Converts one or more arguments to string in the best way possible.
     len(a) # returns 3
     len(b) # returns 12
 
-  .. _class_@GDScript_str2var:
+.. _class_@GDScript_str2var:
 
 - :ref:`Variant<class_Variant>` **str2var** **(** :ref:`String<class_String>` string **)**
 
@@ -998,7 +999,7 @@ Converts a formatted string that was returned by :ref:`var2str<class_@GDScript_v
     b = str2var(a)
     print(b['a']) # prints 1
 
-  .. _class_@GDScript_tan:
+.. _class_@GDScript_tan:
 
 - :ref:`float<class_float>` **tan** **(** :ref:`float<class_float>` s **)**
 
@@ -1008,7 +1009,7 @@ Returns the tangent of angle ``s`` in radians.
 
     tan( deg2rad(45) ) # returns 1
 
-  .. _class_@GDScript_tanh:
+.. _class_@GDScript_tanh:
 
 - :ref:`float<class_float>` **tanh** **(** :ref:`float<class_float>` s **)**
 
@@ -1019,7 +1020,7 @@ Returns the hyperbolic tangent of ``s``.
     a = log(2.0) # returns 0.693147
     tanh(a)      # returns 0.6
 
-  .. _class_@GDScript_to_json:
+.. _class_@GDScript_to_json:
 
 - :ref:`String<class_String>` **to_json** **(** :ref:`Variant<class_Variant>` var **)**
 
@@ -1031,7 +1032,7 @@ Converts a Variant ``var`` to JSON text and return the result. Useful for serial
     b = to_json(a)
     print(b) # {"a":1, "b":2}
 
-  .. _class_@GDScript_type_exists:
+.. _class_@GDScript_type_exists:
 
 - :ref:`bool<class_bool>` **type_exists** **(** :ref:`String<class_String>` type **)**
 
@@ -1042,7 +1043,7 @@ Returns whether the given class exists in :ref:`ClassDB<class_ClassDB>`.
     type_exists("Sprite") # returns true
     type_exists("Variant") # returns false
 
-  .. _class_@GDScript_typeof:
+.. _class_@GDScript_typeof:
 
 - :ref:`int<class_int>` **typeof** **(** :ref:`Variant<class_Variant>` what **)**
 
@@ -1056,7 +1057,7 @@ Returns the internal type of the given Variant object, using the TYPE\_\* enum i
     else:
         print("unexpected results")
 
-  .. _class_@GDScript_validate_json:
+.. _class_@GDScript_validate_json:
 
 - :ref:`String<class_String>` **validate_json** **(** :ref:`String<class_String>` json **)**
 
@@ -1071,13 +1072,13 @@ Checks that ``json`` is valid JSON data. Returns empty string if valid. Returns 
     else:
         prints("invalid", v)
 
-  .. _class_@GDScript_var2bytes:
+.. _class_@GDScript_var2bytes:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **var2bytes** **(** :ref:`Variant<class_Variant>` var **)**
 
 Encodes a variable value to a byte array.
 
-  .. _class_@GDScript_var2str:
+.. _class_@GDScript_var2str:
 
 - :ref:`String<class_String>` **var2str** **(** :ref:`Variant<class_Variant>` var **)**
 
@@ -1097,7 +1098,7 @@ prints
     "b": 2
     }
 
-  .. _class_@GDScript_weakref:
+.. _class_@GDScript_weakref:
 
 - :ref:`WeakRef<class_WeakRef>` **weakref** **(** :ref:`Object<class_Object>` obj **)**
 
@@ -1105,7 +1106,7 @@ Returns a weak reference to an object.
 
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 
-  .. _class_@GDScript_wrapf:
+.. _class_@GDScript_wrapf:
 
 - :ref:`float<class_float>` **wrapf** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
@@ -1128,7 +1129,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
     # infinite loop between 0.0 and 0.99
     f = wrapf(f + 0.1, 0.0, 1.0)
 
-  .. _class_@GDScript_wrapi:
+.. _class_@GDScript_wrapi:
 
 - :ref:`int<class_int>` **wrapi** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**
 
@@ -1151,7 +1152,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
     # infinite loop between 0 and 9
     frame = wrapi(frame + 1, 0, 10)
 
-  .. _class_@GDScript_yield:
+.. _class_@GDScript_yield:
 
 - :ref:`GDScriptFunctionState<class_GDScriptFunctionState>` **yield** **(** :ref:`Object<class_Object>` object=null, :ref:`String<class_String>` signal="" **)**
 

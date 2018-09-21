@@ -51,7 +51,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_TextureLayered_Flags:
+.. _enum_TextureLayered_Flags:
 
 enum **Flags**:
 
@@ -63,11 +63,11 @@ enum **Flags**:
 Property Descriptions
 ---------------------
 
-  .. _class_TextureLayered_data:
+.. _class_TextureLayered_data:
 
 - :ref:`Dictionary<class_Dictionary>` **data**
 
-  .. _class_TextureLayered_flags:
+.. _class_TextureLayered_flags:
 
 - :ref:`int<class_int>` **flags**
 
@@ -80,35 +80,35 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_TextureLayered_create:
+.. _class_TextureLayered_create:
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
 
-  .. _class_TextureLayered_get_depth:
+.. _class_TextureLayered_get_depth:
 
 - :ref:`int<class_int>` **get_depth** **(** **)** const
 
-  .. _class_TextureLayered_get_format:
+.. _class_TextureLayered_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-  .. _class_TextureLayered_get_height:
+.. _class_TextureLayered_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
-  .. _class_TextureLayered_get_layer_data:
+.. _class_TextureLayered_get_layer_data:
 
 - :ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** const
 
-  .. _class_TextureLayered_get_width:
+.. _class_TextureLayered_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
-  .. _class_TextureLayered_set_data_partial:
+.. _class_TextureLayered_set_data_partial:
 
 - void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
 
-  .. _class_TextureLayered_set_layer_data:
+.. _class_TextureLayered_set_layer_data:
 
 - void **set_layer_data** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
 

@@ -60,7 +60,7 @@ This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBod
 Property Descriptions
 ---------------------
 
-  .. _class_VehicleWheel_damping_compression:
+.. _class_VehicleWheel_damping_compression:
 
 - :ref:`float<class_float>` **damping_compression**
 
@@ -72,7 +72,7 @@ Property Descriptions
 
 The damping applied to the spring when the spring is being compressed. This value should be between 0.0 (no damping) and 1.0. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
 
-  .. _class_VehicleWheel_damping_relaxation:
+.. _class_VehicleWheel_damping_relaxation:
 
 - :ref:`float<class_float>` **damping_relaxation**
 
@@ -84,7 +84,7 @@ The damping applied to the spring when the spring is being compressed. This valu
 
 The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel_damping_compression>` value of 0.3, try a relaxation value of 0.5
 
-  .. _class_VehicleWheel_suspension_max_force:
+.. _class_VehicleWheel_suspension_max_force:
 
 - :ref:`float<class_float>` **suspension_max_force**
 
@@ -96,7 +96,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 
 The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody.mass<class_RigidBody_mass>` of the :ref:`VehicleBody<class_VehicleBody>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3x to 4x this number.
 
-  .. _class_VehicleWheel_suspension_stiffness:
+.. _class_VehicleWheel_suspension_stiffness:
 
 - :ref:`float<class_float>` **suspension_stiffness**
 
@@ -108,7 +108,7 @@ The maximum force the spring can resist. This value should be higher than a quar
 
 This value defines the stiffness of the suspension. Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
 
-  .. _class_VehicleWheel_suspension_travel:
+.. _class_VehicleWheel_suspension_travel:
 
 - :ref:`float<class_float>` **suspension_travel**
 
@@ -120,7 +120,7 @@ This value defines the stiffness of the suspension. Use a value lower than 50 fo
 
 This is the distance the suspension can travel. As Godot measures are in meters keep this setting relatively low. Try a value between 0.1 and 0.3 depending on the type of car .
 
-  .. _class_VehicleWheel_use_as_steering:
+.. _class_VehicleWheel_use_as_steering:
 
 - :ref:`bool<class_bool>` **use_as_steering**
 
@@ -132,7 +132,7 @@ This is the distance the suspension can travel. As Godot measures are in meters 
 
 If true this wheel will be turned when the car steers.
 
-  .. _class_VehicleWheel_use_as_traction:
+.. _class_VehicleWheel_use_as_traction:
 
 - :ref:`bool<class_bool>` **use_as_traction**
 
@@ -144,7 +144,7 @@ If true this wheel will be turned when the car steers.
 
 If true this wheel transfers engine force to the ground to propel the vehicle forward.
 
-  .. _class_VehicleWheel_wheel_friction_slip:
+.. _class_VehicleWheel_wheel_friction_slip:
 
 - :ref:`float<class_float>` **wheel_friction_slip**
 
@@ -158,7 +158,7 @@ This determines how much grip this wheel has. It is combined with the friction s
 
 It's best to set this to 1.0 when starting out.
 
-  .. _class_VehicleWheel_wheel_radius:
+.. _class_VehicleWheel_wheel_radius:
 
 - :ref:`float<class_float>` **wheel_radius**
 
@@ -170,7 +170,7 @@ It's best to set this to 1.0 when starting out.
 
 The radius of the wheel in meters.
 
-  .. _class_VehicleWheel_wheel_rest_length:
+.. _class_VehicleWheel_wheel_rest_length:
 
 - :ref:`float<class_float>` **wheel_rest_length**
 
@@ -182,7 +182,7 @@ The radius of the wheel in meters.
 
 This is the distance in meters the wheel is lowered from its origin point. Don't set this to 0.0 and move the wheel into position, instead move the origin point of your wheel (the gizmo in Godot) to the position the wheel will take when bottoming out, then use the rest length to move the wheel down to the position it should be in when the car is in rest.
 
-  .. _class_VehicleWheel_wheel_roll_influence:
+.. _class_VehicleWheel_wheel_roll_influence:
 
 - :ref:`float<class_float>` **wheel_roll_influence**
 
@@ -197,13 +197,13 @@ This value effects the roll of your vehicle. If set to 0.0 for all wheels your v
 Method Descriptions
 -------------------
 
-  .. _class_VehicleWheel_get_skidinfo:
+.. _class_VehicleWheel_get_skidinfo:
 
 - :ref:`float<class_float>` **get_skidinfo** **(** **)** const
 
 Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is not skidding, 1.0 means the wheel has lost grip.
 
-  .. _class_VehicleWheel_is_in_contact:
+.. _class_VehicleWheel_is_in_contact:
 
 - :ref:`bool<class_bool>` **is_in_contact** **(** **)** const
 

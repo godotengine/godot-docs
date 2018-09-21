@@ -31,7 +31,7 @@ CenterContainer Keeps children controls centered. This container keeps all child
 Property Descriptions
 ---------------------
 
-  .. _class_CenterContainer_use_top_left:
+.. _class_CenterContainer_use_top_left:
 
 - :ref:`bool<class_bool>` **use_top_left**
 

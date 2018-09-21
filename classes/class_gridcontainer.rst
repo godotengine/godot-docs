@@ -47,7 +47,7 @@ Grid container will arrange its children in a grid like structure, the grid colu
 Property Descriptions
 ---------------------
 
-  .. _class_GridContainer_columns:
+.. _class_GridContainer_columns:
 
 - :ref:`int<class_int>` **columns**
 
@@ -62,7 +62,7 @@ The number of columns in the ``GridContainer``. If modified, ``GridContainer`` r
 Method Descriptions
 -------------------
 
-  .. _class_GridContainer_get_child_control_at_cell:
+.. _class_GridContainer_get_child_control_at_cell:
 
 - :ref:`Control<class_Control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
 

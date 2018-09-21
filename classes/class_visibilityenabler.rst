@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisibilityEnabler_Enabler:
+.. _enum_VisibilityEnabler_Enabler:
 
 enum **Enabler**:
 
@@ -44,7 +44,7 @@ The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`A
 Property Descriptions
 ---------------------
 
-  .. _class_VisibilityEnabler_freeze_bodies:
+.. _class_VisibilityEnabler_freeze_bodies:
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-  .. _class_VisibilityEnabler_pause_animations:
+.. _class_VisibilityEnabler_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 

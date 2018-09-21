@@ -33,7 +33,7 @@ To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Vi
 Property Descriptions
 ---------------------
 
-  .. _class_ViewportTexture_viewport_path:
+.. _class_ViewportTexture_viewport_path:
 
 - :ref:`NodePath<class_NodePath>` **viewport_path**
 

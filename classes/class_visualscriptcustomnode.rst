@@ -52,7 +52,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_VisualScriptCustomNode_StartMode:
+.. _enum_VisualScriptCustomNode_StartMode:
 
 enum **StartMode**:
 
@@ -72,6 +72,7 @@ This is used by :ref:`VisualScriptCondition<class_VisualScriptCondition>` to red
 - **STEP_YIELD_BIT** = **268435456** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that the function should be yielded.
 
 Using this requires you to have at least one working memory slot, which is used for the :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`.
+
 Description
 -----------
 
@@ -80,85 +81,85 @@ A custom Visual Script node which can be scripted in powerful ways.
 Method Descriptions
 -------------------
 
-  .. _class_VisualScriptCustomNode__get_caption:
+.. _class_VisualScriptCustomNode__get_caption:
 
 - :ref:`String<class_String>` **_get_caption** **(** **)** virtual
 
 Return the node's title.
 
-  .. _class_VisualScriptCustomNode__get_category:
+.. _class_VisualScriptCustomNode__get_category:
 
 - :ref:`String<class_String>` **_get_category** **(** **)** virtual
 
 Return the node's category.
 
-  .. _class_VisualScriptCustomNode__get_input_value_port_count:
+.. _class_VisualScriptCustomNode__get_input_value_port_count:
 
 - :ref:`int<class_int>` **_get_input_value_port_count** **(** **)** virtual
 
 Return the count of input value ports.
 
-  .. _class_VisualScriptCustomNode__get_input_value_port_name:
+.. _class_VisualScriptCustomNode__get_input_value_port_name:
 
 - :ref:`String<class_String>` **_get_input_value_port_name** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified input port's name.
 
-  .. _class_VisualScriptCustomNode__get_input_value_port_type:
+.. _class_VisualScriptCustomNode__get_input_value_port_type:
 
 - :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified input port's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_VisualScriptCustomNode__get_output_sequence_port_count:
+.. _class_VisualScriptCustomNode__get_output_sequence_port_count:
 
 - :ref:`int<class_int>` **_get_output_sequence_port_count** **(** **)** virtual
 
 Return the amount of output **sequence** ports.
 
-  .. _class_VisualScriptCustomNode__get_output_sequence_port_text:
+.. _class_VisualScriptCustomNode__get_output_sequence_port_text:
 
 - :ref:`String<class_String>` **_get_output_sequence_port_text** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified **sequence** output's name.
 
-  .. _class_VisualScriptCustomNode__get_output_value_port_count:
+.. _class_VisualScriptCustomNode__get_output_value_port_count:
 
 - :ref:`int<class_int>` **_get_output_value_port_count** **(** **)** virtual
 
 Return the amount of output value ports.
 
-  .. _class_VisualScriptCustomNode__get_output_value_port_name:
+.. _class_VisualScriptCustomNode__get_output_value_port_name:
 
 - :ref:`String<class_String>` **_get_output_value_port_name** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified output's name.
 
-  .. _class_VisualScriptCustomNode__get_output_value_port_type:
+.. _class_VisualScriptCustomNode__get_output_value_port_type:
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
 Return the specified output's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_VisualScriptCustomNode__get_text:
+.. _class_VisualScriptCustomNode__get_text:
 
 - :ref:`String<class_String>` **_get_text** **(** **)** virtual
 
 Return the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
 
-  .. _class_VisualScriptCustomNode__get_working_memory_size:
+.. _class_VisualScriptCustomNode__get_working_memory_size:
 
 - :ref:`int<class_int>` **_get_working_memory_size** **(** **)** virtual
 
 Return the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode__step>` for more details.
 
-  .. _class_VisualScriptCustomNode__has_input_sequence_port:
+.. _class_VisualScriptCustomNode__has_input_sequence_port:
 
 - :ref:`bool<class_bool>` **_has_input_sequence_port** **(** **)** virtual
 
 Return whether the custom node has an input **sequence** port.
 
-  .. _class_VisualScriptCustomNode__step:
+.. _class_VisualScriptCustomNode__step:
 
 - :ref:`Variant<class_Variant>` **_step** **(** :ref:`Array<class_Array>` inputs, :ref:`Array<class_Array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_Array>` working_mem **)** virtual
 

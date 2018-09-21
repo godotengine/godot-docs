@@ -69,7 +69,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_ArrayMesh_ArrayFormat:
+.. _enum_ArrayMesh_ArrayFormat:
 
 enum **ArrayFormat**:
 
@@ -83,7 +83,7 @@ enum **ArrayFormat**:
 - **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
 - **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
 
-  .. _enum_ArrayMesh_ArrayType:
+.. _enum_ArrayMesh_ArrayType:
 
 enum **ArrayType**:
 
@@ -105,10 +105,11 @@ Constants
 
 - **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
+
 Property Descriptions
 ---------------------
 
-  .. _class_ArrayMesh_blend_shape_mode:
+.. _class_ArrayMesh_blend_shape_mode:
 
 - :ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` **blend_shape_mode**
 
@@ -118,7 +119,7 @@ Property Descriptions
 | *Getter* | get_blend_shape_mode()      |
 +----------+-----------------------------+
 
-  .. _class_ArrayMesh_custom_aabb:
+.. _class_ArrayMesh_custom_aabb:
 
 - :ref:`AABB<class_AABB>` **custom_aabb**
 
@@ -133,11 +134,11 @@ An overriding bounding box for this mesh.
 Method Descriptions
 -------------------
 
-  .. _class_ArrayMesh_add_blend_shape:
+.. _class_ArrayMesh_add_blend_shape:
 
 - void **add_blend_shape** **(** :ref:`String<class_String>` name **)**
 
-  .. _class_ArrayMesh_add_surface_from_arrays:
+.. _class_ArrayMesh_add_surface_from_arrays:
 
 - void **add_surface_from_arrays** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[  ], :ref:`int<class_int>` compress_flags=97280 **)**
 
@@ -151,97 +152,97 @@ Adding an index array puts this function into "index mode" where the vertex and 
 
 Godot uses clockwise winding order for front faces of triangle primitive modes.
 
-  .. _class_ArrayMesh_center_geometry:
+.. _class_ArrayMesh_center_geometry:
 
 - void **center_geometry** **(** **)**
 
 Centers the geometry.
 
-  .. _class_ArrayMesh_clear_blend_shapes:
+.. _class_ArrayMesh_clear_blend_shapes:
 
 - void **clear_blend_shapes** **(** **)**
 
 Remove all blend shapes from this ``ArrayMesh``.
 
-  .. _class_ArrayMesh_get_blend_shape_count:
+.. _class_ArrayMesh_get_blend_shape_count:
 
 - :ref:`int<class_int>` **get_blend_shape_count** **(** **)** const
 
 Returns the number of blend shapes that the ``ArrayMesh`` holds.
 
-  .. _class_ArrayMesh_get_blend_shape_name:
+.. _class_ArrayMesh_get_blend_shape_name:
 
 - :ref:`String<class_String>` **get_blend_shape_name** **(** :ref:`int<class_int>` index **)** const
 
 Returns the name of the blend shape at this index.
 
-  .. _class_ArrayMesh_lightmap_unwrap:
+.. _class_ArrayMesh_lightmap_unwrap:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **lightmap_unwrap** **(** :ref:`Transform<class_Transform>` transform, :ref:`float<class_float>` texel_size **)**
 
 Will perform a UV unwrap on the ``ArrayMesh`` to prepare the mesh for lightmapping.
 
-  .. _class_ArrayMesh_regen_normalmaps:
+.. _class_ArrayMesh_regen_normalmaps:
 
 - void **regen_normalmaps** **(** **)**
 
 Will regenerate normal maps for the ``ArrayMesh``.
 
-  .. _class_ArrayMesh_surface_find_by_name:
+.. _class_ArrayMesh_surface_find_by_name:
 
 - :ref:`int<class_int>` **surface_find_by_name** **(** :ref:`String<class_String>` name **)** const
 
 Return the index of the first surface with this name held within this ``ArrayMesh``. If none are found -1 is returned.
 
-  .. _class_ArrayMesh_surface_get_array_index_len:
+.. _class_ArrayMesh_surface_get_array_index_len:
 
 - :ref:`int<class_int>` **surface_get_array_index_len** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Return the length in indices of the index array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_add_surface_from_arrays>`).
 
-  .. _class_ArrayMesh_surface_get_array_len:
+.. _class_ArrayMesh_surface_get_array_len:
 
 - :ref:`int<class_int>` **surface_get_array_len** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Return the length in vertices of the vertex array in the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_add_surface_from_arrays>`).
 
-  .. _class_ArrayMesh_surface_get_format:
+.. _class_ArrayMesh_surface_get_format:
 
 - :ref:`int<class_int>` **surface_get_format** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Return the format mask of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_add_surface_from_arrays>`).
 
-  .. _class_ArrayMesh_surface_get_name:
+.. _class_ArrayMesh_surface_get_name:
 
 - :ref:`String<class_String>` **surface_get_name** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Get the name assigned to this surface.
 
-  .. _class_ArrayMesh_surface_get_primitive_type:
+.. _class_ArrayMesh_surface_get_primitive_type:
 
 - :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **surface_get_primitive_type** **(** :ref:`int<class_int>` surf_idx **)** const
 
 Return the primitive type of the requested surface (see :ref:`add_surface_from_arrays<class_ArrayMesh_add_surface_from_arrays>`).
 
-  .. _class_ArrayMesh_surface_remove:
+.. _class_ArrayMesh_surface_remove:
 
 - void **surface_remove** **(** :ref:`int<class_int>` surf_idx **)**
 
 Remove a surface at position surf_idx, shifting greater surfaces one surf_idx slot down.
 
-  .. _class_ArrayMesh_surface_set_material:
+.. _class_ArrayMesh_surface_set_material:
 
 - void **surface_set_material** **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**
 
 Set a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
 
-  .. _class_ArrayMesh_surface_set_name:
+.. _class_ArrayMesh_surface_set_name:
 
 - void **surface_set_name** **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_String>` name **)**
 
 Set a name for a given surface.
 
-  .. _class_ArrayMesh_surface_update_region:
+.. _class_ArrayMesh_surface_update_region:
 
 - void **surface_update_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 

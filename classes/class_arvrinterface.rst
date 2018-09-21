@@ -51,7 +51,7 @@ Methods
 Enumerations
 ------------
 
-  .. _enum_ARVRInterface_Eyes:
+.. _enum_ARVRInterface_Eyes:
 
 enum **Eyes**:
 
@@ -59,7 +59,7 @@ enum **Eyes**:
 - **EYE_LEFT** = **1** --- Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
 - **EYE_RIGHT** = **2** --- Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
 
-  .. _enum_ARVRInterface_Tracking_status:
+.. _enum_ARVRInterface_Tracking_status:
 
 enum **Tracking_status**:
 
@@ -69,7 +69,7 @@ enum **Tracking_status**:
 - **ARVR_UNKNOWN_TRACKING** = **3** --- We don't know the status of the tracking or this interface does not provide feedback.
 - **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.)
 
-  .. _enum_ARVRInterface_Capabilities:
+.. _enum_ARVRInterface_Capabilities:
 
 enum **Capabilities**:
 
@@ -89,7 +89,7 @@ Interfaces should be written in such a way that simply enabling them will give u
 Property Descriptions
 ---------------------
 
-  .. _class_ARVRInterface_ar_is_anchor_detection_enabled:
+.. _class_ARVRInterface_ar_is_anchor_detection_enabled:
 
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 On an AR interface, is our anchor detection enabled?
 
-  .. _class_ARVRInterface_interface_is_initialized:
+.. _class_ARVRInterface_interface_is_initialized:
 
 - :ref:`bool<class_bool>` **interface_is_initialized**
 
@@ -113,7 +113,7 @@ On an AR interface, is our anchor detection enabled?
 
 Has this interface been initialized?
 
-  .. _class_ARVRInterface_interface_is_primary:
+.. _class_ARVRInterface_interface_is_primary:
 
 - :ref:`bool<class_bool>` **interface_is_primary**
 
@@ -128,31 +128,31 @@ Is this our primary interface?
 Method Descriptions
 -------------------
 
-  .. _class_ARVRInterface_get_capabilities:
+.. _class_ARVRInterface_get_capabilities:
 
 - :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
 Returns a combination of flags providing information about the capabilities of this interface.
 
-  .. _class_ARVRInterface_get_name:
+.. _class_ARVRInterface_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
-  .. _class_ARVRInterface_get_render_targetsize:
+.. _class_ARVRInterface_get_render_targetsize:
 
 - :ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
-  .. _class_ARVRInterface_get_tracking_status:
+.. _class_ARVRInterface_get_tracking_status:
 
 - :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 
-  .. _class_ARVRInterface_initialize:
+.. _class_ARVRInterface_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** **)**
 
@@ -166,13 +166,13 @@ If you do this for a platform that handles its own output (such as OpenVR) Godot
 
 While currently not used you can activate additional interfaces, you may wish to do this if you want to track controllers from other platforms. However at this point in time only one interface can render to an HMD.
 
-  .. _class_ARVRInterface_is_stereo:
+.. _class_ARVRInterface_is_stereo:
 
 - :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns true if the current output of this interface is in stereo.
 
-  .. _class_ARVRInterface_uninitialize:
+.. _class_ARVRInterface_uninitialize:
 
 - void **uninitialize** **(** **)**
 

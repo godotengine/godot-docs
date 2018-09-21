@@ -28,7 +28,7 @@ Properties
 Property Descriptions
 ---------------------
 
-  .. _class_NavigationPolygonInstance_enabled:
+.. _class_NavigationPolygonInstance_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
 
@@ -38,7 +38,7 @@ Property Descriptions
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-  .. _class_NavigationPolygonInstance_navpoly:
+.. _class_NavigationPolygonInstance_navpoly:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 

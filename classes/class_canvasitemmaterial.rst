@@ -28,7 +28,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_CanvasItemMaterial_LightMode:
+.. _enum_CanvasItemMaterial_LightMode:
 
 enum **LightMode**:
 
@@ -36,7 +36,7 @@ enum **LightMode**:
 - **LIGHT_MODE_UNSHADED** = **1** --- Render the material as if there were no light.
 - **LIGHT_MODE_LIGHT_ONLY** = **2** --- Render the material as if there were only light.
 
-  .. _enum_CanvasItemMaterial_BlendMode:
+.. _enum_CanvasItemMaterial_BlendMode:
 
 enum **BlendMode**:
 
@@ -54,7 +54,7 @@ Description
 Property Descriptions
 ---------------------
 
-  .. _class_CanvasItemMaterial_blend_mode:
+.. _class_CanvasItemMaterial_blend_mode:
 
 - :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **blend_mode**
 
@@ -66,7 +66,7 @@ Property Descriptions
 
 The manner in which a material's rendering is applied to underlying textures.
 
-  .. _class_CanvasItemMaterial_light_mode:
+.. _class_CanvasItemMaterial_light_mode:
 
 - :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **light_mode**
 

@@ -40,7 +40,7 @@ The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygo
 Property Descriptions
 ---------------------
 
-  .. _class_ConvexPolygonShape2D_points:
+.. _class_ConvexPolygonShape2D_points:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
@@ -55,7 +55,7 @@ The polygon's list of vertices. Can be in either clockwise or counterclockwise o
 Method Descriptions
 -------------------
 
-  .. _class_ConvexPolygonShape2D_set_point_cloud:
+.. _class_ConvexPolygonShape2D_set_point_cloud:
 
 - void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
 

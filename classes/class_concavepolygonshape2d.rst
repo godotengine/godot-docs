@@ -33,7 +33,7 @@ The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShap
 Property Descriptions
 ---------------------
 
-  .. _class_ConcavePolygonShape2D_segments:
+.. _class_ConcavePolygonShape2D_segments:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
 

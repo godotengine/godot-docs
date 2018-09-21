@@ -28,7 +28,7 @@ Methods
 Signals
 -------
 
-  .. _class_WebSocketMultiplayerPeer_peer_packet:
+.. _class_WebSocketMultiplayerPeer_peer_packet:
 
 - **peer_packet** **(** :ref:`int<class_int>` peer_source **)**
 
@@ -42,7 +42,7 @@ Base class for WebSocket server and client, allowing them to be used as network 
 Method Descriptions
 -------------------
 
-  .. _class_WebSocketMultiplayerPeer_get_peer:
+.. _class_WebSocketMultiplayerPeer_get_peer:
 
 - :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** const
 

@@ -28,11 +28,11 @@ Methods
 Method Descriptions
 -------------------
 
-  .. _class_VideoStreamWebm_get_file:
+.. _class_VideoStreamWebm_get_file:
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
-  .. _class_VideoStreamWebm_set_file:
+.. _class_VideoStreamWebm_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
 

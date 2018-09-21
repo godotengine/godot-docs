@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
+.. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
 
 enum **BuiltinFunc**:
 
@@ -105,7 +105,7 @@ See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScri
 Property Descriptions
 ---------------------
 
-  .. _class_VisualScriptBuiltinFunc_function:
+.. _class_VisualScriptBuiltinFunc_function:
 
 - :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
 

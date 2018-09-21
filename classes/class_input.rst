@@ -100,7 +100,7 @@ Methods
 Signals
 -------
 
-  .. _class_Input_joy_connection_changed:
+.. _class_Input_joy_connection_changed:
 
 - **joy_connection_changed** **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected **)**
 
@@ -109,7 +109,7 @@ Emitted when a joypad device has been connected or disconnected.
 Enumerations
 ------------
 
-  .. _enum_Input_MouseMode:
+.. _enum_Input_MouseMode:
 
 enum **MouseMode**:
 
@@ -118,7 +118,7 @@ enum **MouseMode**:
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
 - **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 
-  .. _enum_Input_CursorShape:
+.. _enum_Input_CursorShape:
 
 enum **CursorShape**:
 
@@ -149,28 +149,29 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/index`
+
 Method Descriptions
 -------------------
 
-  .. _class_Input_action_press:
+.. _class_Input_action_press:
 
 - void **action_press** **(** :ref:`String<class_String>` action **)**
 
 This will simulate pressing the specified action.
 
-  .. _class_Input_action_release:
+.. _class_Input_action_release:
 
 - void **action_release** **(** :ref:`String<class_String>` action **)**
 
 If the specified action is already pressed, this will release it.
 
-  .. _class_Input_add_joy_mapping:
+.. _class_Input_add_joy_mapping:
 
 - void **add_joy_mapping** **(** :ref:`String<class_String>` mapping, :ref:`bool<class_bool>` update_existing=false **)**
 
 Add a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.
 
-  .. _class_Input_get_accelerometer:
+.. _class_Input_get_accelerometer:
 
 - :ref:`Vector3<class_Vector3>` **get_accelerometer** **(** **)** const
 
@@ -178,99 +179,99 @@ If the device has an accelerometer, this will return the acceleration. Otherwise
 
 Note this method returns an empty :ref:`Vector3<class_Vector3>` when running from the editor even when your device has an accelerometer. You must export your project to a supported device to read values from the accelerometer.
 
-  .. _class_Input_get_action_strength:
+.. _class_Input_get_action_strength:
 
 - :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
 
-  .. _class_Input_get_connected_joypads:
+.. _class_Input_get_connected_joypads:
 
 - :ref:`Array<class_Array>` **get_connected_joypads** **(** **)**
 
 Returns an :ref:`Array<class_Array>` containing the device IDs of all currently connected joypads.
 
-  .. _class_Input_get_gravity:
+.. _class_Input_get_gravity:
 
 - :ref:`Vector3<class_Vector3>` **get_gravity** **(** **)** const
 
 If the device has an accelerometer, this will return the gravity. Otherwise, it returns an empty :ref:`Vector3<class_Vector3>`.
 
-  .. _class_Input_get_gyroscope:
+.. _class_Input_get_gyroscope:
 
 - :ref:`Vector3<class_Vector3>` **get_gyroscope** **(** **)** const
 
 If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's x, y, and z axis. Otherwise, it returns an empty :ref:`Vector3<class_Vector3>`.
 
-  .. _class_Input_get_joy_axis:
+.. _class_Input_get_joy_axis:
 
 - :ref:`float<class_float>` **get_joy_axis** **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis **)** const
 
 Returns the current value of the joypad axis at given index (see ``JOY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`)
 
-  .. _class_Input_get_joy_axis_index_from_string:
+.. _class_Input_get_joy_axis_index_from_string:
 
 - :ref:`int<class_int>` **get_joy_axis_index_from_string** **(** :ref:`String<class_String>` axis **)**
 
-  .. _class_Input_get_joy_axis_string:
+.. _class_Input_get_joy_axis_string:
 
 - :ref:`String<class_String>` **get_joy_axis_string** **(** :ref:`int<class_int>` axis_index **)**
 
-  .. _class_Input_get_joy_button_index_from_string:
+.. _class_Input_get_joy_button_index_from_string:
 
 - :ref:`int<class_int>` **get_joy_button_index_from_string** **(** :ref:`String<class_String>` button **)**
 
-  .. _class_Input_get_joy_button_string:
+.. _class_Input_get_joy_button_string:
 
 - :ref:`String<class_String>` **get_joy_button_string** **(** :ref:`int<class_int>` button_index **)**
 
-  .. _class_Input_get_joy_guid:
+.. _class_Input_get_joy_guid:
 
 - :ref:`String<class_String>` **get_joy_guid** **(** :ref:`int<class_int>` device **)** const
 
 Returns a SDL2 compatible device guid on platforms that use gamepad remapping. Returns "Default Gamepad" otherwise.
 
-  .. _class_Input_get_joy_name:
+.. _class_Input_get_joy_name:
 
 - :ref:`String<class_String>` **get_joy_name** **(** :ref:`int<class_int>` device **)**
 
 Returns the name of the joypad at the specified device index
 
-  .. _class_Input_get_joy_vibration_duration:
+.. _class_Input_get_joy_vibration_duration:
 
 - :ref:`float<class_float>` **get_joy_vibration_duration** **(** :ref:`int<class_int>` device **)**
 
 Returns the duration of the current vibration effect in seconds.
 
-  .. _class_Input_get_joy_vibration_strength:
+.. _class_Input_get_joy_vibration_strength:
 
 - :ref:`Vector2<class_Vector2>` **get_joy_vibration_strength** **(** :ref:`int<class_int>` device **)**
 
 Returns the strength of the joypad vibration: x is the strength of the weak motor, and y is the strength of the strong motor.
 
-  .. _class_Input_get_last_mouse_speed:
+.. _class_Input_get_last_mouse_speed:
 
 - :ref:`Vector2<class_Vector2>` **get_last_mouse_speed** **(** **)** const
 
 Returns the mouse speed for the last time the cursor was moved, and this until the next frame where the mouse moves. This means that even if the mouse is not moving, this function will still return the value of the last motion.
 
-  .. _class_Input_get_magnetometer:
+.. _class_Input_get_magnetometer:
 
 - :ref:`Vector3<class_Vector3>` **get_magnetometer** **(** **)** const
 
 If the device has a magnetometer, this will return the magnetic field strength in micro-Tesla for all axes.
 
-  .. _class_Input_get_mouse_button_mask:
+.. _class_Input_get_mouse_button_mask:
 
 - :ref:`int<class_int>` **get_mouse_button_mask** **(** **)** const
 
 Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time the bits are added together.
 
-  .. _class_Input_get_mouse_mode:
+.. _class_Input_get_mouse_mode:
 
 - :ref:`MouseMode<enum_Input_MouseMode>` **get_mouse_mode** **(** **)** const
 
 Return the mouse mode. See the constants for more information.
 
-  .. _class_Input_is_action_just_pressed:
+.. _class_Input_is_action_just_pressed:
 
 - :ref:`bool<class_bool>` **is_action_just_pressed** **(** :ref:`String<class_String>` action **)** const
 
@@ -278,59 +279,59 @@ Returns ``true`` when the user starts pressing the action event, meaning it's tr
 
 This is useful for code that needs to run only once when an action is pressed, instead of every frame while it's pressed.
 
-  .. _class_Input_is_action_just_released:
+.. _class_Input_is_action_just_released:
 
 - :ref:`bool<class_bool>` **is_action_just_released** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` when the user stops pressing the action event, meaning it's true only on the frame that the user released the button.
 
-  .. _class_Input_is_action_pressed:
+.. _class_Input_is_action_pressed:
 
 - :ref:`bool<class_bool>` **is_action_pressed** **(** :ref:`String<class_String>` action **)** const
 
 Returns ``true`` if you are pressing the action event.
 
-  .. _class_Input_is_joy_button_pressed:
+.. _class_Input_is_joy_button_pressed:
 
 - :ref:`bool<class_bool>` **is_joy_button_pressed** **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button **)** const
 
 Returns ``true`` if you are pressing the joypad button. (see ``JOY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`)
 
-  .. _class_Input_is_joy_known:
+.. _class_Input_is_joy_known:
 
 - :ref:`bool<class_bool>` **is_joy_known** **(** :ref:`int<class_int>` device **)**
 
 Returns ``true`` if the system knows the specified device. This means that it sets all button and axis indices exactly as defined in the ``JOY_*`` constants (see :ref:`@GlobalScope<class_@GlobalScope>`). Unknown joypads are not expected to match these constants, but you can still retrieve events from them.
 
-  .. _class_Input_is_key_pressed:
+.. _class_Input_is_key_pressed:
 
 - :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`int<class_int>` scancode **)** const
 
 Returns ``true`` if you are pressing the key. You can pass ``KEY_*``, which are pre-defined constants listed in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_Input_is_mouse_button_pressed:
+.. _class_Input_is_mouse_button_pressed:
 
 - :ref:`bool<class_bool>` **is_mouse_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
 Returns ``true`` if you are pressing the mouse button. You can pass ``BUTTON_*``, which are pre-defined constants listed in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-  .. _class_Input_joy_connection_changed:
+.. _class_Input_joy_connection_changed:
 
 - void **joy_connection_changed** **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected, :ref:`String<class_String>` name, :ref:`String<class_String>` guid **)**
 
-  .. _class_Input_parse_input_event:
+.. _class_Input_parse_input_event:
 
 - void **parse_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
 Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code.
 
-  .. _class_Input_remove_joy_mapping:
+.. _class_Input_remove_joy_mapping:
 
 - void **remove_joy_mapping** **(** :ref:`String<class_String>` guid **)**
 
 Removes all mappings from the internal db that match the given uid.
 
-  .. _class_Input_set_custom_mouse_cursor:
+.. _class_Input_set_custom_mouse_cursor:
 
 - void **set_custom_mouse_cursor** **(** :ref:`Resource<class_Resource>` image, :ref:`CursorShape<enum_Input_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2( 0, 0 ) **)**
 
@@ -340,7 +341,7 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 
 ``hotspot`` must be within ``image``'s size.
 
-  .. _class_Input_set_default_cursor_shape:
+.. _class_Input_set_default_cursor_shape:
 
 - void **set_default_cursor_shape** **(** :ref:`CursorShape<enum_Input_CursorShape>` shape=0 **)**
 
@@ -348,13 +349,13 @@ Sets the default cursor shape to be used in the viewport instead of ``CURSOR_ARR
 
 Note that if you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_mouse_default_cursor_shape>` instead.
 
-  .. _class_Input_set_mouse_mode:
+.. _class_Input_set_mouse_mode:
 
 - void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
 
 Set the mouse mode. See the constants for more information.
 
-  .. _class_Input_start_joy_vibration:
+.. _class_Input_start_joy_vibration:
 
 - void **start_joy_vibration** **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**
 
@@ -362,13 +363,13 @@ Starts to vibrate the joypad. Joypads usually come with two rumble motors, a str
 
 Note that not every hardware is compatible with long effect durations, it is recommended to restart an effect if in need to play it for more than a few seconds.
 
-  .. _class_Input_stop_joy_vibration:
+.. _class_Input_stop_joy_vibration:
 
 - void **stop_joy_vibration** **(** :ref:`int<class_int>` device **)**
 
 Stops the vibration of the joypad.
 
-  .. _class_Input_warp_mouse_position:
+.. _class_Input_warp_mouse_position:
 
 - void **warp_mouse_position** **(** :ref:`Vector2<class_Vector2>` to **)**
 

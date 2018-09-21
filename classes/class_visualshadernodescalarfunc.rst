@@ -26,7 +26,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_VisualShaderNodeScalarFunc_Function:
+.. _enum_VisualShaderNodeScalarFunc_Function:
 
 enum **Function**:
 
@@ -54,7 +54,7 @@ enum **Function**:
 Property Descriptions
 ---------------------
 
-  .. _class_VisualShaderNodeScalarFunc_function:
+.. _class_VisualShaderNodeScalarFunc_function:
 
 - :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
 

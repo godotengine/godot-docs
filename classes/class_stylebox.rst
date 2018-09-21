@@ -56,7 +56,7 @@ StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class
 Property Descriptions
 ---------------------
 
-  .. _class_StyleBox_content_margin_bottom:
+.. _class_StyleBox_content_margin_bottom:
 
 - :ref:`float<class_float>` **content_margin_bottom**
 
@@ -66,7 +66,7 @@ Property Descriptions
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
 
-  .. _class_StyleBox_content_margin_left:
+.. _class_StyleBox_content_margin_left:
 
 - :ref:`float<class_float>` **content_margin_left**
 
@@ -76,7 +76,7 @@ Property Descriptions
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
 
-  .. _class_StyleBox_content_margin_right:
+.. _class_StyleBox_content_margin_right:
 
 - :ref:`float<class_float>` **content_margin_right**
 
@@ -86,7 +86,7 @@ Property Descriptions
 | *Getter* | get_default_margin()      |
 +----------+---------------------------+
 
-  .. _class_StyleBox_content_margin_top:
+.. _class_StyleBox_content_margin_top:
 
 - :ref:`float<class_float>` **content_margin_top**
 
@@ -99,33 +99,33 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-  .. _class_StyleBox_draw:
+.. _class_StyleBox_draw:
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** const
 
-  .. _class_StyleBox_get_center_size:
+.. _class_StyleBox_get_center_size:
 
 - :ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** const
 
-  .. _class_StyleBox_get_margin:
+.. _class_StyleBox_get_margin:
 
 - :ref:`float<class_float>` **get_margin** **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin **)** const
 
 Return the offset of margin "margin" (see MARGIN\_\* enum).
 
-  .. _class_StyleBox_get_minimum_size:
+.. _class_StyleBox_get_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **get_minimum_size** **(** **)** const
 
 Return the minimum size that this stylebox can be shrunk to.
 
-  .. _class_StyleBox_get_offset:
+.. _class_StyleBox_get_offset:
 
 - :ref:`Vector2<class_Vector2>` **get_offset** **(** **)** const
 
 Return the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
-  .. _class_StyleBox_test_mask:
+.. _class_StyleBox_test_mask:
 
 - :ref:`bool<class_bool>` **test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** const
 

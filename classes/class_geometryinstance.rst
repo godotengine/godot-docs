@@ -42,7 +42,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_GeometryInstance_Flags:
+.. _enum_GeometryInstance_Flags:
 
 enum **Flags**:
 
@@ -51,7 +51,7 @@ enum **Flags**:
 Added documentation for GeometryInstance and VisualInstance
 - **FLAG_MAX** = **2**
 
-  .. _enum_GeometryInstance_ShadowCastingSetting:
+.. _enum_GeometryInstance_ShadowCastingSetting:
 
 enum **ShadowCastingSetting**:
 
@@ -74,7 +74,7 @@ Base node for geometry based visual instances. Shares some common functionality 
 Property Descriptions
 ---------------------
 
-  .. _class_GeometryInstance_cast_shadow:
+.. _class_GeometryInstance_cast_shadow:
 
 - :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **cast_shadow**
 
@@ -86,7 +86,7 @@ Property Descriptions
 
 The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
 
-  .. _class_GeometryInstance_extra_cull_margin:
+.. _class_GeometryInstance_extra_cull_margin:
 
 - :ref:`float<class_float>` **extra_cull_margin**
 
@@ -98,7 +98,7 @@ The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for v
 
 The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
 
-  .. _class_GeometryInstance_lod_max_distance:
+.. _class_GeometryInstance_lod_max_distance:
 
 - :ref:`float<class_float>` **lod_max_distance**
 
@@ -110,7 +110,7 @@ The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<clas
 
 The GeometryInstance's max LOD distance.
 
-  .. _class_GeometryInstance_lod_max_hysteresis:
+.. _class_GeometryInstance_lod_max_hysteresis:
 
 - :ref:`float<class_float>` **lod_max_hysteresis**
 
@@ -122,7 +122,7 @@ The GeometryInstance's max LOD distance.
 
 The GeometryInstance's max LOD margin.
 
-  .. _class_GeometryInstance_lod_min_distance:
+.. _class_GeometryInstance_lod_min_distance:
 
 - :ref:`float<class_float>` **lod_min_distance**
 
@@ -134,7 +134,7 @@ The GeometryInstance's max LOD margin.
 
 The GeometryInstance's min LOD distance.
 
-  .. _class_GeometryInstance_lod_min_hysteresis:
+.. _class_GeometryInstance_lod_min_hysteresis:
 
 - :ref:`float<class_float>` **lod_min_hysteresis**
 
@@ -146,7 +146,7 @@ The GeometryInstance's min LOD distance.
 
 The GeometryInstance's min LOD margin.
 
-  .. _class_GeometryInstance_material_override:
+.. _class_GeometryInstance_material_override:
 
 - :ref:`Material<class_Material>` **material_override**
 
@@ -160,7 +160,7 @@ The material override for the whole geometry.
 
 If there is a material in material_override, it will be used instead of any material set in any material slot of the mesh.
 
-  .. _class_GeometryInstance_use_in_baked_light:
+.. _class_GeometryInstance_use_in_baked_light:
 
 - :ref:`bool<class_bool>` **use_in_baked_light**
 

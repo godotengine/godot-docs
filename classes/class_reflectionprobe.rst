@@ -48,7 +48,7 @@ Properties
 Enumerations
 ------------
 
-  .. _enum_ReflectionProbe_UpdateMode:
+.. _enum_ReflectionProbe_UpdateMode:
 
 enum **UpdateMode**:
 
@@ -59,10 +59,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/3d/reflection_probes`
+
 Property Descriptions
 ---------------------
 
-  .. _class_ReflectionProbe_box_projection:
+.. _class_ReflectionProbe_box_projection:
 
 - :ref:`bool<class_bool>` **box_projection**
 
@@ -72,7 +73,7 @@ Property Descriptions
 | *Getter* | is_box_projection_enabled()      |
 +----------+----------------------------------+
 
-  .. _class_ReflectionProbe_cull_mask:
+.. _class_ReflectionProbe_cull_mask:
 
 - :ref:`int<class_int>` **cull_mask**
 
@@ -82,7 +83,7 @@ Property Descriptions
 | *Getter* | get_cull_mask()      |
 +----------+----------------------+
 
-  .. _class_ReflectionProbe_enable_shadows:
+.. _class_ReflectionProbe_enable_shadows:
 
 - :ref:`bool<class_bool>` **enable_shadows**
 
@@ -92,7 +93,7 @@ Property Descriptions
 | *Getter* | are_shadows_enabled()     |
 +----------+---------------------------+
 
-  .. _class_ReflectionProbe_extents:
+.. _class_ReflectionProbe_extents:
 
 - :ref:`Vector3<class_Vector3>` **extents**
 
@@ -102,7 +103,7 @@ Property Descriptions
 | *Getter* | get_extents()      |
 +----------+--------------------+
 
-  .. _class_ReflectionProbe_intensity:
+.. _class_ReflectionProbe_intensity:
 
 - :ref:`float<class_float>` **intensity**
 
@@ -112,7 +113,7 @@ Property Descriptions
 | *Getter* | get_intensity()      |
 +----------+----------------------+
 
-  .. _class_ReflectionProbe_interior_ambient_color:
+.. _class_ReflectionProbe_interior_ambient_color:
 
 - :ref:`Color<class_Color>` **interior_ambient_color**
 
@@ -122,7 +123,7 @@ Property Descriptions
 | *Getter* | get_interior_ambient()      |
 +----------+-----------------------------+
 
-  .. _class_ReflectionProbe_interior_ambient_contrib:
+.. _class_ReflectionProbe_interior_ambient_contrib:
 
 - :ref:`float<class_float>` **interior_ambient_contrib**
 
@@ -132,7 +133,7 @@ Property Descriptions
 | *Getter* | get_interior_ambient_probe_contribution()      |
 +----------+------------------------------------------------+
 
-  .. _class_ReflectionProbe_interior_ambient_energy:
+.. _class_ReflectionProbe_interior_ambient_energy:
 
 - :ref:`float<class_float>` **interior_ambient_energy**
 
@@ -142,7 +143,7 @@ Property Descriptions
 | *Getter* | get_interior_ambient_energy()      |
 +----------+------------------------------------+
 
-  .. _class_ReflectionProbe_interior_enable:
+.. _class_ReflectionProbe_interior_enable:
 
 - :ref:`bool<class_bool>` **interior_enable**
 
@@ -152,7 +153,7 @@ Property Descriptions
 | *Getter* | is_set_as_interior()   |
 +----------+------------------------+
 
-  .. _class_ReflectionProbe_max_distance:
+.. _class_ReflectionProbe_max_distance:
 
 - :ref:`float<class_float>` **max_distance**
 
@@ -162,7 +163,7 @@ Property Descriptions
 | *Getter* | get_max_distance()      |
 +----------+-------------------------+
 
-  .. _class_ReflectionProbe_origin_offset:
+.. _class_ReflectionProbe_origin_offset:
 
 - :ref:`Vector3<class_Vector3>` **origin_offset**
 
@@ -172,7 +173,7 @@ Property Descriptions
 | *Getter* | get_origin_offset()      |
 +----------+--------------------------+
 
-  .. _class_ReflectionProbe_update_mode:
+.. _class_ReflectionProbe_update_mode:
 
 - :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode**
 

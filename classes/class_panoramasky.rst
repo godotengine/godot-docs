@@ -31,7 +31,7 @@ A resource referenced in an :ref:`Environment<class_Environment>` that is used t
 Property Descriptions
 ---------------------
 
-  .. _class_PanoramaSky_panorama:
+.. _class_PanoramaSky_panorama:
 
 - :ref:`Texture<class_Texture>` **panorama**
 

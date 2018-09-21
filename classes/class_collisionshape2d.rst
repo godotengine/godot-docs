@@ -36,10 +36,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
+
 Property Descriptions
 ---------------------
 
-  .. _class_CollisionShape2D_disabled:
+.. _class_CollisionShape2D_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -51,7 +52,7 @@ Property Descriptions
 
 A disabled collision shape has no effect in the world.
 
-  .. _class_CollisionShape2D_one_way_collision:
+.. _class_CollisionShape2D_one_way_collision:
 
 - :ref:`bool<class_bool>` **one_way_collision**
 
@@ -63,7 +64,7 @@ A disabled collision shape has no effect in the world.
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
-  .. _class_CollisionShape2D_shape:
+.. _class_CollisionShape2D_shape:
 
 - :ref:`Shape2D<class_Shape2D>` **shape**
 

@@ -40,10 +40,11 @@ Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
+
 Method Descriptions
 -------------------
 
-  .. _class_PhysicsDirectSpaceState_cast_motion:
+.. _class_PhysicsDirectSpaceState_cast_motion:
 
 - :ref:`Array<class_Array>` **cast_motion** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`Vector3<class_Vector3>` motion **)**
 
@@ -51,13 +52,13 @@ Checks whether the shape can travel to a point. The method will return an array 
 
 If the shape can not move, the array will be empty.
 
-  .. _class_PhysicsDirectSpaceState_collide_shape:
+.. _class_PhysicsDirectSpaceState_collide_shape:
 
 - :ref:`Array<class_Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState_intersect_shape>`, the number of returned results can be limited to save processing time.
 
-  .. _class_PhysicsDirectSpaceState_get_rest_info:
+.. _class_PhysicsDirectSpaceState_get_rest_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_rest_info** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape **)**
 
@@ -77,7 +78,7 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 If the shape did not intersect anything, then an empty dictionary is returned instead.
 
-  .. _class_PhysicsDirectSpaceState_intersect_ray:
+.. _class_PhysicsDirectSpaceState_intersect_ray:
 
 - :ref:`Dictionary<class_Dictionary>` **intersect_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` exclude=[  ], :ref:`int<class_int>` collision_mask=2147483647, :ref:`bool<class_bool>` collide_with_bodies=true, :ref:`bool<class_bool>` collide_with_areas=false **)**
 
@@ -99,7 +100,7 @@ If the ray did not intersect anything, then an empty dictionary is returned inst
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody<class_PhysicsBody>`\ s or :ref:`Area<class_Area>`\ s, respectively.
 
-  .. _class_PhysicsDirectSpaceState_intersect_shape:
+.. _class_PhysicsDirectSpaceState_intersect_shape:
 
 - :ref:`Array<class_Array>` **intersect_shape** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 

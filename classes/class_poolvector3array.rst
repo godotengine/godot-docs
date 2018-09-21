@@ -47,61 +47,61 @@ An Array specifically designed to hold Vector3. Note that this type is passed by
 Method Descriptions
 -------------------
 
-  .. _class_PoolVector3Array_PoolVector3Array:
+.. _class_PoolVector3Array_PoolVector3Array:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **PoolVector3Array** **(** :ref:`Array<class_Array>` from **)**
 
 Construct a new PoolVector3Array. Optionally, you can pass in an Array that will be converted.
 
-  .. _class_PoolVector3Array_append:
+.. _class_PoolVector3Array_append:
 
 - void **append** **(** :ref:`Vector3<class_Vector3>` vector3 **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolVector3Array_push_back>`).
 
-  .. _class_PoolVector3Array_append_array:
+.. _class_PoolVector3Array_append_array:
 
 - void **append_array** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` array **)**
 
 Append an ``PoolVector3Array`` at the end of this array.
 
-  .. _class_PoolVector3Array_insert:
+.. _class_PoolVector3Array_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vector3 **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
-  .. _class_PoolVector3Array_invert:
+.. _class_PoolVector3Array_invert:
 
 - void **invert** **(** **)**
 
 Reverse the order of the elements in the array.
 
-  .. _class_PoolVector3Array_push_back:
+.. _class_PoolVector3Array_push_back:
 
 - void **push_back** **(** :ref:`Vector3<class_Vector3>` vector3 **)**
 
 Insert a :ref:`Vector3<class_Vector3>` at the end.
 
-  .. _class_PoolVector3Array_remove:
+.. _class_PoolVector3Array_remove:
 
 - void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
-  .. _class_PoolVector3Array_resize:
+.. _class_PoolVector3Array_resize:
 
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
-  .. _class_PoolVector3Array_set:
+.. _class_PoolVector3Array_set:
 
 - void **set** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vector3 **)**
 
 Change the :ref:`Vector3<class_Vector3>` at the given index.
 
-  .. _class_PoolVector3Array_size:
+.. _class_PoolVector3Array_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 

@@ -160,13 +160,13 @@ Theme Properties
 Signals
 -------
 
-  .. _class_ItemList_item_activated:
+.. _class_ItemList_item_activated:
 
 - **item_activated** **(** :ref:`int<class_int>` index **)**
 
 Fired when specified list item is activated via double click or Enter.
 
-  .. _class_ItemList_item_rmb_selected:
+.. _class_ItemList_item_rmb_selected:
 
 - **item_rmb_selected** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` at_position **)**
 
@@ -176,37 +176,37 @@ The click position is also provided to allow appropriate popup of context menus
 
 at the correct location.
 
-  .. _class_ItemList_item_selected:
+.. _class_ItemList_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` index **)**
 
 Fired when specified item has been selected.
 
-  .. _class_ItemList_multi_selected:
+.. _class_ItemList_multi_selected:
 
 - **multi_selected** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected **)**
 
 Fired when a multiple selection is altered on a list allowing multiple selection.
 
-  .. _class_ItemList_nothing_selected:
+.. _class_ItemList_nothing_selected:
 
 - **nothing_selected** **(** **)**
 
-  .. _class_ItemList_rmb_clicked:
+.. _class_ItemList_rmb_clicked:
 
 - **rmb_clicked** **(** :ref:`Vector2<class_Vector2>` at_position **)**
 
 Enumerations
 ------------
 
-  .. _enum_ItemList_IconMode:
+.. _enum_ItemList_IconMode:
 
 enum **IconMode**:
 
 - **ICON_MODE_TOP** = **0**
 - **ICON_MODE_LEFT** = **1**
 
-  .. _enum_ItemList_SelectMode:
+.. _enum_ItemList_SelectMode:
 
 enum **SelectMode**:
 
@@ -223,7 +223,7 @@ Selectable items in the list may be selected or deselected and multiple selectio
 Property Descriptions
 ---------------------
 
-  .. _class_ItemList_allow_reselect:
+.. _class_ItemList_allow_reselect:
 
 - :ref:`bool<class_bool>` **allow_reselect**
 
@@ -235,7 +235,7 @@ Property Descriptions
 
 If ``true`` the currently selected item may be selected again.
 
-  .. _class_ItemList_allow_rmb_select:
+.. _class_ItemList_allow_rmb_select:
 
 - :ref:`bool<class_bool>` **allow_rmb_select**
 
@@ -247,7 +247,7 @@ If ``true`` the currently selected item may be selected again.
 
 If ``true`` a right mouse button click can select items.
 
-  .. _class_ItemList_auto_height:
+.. _class_ItemList_auto_height:
 
 - :ref:`bool<class_bool>` **auto_height**
 
@@ -257,7 +257,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | has_auto_height()      |
 +----------+------------------------+
 
-  .. _class_ItemList_fixed_column_width:
+.. _class_ItemList_fixed_column_width:
 
 - :ref:`int<class_int>` **fixed_column_width**
 
@@ -267,7 +267,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_fixed_column_width()      |
 +----------+-------------------------------+
 
-  .. _class_ItemList_fixed_icon_size:
+.. _class_ItemList_fixed_icon_size:
 
 - :ref:`Vector2<class_Vector2>` **fixed_icon_size**
 
@@ -277,7 +277,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_fixed_icon_size()      |
 +----------+----------------------------+
 
-  .. _class_ItemList_icon_mode:
+.. _class_ItemList_icon_mode:
 
 - :ref:`IconMode<enum_ItemList_IconMode>` **icon_mode**
 
@@ -287,7 +287,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_icon_mode()      |
 +----------+----------------------+
 
-  .. _class_ItemList_icon_scale:
+.. _class_ItemList_icon_scale:
 
 - :ref:`float<class_float>` **icon_scale**
 
@@ -297,7 +297,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_icon_scale()      |
 +----------+-----------------------+
 
-  .. _class_ItemList_max_columns:
+.. _class_ItemList_max_columns:
 
 - :ref:`int<class_int>` **max_columns**
 
@@ -307,7 +307,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_max_columns()      |
 +----------+------------------------+
 
-  .. _class_ItemList_max_text_lines:
+.. _class_ItemList_max_text_lines:
 
 - :ref:`int<class_int>` **max_text_lines**
 
@@ -317,7 +317,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | get_max_text_lines()      |
 +----------+---------------------------+
 
-  .. _class_ItemList_same_column_width:
+.. _class_ItemList_same_column_width:
 
 - :ref:`bool<class_bool>` **same_column_width**
 
@@ -327,7 +327,7 @@ If ``true`` a right mouse button click can select items.
 | *Getter* | is_same_column_width()       |
 +----------+------------------------------+
 
-  .. _class_ItemList_select_mode:
+.. _class_ItemList_select_mode:
 
 - :ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode**
 
@@ -342,13 +342,13 @@ Allow single or multiple selection. See the ``SELECT_*`` constants.
 Method Descriptions
 -------------------
 
-  .. _class_ItemList_add_icon_item:
+.. _class_ItemList_add_icon_item:
 
 - void **add_icon_item** **(** :ref:`Texture<class_Texture>` icon, :ref:`bool<class_bool>` selectable=true **)**
 
 Adds an item to the item list with no text, only an icon.
 
-  .. _class_ItemList_add_item:
+.. _class_ItemList_add_item:
 
 - void **add_item** **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
 
@@ -356,123 +356,123 @@ Adds an item to the item list with specified text.  Specify an icon of null for 
 
 If selectable is true the list item will be selectable.
 
-  .. _class_ItemList_clear:
+.. _class_ItemList_clear:
 
 - void **clear** **(** **)**
 
 Remove all items from the list.
 
-  .. _class_ItemList_ensure_current_is_visible:
+.. _class_ItemList_ensure_current_is_visible:
 
 - void **ensure_current_is_visible** **(** **)**
 
 Ensure selection is visible, adjusting the scroll position as necessary.
 
-  .. _class_ItemList_get_item_at_position:
+.. _class_ItemList_get_item_at_position:
 
 - :ref:`int<class_int>` **get_item_at_position** **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** const
 
 Given a position within the control return the item (if any) at that point.
 
-  .. _class_ItemList_get_item_count:
+.. _class_ItemList_get_item_count:
 
 - :ref:`int<class_int>` **get_item_count** **(** **)** const
 
 Return count of items currently in the item list.
 
-  .. _class_ItemList_get_item_custom_bg_color:
+.. _class_ItemList_get_item_custom_bg_color:
 
 - :ref:`Color<class_Color>` **get_item_custom_bg_color** **(** :ref:`int<class_int>` idx **)** const
 
-  .. _class_ItemList_get_item_custom_fg_color:
+.. _class_ItemList_get_item_custom_fg_color:
 
 - :ref:`Color<class_Color>` **get_item_custom_fg_color** **(** :ref:`int<class_int>` idx **)** const
 
-  .. _class_ItemList_get_item_icon:
+.. _class_ItemList_get_item_icon:
 
 - :ref:`Texture<class_Texture>` **get_item_icon** **(** :ref:`int<class_int>` idx **)** const
 
-  .. _class_ItemList_get_item_icon_modulate:
+.. _class_ItemList_get_item_icon_modulate:
 
 - :ref:`Color<class_Color>` **get_item_icon_modulate** **(** :ref:`int<class_int>` idx **)** const
 
 Returns a :ref:`Color<class_Color>` modulating item's icon at the specified index.
 
-  .. _class_ItemList_get_item_icon_region:
+.. _class_ItemList_get_item_icon_region:
 
 - :ref:`Rect2<class_Rect2>` **get_item_icon_region** **(** :ref:`int<class_int>` idx **)** const
 
-  .. _class_ItemList_get_item_metadata:
+.. _class_ItemList_get_item_metadata:
 
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** const
 
-  .. _class_ItemList_get_item_text:
+.. _class_ItemList_get_item_text:
 
 - :ref:`String<class_String>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
 Return the text for specified item index.
 
-  .. _class_ItemList_get_item_tooltip:
+.. _class_ItemList_get_item_tooltip:
 
 - :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
 Return tooltip hint for specified item index.
 
-  .. _class_ItemList_get_selected_items:
+.. _class_ItemList_get_selected_items:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_selected_items** **(** **)**
 
 Returns the list of selected indexes.
 
-  .. _class_ItemList_get_v_scroll:
+.. _class_ItemList_get_v_scroll:
 
 - :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll** **(** **)**
 
 Returns the current vertical scroll bar for the List.
 
-  .. _class_ItemList_is_anything_selected:
+.. _class_ItemList_is_anything_selected:
 
 - :ref:`bool<class_bool>` **is_anything_selected** **(** **)**
 
 Returns ``true`` if one or more items are selected.
 
-  .. _class_ItemList_is_item_disabled:
+.. _class_ItemList_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether or not the item at the specified index is disabled
 
-  .. _class_ItemList_is_item_selectable:
+.. _class_ItemList_is_item_selectable:
 
 - :ref:`bool<class_bool>` **is_item_selectable** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether or not the item at the specified index is selectable.
 
-  .. _class_ItemList_is_item_tooltip_enabled:
+.. _class_ItemList_is_item_tooltip_enabled:
 
 - :ref:`bool<class_bool>` **is_item_tooltip_enabled** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether the tooltip is enabled for specified item index.
 
-  .. _class_ItemList_is_selected:
+.. _class_ItemList_is_selected:
 
 - :ref:`bool<class_bool>` **is_selected** **(** :ref:`int<class_int>` idx **)** const
 
 Returns whether or not item at the specified index is currently selected.
 
-  .. _class_ItemList_move_item:
+.. _class_ItemList_move_item:
 
 - void **move_item** **(** :ref:`int<class_int>` from_idx, :ref:`int<class_int>` to_idx **)**
 
 Moves item at index ``from_idx`` to ``to_idx``.
 
-  .. _class_ItemList_remove_item:
+.. _class_ItemList_remove_item:
 
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
 Remove item at specified index from the list.
 
-  .. _class_ItemList_select:
+.. _class_ItemList_select:
 
 - void **select** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true **)**
 
@@ -480,15 +480,15 @@ Select the item at the specified index.
 
 Note:  This method does not trigger the item selection signal.
 
-  .. _class_ItemList_set_item_custom_bg_color:
+.. _class_ItemList_set_item_custom_bg_color:
 
 - void **set_item_custom_bg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_bg_color **)**
 
-  .. _class_ItemList_set_item_custom_fg_color:
+.. _class_ItemList_set_item_custom_fg_color:
 
 - void **set_item_custom_fg_color** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` custom_fg_color **)**
 
-  .. _class_ItemList_set_item_disabled:
+.. _class_ItemList_set_item_disabled:
 
 - void **set_item_disabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**
 
@@ -496,65 +496,65 @@ Disable (or enable) item at specified index.
 
 Disabled items are not be selectable and do not fire activation (Enter or double-click) signals.
 
-  .. _class_ItemList_set_item_icon:
+.. _class_ItemList_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` icon **)**
 
 Set (or replace) icon of the item at the specified index.
 
-  .. _class_ItemList_set_item_icon_modulate:
+.. _class_ItemList_set_item_icon_modulate:
 
 - void **set_item_icon_modulate** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` modulate **)**
 
 Sets a modulating :ref:`Color<class_Color>` for item's icon at the specified index.
 
-  .. _class_ItemList_set_item_icon_region:
+.. _class_ItemList_set_item_icon_region:
 
 - void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**
 
-  .. _class_ItemList_set_item_metadata:
+.. _class_ItemList_set_item_metadata:
 
 - void **set_item_metadata** **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**
 
 Sets a value (of any type) to be stored with the item at the specified index.
 
-  .. _class_ItemList_set_item_selectable:
+.. _class_ItemList_set_item_selectable:
 
 - void **set_item_selectable** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable **)**
 
 Allow or disallow selection of the item at the specified index.
 
-  .. _class_ItemList_set_item_text:
+.. _class_ItemList_set_item_text:
 
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
 Sets text of item at specified index.
 
-  .. _class_ItemList_set_item_tooltip:
+.. _class_ItemList_set_item_tooltip:
 
 - void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
 Sets tooltip hint for item at specified index.
 
-  .. _class_ItemList_set_item_tooltip_enabled:
+.. _class_ItemList_set_item_tooltip_enabled:
 
 - void **set_item_tooltip_enabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
 Sets whether the tooltip is enabled for specified item index.
 
-  .. _class_ItemList_sort_items_by_text:
+.. _class_ItemList_sort_items_by_text:
 
 - void **sort_items_by_text** **(** **)**
 
 Sorts items in the list by their text.
 
-  .. _class_ItemList_unselect:
+.. _class_ItemList_unselect:
 
 - void **unselect** **(** :ref:`int<class_int>` idx **)**
 
 Ensure item at specified index is not selected.
 
-  .. _class_ItemList_unselect_all:
+.. _class_ItemList_unselect_all:
 
 - void **unselect_all** **(** **)**
 

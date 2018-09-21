@@ -80,7 +80,7 @@ Theme Properties
 Enumerations
 ------------
 
-  .. _enum_Label_Align:
+.. _enum_Label_Align:
 
 enum **Align**:
 
@@ -89,7 +89,7 @@ enum **Align**:
 - **ALIGN_RIGHT** = **2** --- Align rows to the right (default).
 - **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
 
-  .. _enum_Label_VAlign:
+.. _enum_Label_VAlign:
 
 enum **VAlign**:
 
@@ -108,7 +108,7 @@ Note that contrarily to most other :ref:`Control<class_Control>`\ s, Label's :re
 Property Descriptions
 ---------------------
 
-  .. _class_Label_align:
+.. _class_Label_align:
 
 - :ref:`Align<enum_Label_Align>` **align**
 
@@ -120,7 +120,7 @@ Property Descriptions
 
 Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
 
-  .. _class_Label_autowrap:
+.. _class_Label_autowrap:
 
 - :ref:`bool<class_bool>` **autowrap**
 
@@ -132,7 +132,7 @@ Controls the text's horizontal align. Supports left, center, right, and fill, or
 
 If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
 
-  .. _class_Label_clip_text:
+.. _class_Label_clip_text:
 
 - :ref:`bool<class_bool>` **clip_text**
 
@@ -144,7 +144,7 @@ If ``true``, wraps the text inside the node's bounding rectangle. If you resize 
 
 If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
 
-  .. _class_Label_lines_skipped:
+.. _class_Label_lines_skipped:
 
 - :ref:`int<class_int>` **lines_skipped**
 
@@ -156,7 +156,7 @@ If ``true``, the Label only shows the text that fits inside its bounding rectang
 
 The node ignores the first ``lines_skipped`` lines before it starts to display text.
 
-  .. _class_Label_max_lines_visible:
+.. _class_Label_max_lines_visible:
 
 - :ref:`int<class_int>` **max_lines_visible**
 
@@ -168,7 +168,7 @@ The node ignores the first ``lines_skipped`` lines before it starts to display t
 
 Limits the lines of text the node shows on screen.
 
-  .. _class_Label_percent_visible:
+.. _class_Label_percent_visible:
 
 - :ref:`float<class_float>` **percent_visible**
 
@@ -180,7 +180,7 @@ Limits the lines of text the node shows on screen.
 
 Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
 
-  .. _class_Label_text:
+.. _class_Label_text:
 
 - :ref:`String<class_String>` **text**
 
@@ -192,7 +192,7 @@ Limits the count of visible characters. If you set ``percent_visible`` to 50, on
 
 The text to display on screen.
 
-  .. _class_Label_uppercase:
+.. _class_Label_uppercase:
 
 - :ref:`bool<class_bool>` **uppercase**
 
@@ -204,7 +204,7 @@ The text to display on screen.
 
 If ``true``, all the text displays as UPPERCASE.
 
-  .. _class_Label_valign:
+.. _class_Label_valign:
 
 - :ref:`VAlign<enum_Label_VAlign>` **valign**
 
@@ -216,7 +216,7 @@ If ``true``, all the text displays as UPPERCASE.
 
 Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
 
-  .. _class_Label_visible_characters:
+.. _class_Label_visible_characters:
 
 - :ref:`int<class_int>` **visible_characters**
 
@@ -231,25 +231,25 @@ Restricts the number of characters to display. Set to -1 to disable.
 Method Descriptions
 -------------------
 
-  .. _class_Label_get_line_count:
+.. _class_Label_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
 Returns the amount of lines of text the Label has.
 
-  .. _class_Label_get_line_height:
+.. _class_Label_get_line_height:
 
 - :ref:`int<class_int>` **get_line_height** **(** **)** const
 
 Returns the font size in pixels.
 
-  .. _class_Label_get_total_character_count:
+.. _class_Label_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
 Returns the total length of the text.
 
-  .. _class_Label_get_visible_line_count:
+.. _class_Label_get_visible_line_count:
 
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 

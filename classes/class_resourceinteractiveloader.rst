@@ -39,31 +39,31 @@ Interactive Resource Loader. This object is returned by ResourceLoader when perf
 Method Descriptions
 -------------------
 
-  .. _class_ResourceInteractiveLoader_get_resource:
+.. _class_ResourceInteractiveLoader_get_resource:
 
 - :ref:`Resource<class_Resource>` **get_resource** **(** **)**
 
 Return the loaded resource (only if loaded). Otherwise, returns null.
 
-  .. _class_ResourceInteractiveLoader_get_stage:
+.. _class_ResourceInteractiveLoader_get_stage:
 
 - :ref:`int<class_int>` **get_stage** **(** **)** const
 
 Return the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_get_stage_count>`
 
-  .. _class_ResourceInteractiveLoader_get_stage_count:
+.. _class_ResourceInteractiveLoader_get_stage_count:
 
 - :ref:`int<class_int>` **get_stage_count** **(** **)** const
 
 Return the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_poll>`) needed to completely load this resource.
 
-  .. _class_ResourceInteractiveLoader_poll:
+.. _class_ResourceInteractiveLoader_poll:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 Poll the load. If OK is returned, this means poll will have to be called again. If ERR_FILE_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`.
 
-  .. _class_ResourceInteractiveLoader_wait:
+.. _class_ResourceInteractiveLoader_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 

@@ -31,7 +31,7 @@ Description
 Property Descriptions
 ---------------------
 
-  .. _class_CanvasModulate_color:
+.. _class_CanvasModulate_color:
 
 - :ref:`Color<class_Color>` **color**
 
