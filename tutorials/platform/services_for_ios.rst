@@ -65,10 +65,11 @@ Implemented in platform/iphone/in_app_store.mm
 
 The Store Kit API is accessible through the "InAppStore" singleton (will
 always be available from gdscript). It is initialized automatically. It
-has two methods for purchasing:
+has three methods for purchasing:
 
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
+-  ``Error restore_purchases();``
 
 and the pending_event interface
 
@@ -148,6 +149,25 @@ The response event will be a dictionary with the following fields:
       "descriptions": [ list of valid product descriptions ] ,
       "prices": [ list of valid product prices ],
       "localized_prices": [ list of valid product localized prices ],
+    }
+
+restore_purchases
+~~~~~~~~~~~~~~~~~
+
+Restores previously made purchases on user's account. This will create
+response events for each previously purchased product id.
+
+Response event
+^^^^^^^^^^^^^^
+
+The response events will be dictionaries with the following fields:
+
+::
+
+    {
+      "type": "restore",
+      "result": "ok",
+      "product id": "product id of restored purchase"
     }
 
 Game Center
