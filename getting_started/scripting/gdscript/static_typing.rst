@@ -33,13 +33,13 @@ who work with your code should always pass an ``Item`` to the
 
 ::
 
-    # in Item.gd
+    # In Item.gd
     class_name Item
 
-    # in Inventory.gd
+    # In Inventory.gd
     class_name Inventory
 
-    func add(reference : Item, amount : int = 1):
+    func add(reference: Item, amount: int = 1):
         var item = find_item(reference)
         if not item:
             item = _instance_item_from_db(reference)
@@ -84,22 +84,22 @@ How to use static typing in Godot 3.1
 -------------------------------------
 
 To define the type of a variable or a constant, write a colon after the
-variable’s name, followed by its type. E.g. ``var health : int``. This
+variable’s name, followed by its type. E.g. ``var health: int``. This
 forces the type of variable to always stay the same:
 
 ::
 
-    var damage : float = 10.5
-    const MOVE_SPEED : float = 50.0
+    var damage: float = 10.5
+    const MOVE_SPEED: float = 50.0
 
 Godot will try to infer types if you write a colon, but you omit the
 type:
 
 ::
 
-    var life_points : = 4
-    var damage : = 10.5
-    var motion : = Vector2()
+    var life_points := 4
+    var damage := 10.5
+    var motion := Vector2()
 
 Currently you can use three types of… types:
 
@@ -125,7 +125,7 @@ script you want to use as a type in a constant:
 ::
 
     const Rifle = preload('res://player/weapons/Rifle.gd')
-    var my_rifle : Rifle
+    var my_rifle: Rifle
 
 The second method is to use the ``class_name`` keyword when you create.
 For the example above, your Rifle.gd would look like this:
@@ -141,7 +141,7 @@ into a constant:
 
 ::
 
-    var my_rifle : Rifle
+    var my_rifle: Rifle
 
 Variable casting
 ~~~~~~~~~~~~~~~~
@@ -163,11 +163,11 @@ to use this type. This forces the variable to stick to the
 
 ::
 
-    func _on_body_entered(body : PhysicsBody2D) -> void:
-    var player := body as PlayerController
-    if not player:
-        return
-    player.damage()
+    func _on_body_entered(body: PhysicsBody2D) -> void:
+        var player := body as PlayerController
+        if not player:
+            return
+        player.damage()
 
 As we’re dealing with a custom type, if the ``body`` doesn’t extend
 ``PlayerController``, the ``player``\ variable will be set to ``null``.
@@ -217,7 +217,7 @@ bracket ``->`` after it’s declaration, followed by the return type:
 
 ::
 
-    func _process(delta : float) -> void:
+    func _process(delta: float) -> void:
         pass
 
 The type ``void`` means the function does not return anything. You can
@@ -225,7 +225,7 @@ use any type as with variables:
 
 ::
 
-    func hit(damage : float) -> bool:
+    func hit(damage: float) -> bool:
         health_points -= damage
         return health_points <= 0
 
@@ -235,9 +235,9 @@ You can also use your own nodes as return types:
 
     # Inventory.gd
 
-    # Adds an item to the inventory and returns it
-    func add(reference : Item, amount : int) -> Item:
-        var item : Item = find_item(reference)
+    # Adds an item to the inventory and returns it.
+    func add(reference: Item, amount: int) -> Item:
+        var item: Item = find_item(reference)
         if not item:
             item = ItemDatabase.get_instance(reference)
         item.amount += amount
@@ -271,7 +271,7 @@ And with static typing:
     extends Node
         func _ready() -> void:
             pass
-        func _process(delta : float) -> void:
+        func _process(delta: float) -> void:
             pass
 
 As you can see, you can also use types with the engine’s virtual
@@ -287,7 +287,7 @@ And the same callback, with type hints:
 
 ::
 
-    func _on_area_entered(area : CollisionObject2D) -> void:
+    func _on_area_entered(area: CollisionObject2D) -> void:
         pass
 
 You’re free to replace, e.g. the ``PhysicsBody2D``, with your own type,
@@ -295,7 +295,7 @@ to cast parameters automatically:
 
 ::
 
-    func _on_area_entered(bullet : Bullet) -> void:
+    func _on_area_entered(bullet: Bullet) -> void:
         if not bullet:
             return
         take_damage(bullet.damage)
@@ -360,15 +360,15 @@ You can’t use Enums as types:
 
 ::
 
-    enum MoveDirection { UP, DOWN, LEFT, RIGHT }
-    var current_direction : MoveDirection
+    enum MoveDirection {UP, DOWN, LEFT, RIGHT}
+    var current_direction: MoveDirection
 
 You can’t specify the type of individual members in an array. This will
 give you an error:
 
 ::
 
-    var enemies : Array = [$Goblin : Enemy, $Zombie : Enemy]
+    var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
 You can’t force the assignment of types in a ``for`` loop as each
 element the ``for`` keyword loops already has a different type. So you
@@ -377,7 +377,7 @@ element the ``for`` keyword loops already has a different type. So you
 ::
 
     var names = ['John', 'Marta', 'Samantha', 'Jimmy']
-    for name : String in names:
+    for name: String in names:
         pass
 
 Two scripts can’t depend on each other in a cyclic fashion:
@@ -388,7 +388,7 @@ Two scripts can’t depend on each other in a cyclic fashion:
     extends Area2D
     class_name Player
 
-    var rifle : Rifle
+    var rifle: Rifle
 
 ::
 
@@ -396,7 +396,7 @@ Two scripts can’t depend on each other in a cyclic fashion:
     extends Area2D
     class_name Rifle
 
-    var player : Player
+    var player: Player
 
 Summary
 -------
