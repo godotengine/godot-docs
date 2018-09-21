@@ -26,7 +26,7 @@ Properties
 +---------------------------+----------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`period<class_SimplexNoise_period>`           |
 +---------------------------+----------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`persistance<class_SimplexNoise_persistance>` |
+| :ref:`float<class_float>` | :ref:`persistence<class_SimplexNoise_persistence>` |
 +---------------------------+----------------------------------------------------+
 | :ref:`int<class_int>`     | :ref:`seed<class_SimplexNoise_seed>`               |
 +---------------------------+----------------------------------------------------+
@@ -67,7 +67,7 @@ Here is a brief usage example that configures a SimplexNoise and gets samples at
     noise.seed = randi()
     noise.octaves = 4
     noise.period = 20.0
-    noise.persistance = 0.8
+    noise.persistence = 0.8
     
     #Sample
     print("Values:")
@@ -116,19 +116,19 @@ Period of the base octave.
 
 A lower period results in a higher frequancy noise (more value changes across the same distance).
 
-  .. _class_SimplexNoise_persistance:
+  .. _class_SimplexNoise_persistence:
 
-- :ref:`float<class_float>` **persistance**
+- :ref:`float<class_float>` **persistence**
 
 +----------+------------------------+
-| *Setter* | set_persistance(value) |
+| *Setter* | set_persistence(value) |
 +----------+------------------------+
-| *Getter* | get_persistance()      |
+| *Getter* | get_persistence()      |
 +----------+------------------------+
 
 Contribuiton factor of the different octaves. 
 
-A ``persistance`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
+A ``persistence`` value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.
 
   .. _class_SimplexNoise_seed:
 
