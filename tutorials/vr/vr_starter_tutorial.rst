@@ -377,7 +377,8 @@ Add the following to ``VR_Controller.gd``:
         
         
         # If the menu button is pressed...
-        if grab_mode == "AREA":
+	if button_index == 1:
+		if grab_mode == "AREA":
 			grab_mode = "RAYCAST"
 			
 			if held_object == null:
