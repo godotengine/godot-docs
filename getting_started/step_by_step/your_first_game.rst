@@ -351,24 +351,24 @@ Let's place this code at the end of our ``_process()`` function:
         }
 
 .. Note:: The boolean assignments in the code above are a common shorthand
-          for programmers. Consider this code versus the shortened 
+          for programmers. Consider this code versus the shortened
           boolean assignment above:
-          
+
           .. tabs::
            .. code-tab :: gdscript GDScript
-           
+
              if velocity.x < 0:
                  $AnimatedSprite.flip_h = true
              else:
                  $AnimatedSprite.flip_h = false
-              
+
            .. code-tab:: csharp
-           
+
              if velocity.x < 0:
                  animatedSprite.FlipH = true
              else:
                  animatedSprite.FlipH = false
-          
+
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
 add this line to ``_ready()`` so the player will be hidden when the game

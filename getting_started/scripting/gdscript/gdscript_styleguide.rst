@@ -40,10 +40,10 @@ Each indent level should be one greater than the block containing it.
 **Bad**:
 
 ::
-    
+
     for i in range(10):
       print("hello")
-      
+
     for i in range(10):
             print("hello")
 
@@ -167,7 +167,7 @@ Use PascalCase: ``extends KinematicBody``
 Also when loading a class into a constant or variable:
 
 ::
-    
+
     const MyCoolNode = preload('res://my_cool_node.gd')
 
 Functions and Variables
@@ -185,7 +185,7 @@ Signals
 Use past tense:
 
 ::
-    
+
     signal door_opened
     signal score_changed
 
