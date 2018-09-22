@@ -377,14 +377,15 @@ Add the following to ``VR_Controller.gd``:
         
         
         # If the menu button is pressed...
-        if grab_mode == "AREA":
-			grab_mode = "RAYCAST"
-			
-			if held_object == null:
-				grab_raycast.visible = true
-		elif grab_mode == "RAYCAST":
-			grab_mode = "AREA"
-			grab_raycast.visible = false
+        if button_index == 1:
+            if grab_mode == "AREA":
+                grab_mode = "RAYCAST"
+                
+                if held_object == null:
+                    grab_raycast.visible = true
+            elif grab_mode == "RAYCAST":
+                grab_mode = "AREA"
+                grab_raycast.visible = false
 
 
     func button_released(button_index):
