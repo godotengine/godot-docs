@@ -64,7 +64,7 @@ Now to generate and compile our bindings we do (do chose either Windows, Linux o
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=windows/linux/osx headers=../godot_headers generate_bindings=yes
+    scons platform=windows/linux/osx headers_dir=../godot_headers generate_bindings=yes
     cd ..
 
 This step will take a while but at the end of it, you should have static libraries you can compile into your project stored in godot-cpp/bin.
