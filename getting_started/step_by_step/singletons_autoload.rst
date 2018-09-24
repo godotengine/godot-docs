@@ -20,9 +20,11 @@ own limitations:
    that require it, but frequently saving and loading data is cumbersome and
    may be slow.
 
-The `Singleton Pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`_ is a
-useful tool for solving the common use case where you need to store persistent
-information between scenes.
+The `Singleton Pattern <https://en.wikipedia.org/wiki/Singleton_pattern>`_ is
+a useful tool for solving the common use case where you need to store
+persistent information between scenes. In our case it is possible re-use the
+same scene or class for multiple singletons, so long as they have different
+names.
 
 Using this concept, you can create objects that:
 
@@ -49,7 +51,9 @@ menu and switch to the "AutoLoad" tab.
 .. image:: img/autoload_tab.png
 
 Here you can add any number of scenes or scripts. Each entry in the list
-requires a name, which assigned as the node's ``name`` property.
+requires a name, which assigned as the node's ``name`` property. The order of
+the entries as they added to the global scene tree can be manipulated using
+the up/down arrow keys.
 
 .. image:: img/autoload_example.png
 
@@ -66,7 +70,8 @@ This means that any node can access a singleton named "PlayerVariables" with:
     var playerVariables = (PlayerVariables)GetNode("/root/PlayerVariables");
     playerVariables.Health -= 10; // Instance field.
 
-Or even simpler using the name directly:
+If the "Enable" column is checked (default true) then the singleton can simply
+be accessed directly:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
