@@ -90,12 +90,25 @@ A singleton object template follows:
 
     package org.godotengine.godot;
 
+    import android.app.Activity;
+    import android.content.Intent;
     import com.godot.game.R;
+    import javax.microedition.khronos.opengles.GL10;
 
     public class MySingleton extends Godot.SingletonBase {
 
+        protected Activity appActivity;
+        protected Context appContext;
+        private int instanceId = 0;
+
         public int myFunction(String p_str) {
             // a function to bind
+            return 1;
+        }
+
+        public void getInstanceId(int pInstanceId) {
+            // You will need to call this method from godot and pass in the get_instance_id().
+            instanceId = pInstanceId;
         }
 
         static public Godot.SingletonBase initialize(Activity p_activity) {
@@ -104,15 +117,20 @@ A singleton object template follows:
 
         public MySingleton(Activity p_activity) {
             //register class name and functions to bind
-            registerClass("MySingleton", new String[]{"myFunction"});
-
+            registerClass("MySingleton", new String[]
+                {
+                    "myFunction",
+                    "getInstanceId"
+                });
+            this.appActivity = p_activity;
+            this.appContext = appActivity.getApplicationContext();
             // you might want to try initializing your singleton here, but android
-            // threads are weird and this runs in another thread, so you usually have to do
+            // threads are weird and this runs in another thread, so to interact with Godot you usually have to do
             activity.runOnUiThread(new Runnable() {
                     public void run() {
                         //useful way to get config info from project.godot
                         String key = GodotLib.getGlobal("plugin/api_key");
-                        SDK.initializeHere();
+                        //SDK.initializeHere();
                     }
             });
 
@@ -121,6 +139,7 @@ A singleton object template follows:
         // forwarded callbacks you can reimplement, as SDKs often need them
 
         protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
+        protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
 
         protected void onMainPause() {}
         protected void onMainResume() {}
