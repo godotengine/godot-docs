@@ -248,7 +248,5 @@ Python
 Godot's SCons buildsystem is written in Python, and various scripts included
 in the source tree are also using Python.
 
-For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`__,
-this is however not as strongly enforced as for the C++ code. If you are so
-inclined, you can check and format your Python changes using
-`autopep8 <https://pypi.org/project/autopep8/>`__.
+Python source files should be compatible with Python 2.7 *and* 3.5,
+and should be formatted using `Black <https://github.com/ambv/black>`__.
