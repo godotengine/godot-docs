@@ -355,7 +355,8 @@ first one is to load the scene from your hard drive:
 Preloading it can be more convenient, as it happens at parse
 time (GDScript only):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var scene = preload("res://myscene.tscn") # Will load when parsing the script.
 
