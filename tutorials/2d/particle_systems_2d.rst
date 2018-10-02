@@ -131,9 +131,15 @@ Drawing parameters
 Visibility Rect
 ~~~~~~~~~~~~~~~
 
+If the Visibility Rect is not visible on screen than the particles emitted will not be rendered.
+
 The ``W`` and ``H`` values control width and height of the visibility
 rectangle. The ``X`` and ``Y`` values control the position of the upper-left
 corner of the visibility rectangle relative to the particle emitter.
+
+The Visibility Rect can be generated automatically by using the toolbar option ``Particles > Generate Visibility Rect``  that appears whenever a Particles2D node is selected.
+
+When generating a Visibility Rect you will be asked for ``Generation Time (sec)`` which is the number of seconds that the particles start emitting before the Visibility Ract is calculated. The maximum value is 25 seconds. If you need more time to elapse you can temporarily change your ``Preprocess`` settings under ``Time`` than generate the Visibility Rect. 
 
 Local Coords
 ~~~~~~~~~~~~
