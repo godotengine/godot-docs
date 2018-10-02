@@ -145,8 +145,8 @@ Below is a list of the most important issues you should be aware of when diving 
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
 - Writing editor plugins and tool scripts in C# is not yet supported
-- Exporting a project may not yet work (`#15615 <https://github.com/godotengine/godot/issues/15615>`_)
-- Signals with parameters are broken in 3.0.2-stable (`#17553 <https://github.com/godotengine/godot/issues/17553>`_)
+- Exporting Mono projects is only supported for desktop platforms (Linux, Windows and macOS). HTML5, Android, iOS and UWP are not currently supported (`#18364 comment <https://github.com/godotengine/godot/issues/18364#issuecomment-406222102>`_)
+- Attached C# scripts should refer to a class that has a class name that matches the file name and is unique within the project assembly (`#7402 comment <https://github.com/godotengine/godot/issues/7402#issuecomment-269910926>`_)
 
 Performance of C# in Godot
 --------------------------
