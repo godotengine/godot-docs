@@ -67,5 +67,7 @@ Until now we have limited ourselves to requesting data from a server. But what i
         var query = JSON.print(data_to_send)
         # Add 'Content-Type' header:
         var headers = ["Content-Type: application/json"]
-        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)        
+        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
 
+Keep in mind that you have to wait for a request to finish before sending another one. Making multiple request at once requires you to have one node per request.
+A common strategy is to create and delete HTTPRequest nodes at runtime as necessary.
