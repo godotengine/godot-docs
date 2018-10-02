@@ -17,7 +17,7 @@ You can use it for doing many things, but it is mostly useful in level design fo
 How to use it
 -------------
 
-To turn a script into a tool, add ``tool`` keyword at the top of your code, right under the ``extends ...`` line.
+To turn a script into a tool, add ``tool`` keyword at the top of your code.
 
 To check if you are currently in the editor, use: ``Engine.editor_hint``.
 
@@ -63,8 +63,8 @@ Add a ``Sprite`` node to your scene and set the texture to Godot icon. Attach an
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite
     tool
+    extends Sprite
 
     func _process(delta):
         rotation_degrees += 180 * delta
@@ -88,6 +88,6 @@ Now let's choose which code runs when. Modify your ``_process()`` function to lo
 
 Save the script. Now the object will spin clockwise in the editor, but if you run the game, it will spin counter-clockwise.
 
-.. note:: Codes from other nodes don't run in the editor. Your access to other nodes is limited. You can access the tree and nodes, and their default properties, but you can't access user variables. If you want to do so, other nodes have to run in the editor too. AutoLoad nodes cannot be accessed in the editor at all.
+.. note:: Code from other nodes doesn't run in the editor. Your access to other nodes is limited. You can access the tree and nodes, and their default properties, but you can't access user variables. If you want to do so, other nodes have to run in the editor too. AutoLoad nodes cannot be accessed in the editor at all.
 
 .. warning:: Using ``tool`` improperly can yield many errors. It is advised to first write the code how you want it, and only then add the ``tool`` keyword to the top. Also make sure you divide your code into part that runs in editor and part that runs in game. This way you can find your bug easier.
