@@ -60,7 +60,7 @@ Inside we will create a simple summator class:
     #ifndef SUMMATOR_H
     #define SUMMATOR_H
 
-    #include "reference.h"
+    #include "core/reference.h"
 
     class Summator : public Reference {
         GDCLASS(Summator, Reference);
@@ -137,7 +137,8 @@ With the following contents:
     /* register_types.cpp */
 
     #include "register_types.h"
-    #include "class_db.h"
+
+    #include "core/class_db.h"
     #include "summator.h"
 
     void register_summator_types() {
