@@ -86,14 +86,14 @@ first is to use load(), like this:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = load("res://robi.png") # resource is loaded when line is executed
+            var res = load("res://robi.png") # Resource is loaded when line is executed.
             get_node("sprite").texture = res
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var texture = (Texture)GD.Load("res://robi.png"); // resource is loaded when line is executed
+        var texture = (Texture)GD.Load("res://robi.png"); // Resource is loaded when line is executed.
         var sprite = (Sprite)GetNode("sprite");
         sprite.Texture = texture;
     }
@@ -105,12 +105,12 @@ parameter because it loads the resource at compile-time.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = preload("res://robi.png") # resource is loaded at compile time
+            var res = preload("res://robi.png") # Resource is loaded at compile time.
             get_node("sprite").texture = res
 
  .. code-tab:: csharp
 
-    // preload() is unavailable in C Sharp
+    // 'preload()' is unavailable in C Sharp.
 
 Loading scenes
 --------------
@@ -166,7 +166,7 @@ Scripting
 
 Like any Object in Godot, users can also script Resources. As Resources,
 Resource scripts inherit the ability to freely translate between object
-properties and serialized text or binary data (*.tres, *.res). They also
+properties and serialized text or binary data (/*.tres, /*.res). They also
 inherit the reference-counting memory management from the Reference type.
 
 This comes with many distinct advantages over alternative data
@@ -215,16 +215,16 @@ and :ref:`Resource <class_Resource>` features:
             var obj1 = MyObject.new()
             var obj2 = MyObject.new()
             obj1.dict.greeting = "hello"
-            obj2.dict = obj1.dict             # obj2.dict now references obj1's Dictionary
-            obj1.free()                       # obj1 is freed and the Dictionary too!
+            obj2.dict = obj1.dict             # 'obj2.dict' now references 'obj1's Dictionary.
+            obj1.free()                       # 'obj1' is freed and the Dictionary too!
             print(obj2.dict.greeting)         # Error! 'greeting' index accessed on null instance!
 
-            # to avoid this, we must manually duplicate the Dictionary
+            # To avoid this, we must manually duplicate the Dictionary.
             obj1 = MyObject.new()
             obj1.dict.greeting = "hello"
-            obj2.dict = obj1.dict.duplicate() # now we are passing a copy, not a reference
-            obj1.free()                       # obj2's Dictionary still exists
-            print(obj2.dict.greeting)         # prints 'hello'
+            obj2.dict = obj1.dict.duplicate() # Now we are passing a copy, not a reference.
+            obj1.free()                       # obj2's Dictionary still exists.
+            print(obj2.dict.greeting)         # Prints 'hello'.
 
 Godot makes it easy to create custom Resources in the Inspector.
 
@@ -263,9 +263,9 @@ Let's see some examples.
     export(Resource) var stats
 
     func _ready():
-        # uses an implicit, duck-typed interface for any 'health'-compatible resources
+        # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
         if stats:
-            print(stats.health) # prints '10'
+            print(stats.health) # Prints '10'.
   .. code-tab:: csharp
 
         // BotStats.cs
@@ -306,7 +306,7 @@ Let's see some examples.
                 public override void _Ready()
                 {
                     if (Stats != null && Stats is BotStats) {
-                        GD.print((Stats as BotStats).Health);
+                        GD.print((Stats as BotStats).Health); // Prints '10'.
                     }
                 }
             }
@@ -333,8 +333,8 @@ Let's see some examples.
         const BotStats = preload("bot_stats.gd")
 
         var data = {
-            "GodotBot": BotStats.new(10), # creates instance with 10 health
-            "DifferentBot": BotStats.new(20) # a different one with 20 health
+            "GodotBot": BotStats.new(10), # Creates instance with 10 health.
+            "DifferentBot": BotStats.new(20) # A different one with 20 health.
         }
 
         func _init():
@@ -350,8 +350,8 @@ Let's see some examples.
 
             public BotStatsTable()
             {
-                _stats["GodotBot"] = new BotStats(10);
-                _stats["DifferentBot"] = new BotStats(20);
+                _stats["GodotBot"] = new BotStats(10); // Creates instance with 10 health.
+                _stats["DifferentBot"] = new BotStats(20); // A different one with 20 health.
                 Godot.print(_stats);
             }
         }
@@ -390,7 +390,7 @@ Let's see some examples.
         func _ready():
             var my_res = MyResource.new()
 
-            # this will NOT serialize the `value` property.
+            # This will NOT serialize the 'value' property.
             ResourceSaver.save("res://my_res.tres", my_res)
       .. code-tab:: csharp
         using System;
@@ -409,7 +409,7 @@ Let's see some examples.
             {
                 MyResource res = new MyResource();
 
-                // this will NOT serialize the `Value` property.
+                // This will NOT serialize the 'Value' property.
                 ResourceSaver.save("res://MyRes.tres", res);
             }
         }
