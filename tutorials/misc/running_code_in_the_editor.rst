@@ -4,7 +4,7 @@ Running code in the editor
 ==========================
 
 What is ``tool``?
----------------
+-----------------
 
 ``tool`` is a powerful line of code that, when added at the top of your script, makes it execute in the editor. You can also decide which parts of the script execute in the editor, which in game, and which in both.
 
@@ -27,7 +27,7 @@ For example, if you want to execute some code only in editor, use:
  .. code-tab:: gdscript GDScript
 
     if Engine.editor_hint:
-        # code to execute when in editor
+        # Code to execute when in editor.
 
 On the other hand, if you want to execute code only in game, simply negate previous expression:
 
@@ -35,7 +35,7 @@ On the other hand, if you want to execute code only in game, simply negate previ
  .. code-tab:: gdscript GDScript
 
     if not Engine.editor_hint:
-        # code to execute when in game
+        # Code to execute when in game.
 
 Pieces of code that are not having any of the 2 conditions above will run both in editor and in game.
 
@@ -46,12 +46,12 @@ Here is how a ``_process()`` function might look like for you:
 
     func _process(delta):
         if Engine.editor_hint:
-            # code to execute in editor
+            # Code to execute in editor.
         
         if not Engine.editor_hint:
-            # code to execute in game
+            # Code to execute in game.
         
-        # code to execute both in editor and in game
+        # Code to execute both in editor and in game.
 
 .. note:: Modifications in editor are permanent. In our case, when we remove the script, the node will keep its rotation direction. Be careful so that you don't make unwanted modifications.
 
@@ -71,7 +71,7 @@ Add a ``Sprite`` node to your scene and set the texture to Godot icon. Attach an
 
 Save the script and return to the editor. You should now see your object rotate. If you run the game, it will also rotate.
 
-.. figure:: img/rotating-in_editor.gif
+.. image:: img/rotating_in_editor.gif
 
 .. note:: If you don't see the changes, reload the scene (close it and open it again).
 
