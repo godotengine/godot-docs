@@ -5,7 +5,7 @@
 ..    https://docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/
 
 From Unity to Godot Engine
-============================
+==========================
 
 This guide provides an overview of Godot Engine from the viewpoint of a Unity user,
 and aims to help you migrate your existing Unity experience into the world of Godot.
@@ -238,6 +238,22 @@ But there's more! Certain nodes throw signals when certain actions happen.
 You can connect these signals to call a specific function when they happen.
 Note that you can define your own signals and send them whenever you want.
 This feature is documented `here <gdscript.html#signals>`_.
+
+Script Serialization
+^^^^^^^^^^^^^^^^^^^^
+
+Unity can handle script serialization in two ways:
+
+- Implicit: All public fields in a class are automatically serialized if the type is a serializable type (``Dictionary`` is not serializable).
+- Explicit: Non-public fields can be serialized using the ``[SerializeField]`` attribute.
+
+Godot also has a built-in script serialization system, but it works only explicitly.
+You can serialize any serializable type (:ref:`built-in and various engine types <doc_binary_serialization_api>`, including :ref:`class_Array` and :ref:`class_Dictionary`)
+using the ``export`` keyword. This workflow is explained `here <../scripting/gdscript/gdscript_basics.html#exports>`_.
+
+Unity also has a data type called ``ScriptableObject`` used to serialize custom asset objects.
+Its equivalent in Godot is the base class for all resources: :ref:`class_Resource`.
+Creating a script that inherits :ref:`class_Resource` will allow you to create custom serializable objects. More information about resources can be found :ref:`here <doc_resources>`.
 
 Using Godot in C++
 ------------------
