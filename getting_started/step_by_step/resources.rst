@@ -272,7 +272,8 @@ Let's see some examples.
         using System;
         using Godot;
 
-        namespace ExampleProject {
+        namespace ExampleProject
+        {
             public class BotStats : Resource
             {
                 [Export]
@@ -297,7 +298,8 @@ Let's see some examples.
         using System;
         using Godot;
 
-        namespace ExampleProject {
+        namespace ExampleProject
+        {
             public class Bot : KinematicBody
             {
                 [Export]
@@ -306,7 +308,7 @@ Let's see some examples.
                 public override void _Ready()
                 {
                     if (Stats != null && Stats is BotStats) {
-                        Godot.print((Stats as BotStats).Health);
+                        GD.Print((Stats as BotStats).Health);
                     }
                 }
             }
@@ -398,8 +400,8 @@ Let's see some examples.
 
         public class MyNode : Node
         {
-
-            public class MyResource : Resource {
+            public class MyResource : Resource
+            {
                 [Export]
                 public int Value { get; set; } = 5;
             }
