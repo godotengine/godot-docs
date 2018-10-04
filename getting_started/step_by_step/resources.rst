@@ -170,9 +170,9 @@ properties and serialized text or binary data (*.tres, *.res). They also
 inherit the reference-counting memory management from the Reference type.
 
 This comes with many distinct advantages over alternative data
-structures such as JSON, CSV, or custom TXT files. Users can only import these 
-assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a 
-:ref:`File <class_File>` to parse. What sets Resources apart is their 
+structures such as JSON, CSV, or custom TXT files. Users can only import these
+assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a
+:ref:`File <class_File>` to parse. What sets Resources apart is their
 inheritance of :ref:`Object <class_Object>`, :ref:`Reference <class_Reference>`,
 and :ref:`Resource <class_Resource>` features:
 
@@ -195,7 +195,7 @@ and :ref:`Resource <class_Resource>` features:
 - They can extend **other** resource types besides just the base Resource.
 
 .. warning::
-    
+
     Resources and Dictionaries are also different in that both are passed by reference,
     but only Resources are reference-counted. This means that if a Dictionary is passed
     between objects, and the first object is deleted, it will invalidate the second
@@ -236,7 +236,7 @@ those values and saves the resource, the Inspector serializes the custom propert
 too! To save a resource from the Inspector, click the Inspector's tools menu (top right),
 and select "Save" or "Save As...".
 
-If the script's language supports `script classes <https://godot.readthedocs.io/en/latest/getting_started/step_by_step/scripting_continued.html#register-scripts-as-classes>`__, 
+If the script's language supports `script classes <https://godot.readthedocs.io/en/latest/getting_started/step_by_step/scripting_continued.html#register-scripts-as-classes>`__,
 then it streamlines the process. Defining a name for your script alone will add it to
 the Inspector's creation dialog. This will auto-add your script to the Resource
 object you create.
@@ -306,7 +306,7 @@ Let's see some examples.
                 public override void _Ready()
                 {
                     if (Stats != null && Stats is BotStats) {
-                        Godot.print((Stats as BotStats).Health);
+                        GD.print((Stats as BotStats).Health);
                     }
                 }
             }
@@ -314,10 +314,10 @@ Let's see some examples.
 
 .. note::
 
-    Resource scripts are similar to Unity's ScriptableObjects. The Inspector 
-    provides built-in support for custom resources. If desired though, users 
-    can even design their own Control-based tool scripts and combine them 
-    with an :ref:`EditorPlugin <class_EditorPlugin>` to create custom 
+    Resource scripts are similar to Unity's ScriptableObjects. The Inspector
+    provides built-in support for custom resources. If desired though, users
+    can even design their own Control-based tool scripts and combine them
+    with an :ref:`EditorPlugin <class_EditorPlugin>` to create custom
     visualizations and editors for their data.
 
     Unreal Engine 4's DataTables and CurveTables are also easy to recreate with
@@ -330,7 +330,7 @@ Let's see some examples.
         # bot_stats_table.gd
         extends Resource
 
-        const BotStats = preload("bot_stats.gd") 
+        const BotStats = preload("bot_stats.gd")
 
         var data = {
             "GodotBot": BotStats.new(10), # creates instance with 10 health
@@ -355,7 +355,7 @@ Let's see some examples.
                 Godot.print(_stats);
             }
         }
-    
+
     Instead of just inlining the Dictionary values, one could also, alternatively...
 
     1. Import a table of values from a spreadsheet and generate these key-value pairs, or...
@@ -375,7 +375,7 @@ Let's see some examples.
     work. Godot will not serialize the custom properties on the script subclass properly.
 
     In the example below, Godot would load the ``Node`` script, see that it doesn't
-    extend ``Resource``, and then determine that the script failed to load for the 
+    extend ``Resource``, and then determine that the script failed to load for the
     Resource object since the types are incompatible.
 
     .. tabs::
@@ -391,7 +391,7 @@ Let's see some examples.
             var my_res = MyResource.new()
 
             # this will NOT serialize the `value` property.
-            ResourceSaver.save("res://my_res.tres", my_res) 
+            ResourceSaver.save("res://my_res.tres", my_res)
       .. code-tab:: csharp
         using System;
         using Godot;
@@ -399,7 +399,8 @@ Let's see some examples.
         public class MyNode : Node
         {
 
-            public class MyResource : Resource {
+            public class MyResource : Resource
+            {
                 [Export]
                 public int Value { get; set; } = 5;
             }
@@ -413,5 +414,5 @@ Let's see some examples.
             }
         }
 
-After seeing all of this, we hope you can see how Resource scripts can truly 
+After seeing all of this, we hope you can see how Resource scripts can truly
 revolutionize the way you construct your projects!
