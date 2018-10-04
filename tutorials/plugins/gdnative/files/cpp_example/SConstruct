@@ -7,6 +7,11 @@ bits = ARGUMENTS.get("bits", 64)
 
 final_lib_path = 'demo/bin/'
 
+# Linux has "debug" in library names, if they are compiled in debug mode
+# An example name for a debug library is: libgodot-cpp.linux.debug.64.a
+# In release mode, the library is named libgodot-cpp.linux.64.a
+linux_debug_suffix = ''
+
 # This makes sure to keep the session environment variables on windows, 
 # that way you can run scons in a vs 2017 prompt and it will find all the required tools
 env = Environment()
@@ -26,8 +31,9 @@ if platform == "osx":
 
 elif platform == "linux":
     env.Append(CCFLAGS = ['-fPIC', '-g','-O3', '-std=c++14'])
-
     final_lib_path = final_lib_path + 'x11/'
+    if target == 'debug':
+        linux_debug_suffix = '.debug'
 
 elif platform == "windows":
     if target == "debug":
@@ -39,7 +45,7 @@ elif platform == "windows":
 
 env.Append(CPPPATH=['.', 'src/', "godot-cpp/godot_headers/", 'godot-cpp/include/', 'godot-cpp/include/core/', 'godot-cpp/include/gen/'])
 env.Append(LIBPATH="godot-cpp/bin")
-env.Append(LIBS=["godot-cpp" + "." + platform + "." + str(bits)])
+env.Append(LIBS=["godot-cpp" + "." + platform + linux_debug_suffix + "." + str(bits)])
 
 sources = []
 add_sources(sources, "src")
