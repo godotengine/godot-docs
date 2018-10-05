@@ -6,52 +6,42 @@ Resources
 Nodes and resources
 -------------------
 
-So far, :ref:`Nodes <class_Node>`
-have been the most important datatype in Godot as most of the behaviors
-and features of the engine are implemented through them. There is
-another datatype that is equally important:
+Up to this tutorial, we focused on the :ref:`Node <class_Node>`
+class in Godot as that's the one you use to code behavior and
+and most of the engine's features rely on them. There is
+another datatype that is just as important:
 :ref:`Resource <class_Resource>`.
 
-Where *Nodes* focus on behaviors, such as drawing a sprite, drawing a
-3D model, physics, GUI controls, etc,
+*Nodes* give you functionality: they draw sprites, 3D models, simulate physics,
+arrange user interface, etc. **Resources** are **data containers**. They don't
+do anything on their own: instead nodes use the data contained in resources.
 
-**Resources** are mere **data containers**. This means that they don't
-do any action nor process any information. Resources just contain
-data.
+Anything Godot saves or loads from disk is a resource. Be it a scene (a .tscn or
+an .scn file), an image, a script... Here are some ``Resource`` examples:
+:ref:`Texture <class_Texture>`, :ref:`Script <class_Script>`, :ref:`Mesh
+<class_Mesh>`, :ref:`Animation <class_Animation>`, :ref:`AudioStream
+<class_AudioStream>`, :ref:`Font <class_Font>`, :ref:`Translation
+<class_Translation>`.
 
-Examples of resources are
-:ref:`Texture <class_Texture>`,
-:ref:`Script <class_Script>`,
-:ref:`Mesh <class_Mesh>`,
-:ref:`Animation <class_Animation>`,
-:ref:`AudioStream <class_AudioStream>`,
-:ref:`Font <class_Font>`,
-:ref:`Translation <class_Translation>`,
-etc.
+When the engine loads a resource from disk, **it only loads it once**. If a copy
+of that resource is already in memory, trying to load the resource again will
+return the same copy every time. As resources only contain data there is no need
+to duplicate them.
 
-When Godot saves or loads (from disk) a scene (.tscn or .scn), an image
-(png, jpg), a script (.gd) or pretty much anything, that file is
-considered a resource.
-
-When a resource is loaded from disk, **it is always loaded once**. That
-means, if there is a copy of that resource already loaded in memory,
-trying to load the resource again will return the same copy again
-and again. This corresponds with the fact that resources are just data
-containers, so there is no need to have them duplicated.
-
-Typically, every object in Godot (Node, Resource, or anything else) can
-export properties. Properties can be of many types (like a string,
-integer, Vector2, etc) and one of those types can be a resource. This
-means that both nodes and resources can contain resources as properties.
-To make it a little more visual:
+Every object, be it a Node or a Resource, can export properties. There are many
+types of Properties like String, integer, Vector2, etc., and any of these types
+can become a resource. This means that both nodes and resources can contain
+resources as properties:
 
 .. image:: img/nodes_resources.png
 
 External vs built-in
 --------------------
 
-The resource properties can reference resources in two ways,
-*external* (on disk) or **built-in**.
+There are two ways to save resources. They can be:
+
+1. **External** to a scene, saved on the disk as individual files.
+2. **Built-in**, saved inside the \*.tscn or the \*.scn file they're attached to.
 
 To be more specific, here's a :ref:`Texture <class_Texture>`
 in a :ref:`Sprite <class_Sprite>` node:
@@ -59,53 +49,54 @@ in a :ref:`Sprite <class_Sprite>` node:
 .. image:: img/spriteprop.png
 
 Pressing the ">" button on the right side of the preview allows us to
-view and edit the resources properties. One of the properties (path)
-shows where it comes from. In this case, it comes from a png image.
+view and edit the resources properties.
 
 .. image:: img/resourcerobi.png
 
-When the resource comes from a file, it is considered an *external*
-resource. If the path property is erased (or it never had a path to
-begin with), it is considered a built-in resource.
+The path property tells us where the resource comes from. In this case it comes
+from a PNG image called ``robi.png``. When the resource comes from a file like
+this, it is an external resource. If you erase the path or this path is empty,
+it becomes built-in resource.
 
-For example, if the path \`"res://robi.png"\` is erased from the "path"
-property in the above example, and then the scene is saved, the resource
-will be saved inside the .tscn scene file, no longer referencing the
-external "robi.png". However, even if saved as built-in, and even though
-the scene can be instanced multiple times, the resource will always
-be loaded only once. That means, different Robi robot scenes instanced
-at the same time will still share the same image.
+The switch between built-in and external resources happens when you save the
+scene. In the example above, if you erase the path \`"res://robi.png"\` and
+save, Godot will save the image inside the .tscn scene file.
+
+.. note::
+
+    Even if you save a built-in resource, when you instance a scene multiple
+    times, the engine will only load one copy of it.
 
 Loading resources from code
 ---------------------------
 
-Loading resources from code is easy. There are two ways to do it. The
-first is to use load(), like this:
+There are two ways to load resources from code. First, you can use the ``load()`` function anytime:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = load("res://robi.png") # Resource is loaded when line is executed.
+            var res = load("res://robi.png") # Godot loads the Resource when it reads the line.
             get_node("sprite").texture = res
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var texture = (Texture)GD.Load("res://robi.png"); // Resource is loaded when line is executed.
+        var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
         var sprite = (Sprite)GetNode("sprite");
         sprite.Texture = texture;
     }
 
-The second way is more optimal, but only works with a string constant
-parameter because it loads the resource at compile-time.
+You can also ``preload`` resources. Unlike ``load``, this function will read the
+file from disk and load it at compile-time. As a result, you cannot call preload
+with a variable path: you need to use a constant string.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = preload("res://robi.png") # Resource is loaded at compile time.
+            var res = preload("res://robi.png") # Godot loads the resource at compile-time
             get_node("sprite").texture = res
 
  .. code-tab:: csharp
@@ -114,13 +105,13 @@ parameter because it loads the resource at compile-time.
 
 Loading scenes
 --------------
-Scenes are also resources, but there is a catch. Scenes saved to disk
-are resources of type :ref:`PackedScene <class_PackedScene>`. This means that
-the scene is packed inside a resource.
 
-To obtain an instance of the scene, the method
-:ref:`PackedScene.instance() <class_PackedScene_instance>`
-must be used.
+Scenes are also resources, but there is a catch. Scenes saved to disk are
+resources of type :ref:`PackedScene <class_PackedScene>`. The
+scene is packed inside a resource.
+
+To get an instance of the scene, you have to use the
+:ref:`PackedScene.instance() <class_PackedScene_instance>` method.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -140,34 +131,30 @@ must be used.
         AddChild(bullet);
     }
 
-This method creates the nodes in the scene's hierarchy, configures
-them (sets all the properties) and returns the root node of the scene,
-which can be added to any other node.
+This method creates the nodes in the scene's hierarchy, configures them, and
+returns the root node of the scene. You can then add it as a child of any other
+node.
 
-The approach has several advantages. As the
-:ref:`PackedScene.instance() <class_PackedScene_instance>`
-function is pretty fast, adding extra content to the scene can be done
-efficiently. New enemies, bullets, effects, etc can be added or
-removed quickly, without having to load them again from disk each
-time. It is important to remember that, as always, images, meshes, etc
-are all shared between the scene instances.
+The approach has several advantages. As the :ref:`PackedScene.instance()
+<class_PackedScene_instance>` function is pretty fast, you can create new
+enemies, bullets, effects, etc. without having to load them again from disk each
+time. Remember that as always, images, meshes, etc. are all shared between the
+scene instances.
 
 Freeing resources
 -----------------
 
-Resource extends from :ref:`Reference <class_Reference>`.
-As such, when a resource is no longer in use, it will automatically free
-itself. Since, in most cases, Resources are contained in Nodes, scripts
-or other resources, when a node is removed or freed, all the owned
-resources are freed too.
+When a ``Resource`` is no longer in use, it will automatically free itself.
+Since, in most cases, Resources are contained in Nodes, when you free a node,
+the engine frees all the resources it owns as well if no other node uses them.
 
-Scripting
----------
+Creating your own resources
+---------------------------
 
-Like any Object in Godot, users can also script Resources. As Resources,
-Resource scripts inherit the ability to freely translate between object
-properties and serialized text or binary data (/*.tres, /*.res). They also
-inherit the reference-counting memory management from the Reference type.
+Like any Object in Godot, users can also script Resources. Resource scripts
+inherit the ability to freely translate between object properties and serialized
+text or binary data (/*.tres, /*.res). They also inherit the reference-counting
+memory management from the Reference type.
 
 This comes with many distinct advantages over alternative data
 structures such as JSON, CSV, or custom TXT files. Users can only import these
@@ -413,6 +400,3 @@ Let's see some examples.
                 ResourceSaver.save("res://MyRes.tres", res);
             }
         }
-
-After seeing all of this, we hope you can see how Resource scripts can truly
-revolutionize the way you construct your projects!
