@@ -237,7 +237,7 @@ This is explained in :ref:`this page <doc_scripting_continued>`.
 But there's more! Certain nodes throw signals when certain actions happen.
 You can connect these signals to call a specific function when they happen.
 Note that you can define your own signals and send them whenever you want.
-This feature is documented `here <gdscript.html#signals>`_.
+This feature is documented `here <../scripting/gdscript/gdscript_basics.html#signals>`_.
 
 Using Godot in C++
 ------------------
