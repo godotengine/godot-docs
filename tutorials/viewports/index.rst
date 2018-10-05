@@ -8,3 +8,4 @@ Viewports
    viewports
    multiple_resolutions
    using_viewport_as_texture
+   custom_postprocessing
