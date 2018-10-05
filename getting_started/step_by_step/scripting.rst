@@ -62,10 +62,6 @@ a generous donation from Microsoft.
 It has an excellent tradeoff between performance and ease of use,
 although one must be aware of its garbage collector.
 
-C# is usually the best choice for companies. The large amount of
-programmers familiar with it means less time can be spent learning
-Godot and more time can be spent programming with it.
-
 Since Godot uses the `Mono <https://mono-project.com>`_ .NET runtime, in theory
 any third-party .NET library or framework can be used for scripting in Godot, as
 well as any Common Language Infrastructure-compliant programming language, such as
