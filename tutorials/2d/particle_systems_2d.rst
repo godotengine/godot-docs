@@ -131,15 +131,16 @@ Drawing parameters
 Visibility Rect
 ~~~~~~~~~~~~~~~
 
-If the Visibility Rect is not visible on screen than the particles emitted will not be rendered.
 
-The ``W`` and ``H`` values control width and height of the visibility
-rectangle. The ``X`` and ``Y`` values control the position of the upper-left
-corner of the visibility rectangle relative to the particle emitter.
+The visibility rectangle controls the visibility of the particles on screen. If this rectangle is outside of the viewport, the engine will not render the particles on screen.
 
-The Visibility Rect can be generated automatically by using the toolbar option ``Particles > Generate Visibility Rect``  that appears whenever a Particles2D node is selected.
+The rectangle's ``W`` and ``H`` properties respectively control its Width and its Height.
+The ``X`` and ``Y`` properties control the position of the upper-left
+corner of the rectangle, relative to the particle emitter.
 
-When generating a Visibility Rect you will be asked for ``Generation Time (sec)`` which is the number of seconds that the particles start emitting before the Visibility Ract is calculated. The maximum value is 25 seconds. If you need more time to elapse you can temporarily change your ``Preprocess`` settings under ``Time`` than generate the Visibility Rect. 
+You can generate a Visibility Rect can be generated automatically using the toolbar above the 2d view. To do so select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+
+You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
 
 Local Coords
 ~~~~~~~~~~~~
