@@ -12,3 +12,4 @@
    particle_systems_2d
    2d_movement
    2d_lights_and_shadows
+   2d_skeletal_deform
