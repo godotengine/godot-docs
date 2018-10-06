@@ -24,18 +24,18 @@ A good starting point for checking its capabilities is the `Compatibility <http:
 Setup C# for Godot
 ------------------
 
-Download and install the `Mono <http://www.mono-project.com/download/>`_ SDK. 
+Download and install the `Mono <http://www.mono-project.com/download/>`_ SDK.
 
 If you are using Godot 3.0.2, you must use Mono 5.4.
 
 Godot 3.0.3+ requires Mono 5.12 on all platforms.
 
-.. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.3+. 
+.. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.3+.
 
 You also need MSBuild (at least version 15.0) which should come with the Mono installation.
 
 .. note:: For instructions on installing older versions of Mono on Linux, see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
-        Older versions of Mono for MacOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
+        Older versions of Mono for macOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
 
 Additionally, your Godot version must have Mono support enabled, so ensure you download the **Mono version** of Godot.
 
@@ -54,7 +54,7 @@ To set it up, in Godot click on ``Editor``, then ``Editor Settings``. Scroll
 down to the bottom, to the ``Mono`` settings. Under Mono click on ``Editor``,
 and on that page choose your external editor of choice.
 
-.. note:: If you are using Visual Studio Code, ensure you download and install the .NET tools extension. Without this, Godot will crash when trying to create a new C# project or edit a C# script. 
+.. note:: If you are using Visual Studio Code, ensure you download and install the .NET tools extension. Without this, Godot will crash when trying to create a new C# project or edit a C# script.
 
 Creating a C# script
 --------------------

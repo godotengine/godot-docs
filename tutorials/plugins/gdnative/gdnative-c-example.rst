@@ -26,7 +26,7 @@ This example project also contains a SConstruct file that makes compiling a litt
     func get_data():
         return data
 
-We'll be writing separate tutorials on the other types of GDNative modules and explain what each of them is for as we go through them. 
+We'll be writing separate tutorials on the other types of GDNative modules and explain what each of them is for as we go through them.
 
 Prerequisites
 -------------
@@ -84,10 +84,10 @@ We're going to start by having a look at what our simple.c file contains. Now, f
 
 We'll be looking at the source code bit by bit so all the parts below should all be put together into one big file. I'll explain each section as we add it.
 
-The below code includes our header files that we need and then defines two pointers to two different structs. 
+The below code includes our header files that we need and then defines two pointers to two different structs.
 GDNative supports a large collection for functions for calling back into the main Godot executable. In order for your module to have access to these functions, GDNative provides your application with a struct containing pointers to all these functions.
 
-To keep this implementation modular and easily extendable, the core functions are available directly through the "core" API struct, but additional functions have their own "GDNative structs" that are accessible through extensions. 
+To keep this implementation modular and easily extendable, the core functions are available directly through the "core" API struct, but additional functions have their own "GDNative structs" that are accessible through extensions.
 
 In our example, we access one of these extension to gain access to the functions specifically needed for NativeScript.
 
@@ -170,7 +170,7 @@ The descriptions contain the function pointers to the functions themselves. The 
             attributes, get_data);
     }
 
-Now, it's time to start working on the functions of our object. First, we define a structure that we use to store the member data of an instance of our GDNative class. 
+Now, it's time to start working on the functions of our object. First, we define a structure that we use to store the member data of an instance of our GDNative class.
 
 .. code:: C
 
@@ -184,7 +184,7 @@ This pointer will be passed to any of our functions related to our object as a p
 
 .. code:: C
 
-    void *simple_constructor(godot_object *p_instance, void *p_method_data) {        
+    void *simple_constructor(godot_object *p_instance, void *p_method_data) {
         user_data_struct *user_data = api->godot_alloc(sizeof(user_data_struct));
         strcpy(user_data->data, "World from GDNative!");
 
@@ -229,7 +229,7 @@ If you add a blank .gdignore file to the src folder, Godot will not try to impor
 
 Compiling
 ---------
-We now need to compile our source code. As mentioned our example project on GitHub contains a Scons configuration that does all the hard work for you but for our tutorial here we are going to call the compilers directly. 
+We now need to compile our source code. As mentioned our example project on GitHub contains a Scons configuration that does all the hard work for you but for our tutorial here we are going to call the compilers directly.
 
 Assuming you are sticking to the folder structure suggested above it is best to CD into the src subfolder in a terminal session and execute the commands from there. Make sure to create the bin folder before you proceed.
 
@@ -240,7 +240,7 @@ On Linux:
     clang -std=c11 -fPIC -c -I/PATH/TO/GODOT/HEADERS simple.c -o simple.os
     clang -shared simple.os -o ../bin/libsimple.so
 
-On Mac OS X:
+On macOS:
 
 .. code-block:: none
 

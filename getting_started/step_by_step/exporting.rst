@@ -172,10 +172,10 @@ folder. Choose a location *outside* of your project folder.
 
 Click "Save" and the engine will build the export files.
 
-.. note:: When exporting for MacOS, if you export on a MacOS computer, you'll
+.. note:: When exporting for macOS, if you export on a macOS computer, you'll
           end up with a `.dmg` file, while using Linux or Windows
           produces a `.zip`. In either case, the compressed file contains
-          a MacOS `.app` that you can double-click and run.
+          a macOS `.app` that you can double-click and run.
 
 .. note:: On Windows, if you want your exported executable to have a different
           icon than the default one, you need to change it manually. See:
@@ -237,7 +237,7 @@ iOS
 ~~~
 
 .. note:: In order to build your game for iOS, you must have a computer running
-          MacOS with Xcode installed.
+          macOS with Xcode installed.
 
 Before exporting, there are some settings that you *must* complete for the project
 to export successfully. First, the "App Store Team Id", which you can find by

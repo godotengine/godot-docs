@@ -77,19 +77,19 @@ Run configuration:
 Updating Sources after pulling latest commits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As a developer you usually want to frequently pull the latest commits 
-from the upstream git repository or a specific fork etc. However this 
-brings a little problem with it: as the development continues, source files 
-(and folders) are added or removed. These changes needs to be reflected in 
-your project files for Qt Creator too, so you continue to have a nice 
-experience coding in it. A simple way to check these things, is to right click 
+As a developer you usually want to frequently pull the latest commits
+from the upstream git repository or a specific fork etc. However this
+brings a little problem with it: as the development continues, source files
+(and folders) are added or removed. These changes needs to be reflected in
+your project files for Qt Creator too, so you continue to have a nice
+experience coding in it. A simple way to check these things, is to right click
 at your root folder in the "Projects View" and click on "Edit files..."
 
 .. image:: img/qtcreator-edit-files-menu.png
 
 Now a new dialog should appear that is similar in functionality to the one in the third step
 of the "Importing the project" section. Here now you can check whether you want to add/remove
-specific files and/or folders. You can chose by clicking with your mouse or just simply by 
+specific files and/or folders. You can chose by clicking with your mouse or just simply by
 clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to continue your work.
 
 .. image:: img/qtcreator-edit-files-dialog.png
@@ -130,14 +130,14 @@ Add the following includes/imports:
     core/math/
     tools/
     drivers/
-    platform/x11/  // make that platform/osx/ if you're using OS X
+    platform/x11/  // make that platform/osx/ if you're using macOS
 
 .. image:: img/kdevelop_addincludes.png
 
 Apply the changes then switch to the "Custom Buildsystem" tab.
 Leave the build directory blank. Enable build tools and add ``scons``
 as the executable and add ``platform=x11 target=debug`` (``platform=osx``
-if you're on OS X).
+if you're on macOS).
 
 .. image:: img/kdevelop_buildconfig.png
 

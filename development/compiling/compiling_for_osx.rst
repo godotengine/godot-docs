@@ -1,7 +1,7 @@
 .. _doc_compiling_for_osx:
 
-Compiling for OSX
-=================
+Compiling for macOS
+===================
 
 .. highlight:: shell
 
@@ -30,7 +30,7 @@ runs without any dependencies. Executing it will bring up the project
 manager.
 
 To create an .app like in the official builds, you need to use the template
-located in ``misc/dist/osx_tools.app``. Typically, for a ".64" optimised binary 
+located in ``misc/dist/osx_tools.app``. Typically, for a ".64" optimised binary
 built with `scons p=osx target=release_debug`:
 
 ::
@@ -39,26 +39,26 @@ built with `scons p=osx target=release_debug`:
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
     user@host:~/godot$ cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
-    
+
 Compiling for 32 and 64-bit
 ---------------------------
 
 All macOS versions after 10.6 are 64-bit exclusive, so the executable
-will be a ".64" file by default for most users. If you would like to 
-compile a ".fat" executable which contains both 32 and 64-bit code, 
+will be a ".64" file by default for most users. If you would like to
+compile a ".fat" executable which contains both 32 and 64-bit code,
 you can do so by specifying the bits in the scons command like so:
 
 ::
 
     user@host:~/godot$ scons platform=osx bits=fat
-    
+
 Cross-compiling
 ---------------
 
-It is possible to compile for OSX in a Linux environment (and maybe
+It is possible to compile for macOS in a Linux environment (and maybe
 also in Windows with Cygwin). For that you will need
 `OSXCross <https://github.com/tpoechtrager/osxcross>`__ to be able
-to use OSX as target. First, follow the instructions to install it:
+to use macOS as target. First, follow the instructions to install it:
 
 Clone the `OSXCross repository <https://github.com/tpoechtrager/osxcross>`
 somewhere on your machine (or download a zip file and extract it somewhere),

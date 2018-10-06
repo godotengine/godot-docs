@@ -8,7 +8,7 @@ __pycache__
 .vscode/
 *.mo
 
-# Finder (MacOS) makes these automatically.
+# Finder (macOS) makes these automatically.
 .DS_Store
 
 # And Windows keeps creating these.
