@@ -6,65 +6,61 @@ Ragdoll system
 Introduction
 ------------
 
-A ragdoll is the use of physics body's simulation to control the bone of a mesh. It is used for death animations in many games and other kind of physics-based animation. Godot has a built-in ragdoll system. We will be using the Platformer3D demo to demonstrate the set up of a ragdoll.
+Since version 3.1, Godot supports ragdoll physics. Ragdolls rely on physic simulation to create realistic procedural animation. They are used for death animations in many games.
 
-.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or the `Asset Library <https://godotengine.org/asset-library/asset/125>`_.
+In this tutorial, we will be using the Platformer3D demo to set up a ragdoll.
+
+.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>` or using the `Asset Library <https://godotengine.org/asset-library/asset/125>`_.
 
 Setting up the ragdoll
 ----------------------
 
-Create physical bones
-~~~~~~~~~~~~~~~~~~~~~
+Creating physical bones
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Similar to many godot's features, there is a node for setting up a ragdoll. You will be using a :ref:`PhysicalBone <class_PhysicalBone>` node. To simplify the set up, you can create the required physical bones with the feature "Create physical skeleton" in the skeleton node.
+Like many other features in the engine, there is a node to set up a ragdoll: the :ref:`PhysicalBone <class_PhysicalBone>` node. To simplify the setup, you can generate ``PhysicalBone`` nodes with the "Create physical skeleton" feature in the skeleton node.
 
-In the demo, select the skeleton node (in the player scene of Robi the robot). You will notice that a skeleton button appears on the top bar menu:
+Open the platformer demo in Godot, and then the Robi scene. Select the ``Skeleton`` node. A skeleton button appears on the top bar menu:
 
 .. image:: img/ragdoll_menu.png
 
-Click it and select the Create physical skeleton option. The engine will automatically generate physical bones (with their own shape) for each bone of the skeleton and pin joints for connecting the physical bones.
+Click it and select the ``Create physical skeleton`` option. Godot will generate ``PhysicalBone`` nodes and collision shapes for each bone in the skeleton and pin joints to connect them together:
 
 .. image:: img/ragdoll_bones.png
 
-Clean up the skeleton
-~~~~~~~~~~~~~~~~~~~~~
+Some of the generated bones aren't necessary: the ``MASTER`` bone for example. So we're going to clean up the skeleton by removing them.
 
-In the picture above, there are unnecessary physical bones like the MASTER bone, your next step is to clean up our skeleton by removing these physical bones.
+Cleaning up the skeleton
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: The rule is to remove all physical bones that are too small to make a difference in the simulation and all utility bones (like the MASTER bone in this case).
+Each ``PhysicalBone`` the engine needs to simulate has a performance cost so you want to remove every bone that is too small to make a difference in the simulation, as well as all utility bones.
 
-.. note:: For example, if we take a humanoid skeleton where the hand is comprised of many bones, it's really useless and wasteful to maintain all bones of the hand. One important thing to do in this case is to remove all physical bones and replace them by one or two bones to simulate the hand.
+For example, if we take a humanoid, you do not want to have physical bones for each finger. you can use a single bone for the entire hand instead, or one for the palm, one for the thumb, and a last one for the other four fingers.
 
-Remove these physical bones : MASTER, waist, neck, headtracker. The goal is to maintain an optimized skeleton structure for easy control.
+Remove these physical bones : ``MASTER``, ``waist``, ``neck``, ``headtracker``. This gives us an optimized skeleton and makes it easier to control the ragdoll.
 
 Collision shape adjustment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After cleaning up the unnecessary physical bones, you next task is adjust the collision shape and/or the size of physical bones in order to match the part of body that each bone should simulate.
+The next task is adjust the collision shape and the size of physical bones to match the part of body that each bone should simulate.
 
 .. image:: img/ragdoll_shape_adjust.gif
 
 Joints adjustment
 ~~~~~~~~~~~~~~~~~
 
-After the collision shapes adjustment, your ragdoll is ready for simulation.
-
-.. note:: To achieve a better simulation, you should adjust the default pin joints.
-
-The joint assigned by default is Pin Joint that doesn't has any constraint. To change it, select the physical bone then change the type of constraint in the Joint section. It's possible to change the orientation of constraint and limits.
+Once you adjusted the collision shapes your ragdoll is almost ready. You just want to adjust the pin joints to get a better simulation. ``PhysicalBone`` nodes have an unconstrained pin joint assigned to them by default. To change the pin joint, select the ``PhysicalBone`` and change the constraint type in the ``Joint`` section. There, you can change the constraint's orientation and its limits.
 
 .. image:: img/ragdoll_joint_adjust.gif
 
-This is the final result
+This is the final result:
 
 .. image:: img/ragdoll_result.png
 
 Simulating the ragdoll
 ----------------------
 
-You have correctly set up the ragdoll and the ragdoll is ready for simulation. You will need a script for running the simulation.
-
-To start the simulation, attach a script to the skeleton node and write down this code:
+The ragdoll is now ready to use. To start the simulation and play the ragdoll animation, you need to call the ``physical_bones_start_simulation`` method. Attach a script to the skeleton node and call the method in the ``_ready`` method:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -72,21 +68,19 @@ To start the simulation, attach a script to the skeleton node and write down thi
     func _ready():
         physical_bones_start_simulation()
 
-To stop it you can call the function ``physical_bones_stop_simulation()``.
+To stop the simulation, call the ``physical_bones_stop_simulation()`` method.
 
 .. image:: img/ragdoll_sim_stop.gif
 
-To simulate only few parts of the body, passing the bone name as parameter.
-
-This is the result of partial simulation.
+You can also limit the simulation to only a few bones. To do so, pass the bone names as a parameter. Here's an example of partial ragdoll simulation:
 
 .. image:: img/ ragdoll_sim_part.gif
 
 Collision layer and mask
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: To avoid the collision between the physical bones and the kinematic capsule but allow the collision between the physical bones and the ground, you need to set up the layer and mask properly.
+Make sure to set up your collision layers and masks properly so the ``KinematicBody``'s capsule doesn't get in the way of the physics simulation:
 
 .. image:: img/ragdoll_layer.png
 
-.. note:: Don't know what is collision layer and mask? Read more about it in :ref:`doc_physics_introduction`.
+For more information, read :ref:`doc_physics_introduction:`
