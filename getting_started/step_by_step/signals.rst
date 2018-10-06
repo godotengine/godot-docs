@@ -98,7 +98,7 @@ the signal is received. Let's make the Sprite blink:
     {
         public void _on_Timer_timeout()
         {
-            var sprite = (Sprite) GetNode("Sprite");
+            var sprite = GetNode<Sprite>("Sprite");
             sprite.Visible = !sprite.Visible;
         }
     }
@@ -140,13 +140,12 @@ Here is the code for our Timer connection:
     {
         public override void _Ready()
         {
-            var timer = (Timer) GetNode("Timer");
-            timer.Connect("timeout", this, nameof(_on_Timer_timeout));
+            GetNode("Timer").Connect("timeout", this, nameof(_on_Timer_timeout));
         }
 
         public void _on_Timer_timeout()
         {
-            var sprite = (Sprite) GetNode("Sprite");
+            var sprite = GetNode<Sprite>("Sprite");
             sprite.Visible = !sprite.Visible;
         }
     }
@@ -229,7 +228,7 @@ You could do this by adding the bullet directly:
 
  .. code-tab:: csharp
 
-    var bulletInstance = (Sprite) Bullet.Instance();
+    Node bulletInstance = Bullet.Instance();
     GetParent().AddChild(bulletInstance);
 
 However, this will lead to a different problem. Now if you try and test your
@@ -271,13 +270,13 @@ Here is the code for the player using signals to emit the bullet:
         [Signal]
         delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);
 
-        var Bullet = (PackedScene) ResourceLoader.Load("res://Bullet.tscn");
+        PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
         public override void _Input(InputEvent event)
         {
-            if (input is InputEventMouseButton && Input.IsMouseButtonPressed((int) ButtonList.Left))
+            if (input is InputEventMouseButton && Input.IsMouseButtonPressed((int)ButtonList.Left))
             {
-                EmitSignal(nameof(Shoot), Bullet, Rotation, Position);
+                EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
             }
         }
 
@@ -303,9 +302,9 @@ In the main scene, we then connect the player's signal (it will appear in the
 
  .. code-tab:: csharp
 
-    public void _on_Player_Shoot(PackedScene Bullet, Vector2 direction, Vector2 location)
+    public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
     {
-        var bulletInstance = (Area2D) Bullet.Instance();
+        var bulletInstance = (Bullet)bullet.Instance();
         AddChild(bulletInstance);
         bulletInstance.Rotation = direction;
         bulletInstance.Position = location;

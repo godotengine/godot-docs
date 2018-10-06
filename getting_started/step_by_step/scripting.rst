@@ -253,8 +253,7 @@ Next, write a function which will be called when the button is pressed:
 
     public void _OnButtonPressed()
     {
-        var label = (Label)GetNode("Label");
-        label.Text = "HELLO!";
+        GetNode<Label>("Label").Text = "HELLO!";
     }
 
 Finally, connect the button's "pressed" signal to ``_ready()`` by
@@ -301,8 +300,7 @@ The final script should look like this:
 
         public void _OnButtonPressed()
         {
-            var label = (Label)GetNode("Label");
-            label.Text = "HELLO!";
+            GetNode<Label>("Label").Text = "HELLO!";
         }
     }
 

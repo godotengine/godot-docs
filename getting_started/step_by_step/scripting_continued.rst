@@ -349,13 +349,14 @@ first one is to load the scene from your hard drive:
 
  .. code-tab:: csharp
 
-    var scene = (PackedScene)ResourceLoader.Load("res://myscene.tscn"); // Will load when the script is instanced.
+    var scene = GD.Load<PackedScene>("res://myscene.tscn"); // Will load when the script is instanced.
 
 
 Preloading it can be more convenient, as it happens at parse
 time (GDScript only):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var scene = preload("res://myscene.tscn") # Will load when parsing the script.
 
