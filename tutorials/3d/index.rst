@@ -19,5 +19,6 @@
    using_multi_mesh_instance
    working_with_3d_skeletons
    inverse_kinematics
+   ragdoll_system
    vertex_displacement_with_shaders
    fps_tutorial/index
