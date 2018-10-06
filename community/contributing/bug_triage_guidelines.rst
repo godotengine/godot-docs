@@ -63,9 +63,9 @@ The following labels are currently defined in the Godot repository:
    it a great fit for junior contributors who need to become familiar with
    the code base.
 -  *Needs rebase*: the issue need a git rebase to be merged.
--  *Needs testing*: the issue/pull request could not be completely tested 
+-  *Needs testing*: the issue/pull request could not be completely tested
    and thus need further testing. This can mean that it needs to be tested
-   on different hardware/software configurations or even that the steps to 
+   on different hardware/software configurations or even that the steps to
    reproduce are not certain.
 -  *PR welcome / hero wanted!*: Contributions for issues with these labels are especially welcome.
    Note that this **doesn't** mean you can't work on issues without
@@ -95,7 +95,7 @@ feature request, or one that is not precise enough to be worked on.
 -  *Mono*: relates to the C# / Mono bindings.
 -  *Network*: relates to networking.
 -  *Physics*: relates to the physics engine (2D/3D).
--  *Plugin*: relates to problems encountered while writing plugins. 
+-  *Plugin*: relates to problems encountered while writing plugins.
 -  *Porting*: relates to some specific platforms.
 -  *Rendering*: relates to the 2D and 3D rendering engines.
 -  *VisualScript*: relates to issues with the visual scripting language.
@@ -107,9 +107,9 @@ can focus on the issues labelled with their team's topic.
 
 **Platforms:**
 
-*Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *UWP*
+*Android*, *HTML5*, *iOS*, *Linux*, *macOS*, *Windows*, *UWP*
 
-By default, it is assumed that a given issue applies to all platforms. 
+By default, it is assumed that a given issue applies to all platforms.
 If one of the platform labels is used, it is then exclusive and the
 previous assumption doesn't stand anymore (so if it's a bug on e.g.
 Android and Linux exclusively, select those two platforms).
