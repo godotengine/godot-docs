@@ -1,17 +1,17 @@
 .. _doc_ragdoll_system:
 
 Ragdoll system
-===============
+==============
 
 Introduction
 ------------
 
 A ragdoll is the use of physics body's simulation to control the bone of a mesh. It is used for death animations in many games and other kind of physics-based animation. Godot has a built-in ragdoll system. We will be using the Platformer3D demo to demonstrate the set up of a ragdoll.
 
-.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>` or `the Asset Library <https://godotengine.org/asset-library/asset/125>`_.
+.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or the `Asset Library <https://godotengine.org/asset-library/asset/125>`_.
 
 Setting up the ragdoll
---------------------
+----------------------
 
 Create physical bones
 ~~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +60,7 @@ This is the final result
 .. image:: img/ragdoll_result.png
 
 Simulating the ragdoll
---------------------
+----------------------
 
 You have correctly set up the ragdoll and the ragdoll is ready for simulation. You will need a script for running the simulation.
 
@@ -89,4 +89,4 @@ Collision layer and mask
 
 .. image:: img/ragdoll_layer.png
 
-.. note:: Don't know what is collision layer and mask? Read more about it in :ref:`doc_physics_introduction:`
+.. note:: Don't know what is collision layer and mask? Read more about it in :ref:`doc_physics_introduction`.
