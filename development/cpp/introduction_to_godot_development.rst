@@ -37,4 +37,4 @@ Or:
 .. code:: bash
 
     $ gdb godot
-    > run -e -path ~/myproject/project.godot
+    > run -e --path ~/myproject/
