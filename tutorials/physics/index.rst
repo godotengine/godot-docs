@@ -10,3 +10,4 @@ Physics
    using_kinematic_body_2d
    ray-casting
    kinematic_character_2d
+   softbody
