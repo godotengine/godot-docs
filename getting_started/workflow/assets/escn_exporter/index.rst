@@ -1,6 +1,9 @@
 Godot-Blender-Exporter
 ======================
 
+.. note:: This chapter relates to the blender plugin called "Godot-Blender-Exporter", 
+          which can be downloaded here: https://github.com/godotengine/godot-blender-exporter
+
 Details on exporting
 --------------------
 .. toctree::
