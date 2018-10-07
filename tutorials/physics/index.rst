@@ -9,4 +9,5 @@ Physics
    rigid_body
    using_kinematic_body_2d
    ray-casting
+   ragdoll_system
    kinematic_character_2d
