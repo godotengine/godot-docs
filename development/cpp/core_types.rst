@@ -85,7 +85,7 @@ For C-style allocation, Godot provides a few macros:
     memrealloc()
     memfree()
 
-These are equivalent to the usual malloc, realloc, free of the standard
+These are equivalent to the usual malloc, realloc, free of the standard C
 library.
 
 For C++-style allocation, special macros are provided:
@@ -103,31 +103,30 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, the DVector<> template is provided. Use it
-like this:
+For dynamic memory, the PoolVector<> template is provided. PoolVector is a
+standard vector class, and is very similar to vector in the C++ standard library. 
+To create a PoolVector buffer, use this:
 
 .. code:: cpp
 
-    DVector<int>
+    PoolVector<int> data;
 
-DVector is a standard vector class, it can be accessed using the []
-operator, but that's probably slow for large amount of accesses (as it
-has to lock internally). A few helpers exist for this:
+PoolVector can be accessed using the [] operator and a few helpers exist for this:
 
 .. code:: cpp
 
-    DVector<int>::Read r = dvector.read()
+    PoolVector<int>::Read r = data.read()
     int someint = r[4]
 
-and
-
 .. code:: cpp
 
-    DVector<int>::Write w = dvector.write()
-    w[4]=22;
+    PoolVector<int>::Write w = data.write()
+    w[4] = 22;
 
-respectively. These allow fast read/write from DVectors and keep it
-locked until they go out of scope.
+These operations allow fast read/write from PoolVectors and keep it
+locked until they go out of scope. However, PoolVectors should be used
+for small, dynamic memory operations, as read() and write() are too slow for a
+large amount of accesses.
 
 References:
 ~~~~~~~~~~~
