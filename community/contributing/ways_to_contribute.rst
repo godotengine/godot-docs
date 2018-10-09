@@ -84,7 +84,7 @@ To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
 
-A nice place to start may be the issue tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ on GitHub.
+A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ (or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
 
 .. seealso:: Technical details about the PR workflow are outlined in a
              specific section, :ref:`doc_pr_workflow`.
@@ -149,7 +149,7 @@ always provide:
 -  **Hardware.** Sometimes bugs are hardware-specific, i.e. they happen
    only on certain processors, graphic cards, etc. If you are able to,
    it can be helpful to include information on your hardware.
-   
+
 -  **Godot version.** This is a must have. Some issues might be relevant in the
    current stable release, but fixed in the development branch, or the other
    way around. You might also be using an obsolete version of Godot and
