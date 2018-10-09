@@ -270,7 +270,7 @@ Here is the code for the player using signals to emit the bullet:
         [Signal]
         delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);
 
-        PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
+        private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
         public override void _Input(InputEvent event)
         {
