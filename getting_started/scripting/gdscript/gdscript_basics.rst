@@ -90,41 +90,41 @@ here's a simple example of how GDScript looks.
     # Function
 
     func some_function(param1, param2):
-        var local_var = 5
+    	var local_var = 5
 
-        if param1 < local_var:
-            print(param1)
-        elif param2 > 5:
-            print(param2)
-        else:
-            print("Fail!")
+    	if param1 < local_var:
+    		print(param1)
+    	elif param2 > 5:
+    		print(param2)
+    	else:
+    		print("Fail!")
 
-        for i in range(20):
-            print(i)
+    	for i in range(20):
+    		print(i)
 
-        while param2 != 0:
-            param2 -= 1
+    	while param2 != 0:
+    		param2 -= 1
 
-        var local_var2 = param1 + 3
-        return local_var2
+    	var local_var2 = param1 + 3
+    	return local_var2
 
     # Functions override functions with the same name on the base/parent class.
     # If you still want to call them, use '.' (like 'super' in other languages).
 
     func something(p1, p2):
-        .something(p1, p2)
+    	.something(p1, p2)
 
     # Inner Class
 
     class Something:
-        var a = 10
+    	var a = 10
 
     # Constructor
 
     func _init():
-        print("Constructed!")
-        var lv = Something.new()
-        print(lv.a)
+    	print("Constructed!")
+    	var lv = Something.new()
+    	print(lv.a)
 
 If you have previous experience with statically typed languages such as
 C, C++, or C# but never used a dynamically typed one before, it is advised you
@@ -516,10 +516,10 @@ Associative container which contains values referenced by unique keys.
     var d = {4: 5, "A key": "A value", 28: [1, 2, 3]}
     d["Hi!"] = 0
     d = {
-        22: "value",
-        "some_key": 2,
-        "other_key": [2, 3, 4],
-        "more_key": "Hello"
+    	22: "value",
+    	"some_key": 2,
+    	"other_key": [2, 3, 4],
+    	"more_key": "Hello"
     }
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
@@ -530,10 +530,10 @@ start with a digit.
 ::
 
     var d = {
-        test22 = "value",
-        some_key = 2,
-        other_key = [2, 3, 4],
-        more_key = "Hello"
+    	test22 = "value",
+    	some_key = 2,
+    	other_key = [2, 3, 4],
+    	more_key = "Hello"
     }
 
 To add a key to an existing dictionary, access it like an existing key and
@@ -692,9 +692,9 @@ argument, unlike Python).
 ::
 
     func my_function(a, b):
-        print(a)
-        print(b)
-        return a + b  # Return is optional; without it 'null' is returned.
+    	print(a)
+    	print(b)
+    	return a + b  # Return is optional; without it 'null' is returned.
 
 A function can ``return`` at any point. The default return value is ``null``.
 
@@ -702,18 +702,18 @@ Functions can also have type specification for the arguments and for the return
 value. Types for arguments can be added in a similar way to variables::
 
     func my_function(a: int, b: String):
-        pass
+    	pass
 
 If a function argument has a default value, it's possible to infer the type::
 
     func my_function(int_arg := 42, String_arg := "string"):
-        pass
+    	pass
 
 The return type of the function can be specified after the arguments list using
 the arrow token (``->``)::
 
     func my_int_function() -> int:
-        return 0
+    	return 0
 
 Functions that have a return type **must** return a proper value. Setting the
 type as ``void`` means the function doesn't return anything. Void functions can
@@ -722,7 +722,7 @@ return early with the ``return`` keyword, but they can't return any value.
 ::
 
     void_function() -> void:
-        return # Can't return a value
+    	return # Can't return a value
 
 .. note:: Non-void functions must **always** return a value, so if your code have
           branching statements (such as ``if``/``else`` construct), all the
@@ -768,7 +768,7 @@ useful to make libraries of helper functions:
 ::
 
     static func sum2(a, b):
-        return a + b
+    	return a + b
 
 
 Statements and control flow
@@ -789,18 +789,18 @@ nature of the tab-based indentation, ``elif`` can be used instead of
 ::
 
     if [expression]:
-        statement(s)
+    	statement(s)
     elif [expression]:
-        statement(s)
+    	statement(s)
     else:
-        statement(s)
+    	statement(s)
 
 Short statements can be written on the same line as the condition::
 
     if 1 + 1 == 2: return 2 + 2
     else:
-        var x = 3 + 3
-        return x
+    	var x = 3 + 3
+    	return x
 
 Sometimes you might want to assign a different initial value based on a
 boolean expression. In this case ternary-if expressions come in handy::
@@ -817,7 +817,7 @@ using ``break`` or continued using ``continue``:
 ::
 
     while [expression]:
-        statement(s)
+    	statement(s)
 
 for
 ^^^
@@ -830,23 +830,23 @@ in the loop variable.
 ::
 
     for x in [5, 7, 11]:
-        statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
+    	statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
 
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
-        print(dict[i])
+    	print(dict[i])
 
     for i in range(3):
-        statement # Similar to [0, 1, 2] but does not allocate an array.
+    	statement # Similar to [0, 1, 2] but does not allocate an array.
 
     for i in range(1,3):
-        statement # Similar to [1, 2] but does not allocate an array.
+    	statement # Similar to [1, 2] but does not allocate an array.
 
     for i in range(2,8,2):
-        statement # Similar to [2, 4, 6] but does not allocate an array.
+    	statement # Similar to [2, 4, 6] but does not allocate an array.
 
     for c in "Hello":
-        print(c) # Iterate through all characters in a String, print every letter on new line.
+    	print(c) # Iterate through all characters in a String, print every letter on new line.
 
 match
 ^^^^^
@@ -859,12 +859,12 @@ Basic syntax:
 ::
 
     match [expression]:
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
+    	[pattern](s):
+    		[block]
+    	[pattern](s):
+    		[block]
+    	[pattern](s):
+    		[block]
 
 
 **Crash-course for people who are familiar to switch statements**:
@@ -887,24 +887,24 @@ There are 6 pattern types:
     constant primitives, like numbers and strings ::
 
         match x:
-            1:
-                print("We are number one!")
-            2:
-                print("Two are better than one!")
-            "test":
-                print("Oh snap! It's a string!")
+        	1:
+        		print("We are number one!")
+        	2:
+        		print("Two are better than one!")
+        	"test":
+        		print("Oh snap! It's a string!")
 
 
 - variable pattern
     matches the contents of a variable/enum ::
 
         match typeof(x):
-            TYPE_FLOAT:
-                print("float")
-            TYPE_STRING:
-                print("text")
-            TYPE_ARRAY:
-                print("array")
+        	TYPE_FLOAT:
+        		print("float")
+        	TYPE_STRING:
+        		print("text")
+        	TYPE_ARRAY:
+        		print("array")
 
 
 - wildcard pattern
@@ -913,12 +913,12 @@ There are 6 pattern types:
     It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
 
         match x:
-            1:
-                print("It's one!")
-            2:
-                print("It's one times two!")
-            _:
-                print("It's not 1 or 2. I don't care tbh.")
+        	1:
+        		print("It's one!")
+        	2:
+        		print("It's one times two!")
+        	_:
+        		print("It's not 1 or 2. I don't care tbh.")
 
 
 - binding pattern
@@ -926,12 +926,12 @@ There are 6 pattern types:
     It's especially useful in array and dictionary patterns. ::
 
         match x:
-            1:
-                print("It's one!")
-            2:
-                print("It's one times two!")
-            var new_var:
-                print("It's not 1 or 2, it's ", new_var)
+        	1:
+        		print("It's one!")
+        	2:
+        		print("It's one times two!")
+        	var new_var:
+        		print("It's not 1 or 2, it's ", new_var)
 
 
 - array pattern
@@ -944,14 +944,14 @@ There are 6 pattern types:
     Every subpattern has to be comma separated. ::
 
         match x:
-            []:
-                print("Empty array")
-            [1, 3, "test", null]:
-                print("Very specific array")
-            [var start, _, "test"]:
-                print("First element is ", start, ", and the last is \"test\"")
-            [42, ..]:
-                print("Open ended array")
+        	[]:
+        		print("Empty array")
+        	[1, 3, "test", null]:
+        		print("Very specific array")
+        	[var start, _, "test"]:
+        		print("First element is ", start, ", and the last is \"test\"")
+        	[42, ..]:
+        		print("Open ended array")
 
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
@@ -967,25 +967,25 @@ There are 6 pattern types:
     A value pattern is separated from the key pattern with a ``:`` ::
 
         match x:
-            {}:
-                print("Empty dict")
-            {"name": "Dennis"}:
-                print("The name is Dennis")
-            {"name": "Dennis", "age": var age}:
-                print("Dennis is ", age, " years old.")
-            {"name", "age"}:
-                print("Has a name and an age, but it's not Dennis :(")
-            {"key": "godotisawesome", ..}:
-                print("I only checked for one entry and ignored the rest")
+        	{}:
+        		print("Empty dict")
+        	{"name": "Dennis"}:
+        		print("The name is Dennis")
+        	{"name": "Dennis", "age": var age}:
+        		print("Dennis is ", age, " years old.")
+        	{"name", "age"}:
+        		print("Has a name and an age, but it's not Dennis :(")
+        	{"key": "godotisawesome", ..}:
+        		print("I only checked for one entry and ignored the rest")
 
 Multipatterns:
     You can also specify multiple patterns separated by a comma. These patterns aren't allowed to have any bindings in them. ::
 
         match x:
-            1, 2, 3:
-                print("It's 1 - 3")
-            "Sword", "Splash potion", "Fist":
-                print("Yep, you've taken damage")
+        	1, 2, 3:
+        		print("It's 1 - 3")
+        	"Sword", "Splash potion", "Fist":
+        		print("Yep, you've taken damage")
 
 
 
@@ -1033,12 +1033,12 @@ Here's a class file example:
     var health = 5
 
     func print_health():
-        print(health)
+    	print(health)
 
     func print_this_script_three_times():
-        print(get_script())
-        print(ResourceLoader.load("res://character.gd"))
-        print(Character)
+    	print(get_script())
+    	print(ResourceLoader.load("res://character.gd"))
+    	print(Character)
 
 
 .. note:: Godot's class syntax is compact: it can only contain member variables or
@@ -1085,7 +1085,7 @@ the ``is`` keyword can be used:
 
     # Use 'is' to check inheritance.
     if (entity is Enemy):
-        entity.apply_damage()
+    	entity.apply_damage()
 
 To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
 prepend ``.`` to the function name:
@@ -1101,7 +1101,7 @@ to call them, you can use ``.`` like the ``super`` keyword in other languages:
 ::
 
     func some_func(x):
-        .some_func(x) # Calls same function on the parent class.
+    	.some_func(x) # Calls same function on the parent class.
 
 Class Constructor
 ^^^^^^^^^^^^^^^^^
@@ -1127,18 +1127,18 @@ This is better explained through examples. Say we have this scenario:
     var message = null
 
     func _init(e=null):
-        entity = e
+    	entity = e
 
     func enter(m):
-        message = m
+    	message = m
 
 
     # Idle.gd (inheriting class)
     extends "State.gd"
 
     func _init(e=null, m=null).(e):
-        # Do something with 'e'.
-        message = m
+    	# Do something with 'e'.
+    	message = m
 
 There are a few things to keep in mind here:
 
@@ -1157,7 +1157,7 @@ There are a few things to keep in mind here:
     # Idle.gd
 
     func _init().(5):
-        pass
+    	pass
 
 Inner classes
 ^^^^^^^^^^^^^
@@ -1172,14 +1172,14 @@ function.
 
     # An inner class in this class file.
     class SomeInnerClass:
-        var a = 5
-        func print_value_of_a():
-            print(a)
+    	var a = 5
+    	func print_value_of_a():
+    		print(a)
 
     # This is the constructor of the class file's main class.
     func _init():
-        var c = SomeInnerClass.new()
-        c.print_value_of_a()
+    	var c = SomeInnerClass.new()
+    	c.print_value_of_a()
 
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
@@ -1196,8 +1196,8 @@ class resource is done by calling the ``new`` function on the class object::
     const MyClass = preload("myclass.gd")
 
     func _init():
-        var a = MyClass.new()
-        a.some_function()
+    	var a = MyClass.new()
+    	a.some_function()
 
 Exports
 ~~~~~~~
@@ -1396,10 +1396,10 @@ with the new value. Vice-versa, when ``variable`` is accessed, the *getter* func
     var myvar setget my_var_set, my_var_get
 
     func my_var_set(new_value):
-        my_var = new_value
+    	my_var = new_value
 
     func my_var_get():
-        return my_var # Getter must return a value.
+    	return my_var # Getter must return a value.
 
 Either of the *setter* or *getter* functions can be omitted:
 
@@ -1419,13 +1419,13 @@ illustration of this:
 ::
 
     func _init():
-        # Does not trigger setter/getter.
-        my_integer = 5
-        print(my_integer)
+    	# Does not trigger setter/getter.
+    	my_integer = 5
+    	print(my_integer)
 
-        # Does trigger setter/getter.
-        self.my_integer = 5
-        print(self.my_integer)
+    	# Does trigger setter/getter.
+    	self.my_integer = 5
+    	print(self.my_integer)
 
 Tool mode
 ~~~~~~~~~
@@ -1442,7 +1442,7 @@ placed at the top of the file:
     extends Button
 
     func _ready():
-        print("Hello")
+    	print("Hello")
 
 Memory management
 ~~~~~~~~~~~~~~~~~
@@ -1480,14 +1480,14 @@ declared and connect it to the method of another instance:
 ::
 
     func _callback_no_args():
-        print("Got callback!")
+    	print("Got callback!")
 
     func _callback_args(a,b):
-        print("Got callback with args! a: ", a, " and b: ", b)
+    	print("Got callback with args! a: ", a, " and b: ", b)
 
     func _at_some_func():
-        instance.connect("your_signal_name", self, "_callback_no_args")
-        instance.connect("your_signal_name_with_args", self, "_callback_args")
+    	instance.connect("your_signal_name", self, "_callback_no_args")
+    	instance.connect("your_signal_name_with_args", self, "_callback_args")
 
 It is also possible to bind arguments to a signal that lacks them with
 your custom values:
@@ -1495,7 +1495,7 @@ your custom values:
 ::
 
     func _at_some_func():
-        instance.connect("your_signal_name", self, "_callback_args", [22, "hello"])
+    	instance.connect("your_signal_name", self, "_callback_args", [22, "hello"])
 
 This is useful when a signal from many objects is connected to a
 single callback and the sender must be identified:
@@ -1503,11 +1503,11 @@ single callback and the sender must be identified:
 ::
 
     func _button_pressed(which):
-        print("Button was pressed: ", which.get_name())
+    	print("Button was pressed: ", which.get_name())
 
     func _ready():
-        for b in get_node("buttons").get_children():
-            b.connect("pressed", self, "_button_pressed",[b])
+    	for b in get_node("buttons").get_children():
+    		b.connect("pressed", self, "_button_pressed",[b])
 
 Finally, emitting a custom signal is done by using the
 Object.emit_signal method:
@@ -1515,9 +1515,9 @@ Object.emit_signal method:
 ::
 
     func _at_some_func():
-        emit_signal("your_signal_name")
-        emit_signal("your_signal_name_with_args", 55, 128)
-        some_instance.emit_signal("some_signal")
+    	emit_signal("your_signal_name")
+    	emit_signal("your_signal_name_with_args", 55, 128)
+    	some_instance.emit_signal("some_signal")
 
 Coroutines with yield
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1533,16 +1533,16 @@ an example:
 ::
 
     func my_func():
-       print("Hello")
-       yield()
-       print("world")
+    	print("Hello")
+    	yield()
+    	print("world")
 
     func _ready():
-        var y = my_func()
-        # Function state saved in 'y'.
-        print("my dear")
-        y.resume()
-        # 'y' resumed and is now an invalid state.
+    	var y = my_func()
+    	# Function state saved in 'y'.
+    	print("my dear")
+    	y.resume()
+    	# 'y' resumed and is now an invalid state.
 
 Will print:
 
@@ -1558,15 +1558,15 @@ example:
 ::
 
     func my_func():
-       print("Hello")
-       print(yield())
-       return "cheers!"
+    	print("Hello")
+    	print(yield())
+    	return "cheers!"
 
     func _ready():
-        var y = my_func()
-        # Function state saved in 'y'.
-        print(y.resume("world"))
-        # 'y' resumed and is now an invalid state.
+    	var y = my_func()
+    	# Function state saved in 'y'.
+    	print(y.resume("world"))
+    	# 'y' resumed and is now an invalid state.
 
 Will print:
 
@@ -1600,12 +1600,12 @@ into an invalid state, for example:
 ::
 
     func my_func():
-	    yield(button_func(), "completed")
-	    print("All buttons were pressed, hurray!")
+    	yield(button_func(), "completed")
+    	print("All buttons were pressed, hurray!")
 
     func button_func():
-        yield($Button0, "pressed")
-	    yield($Button1, "pressed")
+    	yield($Button0, "pressed")
+    	yield($Button1, "pressed")
 
 ``my_func`` will only continue execution once both the buttons are pressed.
 
@@ -1622,7 +1622,7 @@ be obtained when a call to Node._ready() is made.
     var my_label
 
     func _ready():
-        my_label = get_node("MyLabel")
+    	my_label = get_node("MyLabel")
 
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``onready`` keyword, that
