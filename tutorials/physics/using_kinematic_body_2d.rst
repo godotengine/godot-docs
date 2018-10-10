@@ -91,6 +91,15 @@ other parameters allowing you to customize the slide behavior:
 
     This is the maximum angle before a surface is no longer considered a "floor".
 
+``move_and_slide_with_snap``
+~~~~~~~~~~~~~~~~~~
+
+This method adds some additional functionality to ``move_and_slide()`` by adding
+the ``snap`` parameter. As long as this vector is in contact with the ground, the
+body will remain attached to the surface. Note that this means you must disable
+snapping when jumping, for example. You can do this either by setting ``snap``
+to ``Vector2(0, 0)`` or by using ``move_and_slide()`` instead.
+
 Which movement method to use?
 -----------------------------
 
@@ -181,7 +190,7 @@ Attach a script to the KinematicBody2D and add the following code:
     using System;
 
     public class KBExample : KinematicBody2D
-    { 
+    {
         public int Speed = 250;
         private Vector2 _velocity = new Vector2();
 
@@ -288,7 +297,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
     using System;
 
     public class KBExample : KinematicBody2D
-    { 
+    {
         private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
         public int Speed = 200;
         private Vector2 _velocity = new Vector2();
@@ -364,7 +373,7 @@ And the code for the Bullet:
     using System;
 
     public class Bullet : KinematicBody2D
-    { 
+    {
         public int Speed = 750;
         private Vector2 _velocity = new Vector2();
 
@@ -461,7 +470,7 @@ Here's the code for the player body:
     using System;
 
     public class KBExample : KinematicBody2D
-    { 
+    {
         [Export] public int RunSpeed = 100;
         [Export] public int JumpSpeed = -400;
         [Export] public int Gravity = 1200;
