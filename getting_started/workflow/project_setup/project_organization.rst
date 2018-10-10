@@ -59,4 +59,4 @@ Because of this, assets are now transparently imported from within the project
 folder.
 
 If a folder shouldn't be imported into Godot, an exception can be made with a
-.gitignore file.
+.gdignore file.
