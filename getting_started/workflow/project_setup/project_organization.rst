@@ -25,8 +25,9 @@ without metadata or an asset database.
 Unlike other engines, a lot of resource are contained within the scene
 itself, so the amount of files in the filesystem is considerably lower.
 
-Considering that, the most common approach is to group assets close to scenes as,
-when a project grows, it makes it more maintainable.
+Considering that, the most common approach is to group assets as close
+to scenes as possible; when a project grows, it makes it more
+maintainable.
 
 As example, base sprite images, 3D model scenes or meshes, materials, etc.
 can usually be organized in a place, while a separate folder is used
