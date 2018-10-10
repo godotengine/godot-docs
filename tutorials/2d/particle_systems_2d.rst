@@ -166,24 +166,21 @@ means particles are drawn according to their emission order (default).
 ParticlesMaterial settings
 --------------------------
 
+.. Commented out as not implemented in 3.x for now.
 ..
-
-    Commented out as not implemented in 3.x for now.
-
-    Direction
-    ~~~~~~~~~
-
-    This is the base angle at which particles emit. Default is ``0`` (down):
-
-    .. image:: img/paranim1.gif
-
-    Changing it will change the emissor direction, but gravity will still
-    affect them:
-
-    .. image:: img/paranim2.gif
-
-    This parameter is useful because, by rotating the node, gravity will
-    also be rotated. Changing direction allows them to be separated.
+   Direction
+   ~~~~~~~~~
+..
+   This is the base angle at which particles emit. Default is ``0`` (down):
+..
+   .. image:: img/paranim1.gif
+..
+   Changing it will change the emissor direction, but gravity will still affect them:
+..
+   .. image:: img/paranim2.gif
+..
+   This parameter is useful because, by rotating the node, gravity will
+   also be rotated. Changing direction allows them to be separated.
 
 Spread
 ~~~~~~

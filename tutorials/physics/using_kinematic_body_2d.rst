@@ -92,7 +92,7 @@ other parameters allowing you to customize the slide behavior:
     This is the maximum angle before a surface is no longer considered a "floor".
 
 ``move_and_slide_with_snap``
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This method adds some additional functionality to ``move_and_slide()`` by adding
 the ``snap`` parameter. As long as this vector is in contact with the ground, the
