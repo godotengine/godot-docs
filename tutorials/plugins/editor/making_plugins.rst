@@ -118,7 +118,7 @@ clicked. And for that we'll need a simple script that extends from
 
 That's it for our basic button. You can save this as ``button.gd`` inside the
 plugin folder. You'll also need a 16x16 icon to show in the scene tree. If you
-don't have one, you can grab the default one from the engine:
+don't have one, you can grab the default one from the engine, save it in your `addons/my_custom_node` folder as `icon.png` or you use the default Godot logo (`preload("res://icon.png")`).
 
 .. image:: img/making_plugins-custom_node_icon.png
 
