@@ -48,8 +48,7 @@ in a :ref:`Sprite <class_Sprite>` node:
 
 .. image:: img/spriteprop.png
 
-Pressing the ">" button on the right side of the preview allows us to
-view and edit the resources properties.
+Clicking the resource preview allows us to view and edit the resources properties.
 
 .. image:: img/resourcerobi.png
 
