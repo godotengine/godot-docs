@@ -10,7 +10,7 @@ Though arguably less convenient to edit than a wiki, this git repository is mean
 
 ### Editing existing pages
 
-To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/`should not be edited here, they are automatically generated from Godot's [XML class reference](https://github.com/godotengine/godot/tree/master/doc/base).**
+To edit an existing page, just locate its .rst source file and open it in your favorite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/`should not be edited here, they are automatically generated from Godot's [XML class reference](https://github.com/godotengine/godot/tree/master/doc/base).**
 
 ### Adding new pages
 
@@ -38,7 +38,7 @@ Similarly, you can include attachments (like assets as support material for a tu
 
 ## Building with Sphinx
 
-To build the HTML website (or any other format supported by Sphinx, like PDF, EPUB or LaTeX), you need to install [Sphinx](http://sphinx-doc.org/) >= 1.3 as well as (for the HTML) the [readthedocs.org theme](https://github.com/snide/sphinx_rtd_theme). Only the Python 3 flavour was tested, though the Python 2 versions might work too.
+To build the HTML website (or any other format supported by Sphinx, like PDF, EPUB or LaTeX), you need to install [Sphinx](http://sphinx-doc.org/) >= 1.3 as well as (for the HTML) the [readthedocs.org theme](https://github.com/snide/sphinx_rtd_theme). Only the Python 3 flavor was tested, though the Python 2 versions might work too.
 
 Those tools are best installed using [pip](https://pip.pypa.io), Python's module installer. The Python 3 version might be provided (on Linux distros) as `pip3` or `python3-pip`. You can then run:
 
@@ -54,7 +54,7 @@ make html
 ```
 
 The compilation might take some time as the `classes/` folder contains many files to parse.  
-You can then test the changes live by opening `_build/html/index.html` in your favourite browser.
+You can then test the changes live by opening `_build/html/index.html` in your favorite browser.
 
 ### Building with Sphinx on Windows
 
