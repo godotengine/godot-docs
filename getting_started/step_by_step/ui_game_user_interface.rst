@@ -68,9 +68,16 @@ tree as reusable sub-scenes. We'll do that in a moment.
 
 For now, let's start with a few containers.
 
-Create a new scene and add a ``MarginContainer``. Select the node and
-name it ``GUI``. Then save the scene as ``GUI.tscn``. It will
-contain the entire GUI.
+Create a new scene and add a ``MarginContainer``. Select the node and name it
+``GUI``.
+
+We want our interface to anchor to the top of the screen. Select the ``GUI``
+node and click the Layout button at the top of the viewport. Select the ``Top
+Wide`` option. The ``GUI`` node will anchor to the top edge of its parent, the
+viewport by default. It will resize automatically on the vertical axis to make
+space for its child UI components.
+
+Save the scene as ``GUI.tscn``. We will put the entire GUI in it.
 
 With the ``MarginContainer`` selected, head to the inspector and scroll
 down to the custom constants section. Unfold it and click the field next
@@ -78,11 +85,10 @@ to each of the ``Margin`` properties. Set them all to ``20`` pixels.
 Next, add an ``HBoxContainer`` node. This one will contain our two bars
 on the left and separate them from the two counters on the right.
 
-We want to stack the bars vertically inside the ``HBoxContainer``. To do
-this, let's add a ``VBoxContainer``. Name it ``Bars``. Select the parent
-``HBoxContainer`` again and this time, add another ``HBoxContainer``.
-This one will hold the counters, so call it ``Counters``. With these
-four containers, we have the base for our GUI scene.
+We want to stack the bars vertically inside the ``HBoxContainer``.
+Add a ``VBoxContainer`` as a child of ``GUI`` and name it ``Bars``. Select the parent
+``HBoxContainer`` again and this time, add another ``HBoxContainer`` as a child of it.
+Call it ``Counters``. With these four containers, we have the base for our GUI scene.
 
 .. figure:: ./img/ui_gui_containers_structure_in_godot.png
 
@@ -314,12 +320,11 @@ resource. In the ``Extra Spacing`` section, change the ``Bottom`` value
 to ``0`` to reset the font's baseline. Our counter now works as
 expected.
 
-While we are at it, let's make it so the ``Counters`` snap to the right
-edge of the viewport. To achieve this we will set the ``Bars`` container
-to expand and take all the horizontal space. Select the ``Bars`` node
-and scroll down to the ``Size Flags`` category. In the ``Horizontal``
-category, check the ``Expand`` value. The ``Bars`` node should resize
-and push the counter to the rightmost of the screen.
+Let's make the ``Counters`` anchor to the right edge of the viewport. To do so
+we need to set the ``Bars`` container take all the available horizontal space it
+can. Select the ``Bars`` node and scroll down to the ``Size Flags`` category. In
+the ``Horizontal`` category, check the ``Expand`` value. The ``Bars`` node
+should resize and push the counter to the right side of the screen.
 
 .. figure:: ./img/ui_gui_step_tutorial_counter_design_5.png
 
