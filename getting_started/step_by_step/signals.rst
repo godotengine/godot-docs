@@ -214,7 +214,7 @@ remain "attached" to the player as it rotates:
 
 Instead, we need the bullets to be independent of the player's movement - once
 fired, they should continue traveling in a straight line and the player can no
-longer affect them. Instead of being added to the scne tree as a child of the
+longer affect them. Instead of being added to the scene tree as a child of the
 player, it makes more sense to add the bullet as a child of the "main" game
 scene, which may be the player's parent or even further up the tree.
 
