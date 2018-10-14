@@ -42,35 +42,35 @@ is required in the submission form here as well.
     when dealing with major versions of the engine, such as Godot 2.x and Godot 3.x.
 * **Version**: 
     The version number of the asset. While you are free to choose
-    and use any  versioning scheme that you like, you may want to look into
+    and use any versioning scheme that you like, you may want to look into
     something such as `SemVer <https://semver.org>`_ if you want your asset's
     versioning scheme to be clear and consistent. Note that there is also an
     internal version number, incremented every time the asset download URL is
-    changed/updated. 
+    changed or updated. 
 * **Repository host**: 
     Assets uploaded to the AssetLib are not hosted on it
-    directly, and instead point to repositories hosted on third-party Git providers,
+    directly. Instead, they point to repositories hosted on third-party Git providers
     such as GitHub, GitLab or Bitbucket. This is where you choose which provider
-    your asset uses, so the final download link can be computed.
+    your asset uses, so the site can compute the final download link.
 * **Repository URL**: 
     The URL to your asset's files/webpage. This will vary
     based on your choice of provider, but it should look similar to `https://github.com/<user>/<project>`.
 * **Issues URL**: 
     The URL to your asset's issue tracker. Again, this will differ
     from repository host to repository host, but will likely look similar to
-    `https://github.cmo/<user>/<project>/issues`. You may leave this field empty
+    `https://github.com/<user>/<project>/issues`. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
 * **Download Commit/Tag**:
     The commit or tag of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. From this, the actual
-    download URL will be computed.
+    `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. The site computes
+    the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail
-    in the AssetLib search results, and on the asset's page). Should be an image
+    in the AssetLib search results and on the asset's page). Should be an image
     in either the PNG or JPG format.
 * **License**:
     The license under which you are distributing the asset. The list
-    includes a variety of free and open-source software liceses, such as GPL
+    includes a variety of free and open-source software licenses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_  
     for a detailed description of each of the listed licenses.
 * **Description**:
