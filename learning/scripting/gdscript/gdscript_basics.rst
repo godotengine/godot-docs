@@ -446,8 +446,8 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
     var b = arr[1]            # this is 2
     var c = arr[arr.size()-1] # this is 3
     var d = arr[-1]           # same as the previous line, but shorter
-    arr[0] = "Hi!"            # replacing value 1 with "Hi"
-    arr.append(4)             # array is now ["Hi", 2, 3, 4]
+    arr[0] = "Hi!"            # replacing value 1 with "Hi!"
+    arr.append(4)             # array is now ["Hi!", 2, 3, 4]
 
 GDScript arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
