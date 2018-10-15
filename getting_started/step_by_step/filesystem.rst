@@ -8,13 +8,13 @@ Introduction
 
 File systems are yet another hot topic in engine development. The
 file system manages how the assets are stored and how they are accessed.
-A well designed file system also allows multiple developers to edit the
+A well-designed file system also allows multiple developers to edit the
 same source files and assets while collaborating together.
 
 Initial versions of the Godot engine (and previous iterations before it was
 named Godot) used a database. Assets were stored in it and assigned an
 ID. Other approaches were tried as well, such as local databases, files with
-metadata, etc. In the end the simple approach won and now Godot stores
+metadata, etc. In the end, the simple approach won and now Godot stores
 all assets as files in the file system.
 
 Implementation
@@ -27,7 +27,7 @@ included. If a resource has sub-resources that are built-in, the resource is
 saved in a single file together with all the bundled sub-resources. For
 example, a font resource is often bundled together with the font textures.
 
-In general the Godot file system avoids using metadata files. The reason for
+In general, the Godot file system avoids using metadata files. The reason for
 this is simple, existing asset managers and VCSs are simply much better than
 anything we can implement, so Godot tries the best to play along with SVN,
 Git, Mercurial, Perforce, etc.
@@ -46,7 +46,7 @@ project.godot
 -------------
 
 The project.godot file is the project description file, and it is always found at
-the root of the project. In fact its location defines where the root is. This
+the root of the project. In fact, its location defines where the root is. This
 is the first file that Godot looks for when opening a project.
 
 This file contains the project configuration in plain text, using the win.ini
