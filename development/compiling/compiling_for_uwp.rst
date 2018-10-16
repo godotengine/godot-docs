@@ -95,7 +95,7 @@ to build it for ARM if you plan to run on a device. You can also use MSBuild if
 you're comfortable with the command line.
 
 Create a new Windows App project using the "App for OpenGL ES
-(Windows Unversal)" project template, which can be found under the
+(Windows Universal)" project template, which can be found under the
 ``Visual C++/Windows/Universal`` category.
 
 This is a base project with the ANGLE dependencies already set up. However, by
