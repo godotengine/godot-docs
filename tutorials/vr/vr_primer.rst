@@ -13,7 +13,7 @@ AR/VR server
 
 When Godot starts each available interface will make itself known to the AR/VR server. GDNative interfaces are setup as singletons, as long as they are added to the list of GDNative singletons in your project they will make themselves known to the server.
 
-You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>` to return a list of available interfaces but for this tutorial we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereo scopic image to screen. It is also available in the Godot core and outputs to screen on desktop which makes it ideal for prototyping or a tutorial such as this one.
+You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>` to return a list of available interfaces but for this tutorial we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a straightforward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereoscopic image to screen. It is also available in the Godot core and outputs to screen on desktop which makes it ideal for prototyping or a tutorial such as this one.
 
 To enable an interface you execute the following code:
 
@@ -32,9 +32,9 @@ To enable an interface you execute the following code:
         GetViewport().Arvr = true;
     }
 
-This code finds the interface we wish to use, initializes it and if that is successful binds the main viewport to the interface. This last step gives some control over the viewport to the interface which automatically enables things like stereo scopic rendering on the viewport.
+This code finds the interface we wish to use, initializes it and if that is successful binds the main viewport to the interface. This last step gives some control over the viewport to the interface which automatically enables things like stereoscopic rendering on the viewport.
 
-For our mobile vr interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where arvr is set to true. But for interfaces that render on an externally attached device you can use a secondary viewport. In this later case a viewport that shows its output on screen will show an undistorted version of the left eye while showing the fully processed stereo scopic output on the device.
+For our mobile vr interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where arvr is set to true. But for interfaces that render on an externally attached device you can use a secondary viewport. In this later case a viewport that shows its output on screen will show an undistorted version of the left eye while showing the fully processed stereoscopic output on the device.
 
 Finally you should only initialize an interface once, switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily just disable the viewport or set arvr to false on the viewport. In most scenarios though you wouldn't disable the headset once you're in VR, this can be disconcerting to the gamer.
 
@@ -55,7 +55,7 @@ The first two must exist in your scene for AR/VR to work and this tutorial focus
 To keep things simple, when you physically move around your room the ARVR Origin point stays where it is, the position of the camera and controllers will be adjusted according to your movements.
 When you move through the virtual world, either through controller input or when you implement a teleport system it is the origin point which you will have to adjust the position of.
 
-:ref:`ARVRCamera <class_ARVRCamera>` is the second node that must always be a part of your scene and it must always be a child node of your origin node. It is a subclass of Godots normal camera however its position is automatically updated each frame based on the physical orientation and position of the HMD. Also due to the precision required for rendering to an HMD or rendering an AR overlay over a real world camera most of the standard camera properties are ignored. The only properties of the camera that are used are the near and far plane settings. The FOV, aspect ratio and projection mode are all ignored.
+:ref:`ARVRCamera <class_ARVRCamera>` is the second node that must always be a part of your scene and it must always be a child node of your origin node. It is a subclass of Godot's normal camera. However, its position is automatically updated each frame based on the physical orientation and position of the HMD. Also due to the precision required for rendering to an HMD or rendering an AR overlay over a real world camera most of the standard camera properties are ignored. The only properties of the camera that are used are the near and far plane settings. The FOV, aspect ratio and projection mode are all ignored.
 
 Note that for our native mobile VR implementation there is no positional tracking, only the orientation of the phone and by extension the HMD is tracked. This implementation artificially places the camera at a height (Y) of 1.85.
 
@@ -80,4 +80,4 @@ Performance is another thing that needs to be carefully considered. Especially V
 * A normal game will run acceptable on 30fps and ideally manages 60fps. That gives you a big range to play with between lower end and higher end hardware. For any HMD application of AR or VR however 60fps is the absolute minimum and you should target your games to run at a stable 90fps to ensure your users don't get motion sickness right off the bat.
 * The high FOV and related lens distortion effect require many VR experiences to render at double the resolution. Yes a VIVE may only have a resolution of 1080x1200 per eye, we're rendering each eye at 2160x2400 as a result. This is less of an issue for most AR applications.
 
-All in all, the workload your GPU has in comparison with a normal 3D game is a fair amount higher. While things are in the pipeline to improve this such as MultiView and foviated rendering these aren't supported on all devices. This is why you see many VR games using a more art style and if you pay close attention to those VR games that go for realism, you'll probably notice they're a bit more conservative on the effects or use some good old optical trickery.
+All in all, the workload your GPU has in comparison with a normal 3D game is a fair amount higher. While things are in the pipeline to improve this such as MultiView and foveated rendering these aren't supported on all devices. This is why you see many VR games using a more art style and if you pay close attention to those VR games that go for realism, you'll probably notice they're a bit more conservative on the effects or use some good old optical trickery.
