@@ -9,11 +9,11 @@ Animation supported:
 
 Multiple Actions For Single Object 
 ----------------------------------
-In most games, one objects would have serveral animations to switch between. 
+In most games, one objects would have several animations to switch between. 
 This addon have a support for exporting multiple actions all at once into
 a single AnimationPlayer and makes it easy to switch actions.
 
-This worksflow makes use of blender nla_tracks. Here is a brief guide of how
+This workflow makes use of blender nla_tracks. Here is a brief guide of how
 to use this feature:
 
 **1. Switch workspace to 'Dope Sheet'**
@@ -57,7 +57,7 @@ Animation Mode
 Godot and Blender have different structure to store animation data.
 In Godot animation data is stored in an AnimationPlayer node, instead
 of in each animated node. In order to fix this inconsistence and still
-make the animation play versatile, this addon has three aimation exporting
+make the animation play versatile, this addon has three animation exporting
 modes.
 
 
