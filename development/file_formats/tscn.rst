@@ -393,7 +393,7 @@ it includes:
 
 2) The :code:`path` has the format :code:`NodePath(Path/To/Node:Attribute)`. 
    It is the path from animation root node (property of AnimationPlayer) to the 
-   animated node or attrbute.
+   animated node or attribute.
 
 3) The :code:`interp` is the method to interpolate frames from the keyframes.
    it is a enum variable and can has value:
