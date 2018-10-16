@@ -185,7 +185,7 @@ Finally, lets take a look at ``set_mouse_and_joypad_sensitivity``.
 
 First we get the ``Globals`` singleton and assign it to a local variable.
 
-We then set the ``mouse_sensitivity`` and ``joypad_sensitvity`` variables to the values in their respective :ref:`HSlider <class_HSlider>` node counterparts.
+We then set the ``mouse_sensitivity`` and ``joypad_sensitivity`` variables to the values in their respective :ref:`HSlider <class_HSlider>` node counterparts.
 
 Making the ``Globals`` singleton
 --------------------------------
@@ -660,7 +660,7 @@ Next we set ``dead_time`` to ``RESPAWN_TIME`` so we can start counting down how 
 If the player is holding an object when they died, we need to throw it. We first check to see if the player is holding an object or not.
 If the player is holding a object, we throw it using the same code as the throwing code we added in :ref:`doc_fps_tutorial_part_five`.
 
-.. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always usefull when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
+.. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always useful when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
 
 ______
 
