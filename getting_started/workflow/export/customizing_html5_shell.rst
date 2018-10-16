@@ -23,7 +23,7 @@ Placeholder substitution
 ------------------------
 
 When exporting the game, several placeholders in the HTML page are substituted
-by values dependening on the export:
+by values depending on the export:
 
 +------------------------------+-----------------------------------------------+
 | Placeholder                  | substituted by                                |
