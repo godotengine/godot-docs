@@ -300,6 +300,7 @@ states and quick structs:
 
     # Same example, lua-style support.
     # This syntax is a lot more readable and usable
+    # Like any GDScript identifier, keys written in this form cannot start with a digit.
 
     var d = {
         name = "John",
