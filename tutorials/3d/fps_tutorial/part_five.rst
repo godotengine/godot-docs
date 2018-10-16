@@ -140,7 +140,7 @@ the transform from the body looking at the grenade. This makes it where the bodi
 
 We then check to see if ``explosion_wait_timer`` is less than ``EXPLOSION_WAIT_TIME``. If it is, we add ``delta`` to ``explosion_wait_time``.
 
-Next we check to see if ``explosion_wait_timer`` is more than or equal to ``EXPLOSTION_WAIT_TIME``. Because we added ``delta``, this will only be called once.
+Next we check to see if ``explosion_wait_timer`` is more than or equal to ``EXPLOSION_WAIT_TIME``. Because we added ``delta``, this will only be called once.
 If ``explosion_wait_timer`` is more or equal to ``EXPLOSION_WAIT_TIME``, the grenade has waited long enough to let the :ref:`Particles <class_Particles>` play
 and we can free/destroy the grenade as we no longer need it.
 
@@ -745,7 +745,7 @@ Add the following to ``Turret.gd``:
 	node_flash_one.visible = true
 	node_flash_two.visible = true
 	
-	flas_timer = FLASH_TIME
+	flash_timer = FLASH_TIME
 	fire_timer = FIRE_TIME
 	
 	if ammo_in_turret <= 0:
@@ -849,7 +849,7 @@ the turret has waited long enough to refill its ammo.
 Next we check to see if the turret's health is less than or equal to ``0``, outside of whether it is active or not. If the turret's health is zero or less, we then
 check to see if ``destroyed_timer`` is more than zero. If destroyed timer is more than zero, we subtract ``delta`` from ``destroyed_timer``.
 
-If ``destyored_timer`` is less than or equal to zero, we set ``turret_health`` to ``MAX_TURRET_HEALTH`` and stop emitting smoke particles by setting ``smoke_particles.emitting`` to
+If ``destroyed_timer`` is less than or equal to zero, we set ``turret_health`` to ``MAX_TURRET_HEALTH`` and stop emitting smoke particles by setting ``smoke_particles.emitting`` to
 ``false``.
 
 ______
