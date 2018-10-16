@@ -4,7 +4,7 @@ Exporting for Universal Windows Platform
 ========================================
 
 There's no extra requirement to export an ``.appx`` package that can be
-installed as a Windows App or submited to the Windows Store. Exporting UWP
+installed as a Windows App or submitted to the Windows Store. Exporting UWP
 packages also works from any platform, not only from Windows.
 
 However, if you want to install and run the app, you need to sign it with a
