@@ -10,10 +10,10 @@ Armature object in Blender is exported as a Skeleton node along with
 rest position (transform in Godot) of bones. 
 
 .. warning:: 
-    The three check boxes :code:`Inheirt Rotation`, :code:`Inheirt Scale`,
+    The three check boxes :code:`Inherit Rotation`, :code:`Inherit Scale`,
     :code:`Local Location` (colored in red) must be ticked when building
     armature in Blender, so that the exported bone transform would be
-    consistant between Blender and Godot
+    consistent between Blender and Godot
 
 Bone Weights
 ------------
