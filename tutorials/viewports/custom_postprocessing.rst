@@ -120,7 +120,7 @@ the tree.
 
 .. note::
 
-    You can also render your Viewports seperately without nesting them like this. You just
+    You can also render your Viewports separately without nesting them like this. You just
     need to use two Viewports and to render them one after the other.
 
 Besides the node structure, the steps are the the same as with the single-pass post-processing shader.
