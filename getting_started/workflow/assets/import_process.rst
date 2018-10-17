@@ -83,8 +83,8 @@ the default setting can be saved and cleared too:
 Simplicity is key!
 ------------------
 
-This is a very simple workflow which takes very little time to learn. It also enforces a more
-correct way to deal with resources.
+This is a very simple workflow which takes very little time to learn.
+It also enforces a more correct way to deal with resources.
 
 There are many types of assets available for import, so please continue reading to understand how to work
 with all of them!
