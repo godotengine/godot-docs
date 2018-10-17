@@ -54,11 +54,16 @@ Additionally, extra assets will be preset in the hidden res://.import folder:
 
 .. image:: img/asset_workflow5.png
 
-If any of the files present in this folder are erased (or the whole folder), the
-asset or assets will be reimported automatically. As such, committing this folder
-to the version control system is optional. It can save time when
-reimporting or checking out on another computer, but it takes considerably
-more space and transfer time. Pick your poison!
+Any assets will be reimported automatically when they, or the
+res://.import folder, is erased. Depending on the size of your project,
+you can decide whether or not to commit that folder to a version
+control system (such as git). After checking out your project on
+another computer, the time it takes for Godot to import will be reduced
+if the folder exists; however, committing that folder will use more
+space in the repository and will increase the transfer time.
+Essentially, if you don't plan on editing your project from another
+location, you will probably find there is no advantage to adding the
+res://.import folder to your remote repository.
 
 Changing import resource type
 -----------------------------
