@@ -58,12 +58,12 @@ Any assets will be reimported automatically when they, or the
 res://.import folder, is erased. Depending on the size of your project,
 you can decide whether or not to commit that folder to a version
 control system (such as git). After checking out your project on
-another computer, the time it takes for Godot to import will be reduced
-if the folder exists; however, committing that folder will use more
-space in the repository and will increase the transfer time.
-Essentially, if you don't plan on editing your project from another
-location, you will probably find there is no advantage to adding the
-res://.import folder to your remote repository.
+another computer, Godot will not need to reimport if the folder exists;
+however, committing that folder will use significantly more space in
+the repository and will increase the transfer time. Essentially, if you
+don't plan on editing your project from another location, you will
+probably find there is no advantage to adding the res://.import folder
+to your remote repository.
 
 Changing import resource type
 -----------------------------
