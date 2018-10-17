@@ -46,7 +46,7 @@ interface using those placeholders.
 
 Placeholder doesn't have to mean ugly, but you should keep the graphics
 simple and clean. Avoid special effects, animation, and detailed
-illustration before you had players playtest your UI. Otherwise:
+illustration before you have players playtest your UI. Otherwise:
 
 1. The graphics might skew the players' perception of the experience and
    you'll miss out on valuable feedback
