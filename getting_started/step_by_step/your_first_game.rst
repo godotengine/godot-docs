@@ -804,8 +804,8 @@ Add the following code:
         add_child(mob)
         # Set the mob's direction perpendicular to the path direction.
         var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
-        # Set the mob's position to a random location.
-        mob.position = $MobPath/MobSpawnLocation.position
+        # Set the mob's position to the spawn location.
+        mob.position = $MobPath.position + $MobPath/MobSpawnLocation.position
         # Add some randomness to the direction.
         direction += rand_range(-PI / 4, PI / 4)
         mob.rotation = direction
