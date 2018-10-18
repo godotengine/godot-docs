@@ -13,7 +13,7 @@ Afterwards, you may want to look at :ref:`how to use specific features <doc_c_sh
 read about the :ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`
 and (re)visit the :ref:`Scripting section <doc_scripting>` of the step-by-step tutorial.
 
-C# is a high-level programming language developed by Microsoft. In Godot it is implemented with the Mono 5.x .NET framework including full support for C# 7.0.
+C# is a high-level programming language developed by Microsoft. In Godot, it is implemented with the Mono 5.x .NET framework including full support for C# 7.0.
 Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 A good starting point for checking its capabilities is the `Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_ page in the Mono documentation.
 
@@ -78,7 +78,7 @@ When troubleshooting, it sometimes can help to delete the ``.mono`` folder and l
 Note that currently there are some issues where the Godot and the C# project don't stay in sync; if you delete, rename or move things like scripts or nodes, they may no longer match up.
 In this case, it can help to edit the solution files manually.
 
-Example: If you created a script (e.g. ``Test.cs``) and delete it in Godot, compilation will fail because the now missing file is still expected to be there by the CS project.
+Example: If you created a script (e.g. ``Test.cs``) and delete it in Godot, the compilation will fail because now the missing file is still expected to be there by the CS project.
 You can for now simply open up the ``.csproj`` and look for the ``ItemGroup``, there should be a line included like the following:
 
 .. code-block:: xml
@@ -116,7 +116,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
 
         public override void _Process(float delta)
         {
-            // Called every frame. Delta is time since last frame.
+            // Called every frame. Delta is time since the last frame.
             // Update game logic here.
         }
     }
@@ -144,14 +144,14 @@ As C# support is quite new to Godot, there are some growing pains and things tha
 Below is a list of the most important issues you should be aware of when diving into C# in Godot, but if in doubt also take a look over the official `issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
 
 - As explained above, the C# project isn't always kept in sync automatically when things are deleted, renamed or moved in Godot (`#12917 <https://github.com/godotengine/godot/issues/12917>`_)
-- Writing editor plugins and tool scripts in C# is not yet supported
+- Writing editor plugins and tool scripts in C# are not yet supported
 - Exporting Mono projects is only supported for desktop platforms (Linux, Windows and macOS). HTML5, Android, iOS and UWP are not currently supported (`#18364 comment <https://github.com/godotengine/godot/issues/18364#issuecomment-406222102>`_)
 - Attached C# scripts should refer to a class that has a class name that matches the file name and is unique within the project assembly (`#7402 comment <https://github.com/godotengine/godot/issues/7402#issuecomment-269910926>`_)
 
 Performance of C# in Godot
 --------------------------
 
-According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_, performance of C# in Godot - while generally in the same order of magnitude - is roughly **~4x** that of GDScript in some naive cases.
+According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_, the performance of C# in Godot - while generally in the same order of magnitude - is roughly **~4x** that of GDScript in some naive cases.
 For full performance, C++ is still a little faster; the specifics are going to vary according to your use case. GDScript is likely fast enough for most general scripting workloads.
 C# is faster, but requires some expensive marshalling when talking to Godot.
 
