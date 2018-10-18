@@ -222,7 +222,7 @@ or include the script directly in the node. If you need to attach more scripts t
 depending on your scene and on what you want to achieve:
 
 - either add a new node between your target node and its current parent, then add a script to this new node.
-- or, your can split your target node into multiple children and attach one script to each of them.
+- or, you can split your target node into multiple children and attach one script to each of them.
 
 As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection
 and consider splitting a complicated scene into multiple, smaller branches.
