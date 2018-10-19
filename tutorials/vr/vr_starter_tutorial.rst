@@ -817,7 +817,7 @@ Next, we need to add the ``remove_sphere`` function. Add the following to ``Game
 
 What this function does is it removes one from ``spheres_left``.
 
-Then it checks to see if ``sphere_ui`` is not null, and if it is not, then it calls it's ``update_ui`` function, passing in the amount of sphere's left.
+Then it checks to see if ``sphere_ui`` is not null, and if it is not, then it calls its ``update_ui`` function, passing in the amount of sphere's left.
 We'll add the UI code later in this part.
 
 Now that we have destroyable targets, we need a way to destroy them!
@@ -1160,7 +1160,7 @@ Let's go through what this script does, starting with the class variables:
 - ``fuse_timer``: A variable for tracking how long the fuse has been burning.
 - ``explosion_area``: The :ref:`Area <class_Area>` node used for detecting what nodes are inside the explosion.
 - ``EXPLOSION_DAMAGE``: The amount of damage the explosion does.
-- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by it's ``speed scale``)
+- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by its ``speed scale``)
 - ``explosion_timer``: A variable for tracking how long the explosion has lasted.
 - ``explode``: A boolean for tracking whether the bomb has exploded.
 - ``fuse_particles``: The fuse :ref:`Particles <class_Particles>` node.

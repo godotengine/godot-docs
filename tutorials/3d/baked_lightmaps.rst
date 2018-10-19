@@ -170,7 +170,7 @@ More subdivision results in more detail but also takes more time to bake.
 
 In general, the defaults are good enough. There is also a **Capture Subdivision**
 (that must always be equal or less to the main subdivision), which is used
-for capturing light in dynamic objects (more on that later). It's default value
+for capturing light in dynamic objects (more on that later). Its default value
 is also good enough for more cases.
 
 .. image:: img/baked_light_capture.png

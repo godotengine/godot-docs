@@ -463,7 +463,7 @@ Finally, let's add some sounds that play when the player is reloading, changing 
          https://gamesounds.xyz/ is a collection of **"royalty free or public domain music and sounds suitable for games"**.
          I used Gamemaster's Gun Sound Pack, which can be found in the Sonniss.com GDC 2017 Game Audio Bundle.
 
-Open up ``Simple_Audio_Player.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as it's child.
+Open up ``Simple_Audio_Player.tscn``. It is simply a :ref:`Spatial <class_Spatial>` with a :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` as its child.
 
 .. note:: The reason this is called a 'simple' audio player is because we are not taking performance into account
           and because the code is designed to provide sound in the simplest way possible.
