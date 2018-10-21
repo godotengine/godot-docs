@@ -25,7 +25,7 @@ For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/god
 as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_ and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
 in the Godot repository.
 
-Also see `the license page on the Godot website <https://godotengine.org/license>`_.
+Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
 
 Which platforms are supported by Godot?
 ---------------------------------------
@@ -80,7 +80,7 @@ discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
 great way to start your troubleshooting.
 
 As for new languages, support is possible via third parties using the GDNative /
-NativeScript / PluginScript facilities. (See question about plugins below.)
+NativeScript / PluginScript facilities. (See the question about plugins below.)
 Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
@@ -110,7 +110,7 @@ Since Godot is an open-source project, it was imperative from the start to prior
 more integrated and seamless experience over attracting additional users by supporting
 more familiar programming languages--especially when supporting those more familiar
 languages would result in a worse experience. We understand if you would rather use
-another language in Godot (see list of supported options above). That being said, if
+another language in Godot (see the list of supported options above). That being said, if
 you haven't given GDScript a try, try it for **three days**. Just like Godot,
 once you see how powerful it is and rapid your development becomes, we think GDScript
 will grow on you.
@@ -225,7 +225,7 @@ For extending Godot, like creating Godot Editor plugins or adding support
 for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
 and tool scripts.
 
-Also see the official blog posts on these topics:
+Also, see the official blog posts on these topics:
 
 * `A look at the GDNative architecture <https://godotengine.org/article/look-gdnative-architecture>`_
 * `GDNative is here! <https://godotengine.org/article/dlscript-here>`_
