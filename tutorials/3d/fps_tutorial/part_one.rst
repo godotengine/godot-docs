@@ -320,7 +320,7 @@ want the player's previous input to effect the player beyond a single ``process_
 
 Next we get the camera's global transform and store it as well, into the ``cam_xform`` variable.
 
-The reason we need the camera's global transform is so we can use it's directional vectors.
+The reason we need the camera's global transform is so we can use its directional vectors.
 Many have found directional vectors confusing, so let's take a second to explain how they work:
 
 _________

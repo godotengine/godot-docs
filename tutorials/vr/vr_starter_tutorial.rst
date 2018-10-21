@@ -442,7 +442,7 @@ Next, let's go through ``_ready``.
 First we get the teleport :ref:`Raycast <class_Raycast>` node and assign it to ``teleport_raycast``.
 
 Next we get the teleport mesh, and notice how we are getting it from ``Game/Teleport_Mesh`` using ``get_tree().root``. This is because we need the teleport mesh
-to be separate from the controller, so moving and rotating the controller does not effect the position and rotation of the teleporation mesh.
+to be separate from the controller, so moving and rotating the controller does not effect the position and rotation of the teleportation mesh.
 
 Then we get the grab area, grab :ref:`Raycast <class_Raycast>`, and position node and assign them to the proper variables.
 
@@ -501,7 +501,7 @@ Next we account for dead zones on both the trackpad and the joystick. The code f
 
 .. tip:: You can find a great article explaining joystick deads zone here: http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
 
-One thing to note is how large we are making the dead zones. The reason we are using such large dead zones is to the player cannot move themselves accidentaly by placing their
+One thing to note is how large we are making the dead zones. The reason we are using such large dead zones is so the player cannot move themselves accidentally by placing their
 finger on the center of the touchpad/joystick, which make players feel motion sick if they are not expecting it.
 
 Next, we get the forward and right directional vectors from the VR camera. We need these so we can move the player forward/backwards and right/left based on where
@@ -740,7 +740,7 @@ to ``Sphere_Target.gd``:
         if health <= 0:
             
             get_node("CollisionShape").disabled = true
-            get_node("Shpere_Target").visible = false
+            get_node("Sphere_Target").visible = false
             
             var clone = RIGID_BODY_TARGET.instance()
             add_child(clone)
@@ -817,7 +817,7 @@ Next, we need to add the ``remove_sphere`` function. Add the following to ``Game
 
 What this function does is it removes one from ``spheres_left``.
 
-Then it checks to see if ``sphere_ui`` is not null, and if it is not, then it calls it's ``update_ui`` function, passing in the amount of sphere's left.
+Then it checks to see if ``sphere_ui`` is not null, and if it is not, then it calls its ``update_ui`` function, passing in the amount of sphere's left.
 We'll add the UI code later in this part.
 
 Now that we have destroyable targets, we need a way to destroy them!
@@ -1160,7 +1160,7 @@ Let's go through what this script does, starting with the class variables:
 - ``fuse_timer``: A variable for tracking how long the fuse has been burning.
 - ``explosion_area``: The :ref:`Area <class_Area>` node used for detecting what nodes are inside the explosion.
 - ``EXPLOSION_DAMAGE``: The amount of damage the explosion does.
-- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by it's ``speed scale``)
+- ``EXPLOSION_TIME``: The length of time the explosion :ref:`Particles <class_Particles>` take (you can calculate this number by multiplying the particles ``lifetime`` by its ``speed scale``)
 - ``explosion_timer``: A variable for tracking how long the explosion has lasted.
 - ``explode``: A boolean for tracking whether the bomb has exploded.
 - ``fuse_particles``: The fuse :ref:`Particles <class_Particles>` node.
@@ -1182,7 +1182,7 @@ Now let's look at ``_physics_process``.
 
 First we check to see if ``fuse_timer`` is less than ``FUSE_TIME``. If ``fuse_timer`` is less than ``FUSE_TIME``, then the bomb must be burning down the fuse.
 
-We then add time to ``fuser_timer``, and check to see if the bomb has waited long enough and has burned through the entire fuse.
+We then add time to ``fuse_timer``, and check to see if the bomb has waited long enough and has burned through the entire fuse.
 
 If the bomb has waited long enough, then we need to explode the bomb. We do this first by stopping the smoke :ref:`Particles <class_Particles>` from emitting, and
 making the explosion :ref:`Particles <class_Particles>` emit. We also hide the bomb mesh so it is no longer visible.

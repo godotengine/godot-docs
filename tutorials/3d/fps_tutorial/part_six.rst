@@ -165,7 +165,7 @@ If the ``back`` button has been pressed, we change the currently visible panels 
 
 If one of the scene changing buttons are pressed, we fist call ``set_mouse_and_joypad_sensitivity`` so the singleton (``Globals.gd``) has the values from the :ref:`HSlider 
 <class_HSlider>` nodes.
-Then we tell the singleton to change nodes using it's ``load_new_scene`` function, passing in the file path of the scene the player has selected.
+Then we tell the singleton to change nodes using its ``load_new_scene`` function, passing in the file path of the scene the player has selected.
 
 .. note:: Don't worry about the singleton, we'll get there soon!
 
@@ -175,7 +175,7 @@ In ``options_menu_button_pressed``, we check to see which button is pressed.
 
 If the ``back`` button has been pressed, we change the currently visible panels to return to the main menu.
 
-If the ``fullscreen`` button is pressed we toggle the :ref:`OS <class_OS>`'s full screen mode by setting it to the flipped version of it's current value.
+If the ``fullscreen`` button is pressed we toggle the :ref:`OS <class_OS>`'s full screen mode by setting it to the flipped version of its current value.
 
 If the ``vsync`` button is pressed we set the :ref:`OS <class_OS>`'s Vsync based on the state of the Vsync check button.
 
@@ -185,7 +185,7 @@ Finally, lets take a look at ``set_mouse_and_joypad_sensitivity``.
 
 First we get the ``Globals`` singleton and assign it to a local variable.
 
-We then set the ``mouse_sensitivity`` and ``joypad_sensitvity`` variables to the values in their respective :ref:`HSlider <class_HSlider>` node counterparts.
+We then set the ``mouse_sensitivity`` and ``joypad_sensitivity`` variables to the values in their respective :ref:`HSlider <class_HSlider>` node counterparts.
 
 Making the ``Globals`` singleton
 --------------------------------
@@ -431,7 +431,7 @@ have a ``popup`` open by checking to see if ``popup`` is equal to ``null``.
 
 If ``Globals.gd`` do not have a pop up open, we instance ``POPUP_SCENE`` and assign it to ``popup``.
 
-We then get the quit button and assign it's ``pressed`` signal to ``popup_quit``, which we will be adding shortly.
+We then get the quit button and assign its ``pressed`` signal to ``popup_quit``, which we will be adding shortly.
 
 Next we assign both the ``popup_hide`` signal from the :ref:`WindowDialog <class_WindowDialog>` and the ``pressed`` signal from the resume button
 to ``popup_closed``, which we will be adding shortly.
@@ -660,7 +660,7 @@ Next we set ``dead_time`` to ``RESPAWN_TIME`` so we can start counting down how 
 If the player is holding an object when they died, we need to throw it. We first check to see if the player is holding an object or not.
 If the player is holding a object, we throw it using the same code as the throwing code we added in :ref:`doc_fps_tutorial_part_five`.
 
-.. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always usefull when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
+.. note:: The ``\n`` combination from the expression ``You have died\n`` is a command used to display the text following after it on a new line below. This is always useful when you wand to nicely group displayed text in multiple lines so it looks better and is more readable by the players of your games.
 
 ______
 
@@ -679,9 +679,9 @@ We then enable both of the player's collision shapes so the player can collide a
 
 Next we make the ``Death_Screen`` invisible and make the rest of the UI, the ``Panel`` and ``Crosshair`` nodes, visible again.
 
-We then go through each weapon and call it's ``reset_weapon`` function, which we will add soon.
+We then go through each weapon and call its ``reset_weapon`` function, which we will add soon.
 
-Then we reset ``health`` to ``100``, ``grenade_amounts`` to it's default values, and change ``current_grenade`` to ``Grenade``.
+Then we reset ``health`` to ``100``, ``grenade_amounts`` to its default values, and change ``current_grenade`` to ``Grenade``.
 This effectively resets these variables to their default values.
 
 Finally, we set ``is_dead`` to ``false``.
@@ -794,7 +794,7 @@ Now all we need is a way to set the respawn points. Open up ``Ruins_Level.tscn``
         var globals = get_node("/root/Globals")
         globals.respawn_points = get_children()
         
-Now when a node with ``Respawn_Point_Setter.gd`` has it's ``_ready`` function called, all of the children
+Now when a node with ``Respawn_Point_Setter.gd`` has its ``_ready`` function called, all of the children
 nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, will be added
 to ``respawn_points`` in ``Globals.gd``.
 

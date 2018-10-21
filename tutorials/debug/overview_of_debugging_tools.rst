@@ -100,7 +100,7 @@ When running your game, a bar will occur at the top of the ``Scene`` dock. You c
 
 .. image:: img/overview_remote.png
 
-.. note:: Some editor settings related to debugging can be find in the ``Editor Settings``, under Network>Debug and Debugger sections.
+.. note:: Some editor settings related to debugging can be found inside the ``Editor Settings``, under Network>Debug and Debugger sections.
 
 
 

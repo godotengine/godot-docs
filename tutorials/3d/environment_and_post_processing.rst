@@ -161,7 +161,7 @@ The simplest way to use auto exposure is to make sure outdoor lights (or other
 strong lights) have energy beyond 1.0. This is done by tweaking their **Energy**
 multiplier (on the Light itself). To make it consistent, the **Sky** usually
 needs to use the energy multiplier too, to match the with the directional light.
-Normally, values between 3.0 and 6.0 are enough to simulate indoor-oudoor conditions.
+Normally, values between 3.0 and 6.0 are enough to simulate indoor-outdoor conditions.
 
 By combining Auto Exposure with *Glow* post processing (more on that below),
 pixels that go over the tonemap **White** will bleed to the glow buffer,

@@ -340,7 +340,7 @@ have a single :ref:`MeshInstance <class_MeshInstance>` as their children.
 
 Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node we're going to use to check if the player has walked close enough to pick up
 the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
-health pick up, so the smaller health pick up has a trigger collision shape closer to it's size.
+health pick up, so the smaller health pick up has a trigger collision shape closer to its size.
 
 The last thing to note is how we have a :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
 
@@ -738,7 +738,7 @@ The first thing we do is remove all children in the broken target holder. We do 
 
 Next we enable the collision shape by setting its ``disabled`` boolean to ``false``.
 
-Then we make the target, and all of it's children nodes, visible again.
+Then we make the target, and all of its children nodes, visible again.
 
 Finally, we reset the target's health (``current_health``) to ``TARGET_HEALTH``.
 

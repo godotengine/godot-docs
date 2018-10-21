@@ -10,7 +10,7 @@ control whether mesh modifiers are applied to the exported mesh.
 Shape Key
 ---------
 Exporting mesh shape key is supported, however exporting each shape key
-is almost like exporting the mesh again, so don't be surprisied
+is almost like exporting the mesh again, so don't be surprised
 it takes a relatively long time.
 
 .. warning::

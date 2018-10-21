@@ -86,7 +86,7 @@ resource.
 Example
 -------
 
-This example demostrates how to load a new scene. Consider it in the
+This example demonstrates how to load a new scene. Consider it in the
 context of the :ref:`doc_singletons_autoload` example.
 
 First we setup some variables and initialize the ``current_scene``

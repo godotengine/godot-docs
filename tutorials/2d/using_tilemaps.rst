@@ -178,6 +178,6 @@ one that looks better for you:
 -  Enable pixel snap (Set ``Project > Project Settings >
    Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also search for ``Pixel Snap``).
 -  Viewport Scaling can often help with shrinking the map (see the
-   :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with it's ``Zoom`` may be a good starting point.
+   :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with its ``Zoom`` may be a good starting point.
 -  You can use a single, separate image for each tile. This will remove all artifacts but
    can be more cumbersome to implement and is less optimized.

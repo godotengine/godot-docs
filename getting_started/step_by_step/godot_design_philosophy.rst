@@ -6,7 +6,7 @@ Godot’s design philosophy
 Now that you've gotten your hands wet, let's talk about Godot's design.
 
 **Every game engine is different and fits different needs.**
-Not only do they offer a range of features, the design of each engine
+Not only do they offer a range of features, but the design of each engine
 is unique. This leads to different workflows and different ways to form
 your games’ structures. This all stems from their respective design philosophies.
 

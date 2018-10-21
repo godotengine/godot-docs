@@ -93,7 +93,7 @@ Unity's scene system consists of embedding all the required assets in a scene
 and linking them together by setting components and scripts to them.
 
 Godot's scene system is different: it actually consists in a tree made of nodes.
-Each node serves a purpose: Sprite, Mesh, Light, etc. Basically, this is similar to Unity scene system.
+Each node serves a purpose: Sprite, Mesh, Light, etc. Basically, this is similar to the Unity scene system.
 However, each node can have multiple children, which makes each a subscene of the main scene.
 This means you can compose a whole scene with different scenes stored in different files.
 
@@ -145,7 +145,7 @@ new specific node that has collision properties. Godot features various collisio
 - Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
 
     - First, this system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
-    - Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
+    - Second, it allows the extraction a subtree of the scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
 
 
 These are the most important concepts you need to remember: "node", "parent node", and "child node".
@@ -222,7 +222,7 @@ or include the script directly in the node. If you need to attach more scripts t
 depending on your scene and on what you want to achieve:
 
 - either add a new node between your target node and its current parent, then add a script to this new node.
-- or, your can split your target node into multiple children and attach one script to each of them.
+- or, you can split your target node into multiple children and attach one script to each of them.
 
 As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection
 and consider splitting a complicated scene into multiple, smaller branches.

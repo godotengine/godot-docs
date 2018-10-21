@@ -34,7 +34,7 @@ There are the following caveats:
    Godot
  - In Godot, you can have different collision groups and collision masks. In
    Blender you only have collision groups. As a result, the exported object's
-   collision mask is equal to it's collision group. Most of the time, this is
+   collision mask is equal to its collision group. Most of the time, this is
    what you want.
 
 .. important::
