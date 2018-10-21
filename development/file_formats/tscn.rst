@@ -28,7 +28,7 @@ There are five main sections inside the TSCN File:
 
 The file descriptor looks like :code:`[gd_scene load_steps=1 format=2]` And 
 should be the first entry in the file. The load_steps parameter should (in 
-theory) be the number of resources within the file, though in practice it's 
+theory) be the number of resources within the file, though in practice its 
 value seems not to matter.
 
 These sections should appear in order, but it can be hard to distinguish 
@@ -62,7 +62,7 @@ The scene tree
 --------------
 
 The scene tree is made up of... nodes! The heading of each node consists of
-it's name, parent and (most of the time) a type. For example
+its name, parent and (most of the time) a type. For example
 :code:`[node type="Camera" name="PlayerCamera" parent="Player/Head"]`
 
 Other valid keywords include:

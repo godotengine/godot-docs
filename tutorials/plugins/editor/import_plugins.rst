@@ -406,7 +406,7 @@ system is scanned, making the custom resource appear on the FileSystem dock. If
 you select it and focus the Import dock, you can see the only option to select
 there.
 
-Create a MeshInstance node in the scene and for it's Mesh property set up a new
+Create a MeshInstance node in the scene, and for its Mesh property set up a new
 SphereMesh. Unfold the Material section in the Inspector and then drag the file
 from the FileSystem dock to the material property. The object will update in the
 viewport with the blue color of the imported material.

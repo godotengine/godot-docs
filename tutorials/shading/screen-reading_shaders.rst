@@ -34,7 +34,7 @@ the current fragment. As a result, this simple 2D fragment shader:
 results in an invisible object, because it just shows what lies behind.
 
 The reason why textureLod must be used is because, when Godot copies back
-a chunk of the screen, it also does an efficient separatable gaussian blur to it's mipmaps.
+a chunk of the screen, it also does an efficient separatable gaussian blur to its mipmaps.
 
 This allows for not only reading from the screen, but reading from it with different amounts
 of blur at no cost.

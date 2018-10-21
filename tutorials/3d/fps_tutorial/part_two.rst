@@ -400,7 +400,7 @@ because they generally bounce around the world before exploding.
 Another disadvantage with bullet objects is networking. Bullet objects have to sync the positions (at least) with all the clients that are connected
 to the server.
 
-While we are not implementing any form of networking (as that would be it's own entire tutorial series), it is a consideration
+While we are not implementing any form of networking (as that would be in its own entire tutorial series), it is a consideration
 to keep in mind when creating your first person shooter, especially if you plan on adding some form of networking in the future.
 
 _________
@@ -992,7 +992,7 @@ We then get ``Gun_Aim_Point``'s global position so we can rotate the player's we
 
 Then we go through each weapon in ``weapons``.
 
-We first get the weapon node. If the weapon node is not ``null``, we then set it's ``player_node`` variable to this script (``Player.gd``).
+We first get the weapon node. If the weapon node is not ``null``, we then set its ``player_node`` variable to this script (``Player.gd``).
 Then we have it look at ``gun_aim_point_pos`` using the ``look_at`` function, and then rotate it by ``180`` degrees on the ``Y`` axis.
 
 .. note:: We rotate all of those weapon points by ``180`` degrees on their ``Y`` axis because our camera is pointing backwards.
@@ -1082,7 +1082,7 @@ For firing the weapon we first check to see if the ``fire`` action is pressed.
 Then we check to make sure the player is not changing weapons.
 Next we get the weapon node for the current weapon.
 
-If the current weapon node does not equal null, and the player is in it's ``IDLE_ANIM_NAME`` state, we set the player's animation
+If the current weapon node does not equal null, and the player is in its ``IDLE_ANIM_NAME`` state, we set the player's animation
 to the current weapon's ``FIRE_ANIM_NAME``.
 
 _________
@@ -1133,7 +1133,7 @@ Next we define a variable (``weapon_unequipped``) so we can check whether the cu
 
 Then we get the current weapon from ``weapons``.
 
-If the current weapon is not ``null``, then we have need to check to see if the weapon is enabled or not. If the weapon is enabled, we call it's ``unequip_weapon`` function
+If the current weapon is not ``null``, then we need to check to see if the weapon is enabled or not. If the weapon is enabled, we call its ``unequip_weapon`` function
 so it will start the unequip animation. If the weapon is not enabled, we set ``weapon_unequipped`` to ``true`` because the weapon has successfully been unequipped.
 
 If the current weapon is ``null``, then we can simply set ``weapon_unequipped`` to ``true``. The reason we do this check is because there is no weapon script/node for
@@ -1143,8 +1143,8 @@ If the player has successfully unequipped the current weapon (``weapon_unequippe
 
 First we define a new variable (``weapon_equipped``) for tracking whether the player has successfully equipped the new weapon or not.
 
-Then we get the weapon the player wants to change to. If the weapon the player wants to change to is not ``null``, we then check to see whether or not it's enabled.
-If it is not enabled, we call it's ``equip_weapon`` function so it starts to equip the weapon. If the weapon is enabled, we set ``weapon_equipped`` to ``true``.
+Then we get the weapon the player wants to change to. If the weapon the player wants to change to is not ``null``, we then check to see whether it's enabled or not.
+If it is not enabled, we call its ``equip_weapon`` function so it starts to equip the weapon. If the weapon is enabled, we set ``weapon_equipped`` to ``true``.
 
 If the weapon the player wants to change to is ``null``, we simply set ``weapon_equipped`` to ``true`` because we do not have any node/script for ``UNARMED``,
 nor do we have any animations.
