@@ -38,7 +38,7 @@ All control nodes share the same main properties:
 
 1. Anchor
 2. Bounding rectangle
-3. Focus and focus neighbour
+3. Focus and focus neighbor
 4. Size flags
 5. Margin
 6. The optional UI theme
@@ -73,7 +73,7 @@ TextureRect
 
 **TextureRect** displays a texture or image inside a UI.
 It seems similar to the Sprite node but it offers multiple scaling modes.
-Set the Stretch Mode property to change its behaviour:
+Set the Stretch Mode property to change its behavior:
 
 - ``Scale On Expand (compat)`` scales the texture to fit the node’s bounding rectangle, only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode. Default mode for backwards compatibility.
 - ``Scale`` scales the texture to fit the node’s bounding rectangle
@@ -84,7 +84,7 @@ Set the Stretch Mode property to change its behaviour:
 - ``Keep Aspect`` and ``Keep Aspect Centered`` scales the texture but force it to remain its original aspect ratio, in the top left corner or the center of the frame respectively
 - ``Keep Aspect Covered`` works just like ``Keep Aspect Centered`` but the shorter side fits the bounding rectangle and the other one clips to the node’s limits
 
-As with Sprite nodes, you can modulate the TextureRect's colour. Click
+As with Sprite nodes, you can modulate the TextureRect's color. Click
 the ``Modulate`` property and use the color picker.
 
 .. figure:: img/five_common_nodes_textureframe.png
@@ -156,7 +156,7 @@ NinePatchRect
 
 **NinePatchRect** takes a texture split in 3 rows and 3 columns. The
 center and the sides tile when you scale the texture, but it never
-scales the corners. It is useful to build panels, dialogue boxes
+scales the corners. It is useful to build panels, dialog boxes
 and scalable backgrounds for your UI.
 
 .. figure:: img/five_common_nodes_ninepatchrect.png
