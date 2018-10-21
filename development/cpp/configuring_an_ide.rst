@@ -94,6 +94,22 @@ clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to c
 
 .. image:: img/qtcreator-edit-files-dialog.png
 
+Code style configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Developers must follow the project's :ref:`code style <doc_code_style_guidelines>`
+and IDE should help them to do it. By default, Qt Creator does use spaces for indentation
+which is incorrect for Godot project. You can change this behavior by
+changing the "Code Style" in *Options* -> *C++*.
+
+.. image:: img/qtcreator-options-cpp.png
+
+Click on *Edit* to change the current settings, then click on *Copy Built-in Code Style* button
+to set a new code style. Set a name for it (e.g. Godot) and change the Tab policy
+to be *Tabs Only*.
+
+.. image:: img/qtcreator-edit-codestyle.png
+
 .. _doc_configuring_an_ide_kdevelop:
 
 KDevelop
