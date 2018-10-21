@@ -96,23 +96,21 @@ clicking the "Apply Filter" button. A simple click on "Ok" and you're ready to c
 
 .. _doc_configuring_an_ide_kdevelop:
 
-Kdevelop
+KDevelop
 --------
 
-`Kdevelop <https://www.kdevelop.org>`_ is a free, open source IDE for all desktop platforms.
+`KDevelop <https://www.kdevelop.org>`_ is a free, open source IDE for all desktop platforms.
 
 You can find a video tutorial `here <https://www.youtube.com/watch?v=yNVoWQi9TJA>`_.
 Or you may follow this text version tutorial.
 
-Start by opening Kdevelop and choosing "open project".
+Start by opening KDevelop and choosing "open project".
 
 .. image:: img/kdevelop_newproject.png
 
 Choose the directory where you cloned Godot.
 
-.. image:: img/kdevelop_openproject.png
-
-For the build system, choose "custom build system".
+On the next screen, choose "Custom Build System" for the *Project manager*.
 
 .. image:: img/kdevelop_custombuild.png
 
@@ -128,25 +126,26 @@ Add the following includes/imports:
     core/
     core/os/
     core/math/
-    tools/
     drivers/
     platform/x11/  // make that platform/osx/ if you're using macOS
 
 .. image:: img/kdevelop_addincludes.png
 
-Apply the changes then switch to the "Custom Buildsystem" tab.
-Leave the build directory blank. Enable build tools and add ``scons``
-as the executable and add ``platform=x11 target=debug`` (``platform=osx``
-if you're on macOS).
+Apply the changes.
+
+Switch to the "Custom Build System" tab. Add a build configuration 
+and keep the build directory blank. Enable build tools and add ``scons``
+as the executable then add ``platform=x11 target=debug`` (``platform=osx``
+if you're on macOS) as the arguments.
 
 .. image:: img/kdevelop_buildconfig.png
 
 Next we need to tell KDevelop where to find the binary.
-From the "run" menu, choose "Configure Launches".
+From the "Run" menu, choose "Configure Launches".
 
 .. image:: img/kdevelop_configlaunches.png
 
-Click "Add new" if no launcher exists. Then add the path to your
+Click "Add" if no launcher exists. Then add the path to your
 executable in the executable section. Your executable should be located
 in the ``bin/`` sub-directory and should be named something like
 ``godot.x11.tools.64`` (the name could be different depending on your
