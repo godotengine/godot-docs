@@ -66,8 +66,8 @@ Distro-specific oneliners
 | **openSUSE**  | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
-|               |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel \          |
-|               |             libudev-devel libGLU1                                                                          |
+|               |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel freetype2-devel openssl-devel \         |
+|               |             libudev-devel libGLU1 libpng-devel                                                             |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
