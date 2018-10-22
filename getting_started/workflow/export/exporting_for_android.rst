@@ -9,8 +9,7 @@ following steps detail what is needed to setup the SDK and the engine.
 Download the Android SDK
 ------------------------
 
-Download and install the Android SDK from
-https://developer.android.com/studio/
+There are several options for downloading the Android SDK. The easiest cross-platform solution is to download and install `Android Studio <https://developer.android.com/studio/>`__, which will download the SDK as part of the process.
 
 
 Install OpenJDK or Oracle JDK
