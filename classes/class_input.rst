@@ -205,7 +205,7 @@ If the device has a gyroscope, this will return the rate of rotation in rad/s ar
 
 - :ref:`float<class_float>` **get_joy_axis** **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis **)** const
 
-Returns the current value of the joypad axis at given index (see ``JOY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`)
+Returns the current value of the joypad axis at given index (see ``JOY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`). The value ranges from `-1.0` to `1.0`. A value of `0` means the axis is in its resting position.
 
 .. _class_Input_get_joy_axis_index_from_string:
 
