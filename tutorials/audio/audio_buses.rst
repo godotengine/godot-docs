@@ -20,8 +20,6 @@ Even the effect processors were written exclusively for Godot (save for
 the pitch shifting library), with games in mind. This allows
 a efficient tradeoff between performance and sound quality.
 
-See also: the :ref:`doc_audio-buses` tutorial.
-
 Decibel scale
 -------------
 
@@ -48,7 +46,7 @@ Audio buses can be found in the bottom panel of Godot Editor:
 
 .. image:: img/audio_buses1.png
 
-An *Audio Bus* bus (often called "Audio Channels" too) is a device where audio is channeled. Audio data passes through it and can be *modified* and *re-routed*. A VU-Meter (the bars that go up and down when sound is played) can measure the loudness of the sound in Decibel scale.
+An *Audio Bus* bus (often called *Audio Channel* too) is a device where audio is channeled. Audio data passes through it and can be *modified* and *re-routed*. A VU meter (the bars that go up and down when sound is played) can measure the loudness of the sound in Decibel scale.
 
 The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers so, as mentioned in the item above (Decibel Scale), make sure that your mix rarely or never goes above 0dB in this bus.
 The rest of the audio buses are used for *routing*. This means that, after modifying the sound, they must send it to another bus to the left. Routing is always from right to left without exception as this
@@ -67,7 +65,7 @@ To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream
 
 Finally toggle the "playing" property to on and sound will flow.
 
-You may also be interested in reading about :ref:`doc_audio-buses` now.
+You may also be interested in reading about :ref:`doc_audio-streams` now.
 
 Adding effects
 --------------
@@ -167,7 +165,7 @@ This effect allows for modulating pitch independently of tempo. All frequencies 
 Reverb
 ~~~~~~
 
-Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from Areas (see :ref:`doc_audio-buses` tutorial, look for the section on Areas), or
+Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from :ref:`Areas <class_Area>` (see :ref:`doc_audio-buses` tutorial, look for the "Reverb buses" section), or
 to apply chamber feel to all sounds.
 
 StereoEnhance
@@ -180,7 +178,9 @@ Automatic bus disabling
 
 There is no need to disable buses manually when not in use, Godot detects that the bus has been silent for a few seconds and disable it (including all effects).
 
-.. image:: img/audio_buses5.png
+.. figure:: img/audio_buses5.png
+
+   Disabled buses have a blue VU meter.
 
 Bus rearrangement
 -----------------
@@ -191,5 +191,5 @@ If a bus is renamed, however, the reference will be lost and the Stream Player w
 Default bus layout
 ------------------
 
-The default bus layout is automatically saved to the "res://default_bus_layout.res" file. Other bus layouts can be saved/retrieved from files in case of having
+The default bus layout is automatically saved to the ``res://default_bus_layout.tres`` file. Other bus layouts can be saved/retrieved from files in case of having
 to change snapshots, but in most cases this is not necessary.
