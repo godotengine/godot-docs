@@ -165,7 +165,7 @@ This effect allows for modulating pitch independently of tempo. All frequencies 
 Reverb
 ~~~~~~
 
-Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from :ref:`Areas <class_Area>` (see :ref:`doc_audio-buses` tutorial, look for the "Reverb buses" section), or
+Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from :ref:`Areas <class_Area>` (see :ref:`doc_audio-streams` tutorial, look for the "Reverb buses" section), or
 to apply chamber feel to all sounds.
 
 StereoEnhance
