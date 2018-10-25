@@ -5,13 +5,13 @@ API differences to GDScript
 
 This is a (incomplete) list of API differences between C# and GDScript.
 
-General Differences
+General differences
 -------------------
 
 As explained in the :ref:`doc_c_sharp`, C# generally uses ``PascalCase`` instead
 of the ``snake_case`` in GDScript and C++.
 
-Global Scope
+Global scope
 ------------
 
 Available under ``Godot.GD``.
@@ -229,5 +229,3 @@ dict2inst         ? TODO
 inst2dict         ? TODO
 load              GD.load which is the same as ResourceLoader.load
 ================  ==================================================================
-
-

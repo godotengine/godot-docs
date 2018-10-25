@@ -1,6 +1,6 @@
 .. _doc_nodes_purposes_visual_script:
 
-Nodes and Terminology
+Nodes and terminology
 =====================
 
 Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
@@ -11,7 +11,7 @@ When referring to *Node* here, it will be implied that a *Visual Script Node* is
 .. image:: img/visual_script16.png
 
 
-Node Properties
+Node properties
 ---------------
 
 Like in most visual scripting implementations, each node has editable properties. In Godot, though, we try to avoid
@@ -21,7 +21,7 @@ Nodes still display the required information as text, but editing is done via th
 select any node and edit its properties in the *Inspector*.
 
 
-Ports and Connections
+Ports and connections
 ---------------------
 
 Programming in Godot Visual Scripting is done via *Nodes* and *Port Connections* inside each function. 
@@ -83,14 +83,14 @@ While, for data, a contextual set/get/call menu will open:
 .. image:: img/visual_script53.png
 
 
-Adding Nodes
+Adding nodes
 ------------
 
 Finally! We got to the fun part! But, before explaining in more detail what each type of node does, 
 let's take a short look at how nodes are most commonly added and dealt with.
 
 
-Accessing Scene Nodes
+Accessing scene nodes
 ~~~~~~~~~~~~~~~~~~~~~
 
 One of the most common tasks is accessing Scene Tree Nodes (again, not to mistake with *Visual Script Nodes*).
@@ -109,7 +109,7 @@ coordinates to the control. Another common use case is queueing a node for delet
 Care must be taken that this only works if the scene being edited contains your *Visual Script* in one of the nodes! Otherwise, a warning will be shown.
 
 
-Accessing Scene Node Properties
+Accessing scene node properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the most common way to edit *Scene Nodes* in Visual Scripting. Select a *Scene Node* from the *Scene Tree*, go to the Inspector, find *the Name* of the property you want to edit (hint, *not* the value!) and drag it to the canvas:
@@ -186,7 +186,7 @@ Finally, to emit the signal, simply drag it to the canvas:
 Remember that emitting a signal is a sequenced operation, so it must come from a Sequence port.
 
 
-Adding More Nodes
+Adding more nodes
 -----------------
 
 Now that the basics are covered, let's discuss the large amount of utility nodes available for your canvas!

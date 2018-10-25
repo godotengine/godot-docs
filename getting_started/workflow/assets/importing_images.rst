@@ -1,6 +1,6 @@
 .. _doc_import_images:
 
-Importing Images
+Importing images
 ================
 
 Why importing them?
@@ -13,7 +13,7 @@ image files can be imported with.
 This small tutorial will explain what these parameters are and how to best
 make use of them.
 
-Importing Textures
+Importing textures
 ------------------
 
 The default action in Godot is to import images as textures. Textures are stored
@@ -24,8 +24,8 @@ Import options are vast:
 
 .. image:: img/image_import1.png
 
-Compression:
-------------
+Compression
+-----------
 
 Images are one of the largest assets in a game. To handle them efficiently, they need to be compressed.
 Godot offers several compression methods, depending on the use case.

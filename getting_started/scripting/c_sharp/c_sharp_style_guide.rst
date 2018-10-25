@@ -1,7 +1,7 @@
 .. _doc_c_sharp_styleguide:
 
-Style Guide
-===========
+C# style guide
+==============
 
 Having well-defined and consistent coding conventions is important for every project, and Godot
 is no exception to this rule.
@@ -17,7 +17,7 @@ of the language, we encourage you to do the same, especially if you do not have 
         `C# Coding Conventions <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions>`_ or
         `Framework Design Guidelines <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines>`_.
 
-Language Specification
+Language specification
 ----------------------
 
 Currently, Godot uses C# version 6.0 in its engine and example source code. So, before we move to
@@ -27,14 +27,14 @@ later, such as pattern matching or expression-bodied members inside get/set acce
 For detailed information of C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
 
-Formatting Conventions
+Formatting conventions
 ----------------------
 
 * If you create a new file, make sure that it uses linefeed (*LF*) characters to break lines, not *CRLF* or *CR*.
 * Use UTF-8 encoding without a byte order mark (BOM <https://en.wikipedia.org/wiki/Byte_order_mark>).
 * Use 4 spaces instead of tabs for indentation (which is referred to as 'soft tabs').
 
-Line Breaks and Blank Lines
+Line breaks and blank lines
 ---------------------------
 
 For a general indentation rule, follow `The 'Allman Style' <https://en.wikipedia.org/wiki/Indentation_style#Allman_style>`_
@@ -134,7 +134,7 @@ Consider breaking a line when it's longer than 100 characters. And it's also a g
 insert a line feed (LF) character at the end of a file because some utilities have trouble
 recognizing the last line without it (i.e. Linux's *cat* command).
 
-Using Spaces
+Using spaces
 ------------
 
 Insert a space,
@@ -189,7 +189,7 @@ The following example shows a proper use of spaces, according to some of the abo
         }
     }
 
-Naming Conventions
+Naming conventions
 ------------------
 
 Use *PascalCase* for all namespaces, type names and member level identifiers (i.e. methods, properties,
@@ -260,7 +260,7 @@ Rather than,
 
     FindNode()?.Change(wpnDmg);
 
-Implicitly Typed Local Variables
+Implicitly typed local variables
 --------------------------------
 
 Consider using implicitly typing (*'var'*) for declaration of a local variable, but do so
@@ -292,7 +292,7 @@ Consider using implicitly typing (*'var'*) for declaration of a local variable, 
 
     var value = 1.5;
 
-Other Considerations
+Other considerations
 --------------------
 
  * Use explicit access modifiers.

@@ -1,6 +1,6 @@
 .. _doc_gdscript_static_typing:
 
-Static Typing in GDScript
+Static typing in GDScript
 =========================
 
 In this guide, you will learn:
@@ -80,8 +80,8 @@ their time reading other people’s code, or scripts they wrote in the
 past and forgot about. The clearer and the more structured the code, the
 faster it is to understand, the faster you can move forward.
 
-How to use static typing in Godot 3.1
--------------------------------------
+How to use static typing
+------------------------
 
 To define the type of a variable or a constant, write a colon after the
 variable’s name, followed by its type. E.g. ``var health: int``. This

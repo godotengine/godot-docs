@@ -1,6 +1,6 @@
 .. _doc_importing_3d_scenes:
 
-Importing 3D Scenes
+Importing 3D scenes
 ===================
 
 Godot Scene Importer
@@ -76,15 +76,15 @@ import a scene with:
 
 As different developers have different needs, this import process is highly customizable.
 
-Import Options
----------------
+Import options
+--------------
 
 The importer has several options, which will be discussed below:
 
 .. image:: img/scene_import2.png
 
-Nodes:
-~~~~~~~
+Nodes
+~~~~~
 
 Root Type
 ^^^^^^^^^
@@ -182,7 +182,7 @@ being imported that cover a large area, compressing the import of this mesh(s)
 may lead to gaps in geometry or vertices not being exactly where they should be.
 
 Meshes
-~~~~~~~
+~~~~~~
 
 Ensure Tangents
 ^^^^^^^^^^^^^^^
@@ -208,7 +208,7 @@ Generated meshes and materials can be optionally stored in a subdirectory with t
 name of the scene.
 
 Animation Options
-------------------
+-----------------
 
 Godot provides many options regarding how animation data is dealt with. Some exporters
 (such as Blender), can generate many animations in a single file. Others, such as
@@ -220,38 +220,38 @@ each animation in a separate file.
 Import of animations is enabled by default.
 
 FPS
-~~~~~~~~~~~~~~~
+~~~
 
 Most 3D export formats store animation timeline in seconds instead of frames. To ensure
 animations are imported as faithfully as possible, please specify the frames per second
 used to edit them. Failing to do this may result in minimal jitter.
 
 Filter Script
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which tracks from which
 animations should be kept. (@TODO this needs documentation)
 
 Storage
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~
 
 By default, animations are saved as built-in. It is possible to save them to a file instead. This
 allows adding custom tracks to the animations and keeping them after a reimport.
 
 
 Optimizer
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
 When animations are imported, an optimizer is run which reduces the size of the animation considerably.
 In general, this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
 
 Clips
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~
 
 It is possible to specify multiple animations from a single timeline as clips. Specify from which frame to which frame each
 clip must be taken (and, of course, don't forget to specify the FPS option above).
 
-Scene Inheritance
+Scene inheritance
 -----------------
 
 In many cases, it may be desired to do modifications to the imported scene. By default, this is not possible because
@@ -269,7 +269,7 @@ In inherited scenes, the only limitations for modifications are:
 
 Other than that, everything is allowed!
 
-Import Hints
+Import hints
 ------------
 
 Many times, when editing a scene, there are common tasks that need to be done after exporting:
@@ -325,8 +325,6 @@ A mesh node with this suffix will be converted to a navigation mesh. Original Me
 removed.
 
 Rigid Body (-rigid)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Creates a rigid body from this mesh.
-
-

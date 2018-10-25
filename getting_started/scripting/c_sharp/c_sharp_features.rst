@@ -1,12 +1,12 @@
 .. _doc_c_sharp_features:
 
 Features
-============
+========
 
 This page provides an overview over the commonly used features of both C# and Godot
 and how they are used together.
 
-Type Conversion and Casting
+Type conversion and casting
 ---------------------------
 
 C# is a statically typed language. Therefore you can't do the following:
@@ -78,7 +78,7 @@ For more advanced type checking, you can look into `Pattern Matching <https://do
 
 .. _c_sharp_signals:
 
-C# Signals
+C# signals
 ----------
 
 For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.

@@ -155,7 +155,7 @@ According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnym
 For full performance, C++ is still a little faster; the specifics are going to vary according to your use case. GDScript is likely fast enough for most general scripting workloads.
 C# is faster, but requires some expensive marshalling when talking to Godot.
 
-Using Nuget Packages in Godot
+Using Nuget packages in Godot
 -----------------------------
 
 `Nuget <https://www.nuget.org/>`_ Packages can be installed and used with Godot,

@@ -1,6 +1,6 @@
 .. _doc_gdscript_styleguide:
 
-GDScript Style Guide
+GDScript style guide
 ====================
 
 Description
@@ -18,7 +18,7 @@ styleguide.
 .. note:: Godot's built-in script editor uses a lot of these conventions
           by default. Let it help you.
 
-Code Structure
+Code structure
 --------------
 
 Indentation
@@ -73,7 +73,7 @@ Surround functions and class definitions by a blank line.
 
 Use one blank line inside functions to separate logical sections.
 
-One Statement per Line
+One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Never combine multiple statements on a single line. No, C programmers,
@@ -98,7 +98,7 @@ operator)!
 
     if flag: print("flagged")
 
-Avoid Unnecessary Parentheses
+Avoid unnecessary parentheses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Avoid parentheses in expressions and conditional statements. Unless
@@ -152,14 +152,14 @@ spaces in dictionary references and function calls, or to create "columns."
     y        = 100
     velocity = 500
 
-Naming Conventions
+Naming conventions
 ------------------
 
 These naming conventions follow the Godot Engine style. Breaking these
 will make your code clash with the built-in naming conventions, which is
 ugly.
 
-Classes and Nodes
+Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
 Use PascalCase: ``extends KinematicBody``
@@ -170,7 +170,7 @@ Also when loading a class into a constant or variable:
 
     const MyCoolNode = preload('res://my_cool_node.gd')
 
-Functions and Variables
+Functions and variables
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Use snake\_case: ``get_node()``
