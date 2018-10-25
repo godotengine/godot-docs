@@ -19,13 +19,15 @@ Numerical input text field.
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`editable<class_SpinBox_editable>` |
-+-----------------------------+-----------------------------------------+
-| :ref:`String<class_String>` | :ref:`prefix<class_SpinBox_prefix>`     |
-+-----------------------------+-----------------------------------------+
-| :ref:`String<class_String>` | :ref:`suffix<class_SpinBox_suffix>`     |
-+-----------------------------+-----------------------------------------+
++-----------------------------------+-----------------------------------------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_align>`       |
++-----------------------------------+-----------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_editable>` |
++-----------------------------------+-----------------------------------------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_prefix>`     |
++-----------------------------------+-----------------------------------------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_suffix>`     |
++-----------------------------------+-----------------------------------------+
 
 Methods
 -------
@@ -48,6 +50,16 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
 
 Property Descriptions
 ---------------------
+
+.. _class_SpinBox_align:
+
+- :ref:`Align<enum_LineEdit_Align>` **align**
+
++----------+------------------+
+| *Setter* | set_align(value) |
++----------+------------------+
+| *Getter* | get_align()      |
++----------+------------------+
 
 .. _class_SpinBox_editable:
 

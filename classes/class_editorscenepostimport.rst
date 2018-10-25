@@ -30,12 +30,33 @@ Methods
 Description
 -----------
 
-The imported scene can be automatically modified right after import by specifying a 'custom script' that inherits from this class. The :ref:`post_import<class_EditorScenePostImport_post_import>`-method receives the imported scene's root-node and returns the modified version of the scene
+Imported scenes can be automatically modified right after import by setting their *Custom Script* Import property to a ``tool`` script that inherits from this class.
+
+The :ref:`post_import<class_EditorScenePostImport_post_import>` callback receives the imported scene's root node and returns the modified version of the scene. Usage example:
+
+::
+
+    tool # needed so it runs in editor
+    extends EditorScenePostImport
+    
+    # This sample changes all node names
+    
+    # Called right after the scene is imported and gets the root node
+    func post_import(scene):
+        # change all node names to "modified_[oldnodename]"
+        iterate(scene)
+        return scene # remember to return the imported scene
+    
+    func iterate(node):
+        if node != null:
+            node.name = "modified_"+node.name
+            for child in node.get_children():
+                iterate(child)
 
 Tutorials
 ---------
 
-- `http://docs.godotengine.org/en/latest/learning/workflow/assets/importing_scenes.html?highlight=post%20import <http://docs.godotengine.org/en/latest/learning/workflow/assets/importing_scenes.html?highlight=post%20import>`_
+- `#custom-script <../getting_started/workflow/assets/importing_scenes.html#custom-script>`_ in :doc:`../getting_started/workflow/assets/importing_scenes`
 
 Method Descriptions
 -------------------
@@ -44,17 +65,17 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_source_file** **(** **)** const
 
-Returns the source-file-path which got imported (e.g. ``res://scene.dae`` )
+Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
 .. _class_EditorScenePostImport_get_source_folder:
 
 - :ref:`String<class_String>` **get_source_folder** **(** **)** const
 
-Returns the resource-folder the imported scene-file is located in
+Returns the resource folder the imported scene file is located in.
 
 .. _class_EditorScenePostImport_post_import:
 
 - :ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** virtual
 
-Gets called after the scene got imported and has to return the modified version of the scene
+Gets called after the scene got imported and has to return the modified version of the scene.
 

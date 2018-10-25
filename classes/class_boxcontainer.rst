@@ -40,7 +40,9 @@ Enumerations
 enum **AlignMode**:
 
 - **ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the container.
+
 - **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
+
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
 
 Description

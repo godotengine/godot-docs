@@ -14,7 +14,7 @@ EditorInterface
 Brief Description
 -----------------
 
-Editor interface and main components.
+Godot editor's interface.
 
 Methods
 -------
@@ -64,7 +64,7 @@ Methods
 Description
 -----------
 
-Editor interface. Allows saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects and provides access to :ref:`EditorSettings<class_EditorSettings>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`ScriptEditor<class_ScriptEditor>`, the editor viewport, as well as information about scenes. Also see :ref:`EditorPlugin<class_EditorPlugin>` and :ref:`EditorScript<class_EditorScript>`.
+EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to :ref:`EditorSettings<class_EditorSettings>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`ScriptEditor<class_ScriptEditor>`, the editor viewport, and information about scenes.
 
 Method Descriptions
 -------------------
@@ -79,13 +79,13 @@ Edits the given :ref:`Resource<class_Resource>`.
 
 - :ref:`Control<class_Control>` **get_base_control** **(** **)**
 
-Returns the main container of Godot's editor window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
+Returns the main container of Godot editor's window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
 
 .. _class_EditorInterface_get_edited_scene_root:
 
 - :ref:`Node<class_Node>` **get_edited_scene_root** **(** **)**
 
-Returns the edited scene's root :ref:`Node<class_Node>`.
+Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 .. _class_EditorInterface_get_editor_settings:
 
@@ -103,7 +103,7 @@ Returns the editor :ref:`Viewport<class_Viewport>`.
 
 - :ref:`Array<class_Array>` **get_open_scenes** **(** **)** const
 
-Returns an :ref:`Array<class_Array>` of the currently opened scenes.
+Returns an :ref:`Array<class_Array>` with the file paths of the currently opened scenes.
 
 .. _class_EditorInterface_get_resource_filesystem:
 
@@ -115,7 +115,7 @@ Returns the :ref:`EditorFileSystem<class_EditorFileSystem>`.
 
 - :ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)**
 
-Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`\ er.
+Returns the :ref:`EditorResourcePreview<class_EditorResourcePreview>`.
 
 .. _class_EditorInterface_get_script_editor:
 

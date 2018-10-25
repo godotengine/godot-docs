@@ -19,39 +19,43 @@ Binary choice user interface widget.
 Theme Properties
 ----------------
 
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`check_vadjust<class_CheckBox_check_vadjust>`             |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`checked<class_CheckBox_checked>`                         |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_CheckBox_disabled>`                       |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_CheckBox_focus>`                             |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_CheckBox_font>`                               |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_CheckBox_font_color>`                   |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_CheckBox_font_color_disabled>` |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_CheckBox_font_color_hover>`       |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_CheckBox_font_color_pressed>`   |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_CheckBox_hover>`                             |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_CheckBox_hseparation>`                 |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_CheckBox_normal>`                           |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_CheckBox_pressed>`                         |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`radio_checked<class_CheckBox_radio_checked>`             |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`radio_unchecked<class_CheckBox_radio_unchecked>`         |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_CheckBox_unchecked>`                     |
-+---------------------------------+----------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`check_vadjust<class_CheckBox_check_vadjust>`                       |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`checked<class_CheckBox_checked>`                                   |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_CheckBox_disabled>`                                 |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_CheckBox_focus>`                                       |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_CheckBox_font>`                                         |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_CheckBox_font_color>`                             |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_CheckBox_font_color_disabled>`           |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_CheckBox_font_color_hover>`                 |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_hover_pressed<class_CheckBox_font_color_hover_pressed>` |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_CheckBox_font_color_pressed>`             |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_CheckBox_hover>`                                       |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`hover_pressed<class_CheckBox_hover_pressed>`                       |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`hseparation<class_CheckBox_hseparation>`                           |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_CheckBox_normal>`                                     |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_CheckBox_pressed>`                                   |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`radio_checked<class_CheckBox_radio_checked>`                       |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`radio_unchecked<class_CheckBox_radio_unchecked>`                   |
++---------------------------------+--------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`   | :ref:`unchecked<class_CheckBox_unchecked>`                               |
++---------------------------------+--------------------------------------------------------------------------+
 
 Description
 -----------

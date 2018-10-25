@@ -68,7 +68,9 @@ Constants
 ---------
 
 - **IDENTITY** = **Transform2D( 1, 0, 0, 1, 0, 0 )**
+
 - **FLIP_X** = **Transform2D( -1, 0, 0, 1, 0, 0 )**
+
 - **FLIP_Y** = **Transform2D( 1, 0, 0, -1, 0, 0 )**
 
 Description

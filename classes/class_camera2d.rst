@@ -96,6 +96,7 @@ Enumerations
 enum **AnchorMode**:
 
 - **ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed so that the top-left corner is always at the origin.
+
 - **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
 
 Description

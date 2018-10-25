@@ -252,11 +252,17 @@ Enumerations
 enum **MenuItems**:
 
 - **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+
 - **MENU_COPY** = **1** --- Copies the selected text.
+
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
+
 - **MENU_CLEAR** = **3** --- Erases the whole :ref:`TextEdit<class_TextEdit>` text.
+
 - **MENU_SELECT_ALL** = **4** --- Selects the whole :ref:`TextEdit<class_TextEdit>` text.
+
 - **MENU_UNDO** = **5** --- Undoes the previous action.
+
 - **MENU_MAX** = **6**
 
 .. _enum_TextEdit_SearchFlags:
@@ -264,7 +270,9 @@ enum **MenuItems**:
 enum **SearchFlags**:
 
 - **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
+
 - **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
+
 - **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
 
 Description

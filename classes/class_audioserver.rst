@@ -116,7 +116,11 @@ Enumerations
 enum **SpeakerMode**:
 
 - **SPEAKER_MODE_STEREO** = **0** --- Two or fewer speakers are detected.
+
+- **SPEAKER_SURROUND_31** = **1**
+
 - **SPEAKER_SURROUND_51** = **2** --- A 5.1 channel surround setup detected.
+
 - **SPEAKER_SURROUND_71** = **3** --- A 7.1 channel surround setup detected.
 
 Description

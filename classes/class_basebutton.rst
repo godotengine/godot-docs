@@ -87,6 +87,7 @@ Enumerations
 enum **ActionMode**:
 
 - **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
+
 - **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
 
 .. _enum_BaseButton_DrawMode:
@@ -94,9 +95,14 @@ enum **ActionMode**:
 enum **DrawMode**:
 
 - **DRAW_NORMAL** = **0** --- The normal state (i.e. not pressed, not hovered, not toggled and enabled) of buttons.
+
 - **DRAW_PRESSED** = **1** --- The state of buttons are pressed.
+
 - **DRAW_HOVER** = **2** --- The state of buttons are hovered.
+
 - **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
+
+- **DRAW_HOVER_PRESSED** = **4**
 
 Description
 -----------

@@ -57,7 +57,9 @@ Enumerations
 enum **StartMode**:
 
 - **START_MODE_BEGIN_SEQUENCE** = **0** --- The start mode used the first time when :ref:`_step<class_VisualScriptCustomNode__step>` is called.
+
 - **START_MODE_CONTINUE_SEQUENCE** = **1** --- The start mode used when :ref:`_step<class_VisualScriptCustomNode__step>` is called after coming back from a STEP_PUSH_STACK_BIT.
+
 - **START_MODE_RESUME_YIELD** = **2** --- The start mode used when :ref:`_step<class_VisualScriptCustomNode__step>` is called after resuming from STEP_YIELD_BIT.
 
 Constants
@@ -66,9 +68,13 @@ Constants
 - **STEP_PUSH_STACK_BIT** = **16777216** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should return to it when there is no other node left to execute.
 
 This is used by :ref:`VisualScriptCondition<class_VisualScriptCondition>` to redirect the sequence to the "Done" port after the true/false branch has finished execution.
+
 - **STEP_GO_BACK_BIT** = **33554432** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should return back, either hitting a previous STEP_PUSH_STACK_BIT or exiting the function.
+
 - **STEP_NO_ADVANCE_BIT** = **67108864**
+
 - **STEP_EXIT_FUNCTION_BIT** = **134217728** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should stop and exit the function.
+
 - **STEP_YIELD_BIT** = **268435456** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that the function should be yielded.
 
 Using this requires you to have at least one working memory slot, which is used for the :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`.

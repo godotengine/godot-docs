@@ -69,6 +69,7 @@ Enumerations
 enum **VisibilityMode**:
 
 - **VISIBILITY_ALWAYS** = **0** --- Always visible.
+
 - **VISIBILITY_TOUCHSCREEN_ONLY** = **1** --- Visible on touch screens only.
 
 Description

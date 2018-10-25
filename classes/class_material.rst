@@ -31,6 +31,7 @@ Constants
 ---------
 
 - **RENDER_PRIORITY_MAX** = **127**
+
 - **RENDER_PRIORITY_MIN** = **-128**
 
 Description

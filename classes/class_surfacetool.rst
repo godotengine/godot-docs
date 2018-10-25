@@ -82,6 +82,8 @@ The ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordin
 
 It is very important that vertex attributes are passed **before** the call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`, failure to do this will result in an error when committing the vertex information to a mesh.
 
+Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.
+
 Method Descriptions
 -------------------
 
@@ -89,7 +91,7 @@ Method Descriptions
 
 - void **add_bones** **(** :ref:`PoolIntArray<class_PoolIntArray>` bones **)**
 
-Add an array of bones for the next Vertex to use.
+Add an array of bones for the next Vertex to use. Array must contain 4 integers.
 
 .. _class_SurfaceTool_add_color:
 
@@ -131,6 +133,8 @@ Specify a Tangent for the next Vertex to use.
 
 Insert a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
 
+Requires primitive type be set to ``PRIMITIVE_TRIANGLES``.
+
 .. _class_SurfaceTool_add_uv:
 
 - void **add_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
@@ -153,11 +157,13 @@ Specify position of current Vertex. Should be called after specifying other vert
 
 - void **add_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` weights **)**
 
-Specify weight value for next Vertex to use.
+Specify weight values for next Vertex to use. Array must contain 4 values.
 
 .. _class_SurfaceTool_append_from:
 
 - void **append_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface, :ref:`Transform<class_Transform>` transform **)**
+
+Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current vertex array with specified :ref:`Transform<class_Transform>`.
 
 .. _class_SurfaceTool_begin:
 
@@ -181,6 +187,8 @@ Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information
 
 - void **create_from** **(** :ref:`Mesh<class_Mesh>` existing, :ref:`int<class_int>` surface **)**
 
+Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
+
 .. _class_SurfaceTool_deindex:
 
 - void **deindex** **(** **)**
@@ -195,9 +203,15 @@ Generates normals from Vertices so you do not have to do it manually.
 
 Setting "flip" ``true`` inverts resulting normals.
 
+Requires primitive type to be set to ``PRIMITIVE_TRIANGLES``.
+
 .. _class_SurfaceTool_generate_tangents:
 
 - void **generate_tangents** **(** **)**
+
+Generates a tangent vector for each vertex.
+
+Requires that each vertex have UVs and normals set already.
 
 .. _class_SurfaceTool_index:
 

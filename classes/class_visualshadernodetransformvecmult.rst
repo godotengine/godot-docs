@@ -31,8 +31,11 @@ Enumerations
 enum **Operator**:
 
 - **OP_AxB** = **0**
+
 - **OP_BxA** = **1**
+
 - **OP_3x3_AxB** = **2**
+
 - **OP_3x3_BxA** = **3**
 
 Property Descriptions

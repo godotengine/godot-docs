@@ -46,8 +46,13 @@ Enumerations
 enum **Status**:
 
 - **STATUS_DISCONNECTED** = **0** --- A status representing a ``StreamPeerSSL`` that is disconnected.
+
+- **STATUS_HANDSHAKING** = **1**
+
 - **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerSSL`` that is connected to a host.
+
 - **STATUS_ERROR** = **3**
+
 - **STATUS_ERROR_HOSTNAME_MISMATCH** = **4** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
 
 Description

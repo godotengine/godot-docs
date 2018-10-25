@@ -115,7 +115,9 @@ Enumerations
 enum **HalfOffset**:
 
 - **HALF_OFFSET_X** = **0** --- Half offset on the X coordinate.
+
 - **HALF_OFFSET_Y** = **1** --- Half offset on the Y coordinate.
+
 - **HALF_OFFSET_DISABLED** = **2** --- Half offset disabled.
 
 .. _enum_TileMap_TileOrigin:
@@ -123,7 +125,9 @@ enum **HalfOffset**:
 enum **TileOrigin**:
 
 - **TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner.
+
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
+
 - **TILE_ORIGIN_BOTTOM_LEFT** = **2** --- Tile origin at its bottom-left corner.
 
 .. _enum_TileMap_Mode:
@@ -131,7 +135,9 @@ enum **TileOrigin**:
 enum **Mode**:
 
 - **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
+
 - **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
+
 - **MODE_CUSTOM** = **2** --- Custom orientation mode.
 
 Constants
@@ -196,7 +202,7 @@ Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default valu
 | *Getter* | get_quadrant_size()      |
 +----------+--------------------------+
 
-The TileMap's quadrant size.  Optimizes drawing by batching, using chunks of this size. Default value: 16.
+The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size. Default value: 16.
 
 .. _class_TileMap_cell_size:
 
@@ -316,7 +322,7 @@ The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUAR
 | *Getter* | get_occluder_light_mask()      |
 +----------+--------------------------------+
 
-The light mask assigned to all light occluders in the TileMap.  The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
+The light mask assigned to all light occluders in the TileMap. The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
 
 .. _class_TileMap_tile_set:
 

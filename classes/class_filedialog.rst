@@ -96,7 +96,9 @@ Enumerations
 enum **Access**:
 
 - **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+
 - **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_Resource>` path(res://) .
+
 - **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
 
 .. _enum_FileDialog_Mode:
@@ -104,9 +106,13 @@ enum **Access**:
 enum **Mode**:
 
 - **MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, and only one file.
+
 - **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
+
 - **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
+
 - **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
+
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
 
 Description
@@ -126,6 +132,8 @@ Property Descriptions
 +----------+-------------------+
 | *Getter* | get_access()      |
 +----------+-------------------+
+
+The file system access scope. See enum ``Access`` constants.
 
 .. _class_FileDialog_current_dir:
 
@@ -173,6 +181,8 @@ The currently selected file path of the file dialog.
 | *Getter* | get_filters()      |
 +----------+--------------------+
 
+Set file type filters. This example shows only .png and .gd files ``set_filters(PoolStringArray(["*.png ; PNG Images","*.gd ; GD Script"]))``.
+
 .. _class_FileDialog_mode:
 
 - :ref:`Mode<enum_FileDialog_Mode>` **mode**
@@ -182,6 +192,8 @@ The currently selected file path of the file dialog.
 +----------+-----------------+
 | *Getter* | get_mode()      |
 +----------+-----------------+
+
+Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` constants.
 
 .. _class_FileDialog_mode_overrides_title:
 
@@ -193,7 +205,7 @@ The currently selected file path of the file dialog.
 | *Getter* | is_mode_overriding_title()      |
 +----------+---------------------------------+
 
-If ``true``, changing the ``mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
+If ``true``, changing the ``Mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
 
 .. _class_FileDialog_show_hidden_files:
 
@@ -205,6 +217,8 @@ If ``true``, changing the ``mode`` property will set the window title accordingl
 | *Getter* | is_showing_hidden_files()    |
 +----------+------------------------------+
 
+If ``true``, the dialog will show hidden files.
+
 Method Descriptions
 -------------------
 
@@ -212,7 +226,7 @@ Method Descriptions
 
 - void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
-Add a custom filter. Filter format is: "mask ; description", example (C++): dialog->add_filter("\*.png ; PNG Images");
+Add a custom filter. Example: ``add_filter("*.png ; PNG Images")``
 
 .. _class_FileDialog_clear_filters:
 
@@ -224,9 +238,13 @@ Clear all the added filters in the dialog.
 
 - void **deselect_items** **(** **)**
 
+Clear currently selected items in the dialog.
+
 .. _class_FileDialog_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+
+Returns the LineEdit for the selected file.
 
 .. _class_FileDialog_get_vbox:
 

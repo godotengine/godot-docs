@@ -77,8 +77,11 @@ Enumerations
 enum **FilterAction**:
 
 - **FILTER_IGNORE** = **0**
+
 - **FILTER_PASS** = **1**
+
 - **FILTER_STOP** = **2**
+
 - **FILTER_BLEND** = **3**
 
 Property Descriptions

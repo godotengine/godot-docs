@@ -264,7 +264,9 @@ Enumerations
 enum **DropModeFlags**:
 
 - **DROP_MODE_DISABLED** = **0**
+
 - **DROP_MODE_ON_ITEM** = **1**
+
 - **DROP_MODE_INBETWEEN** = **2**
 
 .. _enum_Tree_SelectMode:
@@ -272,7 +274,9 @@ enum **DropModeFlags**:
 enum **SelectMode**:
 
 - **SELECT_SINGLE** = **0** --- Allow selection of a single item at a time.
+
 - **SELECT_ROW** = **1**
+
 - **SELECT_MULTI** = **2** --- Allow selection of multiple items at the same time.
 
 Description
@@ -342,7 +346,7 @@ The amount of columns.
 | *Getter* | get_drop_mode_flags()      |
 +----------+----------------------------+
 
-The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to ``DROP_MODE_DISABLED``. Setting this during :ref:`can_drop_data<class_Tree_can_drop_data>` is recommended.
+The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once dropping is done, reverts to ``DROP_MODE_DISABLED``. Setting this during :ref:`Control.can_drop_data<class_Control_can_drop_data>` is recommended.
 
 .. _class_Tree_hide_folding:
 
@@ -435,7 +439,7 @@ Returns the rectangle for custom popups. Helper to create custom cell controls t
 
 - :ref:`int<class_int>` **get_drop_section_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** const
 
-If :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_INBETWEEN``, returns -1 if ``position`` is the upper part of a tree item at that position, 1 for the lower part, and additionally 0 for the middle part if :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_ON_ITEM``. 
+If :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_INBETWEEN``, returns -1 if ``position`` is the upper part of a tree item at that position, 1 for the lower part, and additionally 0 for the middle part if :ref:`drop_mode_flags<class_Tree_drop_mode_flags>` includes ``DROP_MODE_ON_ITEM``.
 
 Otherwise, returns 0. If there are no tree item at ``position``, returns -100.
 

@@ -89,7 +89,9 @@ Enumerations
 enum **DopplerTracking**:
 
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
+
 - **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler tracking in idle step.
+
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
 
 .. _enum_AudioStreamPlayer3D_OutOfRangeMode:
@@ -97,6 +99,7 @@ enum **DopplerTracking**:
 enum **OutOfRangeMode**:
 
 - **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
+
 - **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
 
 .. _enum_AudioStreamPlayer3D_AttenuationModel:
@@ -104,7 +107,9 @@ enum **OutOfRangeMode**:
 enum **AttenuationModel**:
 
 - **ATTENUATION_INVERSE_DISTANCE** = **0** --- Linear dampening of loudness according to distance.
+
 - **ATTENUATION_INVERSE_SQUARE_DISTANCE** = **1** --- Squared dampening of loudness according to distance.
+
 - **ATTENUATION_LOGARITHMIC** = **2** --- Logarithmic dampening of loudness according to distance.
 
 Description

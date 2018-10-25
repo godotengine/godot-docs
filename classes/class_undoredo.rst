@@ -55,7 +55,9 @@ Enumerations
 enum **MergeMode**:
 
 - **MERGE_DISABLE** = **0**
+
 - **MERGE_ENDS** = **1**
+
 - **MERGE_ALL** = **2**
 
 Description

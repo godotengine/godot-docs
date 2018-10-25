@@ -50,6 +50,7 @@ Enumerations
 enum **MixMode**:
 
 - **MIX_MODE_BLEND** = **0**
+
 - **MIX_MODE_ADD** = **1**
 
 Property Descriptions

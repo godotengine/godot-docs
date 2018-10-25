@@ -43,8 +43,11 @@ Enumerations
 enum **RotationMode**:
 
 - **ROTATION_NONE** = **0** --- Forbids the PathFollow to rotate.
+
 - **ROTATION_Y** = **1** --- Allows the PathFollow to rotate in the Y axis only.
+
 - **ROTATION_XY** = **2** --- Allows the PathFollow to rotate in both the X, and Y axes.
+
 - **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
 
 Description

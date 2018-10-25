@@ -29,7 +29,7 @@ Methods
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`connect_to_url<class_WebSocketClient_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`disconnect_from_host<class_WebSocketClient_disconnect_from_host>` **(** **)**                                                                                                                                           |
+| void                                   | :ref:`disconnect_from_host<class_WebSocketClient_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -37,9 +37,9 @@ Signals
 
 .. _class_WebSocketClient_connection_closed:
 
-- **connection_closed** **(** **)**
+- **connection_closed** **(** :ref:`bool<class_bool>` was_clean_close **)**
 
-Emitted when the connection to the server is closed.
+Emitted when the connection to the server is closed. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
 
 .. _class_WebSocketClient_connection_error:
 
@@ -58,6 +58,12 @@ Emitted when a connection with the server is established, ``protocol`` will cont
 - **data_received** **(** **)**
 
 Emitted when a WebSocket message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
+
+.. _class_WebSocketClient_server_close_request:
+
+- **server_close_request** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
+
+Emitted when the server requests a clean close. You should keep polling until you get a :ref:`connection_closed<class_WebSocketClient_connection_closed>` signal to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more details.
 
 Description
 -----------
@@ -98,7 +104,7 @@ If ``true`` is passed as ``gd_mp_api``, the client will behave like a network pe
 
 .. _class_WebSocketClient_disconnect_from_host:
 
-- void **disconnect_from_host** **(** **)**
+- void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Disconnect from the server if currently connected.
+Disconnect this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more info.
 

@@ -48,8 +48,11 @@ Enumerations
 enum **Flags**:
 
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
+
 - **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+
 - **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+
 - **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
 
 .. _enum_CubeMap_Storage:
@@ -57,7 +60,9 @@ enum **Flags**:
 enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- Store the ``CubeMap`` without any compression.
+
 - **STORAGE_COMPRESS_LOSSY** = **1** --- Store the ``CubeMap`` with strong compression that reduces image quality.
+
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- Store the ``CubeMap`` with moderate compression that doesn't reduce image quality.
 
 .. _enum_CubeMap_Side:
@@ -65,10 +70,15 @@ enum **Storage**:
 enum **Side**:
 
 - **SIDE_LEFT** = **0** --- Identifier for the left face of the ``CubeMap``.
+
 - **SIDE_RIGHT** = **1** --- Identifier for the right face of the ``CubeMap``.
+
 - **SIDE_BOTTOM** = **2** --- Identifier for the bottom face of the ``CubeMap``.
+
 - **SIDE_TOP** = **3** --- Identifier for the top face of the ``CubeMap``.
+
 - **SIDE_FRONT** = **4** --- Identifier for the front face of the ``CubeMap``.
+
 - **SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``.
 
 Description

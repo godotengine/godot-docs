@@ -64,7 +64,9 @@ Constants
 ---------
 
 - **PLANE_YZ** = **Plane( 1, 0, 0, 0 )**
+
 - **PLANE_XZ** = **Plane( 0, 1, 0, 0 )**
+
 - **PLANE_XY** = **Plane( 0, 0, 1, 0 )**
 
 Description

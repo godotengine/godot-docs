@@ -82,22 +82,27 @@ Enumerations
 
 enum **TransferMode**:
 
-- **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are sent via unordered UDP packets.
-- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via ordered UDP packets.
-- **TRANSFER_MODE_RELIABLE** = **2** --- Packets are sent via TCP packets.
+- **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets may arrive in any order. Potentially faster than ``TRANSFER_MODE_UNRELIABLE_ORDERED``. Use for non-critical data, and always consider whether the order matters.
+
+- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than ``TRANSFER_MODE_RELIABLE``. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
+
+- **TRANSFER_MODE_RELIABLE** = **2** --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
 
 .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
 enum **ConnectionStatus**:
 
 - **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
+
 - **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
+
 - **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
 
 Constants
 ---------
 
 - **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+
 - **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
 
 Description

@@ -55,7 +55,9 @@ Enumerations
 enum **Mode**:
 
 - **MODE_DEPTH** = **0** --- Shape is extruded to :ref:`depth<class_CSGPolygon_depth>`.
+
 - **MODE_SPIN** = **1** --- Shape is extruded by rotating it around an axis.
+
 - **MODE_PATH** = **2** --- Shape is extruded along a path set by a :ref:`Shape<class_Shape>` set in :ref:`path_node<class_CSGPolygon_path_node>`.
 
 .. _enum_CSGPolygon_PathRotation:
@@ -63,7 +65,9 @@ enum **Mode**:
 enum **PathRotation**:
 
 - **PATH_ROTATION_POLYGON** = **0** --- Slice is not rotated.
+
 - **PATH_ROTATION_PATH** = **1** --- Slice is rotated around the up vector of the path.
+
 - **PATH_ROTATION_PATH_FOLLOW** = **2** --- Slice is rotate to match the path exactly.
 
 Description

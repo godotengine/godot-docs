@@ -185,11 +185,17 @@ Enumerations
 enum **BGMode**:
 
 - **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
+
 - **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
+
 - **BG_COLOR** = **1** --- Clear the background using a custom clear color.
+
 - **BG_SKY** = **2** --- Display a user-defined sky in the background.
+
 - **BG_COLOR_SKY** = **3** --- Clear the background using a custom clear color and allows defining a sky for shading and reflection.
+
 - **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_CanvasLayer>` in the background.
+
 - **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
 
 .. _enum_Environment_DOFBlurQuality:
@@ -197,7 +203,9 @@ enum **BGMode**:
 enum **DOFBlurQuality**:
 
 - **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
+
 - **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
+
 - **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
 
 .. _enum_Environment_GlowBlendMode:
@@ -205,8 +213,11 @@ enum **DOFBlurQuality**:
 enum **GlowBlendMode**:
 
 - **GLOW_BLEND_MODE_ADDITIVE** = **0** --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
+
 - **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
+
 - **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Softlight glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
+
 - **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
 
 .. _enum_Environment_ToneMapper:
@@ -214,8 +225,11 @@ enum **GlowBlendMode**:
 enum **ToneMapper**:
 
 - **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
+
 - **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
+
 - **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
+
 - **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
 
 .. _enum_Environment_SSAOBlur:
@@ -223,8 +237,11 @@ enum **ToneMapper**:
 enum **SSAOBlur**:
 
 - **SSAO_BLUR_DISABLED** = **0**
+
 - **SSAO_BLUR_1x1** = **1**
+
 - **SSAO_BLUR_2x2** = **2**
+
 - **SSAO_BLUR_3x3** = **3**
 
 .. _enum_Environment_SSAOQuality:
@@ -232,7 +249,9 @@ enum **SSAOBlur**:
 enum **SSAOQuality**:
 
 - **SSAO_QUALITY_LOW** = **0**
+
 - **SSAO_QUALITY_MEDIUM** = **1**
+
 - **SSAO_QUALITY_HIGH** = **2**
 
 Description

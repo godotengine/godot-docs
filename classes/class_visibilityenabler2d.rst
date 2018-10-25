@@ -41,11 +41,17 @@ Enumerations
 enum **Enabler**:
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody2D<class_RigidBody2D>` nodes.
+
 - **ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop :ref:`Particles2D<class_Particles2D>` nodes.
+
 - **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's _process function.
+
 - **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
+
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
+
 - **ENABLER_MAX** = **6**
 
 Description
@@ -66,6 +72,8 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
+If ``true`` :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
+
 .. _class_VisibilityEnabler2D_pause_animated_sprites:
 
 - :ref:`bool<class_bool>` **pause_animated_sprites**
@@ -75,6 +83,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
+
+If ``true`` :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_pause_animations:
 
@@ -86,6 +96,8 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
+If ``true`` :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
+
 .. _class_VisibilityEnabler2D_pause_particles:
 
 - :ref:`bool<class_bool>` **pause_particles**
@@ -95,6 +107,8 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
+
+If ``true`` :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_physics_process_parent:
 
@@ -106,6 +120,8 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
+If ``true`` the parent's :ref:`Node._physics_process<class_Node__physics_process>` will be stopped.
+
 .. _class_VisibilityEnabler2D_process_parent:
 
 - :ref:`bool<class_bool>` **process_parent**
@@ -115,4 +131,6 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
+
+If ``true`` the parent's :ref:`Node._process<class_Node__process>` will be stopped.
 

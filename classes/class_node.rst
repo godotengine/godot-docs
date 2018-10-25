@@ -69,6 +69,8 @@ Methods
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`            | :ref:`find_node<class_Node_find_node>` **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`            | :ref:`find_parent<class_Node_find_parent>` **(** :ref:`String<class_String>` mask **)** const                                                                                                |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`            | :ref:`get_child<class_Node_get_child>` **(** :ref:`int<class_int>` idx **)** const                                                                                                           |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_child_count<class_Node_get_child_count>` **(** **)** const                                                                                                                         |
@@ -243,7 +245,9 @@ Enumerations
 enum **PauseMode**:
 
 - **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from the node's parent. For the root node, it is equivalent to PAUSE_MODE_STOP. Default.
+
 - **PAUSE_MODE_STOP** = **1** --- Stop processing when the :ref:`SceneTree<class_SceneTree>` is paused.
+
 - **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of the :ref:`SceneTree<class_SceneTree>` pause state.
 
 .. _enum_Node_DuplicateFlags:
@@ -251,29 +255,48 @@ enum **PauseMode**:
 enum **DuplicateFlags**:
 
 - **DUPLICATE_SIGNALS** = **1** --- Duplicate the node's signals.
+
 - **DUPLICATE_GROUPS** = **2** --- Duplicate the node's groups.
+
 - **DUPLICATE_SCRIPTS** = **4** --- Duplicate the node's scripts.
+
 - **DUPLICATE_USE_INSTANCING** = **8** --- Duplicate using instancing.
 
 Constants
 ---------
 
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_SceneTree>`.
+
 - **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node is about to exit a :ref:`SceneTree<class_SceneTree>`.
+
 - **NOTIFICATION_MOVED_IN_PARENT** = **12** --- Notification received when the node is moved in the parent.
+
 - **NOTIFICATION_READY** = **13** --- Notification received when the node is ready. See :ref:`_ready<class_Node__ready>`.
+
 - **NOTIFICATION_PAUSED** = **14** --- Notification received when the node is paused.
+
 - **NOTIFICATION_UNPAUSED** = **15** --- Notification received when the node is unpaused.
+
 - **NOTIFICATION_PHYSICS_PROCESS** = **16** --- Notification received every frame when the physics process flag is set (see :ref:`set_physics_process<class_Node_set_physics_process>`).
+
 - **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_set_process>`).
+
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
+
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
+
 - **NOTIFICATION_INSTANCED** = **20** --- Notification received when the node is instanced.
+
 - **NOTIFICATION_DRAG_BEGIN** = **21** --- Notification received when a drag begins.
+
 - **NOTIFICATION_DRAG_END** = **22** --- Notification received when a drag ends.
+
 - **NOTIFICATION_PATH_CHANGED** = **23** --- Notification received when the node's :ref:`NodePath<class_NodePath>` changed.
+
 - **NOTIFICATION_TRANSLATION_CHANGED** = **24** --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_tr>`.
+
 - **NOTIFICATION_INTERNAL_PROCESS** = **25** --- Notification received every frame when the internal process flag is set (see :ref:`set_process_internal<class_Node_set_process_internal>`).
+
 - **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26** --- Notification received every frame when the internal physics process flag is set (see :ref:`set_physics_process_internal<class_Node_set_physics_process_internal>`).
 
 Description
@@ -295,7 +318,7 @@ Nodes can also process input events. When present, the :ref:`_input<class_Node__
 
 To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with :ref:`set_owner<class_Node_set_owner>`. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
 
-Finally, when a node is freed with :ref:`free<class_Node_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
+Finally, when a node is freed with :ref:`Object.free<class_Object_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
 
 **Groups:** Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See :ref:`add_to_group<class_Node_add_to_group>`, :ref:`is_in_group<class_Node_is_in_group>` and :ref:`remove_from_group<class_Node_remove_from_group>`. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on :ref:`SceneTree<class_SceneTree>`.
 
@@ -509,6 +532,14 @@ You can fine-tune the behavior using the ``flags``. See DUPLICATE\_\* constants.
 - :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** const
 
 Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_match>` (i.e. case sensitive, but '\*' matches zero or more characters and '?' matches any single character except '.'). Note that it does not match against the full path, just against individual node names.
+
+If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through script, because those scenes don't have an owner.
+
+.. _class_Node_find_parent:
+
+- :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** const
+
+Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_match>` (i.e. case sensitive, but '\*' matches zero or more characters and '?' matches any single character except '.'). Note that it does not match against the full path, just against individual node names.
 
 .. _class_Node_get_child:
 

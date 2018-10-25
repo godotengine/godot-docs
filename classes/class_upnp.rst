@@ -62,33 +62,61 @@ Enumerations
 enum **UPNPResult**:
 
 - **UPNP_RESULT_SUCCESS** = **0** --- UPNP command or discovery was successful.
+
 - **UPNP_RESULT_NOT_AUTHORIZED** = **1** --- Not authorized to use the command on the :ref:`UPNPDevice<class_UPNPDevice>`. May be returned when the user disabled UPNP on their router.
+
 - **UPNP_RESULT_PORT_MAPPING_NOT_FOUND** = **2** --- No port mapping was found for the given port, protocol combination on the given :ref:`UPNPDevice<class_UPNPDevice>`.
+
 - **UPNP_RESULT_INCONSISTENT_PARAMETERS** = **3** --- Inconsistent parameters.
+
 - **UPNP_RESULT_NO_SUCH_ENTRY_IN_ARRAY** = **4** --- No such entry in array. May be returned if a given port, protocol combination is not found on an :ref:`UPNPDevice<class_UPNPDevice>`.
+
 - **UPNP_RESULT_ACTION_FAILED** = **5** --- The action failed.
+
 - **UPNP_RESULT_SRC_IP_WILDCARD_NOT_PERMITTED** = **6** --- The :ref:`UPNPDevice<class_UPNPDevice>` does not allow wildcard values for the source IP address.
+
 - **UPNP_RESULT_EXT_PORT_WILDCARD_NOT_PERMITTED** = **7** --- The :ref:`UPNPDevice<class_UPNPDevice>` does not allow wildcard values for the external port.
+
 - **UPNP_RESULT_INT_PORT_WILDCARD_NOT_PERMITTED** = **8** --- The :ref:`UPNPDevice<class_UPNPDevice>` does not allow wildcard values for the internal port.
+
 - **UPNP_RESULT_REMOTE_HOST_MUST_BE_WILDCARD** = **9** --- The remote host value must be a wildcard.
+
 - **UPNP_RESULT_EXT_PORT_MUST_BE_WILDCARD** = **10** --- The external port value must be a wildcard.
+
 - **UPNP_RESULT_NO_PORT_MAPS_AVAILABLE** = **11** --- No port maps are available. May also be returned if port mapping functionality is not available.
+
 - **UPNP_RESULT_CONFLICT_WITH_OTHER_MECHANISM** = **12** --- Conflict with other mechanism. May be returned instead of ``UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING`` if a port mapping conflicts with an existing one.
+
 - **UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING** = **13** --- Conflict with an existing port mapping.
+
 - **UPNP_RESULT_SAME_PORT_VALUES_REQUIRED** = **14** --- External and internal port values must be the same.
+
 - **UPNP_RESULT_ONLY_PERMANENT_LEASE_SUPPORTED** = **15** --- Only permanent leases are supported. Do not use the ``duration`` parameter when adding port mappings.
+
 - **UPNP_RESULT_INVALID_GATEWAY** = **16** --- Invalid gateway.
+
 - **UPNP_RESULT_INVALID_PORT** = **17** --- Invalid port.
+
 - **UPNP_RESULT_INVALID_PROTOCOL** = **18** --- Invalid protocol.
+
 - **UPNP_RESULT_INVALID_DURATION** = **19** --- Invalid duration.
+
 - **UPNP_RESULT_INVALID_ARGS** = **20** --- Invalid arguments.
+
 - **UPNP_RESULT_INVALID_RESPONSE** = **21** --- Invalid response.
+
 - **UPNP_RESULT_INVALID_PARAM** = **22** --- Invalid parameter.
+
 - **UPNP_RESULT_HTTP_ERROR** = **23** --- HTTP error.
+
 - **UPNP_RESULT_SOCKET_ERROR** = **24** --- Socket error.
+
 - **UPNP_RESULT_MEM_ALLOC_ERROR** = **25** --- Error allocating memory.
+
 - **UPNP_RESULT_NO_GATEWAY** = **26** --- No gateway available. You may need to call :ref:`discover<class_UPNP_discover>` first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).
+
 - **UPNP_RESULT_NO_DEVICES** = **27** --- No devices available. You may need to call :ref:`discover<class_UPNP_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
+
 - **UPNP_RESULT_UNKNOWN_ERROR** = **28** --- Unknown error.
 
 Description

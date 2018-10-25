@@ -14,34 +14,27 @@ NoiseTexture
 Brief Description
 -----------------
 
-:ref:`SimplexNoise<class_SimplexNoise>` filled texture.
+:ref:`OpenSimplexNoise<class_OpenSimplexNoise>` filled texture.
 
 Properties
 ----------
 
-+-----------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`as_normalmap<class_NoiseTexture_as_normalmap>` |
-+-----------------------------------------+------------------------------------------------------+
-| :ref:`SimplexNoise<class_SimplexNoise>` | :ref:`noise<class_NoiseTexture_noise>`               |
-+-----------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`seamless<class_NoiseTexture_seamless>`         |
-+-----------------------------------------+------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`           | :ref:`size<class_NoiseTexture_size>`                 |
-+-----------------------------------------+------------------------------------------------------+
-
-Methods
--------
-
-+-------+-------------------------------------------------------------------------------------------+
-| void  | :ref:`set_height<class_NoiseTexture_set_height>` **(** :ref:`int<class_int>` height **)** |
-+-------+-------------------------------------------------------------------------------------------+
-| void  | :ref:`set_width<class_NoiseTexture_set_width>` **(** :ref:`int<class_int>` width **)**    |
-+-------+-------------------------------------------------------------------------------------------+
++-------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_as_normalmap>` |
++-------------------------------------------------+------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_height>`             |
++-------------------------------------------------+------------------------------------------------------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_noise>`               |
++-------------------------------------------------+------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_seamless>`         |
++-------------------------------------------------+------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_width>`               |
++-------------------------------------------------+------------------------------------------------------+
 
 Description
 -----------
 
-Uses a :ref:`SimplexNoise<class_SimplexNoise>` to fill the texture data. You can specify the texture size but keep in mind that larger textures will take longer to generate and seamless noise only works with square sized textures.
+Uses an :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` to fill the texture data. You can specify the texture size but keep in mind that larger textures will take longer to generate and seamless noise only works with square sized textures.
 
 NoiseTexture can also generate normalmap textures.
 
@@ -60,9 +53,21 @@ Property Descriptions
 
 If true, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
+.. _class_NoiseTexture_height:
+
+- :ref:`int<class_int>` **height**
+
++----------+-------------------+
+| *Setter* | set_height(value) |
++----------+-------------------+
+| *Getter* | get_height()      |
++----------+-------------------+
+
+Height of the generated texture.
+
 .. _class_NoiseTexture_noise:
 
-- :ref:`SimplexNoise<class_SimplexNoise>` **noise**
+- :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
 
 +----------+------------------+
 | *Setter* | set_noise(value) |
@@ -70,7 +75,7 @@ If true, the resulting texture contains a normal map created from the original n
 | *Getter* | get_noise()      |
 +----------+------------------+
 
-The :ref:`SimplexNoise<class_SimplexNoise>` instance used to generate the noise.
+The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
 
 .. _class_NoiseTexture_seamless:
 
@@ -84,30 +89,15 @@ The :ref:`SimplexNoise<class_SimplexNoise>` instance used to generate the noise.
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
-.. _class_NoiseTexture_size:
+.. _class_NoiseTexture_width:
 
-- :ref:`Vector2<class_Vector2>` **size**
+- :ref:`int<class_int>` **width**
 
-+----------+-----------------+
-| *Setter* | set_size(value) |
-+----------+-----------------+
-| *Getter* | get_size()      |
-+----------+-----------------+
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
 
-Size of the generated texture.
-
-Method Descriptions
--------------------
-
-.. _class_NoiseTexture_set_height:
-
-- void **set_height** **(** :ref:`int<class_int>` height **)**
-
-Set texture height.
-
-.. _class_NoiseTexture_set_width:
-
-- void **set_width** **(** :ref:`int<class_int>` width **)**
-
-Set texture width.
+Width of the generated texture.
 

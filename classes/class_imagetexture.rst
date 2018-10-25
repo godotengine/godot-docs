@@ -50,7 +50,9 @@ Enumerations
 enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- :ref:`Image<class_Image>` data is stored raw and unaltered.
+
 - **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`.
+
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_Image>` data is compressed with a lossless algorithm.
 
 Description
@@ -102,7 +104,7 @@ Create a new ``ImageTexture`` with "width" and "height".
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
-Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with "flags" from :ref:`Texture<class_Texture>`.FLAG\_\*.
+Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with "flags" from :ref:`Texture<class_Texture>`.FLAG\_\*. An sRGB to linear color space conversion can take place, according to :ref:`Image<class_Image>`.FORMAT\_\*.
 
 .. _class_ImageTexture_get_format:
 

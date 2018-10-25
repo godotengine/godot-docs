@@ -19,21 +19,21 @@ A class representing a specific WebSocket connection.
 Methods
 -------
 
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`close<class_WebSocketPeer_close>` **(** **)**                                                                       |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`get_connected_host<class_WebSocketPeer_get_connected_host>` **(** **)** const                                       |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_connected_port<class_WebSocketPeer_get_connected_port>` **(** **)** const                                       |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`  | :ref:`get_write_mode<class_WebSocketPeer_get_write_mode>` **(** **)** const                                               |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_connected_to_host<class_WebSocketPeer_is_connected_to_host>` **(** **)** const                                   |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_write_mode<class_WebSocketPeer_set_write_mode>` **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)** |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`was_string_packet<class_WebSocketPeer_was_string_packet>` **(** **)** const                                         |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`close<class_WebSocketPeer_close>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)** |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                     | :ref:`get_connected_host<class_WebSocketPeer_get_connected_host>` **(** **)** const                                        |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_connected_port<class_WebSocketPeer_get_connected_port>` **(** **)** const                                        |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`WriteMode<enum_WebSocketPeer_WriteMode>`  | :ref:`get_write_mode<class_WebSocketPeer_get_write_mode>` **(** **)** const                                                |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_connected_to_host<class_WebSocketPeer_is_connected_to_host>` **(** **)** const                                    |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_write_mode<class_WebSocketPeer_set_write_mode>` **(** :ref:`WriteMode<enum_WebSocketPeer_WriteMode>` mode **)**  |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`was_string_packet<class_WebSocketPeer_was_string_packet>` **(** **)** const                                          |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -43,6 +43,7 @@ Enumerations
 enum **WriteMode**:
 
 - **WRITE_MODE_TEXT** = **0** --- Specify that WebSockets messages should be transferred as text payload (only valid UTF-8 is allowed).
+
 - **WRITE_MODE_BINARY** = **1** --- Specify that WebSockets messages should be transferred as binary payload (any byte combination is allowed).
 
 Description
@@ -57,9 +58,13 @@ Method Descriptions
 
 .. _class_WebSocketPeer_close:
 
-- void **close** **(** **)**
+- void **close** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Close this WebSocket connection, actively disconnecting the peer.
+Close this WebSocket connection. ``code`` is the status code for the closure (see RFC6455 section 7.4 for a list of valid status codes). reason is the human readable reason for closing the connection (can be any UTF8 string, must be less than 123 bytes).
+
+Note: To achieve a clean close, you will need to keep polling until either :ref:`WebSocketClient.connection_closed<class_WebSocketClient_connection_closed>` or :ref:`WebSocketServer.client_disconnected<class_WebSocketServer_client_disconnected>` is received.
+
+Note: HTML5 export might not support all status codes. Please refer to browsers-specific documentation for more details.
 
 .. _class_WebSocketPeer_get_connected_host:
 

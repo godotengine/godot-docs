@@ -158,7 +158,7 @@ Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_
 
 Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision<class_KinematicCollision>`, which contains information about the collision.
 
-If ``test_only`` is ``true[/true], the body does not move but the would-be collision information is given.
+If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
 
 .. _class_KinematicBody_move_and_slide:
 

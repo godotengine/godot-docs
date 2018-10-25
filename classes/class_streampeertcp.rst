@@ -43,14 +43,17 @@ Enumerations
 enum **Status**:
 
 - **STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``, also the status after a disconnect.
+
 - **STATUS_CONNECTING** = **1** --- A status representing a ``StreamPeerTCP`` that is connecting to a host.
+
 - **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerTCP`` that is connected to a host.
+
 - **STATUS_ERROR** = **3** --- A status representing a ``StreamPeerTCP`` in error state.
 
 Description
 -----------
 
-TCP Stream peer. This object can be used to connect to TCP servers, or also is returned by a tcp server.
+TCP Stream peer. This object can be used to connect to TCP servers, or also is returned by a TCP server.
 
 Method Descriptions
 -------------------
@@ -88,6 +91,8 @@ Return the status of the connection, one of STATUS\_\* enum.
 .. _class_StreamPeerTCP_is_connected_to_host:
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+
+Returns ``true`` if this peer is currently connected to a host, ``false[code] otherwise.
 
 .. _class_StreamPeerTCP_set_no_delay:
 

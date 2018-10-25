@@ -50,7 +50,9 @@ Enumerations
 enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_PHYSICS** = **0**
+
 - **ANIMATION_PROCESS_IDLE** = **1**
+
 - **ANIMATION_PROCESS_MANUAL** = **2**
 
 Property Descriptions

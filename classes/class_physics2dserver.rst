@@ -227,7 +227,9 @@ Enumerations
 enum **CCDMode**:
 
 - **CCD_MODE_DISABLED** = **0** --- Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+
 - **CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection by raycasting. It is faster than shapecasting, but less precise.
+
 - **CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision detection by shapecasting. It is the slowest CCD method, and the most precise.
 
 .. _enum_Physics2DServer_BodyState:
@@ -235,9 +237,13 @@ enum **CCDMode**:
 enum **BodyState**:
 
 - **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
+
 - **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.
+
 - **BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the current angular velocity of the body.
+
 - **BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or to get whether it is sleeping.
+
 - **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
 
 .. _enum_Physics2DServer_ProcessInfo:
@@ -245,7 +251,9 @@ enum **BodyState**:
 enum **ProcessInfo**:
 
 - **INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects that are not sleeping.
+
 - **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
+
 - **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
 
 .. _enum_Physics2DServer_JointParam:
@@ -253,7 +261,9 @@ enum **ProcessInfo**:
 enum **JointParam**:
 
 - **JOINT_PARAM_BIAS** = **0**
+
 - **JOINT_PARAM_MAX_BIAS** = **1**
+
 - **JOINT_PARAM_MAX_FORCE** = **2**
 
 .. _enum_Physics2DServer_ShapeType:
@@ -261,13 +271,21 @@ enum **JointParam**:
 enum **ShapeType**:
 
 - **SHAPE_LINE** = **0** --- This is the constant for creating line shapes. A line shape is an infinite line with an origin point, and a normal. Thus, it can be used for front/behind checks.
+
 - **SHAPE_RAY** = **1**
+
 - **SHAPE_SEGMENT** = **2** --- This is the constant for creating segment shapes. A segment shape is a line from a point A to a point B. It can be checked for intersections.
+
 - **SHAPE_CIRCLE** = **3** --- This is the constant for creating circle shapes. A circle shape only has a radius. It can be used for intersections and inside/outside checks.
+
 - **SHAPE_RECTANGLE** = **4** --- This is the constant for creating rectangle shapes. A rectangle shape is defined by a width and a height. It can be used for intersections and inside/outside checks.
+
 - **SHAPE_CAPSULE** = **5** --- This is the constant for creating capsule shapes. A capsule shape is defined by a radius and a length. It can be used for intersections and inside/outside checks.
+
 - **SHAPE_CONVEX_POLYGON** = **6** --- This is the constant for creating convex polygon shapes. A polygon is defined by a list of points. It can be used for intersections and inside/outside checks. Unlike the method :ref:`CollisionPolygon2D.set_polygon<class_CollisionPolygon2D_set_polygon>`, polygons modified with :ref:`shape_set_data<class_Physics2DServer_shape_set_data>` do not verify that the points supplied form is a convex polygon.
+
 - **SHAPE_CONCAVE_POLYGON** = **7** --- This is the constant for creating concave polygon shapes. A polygon is defined by a list of points. It can be used for intersections checks, but not for inside/outside checks.
+
 - **SHAPE_CUSTOM** = **8** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
 
 .. _enum_Physics2DServer_AreaParameter:
@@ -275,12 +293,19 @@ enum **ShapeType**:
 enum **AreaParameter**:
 
 - **AREA_PARAM_GRAVITY** = **0** --- Constant to set/get gravity strength in an area.
+
 - **AREA_PARAM_GRAVITY_VECTOR** = **1** --- Constant to set/get gravity vector/center in an area.
+
 - **AREA_PARAM_GRAVITY_IS_POINT** = **2** --- Constant to set/get whether the gravity vector of an area is a direction, or a center point.
+
 - **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
+
 - **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE.
+
 - **AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear dampening factor of an area.
+
 - **AREA_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get the angular dampening factor of an area.
+
 - **AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority (order of processing) of an area.
 
 .. _enum_Physics2DServer_AreaBodyStatus:
@@ -288,6 +313,7 @@ enum **AreaParameter**:
 enum **AreaBodyStatus**:
 
 - **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
+
 - **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
 
 .. _enum_Physics2DServer_BodyParameter:
@@ -295,12 +321,19 @@ enum **AreaBodyStatus**:
 enum **BodyParameter**:
 
 - **BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce factor.
+
 - **BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction.
+
 - **BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass.
+
 - **BODY_PARAM_INERTIA** = **3** --- Constant to set/get a body's inertia.
+
 - **BODY_PARAM_GRAVITY_SCALE** = **4** --- Constant to set/get a body's gravity multiplier.
+
 - **BODY_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get a body's linear dampening factor.
+
 - **BODY_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get a body's angular dampening factor.
+
 - **BODY_PARAM_MAX** = **7** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
 
 .. _enum_Physics2DServer_BodyMode:
@@ -308,8 +341,11 @@ enum **BodyParameter**:
 enum **BodyMode**:
 
 - **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
+
 - **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
+
 - **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
+
 - **BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
 
 .. _enum_Physics2DServer_DampedStringParam:
@@ -317,7 +353,9 @@ enum **BodyMode**:
 enum **DampedStringParam**:
 
 - **DAMPED_STRING_REST_LENGTH** = **0** --- Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
+
 - **DAMPED_STRING_STIFFNESS** = **1** --- Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
+
 - **DAMPED_STRING_DAMPING** = **2** --- Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
 .. _enum_Physics2DServer_SpaceParameter:
@@ -325,11 +363,17 @@ enum **DampedStringParam**:
 enum **SpaceParameter**:
 
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
+
 - **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
+
 - **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+
 - **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+
 - **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
 
 .. _enum_Physics2DServer_AreaSpaceOverrideMode:
@@ -337,9 +381,13 @@ enum **SpaceParameter**:
 enum **AreaSpaceOverrideMode**:
 
 - **AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
+
 - **AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
+
 - **AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
+
 - **AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
+
 - **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
 
 .. _enum_Physics2DServer_JointType:
@@ -347,7 +395,9 @@ enum **AreaSpaceOverrideMode**:
 enum **JointType**:
 
 - **JOINT_PIN** = **0** --- Constant to create pin joints.
+
 - **JOINT_GROOVE** = **1** --- Constant to create groove joints.
+
 - **JOINT_DAMPED_SPRING** = **2** --- Constant to create damped spring joints.
 
 Description

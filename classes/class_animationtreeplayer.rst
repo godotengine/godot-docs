@@ -156,6 +156,7 @@ Enumerations
 enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
 
 .. _enum_AnimationTreePlayer_NodeType:
@@ -163,14 +164,23 @@ enum **AnimationProcessMode**:
 enum **NodeType**:
 
 - **NODE_OUTPUT** = **0** --- Output node.
+
 - **NODE_ANIMATION** = **1** --- Animation node.
+
 - **NODE_ONESHOT** = **2** --- OneShot node.
+
 - **NODE_MIX** = **3** --- Mix node.
+
 - **NODE_BLEND2** = **4** --- Blend2 node.
+
 - **NODE_BLEND3** = **5** --- Blend3 node.
+
 - **NODE_BLEND4** = **6** --- Blend4 node.
+
 - **NODE_TIMESCALE** = **7** --- TimeScale node.
+
 - **NODE_TIMESEEK** = **8** --- TimeSeek node.
+
 - **NODE_TRANSITION** = **9** --- Transition node.
 
 Description

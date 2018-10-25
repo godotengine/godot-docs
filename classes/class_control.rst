@@ -279,9 +279,13 @@ Enumerations
 enum **SizeFlags**:
 
 - **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_Container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
 - **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_Container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
 - **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
+
 - **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_Container>` to center the node in itself. It centers the control based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
 - **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_Container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
 
 .. _enum_Control_CursorShape:
@@ -289,21 +293,37 @@ enum **SizeFlags**:
 enum **CursorShape**:
 
 - **CURSOR_ARROW** = **0** --- Show the system's arrow mouse cursor when the user hovers the node. Use with :ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>`.
+
 - **CURSOR_IBEAM** = **1** --- Show the system's I-beam mouse cursor when the user hovers the node. The I-beam pointer has a shape similar to "I". It tells the user they can highlight or insert text.
+
 - **CURSOR_POINTING_HAND** = **2** --- Show the system's pointing hand mouse cursor when the user hovers the node.
+
 - **CURSOR_CROSS** = **3** --- Show the system's cross mouse cursor when the user hovers the node.
+
 - **CURSOR_WAIT** = **4** --- Show the system's wait mouse cursor, often an hourglass, when the user hovers the node.
+
 - **CURSOR_BUSY** = **5** --- Show the system's busy mouse cursor when the user hovers the node. Often an hourglass.
+
 - **CURSOR_DRAG** = **6** --- Show the system's drag mouse cursor, often a closed fist or a cross symbol, when the user hovers the node. It tells the user they're currently dragging an item, like a node in the Scene dock.
+
 - **CURSOR_CAN_DROP** = **7** --- Show the system's drop mouse cursor when the user hovers the node. It can be an open hand. It tells the user they can drop an item they're currently grabbing, like a node in the Scene dock.
+
 - **CURSOR_FORBIDDEN** = **8** --- Show the system's forbidden mouse cursor when the user hovers the node. Often a crossed circle.
+
 - **CURSOR_VSIZE** = **9** --- Show the system's vertical resize mouse cursor when the user hovers the node. A double headed vertical arrow. It tells the user they can resize the window or the panel vertically.
+
 - **CURSOR_HSIZE** = **10** --- Show the system's horizontal resize mouse cursor when the user hovers the node. A double headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
+
 - **CURSOR_BDIAGSIZE** = **11** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
+
 - **CURSOR_FDIAGSIZE** = **12** --- Show the system's window resize mouse cursor when the user hovers the node. The cursor is a double headed arrow that goes from the top left to the bottom right, the opposite of ``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the panel both horizontally and vertically.
+
 - **CURSOR_MOVE** = **13** --- Show the system's move mouse cursor when the user hovers the node. It shows 2 double-headed arrows at a 90 degree angle. It tells the user they can move a UI element freely.
+
 - **CURSOR_VSPLIT** = **14** --- Show the system's vertical split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_VSIZE``.
+
 - **CURSOR_HSPLIT** = **15** --- Show the system's horizontal split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_HSIZE``.
+
 - **CURSOR_HELP** = **16** --- Show the system's help mouse cursor when the user hovers the node, a question mark.
 
 .. _enum_Control_FocusMode:
@@ -311,7 +331,9 @@ enum **CursorShape**:
 enum **FocusMode**:
 
 - **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`focus_mode<class_Control_focus_mode>`.
+
 - **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Control_focus_mode>`.
+
 - **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`focus_mode<class_Control_focus_mode>`.
 
 .. _enum_Control_GrowDirection:
@@ -319,7 +341,9 @@ enum **FocusMode**:
 enum **GrowDirection**:
 
 - **GROW_DIRECTION_BEGIN** = **0**
+
 - **GROW_DIRECTION_END** = **1**
+
 - **GROW_DIRECTION_BOTH** = **2**
 
 .. _enum_Control_LayoutPresetMode:
@@ -327,8 +351,11 @@ enum **GrowDirection**:
 enum **LayoutPresetMode**:
 
 - **PRESET_MODE_MINSIZE** = **0**
+
 - **PRESET_MODE_KEEP_WIDTH** = **1**
+
 - **PRESET_MODE_KEEP_HEIGHT** = **2**
+
 - **PRESET_MODE_KEEP_SIZE** = **3**
 
 .. _enum_Control_LayoutPreset:
@@ -336,20 +363,35 @@ enum **LayoutPresetMode**:
 enum **LayoutPreset**:
 
 - **PRESET_TOP_LEFT** = **0** --- Snap all 4 anchors to the top-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_TOP_RIGHT** = **1** --- Snap all 4 anchors to the top-right of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_BOTTOM_LEFT** = **2** --- Snap all 4 anchors to the bottom-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_BOTTOM_RIGHT** = **3** --- Snap all 4 anchors to the bottom-right of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_CENTER_LEFT** = **4** --- Snap all 4 anchors to the center of the left edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_CENTER_TOP** = **5** --- Snap all 4 anchors to the center of the top edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_CENTER_RIGHT** = **6** --- Snap all 4 anchors to the center of the right edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_CENTER_BOTTOM** = **7** --- Snap all 4 anchors to the center of the bottom edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_CENTER** = **8** --- Snap all 4 anchors to the center of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_LEFT_WIDE** = **9** --- Snap all 4 anchors to the left edge of the parent container. The left margin becomes relative to the left edge and the top margin relative to the top left corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_TOP_WIDE** = **10** --- Snap all 4 anchors to the top edge of the parent container. The left margin becomes relative to the top left corner, the top margin relative to the top edge, and the right margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_RIGHT_WIDE** = **11** --- Snap all 4 anchors to the right edge of the parent container. The right margin becomes relative to the right edge and the top margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_BOTTOM_WIDE** = **12** --- Snap all 4 anchors to the bottom edge of the parent container. The left margin becomes relative to the bottom left corner, the bottom margin relative to the bottom edge, and the right margin relative to the bottom right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_VCENTER_WIDE** = **13** --- Snap all 4 anchors to a vertical line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent container. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent container. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
 .. _enum_Control_MouseFilter:
@@ -357,7 +399,9 @@ enum **LayoutPreset**:
 enum **MouseFilter**:
 
 - **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. These events are automatically marked as handled and they will not propagate further to other controls.
+
 - **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically.
+
 - **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and will not block other controls from receiving these events. These events will also not be handled automatically.
 
 .. _enum_Control_Anchor:
@@ -365,19 +409,28 @@ enum **MouseFilter**:
 enum **Anchor**:
 
 - **ANCHOR_BEGIN** = **0** --- Snaps one of the 4 anchor's sides to the origin of the node's ``Rect``, in the top left. Use it with one of the ``anchor_*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 - **ANCHOR_END** = **1** --- Snaps one of the 4 anchor's sides to the end of the node's ``Rect``, in the bottom right. Use it with one of the ``anchor_*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
 Constants
 ---------
 
 - **NOTIFICATION_RESIZED** = **40** --- Sent when the node changes size. Use :ref:`rect_size<class_Control_rect_size>` to get the new size.
+
 - **NOTIFICATION_MOUSE_ENTER** = **41** --- Sent when the mouse pointer enters the node.
+
 - **NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer exits the node.
+
 - **NOTIFICATION_FOCUS_ENTER** = **43** --- Sent when the node grabs focus.
+
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
+
 - **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_*_override``
+
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
+
 - **NOTIFICATION_SCROLL_BEGIN** = **47**
+
 - **NOTIFICATION_SCROLL_END** = **48**
 
 Description
@@ -818,7 +871,7 @@ Overrides the color in the :ref:`theme<class_Control_theme>` resource the node u
 
 - void **add_constant_override** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` constant **)**
 
-Overrides an integer constant in the :ref:`theme<class_Control_theme>` resource the node uses. If the ``constant`` is invalid, Godot clears the override. See :ref:`Theme.INVALID_CONSTANT<class_Theme_INVALID_CONSTANT>` for more information.
+Overrides an integer constant in the :ref:`theme<class_Control_theme>` resource the node uses. If the ``constant`` is invalid, Godot clears the override.
 
 .. _class_Control_add_font_override:
 

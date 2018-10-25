@@ -131,9 +131,11 @@ Enumerations
 
 enum **TabAlign**:
 
-- **ALIGN_LEFT** = **0**
-- **ALIGN_CENTER** = **1**
-- **ALIGN_RIGHT** = **2**
+- **ALIGN_LEFT** = **0** --- Align the tabs to the left.
+
+- **ALIGN_CENTER** = **1** --- Align the tabs to the center.
+
+- **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
 Description
 -----------
@@ -170,6 +172,8 @@ The current tab index. When set, this index's :ref:`Control<class_Control>` node
 +----------+--------------------------------------+
 | *Getter* | get_drag_to_rearrange_enabled()      |
 +----------+--------------------------------------+
+
+If ``true``, tabs can be rearranged with mouse drag.
 
 .. _class_TabContainer_tab_align:
 
@@ -250,6 +254,8 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 - :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
 
+Returns the ``TabContainer`` rearrange group id.
+
 .. _class_TabContainer_set_popup:
 
 - void **set_popup** **(** :ref:`Node<class_Node>` popup **)**
@@ -277,4 +283,6 @@ Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of
 .. _class_TabContainer_set_tabs_rearrange_group:
 
 - void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
+
+Defines rearrange group id, choose for each ``TabContainer`` the same value to enable tab drag between ``TabContainer``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
 

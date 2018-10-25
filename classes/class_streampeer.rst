@@ -47,7 +47,7 @@ Methods
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`              | :ref:`get_partial_data<class_StreamPeer_get_partial_data>` **(** :ref:`int<class_int>` bytes **)**                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`            | :ref:`get_string<class_StreamPeer_get_string>` **(** :ref:`int<class_int>` bytes **)**                                |
+| :ref:`String<class_String>`            | :ref:`get_string<class_StreamPeer_get_string>` **(** :ref:`int<class_int>` bytes=-1 **)**                             |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_u16<class_StreamPeer_get_u16>` **(** **)**                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +57,7 @@ Methods
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_u8<class_StreamPeer_get_u8>` **(** **)**                                                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`            | :ref:`get_utf8_string<class_StreamPeer_get_utf8_string>` **(** :ref:`int<class_int>` bytes **)**                      |
+| :ref:`String<class_String>`            | :ref:`get_utf8_string<class_StreamPeer_get_utf8_string>` **(** :ref:`int<class_int>` bytes=-1 **)**                   |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`          | :ref:`get_var<class_StreamPeer_get_var>` **(** **)**                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -76,6 +76,8 @@ Methods
 | void                                   | :ref:`put_float<class_StreamPeer_put_float>` **(** :ref:`float<class_float>` value **)**                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`              | :ref:`put_partial_data<class_StreamPeer_put_partial_data>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)** |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`put_string<class_StreamPeer_put_string>` **(** :ref:`String<class_String>` value **)**                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`put_u16<class_StreamPeer_put_u16>` **(** :ref:`int<class_int>` value **)**                                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -169,9 +171,9 @@ Return a chunk data with the received bytes. The amount of bytes to be received 
 
 .. _class_StreamPeer_get_string:
 
-- :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`String<class_String>` **get_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
-Get a string with byte-length "bytes" from the stream.
+Get a string with byte-length ``bytes`` from the stream. If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_string<class_StreamPeer_put_string>`.
 
 .. _class_StreamPeer_get_u16:
 
@@ -199,9 +201,9 @@ Get an unsigned byte from the stream.
 
 .. _class_StreamPeer_get_utf8_string:
 
-- :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes **)**
+- :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
-Get a utf8 string with byte-length "bytes" from the stream (this decodes the string sent as utf8).
+Get a utf8 string with byte-length ``bytes`` from the stream (this decodes the string sent as utf8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string<class_StreamPeer_put_utf8_string>`.
 
 .. _class_StreamPeer_get_var:
 
@@ -257,6 +259,12 @@ Put a single-precision float into the stream.
 
 Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an Error code and an integer, describing how much data was actually sent.
 
+.. _class_StreamPeer_put_string:
+
+- void **put_string** **(** :ref:`String<class_String>` value **)**
+
+Put a zero-terminated ascii string into the stream prepended by a 32 bits unsigned integer representing its size.
+
 .. _class_StreamPeer_put_u16:
 
 - void **put_u16** **(** :ref:`int<class_int>` value **)**
@@ -285,7 +293,7 @@ Put an unsigned byte into the stream.
 
 - void **put_utf8_string** **(** :ref:`String<class_String>` value **)**
 
-Put a zero-terminated utf8 string into the stream.
+Put a zero-terminated utf8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
 .. _class_StreamPeer_put_var:
 

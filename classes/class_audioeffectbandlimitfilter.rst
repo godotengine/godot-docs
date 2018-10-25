@@ -19,5 +19,5 @@ Adds a band limit filter to the Audio Bus.
 Description
 -----------
 
-Limits the frequencies in a range around the :ref:`cutoff_hz<class_AudioEffectBandLimitFilter_cutoff_hz>` and allows frequencies outside of this range to pass.
+Limits the frequencies in a range around the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_cutoff_hz>` and allows frequencies outside of this range to pass.
 

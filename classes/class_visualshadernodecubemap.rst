@@ -33,7 +33,9 @@ Enumerations
 enum **TextureType**:
 
 - **TYPE_DATA** = **0**
+
 - **TYPE_COLOR** = **1**
+
 - **TYPE_NORMALMAP** = **2**
 
 Property Descriptions

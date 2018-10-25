@@ -53,6 +53,7 @@ Enumerations
 enum **UpdateMode**:
 
 - **UPDATE_ONCE** = **0**
+
 - **UPDATE_ALWAYS** = **1**
 
 Tutorials

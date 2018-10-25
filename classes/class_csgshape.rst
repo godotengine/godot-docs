@@ -44,7 +44,9 @@ Enumerations
 enum **Operation**:
 
 - **OPERATION_UNION** = **0** --- Geometry of both primitives is merged, intersecting geometry is removed.
+
 - **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
+
 - **OPERATION_SUBTRACTION** = **2** --- The second shape is susbtracted from the first, leaving a dent with it's shape.
 
 Description

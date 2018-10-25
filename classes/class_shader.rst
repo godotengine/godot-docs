@@ -46,7 +46,9 @@ Enumerations
 enum **Mode**:
 
 - **MODE_SPATIAL** = **0**
+
 - **MODE_CANVAS_ITEM** = **1**
+
 - **MODE_PARTICLES** = **2**
 
 Description

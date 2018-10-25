@@ -56,7 +56,9 @@ Enumerations
 enum **Eyes**:
 
 - **EYE_MONO** = **0** --- Mono output, this is mostly used internally when retrieving positioning information for our camera node or when stereo scopic rendering is not supported.
+
 - **EYE_LEFT** = **1** --- Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
+
 - **EYE_RIGHT** = **2** --- Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
 
 .. _enum_ARVRInterface_Tracking_status:
@@ -64,9 +66,13 @@ enum **Eyes**:
 enum **Tracking_status**:
 
 - **ARVR_NORMAL_TRACKING** = **0** --- Tracking is behaving as expected.
+
 - **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion, player is moving faster then tracking can keep up.
+
 - **ARVR_INSUFFICIENT_FEATURES** = **2** --- Tracking is hindered by insufficient features, it's too dark (for camera based tracking), player is blocked, etc.
+
 - **ARVR_UNKNOWN_TRACKING** = **3** --- We don't know the status of the tracking or this interface does not provide feedback.
+
 - **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.)
 
 .. _enum_ARVRInterface_Capabilities:
@@ -74,9 +80,13 @@ enum **Tracking_status**:
 enum **Capabilities**:
 
 - **ARVR_NONE** = **0** --- No ARVR capabilities.
+
 - **ARVR_MONO** = **1** --- This interface can work with normal rendering output (non-HMD based AR).
+
 - **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
+
 - **ARVR_AR** = **4** --- This interface support AR (video background and real world tracking).
+
 - **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of get_render_targetsize. Using a separate viewport node frees up the main viewport for other purposes.
 
 Description

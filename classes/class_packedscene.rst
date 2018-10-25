@@ -44,7 +44,9 @@ Enumerations
 enum **GenEditState**:
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_instance>`, blocks edits to the scene state.
+
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Requires tools compiled.
+
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
 
 Description
@@ -54,14 +56,27 @@ A simplified interface to a scene file. Provides access to operations and checks
 
 Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`). Note that the node doesn't need to own itself.
 
-Example of saving a node:
+Example of saving a node with different owners: The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
 ::
 
+    # create the objects
+    var node = Node2D.new()
+    var rigid = RigidBody2D.new()
+    var collision = CollisionShape2D.new()
+    
+    # create the object hierachy
+    rigid.add_child(collision)
+    node.add_child(rigid)
+    
+    # change owner of rigid, but not of collision
+    rigid.set_owner(node)
+    
     var scene = PackedScene.new()
-    var result = scene.pack(child)
+    # only node and rigid are now packed
+    var result = scene.pack(node)
     if result == OK:
-        ResourceSaver.save("res://path/name.scn", scene) // or user://...
+        ResourceSaver.save("res://path/name.scn", scene) # or user://...
 
 Property Descriptions
 ---------------------
@@ -93,7 +108,7 @@ Returns the ``SceneState`` representing the scene file contents.
 
 - :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
 
-Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the :ref:`NOTIFICATION_INSTANCED<enum_Object_NOTIFICATION_INSTANCED>` notification on the root node.
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the :ref:`NOTIFICATION_INSTANCED<enum_Node_NOTIFICATION_INSTANCED>` notification on the root node.
 
 .. _class_PackedScene_pack:
 

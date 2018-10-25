@@ -148,18 +148,23 @@ Enumerations
 enum **TreeCellMode**:
 
 - **CELL_MODE_STRING** = **0** --- Cell contains a string.
+
 - **CELL_MODE_CHECK** = **1** --- Cell can be checked.
+
 - **CELL_MODE_RANGE** = **2** --- Cell contains a range.
-- **CELL_MODE_RANGE_EXPRESSION** = **3** --- Cell contains a range expression.
-- **CELL_MODE_ICON** = **4** --- Cell contains an icon.
-- **CELL_MODE_CUSTOM** = **5**
+
+- **CELL_MODE_ICON** = **3** --- Cell contains an icon.
+
+- **CELL_MODE_CUSTOM** = **4**
 
 .. _enum_TreeItem_TextAlign:
 
 enum **TextAlign**:
 
 - **ALIGN_LEFT** = **0** --- Align text to the left. See ``set_text_align()``.
+
 - **ALIGN_CENTER** = **1** --- Center text. See ``set_text_align()``.
+
 - **ALIGN_RIGHT** = **2** --- Align text to the right. See ``set_text_align()``.
 
 Description
@@ -213,7 +218,7 @@ Method Descriptions
 
 - void **add_button** **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` button, :ref:`int<class_int>` button_idx=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)**
 
-Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling ``get_button_count()`` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
+Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
 .. _class_TreeItem_clear_custom_bg_color:
 
@@ -450,6 +455,8 @@ Sets the given column's custom color.
 - void **set_custom_draw** **(** :ref:`int<class_int>` column, :ref:`Object<class_Object>` object, :ref:`String<class_String>` callback **)**
 
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
+
+The ``callback`` should accept two arguments: the :ref:`TreeItem<class_TreeItem>` that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 
 .. _class_TreeItem_set_editable:
 

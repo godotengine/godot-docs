@@ -140,5 +140,5 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 ``shape``: The shape index of the colliding shape.
 
-The number of intersections can be limited with the second parameter, to reduce the processing time.
+The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 

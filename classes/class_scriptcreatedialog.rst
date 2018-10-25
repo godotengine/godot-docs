@@ -19,9 +19,9 @@ The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 Methods
 -------
 
-+-------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`config<class_ScriptCreateDialog_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)** |
-+-------+-----------------------------------------------------------------------------------------------------------------------------------+
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`config<class_ScriptCreateDialog_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)** |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -49,7 +49,7 @@ Method Descriptions
 
 .. _class_ScriptCreateDialog_config:
 
-- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path **)**
+- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 

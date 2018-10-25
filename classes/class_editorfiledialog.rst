@@ -79,7 +79,9 @@ Enumerations
 enum **Access**:
 
 - **ACCESS_RESOURCES** = **0** --- The ``EditorFileDialog`` can only view ``res://`` directory contents.
+
 - **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
+
 - **ACCESS_FILESYSTEM** = **2** --- The ``EditorFileDialog`` can view the entire local file system.
 
 .. _enum_EditorFileDialog_DisplayMode:
@@ -87,6 +89,7 @@ enum **Access**:
 enum **DisplayMode**:
 
 - **DISPLAY_THUMBNAILS** = **0** --- The ``EditorFileDialog`` displays resources as thumbnails.
+
 - **DISPLAY_LIST** = **1** --- The ``EditorFileDialog`` displays resources as a list of filenames.
 
 .. _enum_EditorFileDialog_Mode:
@@ -94,9 +97,13 @@ enum **DisplayMode**:
 enum **Mode**:
 
 - **MODE_OPEN_FILE** = **0** --- The ``EditorFileDialog`` can select only one file. Accepting the window will open the file.
+
 - **MODE_OPEN_FILES** = **1** --- The ``EditorFileDialog`` can select multiple files. Accepting the window will open all files.
+
 - **MODE_OPEN_DIR** = **2** --- The ``EditorFileDialog`` can select only one directory. Accepting the window will open the directory.
+
 - **MODE_OPEN_ANY** = **3** --- The ``EditorFileDialog`` can select a file or directory. Accepting the window will open it.
+
 - **MODE_SAVE_FILE** = **4** --- The ``EditorFileDialog`` can select only one file. Accepting the window will save the file.
 
 Property Descriptions

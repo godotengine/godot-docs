@@ -87,7 +87,9 @@ Enumerations
 enum **TangentMode**:
 
 - **TANGENT_FREE** = **0** --- The tangent on this side of the point is user-defined.
+
 - **TANGENT_LINEAR** = **1** --- The curve calculates the tangent on this side of the point as the slope halfway towards the adjacent point.
+
 - **TANGENT_MODE_COUNT** = **2** --- The total number of available tangent modes.
 
 Description

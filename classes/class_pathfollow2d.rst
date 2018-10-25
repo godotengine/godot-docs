@@ -85,6 +85,8 @@ The node's offset along the curve.
 | *Getter* | get_lookahead()      |
 +----------+----------------------+
 
+How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations. Default value: ``4``.
+
 .. _class_PathFollow2D_loop:
 
 - :ref:`bool<class_bool>` **loop**

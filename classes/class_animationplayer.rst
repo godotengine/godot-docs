@@ -121,7 +121,9 @@ Enumerations
 enum **AnimationProcessMode**:
 
 - **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+
 - **ANIMATION_PROCESS_MANUAL** = **2** --- Do not process animation. Use the 'advance' method to process the animation manually.
 
 Description

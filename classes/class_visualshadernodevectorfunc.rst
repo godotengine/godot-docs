@@ -31,10 +31,15 @@ Enumerations
 enum **Function**:
 
 - **FUNC_NORMALIZE** = **0**
+
 - **FUNC_SATURATE** = **1**
+
 - **FUNC_NEGATE** = **2**
+
 - **FUNC_RECIPROCAL** = **3**
+
 - **FUNC_RGB2HSV** = **4**
+
 - **FUNC_HSV2RGB** = **5**
 
 Property Descriptions

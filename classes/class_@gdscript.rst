@@ -189,8 +189,11 @@ Constants
 ---------
 
 - **PI** = **3.141593** --- Constant that represents how many times the diameter of a circle fits around its perimeter.
+
 - **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle.
+
 - **INF** = **inf** --- A positive infinity. (For negative infinity, use -INF).
+
 - **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
 
 The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
@@ -239,7 +242,7 @@ Supported color names:
 
 - :ref:`float<class_float>` **abs** **(** :ref:`float<class_float>` s **)**
 
-Returns the absolute value of parameter ``s``  (i.e. unsigned value, works for integer and float).
+Returns the absolute value of parameter ``s`` (i.e. unsigned value, works for integer and float).
 
 ::
 
@@ -490,7 +493,7 @@ Returns the floating-point remainder of ``x/y`` that wraps equally in positive a
 
 ::
 
-    var i = -10;
+    var i = -10
     while i < 0:
         prints(i, fposmod(i, 10))
         i += 1

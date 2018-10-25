@@ -156,6 +156,7 @@ Enumerations
 enum **Flags**:
 
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
+
 - **FLAG_MAX** = **2**
 
 .. _enum_CPUParticles2D_Parameter:
@@ -163,17 +164,29 @@ enum **Flags**:
 enum **Parameter**:
 
 - **PARAM_INITIAL_LINEAR_VELOCITY** = **0**
+
 - **PARAM_ANGULAR_VELOCITY** = **1**
+
 - **PARAM_ORBIT_VELOCITY** = **2**
+
 - **PARAM_LINEAR_ACCEL** = **3**
+
 - **PARAM_RADIAL_ACCEL** = **4**
+
 - **PARAM_TANGENTIAL_ACCEL** = **5**
+
 - **PARAM_DAMPING** = **6**
+
 - **PARAM_ANGLE** = **7**
+
 - **PARAM_SCALE** = **8**
+
 - **PARAM_HUE_VARIATION** = **9**
+
 - **PARAM_ANIM_SPEED** = **10**
+
 - **PARAM_ANIM_OFFSET** = **11**
+
 - **PARAM_MAX** = **12**
 
 .. _enum_CPUParticles2D_EmissionShape:
@@ -181,9 +194,13 @@ enum **Parameter**:
 enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0**
+
 - **EMISSION_SHAPE_CIRCLE** = **1**
+
 - **EMISSION_SHAPE_RECTANGLE** = **2**
+
 - **EMISSION_SHAPE_POINTS** = **3**
+
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
 
 .. _enum_CPUParticles2D_DrawOrder:
@@ -191,6 +208,7 @@ enum **EmissionShape**:
 enum **DrawOrder**:
 
 - **DRAW_ORDER_INDEX** = **0**
+
 - **DRAW_ORDER_LIFETIME** = **1**
 
 Property Descriptions

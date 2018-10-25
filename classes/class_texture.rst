@@ -54,14 +54,21 @@ Enumerations
 enum **Flags**:
 
 - **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+
 - **FLAG_REPEAT** = **2** --- Repeats texture (instead of clamp to edge).
+
 - **FLAG_FILTER** = **4** --- Magnifying filter, to enable smooth zooming in of the texture.
+
 - **FLAG_ANISOTROPIC_FILTER** = **8** --- Anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
 
 More effective on planes often shown going to the horrizon as those textures (Walls or Ground for example) get squashed in the viewport to different aspect ratios and regular mipmaps keep the aspect ratio so they don't optimize storage that well in those cases.
+
 - **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
+
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats texture with alternate sections mirrored.
+
 - **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
 
 Description

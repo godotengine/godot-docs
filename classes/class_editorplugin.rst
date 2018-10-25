@@ -126,7 +126,7 @@ Signals
 
 - **main_screen_changed** **(** :ref:`String<class_String>` screen_name **)**
 
-Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
+Emitted when user change the workspace (2D, 3D, Script, AssetLib). Also works with custom screens defined by plugins.
 
 .. _class_EditorPlugin_resource_saved:
 
@@ -152,13 +152,21 @@ Enumerations
 enum **DockSlot**:
 
 - **DOCK_SLOT_LEFT_UL** = **0**
+
 - **DOCK_SLOT_LEFT_BL** = **1**
+
 - **DOCK_SLOT_LEFT_UR** = **2**
+
 - **DOCK_SLOT_LEFT_BR** = **3**
+
 - **DOCK_SLOT_RIGHT_UL** = **4**
+
 - **DOCK_SLOT_RIGHT_BL** = **5**
+
 - **DOCK_SLOT_RIGHT_UR** = **6**
+
 - **DOCK_SLOT_RIGHT_BR** = **7**
+
 - **DOCK_SLOT_MAX** = **8**
 
 .. _enum_EditorPlugin_CustomControlContainer:
@@ -166,20 +174,29 @@ enum **DockSlot**:
 enum **CustomControlContainer**:
 
 - **CONTAINER_TOOLBAR** = **0**
+
 - **CONTAINER_SPATIAL_EDITOR_MENU** = **1**
+
 - **CONTAINER_SPATIAL_EDITOR_SIDE_LEFT** = **2**
+
 - **CONTAINER_SPATIAL_EDITOR_SIDE_RIGHT** = **3**
+
 - **CONTAINER_SPATIAL_EDITOR_BOTTOM** = **4**
+
 - **CONTAINER_CANVAS_EDITOR_MENU** = **5**
+
 - **CONTAINER_CANVAS_EDITOR_SIDE_LEFT** = **6**
+
 - **CONTAINER_CANVAS_EDITOR_SIDE_RIGHT** = **7**
+
 - **CONTAINER_CANVAS_EDITOR_BOTTOM** = **8**
+
 - **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **9**
 
 Description
 -----------
 
-Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins.
+Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins. Also see :ref:`EditorScript<class_EditorScript>` to add functions to the editor.
 
 Tutorials
 ---------
@@ -199,7 +216,7 @@ Add a script at ``path`` to the Autoload list as ``name``.
 
 - :ref:`ToolButton<class_ToolButton>` **add_control_to_bottom_panel** **(** :ref:`Control<class_Control>` control, :ref:`String<class_String>` title **)**
 
-Add a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. If your plugin is being removed, also make sure to remove your control by calling :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>`.
+Add a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>` and free it with ``queue_free()``.
 
 .. _class_EditorPlugin_add_control_to_container:
 
@@ -209,7 +226,7 @@ Add a custom control to a container (see CONTAINER\_\* enum). There are many loc
 
 Please remember that you have to manage the visibility of your custom controls yourself (and likely hide it after adding it).
 
-If your plugin is being removed, also make sure to remove your custom controls too.
+When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_container<class_EditorPlugin_remove_control_from_container>` and free it with ``queue_free()``.
 
 .. _class_EditorPlugin_add_control_to_dock:
 
@@ -219,7 +236,7 @@ Add the control to a specific dock slot (see DOCK\_\* enum for options).
 
 If the dock is repositioned and as long as the plugin is active, the editor will save the dock position on further sessions.
 
-If your plugin is being removed, also make sure to remove your control by calling :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>`.
+When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>` and free it with ``queue_free()``.
 
 .. _class_EditorPlugin_add_custom_type:
 
@@ -229,7 +246,7 @@ Add a custom type, which will appear in the list of nodes or resources. An icon 
 
 When given node or resource is selected, the base type will be instanced (ie, "Spatial", "Control", "Resource"), then the script will be loaded and set to this object.
 
-You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check if your custom object is being edited by checking the script or using 'is' keyword.
+You can use the virtual method :ref:`handles<class_EditorPlugin_handles>` to check if your custom object is being edited by checking the script or using 'is' keyword.
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
 
@@ -253,11 +270,13 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_tool_menu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)**
 
-Adds a custom menu to 'Project > Tools' as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
+Add a custom menu to 'Project > Tools' as ``name`` that calls ``callback`` on an instance of ``handler`` with a parameter ``ud`` when user activates it.
 
 .. _class_EditorPlugin_add_tool_submenu_item:
 
 - void **add_tool_submenu_item** **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**
+
+Like :ref:`add_tool_menu_item<class_EditorPlugin_add_tool_menu_item>` but adds the ``submenu`` item inside the ``name`` menu.
 
 .. _class_EditorPlugin_apply_changes:
 
@@ -287,6 +306,15 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 - void **forward_canvas_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
 
+This method is called when there is an input event in the 2D viewport, e.g. the user clicks with the mouse in the 2D space (canvas GUI). Keep in mind that for this method to be called you have to first declare the virtual method :ref:`handles<class_EditorPlugin_handles>` so the editor knows that you want to work with the workspace:
+
+::
+
+    func handles(object):
+        return true
+
+Also note that the edited scene must have a root node.
+
 .. _class_EditorPlugin_forward_canvas_force_draw_over_viewport:
 
 - void **forward_canvas_force_draw_over_viewport** **(** :ref:`Control<class_Control>` overlay **)** virtual
@@ -299,9 +327,14 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 - :ref:`bool<class_bool>` **forward_spatial_gui_input** **(** :ref:`Camera<class_Camera>` camera, :ref:`InputEvent<class_InputEvent>` event **)** virtual
 
-Implement this function if you are interested in 3D view screen input events. It will be called only if currently selected node is handled by your plugin.
+This method is called when there is an input event in the 3D viewport, e.g. the user clicks with the mouse in the 3D space (spatial GUI). Keep in mind that for this method to be called you have to first declare the virtual method :ref:`handles<class_EditorPlugin_handles>` so the editor knows that you want to work with the workspace:
 
-If you would like to always gets those input events then additionally use :ref:`set_input_forwarding_always_enabled<class_EditorPlugin_set_input_forwarding_always_enabled>`.
+::
+
+    func handles(object):
+        return true
+
+Also note that the edited scene must have a root node.
 
 .. _class_EditorPlugin_get_breakpoints:
 
@@ -312,6 +345,8 @@ This is for editors that edit script based objects. You can return a list of bre
 .. _class_EditorPlugin_get_editor_interface:
 
 - :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
+
+Return the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
 
 .. _class_EditorPlugin_get_plugin_icon:
 
@@ -343,19 +378,19 @@ Get the undo/redo object. Most actions in the editor can be undoable, so use thi
 
 - void **get_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` layout **)** virtual
 
-Get the GUI layout of the plugin. This is used to save the project's editor layout when the :ref:`EditorPlugin.queue_save_layout<class_EditorPlugin_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
+Get the GUI layout of the plugin. This is used to save the project's editor layout when :ref:`queue_save_layout<class_EditorPlugin_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
 
 .. _class_EditorPlugin_handles:
 
 - :ref:`bool<class_bool>` **handles** **(** :ref:`Object<class_Object>` object **)** virtual
 
-Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`EditorPlugin.edit<class_EditorPlugin_edit>` and :ref:`EditorPlugin.make_visible<class_EditorPlugin_make_visible>` called when the editor requests them.
+Implement this function if your plugin edits a specific type of object (Resource or Node). If you return true, then you will get the functions :ref:`EditorPlugin.edit<class_EditorPlugin_edit>` and :ref:`EditorPlugin.make_visible<class_EditorPlugin_make_visible>` called when the editor requests them. If you have declared the methods :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` and :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>` these will be called too.
 
 .. _class_EditorPlugin_has_main_screen:
 
 - :ref:`bool<class_bool>` **has_main_screen** **(** **)** virtual
 
-Return true if this is a main screen editor plugin (it goes in the main screen selector together with 2D, 3D, Script).
+Return true if this is a main screen editor plugin (it goes in the workspaces selector together with '2D', '3D', and 'Script').
 
 .. _class_EditorPlugin_hide_bottom_panel:
 
@@ -389,25 +424,25 @@ Remove an Autoload ``name`` from the list.
 
 - void **remove_control_from_bottom_panel** **(** :ref:`Control<class_Control>` control **)**
 
-Remove the control from the bottom panel. Don't forget to call this if you added one, so the editor can remove it cleanly.
+Remove the control from the bottom panel. You have to manually ``queue_free()`` the control.
 
 .. _class_EditorPlugin_remove_control_from_container:
 
 - void **remove_control_from_container** **(** :ref:`CustomControlContainer<enum_EditorPlugin_CustomControlContainer>` container, :ref:`Control<class_Control>` control **)**
 
-Remove the control from the specified container. Use it when cleaning up after adding a control with :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>`. Note that you can simply free the control if you won't use it anymore.
+Remove the control from the specified container. You have to manually ``queue_free()`` the control.
 
 .. _class_EditorPlugin_remove_control_from_docks:
 
 - void **remove_control_from_docks** **(** :ref:`Control<class_Control>` control **)**
 
-Remove the control from the dock. Don't forget to call this if you added one, so the editor can save the layout and remove it cleanly.
+Remove the control from the dock. You have to manually ``queue_free()`` the control.
 
 .. _class_EditorPlugin_remove_custom_type:
 
 - void **remove_custom_type** **(** :ref:`String<class_String>` type **)**
 
-Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlugin_add_custom_type>`
+Remove a custom type added by :ref:`add_custom_type<class_EditorPlugin_add_custom_type>`
 
 .. _class_EditorPlugin_remove_export_plugin:
 

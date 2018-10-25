@@ -35,7 +35,9 @@ Enumerations
 enum **CullMode**:
 
 - **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+
 - **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+
 - **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
 
 Description

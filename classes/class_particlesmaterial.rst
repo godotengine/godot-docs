@@ -137,7 +137,9 @@ Enumerations
 enum **Flags**:
 
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_align_y<class_ParticlesMaterial_flag_align_y>`.
+
 - **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
+
 - **FLAG_MAX** = **4**
 
 .. _enum_ParticlesMaterial_Parameter:
@@ -145,17 +147,29 @@ enum **Flags**:
 enum **Parameter**:
 
 - **PARAM_INITIAL_LINEAR_VELOCITY** = **0** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set initial velocity properties.
+
 - **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set angular velocity properties.
+
 - **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set orbital_velocity properties.
+
 - **PARAM_LINEAR_ACCEL** = **3** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set linear acceleration properties.
+
 - **PARAM_RADIAL_ACCEL** = **4** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set radial acceleration properties.
+
 - **PARAM_TANGENTIAL_ACCEL** = **5** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set tangential acceleration properties.
+
 - **PARAM_DAMPING** = **6** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set damping properties.
+
 - **PARAM_ANGLE** = **7** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set angle properties.
+
 - **PARAM_SCALE** = **8** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set scale properties.
+
 - **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set hue_variation properties.
+
 - **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation speed properties.
+
 - **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation offset properties.
+
 - **PARAM_MAX** = **12**
 
 .. _enum_ParticlesMaterial_EmissionShape:
@@ -163,9 +177,13 @@ enum **Parameter**:
 enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
+
 - **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted in the volume of a sphere.
+
 - **EMISSION_SHAPE_BOX** = **2** --- Particles will be emitted in the volume of a box.
+
 - **EMISSION_SHAPE_POINTS** = **3**
+
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
 
 Description

@@ -155,7 +155,7 @@ Returns the movement that remained when the body stopped. To get more detailed i
 
 Moves the body while keeping it attached to slopes. Similar to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
-As long as the ``snap`` vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting``snap`` to``(0, 0)`` or by using :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` instead.
+As long as the ``snap`` vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting ``snap`` to ``(0, 0)`` or by using :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` instead.
 
 .. _class_KinematicBody2D_test_move:
 

@@ -68,7 +68,9 @@ Enumerations
 enum **TextAlign**:
 
 - **ALIGN_LEFT** = **0** --- Align the text to the left.
+
 - **ALIGN_CENTER** = **1** --- Align the text to the center.
+
 - **ALIGN_RIGHT** = **2** --- Align the text to the right.
 
 Description

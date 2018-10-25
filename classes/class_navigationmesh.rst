@@ -78,7 +78,9 @@ Constants
 ---------
 
 - **SAMPLE_PARTITION_WATERSHED** = **0**
+
 - **SAMPLE_PARTITION_MONOTONE** = **1**
+
 - **SAMPLE_PARTITION_LAYERS** = **2**
 
 Property Descriptions

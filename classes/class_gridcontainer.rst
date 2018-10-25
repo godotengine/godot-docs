@@ -23,13 +23,6 @@ Properties
 | :ref:`int<class_int>` | :ref:`columns<class_GridContainer_columns>` |
 +-----------------------+---------------------------------------------+
 
-Methods
--------
-
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>`  | :ref:`get_child_control_at_cell<class_GridContainer_get_child_control_at_cell>` **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Theme Properties
 ----------------
 
@@ -58,11 +51,4 @@ Property Descriptions
 +----------+--------------------+
 
 The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
-
-Method Descriptions
--------------------
-
-.. _class_GridContainer_get_child_control_at_cell:
-
-- :ref:`Control<class_Control>` **get_child_control_at_cell** **(** :ref:`int<class_int>` row, :ref:`int<class_int>` column **)**
 

@@ -145,5 +145,5 @@ Return the size of the array.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **subarray** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
-Returns the slice of the ``PoolByteArray`` between indices (inclusive) as a new ``PoolByteArray``.  Any negative index is considered to be from the end of the array.
+Returns the slice of the ``PoolByteArray`` between indices (inclusive) as a new ``PoolByteArray``. Any negative index is considered to be from the end of the array.
 

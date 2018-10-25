@@ -75,7 +75,9 @@ Enumerations
 enum **AxisStretchMode**:
 
 - **AXIS_STRETCH_MODE_STRETCH** = **0**
+
 - **AXIS_STRETCH_MODE_TILE** = **1**
+
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2**
 
 Description

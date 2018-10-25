@@ -59,14 +59,22 @@ Enumerations
 enum **FillMode**:
 
 - **FILL_LEFT_TO_RIGHT** = **0** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from left to right.
+
 - **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from right to left.
+
 - **FILL_TOP_TO_BOTTOM** = **2** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from top to bototm.
+
 - **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from bottom to top.
-- **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
-- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
-- **FILL_BILINEAR_LEFT_AND_RIGHT** = **6**
-- **FILL_BILINEAR_TOP_AND_BOTTOM** = **7**
-- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8**
+
+- **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to control the way the bar fills up.
+
+- **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to control the way the bar fills up.
+
+- **FILL_BILINEAR_LEFT_AND_RIGHT** = **6** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from the center, expanding both towards the left and the right.
+
+- **FILL_BILINEAR_TOP_AND_BOTTOM** = **7** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from the center, expanding both towards the top and the bottom.
+
+- **FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE** = **8** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills radially from the center, expanding both clockwise and counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to control the way the bar fills up.
 
 Description
 -----------
@@ -234,6 +242,8 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 | *Getter* | get_tint_over()      |
 +----------+----------------------+
 
+Multiplies the color of the bar's ``texture_over`` texture. The effect is similar to :ref:`CanvasItem.modulate<class_CanvasItem_modulate>`, except it only affects this specific texture instead of the entire node.
+
 .. _class_TextureProgress_tint_progress:
 
 - :ref:`Color<class_Color>` **tint_progress**
@@ -244,6 +254,8 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 | *Getter* | get_tint_progress()      |
 +----------+--------------------------+
 
+Multiplies the color of the bar's ``texture_progress`` texture.
+
 .. _class_TextureProgress_tint_under:
 
 - :ref:`Color<class_Color>` **tint_under**
@@ -253,4 +265,6 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 +----------+-----------------------+
 | *Getter* | get_tint_under()      |
 +----------+-----------------------+
+
+Multiplies the color of the bar's ``texture_under`` texture.
 

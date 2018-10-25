@@ -31,13 +31,21 @@ Enumerations
 enum **MathConstant**:
 
 - **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
+
 - **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
+
 - **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``
+
 - **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``
+
 - **MATH_CONSTANT_E** = **4** --- Mathematical constant ``e``, the natural log base: ``2.718282``
+
 - **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``
+
 - **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
+
 - **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
+
 - **MATH_CONSTANT_MAX** = **8**
 
 Description

@@ -61,10 +61,15 @@ Enumerations
 enum **TextureSize**:
 
 - **TEXTURE_SIZE_256** = **0**
+
 - **TEXTURE_SIZE_512** = **1**
+
 - **TEXTURE_SIZE_1024** = **2**
+
 - **TEXTURE_SIZE_2048** = **3**
+
 - **TEXTURE_SIZE_4096** = **4**
+
 - **TEXTURE_SIZE_MAX** = **5**
 
 Description

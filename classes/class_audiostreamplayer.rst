@@ -67,7 +67,9 @@ Enumerations
 enum **MixTarget**:
 
 - **MIX_TARGET_STEREO** = **0** --- The audio will be played only on the first channel.
+
 - **MIX_TARGET_SURROUND** = **1** --- The audio will be played on all surround channels.
+
 - **MIX_TARGET_CENTER** = **2** --- The audio will be played on the second channel, which is usually the center.
 
 Description

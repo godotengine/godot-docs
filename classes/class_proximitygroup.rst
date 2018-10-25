@@ -49,6 +49,7 @@ Enumerations
 enum **DispatchMode**:
 
 - **MODE_PROXY** = **0**
+
 - **MODE_SIGNAL** = **1**
 
 Description

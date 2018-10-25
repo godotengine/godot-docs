@@ -31,33 +31,61 @@ Enumerations
 enum **Monitor**:
 
 - **TIME_FPS** = **0** --- Frames per second.
+
 - **TIME_PROCESS** = **1** --- Time it took to complete one frame.
+
 - **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame.
+
 - **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds.
+
 - **MEMORY_DYNAMIC** = **4** --- Dynamic memory currently used, in bytes. Not available in release builds.
+
 - **MEMORY_STATIC_MAX** = **5** --- Available static memory. Not available in release builds.
+
 - **MEMORY_DYNAMIC_MAX** = **6** --- Available dynamic memory. Not available in release builds.
+
 - **MEMORY_MESSAGE_BUFFER_MAX** = **7** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
+
 - **OBJECT_COUNT** = **8** --- Number of objects currently instanced (including nodes).
+
 - **OBJECT_RESOURCE_COUNT** = **9** --- Number of resources currently used.
+
 - **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced. This also includes the root node, as well as any nodes not in the scene tree.
+
 - **RENDER_OBJECTS_IN_FRAME** = **11** --- 3D objects drawn per frame.
+
 - **RENDER_VERTICES_IN_FRAME** = **12** --- Vertices drawn per frame. 3D only.
+
 - **RENDER_MATERIAL_CHANGES_IN_FRAME** = **13** --- Material changes per frame. 3D only
+
 - **RENDER_SHADER_CHANGES_IN_FRAME** = **14** --- Shader changes per frame. 3D only.
+
 - **RENDER_SURFACE_CHANGES_IN_FRAME** = **15** --- Render surface changes per frame. 3D only.
+
 - **RENDER_DRAW_CALLS_IN_FRAME** = **16** --- Draw calls per frame. 3D only.
+
 - **RENDER_VIDEO_MEM_USED** = **17** --- Video memory used. Includes both texture and vertex memory.
+
 - **RENDER_TEXTURE_MEM_USED** = **18** --- Texture memory used.
+
 - **RENDER_VERTEX_MEM_USED** = **19** --- Vertex memory used.
+
 - **RENDER_USAGE_VIDEO_MEM_TOTAL** = **20**
+
 - **PHYSICS_2D_ACTIVE_OBJECTS** = **21** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+
 - **PHYSICS_2D_COLLISION_PAIRS** = **22** --- Number of collision pairs in the 2D physics engine.
+
 - **PHYSICS_2D_ISLAND_COUNT** = **23** --- Number of islands in the 2D physics engine.
+
 - **PHYSICS_3D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+
 - **PHYSICS_3D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 3D physics engine.
+
 - **PHYSICS_3D_ISLAND_COUNT** = **26** --- Number of islands in the 3D physics engine.
+
 - **AUDIO_OUTPUT_LATENCY** = **27**
+
 - **MONITOR_MAX** = **28**
 
 Description

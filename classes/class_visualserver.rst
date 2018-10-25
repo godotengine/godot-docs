@@ -750,11 +750,17 @@ Enumerations
 enum **ViewportRenderInfo**:
 
 - **VIEWPORT_RENDER_INFO_OBJECTS_IN_FRAME** = **0**
+
 - **VIEWPORT_RENDER_INFO_VERTICES_IN_FRAME** = **1**
+
 - **VIEWPORT_RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
+
 - **VIEWPORT_RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
+
 - **VIEWPORT_RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
+
 - **VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
+
 - **VIEWPORT_RENDER_INFO_MAX** = **6** --- Marks end of VIEWPORT_RENDER_INFO\* constants. Used internally.
 
 .. _enum_VisualServer_CubeMapSide:
@@ -762,10 +768,15 @@ enum **ViewportRenderInfo**:
 enum **CubeMapSide**:
 
 - **CUBEMAP_LEFT** = **0** --- Marks the left side of a cubemap.
+
 - **CUBEMAP_RIGHT** = **1** --- Marks the right side of a cubemap.
+
 - **CUBEMAP_BOTTOM** = **2** --- Marks the bottom side of a cubemap.
+
 - **CUBEMAP_TOP** = **3** --- Marks the top side of a cubemap.
+
 - **CUBEMAP_FRONT** = **4** --- Marks the front side of a cubemap.
+
 - **CUBEMAP_BACK** = **5** --- Marks the back side of a cubemap.
 
 .. _enum_VisualServer_TextureType:
@@ -773,8 +784,11 @@ enum **CubeMapSide**:
 enum **TextureType**:
 
 - **TEXTURE_TYPE_2D** = **0**
+
 - **TEXTURE_TYPE_CUBEMAP** = **1**
+
 - **TEXTURE_TYPE_2D_ARRAY** = **2**
+
 - **TEXTURE_TYPE_3D** = **3**
 
 .. _enum_VisualServer_LightType:
@@ -782,7 +796,9 @@ enum **TextureType**:
 enum **LightType**:
 
 - **LIGHT_DIRECTIONAL** = **0** --- Is a directional (sun) light.
+
 - **LIGHT_OMNI** = **1** --- is an omni light.
+
 - **LIGHT_SPOT** = **2** --- is an spot light.
 
 .. _enum_VisualServer_ArrayType:
@@ -790,14 +806,23 @@ enum **LightType**:
 enum **ArrayType**:
 
 - **ARRAY_VERTEX** = **0** --- Array is a vertex array.
+
 - **ARRAY_NORMAL** = **1** --- Array is a normal array.
+
 - **ARRAY_TANGENT** = **2** --- Array is a tangent array.
+
 - **ARRAY_COLOR** = **3** --- Array is a color array.
+
 - **ARRAY_TEX_UV** = **4** --- Array is a uv coordinates array.
+
 - **ARRAY_TEX_UV2** = **5** --- Array is a uv coordinates array for the second uv coordinates.
+
 - **ARRAY_BONES** = **6** --- Array contains bone information.
+
 - **ARRAY_WEIGHTS** = **7** --- Array is weight information.
+
 - **ARRAY_INDEX** = **8** --- Array is index array.
+
 - **ARRAY_MAX** = **9** --- Marks the maximum of the array types. Used internally.
 
 .. _enum_VisualServer_BlendShapeMode:
@@ -805,6 +830,7 @@ enum **ArrayType**:
 enum **BlendShapeMode**:
 
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
+
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
 
 .. _enum_VisualServer_ShadowCastingSetting:
@@ -812,8 +838,11 @@ enum **BlendShapeMode**:
 enum **ShadowCastingSetting**:
 
 - **SHADOW_CASTING_SETTING_OFF** = **0**
+
 - **SHADOW_CASTING_SETTING_ON** = **1**
+
 - **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2**
+
 - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3**
 
 .. _enum_VisualServer_CanvasOccluderPolygonCullMode:
@@ -821,7 +850,9 @@ enum **ShadowCastingSetting**:
 enum **CanvasOccluderPolygonCullMode**:
 
 - **CANVAS_OCCLUDER_POLYGON_CULL_DISABLED** = **0** --- Culling of the canvas occluder is disabled.
+
 - **CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE** = **1** --- Culling of the canvas occluder is clockwise.
+
 - **CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE** = **2** --- Culling of the canvas occluder is counterclockwise.
 
 .. _enum_VisualServer_ParticlesDrawOrder:
@@ -829,7 +860,9 @@ enum **CanvasOccluderPolygonCullMode**:
 enum **ParticlesDrawOrder**:
 
 - **PARTICLES_DRAW_ORDER_INDEX** = **0**
+
 - **PARTICLES_DRAW_ORDER_LIFETIME** = **1**
+
 - **PARTICLES_DRAW_ORDER_VIEW_DEPTH** = **2**
 
 .. _enum_VisualServer_ViewportMSAA:
@@ -837,9 +870,13 @@ enum **ParticlesDrawOrder**:
 enum **ViewportMSAA**:
 
 - **VIEWPORT_MSAA_DISABLED** = **0** --- Multisample antialiasing is disabled.
+
 - **VIEWPORT_MSAA_2X** = **1** --- Multisample antialiasing is set to 2X.
+
 - **VIEWPORT_MSAA_4X** = **2** --- Multisample antialiasing is set to 4X.
+
 - **VIEWPORT_MSAA_8X** = **3** --- Multisample antialiasing is set to 8X.
+
 - **VIEWPORT_MSAA_16X** = **4** --- Multisample antialiasing is set to 16X.
 
 .. _enum_VisualServer_ViewportUpdateMode:
@@ -847,8 +884,11 @@ enum **ViewportMSAA**:
 enum **ViewportUpdateMode**:
 
 - **VIEWPORT_UPDATE_DISABLED** = **0**
+
 - **VIEWPORT_UPDATE_ONCE** = **1**
+
 - **VIEWPORT_UPDATE_WHEN_VISIBLE** = **2**
+
 - **VIEWPORT_UPDATE_ALWAYS** = **3**
 
 .. _enum_VisualServer_MultimeshColorFormat:
@@ -856,7 +896,9 @@ enum **ViewportUpdateMode**:
 enum **MultimeshColorFormat**:
 
 - **MULTIMESH_COLOR_NONE** = **0**
+
 - **MULTIMESH_COLOR_8BIT** = **1**
+
 - **MULTIMESH_COLOR_FLOAT** = **2**
 
 .. _enum_VisualServer_LightDirectionalShadowMode:
@@ -864,7 +906,9 @@ enum **MultimeshColorFormat**:
 enum **LightDirectionalShadowMode**:
 
 - **LIGHT_DIRECTIONAL_SHADOW_ORTHOGONAL** = **0**
+
 - **LIGHT_DIRECTIONAL_SHADOW_PARALLEL_2_SPLITS** = **1**
+
 - **LIGHT_DIRECTIONAL_SHADOW_PARALLEL_4_SPLITS** = **2**
 
 .. _enum_VisualServer_LightOmniShadowMode:
@@ -872,6 +916,7 @@ enum **LightDirectionalShadowMode**:
 enum **LightOmniShadowMode**:
 
 - **LIGHT_OMNI_SHADOW_DUAL_PARABOLOID** = **0**
+
 - **LIGHT_OMNI_SHADOW_CUBE** = **1**
 
 .. _enum_VisualServer_EnvironmentSSAOQuality:
@@ -879,7 +924,9 @@ enum **LightOmniShadowMode**:
 enum **EnvironmentSSAOQuality**:
 
 - **ENV_SSAO_QUALITY_LOW** = **0**
+
 - **ENV_SSAO_QUALITY_MEDIUM** = **1**
+
 - **ENV_SSAO_QUALITY_HIGH** = **2**
 
 .. _enum_VisualServer_LightParam:
@@ -887,19 +934,33 @@ enum **EnvironmentSSAOQuality**:
 enum **LightParam**:
 
 - **LIGHT_PARAM_ENERGY** = **0** --- The light's energy.
+
 - **LIGHT_PARAM_SPECULAR** = **2** --- The light's influence on specularity.
+
 - **LIGHT_PARAM_RANGE** = **3** --- The light's range.
+
 - **LIGHT_PARAM_ATTENUATION** = **4** --- The light's attenuation.
+
 - **LIGHT_PARAM_SPOT_ANGLE** = **5** --- The spotlight's angle.
+
 - **LIGHT_PARAM_SPOT_ATTENUATION** = **6** --- The spotlight's attenuation.
+
 - **LIGHT_PARAM_CONTACT_SHADOW_SIZE** = **7** --- Scales the shadow color.
+
 - **LIGHT_PARAM_SHADOW_MAX_DISTANCE** = **8**
+
 - **LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET** = **9**
+
 - **LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET** = **10**
+
 - **LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET** = **11**
+
 - **LIGHT_PARAM_SHADOW_NORMAL_BIAS** = **12**
+
 - **LIGHT_PARAM_SHADOW_BIAS** = **13**
+
 - **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
+
 - **LIGHT_PARAM_MAX** = **15** --- The light parameters endpoint. Used internally.
 
 .. _enum_VisualServer_ScenarioDebugMode:
@@ -907,8 +968,11 @@ enum **LightParam**:
 enum **ScenarioDebugMode**:
 
 - **SCENARIO_DEBUG_DISABLED** = **0**
+
 - **SCENARIO_DEBUG_WIREFRAME** = **1**
+
 - **SCENARIO_DEBUG_OVERDRAW** = **2**
+
 - **SCENARIO_DEBUG_SHADELESS** = **3**
 
 .. _enum_VisualServer_LightDirectionalShadowDepthRangeMode:
@@ -916,6 +980,7 @@ enum **ScenarioDebugMode**:
 enum **LightDirectionalShadowDepthRangeMode**:
 
 - **LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_STABLE** = **0**
+
 - **LIGHT_DIRECTIONAL_SHADOW_DEPTH_RANGE_OPTIMIZED** = **1**
 
 .. _enum_VisualServer_EnvironmentGlowBlendMode:
@@ -923,8 +988,11 @@ enum **LightDirectionalShadowDepthRangeMode**:
 enum **EnvironmentGlowBlendMode**:
 
 - **GLOW_BLEND_MODE_ADDITIVE** = **0**
+
 - **GLOW_BLEND_MODE_SCREEN** = **1**
+
 - **GLOW_BLEND_MODE_SOFTLIGHT** = **2**
+
 - **GLOW_BLEND_MODE_REPLACE** = **3**
 
 .. _enum_VisualServer_InstanceType:
@@ -932,15 +1000,25 @@ enum **EnvironmentGlowBlendMode**:
 enum **InstanceType**:
 
 - **INSTANCE_NONE** = **0** --- The instance does not have a type.
+
 - **INSTANCE_MESH** = **1** --- The instance is a mesh.
+
 - **INSTANCE_MULTIMESH** = **2** --- The instance is a multimesh.
+
 - **INSTANCE_IMMEDIATE** = **3** --- The instance is an immediate geometry.
+
 - **INSTANCE_PARTICLES** = **4** --- The instance is a particle emitter.
+
 - **INSTANCE_LIGHT** = **5** --- The instance is a light.
+
 - **INSTANCE_REFLECTION_PROBE** = **6**
+
 - **INSTANCE_GI_PROBE** = **7**
+
 - **INSTANCE_LIGHTMAP_CAPTURE** = **8**
+
 - **INSTANCE_MAX** = **9** --- The max value for INSTANCE\_\* constants, used internally.
+
 - **INSTANCE_GEOMETRY_MASK** = **30** --- A combination of the flags of geometry instances (mesh, multimesh, immediate and particles).
 
 .. _enum_VisualServer_ShaderMode:
@@ -948,8 +1026,11 @@ enum **InstanceType**:
 enum **ShaderMode**:
 
 - **SHADER_SPATIAL** = **0** --- Shader is a 3D shader.
+
 - **SHADER_CANVAS_ITEM** = **1** --- Shader is a 2D shader.
+
 - **SHADER_PARTICLES** = **2** --- Shader is a particle shader.
+
 - **SHADER_MAX** = **3** --- Marks maximum of the shader types array. used internally.
 
 .. _enum_VisualServer_ViewportUsage:
@@ -957,8 +1038,11 @@ enum **ShaderMode**:
 enum **ViewportUsage**:
 
 - **VIEWPORT_USAGE_2D** = **0** --- The Viewport does not render 3D but samples.
+
 - **VIEWPORT_USAGE_2D_NO_SAMPLING** = **1** --- The Viewport does not render 3D and does not sample.
+
 - **VIEWPORT_USAGE_3D** = **2** --- The Viewport renders 3D with effects.
+
 - **VIEWPORT_USAGE_3D_NO_EFFECTS** = **3** --- The Viewport renders 3D but without effects.
 
 .. _enum_VisualServer_EnvironmentDOFBlurQuality:
@@ -966,7 +1050,9 @@ enum **ViewportUsage**:
 enum **EnvironmentDOFBlurQuality**:
 
 - **ENV_DOF_BLUR_QUALITY_LOW** = **0**
+
 - **ENV_DOF_BLUR_QUALITY_MEDIUM** = **1**
+
 - **ENV_DOF_BLUR_QUALITY_HIGH** = **2**
 
 .. _enum_VisualServer_PrimitiveType:
@@ -974,12 +1060,19 @@ enum **EnvironmentDOFBlurQuality**:
 enum **PrimitiveType**:
 
 - **PRIMITIVE_POINTS** = **0** --- Primitive to draw consists of points.
+
 - **PRIMITIVE_LINES** = **1** --- Primitive to draw consists of lines.
+
 - **PRIMITIVE_LINE_STRIP** = **2** --- Primitive to draw consists of a line strip from start to end.
+
 - **PRIMITIVE_LINE_LOOP** = **3** --- Primitive to draw consists of a line loop (a line strip with a line between the last and the first vertex).
+
 - **PRIMITIVE_TRIANGLES** = **4** --- Primitive to draw consists of triangles.
+
 - **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Primitive to draw consists of a triangle strip (the last 3 vertices are always combined to make a triangle).
+
 - **PRIMITIVE_TRIANGLE_FAN** = **6** --- Primitive to draw consists of a triangle strip (the last 2 vertices are always combined with the first to make a triangle).
+
 - **PRIMITIVE_MAX** = **7** --- Marks the primitive types endpoint. used internally.
 
 .. _enum_VisualServer_InstanceFlags:
@@ -987,7 +1080,9 @@ enum **PrimitiveType**:
 enum **InstanceFlags**:
 
 - **INSTANCE_FLAG_USE_BAKED_LIGHT** = **0**
+
 - **INSTANCE_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1**
+
 - **INSTANCE_FLAG_MAX** = **2**
 
 .. _enum_VisualServer_ViewportClearMode:
@@ -995,7 +1090,9 @@ enum **InstanceFlags**:
 enum **ViewportClearMode**:
 
 - **VIEWPORT_CLEAR_ALWAYS** = **0** --- The viewport is always cleared before drawing.
+
 - **VIEWPORT_CLEAR_NEVER** = **1** --- The viewport is never cleared before drawing.
+
 - **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to VIEWPORT_CLEAR_NEVER.
 
 .. _enum_VisualServer_LightOmniShadowDetail:
@@ -1003,6 +1100,7 @@ enum **ViewportClearMode**:
 enum **LightOmniShadowDetail**:
 
 - **LIGHT_OMNI_SHADOW_DETAIL_VERTICAL** = **0**
+
 - **LIGHT_OMNI_SHADOW_DETAIL_HORIZONTAL** = **1**
 
 .. _enum_VisualServer_CanvasLightMode:
@@ -1010,8 +1108,11 @@ enum **LightOmniShadowDetail**:
 enum **CanvasLightMode**:
 
 - **CANVAS_LIGHT_MODE_ADD** = **0** --- Adds light color additive to the canvas.
+
 - **CANVAS_LIGHT_MODE_SUB** = **1** --- Adds light color subtractive to the canvas.
+
 - **CANVAS_LIGHT_MODE_MIX** = **2** --- The light adds color depending on transparency.
+
 - **CANVAS_LIGHT_MODE_MASK** = **3** --- The light adds color depending on mask.
 
 .. _enum_VisualServer_NinePatchAxisMode:
@@ -1019,7 +1120,9 @@ enum **CanvasLightMode**:
 enum **NinePatchAxisMode**:
 
 - **NINE_PATCH_STRETCH** = **0** --- The nine patch gets stretched where needed.
+
 - **NINE_PATCH_TILE** = **1** --- The nine patch gets filled with tiles where needed.
+
 - **NINE_PATCH_TILE_FIT** = **2** --- The nine patch gets filled with tiles where needed and stretches them a bit if needed.
 
 .. _enum_VisualServer_ViewportDebugDraw:
@@ -1027,8 +1130,11 @@ enum **NinePatchAxisMode**:
 enum **ViewportDebugDraw**:
 
 - **VIEWPORT_DEBUG_DRAW_DISABLED** = **0** --- Debug draw is disabled. Default setting.
+
 - **VIEWPORT_DEBUG_DRAW_UNSHADED** = **1** --- Debug draw sets objects to unshaded.
+
 - **VIEWPORT_DEBUG_DRAW_OVERDRAW** = **2** --- Overwrites clear color to ``(0,0,0,0)``.
+
 - **VIEWPORT_DEBUG_DRAW_WIREFRAME** = **3** --- Debug draw draws objects in wireframe.
 
 .. _enum_VisualServer_MultimeshTransformFormat:
@@ -1036,6 +1142,7 @@ enum **ViewportDebugDraw**:
 enum **MultimeshTransformFormat**:
 
 - **MULTIMESH_TRANSFORM_2D** = **0**
+
 - **MULTIMESH_TRANSFORM_3D** = **1**
 
 .. _enum_VisualServer_ArrayFormat:
@@ -1043,25 +1150,45 @@ enum **MultimeshTransformFormat**:
 enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_VERTEX** = **1** --- Flag used to mark a vertex array.
+
 - **ARRAY_FORMAT_NORMAL** = **2** --- Flag used to mark a normal array.
+
 - **ARRAY_FORMAT_TANGENT** = **4** --- Flag used to mark a tangent array.
+
 - **ARRAY_FORMAT_COLOR** = **8** --- Flag used to mark a color array.
+
 - **ARRAY_FORMAT_TEX_UV** = **16** --- Flag used to mark a uv coordinates array.
+
 - **ARRAY_FORMAT_TEX_UV2** = **32** --- Flag used to mark a uv coordinates array for the second uv coordinates.
+
 - **ARRAY_FORMAT_BONES** = **64** --- Flag used to mark a bone information array.
+
 - **ARRAY_FORMAT_WEIGHTS** = **128** --- Flag used to mark a weights array.
+
 - **ARRAY_FORMAT_INDEX** = **256** --- Flag used to mark a index array.
+
 - **ARRAY_COMPRESS_VERTEX** = **512** --- Flag used to mark a compressed (half float) vertex array.
+
 - **ARRAY_COMPRESS_NORMAL** = **1024** --- Flag used to mark a compressed (half float) normal array.
+
 - **ARRAY_COMPRESS_TANGENT** = **2048** --- Flag used to mark a compressed (half float) tangent array.
+
 - **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
+
 - **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) uv coordinates array.
+
 - **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) uv coordinates array for the second uv coordinates.
+
 - **ARRAY_COMPRESS_BONES** = **32768**
+
 - **ARRAY_COMPRESS_WEIGHTS** = **65536** --- Flag used to mark a compressed (half float) weight array.
+
 - **ARRAY_COMPRESS_INDEX** = **131072**
+
 - **ARRAY_FLAG_USE_2D_VERTICES** = **262144** --- Flag used to mark that the array contains 2D vertices.
+
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16 bit bones instead of 8 bit.
+
 - **ARRAY_COMPRESS_DEFAULT** = **97280** --- Used to set flags ARRAY_COMPRESS_VERTEX, ARRAY_COMPRESS_NORMAL, ARRAY_COMPRESS_TANGENT, ARRAY_COMPRESS_COLOR, ARRAY_COMPRESS_TEX_UV, ARRAY_COMPRESS_TEX_UV2 and ARRAY_COMPRESS_WEIGHTS quickly.
 
 .. _enum_VisualServer_EnvironmentSSAOBlur:
@@ -1069,8 +1196,11 @@ enum **ArrayFormat**:
 enum **EnvironmentSSAOBlur**:
 
 - **ENV_SSAO_BLUR_DISABLED** = **0**
+
 - **ENV_SSAO_BLUR_1x1** = **1**
+
 - **ENV_SSAO_BLUR_2x2** = **2**
+
 - **ENV_SSAO_BLUR_3x3** = **3**
 
 .. _enum_VisualServer_RenderInfo:
@@ -1078,14 +1208,23 @@ enum **EnvironmentSSAOBlur**:
 enum **RenderInfo**:
 
 - **INFO_OBJECTS_IN_FRAME** = **0** --- The amount of objects in the frame.
+
 - **INFO_VERTICES_IN_FRAME** = **1** --- The amount of vertices in the frame.
+
 - **INFO_MATERIAL_CHANGES_IN_FRAME** = **2** --- The amount of modified materials in the frame.
+
 - **INFO_SHADER_CHANGES_IN_FRAME** = **3** --- The amount of shader rebinds in the frame.
+
 - **INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- The amount of surface changes in the frame.
+
 - **INFO_DRAW_CALLS_IN_FRAME** = **5** --- The amount of draw calls in frame.
+
 - **INFO_USAGE_VIDEO_MEM_TOTAL** = **6**
+
 - **INFO_VIDEO_MEM_USED** = **7** --- The amount of vertex memory and texture memory used.
+
 - **INFO_TEXTURE_MEM_USED** = **8** --- The amount of texture memory used.
+
 - **INFO_VERTEX_MEM_USED** = **9** --- The amount of vertex memory used.
 
 .. _enum_VisualServer_ReflectionProbeUpdateMode:
@@ -1093,6 +1232,7 @@ enum **RenderInfo**:
 enum **ReflectionProbeUpdateMode**:
 
 - **REFLECTION_PROBE_UPDATE_ONCE** = **0**
+
 - **REFLECTION_PROBE_UPDATE_ALWAYS** = **1**
 
 .. _enum_VisualServer_EnvironmentBG:
@@ -1100,11 +1240,17 @@ enum **ReflectionProbeUpdateMode**:
 enum **EnvironmentBG**:
 
 - **ENV_BG_CLEAR_COLOR** = **0**
+
 - **ENV_BG_COLOR** = **1**
+
 - **ENV_BG_SKY** = **2**
+
 - **ENV_BG_COLOR_SKY** = **3**
+
 - **ENV_BG_CANVAS** = **4**
+
 - **ENV_BG_KEEP** = **5**
+
 - **ENV_BG_MAX** = **6**
 
 .. _enum_VisualServer_CanvasLightShadowFilter:
@@ -1112,10 +1258,15 @@ enum **EnvironmentBG**:
 enum **CanvasLightShadowFilter**:
 
 - **CANVAS_LIGHT_FILTER_NONE** = **0**
+
 - **CANVAS_LIGHT_FILTER_PCF3** = **1**
+
 - **CANVAS_LIGHT_FILTER_PCF5** = **2**
+
 - **CANVAS_LIGHT_FILTER_PCF7** = **3**
+
 - **CANVAS_LIGHT_FILTER_PCF9** = **4**
+
 - **CANVAS_LIGHT_FILTER_PCF13** = **5**
 
 .. _enum_VisualServer_Features:
@@ -1123,6 +1274,7 @@ enum **CanvasLightShadowFilter**:
 enum **Features**:
 
 - **FEATURE_SHADERS** = **0**
+
 - **FEATURE_MULTITHREADED** = **1**
 
 .. _enum_VisualServer_TextureFlags:
@@ -1130,14 +1282,21 @@ enum **Features**:
 enum **TextureFlags**:
 
 - **TEXTURE_FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+
 - **TEXTURE_FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+
 - **TEXTURE_FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+
 - **TEXTURE_FLAG_ANISOTROPIC_FILTER** = **8** --- Anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
 
 More effective on planes often shown going to the horrizon as those textures (Walls or Ground for example) get squashed in the viewport to different aspect ratios and regular mipmaps keep the aspect ratio so they don't optimize storage that well in those cases.
+
 - **TEXTURE_FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
+
 - **TEXTURE_FLAG_MIRRORED_REPEAT** = **32** --- Repeat texture with alternate sections mirrored.
+
 - **TEXTURE_FLAG_USED_FOR_STREAMING** = **2048** --- Texture is a video surface.
+
 - **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
 
 .. _enum_VisualServer_EnvironmentToneMapper:
@@ -1145,20 +1304,30 @@ More effective on planes often shown going to the horrizon as those textures (Wa
 enum **EnvironmentToneMapper**:
 
 - **ENV_TONE_MAPPER_LINEAR** = **0**
-- **ENV_TONE_MAPPER_REINHARDT** = **1**
+
+- **ENV_TONE_MAPPER_REINHARD** = **1**
+
 - **ENV_TONE_MAPPER_FILMIC** = **2**
+
 - **ENV_TONE_MAPPER_ACES** = **3**
 
 Constants
 ---------
 
 - **NO_INDEX_ARRAY** = **-1** --- Marks an error that shows that the index array is empty.
+
 - **ARRAY_WEIGHTS_SIZE** = **4**
+
 - **CANVAS_ITEM_Z_MIN** = **-4096** --- The minimum Z-layer for canvas items.
+
 - **CANVAS_ITEM_Z_MAX** = **4096** --- The maximum Z-layer for canvas items.
+
 - **MAX_GLOW_LEVELS** = **7**
+
 - **MAX_CURSORS** = **8**
+
 - **MATERIAL_RENDER_PRIORITY_MIN** = **-128** --- The minimum renderpriority of all materials.
+
 - **MATERIAL_RENDER_PRIORITY_MAX** = **127** --- The maximum renderpriority of all materials.
 
 Description

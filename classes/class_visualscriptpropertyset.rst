@@ -45,8 +45,11 @@ Enumerations
 enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
+
 - **CALL_MODE_NODE_PATH** = **1**
+
 - **CALL_MODE_INSTANCE** = **2**
+
 - **CALL_MODE_BASIC_TYPE** = **3**
 
 .. _enum_VisualScriptPropertySet_AssignOp:
@@ -54,15 +57,25 @@ enum **CallMode**:
 enum **AssignOp**:
 
 - **ASSIGN_OP_NONE** = **0**
+
 - **ASSIGN_OP_ADD** = **1**
+
 - **ASSIGN_OP_SUB** = **2**
+
 - **ASSIGN_OP_MUL** = **3**
+
 - **ASSIGN_OP_DIV** = **4**
+
 - **ASSIGN_OP_MOD** = **5**
+
 - **ASSIGN_OP_SHIFT_LEFT** = **6**
+
 - **ASSIGN_OP_SHIFT_RIGHT** = **7**
+
 - **ASSIGN_OP_BIT_AND** = **8**
+
 - **ASSIGN_OP_BIT_OR** = **9**
+
 - **ASSIGN_OP_BIT_XOR** = **10**
 
 Property Descriptions

@@ -58,10 +58,15 @@ Enumerations
 enum **JointType**:
 
 - **JOINT_TYPE_NONE** = **0**
+
 - **JOINT_TYPE_PIN** = **1**
+
 - **JOINT_TYPE_CONE** = **2**
+
 - **JOINT_TYPE_HINGE** = **3**
+
 - **JOINT_TYPE_SLIDER** = **4**
+
 - **JOINT_TYPE_6DOF** = **5**
 
 Property Descriptions

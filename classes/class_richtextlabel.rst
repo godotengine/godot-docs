@@ -85,6 +85,8 @@ Methods
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`push_meta<class_RichTextLabel_push_meta>` **(** :ref:`Variant<class_Variant>` data **)**                                                                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`push_strikethrough<class_RichTextLabel_push_strikethrough>` **(** **)**                                                                                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`push_table<class_RichTextLabel_push_table>` **(** :ref:`int<class_int>` columns **)**                                                                                       |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`push_underline<class_RichTextLabel_push_underline>` **(** **)**                                                                                                             |
@@ -164,7 +166,9 @@ Enumerations
 enum **ListType**:
 
 - **LIST_NUMBERS** = **0**
+
 - **LIST_LETTERS** = **1**
+
 - **LIST_DOTS** = **2**
 
 .. _enum_RichTextLabel_Align:
@@ -172,8 +176,11 @@ enum **ListType**:
 enum **Align**:
 
 - **ALIGN_LEFT** = **0**
+
 - **ALIGN_CENTER** = **1**
+
 - **ALIGN_RIGHT** = **2**
+
 - **ALIGN_FILL** = **3**
 
 .. _enum_RichTextLabel_ItemType:
@@ -181,17 +188,30 @@ enum **Align**:
 enum **ItemType**:
 
 - **ITEM_FRAME** = **0**
+
 - **ITEM_TEXT** = **1**
+
 - **ITEM_IMAGE** = **2**
+
 - **ITEM_NEWLINE** = **3**
+
 - **ITEM_FONT** = **4**
+
 - **ITEM_COLOR** = **5**
+
 - **ITEM_UNDERLINE** = **6**
-- **ITEM_ALIGN** = **7**
-- **ITEM_INDENT** = **8**
-- **ITEM_LIST** = **9**
-- **ITEM_TABLE** = **10**
-- **ITEM_META** = **11**
+
+- **ITEM_STRIKETHROUGH** = **7**
+
+- **ITEM_ALIGN** = **8**
+
+- **ITEM_INDENT** = **9**
+
+- **ITEM_LIST** = **10**
+
+- **ITEM_TABLE** = **11**
+
+- **ITEM_META** = **12**
 
 Description
 -----------
@@ -458,6 +478,10 @@ Adds a list tag to the tag stack. Similar to the bbcodes ``[ol]`` or ``[ul]``, b
 - void **push_meta** **(** :ref:`Variant<class_Variant>` data **)**
 
 Adds a meta tag to the tag stack. Similar to the bbcode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
+
+.. _class_RichTextLabel_push_strikethrough:
+
+- void **push_strikethrough** **(** **)**
 
 .. _class_RichTextLabel_push_table:
 

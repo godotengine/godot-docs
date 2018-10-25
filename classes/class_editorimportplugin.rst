@@ -89,6 +89,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
             return FAILED
     
         var mesh = Mesh.new()
+        # Fill the Mesh with data read in 'file', left as exercise to the reader
     
         var filename = save_path + "." + get_save_extension()
         ResourceSaver.save(filename, mesh)

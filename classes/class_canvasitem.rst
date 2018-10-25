@@ -169,19 +169,28 @@ Enumerations
 enum **BlendMode**:
 
 - **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
+
 - **BLEND_MODE_ADD** = **1** --- Additive blending mode.
+
 - **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
+
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
+
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+
 - **BLEND_MODE_DISABLED** = **5** --- Disable blending mode. Colors including alpha are written as is. Only applicable for render targets with a transparent background. No lighting will be applied.
 
 Constants
 ---------
 
 - **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_set_notify_local_transform>`.
+
 - **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
+
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
+
 - **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
+
 - **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
 
 Description

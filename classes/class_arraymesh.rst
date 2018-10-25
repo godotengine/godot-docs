@@ -74,13 +74,21 @@ Enumerations
 enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
+
 - **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
+
 - **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
+
 - **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
+
 - **ARRAY_FORMAT_TEX_UV** = **16** --- Array format will include UVs.
+
 - **ARRAY_FORMAT_TEX_UV2** = **32** --- Array format will include another set of UVs.
+
 - **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
+
 - **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
+
 - **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
 
 .. _enum_ArrayMesh_ArrayType:
@@ -88,23 +96,56 @@ enum **ArrayFormat**:
 enum **ArrayType**:
 
 - **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_Vector3>` vertices).
+
 - **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_Vector3>` normals).
+
 - **ARRAY_TANGENT** = **2** --- Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
+
 - **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_Color>` colors).
+
 - **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_Vector3>` UVs or float array of groups of 2 floats (u,v)).
+
 - **ARRAY_TEX_UV2** = **5** --- Second UV array (array of :ref:`Vector3<class_Vector3>` UVs or float array of groups of 2 floats (u,v)).
+
 - **ARRAY_BONES** = **6** --- Array of bone indices, as a float array. Each element in groups of 4 floats.
+
 - **ARRAY_WEIGHTS** = **7** --- Array of bone weights, as a float array. Each element in groups of 4 floats.
+
 - **ARRAY_INDEX** = **8** --- :ref:`Array<class_Array>` of integers used as indices referencing vertices, colors, normals, tangents, and textures. All of those arrays must have the same number of elements as the vertex array. No index can be beyond the vertex array size. When this index array is present, it puts the function into "index mode," where the index selects the \*i\*'th vertex, normal, tangent, color, UV, etc. This means if you want to have different normals or colors along an edge, you have to duplicate the vertices.
 
 For triangles, the index array is interpreted as triples, referring to the vertices of each triangle. For lines, the index array is in pairs indicating the start and end of each line.
+
 - **ARRAY_MAX** = **9**
 
 Constants
 ---------
 
 - **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
+
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
+
+Description
+-----------
+
+The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying the attributes as arrays. The most basic example is the creation of a single triangle
+
+::
+
+    var vertices = PoolVector3Array()
+    vertices.push_back(Vector3(0,1,0))
+    vertices.push_back(Vector3(1,0,0))
+    vertices.push_back(Vector3(0,0,1))
+    # Initialize the ArrayMesh.
+    var arr_mesh = ArrayMesh.new()
+    var arrays = []
+    arrays.resize(ArrayMesh.ARRAY_MAX)
+    arrays[ArrayMesh.ARRAY_VERTEX] = vertices
+    # Create the Mesh.
+    arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+    var m = MeshInstance.new()
+    m.mesh = arr_mesh
+
+The ``MeshInstance`` is ready to be added to the SceneTree to be shown.
 
 Property Descriptions
 ---------------------
@@ -144,7 +185,7 @@ Method Descriptions
 
 Creates a new surface.
 
-Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. See :ref:`Mesh<class_Mesh>` for details. (As a note, when using indices, it is recommended to only use points, lines or triangles). :ref:`get_surface_count<class_ArrayMesh_get_surface_count>` will become the surf_idx for this new surface.
+Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. See :ref:`Mesh<class_Mesh>` for details. (As a note, when using indices, it is recommended to only use points, lines or triangles). :ref:`Mesh.get_surface_count<class_Mesh_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
 The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_@GlobalScope_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for ``ARRAY_INDEX`` if it is used.
 

@@ -61,6 +61,7 @@ Enumerations
 enum **TimerProcessMode**:
 
 - **TIMER_PROCESS_PHYSICS** = **0** --- Update the timer during the physics step at each frame (fixed framerate processing).
+
 - **TIMER_PROCESS_IDLE** = **1** --- Update the timer during the idle time at each frame.
 
 Description

@@ -50,7 +50,7 @@ Method Descriptions
 
 Checks whether the shape can travel to a point. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be 1, 1.
 
-If the shape can not move, the array will be empty.
+If the shape can not move, the returned array will be 0, 0.
 
 .. _class_PhysicsDirectSpaceState_collide_shape:
 
@@ -62,7 +62,7 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 - :ref:`Dictionary<class_Dictionary>` **get_rest_info** **(** :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` shape **)**
 
-Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. If it collides with more than a shape, the nearest one is selected. The returned object is a dictionary containing the following fields:
+Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. The returned object is a dictionary containing the following fields:
 
 ``collider_id``: The colliding object's ID.
 
@@ -114,5 +114,5 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 ``shape``: The shape index of the colliding shape.
 
-The number of intersections can be limited with the second parameter, to reduce the processing time.
+The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 

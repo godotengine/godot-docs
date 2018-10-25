@@ -58,6 +58,7 @@ Enumerations
 enum **TransformFormat**:
 
 - **TRANSFORM_2D** = **0**
+
 - **TRANSFORM_3D** = **1**
 
 .. _enum_MultiMesh_ColorFormat:
@@ -65,7 +66,9 @@ enum **TransformFormat**:
 enum **ColorFormat**:
 
 - **COLOR_NONE** = **0**
+
 - **COLOR_8BIT** = **1**
+
 - **COLOR_FLOAT** = **2**
 
 .. _enum_MultiMesh_CustomDataFormat:
@@ -73,7 +76,9 @@ enum **ColorFormat**:
 enum **CustomDataFormat**:
 
 - **CUSTOM_DATA_NONE** = **0**
+
 - **CUSTOM_DATA_8BIT** = **1**
+
 - **CUSTOM_DATA_FLOAT** = **2**
 
 Description

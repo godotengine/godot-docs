@@ -50,7 +50,9 @@ Enumerations
 enum **LoopMode**:
 
 - **LOOP_DISABLED** = **0** --- Audio does not loop.
+
 - **LOOP_FORWARD** = **1** --- Audio loops the data between loop_begin and loop_end playing forward only.
+
 - **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
 
 .. _enum_AudioStreamSample_Format:
@@ -58,7 +60,9 @@ enum **LoopMode**:
 enum **Format**:
 
 - **FORMAT_8_BITS** = **0** --- Audio codec 8 bit.
+
 - **FORMAT_16_BITS** = **1** --- Audio codec 16 bit.
+
 - **FORMAT_IMA_ADPCM** = **2** --- Audio codec IMA ADPCM.
 
 Description

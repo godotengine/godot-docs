@@ -49,9 +49,13 @@ Enumerations
 enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
+
 - **CALL_MODE_NODE_PATH** = **1**
+
 - **CALL_MODE_INSTANCE** = **2**
+
 - **CALL_MODE_BASIC_TYPE** = **3**
+
 - **CALL_MODE_SINGLETON** = **4**
 
 .. _enum_VisualScriptFunctionCall_RPCCallMode:
@@ -59,9 +63,13 @@ enum **CallMode**:
 enum **RPCCallMode**:
 
 - **RPC_DISABLED** = **0**
+
 - **RPC_RELIABLE** = **1**
+
 - **RPC_UNRELIABLE** = **2**
+
 - **RPC_RELIABLE_TO_ID** = **3**
+
 - **RPC_UNRELIABLE_TO_ID** = **4**
 
 Property Descriptions

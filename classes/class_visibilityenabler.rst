@@ -33,7 +33,9 @@ Enumerations
 enum **Enabler**:
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
+
 - **ENABLER_MAX** = **2**
 
 Description
@@ -54,6 +56,8 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
+If ``true`` :ref:`RigidBody<class_RigidBody>` nodes will be paused.
+
 .. _class_VisibilityEnabler_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
@@ -63,4 +67,6 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
+
+If ``true`` :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 

@@ -33,7 +33,9 @@ Enumerations
 enum **CopyMode**:
 
 - **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
+
 - **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
+
 - **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
 
 Description

@@ -37,9 +37,11 @@ enum **Param**:
 - **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other.
 
 The higher, the stronger.
+
 - **PARAM_DAMPING** = **1** --- The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
+
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
 
 Description

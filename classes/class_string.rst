@@ -677,6 +677,8 @@ Returns a copy of the string with characters removed from the right.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **sha256_buffer** **(** **)**
 
+Returns the SHA-256 hash of the string as an array of bytes.
+
 .. _class_String_sha256_text:
 
 - :ref:`String<class_String>` **sha256_text** **(** **)**

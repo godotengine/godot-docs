@@ -64,7 +64,7 @@ Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in 
 | *Getter* | is_doubleclick()       |
 +----------+------------------------+
 
-If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
+If ``true`` the mouse button's state is a double-click.
 
 .. _class_InputEventMouseButton_factor:
 

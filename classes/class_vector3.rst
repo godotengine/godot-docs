@@ -90,15 +90,27 @@ Constants
 ---------
 
 - **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis<class_Vector3_max_axis>` and :ref:`min_axis<class_Vector3_min_axis>`.
+
 - **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+
 - **AXIS_Z** = **2** --- Enumerated value for the Z axis.
-- **ZERO** = **Vector3( 0, 0, 0 )** --- Null vector.
+
+- **ZERO** = **Vector3( 0, 0, 0 )** --- Zero vector.
+
+- **ONE** = **Vector3( 1, 1, 1 )** --- One vector.
+
 - **INF** = **Vector3( inf, inf, inf )** --- Infinite vector.
+
 - **LEFT** = **Vector3( -1, 0, 0 )** --- Left unit vector.
+
 - **RIGHT** = **Vector3( 1, 0, 0 )** --- Right unit vector.
+
 - **UP** = **Vector3( 0, 1, 0 )** --- Up unit vector.
+
 - **DOWN** = **Vector3( 0, -1, 0 )** --- Down unit vector.
+
 - **FORWARD** = **Vector3( 0, 0, -1 )** --- Forward unit vector.
+
 - **BACK** = **Vector3( 0, 0, 1 )** --- Back unit vector.
 
 Description
@@ -118,19 +130,19 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-The vector's x component.
+The vector's x component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector3_y:
 
 - :ref:`float<class_float>` **y**
 
-The vector's y component.
+The vector's y component. Also accessible by using the index position ``[1]``.
 
 .. _class_Vector3_z:
 
 - :ref:`float<class_float>` **z**
 
-The vector's z component.
+The vector's z component. Also accessible by using the index position ``[2]``.
 
 Method Descriptions
 -------------------

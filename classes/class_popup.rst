@@ -57,6 +57,7 @@ Constants
 ---------
 
 - **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
+
 - **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
 
 Description

@@ -33,7 +33,9 @@ Enumerations
 enum **YieldMode**:
 
 - **YIELD_FRAME** = **1**
+
 - **YIELD_PHYSICS_FRAME** = **2**
+
 - **YIELD_WAIT** = **3**
 
 Property Descriptions

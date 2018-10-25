@@ -56,7 +56,9 @@ Enumerations
 enum **AxisStretchMode**:
 
 - **AXIS_STRETCH_MODE_STRETCH** = **0** --- Doesn't do anything at the time of writing. Default value for ``axis_stretch_horizontal`` and ``axis_stretch_vertical``.
+
 - **AXIS_STRETCH_MODE_TILE** = **1** --- Doesn't do anything at the time of writing.
+
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Doesn't do anything at the time of writing.
 
 Description

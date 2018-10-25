@@ -158,7 +158,9 @@ Enumerations
 enum **Flags**:
 
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
+
 - **FLAG_ROTATE_Y** = **1**
+
 - **FLAG_MAX** = **4**
 
 .. _enum_CPUParticles_Parameter:
@@ -166,16 +168,27 @@ enum **Flags**:
 enum **Parameter**:
 
 - **PARAM_INITIAL_LINEAR_VELOCITY** = **0**
+
 - **PARAM_ANGULAR_VELOCITY** = **1**
+
 - **PARAM_LINEAR_ACCEL** = **2**
+
 - **PARAM_RADIAL_ACCEL** = **3**
+
 - **PARAM_TANGENTIAL_ACCEL** = **4**
+
 - **PARAM_DAMPING** = **5**
+
 - **PARAM_ANGLE** = **6**
+
 - **PARAM_SCALE** = **7**
+
 - **PARAM_HUE_VARIATION** = **8**
+
 - **PARAM_ANIM_SPEED** = **9**
+
 - **PARAM_ANIM_OFFSET** = **10**
+
 - **PARAM_MAX** = **11**
 
 .. _enum_CPUParticles_EmissionShape:
@@ -183,9 +196,13 @@ enum **Parameter**:
 enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0**
+
 - **EMISSION_SHAPE_SPHERE** = **1**
+
 - **EMISSION_SHAPE_BOX** = **2**
+
 - **EMISSION_SHAPE_POINTS** = **3**
+
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
 
 .. _enum_CPUParticles_DrawOrder:
@@ -193,7 +210,9 @@ enum **EmissionShape**:
 enum **DrawOrder**:
 
 - **DRAW_ORDER_INDEX** = **0**
+
 - **DRAW_ORDER_LIFETIME** = **1**
+
 - **DRAW_ORDER_VIEW_DEPTH** = **2**
 
 Property Descriptions

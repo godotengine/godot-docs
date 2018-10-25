@@ -49,6 +49,7 @@ enum **Flags**:
 - **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
 
 Added documentation for GeometryInstance and VisualInstance
+
 - **FLAG_MAX** = **2**
 
 .. _enum_GeometryInstance_ShadowCastingSetting:
@@ -56,12 +57,15 @@ Added documentation for GeometryInstance and VisualInstance
 enum **ShadowCastingSetting**:
 
 - **SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows.
+
 - **SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all visible faces in the GeometryInstance.
 
 Will take culling into account, so faces not being rendered will not be taken into account when shadow casting.
+
 - **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2** --- Will cast shadows from all visible faces in the GeometryInstance.
 
 Will not take culling into account, so all faces will be taken into account when shadow casting.
+
 - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
 
 In other words: The actual mesh will not be visible, only the shadows casted from the mesh.

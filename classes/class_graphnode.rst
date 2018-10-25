@@ -152,7 +152,9 @@ Enumerations
 enum **Overlay**:
 
 - **OVERLAY_DISABLED** = **0**
+
 - **OVERLAY_BREAKPOINT** = **1**
+
 - **OVERLAY_POSITION** = **2**
 
 Description

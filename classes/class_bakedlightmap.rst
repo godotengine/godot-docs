@@ -58,7 +58,9 @@ Enumerations
 enum **BakeQuality**:
 
 - **BAKE_QUALITY_LOW** = **0** --- Lowest bake quality mode. Fastest to calculate.
+
 - **BAKE_QUALITY_MEDIUM** = **1** --- Default bake quality mode.
+
 - **BAKE_QUALITY_HIGH** = **2** --- Highest bake quality mode. Takes longer to calculate.
 
 .. _enum_BakedLightmap_BakeError:
@@ -66,9 +68,13 @@ enum **BakeQuality**:
 enum **BakeError**:
 
 - **BAKE_ERROR_OK** = **0**
+
 - **BAKE_ERROR_NO_SAVE_PATH** = **1**
+
 - **BAKE_ERROR_NO_MESHES** = **2**
+
 - **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
+
 - **BAKE_ERROR_USER_ABORTED** = **4**
 
 .. _enum_BakedLightmap_BakeMode:
@@ -76,6 +82,7 @@ enum **BakeError**:
 enum **BakeMode**:
 
 - **BAKE_MODE_CONE_TRACE** = **0** --- Less precise but faster bake mode.
+
 - **BAKE_MODE_RAY_TRACE** = **1** --- More precise bake mode but can take considerably longer to bake.
 
 Description

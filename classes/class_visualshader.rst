@@ -62,14 +62,18 @@ Enumerations
 enum **Type**:
 
 - **TYPE_VERTEX** = **0**
+
 - **TYPE_FRAGMENT** = **1**
+
 - **TYPE_LIGHT** = **2**
+
 - **TYPE_MAX** = **3**
 
 Constants
 ---------
 
 - **NODE_ID_INVALID** = **-1**
+
 - **NODE_ID_OUTPUT** = **0**
 
 Property Descriptions

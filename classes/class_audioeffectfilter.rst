@@ -39,8 +39,11 @@ Enumerations
 enum **FilterDB**:
 
 - **FILTER_6DB** = **0**
+
 - **FILTER_12DB** = **1**
+
 - **FILTER_18DB** = **2**
+
 - **FILTER_24DB** = **3**
 
 Description

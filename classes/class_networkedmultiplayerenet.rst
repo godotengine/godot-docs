@@ -60,9 +60,13 @@ Enumerations
 enum **CompressionMode**:
 
 - **COMPRESS_NONE** = **0** --- No compression.
+
 - **COMPRESS_RANGE_CODER** = **1** --- ENet's buildin range encoding.
+
 - **COMPRESS_FASTLZ** = **2** --- FastLZ compression.
+
 - **COMPRESS_ZLIB** = **3** --- zlib compression.
+
 - **COMPRESS_ZSTD** = **4** --- ZStandard compression.
 
 Description
@@ -165,7 +169,7 @@ Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<c
 
 - :ref:`int<class_int>` **get_packet_channel** **(** **)** const
 
-Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet_peer<class_PacketPeer_get_packet_peer>`
+Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_get_packet>`
 
 .. _class_NetworkedMultiplayerENet_get_peer_address:
 

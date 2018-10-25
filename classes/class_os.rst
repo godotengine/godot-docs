@@ -232,12 +232,19 @@ Enumerations
 enum **SystemDir**:
 
 - **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
+
 - **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
+
 - **SYSTEM_DIR_DOCUMENTS** = **2** --- Documents directory path.
+
 - **SYSTEM_DIR_DOWNLOADS** = **3** --- Downloads directory path.
+
 - **SYSTEM_DIR_MOVIES** = **4** --- Movies directory path.
+
 - **SYSTEM_DIR_MUSIC** = **5** --- Music directory path.
+
 - **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
+
 - **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
 
 .. _enum_OS_ScreenOrientation:
@@ -245,11 +252,17 @@ enum **SystemDir**:
 enum **ScreenOrientation**:
 
 - **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
+
 - **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
+
 - **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2** --- Reverse landscape screen orientation.
+
 - **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3** --- Reverse portrait screen orientation.
+
 - **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4** --- Uses landscape or reverse landscape based on the hardware sensor.
+
 - **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
+
 - **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
 
 .. _enum_OS_PowerState:
@@ -257,9 +270,13 @@ enum **ScreenOrientation**:
 enum **PowerState**:
 
 - **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
+
 - **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
+
 - **POWERSTATE_NO_BATTERY** = **2** --- Plugged in, no battery available.
+
 - **POWERSTATE_CHARGING** = **3** --- Plugged in, battery charging.
+
 - **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
 
 .. _enum_OS_Weekday:
@@ -267,11 +284,17 @@ enum **PowerState**:
 enum **Weekday**:
 
 - **DAY_SUNDAY** = **0** --- Sunday.
+
 - **DAY_MONDAY** = **1** --- Monday.
+
 - **DAY_TUESDAY** = **2** --- Tuesday.
+
 - **DAY_WEDNESDAY** = **3** --- Wednesday.
+
 - **DAY_THURSDAY** = **4** --- Thursday.
+
 - **DAY_FRIDAY** = **5** --- Friday.
+
 - **DAY_SATURDAY** = **6** --- Saturday.
 
 .. _enum_OS_Month:
@@ -279,16 +302,27 @@ enum **Weekday**:
 enum **Month**:
 
 - **MONTH_JANUARY** = **1** --- January.
+
 - **MONTH_FEBRUARY** = **2** --- February.
+
 - **MONTH_MARCH** = **3** --- March.
+
 - **MONTH_APRIL** = **4** --- April.
+
 - **MONTH_MAY** = **5** --- May.
+
 - **MONTH_JUNE** = **6** --- June.
+
 - **MONTH_JULY** = **7** --- July.
+
 - **MONTH_AUGUST** = **8** --- August.
+
 - **MONTH_SEPTEMBER** = **9** --- September.
+
 - **MONTH_OCTOBER** = **10** --- October.
+
 - **MONTH_NOVEMBER** = **11** --- November.
+
 - **MONTH_DECEMBER** = **12** --- December.
 
 Description
@@ -544,7 +578,7 @@ At the end of the file is a statistic of all used Resource Types.
 
 Execute the file at the given path with the arguments passed as an array of strings. Platform path resolution will take place. The resolved file must exist and be executable.
 
-The arguments are used in the given order and separated by a space, so ``OS.execute('ping', ['-c', '3', 'godotengine.org'])`` will resolve to ``ping -c 3 godotengine.org`` in the system's shell.
+The arguments are used in the given order and separated by a space, so ``OS.execute('ping', ['-w', '3', 'godotengine.org'], false)`` will resolve to ``ping -w 3 godotengine.org`` in the system's shell.
 
 This method has slightly different behaviour based on whether the ``blocking`` mode is enabled.
 
@@ -948,6 +982,8 @@ Pauses native video playback.
 - :ref:`Error<enum_@GlobalScope_Error>` **native_video_play** **(** :ref:`String<class_String>` path, :ref:`float<class_float>` volume, :ref:`String<class_String>` audio_track, :ref:`String<class_String>` subtitle_track **)**
 
 Plays native video from the specified path, at the given volume and with audio and subtitle tracks.
+
+Note: This method is only implemented on Android and iOS, and the current Android implementation does not support the ``volume``, ``audio_track`` and ``subtitle_track`` options.
 
 .. _class_OS_native_video_stop:
 

@@ -35,8 +35,11 @@ Enumerations
 enum **Source**:
 
 - **SOURCE_TEXTURE** = **0**
+
 - **SOURCE_SCREEN** = **1**
+
 - **SOURCE_2D_TEXTURE** = **2**
+
 - **SOURCE_2D_NORMAL** = **3**
 
 .. _enum_VisualShaderNodeTexture_TextureType:
@@ -44,7 +47,9 @@ enum **Source**:
 enum **TextureType**:
 
 - **TYPE_DATA** = **0**
+
 - **TYPE_COLOR** = **1**
+
 - **TYPE_NORMALMAP** = **2**
 
 Property Descriptions

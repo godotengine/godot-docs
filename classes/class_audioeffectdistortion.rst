@@ -41,9 +41,13 @@ Enumerations
 enum **Mode**:
 
 - **MODE_CLIP** = **0** --- Digital distortion effect which cuts off peaks at the top and bottom of the waveform.
+
 - **MODE_ATAN** = **1**
+
 - **MODE_LOFI** = **2** --- Low-resolution digital distortion effect. You can use it to emulate the sound of early digital audio devices.
+
 - **MODE_OVERDRIVE** = **3** --- Emulates the warm distortion produced by a field effect transistor, which is commonly used in solid-state musical instrument amplifiers.
+
 - **MODE_WAVESHAPE** = **4** --- Waveshaper distortions are used mainly by electronic musicians to achieve an extra-abrasive sound.
 
 Description

@@ -19,15 +19,23 @@ Brief Description
 Methods
 -------
 
-+--------------------------+--------------------------------------------------------------------------------+
-| void                     | :ref:`attach_thread<class_GodotSharp_attach_thread>` **(** **)**               |
-+--------------------------+--------------------------------------------------------------------------------+
-| void                     | :ref:`detach_thread<class_GodotSharp_detach_thread>` **(** **)**               |
-+--------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_domain_loaded<class_GodotSharp_is_domain_loaded>` **(** **)**         |
-+--------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_finalizing_domain<class_GodotSharp_is_finalizing_domain>` **(** **)** |
-+--------------------------+--------------------------------------------------------------------------------+
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`attach_thread<class_GodotSharp_attach_thread>` **(** **)**                                                                     |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`detach_thread<class_GodotSharp_detach_thread>` **(** **)**                                                                     |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_domain_id<class_GodotSharp_get_domain_id>` **(** **)**                                                                     |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_scripts_domain_id<class_GodotSharp_get_scripts_domain_id>` **(** **)**                                                     |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_domain_finalizing_for_unload<class_GodotSharp_is_domain_finalizing_for_unload>` **(** :ref:`int<class_int>` domain_id **)** |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_runtime_initialized<class_GodotSharp_is_runtime_initialized>` **(** **)**                                                   |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_runtime_shutting_down<class_GodotSharp_is_runtime_shutting_down>` **(** **)**                                               |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_scripts_domain_loaded<class_GodotSharp_is_scripts_domain_loaded>` **(** **)**                                               |
++--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -44,15 +52,31 @@ Attaches the current thread to the mono runtime.
 
 Detaches the current thread from the mono runtime.
 
-.. _class_GodotSharp_is_domain_loaded:
+.. _class_GodotSharp_get_domain_id:
 
-- :ref:`bool<class_bool>` **is_domain_loaded** **(** **)**
+- :ref:`int<class_int>` **get_domain_id** **(** **)**
+
+.. _class_GodotSharp_get_scripts_domain_id:
+
+- :ref:`int<class_int>` **get_scripts_domain_id** **(** **)**
+
+.. _class_GodotSharp_is_domain_finalizing_for_unload:
+
+- :ref:`bool<class_bool>` **is_domain_finalizing_for_unload** **(** :ref:`int<class_int>` domain_id **)**
+
+Returns whether the domain is being finalized.
+
+.. _class_GodotSharp_is_runtime_initialized:
+
+- :ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
+
+.. _class_GodotSharp_is_runtime_shutting_down:
+
+- :ref:`bool<class_bool>` **is_runtime_shutting_down** **(** **)**
+
+.. _class_GodotSharp_is_scripts_domain_loaded:
+
+- :ref:`bool<class_bool>` **is_scripts_domain_loaded** **(** **)**
 
 Returns whether the scripts domain is loaded.
-
-.. _class_GodotSharp_is_finalizing_domain:
-
-- :ref:`bool<class_bool>` **is_finalizing_domain** **(** **)**
-
-Returns whether the scripts domain is being finalized.
 

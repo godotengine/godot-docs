@@ -87,7 +87,7 @@ Sets the offset of the piece with index "idx" to "ofs".
 
 - void **set_piece_texture** **(** :ref:`int<class_int>` idx, :ref:`Texture<class_Texture>` texture **)**
 
-Sets the :ref:`Texture<class_Texture>` of the piece with index "idx" to  "ofs".
+Sets the :ref:`Texture<class_Texture>` of the piece with index "idx" to "texture".
 
 .. _class_LargeTexture_set_size:
 

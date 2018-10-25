@@ -56,8 +56,11 @@ Enumerations
 enum **Flags**:
 
 - **FLAG_MIPMAPS** = **1**
+
 - **FLAG_REPEAT** = **2**
+
 - **FLAG_FILTER** = **4**
+
 - **FLAGS_DEFAULT** = **4**
 
 Property Descriptions

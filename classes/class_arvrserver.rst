@@ -89,7 +89,9 @@ Enumerations
 enum **RotationMode**:
 
 - **RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
+
 - **RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
+
 - **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
 
 .. _enum_ARVRServer_TrackerType:
@@ -97,10 +99,15 @@ enum **RotationMode**:
 enum **TrackerType**:
 
 - **TRACKER_CONTROLLER** = **1** --- Our tracker tracks the location of a controller.
+
 - **TRACKER_BASESTATION** = **2** --- Our tracker tracks the location of a base station.
+
 - **TRACKER_ANCHOR** = **4** --- Our tracker tracks the location and size of an AR anchor.
+
 - **TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of any known type.
+
 - **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
+
 - **TRACKER_ANY** = **255** --- Used internally to select all trackers.
 
 Description

@@ -189,8 +189,11 @@ Enumerations
 enum **GroupCallFlags**:
 
 - **GROUP_CALL_DEFAULT** = **0** --- Call a group with no flags (default).
+
 - **GROUP_CALL_REVERSE** = **1** --- Call a group in reverse scene order.
+
 - **GROUP_CALL_REALTIME** = **2** --- Call a group immediately (calls are normally made on idle).
+
 - **GROUP_CALL_UNIQUE** = **4** --- Call a group only once even if the call is executed many times.
 
 .. _enum_SceneTree_StretchMode:
@@ -198,7 +201,9 @@ enum **GroupCallFlags**:
 enum **StretchMode**:
 
 - **STRETCH_MODE_DISABLED** = **0** --- No stretching.
+
 - **STRETCH_MODE_2D** = **1** --- Render stretching in higher resolution (interpolated).
+
 - **STRETCH_MODE_VIEWPORT** = **2** --- Keep the specified display resolution. No interpolation. Content may appear pixelated.
 
 .. _enum_SceneTree_StretchAspect:
@@ -206,9 +211,13 @@ enum **StretchMode**:
 enum **StretchAspect**:
 
 - **STRETCH_ASPECT_IGNORE** = **0** --- Fill the window with the content stretched to cover excessive space. Content may appear elongated.
+
 - **STRETCH_ASPECT_KEEP** = **1** --- Retain the same aspect ratio by padding with black bars in either axes. No expansion of content.
+
 - **STRETCH_ASPECT_KEEP_WIDTH** = **2** --- Expand vertically. Left/right black bars may appear if the window is too wide.
+
 - **STRETCH_ASPECT_KEEP_HEIGHT** = **3** --- Expand horizontally. Top/bottom black bars may appear if the window is too tall.
+
 - **STRETCH_ASPECT_EXPAND** = **4** --- Expand in both directions, retaining the same aspect ratio. No black bars.
 
 Description
@@ -319,6 +328,14 @@ The peer object to handle the RPC system (effectively enabling networking when s
 +----------+------------------+
 
 If ``true`` the SceneTree is paused.
+
+Doing so will have the following behavior:
+
+\* 2D and 3D physics will be stopped.
+
+\* _process and _physics_process will not be called anymore in nodes.
+
+\* _input and _input_event will not be called anymore either.
 
 .. _class_SceneTree_refuse_new_network_connections:
 

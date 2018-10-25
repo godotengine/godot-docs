@@ -57,7 +57,9 @@ Enumerations
 enum **BakeMode**:
 
 - **BAKE_DISABLED** = **0** --- Light is ignored when baking. Note: hiding a light does *not* affect baking.
+
 - **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked. Default value.
+
 - **BAKE_ALL** = **2** --- Both direct and indirect light will be baked. Note: you should hide the light if you don't want it to appear twice (dynamic and baked).
 
 .. _enum_Light_Param:
@@ -65,20 +67,35 @@ enum **BakeMode**:
 enum **Param**:
 
 - **PARAM_ENERGY** = **0**
+
 - **PARAM_INDIRECT_ENERGY** = **1**
+
 - **PARAM_SPECULAR** = **2**
+
 - **PARAM_RANGE** = **3**
+
 - **PARAM_ATTENUATION** = **4**
+
 - **PARAM_SPOT_ANGLE** = **5**
+
 - **PARAM_SPOT_ATTENUATION** = **6**
+
 - **PARAM_CONTACT_SHADOW_SIZE** = **7**
+
 - **PARAM_SHADOW_MAX_DISTANCE** = **8**
+
 - **PARAM_SHADOW_SPLIT_1_OFFSET** = **9**
+
 - **PARAM_SHADOW_SPLIT_2_OFFSET** = **10**
+
 - **PARAM_SHADOW_SPLIT_3_OFFSET** = **11**
+
 - **PARAM_SHADOW_NORMAL_BIAS** = **12**
+
 - **PARAM_SHADOW_BIAS** = **13**
+
 - **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
+
 - **PARAM_MAX** = **15**
 
 Description

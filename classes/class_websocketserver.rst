@@ -20,7 +20,7 @@ Methods
 -------
 
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`disconnect_peer<class_WebSocketServer_disconnect_peer>` **(** :ref:`int<class_int>` id **)**                                                                                                       |
+| void                                   | :ref:`disconnect_peer<class_WebSocketServer_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`            | :ref:`get_peer_address<class_WebSocketServer_get_peer_address>` **(** :ref:`int<class_int>` id **)** const                                                                                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -38,6 +38,12 @@ Methods
 Signals
 -------
 
+.. _class_WebSocketServer_client_close_request:
+
+- **client_close_request** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
+
+Emitted when a client requests a clean close. You should keep polling until you get a :ref:`client_disconnected<class_WebSocketServer_client_disconnected>` signal with the same ``id`` to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more details.
+
 .. _class_WebSocketServer_client_connected:
 
 - **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
@@ -46,9 +52,9 @@ Emitted when a new client connects. "protocol" will be the sub-protocol agreed w
 
 .. _class_WebSocketServer_client_disconnected:
 
-- **client_disconnected** **(** :ref:`int<class_int>` id **)**
+- **client_disconnected** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` was_clean_close **)**
 
-Emitted when a client disconnects.
+Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
 
 .. _class_WebSocketServer_data_received:
 
@@ -70,9 +76,9 @@ Method Descriptions
 
 .. _class_WebSocketServer_disconnect_peer:
 
-- void **disconnect_peer** **(** :ref:`int<class_int>` id **)**
+- void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Disconnects the given peer.
+Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more info.
 
 .. _class_WebSocketServer_get_peer_address:
 
@@ -106,7 +112,7 @@ Start listening on the given port.
 
 You can specify the desired subprotocols via the "protocols" array. If the list empty (default), "binary" will be used.
 
-You can use this server as a network peer for :ref:`MultiplayerAPI<class_MultiplayerAPI>` by passing true as "gd_mp_api". Note: :ref:`data_received<class_WebSocketServer_data_received>` will not be fired and clients other than Godot will not work in this case.
+You can use this server as a network peer for :ref:`MultiplayerAPI<class_MultiplayerAPI>` by passing ``true`` as ``gd_mp_api``. Note: :ref:`data_received<class_WebSocketServer_data_received>` will not be fired and clients other than Godot will not work in this case.
 
 .. _class_WebSocketServer_stop:
 

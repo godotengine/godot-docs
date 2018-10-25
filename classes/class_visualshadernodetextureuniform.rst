@@ -33,8 +33,11 @@ Enumerations
 enum **TextureType**:
 
 - **TYPE_DATA** = **0**
+
 - **TYPE_COLOR** = **1**
+
 - **TYPE_NORMALMAP** = **2**
+
 - **TYPE_ANISO** = **3**
 
 .. _enum_VisualShaderNodeTextureUniform_ColorDefault:
@@ -42,6 +45,7 @@ enum **TextureType**:
 enum **ColorDefault**:
 
 - **COLOR_DEFAULT_WHITE** = **0**
+
 - **COLOR_DEFAULT_BLACK** = **1**
 
 Property Descriptions

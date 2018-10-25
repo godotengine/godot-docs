@@ -85,8 +85,11 @@ Enumerations
 enum **Align**:
 
 - **ALIGN_LEFT** = **0** --- Align rows to the left (default).
+
 - **ALIGN_CENTER** = **1** --- Align rows centered.
+
 - **ALIGN_RIGHT** = **2** --- Align rows to the right (default).
+
 - **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
 
 .. _enum_Label_VAlign:
@@ -94,8 +97,11 @@ enum **Align**:
 enum **VAlign**:
 
 - **VALIGN_TOP** = **0** --- Align the whole text to the top.
+
 - **VALIGN_CENTER** = **1** --- Align the whole text to the center.
+
 - **VALIGN_BOTTOM** = **2** --- Align the whole text to the bottom.
+
 - **VALIGN_FILL** = **3** --- Align the whole text by spreading the rows.
 
 Description

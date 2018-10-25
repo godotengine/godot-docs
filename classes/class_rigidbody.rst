@@ -136,10 +136,13 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_RIGID** = **0** --- Rigid body mode. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+
 - **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_StaticBody>`, and can only move by user code.
-- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
-- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_KinematicBody>`, and can only move by user code.
+
+- **MODE_CHARACTER** = **2** --- Character body mode. This behaves like a rigid body, but can not rotate.
+
+- **MODE_KINEMATIC** = **3** --- Kinematic body mode. The body behaves like a :ref:`KinematicBody<class_KinematicBody>`, and can only move by user code.
 
 Description
 -----------
@@ -194,6 +197,8 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
+Lock the body's rotation in the x-axis.
+
 .. _class_RigidBody_axis_lock_angular_y:
 
 - :ref:`bool<class_bool>` **axis_lock_angular_y**
@@ -203,6 +208,8 @@ RigidBody's rotational velocity.
 +----------+----------------------+
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
+
+Lock the body's rotation in the y-axis.
 
 .. _class_RigidBody_axis_lock_angular_z:
 
@@ -214,6 +221,8 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
+Lock the body's rotation in the z-axis.
+
 .. _class_RigidBody_axis_lock_linear_x:
 
 - :ref:`bool<class_bool>` **axis_lock_linear_x**
@@ -223,6 +232,8 @@ RigidBody's rotational velocity.
 +----------+----------------------+
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
+
+Lock the body's movement in the x-axis.
 
 .. _class_RigidBody_axis_lock_linear_y:
 
@@ -234,6 +245,8 @@ RigidBody's rotational velocity.
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
 
+Lock the body's movement in the x-axis.
+
 .. _class_RigidBody_axis_lock_linear_z:
 
 - :ref:`bool<class_bool>` **axis_lock_linear_z**
@@ -243,6 +256,8 @@ RigidBody's rotational velocity.
 +----------+----------------------+
 | *Getter* | get_axis_lock()      |
 +----------+----------------------+
+
+Lock the body's movement in the x-axis.
 
 .. _class_RigidBody_bounce:
 
@@ -278,7 +293,7 @@ If ``true`` the RigidBody will not calculate forces and will act as a static bod
 | *Getter* | is_contact_monitor_enabled() |
 +----------+------------------------------+
 
-If true, the RigidBody will emit signals when it collides with another RigidBody.
+If ``true`` the RigidBody will emit signals when it collides with another RigidBody.
 
 .. _class_RigidBody_contacts_reported:
 
@@ -328,7 +343,7 @@ If ``true`` internal force integration will be disabled (like gravity or air fri
 | *Getter* | get_friction()      |
 +----------+---------------------+
 
-The body friction, from 0 (frictionless) to 1 (max friction).
+The body's friction, from 0 (frictionless) to 1 (max friction).
 
 .. _class_RigidBody_gravity_scale:
 
@@ -352,7 +367,7 @@ This is multiplied by the global 3D gravity setting found in "Project > Project 
 | *Getter* | get_linear_damp()      |
 +----------+------------------------+
 
-RigidBody's linear damp. Default value: -1, cannot be less than -1. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
+The body's linear damp. Default value: -1, cannot be less than -1. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
 
 .. _class_RigidBody_linear_velocity:
 
@@ -364,7 +379,7 @@ RigidBody's linear damp. Default value: -1, cannot be less than -1. If this valu
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
 
 .. _class_RigidBody_mass:
 
@@ -376,7 +391,7 @@ RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN E
 | *Getter* | get_mass()      |
 +----------+-----------------+
 
-RigidBody's mass.
+The body's mass.
 
 .. _class_RigidBody_mode:
 
@@ -410,7 +425,7 @@ The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC
 | *Getter* | is_sleeping()       |
 +----------+---------------------+
 
-If ``true`` RigidBody is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
+If ``true`` the body is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
 
 .. _class_RigidBody_weight:
 
@@ -422,7 +437,7 @@ If ``true`` RigidBody is sleeping and will not calculate forces until woken up b
 | *Getter* | get_weight()      |
 +----------+-------------------+
 
-RigidBody's weight based on its mass and the global 3D gravity. Global values are set in "Project > Project Settings > Physics > 3d".
+The body's weight based on its mass and the global 3D gravity. Global values are set in "Project > Project Settings > Physics > 3d".
 
 Method Descriptions
 -------------------
@@ -457,7 +472,7 @@ Adds a constant rotational force (i.e. a motor) without affecting position.
 
 - void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
-Applies a single directional impulse without affecting rotation.
+Applies a directional impulse without affecting rotation.
 
 This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
@@ -465,13 +480,13 @@ This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
 
-Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
+Applies a positioned impulse which will be affected by the body mass and shape. This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the position are in global coordinates, and the position is relative to the object's origin.
 
 .. _class_RigidBody_apply_torque_impulse:
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
-Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the passed in vector.
+Applies a torque impulse which will be affected by the body mass and shape. This will rotate the body around the passed in vector.
 
 .. _class_RigidBody_get_colliding_bodies:
 
@@ -483,5 +498,5 @@ Return a list of the bodies colliding with this one. By default, number of max c
 
 - void **set_axis_velocity** **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**
 
-Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 

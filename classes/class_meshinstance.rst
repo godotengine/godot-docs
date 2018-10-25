@@ -39,6 +39,8 @@ Methods
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Material<class_Material>`  | :ref:`get_surface_material<class_MeshInstance_get_surface_material>` **(** :ref:`int<class_int>` surface **)** const                                     |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_surface_material_count<class_MeshInstance_get_surface_material_count>` **(** **)** const                                                       |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_surface_material<class_MeshInstance_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -100,6 +102,10 @@ This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref
 - :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
 Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
+
+.. _class_MeshInstance_get_surface_material_count:
+
+- :ref:`int<class_int>` **get_surface_material_count** **(** **)** const
 
 .. _class_MeshInstance_set_surface_material:
 

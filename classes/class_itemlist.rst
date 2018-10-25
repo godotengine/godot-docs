@@ -176,11 +176,15 @@ The click position is also provided to allow appropriate popup of context menus
 
 at the correct location.
 
+:ref:`allow_rmb_select<class_ItemList_allow_rmb_select>` must be enabled.
+
 .. _class_ItemList_item_selected:
 
 - **item_selected** **(** :ref:`int<class_int>` index **)**
 
 Fired when specified item has been selected.
+
+:ref:`allow_reselect<class_ItemList_allow_reselect>` must be enabled to reselect an item.
 
 .. _class_ItemList_multi_selected:
 
@@ -204,6 +208,7 @@ Enumerations
 enum **IconMode**:
 
 - **ICON_MODE_TOP** = **0**
+
 - **ICON_MODE_LEFT** = **1**
 
 .. _enum_ItemList_SelectMode:
@@ -211,6 +216,7 @@ enum **IconMode**:
 enum **SelectMode**:
 
 - **SELECT_SINGLE** = **0**
+
 - **SELECT_MULTI** = **1**
 
 Description
@@ -352,7 +358,7 @@ Adds an item to the item list with no text, only an icon.
 
 - void **add_item** **(** :ref:`String<class_String>` text, :ref:`Texture<class_Texture>` icon=null, :ref:`bool<class_bool>` selectable=true **)**
 
-Adds an item to the item list with specified text.  Specify an icon of null for a list item with no icon.
+Adds an item to the item list with specified text. Specify an icon of null for a list item with no icon.
 
 If selectable is true the list item will be selectable.
 
@@ -478,7 +484,7 @@ Remove item at specified index from the list.
 
 Select the item at the specified index.
 
-Note:  This method does not trigger the item selection signal.
+Note: This method does not trigger the item selection signal.
 
 .. _class_ItemList_set_item_custom_bg_color:
 

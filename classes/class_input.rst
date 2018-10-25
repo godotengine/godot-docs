@@ -114,8 +114,11 @@ Enumerations
 enum **MouseMode**:
 
 - **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
+
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
+
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
+
 - **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 
 .. _enum_Input_CursorShape:
@@ -123,21 +126,37 @@ enum **MouseMode**:
 enum **CursorShape**:
 
 - **CURSOR_ARROW** = **0** --- Arrow cursor. Standard, default pointing cursor.
+
 - **CURSOR_IBEAM** = **1** --- I-beam cursor. Usually used to show where the text cursor will appear when the mouse is clicked.
+
 - **CURSOR_POINTING_HAND** = **2** --- Pointing hand cursor. Usually used to indicate the pointer is over a link or other interactable item.
-- **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performance or for selections.
+
+- **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performed or for selections.
+
 - **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation.
+
 - **CURSOR_BUSY** = **5** --- Busy cursor. See ``CURSOR_WAIT``.
+
 - **CURSOR_DRAG** = **6** --- Drag cursor. Usually displayed when dragging something.
+
 - **CURSOR_CAN_DROP** = **7** --- Can drop cursor. Usually displayed when dragging something to indicate that it can be dropped at the current position.
+
 - **CURSOR_FORBIDDEN** = **8** --- Forbidden cursor. Indicates that the current action is forbidden (for example, when dragging something) or that the control at a position is disabled.
+
 - **CURSOR_VSIZE** = **9** --- Vertical resize mouse cursor. A double headed vertical arrow. It tells the user they can resize the window or the panel vertically.
+
 - **CURSOR_HSIZE** = **10** --- Horizontal resize mouse cursor. A double headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.
+
 - **CURSOR_BDIAGSIZE** = **11** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.
+
 - **CURSOR_FDIAGSIZE** = **12** --- Window resize mouse cursor. The cursor is a double headed arrow that goes from the top left to the bottom right, the opposite of ``CURSOR_BDIAGSIZE``. It tells the user they can resize the window or the panel both horizontally and vertically.
+
 - **CURSOR_MOVE** = **13** --- Move cursor. Indicates that something can be moved.
+
 - **CURSOR_VSPLIT** = **14** --- Vertical split mouse cursor. On Windows, it's the same as ``CURSOR_VSIZE``.
+
 - **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as ``CURSOR_HSIZE``.
+
 - **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
 
 Description
@@ -183,6 +202,8 @@ Note this method returns an empty :ref:`Vector3<class_Vector3>` when running fro
 
 - :ref:`float<class_float>` **get_action_strength** **(** :ref:`String<class_String>` action **)** const
 
+Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.
+
 .. _class_Input_get_connected_joypads:
 
 - :ref:`Array<class_Array>` **get_connected_joypads** **(** **)**
@@ -211,17 +232,25 @@ Returns the current value of the joypad axis at given index (see ``JOY_*`` const
 
 - :ref:`int<class_int>` **get_joy_axis_index_from_string** **(** :ref:`String<class_String>` axis **)**
 
+Returns the index of the provided axis name.
+
 .. _class_Input_get_joy_axis_string:
 
 - :ref:`String<class_String>` **get_joy_axis_string** **(** :ref:`int<class_int>` axis_index **)**
+
+Receives a ``JOY_AXIS_*`` Enum and returns its equivalent name as a string.
 
 .. _class_Input_get_joy_button_index_from_string:
 
 - :ref:`int<class_int>` **get_joy_button_index_from_string** **(** :ref:`String<class_String>` button **)**
 
+Returns the index of the provided button name.
+
 .. _class_Input_get_joy_button_string:
 
 - :ref:`String<class_String>` **get_joy_button_string** **(** :ref:`int<class_int>` button_index **)**
+
+Receives a ``JOY_BUTTON_*`` Enum and returns its equivalent name as a string.
 
 .. _class_Input_get_joy_guid:
 

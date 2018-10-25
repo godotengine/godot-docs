@@ -122,8 +122,11 @@ Enumerations
 enum **Align**:
 
 - **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the :ref:`LineEdit<class_LineEdit>`.
+
 - **ALIGN_CENTER** = **1** --- Centers the text in the middle of the :ref:`LineEdit<class_LineEdit>`.
+
 - **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the :ref:`LineEdit<class_LineEdit>`.
+
 - **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the :ref:`LineEdit<class_LineEdit>`'s width.
 
 .. _enum_LineEdit_MenuItems:
@@ -131,12 +134,19 @@ enum **Align**:
 enum **MenuItems**:
 
 - **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+
 - **MENU_COPY** = **1** --- Copies the selected text.
+
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
+
 - **MENU_CLEAR** = **3** --- Erases the whole Linedit text.
+
 - **MENU_SELECT_ALL** = **4** --- Selects the whole Linedit text.
+
 - **MENU_UNDO** = **5** --- Undoes the previous action.
-- **MENU_REDO** = **6**
+
+- **MENU_REDO** = **6** --- Reverse the last undo action.
+
 - **MENU_MAX** = **7**
 
 Description
@@ -204,6 +214,8 @@ The cursor's position inside the ``LineEdit``. When set, the text may scroll to 
 +----------+---------------------------------+
 | *Getter* | is_clear_button_enabled()       |
 +----------+---------------------------------+
+
+If ``true`` the ``LineEdit`` will show a clear button if ``text`` is not empty.
 
 .. _class_LineEdit_context_menu_enabled:
 

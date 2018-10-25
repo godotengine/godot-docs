@@ -33,8 +33,11 @@ Enumerations
 enum **Mode**:
 
 - **MODE_PRESSED** = **0**
+
 - **MODE_RELEASED** = **1**
+
 - **MODE_JUST_PRESSED** = **2**
+
 - **MODE_JUST_RELEASED** = **3**
 
 Property Descriptions

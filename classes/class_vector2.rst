@@ -87,11 +87,18 @@ Methods
 Constants
 ---------
 
-- **ZERO** = **Vector2( 0, 0 )** --- Null vector.
+- **ZERO** = **Vector2( 0, 0 )** --- Zero vector.
+
+- **ONE** = **Vector2( 1, 1 )** --- One vector.
+
 - **INF** = **Vector2( inf, inf )** --- Infinite vector.
+
 - **LEFT** = **Vector2( -1, 0 )** --- Left unit vector.
+
 - **RIGHT** = **Vector2( 1, 0 )** --- Right unit vector.
+
 - **UP** = **Vector2( 0, -1 )** --- Up unit vector.
+
 - **DOWN** = **Vector2( 0, 1 )** --- Down unit vector.
 
 Description
@@ -111,13 +118,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **x**
 
-The vector's x component.
+The vector's x component. Also accessible by using the index position ``[0]``.
 
 .. _class_Vector2_y:
 
 - :ref:`float<class_float>` **y**
 
-The vector's y component.
+The vector's y component. Also accessible by using the index position ``[1]``.
 
 Method Descriptions
 -------------------
@@ -272,7 +279,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **slerp** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`` is in the range of  ``0.0 - 1.0``, representing the amount of interpolation.
+Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
 Both vectors need to be normalized.
 

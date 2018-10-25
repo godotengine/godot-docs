@@ -54,14 +54,23 @@ Enumerations
 enum **IGDStatus**:
 
 - **IGD_STATUS_OK** = **0** --- OK.
+
 - **IGD_STATUS_HTTP_ERROR** = **1** --- HTTP error.
+
 - **IGD_STATUS_HTTP_EMPTY** = **2** --- Empty HTTP response.
+
 - **IGD_STATUS_NO_URLS** = **3** --- Returned response contained no URLs.
+
 - **IGD_STATUS_NO_IGD** = **4** --- Not a valid IGD.
+
 - **IGD_STATUS_DISCONNECTED** = **5** --- Disconnected.
+
 - **IGD_STATUS_UNKNOWN_DEVICE** = **6** --- Unknown device.
+
 - **IGD_STATUS_INVALID_CONTROL** = **7** --- Invalid control.
+
 - **IGD_STATUS_MALLOC_ERROR** = **8** --- Memory allocation error.
+
 - **IGD_STATUS_UNKNOWN_ERROR** = **9** --- Unknown error.
 
 Description

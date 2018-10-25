@@ -46,7 +46,9 @@ Enumerations
 enum **DraggerVisibility**:
 
 - **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
+
 - **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
+
 - **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
 
 Description

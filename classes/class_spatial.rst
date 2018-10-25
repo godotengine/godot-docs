@@ -125,8 +125,11 @@ Constants
 - **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for NOTIFICATION_TRANSFORM_CHANGED to work user first needs to ask for it, with set_notify_transform(true).
+
 - **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
+
 - **NOTIFICATION_EXIT_WORLD** = **42** --- Spatial nodes receives this notification when they are unregistered from current :ref:`World<class_World>` resource.
+
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Spatial nodes receives this notification when their visibility changes.
 
 Description

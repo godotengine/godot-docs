@@ -37,6 +37,7 @@ Enumerations
 enum **BuildMode**:
 
 - **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
+
 - **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
 
 Description

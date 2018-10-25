@@ -76,7 +76,9 @@ Enumerations
 enum **DrawOrder**:
 
 - **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+
 - **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
+
 - **DRAW_ORDER_VIEW_DEPTH** = **2** --- Particles are drawn in order of depth.
 
 Constants

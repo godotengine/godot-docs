@@ -56,6 +56,7 @@ Enumerations
 enum **BlendShapeMode**:
 
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
+
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
 
 .. _enum_Mesh_ArrayType:
@@ -63,14 +64,23 @@ enum **BlendShapeMode**:
 enum **ArrayType**:
 
 - **ARRAY_VERTEX** = **0** --- Array of vertices.
+
 - **ARRAY_NORMAL** = **1** --- Array of normals.
+
 - **ARRAY_TANGENT** = **2** --- Array of tangents as an array of floats, 4 floats per tangent.
+
 - **ARRAY_COLOR** = **3** --- Array of colors.
+
 - **ARRAY_TEX_UV** = **4** --- Array of UV coordinates.
+
 - **ARRAY_TEX_UV2** = **5** --- Array of second set of UV coordinates.
+
 - **ARRAY_BONES** = **6** --- Array of bone data.
+
 - **ARRAY_WEIGHTS** = **7** --- Array of weights.
+
 - **ARRAY_INDEX** = **8** --- Array of indices.
+
 - **ARRAY_MAX** = **9**
 
 .. _enum_Mesh_ArrayFormat:
@@ -78,26 +88,47 @@ enum **ArrayType**:
 enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_VERTEX** = **1**
+
 - **ARRAY_FORMAT_NORMAL** = **2**
+
 - **ARRAY_FORMAT_TANGENT** = **4**
+
 - **ARRAY_FORMAT_COLOR** = **8**
+
 - **ARRAY_FORMAT_TEX_UV** = **16**
+
 - **ARRAY_FORMAT_TEX_UV2** = **32**
+
 - **ARRAY_FORMAT_BONES** = **64**
+
 - **ARRAY_FORMAT_WEIGHTS** = **128**
+
 - **ARRAY_FORMAT_INDEX** = **256**
+
 - **ARRAY_COMPRESS_BASE** = **9**
+
 - **ARRAY_COMPRESS_VERTEX** = **512**
+
 - **ARRAY_COMPRESS_NORMAL** = **1024**
+
 - **ARRAY_COMPRESS_TANGENT** = **2048**
+
 - **ARRAY_COMPRESS_COLOR** = **4096**
+
 - **ARRAY_COMPRESS_TEX_UV** = **8192**
+
 - **ARRAY_COMPRESS_TEX_UV2** = **16384**
+
 - **ARRAY_COMPRESS_BONES** = **32768**
+
 - **ARRAY_COMPRESS_WEIGHTS** = **65536**
+
 - **ARRAY_COMPRESS_INDEX** = **131072**
+
 - **ARRAY_FLAG_USE_2D_VERTICES** = **262144**
+
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288**
+
 - **ARRAY_COMPRESS_DEFAULT** = **97280**
 
 .. _enum_Mesh_PrimitiveType:
@@ -105,11 +136,17 @@ enum **ArrayFormat**:
 enum **PrimitiveType**:
 
 - **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
+
 - **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
+
 - **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
+
 - **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
+
 - **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
+
 - **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
+
 - **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
 
 Description

@@ -48,7 +48,9 @@ Enumerations
 enum **SwitchMode**:
 
 - **SWITCH_MODE_IMMEDIATE** = **0**
+
 - **SWITCH_MODE_SYNC** = **1**
+
 - **SWITCH_MODE_AT_END** = **2**
 
 Property Descriptions

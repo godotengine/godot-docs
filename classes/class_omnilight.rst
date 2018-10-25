@@ -37,6 +37,7 @@ Enumerations
 enum **ShadowDetail**:
 
 - **SHADOW_DETAIL_VERTICAL** = **0**
+
 - **SHADOW_DETAIL_HORIZONTAL** = **1**
 
 .. _enum_OmniLight_ShadowMode:
@@ -44,6 +45,7 @@ enum **ShadowDetail**:
 enum **ShadowMode**:
 
 - **SHADOW_DUAL_PARABOLOID** = **0**
+
 - **SHADOW_CUBE** = **1**
 
 Description

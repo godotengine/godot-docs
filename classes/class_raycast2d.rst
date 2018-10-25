@@ -177,7 +177,7 @@ Removes all collision exceptions for this ray.
 
 - void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray.  Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
+Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
 
 .. _class_RayCast2D_get_collider:
 

@@ -105,6 +105,7 @@ Enumerations
 enum **TweenProcessMode**:
 
 - **TWEEN_PROCESS_PHYSICS** = **0** --- The tween updates with the ``_physics_process`` callback.
+
 - **TWEEN_PROCESS_IDLE** = **1** --- The tween updates with the ``_process`` callback.
 
 .. _enum_Tween_EaseType:
@@ -112,8 +113,11 @@ enum **TweenProcessMode**:
 enum **EaseType**:
 
 - **EASE_IN** = **0** --- The interpolation starts slowly and speeds up towards the end.
+
 - **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
+
 - **EASE_IN_OUT** = **2** --- A combination of EASE_IN and EASE_OUT. The interpolation is slowest at both ends.
+
 - **EASE_OUT_IN** = **3** --- A combination of EASE_IN and EASE_OUT. The interpolation is fastest at both ends.
 
 .. _enum_Tween_TransitionType:
@@ -121,15 +125,25 @@ enum **EaseType**:
 enum **TransitionType**:
 
 - **TRANS_LINEAR** = **0** --- The animation is interpolated linearly.
+
 - **TRANS_SINE** = **1** --- The animation is interpolated using a sine function.
+
 - **TRANS_QUINT** = **2** --- The animation is interpolated with a quintic (to the power of 5) function.
+
 - **TRANS_QUART** = **3** --- The animation is interpolated with a quartic (to the power of 4) function.
+
 - **TRANS_QUAD** = **4** --- The animation is interpolated with a quadratic (to the power of 2) function.
+
 - **TRANS_EXPO** = **5** --- The animation is interpolated with an exponential (to the power of x) function.
+
 - **TRANS_ELASTIC** = **6** --- The animation is interpolated with elasticity, wiggling around the edges.
+
 - **TRANS_CUBIC** = **7** --- The animation is interpolated with a cubic (to the power of 3) function.
+
 - **TRANS_CIRC** = **8** --- The animation is interpolated with a function using square roots.
+
 - **TRANS_BOUNCE** = **9** --- The animation is interpolated by bouncing at the end.
+
 - **TRANS_BACK** = **10** --- The animation is interpolated backing out at ends.
 
 Description
@@ -143,8 +157,8 @@ Here is a brief usage example that causes a 2D node to move smoothly between two
 
     var tween = get_node("Tween")
     tween.interpolate_property($Node2D, "position",
-                    Vector2(0, 0), Vector2(100, 100), 1,
-                    Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+            Vector2(0, 0), Vector2(100, 100), 1,
+            Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     tween.start()
 
 Many methods require a property name, such as "position" above. You can find the correct property name by hovering over the property in the Inspector.
@@ -199,7 +213,7 @@ Method Descriptions
 
 Follows ``method`` of ``object`` and applies the returned value on ``target_method`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` later. Methods are called with consecutive values.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_follow_property:
 
@@ -207,7 +221,7 @@ Follows ``method`` of ``object`` and applies the returned value on ``target_meth
 
 Follows ``property`` of ``object`` and applies it on ``target_property`` of ``target``, beginning from ``initial_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_get_runtime:
 
@@ -233,7 +247,7 @@ Calls ``callback`` of ``object`` after ``duration`` on the main thread (similar 
 
 Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are called with consecutive values.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_interpolate_property:
 
@@ -241,7 +255,7 @@ Animates ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``du
 
 Animates ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Setting the initial value to ``null`` uses the current value of the property.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_is_active:
 
@@ -321,7 +335,7 @@ Stops animating all tweens.
 
 Animates ``method`` of ``object`` from the value returned by ``initial_method`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecutive values.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_targeting_property:
 
@@ -329,7 +343,7 @@ Animates ``method`` of ``object`` from the value returned by ``initial_method`` 
 
 Animates ``property`` of ``object`` from the current value of the ``initial_val`` property of ``initial`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later.
 
-                Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
+Use :ref:`TransitionType<enum_@GlobalScope_TransitionType>` for ``trans_type`` and :ref:`EaseType<enum_@GlobalScope_EaseType>` for ``ease_type`` parameters. These values control the timing and direction of the interpolation. See the class description for more information
 
 .. _class_Tween_tell:
 

@@ -33,12 +33,19 @@ Enumerations
 enum **RadianceSize**:
 
 - **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels.
+
 - **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels.
+
 - **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128x128 pixels.
+
 - **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256x256 pixels.
+
 - **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512x512 pixels.
+
 - **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 pixels.
+
 - **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 pixels.
+
 - **RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest size it can be.
 
 Description

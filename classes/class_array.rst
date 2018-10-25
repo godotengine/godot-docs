@@ -174,7 +174,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 - :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` obj, :ref:`String<class_String>` func, :ref:`bool<class_bool>` before=True **)**
 
-Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array.  The custom method receives two arguments (an element from the array and the value searched for) and must return true if the first argument is less than the second, and return false otherwise. Note that calling bsearch on an unsorted array results in unexpected behavior.
+Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a before specifier can be passed. If false, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return true if the first argument is less than the second, and return false otherwise. Note that calling bsearch on an unsorted array results in unexpected behavior.
 
 .. _class_Array_clear:
 
@@ -343,7 +343,7 @@ Sort the array using a custom method. The arguments are an object that holds the
         static func sort(a, b):
             if a[0] < b[0]:
                 return true
-        return false
+            return false
     
     var my_items = [[5, "Potato"], [9, "Rice"], [4, "Tomato"]]
     my_items.sort_custom(MyCustomSorter, "sort")

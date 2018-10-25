@@ -50,10 +50,15 @@ Constants
 ---------
 
 - **CONNECTION_OK** = **0**
+
 - **CONNECTION_ERROR_NO_INPUT** = **1**
+
 - **CONNECTION_ERROR_NO_INPUT_INDEX** = **2**
+
 - **CONNECTION_ERROR_NO_OUTPUT** = **3**
+
 - **CONNECTION_ERROR_SAME_NODE** = **4**
+
 - **CONNECTION_ERROR_CONNECTION_EXISTS** = **5**
 
 Property Descriptions

@@ -54,7 +54,9 @@ Enumerations
 enum **TrackerHand**:
 
 - **TRACKER_HAND_UNKNOWN** = **0** --- The hand this tracker is held in is unknown or not applicable.
+
 - **TRACKER_LEFT_HAND** = **1** --- This tracker is the left hand controller.
+
 - **TRACKER_RIGHT_HAND** = **2** --- This tracker is the right hand controller.
 
 Description

@@ -68,6 +68,8 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_compression/formats/zstd/window_log_size>`                                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`debug/gdscript/completion/autocomplete_setters_and_getters<class_ProjectSettings_debug/gdscript/completion/autocomplete_setters_and_getters>`         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_debug/gdscript/warnings/constant_used_as_function>`                           |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_debug/gdscript/warnings/deprecated_keyword>`                                         |
@@ -184,7 +186,7 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_gui/timers/incremental_search_max_interval_msec>`                               |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_gui/timers/text_edit_idle_detect_sec>`                                                     |
+| :ref:`float<class_float>`           | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_gui/timers/text_edit_idle_detect_sec>`                                                     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_accept<class_ProjectSettings_input/ui_accept>`                                                                                               |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -406,8 +408,6 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/limits/packet_peer_stream/max_buffer_po2<class_ProjectSettings_network/limits/packet_peer_stream/max_buffer_po2>`                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`network/remote_fs/max_pages<class_ProjectSettings_network/remote_fs/max_pages>`                                                                       |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/remote_fs/page_read_ahead<class_ProjectSettings_network/remote_fs/page_read_ahead>`                                                           |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/remote_fs/page_size<class_ProjectSettings_network/remote_fs/page_size>`                                                                       |
@@ -440,7 +440,7 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`rendering/limits/rendering/max_renderable_elements<class_ProjectSettings_rendering/limits/rendering/max_renderable_elements>`                         |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_rendering/limits/time/time_rollover_secs>`                                             |
+| :ref:`float<class_float>`           | :ref:`rendering/limits/time/time_rollover_secs<class_ProjectSettings_rendering/limits/time/time_rollover_secs>`                                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`rendering/quality/2d/use_pixel_snap<class_ProjectSettings_rendering/quality/2d/use_pixel_snap>`                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -471,6 +471,14 @@ Properties
 | :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/texture_array_reflections<class_ProjectSettings_rendering/quality/reflections/texture_array_reflections>`               |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`rendering/quality/reflections/texture_array_reflections.mobile<class_ProjectSettings_rendering/quality/reflections/texture_array_reflections.mobile>` |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_blinn_over_ggx<class_ProjectSettings_rendering/quality/shading/force_blinn_over_ggx>`                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_blinn_over_ggx.mobile<class_ProjectSettings_rendering/quality/shading/force_blinn_over_ggx.mobile>`                   |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_lambert_over_burley<class_ProjectSettings_rendering/quality/shading/force_lambert_over_burley>`                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_lambert_over_burley.mobile<class_ProjectSettings_rendering/quality/shading/force_lambert_over_burley.mobile>`         |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_rendering/quality/shading/force_vertex_shading>`                                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -600,7 +608,7 @@ Name of the project. It is used from both project manager and by the exporters. 
 
 - :ref:`bool<class_bool>` **application/config/use_custom_user_dir**
 
-Allow the project to save to it's own custom user dir (in AppData on windows or ~/.config on unixes). This setting only works for desktop exporters. A name must be set in the "custom_user_dir_name" setting for this to take effect.
+Allow the project to save to its own custom user dir (in AppData on windows or ~/.config on unixes). This setting only works for desktop exporters. A name must be set in the "custom_user_dir_name" setting for this to take effect.
 
 .. _class_ProjectSettings_application/run/disable_stderr:
 
@@ -697,6 +705,10 @@ Enable long distance matching in zstd.
 .. _class_ProjectSettings_compression/formats/zstd/window_log_size:
 
 - :ref:`int<class_int>` **compression/formats/zstd/window_log_size**
+
+.. _class_ProjectSettings_debug/gdscript/completion/autocomplete_setters_and_getters:
+
+- :ref:`bool<class_bool>` **debug/gdscript/completion/autocomplete_setters_and_getters**
 
 .. _class_ProjectSettings_debug/gdscript/warnings/constant_used_as_function:
 
@@ -984,7 +996,7 @@ Timer setting for incremental search in Tree, IntemList, etc. controls.
 
 .. _class_ProjectSettings_gui/timers/text_edit_idle_detect_sec:
 
-- :ref:`int<class_int>` **gui/timers/text_edit_idle_detect_sec**
+- :ref:`float<class_float>` **gui/timers/text_edit_idle_detect_sec**
 
 Timer for detecting idle in the editor.
 
@@ -1446,12 +1458,6 @@ Maximum amount of messages allowed to send as output from the debugger. Over thi
 
 Default size of packet peer stream for deserializing godot data. Over this size, data is dropped.
 
-.. _class_ProjectSettings_network/remote_fs/max_pages:
-
-- :ref:`int<class_int>` **network/remote_fs/max_pages**
-
-Maximum amount of pages used for remote filesystem (used by debugging).
-
 .. _class_ProjectSettings_network/remote_fs/page_read_ahead:
 
 - :ref:`int<class_int>` **network/remote_fs/page_read_ahead**
@@ -1544,7 +1550,7 @@ Max amount of elements renderable in a frame. If more than this are visible per 
 
 .. _class_ProjectSettings_rendering/limits/time/time_rollover_secs:
 
-- :ref:`int<class_int>` **rendering/limits/time/time_rollover_secs**
+- :ref:`float<class_float>` **rendering/limits/time/time_rollover_secs**
 
 Shaders have a time variable that constantly increases. At some point it needs to be rolled back to zero to avoid numerical errors on shader animations. This setting specifies when.
 
@@ -1622,17 +1628,33 @@ For reflection probes and panorama backgrounds (sky), use a high amount of sampl
 
 - :ref:`bool<class_bool>` **rendering/quality/reflections/texture_array_reflections**
 
-For reflection probes and panorama backgrounds (sky), use a texure array instead of mipmaps. This reduces jitter noise on reflections, but costs more performance and memory.
+For reflection probes and panorama backgrounds (sky), use a texture array instead of mipmaps. This reduces jitter noise on reflections, but costs more performance and memory.
 
 .. _class_ProjectSettings_rendering/quality/reflections/texture_array_reflections.mobile:
 
 - :ref:`bool<class_bool>` **rendering/quality/reflections/texture_array_reflections.mobile**
 
+.. _class_ProjectSettings_rendering/quality/shading/force_blinn_over_ggx:
+
+- :ref:`bool<class_bool>` **rendering/quality/shading/force_blinn_over_ggx**
+
+.. _class_ProjectSettings_rendering/quality/shading/force_blinn_over_ggx.mobile:
+
+- :ref:`bool<class_bool>` **rendering/quality/shading/force_blinn_over_ggx.mobile**
+
+.. _class_ProjectSettings_rendering/quality/shading/force_lambert_over_burley:
+
+- :ref:`bool<class_bool>` **rendering/quality/shading/force_lambert_over_burley**
+
+.. _class_ProjectSettings_rendering/quality/shading/force_lambert_over_burley.mobile:
+
+- :ref:`bool<class_bool>` **rendering/quality/shading/force_lambert_over_burley.mobile**
+
 .. _class_ProjectSettings_rendering/quality/shading/force_vertex_shading:
 
 - :ref:`bool<class_bool>` **rendering/quality/shading/force_vertex_shading**
 
-Force vertex shading for all rendering. This can increase performance a lot, but also reduces quality inmensely. Can work to optimize on very low end mobile.
+Force vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can work to optimize on very low end mobile.
 
 .. _class_ProjectSettings_rendering/quality/shading/force_vertex_shading.mobile:
 
@@ -1804,6 +1826,10 @@ Return true if a configuration value is present.
 
 - :ref:`bool<class_bool>` **load_resource_pack** **(** :ref:`String<class_String>` pack **)**
 
+Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (res://). Returns true on success.
+
+Note: If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack``.
+
 .. _class_ProjectSettings_localize_path:
 
 - :ref:`String<class_String>` **localize_path** **(** :ref:`String<class_String>` path **)** const
@@ -1814,17 +1840,25 @@ Convert a path to a localized path (res:// path).
 
 - :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
+Returns true if the specified property exists and its initial value differs from the current value.
+
 .. _class_ProjectSettings_property_get_revert:
 
 - :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+
+Returns the initial value of the specified property. Returns null if the property does not exist.
 
 .. _class_ProjectSettings_save:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save** **(** **)**
 
+Saves the configuration to the project.godot file.
+
 .. _class_ProjectSettings_save_custom:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_custom** **(** :ref:`String<class_String>` file **)**
+
+Saves the configuration to a custom file.
 
 .. _class_ProjectSettings_set_initial_value:
 
