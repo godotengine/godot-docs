@@ -6,12 +6,12 @@ Custom resource format loaders
 Introduction
 ------------
 
-ResourceFormatLoader is a factory interface for loading file assets. 
-Resources are primary containers. When load is called on the same file 
-path again, the previous loaded Resource will be referenced. Naturally, 
+ResourceFormatLoader is a factory interface for loading file assets.
+Resources are primary containers. When load is called on the same file
+path again, the previous loaded Resource will be referenced. Naturally,
 loaded resources must be stateless.
 
-This guide assumes the reader knows how to create C++ modules and godot 
+This guide assumes the reader knows how to create C++ modules and Godot
 data types. If not, refer to this guide :ref:`doc_custom_modules_in_c++`.
 
 References
@@ -44,15 +44,15 @@ References
 Creating a ResourceFormatLoader
 -------------------------------
 
-Each file format consist of a data container and a ``ResourceFormatLoader``. 
+Each file format consist of a data container and a ``ResourceFormatLoader``.
 
-ResourceFormatLoaders are usually simple classes which return all the 
-necessary metadata for supporting new extensions in Godot. The 
+ResourceFormatLoaders are usually simple classes which return all the
+necessary metadata for supporting new extensions in Godot. The
 class must the return the format name and the extension string.
 
-In addition, ResourceFormatLoaders must convert file paths into 
-resources with the ``load`` function. To load a resource, ``load`` must 
-read and handle data serialization. 
+In addition, ResourceFormatLoaders must convert file paths into
+resources with the ``load`` function. To load a resource, ``load`` must
+read and handle data serialization.
 
 
 .. code:: cpp
@@ -160,7 +160,7 @@ Here is an example of how to create a custom datatype
 		}
 
 		operator String() const {
-			JSON a; 
+			JSON a;
 			return a.print(dict);
 		}
 
@@ -172,17 +172,17 @@ Here is an example of how to create a custom datatype
 Considerations
 ~~~~~~~~~~~~~~
 
-Some libraries may not define certain common routines such as i/o handling. 
+Some libraries may not define certain common routines such as i/o handling.
 Therefore, Godot call translations are required.
 
-For example, here is the code for translating ``FileAccess`` 
+For example, here is the code for translating ``FileAccess``
 calls into ``std::istream``.
 
 .. code:: cpp
 
 	#include <istream>
 	#include <streambuf>
-    
+
 	class GodotFileInStreamBuf : public std::streambuf{
 	public:
 		GodotFileInStreamBuf(FileAccess * fa) {
@@ -262,10 +262,10 @@ Loading it on GDScript
 	  ]
 	}
 
-.. code:: 
+.. code::
 
-	extends Node 
-	
+	extends Node
+
 	func _ready():
 		var myjson = load("res://demo.mjson")
 		print( myjson.toString())

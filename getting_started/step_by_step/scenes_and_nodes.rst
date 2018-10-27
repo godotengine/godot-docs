@@ -29,7 +29,7 @@ Nodes
 -----
 
 But let's start with the basics. Nodes are fundamental building blocks for
-creating a game. As mentioned above, a node can perform a variety of specialized 
+creating a game. As mentioned above, a node can perform a variety of specialized
 functions. However, any given node always has the following attributes:
 
 -  It has a name.
@@ -80,7 +80,7 @@ Let's make these abstract concepts more concrete with an example. Following a
 long tradition in tutorials, we'll start with a "Hello World" project.
 This will introduce us to using the editor.
 
-If you run the godot executable outside of a project, the Project Manager
+If you run the Godot executable outside of a project, the Project Manager
 appears. This helps developers manage their projects.
 
 .. image:: img/project_manager.png
@@ -170,7 +170,7 @@ Configuring the project
 Ok, it's time to configure the project. Right now, the only way to run
 something is to execute the current scene. Projects, however, may have several
 scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run. 
+will be loaded any time the project is run.
 
 These settings are all stored in a project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
@@ -193,7 +193,7 @@ project.godot file and shows their default values. If you change a value, a
 tick is marked to the left of its name. This means that the property will be
 saved to the project.godot file and remembered.
 
-As a side note, it is also possible to add custom configuration options and 
+As a side note, it is also possible to add custom configuration options and
 read them in at run-time using the :ref:`ProjectSettings <class_ProjectSettings>` singleton.
 
 To be continued...

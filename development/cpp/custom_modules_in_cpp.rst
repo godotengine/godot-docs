@@ -276,7 +276,7 @@ library that will be dynamically loaded when starting our game's binary.
 
     # Now define the shared library. Note that by default it would be built
     # into the module's folder, however it's better to output it into `bin`
-    # next to the godot binary.
+    # next to the Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
     # Finally notify the main env it has our shared lirary as a new dependency.
@@ -301,7 +301,7 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 you won't be able to play you project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a part of the godot binary
+module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the `ARGUMENT` command:
 
