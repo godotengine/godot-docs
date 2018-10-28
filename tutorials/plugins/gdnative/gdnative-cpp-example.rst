@@ -286,7 +286,7 @@ and ``demo``, then run:
 
 .. code-block:: none
 
-    scons platform=<platform> target=debug
+    scons platform=<platform>
 
 You should now be able to find the module in ``demo/bin/<platform>``.
 
