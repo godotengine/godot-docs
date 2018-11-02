@@ -143,7 +143,7 @@ Aaaand... Oops.
 .. image:: img/neversaved.png
 
 Scenes need to be saved to be run, so save the scene to something like
-hello.tscn in Scene -> Save:
+Hello.tscn in Scene -> Save:
 
 .. image:: img/save_scene.png
 
@@ -181,7 +181,7 @@ frontend to editing a project.godot file.
 To access that dialog, select Project -> Project Settings. Try it now.
 
 Once the window opens, let's select a main scene. Locate the
-`Application/Run/Main Scene` property and click on it to select 'hello.tscn'.
+`Application/Run/Main Scene` property and click on it to select 'Hello.tscn'.
 
 .. image:: img/main_scene.png
 
