@@ -284,7 +284,7 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Return the amount of elements in the array.
+Return the amount of non-NULL elements in the array.
 
 .. _class_Array_sort:
 
