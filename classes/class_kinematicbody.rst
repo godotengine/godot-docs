@@ -166,7 +166,7 @@ If ``test_only`` is ``true``, the body does not move but the would-be collision 
 
 Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody`` or :ref:`RigidBody<class_RigidBody>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
-``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
+``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody_move_and_collide>`, you should *not* multiply it with ``delta`` — this is automatically multiplied by the physics delta.
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall. This is useful for topdown games.
 
