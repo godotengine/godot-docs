@@ -91,7 +91,7 @@ Your sphere should now be colored in with the colors we rendered to the Viewport
 
 .. image:: img/planet_seam.png
 
-Notice the ugly seam that forms where the texture texture wraps around? This is because we are picking 
+Notice the ugly seam that forms where the texture wraps around? This is because we are picking
 a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic 
 problem in 2D map projection. Gamedevs often have a 2-dimensional map they want to project 
 onto a sphere but when it wraps around it has large seams. There is an elegant work around for this 
@@ -102,7 +102,7 @@ Making the planet texture
 
 So now when we render to our :ref:`Viewport <class_Viewport>` it appears magically on the sphere. But there is an ugly
 seam created by our texture coordinates. So how do we get a range of coordinates that wrap around 
-the sphere in a nice way? One solution is to to use a function that repeats on the domain of our texture.
+the sphere in a nice way? One solution is to use a function that repeats on the domain of our texture.
 ``sin`` and ``cos`` are two such functions. Lets apply them to the texture and see what happens
 
 ::

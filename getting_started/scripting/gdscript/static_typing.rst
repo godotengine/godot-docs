@@ -147,7 +147,7 @@ Variable casting
 ~~~~~~~~~~~~~~~~
 
 Type casting is a key concept in typed languages. We call the conversion
-of a value from from one type of another casting.
+of a value from one type of another casting.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
 collide with the Player, a ``KinematicBody2D`` with a script called
@@ -191,7 +191,7 @@ This happens when you get a child node. Let’s take a timer for example:
 with dynamic code, you can get the node with ``$Timer``. GDScript
 supports `duck-typing <https://stackoverflow.com/a/4205163/8125343>`__,
 so even if your timer is of type ``Timer``, it is also a ``Node`` and an
-``Object``, two classes it extends. With dynamic GDScript, you also also
+``Object``, two classes it extends. With dynamic GDScript, you also
 don’t care about the node’s type as long as it has the methods you need
 to call.
 
