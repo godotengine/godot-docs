@@ -30,6 +30,29 @@ Godot allows uniform variables and functions to be shared by defining the fragme
 shaders in one file. In GLSL the vertex and fragment programs cannot share variables except 
 when varyings are used.
 
+Vertex attributes
+^^^^^^^^^^^^^^^^^
+
+In GLSL you can pass in per-vertex information using attributes. In GLSL you have the flexibility to 
+pass in as much or as little as you want. In Godot you have a set number of input attributes
+including, ``VERTEX`` (position), ``COLOR``, ``UV``, ``UV2``, ``NORMAL``. For a complete list
+see the :ref:`Shading language reference <doc_shading_language>`.
+
+gl_Position
+^^^^^^^^^^^
+
+``gl_Position`` receives the final position of a vertex specified in the vertex shader. 
+It is specified by the user in clip space. Typically in GLSL the model space vertex position 
+is passed in using a vertex attribute called ``position`` and you handle the 
+conversion from model space to clip space manually. 
+
+In Godot ``VERTEX`` specifies the vertex position in model space at the beginning of the ``vertex``
+function. Godot also handles the final conversion to clip space after the user-defined ``vertex`` 
+function is run. If you want to skip the conversion from model to view space, you can set the 
+``render_mode`` to ``skip_vertex_transform``. If you want to skip all transforms, set 
+``render_mode`` to ``skip_vertex_transform`` and set the ``PROJECTION_MATRIX`` to ``mat4(1.0)`` 
+in order to nullify the final transform from view space to clip space. 
+
 Varyings
 ^^^^^^^^
 
