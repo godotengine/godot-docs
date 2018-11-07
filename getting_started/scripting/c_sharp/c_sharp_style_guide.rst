@@ -248,7 +248,7 @@ or *'float fPower'*, for example. However, there's an exception about interfaces
 Lastly, consider choosing descriptive names and do not try to shorten them too much if it affects
 readability.
 
-For instance, if you want to write a code to find a nearby enemy and hit with an weapon, prefer
+For instance, if you want to write a code to find a nearby enemy and hit with a weapon, prefer
 
 .. code-block:: csharp
 
