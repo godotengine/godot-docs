@@ -11,6 +11,7 @@ Requirements
 - Mono 5.12.0 or greater
 - MSBuild
 - pkg-config
+- NuGet
 
 Environment variables
 ---------------------
