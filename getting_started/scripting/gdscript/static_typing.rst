@@ -147,7 +147,7 @@ Variable casting
 ~~~~~~~~~~~~~~~~
 
 Type casting is a key concept in typed languages. We call the conversion
-of a value from one type of another casting.
+of a value from one type to another casting.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
 collide with the Player, a ``KinematicBody2D`` with a script called
