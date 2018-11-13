@@ -10,11 +10,16 @@ Requirements
 
 For compiling under Windows, the following is required:
 
--  Visual C++, `Visual
-   Studio Community <https://www.visualstudio.com/vs/community/>`__
-   (recommended), version 2013 (12.0) or later.
-   **Make sure you read Installing Visual Studio caveats below or you
-   will have to run/download the installer again.**
+-  Either:
+
+   -  Visual C++, `Visual
+      Studio Community <https://www.visualstudio.com/vs/community/>`__
+      (recommended), version 2013 (12.0) or later.
+      **Make sure you read Installing Visual Studio caveats below or you
+      will have to run/download the installer again.**
+   -  `MingW-W64 <https://mingw-w64.org/doku.php/download>`__ (MingW-W64-Builds)
+      version 5.0.3 or later.
+
 -  `Python 2.7+ or Python 3.5+ <https://www.python.org/downloads/>`__.
 -  `Pywin32 Python Extension <https://github.com/mhammond/pywin32>`__
    for parallel builds (which increase the build speed by a great factor).
@@ -24,11 +29,12 @@ Setting up SCons
 ----------------
 
 Python adds the interpreter (python.exe) to the path. It usually
-installs in ``C:\Python`` (or ``C:\Python[Version]``). SCons installs
+installs in ``C:\Python`` (or ``C:\Python[Version]``) or
+in ``%appdata%\Local\Programs\Python``. SCons installs
 inside the Python install (typically in the ``Scripts`` folder) and
 provides a batch file called ``scons.bat``.
 The location of this file can be added to the path or it can simply be
-copied to ``C:\Python`` together with the interpreter executable.
+copied to your Python root folder together with the interpreter executable.
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into the
@@ -74,6 +80,26 @@ which will do nothing for your problem.
 If you're using Express, make sure you get/have a version that can
 compile for ***C++, Desktop***.
 
+Installing MinGW
+----------------
+
+Choose defaults for everything (Version:8.1.0 or higher, Architecture: i686, Threads: posix,
+Exception: dwarf, Build revision: 0 or higher). On the next page, leave the destination folder
+as is (``C:\Program Files (x86)\mingw-w64 ...``) or if you change it, be sure to know where it is
+installed. Finish the installer.
+
+Look for the root of where you installed MinGW, by default ``C:\Program Files (x86)\mingw-w64``. 
+There should be only one folder inside, named something like i686-8.1.0-posix-dwarf-rt_v6-rev0
+(8.1.0, the version number, will likely be different in the future). Enter that folder.
+
+
+Copy mingw-w64.bat. Paste it somewhere you can come back to every time you want to 
+compile Godot (that could be on your desktop). Edit the copy of the batch file. Change the line
+that reads ``cd "C:\"`` to ``cd "Path-To-Your-Godot-Repository"``; for example ``cd "C:\godot"``.
+When you are ready to use SCons to build Godot, call SCons from within the prompt opened by double
+clicking on the batch file you just made.
+
+
 Downloading Godot's source
 --------------------------
 
@@ -83,8 +109,8 @@ GitHub. Downloading it (cloning) via `Git <https://git-scm.com/>`__ is recommend
 The tutorial will presume from now on that you placed the source into
 ``C:\godot``.
 
-Compiling
----------
+Compiling With Visual Studio
+----------------------------
 
 SCons will not be able out of the box to compile from the
 Windows Command Prompt (``cmd.exe``) because SCons and Visual C++ compiler
@@ -176,6 +202,12 @@ root directory of the engine source code and type:
 
     C:\godot> scons platform=windows
 
+Or if using MinGW to compile:
+
+::
+
+    C:\godot> scons platform=windows use_mingw=True
+
 Tip: if you installed "Pywin32 Python Extension" you can append the -j
 command to instruct SCons to run parallel builds like this:
 
@@ -186,7 +218,9 @@ command to instruct SCons to run parallel builds like this:
 In general, it is OK to have at least as many threads compiling Godot as
 you have cores in your CPU, if not one or two more. Feel free to add the
 -j option to any SCons command you see below if you setup the
-"Pywin32 Python Extension".
+"Pywin32 Python Extension". Speeding up the compilation is very helpful,
+as some parts go very slowly (Linking the modules static library can take
+over 30 minutes).
 
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name of ``godot.windows.tools.32.exe`` or
