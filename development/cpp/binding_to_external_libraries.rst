@@ -6,9 +6,10 @@ Binding to external libraries
 Modules
 -------
 
-The Summator example in :ref:`_doc_custom_modules_in_c++` is great for small, custom modules, but
-what if you want to use a larger, external library?  Let's look at an example
-using Festival, a speech synthesis (text-to-speech) library written in C++.
+The Summator example in :ref:`doc_custom_modules_in_c++` is great for small,
+custom modules, but what if you want to use a larger, external library?
+Let's look at an example using Festival, a speech synthesis (text-to-speech)
+library written in C++.
 
 To bind to an external library, set up a module directory similar to the Summator example:
 
@@ -116,12 +117,13 @@ documentation for specific instructions on how to do this for your operation sys
 installation commands for Linux below, for reference.
 
 ::
+
     sudo apt-get install festival festival-dev <-- Installs festival and speech_tools libraries
     apt-cache search festvox-* <-- Displays list of voice packages
     sudo apt-get install festvox-don festvox-rablpc16k festvox-kallpc16k festvox-kdlpc16k <-- Installs voices
 
 .. note::
-    **Important** The voices that Festival uses (and any other potential external/3rd-party
+    **Important:** The voices that Festival uses (and any other potential external/3rd-party
     resource) all have varying licenses and terms of use; some (if not most) of them may be
     be problematic with Godot, even if the Festival Library itself is MIT License compatible.
     Please be sure to check the licenses and terms of use.
@@ -132,6 +134,7 @@ festival and speech_tools libraries can be installed from the modules/tts/ direc
 git using the following commands:
 
 ::
+
     git clone https://github.com/festvox/festival
     git clone https://github.com/festvox/speech_tools
 
@@ -139,11 +142,12 @@ If you don't want the external repository source files committed to your reposit
 can link to them instead by adding them as submodules (from within the modules/tts/ directory), as seen below:
 
 ::
+
     git submodule add https://github.com/festvox/festival
     git submodule add https://github.com/festvox/speech_tools
 
 .. note::
-    **Important** Please note that Git submodules are not used in the Godot repository.  If
+    **Important:** Please note that Git submodules are not used in the Godot repository.  If
     you are developing a module to be merged into the main Godot repository, you should not
     use submodules.  If your module doesn't get merged in, you can always try to implement
     the external library as a GDNative C++ plugin.
