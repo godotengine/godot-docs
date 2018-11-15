@@ -241,9 +241,10 @@ You can now use your newly created module from any script:
 
 And the output will be ``60``.
 
-.. seealso:: The previous Summator example is great for small, custom modules, but
-             what if you want to use a larger, external library?  Refer to :ref:`_doc_binding_to_external_libraries`
-             for details about binding to external libraries.
+.. seealso:: The previous Summator example is great for small, custom modules,
+  but what if you want to use a larger, external library?  Refer to
+  :ref:`doc_binding_to_external_libraries` for details about binding to
+  external libraries.
 
 Improving the build system for development
 ------------------------------------------
