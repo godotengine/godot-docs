@@ -149,7 +149,7 @@ Add the following includes/imports:
 
 Apply the changes.
 
-Switch to the "Custom Build System" tab. Add a build configuration 
+Switch to the "Custom Build System" tab. Add a build configuration
 and keep the build directory blank. Enable build tools and add ``scons``
 as the executable then add ``platform=x11 target=debug`` (``platform=osx``
 if you're on macOS) as the arguments.
@@ -211,7 +211,7 @@ Add a Command Line Target:
 
 Add Godot Source to the Project:
 
-- Drag and drop godot source into project file browser.
+- Drag and drop Godot source into project file browser.
 - Uncheck *Create External Build System*
 
 .. image:: img/xcode_5_after_add_godot_source_to_project.png

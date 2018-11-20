@@ -66,7 +66,7 @@ The project can now be opened with Godot.
 Running the editor
 ------------------
 
-Running the editor is done by executing godot with the ``-e`` flag. This
+Running the editor is done by executing Godot with the ``-e`` flag. This
 must be done from within the project directory or a subdirectory,
 otherwise the command is ignored and the project manager appears.
 

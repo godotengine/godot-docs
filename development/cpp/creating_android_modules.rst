@@ -107,7 +107,7 @@ A singleton object template follows:
         }
 
         public void getInstanceId(int pInstanceId) {
-            // You will need to call this method from godot and pass in the get_instance_id().
+            // You will need to call this method from Godot and pass in the get_instance_id().
             instanceId = pInstanceId;
         }
 
@@ -181,7 +181,7 @@ AndroidManifest
 ---------------
 
 Some SDKs need custom values in AndroidManifest.xml. Permissions can be
-edited from the godot exporter so there is no need to add those, but
+edited from the Godot exporter so there is no need to add those, but
 maybe other functionalities are needed.
 
 Create the custom chunk of android manifest and put it inside the
