@@ -15,7 +15,6 @@ rifle, and attack using a knife. The player will also now have animations with t
 and the weapons will interact with objects in the environment.
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_one` before moving on to this part of the tutorial.
-
           The finished project from :ref:`doc_fps_tutorial_part_one` will be the starting project for part 2
 
 Let's get started!
@@ -1056,7 +1055,7 @@ Now lets add all of the player input code for the weapons in ``process_input``. 
             if current_weapon != null:
                 if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
                     animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
-	# ----------------------------------
+    # ----------------------------------
 
 Lets go over the additions, starting with how we're changing weapons.
 

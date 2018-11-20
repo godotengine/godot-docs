@@ -171,8 +171,7 @@ Return whether the custom node has an input **sequence** port.
 
 Execute the custom node's logic, returning the index of the output sequence port to use or a :ref:`String<class_String>` when there is an error.
 
-
-				The ``inputs`` array contains the values of the input ports.
+The ``inputs`` array contains the values of the input ports.
 
 ``outputs`` is an array whose indices should be set to the respective outputs.
 
@@ -180,6 +179,5 @@ The ``start_mode`` is usually ``START_MODE_BEGIN_SEQUENCE``, unless you have use
 
 ``working_mem`` is an array which can be used to persist information between runs of the custom node.
 
-
-				When returning, you can mask the returned value with one of the STEP\_\* constants.
+When returning, you can mask the returned value with one of the STEP\_\* constants.
 

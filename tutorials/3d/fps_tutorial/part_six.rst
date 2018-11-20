@@ -14,7 +14,6 @@ This is the last part of the FPS tutorial, by the end of this you will have a so
 .. image:: img/FinishedTutorialPicture.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_five` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_four` will be the starting project for part 6
           
 Let's get started!
@@ -495,9 +494,9 @@ Instead of:
     # Capturing/Freeing cursor
     if Input.is_action_just_pressed("ui_cancel"):
         if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-	    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	else:
-	    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+            Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+        else:
+            Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 You will leave only:
 
@@ -561,7 +560,7 @@ Next we need to make a few changes to ``physics_process``. Change ``physics_proc
 ::
 
     func _physics_process(delta):
-	
+
         if !is_dead:
             process_input(delta)
             process_view_input(delta)
@@ -841,8 +840,8 @@ First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
         audio_node.stream = audio_stream
         
         # If you are using a AudioPlayer3D, then uncomment these lines to set the position.
-        # if position != null:
-        #	audio_node.global_transform.origin = position
+        #if position != null:
+        #    audio_node.global_transform.origin = position
         
         audio_node.play(0.0)
 

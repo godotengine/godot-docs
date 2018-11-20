@@ -85,17 +85,15 @@ Description
 
 This stylebox can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
 
- - Color
+- Color
 
- - Border width (individual width for each border)
+- Border width (individual width for each border)
 
- - Rounded corners (individual radius for each corner)
+- Rounded corners (individual radius for each corner)
 
- - Shadow
+- Shadow
 
- About corner radius:
-
- 	Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
 
 ::
 
@@ -235,7 +233,7 @@ This sets the amount of vertices used for each corner. Higher values result in r
 
 For corner radius smaller than 10: 4-5 should be enough
 
-For corner radius smaller than 30: 8-12 should be enough ...
+For corner radius smaller than 30: 8-12 should be enough
 
 .. _class_StyleBoxFlat_corner_radius_bottom_left:
 

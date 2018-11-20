@@ -11,7 +11,6 @@ In this part we're going to add grenades to the player, give the player the abil
 .. image:: img/PartFiveFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_four` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_four` will be the starting project for part 5
           
 Let's get started!
@@ -564,7 +563,7 @@ ______
 The last thing we do is check to see whether or not ``grabbed_object`` is equal to ``null``, outside all of the grabbing/throwing related code.
 
 .. note:: While technically not input related, it's easy enough to place the code moving the grabbed object here
-	      because it's only two lines, and then all of the grabbing/throwing code is in one place
+          because it's only two lines, and then all of the grabbing/throwing code is in one place
 
 If the player is holding a object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
 
@@ -579,13 +578,13 @@ want the player to be able to change weapons or reload, so change ``_physics_pro
         process_input(delta)
         process_view_input(delta)
         process_movement(delta)
-        
+
         if grabbed_object == null:
             process_changing_weapons(delta)
             process_reloading(delta)
-	
-	# Process the UI
-	process_UI(delta)
+
+        # Process the UI
+        process_UI(delta)
 
 Now the player cannot change weapons or reload while holding an object.
     
@@ -717,40 +716,40 @@ Add the following to ``Turret.gd``:
 
 
     func fire_bullet():
-	
-	if use_raycast == true:
-		node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
-		
-		node_raycast.force_raycast_update()
-		
-		if node_raycast.is_colliding():
-			var body = node_raycast.get_collider()
-			if body.has_method("bullet_hit"):
-				body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.get_collision_point())
-		
-		ammo_in_turret -= 1
-		
-	else:
-		var clone = bullet_scene.instance()
-		var scene_root = get_tree().root.get_children()[0]
-		scene_root.add_child(clone)
-		
-		clone.global_transform = $Head/Barrel_End.global_transform
-		clone.scale = Vector3(8, 8, 8)
-		clone.BULLET_DAMAGE = TURRET_DAMAGE_BULLET
-		clone.BULLET_SPEED = 60
-				
-		ammo_in_turret -= 1
-		
-	node_flash_one.visible = true
-	node_flash_two.visible = true
-	
-	flash_timer = FLASH_TIME
-	fire_timer = FIRE_TIME
-	
-	if ammo_in_turret <= 0:
-		ammo_reload_timer = AMMO_RELOAD_TIME
-		
+    
+    if use_raycast == true:
+        node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
+        
+        node_raycast.force_raycast_update()
+        
+        if node_raycast.is_colliding():
+            var body = node_raycast.get_collider()
+            if body.has_method("bullet_hit"):
+                body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.get_collision_point())
+        
+        ammo_in_turret -= 1
+        
+    else:
+        var clone = bullet_scene.instance()
+        var scene_root = get_tree().root.get_children()[0]
+        scene_root.add_child(clone)
+        
+        clone.global_transform = $Head/Barrel_End.global_transform
+        clone.scale = Vector3(8, 8, 8)
+        clone.BULLET_DAMAGE = TURRET_DAMAGE_BULLET
+        clone.BULLET_SPEED = 60
+                
+        ammo_in_turret -= 1
+        
+    node_flash_one.visible = true
+    node_flash_two.visible = true
+    
+    flash_timer = FLASH_TIME
+    fire_timer = FIRE_TIME
+    
+    if ammo_in_turret <= 0:
+        ammo_reload_timer = AMMO_RELOAD_TIME
+        
 
     func body_entered_vision(body):
         if current_target == null:

@@ -201,8 +201,8 @@ You can now use your newly created module from any script:
 ::
 
     var t = TTS.new()
-	var script = "Hello world.  This is a test!"
-	var is_spoken = t.say_text(script)
-	print('is_spoken: ', is_spoken)
+    var script = "Hello world.  This is a test!"
+    var is_spoken = t.say_text(script)
+    print('is_spoken: ', is_spoken)
 
 And the output will be ``is_spoken: True`` if the text is spoken.

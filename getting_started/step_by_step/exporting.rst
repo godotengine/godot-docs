@@ -82,14 +82,14 @@ changed:
             velocity = Vector2()
 
     # Remove keyboard controls.
-    #   if Input.is_action_pressed("ui_right"):
+    #    if Input.is_action_pressed("ui_right"):
     #       velocity.x += 1
-    #	if Input.is_action_pressed("ui_left"):
-    #		velocity.x -= 1
-    #	if Input.is_action_pressed("ui_down"):
-    #		velocity.y += 1
-    #	if Input.is_action_pressed("ui_up"):
-    #		velocity.y -= 1
+    #    if Input.is_action_pressed("ui_left"):
+    #        velocity.x -= 1
+    #    if Input.is_action_pressed("ui_down"):
+    #        velocity.y += 1
+    #    if Input.is_action_pressed("ui_up"):
+    #        velocity.y -= 1
 
         if velocity.length() > 0:
             velocity = velocity.normalized() * speed
@@ -99,7 +99,7 @@ changed:
             $AnimatedSprite.stop()
             $Trail.emitting = false
 
-    	position += velocity * delta
+        position += velocity * delta
         # We don't need to clamp the player's position
         # because you can't click outside the screen.
         # position.x = clamp(position.x, 0, screensize.x)

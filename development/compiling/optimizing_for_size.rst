@@ -24,7 +24,7 @@ For 2D games, having the whole 3D engine available usually makes no sense. Becau
 
 ::
 
-	scons p=windows target=release tools=no disable_3d=yes
+    scons p=windows target=release tools=no disable_3d=yes
 
 Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
@@ -38,7 +38,7 @@ TextEditor or GraphEdit. They can be disabled using a build flag:
 
 ::
 
-	scons p=windows target=release tools=no disable_advanced_gui=yes
+    scons p=windows target=release tools=no disable_advanced_gui=yes
 
 Disabling unwanted modules
 --------------------------
@@ -48,7 +48,7 @@ You can see a list of modules with the following command:
 
 ::
 
-	scons --help
+    scons --help
 
 The list of modules that can be disabled will appear, together with all
 build options. If you are working on a simple 2D game, you could disable
@@ -56,7 +56,7 @@ a lot of them:
 
 ::
 
-	scons p=windows target=release tools=no module_bmp_enabled=no module_bullet_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etc_enabled=no module_gdnative_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_mbedtls_enabled=no module_mobile_vr_enabled=no module_opus_enabled=no module_pvr_enabled=no module_recast_enabled=no module_regex_enabled=no module_squish_enabled=no module_tga_enabled=no module_thekla_unwrap_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_vorbis_enabled=no module_webm_enabled=no module_websocket_enabled=no
+    scons p=windows target=release tools=no module_bmp_enabled=no module_bullet_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etc_enabled=no module_gdnative_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_mbedtls_enabled=no module_mobile_vr_enabled=no module_opus_enabled=no module_pvr_enabled=no module_recast_enabled=no module_regex_enabled=no module_squish_enabled=no module_tga_enabled=no module_thekla_unwrap_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_vorbis_enabled=no module_webm_enabled=no module_websocket_enabled=no
 
 Optimizing for size instead of speed
 ------------------------------------
@@ -66,7 +66,7 @@ To enable this, just set the ``optimize`` flag to ``size``:
 
 ::
 
-	scons p=windows target=release tools=no optimize=size
+    scons p=windows target=release tools=no optimize=size
 
 Some platforms such as WebAssembly already use this mode by default.
 
@@ -80,7 +80,7 @@ and MSVC compilers:
 
 ::
 
-	scons p=windows target=release tools=no use_lto=yes
+    scons p=windows target=release tools=no use_lto=yes
 
 Linking becomes much slower with this option, so it should be used only for
 release builds.
@@ -92,7 +92,7 @@ If you build from source, remember to strip debug symbols from binaries:
 
 ::
 
-	strip godot.64
+    strip godot.64
 
 Using UPX to compress binaries
 ------------------------------

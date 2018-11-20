@@ -11,7 +11,6 @@ In this part we will be adding health pick ups, ammo pick ups, targets the playe
 .. image:: img/PartFourFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_three` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_three` will be the starting project for part 4
 
 Let's get started!

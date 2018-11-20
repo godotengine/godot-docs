@@ -26,30 +26,30 @@ Because of the large difference in performance it often makes sense to re-build 
 In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
-	  features. As networking is always largely hardware and operating system dependent, however,
-	  some features may change or not be available on some target platforms. Most notably,
-	  the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
-	  well as raw access to low-level protocols like TCP and UDP.
+          features. As networking is always largely hardware and operating system dependent, however,
+          some features may change or not be available on some target platforms. Most notably,
+          the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
+          well as raw access to low-level protocols like TCP and UDP.
 
 .. note:: More about TCP/IP, UDP, and networking:
-	  https://gafferongames.com/post/udp_vs_tcp/
-	  
-	  Gaffer On Games has a lot of useful articles about networking in Games
-	  (`here <https://gafferongames.com/tags/networking>`__), including the comprehensive
-	  `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
-	  
-	  If you want to use your low-level networking library of choice instead of Godot's built-in networking,
-	  see here for an example:
-	  https://github.com/PerduGames/gdnet3
+          https://gafferongames.com/post/udp_vs_tcp/
+
+          Gaffer On Games has a lot of useful articles about networking in Games
+          (`here <https://gafferongames.com/tags/networking>`__), including the comprehensive
+          `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
+
+          If you want to use your low-level networking library of choice instead of Godot's built-in networking,
+          see here for an example:
+          https://github.com/PerduGames/gdnet3
 
 .. warning:: Adding networking to your game comes with some responsibility.
-	     It can make your application vulnerable if done wrong and may lead to cheats or exploits.
-	     It may even allow an attacker to compromise the machines your application runs on
-	     and use your servers to send spam, attack others or steal your users data if they play your game.
-	     
-	     This is always the case when networking is involved and has nothing to do with Godot.
-	     You can of course experiment, but when you release a networked application,
-	     always take care of any possible security concerns.
+             It can make your application vulnerable if done wrong and may lead to cheats or exploits.
+             It may even allow an attacker to compromise the machines your application runs on
+             and use your servers to send spam, attack others or steal your users data if they play your game.
+
+             This is always the case when networking is involved and has nothing to do with Godot.
+             You can of course experiment, but when you release a networked application,
+             always take care of any possible security concerns.
 
 Mid level abstraction
 ---------------------
@@ -276,7 +276,7 @@ every peer and RPC will work great! Here is an example:
 ::
 
     remote func pre_configure_game():
-    	var selfPeerID = get_tree().get_network_unique_id()
+        var selfPeerID = get_tree().get_network_unique_id()
 
         # Load world
         var world = load(which_level).instance()
@@ -367,7 +367,7 @@ If you have paid attention to the previous example, it's possible you noticed th
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
             get_node("/root/world/players").add_child(player)
-	[...]
+        [...]
 
 
 Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as puppets with the server being their network master.

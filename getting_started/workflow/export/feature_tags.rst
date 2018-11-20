@@ -21,7 +21,7 @@ Features can be queried at run-time from the singleton API by calling:
 
 ::
 
-	OS.has_feature(name)
+    OS.has_feature(name)
 
 
 Default features

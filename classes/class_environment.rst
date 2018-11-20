@@ -261,8 +261,6 @@ Description
 
 Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
 
- 		
-
 - DOF Blur
 
 - Motion Blur

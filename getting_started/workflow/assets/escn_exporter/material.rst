@@ -40,10 +40,10 @@ Blender. Currently only the diffuse color and a few flags (eg unshaded) are
 exported.
 
 .. warning::
-	Export of Blender materials is currently very primitive. However, it is the
-	focus of a current GSOC project
+    Export of Blender materials is currently very primitive. However, it is the
+    focus of a current GSOC project
 
 .. warning::
-	Materials are currently exported using their "Blender Render" settings.
-	When Blender 2.8 is released, this will be removed and this part of the
-	exporter will change.
+    Materials are currently exported using their "Blender Render" settings.
+    When Blender 2.8 is released, this will be removed and this part of the
+    exporter will change.

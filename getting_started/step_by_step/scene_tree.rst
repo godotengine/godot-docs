@@ -149,7 +149,7 @@ function:
  .. code-tab:: gdscript GDScript
 
     func _my_level_was_completed():
-    	get_tree().change_scene("res://levels/level2.tscn")
+        get_tree().change_scene("res://levels/level2.tscn")
 
  .. code-tab:: csharp
 

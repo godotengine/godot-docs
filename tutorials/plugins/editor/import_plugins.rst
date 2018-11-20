@@ -326,8 +326,8 @@ it sets the color as a pure red instead.
 
 ::
 
-	var material = SpatialMaterial.new()
-	material.albedo_color = color
+    var material = SpatialMaterial.new()
+    material.albedo_color = color
 
 This part makes a new :ref:`SpatialMaterial<class_SpatialMaterial>` that is the
 imported resource. We create a new instance of it and then set its albedo color

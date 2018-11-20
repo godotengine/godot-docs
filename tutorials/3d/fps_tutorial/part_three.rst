@@ -13,7 +13,6 @@ weapons fire.
 .. image:: img/PartThreeFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_two` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_two` will be the starting project for part 3
 
 Let's get started!
@@ -516,8 +515,8 @@ and insert the following code:
             return
 
         # If you are using a AudioPlayer3D, then uncomment these lines to set the position.
-        # if position != null:
-        #	audio_node.global_transform.origin = position
+        #if position != null:
+        #    audio_node.global_transform.origin = position
 
         audio_node.play()
 

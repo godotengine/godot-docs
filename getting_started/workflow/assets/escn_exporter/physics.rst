@@ -38,9 +38,9 @@ There are the following caveats:
    what you want.
 
 .. important::
-	To build compound physics shapes, parent together multiple objects with
-	rigid body enabled. The physics properties are taken from the parent-most
-	rigid body, and the rest are used as collision shapes.
+    To build compound physics shapes, parent together multiple objects with
+    rigid body enabled. The physics properties are taken from the parent-most
+    rigid body, and the rest are used as collision shapes.
 
 
 Collision Geometry Only

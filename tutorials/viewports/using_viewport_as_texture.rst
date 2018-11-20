@@ -52,16 +52,16 @@ will ensure that the :ref:`ColorRect <class_ColorRect>` takes up the entire :ref
 
 Next, we add a :ref:`Shader Material <class_ShaderMaterial>` to the :ref:`ColorRect <class_ColorRect>`.
 
-.. note:: I'm assuming you are familiar with the basics of shading for this tutorial. Even if you aren't, all the code
+.. note:: We are assuming you are familiar with the basics of shading for this tutorial. Even if you aren't, all the code
           will still be provided so you should have no problem following along.
 
 ::
 
-  shader_type canvas_item
+    shader_type canvas_item
 
-  void fragment() {
-    COLOR = vec4(UV.x, UV.y, 0.5, 1.0);
-  }
+    void fragment() {
+        COLOR = vec4(UV.x, UV.y, 0.5, 1.0);
+    }
 
 The above code renders a gradient like the one below.
 
@@ -107,7 +107,7 @@ the sphere in a nice way? One solution is to use a function that repeats on the 
 
 ::
 
-  COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0.5);
+    COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0.5);
 
 .. image:: img/planet_sincos.png
 
@@ -118,8 +118,8 @@ projection. Which translates a spherical map onto a 2D plane.
 
 .. note:: If you are interested in a little extra information on the technique, we will be converting from
           spherical coordinates into Cartesian coordinates. Spherical coordinates map the longitude and
-          latitude of the sphere, while Cartesian coordinates are for all intents and purposes a 
-          vector from the center of the sphere to the point. 
+          latitude of the sphere, while Cartesian coordinates are for all intents and purposes a
+          vector from the center of the sphere to the point.
 
 For each pixel we will calculate its 3D position on the sphere. From that we will use
 3D noise to determine a color value. By calculating the noise in 3D we solve the problem
@@ -131,14 +131,14 @@ coordinates.
 
 ::
 
-  float theta = UV.y * 3.14159;
-  float phi = UV.x * 3.14159 * 2.0;
-  vec3 unit = vec3(0.0, 0.0, 0.0);
+    float theta = UV.y * 3.14159;
+    float phi = UV.x * 3.14159 * 2.0;
+    vec3 unit = vec3(0.0, 0.0, 0.0);
 
-  unit.x = sin(phi) * sin(theta);
-  unit.y = cos(theta) * -1.0;
-  unit.z = cos(phi) * sin(theta);
-  unit = normalize(unit);
+    unit.x = sin(phi) * sin(theta);
+    unit.y = cos(theta) * -1.0;
+    unit.z = cos(phi) * sin(theta);
+    unit = normalize(unit);
 
 And if we use ``unit`` as an output ``COLOR`` value we get.
 
@@ -149,62 +149,64 @@ to make the planet. We will be using this noise function directly from a `Shader
 
 ::
 
-  vec3 hash( vec3 p ) {
-    p = vec3( dot(p,vec3(127.1, 311.7, 74.7)),
-              dot(p,vec3(269.5, 183.3, 246.1)),
-              dot(p,vec3(113.5, 271.9, 124.6)));
+    vec3 hash(vec3 p) {
+        p = vec3(dot(p, vec3(127.1, 311.7, 74.7)),
+                 dot(p, vec3(269.5, 183.3, 246.1)),
+                 dot(p, vec3(113.5, 271.9, 124.6)));
 
-    return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
-  }
+        return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
+    }
 
-  // return value noise (in x) and its derivatives (in yzw)
-  vec4 noised( in vec3 x ) {
-    // grid
-    vec3 p = floor(x);
-    vec3 w = fract(x);
-    
-    // quintic interpolant
-    vec3 u = w * w * w * (w * (w * 6.0 - 15.0) + 10.0);
-    vec3 du = 30.0 * w * w * (w * (w - 2.0) + 1.0);
-    
-    // gradients
-    vec3 ga = hash( p + vec3(0.0, 0.0, 0.0) );
-    vec3 gb = hash( p + vec3(1.0, 0.0, 0.0) );
-    vec3 gc = hash( p + vec3(0.0, 1.0, 0.0) );
-    vec3 gd = hash( p + vec3(1.0, 1.0, 0.0) );
-    vec3 ge = hash( p + vec3(0.0, 0.0, 1.0) );
-    vec3 gf = hash( p + vec3(1.0, 0.0, 1.0) );
-    vec3 gg = hash( p + vec3(0.0, 1.0, 1.0) );
-    vec3 gh = hash( p + vec3(1.0, 1.0, 1.0) );
-    
-    // projections
-    float va = dot( ga, w - vec3(0.0, 0.0, 0.0) );
-    float vb = dot( gb, w - vec3(1.0, 0.0, 0.0) );
-    float vc = dot( gc, w - vec3(0.0, 1.0, 0.0) );
-    float vd = dot( gd, w - vec3(1.0, 1.0, 0.0) );
-    float ve = dot( ge, w - vec3(0.0, 0.0, 1.0) );
-    float vf = dot( gf, w - vec3(1.0, 0.0, 1.0) );
-    float vg = dot( gg, w - vec3(0.0, 1.0, 1.0) );
-    float vh = dot( gh, w - vec3(1.0, 1.0, 1.0) );
-	
-    // interpolations
-    return vec4( va + u.x*(vb-va) + u.y*(vc-va) + u.z*(ve-va) + u.x*u.y*(va-vb-vc+vd) + u.y*u.z*(va-vc-ve+vg) + u.z*u.x*(va-vb-ve+vf) + (-va+vb+vc-vd+ve-vf-vg+vh)*u.x*u.y*u.z,    // value
-                 ga + u.x*(gb-ga) + u.y*(gc-ga) + u.z*(ge-ga) + u.x*u.y*(ga-gb-gc+gd) + u.y*u.z*(ga-gc-ge+gg) + u.z*u.x*(ga-gb-ge+gf) + (-ga+gb+gc-gd+ge-gf-gg+gh)*u.x*u.y*u.z +   // derivatives
-                 du * (vec3(vb,vc,ve) - va + u.yzx*vec3(va-vb-vc+vd,va-vc-ve+vg,va-vb-ve+vf) + u.zxy*vec3(va-vb-ve+vf,va-vb-vc+vd,va-vc-ve+vg) + u.yzx*u.zxy*(-va+vb+vc-vd+ve-vf-vg+vh) ));
-  }
+    // return value noise (in x) and its derivatives (in yzw)
+    vec4 noised(in vec3 x) {
+        // grid
+        vec3 p = floor(x);
+        vec3 w = fract(x);
+
+        // quintic interpolant
+        vec3 u = w * w * w * (w * (w * 6.0 - 15.0) + 10.0);
+        vec3 du = 30.0 * w * w * (w * (w - 2.0) + 1.0);
+
+        // gradients
+        vec3 ga = hash(p + vec3(0.0, 0.0, 0.0));
+        vec3 gb = hash(p + vec3(1.0, 0.0, 0.0));
+        vec3 gc = hash(p + vec3(0.0, 1.0, 0.0));
+        vec3 gd = hash(p + vec3(1.0, 1.0, 0.0));
+        vec3 ge = hash(p + vec3(0.0, 0.0, 1.0));
+        vec3 gf = hash(p + vec3(1.0, 0.0, 1.0));
+        vec3 gg = hash(p + vec3(0.0, 1.0, 1.0));
+        vec3 gh = hash(p + vec3(1.0, 1.0, 1.0));
+
+        // projections
+        float va = dot(ga, w - vec3(0.0, 0.0, 0.0));
+        float vb = dot(gb, w - vec3(1.0, 0.0, 0.0));
+        float vc = dot(gc, w - vec3(0.0, 1.0, 0.0));
+        float vd = dot(gd, w - vec3(1.0, 1.0, 0.0));
+        float ve = dot(ge, w - vec3(0.0, 0.0, 1.0));
+        float vf = dot(gf, w - vec3(1.0, 0.0, 1.0));
+        float vg = dot(gg, w - vec3(0.0, 1.0, 1.0));
+        float vh = dot(gh, w - vec3(1.0, 1.0, 1.0));
+
+        // interpolations
+        return vec4(
+            va + u.x*(vb-va) + u.y*(vc-va) + u.z*(ve-va) + u.x*u.y*(va-vb-vc+vd) + u.y*u.z*(va-vc-ve+vg) + u.z*u.x*(va-vb-ve+vf) + (-va+vb+vc-vd+ve-vf-vg+vh)*u.x*u.y*u.z,  // value
+            ga + u.x*(gb-ga) + u.y*(gc-ga) + u.z*(ge-ga) + u.x*u.y*(ga-gb-gc+gd) + u.y*u.z*(ga-gc-ge+gg) + u.z*u.x*(ga-gb-ge+gf) + (-ga+gb+gc-gd+ge-gf-gg+gh)*u.x*u.y*u.z +  // derivatives
+            du * (vec3(vb,vc,ve) - va + u.yzx*vec3(va-vb-vc+vd,va-vc-ve+vg,va-vb-ve+vf) + u.zxy*vec3(va-vb-ve+vf,va-vb-vc+vd,va-vc-ve+vg) + u.yzx*u.zxy*(-va+vb+vc-vd+ve-vf-vg+vh))
+        );
+    }
 
 .. note:: All credit goes to the initial author Inigo Quilez. It is published with the ``MIT`` licence.
 
-Now to use ``noised``, add the following to the  ``fragment`` function:
+Now to use ``noised``, add the following to the    ``fragment`` function:
 
 ::
 
-  vec4 n = noised(unit * 5.0);
-  COLOR.xyz = vec3(n.x * 0.5 + 0.5);
+    vec4 n = noised(unit * 5.0);
+    COLOR.xyz = vec3(n.x * 0.5 + 0.5);
 
 .. image:: img/planet_noise.png
 
-.. note:: In order to highlight the texture, I have set the material to unshaded.
+.. note:: In order to highlight the texture, we set the material to unshaded.
 
 You can see now that the noise indeed wraps seamlessly around the sphere. Although this
 looks nothing like the planet you were promised. So lets move onto something more colorful.
@@ -224,7 +226,7 @@ values whether it be floats or vector types.
 
 ::
 
-  COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n.x * 0.5 + 0.5);
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n.x * 0.5 + 0.5);
 
 The first color is blue for the ocean. The second color is a kind of reddish color (because
 all alien planets need red terrain). And finally they are mixed together by ``n.x * 0.5 + 0.5``.
@@ -239,7 +241,7 @@ And thus the whole line becomes:
 
 ::
 
-  COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n.x));
+    COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n.x));
 
 What ``smoothstep`` does is return ``0`` if the third parameter is below the first and return 1 if the
 third parameter is larger than the second and smoothly blends between ``0`` and ``1`` if the third number
@@ -257,10 +259,10 @@ instead of just one. ``n`` becomes:
 
 ::
 
-	vec4 n = noised(unit * 5.0) * 0.5;
-	n += noised(unit * 10.0) * 0.25;
-	n += noised(unit * 20.0) * 0.125;
-	n += noised(unit * 40.0) * 0.0625;
+    vec4 n = noised(unit * 5.0) * 0.5;
+    n += noised(unit * 10.0) * 0.25;
+    n += noised(unit * 20.0) * 0.125;
+    n += noised(unit * 40.0) * 0.0625;
 
 And now the planet looks like:
 
@@ -279,7 +281,7 @@ into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness m
 
 ::
 
-  COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n.x);
+    COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n.x);
 
 This line returns ``0.3`` for water and ``1.0`` for land. This means that the land is going to be quite
 rough while the water will be quite smooth.
@@ -306,7 +308,7 @@ rendering one transparent object on top of another we want to enable ``blend_pre
 
 ::
 
-  render_mode blend_premul_alpha;
+    render_mode blend_premul_alpha;
 
 This pre-multiplies the colors by the ``alpha`` value and then blends them correctly together. Typically
 when blending one transparent color on top of another, even if the background has an ``alpha`` of ``0`` (as it 
