@@ -146,7 +146,7 @@ to the region outside the blue frame you see in the 2D editor.
    .. image:: img/stretch_viewport_keep_width.gif
 
 -  Stretch Aspect = **Keep Height**: Keep aspect ratio when stretching
-   the screen. If the the screen is taller than the base size, black
+   the screen. If the screen is taller than the base size, black
    bars are added at the top and bottom (letterboxing). But if the
    screen is wider than the base resolution, the viewport will be grown
    in the horizontal direction (and more content will be visible to the

@@ -8,7 +8,7 @@ Nodes and resources
 
 Up to this tutorial, we focused on the :ref:`Node <class_Node>`
 class in Godot as that's the one you use to code behavior and
-and most of the engine's features rely on them. There is
+most of the engine's features rely on them. There is
 another datatype that is just as important:
 :ref:`Resource <class_Resource>`.
 

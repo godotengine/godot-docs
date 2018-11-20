@@ -123,7 +123,7 @@ the tree.
     You can also render your Viewports separately without nesting them like this. You just
     need to use two Viewports and to render them one after the other.
 
-Besides the node structure, the steps are the the same as with the single-pass post-processing shader.
+Besides the node structure, the steps are the same as with the single-pass post-processing shader.
 
 As an example, you could write a full screen Gaussian blur effect by attaching the following pieces of code
 to each of the :ref:`ViewportContainers <class_ViewportContainer>`. The order in which you apply the shaders
