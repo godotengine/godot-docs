@@ -164,10 +164,17 @@ Some useful keybindings:
 View menu
 ---------
 
-The view options are controlled by the "[ view ]" menu. Pay attention to
-this little menu inside the window because it is often overlooked!
+The view options are controlled by the "View" menu in the viewport's toolbar.
 
 .. image:: img/tuto_3d6.png
+
+You can hide the gizmos in the 3D view of the editor through this menu:
+
+.. image:: img/tuto_3d6_1.png
+
+To hide a specific type of gizmos, you can toggle them off in the "View" menu.
+ 
+.. image:: img/tuto_3d6_2.png
 
 Default environment
 -------------------
