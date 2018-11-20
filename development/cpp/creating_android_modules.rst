@@ -217,7 +217,7 @@ Now you can refer to those resources by their id (``R.string.my_string``, and th
 by importing the ``com.godot.game.R`` class in your Java code.
 
 Assets
----------
+------
 
 Similarly, you can add any type of raw asset files to your app's asset directory like this:
 
