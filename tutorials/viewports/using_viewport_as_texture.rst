@@ -52,10 +52,10 @@ will ensure that the :ref:`ColorRect <class_ColorRect>` takes up the entire :ref
 
 Next, we add a :ref:`Shader Material <class_ShaderMaterial>` to the :ref:`ColorRect <class_ColorRect>`.
 
-.. note:: We are assuming you are familiar with the basics of shading for this tutorial. Even if you aren't, all the code
-          will still be provided so you should have no problem following along.
+.. note:: Basic familiarity with shading is recommended for this tutorial. However, even if you are new
+          to shaders, all the code will be provided so you should have no problem following along.
 
-::
+.. code-block:: glsl
 
     shader_type canvas_item
 
@@ -93,7 +93,7 @@ Your sphere should now be colored in with the colors we rendered to the Viewport
 
 Notice the ugly seam that forms where the texture wraps around? This is because we are picking
 a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic
-problem in 2D map projection. Gamedevs often have a 2-dimensional map they want to project
+problem in 2D map projection. Game developers often have a 2-dimensional map they want to project
 onto a sphere but when it wraps around it has large seams. There is an elegant work around for this
 problem that we will illustrate in the next section.
 
@@ -105,7 +105,7 @@ seam created by our texture coordinates. So how do we get a range of coordinates
 the sphere in a nice way? One solution is to use a function that repeats on the domain of our texture.
 ``sin`` and ``cos`` are two such functions. Lets apply them to the texture and see what happens
 
-::
+.. code-block:: glsl
 
     COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0.5);
 
@@ -129,7 +129,7 @@ surface of the sphere you never hit an edge, and hence you never create a seam o
 a pinch point on the pole. The following code converts the ``UVs`` into Cartesion
 coordinates.
 
-::
+.. code-block:: glsl
 
     float theta = UV.y * 3.14159;
     float phi = UV.x * 3.14159 * 2.0;
@@ -145,9 +145,9 @@ And if we use ``unit`` as an output ``COLOR`` value we get.
 .. image:: img/planet_normals.png
 
 Now that we can calculate the 3D position of the surface of the sphere we can use 3D noise
-to make the planet. We will be using this noise function directly from a `Shadertoy <https://www.shadertoy.com/view/4dffRH>`_:
+to make the planet. We will be using this noise function directly from a `Shadertoy <https://www.shadertoy.com/view/Xsl3Dl>`_:
 
-::
+.. code-block:: glsl
 
     vec3 hash(vec3 p) {
         p = vec3(dot(p, vec3(127.1, 311.7, 74.7)),
@@ -157,52 +157,29 @@ to make the planet. We will be using this noise function directly from a `Shader
         return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
     }
 
-    // return value noise (in x) and its derivatives (in yzw)
-    vec4 noised(in vec3 x) {
-        // grid
-        vec3 p = floor(x);
-        vec3 w = fract(x);
-
-        // quintic interpolant
-        vec3 u = w * w * w * (w * (w * 6.0 - 15.0) + 10.0);
-        vec3 du = 30.0 * w * w * (w * (w - 2.0) + 1.0);
-
-        // gradients
-        vec3 ga = hash(p + vec3(0.0, 0.0, 0.0));
-        vec3 gb = hash(p + vec3(1.0, 0.0, 0.0));
-        vec3 gc = hash(p + vec3(0.0, 1.0, 0.0));
-        vec3 gd = hash(p + vec3(1.0, 1.0, 0.0));
-        vec3 ge = hash(p + vec3(0.0, 0.0, 1.0));
-        vec3 gf = hash(p + vec3(1.0, 0.0, 1.0));
-        vec3 gg = hash(p + vec3(0.0, 1.0, 1.0));
-        vec3 gh = hash(p + vec3(1.0, 1.0, 1.0));
-
-        // projections
-        float va = dot(ga, w - vec3(0.0, 0.0, 0.0));
-        float vb = dot(gb, w - vec3(1.0, 0.0, 0.0));
-        float vc = dot(gc, w - vec3(0.0, 1.0, 0.0));
-        float vd = dot(gd, w - vec3(1.0, 1.0, 0.0));
-        float ve = dot(ge, w - vec3(0.0, 0.0, 1.0));
-        float vf = dot(gf, w - vec3(1.0, 0.0, 1.0));
-        float vg = dot(gg, w - vec3(0.0, 1.0, 1.0));
-        float vh = dot(gh, w - vec3(1.0, 1.0, 1.0));
-
-        // interpolations
-        return vec4(
-            va + u.x*(vb-va) + u.y*(vc-va) + u.z*(ve-va) + u.x*u.y*(va-vb-vc+vd) + u.y*u.z*(va-vc-ve+vg) + u.z*u.x*(va-vb-ve+vf) + (-va+vb+vc-vd+ve-vf-vg+vh)*u.x*u.y*u.z,  // value
-            ga + u.x*(gb-ga) + u.y*(gc-ga) + u.z*(ge-ga) + u.x*u.y*(ga-gb-gc+gd) + u.y*u.z*(ga-gc-ge+gg) + u.z*u.x*(ga-gb-ge+gf) + (-ga+gb+gc-gd+ge-gf-gg+gh)*u.x*u.y*u.z +  // derivatives
-            du * (vec3(vb,vc,ve) - va + u.yzx*vec3(va-vb-vc+vd,va-vc-ve+vg,va-vb-ve+vf) + u.zxy*vec3(va-vb-ve+vf,va-vb-vc+vd,va-vc-ve+vg) + u.yzx*u.zxy*(-va+vb+vc-vd+ve-vf-vg+vh))
-        );
+    float noise(vec3 p) {
+      vec3 i = floor(p);
+      vec3 f = fract(p);
+      vec3 u = f * f * (3.0 - 2.0 * f);
+      
+      return mix(mix(mix(dot(hash(i + vec3(0.0, 0.0, 0.0)), f - vec3(0.0, 0.0, 0.0)), 
+                         dot(hash(i + vec3(1.0, 0.0, 0.0)), f - vec3(1.0, 0.0, 0.0)), u.x),
+                     mix(dot(hash(i + vec3(0.0, 1.0, 0.0)), f - vec3(0.0, 1.0, 0.0)), 
+                         dot(hash(i + vec3(1.0, 1.0, 0.0)), f - vec3(1.0, 1.0, 0.0)), u.x), u.y),
+                 mix(mix(dot(hash(i + vec3(0.0, 0.0, 1.0)), f - vec3(0.0, 0.0, 1.0)), 
+                         dot(hash(i + vec3(1.0, 0.0, 1.0)), f - vec3(1.0, 0.0, 1.0)), u.x),
+                     mix(dot(hash(i + vec3(0.0, 1.0, 1.0)), f - vec3(0.0, 1.0, 1.0)), 
+                         dot(hash(i + vec3(1.0, 1.0, 1.0)), f - vec3(1.0, 1.0, 1.0)), u.x), u.y), u.z );
     }
 
-.. note:: All credit goes to the initial author Inigo Quilez. It is published with the ``MIT`` licence.
+.. note:: All credit goes to the author, Inigo Quilez. It is published with the ``MIT`` licence.
 
-Now to use ``noised``, add the following to the    ``fragment`` function:
+Now to use ``noise``, add the following to the    ``fragment`` function:
 
-::
+.. code-block:: glsl
 
-    vec4 n = noised(unit * 5.0);
-    COLOR.xyz = vec3(n.x * 0.5 + 0.5);
+    float n = noise(unit * 5.0);
+    COLOR.xyz = vec3(n * 0.5 + 0.5);
 
 .. image:: img/planet_noise.png
 
@@ -214,17 +191,16 @@ looks nothing like the planet you were promised. So lets move onto something mor
 Coloring the planet
 -------------------
 
-Now to make the planet colors. There are many ways to do this, if you look on `Shadertoy <https://www.shadertoy.com>`_
-you will find all kinds of ways of mapping colors to procedural planet terrain. For now
-we will stick with a simple gradient between water and land.
+Now to make the planet colors. While, there are many ways to do this, for now we will stick 
+with a gradient between water and land.
 
-To make a gradient in glsl we use the ``mix`` function. ``mix`` takes two values to interpolate
+To make a gradient in GLSL we use the ``mix`` function. ``mix`` takes two values to interpolate
 between and a third parameter to choose how much to interpolate between them, in essence
 it *mixes* the two values together. In other APIs this function is often called ``lerp``.
 Although, ``lerp`` is typically reserved for mixing two floats together, ``mix`` can take any
 values whether it be floats or vector types.
 
-::
+.. code-block:: glsl
 
     COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n.x * 0.5 + 0.5);
 
@@ -239,7 +215,7 @@ That is a little more blurry than we want. Planets typically have a relatively c
 land and sea. In order to do that we will change the last term to ``smoothstep(-0.1, 0.0, n.x)``.
 And thus the whole line becomes:
 
-::
+.. code-block:: glsl
 
     COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n.x));
 
@@ -257,12 +233,12 @@ overall blobby structure of the continents. Then another layer breaks up the edg
 another, and so on. What we will do is calculate ``n`` with four lines of shader code
 instead of just one. ``n`` becomes:
 
-::
+.. code-block:: glsl
 
-    vec4 n = noised(unit * 5.0) * 0.5;
-    n += noised(unit * 10.0) * 0.25;
-    n += noised(unit * 20.0) * 0.125;
-    n += noised(unit * 40.0) * 0.0625;
+    float n = noise(unit * 5.0) * 0.5;
+    n += noise(unit * 10.0) * 0.25;
+    n += noise(unit * 20.0) * 0.125;
+    n += noise(unit * 40.0) * 0.0625;
 
 And now the planet looks like:
 
@@ -279,9 +255,9 @@ One final thing to make this look more like a planet. The ocean and the land ref
 So we want the ocean to shine a little more than the land. We can do this by passing a fourth value
 into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness map.
 
-::
+.. code-block:: glsl
 
-    COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n.x);
+    COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n);
 
 This line returns ``0.3`` for water and ``1.0`` for land. This means that the land is going to be quite
 rough while the water will be quite smooth.
@@ -306,7 +282,7 @@ drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere
 go into the :ref:`Viewport <class_Viewport>` and set "Transparent Bg" to on. Since we are now
 rendering one transparent object on top of another we want to enable ``blend_premul_alpha``:
 
-::
+.. code-block:: glsl
 
     render_mode blend_premul_alpha;
 
@@ -320,4 +296,4 @@ effect of the reflections on the ocean.
 
 .. image:: img/planet_ocean_reflect.png
 
-And there you have it. A simple procedural planet generated using a :ref:`Viewport <class_Viewport>`.
+And there you have it. A procedural planet generated using a :ref:`Viewport <class_Viewport>`.
