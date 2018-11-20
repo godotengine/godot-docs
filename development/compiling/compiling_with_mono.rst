@@ -12,6 +12,7 @@ Requirements
 - MSBuild
 - NuGet
 - pkg-config
+- NuGet
 
 You may need to import necessary certificates for NuGet to perform HTTPS requests. You can do this with the following command (on Windows, you can run it from the Mono command line prompt):
 
