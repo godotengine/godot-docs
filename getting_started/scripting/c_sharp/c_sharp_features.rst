@@ -140,7 +140,7 @@ It is possible to bind values when establishing a connection by passing an objec
     {
         var plusButton = (Button)GetNode("PlusButton");
         var minusButton = (Button)GetNode("MinusButton");
-        
+
         plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
         minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
     }

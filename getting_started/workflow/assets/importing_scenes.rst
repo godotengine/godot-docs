@@ -11,7 +11,7 @@ When dealing with 3D assets, Godot has a flexible and configurable importer.
 Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
 transferred as close as possible.
 
-Godot supports the following 3D *scene file fomats*: 
+Godot supports the following 3D *scene file fomats*:
 
 * DAE (Collada), which is currently the most mature workflow.
 * GLTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
@@ -25,7 +25,7 @@ Why not FBX?
 Most game engines use the FBX format for importing 3D scenes, which is
 definitely one of the most standardized in the industry. However, this
 format requires the use of a closed library from Autodesk which is
-distributed with a more restrictive licensing terms than Godot. 
+distributed with a more restrictive licensing terms than Godot.
 
 The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
@@ -53,7 +53,7 @@ Exporting ESCN files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The most powerful one, called `godot-blender-exporter
-<https://github.com/godotengine/godot-blender-exporter>`__. 
+<https://github.com/godotengine/godot-blender-exporter>`__.
 It uses .escn files which is kind of another name of .tscn file(Godot scene file),
 it keeps as much information as possible from a Blender scene.
 
@@ -99,7 +99,7 @@ Allows setting a specific name to the generated root node.
 Custom Script
 ^^^^^^^^^^^^^
 
-A special script to process the whole scene after import can be provided. 
+A special script to process the whole scene after import can be provided.
 This is great for post processing, changing materials, doing funny stuff
 with the geometry etc.
 
@@ -123,12 +123,12 @@ Storage
 
 By default, Godot imports a single scene. This option allows specifying
 that nodes below the root will each be a separate scene and instanced
-into the imported one. 
+into the imported one.
 
 Of course, instancing such imported scenes in other places manually works too.
 
 
-Materials 
+Materials
 ~~~~~~~~~
 
 Location
@@ -262,7 +262,7 @@ following dialog will appear:
 
 .. image:: img/scene_import4.png
 
-In inherited scenes, the only limitations for modifications are: 
+In inherited scenes, the only limitations for modifications are:
 
 * Nodes can't be removed (but can be added anywhere).
 * Sub-Resources can't be edited (save them externally as described above for this)
@@ -295,7 +295,7 @@ Option "-col" will work only for Mesh nodes. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh.
 
 However, it is often the case that the visual geometry is too complex or
-too un-smooth for collisions, which ends up not working well. 
+too un-smooth for collisions, which ends up not working well.
 
 To solve this, the "-colonly" modifier exists, which will remove the mesh upon
 import and create a :ref:`class_staticbody` collision instead.

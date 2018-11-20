@@ -12,7 +12,7 @@ In this part we're going to add grenades to the player, give the player the abil
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_four` before moving on to this part of the tutorial.
           The finished project from :ref:`doc_fps_tutorial_part_four` will be the starting project for part 5
-          
+
 Let's get started!
 
 Adding grenades
@@ -34,7 +34,7 @@ coordinates instead of local coordinates, so we have ``Local Coords`` unchecked 
 Let's write the code needed for the grenade. Select ``Grenade`` and make a new script called ``Grenade.gd``. Add the following:
 
 ::
-    
+
     extends RigidBody
 
     const GRENADE_DAMAGE = 60
@@ -55,35 +55,35 @@ Let's write the code needed for the grenade. Select ``Grenade`` and make a new s
         grenade_mesh = $Grenade
         blast_area = $Blast_Area
         explosion_particles = $Explosion
-        
+
         explosion_particles.emitting = false
         explosion_particles.one_shot = true
 
     func _process(delta):
-        
+
         if grenade_timer < GRENADE_TIME:
             grenade_timer += delta
             return
         else:
             if explosion_wait_timer <= 0:
                 explosion_particles.emitting = true
-                
+
                 grenade_mesh.visible = false
                 rigid_shape.disabled = true
-                
+
                 mode = RigidBody.MODE_STATIC
-                
+
                 var bodies = blast_area.get_overlapping_bodies()
                 for body in bodies:
                     if body.has_method("bullet_hit"):
                         body.bullet_hit(GRENADE_DAMAGE, body.global_transform.looking_at(global_transform.origin, Vector3(0,1,0)) )
-                
+
                 # This would be the perfect place to play a sound!
-                
-            
+
+
             if explosion_wait_timer < EXPLOSION_WAIT_TIME:
                 explosion_wait_timer += delta
-                
+
                 if explosion_wait_timer >= EXPLOSION_WAIT_TIME:
                     queue_free()
 
@@ -93,7 +93,7 @@ Let's go over what's happening, starting with the class variables:
 * ``GRENADE_TIME``: The amount of time the grenade takes (in seconds) to explode once it's created/thrown.
 * ``grenade_timer``: A variable for tracking how long the grenade has been created/thrown.
 * ``EXPLOSION_WAIT_TIME``: The amount of time needed (in seconds) to wait before we destroy the grenade scene after the explosion
-* ``explosion_wait_timer``: A variable for tracking how much time has passed since the grenade exploded. 
+* ``explosion_wait_timer``: A variable for tracking how much time has passed since the grenade exploded.
 * ``rigid_shape``: The :ref:`CollisionShape <class_CollisionShape>` for the grenade's :ref:`RigidBody <class_RigidBody>`.
 * ``grenade_mesh``: The :ref:`MeshInstance <class_MeshInstance>` for the grenade.
 * ``blast_area``: The blast :ref:`Area <class_Area>` used to damage things when the grenade explodes.
@@ -154,7 +154,7 @@ the environment and needs to stick to something.
 Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Add the following:
 
 ::
-    
+
     extends RigidBody
 
     const GRENADE_DAMAGE = 40
@@ -180,67 +180,67 @@ Select ``Sticky_Grenade`` and make a new script called ``Sticky_Grenade.gd``. Ad
         grenade_mesh = $Sticky_Grenade
         blast_area = $Blast_Area
         explosion_particles = $Explosion
-        
+
         explosion_particles.emitting = false
         explosion_particles.one_shot = true
-        
+
         $Sticky_Area.connect("body_entered", self, "collided_with_body")
 
 
     func collided_with_body(body):
-        
+
         if body == self:
             return
-        
+
         if player_body != null:
             if body == player_body:
                 return
-        
+
         if attached == false:
             attached = true
             attach_point = Spatial.new()
             body.add_child(attach_point)
             attach_point.global_transform.origin = global_transform.origin
-            
+
             rigid_shape.disabled = true
-            
+
             mode = RigidBody.MODE_STATIC
 
 
     func _process(delta):
-        
+
         if attached == true:
             if attach_point != null:
                 global_transform.origin = attach_point.global_transform.origin
-        
+
         if grenade_timer < GRENADE_TIME:
             grenade_timer += delta
             return
         else:
             if explosion_wait_timer <= 0:
                 explosion_particles.emitting = true
-                
+
                 grenade_mesh.visible = false
                 rigid_shape.disabled = true
-                
+
                 mode = RigidBody.MODE_STATIC
-                
+
                 var bodies = blast_area.get_overlapping_bodies()
                 for body in bodies:
                     if body.has_method("bullet_hit"):
                         body.bullet_hit(GRENADE_DAMAGE, body.global_transform.looking_at(global_transform.origin, Vector3(0,1,0)) )
-                
+
                 # This would be the perfect place to play a sound!
-            
-            
+
+
             if explosion_wait_timer < EXPLOSION_WAIT_TIME:
                 explosion_wait_timer += delta
-                
+
                 if explosion_wait_timer >= EXPLOSION_WAIT_TIME:
                     if attach_point != null:
                         attach_point.queue_free()
                     queue_free()
-                
+
 The code above is almost identical to the code for ``Grenade.gd``, so let's just go over what's changed.
 
 First, we have a few more class variables:
@@ -309,7 +309,7 @@ the rotation of ``Grenade_Toss_Pos``, you can change the angle the grenades are 
 Okay, now let's start making the grenades work with the player. Add the following class variables to ``Player.gd``:
 
 ::
-    
+
     var grenade_amounts = {"Grenade":2, "Sticky Grenade":2}
     var current_grenade = "Grenade"
     var grenade_scene = preload("res://Grenade.tscn")
@@ -321,7 +321,7 @@ Okay, now let's start making the grenades work with the player. Add the followin
 * ``grenade_scene``: The grenade scene we worked on earlier.
 * ``sticky_grenade_scene``: The sticky grenade scene we worked on earlier.
 * ``GRENADE_THROW_FORCE``: The force at which the player will throw the grenades at.
-         
+
 Most of these variables are similar to how we have our weapons set up.
 
 .. tip:: While it's possible to make a more modular grenade system, I found it was not worth the additional complexity for just two grenades.
@@ -332,7 +332,7 @@ ______
 Now we need to add some code in ``_process_input`` Add the following to ``_process_input``:
 
 ::
-    
+
     # ----------------------------------
     # Changing and throwing grenades
 
@@ -345,7 +345,7 @@ Now we need to add some code in ``_process_input`` Add the following to ``_proce
     if Input.is_action_just_pressed("fire_grenade"):
         if grenade_amounts[current_grenade] > 0:
             grenade_amounts[current_grenade] -= 1
-            
+
             var grenade_clone
             if current_grenade == "Grenade":
                 grenade_clone = grenade_scene.instance()
@@ -353,12 +353,12 @@ Now we need to add some code in ``_process_input`` Add the following to ``_proce
                 grenade_clone = sticky_grenade_scene.instance()
                 # Sticky grenades will stick to the player if we do not pass ourselves
                 grenade_clone.player_body = self
-            
+
             get_tree().root.add_child(grenade_clone)
             grenade_clone.global_transform = $Rotation_Helper/Grenade_Toss_Pos.global_transform
             grenade_clone.apply_impulse(Vector3(0,0,0), grenade_clone.global_transform.basis.z * GRENADE_THROW_FORCE)
     # ----------------------------------
-         
+
 Let's go over what's happening here.
 
 First, we check to see if the ``change_grenade`` action has just been pressed. If it has, we then check to see which grenade the player is
@@ -383,7 +383,7 @@ We still need a way to show the player how many grenades are left, and we should
 First, let's change some of the code in ``Player.gd`` to show how many grenades are left. Change ``process_UI`` to the following:
 
 ::
-    
+
     func process_UI(delta):
         if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
             # First line: Health, second line: Grenades
@@ -401,7 +401,7 @@ Now we'll show how many grenades the player has left in the UI.
 While we're still in ``Player.gd``, let's add a function to add grenades to the player. Add the following function to ``Player.gd``:
 
 ::
-    
+
     func add_grenade(additional_grenade):
         grenade_amounts[current_grenade] += additional_grenade
         grenade_amounts[current_grenade] = clamp(grenade_amounts[current_grenade], 0, 4)
@@ -410,7 +410,7 @@ Now we can add a grenade using ``add_grenade``, and it will automatically be cla
 
 .. tip:: You can change the ``4`` to a constant if you want. You'd need to make a new global constant, something like ``MAX_GRENADES``, and
          then change the clamp from ``clamp(grenade_amounts[current_grenade], 0, 4)`` to ``clamp(grenade_amounts[current_grenade], 0, MAX_GRENADES)``
-         
+
          If you do not want to limit how many grenades the player can carry, remove the line that clamps the grenades altogether!
 
 Now we have a function to add grenades, let's open up ``AmmoPickup.gd`` and use it!
@@ -418,13 +418,13 @@ Now we have a function to add grenades, let's open up ``AmmoPickup.gd`` and use 
 Open up ``AmmoPickup.gd`` and go to the ``trigger_body_entered`` function. Change it to the following:
 
 ::
-    
+
     func trigger_body_entered(body):
         if body.has_method("add_ammo"):
             body.add_ammo(AMMO_AMOUNTS[kit_size])
             respawn_timer = RESPAWN_TIME
             kit_size_change_values(kit_size, false)
-        
+
         if body.has_method("add_grenade"):
             body.add_grenade(GRENADE_AMOUNTS[kit_size])
             respawn_timer = RESPAWN_TIME
@@ -436,9 +436,9 @@ You may have noticed we are using a new constant we have not defined yet, ``GREN
 to ``AmmoPickup.gd`` with the other class variables:
 
 ::
-    
+
     const GRENADE_AMOUNTS = [2, 0]
-    
+
 * ``GRENADE_AMOUNTS``: The amount of grenades each pick up contains.
 
 Notice how the second element in ``GRENADE_AMOUNTS`` is ``0``. This is so the small ammo pick up does not give the player
@@ -457,7 +457,7 @@ Next let's give the player the ability to pick up and throw :ref:`RigidBody <cla
 Open up ``Player.gd`` and add the following class variables:
 
 ::
-    
+
     var grabbed_object = null
     const OBJECT_THROW_FORCE = 120
     const OBJECT_GRAB_DISTANCE = 7
@@ -471,35 +471,35 @@ Open up ``Player.gd`` and add the following class variables:
 With that done, all we need to do is add some code to ``process_input``:
 
 ::
-    
+
     # ----------------------------------
     # Grabbing and throwing objects
 
     if Input.is_action_just_pressed("fire") and current_weapon_name == "UNARMED":
         if grabbed_object == null:
             var state = get_world().direct_space_state
-            
+
             var center_position = get_viewport().size/2
             var ray_from = camera.project_ray_origin(center_position)
             var ray_to = ray_from + camera.project_ray_normal(center_position) * OBJECT_GRAB_RAY_DISTANCE
-            
+
             var ray_result = state.intersect_ray(ray_from, ray_to, [self, $Rotation_Helper/Gun_Fire_Points/Knife_Point/Area])
             if ray_result != null:
                 if ray_result["collider"] is RigidBody:
                     grabbed_object = ray_result["collider"]
                     grabbed_object.mode = RigidBody.MODE_STATIC
-                    
+
                     grabbed_object.collision_layer = 0
                     grabbed_object.collision_mask = 0
-        
+
         else:
             grabbed_object.mode = RigidBody.MODE_RIGID
-            
+
             grabbed_object.apply_impulse(Vector3(0,0,0), -camera.global_transform.basis.z.normalized() * OBJECT_THROW_FORCE)
-            
+
             grabbed_object.collision_layer = 1
             grabbed_object.collision_mask = 1
-            
+
             grabbed_object = null
 
     if grabbed_object != null:
@@ -545,10 +545,10 @@ We first set the :ref:`RigidBody <class_RigidBody>` we are holding mode to ``MOD
 
 .. note:: This is making a rather large assumption that all the rigid bodies will be using ``MODE_RIGID``. While that is the case for this tutorial series,
           that may not be the case in other projects.
-          
+
           If you have :ref:`RigidBody <class_RigidBody>`'s with different modes, you may need to store the mode of the :ref:`RigidBody <class_RigidBody>` you
           have picked up into a class variable so you can change it back to the mode it was in before you picked it up.
-  
+
 Then we apply an impulse to send it flying forward. We send it flying in the direction the camera is facing, using the force we set in the ``OBJECT_THROW_FORCE`` variable.
 
 We then set the grabbed :ref:`RigidBody <class_RigidBody>`'s collision layer and mask to ``1``, so it can collide with anything on layer ``1`` again.
@@ -573,7 +573,7 @@ Before we test this, we need to change something in ``_physics_process``. While 
 want the player to be able to change weapons or reload, so change ``_physics_process`` to the following:
 
 ::
-    
+
     func _physics_process(delta):
         process_input(delta)
         process_view_input(delta)
@@ -587,7 +587,7 @@ want the player to be able to change weapons or reload, so change ``_physics_pro
         process_UI(delta)
 
 Now the player cannot change weapons or reload while holding an object.
-    
+
 Now you can grab and throw RigidBody nodes while you're in the ``UNARMED`` state! Go give it a try!
 
 Adding a turret
@@ -615,7 +615,7 @@ Now that we've looked at how the scene is set up, lets start writing the code fo
 Add the following to ``Turret.gd``:
 
 ::
-    
+
     extends Spatial
 
     export (bool) var use_raycast = false
@@ -656,46 +656,46 @@ Add the following to ``Turret.gd``:
     var bullet_scene = preload("Bullet_Scene.tscn")
 
     func _ready():
-        
+
         $Vision_Area.connect("body_entered", self, "body_entered_vision")
         $Vision_Area.connect("body_exited", self, "body_exited_vision")
-        
+
         node_turret_head = $Head
         node_raycast = $Head/Ray_Cast
         node_flash_one = $Head/Flash
         node_flash_two = $Head/Flash_2
-        
+
         node_raycast.add_exception(self)
         node_raycast.add_exception($Base/Static_Body)
         node_raycast.add_exception($Head/Static_Body)
         node_raycast.add_exception($Vision_Area)
-        
+
         node_flash_one.visible = false
         node_flash_two.visible = false
-        
+
         smoke_particles = $Smoke
         smoke_particles.emitting = false
-        
+
         turret_health = MAX_TURRET_HEALTH
 
 
     func _physics_process(delta):
-        
+
         if is_active == true:
-            
+
             if flash_timer > 0:
                 flash_timer -= delta
-                
+
                 if flash_timer <= 0:
                     node_flash_one.visible = false
                     node_flash_two.visible = false
-            
+
             if current_target != null:
-                
+
                 node_turret_head.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0, 1, 0))
-                
+
                 if turret_health > 0:
-                    
+
                     if ammo_in_turret > 0:
                         if fire_timer > 0:
                             fire_timer -= delta
@@ -706,7 +706,7 @@ Add the following to ``Turret.gd``:
                             ammo_reload_timer -= delta
                         else:
                             ammo_in_turret = AMMO_IN_FULL_TURRET
-        
+
         if turret_health <= 0:
             if destroyed_timer > 0:
                 destroyed_timer -= delta
@@ -716,40 +716,40 @@ Add the following to ``Turret.gd``:
 
 
     func fire_bullet():
-    
+
     if use_raycast == true:
         node_raycast.look_at(current_target.global_transform.origin + Vector3(0, PLAYER_HEIGHT, 0), Vector3(0,1,0))
-        
+
         node_raycast.force_raycast_update()
-        
+
         if node_raycast.is_colliding():
             var body = node_raycast.get_collider()
             if body.has_method("bullet_hit"):
                 body.bullet_hit(TURRET_DAMAGE_RAYCAST, node_raycast.get_collision_point())
-        
+
         ammo_in_turret -= 1
-        
+
     else:
         var clone = bullet_scene.instance()
         var scene_root = get_tree().root.get_children()[0]
         scene_root.add_child(clone)
-        
+
         clone.global_transform = $Head/Barrel_End.global_transform
         clone.scale = Vector3(8, 8, 8)
         clone.BULLET_DAMAGE = TURRET_DAMAGE_BULLET
         clone.BULLET_SPEED = 60
-                
+
         ammo_in_turret -= 1
-        
+
     node_flash_one.visible = true
     node_flash_two.visible = true
-    
+
     flash_timer = FLASH_TIME
     fire_timer = FIRE_TIME
-    
+
     if ammo_in_turret <= 0:
         ammo_reload_timer = AMMO_RELOAD_TIME
-        
+
 
     func body_entered_vision(body):
         if current_target == null:
@@ -763,7 +763,7 @@ Add the following to ``Turret.gd``:
             if body == current_target:
                 current_target = null
                 is_active = false
-                
+
                 flash_timer = 0
                 fire_timer = 0
                 node_flash_one.visible = false
@@ -772,7 +772,7 @@ Add the following to ``Turret.gd``:
 
     func bullet_hit(damage, bullet_hit_pos):
         turret_health -= damage
-        
+
         if turret_health <= 0:
             smoke_particles.emitting = true
             destroyed_timer = DESTROYED_TIME
@@ -916,7 +916,7 @@ select one of the :ref:`StaticBody <class_StaticBody>` nodes from either ``Base`
 Add the following code to ``TurretBodies.gd``:
 
 ::
-    
+
     extends StaticBody
 
     export (NodePath) var path_to_turret_root
@@ -927,7 +927,7 @@ Add the following code to ``TurretBodies.gd``:
     func bullet_hit(damage, bullet_hit_pos):
         if path_to_turret_root != null:
             get_node(path_to_turret_root).bullet_hit(damage, bullet_hit_pos)
-            
+
 All this code does is call ``bullet_hit`` on whatever node ``path_to_turret_root`` leads to. Go back to the editor and assign the :ref:`NodePath <class_NodePath>`
 to the ``Turret`` node.
 
@@ -941,7 +941,7 @@ The last thing we need to do is add a way for the player to be hurt. Since all o
 Open ``Player.gd`` and add the following:
 
 ::
-    
+
     func bullet_hit(damage, bullet_hit_pos):
         health -= damage
 

@@ -25,7 +25,7 @@ Examine this concrete GDScript example:
 
     # Define a format string with placeholder '%s'
     var format_string = "We're waiting for %s."
-    
+
     # Using the '%' operator, the placeholder is replaced with the desired value
     var actual_string = format_string % "Godot"
 
@@ -78,7 +78,7 @@ format specifier with ``*``, see `dynamic padding`_):
 
     var format_string = "%s was reluctant to learn %s, but now he enjoys it."
     var actual_string = format_string % ["Estragon", "GDScript"]
-    
+
     print(actual_string)
     # Output: "Estragon was reluctant to learn GDScript, but now he enjoys it."
 

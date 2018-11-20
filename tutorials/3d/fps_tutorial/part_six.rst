@@ -15,7 +15,7 @@ This is the last part of the FPS tutorial, by the end of this you will have a so
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_five` before moving on to this part of the tutorial.
           The finished project from :ref:`doc_fps_tutorial_part_four` will be the starting project for part 6
-          
+
 Let's get started!
 
 Adding the main menu
@@ -50,24 +50,24 @@ Select ``Main_Menu`` (the root node) and create a new script called ``Main_Menu.
         start_menu = $Start_Menu
         level_select_menu = $Level_Select_Menu
         options_menu = $Options_Menu
-        
+
         $Start_Menu/Button_Start.connect("pressed", self, "start_menu_button_pressed", ["start"])
         $Start_Menu/Button_Open_Godot.connect("pressed", self, "start_menu_button_pressed", ["open_godot"])
         $Start_Menu/Button_Options.connect("pressed", self, "start_menu_button_pressed", ["options"])
         $Start_Menu/Button_Quit.connect("pressed", self, "start_menu_button_pressed", ["quit"])
-        
+
         $Level_Select_Menu/Button_Back.connect("pressed", self, "level_select_menu_button_pressed", ["back"])
         $Level_Select_Menu/Button_Level_Testing_Area.connect("pressed", self, "level_select_menu_button_pressed", ["testing_scene"])
         $Level_Select_Menu/Button_Level_Space.connect("pressed", self, "level_select_menu_button_pressed", ["space_level"])
         $Level_Select_Menu/Button_Level_Ruins.connect("pressed", self, "level_select_menu_button_pressed", ["ruins_level"])
-        
+
         $Options_Menu/Button_Back.connect("pressed", self, "options_menu_button_pressed", ["back"])
         $Options_Menu/Button_Fullscreen.connect("pressed", self, "options_menu_button_pressed", ["fullscreen"])
         $Options_Menu/Check_Button_VSync.connect("pressed", self, "options_menu_button_pressed", ["vsync"])
         $Options_Menu/Check_Button_Debug.connect("pressed", self, "options_menu_button_pressed", ["debug"])
-        
+
         Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-        
+
         var globals = get_node("/root/Globals")
         $Options_Menu/HSlider_Mouse_Sensitivity.value = globals.mouse_sensitivity
         $Options_Menu/HSlider_Joypad_Sensitivity.value = globals.joypad_sensitivity
@@ -162,7 +162,7 @@ In ``level_select_menu_button_pressed``, we check to see which button is pressed
 
 If the ``back`` button has been pressed, we change the currently visible panels to return to the main menu.
 
-If one of the scene changing buttons are pressed, we fist call ``set_mouse_and_joypad_sensitivity`` so the singleton (``Globals.gd``) has the values from the :ref:`HSlider 
+If one of the scene changing buttons are pressed, we fist call ``set_mouse_and_joypad_sensitivity`` so the singleton (``Globals.gd``) has the values from the :ref:`HSlider
 <class_HSlider>` nodes.
 Then we tell the singleton to change nodes using its ``load_new_scene`` function, passing in the file path of the scene the player has selected.
 
@@ -303,12 +303,12 @@ Open up ``Globals.gd`` and add the following class variables:
 
     # ------------------------------------
     # All of the GUI/UI related variables
-    
+
     var canvas_layer = null
-    
+
     const DEBUG_DISPLAY_SCENE = preload("res://Debug_Display.tscn")
     var debug_display = null
-    
+
     # ------------------------------------
 
 * ``canvas_layer``: A canvas layer so the GUI/UI created in ``Globals.gd`` is always drawn on top.
@@ -336,7 +336,7 @@ This is because nodes will not be freed/destroyed when you change scene, meaning
 instancing/spawning lots of nodes and you are not freeing them.
 
 ______
-        
+
 Now we need to add ``set_debug_display`` to ``Globals.gd``:
 
 ::
@@ -350,7 +350,7 @@ Now we need to add ``set_debug_display`` to ``Globals.gd``:
             if debug_display == null:
                 debug_display = DEBUG_DISPLAY_SCENE.instance()
                 canvas_layer.add_child(debug_display)
-                
+
 Let's go over what's happening.
 
 First we check to see if ``Globals.gd`` is trying to turn on the debug display, or turn it off.
@@ -409,16 +409,16 @@ Add the following to ``_process``:
         if Input.is_action_just_pressed("ui_cancel"):
             if popup == null:
                 popup = POPUP_SCENE.instance()
-                
+
                 popup.get_node("Button_quit").connect("pressed", self, "popup_quit")
                 popup.connect("popup_hide", self, "popup_closed")
                 popup.get_node("Button_resume").connect("pressed", self, "popup_closed")
-                
+
                 canvas_layer.add_child(popup)
                 popup.popup_centered()
-                
+
                 Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-                
+
                 get_tree().paused = true
 
 Let's go over what's happening here.
@@ -458,9 +458,9 @@ Add the following to ``Globals.gd``:
         if popup != null:
             popup.queue_free()
             popup = null
-            
+
 ``popup_closed`` will resume the game and destroy the pop up if there is one.
-    
+
 ``popup_quit`` is similar, but we're also making sure the mouse is visible and changing scenes to the title screen.
 
 Add the following to ``Globals.gd``:
@@ -477,7 +477,7 @@ Add the following to ``Globals.gd``:
             popup = null
 
         load_new_scene(MAIN_MENU_PATH)
-        
+
 ``popup_quit`` will resume the game, set the mouse mode to ``MOUSE_MODE_VISIBLE`` to ensure the mouse is visible in the main menu, destroy
 the pop up if there is one, and change scenes to the main menu.
 
@@ -530,7 +530,7 @@ Open up ``Player.gd`` and add the following class variables:
     const RESPAWN_TIME = 4
     var dead_time = 0
     var is_dead = false
-    
+
     var globals
 
 * ``RESPAWN_TIME``: The amount of time (in seconds) it takes to respawn.
@@ -546,15 +546,15 @@ We now need to add a couple lines to ``_ready``, so we can use ``Globals.gd`` in
 
     globals = get_node("/root/Globals")
     global_transform.origin = globals.get_respawn_position()
-    
+
 
 Now we're getting the ``Globals.gd`` singleton and assigning it to ``globals``. We also set the player's global position
 by setting the origin in the player's global :ref:`Transform <class_Transform>` to the position returned by ``globals.get_respawn_position``.
 
 .. note:: Don't worry, we will be adding ``get_respawn_position`` further below!
-    
+
 ______
-    
+
 Next we need to make a few changes to ``physics_process``. Change ``physics_processing`` to the following:
 
 ::
@@ -586,58 +586,58 @@ Let's add ``process_respawn``. Add the following to ``Player.gd``:
 ::
 
     func process_respawn(delta):
-    
+
         # If we just died
         if health <= 0 and !is_dead:
             $Body_CollisionShape.disabled = true
             $Feet_CollisionShape.disabled = true
-            
+
             changing_weapon = true
             changing_weapon_name = "UNARMED"
-            
+
             $HUD/Death_Screen.visible = true
-            
+
             $HUD/Panel.visible = false
             $HUD/Crosshair.visible = false
-            
+
             dead_time = RESPAWN_TIME
             is_dead = true
-            
+
             if grabbed_object != null:
                 grabbed_object.mode = RigidBody.MODE_RIGID
                 grabbed_object.apply_impulse(Vector3(0,0,0), -camera.global_transform.basis.z.normalized() * OBJECT_THROW_FORCE / 2)
-                
+
                 grabbed_object.collision_layer = 1
                 grabbed_object.collision_mask = 1
-                
+
                 grabbed_object = null
-        
+
         if is_dead:
             dead_time -= delta
-            
+
             var dead_time_pretty = str(dead_time).left(3)
             $HUD/Death_Screen/Label.text = "You died\n" + dead_time_pretty + " seconds till respawn"
-            
+
             if dead_time <= 0:
                 global_transform.origin = globals.get_respawn_position()
-                
+
                 $Body_CollisionShape.disabled = false
                 $Feet_CollisionShape.disabled = false
-                
+
                 $HUD/Death_Screen.visible = false
-                
+
                 $HUD/Panel.visible = true
                 $HUD/Crosshair.visible = true
-                
+
                 for weapon in weapons:
                     var weapon_node = weapons[weapon]
                     if weapon_node != null:
                         weapon_node.reset_weapon()
-                
+
                 health = 100
                 grenade_amounts = {"Grenade":2, "Sticky Grenade":2}
                 current_grenade = "Grenade"
-                
+
                 is_dead = false
 
 Let's go through what this function is doing.
@@ -792,7 +792,7 @@ Now all we need is a way to set the respawn points. Open up ``Ruins_Level.tscn``
     func _ready():
         var globals = get_node("/root/Globals")
         globals.respawn_points = get_children()
-        
+
 Now when a node with ``Respawn_Point_Setter.gd`` has its ``_ready`` function called, all of the children
 nodes of the node with ``Respawn_Point_Setter.gd``, ``Spawn_Points`` in the case of ``Ruins_Level.tscn``, will be added
 to ``respawn_points`` in ``Globals.gd``.
@@ -806,7 +806,7 @@ Now when the player dies, they will respawn after waiting ``4`` seconds!
 
 .. note:: No spawn points are already set up for any of the levels besides ``Ruins_Level.tscn``!
           Adding spawn points to ``Space_Level.tscn`` is left as an exercise for the reader.
-                
+
 Writing a sound system we can use anywhere
 ------------------------------------------
 
@@ -826,7 +826,7 @@ First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
         audio_node = $Audio_Stream_Player
         audio_node.connect("finished", self, "sound_finished")
         audio_node.stop()
-        
+
         globals = get_node("/root/Globals")
 
 
@@ -836,13 +836,13 @@ First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
             globals.created_audio.remove(globals.created_audio.find(self))
             queue_free()
             return
-        
+
         audio_node.stream = audio_stream
-        
+
         # If you are using a AudioPlayer3D, then uncomment these lines to set the position.
         #if position != null:
         #    audio_node.global_transform.origin = position
-        
+
         audio_node.play(0.0)
 
 
@@ -854,7 +854,7 @@ First, open up ``SimpleAudioPlayer.gd`` and change it to the following:
             audio_node.stop()
             queue_free()
 
-            
+
 There are several changes from the old version, first and foremost being we are no longer storing the sound files in ``SimpleAudioPlayer.gd`` anymore.
 This is much better for performance since we're no longer loading each audio clip when we create a sound, but instead we are forcing an audio stream to be passed
 in to ``play_sound``.
@@ -909,17 +909,17 @@ Lets go over these global variables.
 
 .. note:: If you want to add additional audio, you need to add it to ``audio_clips``. No audio files are provided in this tutorial,
           so you will have to provide your own.
-          
+
           One site I'd recommend is **GameSounds.xyz**.
           I'm using the Gamemaster audio gun sound pack included in the Sonniss' GDC Game Audio bundle for 2017.
           The tracks I've used (with some minor editing) are as follows:
-          
+
           * gun_revolver_pistol_shot_04,
           * gun_semi_auto_rifle_cock_02,
           * gun_submachine_auto_shot_00_automatic_preview_01
 
 ______
-          
+
 Now we need to add a new function called ``play_sound`` to ``Globals.gd``:
 
 ::
@@ -928,12 +928,12 @@ Now we need to add a new function called ``play_sound`` to ``Globals.gd``:
         if audio_clips.has(sound_name):
             var new_audio = SIMPLE_AUDIO_PLAYER_SCENE.instance()
             new_audio.should_loop = loop_sound
-            
+
             add_child(new_audio)
             created_audio.append(new_audio)
-            
+
             new_audio.play_sound(audio_clips[sound_name], sound_position)
-        
+
         else:
             print ("ERROR: cannot play sound that does not exist in audio_clips!")
 
@@ -961,7 +961,7 @@ Add the following to ``load_new_scene``:
         if (sound != null):
             sound.queue_free()
     created_audio.clear()
-    
+
 Now before ``Globals.gd`` changes scenes, it goes through each simple audio player in ``created_sounds`` and frees/destroys them. Once ``Globals.gd`` has gone through
 all of the sounds in ``created_audio``, we clear ``created_audio`` so it no longer holds any references to any (noew freed/destroyed) simple audio players.
 
@@ -1010,11 +1010,11 @@ At this point you have a good base to build more complicated FPS games.
 
           Other than that, the source is exactly the same, just with helpful comments explaining what
           each part does.
-             
+
 .. tip:: The finished project source is hosted on Github as well: https://github.com/TwistedTwigleg/Godot_FPS_Tutorial
-         
+
          **Please note that the code in Github may or may not be in sync with the tutorial in the documentation**.
-         
+
          The code in the documentation is likely better managed and/or more up to date.
          If you are unsure on which to use, use the project(s) provided in the documentation as they are maintained by the Godot community.
 
@@ -1024,7 +1024,7 @@ All assets provided in the started assets (unless otherwise noted) were **origin
 All original assets provided for this tutorial are released under the ``MIT`` license.
 
 Feel free to use these assets however you want! All original assets belong to the Godot community, with the other assets belonging to those listed below:
-          
+
 The skybox is created by **StumpyStrust** and can be found at OpenGameArt.org. https://opengameart.org/content/space-skyboxes-0
 . The skybox is licensed under the ``CC0`` license.
 

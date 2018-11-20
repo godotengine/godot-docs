@@ -61,12 +61,12 @@ or:
 make SPHINXBUILD=~/.local/bin/sphinx-build html
 ```
 
-The compilation might take some time as the `classes/` folder contains many files to parse.  
+The compilation might take some time as the `classes/` folder contains many files to parse.
 You can then test the changes live by opening `_build/html/index.html` in your favorite browser.
 
 ### Building with Sphinx on Windows
 
-On Windows, you need to: 
+On Windows, you need to:
 * Download the Python installer [here](https://www.python.org/downloads/).
 * Install Python. Don't forget to check the "Add Python to PATH" box.
 * Use the above `pip` commands.

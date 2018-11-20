@@ -90,13 +90,13 @@ Listing the video memory usage of the running game.
 Misc
 ++++
 
-Miscellaneous options for debug. 
+Miscellaneous options for debug.
 
 
 Remote in Scene dock
 --------------------
 
-When running your game, a bar will occur at the top of the ``Scene`` dock. You can switch to ``Remote`` and inspect or change the nodes' parameters in the running game. 
+When running your game, a bar will occur at the top of the ``Scene`` dock. You can switch to ``Remote`` and inspect or change the nodes' parameters in the running game.
 
 .. image:: img/overview_remote.png
 

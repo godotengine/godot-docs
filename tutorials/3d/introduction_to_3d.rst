@@ -173,7 +173,7 @@ You can hide the gizmos in the 3D view of the editor through this menu:
 .. image:: img/tuto_3d6_1.png
 
 To hide a specific type of gizmos, you can toggle them off in the "View" menu.
- 
+
 .. image:: img/tuto_3d6_2.png
 
 Default environment

@@ -38,7 +38,7 @@ See also :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download these repositories from GitHub or let Git
-do the work for you. 
+do the work for you.
 Note that these repositories now have different branches for different versions of Godot. GDNative modules written for an earlier version of Godot will work in newer versions (with the exception of one breaking change in ARVR interfaces between 3.0 and 3.1) but not vise versa so make sure you download the correct branch.
 
 If you are versioning your project using Git,
@@ -69,7 +69,7 @@ Do make sure you clone recursive to pull in both repositories:
 
 .. note:: The ``-b 3.0`` I've added as an example to show how to select a specific branch for a specific version of Godot.
           Also ``godot-cpp`` now includes ``godot_headers`` as a nested submodule, if you've manually downloaded them please make sure to place ``godot_headers`` inside of the ``godot-cpp`` folder.
-          
+
           You don't have to do it this way but I've found it easiest to manage. If you decide to just download the repositories or just clone them into your folder, makes sure to keep the folder layout the same as I've setup here as much of the code we'll be showcasing here assumes the project has this layout.
 
 If you cloned the example from the link specified in

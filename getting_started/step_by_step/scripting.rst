@@ -70,11 +70,11 @@ F#, Boo or ClojureCLR. In practice however, C# is the only officially supported 
 GDNative / C++
 ~~~~~~~~~~~~~~
 
-Finally, one of our brightest additions for the 3.0 release: 
+Finally, one of our brightest additions for the 3.0 release:
 GDNative allows scripting in C++ without needing to recompile (or even
 restart) Godot.
 
-Any C++ version can be used, and mixing compiler brands and versions for the 
+Any C++ version can be used, and mixing compiler brands and versions for the
 generated shared libraries works perfectly, thanks to our use of an internal C
 API Bridge.
 
@@ -182,7 +182,7 @@ signals in your own scripts.
 
 In this step, we'll connect the "pressed" signal to a custom function. Forming
 connections is the first part and defining the custom function is the second part.
-For the first part, Godot provides two ways to create connections: through a 
+For the first part, Godot provides two ways to create connections: through a
 visual interface the editor provides or through code.
 
 While we will use the code method for the remainder of this tutorial series, let's
@@ -199,7 +199,7 @@ button in the bottom right, you'll open up the connection creation dialogue.
 .. image:: img/connect_dialogue.png
 
 In the bottom-left are the key things you need to create a connection: a node
-which implements the method you want to trigger (represented here as a 
+which implements the method you want to trigger (represented here as a
 NodePath) and the name of the method to trigger.
 
 The top-left section displays a list of your scene's nodes with the emitting
@@ -246,7 +246,7 @@ Next, write a function which will be called when the button is pressed:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Button_pressed():  
+    func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
@@ -323,7 +323,7 @@ Why, hello there! Congratulations on scripting your first scene.
 
     # Not for this case,
     # but just in case.
-    get_node("Label/Button") 
+    get_node("Label/Button")
 
  .. code-tab:: csharp
 
@@ -335,10 +335,10 @@ Also, remember that nodes are referenced by name, not by type.
 
 .. note::
 
-    The right-hand panel of the connect dialogue is for binding specific 
-    values to the connected function's parameters. You can add and remove 
+    The right-hand panel of the connect dialogue is for binding specific
+    values to the connected function's parameters. You can add and remove
     values of different types.
 
     The code approach also enables this with a 4th ``Array`` parameter that
-    is empty by default. Feel free to read up on the ``Object.connect`` 
+    is empty by default. Feel free to read up on the ``Object.connect``
     method for more information.

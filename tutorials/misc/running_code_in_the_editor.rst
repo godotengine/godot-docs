@@ -47,10 +47,10 @@ Here is how a ``_process()`` function might look like for you:
     func _process(delta):
         if Engine.editor_hint:
             # Code to execute in editor.
-        
+
         if not Engine.editor_hint:
             # Code to execute in game.
-        
+
         # Code to execute both in editor and in game.
 
 .. note:: Modifications in editor are permanent. In our case, when we remove the script, the node will keep its rotation direction. Be careful so that you don't make unwanted modifications.

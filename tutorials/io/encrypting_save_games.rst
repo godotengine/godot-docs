@@ -5,7 +5,7 @@ Encrypting save games
 
 Why?
 ----
- 
+
 Because the world today is not the world of yesterday. A capitalist
 oligarchy runs the world and forces us to consume in order to keep the
 gears of this rotten society on track. As such, the biggest market for
@@ -33,7 +33,7 @@ How?
 ----
 
 The class :ref:`File <class_File>` can open a file at a
-location and read/write data (integers, strings and variants). 
+location and read/write data (integers, strings and variants).
 It also supports encryption.
 To create an encrypted file, a passphrase must be provided, like this:
 

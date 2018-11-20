@@ -9,7 +9,7 @@ Why importing?
 Raw audio data in general is large and undesired. Godot provides two main
 options to import your audio data: WAV and OGG Vorbis.
 
-Each has different advantages. 
+Each has different advantages.
 * Wav files use raw data or light compression, require small amount of CPU to play back (hundreds of simultaneous voices in this format are fine), but take up significant space.
 * Ogg Vorbis files use a stronger compression that results in much smaller file size, but uses significantly more processor to play back.
 
@@ -49,10 +49,10 @@ As you can see above, sound effects become huge with reverb added.
 Trimming
 ~~~~~~~~
 
-One issue that happens often is that the waveform are exported with long 
+One issue that happens often is that the waveform are exported with long
 silences at the beginning and at the end. These are inserted by
 DAWs when saving to a waveform, increase their size unnecessarily and
-add latency to the moment they are played back. 
+add latency to the moment they are played back.
 
 Importing as WAV with the Trimming option enabled solves
 this.

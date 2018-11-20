@@ -40,7 +40,7 @@ for a Simulator executable.
 
 Additionally since some time Apple requires 64 bit version of application binary when you are uploading to iStore.
 The best way to provide these is to create a bundle in which there are both 32bit and 64 binaries, so every device will be able to run the game.
-It can be done in three steps, first compile 32 bit version, then compile 64 bit version and then use ``lipo`` to bundle them into one fat binary, all those steps can be performed with following commands: 
+It can be done in three steps, first compile 32 bit version, then compile 64 bit version and then use ``lipo`` to bundle them into one fat binary, all those steps can be performed with following commands:
 
 ::
 

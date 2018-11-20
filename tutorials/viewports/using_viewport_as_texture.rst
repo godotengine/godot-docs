@@ -15,9 +15,9 @@ of making a procedural planet like the one below:
 .. note:: This tutorial does not cover how to code a dynamic atmosphere like the one this planet has.
 
 This tutorial assumes you are familiar with how to set up a basic scene including:
-a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a 
-:ref:`Mesh Instance <class_MeshInstance>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`, 
-and applying a :ref:`Spatial Material <class_SpatialMaterial>` to the mesh. The focus will be on using 
+a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
+:ref:`Mesh Instance <class_MeshInstance>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
+and applying a :ref:`Spatial Material <class_SpatialMaterial>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
 
 During the course of this tutorial will cover the following topics:
@@ -32,15 +32,15 @@ Setting up the Viewport
 
 First, add a :ref:`Viewport <class_Viewport>` to the scene.
 
-Next, set the size of the :ref:`Viewport <class_Viewport>` to ``(1024, 512)``. The 
-:ref:`Viewport <class_Viewport>` can actually be any size so long as the width is double the height. 
-The width needs to be double the height so that the image will accurately map onto the 
+Next, set the size of the :ref:`Viewport <class_Viewport>` to ``(1024, 512)``. The
+:ref:`Viewport <class_Viewport>` can actually be any size so long as the width is double the height.
+The width needs to be double the height so that the image will accurately map onto the
 sphere as we will be using equirectangular projection, but more on that later.
 
 .. image:: img/planet_new_viewport.png
 
 Next, disable HDR and disable 3D. We don't need HDR because our planets surface will not be especially
-bright so values between ``0`` and ``1`` will be fine. And we will be using a :ref:`ColorRect <class_ColorRect>` 
+bright so values between ``0`` and ``1`` will be fine. And we will be using a :ref:`ColorRect <class_ColorRect>`
 to render the surface, so we don't need 3D either.
 
 Select the Viewport and add a :ref:`ColorRect <class_ColorRect>` as a child.
@@ -73,12 +73,12 @@ apply to the sphere.
 Applying the texture
 --------------------
 
-Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`Spatial Material <class_SpatialMaterial>` 
-to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea 
+Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`Spatial Material <class_SpatialMaterial>`
+to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea
 for more advanced effects, like the atmosphere in the example above).
 
 Open the newly created :ref:`Spatial Material <class_SpatialMaterial>` and scroll down to the "Albedo" section
-and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made. 
+and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made.
 Choose "New ViewportTexture"
 
 .. image:: img/planet_new_viewport_texture.png
@@ -92,16 +92,16 @@ Your sphere should now be colored in with the colors we rendered to the Viewport
 .. image:: img/planet_seam.png
 
 Notice the ugly seam that forms where the texture wraps around? This is because we are picking
-a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic 
-problem in 2D map projection. Gamedevs often have a 2-dimensional map they want to project 
-onto a sphere but when it wraps around it has large seams. There is an elegant work around for this 
+a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic
+problem in 2D map projection. Gamedevs often have a 2-dimensional map they want to project
+onto a sphere but when it wraps around it has large seams. There is an elegant work around for this
 problem that we will illustrate in the next section.
 
 Making the planet texture
 -------------------------
 
 So now when we render to our :ref:`Viewport <class_Viewport>` it appears magically on the sphere. But there is an ugly
-seam created by our texture coordinates. So how do we get a range of coordinates that wrap around 
+seam created by our texture coordinates. So how do we get a range of coordinates that wrap around
 the sphere in a nice way? One solution is to use a function that repeats on the domain of our texture.
 ``sin`` and ``cos`` are two such functions. Lets apply them to the texture and see what happens
 
@@ -111,10 +111,10 @@ the sphere in a nice way? One solution is to use a function that repeats on the 
 
 .. image:: img/planet_sincos.png
 
-Not too bad. If you look around you can see that the seam has now disappeared, but in its place we 
+Not too bad. If you look around you can see that the seam has now disappeared, but in its place we
 have pinching at the poles. This pinching is due to the way Godot maps textures to spheres in its
-:ref:`Spatial Material <class_SpatialMaterial>`. It uses a projection technique called equirectangular 
-projection. Which translates a spherical map onto a 2D plane. 
+:ref:`Spatial Material <class_SpatialMaterial>`. It uses a projection technique called equirectangular
+projection. Which translates a spherical map onto a 2D plane.
 
 .. note:: If you are interested in a little extra information on the technique, we will be converting from
           spherical coordinates into Cartesian coordinates. Spherical coordinates map the longitude and
@@ -123,8 +123,8 @@ projection. Which translates a spherical map onto a 2D plane.
 
 For each pixel we will calculate its 3D position on the sphere. From that we will use
 3D noise to determine a color value. By calculating the noise in 3D we solve the problem
-of the pinching at the poles. To understand why, picture the noise being calculated across the 
-surface of the sphere instead of across the 2D plane. When you calculate across the 
+of the pinching at the poles. To understand why, picture the noise being calculated across the
+surface of the sphere instead of across the 2D plane. When you calculate across the
 surface of the sphere you never hit an edge, and hence you never create a seam or
 a pinch point on the pole. The following code converts the ``UVs`` into Cartesion
 coordinates.
@@ -216,13 +216,13 @@ Coloring the planet
 
 Now to make the planet colors. There are many ways to do this, if you look on `Shadertoy <https://www.shadertoy.com>`_
 you will find all kinds of ways of mapping colors to procedural planet terrain. For now
-we will stick with a simple gradient between water and land. 
+we will stick with a simple gradient between water and land.
 
 To make a gradient in glsl we use the ``mix`` function. ``mix`` takes two values to interpolate
 between and a third parameter to choose how much to interpolate between them, in essence
 it *mixes* the two values together. In other APIs this function is often called ``lerp``.
 Although, ``lerp`` is typically reserved for mixing two floats together, ``mix`` can take any
-values whether it be floats or vector types. 
+values whether it be floats or vector types.
 
 ::
 
@@ -231,7 +231,7 @@ values whether it be floats or vector types.
 The first color is blue for the ocean. The second color is a kind of reddish color (because
 all alien planets need red terrain). And finally they are mixed together by ``n.x * 0.5 + 0.5``.
 ``n.x`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
-Now you can see that the colors change between blue and red. 
+Now you can see that the colors change between blue and red.
 
 .. image:: img/planet_noise_color.png
 
@@ -252,7 +252,7 @@ and it returns ``1`` whenever ``n.x`` is above ``0``.
 
 One more thing to make this a little more planet-y. The land shouldn't be so blobby lets make the edges
 a little rougher. A trick that is often used in shaders to make rough looking terrain with noise is
-to layer levels of noise over one another at various frequencies. We use one layer to make the 
+to layer levels of noise over one another at various frequencies. We use one layer to make the
 overall blobby structure of the continents. Then another layer breaks up the edges a bit, and then
 another, and so on. What we will do is calculate ``n`` with four lines of shader code
 instead of just one. ``n`` becomes:
@@ -277,7 +277,7 @@ Making an ocean
 
 One final thing to make this look more like a planet. The ocean and the land reflect light differently.
 So we want the ocean to shine a little more than the land. We can do this by passing a fourth value
-into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness map. 
+into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness map.
 
 ::
 
@@ -286,24 +286,24 @@ into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness m
 This line returns ``0.3`` for water and ``1.0`` for land. This means that the land is going to be quite
 rough while the water will be quite smooth.
 
-And then in the material under the "Metallic" section make sure ``Metallic`` is set to ``0`` and 
-``Specular`` is set to ``1``. The reason for this is the water reflects light really well, but 
+And then in the material under the "Metallic" section make sure ``Metallic`` is set to ``0`` and
+``Specular`` is set to ``1``. The reason for this is the water reflects light really well, but
 isn't metallic. These values are not physically accurate, but they are good enough for this demo.
 
-Next under the "Roughness" section set ``Roughness`` to ``1`` and set the roughness texture to a 
-:ref:`Viewport Texture <class_ViewportTexture>` pointing to our planet texture :ref:`Viewport <class_Viewport>`. 
-Finally set the ``Texture Channel`` to ``Alpha``. This instructs the renderer to use the ``alpha`` 
+Next under the "Roughness" section set ``Roughness`` to ``1`` and set the roughness texture to a
+:ref:`Viewport Texture <class_ViewportTexture>` pointing to our planet texture :ref:`Viewport <class_Viewport>`.
+Finally set the ``Texture Channel`` to ``Alpha``. This instructs the renderer to use the ``alpha``
 channel of our output ``COLOR`` as the ``Roughness`` value.
 
 .. image:: img/planet_ocean.png
 
-You'll notice that very little changes except that the planet is no longer reflecting the sky. 
+You'll notice that very little changes except that the planet is no longer reflecting the sky.
 This is happening because by default when something is rendered with an
 alpha value it gets drawn as a transparent object over the background. And since the default background
-of the :ref:`Viewport <class_Viewport>` is opaque, the ``alpha`` channel of the 
-:ref:`Viewport Texture <class_ViewportTexture>` is ``1`` resulting in the planet texture being 
-drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this we 
-go into the :ref:`Viewport <class_Viewport>` and set "Transparent Bg" to on. Since we are now 
+of the :ref:`Viewport <class_Viewport>` is opaque, the ``alpha`` channel of the
+:ref:`Viewport Texture <class_ViewportTexture>` is ``1`` resulting in the planet texture being
+drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this we
+go into the :ref:`Viewport <class_Viewport>` and set "Transparent Bg" to on. Since we are now
 rendering one transparent object on top of another we want to enable ``blend_premul_alpha``:
 
 ::
@@ -311,7 +311,7 @@ rendering one transparent object on top of another we want to enable ``blend_pre
     render_mode blend_premul_alpha;
 
 This pre-multiplies the colors by the ``alpha`` value and then blends them correctly together. Typically
-when blending one transparent color on top of another, even if the background has an ``alpha`` of ``0`` (as it 
+when blending one transparent color on top of another, even if the background has an ``alpha`` of ``0`` (as it
 does in this case), you end up with weird color bleed issues. Setting ``blend_premul_alpha`` fixes that.
 
 Now the planet should look like it is reflecting light on the ocean but not the land. If you haven't done

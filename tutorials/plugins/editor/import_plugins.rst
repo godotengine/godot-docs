@@ -311,7 +311,7 @@ that the import wasn't successful.
         return ERR_PARSE_ERROR
 
     var color
-    if options.use_red_anyway: 
+    if options.use_red_anyway:
         color = Color8(255, 0, 0)
     else:
         color = Color8(int(channels[0]), int(channels[1]), int(channels[2]))

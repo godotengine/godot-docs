@@ -63,10 +63,10 @@ This object is not meant to be created directly, but is designed so that several
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
-This class interface can abstract most types of network layers, topologies and libraries. By default Godot 
+This class interface can abstract most types of network layers, topologies and libraries. By default Godot
 provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but this could be used to implement mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
-For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities. 
+For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
 Yet it is made available in case a game has specific needs for a lower level API.
 
 Initializing the network
@@ -118,7 +118,7 @@ Terminating the networking feature:
 Managing connections
 --------------------
 
-Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept 
+Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept
 connections at any point (see `set_refuse_new_network_connections(bool)` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:
@@ -138,7 +138,7 @@ Clients:
 - `connection_failed`
 - `server_disconnected`
 
-Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly. 
+Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly.
 For these tasks the server clearly has to work as a server and you have do tasks manually such as sending a newly connected
 player information about other already connected players (e.g. their names, stats, etc).
 
@@ -168,7 +168,7 @@ Functions can be called in two fashions:
 - Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
 - Unreliable: if the function call does not arrive, it will not be re-transmitted, but if it arrives it will do it quickly.
 
-In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly, 
+In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
 
 There is also the `get_rpc_sender_id` function in `SceneTree` which can be used to check which peer (or peer ID) sent a RPC call.
@@ -232,7 +232,7 @@ You might have noticed already something different, which is the usage of the `r
 ::
 
     remote func register_player(id, info):
-  
+
 This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
 to delete a file on another client's system).
@@ -252,7 +252,7 @@ The others will be explained further down.
 Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
 
 With this, lobby management should be more or less explained. Once you have your game going you will most likely want to add some
-extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before 
+extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before
 game start). For the sake of simplicity and because each game will share different information, this is not shown here.
 
 Starting the game
@@ -264,13 +264,13 @@ special in itself, but we'll explain a few nice tricks that can be done at this 
 Player scenes
 ^^^^^^^^^^^^^
 
-In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer 
+In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer
 you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
 
 So, how to name such nodes? In Godot nodes need to have an unique name. It must also be relatively easy for a player to tell which
 nodes represent each player ID.
 
-The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in 
+The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in
 every peer and RPC will work great! Here is an example:
 
 ::

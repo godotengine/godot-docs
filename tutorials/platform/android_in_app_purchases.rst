@@ -29,16 +29,16 @@ When starting our game, we will need to get the item details from Google such as
 
     #First listen to the sku details update callback
     IAP.connect("sku_details_complete",self,"sku_details_complete")
-    
+
     #Then ask google the details for these items
     IAP.sku_details_query(["pid1","pid2"]) #pid1 and pid2 are our product ids entered in Googleplay dashboard
-    
-    
+
+
     #This will be called when sku details are retrieved successfully
     func sku_details_complete():
         print(IAP.sku_details) #This will print the details as JSON format, refer the format in iap.gd
         print(IAP.sku_details["pid1"].price) #print formatted localized price
-        
+
 We can use the IAP details to display the title, price and/or description on our shop scene.
 
 Check if user purchased an item
@@ -89,7 +89,7 @@ We can also implement other signals for the purchase flow and improve the user e
 Consumables and Non-Consumables
 -------------------------------
 
-There are two types of products - consumables and non-consumables. 
+There are two types of products - consumables and non-consumables.
 **Consumables** are purchased and used, for eg: healing potions which can be purchased again and again.
 **Non-consumables** are one time purchases, for eg: Level packs.
 
@@ -108,7 +108,7 @@ If our game has only consumables, we don't have to do this. We can set it to con
 ::
 
     IAP.set_auto_consume(true)
-    
+
 If our game has only non-consumables, we can
 
 ::

@@ -10,7 +10,7 @@ This tutorial aims to be a quick reference for how to use GDScript more
 efficiently. It focuses on common cases specific to the language, but
 also covers a lot of information on dynamically typed languages.
 
-It's meant to be especially useful for programmers with little or no previous 
+It's meant to be especially useful for programmers with little or no previous
 experience with dynamically typed languages.
 
 Dynamic nature
@@ -147,7 +147,7 @@ too. Some Examples:
 
         SomeClass instance = new SomeClass(); // Created as reference
         use_class(instance); // Passed as reference
-        // Garbage collector will get rid of it when not in 
+        // Garbage collector will get rid of it when not in
         // use and freeze your game randomly for a second
     }
 
@@ -280,7 +280,7 @@ easily with dictionaries. Here's a simple battleship game example:
         if pos in board: # Something at that pos
             if board[pos] == SHIP: # There was a ship! hit it
                 board[pos] = SHIP_HIT
-            else: 
+            else:
                 print("Already hit here!") # Hey dude you already hit here
         else: # Nothing, mark as water
             board[pos] = WATER_HIT

@@ -1,13 +1,13 @@
 TSCN file format
 ================
 
-A :code:`.tscn` File format is the "Text SCeNe" file format and represents 
-a single scene-tree inside Godot. TSCN files have the advantage of being 
-nearly human-readable and easy for version control systems to manage. During 
-import the TSCN files are compiled into binary :code:`.scn` files stored 
+A :code:`.tscn` File format is the "Text SCeNe" file format and represents
+a single scene-tree inside Godot. TSCN files have the advantage of being
+nearly human-readable and easy for version control systems to manage. During
+import the TSCN files are compiled into binary :code:`.scn` files stored
 inside the .import folder. This reduces the data size and speed up loading.
 
-The :code:`.escn` file format is identical to the TSCN file format, but is used to 
+The :code:`.escn` file format is identical to the TSCN file format, but is used to
 indicate to Godot that the file has been exported from another program and
 should not be edited by the user from within Godot.
 
@@ -21,17 +21,17 @@ File structure
 There are five main sections inside the TSCN File:
 
 0. File Descriptor
-1. External resources 
+1. External resources
 2. Internal resources
 3. Nodes
 4. Connections
 
-The file descriptor looks like :code:`[gd_scene load_steps=1 format=2]` And 
-should be the first entry in the file. The load_steps parameter should (in 
-theory) be the number of resources within the file, though in practice its 
+The file descriptor looks like :code:`[gd_scene load_steps=1 format=2]` And
+should be the first entry in the file. The load_steps parameter should (in
+theory) be the number of resources within the file, though in practice its
 value seems not to matter.
 
-These sections should appear in order, but it can be hard to distinguish 
+These sections should appear in order, but it can be hard to distinguish
 them. The only difference between them is the first element in the heading
 for all of the items in the section.
 For example, the heading of all external resources should start with
@@ -48,9 +48,9 @@ Where resource_type is one of:
 - sub_resource
 - node
 - connection
- 
-Underneath every heading comes zero or more :code:`key = value` pairs. The 
-values can be complex datatypes such as arrays, transformations, colors, and 
+
+Underneath every heading comes zero or more :code:`key = value` pairs. The
+values can be complex datatypes such as arrays, transformations, colors, and
 so on. For example, a spatial node looks like:
 
 ::
@@ -73,11 +73,11 @@ Other valid keywords include:
  - index (if two nodes have the same name)
  - groups
 
-The first node in the file should not have the :code:`parent=Path/To/Node` 
-entry in it's heading, and it is the scene root. All scene files should have 
-exactly one scene root. It it does not, Godot will fail to import the file. 
-The parent path of other nodes should be absolute, but without the scene 
-root's name. If it is a direct child of the scene root, it should be 
+The first node in the file should not have the :code:`parent=Path/To/Node`
+entry in it's heading, and it is the scene root. All scene files should have
+exactly one scene root. It it does not, Godot will fail to import the file.
+The parent path of other nodes should be absolute, but without the scene
+root's name. If it is a direct child of the scene root, it should be
 :code:`"."`. Here is an example scene tree (but without any node content).
 
 ::
@@ -86,9 +86,9 @@ root's name. If it is a direct child of the scene root, it should be
     [node name="Arm" parent="." type="Spatial"]     ; Parented to the scene root
     [node name="Hand" parent="Arm" type="Spatial"]
     [node name="Finger" parent="Arm/Hand" type="Spatial"]
-    
-Similar to the internal resource, the document for each node is currently 
-incomplete. Fortunately it is easy to find out because you can simply 
+
+Similar to the internal resource, the document for each node is currently
+incomplete. Fortunately it is easy to find out because you can simply
 save a file with that node in it. Some example nodes are:
 
 ::
@@ -154,7 +154,7 @@ Skeleton
 
 Skeleton node inherits Spatial node, besides that it may have a list
 of bones described in key, value pair in the format :code:`bones/Id/Attribute=Value`,
-attributes of bone consists of 
+attributes of bone consists of
 
 - name
 - parent
@@ -172,7 +172,7 @@ attributes of bone consists of
 
 4) :code:`pose` is the pose matrix use :code:`rest` as basis
 
-5) :code:`bound_children` is a list of NodePath() points to 
+5) :code:`bound_children` is a list of NodePath() points to
    BoneAttachments belong to this bone
 
 An example of a skeleton node with two bones:
@@ -199,7 +199,7 @@ BoneAttachment
 
 BoneAttachment node is an intermediate node to describe some node being parented
 to a single bone in Skeleton node. The BoneAttachment has a :code:`bone_name=NameOfBone`,
-and the corresponding bone being the parent has the BoneAttachment node 
+and the corresponding bone being the parent has the BoneAttachment node
 in its :code:`bound_children` list.
 
 An example of one MeshInstance parented to a bone in Skeleton:
@@ -253,13 +253,13 @@ node will have an accompanying ArrayMesh resource. The ArrayMesh resource
 may be either internal or external to the TSCN file.
 
 References to the resources are handled by id numbers in the resources heading.
-External resources and internal resource are referred to with 
-:code:`ExtResource(id)` and :code:`SubResource(id)`. Because there have 
+External resources and internal resource are referred to with
+:code:`ExtResource(id)` and :code:`SubResource(id)`. Because there have
 different methods to refer to internal and external resource, you can have
 the same ID for both an internal and external resource.
 
 For example, to refer to the resource
-:code:`[ext_resource id=3 type="PackedScene" path=....]` you would use 
+:code:`[ext_resource id=3 type="PackedScene" path=....]` you would use
 :code:`ExtResource(3)`
 
 External resources
@@ -272,10 +272,10 @@ itself. An external resource consists of:
  - A type
  - An ID
 
-Godot always generates absolute paths relative to the resource directory and 
-thus prefixed with :code:`res://`, but paths relative to the TSCN file's 
-location are also valid. 
- 
+Godot always generates absolute paths relative to the resource directory and
+thus prefixed with :code:`res://`, but paths relative to the TSCN file's
+location are also valid.
+
 Some example external resources are:
 
 ::
@@ -286,10 +286,10 @@ Some example external resources are:
 Internal resources
 ~~~~~~~~~~~~~~~~~~
 
-A TSCN file can contain meshes, materials and other data, and these are 
+A TSCN file can contain meshes, materials and other data, and these are
 contained in the internal resources section of the file. The heading
 for an internal resource looks similar to those of external resources, but
-does not have a path. Internal resources also have :code:`key=value` pairs 
+does not have a path. Internal resources also have :code:`key=value` pairs
 under each heading. For example, a capsule collision shape looks like:
 
 ::
@@ -298,10 +298,10 @@ under each heading. For example, a capsule collision shape looks like:
 
     radius = 0.5
     height = 3.0
-    
-Some internal resource contain links to other internal resources (such as a 
-mesh having a material). In this case, the referring resource must appear 
-before the reference to it. Thus, in the internal resources section of the 
+
+Some internal resource contain links to other internal resources (such as a
+mesh having a material). In this case, the referring resource must appear
+before the reference to it. Thus, in the internal resources section of the
 file, order does matter.
 
 Unfortunately, documentation on the formats for these subresources is not
@@ -322,7 +322,7 @@ TSCN support two format of surface,
 - arrays
 - morph_arrays
 
-    i) :code:`primitive` is an enumerate variable, :code:`primitive=4` which is 
+    i) :code:`primitive` is an enumerate variable, :code:`primitive=4` which is
        PRIMITIVE_TRIANGLES is frequently used.
 
     ii) :code:`arrays` as the name suggests is an array of array, it contains:
@@ -336,7 +336,7 @@ TSCN support two format of surface,
         7) Bone weight array
         8) Vertex index array
 
-    iii) :code:`morph_arrays` is an array of morph, each morph is exactly an 
+    iii) :code:`morph_arrays` is an array of morph, each morph is exactly an
          :code:`arrays` without vertex index array.
 
 An example of ArrayMesh:
@@ -384,15 +384,15 @@ it includes:
 - imported
 - enabled
 
-1) The :code:`type` must be put as the first attribute of each track. 
+1) The :code:`type` must be put as the first attribute of each track.
    The value of :code:`type` can be:
 
     - 'transform'
     - 'value'
     - 'method'
 
-2) The :code:`path` has the format :code:`NodePath(Path/To/Node:Attribute)`. 
-   It is the path from animation root node (property of AnimationPlayer) to the 
+2) The :code:`path` has the format :code:`NodePath(Path/To/Node:Attribute)`.
+   It is the path from animation root node (property of AnimationPlayer) to the
    animated node or attribute.
 
 3) The :code:`interp` is the method to interpolate frames from the keyframes.
@@ -402,12 +402,12 @@ it includes:
     - 1 (linear)
     - 2 (cubic)
 
-4) The :code:`keys` is the keyframes, it appears as a PoolRealArray() 
+4) The :code:`keys` is the keyframes, it appears as a PoolRealArray()
    but have different structure for track with different type
 
-    - A transform track use every 12 real number in the :code:`keys` to describte a keyframe. 
+    - A transform track use every 12 real number in the :code:`keys` to describte a keyframe.
       The first number is the timestamp, the second number is the transition (default 1.0
-      in transform track), followed by a three number translation vector, followed by 
+      in transform track), followed by a three number translation vector, followed by
       four number rotation quaternion (x,y,z,w) and finally a three number scale vector.
 
 ::

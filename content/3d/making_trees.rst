@@ -12,7 +12,7 @@ The aim is to not focus on the modelling techniques (there are plenty of tutoria
 Start with a tree
 -----------------
 
-I took this tree from SketchFab: 
+I took this tree from SketchFab:
 
 .. image:: img/tree_base.png
 

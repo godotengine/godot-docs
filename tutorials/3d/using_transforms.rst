@@ -116,7 +116,7 @@ A default basis (unmodified) is akin to:
     GD.Print(identityBasis.y); // prints: (0, 1, 0)
     GD.Print(identityBasis.z); // prints: (0, 0, 1)
 
-    // The Identity basis is equivalent to: 
+    // The Identity basis is equivalent to:
     var basis = new Basis(Vector3.Right, Vector3.Up, Vector3.Back);
     GD.Print(basis); // prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
 
@@ -189,7 +189,7 @@ To rotate relative to object space (the node's own transform) use the following:
     rotate_object_local(Vector3(1, 0, 0), PI)
 
  .. code-tab:: csharp
-    
+
     // Rotate locally
     RotateObjectLocal(Vector3.Right, Mathf.Pi);
 
@@ -341,7 +341,7 @@ Example of looking around, FPS style:
             // modify accumulated mouse rotation
             _rotationX += mouseMotion.Relative.x * LookAroundSpeed;
             _rotationY += mouseMotion.Relative.y * LookAroundSpeed;
-            
+
             // reset rotation
             Transform transform = Transform;
             transform.basis = Basis.Identity;

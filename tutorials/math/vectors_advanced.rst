@@ -261,7 +261,7 @@ Code should be something like this:
             break; // with one that fails, it's enough
         }
     }
- 
+
 Pretty cool, huh? But this gets much better! With a little more effort,
 similar logic will let us know when two convex polygons are overlapping
 too. This is called the Separating Axis Theorem (or SAT) and most
@@ -328,7 +328,7 @@ Code should be something like this:
                     break;
                 }
             }
-            
+
             if (allOut)
             {
                 // a separating plane was found
@@ -353,7 +353,7 @@ Code should be something like this:
                         break;
                     }
                 }
-                
+
                 if (allOut)
                 {
                     overlapping = false;
@@ -481,7 +481,7 @@ So the final algorithm is something like:
        print("Polygons collided!")
 
  .. code-tab:: csharp
- 
+
     var overlapping = true;
 
     foreach (Plane plane in planesOfA)
@@ -520,7 +520,7 @@ So the final algorithm is something like:
                     break;
                 }
             }
-            
+
             if (allOut)
             {
                 overlapping = false;

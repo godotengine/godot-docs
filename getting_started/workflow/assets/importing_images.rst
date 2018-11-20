@@ -8,7 +8,7 @@ Why importing them?
 
 In Godot 3+, image files are no longer native resources and they must be imported.
 The reason behind this is the large amount of configuration parameters that
-image files can be imported with. 
+image files can be imported with.
 
 This small tutorial will explain what these parameters are and how to best
 make use of them.
@@ -69,7 +69,7 @@ advantages and disadvantages ( |good| = Best, |bad| =Worst ):
 HDR Mode
 ~~~~~~~~
 
-Godot supports high dynamic range textures (as .HDR or .EXR). These are mostly useful as high dynamic range equirectancular panorama skys (the internet 
+Godot supports high dynamic range textures (as .HDR or .EXR). These are mostly useful as high dynamic range equirectancular panorama skys (the internet
 has plenty of if you look for them), which replace Cubemaps in Godot 2.x. Modern PCs support the BC6H VRAM format, but there are still plenty that do not.
 
 If you want Godot to ensure full compatibility in for kind of textures, enable the "Force RGBE" option.
@@ -108,7 +108,7 @@ When pixels become smaller than the screen, mipmaps kick in. This helps reduce t
 * Texture width and height must be powers of 2
 * Repeat must be enabled
 
-Keep in mind the above when making phone games and applications, want to aim for full compatibility, and need mipmaps. 
+Keep in mind the above when making phone games and applications, want to aim for full compatibility, and need mipmaps.
 
 When doing 3D, mipmap should be turned on as this also improves performance (smaller versions of the texture are used for objects further away).
 

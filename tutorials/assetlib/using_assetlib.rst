@@ -73,7 +73,7 @@ Now let's take a look at what an asset's page looks like and what it contains.
 Registering and logging in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to upload assets to the AssetLib, you need to be logged in, and to do 
+In order to upload assets to the AssetLib, you need to be logged in, and to do
 that, you need a registered user account. In the future, this may also give you
 access to other features, such as commenting on or rating the existing assets.
 You do *not* need to be logged in to browse and download the assets.
@@ -119,13 +119,13 @@ like, with some differences:
 
 |image8|
 
-Similarly to the web version of the AssetLib, here you can search 
+Similarly to the web version of the AssetLib, here you can search
 for assets by category, name, and sort them by factors such as name or edit date.
 
 Notably, you can only fetch assets for the current version of Godot you are running.
 Also, you can only download Projects, Demos and Templates from the Project Manager
 view of the AssetLib, while Addons (tools, scripts, materials etc.) can only be
-downloaded from the in-project AssetLib. 
+downloaded from the in-project AssetLib.
 In addition, unlike when using the web frontend, the search results are updated
 in real-time (you do not have to press Search after every change to your search
 query for the changes to take place).
@@ -155,7 +155,7 @@ Here you can see a list of all the files that will be installed. You can tick of
 any of the files that you do not wish to install, and Godot will also inform you
 about any problems with files that it cannot install. These files will be shown
 in red, and hovering over them will show you a message stating why it cannot be
-installed. 
+installed.
 
 |image12|
 

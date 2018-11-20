@@ -123,7 +123,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     extends KinematicBody2D
 
     export (int) var speed = 200
@@ -148,7 +148,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         get_input()
         rotation += rotation_dir * rotation_speed * delta
         move_and_slide(velocity)
-        
+
  .. code-tab:: csharp
 
     using Godot;
@@ -192,7 +192,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
             MoveAndSlide(velocity);
         }
     }
-        
+
 Here we've added two new variables to track our rotation direction and speed.
 Again, pressing both keys at once will cancel out and result in no rotation.
 The rotation is applied directly to the body's ``rotation`` property.
@@ -213,7 +213,7 @@ is set by the mouse position instead of the keyboard. The character will always
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     extends KinematicBody2D
 
     export (int) var speed = 200
@@ -271,7 +271,7 @@ could get the same effect by setting the angle like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     rotation = get_global_mouse_position().angle_to_point(position)
 
  .. code-tab:: csharp
@@ -289,7 +289,7 @@ on the screen will cause the player to move to the target location.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-    
+
     extends KinematicBody2D
 
     export (int) var speed = 200
@@ -306,7 +306,7 @@ on the screen will cause the player to move to the target location.
         # rotation = velocity.angle()
         if (target - position).length() > 5:
             move_and_slide(velocity)
-            
+
  .. code-tab:: csharp
 
     using Godot;
@@ -337,19 +337,19 @@ on the screen will cause the player to move to the target location.
             }
         }
     }
-            
+
 
 Note the ``length()`` check we make prior to movement. Without this test,
 the body would "jitter" upon reaching the target position, as it moves
 slightly past the position and tries to move back, only to move too far and
-repeat. 
+repeat.
 
 Uncommenting the ``rotation`` line will also turn the body to point in its
 direction of motion if you prefer.
 
 .. tip:: This technique can also be used as the basis of a "following" character.
          The ``target`` position can be that of any object you want to move to.
-         
+
 Summary
 -------
 

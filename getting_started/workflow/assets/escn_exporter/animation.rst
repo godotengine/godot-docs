@@ -7,9 +7,9 @@ Animation supported:
  - light animation
  - camera animation
 
-Multiple Actions For Single Object 
+Multiple Actions For Single Object
 ----------------------------------
-In most games, one objects would have several animations to switch between. 
+In most games, one objects would have several animations to switch between.
 This addon have a support for exporting multiple actions all at once into
 a single AnimationPlayer and makes it easy to switch actions.
 

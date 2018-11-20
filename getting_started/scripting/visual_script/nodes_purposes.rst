@@ -3,7 +3,7 @@
 Nodes and terminology
 =====================
 
-Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
+Before continuing, it must be noted that the *Node* terminology needs to be used with care.
 When referring to *Visual Script Nodes* (or generally *Nodes*) this text will refer to the little boxes you connect with lines, which are part of a graph.
 When referring to *Scene Nodes*, it is implied that the elements that make up a Scene are being referred, which are part of a tree. Their naming is similar but their function is different.
 When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
@@ -15,7 +15,7 @@ Node properties
 ---------------
 
 Like in most visual scripting implementations, each node has editable properties. In Godot, though, we try to avoid
-bloating the nodes with editable controls for the sake of readability. 
+bloating the nodes with editable controls for the sake of readability.
 
 Nodes still display the required information as text, but editing is done via the *Inspector*. To edit them,
 select any node and edit its properties in the *Inspector*.
@@ -24,29 +24,29 @@ select any node and edit its properties in the *Inspector*.
 Ports and connections
 ---------------------
 
-Programming in Godot Visual Scripting is done via *Nodes* and *Port Connections* inside each function. 
+Programming in Godot Visual Scripting is done via *Nodes* and *Port Connections* inside each function.
 
 
 Ports
 ~~~~~
 
-Nodes in Godot Visual Scripting have *Ports*. These are endpoints that appear to the 
+Nodes in Godot Visual Scripting have *Ports*. These are endpoints that appear to the
 left and right of nodes and which can be used to make *Connections*:
 There are two types of *Ports*: *Sequence* and *Data*.
 
 .. image:: img/visual_script17.png
 
 
-*Sequence Ports* indicate the order in which operations are executed. 
-Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right. 
-If nothing is connected the function may end, or another output *Sequence Port* might be tried (this depends on the node). 
+*Sequence Ports* indicate the order in which operations are executed.
+Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right.
+If nothing is connected the function may end, or another output *Sequence Port* might be tried (this depends on the node).
 Thanks to this, you can follow the logic flow within a function by following the white lines.
 Not every *Node* has *Sequence Ports*. In fact, most do not.
 
-*Data Ports* ports contain typed values. Types can be any regular Godot types, 
-such as a boolean, an integer, a string, a Vector3, an array, any Object or Scene Node, etc. 
-A *Data Port* on the right side of a node is considered an output, while, 
-a port on the left side is an input. Connecting them allows information to flow to the next node. 
+*Data Ports* ports contain typed values. Types can be any regular Godot types,
+such as a boolean, an integer, a string, a Vector3, an array, any Object or Scene Node, etc.
+A *Data Port* on the right side of a node is considered an output, while,
+a port on the left side is an input. Connecting them allows information to flow to the next node.
 
 Not all *Data Port* types are compatible and will allow connections, though.
 Pay special attention to colors and icons, as each type has a different representation:
@@ -57,19 +57,19 @@ Pay special attention to colors and icons, as each type has a different represen
 Connections
 ~~~~~~~~~~~
 
-Connecting is a relatively simple process. Drag an *Output Port* towards an *Input Port*. 
+Connecting is a relatively simple process. Drag an *Output Port* towards an *Input Port*.
 
 .. image:: img/visual_script_connect.gif
 
 
-Disconnecting takes a bit more practice. Disconnecting in *Data Ports* happens by 
+Disconnecting takes a bit more practice. Disconnecting in *Data Ports* happens by
 dragging the *Input* away, while for *Sequence Ports*, this happens by dragging the *Output* away.
 
 .. image:: img/visual_script_disconnect.gif
 
 
-This may seem strange at the beginning, but it happens because *Data Ports* are 1:N 
-(A single output port can connect to many inputs), while *Sequence Ports* are N:1 
+This may seem strange at the beginning, but it happens because *Data Ports* are 1:N
+(A single output port can connect to many inputs), while *Sequence Ports* are N:1
 (Many sequence outputs can be connected to a single input).
 
 Connecting to empty space (drag to connect but unpress over empty space) is also context sensitive, it will supply
@@ -86,7 +86,7 @@ While, for data, a contextual set/get/call menu will open:
 Adding nodes
 ------------
 
-Finally! We got to the fun part! But, before explaining in more detail what each type of node does, 
+Finally! We got to the fun part! But, before explaining in more detail what each type of node does,
 let's take a short look at how nodes are most commonly added and dealt with.
 
 
@@ -94,7 +94,7 @@ Accessing scene nodes
 ~~~~~~~~~~~~~~~~~~~~~
 
 One of the most common tasks is accessing Scene Tree Nodes (again, not to mistake with *Visual Script Nodes*).
-Dragging from the Scene Tree and dropping into the canvas will ask you to *call a method* (sometimes referred to as *member function*) on this node. 
+Dragging from the Scene Tree and dropping into the canvas will ask you to *call a method* (sometimes referred to as *member function*) on this node.
 
 .. image:: img/visual_script19.png
 
@@ -210,7 +210,7 @@ a brief overview of node types follows:
 Constants
 ~~~~~~~~~
 
-Constant nodes are nodes that provide values that, while not changing over time, can be useful as reference values. 
+Constant nodes are nodes that provide values that, while not changing over time, can be useful as reference values.
 Most of the time they are integer or float.
 
 .. image:: img/visual_script36.png
@@ -273,14 +273,14 @@ As it can be seen above, there are two nodes available: A simple getter, and a s
 Scene Node
 ^^^^^^^^^^
 
-This is just a reference to a node in the tree, but it's easier to use this node by dragging the actual node 
+This is just a reference to a node in the tree, but it's easier to use this node by dragging the actual node
 from the scene tree to the canvas (this will create it and configure it).
 
 
 Self
 ^^^^
 
-In some rare occasions, it may be desired to pass this Scene Node as argument. 
+In some rare occasions, it may be desired to pass this Scene Node as argument.
 It can be used to call functions and set/get properties, or drag nodes (or event the node itself that has the script) from the Scene Tree to the canvas for this.
 
 
@@ -342,7 +342,7 @@ Some data types in Godot (ie, arrays, dictionaries) are iterable. This means tha
 for each element that it has.
 
 The Iterator node goes through all elements and, for each of them, it goes via the "each" sequence port,
-making the element available in the "elem" data port. 
+making the element available in the "elem" data port.
 
 When done, it goes via the "exit" sequence port.
 

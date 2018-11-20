@@ -5,7 +5,7 @@ Using an external text editor
 
 While Godot has an inbuilt text editor, some developers have a tendency to
 want to use a text editor they are familiar with. Godot provides this
-option via the options under 
+option via the options under
 ``Editor -> Editor Settings -> Text Editor -> External``
 
 .. image:: img/editor_settings.png

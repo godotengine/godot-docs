@@ -115,7 +115,7 @@ Notice the text [perspective] under the toolbar, it is a button that opens a lis
 
 |image20|
 
-.. note:: Read :ref:`doc_introduction_to_3d` for more detail about **3D workspace**. 
+.. note:: Read :ref:`doc_introduction_to_3d` for more detail about **3D workspace**.
 
 The **Script** workspace is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference. Press F3 to access it, and

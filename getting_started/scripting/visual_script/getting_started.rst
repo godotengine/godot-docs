@@ -3,7 +3,7 @@
 Getting started with Visual Scripting
 =====================================
 
-As with everything in Godot, we prioritize a good experience over copying or integrating third party solutions 
+As with everything in Godot, we prioritize a good experience over copying or integrating third party solutions
 which might not fit nicely in the current workflow. This led us to write our own version of how we believe
 this feature would work best with the engine.
 
