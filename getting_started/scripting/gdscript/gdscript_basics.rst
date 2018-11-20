@@ -264,16 +264,11 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``*`` ``/`` ``%``                                             | Multiplication / Division / Remainder   |
 |                                                               |                                         |
-|                                                               | NOTE: The result of these operations    |
-|                                                               | depends on the operands types. If both  |
-|                                                               | are Integers, then the result will be   |
-|                                                               | an Integer. That means 1/10 returns 0   |
-|                                                               | instead of 0.1. If at least one of the  |
-|                                                               | operands is a float, then the result is |
-|                                                               | a float: float(1)/10 or 1.0/10 return   |
-|                                                               | both 0.1.                               |
-|                                                               | NOTE2: Remainder/Modulo only works on   |
-|                                                               | int. For floats use built in fmod()     |
+|                                                               | These operators have the same behavior  |
+|                                                               | as C++. Integer division is truncated   |
+|                                                               | rather than returning a fractional      |
+|                                                               | number, and the % operator is only      |
+|                                                               | available for ints ("fmod" for floats)  |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``+``                                                         | Addition / Concatenation of Arrays      |
 +---------------------------------------------------------------+-----------------------------------------+
