@@ -32,19 +32,21 @@ Properties
 Methods
 -------
 
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`  | :ref:`get_collision_exceptions<class_PhysicsBody2D_get_collision_exceptions>` **(** **)**                                                        |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -101,6 +103,12 @@ Method Descriptions
 - void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
+
+.. _class_PhysicsBody2D_get_collision_exceptions:
+
+- :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
+
+Returns an array of nodes that were added as collision exceptions for this body.
 
 .. _class_PhysicsBody2D_get_collision_layer_bit:
 

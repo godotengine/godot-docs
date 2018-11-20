@@ -52,6 +52,10 @@ Properties
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`depth_enabled<class_SpatialMaterial_depth_enabled>`                                   |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`depth_flip_binormal<class_SpatialMaterial_depth_flip_binormal>`                       |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`depth_flip_tangent<class_SpatialMaterial_depth_flip_tangent>`                         |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`depth_max_layers<class_SpatialMaterial_depth_max_layers>`                             |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`depth_min_layers<class_SpatialMaterial_depth_min_layers>`                             |
@@ -154,7 +158,7 @@ Properties
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`particles_anim_h_frames<class_SpatialMaterial_particles_anim_h_frames>`               |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`particles_anim_loop<class_SpatialMaterial_particles_anim_loop>`                       |
+| :ref:`bool<class_bool>`                                        | :ref:`particles_anim_loop<class_SpatialMaterial_particles_anim_loop>`                       |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`particles_anim_v_frames<class_SpatialMaterial_particles_anim_v_frames>`               |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
@@ -630,6 +634,26 @@ If ``true`` clearcoat rendering is enabled. Adds a secondary transparent pass to
 +----------+--------------------+
 
 If ``true`` Depth mapping is enabled. See also :ref:`normal_enabled<class_SpatialMaterial_normal_enabled>`.
+
+.. _class_SpatialMaterial_depth_flip_binormal:
+
+- :ref:`bool<class_bool>` **depth_flip_binormal**
+
++----------+----------------------------------------------+
+| *Setter* | set_depth_deep_parallax_flip_binormal(value) |
++----------+----------------------------------------------+
+| *Getter* | get_depth_deep_parallax_flip_binormal()      |
++----------+----------------------------------------------+
+
+.. _class_SpatialMaterial_depth_flip_tangent:
+
+- :ref:`bool<class_bool>` **depth_flip_tangent**
+
++----------+---------------------------------------------+
+| *Setter* | set_depth_deep_parallax_flip_tangent(value) |
++----------+---------------------------------------------+
+| *Getter* | get_depth_deep_parallax_flip_tangent()      |
++----------+---------------------------------------------+
 
 .. _class_SpatialMaterial_depth_max_layers:
 
@@ -1195,7 +1219,7 @@ The number of horizontal frames in the particle spritesheet. Only enabled when u
 
 .. _class_SpatialMaterial_particles_anim_loop:
 
-- :ref:`int<class_int>` **particles_anim_loop**
+- :ref:`bool<class_bool>` **particles_anim_loop**
 
 +----------+--------------------------------+
 | *Setter* | set_particles_anim_loop(value) |

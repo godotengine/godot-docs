@@ -86,6 +86,8 @@ Properties
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_depth_enabled<class_Environment_fog_depth_enabled>`                           |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_fog_depth_end>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_enabled<class_Environment_fog_enabled>`                                       |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`fog_height_curve<class_Environment_fog_height_curve>`                             |
@@ -676,6 +678,16 @@ Value defining the fog depth intensity.
 +----------+------------------------------+
 
 Enables the fog depth.
+
+.. _class_Environment_fog_depth_end:
+
+- :ref:`float<class_float>` **fog_depth_end**
+
++----------+--------------------------+
+| *Setter* | set_fog_depth_end(value) |
++----------+--------------------------+
+| *Getter* | get_fog_depth_end()      |
++----------+--------------------------+
 
 .. _class_Environment_fog_enabled:
 

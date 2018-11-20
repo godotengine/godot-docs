@@ -126,7 +126,7 @@ Signals
 
 - **main_screen_changed** **(** :ref:`String<class_String>` screen_name **)**
 
-Emitted when user change the workspace (2D, 3D, Script, AssetLib). Also works with custom screens defined by plugins.
+Emitted when user changes the workspace (2D, 3D, Script, AssetLib). Also works with custom screens defined by plugins.
 
 .. _class_EditorPlugin_resource_saved:
 
@@ -136,13 +136,13 @@ Emitted when user change the workspace (2D, 3D, Script, AssetLib). Also works wi
 
 - **scene_changed** **(** :ref:`Node<class_Node>` scene_root **)**
 
-Emitted when user change scene. The argument is a root node of freshly opened scene.
+Emitted when the scene is changed in the editor. The argument will return the root node of the scene that has just become active. If this scene is new and empty, the argument will be null.
 
 .. _class_EditorPlugin_scene_closed:
 
 - **scene_closed** **(** :ref:`String<class_String>` filepath **)**
 
-Emitted when user close scene. The argument is file path to a closed scene.
+Emitted when user closes a scene. The argument is file path to a closed scene.
 
 Enumerations
 ------------

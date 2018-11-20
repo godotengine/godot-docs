@@ -65,7 +65,7 @@ Example of saving a node with different owners: The following example creates 3 
     var rigid = RigidBody2D.new()
     var collision = CollisionShape2D.new()
     
-    # create the object hierachy
+    # create the object hierarchy
     rigid.add_child(collision)
     node.add_child(rigid)
     
@@ -108,7 +108,7 @@ Returns the ``SceneState`` representing the scene file contents.
 
 - :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
 
-Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the :ref:`NOTIFICATION_INSTANCED<enum_Node_NOTIFICATION_INSTANCED>` notification on the root node.
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers :ref:`Node<class_Node>`'s ``NOTIFICATION_INSTANCED`` notification on the root node.
 
 .. _class_PackedScene_pack:
 

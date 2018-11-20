@@ -48,23 +48,25 @@ Properties
 Methods
 -------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`add_collision_exception_with<class_SoftBody_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_SoftBody_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_SoftBody_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_ray_pickable<class_SoftBody_is_ray_pickable>` **(** **)** const                                                                    |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`remove_collision_exception_with<class_SoftBody_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_layer_bit<class_SoftBody_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_mask_bit<class_SoftBody_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_ray_pickable<class_SoftBody_set_ray_pickable>` **(** :ref:`bool<class_bool>` ray_pickable **)**                                   |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_collision_exception_with<class_SoftBody_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                   |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`  | :ref:`get_collision_exceptions<class_SoftBody_get_collision_exceptions>` **(** **)**                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_collision_layer_bit<class_SoftBody_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_collision_mask_bit<class_SoftBody_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_ray_pickable<class_SoftBody_is_ray_pickable>` **(** **)** const                                                                    |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_collision_exception_with<class_SoftBody_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**             |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_collision_layer_bit<class_SoftBody_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_collision_mask_bit<class_SoftBody_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_ray_pickable<class_SoftBody_set_ray_pickable>` **(** :ref:`bool<class_bool>` ray_pickable **)**                                   |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -212,6 +214,12 @@ Method Descriptions
 - void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
+
+.. _class_SoftBody_get_collision_exceptions:
+
+- :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
+
+Returns an array of nodes that were added as collision exceptions for this body.
 
 .. _class_SoftBody_get_collision_layer_bit:
 

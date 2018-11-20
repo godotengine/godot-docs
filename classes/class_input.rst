@@ -22,7 +22,7 @@ Methods
 -------
 
 +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`action_press<class_Input_action_press>` **(** :ref:`String<class_String>` action **)**                                                                                                                                     |
+| void                                    | :ref:`action_press<class_Input_action_press>` **(** :ref:`String<class_String>` action, :ref:`float<class_float>` strength=1.0 **)**                                                                                             |
 +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`action_release<class_Input_action_release>` **(** :ref:`String<class_String>` action **)**                                                                                                                                 |
 +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,9 +174,11 @@ Method Descriptions
 
 .. _class_Input_action_press:
 
-- void **action_press** **(** :ref:`String<class_String>` action **)**
+- void **action_press** **(** :ref:`String<class_String>` action, :ref:`float<class_float>` strength=1.0 **)**
 
 This will simulate pressing the specified action.
+
+The strength can be used for non-boolean actions, it's ranged between 0 and 1 representing the intensity of the given action.
 
 .. _class_Input_action_release:
 

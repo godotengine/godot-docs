@@ -34,8 +34,6 @@ Properties
 +-------------------------------------------------------+----------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`angular_velocity_random<class_CPUParticles_angular_velocity_random>` |
 +-------------------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`anim_loop<class_CPUParticles_anim_loop>`                             |
-+-------------------------------------------------------+----------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`anim_offset<class_CPUParticles_anim_offset>`                         |
 +-------------------------------------------------------+----------------------------------------------------------------------------+
 | :ref:`Curve<class_Curve>`                             | :ref:`anim_offset_curve<class_CPUParticles_anim_offset_curve>`             |
@@ -161,7 +159,7 @@ enum **Flags**:
 
 - **FLAG_ROTATE_Y** = **1**
 
-- **FLAG_MAX** = **4**
+- **FLAG_MAX** = **3**
 
 .. _enum_CPUParticles_Parameter:
 
@@ -287,16 +285,6 @@ Property Descriptions
 +----------+-----------------------------+
 | *Getter* | get_param_randomness()      |
 +----------+-----------------------------+
-
-.. _class_CPUParticles_anim_loop:
-
-- :ref:`bool<class_bool>` **anim_loop**
-
-+----------+--------------------------+
-| *Setter* | set_particle_flag(value) |
-+----------+--------------------------+
-| *Getter* | get_particle_flag()      |
-+----------+--------------------------+
 
 .. _class_CPUParticles_anim_offset:
 

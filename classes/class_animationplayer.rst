@@ -231,7 +231,7 @@ The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 p
 | *Getter* | get_animation_process_mode()      |
 +----------+-----------------------------------+
 
-The process notification in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@GlobalScope_ANIMATION_PROCESS_IDLE>`.
+The process notification in which to update animations. Default value: ``ANIMATION_PROCESS_IDLE``.
 
 .. _class_AnimationPlayer_playback_speed:
 

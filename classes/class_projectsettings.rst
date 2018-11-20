@@ -408,6 +408,22 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/limits/packet_peer_stream/max_buffer_po2<class_ProjectSettings_network/limits/packet_peer_stream/max_buffer_po2>`                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_in_buffer_kb<class_ProjectSettings_network/limits/websocket_client/max_in_buffer_kb>`                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_in_packets<class_ProjectSettings_network/limits/websocket_client/max_in_packets>`                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_out_buffer_kb<class_ProjectSettings_network/limits/websocket_client/max_out_buffer_kb>`                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_client/max_out_packets<class_ProjectSettings_network/limits/websocket_client/max_out_packets>`                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_in_buffer_kb<class_ProjectSettings_network/limits/websocket_server/max_in_buffer_kb>`                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_in_packets<class_ProjectSettings_network/limits/websocket_server/max_in_packets>`                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_out_buffer_kb<class_ProjectSettings_network/limits/websocket_server/max_out_buffer_kb>`                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`network/limits/websocket_server/max_out_packets<class_ProjectSettings_network/limits/websocket_server/max_out_packets>`                               |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/remote_fs/page_read_ahead<class_ProjectSettings_network/remote_fs/page_read_ahead>`                                                           |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/remote_fs/page_size<class_ProjectSettings_network/remote_fs/page_size>`                                                                       |
@@ -1457,6 +1473,38 @@ Maximum amount of messages allowed to send as output from the debugger. Over thi
 - :ref:`int<class_int>` **network/limits/packet_peer_stream/max_buffer_po2**
 
 Default size of packet peer stream for deserializing godot data. Over this size, data is dropped.
+
+.. _class_ProjectSettings_network/limits/websocket_client/max_in_buffer_kb:
+
+- :ref:`int<class_int>` **network/limits/websocket_client/max_in_buffer_kb**
+
+.. _class_ProjectSettings_network/limits/websocket_client/max_in_packets:
+
+- :ref:`int<class_int>` **network/limits/websocket_client/max_in_packets**
+
+.. _class_ProjectSettings_network/limits/websocket_client/max_out_buffer_kb:
+
+- :ref:`int<class_int>` **network/limits/websocket_client/max_out_buffer_kb**
+
+.. _class_ProjectSettings_network/limits/websocket_client/max_out_packets:
+
+- :ref:`int<class_int>` **network/limits/websocket_client/max_out_packets**
+
+.. _class_ProjectSettings_network/limits/websocket_server/max_in_buffer_kb:
+
+- :ref:`int<class_int>` **network/limits/websocket_server/max_in_buffer_kb**
+
+.. _class_ProjectSettings_network/limits/websocket_server/max_in_packets:
+
+- :ref:`int<class_int>` **network/limits/websocket_server/max_in_packets**
+
+.. _class_ProjectSettings_network/limits/websocket_server/max_out_buffer_kb:
+
+- :ref:`int<class_int>` **network/limits/websocket_server/max_out_buffer_kb**
+
+.. _class_ProjectSettings_network/limits/websocket_server/max_out_packets:
+
+- :ref:`int<class_int>` **network/limits/websocket_server/max_out_packets**
 
 .. _class_ProjectSettings_network/remote_fs/page_read_ahead:
 
