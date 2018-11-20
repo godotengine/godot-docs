@@ -92,8 +92,6 @@ Example for using 4 cores:
 
     user@host:~/godot$ scons platform=x11 -j 4
 
-Note that there are currently `issues <https://github.com/godotengine/godot/issues/5182>`__ with parallel builds for at least some users, so if you are running into errors, try building without the ``-j`` parameter.
-
 Resulting binary
 ----------------
 
