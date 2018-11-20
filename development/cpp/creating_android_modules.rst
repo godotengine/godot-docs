@@ -10,7 +10,7 @@ Making video games portable is all fine and dandy, until mobile
 gaming monetization shows up.
 
 This area is complex, usually a mobile game that monetizes needs
-special connections to a server for thingst like:
+special connections to a server for things like:
 
 -  Analytics
 -  In-app purchases
@@ -195,7 +195,7 @@ module, add it like this:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contains MySingelton.java")
+            env.android_add_java_dir("Directory that contains MySingleton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
 
 
@@ -216,6 +216,21 @@ add something like this:
 Now you can refer to those resources by their id (``R.string.my_string``, and the like)
 by importing the ``com.godot.game.R`` class in your Java code.
 
+Assets
+------
+
+Similarly, you can add any type of raw asset files to your app's asset directory like this:
+
+.. code:: python
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # [...]
+            env.android_add_asset_dir("Directory that contains asset files for your app")
+
+Assets don't have resource ids, but can be read with their file name as streams of bytes with the help
+of the Android AssetManager class.
+
 SDK library
 -----------
 
@@ -231,7 +246,7 @@ easiest to integrate, put it in the module directory and add it:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contains MySingelton.java")
+            env.android_add_java_dir("Directory that contains MySingleton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
             env.android_add_dependency("compile files('something_local.jar')") # if you have a jar, the path is relative to platform/android/java/gradlew, so it will start with ../../../modules/module_name/
             env.android_add_maven_repository("maven url") #add a maven url
