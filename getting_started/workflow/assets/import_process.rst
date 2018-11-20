@@ -57,7 +57,7 @@ Additionally, extra assets will be preset in the hidden res://.import folder:
 Any assets will be reimported automatically when they, or the
 res://.import folder, is erased. Depending on the size of your project,
 you can decide whether or not to commit that folder to a version
-control system (such as git). After checking out your project on
+control system. After checking out your project on
 another computer, Godot will not need to reimport if the folder exists;
 however, committing that folder will use significantly more space in
 the repository and will increase the transfer time. Essentially, if you
