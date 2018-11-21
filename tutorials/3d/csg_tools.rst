@@ -20,7 +20,7 @@ Like other features of Godot, CSG is supported in form of nodes, these are the C
 - :ref:`CSGTorus <class_CSGTorus>`
 - :ref:`CSGPolygon <class_CSGPolygon>`
 - :ref:`CSGMesh <class_CSGMesh>`
-- :ref:`CSGCombiner <class_CSGcombiner>'
+- :ref:`CSGCombiner <class_CSGcombiner>`
 
 .. image:: img/csg_nodes.png
 
