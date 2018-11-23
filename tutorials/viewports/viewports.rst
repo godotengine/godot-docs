@@ -92,8 +92,8 @@ different than the one specified in size, by calling:
 
 ::
 
-    viewport.set_size_override(w, h) # custom size for 2D
-    viewport.set_size_override_stretch(true) # enable stretch for custom size
+    viewport.set_size_override(w, h) # Custom size for 2D
+    viewport.set_size_override_stretch(true) # Enable stretch for custom size
 
 The root :ref:`Viewport <class_Viewport>` uses this for the stretch options in the project
 settings. For more information on scaling and stretching visit the :ref:`Multiple Resolutions Tutorial <doc_multiple_resolutions>`
