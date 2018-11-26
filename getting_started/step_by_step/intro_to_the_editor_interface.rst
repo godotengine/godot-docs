@@ -79,7 +79,7 @@ your project files and assets.
 
 |image11|
 
-On the right side, you’ll find the **Scene dock**, that lists the active
+On the right side, you’ll find the **Scene dock** which lists the active
 scene’s content and the **Inspector** in the bottom right corner.
 
 |image12|
