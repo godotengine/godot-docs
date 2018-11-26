@@ -219,7 +219,7 @@ of information. And you will update the state of your connected node
 With this in mind let's connect the ``GUI`` to the ``Player``. Click on
 the ``Player`` node in the scene dock to select it. Head down to the
 Inspector and click on the Node tab. This is the place to connect nodes
-to listen the one you selected.
+to listen to the one you selected.
 
 The first section lists custom signals defined in ``Player.gd``:
 
