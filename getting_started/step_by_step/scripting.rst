@@ -10,10 +10,10 @@ Before Godot 3.0, the only choice for scripting a game was to use
 :ref:`doc_gdscript`. Nowadays, Godot has four (yes, four!) official languages
 and the ability to add extra scripting languages dynamically!
 
-This is great, mostly due the large amount of flexibility provided, but
+This is great, mostly due to the large amount of flexibility provided, but
 it also makes our work supporting languages more difficult.
 
-The "Main" languages in Godot, though, are GDScript and VisualScript. The
+The "main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is their level of integration with Godot, as this
 makes the experience smoother; both have slick editor integration, while
 C# and C++ need to be edited in a separate IDE. If you are a big fan of statically typed languages, go with C# and C++ instead.
