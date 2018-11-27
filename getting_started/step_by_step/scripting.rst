@@ -10,10 +10,10 @@ Before Godot 3.0, the only choice for scripting a game was to use
 :ref:`doc_gdscript`. Nowadays, Godot has four (yes, four!) official languages
 and the ability to add extra scripting languages dynamically!
 
-This is great, mostly due the large amount of flexibility provided, but
+This is great, mostly due to the large amount of flexibility provided, but
 it also makes our work supporting languages more difficult.
 
-The "Main" languages in Godot, though, are GDScript and VisualScript. The
+The "main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is their level of integration with Godot, as this
 makes the experience smoother; both have slick editor integration, while
 C# and C++ need to be edited in a separate IDE. If you are a big fan of statically typed languages, go with C# and C++ instead.
@@ -136,7 +136,7 @@ menu:
 The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
-In GDScript the file itself represents the class, so
+In GDScript, the file itself represents the class, so
 the class name field is not editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
@@ -154,7 +154,7 @@ as well as in the script property under Inspector:
 .. image:: img/script_added.png
 
 To edit the script, select either of these buttons, both of which are highlighted in the above image.
-This will bring you to the script editor where a default template will be included:
+This will bring you to the script editor, where a default template will be included:
 
 .. image:: img/script_template.png
 
@@ -204,7 +204,7 @@ NodePath) and the name of the method to trigger.
 
 The top-left section displays a list of your scene's nodes with the emitting
 node's name highlighted in red. Select the "Panel" node here. When you select
-a node, the NodePath at the bottom will automatically update to point a
+a node, the NodePath at the bottom will automatically update to point to a
 relative path from the emitting node to the selected node.
 
 By default, the method name will contain the emitting node's name ("Button" in
@@ -213,7 +213,7 @@ this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
 for you before setting up the connection.
 
 And that concludes the guide on how to use the visual interface. However, this
-is a scripting tutorial, so for the sake of learning, let's dive in to the
+is a scripting tutorial, so for the sake of learning, let's dive into the
 manual process!
 
 To accomplish this, we will introduce a function that is probably the most used
