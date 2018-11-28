@@ -171,8 +171,8 @@ for the GDNative node we'll be creating. We will name it ``gdexample.h``:
 
     namespace godot {
 
-    class gdexample : public Sprite {
-        GODOT_CLASS(gdexample, Sprite)
+    class GDExample : public Sprite {
+        GODOT_CLASS(GDExample, Sprite)
 
     private:
         float time_passed;
@@ -180,8 +180,8 @@ for the GDNative node we'll be creating. We will name it ``gdexample.h``:
     public:
         static void _register_methods();
 
-        gdexample();
-        ~gdexample();
+        GDExample();
+        ~GDExample();
 
         void _init(); // our initializer called by Godot
 
@@ -202,8 +202,8 @@ for the GDNative node we'll be creating. We will name it ``gdexample.h``:
 
     namespace godot {
 
-    class gdexample : public godot::GodotScript<Sprite> {
-        GODOT_CLASS(gdexample)
+    class GDExample : public godot::GodotScript<Sprite> {
+        GODOT_CLASS(GDExample)
 
     private:
         float time_passed;
@@ -211,8 +211,8 @@ for the GDNative node we'll be creating. We will name it ``gdexample.h``:
     public:
         static void _register_methods();
 
-        gdexample();
-        ~gdexample();
+        GDExample();
+        ~GDExample();
 
         void _process(float delta);
     };
@@ -257,23 +257,23 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
 
     using namespace godot;
 
-    void gdexample::_register_methods() {
-        register_method("_process", &gdexample::_process);  
+    void GDExample::_register_methods() {
+        register_method("_process", &GDExample::_process);  
     }
 
-    gdexample::gdexample() {
+    GDExample::GDExample() {
     }
 
-    gdexample::~gdexample() {
+    GDExample::~GDExample() {
         // add your cleanup here
     }
 
-    void gdexample::_init() {
+    void GDExample::_init() {
         // initialize any variables here
         time_passed = 0.0;
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)));
@@ -287,20 +287,20 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
 
     using namespace godot;
 
-    void gdexample::_register_methods() {
-        register_method((char *)"_process", &gdexample::_process);
+    void GDExample::_register_methods() {
+        register_method((char *)"_process", &GDExample::_process);
     }
 
-    gdexample::gdexample() {
+    GDExample::GDExample() {
         // Initialize any variables here
         time_passed = 0.0;
     }
 
-    gdexample::~gdexample() {
+    GDExample::~GDExample() {
         // Add your cleanup procedure here
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)));
@@ -325,7 +325,7 @@ directly on our class.
 
 There is one more C++ file we need; we'll name it ``gdlibrary.cpp``.
 Our GDNative plugin can contain multiple NativeScripts, each with their
-own header and source file like we've implemented ``gdexample`` up above.
+own header and source file like we've implemented ``GDExample`` up above.
 What we need now is a small bit of code that tells Godot about all the
 NativeScripts in our GDNative plugin.
 
@@ -344,7 +344,7 @@ NativeScripts in our GDNative plugin.
     extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
         godot::Godot::nativescript_init(handle);
 
-        godot::register_class<godot::gdexample>();
+        godot::register_class<godot::GDExample>();
     }
 
 Note that we are not using the ``godot`` namespace here, since the
@@ -455,7 +455,7 @@ gdexample NativeScript.
     [resource]
 
     resource_name = "gdexample"
-    class_name = "gdexample"
+    class_name = "GDExample"
     library = ExtResource( 1 )
     _sections_unfolded = [ "Resource" ]
 
@@ -513,18 +513,18 @@ the methods we end up changing, don't remove the lines we're omitting:
 .. tabs::
  .. code-tab:: C++ NativeScript 1.1
 
-    void gdexample::_register_methods() {
-        register_method("_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
+    void GDExample::_register_methods() {
+        register_method("_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
     }
 
-    void gdexample::_init() {
+    void GDExample::_init() {
         // initialize any variables here
         time_passed = 0.0;
         amplitude = 10.0;
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(
@@ -537,18 +537,18 @@ the methods we end up changing, don't remove the lines we're omitting:
 
  .. code-tab:: C++ NativeScript 1.0
 
-    void gdexample::_register_methods() {
-        register_method((char *)"_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
+    void GDExample::_register_methods() {
+        register_method((char *)"_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
     }
 
-    gdexample::gdexample() {
+    GDExample::GDExample() {
         // initialize any variables here
         time_passed = 0.0;
         amplitude = 10.0;
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(
@@ -584,20 +584,20 @@ methods that have changed so don't remove anything we're omitting:
 .. tabs::
  .. code-tab:: C++ NativeScript 1.1
 
-    void gdexample::_register_methods() {
-        register_method("_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
-        register_property<gdexample, float>("speed", &gdexample::set_speed, &gdexample::get_speed, 1.0);
+    void GDExample::_register_methods() {
+        register_method("_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
+        register_property<GDExample, float>("speed", &GDExample::set_speed, &GDExample::get_speed, 1.0);
     }
 
-    void gdexample::_init() {
+    void GDExample::_init() {
         // initialize any variables here
         time_passed = 0.0;
         amplitude = 10.0;
         speed = 1.0;
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
@@ -608,30 +608,30 @@ methods that have changed so don't remove anything we're omitting:
         set_position(new_position);
     }
 
-    void gdexample::set_speed(float p_speed) {
+    void GDExample::set_speed(float p_speed) {
         speed = p_speed;
     }
 
-    float gdexample::get_speed() {
+    float GDExample::get_speed() {
         return speed;
     }
 
  .. code-tab:: C++ NativeScript 1.0
 
-    void gdexample::_register_methods() {
-        register_method((char *)"_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
-        register_property<gdexample, float>("speed", &gdexample::set_speed, &gdexample::get_speed, 1.0);
+    void GDExample::_register_methods() {
+        register_method((char *)"_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
+        register_property<GDExample, float>("speed", &GDExample::set_speed, &GDExample::get_speed, 1.0);
     }
 
-    gdexample::gdexample() {
+    GDExample::GDExample() {
         // initialize any variables here
         time_passed = 0.0;
         amplitude = 10.0;
         speed = 1.0;
     }
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
@@ -642,11 +642,11 @@ methods that have changed so don't remove anything we're omitting:
         owner->set_position(new_position);
     }
 
-    void gdexample::set_speed(float p_speed) {
+    void GDExample::set_speed(float p_speed) {
         speed = p_speed;
     }
 
-    float gdexample::get_speed() {
+    float GDExample::get_speed() {
         return speed;
     }
 
@@ -671,7 +671,7 @@ object.
     on the Godot side.
 
     Modern C++ compilers are able to infer the class and variable type 
-    and allow you to omit the ``<gdexample, float>`` part of our
+    and allow you to omit the ``<GDExample, float>`` part of our
     ``register_property`` method. we've had mixed experiences with this
     however.
 
@@ -723,25 +723,25 @@ as follows:
 .. tabs::
  .. code-tab:: C++ NativeScript 1.1
 
-    void gdexample::_register_methods() {
-        register_method("_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
-        register_property<gdexample, float>("speed", &gdexample::set_speed, &gdexample::get_speed, 1.0);
+    void GDExample::_register_methods() {
+        register_method("_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
+        register_property<GDExample, float>("speed", &GDExample::set_speed, &GDExample::get_speed, 1.0);
 
-        register_signal<gdexample>((char *)"position_changed", "node", GODOT_VARIANT_TYPE_OBJECT, "new_pos", GODOT_VARIANT_TYPE_VECTOR2);
+        register_signal<GDExample>((char *)"position_changed", "node", GODOT_VARIANT_TYPE_OBJECT, "new_pos", GODOT_VARIANT_TYPE_VECTOR2);
     }
 
  .. code-tab:: C++ NativeScript 1.0
 
-    void gdexample::_register_methods() {
-        register_method((char *)"_process", &gdexample::_process);
-        register_property<gdexample, float>("amplitude", &gdexample::amplitude, 10.0);
-        register_property<gdexample, float>("speed", &gdexample::set_speed, &gdexample::get_speed, 1.0);
+    void GDExample::_register_methods() {
+        register_method((char *)"_process", &GDExample::_process);
+        register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
+        register_property<GDExample, float>("speed", &GDExample::set_speed, &GDExample::get_speed, 1.0);
 
         Dictionary args;
         args[Variant("node")] = Variant(Variant::OBJECT);
         args[Variant("new_pos")] = Variant(Variant::VECTOR2);
-        register_signal<gdexample>((char *)"position_changed", args);
+        register_signal<GDExample>((char *)"position_changed", args);
     }
 
 Here we see a nice improvement in the latest version of godot-cpp where our 
@@ -757,7 +757,7 @@ Next we'll need to change our ``_process`` method:
 .. tabs::
  .. code-tab:: C++ NativeScript 1.1
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
@@ -777,7 +777,7 @@ Next we'll need to change our ``_process`` method:
 
  .. code-tab:: C++ NativeScript 1.0
 
-    void gdexample::_process(float delta) {
+    void GDExample::_process(float delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
