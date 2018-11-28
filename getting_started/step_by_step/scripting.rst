@@ -140,7 +140,7 @@ menu:
 The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
-In GDScript the file itself represents the class, so
+In GDScript, the file itself represents the class, so
 the class name field is not editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
@@ -158,7 +158,7 @@ as well as in the script property under Inspector:
 .. image:: img/script_added.png
 
 To edit the script, select either of these buttons, both of which are highlighted in the above image.
-This will bring you to the script editor where a default template will be included:
+This will bring you to the script editor, where a default template will be included:
 
 .. image:: img/script_template.png
 
@@ -202,13 +202,13 @@ button in the bottom right, you'll open up the connection creation dialogue.
 
 .. image:: img/connect_dialogue.png
 
-In the bottom-left are the key things you need to create a connection: a node
+In the bottom-left are the key things you need to create a connection: a node,
 which implements the method you want to trigger (represented here as a 
 NodePath) and the name of the method to trigger.
 
 The top-left section displays a list of your scene's nodes with the emitting
 node's name highlighted in red. Select the "Panel" node here. When you select
-a node, the NodePath at the bottom will automatically update to point a
+a node, the NodePath at the bottom will automatically update to point to a
 relative path from the emitting node to the selected node.
 
 By default, the method name will contain the emitting node's name ("Button" in
@@ -217,7 +217,7 @@ this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
 for you before setting up the connection.
 
 And that concludes the guide on how to use the visual interface. However, this
-is a scripting tutorial, so for the sake of learning, let's dive in to the
+is a scripting tutorial, so for the sake of learning, let's dive into the
 manual process!
 
 To accomplish this, we will introduce a function that is probably the most used
