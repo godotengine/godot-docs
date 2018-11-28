@@ -29,9 +29,9 @@ in the top left corner.
 
           Submit an issue or pull request on the `GitHub repository
           <https://github.com/godotengine/godot-docs/issues>`_,
-          help us `translating present documentation
+          help us `translate present documentation
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
-          language, or discuss with us on either the ``#documentation``
+          language, or talk to us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
           ``#godotengine-doc`` channel on `irc.freenode.net
           <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
