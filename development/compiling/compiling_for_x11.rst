@@ -83,11 +83,23 @@ Start a terminal, go to the root dir of the engine source code and type:
 ::
 
     user@host:~/godot$ scons platform=x11
+    
+To compile with multiple threads or precossors, use the following command where X is the number of threads you want to use (or X = 2 * number of processors to use):  
+
+::
+
+    user@host:~/godot$ scons -jX platform=x11
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the project
 manager.
+
+Use the following commands to navigate to the executable and run it:
+::
+    
+    user@host:~/godot$ cd bin/
+    user@host:~/godot/bin$ ./godot.x11.tool.64
 
 .. note::
 
