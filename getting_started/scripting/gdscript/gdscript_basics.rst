@@ -475,7 +475,7 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
 GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
-memory fragmentation. If this is a concern special types of
+memory fragmentation. If this is a concern, special types of
 arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
@@ -743,7 +743,7 @@ Basic syntax:
 
 1. Replace ``switch`` with ``match``
 2. Remove ``case``
-3. Remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
+3. Remove any ``break``s. If you don't want to ``break`` by default, you can use ``continue`` for a fallthrough.
 4. Change ``default`` to a single underscore.
 
 
@@ -809,7 +809,7 @@ There are 6 pattern types:
 - array pattern
     matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
 
-    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
 
@@ -828,7 +828,7 @@ There are 6 pattern types:
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
 
-    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
 
@@ -1050,7 +1050,7 @@ An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
 
 One of the fundamental benefits of exporting member variables is to have
-them visible and editable in the editor. This way artists and game designers
+them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
@@ -1061,7 +1061,7 @@ special export syntax is provided.
 
     export var number = 5
 
-    # Export can take a basic data type as an argument which will be
+    # Export can take a basic data type as an argument, which will be
     # used in the editor.
 
     export(int) var number
@@ -1170,7 +1170,7 @@ doubt, boolean variables should be exported instead.
 Exporting arrays
 ^^^^^^^^^^^^^^^^
 
-Exporting arrays works but with an important caveat: While regular
+Exporting arrays works, but with an important caveat: While regular
 arrays are created local to every class instance, exported arrays are *shared*
 between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
@@ -1248,7 +1248,7 @@ Either of the *setter* or *getter* functions can be omitted:
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
-As said *local* access will *not* trigger the setter and getter. Here is an
+As said, *local* access will *not* trigger the setter and getter. Here is an
 illustration of this:
 
 ::
@@ -1266,7 +1266,7 @@ Tool mode
 ~~~~~~~~~
 
 Scripts, by default, don't run inside the editor and only the exported
-properties can be changed. In some cases it is desired that they do run
+properties can be changed. In some cases, it is desired that they do run
 inside the editor (as long as they don't execute game code or manually
 avoid doing so). For this, the ``tool`` keyword exists and must be
 placed at the top of the file:
@@ -1359,7 +1359,7 @@ via the ``yield`` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
 state of the same function as the return value. Calling ``resume`` on
 this resulting object will continue execution and return whatever the
-function returns. Once resumed the state object becomes invalid. Here is
+function returns. Once resumed, the state object becomes invalid. Here is
 an example:
 
 ::
@@ -1412,7 +1412,7 @@ Coroutines & signals
 ^^^^^^^^^^^^^^^^^^^^
 
 The real strength of using ``yield`` is when combined with signals.
-``yield`` can accept two parameters, an object and a signal. When the
+``yield`` can accept two arguments, an object and a signal. When the
 signal is received, execution will recommence. Here are some examples:
 
 ::
