@@ -36,7 +36,7 @@ functions. However, any given node always has the following attributes:
 -  It has editable properties.
 -  It can receive a callback to process every frame.
 -  It can be extended (to have more functions).
--  It can be added to other nodes as children.
+-  It can be added to another node as a child.
 
 .. image:: img/tree.png
 
