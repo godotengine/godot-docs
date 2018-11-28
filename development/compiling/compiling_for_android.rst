@@ -30,6 +30,9 @@ For compiling under Windows, Linux or macOS, the following is required:
 -  Gradle (will be downloaded and installed automatically if missing)
 -  JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 & 10 do not work with current Gradle.
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Setting up the buildsystem
 --------------------------
 
@@ -49,18 +52,6 @@ To set those environment variables on Unix (e.g. Linux, macOS), use
 ``export ANDROID_NDK_ROOT=/path/to/android-ndk``.
 Where /path/to/android-sdk and /path/to/android-ndk is the path where Android SDK
 and Android NDK are placed on your PC.
-
-Toolchain
-~~~~~~~~~
-
-We usually try to keep the Godot Android build code up to date, but
-Google changes their toolchain versions often, so if compilation
-fails due to wrong toolchain version, go to your NDK directory and check
-the current number, then set the following environment variable:
-
-::
-
-    NDK_TARGET (by default set to "arm-linux-androideabi-4.9")
 
 Building the export templates
 -----------------------------

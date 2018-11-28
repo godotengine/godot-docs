@@ -24,6 +24,9 @@ required:
 -  *Optional* - libudev (build with ``udev=yes``)
 -  *Optional* - yasm (for WebM SIMD optimizations)
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 +---------------+------------------------------------------------------------------------------------------------------------+

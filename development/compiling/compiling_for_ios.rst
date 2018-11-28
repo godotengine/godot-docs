@@ -12,6 +12,9 @@ Requirements
    ``scons`` in a terminal when installed)
 -  Xcode with the iOS SDK and the command line tools.
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Compiling
 ---------
 

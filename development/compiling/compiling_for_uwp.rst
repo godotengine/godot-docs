@@ -17,6 +17,9 @@ Requirements
    ``ms_master`` (default) branch. Keep it in a path without spaces to
    avoid problems.
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Compiling
 ---------
 
