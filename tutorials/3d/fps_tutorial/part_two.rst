@@ -448,7 +448,7 @@ Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` 
 
 We are going to move the entire bullet object at the root (``Bullet``). We will be using the :ref:`Area <class_Area>` to check whether or not we've collided with something
 
-.. note:: Why are we using a :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
+.. note:: Why are we using an :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
           is because we do not want the bullet to interact with other :ref:`RigidBody <class_RigidBody>` nodes.
           By using an :ref:`Area <class_Area>` we are assuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
 
