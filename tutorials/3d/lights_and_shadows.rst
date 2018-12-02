@@ -109,7 +109,7 @@ generally work well, but tweaking the first split a bit is common to give more
 detail to close objects (like a character in a third person game).
 
 Always make sure to set a shadow *Max Distance* according to what the scene needs.
-The closer the max distance, the higher quality the shadows will have.
+A lower maximum distance will result in better-looking shadows.
 
 Sometimes, the transition between a split and the next can look bad. To fix this,
 the **"Blend Splits"** option can be turned on which sacrifices detail in exchange
