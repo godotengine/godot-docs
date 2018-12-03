@@ -813,11 +813,18 @@ Prints one or more arguments to the console with a tab between each argument.
 .. _class_@GDScript_push_error:
 
 - void **push_error** **(** :ref:`String<class_String>` message **)**
+In the GDscript editor within Godot, push_error(string msg) will print msg as an error message to both the Godot built-in debugger and the OS terminal.
+::
 
+    push_error("test error")  #prints test error to debugger and terminal as error call
+    
 .. _class_@GDScript_push_warning:
-
 - void **push_warning** **(** :ref:`String<class_String>` message **)**
+In the GDscript editor within Godot, push_warning(string msg) will print msg as a warning message to both the Godot built-in debugger and the OS terminal.
+::
 
+    push_warning("test warning")  #prints test warning to debugger and terminal as warning call
+    
 .. _class_@GDScript_rad2deg:
 
 - :ref:`float<class_float>` **rad2deg** **(** :ref:`float<class_float>` rad **)**
