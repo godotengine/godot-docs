@@ -4,8 +4,8 @@ Design the GUI
 ==============
 
 Now that you've nailed the basics, we're going to see how to build a
-Game User Interface (GUI) with reusable UI components: a life bar, an
-energy bar, and bomb and rupee counters. By the end of this tutorial,
+game Graphical User Interface (GUI) with reusable UI components: a life bar, an
+energy bar, and bomb and emerald counters. By the end of this tutorial,
 you'll have a game GUI, ready to control with GDscript or VisualScript:
 
 .. figure:: ./img/ui_gui_design_final_result.png
@@ -33,19 +33,19 @@ Then, we can see up to three columns:
 
 1. The life and energy counters on the left
 2. The life and energy bars
-3. The bomb and rupee counters on the right
+3. The bomb and emerald counters on the right
 
 But the bar's label and the gauge are two parts of the same UI element.
 If we think of them this way, we're left with two columns:
 
 1. The life and energy bars on the left
-2. The bomb and rupee counters on the right
+2. The bomb and emerald counters on the right
 
 This makes it easier to nest containers: we have some margins around the
 border of the screen using a ``MarginContainer``, followed by an
 ``HBoxContainer`` to manage our two columns. The two bars stack on top
 of one another inside a ``VBoxContainer``. And we'll need a last
-``HBoxContainer`` in the right column to place the bomb and rupee
+``HBoxContainer`` in the right column to place the bomb and emerald
 counters side-by-side.
 
 .. figure:: ./img/ui_gui_step_tutorial_containers_structure.png
@@ -86,7 +86,7 @@ Next, add an ``HBoxContainer`` node. This one will contain our two bars
 on the left and separate them from the two counters on the right.
 
 We want to stack the bars vertically inside the ``HBoxContainer``.
-Add a ``VBoxContainer`` as a child of ``GUI`` and name it ``Bars``. Select the parent
+Add a ``VBoxContainer`` as a child of ``HBoxContainer`` and name it ``Bars``. Select the parent
 ``HBoxContainer`` again and this time, add another ``HBoxContainer`` as a child of it.
 Call it ``Counters``. With these four containers, we have the base for our GUI scene.
 
@@ -187,7 +187,7 @@ the background.  Next, select the ``Number`` node. In the viewport, click the
 the ``Background``. Head to the Inspector and change its ``Align``
 property to ``Right``, and the ``VAlign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
-Resize the node horizontally so it takes the right half of the
+Resize the node horizontally, so it takes the right half of the
 ``Background`` and there's a bit of padding with the right edge.
 
 .. figure:: ./img/ui_gui_step_tutorial_bar_placed_title_and_label.png
@@ -250,10 +250,10 @@ With only five ``Control`` nodes, our first bar is ready to use.
    That's it, our life bar is ready. This last part was quick, wasn't
    it? That's thanks to our robust container setup.
 
-Design the bomb and rupee counters
+Design the bomb and emerald counters
 ----------------------------------
 
-The bomb and rupee counters are like the bar's ``Count`` node. So we'll
+The bomb and emerald counters are like the bar's ``Count`` node. So we'll
 duplicate it and use it as a template.
 
 Under the ``Bar`` node, select ``Count`` and press Ctrl D to duplicate
@@ -320,7 +320,7 @@ resource. In the ``Extra Spacing`` section, change the ``Bottom`` value
 to ``0`` to reset the font's baseline. Our counter now works as
 expected.
 
-Let's make the ``Counters`` anchor to the right edge of the viewport. To do so
+Let's make the ``Counters`` anchor to the right edge of the viewport. To do so,
 we need to set the ``Bars`` container take all the available horizontal space it
 can. Select the ``Bars`` node and scroll down to the ``Size Flags`` category. In
 the ``Horizontal`` category, check the ``Expand`` value. The ``Bars`` node
@@ -342,7 +342,7 @@ Inherited Scenes.
 
 Let's save both the ``Counter`` and the ``Bar`` branches as separate
 scenes that we'll reduce to create the ``LifeBar``, the ``EnergyBar``,
-the ``BombCounter``, and the ``RupeeCounter``. Select the ``Bar``
+the ``BombCounter``, and the ``EmeraldCounter``. Select the ``Bar``
 HBoxContainer. Right click on it and click on ``Save Branch as Scene``.
 Save the scene as ``Bar.tscn``. You should see the node branch turn it
 to a single ``Bar`` node.
@@ -351,7 +351,7 @@ to a single ``Bar`` node.
 
     A scene is a tree of nodes. The topmost node is the tree's
     **root**, and the children at the bottom of the hierarchy are
-    **leaves**. Any node other than the root along with one more children is
+    **leaves**. Any node other than the root along with one or more children is
     a **branch**. We can encapsulate node branches into separate scenes, or
     load and merge them from other scenes into the active one. Right click
     on any node in the Scene dock and select ``Save Branch as Scene`` or
@@ -362,7 +362,7 @@ Then, select the ``Counter`` node and do the same. Right click,
 scene icon appears to the right of the nodes in the scene tree. Click on
 the one next to ``Bar`` to open the corresponding scene. Resize the
 ``Bar`` node so that its bounding box fits its content. The way we named
-and place the Control nodes, we're ready to inherit this template and
+and placed the Control nodes, we're ready to inherit this template and
 create the life bar. It's the same for the ``Counter``.
 
 .. figure:: ./img/ui_gui_step_tutorial_bar_template_scene.png
@@ -386,8 +386,8 @@ common base to reuse for all bars in the game: **inherited scenes**.
 On an inherited scene, you can change any property of every node in the
 inspector, aside from its name. If you modify and save the parent scene,
 all the inherited scenes update to reflect the changes. If you change a
-value in the inherited scene, it will always overrides the parent's
-property. It's useful for UIs as they often require variations of the same
+value in the inherited scene, it will always override the parent's
+property. It's useful for UIs, as they often require variations of the same
 elements. In general, in UI design, buttons, panels etc. share a common
 base style and interactions. We don't want to copy it over to all
 variations manually.
@@ -516,7 +516,7 @@ as well.
     way both the EnergyBar's Count and the LifeBar's Count nodes are one
     hundred pixels wide, so both gauges will align perfectly.
 
-Prepare the bomb and rupee counters
+Prepare the bomb and emerald counters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let us now take care of the counters. Go to
@@ -529,19 +529,19 @@ Save the new scene as ``BombCounter.tscn``. That's all for this scene.
    The bomb counter is the same as the original Counter scene
 
 Go to ``Scene -> New Inherited Scene`` again and select ``Counter.tscn``
-once more. Rename the root node ``RupeeCounter`` and save the scene as ``RupeeCounter.tscn``.
+once more. Rename the root node ``EmeraldCounter`` and save the scene as ``EmeraldCounter.tscn``.
 For this one, we mainly need to replace the bomb icon
-with the rupee icon. In the FileSystem tab, drag the ``rupees_icon.png``
+with the emerald icon. In the FileSystem tab, drag the ``rupees_icon.png``
 onto the ``Icon`` node's ``Texture`` slot. ``Icon`` already anchors to
 the right edge of the ``Background`` node so we can change its position
-and it will scale and reposition with the ``RupeeCounter`` container.
-Shift the rupee icon a little bit to the right and down. Use the Arrow
+and it will scale and reposition with the ``EmeraldCounter`` container.
+Shift the emerald icon a little bit to the right and down. Use the Arrow
 Keys on the keyboard to nudge its position. Save, and we're done with
 all the UI elements.
 
 .. figure:: ./img/ui_gui_step_tutorial_design_counters_2.png
 
-   The rupee counter should look about like this
+   The emerald counter should look something like this
 
 Add the UI components to the final GUI
 --------------------------------------
@@ -556,14 +556,14 @@ onto the ``Bars`` container in the scene tree. Do the same for the
 
    The LifeBar and the EnergyBar align automatically
 
-Now, drag and drop the ``BombCounter.tscn`` and ``RupeeCounter.tscn`` scenes onto the
+Now, drag and drop the ``BombCounter.tscn`` and ``EmeraldCounter.tscn`` scenes onto the
 ``Counters`` node. They'll resize automatically.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
 
    The nodes resize to take all the available vertical space
 
-To let the ``RupeeCounter`` and ``BombCounter`` use the size we defined
+To let the ``EmeraldCounter`` and ``BombCounter`` use the size we defined
 in ``Counter.tscn``, we need to change the ``Size Flags`` on the
 ``Counters`` container. Select the ``Counters`` node and unfold the
 ``Size Flags`` section in the Inspector. Uncheck the ``Fill`` tag for
@@ -582,7 +582,7 @@ centers inside the ``HBoxContainer``.
 We have one small issue left with the EP label on the EnergyBar: the 2
 bars should align vertically. Click the icon next to the ``EnergyBar``
 node to open its scene. Select the ``Count`` node and scroll down to the
-``Custom Constant`` section. Add a ``Margin Left`` of ``20``. In
+``Custom Constants`` section. Add a ``Margin Left`` of ``20``. In
 the ``Rect`` section set the node's ``Min Size`` back to 100, the same
 value as on the LifeBar. The ``Count`` should now have some margin on
 the left. If you save and go back to the GUI scene, it will be aligned
@@ -594,7 +594,7 @@ vertically with the ``LifeBar``.
 
 .. note::
 
-    We could have setup the ``EnergyBar`` this way a few moments
+    We could have set up the ``EnergyBar`` this way a few moments
     ago. But this shows you that you can go back to any scene anytime, tweak
     it, and see the changes propagate through the project!
 
@@ -614,7 +614,7 @@ small as possible vertically. Now you can see how the interface looks in
 the context of the game.
 
 Congratulations for getting to the end of this long tutorial. You can
-find final project `here <#>`__.
+find the final project `here <#>`__.
 
 .. figure:: ./img/ui_gui_design_final_result.png
 
