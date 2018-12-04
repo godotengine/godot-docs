@@ -6,7 +6,7 @@ Control the game's UI with code
 Intro
 -----
 
-In this tutorial you will connect a character to a life bar and animate
+In this tutorial, you will connect a character to a life bar and animate
 the health loss.
 
 .. figure:: img/lifebar_tutorial_final_result.gif
@@ -46,8 +46,8 @@ To do this, we will use **signals**.
 
 .. note::
 
-    Signals are Godot's version of the Observer pattern. They allow us to send out some message. Other nodes can connect to the object that **emits** the signal and receive the information. It's a powerful tool we use a lot for User Interface and achievement systems. You don't want to use them everywhere though. Connecting two nodes adds some coupling between them. When there's a lot of connections, they become hard to manage.
-    For more information on check out the `signals video tutorial <https://youtu.be/l0BkQxF7X3E>`_ on GDquest.
+    Signals are Godot's version of the Observer pattern. They allow us to send out some message. Other nodes can connect to the object that **emits** the signal and receive the information. It's a powerful tool we use a lot for User Interface and achievement systems. You don't want to use them everywhere, though. Connecting two nodes adds some coupling between them. When there's a lot of connections, they become hard to manage.
+    For more information, check out the `signals video tutorial <https://youtu.be/l0BkQxF7X3E>`_ on GDquest.
 
 Download and explore the start project
 --------------------------------------
@@ -55,12 +55,12 @@ Download and explore the start project
 Download the Godot project: :download:`ui_code_life_bar.zip <files/ui_code_life_bar.zip>`. It contains all the assets and scripts you
 need to get started. Extract the .zip archive to get two folders: `start` and `end`.
 
-Load the ``start`` project in Godot. In the ``FileSystem`` dock
+Load the ``start`` project in Godot. In the ``FileSystem`` dock,
 double click on LevelMockup.tscn to open it. It's an RPG game's mockup
 where 2 characters face each other. The pink enemy attacks and damages
 the green square at regular time intervals, until its death. Feel free
 to try out the game: the basic combat mechanics already work. But as the
-character isn't connected to the life bar the ``GUI`` doesn't do
+character isn't connected to the life bar, the ``GUI`` doesn't do
 anything.
 
 .. note::
@@ -74,7 +74,7 @@ The scene contains a background sprite, a GUI, and two characters.
 
    The scene tree, with the GUI scene set to display its children
 
-The GUI scene encapsulates all of the Game User Interface. It comes with
+The GUI scene encapsulates all of the game's Graphical User Interface. It comes with
 a barebones script where we get the path to nodes that exist inside the
 scene:
 
@@ -216,7 +216,7 @@ of information. And you will update the state of your connected node
     Read Game Programming Patterns for more information on the `Observer pattern <http://gameprogrammingpatterns.com/observer.html>`_.
     The `full book <http://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
 
-With this in mind let's connect the ``GUI`` to the ``Player``. Click on
+With this in mind, let's connect the ``GUI`` to the ``Player``. Click on
 the ``Player`` node in the scene dock to select it. Head down to the
 Inspector and click on the Node tab. This is the place to connect nodes
 to listen to the one you selected.
@@ -272,7 +272,7 @@ node. The script editor opens with the cursor inside a new
    Godot writes the callback method for you and takes you to it
 
 Inside the parens after the function name, add a ``player_health``
-argument. When the player emits the ``health_changed`` signal it will send
+argument. When the player emits the ``health_changed`` signal, it will send
 its current ``health`` alongside it. Your code should look like:
 
 .. tabs::
@@ -290,7 +290,7 @@ its current ``health`` alongside it. Your code should look like:
 .. note::
 
     The engine does not convert PascalCase to snake_case, for C# examples we'll be using
-    PascalCase for method names & camelCase for method parameters which follows the official `C#
+    PascalCase for method names & camelCase for method parameters, which follows the official `C#
     naming conventions. <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_
 
 
@@ -299,7 +299,7 @@ its current ``health`` alongside it. Your code should look like:
    In Player.gd, when the Player emits the health\_changed signal, it also
    sends its health value
 
-Inside ``_on_Player_health_changed`` let's call a second function called
+Inside ``_on_Player_health_changed``, let's call a second function called
 ``update_health`` and pass it the ``player_health`` variable.
 
 .. note::
@@ -348,7 +348,7 @@ This method needs to:
 .. tip::
 
     ``str`` is a built-in function that converts about any value to
-    text. ``Number``'s ``text`` property requires a string so we can't
+    text. ``Number``'s ``text`` property requires a string, so we can't
     assign it to ``new_value`` directly
 
 Also call ``update_health`` at the end of the ``_ready`` function to
@@ -367,7 +367,7 @@ Animate the loss of life with the Tween node
 Our interface is functional, but it could use some animation. That's a
 good opportunity to introduce the ``Tween`` node, an essential tool to
 animate properties. ``Tween`` animates anything you'd like from a start
-to an end state over a certain duration. For example it can animate the
+to an end state over a certain duration. For example, it can animate the
 health on the ``TextureProgress`` from its current level to the
 ``Player``'s new ``health`` when the character takes damage.
 
@@ -528,7 +528,7 @@ game, it'd be nice for the life bar to animate in a choppier fashion.
 
 .. figure:: img/lifebar_tutorial_number_animation_messed_up.gif
 
-   The animation is smooth but the number is broken
+   The animation is smooth, but the number is broken
 
 We can fix both problems by rounding out ``animated_health``. Use a
 local variable named ``round_value`` to store the rounded
@@ -556,7 +556,7 @@ Try the game again to see a nice blocky animation.
 
 .. figure:: img/lifebar_tutorial_number_animation_working.gif
 
-   By rounding out animated\_health we hit two birds with one stone
+   By rounding out animated\_health, we kill two birds with one stone
 
 .. tip::
 
@@ -610,7 +610,7 @@ textures.
 
 ``modulate`` takes a ``Color`` value with 4 channels: red, green, blue
 and alpha. If we darken any of the first three channels it darkens the
-interface. If we lower the alpha channel our interface fades out.
+interface. If we lower the alpha channel, our interface fades out.
 
 We're going to tween between two color values: from a white with an
 alpha of ``1``, that is to say at full opacity, to a pure white with an
@@ -651,7 +651,7 @@ We then have to call the ``interpolate_property`` method of the
     _tween.InterpolateProperty(this, "modulate", startColor, endColor, 1.0f, Tween.TransitionType.Linear,
       Tween.EaseType.In);
 
-This time we change the ``modulate`` property and have it animate from
+This time, we change the ``modulate`` property and have it animate from
 ``start_color`` to the ``end_color``. The duration is of one second,
 with a linear transition. Here again, because the transition is linear,
 the easing does not matter. Here's the complete ``_on_Player_died``
