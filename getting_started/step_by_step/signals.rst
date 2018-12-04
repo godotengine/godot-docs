@@ -184,7 +184,7 @@ To emit a signal via code, use the ``emit`` function:
     signal my_signal
 
     func _ready():
-        emit("my_signal")
+        emit_signal("my_signal")
 
  .. code-tab:: csharp
 
