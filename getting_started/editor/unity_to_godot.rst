@@ -54,10 +54,10 @@ The pictures below display both editors with colored blocks to indicate common f
 
 Note that Godot editor allows you to dock each panel at the side of the scene editor you wish.
 
-While both editors may seem similar, there are many differences below the surface.
+While both editors may seem similar, there are many differences beneath the surface.
 Both let you organize the project using the filesystem,
 but Godot's approach is simpler with a single configuration file, minimalist text format,
-and no metadata. All this contributes to Godot being much friendlier to VCS systems such as Git, Subversion, or Mercurial.
+and no metadata. All this contributes to Godot being much friendlier to VCS systems, such as Git, Subversion, or Mercurial.
 
 Godot's Scene panel is similar to Unity's Hierarchy panel but, as each node has a specific function,
 the approach used by Godot is more visually descriptive. In other words, it's easier to understand
@@ -92,7 +92,7 @@ This is the most important difference between Unity and Godot and, actually, the
 Unity's scene system consists of embedding all the required assets in a scene
 and linking them together by setting components and scripts to them.
 
-Godot's scene system is different: it actually consists in a tree made of nodes.
+Godot's scene system is different: it actually consists of a tree made of nodes.
 Each node serves a purpose: Sprite, Mesh, Light, etc. Basically, this is similar to the Unity scene system.
 However, each node can have multiple children, which makes each a subscene of the main scene.
 This means you can compose a whole scene with different scenes stored in different files.
@@ -145,7 +145,7 @@ new specific node that has collision properties. Godot features various collisio
 - Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
 
     - First, this system is closer to the well-known object-oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
-    - Second, it allows the extraction a subtree of the scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
+    - Second, it allows the extraction of a subtree of the scene to make it a scene of its own, which answers the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
 
 
 These are the most important concepts you need to remember: "node", "parent node", and "child node".
@@ -175,7 +175,7 @@ It is reusable, and each instance of the prefab that exists in the scene has an 
 but all of them have the same properties as defined by the prefab.
 
 Godot does not provide prefabs as such, but this functionality is here, again, filled thanks to its scene system:
-As we saw the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene,
+As we saw, the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene,
 thus saved into its own file. This new scene can then be instanced as many times as you want.
 Any change you make to this new, separate scene will be applied to its instances.
 However, any change you make to the instance will not have any impact on the 'template' scene.
