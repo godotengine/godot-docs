@@ -109,7 +109,7 @@ generally work well, but tweaking the first split a bit is common to give more
 detail to close objects (like a character in a third person game).
 
 Always make sure to set a shadow *Max Distance* according to what the scene needs.
-The closer the max distance, the higher quality they shadows will have.
+A lower maximum distance will result in better-looking shadows.
 
 Sometimes, the transition between a split and the next can look bad. To fix this,
 the **"Blend Splits"** option can be turned on which sacrifices detail in exchange
@@ -225,8 +225,8 @@ Every frame, the following logic is done for all lights:
 
 If the slots in a quadrant are full, lights are pushed back to smaller slots depending on size and distance.
 
-This allocation strategy works for most games, but you may to use a separate one in some cases (as example, a top-down game where
-all lights are around the same size and quadrands may have all the same subdivision).
+This allocation strategy works for most games, but you may want to use a separate one in some cases (as example, a top-down game where
+all lights are around the same size and quadrants may have all the same subdivision).
 
 Shadow filter quality
 ~~~~~~~~~~~~~~~~~~~~~
