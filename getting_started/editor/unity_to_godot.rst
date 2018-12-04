@@ -54,7 +54,7 @@ The pictures below display both editors with colored blocks to indicate common f
 
 Note that Godot editor allows you to dock each panel at the side of the scene editor you wish.
 
-While both editors may seem similar, there are many differences beneath the surface.
+While both editors may seem similar, there are many differences below the surface.
 Both let you organize the project using the filesystem,
 but Godot's approach is simpler with a single configuration file, minimalist text format,
 and no metadata. All this contributes to Godot being much friendlier to VCS systems, such as Git, Subversion, or Mercurial.
