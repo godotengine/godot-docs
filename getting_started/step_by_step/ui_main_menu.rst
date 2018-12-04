@@ -276,7 +276,7 @@ create a Game User Interface with bars and item counters.
 Break down the UI mockup
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Responsive User Interface is all about making sure our UIs scale well on
+A responsive User Interface is all about making sure our UIs scale well on
 all screen types. TV screens and computer displays have different sizes
 and ratios. In Godot, we use containers to control the position and the
 size of UI elements.
