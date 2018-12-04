@@ -51,8 +51,8 @@ menu and switch to the "AutoLoad" tab.
 .. image:: img/autoload_tab.png
 
 Here you can add any number of scenes or scripts. Each entry in the list
-requires a name, which assigned as the node's ``name`` property. The order of
-the entries as they added to the global scene tree can be manipulated using
+requires a name, which is assigned as the node's ``name`` property. The order of
+the entries as they are added to the global scene tree can be manipulated using
 the up/down arrow keys.
 
 .. image:: img/autoload_example.png
