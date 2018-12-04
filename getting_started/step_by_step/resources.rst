@@ -8,13 +8,13 @@ Nodes and resources
 
 Up to this tutorial, we focused on the :ref:`Node <class_Node>`
 class in Godot as that's the one you use to code behavior and
-most of the engine's features rely on them. There is
+most of the engine's features rely on it. There is
 another datatype that is just as important:
 :ref:`Resource <class_Resource>`.
 
 *Nodes* give you functionality: they draw sprites, 3D models, simulate physics,
-arrange user interface, etc. **Resources** are **data containers**. They don't
-do anything on their own: instead nodes use the data contained in resources.
+arrange user interfaces, etc. **Resources** are **data containers**. They don't
+do anything on their own: instead, nodes use the data contained in resources.
 
 Anything Godot saves or loads from disk is a resource. Be it a scene (a .tscn or
 an .scn file), an image, a script... Here are some ``Resource`` examples:
@@ -25,11 +25,11 @@ an .scn file), an image, a script... Here are some ``Resource`` examples:
 
 When the engine loads a resource from disk, **it only loads it once**. If a copy
 of that resource is already in memory, trying to load the resource again will
-return the same copy every time. As resources only contain data there is no need
+return the same copy every time. As resources only contain data, there is no need
 to duplicate them.
 
 Every object, be it a Node or a Resource, can export properties. There are many
-types of Properties like String, integer, Vector2, etc., and any of these types
+types of Properties, like String, integer, Vector2, etc., and any of these types
 can become a resource. This means that both nodes and resources can contain
 resources as properties:
 
@@ -48,14 +48,14 @@ in a :ref:`Sprite <class_Sprite>` node:
 
 .. image:: img/spriteprop.png
 
-Clicking the resource preview allows us to view and edit the resources properties.
+Clicking the resource preview allows us to view and edit the resource's properties.
 
 .. image:: img/resourcerobi.png
 
-The path property tells us where the resource comes from. In this case it comes
+The path property tells us where the resource comes from. In this case, it comes
 from a PNG image called ``robi.png``. When the resource comes from a file like
 this, it is an external resource. If you erase the path or this path is empty,
-it becomes built-in resource.
+it becomes a built-in resource.
 
 The switch between built-in and external resources happens when you save the
 scene. In the example above, if you erase the path \`"res://robi.png"\` and
@@ -137,7 +137,7 @@ node.
 The approach has several advantages. As the :ref:`PackedScene.instance()
 <class_PackedScene_instance>` function is pretty fast, you can create new
 enemies, bullets, effects, etc. without having to load them again from disk each
-time. Remember that as always, images, meshes, etc. are all shared between the
+time. Remember that, as always, images, meshes, etc. are all shared between the
 scene instances.
 
 Freeing resources
@@ -156,7 +156,7 @@ text or binary data (/*.tres, /*.res). They also inherit the reference-counting
 memory management from the Reference type.
 
 This comes with many distinct advantages over alternative data
-structures such as JSON, CSV, or custom TXT files. Users can only import these
+structures, such as JSON, CSV, or custom TXT files. Users can only import these
 assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a
 :ref:`File <class_File>` to parse. What sets Resources apart is their
 inheritance of :ref:`Object <class_Object>`, :ref:`Reference <class_Reference>`,
@@ -349,7 +349,7 @@ Let's see some examples.
     2. Design a visualization within the editor and create a simple plugin that adds it
        to the Inspector when you open these types of Resources.
 
-    CurveTables are the same thing except mapped to an Array of float values
+    CurveTables are the same thing, except mapped to an Array of float values
     or a :ref:`Curve <class_Curve>`/:ref:`Curve2D <class_Curve2D>` resource object.
 
 .. warning::
