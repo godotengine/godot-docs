@@ -9,7 +9,7 @@ scenes step-by-step using the engine's UI system:
 1. A main menu
 2. A game UI with a health bar, energy bar, bomb and money counters
 
-You will learn how to design game UI efficiently, and how to use Godot's
+You will learn how to design game UIs efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
 from the editor. To learn how to code a life bar,
 read :doc:`ui_code_a_life_bar`
@@ -219,7 +219,7 @@ We're left with two problems to solve:
 To center the characters on the right, we'll use a ``CenterContainer``.  Add a
 ``CenterContainer`` node as a child of the ``HBoxContainer``. Then in the
 Inspector, scroll down to the ``Size Flags`` category and click on the field to
-the right of the ``Vertical`` property, and check ``Expand``. Do the same for
+the right of the ``Vertical`` property, and check ``Expand`` in addition to ``Fill``. Do the same for
 the ``Horizontal`` property. Finally drag and drop the Characters into the
 ``CenterContainer``. The Characters element will center automatically.
 
@@ -245,7 +245,7 @@ Now we grouped the menu options together, we can tell their container to
 expand to take as much vertical space as possible. Select the
 ``MenuOptions`` node. In the Inspector, scroll down to the
 ``Size Flags`` category. Click on the field to the right of the
-``Vertical`` property, and check ``Expand``. The container expands to
+``Vertical`` property, and check ``Expand`` in addition to ``Fill``. The container expands to
 take all the available vertical space. But it respects its neighbors,
 the ``Logo`` and ``Version`` elements.
 
@@ -276,7 +276,7 @@ create a Game User Interface with bars and item counters.
 Break down the UI mockup
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Responsive User Interface is all about making sure our UIs scale well on
+A responsive User Interface is all about making sure our UIs scale well on
 all screen types. TV screens and computer displays have different sizes
 and ratios. In Godot, we use containers to control the position and the
 size of UI elements.
