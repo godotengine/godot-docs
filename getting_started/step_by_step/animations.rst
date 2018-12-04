@@ -35,9 +35,9 @@ the animation "intro" when the dialog appears.
 
 .. image:: img/robisplash_anim_new.png
 
-Now that we have an animation the property editor enters
+Now that we have an animation, the property editor enters
 "animation editing" mode. In this mode, a key icon appears next to
-every property of the property editor. In Godot any property of an object
+every property of the property editor. In Godot, any property of an object
 can be animated:
 
 .. image:: img/robisplash_anim_property_keys.png
