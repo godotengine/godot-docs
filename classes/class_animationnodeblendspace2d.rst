@@ -19,19 +19,21 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_auto_triangles>` |
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`max_space<class_AnimationNodeBlendSpace2D_max_space>`           |
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`min_space<class_AnimationNodeBlendSpace2D_min_space>`           |
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`snap<class_AnimationNodeBlendSpace2D_snap>`                     |
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`x_label<class_AnimationNodeBlendSpace2D_x_label>`               |
-+-------------------------------+-----------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`y_label<class_AnimationNodeBlendSpace2D_y_label>`               |
-+-------------------------------+-----------------------------------------------------------------------+
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_auto_triangles>` |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace2D_blend_mode>`         |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`max_space<class_AnimationNodeBlendSpace2D_max_space>`           |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`min_space<class_AnimationNodeBlendSpace2D_min_space>`           |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                              | :ref:`snap<class_AnimationNodeBlendSpace2D_snap>`                     |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`String<class_String>`                                | :ref:`x_label<class_AnimationNodeBlendSpace2D_x_label>`               |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`String<class_String>`                                | :ref:`y_label<class_AnimationNodeBlendSpace2D_y_label>`               |
++------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Methods
 -------
@@ -60,6 +62,19 @@ Methods
 | void                                               | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace2D_set_blend_point_position>` **(** :ref:`int<class_int>` point, :ref:`Vector2<class_Vector2>` pos **)**                                             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enumerations
+------------
+
+.. _enum_AnimationNodeBlendSpace2D_BlendMode:
+
+enum **BlendMode**:
+
+- **BLEND_MODE_INTERPOLATED** = **0**
+
+- **BLEND_MODE_DISCRETE** = **1**
+
+- **BLEND_MODE_DISCRETE_CARRY** = **2**
+
 Property Descriptions
 ---------------------
 
@@ -72,6 +87,16 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_auto_triangles()      |
 +----------+---------------------------+
+
+.. _class_AnimationNodeBlendSpace2D_blend_mode:
+
+- :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` **blend_mode**
+
++----------+-----------------------+
+| *Setter* | set_blend_mode(value) |
++----------+-----------------------+
+| *Getter* | get_blend_mode()      |
++----------+-----------------------+
 
 .. _class_AnimationNodeBlendSpace2D_max_space:
 

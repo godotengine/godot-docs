@@ -118,11 +118,11 @@ Properties
 +---------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                               | :ref:`randomness<class_CPUParticles2D_randomness>`                           |
 +---------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                               | :ref:`scale<class_CPUParticles2D_scale>`                                     |
+| :ref:`float<class_float>`                               | :ref:`scale_amount<class_CPUParticles2D_scale_amount>`                       |
 +---------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`Curve<class_Curve>`                               | :ref:`scale_curve<class_CPUParticles2D_scale_curve>`                         |
+| :ref:`Curve<class_Curve>`                               | :ref:`scale_amount_curve<class_CPUParticles2D_scale_amount_curve>`           |
 +---------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                               | :ref:`scale_random<class_CPUParticles2D_scale_random>`                       |
+| :ref:`float<class_float>`                               | :ref:`scale_amount_random<class_CPUParticles2D_scale_amount_random>`         |
 +---------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                               | :ref:`speed_scale<class_CPUParticles2D_speed_scale>`                         |
 +---------------------------------------------------------+------------------------------------------------------------------------------+
@@ -702,9 +702,9 @@ Property Descriptions
 | *Getter* | get_randomness_ratio()      |
 +----------+-----------------------------+
 
-.. _class_CPUParticles2D_scale:
+.. _class_CPUParticles2D_scale_amount:
 
-- :ref:`float<class_float>` **scale**
+- :ref:`float<class_float>` **scale_amount**
 
 +----------+------------------+
 | *Setter* | set_param(value) |
@@ -712,9 +712,9 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-.. _class_CPUParticles2D_scale_curve:
+.. _class_CPUParticles2D_scale_amount_curve:
 
-- :ref:`Curve<class_Curve>` **scale_curve**
+- :ref:`Curve<class_Curve>` **scale_amount_curve**
 
 +----------+------------------------+
 | *Setter* | set_param_curve(value) |
@@ -722,9 +722,9 @@ Property Descriptions
 | *Getter* | get_param_curve()      |
 +----------+------------------------+
 
-.. _class_CPUParticles2D_scale_random:
+.. _class_CPUParticles2D_scale_amount_random:
 
-- :ref:`float<class_float>` **scale_random**
+- :ref:`float<class_float>` **scale_amount_random**
 
 +----------+-----------------------------+
 | *Setter* | set_param_randomness(value) |

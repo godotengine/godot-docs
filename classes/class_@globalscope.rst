@@ -28,8 +28,6 @@ Properties
 +-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`Geometry<class_Geometry>`                     | :ref:`Geometry<class_@GlobalScope_Geometry>`                     |
 +-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`GodotSharp<class_GodotSharp>`                 | :ref:`GodotSharp<class_@GlobalScope_GodotSharp>`                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`IP<class_IP>`                                 | :ref:`IP<class_@GlobalScope_IP>`                                 |
 +-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`Input<class_Input>`                           | :ref:`Input<class_@GlobalScope_Input>`                           |
@@ -1146,10 +1144,6 @@ Property Descriptions
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 :ref:`Geometry<class_Geometry>` singleton
-
-.. _class_@GlobalScope_GodotSharp:
-
-- :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
 
 .. _class_@GlobalScope_IP:
 

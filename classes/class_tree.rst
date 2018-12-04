@@ -240,13 +240,13 @@ Emitted when an item is edited using the right mouse button.
 
 - **item_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Emitted when an item is selected with right mouse button.
+Emitted when an item is selected with the right mouse button.
 
 .. _class_Tree_item_selected:
 
 - **item_selected** **(** **)**
 
-Emitted when an item is selected with right mouse button.
+Emitted when an item is selected.
 
 .. _class_Tree_multi_selected:
 

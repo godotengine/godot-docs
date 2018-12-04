@@ -29,6 +29,13 @@ Properties
 | :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_split_offset>`             |
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 
+Methods
+-------
+
++-------+--------------------------------------------------------------------------------+
+| void  | :ref:`clamp_split_offset<class_SplitContainer_clamp_split_offset>` **(** **)** |
++-------+--------------------------------------------------------------------------------+
+
 Signals
 -------
 
@@ -90,4 +97,11 @@ Determines whether the dragger is visible.
 +----------+-------------------------+
 | *Getter* | get_split_offset()      |
 +----------+-------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_SplitContainer_clamp_split_offset:
+
+- void **clamp_split_offset** **(** **)**
 

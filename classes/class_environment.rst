@@ -114,6 +114,8 @@ Properties
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`glow_enabled<class_Environment_glow_enabled>`                                     |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_hdr_luminance_cap<class_Environment_glow_hdr_luminance_cap>`                 |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`glow_hdr_scale<class_Environment_glow_hdr_scale>`                                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`glow_hdr_threshold<class_Environment_glow_hdr_threshold>`                         |
@@ -840,6 +842,16 @@ Bloom value (global glow).
 +----------+-------------------------+
 
 Enables glow rendering.
+
+.. _class_Environment_glow_hdr_luminance_cap:
+
+- :ref:`float<class_float>` **glow_hdr_luminance_cap**
+
++----------+-----------------------------------+
+| *Setter* | set_glow_hdr_luminance_cap(value) |
++----------+-----------------------------------+
+| *Getter* | get_glow_hdr_luminance_cap()      |
++----------+-----------------------------------+
 
 .. _class_Environment_glow_hdr_scale:
 

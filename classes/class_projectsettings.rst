@@ -392,14 +392,6 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_memory/limits/multithreaded_server/rid_pool_prealloc>`                     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`mono/debugger_agent/port<class_ProjectSettings_mono/debugger_agent/port>`                                                                             |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`mono/debugger_agent/wait_for_debugger<class_ProjectSettings_mono/debugger_agent/wait_for_debugger>`                                                   |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`mono/debugger_agent/wait_timeout<class_ProjectSettings_mono/debugger_agent/wait_timeout>`                                                             |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`mono/export/include_scripts_content<class_ProjectSettings_mono/export/include_scripts_content>`                                                       |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/limits/debugger_stdout/max_chars_per_second<class_ProjectSettings_network/limits/debugger_stdout/max_chars_per_second>`                       |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`network/limits/debugger_stdout/max_errors_per_frame<class_ProjectSettings_network/limits/debugger_stdout/max_errors_per_frame>`                       |
@@ -1433,22 +1425,6 @@ Godot uses a message queue to defer some function calls. If you run out of space
 - :ref:`int<class_int>` **memory/limits/multithreaded_server/rid_pool_prealloc**
 
 This is used by servers when used in multi threading mode (servers and visual). RIDs are preallocated to avoid stalling the server requesting them on threads. If servers get stalled too often when loading resources in a thread, increase this number.
-
-.. _class_ProjectSettings_mono/debugger_agent/port:
-
-- :ref:`int<class_int>` **mono/debugger_agent/port**
-
-.. _class_ProjectSettings_mono/debugger_agent/wait_for_debugger:
-
-- :ref:`bool<class_bool>` **mono/debugger_agent/wait_for_debugger**
-
-.. _class_ProjectSettings_mono/debugger_agent/wait_timeout:
-
-- :ref:`int<class_int>` **mono/debugger_agent/wait_timeout**
-
-.. _class_ProjectSettings_mono/export/include_scripts_content:
-
-- :ref:`bool<class_bool>` **mono/export/include_scripts_content**
 
 .. _class_ProjectSettings_network/limits/debugger_stdout/max_chars_per_second:
 

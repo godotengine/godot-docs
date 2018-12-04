@@ -67,6 +67,8 @@ Methods
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_playing_speed<class_AnimationPlayer_get_playing_speed>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_queue<class_AnimationPlayer_get_queue>` **(** **)**                                                                                                                                                          |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_animation<class_AnimationPlayer_has_animation>` **(** :ref:`String<class_String>` name **)** const                                                                                                           |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_playing<class_AnimationPlayer_is_playing>` **(** **)** const                                                                                                                                                  |
@@ -325,6 +327,10 @@ Get the blend time (in seconds) between two animations, referenced by their name
 - :ref:`float<class_float>` **get_playing_speed** **(** **)** const
 
 Get the actual playing speed of current animation or 0 if not playing. This speed is the ``playback_speed`` property multiplied by ``custom_speed`` argument specified when calling the ``play`` method.
+
+.. _class_AnimationPlayer_get_queue:
+
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_queue** **(** **)**
 
 .. _class_AnimationPlayer_has_animation:
 

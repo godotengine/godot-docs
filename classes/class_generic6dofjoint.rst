@@ -188,6 +188,8 @@ Properties
 +---------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`linear_spring_z/stiffness<class_Generic6DOFJoint_linear_spring_z/stiffness>`                   |
 +---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`precision<class_Generic6DOFJoint_precision>`                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -1181,4 +1183,14 @@ The speed that the linear motor will attempt to reach on the z-axis.
 +----------+--------------------+
 | *Getter* | get_param_z()      |
 +----------+--------------------+
+
+.. _class_Generic6DOFJoint_precision:
+
+- :ref:`int<class_int>` **precision**
+
++----------+----------------------+
+| *Setter* | set_precision(value) |
++----------+----------------------+
+| *Getter* | get_precision()      |
++----------+----------------------+
 
