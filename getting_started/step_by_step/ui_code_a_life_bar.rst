@@ -556,7 +556,7 @@ Try the game again to see a nice blocky animation.
 
 .. figure:: img/lifebar_tutorial_number_animation_working.gif
 
-   By rounding out animated\_health, we killed two birds with one stone
+   By rounding out animated\_health, we kill two birds with one stone
 
 .. tip::
 
