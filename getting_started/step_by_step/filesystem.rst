@@ -9,7 +9,7 @@ Introduction
 File systems are yet another hot topic in engine development. The
 file system manages how the assets are stored and how they are accessed.
 A well-designed file system also allows multiple developers to edit the
-same source files and assets while collaborating together.
+same source files and assets while working together.
 
 Initial versions of the Godot engine (and previous iterations before it was
 named Godot) used a database. Assets were stored in it and assigned an
@@ -29,7 +29,7 @@ example, a font resource is often bundled together with the font textures.
 
 In general, the Godot file system avoids using metadata files. The reason for
 this is simple, existing asset managers and VCSs are simply much better than
-anything we can implement, so Godot tries the best to play along with SVN,
+anything we can implement, so Godot tries its best to play along with SVN,
 Git, Mercurial, Perforce, etc.
 
 Example of a file system contents:
