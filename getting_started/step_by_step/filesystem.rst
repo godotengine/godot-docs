@@ -9,7 +9,7 @@ Introduction
 File systems are yet another hot topic in engine development. The
 file system manages how the assets are stored and how they are accessed.
 A well-designed file system also allows multiple developers to edit the
-same source files and assets while working together.
+same source files and assets while collaborating.
 
 Initial versions of the Godot engine (and previous iterations before it was
 named Godot) used a database. Assets were stored in it and assigned an
