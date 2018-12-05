@@ -568,7 +568,7 @@ after the variable name, followed by the type.
     var my_vector2: Vector2
     var my_node: Node = Sprite.new()
 
-If the variable is initialized within the declaration the type can be inferred, so
+If the variable is initialized within the declaration, the type can be inferred, so
 it's possible to omit the type name::
 
     var my_vector2 :=  Vector2() # 'my_vector2' is of type 'Vector2'
@@ -592,13 +592,13 @@ Values assigned to typed variables must have a compatible type. If it's needed t
 coerce a value to be of a certain type, in particular for object types, you can
 use the casting operator ``as``.
 
-Casting between object types results on the same object if the value is of the
-same type or a subtype of the casted type.
+Casting between object types results in the same object if the value is of the
+same type or a subtype of the cast type.
 
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Sprite as Node2D # Works since Sprite is subtype of Node2D
+    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D
 
 If the value is not a subtype, the casting operation will result in a ``null`` value.
 
@@ -641,7 +641,7 @@ expressions and must be assigned on initialization.
     const F = sin(20) # sin() can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
 
-Although the type of constants are inferred from the assigned value, it's also
+Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
 
     const A: int = 5
@@ -719,11 +719,11 @@ return early with the ``return`` keyword, but they can't return any value.
     void_function() -> void:
         return # Can't return a value
 
-.. note:: Non-void functions must **always** return a value, so if your code have
-          branching statements (such as ``if``/``else`` construct), all the
+.. note:: Non-void functions must **always** return a value, so if your code has
+          branching statements (such as an ``if``/``else`` construct), all the
           possible paths must have a return. E.g., if you have a ``return``
           inside an ``if`` block but not after it, the editor will raise an
-          error because if the block is not executed the function won't have a
+          error because if the block is not executed, the function won't have a
           valid value to return.
 
 Referencing Functions
@@ -746,8 +746,8 @@ pass it to another function as an argument) one must use the ``call`` or
     my_func.call_func(args)
 
 
-Remember that default functions like  ``_init``, and most
-notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
+Remember that default functions, like  ``_init``, and most
+notifications, such as ``_enter_tree``, ``_exit_tree``, ``_process``,
 ``_physics_process``, etc. are called in all base classes automatically.
 So there is only a need to call the function explicitly when overloading
 them in some way.
@@ -756,7 +756,7 @@ them in some way.
 Static functions
 ^^^^^^^^^^^^^^^^
 
-A function can be declared static. When a function is static it has no
+A function can be declared static. When a function is static, it has no
 access to the instance member variables or ``self``. This is mainly
 useful to make libraries of helper functions:
 
@@ -798,7 +798,7 @@ Short statements can be written on the same line as the condition::
         return x
 
 Sometimes you might want to assign a different initial value based on a
-boolean expression. In this case ternary-if expressions come in handy::
+boolean expression. In this case, ternary-if expressions come in handy::
 
     var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
@@ -819,7 +819,7 @@ for
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. When iterating over an array, the current array element is stored in
-the loop variable. When iterating over a dictionary, the *index* is stored
+the loop variable. When iterating over a dictionary, the *value* [part of the key-value pair] is stored
 in the loop variable.
 
 ::
@@ -847,7 +847,7 @@ match
 ^^^^^
 
 A ``match`` statement is used to branch execution of a program.
-It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
+It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
 Basic syntax:
 
@@ -862,7 +862,7 @@ Basic syntax:
             [block]
 
 
-**Crash-course for people who are familiar to switch statements**:
+**Crash-course for people who are familiar with switch statements**:
 
 1. Replace ``switch`` with ``match``
 2. Remove ``case``
@@ -874,7 +874,7 @@ Basic syntax:
 
 The patterns are matched from top to bottom.
 If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
+If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check the ones below it.
 
 There are 6 pattern types:
 
@@ -930,7 +930,7 @@ There are 6 pattern types:
 
 
 - array pattern
-    matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
+    matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
 
     The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
@@ -1068,7 +1068,7 @@ Inheritance uses the ``extends`` keyword:
     extends "somefile.gd".SomeInnerClass
 
 
-To check if a given instance inherits from a given class
+To check if a given instance inherits from a given class,
 the ``is`` keyword can be used:
 
 ::
@@ -1105,7 +1105,7 @@ The class constructor, called on class instantiation, is named ``_init``.
 As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
-Unlike the call of a regular function like in the above example with ``.some_func``,
+Unlike the call of a regular function, like in the above example with ``.some_func``,
 if the constructor from the inherited class takes arguments, they are passed like this:
 
 ::
@@ -1138,12 +1138,12 @@ This is better explained through examples. Say we have this scenario:
 There are a few things to keep in mind here:
 
 1. if the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case) then the inheriting class (``Idle.gd``) *has* to
+   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *has* to
    define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``
 2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``
-3. in the example above ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
+3. in the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
    in to ``Idle.gd``
-4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments it still needs to pass some value
+4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
    to the ``State.gd`` base class even if it does nothing. Which brings us to the fact that you
    can pass literals in the base constructor as well, not just variables. Eg.:
 
@@ -1291,7 +1291,7 @@ special export syntax is provided.
     # Color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col # Color is RGBA.
 
-    # Another node in the scene can be exported too.
+    # Another node in the scene can be exported, too.
 
     export(NodePath) var node
 
@@ -1382,7 +1382,7 @@ It is used directly after a variable definition:
 Whenever the value of ``variable`` is modified by an *external* source
 (i.e. not from local usage in the class), the *setter* function (``setterfunc`` above)
 will be called. This happens *before* the value is changed. The *setter* must decide what to do
-with the new value. Vice-versa, when ``variable`` is accessed, the *getter* function
+with the new value. Vice versa, when ``variable`` is accessed, the *getter* function
 (``getterfunc`` above) must ``return`` the desired value. Below is an example:
 
 
@@ -1602,7 +1602,7 @@ into an invalid state, for example:
         yield($Button0, "pressed")
         yield($Button1, "pressed")
 
-``my_func`` will only continue execution once both the buttons are pressed.
+``my_func`` will only continue execution once both buttons have been pressed.
 
 Onready keyword
 ~~~~~~~~~~~~~~~
