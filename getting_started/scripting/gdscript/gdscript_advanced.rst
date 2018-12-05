@@ -368,7 +368,7 @@ The range() function can take 3 arguments:
     range(b, n) # Will go from b to n-1
     range(b, n, s) # Will go from b to n-1, in steps of s
 
-Some staticly typed programming language examples:
+Some statically typed programming language examples:
 
 .. code:: cpp
 
