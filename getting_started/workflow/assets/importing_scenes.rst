@@ -328,3 +328,13 @@ Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
 Creates a rigid body from this mesh.
+
+Animation loop (-loop, -cycle)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Animation clips in the COLLADA document that start or end with the token "loop" or "cycle"
+will be imported as a Godot Animation with the loop flag set. This is case-sensitive and
+does not require an hyphen.
+
+In Blender, this requires using the NLA Editor and naming the Action with the "loop" or
+"cycle" prefix or suffix.
