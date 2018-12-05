@@ -7,7 +7,7 @@ Command line tutorial
 
 Some developers like using the command line extensively. Godot is
 designed to be friendly to them, so here are the steps for working
-entirely from the command line. Given the engine relies on few to no
+entirely from the command line. Given the engine relies on almost no
 external libraries, initialization times are pretty fast, making it
 suitable for this workflow.
 
