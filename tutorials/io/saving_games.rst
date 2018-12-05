@@ -128,8 +128,10 @@ way to pull the data out of the file as well.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Note: This can be called from anywhere inside the tree.  This function is path independent.
-    # Go through everything in the persist category and ask them to return a dict of relevant variables
+    # Note: This can be called from anywhere inside the tree. This function is 
+    # path independent.
+    # Go through everything in the persist category and ask them to return a 
+    # dict of relevant variables
     func save_game():
         var save_game = File.new()
         save_game.open("user://savegame.save", File.WRITE)
@@ -141,8 +143,10 @@ way to pull the data out of the file as well.
 
  .. code-tab:: csharp
 
-    // Note: This can be called from anywhere inside the tree.  This function is path independent.
-    // Go through everything in the persist category and ask them to return a dict of relevant variables
+    // Note: This can be called from anywhere inside the tree. This function is 
+    // path independent.
+    // Go through everything in the persist category and ask them to return a 
+    // dict of relevant variables
     public void SaveGame()
     {
         var saveGame = new File();
@@ -168,19 +172,23 @@ load function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Note: This can be called from anywhere inside the tree. This function is path independent.
+    # Note: This can be called from anywhere inside the tree. This function 
+    # is path independent.
     func load_game():
         var save_game = File.new()
         if not save_game.file_exists("user://save_game.save"):
             return # Error! We don't have a save to load.
 
-        # We need to revert the game state so we're not cloning objects during loading. This will vary wildly depending on the needs of a project, so take care with this step.
+        # We need to revert the game state so we're not cloning objects 
+        # during loading. This will vary wildly depending on the needs of a 
+        # project, so take care with this step.
         # For our example, we will accomplish this by deleting savable objects.
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for i in save_nodes:
             i.queue_free()
 
-        # Load the file line by line and process that dictionary to restore the object it represents
+        # Load the file line by line and process that dictionary to restore 
+        # the object it represents
         save_game.open("user://savegame.save", File.READ)
         while not save_game.eof_reached():
             var current_line = parse_json(save_game.get_line())
@@ -197,20 +205,24 @@ load function:
 
  .. code-tab:: csharp
 
-    // Note: This can be called from anywhere inside the tree.  This function is path independent.
+    // Note: This can be called from anywhere inside the tree. This function is 
+    // path independent.
     public void LoadGame()
     {
         var saveGame = new File();
         if (!saveGame.FileExists("user://savegame.save"))
             return; // Error!  We don't have a save to load.
 
-        // We need to revert the game state so we're not cloning objects during loading.  This will vary wildly depending on the needs of a project, so take care with this step.
+        // We need to revert the game state so we're not cloning objects during loading. 
+        // This will vary wildly depending on the needs of a project, so take care with 
+        // this step.
         // For our example, we will accomplish this by deleting savable objects.
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
             saveNode.QueueFree();
 
-        // Load the file line by line and process that dictionary to restore the object it represents
+        // Load the file line by line and process that dictionary to restore the object 
+        // it represents
         saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
 
         while (!saveGame.EofReached())
