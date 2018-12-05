@@ -44,8 +44,8 @@ This, translated to reality, means that Godot+GDScript are a combination
 designed to create games quickly and efficiently. For games that are very
 computationally intensive and can't benefit from the engine built-in
 tools (such as the Vector types, Physics Engine, Math library, etc), the
-possibility of using C++ is present too. This allows to still create the
-entire game in GDScript and add small bits of C++ in the areas that need
+possibility of using C++ is present too. This allows you to still create most of the
+game in GDScript and add small bits of C++ in the areas that need
 a performance boost.
 
 Variables & assignment
@@ -106,7 +106,7 @@ Dynamic:
 Pointers & referencing:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In static languages such as C or C++ (and to some extent Java and C#),
+In static languages, such as C or C++ (and to some extent Java and C#),
 there is a distinction between a variable and a pointer/reference to a
 variable. The latter allows the object to be modified by other functions
 by passing a reference to the original one.
@@ -114,7 +114,7 @@ by passing a reference to the original one.
 In C# or Java, everything not a built-in type (int, float, sometimes
 String) is always a pointer or a reference. References are also
 garbage-collected automatically, which means they are erased when no
-longer used. Dynamically typed languages tend to use this memory model
+longer used. Dynamically typed languages tend to use this memory model,
 too. Some Examples:
 
 -  C++:
@@ -234,7 +234,7 @@ Dictionaries are a powerful tool in dynamically typed languages.
 Most programmers that come from statically typed languages (such as C++
 or C#) ignore their existence and make their life unnecessarily more
 difficult. This datatype is generally not present in such languages (or
-only on limited form).
+only in limited form).
 
 Dictionaries can map any value to any other value with complete
 disregard for the datatype used as either key or value. Contrary to
@@ -292,7 +292,7 @@ easily with dictionaries. Here's a simple battleship game example:
         missile(Vector2(2, 3))
 
 Dictionaries can also be used as data markup or quick structures. While
-GDScript dictionaries resemble python dictionaries, it also supports Lua
+GDScript's dictionaries resemble python dictionaries, it also supports Lua
 style syntax and indexing, which makes it useful for writing initial
 states and quick structs:
 
@@ -368,7 +368,7 @@ The range() function can take 3 arguments:
     range(b, n) # Will go from b to n-1
     range(b, n, s) # Will go from b to n-1, in steps of s
 
-Some examples:
+Some statically typed programming language examples:
 
 .. code:: cpp
 
@@ -515,7 +515,7 @@ Yes, we should call it Hulk typing instead.
 
 It's possible that the object being hit doesn't have a smash() function.
 Some dynamically typed languages simply ignore a method call when it
-doesn't exist (like Objective C), but GDScript is more strict, so
+doesn't exist (like Objective C), but GDScript is stricter, so
 checking if the function exists is desirable:
 
 ::
