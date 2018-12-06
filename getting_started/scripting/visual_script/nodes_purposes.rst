@@ -39,7 +39,7 @@ There are two types of *Ports*: *Sequence* and *Data*.
 
 *Sequence Ports* indicate the order in which operations are executed.
 Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right.
-If nothing is connected the function may end, or another output *Sequence Port* might be tried (this depends on the node).
+If nothing is connected, the function may end, or another output *Sequence Port* might be tried (this depends on the node).
 Thanks to this, you can follow the logic flow within a function by following the white lines.
 Not every *Node* has *Sequence Ports*. In fact, most do not.
 
@@ -68,7 +68,7 @@ dragging the *Input* away, while for *Sequence Ports*, this happens by dragging 
 .. image:: img/visual_script_disconnect.gif
 
 
-This may seem strange at the beginning, but it happens because *Data Ports* are 1:N
+This may seem strange at first, but it happens because *Data Ports* are 1:N
 (A single output port can connect to many inputs), while *Sequence Ports* are N:1
 (Many sequence outputs can be connected to a single input).
 
@@ -145,7 +145,7 @@ Right-clicking the variable allows you to configure its properties:
 
 
 As it can be seen above, the type and initial value of the variable can be changed, as well as some property hints.
-Ticking the "Export" options makes the variable visible in the Inspector when selecting the node. This also makes it available to other scripts via the method described in the previous step.
+Ticking the "Export" option makes the variable visible in the Inspector when selecting the node. This also makes it available to other scripts via the method described in the previous step.
 
 .. image:: img/visual_script28.png
 
@@ -168,12 +168,12 @@ It is also possible to create your own signals in a script and use them. For thi
 .. image:: img/visual_script29.png
 
 
-A signal can also be edited via right-click menu to customize its arguments:
+A signal can also be edited via the right-click menu to customize its arguments:
 
 .. image:: img/visual_script30.png
 
 
-The signal you have created will appear in the Inspector along with the built-in node signals. This allows you to connect it from another script from another *Scene Node*:
+The signal you have created will appear in the Inspector, along with the built-in node signals. This allows you to connect it from another script from another *Scene Node*:
 
 .. image:: img/visual_script31.png
 
@@ -216,12 +216,12 @@ Most of the time they are integer or float.
 .. image:: img/visual_script36.png
 
 
-The first one is "Constant" which allows you to select any value of any type as constant, from an integer (42) to a String ("Hello!"). In general this node is not used that often because of default input values in *Data Ports*, but it's good to know it exists.
+The first one is "Constant", which allows you to select any value of any type as constant, from an integer (42) to a String ("Hello!"). In general, this node is not used that often because of default input values in *Data Ports*, but it's good to know it exists.
 
 The second is the GlobalConstant node, which contains a long list of constants for global types in Godot. In there
 you can find some useful constants to refer to key names, joystick or mouse buttons, etc.
 
-The third one is MathConstant, which provides typical mathematical constants such as PI, E, etc.
+The third one is MathConstant, which provides typical mathematical constants, such as PI, E, etc.
 
 
 Data
@@ -248,8 +248,8 @@ In the following example below, the control is moved to the right when the "move
 Engine Singleton
 ^^^^^^^^^^^^^^^^
 
-Engine singletons are global interfaces (meaning they can be accessed without a reference, unlike Scene Nodes, they are always available).
-They have several purposes, but in general they are useful for low level access or OS-related access.
+Engine singletons are global interfaces (meaning they can be accessed without a reference; unlike Scene Nodes, they are always available).
+They have several purposes, but in general, they are useful for low-level access or OS-related access.
 
 .. image:: img/visual_script39.png
 
@@ -289,9 +289,9 @@ SceneTree
 
 This node is similar to the Singleton node because it references the SceneTree, which contains the active scene.
 SceneTree, however, only works when the node is sitting in the scene and active, otherwise accessing it will
-return as an error.
+return an error.
 
-SceneTree allows for many low level things, like setting stretch options, calling groups, make timers, or even
+SceneTree allows for many low-level things, like setting stretch options, calling groups, make timers, or even
 load another scene. It's a good class to get familiar with.
 
 
@@ -397,7 +397,7 @@ input and return an output. They are almost never sequenced.
 Built-In
 ^^^^^^^^
 
-There is a list of built in helpers. The list is almost identical to the one from GDScript (@TODO, link to gdscript methods?).
+There is a list of built-in helpers. The list is almost identical to the one from GDScript (@TODO, link to gdscript methods?).
 Most of them are mathematical functions, but others can be useful helpers. Make sure to take a look at the list
 at some point.
 
@@ -471,9 +471,9 @@ Generic indexing operator, not often used but it's good that it exists just in c
 Operators
 ~~~~~~~~~
 
-These are mostly generic operators such as addition, multiplication, comparison, etc.
-By default, these mostly accept any datatype (and will error in run-time if the types
-fed do not match for the operator). It is always recommended to set the right
+These are mostly generic operators, such as addition, multiplication, comparison, etc.
+By default, these mostly accept any datatype (and will throw an error at run-time if the types
+fed do not match those expected by the operator). It is always recommended to set the right
 type for operators to catch errors faster and make the graph easier to read.
 
 .. image:: img/visual_script46.png
