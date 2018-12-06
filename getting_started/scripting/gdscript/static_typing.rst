@@ -85,7 +85,7 @@ How to use static typing
 
 To define the type of a variable or a constant, write a colon after the
 variable’s name, followed by its type. E.g. ``var health: int``. This
-forces the type of variable to always stay the same:
+forces the variable's type to always stay the same:
 
 ::
 
@@ -113,7 +113,7 @@ Currently you can use three types of… types:
 
 .. note::
 
-    You don't need to write type hints for constants as Godot sets it automatically from the assigned value. But you can still do so to make the intent of your code clearer.
+    You don't need to write type hints for constants, as Godot sets it automatically from the assigned value. But you can still do so to make the intent of your code clearer.
 
 Custom variable types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -136,7 +136,7 @@ For the example above, your Rifle.gd would look like this:
     class_name Rifle
 
 If you use ``class_name``, Godot registers the Rifle type globally in
-the editor, and you can use it anywhere without having to preload it
+the editor, and you can use it anywhere, without having to preload it
 into a constant:
 
 ::
@@ -184,7 +184,7 @@ Safe lines
 You can also use casting to ensure safe lines. Safe lines are a new
 tool in Godot 3.1 to tell you when ambiguous lines of code are
 type-safe. As you can mix and match typed and dynamic code, at times,
-Godot doesn’t have enough information to if an instruction will trigger
+Godot doesn’t have enough information to know if an instruction will trigger
 an error or not at runtime.
 
 This happens when you get a child node. Let’s take a timer for example:
@@ -221,7 +221,7 @@ bracket ``->`` after it’s declaration, followed by the return type:
         pass
 
 The type ``void`` means the function does not return anything. You can
-use any type as with variables:
+use any type, as with variables:
 
 ::
 
@@ -341,7 +341,7 @@ anymore:
 
 Warnings won’t prevent the game from running, but you can turn them into
 errors if you’d like. This way your game won’t compile unless you fix
-all warnings. Head to ``GDScript`` section of the Project Settings to
+all warnings. Head to the ``GDScript`` section of the Project Settings to
 turn on this option. Here’s the same file as the previous example with
 warnings as errors turned on:
 
@@ -370,8 +370,8 @@ give you an error:
 
     var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
-You can’t force the assignment of types in a ``for`` loop as each
-element the ``for`` keyword loops already has a different type. So you
+You can’t force the assignment of types in a ``for`` loop, as each
+element the ``for`` keyword loops over already has a different type. So you
 **cannot** write:
 
 ::
