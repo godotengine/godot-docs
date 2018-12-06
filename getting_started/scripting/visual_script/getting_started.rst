@@ -34,7 +34,7 @@ must be ".vs" (for Visual Script!).
 .. image:: img/visual_script4.png
 
 
-Finally, the Script Editor will open, allowing to start the editing of the visual script:
+Finally, the Script Editor will open, allowing you to start editing the visual script:
 
 .. image:: img/visual_script5.png
 
@@ -106,9 +106,9 @@ connected to it:
 Creating a Function Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The last way to create functions is to do it manually. In general this is not as common unless you
+The last way to create functions is to do it manually. In general, this is not as common unless you
 really need it. Custom functions work when another (or the same) script calls them manually.
-The main use case for this is to separate a function into more, or reusing your visual code.
+The main use cases for this are breaking a larger function up into several manageable chunks and reusing your visual code.
 
 To create a function manually, push the big "Plus" button, and a new function will be added
 with a default name:
