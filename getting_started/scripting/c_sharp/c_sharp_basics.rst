@@ -13,7 +13,7 @@ Afterwards, you may want to look at :ref:`how to use specific features <doc_c_sh
 read about the :ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`
 and (re)visit the :ref:`Scripting section <doc_scripting>` of the step-by-step tutorial.
 
-C# is a high-level programming language developed by Microsoft. In Godot, it is implemented with the Mono 5.x .NET framework including full support for C# 7.0.
+C# is a high-level programming language developed by Microsoft. In Godot, it is implemented with the Mono 5.x .NET framework, including full support for C# 7.0.
 Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 A good starting point for checking its capabilities is the `Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_ page in the Mono documentation.
 
@@ -32,7 +32,7 @@ Godot 3.0.3+ requires Mono 5.12 on all platforms.
 
 .. note:: To download Mono v5.12+ on a Mac, locate the "Stable Channel" link from the `Mono Downloads Page <http://www.mono-project.com/download/>`_. The Visual Studio channel is an earlier version of Mono and will not work with Godot 3.0.3+.
 
-You also need MSBuild (at least version 15.0) which should come with the Mono installation.
+You also need MSBuild (at least version 15.0), which should come with the Mono installation.
 
 .. note:: For instructions on installing older versions of Mono on Linux, see `this page <http://www.mono-project.com/docs/getting-started/install/linux/#accessing-older-releases>`_.
         Older versions of Mono for macOS and Windows can be found `here <https://download.mono-project.com/archive/>`_.
@@ -71,15 +71,15 @@ Project setup and workflow
 --------------------------
 
 When you create the first C# script, Godot initializes the C# project files for your Godot project.
-This includes generating a C# solution (``.sln``) and project (``.csproj``) as well as some utility files and folders (``.mono``, sometimes ``Properties``).
+This includes generating a C# solution (``.sln``) and project (``.csproj``) files, as well as some utility files and folders (``.mono``, sometimes ``Properties``).
 All of these but ``.mono`` are important and should be kept in your version control system. ``.mono`` can be safely added to the ignore list of your VCS.
-When troubleshooting, it sometimes can help to delete the ``.mono`` folder and let it regenerate.
+When troubleshooting, it can sometimes help to delete the ``.mono`` folder and let it regenerate.
 
-Note that currently there are some issues where the Godot and the C# project don't stay in sync; if you delete, rename or move things like scripts or nodes, they may no longer match up.
+Note that currently, there are some issues where Godot and the C# project don't stay in sync; if you delete, rename or move things, like scripts or nodes, they may no longer match up.
 In this case, it can help to edit the solution files manually.
 
 Example: If you created a script (e.g. ``Test.cs``) and delete it in Godot, the compilation will fail because now the missing file is still expected to be there by the CS project.
-You can for now simply open up the ``.csproj`` and look for the ``ItemGroup``, there should be a line included like the following:
+For now, you can simply open up the ``.csproj`` file and look for the ``ItemGroup``, there should be a line included like the following:
 
 .. code-block:: xml
     :emphasize-lines: 2
@@ -160,7 +160,7 @@ Using Nuget packages in Godot
 
 `Nuget <https://www.nuget.org/>`_ Packages can be installed and used with Godot,
 as with any project. Many IDEs (such as vs code) can add packages directly. They
-can also be added manually by adding the package reference in the .csproj file
+can also be added manually by adding the package reference in the ``.csproj`` file
 located in the project root:
 
 .. code-block:: xml
