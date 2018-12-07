@@ -25,14 +25,14 @@ Global functions like ``print``, ``var2str`` and ``weakref`` are located under
 Math
 ----
 
-Math functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2`` are
+Math functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``, are
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``, instead of in global scope.
 ``PI`` is ``Mathf.Pi``
 
 Random
 ------
 
-Random functions, like ``rand_range`` and ``rand_seed`` are located under ``Random``,
+Random functions, like ``rand_range`` and ``rand_seed``, are located under ``Random``,
 so use ``Random.RandRange`` instead of ``rand_range``.
 
 Export keyword
