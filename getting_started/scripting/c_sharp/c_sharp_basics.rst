@@ -71,7 +71,7 @@ Project setup and workflow
 --------------------------
 
 When you create the first C# script, Godot initializes the C# project files for your Godot project.
-This includes generating a C# solution (``.sln``) and project (``.csproj``) files, as well as some utility files and folders (``.mono``, sometimes ``Properties``).
+This includes generating a C# solution (``.sln``) and a project (``.csproj``) file, as well as some utility files and folders (``.mono``, sometimes ``Properties``).
 All of these but ``.mono`` are important and should be kept in your version control system. ``.mono`` can be safely added to the ignore list of your VCS.
 When troubleshooting, it can sometimes help to delete the ``.mono`` folder and let it regenerate.
 
