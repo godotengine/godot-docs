@@ -8,3 +8,4 @@ Project workflow
    project_setup/index
    assets/index
    export/index
+   best_practices/index
