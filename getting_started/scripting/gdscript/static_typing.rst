@@ -401,7 +401,7 @@ Two scripts can’t depend on each other in a cyclic fashion:
 Summary
 -------
 
-Typed GDScript is a powerful tool. Coming with Godot 3.1, it can already
-help you write more structured code, help you avoid common errors, and
+Typed GDScript is a powerful tool. Available as of version 3.1 of Godot, it
+helps you write more structured code, avoid common errors, and
 create scalable systems. In the future, static types will also bring you
 a nice performance boost thanks to upcoming compiler optimizations.
