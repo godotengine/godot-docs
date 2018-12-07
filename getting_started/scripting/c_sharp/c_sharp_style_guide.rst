@@ -132,7 +132,7 @@ Avoid inserting a blank line:
 
 Consider breaking a line when it's longer than 100 characters. And it's also a good practice to
 insert a line feed (LF) character at the end of a file because some utilities have trouble
-recognizing the last line without it (e.g. the *cat* command in Linux).
+recognizing the last line without it (e.g. the *cat* command on Linux).
 
 Using spaces
 ------------
@@ -152,7 +152,7 @@ Insert a space:
 
 Do not use a space:
 
-* After typecasting parentheses.
+* After type cast parentheses.
 * Within single line initializer braces.
 
 The following example shows a proper use of spaces, according to some of the above mentioned conventions:
