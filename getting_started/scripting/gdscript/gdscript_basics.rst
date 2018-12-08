@@ -640,6 +640,7 @@ expressions and must be assigned on initialization.
     const E = [1, 2, 3, 4][0] # Constant expression: 1
     const F = sin(20) # sin() can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
+    const H = A + 20 # Constant expression: 25
 
 Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
