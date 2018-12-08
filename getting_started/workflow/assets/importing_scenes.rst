@@ -224,7 +224,7 @@ FPS
 
 Most 3D export formats store animation timeline in seconds instead of frames. To ensure
 animations are imported as faithfully as possible, please specify the frames per second
-used to edit them. Failing to do this may result in minimal jitter.
+used to edit them. Failing to do this may result in shaky animations.
 
 Filter Script
 ~~~~~~~~~~~~~
