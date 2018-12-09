@@ -9,10 +9,10 @@ Importing assets in Godot 3.0+
 Previously, importing assets in Godot 2.x required manual maintenance
 of a separate directory with source assets. Without doing this, it was
 impossible to specify how to convert and change import flags for
-textures, audios, scenes, etc.
+textures, audio files, scenes etc.
 
 In Godot 3.0, we use a more modern approach to importing: Simply drop
-your assets (image files, scenes, audios, fonts, etc) directly in the
+your assets (image files, scenes, audio files, fonts etc) directly in the
 project folder (copy them manually with your OS file explorer).
 Godot will automatically import these files internally
 and keep the imported resources hidden in a res://.import folder.
@@ -28,10 +28,10 @@ easy. Select the relevant resource in the filesystem dock:
 
 .. image:: img/asset_workflow1.png
 
-Then, after adjusting the parameters, press "Reimport". The parameters
-used will be only for this asset and will be used on future reimports.
+Then, after adjusting the parameters, press "Reimport". These parameters
+will only be used for this asset and on future reimports.
 
-Changing import parameters of several assets at the same time is also
+Changing the import parameters of several assets at the same time is also
 possible. Simply select all of them together in the resources dock and the
 exposed parameters will apply to all of them when reimporting.
 
@@ -56,8 +56,8 @@ Additionally, extra assets will be preset in the hidden res://.import folder:
 
 If any of the files present in this folder is erased (or the whole folder), the
 asset or assets will be reimported automatically. As such, committing this folder
-to the version control system is optional. It can save time on
-reimporting time when checking out in another computer, but it takes considerably
+to the version control system is optional. It can shorten
+reimporting time when checking out on another computer, but it takes considerably
 more space and transfer time. Pick your poison!
 
 Changing import resource type
