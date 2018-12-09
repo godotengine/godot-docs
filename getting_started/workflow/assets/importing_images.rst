@@ -147,7 +147,7 @@ Keep in mind that a material will need to be created that uses the PREMULT ALPHA
 HDR as sRGB
 ~~~~~~~~~~~
 
-A few HDR files are broken and contain sRGB color data. It is advised not to use them, but, in the worst case, toggling this option on will make them look right.
+A few HDR files are broken and contain sRGB color data. It is advised not to use them, but, in the worst-case scenario, toggling this option on will make them look right.
 
 Invert Color
 ~~~~~~~~~~~~
