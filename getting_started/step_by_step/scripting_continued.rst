@@ -89,7 +89,7 @@ There are two ways to do this. The first is from the UI, from the Groups button 
 
 .. image:: img/groups_in_nodes.png
 
-And the second way is from code. One example would be to tag scenes
+And the second way is from code. One example would be to tag nodes
 which are enemies:
 
 .. tabs::
