@@ -13,7 +13,7 @@ transferred as close as possible.
 
 Godot supports the following 3D *scene file fomats*:
 
-* DAE (Collada), which is currently the most mature workflow.
+* DAE (COLLADA), which is currently the most mature workflow.
 * GLTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
 * OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
 
@@ -24,15 +24,15 @@ Why not FBX?
 
 Most game engines use the FBX format for importing 3D scenes, which is
 definitely one of the most standardized in the industry. However, this
-format requires the use of a closed library from Autodesk which is
-distributed with a more restrictive licensing terms than Godot.
+format requires the use of a closed library from Autodesk, which is
+distributed with more restrictive licensing terms than Godot.
 
 The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Autodesk added built-in collada support to Maya and 3DS Max, but it's
+Autodesk added built-in COLLADA support to Maya and 3DS Max, but it's
 broken by default and should not be used. The best way to export this format
 is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
@@ -42,7 +42,7 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender has built-in collada support too, but it's also broken and
+Blender has built-in COLLADA support too, but it's also broken and
 should not be used.
 
 Godot provides a `Python
@@ -54,10 +54,10 @@ Exporting ESCN files from Blender
 
 The most powerful one, called `godot-blender-exporter
 <https://github.com/godotengine/godot-blender-exporter>`__.
-It uses .escn files which is kind of another name of .tscn file(Godot scene file),
+It uses a .escn file, which is kind of another name for a .tscn file (Godot scene file);
 it keeps as much information as possible from a Blender scene.
 
-ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
+The ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
 its functionality and usage.
 
 Import workflows
@@ -69,7 +69,7 @@ import a scene with:
 * External materials (default): Where each material is saved to a file resource. Modifications to them are kept.
 * External meshes: Where each mesh is saved to a different file. Many users prefer to deal with meshes directly.
 * External animations: Allowing saved animations to be modified and merged when sources change.
-* External scenes: Save the root nodes of the imported scenes each as a separate scene.
+* External scenes: Save each of the root nodes of the imported scenes as a separate scene.
 * Single Scene: A single scene file with everything built in.
 
 .. image:: img/scene_import1.png
@@ -103,18 +103,18 @@ A special script to process the whole scene after import can be provided.
 This is great for post processing, changing materials, doing funny stuff
 with the geometry etc.
 
-Create a script that like this:
+Create a script like this:
 
 ::
 
-    tool # needed so it runs in editor
+    tool # needed so it runs in the editor
     extends EditorScenePostImport
 
     func post_import(scene):
       # do your stuff here
       return scene # remember to return the imported scene
 
-The post-import function takes the imported scene as argument (the
+The ``post_import`` function takes the imported scene as argument (the
 parameter is actually the root node of the scene). The scene that
 will finally be used must be returned. It can be a different one.
 
@@ -125,7 +125,7 @@ By default, Godot imports a single scene. This option allows specifying
 that nodes below the root will each be a separate scene and instanced
 into the imported one.
 
-Of course, instancing such imported scenes in other places manually works too.
+Of course, instancing such imported scenes in other places manually works, too.
 
 
 Materials
@@ -154,6 +154,9 @@ Once materials are edited to use Godot features, the importer will keep the
 edited ones and ignore the ones coming from the source scene. This option
 is only present if materials are saved as files.
 
+Meshes
+~~~~~~
+
 Compress
 ^^^^^^^^
 
@@ -176,18 +179,15 @@ Additional info:
  * UV2 = The second UV channel for detail textures and baked lightmap textures.
  * Array index = An array of numbers that number each element of the arrays above; i.e. they number the vertices and normals.
 
-In some cases, this might lead to loss of precision so disabling this option
+In some cases, this might lead to loss of precision, so disabling this option
 may be needed. For instance, if a mesh is very big or there are multiple meshes
-being imported that cover a large area, compressing the import of this mesh(s)
+being imported that cover a large area, compressing the import of this mesh(es)
 may lead to gaps in geometry or vertices not being exactly where they should be.
-
-Meshes
-~~~~~~
 
 Ensure Tangents
 ^^^^^^^^^^^^^^^
 
-If textures with normalmapping are to be used, meshes need to have tangent arrays.
+If textures with normal mapping are to be used, meshes need to have tangent arrays.
 This option ensures that these are generated if not present in the source scene.
 Godot uses Mikktspace for this, but it's always better to have them generated in
 the exporter.
@@ -211,7 +211,7 @@ Animation Options
 -----------------
 
 Godot provides many options regarding how animation data is dealt with. Some exporters
-(such as Blender), can generate many animations in a single file. Others, such as
+(such as Blender) can generate many animations in a single file. Others, such as
 3DS Max or Maya, need many animations put into the same timeline or, at worst, put
 each animation in a separate file.
 
@@ -242,7 +242,7 @@ allows adding custom tracks to the animations and keeping them after a reimport.
 Optimizer
 ~~~~~~~~~
 
-When animations are imported, an optimizer is run which reduces the size of the animation considerably.
+When animations are imported, an optimizer is run, which reduces the size of the animation considerably.
 In general, this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
 
 Clips
@@ -254,10 +254,10 @@ clip must be taken (and, of course, don't forget to specify the FPS option above
 Scene inheritance
 -----------------
 
-In many cases, it may be desired to do modifications to the imported scene. By default, this is not possible because
-if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
+In many cases, it may be desired to make modifications to the imported scene. By default, this is not possible because
+if the source asset changes (source .dae, .gltf, .obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
 
-It is possible, however, to do local modifications by using *Scene Inheritance*. Try to open the imported scene and the
+It is possible, however, to make local modifications by using *Scene Inheritance*. Try to open the imported scene and the
 following dialog will appear:
 
 .. image:: img/scene_import4.png
@@ -274,7 +274,7 @@ Import hints
 
 Many times, when editing a scene, there are common tasks that need to be done after exporting:
 
-* Adding collision detection to objects:
+* Adding collision detection to objects
 * Setting objects as navigation meshes
 * Deleting nodes that are not used in the game engine (like specific lights used for modelling)
 
@@ -301,21 +301,21 @@ To solve this, the "-colonly" modifier exists, which will remove the mesh upon
 import and create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-Option "-convcolonly" will create :ref:`class_convexpolygonshape` instead of :ref:`class_concavepolygonshape`.
+Option "-convcolonly" will create a :ref:`class_convexpolygonshape` instead of a :ref:`class_concavepolygonshape`.
 
-Option "-colonly" can be also used with Blender's empty objects.
-On import it will create a :ref:`class_staticbody` with
-collision node as a child. Collision node will have one of predefined shapes,
-depending on the Blender's empty draw type:
+Option "-colonly" can also be used with Blender's empty objects.
+On import, it will create a :ref:`class_staticbody` with
+a collision node as a child. The collision node will have one of a number of predefined shapes,
+depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create :ref:`class_rayshape`
--  Cube will create :ref:`class_boxshape`
--  Image will create :ref:`class_planeshape`
--  Sphere (and other non-listed) will create :ref:`class_sphereshape`
+-  Single arrow will create a :ref:`class_rayshape`
+-  Cube will create a :ref:`class_boxshape`
+-  Image will create a :ref:`class_planeshape`
+-  Sphere (and the others not listed) will create a :ref:`class_sphereshape`
 
-For better visibility in Blender's editor user can set "X-Ray" option on collision
+For better visibility in Blender's editor, the user can set "X-Ray" option on collision
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
 
 Create navigation (-navmesh)
@@ -334,7 +334,7 @@ Animation loop (-loop, -cycle)
 
 Animation clips in the COLLADA document that start or end with the token "loop" or "cycle"
 will be imported as a Godot Animation with the loop flag set. This is case-sensitive and
-does not require an hyphen.
+does not require a hyphen.
 
 In Blender, this requires using the NLA Editor and naming the Action with the "loop" or
 "cycle" prefix or suffix.
