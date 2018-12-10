@@ -1,6 +1,6 @@
 Physics Properties
 ==================
-Exporting physics properties is done by enabling "Rigid Body" in Blenders
+Exporting physics properties is done by enabling "Rigid Body" in Blender's
 physics tab:
 
 .. image:: img/enable_physics.png
@@ -47,7 +47,7 @@ Collision Geometry Only
 -----------------------
 Frequently you want different geometry for your collision meshes and your
 graphical meshes, but by default the exporter will export a mesh along with the
-collision shape. To only export the collision shape, set the objects maximum
+collision shape. To only export the collision shape, set the object's maximum
 draw type to Wire:
 
 .. image:: img/col_only.png
