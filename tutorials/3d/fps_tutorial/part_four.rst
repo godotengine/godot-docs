@@ -297,9 +297,9 @@ Based on whether it is up or down we add or remove ``MOUSE_SENSITIVITY_SCROLL_WH
 
 Next we clamp mouse scroll value to assure it is inside the range of selectable weapons.
 
-We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to a ``int``.
+We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to an ``int``.
 
-.. note:: We are casting ``mouse_scroll_value`` to a ``int`` so we can use it as a key in our dictionary. If we left it as a float,
+.. note:: We are casting ``mouse_scroll_value`` to an ``int`` so we can use it as a key in our dictionary. If we left it as a float,
           we would get an error when we try to run the project.
 
 Next we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``weapon_number_to_name``.
