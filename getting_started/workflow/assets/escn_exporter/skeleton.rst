@@ -12,26 +12,26 @@ rest position (transform in Godot) of bones.
 .. warning::
     The three check boxes :code:`Inherit Rotation`, :code:`Inherit Scale`,
     :code:`Local Location` (colored in red) must be ticked when building
-    armature in Blender, so that the exported bone transform would be
+    armature in Blender, so that the exported bone transform be
     consistent between Blender and Godot
 
 Bone Weights
 ------------
 
 Blender put rigged mesh vertices which has no bone weights at its original
-position, but these vertices would be placed at (0, 0, 0) in Godot, which making the mesh
-deformed. Therefore, the exporter would raise an error for any no bone weights vertex
+position, but these vertices would be placed at (0, 0, 0) in Godot, making the mesh
+deformed. Therefore, the exporter would raise an error for any vertex with no bone weights
 detected in a rigged mesh.
 
 Non-Deform Bone
 ---------------
 
 Note that the non-deform bone can be configured as not exported
-by enable the :code:`Exclude Control Bones`, the deform bone
-checkbox is shown in picture.
+by enabling the :code:`Exclude Control Bones`; the deform bone
+checkbox is shown in the picture.
 
 
 Bone Attachment
 ---------------
-Bone can be parent of object in Blender, this relation is exported
+A bone can be the parent of an object in Blender; this relation is exported
 as a BoneAttachment node in the Godot scene.
