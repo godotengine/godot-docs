@@ -36,12 +36,12 @@ Export of Blender materials
 ---------------------------
 
 The other way materials are handled is for the exporter to export them from
-Blender. Currently only the diffuse color and a few flags (eg unshaded) are
+Blender. Currently only the diffuse color and a few flags (e.g. unshaded) are
 exported.
 
 .. warning::
     Export of Blender materials is currently very primitive. However, it is the
-    focus of a current GSOC project
+    focus of a current GSoC project
 
 .. warning::
     Materials are currently exported using their "Blender Render" settings.
