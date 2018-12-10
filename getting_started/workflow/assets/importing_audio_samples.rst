@@ -4,7 +4,7 @@ Importing audio samples
 =======================
 
 Why import?
---------------
+-----------
 
 Raw audio data in general is large and undesired. Godot provides two main
 options to import your audio data: WAV and OGG Vorbis.
