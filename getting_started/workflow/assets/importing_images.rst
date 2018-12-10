@@ -4,7 +4,7 @@ Importing images
 ================
 
 Why import them?
--------------------
+----------------
 
 In Godot 3+, image files are no longer native resources and they must be imported.
 The reason behind this is the large amount of configuration parameters that
