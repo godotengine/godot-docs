@@ -40,4 +40,4 @@ manually exporting their blend files. To combat this, the exporter provides a
 python function ``io_scene_godot.export(out_file_path)`` that can be called to
 export a file. This allows easy integration with other build systems. An
 example Makefile and python script that exports all the blends in a directory
-is present in the Godot-Blender-exporter repository.
+are present in the Godot-Blender-exporter repository.
