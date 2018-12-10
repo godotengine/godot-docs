@@ -1,5 +1,6 @@
-Physics Properties
+Physics properties
 ==================
+
 Exporting physics properties is done by enabling "Rigid Body" in Blender's
 physics tab:
 
@@ -9,18 +10,18 @@ physics tab:
     By default, a single Blender object with rigid body enabled will export as
     three nodes: a PhysicsBody, a CollisionShape, and a MeshInstance.
 
-
-Body Type
+Body type
 ---------
+
 Blender only has the concept of "Active" and "Passive" rigid bodies. These
 turn into Static and RigidBody nodes. To create a kinematic body, enable the
 "animated" checkbox on an "Active" body:
 
 .. image:: img/body_type.jpg
 
-
-Collision Shapes
+Collision shapes
 ----------------
+
 Many of the parameters for collision shapes are missing from Blender, and many
 of the collision shapes are also not present. However, almost all of the
 options in Blender's rigid body collision and rigid body dynamics interfaces
@@ -42,9 +43,9 @@ There are the following caveats:
     rigid body enabled. The physics properties are taken from the parent-most
     rigid body, and the rest are used as collision shapes.
 
-
-Collision Geometry Only
+Collision geometry only
 -----------------------
+
 Frequently you want different geometry for your collision meshes and your
 graphical meshes, but by default the exporter will export a mesh along with the
 collision shape. To only export the collision shape, set the object's maximum
