@@ -341,7 +341,7 @@ Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node 
 the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
 health pick up, so the smaller health pick up has a trigger collision shape closer to its size.
 
-The last thing to note is how we have a :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
+The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
 
 Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add the following:
 
