@@ -289,7 +289,7 @@ Now let's add the following to ``_input``:
 
 Let's go over what's happening here:
 
-First we check if the event is a ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
+First we check if the event is an ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
 Then we check to see if the button index is either a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
 
 If the event's index is indeed a button wheel index, we then check to see if it is a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
