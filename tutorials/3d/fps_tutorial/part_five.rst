@@ -26,7 +26,7 @@ We're going to use :ref:`RigidBody <class_RigidBody>` nodes for our grenades so 
 The second thing to note is ``Blast_Area``. This is an :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
 
 Finally, the last thing to note is ``Explosion``. This is the :ref:`Particles <class_Particles>` node that will emit an explosion effect when
-the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitting using world
+the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitted using world
 coordinates instead of local coordinates, so we have ``Local Coords`` unchecked as well.
 
 .. note:: If you want, you can see how the particles are set up by looking through the particle's ``Process Material`` and ``Draw Passes``.
