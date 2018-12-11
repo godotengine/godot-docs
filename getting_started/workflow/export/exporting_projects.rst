@@ -5,8 +5,8 @@ Exporting projects
 
 .. highlight:: none
 
-Why exporting?
---------------
+Why export?
+-----------
 
 Originally, Godot did not have any means to export projects. The
 developers would compile the proper binaries and build the packages for
@@ -38,7 +38,7 @@ On mobile
 ~~~~~~~~~
 
 The same scenario on mobile platforms is a little worse.
-To distribute a project in those devices, a binary for each of
+To distribute a project on those devices, a binary for each of
 those platforms is built, then added to a native project together
 with the game data.
 
@@ -65,7 +65,7 @@ To open the export menu, click the **Export** button:
 
 .. image:: img/export.png
 
-The export menu will open, however, it will be completely empty.
+The export menu will open. However, it will be completely empty.
 This is because we need to add an export preset.
 
 .. image:: img/export_dialog.png
