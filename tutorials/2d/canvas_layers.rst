@@ -13,14 +13,14 @@ nodes. CanvasItems can be arranged in trees and they will inherit
 their transform. This means that when moving the parent, the children
 will be moved too.
 
-These nodes are placed as direct or indirect children to a
+These nodes are placed as direct or indirect children of a
 :ref:`Viewport <class_Viewport>`, and will be displayed through it.
 
 Viewport has the property
 :ref:`Viewport.canvas_transform <class_Viewport_canvas_transform>`,
 which allows to transform all the CanvasItem hierarchy by a custom
 :ref:`Transform2D <class_Transform2D>` transform. Nodes such as
-:ref:`Camera2D <class_Camera2D>`, work by changing that transform.
+:ref:`Camera2D <class_Camera2D>` work by changing that transform.
 
 Changing the canvas transform is useful because it is a lot more
 efficient than moving the root canvas item (and hence the whole scene).
