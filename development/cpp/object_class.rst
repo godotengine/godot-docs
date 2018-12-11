@@ -25,7 +25,7 @@ This makes Objects gain a lot of functionality, like for example
     obj = memnew(CustomObject);
     print_line("Object class: ", obj->get_class()); // print object class
 
-    obj2 = obj->cast_to<OtherClass>(); // converting between classes, this also works without RTTI enabled.
+    obj2 = Object::cast_to<OtherClass>(obj); // converting between classes, this also works without RTTI enabled.
 
 References:
 ~~~~~~~~~~~
@@ -199,7 +199,7 @@ example:
 
     void somefunc(Object *some_obj) {
 
-         Button *button = some_obj->cast_to<Button>();
+         Button *button = Object::cast_to<Button>(some_obj);
     }
 
 If cast fails, NULL is returned. This system uses RTTI, but it also
