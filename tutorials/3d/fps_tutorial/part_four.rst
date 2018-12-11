@@ -702,7 +702,7 @@ Let's go over what this script does, starting with the class variables:
 * ``target_respawn_timer``: A variable to track how long a target has been broken.
 * ``destroyed_target``: A :ref:`PackedScene <class_PackedScene>` to hold the broken target scene.
 
-Notice how we're using a exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
+Notice how we're using an exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
 using ``preload``. By using an exported variable, we can chose the scene from the editor, and if we need to use a different scene,
 it's as easy as selecting a different scene in the editor, we don't need to go to the code to change the scene we're using.
 
