@@ -23,7 +23,7 @@ First, let's give the player some grenades to play with. Open up ``Grenade.tscn`
 There's a few things to note here, the first and foremost being that the grenades are going to use :ref:`RigidBody <class_RigidBody>` nodes.
 We're going to use :ref:`RigidBody <class_RigidBody>` nodes for our grenades so they bounce around the world in a (somewhat) realistic manner.
 
-The second thing to note is ``Blast_Area``. This is a :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
+The second thing to note is ``Blast_Area``. This is an :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
 
 Finally, the last thing to note is ``Explosion``. This is the :ref:`Particles <class_Particles>` node that will emit an explosion effect when
 the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitting using world
