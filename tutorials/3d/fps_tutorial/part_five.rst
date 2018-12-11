@@ -376,7 +376,7 @@ to the ``Z`` directional vector of ``grenade_clone``'s.
 
 ______
 
-Now the player can use both types of grenades, but there is still a few things we should probably add before we move on to adding the other things.
+Now the player can use both types of grenades, but there are still a few things we should probably add before we move on to adding the other things.
 
 We still need a way to show the player how many grenades are left, and we should probably add a way to get more grenades when the player picks up ammo.
 
