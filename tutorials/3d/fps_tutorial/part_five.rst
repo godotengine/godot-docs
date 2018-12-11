@@ -292,7 +292,7 @@ If the sticky grenade is attached, we then make sure the attached point is not e
 If the attached point is not equal to ``null``, we set the sticky grenade's global position (using its global :ref:`Transform <class_Transform>`'s origin) to the global position of
 the :ref:`Spatial <class_Spatial>` assigned to ``attach_point`` (using its global :ref:`Transform <class_Transform>`'s origin).
 
-The only other change is now before we free/destroy the sticky grenade is to check to see if the sticky grenade has a attached point.
+The only other change is now before we free/destroy the sticky grenade is to check to see if the sticky grenade has an attached point.
 If it does, we also call ``queue_free`` on the attach point, so it's also freed/destroyed.
 
 Adding grenades to the player
