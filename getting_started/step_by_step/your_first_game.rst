@@ -174,8 +174,8 @@ set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
-.. warning:: If you're using C#, you need to restart Godot editor temporarily to see
-            exported variables in the editor until it's fixed.
+.. warning:: If you're using C#, you need to rebuild your project (by playing the scene or from the mono tab)
+             to see exported variables in the editor as c# doesn't have hot reloading.
 
 .. image:: img/export_variable.png
 
