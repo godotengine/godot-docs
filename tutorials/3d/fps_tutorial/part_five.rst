@@ -565,7 +565,7 @@ The last thing we do is check to see whether or not ``grabbed_object`` is equal 
 .. note:: While technically not input related, it's easy enough to place the code moving the grabbed object here
           because it's only two lines, and then all of the grabbing/throwing code is in one place
 
-If the player is holding a object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
+If the player is holding an object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
 
 ______
 
