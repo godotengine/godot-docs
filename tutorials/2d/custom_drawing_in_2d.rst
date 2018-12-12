@@ -364,7 +364,7 @@ calls _draw(). This way, you can control when you want to refresh the frame.
         angle_from += rotation_angle
         angle_to += rotation_angle
 
-        # We only wrap angles if each of them is bigger than 360.
+        # We only wrap angles when both of them are bigger than 360.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrap(angle_from, 0, 360)
             angle_to = wrap(angle_to, 0, 360)
@@ -384,7 +384,7 @@ calls _draw(). This way, you can control when you want to refresh the frame.
         _angleFrom += _rotationAngle;
         _angleTo += _rotationAngle;
 
-        // We only wrap angles if each of them is bigger than 360.
+        // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
             _angleFrom = Wrap(_angleFrom, 0, 360);
@@ -440,7 +440,7 @@ smaller value, which directly depends on the rendering speed.
         angle_from += rotation_angle * delta
         angle_to += rotation_angle * delta
 
-        # We only wrap angles if each of them is bigger than 360.
+        # We only wrap angles when both of them are bigger than 360.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrap(angle_from, 0, 360)
             angle_to = wrap(angle_to, 0, 360)
@@ -453,7 +453,7 @@ smaller value, which directly depends on the rendering speed.
         _angleFrom += _rotationAngle * delta;
         _angleTo += _rotationAngle * delta;
 
-        // We only wrap angles if each of them is bigger than 360.
+        // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
             _angleFrom = Wrap(_angleFrom, 0, 360);
