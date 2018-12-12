@@ -145,6 +145,8 @@ Base class for all non built-in types. Everything not a built-in type starts the
 
 Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_free>` function from the script or delete from C++).
 
+Different languages have different ways to construct Objects. For example, in GDScript it is `Object.new()`, in C# it is `new Object()`, etc.
+
 Some derivatives add memory management, such as :ref:`Reference<class_Reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_Node>`, which deletes the children tree when deleted.
 
 Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simpler means to export them.
