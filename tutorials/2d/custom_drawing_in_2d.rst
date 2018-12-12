@@ -201,7 +201,7 @@ In our example, we will simply use a fixed number of points, no matter the radiu
 
 Remember the number of points our shape has to be decomposed into? We fixed this
 number in the ``nb_points`` variable to a value of ``32``. Then, we initialize an empty
-``PoolVector2Array``, which is simply an array of ``Vector2``s.
+``PoolVector2Array``, which is simply an array of ``Vector2``\s.
 
 The next step consists of computing the actual positions of these 32 points that
 compose an arc. This is done in the first for-loop: we iterate over the number of
