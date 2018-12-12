@@ -205,7 +205,7 @@ to display.
 
 .. image:: img/tuto_3d11.png
 
-When dealing with multiple cameras, the rules about to be mentioned are followed for
+When dealing with multiple cameras, the following rules are enforced for
 each viewport:
 
 -  If no cameras are present in the scene tree, the first one that
