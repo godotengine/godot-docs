@@ -46,7 +46,7 @@ Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from
 
 You may be wondering how this affects you. Let's look at a practical example:
 
-Imagine you are working on a first-person controller (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
+Imagine you are working on a first-person shooter (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
 
 In this case to achieve the desired effect, rotation must be applied first in the *Y* axis ("up" in this case, since Godot uses a "Y-Up" orientation), followed by rotation in the *X* axis.
 
@@ -90,7 +90,7 @@ Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`clas
 
 It is also possible to access the world coordinate transform via the ``global_transform`` property.
 
-A transform has a :ref:`class_Basis` (transform.basis sub-property), which consists of three :ref:`class_Vector3` vectors. These are accessed via the ``transform.basis`` property and can be accessed directly by ``transform.basis.x``, ``transform.basis.y``, and ``transform.basis.z``. Each vector points in the direction its axis has been rotated, so they effectively describe the node's total rotation. The scale (as long as it's uniform) can be also be inferred from the length of the axes. A *basis* can also be interpreted as a 3x3 matrix and used as ``transform.basis[x][y]``.
+A transform has a :ref:`class_Basis` (transform.basis sub-property), which consists of three :ref:`class_Vector3` vectors. These are accessed via the ``transform.basis`` property and can be accessed directly by ``transform.basis.x``, ``transform.basis.y``, and ``transform.basis.z``. Each vector points in the direction its axis has been rotated, so they effectively describe the node's total rotation. The scale (as long as it's uniform) can also be inferred from the length of the axes. A *basis* can also be interpreted as a 3x3 matrix and used as ``transform.basis[x][y]``.
 
 A default basis (unmodified) is akin to:
 
@@ -120,7 +120,7 @@ A default basis (unmodified) is akin to:
     var basis = new Basis(Vector3.Right, Vector3.Up, Vector3.Back);
     GD.Print(basis); // prints: ((1, 0, 0), (0, 1, 0), (0, 0, 1))
 
-This is also an analog to a 3x3 identity matrix.
+This is also an analog of a 3x3 identity matrix.
 
 Following the OpenGL convention, ``X`` is the *Right* axis, ``Y`` is the *Up* axis and ``Z`` is the *Forward* axis.
 
@@ -133,7 +133,7 @@ One way to visualize a transform is to look at an object's 3D gizmo while in "lo
 
 .. image:: img/transforms_local_space.png
 
-The gizmo's arrows show the ``X``, ``Y``, and ``Z`` axes (in red, green, and blue respectively) of the basis, while gizmo's center is at the object's origin.
+The gizmo's arrows show the ``X``, ``Y``, and ``Z`` axes (in red, green, and blue respectively) of the basis, while the gizmo's center is at the object's origin.
 
 .. image:: img/transforms_gizmo.png
 
@@ -180,7 +180,7 @@ A method in Spatial simplifies this:
 
 This rotates the node relative to the parent node.
 
-To rotate relative to object space (the node's own transform) use the following:
+To rotate relative to object space (the node's own transform), use the following:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -213,7 +213,7 @@ There are two different ways to handle this. The first is to *orthonormalize* th
 
 This will make all axes have ``1.0`` length again and be ``90`` degrees from each other. However, any scale applied to the transform will be lost.
 
-It is recommended you don't scale nodes that are going to be manipulated. Scale their children nodes instead (such as MeshInstance). If you absolutely must scale the node, then re-apply it at the end:
+It is recommended you not scale nodes that are going to be manipulated; scale their children nodes instead (such as MeshInstance). If you absolutely must scale the node, then re-apply it at the end:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -307,7 +307,7 @@ Setting information
 
 There are, of course, cases where you want to set information to a transform. Imagine a first person controller or orbiting camera. Those are definitely done using angles, because you *do want* the transforms to happen in a specific order.
 
-For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try retrieve them and re-use them because the transform is not meant to be used this way.
+For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try to retrieve and re-use them because the transform is not meant to be used this way.
 
 Example of looking around, FPS style:
 
@@ -382,9 +382,9 @@ Converting a rotation to quaternion is straightforward.
     // Apply back
     transform.basis = new Basis(c);
 
-The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc. though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precision errors.
+The :ref:`class_Quat` type reference has more information on the datatype (it can also do transform accumulation, transform points, etc., though this is used less often). If you interpolate or apply operations to quaternions many times, keep in mind they need to be eventually normalized or they also may suffer from numerical precision errors.
 
-Quaternions are useful when doing camera/path/etc. interpolations, as the result will be always correct and smooth.
+Quaternions are useful when doing camera/path/etc. interpolations, as the result will always be correct and smooth.
 
 Transforms are your friend
 --------------------------
