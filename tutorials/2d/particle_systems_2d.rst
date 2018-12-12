@@ -7,13 +7,13 @@ Intro
 -----
 
 A simple (but flexible enough for most uses) particle system is
-provided. Particle systems are used to simulate complex physical effects
-such as sparks, fire, magic particles, smoke, mist, magic, etc.
+provided. Particle systems are used to simulate complex physical effects,
+such as sparks, fire, magic particles, smoke, mist, etc.
 
 The idea is that a "particle" is emitted at a fixed interval and with a
 fixed lifetime. During its lifetime, every particle will have the same
-base behavior. What makes every particle different and provides a more
-organic look is the "randomness" associated to each parameter. In
+base behavior. What makes each particle different from the rest and provides a more
+organic look is the "randomness" associated with each parameter. In
 essence, creating a particle system means setting base physics
 parameters and then adding randomness to them.
 
@@ -29,9 +29,9 @@ is because the node needs a ParticlesMaterial to function.
 ParticlesMaterial
 ~~~~~~~~~~~~~~~~~
 
-To add a process material to your particles node, go to Process Material in
-your inspector panel. Click on the box next to material, and from the dropdown
-menu select New Particles Material.
+To add a process material to your particles node, go to ``Process Material`` in
+your inspector panel. Click on the box next to ``Material``, and from the dropdown
+menu select ``New ParticlesMaterial``.
 
 .. image:: img/particles_material.png
 
@@ -138,7 +138,7 @@ The rectangle's ``W`` and ``H`` properties respectively control its Width and it
 The ``X`` and ``Y`` properties control the position of the upper-left
 corner of the rectangle, relative to the particle emitter.
 
-You can generate a Visibility Rect can be generated automatically using the toolbar above the 2d view. To do so select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
 
 You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
 
@@ -165,6 +165,8 @@ means particles are drawn according to their emission order (default).
 
 ParticlesMaterial settings
 --------------------------
+
+Particles2D > Process Material > Material > drop-down menu > Edit:
 
 .. Commented out as not implemented in 3.x for now.
 ..
@@ -280,6 +282,6 @@ Used to change the color of the particles being emitted.
 Hue variation
 ~~~~~~~~~~~~~
 
-The Variation value sets the initial hue variation applied to each
-particle. The Variation Rand value controls the hue variation
+The ``Variation`` value sets the initial hue variation applied to each
+particle. The ``Variation Random`` value controls the hue variation
 randomness ratio.
