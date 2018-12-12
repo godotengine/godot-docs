@@ -197,7 +197,7 @@ Here we've added two new variables to track our rotation direction and speed.
 Again, pressing both keys at once will cancel out and result in no rotation.
 The rotation is applied directly to the body's ``rotation`` property.
 
-To set the velocity, we use the ``Vector2.rotated()`` method so that it points
+To set the velocity, we use the ``Vector2.rotated()`` method, so that it points
 in the same direction as the body. ``rotated()`` is a useful vector function
 that you can use in many circumstances where you would otherwise need to apply
 trigonometric functions.
