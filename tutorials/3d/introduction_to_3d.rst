@@ -197,7 +197,7 @@ perspective projections:
 
 .. image:: img/tuto_3d10.png
 
-Cameras are associated with -- and only display to -- a parent or grandparent
+Cameras are associated with (and only display to) a parent or grandparent
 viewport. Since the root of the scene tree is a viewport, cameras will
 display on it by default, but if sub-viewports (either as render target
 or picture-in-picture) are desired, they need their own children cameras
