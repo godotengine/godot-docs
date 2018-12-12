@@ -85,7 +85,7 @@ the following arguments:
 ::
 
     scons platform=android target=release android_arch=armv7
-    scons platform=android target=release android_arch=armv64v8
+    scons platform=android target=release android_arch=arm64v8
     cd platform/android/java
     # On Windows
     .\gradlew build
@@ -100,7 +100,7 @@ The resulting APK will be located at ``bin/android_release.apk``.
 ::
 
     scons platform=android target=release_debug android_arch=armv7
-    scons platform=android target=release_debug android_arch=armv64v8
+    scons platform=android target=release_debug android_arch=arm64v8
     cd platform/android/java
     # On Windows
     .\gradlew build
