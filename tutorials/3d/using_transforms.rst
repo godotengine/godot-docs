@@ -46,7 +46,7 @@ Following is a visualization of rotation axes (in X,Y,Z order) in a gimbal (from
 
 You may be wondering how this affects you. Let's look at a practical example:
 
-Imagine you are working on a first-person shooter (FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
+Imagine you are working on a first-person controller (e.g. an FPS game). Moving the mouse left and right controls your view angle parallel to the ground, while moving it up and down moves the player's view up and down.
 
 In this case to achieve the desired effect, rotation must be applied first in the *Y* axis ("up" in this case, since Godot uses a "Y-Up" orientation), followed by rotation in the *X* axis.
 
