@@ -6,8 +6,8 @@
 Introduction
 ~~~~~~~~~~~~
 
-Godot follows a balanced performance philosophy. In performance world,
-there are always trade-offs which consist in trading speed for
+Godot follows a balanced performance philosophy. In the performance world,
+there are always trade-offs, which consist of trading speed for
 usability and flexibility. Some practical examples of this are:
 
 -  Rendering objects efficiently in high amounts is easy, but when a
@@ -22,12 +22,12 @@ usability and flexibility. Some practical examples of this are:
 -  In 3D physics a similar situation happens. The best algorithms to
    handle large amounts of physics objects (such as SAP) are slow
    at insertion/removal of objects and ray-casting. Algorithms that
-   allow faster insertion and removal, as well as ray-casting will not
+   allow faster insertion and removal, as well as ray-casting, will not
    be able to handle as many active objects.
 
 And there are many more examples of this! Game engines strive to be
 general purpose in nature, so balanced algorithms are always favored
-over algorithms that might be the fast in some situations and slow in
+over algorithms that might be fast in some situations and slow in
 others.. or algorithms that are fast but make usability more difficult.
 
 Godot is not an exception and, while it is designed to have backends
@@ -59,16 +59,16 @@ Godot's priorities will be like this:
    of objects (in the hundreds or thousands) try reusing the materials
    or in the worst case use atlases.
 -  **Reusing Shaders**: If materials can't be reused, at least try to
-   re-use shaders (or SpatialMaterials with different parameters but same
+   re-use shaders (or SpatialMaterials with different parameters but the same
    configuration).
 
 If a scene has, for example, 20.000 objects with 20.000 different
 materials each, rendering will be slow. If the same scene has
-20.000 objects, but only uses 100 materials, rendering will be blazing
+20.000 objects, but only uses 100 materials, rendering will be blazingly
 fast.
 
-Pixels cost vs vertex cost
---------------------------
+Pixel cost vs vertex cost
+-------------------------
 
 It is a common thought that the lower the number of polygons in a model, the
 faster it will be rendered. This is *really* relative and depends on
@@ -105,7 +105,7 @@ consumption).
 
 On mobile, pulling more power is not an option, so a technique called
 "Tile Based Rendering" is used (almost every mobile hardware uses a
-variant of it), which divide the screen into a grid. Each cell keeps the
+variant of it), which divides the screen into a grid. Each cell keeps the
 list of triangles drawn to it and sorts them by depth to minimize
 *overdraw*. This technique improves performance and reduces power
 consumption, but takes a toll on vertex performance. As a result, fewer
@@ -135,7 +135,7 @@ Texture compression
 
 Godot offers to compress textures of 3D models when imported (VRAM
 compression). Video RAM compression is not as efficient in size as PNG
-or JPG when stored, but increase performance enormously when drawing.
+or JPG when stored, but increases performance enormously when drawing.
 
 This is because the main goal of texture compression is bandwidth
 reduction between memory and the GPU.
