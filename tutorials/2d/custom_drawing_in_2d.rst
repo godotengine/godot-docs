@@ -234,8 +234,8 @@ increase the number of points.
 Draw the arc on the screen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We now have a function that draws stuff on the screen:
-It is time to call it inside the _draw() function.
+We now have a function that draws stuff on the screen;
+it is time to call it inside the _draw() function:
 
 .. tabs::
 
