@@ -68,7 +68,7 @@ If re-drawing is required because a state or something else changed,
 simply call :ref:`CanvasItem.update() <class_CanvasItem_update>`
 in that same node and a new _draw() call will happen.
 
-Here is a little more complex example - a texture variable that will be
+Here is a little more complex example, a texture variable that will be
 redrawn if modified:
 
 .. tabs::
