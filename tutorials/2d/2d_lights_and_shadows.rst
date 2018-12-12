@@ -8,7 +8,7 @@ Introduction
 
 This tutorial explains how the 2D lighting works in the
 `lights and shadows <https://github.com/godotengine/godot-demo-projects/tree/master/2d/lights_and_shadows>`_ demo project.
-It begins with a brief description of the resources used final demo and then describes how
+It begins with a brief description of the resources used in the final demo and then describes how
 to make a scene like the demo step by step.
 
 .. image:: img/light_shadow_main.png
@@ -72,7 +72,7 @@ blending to add the color of their texture to the scene.
 
 .. image:: img/light_shadow_light.png
 
-:ref:`Lights <class_Light2D>` have four ``modes``: ``add``, ``sub``, ``mix``, and ``mask``.
+:ref:`Lights <class_Light2D>` have four ``Modes``: ``Add``, ``Sub``, ``Mix``, and ``Mask``.
 
 ``Add`` adds the color of the light texture to the scene. It brightens the area under the light.
 
@@ -126,13 +126,13 @@ the :ref:`Sprite's <class_Sprite>` texture to the `blob image <https://raw.githu
 should stay centered on the :ref:`Light <class_Light2D>` node. The blob is the image of the light
 itself while the :ref:`Light <class_Light2D>` shows the effect that the light has on the scene. The
 :ref:`LightOccluder2D's <class_LightOccluder2D>` will treat the position of the light as the center of the :ref:`Light <class_Light2D>`
-node which is why we want the blob to be centered on its parent :ref:`Light <class_Light2D>`.
+node, which is why we want the blob to be centered on its parent :ref:`Light <class_Light2D>`.
 
 .. image:: img/light_shadow_all_lights.png
 
 .. note:: At the time of writing, 3.0 is the stable release version. The 3.1 development branch contains
           many changes to the animation system, so the animations in the demo will not be covered here.
-          See :ref:Introduction to 2D Animation. <doc_introduction_2d> for more information.
+          See :ref:`doc_introduction_2d_animation` for more information.
 
 Right now the scene should look too bright. This is because all three lights are adding color to the scene.
 This is why the demo uses a :ref:`CanvasModulate <class_CanvasModulate>` in the scene. The
@@ -158,7 +158,7 @@ the shadow: a wall, a magical chest, or anything else.
 .. image:: img/light_shadow_sprites.png
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` tell the game what shape the occluder has. They hold
-an :ref:`OccluderPolygon2D <class_OccluderPolygon2D>` which is a container
+an :ref:`OccluderPolygon2D <class_OccluderPolygon2D>`, which is a container
 for a polygon and some other information. For this demo, since our wall is a square, we
 set ``Polygon`` to a square. The other default settings are fine.
 
@@ -171,7 +171,7 @@ will cast a shadow no matter which side the light is on. The other two settings 
 is used to determine which side of the line is inside the polygon. Only outward facing lines cast shadows.
 
 To illustrate the difference, here is an image of a :ref:`LightOccluder2D <class_LightOccluder2D>` with ``Closed``
-set to ``off`` in the corresponding :ref:`OccluderPolygon2D <class_OccluderPolygon2D>` so that the
+set to ``off`` in the corresponding :ref:`OccluderPolygon2D <class_OccluderPolygon2D>`, so that the
 lines of the polygon can be seen:
 
 .. image:: img/light_shadow_cull_disabled.png
@@ -194,11 +194,11 @@ section set ``Enable`` to ``on``. This turns on shadows with hard edges like in 
 
 .. image:: img/light_shadow_filter0_pcf0.png
 
-To give the shadows that nice soft edge look we set the variables ``filter``, ``filter smooth``, and
+To give the shadows that nice, soft edge look we set the variables ``filter``, ``filter smooth``, and
 ``gradient length``. Godot supports `Percentage Closer Filtering <https://developer.nvidia.com/gpugems/GPUGems/gpugems_ch11.html>`_
-(PCF) which takes multiple samples of the shadow map around a pixel and blurs them to create
+(PCF), which takes multiple samples of the shadow map around a pixel and blurs them to create
 a smooth shadow effect. The higher the number of samples the smoother the shadow will
-look but the slower it will run. That is why Godot provides 3-13 samples by default and allows you to choose.
+look, but the slower it will run. That is why Godot provides 3-13 samples by default and allows you to choose.
 The demo uses PCF7.
 
 .. image:: img/light_shadow_normal.png
@@ -212,8 +212,8 @@ The demo uses PCF7.
           distance between samples is based on the variable ``filter smooth``.
 
 In order to make use of filtering you need to set the ``filter smooth`` variable.
-This dictates how far apart the samples are. If you want the soft area to extend quite far you can increase
-the size of ``filter smooth``. However with low samples and a large filter smooth you can see lines
+This dictates how far apart the samples are. If you want the soft area to extend quite far, you can increase
+the size of ``filter smooth``. However, with few samples and a large filter smooth, you can see lines
 forming between the samples.
 
 .. image:: img/light_shadow_filter30.png
@@ -227,8 +227,8 @@ Play around with it and see what you like.
 
 .. note:: ``filter smooth`` is set to ``0``.
 
-Lastly there is the variable ``gradient length``. For some smooth shadows it is preferable to not have the
-shadow start immediately on the object as this produces a hard edge. The gradient length variable creates
+Lastly, there is the variable ``gradient length``. For some smooth shadows it is preferable not to have the
+shadow start immediately on the object, as this produces a hard edge. The gradient length variable creates
 a smooth gradient to begin the shadow to reduce the effect of the hard edge.
 
 .. image:: img/light_shadow_grad0.png
@@ -239,6 +239,6 @@ a smooth gradient to begin the shadow to reduce the effect of the hard edge.
 
 .. note:: ``gradient length`` is set to ``10``.
 
-You will need to play around with settings a bit to find ones that suit your project. There is no right solution
+You will need to play around with the options a bit to find settings that suit your project. There is no right solution
 for everyone, which is why Godot provides so much flexibility. Just keep in mind that the higher ``filter``
 set the more expensive the shadows will be.
