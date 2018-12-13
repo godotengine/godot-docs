@@ -8,7 +8,7 @@ Godot Docs – *master* branch
 
 .. attention:: This is the documentation for the unstable (master) branch.
                Looking for the documentation of the current **stable** branch?
-               `Have a look here <http://docs.godotengine.org/en/stable>`_.
+               `Have a look here <https://docs.godotengine.org/en/stable>`_.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
