@@ -175,7 +175,7 @@ want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
 .. warning:: If you're using C#, you need to rebuild your project (by playing the scene or from the mono tab)
-             to see exported variables in the editor as c# doesn't have hot reloading.
+             to see exported variables in the editor as C# doesn't support hot reloading yet.
 
 .. image:: img/export_variable.png
 
