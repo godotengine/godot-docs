@@ -9,3 +9,4 @@ Miscellaneous
    pausing_games
    binary_serialization_api
    running_code_in_the_editor
+   change_scenes_manually
