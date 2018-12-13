@@ -8,31 +8,31 @@ Introduction
 
 Baked lightmaps are an alternative workflow for adding indirect (or baked)
 lighting to a scene. Unlike the :ref:`doc_gi_probes` approach,
-baked lightmaps work fine on low-end PCs and mobile devices as they consume
-almost no resources in run-time.
+baked lightmaps work fine on low-end PCs and mobile devices, as they consume
+almost no resources at run-time.
 
-Unlike GIProbes, Baked Lightmaps are completely static. Once baked they can't be
+Unlike ``GIProbe``s, Baked Lightmaps are completely static. Once baked, they can't be
 modified at all. They also don't provide the scene with
 reflections, so using :ref:`doc_reflection_probes` together with it on interiors
 (or using a Sky on exteriors) is a requirement to get good quality.
 
-As they are baked, they have less problems regarding to light bleeding than
-GIProbe, and indirect light can look better if using Raytrace
+As they are baked, they have fewer problems than ``GIProbe`` regarding light bleeding,
+and indirect light can look better if using Raytrace
 mode on high quality setting (but baking can take a while).
 
 In the end, deciding which indirect lighting approach is better depends on your
 use case. In general, GIProbe looks better and is much
-easier to set up. For low-end compatibility or mobile, though, Baked Lightmaps
+easier to set up. For mobile or low-end compatibility, though, Baked Lightmaps
 are your only choice.
 
 Visual comparison
 -----------------
 
-Here are some comparisons of how Baked Lightmaps vs GIProbe look. Notice that
+Here are some comparisons of how Baked Lightmaps vs. GIProbe look. Notice that
 lightmaps are more accurate, but also suffer from the fact
 that lighting is on an unwrapped texture, so transitions and resolution may not
-be that good. GIProbe looks less accurate (as it's an approximation), but more
-smooth overall.
+be that good. GIProbe looks less accurate (as it's an approximation), but
+smoother overall.
 
 .. image:: img/baked_light_comparison.png
 
@@ -44,7 +44,7 @@ an UV2 layer and a texture size. An UV2 layer is a set of secondary texture coor
 that ensures any face in the object has its own place in the UV map. Faces must
 not share pixels in the texture.
 
-There are a few ways to ensure your object has a unique UV2 layer and texture size
+There are a few ways to ensure your object has a unique UV2 layer and texture size:
 
 Unwrap from your 3D DCC
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +66,7 @@ after import.
 
 If you use external meshes on import, the size will be kept.
 Be wary that most unwrappers in 3D DCCs are not quality oriented, as they are
-meant to work quick. You will mostly need to use seams or other techniques to
+meant to work quickly. You will mostly need to use seams or other techniques to
 create better unwrapping.
 
 Unwrap from within Godot
@@ -84,7 +84,7 @@ Unwrap on scene import
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This is probably the best approach overall. The only downside is that, on large
-models, unwrap can take a while on import.
+models, unwrapping can take a while on import.
 Just select the imported scene in the filesystem dock, then go to the Import tab.
 There, the following option can be modified:
 
@@ -114,7 +114,7 @@ Make sure, if something is failing, to check that the meshes have these UV2 coor
 Setting up the scene
 --------------------
 
-Before anything is done, a **BakedLight** Node needs to be added to a scene.
+Before anything is done, a **BakedLightmap** Node needs to be added to a scene.
 This will enable light baking on all nodes (and sub-nodes) in that scene, even
 on instanced scenes.
 
@@ -128,8 +128,8 @@ Configure bounds
 ~~~~~~~~~~~~~~~~
 
 Lightmap needs an approximate volume of the area affected because it uses it to
-transfer light to dynamic objects inside (more on that later). Just
-cover the scene with the volume as you do with GIProbe:
+transfer light to dynamic objects inside it (more on that later). Just
+cover the scene with the volume as you do with ``GIProbe``:
 
 .. image:: img/baked_light_bounds.png
 
@@ -164,14 +164,14 @@ The modes are:
 Baking quality
 ~~~~~~~~~~~~~~
 
-BakedLightmap uses, for simplicity, a voxelized version of the scene to compute
+``BakedLightmap`` uses, for simplicity, a voxelized version of the scene to compute
 lighting. Voxel size can be adjusted with the **Bake Subdiv** parameter.
-More subdivision results in more detail but also takes more time to bake.
+More subdivision results in more detail, but also takes more time to bake.
 
 In general, the defaults are good enough. There is also a **Capture Subdivision**
-(that must always be equal or less to the main subdivision), which is used
+(that must always be equal to or less than the main subdivision), which is used
 for capturing light in dynamic objects (more on that later). Its default value
-is also good enough for more cases.
+is also good enough for most cases.
 
 .. image:: img/baked_light_capture.png
 
@@ -180,14 +180,14 @@ Two modes of capturing indirect are provided:
 
 .. image:: img/baked_light_mode.png
 
-- **Voxel Cone**: Trace: Is the default one, it's less precise but faster. Looks similar (but slightly better) to GIProbe.
-- **Ray Tracing**: This method is more precise but can take considerably longer to bake. If used in low or medium quality, some scenes may produce grain.
+- **Voxel Cone**: Trace: Is the default one; it's less precise, but faster. Looks similar to (but slightly better than) ``GIProbe``.
+- **Ray Tracing**: This method is more precise, but can take considerably longer to bake. If used in low or medium quality, some scenes may produce grain.
 
 Baking
 ------
 
 To begin the bake process, just push the big **Bake Lightmaps** button on top
-when selecting the BakedLightmap node:
+when selecting the ``BakedLightmap`` node:
 
 .. image:: img/baked_light_bake.png
 
@@ -199,15 +199,15 @@ Configuring bake
 
 Several more options are present for baking:
 
-- **Bake Subdiv**: Godot lightmapper uses a grid to transfer light information around. The default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large.
+- **Bake Subdiv**: The Godot lightmapper uses a grid to transfer light information around; the default value is fine and should work for most cases. Increase it in case you want better lighting on small details or your scene is large.
 - **Capture Subdiv**: This is the grid used for real-time capture information (lighting dynamic objects). Default value is generally OK, it's usually smaller than Bake Subdiv and can't be larger than it.
 - **Bake Quality**: Three bake quality modes are provided, Low, Medium and High. Higher quality takes more time.
-- **Bake Mode**: The baker can use two different techniques: *Voxel Cone Tracing* (fast but approximate), or *RayTracing* (slow, but accurate).
-- **Propagation**: Used for the *Voxel Cone Trace* mode. Works just like in GIProbe.
-- **HDR**: If disabled, lightmaps are smaller but can't capture any light over white (1.0).
+- **Bake Mode**: The baker can use two different techniques: *Voxel Cone Tracing* (fast, but approximate), or *RayTracing* (slow, but accurate).
+- **Propagation**: Used for the *Voxel Cone Trace* mode. Works just like in ``GIProbe``.
+- **HDR**: If disabled, lightmaps are smaller, but can't capture any light over white (1.0).
 - **Image Path**: Where lightmaps will be saved. By default, on the same directory as the scene ("."), but can be tweaked.
 - **Extents**: Size of the area affected (can be edited visually)
-- **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects which can be a bit heavy. If you are using .tscn formats (instead of .scn), you can save it to disk.
+- **Light Data**: Contains the light baked data after baking. Textures are saved to disk, but this also contains the capture data for dynamic objects, which can be a bit heavy. If you are using .tscn formats (instead of .scn), you can save it to disk.
 
 Dynamic objects
 ---------------
