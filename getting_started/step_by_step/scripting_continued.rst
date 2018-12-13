@@ -383,6 +383,8 @@ kept loaded and ready to use so that you can create as many
 instances as desired. This is especially useful to quickly instance
 several enemies, bullets, and other entities in the active scene.
 
+.. _doc_scripting_continued_class_name:
+
 Register scripts as classes
 ---------------------------
 

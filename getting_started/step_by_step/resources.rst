@@ -222,7 +222,7 @@ those values and saves the resource, the Inspector serializes the custom propert
 too! To save a resource from the Inspector, click the Inspector's tools menu (top right),
 and select "Save" or "Save As...".
 
-If the script's language supports `script classes <https://godot.readthedocs.io/en/latest/getting_started/step_by_step/scripting_continued.html#register-scripts-as-classes>`__,
+If the script's language supports :ref:`script classes <doc_scripting_continued_class_name>`,
 then it streamlines the process. Defining a name for your script alone will add it to
 the Inspector's creation dialog. This will auto-add your script to the Resource
 object you create.

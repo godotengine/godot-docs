@@ -124,6 +124,8 @@ just fly by. For this, a command line debugger is provided by adding
 
     user@host:~/newgame$ godot -d scene.tscn
 
+.. _doc_command_line_tutorial_exporting:
+
 Exporting
 ---------
 
