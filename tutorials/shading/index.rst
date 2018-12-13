@@ -11,3 +11,4 @@ Shading
    screen-reading_shaders
    migrating_to_godot_shader_language
    vertex_displacement_with_shaders
+   advanced_postprocessing
