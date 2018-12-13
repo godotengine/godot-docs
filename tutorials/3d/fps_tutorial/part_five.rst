@@ -23,10 +23,10 @@ First, let's give the player some grenades to play with. Open up ``Grenade.tscn`
 There's a few things to note here, the first and foremost being that the grenades are going to use :ref:`RigidBody <class_RigidBody>` nodes.
 We're going to use :ref:`RigidBody <class_RigidBody>` nodes for our grenades so they bounce around the world in a (somewhat) realistic manner.
 
-The second thing to note is ``Blast_Area``. This is a :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
+The second thing to note is ``Blast_Area``. This is an :ref:`Area <class_Area>` node that will represent the blast radius of the grenade.
 
 Finally, the last thing to note is ``Explosion``. This is the :ref:`Particles <class_Particles>` node that will emit an explosion effect when
-the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitting using world
+the grenade explodes. One thing to note here is that we have ``One shot`` enabled. This is so we emit all of the particles at once. The particles are also emitted using world
 coordinates instead of local coordinates, so we have ``Local Coords`` unchecked as well.
 
 .. note:: If you want, you can see how the particles are set up by looking through the particle's ``Process Material`` and ``Draw Passes``.
@@ -292,7 +292,7 @@ If the sticky grenade is attached, we then make sure the attached point is not e
 If the attached point is not equal to ``null``, we set the sticky grenade's global position (using its global :ref:`Transform <class_Transform>`'s origin) to the global position of
 the :ref:`Spatial <class_Spatial>` assigned to ``attach_point`` (using its global :ref:`Transform <class_Transform>`'s origin).
 
-The only other change is now before we free/destroy the sticky grenade is to check to see if the sticky grenade has a attached point.
+The only other change is now before we free/destroy the sticky grenade is to check to see if the sticky grenade has an attached point.
 If it does, we also call ``queue_free`` on the attach point, so it's also freed/destroyed.
 
 Adding grenades to the player
@@ -376,7 +376,7 @@ to the ``Z`` directional vector of ``grenade_clone``'s.
 
 ______
 
-Now the player can use both types of grenades, but there is still a few things we should probably add before we move on to adding the other things.
+Now the player can use both types of grenades, but there are still a few things we should probably add before we move on to adding the other things.
 
 We still need a way to show the player how many grenades are left, and we should probably add a way to get more grenades when the player picks up ammo.
 
@@ -565,7 +565,7 @@ The last thing we do is check to see whether or not ``grabbed_object`` is equal 
 .. note:: While technically not input related, it's easy enough to place the code moving the grabbed object here
           because it's only two lines, and then all of the grabbing/throwing code is in one place
 
-If the player is holding a object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
+If the player is holding an object, we set its global position to the camera's position plus ``OBJECT_GRAB_DISTANCE`` in the direction the camera is facing.
 
 ______
 

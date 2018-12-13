@@ -297,9 +297,9 @@ Based on whether it is up or down we add or remove ``MOUSE_SENSITIVITY_SCROLL_WH
 
 Next we clamp mouse scroll value to assure it is inside the range of selectable weapons.
 
-We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to a ``int``.
+We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to an ``int``.
 
-.. note:: We are casting ``mouse_scroll_value`` to a ``int`` so we can use it as a key in our dictionary. If we left it as a float,
+.. note:: We are casting ``mouse_scroll_value`` to an ``int`` so we can use it as a key in our dictionary. If we left it as a float,
           we would get an error when we try to run the project.
 
 Next we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``weapon_number_to_name``.
@@ -341,7 +341,7 @@ Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node 
 the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
 health pick up, so the smaller health pick up has a trigger collision shape closer to its size.
 
-The last thing to note is how we have a :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
+The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
 
 Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add the following:
 
@@ -702,8 +702,8 @@ Let's go over what this script does, starting with the class variables:
 * ``target_respawn_timer``: A variable to track how long a target has been broken.
 * ``destroyed_target``: A :ref:`PackedScene <class_PackedScene>` to hold the broken target scene.
 
-Notice how we're using a exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
-using ``preload``. By using an exported variable, we can chose the scene from the editor, and if we need to use a different scene,
+Notice how we're using an exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
+using ``preload``. By using an exported variable, we can choose the scene from the editor, and if we need to use a different scene,
 it's as easy as selecting a different scene in the editor, we don't need to go to the code to change the scene we're using.
 
 ______
