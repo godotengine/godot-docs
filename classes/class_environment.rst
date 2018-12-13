@@ -86,6 +86,8 @@ Properties
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_depth_enabled<class_Environment_fog_depth_enabled>`                           |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`fog_depth_end<class_Environment_fog_depth_end>`                                   |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`fog_enabled<class_Environment_fog_enabled>`                                       |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`fog_height_curve<class_Environment_fog_height_curve>`                             |
@@ -111,6 +113,8 @@ Properties
 | :ref:`float<class_float>`                              | :ref:`glow_bloom<class_Environment_glow_bloom>`                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                | :ref:`glow_enabled<class_Environment_glow_enabled>`                                     |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                              | :ref:`glow_hdr_luminance_cap<class_Environment_glow_hdr_luminance_cap>`                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                              | :ref:`glow_hdr_scale<class_Environment_glow_hdr_scale>`                                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -258,8 +262,6 @@ Description
 -----------
 
 Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironment>`) that define multiple environment operations (such as background :ref:`Sky<class_Sky>` or :ref:`Color<class_Color>`, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:
-
- 		
 
 - DOF Blur
 
@@ -677,6 +679,16 @@ Value defining the fog depth intensity.
 
 Enables the fog depth.
 
+.. _class_Environment_fog_depth_end:
+
+- :ref:`float<class_float>` **fog_depth_end**
+
++----------+--------------------------+
+| *Setter* | set_fog_depth_end(value) |
++----------+--------------------------+
+| *Getter* | get_fog_depth_end()      |
++----------+--------------------------+
+
 .. _class_Environment_fog_enabled:
 
 - :ref:`bool<class_bool>` **fog_enabled**
@@ -830,6 +842,16 @@ Bloom value (global glow).
 +----------+-------------------------+
 
 Enables glow rendering.
+
+.. _class_Environment_glow_hdr_luminance_cap:
+
+- :ref:`float<class_float>` **glow_hdr_luminance_cap**
+
++----------+-----------------------------------+
+| *Setter* | set_glow_hdr_luminance_cap(value) |
++----------+-----------------------------------+
+| *Getter* | get_glow_hdr_luminance_cap()      |
++----------+-----------------------------------+
 
 .. _class_Environment_glow_hdr_scale:
 

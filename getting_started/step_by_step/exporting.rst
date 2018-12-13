@@ -82,14 +82,14 @@ changed:
             velocity = Vector2()
 
     # Remove keyboard controls.
-    #   if Input.is_action_pressed("ui_right"):
+    #    if Input.is_action_pressed("ui_right"):
     #       velocity.x += 1
-    #	if Input.is_action_pressed("ui_left"):
-    #		velocity.x -= 1
-    #	if Input.is_action_pressed("ui_down"):
-    #		velocity.y += 1
-    #	if Input.is_action_pressed("ui_up"):
-    #		velocity.y -= 1
+    #    if Input.is_action_pressed("ui_left"):
+    #        velocity.x -= 1
+    #    if Input.is_action_pressed("ui_down"):
+    #        velocity.y += 1
+    #    if Input.is_action_pressed("ui_up"):
+    #        velocity.y -= 1
 
         if velocity.length() > 0:
             velocity = velocity.normalized() * speed
@@ -99,7 +99,7 @@ changed:
             $AnimatedSprite.stop()
             $Trail.emitting = false
 
-    	position += velocity * delta
+        position += velocity * delta
         # We don't need to clamp the player's position
         # because you can't click outside the screen.
         # position.x = clamp(position.x, 0, screensize.x)
@@ -153,7 +153,7 @@ so the project can't be run on its own.
 The second button, "Export Project", creates a complete executable version
 of your game, such as an `.apk` for Android or an `.exe` for Windows.
 
-In the "Resources" and "Features" tabs you can customize how the game is
+In the "Resources" and "Features" tabs, you can customize how the game is
 exported for each platform. We can leave those settings alone for now.
 
 Exporting by platform
@@ -200,7 +200,7 @@ When you run Android Studio for the first time, click on *Configure -> SDK Manag
 and install "Android SDK Platform Tools". This installs the `adb` command-line
 tool that Godot uses to communicate with your device.
 
-Next, create a debug keystore with by running the following command on your
+Next, create a debug keystore by running the following command on your
 system's command line:
 
 ::
@@ -271,7 +271,7 @@ files:
 .. image:: img/export_web_files.png
 
 Viewing the `.html` file in your browser lets you play the game. However, you
-can't open the file directly, it neds to be served by a web server. If you don't
+can't open the file directly, it needs to be served by a web server. If you don't
 have one set up on your computer, you can use Google to find suggestions for
 your specific OS.
 

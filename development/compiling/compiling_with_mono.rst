@@ -10,7 +10,15 @@ Requirements
 
 - Mono 5.12.0 or greater
 - MSBuild
+- NuGet
 - pkg-config
+- NuGet
+
+You may need to import necessary certificates for NuGet to perform HTTPS requests. You can do this with the following command (on Windows, you can run it from the Mono command line prompt):
+
+::
+
+    mozroots --import --sync
 
 Environment variables
 ---------------------
@@ -67,6 +75,11 @@ And Mono-enabled export templates:
 
     scons p=<platform> tools=no module_mono_enabled=yes mono_glue=yes
 
+If everything went well, apart from the normal output SCons should have created the following files in the ``bin`` directory:
+
+- If you're not static linking the Mono runtime, the build script will place the Mono runtime shared library next to the Godot binary.
+- Unlike "classical" Godot builds, when building with the mono module enabled a data directory will be created both for the editor and for export templates. This directory is important for proper functioning and must be distributed together with Godot. More details about this directory in :ref:`Data directory<compiling_with_mono_data_directory>`.
+
 Examples
 --------
 
@@ -102,24 +115,102 @@ Example (X11)
     scons p=x11 target=debug tools=no module_mono_enabled=yes
     scons p=x11 target=release tools=no module_mono_enabled=yes
 
-If everything went well, apart from the normal output, SCons should have also built the *GodotSharpTools.dll* assembly and copied it together with the mono runtime shared library to the ``bin`` subdirectory.
+.. _compiling_with_mono_data_directory:
+
+Data directory
+--------------
+
+The data directory is a dependency for Godot binaries built with the mono module enabled. It contains files that are important for the correct functioning of Godot. It must be distributed next to the Godot executable.
+
+Export templates
+^^^^^^^^^^^^^^^^
+
+The name of the data directory for a export template differs based on the configuration it was built with. The format is ``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.x11.32.debug`` or ``data.mono.windows.64.release``.
+
+In the case of export templates the data directory only contains Mono framework assemblies and configuration files, as well as some shared library dependencies like ``MonoPosixHelper``.
+
+This directory must be placed with its original name next to the Godot export templates. When exporting a project, Godot will also copy this directory with the game executable but the name will be changed to ``data_<APPNAME>``, where ``<APPNAME>`` is the application name as specified in the project setting ``application/config/name``.
+
+In the case of macOS, where the export template is compressed as a zip file, the contents of the data directory can be placed in the following locations inside the zip:
+
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``/osx_template.app/Contents/Resources/GodotSharp/Mono/etc``  |
++-------------------------------------------------------+---------------------------------------------------------------+
+
+Editor
+^^^^^^^^
+
+The name of the data directory for the Godot editor will always be ``GodotSharp``. The main structure of this directory has the following subdirectories:
+
+- ``Api`` (optional)
+- ``Mono`` (optional)
+- ``Tools`` (required)
+
+The ``Tools`` subdirectory contains tools required by the editor, like the ``GodotSharpTools`` assembly.
+
+The ``Mono`` subdirectory is optional. It can be used to bundle the Mono framework assemblies and configuration files with the Godot editor, as well as some shared library dependencies like ``MonoPosixHelper``. This is important to avoid issues that might arise when the installed Mono version in the user's system may not be the same as the one the Godot editor was built with. You can make SCons copy these files to this subdirectory by passing the option ``copy_mono_root=yes`` when building the editor.
+
+The ``Api`` directory is also optional. Godot API assemblies are not bundled with the editor by default. Instead the Godot editor will generate and build them on the user's machine the first time they are required. This can be avoided by generating and building them manually and placing them in this subdirectory. If the editor can find them there, it will avoid the step of generating and building them again.
+
+The following is an example script for building and copying the Godot API assemblies:
+
+.. tabs::
+ .. code-tab:: bash Bash
+
+    DATA_API_DIR=./bin/GodotSharp/Api
+    SOLUTION_DIR=/tmp/build_GodotSharp
+    BUILD_CONFIG=Release
+    # Generate the solution
+    ./bin/<godot_binary> --generate-cs-api $SOLUTION_DIR
+    # Build the solution
+    msbuild $SOLUTION_DIR/GodotSharp.sln /p:Configuration=$BUILD_CONFIG
+    # Copy the built files
+    mkdir -p $DATA_API_DIR
+    cp $SOLUTION_DIR/GodotSharp/bin/$BUILD_CONFIG/{GodotSharp.dll,GodotSharp.pdb,GodotSharp.xml} $DATA_API_DIR
+    cp $SOLUTION_DIR/GodotSharpEditor/bin/$BUILD_CONFIG/{GodotSharpEditor.dll,GodotSharpEditor.pdb,GodotSharpEditor.xml} $DATA_API_DIR
+
+ .. code-tab:: batch Batch
+
+    set DATA_API_DIR=.\bin\GodotSharp\Api
+    set SOLUTION_DIR=%Temp%\build_GodotSharp
+    set BUILD_CONFIG=Release
+    # Generate the solution
+    .\bin\<godot_binary> --generate-cs-api %SOLUTION_DIR%
+    # Build the solution
+    msbuild %SOLUTION_DIR%\GodotSharp.sln /p:Configuration=%BUILD_CONFIG%
+    # Copy the built files
+    if not exist "%DATA_API_DIR%" mkdir %DATA_API_DIR%
+    for %%I in (GodotSharp.dll GodotSharp.pdb GodotSharp.xml) do copy %SOLUTION_DIR%\GodotSharp\bin\%BUILD_CONFIG%\%%I %DATA_API_DIR%
+    for %%I in (GodotSharpEditor.dll GodotSharpEditor.pdb GodotSharpEditor.xml) do copy %SOLUTION_DIR%\GodotSharpEditor\bin\%BUILD_CONFIG%\%%I %DATA_API_DIR%
+
+The script assumes it's being executed from the directory where SConstruct is located.
+``<godot_binary>`` refers to the tools binary compiled with the Mono module enabled.
+
+In the case of macOS, if the Godot editor is distributed as a bundle, the contents of the data directory may be placed in the following locations:
+
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Api``      | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Api``      |
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``<bundle_name>.app/Contents/Resources/GodotSharp/Mono/etc``  |
++-------------------------------------------------------+---------------------------------------------------------------+
+| ``bin/data.mono.<platform>.<bits>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
++-------------------------------------------------------+---------------------------------------------------------------+
 
 Command-line options
 --------------------
 
 The following is the list of command-line options available when building with the mono module:
 
--  **module_mono_enabled**: Build Godot with the mono module enabled (yes|no)
-     default: no
+- **module_mono_enabled**: Build Godot with the mono module enabled ( yes | **no** )
 
--  **mono_glue**: Whether to include the glue source files in the build and define `MONO_GLUE_DISABLED` as a preprocessor macro (yes|no)
-     default: yes
+- **mono_glue**: Whether to include the glue source files in the build and define `MONO_GLUE_DISABLED` as a preprocessor macro ( **yes** | no )
 
--  **xbuild_fallback**: Whether to fallback to xbuild if MSBuild is not available (yes|no)
-     default: no
+- **xbuild_fallback**: Whether to fallback to xbuild if MSBuild is not available ( yes | **no** )
 
--  **mono_static**: Whether to link the mono runtime statically (yes|no)
-     default: no
+- **mono_static**: Whether to link the mono runtime statically ( yes | **no** )
 
--  **mono_assemblies_output_dir**: Path to the directory where all the managed assemblies will be copied to. The '#' token indicates de top of the source directory, the directory in which SConstruct is located
-     default: #bin
+- **copy_mono_root**: Whether to copy the Mono framework assemblies and configuration files required by the Godot editor ( yes | **no** )

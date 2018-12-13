@@ -17,7 +17,7 @@ the name used on the certificate.
 Limitations on Xbox One
 -----------------------
 
-As described in `UWP documentation <https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
+As described in the `UWP documentation <https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
 
 - Submitted as an "App"
     - available memory is 1GB
@@ -28,7 +28,7 @@ As described in `UWP documentation <https://docs.microsoft.com/en-us/windows/uwp
     - available memory is 5GB
     - 4 exclusive CPU cores and 2 shared CPU cores
     - exclusive access to GPU power (100%)
-    
+
 - Exceeding these memory limitations will cause allocation failures and the application will crash.
 
 Creating a signing certificate

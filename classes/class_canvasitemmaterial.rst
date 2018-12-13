@@ -19,11 +19,19 @@ A material for :ref:`CanvasItem<class_CanvasItem>`\ s.
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------+
-| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_blend_mode>` |
-+-----------------------------------------------------+--------------------------------------------------------+
-| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_light_mode>` |
-+-----------------------------------------------------+--------------------------------------------------------+
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` | :ref:`blend_mode<class_CanvasItemMaterial_blend_mode>`                           |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` | :ref:`light_mode<class_CanvasItemMaterial_light_mode>`                           |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_h_frames<class_CanvasItemMaterial_particles_anim_h_frames>` |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_anim_loop<class_CanvasItemMaterial_particles_anim_loop>`         |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`particles_anim_v_frames<class_CanvasItemMaterial_particles_anim_v_frames>` |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`particles_animation<class_CanvasItemMaterial_particles_animation>`         |
++-----------------------------------------------------+----------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -83,4 +91,44 @@ The manner in which a material's rendering is applied to underlying textures.
 +----------+-----------------------+
 
 The manner in which material reacts to lighting.
+
+.. _class_CanvasItemMaterial_particles_anim_h_frames:
+
+- :ref:`int<class_int>` **particles_anim_h_frames**
+
++----------+------------------------------------+
+| *Setter* | set_particles_anim_h_frames(value) |
++----------+------------------------------------+
+| *Getter* | get_particles_anim_h_frames()      |
++----------+------------------------------------+
+
+.. _class_CanvasItemMaterial_particles_anim_loop:
+
+- :ref:`bool<class_bool>` **particles_anim_loop**
+
++----------+--------------------------------+
+| *Setter* | set_particles_anim_loop(value) |
++----------+--------------------------------+
+| *Getter* | get_particles_anim_loop()      |
++----------+--------------------------------+
+
+.. _class_CanvasItemMaterial_particles_anim_v_frames:
+
+- :ref:`int<class_int>` **particles_anim_v_frames**
+
++----------+------------------------------------+
+| *Setter* | set_particles_anim_v_frames(value) |
++----------+------------------------------------+
+| *Getter* | get_particles_anim_v_frames()      |
++----------+------------------------------------+
+
+.. _class_CanvasItemMaterial_particles_animation:
+
+- :ref:`bool<class_bool>` **particles_animation**
+
++----------+--------------------------------+
+| *Setter* | set_particles_animation(value) |
++----------+--------------------------------+
+| *Getter* | get_particles_animation()      |
++----------+--------------------------------+
 

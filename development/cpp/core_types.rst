@@ -104,7 +104,7 @@ memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
 For dynamic memory, the PoolVector<> template is provided. PoolVector is a
-standard vector class, and is very similar to vector in the C++ standard library. 
+standard vector class, and is very similar to vector in the C++ standard library.
 To create a PoolVector buffer, use this:
 
 .. code:: cpp

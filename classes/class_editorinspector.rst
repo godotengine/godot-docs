@@ -42,6 +42,10 @@ Signals
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
 
+.. _class_EditorInspector_property_toggled:
+
+- **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
+
 .. _class_EditorInspector_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**

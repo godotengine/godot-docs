@@ -45,6 +45,13 @@ Description
 
 Translations are resources that can be loaded/unloaded on demand. They map a string to another string.
 
+Tutorials
+---------
+
+- :doc:`../tutorials/i18n/internationalizing_games`
+
+- :doc:`../tutorials/i18n/locales`
+
 Property Descriptions
 ---------------------
 
@@ -58,6 +65,8 @@ Property Descriptions
 | *Getter* | get_locale()      |
 +----------+-------------------+
 
+The locale of the translation.
+
 Method Descriptions
 -------------------
 
@@ -65,27 +74,29 @@ Method Descriptions
 
 - void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
 
-Add a message for translation.
+Adds a message if nonexistent, followed by its translation.
 
 .. _class_Translation_erase_message:
 
 - void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
-Erase a message.
+Erases a message.
 
 .. _class_Translation_get_message:
 
 - :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
 
-Return a message for translation.
+Returns a message's translation.
 
 .. _class_Translation_get_message_count:
 
 - :ref:`int<class_int>` **get_message_count** **(** **)** const
 
+Returns the number of existing messages.
+
 .. _class_Translation_get_message_list:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
 
-Return all the messages (keys).
+Returns all the messages (keys).
 

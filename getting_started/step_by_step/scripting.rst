@@ -10,10 +10,10 @@ Before Godot 3.0, the only choice for scripting a game was to use
 :ref:`doc_gdscript`. Nowadays, Godot has four (yes, four!) official languages
 and the ability to add extra scripting languages dynamically!
 
-This is great, mostly due the large amount of flexibility provided, but
+This is great, mostly due to the large amount of flexibility provided, but
 it also makes our work supporting languages more difficult.
 
-The "Main" languages in Godot, though, are GDScript and VisualScript. The
+The "main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is their level of integration with Godot, as this
 makes the experience smoother; both have slick editor integration, while
 C# and C++ need to be edited in a separate IDE. If you are a big fan of statically typed languages, go with C# and C++ instead.
@@ -70,11 +70,11 @@ F#, Boo or ClojureCLR. In practice however, C# is the only officially supported 
 GDNative / C++
 ~~~~~~~~~~~~~~
 
-Finally, one of our brightest additions for the 3.0 release: 
+Finally, one of our brightest additions for the 3.0 release:
 GDNative allows scripting in C++ without needing to recompile (or even
 restart) Godot.
 
-Any C++ version can be used, and mixing compiler brands and versions for the 
+Any C++ version can be used, and mixing compiler brands and versions for the
 generated shared libraries works perfectly, thanks to our use of an internal C
 API Bridge.
 
@@ -136,7 +136,7 @@ menu:
 The script creation dialog will pop up. This dialog allows you to set the
 script's language, class name, and other relevant options.
 
-In GDScript the file itself represents the class, so
+In GDScript, the file itself represents the class, so
 the class name field is not editable.
 
 The node we're attaching the script to is a panel, so the Inherits field
@@ -154,7 +154,7 @@ as well as in the script property under Inspector:
 .. image:: img/script_added.png
 
 To edit the script, select either of these buttons, both of which are highlighted in the above image.
-This will bring you to the script editor where a default template will be included:
+This will bring you to the script editor, where a default template will be included:
 
 .. image:: img/script_template.png
 
@@ -182,7 +182,7 @@ signals in your own scripts.
 
 In this step, we'll connect the "pressed" signal to a custom function. Forming
 connections is the first part and defining the custom function is the second part.
-For the first part, Godot provides two ways to create connections: through a 
+For the first part, Godot provides two ways to create connections: through a
 visual interface the editor provides or through code.
 
 While we will use the code method for the remainder of this tutorial series, let's
@@ -199,12 +199,12 @@ button in the bottom right, you'll open up the connection creation dialogue.
 .. image:: img/connect_dialogue.png
 
 In the bottom-left are the key things you need to create a connection: a node
-which implements the method you want to trigger (represented here as a 
+which implements the method you want to trigger (represented here as a
 NodePath) and the name of the method to trigger.
 
 The top-left section displays a list of your scene's nodes with the emitting
 node's name highlighted in red. Select the "Panel" node here. When you select
-a node, the NodePath at the bottom will automatically update to point a
+a node, the NodePath at the bottom will automatically update to point to a
 relative path from the emitting node to the selected node.
 
 By default, the method name will contain the emitting node's name ("Button" in
@@ -213,7 +213,7 @@ this case), resulting in "_on_[EmitterNode]_[signal_name]". If you do have the
 for you before setting up the connection.
 
 And that concludes the guide on how to use the visual interface. However, this
-is a scripting tutorial, so for the sake of learning, let's dive in to the
+is a scripting tutorial, so for the sake of learning, let's dive into the
 manual process!
 
 To accomplish this, we will introduce a function that is probably the most used
@@ -246,7 +246,7 @@ Next, write a function which will be called when the button is pressed:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Button_pressed():  
+    func _on_Button_pressed():
         get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
@@ -323,7 +323,7 @@ Why, hello there! Congratulations on scripting your first scene.
 
     # Not for this case,
     # but just in case.
-    get_node("Label/Button") 
+    get_node("Label/Button")
 
  .. code-tab:: csharp
 
@@ -335,10 +335,10 @@ Also, remember that nodes are referenced by name, not by type.
 
 .. note::
 
-    The right-hand panel of the connect dialogue is for binding specific 
-    values to the connected function's parameters. You can add and remove 
+    The right-hand panel of the connect dialogue is for binding specific
+    values to the connected function's parameters. You can add and remove
     values of different types.
 
     The code approach also enables this with a 4th ``Array`` parameter that
-    is empty by default. Feel free to read up on the ``Object.connect`` 
+    is empty by default. Feel free to read up on the ``Object.connect``
     method for more information.

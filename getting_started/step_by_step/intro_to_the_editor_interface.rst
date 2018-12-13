@@ -53,16 +53,16 @@ button. Locate the folder that contains the project or the
 
 |image7|
 
-When the folder path is correct you'll see a green checkmark.
+When the folder path is correct, you'll see a green checkmark.
 
 |image8|
 
 Your first look at Godot’s editor
 ---------------------------------
 
-Welcome to Godot! With your project open you should see the editor’s
-interface with the 3d viewport active. You can change the current
-workspace at the top of the interface. Click on 2d to switch to the 2d
+Welcome to Godot! With your project open, you should see the editor’s
+interface with the 3D viewport active. You can change the current
+workspace at the top of the interface. Click on 2D to switch to the 2D
 workspace.
 
 |image9|
@@ -74,17 +74,17 @@ Now you should see this interface, with empty docks on the right side.
 At the top, from left to right, you can see the **main menus**, the
 **workspaces**, and the **playtest buttons**.
 
-On the left side you have the **FileSystem dock**, where you’ll manage
+On the left side, you have the **FileSystem dock**, where you’ll manage
 your project files and assets.
 
 |image11|
 
-On the right side you’ll find the **Scene dock** that lists the active
+On the right side, you’ll find the **Scene dock**, which lists the active
 scene’s content and the **Inspector** in the bottom right corner.
 
 |image12|
 
-In the center you have the **Toolbar** at the top, where you’ll find
+In the center, you have the **Toolbar** at the top, where you’ll find
 tools to move, scale or lock your scene’s objects. It changes as you
 jump to different workspaces.
 
@@ -115,7 +115,7 @@ Notice the text [perspective] under the toolbar, it is a button that opens a lis
 
 |image20|
 
-.. note:: Read :ref:`doc_introduction_to_3d` for more detail about **3D workspace**. 
+.. note:: Read :ref:`doc_introduction_to_3d` for more detail about **3D workspace**.
 
 The **Script** workspace is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference. Press F3 to access it, and

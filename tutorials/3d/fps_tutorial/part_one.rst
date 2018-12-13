@@ -127,7 +127,7 @@ the ``X`` axis.
 .. note:: If we did not use ``Rotation_helper`` then we'd likely have cases where we are rotating
           both the ``X`` and ``Y`` axes at the same time. This can lead to undesirable results, as we then
           could rotate on all three axes in some cases.
-          
+
           See :ref:`using transforms <doc_using_transforms>` for more information
 
 _________
@@ -148,34 +148,34 @@ Add the following code to ``Player.gd``:
     const ACCEL = 4.5
 
     var dir = Vector3()
-    
+
     const DEACCEL= 16
     const MAX_SLOPE_ANGLE = 40
-    
+
     var camera
     var rotation_helper
-    
+
     var MOUSE_SENSITIVITY = 0.05
-    
+
     func _ready():
         camera = $Rotation_Helper/Camera
         rotation_helper = $Rotation_Helper
-        
+
         Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-    
+
     func _physics_process(delta):
         process_input(delta)
         process_movement(delta)
-    
+
     func process_input(delta):
-        
+
         # ----------------------------------
         # Walking
         dir = Vector3()
         var cam_xform = camera.get_global_transform()
-        
+
         var input_movement_vector = Vector2()
-        
+
         if Input.is_action_pressed("movement_forward"):
             input_movement_vector.y += 1
         if Input.is_action_pressed("movement_backward"):
@@ -184,20 +184,20 @@ Add the following code to ``Player.gd``:
             input_movement_vector.x -= 1
         if Input.is_action_pressed("movement_right"):
             input_movement_vector.x += 1
-        
+
         input_movement_vector = input_movement_vector.normalized()
-        
+
         dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
         dir += cam_xform.basis.x.normalized() * input_movement_vector.x
         # ----------------------------------
-        
+
         # ----------------------------------
         # Jumping
         if is_on_floor():
             if Input.is_action_just_pressed("movement_jump"):
                 vel.y = JUMP_SPEED
         # ----------------------------------
-        
+
         # ----------------------------------
         # Capturing/Freeing the cursor
         if Input.is_action_just_pressed("ui_cancel"):
@@ -206,35 +206,35 @@ Add the following code to ``Player.gd``:
             else:
                 Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
         # ----------------------------------
-        
+
     func process_movement(delta):
         dir.y = 0
         dir = dir.normalized()
-        
+
         vel.y += delta*GRAVITY
-        
+
         var hvel = vel
         hvel.y = 0
-        
+
         var target = dir
         target *= MAX_SPEED
-        
+
         var accel
         if dir.dot(hvel) > 0:
             accel = ACCEL
         else:
             accel = DEACCEL
-        
+
         hvel = hvel.linear_interpolate(target, accel*delta)
         vel.x = hvel.x
         vel.z = hvel.z
         vel = move_and_slide(vel,Vector3(0,1,0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-        
+
     func _input(event):
         if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
             rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY))
             self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
-            
+
             var camera_rot = rotation_helper.rotation_degrees
             camera_rot.x = clamp(camera_rot.x, -70, 70)
             rotation_helper.rotation_degrees = camera_rot
@@ -243,9 +243,9 @@ This is a lot of code, so let's break it down function by function:
 
 .. tip:: While copy and pasting code is ill advised, as you can learn a lot from manually typing the code in, you can
          copy and paste the code from this page directly into the script editor.
-         
+
          If you do this, all of the code copied will be using spaces instead of tabs.
-         
+
          To convert the spaces to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
          This will convert all of the spaces into tabs. You can select "Convert Indent To Spaces" to convert t back into spaces.
 
@@ -275,7 +275,7 @@ increasing ``JUMP_SPEED`` you can get a more 'floaty' feeling character.
 Feel free to experiment!
 
 .. note:: You may have noticed that ``MOUSE_SENSITIVITY`` is written in all caps like the other constants, but ``MOUSE_SENSITIVITY`` is not a constant.
-          
+
           The reason behind this is we want to treat it like a constant variable (a variable that cannot change) throughout our script, but we want to be
           able to change the value later when we add customizable settings. So, in an effort to remind ourselves to treat it like a constant, it's named in all caps.
 
@@ -543,7 +543,7 @@ First we need a few more class variables in our player script:
     const MAX_SPRINT_SPEED = 30
     const SPRINT_ACCEL = 18
     var is_sprinting = false
-    
+
     var flashlight
 
 All of the sprinting variables work exactly the same as the non sprinting variables with
@@ -555,7 +555,7 @@ we will be using to hold the player's flash light node.
 Now we need to add a few lines of code, starting in ``_ready``. Add the following to ``_ready``:
 
 ::
-    
+
     flashlight = $Rotation_Helper/Flashlight
 
 This gets the flash light node and assigns it to the ``flashlight`` variable.
@@ -565,7 +565,7 @@ _________
 Now we need to change some of the code in ``process_input``. Add the following somewhere in ``process_input``:
 
 ::
-    
+
     # ----------------------------------
     # Sprinting
     if Input.is_action_pressed("movement_sprint"):
@@ -573,7 +573,7 @@ Now we need to change some of the code in ``process_input``. Add the following s
     else:
         is_sprinting = false
     # ----------------------------------
-    
+
     # ----------------------------------
     # Turning the flashlight on/off
     if Input.is_action_just_pressed("flashlight"):
@@ -597,26 +597,26 @@ _________
 Now we need to change a couple things in ``process_movement``. First, replace ``target *= MAX_SPEED`` with the following:
 
 ::
-    
+
     if is_sprinting:
         target *= MAX_SPRINT_SPEED
     else:
         target *= MAX_SPEED
 
 Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if the player is sprinting or not.
-If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``. 
+If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``.
 
 Now all that's left is changing the acceleration when sprinting. Change ``accel = ACCEL`` to the following:
 
 ::
-    
+
     if is_sprinting:
         accel = SPRINT_ACCEL
     else:
         accel = ACCEL
 
 
-Now when the player is sprinting we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.        
+Now when the player is sprinting we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.
 
 _________
 

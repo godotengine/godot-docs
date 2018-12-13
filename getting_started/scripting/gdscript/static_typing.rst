@@ -85,7 +85,7 @@ How to use static typing
 
 To define the type of a variable or a constant, write a colon after the
 variable’s name, followed by its type. E.g. ``var health: int``. This
-forces the type of variable to always stay the same:
+forces the variable's type to always stay the same:
 
 ::
 
@@ -113,7 +113,7 @@ Currently you can use three types of… types:
 
 .. note::
 
-    You don't need to write type hints for constants as Godot sets it automatically from the assigned value. But you can still do so to make the intent of your code clearer.
+    You don't need to write type hints for constants, as Godot sets it automatically from the assigned value. But you can still do so to make the intent of your code clearer.
 
 Custom variable types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -136,7 +136,7 @@ For the example above, your Rifle.gd would look like this:
     class_name Rifle
 
 If you use ``class_name``, Godot registers the Rifle type globally in
-the editor, and you can use it anywhere without having to preload it
+the editor, and you can use it anywhere, without having to preload it
 into a constant:
 
 ::
@@ -146,8 +146,8 @@ into a constant:
 Variable casting
 ~~~~~~~~~~~~~~~~
 
-Type casting is a key concept in typed languages. We call the conversion
-of a value from from one type of another casting.
+Type casting is a key concept in typed languages.
+Casting is the conversion of a value from one type to another.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
 collide with the Player, a ``KinematicBody2D`` with a script called
@@ -184,14 +184,14 @@ Safe lines
 You can also use casting to ensure safe lines. Safe lines are a new
 tool in Godot 3.1 to tell you when ambiguous lines of code are
 type-safe. As you can mix and match typed and dynamic code, at times,
-Godot doesn’t have enough information to if an instruction will trigger
+Godot doesn’t have enough information to know if an instruction will trigger
 an error or not at runtime.
 
 This happens when you get a child node. Let’s take a timer for example:
 with dynamic code, you can get the node with ``$Timer``. GDScript
 supports `duck-typing <https://stackoverflow.com/a/4205163/8125343>`__,
 so even if your timer is of type ``Timer``, it is also a ``Node`` and an
-``Object``, two classes it extends. With dynamic GDScript, you also also
+``Object``, two classes it extends. With dynamic GDScript, you also
 don’t care about the node’s type as long as it has the methods you need
 to call.
 
@@ -221,7 +221,7 @@ bracket ``->`` after it’s declaration, followed by the return type:
         pass
 
 The type ``void`` means the function does not return anything. You can
-use any type as with variables:
+use any type, as with variables:
 
 ::
 
@@ -341,7 +341,7 @@ anymore:
 
 Warnings won’t prevent the game from running, but you can turn them into
 errors if you’d like. This way your game won’t compile unless you fix
-all warnings. Head to ``GDScript`` section of the Project Settings to
+all warnings. Head to the ``GDScript`` section of the Project Settings to
 turn on this option. Here’s the same file as the previous example with
 warnings as errors turned on:
 
@@ -370,8 +370,8 @@ give you an error:
 
     var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
-You can’t force the assignment of types in a ``for`` loop as each
-element the ``for`` keyword loops already has a different type. So you
+You can’t force the assignment of types in a ``for`` loop, as each
+element the ``for`` keyword loops over already has a different type. So you
 **cannot** write:
 
 ::
@@ -401,7 +401,7 @@ Two scripts can’t depend on each other in a cyclic fashion:
 Summary
 -------
 
-Typed GDScript is a powerful tool. Coming with Godot 3.1, it can already
-help you write more structured code, help you avoid common errors, and
+Typed GDScript is a powerful tool. Available as of version 3.1 of Godot, it
+helps you write more structured code, avoid common errors, and
 create scalable systems. In the future, static types will also bring you
 a nice performance boost thanks to upcoming compiler optimizations.

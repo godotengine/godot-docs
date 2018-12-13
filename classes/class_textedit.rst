@@ -263,7 +263,9 @@ enum **MenuItems**:
 
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 
-- **MENU_MAX** = **6**
+- **MENU_REDO** = **6**
+
+- **MENU_MAX** = **7**
 
 .. _enum_TextEdit_SearchFlags:
 

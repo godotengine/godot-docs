@@ -36,7 +36,7 @@ Properties
 Description
 -----------
 
-This node behaves like :ref:`PathFollow<class_PathFollow>`, except it uses its parent :ref:`Path<class_Path>` up vector information to enforce orientation. 
+This node behaves like :ref:`PathFollow<class_PathFollow>`, except it uses its parent :ref:`Path<class_Path>` up vector information to enforce orientation.
 
 Make sure to check if the curve of this node's parent :ref:`Path<class_Path>` has up vectors enabled. See :ref:`PathFollow<class_PathFollow>` and :ref:`Curve3D<class_Curve3D>` for further information.
 

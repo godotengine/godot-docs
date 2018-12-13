@@ -20,6 +20,9 @@ For compiling under Windows, the following is required:
    for parallel builds (which increase the build speed by a great factor).
 -  `SCons <https://www.scons.org>`__ build system.
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Setting up SCons
 ----------------
 

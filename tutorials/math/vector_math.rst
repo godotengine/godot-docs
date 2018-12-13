@@ -158,7 +158,7 @@ the velocity to the current position.
 
 .. image:: img/vector_movement1.png
 
-.. tip:: Velocity measures the **change** in position per unit of time. The 
+.. tip:: Velocity measures the **change** in position per unit of time. The
          new position is found by adding velocity to the previous position.
 
 - Pointing toward a target
@@ -189,14 +189,14 @@ by its magnitude:
  .. code-tab:: gdscript GDScript
 
     var a = Vector2(2, 4)
-    var m = sqrt(a.x*a.x + a.y*a.y)  # get magnitude "m" using the Pythagorean theorem 
+    var m = sqrt(a.x*a.x + a.y*a.y)  # get magnitude "m" using the Pythagorean theorem
     a.x /= m
     a.y /= m
 
  .. code-tab:: csharp
 
     var a = new Vector2(2, 4);
-    var m = Mathf.Sqrt(a.x*a.x + a.y*a.y);  // get magnitude "m" using the Pythagorean theorem 
+    var m = Mathf.Sqrt(a.x*a.x + a.y*a.y);  // get magnitude "m" using the Pythagorean theorem
     a.x /= m;
     a.y /= m;
 
@@ -249,7 +249,7 @@ to handle this. Here is a GDScript example of the diagram above using a
         move_and_collide(reflect)
 
  .. code-tab:: csharp
-    
+
     // KinematicCollision2D contains information about the collision
     KinematicCollision2D collision = MoveAndCollide(_velocity * delta);
     if (collision != null)
@@ -270,13 +270,13 @@ direction, a scalar value has only magnitude.
 The formula for dot product takes two common forms:
 
 .. math::
-    
+
     A \cdot B = \left \| A \right \|\left \| B \right \|\cos \Theta
 
 and
 
 .. math::
-    
+
     A \cdot B = A_{x}B_{x} + A_{y}B_{y}
 
 However, in most cases it is easiest to use the built-in method. Note that

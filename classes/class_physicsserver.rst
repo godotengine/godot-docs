@@ -280,23 +280,23 @@ enum **G6DOFJointAxisParam**:
 
 - **G6DOF_JOINT_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force that the linear motor can apply while trying to reach the target velocity.
 
-- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **7** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **10** --- The minimum rotation in negative direction to break loose and rotate around the axes.
 
-- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **8** --- The minimum rotation in positive direction to break loose and rotate around the axes.
+- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **11** --- The minimum rotation in positive direction to break loose and rotate around the axes.
 
-- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **9** --- A factor that gets multiplied onto all rotations across the axes.
+- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **12** --- A factor that gets multiplied onto all rotations across the axes.
 
-- **G6DOF_JOINT_ANGULAR_DAMPING** = **10** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **G6DOF_JOINT_ANGULAR_DAMPING** = **13** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
 
-- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **11** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **14** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
 
-- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **12** --- The maximum amount of force that can occur, when rotating around the axes.
+- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **15** --- The maximum amount of force that can occur, when rotating around the axes.
 
-- **G6DOF_JOINT_ANGULAR_ERP** = **13** --- When correcting the crossing of limits in rotation across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **G6DOF_JOINT_ANGULAR_ERP** = **16** --- When correcting the crossing of limits in rotation across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
-- **G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **14** --- Target speed for the motor at the axes.
+- **G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **17** --- Target speed for the motor at the axes.
 
-- **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
+- **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
 
 .. _enum_PhysicsServer_ProcessInfo:
 
@@ -484,9 +484,9 @@ enum **G6DOFJointAxisFlag**:
 
 - **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
 
-- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
 
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **3** --- If ``set`` there is a linear motor on this axis that targets a specific velocity.
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If ``set`` there is a linear motor on this axis that targets a specific velocity.
 
 .. _enum_PhysicsServer_SliderJointParam:
 

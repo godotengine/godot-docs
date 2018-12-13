@@ -32,8 +32,6 @@ Properties
 +----------------------------------------------+-------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`fract_delta<class_Particles2D_fract_delta>`           |
 +----------------------------------------------+-------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`h_frames<class_Particles2D_h_frames>`                 |
-+----------------------------------------------+-------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`lifetime<class_Particles2D_lifetime>`                 |
 +----------------------------------------------+-------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_local_coords>`         |
@@ -51,8 +49,6 @@ Properties
 | :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_speed_scale>`           |
 +----------------------------------------------+-------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_texture>`                   |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`v_frames<class_Particles2D_v_frames>`                 |
 +----------------------------------------------+-------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_visibility_rect>`   |
 +----------------------------------------------+-------------------------------------------------------------+
@@ -154,18 +150,6 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 +----------+-----------------------------+
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
-
-.. _class_Particles2D_h_frames:
-
-- :ref:`int<class_int>` **h_frames**
-
-+----------+---------------------+
-| *Setter* | set_h_frames(value) |
-+----------+---------------------+
-| *Getter* | get_h_frames()      |
-+----------+---------------------+
-
-Number of horizontal frames in ``texture``.
 
 .. _class_Particles2D_lifetime:
 
@@ -272,18 +256,6 @@ Particle system's running speed scaling ratio. Default value: ``1``. A value of 
 +----------+--------------------+
 
 Particle texture. If ``null`` particles will be squares.
-
-.. _class_Particles2D_v_frames:
-
-- :ref:`int<class_int>` **v_frames**
-
-+----------+---------------------+
-| *Setter* | set_v_frames(value) |
-+----------+---------------------+
-| *Getter* | get_v_frames()      |
-+----------+---------------------+
-
-Number of vertical frames in ``texture``.
 
 .. _class_Particles2D_visibility_rect:
 

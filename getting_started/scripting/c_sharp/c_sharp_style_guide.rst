@@ -6,7 +6,7 @@ C# style guide
 Having well-defined and consistent coding conventions is important for every project, and Godot
 is no exception to this rule.
 
-This page contains a coding style guide which is followed by developers and contributors of Godot
+This page contains a coding style guide, which is followed by developers of and contributors to Godot
 itself. As such, it is mainly intended for those who want to contribute to the project, but since
 the conventions and guidelines mentioned in this article are those most widely adopted by the users
 of the language, we encourage you to do the same, especially if you do not have such a guide yet.
@@ -24,7 +24,7 @@ Currently, Godot uses C# version 6.0 in its engine and example source code. So, 
 a newer version, care must be taken to avoid mixing language features only available in C# 7.0 or
 later, such as pattern matching or expression-bodied members inside get/set accessors.
 
-For detailed information of C# features in different versions, please see
+For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
 
 Formatting conventions
@@ -54,7 +54,7 @@ the same level:
         DoSomething();
     }
 
-However, you may choose to omit line breaks inside brackets,
+However, you may choose to omit line breaks inside brackets:
 
 * For simple property accessors.
 * For simple object, array, or collection initializers.
@@ -80,7 +80,7 @@ However, you may choose to omit line breaks inside brackets,
         }
     }
 
-Insert a blank line,
+Insert a blank line:
 
 * After *using* statement list.
 * Between method, properties, and inner type declarations.
@@ -88,10 +88,10 @@ Insert a blank line,
 Field and constant declarations can be grouped together according to relevance. In that case, consider
 inserting a blank line between the groups for easier reading.
 
-Avoid inserting a blank line,
+Avoid inserting a blank line:
 
-* After an opening bracket ('{').
-* Before a closing bracket ('}').
+* After ``{``, the opening brace.
+* Before ``}``, the closing brace.
 * After a comment block, or a single line comment.
 * Adjacent to another blank line.
 
@@ -132,12 +132,12 @@ Avoid inserting a blank line,
 
 Consider breaking a line when it's longer than 100 characters. And it's also a good practice to
 insert a line feed (LF) character at the end of a file because some utilities have trouble
-recognizing the last line without it (i.e. Linux's *cat* command).
+recognizing the last line without it (e.g. the *cat* command on Linux).
 
 Using spaces
 ------------
 
-Insert a space,
+Insert a space:
 
 * Around a binary and tertiary operator.
 * Between an opening parenthesis and *if*, *for*, *foreach*, *catch*, *while*, *lock* or *using* keywords.
@@ -150,9 +150,9 @@ Insert a space,
 * Around a lambda arrow.
 * After a single line comment symbol ('//'), and before it if used at the end of a line.
 
-Do not use a space,
+Do not use a space:
 
-* After a type cast parentheses.
+* After type cast parentheses.
 * Within single line initializer braces.
 
 The following example shows a proper use of spaces, according to some of the above mentioned conventions:
@@ -227,8 +227,8 @@ underscore('_') as a prefix for private fields (but not for methods or propertie
         targetFound?.Hit(attackStrength);
     }
 
-There's an exception with acronyms which consist of two letters like *'UI'* which should be written in
-upper case letters when used where Pascal case would be expected, and in lower case letters otherwise.
+There's an exception with acronyms which consist of two letters, like *'UI'*, which should be written in
+uppercase letters when used where Pascal case would be expected, and in lowercase letters otherwise.
 
 Note that *'id'* is **not** an acronym, so it should be treated as a normal identifier:
 
@@ -241,14 +241,14 @@ Note that *'id'* is **not** an acronym, so it should be treated as a normal iden
         get { return uiManager; }
     }
 
-It is generally discouraged to use a type name as a prefix of an identifier like *'string strText'*
-or *'float fPower'*, for example. However, there's an exception about interfaces, in which case they
-**should** be named using an upper case *'I'* as a prefix, like *'IInventoryHolder'* or *'IDamageable'*.
+It is generally discouraged to use a type name as a prefix of an identifier, like *'string strText'*
+or *'float fPower'*, for example. An exception is made, however, for interfaces, which
+**should**, in fact, have an uppercase letter *'I'* prefixed to their names, like *'IInventoryHolder'* or *'IDamageable'*.
 
 Lastly, consider choosing descriptive names and do not try to shorten them too much if it affects
 readability.
 
-For instance, if you want to write a code to find a nearby enemy and hit with an weapon, prefer
+For instance, if you want to write code to find a nearby enemy and hit it with a weapon, prefer
 
 .. code-block:: csharp
 

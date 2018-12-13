@@ -81,7 +81,7 @@ create a child sprite and load the torso, later accommodate it properly:
 .. image:: img/tuto_cutout3.png
 
 This looks good. Let's see if our hierarchy works as a skeleton by
-rotating the torso. We can do this be pressing ``E`` to enter rotate mode, 
+rotating the torso. We can do this be pressing ``E`` to enter rotate mode,
 and dragging with the left mouse button. To exit rotate mode hit ``ESC``.
 
 .. image:: img/tutovec_torso1.gif
@@ -121,7 +121,7 @@ simple! Or maybe not:
 
 .. image:: img/tuto_cutout7.png
 
-Right. In 2D, parent nodes appear below children nodes. Well, this sucks. 
+Right. In 2D, parent nodes appear below children nodes. Well, this sucks.
 But how can this problem be solved? We want the left arm to appear behind
 the hip and the torso. For this, we can move the nodes behind the hip
 (note that you can bypass this by setting the Node2D Z property, but then you
@@ -229,8 +229,8 @@ can be selected and animated.
 Finally, create endpoints in all meaningful extremities and connect the
 whole skeleton with bones up to the hip.
 
-You may notice when connecting the hip and torso, that an extra bone is created. 
-To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``. 
+You may notice when connecting the hip and torso, that an extra bone is created.
+To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``.
 
 .. image:: img/tuto_cutout15_2.png
 
@@ -354,9 +354,9 @@ Batch setting transition curves
 When creating complex animations and inserting many keyframes,
 editing the individual keyframe curves for each can become an endless
 task. For this, the Animation Editor has a small menu where changing
-animation curves is easy. First select the appropriate keys. Next click on the 
-pencil icon in the bottom right of the animation panel, this will open the 
-transition editor. Now click on one of the curve options most appropriate for 
+animation curves is easy. First select the appropriate keys. Next click on the
+pencil icon in the bottom right of the animation panel, this will open the
+transition editor. Now click on one of the curve options most appropriate for
 your animation.
 
 .. image:: img/tuto_cutout24.png

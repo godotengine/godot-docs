@@ -39,6 +39,7 @@ build Godot yourself.
 
 Setup
 -----
+
 Please refer to the documentation for :ref:`doc_compiling_for_android`, :ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`, :ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools Command Prompt for VS 2017`` or similar, depending on your install, instead of the standard Windows command prompt to enter the commands below.
@@ -91,8 +92,6 @@ Example for using 4 cores:
 ::
 
     user@host:~/godot$ scons platform=x11 -j 4
-
-Note that there are currently `issues <https://github.com/godotengine/godot/issues/5182>`__ with parallel builds for at least some users, so if you are running into errors, try building without the ``-j`` parameter.
 
 Resulting binary
 ----------------

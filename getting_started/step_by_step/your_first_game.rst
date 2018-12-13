@@ -174,8 +174,8 @@ set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
-.. warning:: If you're using C#, you need to restart godot editor temporarily to see
-            exported variables in the editor until it's fixed.
+.. warning:: If you're using C#, you need to rebuild your project (by playing the scene or from the mono tab)
+             to see exported variables in the editor as C# doesn't support hot reloading yet.
 
 .. image:: img/export_variable.png
 
@@ -197,7 +197,7 @@ which is a good time to find the size of the game window:
 
 Now we can use the ``_process()`` function to define what the player will do.
 ``_process()`` is called every frame, so we'll use it to update
-elements of our game which we expect will change often. Here we'll make it:
+elements of our game, which we expect will change often. Here we'll make it:
 
 - Check for input.
 - Move in the given direction.
@@ -371,7 +371,7 @@ Let's place this code at the end of our ``_process()`` function:
 
 Play the scene again and check that the animations are correct in each
 of the directions. When you're sure the movement is working correctly,
-add this line to ``_ready()`` so the player will be hidden when the game
+add this line to ``_ready()``, so the player will be hidden when the game
 starts:
 
 .. tabs::
@@ -614,7 +614,7 @@ saved ``Player.tscn``.
 
 .. note:: See :ref:`doc_instancing` to learn more about instancing.
 
-Now add the following nodes as children of ``Main``, and name them as
+Now, add the following nodes as children of ``Main``, and name them as
 shown (values are in seconds):
 
 -  :ref:`Timer <class_Timer>` (named ``MobTimer``) - to control how often mobs spawn
@@ -664,7 +664,7 @@ to select a random position and direction along the path.
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script we use
+Add a script to ``Main``. At the top of the script, we use
 ``export (PackedScene)`` to allow us to choose the Mob scene we want to
 instance.
 
@@ -779,7 +779,7 @@ increment the score by 1.
         Score += 1;
     }
 
-In ``_on_MobTimer_timeout()`` we will create a mob instance, pick a
+In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a
 random starting location along the ``Path2D``, and set the mob in
 motion. The ``PathFollow2D`` node will automatically rotate as it
 follows the path, so we will use that to select the mob's direction as

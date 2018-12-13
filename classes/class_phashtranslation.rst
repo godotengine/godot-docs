@@ -35,3 +35,5 @@ Method Descriptions
 
 - void **generate** **(** :ref:`Translation<class_Translation>` from **)**
 
+Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
+

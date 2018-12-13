@@ -12,9 +12,9 @@ the 3D platformer tutorial, or the 3D kinematic character tutorials,
 which are almost identical to their 2D counterparts.
 
 In 3D, math is a little more complex than in 2D, so also checking the
-:ref:`doc_vector_math` in the wiki (which were especially created for game
-developers, not mathematicians or engineers) will help pave the way into
-efficiently developing 3D games.
+:ref:`doc_vector_math` entry in the wiki (which was especially created for game
+developers, not mathematicians or engineers) will help pave the way for you
+to develop 3D games efficiently.
 
 Spatial node
 ~~~~~~~~~~~~
@@ -27,7 +27,7 @@ node for everything 3D.
 .. image:: img/tuto_3d1.png
 
 Spatial nodes have a local transform, which is relative to the parent
-node (as long as the parent node is also **or inherits** of type
+node (as long as the parent node is also of **or inherits** from the type
 Spatial). This transform can be accessed as a 4x3
 :ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (x,y and z angles) and
@@ -40,7 +40,7 @@ scale.
 
 Unlike 2D, where loading image content and drawing is straightforward,
 3D is a little more difficult. The content needs to be created with
-special 3D tool (usually referred to as DCCs) and exported to an
+special 3D tools (usually referred to as DCCs) and exported to an
 exchange file format in order to be imported in Godot (3D formats are
 not as standardized as images).
 
@@ -48,7 +48,7 @@ DCC-created models
 ------------------
 
 There are two pipelines to import 3D models in Godot. The first and most
-common one is through the :ref:`doc_importing_3d_scenes` importer, which allows to import
+common one is through the :ref:`doc_importing_3d_scenes` importer, which allows you to import
 entire scenes (just as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
@@ -76,7 +76,7 @@ Immediate geometry
 
 If, instead, there is a requirement to generate simple geometry that
 will be updated often, Godot provides a special node,
-:ref:`ImmediateGeometry <class_ImmediateGeometry>`
+:ref:`ImmediateGeometry <class_ImmediateGeometry>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
 lines, triangles, etc.
 
@@ -116,7 +116,7 @@ selected.
 Default 3D scene navigation controls are similar to Blender (aiming to
 have some sort of consistency in the free software pipeline..), but
 options are included to customize mouse buttons and behavior to be
-similar to other tools in Editor Settings:
+similar to other tools in the Editor Settings:
 
 .. image:: img/tuto_3d4.png
 
@@ -132,7 +132,7 @@ When working with 3D assets, it's always best to work in the correct
 scale (set your DCC to metric). Godot allows scaling post-import and,
 while this works in most cases, in rare situations it may introduce
 floating point precision issues (and thus, glitches or artifacts) in
-delicate areas such as rendering or physics. So, make sure your artists
+delicate areas, such as rendering or physics, so make sure your artists
 always work in the right scale!
 
 The Y coordinate is used for "up", though for most objects that need
@@ -157,17 +157,24 @@ Vector3,Color,etc.).
 
 Some useful keybindings:
 
--  To snap motion or rotation, press the "s" key while moving, scaling
+-  To snap placement or rotation, press the "s" key while moving, scaling
    or rotating.
 -  To center the view on the selected object, press the "f" key.
 
 View menu
 ---------
 
-The view options are controlled by the "[ view ]" menu. Pay attention to
-this little menu inside the window because it is often overlooked!
+The view options are controlled by the "View" menu in the viewport's toolbar.
 
 .. image:: img/tuto_3d6.png
+
+You can hide the gizmos in the 3D view of the editor through this menu:
+
+.. image:: img/tuto_3d6_1.png
+
+To hide a specific type of gizmos, you can toggle them off in the "View" menu.
+
+.. image:: img/tuto_3d6_2.png
 
 Default environment
 -------------------
@@ -183,14 +190,14 @@ light to your objects.
 Cameras
 -------
 
-No matter how many objects are placed in 3D space, nothing will be
+No matter how many objects are placed in the 3D space, nothing will be
 displayed unless a :ref:`Camera <class_Camera>` is
-also added to the scene. Cameras can either work in orthogonal or
+also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 
 .. image:: img/tuto_3d10.png
 
-Cameras are associated with and only display to a parent or grandparent
+Cameras are associated with (and only display to) a parent or grandparent
 viewport. Since the root of the scene tree is a viewport, cameras will
 display on it by default, but if sub-viewports (either as render target
 or picture-in-picture) are desired, they need their own children cameras
@@ -198,7 +205,7 @@ to display.
 
 .. image:: img/tuto_3d11.png
 
-When dealing with multiple cameras, the following rules are followed for
+When dealing with multiple cameras, the following rules are enforced for
 each viewport:
 
 -  If no cameras are present in the scene tree, the first one that
@@ -213,5 +220,5 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights nor of types of lights in
+There is no limitation on the number of lights, nor of types of lights, in
 Godot. As many as desired can be added (as long as performance allows).

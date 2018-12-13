@@ -80,7 +80,7 @@ An example usage:
 
     var t = new Theme();
     t.SetColor("fontColor", "Label", new Color(1.0f, 1.0f, 1.0f));
-    
+
     var l = new Label();
     l.SetTheme(t);
 

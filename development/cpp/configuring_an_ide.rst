@@ -14,6 +14,7 @@ Development Environment), here are setup instructions for some popular ones:
 - :ref:`Kdevelop <doc_configuring_an_ide_kdevelop>` (all desktop platforms)
 - :ref:`Xcode <doc_configuring_an_ide_xcode>` (macOS)
 - :ref:`Visual Studio <doc_compiling_for_windows_install_vs>` (Windows)
+- :ref:`Visual Studio Code<doc_configuring_an_ide_vscode>` (all desktop platforms)
 
 It is possible to use other IDEs, but their setup is not documented yet.
 
@@ -149,7 +150,7 @@ Add the following includes/imports:
 
 Apply the changes.
 
-Switch to the "Custom Build System" tab. Add a build configuration 
+Switch to the "Custom Build System" tab. Add a build configuration
 and keep the build directory blank. Enable build tools and add ``scons``
 as the executable then add ``platform=x11 target=debug`` (``platform=osx``
 if you're on macOS) as the arguments.
@@ -211,7 +212,7 @@ Add a Command Line Target:
 
 Add Godot Source to the Project:
 
-- Drag and drop godot source into project file browser.
+- Drag and drop Godot source into project file browser.
 - Uncheck *Create External Build System*
 
 .. image:: img/xcode_5_after_add_godot_source_to_project.png
@@ -258,3 +259,42 @@ Test it:
 
 - Set a breakpoint in platform/osx/godot_main_osx.mm
 - It should break at the point!
+
+
+.. _doc_configuring_an_ide_vscode:
+
+Visual Studio Code
+------------------
+
+- Ensure that C/C++ extension is installed. You can find instructions in `docs <https://code.visualstudio.com/docs/languages/cpp>`_.
+
+- Now open cloned godot folder in VS Code (File > Open Folder...)
+
+In order to build the project, we need configurations files: *launch.json* and *tasks.json*.
+To create them:
+
+- Open Debug view (Ctrl + Shift + D) and select cogwheel with orange dot:
+
+.. image:: img/vscode_1_create_launch.json.png
+
+- Select *C++ (GDB/LLDB)* (it might be slightly differently called on macOS or Windows)
+
+- Update *launch.json* to match:
+
+.. image:: img/vscode_2_launch.json.png
+
+(Note that *godot.x11.tools.64* in "program" value might be differently called on macOS or Windows)
+
+- Create *tasks.json* by starting Debug process (F5). VS Code will show dialog with *Configure Task* button. Tap it and select *Create tasks.json file from template*, then select *Others*
+
+- Update *tasks.json* to match:
+
+.. image:: img/vscode_3_tasks.json.png
+
+(Note that *platform=x11* will be different for macOX and Windows)
+
+- You can now start Debug process again to test that everything works.
+
+- If build phase fails, check console for hints. On Linux it's most likely that some dependencies are missing. Check :ref:`Compiling for X11 (Linux, \*BSD) <doc_compiling_for_x11>`
+
+

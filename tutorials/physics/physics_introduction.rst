@@ -60,7 +60,7 @@ and to detect contact with other objects.
 
 .. note:: In order to detect collisions, at least one ``Shape2D`` must be
           assigned to the object.
-          
+
 The most common way to assign a shape is by adding a :ref:`CollisionShape2D <class_CollisionShape2D>`
 or :ref:`CollisionPolygon2D <class_CollisionPolygon2D>` as a child of the object.
 These nodes allow you to draw the shape directly in the editor workspace.
@@ -85,7 +85,7 @@ In order to avoid this inaccuracy, any code that needs to access a body's proper
 be run in the :ref:`Node._physics_process() <class_Node__physics_process>`
 callback, which is called before each physics step at a constant frame rate
 (60 times per second by default).
-        
+
 Collision Layers and Masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -183,7 +183,7 @@ that is overriding the global physics properties.
 When a rigid body is at rest and hasn't moved for a time, it goes to sleep.
 A sleeping body acts like a static body, and its forces are not calculated by
 the physics engine. The body will wake up when forces are applied, either by
-a collision or via code. 
+a collision or via code.
 
 Rigid body modes
 ~~~~~~~~~~~~~~~~
@@ -318,9 +318,9 @@ occurred:
  .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
-    
+
     var velocity = Vector2(250, 250)
-    
+
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
@@ -348,9 +348,9 @@ Or to bounce off of the colliding object:
  .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
-    
+
     var velocity = Vector2(250, 250)
-    
+
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
@@ -398,22 +398,22 @@ the ground (including slopes) and jump when standing on the ground:
     var velocity = Vector2()
 
     func get_input():
-    	velocity.x = 0
-    	var right = Input.is_action_pressed('ui_right')
-    	var left = Input.is_action_pressed('ui_left')
-    	var jump = Input.is_action_just_pressed('ui_select')
-    	
-    	if is_on_floor() and jump:
-    		velocity.y = jump_speed
-    	if right:
-    		velocity.x += run_speed
-    	if left:
-    		velocity.x -= run_speed
-    	
+        velocity.x = 0
+        var right = Input.is_action_pressed('ui_right')
+        var left = Input.is_action_pressed('ui_left')
+        var jump = Input.is_action_just_pressed('ui_select')
+
+        if is_on_floor() and jump:
+            velocity.y = jump_speed
+        if right:
+            velocity.x += run_speed
+        if left:
+            velocity.x -= run_speed
+
     func _physics_process(delta):
-    	velocity.y += gravity * delta
-    	get_input()
-    	velocity = move_and_slide(velocity, Vector2(0, -1))
+        velocity.y += gravity * delta
+        get_input()
+        velocity = move_and_slide(velocity, Vector2(0, -1))
 
  .. code-tab:: csharp
 

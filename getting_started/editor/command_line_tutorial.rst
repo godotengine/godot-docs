@@ -7,14 +7,14 @@ Command line tutorial
 
 Some developers like using the command line extensively. Godot is
 designed to be friendly to them, so here are the steps for working
-entirely from the command line. Given the engine relies on little to no
+entirely from the command line. Given the engine relies on almost no
 external libraries, initialization times are pretty fast, making it
 suitable for this workflow.
 
 Path
 ----
 
-It is recommended that your Godot binary is in your PATH environment
+It is recommended that your Godot binary be in your PATH environment
 variable, so it can be executed easily from any place by typing
 ``godot``. You can do so on Linux by placing the Godot binary in
 ``/usr/local/bin`` and making sure it is called ``godot``.
@@ -66,7 +66,7 @@ The project can now be opened with Godot.
 Running the editor
 ------------------
 
-Running the editor is done by executing godot with the ``-e`` flag. This
+Running the editor is done by executing Godot with the ``-e`` flag. This
 must be done from within the project directory or a subdirectory,
 otherwise the command is ignored and the project manager appears.
 
@@ -114,7 +114,7 @@ Debugging
 
 Catching errors in the command line can be a difficult task because they
 just fly by. For this, a command line debugger is provided by adding
-``-d``. It works for both running the game or a simple scene.
+``-d``. It works for running either the game or a simple scene.
 
 ::
 

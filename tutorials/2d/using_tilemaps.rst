@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Tilemaps are a simple and quick way to make 2D game levels. Basically,
-you start with bunch of reference tiles (or pieces) that can be put on a
+you start with a bunch of reference tiles (or pieces) that can be put on a
 grid, as many times each as desired - think of it like a map editor:
 
 .. image:: img/tilemap.png
@@ -26,9 +26,9 @@ Having them as separate images also works.
 
 .. image:: img/tileset.png
 
-Create a new project and move the above PNG image into the directory. Next
+Create a new project and move the above PNG image into the directory. Next,
 go into the image's import settings and turn off ``Filter``, keeping it on will cause
-issues later. ``Mipmaps`` should already be disabled, if not, disable this too.
+issues later. ``Mipmaps`` should already be disabled; if not, disable this too.
 
 We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
@@ -37,7 +37,7 @@ manually edit the resource:
 
 .. image:: img/tileset_edit_resource.png
 
-There's enough properties to get by. With some effort, editing this
+There are enough properties to get by. With some effort, editing this
 way can work. But the easiest way to edit and maintain a tileset is exporting
 it from a specially-crafted scene!
 
@@ -47,7 +47,7 @@ TileSet scene
 Create a new scene with a regular Node or Node2D as root. For each tile you want to define,
 add a sprite node as a child. Since tiles here are 50x50, you should turn on the grid
 (``View -> Show Grid`` or ``G`` key) and enable snap (``Use Snap`` icon or ``S`` key).
-Moving tiles with the mouse might still be a inaccurate
+Moving tiles with the mouse might still be a bit inaccurate,
 so use your arrow keys as well.
 
 If more than one tile is present in the source image, make sure to use
@@ -55,11 +55,11 @@ the region property of the sprite to adjust which part of the texture is being
 used.
 
 Finally, make sure to name your sprite node correctly. This will ensure
-that, in subsequent edits to the tileset (for example, if added
+that, in subsequent edits to the tileset (for example, if you've added
 collision, changed the region, etc), the tile will still be **identified
 correctly and updated**. This name should be unique.
 
-Sounds like a lot of requirements, so here's a screenshot that shows
+Sounds like quite a few requirements, so here's a screenshot that shows
 where everything of relevance is:
 
 .. image:: img/tile_example.png
@@ -80,7 +80,7 @@ recommended because it is easier to edit.
 
 .. image:: img/tile_example3.png
 
-Finally, edit the polygon, this will give the tile a collision and fix
+Finally, edit the polygon; this will give the tile a collision and fix
 the warning icon next to the CollisionPolygon node. **Remember to use snap!**
 Using snap will make sure collision polygons are aligned properly, allowing
 a character to walk seamlessly from tile to tile. Also **do not scale or move**
@@ -137,7 +137,7 @@ Painting your world
 -------------------
 
 With all set, make sure the TileMap node is selected. A red grid will
-appear on screen, allowing to paint on it with the selected tile on the
+appear on the screen, allowing you to paint on it with the selected tile on the
 left palette.
 
 .. image:: img/tile_example6.png
@@ -149,7 +149,7 @@ using the lock button:
 .. image:: img/tile_lock.png
 
 If you accidentally place a tile somewhere you don't want it to be, you
-can delete it with ``RMB`` while in the tilemap editor.
+can delete it with ``RMB`` (the right mouse button) while in the tilemap editor.
 
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
@@ -170,14 +170,14 @@ filtering artifacts like so:
 .. image:: img/tileset_filter.png
 
 This is unavoidable, as it is the way the hardware bilinear filter
-works. So, to avoid this situation, there are a few workarounds. Try the
+works. To avoid this situation, there are a few workarounds. Try the
 one that looks better for you:
 
 
 -  Disable filtering and mipmaps for either the tileset texture or all tile textures if using separate images (see the :ref:`doc_import_images` asset pipeline tutorial).
 -  Enable pixel snap (Set ``Project > Project Settings >
-   Rendering > Quality > 2d > Use Pixel Snap`` to true, you can also search for ``Pixel Snap``).
+   Rendering > Quality > 2d > Use Pixel Snap`` to true; you can also search for ``Pixel Snap``).
 -  Viewport Scaling can often help with shrinking the map (see the
    :ref:`doc_viewports` tutorial). Simply adding a camera, setting it to ``Current`` and playing around with its ``Zoom`` may be a good starting point.
--  You can use a single, separate image for each tile. This will remove all artifacts but
+-  You can use a single, separate image for each tile. This will remove all artifacts, but
    can be more cumbersome to implement and is less optimized.

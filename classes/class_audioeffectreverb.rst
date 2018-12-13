@@ -57,7 +57,7 @@ Property Descriptions
 | *Getter* | get_damping()      |
 +----------+--------------------+
 
-Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: ``1``.
+Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: ``1``.
 
 .. _class_AudioEffectReverb_dry:
 
@@ -129,7 +129,7 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 | *Getter* | get_spread()      |
 +----------+-------------------+
 
-Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: ``1``.
+Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: ``1``.
 
 .. _class_AudioEffectReverb_wet:
 

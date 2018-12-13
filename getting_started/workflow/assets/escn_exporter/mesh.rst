@@ -4,7 +4,7 @@ Mesh
 Modifiers
 ---------
 There is an exporting option :code:`Apply Modifiers` to
-control whether mesh modifiers are applied to the exported mesh. 
+control whether mesh modifiers are applied to the exported mesh.
 
 
 Shape Key

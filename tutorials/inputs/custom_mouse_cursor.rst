@@ -8,7 +8,7 @@ You might want to change the appearance of the mouse cursor in your game in orde
 1. Using project settings
 2. Using a script
 
-Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involves scripting. 
+Using project settings is a simpler but more limited way to customize the mouse cursor. The second way is more customizable but involves scripting.
 
 Using project settings
 ----------------------
@@ -35,12 +35,12 @@ Create a Node and attach the following script.
     # Load the custom images for the mouse cursor
     var arrow = load("res://arrow.png")
     var beam = load("res://beam.png")
-    
+
     func _ready():
         # Changes only the arrow shape of the cursor
         # This is similar to changing it in the project settings
         Input.set_custom_mouse_cursor(arrow)
-    
+
         # Changes a specific shape of the cursor (here the IBeam shape)
         Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
 

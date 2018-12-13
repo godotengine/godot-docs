@@ -253,7 +253,7 @@ Returns the font size in pixels.
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
 
-Returns the total length of the text.
+Returns the total number of printable characters in the text (excluding spaces and newlines).
 
 .. _class_Label_get_visible_line_count:
 

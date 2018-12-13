@@ -28,8 +28,6 @@ Properties
 +-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`Geometry<class_Geometry>`                     | :ref:`Geometry<class_@GlobalScope_Geometry>`                     |
 +-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`GodotSharp<class_GodotSharp>`                 | :ref:`GodotSharp<class_@GlobalScope_GodotSharp>`                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`IP<class_IP>`                                 | :ref:`IP<class_@GlobalScope_IP>`                                 |
 +-----------------------------------------------------+------------------------------------------------------------------+
 | :ref:`Input<class_Input>`                           | :ref:`Input<class_@GlobalScope_Input>`                           |
@@ -171,10 +169,6 @@ enum **PropertyUsageFlags**:
 - **PROPERTY_USAGE_GROUP** = **128**
 
 - **PROPERTY_USAGE_CATEGORY** = **256**
-
-- **PROPERTY_USAGE_STORE_IF_NONZERO** = **512**
-
-- **PROPERTY_USAGE_STORE_IF_NONONE** = **1024**
 
 - **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048**
 
@@ -1150,10 +1144,6 @@ Property Descriptions
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 :ref:`Geometry<class_Geometry>` singleton
-
-.. _class_@GlobalScope_GodotSharp:
-
-- :ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
 
 .. _class_@GlobalScope_IP:
 

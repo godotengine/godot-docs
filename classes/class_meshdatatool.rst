@@ -178,7 +178,7 @@ Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
 Returns specified edge associated with given face.
 
-Edge argument must 2 or less becuase a face only has three edges.
+Edge argument must 2 or less because a face only has three edges.
 
 .. _class_MeshDataTool_get_face_meta:
 
@@ -198,13 +198,13 @@ Calculates and returns face normal of given face.
 
 Returns specified vertex of given face.
 
-Vertex argument must be 2 or less becuase faces contain three vertices.
+Vertex argument must be 2 or less because faces contain three vertices.
 
 .. _class_MeshDataTool_get_format:
 
 - :ref:`int<class_int>` **get_format** **(** **)** const
 
-Returns format of :ref:`Mesh<class_Mesh>`. Format is an integer made up of :ref:`Mesh<class_Mesh>` format flags combined together. For example, a mesh containing both vertices and normals would return a format of ``3`` becuase ``ARRAY_FORMAT_VERTEX`` is ``1`` and ``ARRAY_FORMAT_NORMAL`` is ``2``.
+Returns format of :ref:`Mesh<class_Mesh>`. Format is an integer made up of :ref:`Mesh<class_Mesh>` format flags combined together. For example, a mesh containing both vertices and normals would return a format of ``3`` because ``ARRAY_FORMAT_VERTEX`` is ``1`` and ``ARRAY_FORMAT_NORMAL`` is ``2``.
 
 For list of format flags see :ref:`ArrayMesh<class_ArrayMesh>`.
 

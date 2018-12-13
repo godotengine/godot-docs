@@ -123,7 +123,7 @@ progress bar or loading screen, etc.
         # start your "loading..." animation
         get_node("animation").play("loading")
 
-        wait_frames = 1 
+        wait_frames = 1
 
 ``_process`` is where the loader is polled. ``poll`` is called, and then
 we deal with the return value from that call. ``OK`` means keep polling,

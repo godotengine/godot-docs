@@ -15,6 +15,9 @@ required:
 -  SCons build system
 -  Xcode (or the more lightweight Command Line Tools for Xcode)
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Compiling
 ---------
 

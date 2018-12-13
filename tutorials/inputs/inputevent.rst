@@ -77,7 +77,7 @@ received input, in order:
 1. First of all, the standard :ref:`Node._input() <class_Node__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_set_process_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
-   not spread any more. This ensures that you can filter all events of interest, even before the GUI. 
+   not spread any more. This ensures that you can filter all events of interest, even before the GUI.
    For gameplay input, :ref:`Node._unhandled_input() <class_Node__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
@@ -90,7 +90,7 @@ received input, in order:
    of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
    callback, and whether these events are propagated further.
 3. If so far no one consumed the event, the unhandled input callback
-   will be called if overridden (and not disabled with 
+   will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
@@ -150,7 +150,7 @@ There are several specialised types of InputEvent, described in the table below:
 |                                                                   |                    | information. (only available on mobile  |
 |                                                                   |                    | devices)                                |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`          | SCREEN_DRAG        | Contains multi-touch drag information.  | 
+| :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`          | SCREEN_DRAG        | Contains multi-touch drag information.  |
 |                                                                   |                    | (only available on mobile devices)      |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventAction <class_InputEventAction>`                  | SCREEN_ACTION      | Contains a generic action. These events |
@@ -185,7 +185,7 @@ The Input singleton has a method for this:
 
     var ev = InputEventAction.new()
     # set as move_left, pressed
-    ev.set_as_action("move_left", true) 
+    ev.set_as_action("move_left", true)
     # feedback
     Input.parse_input_event(ev)
 

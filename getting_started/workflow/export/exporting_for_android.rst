@@ -12,10 +12,10 @@ Download the Android SDK
 Download and install the Android SDK from
 https://developer.android.com/studio/
 
-
 Install OpenJDK or Oracle JDK
 -----------------------------
-Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work, some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
+
+Download and install  `OpenJDK <https://github.com/ojdkbuild/ojdkbuild>`__ or `Oracle JDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__. Versions below JDK 8 may not work; some users have reported issues with the jarsigner (used to sign the APKs) in JDK 7.
 
 Create a debug.keystore
 -----------------------
@@ -42,8 +42,8 @@ Android devices. It's installed with the SDK, but you may need to install one
 Setting it up in Godot
 ----------------------
 
-Enter the Editor Settings screen. This screens contains the editor
-settings for the user account in the computer (It's independent from the
+Enter the Editor Settings screen. This screen contains the editor
+settings for the user account in the computer (it's independent from the
 project).
 
 .. image:: img/editorsettings.png
@@ -64,7 +64,7 @@ Exporting for Google Play Store
 -------------------------------
 
 Uploading an APK to Google's Play Store requires you to sign using a non-debug
-keystore file, such file can be generated like this:
+keystore file; such file can be generated like this:
 
 ::
 
@@ -79,8 +79,8 @@ Now fill the following forms in you Android Export Presets:
 - Release User: Replace with what your key alias.
 - Release Password: Key password.
 
-Now your export_presets.cfg file contains sensitive info, if using a Version Control System it is a good idea to remove it from public repositories.
+Now your export_presets.cfg file contains sensitive info; if using a Version Control System, it is a good idea to remove it from public repositories.
 
-Don't forget to disable the Export with debug button while choosing the APK's name.
+Don't forget to disable the ``Export With Debug`` button while choosing the APK's name.
 
 .. image:: img/export-with-debug-button.png

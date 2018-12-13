@@ -13,7 +13,6 @@ weapons fire.
 .. image:: img/PartThreeFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_two` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_two` will be the starting project for part 3
 
 Let's get started!
@@ -41,34 +40,34 @@ Follow the instructions below for either (or both) of the scenes you want to use
  .. code-tab:: gdscript Space_Level.tscn
 
     Expand "Other_Objects" and then expand "Physics_Objects".
-    
+
     Expand one of the "Barrel_Group" nodes and then select "Barrel_Rigid_Body" and open it using
     the "Open in Editor" button.
     This will bring you to the "Barrel_Rigid_Body" scene. From there select the root node and
     scroll the inspector down to the bottom.
     Select the drop down arrow under the "Node" tab, and then select "Load". Navigate to
     "RigidBody_hit_test.gd" and select "Open".
-    
+
     Return back to "Space_Level.tscn".
-    
+
     Expand one of the "Box_Group" nodes and then select "Crate_Rigid_Body" and open it using the
     "Open in Editor" button.
     This will bring you to the "Crate_Rigid_Body" scene. From there select the root node and
     scroll the inspector down to the bottom.
     Select the drop down arrow under the "Node" tab, and then select "Load". Navigate to
     "RigidBody_hit_test.gd" and select "Open".
-    
+
     Return back to "Space_Level.tscn".
-    
- 
+
+
  .. code-tab:: gdscript Ruins_Level.tscn
 
     Expand "Misc_Objects" and then expand "Physics_Objects".
-    
+
     Select all of the "Stone_Cube" RigidBodies and then in the inspector scroll down to the bottom.
     Select the drop down arrow under the "Node" tab, and then select "Load". Navigate to
     "RigidBody_hit_test.gd" and select "Open".
-    
+
     Return back to "Ruins_Level.tscn".
 
 Now you can fire at all of the rigid bodies in either level and they will react to bullets hitting them!
@@ -83,7 +82,7 @@ First we need to define a few variables in each of our weapon scripts.
 Open up ``Weapon_Pistol.gd`` and add the following class variables:
 
 ::
-    
+
     var ammo_in_weapon = 10
     var spare_ammo = 20
     const AMMO_IN_MAG = 10
@@ -105,14 +104,14 @@ Now we need to add ammo for both the rifle and the knife.
 
 .. note:: You may be wondering why we are adding ammo for the knife given it does not consume any ammunition.
           The reason we want to add ammo to the knife is so we have a consistent interface for all of our weapons.
-          
+
           If we did not add ammo variables for the knife, we would have to add checks for the knife. By adding the ammo
           variables to the knife, we don't need to worry about whether or all our weapons have the same variables.
 
 Add the following class variables to ``Weapon_Rifle.gd``:
 
 ::
-    
+
     var ammo_in_weapon = 50
     var spare_ammo = 100
     const AMMO_IN_MAG = 50
@@ -123,7 +122,7 @@ the player loses ammo regardless of whether the player hit something or not.
 Now all that's left is the knife. Add the following to ``Weapon_Knife.gd``:
 
 ::
-    
+
     var ammo_in_weapon = 1
     var spare_ammo = 1
     const AMMO_IN_MAG = 1
@@ -137,7 +136,7 @@ Now all we need to do is change a one thing in ``Player.gd``.
 All we need to change how we're firing the weapons in ``process_input``. Change the code for firing weapons to the following:
 
 ::
-    
+
     # ----------------------------------
     # Firing the weapons
     if Input.is_action_pressed("fire"):
@@ -148,7 +147,7 @@ All we need to change how we're firing the weapons in ``process_input``. Change 
                     if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
                         animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
     # ----------------------------------
-    
+
 Now the weapons have a limited amount of ammo, and will stop firing when the player runs out.
 
 _______
@@ -160,7 +159,7 @@ First, add ``process_UI(delta)`` to ``_physics_process``.
 Now add the following to ``Player.gd``:
 
 ::
-    
+
     func process_UI(delta):
         if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
             UI_status_label.text = "HEALTH: " + str(health)
@@ -192,10 +191,10 @@ For reloading we need to add a few more variables and a function to every weapon
 Open up ``Weapon_Pistol.gd`` and add the following class variables:
 
 ::
-    
+
     const CAN_RELOAD = true
     const CAN_REFILL = true
-    
+
     const RELOADING_ANIM_NAME = "Pistol_reload"
 
 * ``CAN_RELOAD``: A boolean to track whether this weapon has the ability to reload
@@ -205,32 +204,32 @@ Open up ``Weapon_Pistol.gd`` and add the following class variables:
 Now we need to add a function for handling reloading. Add the following function to ``Weapon_Pistol.gd``:
 
 ::
-    
+
     func reload_weapon():
         var can_reload = false
-        
+
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             can_reload = true
-        
+
         if spare_ammo <= 0 or ammo_in_weapon == AMMO_IN_MAG:
             can_reload = false
-        
+
         if can_reload == true:
             var ammo_needed = AMMO_IN_MAG - ammo_in_weapon
-            
+
             if spare_ammo >= ammo_needed:
                 spare_ammo -= ammo_needed
                 ammo_in_weapon = AMMO_IN_MAG
             else:
                 ammo_in_weapon += spare_ammo
                 spare_ammo = 0
-            
+
             player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)
-            
+
             return true
-        
+
         return false
-    
+
 Let's go over what's happening:
 
 First we define a variable to see whether or not this weapon can reload.
@@ -256,41 +255,41 @@ _______
 Now we need to add reloading to the rifle. Open up ``Weapon_Rifle.gd`` and add the following class variables:
 
 ::
-    
+
     const CAN_RELOAD = true
     const CAN_REFILL = true
-    
+
     const RELOADING_ANIM_NAME = "Rifle_reload"
-    
+
 These variables are exactly the same as the pistol, just with ``RELOADING_ANIM_NAME`` changed to the rifle's reloading animation.
 
 Now we need to add ``reload_weapon`` to ``Weapon_Rifle.gd``:
 
 ::
-    
+
     func reload_weapon():
         var can_reload = false
-        
+
         if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
             can_reload = true
-        
+
         if spare_ammo <= 0 or ammo_in_weapon == AMMO_IN_MAG:
             can_reload = false
-        
+
         if can_reload == true:
             var ammo_needed = AMMO_IN_MAG - ammo_in_weapon
-            
+
             if spare_ammo >= ammo_needed:
                 spare_ammo -= ammo_needed
                 ammo_in_weapon = AMMO_IN_MAG
             else:
                 ammo_in_weapon += spare_ammo
                 spare_ammo = 0
-            
+
             player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)
-            
+
             return true
-        
+
         return false
 
 This code is exactly the same as the pistol.
@@ -300,7 +299,7 @@ _______
 The last bit we need to do for the weapons is add 'reloading' to the knife. Add the following class variables to ``Weapon_Knife.gd``:
 
 ::
-    
+
     const CAN_RELOAD = false
     const CAN_REFILL = false
 
@@ -312,7 +311,7 @@ has no reloading animation.
 Now we need to add ``reloading_weapon``:
 
 ::
-    
+
     func reload_weapon():
         return false
 
@@ -324,9 +323,9 @@ Adding reloading to the player
 Now we need to add a few things to ``Player.gd``. First we need to define a new class variable:
 
 ::
-    
+
     var reloading_weapon = false
-    
+
 * ``reloading_weapon``: A variable to track whether or not the player is currently trying to reload.
 
 
@@ -335,7 +334,7 @@ Next we need to add another function call to ``_physics_process``.
 Add ``process_reloading(delta)`` to ``_physics_process``. Now ``_physics_process`` should look something like this:
 
 ::
-    
+
     func _physics_process(delta):
         process_input(delta)
         process_movement(delta)
@@ -346,7 +345,7 @@ Add ``process_reloading(delta)`` to ``_physics_process``. Now ``_physics_process
 Now we need to add ``process_reloading``. Add the following function to ``Player.gd``:
 
 ::
-    
+
     func process_reloading(delta):
         if reloading_weapon == true:
             var current_weapon = weapons[current_weapon_name]
@@ -372,7 +371,7 @@ Before we can let the player reload, we need to change a few things in ``process
 The first thing we need to change is in the code for changing weapons. We need to add a additional check (``if reloading_weapon == false:``) to see if the player is reloading:
 
 ::
-    
+
     if changing_weapon == false:
         # New line of code here!
         if reloading_weapon == false:
@@ -385,7 +384,7 @@ This makes it so the player cannot change weapons if the player is reloading.
 Now we need to add the code to trigger a reload when the player pushes the ``reload`` action. Add the following code to ``process_input``:
 
 ::
-    
+
     # ----------------------------------
     # Reloading
     if reloading_weapon == false:
@@ -430,7 +429,7 @@ reloading.
 Let's change our firing code in ``process_input`` so it reloads when trying to fire an empty weapon:
 
 ::
-    
+
     # ----------------------------------
     # Firing the weapons
     if Input.is_action_pressed("fire"):
@@ -449,11 +448,11 @@ Now we check to make sure the player is not reloading before we fire the weapon,
 we set ``reloading_weapon`` to ``true`` if the player tries to fire.
 
 This will make it where the player will try to reload when the player tries to fire a empty weapon.
-    
+
 _______
-    
+
 With that done, the player can now reload! Give it a try! Now you can fire all of the spare ammo for each weapon.
-    
+
 Adding sounds
 -------------
 
@@ -498,12 +497,12 @@ and insert the following code:
 
 
     func play_sound(sound_name, position=null):
-    
+
         if audio_pistol_shot == null or audio_rifle_shot == null or audio_gun_cock == null:
             print ("Audio not set!")
             queue_free()
             return
-    
+
         if sound_name == "Pistol_shot":
             audio_node.stream = audio_pistol_shot
         elif sound_name == "Rifle_shot":
@@ -516,8 +515,8 @@ and insert the following code:
             return
 
         # If you are using a AudioPlayer3D, then uncomment these lines to set the position.
-        # if position != null:
-        #	audio_node.global_transform.origin = position
+        #if position != null:
+        #    audio_node.global_transform.origin = position
 
         audio_node.play()
 
@@ -567,7 +566,7 @@ to save on resources.
           Because we cannot play looping sounds, certain effects, like footstep sounds, are harder to accomplish
           because we then have to keep track of whether or not there is a sound effect and whether or not we
           need to continue playing it.
-          
+
           One of the biggest flaws with this system is we can only play sounds from ``Player.gd``.
           Ideally we'd like to be able to play sounds from any script at any time.
 
@@ -626,7 +625,7 @@ Open up ``Weapon_Pistol.gd``.
 Now, we want to make a noise when the player fires the pistol, so add the following to the end of the ``fire_weapon`` function:
 
 ::
-    
+
     player_node.create_sound("Pistol_shot", self.global_transform.origin)
 
 Now when the player fires the pistol, we'll play the ``Pistol_shot`` sound.
@@ -635,7 +634,7 @@ To make a sound when the player reloads, we need to add the following right unde
 ``reload_weapon`` function:
 
 ::
-    
+
     player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
 Now when the player reloads, we'll play the ``Gun_cock`` sound.
@@ -648,7 +647,7 @@ Open up ``Weapon_Rifle.gd``.
 To play sounds when the rifle is fired, add the following to the end of the ``fire_weapon`` function:
 
 ::
-    
+
     player_node.create_sound("Rifle_shot", ray.global_transform.origin)
 
 Now when the player fires the rifle, we'll play the ``Rifle_shot`` sound.
@@ -657,7 +656,7 @@ To make a sound when the player reloads, we need to add the following right unde
 ``reload_weapon`` function:
 
 ::
-    
+
     player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
 Now when the player reloads, we'll play the ``Gun_cock`` sound.
