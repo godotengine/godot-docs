@@ -80,9 +80,17 @@ are not selectable."
 
 Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
 
-.. note:: For this project, we will be following the Godot naming
-          conventions. Classes (nodes) use ``PascalCase``, variables and
-          functions use ``snake_case``, and constants use ``ALL_CAPS``.
+.. note:: For this project, we will be following the Godot naming conventions.
+
+          - **GDScript**: Classes (nodes) use PascalCase, variables and 
+            functions use snake_case, and constants use ALL_CAPS (See
+            :ref:`doc_gdscript_styleguide`).
+
+          - **C#**: Classes, export variables and methods use PascalCase,
+            private fields use _camelCase, local variables and parameters use
+            camelCase (See :ref:`doc_c_sharp_styleguide`).  Be careful to type
+            the method names precisely when connecting signals.
+
 
 Sprite animation
 ~~~~~~~~~~~~~~~~
@@ -163,7 +171,7 @@ Start by declaring the member variables this object will need:
     public class Player : Area2D
     {
         [Export]
-        public int Speed = 0; // How fast the player will move (pixels/sec).
+        public int Speed; // How fast the player will move (pixels/sec).
 
         private Vector2 _screenSize; // Size of the game window.
     }
@@ -174,8 +182,11 @@ set its value in the Inspector. This can be handy for values that you
 want to be able to adjust just like a node's built-in properties. Click on
 the ``Player`` node and set the speed property to ``400``.
 
-.. warning:: If you're using C#, you need to rebuild your project (by playing the scene or from the mono tab)
-             to see exported variables in the editor as C# doesn't support hot reloading yet.
+.. warning:: If you're using C#, you need to (re)build the project assemblies
+             whenever you want to see new export variables or signals. This
+             build can be manually triggered by clicking the word "Mono" at the
+             bottom of the editor window to reveal the Mono Panel, then
+             clicking the "Build Project" button.
 
 .. image:: img/export_variable.png
 
@@ -238,27 +249,36 @@ or ``false`` if it isn't.
     public override void _Process(float delta)
     {
         var velocity = new Vector2(); // The player's movement vector.
-        if (Input.IsActionPressed("ui_right")) {
+
+        if (Input.IsActionPressed("ui_right"))
+        {
             velocity.x += 1;
         }
 
-        if (Input.IsActionPressed("ui_left")) {
+        if (Input.IsActionPressed("ui_left"))
+        {
             velocity.x -= 1;
         }
 
-        if (Input.IsActionPressed("ui_down")) {
+        if (Input.IsActionPressed("ui_down"))
+        {
             velocity.y += 1;
         }
 
-        if (Input.IsActionPressed("ui_up")) {
+        if (Input.IsActionPressed("ui_up"))
+        {
             velocity.y -= 1;
         }
 
-        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
-        if (velocity.Length() > 0) {
+        var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
+        if (velocity.Length() > 0)
+        {
             velocity = velocity.Normalized() * Speed;
             animatedSprite.Play();
-        } else {
+        }
+        else
+        {
             animatedSprite.Stop();
         }
     }
@@ -301,8 +321,8 @@ to the bottom of the ``_process`` function:
 
         Position += velocity * delta;
         Position = new Vector2(
-            Mathf.Clamp(Position.x, 0, _screenSize.x),
-            Mathf.Clamp(Position.y, 0, _screenSize.y)
+            x: Mathf.Clamp(Position.x, 0, _screenSize.x),
+            y: Mathf.Clamp(Position.y, 0, _screenSize.y)
         );
 
 
@@ -340,12 +360,15 @@ Let's place this code at the end of our ``_process()`` function:
 
  .. code-tab:: csharp
 
-        if (velocity.x != 0) {
+        if (velocity.x != 0)
+        {
             animatedSprite.Animation = "right";
-            # See the note below about boolean assignment
+            // See the note below about boolean assignment
             animatedSprite.FlipH = velocity.x < 0;
             animatedSprite.FlipV = false;
-        } else if(velocity.y != 0) {
+        }
+        else if(velocity.y != 0)
+        {
             animatedSprite.Animation = "up";
             animatedSprite.FlipV = velocity.y > 0;
         }
@@ -399,6 +422,8 @@ Add the following at the top of the script, after ``extends Area2d``:
 
  .. code-tab:: csharp
 
+    // Don't forget to rebuild the project so the editor knows about the new signal.
+    
     [Signal]
     public delegate void Hit();
 
@@ -433,21 +458,16 @@ Add this code to the function:
 
  .. code-tab:: csharp
 
-    public void OnPlayerBodyEntered(Godot.Object body)
+    public void OnPlayerBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
         EmitSignal("Hit");
-
-        // For the sake of this example, but it's better to create a class var
-        // then assign the variable inside _Ready()
-        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
-        collisionShape2D.Disabled = true;
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
     }
 
 .. Note:: Disabling the area's collision shape means
           it won't detect collisions. By turning it off, we make
           sure we don't trigger the ``hit`` signal more than once.
-
 
 The last piece for our player is to add a function we can call to reset
 the player when starting a new game.
@@ -466,9 +486,7 @@ the player when starting a new game.
     {
         Position = pos;
         Show();
-
-        var collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
-        collisionShape2D.Disabled = false;
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }
 
 Enemy scene
@@ -539,11 +557,13 @@ Add a script to the ``Mob`` and add the following member variables:
 
     public class Mob : RigidBody2D
     {
-        [Export]
-        public int MinSpeed = 150; // Minimum speed range.
+        // Don't forget to rebuild the project so the editor knows about the new export variables.
 
         [Export]
-        public int MaxSpeed = 250; // Maximum speed range.
+        public int MinSpeed; // Minimum speed range.
+
+        [Export]
+        public int MaxSpeed; // Maximum speed range.
 
         private String[] _mobTypes = {"walk", "swim", "fly"};
     }
@@ -565,17 +585,12 @@ choose one of the three animation types:
 
  .. code-tab:: csharp
 
+    // C# doesn't implement GDScript's random methods, so we use 'System.Random' as an alternative.
+    static private Random _random = new Random();
+
     public override void _Ready()
     {
-        var animatedSprite = (AnimatedSprite) GetNode("AnimatedSprite");
-
-        // C# doesn't implement GDScript's random methods, so we use 'Random'
-        // as an alternative.
-        //
-        // Note: Never define random multiple times in real projects. Create a
-        // class memory and reuse it to get true random numbers.
-        var randomMob = new Random();
-        animatedSprite.Animation = _mobTypes[randomMob.Next(0, _mobTypes.Length)];
+        GetNode<AnimatedSprite>("AnimatedSprite").Animation = _mobTypes[_random.Next(0, _mobTypes.Length)];
     }
 
 .. note:: You must use ``randomize()`` if you want
@@ -596,7 +611,7 @@ node and add this code:
 
  .. code-tab:: csharp
 
-    public void onVisibilityScreenExited()
+    public void OnVisibilityScreenExited()
     {
         QueueFree();
     }
@@ -683,23 +698,24 @@ instance.
 
     public class Main : Node
     {
+        // Don't forget to rebuild the project so the editor knows about the new export variable.
+    
         [Export]
         public PackedScene Mob;
 
-        public int Score = 0;
+        private int _score;
 
-        // Note: We're going to use this many times, so instantiating it
-        // allows our numbers to consistently be random.
-        private Random rand = new Random();
+        // We use 'System.Random' as an alternative to GDScript's random methods.
+        private Random _random = new Random();
 
         public override void _Ready()
         {
         }
 
         // We'll use this later because C# doesn't support GDScript's randi().
-        private float RandRand(float min, float max)
+        private float RandRange(float min, float max)
         {
-            return (float) (rand.NextDouble() * (max - min) + min);
+            return (float)_random.NextDouble() * (max - min) + min;
         }
     }
 
@@ -728,24 +744,19 @@ function to set everything up for a new game:
 
     public void GameOver()
     {
-        //timers
-        var mobTimer = (Timer) GetNode("MobTimer");
-        var scoreTimer = (Timer) GetNode("ScoreTimer");
-
-        scoreTimer.Stop();
-        mobTimer.Stop();
+        GetNode<Timer>("MobTimer").Stop();
+        GetNode<Timer>("ScoreTimer").Stop();
     }
 
     public void NewGame()
     {
-        Score = 0;
+        _score = 0;
 
-        var player = (Player) GetNode("Player");
-        var startTimer = (Timer) GetNode("StartTimer");
-        var startPosition = (Position2D) GetNode("StartPosition");
-
+        var player = GetNode<Player>("Player");
+        var startPosition = GetNode<Position2D>("StartPosition");
         player.Start(startPosition.Position);
-        startTimer.Start();
+
+        GetNode<Timer>("StartTimer").Start();
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``, ``ScoreTimer`` ,and ``MobTimer``).
@@ -766,17 +777,13 @@ increment the score by 1.
 
     public void OnStartTimerTimeout()
     {
-        //timers
-        var mobTimer = (Timer) GetNode("MobTimer");
-        var scoreTimer = (Timer) GetNode("ScoreTimer");
-
-        mobTimer.Start();
-        scoreTimer.Start();
+        GetNode<Timer>("MobTimer").Start();
+        GetNode<Timer>("ScoreTimer").Start();
     }
 
     public void OnScoreTimerTimeout()
     {
-        Score += 1;
+        _score++;
     }
 
 In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a
@@ -817,25 +824,25 @@ Add the following code:
     public void OnMobTimerTimeout()
     {
         // Choose a random location on Path2D.
-        var mobSpawnLocation = (PathFollow2D) GetNode("MobPath/MobSpawnLocation");
-        mobSpawnLocation.SetOffset(rand.Next());
+        var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
+        mobSpawnLocation.SetOffset(_random.Next());
 
         // Create a Mob instance and add it to the scene.
-        var mobInstance = (RigidBody2D) Mob.Instance();
+        var mobInstance = (RigidBody2D)Mob.Instance();
         AddChild(mobInstance);
 
         // Set the mob's direction perpendicular to the path direction.
-        var direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
+        float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
 
         // Set the mob's position to a random location.
         mobInstance.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
-        direction += RandRand(-Mathf.Pi / 4, Mathf.Pi / 4);
+        direction += RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
         mobInstance.Rotation = direction;
 
         // Choose the velocity.
-        mobInstance.SetLinearVelocity(new Vector2(RandRand(150f, 250f), 0).Rotated(direction));
+        mobInstance.SetLinearVelocity(new Vector2(RandRange(150f, 250f), 0).Rotated(direction));
     }
 
 .. important:: In functions requiring angles, GDScript uses *radians*,
@@ -958,6 +965,8 @@ Now add this script to ``HUD``:
 
     public class HUD : CanvasLayer
     {
+        // Don't forget to rebuild the project so the editor knows about the new signal.
+
         [Signal]
         public delegate void StartGame();
     }
@@ -977,12 +986,11 @@ has been pressed.
 
     public void ShowMessage(string text)
     {
-        var messageTimer = (Timer) GetNode("MessageTimer");
-        var messageLabel = (Label) GetNode("MessageLabel");
-
+        var messageLabel = GetNode<Label>("MessageLabel");
         messageLabel.Text = text;
         messageLabel.Show();
-        messageTimer.Start();
+
+        GetNode<Timer>("MessageTimer").Start();
     }
 
 This function is called when we want to display a message
@@ -1003,15 +1011,16 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
 
     async public void ShowGameOver()
     {
-        var startButton = (Button) GetNode("StartButton");
-        var messageTimer = (Timer) GetNode("MessageTimer");
-        var messageLabel = (Label) GetNode("MessageLabel");
-
         ShowMessage("Game Over");
+
+        var messageTimer = GetNode<Timer>("MessageTimer");
         await ToSignal(messageTimer, "timeout");
+
+        var messageLabel = GetNode<Label>("MessageLabel");
         messageLabel.Text = "Dodge the\nCreeps!";
         messageLabel.Show();
-        startButton.Show();
+
+        GetNode<Button>("StartButton").Show();
     }
 
 This function is called when the player loses. It will show "Game
@@ -1028,11 +1037,10 @@ Over" for 2 seconds, then return to the title screen and show the
 
     public void UpdateScore(int score)
     {
-        var scoreLabel = (Label) GetNode("ScoreLabel");
-        scoreLabel.Text = score.ToString();
+        GetNode<Label>("ScoreLabel").Text = _score.ToString();
     }
 
-This function is called in ``Main`` whenever the score changes.
+This function is called by ``Main`` whenever the score changes.
 
 Connect the ``timeout()`` signal of ``MessageTimer`` and the
 ``pressed()`` signal of ``StartButton``.
@@ -1051,16 +1059,13 @@ Connect the ``timeout()`` signal of ``MessageTimer`` and the
 
     public void OnStartButtonPressed()
     {
-        var startButton = (Button) GetNode("StartButton");
-        startButton.Hide();
-
+        GetNode<Button>("StartButton").Hide();
         EmitSignal("StartGame");
     }
 
     public void OnMessageTimerTimeout()
     {
-        var messageLabel = (Label) GetNode("MessageLabel");
-        messageLabel.Hide();
+        GetNode<Label>("MessageLabel").Hide();
     }
 
 Connecting HUD to Main
@@ -1090,8 +1095,8 @@ message:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
-        hud.UpdateScore(Score);
+        var hud = GetNode<HUD>("HUD");
+        hud.UpdateScore(_score);
         hud.ShowMessage("Get Ready!");
 
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
@@ -1103,8 +1108,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
-        hud.ShowGameOver();
+        GetNode<HUD>("HUD").ShowGameOver();
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in
 sync with the changing score:
@@ -1116,8 +1120,7 @@ sync with the changing score:
 
  .. code-tab:: csharp
 
-        var hud = (HUD) GetNode("HUD");
-        hud.UpdateScore(Score);
+        GetNode<HUD>.UpdateScore(_score);
 
 Now you're ready to play! Click the "Play the Project" button. You will
 be asked to select a main scene, so choose ``Main.tscn``.
@@ -1198,5 +1201,6 @@ all the way to ``0``.
 Project files
 -------------
 
-You can find a completed version of this project here:
-https://github.com/kidscancode/Godot3_dodge/releases
+You can find a completed version of this project at these locations:
+ - https://github.com/kidscancode/Godot3_dodge/releases
+ - https://github.com/godotengine/godot-demo-projects
