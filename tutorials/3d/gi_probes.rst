@@ -75,7 +75,7 @@ Probes or Screen Space Reflections, but fully reflect volumetrically.
 
 .. image:: img/giprobe_voxel_reflections.png
 
-``GIProbe``s can be easily mixed with Reflection Probes and Screen Space Reflections,
+``GIProbe``\ s can be easily mixed with Reflection Probes and Screen Space Reflections,
 as a full 3-stage fallback-chain. This allows to have precise reflections where needed:
 
 .. image:: img/giprobe_ref_blending.png
@@ -114,7 +114,7 @@ GI Probes support a few parameters for tweaking:
 Quality
 -------
 
-``GIProbe``s are quite demanding. It is possible to use lower quality voxel cone
+``GIProbe``\ s are quite demanding. It is possible to use lower quality voxel cone
 tracing in exchange for more performance.
 
 .. image:: img/giprobe_quality.png
