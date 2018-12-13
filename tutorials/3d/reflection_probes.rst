@@ -12,9 +12,9 @@ Reflection probes are used as a source of reflected and ambient light for object
 A probe of this type captures the surroundings (as a sort of 360 degrees image), and stores versions
 of it with increasing levels of *blur*. This is used to simulate roughness in materials, as well as ambient lighting.
 
-While these probes are a efficient way of storing reflections, they have a few shortcomings:
+While these probes are an efficient way of storing reflections, they have a few shortcomings:
 
-* They are efficient to render but expensive to compute. This leads to a default behavior where they only capture on scene load.
+* They are efficient to render, but expensive to compute. This leads to a default behavior where they only capture on scene load.
 * They work best for rectangular shaped rooms or places, otherwise the reflections shown are not as faithful (especially when roughness is 0).
 
 Setting up
@@ -27,7 +27,7 @@ Create a ReflectionProbe node and wrap it around the area where you want to have
 This should result in immediate local reflections. If you are using a Sky texture,
 reflections are by default blended with it.
 
-By default, on interiors, reflections may appear to not have much consistence.
+By default, on interiors, reflections may appear not to have much consistence.
 In this scenario, make sure to tick the *"Box Correct"* property.
 
 .. image:: img/refprobe_box_property.png
@@ -39,7 +39,7 @@ a box the size of the probe:
 .. image:: img/refprobe_boxcorrect.png
 
 Adjusting the box walls may help improve the reflection a bit, but it will
-always look the best in box shaped rooms.
+always look best in box shaped rooms.
 
 The probe captures the surrounding from the center of the gizmo. If, for some
 reason, the room shape or contents occlude the center, it
@@ -65,7 +65,7 @@ Interior vs exterior
 --------------------
 
 If you are using reflection probes in an interior setting, it is recommended
-that the **Interior** property is enabled. This stops
+that the **Interior** property be enabled. This stops
 the probe from rendering the sky and also allows custom ambient lighting settings.
 
 .. image:: img/refprobe_ambient.png
@@ -74,7 +74,7 @@ When probes are set to **Interior**, custom constant ambient lighting can be
 specified per probe. Just choose a color and an energy.
 
 Optionally, you can blend this ambient light with the probe diffuse capture by
-tweaking the **Ambient Contribution** property (0.0 means, pure ambient color,
+tweaking the **Ambient Contribution** property (0.0 means pure ambient color,
 while 1.0 means pure diffuse capture).
 
 Blending
@@ -87,12 +87,12 @@ Multiple reflection probes can be used, and Godot will blend them where they ove
 As you can see, this blending is never perfect (after all, these are
 box reflections, not real reflections), but these artifacts
 are only visible when using perfectly mirrored reflections.
-Normally, scenes have normal mapping and varying levels of roughness which
+Normally, scenes have normal mapping and varying levels of roughness, which
 can hide this.
 
 Alternatively, Reflection Probes work well blended together with Screen Space
 Reflections to solve these problems. Combining them makes local reflections appear
-more faithful while probes are only used as fallback when no screen-space information is found:
+more faithful, while probes are only used as a fallback when no screen-space information is found:
 
 .. image:: img/refprobe_ssr.png
 
