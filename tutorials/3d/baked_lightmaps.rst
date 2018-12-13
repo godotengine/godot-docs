@@ -11,7 +11,7 @@ lighting to a scene. Unlike the :ref:`doc_gi_probes` approach,
 baked lightmaps work fine on low-end PCs and mobile devices, as they consume
 almost no resources at run-time.
 
-Unlike ``GIProbe``s, Baked Lightmaps are completely static. Once baked, they can't be
+Unlike ``GIProbe``\ s, Baked Lightmaps are completely static. Once baked, they can't be
 modified at all. They also don't provide the scene with
 reflections, so using :ref:`doc_reflection_probes` together with it on interiors
 (or using a Sky on exteriors) is a requirement to get good quality.
