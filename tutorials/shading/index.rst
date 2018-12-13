@@ -5,7 +5,7 @@ Shading
    :maxdepth: 1
    :name: toc-learn-features-shading
 
-   shading_language
+   shading_reference/index
    shader_materials
    intro_to_shaders_water_workshop
    screen-reading_shaders
