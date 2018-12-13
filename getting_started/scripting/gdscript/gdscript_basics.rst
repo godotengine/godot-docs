@@ -867,7 +867,7 @@ Basic syntax:
 
 1. Replace ``switch`` with ``match``
 2. Remove ``case``
-3. Remove any ``break``s. If you don't want to ``break`` by default, you can use ``continue`` for a fallthrough.
+3. Remove any ``break``\ s. If you don't want to ``break`` by default, you can use ``continue`` for a fallthrough.
 4. Change ``default`` to a single underscore.
 
 
