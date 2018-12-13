@@ -7,7 +7,7 @@ This page describes the rules to follow if you want to contribute to Godot
 Engine by writing or reviewing documentation, or by translating existing
 documentation. Also have a look at README of the
 `godot-docs GitHub repository <https://github.com/godotengine/godot-docs>`_
-and the `docs front page <http://docs.godotengine.org>`_
+and the `docs front page <https://docs.godotengine.org>`_
 on what steps to follow and how to contact the docs team.
 
 How to contribute

@@ -28,7 +28,7 @@ Global canvas transform
 
 Viewports also have a Global Canvas transform (also a
 :ref:`Transform2D <class_Transform2D>`). This is the master transform and
-affects all individual *Canvas Layer* transforms. Generally this
+affects all individual *Canvas Layer* transforms. Generally, this
 transform is not of much use, but is used in the CanvasItem Editor
 in Godot's editor.
 
@@ -37,7 +37,7 @@ Stretch transform
 
 Finally, viewports have a *Stretch Transform*, which is used when
 resizing or stretching the screen. This transform is used internally (as
-described in :ref:`doc_multiple_resolutions`) but can also be manually set
+described in :ref:`doc_multiple_resolutions`), but can also be manually set
 on each viewport.
 
 Input events received in the :ref:`MainLoop._input_event() <class_MainLoop__input_event>`

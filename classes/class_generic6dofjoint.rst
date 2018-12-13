@@ -19,127 +19,177 @@ The generic 6 degrees of freedom joint can implement a variety of joint-types by
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/damping<class_Generic6DOFJoint_angular_limit_x/damping>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_limit_x/enabled<class_Generic6DOFJoint_angular_limit_x/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/erp<class_Generic6DOFJoint_angular_limit_x/erp>`                         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/force_limit<class_Generic6DOFJoint_angular_limit_x/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/lower_angle<class_Generic6DOFJoint_angular_limit_x/lower_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/restitution<class_Generic6DOFJoint_angular_limit_x/restitution>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/softness<class_Generic6DOFJoint_angular_limit_x/softness>`               |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_x/upper_angle<class_Generic6DOFJoint_angular_limit_x/upper_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/damping<class_Generic6DOFJoint_angular_limit_y/damping>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_limit_y/enabled<class_Generic6DOFJoint_angular_limit_y/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/erp<class_Generic6DOFJoint_angular_limit_y/erp>`                         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/force_limit<class_Generic6DOFJoint_angular_limit_y/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/lower_angle<class_Generic6DOFJoint_angular_limit_y/lower_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/restitution<class_Generic6DOFJoint_angular_limit_y/restitution>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/softness<class_Generic6DOFJoint_angular_limit_y/softness>`               |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_y/upper_angle<class_Generic6DOFJoint_angular_limit_y/upper_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/damping<class_Generic6DOFJoint_angular_limit_z/damping>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_limit_z/enabled<class_Generic6DOFJoint_angular_limit_z/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/erp<class_Generic6DOFJoint_angular_limit_z/erp>`                         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/force_limit<class_Generic6DOFJoint_angular_limit_z/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/lower_angle<class_Generic6DOFJoint_angular_limit_z/lower_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/restitution<class_Generic6DOFJoint_angular_limit_z/restitution>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/softness<class_Generic6DOFJoint_angular_limit_z/softness>`               |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_limit_z/upper_angle<class_Generic6DOFJoint_angular_limit_z/upper_angle>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_motor_x/enabled<class_Generic6DOFJoint_angular_motor_x/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_x/force_limit<class_Generic6DOFJoint_angular_motor_x/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_x/target_velocity<class_Generic6DOFJoint_angular_motor_x/target_velocity>` |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_motor_y/enabled<class_Generic6DOFJoint_angular_motor_y/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_y/force_limit<class_Generic6DOFJoint_angular_motor_y/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_y/target_velocity<class_Generic6DOFJoint_angular_motor_y/target_velocity>` |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`angular_motor_z/enabled<class_Generic6DOFJoint_angular_motor_z/enabled>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_z/force_limit<class_Generic6DOFJoint_angular_motor_z/force_limit>`         |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`angular_motor_z/target_velocity<class_Generic6DOFJoint_angular_motor_z/target_velocity>` |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_x/damping<class_Generic6DOFJoint_linear_limit_x/damping>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_limit_x/enabled<class_Generic6DOFJoint_linear_limit_x/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_x/lower_distance<class_Generic6DOFJoint_linear_limit_x/lower_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_x/restitution<class_Generic6DOFJoint_linear_limit_x/restitution>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_x/softness<class_Generic6DOFJoint_linear_limit_x/softness>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_x/upper_distance<class_Generic6DOFJoint_linear_limit_x/upper_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_y/damping<class_Generic6DOFJoint_linear_limit_y/damping>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_limit_y/enabled<class_Generic6DOFJoint_linear_limit_y/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_y/lower_distance<class_Generic6DOFJoint_linear_limit_y/lower_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_y/restitution<class_Generic6DOFJoint_linear_limit_y/restitution>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_y/softness<class_Generic6DOFJoint_linear_limit_y/softness>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_y/upper_distance<class_Generic6DOFJoint_linear_limit_y/upper_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_z/damping<class_Generic6DOFJoint_linear_limit_z/damping>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_limit_z/enabled<class_Generic6DOFJoint_linear_limit_z/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_z/lower_distance<class_Generic6DOFJoint_linear_limit_z/lower_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_z/restitution<class_Generic6DOFJoint_linear_limit_z/restitution>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_z/softness<class_Generic6DOFJoint_linear_limit_z/softness>`                 |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_limit_z/upper_distance<class_Generic6DOFJoint_linear_limit_z/upper_distance>`     |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_motor_x/enabled<class_Generic6DOFJoint_linear_motor_x/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_x/force_limit<class_Generic6DOFJoint_linear_motor_x/force_limit>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_x/target_velocity<class_Generic6DOFJoint_linear_motor_x/target_velocity>`   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_motor_y/enabled<class_Generic6DOFJoint_linear_motor_y/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_y/force_limit<class_Generic6DOFJoint_linear_motor_y/force_limit>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_y/target_velocity<class_Generic6DOFJoint_linear_motor_y/target_velocity>`   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`linear_motor_z/enabled<class_Generic6DOFJoint_linear_motor_z/enabled>`                   |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_z/force_limit<class_Generic6DOFJoint_linear_motor_z/force_limit>`           |
-+---------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`linear_motor_z/target_velocity<class_Generic6DOFJoint_linear_motor_z/target_velocity>`   |
-+---------------------------+------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/damping<class_Generic6DOFJoint_angular_limit_x/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_x/enabled<class_Generic6DOFJoint_angular_limit_x/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/erp<class_Generic6DOFJoint_angular_limit_x/erp>`                               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/force_limit<class_Generic6DOFJoint_angular_limit_x/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/lower_angle<class_Generic6DOFJoint_angular_limit_x/lower_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/restitution<class_Generic6DOFJoint_angular_limit_x/restitution>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/softness<class_Generic6DOFJoint_angular_limit_x/softness>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_x/upper_angle<class_Generic6DOFJoint_angular_limit_x/upper_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/damping<class_Generic6DOFJoint_angular_limit_y/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_y/enabled<class_Generic6DOFJoint_angular_limit_y/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/erp<class_Generic6DOFJoint_angular_limit_y/erp>`                               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/force_limit<class_Generic6DOFJoint_angular_limit_y/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/lower_angle<class_Generic6DOFJoint_angular_limit_y/lower_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/restitution<class_Generic6DOFJoint_angular_limit_y/restitution>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/softness<class_Generic6DOFJoint_angular_limit_y/softness>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_y/upper_angle<class_Generic6DOFJoint_angular_limit_y/upper_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/damping<class_Generic6DOFJoint_angular_limit_z/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_limit_z/enabled<class_Generic6DOFJoint_angular_limit_z/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/erp<class_Generic6DOFJoint_angular_limit_z/erp>`                               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/force_limit<class_Generic6DOFJoint_angular_limit_z/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/lower_angle<class_Generic6DOFJoint_angular_limit_z/lower_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/restitution<class_Generic6DOFJoint_angular_limit_z/restitution>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/softness<class_Generic6DOFJoint_angular_limit_z/softness>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_limit_z/upper_angle<class_Generic6DOFJoint_angular_limit_z/upper_angle>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_x/enabled<class_Generic6DOFJoint_angular_motor_x/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_x/force_limit<class_Generic6DOFJoint_angular_motor_x/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_x/target_velocity<class_Generic6DOFJoint_angular_motor_x/target_velocity>`       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_y/enabled<class_Generic6DOFJoint_angular_motor_y/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_y/force_limit<class_Generic6DOFJoint_angular_motor_y/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_y/target_velocity<class_Generic6DOFJoint_angular_motor_y/target_velocity>`       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_motor_z/enabled<class_Generic6DOFJoint_angular_motor_z/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_z/force_limit<class_Generic6DOFJoint_angular_motor_z/force_limit>`               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_motor_z/target_velocity<class_Generic6DOFJoint_angular_motor_z/target_velocity>`       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_x/damping<class_Generic6DOFJoint_angular_spring_x/damping>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_spring_x/enabled<class_Generic6DOFJoint_angular_spring_x/enabled>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_x/equilibrium_point<class_Generic6DOFJoint_angular_spring_x/equilibrium_point>` |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_x/stiffness<class_Generic6DOFJoint_angular_spring_x/stiffness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_y/damping<class_Generic6DOFJoint_angular_spring_y/damping>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_spring_y/enabled<class_Generic6DOFJoint_angular_spring_y/enabled>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_y/equilibrium_point<class_Generic6DOFJoint_angular_spring_y/equilibrium_point>` |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_y/stiffness<class_Generic6DOFJoint_angular_spring_y/stiffness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_z/damping<class_Generic6DOFJoint_angular_spring_z/damping>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`angular_spring_z/enabled<class_Generic6DOFJoint_angular_spring_z/enabled>`                     |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_z/equilibrium_point<class_Generic6DOFJoint_angular_spring_z/equilibrium_point>` |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`angular_spring_z/stiffness<class_Generic6DOFJoint_angular_spring_z/stiffness>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/damping<class_Generic6DOFJoint_linear_limit_x/damping>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_x/enabled<class_Generic6DOFJoint_linear_limit_x/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/lower_distance<class_Generic6DOFJoint_linear_limit_x/lower_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/restitution<class_Generic6DOFJoint_linear_limit_x/restitution>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/softness<class_Generic6DOFJoint_linear_limit_x/softness>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_x/upper_distance<class_Generic6DOFJoint_linear_limit_x/upper_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/damping<class_Generic6DOFJoint_linear_limit_y/damping>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_y/enabled<class_Generic6DOFJoint_linear_limit_y/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/lower_distance<class_Generic6DOFJoint_linear_limit_y/lower_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/restitution<class_Generic6DOFJoint_linear_limit_y/restitution>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/softness<class_Generic6DOFJoint_linear_limit_y/softness>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_y/upper_distance<class_Generic6DOFJoint_linear_limit_y/upper_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/damping<class_Generic6DOFJoint_linear_limit_z/damping>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_limit_z/enabled<class_Generic6DOFJoint_linear_limit_z/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/lower_distance<class_Generic6DOFJoint_linear_limit_z/lower_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/restitution<class_Generic6DOFJoint_linear_limit_z/restitution>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/softness<class_Generic6DOFJoint_linear_limit_z/softness>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_limit_z/upper_distance<class_Generic6DOFJoint_linear_limit_z/upper_distance>`           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_x/enabled<class_Generic6DOFJoint_linear_motor_x/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_x/force_limit<class_Generic6DOFJoint_linear_motor_x/force_limit>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_x/target_velocity<class_Generic6DOFJoint_linear_motor_x/target_velocity>`         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_y/enabled<class_Generic6DOFJoint_linear_motor_y/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_y/force_limit<class_Generic6DOFJoint_linear_motor_y/force_limit>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_y/target_velocity<class_Generic6DOFJoint_linear_motor_y/target_velocity>`         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_motor_z/enabled<class_Generic6DOFJoint_linear_motor_z/enabled>`                         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_z/force_limit<class_Generic6DOFJoint_linear_motor_z/force_limit>`                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_motor_z/target_velocity<class_Generic6DOFJoint_linear_motor_z/target_velocity>`         |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_x/damping<class_Generic6DOFJoint_linear_spring_x/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_spring_x/enabled<class_Generic6DOFJoint_linear_spring_x/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_x/equilibrium_point<class_Generic6DOFJoint_linear_spring_x/equilibrium_point>`   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_x/stiffness<class_Generic6DOFJoint_linear_spring_x/stiffness>`                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_y/damping<class_Generic6DOFJoint_linear_spring_y/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_spring_y/enabled<class_Generic6DOFJoint_linear_spring_y/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_y/equilibrium_point<class_Generic6DOFJoint_linear_spring_y/equilibrium_point>`   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_y/stiffness<class_Generic6DOFJoint_linear_spring_y/stiffness>`                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_z/damping<class_Generic6DOFJoint_linear_spring_z/damping>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`linear_spring_z/enabled<class_Generic6DOFJoint_linear_spring_z/enabled>`                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_z/equilibrium_point<class_Generic6DOFJoint_linear_spring_z/equilibrium_point>`   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`linear_spring_z/stiffness<class_Generic6DOFJoint_linear_spring_z/stiffness>`                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`precision<class_Generic6DOFJoint_precision>`                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -152,11 +202,15 @@ enum **Flag**:
 
 - **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
 
-- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+- **FLAG_ENABLE_LINEAR_SPRING** = **3**
 
-- **FLAG_ENABLE_LINEAR_MOTOR** = **3**
+- **FLAG_ENABLE_ANGULAR_SPRING** = **2**
 
-- **FLAG_MAX** = **4** --- End flag of FLAG\_\* constants, used internally.
+- **FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
+
+- **FLAG_ENABLE_LINEAR_MOTOR** = **5**
+
+- **FLAG_MAX** = **6** --- End flag of FLAG\_\* constants, used internally.
 
 .. _enum_Generic6DOFJoint_Param:
 
@@ -176,25 +230,25 @@ enum **Param**:
 
 - **PARAM_LINEAR_MOTOR_FORCE_LIMIT** = **6** --- The maximum force the linear motor will apply while trying to reach the velocity target.
 
-- **PARAM_ANGULAR_LOWER_LIMIT** = **7** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_LOWER_LIMIT** = **10** --- The minimum rotation in negative direction to break loose and rotate around the axes.
 
-- **PARAM_ANGULAR_UPPER_LIMIT** = **8** --- The minimum rotation in positive direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_UPPER_LIMIT** = **11** --- The minimum rotation in positive direction to break loose and rotate around the axes.
 
-- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **9** --- The speed of all rotations across the axes.
+- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **12** --- The speed of all rotations across the axes.
 
-- **PARAM_ANGULAR_DAMPING** = **10** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **PARAM_ANGULAR_DAMPING** = **13** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
 
-- **PARAM_ANGULAR_RESTITUTION** = **11** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **PARAM_ANGULAR_RESTITUTION** = **14** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
 
-- **PARAM_ANGULAR_FORCE_LIMIT** = **12** --- The maximum amount of force that can occur, when rotating around the axes.
+- **PARAM_ANGULAR_FORCE_LIMIT** = **15** --- The maximum amount of force that can occur, when rotating around the axes.
 
-- **PARAM_ANGULAR_ERP** = **13** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **PARAM_ANGULAR_ERP** = **16** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
-- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **14** --- Target speed for the motor at the axes.
+- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **17** --- Target speed for the motor at the axes.
 
-- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **15** --- Maximum acceleration for the motor at the axes.
+- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
 
-- **PARAM_MAX** = **16** --- End flag of PARAM\_\* constants, used internally.
+- **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
 
 Description
 -----------
@@ -566,6 +620,126 @@ Maximum acceleration for the motor at the z-axis.
 
 Target speed for the motor at the z-axis.
 
+.. _class_Generic6DOFJoint_angular_spring_x/damping:
+
+- :ref:`float<class_float>` **angular_spring_x/damping**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_x/enabled:
+
+- :ref:`bool<class_bool>` **angular_spring_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_x/equilibrium_point:
+
+- :ref:`float<class_float>` **angular_spring_x/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_x/stiffness:
+
+- :ref:`float<class_float>` **angular_spring_x/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_y/damping:
+
+- :ref:`float<class_float>` **angular_spring_y/damping**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_y/enabled:
+
+- :ref:`bool<class_bool>` **angular_spring_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_y/equilibrium_point:
+
+- :ref:`float<class_float>` **angular_spring_y/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_y/stiffness:
+
+- :ref:`float<class_float>` **angular_spring_y/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_z/damping:
+
+- :ref:`float<class_float>` **angular_spring_z/damping**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_z/enabled:
+
+- :ref:`bool<class_bool>` **angular_spring_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_z/equilibrium_point:
+
+- :ref:`float<class_float>` **angular_spring_z/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_angular_spring_z/stiffness:
+
+- :ref:`float<class_float>` **angular_spring_z/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
 .. _class_Generic6DOFJoint_linear_limit_x/damping:
 
 - :ref:`float<class_float>` **linear_limit_x/damping**
@@ -889,4 +1063,134 @@ The maximum force the linear motor can apply on the z-axis while trying to reach
 +----------+--------------------+
 
 The speed that the linear motor will attempt to reach on the z-axis.
+
+.. _class_Generic6DOFJoint_linear_spring_x/damping:
+
+- :ref:`float<class_float>` **linear_spring_x/damping**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_x/enabled:
+
+- :ref:`bool<class_bool>` **linear_spring_x/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_x(value) |
++----------+-------------------+
+| *Getter* | get_flag_x()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_x/equilibrium_point:
+
+- :ref:`float<class_float>` **linear_spring_x/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_x/stiffness:
+
+- :ref:`float<class_float>` **linear_spring_x/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_x(value) |
++----------+--------------------+
+| *Getter* | get_param_x()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_y/damping:
+
+- :ref:`float<class_float>` **linear_spring_y/damping**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_y/enabled:
+
+- :ref:`bool<class_bool>` **linear_spring_y/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_y(value) |
++----------+-------------------+
+| *Getter* | get_flag_y()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_y/equilibrium_point:
+
+- :ref:`float<class_float>` **linear_spring_y/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_y/stiffness:
+
+- :ref:`float<class_float>` **linear_spring_y/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_y(value) |
++----------+--------------------+
+| *Getter* | get_param_y()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_z/damping:
+
+- :ref:`float<class_float>` **linear_spring_z/damping**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_z/enabled:
+
+- :ref:`bool<class_bool>` **linear_spring_z/enabled**
+
++----------+-------------------+
+| *Setter* | set_flag_z(value) |
++----------+-------------------+
+| *Getter* | get_flag_z()      |
++----------+-------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_z/equilibrium_point:
+
+- :ref:`float<class_float>` **linear_spring_z/equilibrium_point**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_linear_spring_z/stiffness:
+
+- :ref:`float<class_float>` **linear_spring_z/stiffness**
+
++----------+--------------------+
+| *Setter* | set_param_z(value) |
++----------+--------------------+
+| *Getter* | get_param_z()      |
++----------+--------------------+
+
+.. _class_Generic6DOFJoint_precision:
+
+- :ref:`int<class_int>` **precision**
+
++----------+----------------------+
+| *Setter* | set_precision(value) |
++----------+----------------------+
+| *Getter* | get_precision()      |
++----------+----------------------+
 

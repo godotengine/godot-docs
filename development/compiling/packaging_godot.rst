@@ -46,7 +46,7 @@ The contents of the ``._sc_`` file (when not empty) are read with the ConfigFile
 format as ``project.godot``, etc). So far it can contain a list of pre-loaded project in this
 format:
 
-:: 
+::
 
   [init_projects]
   list=["demos/2d/platformer", "demos/2d/isometric"]

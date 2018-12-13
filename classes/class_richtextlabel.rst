@@ -441,7 +441,7 @@ Terminates the current tag. Use after ``push_*`` methods to close bbcodes manual
 
 - void **push_align** **(** :ref:`Align<enum_RichTextLabel_Align>` align **)**
 
-Adds a ``[right]`` tag to the tag stack.
+Adds an alignment tag based on the given ``align`` value. See :ref:`Align<enum_@GlobalScope_Align>` for possible values.
 
 .. _class_RichTextLabel_push_cell:
 
@@ -482,6 +482,8 @@ Adds a meta tag to the tag stack. Similar to the bbcode ``[url=something]{text}[
 .. _class_RichTextLabel_push_strikethrough:
 
 - void **push_strikethrough** **(** **)**
+
+Adds a ``[s]`` tag to the tag stack.
 
 .. _class_RichTextLabel_push_table:
 

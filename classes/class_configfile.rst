@@ -68,6 +68,8 @@ The following example shows how to parse an INI-style file from the system, read
         # Save the changes by overwriting the previous file
         config.save("user://settings.cfg")
 
+Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
+
 Method Descriptions
 -------------------
 

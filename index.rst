@@ -8,7 +8,7 @@ Godot Docs – *master* branch
 
 .. attention:: This is the documentation for the unstable (master) branch.
                Looking for the documentation of the current **stable** branch?
-               `Have a look here <http://docs.godotengine.org/en/stable>`_.
+               `Have a look here <https://docs.godotengine.org/en/stable>`_.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
@@ -30,7 +30,7 @@ in the top left corner.
           <https://github.com/godotengine/godot-docs/issues>`_,
           help us `translate the documentation
           <https://hosted.weblate.org/engage/godot-engine/>`_ into your
-          language, or discuss with us on either the ``#documentation``
+          language, or talk to us on either the ``#documentation``
           channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
           ``#godotengine-doc`` channel on `irc.freenode.net
           <http://webchat.freenode.net/?channels=#godotengine-doc>`_!

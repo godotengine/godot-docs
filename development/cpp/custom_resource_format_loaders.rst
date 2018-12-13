@@ -6,12 +6,12 @@ Custom resource format loaders
 Introduction
 ------------
 
-ResourceFormatLoader is a factory interface for loading file assets. 
-Resources are primary containers. When load is called on the same file 
-path again, the previous loaded Resource will be referenced. Naturally, 
+ResourceFormatLoader is a factory interface for loading file assets.
+Resources are primary containers. When load is called on the same file
+path again, the previous loaded Resource will be referenced. Naturally,
 loaded resources must be stateless.
 
-This guide assumes the reader knows how to create C++ modules and godot 
+This guide assumes the reader knows how to create C++ modules and Godot
 data types. If not, refer to this guide :ref:`doc_custom_modules_in_c++`.
 
 References
@@ -44,15 +44,15 @@ References
 Creating a ResourceFormatLoader
 -------------------------------
 
-Each file format consist of a data container and a ``ResourceFormatLoader``. 
+Each file format consist of a data container and a ``ResourceFormatLoader``.
 
-ResourceFormatLoaders are usually simple classes which return all the 
-necessary metadata for supporting new extensions in Godot. The 
+ResourceFormatLoaders are usually simple classes which return all the
+necessary metadata for supporting new extensions in Godot. The
 class must the return the format name and the extension string.
 
-In addition, ResourceFormatLoaders must convert file paths into 
-resources with the ``load`` function. To load a resource, ``load`` must 
-read and handle data serialization. 
+In addition, ResourceFormatLoaders must convert file paths into
+resources with the ``load`` function. To load a resource, ``load`` must
+read and handle data serialization.
 
 
 .. code:: cpp
@@ -60,7 +60,7 @@ read and handle data serialization.
 	#ifndef MY_JSON_LOADER_H
 	#define MY_JSON_LOADER_H
 
-	#include "io/resource_loader.h"
+	#include "core/io/resource_loader.h"
 
 	class ResourceFormatLoaderMyJson : public ResourceFormatLoader {
 	public:
@@ -120,72 +120,74 @@ Here is an example of how to create a custom datatype
 	#ifndef MY_JSON_H
 	#define MY_JSON_H
 
+	#include "core/dictionary.h"
+	#include "core/io/json.h"
+	#include "core/reference.h"
 	#include "core/variant.h"
-	#include "reference.h"
-	#include "variant_parser.h"
-	#include "io/json.h"
-	#include "dictionary.h"
+	#include "core/variant_parser.h"
 
-	class MyJson : public Resource{
+	class MyJson : public Resource {
 		GDCLASS(MyJson, Resource);
 
 	protected:
 		static void _bind_methods() {
-			ClassDB::bind_method(D_METHOD("toString"), &MyJson::toString);
+			ClassDB::bind_method(D_METHOD("to_string"), &MyJson::to_string);
 		}
 
 	private:
 		Dictionary dict;
+
 	public:
-		Error set_file(const String &p_path){
+		Error set_file(const String &p_path) {
 			Error error_file;
 			FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error_file);
 
 			String buf = String("");
-			while(!file->eof_reached()){
+			while (!file->eof_reached()) {
 				buf += file->get_line();
 			}
 			String err_string;
 			int err_line;
 			JSON cmd;
 			Variant ret;
-			Error err = cmd.parse( buf, ret, err_string, err_line);
+			Error err = cmd.parse(buf, ret, err_string, err_line);
 			dict = Dictionary(ret);
-			file -> close();
+			file->close();
 			return OK;
 		}
 
-		String toString() const {
+		String to_string() const {
 			return String(*this);
 		}
 
 		operator String() const {
-			JSON a; 
+			JSON a;
 			return a.print(dict);
 		}
 
-	    MyJson() {};
-	    ~MyJson() {};
+		MyJson() {};
+		~MyJson() {};
 	};
-	#endif
+	#endif // MY_JSON_H
 
 Considerations
 ~~~~~~~~~~~~~~
 
-Some libraries may not define certain common routines such as i/o handling. 
+Some libraries may not define certain common routines such as IO handling.
 Therefore, Godot call translations are required.
 
-For example, here is the code for translating ``FileAccess`` 
+For example, here is the code for translating ``FileAccess``
 calls into ``std::istream``.
 
 .. code:: cpp
 
 	#include <istream>
 	#include <streambuf>
-    
-	class GodotFileInStreamBuf : public std::streambuf{
+
+	class GodotFileInStreamBuf : public std::streambuf {
+
 	public:
-		GodotFileInStreamBuf(FileAccess * fa) {
+		GodotFileInStreamBuf(FileAccess *fa) {
 			_file = fa;
 		}
 		int underflow() {
@@ -194,15 +196,16 @@ calls into ``std::istream``.
 			} else {
 				size_t pos = _file->get_position();
 				uint8_t ret = _file->get_8();
-				_file->seek(pos); //required since get_8() advances the read head
+				_file->seek(pos); // required since get_8() advances the read head
 				return ret;
 			}
 		}
 		int uflow() {
-			return _file->eof_reached() ?  EOF : _file -> get_8();
+			return _file->eof_reached() ?  EOF : _file->get_8();
 		}
+
 	private:
-		FileAccess * _file;
+		FileAccess *_file;
 	};
 
 
@@ -224,7 +227,7 @@ when ``load`` is called.
 
 	/* register_types.cpp */
 	#include "register_types.h"
-	#include "class_db.h"
+	#include "core/class_db.h"
 
 	#include "my_json_loader.h"
 	#include "my_json.h"
@@ -251,21 +254,21 @@ Loading it on GDScript
 
 .. code::
 
-	{
-	  "savefilename" : "demo.mjson",
-	  "demo": [
-	    "welcome",
-	    "to",
-	    "godot",
-	    "resource",
-	    "loaders"
-	  ]
-	}
+    {
+      "savefilename" : "demo.mjson",
+      "demo": [
+        "welcome",
+        "to",
+        "godot",
+        "resource",
+        "loaders"
+      ]
+    }
 
-.. code:: 
+.. code::
 
-	extends Node 
-	
-	func _ready():
-		var myjson = load("res://demo.mjson")
-		print( myjson.toString())
+    extends Node
+
+    func _ready():
+        var myjson = load("res://demo.mjson")
+        print(myjson.to_string())

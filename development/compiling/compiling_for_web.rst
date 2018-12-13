@@ -16,6 +16,9 @@ To compile export templates for the Web, the following is required:
 -  `Python 2.7+ or Python 3.5+ <https://www.python.org/>`__
 -  `SCons <https://www.scons.org>`__ build system
 
+.. seealso:: For a general overview of SCons usage for Godot, see
+             :ref:`doc_introduction_to_the_buildsystem`.
+
 Building export templates
 -------------------------
 

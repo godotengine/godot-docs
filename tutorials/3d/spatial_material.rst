@@ -129,7 +129,7 @@ Use as Albedo
 
 Choosing this option means vertex color is used as albedo color.
 
-Is SRGB
+Is sRGB
 ~~~~~~~
 
 Most 3D DCCs will likely export vertex colors as sRGB, so toggling this
@@ -272,7 +272,7 @@ Material colors, maps and channels
 ----------------------------------
 
 Besides the parameters, what defines materials themselves are the colors,
-textures, and channels. Godot supports a extensive list of them. They are
+textures, and channels. Godot supports an extensive list of them. They are
 described in detail below:
 
 Albedo
@@ -281,7 +281,7 @@ Albedo
 *Albedo* is the base color for the material, on which all the other settings
 operate. When set to *Unshaded*, this is the only color that is visible. In
 previous versions of Godot, this channel was named *Diffuse*. The change
-of name mainly happened because, in PBR rendering, this color affects many
+of name mainly happened because, in PBR (Physically Based Rendering), this color affects many
 more calculations than just the diffuse lighting path.
 
 Albedo color and texture can be used together as they are multiplied.
@@ -340,7 +340,7 @@ Rim
 ~~~
 
 Some fabrics have small micro-fur that causes light to scatter around it. Godot
-emulates this with the *Rim* parameter. Unlike other rim lighting implementations
+emulates this with the *Rim* parameter. Unlike other rim lighting implementations,
 which just use the emission channel, this one actually takes light into account
 (no light means no rim). This makes the effect considerably more believable.
 
@@ -429,7 +429,7 @@ UV1 and UV2
 ~~~~~~~~~~~~
 
 Godot supports two UV channels per material. Secondary UV is often useful for
-ambient occlusion or emission (baked light). UVs can be scaled and offset
+ambient occlusion or emission (baked light). UVs can be scaled and offset,
 which is useful when using repeating textures.
 
 Triplanar Mapping

@@ -15,7 +15,6 @@ rifle, and attack using a knife. The player will also now have animations with t
 and the weapons will interact with objects in the environment.
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_one` before moving on to this part of the tutorial.
-
           The finished project from :ref:`doc_fps_tutorial_part_one` will be the starting project for part 2
 
 Let's get started!
@@ -449,11 +448,11 @@ Create a new script called ``Bullet_script.gd`` and attach it to the ``Bullet`` 
 
 We are going to move the entire bullet object at the root (``Bullet``). We will be using the :ref:`Area <class_Area>` to check whether or not we've collided with something
 
-.. note:: Why are we using a :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
+.. note:: Why are we using an :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
           is because we do not want the bullet to interact with other :ref:`RigidBody <class_RigidBody>` nodes.
           By using an :ref:`Area <class_Area>` we are assuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
 
-          Another reason is simply because it is easier to detect collisions with a :ref:`Area <class_Area>`!
+          Another reason is simply because it is easier to detect collisions with an :ref:`Area <class_Area>`!
 
 Here's the script that will control our bullet:
 
@@ -1056,7 +1055,7 @@ Now lets add all of the player input code for the weapons in ``process_input``. 
             if current_weapon != null:
                 if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
                     animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
-	# ----------------------------------
+    # ----------------------------------
 
 Lets go over the additions, starting with how we're changing weapons.
 
@@ -1206,7 +1205,7 @@ Now we need to add this code:
 
     func bullet_hit(damage, bullet_global_trans):
         var direction_vect = bullet_global_trans.basis.z.normalized() * BASE_BULLET_BOOST;
-        
+
         apply_impulse((bullet_global_trans.origin - global_transform.origin).normalized(), direction_vect * damage)
 
 

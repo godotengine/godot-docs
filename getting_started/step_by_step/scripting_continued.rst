@@ -89,7 +89,7 @@ There are two ways to do this. The first is from the UI, from the Groups button 
 
 .. image:: img/groups_in_nodes.png
 
-And the second way is from code. One example would be to tag scenes
+And the second way is from code. One example would be to tag nodes
 which are enemies:
 
 .. tabs::
@@ -382,6 +382,8 @@ The advantage of this two-step process is that a packed scene may be
 kept loaded and ready to use so that you can create as many
 instances as desired. This is especially useful to quickly instance
 several enemies, bullets, and other entities in the active scene.
+
+.. _doc_scripting_continued_class_name:
 
 Register scripts as classes
 ---------------------------

@@ -243,7 +243,7 @@ Once set, Animation nodes can be added to the AnimationTreePlayer.
 | *Getter* | get_animation_process_mode()      |
 +----------+-----------------------------------+
 
-The thread in which to update animations. Default value: :ref:`ANIMATION_PROCESS_IDLE<enum_@GlobalScope_ANIMATION_PROCESS_IDLE>`.
+The thread in which to update animations. Default value: ``ANIMATION_PROCESS_IDLE``.
 
 Method Descriptions
 -------------------

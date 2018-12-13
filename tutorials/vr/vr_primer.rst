@@ -18,7 +18,7 @@ You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>`
 To enable an interface you execute the following code:
 
 .. tabs::
- .. code-tab:: gdscript GDScript 
+ .. code-tab:: gdscript GDScript
 
     var arvr_interface = ARVRServer.find_interface("Native mobile")
     if arvr_interface and arvr_interface.initialize():

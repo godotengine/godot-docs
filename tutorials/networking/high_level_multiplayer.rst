@@ -26,30 +26,30 @@ Because of the large difference in performance it often makes sense to re-build 
 In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
-	  features. As networking is always largely hardware and operating system dependent, however,
-	  some features may change or not be available on some target platforms. Most notably,
-	  the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
-	  well as raw access to low-level protocols like TCP and UDP.
+          features. As networking is always largely hardware and operating system dependent, however,
+          some features may change or not be available on some target platforms. Most notably,
+          the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
+          well as raw access to low-level protocols like TCP and UDP.
 
 .. note:: More about TCP/IP, UDP, and networking:
-	  https://gafferongames.com/post/udp_vs_tcp/
-	  
-	  Gaffer On Games has a lot of useful articles about networking in Games
-	  (`here <https://gafferongames.com/tags/networking>`__), including the comprehensive
-	  `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
-	  
-	  If you want to use your low-level networking library of choice instead of Godot's built-in networking,
-	  see here for an example:
-	  https://github.com/PerduGames/gdnet3
+          https://gafferongames.com/post/udp_vs_tcp/
+
+          Gaffer On Games has a lot of useful articles about networking in Games
+          (`here <https://gafferongames.com/tags/networking>`__), including the comprehensive
+          `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
+
+          If you want to use your low-level networking library of choice instead of Godot's built-in networking,
+          see here for an example:
+          https://github.com/PerduGames/gdnet3
 
 .. warning:: Adding networking to your game comes with some responsibility.
-	     It can make your application vulnerable if done wrong and may lead to cheats or exploits.
-	     It may even allow an attacker to compromise the machines your application runs on
-	     and use your servers to send spam, attack others or steal your users data if they play your game.
-	     
-	     This is always the case when networking is involved and has nothing to do with Godot.
-	     You can of course experiment, but when you release a networked application,
-	     always take care of any possible security concerns.
+             It can make your application vulnerable if done wrong and may lead to cheats or exploits.
+             It may even allow an attacker to compromise the machines your application runs on
+             and use your servers to send spam, attack others or steal your users data if they play your game.
+
+             This is always the case when networking is involved and has nothing to do with Godot.
+             You can of course experiment, but when you release a networked application,
+             always take care of any possible security concerns.
 
 Mid level abstraction
 ---------------------
@@ -63,10 +63,10 @@ This object is not meant to be created directly, but is designed so that several
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
-This class interface can abstract most types of network layers, topologies and libraries. By default Godot 
+This class interface can abstract most types of network layers, topologies and libraries. By default Godot
 provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but this could be used to implement mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
-For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities. 
+For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
 Yet it is made available in case a game has specific needs for a lower level API.
 
 Initializing the network
@@ -118,7 +118,7 @@ Terminating the networking feature:
 Managing connections
 --------------------
 
-Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept 
+Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept
 connections at any point (see `set_refuse_new_network_connections(bool)` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:
@@ -138,7 +138,7 @@ Clients:
 - `connection_failed`
 - `server_disconnected`
 
-Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly. 
+Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly.
 For these tasks the server clearly has to work as a server and you have do tasks manually such as sending a newly connected
 player information about other already connected players (e.g. their names, stats, etc).
 
@@ -168,7 +168,7 @@ Functions can be called in two fashions:
 - Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
 - Unreliable: if the function call does not arrive, it will not be re-transmitted, but if it arrives it will do it quickly.
 
-In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly, 
+In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
 
 There is also the `get_rpc_sender_id` function in `SceneTree` which can be used to check which peer (or peer ID) sent a RPC call.
@@ -232,7 +232,7 @@ You might have noticed already something different, which is the usage of the `r
 ::
 
     remote func register_player(id, info):
-  
+
 This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
 to delete a file on another client's system).
@@ -252,7 +252,7 @@ The others will be explained further down.
 Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
 
 With this, lobby management should be more or less explained. Once you have your game going you will most likely want to add some
-extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before 
+extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before
 game start). For the sake of simplicity and because each game will share different information, this is not shown here.
 
 Starting the game
@@ -264,19 +264,19 @@ special in itself, but we'll explain a few nice tricks that can be done at this 
 Player scenes
 ^^^^^^^^^^^^^
 
-In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer 
+In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer
 you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
 
 So, how to name such nodes? In Godot nodes need to have an unique name. It must also be relatively easy for a player to tell which
 nodes represent each player ID.
 
-The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in 
+The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in
 every peer and RPC will work great! Here is an example:
 
 ::
 
     remote func pre_configure_game():
-    	var selfPeerID = get_tree().get_network_unique_id()
+        var selfPeerID = get_tree().get_network_unique_id()
 
         # Load world
         var world = load(which_level).instance()
@@ -367,7 +367,7 @@ If you have paid attention to the previous example, it's possible you noticed th
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
             get_node("/root/world/players").add_child(player)
-	[...]
+        [...]
 
 
 Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as puppets with the server being their network master.

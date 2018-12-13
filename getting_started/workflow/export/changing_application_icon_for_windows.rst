@@ -4,7 +4,7 @@ Changing application icon for Windows
 =====================================
 
 By default, the exported project's icon will be the Godot icon.
-You will most likely to change that for your project. There are two types
+You will most likely want to change that for your project. There are two types
 of icons that can be changed on Windows: the file icon and the taskbar icon.
 
 Changing the taskbar icon

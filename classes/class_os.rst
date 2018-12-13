@@ -185,6 +185,8 @@ Methods
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`move_window_to_foreground<class_OS_move_window_to_foreground>` **(** **)**                                                                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`native_video_is_playing<class_OS_native_video_is_playing>` **(** **)**                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`native_video_pause<class_OS_native_video_pause>` **(** **)**                                                                                                                                                       |
@@ -964,6 +966,12 @@ Returns ``true`` if the window should always be on top of other windows.
 Kill (terminate) the process identified by the given process ID (``pid``), e.g. the one returned by :ref:`execute<class_OS_execute>` in non-blocking mode.
 
 Note that this method can also be used to kill processes that were not spawned by the game.
+
+.. _class_OS_move_window_to_foreground:
+
+- void **move_window_to_foreground** **(** **)**
+
+Moves the window to the front.
 
 .. _class_OS_native_video_is_playing:
 

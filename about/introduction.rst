@@ -82,8 +82,8 @@ relatively intuitive:
 - The :ref:`sec-devel` section is intended for advanced users and contributors
   to the engine development, with information on compiling the engine,
   developing C++ modules or editor plugins.
-- The :ref:`sec-community` gives information related to contributing to the
-  engine development and the life of its community, e.g. how to report bugs,
+- The :ref:`sec-community` section gives information related to contributing to
+  the engine development and the life of its community, e.g. how to report bugs,
   help with the documentation, etc. It also points to various community channels
   like IRC and Discord and contains a list of recommended third-party tutorials
   outside of this documentation.

@@ -54,6 +54,10 @@ Emitted if the filesystem changed.
 
 Remitted if a resource is reimported.
 
+.. _class_EditorFileSystem_resources_reload:
+
+- **resources_reload** **(** :ref:`PoolStringArray<class_PoolStringArray>` resources **)**
+
 .. _class_EditorFileSystem_sources_changed:
 
 - **sources_changed** **(** :ref:`bool<class_bool>` exist **)**

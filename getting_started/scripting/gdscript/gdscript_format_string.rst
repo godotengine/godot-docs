@@ -3,7 +3,7 @@
 GDScript format strings
 =======================
 
-GDScript offers a feature called *format strings* which allows reusing text
+GDScript offers a feature called *format strings*, which allows reusing text
 templates to succinctly create different but similar strings.
 
 Format strings are just like normal strings, except they contain certain
@@ -25,7 +25,7 @@ Examine this concrete GDScript example:
 
     # Define a format string with placeholder '%s'
     var format_string = "We're waiting for %s."
-    
+
     # Using the '%' operator, the placeholder is replaced with the desired value
     var actual_string = format_string % "Godot"
 
@@ -78,7 +78,7 @@ format specifier with ``*``, see `dynamic padding`_):
 
     var format_string = "%s was reluctant to learn %s, but now he enjoys it."
     var actual_string = format_string % ["Estragon", "GDScript"]
-    
+
     print(actual_string)
     # Output: "Estragon was reluctant to learn GDScript, but now he enjoys it."
 
@@ -270,7 +270,7 @@ examples of that functionality.
 | Prefix          | ``"Hi, %0 v%1".format(["Godette", "3.0"], "%_")``    | Hi, Godette v3.0 |
 +-----------------+------------------------------------------------------+------------------+
 
-Combining both the ``String.format`` method and the ``%`` operator could be useful as
+Combining both the ``String.format`` method and the ``%`` operator could be useful, as
 ``String.format`` does not have a way to manipulate the representation of numbers.
 
 +---------------------------------------------------------------------------+-------------------+

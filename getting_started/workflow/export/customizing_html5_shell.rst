@@ -9,7 +9,7 @@ the final web presentation and behavior. The path to the custom HTML page is
 specified in the export options as ``Html/Custom Html Shell``.
 
 The default HTML page is available in the Godot Engine repository at
-`/mist/dist/html/default.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/default.html>`_.
+`/misc/dist/html/default.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/default.html>`_.
 Some simple use-cases where customizing the default page is useful include:
 
  - Loading files from a different directory
@@ -22,8 +22,8 @@ Some simple use-cases where customizing the default page is useful include:
 Placeholder substitution
 ------------------------
 
-When exporting the game, several placeholders in the HTML page are substituted
-by values depending on the export:
+When exporting the game, several placeholders in the HTML page are replaced
+with values depending on the export:
 
 +------------------------------+-----------------------------------------------+
 | Placeholder                  | substituted by                                |
@@ -47,7 +47,7 @@ e.g. in ``<img />`` elements.
 ``$GODOT_DEBUG_ENABLED`` can be useful to optionally display e.g. an output
 console or other debug tools.
 
-``$GODOT_HEAD_INCLUDE`` is substituted with the string specified by the export
+``$GODOT_HEAD_INCLUDE`` is replaced with the string specified by the export
 option ``Html/Head Include``.
 
 .. _doc_javascript_engine_object:
@@ -110,7 +110,7 @@ This loads a file so it is available in the file system once the instance
 is started. This must be called **before** starting the instance.
 
 If ``file`` is a string, the file will be loaded from that URL. If ``file`` is
-an ``ArrayBuffer`` or a view on one, the buffer will used as content of the
+an ``ArrayBuffer`` or a view on one, the buffer will used as the content of the
 file.
 
 If ``path`` is a string, it specifies the path by which the file will be

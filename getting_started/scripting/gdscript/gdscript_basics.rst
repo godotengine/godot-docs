@@ -264,16 +264,11 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------------------------------+-----------------------------------------+
 | ``*`` ``/`` ``%``                                             | Multiplication / Division / Remainder   |
 |                                                               |                                         |
-|                                                               | NOTE: The result of these operations    |
-|                                                               | depends on the operands types. If both  |
-|                                                               | are Integers, then the result will be   |
-|                                                               | an Integer. That means 1/10 returns 0   |
-|                                                               | instead of 0.1. If at least one of the  |
-|                                                               | operands is a float, then the result is |
-|                                                               | a float: float(1)/10 or 1.0/10 return   |
-|                                                               | both 0.1.                               |
-|                                                               | NOTE2: Remainder/Modulo only works on   |
-|                                                               | int. For floats use built in fmod()     |
+|                                                               | These operators have the same behavior  |
+|                                                               | as C++. Integer division is truncated   |
+|                                                               | rather than returning a fractional      |
+|                                                               | number, and the % operator is only      |
+|                                                               | available for ints ("fmod" for floats)  |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``+``                                                         | Addition / Concatenation of Arrays      |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -493,7 +488,7 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
 GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
-memory fragmentation. If this is a concern special types of
+memory fragmentation. If this is a concern, special types of
 arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for large data sets:
@@ -573,7 +568,7 @@ after the variable name, followed by the type.
     var my_vector2: Vector2
     var my_node: Node = Sprite.new()
 
-If the variable is initialized within the declaration the type can be inferred, so
+If the variable is initialized within the declaration, the type can be inferred, so
 it's possible to omit the type name::
 
     var my_vector2 :=  Vector2() # 'my_vector2' is of type 'Vector2'
@@ -597,13 +592,13 @@ Values assigned to typed variables must have a compatible type. If it's needed t
 coerce a value to be of a certain type, in particular for object types, you can
 use the casting operator ``as``.
 
-Casting between object types results on the same object if the value is of the
-same type or a subtype of the casted type.
+Casting between object types results in the same object if the value is of the
+same type or a subtype of the cast type.
 
 ::
 
     var my_node2D: Node2D
-    my_node2D = $Sprite as Node2D # Works since Sprite is subtype of Node2D
+    my_node2D = $Sprite as Node2D # Works since Sprite is a subtype of Node2D
 
 If the value is not a subtype, the casting operation will result in a ``null`` value.
 
@@ -645,8 +640,9 @@ expressions and must be assigned on initialization.
     const E = [1, 2, 3, 4][0] # Constant expression: 1
     const F = sin(20) # sin() can be used in constant expressions.
     const G = x + 20 # Invalid; this is not a constant expression!
+    const H = A + 20 # Constant expression: 25
 
-Although the type of constants are inferred from the assigned value, it's also
+Although the type of constants is inferred from the assigned value, it's also
 possible to add explicit type specification::
 
     const A: int = 5
@@ -724,11 +720,11 @@ return early with the ``return`` keyword, but they can't return any value.
     void_function() -> void:
         return # Can't return a value
 
-.. note:: Non-void functions must **always** return a value, so if your code have
-          branching statements (such as ``if``/``else`` construct), all the
+.. note:: Non-void functions must **always** return a value, so if your code has
+          branching statements (such as an ``if``/``else`` construct), all the
           possible paths must have a return. E.g., if you have a ``return``
           inside an ``if`` block but not after it, the editor will raise an
-          error because if the block is not executed the function won't have a
+          error because if the block is not executed, the function won't have a
           valid value to return.
 
 Referencing Functions
@@ -751,8 +747,8 @@ pass it to another function as an argument) one must use the ``call`` or
     my_func.call_func(args)
 
 
-Remember that default functions like  ``_init``, and most
-notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
+Remember that default functions, like  ``_init``, and most
+notifications, such as ``_enter_tree``, ``_exit_tree``, ``_process``,
 ``_physics_process``, etc. are called in all base classes automatically.
 So there is only a need to call the function explicitly when overloading
 them in some way.
@@ -761,7 +757,7 @@ them in some way.
 Static functions
 ^^^^^^^^^^^^^^^^
 
-A function can be declared static. When a function is static it has no
+A function can be declared static. When a function is static, it has no
 access to the instance member variables or ``self``. This is mainly
 useful to make libraries of helper functions:
 
@@ -803,7 +799,7 @@ Short statements can be written on the same line as the condition::
         return x
 
 Sometimes you might want to assign a different initial value based on a
-boolean expression. In this case ternary-if expressions come in handy::
+boolean expression. In this case, ternary-if expressions come in handy::
 
     var x = [value] if [expression] else [value]
     y += 3 if y < 10 else -1
@@ -852,7 +848,7 @@ match
 ^^^^^
 
 A ``match`` statement is used to branch execution of a program.
-It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
+It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
 Basic syntax:
 
@@ -867,11 +863,11 @@ Basic syntax:
             [block]
 
 
-**Crash-course for people who are familiar to switch statements**:
+**Crash-course for people who are familiar with switch statements**:
 
 1. Replace ``switch`` with ``match``
 2. Remove ``case``
-3. Remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
+3. Remove any ``break``s. If you don't want to ``break`` by default, you can use ``continue`` for a fallthrough.
 4. Change ``default`` to a single underscore.
 
 
@@ -879,7 +875,7 @@ Basic syntax:
 
 The patterns are matched from top to bottom.
 If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
+If you want to have a fallthrough, you can use ``continue`` to stop execution in the current block and check the ones below it.
 
 There are 6 pattern types:
 
@@ -935,9 +931,9 @@ There are 6 pattern types:
 
 
 - array pattern
-    matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
+    matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
 
-    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
 
@@ -956,7 +952,7 @@ There are 6 pattern types:
 - dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
 
-    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern doesn't match.
 
     **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
 
@@ -1073,7 +1069,7 @@ Inheritance uses the ``extends`` keyword:
     extends "somefile.gd".SomeInnerClass
 
 
-To check if a given instance inherits from a given class
+To check if a given instance inherits from a given class,
 the ``is`` keyword can be used:
 
 ::
@@ -1110,7 +1106,7 @@ The class constructor, called on class instantiation, is named ``_init``.
 As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
-Unlike the call of a regular function like in the above example with ``.some_func``,
+Unlike the call of a regular function, like in the above example with ``.some_func``,
 if the constructor from the inherited class takes arguments, they are passed like this:
 
 ::
@@ -1143,12 +1139,12 @@ This is better explained through examples. Say we have this scenario:
 There are a few things to keep in mind here:
 
 1. if the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case) then the inheriting class (``Idle.gd``) *has* to
+   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *has* to
    define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``
 2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``
-3. in the example above ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
+3. in the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
    in to ``Idle.gd``
-4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments it still needs to pass some value
+4. if ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
    to the ``State.gd`` base class even if it does nothing. Which brings us to the fact that you
    can pass literals in the base constructor as well, not just variables. Eg.:
 
@@ -1215,7 +1211,7 @@ An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
 
 One of the fundamental benefits of exporting member variables is to have
-them visible and editable in the editor. This way artists and game designers
+them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
@@ -1226,7 +1222,7 @@ special export syntax is provided.
 
     export var number = 5
 
-    # Export can take a basic data type as an argument which will be
+    # Export can take a basic data type as an argument, which will be
     # used in the editor.
 
     export(int) var number
@@ -1296,7 +1292,7 @@ special export syntax is provided.
     # Color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col # Color is RGBA.
 
-    # Another node in the scene can be exported too.
+    # Another node in the scene can be exported, too.
 
     export(NodePath) var node
 
@@ -1335,7 +1331,7 @@ doubt, boolean variables should be exported instead.
 Exporting arrays
 ^^^^^^^^^^^^^^^^
 
-Exporting arrays works but with an important caveat: While regular
+Exporting arrays works, but with an important caveat: While regular
 arrays are created local to every class instance, exported arrays are *shared*
 between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
@@ -1387,7 +1383,7 @@ It is used directly after a variable definition:
 Whenever the value of ``variable`` is modified by an *external* source
 (i.e. not from local usage in the class), the *setter* function (``setterfunc`` above)
 will be called. This happens *before* the value is changed. The *setter* must decide what to do
-with the new value. Vice-versa, when ``variable`` is accessed, the *getter* function
+with the new value. Vice versa, when ``variable`` is accessed, the *getter* function
 (``getterfunc`` above) must ``return`` the desired value. Below is an example:
 
 
@@ -1413,7 +1409,7 @@ Either of the *setter* or *getter* functions can be omitted:
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
-As said *local* access will *not* trigger the setter and getter. Here is an
+As said, *local* access will *not* trigger the setter and getter. Here is an
 illustration of this:
 
 ::
@@ -1431,7 +1427,7 @@ Tool mode
 ~~~~~~~~~
 
 Scripts, by default, don't run inside the editor and only the exported
-properties can be changed. In some cases it is desired that they do run
+properties can be changed. In some cases, it is desired that they do run
 inside the editor (as long as they don't execute game code or manually
 avoid doing so). For this, the ``tool`` keyword exists and must be
 placed at the top of the file:
@@ -1527,7 +1523,7 @@ via the ``yield`` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
 state of the same function as the return value. Calling ``resume`` on
 this resulting object will continue execution and return whatever the
-function returns. Once resumed the state object becomes invalid. Here is
+function returns. Once resumed, the state object becomes invalid. Here is
 an example:
 
 ::
@@ -1580,7 +1576,7 @@ Coroutines & signals
 ^^^^^^^^^^^^^^^^^^^^
 
 The real strength of using ``yield`` is when combined with signals.
-``yield`` can accept two parameters, an object and a signal. When the
+``yield`` can accept two arguments, an object and a signal. When the
 signal is received, execution will recommence. Here are some examples:
 
 ::
@@ -1600,14 +1596,14 @@ into an invalid state, for example:
 ::
 
     func my_func():
-	    yield(button_func(), "completed")
-	    print("All buttons were pressed, hurray!")
+        yield(button_func(), "completed")
+        print("All buttons were pressed, hurray!")
 
     func button_func():
         yield($Button0, "pressed")
-	    yield($Button1, "pressed")
+        yield($Button1, "pressed")
 
-``my_func`` will only continue execution once both the buttons are pressed.
+``my_func`` will only continue execution once both buttons have been pressed.
 
 Onready keyword
 ~~~~~~~~~~~~~~~

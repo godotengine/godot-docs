@@ -59,7 +59,7 @@ exists. Example
         {
             DrawSelected()
         }
-        else 
+        else
         {
             DrawNormal();
         }
@@ -83,7 +83,7 @@ for example:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func get_minimum_size(): 
+    func get_minimum_size():
         return Vector2(30, 30)
 
  .. code-tab:: csharp
@@ -207,7 +207,7 @@ exists, but can be checked with the _notification callback:
         {
             case NotificationMouseEnter:
                 // mouse entered the area of this control
-                break; 
+                break;
 
             case NotificationMouseExit:
                 // mouse exited the area of this control

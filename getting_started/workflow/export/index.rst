@@ -5,8 +5,9 @@ Export
    :maxdepth: 1
    :name: toc-learn-workflow-export
 
- 
+
    exporting_projects
+   exporting_pcks
    feature_tags
    exporting_for_pc
    exporting_for_ios

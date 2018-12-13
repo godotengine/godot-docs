@@ -157,10 +157,10 @@ If a larger matrix is constructed from a smaller matrix, the additional rows and
 If a smaller matrix is constructed from a larger matrix, the top, left submatrix of the larger matrix is chosen.
 
 .. code-block:: glsl
-	
-	mat3 basis = mat3(WORLD_MATRIX);
-	mat4 m4 = mat4(basis);
-	mat2 m2 = mat2(m4);
+
+    mat3 basis = mat3(WORLD_MATRIX);
+    mat4 m4 = mat4(basis);
+    mat2 m2 = mat2(m4);
 
 Swizzling
 ~~~~~~~~~

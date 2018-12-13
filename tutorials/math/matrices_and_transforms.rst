@@ -201,7 +201,7 @@ that hasn't been translated, rotated or scaled.
     var m = Transform2D()
     print(m)
     # prints: ((1, 0), (0, 1), (0, 0))
-    
+
 
  .. code-tab:: csharp
 
@@ -442,7 +442,7 @@ If the matrix is orthonormal, then:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
- 
+
     # if m is orthonormal, then
     pos = mi.xform(pos)
     # is the same is

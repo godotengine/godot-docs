@@ -25,37 +25,37 @@ While it may look like a lot (and there is more as you scroll down), each field 
 described in terms of what you should put in. We will nonetheless go over what
 is required in the submission form here as well.
 
-* **Asset Name**: 
-    The name of your asset. Should be a unique, descriptive title of 
+* **Asset Name**:
+    The name of your asset. Should be a unique, descriptive title of
     what your asset is.
-* **Category**: 
+* **Category**:
     The category that your asset belongs to, and will be shown in
-    search results. The category is split into **Addons** and **Projects**.  
+    search results. The category is split into **Addons** and **Projects**.
     In-editor, assets of the Project type (Templates, Demos, Projects) only show
     up when viewing the AssetLib from the Project Manager, while assets of the
-    Addon type will only be visible from inside a project. 
-* **Godot version**: 
+    Addon type will only be visible from inside a project.
+* **Godot version**:
     The version of the engine that the asset works with.
     Currently it's not possible to have a single asset entry contain downloads for
     multiple engine versions, so you may need to re-submit the asset multiple times,
     with an entry for each Godot version it supports. This is particularly important
     when dealing with major versions of the engine, such as Godot 2.x and Godot 3.x.
-* **Version**: 
+* **Version**:
     The version number of the asset. While you are free to choose
     and use any versioning scheme that you like, you may want to look into
     something such as `SemVer <https://semver.org>`_ if you want your asset's
     versioning scheme to be clear and consistent. Note that there is also an
     internal version number, incremented every time the asset download URL is
-    changed or updated. 
-* **Repository host**: 
+    changed or updated.
+* **Repository host**:
     Assets uploaded to the AssetLib are not hosted on it
     directly. Instead, they point to repositories hosted on third-party Git providers
     such as GitHub, GitLab or Bitbucket. This is where you choose which provider
     your asset uses, so the site can compute the final download link.
-* **Repository URL**: 
+* **Repository URL**:
     The URL to your asset's files/webpage. This will vary
     based on your choice of provider, but it should look similar to `https://github.com/<user>/<project>`.
-* **Issues URL**: 
+* **Issues URL**:
     The URL to your asset's issue tracker. Again, this will differ
     from repository host to repository host, but will likely look similar to
     `https://github.com/<user>/<project>/issues`. You may leave this field empty
@@ -71,7 +71,7 @@ is required in the submission form here as well.
 * **License**:
     The license under which you are distributing the asset. The list
     includes a variety of free and open-source software licenses, such as GPL
-    (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_  
+    (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_
     for a detailed description of each of the listed licenses.
 * **Description**:
     Finally, you can use the Description field for a textual
@@ -83,7 +83,7 @@ You may also include up to three video and/or image previews, which will be show
 at the bottom of the asset page. Use the "Enable" checkbox on each of the preview
 submission boxes to enable them.
 
-* **Type**: 
+* **Type**:
     Either an image, or a video.
 * **Image/YouTube URL**:
     Either a link to the image, or to a video, hosted on YouTube.
@@ -97,7 +97,7 @@ which you can visit on the AssetLib `here <https://godotengine.org/asset-library
 take up to a few days for your addon to be accepted (or rejected), so please
 be patient! You will be informed when your asset is reviewed. If it was rejected,
 you will be told why that may have been, and you will be able to submit it again
-with the appropriate changes. 
+with the appropriate changes.
 You may have some luck accelerating the approval process by messaging the
 moderators/assetlib reviewers on IRC (the #godotengine-atelier channel on Freenode),
 or the official Discord server.

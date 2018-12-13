@@ -14,7 +14,7 @@ TranslationServer
 Brief Description
 -----------------
 
-Server that manages all translations. Translations can be set to it and removed from it.
+Server that manages all translations.
 
 Methods
 -------
@@ -35,6 +35,18 @@ Methods
 | :ref:`String<class_String>`  | :ref:`translate<class_TranslationServer_translate>` **(** :ref:`String<class_String>` message **)** const                           |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Server that manages all translations. Translations can be set to it and removed from it.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/i18n/internationalizing_games`
+
+- :doc:`../tutorials/i18n/locales`
+
 Method Descriptions
 -------------------
 
@@ -42,27 +54,41 @@ Method Descriptions
 
 - void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
+Adds a :ref:`Translation<class_Translation>` resource.
+
 .. _class_TranslationServer_clear:
 
 - void **clear** **(** **)**
+
+Clears the server from all translations.
 
 .. _class_TranslationServer_get_locale:
 
 - :ref:`String<class_String>` **get_locale** **(** **)** const
 
+Returns the current locale of the game.
+
 .. _class_TranslationServer_get_locale_name:
 
 - :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** const
+
+Returns a locale's language and its variant (e.g. "en_US" would return "English (United States)").
 
 .. _class_TranslationServer_remove_translation:
 
 - void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
+Removes the given translation from the server.
+
 .. _class_TranslationServer_set_locale:
 
 - void **set_locale** **(** :ref:`String<class_String>` locale **)**
 
+Sets the locale of the game.
+
 .. _class_TranslationServer_translate:
 
 - :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** const
+
+Returns the current locale's translation for the given message (key).
 

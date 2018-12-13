@@ -56,7 +56,6 @@ Active:
 ::
 
     The dog bit the man.
-    
 
 **Don't** use the passive voice:
 
@@ -400,7 +399,7 @@ and set the anisotropic filter quality to 16x in Project Settings
 
 Screenshot size should not exceed 1920x1080.
 
-When you need to highlight an area of the editor to show something, like a 
+When you need to highlight an area of the editor to show something, like a
 button or option, use a 2 pixel thick outline without a bevel.
 
 Before you add or replace any images in the documentation, they should be run through

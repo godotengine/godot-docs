@@ -22,13 +22,36 @@ Accordingly, most features available in GLSL are available in Godot's shading la
 Shader Programs
 ^^^^^^^^^^^^^^^
 
-In GLSL each shader uses a separate program. You have one program for the vertex shader and one 
-for the fragment shader. In Godot you have a single shader that contains a ``vertex`` and/or a 
-``fragment`` function. If you only choose to write one, Godot will supply the other. 
+In GLSL each shader uses a separate program. You have one program for the vertex shader and one
+for the fragment shader. In Godot you have a single shader that contains a ``vertex`` and/or a
+``fragment`` function. If you only choose to write one, Godot will supply the other.
 
-Godot allows uniform variables and functions to be shared by defining the fragment and vertex 
-shaders in one file. In GLSL the vertex and fragment programs cannot share variables except 
+Godot allows uniform variables and functions to be shared by defining the fragment and vertex
+shaders in one file. In GLSL the vertex and fragment programs cannot share variables except
 when varyings are used.
+
+Vertex attributes
+^^^^^^^^^^^^^^^^^
+
+In GLSL you can pass in per-vertex information using attributes. In GLSL you have the flexibility to
+pass in as much or as little as you want. In Godot you have a set number of input attributes
+including, ``VERTEX`` (position), ``COLOR``, ``UV``, ``UV2``, ``NORMAL``. For a complete list
+see the :ref:`Shading language reference <doc_shading_language>`.
+
+gl_Position
+^^^^^^^^^^^
+
+``gl_Position`` receives the final position of a vertex specified in the vertex shader.
+It is specified by the user in clip space. Typically in GLSL the model space vertex position
+is passed in using a vertex attribute called ``position`` and you handle the
+conversion from model space to clip space manually.
+
+In Godot ``VERTEX`` specifies the vertex position in model space at the beginning of the ``vertex``
+function. Godot also handles the final conversion to clip space after the user-defined ``vertex``
+function is run. If you want to skip the conversion from model to view space, you can set the
+``render_mode`` to ``skip_vertex_transform``. If you want to skip all transforms, set
+``render_mode`` to ``skip_vertex_transform`` and set the ``PROJECTION_MATRIX`` to ``mat4(1.0)``
+in order to nullify the final transform from view space to clip space.
 
 Varyings
 ^^^^^^^^
@@ -40,15 +63,15 @@ out of the vertex shader is defined with ``out`` in the vertex shader and ``in``
 Main
 ^^^^
 
-In GLSL each shader program looks like a self-contained C-style program. Accordingly, the main entry point 
-is ``main``. If you are copying a vertex shader, rename ``main`` to ``vertex`` and if you are copying a 
+In GLSL each shader program looks like a self-contained C-style program. Accordingly, the main entry point
+is ``main``. If you are copying a vertex shader, rename ``main`` to ``vertex`` and if you are copying a
 fragment shader, rename ``main`` to ``fragment``.
 
 Constants
 ^^^^^^^^^
 
 Godot currently does not support constants. You can fake the functionality by using a uniform initialized
-to the value, but you will not benefit from the increased speed from using a constant. 
+to the value, but you will not benefit from the increased speed from using a constant.
 
 Macros
 ^^^^^^
@@ -56,14 +79,14 @@ Macros
 In keeping with its similarity to C, GLSL lets you use macros. Commonly ``#define`` is used to define
 constants or small functions. There is no straightforward way to translate defines to Godot's shading language.
 If it is a function that is defined, then replace with a function, and if it is a constant then replace with
-a uniform. For other macros (``#if``, ``#ifdef``, etc.) there is no equivalent because they run during the 
+a uniform. For other macros (``#if``, ``#ifdef``, etc.) there is no equivalent because they run during the
 pre-processing stage of compilation.
 
 Variables
 ^^^^^^^^^
 
 GLSL has many built in variables that are hard-coded. These variables are not uniforms, so they
-are not editable from the main program. 
+are not editable from the main program.
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |Variable             |Type     |Equivalent              |Description                                          |
@@ -79,20 +102,20 @@ are not editable from the main program.
 |gl_PointCoord        |vec2     |POINT_COORD             |Position on point when drawing Point primitives.     |
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |gl_FrontFacing       |bool     |FRONT_FACING            |True if front face of primitive.                     |
-+---------------------+---------+------------------------+-----------------------------------------------------+ 
++---------------------+---------+------------------------+-----------------------------------------------------+
 
 .. _glsl_coordinates:
 
 Coordinates
 ^^^^^^^^^^^
 
-``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the Godot shading language use the same coordinate system. 
+``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the Godot shading language use the same coordinate system.
 If using UV in Godot, the y-coordinate will be flipped upside down.
 
 Precision
 ^^^^^^^^^
 
-In GLSL you can define the precision of a given type (float or int) at the top of the shader with the 
+In GLSL you can define the precision of a given type (float or int) at the top of the shader with the
 ``precision`` keyword. In Godot you can set the precision of individual variables as you need by placing
 precision qualifiers ``lowp``, ``mediump``, and ``highp`` before the type when defining the variable. For
 more information see the :ref:`Shading Language <doc_shading_language>` reference.
@@ -100,7 +123,7 @@ more information see the :ref:`Shading Language <doc_shading_language>` referenc
 Shadertoy
 ---------
 
-`Shadertoy <https://www.shadertoy.com>`_ is a website that makes it easy to write fragment shaders and 
+`Shadertoy <https://www.shadertoy.com>`_ is a website that makes it easy to write fragment shaders and
 create `pure magic <https://www.shadertoy.com/view/4tjGRh>`_.
 
 Shadertoy does not give the user full control over the shader. It only allows the user to write a
@@ -116,18 +139,18 @@ has the regular types, including `Constants`_ and macros.
 mainImage
 ^^^^^^^^^
 The main point of entry to a Shadertoy shader is the ``mainImage`` function. ``mainImage`` has two
-parameters, ``fragColor`` and ``fragCoord`` which correspond to ``COLOR`` and ``FRAGCOORD`` in Godot 
+parameters, ``fragColor`` and ``fragCoord`` which correspond to ``COLOR`` and ``FRAGCOORD`` in Godot
 respectively. These parameters are handled automatically in Godot, so you do not need to include them
 as parameters yourself. Anything in the ``mainImage`` function should be copied into the ``fragment``
 function when porting to Godot.
 
 Variables
 ^^^^^^^^^
-In order to make writing fragment shaders straightforward and easy, Shadertoy handles passing a lot 
-of helpful information from the main program into the fragment shader for you. A few of these 
-have no equivalents in Godot because Godot has chosen not to make them available by default. 
-This is okay because Godot gives you the ability to make your own uniforms. For variables whose 
-equivalents are listed as "Provide with Uniform", the user is responsible for creating that 
+In order to make writing fragment shaders straightforward and easy, Shadertoy handles passing a lot
+of helpful information from the main program into the fragment shader for you. A few of these
+have no equivalents in Godot because Godot has chosen not to make them available by default.
+This is okay because Godot gives you the ability to make your own uniforms. For variables whose
+equivalents are listed as "Provide with Uniform", the user is responsible for creating that
 uniform themself. The description gives the reader a hint about what they can pass in as a substitute.
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
@@ -153,7 +176,7 @@ uniform themself. The description gives the reader a hint about what they can pa
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |iChannelResolution[4]|vec3     |1.0 / TEXTURE_PIXEL_SIZE|Resolution of particular texture.                    |
 +---------------------+---------+------------------------+-----------------------------------------------------+
-|iChanneli            |Sampler2D|TEXTURE                 |Godot provides only one built in, user can make more.| 
+|iChanneli            |Sampler2D|TEXTURE                 |Godot provides only one built in, user can make more.|
 +---------------------+---------+------------------------+-----------------------------------------------------+
 
 Coordinates
@@ -165,11 +188,11 @@ Coordinates
 The Book of Shaders
 -------------------
 
-Similar to Shadertoy, `The Book of Shaders <https://thebookofshaders.com>`_ provides access to a fragment 
-shader in the web browser for the user to interact with. The user is restricted to writing fragment 
-shader code with a set list of uniforms passed in and with no ability to add additional uniforms. 
+Similar to Shadertoy, `The Book of Shaders <https://thebookofshaders.com>`_ provides access to a fragment
+shader in the web browser for the user to interact with. The user is restricted to writing fragment
+shader code with a set list of uniforms passed in and with no ability to add additional uniforms.
 
-For further help on porting shaders to various frameworks generally, The Book of Shaders provides 
+For further help on porting shaders to various frameworks generally, The Book of Shaders provides
 a `page <https://thebookofshaders.com/04>`_ on running shaders in various frameworks.
 
 Types
@@ -187,8 +210,8 @@ a Book of Shaders ``main`` function should be copied into Godot's ``fragment`` f
 Variables
 ^^^^^^^^^
 
-The Book of Shaders sticks closer to plain GLSL than Shadertoy does. It also implements fewer uniforms than 
-Shadertoy. 
+The Book of Shaders sticks closer to plain GLSL than Shadertoy does. It also implements fewer uniforms than
+Shadertoy.
 
 +---------------------+---------+------------------------+-----------------------------------------------------+
 |Variable             |Type     |Equivalent              |Description                                          |

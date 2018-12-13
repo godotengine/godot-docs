@@ -8,30 +8,30 @@ Introduction
 
 Think of :ref:`Viewports <class_Viewport>` as a screen that the game is projected onto. In order
 to see the game we need to have a surface to draw it on, this surface is
-the Root :ref:`Viewport <class_Viewport>`. 
+the Root :ref:`Viewport <class_Viewport>`.
 
 .. image:: img/viewportnode.png
 
 
 :ref:`Viewports <class_Viewport>` can also be added to the scene so that there
-are multiple surfaces to draw on. When we are drawing to a :ref:`Viewport <class_Viewport>` 
-that is not the Root we call it a render target. We can access the contents 
-of a render target by accessing its corresponding :ref:`texture <class_ViewportTexture>`. 
+are multiple surfaces to draw on. When we are drawing to a :ref:`Viewport <class_Viewport>`
+that is not the Root we call it a render target. We can access the contents
+of a render target by accessing its corresponding :ref:`texture <class_ViewportTexture>`.
 By using a :ref:`Viewport <class_Viewport>` as a render target
 we can either render multiple scenes simultaneously or we can render to
-a :ref:`texture <class_ViewportTexture>` which is applied to an object in the scene, for example a dynamic 
+a :ref:`texture <class_ViewportTexture>` which is applied to an object in the scene, for example a dynamic
 skybox.
 
-:ref:`Viewports <class_Viewport>` have a variety of use cases including: 
+:ref:`Viewports <class_Viewport>` have a variety of use cases including:
 
 - Rendering 3D objects within a 2D game
 - Rendering 2D elements in a 3D game
 - Rendering dynamic textures
 - Generating procedural textures at runtime
-- Rendering multiple cameras in the same scene 
-  
-What all these use cases have in common is that you are given the ability to 
-draw objects to a texture as if it were another screen and then you can choose 
+- Rendering multiple cameras in the same scene
+
+What all these use cases have in common is that you are given the ability to
+draw objects to a texture as if it were another screen and then you can choose
 what to do with the resulting texture.
 
 Input
@@ -40,8 +40,8 @@ Input
 :ref:`Viewports <class_Viewport>` are also responsible for delivering properly adjusted and
 scaled input events to all their children nodes. Typically input is received by the
 nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` to not receive input by checking
-'Disable Input' to 'on', this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture 
-the input. 
+'Disable Input' to 'on', this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture
+the input.
 
 .. image:: img/input.png
 
@@ -67,7 +67,7 @@ following hierarchy:
 .. image:: img/cameras.png
 
 CameraA will display on the Root :ref:`Viewport <class_Viewport>` and it will draw MeshA. CameraB
-will be captured by the :ref:`Viewport <class_Viewport>` Node along with MeshB. Even though MeshB is in the scene 
+will be captured by the :ref:`Viewport <class_Viewport>` Node along with MeshB. Even though MeshB is in the scene
 hierarchy, it will still not be drawn to the Root :ref:`Viewport <class_Viewport>`. Similarly MeshA will not
 be visible from the :ref:`Viewport <class_Viewport>` node because :ref:`Viewport <class_Viewport>` nodes only
 capture nodes below them in the hierarchy.
@@ -83,17 +83,17 @@ or make it the current camera by calling:
 Scale & stretching
 ------------------
 
-:ref:`Viewports <class_Viewport>` have a "size" property which represents the size of the :ref:`Viewport <class_Viewport>` 
-in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`ViewportContainers <class_viewportcontainer>`, 
+:ref:`Viewports <class_Viewport>` have a "size" property which represents the size of the :ref:`Viewport <class_Viewport>`
+in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`ViewportContainers <class_viewportcontainer>`,
 these values are overridden, but for all others this sets their resolution.
 
-It is also possible to scale the 2D content and make the :ref:`Viewport <class_Viewport>` resolution 
+It is also possible to scale the 2D content and make the :ref:`Viewport <class_Viewport>` resolution
 different than the one specified in size, by calling:
 
 ::
 
-    viewport.set_size_override(w, h) # custom size for 2D
-    viewport.set_size_override_stretch(true) # enable stretch for custom size
+    viewport.set_size_override(w, h) # Custom size for 2D
+    viewport.set_size_override_stretch(true) # Enable stretch for custom size
 
 The root :ref:`Viewport <class_Viewport>` uses this for the stretch options in the project
 settings. For more information on scaling and stretching visit the :ref:`Multiple Resolutions Tutorial <doc_multiple_resolutions>`
@@ -199,7 +199,7 @@ their albedo.
 
 Overdraw draws the meshes semi-transparent with an additive blend so you can see how the meshes overlap.
 
-.. image:: img/overdraw.png 
+.. image:: img/overdraw.png
 
 *The same scene with Debug Draw set to Overdraw*
 
@@ -227,12 +227,12 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 
 .. image:: img/texturepath.png
 
-Every frame the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent 
+Every frame the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent
 color if Transparent BG is set to true). This can be changed by setting Clear Mode to Never or Next Frame.
 As the name implies, Never means the texture will never be cleared while next frame will
 clear the texture on the next frame and then set itself to Never.
 
-By default, re-rendering of the :ref:`Viewport <class_Viewport>` happens when the 
+By default, re-rendering of the :ref:`Viewport <class_Viewport>` happens when the
 :ref:`Viewport <class_Viewport>`'s :ref:`ViewportTexture <class_ViewportTexture>` has been drawn in a frame. If visible, it will be
 rendered, otherwise it will not. This behavior can be changed to manual
 rendering (once), or always render, no matter if visible or not. This flexibility

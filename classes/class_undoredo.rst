@@ -32,7 +32,7 @@ Methods
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_undo_reference<class_UndoRedo_add_undo_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                          |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_history<class_UndoRedo_clear_history>` **(** **)**                                                                                                                       |
+| void                           | :ref:`clear_history<class_UndoRedo_clear_history>` **(** :ref:`bool<class_bool>` increase_version=true **)**                                                                         |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`commit_action<class_UndoRedo_commit_action>` **(** **)**                                                                                                                       |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,9 +133,11 @@ Register a reference for 'undo' that will be erased if the 'undo' history is los
 
 .. _class_UndoRedo_clear_history:
 
-- void **clear_history** **(** **)**
+- void **clear_history** **(** :ref:`bool<class_bool>` increase_version=true **)**
 
 Clear the undo/redo history and associated references.
+
+Passing ``false`` to ``increase_version`` will prevent the version number to be increased from this.
 
 .. _class_UndoRedo_commit_action:
 

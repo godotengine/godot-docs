@@ -83,6 +83,8 @@ Methods
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_disabled<class_ItemList_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_item_icon_transposed<class_ItemList_is_item_icon_transposed>` **(** :ref:`int<class_int>` idx **)** const                                                      |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_selectable<class_ItemList_is_item_selectable>` **(** :ref:`int<class_int>` idx **)** const                                                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_tooltip_enabled<class_ItemList_is_item_tooltip_enabled>` **(** :ref:`int<class_int>` idx **)** const                                                      |
@@ -106,6 +108,8 @@ Methods
 | void                                     | :ref:`set_item_icon_modulate<class_ItemList_set_item_icon_modulate>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` modulate **)**                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_icon_region<class_ItemList_set_item_icon_region>` **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**                                  |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_item_icon_transposed<class_ItemList_set_item_icon_transposed>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` rect **)**                            |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_metadata<class_ItemList_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -448,6 +452,10 @@ Returns ``true`` if one or more items are selected.
 
 Returns whether or not the item at the specified index is disabled
 
+.. _class_ItemList_is_item_icon_transposed:
+
+- :ref:`bool<class_bool>` **is_item_icon_transposed** **(** :ref:`int<class_int>` idx **)** const
+
 .. _class_ItemList_is_item_selectable:
 
 - :ref:`bool<class_bool>` **is_item_selectable** **(** :ref:`int<class_int>` idx **)** const
@@ -517,6 +525,10 @@ Sets a modulating :ref:`Color<class_Color>` for item's icon at the specified ind
 .. _class_ItemList_set_item_icon_region:
 
 - void **set_item_icon_region** **(** :ref:`int<class_int>` idx, :ref:`Rect2<class_Rect2>` rect **)**
+
+.. _class_ItemList_set_item_icon_transposed:
+
+- void **set_item_icon_transposed** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` rect **)**
 
 .. _class_ItemList_set_item_metadata:
 

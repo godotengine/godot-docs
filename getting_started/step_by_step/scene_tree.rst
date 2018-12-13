@@ -149,7 +149,7 @@ function:
  .. code-tab:: gdscript GDScript
 
     func _my_level_was_completed():
-    	get_tree().change_scene("res://levels/level2.tscn")
+        get_tree().change_scene("res://levels/level2.tscn")
 
  .. code-tab:: csharp
 
@@ -158,7 +158,28 @@ function:
         GetTree().ChangeScene("res://levels/level2.tscn");
     }
 
-This is a quick and useful way to switch scenes but has the drawback
+Rather than using file paths, one can also use ready-made
+:ref:`PackedScene <class_PackedScene>` resources using the equivalent
+function
+:ref:`SceneTree.change_scene_to(PackedScene scene) <class_SceneTree_change_scene_to>`:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var next_scene = preload("res://levels/level2.tscn")
+
+    func _my_level_was_completed():
+    	get_tree().change_scene_to(next_scene)
+
+ .. code-tab:: csharp
+
+    public void _MyLevelWasCompleted()
+    {
+        PackedScene nextScene = ResourceLoader.load("res://levels/level2.tscn") as PackedScene;
+        GetTree().ChangeSceneTo(nextScene);
+    }
+
+These are quick and useful ways to switch scenes but have the drawback
 that the game will stall until the new scene is loaded and running. At
 some point in your game, it may be desired to create proper loading
 screens with progress bar, animated indicators or thread (background)

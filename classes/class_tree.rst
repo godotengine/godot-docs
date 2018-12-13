@@ -118,6 +118,8 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`custom_button_pressed<class_Tree_custom_button_pressed>`               |
 +---------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`draw_guides<class_Tree_draw_guides>`                                   |
++---------------------------------+------------------------------------------------------------------------------+
 | :ref:`int<class_int>`           | :ref:`draw_relationship_lines<class_Tree_draw_relationship_lines>`           |
 +---------------------------------+------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`drop_position_color<class_Tree_drop_position_color>`                   |
@@ -238,13 +240,13 @@ Emitted when an item is edited using the right mouse button.
 
 - **item_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Emitted when an item is selected with right mouse button.
+Emitted when an item is selected with the right mouse button.
 
 .. _class_Tree_item_selected:
 
 - **item_selected** **(** **)**
 
-Emitted when an item is selected with right mouse button.
+Emitted when an item is selected.
 
 .. _class_Tree_multi_selected:
 

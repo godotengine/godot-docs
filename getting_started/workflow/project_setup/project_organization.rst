@@ -10,8 +10,8 @@ This tutorial aims to propose a simple workflow on how to organize
 projects. Since Godot allows the programmer to use the file-system as
 they please, figuring out a way to organize projects when starting
 to use the engine can be a little challenging. Because of this, the
-tutorial describes simple workflow which should work as a starting
-point regardless of whether it is used.
+tutorial describes a simple workflow, which should work as a starting
+point, regardless of whether it is used.
 
 Additionally, using version control can be challenging, so this
 proposition will include that too.
@@ -22,14 +22,14 @@ Organization
 Godot is scene-based in nature, and uses the filesystem as-is,
 without metadata or an asset database.
 
-Unlike other engines, a lot of resources are contained within the scene
+Unlike other engines, many resources are contained within the scene
 itself, so the amount of files in the filesystem is considerably lower.
 
 Considering that, the most common approach is to group assets as close
 to scenes as possible; when a project grows, it makes it more
 maintainable.
 
-As an example, one can usually place into a single folder their basic assets
+As an example, one can usually place into a single folder their basic assets,
 such as sprite images, 3D model meshes, materials, and music, etc.
 They can then use a separate folder to store built levels that use them.
 

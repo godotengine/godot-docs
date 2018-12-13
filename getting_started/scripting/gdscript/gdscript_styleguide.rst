@@ -69,7 +69,7 @@ regular code blocks.
 Blank lines
 ~~~~~~~~~~~
 
-Surround functions and class definitions by a blank line.
+Surround functions and class definitions with a blank line.
 
 Use one blank line inside functions to separate logical sections.
 

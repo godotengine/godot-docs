@@ -3,13 +3,13 @@
 Features
 ========
 
-This page provides an overview over the commonly used features of both C# and Godot
+This page provides an overview of the commonly used features of both C# and Godot
 and how they are used together.
 
 Type conversion and casting
 ---------------------------
 
-C# is a statically typed language. Therefore you can't do the following:
+C# is a statically typed language. Therefore, you can't do the following:
 
 .. code-block:: csharp
 
@@ -23,7 +23,7 @@ For this, you have various options in C#.
 
 **Casting and Type Checking**
 
-Throws ``InvalidCastException`` if the returned node cannot be casted to Sprite.
+Throws ``InvalidCastException`` if the returned node cannot be cast to Sprite.
 You would use it instead of the ``as`` operator if you are pretty sure it won't fail.
 
 .. code-block:: csharp
@@ -33,8 +33,8 @@ You would use it instead of the ``as`` operator if you are pretty sure it won't 
 
 **Using the AS operator**
 
-The ``as`` operator returns null if the node cannot be casted to Sprite,
-and for this reason it cannot be used with value types.
+The ``as`` operator returns null if the node cannot be cast to Sprite,
+and for that reason, it cannot be used with value types.
 
 .. code-block:: csharp
 
@@ -63,8 +63,8 @@ Generic methods are also provided to make this type conversion transparent.
 
 **Type checking using the IS operator**
 
-To check if the node can be casted to Sprite, you can use the ``is`` operator.
-The ``is`` operator returns false if the node cannot be casted to Sprite,
+To check if the node can be cast to Sprite, you can use the ``is`` operator.
+The ``is`` operator returns false if the node cannot be cast to Sprite,
 otherwise it returns true.
 
 .. code-block:: csharp
@@ -140,13 +140,13 @@ It is possible to bind values when establishing a connection by passing an objec
     {
         var plusButton = (Button)GetNode("PlusButton");
         var minusButton = (Button)GetNode("MinusButton");
-        
+
         plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
         minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
     }
 
 Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
-Consequently any ``Node`` or ``Reference`` will be compatible automatically but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
+Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
 
 .. code-block:: csharp
 

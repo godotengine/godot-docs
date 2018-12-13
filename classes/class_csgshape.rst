@@ -21,13 +21,15 @@ The CSG base class.
 Properties
 ----------
 
-+-------------------------------------------+----------------------------------------------------+
-| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_operation>`         |
-+-------------------------------------------+----------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_snap>`                   |
-+-------------------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_use_collision>` |
-+-------------------------------------------+----------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_calculate_tangents>` |
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_operation>`                   |
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_snap>`                             |
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_use_collision>`           |
++-------------------------------------------+--------------------------------------------------------------+
 
 Methods
 -------
@@ -56,6 +58,18 @@ This is the CSG base class that provides CSG operation support to the various CS
 
 Property Descriptions
 ---------------------
+
+.. _class_CSGShape_calculate_tangents:
+
+- :ref:`bool<class_bool>` **calculate_tangents**
+
++----------+-------------------------------+
+| *Setter* | set_calculate_tangents(value) |
++----------+-------------------------------+
+| *Getter* | is_calculating_tangents()     |
++----------+-------------------------------+
+
+Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
 
 .. _class_CSGShape_operation:
 

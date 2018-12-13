@@ -112,7 +112,7 @@ These are forward declarations for the functions we'll be implementing for our o
     godot_variant simple_get_data(godot_object *p_instance, void *p_method_data
         , void *p_user_data, int p_num_args, godot_variant **p_args);
 
-Next up is the first of the entry points Godot will call when our dynamic library is loaded. These methods are all prefixed with godot (you can change this later on) followed by their name. ``gdnative_init`` is a function that initialises our dynamic library. Godot will give it a pointer to a structure that contains various bits of information we may find useful amongst which the pointers to our API structures.
+Next up is the first of the entry points Godot will call when our dynamic library is loaded. These methods are all prefixed with Godot (you can change this later on) followed by their name. ``gdnative_init`` is a function that initialises our dynamic library. Godot will give it a pointer to a structure that contains various bits of information we may find useful amongst which the pointers to our API structures.
 
 For any additional API structures we need to loop through our extensions array and check the type of extension.
 
@@ -288,7 +288,7 @@ If singleton is true our library is automatically loaded and a function called g
 
 If load_once is true our library is loaded only once and each individual script that uses our library will use the same data. Any variable you define globally will be accessible from any instance of your object you create. If load_once is false a new copy of the library is loaded into memory each time a script access the library.
 
-The symbol_prefix is a prefix for our core functions. So the godot in godot_nativescript_init for instance. If you use multiple GDnative libraries that you wish to statically link you'll have to use different prefixes. This again is a subject to dive into deeper in a separate tutorial, it is only needed at this time for deployment to iOS as this platform does not like dynamic libraries.
+The symbol_prefix is a prefix for our core functions. So the Godot in godot_nativescript_init for instance. If you use multiple GDnative libraries that you wish to statically link you'll have to use different prefixes. This again is a subject to dive into deeper in a separate tutorial, it is only needed at this time for deployment to iOS as this platform does not like dynamic libraries.
 
 The **entry** section tells us for each platform and feature combination which dynamic library has to be loaded. This also informs the exporter which files need to be exported when exporting to a specific platform.
 

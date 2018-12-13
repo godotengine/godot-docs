@@ -99,6 +99,8 @@ Methods
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_buffer<class_File_store_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**                                                                             |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`store_csv_line<class_File_store_csv_line>` **(** :ref:`PoolStringArray<class_PoolStringArray>` values, :ref:`String<class_String>` delim="," **)**                              |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_double<class_File_store_double>` **(** :ref:`float<class_float>` value **)**                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_float<class_File_store_float>` **(** :ref:`float<class_float>` value **)**                                                                                                |
@@ -246,7 +248,7 @@ Returns next ``len`` bytes of the file as a :ref:`PoolByteArray<class_PoolByteAr
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_csv_line** **(** :ref:`String<class_String>` delim="," **)** const
 
-Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma).
+Returns the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
 
 .. _class_File_get_double:
 
@@ -403,6 +405,12 @@ Stores an integer as 8 bits in the file.
 - void **store_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Stores the given array of bytes in the file.
+
+.. _class_File_store_csv_line:
+
+- void **store_csv_line** **(** :ref:`PoolStringArray<class_PoolStringArray>` values, :ref:`String<class_String>` delim="," **)**
+
+Store the given :ref:`PoolStringArray<class_PoolStringArray>` in the file as a line formatted in the CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma), it should be one character long.
 
 .. _class_File_store_double:
 

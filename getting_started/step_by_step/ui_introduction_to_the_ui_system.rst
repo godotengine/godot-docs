@@ -7,7 +7,7 @@ Computer displays, mobile phones, and TV screen come in all shapes and
 sizes. To ship a game, you'll need to support different screen ratios
 and resolutions. It can be hard to build responsive interfaces that
 adapt to all platforms. Thankfully, Godot comes with robust tools to
-design and manage responsive User Interface. To design your UI, you'll
+design and manage a responsive User Interface. To design your UI, you'll
 use the Control nodes. These are the nodes with green icons in the
 editor. There are dozens of them, to create anything from life bars to
 complex applications. Godot's entire editor and plugins use these nodes.
@@ -28,9 +28,9 @@ To learn how to control the interface and connect it to other scripts,
 read :ref:`Build your first game UI in Godot <doc_ui_game_user_interface>`.
 
 Only use Control nodes when you design your interfaces. They have unique
-properties that allow them to work with one another. Other nodes like
+properties that allow them to work with one another. Other nodes, like
 Node2D, Sprite, etc. will not work. You can still use some nodes that
-work with others like the AnimationPlayer, Tween or the StreamPlayer.
+work with others, like the AnimationPlayer, Tween or the StreamPlayer.
 Control nodes are CanvasItems like Node2D, so you can apply shaders to
 them.
 
@@ -72,7 +72,7 @@ TextureRect
 ~~~~~~~~~~~
 
 **TextureRect** displays a texture or image inside a UI.
-It seems similar to the Sprite node but it offers multiple scaling modes.
+It seems similar to the Sprite node, but it offers multiple scaling modes.
 Set the Stretch Mode property to change its behavior:
 
 - ``Scale On Expand (compat)`` scales the texture to fit the node’s bounding rectangle, only if ``expand`` property is ``true``; otherwise, it behaves like ``Keep`` mode. Default mode for backwards compatibility.
@@ -144,7 +144,7 @@ Label
 the Label section, in the Inspector. Write the text in the ``Text``
 property, and check Autowrap if you want it to respect the textbox's
 size. If Autowrap is off, you won't be able to scale the node. You can
-align the text horizontally and vertically with Align and Valign
+align the text horizontally and vertically with Align and Valign,
 respectively.
 
 .. figure:: img/five_common_nodes_label.png
@@ -171,7 +171,7 @@ There are two workflows to build scalable and flexible interfaces in Godot:
 1. You have many container nodes at your disposal that scale and place UI elements for you. They take control over their children.
 2. On the other side, you have the layout menu. It helps you to anchor, place and resize a UI element within its parent.
 
-The two approaches are not always compatible. Because a container controls its children, you cannot use the layout menu on them. Each container has a specific effect so you may need to nest several of them to get a working interface. With the layout approach you work from the bottom up, on the children. As you don't insert extra containers in the scene it can make for cleaner hierarchies, but it's harder to arrange items in a row, column, grid, etc.
+The two approaches are not always compatible. Because a container controls its children, you cannot use the layout menu on them. Each container has a specific effect, so you may need to nest several of them to get a working interface. With the layout approach you work from the bottom up, on the children. As you don't insert extra containers in the scene it can make for cleaner hierarchies, but it's harder to arrange items in a row, column, grid, etc.
 
 As you create UIs for your games and tools, you'll develop a sense for what fits best in each situation.
 
@@ -275,7 +275,7 @@ Arrange control nodes automatically with containers
 Containers automatically arrange all children Control nodes including
 other containers in rows, columns, and more. Use them to add padding
 around your interface or center nodes in their bounding rectangles. All
-built-in containers update in the editor so you can see the effect
+built-in containers update in the editor, so you can see the effect
 instantly.
 
 Containers have a few special properties to control how they arrange UI
@@ -348,4 +348,4 @@ between the rows and columns respectively.
    A GridContainer with 2 columns. It sizes each column automatically.
 
 Godot's UI system is complex, and has a lot more to offer. To learn how
-to design more advanced interface, head to the :ref:`GUI section <toc-learn-features-gui>` of the docs.
+to design more advanced interfaces, head to the :ref:`GUI section <toc-learn-features-gui>` of the docs.

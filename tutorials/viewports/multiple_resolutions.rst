@@ -81,7 +81,7 @@ demonstrate the effect of different stretch modes. A single sprite, also
    directly at the target resolution. 3D will be largely unaffected,
    while in 2D there is no longer a 1:1 correspondence between sprite
    pixels and screen pixels, which may result in scaling artifacts.
-   
+
    This is a good option if your 2D artwork has a sufficiently high
    resolution and does not require pixel-perfect rendering. Consider
    enabling texture filtering and mipmapping on your 2D textures and
@@ -138,7 +138,7 @@ to the region outside the blue frame you see in the 2D editor.
    taller than the base resolution, the viewport will be grown in the
    vertical direction (and more content will be visible to the bottom).
    You can also think of this as "Expand Vertically".
-   
+
    This is usually the best option for creating GUIs or HUDs that scale,
    so some controls can be anchored to the bottom
    (:ref:`doc_size_and_anchors`).
@@ -146,12 +146,12 @@ to the region outside the blue frame you see in the 2D editor.
    .. image:: img/stretch_viewport_keep_width.gif
 
 -  Stretch Aspect = **Keep Height**: Keep aspect ratio when stretching
-   the screen. If the the screen is taller than the base size, black
+   the screen. If the screen is taller than the base size, black
    bars are added at the top and bottom (letterboxing). But if the
    screen is wider than the base resolution, the viewport will be grown
    in the horizontal direction (and more content will be visible to the
    right). You can also think of this as "Expand Horizontally".
-   
+
    This is usually the best option for 2D games that scroll horizontally
    (like runners or platformers).
 

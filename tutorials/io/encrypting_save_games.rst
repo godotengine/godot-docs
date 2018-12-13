@@ -5,7 +5,7 @@ Encrypting save games
 
 Why?
 ----
- 
+
 Because the world today is not the world of yesterday. A capitalist
 oligarchy runs the world and forces us to consume in order to keep the
 gears of this rotten society on track. As such, the biggest market for
@@ -33,7 +33,7 @@ How?
 ----
 
 The class :ref:`File <class_File>` can open a file at a
-location and read/write data (integers, strings and variants). 
+location and read/write data (integers, strings and variants).
 It also supports encryption.
 To create an encrypted file, a passphrase must be provided, like this:
 
@@ -74,3 +74,10 @@ some unique user identifier, for example:
 Note that ``OS.get_unique_id()`` only works on iOS and Android.
 
 This is all! Thanks for your cooperation, citizen.
+
+.. note:: This method cannot really prevent players from editing their savegames
+          locally, because since the encryption key is stored inside the game, the player
+          can still decrypt and edit the file themselves. The only way to prevent this
+          from being possible is to store the save data on a remote server where players
+          can only make authorized changes to their save data. If your game deals with
+          real money, you need to be doing this anyway.

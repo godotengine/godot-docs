@@ -32,8 +32,6 @@ Properties
 +------------------------------------------------------------+---------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`angular_velocity_random<class_ParticlesMaterial_angular_velocity_random>` |
 +------------------------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`anim_loop<class_ParticlesMaterial_anim_loop>`                             |
-+------------------------------------------------------------+---------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`anim_offset<class_ParticlesMaterial_anim_offset>`                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture<class_Texture>`                              | :ref:`anim_offset_curve<class_ParticlesMaterial_anim_offset_curve>`             |
@@ -140,7 +138,7 @@ enum **Flags**:
 
 - **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
 
-- **FLAG_MAX** = **4**
+- **FLAG_MAX** = **3**
 
 .. _enum_ParticlesMaterial_Parameter:
 
@@ -267,18 +265,6 @@ Each particle's angular velocity will vary along this :ref:`CurveTexture<class_C
 +----------+-----------------------------+
 
 Angular velocity randomness ratio. Default value: ``0``.
-
-.. _class_ParticlesMaterial_anim_loop:
-
-- :ref:`bool<class_bool>` **anim_loop**
-
-+----------+-----------------+
-| *Setter* | set_flag(value) |
-+----------+-----------------+
-| *Getter* | get_flag()      |
-+----------+-----------------+
-
-If ``true`` animation will loop. Default value: ``false``.
 
 .. _class_ParticlesMaterial_anim_offset:
 

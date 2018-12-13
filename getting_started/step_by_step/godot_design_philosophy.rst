@@ -36,11 +36,11 @@ BrokenLanterns in the city will update instantly.
 On top of that, you can **inherit** from any scene.
 
 A Godot scene could be a Weapon, a Character, an Item, a Door, a Level,
-part of a level… anything you’d like. It works like a class in pure code
+part of a level… anything you’d like. It works like a class in pure code,
 except you’re free to design it by using the editor, using only the
 code, or mixing and matching the two.
 
-It’s different from prefabs you find in several 3D engines as you can
+It’s different from prefabs you find in several 3D engines, as you can
 then inherit from and extend those scenes. You may create a Magician
 that extends your Character. Modify the Character in the editor and the Magician
 will update as well. It helps you build your projects so that their
@@ -118,7 +118,7 @@ Google AdMob, or an FBX model importer. Any of these can come as
 third-party plugins instead.
 
 On the other hand, an open codebase means you can **learn from and extend
-the engine** to your heart’s content. You can also debug games easily
+the engine** to your heart’s content. You can also debug games easily,
 as Godot will print errors with a stack trace, even if they come from the engine itself.
 
 .. note::
@@ -148,7 +148,7 @@ system, it can hot-reload code and scenes when you test your projects,
 or run game code in the editor. This means you can **use the same code**
 and scenes for your games, or **build plugins and extend the editor.**
 
-This leads to a reliable and flexible UI system as it powers the editor
+This leads to a reliable and flexible UI system, as it powers the editor
 itself. With the ``tool`` keyword, you can run any game code in the editor.
 
 |image5|

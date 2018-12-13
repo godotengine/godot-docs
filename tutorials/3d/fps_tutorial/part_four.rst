@@ -11,7 +11,6 @@ In this part we will be adding health pick ups, ammo pick ups, targets the playe
 .. image:: img/PartFourFinished.png
 
 .. note:: You are assumed to have finished :ref:`doc_fps_tutorial_part_three` before moving on to this part of the tutorial.
-          
           The finished project from :ref:`doc_fps_tutorial_part_three` will be the starting project for part 4
 
 Let's get started!
@@ -42,14 +41,14 @@ Feel free to use whatever button layout you want. Make sure that the device sele
 
 Once you are happy with the input, close the project settings and save.
 
-______ 
+______
 
 Now let's open up ``Player.gd`` and add joypad input.
 
 First, we need to define a few new class variables. Add the following class variables to ``Player.gd``:
 
 ::
-    
+
     # You may need to adjust depending on the sensitivity of your joypad
     var JOYPAD_SENSITIVITY = 2
     const JOYPAD_DEADZONE = 0.15
@@ -61,23 +60,23 @@ Let's go over what each of these do:
 
 .. note::  Many joypads jitter around a certain point. To counter this, we ignore any movement in a
            with a radius of JOYPAD_DEADZONE. If we did not ignore said movement, the camera would jitter.
-           
+
            Also, we are defining ``JOYPAD_SENSITIVITY`` as a variable instead of a constant because we'll later be changing it.
 
-Now we are ready to start handling joypad input!           
+Now we are ready to start handling joypad input!
 
 ______
-           
+
 In ``process_input`` add the following code, just before ``input_movement_vector = input_movement_vector.normalized()``:
 
 .. tabs::
  .. code-tab:: gdscript Xbox Controller
-    
+
     # Add joypad input, if there is a joypad
     if Input.get_connected_joypads().size() > 0:
-        
+
         var joypad_vec = Vector2(0, 0)
-        
+
         if OS.get_name() == "Windows":
             joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
         elif OS.get_name() == "X11":
@@ -96,9 +95,9 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
     # Add joypad input, if there is a joypad
     if Input.get_connected_joypads().size() > 0:
-        
+
         var joypad_vec = Vector2(0, 0)
-        
+
         if OS.get_name() == "Windows" or OS.get_name() == "X11":
             joypad_vec = Vector2(Input.get_joy_axis(0, 0), -Input.get_joy_axis(0, 1))
         elif OS.get_name() == "OSX":
@@ -128,7 +127,7 @@ If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scal
 
 .. note:: You can find a great article explaining all about how to handle joypad/controller dead zones here:
           http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
-            
+
           We're using a translated version of the scaled radial dead zone code provided in that article.
           The article is a great read, and I highly suggest giving it a look!
 
@@ -136,16 +135,16 @@ Finally, we add ``joypad_vec`` to ``input_movement_vector``.
 
 .. tip:: Remember how we normalize ``input_movement_vector``? This is why! If we did not normalize ``input_movement_vector``, the player could
          move faster if the player pushes in the same direction with both the keyboard and the joypad!
-         
+
 ______
 
 Make a new function called ``process_view_input`` and add the following:
 
 .. tabs::
  .. code-tab:: gdscript Xbox Controller
-    
+
     func process_view_input(delta):
-        
+
         if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
             return
 
@@ -180,9 +179,9 @@ Make a new function called ``process_view_input`` and add the following:
         # ----------------------------------
 
  .. code-tab:: gdscript Playstation Controller
-     
+
      func process_view_input(delta):
-        
+
         if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
             return
 
@@ -243,10 +242,10 @@ The last thing we need to do is add ``process_view_input`` to ``_physics_process
 Once ``process_view_input`` is added to ``_physics_process``, you should be able to play using a joypad!
 
 .. note:: I decided not to use the joypad triggers for firing because we'd then have to do some more axis managing, and because I prefer to use a shoulder buttons to fire.
-          
+
           If you want to use the triggers for firing, you will need to change how firing works in ``process_input``. You need to get the axis values for the triggers,
           and check if it's over a certain value, say ``0.8`` for example. If it is, you add the same code as when the ``fire`` action was pressed.
-         
+
 Adding mouse scroll wheel input
 -------------------------------
 
@@ -255,7 +254,7 @@ Let's add one more input related feature before we start working on the pick ups
 Open up ``Player.gd`` and add the following class variables:
 
 ::
-    
+
     var mouse_scroll_value = 0
     const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
@@ -269,16 +268,16 @@ ______
 Now let's add the following to ``_input``:
 
 ::
-    
+
     if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
         if event.button_index == BUTTON_WHEEL_UP or event.button_index == BUTTON_WHEEL_DOWN:
             if event.button_index == BUTTON_WHEEL_UP:
                 mouse_scroll_value += MOUSE_SENSITIVITY_SCROLL_WHEEL
             elif event.button_index == BUTTON_WHEEL_DOWN:
                 mouse_scroll_value -= MOUSE_SENSITIVITY_SCROLL_WHEEL
-            
+
             mouse_scroll_value = clamp(mouse_scroll_value, 0, WEAPON_NUMBER_TO_NAME.size()-1)
-            
+
             if changing_weapon == false:
                 if reloading_weapon == false:
                     var round_mouse_scroll_value = int(round(mouse_scroll_value))
@@ -287,10 +286,10 @@ Now let's add the following to ``_input``:
                         changing_weapon = true
                         mouse_scroll_value = round_mouse_scroll_value
 
-                        
+
 Let's go over what's happening here:
 
-First we check if the event is a ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
+First we check if the event is an ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
 Then we check to see if the button index is either a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
 
 If the event's index is indeed a button wheel index, we then check to see if it is a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
@@ -298,9 +297,9 @@ Based on whether it is up or down we add or remove ``MOUSE_SENSITIVITY_SCROLL_WH
 
 Next we clamp mouse scroll value to assure it is inside the range of selectable weapons.
 
-We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to a ``int``.
+We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to an ``int``.
 
-.. note:: We are casting ``mouse_scroll_value`` to a ``int`` so we can use it as a key in our dictionary. If we left it as a float,
+.. note:: We are casting ``mouse_scroll_value`` to an ``int`` so we can use it as a key in our dictionary. If we left it as a float,
           we would get an error when we try to run the project.
 
 Next we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``weapon_number_to_name``.
@@ -316,9 +315,9 @@ ______
 One more thing we need to change is in ``process_input``. In the code for changing weapons, add the following right after the line ``changing_weapon = true``:
 
 ::
-    
+
     mouse_scroll_value = weapon_change_number
-    
+
 Now the scroll value will be changed with the keyboard input. If we did not change this, the scroll value will be out of sync. If the scroll wheel is out of
 sync, scrolling forwards or backwards would not transition to the next/last weapon, but rather the next/last weapon the scroll wheel changed to.
 
@@ -342,12 +341,12 @@ Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node 
 the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
 health pick up, so the smaller health pick up has a trigger collision shape closer to its size.
 
-The last thing to note is how we have a :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
+The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
 
 Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add the following:
 
 ::
-    
+
     extends Spatial
 
     export (int, "full size", "small") var kit_size = 0 setget kit_size_change
@@ -361,11 +360,11 @@ Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add t
     var is_ready = false
 
     func _ready():
-        
+
         $Holder/Health_Pickup_Trigger.connect("body_entered", self, "trigger_body_entered")
-        
+
         is_ready = true
-        
+
         kit_size_change_values(0, false)
         kit_size_change_values(1, false)
         kit_size_change_values(kit_size, true)
@@ -374,7 +373,7 @@ Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add t
     func _physics_process(delta):
         if respawn_timer > 0:
             respawn_timer -= delta
-            
+
             if respawn_timer <= 0:
                 kit_size_change_values(kit_size, true)
 
@@ -458,7 +457,7 @@ We get the collision shape for the node corresponding to ``size`` and disable it
 .. note:: Why are we using ``!enable`` instead of ``enable``? This is so when we say we want to enable the node, we can pass in ``true``, but since
           :ref:`CollisionShape <class_CollisionShape>` uses disabled instead of enabled, we need to flip it. By flipping it, we can enable the collision shape
           and make the mesh visible when ``true`` is passed in.
-  
+
 We then get the correct :ref:`Spatial <class_Spatial>` node holding the mesh and set its visibility to ``enable``.
 
 This function may be a little confusing, try to think of it like this: We're enabling/disabling the proper nodes for ``size`` using ``enabled``. This is so we cannot pick up
@@ -481,15 +480,15 @@ The last thing we need to do before the player can use this health pick up is ad
 Open up ``Player.gd`` and add the following class variable:
 
 ::
-    
+
     const MAX_HEALTH = 150
-    
+
 * ``MAX_HEALTH``: The maximum amount of health a player can have.
 
 Now we need to add the ``add_health`` function to the player. Add the following to ``Player.gd``:
 
 ::
-    
+
     func add_health(additional_health):
         health += additional_health
         health = clamp(health, 0, MAX_HEALTH)
@@ -516,35 +515,35 @@ for the difference in mesh sizes.
 Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the following:
 
 ::
-    
+
     extends Spatial
 
     export (int, "full size", "small") var kit_size = 0 setget kit_size_change
 
     # 0 = full size pickup, 1 = small pickup
     const AMMO_AMOUNTS = [4, 1]
-    
+
     const RESPAWN_TIME = 20
     var respawn_timer = 0
 
     var is_ready = false
 
     func _ready():
-        
+
         $Holder/Ammo_Pickup_Trigger.connect("body_entered", self, "trigger_body_entered")
-        
+
         is_ready = true
-        
+
         kit_size_change_values(0, false)
         kit_size_change_values(1, false)
-        
+
         kit_size_change_values(kit_size, true)
 
 
     func _physics_process(delta):
         if respawn_timer > 0:
             respawn_timer -= delta
-            
+
             if respawn_timer <= 0:
                 kit_size_change_values(kit_size, true)
 
@@ -553,7 +552,7 @@ Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the f
         if is_ready:
             kit_size_change_values(kit_size, false)
             kit_size = value
-            
+
             kit_size_change_values(kit_size, true)
         else:
             kit_size = value
@@ -589,7 +588,7 @@ _______
 All we need to do for making the ammo pick ups work is to add a new function to the player. Open ``Player.gd`` and add the following function:
 
 ::
-    
+
     func add_ammo(additional_ammo):
         if (current_weapon_name != "UNARMED"):
             if (weapons[current_weapon_name].CAN_REFILL == true):
@@ -638,7 +637,7 @@ Alright, now switch back to ``Target.tscn``, select the ``Target`` :ref:`StaticB
 Add the following code to ``Target.gd``:
 
 ::
-    
+
     extends StaticBody
 
     const TARGET_HEALTH = 40
@@ -663,12 +662,12 @@ Add the following code to ``Target.gd``:
     func _physics_process(delta):
         if target_respawn_timer > 0:
             target_respawn_timer -= delta
-            
+
             if target_respawn_timer <= 0:
-                
+
                 for child in broken_target_holder.get_children():
                     child.queue_free()
-                
+
                 target_collision_shape.disabled = false
                 visible = true
                 current_health = TARGET_HEALTH
@@ -676,20 +675,20 @@ Add the following code to ``Target.gd``:
 
     func bullet_hit(damage, bullet_transform):
         current_health -= damage
-        
+
         if current_health <= 0:
             var clone = destroyed_target.instance()
             broken_target_holder.add_child(clone)
-            
+
             for rigid in clone.get_children():
                 if rigid is RigidBody:
                     var center_in_rigid_space = broken_target_holder.global_transform.origin - rigid.global_transform.origin
                     var direction = (rigid.transform.origin - center_in_rigid_space).normalized()
                     # Apply the impulse with some additional force (I find 12 works nicely)
                     rigid.apply_impulse(center_in_rigid_space, direction * 12 * damage)
-            
+
             target_respawn_timer = TARGET_RESPAWN_TIME
-            
+
             target_collision_shape.disabled = true
             visible = false
 
@@ -703,8 +702,8 @@ Let's go over what this script does, starting with the class variables:
 * ``target_respawn_timer``: A variable to track how long a target has been broken.
 * ``destroyed_target``: A :ref:`PackedScene <class_PackedScene>` to hold the broken target scene.
 
-Notice how we're using a exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
-using ``preload``. By using an exported variable, we can chose the scene from the editor, and if we need to use a different scene,
+Notice how we're using an exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
+using ``preload``. By using an exported variable, we can choose the scene from the editor, and if we need to use a different scene,
 it's as easy as selecting a different scene in the editor, we don't need to go to the code to change the scene we're using.
 
 ______

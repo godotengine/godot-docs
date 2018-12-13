@@ -82,7 +82,7 @@ Many browsers, Chromium-based browsers specifically, will not load exported
 projects when **opened locally** per ``file://`` protocol. To get around this,
 use a local server.
 
-Python offers an easy method for this, using ``python -m SimpleHTTPServer``
+Python offers an easy method for this; using ``python -m SimpleHTTPServer``
 with Python 2 or ``python -m http.server`` with Python 3 will serve the current
 working directory on ``http://localhost:8000``.
 

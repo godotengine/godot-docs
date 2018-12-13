@@ -23,13 +23,6 @@ Properties
 | :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_animation>` |
 +-----------------------------+----------------------------------------------------------+
 
-Methods
--------
-
-+----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_playback_time<class_AnimationNodeAnimation_get_playback_time>` **(** **)** const |
-+----------------------------+--------------------------------------------------------------------------------------------+
-
 Property Descriptions
 ---------------------
 
@@ -42,11 +35,4 @@ Property Descriptions
 +----------+----------------------+
 | *Getter* | get_animation()      |
 +----------+----------------------+
-
-Method Descriptions
--------------------
-
-.. _class_AnimationNodeAnimation_get_playback_time:
-
-- :ref:`float<class_float>` **get_playback_time** **(** **)** const
 

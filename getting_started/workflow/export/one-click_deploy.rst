@@ -24,9 +24,9 @@ Steps for one-click deploy
 
 #. Configure target platform.
 #. Configure device (make sure it's in developer mode, likes the
-   computer, usb is recognized, usb cable is plugged, etc.).
+   computer, usb cable is plugged, usb is recognized, etc.).
 #. Connect the device..
-#. And voila!
+#. And voilà!
 
 .. image:: img/oneclick.png
 
