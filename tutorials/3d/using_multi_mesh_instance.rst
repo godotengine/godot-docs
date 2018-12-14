@@ -11,7 +11,7 @@ node to display a 3D mesh like a human model for the main character, but in some
 cases, you would like to create multiple instances of the same mesh in a scene.
 You *could* duplicate the same node multiple times and adjust the transforms
 manually. This may be a tedious process and the result may look mechanical.
-Also, this method is not favourable to rapid iterations.
+Also, this method is not conducive to rapid iterations.
 :ref:`MultiMeshInstance <class_MultiMeshInstance>` is one of the possible
 solutions to this problem.
 
@@ -28,15 +28,15 @@ and two MeshInstance nodes.
 One node is used as the target, the mesh that you want to place multiple meshes
 on. In the tree example, this would be the landscape.
 
-Another node is used as the source, the mesh that you want to have duplicated.
-In the tree case, this would be the tree.
+The other node is used as the source, the mesh that you want to have duplicated.
+In the tree case, this would be the tree itself.
 
 In our example, we would use a :ref:`Node <class_Node>` as the root node of the
 scene. Your scene tree would look like this:
 
 .. image:: img/multimesh_scene_tree.png
 
-.. note:: For simplification purposes, this tutorial uses built-in primitives.
+.. note:: For simplicity's sake, this tutorial uses built-in primitives.
 
 Now you have everything ready. Select the MultiMeshInstance node and look at the
 toolbar, you should see an extra button called ``MultiMesh`` next to ``View``.
@@ -54,8 +54,8 @@ Below are descriptions of the options.
 
 Target Surface
 ++++++++++++++
-The mesh you would be using as the target surface for placing copies of you
-source mesh on.
+The mesh used as the target surface on which to place copies of your
+source mesh.
 
 Source Mesh
 +++++++++++
@@ -67,7 +67,7 @@ The axis used as the up axis of the source mesh.
 
 Random Rotation
 +++++++++++++++
-Randomizing the rotation around the mesh up axis of the source mesh.
+Randomizing the rotation around the up axis of the source mesh.
 
 Random Tilt
 +++++++++++
@@ -95,4 +95,4 @@ The end result should look like this:
 
 .. image:: img/multimesh_result.png
 
-To change the result, repeat the same step with different parameters.
+To change the result, repeat the previous steps with different parameters.
