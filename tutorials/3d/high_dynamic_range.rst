@@ -11,7 +11,7 @@ looks at their awesome looking model in the 3D DCC and says "looks
 fantastic, ready for integration!" then goes into the game, lighting is
 setup and the game runs.
 
-So at point does all this HDR business come into play? The idea is that
+So at what point does all this HDR business come into play? The idea is that
 instead of dealing with colors that go from black to white (0 to 1), we
 use colors whiter than white (for example, 0 to 8 times white).
 
