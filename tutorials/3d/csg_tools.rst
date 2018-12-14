@@ -190,7 +190,7 @@ Position your furniture in your room as you like and your scene should look this
 
 .. image:: img/csg_room_result.png
 
-You've successfully prototyped a room level with the CSG tools in Godot. CSG tools can be used in designing all kinds of level, such as a maze or a city; explore the limitations of it when designing your game.
+You've successfully prototyped a room level with the CSG tools in Godot. CSG tools can be used for designing all kinds of level, such as a maze or a city; explore the limitations of it when designing your game.
 
 
 
