@@ -93,7 +93,7 @@ options.
 
 .. image:: img/gridmap_select.png
 
-In the menu, you can also change the axis you're drawing on as well as shift
+In the menu, you can also change the axis you're drawing on, as well as shift
 the drawing plane higher or lower on its axis.
 
 .. image:: img/gridmap_shift_axis.png
