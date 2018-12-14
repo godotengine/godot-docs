@@ -127,7 +127,7 @@ Create a ``CSGBox`` and adjust its dimension for the bed. Create another ``CSGBo
 
 .. image:: img/csg_bed_mat.png
 
-We will create another ``CSGCombiner``\ , named ``pillow``\ , as the child of  ``bed``. The scene tree should look like this:
+We will create another ``CSGCombiner``, named ``pillow``, as the child of  ``bed``. The scene tree should look like this:
 
 .. image:: img/csg_bed_tree.png
 
@@ -154,7 +154,7 @@ Create a ``CSGCombiner`` and name it ``lamp``.
 
 A lamp consists of 3 parts: the stand, the pole, and the lampshade.
 
-Create a ``CSGCylinder``\ , enable the ``cone`` option and make it the stand. Create another ``CSGCylinder`` and adjust the dimensions to use it as a pole.
+Create a ``CSGCylinder``, enable the ``cone`` option and make it the stand. Create another ``CSGCylinder`` and adjust the dimensions to use it as a pole.
 
 .. image:: img/csg_lamp_pole_stand.png
 
