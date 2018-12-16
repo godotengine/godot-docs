@@ -17,7 +17,7 @@ move each joint in our arm to get to that target.
 Initial problem
 ~~~~~~~~~~~~~~~
 
-In Godot parlance, the task we want to solve here is to position
+We want to position
 the 2 angles on the joints of our upperarm and lowerarm so that the tip of the
 lowerarm bone is as close to the target point (which is set by the target Vector3)
 as possible using only rotations. This task is calculation-intensive and never
