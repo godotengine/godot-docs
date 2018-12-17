@@ -27,7 +27,7 @@ IK problem.
 
 .. image:: img/inverse_kinematics.png
 
-For easy calculation in this chapter, we consider the target being a
+For easy calculation in this chapter, we assume the target is a
 child of Skeleton. If this is not the case for your setup, you can always
 reparent it in your script, as you will save on calculations if you
 do so.
