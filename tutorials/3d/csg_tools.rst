@@ -158,7 +158,7 @@ Create a ``CSGCylinder``, enable the ``cone`` option and make it the stand. Crea
 
 .. image:: img/csg_lamp_pole_stand.png
 
-We will use a ``CSGPolygon`` for the lampshade. Use the ``Spin`` mode for the ``CSGPolygon`` and draw a trapezoid (American English) while in ``Front View`` (numeric keypad 1); this shape will extrude around the origin and form the lampshade.
+We will use a ``CSGPolygon`` for the lampshade. Use the ``Spin`` mode for the ``CSGPolygon`` and draw a `trapezoid <https://en.wikipedia.org/wiki/Trapezoid>`_ while in ``Front View`` (numeric keypad 1); this shape will extrude around the origin and form the lampshade.
 
 .. image:: img/csg_lamp_spin.png
 
