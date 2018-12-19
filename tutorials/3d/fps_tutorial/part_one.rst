@@ -41,10 +41,10 @@ Throughout the course of this tutorial series, we will cover how:
           this tutorial series.
 
           Remember: Making 3D games is much harder than making 2D games. If you do not know
-          how to make 2D games you will likely struggle making 3D games.
+          how to make 2D games, you will likely struggle making 3D games.
 
-          This tutorial assumes you know have experience working with the Godot editor,
-          have basic programming experience in GDScript, and have basic experience in game development.
+          This tutorial assumes you have experience working with the Godot editor,
+          basic programming experience in GDScript, and basic experience in game development.
 
 You can find the start assets for this tutorial here: :download:`Godot_FPS_Starter.zip <files/Godot_FPS_Starter.zip>`
 
@@ -71,18 +71,18 @@ the environment.
 
 .. image:: img/PartOneFinished.png
 
-By the end of this part you will have a working first person character who can move around the game environment,
-look around with a mouse based first person camera, that can jump into the air, turn on and off a flash light, and sprint.
+By the end of this part, you will have a working first-person character who can move around the game environment,
+sprint, look around with a mouse based first person camera, jump into the air, and turn a flash light on and off.
 
 Getting everything ready
 ------------------------
 Launch Godot and open up the project included in the starter assets.
 
 .. note:: While these assets are not necessarily required to use the scripts provided in this tutorial,
-          they will make the tutorial much easier to follow as there are several pre-setup scenes we
+          they will make the tutorial much easier to follow, as there are several pre-setup scenes we
           will be using throughout the tutorial series.
 
-First, go open the project settings and go to the "Input Map" tab. You'll find several
+First, open the project settings and go to the "Input Map" tab. You'll find several
 actions have already been defined. We will be using these actions for our player.
 Feel free to change the keys bound to these actions if you want.
 
@@ -96,7 +96,7 @@ we go through this tutorial series.
 For now let's open up ``Player.tscn``.
 
 .. note:: There are a bunch of scenes and a few textures in the ``Assets`` folder. You can look at these if you want,
-          but we will not be exploring through ``Assets`` in this tutorial series. ``Assets`` contains all of the models used
+          but we will not be exploring through ``Assets`` in this tutorial series. ``Assets`` contains all the models used
           for each of the levels, as well as some textures and materials.
 
 Making the FPS movement logic
@@ -115,18 +115,18 @@ feel like they are balancing on a single point.
 We do want the 'feet' slightly higher than the bottom of the capsule so we can roll over slight edges.
 Where to place the 'feet' is dependent on your levels and how you want your player to feel.
 
-.. note:: Many times player will notice how the collision shape being circular when
+.. note:: Many times the player will notice the collision shape being circular when
           they walk to an edge and slide off. We are adding the small square at the
           bottom of the capsule to reduce sliding on, and around, edges.
 
 Another thing to notice is how many nodes are children of ``Rotation_Helper``. This is because
-``Rotation_Helper`` contains all of the nodes we want to rotate on the ``X`` axis (up and down).
+``Rotation_Helper`` contains all the nodes we want to rotate on the ``X`` axis (up and down).
 The reason behind this is so we can rotate ``Player`` on the ``Y`` axis, and ``Rotation_helper`` on
 the ``X`` axis.
 
-.. note:: If we did not use ``Rotation_helper`` then we'd likely have cases where we are rotating
-          both the ``X`` and ``Y`` axes at the same time. This can lead to undesirable results, as we then
-          could rotate on all three axes in some cases.
+.. note:: Had we not used ``Rotation_helper``, we would've likely had cases of rotating on
+          both the ``X`` and ``Y`` axes simultaneously, potentially futher degenerating into a state of
+          rotation on all three axes in some cases.
 
           See :ref:`using transforms <doc_using_transforms>` for more information
 
@@ -211,7 +211,7 @@ Add the following code to ``Player.gd``:
         dir.y = 0
         dir = dir.normalized()
 
-        vel.y += delta*GRAVITY
+        vel.y += delta * GRAVITY
 
         var hvel = vel
         hvel.y = 0
@@ -225,10 +225,10 @@ Add the following code to ``Player.gd``:
         else:
             accel = DEACCEL
 
-        hvel = hvel.linear_interpolate(target, accel*delta)
+        hvel = hvel.linear_interpolate(target, accel * delta)
         vel.x = hvel.x
         vel.z = hvel.z
-        vel = move_and_slide(vel,Vector3(0,1,0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
+        vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 
     func _input(event):
         if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -247,7 +247,7 @@ This is a lot of code, so let's break it down function by function:
          If you do this, all of the code copied will be using spaces instead of tabs.
 
          To convert the spaces to tabs in the script editor, click the "edit" menu and select "Convert Indent To Tabs".
-         This will convert all of the spaces into tabs. You can select "Convert Indent To Spaces" to convert t back into spaces.
+         This will convert all the spaces into tabs. You can select "Convert Indent To Spaces" to convert tabs back into spaces.
 
 _________
 
@@ -263,8 +263,8 @@ Let's go through each of the class variables:
 - ``vel``: Our :ref:`KinematicBody <class_KinematicBody>`'s velocity.
 - ``MAX_SPEED``: The fastest speed we can reach. Once we hit this speed, we will not go any faster.
 - ``JUMP_SPEED``: How high we can jump.
-- ``ACCEL``: How fast we accelerate. The higher the value, the faster we get to max speed.
-- ``DEACCEL``: How fast we are going to decelerate. The higher the value, the faster we will come to a complete stop.
+- ``ACCEL``: How quickly we accelerate. The higher the value, the sooner we get to max speed.
+- ``DEACCEL``: How quickly we are going to decelerate. The higher the value, the sooner we will come to a complete stop.
 - ``MAX_SLOPE_ANGLE``: The steepest angle our :ref:`KinematicBody <class_KinematicBody>` will consider as a 'floor'.
 - ``camera``: The :ref:`Camera <class_Camera>` node.
 - ``rotation_helper``: A :ref:`Spatial <class_Spatial>` node holding everything we want to rotate on the X axis (up and down).
@@ -285,14 +285,14 @@ Now let's look at the ``_ready`` function:
 
 First we get the ``camera`` and ``rotation_helper`` nodes and store them into their variables.
 
-Then we need to set the mouse mode to captured so the mouse cannot leave the game window.
+Then we need to set the mouse mode to captured, so the mouse cannot leave the game window.
 
 This will hide the mouse and keep it at the center of the screen. We do this for two reasons:
-The first reason being we do not want to the player to see their mouse cursor as they play.
+The first reason being we do not want the player to see their mouse cursor as they play.
 
 The second reason is because we do not want the cursor to leave the game window. If the cursor leaves
 the game window there could be instances where the player clicks outside the window, and then the game
-would lose focus. To assure neither of these issues happen, we capture the mouse cursor.
+would lose focus. To assure neither of these issues happens, we capture the mouse cursor.
 
 .. note:: see :ref:`Input documentation <class_Input>` for the various mouse modes. We will only be using
           ``MOUSE_MODE_CAPTURED`` and ``MOUSE_MODE_VISIBLE`` in this tutorial series.
@@ -303,10 +303,10 @@ Next let's take a look at ``_physics_process``:
 
 All we're doing in ``_physics_process`` is calling two functions: ``process_input`` and ``process_movement``.
 
-``process_input`` will be where we store all of the code relating to player input. We want to call it first before
-anything else so we have fresh player input to work with.
+``process_input`` will be where we store all the code relating to player input. We want to call it first, before
+anything else, so we have fresh player input to work with.
 
-``process_movement`` is where we'll send all of the data necessary to the :ref:`KinematicBody <class_KinematicBody>`
+``process_movement`` is where we'll send all the data necessary to the :ref:`KinematicBody <class_KinematicBody>`
 so it can move through the game world.
 
 _________
@@ -369,7 +369,7 @@ space will *always point in the same direction*.
 Local space is different, because it takes the rotation of the object into account.
 
 Local space can be defined as follows:
-The space in which a object's position is the origin of the universe. Because the position
+The space in which an object's position is the origin of the universe. Because the position
 of the origin can be at ``N`` many locations, the values derived from local space change
 with the position of the origin.
 
@@ -409,25 +409,25 @@ Here is what the :ref:`Spatial <class_Spatial>` gizmo shows when you are using l
 Notice how the arrows follow the rotation of the object on the left, which looks exactly
 the same as the 3D example for local space.
 
-.. note:: You can change between local and world space modes by pressing the little cube button
+.. note:: You can change between local and world space modes by pressing T or the little cube button
           when you have a :ref:`Spatial <class_Spatial>` based node selected.
 
 .. image:: img/LocalSpaceExampleGizmo.png
 
 Local vectors are confusing even for more experienced game developers, so do not worry if this all doesn't make a
 lot of sense. The key thing to remember about local vectors is that we are using local coordinates to get direction
-from the object's point of view, as opposed to using world vectors which give direction from the world's point of view.
+from the object's point of view, as opposed to using world vectors, which give direction from the world's point of view.
 
 _________
 
 Okay, back to ``process_input``:
 
 Next we make a new variable called ``input_movement_vector`` and assign it to an empty :ref:`Vector2 <class_Vector2>`.
-We will use this to make a virtual axis of sorts so map the player's input to movement.
+We will use this to make a virtual axis of sorts, to map the player's input to movement.
 
 .. note:: This may seem overkill for just the keyboard, but this will make sense later when we add joypad input.
 
-Based on which directional movement action is pressed, we add or remove from ``input_movement_vector``.
+Based on which directional movement action is pressed, we add to or subtract from ``input_movement_vector``.
 
 After we've checked each of the directional movement actions, we normalize ``input_movement_vector``. This makes it where ``input_movement_vector``'s values
 are within a ``1`` radius unit circle.
@@ -453,7 +453,7 @@ Then we check for the ``ui_cancel`` action. This is so we can free/capture the m
 is pressed. We do this because otherwise we'd have no way to free the cursor, meaning it would be stuck until you terminate the
 runtime.
 
-To free/capture the cursor, we check to see if the mouse is visible (freed) or not. If it is, we capture it, and if it's not we make it visible (free it).
+To free/capture the cursor, we check to see if the mouse is visible (freed) or not. If it is, we capture it, and if it's not, we make it visible (free it).
 
 That's all we're doing right now for ``process_input``. We'll come back several times to this function as we add more complexities to our player.
 
@@ -461,10 +461,10 @@ _________
 
 Now let's look at ``process_movement``:
 
-First we assure that ``dir`` does not have any movement on the ``Y`` axis by setting it's ``Y`` value to zero.
+First we ensure that ``dir`` does not have any movement on the ``Y`` axis by setting it's ``Y`` value to zero.
 
-Next we normalize ``dir`` to assure we're within a ``1`` radius unit circle. This makes it where we're moving at a constant speed regardless
-of whether the player is moving straight, or moving diagonally. If we did not normalize, the player would move faster on the diagonal than when going straight.
+Next we normalize ``dir`` to ensure we're within a ``1`` radius unit circle. This makes it where we're moving at a constant speed regardless
+of whether the player is moving straight or diagonally. If we did not normalize, the player would move faster on the diagonal than when going straight.
 
 Next we add gravity to the player by adding ``GRAVITY * delta`` to the player's ``Y`` velocity.
 
@@ -479,7 +479,7 @@ We then take the dot product of ``hvel`` to see if the player is moving accordin
 ``Y`` velocity, meaning we are only checking if the player is moving forwards, backwards, left, or right.
 
 
-If the player is moving according to ``hvel``, then we set ``accel`` to the ``ACCEL`` constant so the player will accelerate, otherwise we set ``accel` to
+If the player is moving according to ``hvel``, then we set ``accel`` to the ``ACCEL`` constant so the player will accelerate, otherwise we set ``accel`` to
 our ``DEACCEL`` constant so the player will decelerate.
 
 Then we interpolate the horizontal velocity, set the player's ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
@@ -491,7 +491,7 @@ _________
 
 The final function we have is the ``_input`` function, and thankfully it's fairly short:
 
-First we make sure that the event we are dealing with is a :ref:`InputEventMouseMotion <class_InputEventMouseMotion>` event.
+First we make sure that the event we are dealing with is an :ref:`InputEventMouseMotion <class_InputEventMouseMotion>` event.
 We also want to check if the cursor is captured, as we do not want to rotate if it is not.
 
 .. note:: See :ref:`Mouse and input coordinates <doc_mouse_and_input_coordinates>` for a list of
@@ -516,22 +516,22 @@ Then we rotate the entire :ref:`KinematicBody <class_KinematicBody>` on the ``Y`
 Finally, we clamp the ``rotation_helper``'s ``X`` rotation to be between ``-70`` and ``70``
 degrees so the player cannot rotate themselves upside down.
 
-.. tip:: see :ref:`using transforms <doc_using_transforms>` for more information on rotating transforms.
+.. tip:: See :ref:`using transforms <doc_using_transforms>` for more information on rotating transforms.
 
 _________
 
-To test the code open up the scene named ``Testing_Area.tscn``, if it's not already opened up. We will be using
+To test the code, open up the scene named ``Testing_Area.tscn``, if it's not already opened up. We will be using
 this scene as we go through the next few tutorial parts, so be sure to keep it open in one of your scene tabs.
 
-Go ahead and test your code either by pressing ``F4`` with ``Testing_Area.tscn`` as the open tab, by pressing the
-play button in the top right corner, or by pressing ``F6``.
+Go ahead and test your code either by pressing ``F6`` with ``Testing_Area.tscn`` as the open tab, by pressing the
+play button in the top right corner, or by pressing ``F5``.
 You should now be able to walk around, jump in the air, and look around using the mouse.
 
 
 Giving the player a flash light and the option to sprint
 --------------------------------------------------------
 
-Before we get to making the weapons work, there is a couple more things we should add.
+Before we get to making the weapons work, there are a couple more things we should add.
 
 Many FPS games have an option to sprint and a flashlight. We can easily add these to our player,
 so let's do that!
@@ -546,7 +546,7 @@ First we need a few more class variables in our player script:
 
     var flashlight
 
-All of the sprinting variables work exactly the same as the non sprinting variables with
+All the sprinting variables work exactly the same as the non sprinting variables with
 similar names.
 
 ``is_sprinting`` is a boolean to track whether the player is currently sprinting, and ``flashlight`` is a variable
@@ -558,7 +558,7 @@ Now we need to add a few lines of code, starting in ``_ready``. Add the followin
 
     flashlight = $Rotation_Helper/Flashlight
 
-This gets the flash light node and assigns it to the ``flashlight`` variable.
+This gets the ``Flashlight`` node and assigns it to the ``flashlight`` variable.
 
 _________
 
@@ -590,7 +590,7 @@ when the ``movement_sprint`` action is released. In ``process_movement`` we'll a
 they sprint. Here in ``process_input`` we are just going to change the ``is_sprinting`` variable.
 
 We do something similar to freeing/capturing the cursor for handling the flashlight. We first check to see if the ``flashlight`` action
-was just pressed. If it was, we then check to see if ``flashlight`` is visible in the scene tree. If it is, then we hide it, and if it's not we show it.
+was just pressed. If it was, we then check to see if ``flashlight`` is visible in the scene tree. If it is, then we hide it, and if it's not, we show it.
 
 _________
 
@@ -606,7 +606,7 @@ Now we need to change a couple things in ``process_movement``. First, replace ``
 Now instead of always multiplying ``target`` by ``MAX_SPEED``, we first check to see if the player is sprinting or not.
 If the player is sprinting, we instead multiply ``target`` by ``MAX_SPRINT_SPEED``.
 
-Now all that's left is changing the acceleration when sprinting. Change ``accel = ACCEL`` to the following:
+Now all that's left is to change the acceleration when sprinting. Change ``accel = ACCEL`` to the following:
 
 ::
 
@@ -616,20 +616,20 @@ Now all that's left is changing the acceleration when sprinting. Change ``accel 
         accel = ACCEL
 
 
-Now when the player is sprinting we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.
+Now, when the player is sprinting, we'll use ``SPRINT_ACCEL`` instead of ``ACCEL``, which will accelerate the player faster.
 
 _________
 
 You should now be able to sprint if you press the ``shift`` button, and can toggle the flash light on and off by pressing the ``F`` button!
 
-Go give it a whirl! You can change the sprint related class variables to make the player faster or slower when sprinting!
+Go try it out! You can change the sprint-related class variables to make the player faster or slower when sprinting!
 
 Final notes
 -----------
 
 .. image:: img/PartOneFinished.png
 
-Phew! That was a lot of work. Now you have a fully working first person character!
+Whew! That was a lot of work. Now you have a fully working first person character!
 
 In :ref:`doc_fps_tutorial_part_two` we will add some guns to our player character.
 
