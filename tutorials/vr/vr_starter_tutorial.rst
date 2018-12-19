@@ -101,7 +101,8 @@ Starting VR
 
 First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``Game`` node and make a new script called ``Game.gd``. Add the following code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Spatial
 
@@ -115,6 +116,29 @@ First, let's get the VR up and going! While ``Game.tscn`` is open, select the ``
             Engine.target_fps = 90
             # Also, the physics FPS in the project settings is also 90 FPS. This makes the physics
             # run at the same frame rate as the display, which makes things look smoother in VR!
+
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    public class Game : Spatial
+    {
+        public override void _Ready()
+        {
+            var VR = ARVRServer.FindInterface("OpenVR");
+            if (VR != null && VR.Initialize())
+            {
+                GetViewport().Arvr = true;
+                GetViewport().Hdr = false;
+
+                OS.VsyncEnabled = false;
+                Engine.TargetFps = 90;
+                // Also, the physics FPS in the project settings is also 90 FPS. This makes the physics
+                // run at the same frame rate as the display, which makes things look smoother in VR!
+            }
+        }
+    }
 
 For this to work, you will need to have the `OpenVR asset from the Asset Library <https://godotengine.org/asset-library/asset/150>`_. The OpenVR asset is included in the starter assets, but there may be newer
 versions that work better, so I would highly suggest deleting the ``addons`` folder, then going to the Asset Library and downloading the newest
@@ -161,7 +185,8 @@ We also have a larger :ref:`Area <class_Area>` called ``Sleep_Area``, which will
 Select the root node, either ``Left_Controller`` or ``Right_Controller`` depending on which scene you chose, and create a new script called ``VR_Controller.gd``.
 Add the following to ``VR_Controller.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends ARVRController
 
@@ -635,7 +660,8 @@ shader. Feel free to look at the custom shader if you want, it is just a slightl
 
 With ``Movement_Vignette`` selected, make a new script called ``Movement_Vignette.gd``. Add the following code to ``Movement_Vignette.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Control
 
@@ -699,7 +725,8 @@ with a :ref:`CollisionShape <class_CollisionShape>`, a mesh, and a audio player.
 Select the ``Sphere_Target`` root node, the :ref:`StaticBody <class_StaticBody>` node, and make a new script called ``Sphere_Target.gd``. Add the following
 to ``Sphere_Target.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Spatial
 
@@ -741,7 +768,6 @@ to ``Sphere_Target.gd``:
 
             get_node("AudioStreamPlayer").play()
             get_tree().root.get_node("Game").remove_sphere()
-
 
 Let's go over how this script works, starting with the class variables.
 
@@ -787,7 +813,8 @@ Now, you may have noticed we are calling a function in ``Game.gd`` we have not m
 
 First, open up ``Game.gd`` and add the following additional class variables:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var spheres_left = 10
     var sphere_ui = null
@@ -797,7 +824,8 @@ First, open up ``Game.gd`` and add the following additional class variables:
 
 Next, we need to add the ``remove_sphere`` function. Add the following to ``Game.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func remove_sphere():
         spheres_left -= 1
@@ -825,7 +853,8 @@ The other thing to notice is how there is a :ref:`Raycast <class_Raycast>` node 
 Now that we have looked at the scene, let's write the code. Select the ``Pistol`` root node, the :ref:`RigidBody <class_RigidBody>` node, and make a new
 script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody
 
@@ -887,7 +916,6 @@ script called ``Pistol.gd``. Add the following code to ``Pistol.gd``:
     # Called when the object is dropped.
     func dropped():
         laser_sight_mesh.visible = false
-
 
 Let's go over what this script does, starting with the class variables:
 
@@ -958,7 +986,8 @@ in a cone shape, and I removed the laser pointer so the player has to aim withou
 
 Alright, select the ``Shotgun`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called ``Shotgun.gd``. Add the following to ``Shotgun.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody
 
@@ -1051,7 +1080,8 @@ the removal of the bomb with the end of the explosion :ref:`Particles <class_Par
 Alright, now let's write the code for the bomb. Select the ``Bomb`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Bomb.gd``. Add the following code to
 ``Bomb.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody
 
@@ -1217,7 +1247,8 @@ This is because we need to roughly know where on the blade the sword collided, a
 Other than that, there really is not much of note, so let's write the code. Select the ``Sword`` root node, the :ref:`RigidBody <class_RigidBody>` and make a new script called
 ``Sword.gd``. Add the following code to ``Sword.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody
 
@@ -1322,7 +1353,8 @@ Okay, let's update the UI as the sphere targets are destroyed.
 Open up ``Game.tscn`` and then expand the ``GUI`` :ref:`MeshInstance <class_MeshInstance>`. From there, expand the ``GUI`` :ref:`Viewport <class_Viewport>` node
 and then select the ``base_control`` node. Add a new script called ``Base_Control``, and add the following:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Control
 
@@ -1355,7 +1387,8 @@ Finally, before we finish this tutorial, let's add a way to reset the game while
 Open up ``Reset_Box.tscn``, which you will find in ``Scenes``. Select the ``Reset_Box`` :ref:`RigidBody <class_RigidBody>` node and make a new script called ``Reset_Box.gd``.
 Add the following code to ``Reset_Box.gd``:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends RigidBody
 
