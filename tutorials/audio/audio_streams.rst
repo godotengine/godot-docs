@@ -6,50 +6,50 @@ Audio streams
 Introduction
 ------------
 
-As you might have read already in the :ref:`Audio Buses Tutorial<doc_audio-buses>` ,
+As you might have already read in the :ref:`Audio Buses Tutorial<doc_audio-buses>` ,
 sound is sent to each bus via an AudioStreamPlayer.
 
-There are many types of AudioStreamPlayers which will be explained in detail. Each of it loads
+There are many types of AudioStreamPlayer, which will be explained in detail. Each one loads
 an AudioStream and plays it back.
 
 AudioStream
 -----------
 
 An audio stream is an abstract object that emits sound. It can come from many places, but most commonly
-from the filesystem. Audio files such as .wav or .ogg can be loaded as AudioStreams and placed
+from the filesystem. Audio files, such as .wav or .ogg, can be loaded as AudioStreams and placed
 inside an AudioStreamPlayer.
 
-When using these kind of files, you should choose which one is best for your specific use case:
+Here is a comparison of the two, to help you choose which one fits your specific use case best:
 
-* Audio files of type *.wav* are considerably big, but use little amount of your CPU to play. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects, as the importer will trim them and convert them to IMA-ADPCM.
-* Audio files of type *.ogg* are much smaller, but use considerably more amount of CPU power to play back, so only a few can be played back (especially on mobile!). This format is usually best for music or long sound effect sequences. It also works well for voice at relatively low bitrates.
+* Audio files of type *.wav* are quite large, but use little CPU power to play back. Hundreds of them can be played simultaneously with little impact to performance. This format is usually best for short sound effects, as the importer will trim and convert them to IMA-ADPCM.
+* Audio files of type *.ogg* are much smaller, but use considerably more CPU power to play back, so only a few can be played back (especially on mobile!). This format is usually best for music or long sound effect sequences. It also works well for voice at relatively low bitrates.
 
-Keep in mind both .wav and .ogg generally don't contain looping information, so this information must be set on the import options of each:
+Keep in mind neither .wav nor .ogg usually contains looping information, so this information must be set on the import options of each:
 
 .. image:: img/audio_stream_import.png
 
-There are other types of AudioStreams, such as AudioStreamRandomPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
+There are other types of AudioStream, such as AudioStreamRandomPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
 and more will keep appearing in the future.
 
 AudioStreamPlayer
 -----------------
 
-This is the standard stream player, it can play to any given bus. In 5.1 sound, it can send to stereo mix or front speakers.
+This is the standard stream player; it can play to any given bus. In 5.1 sound, it can send to stereo mix or front speakers.
 
 AudioStreamPlayer2D
 -------------------
 
-This is a variant of AudioStreamPlayer but emits sound in a 2D positional environment. When close to the left of the screen, the panning will go left. When close to the right side, it will go right.
+This is a variant of AudioStreamPlayer, but emits sound in a 2D positional environment. When close to the left of the screen, the panning will go left. When close to the right side, it will go right.
 
-While it's possible to send these effects to specific audio buses, one of the best strategies is to use an Area2D to divert sound to a specific bus. This allows to create buses with different
-reverb or sound qualities and make the emitter will automatically send to them when entering the Area2D shapes.
+While it's possible to send these effects to specific audio buses, one of the best strategies is to use an Area2D to divert sound to a specific bus. This allows you to create buses with different
+reverb or sound qualities and make it so the emitter will automatically send to them when entering the Area2D shapes.
 
 .. image:: img/audio_stream_2d_area.png
 
 AudioStreamPlayer3D
 -------------------
 
-This is a variant of AudioStreamPlayer but emits sound in a 3D positional environment. Depending on the location of the player relative of the screen, it can position sound in Stereo, 5.1 or 7.1 depending
+This is a variant of AudioStreamPlayer, but emits sound in a 3D positional environment. Depending on the location of the player relative to the screen, it can position sound in Stereo, 5.1 or 7.1 depending
 on the chosen audio setup.
 
 Similar to AudioStreamPlayer2D, an Area can divert the sound to an audio bus.
@@ -70,7 +70,7 @@ At the same time, a special bus layout is created where each area receives the r
 
 .. image:: img/audio_stream_reverb_bus2.png
 
-The Area Reverb Bus section has also a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard
+The Area Reverb Bus section also has a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard
 almost uniformly across the room even though the source is far away. Playing around with this parameter can simulate that effect.
 
 Doppler
