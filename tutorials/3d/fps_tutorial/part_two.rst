@@ -156,7 +156,7 @@ _________
 Lets start with this script's class variables:
 
 - ``states``: A dictionary for holding our animation states. (Further explanation below)
-- ``animation_speeds``: A dictionary for holding all of the speeds we want to play our animations at.
+- ``animation_speeds``: A dictionary for holding all the speeds at which we want to play our animations.
 - ``current_state``: A variable for holding the name of the animation state we are currently in.
 - ``callback_function``: A variable for holding the callback function. (Further explanation below)
 
@@ -164,7 +164,7 @@ If you are familiar with state machines, then you may have noticed that ``states
 like a basic state machine. Here is roughly how ``states`` is set up:
 
 ``states`` is a dictionary with the key being the name of the current state, and the value being
-an array holding all of the animations (states) we can transition to. For example, if we are currently in the
+an array holding all the animations (states) we can transition to. For example, if we are currently in the
 ``Idle_unarmed`` state, we can only transition to ``Knife_equip``, ``Pistol_equip``, ``Rifle_equip``, and
 ``Idle_unarmed``.
 
@@ -172,7 +172,7 @@ If we try to transition to a state that is not included in the possible transiti
 then we get a warning message and the animation does not change. We can also automatically
 transition from some states into others, as will be explained further below in ``animation_ended``
 
-.. note:: For the sake of keeping this tutorial simple we are not using a 'proper'
+.. note:: For the sake of keeping this tutorial simple, we are not using a 'proper'
           state machine. If you are interested to know more about state machines,
           see the following articles:
 
@@ -193,7 +193,7 @@ effectively allowing us to call a function from another script, which is how we 
 
 _________
 
-Now lets look at ``_ready``.
+Now let's look at ``_ready``.
 
 First we are setting our animation to ``Idle_unarmed`` using the ``set_animation`` function,
 so we for sure start in that animation.
@@ -209,13 +209,13 @@ Lets look at ``set_animation`` next.
 *if* we can transition to it. In other words, if the animation state we are currently in
 has the passed in animation state name in ``states``, then we will change to that animation.
 
-To start we check if the passed in animation name is the same name as the animation currently playing.
+Firstly, we check if the passed in animation name is the same name as the animation currently playing.
 If they are the same, then we write a warning to the console and return ``true``.
 
-Next we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
+Secondly, we see if :ref:`AnimationPlayer <class_AnimationPlayer>` has the animation with the name ``animation_name`` using ``has_animation``.
 If it does not, we return ``false``.
 
-Then we check if ``current_state`` is set or not. If ``current_state`` is *not* currently set, we
+Thirdly, we check whether ``current_state`` is set. If ``current_state`` is *not* currently set, then we
 set ``current_state`` to the passed in animation name and tell :ref:`AnimationPlayer <class_AnimationPlayer>` to start playing the animation with
 a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we return ``true``.
 
@@ -229,7 +229,7 @@ a blend time of ``-1`` at the speed set in ``animation_speeds`` and then we retu
 
           We set the blend time to ``-1`` because we want to instantly change animations.
 
-If we have a state in ``current_state``, then we get all of the possible states we can transition to.
+If we have a state in ``current_state``, then we get all the possible states we can transition to.
 
 If the animation name is in the list of possible transitions, we set ``current_state`` to the passed
 in animation (``animation_name``), tell :ref:`AnimationPlayer <class_AnimationPlayer>` to play the animation with a blend time of ``-1`` at the speed set in
@@ -242,20 +242,20 @@ Now lets look at ``animation_ended``.
 ``animation_ended`` is the function that will be called by :ref:`AnimationPlayer <class_AnimationPlayer>` when it's done playing an animation.
 
 
-For certain animation states, we may need to transition into another state when its finished. To handle this, we
+For certain animation states, we may need to transition into another state when it's finished. To handle this, we
 check for every possible animation state. If we need to, we will transition into another state.
 
 .. warning:: If you are using your own animated models, make sure that none of the animations are set
              to loop. Looping animations do not send the ``animation_finished`` signal when they reach
              the end of the animation and are about to loop again.
 
-.. note:: the transitions in ``animation_ended`` ideally would be part of the data in ``states``, but in
+.. note:: The transitions in ``animation_ended`` would ideally be part of the data in ``states``, but in
           an effort to make the tutorial easier to understand, we'll hard code each state transition
           in ``animation_ended``.
 
 _________
 
-Finally we have ``animation_callback``. This function will be called by a function track in our animations.
+Finally, there is ``animation_callback``. This function will be called by a function track in our animations.
 If we have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, then we call that passed in function. If we do not
 have a :ref:`FuncRef <class_FuncRef>` assigned to ``callback_function``, we print out a warning to the console.
 
@@ -266,7 +266,7 @@ Getting the animations ready
 ----------------------------
 
 Now that we have a working animation manager, we need to call it from our player script.
-Before that though, we need to set some animation callback tracks in our firing animations.
+Before that, though, we need to set some animation callback tracks in our firing animations.
 
 Open up ``Player.tscn`` if you don't have it open and navigate to the :ref:`AnimationPlayer <class_AnimationPlayer>` node
 (``Player`` -> ``Rotation_Helper`` -> ``Model`` -> ``Animation_Player``).
@@ -280,7 +280,7 @@ bar of animation window, right next to the loop button and the up arrow.
 
 .. image:: img/AnimationPlayerAddTrack.png
 
-This will bring up a window with three choices. We're wanting to add a function callback track, so click the
+This will bring up a window with three choices. We want to add a function callback track, so click the
 option that reads "Add Call Func Track". This will open a window showing the entire node tree. Navigate to the
 :ref:`AnimationPlayer <class_AnimationPlayer>` node, select it, and press OK.
 
@@ -290,7 +290,7 @@ Now at the bottom of list of animation tracks you will have a green track that r
 Now we need to add the point where we want to call our callback function. Scrub the timeline until you
 reach the point where the muzzle starts to flash.
 
-.. note:: The timeline is the window where all of the points in our animation are stored. Each of the little
+.. note:: The timeline is the window where all the points in our animation are stored. Each of the little
           points represents a point of animation data.
 
           Scrubbing the timeline means moving ourselves through the animation. So when we say "scrub the timeline
@@ -358,7 +358,7 @@ so we cannot change one of the transform tracks by accident.
 
 .. tip:: Be sure to save your work!
 
-With that done, we are almost ready to start adding the ability to fire to our player script! We need to setup one last scene:
+With that done, we are almost ready to start adding the ability to fire to our player script! We need to set up one last scene:
 The scene for our bullet object.
 
 Creating the bullet scene
@@ -378,7 +378,7 @@ and then move on, and the bullet itself with handle checking for collisions, sen
 
 Another advantage is we can have more complex bullet movement. If we want to make the bullet fall ever so slightly as time goes on, we can make the bullet
 controlling script slowly push the bullet towards the ground. Using an object also makes the bullet take time to reach its target, it doesn't instantly
-hit whatever its pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
+hit whatever it's pointed at. This feels more realistic because nothing in real life moves instantly from one point to another.
 
 One of the huge disadvantages is performance. While having each bullet calculate their own paths and handle their own collision allows for a lot of flexibility,
 it comes at the cost of performance. With this method we are calculating every bullet's movement every step, and while this may not be a problem for a few dozen
@@ -391,7 +391,7 @@ because they generally bounce around the world before exploding.
 .. note:: While I cannot say for sure this is the case, these games *probably* use bullet objects in some form or another:
           (These are entirely from my observations. **They may be entirely wrong**. I have never worked on **any** of the following games)
 
-          - Halo (Rocket launchers, fragment grenades, sniper rifles, brute shot, and more)
+          - Halo (Rocket launchers, fragmentation grenades, sniper rifles, brute shot, and more)
           - Destiny (Rocket launchers, grenades, fusion rifles, sniper rifles, super moves, and more)
           - Call of Duty (Rocket launchers, grenades, ballistic knives, crossbows, and more)
           - Battlefield (Rocket launchers, grenades, claymores, mortars, and more)
@@ -404,7 +404,7 @@ to keep in mind when creating your first person shooter, especially if you plan 
 
 _________
 
-The other way of handling bullet collisions we will be looking at, is raycasting.
+The other way of handling bullet collisions we will be looking at is raycasting.
 
 This method is extremely common in guns that have fast moving bullets that rarely change trajectory over time.
 
@@ -419,16 +419,16 @@ We set the raycast's origin to the starting position of the bullet, and based on
           - Call of Duty (Assault rifles, light machine guns, sub machine guns, pistols, and more)
           - Battlefield (Assault rifles, SMGs, carbines, pistols, and more)
 
-One huge advantage for this method is that it's light on performance.
-Sending a couple hundred rays through space is *way* easier for the computer to calculate than sending a couple hundred
+One huge advantage of this method is that it's light on performance.
+Sending a couple hundred rays through space is *much* easier for the computer to calculate than sending a couple hundred
 bullet objects.
 
 Another advantage is we can instantly know if we've hit something or not exactly when we call for it. For networking this is important because we do not need
 to sync the bullet movements over the Internet, we only need to send whether or not the raycast hit.
 
-Raycasting does have some disadvantages though. One major disadvantage is we cannot easily cast a ray in anything but a linear line.
+Raycasting does have some disadvantages, though. One major disadvantage is we cannot easily cast a ray in anything but a linear line.
 This means we can only fire in a straight line for however long our ray length is. You can create the illusion of bullet movement by casting
-multiple rays at different positions, but not only is this hard to implement in code, it is also is heavier on performance.
+multiple rays at different positions, but not only is this hard to implement in code, it is also heavier on performance.
 
 Another disadvantage is we cannot see the bullet. With bullet objects we can actually see the bullet travel through space if we attach a mesh
 to it, but because raycasts happen instantly, we do not have a decent way of showing the bullets. You could draw a line from the origin of the
@@ -437,7 +437,7 @@ at all, because theoretically the bullets move so fast our eyes could not see it
 
 _________
 
-Lets get the bullet object setup. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
+Let's get the bullet object set up. This is what our pistol will create when the "Pistol_fire" animation callback function is called.
 
 
 Open up ``Bullet_Scene.tscn``. The scene contains :ref:`Spatial <class_Spatial>` node called bullet, with a :ref:`MeshInstance <class_MeshInstance>`
@@ -450,7 +450,7 @@ We are going to move the entire bullet object at the root (``Bullet``). We will 
 
 .. note:: Why are we using an :ref:`Area <class_Area>` and not a :ref:`RigidBody <class_RigidBody>`? The main reason we're not using a :ref:`RigidBody <class_RigidBody>`
           is because we do not want the bullet to interact with other :ref:`RigidBody <class_RigidBody>` nodes.
-          By using an :ref:`Area <class_Area>` we are assuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
+          By using an :ref:`Area <class_Area>` we are ensuring that none of the other :ref:`RigidBody <class_RigidBody>` nodes, including other bullets, will be effected.
 
           Another reason is simply because it is easier to detect collisions with an :ref:`Area <class_Area>`!
 
@@ -490,14 +490,14 @@ Here's the script that will control our bullet:
         queue_free()
 
 
-Lets go through the script:
+Let's go through the script:
 
 _________
 
 First we define a few class variables:
 
-- ``BULLET_SPEED``: The speed the bullet travels at.
-- ``BULLET_DAMAGE``: The damage the bullet will cause to whatever it collides with.
+- ``BULLET_SPEED``: The speed at which the bullet travels.
+- ``BULLET_DAMAGE``: The damage the bullet will cause to anything with which it collides.
 - ``KILL_TIMER``: How long the bullet can last without hitting anything.
 - ``timer``: A float for tracking how long the bullet has been alive.
 - ``hit_something``: A boolean for tracking whether or not we've hit something.
@@ -506,7 +506,7 @@ With the exception of ``timer`` and ``hit_something``, all of these variables
 change how the bullet interacts with the world.
 
 .. note:: The reason we are using a kill timer is so we do not have a case where we
-          get a bullet travelling forever. By using a kill timer, we can assure that
+          get a bullet travelling forever. By using a kill timer, we can ensure that
           no bullets will travel forever and consume resources.
 
 .. tip:: As in :ref:`doc_fps_tutorial_part_one`, we have a couple all uppercase class variables. The reason behind this is the same
@@ -521,17 +521,17 @@ the ``collided`` function when a body enters the area.
 
 _________
 
-``_physics_process`` gets the bullet's local ``Z`` axis. If you look in at the scene
+``_physics_process`` gets the bullet's local ``Z`` axis. If you look at the scene
 in local mode, you will find that the bullet faces the positive local ``Z`` axis.
 
 Next we translate the entire bullet by that forward direction, multiplying in our speed and delta time.
 
-After that we add delta time to our timer and check if the timer has as long or longer
+After that we add delta time to our timer and check whether the timer has reached a value as big or greater
 than our ``KILL_TIME`` constant. If it has, we use ``queue_free`` to free the bullet.
 
 _________
 
-In ``collided`` we check if we've hit something yet or not.
+In ``collided`` we check whether we've hit something yet.
 
 Remember that ``collided`` is only called when a body has entered the :ref:`Area <class_Area>` node.
 If the bullet has not already collided with something, we then proceed to check if the body the bullet has collided
@@ -551,7 +551,7 @@ Then we free the bullet using ``queue_free``.
 
          The reason we need to track whether we've hit something or not is because ``queue_free``
          does not immediately free the node, so the bullet could collide with another body
-         before Godot has a chance to free it. By tracking if the bullet has hit something
+         before Godot has a chance to free it. By tracking whether the bullet has hit something,
          we can make sure that the bullet will only hit one object.
 
 
@@ -569,7 +569,7 @@ axis. ``Gun_aim_point`` will serve as the point where the bullets will for sure 
 with as it goes along.
 
 .. note:: There is a invisible mesh instance for debugging purposes. The mesh is
-          a small sphere that visually shows where the bullets will be aiming at.
+          a small sphere that visually shows at which target the bullets will be aiming.
 
 Open up ``Gun_Fire_Points`` and you'll find three more :ref:`Spatial <class_Spatial>` nodes, one for each
 weapon.
@@ -582,14 +582,14 @@ We are using a :ref:`Raycast <class_Raycast>` node to handle the rifle's bullet 
 we want to fire lots of bullets quickly. If we use bullet objects, it is quite possible
 we could run into performance issues on older machines.
 
-.. note:: If you are wondering where the positions of the points came from, they
+.. note:: If you are wondering from where the positions of the points came, they
           are the rough positions of the ends of each weapon. You can see this by
           going to ``AnimationPlayer``, selecting one of the firing animations
           and scrubbing through the timeline. The point for each weapon should mostly line
           up with the end of each weapon.
 
-Open up ``Knife_Point`` and you'll find a :ref:`Area <class_Area>` node. We are using a :ref:`Area <class_Area>` for the knife
-because we only care for all of the bodies close to us, and because our knife does
+Open up ``Knife_Point`` and you'll find an :ref:`Area <class_Area>` node. We are using an :ref:`Area <class_Area>` for the knife
+because we only care for all the bodies close to us, and because our knife does
 not fire into space. If we were making a throwing knife, we would likely spawn a bullet
 object that looks like a knife.
 
@@ -678,12 +678,12 @@ First we define some class variables we'll need in the script:
 
 The reason we define most of these variables is so we can use them in ``Player.gd``.
 
-All of the weapons we'll make will have all of these variables (minus ``bullet_scene``) so we have
+Each of the weapons we'll make will have all these variables (minus ``bullet_scene``) so we have
 a consistent interface to interact with in ``Player.gd``. By using the same variables/functions in each
 weapon, we can interact with them without having to know which weapon we are using, which makes our code
 much more modular because we can add weapons without having to change much of the code in ``Player.gd`` and it will just work.
 
-We could write all of the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
+We could write all the code in ``Player.gd``, but then ``Player.gd`` will get increasingly harder to manage as we add weapons.
 By using a modular design with a consistent interface, we can keep ``Player.gd`` nice and neat, while also making it easier to add/remove/modify weapons.
 
 _________
@@ -704,30 +704,30 @@ Next let's look at ``fire_weapon``:
 
 The first thing we do is instance the bullet scene we made earlier.
 
-.. tip:: By instancing the scene, we are creating a new node holding all of the node(s) in the scene we instanced, effectively cloning that scene.
+.. tip:: By instancing the scene, we are creating a new node holding all the node(s) in the scene we instanced, effectively cloning that scene.
 
-Then we add a ``clone`` to the first child node of the root of the scene we are currently in. By doing this we're making it a child of the root node of the currently loaded scene.
+Then we add a ``clone`` to the first child node of the root of the scene we are currently in. By doing this, we're making it a child of the root node of the currently loaded scene.
 
 In other words, we are adding a ``clone`` as a child of the first node (whatever is at the top of the scene tree) in the currently loaded/opened scene.
 If the currently loaded/open scene is ``Testing_Area.tscn``, we'd be adding our ``clone`` as a child of ``Testing_Area``, the root node in that scene.
 
-.. warning:: As mentioned later below in the section on adding sounds, this method makes a assumption. This will be explained later
+.. warning:: As mentioned later below in the section on adding sounds, this method makes an assumption. This will be explained later
              in the section on adding sounds in :ref:`doc_fps_tutorial_part_three`
 
 Next we set the global transform of the clone to the ``Pistol_Aim_Point``'s global transform. The reason we do this is so the bullet is spawned at the end of the pistol.
 
 You can see that ``Pistol_Aim_Point`` is positioned right at the end of the pistol by clicking the :ref:`AnimationPlayer <class_AnimationPlayer>` and
-scrolling through ``Pistol_fire``. You'll find the position more or less is at the end of the pistol when it fires.
+scrolling through ``Pistol_fire``. You'll find the position is more or less at the end of the pistol when it fires.
 
 Next we scale it up by a factor of ``4`` because the bullet scene is a little too small by default.
 
-Then we set the bullet's damage (``BULLET_DAMAGE``) to the amount of damage a single pistol bullet does (``DAMAGE``)
+Then we set the bullet's damage (``BULLET_DAMAGE``) to the amount of damage a single pistol bullet does (``DAMAGE``).
 
 _________
 
 Now let's look at ``equip_weapon``:
 
-The first thing we do is check to see if the animation manager is in the pistol's idle animation.
+The first thing we do is check to see whether the animation manager is in the pistol's idle animation.
 If we are in the pistol's idle animation, we set ``is_weapon_enabled`` to ``true`` and return ``true`` because the pistol has successfully
 been equipped.
 
@@ -748,14 +748,14 @@ Finally, let's look at ``unequip_weapon``:
 
 ``unequip_weapon`` is similar to ``equip_weapon``, but instead we're checking things in reverse.
 
-First we check to see if the player is in the idle animation state. Then we check to make sure the player is not in the ``Pistol_unequip`` animation.
-If the player is not in the ``Pistol_unequip`` animation, we want to play ``pistol_unequip`` animation.
+First we check to see whether the player is in the idle animation state. Then we check to make sure the player is not in the ``Pistol_unequip`` animation.
+If the player is not in the ``Pistol_unequip`` animation, we want to play the ``pistol_unequip`` animation.
 
-.. note:: You may be wondering why we are checking to see if the player is in the pistol's idle animation, and then making sure the player is not unequipping right after.
+.. note:: You may be wondering why we are checking to see whether the player is in the pistol's idle animation, and then making sure the player is not unequipping right after.
           The reason behind the additional check is because we could (in rare cases) call ``unequip_weapon`` twice before we've had a chance to process ``set_animation``,
           so we add this additional check to make sure the unequip animation plays.
 
-Next we check to see if the player is in ``Idle_unarmed``, which is the animation state we will transition into from ``Pistol_unequip``. If the player is in ``Idle_unarmed``, then we set
+Next we check to see whether the player is in ``Idle_unarmed``, which is the animation state we will transition into from ``Pistol_unequip``. If the player is in ``Idle_unarmed``, then we set
 ``is_weapon_enabled`` to ``false`` since we are no longer using this weapon, and return ``true`` because we have successfully unequipped the pistol.
 
 If the player is not in ``Idle_unarmed``, we return ``false`` because we have not yet successfully unequipped the pistol.
@@ -763,7 +763,7 @@ If the player is not in ``Idle_unarmed``, we return ``false`` because we have no
 Creating the other two weapons
 ------------------------------
 
-Now that we have all of the code we'll need for the pistol, let's add the code for the rifle and knife next.
+Now that we have all the code we'll need for the pistol, let's add the code for the rifle and knife next.
 
 Select ``Rifle_Point`` (``Player`` -> ``Rotation_Helper`` -> ``Gun_Fire_Points`` -> ``Rifle_Point``) and create a new script called ``Weapon_Rifle.gd``,
 then add the following:
@@ -832,7 +832,7 @@ If the :ref:`Raycast <class_Raycast>` has collided with something, we first get 
 
 Next we want to make sure the body we've collided with is not the player, since we (probably) do not want to give the player the ability to shoot themselves in the foot.
 
-If the body is not the player, we then check to see if they have a function/method called ``bullet_hit``. If they do, we call it and pass in the amount of
+If the body is not the player, we then check to see if it has a function/method called ``bullet_hit``. If it does, we call it and pass in the amount of
 damage this bullet does (``DAMAGE``), and the global transform of the :ref:`Raycast <class_Raycast>` so we can tell from which direction the bullet came.
 
 _________
@@ -894,7 +894,7 @@ As with ``Weapon_Rifle.gd``, the only differences are in ``fire_weapon``, so let
 
 The first thing we do is get the :ref:`Area <class_Area>` child node of ``Knife_Point``.
 
-Next we want to get all of the collision bodies inside the :ref:`Area <class_Area>` using ``get_overlapping_bodies``. This will return a
+Next we want to get all the collision bodies inside the :ref:`Area <class_Area>` using ``get_overlapping_bodies``. This will return a
 list of every body that touches the :ref:`Area <class_Area>`.
 
 We next want to go through each of those bodies.
@@ -912,9 +912,9 @@ we call it, passing in the amount of damage a single knife swipe does (``DAMAGE`
 Making the weapons work
 -----------------------
 
-Lets start making the weapons work in ``Player.gd``.
+Let's start making the weapons work in ``Player.gd``.
 
-First lets start by adding some class variables we'll need for the weapons:
+First let's start by adding some class variables we'll need for the weapons:
 
 ::
 
@@ -932,17 +932,17 @@ First lets start by adding some class variables we'll need for the weapons:
 
     var UI_status_label
 
-Lets go over what these new variables will do:
+Let's go over what these new variables will do:
 
 - ``animation_manager``: This will hold the :ref:`AnimationPlayer <class_AnimationPlayer>` node and its script, which we wrote previously.
 - ``current_weapon_name``: The name of the weapon we are currently using. It has four possible values: ``UNARMED``, ``KNIFE``, ``PISTOL``, and ``RIFLE``.
-- ``weapons``: A dictionary that will hold all of the weapon nodes.
+- ``weapons``: A dictionary that will hold all the weapon nodes.
 - ``WEAPON_NUMBER_TO_NAME``: A dictionary allowing us to convert from a weapon's number to its name. We'll use this for changing weapons.
 - ``WEAPON_NAME_TO_NUMBER``: A dictionary allowing us to convert from a weapon's name to its number. We'll use this for changing weapons.
 - ``changing_weapon``: A boolean to track whether or not we are changing guns/weapons.
 - ``changing_weapon_name``: The name of the weapon we want to change to.
 - ``health``: How much health our player has. In this part of the tutorial we will not be using it.
-- ``UI_status_label``: A label to show how much health we have, and how much ammo we have both in our gun and in reserves.
+- ``UI_status_label``: A label to show how much health we have, and how much ammo we have both in our gun and in reserve.
 
 _________
 
@@ -984,7 +984,7 @@ First we get the :ref:`AnimationPlayer <class_AnimationPlayer>` node and assign 
 to a :ref:`FuncRef <class_FuncRef>` that will call the player's ``fire_bullet`` function. Right now we haven't written the ``fire_bullet`` function,
 but we'll get there soon.
 
-Next we get all of the weapon nodes and assign them to ``weapons``. This will allow us to access the weapon nodes only with their name
+Next we get all the weapon nodes and assign them to ``weapons``. This will allow us to access the weapon nodes only with their name
 (``KNIFE``, ``PISTOL``, or ``RIFLE``).
 
 We then get ``Gun_Aim_Point``'s global position so we can rotate the player's weapons to aim at it.
@@ -1003,7 +1003,7 @@ Finally, we get the UI :ref:`Label <class_Label>` from our HUD.
 
 _________
 
-Lets add a new function call to ``_physics_process`` so we can change weapons. Here's the new code:
+Let's add a new function call to ``_physics_process`` so we can change weapons. Here's the new code:
 
 ::
 
@@ -1017,7 +1017,7 @@ Now we will call ``process_changing_weapons``.
 
 _________
 
-Now lets add all of the player input code for the weapons in ``process_input``. Add the following code:
+Now let's add all the player input code for the weapons in ``process_input``. Add the following code:
 
 ::
 
@@ -1039,7 +1039,7 @@ Now lets add all of the player input code for the weapons in ``process_input``. 
     if Input.is_action_just_pressed("shift_weapon_negative"):
         weapon_change_number -= 1
 
-    weapon_change_number = clamp(weapon_change_number, 0, WEAPON_NUMBER_TO_NAME.size()-1)
+    weapon_change_number = clamp(weapon_change_number, 0, WEAPON_NUMBER_TO_NAME.size() - 1)
 
     if changing_weapon == false:
         if WEAPON_NUMBER_TO_NAME[weapon_change_number] != current_weapon_name:
@@ -1057,7 +1057,7 @@ Now lets add all of the player input code for the weapons in ``process_input``. 
                     animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
     # ----------------------------------
 
-Lets go over the additions, starting with how we're changing weapons.
+Let's go over the additions, starting with how we're changing weapons.
 
 First we get the current weapon's number and assign it to ``weapon_change_number``.
 
@@ -1067,7 +1067,7 @@ Then we check to see if any of the number keys (keys 1-4) are pressed. If they a
 .. note:: The reason key 1 is mapped to ``0`` is because the first element in a list is mapped to zero, not one. Most list/array accessors
           in most programming languages start at ``0`` instead of ``1``. See https://en.wikipedia.org/wiki/Zero-based_numbering for more information.
 
-Next we check to see if ``shift_weapon_positive`` or ``shift_weapon_negative`` is pressed. If one of them are, we add/subtract ``1`` from
+Next we check to see if ``shift_weapon_positive`` or ``shift_weapon_negative`` is pressed. If one of them is, we add/subtract ``1`` from
 ``weapon_change_number``.
 
 Because the player may have shifted ``weapon_change_number`` outside of the number of weapons the player has, we clamp it so it cannot exceed the maximum number of weapons
@@ -1086,7 +1086,7 @@ to the current weapon's ``FIRE_ANIM_NAME``.
 
 _________
 
-Lets add ``process_changing_weapons`` next.
+Let's add ``process_changing_weapons`` next.
 
 Add the following code:
 
@@ -1108,23 +1108,23 @@ Add the following code:
 
             if weapon_unequipped == true:
 
-                var weapon_equiped = false
+                var weapon_equipped = false
                 var weapon_to_equip = weapons[changing_weapon_name]
 
                 if weapon_to_equip == null:
-                    weapon_equiped = true
+                    weapon_equipped = true
                 else:
                     if weapon_to_equip.is_weapon_enabled == false:
-                        weapon_equiped = weapon_to_equip.equip_weapon()
+                        weapon_equipped = weapon_to_equip.equip_weapon()
                     else:
-                        weapon_equiped = true
+                        weapon_equipped = true
 
-                if weapon_equiped == true:
+                if weapon_equipped == true:
                     changing_weapon = false
                     current_weapon_name = changing_weapon_name
                     changing_weapon_name = ""
 
-Lets go over what's happening here:
+Let's go over what's happening here:
 
 The first thing we do is make sure we've received input to change weapons. We do this by making sure ``changing_weapons`` is ``true``.
 
@@ -1132,7 +1132,7 @@ Next we define a variable (``weapon_unequipped``) so we can check whether the cu
 
 Then we get the current weapon from ``weapons``.
 
-If the current weapon is not ``null``, then we need to check to see if the weapon is enabled or not. If the weapon is enabled, we call its ``unequip_weapon`` function
+If the current weapon is not ``null``, then we need to check whether the weapon is enabled. If the weapon is enabled, we call its ``unequip_weapon`` function
 so it will start the unequip animation. If the weapon is not enabled, we set ``weapon_unequipped`` to ``true`` because the weapon has successfully been unequipped.
 
 If the current weapon is ``null``, then we can simply set ``weapon_unequipped`` to ``true``. The reason we do this check is because there is no weapon script/node for
@@ -1148,9 +1148,9 @@ If it is not enabled, we call its ``equip_weapon`` function so it starts to equi
 If the weapon the player wants to change to is ``null``, we simply set ``weapon_equipped`` to ``true`` because we do not have any node/script for ``UNARMED``,
 nor do we have any animations.
 
-Finally, we check to see if the player has successfully equipped the new weapon. If the player has, we set ``changing_weapon`` to ``false`` because the player is no
+Finally, we check to see whether the player has successfully equipped the new weapon. If (s)he has done so, we set ``changing_weapon`` to ``false`` because the player is no
 longer changing weapons.
-We also set ``current_weapon_name`` to ``changing_weapon_name``, since the current weapon has changed, and then we set ``changing_weapon_name`` to an empty string.
+We also set ``current_weapon_name`` to ``changing_weapon_name`` since the current weapon has changed, and then we set ``changing_weapon_name`` to an empty string.
 
 _________
 
@@ -1168,9 +1168,9 @@ points we set earlier in the :ref:`AnimationPlayer <class_AnimationPlayer>` func
         weapons[current_weapon_name].fire_weapon()
 
 
-Lets go over what this function is doing:
+Let's go over what this function does:
 
-First we check to see if the player is changing weapons or not. If the player is changing weapons, we do not want shoot so we ``return``.
+First we check to see whether the player is changing weapons. If the player is changing weapons, we do not want shoot, so we ``return``.
 
 .. tip:: Calling ``return`` stops the rest of the function from being called. In this case, we are not returning a variable
          because we are only interested in not running the rest of the code, and because we are not looking for a returned
@@ -1209,7 +1209,7 @@ Now we need to add this code:
         apply_impulse((bullet_global_trans.origin - global_transform.origin).normalized(), direction_vect * damage)
 
 
-Lets go over how ``bullet_hit`` works:
+Let's go over how ``bullet_hit`` works:
 
 
 First we get the bullet's forward directional vector. This is so we can tell from which direction the bullet will hit the :ref:`RigidBody <class_RigidBody>`.
@@ -1227,19 +1227,19 @@ the :ref:`RigidBody <class_RigidBody>` to the bullet. We do this by subtracting 
 This gets us the distance from the :ref:`RigidBody <class_RigidBody>` to the bullet. We normalize this vector so the size of the collider does not effect how much
 the bullets move the :ref:`RigidBody <class_RigidBody>`.
 
-Finally, we need to calculate the force for the impulse. For this we use the direction the bullet is facing and multiply it by the bullet's damage.
+Finally, we need to calculate the force for the impulse. For this, we use the direction the bullet is facing and multiply it by the bullet's damage.
 This gives a nice result and for stronger bullets, we get a stronger result.
 
 _______
 
-Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody>` nodes we want to effect.
+Now we need to attach this script to all of the :ref:`RigidBody <class_RigidBody>` nodes we want to affect.
 
-Open up ``Testing_Area.tscn`` and select all of the cubes parented to the ``Cubes`` node.
+Open up ``Testing_Area.tscn`` and select all the cubes parented to the ``Cubes`` node.
 
 .. tip:: If you select the top cube, and then hold down ``shift`` and select the last cube, Godot will
-         select all of the cubes in between!
+         select all the cubes in-between!
 
-Once you have all of the cubes selected, scroll down in the inspector until you get to
+Once you have all the cubes selected, scroll down in the inspector until you get to
 the "scripts" section. Click the drop down and select "Load". Open your newly created ``RigidBody_hit_test.gd`` script.
 
 Final notes
@@ -1247,10 +1247,10 @@ Final notes
 
 .. image:: img/PartTwoFinished.png
 
-That was a lot of code! But now with all that done you can go and give your weapons a test!
+That was a lot of code! But now, with all that done, you can go and give your weapons a test!
 
-You should now be able to fire as many bullets as you want on the cubes and
-they will move in response to the bullets colliding into them.
+You should now be able to fire as many bullets as you want at the cubes and
+they will move in response to the bullets colliding with them.
 
 In :ref:`doc_fps_tutorial_part_three`, we will add ammo to the weapons, as well as some sounds!
 
