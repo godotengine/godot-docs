@@ -18,7 +18,7 @@ entirely from the ground up, without relying on any existing audio libraries.
 
 Even the effect processors were written exclusively for Godot (save for
 the pitch shifting library), with games in mind. This allows
-a efficient tradeoff between performance and sound quality.
+an efficient tradeoff between performance and sound quality.
 
 Decibel scale
 -------------
@@ -32,7 +32,7 @@ For those unfamiliar with it, it can be explained with a few facts:
 * The decibel (dB) scale is a relative scale. It represents the ratio of sound power by using 10 times the base 10 logarithm of the ratio (10×log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
 * For every 3dB, sound doubles or halves. 6dB represents a factor 4, 9dB a factor 8, 10dB a factor 10, 20dB a factor 100, etc.
 * Since the scale is logarithmic, true zero (no audio) can't be represented.
-* 0dB is considered the maximum audible volume without *clipping*. This limit is not the human limit but a limit from the sound hardware. Your sound output simply can't output any sound louder than 0dB without distorting it (clipping it).
+* 0dB is considered the maximum audible volume without *clipping*. This limit is not the human limit, but a limit from the sound hardware. Your sound output simply can't output any sound louder than 0dB without distorting it (clipping it).
 * Because of the above, your sound mix should work in a way where the sound output of the *Master Bus* (more on that later), should never be above 0dB.
 * Every 3dB below the 0dB limit, sound energy is *halved*. It means the sound volume at -3dB is half as loud as 0dB. -6dB is half as loud as -3dB and so on.
 * When working with decibels, sound is considered no longer audible between -60dB and -80dB. This makes your working range generally between -60dB and 0dB.
@@ -42,7 +42,7 @@ This can take a bit getting used to, but it's friendlier in the end and will all
 Audio buses
 -----------
 
-Audio buses can be found in the bottom panel of Godot Editor:
+Audio buses can be found in the bottom panel of the Godot Editor:
 
 .. image:: img/audio_buses1.png
 
@@ -54,7 +54,7 @@ avoids creating infinite routing loops!
 
 .. image:: img/audio_buses2.png
 
-In the above image, *Bus 2* is routing its output to *Master* bus.
+In the above image, *Bus 2* is routing its output to the *Master* bus.
 
 Playback of audio to a bus
 --------------------------
@@ -63,7 +63,7 @@ To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream
 
 .. image:: img/audio_buses3.png
 
-Finally toggle the "playing" property to on and sound will flow.
+Finally, toggle the "playing" property to on and sound will flow.
 
 You may also be interested in reading about :ref:`doc_audio-streams` now.
 
@@ -97,14 +97,14 @@ Compressor
 The aim of a dynamic range compressor is to reduce the level of the sound when the amplitude goes over a certain threshold in Decibels.
 One of the main uses of a compressor is to increase the dynamic range while clipping the least possible (when sound goes over 0dB).
 
-Compressor has may uses in the mix, for example:
+The compressor has many uses in the mix, for example:
 
-* It can be used in the Master bus to compress the whole output (Although a Limiter is probably better)
+* It can be used in the Master bus to compress the whole output (Although a Limiter would probably be better)
 * It can be used in voice channels to ensure they sound as even as possible.
-* It can be *Sidechained*. This means, it can reduce the sound level using another audio bus for threshold detection. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
+* It can be *Sidechained*. This means it can reduce the sound level using another audio bus for threshold detection. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
 * It can accentuate transients by using a bit wider attack, meaning it can make sound effects sound more punchy.
 
-There is a lot of bibliography written about compressors, and Godot implementation is rather standard.
+There is a lot of bibliography written about compressors, and the Godot implementation is rather standard.
 
 Delay
 ~~~~~
@@ -120,14 +120,14 @@ For games, it can simulate sound coming from some saturated device or speaker ef
 EQ6, EQ10, EQ21
 ~~~~~~~~~~~~~~~
 
-Godot provides three model of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
+Godot provides three models of equalizers with different band counts. Equalizers are useful on the Master Bus to completely master a mix and give it character. They are
 also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
 HighPassFilter, HighShelfFilter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These are filters that cut frequencies below a specific *Cutoff*. A common use of high pass filters is to add it to effects (or voice) that were recorded too close too a mic and need
-to sound more realistic. It is commonly used for some types of environment like space.
+These are filters that cut frequencies below a specific *Cutoff*. A common use of high pass filters is to add it to effects (or voice) that were recorded too close to a mic and need
+to sound more realistic. It is commonly used for some types of environment, like space.
 
 Limiter
 ~~~~~~~
@@ -176,7 +176,7 @@ This effect has a few algorithms available to enhance the stereo spectrum, in ca
 Automatic bus disabling
 -----------------------
 
-There is no need to disable buses manually when not in use, Godot detects that the bus has been silent for a few seconds and disable it (including all effects).
+There is no need to disable buses manually when not in use; Godot detects that the bus has been silent for a few seconds and disables it (including all effects).
 
 .. figure:: img/audio_buses5.png
 
@@ -191,5 +191,5 @@ If a bus is renamed, however, the reference will be lost and the Stream Player w
 Default bus layout
 ------------------
 
-The default bus layout is automatically saved to the ``res://default_bus_layout.tres`` file. Other bus layouts can be saved/retrieved from files in case of having
-to change snapshots, but in most cases this is not necessary.
+The default bus layout is automatically saved to the ``res://default_bus_layout.tres`` file. Other bus layouts can be saved to/retrieved from files in case of having
+to change snapshots, but in most cases, this is not necessary.
