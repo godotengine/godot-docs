@@ -3,7 +3,7 @@
 Inverse kinematics
 ==================
 
-This tutorial is a follow-up of :ref:`doc_working_with_3d_skeletons`.
+This tutorial is a follow-up to :ref:`doc_working_with_3d_skeletons`.
 
 Previously, we were able to control the rotations of bones in order to manipulate
 where our arm was (forward kinematics). But what if we wanted to solve this problem
@@ -17,18 +17,18 @@ move each joint in our arm to get to that target.
 Initial problem
 ~~~~~~~~~~~~~~~
 
-Talking in Godot terminology, the task we want to solve here is to position
+We want to position
 the 2 angles on the joints of our upperarm and lowerarm so that the tip of the
 lowerarm bone is as close to the target point (which is set by the target Vector3)
 as possible using only rotations. This task is calculation-intensive and never
 resolved by analytical equation solving, as it is an under-constrained
-problem which means that there is more than one solution to an
+problem, which means that there is more than one solution to an
 IK problem.
 
 .. image:: img/inverse_kinematics.png
 
-For easy calculation in this chapter, we consider the target being a
-child of Skeleton. If this is not the case for your setup you can always
+For easy calculation in this chapter, we assume the target is a
+child of Skeleton. If this is not the case for your setup, you can always
 reparent it in your script, as you will save on calculations if you
 do so.
 
@@ -38,7 +38,7 @@ the angles are 2D angles living in a plane which is defined by bone
 base, bone tip, and target.
 
 The rotation axis is easily calculated using the cross-product of the bone
-vector and the target vector. The rotation in this case will be always in
+vector and the target vector. The rotation, in this case, will always be in the
 positive direction. If ``t`` is the Transform which we get from the
 get_bone_global_pose() function, the bone vector is
 
@@ -101,9 +101,9 @@ Now we can write our chain-passing function:
         var b = skel.find_bone(ik_bone)
         var l = ik_limit
         while b >= 0 and l > 0:
-            print( "name":", skel.get_bone_name(b))
-            print( "local transform":", skel.get_bone_pose(b))
-            print( "global transform":", skel.get_bone_global_pose(b))
+            print("name: ", skel.get_bone_name(b))
+            print("local transform: ", skel.get_bone_pose(b))
+            print("global transform: ", skel.get_bone_global_pose(b))
             b = skel.get_bone_parent(b)
             l = l - 1
 
@@ -137,7 +137,7 @@ transforms.
         while b >= 0 and l > 0:
             print("name: ", skel.get_bone_name(b))
             print("local transform: ", skel.get_bone_pose(b))
-            print( "global transform:", skel.get_bone_global_pose(b))
+            print("global transform: ", skel.get_bone_global_pose(b))
             b = skel.get_bone_parent(b)
             l = l - 1
 
@@ -147,10 +147,10 @@ transforms.
 Now we need to actually work with the target. The target should be placed
 somewhere accessible. Since "arm" is an imported scene, we better place
 the target node within our top level scene. But for us to work with target
-easily its Transform should be on the same level as the Skeleton.
+easily, its Transform should be on the same level as the Skeleton.
 
 To cope with this problem, we create a "target" node under our scene root
-node and at runtime we will reparent it, copying the global transform
+node and will reparent it at runtime, copying the global transform,
 which will achieve the desired effect.
 
 Create a new Spatial node under the root node and rename it to "target".
