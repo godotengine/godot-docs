@@ -134,7 +134,7 @@ If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scal
 Finally, we add ``joypad_vec`` to ``input_movement_vector``.
 
 .. tip:: Remember how we normalize ``input_movement_vector``? This is why! If we did not normalize ``input_movement_vector``, the player could
-         move faster if the (s)he pushed in the same direction with both the keyboard and the joypad!
+         move faster if they pushed in the same direction with both the keyboard and the joypad!
 
 ______
 
