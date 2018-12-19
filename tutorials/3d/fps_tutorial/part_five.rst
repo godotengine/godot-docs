@@ -527,7 +527,7 @@ Then we get the center of the screen by dividing the current :ref:`Viewport <cla
 ``project_ray_origin`` and ``project_ray_normal`` from the camera. If you want to know more about how these functions work, see :ref:`Ray-casting <doc_ray-casting>`.
 
 Next we send the ray into the space state and see if it gets a result. We add the player and the knife's :ref:`Area <class_Area>` as two exceptions so the player cannot carry
-herself/himself or the knife's collision :ref:`Area <class_Area>`.
+themselves or the knife's collision :ref:`Area <class_Area>`.
 
 Then we check to see if we got a result back from the ray. If we have, we then see if the collider the ray collided with is a :ref:`RigidBody <class_RigidBody>`.
 
@@ -546,7 +546,7 @@ We first set the mode of the :ref:`RigidBody <class_RigidBody>` we are holding t
 .. note:: This is making a rather large assumption that all the rigid bodies will be using ``MODE_RIGID``. While that is the case for this tutorial series,
           that may not be the case in other projects.
 
-          If you have :ref:`RigidBody <class_RigidBody>`-ies with different modes, you may need to store the mode of the :ref:`RigidBody <class_RigidBody>` you
+          If you have rigid bodies with different modes, you may need to store the mode of the :ref:`RigidBody <class_RigidBody>` you
           have picked up into a class variable so you can change it back to the mode it was in before you picked it up.
 
 Then we apply an impulse to send it flying forward. We send it flying in the direction the camera is facing, using the force we set in the ``OBJECT_THROW_FORCE`` variable.
