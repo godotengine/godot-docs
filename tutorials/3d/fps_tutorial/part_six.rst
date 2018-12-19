@@ -268,7 +268,7 @@ ______
 
 In ``_ready``, we set the ``OS_Label``'s text to the name provided by :ref:`OS <class_OS>` using the ``get_name`` function. This will return the
 name of the OS (or Operating System) for which Godot was compiled. For example, when you are running Windows, it will return ``Windows``, while when you
-are running GNU/Linux, it will return ``X11``.
+are running Linux, it will return ``X11``.
 
 Then, we set the ``Engine_Label``'s text to the version info provided by ``Engine.get_version_info``. ``Engine.get_version_info`` returns a dictionary full
 of useful information about the version of Godot which is currently running. We only care about the string version, for this label at least, so we get the string
@@ -646,10 +646,10 @@ ______
 
 Firstly, we check whether the player has just died by checking if ``health`` is less than or equal to ``0`` and ``is_dead`` is ``false``.
 
-If the player has just died, we disable the collision shapes for the player. We do this to make sure the player is not blocking anything with his/her dead body.
+If the player has just died, we disable the collision shapes for the player. We do this to make sure the player is not blocking anything with their dead body.
 
 Next, we set ``changing_weapon`` to ``true`` and set ``changing_weapon_name`` to ``UNARMED``. This is so, if the player is using a weapon, it is put away
-when the (s)he dies.
+when they dies.
 
 We then make the ``Death_Screen`` :ref:`ColorRect <class_ColorRect>` visible so the player gets a nice grey overlay over everything when they have died.
 We then make the rest of the UI, the ``Panel`` and ``Crosshair`` nodes, invisible.
@@ -663,7 +663,7 @@ If the player is holding a object, we throw it using the same code as the throwi
 
 ______
 
-Thenm we check whether the player is dead. If (s)he is, we then remove ``delta`` from ``dead_time``.
+Then we check whether the player is dead. If so, we then remove ``delta`` from ``dead_time``.
 
 We then make a new variable called ``dead_time_pretty``, where we convert ``dead_time`` to a string, using only the first three characters starting from the left. This gives
 the player a nice looking string showing how much time the player has left to wait before the player can respawn.
@@ -694,7 +694,7 @@ Before we leave ``Player.gd``, we need to add one quick thing to ``_input``. Add
     if is_dead:
         return
 
-Now, when the player is dead, (s)he cannot look around with the mouse.
+Now, when the player is dead, they cannot look around with the mouse.
 
 Finishing the respawn system
 ----------------------------
