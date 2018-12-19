@@ -6,7 +6,7 @@ Part 4
 Part Overview
 -------------
 
-In this part we will be adding health pick ups, ammo pick ups, targets the player can destroy, support for joypads, and add the ability to change weapons with the scroll wheel.
+In this part, we will be adding health pickups, ammo pickups, targets the player can destroy, support for joypads, and add the ability to change weapons with the scroll wheel.
 
 .. image:: img/PartFourFinished.png
 
@@ -18,10 +18,10 @@ Let's get started!
 Adding joypad input
 -------------------
 
-.. note:: In Godot any game controller is referred to as a joypad. This includes:
+.. note:: In Godot, any game controller is referred to as a joypad. This includes:
           Console controllers, Joysticks (like for flight simulators), Wheels (like for driving simulators), VR Controllers, and more!
 
-First we need to change a few things in our project's input map. Open up the project settings and select the ``Input Map`` tab.
+Firstly, we need to change a few things in our project's input map. Open up the project settings and select the ``Input Map`` tab.
 
 Now we need to add some joypad buttons to our various actions. Click the plus icon and select ``Joy Button``.
 
@@ -53,13 +53,13 @@ First, we need to define a few new class variables. Add the following class vari
     var JOYPAD_SENSITIVITY = 2
     const JOYPAD_DEADZONE = 0.15
 
-Let's go over what each of these do:
+Let's go over what each of these does:
 
 * ``JOYPAD_SENSITIVITY``: This is how fast the joypad's joysticks will move the camera.
 * ``JOYPAD_DEADZONE``: The dead zone for the joypad. You may need to adjust depending on your joypad.
 
-.. note::  Many joypads jitter around a certain point. To counter this, we ignore any movement in a
-           with a radius of JOYPAD_DEADZONE. If we did not ignore said movement, the camera would jitter.
+.. note::  Many joypads jitter around a certain point. To counter this, we ignore any movement
+           within a radius of JOYPAD_DEADZONE. If we did not ignore said movement, the camera would jitter.
 
            Also, we are defining ``JOYPAD_SENSITIVITY`` as a variable instead of a constant because we'll later be changing it.
 
@@ -67,12 +67,12 @@ Now we are ready to start handling joypad input!
 
 ______
 
-In ``process_input`` add the following code, just before ``input_movement_vector = input_movement_vector.normalized()``:
+In ``process_input``, add the following code just before ``input_movement_vector = input_movement_vector.normalized()``:
 
 .. tabs::
  .. code-tab:: gdscript Xbox Controller
 
-    # Add joypad input, if there is a joypad
+    # Add joypad input if one is present
     if Input.get_connected_joypads().size() > 0:
 
         var joypad_vec = Vector2(0, 0)
@@ -91,9 +91,9 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
         input_movement_vector += joypad_vec
 
- .. code-tab:: gdscript Playstation Controller
+ .. code-tab:: gdscript PlayStation Controller
 
-    # Add joypad input, if there is a joypad
+    # Add joypad input if one is present
     if Input.get_connected_joypads().size() > 0:
 
         var joypad_vec = Vector2(0, 0)
@@ -112,7 +112,7 @@ In ``process_input`` add the following code, just before ``input_movement_vector
 
 Let's go over what we're doing.
 
-First we check to see if there is a connected joypad.
+Firstly, we check to see if there is a connected joypad.
 
 If there is a joypad connected, we then get its left stick axes for right/left and up/down.
 Because a wired Xbox 360 controller has different joystick axis mapping based on OS, we will use different axes based on
@@ -122,8 +122,8 @@ the OS.
              Also, I do not (currently) have access to a Mac computer, so the joystick axes may need changing.
              If they do, please open a GitHub issue on the Godot documentation repository! Thanks!
 
-Next we check to see if the joypad vector length is within the ``JOYPAD_DEADZONE`` radius.
-If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scaled Radial Dead zone for precise dead zone calculating.
+Next, we check to see if the joypad vector length is within the ``JOYPAD_DEADZONE`` radius.
+If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scaled Radial Dead zone for precise dead zone calculation.
 
 .. note:: You can find a great article explaining all about how to handle joypad/controller dead zones here:
           http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
@@ -134,7 +134,7 @@ If it is, we set ``joypad_vec`` to an empty Vector2. If it is not, we use a scal
 Finally, we add ``joypad_vec`` to ``input_movement_vector``.
 
 .. tip:: Remember how we normalize ``input_movement_vector``? This is why! If we did not normalize ``input_movement_vector``, the player could
-         move faster if the player pushes in the same direction with both the keyboard and the joypad!
+         move faster if they pushed in the same direction with both the keyboard and the joypad!
 
 ______
 
@@ -148,7 +148,7 @@ Make a new function called ``process_view_input`` and add the following:
         if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
             return
 
-        # NOTE: Until some bugs relating to captured mouses are fixed, we cannot put the mouse view
+        # NOTE: Until some bugs relating to captured mice are fixed, we cannot put the mouse view
         # rotation code here. Once the bug(s) are fixed, code for mouse view rotation code will go here!
 
         # ----------------------------------
@@ -185,7 +185,7 @@ Make a new function called ``process_view_input`` and add the following:
         if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
             return
 
-        # NOTE: Until some bugs relating to captured mouses are fixed, we cannot put the mouse view
+        # NOTE: Until some bugs relating to captured mice are fixed, we cannot put the mouse view
         # rotation code here. Once the bug(s) are fixed, code for mouse view rotation code will go here!
 
         # ----------------------------------
@@ -215,22 +215,22 @@ Make a new function called ``process_view_input`` and add the following:
 
 Let's go over what's happening:
 
-First we check the mouse mode. If the mouse mode is not ``MOUSE_MODE_CAPTURED``, we want to return, which will skip the code below.
+Firstly, we check the mouse mode. If the mouse mode is not ``MOUSE_MODE_CAPTURED``, we want to return, which will skip the code below.
 
-Next we define a new :ref:`Vector2 <class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set its values so
+Next, we define a new :ref:`Vector2 <class_Vector2>` called ``joypad_vec``. This will hold the right joystick position. Based on the OS, we set its values so
 it is mapped to the proper axes for the right joystick.
 
-.. warning:: As stated above, I do not (currently) has access to a Mac computer, so the joystick axes may need changing. If they do,
+.. warning:: As stated above, I do not (currently) have access to a Mac computer, so the joystick axes may need changing. If they do,
              please open a GitHub issue on the Godot documentation repository! Thanks!
 
 We then account for the joypad's dead zone, exactly like in ``process_input``.
 
-Then we rotate ``rotation_helper`` and the player's :ref:`KinematicBody <class_KinematicBody>` using ``joypad_vec``.
+Then, we rotate ``rotation_helper`` and the player's :ref:`KinematicBody <class_KinematicBody>` using ``joypad_vec``.
 
 Notice how the code that handles rotating the player and ``rotation_helper`` is exactly the same as the
 code in ``_input``. All we've done is change the values to use ``joypad_vec`` and ``JOYPAD_SENSITIVITY``.
 
-.. note:: Due to few mouse related bugs on Windows, we cannot put mouse rotation in ``process_view`` as well.
+.. note:: Due to a few mouse-related bugs on Windows, we cannot put mouse rotation in ``process_view`` as well.
           Once these bugs are fixed, this will likely be updated to place the mouse rotation here in ``process_view_input`` as well.
 
 Finally, we clamp the camera's rotation so the player cannot look upside down.
@@ -249,7 +249,7 @@ Once ``process_view_input`` is added to ``_physics_process``, you should be able
 Adding mouse scroll wheel input
 -------------------------------
 
-Let's add one more input related feature before we start working on the pick ups and the target. Let's add the ability to change weapons using the scroll wheel on the mouse.
+Let's add one more input related feature before we start working on the pickups and the target. Let's add the ability to change weapons using the scroll wheel on the mouse.
 
 Open up ``Player.gd`` and add the following class variables:
 
@@ -276,7 +276,7 @@ Now let's add the following to ``_input``:
             elif event.button_index == BUTTON_WHEEL_DOWN:
                 mouse_scroll_value -= MOUSE_SENSITIVITY_SCROLL_WHEEL
 
-            mouse_scroll_value = clamp(mouse_scroll_value, 0, WEAPON_NUMBER_TO_NAME.size()-1)
+            mouse_scroll_value = clamp(mouse_scroll_value, 0, WEAPON_NUMBER_TO_NAME.size() - 1)
 
             if changing_weapon == false:
                 if reloading_weapon == false:
@@ -289,26 +289,26 @@ Now let's add the following to ``_input``:
 
 Let's go over what's happening here:
 
-First we check if the event is an ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
-Then we check to see if the button index is either a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
+Firstly, we check if the event is an ``InputEventMouseButton`` event and that the mouse mode is ``MOUSE_MODE_CAPTURED``.
+Then, we check to see if the button index is either a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
 
 If the event's index is indeed a button wheel index, we then check to see if it is a ``BUTTON_WHEEL_UP`` or ``BUTTON_WHEEL_DOWN`` index.
-Based on whether it is up or down we add or remove ``MOUSE_SENSITIVITY_SCROLL_WHEEL`` to/from ``mouse_scroll_value``.
+Based on whether it is up or down, we add or subtract ``MOUSE_SENSITIVITY_SCROLL_WHEEL`` to/from ``mouse_scroll_value``.
 
-Next we clamp mouse scroll value to assure it is inside the range of selectable weapons.
+Next, we clamp mouse scroll value to ensure it is inside the range of selectable weapons.
 
 We then check to see if the player is changing weapons or reloading. If the player is doing neither, we round ``mouse_scroll_value`` and cast it to an ``int``.
 
 .. note:: We are casting ``mouse_scroll_value`` to an ``int`` so we can use it as a key in our dictionary. If we left it as a float,
-          we would get an error when we try to run the project.
+          we would get an error when we tried to run the project.
 
-Next we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``weapon_number_to_name``.
+Next, we check to see if the weapon name at ``round_mouse_scroll_value`` is not equal to the current weapon name using ``WEAPON_NUMBER_TO_NAME``.
 If the weapon is different than the player's current weapon, we assign ``changing_weapon_name``, set ``changing_weapon`` to ``true`` so the player will change weapons in
 ``process_changing_weapon``, and set ``mouse_scroll_value`` to ``round_mouse_scroll_value``.
 
 .. tip:: The reason we are setting ``mouse_scroll_value`` to the rounded scroll value is because we do not want the player to keep their
          mouse scroll wheel just in between values, giving them the ability to switch almost extremely fast. By assigning ``mouse_scroll_value``
-         to ``round_mouse_scroll_value``, we assure that each weapon takes exactly the same amount of scrolling to change.
+         to ``round_mouse_scroll_value``, we ensure that each weapon takes exactly the same amount of scrolling to change.
 
 ______
 
@@ -318,15 +318,15 @@ One more thing we need to change is in ``process_input``. In the code for changi
 
     mouse_scroll_value = weapon_change_number
 
-Now the scroll value will be changed with the keyboard input. If we did not change this, the scroll value will be out of sync. If the scroll wheel is out of
+Now the scroll value will be changed with the keyboard input. If we did not change this, the scroll value would be out of sync. If the scroll wheel were out of
 sync, scrolling forwards or backwards would not transition to the next/last weapon, but rather the next/last weapon the scroll wheel changed to.
 
 ______
 
 Now you can change weapons using the scroll wheel! Go give it a whirl!
 
-Adding the health pick ups
---------------------------
+Adding the health pickups
+-------------------------
 
 Now that the player has health and ammo, we ideally need a way to replenish those resources.
 
@@ -334,14 +334,14 @@ Open up ``Health_Pickup.tscn``.
 
 Expand ``Holder`` if it's not already expanded. Notice how we have two Spatial nodes, one called ``Health_Kit`` and another called ``Health_Kit_Small``.
 
-This is because we're actually going to be making two sizes of health pick ups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` only
+This is because we're actually going to be making two sizes of health pickups, one small and one large/normal. ``Health_Kit`` and ``Health_Kit_Small`` only
 have a single :ref:`MeshInstance <class_MeshInstance>` as their children.
 
 Next expand ``Health_Pickup_Trigger``. This is an :ref:`Area <class_Area>` node we're going to use to check if the player has walked close enough to pick up
-the health kit. If you expand it you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
-health pick up, so the smaller health pick up has a trigger collision shape closer to its size.
+the health kit. If you expand it, you'll find two collision shapes, one for each size. We will be using a different collision shape size based on the size of the
+health pickup, so the smaller health pickup has a trigger collision shape closer to its size.
 
-The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit spins around slowly and bobs up and down.
+The last thing to note is how we have an :ref:`AnimationPlayer <class_AnimationPlayer>` node so the health kit bobs and spins around slowly.
 
 Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add the following:
 
@@ -404,17 +404,17 @@ Select ``Health_Pickup`` and add a new script called ``Health_Pickup.gd``. Add t
 
 Let's go over what this script is doing, starting with its class variables:
 
-* ``kit_size``: The size of the health pick up. Notice how we're using a ``setget`` function to tell if it's changed.
-* ``HEALTH_AMMOUNTS``: The amount of health each pick up in each size contains.
-* ``RESPAWN_TIME``: The amount of time, in seconds, it takes for the health pick up to respawn
-* ``respawn_timer``: A variable used to track how long the health pick up has been waiting to respawn.
+* ``kit_size``: The size of the health pickup. Notice how we're using a ``setget`` function to tell if it's changed.
+* ``HEALTH_AMMOUNTS``: The amount of health each pickup in each size contains.
+* ``RESPAWN_TIME``: The amount of time, in seconds, it takes for the health pickup to respawn
+* ``respawn_timer``: A variable used to track how long the health pickup has been waiting to respawn.
 * ``is_ready``: A variable to track whether the ``_ready`` function has been called or not.
 
-We're using ``is_ready`` because ``setget`` functions are called before ``_ready``, we need to ignore the
+We're using ``is_ready`` because ``setget`` functions are called before ``_ready``; we need to ignore the
 first kit_size_change call, because we cannot access child nodes until ``_ready`` is called. If we did not ignore the
 first ``setget`` call, we would get several errors in the debugger.
 
-Also, notice how we are using an exported variable. This is so we can change the size of the health pick ups in the editor. This makes it where
+Also, notice how we are using an exported variable. This is so we can change the size of the health pickups in the editor. This makes it so
 we do not have to make two scenes for the two sizes, since we can easily change sizes in the editor using the exported variable.
 
 .. tip:: See :ref:`doc_GDScript` and scroll down to the Exports section for a list of export hints you can use.
@@ -423,12 +423,12 @@ ______
 
 Let's look at ``_ready``:
 
-First we connect the ``body_entered`` signal from the ``Health_Pickup_Trigger`` to the ``trigger_body_entered`` function. This makes it where any
+Firstly, we connect the ``body_entered`` signal from the ``Health_Pickup_Trigger`` to the ``trigger_body_entered`` function. This makes it so any
 body that enters the :ref:`Area <class_Area>` triggers the ``trigger_body_entered`` function.
 
-Next we set ``is_ready`` to ``true`` so we can use the ``setget`` function.
+Next, we set ``is_ready`` to ``true`` so we can use the ``setget`` function.
 
-Then we hide all of the possible kits and their collision shapes using ``kit_size_change_values``. The first argument is the size of the kit, while the second argument
+Then we hide all the possible kits and their collision shapes using ``kit_size_change_values``. The first argument is the size of the kit, while the second argument
 is whether to enable or disable the collision shape and mesh at that size.
 
 Then we make only the kit size we selected visible, calling ``kit_size_change_values`` and passing in ``kit_size`` and ``true``, so the size at ``kit_size`` is enabled.
@@ -450,7 +450,7 @@ ______
 
 Now let's look at ``kit_size_change_values``.
 
-The first thing we do is check to see which size was passed in. Based on which size we're wanting to enable/disable, we want to get different nodes.
+The first thing we do is check to see which size was passed in. Based on which size we want to enable/disable, we want to get different nodes.
 
 We get the collision shape for the node corresponding to ``size`` and disable it based on the ``enabled`` passed in argument/variable.
 
@@ -460,14 +460,14 @@ We get the collision shape for the node corresponding to ``size`` and disable it
 
 We then get the correct :ref:`Spatial <class_Spatial>` node holding the mesh and set its visibility to ``enable``.
 
-This function may be a little confusing, try to think of it like this: We're enabling/disabling the proper nodes for ``size`` using ``enabled``. This is so we cannot pick up
+This function may be a little confusing; try to think of it like this: We're enabling/disabling the proper nodes for ``size`` using ``enabled``. This is so we cannot pick up
 health for a size that is not visible, and so only the mesh for the proper size will be visible.
 
 ______
 
 Finally, let's look at ``trigger_body_entered``.
 
-The first thing we do is see whether or not the body that just entered has a method/function called ``add_health``. If it does, we then
+The first thing we do is check whether or not the body that has just entered has a method/function called ``add_health``. If it does, we then
 call ``add_health`` and pass in the health provided by the current kit size.
 
 Then we set ``respawn_timer`` to ``RESPAWN_TIME`` so the player has to wait before the player can get health again. Finally, call ``kit_size_change_values``,
@@ -475,7 +475,7 @@ passing in ``kit_size`` and ``false`` so the kit at ``kit_size`` is invisible un
 
 _______
 
-The last thing we need to do before the player can use this health pick up is add a few things to ``Player.gd``.
+The last thing we need to do before the player can use this health pickup is add a few things to ``Player.gd``.
 
 Open up ``Player.gd`` and add the following class variable:
 
@@ -495,21 +495,21 @@ Now we need to add the ``add_health`` function to the player. Add the following 
 
 Let's quickly go over what this does.
 
-We first add ``additional_health`` to the player's current health. We then clamp the health so that it cannot exceed a value higher than ``MAX_HEALTH``, nor a value lower
+We first add ``additional_health`` to the player's current health. We then clamp the health so that it cannot take on a value higher than ``MAX_HEALTH``, nor a value lower
 than ``0``.
 
 _______
 
-With that done, the player can now collect health! Go place a few ``Health_Pickup`` scenes around and give it a try. You can change the size of the health pick up in the editor
+With that done, the player can now collect health! Go place a few ``Health_Pickup`` scenes around and give it a try. You can change the size of the health pickup in the editor
 when a ``Health_Pickup`` instanced scene is selected, from a convenient drop down.
 
-Adding the ammo pick ups
-------------------------
+Adding the ammo pickups
+-----------------------
 
 While adding health is good and all, we can't reap the rewards from adding it since nothing can (currently) damage us.
-Let's add some ammo pick ups next!
+Let's add some ammo pickups next!
 
-Open up ``Ammo_Pickup.tscn``. Notice how it's structured exactly the same as ``Health_Pickup.tscn``, but with the meshes and trigger collision shapes changed slightly to adjust
+Open up ``Ammo_Pickup.tscn``. Notice how it's structured exactly the same as ``Health_Pickup.tscn``, but with the meshes and trigger collision shapes changed slightly to account
 for the difference in mesh sizes.
 
 Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the following:
@@ -573,19 +573,19 @@ Select ``Ammo_Pickup`` and add a new script called ``Ammo_Pickup.gd``. Add the f
             respawn_timer = RESPAWN_TIME
             kit_size_change_values(kit_size, false)
 
-You may have noticed this code looks almost exactly the same as the health pick up. That's because it largely is the same! Only a few things
+You may have noticed this code looks almost exactly the same as the health pickup. That's because it largely is the same! Only a few things
 have been changed, and that's what we're going to go over.
 
-First, notice how there is ``AMMO_AMOUNTS`` instead of ``HEALTH_AMMOUNTS``. ``AMMO_AMOUNTS`` will be how many ammo clips/magazines the pick up add to the current weapon.
-(Unlike ``HEALTH_AMMOUNTS`` which was how many health points, we instead add an entire clip for the current weapon, instead of the raw ammo amount)
+Firstly, notice the change to ``AMMO_AMOUNTS`` from ``HEALTH_AMMOUNTS``. ``AMMO_AMOUNTS`` will be how many ammo clips/magazines the pickup adds to the current weapon.
+(Unlike in the case of ``HEALTH_AMMOUNTS``, which has stood for how many health points would be awarded, we add an entire clip to the current weapon instead of the raw ammo amount)
 
-The only other thing to notice is in ``trigger_body_entered``. We're checking and calling a function called ``add_ammo`` instead of ``add_health``.
+The only other thing to notice is in ``trigger_body_entered``. We're checking for the existence of and calling a function called ``add_ammo`` instead of ``add_health``.
 
-Other than those two small changes, everything else is exactly the same as the health pick up!
+Other than those two small changes, everything else is the same as the health pickup!
 
 _______
 
-All we need to do for making the ammo pick ups work is to add a new function to the player. Open ``Player.gd`` and add the following function:
+All we need to do to make the ammo pickups work is add a new function to the player. Open ``Player.gd`` and add the following function:
 
 ::
 
@@ -596,17 +596,17 @@ All we need to do for making the ammo pick ups work is to add a new function to 
 
 Let's go over what this function does.
 
-The first thing we check is to see whether the player is using ``UNARMED`` or not. Because ``UNARMED`` does not have a node/script, we want to make sure the player is not using
+The first thing we check is whether the player is ``UNARMED``. Because ``UNARMED`` does not have a node/script, we want to make sure the player is not
 ``UNARMED`` before trying to get the node/script attached to ``current_weapon_name``.
 
-Next we check to see if the current weapon can be refilled. If the current weapon can, we add a full clip/magazine worth of ammo to the weapon by
-multiplying the current weapon's ``AMMO_IN_MAG`` variable times however much ammo clips we're adding (``additional_ammo``).
+Next, we check to see if the current weapon can be refilled. If the current weapon can, we add a full clip/magazine worth of ammo to the weapon by
+multiplying the current weapon's ``AMMO_IN_MAG`` value by however many ammo clips we're adding (``additional_ammo``).
 
 _______
 
-With that done, you should now be able to get additional ammo! Go place some ammo pick ups in one/both/all of the scenes and give it a try!
+With that done, you should now be able to get additional ammo! Go place some ammo pickups in one/both/all of the scenes and give it a try!
 
-.. note:: Notice how we're not limiting the amount of ammo you can carry. To limit the amount of ammo each weapon can carry, you need to add a additional variable to
+.. note:: Notice how we're not limiting the amount of ammo you can carry. To limit the amount of ammo each weapon can carry, you need to add an additional variable to
           each weapon's script, and then clamp the weapon's ``spare_ammo`` variable after adding ammo in ``add_ammo``.
 
 Adding breakable targets
@@ -616,21 +616,21 @@ Before we end this part, let's add some targets.
 
 Open up ``Target.tscn`` and take a look at the scenes in the scene tree.
 
-First, notice how we're not using a :ref:`RigidBody <class_RigidBody>` node, but rather a :ref:`StaticBody <class_StaticBody>` node instead.
-The reason behind this is our non-broken targets will not be moving anywhere, using a :ref:`RigidBody <class_RigidBody>` would be more hassle then
-its worth, since all it has to do is stay still.
+Firstly, notice how we're not using a :ref:`RigidBody <class_RigidBody>` node, but a :ref:`StaticBody <class_StaticBody>` one.
+The reason behind this is our non-broken targets will not be moving anywhere; using a :ref:`RigidBody <class_RigidBody>` would be more hassle than
+it's worth since all it has to do is stay still.
 
-.. tip:: We also save a tiny bit of performance using a :ref:`StaticBody <class_StaticBody>` over a :ref:`RigidBody <class_RigidBody>`
+.. tip:: We also save a tiny bit of performance using a :ref:`StaticBody <class_StaticBody>` over a :ref:`RigidBody <class_RigidBody>`.
 
 The other thing to note is we have a node called ``Broken_Target_Holder``. This node is going to hold a spawned/instanced scene called
 ``Broken_Target.tscn``. Open up ``Broken_Target.tscn``.
 
 Notice how the target is broken up into five pieces, each a :ref:`RigidBody <class_RigidBody>` node. We're going to spawn/instance this scene when the target takes too much damage
-and needs to be destroyed. Then we're going to hide the non-broken target, so it looks like the target shattered rather than a shattered target was
+and needs to be destroyed. Then, we're going to hide the non-broken target, so it looks like the target shattered rather than a shattered target was
 spawned/instanced.
 
-While you still have ``Broken_Target.tscn`` open and then attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <class_RigidBody>` nodes. This will make
-it where the player can shoot at the broken pieces and they will react to the bullets.
+While you still have ``Broken_Target.tscn`` open, attach ``RigidBody_hit_test.gd`` to all of the :ref:`RigidBody <class_RigidBody>` nodes. This will make
+it so the player can shoot at the broken pieces and they will react to the bullets.
 
 Alright, now switch back to ``Target.tscn``, select the ``Target`` :ref:`StaticBody <class_StaticBody>` node and create a new script called ``Target.gd``.
 
@@ -646,7 +646,7 @@ Add the following code to ``Target.gd``:
     var broken_target_holder
 
     # The collision shape for the target.
-    # NOTE: this is for the whole target, not the pieces of the target
+    # NOTE: this is for the whole target, not the pieces of the target.
     var target_collision_shape
 
     const TARGET_RESPAWN_TIME = 14
@@ -684,7 +684,7 @@ Add the following code to ``Target.gd``:
                 if rigid is RigidBody:
                     var center_in_rigid_space = broken_target_holder.global_transform.origin - rigid.global_transform.origin
                     var direction = (rigid.transform.origin - center_in_rigid_space).normalized()
-                    # Apply the impulse with some additional force (I find 12 works nicely)
+                    # Apply the impulse with some additional force (I find 12 works nicely).
                     rigid.apply_impulse(center_in_rigid_space, direction * 12 * damage)
 
             target_respawn_timer = TARGET_RESPAWN_TIME
@@ -704,38 +704,38 @@ Let's go over what this script does, starting with the class variables:
 
 Notice how we're using an exported variable (a :ref:`PackedScene <class_PackedScene>`) to get the broken target scene instead of
 using ``preload``. By using an exported variable, we can choose the scene from the editor, and if we need to use a different scene,
-it's as easy as selecting a different scene in the editor, we don't need to go to the code to change the scene we're using.
+it's as easy as selecting a different scene in the editor; we don't need to go to the code to change the scene we're using.
 
 ______
 
 Let's look at ``_ready``.
 
 The first thing we do is get the broken target holder and assign it to ``broken_target_holder``. Notice how we're using ``get_parent().get_node()`` here, instead
-of ``$``. If you want to use ``$``, then you'd need to change ``get_parent().get_node()`` to ``$"../Broken_Target_Holder"``.
+of ``$``. If you wanted to use ``$``, then you'd need to change ``get_parent().get_node()`` to ``$"../Broken_Target_Holder"``.
 
 .. note:: At the time of when this was written, I did not realize you can use ``$"../NodeName"`` to get the parent nodes using ``$``, which is why ``get_parent().get_node()``
           is used instead.
 
-Next we get the collision shape and assign it to ``target_collision_shape``. The reason we need the collision shape is because even when the mesh is invisible, the
-collision shape will still exist in the physics world. This makes it where the player can interact with a non-broken target even though it's invisible, which is
+Next, we get the collision shape and assign it to ``target_collision_shape``. The reason we need the collision shape is because even when the mesh is invisible, the
+collision shape will still exist in the physics world. This makes it so the player could interact with a non-broken target even though it's invisible, which is
 not what we want. To get around this, we will disable/enable the collision shape as we make the mesh visible/invisible.
 
 ______
 
 Next let's look at ``_physics_process``.
 
-We're only going to be using ``_physics_process`` for respawning, and so the first thing we do is check to see if ``target_respawn_timer`` is more than ``0``.
+We're only going to be using ``_physics_process`` for respawning, and so the first thing we do is check to see if ``target_respawn_timer`` is greater than ``0``.
 
-If it is, we then remove ``delta`` from it.
+If it is, we then subtract ``delta`` from it.
 
 Then we check to see if ``target_respawn_timer`` is ``0`` or less. The reason behind this is since we just removed ``delta`` from ``target_respawn_timer``, if it's
-``0`` or less then the target just got here, effectively allowing us to do whatever we need to do when the timer is finished.
+``0`` or less, then the target just got here, effectively allowing us to do whatever we need to do when the timer is finished.
 
 In this case, we want to respawn the target.
 
 The first thing we do is remove all children in the broken target holder. We do this by iterating over all of the children in ``broken_target_holder`` and free them using ``queue_free``.
 
-Next we enable the collision shape by setting its ``disabled`` boolean to ``false``.
+Next, we enable the collision shape by setting its ``disabled`` boolean to ``false``.
 
 Then we make the target, and all of its children nodes, visible again.
 
@@ -745,7 +745,7 @@ ______
 
 Finally, let's look at ``bullet_hit``.
 
-The first thing we do is remove however much damage the bullet does from the target's health.
+The first thing we do is subtract however much damage the bullet does from the target's health.
 
 Next we check to see if the target is at ``0`` health or lower. If it is, the target has just died and we need to spawn a broken target.
 
@@ -753,16 +753,16 @@ We first instance a new destroyed target scene, and assign it to a new variable,
 
 Next we add the ``clone`` as a child of the broken target holder.
 
-For bonus effect, we want to make all of the target pieces explode outwards. To do this, we iterate over all of the children in ``clone``.
+For bonus effect, we want to make all the target pieces explode outwards. To do this, we iterate over all the children in ``clone``.
 
 For each child, we first check to see if it's a :ref:`RigidBody <class_RigidBody>` node. If it is, we then calculate the center position of the target relative
 to the child node. Then we figure out which direction the child node is relative to the center. Using those calculated variables, we push the child from the calculated center,
 in the direction away from the center, using the damage of the bullet as the force.
 
-.. note:: We multiply the damage by ``12`` so it has a more dramatic effect. You can change this to a higher or lower value depending on how explosive you want
+.. note:: We multiply the damage by ``12`` so it has a more dramatic effect. You can change this to a higher or lower value depending on how explosively you want
           your targets to shatter.
 
-Next we set the target's respawn timer. We set the timer to ``TARGET_RESPAWN_TIME``, so it takes ``TARGET_RESPAWN_TIME`` in seconds until it is respawned.
+Next, we set the target's respawn timer. We set the timer to ``TARGET_RESPAWN_TIME``, so it takes ``TARGET_RESPAWN_TIME`` in seconds until it is respawned.
 
 Then we disable the non-broken target's collision shape, and set the target's visibility to ``false``.
 
