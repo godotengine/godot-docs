@@ -21,7 +21,7 @@ What is a kinematic body?
 
 ``KinematicBody2D`` is for implementing bodies that are to be controlled via code.
 They detect collisions with other bodies when moving, but are not affected by
-engine physics properties like gravity or friction. While this means that you
+engine physics properties, like gravity or friction. While this means that you
 have to write some code to create their behavior, it also means you have more
 precise control over how they move and react.
 
@@ -40,7 +40,7 @@ any *collision response* must be coded manually.
 
 .. warning:: Kinematic body movement should only be done in the ``_physics_process()`` callback.
 
-The two movement methods serve different purposes, and later in this tutorial you'll
+The two movement methods serve different purposes, and later in this tutorial, you'll
 see examples of how they work.
 
 ``move_and_collide``
@@ -53,7 +53,7 @@ this vector, the body will immediately stop moving. If this happens, the
 method will return a :ref:`KinematicCollision2D <class_KinematicCollision2D>` object.
 
 ``KinematicCollision2D`` is an object containing data about the collision
-and the colliding object. Using this data you can calculate your collision
+and the colliding object. Using this data, you can calculate your collision
 response.
 
 ``move_and_slide``
@@ -104,7 +104,7 @@ Which movement method to use?
 -----------------------------
 
 A common question from new Godot users is: "How do you decide which movement
-function to use?" Often the response is to use ``move_and_slide()`` because
+function to use?" Often, the response is to use ``move_and_slide()`` because
 it's "simpler", but this is not necessarily the case. One way to think of it
 is that ``move_and_slide()`` is a special case, and ``move_and_collide()``
 is more general. For example, the following two code snippets result in
@@ -147,9 +147,9 @@ To see these examples in action, download the sample project:
 Movement and walls
 ~~~~~~~~~~~~~~~~~~
 
-If you've downloaded the sample project, this example is in the "BasicMovement.tscn" scene.
+If you've downloaded the sample project, this example is in "BasicMovement.tscn".
 
-For this example, Add a ``KinematicBody2D`` with two children: a ``Sprite`` and a
+For this example, add a ``KinematicBody2D`` with two children: a ``Sprite`` and a
 ``CollisionShape2D``. Use the Godot "icon.png" as the Sprite's texture (drag it
 from the Filesystem dock to the *Texture* property of the ``Sprite``). In the
 ``CollisionShape2D``'s *Shape* property, select "New RectangleShape2D" and
@@ -168,7 +168,7 @@ Attach a script to the KinematicBody2D and add the following code:
     var velocity = Vector2()
 
     func get_input():
-        # Detect up/down/left/right keystate and only move when pressed
+        # Detect up/down/left/right keystate and only move when pressed.
         velocity = Vector2()
         if Input.is_action_pressed('ui_right'):
             velocity.x += 1
@@ -268,7 +268,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
     var velocity = Vector2()
 
     func get_input():
-        # add these actions in Project Settings -> Input Map
+        # Add these actions in Project Settings -> Input Map.
         velocity = Vector2()
         if Input.is_action_pressed('backward'):
             velocity = Vector2(-speed/3, 0).rotated(rotation)
@@ -278,7 +278,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
             shoot()
 
     func shoot():
-        # "Muzzle" is a Position2D placed at the barrel of the gun
+        # "Muzzle" is a Position2D placed at the barrel of the gun.
         var b = Bullet.instance()
         b.start($Muzzle.global_position, rotation)
         get_parent().add_child(b)
@@ -286,7 +286,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
     func _physics_process(delta):
         get_input()
         var dir = get_global_mouse_position() - global_position
-        # Don't move if too close to the mouse pointer
+        # Don't move if too close to the mouse pointer.
         if dir.length() > 5:
             rotation = dir.angle()
             velocity = move_and_slide(velocity)
@@ -404,7 +404,7 @@ And the code for the Bullet:
     }
 
 
-The action happens in ``_physics_process()``. After using ``move_and_collide()`` if a
+The action happens in ``_physics_process()``. After using ``move_and_collide()``, if a
 collision occurs, a ``KinematicCollision2D`` object is returned (otherwise, the return
 is ``Nil``).
 
@@ -514,7 +514,7 @@ Here's the code for the player body:
 
 .. image:: img/k2d_platform.gif
 
-When using ``move_and_slide()`` the function returns a vector representing the
+When using ``move_and_slide()``, the function returns a vector representing the
 movement that remained after the slide collision occurred. Setting that value back
 to the character's ``velocity`` allows us to smoothly move up and down slopes. Try
 removing ``velocity =`` and see what happens if you don't do this.
@@ -528,5 +528,5 @@ function will only return ``true`` after a ``move_and_slide()`` collision where 
 colliding body's normal is within 45 degrees of the given floor vector (this can
 be adjusted by setting ``floor_max_angle``).
 
-This also allows you to implement other features like wall jumps using ``is_on_wall()``,
+This also allows you to implement other features (like wall jumps) using ``is_on_wall()``,
 for example.
