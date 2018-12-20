@@ -3,7 +3,7 @@
 Physics introduction
 ====================
 
-In game development you often need to know when two objects in the game
+In game development, you often need to know when two objects in the game
 intersect or come into contact. This is known as **collision detection**.
 When a collision is detected, you typically want something to happen. This
 is known as **collision response**.
@@ -13,7 +13,7 @@ and response. Trying to decide which one to use for your project can be confusin
 You can avoid problems and simplify development if you understand how each works
 and what their pros and cons are.
 
-In this guide you will learn:
+In this guide, you will learn:
 
 -   Godot's four collision object types
 -   How each collision object works
@@ -31,10 +31,10 @@ Godot offers four kinds of physics bodies, extending :ref:`CollisionObject2D <cl
 - :ref:`Area2D <class_Area2D>`
     ``Area2D`` nodes provide **detection** and **influence**. They can detect when
     objects overlap and can emit signals when bodies enter or exit. An ``Area2D``
-    can also be used to override physics properties such as gravity or damping
+    can also be used to override physics properties, such as gravity or damping,
     in a defined area.
 
-The other three bodies extend from :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
+The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 
 - :ref:`StaticBody2D <class_StaticBody2D>`
     A static body is one that is not moved by the physics engine. It participates
@@ -67,7 +67,7 @@ These nodes allow you to draw the shape directly in the editor workspace.
 
 .. important:: Be careful to never scale your collision shapes in the editor.
                 The "Scale" property in the Inspector should remain ``(1, 1)``. When changing
-                sizing the collision shape, you should always use the size handles, **not**
+                the size of the collision shape, you should always use the size handles, **not**
                 the ``Node2D`` scale handles. Scaling a shape can result in unexpected
                 collision behavior.
 
@@ -89,7 +89,7 @@ callback, which is called before each physics step at a constant frame rate
 Collision Layers and Masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One of the most powerful but frequently misunderstood collision features
+One of the most powerful, but frequently misunderstood, collision features
 is the collision layer system. This system allows you to build up complex
 interactions between a variety of objects. The key concepts are **layers**
 and **masks**. Each ``CollisionObject2D`` has 20 different physics layers
@@ -134,12 +134,12 @@ Area2D
 
 Area nodes provide **detection** and **influence**. They can detect when
 objects overlap and emit signals when bodies enter or exit. Areas can also
-be used to override physics properties such as gravity or damping in a
+be used to override physics properties, such as gravity or damping, in a
 defined area.
 
 There are three main uses for :ref:`Area2D <class_Area2D>`:
 
-- Overriding physics parameters such as gravity in a given region.
+- Overriding physics parameters (such as gravity) in a given region.
 
 - Detecting when other bodies enter or exit a region or what bodies are currently in a region.
 
@@ -168,9 +168,9 @@ RigidBody2D
 -----------
 
 This is the node that implements simulated 2D physics. You do not control a
-:ref:`RigidBody2D <class_RigidBody2D>` directly. Instead you apply forces
+:ref:`RigidBody2D <class_RigidBody2D>` directly. Instead, you apply forces
 to it and the physics engine calculates the resulting movement, including
-collisions with other bodies, and collision responses such as bouncing,
+collisions with other bodies, and collision responses, such as bouncing,
 rotating, etc.
 
 You can modify a rigid body's behavior via  properties such as "Mass",
@@ -180,7 +180,7 @@ The body's behavior is also affected by the world's properties, as set in
 `Project Settings -> Physics`, or by entering an :ref:`Area2D <class_Area2D>`
 that is overriding the global physics properties.
 
-When a rigid body is at rest and hasn't moved for a time, it goes to sleep.
+When a rigid body is at rest and hasn't moved for a while, it goes to sleep.
 A sleeping body acts like a static body, and its forces are not calculated by
 the physics engine. The body will wake up when forces are applied, either by
 a collision or via code.
@@ -192,7 +192,7 @@ A rigid body can be set to one of four modes:
 
 -   **Rigid** - The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
 -   **Static** - The body behaves like a :ref:`StaticBody2D <class_StaticBody2D>` and does not move.
--   **Character** - Similar to "Rigid" mode, but the body can not rotate.
+-   **Character** - Similar to "Rigid" mode, but the body cannot rotate.
 -   **Kinematic** - The body behaves like a :ref:`KinematicBody2D <class_KinematicBody2D>` and must be moved by code.
 
 Using RigidBody2D
@@ -262,8 +262,8 @@ Note that we are not setting the ``linear_velocity`` or ``angular_velocity``
 properties directly, but rather applying forces (``thrust`` and ``torque``) to
 the body and letting the physics engine calculate the resulting movement.
 
-.. note:: When a rigid body goes to sleep the ``_integrate_forces()``
-          function will not be called. To override this behavior you will
+.. note:: When a rigid body goes to sleep, the ``_integrate_forces()``
+          function will not be called. To override this behavior, you will
           need to keep the body awake by creating a collision, applying a
           force to it, or by disabling the :ref:`can_sleep <class_RigidBody2D_can_sleep>`
           property. Be aware that this can have a negative effect on performance.
