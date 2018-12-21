@@ -121,7 +121,7 @@ may be used. For example:
     }
 
 The result is a dictionary. If the ray didn't hit anything, the dictionary will
-be empty. If it did hit something it will contain collision information:
+be empty. If it did hit something, it will contain collision information:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -196,7 +196,7 @@ very inconvenient if you need a large and/or dynamic list of exceptions. In
 this case, it is much more efficient to use the collision layer/mask system.
 
 The optional fourth argument for ``intersect_ray()`` is a collision mask. For
-example, to use same mask as the parent body, use the ``collision_mask``
+example, to use the same mask as the parent body, use the ``collision_mask``
 member variable:
 
 .. tabs::
@@ -226,7 +226,7 @@ member variable:
 --------------------------
 
 Casting a ray from screen to 3D physics space is useful for object
-picking. There is not much of a need to do this because
+picking. There is not much need to do this because
 :ref:`CollisionObject <class_CollisionObject>`
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
