@@ -189,16 +189,18 @@ we increase the frequency each level, decrease the amplitude, and calculate a ne
 
 ::
 
-  float fbm(vec2 x) {
-    float h = 0.0;
-    float a = 0.5;
-    float p = 3.0;
-    for (int i = 0; i < 6; i++){
-      h += noise(x * p) * a;
-      a *= 0.5;
-      p *= 2.0;
+  float fbm (in vec2 x) {
+    float height = 0.0;
+    float amplitude = 0.5;
+    float frequency = 1.0;
+
+    for (int i = 0; i < 6; i++) {
+      height += noise(x * frequency) * amplitude;
+      amplitude *= 0.5;
+      frequency *= 2.0;
     }
-    return h;
+
+    return height;
   }
 
 We can now use this noise function in place of ``cos`` and ``sin`` in the previous section. 
