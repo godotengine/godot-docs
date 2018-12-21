@@ -6,7 +6,7 @@ Ragdoll system
 Introduction
 ------------
 
-Since version 3.1, Godot supports ragdoll physics. Ragdolls rely on physic simulation to create realistic procedural animation. They are used for death animations in many games.
+Since version 3.1, Godot supports ragdoll physics. Ragdolls rely on physics simulation to create realistic procedural animation. They are used for death animations in many games.
 
 In this tutorial, we will be using the Platformer3D demo to set up a ragdoll.
 
@@ -33,7 +33,7 @@ Some of the generated bones aren't necessary: the ``MASTER`` bone for example. S
 Cleaning up the skeleton
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each ``PhysicalBone`` the engine needs to simulate has a performance cost so you want to remove every bone that is too small to make a difference in the simulation, as well as all utility bones.
+Each ``PhysicalBone`` the engine needs to simulate has a performance cost, so you want to remove every bone that is too small to make a difference in the simulation, as well as all utility bones.
 
 For example, if we take a humanoid, you do not want to have physical bones for each finger. you can use a single bone for the entire hand instead, or one for the palm, one for the thumb, and a last one for the other four fingers.
 
@@ -42,14 +42,14 @@ Remove these physical bones : ``MASTER``, ``waist``, ``neck``, ``headtracker``. 
 Collision shape adjustment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next task is adjust the collision shape and the size of physical bones to match the part of body that each bone should simulate.
+The next task is adjusting the collision shape and the size of physical bones to match the part of the body that each bone should simulate.
 
 .. image:: img/ragdoll_shape_adjust.gif
 
 Joints adjustment
 ~~~~~~~~~~~~~~~~~
 
-Once you adjusted the collision shapes your ragdoll is almost ready. You just want to adjust the pin joints to get a better simulation. ``PhysicalBone`` nodes have an unconstrained pin joint assigned to them by default. To change the pin joint, select the ``PhysicalBone`` and change the constraint type in the ``Joint`` section. There, you can change the constraint's orientation and its limits.
+Once you adjusted the collision shapes, your ragdoll is almost ready. You just want to adjust the pin joints to get a better simulation. ``PhysicalBone`` nodes have an unconstrained pin joint assigned to them by default. To change the pin joint, select the ``PhysicalBone`` and change the constraint type in the ``Joint`` section. There, you can change the constraint's orientation and its limits.
 
 .. image:: img/ragdoll_joint_adjust.gif
 
