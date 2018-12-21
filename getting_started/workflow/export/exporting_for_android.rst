@@ -70,17 +70,20 @@ keystore file; such file can be generated like this:
 
     keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
-This key is used to verify your developer identity, remember its password and keep it in a safe place!
+This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
 
-Now fill the following forms in you Android Export Presets:
+Now fill in the following forms in your Android Export Presets:
+
+.. image:: img/editor-export-presets-android.png
 
 - Release: Enter the path to the keystore file you just generated.
-- Release User: Replace with what your key alias.
-- Release Password: Key password.
+- Release User: Replace with the key alias.
+- Release Password: Key password. Note that the keystore password and the key password currently has to be the same.
 
-Now your export_presets.cfg file contains sensitive info; if using a Version Control System, it is a good idea to remove it from public repositories.
+**Now your export_presets.cfg file contains sensitive info;** if using a Version Control System, it is a good idea to remove it from public repositories.
 
 Don't forget to disable the ``Export With Debug`` button while choosing the APK's name.
 
 .. image:: img/export-with-debug-button.png
+
