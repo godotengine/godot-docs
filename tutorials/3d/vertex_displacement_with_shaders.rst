@@ -190,11 +190,11 @@ we increase the frequency each level, decrease the amplitude, and calculate a ne
 ::
 
   float fbm(vec2 x) {
-    float height = 0.0;
-    float amplitude = 0.5;
-    float frequency = 3.0;
+    float h = 0.0;
+    float a = 0.5;
+    float p = 3.0;
     for (int i = 0; i < 6; i++){
-      h += noise(x * frequency) * amplitude;
+      h += noise(x * p) * a;
       a *= 0.5;
       p *= 2.0;
     }
