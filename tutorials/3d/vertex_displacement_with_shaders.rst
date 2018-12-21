@@ -207,7 +207,7 @@ We can now use this noise function in place of ``cos`` and ``sin`` in the previo
 
 ::
 
-  float height = noise(VERTEX.xz * 4.0);
+  float height = fbm(VERTEX.xz * 4.0);
   VERTEX.y += height * 0.5;
 
 .. image:: img/vertex_displacement_noise1.png
