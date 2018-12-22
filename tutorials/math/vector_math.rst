@@ -58,8 +58,8 @@ Vector operations
 ~~~~~~~~~~~~~~~~~
 
 You can use either method (x and y coordinates or angle and magnitude) to
-refer to a vector, but for convenience programmers typically use the
-coordinate notation. For example, in Godot the origin is the top-left
+refer to a vector, but for convenience, programmers typically use the
+coordinate notation. For example, in Godot, the origin is the top-left
 corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the right and
 300 pixels down, use the following code:
 
@@ -74,8 +74,8 @@ corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the r
     node2D.Position = new Vector2(400, 300);
 
 Godot supports both :ref:`Vector2 <class_Vector2>` and
-:ref:`Vector3 <class_Vector3>` for 2D and 3D usage respectively. The same
-mathematical rules discussed in this article apply for both types.
+:ref:`Vector3 <class_Vector3>` for 2D and 3D usage, respectively. The same
+mathematical rules discussed in this article apply to both types.
 
 - Member access
 
@@ -341,7 +341,7 @@ Cross product
 Like the dot product, the **cross product** is an operation on two vectors.
 However, the result of the cross product is a vector with a direction
 that is perpendicular to both. Its magnitude depends on their relative angle.
-If two vectors are parallel, the result of their cross product will be null vector.
+If two vectors are parallel, the result of their cross product will be a null vector.
 
 .. math::
 
@@ -418,7 +418,7 @@ Pointing to a target
 --------------------
 
 In the dot product section above, we saw how it could be used to find the
-angle between two vectors. However, in 3D this is not enough information.
+angle between two vectors. However, in 3D, this is not enough information.
 We also need to know what axis to rotate around. We can find that by
 calculating the cross product of the current facing direction and the
 target direction. The resulting perpendicular vector is the axis of
