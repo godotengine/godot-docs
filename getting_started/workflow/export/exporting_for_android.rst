@@ -79,7 +79,7 @@ Now fill in the following forms in your Android Export Presets:
 
 - Release: Enter the path to the keystore file you just generated.
 - Release User: Replace with the key alias.
-- Release Password: Key password. Note that the keystore password and the key password currently has to be the same.
+- Release Password: Key password. Note that the keystore password and the key password currently have to be the same.
 
 **Now your export_presets.cfg file contains sensitive info;** if using a Version Control System, it is a good idea to remove it from public repositories.
 
