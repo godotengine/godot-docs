@@ -11,7 +11,7 @@ option via the options under
 .. image:: img/editor_settings.png
 
 There are two fields: the executable path and command line flags. The flags
-allow you to better integrate the editor with godot. Godot will replace the
+allow you to better integrate the editor with Godot. Godot will replace the
 following inside the flags parameter:
 
 +---------------------+-----------------------------------------------------+
