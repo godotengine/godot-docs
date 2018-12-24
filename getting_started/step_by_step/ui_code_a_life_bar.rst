@@ -271,7 +271,7 @@ node. The script editor opens with the cursor inside a new
 
    Godot writes the callback method for you and takes you to it
 
-Inside the parens after the function name, add a ``player_health``
+Inside the parentheses after the function name, add a ``player_health``
 argument. When the player emits the ``health_changed`` signal it will send
 its current ``health`` alongside it. Your code should look like:
 
