@@ -18,3 +18,4 @@ Compiling
    compiling_with_mono
    packaging_godot
    optimizing_for_size
+   compiling_with_script_encryption_key
