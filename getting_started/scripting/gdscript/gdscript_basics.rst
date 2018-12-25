@@ -895,7 +895,7 @@ There are 6 pattern types:
     matches the contents of a variable/enum ::
 
         match typeof(x):
-            TYPE_FLOAT:
+            TYPE_REAL:
                 print("float")
             TYPE_STRING:
                 print("text")
