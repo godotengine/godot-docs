@@ -194,9 +194,9 @@ If you want to add new children to all the instances of your 'template' scene, t
 Glossary correspondence
 -----------------------
 
-GameObject -> Node
-Add a component -> Inheriting
-Prefab -> Externalized branch
+- GameObject -> Node
+- Add a component -> Inheriting
+- Prefab -> Externalized branch
 
 
 Scripting: GDScript, C# and Visual Script
