@@ -58,7 +58,7 @@ Property Descriptions
 | *Getter* | is_closed()       |
 +----------+-------------------+
 
-If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
+If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
 
 .. _class_OccluderPolygon2D_cull_mode:
 

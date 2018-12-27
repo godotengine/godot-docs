@@ -243,7 +243,7 @@ Local translation of this node.
 | *Getter* | is_visible()       |
 +----------+--------------------+
 
-If ``true`` this node is drawn. Default value: ``true``.
+If ``true``, this node is drawn. Default value: ``true``.
 
 Method Descriptions
 -------------------

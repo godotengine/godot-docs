@@ -234,10 +234,10 @@ Return true if the array contains given value.
 
 ::
 
-    [ "inside", 7 ].has("inside") == true
-    [ "inside", 7 ].has("outside") == false
-    [ "inside", 7 ].has(7) == true
-    [ "inside", 7 ].has("7") == false
+    ["inside", 7].has("inside") == true
+    ["inside", 7].has("outside") == false
+    ["inside", 7].has(7) == true
+    ["inside", 7].has("7") == false
 
 .. _class_Array_hash:
 

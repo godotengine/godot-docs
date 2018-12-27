@@ -48,7 +48,11 @@ Methods
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`clear<class_EditorPlugin_clear>` **(** **)** virtual                                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`disable_plugin<class_EditorPlugin_disable_plugin>` **(** **)** virtual                                                                                                                                                    |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`edit<class_EditorPlugin_edit>` **(** :ref:`Object<class_Object>` object **)** virtual                                                                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`enable_plugin<class_EditorPlugin_enable_plugin>` **(** **)** virtual                                                                                                                                                      |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`forward_canvas_draw_over_viewport<class_EditorPlugin_forward_canvas_draw_over_viewport>` **(** :ref:`Control<class_Control>` overlay **)** virtual                                                                        |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -296,11 +300,19 @@ This is used, for example, in shader editors to let the plugin know that it must
 
 Clear all the state and reset the object being edited to zero. This ensures your plugin does not keep editing a currently existing node, or a node from the wrong scene.
 
+.. _class_EditorPlugin_disable_plugin:
+
+- void **disable_plugin** **(** **)** virtual
+
 .. _class_EditorPlugin_edit:
 
 - void **edit** **(** :ref:`Object<class_Object>` object **)** virtual
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
+
+.. _class_EditorPlugin_enable_plugin:
+
+- void **enable_plugin** **(** **)** virtual
 
 .. _class_EditorPlugin_forward_canvas_draw_over_viewport:
 

@@ -146,7 +146,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 | *Getter* | is_refusing_new_network_connections()     |
 +----------+-------------------------------------------+
 
-If ``true`` the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` refuses new incoming connections.
+If ``true``, the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_network_peer>` refuses new incoming connections.
 
 Method Descriptions
 -------------------

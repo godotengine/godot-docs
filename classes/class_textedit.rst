@@ -295,7 +295,7 @@ Property Descriptions
 | *Getter* | is_breakpoint_gutter_enabled()       |
 +----------+--------------------------------------+
 
-If ``true`` the breakpoint gutter is visible.
+If ``true``, the breakpoint gutter is visible.
 
 .. _class_TextEdit_caret_blink:
 
@@ -307,7 +307,7 @@ If ``true`` the breakpoint gutter is visible.
 | *Getter* | cursor_get_blink_enabled()      |
 +----------+---------------------------------+
 
-If ``true`` the caret (visual cursor) blinks.
+If ``true``, the caret (visual cursor) blinks.
 
 .. _class_TextEdit_caret_blink_speed:
 
@@ -331,9 +331,9 @@ Duration (in seconds) of a caret's blinking cycle.
 | *Getter* | cursor_is_block_mode()       |
 +----------+------------------------------+
 
-If ``true`` the caret displays as a rectangle.
+If ``true``, the caret displays as a rectangle.
 
-If ``false`` the caret displays as a bar.
+If ``false``, the caret displays as a bar.
 
 .. _class_TextEdit_caret_moving_by_right_click:
 
@@ -345,9 +345,9 @@ If ``false`` the caret displays as a bar.
 | *Getter* | is_right_click_moving_caret()      |
 +----------+------------------------------------+
 
-If ``true`` a right click moves the cursor at the mouse position before displaying the context menu.
+If ``true``, a right click moves the cursor at the mouse position before displaying the context menu.
 
-If ``false`` the context menu disregards mouse location.
+If ``false``, the context menu disregards mouse location.
 
 .. _class_TextEdit_context_menu_enabled:
 
@@ -359,7 +359,7 @@ If ``false`` the context menu disregards mouse location.
 | *Getter* | is_context_menu_enabled()       |
 +----------+---------------------------------+
 
-If ``true`` a right click displays the context menu.
+If ``true``, a right click displays the context menu.
 
 .. _class_TextEdit_hiding_enabled:
 
@@ -391,7 +391,7 @@ If ``true`` a right click displays the context menu.
 | *Getter* | is_highlight_current_line_enabled() |
 +----------+-------------------------------------+
 
-If ``true`` the line containing the cursor is highlighted.
+If ``true``, the line containing the cursor is highlighted.
 
 .. _class_TextEdit_override_selected_font_color:
 
@@ -413,7 +413,7 @@ If ``true`` the line containing the cursor is highlighted.
 | *Getter* | is_readonly()       |
 +----------+---------------------+
 
-If ``true`` read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
+If ``true``, read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
 
 .. _class_TextEdit_show_line_numbers:
 
@@ -425,7 +425,7 @@ If ``true`` read-only mode is enabled. Existing text cannot be modified and new 
 | *Getter* | is_show_line_numbers_enabled() |
 +----------+--------------------------------+
 
-If ``true`` line numbers are displayed to the left of the text.
+If ``true``, line numbers are displayed to the left of the text.
 
 .. _class_TextEdit_smooth_scrolling:
 

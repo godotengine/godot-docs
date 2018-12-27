@@ -16,6 +16,13 @@ Brief Description
 
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
+Properties
+----------
+
++-------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`switch_on_hover<class_MenuButton_switch_on_hover>` |
++-------------------------+----------------------------------------------------------+
+
 Methods
 -------
 
@@ -65,6 +72,21 @@ Description
 -----------
 
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
+
+Property Descriptions
+---------------------
+
+.. _class_MenuButton_switch_on_hover:
+
+- :ref:`bool<class_bool>` **switch_on_hover**
+
++----------+----------------------------+
+| *Setter* | set_switch_on_hover(value) |
++----------+----------------------------+
+| *Getter* | is_switch_on_hover()       |
++----------+----------------------------+
+
+If ``true``, when the cursor hovers above another MenuButton within the same parent which also has ``switch_on_hover`` enabled, it will close the current MenuButton and open the other one.
 
 Method Descriptions
 -------------------

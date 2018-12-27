@@ -97,6 +97,10 @@ Methods
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                    | :ref:`get_executable_path<class_OS_get_executable_path>` **(** **)** const                                                                                                                                               |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                  | :ref:`get_ime_selection<class_OS_get_ime_selection>` **(** **)** const                                                                                                                                                   |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                    | :ref:`get_ime_text<class_OS_get_ime_text>` **(** **)** const                                                                                                                                                             |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                    | :ref:`get_latin_keyboard_variant<class_OS_get_latin_keyboard_variant>` **(** **)** const                                                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                    | :ref:`get_locale<class_OS_get_locale>` **(** **)** const                                                                                                                                                                 |
@@ -134,6 +138,8 @@ Methods
 | :ref:`int<class_int>`                          | :ref:`get_static_memory_usage<class_OS_get_static_memory_usage>` **(** **)** const                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                    | :ref:`get_system_dir<class_OS_get_system_dir>` **(** :ref:`SystemDir<enum_OS_SystemDir>` dir **)** const                                                                                                                 |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_system_time_msecs<class_OS_get_system_time_msecs>` **(** **)** const                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_system_time_secs<class_OS_get_system_time_secs>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,6 +216,8 @@ Methods
 | void                                           | :ref:`request_attention<class_OS_request_attention>` **(** **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_icon<class_OS_set_icon>` **(** :ref:`Image<class_Image>` icon **)**                                                                                                                                            |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_ime_active<class_OS_set_ime_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_ime_position<class_OS_set_ime_position>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -381,7 +389,7 @@ The exit code passed to the OS when the main loop exits.
 | *Getter* | is_keep_screen_on()       |
 +----------+---------------------------+
 
-If ``true`` the engine tries to keep the screen on while the game is running. Useful on mobile.
+If ``true``, the engine tries to keep the screen on while the game is running. Useful on mobile.
 
 .. _class_OS_low_processor_usage_mode:
 
@@ -393,7 +401,7 @@ If ``true`` the engine tries to keep the screen on while the game is running. Us
 | *Getter* | is_in_low_processor_usage_mode()    |
 +----------+-------------------------------------+
 
-If ``true`` the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
+If ``true``, the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
 
 .. _class_OS_screen_orientation:
 
@@ -417,7 +425,7 @@ The current screen orientation.
 | *Getter* | is_vsync_enabled()   |
 +----------+----------------------+
 
-If ``true`` vertical synchronization (Vsync) is enabled.
+If ``true``, vertical synchronization (Vsync) is enabled.
 
 .. _class_OS_window_borderless:
 
@@ -429,7 +437,7 @@ If ``true`` vertical synchronization (Vsync) is enabled.
 | *Getter* | get_borderless_window()      |
 +----------+------------------------------+
 
-If ``true`` removes the window frame.
+If ``true``, removes the window frame.
 
 .. _class_OS_window_fullscreen:
 
@@ -441,7 +449,7 @@ If ``true`` removes the window frame.
 | *Getter* | is_window_fullscreen()       |
 +----------+------------------------------+
 
-If ``true`` the window is fullscreen.
+If ``true``, the window is fullscreen.
 
 .. _class_OS_window_maximized:
 
@@ -453,7 +461,7 @@ If ``true`` the window is fullscreen.
 | *Getter* | is_window_maximized()       |
 +----------+-----------------------------+
 
-If ``true`` the window is maximized.
+If ``true``, the window is maximized.
 
 .. _class_OS_window_minimized:
 
@@ -465,7 +473,7 @@ If ``true`` the window is maximized.
 | *Getter* | is_window_minimized()       |
 +----------+-----------------------------+
 
-If ``true`` the window is minimized.
+If ``true``, the window is minimized.
 
 .. _class_OS_window_per_pixel_transparency_enabled:
 
@@ -675,6 +683,18 @@ Returns an environment variable.
 
 Returns the path to the current engine executable.
 
+.. _class_OS_get_ime_selection:
+
+- :ref:`Vector2<class_Vector2>` **get_ime_selection** **(** **)** const
+
+Returns IME selection range.
+
+.. _class_OS_get_ime_text:
+
+- :ref:`String<class_String>` **get_ime_text** **(** **)** const
+
+Returns IME intermediate text.
+
 .. _class_OS_get_latin_keyboard_variant:
 
 - :ref:`String<class_String>` **get_latin_keyboard_variant** **(** **)** const
@@ -802,6 +822,12 @@ Returns the amount of static memory being used by the program in bytes.
 - :ref:`String<class_String>` **get_system_dir** **(** :ref:`SystemDir<enum_OS_SystemDir>` dir **)** const
 
 Returns the actual path to commonly used folders across different platforms. Available locations are specified in OS.SystemDir.
+
+.. _class_OS_get_system_time_msecs:
+
+- :ref:`int<class_int>` **get_system_time_msecs** **(** **)** const
+
+Returns the epoch time of the operating system in milliseconds.
 
 .. _class_OS_get_system_time_secs:
 
@@ -1045,9 +1071,17 @@ Request the user attention to the window. It'll flash the taskbar button on Wind
 
 Sets the game's icon.
 
+.. _class_OS_set_ime_active:
+
+- void **set_ime_active** **(** :ref:`bool<class_bool>` active **)**
+
+Sets whether IME input mode should be enabled.
+
 .. _class_OS_set_ime_position:
 
 - void **set_ime_position** **(** :ref:`Vector2<class_Vector2>` position **)**
+
+Sets position of IME suggestion list popup (in window coordinates).
 
 .. _class_OS_set_thread_name:
 

@@ -63,7 +63,7 @@ The :ref:`NodePath<class_NodePath>` to the remote node, relative to the RemoteTr
 | *Getter* | get_update_position()      |
 +----------+----------------------------+
 
-If ``true`` the remote node's position is updated. Default value: ``true``.
+If ``true``, the remote node's position is updated. Default value: ``true``.
 
 .. _class_RemoteTransform_update_rotation:
 
@@ -75,7 +75,7 @@ If ``true`` the remote node's position is updated. Default value: ``true``.
 | *Getter* | get_update_rotation()      |
 +----------+----------------------------+
 
-If ``true`` the remote node's rotation is updated. Default value: ``true``.
+If ``true``, the remote node's rotation is updated. Default value: ``true``.
 
 .. _class_RemoteTransform_update_scale:
 
@@ -87,7 +87,7 @@ If ``true`` the remote node's rotation is updated. Default value: ``true``.
 | *Getter* | get_update_scale()      |
 +----------+-------------------------+
 
-If ``true`` the remote node's scale is updated. Default value: ``true``.
+If ``true``, the remote node's scale is updated. Default value: ``true``.
 
 .. _class_RemoteTransform_use_global_coordinates:
 
@@ -99,5 +99,5 @@ If ``true`` the remote node's scale is updated. Default value: ``true``.
 | *Getter* | get_use_global_coordinates()      |
 +----------+-----------------------------------+
 
-If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
+If ``true``, global coordinates are used. If ``false``, local coordinates are used. Default value: ``true``.
 

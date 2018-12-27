@@ -36,7 +36,7 @@ Methods
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_bit<class_BitMap_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` p_rect, :ref:`bool<class_bool>` bit **)**                                  |
+| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -93,7 +93,7 @@ Sets the bitmap's element at the specified position, to the specified value.
 
 .. _class_BitMap_set_bit_rect:
 
-- void **set_bit_rect** **(** :ref:`Rect2<class_Rect2>` p_rect, :ref:`bool<class_bool>` bit **)**
+- void **set_bit_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**
 
 Sets a rectangular portion of the bitmap to the specified value.
 

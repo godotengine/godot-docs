@@ -32,9 +32,13 @@ Properties
 Methods
 -------
 
-+-------+---------------------------------------------------------------------------------------------+
-| void  | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_Color>` color **)** |
-+-------+---------------------------------------------------------------------------------------------+
++----------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`add_preset<class_ColorPicker_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
++----------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`erase_preset<class_ColorPicker_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
++----------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>`  | :ref:`get_presets<class_ColorPicker_get_presets>` **(** **)** const                             |
++----------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -70,6 +74,18 @@ Signals
 
 Emitted when the color is changed.
 
+.. _class_ColorPicker_preset_added:
+
+- **preset_added** **(** :ref:`Color<class_Color>` color **)**
+
+Emitted when a preset is added.
+
+.. _class_ColorPicker_preset_removed:
+
+- **preset_removed** **(** :ref:`Color<class_Color>` color **)**
+
+Emitted when a preset is removed.
+
 Description
 -----------
 
@@ -100,7 +116,7 @@ The currently selected color.
 | *Getter* | is_deferred_mode()       |
 +----------+--------------------------+
 
-If ``true`` the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
+If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
 
 .. _class_ColorPicker_edit_alpha:
 
@@ -112,7 +128,7 @@ If ``true`` the color will apply only after the user releases the mouse button, 
 | *Getter* | is_editing_alpha()    |
 +----------+-----------------------+
 
-If ``true`` shows an alpha channel slider (transparency).
+If ``true``, shows an alpha channel slider (transparency).
 
 .. _class_ColorPicker_raw_mode:
 
@@ -124,7 +140,7 @@ If ``true`` shows an alpha channel slider (transparency).
 | *Getter* | is_raw_mode()       |
 +----------+---------------------+
 
-If ``true`` allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 Method Descriptions
 -------------------
@@ -134,4 +150,16 @@ Method Descriptions
 - void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them. Note: the presets list is only for *this* color picker.
+
+.. _class_ColorPicker_erase_preset:
+
+- void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
+
+Remove the given color from the list of color presets of this color picker.
+
+.. _class_ColorPicker_get_presets:
+
+- :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** const
+
+Return the list of colors in the presets of the color picker.
 

@@ -312,7 +312,7 @@ Removes tab at index ``tab_idx``
 
 - void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` enables selecting a tab with right mouse button.
+If ``true``, enables selecting a tab with right mouse button.
 
 .. _class_Tabs_set_tab_disabled:
 

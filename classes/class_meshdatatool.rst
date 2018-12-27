@@ -111,9 +111,9 @@ Below is an example of how the MeshDataTool may be used.
     var mdt = MeshDataTool.new()
     mdt.create_from_surface(mesh, 0)
     for i in range(mdt.get_vertex_count()):
-    var vertex = mdt.get_vertex(i)
-    ...
-    mdt.set_vertex(i, vertex)
+        var vertex = mdt.get_vertex(i)
+        ...
+        mdt.set_vertex(i, vertex)
     mesh.surface_remove(0)
     mdt.commit_to_surface(mesh)
 

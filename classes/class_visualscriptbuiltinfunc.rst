@@ -122,7 +122,7 @@ enum **BuiltinFunc**:
 
 - **LOGIC_MIN** = **45** --- Return the lesser of the two numbers, also known as their minimum.
 
-- **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to `min(max(input, range_low), range_high)`
+- **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
 
 - **LOGIC_NEAREST_PO2** = **47** --- Return the nearest power of 2 to the input.
 

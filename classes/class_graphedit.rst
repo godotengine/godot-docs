@@ -146,7 +146,7 @@ Emitted when a GraphNode is selected.
 
 .. _class_GraphEdit_popup_request:
 
-- **popup_request** **(** :ref:`Vector2<class_Vector2>` p_position **)**
+- **popup_request** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
 
@@ -267,7 +267,7 @@ Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port'
 
 - :ref:`Array<class_Array>` **get_connection_list** **(** **)** const
 
-Return an Array containing the list of connections. A connection consists in a structure of the form {from_slot: 0, from: "GraphNode name 0", to_slot: 1, to: "GraphNode name 1" }
+Return an Array containing the list of connections. A connection consists in a structure of the form {from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }
 
 .. _class_GraphEdit_get_zoom_hbox:
 

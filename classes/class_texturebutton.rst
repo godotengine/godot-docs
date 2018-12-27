@@ -78,7 +78,7 @@ Property Descriptions
 | *Getter* | get_expand()      |
 +----------+-------------------+
 
-If ``true`` the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_stretch_mode>`. If ``false`` the texture will not scale with the node. Default value: ``false``.
+If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_stretch_mode>`. If ``false``, the texture will not scale with the node. Default value: ``false``.
 
 .. _class_TextureButton_stretch_mode:
 

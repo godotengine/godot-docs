@@ -41,5 +41,5 @@ Property Descriptions
 | *Getter* | is_using_top_left()     |
 +----------+-------------------------+
 
-If ``true`` centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
+If ``true``, centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
 

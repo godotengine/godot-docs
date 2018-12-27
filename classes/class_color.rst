@@ -462,16 +462,6 @@ Method Descriptions
 
 Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. See also :ref:`@GDScript.ColorN<class_@GDScript_ColorN>`.
 
-The following string formats are supported:
-
-``"#ff00ff00"`` - ARGB format with '#'
-
-``"ff00ff00"`` - ARGB format
-
-``"#ff00ff"`` - RGB format with '#'
-
-``"ff00ff"`` - RGB format
-
 ::
 
     # Each of the following creates the same color RGBA(178, 217, 10, 255)
@@ -498,7 +488,7 @@ Constructs a color from an RGB profile using values between 0 and 1. Alpha will 
 
 ::
 
-    var c = Color(0.2, 1.0, .7) # Equivalent to RGBA(51, 255, 178, 255)
+    var c = Color(0.2, 1.0, 0.7) # Equivalent to RGBA(51, 255, 178, 255)
 
 .. _class_Color_Color:
 
@@ -508,7 +498,7 @@ Constructs a color from an RGBA profile using values between 0 and 1.
 
 ::
 
-    var c = Color(0.2, 1.0, .7, .8) # Equivalent to RGBA(51, 255, 178, 204)
+    var c = Color(0.2, 1.0, 0.7, 0.8) # Equivalent to RGBA(51, 255, 178, 204)
 
 .. _class_Color_blend:
 
@@ -519,8 +509,8 @@ Returns a new color resulting from blending this color over another. If the colo
 ::
 
     var bg = Color(0.0, 1.0, 0.0, 0.5) # Green with alpha of 50%
-    var fg = Color(1.0, 0.0, 0.0, .5) # Red with alpha of 50%
-    var blendedColor = bg.blend(fg) # Brown with alpha of 75%
+    var fg = Color(1.0, 0.0, 0.0, 0.5) # Red with alpha of 50%
+    var blended_color = bg.blend(fg) # Brown with alpha of 75%
 
 .. _class_Color_contrasted:
 
@@ -530,14 +520,14 @@ Returns the most contrasting color.
 
 ::
 
-    var c = Color(.3, .4, .9)
-    var contrastedColor = c.contrasted() # Equivalent to RGBA(204, 229, 102, 255)
+    var c = Color(0.3, 0.4, 0.9)
+    var contrasted_color = c.contrasted() # Equivalent to RGBA(204, 229, 102, 255)
 
 .. _class_Color_darkened:
 
 - :ref:`Color<class_Color>` **darkened** **(** :ref:`float<class_float>` amount **)**
 
-Returns a new color resulting from making this color darker by the specified percentage (0-1).
+Returns a new color resulting from making this color darker by the specified percentage (ratio from 0 to 1).
 
 ::
 
@@ -560,7 +550,7 @@ Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values betwe
 
 Returns the color's grayscale representation.
 
-The gray is calculated by ``(r + g + b) / 3``.
+The gray value is calculated as ``(r + g + b) / 3``.
 
 ::
 
@@ -575,14 +565,14 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, 1 - a)``.
 
 ::
 
-    var c = Color(.3, .4, .9)
-    var invertedColor = c.inverted() # a color of an RGBA(178, 153, 26, 255)
+    var c = Color(0.3, 0.4, 0.9)
+    var inverted_color = c.inverted() # a color of an RGBA(178, 153, 26, 255)
 
 .. _class_Color_lightened:
 
 - :ref:`Color<class_Color>` **lightened** **(** :ref:`float<class_float>` amount **)**
 
-Returns a new color resulting from making this color lighter by the specified percentage (0-1).
+Returns a new color resulting from making this color lighter by the specified percentage (ratio from 0 to 1).
 
 ::
 
@@ -593,7 +583,7 @@ Returns a new color resulting from making this color lighter by the specified pe
 
 - :ref:`Color<class_Color>` **linear_interpolate** **(** :ref:`Color<class_Color>` b, :ref:`float<class_float>` t **)**
 
-Returns the linear interpolation with another color. The value t is between 0 and 1.
+Returns the linear interpolation with another color. The interpolation factor ``t`` is between 0 and 1.
 
 ::
 
@@ -609,7 +599,7 @@ Returns the color's 32-bit integer in ABGR format (each byte represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_abgr32()) # Prints 4281565439
 
 .. _class_Color_to_abgr64:
@@ -620,7 +610,7 @@ Returns the color's 64-bit integer in ABGR format (each word represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_abgr64()) # Prints -225178692812801
 
 .. _class_Color_to_argb32:
@@ -631,7 +621,7 @@ Returns the color's 32-bit integer in ARGB format (each byte represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_argb32()) # Prints 4294934323
 
 .. _class_Color_to_argb64:
@@ -642,7 +632,7 @@ Returns the color's 64-bit integer in ARGB format (each word represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_argb64()) # Prints -2147470541
 
 .. _class_Color_to_html:
@@ -655,7 +645,7 @@ Setting ``with_alpha`` to ``false`` excludes alpha from the hexadecimal string.
 
 ::
 
-    var c = Color(1, 1, 1, .5)
+    var c = Color(1, 1, 1, 0.5)
     var s1 = c.to_html() # Results "7fffffff"
     var s2 = c.to_html(false) # Results 'ffffff'
 
@@ -667,7 +657,7 @@ Returns the color's 32-bit integer in RGBA format (each byte represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_rgba32()) # Prints 4286526463
 
 .. _class_Color_to_rgba64:
@@ -678,6 +668,6 @@ Returns the color's 64-bit integer in RGBA format (each word represents a compon
 
 ::
 
-    var c = Color(1, .5, .2)
+    var c = Color(1, 0.5, 0.2)
     print(c.to_rgba64()) # Prints -140736629309441
 

@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`RigidBody<class_RigidBody>` nodes will be paused.
+If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
 .. _class_VisibilityEnabler_pause_animations:
 
@@ -68,5 +68,5 @@ If ``true`` :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
+If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 

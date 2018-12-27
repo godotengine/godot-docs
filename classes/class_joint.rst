@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_exclude_nodes_from_collision()      |
 +----------+-----------------------------------------+
 
-If ``true`` the two bodies of the nodes are not able to collide with each other.
+If ``true``, the two bodies of the nodes are not able to collide with each other.
 
 .. _class_Joint_nodes/node_a:
 

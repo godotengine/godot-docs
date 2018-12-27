@@ -277,7 +277,7 @@ Property Descriptions
 | *Getter* | use_arvr()          |
 +----------+---------------------+
 
-If ``true`` the viewport will be used in AR/VR process. Default value: ``false``.
+If ``true``, the viewport will be used in AR/VR process. Default value: ``false``.
 
 .. _class_Viewport_audio_listener_enable_2d:
 
@@ -289,7 +289,7 @@ If ``true`` the viewport will be used in AR/VR process. Default value: ``false``
 | *Getter* | is_audio_listener_2d()          |
 +----------+---------------------------------+
 
-If ``true`` the viewport will process 2D audio streams. Default value: ``false``.
+If ``true``, the viewport will process 2D audio streams. Default value: ``false``.
 
 .. _class_Viewport_audio_listener_enable_3d:
 
@@ -301,7 +301,7 @@ If ``true`` the viewport will process 2D audio streams. Default value: ``false``
 | *Getter* | is_audio_listener()          |
 +----------+------------------------------+
 
-If ``true`` the viewport will process 3D audio streams. Default value: ``false``.
+If ``true``, the viewport will process 3D audio streams. Default value: ``false``.
 
 .. _class_Viewport_canvas_transform:
 
@@ -337,7 +337,7 @@ The overlay mode for test rendered geometry in debug purposes. Default value: ``
 | *Getter* | is_3d_disabled()      |
 +----------+-----------------------+
 
-If ``true`` the viewport will disable 3D rendering. For actual disabling use ``usage``. Default value: ``false``.
+If ``true``, the viewport will disable 3D rendering. For actual disabling use ``usage``. Default value: ``false``.
 
 .. _class_Viewport_global_canvas_transform:
 
@@ -361,7 +361,7 @@ The global canvas transform of the viewport. The canvas transform is relative to
 | *Getter* | is_input_disabled()      |
 +----------+--------------------------+
 
-If ``true`` the viewport will not receive input event. Default value: ``false``.
+If ``true``, the viewport will not receive input event. Default value: ``false``.
 
 .. _class_Viewport_gui_snap_controls_to_pixels:
 
@@ -373,7 +373,7 @@ If ``true`` the viewport will not receive input event. Default value: ``false``.
 | *Getter* | is_snap_controls_to_pixels_enabled() |
 +----------+--------------------------------------+
 
-If ``true`` the GUI controls on the viewport will lay pixel perfectly. Default value: ``true``.
+If ``true``, the GUI controls on the viewport will lay pixel perfectly. Default value: ``true``.
 
 .. _class_Viewport_handle_input_locally:
 
@@ -395,7 +395,7 @@ If ``true`` the GUI controls on the viewport will lay pixel perfectly. Default v
 | *Getter* | get_hdr()      |
 +----------+----------------+
 
-If ``true`` the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
+If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
 
 .. _class_Viewport_keep_3d_linear:
 
@@ -407,7 +407,7 @@ If ``true`` the viewport rendering will receive benefits from High Dynamic Range
 | *Getter* | get_keep_3d_linear()      |
 +----------+---------------------------+
 
-If ``true`` the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
+If ``true``, the result after 3D rendering will not have a linear to sRGB color conversion applied. This is important when the viewport is used as a render target where the result is used as a texture on a 3D object rendered in another viewport. It is also important if the viewport is used to create data that is not color based (noise, heightmaps, pickmaps, etc.). Do not enable this when the viewport is used as a texture on a 2D object or if the viewport is your final output.
 
 .. _class_Viewport_msaa:
 
@@ -431,7 +431,7 @@ The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.
 | *Getter* | is_using_own_world()     |
 +----------+--------------------------+
 
-If ``true`` the viewport will use :ref:`World<class_World>` defined in ``world`` property. Default value: ``false``.
+If ``true``, the viewport will use :ref:`World<class_World>` defined in ``world`` property. Default value: ``false``.
 
 .. _class_Viewport_physics_object_picking:
 
@@ -443,7 +443,7 @@ If ``true`` the viewport will use :ref:`World<class_World>` defined in ``world``
 | *Getter* | get_physics_object_picking()      |
 +----------+-----------------------------------+
 
-If ``true`` the objects rendered by viewport become subjects of mouse picking process. Default value: ``false``.
+If ``true``, the objects rendered by viewport become subjects of mouse picking process. Default value: ``false``.
 
 .. _class_Viewport_render_target_clear_mode:
 
@@ -479,7 +479,7 @@ The update mode when viewport used as a render target. Default value: ``UPDATE_W
 | *Getter* | get_vflip()      |
 +----------+------------------+
 
-If ``true`` the result of rendering will be flipped vertically. Default value: ``false``.
+If ``true``, the result of rendering will be flipped vertically. Default value: ``false``.
 
 .. _class_Viewport_shadow_atlas_quad_0:
 
@@ -563,7 +563,7 @@ The width and height of viewport.
 | *Getter* | has_transparent_background()      |
 +----------+-----------------------------------+
 
-If ``true`` the viewport should render its background as transparent. Default value: ``false``.
+If ``true``, the viewport should render its background as transparent. Default value: ``false``.
 
 .. _class_Viewport_usage:
 
@@ -724,7 +724,7 @@ Sets the size override of the viewport. If the ``enable`` parameter is ``true`` 
 
 - void **set_size_override_stretch** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the size override affects stretch as well.
+If ``true``, the size override affects stretch as well.
 
 .. _class_Viewport_unhandled_input:
 

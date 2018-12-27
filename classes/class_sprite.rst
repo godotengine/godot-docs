@@ -87,7 +87,7 @@ Property Descriptions
 | *Getter* | is_centered()       |
 +----------+---------------------+
 
-If ``true`` texture is centered. Default value: ``true``.
+If ``true``, texture is centered. Default value: ``true``.
 
 .. _class_Sprite_flip_h:
 
@@ -99,7 +99,7 @@ If ``true`` texture is centered. Default value: ``true``.
 | *Getter* | is_flipped_h()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped horizontally. Default value: ``false``.
+If ``true``, texture is flipped horizontally. Default value: ``false``.
 
 .. _class_Sprite_flip_v:
 
@@ -111,7 +111,7 @@ If ``true`` texture is flipped horizontally. Default value: ``false``.
 | *Getter* | is_flipped_v()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped vertically. Default value: ``false``.
+If ``true``, texture is flipped vertically. Default value: ``false``.
 
 .. _class_Sprite_frame:
 
@@ -171,7 +171,7 @@ The texture's drawing offset.
 | *Getter* | is_region()       |
 +----------+-------------------+
 
-If ``true`` texture is cut from a larger atlas texture. See ``region_rect``. Default value: ``false``.
+If ``true``, texture is cut from a larger atlas texture. See ``region_rect``. Default value: ``false``.
 
 .. _class_Sprite_region_filter_clip:
 
@@ -183,7 +183,7 @@ If ``true`` texture is cut from a larger atlas texture. See ``region_rect``. Def
 | *Getter* | is_region_filter_clip_enabled() |
 +----------+---------------------------------+
 
-If ``true`` the outermost pixels get blurred out.
+If ``true``, the outermost pixels get blurred out.
 
 .. _class_Sprite_region_rect:
 

@@ -132,9 +132,9 @@ The ``ArrayMesh`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying t
 ::
 
     var vertices = PoolVector3Array()
-    vertices.push_back(Vector3(0,1,0))
-    vertices.push_back(Vector3(1,0,0))
-    vertices.push_back(Vector3(0,0,1))
+    vertices.push_back(Vector3(0, 1, 0))
+    vertices.push_back(Vector3(1, 0, 0))
+    vertices.push_back(Vector3(0, 0, 1))
     # Initialize the ArrayMesh.
     var arr_mesh = ArrayMesh.new()
     var arrays = []

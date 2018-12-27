@@ -208,6 +208,8 @@ Methods
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`environment_set_sky_custom_fov<class_VisualServer_environment_set_sky_custom_fov>` **(** :ref:`RID<class_RID>` env, :ref:`float<class_float>` scale **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                     | :ref:`environment_set_sky_orientation<class_VisualServer_environment_set_sky_orientation>` **(** :ref:`RID<class_RID>` env, :ref:`Basis<class_Basis>` orientation **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
++----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`environment_set_ssao<class_VisualServer_environment_set_ssao>` **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` radius, :ref:`float<class_float>` intensity, :ref:`float<class_float>` radius2, :ref:`float<class_float>` intensity2, :ref:`float<class_float>` bias, :ref:`float<class_float>` light_affect, :ref:`float<class_float>` ao_channel_affect, :ref:`Color<class_Color>` color, :ref:`EnvironmentSSAOQuality<enum_VisualServer_EnvironmentSSAOQuality>` quality, :ref:`EnvironmentSSAOBlur<enum_VisualServer_EnvironmentSSAOBlur>` blur, :ref:`float<class_float>` bilateral_sharpness **)** |
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`environment_set_ssr<class_VisualServer_environment_set_ssr>` **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` max_steps, :ref:`float<class_float>` fade_in, :ref:`float<class_float>` fade_out, :ref:`float<class_float>` depth_tolerance, :ref:`bool<class_bool>` roughness **)**                                                                                                                                                                                                                                                                                                                           |
@@ -588,7 +590,7 @@ Methods
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`scenario_set_fallback_environment<class_VisualServer_scenario_set_fallback_environment>` **(** :ref:`RID<class_RID>` scenario, :ref:`RID<class_RID>` environment **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                     | :ref:`scenario_set_reflection_atlas_size<class_VisualServer_scenario_set_reflection_atlas_size>` **(** :ref:`RID<class_RID>` scenario, :ref:`int<class_int>` p_size, :ref:`int<class_int>` subdiv **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| void                                                     | :ref:`scenario_set_reflection_atlas_size<class_VisualServer_scenario_set_reflection_atlas_size>` **(** :ref:`RID<class_RID>` scenario, :ref:`int<class_int>` size, :ref:`int<class_int>` subdiv **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`set_boot_image<class_VisualServer_set_boot_image>` **(** :ref:`Image<class_Image>` image, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` scale **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1848,6 +1850,10 @@ Modulates all colors in the given canvas.
 
 - void **environment_set_sky_custom_fov** **(** :ref:`RID<class_RID>` env, :ref:`float<class_float>` scale **)**
 
+.. _class_VisualServer_environment_set_sky_orientation:
+
+- void **environment_set_sky_orientation** **(** :ref:`RID<class_RID>` env, :ref:`Basis<class_Basis>` orientation **)**
+
 .. _class_VisualServer_environment_set_ssao:
 
 - void **environment_set_ssao** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` radius, :ref:`float<class_float>` intensity, :ref:`float<class_float>` radius2, :ref:`float<class_float>` intensity2, :ref:`float<class_float>` bias, :ref:`float<class_float>` light_affect, :ref:`float<class_float>` ao_channel_affect, :ref:`Color<class_Color>` color, :ref:`EnvironmentSSAOQuality<enum_VisualServer_EnvironmentSSAOQuality>` quality, :ref:`EnvironmentSSAOBlur<enum_VisualServer_EnvironmentSSAOBlur>` blur, :ref:`float<class_float>` bilateral_sharpness **)**
@@ -2698,7 +2704,7 @@ The callback method must use only 1 argument which will be called with 'userdata
 
 .. _class_VisualServer_scenario_set_reflection_atlas_size:
 
-- void **scenario_set_reflection_atlas_size** **(** :ref:`RID<class_RID>` scenario, :ref:`int<class_int>` p_size, :ref:`int<class_int>` subdiv **)**
+- void **scenario_set_reflection_atlas_size** **(** :ref:`RID<class_RID>` scenario, :ref:`int<class_int>` size, :ref:`int<class_int>` subdiv **)**
 
 .. _class_VisualServer_set_boot_image:
 
@@ -2896,7 +2902,7 @@ Sets the texture's path.
 
 - void **texture_set_shrink_all_x2_on_set_data** **(** :ref:`bool<class_bool>` shrink **)**
 
-If ``true`` sets internal processes to shrink all image data to half the size.
+If ``true``, sets internal processes to shrink all image data to half the size.
 
 .. _class_VisualServer_texture_set_size_override:
 
@@ -2906,7 +2912,7 @@ If ``true`` sets internal processes to shrink all image data to half the size.
 
 - void **textures_keep_original** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``true`` the image will be stored in the texture's images array if overwritten.
+If ``true``, the image will be stored in the texture's images array if overwritten.
 
 .. _class_VisualServer_viewport_attach_camera:
 
@@ -2960,7 +2966,7 @@ Detaches a viewport from a canvas and vice versa.
 
 - void **viewport_set_active** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` active **)**
 
-If ``true`` sets the viewport active, else sets it inactive.
+If ``true``, sets the viewport active, else sets it inactive.
 
 .. _class_VisualServer_viewport_set_canvas_stacking:
 
@@ -2992,13 +2998,13 @@ Sets the debug draw mode of a viewport. See VIEWPORT_DEBUG_DRAW\_\* constants fo
 
 - void **viewport_set_disable_3d** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` disabled **)**
 
-If ``true`` a viewport's 3D rendering is disabled.
+If ``true``, a viewport's 3D rendering is disabled.
 
 .. _class_VisualServer_viewport_set_disable_environment:
 
 - void **viewport_set_disable_environment** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` disabled **)**
 
-If ``true`` rendering of a viewport's environment is disabled.
+If ``true``, rendering of a viewport's environment is disabled.
 
 .. _class_VisualServer_viewport_set_global_canvas_transform:
 
@@ -3010,13 +3016,13 @@ Sets the viewport's global transformation matrix.
 
 - void **viewport_set_hdr** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the viewport renders to hdr.
+If ``true``, the viewport renders to hdr.
 
 .. _class_VisualServer_viewport_set_hide_canvas:
 
 - void **viewport_set_hide_canvas** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` hidden **)**
 
-If ``true`` the viewport's canvas is not rendered.
+If ``true``, the viewport's canvas is not rendered.
 
 .. _class_VisualServer_viewport_set_hide_scenario:
 
@@ -3064,7 +3070,7 @@ Sets the viewport's width and height.
 
 - void **viewport_set_transparent_background** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the viewport renders its background as transparent.
+If ``true``, the viewport renders its background as transparent.
 
 .. _class_VisualServer_viewport_set_update_mode:
 
@@ -3082,11 +3088,11 @@ Sets the viewport's 2D/3D mode. See :ref:`ViewportUsage<enum_@GlobalScope_Viewpo
 
 - void **viewport_set_use_arvr** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_arvr **)**
 
-If ``true`` the viewport uses augmented or virtual reality technologies. See :ref:`ARVRInterface<class_ARVRInterface>`.
+If ``true``, the viewport uses augmented or virtual reality technologies. See :ref:`ARVRInterface<class_ARVRInterface>`.
 
 .. _class_VisualServer_viewport_set_vflip:
 
 - void **viewport_set_vflip** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the viewport's rendering is flipped vertically.
+If ``true``, the viewport's rendering is flipped vertically.
 

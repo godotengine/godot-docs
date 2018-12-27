@@ -59,7 +59,7 @@ Property Descriptions
 | *Getter* | is_echo()       |
 +----------+-----------------+
 
-If ``true`` the key was already pressed before this event. It means the user is holding the key down.
+If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
 .. _class_InputEventKey_pressed:
 
@@ -71,7 +71,7 @@ If ``true`` the key was already pressed before this event. It means the user is 
 | *Getter* | is_pressed()       |
 +----------+--------------------+
 
-If ``true`` the key's state is pressed. If ``false`` the key's state is released.
+If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
 .. _class_InputEventKey_scancode:
 

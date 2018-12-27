@@ -75,7 +75,7 @@ Base motion scale of all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 | *Getter* | is_ignore_camera_zoom()       |
 +----------+-------------------------------+
 
-If ``true`` elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
+If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
 
 .. _class_ParallaxBackground_scroll_limit_begin:
 

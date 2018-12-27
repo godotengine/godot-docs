@@ -246,7 +246,7 @@ Adds a constant rotational force (i.e. a motor) without affecting position.
 
 Applies a single directional impulse without affecting rotation.
 
-This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
+This is equivalent to ``apply_impulse(Vector3(0, 0, 0), impulse)``.
 
 .. _class_PhysicsDirectBodyState_apply_impulse:
 

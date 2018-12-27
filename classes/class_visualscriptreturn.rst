@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter* | is_return_value_enabled()      |
 +----------+--------------------------------+
 
-If ``true`` the ``return`` input port is available.
+If ``true``, the ``return`` input port is available.
 
 .. _class_VisualScriptReturn_return_type:
 

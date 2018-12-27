@@ -507,7 +507,7 @@ The strength of the anisotropy effect.
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` anisotropy is enabled. Changes the shape of the specular blob and aligns it to tangent space. Default value: ``false``.
+If ``true``, anisotropy is enabled. Changes the shape of the specular blob and aligns it to tangent space. Default value: ``false``.
 
 .. _class_SpatialMaterial_anisotropy_flowmap:
 
@@ -529,7 +529,7 @@ If ``true`` anisotropy is enabled. Changes the shape of the specular blob and al
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` ambient occlusion is enabled.
+If ``true``, ambient occlusion is enabled.
 
 .. _class_SpatialMaterial_ao_light_affect:
 
@@ -591,7 +591,7 @@ If ``true`` ambient occlusion is enabled.
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` clearcoat rendering is enabled. Adds a secondary transparent pass to the material. Default value: ``false``.
+If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the material. Default value: ``false``.
 
 .. _class_SpatialMaterial_clearcoat_gloss:
 
@@ -633,7 +633,7 @@ If ``true`` clearcoat rendering is enabled. Adds a secondary transparent pass to
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` Depth mapping is enabled. See also :ref:`normal_enabled<class_SpatialMaterial_normal_enabled>`.
+If ``true``, Depth mapping is enabled. See also :ref:`normal_enabled<class_SpatialMaterial_normal_enabled>`.
 
 .. _class_SpatialMaterial_depth_flip_binormal:
 
@@ -807,7 +807,7 @@ The emitted light's color. See :ref:`emission_enabled<class_SpatialMaterial_emis
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` the body emits light.
+If ``true``, the body emits light.
 
 .. _class_SpatialMaterial_emission_energy:
 
@@ -871,7 +871,7 @@ The emitted light's strength. See :ref:`emission_enabled<class_SpatialMaterial_e
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the object receives no ambient light. Default value: ``false``.
+If ``true``, the object receives no ambient light. Default value: ``false``.
 
 .. _class_SpatialMaterial_flags_do_not_receive_shadows:
 
@@ -883,7 +883,7 @@ If ``true`` the object receives no ambient light. Default value: ``false``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the object receives no shadow that would otherwise be cast onto it. Default value: ``false``.
+If ``true``, the object receives no shadow that would otherwise be cast onto it. Default value: ``false``.
 
 .. _class_SpatialMaterial_flags_ensure_correct_normals:
 
@@ -905,7 +905,7 @@ If ``true`` the object receives no shadow that would otherwise be cast onto it. 
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the object is rendered at the same size regardless of distance. Default value: ``false``.
+If ``true``, the object is rendered at the same size regardless of distance. Default value: ``false``.
 
 .. _class_SpatialMaterial_flags_no_depth_test:
 
@@ -917,7 +917,7 @@ If ``true`` the object is rendered at the same size regardless of distance. Defa
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` depth testing is disabled and the object will be drawn in render order.
+If ``true``, depth testing is disabled and the object will be drawn in render order.
 
 .. _class_SpatialMaterial_flags_transparent:
 
@@ -929,7 +929,7 @@ If ``true`` depth testing is disabled and the object will be drawn in render ord
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` transparency is enabled on the body. Default value: ``false``. See also :ref:`params_blend_mode<class_SpatialMaterial_params_blend_mode>`.
+If ``true``, transparency is enabled on the body. Default value: ``false``. See also :ref:`params_blend_mode<class_SpatialMaterial_params_blend_mode>`.
 
 .. _class_SpatialMaterial_flags_unshaded:
 
@@ -941,7 +941,7 @@ If ``true`` transparency is enabled on the body. Default value: ``false``. See a
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the object is unaffected by lighting. Default value: ``false``.
+If ``true``, the object is unaffected by lighting. Default value: ``false``.
 
 .. _class_SpatialMaterial_flags_use_point_size:
 
@@ -953,7 +953,7 @@ If ``true`` the object is unaffected by lighting. Default value: ``false``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` render point size can be changed. Note: this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_params_point_size>`.
+If ``true``, render point size can be changed. Note: this is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_params_point_size>`.
 
 .. _class_SpatialMaterial_flags_vertex_lighting:
 
@@ -965,7 +965,7 @@ If ``true`` render point size can be changed. Note: this is only effective for o
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` lighting is calculated per vertex rather than per pixel. This may increase performance on low-end devices. Default value: ``false``.
+If ``true``, lighting is calculated per vertex rather than per pixel. This may increase performance on low-end devices. Default value: ``false``.
 
 .. _class_SpatialMaterial_flags_world_triplanar:
 
@@ -977,7 +977,7 @@ If ``true`` lighting is calculated per vertex rather than per pixel. This may in
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` triplanar mapping is calculated in world space rather than object local space. See also :ref:`uv1_triplanar<class_SpatialMaterial_uv1_triplanar>`. Default value: ``false``.
+If ``true``, triplanar mapping is calculated in world space rather than object local space. See also :ref:`uv1_triplanar<class_SpatialMaterial_uv1_triplanar>`. Default value: ``false``.
 
 .. _class_SpatialMaterial_metallic:
 
@@ -1033,7 +1033,7 @@ General reflectivity amount. Note: unlike :ref:`metallic<class_SpatialMaterial_m
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` normal mapping is enabled.
+If ``true``, normal mapping is enabled.
 
 .. _class_SpatialMaterial_normal_scale:
 
@@ -1147,7 +1147,7 @@ The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_@Glo
 | *Getter* | is_grow_enabled()       |
 +----------+-------------------------+
 
-If ``true`` enables the vertex grow setting. See :ref:`params_grow_amount<class_SpatialMaterial_params_grow_amount>`.
+If ``true``, enables the vertex grow setting. See :ref:`params_grow_amount<class_SpatialMaterial_params_grow_amount>`.
 
 .. _class_SpatialMaterial_params_grow_amount:
 
@@ -1227,7 +1227,7 @@ The number of horizontal frames in the particle spritesheet. Only enabled when u
 | *Getter* | get_particles_anim_loop()      |
 +----------+--------------------------------+
 
-If ``true`` particle animations are looped. Only enabled when using ``BillboardMode.BILLBOARD_PARTICLES``. See :ref:`params_billboard_mode<class_SpatialMaterial_params_billboard_mode>`.
+If ``true``, particle animations are looped. Only enabled when using ``BillboardMode.BILLBOARD_PARTICLES``. See :ref:`params_billboard_mode<class_SpatialMaterial_params_billboard_mode>`.
 
 .. _class_SpatialMaterial_particles_anim_v_frames:
 
@@ -1261,7 +1261,7 @@ The number of vertical frames in the particle spritesheet. Only enabled when usi
 | *Getter* | is_proximity_fade_enabled() |
 +----------+-----------------------------+
 
-If ``true`` the proximity and distance fade effect is enabled. Default value: ``false``.
+If ``true``, the proximity and distance fade effect is enabled. Default value: ``false``.
 
 .. _class_SpatialMaterial_refraction_enabled:
 
@@ -1273,7 +1273,7 @@ If ``true`` the proximity and distance fade effect is enabled. Default value: ``
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` the refraction effect is enabled. Distorts transparency based on light from behind the object. Default value: ``false``.
+If ``true``, the refraction effect is enabled. Distorts transparency based on light from behind the object. Default value: ``false``.
 
 .. _class_SpatialMaterial_refraction_scale:
 
@@ -1327,7 +1327,7 @@ The strength of the refraction effect.
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` rim effect is enabled. Default value: ``false``.
+If ``true``, rim effect is enabled. Default value: ``false``.
 
 .. _class_SpatialMaterial_rim_texture:
 
@@ -1393,7 +1393,7 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges.
+If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges.
 
 .. _class_SpatialMaterial_subsurf_scatter_strength:
 
@@ -1439,7 +1439,7 @@ The color used by the transmission effect. Represents the light passing through 
 | *Getter* | get_feature()      |
 +----------+--------------------+
 
-If ``true`` the transmission effect is enabled. Default value: ``false``.
+If ``true``, the transmission effect is enabled. Default value: ``false``.
 
 .. _class_SpatialMaterial_transmission_texture:
 
@@ -1541,7 +1541,7 @@ If ``true`` the transmission effect is enabled. Default value: ``false``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the model's vertex colors are processed as sRGB mode. Default value: ``false``.
+If ``true``, the model's vertex colors are processed as sRGB mode. Default value: ``false``.
 
 .. _class_SpatialMaterial_vertex_color_use_as_albedo:
 
@@ -1553,5 +1553,5 @@ If ``true`` the model's vertex colors are processed as sRGB mode. Default value:
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the vertex color is used as albedo color. Default value: ``false``.
+If ``true``, the vertex color is used as albedo color. Default value: ``false``.
 

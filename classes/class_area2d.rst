@@ -180,7 +180,7 @@ The name of the area's audio bus.
 | *Getter* | is_overriding_audio_bus()     |
 +----------+-------------------------------+
 
-If ``true`` the area's audio bus overrides the default audio bus. Default value: ``false``.
+If ``true``, the area's audio bus overrides the default audio bus. Default value: ``false``.
 
 .. _class_Area2D_collision_layer:
 
@@ -240,7 +240,7 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 | *Getter* | is_gravity_a_point()        |
 +----------+-----------------------------+
 
-If ``true`` gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
+If ``true``, gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
 
 .. _class_Area2D_gravity_vec:
 
@@ -276,7 +276,7 @@ The rate at which objects stop moving in this area. Represents the linear veloci
 | *Getter* | is_monitorable()       |
 +----------+------------------------+
 
-If ``true`` other monitoring areas can detect this area. Default value: ``true``.
+If ``true``, other monitoring areas can detect this area. Default value: ``true``.
 
 .. _class_Area2D_monitoring:
 
@@ -288,7 +288,7 @@ If ``true`` other monitoring areas can detect this area. Default value: ``true``
 | *Getter* | is_monitoring()       |
 +----------+-----------------------+
 
-If ``true`` the area detects bodies or areas entering and exiting it. Default value: ``true``.
+If ``true``, the area detects bodies or areas entering and exiting it. Default value: ``true``.
 
 .. _class_Area2D_priority:
 
@@ -345,13 +345,13 @@ Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
-If ``true`` the given area overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given area overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area2D_overlaps_body:
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
-If ``true`` the given body overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+If ``true``, the given body overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area2D_set_collision_layer_bit:
 

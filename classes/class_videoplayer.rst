@@ -95,7 +95,7 @@ The embedded audio track to play.
 | *Getter* | has_autoplay()      |
 +----------+---------------------+
 
-If ``true`` playback starts when the scene loads. Default value: ``false``.
+If ``true``, playback starts when the scene loads. Default value: ``false``.
 
 .. _class_VideoPlayer_buffering_msec:
 
@@ -131,7 +131,7 @@ Audio bus to use for sound playback.
 | *Getter* | has_expand()      |
 +----------+-------------------+
 
-If ``true`` the video scales to the control size. Default value: ``true``.
+If ``true``, the video scales to the control size. Default value: ``true``.
 
 .. _class_VideoPlayer_paused:
 
@@ -143,7 +143,7 @@ If ``true`` the video scales to the control size. Default value: ``true``.
 | *Getter* | is_paused()       |
 +----------+-------------------+
 
-If ``true`` the video is paused.
+If ``true``, the video is paused.
 
 .. _class_VideoPlayer_stream:
 

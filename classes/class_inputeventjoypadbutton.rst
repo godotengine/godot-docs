@@ -62,7 +62,7 @@ Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope
 | *Getter* | is_pressed()       |
 +----------+--------------------+
 
-If ``true`` the button's state is pressed. If ``false`` the button's state is released.
+If ``true``, the button's state is pressed. If ``false``, the button's state is released.
 
 .. _class_InputEventJoypadButton_pressure:
 

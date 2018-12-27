@@ -167,7 +167,7 @@ The file system path in the address bar.
 | *Getter* | is_overwrite_warning_disabled()      |
 +----------+--------------------------------------+
 
-If ``true`` the ``EditorFileDialog`` will not warn the user before overwriting files.
+If ``true``, the ``EditorFileDialog`` will not warn the user before overwriting files.
 
 .. _class_EditorFileDialog_display_mode:
 
@@ -203,7 +203,7 @@ The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
 | *Getter* | is_showing_hidden_files()    |
 +----------+------------------------------+
 
-If ``true`` hidden files and directories will be visible in the ``EditorFileDialog``.
+If ``true``, hidden files and directories will be visible in the ``EditorFileDialog``.
 
 Method Descriptions
 -------------------

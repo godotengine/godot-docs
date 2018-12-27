@@ -341,13 +341,13 @@ Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_pol
 
 - :ref:`bool<class_bool>` **has_response** **(** **)** const
 
-If ``true`` this ``HTTPClient`` has a response available.
+If ``true``, this ``HTTPClient`` has a response available.
 
 .. _class_HTTPClient_is_response_chunked:
 
 - :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
-If ``true`` this ``HTTPClient`` has a response that is chunked.
+If ``true``, this ``HTTPClient`` has a response that is chunked.
 
 .. _class_HTTPClient_poll:
 
@@ -364,16 +364,16 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
 ::
 
     var fields = {"username": "user", "password": "pass"}
-    String queryString = httpClient.query_string_from_dict(fields)
-    returns:= "username=user&password=pass"
+    String query_string = http_client.query_string_from_dict(fields)
+    # returns: "username=user&password=pass"
 
 Furthermore, if a key has a null value, only the key itself is added, without equal sign and value. If the value is an array, for each value in it a pair with the same key is added.
 
 ::
 
     var fields = {"single": 123, "not_valued": null, "multiple": [22, 33, 44]}
-    String queryString = httpClient.query_string_from_dict(fields)
-    returns:= "single=123&not_valued&multiple=22&multiple=33&multiple=44"
+    String query_string = http_client.query_string_from_dict(fields)
+    # returns: "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
 .. _class_HTTPClient_read_response_body_chunk:
 
@@ -394,9 +394,9 @@ To create a POST request with query strings to push to the server, do:
 ::
 
     var fields = {"username" : "user", "password" : "pass"}
-    var queryString = httpClient.query_string_from_dict(fields)
-    var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())]
-    var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
+    var query_string = http_client.query_string_from_dict(fields)
+    var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(query_string.length())]
+    var result = http_client.request(http_client.METHOD_POST, "index.php", headers, query_string)
 
 .. _class_HTTPClient_request_raw:
 

@@ -92,7 +92,7 @@ Property Descriptions
 | *Getter* | get_antialiased()      |
 +----------+------------------------+
 
-If ``true`` polygon edges will be anti-aliased. Default value: ``false``.
+If ``true``, polygon edges will be anti-aliased. Default value: ``false``.
 
 .. _class_Polygon2D_bones:
 
@@ -132,7 +132,7 @@ Added padding applied to the bounding box when using ``invert``. Setting this va
 | *Getter* | get_invert()      |
 +----------+-------------------+
 
-If ``true`` polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
+If ``true``, polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
 
 .. _class_Polygon2D_offset:
 

@@ -59,7 +59,7 @@ Methods
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                               |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`draw_multimesh<class_CanvasItem_draw_multimesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                                                                                     |
+| void                                   | :ref:`draw_multimesh<class_CanvasItem_draw_multimesh>` **(** :ref:`MultiMesh<class_MultiMesh>` multimesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**                                                                                                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolColorArray<class_PoolColorArray>` colors, :ref:`PoolVector2Array<class_PoolVector2Array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_Texture>` texture=null, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -274,13 +274,13 @@ The color applied to textures on this ``CanvasItem``. This is not inherited by c
 | *Getter* | is_draw_behind_parent_enabled() |
 +----------+---------------------------------+
 
-If ``true`` the object draws behind its parent. Default value: ``false``.
+If ``true``, the object draws behind its parent. Default value: ``false``.
 
 .. _class_CanvasItem_show_on_top:
 
 - :ref:`bool<class_bool>` **show_on_top**
 
-If ``true`` the object draws on top of its parent. Default value: ``true``.
+If ``true``, the object draws on top of its parent. Default value: ``true``.
 
 .. _class_CanvasItem_use_parent_material:
 
@@ -292,7 +292,7 @@ If ``true`` the object draws on top of its parent. Default value: ``true``.
 | *Getter* | get_use_parent_material()      |
 +----------+--------------------------------+
 
-If ``true`` the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is used as this one's material. Default value: ``false``.
+If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is used as this one's material. Default value: ``false``.
 
 .. _class_CanvasItem_visible:
 
@@ -304,7 +304,7 @@ If ``true`` the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material
 | *Getter* | is_visible()       |
 +----------+--------------------+
 
-If ``true`` this ``CanvasItem`` is drawn. Default value: ``true``.
+If ``true``, this ``CanvasItem`` is drawn. Default value: ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple popup\*() functions instead.
 
 Method Descriptions
 -------------------
@@ -357,7 +357,7 @@ Draws multiple, parallel lines with a uniform ``width``, segment-by-segment colo
 
 .. _class_CanvasItem_draw_multimesh:
 
-- void **draw_multimesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
+- void **draw_multimesh** **(** :ref:`MultiMesh<class_MultiMesh>` multimesh, :ref:`Texture<class_Texture>` texture, :ref:`Texture<class_Texture>` normal_map=null **)**
 
 .. _class_CanvasItem_draw_polygon:
 
@@ -565,7 +565,7 @@ If ``enable`` is ``true``, children will be updated with global transform data.
 
 - void **show** **(** **)**
 
-Show the CanvasItem currently hidden.
+Show the CanvasItem currently hidden. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple popup\*() functions instead.
 
 .. _class_CanvasItem_update:
 

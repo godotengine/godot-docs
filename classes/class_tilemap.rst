@@ -61,6 +61,8 @@ Methods
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_cell<class_TileMap_get_cell>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`  | :ref:`get_cell_autotile_coord<class_TileMap_get_cell_autotile_coord>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const                                                                                                                                                                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_cellv<class_TileMap_get_cellv>` **(** :ref:`Vector2<class_Vector2>` position **)** const                                                                                                                                                                                                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_TileMap_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                                                                                                                                   |
@@ -238,7 +240,7 @@ Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_OR
 | *Getter* | is_y_sort_mode_enabled() |
 +----------+--------------------------+
 
-If ``true`` the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
+If ``true``, the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
 
 .. _class_TileMap_collision_bounce:
 
@@ -298,7 +300,7 @@ The collision mask(s) for all colliders in the TileMap.
 | *Getter* | get_collision_use_kinematic()      |
 +----------+------------------------------------+
 
-If ``true`` TileMap collisions will be handled as a kinematic body. If ``false`` collisions will be handled as static body. Default value: ``false``.
+If ``true``, TileMap collisions will be handled as a kinematic body. If ``false``, collisions will be handled as static body. Default value: ``false``.
 
 .. _class_TileMap_mode:
 
@@ -356,6 +358,10 @@ Clears cells that do not exist in the tileset.
 - :ref:`int<class_int>` **get_cell** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 Returns the tile index of the given cell.
+
+.. _class_TileMap_get_cell_autotile_coord:
+
+- :ref:`Vector2<class_Vector2>` **get_cell_autotile_coord** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
 
 .. _class_TileMap_get_cellv:
 

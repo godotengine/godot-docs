@@ -26,15 +26,17 @@ Properties
 Methods
 -------
 
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`rand_range<class_RandomNumberGenerator_rand_range>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`randf<class_RandomNumberGenerator_randf>` **(** **)**                                                                        |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`randi<class_RandomNumberGenerator_randi>` **(** **)**                                                                        |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`randomize<class_RandomNumberGenerator_randomize>` **(** **)**                                                                |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`randf<class_RandomNumberGenerator_randf>` **(** **)**                                                                          |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`randf_range<class_RandomNumberGenerator_randf_range>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`randi<class_RandomNumberGenerator_randi>` **(** **)**                                                                          |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`randi_range<class_RandomNumberGenerator_randi_range>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**         |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`randomize<class_RandomNumberGenerator_randomize>` **(** **)**                                                                  |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -52,23 +54,29 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_RandomNumberGenerator_rand_range:
-
-- :ref:`float<class_float>` **rand_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
-
-Generates pseudo-random float between ``from`` and ``to``.
-
 .. _class_RandomNumberGenerator_randf:
 
 - :ref:`float<class_float>` **randf** **(** **)**
 
 Generates pseudo-random float between '0.0' and '1.0'.
 
+.. _class_RandomNumberGenerator_randf_range:
+
+- :ref:`float<class_float>` **randf_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
+
+Generates pseudo-random float between ``from`` and ``to``.
+
 .. _class_RandomNumberGenerator_randi:
 
 - :ref:`int<class_int>` **randi** **(** **)**
 
-Generates pseudo-random 32-bit integer between '0' and '4294967295'.
+Generates pseudo-random 32-bit unsigned integer between '0' and '4294967295'.
+
+.. _class_RandomNumberGenerator_randi_range:
+
+- :ref:`int<class_int>` **randi_range** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
+
+Generates pseudo-random 32-bit signed integer between ``from`` and ``to``\ (inclusive).
 
 .. _class_RandomNumberGenerator_randomize:
 

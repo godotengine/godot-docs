@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
+If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_pause_animated_sprites:
 
@@ -84,7 +84,7 @@ If ``true`` :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
+If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_pause_animations:
 
@@ -96,7 +96,7 @@ If ``true`` :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
+If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_pause_particles:
 
@@ -108,7 +108,7 @@ If ``true`` :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` :ref:`Particles2D<class_Particles2D>` nodes will be paused.
+If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 
 .. _class_VisibilityEnabler2D_physics_process_parent:
 
@@ -120,7 +120,7 @@ If ``true`` :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` the parent's :ref:`Node._physics_process<class_Node__physics_process>` will be stopped.
+If ``true``, the parent's :ref:`Node._physics_process<class_Node__physics_process>` will be stopped.
 
 .. _class_VisibilityEnabler2D_process_parent:
 
@@ -132,5 +132,5 @@ If ``true`` the parent's :ref:`Node._physics_process<class_Node__physics_process
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true`` the parent's :ref:`Node._process<class_Node__process>` will be stopped.
+If ``true``, the parent's :ref:`Node._process<class_Node__process>` will be stopped.
 

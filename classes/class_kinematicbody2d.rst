@@ -84,7 +84,7 @@ If the body is at least this close to another body, this body will consider them
 | *Getter* | is_sync_to_physics_enabled() |
 +----------+------------------------------+
 
-If ``true`` the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms.
+If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms.
 
 Method Descriptions
 -------------------
@@ -137,7 +137,7 @@ Moves the body along the vector ``rel_vec``. The body will stop if it collides. 
 
 Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_RigidBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
-``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
+``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>`, you should *not* multiply it by ``delta`` — this is done by the method.
 
 ``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 

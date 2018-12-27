@@ -80,7 +80,7 @@ Method Descriptions
 
 - void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` info **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the name of the property) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
 Example:
 

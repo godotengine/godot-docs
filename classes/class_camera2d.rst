@@ -129,7 +129,7 @@ The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 | *Getter* | is_current() |
 +----------+--------------+
 
-If ``true`` the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+If ``true``, the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
 
 .. _class_Camera2D_custom_viewport:
 
@@ -165,7 +165,7 @@ Bottom margin needed to drag the camera. A value of ``1`` makes the camera move 
 | *Getter* | is_h_drag_enabled()       |
 +----------+---------------------------+
 
-If ``true`` the camera only moves when reaching the horizontal drag margins. If ``false`` the camera moves horizontally regardless of margins. Default value: ``true``.
+If ``true``, the camera only moves when reaching the horizontal drag margins. If ``false``, the camera moves horizontally regardless of margins. Default value: ``true``.
 
 .. _class_Camera2D_drag_margin_left:
 
@@ -213,7 +213,7 @@ Top margin needed to drag the camera. A value of ``1`` makes the camera move onl
 | *Getter* | is_v_drag_enabled()       |
 +----------+---------------------------+
 
-If ``true`` the camera only moves when reaching the vertical drag margins. If ``false`` the camera moves vertically regardless of margins. Default value: ``true``.
+If ``true``, the camera only moves when reaching the vertical drag margins. If ``false``, the camera moves vertically regardless of margins. Default value: ``true``.
 
 .. _class_Camera2D_editor_draw_drag_margin:
 
@@ -225,7 +225,7 @@ If ``true`` the camera only moves when reaching the vertical drag margins. If ``
 | *Getter* | is_margin_drawing_enabled()       |
 +----------+-----------------------------------+
 
-If ``true`` draws the camera's drag margin rectangle in the editor. Default value: ``false``
+If ``true``, draws the camera's drag margin rectangle in the editor. Default value: ``false``
 
 .. _class_Camera2D_editor_draw_limits:
 
@@ -237,7 +237,7 @@ If ``true`` draws the camera's drag margin rectangle in the editor. Default valu
 | *Getter* | is_limit_drawing_enabled()       |
 +----------+----------------------------------+
 
-If ``true`` draws the camera's limits rectangle in the editor. Default value: ``true``
+If ``true``, draws the camera's limits rectangle in the editor. Default value: ``true``
 
 .. _class_Camera2D_editor_draw_screen:
 
@@ -249,7 +249,7 @@ If ``true`` draws the camera's limits rectangle in the editor. Default value: ``
 | *Getter* | is_screen_drawing_enabled()       |
 +----------+-----------------------------------+
 
-If ``true`` draws the camera's screen rectangle in the editor. Default value: ``false``
+If ``true``, draws the camera's screen rectangle in the editor. Default value: ``false``
 
 .. _class_Camera2D_limit_bottom:
 
@@ -297,7 +297,7 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 | *Getter* | is_limit_smoothing_enabled()       |
 +----------+------------------------------------+
 
-If ``true`` the camera smoothly stops when reaches its limits. Default value: ``false``
+If ``true``, the camera smoothly stops when reaches its limits. Default value: ``false``
 
 .. _class_Camera2D_limit_top:
 
@@ -357,7 +357,7 @@ The vertical offset of the camera, relative to the drag margins. Default value: 
 | *Getter* | is_rotating()       |
 +----------+---------------------+
 
-If ``true`` the camera rotates with the target. Default value: ``false``
+If ``true``, the camera rotates with the target. Default value: ``false``
 
 .. _class_Camera2D_smoothing_enabled:
 
@@ -369,7 +369,7 @@ If ``true`` the camera rotates with the target. Default value: ``false``
 | *Getter* | is_follow_smoothing_enabled()      |
 +----------+------------------------------------+
 
-If ``true`` the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_smoothing_speed>`. Default value: ``false``
+If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_smoothing_speed>`. Default value: ``false``
 
 .. _class_Camera2D_smoothing_speed:
 

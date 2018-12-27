@@ -185,7 +185,7 @@ Property Descriptions
 | *Getter* | is_collapsed()       |
 +----------+----------------------+
 
-If ``true`` the TreeItem is collapsed.
+If ``true``, the TreeItem is collapsed.
 
 .. _class_TreeItem_custom_minimum_height:
 
@@ -209,7 +209,7 @@ The custom minimum height.
 | *Getter* | is_folding_disabled()      |
 +----------+----------------------------+
 
-If ``true`` folding is disabled for this TreeItem.
+If ``true``, folding is disabled for this TreeItem.
 
 Method Descriptions
 -------------------
@@ -432,7 +432,7 @@ Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
 
 - void **set_checked** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**
 
-If ``true`` the column ``column`` is checked.
+If ``true``, the column ``column`` is checked.
 
 .. _class_TreeItem_set_custom_as_button:
 
@@ -462,13 +462,13 @@ The ``callback`` should accept two arguments: the :ref:`TreeItem<class_TreeItem>
 
 - void **set_editable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` column ``column`` is editable.
+If ``true``, column ``column`` is editable.
 
 .. _class_TreeItem_set_expand_right:
 
 - void **set_expand_right** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
 
-If ``true`` column ``column`` is expanded to the right.
+If ``true``, column ``column`` is expanded to the right.
 
 .. _class_TreeItem_set_icon:
 
@@ -504,7 +504,7 @@ Sets the given column's icon's texture region.
 
 - void **set_selectable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**
 
-If ``true`` the given column is selectable.
+If ``true``, the given column is selectable.
 
 .. _class_TreeItem_set_text:
 

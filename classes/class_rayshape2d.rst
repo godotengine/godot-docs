@@ -55,5 +55,5 @@ The ray's length.
 | *Getter* | get_slips_on_slope()      |
 +----------+---------------------------+
 
-If ``true`` allow the shape to return the correct normal. Default value: ``false``.
+If ``true``, allow the shape to return the correct normal. Default value: ``false``.
 

@@ -82,7 +82,7 @@ Ascent (number of pixels above the baseline).
 | *Getter* | is_distance_field_hint()       |
 +----------+--------------------------------+
 
-If ``true`` distance field hint is enabled.
+If ``true``, distance field hint is enabled.
 
 .. _class_BitmapFont_fallback:
 

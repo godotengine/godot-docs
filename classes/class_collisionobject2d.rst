@@ -9,7 +9,7 @@ CollisionObject2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Area2D<class_Area2D>`, :ref:`PhysicsBody2D<class_PhysicsBody2D>`
+**Inherited By:** :ref:`PhysicsBody2D<class_PhysicsBody2D>`, :ref:`Area2D<class_Area2D>`
 
 **Category:** Core
 
@@ -107,7 +107,7 @@ Property Descriptions
 | *Getter* | is_pickable()       |
 +----------+---------------------+
 
-If ``true`` this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
+If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
 
 Method Descriptions
 -------------------
@@ -140,7 +140,7 @@ Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use th
 
 - :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
 
-If ``true`` the shape owner and its shapes are disabled.
+If ``true``, the shape owner and its shapes are disabled.
 
 .. _class_CollisionObject2D_is_shape_owner_one_way_collision_enabled:
 
@@ -212,7 +212,7 @@ Removes a shape from the given shape owner.
 
 - void **shape_owner_set_disabled** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**
 
-If ``true`` disables the given shape owner.
+If ``true``, disables the given shape owner.
 
 .. _class_CollisionObject2D_shape_owner_set_one_way_collision:
 

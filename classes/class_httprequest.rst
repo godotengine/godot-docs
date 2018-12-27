@@ -145,7 +145,7 @@ Maximum number of allowed redirects.
 | *Getter* | is_using_threads()     |
 +----------+------------------------+
 
-If ``true`` multithreading is used to improve performance.
+If ``true``, multithreading is used to improve performance.
 
 Method Descriptions
 -------------------

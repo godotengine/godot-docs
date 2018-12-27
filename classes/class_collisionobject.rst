@@ -105,7 +105,7 @@ Property Descriptions
 | *Getter* | get_capture_input_on_drag()      |
 +----------+----------------------------------+
 
-If ``true`` the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes. Default value: ``false``.
+If ``true``, the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes. Default value: ``false``.
 
 .. _class_CollisionObject_input_ray_pickable:
 
@@ -117,7 +117,7 @@ If ``true`` the ``CollisionObject`` will continue to receive input events as the
 | *Getter* | is_ray_pickable()       |
 +----------+-------------------------+
 
-If ``true`` the :ref:`CollisionObject<class_CollisionObject>`'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
+If ``true``, the :ref:`CollisionObject<class_CollisionObject>`'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
 
 Method Descriptions
 -------------------
@@ -150,7 +150,7 @@ Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use th
 
 - :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
 
-If ``true`` the shape owner and its shapes are disabled.
+If ``true``, the shape owner and its shapes are disabled.
 
 .. _class_CollisionObject_remove_shape_owner:
 
@@ -216,7 +216,7 @@ Removes a shape from the given shape owner.
 
 - void **shape_owner_set_disabled** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**
 
-If ``true`` disables the given shape owner.
+If ``true``, disables the given shape owner.
 
 .. _class_CollisionObject_shape_owner_set_transform:
 

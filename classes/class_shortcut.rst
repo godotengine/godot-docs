@@ -77,5 +77,5 @@ Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
 
-If ``true`` this shortcut is valid.
+If ``true``, this shortcut is valid.
 

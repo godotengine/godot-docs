@@ -174,5 +174,5 @@ If there is a material in material_override, it will be used instead of any mate
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
 

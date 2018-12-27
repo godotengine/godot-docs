@@ -185,7 +185,7 @@ Decides if audio should get quieter with distance linearly, quadratically or log
 | *Getter* | is_autoplay_enabled() |
 +----------+-----------------------+
 
-If ``true`` audio plays when added to scene tree. Default value: ``false``.
+If ``true``, audio plays when added to scene tree. Default value: ``false``.
 
 .. _class_AudioStreamPlayer3D_bus:
 
@@ -233,7 +233,7 @@ The angle in which the audio reaches cameras undampened.
 | *Getter* | is_emission_angle_enabled()       |
 +----------+-----------------------------------+
 
-If ``true`` the audio should be dampened according to the direction of the sound.
+If ``true``, the audio should be dampened according to the direction of the sound.
 
 .. _class_AudioStreamPlayer3D_emission_angle_filter_attenuation_db:
 

@@ -312,7 +312,7 @@ Property Descriptions
 | *Getter* | get_allow_reselect()      |
 +----------+---------------------------+
 
-If ``true`` the currently selected cell may be selected again.
+If ``true``, the currently selected cell may be selected again.
 
 .. _class_Tree_allow_rmb_select:
 
@@ -324,7 +324,7 @@ If ``true`` the currently selected cell may be selected again.
 | *Getter* | get_allow_rmb_select()      |
 +----------+-----------------------------+
 
-If ``true`` a right mouse button click can select items.
+If ``true``, a right mouse button click can select items.
 
 .. _class_Tree_columns:
 
@@ -360,7 +360,7 @@ The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants. Once
 | *Getter* | is_folding_hidden()     |
 +----------+-------------------------+
 
-If ``true`` the folding arrow is hidden.
+If ``true``, the folding arrow is hidden.
 
 .. _class_Tree_hide_root:
 
@@ -372,7 +372,7 @@ If ``true`` the folding arrow is hidden.
 | *Getter* | is_root_hidden()     |
 +----------+----------------------+
 
-If ``true`` the tree's root is hidden.
+If ``true``, the tree's root is hidden.
 
 .. _class_Tree_select_mode:
 
@@ -509,7 +509,7 @@ Returns the current selection's column.
 
 - void **set_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**
 
-If ``true`` the column will have the "Expand" flag of :ref:`Control<class_Control>`.
+If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Control>`.
 
 .. _class_Tree_set_column_min_width:
 
@@ -527,5 +527,5 @@ Set the title of a column.
 
 - void **set_column_titles_visible** **(** :ref:`bool<class_bool>` visible **)**
 
-If ``true`` column titles are visible.
+If ``true``, column titles are visible.
 

@@ -53,7 +53,7 @@ Property Descriptions
 | *Getter* | get_cubic_interpolation()      |
 +----------+--------------------------------+
 
-If ``true`` the position between two cached points is interpolated cubically, and linearly otherwise.
+If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
 The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
 

@@ -138,7 +138,7 @@ The ray's collision mask. Only objects in at least one collision layer enabled i
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-If ``true`` collisions will be reported. Default value: ``false``.
+If ``true``, collisions will be reported. Default value: ``false``.
 
 .. _class_RayCast_exclude_parent:
 
@@ -150,7 +150,7 @@ If ``true`` collisions will be reported. Default value: ``false``.
 | *Getter* | get_exclude_parent_body()      |
 +----------+--------------------------------+
 
-If ``true`` collisions will be ignored for this RayCast's immediate parent. Default value: ``true``.
+If ``true``, collisions will be ignored for this RayCast's immediate parent. Default value: ``true``.
 
 Method Descriptions
 -------------------

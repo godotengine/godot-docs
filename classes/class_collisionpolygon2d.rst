@@ -70,7 +70,7 @@ Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUI
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
-If ``true`` no collisions will be detected.
+If ``true``, no collisions will be detected.
 
 .. _class_CollisionPolygon2D_one_way_collision:
 
@@ -82,7 +82,7 @@ If ``true`` no collisions will be detected.
 | *Getter* | is_one_way_collision_enabled() |
 +----------+--------------------------------+
 
-If ``true`` only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
+If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
 
 .. _class_CollisionPolygon2D_polygon:
 

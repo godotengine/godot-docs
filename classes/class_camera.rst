@@ -137,7 +137,7 @@ The culling mask that describes which 3D render layers are rendered by this came
 | *Getter* | is_current()       |
 +----------+--------------------+
 
-If ``true`` the ancestor :ref:`Viewport<class_Viewport>` is currently using this Camera. Default value: ``false``.
+If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this Camera. Default value: ``false``.
 
 .. _class_Camera_doppler_tracking:
 

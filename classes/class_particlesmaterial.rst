@@ -496,7 +496,7 @@ The sphere's radius if ``emission_shape`` is set to ``EMISSION_SHAPE_SPHERE``.
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` particles will not move on the z axis. Default value: ``true`` for :ref:`Particles2D<class_Particles2D>`, ``false`` for :ref:`Particles<class_Particles>`.
+If ``true``, particles will not move on the z axis. Default value: ``true`` for :ref:`Particles2D<class_Particles2D>`, ``false`` for :ref:`Particles<class_Particles>`.
 
 .. _class_ParticlesMaterial_flag_rotate_y:
 

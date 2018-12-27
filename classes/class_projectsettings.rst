@@ -32,6 +32,8 @@ Properties
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`application/config/name<class_ProjectSettings_application/config/name>`                                                                               |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`application/config/project_settings_override<class_ProjectSettings_application/config/project_settings_override>`                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/config/use_custom_user_dir<class_ProjectSettings_application/config/use_custom_user_dir>`                                                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`application/run/disable_stderr<class_ProjectSettings_application/run/disable_stderr>`                                                                 |
@@ -51,6 +53,8 @@ Properties
 | :ref:`float<class_float>`           | :ref:`audio/channel_disable_time<class_ProjectSettings_audio/channel_disable_time>`                                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`audio/driver<class_ProjectSettings_audio/driver>`                                                                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`audio/enable_audio_input<class_ProjectSettings_audio/enable_audio_input>`                                                                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`audio/mix_rate<class_ProjectSettings_audio/mix_rate>`                                                                                                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -596,9 +600,9 @@ Path to an image used for boot splash.
 
 - :ref:`String<class_String>` **application/config/custom_user_dir_name**
 
-This directory is used for storing persistent data (user:// filesystem). If a custom name is set, then system paths will be used to store this on Desktop (AppData on Windows, user ~/.config on Unixes, etc), else the Godot config folder is used. This name needs to be unique, and it's recommended to set it to something before publishing.
+This user directory is used for storing persistent data (``user://`` filesystem). By default (no custom name defined), ``user://`` resolves to a project-specific folder in Godot's own configuration folder (see :ref:`OS.get_user_data_dir<class_OS_get_user_data_dir>`). If a custom directory name is defined, this name will be used instead and appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_get_user_data_dir>`).
 
-the "use_custom_user_dir" setting must be enabled for this to take effect.
+The :ref:`use_custom_user_dir<class_ProjectSettings_use_custom_user_dir>` setting must be enabled for this to take effect.
 
 .. _class_ProjectSettings_application/config/icon:
 
@@ -612,11 +616,17 @@ Icon used for the project, set when project loads. Exporters will use this icon 
 
 Name of the project. It is used from both project manager and by the exporters. Overriding this as name.locale allows setting it in multiple languages.
 
+.. _class_ProjectSettings_application/config/project_settings_override:
+
+- :ref:`String<class_String>` **application/config/project_settings_override**
+
+Specifies a file to override project settings. For example: ``user://custom_settings.cfg``.
+
 .. _class_ProjectSettings_application/config/use_custom_user_dir:
 
 - :ref:`bool<class_bool>` **application/config/use_custom_user_dir**
 
-Allow the project to save to its own custom user dir (in AppData on windows or ~/.config on unixes). This setting only works for desktop exporters. A name must be set in the "custom_user_dir_name" setting for this to take effect.
+Allow the project to save to its own custom user dir (see :ref:`custom_user_dir_name<class_ProjectSettings_custom_user_dir_name>`). This setting only works for desktop platforms. A name must be set in the :ref:`custom_user_dir_name<class_ProjectSettings_custom_user_dir_name>` setting for this to take effect.
 
 .. _class_ProjectSettings_application/run/disable_stderr:
 
@@ -669,6 +679,12 @@ Audio buses will disable automatically when sound goes below a given DB threshol
 .. _class_ProjectSettings_audio/driver:
 
 - :ref:`String<class_String>` **audio/driver**
+
+.. _class_ProjectSettings_audio/enable_audio_input:
+
+- :ref:`bool<class_bool>` **audio/enable_audio_input**
+
+This option should be enabled if project works with microphone.
 
 .. _class_ProjectSettings_audio/mix_rate:
 
@@ -1406,13 +1422,13 @@ Log all output to a file.
 
 - :ref:`String<class_String>` **logging/file_logging/log_path**
 
-Path to logs withint he project. Using an user:// based path is recommended.
+Path to logs withint he project. Using an ``user://`` based path is recommended.
 
 .. _class_ProjectSettings_logging/file_logging/max_log_files:
 
 - :ref:`int<class_int>` **logging/file_logging/max_log_files**
 
-Amount of log files (used for rotation)/
+Amount of log files (used for rotation).
 
 .. _class_ProjectSettings_memory/limits/message_queue/max_size_kb:
 
@@ -1801,7 +1817,7 @@ Method Descriptions
 
 - void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` hint **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_String>`\ (the name of the property) and type::ref:`int<class_int>`\ (see TYPE\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), and optionally hint::ref:`int<class_int>`\ (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@GlobalScope>`), hint_string::ref:`String<class_String>`.
 
 Example:
 

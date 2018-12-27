@@ -95,7 +95,7 @@ Amount of extra bias for shadow splits that are far away. If self shadowing occu
 | *Getter* | is_blend_splits_enabled() |
 +----------+---------------------------+
 
-If ``true`` shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
+If ``true``, shadow detail is sacrificed in exchange for smoother transitions between splits. Default value:``false``.
 
 .. _class_DirectionalLight_directional_shadow_depth_range:
 

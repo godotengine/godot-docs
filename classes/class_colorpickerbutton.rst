@@ -106,7 +106,7 @@ The currently selected color.
 | *Getter* | is_editing_alpha()    |
 +----------+-----------------------+
 
-If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible. Default value: ``true``.
+If ``true``, the alpha channel in the displayed :ref:`ColorPicker<class_ColorPicker>` will be visible. Default value: ``true``.
 
 Method Descriptions
 -------------------

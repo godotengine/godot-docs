@@ -95,7 +95,7 @@ The current animation from the ``frames`` resource. If this value changes, the `
 | *Getter* | is_centered()       |
 +----------+---------------------+
 
-If ``true`` texture will be centered. Default value: ``true``.
+If ``true``, texture will be centered. Default value: ``true``.
 
 .. _class_AnimatedSprite_flip_h:
 
@@ -107,7 +107,7 @@ If ``true`` texture will be centered. Default value: ``true``.
 | *Getter* | is_flipped_h()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped horizontally. Default value: ``false``.
+If ``true``, texture is flipped horizontally. Default value: ``false``.
 
 .. _class_AnimatedSprite_flip_v:
 
@@ -119,7 +119,7 @@ If ``true`` texture is flipped horizontally. Default value: ``false``.
 | *Getter* | is_flipped_v()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped vertically. Default value: ``false``.
+If ``true``, texture is flipped vertically. Default value: ``false``.
 
 .. _class_AnimatedSprite_frame:
 
@@ -161,7 +161,7 @@ The texture's drawing offset.
 
 - :ref:`bool<class_bool>` **playing**
 
-If ``true`` the :ref:`animation<class_AnimatedSprite_animation>` is currently playing.
+If ``true``, the :ref:`animation<class_AnimatedSprite_animation>` is currently playing.
 
 .. _class_AnimatedSprite_speed_scale:
 

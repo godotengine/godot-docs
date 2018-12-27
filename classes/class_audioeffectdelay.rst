@@ -79,7 +79,7 @@ Output percent of original sound. At 0, only delayed sounds are output. Value ca
 | *Getter* | is_feedback_active()       |
 +----------+----------------------------+
 
-If ``true`` feedback is enabled. Default value: ``false``.
+If ``true``, feedback is enabled. Default value: ``false``.
 
 .. _class_AudioEffectDelay_feedback/delay_ms:
 

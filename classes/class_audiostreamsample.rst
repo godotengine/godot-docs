@@ -55,6 +55,8 @@ enum **LoopMode**:
 
 - **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
 
+- **LOOP_BACKWARD** = **3** --- Audio loops the data between loop_begin and loop_end playing backward only.
+
 .. _enum_AudioStreamSample_Format:
 
 enum **Format**:

@@ -49,7 +49,7 @@ The :ref:`post_import<class_EditorScenePostImport_post_import>` callback receive
     
     func iterate(node):
         if node != null:
-            node.name = "modified_"+node.name
+            node.name = "modified_" + node.name
             for child in node.get_children():
                 iterate(child)
 

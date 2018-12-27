@@ -183,7 +183,7 @@ Property Descriptions
 | *Getter* | get_endian_swap()      |
 +----------+------------------------+
 
-If ``true`` the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
+If ``true``, the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
 
 Note that this is about the file format, not CPU type. This is always reset to ``false`` whenever you open the file.
 

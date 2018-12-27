@@ -85,7 +85,7 @@ Property Descriptions
 | *Getter* | is_greater_allowed()     |
 +----------+--------------------------+
 
-If ``true`` :ref:`value<class_Range_value>` may be greater than :ref:`max_value<class_Range_max_value>`. Default value: ``false``.
+If ``true``, :ref:`value<class_Range_value>` may be greater than :ref:`max_value<class_Range_max_value>`. Default value: ``false``.
 
 .. _class_Range_allow_lesser:
 
@@ -97,7 +97,7 @@ If ``true`` :ref:`value<class_Range_value>` may be greater than :ref:`max_value<
 | *Getter* | is_lesser_allowed()     |
 +----------+-------------------------+
 
-If ``true`` :ref:`value<class_Range_value>` may be less than :ref:`min_value<class_Range_min_value>`. Default value: ``false``.
+If ``true``, :ref:`value<class_Range_value>` may be less than :ref:`min_value<class_Range_min_value>`. Default value: ``false``.
 
 .. _class_Range_exp_edit:
 
@@ -109,7 +109,7 @@ If ``true`` :ref:`value<class_Range_value>` may be less than :ref:`min_value<cla
 | *Getter* | is_ratio_exp()       |
 +----------+----------------------+
 
-If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
+If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
 
 .. _class_Range_max_value:
 
@@ -169,7 +169,7 @@ The value mapped between 0 and 1.
 | *Getter* | is_using_rounded_values()     |
 +----------+-------------------------------+
 
-If ``true`` ``value`` will always be rounded to the nearest integer. Default value: ``false``.
+If ``true``, ``value`` will always be rounded to the nearest integer. Default value: ``false``.
 
 .. _class_Range_step:
 

@@ -128,7 +128,7 @@ Property Descriptions
 | *Getter* | is_refusing_new_connections()     |
 +----------+-----------------------------------+
 
-If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
+If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
 
 .. _class_NetworkedMultiplayerPeer_transfer_mode:
 

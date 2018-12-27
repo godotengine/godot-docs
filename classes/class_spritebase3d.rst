@@ -121,7 +121,7 @@ The direction in which the front of the texture faces.
 | *Getter* | is_centered()       |
 +----------+---------------------+
 
-If ``true`` texture will be centered. Default value: ``true``.
+If ``true``, texture will be centered. Default value: ``true``.
 
 .. _class_SpriteBase3D_double_sided:
 
@@ -133,7 +133,7 @@ If ``true`` texture will be centered. Default value: ``true``.
 | *Getter* | get_draw_flag()      |
 +----------+----------------------+
 
-If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
+If ``true``, texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
 
 .. _class_SpriteBase3D_flip_h:
 
@@ -145,7 +145,7 @@ If ``true`` texture can be seen from the back as well, if ``false``, it is invis
 | *Getter* | is_flipped_h()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped horizontally. Default value: ``false``.
+If ``true``, texture is flipped horizontally. Default value: ``false``.
 
 .. _class_SpriteBase3D_flip_v:
 
@@ -157,7 +157,7 @@ If ``true`` texture is flipped horizontally. Default value: ``false``.
 | *Getter* | is_flipped_v()    |
 +----------+-------------------+
 
-If ``true`` texture is flipped vertically. Default value: ``false``.
+If ``true``, texture is flipped vertically. Default value: ``false``.
 
 .. _class_SpriteBase3D_modulate:
 
@@ -217,7 +217,7 @@ The size of one pixel's width on the Sprite to scale it in 3D.
 | *Getter* | get_draw_flag()      |
 +----------+----------------------+
 
-If ``true`` the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
+If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the Sprite. Default value: ``false``.
 
 .. _class_SpriteBase3D_transparent:
 
@@ -229,7 +229,7 @@ If ``true`` the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environ
 | *Getter* | get_draw_flag()      |
 +----------+----------------------+
 
-If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
+If ``true``, the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
 
 Method Descriptions
 -------------------

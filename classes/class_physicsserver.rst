@@ -336,9 +336,9 @@ enum **ShapeType**:
 
 enum **HingeJointFlag**:
 
-- **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true`` the Hinge has a maximum and a minimum rotation.
+- **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true``, the Hinge has a maximum and a minimum rotation.
 
-- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true`` a motor turns the Hinge
+- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true``, a motor turns the Hinge
 
 .. _enum_PhysicsServer_AreaParameter:
 
@@ -666,7 +666,7 @@ Returns the transform matrix for an area.
 
 - :ref:`bool<class_bool>` **area_is_ray_pickable** **(** :ref:`RID<class_RID>` area **)** const
 
-If ``true`` area collides with rays.
+If ``true``, area collides with rays.
 
 .. _class_PhysicsServer_area_remove_shape:
 
@@ -896,7 +896,7 @@ Returns a body state.
 
 - :ref:`bool<class_bool>` **body_is_continuous_collision_detection_enabled** **(** :ref:`RID<class_RID>` body **)** const
 
-If ``true`` the continuous collision detection mode is enabled.
+If ``true``, the continuous collision detection mode is enabled.
 
 .. _class_PhysicsServer_body_is_omitting_force_integration:
 
@@ -908,7 +908,7 @@ Returns whether a body uses a callback function to calculate its own physics (se
 
 - :ref:`bool<class_bool>` **body_is_ray_pickable** **(** :ref:`RID<class_RID>` body **)** const
 
-If ``true`` the body can be detected by rays
+If ``true``, the body can be detected by rays
 
 .. _class_PhysicsServer_body_remove_collision_exception:
 
@@ -950,7 +950,7 @@ Sets the physics layer or layers a body can collide with.
 
 - void **body_set_enable_continuous_collision_detection** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**
 
-If ``true`` the continuous collision detection mode is enabled.
+If ``true``, the continuous collision detection mode is enabled.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
 

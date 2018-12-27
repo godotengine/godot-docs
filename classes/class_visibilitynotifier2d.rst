@@ -86,5 +86,5 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 
-If ``true`` the bounding rectangle is on the screen.
+If ``true``, the bounding rectangle is on the screen.
 

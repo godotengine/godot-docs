@@ -74,6 +74,8 @@ Constants
 
 - **NOTIFICATION_CRASH** = **92**
 
+- **NOTIFICATION_OS_IME_UPDATE** = **93**
+
 Description
 -----------
 

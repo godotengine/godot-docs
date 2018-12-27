@@ -97,7 +97,7 @@ Property Descriptions
 | *Getter* | is_autoplay_enabled() |
 +----------+-----------------------+
 
-If ``true`` audio plays when added to scene tree. Default value: ``false``.
+If ``true``, audio plays when added to scene tree. Default value: ``false``.
 
 .. _class_AudioStreamPlayer_bus:
 
@@ -143,7 +143,7 @@ Changes the pitch and the tempo of the audio.
 | *Getter* | is_playing() |
 +----------+--------------+
 
-If ``true`` audio is playing.
+If ``true``, audio is playing.
 
 .. _class_AudioStreamPlayer_stream:
 

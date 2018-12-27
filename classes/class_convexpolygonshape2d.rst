@@ -59,5 +59,5 @@ Method Descriptions
 
 - void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
 
-Currently, this method does nothing.
+Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry.convex_hull_2d<class_Geometry_convex_hull_2d>` for details.
 

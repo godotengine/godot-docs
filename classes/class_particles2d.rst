@@ -117,7 +117,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 | *Getter* | is_emitting()       |
 +----------+---------------------+
 
-If ``true`` particles are being emitted. Default value: ``true``.
+If ``true``, particles are being emitted. Default value: ``true``.
 
 .. _class_Particles2D_explosiveness:
 
@@ -173,7 +173,7 @@ Amount of time each particle will exist. Default value: ``1``.
 | *Getter* | get_use_local_coordinates()      |
 +----------+----------------------------------+
 
-If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
+If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates. Default value: ``true``.
 
 .. _class_Particles2D_normal_map:
 
@@ -195,7 +195,7 @@ If ``true`` particles use the parent node's coordinate space. If ``false`` they 
 | *Getter* | get_one_shot()      |
 +----------+---------------------+
 
-If ``true`` only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
+If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
 
 .. _class_Particles2D_preprocess:
 

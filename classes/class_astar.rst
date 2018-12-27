@@ -92,8 +92,7 @@ Adds a new point at the given position with the given identifier. The algorithm 
 ::
 
     var as = AStar.new()
-    
-    as.add_point(1, Vector3(1,0,0), 4) # Adds the point (1,0,0) with weight_scale=4 and id=1
+    as.add_point(1, Vector3(1, 0, 0), 4) # Adds the point (1, 0, 0) with weight_scale 4 and id 1
 
 If there already exists a point for the given id, its position and weight scale are updated to the given values.
 
@@ -113,17 +112,14 @@ Clears all the points and segments.
 
 - void **connect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**
 
-Creates a segment between the given points.
+Creates a segment between the given points. If ``bidirectional`` is ``false``, only movement from ``id`` to ``to_id`` is allowed, not the reverse direction.
 
 ::
 
     var as = AStar.new()
-    
-    as.add_point(1, Vector3(1,1,0))
-    as.add_point(2, Vector3(0,5,0))
-    
-    as.connect_points(1, 2, false) # If bidirectional=false it's only possible to go from point 1 to point 2
-                                   # and not from point 2 to point 1.
+    as.add_point(1, Vector3(1, 1, 0))
+    as.add_point(2, Vector3(0, 5, 0))
+    as.connect_points(1, 2, false)
 
 .. _class_AStar_disconnect_points:
 
@@ -152,15 +148,12 @@ Returns the closest position to ``to_position`` that resides inside a segment be
 ::
 
     var as = AStar.new()
-    
-    as.add_point(1, Vector3(0,0,0))
-    as.add_point(2, Vector3(0,5,0))
-    
+    as.add_point(1, Vector3(0, 0, 0))
+    as.add_point(2, Vector3(0, 5, 0))
     as.connect_points(1, 2)
-    
-    var res = as.get_closest_position_in_segment(Vector3(3,3,0)) # returns (0, 3, 0)
+    var res = as.get_closest_position_in_segment(Vector3(3, 3, 0)) # returns (0, 3, 0)
 
-The result is in the segment that goes from ``y=0`` to ``y=5``. It's the closest position in the segment to the given point.
+The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the closest position in the segment to the given point.
 
 .. _class_AStar_get_id_path:
 
@@ -171,11 +164,10 @@ Returns an array with the ids of the points that form the path found by AStar be
 ::
 
     var as = AStar.new()
-    
-    as.add_point(1, Vector3(0,0,0))
-    as.add_point(2, Vector3(0,1,0), 1) # default weight is 1
-    as.add_point(3, Vector3(1,1,0))
-    as.add_point(4, Vector3(2,0,0))
+    as.add_point(1, Vector3(0, 0, 0))
+    as.add_point(2, Vector3(0, 1, 0), 1) # default weight is 1
+    as.add_point(3, Vector3(1, 1, 0))
+    as.add_point(4, Vector3(2, 0, 0))
     
     as.connect_points(1, 2, false)
     as.connect_points(2, 3, false)
@@ -196,11 +188,10 @@ Returns an array with the ids of the points that form the connect with the given
 ::
 
     var as = AStar.new()
-    
-    as.add_point(1, Vector3(0,0,0))
-    as.add_point(2, Vector3(0,1,0))
-    as.add_point(3, Vector3(1,1,0))
-    as.add_point(4, Vector3(2,0,0))
+    as.add_point(1, Vector3(0, 0, 0))
+    as.add_point(2, Vector3(0, 1, 0))
+    as.add_point(3, Vector3(1, 1, 0))
+    as.add_point(4, Vector3(2, 0, 0))
     
     as.connect_points(1, 2, true)
     as.connect_points(1, 3, true)

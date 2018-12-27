@@ -150,7 +150,7 @@ To allow both left-click and right-click, set this to 3, because it's BUTTON_MAS
 | *Getter* | is_disabled()       |
 +----------+---------------------+
 
-If ``true`` the button is in disabled state and can't be clicked or toggled.
+If ``true``, the button is in disabled state and can't be clicked or toggled.
 
 .. _class_BaseButton_enabled_focus_mode:
 
@@ -186,7 +186,7 @@ Focus access mode to use when switching between enabled/disabled (see :ref:`Cont
 | *Getter* | is_pressed()       |
 +----------+--------------------+
 
-If ``true`` the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
+If ``true``, the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
 
 .. _class_BaseButton_shortcut:
 
@@ -210,7 +210,7 @@ Shortcut associated to the button.
 | *Getter* | is_shortcut_in_tooltip_enabled() |
 +----------+----------------------------------+
 
-If ``true`` the button will add information about its shortcut in the tooltip.
+If ``true``, the button will add information about its shortcut in the tooltip.
 
 .. _class_BaseButton_toggle_mode:
 
@@ -222,7 +222,7 @@ If ``true`` the button will add information about its shortcut in the tooltip.
 | *Getter* | is_toggle_mode()       |
 +----------+------------------------+
 
-If ``true`` the button is in toggle mode. Makes the button flip state between pressed and unpressed each time its area is clicked.
+If ``true``, the button is in toggle mode. Makes the button flip state between pressed and unpressed each time its area is clicked.
 
 Method Descriptions
 -------------------

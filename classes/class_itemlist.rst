@@ -243,7 +243,7 @@ Property Descriptions
 | *Getter* | get_allow_reselect()      |
 +----------+---------------------------+
 
-If ``true`` the currently selected item may be selected again.
+If ``true``, the currently selected item may be selected again.
 
 .. _class_ItemList_allow_rmb_select:
 
@@ -255,7 +255,7 @@ If ``true`` the currently selected item may be selected again.
 | *Getter* | get_allow_rmb_select()      |
 +----------+-----------------------------+
 
-If ``true`` a right mouse button click can select items.
+If ``true``, a right mouse button click can select items.
 
 .. _class_ItemList_auto_height:
 

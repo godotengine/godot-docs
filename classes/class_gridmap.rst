@@ -116,7 +116,7 @@ Property Descriptions
 | *Getter* | get_center_x()      |
 +----------+---------------------+
 
-If ``true`` grid items are centered on the X axis.
+If ``true``, grid items are centered on the X axis.
 
 .. _class_GridMap_cell_center_y:
 
@@ -128,7 +128,7 @@ If ``true`` grid items are centered on the X axis.
 | *Getter* | get_center_y()      |
 +----------+---------------------+
 
-If ``true`` grid items are centered on the Y axis.
+If ``true``, grid items are centered on the Y axis.
 
 .. _class_GridMap_cell_center_z:
 
@@ -140,7 +140,7 @@ If ``true`` grid items are centered on the Y axis.
 | *Getter* | get_center_z()      |
 +----------+---------------------+
 
-If ``true`` grid items are centered on the Z axis.
+If ``true``, grid items are centered on the Z axis.
 
 .. _class_GridMap_cell_octant_size:
 

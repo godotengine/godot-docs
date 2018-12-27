@@ -301,7 +301,7 @@ The default :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance for this SceneT
 | *Getter* | is_multiplayer_poll_enabled()       |
 +----------+-------------------------------------+
 
-If ``true`` (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_idle_frame>`.
+If ``true``, (default) enable the automatic polling of the :ref:`MultiplayerAPI<class_MultiplayerAPI>` for this SceneTree during :ref:`idle_frame<class_SceneTree_idle_frame>`.
 
 When ``false`` you need to manually call :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_poll>` for processing network packets and delivering RPCs/RSETs. This allows to run RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual :ref:`Mutex<class_Mutex>` protection when accessing the :ref:`MultiplayerAPI<class_MultiplayerAPI>` from threads.
 
@@ -327,7 +327,7 @@ The peer object to handle the RPC system (effectively enabling networking when s
 | *Getter* | is_paused()      |
 +----------+------------------+
 
-If ``true`` the SceneTree is paused.
+If ``true``, the SceneTree is paused.
 
 Doing so will have the following behavior:
 
@@ -347,7 +347,7 @@ Doing so will have the following behavior:
 | *Getter* | is_refusing_new_network_connections()     |
 +----------+-------------------------------------------+
 
-If ``true`` the SceneTree's :ref:`network_peer<class_SceneTree_network_peer>` refuses new incoming connections.
+If ``true``, the SceneTree's :ref:`network_peer<class_SceneTree_network_peer>` refuses new incoming connections.
 
 .. _class_SceneTree_root:
 
@@ -369,7 +369,7 @@ The SceneTree's :ref:`Viewport<class_Viewport>`.
 | *Getter* | is_using_font_oversampling()     |
 +----------+----------------------------------+
 
-If ``true`` font oversampling is used.
+If ``true``, font oversampling is used.
 
 Method Descriptions
 -------------------
@@ -496,7 +496,7 @@ Reloads the currently active scene.
 
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the application automatically accepts quitting.
+If ``true``, the application automatically accepts quitting.
 
 .. _class_SceneTree_set_group:
 
@@ -520,7 +520,7 @@ Marks the most recent input event as handled.
 
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the application quits automatically on going back (e.g. on Android).
+If ``true``, the application quits automatically on going back (e.g. on Android).
 
 .. _class_SceneTree_set_screen_stretch:
 

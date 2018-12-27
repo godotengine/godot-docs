@@ -141,7 +141,9 @@ Constants
 Description
 -----------
 
-Base class for all non built-in types. Everything not a built-in type starts the inheritance chain from this class.
+Base class for all non built-in types. Everything which is not a built-in type starts the inheritance chain from this class.
+
+Objects can be constructed from scripting languages, using ``Object.new()`` in GDScript, ``new Object`` in C#, or the "Construct Object" node in VisualScript.
 
 Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_free>` function from the script or delete from C++).
 

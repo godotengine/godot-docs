@@ -26,7 +26,7 @@ Properties
 Description
 -----------
 
-This CSG node allows you to use any mesh resource as a CSG shape provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more then two faces.
+This CSG node allows you to use any mesh resource as a CSG shape, provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more then two faces.
 
 Property Descriptions
 ---------------------

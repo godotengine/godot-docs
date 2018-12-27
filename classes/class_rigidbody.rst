@@ -281,7 +281,7 @@ RigidBody's bounciness.
 | *Getter* | is_able_to_sleep()   |
 +----------+----------------------+
 
-If ``true`` the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the ``apply_impulse`` method is used.
+If ``true``, the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the ``apply_impulse`` method is used.
 
 .. _class_RigidBody_contact_monitor:
 
@@ -293,7 +293,7 @@ If ``true`` the RigidBody will not calculate forces and will act as a static bod
 | *Getter* | is_contact_monitor_enabled() |
 +----------+------------------------------+
 
-If ``true`` the RigidBody will emit signals when it collides with another RigidBody.
+If ``true``, the RigidBody will emit signals when it collides with another RigidBody.
 
 .. _class_RigidBody_contacts_reported:
 
@@ -317,7 +317,7 @@ The maximum contacts to report. Bodies can keep a log of the contacts with other
 | *Getter* | is_using_continuous_collision_detection()     |
 +----------+-----------------------------------------------+
 
-If ``true`` continuous collision detection is used.
+If ``true``, continuous collision detection is used.
 
 Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. Continuous collision detection is more precise, and misses less impacts by small, fast-moving objects. Not using continuous collision detection is faster to compute, but can miss small, fast-moving objects.
 
@@ -331,7 +331,7 @@ Continuous collision detection tries to predict where a moving body will collide
 | *Getter* | is_using_custom_integrator()     |
 +----------+----------------------------------+
 
-If ``true`` internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody__integrate_forces>` function, if defined.
+If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody__integrate_forces>` function, if defined.
 
 .. _class_RigidBody_friction:
 
@@ -425,7 +425,7 @@ The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC
 | *Getter* | is_sleeping()       |
 +----------+---------------------+
 
-If ``true`` the body is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
+If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
 
 .. _class_RigidBody_weight:
 
@@ -446,7 +446,7 @@ Method Descriptions
 
 - void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual
 
-Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
 
 .. _class_RigidBody_add_central_force:
 

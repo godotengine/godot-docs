@@ -43,7 +43,7 @@ Property Descriptions
 | *Getter* | is_stretch_enabled() |
 +----------+----------------------+
 
-If ``true`` the viewport will be scaled to the control's size. Default value:``false``.
+If ``true``, the viewport will be scaled to the control's size. Default value:``false``.
 
 .. _class_ViewportContainer_stretch_shrink:
 

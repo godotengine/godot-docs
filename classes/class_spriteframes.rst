@@ -103,7 +103,7 @@ Removes all animations. A "default" animation will be created.
 
 - :ref:`bool<class_bool>` **get_animation_loop** **(** :ref:`String<class_String>` anim **)** const
 
-If ``true`` the given animation will loop.
+If ``true``, the given animation will loop.
 
 .. _class_SpriteFrames_get_animation_names:
 
@@ -133,7 +133,7 @@ Returns the number of frames in the animation.
 
 - :ref:`bool<class_bool>` **has_animation** **(** :ref:`String<class_String>` anim **)** const
 
-If ``true`` the named animation exists.
+If ``true``, the named animation exists.
 
 .. _class_SpriteFrames_remove_animation:
 
@@ -157,7 +157,7 @@ Changes the animation's name to ``newname``.
 
 - void **set_animation_loop** **(** :ref:`String<class_String>` anim, :ref:`bool<class_bool>` loop **)**
 
-If ``true`` the animation will loop.
+If ``true``, the animation will loop.
 
 .. _class_SpriteFrames_set_animation_speed:
 

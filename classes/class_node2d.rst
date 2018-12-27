@@ -217,7 +217,7 @@ Local :ref:`Transform2D<class_Transform2D>`.
 | *Getter* | is_z_relative()          |
 +----------+--------------------------+
 
-If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+If ``true``, the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
 
 .. _class_Node2D_z_index:
 

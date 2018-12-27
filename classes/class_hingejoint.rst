@@ -48,7 +48,7 @@ Enumerations
 
 enum **Flag**:
 
-- **FLAG_USE_LIMIT** = **0** --- If ``true`` the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
+- **FLAG_USE_LIMIT** = **0** --- If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
 
 - **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
 
@@ -106,7 +106,7 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 | *Getter* | get_flag()      |
 +----------+-----------------+
 
-If ``true`` the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
+If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
 
 .. _class_HingeJoint_angular_limit/lower:
 

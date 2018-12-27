@@ -35,14 +35,14 @@ Emitted when the user clicks the OK button.
 Description
 -----------
 
-The ScriptCreateDialog creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling a :ref:`popup<class_ScriptCreateDialog_popup>`() method.
+The ScriptCreateDialog creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling a :ref:`popup<class_ScriptCreateDialog_popup>`\ () method.
 
 ::
 
     func _ready():
-    dialog.config("Node", "res://new_node.gd") # for in-engine types
-    dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # for script types
-    dialog.popup_centered()
+        dialog.config("Node", "res://new_node.gd") # for in-engine types
+        dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # for script types
+        dialog.popup_centered()
 
 Method Descriptions
 -------------------

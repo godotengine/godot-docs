@@ -118,6 +118,8 @@ Methods
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_valid_float<class_String_is_valid_float>` **(** **)**                                                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_valid_hex_number<class_String_is_valid_hex_number>` **(** :ref:`bool<class_bool>` with_prefix=False **)**                                             |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_valid_html_color<class_String_is_valid_html_color>` **(** **)**                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_valid_identifier<class_String_is_valid_identifier>` **(** **)**                                                                                       |
@@ -512,6 +514,12 @@ Returns ``true`` if this string is a subsequence of the given string, without co
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)**
 
 Returns ``true`` if this string contains a valid float.
+
+.. _class_String_is_valid_hex_number:
+
+- :ref:`bool<class_bool>` **is_valid_hex_number** **(** :ref:`bool<class_bool>` with_prefix=False **)**
+
+Returns ``true`` if this string contains a valid hexadecimal number. If ``with_prefix`` is ``true``, then a validity of the hexadecimal number is determined by ``0x`` prefix, for instance: ``0xDEADC0DE``.
 
 .. _class_String_is_valid_html_color:
 

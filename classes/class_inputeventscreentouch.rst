@@ -76,5 +76,5 @@ Touch position.
 | *Getter* | is_pressed()       |
 +----------+--------------------+
 
-If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
+If ``true``, the touch's state is pressed. If ``false``, the touch's state is released.
 

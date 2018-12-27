@@ -82,6 +82,8 @@ Theme Properties
 +---------------------------------+-----------------------------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`close<class_GraphNode_close>`                 |
 +---------------------------------+-----------------------------------------------------+
+| :ref:`Color<class_Color>`       | :ref:`close_color<class_GraphNode_close_color>`     |
++---------------------------------+-----------------------------------------------------+
 | :ref:`int<class_int>`           | :ref:`close_offset<class_GraphNode_close_offset>`   |
 +---------------------------------+-----------------------------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`comment<class_GraphNode_comment>`             |

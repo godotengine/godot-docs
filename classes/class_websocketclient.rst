@@ -100,7 +100,7 @@ Method Descriptions
 
 Connect to the given URL requesting one of the given ``protocols`` as sub-protocol.
 
-If ``true`` is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_data_received>` will not be emitted when this option is true.
+If ``true``, is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_data_received>` will not be emitted when this option is true.
 
 .. _class_WebSocketClient_disconnect_from_host:
 

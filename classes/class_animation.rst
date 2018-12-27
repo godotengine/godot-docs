@@ -487,7 +487,7 @@ Set the given track as imported or not.
 
 - void **track_set_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` interpolation **)**
 
-If ``true`` the track at ``idx`` wraps the interpolation loop.
+If ``true``, the track at ``idx`` wraps the interpolation loop.
 
 .. _class_Animation_track_set_interpolation_type:
 

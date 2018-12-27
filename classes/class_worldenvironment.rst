@@ -14,7 +14,7 @@ WorldEnvironment
 Brief Description
 -----------------
 
-Default environment properties for the entire scene (post-processing effects, lightning and background settings).
+Default environment properties for the entire scene (post-processing effects, lighting and background settings).
 
 Properties
 ----------

@@ -106,7 +106,7 @@ The fill direction. Uses FILL\_\* constants.
 | *Getter* | get_nine_patch_stretch()      |
 +----------+-------------------------------+
 
-If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
+If ``true``, Godot treats the bar's textures like :ref:`NinePatchRect<class_NinePatchRect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
 
 .. _class_TextureProgress_radial_center_offset:
 

@@ -82,7 +82,7 @@ Property Descriptions
 | *Getter* | has_autostart()      |
 +----------+----------------------+
 
-If ``true`` the timer will automatically start when entering the scene tree. Default value: ``false``.
+If ``true``, the timer will automatically start when entering the scene tree. Default value: ``false``.
 
 .. _class_Timer_one_shot:
 
@@ -94,7 +94,7 @@ If ``true`` the timer will automatically start when entering the scene tree. Def
 | *Getter* | is_one_shot()       |
 +----------+---------------------+
 
-If ``true`` the timer will stop when reaching 0. If ``false`` it will restart. Default value: ``false``.
+If ``true``, the timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
 
 .. _class_Timer_paused:
 
@@ -106,7 +106,7 @@ If ``true`` the timer will stop when reaching 0. If ``false`` it will restart. D
 | *Getter* | is_paused()       |
 +----------+-------------------+
 
-If ``true`` the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_start>` is called.
+If ``true``, the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_start>` is called.
 
 .. _class_Timer_process_mode:
 

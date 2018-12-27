@@ -181,7 +181,7 @@ The font size.
 | *Getter* | get_use_filter()      |
 +----------+-----------------------+
 
-If ``true`` filtering is used.
+If ``true``, filtering is used.
 
 .. _class_DynamicFont_use_mipmaps:
 
@@ -193,7 +193,7 @@ If ``true`` filtering is used.
 | *Getter* | get_use_mipmaps()      |
 +----------+------------------------+
 
-If ``true`` mipmapping is used.
+If ``true``, mipmapping is used.
 
 Method Descriptions
 -------------------

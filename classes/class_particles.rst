@@ -190,7 +190,7 @@ The number of draw passes when rendering particles.
 | *Getter* | is_emitting()       |
 +----------+---------------------+
 
-If ``true`` particles are being emitted. Default value: ``true``.
+If ``true``, particles are being emitted. Default value: ``true``.
 
 .. _class_Particles_explosiveness:
 
@@ -246,7 +246,7 @@ Amount of time each particle will exist. Default value: ``1``.
 | *Getter* | get_use_local_coordinates()      |
 +----------+----------------------------------+
 
-If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
+If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates. Default value: ``true``.
 
 .. _class_Particles_one_shot:
 
@@ -258,7 +258,7 @@ If ``true`` particles use the parent node's coordinate space. If ``false`` they 
 | *Getter* | get_one_shot()      |
 +----------+---------------------+
 
-If ``true`` only ``amount`` particles will be emitted. Default value: ``false``.
+If ``true``, only ``amount`` particles will be emitted. Default value: ``false``.
 
 .. _class_Particles_preprocess:
 

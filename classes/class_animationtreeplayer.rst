@@ -203,7 +203,7 @@ Property Descriptions
 | *Getter* | is_active()       |
 +----------+-------------------+
 
-If ``true`` the ``AnimationTreePlayer`` is able to play animations. Default value: ``false``.
+If ``true``, the ``AnimationTreePlayer`` is able to play animations. Default value: ``false``.
 
 .. _class_AnimationTreePlayer_base_path:
 

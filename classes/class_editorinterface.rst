@@ -56,7 +56,7 @@ Methods
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_String>` p_file **)**                                                    |
+| void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_String>` file **)**                                                      |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`set_plugin_enabled<class_EditorInterface_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,7 +177,7 @@ Saves the scene as a file at ``path``.
 
 .. _class_EditorInterface_select_file:
 
-- void **select_file** **(** :ref:`String<class_String>` p_file **)**
+- void **select_file** **(** :ref:`String<class_String>` file **)**
 
 .. _class_EditorInterface_set_plugin_enabled:
 

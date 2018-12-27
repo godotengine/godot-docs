@@ -112,7 +112,7 @@ Dampens audio over distance with this as an exponent.
 | *Getter* | is_autoplay_enabled() |
 +----------+-----------------------+
 
-If ``true`` audio plays when added to scene tree. Default value: ``false``.
+If ``true``, audio plays when added to scene tree. Default value: ``false``.
 
 .. _class_AudioStreamPlayer2D_bus:
 
@@ -158,7 +158,7 @@ Changes the pitch and the tempo of the audio.
 | *Getter* | is_playing() |
 +----------+--------------+
 
-If ``true`` audio is playing.
+If ``true``, audio is playing.
 
 .. _class_AudioStreamPlayer2D_stream:
 

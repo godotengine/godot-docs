@@ -228,7 +228,7 @@ The body's bounciness. Default value: ``0``.
 | *Getter* | is_able_to_sleep()   |
 +----------+----------------------+
 
-If ``true`` the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`. Default value: ``true``.
+If ``true``, the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`. Default value: ``true``.
 
 .. _class_RigidBody2D_contact_monitor:
 
@@ -240,7 +240,7 @@ If ``true`` the body will not calculate forces and will act as a static body if 
 | *Getter* | is_contact_monitor_enabled() |
 +----------+------------------------------+
 
-If ``true`` the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_contacts_reported>`. Default value: ``false``.
+If ``true``, the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_contacts_reported>`. Default value: ``false``.
 
 .. _class_RigidBody2D_contacts_reported:
 
@@ -278,7 +278,7 @@ Continuous collision detection tries to predict where a moving body will collide
 | *Getter* | is_using_custom_integrator()     |
 +----------+----------------------------------+
 
-If ``true`` internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` function.
+If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` function.
 
 .. _class_RigidBody2D_friction:
 
@@ -384,7 +384,7 @@ The body's mode. See ``MODE_*`` constants. Default value: ``MODE_RIGID``.
 | *Getter* | is_sleeping()       |
 +----------+---------------------+
 
-If ``true`` the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`.
+If ``true``, the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`.
 
 .. _class_RigidBody2D_weight:
 
@@ -405,7 +405,7 @@ Method Descriptions
 
 - void **_integrate_forces** **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** virtual
 
-Allows you to read and safely modify the simulation state for the object. Use this instead of Node._physics_process if you need to directly change the body's ``position`` or other physics properties. By default it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
+Allows you to read and safely modify the simulation state for the object. Use this instead of Node._physics_process if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
 .. _class_RigidBody2D_add_central_force:
 

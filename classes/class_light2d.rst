@@ -124,7 +124,7 @@ The Light2D's :ref:`Color<class_Color>`.
 | *Getter* | is_editor_only()       |
 +----------+------------------------+
 
-If ``true`` Light2D will only appear when editing the scene. Default value: ``false``.
+If ``true``, Light2D will only appear when editing the scene. Default value: ``false``.
 
 .. _class_Light2D_enabled:
 
@@ -136,7 +136,7 @@ If ``true`` Light2D will only appear when editing the scene. Default value: ``fa
 | *Getter* | is_enabled()       |
 +----------+--------------------+
 
-If ``true`` Light2D will emit light. Default value: ``true``.
+If ``true``, Light2D will emit light. Default value: ``true``.
 
 .. _class_Light2D_energy:
 
@@ -280,7 +280,7 @@ Shadow buffer size. Default value: ``2048``.
 | *Getter* | is_shadow_enabled()       |
 +----------+---------------------------+
 
-If ``true`` the Light2D will cast shadows. Default value: ``false``.
+If ``true``, the Light2D will cast shadows. Default value: ``false``.
 
 .. _class_Light2D_shadow_filter:
 

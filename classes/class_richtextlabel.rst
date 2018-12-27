@@ -238,7 +238,7 @@ Property Descriptions
 | *Getter* | is_using_bbcode()     |
 +----------+-----------------------+
 
-If ``true`` the label uses BBCode formatting. Default value: ``false``.
+If ``true``, the label uses BBCode formatting. Default value: ``false``.
 
 .. _class_RichTextLabel_bbcode_text:
 
@@ -274,7 +274,7 @@ If ``true``, the label underlines meta tags such as url{text}. Default value: ``
 | *Getter* | is_overriding_selected_font_color()     |
 +----------+-----------------------------------------+
 
-If ``true`` the label uses the custom font color. Default value: ``false``.
+If ``true``, the label uses the custom font color. Default value: ``false``.
 
 .. _class_RichTextLabel_percent_visible:
 

@@ -282,7 +282,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true`` rotation across the x-axis is limited.
+If ``true``, rotation across the x-axis is limited.
 
 .. _class_Generic6DOFJoint_angular_limit_x/erp:
 
@@ -366,7 +366,7 @@ The amount of rotational damping across the y-axis. The lower, the more dampenin
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true`` rotation across the y-axis is limited.
+If ``true``, rotation across the y-axis is limited.
 
 .. _class_Generic6DOFJoint_angular_limit_y/erp:
 
@@ -450,7 +450,7 @@ The amount of rotational damping across the z-axis. The lower, the more dampenin
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true`` rotation across the z-axis is limited.
+If ``true``, rotation across the z-axis is limited.
 
 .. _class_Generic6DOFJoint_angular_limit_z/erp:
 
@@ -522,7 +522,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true`` a rotating motor at the x-axis is enabled.
+If ``true``, a rotating motor at the x-axis is enabled.
 
 .. _class_Generic6DOFJoint_angular_motor_x/force_limit:
 
@@ -558,7 +558,7 @@ Target speed for the motor at the x-axis.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true`` a rotating motor at the y-axis is enabled.
+If ``true``, a rotating motor at the y-axis is enabled.
 
 .. _class_Generic6DOFJoint_angular_motor_y/force_limit:
 
@@ -594,7 +594,7 @@ Target speed for the motor at the y-axis.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true`` a rotating motor at the z-axis is enabled.
+If ``true``, a rotating motor at the z-axis is enabled.
 
 .. _class_Generic6DOFJoint_angular_motor_z/force_limit:
 
@@ -762,7 +762,7 @@ The amount of damping that happens at the x-motion.
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true`` the linear motion across the x-axis is limited.
+If ``true``, the linear motion across the x-axis is limited.
 
 .. _class_Generic6DOFJoint_linear_limit_x/lower_distance:
 
@@ -834,7 +834,7 @@ The amount of damping that happens at the y-motion.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true`` the linear motion across the y-axis is limited.
+If ``true``, the linear motion across the y-axis is limited.
 
 .. _class_Generic6DOFJoint_linear_limit_y/lower_distance:
 
@@ -906,7 +906,7 @@ The amount of damping that happens at the z-motion.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true`` the linear motion across the z-axis is limited.
+If ``true``, the linear motion across the z-axis is limited.
 
 .. _class_Generic6DOFJoint_linear_limit_z/lower_distance:
 
@@ -966,7 +966,7 @@ The maximum difference between the pivot points' z-axis.
 | *Getter* | get_flag_x()      |
 +----------+-------------------+
 
-If ``true`` then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the x-axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_linear_motor_x/force_limit:
 
@@ -1002,7 +1002,7 @@ The speed that the linear motor will attempt to reach on the x-axis.
 | *Getter* | get_flag_y()      |
 +----------+-------------------+
 
-If ``true`` then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the y-axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_linear_motor_y/force_limit:
 
@@ -1038,7 +1038,7 @@ The speed that the linear motor will attempt to reach on the y-axis.
 | *Getter* | get_flag_z()      |
 +----------+-------------------+
 
-If ``true`` then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
+If ``true``, then there is a linear motor on the z-axis. It will attempt to reach the target velocity while staying within the force limits.
 
 .. _class_Generic6DOFJoint_linear_motor_z/force_limit:
 

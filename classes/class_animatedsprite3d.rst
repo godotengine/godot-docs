@@ -97,7 +97,7 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 - :ref:`bool<class_bool>` **playing**
 
-If ``true`` the :ref:`animation<class_AnimatedSprite3D_animation>` is currently playing.
+If ``true``, the :ref:`animation<class_AnimatedSprite3D_animation>` is currently playing.
 
 Method Descriptions
 -------------------

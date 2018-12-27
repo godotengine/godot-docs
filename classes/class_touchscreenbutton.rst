@@ -126,7 +126,7 @@ The button's texture for the normal state.
 | *Getter* | is_passby_press_enabled() |
 +----------+---------------------------+
 
-If ``true`` passby presses are enabled.
+If ``true``, passby presses are enabled.
 
 .. _class_TouchScreenButton_pressed:
 
@@ -162,7 +162,7 @@ The button's shape.
 | *Getter* | is_shape_centered()       |
 +----------+---------------------------+
 
-If ``true`` the button's shape is centered.
+If ``true``, the button's shape is centered.
 
 .. _class_TouchScreenButton_shape_visible:
 
@@ -174,7 +174,7 @@ If ``true`` the button's shape is centered.
 | *Getter* | is_shape_visible()       |
 +----------+--------------------------+
 
-If ``true`` the button's shape is visible.
+If ``true``, the button's shape is visible.
 
 .. _class_TouchScreenButton_visibility_mode:
 

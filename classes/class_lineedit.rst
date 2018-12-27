@@ -179,7 +179,7 @@ Text alignment as defined in the ALIGN\_\* enum.
 | *Getter* | cursor_get_blink_enabled()      |
 +----------+---------------------------------+
 
-If ``true`` the caret (visual cursor) blinks.
+If ``true``, the caret (visual cursor) blinks.
 
 .. _class_LineEdit_caret_blink_speed:
 
@@ -215,7 +215,7 @@ The cursor's position inside the ``LineEdit``. When set, the text may scroll to 
 | *Getter* | is_clear_button_enabled()       |
 +----------+---------------------------------+
 
-If ``true`` the ``LineEdit`` will show a clear button if ``text`` is not empty.
+If ``true``, the ``LineEdit`` will show a clear button if ``text`` is not empty.
 
 .. _class_LineEdit_context_menu_enabled:
 
@@ -227,7 +227,7 @@ If ``true`` the ``LineEdit`` will show a clear button if ``text`` is not empty.
 | *Getter* | is_context_menu_enabled()       |
 +----------+---------------------------------+
 
-If ``true`` the context menu will appear when right clicked.
+If ``true``, the context menu will appear when right clicked.
 
 .. _class_LineEdit_editable:
 
@@ -239,7 +239,7 @@ If ``true`` the context menu will appear when right clicked.
 | *Getter* | is_editable()       |
 +----------+---------------------+
 
-If ``false`` existing text cannot be modified and new text cannot be added.
+If ``false``, existing text cannot be modified and new text cannot be added.
 
 .. _class_LineEdit_expand_to_text_length:
 
@@ -251,7 +251,7 @@ If ``false`` existing text cannot be modified and new text cannot be added.
 | *Getter* | get_expand_to_text_length()      |
 +----------+----------------------------------+
 
-If ``true`` the :ref:`LineEdit<class_LineEdit>` width will increase to stay longer than the :ref:`text<class_LineEdit_text>`. It will **not** compress if the :ref:`text<class_LineEdit_text>` is shortened.
+If ``true``, the :ref:`LineEdit<class_LineEdit>` width will increase to stay longer than the :ref:`text<class_LineEdit_text>`. It will **not** compress if the :ref:`text<class_LineEdit_text>` is shortened.
 
 .. _class_LineEdit_focus_mode:
 

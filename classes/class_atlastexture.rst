@@ -61,7 +61,7 @@ The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` su
 | *Getter* | has_filter_clip()      |
 +----------+------------------------+
 
-If ``true`` clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
+If ``true``, clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
 
 .. _class_AtlasTexture_margin:
 

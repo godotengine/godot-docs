@@ -142,7 +142,7 @@ Size of affected area.
 | *Getter* | is_hdr()       |
 +----------+----------------+
 
-If ``true`` lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller lightmap. Default value:``false``.
+If ``true``, lightmap can capture light values greater than ``1.0``. Turning this off will result in a smaller lightmap. Default value:``false``.
 
 .. _class_BakedLightmap_bake_mode:
 

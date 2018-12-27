@@ -197,7 +197,7 @@ The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants fo
 | *Getter* | are_tabs_visible()      |
 +----------+-------------------------+
 
-If ``true`` tabs are visible. If ``false`` tabs' content and titles are hidden. Default value: ``true``.
+If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden. Default value: ``true``.
 
 Method Descriptions
 -------------------

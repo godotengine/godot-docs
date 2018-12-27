@@ -41,5 +41,5 @@ Property Descriptions
 | *Getter* | is_sort_enabled()       |
 +----------+-------------------------+
 
-If ``true`` child nodes are sorted, otherwise sorting is disabled. Default: ``true``.
+If ``true``, child nodes are sorted, otherwise sorting is disabled. Default: ``true``.
 

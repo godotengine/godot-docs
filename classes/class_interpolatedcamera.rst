@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | is_interpolation_enabled()       |
 +----------+----------------------------------+
 
-If ``true`` and a target is set, the camera will move automatically.
+If ``true``, and a target is set, the camera will move automatically.
 
 .. _class_InterpolatedCamera_speed:
 

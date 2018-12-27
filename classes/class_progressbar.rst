@@ -56,5 +56,5 @@ Property Descriptions
 | *Getter* | is_percent_visible()       |
 +----------+----------------------------+
 
-If ``true`` the fill percentage is displayed on the bar. Default value: ``true``.
+If ``true``, the fill percentage is displayed on the bar. Default value: ``true``.
 

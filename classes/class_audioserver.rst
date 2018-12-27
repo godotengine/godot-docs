@@ -32,6 +32,8 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_AudioBusLayout>`       | :ref:`generate_bus_layout<class_AudioServer_generate_bus_layout>` **(** **)** const                                                                                                   |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_bus_channels<class_AudioServer_get_bus_channels>` **(** :ref:`int<class_int>` bus_idx **)** const                                                                           |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_bus_count<class_AudioServer_get_bus_count>` **(** **)** const                                                                                                               |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffect<class_AudioEffect>`             | :ref:`get_bus_effect<class_AudioServer_get_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**                                                   |
@@ -166,6 +168,12 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available busses and effects.
 
+.. _class_AudioServer_get_bus_channels:
+
+- :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** const
+
+Returns the amount of channels of the bus at index ``bus_idx``.
+
 .. _class_AudioServer_get_bus_count:
 
 - :ref:`int<class_int>` **get_bus_count** **(** **)** const
@@ -244,25 +252,25 @@ Returns the speaker configuration.
 
 - :ref:`bool<class_bool>` **is_bus_bypassing_effects** **(** :ref:`int<class_int>` bus_idx **)** const
 
-If ``true`` the bus at index ``bus_idx`` is bypassing effects.
+If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 .. _class_AudioServer_is_bus_effect_enabled:
 
 - :ref:`bool<class_bool>` **is_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** const
 
-If ``true`` the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
+If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
 .. _class_AudioServer_is_bus_mute:
 
 - :ref:`bool<class_bool>` **is_bus_mute** **(** :ref:`int<class_int>` bus_idx **)** const
 
-If ``true`` the bus at index ``bus_idx`` is muted.
+If ``true``, the bus at index ``bus_idx`` is muted.
 
 .. _class_AudioServer_is_bus_solo:
 
 - :ref:`bool<class_bool>` **is_bus_solo** **(** :ref:`int<class_int>` bus_idx **)** const
 
-If ``true`` the bus at index ``bus_idx`` is in solo mode.
+If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 .. _class_AudioServer_lock:
 
@@ -292,7 +300,7 @@ Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 
 - void **set_bus_bypass_effects** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true`` the bus at index ``bus_idx`` is bypassing effects.
+If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 .. _class_AudioServer_set_bus_count:
 
@@ -304,7 +312,7 @@ Adds and removes busses to make the number of busses match ``amount``.
 
 - void **set_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
+If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
 .. _class_AudioServer_set_bus_layout:
 
@@ -316,7 +324,7 @@ Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
 
 - void **set_bus_mute** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true`` the bus at index ``bus_idx`` is muted.
+If ``true``, the bus at index ``bus_idx`` is muted.
 
 .. _class_AudioServer_set_bus_name:
 
@@ -334,7 +342,7 @@ Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
 - void **set_bus_solo** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true`` the bus at index ``bus_idx`` is in solo mode.
+If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 .. _class_AudioServer_set_bus_volume_db:
 

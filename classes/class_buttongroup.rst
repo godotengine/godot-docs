@@ -20,15 +20,10 @@ Methods
 -------
 
 +--------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`            | :ref:`get_buttons<class_ButtonGroup_get_buttons>` **(** **)**               |
++--------------------------------------+-----------------------------------------------------------------------------+
 | :ref:`BaseButton<class_BaseButton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>` **(** **)** |
 +--------------------------------------+-----------------------------------------------------------------------------+
-
-Theme Properties
-----------------
-
-+---------------------------------+---------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ButtonGroup_panel>` |
-+---------------------------------+---------------------------------------+
 
 Description
 -----------
@@ -40,9 +35,15 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 Method Descriptions
 -------------------
 
+.. _class_ButtonGroup_get_buttons:
+
+- :ref:`Array<class_Array>` **get_buttons** **(** **)**
+
+Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.group<class_BaseButton_group>`).
+
 .. _class_ButtonGroup_get_pressed_button:
 
 - :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
 
-Return the pressed button.
+Returns the current pressed button.
 

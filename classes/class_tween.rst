@@ -202,7 +202,7 @@ The tween's speed multiplier. For example, set it to ``1.0`` for normal speed, `
 | *Getter* | is_repeat()       |
 +----------+-------------------+
 
-If ``true`` the tween loops.
+If ``true``, the tween loops.
 
 Method Descriptions
 -------------------

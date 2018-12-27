@@ -60,5 +60,5 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 | *Getter* | is_pressed()       |
 +----------+--------------------+
 
-If ``true`` the action's state is pressed. If ``false`` the action's state is released.
+If ``true``, the action's state is pressed. If ``false``, the action's state is released.
 

@@ -121,7 +121,7 @@ Property Descriptions
 | *Getter* | is_editor_only()       |
 +----------+------------------------+
 
-If ``true`` the light only appears in the editor and will not be visible at runtime. Default value:``false``.
+If ``true``, the light only appears in the editor and will not be visible at runtime. Default value:``false``.
 
 .. _class_Light_light_bake_mode:
 
@@ -193,7 +193,7 @@ Secondary multiplier used with indirect light (light bounces). This works in bak
 | *Getter* | is_negative()       |
 +----------+---------------------+
 
-If ``true`` the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
+If ``true``, the light's effect is reversed, darkening areas and casting bright shadows. Default value: ``false``.
 
 .. _class_Light_light_specular:
 
@@ -253,7 +253,7 @@ Attempts to reduce :ref:`shadow_bias<class_Light_shadow_bias>` gap.
 | *Getter* | has_shadow()      |
 +----------+-------------------+
 
-If ``true`` the light will cast shadows. Default value: ``false``.
+If ``true``, the light will cast shadows. Default value: ``false``.
 
 .. _class_Light_shadow_reverse_cull_face:
 

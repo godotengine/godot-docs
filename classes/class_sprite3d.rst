@@ -84,7 +84,7 @@ The number of columns in the sprite sheet.
 | *Getter* | is_region()       |
 +----------+-------------------+
 
-If ``true`` texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_region_rect>`. Default value: ``false``.
+If ``true``, texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_region_rect>`. Default value: ``false``.
 
 .. _class_Sprite3D_region_rect:
 

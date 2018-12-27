@@ -309,7 +309,7 @@ Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent `
 
 ::
 
-    a = atan(0,-1) # a is 3.141593
+    a = atan(0, -1) # a is 3.141593
 
 .. _class_@GDScript_bytes2var:
 
@@ -345,7 +345,7 @@ Returns a character as a String of the given ASCII code.
     # a is 'A'
     a = char(65)
     # a is 'a'
-    a = char(65+32)
+    a = char(65 + 32)
 
 .. _class_@GDScript_clamp:
 
@@ -388,7 +388,7 @@ Returns the cosine of angle ``s`` in radians.
 ::
 
     # prints 1 and -1
-    print(cos(PI*2))
+    print(cos(PI * 2))
     print(cos(PI))
 
 .. _class_@GDScript_cosh:
@@ -668,7 +668,7 @@ Returns the maximum of two values.
 
 ::
 
-    max(1,2) # returns 2
+    max(1, 2) # returns 2
     max(-3.99, -4) # returns -3.99
 
 .. _class_@GDScript_min:
@@ -679,7 +679,7 @@ Returns the minimum of two values.
 
 ::
 
-    min(1,2) # returns 1
+    min(1, 2) # returns 1
     min(-3.99, -4) # returns -4
 
 .. _class_@GDScript_nearest_po2:
@@ -726,7 +726,7 @@ Returns the result of ``x`` raised to the power of ``y``.
 
 ::
 
-    pow(2,5) # returns 32
+    pow(2, 5) # returns 32
 
 .. _class_@GDScript_preload:
 
@@ -749,8 +749,8 @@ Converts one or more arguments to strings in the best way possible and prints th
 
 ::
 
-    a = [1,2,3]
-    print("a","b",a) # prints ab[1, 2, 3]
+    a = [1, 2, 3]
+    print("a", "b", a) # prints ab[1, 2, 3]
 
 .. _class_@GDScript_print_debug:
 
@@ -814,9 +814,21 @@ Prints one or more arguments to the console with a tab between each argument.
 
 - void **push_error** **(** :ref:`String<class_String>` message **)**
 
+Pushes an error message to Godot's built-in debugger and to the OS terminal.
+
+::
+
+    push_error("test error") # prints "test error" to debugger and terminal as error call
+
 .. _class_@GDScript_push_warning:
 
 - void **push_warning** **(** :ref:`String<class_String>` message **)**
+
+Pushes a warning message to Godot's built-in debugger and to the OS terminal.
+
+::
+
+    push_warning("test warning") # prints "test warning" to debugger and terminal as warning call
 
 .. _class_@GDScript_rad2deg:
 
@@ -1022,7 +1034,7 @@ Returns the tangent of angle ``s`` in radians.
 
 ::
 
-    tan( deg2rad(45) ) # returns 1
+    tan(deg2rad(45)) # returns 1
 
 .. _class_@GDScript_tanh:
 

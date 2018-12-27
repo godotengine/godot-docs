@@ -75,7 +75,7 @@ Property Descriptions
 | *Getter* | get_resizable()      |
 +----------+----------------------+
 
-If ``true`` the user can resize the window. Default value: ``false``.
+If ``true``, the user can resize the window. Default value: ``false``.
 
 .. _class_WindowDialog_window_title:
 
