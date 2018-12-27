@@ -9,7 +9,7 @@ CollisionObject2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PhysicsBody2D<class_PhysicsBody2D>`, :ref:`Area2D<class_Area2D>`
+**Inherited By:** :ref:`Area2D<class_Area2D>`, :ref:`PhysicsBody2D<class_PhysicsBody2D>`
 
 **Category:** Core
 

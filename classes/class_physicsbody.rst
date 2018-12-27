@@ -9,7 +9,7 @@ PhysicsBody
 
 **Inherits:** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`StaticBody<class_StaticBody>`, :ref:`KinematicBody<class_KinematicBody>`, :ref:`RigidBody<class_RigidBody>`
+**Inherited By:** :ref:`KinematicBody<class_KinematicBody>`, :ref:`PhysicalBone<class_PhysicalBone>`, :ref:`RigidBody<class_RigidBody>`, :ref:`StaticBody<class_StaticBody>`
 
 **Category:** Core
 

@@ -9,7 +9,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Viewport<class_Viewport>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`SkeletonIK<class_SkeletonIK>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`Spatial<class_Spatial>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`AnimationTreePlayer<class_AnimationTreePlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`WorldEnvironment<class_WorldEnvironment>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`Timer<class_Timer>`, :ref:`Tween<class_Tween>`
+**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AnimationTreePlayer<class_AnimationTreePlayer>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`SkeletonIK<class_SkeletonIK>`, :ref:`Spatial<class_Spatial>`, :ref:`Timer<class_Timer>`, :ref:`Tween<class_Tween>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 **Category:** Core
 

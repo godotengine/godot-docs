@@ -43,18 +43,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_CubeMap_Flags:
-
-enum **Flags**:
-
-- **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
-
-- **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
-
-- **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
-
-- **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
-
 .. _enum_CubeMap_Storage:
 
 enum **Storage**:
@@ -80,6 +68,18 @@ enum **Side**:
 - **SIDE_FRONT** = **4** --- Identifier for the front face of the ``CubeMap``.
 
 - **SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``.
+
+.. _enum_CubeMap_Flags:
+
+enum **Flags**:
+
+- **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
+
+- **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+
+- **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+
+- **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
 
 Description
 -----------

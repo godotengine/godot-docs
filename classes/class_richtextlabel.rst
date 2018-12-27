@@ -161,16 +161,6 @@ Triggers when the mouse enters a meta tag.
 Enumerations
 ------------
 
-.. _enum_RichTextLabel_ListType:
-
-enum **ListType**:
-
-- **LIST_NUMBERS** = **0**
-
-- **LIST_LETTERS** = **1**
-
-- **LIST_DOTS** = **2**
-
 .. _enum_RichTextLabel_Align:
 
 enum **Align**:
@@ -182,6 +172,16 @@ enum **Align**:
 - **ALIGN_RIGHT** = **2**
 
 - **ALIGN_FILL** = **3**
+
+.. _enum_RichTextLabel_ListType:
+
+enum **ListType**:
+
+- **LIST_NUMBERS** = **0**
+
+- **LIST_LETTERS** = **1**
+
+- **LIST_DOTS** = **2**
 
 .. _enum_RichTextLabel_ItemType:
 

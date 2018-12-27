@@ -9,7 +9,7 @@ PacketPeer
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`
+**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
 **Category:** Core
 

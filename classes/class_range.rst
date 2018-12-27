@@ -9,7 +9,7 @@ Range
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`SpinBox<class_SpinBox>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`ProgressBar<class_ProgressBar>`, :ref:`TextureProgress<class_TextureProgress>`, :ref:`Slider<class_Slider>`
+**Inherited By:** :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgress<class_TextureProgress>`
 
 **Category:** Core
 

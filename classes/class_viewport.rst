@@ -156,72 +156,6 @@ enum **UpdateMode**:
 
 - **UPDATE_ALWAYS** = **3** --- Always update the render target.
 
-.. _enum_Viewport_RenderInfo:
-
-enum **RenderInfo**:
-
-- **RENDER_INFO_OBJECTS_IN_FRAME** = **0** --- Amount of objects in frame.
-
-- **RENDER_INFO_VERTICES_IN_FRAME** = **1** --- Amount of vertices in frame.
-
-- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2** --- Amount of material changes in frame.
-
-- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3** --- Amount of shader changes in frame.
-
-- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- Amount of surface changes in frame.
-
-- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
-
-- **RENDER_INFO_MAX** = **6** --- Enum limiter. Do not use it directly.
-
-.. _enum_Viewport_MSAA:
-
-enum **MSAA**:
-
-- **MSAA_DISABLED** = **0** --- Multisample anti-aliasing mode disabled. This is the default value.
-
-- **MSAA_2X** = **1**
-
-- **MSAA_4X** = **2**
-
-- **MSAA_8X** = **3**
-
-- **MSAA_16X** = **4**
-
-.. _enum_Viewport_ClearMode:
-
-enum **ClearMode**:
-
-- **CLEAR_MODE_ALWAYS** = **0** --- Always clear the render target before drawing.
-
-- **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
-
-- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to ``CLEAR_MODE_NEVER``.
-
-.. _enum_Viewport_Usage:
-
-enum **Usage**:
-
-- **USAGE_2D** = **0**
-
-- **USAGE_2D_NO_SAMPLING** = **1**
-
-- **USAGE_3D** = **2**
-
-- **USAGE_3D_NO_EFFECTS** = **3**
-
-.. _enum_Viewport_DebugDraw:
-
-enum **DebugDraw**:
-
-- **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
-
-- **DEBUG_DRAW_UNSHADED** = **1** --- Objects are displayed without light information.
-
-- **DEBUG_DRAW_OVERDRAW** = **2** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
-
-- **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
-
 .. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
 
 enum **ShadowAtlasQuadrantSubdiv**:
@@ -241,6 +175,72 @@ enum **ShadowAtlasQuadrantSubdiv**:
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
 
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Enum limiter. Do not use it directly.
+
+.. _enum_Viewport_RenderInfo:
+
+enum **RenderInfo**:
+
+- **RENDER_INFO_OBJECTS_IN_FRAME** = **0** --- Amount of objects in frame.
+
+- **RENDER_INFO_VERTICES_IN_FRAME** = **1** --- Amount of vertices in frame.
+
+- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2** --- Amount of material changes in frame.
+
+- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3** --- Amount of shader changes in frame.
+
+- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- Amount of surface changes in frame.
+
+- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
+
+- **RENDER_INFO_MAX** = **6** --- Enum limiter. Do not use it directly.
+
+.. _enum_Viewport_DebugDraw:
+
+enum **DebugDraw**:
+
+- **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
+
+- **DEBUG_DRAW_UNSHADED** = **1** --- Objects are displayed without light information.
+
+- **DEBUG_DRAW_OVERDRAW** = **2** --- Objected are displayed semi-transparent with additive blending so you can see where they intersect.
+
+- **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
+
+.. _enum_Viewport_MSAA:
+
+enum **MSAA**:
+
+- **MSAA_DISABLED** = **0** --- Multisample anti-aliasing mode disabled. This is the default value.
+
+- **MSAA_2X** = **1**
+
+- **MSAA_4X** = **2**
+
+- **MSAA_8X** = **3**
+
+- **MSAA_16X** = **4**
+
+.. _enum_Viewport_Usage:
+
+enum **Usage**:
+
+- **USAGE_2D** = **0**
+
+- **USAGE_2D_NO_SAMPLING** = **1**
+
+- **USAGE_3D** = **2**
+
+- **USAGE_3D_NO_EFFECTS** = **3**
+
+.. _enum_Viewport_ClearMode:
+
+enum **ClearMode**:
+
+- **CLEAR_MODE_ALWAYS** = **0** --- Always clear the render target before drawing.
+
+- **CLEAR_MODE_NEVER** = **1** --- Never clear the render target.
+
+- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2** --- Clear the render target next frame, then switch to ``CLEAR_MODE_NEVER``.
 
 Description
 -----------

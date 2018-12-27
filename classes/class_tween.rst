@@ -108,18 +108,6 @@ enum **TweenProcessMode**:
 
 - **TWEEN_PROCESS_IDLE** = **1** --- The tween updates with the ``_process`` callback.
 
-.. _enum_Tween_EaseType:
-
-enum **EaseType**:
-
-- **EASE_IN** = **0** --- The interpolation starts slowly and speeds up towards the end.
-
-- **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
-
-- **EASE_IN_OUT** = **2** --- A combination of EASE_IN and EASE_OUT. The interpolation is slowest at both ends.
-
-- **EASE_OUT_IN** = **3** --- A combination of EASE_IN and EASE_OUT. The interpolation is fastest at both ends.
-
 .. _enum_Tween_TransitionType:
 
 enum **TransitionType**:
@@ -145,6 +133,18 @@ enum **TransitionType**:
 - **TRANS_BOUNCE** = **9** --- The animation is interpolated by bouncing at the end.
 
 - **TRANS_BACK** = **10** --- The animation is interpolated backing out at ends.
+
+.. _enum_Tween_EaseType:
+
+enum **EaseType**:
+
+- **EASE_IN** = **0** --- The interpolation starts slowly and speeds up towards the end.
+
+- **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
+
+- **EASE_IN_OUT** = **2** --- A combination of EASE_IN and EASE_OUT. The interpolation is slowest at both ends.
+
+- **EASE_OUT_IN** = **3** --- A combination of EASE_IN and EASE_OUT. The interpolation is fastest at both ends.
 
 Description
 -----------

@@ -247,6 +247,16 @@ Emitted when the text changes.
 Enumerations
 ------------
 
+.. _enum_TextEdit_SearchFlags:
+
+enum **SearchFlags**:
+
+- **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
+
+- **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
+
+- **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
+
 .. _enum_TextEdit_MenuItems:
 
 enum **MenuItems**:
@@ -266,16 +276,6 @@ enum **MenuItems**:
 - **MENU_REDO** = **6**
 
 - **MENU_MAX** = **7**
-
-.. _enum_TextEdit_SearchFlags:
-
-enum **SearchFlags**:
-
-- **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
-
-- **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
-
-- **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
 
 Description
 -----------

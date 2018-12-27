@@ -63,30 +63,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_HTTPClient_Status:
-
-enum **Status**:
-
-- **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
-
-- **STATUS_RESOLVING** = **1** --- Status: Currently resolving the hostname for the given URL into an IP.
-
-- **STATUS_CANT_RESOLVE** = **2** --- Status: DNS failure: Can't resolve the hostname for the given URL.
-
-- **STATUS_CONNECTING** = **3** --- Status: Currently connecting to server.
-
-- **STATUS_CANT_CONNECT** = **4** --- Status: Can't connect to the server.
-
-- **STATUS_CONNECTED** = **5** --- Status: Connection established.
-
-- **STATUS_REQUESTING** = **6** --- Status: Currently sending request.
-
-- **STATUS_BODY** = **7** --- Status: HTTP body received.
-
-- **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
-
-- **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
-
 .. _enum_HTTPClient_Method:
 
 enum **Method**:
@@ -110,6 +86,30 @@ enum **Method**:
 - **METHOD_PATCH** = **8** --- HTTP PATCH method. The PATCH method is used to apply partial modifications to a resource.
 
 - **METHOD_MAX** = **9** --- Marker for end of ``METHOD_*`` enum. Not used.
+
+.. _enum_HTTPClient_Status:
+
+enum **Status**:
+
+- **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
+
+- **STATUS_RESOLVING** = **1** --- Status: Currently resolving the hostname for the given URL into an IP.
+
+- **STATUS_CANT_RESOLVE** = **2** --- Status: DNS failure: Can't resolve the hostname for the given URL.
+
+- **STATUS_CONNECTING** = **3** --- Status: Currently connecting to server.
+
+- **STATUS_CANT_CONNECT** = **4** --- Status: Can't connect to the server.
+
+- **STATUS_CONNECTED** = **5** --- Status: Connection established.
+
+- **STATUS_REQUESTING** = **6** --- Status: Currently sending request.
+
+- **STATUS_BODY** = **7** --- Status: HTTP body received.
+
+- **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
+
+- **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
 
 .. _enum_HTTPClient_ResponseCode:
 

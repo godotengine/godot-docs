@@ -9,7 +9,7 @@ GeometryInstance
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`SpriteBase3D<class_SpriteBase3D>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`CPUParticles<class_CPUParticles>`
+**Inherited By:** :ref:`CPUParticles<class_CPUParticles>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`SpriteBase3D<class_SpriteBase3D>`
 
 **Category:** Core
 
@@ -42,16 +42,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_GeometryInstance_Flags:
-
-enum **Flags**:
-
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
-
-Added documentation for GeometryInstance and VisualInstance
-
-- **FLAG_MAX** = **2**
-
 .. _enum_GeometryInstance_ShadowCastingSetting:
 
 enum **ShadowCastingSetting**:
@@ -69,6 +59,16 @@ Will not take culling into account, so all faces will be taken into account when
 - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
 
 In other words: The actual mesh will not be visible, only the shadows casted from the mesh.
+
+.. _enum_GeometryInstance_Flags:
+
+enum **Flags**:
+
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` and/or any other form of baked lighting.
+
+Added documentation for GeometryInstance and VisualInstance
+
+- **FLAG_MAX** = **2**
 
 Description
 -----------

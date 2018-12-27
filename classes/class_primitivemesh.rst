@@ -9,7 +9,7 @@ PrimitiveMesh
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`SphereMesh<class_SphereMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`PrismMesh<class_PrismMesh>`
+**Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`
 
 **Category:** Core
 

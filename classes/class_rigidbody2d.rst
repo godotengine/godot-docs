@@ -122,16 +122,6 @@ Emitted when :ref:`sleeping<class_RigidBody2D_sleeping>` changes.
 Enumerations
 ------------
 
-.. _enum_RigidBody2D_CCDMode:
-
-enum **CCDMode**:
-
-- **CCD_MODE_DISABLED** = **0** --- Continuous collision detection disabled. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
-
-- **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
-
-- **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.
-
 .. _enum_RigidBody2D_Mode:
 
 enum **Mode**:
@@ -143,6 +133,16 @@ enum **Mode**:
 - **MODE_CHARACTER** = **2** --- Character mode. Similar to ``MODE_RIGID``, but the body can not rotate.
 
 - **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_KinematicBody2D>`, and must be moved by code.
+
+.. _enum_RigidBody2D_CCDMode:
+
+enum **CCDMode**:
+
+- **CCD_MODE_DISABLED** = **0** --- Continuous collision detection disabled. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+
+- **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
+
+- **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.
 
 Description
 -----------

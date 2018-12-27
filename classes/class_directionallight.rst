@@ -42,14 +42,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_DirectionalLight_ShadowDepthRange:
-
-enum **ShadowDepthRange**:
-
-- **SHADOW_DEPTH_RANGE_STABLE** = **0** --- Keeps the shadow stable when the camera moves, at the cost of lower effective shadow resolution. Default value.
-
-- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1** --- Tries to achieve maximum shadow resolution. May result in saw effect on shadow edges.
-
 .. _enum_DirectionalLight_ShadowMode:
 
 enum **ShadowMode**:
@@ -59,6 +51,14 @@ enum **ShadowMode**:
 - **SHADOW_PARALLEL_2_SPLITS** = **1** --- Splits the view frustum in 2 areas, each with its own shadow map.
 
 - **SHADOW_PARALLEL_4_SPLITS** = **2** --- Splits the view frustum in 4 areas, each with its own shadow map.
+
+.. _enum_DirectionalLight_ShadowDepthRange:
+
+enum **ShadowDepthRange**:
+
+- **SHADOW_DEPTH_RANGE_STABLE** = **0** --- Keeps the shadow stable when the camera moves, at the cost of lower effective shadow resolution. Default value.
+
+- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1** --- Tries to achieve maximum shadow resolution. May result in saw effect on shadow edges.
 
 Description
 -----------

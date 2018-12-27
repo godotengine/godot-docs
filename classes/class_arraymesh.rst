@@ -69,28 +69,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_ArrayMesh_ArrayFormat:
-
-enum **ArrayFormat**:
-
-- **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
-
-- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
-
-- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
-
-- **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
-
-- **ARRAY_FORMAT_TEX_UV** = **16** --- Array format will include UVs.
-
-- **ARRAY_FORMAT_TEX_UV2** = **32** --- Array format will include another set of UVs.
-
-- **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
-
-- **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
-
-- **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
-
 .. _enum_ArrayMesh_ArrayType:
 
 enum **ArrayType**:
@@ -116,6 +94,28 @@ enum **ArrayType**:
 For triangles, the index array is interpreted as triples, referring to the vertices of each triangle. For lines, the index array is in pairs indicating the start and end of each line.
 
 - **ARRAY_MAX** = **9**
+
+.. _enum_ArrayMesh_ArrayFormat:
+
+enum **ArrayFormat**:
+
+- **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
+
+- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
+
+- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
+
+- **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
+
+- **ARRAY_FORMAT_TEX_UV** = **16** --- Array format will include UVs.
+
+- **ARRAY_FORMAT_TEX_UV2** = **32** --- Array format will include another set of UVs.
+
+- **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
+
+- **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
+
+- **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
 
 Constants
 ---------

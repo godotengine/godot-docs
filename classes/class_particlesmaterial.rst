@@ -130,16 +130,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_ParticlesMaterial_Flags:
-
-enum **Flags**:
-
-- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_align_y<class_ParticlesMaterial_flag_align_y>`.
-
-- **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
-
-- **FLAG_MAX** = **3**
-
 .. _enum_ParticlesMaterial_Parameter:
 
 enum **Parameter**:
@@ -169,6 +159,16 @@ enum **Parameter**:
 - **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation offset properties.
 
 - **PARAM_MAX** = **12**
+
+.. _enum_ParticlesMaterial_Flags:
+
+enum **Flags**:
+
+- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_align_y<class_ParticlesMaterial_flag_align_y>`.
+
+- **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
+
+- **FLAG_MAX** = **3**
 
 .. _enum_ParticlesMaterial_EmissionShape:
 

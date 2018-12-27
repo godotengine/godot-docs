@@ -9,7 +9,7 @@ Joint
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ConeTwistJoint<class_ConeTwistJoint>`, :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`, :ref:`SliderJoint<class_SliderJoint>`, :ref:`HingeJoint<class_HingeJoint>`, :ref:`PinJoint<class_PinJoint>`
+**Inherited By:** :ref:`ConeTwistJoint<class_ConeTwistJoint>`, :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`, :ref:`HingeJoint<class_HingeJoint>`, :ref:`PinJoint<class_PinJoint>`, :ref:`SliderJoint<class_SliderJoint>`
 
 **Category:** Core
 

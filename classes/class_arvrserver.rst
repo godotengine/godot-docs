@@ -84,16 +84,6 @@ Signal send when a tracker is removed, you should remove any ARVRController or A
 Enumerations
 ------------
 
-.. _enum_ARVRServer_RotationMode:
-
-enum **RotationMode**:
-
-- **RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
-
-- **RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
-
-- **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
-
 .. _enum_ARVRServer_TrackerType:
 
 enum **TrackerType**:
@@ -109,6 +99,16 @@ enum **TrackerType**:
 - **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
 
 - **TRACKER_ANY** = **255** --- Used internally to select all trackers.
+
+.. _enum_ARVRServer_RotationMode:
+
+enum **RotationMode**:
+
+- **RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
+
+- **RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
+
+- **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
 
 Description
 -----------

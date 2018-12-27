@@ -143,18 +143,6 @@ Signals
 Enumerations
 ------------
 
-.. _enum_Tabs_CloseButtonDisplayPolicy:
-
-enum **CloseButtonDisplayPolicy**:
-
-- **CLOSE_BUTTON_SHOW_NEVER** = **0**
-
-- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
-
-- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
-
-- **CLOSE_BUTTON_MAX** = **3**
-
 .. _enum_Tabs_TabAlign:
 
 enum **TabAlign**:
@@ -166,6 +154,18 @@ enum **TabAlign**:
 - **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
 - **ALIGN_MAX** = **3**
+
+.. _enum_Tabs_CloseButtonDisplayPolicy:
+
+enum **CloseButtonDisplayPolicy**:
+
+- **CLOSE_BUTTON_SHOW_NEVER** = **0**
+
+- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
+
+- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
+
+- **CLOSE_BUTTON_MAX** = **3**
 
 Description
 -----------

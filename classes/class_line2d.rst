@@ -61,6 +61,16 @@ Methods
 Enumerations
 ------------
 
+.. _enum_Line2D_LineJointMode:
+
+enum **LineJointMode**:
+
+- **LINE_JOINT_SHARP** = **0** --- The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
+
+- **LINE_JOINT_BEVEL** = **1** --- The line's joints will be bevelled/chamfered.
+
+- **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
+
 .. _enum_Line2D_LineCapMode:
 
 enum **LineCapMode**:
@@ -80,16 +90,6 @@ enum **LineTextureMode**:
 - **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
 
 - **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with Repeat Disabled for best results.
-
-.. _enum_Line2D_LineJointMode:
-
-enum **LineJointMode**:
-
-- **LINE_JOINT_SHARP** = **0** --- The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
-
-- **LINE_JOINT_BEVEL** = **1** --- The line's joints will be bevelled/chamfered.
-
-- **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
 
 Description
 -----------

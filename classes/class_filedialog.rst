@@ -91,16 +91,6 @@ Event emitted when the user selects multiple files.
 Enumerations
 ------------
 
-.. _enum_FileDialog_Access:
-
-enum **Access**:
-
-- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
-
-- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_Resource>` path(res://) .
-
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
-
 .. _enum_FileDialog_Mode:
 
 enum **Mode**:
@@ -114,6 +104,16 @@ enum **Mode**:
 - **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
 
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
+
+.. _enum_FileDialog_Access:
+
+enum **Access**:
+
+- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+
+- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_Resource>` path(res://) .
+
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
 
 Description
 -----------

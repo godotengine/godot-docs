@@ -63,6 +63,14 @@ enum **BakeQuality**:
 
 - **BAKE_QUALITY_HIGH** = **2** --- Highest bake quality mode. Takes longer to calculate.
 
+.. _enum_BakedLightmap_BakeMode:
+
+enum **BakeMode**:
+
+- **BAKE_MODE_CONE_TRACE** = **0** --- Less precise but faster bake mode.
+
+- **BAKE_MODE_RAY_TRACE** = **1** --- More precise bake mode but can take considerably longer to bake.
+
 .. _enum_BakedLightmap_BakeError:
 
 enum **BakeError**:
@@ -76,14 +84,6 @@ enum **BakeError**:
 - **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
 
 - **BAKE_ERROR_USER_ABORTED** = **4**
-
-.. _enum_BakedLightmap_BakeMode:
-
-enum **BakeMode**:
-
-- **BAKE_MODE_CONE_TRACE** = **0** --- Less precise but faster bake mode.
-
-- **BAKE_MODE_RAY_TRACE** = **1** --- More precise bake mode but can take considerably longer to bake.
 
 Description
 -----------

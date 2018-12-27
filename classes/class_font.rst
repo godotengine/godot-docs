@@ -9,7 +9,7 @@ Font
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`DynamicFont<class_DynamicFont>`, :ref:`BitmapFont<class_BitmapFont>`
+**Inherited By:** :ref:`BitmapFont<class_BitmapFont>`, :ref:`DynamicFont<class_DynamicFont>`
 
 **Category:** Core
 

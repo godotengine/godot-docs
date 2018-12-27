@@ -112,6 +112,16 @@ Emitted when a tilemap setting has changed.
 Enumerations
 ------------
 
+.. _enum_TileMap_Mode:
+
+enum **Mode**:
+
+- **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
+
+- **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
+
+- **MODE_CUSTOM** = **2** --- Custom orientation mode.
+
 .. _enum_TileMap_HalfOffset:
 
 enum **HalfOffset**:
@@ -131,16 +141,6 @@ enum **TileOrigin**:
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
 
 - **TILE_ORIGIN_BOTTOM_LEFT** = **2** --- Tile origin at its bottom-left corner.
-
-.. _enum_TileMap_Mode:
-
-enum **Mode**:
-
-- **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
-
-- **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
-
-- **MODE_CUSTOM** = **2** --- Custom orientation mode.
 
 Constants
 ---------

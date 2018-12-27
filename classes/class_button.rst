@@ -9,7 +9,7 @@ Button
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`OptionButton<class_OptionButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`CheckButton<class_CheckButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`ToolButton<class_ToolButton>`, :ref:`CheckBox<class_CheckBox>`
+**Inherited By:** :ref:`CheckBox<class_CheckBox>`, :ref:`CheckButton<class_CheckButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`OptionButton<class_OptionButton>`, :ref:`ToolButton<class_ToolButton>`
 
 **Category:** Core
 

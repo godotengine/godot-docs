@@ -9,7 +9,7 @@ Material
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`
+**Inherited By:** :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`ParticlesMaterial<class_ParticlesMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`, :ref:`SpatialMaterial<class_SpatialMaterial>`
 
 **Category:** Core
 

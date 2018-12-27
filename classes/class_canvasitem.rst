@@ -9,7 +9,7 @@ CanvasItem
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Node2D<class_Node2D>`, :ref:`Control<class_Control>`
+**Inherited By:** :ref:`Control<class_Control>`, :ref:`Node2D<class_Node2D>`
 
 **Category:** Core
 

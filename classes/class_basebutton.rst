@@ -9,7 +9,7 @@ BaseButton
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`LinkButton<class_LinkButton>`, :ref:`TextureButton<class_TextureButton>`, :ref:`Button<class_Button>`
+**Inherited By:** :ref:`Button<class_Button>`, :ref:`LinkButton<class_LinkButton>`, :ref:`TextureButton<class_TextureButton>`
 
 **Category:** Core
 
@@ -84,14 +84,6 @@ This signal is emitted when the button was just toggled between pressed and norm
 Enumerations
 ------------
 
-.. _enum_BaseButton_ActionMode:
-
-enum **ActionMode**:
-
-- **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
-
-- **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
-
 .. _enum_BaseButton_DrawMode:
 
 enum **DrawMode**:
@@ -105,6 +97,14 @@ enum **DrawMode**:
 - **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
 
 - **DRAW_HOVER_PRESSED** = **4**
+
+.. _enum_BaseButton_ActionMode:
+
+enum **ActionMode**:
+
+- **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
+
+- **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
 
 Description
 -----------

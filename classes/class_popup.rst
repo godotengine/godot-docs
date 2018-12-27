@@ -9,7 +9,7 @@ Popup
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PopupPanel<class_PopupPanel>`, :ref:`PopupDialog<class_PopupDialog>`, :ref:`PopupMenu<class_PopupMenu>`, :ref:`WindowDialog<class_WindowDialog>`
+**Inherited By:** :ref:`PopupDialog<class_PopupDialog>`, :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`, :ref:`WindowDialog<class_WindowDialog>`
 
 **Category:** Core
 

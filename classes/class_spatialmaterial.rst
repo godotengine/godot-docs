@@ -224,14 +224,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_SpatialMaterial_DetailUV:
-
-enum **DetailUV**:
-
-- **DETAIL_UV_1** = **0**
-
-- **DETAIL_UV_2** = **1**
-
 .. _enum_SpatialMaterial_TextureParam:
 
 enum **TextureParam**:
@@ -270,53 +262,13 @@ enum **TextureParam**:
 
 - **TEXTURE_MAX** = **16**
 
-.. _enum_SpatialMaterial_DistanceFadeMode:
+.. _enum_SpatialMaterial_DetailUV:
 
-enum **DistanceFadeMode**:
+enum **DetailUV**:
 
-- **DISTANCE_FADE_DISABLED** = **0**
+- **DETAIL_UV_1** = **0**
 
-- **DISTANCE_FADE_PIXEL_ALPHA** = **1**
-
-- **DISTANCE_FADE_PIXEL_DITHER** = **2**
-
-- **DISTANCE_FADE_OBJECT_DITHER** = **3**
-
-.. _enum_SpatialMaterial_DepthDrawMode:
-
-enum **DepthDrawMode**:
-
-- **DEPTH_DRAW_OPAQUE_ONLY** = **0** --- Default depth draw mode. Depth is drawn only for opaque objects.
-
-- **DEPTH_DRAW_ALWAYS** = **1** --- Depth draw is calculated for both opaque and transparent objects.
-
-- **DEPTH_DRAW_DISABLED** = **2** --- No depth draw.
-
-- **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3** --- For transparent objects, an opaque pass is made first with the opaque parts, then transparency is drawn.
-
-.. _enum_SpatialMaterial_DiffuseMode:
-
-enum **DiffuseMode**:
-
-- **DIFFUSE_BURLEY** = **0** --- Default diffuse scattering algorithm.
-
-- **DIFFUSE_LAMBERT** = **1** --- Diffuse scattering ignores roughness.
-
-- **DIFFUSE_LAMBERT_WRAP** = **2** --- Extends Lambert to cover more than 90 degrees when roughness increases.
-
-- **DIFFUSE_OREN_NAYAR** = **3** --- Attempts to use roughness to emulate microsurfacing.
-
-- **DIFFUSE_TOON** = **4** --- Uses a hard cut for lighting, with smoothing affected by roughness.
-
-.. _enum_SpatialMaterial_CullMode:
-
-enum **CullMode**:
-
-- **CULL_BACK** = **0** --- Default cull mode. The back of the object is culled when not visible.
-
-- **CULL_FRONT** = **1** --- The front of the object is culled when not visible.
-
-- **CULL_DISABLED** = **2** --- No culling is performed.
+- **DETAIL_UV_2** = **1**
 
 .. _enum_SpatialMaterial_Feature:
 
@@ -347,6 +299,40 @@ enum **Feature**:
 - **FEATURE_DETAIL** = **11**
 
 - **FEATURE_MAX** = **12**
+
+.. _enum_SpatialMaterial_BlendMode:
+
+enum **BlendMode**:
+
+- **BLEND_MODE_MIX** = **0** --- Default blend mode.
+
+- **BLEND_MODE_ADD** = **1**
+
+- **BLEND_MODE_SUB** = **2**
+
+- **BLEND_MODE_MUL** = **3**
+
+.. _enum_SpatialMaterial_DepthDrawMode:
+
+enum **DepthDrawMode**:
+
+- **DEPTH_DRAW_OPAQUE_ONLY** = **0** --- Default depth draw mode. Depth is drawn only for opaque objects.
+
+- **DEPTH_DRAW_ALWAYS** = **1** --- Depth draw is calculated for both opaque and transparent objects.
+
+- **DEPTH_DRAW_DISABLED** = **2** --- No depth draw.
+
+- **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3** --- For transparent objects, an opaque pass is made first with the opaque parts, then transparency is drawn.
+
+.. _enum_SpatialMaterial_CullMode:
+
+enum **CullMode**:
+
+- **CULL_BACK** = **0** --- Default cull mode. The back of the object is culled when not visible.
+
+- **CULL_FRONT** = **1** --- The front of the object is culled when not visible.
+
+- **CULL_DISABLED** = **2** --- No culling is performed.
 
 .. _enum_SpatialMaterial_Flags:
 
@@ -390,17 +376,19 @@ enum **Flags**:
 
 - **FLAG_MAX** = **18**
 
-.. _enum_SpatialMaterial_BlendMode:
+.. _enum_SpatialMaterial_DiffuseMode:
 
-enum **BlendMode**:
+enum **DiffuseMode**:
 
-- **BLEND_MODE_MIX** = **0** --- Default blend mode.
+- **DIFFUSE_BURLEY** = **0** --- Default diffuse scattering algorithm.
 
-- **BLEND_MODE_ADD** = **1**
+- **DIFFUSE_LAMBERT** = **1** --- Diffuse scattering ignores roughness.
 
-- **BLEND_MODE_SUB** = **2**
+- **DIFFUSE_LAMBERT_WRAP** = **2** --- Extends Lambert to cover more than 90 degrees when roughness increases.
 
-- **BLEND_MODE_MUL** = **3**
+- **DIFFUSE_OREN_NAYAR** = **3** --- Attempts to use roughness to emulate microsurfacing.
+
+- **DIFFUSE_TOON** = **4** --- Uses a hard cut for lighting, with smoothing affected by roughness.
 
 .. _enum_SpatialMaterial_SpecularMode:
 
@@ -416,6 +404,18 @@ enum **SpecularMode**:
 
 - **SPECULAR_DISABLED** = **4** --- No specular blob.
 
+.. _enum_SpatialMaterial_BillboardMode:
+
+enum **BillboardMode**:
+
+- **BILLBOARD_DISABLED** = **0** --- Default value.
+
+- **BILLBOARD_ENABLED** = **1** --- The object's z-axis will always face the camera.
+
+- **BILLBOARD_FIXED_Y** = **2** --- The object's x-axis will always face the camera.
+
+- **BILLBOARD_PARTICLES** = **3** --- Used for particle systems. Enables particle animation options.
+
 .. _enum_SpatialMaterial_TextureChannel:
 
 enum **TextureChannel**:
@@ -430,18 +430,6 @@ enum **TextureChannel**:
 
 - **TEXTURE_CHANNEL_GRAYSCALE** = **4**
 
-.. _enum_SpatialMaterial_BillboardMode:
-
-enum **BillboardMode**:
-
-- **BILLBOARD_DISABLED** = **0** --- Default value.
-
-- **BILLBOARD_ENABLED** = **1** --- The object's z-axis will always face the camera.
-
-- **BILLBOARD_FIXED_Y** = **2** --- The object's x-axis will always face the camera.
-
-- **BILLBOARD_PARTICLES** = **3** --- Used for particle systems. Enables particle animation options.
-
 .. _enum_SpatialMaterial_EmissionOperator:
 
 enum **EmissionOperator**:
@@ -449,6 +437,18 @@ enum **EmissionOperator**:
 - **EMISSION_OP_ADD** = **0**
 
 - **EMISSION_OP_MULTIPLY** = **1**
+
+.. _enum_SpatialMaterial_DistanceFadeMode:
+
+enum **DistanceFadeMode**:
+
+- **DISTANCE_FADE_DISABLED** = **0**
+
+- **DISTANCE_FADE_PIXEL_ALPHA** = **1**
+
+- **DISTANCE_FADE_PIXEL_DITHER** = **2**
+
+- **DISTANCE_FADE_OBJECT_DITHER** = **3**
 
 Description
 -----------

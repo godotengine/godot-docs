@@ -194,24 +194,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_Generic6DOFJoint_Flag:
-
-enum **Flag**:
-
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
-
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
-
-- **FLAG_ENABLE_LINEAR_SPRING** = **3**
-
-- **FLAG_ENABLE_ANGULAR_SPRING** = **2**
-
-- **FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
-
-- **FLAG_ENABLE_LINEAR_MOTOR** = **5**
-
-- **FLAG_MAX** = **6** --- End flag of FLAG\_\* constants, used internally.
-
 .. _enum_Generic6DOFJoint_Param:
 
 enum **Param**:
@@ -249,6 +231,24 @@ enum **Param**:
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **18** --- Maximum acceleration for the motor at the axes.
 
 - **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
+
+.. _enum_Generic6DOFJoint_Flag:
+
+enum **Flag**:
+
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+
+- **FLAG_ENABLE_LINEAR_SPRING** = **3**
+
+- **FLAG_ENABLE_ANGULAR_SPRING** = **2**
+
+- **FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
+
+- **FLAG_ENABLE_LINEAR_MOTOR** = **5**
+
+- **FLAG_MAX** = **6** --- End flag of FLAG\_\* constants, used internally.
 
 Description
 -----------

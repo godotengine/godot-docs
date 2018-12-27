@@ -9,7 +9,7 @@ Light
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`SpotLight<class_SpotLight>`, :ref:`OmniLight<class_OmniLight>`, :ref:`DirectionalLight<class_DirectionalLight>`
+**Inherited By:** :ref:`DirectionalLight<class_DirectionalLight>`, :ref:`OmniLight<class_OmniLight>`, :ref:`SpotLight<class_SpotLight>`
 
 **Category:** Core
 
@@ -52,16 +52,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_Light_BakeMode:
-
-enum **BakeMode**:
-
-- **BAKE_DISABLED** = **0** --- Light is ignored when baking. Note: hiding a light does *not* affect baking.
-
-- **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked. Default value.
-
-- **BAKE_ALL** = **2** --- Both direct and indirect light will be baked. Note: you should hide the light if you don't want it to appear twice (dynamic and baked).
-
 .. _enum_Light_Param:
 
 enum **Param**:
@@ -97,6 +87,16 @@ enum **Param**:
 - **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
 
 - **PARAM_MAX** = **15**
+
+.. _enum_Light_BakeMode:
+
+enum **BakeMode**:
+
+- **BAKE_DISABLED** = **0** --- Light is ignored when baking. Note: hiding a light does *not* affect baking.
+
+- **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked. Default value.
+
+- **BAKE_ALL** = **2** --- Both direct and indirect light will be baked. Note: you should hide the light if you don't want it to appear twice (dynamic and baked).
 
 Description
 -----------

@@ -51,6 +51,24 @@ Methods
 Enumerations
 ------------
 
+.. _enum_Mesh_PrimitiveType:
+
+enum **PrimitiveType**:
+
+- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
+
+- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
+
+- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
+
+- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
+
+- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
+
+- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
+
+- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
+
 .. _enum_Mesh_BlendShapeMode:
 
 enum **BlendShapeMode**:
@@ -58,30 +76,6 @@ enum **BlendShapeMode**:
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
 
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
-
-.. _enum_Mesh_ArrayType:
-
-enum **ArrayType**:
-
-- **ARRAY_VERTEX** = **0** --- Array of vertices.
-
-- **ARRAY_NORMAL** = **1** --- Array of normals.
-
-- **ARRAY_TANGENT** = **2** --- Array of tangents as an array of floats, 4 floats per tangent.
-
-- **ARRAY_COLOR** = **3** --- Array of colors.
-
-- **ARRAY_TEX_UV** = **4** --- Array of UV coordinates.
-
-- **ARRAY_TEX_UV2** = **5** --- Array of second set of UV coordinates.
-
-- **ARRAY_BONES** = **6** --- Array of bone data.
-
-- **ARRAY_WEIGHTS** = **7** --- Array of weights.
-
-- **ARRAY_INDEX** = **8** --- Array of indices.
-
-- **ARRAY_MAX** = **9**
 
 .. _enum_Mesh_ArrayFormat:
 
@@ -131,23 +125,29 @@ enum **ArrayFormat**:
 
 - **ARRAY_COMPRESS_DEFAULT** = **97280**
 
-.. _enum_Mesh_PrimitiveType:
+.. _enum_Mesh_ArrayType:
 
-enum **PrimitiveType**:
+enum **ArrayType**:
 
-- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
+- **ARRAY_VERTEX** = **0** --- Array of vertices.
 
-- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
+- **ARRAY_NORMAL** = **1** --- Array of normals.
 
-- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
+- **ARRAY_TANGENT** = **2** --- Array of tangents as an array of floats, 4 floats per tangent.
 
-- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
+- **ARRAY_COLOR** = **3** --- Array of colors.
 
-- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
+- **ARRAY_TEX_UV** = **4** --- Array of UV coordinates.
 
-- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
+- **ARRAY_TEX_UV2** = **5** --- Array of second set of UV coordinates.
 
-- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
+- **ARRAY_BONES** = **6** --- Array of bone data.
+
+- **ARRAY_WEIGHTS** = **7** --- Array of weights.
+
+- **ARRAY_INDEX** = **8** --- Array of indices.
+
+- **ARRAY_MAX** = **9**
 
 Description
 -----------

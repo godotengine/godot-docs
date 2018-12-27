@@ -237,58 +237,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_OS_SystemDir:
-
-enum **SystemDir**:
-
-- **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
-
-- **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
-
-- **SYSTEM_DIR_DOCUMENTS** = **2** --- Documents directory path.
-
-- **SYSTEM_DIR_DOWNLOADS** = **3** --- Downloads directory path.
-
-- **SYSTEM_DIR_MOVIES** = **4** --- Movies directory path.
-
-- **SYSTEM_DIR_MUSIC** = **5** --- Music directory path.
-
-- **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
-
-- **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
-
-.. _enum_OS_ScreenOrientation:
-
-enum **ScreenOrientation**:
-
-- **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
-
-- **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
-
-- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2** --- Reverse landscape screen orientation.
-
-- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3** --- Reverse portrait screen orientation.
-
-- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4** --- Uses landscape or reverse landscape based on the hardware sensor.
-
-- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
-
-- **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
-
-.. _enum_OS_PowerState:
-
-enum **PowerState**:
-
-- **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
-
-- **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
-
-- **POWERSTATE_NO_BATTERY** = **2** --- Plugged in, no battery available.
-
-- **POWERSTATE_CHARGING** = **3** --- Plugged in, battery charging.
-
-- **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
-
 .. _enum_OS_Weekday:
 
 enum **Weekday**:
@@ -334,6 +282,58 @@ enum **Month**:
 - **MONTH_NOVEMBER** = **11** --- November.
 
 - **MONTH_DECEMBER** = **12** --- December.
+
+.. _enum_OS_ScreenOrientation:
+
+enum **ScreenOrientation**:
+
+- **SCREEN_ORIENTATION_LANDSCAPE** = **0** --- Landscape screen orientation.
+
+- **SCREEN_ORIENTATION_PORTRAIT** = **1** --- Portrait screen orientation.
+
+- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2** --- Reverse landscape screen orientation.
+
+- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3** --- Reverse portrait screen orientation.
+
+- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4** --- Uses landscape or reverse landscape based on the hardware sensor.
+
+- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5** --- Uses portrait or reverse portrait based on the hardware sensor.
+
+- **SCREEN_ORIENTATION_SENSOR** = **6** --- Uses most suitable orientation based on the hardware sensor.
+
+.. _enum_OS_SystemDir:
+
+enum **SystemDir**:
+
+- **SYSTEM_DIR_DESKTOP** = **0** --- Desktop directory path.
+
+- **SYSTEM_DIR_DCIM** = **1** --- DCIM (Digital Camera Images) directory path.
+
+- **SYSTEM_DIR_DOCUMENTS** = **2** --- Documents directory path.
+
+- **SYSTEM_DIR_DOWNLOADS** = **3** --- Downloads directory path.
+
+- **SYSTEM_DIR_MOVIES** = **4** --- Movies directory path.
+
+- **SYSTEM_DIR_MUSIC** = **5** --- Music directory path.
+
+- **SYSTEM_DIR_PICTURES** = **6** --- Pictures directory path.
+
+- **SYSTEM_DIR_RINGTONES** = **7** --- Ringtones directory path.
+
+.. _enum_OS_PowerState:
+
+enum **PowerState**:
+
+- **POWERSTATE_UNKNOWN** = **0** --- Unknown powerstate.
+
+- **POWERSTATE_ON_BATTERY** = **1** --- Unplugged, running on battery.
+
+- **POWERSTATE_NO_BATTERY** = **2** --- Plugged in, no battery available.
+
+- **POWERSTATE_CHARGING** = **3** --- Plugged in, battery charging.
+
+- **POWERSTATE_CHARGED** = **4** --- Plugged in, battery fully charged.
 
 Description
 -----------

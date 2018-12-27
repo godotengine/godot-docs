@@ -9,7 +9,7 @@ ResourceFormatSaver
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ResourceFormatSaverBinary<class_ResourceFormatSaverBinary>`, :ref:`ResourceSaverPNG<class_ResourceSaverPNG>`, :ref:`ResourceFormatSaverGDScript<class_ResourceFormatSaverGDScript>`, :ref:`ResourceFormatSaverShader<class_ResourceFormatSaverShader>`, :ref:`ResourceFormatSaverText<class_ResourceFormatSaverText>`, :ref:`GDNativeLibraryResourceSaver<class_GDNativeLibraryResourceSaver>`, :ref:`ResourceFormatSaverNativeScript<class_ResourceFormatSaverNativeScript>`
+**Inherited By:** :ref:`GDNativeLibraryResourceSaver<class_GDNativeLibraryResourceSaver>`, :ref:`ResourceFormatSaverBinary<class_ResourceFormatSaverBinary>`, :ref:`ResourceFormatSaverGDScript<class_ResourceFormatSaverGDScript>`, :ref:`ResourceFormatSaverNativeScript<class_ResourceFormatSaverNativeScript>`, :ref:`ResourceFormatSaverShader<class_ResourceFormatSaverShader>`, :ref:`ResourceFormatSaverText<class_ResourceFormatSaverText>`, :ref:`ResourceSaverPNG<class_ResourceSaverPNG>`
 
 **Category:** Core
 

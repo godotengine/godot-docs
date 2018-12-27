@@ -9,7 +9,7 @@ InputEventGesture
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`InputEventPanGesture<class_InputEventPanGesture>`, :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`
+**Inherited By:** :ref:`InputEventMagnifyGesture<class_InputEventMagnifyGesture>`, :ref:`InputEventPanGesture<class_InputEventPanGesture>`
 
 **Category:** Core
 

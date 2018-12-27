@@ -59,16 +59,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_SpriteBase3D_AlphaCutMode:
-
-enum **AlphaCutMode**:
-
-- **ALPHA_CUT_DISABLED** = **0**
-
-- **ALPHA_CUT_DISCARD** = **1**
-
-- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
-
 .. _enum_SpriteBase3D_DrawFlags:
 
 enum **DrawFlags**:
@@ -80,6 +70,16 @@ enum **DrawFlags**:
 - **FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.
 
 - **FLAG_MAX** = **3** --- Used internally to mark the end of the Flags section.
+
+.. _enum_SpriteBase3D_AlphaCutMode:
+
+enum **AlphaCutMode**:
+
+- **ALPHA_CUT_DISABLED** = **0**
+
+- **ALPHA_CUT_DISCARD** = **1**
+
+- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
 
 Description
 -----------

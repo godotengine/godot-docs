@@ -64,437 +64,17 @@ Properties
 Enumerations
 ------------
 
-.. _enum_@GlobalScope_Variant.Operator:
+.. _enum_@GlobalScope_Margin:
 
-enum **Variant.Operator**:
+enum **Margin**:
 
-- **OP_EQUAL** = **0**
+- **MARGIN_LEFT** = **0** --- Left margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
-- **OP_NOT_EQUAL** = **1**
+- **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
-- **OP_LESS** = **2**
+- **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
-- **OP_LESS_EQUAL** = **3**
-
-- **OP_GREATER** = **4**
-
-- **OP_GREATER_EQUAL** = **5**
-
-- **OP_ADD** = **6**
-
-- **OP_SUBTRACT** = **7**
-
-- **OP_MULTIPLY** = **8**
-
-- **OP_DIVIDE** = **9**
-
-- **OP_NEGATE** = **10**
-
-- **OP_POSITIVE** = **11**
-
-- **OP_MODULE** = **12**
-
-- **OP_STRING_CONCAT** = **13**
-
-- **OP_SHIFT_LEFT** = **14**
-
-- **OP_SHIFT_RIGHT** = **15**
-
-- **OP_BIT_AND** = **16**
-
-- **OP_BIT_OR** = **17**
-
-- **OP_BIT_XOR** = **18**
-
-- **OP_BIT_NEGATE** = **19**
-
-- **OP_AND** = **20**
-
-- **OP_OR** = **21**
-
-- **OP_XOR** = **22**
-
-- **OP_NOT** = **23**
-
-- **OP_IN** = **24**
-
-- **OP_MAX** = **25**
-
-.. _enum_@GlobalScope_MethodFlags:
-
-enum **MethodFlags**:
-
-- **METHOD_FLAG_NORMAL** = **1** --- Flag for normal method
-
-- **METHOD_FLAG_EDITOR** = **2** --- Flag for editor method
-
-- **METHOD_FLAG_NOSCRIPT** = **4**
-
-- **METHOD_FLAG_CONST** = **8** --- Flag for constant method
-
-- **METHOD_FLAG_REVERSE** = **16**
-
-- **METHOD_FLAG_VIRTUAL** = **32** --- Flag for virtual method
-
-- **METHOD_FLAG_FROM_SCRIPT** = **64** --- Flag for method from script
-
-- **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags
-
-.. _enum_@GlobalScope_Orientation:
-
-enum **Orientation**:
-
-- **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
-
-- **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
-
-.. _enum_@GlobalScope_PropertyUsageFlags:
-
-enum **PropertyUsageFlags**:
-
-- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
-
-- **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
-
-- **PROPERTY_USAGE_NETWORK** = **4**
-
-- **PROPERTY_USAGE_EDITOR_HELPER** = **8**
-
-- **PROPERTY_USAGE_CHECKABLE** = **16**
-
-- **PROPERTY_USAGE_CHECKED** = **32**
-
-- **PROPERTY_USAGE_INTERNATIONALIZED** = **64**
-
-- **PROPERTY_USAGE_GROUP** = **128**
-
-- **PROPERTY_USAGE_CATEGORY** = **256**
-
-- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048**
-
-- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096**
-
-- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
-
-- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
-
-- **PROPERTY_USAGE_DEFAULT_INTL** = **71**
-
-- **PROPERTY_USAGE_NOEDITOR** = **5**
-
-.. _enum_@GlobalScope_JoystickList:
-
-enum **JoystickList**:
-
-- **JOY_BUTTON_0** = **0** --- Joypad Button 0
-
-- **JOY_BUTTON_1** = **1** --- Joypad Button 1
-
-- **JOY_BUTTON_2** = **2** --- Joypad Button 2
-
-- **JOY_BUTTON_3** = **3** --- Joypad Button 3
-
-- **JOY_BUTTON_4** = **4** --- Joypad Button 4
-
-- **JOY_BUTTON_5** = **5** --- Joypad Button 5
-
-- **JOY_BUTTON_6** = **6** --- Joypad Button 6
-
-- **JOY_BUTTON_7** = **7** --- Joypad Button 7
-
-- **JOY_BUTTON_8** = **8** --- Joypad Button 8
-
-- **JOY_BUTTON_9** = **9** --- Joypad Button 9
-
-- **JOY_BUTTON_10** = **10** --- Joypad Button 10
-
-- **JOY_BUTTON_11** = **11** --- Joypad Button 11
-
-- **JOY_BUTTON_12** = **12** --- Joypad Button 12
-
-- **JOY_BUTTON_13** = **13** --- Joypad Button 13
-
-- **JOY_BUTTON_14** = **14** --- Joypad Button 14
-
-- **JOY_BUTTON_15** = **15** --- Joypad Button 15
-
-- **JOY_BUTTON_MAX** = **16** --- Joypad Button 16
-
-- **JOY_SONY_CIRCLE** = **1** --- DUALSHOCK circle button
-
-- **JOY_SONY_X** = **0** --- DUALSHOCK X button
-
-- **JOY_SONY_SQUARE** = **2** --- DUALSHOCK square button
-
-- **JOY_SONY_TRIANGLE** = **3** --- DUALSHOCK triangle button
-
-- **JOY_XBOX_B** = **1** --- XBOX controller B button
-
-- **JOY_XBOX_A** = **0** --- XBOX controller A button
-
-- **JOY_XBOX_X** = **2** --- XBOX controller X button
-
-- **JOY_XBOX_Y** = **3** --- XBOX controller Y button
-
-- **JOY_DS_A** = **1** --- DualShock controller A button
-
-- **JOY_DS_B** = **0** --- DualShock controller B button
-
-- **JOY_DS_X** = **3** --- DualShock controller X button
-
-- **JOY_DS_Y** = **2** --- DualShock controller Y button
-
-- **JOY_SELECT** = **10** --- Joypad Button Select
-
-- **JOY_START** = **11** --- Joypad Button Start
-
-- **JOY_DPAD_UP** = **12** --- Joypad DPad Up
-
-- **JOY_DPAD_DOWN** = **13** --- Joypad DPad Down
-
-- **JOY_DPAD_LEFT** = **14** --- Joypad DPad Left
-
-- **JOY_DPAD_RIGHT** = **15** --- Joypad DPad Right
-
-- **JOY_L** = **4** --- Joypad Left Shoulder Button
-
-- **JOY_L2** = **6** --- Joypad Left Trigger
-
-- **JOY_L3** = **8** --- Joypad Left Stick Click
-
-- **JOY_R** = **5** --- Joypad Right Shoulder Button
-
-- **JOY_R2** = **7** --- Joypad Right Trigger
-
-- **JOY_R3** = **9** --- Joypad Right Stick Click
-
-- **JOY_AXIS_0** = **0** --- Joypad Left Stick Horizontal Axis
-
-- **JOY_AXIS_1** = **1** --- Joypad Left Stick Vertical Axis
-
-- **JOY_AXIS_2** = **2** --- Joypad Right Stick Horizontal Axis
-
-- **JOY_AXIS_3** = **3** --- Joypad Right Stick Vertical Axis
-
-- **JOY_AXIS_4** = **4**
-
-- **JOY_AXIS_5** = **5**
-
-- **JOY_AXIS_6** = **6** --- Joypad Left Trigger Analog Axis
-
-- **JOY_AXIS_7** = **7** --- Joypad Right Trigger Analog Axis
-
-- **JOY_AXIS_8** = **8**
-
-- **JOY_AXIS_9** = **9**
-
-- **JOY_AXIS_MAX** = **10**
-
-- **JOY_ANALOG_LX** = **0** --- Joypad Left Stick Horizontal Axis
-
-- **JOY_ANALOG_LY** = **1** --- Joypad Left Stick Vertical Axis
-
-- **JOY_ANALOG_RX** = **2** --- Joypad Right Stick Horizontal Axis
-
-- **JOY_ANALOG_RY** = **3** --- Joypad Right Stick Vertical Axis
-
-- **JOY_ANALOG_L2** = **6** --- Joypad Left Analog Trigger
-
-- **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
-
-.. _enum_@GlobalScope_MidiMessageList:
-
-enum **MidiMessageList**:
-
-- **MIDI_MESSAGE_NOTE_OFF** = **8**
-
-- **MIDI_MESSAGE_NOTE_ON** = **9**
-
-- **MIDI_MESSAGE_AFTERTOUCH** = **10**
-
-- **MIDI_MESSAGE_CONTROL_CHANGE** = **11**
-
-- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12**
-
-- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13**
-
-- **MIDI_MESSAGE_PITCH_BEND** = **14**
-
-.. _enum_@GlobalScope_KeyModifierMask:
-
-enum **KeyModifierMask**:
-
-- **KEY_CODE_MASK** = **33554431** --- Key Code Mask
-
-- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier Key Mask
-
-- **KEY_MASK_SHIFT** = **33554432** --- Shift Key Mask
-
-- **KEY_MASK_ALT** = **67108864** --- Alt Key Mask
-
-- **KEY_MASK_META** = **134217728** --- Meta Key Mask
-
-- **KEY_MASK_CTRL** = **268435456** --- CTRL Key Mask
-
-- **KEY_MASK_CMD** = **268435456** --- CMD Key Mask
-
-- **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
-
-- **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
-
-.. _enum_@GlobalScope_HAlign:
-
-enum **HAlign**:
-
-- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
-
-- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
-
-- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
-
-.. _enum_@GlobalScope_Error:
-
-enum **Error**:
-
-- **OK** = **0** --- Functions that return Error return OK when no error occurred. Most functions don't return errors and/or just print errors to STDOUT.
-
-- **FAILED** = **1** --- Generic error.
-
-- **ERR_UNAVAILABLE** = **2** --- Unavailable error
-
-- **ERR_UNCONFIGURED** = **3** --- Unconfigured error
-
-- **ERR_UNAUTHORIZED** = **4** --- Unauthorized error
-
-- **ERR_PARAMETER_RANGE_ERROR** = **5** --- Parameter range error
-
-- **ERR_OUT_OF_MEMORY** = **6** --- Out of memory (OOM) error
-
-- **ERR_FILE_NOT_FOUND** = **7** --- File: Not found error
-
-- **ERR_FILE_BAD_DRIVE** = **8** --- File: Bad drive error
-
-- **ERR_FILE_BAD_PATH** = **9** --- File: Bad path error
-
-- **ERR_FILE_NO_PERMISSION** = **10** --- File: No permission error
-
-- **ERR_FILE_ALREADY_IN_USE** = **11** --- File: Already in use error
-
-- **ERR_FILE_CANT_OPEN** = **12** --- File: Can't open error
-
-- **ERR_FILE_CANT_WRITE** = **13** --- File: Can't write error
-
-- **ERR_FILE_CANT_READ** = **14** --- File: Can't read error
-
-- **ERR_FILE_UNRECOGNIZED** = **15** --- File: Unrecognized error
-
-- **ERR_FILE_CORRUPT** = **16** --- File: Corrupt error
-
-- **ERR_FILE_MISSING_DEPENDENCIES** = **17** --- File: Missing dependencies error
-
-- **ERR_FILE_EOF** = **18** --- File: End of file (EOF) error
-
-- **ERR_CANT_OPEN** = **19** --- Can't open error
-
-- **ERR_CANT_CREATE** = **20** --- Can't create error
-
-- **ERR_PARSE_ERROR** = **43** --- Parse error
-
-- **ERR_QUERY_FAILED** = **21** --- Query failed error
-
-- **ERR_ALREADY_IN_USE** = **22** --- Already in use error
-
-- **ERR_LOCKED** = **23** --- Locked error
-
-- **ERR_TIMEOUT** = **24** --- Timeout error
-
-- **ERR_CANT_ACQUIRE_RESOURCE** = **28** --- Can't acquire resource error
-
-- **ERR_INVALID_DATA** = **30** --- Invalid data error
-
-- **ERR_INVALID_PARAMETER** = **31** --- Invalid parameter error
-
-- **ERR_ALREADY_EXISTS** = **32** --- Already exists error
-
-- **ERR_DOES_NOT_EXIST** = **33** --- Does not exist error
-
-- **ERR_DATABASE_CANT_READ** = **34** --- Database: Read error
-
-- **ERR_DATABASE_CANT_WRITE** = **35** --- Database: Write error
-
-- **ERR_COMPILATION_FAILED** = **36** --- Compilation failed error
-
-- **ERR_METHOD_NOT_FOUND** = **37** --- Method not found error
-
-- **ERR_LINK_FAILED** = **38** --- Linking failed error
-
-- **ERR_SCRIPT_FAILED** = **39** --- Script failed error
-
-- **ERR_CYCLIC_LINK** = **40** --- Cycling link (import cycle) error
-
-- **ERR_BUSY** = **44** --- Busy error
-
-- **ERR_HELP** = **46** --- Help error
-
-- **ERR_BUG** = **47** --- Bug error
-
-.. _enum_@GlobalScope_VAlign:
-
-enum **VAlign**:
-
-- **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
-
-- **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
-
-- **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
-
-.. _enum_@GlobalScope_PropertyHint:
-
-enum **PropertyHint**:
-
-- **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
-
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that the string is a range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
-
-- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that the string is an exponential range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
-
-- **PROPERTY_HINT_ENUM** = **3** --- Property hint for an enumerated value, like "Hello,Something,Else". This is valid for integer, float and string properties.
-
-- **PROPERTY_HINT_EXP_EASING** = **4**
-
-- **PROPERTY_HINT_LENGTH** = **5**
-
-- **PROPERTY_HINT_KEY_ACCEL** = **7**
-
-- **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description, for bits 0,1,2,3 and 5 the hint would be like "Bit0,Bit1,Bit2,Bit3,,Bit5". Valid only for integers.
-
-- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9**
-
-- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10**
-
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11**
-
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12**
-
-- **PROPERTY_HINT_FILE** = **13** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "\*.doc".
-
-- **PROPERTY_HINT_DIR** = **14** --- String property is a directory (so pop up a file dialog when edited).
-
-- **PROPERTY_HINT_GLOBAL_FILE** = **15**
-
-- **PROPERTY_HINT_GLOBAL_DIR** = **16**
-
-- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- String property is a resource, so open the resource popup menu when edited.
-
-- **PROPERTY_HINT_MULTILINE_TEXT** = **18**
-
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19**
-
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20**
-
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that the image is compressed using lossy compression.
-
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that the image is compressed using lossless compression.
+- **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
 
 .. _enum_@GlobalScope_Corner:
 
@@ -507,6 +87,34 @@ enum **Corner**:
 - **CORNER_BOTTOM_RIGHT** = **2**
 
 - **CORNER_BOTTOM_LEFT** = **3**
+
+.. _enum_@GlobalScope_Orientation:
+
+enum **Orientation**:
+
+- **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+
+- **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+
+.. _enum_@GlobalScope_HAlign:
+
+enum **HAlign**:
+
+- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
+
+- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
+
+- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
+
+.. _enum_@GlobalScope_VAlign:
+
+enum **VAlign**:
+
+- **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
+
+- **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
+
+- **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
 
 .. _enum_@GlobalScope_KeyList:
 
@@ -996,6 +604,386 @@ enum **KeyList**:
 
 - **KEY_YDIAERESIS** = **255** --- ÿ key
 
+.. _enum_@GlobalScope_KeyModifierMask:
+
+enum **KeyModifierMask**:
+
+- **KEY_CODE_MASK** = **33554431** --- Key Code Mask
+
+- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier Key Mask
+
+- **KEY_MASK_SHIFT** = **33554432** --- Shift Key Mask
+
+- **KEY_MASK_ALT** = **67108864** --- Alt Key Mask
+
+- **KEY_MASK_META** = **134217728** --- Meta Key Mask
+
+- **KEY_MASK_CTRL** = **268435456** --- CTRL Key Mask
+
+- **KEY_MASK_CMD** = **268435456** --- CMD Key Mask
+
+- **KEY_MASK_KPAD** = **536870912** --- Keypad Key Mask
+
+- **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
+
+.. _enum_@GlobalScope_ButtonList:
+
+enum **ButtonList**:
+
+- **BUTTON_LEFT** = **1** --- Left Mouse Button
+
+- **BUTTON_RIGHT** = **2** --- Right Mouse Button
+
+- **BUTTON_MIDDLE** = **3** --- Middle Mouse Button
+
+- **BUTTON_XBUTTON1** = **8** --- Extra Mouse Button 1
+
+- **BUTTON_XBUTTON2** = **9** --- Extra Mouse Button 2
+
+- **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up
+
+- **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down
+
+- **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button
+
+- **BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button
+
+- **BUTTON_MASK_LEFT** = **1** --- Left Mouse Button Mask
+
+- **BUTTON_MASK_RIGHT** = **2** --- Right Mouse Button Mask
+
+- **BUTTON_MASK_MIDDLE** = **4** --- Middle Mouse Button Mask
+
+- **BUTTON_MASK_XBUTTON1** = **128** --- Extra Mouse Button 1 Mask
+
+- **BUTTON_MASK_XBUTTON2** = **256** --- Extra Mouse Button 2 Mask
+
+.. _enum_@GlobalScope_JoystickList:
+
+enum **JoystickList**:
+
+- **JOY_BUTTON_0** = **0** --- Joypad Button 0
+
+- **JOY_BUTTON_1** = **1** --- Joypad Button 1
+
+- **JOY_BUTTON_2** = **2** --- Joypad Button 2
+
+- **JOY_BUTTON_3** = **3** --- Joypad Button 3
+
+- **JOY_BUTTON_4** = **4** --- Joypad Button 4
+
+- **JOY_BUTTON_5** = **5** --- Joypad Button 5
+
+- **JOY_BUTTON_6** = **6** --- Joypad Button 6
+
+- **JOY_BUTTON_7** = **7** --- Joypad Button 7
+
+- **JOY_BUTTON_8** = **8** --- Joypad Button 8
+
+- **JOY_BUTTON_9** = **9** --- Joypad Button 9
+
+- **JOY_BUTTON_10** = **10** --- Joypad Button 10
+
+- **JOY_BUTTON_11** = **11** --- Joypad Button 11
+
+- **JOY_BUTTON_12** = **12** --- Joypad Button 12
+
+- **JOY_BUTTON_13** = **13** --- Joypad Button 13
+
+- **JOY_BUTTON_14** = **14** --- Joypad Button 14
+
+- **JOY_BUTTON_15** = **15** --- Joypad Button 15
+
+- **JOY_BUTTON_MAX** = **16** --- Joypad Button 16
+
+- **JOY_SONY_CIRCLE** = **1** --- DUALSHOCK circle button
+
+- **JOY_SONY_X** = **0** --- DUALSHOCK X button
+
+- **JOY_SONY_SQUARE** = **2** --- DUALSHOCK square button
+
+- **JOY_SONY_TRIANGLE** = **3** --- DUALSHOCK triangle button
+
+- **JOY_XBOX_B** = **1** --- XBOX controller B button
+
+- **JOY_XBOX_A** = **0** --- XBOX controller A button
+
+- **JOY_XBOX_X** = **2** --- XBOX controller X button
+
+- **JOY_XBOX_Y** = **3** --- XBOX controller Y button
+
+- **JOY_DS_A** = **1** --- DualShock controller A button
+
+- **JOY_DS_B** = **0** --- DualShock controller B button
+
+- **JOY_DS_X** = **3** --- DualShock controller X button
+
+- **JOY_DS_Y** = **2** --- DualShock controller Y button
+
+- **JOY_SELECT** = **10** --- Joypad Button Select
+
+- **JOY_START** = **11** --- Joypad Button Start
+
+- **JOY_DPAD_UP** = **12** --- Joypad DPad Up
+
+- **JOY_DPAD_DOWN** = **13** --- Joypad DPad Down
+
+- **JOY_DPAD_LEFT** = **14** --- Joypad DPad Left
+
+- **JOY_DPAD_RIGHT** = **15** --- Joypad DPad Right
+
+- **JOY_L** = **4** --- Joypad Left Shoulder Button
+
+- **JOY_L2** = **6** --- Joypad Left Trigger
+
+- **JOY_L3** = **8** --- Joypad Left Stick Click
+
+- **JOY_R** = **5** --- Joypad Right Shoulder Button
+
+- **JOY_R2** = **7** --- Joypad Right Trigger
+
+- **JOY_R3** = **9** --- Joypad Right Stick Click
+
+- **JOY_AXIS_0** = **0** --- Joypad Left Stick Horizontal Axis
+
+- **JOY_AXIS_1** = **1** --- Joypad Left Stick Vertical Axis
+
+- **JOY_AXIS_2** = **2** --- Joypad Right Stick Horizontal Axis
+
+- **JOY_AXIS_3** = **3** --- Joypad Right Stick Vertical Axis
+
+- **JOY_AXIS_4** = **4**
+
+- **JOY_AXIS_5** = **5**
+
+- **JOY_AXIS_6** = **6** --- Joypad Left Trigger Analog Axis
+
+- **JOY_AXIS_7** = **7** --- Joypad Right Trigger Analog Axis
+
+- **JOY_AXIS_8** = **8**
+
+- **JOY_AXIS_9** = **9**
+
+- **JOY_AXIS_MAX** = **10**
+
+- **JOY_ANALOG_LX** = **0** --- Joypad Left Stick Horizontal Axis
+
+- **JOY_ANALOG_LY** = **1** --- Joypad Left Stick Vertical Axis
+
+- **JOY_ANALOG_RX** = **2** --- Joypad Right Stick Horizontal Axis
+
+- **JOY_ANALOG_RY** = **3** --- Joypad Right Stick Vertical Axis
+
+- **JOY_ANALOG_L2** = **6** --- Joypad Left Analog Trigger
+
+- **JOY_ANALOG_R2** = **7** --- Joypad Right Analog Trigger
+
+.. _enum_@GlobalScope_MidiMessageList:
+
+enum **MidiMessageList**:
+
+- **MIDI_MESSAGE_NOTE_OFF** = **8**
+
+- **MIDI_MESSAGE_NOTE_ON** = **9**
+
+- **MIDI_MESSAGE_AFTERTOUCH** = **10**
+
+- **MIDI_MESSAGE_CONTROL_CHANGE** = **11**
+
+- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12**
+
+- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13**
+
+- **MIDI_MESSAGE_PITCH_BEND** = **14**
+
+.. _enum_@GlobalScope_Error:
+
+enum **Error**:
+
+- **OK** = **0** --- Functions that return Error return OK when no error occurred. Most functions don't return errors and/or just print errors to STDOUT.
+
+- **FAILED** = **1** --- Generic error.
+
+- **ERR_UNAVAILABLE** = **2** --- Unavailable error
+
+- **ERR_UNCONFIGURED** = **3** --- Unconfigured error
+
+- **ERR_UNAUTHORIZED** = **4** --- Unauthorized error
+
+- **ERR_PARAMETER_RANGE_ERROR** = **5** --- Parameter range error
+
+- **ERR_OUT_OF_MEMORY** = **6** --- Out of memory (OOM) error
+
+- **ERR_FILE_NOT_FOUND** = **7** --- File: Not found error
+
+- **ERR_FILE_BAD_DRIVE** = **8** --- File: Bad drive error
+
+- **ERR_FILE_BAD_PATH** = **9** --- File: Bad path error
+
+- **ERR_FILE_NO_PERMISSION** = **10** --- File: No permission error
+
+- **ERR_FILE_ALREADY_IN_USE** = **11** --- File: Already in use error
+
+- **ERR_FILE_CANT_OPEN** = **12** --- File: Can't open error
+
+- **ERR_FILE_CANT_WRITE** = **13** --- File: Can't write error
+
+- **ERR_FILE_CANT_READ** = **14** --- File: Can't read error
+
+- **ERR_FILE_UNRECOGNIZED** = **15** --- File: Unrecognized error
+
+- **ERR_FILE_CORRUPT** = **16** --- File: Corrupt error
+
+- **ERR_FILE_MISSING_DEPENDENCIES** = **17** --- File: Missing dependencies error
+
+- **ERR_FILE_EOF** = **18** --- File: End of file (EOF) error
+
+- **ERR_CANT_OPEN** = **19** --- Can't open error
+
+- **ERR_CANT_CREATE** = **20** --- Can't create error
+
+- **ERR_PARSE_ERROR** = **43** --- Parse error
+
+- **ERR_QUERY_FAILED** = **21** --- Query failed error
+
+- **ERR_ALREADY_IN_USE** = **22** --- Already in use error
+
+- **ERR_LOCKED** = **23** --- Locked error
+
+- **ERR_TIMEOUT** = **24** --- Timeout error
+
+- **ERR_CANT_ACQUIRE_RESOURCE** = **28** --- Can't acquire resource error
+
+- **ERR_INVALID_DATA** = **30** --- Invalid data error
+
+- **ERR_INVALID_PARAMETER** = **31** --- Invalid parameter error
+
+- **ERR_ALREADY_EXISTS** = **32** --- Already exists error
+
+- **ERR_DOES_NOT_EXIST** = **33** --- Does not exist error
+
+- **ERR_DATABASE_CANT_READ** = **34** --- Database: Read error
+
+- **ERR_DATABASE_CANT_WRITE** = **35** --- Database: Write error
+
+- **ERR_COMPILATION_FAILED** = **36** --- Compilation failed error
+
+- **ERR_METHOD_NOT_FOUND** = **37** --- Method not found error
+
+- **ERR_LINK_FAILED** = **38** --- Linking failed error
+
+- **ERR_SCRIPT_FAILED** = **39** --- Script failed error
+
+- **ERR_CYCLIC_LINK** = **40** --- Cycling link (import cycle) error
+
+- **ERR_BUSY** = **44** --- Busy error
+
+- **ERR_HELP** = **46** --- Help error
+
+- **ERR_BUG** = **47** --- Bug error
+
+.. _enum_@GlobalScope_PropertyHint:
+
+enum **PropertyHint**:
+
+- **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
+
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that the string is a range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
+
+- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that the string is an exponential range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
+
+- **PROPERTY_HINT_ENUM** = **3** --- Property hint for an enumerated value, like "Hello,Something,Else". This is valid for integer, float and string properties.
+
+- **PROPERTY_HINT_EXP_EASING** = **4**
+
+- **PROPERTY_HINT_LENGTH** = **5**
+
+- **PROPERTY_HINT_KEY_ACCEL** = **7**
+
+- **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description, for bits 0,1,2,3 and 5 the hint would be like "Bit0,Bit1,Bit2,Bit3,,Bit5". Valid only for integers.
+
+- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9**
+
+- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10**
+
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11**
+
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12**
+
+- **PROPERTY_HINT_FILE** = **13** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "\*.doc".
+
+- **PROPERTY_HINT_DIR** = **14** --- String property is a directory (so pop up a file dialog when edited).
+
+- **PROPERTY_HINT_GLOBAL_FILE** = **15**
+
+- **PROPERTY_HINT_GLOBAL_DIR** = **16**
+
+- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- String property is a resource, so open the resource popup menu when edited.
+
+- **PROPERTY_HINT_MULTILINE_TEXT** = **18**
+
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19**
+
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20**
+
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that the image is compressed using lossy compression.
+
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that the image is compressed using lossless compression.
+
+.. _enum_@GlobalScope_PropertyUsageFlags:
+
+enum **PropertyUsageFlags**:
+
+- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
+
+- **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
+
+- **PROPERTY_USAGE_NETWORK** = **4**
+
+- **PROPERTY_USAGE_EDITOR_HELPER** = **8**
+
+- **PROPERTY_USAGE_CHECKABLE** = **16**
+
+- **PROPERTY_USAGE_CHECKED** = **32**
+
+- **PROPERTY_USAGE_INTERNATIONALIZED** = **64**
+
+- **PROPERTY_USAGE_GROUP** = **128**
+
+- **PROPERTY_USAGE_CATEGORY** = **256**
+
+- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048**
+
+- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096**
+
+- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
+
+- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
+
+- **PROPERTY_USAGE_DEFAULT_INTL** = **71**
+
+- **PROPERTY_USAGE_NOEDITOR** = **5**
+
+.. _enum_@GlobalScope_MethodFlags:
+
+enum **MethodFlags**:
+
+- **METHOD_FLAG_NORMAL** = **1** --- Flag for normal method
+
+- **METHOD_FLAG_EDITOR** = **2** --- Flag for editor method
+
+- **METHOD_FLAG_NOSCRIPT** = **4**
+
+- **METHOD_FLAG_CONST** = **8** --- Flag for constant method
+
+- **METHOD_FLAG_REVERSE** = **16**
+
+- **METHOD_FLAG_VIRTUAL** = **32** --- Flag for virtual method
+
+- **METHOD_FLAG_FROM_SCRIPT** = **64** --- Flag for method from script
+
+- **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags
+
 .. _enum_@GlobalScope_Variant.Type:
 
 enum **Variant.Type**:
@@ -1056,49 +1044,61 @@ enum **Variant.Type**:
 
 - **TYPE_MAX** = **27** --- Marker for end of type constants.
 
-.. _enum_@GlobalScope_Margin:
+.. _enum_@GlobalScope_Variant.Operator:
 
-enum **Margin**:
+enum **Variant.Operator**:
 
-- **MARGIN_LEFT** = **0** --- Left margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **OP_EQUAL** = **0**
 
-- **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **OP_NOT_EQUAL** = **1**
 
-- **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **OP_LESS** = **2**
 
-- **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>` derived classes.
+- **OP_LESS_EQUAL** = **3**
 
-.. _enum_@GlobalScope_ButtonList:
+- **OP_GREATER** = **4**
 
-enum **ButtonList**:
+- **OP_GREATER_EQUAL** = **5**
 
-- **BUTTON_LEFT** = **1** --- Left Mouse Button
+- **OP_ADD** = **6**
 
-- **BUTTON_RIGHT** = **2** --- Right Mouse Button
+- **OP_SUBTRACT** = **7**
 
-- **BUTTON_MIDDLE** = **3** --- Middle Mouse Button
+- **OP_MULTIPLY** = **8**
 
-- **BUTTON_XBUTTON1** = **8** --- Extra Mouse Button 1
+- **OP_DIVIDE** = **9**
 
-- **BUTTON_XBUTTON2** = **9** --- Extra Mouse Button 2
+- **OP_NEGATE** = **10**
 
-- **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up
+- **OP_POSITIVE** = **11**
 
-- **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down
+- **OP_MODULE** = **12**
 
-- **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button
+- **OP_STRING_CONCAT** = **13**
 
-- **BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button
+- **OP_SHIFT_LEFT** = **14**
 
-- **BUTTON_MASK_LEFT** = **1** --- Left Mouse Button Mask
+- **OP_SHIFT_RIGHT** = **15**
 
-- **BUTTON_MASK_RIGHT** = **2** --- Right Mouse Button Mask
+- **OP_BIT_AND** = **16**
 
-- **BUTTON_MASK_MIDDLE** = **4** --- Middle Mouse Button Mask
+- **OP_BIT_OR** = **17**
 
-- **BUTTON_MASK_XBUTTON1** = **128** --- Extra Mouse Button 1 Mask
+- **OP_BIT_XOR** = **18**
 
-- **BUTTON_MASK_XBUTTON2** = **256** --- Extra Mouse Button 2 Mask
+- **OP_BIT_NEGATE** = **19**
+
+- **OP_AND** = **20**
+
+- **OP_OR** = **21**
+
+- **OP_XOR** = **22**
+
+- **OP_NOT** = **23**
+
+- **OP_IN** = **24**
+
+- **OP_MAX** = **25**
 
 Constants
 ---------

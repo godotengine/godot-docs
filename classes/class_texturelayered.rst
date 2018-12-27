@@ -9,7 +9,7 @@ TextureLayered
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`TextureArray<class_TextureArray>`, :ref:`Texture3D<class_Texture3D>`
+**Inherited By:** :ref:`Texture3D<class_Texture3D>`, :ref:`TextureArray<class_TextureArray>`
 
 **Category:** Core
 

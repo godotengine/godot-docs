@@ -9,7 +9,7 @@ Camera
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`InterpolatedCamera<class_InterpolatedCamera>`, :ref:`ClippedCamera<class_ClippedCamera>`, :ref:`ARVRCamera<class_ARVRCamera>`
+**Inherited By:** :ref:`ARVRCamera<class_ARVRCamera>`, :ref:`ClippedCamera<class_ClippedCamera>`, :ref:`InterpolatedCamera<class_InterpolatedCamera>`
 
 **Category:** Core
 
@@ -81,16 +81,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_Camera_DopplerTracking:
-
-enum **DopplerTracking**:
-
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disable Doppler effect simulation (default).
-
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
-
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
-
 .. _enum_Camera_Projection:
 
 enum **Projection**:
@@ -106,6 +96,16 @@ enum **KeepAspect**:
 - **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio.
 
 - **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio.
+
+.. _enum_Camera_DopplerTracking:
+
+enum **DopplerTracking**:
+
+- **DOPPLER_TRACKING_DISABLED** = **0** --- Disable Doppler effect simulation (default).
+
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
 Description
 -----------

@@ -151,14 +151,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_AnimationTreePlayer_AnimationProcessMode:
-
-enum **AnimationProcessMode**:
-
-- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
-
-- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
-
 .. _enum_AnimationTreePlayer_NodeType:
 
 enum **NodeType**:
@@ -182,6 +174,14 @@ enum **NodeType**:
 - **NODE_TIMESEEK** = **8** --- TimeSeek node.
 
 - **NODE_TRANSITION** = **9** --- Transition node.
+
+.. _enum_AnimationTreePlayer_AnimationProcessMode:
+
+enum **AnimationProcessMode**:
+
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+
+- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
 
 Description
 -----------

@@ -208,16 +208,6 @@ enum **BGMode**:
 
 - **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
 
-.. _enum_Environment_DOFBlurQuality:
-
-enum **DOFBlurQuality**:
-
-- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
-
-- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
-
-- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
-
 .. _enum_Environment_GlowBlendMode:
 
 enum **GlowBlendMode**:
@@ -241,6 +231,16 @@ enum **ToneMapper**:
 - **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
 
 - **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
+
+.. _enum_Environment_DOFBlurQuality:
+
+enum **DOFBlurQuality**:
+
+- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
+
+- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
+
+- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
 
 .. _enum_Environment_SSAOBlur:
 

@@ -131,58 +131,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_Image_CompressMode:
-
-enum **CompressMode**:
-
-- **COMPRESS_S3TC** = **0**
-
-- **COMPRESS_PVRTC2** = **1**
-
-- **COMPRESS_PVRTC4** = **2**
-
-- **COMPRESS_ETC** = **3**
-
-- **COMPRESS_ETC2** = **4**
-
-.. _enum_Image_Interpolation:
-
-enum **Interpolation**:
-
-- **INTERPOLATE_NEAREST** = **0**
-
-- **INTERPOLATE_BILINEAR** = **1**
-
-- **INTERPOLATE_CUBIC** = **2**
-
-- **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most suited mipmap levels, then linearly interpolates between them.
-
-It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, with much less aliasing artifacts.
-
-If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
-
-On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
-
-.. _enum_Image_AlphaMode:
-
-enum **AlphaMode**:
-
-- **ALPHA_NONE** = **0**
-
-- **ALPHA_BIT** = **1**
-
-- **ALPHA_BLEND** = **2**
-
-.. _enum_Image_CompressSource:
-
-enum **CompressSource**:
-
-- **COMPRESS_SOURCE_GENERIC** = **0**
-
-- **COMPRESS_SOURCE_SRGB** = **1**
-
-- **COMPRESS_SOURCE_NORMAL** = **2**
-
 .. _enum_Image_Format:
 
 enum **Format**:
@@ -262,6 +210,58 @@ enum **Format**:
 - **FORMAT_ETC2_RGB8A1** = **36** --- Ericsson Texture Compression format 2 variant RGB8_PUNCHTHROUGH_ALPHA1, which compresses RGBA data to make alpha either fully transparent or fully opaque. Note that when creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_MAX** = **37**
+
+.. _enum_Image_Interpolation:
+
+enum **Interpolation**:
+
+- **INTERPOLATE_NEAREST** = **0**
+
+- **INTERPOLATE_BILINEAR** = **1**
+
+- **INTERPOLATE_CUBIC** = **2**
+
+- **INTERPOLATE_TRILINEAR** = **3** --- Performs bilinear separately on the two most suited mipmap levels, then linearly interpolates between them.
+
+It's slower than ``INTERPOLATE_BILINEAR``, but produces higher quality results, with much less aliasing artifacts.
+
+If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image. (Note that if you intend to scale multiple copies of the original image, it's better to call ``generate_mipmaps`` on it in advance, to avoid wasting processing power in generating them again and again.)
+
+On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
+
+.. _enum_Image_AlphaMode:
+
+enum **AlphaMode**:
+
+- **ALPHA_NONE** = **0**
+
+- **ALPHA_BIT** = **1**
+
+- **ALPHA_BLEND** = **2**
+
+.. _enum_Image_CompressMode:
+
+enum **CompressMode**:
+
+- **COMPRESS_S3TC** = **0**
+
+- **COMPRESS_PVRTC2** = **1**
+
+- **COMPRESS_PVRTC4** = **2**
+
+- **COMPRESS_ETC** = **3**
+
+- **COMPRESS_ETC2** = **4**
+
+.. _enum_Image_CompressSource:
+
+enum **CompressSource**:
+
+- **COMPRESS_SOURCE_GENERIC** = **0**
+
+- **COMPRESS_SOURCE_SRGB** = **1**
+
+- **COMPRESS_SOURCE_NORMAL** = **2**
 
 Description
 -----------

@@ -44,16 +44,6 @@ Properties
 Enumerations
 ------------
 
-.. _enum_HingeJoint_Flag:
-
-enum **Flag**:
-
-- **FLAG_USE_LIMIT** = **0** --- If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
-
-- **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
-
-- **FLAG_MAX** = **2** --- End flag of FLAG\_\* constants, used internally.
-
 .. _enum_HingeJoint_Param:
 
 enum **Param**:
@@ -75,6 +65,16 @@ enum **Param**:
 - **PARAM_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
 
 - **PARAM_MAX** = **8** --- End flag of PARAM\_\* constants, used internally.
+
+.. _enum_HingeJoint_Flag:
+
+enum **Flag**:
+
+- **FLAG_USE_LIMIT** = **0** --- If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint_angular_limit/upper>` has effects.
+
+- **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
+
+- **FLAG_MAX** = **2** --- End flag of FLAG\_\* constants, used internally.
 
 Description
 -----------

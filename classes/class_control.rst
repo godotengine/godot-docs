@@ -9,7 +9,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`TextureRect<class_TextureRect>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Label<class_Label>`, :ref:`Tabs<class_Tabs>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`VideoPlayer<class_VideoPlayer>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`LineEdit<class_LineEdit>`, :ref:`Container<class_Container>`, :ref:`TextEdit<class_TextEdit>`, :ref:`BaseButton<class_BaseButton>`, :ref:`Popup<class_Popup>`, :ref:`Tree<class_Tree>`, :ref:`Separator<class_Separator>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`ItemList<class_ItemList>`
+**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Popup<class_Popup>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`Tabs<class_Tabs>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoPlayer<class_VideoPlayer>`
 
 **Category:** Core
 
@@ -274,19 +274,15 @@ Emitted when one of the size flags changes. See :ref:`size_flags_horizontal<clas
 Enumerations
 ------------
 
-.. _enum_Control_SizeFlags:
+.. _enum_Control_FocusMode:
 
-enum **SizeFlags**:
+enum **FocusMode**:
 
-- **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_Container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`focus_mode<class_Control_focus_mode>`.
 
-- **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_Container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Control_focus_mode>`.
 
-- **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
-
-- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_Container>` to center the node in itself. It centers the control based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
-
-- **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_Container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`focus_mode<class_Control_focus_mode>`.
 
 .. _enum_Control_CursorShape:
 
@@ -326,38 +322,6 @@ enum **CursorShape**:
 
 - **CURSOR_HELP** = **16** --- Show the system's help mouse cursor when the user hovers the node, a question mark.
 
-.. _enum_Control_FocusMode:
-
-enum **FocusMode**:
-
-- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`focus_mode<class_Control_focus_mode>`.
-
-- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Control_focus_mode>`.
-
-- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`focus_mode<class_Control_focus_mode>`.
-
-.. _enum_Control_GrowDirection:
-
-enum **GrowDirection**:
-
-- **GROW_DIRECTION_BEGIN** = **0**
-
-- **GROW_DIRECTION_END** = **1**
-
-- **GROW_DIRECTION_BOTH** = **2**
-
-.. _enum_Control_LayoutPresetMode:
-
-enum **LayoutPresetMode**:
-
-- **PRESET_MODE_MINSIZE** = **0**
-
-- **PRESET_MODE_KEEP_WIDTH** = **1**
-
-- **PRESET_MODE_KEEP_HEIGHT** = **2**
-
-- **PRESET_MODE_KEEP_SIZE** = **3**
-
 .. _enum_Control_LayoutPreset:
 
 enum **LayoutPreset**:
@@ -394,6 +358,32 @@ enum **LayoutPreset**:
 
 - **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent container. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent container. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
+.. _enum_Control_LayoutPresetMode:
+
+enum **LayoutPresetMode**:
+
+- **PRESET_MODE_MINSIZE** = **0**
+
+- **PRESET_MODE_KEEP_WIDTH** = **1**
+
+- **PRESET_MODE_KEEP_HEIGHT** = **2**
+
+- **PRESET_MODE_KEEP_SIZE** = **3**
+
+.. _enum_Control_SizeFlags:
+
+enum **SizeFlags**:
+
+- **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_Container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
+- **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_Container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
+- **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
+
+- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_Container>` to center the node in itself. It centers the control based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
+- **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_Container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
 .. _enum_Control_MouseFilter:
 
 enum **MouseFilter**:
@@ -403,6 +393,16 @@ enum **MouseFilter**:
 - **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically.
 
 - **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and will not block other controls from receiving these events. These events will also not be handled automatically.
+
+.. _enum_Control_GrowDirection:
+
+enum **GrowDirection**:
+
+- **GROW_DIRECTION_BEGIN** = **0**
+
+- **GROW_DIRECTION_END** = **1**
+
+- **GROW_DIRECTION_BOTH** = **2**
 
 .. _enum_Control_Anchor:
 

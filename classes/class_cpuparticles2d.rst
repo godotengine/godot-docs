@@ -149,13 +149,13 @@ Methods
 Enumerations
 ------------
 
-.. _enum_CPUParticles2D_Flags:
+.. _enum_CPUParticles2D_DrawOrder:
 
-enum **Flags**:
+enum **DrawOrder**:
 
-- **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
+- **DRAW_ORDER_INDEX** = **0**
 
-- **FLAG_MAX** = **1**
+- **DRAW_ORDER_LIFETIME** = **1**
 
 .. _enum_CPUParticles2D_Parameter:
 
@@ -187,6 +187,14 @@ enum **Parameter**:
 
 - **PARAM_MAX** = **12**
 
+.. _enum_CPUParticles2D_Flags:
+
+enum **Flags**:
+
+- **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
+
+- **FLAG_MAX** = **1**
+
 .. _enum_CPUParticles2D_EmissionShape:
 
 enum **EmissionShape**:
@@ -200,14 +208,6 @@ enum **EmissionShape**:
 - **EMISSION_SHAPE_POINTS** = **3**
 
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
-
-.. _enum_CPUParticles2D_DrawOrder:
-
-enum **DrawOrder**:
-
-- **DRAW_ORDER_INDEX** = **0**
-
-- **DRAW_ORDER_LIFETIME** = **1**
 
 Property Descriptions
 ---------------------

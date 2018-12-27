@@ -9,7 +9,7 @@ AudioStream
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamSample<class_AudioStreamSample>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`
+**Inherited By:** :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
 **Category:** Core
 

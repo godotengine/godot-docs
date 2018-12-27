@@ -147,28 +147,6 @@ Methods
 Enumerations
 ------------
 
-.. _enum_Animation_UpdateMode:
-
-enum **UpdateMode**:
-
-- **UPDATE_CONTINUOUS** = **0** --- Update between keyframes.
-
-- **UPDATE_DISCRETE** = **1** --- Update at the keyframes and hold the value.
-
-- **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
-
-- **UPDATE_CAPTURE** = **3**
-
-.. _enum_Animation_InterpolationType:
-
-enum **InterpolationType**:
-
-- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
-
-- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
-
-- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
-
 .. _enum_Animation_TrackType:
 
 enum **TrackType**:
@@ -184,6 +162,28 @@ enum **TrackType**:
 - **TYPE_AUDIO** = **4**
 
 - **TYPE_ANIMATION** = **5**
+
+.. _enum_Animation_InterpolationType:
+
+enum **InterpolationType**:
+
+- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
+
+- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
+
+- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
+
+.. _enum_Animation_UpdateMode:
+
+enum **UpdateMode**:
+
+- **UPDATE_CONTINUOUS** = **0** --- Update between keyframes.
+
+- **UPDATE_DISCRETE** = **1** --- Update at the keyframes and hold the value.
+
+- **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
+
+- **UPDATE_CAPTURE** = **3**
 
 Description
 -----------

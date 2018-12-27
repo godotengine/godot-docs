@@ -134,16 +134,6 @@ enum **BitmaskMode**:
 
 - **BITMASK_3X3** = **2**
 
-.. _enum_TileSet_TileMode:
-
-enum **TileMode**:
-
-- **SINGLE_TILE** = **0**
-
-- **AUTO_TILE** = **1**
-
-- **ATLAS_TILE** = **2**
-
 .. _enum_TileSet_AutotileBindings:
 
 enum **AutotileBindings**:
@@ -163,6 +153,16 @@ enum **AutotileBindings**:
 - **BIND_BOTTOM** = **128**
 
 - **BIND_BOTTOMRIGHT** = **256**
+
+.. _enum_TileSet_TileMode:
+
+enum **TileMode**:
+
+- **SINGLE_TILE** = **0**
+
+- **AUTO_TILE** = **1**
+
+- **ATLAS_TILE** = **2**
 
 Description
 -----------

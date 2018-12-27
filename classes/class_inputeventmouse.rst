@@ -9,7 +9,7 @@ InputEventMouse
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`, :ref:`InputEventMouseButton<class_InputEventMouseButton>`
+**Inherited By:** :ref:`InputEventMouseButton<class_InputEventMouseButton>`, :ref:`InputEventMouseMotion<class_InputEventMouseMotion>`
 
 **Category:** Core
 

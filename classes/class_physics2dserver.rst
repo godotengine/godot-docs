@@ -230,49 +230,23 @@ Methods
 Enumerations
 ------------
 
-.. _enum_Physics2DServer_CCDMode:
+.. _enum_Physics2DServer_SpaceParameter:
 
-enum **CCDMode**:
+enum **SpaceParameter**:
 
-- **CCD_MODE_DISABLED** = **0** --- Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+- **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
 
-- **CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection by raycasting. It is faster than shapecasting, but less precise.
+- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
 
-- **CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision detection by shapecasting. It is the slowest CCD method, and the most precise.
+- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
 
-.. _enum_Physics2DServer_BodyState:
+- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-enum **BodyState**:
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-- **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
+- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 
-- **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.
-
-- **BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the current angular velocity of the body.
-
-- **BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or to get whether it is sleeping.
-
-- **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
-
-.. _enum_Physics2DServer_ProcessInfo:
-
-enum **ProcessInfo**:
-
-- **INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects that are not sleeping.
-
-- **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
-
-- **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
-
-.. _enum_Physics2DServer_JointParam:
-
-enum **JointParam**:
-
-- **JOINT_PARAM_BIAS** = **0**
-
-- **JOINT_PARAM_MAX_BIAS** = **1**
-
-- **JOINT_PARAM_MAX_FORCE** = **2**
+- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
 
 .. _enum_Physics2DServer_ShapeType:
 
@@ -316,13 +290,31 @@ enum **AreaParameter**:
 
 - **AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority (order of processing) of an area.
 
-.. _enum_Physics2DServer_AreaBodyStatus:
+.. _enum_Physics2DServer_AreaSpaceOverrideMode:
 
-enum **AreaBodyStatus**:
+enum **AreaSpaceOverrideMode**:
 
-- **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
+- **AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
 
-- **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
+- **AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
+
+- **AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
+
+- **AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
+
+- **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
+
+.. _enum_Physics2DServer_BodyMode:
+
+enum **BodyMode**:
+
+- **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
+
+- **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
+
+- **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
+
+- **BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
 
 .. _enum_Physics2DServer_BodyParameter:
 
@@ -344,17 +336,39 @@ enum **BodyParameter**:
 
 - **BODY_PARAM_MAX** = **7** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
 
-.. _enum_Physics2DServer_BodyMode:
+.. _enum_Physics2DServer_BodyState:
 
-enum **BodyMode**:
+enum **BodyState**:
 
-- **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
+- **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
 
-- **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
+- **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.
 
-- **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
+- **BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the current angular velocity of the body.
 
-- **BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
+- **BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or to get whether it is sleeping.
+
+- **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
+
+.. _enum_Physics2DServer_JointType:
+
+enum **JointType**:
+
+- **JOINT_PIN** = **0** --- Constant to create pin joints.
+
+- **JOINT_GROOVE** = **1** --- Constant to create groove joints.
+
+- **JOINT_DAMPED_SPRING** = **2** --- Constant to create damped spring joints.
+
+.. _enum_Physics2DServer_JointParam:
+
+enum **JointParam**:
+
+- **JOINT_PARAM_BIAS** = **0**
+
+- **JOINT_PARAM_MAX_BIAS** = **1**
+
+- **JOINT_PARAM_MAX_FORCE** = **2**
 
 .. _enum_Physics2DServer_DampedStringParam:
 
@@ -366,47 +380,33 @@ enum **DampedStringParam**:
 
 - **DAMPED_STRING_DAMPING** = **2** --- Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
-.. _enum_Physics2DServer_SpaceParameter:
+.. _enum_Physics2DServer_CCDMode:
 
-enum **SpaceParameter**:
+enum **CCDMode**:
 
-- **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
+- **CCD_MODE_DISABLED** = **0** --- Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
 
-- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
+- **CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection by raycasting. It is faster than shapecasting, but less precise.
 
-- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+- **CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision detection by shapecasting. It is the slowest CCD method, and the most precise.
 
-- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+.. _enum_Physics2DServer_AreaBodyStatus:
 
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+enum **AreaBodyStatus**:
 
-- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+- **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
 
-- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+- **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
 
-.. _enum_Physics2DServer_AreaSpaceOverrideMode:
+.. _enum_Physics2DServer_ProcessInfo:
 
-enum **AreaSpaceOverrideMode**:
+enum **ProcessInfo**:
 
-- **AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
+- **INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects that are not sleeping.
 
-- **AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
+- **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
 
-- **AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
-
-- **AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
-
-- **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
-
-.. _enum_Physics2DServer_JointType:
-
-enum **JointType**:
-
-- **JOINT_PIN** = **0** --- Constant to create pin joints.
-
-- **JOINT_GROOVE** = **1** --- Constant to create groove joints.
-
-- **JOINT_DAMPED_SPRING** = **2** --- Constant to create damped spring joints.
+- **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
 
 Description
 -----------
