@@ -14,6 +14,7 @@ required:
 -  Python 2.7+ or Python 3.5+
 -  SCons build system
 -  Xcode (or the more lightweight Command Line Tools for Xcode)
+-  *Optional* - yasm (for WebM SIMD optimizations)
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
