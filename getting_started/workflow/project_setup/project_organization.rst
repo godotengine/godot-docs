@@ -7,7 +7,7 @@ Introduction
 ------------
 
 This tutorial aims to propose a simple workflow on how to organize
-projects. Since Godot allows the programmer to use the file-system as
+projects. Since Godot allows the programmer to use the filesystem as
 they please, figuring out a way to organize projects when starting
 to use the engine can be a little challenging. Because of this, the
 tutorial describes a simple workflow, which should work as a starting
