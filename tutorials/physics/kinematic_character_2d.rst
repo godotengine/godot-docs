@@ -7,40 +7,40 @@ Introduction
 ~~~~~~~~~~~~
 
 Yes, the name sounds strange. "Kinematic Character". What is that?
-The reason is that when physics engines came out, they were called
+The reason for the name is that, when physics engines came out, they were called
 "Dynamics" engines (because they dealt mainly with collision
 responses). Many attempts were made to create a character controller
-using the dynamics engines but it wasn't as easy as it seems. Godot
+using the dynamics engines, but it wasn't as easy as it seemed. Godot
 has one of the best implementations of dynamic character controller
 you can find (as it can be seen in the 2d/platformer demo), but using
 it requires a considerable level of skill and understanding of
 physics engines (or a lot of patience with trial and error).
 
-Some physics engines such as Havok seem to swear by dynamic character
-controllers as the best alternative, while others (PhysX) would rather
+Some physics engines, such as Havok seem to swear by dynamic character
+controllers as the best option, while others (PhysX) would rather
 promote the Kinematic one.
 
 So, what is the difference?:
 
--  A **dynamic character controller** uses a rigid body with infinite
-   inertial tensor. Basically, it's a rigid body that can't rotate.
+-  A **dynamic character controller** uses a rigid body with an infinite
+   inertia tensor. Basically, it's a rigid body that can't rotate.
    Physics engines always let objects collide, then solve their
    collisions all together. This makes dynamic character controllers
    able to interact with other physics objects seamlessly (as seen in
    the platformer demo), however these interactions are not always
-   predictable. Collisions also can take more than one frame to be
+   predictable. Collisions can also take more than one frame to be
    solved, so a few collisions may seem to displace a tiny bit. Those
    problems can be fixed, but require a certain amount of skill.
 -  A **kinematic character controller** is assumed to always begin in a
    non-colliding state, and will always move to a non colliding state.
    If it starts in a colliding state, it will try to free itself (like
-   rigid bodies do) but this is the exception, not the rule. This makes
+   rigid bodies do), but this is the exception, not the rule. This makes
    their control and motion a lot more predictable and easier to
    program. However, as a downside, they can't directly interact with
    other physics objects (unless done by hand in code).
 
 This short tutorial will focus on the kinematic character controller.
-Basically, the oldschool way of handling collisions (which is not
+Basically, the old-school way of handling collisions (which is not
 necessarily simpler under the hood, but well hidden and presented as a
 nice and simple API).
 
@@ -85,7 +85,7 @@ for the character. Use the robot sprite and create a scene like this:
 
 .. image:: img/kbscene.png
 
-You'll notice that there's a warning icon next to our CollisionShape2D node,
+You'll notice that there's a warning icon next to our CollisionShape2D node;
 that's because we haven't defined a shape for it. Create a new CircleShape2D
 in the shape property of CollisionShape2D. Click on <CircleShape2D> to go to the
 options for it, and set the radius to 30:
@@ -96,10 +96,10 @@ options for it, and set the radius to 30:
 can't handle scale on most types of shapes (only collision polygons,
 planes and segments work), so always change the parameters (such as
 radius) of the shape instead of scaling it. The same is also true for
-the kinematic/rigid/static bodies themselves, as their scale affect the
+the kinematic/rigid/static bodies themselves, as their scale affects the
 shape scale.**
 
-Now create a script for the character, the one used as an example
+Now, create a script for the character, the one used as an example
 above should work as a base.
 
 Finally, instance that character scene in the tilemap, and make the
@@ -147,7 +147,7 @@ The result is that the character will move, but stop right when
 hitting the floor. Pretty cool, huh?
 
 The next step will be adding gravity to the mix, this way it behaves a
-little more like an actual game character:
+little more like a regular game character:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -184,7 +184,7 @@ little more like an actual game character:
 
 Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
-being used (for speed at least) is pixels/second.
+being used (for speed at least) are pixels/second.
 
 This adds simple walking support by pressing left and right:
 
@@ -208,10 +208,10 @@ This adds simple walking support by pressing left and right:
         else:
             velocity.x = 0
 
-        # We don't need to multiply velocity by delta because MoveAndSlide already takes delta time into account.
+        # We don't need to multiply velocity by delta because "move_and_slide" already takes delta time into account.
 
-        # The second parameter of move_and_slide is the normal pointing up.
-        # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
+        # The second parameter of "move_and_slide" is the normal pointing up.
+        # In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
         move_and_slide(velocity, Vector2(0, -1))
 
  .. code-tab:: csharp
@@ -243,10 +243,10 @@ This adds simple walking support by pressing left and right:
                 velocity.x = 0;
             }
 
-            // We don't need to multiply velocity by delta because MoveAndSlide already takes delta time into account.
+            // We don't need to multiply velocity by delta because "MoveAndSlide" already takes delta time into account.
 
-            // The second parameter of MoveAndSlide is the normal pointing up.
-            // In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
+            // The second parameter of "MoveAndSlide" is the normal pointing up.
+            // In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
             MoveAndSlide(velocity, new Vector2(0, -1));
         }
     }
