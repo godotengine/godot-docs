@@ -142,8 +142,8 @@ reduction between memory and the GPU.
 
 In 3D, the shapes of objects depend more on the geometry than the
 texture, so compression is generally not noticeable. In 2D, compression
-depends more on shapes inside the textures, so the artifacting resulting
-from the compression is more noticeable.
+depends more on shapes inside the textures, so the artifacts resulting
+from 2D compression are more noticeable.
 
 As a warning, most Android devices do not support texture compression of
 textures with transparency (only opaque), so keep this in mind.
