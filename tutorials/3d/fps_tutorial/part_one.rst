@@ -480,7 +480,7 @@ We then take the dot product of ``hvel`` to see if we are moving according to ``
 ``Y`` velocity, meaning we are only checking if we are moving forwards, backwards, left, or right.
 
 
-If we are moving according to ``hvel``, then we set ``accel`` to our ``ACCEL`` constant so we accelerate, otherwise we set ``accel` to
+If we are moving according to ``hvel``, then we set ``accel`` to our ``ACCEL`` constant so we accelerate, otherwise we set ``accel`` to
 our ``DEACCEL`` constant so we decelerate.
 
 Then we interpolate our horizontal velocity, set our ``X`` and ``Z`` velocity to the interpolated horizontal velocity,
