@@ -218,7 +218,7 @@ forming between the samples.
 
 .. image:: img/light_shadow_filter30.png
 
-.. note:: ``filter smooth` is set to ``30``.
+.. note:: ``filter smooth`` is set to ``30``.
 
 The different :ref:`Light <class_Light2D>` nodes in the demo use different values for filter smooth.
 Play around with it and see what you like.
