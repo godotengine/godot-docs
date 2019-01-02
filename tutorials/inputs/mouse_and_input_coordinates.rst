@@ -14,7 +14,7 @@ Hardware display coordinates
 ----------------------------
 
 Using hardware coordinates makes sense in the case of writing complex
-UIs meant to run on PC, such as editors, MMOs, tools, etc. Yet, it does
+UIs meant to run on PC, such as editors, MMOs, tools, etc. However, it does
 not make as much sense outside of that scope.
 
 Viewport display coordinates
@@ -52,7 +52,7 @@ for example:
         GD.Print("Viewport Resolution is: ", GetViewPortRect().Size);
     }
 
-Alternatively it's possible to ask the viewport for the mouse position:
+Alternatively, it's possible to ask the viewport for the mouse position:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
