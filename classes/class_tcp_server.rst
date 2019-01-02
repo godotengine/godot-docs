@@ -65,5 +65,5 @@ Stop listening.
 
 - :ref:`StreamPeerTCP<class_StreamPeerTCP>` **take_connection** **(** **)**
 
-If a connection is available, return a StreamPeerTCP with the connection/
+If a connection is available, return a StreamPeerTCP with the connection.
 
