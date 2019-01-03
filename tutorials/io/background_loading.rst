@@ -89,7 +89,7 @@ Example
 This example demonstrates how to load a new scene. Consider it in the
 context of the :ref:`doc_singletons_autoload` example.
 
-First we setup some variables and initialize the ``current_scene``
+Firstly, we set up some variables and initialize the ``current_scene``
 with the main scene of the game:
 
 ::
@@ -133,7 +133,7 @@ error. Also note we skip one frame (via ``wait_frames``, set on the
 
 Note how we use ``OS.get_ticks_msec`` to control how long we block the
 thread. Some stages might load fast, which means we might be able
-to cram more than one call to ``poll`` in one frame, some might take way
+to cram more than one call to ``poll`` in one frame; some might take way
 more than your value for ``time_max``, so keep in mind we won't have
 precise control over the timings.
 
@@ -155,7 +155,7 @@ precise control over the timings.
             # poll your loader
             var err = loader.poll()
 
-            if err == ERR_FILE_EOF: # load finished
+            if err == ERR_FILE_EOF: # finished loading
                 var resource = loader.get_resource()
                 loader = null
                 set_new_scene(resource)
@@ -178,13 +178,13 @@ loader.
 
     func update_progress():
         var progress = float(loader.get_stage()) / loader.get_stage_count()
-        # update your progress bar?
+        # Update your progress bar?
         get_node("progress").set_progress(progress)
 
-        # or update a progress animation?
+        # ...or update a progress animation?
         var length = get_node("animation").get_current_animation_length()
 
-        # call this on a paused animation. use "true" as the second parameter to force the animation to update
+        # Call this on a paused animation. Use "true" as the second argument to force the animation to update.
         get_node("animation").seek(progress * length, true)
 
     func set_new_scene(scene_resource):
@@ -207,9 +207,9 @@ Not blocking main thread during the polling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a mutex to allow calls from the main thread to your loader
-class, don't lock it while you call ``poll`` on the loader. When a
-resource is finished loading, it might require some resources from the
-low level APIs (VisualServer, etc), which might need to lock the main
+class, don't lock the former while you call ``poll`` on the latter. When a
+resource is done loading, it might require some resources from the
+low-level APIs (VisualServer, etc), which might need to lock the main
 thread to acquire them. This might cause a deadlock if the main thread
 is waiting for your mutex while your thread is waiting to load a
 resource.
@@ -230,7 +230,7 @@ Call after you instance the class to start the thread.
 
     func queue_resource(path, p_in_front = false)
 
-Queue a resource. Use optional parameter "p_in_front" to put it in
+Queue a resource. Use optional argument "p_in_front" to put it in
 front of the queue.
 
 ::
@@ -269,22 +269,22 @@ Example:
 
 ::
 
-    # initialize
+    # Initialize.
     queue = preload("res://resource_queue.gd").new()
     queue.start()
 
-    # suppose your game starts with a 10 second cutscene, during which the user can't interact with the game.
-    # For that time we know they won't use the pause menu, so we can queue it to load during the cutscene:
+    # Suppose your game starts with a 10 second cutscene, during which the user can't interact with the game.
+    # For that time, we know they won't use the pause menu, so we can queue it to load during the cutscene:
     queue.queue_resource("res://pause_menu.tres")
     start_cutscene()
 
-    # later when the user presses the pause button for the first time:
+    # Later, when the user presses the pause button for the first time:
     pause_menu = queue.get_resource("res://pause_menu.tres").instance()
     pause_menu.show()
 
     # when you need a new scene:
-    queue.queue_resource("res://level_1.tscn", true) # use "true" as the second parameter to put it at the front
-                                                     # of the queue, pausing the load of any other resource
+    queue.queue_resource("res://level_1.tscn", true) # Use "true" as the second argument to put it at the front
+                                                     # of the queue, pausing the load of any other resource.
 
     # to check progress
     if queue.is_ready("res://level_1.tscn"):
@@ -295,5 +295,5 @@ Example:
     # when the user walks away from the trigger zone in your Metroidvania game:
     queue.cancel_resource("res://zone_2.tscn")
 
-**Note**: this code in its current form is not tested in real world
+**Note**: this code, in its current form, is not tested in real world
 scenarios. Ask punto on IRC (#godotengine on irc.freenode.net) for help.
