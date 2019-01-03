@@ -15,18 +15,18 @@ scale as the game grows more complex.
 Identify persistent objects
 ---------------------------
 
-First we should identify what objects we want to keep between game
+Firstly, we should identify what objects we want to keep between game
 sessions and what information we want to keep from those objects. For
-this tutorial, we will use groups to mark and handle objects to be saved
+this tutorial, we will use groups to mark and handle objects to be saved,
 but other methods are certainly possible.
 
 We will start by adding objects we wish to save to the "Persist" group.
 As in the :ref:`doc_scripting_continued` tutorial, we can do this through
-the GUI or through script. Let's add the relevant nodes using the GUI:
+either the GUI or script. Let's add the relevant nodes using the GUI:
 
 .. image:: img/groups.png
 
-Once this is done when we need to save the game we can get all objects
+Once this is done, when we need to save the game, we can get all objects
 to save them and then tell them all to save with this script:
 
 .. tabs::
@@ -34,14 +34,14 @@ to save them and then tell them all to save with this script:
 
     var save_nodes = get_tree().get_nodes_in_group("Persist")
     for i in save_nodes:
-        # Now we can call our save function on each node.
+        # Now, we can call our save function on each node.
 
  .. code-tab:: csharp
 
     var saveNodes = GetTree().GetNodesInGroup("Persist");
     foreach (Node saveNode in saveNodes)
     {
-        // Now we can call our save function on each node.
+        // Now, we can call our save function on each node.
     }
 
 
@@ -49,7 +49,7 @@ Serializing
 -----------
 
 The next step is to serialize the data. This makes it much easier to
-read and store to disk. In this case, we're assuming each member of
+read from and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
 has helper functions for this, such as :ref:`to_json()
 <class_@GDScript_to_json>` and :ref:`parse_json()
@@ -112,17 +112,17 @@ like this:
 
 
 This gives us a dictionary with the style
-``{ "variable_name":that_variables_value }`` which will be useful when
+``{ "variable_name":that_variable_s_value }``, which will be useful when
 loading.
 
 Saving and reading data
 -----------------------
 
 As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file
-and write to it and then later read from it. Now that we have a way to
+and write to it and then later, read from it. Now that we have a way to
 call our groups and get their relevant data, let's use to_json() to
 convert it into an easily stored string and store them in a file. Doing
-it this way ensures that each line is its own object so we have an easy
+it this way ensures that each line is its own object, so we have an easy
 way to pull the data out of the file as well.
 
 .. tabs::
@@ -163,7 +163,7 @@ way to pull the data out of the file as well.
     }
 
 
-Game saved! Loading is fairly simple as well. For that we'll read each
+Game saved! Loading is fairly simple as well. For that, we'll read each
 line, use parse_json() to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
@@ -176,7 +176,7 @@ load function:
     # is path independent.
     func load_game():
         var save_game = File.new()
-        if not save_game.file_exists("user://save_game.save"):
+        if not save_game.file_exists("user://savegame.save"):
             return # Error! We don't have a save to load.
 
         # We need to revert the game state so we're not cloning objects 
@@ -188,11 +188,11 @@ load function:
             i.queue_free()
 
         # Load the file line by line and process that dictionary to restore 
-        # the object it represents
+        # the object it represents.
         save_game.open("user://savegame.save", File.READ)
         while not save_game.eof_reached():
             var current_line = parse_json(save_game.get_line())
-            # First we need to create the object and add it to the tree and set its position.
+            # Firstly, we need to create the object and add it to the tree and set its position.
             var new_object = load(current_line["filename"]).instance()
             get_node(current_line["parent"]).add_child(new_object)
             new_object.position = Vector2(current_line["pos_x"], current_line["pos_y"]))
@@ -222,7 +222,7 @@ load function:
             saveNode.QueueFree();
 
         // Load the file line by line and process that dictionary to restore the object 
-        // it represents
+        // it represents.
         saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
 
         while (!saveGame.EofReached())
@@ -231,7 +231,7 @@ load function:
             if (currentLine == null)
                 continue;
 
-            // First we need to create the object and add it to the tree and set its position.
+            // Firstly, we need to create the object and add it to the tree and set its position.
             var newObjectScene = (PackedScene)ResourceLoader.Load(currentLine["Filename"].ToString());
             var newObject = (Node)newObjectScene.Instance();
             GetNode(currentLine["Parent"].ToString()).AddChild(newObject);
@@ -251,7 +251,7 @@ load function:
     }
 
 
-And now we can save and load an arbitrary number of objects laid out
+And now, we can save and load an arbitrary number of objects laid out
 almost anywhere across the scene tree! Each object can store different
 data depending on what it needs to save.
 
@@ -264,8 +264,8 @@ heavily customized based on the needs of an individual project.
 
 This implementation assumes no Persist objects are children of other
 Persist objects. Doing so would create invalid paths. If this is one of
-the needs of a project this needs to be considered. Saving objects in
-stages (parent objects first) so they are available when child objects
-are loaded will make sure they're available for the add_child() call.
-There will also need to be some way to link children to parents as the
+the needs of a project, this needs to be considered. Saving objects in
+stages (parent objects first), so they are available when child objects
+are loaded, will make sure they're available for the add_child() call.
+There will also need to be some way to link children to parents, as the
 NodePath will likely be invalid.
