@@ -103,7 +103,7 @@ You can see four workspace buttons at the top: 2D, 3D, Script and
 AssetLib.
 
 You’ll use the **2D workspace** for all types of games. On top of 2D
-games that is where you’ll build your interfaces. Press F1 to access it.
+games, that is where you’ll build your interfaces. Press F1 to access it.
 |image15|
 
 In the **3D workspace**, you can work with meshes, lights, and design
