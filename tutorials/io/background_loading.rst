@@ -155,7 +155,7 @@ precise control over the timings.
             # poll your loader
             var err = loader.poll()
 
-            if err == ERR_FILE_EOF: # finished loading
+            if err == ERR_FILE_EOF: # Finished loading.
                 var resource = loader.get_resource()
                 loader = null
                 set_new_scene(resource)
