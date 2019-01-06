@@ -7,7 +7,7 @@ So many controls...
 -------------------
 
 Yet there are never enough. Creating your own custom controls that act
-just the way you want them is an obsession of almost every GUI
+just the way you want them to is an obsession of almost every GUI
 programmer. Godot provides plenty of them, but they may not work exactly
 the way you want. Before contacting the developers with a pull-request
 to support diagonal scrollbars, at least it will be good to know how to
@@ -70,7 +70,7 @@ Sizing
 
 As mentioned before, size is important to controls. This allows
 them to lay out properly, when set into grids, containers, or anchored.
-Controls most of the time provide a *minimum size* to help to properly
+Controls, most of the time, provide a *minimum size* to help properly
 lay them out. For example, if controls are placed vertically on top of
 each other using a :ref:`VBoxContainer <class_VBoxContainer>`,
 the minimum size will make sure your custom control is not squished by
@@ -170,8 +170,8 @@ tutorial.
 Notifications
 ~~~~~~~~~~~~~
 
-Controls also have many useful notifications for which no callback
-exists, but can be checked with the _notification callback:
+Controls also have many useful notifications for which no dedicated callback
+exists, but which can be checked with the _notification callback:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -179,25 +179,25 @@ exists, but can be checked with the _notification callback:
     func _notification(what):
         match what:
             NOTIFICATION_MOUSE_ENTER:
-                pass # mouse entered the area of this control
+                pass # Mouse entered the area of this control.
             NOTIFICATION_MOUSE_EXIT:
-                pass # mouse exited the area of this control
+                pass # Mouse exited the area of this control.
             NOTIFICATION_FOCUS_ENTER:
-                pass # control gained focus
+                pass # Control gained focus.
             NOTIFICATION_FOCUS_EXIT:
-                pass # control lost focus
+                pass # Control lost focus.
             NOTIFICATION_THEME_CHANGED:
-                pass # theme used to draw the control changed
-                # update and redraw is recommended if using a theme
+                pass # Theme used to draw the control changed;
+                # update and redraw is recommended if using a theme.
             NOTIFICATION_VISIBILITY_CHANGED:
-                pass # control became visible/invisible
-                # check new status with is_visible()
+                pass # Control became visible/invisible;
+                # check new status with is_visible().
             NOTIFICATION_RESIZED:
-                pass # control changed size, check new size
-                # with get_size()
+                pass # Control changed size; check new size
+                # with get_size().
             NOTIFICATION_MODAL_CLOSED):
-                pass # for modal popups, notification
-                # that the popup was closed
+                pass # For modal pop-ups, notification
+                # that the pop-up was closed.
 
  .. code-tab:: csharp
 
@@ -206,37 +206,37 @@ exists, but can be checked with the _notification callback:
         switch(what)
         {
             case NotificationMouseEnter:
-                // mouse entered the area of this control
+                // Mouse entered the area of this control.
                 break;
 
             case NotificationMouseExit:
-                // mouse exited the area of this control
+                // Mouse exited the area of this control.
                 break;
 
             case NotificationFocusEnter:
-                // control gained focus
+                // Control gained focus.
                 break;
 
             case NotificationFocusExit:
-                // control lost focus
+                // Control lost focus.
                 break;
 
             case NotificationThemeChanged:
-                // theme used to draw the control changed
-                // update and redraw is recommended if using a theme
+                // Theme used to draw the control changed;
+                // update and redraw is recommended if using a theme.
                 break;
 
             case NotificationVisibilityChanged:
-                // control became visible/invisible
-                // check new status with is_visible()
+                // Control became visible/invisible;
+                // check new status with is_visible().
                 break;
 
             case NotificationResized:
-                // control changed size, check new size with get_size()
+                // Control changed size; check new size with get_size().
                 break;
 
             case NotificationModalClose:
-                // for modal popups, notification that the popup was closed
+                // For modal pop-ups, notification that the pop-up was closed.
                 break;
         }
     }
