@@ -62,7 +62,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
-Connect to the specified host:port pair. A hostname will be resolved if valid. Returns OK on success or FAILED on failure.
+Connect to the specified host:port pair. A hostname will be resolved if valid. Returns ``OK`` on success or ``FAILED`` on failure.
 
 .. _class_StreamPeerTCP_disconnect_from_host:
 
@@ -86,7 +86,7 @@ Return the port of this peer.
 
 - :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)**
 
-Return the status of the connection, one of STATUS\_\* enum.
+Return the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
 
 .. _class_StreamPeerTCP_is_connected_to_host:
 

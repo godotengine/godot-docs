@@ -144,7 +144,7 @@ Signals
 
 - **meta_clicked** **(** :ref:`Nil<class_Nil>` meta **)**
 
-Triggered when the user clicks on content between url tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_push_meta>` method must be used to manually insert the data into the tag stack.
+Triggered when the user clicks on content between ``[url]`` tags. If the meta is defined in text, e.g. ``[url={"data"="hi"}]hi[/url]``, then the parameter for this signal will be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_push_meta>` method must be used to manually insert the data into the tag stack.
 
 .. _class_RichTextLabel_meta_hover_ended:
 
@@ -262,7 +262,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 | *Getter* | is_meta_underlined()      |
 +----------+---------------------------+
 
-If ``true``, the label underlines meta tags such as url{text}. Default value: ``true``.
+If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. Default value: ``true``.
 
 .. _class_RichTextLabel_override_selected_font_color:
 
@@ -447,7 +447,7 @@ Adds an alignment tag based on the given ``align`` value. See :ref:`Align<enum_@
 
 - void **push_cell** **(** **)**
 
-Adds a ``[cell]`` tag to the tag stack. Must be inside a table tag. See :ref:`push_table<class_RichTextLabel_push_table>` for details.
+Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_push_table>` for details.
 
 .. _class_RichTextLabel_push_color:
 

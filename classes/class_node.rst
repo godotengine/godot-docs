@@ -316,7 +316,7 @@ This means that when adding a node to the scene tree, the following order will b
 
 Nodes can also process input events. When present, the :ref:`_input<class_Node__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_Control>` nodes), ensuring that the node only receives the events that were meant for it.
 
-To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with :ref:`set_owner<class_Node_set_owner>`. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
+To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with the :ref:`owner<class_Node_owner>` property. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
 
 Finally, when a node is freed with :ref:`Object.free<class_Object_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
 
@@ -517,7 +517,7 @@ Adds the node to a group. Groups are helpers to name and organize a subset of no
 
 - :ref:`bool<class_bool>` **can_process** **(** **)** const
 
-Returns ``true`` if the node can process while the scene tree is paused (see :ref:`set_pause_mode<class_Node_set_pause_mode>`). Always returns ``true`` if the scene tree is not paused, and ``false`` if the node is not in the tree. FIXME: Why FAIL_COND?
+Returns ``true`` if the node can process while the scene tree is paused (see :ref:`pause_mode<class_Node_pause_mode>`). Always returns ``true`` if the scene tree is not paused, and ``false`` if the node is not in the tree.
 
 .. _class_Node_duplicate:
 
@@ -525,7 +525,7 @@ Returns ``true`` if the node can process while the scene tree is paused (see :re
 
 Duplicates the node, returning a new node.
 
-You can fine-tune the behavior using the ``flags``. See DUPLICATE\_\* constants.
+You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enum_Node_DuplicateFlags>`).
 
 .. _class_Node_find_node:
 

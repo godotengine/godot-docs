@@ -60,7 +60,7 @@ Method Descriptions
 
 - void **close** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Close this WebSocket connection. ``code`` is the status code for the closure (see RFC6455 section 7.4 for a list of valid status codes). reason is the human readable reason for closing the connection (can be any UTF8 string, must be less than 123 bytes).
+Close this WebSocket connection. ``code`` is the status code for the closure (see RFC6455 section 7.4 for a list of valid status codes). ``reason`` is the human readable reason for closing the connection (can be any UTF8 string, must be less than 123 bytes).
 
 Note: To achieve a clean close, you will need to keep polling until either :ref:`WebSocketClient.connection_closed<class_WebSocketClient_connection_closed>` or :ref:`WebSocketServer.client_disconnected<class_WebSocketServer_client_disconnected>` is received.
 

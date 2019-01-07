@@ -205,7 +205,7 @@ Set dialog to open or save mode, changes selection behavior. See enum ``Mode`` c
 | *Getter* | is_mode_overriding_title()      |
 +----------+---------------------------------+
 
-If ``true``, changing the ``Mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
+If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
 
 .. _class_FileDialog_show_hidden_files:
 

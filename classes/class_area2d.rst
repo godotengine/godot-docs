@@ -130,13 +130,13 @@ enum **SpaceOverride**:
 
 - **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
 
-- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
+- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area2D_priority>` order).
 
-- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
+- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area2D_priority>` order), ignoring any lower priority areas.
 
 - **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
 
-- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
+- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area2D_priority>` order), but keeps calculating the rest of the areas.
 
 Description
 -----------
@@ -192,7 +192,7 @@ If ``true``, the area's audio bus overrides the default audio bus. Default value
 | *Getter* | get_collision_layer()      |
 +----------+----------------------------+
 
-The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also ``collision_mask``.
+The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_collision_mask>`.
 
 .. _class_Area2D_collision_mask:
 
@@ -240,7 +240,7 @@ The falloff factor for point gravity. The greater the value, the faster gravity 
 | *Getter* | is_gravity_a_point()        |
 +----------+-----------------------------+
 
-If ``true``, gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
+If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_gravity_vec>`). Also see :ref:`space_override<class_Area2D_space_override>`. Default value: ``false``.
 
 .. _class_Area2D_gravity_vec:
 
@@ -252,7 +252,7 @@ If ``true``, gravity is calculated from a point (set via ``gravity_vec``). Also 
 | *Getter* | get_gravity_vector()      |
 +----------+---------------------------+
 
-The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the point of attraction.
+The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area2D_gravity_point>`), this will be the point of attraction.
 
 .. _class_Area2D_linear_damp:
 
@@ -312,7 +312,7 @@ The area's priority. Higher priority areas are processed first. Default value: 0
 | *Getter* | get_space_override_mode()      |
 +----------+--------------------------------+
 
-Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
+Override mode for gravity and damping calculations within this area. See :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` for possible values.
 
 Method Descriptions
 -------------------

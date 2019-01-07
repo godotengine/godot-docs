@@ -12,7 +12,7 @@ PoolColorArray
 Brief Description
 -----------------
 
-Array of Colors
+A pooled :ref:`Array<class_Array>` of :ref:`Color<class_Color>`.
 
 Methods
 -------
@@ -42,7 +42,7 @@ Methods
 Description
 -----------
 
-Array of Color, Contains colors. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`Color<class_Color>`. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -51,7 +51,7 @@ Method Descriptions
 
 - :ref:`PoolColorArray<class_PoolColorArray>` **PoolColorArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolColorArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolColorArray_append:
 
@@ -69,7 +69,7 @@ Append a ``PoolColorArray`` at the end of this array.
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolColorArray_invert:
 

@@ -821,7 +821,7 @@ Returns the amount of static memory being used by the program in bytes.
 
 - :ref:`String<class_String>` **get_system_dir** **(** :ref:`SystemDir<enum_OS_SystemDir>` dir **)** const
 
-Returns the actual path to commonly used folders across different platforms. Available locations are specified in OS.SystemDir.
+Returns the actual path to commonly used folders across different platforms. Available locations are specified in :ref:`SystemDir<enum_OS_SystemDir>`.
 
 .. _class_OS_get_system_time_msecs:
 

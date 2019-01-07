@@ -38,6 +38,8 @@ Methods
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_scene_import_plugin<class_EditorPlugin_add_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`add_spatial_gizmo_plugin<class_EditorPlugin_add_spatial_gizmo_plugin>` **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**                                                                 |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_tool_menu_item<class_EditorPlugin_add_tool_menu_item>` **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` handler, :ref:`String<class_String>` callback, :ref:`Variant<class_Variant>` ud=null **)** |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>` **(** :ref:`String<class_String>` name, :ref:`Object<class_Object>` submenu **)**                                                                        |
@@ -107,6 +109,8 @@ Methods
 | void                                                 | :ref:`remove_inspector_plugin<class_EditorPlugin_remove_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_scene_import_plugin<class_EditorPlugin_remove_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**                                                               |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`remove_spatial_gizmo_plugin<class_EditorPlugin_remove_spatial_gizmo_plugin>` **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**                                                           |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_tool_menu_item<class_EditorPlugin_remove_tool_menu_item>` **(** :ref:`String<class_String>` name **)**                                                                                                             |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -269,6 +273,10 @@ During run-time, this will be a simple object with a script so this function doe
 .. _class_EditorPlugin_add_scene_import_plugin:
 
 - void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
+
+.. _class_EditorPlugin_add_spatial_gizmo_plugin:
+
+- void **add_spatial_gizmo_plugin** **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**
 
 .. _class_EditorPlugin_add_tool_menu_item:
 
@@ -471,6 +479,10 @@ Remove a custom type added by :ref:`add_custom_type<class_EditorPlugin_add_custo
 .. _class_EditorPlugin_remove_scene_import_plugin:
 
 - void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_EditorSceneImporter>` scene_importer **)**
+
+.. _class_EditorPlugin_remove_spatial_gizmo_plugin:
+
+- void **remove_spatial_gizmo_plugin** **(** :ref:`EditorSpatialGizmoPlugin<class_EditorSpatialGizmoPlugin>` plugin **)**
 
 .. _class_EditorPlugin_remove_tool_menu_item:
 

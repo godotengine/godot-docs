@@ -104,7 +104,7 @@ Removes an action from the ``InputMap``.
 
 - :ref:`bool<class_bool>` **event_is_action** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`String<class_String>` action **)** const
 
-Returns true if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_action_has_event>` if you don't want this behavior.
+Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_action_has_event>` if you don't want this behavior.
 
 .. _class_InputMap_get_action_list:
 

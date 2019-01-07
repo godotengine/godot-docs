@@ -51,7 +51,7 @@ Returns the navigation point closest to the point given. Points are in local coo
 
 - :ref:`Object<class_Object>` **get_closest_point_owner** **(** :ref:`Vector2<class_Vector2>` to_point **)**
 
-Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which contains the navigation point closest to the point given. This is usually a NavigtionPolygonInstance. For polygons added via :ref:`navpoly_add<class_Navigation2D_navpoly_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
+Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>`. For polygons added via :ref:`navpoly_add<class_Navigation2D_navpoly_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
 
 .. _class_Navigation2D_get_simple_path:
 

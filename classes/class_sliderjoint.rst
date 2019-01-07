@@ -121,7 +121,7 @@ enum **Param**:
 Description
 -----------
 
-Slides across the x-axis of the Pivot object.
+Slides across the x-axis of the pivot object.
 
 Property Descriptions
 ---------------------

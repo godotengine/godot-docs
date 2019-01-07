@@ -12,7 +12,7 @@ PoolRealArray
 Brief Description
 -----------------
 
-Real Array.
+A pooled :ref:`Array<class_Array>` of reals (:ref:`float<class_float>`).
 
 Methods
 -------
@@ -42,7 +42,7 @@ Methods
 Description
 -----------
 
-Real Array. Array of floating point values. Can only contain floats. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold floating point values (:ref:`float<class_float>`). Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -51,7 +51,7 @@ Method Descriptions
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **PoolRealArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolRealArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolRealArray_append:
 
@@ -63,13 +63,13 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolRe
 
 - void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
 
-Append an RealArray at the end of this array.
+Append a ``PoolRealArray`` at the end of this array.
 
 .. _class_PoolRealArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolRealArray_invert:
 

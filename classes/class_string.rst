@@ -531,7 +531,7 @@ Returns ``true`` if this string contains a valid color in HTML notation.
 
 - :ref:`bool<class_bool>` **is_valid_identifier** **(** **)**
 
-Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (\_) and the first character may not be a digit.
+Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``) and the first character may not be a digit.
 
 .. _class_String_is_valid_integer:
 
@@ -573,13 +573,13 @@ Returns a copy of the string with characters removed from the left.
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple expression match, where '\*' matches zero or more arbitrary characters and '?' matches any single character except '.'.
+Does a simple expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except '.'.
 
 .. _class_String_matchn:
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case insensitive expression match, using ? and \* wildcards (see :ref:`match<class_String_match>`).
+Does a simple case insensitive expression match, using ``?`` and ``*`` wildcards (see :ref:`match<class_String_match>`).
 
 .. _class_String_md5_buffer:
 
@@ -671,7 +671,7 @@ Returns the right side of the string from a given position.
 
 Splits the string by a ``divisor`` string and returns an array of the substrings, starting from right.
 
-**Example:** "One,Two,Three" will return "One","Two","Three" if split by ",".
+**Example:** ``"One,Two,Three"`` will return ``["One","Two","Three"]`` if split by ``","``.
 
 If ``maxsplit`` is specified, then it is number of splits to do, default is 0 which splits all the items.
 
@@ -705,7 +705,7 @@ Returns the similarity index of the text compared to this string. 1 means totall
 
 Splits the string by a divisor string and returns an array of the substrings.
 
-**Example:** "One,Two,Three" will return "One","Two","Three" if split by ",".
+**Example:** ``"One,Two,Three"`` will return ``["One","Two","Three"]`` if split by ``","``.
 
 If ``maxsplit`` is given, at most maxsplit number of splits occur, and the remainder of the string is returned as the final element of the list (thus, the list will have at most maxsplit+1 elements)
 
@@ -715,7 +715,7 @@ If ``maxsplit`` is given, at most maxsplit number of splits occur, and the remai
 
 Splits the string in floats by using a divisor string and returns an array of the substrings.
 
-**Example:** "1,2.5,3" will return 1,2.5,3 if split by ",".
+**Example:** ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
 
 .. _class_String_strip_edges:
 
@@ -733,7 +733,7 @@ Returns part of the string from the position ``from`` with length ``len``.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **to_ascii** **(** **)**
 
-Converts the String (which is a character array) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is sped up in comparison to to_utf8() with the assumption that all the characters the String contains are only ASCII characters.
+Converts the String (which is a character array) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is sped up in comparison to :ref:`to_utf8<class_String_to_utf8>` with the assumption that all the characters the String contains are only ASCII characters.
 
 .. _class_String_to_float:
 
@@ -763,7 +763,7 @@ Returns the string converted to uppercase.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **to_utf8** **(** **)**
 
-Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
+Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_PoolByteArray>` (which is an array of bytes). The conversion is a bit slower than :ref:`to_ascii<class_String_to_ascii>`, but supports all UTF-8 characters. Therefore, you should prefer this function over :ref:`to_ascii<class_String_to_ascii>`.
 
 .. _class_String_trim_prefix:
 

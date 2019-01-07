@@ -28,7 +28,7 @@ Methods
 Description
 -----------
 
-Base class for audio streams. Audio streams are used for music playback, or other types of streamed sounds that don't fit or require more flexibility than a Sample.
+Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamSample<class_AudioStreamSample>`) and OGG (via :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`) file formats.
 
 Tutorials
 ---------

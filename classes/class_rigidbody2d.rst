@@ -405,7 +405,7 @@ Method Descriptions
 
 - void **_integrate_forces** **(** :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>` state **)** virtual
 
-Allows you to read and safely modify the simulation state for the object. Use this instead of Node._physics_process if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
+Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
 .. _class_RigidBody2D_add_central_force:
 

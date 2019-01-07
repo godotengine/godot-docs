@@ -102,7 +102,7 @@ Controls the texture's behavior when you resize the node's bounding rectangle, *
 | *Getter* | get_click_mask()      |
 +----------+-----------------------+
 
-Pure black and white Bitmap image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
+Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
 
 .. _class_TextureButton_texture_disabled:
 

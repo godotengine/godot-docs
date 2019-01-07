@@ -12,7 +12,7 @@ PoolStringArray
 Brief Description
 -----------------
 
-String Array.
+A pooled :ref:`Array<class_Array>` of :ref:`String<class_String>`.
 
 Methods
 -------
@@ -44,7 +44,7 @@ Methods
 Description
 -----------
 
-String Array. Array of strings. Can only contain strings. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -53,7 +53,7 @@ Method Descriptions
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **PoolStringArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolStringArray_append:
 
@@ -65,13 +65,13 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolSt
 
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
-Append an StringArray at the end of this array.
+Append a ``PoolStringArray`` at the end of this array.
 
 .. _class_PoolStringArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolStringArray_invert:
 
@@ -83,7 +83,7 @@ Reverse the order of the elements in the array.
 
 - :ref:`String<class_String>` **join** **(** :ref:`String<class_String>` delimiter **)**
 
-Returns a :ref:`String<class_String>` with each element of the array joined with the delimiter.
+Returns a :ref:`String<class_String>` with each element of the array joined with the given ``delimiter``.
 
 .. _class_PoolStringArray_push_back:
 

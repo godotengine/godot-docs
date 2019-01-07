@@ -535,6 +535,25 @@ Returns a reference to the specified function ``funcname`` in the ``instance`` n
 
 - :ref:`Array<class_Array>` **get_stack** **(** **)**
 
+Returns an array of dictionaries representing the current call stack.
+
+::
+
+    func _ready():
+        foo()
+    
+    func foo():
+        bar()
+    
+    func bar():
+        print(get_stack())
+
+would print
+
+::
+
+    [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
+
 .. _class_@GDScript_hash:
 
 - :ref:`int<class_int>` **hash** **(** :ref:`Variant<class_Variant>` var **)**
@@ -594,17 +613,19 @@ Returns a normalized value considering the given range.
 
 - :ref:`bool<class_bool>` **is_inf** **(** :ref:`float<class_float>` s **)**
 
-Returns True/False whether ``s`` is an infinity value (either positive infinity or negative infinity).
+Returns whether ``s`` is an infinity value (either positive infinity or negative infinity).
 
 .. _class_@GDScript_is_instance_valid:
 
 - :ref:`bool<class_bool>` **is_instance_valid** **(** :ref:`Object<class_Object>` instance **)**
 
+Returns whether ``instance`` is a valid object (e.g. has not been deleted from memory).
+
 .. _class_@GDScript_is_nan:
 
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` s **)**
 
-Returns True/False whether ``s`` is a NaN (Not-A-Number) value.
+Returns whether ``s`` is a NaN (Not-A-Number) value.
 
 .. _class_@GDScript_len:
 
@@ -755,6 +776,8 @@ Converts one or more arguments to strings in the best way possible and prints th
 .. _class_@GDScript_print_debug:
 
 - void **print_debug** **(** **)** vararg
+
+Like :ref:`print<class_@GDScript_print>`, but prints only when used in debug mode.
 
 .. _class_@GDScript_print_stack:
 

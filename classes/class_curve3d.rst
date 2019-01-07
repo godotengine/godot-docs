@@ -117,9 +117,9 @@ Method Descriptions
 
 - void **add_point** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3( 0, 0, 0 ), :ref:`Vector3<class_Vector3>` out=Vector3( 0, 0, 0 ), :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a point to a curve, at "position", with control points "in" and "out".
+Adds a point to a curve, at ``position``, with control points ``in`` and ``out``.
 
-If "at_position" is given, the point is inserted before the point number "at_position", moving that point (and every point after) after the inserted point. If "at_position" is not given, or is an illegal value (at_position <0 or at_position >= :ref:`get_point_count<class_Curve3D_get_point_count>`), the point will be appended at the end of the point list.
+If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position <0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 
 .. _class_Curve3D_clear_points:
 
@@ -131,7 +131,7 @@ Removes all points from the curve.
 
 - :ref:`float<class_float>` **get_baked_length** **(** **)** const
 
-Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`set_bake_interval<class_Curve3D_set_bake_interval>`), it should be approximate enough.
+Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`bake_interval<class_Curve3D_bake_interval>`), it should be approximate enough.
 
 .. _class_Curve3D_get_baked_points:
 
@@ -143,7 +143,7 @@ Returns the cache of points as a :ref:`PoolVector3Array<class_PoolVector3Array>`
 
 - :ref:`PoolRealArray<class_PoolRealArray>` **get_baked_tilts** **(** **)** const
 
-Returns the cache of tilts as a RealArray.
+Returns the cache of tilts as a :ref:`PoolRealArray<class_PoolRealArray>`.
 
 .. _class_Curve3D_get_baked_up_vectors:
 
@@ -157,7 +157,7 @@ If :ref:`up_vector_enabled<class_Curve3D_up_vector_enabled>` is ``false``, the c
 
 - :ref:`float<class_float>` **get_closest_offset** **(** :ref:`Vector3<class_Vector3>` to_point **)** const
 
-Returns the closest offset to ``to_point``. This offset is meant to be used in one of the interpolate_baked\* methods.
+Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`interpolate_baked<class_Curve3D_interpolate_baked>` or :ref:`interpolate_baked_up_vector<class_Curve3D_interpolate_baked_up_vector>`.
 
 ``to_point`` must be in this curve's local space.
 
@@ -179,41 +179,41 @@ Returns the number of points describing the curve.
 
 - :ref:`Vector3<class_Vector3>` **get_point_in** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the position of the control point leading to the vertex "idx". If the index is out of bounds, the function sends an error to the console, and returns (0, 0, 0).
+Returns the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 .. _class_Curve3D_get_point_out:
 
 - :ref:`Vector3<class_Vector3>` **get_point_out** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the position of the control point leading out of the vertex "idx". If the index is out of bounds, the function sends an error to the console, and returns (0, 0, 0).
+Returns the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 .. _class_Curve3D_get_point_position:
 
 - :ref:`Vector3<class_Vector3>` **get_point_position** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the position of the vertex "idx". If the index is out of bounds, the function sends an error to the console, and returns (0, 0, 0).
+Returns the position of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 .. _class_Curve3D_get_point_tilt:
 
 - :ref:`float<class_float>` **get_point_tilt** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the tilt angle in radians for the point "idx". If the index is out of bounds, the function sends an error to the console, and returns 0.
+Returns the tilt angle in radians for the point ``idx``. If the index is out of bounds, the function sends an error to the console, and returns ``0``.
 
 .. _class_Curve3D_interpolate:
 
 - :ref:`Vector3<class_Vector3>` **interpolate** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t **)** const
 
-Returns the position between the vertex "idx" and the vertex "idx"+1, where "t" controls if the point is the first vertex (t = 0.0), the last vertex (t = 1.0), or in between. Values of "t" outside the range (0.0 >= t <=1) give strange, but predictable results.
+Returns the position between the vertex ``idx`` and the vertex ``idx + 1``, where ``t`` controls if the point is the first vertex (``t = 0.0``), the last vertex (``t = 1.0``), or in between. Values of ``t`` outside the range (``0.0 >= t <=1``) give strange, but predictable results.
 
-If "idx" is out of bounds it is truncated to the first or last vertex, and "t" is ignored. If the curve has no points, the function sends an error to the console, and returns (0, 0, 0).
+If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t`` is ignored. If the curve has no points, the function sends an error to the console, and returns ``(0, 0, 0)``.
 
 .. _class_Curve3D_interpolate_baked:
 
 - :ref:`Vector3<class_Vector3>` **interpolate_baked** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` cubic=false **)** const
 
-Returns a point within the curve at position "offset", where "offset" is measured as a distance in 3D units along the curve.
+Returns a point within the curve at position ``offset``, where ``offset`` is measured as a pixel distance along the curve.
 
-To do that, it finds the two cached points where the "offset" lies between, then interpolates the values. This interpolation is cubic if "cubic" is set to true, or linear if set to false.
+To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to true, or linear if set to false.
 
 Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).
 
@@ -225,43 +225,43 @@ Returns an up vector within the curve at position ``offset``, where ``offset`` i
 
 To do that, it finds the two cached up vectors where the ``offset`` lies between, then interpolates the values. If ``apply_tilt`` is ``true``, an interpolated tilt is applied to the interpolated up vector.
 
-If the curve has no up vectors, the function sends an error to the console, and returns (0, 1, 0).
+If the curve has no up vectors, the function sends an error to the console, and returns ``(0, 1, 0)``.
 
 .. _class_Curve3D_interpolatef:
 
 - :ref:`Vector3<class_Vector3>` **interpolatef** **(** :ref:`float<class_float>` fofs **)** const
 
-Returns the position at the vertex "fofs". It calls :ref:`interpolate<class_Curve3D_interpolate>` using the integer part of fofs as "idx", and its fractional part as "t".
+Returns the position at the vertex ``fofs``. It calls :ref:`interpolate<class_Curve3D_interpolate>` using the integer part of ``fofs`` as ``idx``, and its fractional part as ``t``.
 
 .. _class_Curve3D_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` idx **)**
 
-Deletes the point "idx" from the curve. Sends an error to the console if "idx" is out of bounds.
+Deletes the point ``idx`` from the curve. Sends an error to the console if ``idx`` is out of bounds.
 
 .. _class_Curve3D_set_point_in:
 
 - void **set_point_in** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading to the vertex "idx". If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading to the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
 
 .. _class_Curve3D_set_point_out:
 
 - void **set_point_out** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the control point leading out of the vertex "idx". If the index is out of bounds, the function sends an error to the console.
+Sets the position of the control point leading out of the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
 
 .. _class_Curve3D_set_point_position:
 
 - void **set_point_position** **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position for the vertex "idx". If the index is out of bounds, the function sends an error to the console.
+Sets the position for the vertex ``idx``. If the index is out of bounds, the function sends an error to the console.
 
 .. _class_Curve3D_set_point_tilt:
 
 - void **set_point_tilt** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` tilt **)**
 
-Sets the tilt angle in radians for the point "idx". If the index is out of bounds, the function sends an error to the console.
+Sets the tilt angle in radians for the point ``idx``. If the index is out of bounds, the function sends an error to the console.
 
 The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_PathFollow>` or :ref:`OrientedPathFollow<class_OrientedPathFollow>`, this tilt is an offset over the natural tilt the :ref:`PathFollow<class_PathFollow>` or :ref:`OrientedPathFollow<class_OrientedPathFollow>` calculates.
 
@@ -273,7 +273,7 @@ Returns a list of points along the curve, with a curvature controlled point dens
 
 This approximation makes straight segments between each point, then subdivides those segments until the resulting shape is similar enough.
 
-"max_stages" controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!
+``max_stages`` controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!
 
-"tolerance_degrees" controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
+``tolerance_degrees`` controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
 

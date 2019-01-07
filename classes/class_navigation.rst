@@ -83,7 +83,7 @@ Returns the surface normal at the navigation point closest to the point given. U
 
 - :ref:`Object<class_Object>` **get_closest_point_owner** **(** :ref:`Vector3<class_Vector3>` to_point **)**
 
-Returns the owner of the :ref:`NavigationMesh<class_NavigationMesh>` which contains the navigation point closest to the point given. This is usually a NavigtionMeshInstance. For meshes added via :ref:`navmesh_add<class_Navigation_navmesh_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
+Returns the owner of the :ref:`NavigationMesh<class_NavigationMesh>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`. For meshes added via :ref:`navmesh_add<class_Navigation_navmesh_add>`, returns the owner that was given (or ``null`` if the ``owner`` parameter was omitted).
 
 .. _class_Navigation_get_closest_point_to_segment:
 

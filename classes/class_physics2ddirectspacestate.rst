@@ -52,7 +52,7 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **cast_motion** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape **)**
 
-Checks how far the shape can travel toward a point. Note that both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be 1, 1.
+Checks how far the shape can travel toward a point. Note that both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be ``[1, 1]``.
 
 If the shape can not move, the array will be empty.
 

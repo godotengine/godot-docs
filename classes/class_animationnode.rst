@@ -135,7 +135,7 @@ Blend an animation by "blend" amount (name must be valid in the linked :ref:`Ani
 
 - :ref:`float<class_float>` **blend_input** **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` optimize=true **)**
 
-Blend an input. This is only useful for nodes created for an AnimationBlendTree. Time is a delta, unless "seek" is true, in which case it is absolute. A filter mode may be optionally passed.
+Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Time is a delta, unless "seek" is true, in which case it is absolute. A filter mode may be optionally passed.
 
 .. _class_AnimationNode_blend_node:
 
@@ -165,7 +165,7 @@ Get all children nodes, in order as a name:node dictionary. Only useful when inh
 
 - :ref:`int<class_int>` **get_input_count** **(** **)** const
 
-Amount of inputs in this node, only useful for nodes that go into AnimationBlendTree.
+Amount of inputs in this node, only useful for nodes that go into :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 .. _class_AnimationNode_get_input_name:
 
@@ -189,9 +189,7 @@ Get the default value of a parameter. Parameters are custom local memory used fo
 
 - :ref:`Array<class_Array>` **get_parameter_list** **(** **)** virtual
 
-Get the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
-
-Format is similar to Object.get_property_list
+Get the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_get_property_list>`.
 
 .. _class_AnimationNode_has_filter:
 

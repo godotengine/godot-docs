@@ -12,7 +12,7 @@ PoolIntArray
 Brief Description
 -----------------
 
-Integer Array.
+A pooled :ref:`Array<class_Array>` of integers (:ref:`int<class_int>`).
 
 Methods
 -------
@@ -42,7 +42,7 @@ Methods
 Description
 -----------
 
-Integer Array. Contains integers. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -51,7 +51,7 @@ Method Descriptions
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **PoolIntArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolIntArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolIntArray_append:
 
@@ -63,13 +63,13 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolIn
 
 - void **append_array** **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)**
 
-Append an ``PoolIntArray`` at the end of this array.
+Append a ``PoolIntArray`` at the end of this array.
 
 .. _class_PoolIntArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
-Insert a new int at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new int at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolIntArray_invert:
 

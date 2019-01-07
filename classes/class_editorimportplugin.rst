@@ -50,7 +50,7 @@ Description
 
 EditorImportPlugins provide a way to extend the editor's resource import functionality. Use them to import resources from custom files or to provide alternatives to the editor's existing importers. Register your :ref:`EditorPlugin<class_EditorPlugin>` with :ref:`EditorPlugin.add_import_plugin<class_EditorPlugin_add_import_plugin>`.
 
-EditorImportPlugins work by associating with specific file extensions and a resource type. See :ref:`get_recognized_extension<class_EditorImportPlugin_get_recognized_extension>` and :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>`). They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the ``.import`` directory.
+EditorImportPlugins work by associating with specific file extensions and a resource type. See :ref:`get_recognized_extensions<class_EditorImportPlugin_get_recognized_extensions>` and :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>`). They may optionally specify some import presets that affect the import process. EditorImportPlugins are responsible for creating the resources and saving them in the ``.import`` directory.
 
 Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` from a file with the extension ".special" or ".spec":
 
@@ -107,7 +107,7 @@ Method Descriptions
 
 - :ref:`Array<class_Array>` **get_import_options** **(** :ref:`int<class_int>` preset **)** virtual
 
-Get the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: "name", "default_value", "property_hint" (optional), "hint_string" (optional), "usage" (optional).
+Get the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: ``name``, ``default_value``, ``property_hint`` (optional), ``hint_string`` (optional), ``usage`` (optional).
 
 .. _class_EditorImportPlugin_get_import_order:
 
@@ -147,13 +147,13 @@ Get the priority of this plugin for the recognized extension. Higher priority pl
 
 - :ref:`Array<class_Array>` **get_recognized_extensions** **(** **)** virtual
 
-Get the list of file extensions to associate with this loader (case insensitive). e.g. "obj".
+Get the list of file extensions to associate with this loader (case insensitive). e.g. ``["obj"]``.
 
 .. _class_EditorImportPlugin_get_resource_type:
 
 - :ref:`String<class_String>` **get_resource_type** **(** **)** virtual
 
-Get the Godot resource type associated with this loader. e.g. "Mesh" or "Animation".
+Get the Godot resource type associated with this loader. e.g. ``"Mesh"`` or ``"Animation"``.
 
 .. _class_EditorImportPlugin_get_save_extension:
 

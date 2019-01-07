@@ -446,7 +446,7 @@ Method Descriptions
 
 - void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>` state **)** virtual
 
-Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but the :ref:`custom_integrator<class_RigidBody_custom_integrator>` property allows you to disable the default behavior and do fully custom force integration for a body.
 
 .. _class_RigidBody_add_central_force:
 
@@ -492,7 +492,7 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 
 - :ref:`Array<class_Array>` **get_colliding_bodies** **(** **)** const
 
-Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.  Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0, see the :ref:`contacts_reported<class_RigidBody_contacts_reported>` property to increase it. Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody_set_axis_velocity:
 

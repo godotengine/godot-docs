@@ -1005,7 +1005,7 @@ enum **ViewportClearMode**:
 
 - **VIEWPORT_CLEAR_NEVER** = **1** --- The viewport is never cleared before drawing.
 
-- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to VIEWPORT_CLEAR_NEVER.
+- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to ``VIEWPORT_CLEAR_NEVER``.
 
 .. _enum_VisualServer_ViewportMSAA:
 
@@ -2986,13 +2986,13 @@ Sets the transformation of a viewport's canvas.
 
 - void **viewport_set_clear_mode** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportClearMode<enum_VisualServer_ViewportClearMode>` clear_mode **)**
 
-Sets the clear mode of a viewport. See VIEWPORT_CLEAR_MODE\_\* constants for options.
+Sets the clear mode of a viewport. See :ref:`ViewportClearMode<enum_VisualServer_ViewportClearMode>` for options.
 
 .. _class_VisualServer_viewport_set_debug_draw:
 
 - void **viewport_set_debug_draw** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportDebugDraw<enum_VisualServer_ViewportDebugDraw>` draw **)**
 
-Sets the debug draw mode of a viewport. See VIEWPORT_DEBUG_DRAW\_\* constants for options.
+Sets the debug draw mode of a viewport. See :ref:`ViewportDebugDraw<enum_VisualServer_ViewportDebugDraw>` for options.
 
 .. _class_VisualServer_viewport_set_disable_3d:
 

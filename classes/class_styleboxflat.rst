@@ -229,11 +229,11 @@ Border width for the top border.
 | *Getter* | get_corner_detail()      |
 +----------+--------------------------+
 
-This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius<class_StyleBoxFlat_set_corner_radius>`) into account.
+This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_set_corner_radius_all>`) into account.
 
-For corner radius smaller than 10: 4-5 should be enough
+For corner radius smaller than 10, 4-5 should be enough.
 
-For corner radius smaller than 30: 8-12 should be enough
+For corner radius smaller than 30, 8-12 should be enough.
 
 .. _class_StyleBoxFlat_corner_radius_bottom_left:
 

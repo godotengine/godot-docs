@@ -1064,7 +1064,7 @@ Sets a generic_6_DOF_joint parameter (see G6DOF_JOINT\* constants without the G6
 
 - :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` process_info **)**
 
-Returns an Info defined by the ProcessInfo input given.
+Returns an Info defined by the :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` input given.
 
 .. _class_PhysicsServer_hinge_joint_get_flag:
 

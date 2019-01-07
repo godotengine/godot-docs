@@ -288,7 +288,7 @@ enum **FocusMode**:
 
 enum **CursorShape**:
 
-- **CURSOR_ARROW** = **0** --- Show the system's arrow mouse cursor when the user hovers the node. Use with :ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>`.
+- **CURSOR_ARROW** = **0** --- Show the system's arrow mouse cursor when the user hovers the node. Use with :ref:`mouse_default_cursor_shape<class_Control_mouse_default_cursor_shape>`.
 
 - **CURSOR_IBEAM** = **1** --- Show the system's I-beam mouse cursor when the user hovers the node. The I-beam pointer has a shape similar to "I". It tells the user they can highlight or insert text.
 
@@ -326,37 +326,37 @@ enum **CursorShape**:
 
 enum **LayoutPreset**:
 
-- **PRESET_TOP_LEFT** = **0** --- Snap all 4 anchors to the top-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_TOP_LEFT** = **0** --- Snap all 4 anchors to the top-left of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_TOP_RIGHT** = **1** --- Snap all 4 anchors to the top-right of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_TOP_RIGHT** = **1** --- Snap all 4 anchors to the top-right of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_BOTTOM_LEFT** = **2** --- Snap all 4 anchors to the bottom-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_BOTTOM_LEFT** = **2** --- Snap all 4 anchors to the bottom-left of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_BOTTOM_RIGHT** = **3** --- Snap all 4 anchors to the bottom-right of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_BOTTOM_RIGHT** = **3** --- Snap all 4 anchors to the bottom-right of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_CENTER_LEFT** = **4** --- Snap all 4 anchors to the center of the left edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_CENTER_LEFT** = **4** --- Snap all 4 anchors to the center of the left edge of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_CENTER_TOP** = **5** --- Snap all 4 anchors to the center of the top edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_CENTER_TOP** = **5** --- Snap all 4 anchors to the center of the top edge of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_CENTER_RIGHT** = **6** --- Snap all 4 anchors to the center of the right edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_CENTER_RIGHT** = **6** --- Snap all 4 anchors to the center of the right edge of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_CENTER_BOTTOM** = **7** --- Snap all 4 anchors to the center of the bottom edge of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_CENTER_BOTTOM** = **7** --- Snap all 4 anchors to the center of the bottom edge of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_CENTER** = **8** --- Snap all 4 anchors to the center of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_CENTER** = **8** --- Snap all 4 anchors to the center of the parent control's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_LEFT_WIDE** = **9** --- Snap all 4 anchors to the left edge of the parent container. The left margin becomes relative to the left edge and the top margin relative to the top left corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_LEFT_WIDE** = **9** --- Snap all 4 anchors to the left edge of the parent control. The left margin becomes relative to the left edge and the top margin relative to the top left corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_TOP_WIDE** = **10** --- Snap all 4 anchors to the top edge of the parent container. The left margin becomes relative to the top left corner, the top margin relative to the top edge, and the right margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_TOP_WIDE** = **10** --- Snap all 4 anchors to the top edge of the parent control. The left margin becomes relative to the top left corner, the top margin relative to the top edge, and the right margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_RIGHT_WIDE** = **11** --- Snap all 4 anchors to the right edge of the parent container. The right margin becomes relative to the right edge and the top margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_RIGHT_WIDE** = **11** --- Snap all 4 anchors to the right edge of the parent control. The right margin becomes relative to the right edge and the top margin relative to the top right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_BOTTOM_WIDE** = **12** --- Snap all 4 anchors to the bottom edge of the parent container. The left margin becomes relative to the bottom left corner, the bottom margin relative to the bottom edge, and the right margin relative to the bottom right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_BOTTOM_WIDE** = **12** --- Snap all 4 anchors to the bottom edge of the parent control. The left margin becomes relative to the bottom left corner, the bottom margin relative to the bottom edge, and the right margin relative to the bottom right corner of the node's parent. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_VCENTER_WIDE** = **13** --- Snap all 4 anchors to a vertical line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_VCENTER_WIDE** = **13** --- Snap all 4 anchors to a vertical line that cuts the parent control in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent control in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
-- **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent container. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent container. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent control. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent control. This is equivalent to to the "Full Rect" layout option in the editor. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
 .. _enum_Control_LayoutPresetMode:
 
@@ -390,7 +390,7 @@ enum **MouseFilter**:
 
 - **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. These events are automatically marked as handled and they will not propagate further to other controls.
 
-- **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically.
+- **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically, so unhandled input will not be fired.
 
 - **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and will not block other controls from receiving these events. These events will also not be handled automatically.
 
@@ -398,11 +398,11 @@ enum **MouseFilter**:
 
 enum **GrowDirection**:
 
-- **GROW_DIRECTION_BEGIN** = **0**
+- **GROW_DIRECTION_BEGIN** = **0** --- The control will grow to the left or top to make up if its minimum size is changed to be greater than its current size on the respective axis.
 
-- **GROW_DIRECTION_END** = **1**
+- **GROW_DIRECTION_END** = **1** --- The control wil grow to the right or bottom to make up if its minimum size is changed to be greater than its current size on the respective axis.
 
-- **GROW_DIRECTION_BOTH** = **2**
+- **GROW_DIRECTION_BOTH** = **2** --- The control wil grow in both directions equally to make up if its minimum size is changed to be greater than its current size.
 
 .. _enum_Control_Anchor:
 
@@ -425,13 +425,13 @@ Constants
 
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
 
-- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_*_override``
+- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_*_override`` methods.
 
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
 
-- **NOTIFICATION_SCROLL_BEGIN** = **47**
+- **NOTIFICATION_SCROLL_BEGIN** = **47** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled.
 
-- **NOTIFICATION_SCROLL_END** = **48**
+- **NOTIFICATION_SCROLL_END** = **48** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled.
 
 Description
 -----------
@@ -468,7 +468,7 @@ Property Descriptions
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the bottom edge of the node to the origin, the center, or the end of its parent container. It changes how the bottom margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
+Anchors the bottom edge of the node to the origin, the center, or the end of its parent control. It changes how the bottom margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
 
 .. _class_Control_anchor_left:
 
@@ -478,7 +478,7 @@ Anchors the bottom edge of the node to the origin, the center, or the end of its
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the left edge of the node to the origin, the center or the end of its parent container. It changes how the left margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
+Anchors the left edge of the node to the origin, the center or the end of its parent control. It changes how the left margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience.Default value: ``ANCHOR_BEGIN``.
 
 .. _class_Control_anchor_right:
 
@@ -488,7 +488,7 @@ Anchors the left edge of the node to the origin, the center or the end of its pa
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the right edge of the node to the origin, the center or the end of its parent container. It changes how the right margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
+Anchors the right edge of the node to the origin, the center or the end of its parent control. It changes how the right margin updates when the node moves or changes size. You can use one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
 
 .. _class_Control_anchor_top:
 
@@ -498,7 +498,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 | *Getter* | get_anchor() |
 +----------+--------------+
 
-Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
+Anchors the top edge of the node to the origin, the center or the end of its parent control. It changes how the top margin updates when the node moves or changes size. You can use  one of the ``ANCHOR_*`` constants for convenience. Default value: ``ANCHOR_BEGIN``.
 
 .. _class_Control_focus_mode:
 
@@ -522,9 +522,7 @@ The focus access mode for the control (None, Click or All). Only one Control can
 | *Getter* | get_focus_neighbour()      |
 +----------+----------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Tab, the down arrow on the keyboard, or down on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
-
-If the user presses Tab, Godot will give focus to the closest node to the right first, then to the bottom. If the user presses Shift+Tab, Godot will look to the left of the node, then above it.
+Tells Godot which node it should give keyboard focus to if the user presses the down arrow on the keyboard or down on a gamepad by default. You can change the key by editing the ``ui_down`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 .. _class_Control_focus_neighbour_left:
 
@@ -536,7 +534,7 @@ If the user presses Tab, Godot will give focus to the closest node to the right 
 | *Getter* | get_focus_neighbour()      |
 +----------+----------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the left arrow on the keyboard or left on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the left of this one.
+Tells Godot which node it should give keyboard focus to if the user presses the left arrow on the keyboard or left on a gamepad by default. You can change the key by editing the ``ui_left`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the left of this one.
 
 .. _class_Control_focus_neighbour_right:
 
@@ -548,7 +546,7 @@ Tells Godot which node it should give keyboard focus to if the user presses Shif
 | *Getter* | get_focus_neighbour()      |
 +----------+----------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Tab, the right arrow on the keyboard or right on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give keyboard focus to if the user presses the right arrow on the keyboard or right on a gamepad  by default. You can change the key by editing the ``ui_right`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 .. _class_Control_focus_neighbour_top:
 
@@ -560,7 +558,7 @@ Tells Godot which node it should give keyboard focus to if the user presses Tab,
 | *Getter* | get_focus_neighbour()      |
 +----------+----------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the top arrow on the keyboard or top on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give keyboard focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the ``ui_top`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 .. _class_Control_focus_next:
 
@@ -572,6 +570,10 @@ Tells Godot which node it should give keyboard focus to if the user presses Shif
 | *Getter* | get_focus_next()      |
 +----------+-----------------------+
 
+Tells Godot which node it should give keyboard focus to if the user presses Tab on a keyboard by default. You can change the key by editing the ``ui_focus_next`` input action.
+
+If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
+
 .. _class_Control_focus_previous:
 
 - :ref:`NodePath<class_NodePath>` **focus_previous**
@@ -581,6 +583,10 @@ Tells Godot which node it should give keyboard focus to if the user presses Shif
 +----------+---------------------------+
 | *Getter* | get_focus_previous()      |
 +----------+---------------------------+
+
+Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab on a keyboard by default. You can change the key by editing the ``ui_focus_prev`` input action.
+
+If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
 .. _class_Control_grow_horizontal:
 
@@ -592,6 +598,8 @@ Tells Godot which node it should give keyboard focus to if the user presses Shif
 | *Getter* | get_h_grow_direction()      |
 +----------+-----------------------------+
 
+Controls the direction on the horizontal axis in which the control should grow if its horizontal minimum size is changed to be greater than its current size, as the control always has to be at least the minimum size.
+
 .. _class_Control_grow_vertical:
 
 - :ref:`GrowDirection<enum_Control_GrowDirection>` **grow_vertical**
@@ -601,6 +609,8 @@ Tells Godot which node it should give keyboard focus to if the user presses Shif
 +----------+-----------------------------+
 | *Getter* | get_v_grow_direction()      |
 +----------+-----------------------------+
+
+Controls the direction on the vertical axis in which the control should grow if its vertical minimum size is changed to be greater than its current size, as the control always has to be at least the minimum size.
 
 .. _class_Control_hint_tooltip:
 
@@ -622,9 +632,9 @@ Changes the tooltip text. The tooltip appears when the user's mouse cursor stays
 | *Getter* | get_margin()      |
 +----------+-------------------+
 
-Distance between the node's bottom edge and its parent container, based on :ref:`anchor_bottom<class_Control_anchor_bottom>`.
+Distance between the node's bottom edge and its parent control, based on :ref:`anchor_bottom<class_Control_anchor_bottom>`.
 
-Margins are often controlled by one or multiple parent :ref:`Container<class_Container>` nodes. Margins update automatically when you move or resize the node.
+Margins are often controlled by one or multiple parent :ref:`Container<class_Container>` nodes, so you should not modify them manually if your node is a direct child of a :ref:`Container<class_Container>`. Margins update automatically when you move or resize the node.
 
 .. _class_Control_margin_left:
 
@@ -636,7 +646,9 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 | *Getter* | get_margin()      |
 +----------+-------------------+
 
-Distance between the node's left edge and its parent container, based on :ref:`anchor_left<class_Control_anchor_left>`.
+Distance between the node's left edge and its parent control, based on :ref:`anchor_left<class_Control_anchor_left>`.
+
+Margins are often controlled by one or multiple parent :ref:`Container<class_Container>` nodes, so you should not modify them manually if your node is a direct child of a :ref:`Container<class_Container>`. Margins update automatically when you move or resize the node.
 
 .. _class_Control_margin_right:
 
@@ -648,7 +660,9 @@ Distance between the node's left edge and its parent container, based on :ref:`a
 | *Getter* | get_margin()      |
 +----------+-------------------+
 
-Distance between the node's right edge and its parent container, based on :ref:`anchor_right<class_Control_anchor_right>`.
+Distance between the node's right edge and its parent control, based on :ref:`anchor_right<class_Control_anchor_right>`.
+
+Margins are often controlled by one or multiple parent :ref:`Container<class_Container>` nodes, so you should not modify them manually if your node is a direct child of a :ref:`Container<class_Container>`. Margins update automatically when you move or resize the node.
 
 .. _class_Control_margin_top:
 
@@ -660,7 +674,9 @@ Distance between the node's right edge and its parent container, based on :ref:`
 | *Getter* | get_margin()      |
 +----------+-------------------+
 
-Distance between the node's top edge and its parent container, based on :ref:`anchor_top<class_Control_anchor_top>`.
+Distance between the node's top edge and its parent control, based on :ref:`anchor_top<class_Control_anchor_top>`.
+
+Margins are often controlled by one or multiple parent :ref:`Container<class_Container>` nodes, so you should not modify them manually if your node is a direct child of a :ref:`Container<class_Container>`. Margins update automatically when you move or resize the node.
 
 .. _class_Control_mouse_default_cursor_shape:
 
@@ -686,7 +702,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 | *Getter* | get_mouse_filter()      |
 +----------+-------------------------+
 
-Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER_*`` constants. See the constants to learn what each does.
+Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. See the constants to learn what each does.
 
 .. _class_Control_rect_clip_content:
 
@@ -697,6 +713,8 @@ Controls whether the control will be able to receive mouse button input events t
 +----------+--------------------------+
 | *Getter* | is_clipping_contents()   |
 +----------+--------------------------+
+
+Enables whether rendering of children should be clipped to this control's rectangle. If true, parts of a child which would be visibly outside of this control's rectangle will not be rendered.
 
 .. _class_Control_rect_global_position:
 
@@ -895,7 +913,7 @@ Overrides the ``name`` shader in the :ref:`theme<class_Control_theme>` resource 
 
 - void **add_stylebox_override** **(** :ref:`String<class_String>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
 
-Overrides the ``name`` Stylebox in the :ref:`theme<class_Control_theme>` resource the node uses. If ``stylebox`` is empty, Godot clears the override.
+Overrides the ``name`` :ref:`StyleBox<class_StyleBox>` in the :ref:`theme<class_Control_theme>` resource the node uses. If ``stylebox`` is empty, Godot clears the override.
 
 .. _class_Control_can_drop_data:
 
@@ -1053,7 +1071,7 @@ Returns the tooltip, which will appear when the cursor is resting over this cont
 
 - void **grab_focus** **(** **)**
 
-Steal the focus from another control and become the focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
+Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_focus_mode>`).
 
 .. _class_Control_has_color:
 

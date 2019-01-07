@@ -68,13 +68,13 @@ enum **Result**:
 
 - **RESULT_CANT_RESOLVE** = **3** --- Request failed while resolving.
 
-- **RESULT_CONNECTION_ERROR** = **4** --- Request failed due to connection(read/write) error.
+- **RESULT_CONNECTION_ERROR** = **4** --- Request failed due to connection (read/write) error.
 
 - **RESULT_SSL_HANDSHAKE_ERROR** = **5** --- Request failed on SSL handshake.
 
-- **RESULT_NO_RESPONSE** = **6** --- Request does not have a response(yet).
+- **RESULT_NO_RESPONSE** = **6** --- Request does not have a response (yet).
 
-- **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`set_body_size_limit<class_HTTPRequest_set_body_size_limit>`.
+- **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPRequest_body_size_limit>`.
 
 - **RESULT_REQUEST_FAILED** = **8** --- Request failed. (Unused)
 
@@ -82,7 +82,7 @@ enum **Result**:
 
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.
 
-- **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`set_max_redirects<class_HTTPRequest_set_max_redirects>`.
+- **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`max_redirects<class_HTTPRequest_max_redirects>`.
 
 Description
 -----------

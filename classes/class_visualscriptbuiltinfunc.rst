@@ -148,11 +148,11 @@ enum **BuiltinFunc**:
 
 - **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using VAR_TO_STR.
+- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using ``VAR_TO_STR``.
 
 - **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
 
-- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using VAR_TO_BYTES.
+- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using ``VAR_TO_BYTES``.
 
 - **COLORN** = **62** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 

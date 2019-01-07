@@ -245,7 +245,7 @@ Clear all cells.
 
 - :ref:`int<class_int>` **get_cell_item** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const
 
-The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the grid-based X, Y and Z coordinates. If the cell is empty, INVALID_CELL_ITEM will be returned.
+The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the grid-based X, Y and Z coordinates. If the cell is empty, constant INVALID_CELL_ITEM will be returned.
 
 .. _class_GridMap_get_cell_item_orientation:
 

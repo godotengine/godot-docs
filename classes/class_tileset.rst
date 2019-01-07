@@ -24,13 +24,43 @@ Methods
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | :ref:`_is_tile_bound<class_TileSet__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_clear_bitmask_map<class_TileSet_autotile_clear_bitmask_map>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                          |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`autotile_get_bitmask<class_TileSet_autotile_get_bitmask>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                                                 |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`BitmaskMode<enum_TileSet_BitmaskMode>`       | :ref:`autotile_get_bitmask_mode<class_TileSet_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                      |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                      | :ref:`autotile_get_icon_coordinate<class_TileSet_autotile_get_icon_coordinate>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`  | :ref:`autotile_get_light_occluder<class_TileSet_autotile_get_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const                                                                                                                             |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NavigationPolygon<class_NavigationPolygon>`  | :ref:`autotile_get_navigation_polygon<class_TileSet_autotile_get_navigation_polygon>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const                                                                                                                     |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                      | :ref:`autotile_get_size<class_TileSet_autotile_get_size>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                      |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`autotile_get_spacing<class_TileSet_autotile_get_spacing>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                                |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`autotile_get_subtile_priority<class_TileSet_autotile_get_subtile_priority>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                               |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`autotile_get_z_index<class_TileSet_autotile_get_z_index>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                                                 |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_bitmask<class_TileSet_autotile_set_bitmask>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` bitmask, :ref:`int<class_int>` flag **)**                                                                                                                   |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`autotile_set_bitmask_mode<class_TileSet_autotile_set_bitmask_mode>` **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` mode **)**                                                                                                                         |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_icon_coordinate<class_TileSet_autotile_set_icon_coordinate>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**                                                                                                                                 |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_light_occluder<class_TileSet_autotile_set_light_occluder>` **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder, :ref:`Vector2<class_Vector2>` coord **)**                                                                 |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_navigation_polygon<class_TileSet_autotile_set_navigation_polygon>` **(** :ref:`int<class_int>` id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon, :ref:`Vector2<class_Vector2>` coord **)**                                                     |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`autotile_set_size<class_TileSet_autotile_set_size>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` size **)**                                                                                                                                                        |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_spacing<class_TileSet_autotile_set_spacing>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` spacing **)**                                                                                                                                                       |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_subtile_priority<class_TileSet_autotile_set_subtile_priority>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord, :ref:`int<class_int>` priority **)**                                                                                               |
++----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`autotile_set_z_index<class_TileSet_autotile_set_z_index>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord, :ref:`int<class_int>` z_index **)**                                                                                                                  |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`clear<class_TileSet_clear>` **(** **)**                                                                                                                                                                                                                                             |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -182,21 +212,131 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
 
+.. _class_TileSet_autotile_clear_bitmask_map:
+
+- void **autotile_clear_bitmask_map** **(** :ref:`int<class_int>` id **)**
+
+Clears all bitmask info of the autotile.
+
+.. _class_TileSet_autotile_get_bitmask:
+
+- :ref:`int<class_int>` **autotile_get_bitmask** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**
+
+Returns the bitmask of the subtile from an autotile given its coordinates.
+
+The value is the sum of the values in :ref:`AutotileBindings<enum_TileSet_AutotileBindings>` present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).
+
 .. _class_TileSet_autotile_get_bitmask_mode:
 
 - :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
+
+Returns the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
+
+.. _class_TileSet_autotile_get_icon_coordinate:
+
+- :ref:`Vector2<class_Vector2>` **autotile_get_icon_coordinate** **(** :ref:`int<class_int>` id **)** const
+
+Returns the subtile that's being used as an icon in an atlas/autotile given its coordinates.
+
+The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask info is incomplete. It will also be used to represent it in the TileSet editor.
+
+.. _class_TileSet_autotile_get_light_occluder:
+
+- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **autotile_get_light_occluder** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const
+
+Returns the light occluder of the subtile from an atlas/autotile given its coordinates.
+
+.. _class_TileSet_autotile_get_navigation_polygon:
+
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **autotile_get_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)** const
+
+Returns the navigation polygon of the subtile from an atlas/autotile given its coordinates.
 
 .. _class_TileSet_autotile_get_size:
 
 - :ref:`Vector2<class_Vector2>` **autotile_get_size** **(** :ref:`int<class_int>` id **)** const
 
+Returns the size of the subtiles in an atlas/autotile.
+
+.. _class_TileSet_autotile_get_spacing:
+
+- :ref:`int<class_int>` **autotile_get_spacing** **(** :ref:`int<class_int>` id **)** const
+
+Returns the spacing between subtiles of the atlas/autotile.
+
+.. _class_TileSet_autotile_get_subtile_priority:
+
+- :ref:`int<class_int>` **autotile_get_subtile_priority** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**
+
+Returns the priority of the subtile from an autotile given its coordinates.
+
+When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.
+
+.. _class_TileSet_autotile_get_z_index:
+
+- :ref:`int<class_int>` **autotile_get_z_index** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**
+
+Returns the drawing index of the subtile from an atlas/autotile given its coordinates.
+
+.. _class_TileSet_autotile_set_bitmask:
+
+- void **autotile_set_bitmask** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` bitmask, :ref:`int<class_int>` flag **)**
+
+Sets the bitmask of the subtile from an autotile given its coordinates.
+
+The value is the sum of the values in :ref:`AutotileBindings<enum_TileSet_AutotileBindings>` present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).
+
 .. _class_TileSet_autotile_set_bitmask_mode:
 
 - void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` mode **)**
 
+Sets the :ref:`BitmaskMode<enum_TileSet_BitmaskMode>` of the autotile.
+
+.. _class_TileSet_autotile_set_icon_coordinate:
+
+- void **autotile_set_icon_coordinate** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord **)**
+
+Sets the subtile that will be used as an icon in an atlas/autotile given its coordinates.
+
+The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask info is incomplete. It will also be used to represent it in the TileSet editor.
+
+.. _class_TileSet_autotile_set_light_occluder:
+
+- void **autotile_set_light_occluder** **(** :ref:`int<class_int>` id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` light_occluder, :ref:`Vector2<class_Vector2>` coord **)**
+
+Sets the light occluder of the subtile from an atlas/autotile given its coordinates.
+
+.. _class_TileSet_autotile_set_navigation_polygon:
+
+- void **autotile_set_navigation_polygon** **(** :ref:`int<class_int>` id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon, :ref:`Vector2<class_Vector2>` coord **)**
+
+Sets the navigation polygon of the subtile from an atlas/autotile given its coordinates.
+
 .. _class_TileSet_autotile_set_size:
 
 - void **autotile_set_size** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` size **)**
+
+Sets the size of the subtiles in an atlas/autotile.
+
+.. _class_TileSet_autotile_set_spacing:
+
+- void **autotile_set_spacing** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` spacing **)**
+
+Sets the spacing between subtiles of the atlas/autotile.
+
+.. _class_TileSet_autotile_set_subtile_priority:
+
+- void **autotile_set_subtile_priority** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord, :ref:`int<class_int>` priority **)**
+
+Sets the priority of the subtile from an autotile given its coordinates.
+
+When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.
+
+.. _class_TileSet_autotile_set_z_index:
+
+- void **autotile_set_z_index** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` coord, :ref:`int<class_int>` z_index **)**
+
+Sets the drawing index of the subtile from an atlas/autotile given its coordinates.
 
 .. _class_TileSet_clear:
 
@@ -346,7 +486,7 @@ Returns the texture offset of the tile.
 
 - :ref:`TileMode<enum_TileSet_TileMode>` **tile_get_tile_mode** **(** :ref:`int<class_int>` id **)** const
 
-Returns the tile's :ref:`TileMode<enum_@GlobalScope_TileMode>`.
+Returns the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 .. _class_TileSet_tile_get_z_index:
 
@@ -454,7 +594,7 @@ Sets the tile's texture offset.
 
 - void **tile_set_tile_mode** **(** :ref:`int<class_int>` id, :ref:`TileMode<enum_TileSet_TileMode>` tilemode **)**
 
-Sets the tile's :ref:`TileMode<enum_@GlobalScope_TileMode>`.
+Sets the tile's :ref:`TileMode<enum_TileSet_TileMode>`.
 
 .. _class_TileSet_tile_set_z_index:
 

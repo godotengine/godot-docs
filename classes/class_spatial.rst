@@ -124,7 +124,7 @@ Constants
 
 - **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
-In order for NOTIFICATION_TRANSFORM_CHANGED to work user first needs to ask for it, with set_notify_transform(true).
+In order for ``NOTIFICATION_TRANSFORM_CHANGED`` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Spatial_set_notify_transform>`.
 
 - **NOTIFICATION_ENTER_WORLD** = **41** --- Spatial nodes receives this notification when they are registered to new :ref:`World<class_World>` resource.
 
@@ -135,9 +135,9 @@ In order for NOTIFICATION_TRANSFORM_CHANGED to work user first needs to ask for 
 Description
 -----------
 
-Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use Spatial as a parent node to move, scale, rotate and show/hide children in a 3D project.
+Most basic 3D game object, with a 3D :ref:`Transform<class_Transform>` and visibility settings. All other 3D game objects inherit from Spatial. Use ``Spatial`` as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
-Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the Spatial object is set as top level. Affine operations in this coordinate system correspond to direct affine operations on the Spatial's transform. The word local below refers to this coordinate system. The coordinate system that is attached to the Spatial object itself is referred to as object-local coordinate system.
+Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the ``Spatial`` object is set as top level. Affine operations in this coordinate system correspond to direct affine operations on the ``Spatial``'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the ``Spatial`` object itself is referred to as object-local coordinate system.
 
 Tutorials
 ---------
@@ -157,7 +157,7 @@ Property Descriptions
 | *Getter* | get_gizmo()      |
 +----------+------------------+
 
-The SpatialGizmo for this node. Used for example in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` as custom visualization and editing handles in Editor.
+The :ref:`SpatialGizmo<class_SpatialGizmo>` for this node. Used for example in :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` as custom visualization and editing handles in Editor.
 
 .. _class_Spatial_global_transform:
 
@@ -262,7 +262,7 @@ Returns the parent ``Spatial``, or an empty :ref:`Object<class_Object>` if no pa
 
 - :ref:`World<class_World>` **get_world** **(** **)** const
 
-Returns the current :ref:`World<class_World>` resource this Spatial node is registered to.
+Returns the current :ref:`World<class_World>` resource this ``Spatial`` node is registered to.
 
 .. _class_Spatial_global_rotate:
 
@@ -284,13 +284,13 @@ Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset.
 
 - void **hide** **(** **)**
 
-Disables rendering of this node. Change Spatial Visible property to false.
+Disables rendering of this node. Changes :ref:`visible<class_Spatial_visible>` to ``false``.
 
 .. _class_Spatial_is_local_transform_notification_enabled:
 
 - :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
 
-Returns whether node notifies about its local transformation changes. Spatial will not propagate this by default.
+Returns whether node notifies about its local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_is_scale_disabled:
 
@@ -306,7 +306,7 @@ Returns whether this node is set as Toplevel, that is whether it ignores its par
 
 - :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
 
-Returns whether the node notifies about its global and local transformation changes. Spatial will not propagate this by default.
+Returns whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_is_visible_in_tree:
 
@@ -334,7 +334,7 @@ Moves the node to the specified ``position``, and then rotates itself to point t
 
 - void **orthonormalize** **(** **)**
 
-Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's Transform3D.
+Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's :ref:`Transform<class_Transform>`.
 
 .. _class_Spatial_rotate:
 
@@ -386,7 +386,7 @@ Makes the node ignore its parents transformations. Node transformations are only
 
 - void **set_identity** **(** **)**
 
-Reset all transformations for this node. Set its Transform3D to identity matrix.
+Reset all transformations for this node. Set its :ref:`Transform<class_Transform>` to identity matrix.
 
 .. _class_Spatial_set_ignore_transform_notification:
 
@@ -398,19 +398,19 @@ Set whether the node ignores notification that its transformation (global or loc
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Set whether the node notifies about its local transformation changes. Spatial will not propagate this by default.
+Set whether the node notifies about its local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_set_notify_transform:
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Set whether the node notifies about its global and local transformation changes. Spatial will not propagate this by default.
+Set whether the node notifies about its global and local transformation changes. ``Spatial`` will not propagate this by default.
 
 .. _class_Spatial_show:
 
 - void **show** **(** **)**
 
-Enables rendering of this node. Change Spatial Visible property to "True".
+Enables rendering of this node. Changes :ref:`visible<class_Spatial_visible>` to ``true``.
 
 .. _class_Spatial_to_global:
 

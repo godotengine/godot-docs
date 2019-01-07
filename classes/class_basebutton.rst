@@ -198,7 +198,7 @@ If ``true``, the button's state is pressed. Means the button is pressed down or 
 | *Getter* | get_shortcut()      |
 +----------+---------------------+
 
-Shortcut associated to the button.
+:ref:`ShortCut<class_ShortCut>` associated to the button.
 
 .. _class_BaseButton_shortcut_in_tooltip:
 

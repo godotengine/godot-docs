@@ -348,7 +348,7 @@ Animation speed randomness ratio. Default value: ``0``.
 | *Getter* | get_color()      |
 +----------+------------------+
 
-Each particle's initial color. If the Particle2D's ``texture`` is defined, it will be multiplied by this color.
+Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``texture`` is defined, it will be multiplied by this color.
 
 .. _class_ParticlesMaterial_color_ramp:
 

@@ -51,7 +51,7 @@ enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- :ref:`Image<class_Image>` data is stored raw and unaltered.
 
-- **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`.
+- **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`lossy_quality<class_ImageTexture_lossy_quality>`.
 
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_Image>` data is compressed with a lossless algorithm.
 
@@ -73,7 +73,7 @@ Property Descriptions
 | *Getter* | get_lossy_storage_quality()      |
 +----------+----------------------------------+
 
-The storage quality for ``ImageTexture``.STORAGE_COMPRESS_LOSSY.
+The storage quality for ``STORAGE_COMPRESS_LOSSY``.
 
 .. _class_ImageTexture_storage:
 
@@ -94,23 +94,21 @@ Method Descriptions
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)**
 
-Create a new ``ImageTexture`` with "width" and "height".
+Create a new ``ImageTexture`` with ``width`` and ``height``.
 
-"format" one of :ref:`Image<class_Image>`.FORMAT\_\*.
-
-"flags" one or more of :ref:`Texture<class_Texture>`.FLAG\_\*.
+``format`` is a value from :ref:`Format<enum_Image_Format>`, ``flags`` is any combination of :ref:`Flags<enum_Texture_Flags>`.
 
 .. _class_ImageTexture_create_from_image:
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
-Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with "flags" from :ref:`Texture<class_Texture>`.FLAG\_\*. An sRGB to linear color space conversion can take place, according to :ref:`Image<class_Image>`.FORMAT\_\*.
+Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` from :ref:`Flags<enum_Texture_Flags>`. An sRGB to linear color space conversion can take place, according to :ref:`Format<enum_Image_Format>`.
 
 .. _class_ImageTexture_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-Return the format of the ``ImageTexture``, one of :ref:`Image<class_Image>`.FORMAT\_\*.
+Return the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
 .. _class_ImageTexture_load:
 

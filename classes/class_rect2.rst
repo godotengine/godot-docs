@@ -150,7 +150,7 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards each direc
 
 - :ref:`Rect2<class_Rect2>` **grow_margin** **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` by **)**
 
-Returns a copy of the ``Rect2`` grown a given amount of units towards the Margin direction.
+Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`Margin<enum_@GlobalScope_Margin>` direction.
 
 .. _class_Rect2_has_no_area:
 

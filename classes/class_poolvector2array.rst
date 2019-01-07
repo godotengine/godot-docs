@@ -12,7 +12,7 @@ PoolVector2Array
 Brief Description
 -----------------
 
-An Array of Vector2.
+A pooled :ref:`Array<class_Array>` of :ref:`Vector2<class_Vector2>`.
 
 Methods
 -------
@@ -42,7 +42,7 @@ Methods
 Description
 -----------
 
-An Array specifically designed to hold Vector2. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector2<class_Vector2>`. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -51,7 +51,7 @@ Method Descriptions
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **PoolVector2Array** **(** :ref:`Array<class_Array>` from **)**
 
-Construct a new ``PoolVector2Array``. Optionally, you can pass in an Array that will be converted.
+Construct a new ``PoolVector2Array``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolVector2Array_append:
 
@@ -63,13 +63,13 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolVe
 
 - void **append_array** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)**
 
-Append an ``PoolVector2Array`` at the end of this array.
+Append a ``PoolVector2Array`` at the end of this array.
 
 .. _class_PoolVector2Array_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolVector2Array_invert:
 

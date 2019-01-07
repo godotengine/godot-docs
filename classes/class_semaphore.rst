@@ -37,11 +37,11 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
 
-Lowers the ``Semaphore``, allowing one more thread in. Returns OK on success, ERR_BUSY otherwise.
+Lowers the ``Semaphore``, allowing one more thread in. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 
 .. _class_Semaphore_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 
-Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns OK on success, ERR_BUSY otherwise.
+Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 

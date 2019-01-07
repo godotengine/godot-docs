@@ -28,7 +28,7 @@ Properties
 Description
 -----------
 
-This node returns a constant from a given class, such as @GlobalScope.TYPE_INT. See the given class' documentation for available constants.
+This node returns a constant from a given class, such as constant @GlobalScope.TYPE_INT. See the given class' documentation for available constants.
 
 **Input Ports:**
 

@@ -12,7 +12,7 @@ PoolByteArray
 Brief Description
 -----------------
 
-Raw byte array.
+A pooled :ref:`Array<class_Array>` of bytes.
 
 Methods
 -------
@@ -52,7 +52,7 @@ Methods
 Description
 -----------
 
-Raw byte array. Contains bytes. Optimized for memory usage, can't fragment the memory. Note that this type is passed by value and not by reference.
+An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory. Note that this type is passed by value and not by reference.
 
 Method Descriptions
 -------------------
@@ -61,7 +61,7 @@ Method Descriptions
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **PoolByteArray** **(** :ref:`Array<class_Array>` from **)**
 
-Create from a generic array.
+Construct a new ``PoolByteArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
 .. _class_PoolByteArray_append:
 
@@ -79,31 +79,31 @@ Append a ``PoolByteArray`` at the end of this array.
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)**
 
-Returns a new ``PoolByteArray`` with the data compressed. Set the compression mode using one of :ref:`File<class_File>`'s COMPRESS\_\* constants.
+Returns a new ``PoolByteArray`` with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
 
 .. _class_PoolByteArray_decompress:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
 
-Returns a new ``PoolByteArray`` with the data decompressed. Set buffer_size to the size of the uncompressed data. Set the compression mode using one of :ref:`File<class_File>`'s COMPRESS\_\* constants.
+Returns a new ``PoolByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
 
 .. _class_PoolByteArray_get_string_from_ascii:
 
 - :ref:`String<class_String>` **get_string_from_ascii** **(** **)**
 
-Returns a copy of the array's contents as :ref:`String<class_String>`. Fast alternative to :ref:`PoolByteArray.get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>` if the content is ASCII-only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`PoolByteArray.get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>`.
+Returns a copy of the array's contents as :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>` if the content is ASCII-only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PoolByteArray_get_string_from_utf8>`.
 
 .. _class_PoolByteArray_get_string_from_utf8:
 
 - :ref:`String<class_String>` **get_string_from_utf8** **(** **)**
 
-Returns a copy of the array's contents as :ref:`String<class_String>`. Slower than :ref:`PoolByteArray.get_string_from_ascii<class_PoolByteArray_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred.
+Returns a copy of the array's contents as :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PoolByteArray_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred.
 
 .. _class_PoolByteArray_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
-Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
 
 .. _class_PoolByteArray_invert:
 

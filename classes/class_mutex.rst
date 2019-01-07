@@ -45,7 +45,7 @@ Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
 
-Try locking this ``Mutex``, does not block. Returns OK on success, ERR_BUSY otherwise.
+Try locking this ``Mutex``, does not block. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 
 .. _class_Mutex_unlock:
 
