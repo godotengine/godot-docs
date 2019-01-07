@@ -19,14 +19,14 @@ Brief Description
 Methods
 -------
 
-+------------------------------+-------------------------------------------------------+
-| :ref:`Object<class_Object>`  | :ref:`new<class_PluginScript_new>` **(** **)** vararg |
-+------------------------------+-------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`new<class_PluginScript_method_new>` **(** **)** vararg |
++-----------------------------+--------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_PluginScript_new:
+.. _class_PluginScript_method_new:
 
 - :ref:`Object<class_Object>` **new** **(** **)** vararg
 

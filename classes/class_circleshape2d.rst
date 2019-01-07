@@ -19,9 +19,9 @@ Circular shape for 2D collisions.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------+
-| :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_radius>` |
-+---------------------------+-------------------------------------------+
++---------------------------+----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_property_radius>` |
++---------------------------+----------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Circular shape for 2D collisions. This shape is useful for modeling balls or sma
 Property Descriptions
 ---------------------
 
-.. _class_CircleShape2D_radius:
+.. _class_CircleShape2D_property_radius:
 
 - :ref:`float<class_float>` **radius**
 

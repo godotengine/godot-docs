@@ -19,13 +19,13 @@ A Visual Script node used to annotate the script.
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_description>` |
-+-------------------------------+-----------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_size>`               |
-+-------------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_title>`             |
-+-------------------------------+-----------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             |
++-------------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
@@ -37,7 +37,7 @@ Comment nodes can be resized so they encompass a group of nodes.
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptComment_description:
+.. _class_VisualScriptComment_property_description:
 
 - :ref:`String<class_String>` **description**
 
@@ -49,7 +49,7 @@ Property Descriptions
 
 The text inside the comment node.
 
-.. _class_VisualScriptComment_size:
+.. _class_VisualScriptComment_property_size:
 
 - :ref:`Vector2<class_Vector2>` **size**
 
@@ -61,7 +61,7 @@ The text inside the comment node.
 
 The comment node's size (in pixels).
 
-.. _class_VisualScriptComment_title:
+.. _class_VisualScriptComment_property_title:
 
 - :ref:`String<class_String>` **title**
 

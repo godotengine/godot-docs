@@ -21,14 +21,18 @@ Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_next_pass>`             |
-+---------------------------------+--------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_render_priority>` |
-+---------------------------------+--------------------------------------------------------+
++---------------------------------+-----------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |
++---------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` |
++---------------------------------+-----------------------------------------------------------------+
 
 Constants
 ---------
+
+.. _class_Material_constant_RENDER_PRIORITY_MAX:
+
+.. _class_Material_constant_RENDER_PRIORITY_MIN:
 
 - **RENDER_PRIORITY_MAX** = **127**
 
@@ -42,7 +46,7 @@ Material is a base :ref:`Resource<class_Resource>` used for coloring and shading
 Property Descriptions
 ---------------------
 
-.. _class_Material_next_pass:
+.. _class_Material_property_next_pass:
 
 - :ref:`Material<class_Material>` **next_pass**
 
@@ -52,7 +56,7 @@ Property Descriptions
 | *Getter* | get_next_pass()      |
 +----------+----------------------+
 
-.. _class_Material_render_priority:
+.. _class_Material_property_render_priority:
 
 - :ref:`int<class_int>` **render_priority**
 

@@ -19,21 +19,21 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_input_name>` |
-+-----------------------------+-----------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` |
++-----------------------------+--------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_VisualShaderNodeInput_input_type_changed:
+.. _class_VisualShaderNodeInput_signal_input_type_changed:
 
 - **input_type_changed** **(** **)**
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeInput_input_name:
+.. _class_VisualShaderNodeInput_property_input_name:
 
 - :ref:`String<class_String>` **input_name**
 

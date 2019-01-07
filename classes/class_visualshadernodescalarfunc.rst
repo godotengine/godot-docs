@@ -19,14 +19,54 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------------------+------------------------------------------------------------+
-| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_function>` |
-+-----------------------------------------------------------+------------------------------------------------------------+
++-----------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` |
++-----------------------------------------------------------+---------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeScalarFunc_Function:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COS:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TAN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASIN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOS:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATAN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SINH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COSH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TANH:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SQRT:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ABS:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIGN:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FLOOR:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUND:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_CEIL:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FRAC:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SATURATE:
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_NEGATE:
 
 enum **Function**:
 
@@ -73,7 +113,7 @@ enum **Function**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeScalarFunc_function:
+.. _class_VisualShaderNodeScalarFunc_property_function:
 
 - :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
 

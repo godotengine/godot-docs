@@ -19,9 +19,9 @@ Singleton that connects the engine with the browser's JavaScript context in HTML
 Methods
 -------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`  | :ref:`eval<class_JavaScript_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)** |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,7 +36,7 @@ Tutorials
 Method Descriptions
 -------------------
 
-.. _class_JavaScript_eval:
+.. _class_JavaScript_method_eval:
 
 - :ref:`Variant<class_Variant>` **eval** **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
 

@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`delta<class_InputEventPanGesture_delta>` |
-+-------------------------------+------------------------------------------------+
++-------------------------------+---------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`delta<class_InputEventPanGesture_property_delta>` |
++-------------------------------+---------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_InputEventPanGesture_delta:
+.. _class_InputEventPanGesture_property_delta:
 
 - :ref:`Vector2<class_Vector2>` **delta**
 

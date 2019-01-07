@@ -19,9 +19,9 @@ Executes a series of Sequence ports.
 Properties
 ----------
 
-+-----------------------+------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_steps>` |
-+-----------------------+------------------------------------------------+
++-----------------------+---------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` |
++-----------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -43,7 +43,7 @@ Steps through a series of one or more output Sequence ports. The ``current`` dat
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptSequence_steps:
+.. _class_VisualScriptSequence_property_steps:
 
 - :ref:`int<class_int>` **steps**
 

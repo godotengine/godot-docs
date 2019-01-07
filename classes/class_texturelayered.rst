@@ -21,37 +21,45 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------------+------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_TextureLayered_data>`   |
-+-------------------------------------+------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`flags<class_TextureLayered_flags>` |
-+-------------------------------------+------------------------------------------+
++-------------------------------------+---------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_TextureLayered_property_data>`   |
++-------------------------------------+---------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`flags<class_TextureLayered_property_flags>` |
++-------------------------------------+---------------------------------------------------+
 
 Methods
 -------
 
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`create<class_TextureLayered_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**                   |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_depth<class_TextureLayered_get_depth>` **(** **)** const                                                                                                                                                                      |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>`  | :ref:`get_format<class_TextureLayered_get_format>` **(** **)** const                                                                                                                                                                    |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_height<class_TextureLayered_get_height>` **(** **)** const                                                                                                                                                                    |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`         | :ref:`get_layer_data<class_TextureLayered_get_layer_data>` **(** :ref:`int<class_int>` layer **)** const                                                                                                                                |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_width<class_TextureLayered_get_width>` **(** **)** const                                                                                                                                                                      |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_data_partial<class_TextureLayered_set_data_partial>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)** |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_layer_data<class_TextureLayered_set_layer_data>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**                                                                                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create<class_TextureLayered_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**                   |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_depth<class_TextureLayered_method_get_depth>` **(** **)** const                                                                                                                                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_TextureLayered_method_get_format>` **(** **)** const                                                                                                                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_height<class_TextureLayered_method_get_height>` **(** **)** const                                                                                                                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>`        | :ref:`get_layer_data<class_TextureLayered_method_get_layer_data>` **(** :ref:`int<class_int>` layer **)** const                                                                                                                                |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_width<class_TextureLayered_method_get_width>` **(** **)** const                                                                                                                                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_data_partial<class_TextureLayered_method_set_data_partial>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_layer_data<class_TextureLayered_method_set_layer_data>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**                                                                                                     |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_TextureLayered_Flags:
+
+.. _class_TextureLayered_constant_FLAG_MIPMAPS:
+
+.. _class_TextureLayered_constant_FLAG_REPEAT:
+
+.. _class_TextureLayered_constant_FLAG_FILTER:
+
+.. _class_TextureLayered_constant_FLAGS_DEFAULT:
 
 enum **Flags**:
 
@@ -66,11 +74,11 @@ enum **Flags**:
 Property Descriptions
 ---------------------
 
-.. _class_TextureLayered_data:
+.. _class_TextureLayered_property_data:
 
 - :ref:`Dictionary<class_Dictionary>` **data**
 
-.. _class_TextureLayered_flags:
+.. _class_TextureLayered_property_flags:
 
 - :ref:`int<class_int>` **flags**
 
@@ -83,35 +91,35 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_TextureLayered_create:
+.. _class_TextureLayered_method_create:
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
 
-.. _class_TextureLayered_get_depth:
+.. _class_TextureLayered_method_get_depth:
 
 - :ref:`int<class_int>` **get_depth** **(** **)** const
 
-.. _class_TextureLayered_get_format:
+.. _class_TextureLayered_method_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
-.. _class_TextureLayered_get_height:
+.. _class_TextureLayered_method_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
-.. _class_TextureLayered_get_layer_data:
+.. _class_TextureLayered_method_get_layer_data:
 
 - :ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** const
 
-.. _class_TextureLayered_get_width:
+.. _class_TextureLayered_method_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
-.. _class_TextureLayered_set_data_partial:
+.. _class_TextureLayered_method_set_data_partial:
 
 - void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
 
-.. _class_TextureLayered_set_layer_data:
+.. _class_TextureLayered_method_set_layer_data:
 
 - void **set_layer_data** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
 

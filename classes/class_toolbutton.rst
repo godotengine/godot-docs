@@ -19,34 +19,34 @@ Flat button helper class.
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ToolButton_disabled>`                       |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ToolButton_focus>`                             |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ToolButton_font>`                               |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ToolButton_font_color>`                   |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ToolButton_font_color_disabled>` |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ToolButton_font_color_hover>`       |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ToolButton_font_color_pressed>`   |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ToolButton_hover>`                             |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_ToolButton_hseparation>`                 |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ToolButton_normal>`                           |
-+---------------------------------+------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ToolButton_pressed>`                         |
-+---------------------------------+------------------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled            |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color          |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_hover    |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed             |
++---------------------------------+---------------------+
 
 Description
 -----------
 
-This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.set_flat<class_Button_set_flat>`), creating a ToolButton is equivalent to:
+This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.set_flat<class_Button_method_set_flat>`), creating a ToolButton is equivalent to:
 
 ::
 

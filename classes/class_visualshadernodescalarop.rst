@@ -19,14 +19,32 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------------------------+----------------------------------------------------------+
-| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_operator>` |
-+---------------------------------------------------------+----------------------------------------------------------+
++---------------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_property_operator>` |
++---------------------------------------------------------+-------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeScalarOp_Operator:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_ADD:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_SUB:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MUL:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_DIV:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MOD:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_POW:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MAX:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MIN:
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_ATAN2:
 
 enum **Operator**:
 
@@ -51,7 +69,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeScalarOp_operator:
+.. _class_VisualShaderNodeScalarOp_property_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator**
 

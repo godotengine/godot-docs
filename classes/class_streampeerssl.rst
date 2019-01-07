@@ -19,29 +19,39 @@ SSL Stream peer.
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`blocking_handshake<class_StreamPeerSSL_blocking_handshake>` |
-+-------------------------+-------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`blocking_handshake<class_StreamPeerSSL_property_blocking_handshake>` |
++-------------------------+----------------------------------------------------------------------------+
 
 Methods
 -------
 
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`accept_stream<class_StreamPeerSSL_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` base **)**                                                                                                      |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`connect_to_stream<class_StreamPeerSSL_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)** |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`disconnect_from_stream<class_StreamPeerSSL_disconnect_from_stream>` **(** **)**                                                                                                                             |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerSSL_Status>`  | :ref:`get_status<class_StreamPeerSSL_get_status>` **(** **)** const                                                                                                                                               |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`poll<class_StreamPeerSSL_poll>` **(** **)**                                                                                                                                                                 |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`accept_stream<class_StreamPeerSSL_method_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` base **)**                                                                                                      |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)** |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`disconnect_from_stream<class_StreamPeerSSL_method_disconnect_from_stream>` **(** **)**                                                                                                                             |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Status<enum_StreamPeerSSL_Status>` | :ref:`get_status<class_StreamPeerSSL_method_get_status>` **(** **)** const                                                                                                                                               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`poll<class_StreamPeerSSL_method_poll>` **(** **)**                                                                                                                                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_StreamPeerSSL_Status:
+
+.. _class_StreamPeerSSL_constant_STATUS_DISCONNECTED:
+
+.. _class_StreamPeerSSL_constant_STATUS_HANDSHAKING:
+
+.. _class_StreamPeerSSL_constant_STATUS_CONNECTED:
+
+.. _class_StreamPeerSSL_constant_STATUS_ERROR:
+
+.. _class_StreamPeerSSL_constant_STATUS_ERROR_HOSTNAME_MISMATCH:
 
 enum **Status**:
 
@@ -68,7 +78,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_StreamPeerSSL_blocking_handshake:
+.. _class_StreamPeerSSL_property_blocking_handshake:
 
 - :ref:`bool<class_bool>` **blocking_handshake**
 
@@ -81,29 +91,29 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_StreamPeerSSL_accept_stream:
+.. _class_StreamPeerSSL_method_accept_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` base **)**
 
-.. _class_StreamPeerSSL_connect_to_stream:
+.. _class_StreamPeerSSL_method_connect_to_stream:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="" **)**
 
 Connect to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` "stream", when "validate_certs" is true, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the "for_hostname".
 
-.. _class_StreamPeerSSL_disconnect_from_stream:
+.. _class_StreamPeerSSL_method_disconnect_from_stream:
 
 - void **disconnect_from_stream** **(** **)**
 
 Disconnect from host.
 
-.. _class_StreamPeerSSL_get_status:
+.. _class_StreamPeerSSL_method_get_status:
 
 - :ref:`Status<enum_StreamPeerSSL_Status>` **get_status** **(** **)** const
 
 Return the status of the connection, one of STATUS\_\* enum.
 
-.. _class_StreamPeerSSL_poll:
+.. _class_StreamPeerSSL_method_poll:
 
 - void **poll** **(** **)**
 

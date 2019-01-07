@@ -21,16 +21,16 @@ Base node for containers.
 Methods
 -------
 
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`fit_child_in_rect<class_Container_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`queue_sort<class_Container_queue_sort>` **(** **)**                                                                                   |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
++------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_Container_sort_children:
+.. _class_Container_signal_sort_children:
 
 - **sort_children** **(** **)**
 
@@ -38,6 +38,8 @@ Emitted when sorting the children is needed.
 
 Constants
 ---------
+
+.. _class_Container_constant_NOTIFICATION_SORT_CHILDREN:
 
 - **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
 
@@ -51,13 +53,13 @@ A Control can inherit this to create custom container classes.
 Method Descriptions
 -------------------
 
-.. _class_Container_fit_child_in_rect:
+.. _class_Container_method_fit_child_in_rect:
 
 - void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
-.. _class_Container_queue_sort:
+.. _class_Container_method_queue_sort:
 
 - void **queue_sort** **(** **)**
 

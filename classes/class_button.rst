@@ -21,49 +21,55 @@ Standard themed Button.
 Properties
 ----------
 
-+-----------------------------------------+------------------------------------------+
-| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_align>`         |
-+-----------------------------------------+------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_clip_text>` |
-+-----------------------------------------+------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_flat>`           |
-+-----------------------------------------+------------------------------------------+
-| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_icon>`           |
-+-----------------------------------------+------------------------------------------+
-| :ref:`String<class_String>`             | :ref:`text<class_Button_text>`           |
-+-----------------------------------------+------------------------------------------+
++-----------------------------------------+---------------------------------------------------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`align<class_Button_property_align>`         |
++-----------------------------------------+---------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`clip_text<class_Button_property_clip_text>` |
++-----------------------------------------+---------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`           |
++-----------------------------------------+---------------------------------------------------+
+| :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`           |
++-----------------------------------------+---------------------------------------------------+
+| :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`           |
++-----------------------------------------+---------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_Button_disabled>`                       |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_Button_focus>`                             |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Button_font>`                               |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_Button_font_color>`                   |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_Button_font_color_disabled>` |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_Button_font_color_hover>`       |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_Button_font_color_pressed>`   |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_Button_hover>`                             |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_Button_hseparation>`                 |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Button_normal>`                           |
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_Button_pressed>`                         |
-+---------------------------------+--------------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled            |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color          |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_hover    |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed             |
++---------------------------------+---------------------+
 
 Enumerations
 ------------
 
 .. _enum_Button_TextAlign:
+
+.. _class_Button_constant_ALIGN_LEFT:
+
+.. _class_Button_constant_ALIGN_CENTER:
+
+.. _class_Button_constant_ALIGN_RIGHT:
 
 enum **TextAlign**:
 
@@ -81,7 +87,7 @@ Button is the standard themed button. It can contain text and an icon, and will 
 Property Descriptions
 ---------------------
 
-.. _class_Button_align:
+.. _class_Button_property_align:
 
 - :ref:`TextAlign<enum_Button_TextAlign>` **align**
 
@@ -93,7 +99,7 @@ Property Descriptions
 
 Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 
-.. _class_Button_clip_text:
+.. _class_Button_property_clip_text:
 
 - :ref:`bool<class_bool>` **clip_text**
 
@@ -105,7 +111,7 @@ Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 
 When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
 
-.. _class_Button_flat:
+.. _class_Button_property_flat:
 
 - :ref:`bool<class_bool>` **flat**
 
@@ -117,7 +123,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 
 Flat buttons don't display decoration.
 
-.. _class_Button_icon:
+.. _class_Button_property_icon:
 
 - :ref:`Texture<class_Texture>` **icon**
 
@@ -129,7 +135,7 @@ Flat buttons don't display decoration.
 
 Button's icon, if text is present the icon will be placed before the text.
 
-.. _class_Button_text:
+.. _class_Button_property_text:
 
 - :ref:`String<class_String>` **text**
 

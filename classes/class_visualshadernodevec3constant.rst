@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`constant<class_VisualShaderNodeVec3Constant_constant>` |
-+-------------------------------+--------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`constant<class_VisualShaderNodeVec3Constant_property_constant>` |
++-------------------------------+-----------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeVec3Constant_constant:
+.. _class_VisualShaderNodeVec3Constant_property_constant:
 
 - :ref:`Vector3<class_Vector3>` **constant**
 

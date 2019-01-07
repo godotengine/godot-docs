@@ -19,15 +19,15 @@ A material for physics properties.
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`absorbent<class_PhysicsMaterial_absorbent>` |
-+---------------------------+---------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`bounce<class_PhysicsMaterial_bounce>`       |
-+---------------------------+---------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`friction<class_PhysicsMaterial_friction>`   |
-+---------------------------+---------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_rough>`         |
-+---------------------------+---------------------------------------------------+
++---------------------------+------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`absorbent<class_PhysicsMaterial_property_absorbent>` |
++---------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`bounce<class_PhysicsMaterial_property_bounce>`       |
++---------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`friction<class_PhysicsMaterial_property_friction>`   |
++---------------------------+------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`rough<class_PhysicsMaterial_property_rough>`         |
++---------------------------+------------------------------------------------------------+
 
 Description
 -----------
@@ -37,7 +37,7 @@ Provides a means of modifying the collision properties of a :ref:`PhysicsBody<cl
 Property Descriptions
 ---------------------
 
-.. _class_PhysicsMaterial_absorbent:
+.. _class_PhysicsMaterial_property_absorbent:
 
 - :ref:`bool<class_bool>` **absorbent**
 
@@ -47,7 +47,7 @@ Property Descriptions
 | *Getter* | is_absorbent()       |
 +----------+----------------------+
 
-.. _class_PhysicsMaterial_bounce:
+.. _class_PhysicsMaterial_property_bounce:
 
 - :ref:`float<class_float>` **bounce**
 
@@ -59,7 +59,7 @@ Property Descriptions
 
 The body's bounciness. Default value: ``0``.
 
-.. _class_PhysicsMaterial_friction:
+.. _class_PhysicsMaterial_property_friction:
 
 - :ref:`float<class_float>` **friction**
 
@@ -71,7 +71,7 @@ The body's bounciness. Default value: ``0``.
 
 The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
 
-.. _class_PhysicsMaterial_rough:
+.. _class_PhysicsMaterial_property_rough:
 
 - :ref:`bool<class_bool>` **rough**
 

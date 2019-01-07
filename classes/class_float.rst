@@ -17,13 +17,13 @@ Float built-in type
 Methods
 -------
 
-+----------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`bool<class_bool>` from **)**     |
-+----------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`int<class_int>` from **)**       |
-+----------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`float<class_float_float>` **(** :ref:`String<class_String>` from **)** |
-+----------------------------+------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`bool<class_bool>` from **)**     |
++---------------------------+-------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`int<class_int>` from **)**       |
++---------------------------+-------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`String<class_String>` from **)** |
++---------------------------+-------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,19 +33,15 @@ Float built-in type.
 Method Descriptions
 -------------------
 
-.. _class_float_float:
+.. _class_float_method_float:
 
 - :ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)**
 
 Cast a :ref:`bool<class_bool>` value to a floating point value, ``float(true)`` will be equal to 1.0 and ``float(false)`` will be equal to 0.0.
 
-.. _class_float_float:
-
 - :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a floating point value, ``float(1)`` will be equal to 1.0.
-
-.. _class_float_float:
 
 - :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 

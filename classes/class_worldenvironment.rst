@@ -19,9 +19,9 @@ Default environment properties for the entire scene (post-processing effects, li
 Properties
 ----------
 
-+---------------------------------------+--------------------------------------------------------+
-| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_environment>` |
-+---------------------------------------+--------------------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------+
+| :ref:`Environment<class_Environment>` | :ref:`environment<class_WorldEnvironment_property_environment>` |
++---------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -40,7 +40,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_WorldEnvironment_environment:
+.. _class_WorldEnvironment_property_environment:
 
 - :ref:`Environment<class_Environment>` **environment**
 

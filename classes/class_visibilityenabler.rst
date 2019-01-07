@@ -19,16 +19,22 @@ Enable certain nodes only when visible.
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_freeze_bodies>`       |
-+-------------------------+-------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_pause_animations>` |
-+-------------------------+-------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       |
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` |
++-------------------------+----------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisibilityEnabler_Enabler:
+
+.. _class_VisibilityEnabler_constant_ENABLER_PAUSE_ANIMATIONS:
+
+.. _class_VisibilityEnabler_constant_ENABLER_FREEZE_BODIES:
+
+.. _class_VisibilityEnabler_constant_ENABLER_MAX:
 
 enum **Enabler**:
 
@@ -46,7 +52,7 @@ The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`A
 Property Descriptions
 ---------------------
 
-.. _class_VisibilityEnabler_freeze_bodies:
+.. _class_VisibilityEnabler_property_freeze_bodies:
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
@@ -58,7 +64,7 @@ Property Descriptions
 
 If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
-.. _class_VisibilityEnabler_pause_animations:
+.. _class_VisibilityEnabler_property_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 

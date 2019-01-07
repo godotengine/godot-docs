@@ -19,19 +19,19 @@ Generic mobile VR implementation
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_display_to_lens>` |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_display_width>`     |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_iod>`                         |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_k1>`                           |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_k2>`                           |
-+---------------------------+-----------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_oversample>`           |
-+---------------------------+-----------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`display_to_lens<class_MobileVRInterface_property_display_to_lens>` |
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`display_width<class_MobileVRInterface_property_display_width>`     |
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`iod<class_MobileVRInterface_property_iod>`                         |
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`k1<class_MobileVRInterface_property_k1>`                           |
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`k2<class_MobileVRInterface_property_k2>`                           |
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`oversample<class_MobileVRInterface_property_oversample>`           |
++---------------------------+--------------------------------------------------------------------------+
 
 Description
 -----------
@@ -43,7 +43,7 @@ Note that even though there is no positional tracking the camera will assume the
 Property Descriptions
 ---------------------
 
-.. _class_MobileVRInterface_display_to_lens:
+.. _class_MobileVRInterface_property_display_to_lens:
 
 - :ref:`float<class_float>` **display_to_lens**
 
@@ -55,7 +55,7 @@ Property Descriptions
 
 The distance between the display and the lenses inside of the device in centimeters.
 
-.. _class_MobileVRInterface_display_width:
+.. _class_MobileVRInterface_property_display_width:
 
 - :ref:`float<class_float>` **display_width**
 
@@ -67,7 +67,7 @@ The distance between the display and the lenses inside of the device in centimet
 
 The width of the display in centimeters.
 
-.. _class_MobileVRInterface_iod:
+.. _class_MobileVRInterface_property_iod:
 
 - :ref:`float<class_float>` **iod**
 
@@ -79,7 +79,7 @@ The width of the display in centimeters.
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
-.. _class_MobileVRInterface_k1:
+.. _class_MobileVRInterface_property_k1:
 
 - :ref:`float<class_float>` **k1**
 
@@ -91,7 +91,7 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
-.. _class_MobileVRInterface_k2:
+.. _class_MobileVRInterface_property_k2:
 
 - :ref:`float<class_float>` **k2**
 
@@ -103,7 +103,7 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 The k2 lens factor, see k1.
 
-.. _class_MobileVRInterface_oversample:
+.. _class_MobileVRInterface_property_oversample:
 
 - :ref:`float<class_float>` **oversample**
 

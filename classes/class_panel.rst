@@ -19,13 +19,13 @@ Provides an opaque background for :ref:`Control<class_Control>` children.
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_panel>`     |
-+---------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panelf<class_Panel_panelf>`   |
-+---------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panelnc<class_Panel_panelnc>` |
-+---------------------------------+-------------------------------------+
++---------------------------------+---------+
+| :ref:`StyleBox<class_StyleBox>` | panel   |
++---------------------------------+---------+
+| :ref:`StyleBox<class_StyleBox>` | panelf  |
++---------------------------------+---------+
+| :ref:`StyleBox<class_StyleBox>` | panelnc |
++---------------------------------+---------+
 
 Description
 -----------

@@ -19,21 +19,21 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`time_left<class_SceneTreeTimer_time_left>` |
-+---------------------------+--------------------------------------------------+
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`time_left<class_SceneTreeTimer_property_time_left>` |
++---------------------------+-----------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_SceneTreeTimer_timeout:
+.. _class_SceneTreeTimer_signal_timeout:
 
 - **timeout** **(** **)**
 
 Property Descriptions
 ---------------------
 
-.. _class_SceneTreeTimer_time_left:
+.. _class_SceneTreeTimer_property_time_left:
 
 - :ref:`float<class_float>` **time_left**
 

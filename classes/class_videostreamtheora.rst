@@ -19,20 +19,20 @@ Brief Description
 Methods
 -------
 
-+------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`  | :ref:`get_file<class_VideoStreamTheora_get_file>` **(** **)**                                  |
-+------------------------------+------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_file<class_VideoStreamTheora_set_file>` **(** :ref:`String<class_String>` file **)** |
-+------------------------------+------------------------------------------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamTheora_method_get_file>` **(** **)**                                  |
++-----------------------------+-------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`set_file<class_VideoStreamTheora_method_set_file>` **(** :ref:`String<class_String>` file **)** |
++-----------------------------+-------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_VideoStreamTheora_get_file:
+.. _class_VideoStreamTheora_method_get_file:
 
 - :ref:`String<class_String>` **get_file** **(** **)**
 
-.. _class_VideoStreamTheora_set_file:
+.. _class_VideoStreamTheora_method_set_file:
 
 - void **set_file** **(** :ref:`String<class_String>` file **)**
 

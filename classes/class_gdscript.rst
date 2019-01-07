@@ -19,18 +19,18 @@ A script implemented in the GDScript programming language.
 Methods
 -------
 
-+--------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>` **(** **)** const |
-+--------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                | :ref:`new<class_GDScript_new>` **(** **)** vararg                          |
-+--------------------------------------------+----------------------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`               | :ref:`new<class_GDScript_method_new>` **(** **)** vararg                          |
++-------------------------------------------+-----------------------------------------------------------------------------------+
 
 Description
 -----------
 
 A script implemented in the GDScript programming language. The script exends the functionality of all objects that instance it.
 
-:ref:`new<class_GDScript_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+:ref:`new<class_GDScript_method_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
 Tutorials
 ---------
@@ -40,13 +40,13 @@ Tutorials
 Method Descriptions
 -------------------
 
-.. _class_GDScript_get_as_byte_code:
+.. _class_GDScript_method_get_as_byte_code:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 
-.. _class_GDScript_new:
+.. _class_GDScript_method_new:
 
 - :ref:`Object<class_Object>` **new** **(** **)** vararg
 

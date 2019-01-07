@@ -21,35 +21,35 @@ Base class for all resources.
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_resource_local_to_scene>` |
-+-----------------------------+------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_resource_name>`                     |
-+-----------------------------+------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_resource_path>`                     |
-+-----------------------------+------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` |
++-----------------------------+---------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     |
++-----------------------------+---------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     |
++-----------------------------+---------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>` **(** **)** virtual                  |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`  | :ref:`duplicate<class_Resource_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`          | :ref:`get_local_scene<class_Resource_get_local_scene>` **(** **)** const                                |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`            | :ref:`get_rid<class_Resource_get_rid>` **(** **)** const                                                |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`setup_local_to_scene<class_Resource_setup_local_to_scene>` **(** **)**                            |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`take_over_path<class_Resource_take_over_path>` **(** :ref:`String<class_String>` path **)**       |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** virtual                  |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** const                                |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** const                                                |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` **(** **)**                            |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`take_over_path<class_Resource_method_take_over_path>` **(** :ref:`String<class_String>` path **)**       |
++---------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_Resource_changed:
+.. _class_Resource_signal_changed:
 
 - **changed** **(** **)**
 
@@ -61,7 +61,7 @@ Resource is the base class for all resource types. Resources are primarily data 
 Property Descriptions
 ---------------------
 
-.. _class_Resource_resource_local_to_scene:
+.. _class_Resource_property_resource_local_to_scene:
 
 - :ref:`bool<class_bool>` **resource_local_to_scene**
 
@@ -71,7 +71,7 @@ Property Descriptions
 | *Getter* | is_local_to_scene()       |
 +----------+---------------------------+
 
-.. _class_Resource_resource_name:
+.. _class_Resource_property_resource_name:
 
 - :ref:`String<class_String>` **resource_name**
 
@@ -81,7 +81,7 @@ Property Descriptions
 | *Getter* | get_name()      |
 +----------+-----------------+
 
-.. _class_Resource_resource_path:
+.. _class_Resource_property_resource_path:
 
 - :ref:`String<class_String>` **resource_path**
 
@@ -94,29 +94,29 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_Resource__setup_local_to_scene:
+.. _class_Resource_method__setup_local_to_scene:
 
 - void **_setup_local_to_scene** **(** **)** virtual
 
-.. _class_Resource_duplicate:
+.. _class_Resource_method_duplicate:
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
-.. _class_Resource_get_local_scene:
+.. _class_Resource_method_get_local_scene:
 
 - :ref:`Node<class_Node>` **get_local_scene** **(** **)** const
 
-.. _class_Resource_get_rid:
+.. _class_Resource_method_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
 Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
 
-.. _class_Resource_setup_local_to_scene:
+.. _class_Resource_method_setup_local_to_scene:
 
 - void **setup_local_to_scene** **(** **)**
 
-.. _class_Resource_take_over_path:
+.. _class_Resource_method_take_over_path:
 
 - void **take_over_path** **(** :ref:`String<class_String>` path **)**
 

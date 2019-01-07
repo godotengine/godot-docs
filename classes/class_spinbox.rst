@@ -19,29 +19,29 @@ Numerical input text field.
 Properties
 ----------
 
-+-----------------------------------+-----------------------------------------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_align>`       |
-+-----------------------------------+-----------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_editable>` |
-+-----------------------------------+-----------------------------------------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_prefix>`     |
-+-----------------------------------+-----------------------------------------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_suffix>`     |
-+-----------------------------------+-----------------------------------------+
++-----------------------------------+--------------------------------------------------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       |
++-----------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` |
++-----------------------------------+--------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     |
++-----------------------------------+--------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     |
++-----------------------------------+--------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------+---------------------------------------------------------------+
-| :ref:`LineEdit<class_LineEdit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)** |
-+----------------------------------+---------------------------------------------------------------+
++---------------------------------+----------------------------------------------------------------------+
+| :ref:`LineEdit<class_LineEdit>` | :ref:`get_line_edit<class_SpinBox_method_get_line_edit>` **(** **)** |
++---------------------------------+----------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-------------------------------+-------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`updown<class_SpinBox_updown>` |
-+-------------------------------+-------------------------------------+
++-------------------------------+--------+
+| :ref:`Texture<class_Texture>` | updown |
++-------------------------------+--------+
 
 Description
 -----------
@@ -51,7 +51,7 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
 Property Descriptions
 ---------------------
 
-.. _class_SpinBox_align:
+.. _class_SpinBox_property_align:
 
 - :ref:`Align<enum_LineEdit_Align>` **align**
 
@@ -61,7 +61,7 @@ Property Descriptions
 | *Getter* | get_align()      |
 +----------+------------------+
 
-.. _class_SpinBox_editable:
+.. _class_SpinBox_property_editable:
 
 - :ref:`bool<class_bool>` **editable**
 
@@ -71,7 +71,7 @@ Property Descriptions
 | *Getter* | is_editable()       |
 +----------+---------------------+
 
-.. _class_SpinBox_prefix:
+.. _class_SpinBox_property_prefix:
 
 - :ref:`String<class_String>` **prefix**
 
@@ -81,7 +81,7 @@ Property Descriptions
 | *Getter* | get_prefix()      |
 +----------+-------------------+
 
-.. _class_SpinBox_suffix:
+.. _class_SpinBox_property_suffix:
 
 - :ref:`String<class_String>` **suffix**
 
@@ -94,7 +94,7 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_SpinBox_get_line_edit:
+.. _class_SpinBox_method_get_line_edit:
 
 - :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 

@@ -17,54 +17,62 @@ Global scope constants and variables.
 Properties
 ----------
 
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`ARVRServer<class_ARVRServer>`                 | :ref:`ARVRServer<class_@GlobalScope_ARVRServer>`                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`AudioServer<class_AudioServer>`               | :ref:`AudioServer<class_@GlobalScope_AudioServer>`               |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`ClassDB<class_ClassDB>`                       | :ref:`ClassDB<class_@GlobalScope_ClassDB>`                       |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Engine<class_Engine>`                         | :ref:`Engine<class_@GlobalScope_Engine>`                         |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Geometry<class_Geometry>`                     | :ref:`Geometry<class_@GlobalScope_Geometry>`                     |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`IP<class_IP>`                                 | :ref:`IP<class_@GlobalScope_IP>`                                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Input<class_Input>`                           | :ref:`Input<class_@GlobalScope_Input>`                           |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`InputMap<class_InputMap>`                     | :ref:`InputMap<class_@GlobalScope_InputMap>`                     |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`JSON<class_JSON>`                             | :ref:`JSON<class_@GlobalScope_JSON>`                             |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`JavaScript<class_JavaScript>`                 | :ref:`JavaScript<class_@GlobalScope_JavaScript>`                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Reference<class_Reference>`                   | :ref:`Marshalls<class_@GlobalScope_Marshalls>`                   |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`OS<class_OS>`                                 | :ref:`OS<class_@GlobalScope_OS>`                                 |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Performance<class_Performance>`               | :ref:`Performance<class_@GlobalScope_Performance>`               |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Physics2DServer<class_Physics2DServer>`       | :ref:`Physics2DServer<class_@GlobalScope_Physics2DServer>`       |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`PhysicsServer<class_PhysicsServer>`           | :ref:`PhysicsServer<class_@GlobalScope_PhysicsServer>`           |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`ProjectSettings<class_ProjectSettings>`       | :ref:`ProjectSettings<class_@GlobalScope_ProjectSettings>`       |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`ResourceLoader<class_ResourceLoader>`         | :ref:`ResourceLoader<class_@GlobalScope_ResourceLoader>`         |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`ResourceSaver<class_ResourceSaver>`           | :ref:`ResourceSaver<class_@GlobalScope_ResourceSaver>`           |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`TranslationServer<class_TranslationServer>`   | :ref:`TranslationServer<class_@GlobalScope_TranslationServer>`   |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`VisualScriptEditor<class_VisualScriptEditor>` | :ref:`VisualScriptEditor<class_@GlobalScope_VisualScriptEditor>` |
-+-----------------------------------------------------+------------------------------------------------------------------+
-| :ref:`VisualServer<class_VisualServer>`             | :ref:`VisualServer<class_@GlobalScope_VisualServer>`             |
-+-----------------------------------------------------+------------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ARVRServer<class_ARVRServer>`                 | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                 |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`AudioServer<class_AudioServer>`               | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`               |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ClassDB<class_ClassDB>`                       | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                       |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Engine<class_Engine>`                         | :ref:`Engine<class_@GlobalScope_property_Engine>`                         |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Geometry<class_Geometry>`                     | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                     |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`IP<class_IP>`                                 | :ref:`IP<class_@GlobalScope_property_IP>`                                 |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Input<class_Input>`                           | :ref:`Input<class_@GlobalScope_property_Input>`                           |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`InputMap<class_InputMap>`                     | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                     |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`JSON<class_JSON>`                             | :ref:`JSON<class_@GlobalScope_property_JSON>`                             |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`JavaScript<class_JavaScript>`                 | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                 |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Reference<class_Reference>`                   | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                   |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`OS<class_OS>`                                 | :ref:`OS<class_@GlobalScope_property_OS>`                                 |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Performance<class_Performance>`               | :ref:`Performance<class_@GlobalScope_property_Performance>`               |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Physics2DServer<class_Physics2DServer>`       | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`       |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`PhysicsServer<class_PhysicsServer>`           | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`           |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ProjectSettings<class_ProjectSettings>`       | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`       |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ResourceLoader<class_ResourceLoader>`         | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`         |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ResourceSaver<class_ResourceSaver>`           | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`           |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`TranslationServer<class_TranslationServer>`   | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`   |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`VisualScriptEditor<class_VisualScriptEditor>` | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>` |
++-----------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`VisualServer<class_VisualServer>`             | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`             |
++-----------------------------------------------------+---------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_@GlobalScope_Margin:
+
+.. _class_@GlobalScope_constant_MARGIN_LEFT:
+
+.. _class_@GlobalScope_constant_MARGIN_TOP:
+
+.. _class_@GlobalScope_constant_MARGIN_RIGHT:
+
+.. _class_@GlobalScope_constant_MARGIN_BOTTOM:
 
 enum **Margin**:
 
@@ -78,6 +86,14 @@ enum **Margin**:
 
 .. _enum_@GlobalScope_Corner:
 
+.. _class_@GlobalScope_constant_CORNER_TOP_LEFT:
+
+.. _class_@GlobalScope_constant_CORNER_TOP_RIGHT:
+
+.. _class_@GlobalScope_constant_CORNER_BOTTOM_RIGHT:
+
+.. _class_@GlobalScope_constant_CORNER_BOTTOM_LEFT:
+
 enum **Corner**:
 
 - **CORNER_TOP_LEFT** = **0**
@@ -90,6 +106,10 @@ enum **Corner**:
 
 .. _enum_@GlobalScope_Orientation:
 
+.. _class_@GlobalScope_constant_VERTICAL:
+
+.. _class_@GlobalScope_constant_HORIZONTAL:
+
 enum **Orientation**:
 
 - **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
@@ -97,6 +117,12 @@ enum **Orientation**:
 - **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
 
 .. _enum_@GlobalScope_HAlign:
+
+.. _class_@GlobalScope_constant_HALIGN_LEFT:
+
+.. _class_@GlobalScope_constant_HALIGN_CENTER:
+
+.. _class_@GlobalScope_constant_HALIGN_RIGHT:
 
 enum **HAlign**:
 
@@ -108,6 +134,12 @@ enum **HAlign**:
 
 .. _enum_@GlobalScope_VAlign:
 
+.. _class_@GlobalScope_constant_VALIGN_TOP:
+
+.. _class_@GlobalScope_constant_VALIGN_CENTER:
+
+.. _class_@GlobalScope_constant_VALIGN_BOTTOM:
+
 enum **VAlign**:
 
 - **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
@@ -117,6 +149,490 @@ enum **VAlign**:
 - **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
 
 .. _enum_@GlobalScope_KeyList:
+
+.. _class_@GlobalScope_constant_KEY_ESCAPE:
+
+.. _class_@GlobalScope_constant_KEY_TAB:
+
+.. _class_@GlobalScope_constant_KEY_BACKTAB:
+
+.. _class_@GlobalScope_constant_KEY_BACKSPACE:
+
+.. _class_@GlobalScope_constant_KEY_ENTER:
+
+.. _class_@GlobalScope_constant_KEY_KP_ENTER:
+
+.. _class_@GlobalScope_constant_KEY_INSERT:
+
+.. _class_@GlobalScope_constant_KEY_DELETE:
+
+.. _class_@GlobalScope_constant_KEY_PAUSE:
+
+.. _class_@GlobalScope_constant_KEY_PRINT:
+
+.. _class_@GlobalScope_constant_KEY_SYSREQ:
+
+.. _class_@GlobalScope_constant_KEY_CLEAR:
+
+.. _class_@GlobalScope_constant_KEY_HOME:
+
+.. _class_@GlobalScope_constant_KEY_END:
+
+.. _class_@GlobalScope_constant_KEY_LEFT:
+
+.. _class_@GlobalScope_constant_KEY_UP:
+
+.. _class_@GlobalScope_constant_KEY_RIGHT:
+
+.. _class_@GlobalScope_constant_KEY_DOWN:
+
+.. _class_@GlobalScope_constant_KEY_PAGEUP:
+
+.. _class_@GlobalScope_constant_KEY_PAGEDOWN:
+
+.. _class_@GlobalScope_constant_KEY_SHIFT:
+
+.. _class_@GlobalScope_constant_KEY_CONTROL:
+
+.. _class_@GlobalScope_constant_KEY_META:
+
+.. _class_@GlobalScope_constant_KEY_ALT:
+
+.. _class_@GlobalScope_constant_KEY_CAPSLOCK:
+
+.. _class_@GlobalScope_constant_KEY_NUMLOCK:
+
+.. _class_@GlobalScope_constant_KEY_SCROLLLOCK:
+
+.. _class_@GlobalScope_constant_KEY_F1:
+
+.. _class_@GlobalScope_constant_KEY_F2:
+
+.. _class_@GlobalScope_constant_KEY_F3:
+
+.. _class_@GlobalScope_constant_KEY_F4:
+
+.. _class_@GlobalScope_constant_KEY_F5:
+
+.. _class_@GlobalScope_constant_KEY_F6:
+
+.. _class_@GlobalScope_constant_KEY_F7:
+
+.. _class_@GlobalScope_constant_KEY_F8:
+
+.. _class_@GlobalScope_constant_KEY_F9:
+
+.. _class_@GlobalScope_constant_KEY_F10:
+
+.. _class_@GlobalScope_constant_KEY_F11:
+
+.. _class_@GlobalScope_constant_KEY_F12:
+
+.. _class_@GlobalScope_constant_KEY_F13:
+
+.. _class_@GlobalScope_constant_KEY_F14:
+
+.. _class_@GlobalScope_constant_KEY_F15:
+
+.. _class_@GlobalScope_constant_KEY_F16:
+
+.. _class_@GlobalScope_constant_KEY_KP_MULTIPLY:
+
+.. _class_@GlobalScope_constant_KEY_KP_DIVIDE:
+
+.. _class_@GlobalScope_constant_KEY_KP_SUBTRACT:
+
+.. _class_@GlobalScope_constant_KEY_KP_PERIOD:
+
+.. _class_@GlobalScope_constant_KEY_KP_ADD:
+
+.. _class_@GlobalScope_constant_KEY_KP_0:
+
+.. _class_@GlobalScope_constant_KEY_KP_1:
+
+.. _class_@GlobalScope_constant_KEY_KP_2:
+
+.. _class_@GlobalScope_constant_KEY_KP_3:
+
+.. _class_@GlobalScope_constant_KEY_KP_4:
+
+.. _class_@GlobalScope_constant_KEY_KP_5:
+
+.. _class_@GlobalScope_constant_KEY_KP_6:
+
+.. _class_@GlobalScope_constant_KEY_KP_7:
+
+.. _class_@GlobalScope_constant_KEY_KP_8:
+
+.. _class_@GlobalScope_constant_KEY_KP_9:
+
+.. _class_@GlobalScope_constant_KEY_SUPER_L:
+
+.. _class_@GlobalScope_constant_KEY_SUPER_R:
+
+.. _class_@GlobalScope_constant_KEY_MENU:
+
+.. _class_@GlobalScope_constant_KEY_HYPER_L:
+
+.. _class_@GlobalScope_constant_KEY_HYPER_R:
+
+.. _class_@GlobalScope_constant_KEY_HELP:
+
+.. _class_@GlobalScope_constant_KEY_DIRECTION_L:
+
+.. _class_@GlobalScope_constant_KEY_DIRECTION_R:
+
+.. _class_@GlobalScope_constant_KEY_BACK:
+
+.. _class_@GlobalScope_constant_KEY_FORWARD:
+
+.. _class_@GlobalScope_constant_KEY_STOP:
+
+.. _class_@GlobalScope_constant_KEY_REFRESH:
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEDOWN:
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEMUTE:
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEUP:
+
+.. _class_@GlobalScope_constant_KEY_BASSBOOST:
+
+.. _class_@GlobalScope_constant_KEY_BASSUP:
+
+.. _class_@GlobalScope_constant_KEY_BASSDOWN:
+
+.. _class_@GlobalScope_constant_KEY_TREBLEUP:
+
+.. _class_@GlobalScope_constant_KEY_TREBLEDOWN:
+
+.. _class_@GlobalScope_constant_KEY_MEDIAPLAY:
+
+.. _class_@GlobalScope_constant_KEY_MEDIASTOP:
+
+.. _class_@GlobalScope_constant_KEY_MEDIAPREVIOUS:
+
+.. _class_@GlobalScope_constant_KEY_MEDIANEXT:
+
+.. _class_@GlobalScope_constant_KEY_MEDIARECORD:
+
+.. _class_@GlobalScope_constant_KEY_HOMEPAGE:
+
+.. _class_@GlobalScope_constant_KEY_FAVORITES:
+
+.. _class_@GlobalScope_constant_KEY_SEARCH:
+
+.. _class_@GlobalScope_constant_KEY_STANDBY:
+
+.. _class_@GlobalScope_constant_KEY_OPENURL:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHMAIL:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHMEDIA:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH0:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH1:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH2:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH3:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH4:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH5:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH6:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH7:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH8:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH9:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHA:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHB:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHC:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHD:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHE:
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHF:
+
+.. _class_@GlobalScope_constant_KEY_UNKNOWN:
+
+.. _class_@GlobalScope_constant_KEY_SPACE:
+
+.. _class_@GlobalScope_constant_KEY_EXCLAM:
+
+.. _class_@GlobalScope_constant_KEY_QUOTEDBL:
+
+.. _class_@GlobalScope_constant_KEY_NUMBERSIGN:
+
+.. _class_@GlobalScope_constant_KEY_DOLLAR:
+
+.. _class_@GlobalScope_constant_KEY_PERCENT:
+
+.. _class_@GlobalScope_constant_KEY_AMPERSAND:
+
+.. _class_@GlobalScope_constant_KEY_APOSTROPHE:
+
+.. _class_@GlobalScope_constant_KEY_PARENLEFT:
+
+.. _class_@GlobalScope_constant_KEY_PARENRIGHT:
+
+.. _class_@GlobalScope_constant_KEY_ASTERISK:
+
+.. _class_@GlobalScope_constant_KEY_PLUS:
+
+.. _class_@GlobalScope_constant_KEY_COMMA:
+
+.. _class_@GlobalScope_constant_KEY_MINUS:
+
+.. _class_@GlobalScope_constant_KEY_PERIOD:
+
+.. _class_@GlobalScope_constant_KEY_SLASH:
+
+.. _class_@GlobalScope_constant_KEY_0:
+
+.. _class_@GlobalScope_constant_KEY_1:
+
+.. _class_@GlobalScope_constant_KEY_2:
+
+.. _class_@GlobalScope_constant_KEY_3:
+
+.. _class_@GlobalScope_constant_KEY_4:
+
+.. _class_@GlobalScope_constant_KEY_5:
+
+.. _class_@GlobalScope_constant_KEY_6:
+
+.. _class_@GlobalScope_constant_KEY_7:
+
+.. _class_@GlobalScope_constant_KEY_8:
+
+.. _class_@GlobalScope_constant_KEY_9:
+
+.. _class_@GlobalScope_constant_KEY_COLON:
+
+.. _class_@GlobalScope_constant_KEY_SEMICOLON:
+
+.. _class_@GlobalScope_constant_KEY_LESS:
+
+.. _class_@GlobalScope_constant_KEY_EQUAL:
+
+.. _class_@GlobalScope_constant_KEY_GREATER:
+
+.. _class_@GlobalScope_constant_KEY_QUESTION:
+
+.. _class_@GlobalScope_constant_KEY_AT:
+
+.. _class_@GlobalScope_constant_KEY_A:
+
+.. _class_@GlobalScope_constant_KEY_B:
+
+.. _class_@GlobalScope_constant_KEY_C:
+
+.. _class_@GlobalScope_constant_KEY_D:
+
+.. _class_@GlobalScope_constant_KEY_E:
+
+.. _class_@GlobalScope_constant_KEY_F:
+
+.. _class_@GlobalScope_constant_KEY_G:
+
+.. _class_@GlobalScope_constant_KEY_H:
+
+.. _class_@GlobalScope_constant_KEY_I:
+
+.. _class_@GlobalScope_constant_KEY_J:
+
+.. _class_@GlobalScope_constant_KEY_K:
+
+.. _class_@GlobalScope_constant_KEY_L:
+
+.. _class_@GlobalScope_constant_KEY_M:
+
+.. _class_@GlobalScope_constant_KEY_N:
+
+.. _class_@GlobalScope_constant_KEY_O:
+
+.. _class_@GlobalScope_constant_KEY_P:
+
+.. _class_@GlobalScope_constant_KEY_Q:
+
+.. _class_@GlobalScope_constant_KEY_R:
+
+.. _class_@GlobalScope_constant_KEY_S:
+
+.. _class_@GlobalScope_constant_KEY_T:
+
+.. _class_@GlobalScope_constant_KEY_U:
+
+.. _class_@GlobalScope_constant_KEY_V:
+
+.. _class_@GlobalScope_constant_KEY_W:
+
+.. _class_@GlobalScope_constant_KEY_X:
+
+.. _class_@GlobalScope_constant_KEY_Y:
+
+.. _class_@GlobalScope_constant_KEY_Z:
+
+.. _class_@GlobalScope_constant_KEY_BRACKETLEFT:
+
+.. _class_@GlobalScope_constant_KEY_BACKSLASH:
+
+.. _class_@GlobalScope_constant_KEY_BRACKETRIGHT:
+
+.. _class_@GlobalScope_constant_KEY_ASCIICIRCUM:
+
+.. _class_@GlobalScope_constant_KEY_UNDERSCORE:
+
+.. _class_@GlobalScope_constant_KEY_QUOTELEFT:
+
+.. _class_@GlobalScope_constant_KEY_BRACELEFT:
+
+.. _class_@GlobalScope_constant_KEY_BAR:
+
+.. _class_@GlobalScope_constant_KEY_BRACERIGHT:
+
+.. _class_@GlobalScope_constant_KEY_ASCIITILDE:
+
+.. _class_@GlobalScope_constant_KEY_NOBREAKSPACE:
+
+.. _class_@GlobalScope_constant_KEY_EXCLAMDOWN:
+
+.. _class_@GlobalScope_constant_KEY_CENT:
+
+.. _class_@GlobalScope_constant_KEY_STERLING:
+
+.. _class_@GlobalScope_constant_KEY_CURRENCY:
+
+.. _class_@GlobalScope_constant_KEY_YEN:
+
+.. _class_@GlobalScope_constant_KEY_BROKENBAR:
+
+.. _class_@GlobalScope_constant_KEY_SECTION:
+
+.. _class_@GlobalScope_constant_KEY_DIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_COPYRIGHT:
+
+.. _class_@GlobalScope_constant_KEY_ORDFEMININE:
+
+.. _class_@GlobalScope_constant_KEY_GUILLEMOTLEFT:
+
+.. _class_@GlobalScope_constant_KEY_NOTSIGN:
+
+.. _class_@GlobalScope_constant_KEY_HYPHEN:
+
+.. _class_@GlobalScope_constant_KEY_REGISTERED:
+
+.. _class_@GlobalScope_constant_KEY_MACRON:
+
+.. _class_@GlobalScope_constant_KEY_DEGREE:
+
+.. _class_@GlobalScope_constant_KEY_PLUSMINUS:
+
+.. _class_@GlobalScope_constant_KEY_TWOSUPERIOR:
+
+.. _class_@GlobalScope_constant_KEY_THREESUPERIOR:
+
+.. _class_@GlobalScope_constant_KEY_ACUTE:
+
+.. _class_@GlobalScope_constant_KEY_MU:
+
+.. _class_@GlobalScope_constant_KEY_PARAGRAPH:
+
+.. _class_@GlobalScope_constant_KEY_PERIODCENTERED:
+
+.. _class_@GlobalScope_constant_KEY_CEDILLA:
+
+.. _class_@GlobalScope_constant_KEY_ONESUPERIOR:
+
+.. _class_@GlobalScope_constant_KEY_MASCULINE:
+
+.. _class_@GlobalScope_constant_KEY_GUILLEMOTRIGHT:
+
+.. _class_@GlobalScope_constant_KEY_ONEQUARTER:
+
+.. _class_@GlobalScope_constant_KEY_ONEHALF:
+
+.. _class_@GlobalScope_constant_KEY_THREEQUARTERS:
+
+.. _class_@GlobalScope_constant_KEY_QUESTIONDOWN:
+
+.. _class_@GlobalScope_constant_KEY_AGRAVE:
+
+.. _class_@GlobalScope_constant_KEY_AACUTE:
+
+.. _class_@GlobalScope_constant_KEY_ACIRCUMFLEX:
+
+.. _class_@GlobalScope_constant_KEY_ATILDE:
+
+.. _class_@GlobalScope_constant_KEY_ADIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_ARING:
+
+.. _class_@GlobalScope_constant_KEY_AE:
+
+.. _class_@GlobalScope_constant_KEY_CCEDILLA:
+
+.. _class_@GlobalScope_constant_KEY_EGRAVE:
+
+.. _class_@GlobalScope_constant_KEY_EACUTE:
+
+.. _class_@GlobalScope_constant_KEY_ECIRCUMFLEX:
+
+.. _class_@GlobalScope_constant_KEY_EDIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_IGRAVE:
+
+.. _class_@GlobalScope_constant_KEY_IACUTE:
+
+.. _class_@GlobalScope_constant_KEY_ICIRCUMFLEX:
+
+.. _class_@GlobalScope_constant_KEY_IDIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_ETH:
+
+.. _class_@GlobalScope_constant_KEY_NTILDE:
+
+.. _class_@GlobalScope_constant_KEY_OGRAVE:
+
+.. _class_@GlobalScope_constant_KEY_OACUTE:
+
+.. _class_@GlobalScope_constant_KEY_OCIRCUMFLEX:
+
+.. _class_@GlobalScope_constant_KEY_OTILDE:
+
+.. _class_@GlobalScope_constant_KEY_ODIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_MULTIPLY:
+
+.. _class_@GlobalScope_constant_KEY_OOBLIQUE:
+
+.. _class_@GlobalScope_constant_KEY_UGRAVE:
+
+.. _class_@GlobalScope_constant_KEY_UACUTE:
+
+.. _class_@GlobalScope_constant_KEY_UCIRCUMFLEX:
+
+.. _class_@GlobalScope_constant_KEY_UDIAERESIS:
+
+.. _class_@GlobalScope_constant_KEY_YACUTE:
+
+.. _class_@GlobalScope_constant_KEY_THORN:
+
+.. _class_@GlobalScope_constant_KEY_SSHARP:
+
+.. _class_@GlobalScope_constant_KEY_DIVISION:
+
+.. _class_@GlobalScope_constant_KEY_YDIAERESIS:
 
 enum **KeyList**:
 
@@ -606,6 +1122,24 @@ enum **KeyList**:
 
 .. _enum_@GlobalScope_KeyModifierMask:
 
+.. _class_@GlobalScope_constant_KEY_CODE_MASK:
+
+.. _class_@GlobalScope_constant_KEY_MODIFIER_MASK:
+
+.. _class_@GlobalScope_constant_KEY_MASK_SHIFT:
+
+.. _class_@GlobalScope_constant_KEY_MASK_ALT:
+
+.. _class_@GlobalScope_constant_KEY_MASK_META:
+
+.. _class_@GlobalScope_constant_KEY_MASK_CTRL:
+
+.. _class_@GlobalScope_constant_KEY_MASK_CMD:
+
+.. _class_@GlobalScope_constant_KEY_MASK_KPAD:
+
+.. _class_@GlobalScope_constant_KEY_MASK_GROUP_SWITCH:
+
 enum **KeyModifierMask**:
 
 - **KEY_CODE_MASK** = **33554431** --- Key Code Mask
@@ -627,6 +1161,34 @@ enum **KeyModifierMask**:
 - **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch Key Mask
 
 .. _enum_@GlobalScope_ButtonList:
+
+.. _class_@GlobalScope_constant_BUTTON_LEFT:
+
+.. _class_@GlobalScope_constant_BUTTON_RIGHT:
+
+.. _class_@GlobalScope_constant_BUTTON_MIDDLE:
+
+.. _class_@GlobalScope_constant_BUTTON_XBUTTON1:
+
+.. _class_@GlobalScope_constant_BUTTON_XBUTTON2:
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_UP:
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_DOWN:
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_LEFT:
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_RIGHT:
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_LEFT:
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_RIGHT:
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_MIDDLE:
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON1:
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON2:
 
 enum **ButtonList**:
 
@@ -659,6 +1221,122 @@ enum **ButtonList**:
 - **BUTTON_MASK_XBUTTON2** = **256** --- Extra Mouse Button 2 Mask
 
 .. _enum_@GlobalScope_JoystickList:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_0:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_1:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_2:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_3:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_4:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_5:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_6:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_7:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_8:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_9:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_10:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_11:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_12:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_13:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_14:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_15:
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MAX:
+
+.. _class_@GlobalScope_constant_JOY_SONY_CIRCLE:
+
+.. _class_@GlobalScope_constant_JOY_SONY_X:
+
+.. _class_@GlobalScope_constant_JOY_SONY_SQUARE:
+
+.. _class_@GlobalScope_constant_JOY_SONY_TRIANGLE:
+
+.. _class_@GlobalScope_constant_JOY_XBOX_B:
+
+.. _class_@GlobalScope_constant_JOY_XBOX_A:
+
+.. _class_@GlobalScope_constant_JOY_XBOX_X:
+
+.. _class_@GlobalScope_constant_JOY_XBOX_Y:
+
+.. _class_@GlobalScope_constant_JOY_DS_A:
+
+.. _class_@GlobalScope_constant_JOY_DS_B:
+
+.. _class_@GlobalScope_constant_JOY_DS_X:
+
+.. _class_@GlobalScope_constant_JOY_DS_Y:
+
+.. _class_@GlobalScope_constant_JOY_SELECT:
+
+.. _class_@GlobalScope_constant_JOY_START:
+
+.. _class_@GlobalScope_constant_JOY_DPAD_UP:
+
+.. _class_@GlobalScope_constant_JOY_DPAD_DOWN:
+
+.. _class_@GlobalScope_constant_JOY_DPAD_LEFT:
+
+.. _class_@GlobalScope_constant_JOY_DPAD_RIGHT:
+
+.. _class_@GlobalScope_constant_JOY_L:
+
+.. _class_@GlobalScope_constant_JOY_L2:
+
+.. _class_@GlobalScope_constant_JOY_L3:
+
+.. _class_@GlobalScope_constant_JOY_R:
+
+.. _class_@GlobalScope_constant_JOY_R2:
+
+.. _class_@GlobalScope_constant_JOY_R3:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_0:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_1:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_2:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_3:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_4:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_5:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_6:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_7:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_8:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_9:
+
+.. _class_@GlobalScope_constant_JOY_AXIS_MAX:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_LX:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_LY:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_RX:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_RY:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_L2:
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_R2:
 
 enum **JoystickList**:
 
@@ -780,6 +1458,20 @@ enum **JoystickList**:
 
 .. _enum_@GlobalScope_MidiMessageList:
 
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_AFTERTOUCH:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_PROGRAM_CHANGE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CHANNEL_PRESSURE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_PITCH_BEND:
+
 enum **MidiMessageList**:
 
 - **MIDI_MESSAGE_NOTE_OFF** = **8**
@@ -797,6 +1489,88 @@ enum **MidiMessageList**:
 - **MIDI_MESSAGE_PITCH_BEND** = **14**
 
 .. _enum_@GlobalScope_Error:
+
+.. _class_@GlobalScope_constant_OK:
+
+.. _class_@GlobalScope_constant_FAILED:
+
+.. _class_@GlobalScope_constant_ERR_UNAVAILABLE:
+
+.. _class_@GlobalScope_constant_ERR_UNCONFIGURED:
+
+.. _class_@GlobalScope_constant_ERR_UNAUTHORIZED:
+
+.. _class_@GlobalScope_constant_ERR_PARAMETER_RANGE_ERROR:
+
+.. _class_@GlobalScope_constant_ERR_OUT_OF_MEMORY:
+
+.. _class_@GlobalScope_constant_ERR_FILE_NOT_FOUND:
+
+.. _class_@GlobalScope_constant_ERR_FILE_BAD_DRIVE:
+
+.. _class_@GlobalScope_constant_ERR_FILE_BAD_PATH:
+
+.. _class_@GlobalScope_constant_ERR_FILE_NO_PERMISSION:
+
+.. _class_@GlobalScope_constant_ERR_FILE_ALREADY_IN_USE:
+
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_OPEN:
+
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_WRITE:
+
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_READ:
+
+.. _class_@GlobalScope_constant_ERR_FILE_UNRECOGNIZED:
+
+.. _class_@GlobalScope_constant_ERR_FILE_CORRUPT:
+
+.. _class_@GlobalScope_constant_ERR_FILE_MISSING_DEPENDENCIES:
+
+.. _class_@GlobalScope_constant_ERR_FILE_EOF:
+
+.. _class_@GlobalScope_constant_ERR_CANT_OPEN:
+
+.. _class_@GlobalScope_constant_ERR_CANT_CREATE:
+
+.. _class_@GlobalScope_constant_ERR_PARSE_ERROR:
+
+.. _class_@GlobalScope_constant_ERR_QUERY_FAILED:
+
+.. _class_@GlobalScope_constant_ERR_ALREADY_IN_USE:
+
+.. _class_@GlobalScope_constant_ERR_LOCKED:
+
+.. _class_@GlobalScope_constant_ERR_TIMEOUT:
+
+.. _class_@GlobalScope_constant_ERR_CANT_ACQUIRE_RESOURCE:
+
+.. _class_@GlobalScope_constant_ERR_INVALID_DATA:
+
+.. _class_@GlobalScope_constant_ERR_INVALID_PARAMETER:
+
+.. _class_@GlobalScope_constant_ERR_ALREADY_EXISTS:
+
+.. _class_@GlobalScope_constant_ERR_DOES_NOT_EXIST:
+
+.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_READ:
+
+.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_WRITE:
+
+.. _class_@GlobalScope_constant_ERR_COMPILATION_FAILED:
+
+.. _class_@GlobalScope_constant_ERR_METHOD_NOT_FOUND:
+
+.. _class_@GlobalScope_constant_ERR_LINK_FAILED:
+
+.. _class_@GlobalScope_constant_ERR_SCRIPT_FAILED:
+
+.. _class_@GlobalScope_constant_ERR_CYCLIC_LINK:
+
+.. _class_@GlobalScope_constant_ERR_BUSY:
+
+.. _class_@GlobalScope_constant_ERR_HELP:
+
+.. _class_@GlobalScope_constant_ERR_BUG:
 
 enum **Error**:
 
@@ -884,6 +1658,50 @@ enum **Error**:
 
 .. _enum_@GlobalScope_PropertyHint:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NONE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_RANGE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_RANGE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_EASING:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LENGTH:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_KEY_ACCEL:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_FLAGS:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_RENDER:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_PHYSICS:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_RENDER:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_PHYSICS:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_DIR:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_FILE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_RESOURCE_TYPE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_MULTILINE_TEXT:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSY:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
+
 enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
@@ -932,6 +1750,36 @@ enum **PropertyHint**:
 
 .. _enum_@GlobalScope_PropertyUsageFlags:
 
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NETWORK:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_HELPER:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKED:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNATIONALIZED:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_GROUP:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CATEGORY:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_INSTANCE_STATE:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_RESTART_IF_CHANGED:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT_INTL:
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NOEDITOR:
+
 enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
@@ -966,6 +1814,22 @@ enum **PropertyUsageFlags**:
 
 .. _enum_@GlobalScope_MethodFlags:
 
+.. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_EDITOR:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_NOSCRIPT:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_CONST:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_REVERSE:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_VIRTUAL:
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_FROM_SCRIPT:
+
+.. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
+
 enum **MethodFlags**:
 
 - **METHOD_FLAG_NORMAL** = **1** --- Flag for normal method
@@ -985,6 +1849,62 @@ enum **MethodFlags**:
 - **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags
 
 .. _enum_@GlobalScope_Variant.Type:
+
+.. _class_@GlobalScope_constant_TYPE_NIL:
+
+.. _class_@GlobalScope_constant_TYPE_BOOL:
+
+.. _class_@GlobalScope_constant_TYPE_INT:
+
+.. _class_@GlobalScope_constant_TYPE_REAL:
+
+.. _class_@GlobalScope_constant_TYPE_STRING:
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR2:
+
+.. _class_@GlobalScope_constant_TYPE_RECT2:
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR3:
+
+.. _class_@GlobalScope_constant_TYPE_TRANSFORM2D:
+
+.. _class_@GlobalScope_constant_TYPE_PLANE:
+
+.. _class_@GlobalScope_constant_TYPE_QUAT:
+
+.. _class_@GlobalScope_constant_TYPE_AABB:
+
+.. _class_@GlobalScope_constant_TYPE_BASIS:
+
+.. _class_@GlobalScope_constant_TYPE_TRANSFORM:
+
+.. _class_@GlobalScope_constant_TYPE_COLOR:
+
+.. _class_@GlobalScope_constant_TYPE_NODE_PATH:
+
+.. _class_@GlobalScope_constant_TYPE_RID:
+
+.. _class_@GlobalScope_constant_TYPE_OBJECT:
+
+.. _class_@GlobalScope_constant_TYPE_DICTIONARY:
+
+.. _class_@GlobalScope_constant_TYPE_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_RAW_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_INT_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_REAL_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_STRING_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR2_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR3_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_COLOR_ARRAY:
+
+.. _class_@GlobalScope_constant_TYPE_MAX:
 
 enum **Variant.Type**:
 
@@ -1046,6 +1966,58 @@ enum **Variant.Type**:
 
 .. _enum_@GlobalScope_Variant.Operator:
 
+.. _class_@GlobalScope_constant_OP_EQUAL:
+
+.. _class_@GlobalScope_constant_OP_NOT_EQUAL:
+
+.. _class_@GlobalScope_constant_OP_LESS:
+
+.. _class_@GlobalScope_constant_OP_LESS_EQUAL:
+
+.. _class_@GlobalScope_constant_OP_GREATER:
+
+.. _class_@GlobalScope_constant_OP_GREATER_EQUAL:
+
+.. _class_@GlobalScope_constant_OP_ADD:
+
+.. _class_@GlobalScope_constant_OP_SUBTRACT:
+
+.. _class_@GlobalScope_constant_OP_MULTIPLY:
+
+.. _class_@GlobalScope_constant_OP_DIVIDE:
+
+.. _class_@GlobalScope_constant_OP_NEGATE:
+
+.. _class_@GlobalScope_constant_OP_POSITIVE:
+
+.. _class_@GlobalScope_constant_OP_MODULE:
+
+.. _class_@GlobalScope_constant_OP_STRING_CONCAT:
+
+.. _class_@GlobalScope_constant_OP_SHIFT_LEFT:
+
+.. _class_@GlobalScope_constant_OP_SHIFT_RIGHT:
+
+.. _class_@GlobalScope_constant_OP_BIT_AND:
+
+.. _class_@GlobalScope_constant_OP_BIT_OR:
+
+.. _class_@GlobalScope_constant_OP_BIT_XOR:
+
+.. _class_@GlobalScope_constant_OP_BIT_NEGATE:
+
+.. _class_@GlobalScope_constant_OP_AND:
+
+.. _class_@GlobalScope_constant_OP_OR:
+
+.. _class_@GlobalScope_constant_OP_XOR:
+
+.. _class_@GlobalScope_constant_OP_NOT:
+
+.. _class_@GlobalScope_constant_OP_IN:
+
+.. _class_@GlobalScope_constant_OP_MAX:
+
 enum **Variant.Operator**:
 
 - **OP_EQUAL** = **0**
@@ -1103,6 +2075,8 @@ enum **Variant.Operator**:
 Constants
 ---------
 
+.. _class_@GlobalScope_constant_SPKEY:
+
 - **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
 
 Description
@@ -1115,127 +2089,127 @@ Singletons are also documented here, since they can be accessed from anywhere.
 Property Descriptions
 ---------------------
 
-.. _class_@GlobalScope_ARVRServer:
+.. _class_@GlobalScope_property_ARVRServer:
 
 - :ref:`ARVRServer<class_ARVRServer>` **ARVRServer**
 
 :ref:`ARVRServer<class_ARVRServer>` singleton
 
-.. _class_@GlobalScope_AudioServer:
+.. _class_@GlobalScope_property_AudioServer:
 
 - :ref:`AudioServer<class_AudioServer>` **AudioServer**
 
 :ref:`AudioServer<class_AudioServer>` singleton
 
-.. _class_@GlobalScope_ClassDB:
+.. _class_@GlobalScope_property_ClassDB:
 
 - :ref:`ClassDB<class_ClassDB>` **ClassDB**
 
 :ref:`ClassDB<class_ClassDB>` singleton
 
-.. _class_@GlobalScope_Engine:
+.. _class_@GlobalScope_property_Engine:
 
 - :ref:`Engine<class_Engine>` **Engine**
 
 :ref:`Engine<class_Engine>` singleton
 
-.. _class_@GlobalScope_Geometry:
+.. _class_@GlobalScope_property_Geometry:
 
 - :ref:`Geometry<class_Geometry>` **Geometry**
 
 :ref:`Geometry<class_Geometry>` singleton
 
-.. _class_@GlobalScope_IP:
+.. _class_@GlobalScope_property_IP:
 
 - :ref:`IP<class_IP>` **IP**
 
 :ref:`IP<class_IP>` singleton
 
-.. _class_@GlobalScope_Input:
+.. _class_@GlobalScope_property_Input:
 
 - :ref:`Input<class_Input>` **Input**
 
 :ref:`Input<class_Input>` singleton
 
-.. _class_@GlobalScope_InputMap:
+.. _class_@GlobalScope_property_InputMap:
 
 - :ref:`InputMap<class_InputMap>` **InputMap**
 
 :ref:`InputMap<class_InputMap>` singleton
 
-.. _class_@GlobalScope_JSON:
+.. _class_@GlobalScope_property_JSON:
 
 - :ref:`JSON<class_JSON>` **JSON**
 
 :ref:`JSON<class_JSON>` singleton
 
-.. _class_@GlobalScope_JavaScript:
+.. _class_@GlobalScope_property_JavaScript:
 
 - :ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 :ref:`JavaScript<class_JavaScript>` singleton
 
-.. _class_@GlobalScope_Marshalls:
+.. _class_@GlobalScope_property_Marshalls:
 
 - :ref:`Reference<class_Reference>` **Marshalls**
 
 :ref:`Marshalls<class_Marshalls>` singleton
 
-.. _class_@GlobalScope_OS:
+.. _class_@GlobalScope_property_OS:
 
 - :ref:`OS<class_OS>` **OS**
 
 :ref:`OS<class_OS>` singleton
 
-.. _class_@GlobalScope_Performance:
+.. _class_@GlobalScope_property_Performance:
 
 - :ref:`Performance<class_Performance>` **Performance**
 
 :ref:`Performance<class_Performance>` singleton
 
-.. _class_@GlobalScope_Physics2DServer:
+.. _class_@GlobalScope_property_Physics2DServer:
 
 - :ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer**
 
 :ref:`Physics2DServer<class_Physics2DServer>` singleton
 
-.. _class_@GlobalScope_PhysicsServer:
+.. _class_@GlobalScope_property_PhysicsServer:
 
 - :ref:`PhysicsServer<class_PhysicsServer>` **PhysicsServer**
 
 :ref:`PhysicsServer<class_PhysicsServer>` singleton
 
-.. _class_@GlobalScope_ProjectSettings:
+.. _class_@GlobalScope_property_ProjectSettings:
 
 - :ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
 
 :ref:`ProjectSettings<class_ProjectSettings>` singleton
 
-.. _class_@GlobalScope_ResourceLoader:
+.. _class_@GlobalScope_property_ResourceLoader:
 
 - :ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader**
 
 :ref:`ResourceLoader<class_ResourceLoader>` singleton
 
-.. _class_@GlobalScope_ResourceSaver:
+.. _class_@GlobalScope_property_ResourceSaver:
 
 - :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
 
 :ref:`ResourceSaver<class_ResourceSaver>` singleton
 
-.. _class_@GlobalScope_TranslationServer:
+.. _class_@GlobalScope_property_TranslationServer:
 
 - :ref:`TranslationServer<class_TranslationServer>` **TranslationServer**
 
 :ref:`TranslationServer<class_TranslationServer>` singleton
 
-.. _class_@GlobalScope_VisualScriptEditor:
+.. _class_@GlobalScope_property_VisualScriptEditor:
 
 - :ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor**
 
 :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton
 
-.. _class_@GlobalScope_VisualServer:
+.. _class_@GlobalScope_property_VisualServer:
 
 - :ref:`VisualServer<class_VisualServer>` **VisualServer**
 

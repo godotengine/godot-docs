@@ -19,29 +19,29 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+---------------------------------------------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_fps>`       |
-+---------------------------+---------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_frames>` |
-+---------------------------+---------------------------------------------+
++---------------------------+------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`       |
++---------------------------+------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>` |
++---------------------------+------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_frame_delay<class_AnimatedTexture_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** const                                      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`  | :ref:`get_frame_texture<class_AnimatedTexture_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** const                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_frame_delay<class_AnimatedTexture_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_frame_texture<class_AnimatedTexture_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** const                                      |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** const                                  |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_AnimatedTexture_fps:
+.. _class_AnimatedTexture_property_fps:
 
 - :ref:`float<class_float>` **fps**
 
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | get_fps()      |
 +----------+----------------+
 
-.. _class_AnimatedTexture_frames:
+.. _class_AnimatedTexture_property_frames:
 
 - :ref:`int<class_int>` **frames**
 
@@ -64,19 +64,19 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_AnimatedTexture_get_frame_delay:
+.. _class_AnimatedTexture_method_get_frame_delay:
 
 - :ref:`float<class_float>` **get_frame_delay** **(** :ref:`int<class_int>` frame **)** const
 
-.. _class_AnimatedTexture_get_frame_texture:
+.. _class_AnimatedTexture_method_get_frame_texture:
 
 - :ref:`Texture<class_Texture>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** const
 
-.. _class_AnimatedTexture_set_frame_delay:
+.. _class_AnimatedTexture_method_set_frame_delay:
 
 - void **set_frame_delay** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**
 
-.. _class_AnimatedTexture_set_frame_texture:
+.. _class_AnimatedTexture_method_set_frame_texture:
 
 - void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture<class_Texture>` texture **)**
 

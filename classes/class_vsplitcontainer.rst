@@ -19,15 +19,15 @@ Vertical split container.
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`autohide<class_VSplitContainer_autohide>`     |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_VSplitContainer_bg>`                 |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_VSplitContainer_grabber>`       |
-+---------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`separation<class_VSplitContainer_separation>` |
-+---------------------------------+-----------------------------------------------------+
++---------------------------------+------------+
+| :ref:`int<class_int>`           | autohide   |
++---------------------------------+------------+
+| :ref:`StyleBox<class_StyleBox>` | bg         |
++---------------------------------+------------+
+| :ref:`Texture<class_Texture>`   | grabber    |
++---------------------------------+------------+
+| :ref:`int<class_int>`           | separation |
++---------------------------------+------------+
 
 Description
 -----------

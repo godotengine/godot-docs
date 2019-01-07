@@ -19,9 +19,9 @@ Concave polygon 2D shape resource for physics.
 Properties
 ----------
 
-+-------------------------------------------------+-------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_segments>` |
-+-------------------------------------------------+-------------------------------------------------------+
++-------------------------------------------------+----------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` |
++-------------------------------------------------+----------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShap
 Property Descriptions
 ---------------------
 
-.. _class_ConcavePolygonShape2D_segments:
+.. _class_ConcavePolygonShape2D_property_segments:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
 

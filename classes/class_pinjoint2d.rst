@@ -19,9 +19,9 @@ Pin Joint for 2D Shapes.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------+
-| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_softness>` |
-+---------------------------+--------------------------------------------+
++---------------------------+-----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` |
++---------------------------+-----------------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Pin Joint for 2D Rigid Bodies. It pins two bodies (rigid or static) together.
 Property Descriptions
 ---------------------
 
-.. _class_PinJoint2D_softness:
+.. _class_PinJoint2D_property_softness:
 
 - :ref:`float<class_float>` **softness**
 

@@ -19,60 +19,60 @@ Button that pops out a :ref:`ColorPicker<class_ColorPicker>`.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_color>`           |
-+---------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_edit_alpha>` |
-+---------------------------+-------------------------------------------------------+
++---------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           |
++---------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` |
++---------------------------+----------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+-------------------------------------------------------------------+
-| :ref:`ColorPicker<class_ColorPicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
-+----------------------------------------+-------------------------------------------------------------------+
-| :ref:`PopupPanel<class_PopupPanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
-+----------------------------------------+-------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------+
+| :ref:`ColorPicker<class_ColorPicker>` | :ref:`get_picker<class_ColorPickerButton_method_get_picker>` **(** **)** |
++---------------------------------------+--------------------------------------------------------------------------+
+| :ref:`PopupPanel<class_PopupPanel>`   | :ref:`get_popup<class_ColorPickerButton_method_get_popup>` **(** **)**   |
++---------------------------------------+--------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`bg<class_ColorPickerButton_bg>`                                   |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ColorPickerButton_disabled>`                       |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ColorPickerButton_focus>`                             |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ColorPickerButton_font>`                               |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ColorPickerButton_font_color>`                   |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ColorPickerButton_font_color_disabled>` |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ColorPickerButton_font_color_hover>`       |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ColorPickerButton_font_color_pressed>`   |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ColorPickerButton_hover>`                             |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_ColorPickerButton_hseparation>`                 |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ColorPickerButton_normal>`                           |
-+---------------------------------+-------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ColorPickerButton_pressed>`                         |
-+---------------------------------+-------------------------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | bg                  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled            |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color          |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_hover    |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed             |
++---------------------------------+---------------------+
 
 Signals
 -------
 
-.. _class_ColorPickerButton_color_changed:
+.. _class_ColorPickerButton_signal_color_changed:
 
 - **color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color changes.
 
-.. _class_ColorPickerButton_popup_closed:
+.. _class_ColorPickerButton_signal_popup_closed:
 
 - **popup_closed** **(** **)**
 
@@ -84,7 +84,7 @@ Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pre
 Property Descriptions
 ---------------------
 
-.. _class_ColorPickerButton_color:
+.. _class_ColorPickerButton_property_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -96,7 +96,7 @@ Property Descriptions
 
 The currently selected color.
 
-.. _class_ColorPickerButton_edit_alpha:
+.. _class_ColorPickerButton_property_edit_alpha:
 
 - :ref:`bool<class_bool>` **edit_alpha**
 
@@ -111,13 +111,13 @@ If ``true``, the alpha channel in the displayed :ref:`ColorPicker<class_ColorPic
 Method Descriptions
 -------------------
 
-.. _class_ColorPickerButton_get_picker:
+.. _class_ColorPickerButton_method_get_picker:
 
 - :ref:`ColorPicker<class_ColorPicker>` **get_picker** **(** **)**
 
 Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
-.. _class_ColorPickerButton_get_popup:
+.. _class_ColorPickerButton_method_get_popup:
 
 - :ref:`PopupPanel<class_PopupPanel>` **get_popup** **(** **)**
 

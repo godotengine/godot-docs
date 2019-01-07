@@ -19,53 +19,57 @@ Brief Description
 Properties
 ----------
 
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`amount<class_Particles2D_amount>`                     |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`DrawOrder<enum_Particles2D_DrawOrder>` | :ref:`draw_order<class_Particles2D_draw_order>`             |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_emitting>`                 |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`explosiveness<class_Particles2D_explosiveness>`       |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`fixed_fps<class_Particles2D_fixed_fps>`               |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`fract_delta<class_Particles2D_fract_delta>`           |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`lifetime<class_Particles2D_lifetime>`                 |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_local_coords>`         |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_normal_map>`             |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_one_shot>`                 |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`preprocess<class_Particles2D_preprocess>`             |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_process_material>` |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`randomness<class_Particles2D_randomness>`             |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_speed_scale>`           |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_texture>`                   |
-+----------------------------------------------+-------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_visibility_rect>`   |
-+----------------------------------------------+-------------------------------------------------------------+
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`amount<class_Particles2D_property_amount>`                     |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`DrawOrder<enum_Particles2D_DrawOrder>` | :ref:`draw_order<class_Particles2D_property_draw_order>`             |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_property_emitting>`                 |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`explosiveness<class_Particles2D_property_explosiveness>`       |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`fixed_fps<class_Particles2D_property_fixed_fps>`               |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`fract_delta<class_Particles2D_property_fract_delta>`           |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`lifetime<class_Particles2D_property_lifetime>`                 |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_property_local_coords>`         |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_property_one_shot>`                 |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`preprocess<class_Particles2D_property_preprocess>`             |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_property_process_material>` |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`randomness<class_Particles2D_property_randomness>`             |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_property_speed_scale>`           |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   |
++----------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_property_visibility_rect>`   |
++----------------------------------------------+----------------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------+-----------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`  | :ref:`capture_rect<class_Particles2D_capture_rect>` **(** **)** const |
-+----------------------------+-----------------------------------------------------------------------+
-| void                       | :ref:`restart<class_Particles2D_restart>` **(** **)**                 |
-+----------------------------+-----------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_Particles2D_method_capture_rect>` **(** **)** const |
++---------------------------+------------------------------------------------------------------------------+
+| void                      | :ref:`restart<class_Particles2D_method_restart>` **(** **)**                 |
++---------------------------+------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Particles2D_DrawOrder:
+
+.. _class_Particles2D_constant_DRAW_ORDER_INDEX:
+
+.. _class_Particles2D_constant_DRAW_ORDER_LIFETIME:
 
 enum **DrawOrder**:
 
@@ -83,7 +87,7 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 Property Descriptions
 ---------------------
 
-.. _class_Particles2D_amount:
+.. _class_Particles2D_property_amount:
 
 - :ref:`int<class_int>` **amount**
 
@@ -95,7 +99,7 @@ Property Descriptions
 
 Number of particles emitted in one emission cycle.
 
-.. _class_Particles2D_draw_order:
+.. _class_Particles2D_property_draw_order:
 
 - :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order**
 
@@ -107,7 +111,7 @@ Number of particles emitted in one emission cycle.
 
 Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
-.. _class_Particles2D_emitting:
+.. _class_Particles2D_property_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
 
@@ -119,7 +123,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 If ``true``, particles are being emitted. Default value: ``true``.
 
-.. _class_Particles2D_explosiveness:
+.. _class_Particles2D_property_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
 
@@ -131,7 +135,7 @@ If ``true``, particles are being emitted. Default value: ``true``.
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins. Default value: ``0``.
 
-.. _class_Particles2D_fixed_fps:
+.. _class_Particles2D_property_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
 
@@ -141,7 +145,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
-.. _class_Particles2D_fract_delta:
+.. _class_Particles2D_property_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
 
@@ -151,7 +155,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-.. _class_Particles2D_lifetime:
+.. _class_Particles2D_property_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
 
@@ -163,7 +167,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 
 Amount of time each particle will exist. Default value: ``1``.
 
-.. _class_Particles2D_local_coords:
+.. _class_Particles2D_property_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
 
@@ -175,7 +179,7 @@ Amount of time each particle will exist. Default value: ``1``.
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates. Default value: ``true``.
 
-.. _class_Particles2D_normal_map:
+.. _class_Particles2D_property_normal_map:
 
 - :ref:`Texture<class_Texture>` **normal_map**
 
@@ -185,7 +189,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 | *Getter* | get_normal_map()      |
 +----------+-----------------------+
 
-.. _class_Particles2D_one_shot:
+.. _class_Particles2D_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
@@ -197,7 +201,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
 
-.. _class_Particles2D_preprocess:
+.. _class_Particles2D_property_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
 
@@ -209,7 +213,7 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 
 Particle system starts as if it had already run for this many seconds.
 
-.. _class_Particles2D_process_material:
+.. _class_Particles2D_property_process_material:
 
 - :ref:`Material<class_Material>` **process_material**
 
@@ -221,7 +225,7 @@ Particle system starts as if it had already run for this many seconds.
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-.. _class_Particles2D_randomness:
+.. _class_Particles2D_property_randomness:
 
 - :ref:`float<class_float>` **randomness**
 
@@ -233,7 +237,7 @@ Particle system starts as if it had already run for this many seconds.
 
 Emission lifetime randomness ratio. Default value: ``0``.
 
-.. _class_Particles2D_speed_scale:
+.. _class_Particles2D_property_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
 
@@ -245,7 +249,7 @@ Emission lifetime randomness ratio. Default value: ``0``.
 
 Particle system's running speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
-.. _class_Particles2D_texture:
+.. _class_Particles2D_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 
@@ -257,7 +261,7 @@ Particle system's running speed scaling ratio. Default value: ``1``. A value of 
 
 Particle texture. If ``null`` particles will be squares.
 
-.. _class_Particles2D_visibility_rect:
+.. _class_Particles2D_property_visibility_rect:
 
 - :ref:`Rect2<class_Rect2>` **visibility_rect**
 
@@ -272,11 +276,11 @@ Editor visibility helper.
 Method Descriptions
 -------------------
 
-.. _class_Particles2D_capture_rect:
+.. _class_Particles2D_method_capture_rect:
 
 - :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** const
 
-.. _class_Particles2D_restart:
+.. _class_Particles2D_method_restart:
 
 - void **restart** **(** **)**
 

@@ -21,20 +21,20 @@ Input event type for screen drag events.
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_index>`       |
-+-------------------------------+------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_position>` |
-+-------------------------------+------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_relative>` |
-+-------------------------------+------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_speed>`       |
-+-------------------------------+------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       |
++-------------------------------+---------------------------------------------------------------+
 
 Description
 -----------
 
-Contains screen drag information. See :ref:`Node._input<class_Node__input>`.
+Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -44,7 +44,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_InputEventScreenDrag_index:
+.. _class_InputEventScreenDrag_property_index:
 
 - :ref:`int<class_int>` **index**
 
@@ -56,7 +56,7 @@ Property Descriptions
 
 Drag event index in the case of a multi-drag event.
 
-.. _class_InputEventScreenDrag_position:
+.. _class_InputEventScreenDrag_property_position:
 
 - :ref:`Vector2<class_Vector2>` **position**
 
@@ -68,7 +68,7 @@ Drag event index in the case of a multi-drag event.
 
 Drag position.
 
-.. _class_InputEventScreenDrag_relative:
+.. _class_InputEventScreenDrag_property_relative:
 
 - :ref:`Vector2<class_Vector2>` **relative**
 
@@ -80,7 +80,7 @@ Drag position.
 
 Drag position relative to its start position.
 
-.. _class_InputEventScreenDrag_speed:
+.. _class_InputEventScreenDrag_property_speed:
 
 - :ref:`Vector2<class_Vector2>` **speed**
 

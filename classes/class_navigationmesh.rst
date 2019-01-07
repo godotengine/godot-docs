@@ -19,63 +19,69 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`agent/height<class_NavigationMesh_agent/height>`                                                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`agent/max_climb<class_NavigationMesh_agent/max_climb>`                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`agent/max_slope<class_NavigationMesh_agent/max_slope>`                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`agent/radius<class_NavigationMesh_agent/radius>`                                                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`cell/height<class_NavigationMesh_cell/height>`                                                                 |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`cell/size<class_NavigationMesh_cell/size>`                                                                     |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`detail/sample_distance<class_NavigationMesh_detail/sample_distance>`                                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`detail/sample_max_error<class_NavigationMesh_detail/sample_max_error>`                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`edge/max_error<class_NavigationMesh_edge/max_error>`                                                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`edge/max_length<class_NavigationMesh_edge/max_length>`                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`filter/filter_walkable_low_height_spans<class_NavigationMesh_filter/filter_walkable_low_height_spans>`         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`filter/ledge_spans<class_NavigationMesh_filter/ledge_spans>`                                                   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`filter/low_hanging_obstacles<class_NavigationMesh_filter/low_hanging_obstacles>`                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`polygon/verts_per_poly<class_NavigationMesh_polygon/verts_per_poly>`                                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`region/merge_size<class_NavigationMesh_region/merge_size>`                                                     |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`region/min_size<class_NavigationMesh_region/min_size>`                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`sample_partition_type/sample_partition_type<class_NavigationMesh_sample_partition_type/sample_partition_type>` |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`agent/height<class_NavigationMesh_property_agent/height>`                                                               |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`agent/max_climb<class_NavigationMesh_property_agent/max_climb>`                                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`agent/max_slope<class_NavigationMesh_property_agent/max_slope>`                                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`agent/radius<class_NavigationMesh_property_agent/radius>`                                                               |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`cell/height<class_NavigationMesh_property_cell/height>`                                                                 |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`cell/size<class_NavigationMesh_property_cell/size>`                                                                     |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`detail/sample_distance<class_NavigationMesh_property_detail/sample_distance>`                                           |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`detail/sample_max_error<class_NavigationMesh_property_detail/sample_max_error>`                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`edge/max_error<class_NavigationMesh_property_edge/max_error>`                                                           |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`edge/max_length<class_NavigationMesh_property_edge/max_length>`                                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`filter/filter_walkable_low_height_spans<class_NavigationMesh_property_filter/filter_walkable_low_height_spans>`         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`filter/ledge_spans<class_NavigationMesh_property_filter/ledge_spans>`                                                   |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`filter/low_hanging_obstacles<class_NavigationMesh_property_filter/low_hanging_obstacles>`                               |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`polygon/verts_per_poly<class_NavigationMesh_property_polygon/verts_per_poly>`                                           |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`region/merge_size<class_NavigationMesh_property_region/merge_size>`                                                     |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`region/min_size<class_NavigationMesh_property_region/min_size>`                                                         |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`sample_partition_type/sample_partition_type<class_NavigationMesh_property_sample_partition_type/sample_partition_type>` |
++---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_polygon<class_NavigationMesh_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**            |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`clear_polygons<class_NavigationMesh_clear_polygons>` **(** **)**                                                      |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`create_from_mesh<class_NavigationMesh_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                     |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>`          | :ref:`get_polygon<class_NavigationMesh_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                  |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_polygon_count<class_NavigationMesh_get_polygon_count>` **(** **)** const                                          |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>`  | :ref:`get_vertices<class_NavigationMesh_get_vertices>` **(** **)** const                                                    |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_vertices<class_NavigationMesh_set_vertices>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)** |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**            |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>` **(** **)**                                                      |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                     |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                  |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** const                                          |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** const                                                    |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_vertices<class_NavigationMesh_method_set_vertices>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)** |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
+
+.. _class_NavigationMesh_constant_SAMPLE_PARTITION_WATERSHED:
+
+.. _class_NavigationMesh_constant_SAMPLE_PARTITION_MONOTONE:
+
+.. _class_NavigationMesh_constant_SAMPLE_PARTITION_LAYERS:
 
 - **SAMPLE_PARTITION_WATERSHED** = **0**
 
@@ -86,7 +92,7 @@ Constants
 Property Descriptions
 ---------------------
 
-.. _class_NavigationMesh_agent/height:
+.. _class_NavigationMesh_property_agent/height:
 
 - :ref:`float<class_float>` **agent/height**
 
@@ -96,7 +102,7 @@ Property Descriptions
 | *Getter* | get_agent_height()      |
 +----------+-------------------------+
 
-.. _class_NavigationMesh_agent/max_climb:
+.. _class_NavigationMesh_property_agent/max_climb:
 
 - :ref:`float<class_float>` **agent/max_climb**
 
@@ -106,7 +112,7 @@ Property Descriptions
 | *Getter* | get_agent_max_climb()      |
 +----------+----------------------------+
 
-.. _class_NavigationMesh_agent/max_slope:
+.. _class_NavigationMesh_property_agent/max_slope:
 
 - :ref:`float<class_float>` **agent/max_slope**
 
@@ -116,7 +122,7 @@ Property Descriptions
 | *Getter* | get_agent_max_slope()      |
 +----------+----------------------------+
 
-.. _class_NavigationMesh_agent/radius:
+.. _class_NavigationMesh_property_agent/radius:
 
 - :ref:`float<class_float>` **agent/radius**
 
@@ -126,7 +132,7 @@ Property Descriptions
 | *Getter* | get_agent_radius()      |
 +----------+-------------------------+
 
-.. _class_NavigationMesh_cell/height:
+.. _class_NavigationMesh_property_cell/height:
 
 - :ref:`float<class_float>` **cell/height**
 
@@ -136,7 +142,7 @@ Property Descriptions
 | *Getter* | get_cell_height()      |
 +----------+------------------------+
 
-.. _class_NavigationMesh_cell/size:
+.. _class_NavigationMesh_property_cell/size:
 
 - :ref:`float<class_float>` **cell/size**
 
@@ -146,7 +152,7 @@ Property Descriptions
 | *Getter* | get_cell_size()      |
 +----------+----------------------+
 
-.. _class_NavigationMesh_detail/sample_distance:
+.. _class_NavigationMesh_property_detail/sample_distance:
 
 - :ref:`float<class_float>` **detail/sample_distance**
 
@@ -156,7 +162,7 @@ Property Descriptions
 | *Getter* | get_detail_sample_distance()      |
 +----------+-----------------------------------+
 
-.. _class_NavigationMesh_detail/sample_max_error:
+.. _class_NavigationMesh_property_detail/sample_max_error:
 
 - :ref:`float<class_float>` **detail/sample_max_error**
 
@@ -166,7 +172,7 @@ Property Descriptions
 | *Getter* | get_detail_sample_max_error()      |
 +----------+------------------------------------+
 
-.. _class_NavigationMesh_edge/max_error:
+.. _class_NavigationMesh_property_edge/max_error:
 
 - :ref:`float<class_float>` **edge/max_error**
 
@@ -176,7 +182,7 @@ Property Descriptions
 | *Getter* | get_edge_max_error()      |
 +----------+---------------------------+
 
-.. _class_NavigationMesh_edge/max_length:
+.. _class_NavigationMesh_property_edge/max_length:
 
 - :ref:`float<class_float>` **edge/max_length**
 
@@ -186,7 +192,7 @@ Property Descriptions
 | *Getter* | get_edge_max_length()      |
 +----------+----------------------------+
 
-.. _class_NavigationMesh_filter/filter_walkable_low_height_spans:
+.. _class_NavigationMesh_property_filter/filter_walkable_low_height_spans:
 
 - :ref:`bool<class_bool>` **filter/filter_walkable_low_height_spans**
 
@@ -196,7 +202,7 @@ Property Descriptions
 | *Getter* | get_filter_walkable_low_height_spans()      |
 +----------+---------------------------------------------+
 
-.. _class_NavigationMesh_filter/ledge_spans:
+.. _class_NavigationMesh_property_filter/ledge_spans:
 
 - :ref:`bool<class_bool>` **filter/ledge_spans**
 
@@ -206,7 +212,7 @@ Property Descriptions
 | *Getter* | get_filter_ledge_spans()      |
 +----------+-------------------------------+
 
-.. _class_NavigationMesh_filter/low_hanging_obstacles:
+.. _class_NavigationMesh_property_filter/low_hanging_obstacles:
 
 - :ref:`bool<class_bool>` **filter/low_hanging_obstacles**
 
@@ -216,7 +222,7 @@ Property Descriptions
 | *Getter* | get_filter_low_hanging_obstacles()      |
 +----------+-----------------------------------------+
 
-.. _class_NavigationMesh_polygon/verts_per_poly:
+.. _class_NavigationMesh_property_polygon/verts_per_poly:
 
 - :ref:`float<class_float>` **polygon/verts_per_poly**
 
@@ -226,7 +232,7 @@ Property Descriptions
 | *Getter* | get_verts_per_poly()      |
 +----------+---------------------------+
 
-.. _class_NavigationMesh_region/merge_size:
+.. _class_NavigationMesh_property_region/merge_size:
 
 - :ref:`float<class_float>` **region/merge_size**
 
@@ -236,7 +242,7 @@ Property Descriptions
 | *Getter* | get_region_merge_size()      |
 +----------+------------------------------+
 
-.. _class_NavigationMesh_region/min_size:
+.. _class_NavigationMesh_property_region/min_size:
 
 - :ref:`float<class_float>` **region/min_size**
 
@@ -246,7 +252,7 @@ Property Descriptions
 | *Getter* | get_region_min_size()      |
 +----------+----------------------------+
 
-.. _class_NavigationMesh_sample_partition_type/sample_partition_type:
+.. _class_NavigationMesh_property_sample_partition_type/sample_partition_type:
 
 - :ref:`int<class_int>` **sample_partition_type/sample_partition_type**
 
@@ -259,31 +265,31 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_NavigationMesh_add_polygon:
+.. _class_NavigationMesh_method_add_polygon:
 
 - void **add_polygon** **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**
 
-.. _class_NavigationMesh_clear_polygons:
+.. _class_NavigationMesh_method_clear_polygons:
 
 - void **clear_polygons** **(** **)**
 
-.. _class_NavigationMesh_create_from_mesh:
+.. _class_NavigationMesh_method_create_from_mesh:
 
 - void **create_from_mesh** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
-.. _class_NavigationMesh_get_polygon:
+.. _class_NavigationMesh_method_get_polygon:
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
 
-.. _class_NavigationMesh_get_polygon_count:
+.. _class_NavigationMesh_method_get_polygon_count:
 
 - :ref:`int<class_int>` **get_polygon_count** **(** **)** const
 
-.. _class_NavigationMesh_get_vertices:
+.. _class_NavigationMesh_method_get_vertices:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_vertices** **(** **)** const
 
-.. _class_NavigationMesh_set_vertices:
+.. _class_NavigationMesh_method_set_vertices:
 
 - void **set_vertices** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` vertices **)**
 

@@ -19,18 +19,34 @@ Control for drawing textures.
 Properties
 ----------
 
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_expand>`             |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_stretch_mode>` |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_texture>`           |
-+--------------------------------------------------+-----------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |
++--------------------------------------------------+--------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_TextureRect_StretchMode:
+
+.. _class_TextureRect_constant_STRETCH_SCALE_ON_EXPAND:
+
+.. _class_TextureRect_constant_STRETCH_SCALE:
+
+.. _class_TextureRect_constant_STRETCH_TILE:
+
+.. _class_TextureRect_constant_STRETCH_KEEP:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_CENTERED:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_CENTERED:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_COVERED:
 
 enum **StretchMode**:
 
@@ -53,12 +69,12 @@ enum **StretchMode**:
 Description
 -----------
 
-Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
+Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
 Property Descriptions
 ---------------------
 
-.. _class_TextureRect_expand:
+.. _class_TextureRect_property_expand:
 
 - :ref:`bool<class_bool>` **expand**
 
@@ -70,7 +86,7 @@ Property Descriptions
 
 If ``true``, the texture scales to fit its bounding rectangle. Default value: ``false``.
 
-.. _class_TextureRect_stretch_mode:
+.. _class_TextureRect_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
 
@@ -80,9 +96,9 @@ If ``true``, the texture scales to fit its bounding rectangle. Default value: ``
 | *Getter* | get_stretch_mode()      |
 +----------+-------------------------+
 
-Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_@GlobalScope_StretchMode>`.
+Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
 
-.. _class_TextureRect_texture:
+.. _class_TextureRect_property_texture:
 
 - :ref:`Texture<class_Texture>` **texture**
 

@@ -23,13 +23,13 @@ Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_AudioEffectEQ6
 Methods
 -------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_band_count<class_AudioEffectEQ_get_band_count>` **(** **)** const                                                                   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_band_gain_db<class_AudioEffectEQ_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** const                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_band_gain_db<class_AudioEffectEQ_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** const                                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** const                                |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,19 +39,19 @@ AudioEffectEQ gives you control over frequencies. Use it to compensate for exist
 Method Descriptions
 -------------------
 
-.. _class_AudioEffectEQ_get_band_count:
+.. _class_AudioEffectEQ_method_get_band_count:
 
 - :ref:`int<class_int>` **get_band_count** **(** **)** const
 
 Returns the number of bands of the equalizer.
 
-.. _class_AudioEffectEQ_get_band_gain_db:
+.. _class_AudioEffectEQ_method_get_band_gain_db:
 
 - :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** const
 
 Returns the band's gain at the specified index, in dB.
 
-.. _class_AudioEffectEQ_set_band_gain_db:
+.. _class_AudioEffectEQ_method_set_band_gain_db:
 
 - void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
 

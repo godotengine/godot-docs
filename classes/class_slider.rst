@@ -21,17 +21,17 @@ Base class for GUI Sliders.
 Properties
 ----------
 
-+------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_editable>`                 |
-+------------------------------------------+--------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_focus_mode>`             |
-+------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_scrollable>`             |
-+------------------------------------------+--------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_tick_count>`             |
-+------------------------------------------+--------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_ticks_on_borders>` |
-+------------------------------------------+--------------------------------------------------------+
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_property_focus_mode>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` |
++------------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
@@ -41,7 +41,7 @@ Base class for GUI Sliders.
 Property Descriptions
 ---------------------
 
-.. _class_Slider_editable:
+.. _class_Slider_property_editable:
 
 - :ref:`bool<class_bool>` **editable**
 
@@ -51,7 +51,7 @@ Property Descriptions
 | *Getter* | is_editable()       |
 +----------+---------------------+
 
-.. _class_Slider_focus_mode:
+.. _class_Slider_property_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
@@ -61,7 +61,7 @@ Property Descriptions
 | *Getter* | get_focus_mode()      |
 +----------+-----------------------+
 
-.. _class_Slider_scrollable:
+.. _class_Slider_property_scrollable:
 
 - :ref:`bool<class_bool>` **scrollable**
 
@@ -71,7 +71,7 @@ Property Descriptions
 | *Getter* | is_scrollable()       |
 +----------+-----------------------+
 
-.. _class_Slider_tick_count:
+.. _class_Slider_property_tick_count:
 
 - :ref:`int<class_int>` **tick_count**
 
@@ -81,7 +81,7 @@ Property Descriptions
 | *Getter* | get_ticks()      |
 +----------+------------------+
 
-.. _class_Slider_ticks_on_borders:
+.. _class_Slider_property_ticks_on_borders:
 
 - :ref:`bool<class_bool>` **ticks_on_borders**
 

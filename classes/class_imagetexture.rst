@@ -19,51 +19,57 @@ A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`.
 Properties
 ----------
 
-+-------------------------------------------+--------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_lossy_quality>` |
-+-------------------------------------------+--------------------------------------------------------+
-| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_storage>`             |
-+-------------------------------------------+--------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` |
++-------------------------------------------+-----------------------------------------------------------------+
+| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             |
++-------------------------------------------+-----------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`create<class_ImageTexture_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)** |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`create_from_image<class_ImageTexture_create_from_image>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**                                              |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>`       | :ref:`get_format<class_ImageTexture_get_format>` **(** **)** const                                                                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`load<class_ImageTexture_load>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_data<class_ImageTexture_set_data>` **(** :ref:`Image<class_Image>` image **)**                                                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_size_override<class_ImageTexture_set_size_override>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                          |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`create<class_ImageTexture_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)** |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**                                              |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Format<enum_Image_Format>`      | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** const                                                                                                                     |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_ImageTexture_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                      |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_data<class_ImageTexture_method_set_data>` **(** :ref:`Image<class_Image>` image **)**                                                                                               |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                          |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_ImageTexture_Storage:
 
+.. _class_ImageTexture_constant_STORAGE_RAW:
+
+.. _class_ImageTexture_constant_STORAGE_COMPRESS_LOSSY:
+
+.. _class_ImageTexture_constant_STORAGE_COMPRESS_LOSSLESS:
+
 enum **Storage**:
 
 - **STORAGE_RAW** = **0** --- :ref:`Image<class_Image>` data is stored raw and unaltered.
 
-- **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`lossy_quality<class_ImageTexture_lossy_quality>`.
+- **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_Image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>`.
 
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_Image>` data is compressed with a lossless algorithm.
 
 Description
 -----------
 
-A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_create_from_image>`.
+A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. Can be created from an :ref:`Image<class_Image>` with :ref:`create_from_image<class_ImageTexture_method_create_from_image>`.
 
 Property Descriptions
 ---------------------
 
-.. _class_ImageTexture_lossy_quality:
+.. _class_ImageTexture_property_lossy_quality:
 
 - :ref:`float<class_float>` **lossy_quality**
 
@@ -75,7 +81,7 @@ Property Descriptions
 
 The storage quality for ``STORAGE_COMPRESS_LOSSY``.
 
-.. _class_ImageTexture_storage:
+.. _class_ImageTexture_property_storage:
 
 - :ref:`Storage<enum_ImageTexture_Storage>` **storage**
 
@@ -90,7 +96,7 @@ The storage type (raw, lossy, or compressed).
 Method Descriptions
 -------------------
 
-.. _class_ImageTexture_create:
+.. _class_ImageTexture_method_create:
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)**
 
@@ -98,31 +104,31 @@ Create a new ``ImageTexture`` with ``width`` and ``height``.
 
 ``format`` is a value from :ref:`Format<enum_Image_Format>`, ``flags`` is any combination of :ref:`Flags<enum_Texture_Flags>`.
 
-.. _class_ImageTexture_create_from_image:
+.. _class_ImageTexture_method_create_from_image:
 
 - void **create_from_image** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` flags=7 **)**
 
 Create a new ``ImageTexture`` from an :ref:`Image<class_Image>` with ``flags`` from :ref:`Flags<enum_Texture_Flags>`. An sRGB to linear color space conversion can take place, according to :ref:`Format<enum_Image_Format>`.
 
-.. _class_ImageTexture_get_format:
+.. _class_ImageTexture_method_get_format:
 
 - :ref:`Format<enum_Image_Format>` **get_format** **(** **)** const
 
 Return the format of the ``ImageTexture``, one of :ref:`Format<enum_Image_Format>`.
 
-.. _class_ImageTexture_load:
+.. _class_ImageTexture_method_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Load an ``ImageTexture`` from a file path.
 
-.. _class_ImageTexture_set_data:
+.. _class_ImageTexture_method_set_data:
 
 - void **set_data** **(** :ref:`Image<class_Image>` image **)**
 
 Set the :ref:`Image<class_Image>` of this ``ImageTexture``.
 
-.. _class_ImageTexture_set_size_override:
+.. _class_ImageTexture_method_set_size_override:
 
 - void **set_size_override** **(** :ref:`Vector2<class_Vector2>` size **)**
 

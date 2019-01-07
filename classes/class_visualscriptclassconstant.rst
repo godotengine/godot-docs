@@ -19,16 +19,16 @@ Gets a constant from a given class.
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_base_type>` |
-+-----------------------------+-------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_constant>`   |
-+-----------------------------+-------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` |
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   |
++-----------------------------+----------------------------------------------------------------------+
 
 Description
 -----------
 
-This node returns a constant from a given class, such as constant @GlobalScope.TYPE_INT. See the given class' documentation for available constants.
+This node returns a constant from a given class, such as :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`. See the given class' documentation for available constants.
 
 **Input Ports:**
 
@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptClassConstant_base_type:
+.. _class_VisualScriptClassConstant_property_base_type:
 
 - :ref:`String<class_String>` **base_type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The constant's parent class.
 
-.. _class_VisualScriptClassConstant_constant:
+.. _class_VisualScriptClassConstant_property_constant:
 
 - :ref:`String<class_String>` **constant**
 

@@ -21,14 +21,30 @@ The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky
 Properties
 ----------
 
-+--------------------------------------------+-----------------------------------------------+
-| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_radiance_size>` |
-+--------------------------------------------+-----------------------------------------------+
++--------------------------------------------+--------------------------------------------------------+
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` |
++--------------------------------------------+--------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Sky_RadianceSize:
+
+.. _class_Sky_constant_RADIANCE_SIZE_32:
+
+.. _class_Sky_constant_RADIANCE_SIZE_64:
+
+.. _class_Sky_constant_RADIANCE_SIZE_128:
+
+.. _class_Sky_constant_RADIANCE_SIZE_256:
+
+.. _class_Sky_constant_RADIANCE_SIZE_512:
+
+.. _class_Sky_constant_RADIANCE_SIZE_1024:
+
+.. _class_Sky_constant_RADIANCE_SIZE_2048:
+
+.. _class_Sky_constant_RADIANCE_SIZE_MAX:
 
 enum **RadianceSize**:
 
@@ -56,7 +72,7 @@ The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky
 Property Descriptions
 ---------------------
 
-.. _class_Sky_radiance_size:
+.. _class_Sky_property_radiance_size:
 
 - :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
 

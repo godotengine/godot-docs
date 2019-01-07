@@ -19,11 +19,11 @@ A synchronization Semaphore.
 Methods
 -------
 
-+----------------------------------------+-----------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`post<class_Semaphore_post>` **(** **)** |
-+----------------------------------------+-----------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`wait<class_Semaphore_wait>` **(** **)** |
-+----------------------------------------+-----------------------------------------------+
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
 
 Description
 -----------
@@ -33,13 +33,13 @@ A synchronization Semaphore. Element used to synchronize multiple :ref:`Thread<c
 Method Descriptions
 -------------------
 
-.. _class_Semaphore_post:
+.. _class_Semaphore_method_post:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
 
 Lowers the ``Semaphore``, allowing one more thread in. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 
-.. _class_Semaphore_wait:
+.. _class_Semaphore_method_wait:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 

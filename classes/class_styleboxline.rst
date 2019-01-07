@@ -19,22 +19,22 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_color>`           |
-+---------------------------+--------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_grow_begin>` |
-+---------------------------+--------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_grow_end>`     |
-+---------------------------+--------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_thickness>`   |
-+---------------------------+--------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_vertical>`     |
-+---------------------------+--------------------------------------------------+
++---------------------------+-----------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_StyleBoxLine_property_color>`           |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`grow_begin<class_StyleBoxLine_property_grow_begin>` |
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`grow_end<class_StyleBoxLine_property_grow_end>`     |
++---------------------------+-----------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`thickness<class_StyleBoxLine_property_thickness>`   |
++---------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`vertical<class_StyleBoxLine_property_vertical>`     |
++---------------------------+-----------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_StyleBoxLine_color:
+.. _class_StyleBoxLine_property_color:
 
 - :ref:`Color<class_Color>` **color**
 
@@ -44,7 +44,7 @@ Property Descriptions
 | *Getter* | get_color()      |
 +----------+------------------+
 
-.. _class_StyleBoxLine_grow_begin:
+.. _class_StyleBoxLine_property_grow_begin:
 
 - :ref:`float<class_float>` **grow_begin**
 
@@ -54,7 +54,7 @@ Property Descriptions
 | *Getter* | get_grow_begin()      |
 +----------+-----------------------+
 
-.. _class_StyleBoxLine_grow_end:
+.. _class_StyleBoxLine_property_grow_end:
 
 - :ref:`float<class_float>` **grow_end**
 
@@ -64,7 +64,7 @@ Property Descriptions
 | *Getter* | get_grow_end()      |
 +----------+---------------------+
 
-.. _class_StyleBoxLine_thickness:
+.. _class_StyleBoxLine_property_thickness:
 
 - :ref:`int<class_int>` **thickness**
 
@@ -74,7 +74,7 @@ Property Descriptions
 | *Getter* | get_thickness()      |
 +----------+----------------------+
 
-.. _class_StyleBoxLine_vertical:
+.. _class_StyleBoxLine_property_vertical:
 
 - :ref:`bool<class_bool>` **vertical**
 

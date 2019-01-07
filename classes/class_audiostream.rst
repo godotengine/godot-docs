@@ -21,9 +21,9 @@ Base class for audio streams.
 Methods
 -------
 
-+----------------------------+-------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_AudioStream_get_length>` **(** **)** const |
-+----------------------------+-------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** const |
++---------------------------+--------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,7 +38,7 @@ Tutorials
 Method Descriptions
 -------------------
 
-.. _class_AudioStream_get_length:
+.. _class_AudioStream_method_get_length:
 
 - :ref:`float<class_float>` **get_length** **(** **)** const
 

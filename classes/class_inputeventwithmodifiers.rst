@@ -21,22 +21,22 @@ Base class for keys events with modifiers.
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_alt>`         |
-+-------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_command>` |
-+-------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_control>` |
-+-------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_meta>`       |
-+-------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_shift>`     |
-+-------------------------+-------------------------------------------------------+
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     |
++-------------------------+----------------------------------------------------------------+
 
 Description
 -----------
 
-Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
+Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -46,7 +46,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_InputEventWithModifiers_alt:
+.. _class_InputEventWithModifiers_property_alt:
 
 - :ref:`bool<class_bool>` **alt**
 
@@ -58,7 +58,7 @@ Property Descriptions
 
 State of the Alt modifier.
 
-.. _class_InputEventWithModifiers_command:
+.. _class_InputEventWithModifiers_property_command:
 
 - :ref:`bool<class_bool>` **command**
 
@@ -70,7 +70,7 @@ State of the Alt modifier.
 
 State of the Command modifier.
 
-.. _class_InputEventWithModifiers_control:
+.. _class_InputEventWithModifiers_property_control:
 
 - :ref:`bool<class_bool>` **control**
 
@@ -82,7 +82,7 @@ State of the Command modifier.
 
 State of the Ctrl modifier.
 
-.. _class_InputEventWithModifiers_meta:
+.. _class_InputEventWithModifiers_property_meta:
 
 - :ref:`bool<class_bool>` **meta**
 
@@ -94,7 +94,7 @@ State of the Ctrl modifier.
 
 State of the Meta modifier.
 
-.. _class_InputEventWithModifiers_shift:
+.. _class_InputEventWithModifiers_property_shift:
 
 - :ref:`bool<class_bool>` **shift**
 

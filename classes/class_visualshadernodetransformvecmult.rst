@@ -19,14 +19,22 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------------------------------------------------+
-| :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformVecMult_operator>` |
-+-----------------------------------------------------------------+------------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformVecMult_property_operator>` |
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTransformVecMult_Operator:
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_AxB:
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_BxA:
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_AxB:
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_BxA:
 
 enum **Operator**:
 
@@ -41,7 +49,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeTransformVecMult_operator:
+.. _class_VisualShaderNodeTransformVecMult_property_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **operator**
 

@@ -19,51 +19,71 @@ Hyper-text transfer protocol client.
 Properties
 ----------
 
-+-------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`blocking_mode_enabled<class_HTTPClient_blocking_mode_enabled>` |
-+-------------------------------------+----------------------------------------------------------------------+
-| :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_connection>`                       |
-+-------------------------------------+----------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`blocking_mode_enabled<class_HTTPClient_property_blocking_mode_enabled>` |
++-------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`StreamPeer<class_StreamPeer>` | :ref:`connection<class_HTTPClient_property_connection>`                       |
++-------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`close<class_HTTPClient_close>` **(** **)**                                                                                                                                                                                                  |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**                             |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_response_body_length<class_HTTPClient_get_response_body_length>` **(** **)** const                                                                                                                                                      |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_response_code<class_HTTPClient_get_response_code>` **(** **)** const                                                                                                                                                                    |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`  | :ref:`get_response_headers<class_HTTPClient_get_response_headers>` **(** **)**                                                                                                                                                                    |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`            | :ref:`get_response_headers_as_dictionary<class_HTTPClient_get_response_headers_as_dictionary>` **(** **)**                                                                                                                                        |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_HTTPClient_Status>`          | :ref:`get_status<class_HTTPClient_get_status>` **(** **)** const                                                                                                                                                                                  |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_response<class_HTTPClient_has_response>` **(** **)** const                                                                                                                                                                              |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_response_chunked<class_HTTPClient_is_response_chunked>` **(** **)** const                                                                                                                                                                |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`poll<class_HTTPClient_poll>` **(** **)**                                                                                                                                                                                                    |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                    | :ref:`query_string_from_dict<class_HTTPClient_query_string_from_dict>` **(** :ref:`Dictionary<class_Dictionary>` fields **)**                                                                                                                     |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>`      | :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>` **(** **)**                                                                                                                                                            |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`request<class_HTTPClient_request>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**                    |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`          | :ref:`request_raw<class_HTTPClient_request_raw>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)** |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_read_chunk_size<class_HTTPClient_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                                          |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`close<class_HTTPClient_method_close>` **(** **)**                                                                                                                                                                                                  |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**                             |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_response_body_length<class_HTTPClient_method_get_response_body_length>` **(** **)** const                                                                                                                                                      |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_response_code<class_HTTPClient_method_get_response_code>` **(** **)** const                                                                                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_response_headers<class_HTTPClient_method_get_response_headers>` **(** **)**                                                                                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`get_response_headers_as_dictionary<class_HTTPClient_method_get_response_headers_as_dictionary>` **(** **)**                                                                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Status<enum_HTTPClient_Status>`         | :ref:`get_status<class_HTTPClient_method_get_status>` **(** **)** const                                                                                                                                                                                  |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has_response<class_HTTPClient_method_has_response>` **(** **)** const                                                                                                                                                                              |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_response_chunked<class_HTTPClient_method_is_response_chunked>` **(** **)** const                                                                                                                                                                |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`poll<class_HTTPClient_method_poll>` **(** **)**                                                                                                                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`query_string_from_dict<class_HTTPClient_method_query_string_from_dict>` **(** :ref:`Dictionary<class_Dictionary>` fields **)**                                                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>`     | :ref:`read_response_body_chunk<class_HTTPClient_method_read_response_body_chunk>` **(** **)**                                                                                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request<class_HTTPClient_method_request>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request_raw<class_HTTPClient_method_request_raw>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)** |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_read_chunk_size<class_HTTPClient_method_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_HTTPClient_Method:
+
+.. _class_HTTPClient_constant_METHOD_GET:
+
+.. _class_HTTPClient_constant_METHOD_HEAD:
+
+.. _class_HTTPClient_constant_METHOD_POST:
+
+.. _class_HTTPClient_constant_METHOD_PUT:
+
+.. _class_HTTPClient_constant_METHOD_DELETE:
+
+.. _class_HTTPClient_constant_METHOD_OPTIONS:
+
+.. _class_HTTPClient_constant_METHOD_TRACE:
+
+.. _class_HTTPClient_constant_METHOD_CONNECT:
+
+.. _class_HTTPClient_constant_METHOD_PATCH:
+
+.. _class_HTTPClient_constant_METHOD_MAX:
 
 enum **Method**:
 
@@ -89,6 +109,26 @@ enum **Method**:
 
 .. _enum_HTTPClient_Status:
 
+.. _class_HTTPClient_constant_STATUS_DISCONNECTED:
+
+.. _class_HTTPClient_constant_STATUS_RESOLVING:
+
+.. _class_HTTPClient_constant_STATUS_CANT_RESOLVE:
+
+.. _class_HTTPClient_constant_STATUS_CONNECTING:
+
+.. _class_HTTPClient_constant_STATUS_CANT_CONNECT:
+
+.. _class_HTTPClient_constant_STATUS_CONNECTED:
+
+.. _class_HTTPClient_constant_STATUS_REQUESTING:
+
+.. _class_HTTPClient_constant_STATUS_BODY:
+
+.. _class_HTTPClient_constant_STATUS_CONNECTION_ERROR:
+
+.. _class_HTTPClient_constant_STATUS_SSL_HANDSHAKE_ERROR:
+
 enum **Status**:
 
 - **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
@@ -112,6 +152,128 @@ enum **Status**:
 - **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
 
 .. _enum_HTTPClient_ResponseCode:
+
+.. _class_HTTPClient_constant_RESPONSE_CONTINUE:
+
+.. _class_HTTPClient_constant_RESPONSE_SWITCHING_PROTOCOLS:
+
+.. _class_HTTPClient_constant_RESPONSE_PROCESSING:
+
+.. _class_HTTPClient_constant_RESPONSE_OK:
+
+.. _class_HTTPClient_constant_RESPONSE_CREATED:
+
+.. _class_HTTPClient_constant_RESPONSE_ACCEPTED:
+
+.. _class_HTTPClient_constant_RESPONSE_NON_AUTHORITATIVE_INFORMATION:
+
+.. _class_HTTPClient_constant_RESPONSE_NO_CONTENT:
+
+.. _class_HTTPClient_constant_RESPONSE_RESET_CONTENT:
+
+.. _class_HTTPClient_constant_RESPONSE_PARTIAL_CONTENT:
+
+.. _class_HTTPClient_constant_RESPONSE_MULTI_STATUS:
+
+.. _class_HTTPClient_constant_RESPONSE_ALREADY_REPORTED:
+
+.. _class_HTTPClient_constant_RESPONSE_IM_USED:
+
+.. _class_HTTPClient_constant_RESPONSE_MULTIPLE_CHOICES:
+
+.. _class_HTTPClient_constant_RESPONSE_MOVED_PERMANENTLY:
+
+.. _class_HTTPClient_constant_RESPONSE_FOUND:
+
+.. _class_HTTPClient_constant_RESPONSE_SEE_OTHER:
+
+.. _class_HTTPClient_constant_RESPONSE_NOT_MODIFIED:
+
+.. _class_HTTPClient_constant_RESPONSE_USE_PROXY:
+
+.. _class_HTTPClient_constant_RESPONSE_SWITCH_PROXY:
+
+.. _class_HTTPClient_constant_RESPONSE_TEMPORARY_REDIRECT:
+
+.. _class_HTTPClient_constant_RESPONSE_PERMANENT_REDIRECT:
+
+.. _class_HTTPClient_constant_RESPONSE_BAD_REQUEST:
+
+.. _class_HTTPClient_constant_RESPONSE_UNAUTHORIZED:
+
+.. _class_HTTPClient_constant_RESPONSE_PAYMENT_REQUIRED:
+
+.. _class_HTTPClient_constant_RESPONSE_FORBIDDEN:
+
+.. _class_HTTPClient_constant_RESPONSE_NOT_FOUND:
+
+.. _class_HTTPClient_constant_RESPONSE_METHOD_NOT_ALLOWED:
+
+.. _class_HTTPClient_constant_RESPONSE_NOT_ACCEPTABLE:
+
+.. _class_HTTPClient_constant_RESPONSE_PROXY_AUTHENTICATION_REQUIRED:
+
+.. _class_HTTPClient_constant_RESPONSE_REQUEST_TIMEOUT:
+
+.. _class_HTTPClient_constant_RESPONSE_CONFLICT:
+
+.. _class_HTTPClient_constant_RESPONSE_GONE:
+
+.. _class_HTTPClient_constant_RESPONSE_LENGTH_REQUIRED:
+
+.. _class_HTTPClient_constant_RESPONSE_PRECONDITION_FAILED:
+
+.. _class_HTTPClient_constant_RESPONSE_REQUEST_ENTITY_TOO_LARGE:
+
+.. _class_HTTPClient_constant_RESPONSE_REQUEST_URI_TOO_LONG:
+
+.. _class_HTTPClient_constant_RESPONSE_UNSUPPORTED_MEDIA_TYPE:
+
+.. _class_HTTPClient_constant_RESPONSE_REQUESTED_RANGE_NOT_SATISFIABLE:
+
+.. _class_HTTPClient_constant_RESPONSE_EXPECTATION_FAILED:
+
+.. _class_HTTPClient_constant_RESPONSE_IM_A_TEAPOT:
+
+.. _class_HTTPClient_constant_RESPONSE_MISDIRECTED_REQUEST:
+
+.. _class_HTTPClient_constant_RESPONSE_UNPROCESSABLE_ENTITY:
+
+.. _class_HTTPClient_constant_RESPONSE_LOCKED:
+
+.. _class_HTTPClient_constant_RESPONSE_FAILED_DEPENDENCY:
+
+.. _class_HTTPClient_constant_RESPONSE_UPGRADE_REQUIRED:
+
+.. _class_HTTPClient_constant_RESPONSE_PRECONDITION_REQUIRED:
+
+.. _class_HTTPClient_constant_RESPONSE_TOO_MANY_REQUESTS:
+
+.. _class_HTTPClient_constant_RESPONSE_REQUEST_HEADER_FIELDS_TOO_LARGE:
+
+.. _class_HTTPClient_constant_RESPONSE_UNAVAILABLE_FOR_LEGAL_REASONS:
+
+.. _class_HTTPClient_constant_RESPONSE_INTERNAL_SERVER_ERROR:
+
+.. _class_HTTPClient_constant_RESPONSE_NOT_IMPLEMENTED:
+
+.. _class_HTTPClient_constant_RESPONSE_BAD_GATEWAY:
+
+.. _class_HTTPClient_constant_RESPONSE_SERVICE_UNAVAILABLE:
+
+.. _class_HTTPClient_constant_RESPONSE_GATEWAY_TIMEOUT:
+
+.. _class_HTTPClient_constant_RESPONSE_HTTP_VERSION_NOT_SUPPORTED:
+
+.. _class_HTTPClient_constant_RESPONSE_VARIANT_ALSO_NEGOTIATES:
+
+.. _class_HTTPClient_constant_RESPONSE_INSUFFICIENT_STORAGE:
+
+.. _class_HTTPClient_constant_RESPONSE_LOOP_DETECTED:
+
+.. _class_HTTPClient_constant_RESPONSE_NOT_EXTENDED:
+
+.. _class_HTTPClient_constant_RESPONSE_NETWORK_AUTH_REQUIRED:
 
 enum **ResponseCode**:
 
@@ -242,7 +404,7 @@ Description
 
 Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases.
 
-Note that this client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_request>` for a full example and to get started.
+Note that this client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
 
 A ``HTTPClient`` should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports SSL and SSL server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
 
@@ -258,7 +420,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_HTTPClient_blocking_mode_enabled:
+.. _class_HTTPClient_property_blocking_mode_enabled:
 
 - :ref:`bool<class_bool>` **blocking_mode_enabled**
 
@@ -270,7 +432,7 @@ Property Descriptions
 
 If ``true``, execution will block until all data is read from the response.
 
-.. _class_HTTPClient_connection:
+.. _class_HTTPClient_property_connection:
 
 - :ref:`StreamPeer<class_StreamPeer>` **connection**
 
@@ -285,13 +447,13 @@ The connection to use for this client.
 Method Descriptions
 -------------------
 
-.. _class_HTTPClient_close:
+.. _class_HTTPClient_method_close:
 
 - void **close** **(** **)**
 
 Closes the current connection, allowing reuse of this ``HTTPClient``.
 
-.. _class_HTTPClient_connect_to_host:
+.. _class_HTTPClient_method_connect_to_host:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
 
@@ -303,25 +465,25 @@ If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 f
 
 ``verify_host`` will check the SSL identity of the host if set to ``true``.
 
-.. _class_HTTPClient_get_response_body_length:
+.. _class_HTTPClient_method_get_response_body_length:
 
 - :ref:`int<class_int>` **get_response_body_length** **(** **)** const
 
 Returns the response's body length.
 
-.. _class_HTTPClient_get_response_code:
+.. _class_HTTPClient_method_get_response_code:
 
 - :ref:`int<class_int>` **get_response_code** **(** **)** const
 
 Returns the response's HTTP status code.
 
-.. _class_HTTPClient_get_response_headers:
+.. _class_HTTPClient_method_get_response_headers:
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_response_headers** **(** **)**
 
 Returns the response headers.
 
-.. _class_HTTPClient_get_response_headers_as_dictionary:
+.. _class_HTTPClient_method_get_response_headers_as_dictionary:
 
 - :ref:`Dictionary<class_Dictionary>` **get_response_headers_as_dictionary** **(** **)**
 
@@ -331,31 +493,31 @@ Structure: ("key":"value1; value2")
 
 Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
-.. _class_HTTPClient_get_status:
+.. _class_HTTPClient_method_get_status:
 
 - :ref:`Status<enum_HTTPClient_Status>` **get_status** **(** **)** const
 
-Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
+Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_method_poll>` in order to get status updates.
 
-.. _class_HTTPClient_has_response:
+.. _class_HTTPClient_method_has_response:
 
 - :ref:`bool<class_bool>` **has_response** **(** **)** const
 
 If ``true``, this ``HTTPClient`` has a response available.
 
-.. _class_HTTPClient_is_response_chunked:
+.. _class_HTTPClient_method_is_response_chunked:
 
 - :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
 If ``true``, this ``HTTPClient`` has a response that is chunked.
 
-.. _class_HTTPClient_poll:
+.. _class_HTTPClient_method_poll:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_get_status>`
+This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_method_get_status>`
 
-.. _class_HTTPClient_query_string_from_dict:
+.. _class_HTTPClient_method_query_string_from_dict:
 
 - :ref:`String<class_String>` **query_string_from_dict** **(** :ref:`Dictionary<class_Dictionary>` fields **)**
 
@@ -375,13 +537,13 @@ Furthermore, if a key has a null value, only the key itself is added, without eq
     String query_string = http_client.query_string_from_dict(fields)
     # returns: "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
-.. _class_HTTPClient_read_response_body_chunk:
+.. _class_HTTPClient_method_read_response_body_chunk:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **read_response_body_chunk** **(** **)**
 
 Reads one chunk from the response.
 
-.. _class_HTTPClient_request:
+.. _class_HTTPClient_method_request:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**
 
@@ -398,7 +560,7 @@ To create a POST request with query strings to push to the server, do:
     var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(query_string.length())]
     var result = http_client.request(http_client.METHOD_POST, "index.php", headers, query_string)
 
-.. _class_HTTPClient_request_raw:
+.. _class_HTTPClient_method_request_raw:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)**
 
@@ -408,9 +570,9 @@ Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
 
-.. _class_HTTPClient_set_read_chunk_size:
+.. _class_HTTPClient_method_set_read_chunk_size:
 
 - void **set_read_chunk_size** **(** :ref:`int<class_int>` bytes **)**
 
-Sets the size of the buffer used and maximum bytes to read per iteration. see :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`
+Sets the size of the buffer used and maximum bytes to read per iteration. see :ref:`read_response_body_chunk<class_HTTPClient_method_read_response_body_chunk>`
 

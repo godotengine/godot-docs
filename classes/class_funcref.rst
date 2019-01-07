@@ -19,37 +19,37 @@ Reference to a function in an object.
 Methods
 -------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`  | :ref:`call_func<class_FuncRef_call_func>` **(** **)** vararg                                     |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_function<class_FuncRef_set_function>` **(** :ref:`String<class_String>` name **)**     |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_instance<class_FuncRef_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** **)** vararg                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_function<class_FuncRef_method_set_function>` **(** :ref:`String<class_String>` name **)**     |
++-------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
 
-However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_funcref>` function, a reference to a function in a given object can be created, passed around and called.
+However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
 Method Descriptions
 -------------------
 
-.. _class_FuncRef_call_func:
+.. _class_FuncRef_method_call_func:
 
 - :ref:`Variant<class_Variant>` **call_func** **(** **)** vararg
 
-Calls the referenced function previously set by :ref:`set_function<class_FuncRef_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_funcref>`.
+Calls the referenced function previously set by :ref:`set_function<class_FuncRef_method_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
 
-.. _class_FuncRef_set_function:
+.. _class_FuncRef_method_set_function:
 
 - void **set_function** **(** :ref:`String<class_String>` name **)**
 
 The name of the referenced function to call on the object, without parentheses or any parameters.
 
-.. _class_FuncRef_set_instance:
+.. _class_FuncRef_method_set_instance:
 
 - void **set_instance** **(** :ref:`Object<class_Object>` instance **)**
 

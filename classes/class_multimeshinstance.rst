@@ -19,9 +19,9 @@ Node that instances a :ref:`MultiMesh<class_MultiMesh>`.
 Properties
 ----------
 
-+-----------------------------------+-----------------------------------------------------+
-| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_multimesh>` |
-+-----------------------------------+-----------------------------------------------------+
++-----------------------------------+--------------------------------------------------------------+
+| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` |
++-----------------------------------+--------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ This is useful to optimize the rendering of a high amount of instances of a give
 Property Descriptions
 ---------------------
 
-.. _class_MultiMeshInstance_multimesh:
+.. _class_MultiMeshInstance_property_multimesh:
 
 - :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 

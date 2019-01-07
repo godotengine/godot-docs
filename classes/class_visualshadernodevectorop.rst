@@ -19,14 +19,32 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------------------------+----------------------------------------------------------+
-| :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` | :ref:`operator<class_VisualShaderNodeVectorOp_operator>` |
-+---------------------------------------------------------+----------------------------------------------------------+
++---------------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` | :ref:`operator<class_VisualShaderNodeVectorOp_property_operator>` |
++---------------------------------------------------------+-------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeVectorOp_Operator:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_ADD:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_SUB:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_MUL:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_DIV:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_MOD:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_POW:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_MAX:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_MIN:
+
+.. _class_VisualShaderNodeVectorOp_constant_OP_CROSS:
 
 enum **Operator**:
 
@@ -51,7 +69,7 @@ enum **Operator**:
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeVectorOp_operator:
+.. _class_VisualShaderNodeVectorOp_property_operator:
 
 - :ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` **operator**
 

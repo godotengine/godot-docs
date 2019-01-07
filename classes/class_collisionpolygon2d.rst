@@ -19,20 +19,24 @@ Defines a 2D collision polygon.
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_build_mode>`               |
-+-----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_disabled>`                   |
-+-----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_one_way_collision>` |
-+-----------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`polygon<class_CollisionPolygon2D_polygon>`                     |
-+-----------------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`               |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>` |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                     |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_CollisionPolygon2D_BuildMode:
+
+.. _class_CollisionPolygon2D_constant_BUILD_SOLIDS:
+
+.. _class_CollisionPolygon2D_constant_BUILD_SEGMENTS:
 
 enum **BuildMode**:
 
@@ -48,7 +52,7 @@ Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObje
 Property Descriptions
 ---------------------
 
-.. _class_CollisionPolygon2D_build_mode:
+.. _class_CollisionPolygon2D_property_build_mode:
 
 - :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode**
 
@@ -60,7 +64,7 @@ Property Descriptions
 
 Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUILD_SOLIDS``.
 
-.. _class_CollisionPolygon2D_disabled:
+.. _class_CollisionPolygon2D_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -72,7 +76,7 @@ Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUI
 
 If ``true``, no collisions will be detected.
 
-.. _class_CollisionPolygon2D_one_way_collision:
+.. _class_CollisionPolygon2D_property_one_way_collision:
 
 - :ref:`bool<class_bool>` **one_way_collision**
 
@@ -84,7 +88,7 @@ If ``true``, no collisions will be detected.
 
 If ``true``, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
 
-.. _class_CollisionPolygon2D_polygon:
+.. _class_CollisionPolygon2D_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 

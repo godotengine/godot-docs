@@ -19,15 +19,15 @@ Simple margin container.
 Theme Properties
 ----------------
 
-+-----------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`margin_bottom<class_MarginContainer_margin_bottom>` |
-+-----------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`margin_left<class_MarginContainer_margin_left>`     |
-+-----------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`margin_right<class_MarginContainer_margin_right>`   |
-+-----------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`margin_top<class_MarginContainer_margin_top>`       |
-+-----------------------+-----------------------------------------------------------+
++-----------------------+---------------+
+| :ref:`int<class_int>` | margin_bottom |
++-----------------------+---------------+
+| :ref:`int<class_int>` | margin_left   |
++-----------------------+---------------+
+| :ref:`int<class_int>` | margin_right  |
++-----------------------+---------------+
+| :ref:`int<class_int>` | margin_top    |
++-----------------------+---------------+
 
 Description
 -----------

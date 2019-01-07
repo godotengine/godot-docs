@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-------------------------------+--------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`base<class_ProxyTexture_base>` |
-+-------------------------------+--------------------------------------+
++-------------------------------+-----------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`base<class_ProxyTexture_property_base>` |
++-------------------------------+-----------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_ProxyTexture_base:
+.. _class_ProxyTexture_property_base:
 
 - :ref:`Texture<class_Texture>` **base**
 

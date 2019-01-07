@@ -19,11 +19,11 @@ Gets a contant's value.
 Properties
 ----------
 
-+-----------------------------------------------------+------------------------------------------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_type>`   |
-+-----------------------------------------------------+------------------------------------------------+
-| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_value>` |
-+-----------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   |
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |
++-----------------------------------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -41,7 +41,7 @@ none
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptConstant_type:
+.. _class_VisualScriptConstant_property_type:
 
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
@@ -53,7 +53,7 @@ Property Descriptions
 
 The constant's type.
 
-.. _class_VisualScriptConstant_value:
+.. _class_VisualScriptConstant_property_value:
 
 - :ref:`Variant<class_Variant>` **value**
 

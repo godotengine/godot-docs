@@ -19,13 +19,13 @@ Class that has everything pertaining to a 2D world.
 Properties
 ----------
 
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_canvas>`                         |
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_direct_space_state>` |
-+-------------------------------------------------------------------+-------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_space>`                           |
-+-------------------------------------------------------------------+-------------------------------------------------------------+
++-------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_property_canvas>`                         |
++-------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
++-------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_property_space>`                           |
++-------------------------------------------------------------------+----------------------------------------------------------------------+
 
 Description
 -----------
@@ -40,7 +40,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_World2D_canvas:
+.. _class_World2D_property_canvas:
 
 - :ref:`RID<class_RID>` **canvas**
 
@@ -50,7 +50,7 @@ Property Descriptions
 
 The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
 
-.. _class_World2D_direct_space_state:
+.. _class_World2D_property_direct_space_state:
 
 - :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state**
 
@@ -60,7 +60,7 @@ The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`Vis
 
 The state of this world's physics space. This allows arbitrary querying for collision.
 
-.. _class_World2D_space:
+.. _class_World2D_property_space:
 
 - :ref:`RID<class_RID>` **space**
 

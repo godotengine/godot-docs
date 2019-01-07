@@ -19,9 +19,9 @@ Colored rectangle.
 Properties
 ----------
 
-+---------------------------+-------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_color>` |
-+---------------------------+-------------------------------------+
++---------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` |
++---------------------------+----------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ Displays a colored rectangle.
 Property Descriptions
 ---------------------
 
-.. _class_ColorRect_color:
+.. _class_ColorRect_property_color:
 
 - :ref:`Color<class_Color>` **color**
 

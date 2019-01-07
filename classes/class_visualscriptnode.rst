@@ -21,20 +21,20 @@ A node which is part of a :ref:`VisualScript<class_VisualScript>`.
 Methods
 -------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`            | :ref:`get_default_input_value<class_VisualScriptNode_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** const                                |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VisualScript<class_VisualScript>`  | :ref:`get_visual_script<class_VisualScriptNode_get_visual_script>` **(** **)** const                                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`ports_changed_notify<class_VisualScriptNode_ports_changed_notify>` **(** **)**                                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_default_input_value<class_VisualScriptNode_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)** |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`           | :ref:`get_default_input_value<class_VisualScriptNode_method_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** const                                |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VisualScript<class_VisualScript>` | :ref:`get_visual_script<class_VisualScriptNode_method_get_visual_script>` **(** **)** const                                                                           |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`ports_changed_notify<class_VisualScriptNode_method_ports_changed_notify>` **(** **)**                                                                           |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_default_input_value<class_VisualScriptNode_method_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)** |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_VisualScriptNode_ports_changed:
+.. _class_VisualScriptNode_signal_ports_changed:
 
 - **ports_changed** **(** **)**
 
@@ -48,25 +48,25 @@ A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be con
 Method Descriptions
 -------------------
 
-.. _class_VisualScriptNode_get_default_input_value:
+.. _class_VisualScriptNode_method_get_default_input_value:
 
 - :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** const
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
 
-.. _class_VisualScriptNode_get_visual_script:
+.. _class_VisualScriptNode_method_get_visual_script:
 
 - :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** const
 
 Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
 
-.. _class_VisualScriptNode_ports_changed_notify:
+.. _class_VisualScriptNode_method_ports_changed_notify:
 
 - void **ports_changed_notify** **(** **)**
 
 Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>` .
 
-.. _class_VisualScriptNode_set_default_input_value:
+.. _class_VisualScriptNode_method_set_default_input_value:
 
 - void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)**
 

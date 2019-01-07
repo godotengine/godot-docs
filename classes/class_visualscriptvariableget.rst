@@ -19,9 +19,9 @@ Gets a variable's value.
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_var_name>` |
-+-----------------------------+---------------------------------------------------------+
++-----------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` |
++-----------------------------+------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,7 +39,7 @@ none
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptVariableGet_var_name:
+.. _class_VisualScriptVariableGet_property_var_name:
 
 - :ref:`String<class_String>` **var_name**
 

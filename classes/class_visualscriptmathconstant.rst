@@ -19,14 +19,32 @@ Commonly used mathematical constants.
 Properties
 ----------
 
-+-----------------------------------------------------------------+----------------------------------------------------------+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_constant>` |
-+-----------------------------------------------------------------+----------------------------------------------------------+
++-----------------------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` |
++-----------------------------------------------------------------+-------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptMathConstant_MathConstant:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_ONE:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_PI:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_HALF_PI:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_TAU:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_E:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_SQRT2:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_INF:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_NAN:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_MAX:
 
 enum **MathConstant**:
 
@@ -64,7 +82,7 @@ none
 Property Descriptions
 ---------------------
 
-.. _class_VisualScriptMathConstant_constant:
+.. _class_VisualScriptMathConstant_property_constant:
 
 - :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
 

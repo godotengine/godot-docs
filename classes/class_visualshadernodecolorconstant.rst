@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`constant<class_VisualShaderNodeColorConstant_constant>` |
-+---------------------------+---------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`constant<class_VisualShaderNodeColorConstant_property_constant>` |
++---------------------------+------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeColorConstant_constant:
+.. _class_VisualShaderNodeColorConstant_property_constant:
 
 - :ref:`Color<class_Color>` **constant**
 

@@ -19,17 +19,17 @@ A CSG Sphere shape.
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_material>`               |
-+---------------------------------+---------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_radial_segments>` |
-+---------------------------------+---------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere_radius>`                   |
-+---------------------------------+---------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere_rings>`                     |
-+---------------------------------+---------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_smooth_faces>`       |
-+---------------------------------+---------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_CSGSphere_property_material>`               |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere_property_radial_segments>` |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere_property_radius>`                   |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere_property_rings>`                     |
++---------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGSphere_property_smooth_faces>`       |
++---------------------------------+------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,7 +39,7 @@ This node allows you to create a sphere for use with the CSG system.
 Property Descriptions
 ---------------------
 
-.. _class_CSGSphere_material:
+.. _class_CSGSphere_property_material:
 
 - :ref:`Material<class_Material>` **material**
 
@@ -51,7 +51,7 @@ Property Descriptions
 
 The material used to render the sphere.
 
-.. _class_CSGSphere_radial_segments:
+.. _class_CSGSphere_property_radial_segments:
 
 - :ref:`int<class_int>` **radial_segments**
 
@@ -63,7 +63,7 @@ The material used to render the sphere.
 
 Number of vertical slices for the sphere.
 
-.. _class_CSGSphere_radius:
+.. _class_CSGSphere_property_radius:
 
 - :ref:`float<class_float>` **radius**
 
@@ -75,7 +75,7 @@ Number of vertical slices for the sphere.
 
 Radius of the sphere.
 
-.. _class_CSGSphere_rings:
+.. _class_CSGSphere_property_rings:
 
 - :ref:`int<class_int>` **rings**
 
@@ -87,7 +87,7 @@ Radius of the sphere.
 
 Number of horizontal slices for the sphere.
 
-.. _class_CSGSphere_smooth_faces:
+.. _class_CSGSphere_property_smooth_faces:
 
 - :ref:`bool<class_bool>` **smooth_faces**
 

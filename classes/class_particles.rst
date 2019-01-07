@@ -19,59 +19,65 @@ Brief Description
 Properties
 ----------
 
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`amount<class_Particles_amount>`                     |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`DrawOrder<enum_Particles_DrawOrder>` | :ref:`draw_order<class_Particles_draw_order>`             |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_1<class_Particles_draw_pass_1>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_2<class_Particles_draw_pass_2>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_3<class_Particles_draw_pass_3>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_4<class_Particles_draw_pass_4>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`draw_passes<class_Particles_draw_passes>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`emitting<class_Particles_emitting>`                 |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`explosiveness<class_Particles_explosiveness>`       |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`fixed_fps<class_Particles_fixed_fps>`               |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`fract_delta<class_Particles_fract_delta>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`lifetime<class_Particles_lifetime>`                 |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`local_coords<class_Particles_local_coords>`         |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`one_shot<class_Particles_one_shot>`                 |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`preprocess<class_Particles_preprocess>`             |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`Material<class_Material>`            | :ref:`process_material<class_Particles_process_material>` |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`randomness<class_Particles_randomness>`             |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`speed_scale<class_Particles_speed_scale>`           |
-+--------------------------------------------+-----------------------------------------------------------+
-| :ref:`AABB<class_AABB>`                    | :ref:`visibility_aabb<class_Particles_visibility_aabb>`   |
-+--------------------------------------------+-----------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`amount<class_Particles_property_amount>`                     |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`DrawOrder<enum_Particles_DrawOrder>` | :ref:`draw_order<class_Particles_property_draw_order>`             |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_1<class_Particles_property_draw_pass_1>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_2<class_Particles_property_draw_pass_2>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_3<class_Particles_property_draw_pass_3>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                    | :ref:`draw_pass_4<class_Particles_property_draw_pass_4>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`draw_passes<class_Particles_property_draw_passes>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`emitting<class_Particles_property_emitting>`                 |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`explosiveness<class_Particles_property_explosiveness>`       |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`fixed_fps<class_Particles_property_fixed_fps>`               |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`fract_delta<class_Particles_property_fract_delta>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`lifetime<class_Particles_property_lifetime>`                 |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`local_coords<class_Particles_property_local_coords>`         |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`one_shot<class_Particles_property_one_shot>`                 |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`preprocess<class_Particles_property_preprocess>`             |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`Material<class_Material>`            | :ref:`process_material<class_Particles_property_process_material>` |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`randomness<class_Particles_property_randomness>`             |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`speed_scale<class_Particles_property_speed_scale>`           |
++--------------------------------------------+--------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`                    | :ref:`visibility_aabb<class_Particles_property_visibility_aabb>`   |
++--------------------------------------------+--------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------+---------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`  | :ref:`capture_aabb<class_Particles_capture_aabb>` **(** **)** const |
-+--------------------------+---------------------------------------------------------------------+
-| void                     | :ref:`restart<class_Particles_restart>` **(** **)**                 |
-+--------------------------+---------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_Particles_method_capture_aabb>` **(** **)** const |
++-------------------------+----------------------------------------------------------------------------+
+| void                    | :ref:`restart<class_Particles_method_restart>` **(** **)**                 |
++-------------------------+----------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_Particles_DrawOrder:
+
+.. _class_Particles_constant_DRAW_ORDER_INDEX:
+
+.. _class_Particles_constant_DRAW_ORDER_LIFETIME:
+
+.. _class_Particles_constant_DRAW_ORDER_VIEW_DEPTH:
 
 enum **DrawOrder**:
 
@@ -83,6 +89,8 @@ enum **DrawOrder**:
 
 Constants
 ---------
+
+.. _class_Particles_constant_MAX_DRAW_PASSES:
 
 - **MAX_DRAW_PASSES** = **4** --- Maximum number of draw passes supported.
 
@@ -96,7 +104,7 @@ Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_Par
 Property Descriptions
 ---------------------
 
-.. _class_Particles_amount:
+.. _class_Particles_property_amount:
 
 - :ref:`int<class_int>` **amount**
 
@@ -108,7 +116,7 @@ Property Descriptions
 
 Number of particles to emit.
 
-.. _class_Particles_draw_order:
+.. _class_Particles_property_draw_order:
 
 - :ref:`DrawOrder<enum_Particles_DrawOrder>` **draw_order**
 
@@ -120,7 +128,7 @@ Number of particles to emit.
 
 Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
-.. _class_Particles_draw_pass_1:
+.. _class_Particles_property_draw_pass_1:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_1**
 
@@ -132,7 +140,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 :ref:`Mesh<class_Mesh>` that is drawn for the first draw pass.
 
-.. _class_Particles_draw_pass_2:
+.. _class_Particles_property_draw_pass_2:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_2**
 
@@ -144,7 +152,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 :ref:`Mesh<class_Mesh>` that is drawn for the second draw pass.
 
-.. _class_Particles_draw_pass_3:
+.. _class_Particles_property_draw_pass_3:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_3**
 
@@ -156,7 +164,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 :ref:`Mesh<class_Mesh>` that is drawn for the third draw pass.
 
-.. _class_Particles_draw_pass_4:
+.. _class_Particles_property_draw_pass_4:
 
 - :ref:`Mesh<class_Mesh>` **draw_pass_4**
 
@@ -168,7 +176,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 :ref:`Mesh<class_Mesh>` that is drawn for the fourth draw pass.
 
-.. _class_Particles_draw_passes:
+.. _class_Particles_property_draw_passes:
 
 - :ref:`int<class_int>` **draw_passes**
 
@@ -180,7 +188,7 @@ Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_I
 
 The number of draw passes when rendering particles.
 
-.. _class_Particles_emitting:
+.. _class_Particles_property_emitting:
 
 - :ref:`bool<class_bool>` **emitting**
 
@@ -192,7 +200,7 @@ The number of draw passes when rendering particles.
 
 If ``true``, particles are being emitted. Default value: ``true``.
 
-.. _class_Particles_explosiveness:
+.. _class_Particles_property_explosiveness:
 
 - :ref:`float<class_float>` **explosiveness**
 
@@ -204,7 +212,7 @@ If ``true``, particles are being emitted. Default value: ``true``.
 
 Time ratio between each emission. If ``0`` particles are emitted continuously. If ``1`` all particles are emitted simultaneously. Default value: ``0``.
 
-.. _class_Particles_fixed_fps:
+.. _class_Particles_property_fixed_fps:
 
 - :ref:`int<class_int>` **fixed_fps**
 
@@ -214,7 +222,7 @@ Time ratio between each emission. If ``0`` particles are emitted continuously. I
 | *Getter* | get_fixed_fps()      |
 +----------+----------------------+
 
-.. _class_Particles_fract_delta:
+.. _class_Particles_property_fract_delta:
 
 - :ref:`bool<class_bool>` **fract_delta**
 
@@ -224,7 +232,7 @@ Time ratio between each emission. If ``0`` particles are emitted continuously. I
 | *Getter* | get_fractional_delta()      |
 +----------+-----------------------------+
 
-.. _class_Particles_lifetime:
+.. _class_Particles_property_lifetime:
 
 - :ref:`float<class_float>` **lifetime**
 
@@ -236,7 +244,7 @@ Time ratio between each emission. If ``0`` particles are emitted continuously. I
 
 Amount of time each particle will exist. Default value: ``1``.
 
-.. _class_Particles_local_coords:
+.. _class_Particles_property_local_coords:
 
 - :ref:`bool<class_bool>` **local_coords**
 
@@ -248,7 +256,7 @@ Amount of time each particle will exist. Default value: ``1``.
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates. Default value: ``true``.
 
-.. _class_Particles_one_shot:
+.. _class_Particles_property_one_shot:
 
 - :ref:`bool<class_bool>` **one_shot**
 
@@ -260,7 +268,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 If ``true``, only ``amount`` particles will be emitted. Default value: ``false``.
 
-.. _class_Particles_preprocess:
+.. _class_Particles_property_preprocess:
 
 - :ref:`float<class_float>` **preprocess**
 
@@ -272,7 +280,7 @@ If ``true``, only ``amount`` particles will be emitted. Default value: ``false``
 
 Amount of time to preprocess the particles before animation starts. Lets you start the animation some time after particles have started emitting.
 
-.. _class_Particles_process_material:
+.. _class_Particles_property_process_material:
 
 - :ref:`Material<class_Material>` **process_material**
 
@@ -284,7 +292,7 @@ Amount of time to preprocess the particles before animation starts. Lets you sta
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-.. _class_Particles_randomness:
+.. _class_Particles_property_randomness:
 
 - :ref:`float<class_float>` **randomness**
 
@@ -296,7 +304,7 @@ Amount of time to preprocess the particles before animation starts. Lets you sta
 
 Emission randomness ratio. Default value: ``0``.
 
-.. _class_Particles_speed_scale:
+.. _class_Particles_property_speed_scale:
 
 - :ref:`float<class_float>` **speed_scale**
 
@@ -308,7 +316,7 @@ Emission randomness ratio. Default value: ``0``.
 
 Speed scaling ratio. Default value: ``1``. A value of ``0`` can be used to pause the particles.
 
-.. _class_Particles_visibility_aabb:
+.. _class_Particles_property_visibility_aabb:
 
 - :ref:`AABB<class_AABB>` **visibility_aabb**
 
@@ -323,11 +331,11 @@ The :ref:`AABB<class_AABB>` that determines the area of the world part of which 
 Method Descriptions
 -------------------
 
-.. _class_Particles_capture_aabb:
+.. _class_Particles_method_capture_aabb:
 
 - :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** const
 
-.. _class_Particles_restart:
+.. _class_Particles_method_restart:
 
 - void **restart** **(** **)**
 

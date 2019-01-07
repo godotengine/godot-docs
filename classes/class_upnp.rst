@@ -19,45 +19,103 @@ UPNP network functions.
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_discover_ipv6>`                 |
-+-----------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_discover_local_port>`     |
-+-----------------------------+----------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_discover_multicast_if>` |
-+-----------------------------+----------------------------------------------------------------+
++-----------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`discover_ipv6<class_UPNP_property_discover_ipv6>`                 |
++-----------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`discover_local_port<class_UPNP_property_discover_local_port>`     |
++-----------------------------+-------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`discover_multicast_if<class_UPNP_property_discover_multicast_if>` |
++-----------------------------+-------------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`add_device<class_UPNP_add_device>` **(** :ref:`UPNPDevice<class_UPNPDevice>` device **)**                                                                                                                                                          |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`add_port_mapping<class_UPNP_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`clear_devices<class_UPNP_clear_devices>` **(** **)**                                                                                                                                                                                               |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`delete_port_mapping<class_UPNP_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const                                                                                                         |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`discover<class_UPNP_discover>` **(** :ref:`int<class_int>` timeout=2000, :ref:`int<class_int>` ttl=2, :ref:`String<class_String>` device_filter="InternetGatewayDevice" **)**                                                                      |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`UPNPDevice<class_UPNPDevice>`  | :ref:`get_device<class_UPNP_get_device>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                   |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_device_count<class_UPNP_get_device_count>` **(** **)** const                                                                                                                                                                                   |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`UPNPDevice<class_UPNPDevice>`  | :ref:`get_gateway<class_UPNP_get_gateway>` **(** **)** const                                                                                                                                                                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`          | :ref:`query_external_address<class_UPNP_query_external_address>` **(** **)** const                                                                                                                                                                       |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`remove_device<class_UPNP_remove_device>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                   |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_device<class_UPNP_set_device>` **(** :ref:`int<class_int>` index, :ref:`UPNPDevice<class_UPNPDevice>` device **)**                                                                                                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`add_device<class_UPNP_method_add_device>` **(** :ref:`UPNPDevice<class_UPNPDevice>` device **)**                                                                                                                                                          |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`clear_devices<class_UPNP_method_clear_devices>` **(** **)**                                                                                                                                                                                               |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`delete_port_mapping<class_UPNP_method_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const                                                                                                         |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`discover<class_UPNP_method_discover>` **(** :ref:`int<class_int>` timeout=2000, :ref:`int<class_int>` ttl=2, :ref:`String<class_String>` device_filter="InternetGatewayDevice" **)**                                                                      |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`UPNPDevice<class_UPNPDevice>` | :ref:`get_device<class_UPNP_method_get_device>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                                                   |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_device_count<class_UPNP_method_get_device_count>` **(** **)** const                                                                                                                                                                                   |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`UPNPDevice<class_UPNPDevice>` | :ref:`get_gateway<class_UPNP_method_get_gateway>` **(** **)** const                                                                                                                                                                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`query_external_address<class_UPNP_method_query_external_address>` **(** **)** const                                                                                                                                                                       |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`remove_device<class_UPNP_method_remove_device>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                   |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`set_device<class_UPNP_method_set_device>` **(** :ref:`int<class_int>` index, :ref:`UPNPDevice<class_UPNPDevice>` device **)**                                                                                                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_UPNP_UPNPResult:
+
+.. _class_UPNP_constant_UPNP_RESULT_SUCCESS:
+
+.. _class_UPNP_constant_UPNP_RESULT_NOT_AUTHORIZED:
+
+.. _class_UPNP_constant_UPNP_RESULT_PORT_MAPPING_NOT_FOUND:
+
+.. _class_UPNP_constant_UPNP_RESULT_INCONSISTENT_PARAMETERS:
+
+.. _class_UPNP_constant_UPNP_RESULT_NO_SUCH_ENTRY_IN_ARRAY:
+
+.. _class_UPNP_constant_UPNP_RESULT_ACTION_FAILED:
+
+.. _class_UPNP_constant_UPNP_RESULT_SRC_IP_WILDCARD_NOT_PERMITTED:
+
+.. _class_UPNP_constant_UPNP_RESULT_EXT_PORT_WILDCARD_NOT_PERMITTED:
+
+.. _class_UPNP_constant_UPNP_RESULT_INT_PORT_WILDCARD_NOT_PERMITTED:
+
+.. _class_UPNP_constant_UPNP_RESULT_REMOTE_HOST_MUST_BE_WILDCARD:
+
+.. _class_UPNP_constant_UPNP_RESULT_EXT_PORT_MUST_BE_WILDCARD:
+
+.. _class_UPNP_constant_UPNP_RESULT_NO_PORT_MAPS_AVAILABLE:
+
+.. _class_UPNP_constant_UPNP_RESULT_CONFLICT_WITH_OTHER_MECHANISM:
+
+.. _class_UPNP_constant_UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING:
+
+.. _class_UPNP_constant_UPNP_RESULT_SAME_PORT_VALUES_REQUIRED:
+
+.. _class_UPNP_constant_UPNP_RESULT_ONLY_PERMANENT_LEASE_SUPPORTED:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_GATEWAY:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_PORT:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_PROTOCOL:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_DURATION:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_ARGS:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_RESPONSE:
+
+.. _class_UPNP_constant_UPNP_RESULT_INVALID_PARAM:
+
+.. _class_UPNP_constant_UPNP_RESULT_HTTP_ERROR:
+
+.. _class_UPNP_constant_UPNP_RESULT_SOCKET_ERROR:
+
+.. _class_UPNP_constant_UPNP_RESULT_MEM_ALLOC_ERROR:
+
+.. _class_UPNP_constant_UPNP_RESULT_NO_GATEWAY:
+
+.. _class_UPNP_constant_UPNP_RESULT_NO_DEVICES:
+
+.. _class_UPNP_constant_UPNP_RESULT_UNKNOWN_ERROR:
 
 enum **UPNPResult**:
 
@@ -113,9 +171,9 @@ enum **UPNPResult**:
 
 - **UPNP_RESULT_MEM_ALLOC_ERROR** = **25** --- Error allocating memory.
 
-- **UPNP_RESULT_NO_GATEWAY** = **26** --- No gateway available. You may need to call :ref:`discover<class_UPNP_discover>` first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).
+- **UPNP_RESULT_NO_GATEWAY** = **26** --- No gateway available. You may need to call :ref:`discover<class_UPNP_method_discover>` first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).
 
-- **UPNP_RESULT_NO_DEVICES** = **27** --- No devices available. You may need to call :ref:`discover<class_UPNP_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
+- **UPNP_RESULT_NO_DEVICES** = **27** --- No devices available. You may need to call :ref:`discover<class_UPNP_method_discover>` first, or discovery didn't detect any valid :ref:`UPNPDevice<class_UPNPDevice>`\ s.
 
 - **UPNP_RESULT_UNKNOWN_ERROR** = **28** --- Unknown error.
 
@@ -127,7 +185,7 @@ Provides UPNP functionality to discover :ref:`UPNPDevice<class_UPNPDevice>`\ s o
 Property Descriptions
 ---------------------
 
-.. _class_UPNP_discover_ipv6:
+.. _class_UPNP_property_discover_ipv6:
 
 - :ref:`bool<class_bool>` **discover_ipv6**
 
@@ -139,7 +197,7 @@ Property Descriptions
 
 If ``true``, IPv6 is used for :ref:`UPNPDevice<class_UPNPDevice>` discovery.
 
-.. _class_UPNP_discover_local_port:
+.. _class_UPNP_property_discover_local_port:
 
 - :ref:`int<class_int>` **discover_local_port**
 
@@ -151,7 +209,7 @@ If ``true``, IPv6 is used for :ref:`UPNPDevice<class_UPNPDevice>` discovery.
 
 If ``0``, the local port to use for discovery is chosen automatically by the system. If ``1``, discovery will be done from the source port 1900 (same as destination port). Otherwise, the value will be used as the port.
 
-.. _class_UPNP_discover_multicast_if:
+.. _class_UPNP_property_discover_multicast_if:
 
 - :ref:`String<class_String>` **discover_multicast_if**
 
@@ -166,37 +224,37 @@ Multicast interface to use for discovery. Uses the default multicast interface i
 Method Descriptions
 -------------------
 
-.. _class_UPNP_add_device:
+.. _class_UPNP_method_add_device:
 
 - void **add_device** **(** :ref:`UPNPDevice<class_UPNPDevice>` device **)**
 
 Adds the given :ref:`UPNPDevice<class_UPNPDevice>` to the list of discovered devices.
 
-.. _class_UPNP_add_port_mapping:
+.. _class_UPNP_method_add_port_mapping:
 
 - :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** const
 
-Adds a mapping to forward the external ``port`` (between 1 and 65535) on the default gateway (see :ref:`get_gateway<class_UPNP_get_gateway>`) to the ``internal_port`` on the local machine for the given protocol ``proto`` (either ``TCP`` or ``UDP``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway<class_UPNP_get_gateway>` and call :ref:`add_port_mapping<class_UPNP_add_port_mapping>` on it, if any.
+Adds a mapping to forward the external ``port`` (between 1 and 65535) on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) to the ``internal_port`` on the local machine for the given protocol ``proto`` (either ``TCP`` or ``UDP``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway<class_UPNP_method_get_gateway>` and call :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` on it, if any.
 
 If ``internal_port`` is ``0`` (the default), the same port number is used for both the external and the internal port (the ``port`` value).
 
 The description (``desc``) is shown in some router UIs and can be used to point out which application added the mapping, and the lifetime of the mapping can be limited by ``duration``. However, some routers are incompatible with one or both of these, so use with caution and add fallback logic in case of errors to retry without them if in doubt.
 
-See :ref:`UPNPResult<enum_@GlobalScope_UPNPResult>` for possible return values.
+See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
 
-.. _class_UPNP_clear_devices:
+.. _class_UPNP_method_clear_devices:
 
 - void **clear_devices** **(** **)**
 
 Clears the list of discovered devices.
 
-.. _class_UPNP_delete_port_mapping:
+.. _class_UPNP_method_delete_port_mapping:
 
 - :ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** const
 
-Deletes the port mapping for the given port and protocol combination on the default gateway (see :ref:`get_gateway<class_UPNP_get_gateway>`) if one exists. ``port`` must be a valid port between 1 and 65535, ``proto`` can be either ``TCP`` or ``UDP``. See :ref:`UPNPResult<enum_@GlobalScope_UPNPResult>` for possible return values.
+Deletes the port mapping for the given port and protocol combination on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) if one exists. ``port`` must be a valid port between 1 and 65535, ``proto`` can be either ``TCP`` or ``UDP``. See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
 
-.. _class_UPNP_discover:
+.. _class_UPNP_method_discover:
 
 - :ref:`int<class_int>` **discover** **(** :ref:`int<class_int>` timeout=2000, :ref:`int<class_int>` ttl=2, :ref:`String<class_String>` device_filter="InternetGatewayDevice" **)**
 
@@ -204,39 +262,39 @@ Discovers local :ref:`UPNPDevice<class_UPNPDevice>`\ s. Clears the list of previ
 
 Filters for IGD (InternetGatewayDevice) type devices by default, as those manage port forwarding. ``timeout`` is the time to wait for responses in milliseconds. ``ttl`` is the time-to-live; only touch this if you know what you're doing.
 
-See :ref:`UPNPResult<enum_@GlobalScope_UPNPResult>` for possible return values.
+See :ref:`UPNPResult<enum_UPNP_UPNPResult>` for possible return values.
 
-.. _class_UPNP_get_device:
+.. _class_UPNP_method_get_device:
 
 - :ref:`UPNPDevice<class_UPNPDevice>` **get_device** **(** :ref:`int<class_int>` index **)** const
 
 Returns the :ref:`UPNPDevice<class_UPNPDevice>` at the given ``index``.
 
-.. _class_UPNP_get_device_count:
+.. _class_UPNP_method_get_device_count:
 
 - :ref:`int<class_int>` **get_device_count** **(** **)** const
 
 Returns the number of discovered :ref:`UPNPDevice<class_UPNPDevice>`\ s.
 
-.. _class_UPNP_get_gateway:
+.. _class_UPNP_method_get_gateway:
 
 - :ref:`UPNPDevice<class_UPNPDevice>` **get_gateway** **(** **)** const
 
 Returns the default gateway. That is the first discovered :ref:`UPNPDevice<class_UPNPDevice>` that is also a valid IGD (InternetGatewayDevice).
 
-.. _class_UPNP_query_external_address:
+.. _class_UPNP_method_query_external_address:
 
 - :ref:`String<class_String>` **query_external_address** **(** **)** const
 
-Returns the external :ref:`IP<class_IP>` address of the default gateway (see :ref:`get_gateway<class_UPNP_get_gateway>`) as string. Returns an empty string on error.
+Returns the external :ref:`IP<class_IP>` address of the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) as string. Returns an empty string on error.
 
-.. _class_UPNP_remove_device:
+.. _class_UPNP_method_remove_device:
 
 - void **remove_device** **(** :ref:`int<class_int>` index **)**
 
 Removes the device at ``index`` from the list of discovered devices.
 
-.. _class_UPNP_set_device:
+.. _class_UPNP_method_set_device:
 
 - void **set_device** **(** :ref:`int<class_int>` index, :ref:`UPNPDevice<class_UPNPDevice>` device **)**
 

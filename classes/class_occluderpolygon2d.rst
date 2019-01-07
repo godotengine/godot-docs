@@ -19,26 +19,32 @@ Defines a 2D polygon for LightOccluder2D.
 Properties
 ----------
 
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_closed>`       |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>` |
-+--------------------------------------------------+-----------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_polygon>`     |
-+--------------------------------------------------+-----------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     |
++--------------------------------------------------+--------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_OccluderPolygon2D_CullMode:
 
+.. _class_OccluderPolygon2D_constant_CULL_DISABLED:
+
+.. _class_OccluderPolygon2D_constant_CULL_CLOCKWISE:
+
+.. _class_OccluderPolygon2D_constant_CULL_COUNTER_CLOCKWISE:
+
 enum **CullMode**:
 
-- **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+- **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
-- **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+- **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
-- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
 
 Description
 -----------
@@ -48,7 +54,7 @@ Editor facility that helps you draw a 2D polygon used as resource for :ref:`Ligh
 Property Descriptions
 ---------------------
 
-.. _class_OccluderPolygon2D_closed:
+.. _class_OccluderPolygon2D_property_closed:
 
 - :ref:`bool<class_bool>` **closed**
 
@@ -60,7 +66,7 @@ Property Descriptions
 
 If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
 
-.. _class_OccluderPolygon2D_cull_mode:
+.. _class_OccluderPolygon2D_property_cull_mode:
 
 - :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
 
@@ -72,7 +78,7 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 
 Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
 
-.. _class_OccluderPolygon2D_polygon:
+.. _class_OccluderPolygon2D_property_polygon:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 

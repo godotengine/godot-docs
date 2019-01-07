@@ -19,25 +19,25 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------------------+----------------------------------------+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_library>` |
-+-----------------------------------------------+----------------------------------------+
++-----------------------------------------------+-------------------------------------------------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` |
++-----------------------------------------------+-------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`  | :ref:`call_native<class_GDNative_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`initialize<class_GDNative_initialize>` **(** **)**                                                                                                                             |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`terminate<class_GDNative_terminate>` **(** **)**                                                                                                                               |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`call_native<class_GDNative_method_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`initialize<class_GDNative_method_initialize>` **(** **)**                                                                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`terminate<class_GDNative_method_terminate>` **(** **)**                                                                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_GDNative_library:
+.. _class_GDNative_property_library:
 
 - :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
@@ -50,15 +50,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_GDNative_call_native:
+.. _class_GDNative_method_call_native:
 
 - :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
 
-.. _class_GDNative_initialize:
+.. _class_GDNative_method_initialize:
 
 - :ref:`bool<class_bool>` **initialize** **(** **)**
 
-.. _class_GDNative_terminate:
+.. _class_GDNative_method_terminate:
 
 - :ref:`bool<class_bool>` **terminate** **(** **)**
 

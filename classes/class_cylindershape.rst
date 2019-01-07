@@ -19,11 +19,11 @@ Cylinder shape for collisions.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------+
-| :ref:`float<class_float>` | :ref:`height<class_CylinderShape_height>` |
-+---------------------------+-------------------------------------------+
-| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape_radius>` |
-+---------------------------+-------------------------------------------+
++---------------------------+----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`height<class_CylinderShape_property_height>` |
++---------------------------+----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape_property_radius>` |
++---------------------------+----------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Cylinder shape for collisions.
 Property Descriptions
 ---------------------
 
-.. _class_CylinderShape_height:
+.. _class_CylinderShape_property_height:
 
 - :ref:`float<class_float>` **height**
 
@@ -45,7 +45,7 @@ Property Descriptions
 
 The cylinder's height.
 
-.. _class_CylinderShape_radius:
+.. _class_CylinderShape_property_radius:
 
 - :ref:`float<class_float>` **radius**
 

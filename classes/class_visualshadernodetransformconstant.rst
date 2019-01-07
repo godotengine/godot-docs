@@ -19,14 +19,14 @@ Brief Description
 Properties
 ----------
 
-+-----------------------------------+-------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`constant<class_VisualShaderNodeTransformConstant_constant>` |
-+-----------------------------------+-------------------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`constant<class_VisualShaderNodeTransformConstant_property_constant>` |
++-----------------------------------+----------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNodeTransformConstant_constant:
+.. _class_VisualShaderNodeTransformConstant_property_constant:
 
 - :ref:`Transform<class_Transform>` **constant**
 

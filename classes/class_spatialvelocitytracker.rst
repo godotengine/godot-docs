@@ -19,25 +19,25 @@ Brief Description
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_track_physics_step>` |
-+-------------------------+----------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` |
++-------------------------+-------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`  | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_get_tracked_linear_velocity>` **(** **)** const          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`reset<class_SpatialVelocityTracker_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`update_position<class_SpatialVelocityTracker_update_position>` **(** :ref:`Vector3<class_Vector3>` position **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** const          |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reset<class_SpatialVelocityTracker_method_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`update_position<class_SpatialVelocityTracker_method_update_position>` **(** :ref:`Vector3<class_Vector3>` position **)** |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_SpatialVelocityTracker_track_physics_step:
+.. _class_SpatialVelocityTracker_property_track_physics_step:
 
 - :ref:`bool<class_bool>` **track_physics_step**
 
@@ -50,15 +50,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_SpatialVelocityTracker_get_tracked_linear_velocity:
+.. _class_SpatialVelocityTracker_method_get_tracked_linear_velocity:
 
 - :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** const
 
-.. _class_SpatialVelocityTracker_reset:
+.. _class_SpatialVelocityTracker_method_reset:
 
 - void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
 
-.. _class_SpatialVelocityTracker_update_position:
+.. _class_SpatialVelocityTracker_method_update_position:
 
 - void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
 

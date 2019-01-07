@@ -19,26 +19,34 @@ Point sampler for a :ref:`Path<class_Path>`.
 Properties
 ----------
 
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_cubic_interp>`   |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_h_offset>`           |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_loop>`                   |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_offset>`               |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_rotation_mode>` |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_unit_offset>`     |
-+---------------------------------------------------+------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_v_offset>`           |
-+---------------------------------------------------+------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     |
++---------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           |
++---------------------------------------------------+---------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_PathFollow_RotationMode:
+
+.. _class_PathFollow_constant_ROTATION_NONE:
+
+.. _class_PathFollow_constant_ROTATION_Y:
+
+.. _class_PathFollow_constant_ROTATION_XY:
+
+.. _class_PathFollow_constant_ROTATION_XYZ:
 
 enum **RotationMode**:
 
@@ -60,7 +68,7 @@ It is useful for making other nodes follow a path, without coding the movement p
 Property Descriptions
 ---------------------
 
-.. _class_PathFollow_cubic_interp:
+.. _class_PathFollow_property_cubic_interp:
 
 - :ref:`bool<class_bool>` **cubic_interp**
 
@@ -76,7 +84,7 @@ The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>
 
 There are two answers to this problem: Either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
-.. _class_PathFollow_h_offset:
+.. _class_PathFollow_property_h_offset:
 
 - :ref:`float<class_float>` **h_offset**
 
@@ -88,7 +96,7 @@ There are two answers to this problem: Either increase the number of cached poin
 
 The node's offset along the curve.
 
-.. _class_PathFollow_loop:
+.. _class_PathFollow_property_loop:
 
 - :ref:`bool<class_bool>` **loop**
 
@@ -100,7 +108,7 @@ The node's offset along the curve.
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
-.. _class_PathFollow_offset:
+.. _class_PathFollow_property_offset:
 
 - :ref:`float<class_float>` **offset**
 
@@ -112,7 +120,7 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
 
-.. _class_PathFollow_rotation_mode:
+.. _class_PathFollow_property_rotation_mode:
 
 - :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode**
 
@@ -124,7 +132,7 @@ The distance from the first vertex, measured in 3D units along the path. This se
 
 Allows or forbids rotation on one or more axes, depending on the constants being used.
 
-.. _class_PathFollow_unit_offset:
+.. _class_PathFollow_property_unit_offset:
 
 - :ref:`float<class_float>` **unit_offset**
 
@@ -136,7 +144,7 @@ Allows or forbids rotation on one or more axes, depending on the constants being
 
 The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
-.. _class_PathFollow_v_offset:
+.. _class_PathFollow_property_v_offset:
 
 - :ref:`float<class_float>` **v_offset**
 

@@ -19,68 +19,68 @@ Brief Description
 Methods
 -------
 
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`_export_begin<class_EditorExportPlugin__export_begin>` **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`_export_file<class_EditorExportPlugin__export_file>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** virtual                                |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_file<class_EditorExportPlugin_add_file>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                           |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_ios_bundle_file<class_EditorExportPlugin_add_ios_bundle_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                    |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_ios_cpp_code<class_EditorExportPlugin_add_ios_cpp_code>` **(** :ref:`String<class_String>` code **)**                                                                                                                          |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_ios_framework<class_EditorExportPlugin_add_ios_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                                        |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_ios_linker_flags<class_EditorExportPlugin_add_ios_linker_flags>` **(** :ref:`String<class_String>` flags **)**                                                                                                                 |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_ios_plist_content<class_EditorExportPlugin_add_ios_plist_content>` **(** :ref:`String<class_String>` plist_content **)**                                                                                                       |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_shared_object<class_EditorExportPlugin_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**                                                                    |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`skip<class_EditorExportPlugin_skip>` **(** **)**                                                                                                                                                                                   |
-+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_export_file<class_EditorExportPlugin_method__export_file>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** virtual                                |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_file<class_EditorExportPlugin_method_add_file>` **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                           |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_bundle_file<class_EditorExportPlugin_method_add_ios_bundle_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                    |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_cpp_code<class_EditorExportPlugin_method_add_ios_cpp_code>` **(** :ref:`String<class_String>` code **)**                                                                                                                          |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                                        |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_linker_flags<class_EditorExportPlugin_method_add_ios_linker_flags>` **(** :ref:`String<class_String>` flags **)**                                                                                                                 |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_ios_plist_content<class_EditorExportPlugin_method_add_ios_plist_content>` **(** :ref:`String<class_String>` plist_content **)**                                                                                                       |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**                                                                    |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                   |
++------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_EditorExportPlugin__export_begin:
+.. _class_EditorExportPlugin_method__export_begin:
 
 - void **_export_begin** **(** :ref:`PoolStringArray<class_PoolStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** virtual
 
-.. _class_EditorExportPlugin__export_file:
+.. _class_EditorExportPlugin_method__export_file:
 
 - void **_export_file** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PoolStringArray<class_PoolStringArray>` features **)** virtual
 
-.. _class_EditorExportPlugin_add_file:
+.. _class_EditorExportPlugin_method_add_file:
 
 - void **add_file** **(** :ref:`String<class_String>` path, :ref:`PoolByteArray<class_PoolByteArray>` file, :ref:`bool<class_bool>` remap **)**
 
-.. _class_EditorExportPlugin_add_ios_bundle_file:
+.. _class_EditorExportPlugin_method_add_ios_bundle_file:
 
 - void **add_ios_bundle_file** **(** :ref:`String<class_String>` path **)**
 
-.. _class_EditorExportPlugin_add_ios_cpp_code:
+.. _class_EditorExportPlugin_method_add_ios_cpp_code:
 
 - void **add_ios_cpp_code** **(** :ref:`String<class_String>` code **)**
 
-.. _class_EditorExportPlugin_add_ios_framework:
+.. _class_EditorExportPlugin_method_add_ios_framework:
 
 - void **add_ios_framework** **(** :ref:`String<class_String>` path **)**
 
-.. _class_EditorExportPlugin_add_ios_linker_flags:
+.. _class_EditorExportPlugin_method_add_ios_linker_flags:
 
 - void **add_ios_linker_flags** **(** :ref:`String<class_String>` flags **)**
 
-.. _class_EditorExportPlugin_add_ios_plist_content:
+.. _class_EditorExportPlugin_method_add_ios_plist_content:
 
 - void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
 
-.. _class_EditorExportPlugin_add_shared_object:
+.. _class_EditorExportPlugin_method_add_shared_object:
 
 - void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**
 
-.. _class_EditorExportPlugin_skip:
+.. _class_EditorExportPlugin_method_skip:
 
 - void **skip** **(** **)**
 

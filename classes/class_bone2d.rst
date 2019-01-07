@@ -19,27 +19,27 @@ Brief Description
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_default_length>` |
-+---------------------------------------+----------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_rest>`                     |
-+---------------------------------------+----------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_property_default_length>` |
++---------------------------------------+-------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_property_rest>`                     |
++---------------------------------------+-------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+------------------------------------------------------------------------------------+
-| void                                   | :ref:`apply_rest<class_Bone2D_apply_rest>` **(** **)**                             |
-+----------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_index_in_skeleton<class_Bone2D_get_index_in_skeleton>` **(** **)** const |
-+----------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>`  | :ref:`get_skeleton_rest<class_Bone2D_get_skeleton_rest>` **(** **)** const         |
-+----------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| void                                  | :ref:`apply_rest<class_Bone2D_method_apply_rest>` **(** **)**                             |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** const |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_skeleton_rest<class_Bone2D_method_get_skeleton_rest>` **(** **)** const         |
++---------------------------------------+-------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_Bone2D_default_length:
+.. _class_Bone2D_property_default_length:
 
 - :ref:`float<class_float>` **default_length**
 
@@ -49,7 +49,7 @@ Property Descriptions
 | *Getter* | get_default_length()      |
 +----------+---------------------------+
 
-.. _class_Bone2D_rest:
+.. _class_Bone2D_property_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **rest**
 
@@ -62,15 +62,15 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_Bone2D_apply_rest:
+.. _class_Bone2D_method_apply_rest:
 
 - void **apply_rest** **(** **)**
 
-.. _class_Bone2D_get_index_in_skeleton:
+.. _class_Bone2D_method_get_index_in_skeleton:
 
 - :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** const
 
-.. _class_Bone2D_get_skeleton_rest:
+.. _class_Bone2D_method_get_skeleton_rest:
 
 - :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** const
 

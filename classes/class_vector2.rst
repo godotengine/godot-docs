@@ -17,75 +17,89 @@ Vector used for 2D math.
 Properties
 ----------
 
-+---------------------------+---------------------------+
-| :ref:`float<class_float>` | :ref:`x<class_Vector2_x>` |
-+---------------------------+---------------------------+
-| :ref:`float<class_float>` | :ref:`y<class_Vector2_y>` |
-+---------------------------+---------------------------+
++---------------------------+------------------------------------+
+| :ref:`float<class_float>` | :ref:`x<class_Vector2_property_x>` |
++---------------------------+------------------------------------+
+| :ref:`float<class_float>` | :ref:`y<class_Vector2_property_y>` |
++---------------------------+------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`Vector2<class_Vector2_Vector2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`abs<class_Vector2_abs>` **(** **)**                                                                                                                                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`angle<class_Vector2_angle>` **(** **)**                                                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`angle_to<class_Vector2_angle_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`angle_to_point<class_Vector2_angle_to_point>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                              |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`aspect<class_Vector2_aspect>` **(** **)**                                                                                                                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`bounce<class_Vector2_bounce>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`ceil<class_Vector2_ceil>` **(** **)**                                                                                                                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`clamped<class_Vector2_clamped>` **(** :ref:`float<class_float>` length **)**                                                                                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`cross<class_Vector2_cross>` **(** :ref:`Vector2<class_Vector2>` with **)**                                                                                                                              |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`distance_squared_to<class_Vector2_distance_squared_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`distance_to<class_Vector2_distance_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`dot<class_Vector2_dot>` **(** :ref:`Vector2<class_Vector2>` with **)**                                                                                                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`floor<class_Vector2_floor>` **(** **)**                                                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_normalized<class_Vector2_is_normalized>` **(** **)**                                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`length<class_Vector2_length>` **(** **)**                                                                                                                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`length_squared<class_Vector2_length_squared>` **(** **)**                                                                                                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`linear_interpolate<class_Vector2_linear_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`normalized<class_Vector2_normalized>` **(** **)**                                                                                                                                                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`project<class_Vector2_project>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`reflect<class_Vector2_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`rotated<class_Vector2_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`round<class_Vector2_round>` **(** **)**                                                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`slerp<class_Vector2_slerp>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`slide<class_Vector2_slide>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`snapped<class_Vector2_snapped>` **(** :ref:`Vector2<class_Vector2>` by **)**                                                                                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`  | :ref:`tangent<class_Vector2_tangent>` **(** **)**                                                                                                                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`Vector2<class_Vector2_method_Vector2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**                                                                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`abs<class_Vector2_method_abs>` **(** **)**                                                                                                                                                                     |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`angle<class_Vector2_method_angle>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`angle_to<class_Vector2_method_angle_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`angle_to_point<class_Vector2_method_angle_to_point>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                              |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`aspect<class_Vector2_method_aspect>` **(** **)**                                                                                                                                                               |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`bounce<class_Vector2_method_bounce>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                               |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`ceil<class_Vector2_method_ceil>` **(** **)**                                                                                                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`clamped<class_Vector2_method_clamped>` **(** :ref:`float<class_float>` length **)**                                                                                                                            |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`cross<class_Vector2_method_cross>` **(** :ref:`Vector2<class_Vector2>` with **)**                                                                                                                              |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`cubic_interpolate<class_Vector2_method_cubic_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)** |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector2_method_distance_squared_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`distance_to<class_Vector2_method_distance_to>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`dot<class_Vector2_method_dot>` **(** :ref:`Vector2<class_Vector2>` with **)**                                                                                                                                  |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`floor<class_Vector2_method_floor>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector2_method_is_normalized>` **(** **)**                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`length<class_Vector2_method_length>` **(** **)**                                                                                                                                                               |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`length_squared<class_Vector2_method_length_squared>` **(** **)**                                                                                                                                               |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`linear_interpolate<class_Vector2_method_linear_interpolate>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                          |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`normalized<class_Vector2_method_normalized>` **(** **)**                                                                                                                                                       |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`project<class_Vector2_method_project>` **(** :ref:`Vector2<class_Vector2>` b **)**                                                                                                                             |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                             |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                               |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`round<class_Vector2_method_round>` **(** **)**                                                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`slerp<class_Vector2_method_slerp>` **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**                                                                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`slide<class_Vector2_method_slide>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                                 |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`snapped<class_Vector2_method_snapped>` **(** :ref:`Vector2<class_Vector2>` by **)**                                                                                                                            |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`tangent<class_Vector2_method_tangent>` **(** **)**                                                                                                                                                             |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
+
+.. _class_Vector2_constant_ZERO:
+
+.. _class_Vector2_constant_ONE:
+
+.. _class_Vector2_constant_INF:
+
+.. _class_Vector2_constant_LEFT:
+
+.. _class_Vector2_constant_RIGHT:
+
+.. _class_Vector2_constant_UP:
+
+.. _class_Vector2_constant_DOWN:
 
 - **ZERO** = **Vector2( 0, 0 )** --- Zero vector.
 
@@ -114,13 +128,13 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_Vector2_x:
+.. _class_Vector2_property_x:
 
 - :ref:`float<class_float>` **x**
 
 The vector's x component. Also accessible by using the index position ``[0]``.
 
-.. _class_Vector2_y:
+.. _class_Vector2_property_y:
 
 - :ref:`float<class_float>` **y**
 
@@ -129,19 +143,19 @@ The vector's y component. Also accessible by using the index position ``[1]``.
 Method Descriptions
 -------------------
 
-.. _class_Vector2_Vector2:
+.. _class_Vector2_method_Vector2:
 
 - :ref:`Vector2<class_Vector2>` **Vector2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
 Constructs a new Vector2 from the given x and y.
 
-.. _class_Vector2_abs:
+.. _class_Vector2_method_abs:
 
 - :ref:`Vector2<class_Vector2>` **abs** **(** **)**
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
-.. _class_Vector2_angle:
+.. _class_Vector2_method_angle:
 
 - :ref:`float<class_float>` **angle** **(** **)**
 
@@ -149,133 +163,133 @@ Returns the vector's angle in radians with respect to the x-axis, or ``(1, 0)`` 
 
 Equivalent to the result of atan2 when called with the vector's x and y as parameters: ``atan2(x, y)``.
 
-.. _class_Vector2_angle_to:
+.. _class_Vector2_method_angle_to:
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns the angle in radians between the two vectors.
 
-.. _class_Vector2_angle_to_point:
+.. _class_Vector2_method_angle_to_point:
 
 - :ref:`float<class_float>` **angle_to_point** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns the angle in radians between the line connecting the two points and the x coordinate.
 
-.. _class_Vector2_aspect:
+.. _class_Vector2_method_aspect:
 
 - :ref:`float<class_float>` **aspect** **(** **)**
 
 Returns the ratio of x to y.
 
-.. _class_Vector2_bounce:
+.. _class_Vector2_method_bounce:
 
 - :ref:`Vector2<class_Vector2>` **bounce** **(** :ref:`Vector2<class_Vector2>` n **)**
 
 Returns the vector "bounced off" from a plane defined by the given normal.
 
-.. _class_Vector2_ceil:
+.. _class_Vector2_method_ceil:
 
 - :ref:`Vector2<class_Vector2>` **ceil** **(** **)**
 
 Returns the vector with all components rounded up.
 
-.. _class_Vector2_clamped:
+.. _class_Vector2_method_clamped:
 
 - :ref:`Vector2<class_Vector2>` **clamped** **(** :ref:`float<class_float>` length **)**
 
 Returns the vector with a maximum length.
 
-.. _class_Vector2_cross:
+.. _class_Vector2_method_cross:
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)**
 
 Returns the 2 dimensional analog of the cross product with the given vector.
 
-.. _class_Vector2_cubic_interpolate:
+.. _class_Vector2_method_cubic_interpolate:
 
 - :ref:`Vector2<class_Vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` t **)**
 
 Cubicly interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
-.. _class_Vector2_distance_squared_to:
+.. _class_Vector2_method_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Returns the squared distance to vector ``b``. Prefer this function over :ref:`distance_to<class_Vector2_distance_to>` if you need to sort vectors or need the squared distance for some formula.
+Returns the squared distance to vector ``b``. Prefer this function over :ref:`distance_to<class_Vector2_method_distance_to>` if you need to sort vectors or need the squared distance for some formula.
 
-.. _class_Vector2_distance_to:
+.. _class_Vector2_method_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector2<class_Vector2>` to **)**
 
 Returns the distance to vector ``b``.
 
-.. _class_Vector2_dot:
+.. _class_Vector2_method_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector2<class_Vector2>` with **)**
 
 Returns the dot product with vector ``b``.
 
-.. _class_Vector2_floor:
+.. _class_Vector2_method_floor:
 
 - :ref:`Vector2<class_Vector2>` **floor** **(** **)**
 
 Returns the vector with all components rounded down.
 
-.. _class_Vector2_is_normalized:
+.. _class_Vector2_method_is_normalized:
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)**
 
 Returns ``true`` if the vector is normalized.
 
-.. _class_Vector2_length:
+.. _class_Vector2_method_length:
 
 - :ref:`float<class_float>` **length** **(** **)**
 
 Returns the vector's length.
 
-.. _class_Vector2_length_squared:
+.. _class_Vector2_method_length_squared:
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector2_length>` if you need to sort vectors or need the squared length for some formula.
+Returns the vector's length squared. Prefer this function over :ref:`length<class_Vector2_property_length>` if you need to sort vectors or need the squared length for some formula.
 
-.. _class_Vector2_linear_interpolate:
+.. _class_Vector2_method_linear_interpolate:
 
 - :ref:`Vector2<class_Vector2>` **linear_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
 Returns the result of the linear interpolation between this vector and ``b`` by amount ``t``. ``t`` is in the range of ``0.0 - 1.0``, representing the amount of interpolation.
 
-.. _class_Vector2_normalized:
+.. _class_Vector2_method_normalized:
 
 - :ref:`Vector2<class_Vector2>` **normalized** **(** **)**
 
 Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
-.. _class_Vector2_project:
+.. _class_Vector2_method_project:
 
 - :ref:`Vector2<class_Vector2>` **project** **(** :ref:`Vector2<class_Vector2>` b **)**
 
 Returns the vector projected onto the vector ``b``.
 
-.. _class_Vector2_reflect:
+.. _class_Vector2_method_reflect:
 
 - :ref:`Vector2<class_Vector2>` **reflect** **(** :ref:`Vector2<class_Vector2>` n **)**
 
 Returns the vector reflected from a plane defined by the given normal.
 
-.. _class_Vector2_rotated:
+.. _class_Vector2_method_rotated:
 
 - :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
 Returns the vector rotated by ``phi`` radians.
 
-.. _class_Vector2_round:
+.. _class_Vector2_method_round:
 
 - :ref:`Vector2<class_Vector2>` **round** **(** **)**
 
 Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
-.. _class_Vector2_slerp:
+.. _class_Vector2_method_slerp:
 
 - :ref:`Vector2<class_Vector2>` **slerp** **(** :ref:`Vector2<class_Vector2>` b, :ref:`float<class_float>` t **)**
 
@@ -283,19 +297,19 @@ Returns the result of SLERP between this vector and ``b``, by amount ``t``. ``t`
 
 Both vectors need to be normalized.
 
-.. _class_Vector2_slide:
+.. _class_Vector2_method_slide:
 
 - :ref:`Vector2<class_Vector2>` **slide** **(** :ref:`Vector2<class_Vector2>` n **)**
 
 Returns the component of the vector along a plane defined by the given normal.
 
-.. _class_Vector2_snapped:
+.. _class_Vector2_method_snapped:
 
 - :ref:`Vector2<class_Vector2>` **snapped** **(** :ref:`Vector2<class_Vector2>` by **)**
 
 Returns the vector snapped to a grid with the given size.
 
-.. _class_Vector2_tangent:
+.. _class_Vector2_method_tangent:
 
 - :ref:`Vector2<class_Vector2>` **tangent** **(** **)**
 

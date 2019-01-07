@@ -21,14 +21,14 @@ Base class for CSG primitives.
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive_invert_faces>` |
-+-------------------------+------------------------------------------------------+
++-------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive_property_invert_faces>` |
++-------------------------+---------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_CSGPrimitive_invert_faces:
+.. _class_CSGPrimitive_property_invert_faces:
 
 - :ref:`bool<class_bool>` **invert_faces**
 

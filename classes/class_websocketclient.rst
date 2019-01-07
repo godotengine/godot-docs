@@ -19,51 +19,51 @@ A WebSocket client implementation
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`verify_ssl<class_WebSocketClient_verify_ssl>` |
-+-------------------------+-----------------------------------------------------+
++-------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`verify_ssl<class_WebSocketClient_property_verify_ssl>` |
++-------------------------+--------------------------------------------------------------+
 
 Methods
 -------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`  | :ref:`connect_to_url<class_WebSocketClient_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`disconnect_from_host<class_WebSocketClient_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                    |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_WebSocketClient_connection_closed:
+.. _class_WebSocketClient_signal_connection_closed:
 
 - **connection_closed** **(** :ref:`bool<class_bool>` was_clean_close **)**
 
 Emitted when the connection to the server is closed. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
 
-.. _class_WebSocketClient_connection_error:
+.. _class_WebSocketClient_signal_connection_error:
 
 - **connection_error** **(** **)**
 
 Emitted when the connection to the server fails.
 
-.. _class_WebSocketClient_connection_established:
+.. _class_WebSocketClient_signal_connection_established:
 
 - **connection_established** **(** :ref:`String<class_String>` protocol **)**
 
 Emitted when a connection with the server is established, ``protocol`` will contain the sub-protocol agreed with the server.
 
-.. _class_WebSocketClient_data_received:
+.. _class_WebSocketClient_signal_data_received:
 
 - **data_received** **(** **)**
 
 Emitted when a WebSocket message is received. Note: This signal is NOT emitted when used as high level multiplayer peer.
 
-.. _class_WebSocketClient_server_close_request:
+.. _class_WebSocketClient_signal_server_close_request:
 
 - **server_close_request** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
 
-Emitted when the server requests a clean close. You should keep polling until you get a :ref:`connection_closed<class_WebSocketClient_connection_closed>` signal to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more details.
+Emitted when the server requests a clean close. You should keep polling until you get a :ref:`connection_closed<class_WebSocketClient_signal_connection_closed>` signal to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more details.
 
 Description
 -----------
@@ -72,14 +72,14 @@ This class implements a WebSocket client compatible with any RFC 6455 complaint 
 
 This client can be optionally used as a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-After starting the client (:ref:`connect_to_url<class_WebSocketClient_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node__process>`).
+After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`).
 
 You will received appropriate signals when connecting, disconnecting, or when new data is available.
 
 Property Descriptions
 ---------------------
 
-.. _class_WebSocketClient_verify_ssl:
+.. _class_WebSocketClient_property_verify_ssl:
 
 - :ref:`bool<class_bool>` **verify_ssl**
 
@@ -94,17 +94,17 @@ Enable or disable SSL certificate verification. Note: You must specify the certi
 Method Descriptions
 -------------------
 
-.. _class_WebSocketClient_connect_to_url:
+.. _class_WebSocketClient_method_connect_to_url:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
 Connect to the given URL requesting one of the given ``protocols`` as sub-protocol.
 
-If ``true``, is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_data_received>` will not be emitted when this option is true.
+If ``true``, is passed as ``gd_mp_api``, the client will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Note: connections to non Godot servers will not work, and :ref:`data_received<class_WebSocketClient_signal_data_received>` will not be emitted when this option is true.
 
-.. _class_WebSocketClient_disconnect_from_host:
+.. _class_WebSocketClient_method_disconnect_from_host:
 
 - void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
-Disconnect this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_close>` for more info.
+Disconnect this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more info.
 

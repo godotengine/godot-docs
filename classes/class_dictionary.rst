@@ -17,29 +17,29 @@ Dictionary type.
 Methods
 -------
 
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`clear<class_Dictionary_clear>` **(** **)**                                                                           |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`  | :ref:`duplicate<class_Dictionary_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`empty<class_Dictionary_empty>` **(** **)**                                                                           |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`erase<class_Dictionary_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                         |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`        | :ref:`get<class_Dictionary_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)** |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`has<class_Dictionary_has>` **(** :ref:`Variant<class_Variant>` key **)**                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`has_all<class_Dictionary_has_all>` **(** :ref:`Array<class_Array>` keys **)**                                        |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`hash<class_Dictionary_hash>` **(** **)**                                                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`            | :ref:`keys<class_Dictionary_keys>` **(** **)**                                                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`size<class_Dictionary_size>` **(** **)**                                                                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`            | :ref:`values<class_Dictionary_values>` **(** **)**                                                                         |
-+--------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                           |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=False **)**                                |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                           |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                         |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)** |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)**                                        |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>` **(** **)**                                                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)**                                                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>` **(** **)**                                                                             |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                         |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -49,67 +49,67 @@ Dictionary type. Associative container which contains values referenced by uniqu
 Method Descriptions
 -------------------
 
-.. _class_Dictionary_clear:
+.. _class_Dictionary_method_clear:
 
 - void **clear** **(** **)**
 
 Clear the dictionary, removing all key/value pairs.
 
-.. _class_Dictionary_duplicate:
+.. _class_Dictionary_method_duplicate:
 
 - :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=False **)**
 
 Creates a copy of the dictionary, and returns it.
 
-.. _class_Dictionary_empty:
+.. _class_Dictionary_method_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Return true if the dictionary is empty.
 
-.. _class_Dictionary_erase:
+.. _class_Dictionary_method_erase:
 
 - :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
 Erase a dictionary key/value pair by key.
 
-.. _class_Dictionary_get:
+.. _class_Dictionary_method_get:
 
 - :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=Null **)**
 
 Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or Null if it is omitted.
 
-.. _class_Dictionary_has:
+.. _class_Dictionary_method_has:
 
 - :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
 Return true if the dictionary has a given key.
 
-.. _class_Dictionary_has_all:
+.. _class_Dictionary_method_has_all:
 
 - :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
 Return true if the dictionary has all of the keys in the given array.
 
-.. _class_Dictionary_hash:
+.. _class_Dictionary_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
 Return a hashed integer value representing the dictionary contents.
 
-.. _class_Dictionary_keys:
+.. _class_Dictionary_method_keys:
 
 - :ref:`Array<class_Array>` **keys** **(** **)**
 
 Return the list of keys in the ``Dictionary``.
 
-.. _class_Dictionary_size:
+.. _class_Dictionary_method_size:
 
 - :ref:`int<class_int>` **size** **(** **)**
 
 Return the size of the dictionary (in pairs).
 
-.. _class_Dictionary_values:
+.. _class_Dictionary_method_values:
 
 - :ref:`Array<class_Array>` **values** **(** **)**
 

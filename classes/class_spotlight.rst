@@ -19,15 +19,15 @@ Spotlight :ref:`Light<class_Light>`, such as a reflector spotlight or a lantern.
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_spot_angle>`                         |
-+---------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_spot_angle_attenuation>` |
-+---------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_spot_attenuation>`             |
-+---------------------------+-----------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_spot_range>`                         |
-+---------------------------+-----------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         |
++---------------------------+--------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -42,7 +42,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_SpotLight_spot_angle:
+.. _class_SpotLight_property_spot_angle:
 
 - :ref:`float<class_float>` **spot_angle**
 
@@ -52,7 +52,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-.. _class_SpotLight_spot_angle_attenuation:
+.. _class_SpotLight_property_spot_angle_attenuation:
 
 - :ref:`float<class_float>` **spot_angle_attenuation**
 
@@ -62,7 +62,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-.. _class_SpotLight_spot_attenuation:
+.. _class_SpotLight_property_spot_attenuation:
 
 - :ref:`float<class_float>` **spot_attenuation**
 
@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter* | get_param()      |
 +----------+------------------+
 
-.. _class_SpotLight_spot_range:
+.. _class_SpotLight_property_spot_range:
 
 - :ref:`float<class_float>` **spot_range**
 

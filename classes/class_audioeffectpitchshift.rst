@@ -21,9 +21,9 @@ Raises or lowers the pitch of original sound.
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`pitch_scale<class_AudioEffectPitchShift_pitch_scale>` |
-+---------------------------+-------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` |
++---------------------------+----------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Allows modulation of pitch independently of tempo. All frequencies can be increa
 Property Descriptions
 ---------------------
 
-.. _class_AudioEffectPitchShift_pitch_scale:
+.. _class_AudioEffectPitchShift_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 

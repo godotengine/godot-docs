@@ -19,24 +19,38 @@ Enable certain nodes only when visible.
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler2D_freeze_bodies>`                   |
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pause_animated_sprites<class_VisibilityEnabler2D_pause_animated_sprites>` |
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler2D_pause_animations>`             |
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`pause_particles<class_VisibilityEnabler2D_pause_particles>`               |
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`physics_process_parent<class_VisibilityEnabler2D_physics_process_parent>` |
-+-------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_process_parent>`                 |
-+-------------------------+---------------------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler2D_property_freeze_bodies>`                   |
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animated_sprites<class_VisibilityEnabler2D_property_pause_animated_sprites>` |
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler2D_property_pause_animations>`             |
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_particles<class_VisibilityEnabler2D_property_pause_particles>`               |
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`physics_process_parent<class_VisibilityEnabler2D_property_physics_process_parent>` |
++-------------------------+------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`process_parent<class_VisibilityEnabler2D_property_process_parent>`                 |
++-------------------------+------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_VisibilityEnabler2D_Enabler:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_PAUSE_ANIMATIONS:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_FREEZE_BODIES:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_PAUSE_PARTICLES:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_PARENT_PROCESS:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_PARENT_PHYSICS_PROCESS:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_PAUSE_ANIMATED_SPRITES:
+
+.. _class_VisibilityEnabler2D_constant_ENABLER_MAX:
 
 enum **Enabler**:
 
@@ -62,7 +76,7 @@ The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_RigidBody2D>`, :ref
 Property Descriptions
 ---------------------
 
-.. _class_VisibilityEnabler2D_freeze_bodies:
+.. _class_VisibilityEnabler2D_property_freeze_bodies:
 
 - :ref:`bool<class_bool>` **freeze_bodies**
 
@@ -74,7 +88,7 @@ Property Descriptions
 
 If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 
-.. _class_VisibilityEnabler2D_pause_animated_sprites:
+.. _class_VisibilityEnabler2D_property_pause_animated_sprites:
 
 - :ref:`bool<class_bool>` **pause_animated_sprites**
 
@@ -86,7 +100,7 @@ If ``true``, :ref:`RigidBody2D<class_RigidBody2D>` nodes will be paused.
 
 If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 
-.. _class_VisibilityEnabler2D_pause_animations:
+.. _class_VisibilityEnabler2D_property_pause_animations:
 
 - :ref:`bool<class_bool>` **pause_animations**
 
@@ -98,7 +112,7 @@ If ``true``, :ref:`AnimatedSprite<class_AnimatedSprite>` nodes will be paused.
 
 If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 
-.. _class_VisibilityEnabler2D_pause_particles:
+.. _class_VisibilityEnabler2D_property_pause_particles:
 
 - :ref:`bool<class_bool>` **pause_particles**
 
@@ -110,7 +124,7 @@ If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 
 If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 
-.. _class_VisibilityEnabler2D_physics_process_parent:
+.. _class_VisibilityEnabler2D_property_physics_process_parent:
 
 - :ref:`bool<class_bool>` **physics_process_parent**
 
@@ -120,9 +134,9 @@ If ``true``, :ref:`Particles2D<class_Particles2D>` nodes will be paused.
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true``, the parent's :ref:`Node._physics_process<class_Node__physics_process>` will be stopped.
+If ``true``, the parent's :ref:`Node._physics_process<class_Node_method__physics_process>` will be stopped.
 
-.. _class_VisibilityEnabler2D_process_parent:
+.. _class_VisibilityEnabler2D_property_process_parent:
 
 - :ref:`bool<class_bool>` **process_parent**
 
@@ -132,5 +146,5 @@ If ``true``, the parent's :ref:`Node._physics_process<class_Node__physics_proces
 | *Getter* | is_enabler_enabled() |
 +----------+----------------------+
 
-If ``true``, the parent's :ref:`Node._process<class_Node__process>` will be stopped.
+If ``true``, the parent's :ref:`Node._process<class_Node_method__process>` will be stopped.
 

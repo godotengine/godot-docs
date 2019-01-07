@@ -21,25 +21,25 @@ Container for splitting and adjusting.
 Properties
 ----------
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_collapsed>`                   |
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_dragger_visibility>` |
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
-| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_split_offset>`             |
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Methods
 -------
 
-+-------+--------------------------------------------------------------------------------+
-| void  | :ref:`clamp_split_offset<class_SplitContainer_clamp_split_offset>` **(** **)** |
-+-------+--------------------------------------------------------------------------------+
++------+---------------------------------------------------------------------------------------+
+| void | :ref:`clamp_split_offset<class_SplitContainer_method_clamp_split_offset>` **(** **)** |
++------+---------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_SplitContainer_dragged:
+.. _class_SplitContainer_signal_dragged:
 
 - **dragged** **(** :ref:`int<class_int>` offset **)**
 
@@ -49,6 +49,12 @@ Enumerations
 ------------
 
 .. _enum_SplitContainer_DraggerVisibility:
+
+.. _class_SplitContainer_constant_DRAGGER_VISIBLE:
+
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN:
+
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN_COLLAPSED:
 
 enum **DraggerVisibility**:
 
@@ -66,7 +72,7 @@ Container for splitting two controls vertically or horizontally, with a grabber 
 Property Descriptions
 ---------------------
 
-.. _class_SplitContainer_collapsed:
+.. _class_SplitContainer_property_collapsed:
 
 - :ref:`bool<class_bool>` **collapsed**
 
@@ -76,7 +82,7 @@ Property Descriptions
 | *Getter* | is_collapsed()       |
 +----------+----------------------+
 
-.. _class_SplitContainer_dragger_visibility:
+.. _class_SplitContainer_property_dragger_visibility:
 
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
@@ -88,7 +94,7 @@ Property Descriptions
 
 Determines whether the dragger is visible.
 
-.. _class_SplitContainer_split_offset:
+.. _class_SplitContainer_property_split_offset:
 
 - :ref:`int<class_int>` **split_offset**
 
@@ -101,7 +107,7 @@ Determines whether the dragger is visible.
 Method Descriptions
 -------------------
 
-.. _class_SplitContainer_clamp_split_offset:
+.. _class_SplitContainer_method_clamp_split_offset:
 
 - void **clamp_split_offset** **(** **)**
 

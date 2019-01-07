@@ -21,36 +21,36 @@ Brief Description
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_default_input_values>`       |
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_output_port_for_preview>` |
-+---------------------------+--------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`default_input_values<class_VisualShaderNode_property_default_input_values>`       |
++---------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` |
++---------------------------+-----------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`  | :ref:`get_input_port_default_value<class_VisualShaderNode_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** const                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_input_port_default_value<class_VisualShaderNode_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** const                                |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value **)** |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_VisualShaderNode_editor_refresh_request:
+.. _class_VisualShaderNode_signal_editor_refresh_request:
 
 - **editor_refresh_request** **(** **)**
 
 Property Descriptions
 ---------------------
 
-.. _class_VisualShaderNode_default_input_values:
+.. _class_VisualShaderNode_property_default_input_values:
 
 - :ref:`Array<class_Array>` **default_input_values**
 
-.. _class_VisualShaderNode_output_port_for_preview:
+.. _class_VisualShaderNode_property_output_port_for_preview:
 
 - :ref:`int<class_int>` **output_port_for_preview**
 
@@ -63,11 +63,11 @@ Property Descriptions
 Method Descriptions
 -------------------
 
-.. _class_VisualShaderNode_get_input_port_default_value:
+.. _class_VisualShaderNode_method_get_input_port_default_value:
 
 - :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** const
 
-.. _class_VisualShaderNode_set_input_port_default_value:
+.. _class_VisualShaderNode_method_set_input_port_default_value:
 
 - void **set_input_port_default_value** **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value **)**
 

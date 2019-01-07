@@ -19,28 +19,42 @@ Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
 Properties
 ----------
 
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_expand>`                         |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_stretch_mode>`             |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_texture_click_mask>` |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_texture_disabled>`     |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_texture_focused>`       |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_texture_hover>`           |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_texture_normal>`         |
-+----------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_texture_pressed>`       |
-+----------------------------------------------------+-------------------------------------------------------------------+
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |
++----------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                      | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |
++----------------------------------------------------+----------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_TextureButton_StretchMode:
+
+.. _class_TextureButton_constant_STRETCH_SCALE:
+
+.. _class_TextureButton_constant_STRETCH_TILE:
+
+.. _class_TextureButton_constant_STRETCH_KEEP:
+
+.. _class_TextureButton_constant_STRETCH_KEEP_CENTERED:
+
+.. _class_TextureButton_constant_STRETCH_KEEP_ASPECT:
+
+.. _class_TextureButton_constant_STRETCH_KEEP_ASPECT_CENTERED:
+
+.. _class_TextureButton_constant_STRETCH_KEEP_ASPECT_COVERED:
 
 enum **StretchMode**:
 
@@ -68,7 +82,7 @@ The Normal state's texture is required. Others are optional.
 Property Descriptions
 ---------------------
 
-.. _class_TextureButton_expand:
+.. _class_TextureButton_property_expand:
 
 - :ref:`bool<class_bool>` **expand**
 
@@ -78,9 +92,9 @@ Property Descriptions
 | *Getter* | get_expand()      |
 +----------+-------------------+
 
-If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_stretch_mode>`. If ``false``, the texture will not scale with the node. Default value: ``false``.
+If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`. If ``false``, the texture will not scale with the node. Default value: ``false``.
 
-.. _class_TextureButton_stretch_mode:
+.. _class_TextureButton_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode**
 
@@ -90,9 +104,9 @@ If ``true``, the texture stretches to the edges of the node's bounding rectangle
 | *Getter* | get_stretch_mode()      |
 +----------+-------------------------+
 
-Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
+Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_property_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
 
-.. _class_TextureButton_texture_click_mask:
+.. _class_TextureButton_property_texture_click_mask:
 
 - :ref:`BitMap<class_BitMap>` **texture_click_mask**
 
@@ -104,7 +118,7 @@ Controls the texture's behavior when you resize the node's bounding rectangle, *
 
 Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
 
-.. _class_TextureButton_texture_disabled:
+.. _class_TextureButton_property_texture_disabled:
 
 - :ref:`Texture<class_Texture>` **texture_disabled**
 
@@ -114,9 +128,9 @@ Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detectio
 | *Getter* | get_disabled_texture()      |
 +----------+-----------------------------+
 
-Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_disabled>`.
+Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_property_disabled>`.
 
-.. _class_TextureButton_texture_focused:
+.. _class_TextureButton_property_texture_focused:
 
 - :ref:`Texture<class_Texture>` **texture_focused**
 
@@ -128,7 +142,7 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 
 Texture to display when the node has mouse or keyboard focus.
 
-.. _class_TextureButton_texture_hover:
+.. _class_TextureButton_property_texture_hover:
 
 - :ref:`Texture<class_Texture>` **texture_hover**
 
@@ -140,7 +154,7 @@ Texture to display when the node has mouse or keyboard focus.
 
 Texture to display when the mouse hovers the node.
 
-.. _class_TextureButton_texture_normal:
+.. _class_TextureButton_property_texture_normal:
 
 - :ref:`Texture<class_Texture>` **texture_normal**
 
@@ -152,7 +166,7 @@ Texture to display when the mouse hovers the node.
 
 Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
 
-.. _class_TextureButton_texture_pressed:
+.. _class_TextureButton_property_texture_pressed:
 
 - :ref:`Texture<class_Texture>` **texture_pressed**
 
@@ -162,5 +176,5 @@ Texture to display by default, when the node is **not** in the disabled, focused
 | *Getter* | get_pressed_texture()      |
 +----------+----------------------------+
 
-Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_shortcut>` key.
+Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
 

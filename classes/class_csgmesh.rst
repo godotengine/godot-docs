@@ -19,9 +19,9 @@ A CSG Mesh shape that uses a mesh resource.
 Properties
 ----------
 
-+-------------------------+---------------------------------+
-| :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_CSGMesh_mesh>` |
-+-------------------------+---------------------------------+
++-------------------------+------------------------------------------+
+| :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_CSGMesh_property_mesh>` |
++-------------------------+------------------------------------------+
 
 Description
 -----------
@@ -31,7 +31,7 @@ This CSG node allows you to use any mesh resource as a CSG shape, provided it is
 Property Descriptions
 ---------------------
 
-.. _class_CSGMesh_mesh:
+.. _class_CSGMesh_property_mesh:
 
 - :ref:`Mesh<class_Mesh>` **mesh**
 

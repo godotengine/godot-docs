@@ -19,33 +19,39 @@ Simple button used to represent a link to some resource.
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_text>`           |
-+-----------------------------------------------------+----------------------------------------------+
-| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_underline>` |
-+-----------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_property_text>`           |
++-----------------------------------------------------+-------------------------------------------------------+
+| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_property_underline>` |
++-----------------------------------------------------+-------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_focus>`                           |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_font>`                             |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_font_color>`                 |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_LinkButton_font_color_hover>`     |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_LinkButton_font_color_pressed>` |
-+---------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_underline_spacing>`   |
-+---------------------------------+----------------------------------------------------------------+
++---------------------------------+--------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus              |
++---------------------------------+--------------------+
+| :ref:`Font<class_Font>`         | font               |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color         |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color_hover   |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed |
++---------------------------------+--------------------+
+| :ref:`int<class_int>`           | underline_spacing  |
++---------------------------------+--------------------+
 
 Enumerations
 ------------
 
 .. _enum_LinkButton_UnderlineMode:
+
+.. _class_LinkButton_constant_UNDERLINE_MODE_ALWAYS:
+
+.. _class_LinkButton_constant_UNDERLINE_MODE_ON_HOVER:
+
+.. _class_LinkButton_constant_UNDERLINE_MODE_NEVER:
 
 enum **UnderlineMode**:
 
@@ -63,7 +69,7 @@ This kind of buttons are primarily used when the interaction with the button cau
 Property Descriptions
 ---------------------
 
-.. _class_LinkButton_text:
+.. _class_LinkButton_property_text:
 
 - :ref:`String<class_String>` **text**
 
@@ -73,7 +79,7 @@ Property Descriptions
 | *Getter* | get_text()      |
 +----------+-----------------+
 
-.. _class_LinkButton_underline:
+.. _class_LinkButton_property_underline:
 
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
 

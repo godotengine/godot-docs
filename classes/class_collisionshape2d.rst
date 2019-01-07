@@ -19,18 +19,18 @@ Node that represents collision shape data in 2D space.
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_disabled>`                   |
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_one_way_collision>` |
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_shape>`                         |
-+-------------------------------+--------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                   |
++-------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>` |
++-------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                         |
++-------------------------------+-----------------------------------------------------------------------------+
 
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 2D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area2D<class_Area2D>` to give it a detection shape, or add it to a :ref:`PhysicsBody2D<class_PhysicsBody2D>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject2D.shape_owner_get_shape<class_CollisionObject2D_shape_owner_get_shape>` to get the actual shape.
+Editor facility for creating and editing collision shapes in 2D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area2D<class_Area2D>` to give it a detection shape, or add it to a :ref:`PhysicsBody2D<class_PhysicsBody2D>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject2D.shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` to get the actual shape.
 
 Tutorials
 ---------
@@ -40,7 +40,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_CollisionShape2D_disabled:
+.. _class_CollisionShape2D_property_disabled:
 
 - :ref:`bool<class_bool>` **disabled**
 
@@ -52,7 +52,7 @@ Property Descriptions
 
 A disabled collision shape has no effect in the world.
 
-.. _class_CollisionShape2D_one_way_collision:
+.. _class_CollisionShape2D_property_one_way_collision:
 
 - :ref:`bool<class_bool>` **one_way_collision**
 
@@ -64,7 +64,7 @@ A disabled collision shape has no effect in the world.
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
-.. _class_CollisionShape2D_shape:
+.. _class_CollisionShape2D_property_shape:
 
 - :ref:`Shape2D<class_Shape2D>` **shape**
 

@@ -21,9 +21,9 @@ Base class for all 3D shape resources.
 Properties
 ----------
 
-+---------------------------+-----------------------------------+
-| :ref:`float<class_float>` | :ref:`margin<class_Shape_margin>` |
-+---------------------------+-----------------------------------+
++---------------------------+--------------------------------------------+
+| :ref:`float<class_float>` | :ref:`margin<class_Shape_property_margin>` |
++---------------------------+--------------------------------------------+
 
 Description
 -----------
@@ -38,7 +38,7 @@ Tutorials
 Property Descriptions
 ---------------------
 
-.. _class_Shape_margin:
+.. _class_Shape_property_margin:
 
 - :ref:`float<class_float>` **margin**
 

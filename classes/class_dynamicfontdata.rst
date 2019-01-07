@@ -19,18 +19,24 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a fo
 Properties
 ----------
 
-+----------------------------------------------+-------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_antialiased>` |
-+----------------------------------------------+-------------------------------------------------------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_font_path>`     |
-+----------------------------------------------+-------------------------------------------------------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_hinting>`         |
-+----------------------------------------------+-------------------------------------------------------+
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` |
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     |
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         |
++----------------------------------------------+----------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_DynamicFontData_Hinting:
+
+.. _class_DynamicFontData_constant_HINTING_NONE:
+
+.. _class_DynamicFontData_constant_HINTING_LIGHT:
+
+.. _class_DynamicFontData_constant_HINTING_NORMAL:
 
 enum **Hinting**:
 
@@ -48,7 +54,7 @@ Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a ve
 Property Descriptions
 ---------------------
 
-.. _class_DynamicFontData_antialiased:
+.. _class_DynamicFontData_property_antialiased:
 
 - :ref:`bool<class_bool>` **antialiased**
 
@@ -60,7 +66,7 @@ Property Descriptions
 
 Controls whether the font should be rendered with anti-aliasing.
 
-.. _class_DynamicFontData_font_path:
+.. _class_DynamicFontData_property_font_path:
 
 - :ref:`String<class_String>` **font_path**
 
@@ -72,7 +78,7 @@ Controls whether the font should be rendered with anti-aliasing.
 
 The path to the vector font file.
 
-.. _class_DynamicFontData_hinting:
+.. _class_DynamicFontData_property_hinting:
 
 - :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
 

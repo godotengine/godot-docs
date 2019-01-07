@@ -19,25 +19,25 @@ Horizontal slider.
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_HSlider_focus>`                         |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSlider_grabber>`                     |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_HSlider_grabber_area>`           |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber_disabled<class_HSlider_grabber_disabled>`   |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_disabled<class_HSlider_grabber_disabled>`   |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber_highlight<class_HSlider_grabber_highlight>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_highlight<class_HSlider_grabber_highlight>` |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_HSlider_slider>`                       |
-+---------------------------------+-----------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`tick<class_HSlider_tick>`                           |
-+---------------------------------+-----------------------------------------------------------+
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus             |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber           |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_area      |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber_disabled  |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_disabled  |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber_highlight |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_highlight |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | slider            |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | tick              |
++---------------------------------+-------------------+
 
 Description
 -----------

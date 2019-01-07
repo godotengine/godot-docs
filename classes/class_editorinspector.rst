@@ -19,45 +19,45 @@ Brief Description
 Methods
 -------
 
-+-------+-----------------------------------------------------------+
-| void  | :ref:`refresh<class_EditorInspector_refresh>` **(** **)** |
-+-------+-----------------------------------------------------------+
++------+------------------------------------------------------------------+
+| void | :ref:`refresh<class_EditorInspector_method_refresh>` **(** **)** |
++------+------------------------------------------------------------------+
 
 Signals
 -------
 
-.. _class_EditorInspector_object_id_selected:
+.. _class_EditorInspector_signal_object_id_selected:
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
-.. _class_EditorInspector_property_edited:
+.. _class_EditorInspector_signal_property_edited:
 
 - **property_edited** **(** :ref:`String<class_String>` property **)**
 
-.. _class_EditorInspector_property_keyed:
+.. _class_EditorInspector_signal_property_keyed:
 
 - **property_keyed** **(** :ref:`String<class_String>` property **)**
 
-.. _class_EditorInspector_property_selected:
+.. _class_EditorInspector_signal_property_selected:
 
 - **property_selected** **(** :ref:`String<class_String>` property **)**
 
-.. _class_EditorInspector_property_toggled:
+.. _class_EditorInspector_signal_property_toggled:
 
 - **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
-.. _class_EditorInspector_resource_selected:
+.. _class_EditorInspector_signal_resource_selected:
 
 - **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
 
-.. _class_EditorInspector_restart_requested:
+.. _class_EditorInspector_signal_restart_requested:
 
 - **restart_requested** **(** **)**
 
 Method Descriptions
 -------------------
 
-.. _class_EditorInspector_refresh:
+.. _class_EditorInspector_method_refresh:
 
 - void **refresh** **(** **)**
 

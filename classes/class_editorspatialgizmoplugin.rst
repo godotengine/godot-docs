@@ -19,104 +19,104 @@ Brief Description
 Methods
 -------
 
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`add_material<class_EditorSpatialGizmoPlugin_add_material>` **(** :ref:`String<class_String>` name, :ref:`SpatialMaterial<class_SpatialMaterial>` material **)**                                                                                                               |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`can_be_hidden<class_EditorSpatialGizmoPlugin_can_be_hidden>` **(** **)** virtual                                                                                                                                                                                              |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`commit_handle<class_EditorSpatialGizmoPlugin_commit_handle>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Variant<class_Variant>` restore, :ref:`bool<class_bool>` cancel=false **)** virtual                          |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>`  | :ref:`create_gizmo<class_EditorSpatialGizmoPlugin_create_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual                                                                                                                                                          |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`create_handle_material<class_EditorSpatialGizmoPlugin_create_handle_material>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` billboard=false **)**                                                                                                          |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`create_icon_material<class_EditorSpatialGizmoPlugin_create_icon_material>` **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**                     |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`create_material<class_EditorSpatialGizmoPlugin_create_material>` **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` on_top=false, :ref:`bool<class_bool>` use_vertex_color=false **)** |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                          | :ref:`get_handle_name<class_EditorSpatialGizmoPlugin_get_handle_name>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                                   |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                        | :ref:`get_handle_value<class_EditorSpatialGizmoPlugin_get_handle_value>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                                 |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SpatialMaterial<class_SpatialMaterial>`        | :ref:`get_material<class_EditorSpatialGizmoPlugin_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**                                                                                                            |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                          | :ref:`get_name<class_EditorSpatialGizmoPlugin_get_name>` **(** **)** virtual                                                                                                                                                                                                        |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_has_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual                                                                                                                                                                |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`is_gizmo_handle_highlighted<class_EditorSpatialGizmoPlugin_is_gizmo_handle_highlighted>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                           |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`is_selectable_when_hidden<class_EditorSpatialGizmoPlugin_is_selectable_when_hidden>` **(** **)** virtual                                                                                                                                                                      |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`redraw<class_EditorSpatialGizmoPlugin_redraw>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)** virtual                                                                                                                                                  |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`set_handle<class_EditorSpatialGizmoPlugin_set_handle>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Camera<class_Camera>` camera, :ref:`Vector2<class_Vector2>` point **)** virtual                                    |
-+------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`add_material<class_EditorSpatialGizmoPlugin_method_add_material>` **(** :ref:`String<class_String>` name, :ref:`SpatialMaterial<class_SpatialMaterial>` material **)**                                                                                                               |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`can_be_hidden<class_EditorSpatialGizmoPlugin_method_can_be_hidden>` **(** **)** virtual                                                                                                                                                                                              |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`commit_handle<class_EditorSpatialGizmoPlugin_method_commit_handle>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Variant<class_Variant>` restore, :ref:`bool<class_bool>` cancel=false **)** virtual                          |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` | :ref:`create_gizmo<class_EditorSpatialGizmoPlugin_method_create_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual                                                                                                                                                          |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`create_handle_material<class_EditorSpatialGizmoPlugin_method_create_handle_material>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` billboard=false **)**                                                                                                          |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`create_icon_material<class_EditorSpatialGizmoPlugin_method_create_icon_material>` **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**                     |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`create_material<class_EditorSpatialGizmoPlugin_method_create_material>` **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` on_top=false, :ref:`bool<class_bool>` use_vertex_color=false **)** |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`get_handle_name<class_EditorSpatialGizmoPlugin_method_get_handle_name>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                                   |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`get_handle_value<class_EditorSpatialGizmoPlugin_method_get_handle_value>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                                                 |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SpatialMaterial<class_SpatialMaterial>`       | :ref:`get_material<class_EditorSpatialGizmoPlugin_method_get_material>` **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**                                                                                                            |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`get_name<class_EditorSpatialGizmoPlugin_method_get_name>` **(** **)** virtual                                                                                                                                                                                                        |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`has_gizmo<class_EditorSpatialGizmoPlugin_method_has_gizmo>` **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual                                                                                                                                                                |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`is_gizmo_handle_highlighted<class_EditorSpatialGizmoPlugin_method_is_gizmo_handle_highlighted>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual                                                                           |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`is_selectable_when_hidden<class_EditorSpatialGizmoPlugin_method_is_selectable_when_hidden>` **(** **)** virtual                                                                                                                                                                      |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`redraw<class_EditorSpatialGizmoPlugin_method_redraw>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)** virtual                                                                                                                                                  |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_handle<class_EditorSpatialGizmoPlugin_method_set_handle>` **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Camera<class_Camera>` camera, :ref:`Vector2<class_Vector2>` point **)** virtual                                    |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_EditorSpatialGizmoPlugin_add_material:
+.. _class_EditorSpatialGizmoPlugin_method_add_material:
 
 - void **add_material** **(** :ref:`String<class_String>` name, :ref:`SpatialMaterial<class_SpatialMaterial>` material **)**
 
-.. _class_EditorSpatialGizmoPlugin_can_be_hidden:
+.. _class_EditorSpatialGizmoPlugin_method_can_be_hidden:
 
 - :ref:`bool<class_bool>` **can_be_hidden** **(** **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_commit_handle:
+.. _class_EditorSpatialGizmoPlugin_method_commit_handle:
 
 - void **commit_handle** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Variant<class_Variant>` restore, :ref:`bool<class_bool>` cancel=false **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_create_gizmo:
+.. _class_EditorSpatialGizmoPlugin_method_create_gizmo:
 
 - :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` **create_gizmo** **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_create_handle_material:
+.. _class_EditorSpatialGizmoPlugin_method_create_handle_material:
 
 - void **create_handle_material** **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` billboard=false **)**
 
-.. _class_EditorSpatialGizmoPlugin_create_icon_material:
+.. _class_EditorSpatialGizmoPlugin_method_create_icon_material:
 
 - void **create_icon_material** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture, :ref:`bool<class_bool>` on_top=false, :ref:`Color<class_Color>` color=Color( 1, 1, 1, 1 ) **)**
 
-.. _class_EditorSpatialGizmoPlugin_create_material:
+.. _class_EditorSpatialGizmoPlugin_method_create_material:
 
 - void **create_material** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` on_top=false, :ref:`bool<class_bool>` use_vertex_color=false **)**
 
-.. _class_EditorSpatialGizmoPlugin_get_handle_name:
+.. _class_EditorSpatialGizmoPlugin_method_get_handle_name:
 
 - :ref:`String<class_String>` **get_handle_name** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_get_handle_value:
+.. _class_EditorSpatialGizmoPlugin_method_get_handle_value:
 
 - :ref:`Variant<class_Variant>` **get_handle_value** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_get_material:
+.. _class_EditorSpatialGizmoPlugin_method_get_material:
 
 - :ref:`SpatialMaterial<class_SpatialMaterial>` **get_material** **(** :ref:`String<class_String>` name, :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)**
 
-.. _class_EditorSpatialGizmoPlugin_get_name:
+.. _class_EditorSpatialGizmoPlugin_method_get_name:
 
 - :ref:`String<class_String>` **get_name** **(** **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_has_gizmo:
+.. _class_EditorSpatialGizmoPlugin_method_has_gizmo:
 
 - :ref:`bool<class_bool>` **has_gizmo** **(** :ref:`Spatial<class_Spatial>` spatial **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_is_gizmo_handle_highlighted:
+.. _class_EditorSpatialGizmoPlugin_method_is_gizmo_handle_highlighted:
 
 - :ref:`bool<class_bool>` **is_gizmo_handle_highlighted** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_is_selectable_when_hidden:
+.. _class_EditorSpatialGizmoPlugin_method_is_selectable_when_hidden:
 
 - :ref:`bool<class_bool>` **is_selectable_when_hidden** **(** **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_redraw:
+.. _class_EditorSpatialGizmoPlugin_method_redraw:
 
 - void **redraw** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo **)** virtual
 
-.. _class_EditorSpatialGizmoPlugin_set_handle:
+.. _class_EditorSpatialGizmoPlugin_method_set_handle:
 
 - void **set_handle** **(** :ref:`EditorSpatialGizmo<class_EditorSpatialGizmo>` gizmo, :ref:`int<class_int>` index, :ref:`Camera<class_Camera>` camera, :ref:`Vector2<class_Vector2>` point **)** virtual
 
